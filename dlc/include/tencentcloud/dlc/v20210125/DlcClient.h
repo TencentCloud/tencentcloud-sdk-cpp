@@ -469,6 +469,8 @@
 #include <tencentcloud/dlc/v20210125/model/ListExampleTagsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListExamplesRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ListExamplesResponse.h>
+#include <tencentcloud/dlc/v20210125/model/ListImagesRequest.h>
+#include <tencentcloud/dlc/v20210125/model/ListImagesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListInferenceEnginesRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ListInferenceEnginesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListInferenceModelsRequest.h>
@@ -1300,6 +1302,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListExamplesResponse> ListExamplesOutcome;
                 typedef std::future<ListExamplesOutcome> ListExamplesOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ListExamplesRequest&, ListExamplesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListExamplesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListImagesResponse> ListImagesOutcome;
+                typedef std::future<ListImagesOutcome> ListImagesOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::ListImagesRequest&, ListImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListImagesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListInferenceEnginesResponse> ListInferenceEnginesOutcome;
                 typedef std::future<ListInferenceEnginesOutcome> ListInferenceEnginesOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ListInferenceEnginesRequest&, ListInferenceEnginesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListInferenceEnginesAsyncHandler;
@@ -2770,7 +2775,7 @@ namespace TencentCloud
                 DescribeSaleRegionsOutcomeCallable DescribeSaleRegionsCallable(const Model::DescribeSaleRegionsRequest& request);
 
                 /**
-                 *查询当前地域可售卖的资源规格和最大配额
+                 *查询当前地域可售卖的资源规格、最大配额，以及库存情况。StatusCategory 与 DescribePartitionAvailableQuota 数据同源，将实时可新增数量映射为库存分级；当请求 Region 与资源池实际部署地域不一致，或服务 cold-start 快照尚未就绪时，StatusCategory 为 null。
                  * @param req DescribeSaleResourceInfoRequest
                  * @return DescribeSaleResourceInfoOutcome
                  */
@@ -3533,6 +3538,15 @@ namespace TencentCloud
                 ListExamplesOutcome ListExamples(const Model::ListExamplesRequest &request);
                 void ListExamplesAsync(const Model::ListExamplesRequest& request, const ListExamplesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListExamplesOutcomeCallable ListExamplesCallable(const Model::ListExamplesRequest& request);
+
+                /**
+                 *列出所有镜像
+                 * @param req ListImagesRequest
+                 * @return ListImagesOutcome
+                 */
+                ListImagesOutcome ListImages(const Model::ListImagesRequest &request);
+                void ListImagesAsync(const Model::ListImagesRequest& request, const ListImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListImagesOutcomeCallable ListImagesCallable(const Model::ListImagesRequest& request);
 
                 /**
                  *列出推理引擎

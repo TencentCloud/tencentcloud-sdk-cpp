@@ -57,7 +57,10 @@ ChcHost::ChcHost() :
     m_latestOperationErrorCodeHasBeenSet(false),
     m_latestOperationErrorMsgHasBeenSet(false),
     m_latestOperationNameHasBeenSet(false),
-    m_latestOperationStateHasBeenSet(false)
+    m_latestOperationStateHasBeenSet(false),
+    m_chcGatewayIdHasBeenSet(false),
+    m_dedicatedClusterIdHasBeenSet(false),
+    m_networkModeHasBeenSet(false)
 {
 }
 
@@ -480,6 +483,36 @@ CoreInternalOutcome ChcHost::Deserialize(const rapidjson::Value &value)
         m_latestOperationStateHasBeenSet = true;
     }
 
+    if (value.HasMember("ChcGatewayId") && !value["ChcGatewayId"].IsNull())
+    {
+        if (!value["ChcGatewayId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChcHost.ChcGatewayId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_chcGatewayId = string(value["ChcGatewayId"].GetString());
+        m_chcGatewayIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DedicatedClusterId") && !value["DedicatedClusterId"].IsNull())
+    {
+        if (!value["DedicatedClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChcHost.DedicatedClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dedicatedClusterId = string(value["DedicatedClusterId"].GetString());
+        m_dedicatedClusterIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("NetworkMode") && !value["NetworkMode"].IsNull())
+    {
+        if (!value["NetworkMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChcHost.NetworkMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkMode = string(value["NetworkMode"].GetString());
+        m_networkModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -802,6 +835,30 @@ void ChcHost::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "LatestOperationState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_latestOperationState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_chcGatewayIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChcGatewayId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_chcGatewayId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dedicatedClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DedicatedClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dedicatedClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1397,5 +1454,53 @@ void ChcHost::SetLatestOperationState(const string& _latestOperationState)
 bool ChcHost::LatestOperationStateHasBeenSet() const
 {
     return m_latestOperationStateHasBeenSet;
+}
+
+string ChcHost::GetChcGatewayId() const
+{
+    return m_chcGatewayId;
+}
+
+void ChcHost::SetChcGatewayId(const string& _chcGatewayId)
+{
+    m_chcGatewayId = _chcGatewayId;
+    m_chcGatewayIdHasBeenSet = true;
+}
+
+bool ChcHost::ChcGatewayIdHasBeenSet() const
+{
+    return m_chcGatewayIdHasBeenSet;
+}
+
+string ChcHost::GetDedicatedClusterId() const
+{
+    return m_dedicatedClusterId;
+}
+
+void ChcHost::SetDedicatedClusterId(const string& _dedicatedClusterId)
+{
+    m_dedicatedClusterId = _dedicatedClusterId;
+    m_dedicatedClusterIdHasBeenSet = true;
+}
+
+bool ChcHost::DedicatedClusterIdHasBeenSet() const
+{
+    return m_dedicatedClusterIdHasBeenSet;
+}
+
+string ChcHost::GetNetworkMode() const
+{
+    return m_networkMode;
+}
+
+void ChcHost::SetNetworkMode(const string& _networkMode)
+{
+    m_networkMode = _networkMode;
+    m_networkModeHasBeenSet = true;
+}
+
+bool ChcHost::NetworkModeHasBeenSet() const
+{
+    return m_networkModeHasBeenSet;
 }
 

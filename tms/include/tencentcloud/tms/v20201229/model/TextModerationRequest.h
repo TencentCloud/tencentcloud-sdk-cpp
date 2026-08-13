@@ -212,6 +212,27 @@ namespace TencentCloud
                      */
                     bool SessionIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>该参数是送审客户的自定义参数，可用于标记客户的一些内部信息方便做审核明细取数筛选，没有特殊需求客户可不填写</p>
+                     * @return BizTag <p>该参数是送审客户的自定义参数，可用于标记客户的一些内部信息方便做审核明细取数筛选，没有特殊需求客户可不填写</p>
+                     * 
+                     */
+                    std::string GetBizTag() const;
+
+                    /**
+                     * 设置<p>该参数是送审客户的自定义参数，可用于标记客户的一些内部信息方便做审核明细取数筛选，没有特殊需求客户可不填写</p>
+                     * @param _bizTag <p>该参数是送审客户的自定义参数，可用于标记客户的一些内部信息方便做审核明细取数筛选，没有特殊需求客户可不填写</p>
+                     * 
+                     */
+                    void SetBizTag(const std::string& _bizTag);
+
+                    /**
+                     * 判断参数 BizTag 是否已赋值
+                     * @return BizTag 是否已赋值
+                     * 
+                     */
+                    bool BizTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,6 +282,12 @@ namespace TencentCloud
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
+
+                    /**
+                     * <p>该参数是送审客户的自定义参数，可用于标记客户的一些内部信息方便做审核明细取数筛选，没有特殊需求客户可不填写</p>
+                     */
+                    std::string m_bizTag;
+                    bool m_bizTagHasBeenSet;
 
                 };
             }

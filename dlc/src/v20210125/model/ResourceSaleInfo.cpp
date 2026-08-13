@@ -23,7 +23,8 @@ using namespace std;
 ResourceSaleInfo::ResourceSaleInfo() :
     m_resourceSpecHasBeenSet(false),
     m_stepHasBeenSet(false),
-    m_maxSpecHasBeenSet(false)
+    m_maxSpecHasBeenSet(false),
+    m_statusCategoryHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,16 @@ CoreInternalOutcome ResourceSaleInfo::Deserialize(const rapidjson::Value &value)
         m_maxSpecHasBeenSet = true;
     }
 
+    if (value.HasMember("StatusCategory") && !value["StatusCategory"].IsNull())
+    {
+        if (!value["StatusCategory"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceSaleInfo.StatusCategory` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_statusCategory = string(value["StatusCategory"].GetString());
+        m_statusCategoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +110,14 @@ void ResourceSaleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "MaxSpec";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxSpec, allocator);
+    }
+
+    if (m_statusCategoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusCategory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_statusCategory.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -150,5 +169,21 @@ void ResourceSaleInfo::SetMaxSpec(const int64_t& _maxSpec)
 bool ResourceSaleInfo::MaxSpecHasBeenSet() const
 {
     return m_maxSpecHasBeenSet;
+}
+
+string ResourceSaleInfo::GetStatusCategory() const
+{
+    return m_statusCategory;
+}
+
+void ResourceSaleInfo::SetStatusCategory(const string& _statusCategory)
+{
+    m_statusCategory = _statusCategory;
+    m_statusCategoryHasBeenSet = true;
+}
+
+bool ResourceSaleInfo::StatusCategoryHasBeenSet() const
+{
+    return m_statusCategoryHasBeenSet;
 }
 

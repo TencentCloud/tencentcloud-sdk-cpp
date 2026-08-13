@@ -30,7 +30,8 @@ TextModerationRequest::TextModerationRequest() :
     m_deviceHasBeenSet(false),
     m_sourceLanguageHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
+    m_sessionIdHasBeenSet(false),
+    m_bizTagHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,14 @@ string TextModerationRequest::ToJsonString() const
         string key = "SessionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bizTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BizTag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_bizTag.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -241,6 +250,22 @@ void TextModerationRequest::SetSessionId(const string& _sessionId)
 bool TextModerationRequest::SessionIdHasBeenSet() const
 {
     return m_sessionIdHasBeenSet;
+}
+
+string TextModerationRequest::GetBizTag() const
+{
+    return m_bizTag;
+}
+
+void TextModerationRequest::SetBizTag(const string& _bizTag)
+{
+    m_bizTag = _bizTag;
+    m_bizTagHasBeenSet = true;
+}
+
+bool TextModerationRequest::BizTagHasBeenSet() const
+{
+    return m_bizTagHasBeenSet;
 }
 
 

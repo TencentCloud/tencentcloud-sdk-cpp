@@ -27,7 +27,9 @@ SearchConfig::SearchConfig() :
     m_rerankHasBeenSet(false),
     m_autoRagHasBeenSet(false),
     m_knowledgeBaseIdsHasBeenSet(false),
-    m_searchStatusHasBeenSet(false)
+    m_searchStatusHasBeenSet(false),
+    m_enableGraphSearchHasBeenSet(false),
+    m_enableTreeSearchHasBeenSet(false)
 {
 }
 
@@ -109,6 +111,26 @@ CoreInternalOutcome SearchConfig::Deserialize(const rapidjson::Value &value)
         m_searchStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableGraphSearch") && !value["EnableGraphSearch"].IsNull())
+    {
+        if (!value["EnableGraphSearch"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchConfig.EnableGraphSearch` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableGraphSearch = value["EnableGraphSearch"].GetInt64();
+        m_enableGraphSearchHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableTreeSearch") && !value["EnableTreeSearch"].IsNull())
+    {
+        if (!value["EnableTreeSearch"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchConfig.EnableTreeSearch` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableTreeSearch = value["EnableTreeSearch"].GetInt64();
+        m_enableTreeSearchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +197,22 @@ void SearchConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "SearchStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_searchStatus, allocator);
+    }
+
+    if (m_enableGraphSearchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableGraphSearch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableGraphSearch, allocator);
+    }
+
+    if (m_enableTreeSearchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableTreeSearch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableTreeSearch, allocator);
     }
 
 }
@@ -290,5 +328,37 @@ void SearchConfig::SetSearchStatus(const int64_t& _searchStatus)
 bool SearchConfig::SearchStatusHasBeenSet() const
 {
     return m_searchStatusHasBeenSet;
+}
+
+int64_t SearchConfig::GetEnableGraphSearch() const
+{
+    return m_enableGraphSearch;
+}
+
+void SearchConfig::SetEnableGraphSearch(const int64_t& _enableGraphSearch)
+{
+    m_enableGraphSearch = _enableGraphSearch;
+    m_enableGraphSearchHasBeenSet = true;
+}
+
+bool SearchConfig::EnableGraphSearchHasBeenSet() const
+{
+    return m_enableGraphSearchHasBeenSet;
+}
+
+int64_t SearchConfig::GetEnableTreeSearch() const
+{
+    return m_enableTreeSearch;
+}
+
+void SearchConfig::SetEnableTreeSearch(const int64_t& _enableTreeSearch)
+{
+    m_enableTreeSearch = _enableTreeSearch;
+    m_enableTreeSearchHasBeenSet = true;
+}
+
+bool SearchConfig::EnableTreeSearchHasBeenSet() const
+{
+    return m_enableTreeSearchHasBeenSet;
 }
 

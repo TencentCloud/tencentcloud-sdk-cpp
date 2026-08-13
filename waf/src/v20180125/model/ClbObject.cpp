@@ -42,6 +42,7 @@ ClbObject::ClbObject() :
     m_ipHeadersHasBeenSet(false),
     m_botStatusHasBeenSet(false),
     m_apiStatusHasBeenSet(false),
+    m_lLMStatusHasBeenSet(false),
     m_objectFlowModeHasBeenSet(false),
     m_numericalVpcIdHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
@@ -281,6 +282,16 @@ CoreInternalOutcome ClbObject::Deserialize(const rapidjson::Value &value)
         }
         m_apiStatus = value["ApiStatus"].GetInt64();
         m_apiStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("LLMStatus") && !value["LLMStatus"].IsNull())
+    {
+        if (!value["LLMStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClbObject.LLMStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lLMStatus = value["LLMStatus"].GetInt64();
+        m_lLMStatusHasBeenSet = true;
     }
 
     if (value.HasMember("ObjectFlowMode") && !value["ObjectFlowMode"].IsNull())
@@ -606,6 +617,14 @@ void ClbObject::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ApiStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_apiStatus, allocator);
+    }
+
+    if (m_lLMStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LLMStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lLMStatus, allocator);
     }
 
     if (m_objectFlowModeHasBeenSet)
@@ -1047,6 +1066,22 @@ void ClbObject::SetApiStatus(const int64_t& _apiStatus)
 bool ClbObject::ApiStatusHasBeenSet() const
 {
     return m_apiStatusHasBeenSet;
+}
+
+int64_t ClbObject::GetLLMStatus() const
+{
+    return m_lLMStatus;
+}
+
+void ClbObject::SetLLMStatus(const int64_t& _lLMStatus)
+{
+    m_lLMStatus = _lLMStatus;
+    m_lLMStatusHasBeenSet = true;
+}
+
+bool ClbObject::LLMStatusHasBeenSet() const
+{
+    return m_lLMStatusHasBeenSet;
 }
 
 int64_t ClbObject::GetObjectFlowMode() const

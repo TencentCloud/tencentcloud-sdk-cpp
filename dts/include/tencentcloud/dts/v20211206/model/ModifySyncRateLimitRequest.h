@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取同步任务ID，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
-                     * @return JobId 同步任务ID，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+                     * 获取<p>同步任务ID，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
+                     * @return JobId <p>同步任务ID，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置同步任务ID，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
-                     * @param _jobId 同步任务ID，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+                     * 设置<p>同步任务ID，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
+                     * @param _jobId <p>同步任务ID，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取同步任务全量导出线程数、有效值为 1-16
-                     * @return DumpThread 同步任务全量导出线程数、有效值为 1-16
+                     * 获取<p>同步任务全量导出线程数、有效值为 1-16</p>
+                     * @return DumpThread <p>同步任务全量导出线程数、有效值为 1-16</p>
                      * 
                      */
                     int64_t GetDumpThread() const;
 
                     /**
-                     * 设置同步任务全量导出线程数、有效值为 1-16
-                     * @param _dumpThread 同步任务全量导出线程数、有效值为 1-16
+                     * 设置<p>同步任务全量导出线程数、有效值为 1-16</p>
+                     * @param _dumpThread <p>同步任务全量导出线程数、有效值为 1-16</p>
                      * 
                      */
                     void SetDumpThread(const int64_t& _dumpThread);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DumpThreadHasBeenSet() const;
 
                     /**
-                     * 获取同步任务全量导出的 Rps 限制、需要大于 0;对于mongodb最大值为20000，其他数据库最大值为50000000
-                     * @return DumpRps 同步任务全量导出的 Rps 限制、需要大于 0;对于mongodb最大值为20000，其他数据库最大值为50000000
+                     * 获取<p>同步任务全量导出的 Rps 限制、需要大于 0;对于mongodb最大值为20000，其他数据库最大值为50000000</p>
+                     * @return DumpRps <p>同步任务全量导出的 Rps 限制、需要大于 0;对于mongodb最大值为20000，其他数据库最大值为50000000</p>
                      * 
                      */
                     int64_t GetDumpRps() const;
 
                     /**
-                     * 设置同步任务全量导出的 Rps 限制、需要大于 0;对于mongodb最大值为20000，其他数据库最大值为50000000
-                     * @param _dumpRps 同步任务全量导出的 Rps 限制、需要大于 0;对于mongodb最大值为20000，其他数据库最大值为50000000
+                     * 设置<p>同步任务全量导出的 Rps 限制、需要大于 0;对于mongodb最大值为20000，其他数据库最大值为50000000</p>
+                     * @param _dumpRps <p>同步任务全量导出的 Rps 限制、需要大于 0;对于mongodb最大值为20000，其他数据库最大值为50000000</p>
                      * 
                      */
                     void SetDumpRps(const int64_t& _dumpRps);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DumpRpsHasBeenSet() const;
 
                     /**
-                     * 获取同步任务全量导入线程数、有效值为 1-16
-                     * @return LoadThread 同步任务全量导入线程数、有效值为 1-16
+                     * 获取<p>同步任务全量导入线程数、有效值为 1-16</p>
+                     * @return LoadThread <p>同步任务全量导入线程数、有效值为 1-16</p>
                      * 
                      */
                     int64_t GetLoadThread() const;
 
                     /**
-                     * 设置同步任务全量导入线程数、有效值为 1-16
-                     * @param _loadThread 同步任务全量导入线程数、有效值为 1-16
+                     * 设置<p>同步任务全量导入线程数、有效值为 1-16</p>
+                     * @param _loadThread <p>同步任务全量导入线程数、有效值为 1-16</p>
                      * 
                      */
                     void SetLoadThread(const int64_t& _loadThread);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool LoadThreadHasBeenSet() const;
 
                     /**
-                     * 获取同步任务增量导入线程数、有效值为 1-128
-                     * @return SinkerThread 同步任务增量导入线程数、有效值为 1-128
+                     * 获取<p>同步任务增量导入线程数、有效值为 1-128</p>
+                     * @return SinkerThread <p>同步任务增量导入线程数、有效值为 1-128</p>
                      * 
                      */
                     int64_t GetSinkerThread() const;
 
                     /**
-                     * 设置同步任务增量导入线程数、有效值为 1-128
-                     * @param _sinkerThread 同步任务增量导入线程数、有效值为 1-128
+                     * 设置<p>同步任务增量导入线程数、有效值为 1-128</p>
+                     * @param _sinkerThread <p>同步任务增量导入线程数、有效值为 1-128</p>
                      * 
                      */
                     void SetSinkerThread(const int64_t& _sinkerThread);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool SinkerThreadHasBeenSet() const;
 
                     /**
-                     * 获取同步任务全量导入的Rps
-                     * @return LoadRps 同步任务全量导入的Rps
+                     * 获取<p>同步任务全量导入的Rps</p>
+                     * @return LoadRps <p>同步任务全量导入的Rps</p>
                      * 
                      */
                     int64_t GetLoadRps() const;
 
                     /**
-                     * 设置同步任务全量导入的Rps
-                     * @param _loadRps 同步任务全量导入的Rps
+                     * 设置<p>同步任务全量导入的Rps</p>
+                     * @param _loadRps <p>同步任务全量导入的Rps</p>
                      * 
                      */
                     void SetLoadRps(const int64_t& _loadRps);
@@ -171,37 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 同步任务ID，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+                     * <p>同步任务ID，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 同步任务全量导出线程数、有效值为 1-16
+                     * <p>同步任务全量导出线程数、有效值为 1-16</p>
                      */
                     int64_t m_dumpThread;
                     bool m_dumpThreadHasBeenSet;
 
                     /**
-                     * 同步任务全量导出的 Rps 限制、需要大于 0;对于mongodb最大值为20000，其他数据库最大值为50000000
+                     * <p>同步任务全量导出的 Rps 限制、需要大于 0;对于mongodb最大值为20000，其他数据库最大值为50000000</p>
                      */
                     int64_t m_dumpRps;
                     bool m_dumpRpsHasBeenSet;
 
                     /**
-                     * 同步任务全量导入线程数、有效值为 1-16
+                     * <p>同步任务全量导入线程数、有效值为 1-16</p>
                      */
                     int64_t m_loadThread;
                     bool m_loadThreadHasBeenSet;
 
                     /**
-                     * 同步任务增量导入线程数、有效值为 1-128
+                     * <p>同步任务增量导入线程数、有效值为 1-128</p>
                      */
                     int64_t m_sinkerThread;
                     bool m_sinkerThreadHasBeenSet;
 
                     /**
-                     * 同步任务全量导入的Rps
+                     * <p>同步任务全量导入的Rps</p>
                      */
                     int64_t m_loadRps;
                     bool m_loadRpsHasBeenSet;

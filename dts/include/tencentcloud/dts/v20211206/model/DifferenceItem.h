@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据库名
-                     * @return Db 数据库名
+                     * 获取<p>数据库名</p>
+                     * @return Db <p>数据库名</p>
                      * 
                      */
                     std::string GetDb() const;
 
                     /**
-                     * 设置数据库名
-                     * @param _db 数据库名
+                     * 设置<p>数据库名</p>
+                     * @param _db <p>数据库名</p>
                      * 
                      */
                     void SetDb(const std::string& _db);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DbHasBeenSet() const;
 
                     /**
-                     * 获取schema
-                     * @return Schema schema
+                     * 获取<p>schema</p>
+                     * @return Schema <p>schema</p>
                      * 
                      */
                     std::string GetSchema() const;
 
                     /**
-                     * 设置schema
-                     * @param _schema schema
+                     * 设置<p>schema</p>
+                     * @param _schema <p>schema</p>
                      * 
                      */
                     void SetSchema(const std::string& _schema);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool SchemaHasBeenSet() const;
 
                     /**
-                     * 获取表名
-                     * @return Table 表名
+                     * 获取<p>表名</p>
+                     * @return Table <p>表名</p>
                      * 
                      */
                     std::string GetTable() const;
 
                     /**
-                     * 设置表名
-                     * @param _table 表名
+                     * 设置<p>表名</p>
+                     * @param _table <p>表名</p>
                      * 
                      */
                     void SetTable(const std::string& _table);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool TableHasBeenSet() const;
 
                     /**
-                     * 获取分块号
-                     * @return Chunk 分块号
+                     * 获取<p>分块号</p>
+                     * @return Chunk <p>分块号</p>
                      * 
                      */
                     int64_t GetChunk() const;
 
                     /**
-                     * 设置分块号
-                     * @param _chunk 分块号
+                     * 设置<p>分块号</p>
+                     * @param _chunk <p>分块号</p>
                      * 
                      */
                     void SetChunk(const int64_t& _chunk);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ChunkHasBeenSet() const;
 
                     /**
-                     * 获取源库数值
-                     * @return SrcItem 源库数值
+                     * 获取<p>源库数值</p>
+                     * @return SrcItem <p>源库数值</p>
                      * 
                      */
                     std::string GetSrcItem() const;
 
                     /**
-                     * 设置源库数值
-                     * @param _srcItem 源库数值
+                     * 设置<p>源库数值</p>
+                     * @param _srcItem <p>源库数值</p>
                      * 
                      */
                     void SetSrcItem(const std::string& _srcItem);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool SrcItemHasBeenSet() const;
 
                     /**
-                     * 获取目标库数值
-                     * @return DstItem 目标库数值
+                     * 获取<p>目标库数值</p>
+                     * @return DstItem <p>目标库数值</p>
                      * 
                      */
                     std::string GetDstItem() const;
 
                     /**
-                     * 设置目标库数值
-                     * @param _dstItem 目标库数值
+                     * 设置<p>目标库数值</p>
+                     * @param _dstItem <p>目标库数值</p>
                      * 
                      */
                     void SetDstItem(const std::string& _dstItem);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool DstItemHasBeenSet() const;
 
                     /**
-                     * 获取索引名称
-                     * @return IndexName 索引名称
+                     * 获取<p>索引名称</p>
+                     * @return IndexName <p>索引名称</p>
                      * 
                      */
                     std::string GetIndexName() const;
 
                     /**
-                     * 设置索引名称
-                     * @param _indexName 索引名称
+                     * 设置<p>索引名称</p>
+                     * @param _indexName <p>索引名称</p>
                      * 
                      */
                     void SetIndexName(const std::string& _indexName);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool IndexNameHasBeenSet() const;
 
                     /**
-                     * 获取索引下边界
-                     * @return LowerBoundary 索引下边界
+                     * 获取<p>索引下边界</p>
+                     * @return LowerBoundary <p>索引下边界</p>
                      * 
                      */
                     std::string GetLowerBoundary() const;
 
                     /**
-                     * 设置索引下边界
-                     * @param _lowerBoundary 索引下边界
+                     * 设置<p>索引下边界</p>
+                     * @param _lowerBoundary <p>索引下边界</p>
                      * 
                      */
                     void SetLowerBoundary(const std::string& _lowerBoundary);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool LowerBoundaryHasBeenSet() const;
 
                     /**
-                     * 获取索引上边界
-                     * @return UpperBoundary 索引上边界
+                     * 获取<p>索引上边界</p>
+                     * @return UpperBoundary <p>索引上边界</p>
                      * 
                      */
                     std::string GetUpperBoundary() const;
 
                     /**
-                     * 设置索引上边界
-                     * @param _upperBoundary 索引上边界
+                     * 设置<p>索引上边界</p>
+                     * @param _upperBoundary <p>索引上边界</p>
                      * 
                      */
                     void SetUpperBoundary(const std::string& _upperBoundary);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool UpperBoundaryHasBeenSet() const;
 
                     /**
-                     * 获取对比消耗时间,单位为 ms
-                     * @return CostTime 对比消耗时间,单位为 ms
+                     * 获取<p>对比消耗时间,单位为 ms</p>
+                     * @return CostTime <p>对比消耗时间,单位为 ms</p>
                      * 
                      */
                     double GetCostTime() const;
 
                     /**
-                     * 设置对比消耗时间,单位为 ms
-                     * @param _costTime 对比消耗时间,单位为 ms
+                     * 设置<p>对比消耗时间,单位为 ms</p>
+                     * @param _costTime <p>对比消耗时间,单位为 ms</p>
                      * 
                      */
                     void SetCostTime(const double& _costTime);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool CostTimeHasBeenSet() const;
 
                     /**
-                     * 获取完成时间
-                     * @return FinishedAt 完成时间
+                     * 获取<p>完成时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return FinishedAt <p>完成时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetFinishedAt() const;
 
                     /**
-                     * 设置完成时间
-                     * @param _finishedAt 完成时间
+                     * 设置<p>完成时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @param _finishedAt <p>完成时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     void SetFinishedAt(const std::string& _finishedAt);
@@ -280,67 +280,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据库名
+                     * <p>数据库名</p>
                      */
                     std::string m_db;
                     bool m_dbHasBeenSet;
 
                     /**
-                     * schema
+                     * <p>schema</p>
                      */
                     std::string m_schema;
                     bool m_schemaHasBeenSet;
 
                     /**
-                     * 表名
+                     * <p>表名</p>
                      */
                     std::string m_table;
                     bool m_tableHasBeenSet;
 
                     /**
-                     * 分块号
+                     * <p>分块号</p>
                      */
                     int64_t m_chunk;
                     bool m_chunkHasBeenSet;
 
                     /**
-                     * 源库数值
+                     * <p>源库数值</p>
                      */
                     std::string m_srcItem;
                     bool m_srcItemHasBeenSet;
 
                     /**
-                     * 目标库数值
+                     * <p>目标库数值</p>
                      */
                     std::string m_dstItem;
                     bool m_dstItemHasBeenSet;
 
                     /**
-                     * 索引名称
+                     * <p>索引名称</p>
                      */
                     std::string m_indexName;
                     bool m_indexNameHasBeenSet;
 
                     /**
-                     * 索引下边界
+                     * <p>索引下边界</p>
                      */
                     std::string m_lowerBoundary;
                     bool m_lowerBoundaryHasBeenSet;
 
                     /**
-                     * 索引上边界
+                     * <p>索引上边界</p>
                      */
                     std::string m_upperBoundary;
                     bool m_upperBoundaryHasBeenSet;
 
                     /**
-                     * 对比消耗时间,单位为 ms
+                     * <p>对比消耗时间,单位为 ms</p>
                      */
                     double m_costTime;
                     bool m_costTimeHasBeenSet;
 
                     /**
-                     * 完成时间
+                     * <p>完成时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_finishedAt;
                     bool m_finishedAtHasBeenSet;

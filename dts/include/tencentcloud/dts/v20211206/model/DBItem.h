@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要迁移或同步的库名，当ObjectMode为partial时，此项必填
-                     * @return DbName 需要迁移或同步的库名，当ObjectMode为partial时，此项必填
+                     * 获取<p>需要迁移或同步的库名，当ObjectMode为partial时，此项必填</p>
+                     * @return DbName <p>需要迁移或同步的库名，当ObjectMode为partial时，此项必填</p>
                      * 
                      */
                     std::string GetDbName() const;
 
                     /**
-                     * 设置需要迁移或同步的库名，当ObjectMode为partial时，此项必填
-                     * @param _dbName 需要迁移或同步的库名，当ObjectMode为partial时，此项必填
+                     * 设置<p>需要迁移或同步的库名，当ObjectMode为partial时，此项必填</p>
+                     * @param _dbName <p>需要迁移或同步的库名，当ObjectMode为partial时，此项必填</p>
                      * 
                      */
                     void SetDbName(const std::string& _dbName);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool DbNameHasBeenSet() const;
 
                     /**
-                     * 获取迁移或同步后的库名，默认与源库相同
-                     * @return NewDbName 迁移或同步后的库名，默认与源库相同
+                     * 获取<p>迁移或同步后的库名，默认与源库相同</p>
+                     * @return NewDbName <p>迁移或同步后的库名，默认与源库相同</p>
                      * 
                      */
                     std::string GetNewDbName() const;
 
                     /**
-                     * 设置迁移或同步后的库名，默认与源库相同
-                     * @param _newDbName 迁移或同步后的库名，默认与源库相同
+                     * 设置<p>迁移或同步后的库名，默认与源库相同</p>
+                     * @param _newDbName <p>迁移或同步后的库名，默认与源库相同</p>
                      * 
                      */
                     void SetNewDbName(const std::string& _newDbName);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool NewDbNameHasBeenSet() const;
 
                     /**
-                     * 获取迁移或同步的 schema
-                     * @return SchemaName 迁移或同步的 schema
+                     * 获取<p>迁移或同步的 schema</p>
+                     * @return SchemaName <p>迁移或同步的 schema</p>
                      * 
                      */
                     std::string GetSchemaName() const;
 
                     /**
-                     * 设置迁移或同步的 schema
-                     * @param _schemaName 迁移或同步的 schema
+                     * 设置<p>迁移或同步的 schema</p>
+                     * @param _schemaName <p>迁移或同步的 schema</p>
                      * 
                      */
                     void SetSchemaName(const std::string& _schemaName);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool SchemaNameHasBeenSet() const;
 
                     /**
-                     * 获取迁移或同步后的 schema name
-                     * @return NewSchemaName 迁移或同步后的 schema name
+                     * 获取<p>迁移或同步后的 schema name</p>
+                     * @return NewSchemaName <p>迁移或同步后的 schema name</p>
                      * 
                      */
                     std::string GetNewSchemaName() const;
 
                     /**
-                     * 设置迁移或同步后的 schema name
-                     * @param _newSchemaName 迁移或同步后的 schema name
+                     * 设置<p>迁移或同步后的 schema name</p>
+                     * @param _newSchemaName <p>迁移或同步后的 schema name</p>
                      * 
                      */
                     void SetNewSchemaName(const std::string& _newSchemaName);
@@ -134,15 +134,15 @@ namespace TencentCloud
                     bool NewSchemaNameHasBeenSet() const;
 
                     /**
-                     * 获取DB选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当ObjectMode为partial时，此项必填
-                     * @return DBMode DB选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当ObjectMode为partial时，此项必填
+                     * 获取<p>DB选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当ObjectMode为partial时，此项必填</p>
+                     * @return DBMode <p>DB选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当ObjectMode为partial时，此项必填</p>
                      * 
                      */
                     std::string GetDBMode() const;
 
                     /**
-                     * 设置DB选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当ObjectMode为partial时，此项必填
-                     * @param _dBMode DB选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当ObjectMode为partial时，此项必填
+                     * 设置<p>DB选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当ObjectMode为partial时，此项必填</p>
+                     * @param _dBMode <p>DB选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当ObjectMode为partial时，此项必填</p>
                      * 
                      */
                     void SetDBMode(const std::string& _dBMode);
@@ -155,15 +155,15 @@ namespace TencentCloud
                     bool DBModeHasBeenSet() const;
 
                     /**
-                     * 获取schema选择模式: all(为当前对象下的所有对象)，partial(部分对象)
-                     * @return SchemaMode schema选择模式: all(为当前对象下的所有对象)，partial(部分对象)
+                     * 获取<p>schema选择模式: all(为当前对象下的所有对象)，partial(部分对象)</p>
+                     * @return SchemaMode <p>schema选择模式: all(为当前对象下的所有对象)，partial(部分对象)</p>
                      * 
                      */
                     std::string GetSchemaMode() const;
 
                     /**
-                     * 设置schema选择模式: all(为当前对象下的所有对象)，partial(部分对象)
-                     * @param _schemaMode schema选择模式: all(为当前对象下的所有对象)，partial(部分对象)
+                     * 设置<p>schema选择模式: all(为当前对象下的所有对象)，partial(部分对象)</p>
+                     * @param _schemaMode <p>schema选择模式: all(为当前对象下的所有对象)，partial(部分对象)</p>
                      * 
                      */
                     void SetSchemaMode(const std::string& _schemaMode);
@@ -176,15 +176,15 @@ namespace TencentCloud
                     bool SchemaModeHasBeenSet() const;
 
                     /**
-                     * 获取表选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当DBMode为partial时此项必填
-                     * @return TableMode 表选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当DBMode为partial时此项必填
+                     * 获取<p>表选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当DBMode为partial时此项必填</p>
+                     * @return TableMode <p>表选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当DBMode为partial时此项必填</p>
                      * 
                      */
                     std::string GetTableMode() const;
 
                     /**
-                     * 设置表选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当DBMode为partial时此项必填
-                     * @param _tableMode 表选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当DBMode为partial时此项必填
+                     * 设置<p>表选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当DBMode为partial时此项必填</p>
+                     * @param _tableMode <p>表选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当DBMode为partial时此项必填</p>
                      * 
                      */
                     void SetTableMode(const std::string& _tableMode);
@@ -197,15 +197,15 @@ namespace TencentCloud
                     bool TableModeHasBeenSet() const;
 
                     /**
-                     * 获取表图对象集合，当 TableMode 为 partial 时，此项需要填写
-                     * @return Tables 表图对象集合，当 TableMode 为 partial 时，此项需要填写
+                     * 获取<p>表图对象集合，当 TableMode 为 partial 时，此项需要填写</p>
+                     * @return Tables <p>表图对象集合，当 TableMode 为 partial 时，此项需要填写</p>
                      * 
                      */
                     std::vector<TableItem> GetTables() const;
 
                     /**
-                     * 设置表图对象集合，当 TableMode 为 partial 时，此项需要填写
-                     * @param _tables 表图对象集合，当 TableMode 为 partial 时，此项需要填写
+                     * 设置<p>表图对象集合，当 TableMode 为 partial 时，此项需要填写</p>
+                     * @param _tables <p>表图对象集合，当 TableMode 为 partial 时，此项需要填写</p>
                      * 
                      */
                     void SetTables(const std::vector<TableItem>& _tables);
@@ -218,15 +218,15 @@ namespace TencentCloud
                     bool TablesHasBeenSet() const;
 
                     /**
-                     * 获取视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象
-                     * @return ViewMode 视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象
+                     * 获取<p>视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象</p>
+                     * @return ViewMode <p>视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象</p>
                      * 
                      */
                     std::string GetViewMode() const;
 
                     /**
-                     * 设置视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象
-                     * @param _viewMode 视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象
+                     * 设置<p>视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象</p>
+                     * @param _viewMode <p>视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象</p>
                      * 
                      */
                     void SetViewMode(const std::string& _viewMode);
@@ -239,15 +239,15 @@ namespace TencentCloud
                     bool ViewModeHasBeenSet() const;
 
                     /**
-                     * 获取视图对象集合，当 ViewMode 为 partial 时， 此项需要填写
-                     * @return Views 视图对象集合，当 ViewMode 为 partial 时， 此项需要填写
+                     * 获取<p>视图对象集合，当 ViewMode 为 partial 时， 此项需要填写</p>
+                     * @return Views <p>视图对象集合，当 ViewMode 为 partial 时， 此项需要填写</p>
                      * 
                      */
                     std::vector<ViewItem> GetViews() const;
 
                     /**
-                     * 设置视图对象集合，当 ViewMode 为 partial 时， 此项需要填写
-                     * @param _views 视图对象集合，当 ViewMode 为 partial 时， 此项需要填写
+                     * 设置<p>视图对象集合，当 ViewMode 为 partial 时， 此项需要填写</p>
+                     * @param _views <p>视图对象集合，当 ViewMode 为 partial 时， 此项需要填写</p>
                      * 
                      */
                     void SetViews(const std::vector<ViewItem>& _views);
@@ -260,15 +260,15 @@ namespace TencentCloud
                     bool ViewsHasBeenSet() const;
 
                     /**
-                     * 获取postgresql独有参数，角色选择模式: all 为当前对象下的所有角色对象,partial 为部分角色对象
-                     * @return RoleMode postgresql独有参数，角色选择模式: all 为当前对象下的所有角色对象,partial 为部分角色对象
+                     * 获取<p>postgresql独有参数，角色选择模式: all 为当前对象下的所有角色对象,partial 为部分角色对象</p>
+                     * @return RoleMode <p>postgresql独有参数，角色选择模式: all 为当前对象下的所有角色对象,partial 为部分角色对象</p>
                      * 
                      */
                     std::string GetRoleMode() const;
 
                     /**
-                     * 设置postgresql独有参数，角色选择模式: all 为当前对象下的所有角色对象,partial 为部分角色对象
-                     * @param _roleMode postgresql独有参数，角色选择模式: all 为当前对象下的所有角色对象,partial 为部分角色对象
+                     * 设置<p>postgresql独有参数，角色选择模式: all 为当前对象下的所有角色对象,partial 为部分角色对象</p>
+                     * @param _roleMode <p>postgresql独有参数，角色选择模式: all 为当前对象下的所有角色对象,partial 为部分角色对象</p>
                      * 
                      */
                     void SetRoleMode(const std::string& _roleMode);
@@ -281,15 +281,15 @@ namespace TencentCloud
                     bool RoleModeHasBeenSet() const;
 
                     /**
-                     * 获取postgresql独有参数，当 RoleMode 为 partial 时， 此项需要填写
-                     * @return Roles postgresql独有参数，当 RoleMode 为 partial 时， 此项需要填写
+                     * 获取<p>postgresql独有参数，当 RoleMode 为 partial 时， 此项需要填写</p>
+                     * @return Roles <p>postgresql独有参数，当 RoleMode 为 partial 时， 此项需要填写</p>
                      * 
                      */
                     std::vector<RoleItem> GetRoles() const;
 
                     /**
-                     * 设置postgresql独有参数，当 RoleMode 为 partial 时， 此项需要填写
-                     * @param _roles postgresql独有参数，当 RoleMode 为 partial 时， 此项需要填写
+                     * 设置<p>postgresql独有参数，当 RoleMode 为 partial 时， 此项需要填写</p>
+                     * @param _roles <p>postgresql独有参数，当 RoleMode 为 partial 时， 此项需要填写</p>
                      * 
                      */
                     void SetRoles(const std::vector<RoleItem>& _roles);
@@ -302,15 +302,15 @@ namespace TencentCloud
                     bool RolesHasBeenSet() const;
 
                     /**
-                     * 获取选择要同步的模式，partial为部分，all为整选
-                     * @return FunctionMode 选择要同步的模式，partial为部分，all为整选
+                     * 获取<p>选择要同步的模式，partial为部分，all为整选</p>
+                     * @return FunctionMode <p>选择要同步的模式，partial为部分，all为整选</p>
                      * 
                      */
                     std::string GetFunctionMode() const;
 
                     /**
-                     * 设置选择要同步的模式，partial为部分，all为整选
-                     * @param _functionMode 选择要同步的模式，partial为部分，all为整选
+                     * 设置<p>选择要同步的模式，partial为部分，all为整选</p>
+                     * @param _functionMode <p>选择要同步的模式，partial为部分，all为整选</p>
                      * 
                      */
                     void SetFunctionMode(const std::string& _functionMode);
@@ -323,15 +323,15 @@ namespace TencentCloud
                     bool FunctionModeHasBeenSet() const;
 
                     /**
-                     * 获取选择要同步的模式，partial为部分，all为整选
-                     * @return TriggerMode 选择要同步的模式，partial为部分，all为整选
+                     * 获取<p>选择要同步的模式，partial为部分，all为整选</p>
+                     * @return TriggerMode <p>选择要同步的模式，partial为部分，all为整选</p>
                      * 
                      */
                     std::string GetTriggerMode() const;
 
                     /**
-                     * 设置选择要同步的模式，partial为部分，all为整选
-                     * @param _triggerMode 选择要同步的模式，partial为部分，all为整选
+                     * 设置<p>选择要同步的模式，partial为部分，all为整选</p>
+                     * @param _triggerMode <p>选择要同步的模式，partial为部分，all为整选</p>
                      * 
                      */
                     void SetTriggerMode(const std::string& _triggerMode);
@@ -344,15 +344,15 @@ namespace TencentCloud
                     bool TriggerModeHasBeenSet() const;
 
                     /**
-                     * 获取选择要同步的模式，partial为部分，all为整选
-                     * @return EventMode 选择要同步的模式，partial为部分，all为整选
+                     * 获取<p>选择要同步的模式，partial为部分，all为整选</p>
+                     * @return EventMode <p>选择要同步的模式，partial为部分，all为整选</p>
                      * 
                      */
                     std::string GetEventMode() const;
 
                     /**
-                     * 设置选择要同步的模式，partial为部分，all为整选
-                     * @param _eventMode 选择要同步的模式，partial为部分，all为整选
+                     * 设置<p>选择要同步的模式，partial为部分，all为整选</p>
+                     * @param _eventMode <p>选择要同步的模式，partial为部分，all为整选</p>
                      * 
                      */
                     void SetEventMode(const std::string& _eventMode);
@@ -365,15 +365,15 @@ namespace TencentCloud
                     bool EventModeHasBeenSet() const;
 
                     /**
-                     * 获取选择要同步的模式，partial为部分，all为整选
-                     * @return ProcedureMode 选择要同步的模式，partial为部分，all为整选
+                     * 获取<p>选择要同步的模式，partial为部分，all为整选</p>
+                     * @return ProcedureMode <p>选择要同步的模式，partial为部分，all为整选</p>
                      * 
                      */
                     std::string GetProcedureMode() const;
 
                     /**
-                     * 设置选择要同步的模式，partial为部分，all为整选
-                     * @param _procedureMode 选择要同步的模式，partial为部分，all为整选
+                     * 设置<p>选择要同步的模式，partial为部分，all为整选</p>
+                     * @param _procedureMode <p>选择要同步的模式，partial为部分，all为整选</p>
                      * 
                      */
                     void SetProcedureMode(const std::string& _procedureMode);
@@ -386,15 +386,15 @@ namespace TencentCloud
                     bool ProcedureModeHasBeenSet() const;
 
                     /**
-                     * 获取FunctionMode取值为partial时需要填写
-                     * @return Functions FunctionMode取值为partial时需要填写
+                     * 获取<p>FunctionMode取值为partial时需要填写</p>
+                     * @return Functions <p>FunctionMode取值为partial时需要填写</p>
                      * 
                      */
                     std::vector<std::string> GetFunctions() const;
 
                     /**
-                     * 设置FunctionMode取值为partial时需要填写
-                     * @param _functions FunctionMode取值为partial时需要填写
+                     * 设置<p>FunctionMode取值为partial时需要填写</p>
+                     * @param _functions <p>FunctionMode取值为partial时需要填写</p>
                      * 
                      */
                     void SetFunctions(const std::vector<std::string>& _functions);
@@ -407,15 +407,15 @@ namespace TencentCloud
                     bool FunctionsHasBeenSet() const;
 
                     /**
-                     * 获取ProcedureMode取值为partial时需要填写
-                     * @return Procedures ProcedureMode取值为partial时需要填写
+                     * 获取<p>ProcedureMode取值为partial时需要填写</p>
+                     * @return Procedures <p>ProcedureMode取值为partial时需要填写</p>
                      * 
                      */
                     std::vector<std::string> GetProcedures() const;
 
                     /**
-                     * 设置ProcedureMode取值为partial时需要填写
-                     * @param _procedures ProcedureMode取值为partial时需要填写
+                     * 设置<p>ProcedureMode取值为partial时需要填写</p>
+                     * @param _procedures <p>ProcedureMode取值为partial时需要填写</p>
                      * 
                      */
                     void SetProcedures(const std::vector<std::string>& _procedures);
@@ -428,15 +428,15 @@ namespace TencentCloud
                     bool ProceduresHasBeenSet() const;
 
                     /**
-                     * 获取EventMode取值为partial时需要填写
-                     * @return Events EventMode取值为partial时需要填写
+                     * 获取<p>EventMode取值为partial时需要填写</p>
+                     * @return Events <p>EventMode取值为partial时需要填写</p>
                      * 
                      */
                     std::vector<std::string> GetEvents() const;
 
                     /**
-                     * 设置EventMode取值为partial时需要填写
-                     * @param _events EventMode取值为partial时需要填写
+                     * 设置<p>EventMode取值为partial时需要填写</p>
+                     * @param _events <p>EventMode取值为partial时需要填写</p>
                      * 
                      */
                     void SetEvents(const std::vector<std::string>& _events);
@@ -449,15 +449,15 @@ namespace TencentCloud
                     bool EventsHasBeenSet() const;
 
                     /**
-                     * 获取TriggerMode取值为partial时需要填写
-                     * @return Triggers TriggerMode取值为partial时需要填写
+                     * 获取<p>TriggerMode取值为partial时需要填写</p>
+                     * @return Triggers <p>TriggerMode取值为partial时需要填写</p>
                      * 
                      */
                     std::vector<std::string> GetTriggers() const;
 
                     /**
-                     * 设置TriggerMode取值为partial时需要填写
-                     * @param _triggers TriggerMode取值为partial时需要填写
+                     * 设置<p>TriggerMode取值为partial时需要填写</p>
+                     * @param _triggers <p>TriggerMode取值为partial时需要填写</p>
                      * 
                      */
                     void SetTriggers(const std::vector<std::string>& _triggers);
@@ -472,121 +472,121 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要迁移或同步的库名，当ObjectMode为partial时，此项必填
+                     * <p>需要迁移或同步的库名，当ObjectMode为partial时，此项必填</p>
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;
 
                     /**
-                     * 迁移或同步后的库名，默认与源库相同
+                     * <p>迁移或同步后的库名，默认与源库相同</p>
                      */
                     std::string m_newDbName;
                     bool m_newDbNameHasBeenSet;
 
                     /**
-                     * 迁移或同步的 schema
+                     * <p>迁移或同步的 schema</p>
                      */
                     std::string m_schemaName;
                     bool m_schemaNameHasBeenSet;
 
                     /**
-                     * 迁移或同步后的 schema name
+                     * <p>迁移或同步后的 schema name</p>
                      */
                     std::string m_newSchemaName;
                     bool m_newSchemaNameHasBeenSet;
 
                     /**
-                     * DB选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当ObjectMode为partial时，此项必填
+                     * <p>DB选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当ObjectMode为partial时，此项必填</p>
                      */
                     std::string m_dBMode;
                     bool m_dBModeHasBeenSet;
 
                     /**
-                     * schema选择模式: all(为当前对象下的所有对象)，partial(部分对象)
+                     * <p>schema选择模式: all(为当前对象下的所有对象)，partial(部分对象)</p>
                      */
                     std::string m_schemaMode;
                     bool m_schemaModeHasBeenSet;
 
                     /**
-                     * 表选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当DBMode为partial时此项必填
+                     * <p>表选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当DBMode为partial时此项必填</p>
                      */
                     std::string m_tableMode;
                     bool m_tableModeHasBeenSet;
 
                     /**
-                     * 表图对象集合，当 TableMode 为 partial 时，此项需要填写
+                     * <p>表图对象集合，当 TableMode 为 partial 时，此项需要填写</p>
                      */
                     std::vector<TableItem> m_tables;
                     bool m_tablesHasBeenSet;
 
                     /**
-                     * 视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象
+                     * <p>视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象</p>
                      */
                     std::string m_viewMode;
                     bool m_viewModeHasBeenSet;
 
                     /**
-                     * 视图对象集合，当 ViewMode 为 partial 时， 此项需要填写
+                     * <p>视图对象集合，当 ViewMode 为 partial 时， 此项需要填写</p>
                      */
                     std::vector<ViewItem> m_views;
                     bool m_viewsHasBeenSet;
 
                     /**
-                     * postgresql独有参数，角色选择模式: all 为当前对象下的所有角色对象,partial 为部分角色对象
+                     * <p>postgresql独有参数，角色选择模式: all 为当前对象下的所有角色对象,partial 为部分角色对象</p>
                      */
                     std::string m_roleMode;
                     bool m_roleModeHasBeenSet;
 
                     /**
-                     * postgresql独有参数，当 RoleMode 为 partial 时， 此项需要填写
+                     * <p>postgresql独有参数，当 RoleMode 为 partial 时， 此项需要填写</p>
                      */
                     std::vector<RoleItem> m_roles;
                     bool m_rolesHasBeenSet;
 
                     /**
-                     * 选择要同步的模式，partial为部分，all为整选
+                     * <p>选择要同步的模式，partial为部分，all为整选</p>
                      */
                     std::string m_functionMode;
                     bool m_functionModeHasBeenSet;
 
                     /**
-                     * 选择要同步的模式，partial为部分，all为整选
+                     * <p>选择要同步的模式，partial为部分，all为整选</p>
                      */
                     std::string m_triggerMode;
                     bool m_triggerModeHasBeenSet;
 
                     /**
-                     * 选择要同步的模式，partial为部分，all为整选
+                     * <p>选择要同步的模式，partial为部分，all为整选</p>
                      */
                     std::string m_eventMode;
                     bool m_eventModeHasBeenSet;
 
                     /**
-                     * 选择要同步的模式，partial为部分，all为整选
+                     * <p>选择要同步的模式，partial为部分，all为整选</p>
                      */
                     std::string m_procedureMode;
                     bool m_procedureModeHasBeenSet;
 
                     /**
-                     * FunctionMode取值为partial时需要填写
+                     * <p>FunctionMode取值为partial时需要填写</p>
                      */
                     std::vector<std::string> m_functions;
                     bool m_functionsHasBeenSet;
 
                     /**
-                     * ProcedureMode取值为partial时需要填写
+                     * <p>ProcedureMode取值为partial时需要填写</p>
                      */
                     std::vector<std::string> m_procedures;
                     bool m_proceduresHasBeenSet;
 
                     /**
-                     * EventMode取值为partial时需要填写
+                     * <p>EventMode取值为partial时需要填写</p>
                      */
                     std::vector<std::string> m_events;
                     bool m_eventsHasBeenSet;
 
                     /**
-                     * TriggerMode取值为partial时需要填写
+                     * <p>TriggerMode取值为partial时需要填写</p>
                      */
                     std::vector<std::string> m_triggers;
                     bool m_triggersHasBeenSet;

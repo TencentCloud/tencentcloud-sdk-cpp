@@ -54,8 +54,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据迁移任务ID
-                     * @return JobId 数据迁移任务ID
+                     * 获取<p>数据迁移任务ID</p>
+                     * @return JobId <p>数据迁移任务ID</p>
                      * 
                      */
                     std::string GetJobId() const;
@@ -68,8 +68,8 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取数据迁移任务名称
-                     * @return JobName 数据迁移任务名称
+                     * 获取<p>数据迁移任务名称</p>
+                     * @return JobName <p>数据迁移任务名称</p>
                      * 
                      */
                     std::string GetJobName() const;
@@ -82,8 +82,8 @@ namespace TencentCloud
                     bool JobNameHasBeenSet() const;
 
                     /**
-                     * 获取任务创建(提交)时间，格式为 yyyy-mm-dd hh:mm:ss
-                     * @return CreateTime 任务创建(提交)时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * 获取<p>任务创建(提交)时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return CreateTime <p>任务创建(提交)时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetCreateTime() const;
@@ -96,8 +96,8 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务更新时间，格式为 yyyy-mm-dd hh:mm:ss
-                     * @return UpdateTime 任务更新时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * 获取<p>任务更新时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return UpdateTime <p>任务更新时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
@@ -110,8 +110,8 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务开始执行时间，格式为 yyyy-mm-dd hh:mm:ss
-                     * @return StartTime 任务开始执行时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * 获取<p>任务开始执行时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return StartTime <p>任务开始执行时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetStartTime() const;
@@ -124,8 +124,8 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务执行结束时间，格式为 yyyy-mm-dd hh:mm:ss
-                     * @return EndTime 任务执行结束时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * 获取<p>任务执行结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return EndTime <p>任务执行结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetEndTime() const;
@@ -138,8 +138,8 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取迁移任务简要错误信息
-                     * @return BriefMsg 迁移任务简要错误信息
+                     * 获取<p>迁移任务简要错误信息</p>
+                     * @return BriefMsg <p>迁移任务简要错误信息</p>
                      * 
                      */
                     std::string GetBriefMsg() const;
@@ -152,12 +152,8 @@ namespace TencentCloud
                     bool BriefMsgHasBeenSet() const;
 
                     /**
-                     * 获取任务状态，取值为：created(创建完成)、checking(校验中)、checkPass(校验通过)、checkNotPass(校验不通过)、readyRun(准备运行)、running(任务运行中)、readyComplete(准备完成)、success(任务成功)、failed(任务失败)、stopping(中止中)、completing(完成中)、
-pausing(暂停中)、
-manualPaused(已暂停)
-                     * @return Status 任务状态，取值为：created(创建完成)、checking(校验中)、checkPass(校验通过)、checkNotPass(校验不通过)、readyRun(准备运行)、running(任务运行中)、readyComplete(准备完成)、success(任务成功)、failed(任务失败)、stopping(中止中)、completing(完成中)、
-pausing(暂停中)、
-manualPaused(已暂停)
+                     * 获取<p>任务状态，取值为：created(创建完成)、checking(校验中)、checkPass(校验通过)、checkNotPass(校验不通过)、readyRun(准备运行)、running(任务运行中)、readyComplete(准备完成)、success(任务成功)、failed(任务失败)、stopping(中止中)、completing(完成中)、<br>pausing(暂停中)、<br>manualPaused(已暂停)</p>
+                     * @return Status <p>任务状态，取值为：created(创建完成)、checking(校验中)、checkPass(校验通过)、checkNotPass(校验不通过)、readyRun(准备运行)、running(任务运行中)、readyComplete(准备完成)、success(任务成功)、failed(任务失败)、stopping(中止中)、completing(完成中)、<br>pausing(暂停中)、<br>manualPaused(已暂停)</p>
                      * 
                      */
                     std::string GetStatus() const;
@@ -170,8 +166,8 @@ manualPaused(已暂停)
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取任务操作信息
-                     * @return Action 任务操作信息
+                     * 获取<p>任务操作信息</p>
+                     * @return Action <p>任务操作信息</p>
                      * 
                      */
                     MigrateAction GetAction() const;
@@ -184,8 +180,8 @@ manualPaused(已暂停)
                     bool ActionHasBeenSet() const;
 
                     /**
-                     * 获取迁移执行过程信息，在校验阶段显示校验过程步骤信息，在迁移阶段会显示迁移步骤信息
-                     * @return StepInfo 迁移执行过程信息，在校验阶段显示校验过程步骤信息，在迁移阶段会显示迁移步骤信息
+                     * 获取<p>迁移执行过程信息，在校验阶段显示校验过程步骤信息，在迁移阶段会显示迁移步骤信息</p>
+                     * @return StepInfo <p>迁移执行过程信息，在校验阶段显示校验过程步骤信息，在迁移阶段会显示迁移步骤信息</p>
                      * 
                      */
                     MigrateDetailInfo GetStepInfo() const;
@@ -198,8 +194,8 @@ manualPaused(已暂停)
                     bool StepInfoHasBeenSet() const;
 
                     /**
-                     * 获取源实例信息
-                     * @return SrcInfo 源实例信息
+                     * 获取<p>源实例信息</p>
+                     * @return SrcInfo <p>源实例信息</p>
                      * 
                      */
                     DBEndpointInfo GetSrcInfo() const;
@@ -212,8 +208,8 @@ manualPaused(已暂停)
                     bool SrcInfoHasBeenSet() const;
 
                     /**
-                     * 获取目标端信息
-                     * @return DstInfo 目标端信息
+                     * 获取<p>目标端信息</p>
+                     * @return DstInfo <p>目标端信息</p>
                      * 
                      */
                     DBEndpointInfo GetDstInfo() const;
@@ -226,8 +222,8 @@ manualPaused(已暂停)
                     bool DstInfoHasBeenSet() const;
 
                     /**
-                     * 获取数据一致性校验结果
-                     * @return CompareTask 数据一致性校验结果
+                     * 获取<p>数据一致性校验结果</p>
+                     * @return CompareTask <p>数据一致性校验结果</p>
                      * 
                      */
                     CompareTaskInfo GetCompareTask() const;
@@ -240,8 +236,8 @@ manualPaused(已暂停)
                     bool CompareTaskHasBeenSet() const;
 
                     /**
-                     * 获取标签信息
-                     * @return Tags 标签信息
+                     * 获取<p>标签信息</p>
+                     * @return Tags <p>标签信息</p>
                      * 
                      */
                     std::vector<TagItem> GetTags() const;
@@ -254,8 +250,8 @@ manualPaused(已暂停)
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取运行模式，取值如：immediate(表示立即运行)、timed(表示定时运行)
-                     * @return RunMode 运行模式，取值如：immediate(表示立即运行)、timed(表示定时运行)
+                     * 获取<p>运行模式，取值如：immediate(表示立即运行)、timed(表示定时运行)</p>
+                     * @return RunMode <p>运行模式，取值如：immediate(表示立即运行)、timed(表示定时运行)</p>
                      * 
                      */
                     std::string GetRunMode() const;
@@ -268,8 +264,8 @@ manualPaused(已暂停)
                     bool RunModeHasBeenSet() const;
 
                     /**
-                     * 获取期待启动时间，当RunMode取值为timed时，此值必填，形如："2006-01-02 15:04:05"
-                     * @return ExpectRunTime 期待启动时间，当RunMode取值为timed时，此值必填，形如："2006-01-02 15:04:05"
+                     * 获取<p>期待启动时间，当 <code>RunMode</code> 取值为 <code>timed</code> 时此值必填。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return ExpectRunTime <p>期待启动时间，当 <code>RunMode</code> 取值为 <code>timed</code> 时此值必填。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetExpectRunTime() const;
@@ -282,8 +278,8 @@ manualPaused(已暂停)
                     bool ExpectRunTimeHasBeenSet() const;
 
                     /**
-                     * 获取迁移选项，描述任务如何执行迁移等一系列配置信息
-                     * @return MigrateOption 迁移选项，描述任务如何执行迁移等一系列配置信息
+                     * 获取<p>迁移选项，描述任务如何执行迁移等一系列配置信息</p>
+                     * @return MigrateOption <p>迁移选项，描述任务如何执行迁移等一系列配置信息</p>
                      * 
                      */
                     MigrateOption GetMigrateOption() const;
@@ -296,8 +292,8 @@ manualPaused(已暂停)
                     bool MigrateOptionHasBeenSet() const;
 
                     /**
-                     * 获取校验任务运行详情
-                     * @return CheckStepInfo 校验任务运行详情
+                     * 获取<p>校验任务运行详情</p>
+                     * @return CheckStepInfo <p>校验任务运行详情</p>
                      * 
                      */
                     CheckStepInfo GetCheckStepInfo() const;
@@ -310,8 +306,8 @@ manualPaused(已暂停)
                     bool CheckStepInfoHasBeenSet() const;
 
                     /**
-                     * 获取描述计费相关的信息
-                     * @return TradeInfo 描述计费相关的信息
+                     * 获取<p>描述计费相关的信息</p>
+                     * @return TradeInfo <p>描述计费相关的信息</p>
                      * 
                      */
                     TradeInfo GetTradeInfo() const;
@@ -324,8 +320,8 @@ manualPaused(已暂停)
                     bool TradeInfoHasBeenSet() const;
 
                     /**
-                     * 获取任务错误信息
-                     * @return ErrorInfo 任务错误信息
+                     * 获取<p>任务错误信息</p>
+                     * @return ErrorInfo <p>任务错误信息</p>
                      * 
                      */
                     std::vector<ErrorInfoItem> GetErrorInfo() const;
@@ -338,8 +334,8 @@ manualPaused(已暂停)
                     bool ErrorInfoHasBeenSet() const;
 
                     /**
-                     * 获取全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
-                     * @return DumperResumeCtrl 全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
+                     * 获取<p>全量导出可重入标识：enum::&quot;yes&quot;/&quot;no&quot;。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传</p>
+                     * @return DumperResumeCtrl <p>全量导出可重入标识：enum::&quot;yes&quot;/&quot;no&quot;。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传</p>
                      * 
                      */
                     std::string GetDumperResumeCtrl() const;
@@ -352,8 +348,8 @@ manualPaused(已暂停)
                     bool DumperResumeCtrlHasBeenSet() const;
 
                     /**
-                     * 获取任务的限速信息
-                     * @return RateLimitOption 任务的限速信息
+                     * 获取<p>任务的限速信息</p>
+                     * @return RateLimitOption <p>任务的限速信息</p>
                      * 
                      */
                     RateLimitOption GetRateLimitOption() const;
@@ -368,135 +364,133 @@ manualPaused(已暂停)
                 private:
 
                     /**
-                     * 数据迁移任务ID
+                     * <p>数据迁移任务ID</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 数据迁移任务名称
+                     * <p>数据迁移任务名称</p>
                      */
                     std::string m_jobName;
                     bool m_jobNameHasBeenSet;
 
                     /**
-                     * 任务创建(提交)时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * <p>任务创建(提交)时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 任务更新时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * <p>任务更新时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 任务开始执行时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * <p>任务开始执行时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 任务执行结束时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * <p>任务执行结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 迁移任务简要错误信息
+                     * <p>迁移任务简要错误信息</p>
                      */
                     std::string m_briefMsg;
                     bool m_briefMsgHasBeenSet;
 
                     /**
-                     * 任务状态，取值为：created(创建完成)、checking(校验中)、checkPass(校验通过)、checkNotPass(校验不通过)、readyRun(准备运行)、running(任务运行中)、readyComplete(准备完成)、success(任务成功)、failed(任务失败)、stopping(中止中)、completing(完成中)、
-pausing(暂停中)、
-manualPaused(已暂停)
+                     * <p>任务状态，取值为：created(创建完成)、checking(校验中)、checkPass(校验通过)、checkNotPass(校验不通过)、readyRun(准备运行)、running(任务运行中)、readyComplete(准备完成)、success(任务成功)、failed(任务失败)、stopping(中止中)、completing(完成中)、<br>pausing(暂停中)、<br>manualPaused(已暂停)</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 任务操作信息
+                     * <p>任务操作信息</p>
                      */
                     MigrateAction m_action;
                     bool m_actionHasBeenSet;
 
                     /**
-                     * 迁移执行过程信息，在校验阶段显示校验过程步骤信息，在迁移阶段会显示迁移步骤信息
+                     * <p>迁移执行过程信息，在校验阶段显示校验过程步骤信息，在迁移阶段会显示迁移步骤信息</p>
                      */
                     MigrateDetailInfo m_stepInfo;
                     bool m_stepInfoHasBeenSet;
 
                     /**
-                     * 源实例信息
+                     * <p>源实例信息</p>
                      */
                     DBEndpointInfo m_srcInfo;
                     bool m_srcInfoHasBeenSet;
 
                     /**
-                     * 目标端信息
+                     * <p>目标端信息</p>
                      */
                     DBEndpointInfo m_dstInfo;
                     bool m_dstInfoHasBeenSet;
 
                     /**
-                     * 数据一致性校验结果
+                     * <p>数据一致性校验结果</p>
                      */
                     CompareTaskInfo m_compareTask;
                     bool m_compareTaskHasBeenSet;
 
                     /**
-                     * 标签信息
+                     * <p>标签信息</p>
                      */
                     std::vector<TagItem> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 运行模式，取值如：immediate(表示立即运行)、timed(表示定时运行)
+                     * <p>运行模式，取值如：immediate(表示立即运行)、timed(表示定时运行)</p>
                      */
                     std::string m_runMode;
                     bool m_runModeHasBeenSet;
 
                     /**
-                     * 期待启动时间，当RunMode取值为timed时，此值必填，形如："2006-01-02 15:04:05"
+                     * <p>期待启动时间，当 <code>RunMode</code> 取值为 <code>timed</code> 时此值必填。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_expectRunTime;
                     bool m_expectRunTimeHasBeenSet;
 
                     /**
-                     * 迁移选项，描述任务如何执行迁移等一系列配置信息
+                     * <p>迁移选项，描述任务如何执行迁移等一系列配置信息</p>
                      */
                     MigrateOption m_migrateOption;
                     bool m_migrateOptionHasBeenSet;
 
                     /**
-                     * 校验任务运行详情
+                     * <p>校验任务运行详情</p>
                      */
                     CheckStepInfo m_checkStepInfo;
                     bool m_checkStepInfoHasBeenSet;
 
                     /**
-                     * 描述计费相关的信息
+                     * <p>描述计费相关的信息</p>
                      */
                     TradeInfo m_tradeInfo;
                     bool m_tradeInfoHasBeenSet;
 
                     /**
-                     * 任务错误信息
+                     * <p>任务错误信息</p>
                      */
                     std::vector<ErrorInfoItem> m_errorInfo;
                     bool m_errorInfoHasBeenSet;
 
                     /**
-                     * 全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
+                     * <p>全量导出可重入标识：enum::&quot;yes&quot;/&quot;no&quot;。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传</p>
                      */
                     std::string m_dumperResumeCtrl;
                     bool m_dumperResumeCtrlHasBeenSet;
 
                     /**
-                     * 任务的限速信息
+                     * <p>任务的限速信息</p>
                      */
                     RateLimitOption m_rateLimitOption;
                     bool m_rateLimitOptionHasBeenSet;

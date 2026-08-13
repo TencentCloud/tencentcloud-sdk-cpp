@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据库名
-                     * @return DbName 数据库名
+                     * 获取<p>数据库名</p>
+                     * @return DbName <p>数据库名</p>
                      * 
                      */
                     std::string GetDbName() const;
 
                     /**
-                     * 设置数据库名
-                     * @param _dbName 数据库名
+                     * 设置<p>数据库名</p>
+                     * @param _dbName <p>数据库名</p>
                      * 
                      */
                     void SetDbName(const std::string& _dbName);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool DbNameHasBeenSet() const;
 
                     /**
-                     * 获取数据库选择模式: all 为当前对象下的所有对象,partial 为部分对象
-                     * @return DbMode 数据库选择模式: all 为当前对象下的所有对象,partial 为部分对象
+                     * 获取<p>数据库选择模式: all 为当前对象下的所有对象,partial 为部分对象</p>
+                     * @return DbMode <p>数据库选择模式: all 为当前对象下的所有对象,partial 为部分对象</p>
                      * 
                      */
                     std::string GetDbMode() const;
 
                     /**
-                     * 设置数据库选择模式: all 为当前对象下的所有对象,partial 为部分对象
-                     * @param _dbMode 数据库选择模式: all 为当前对象下的所有对象,partial 为部分对象
+                     * 设置<p>数据库选择模式: all 为当前对象下的所有对象,partial 为部分对象</p>
+                     * @param _dbMode <p>数据库选择模式: all 为当前对象下的所有对象,partial 为部分对象</p>
                      * 
                      */
                     void SetDbMode(const std::string& _dbMode);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool DbModeHasBeenSet() const;
 
                     /**
-                     * 获取schema名称
-                     * @return SchemaName schema名称
+                     * 获取<p>schema名称</p>
+                     * @return SchemaName <p>schema名称</p>
                      * 
                      */
                     std::string GetSchemaName() const;
 
                     /**
-                     * 设置schema名称
-                     * @param _schemaName schema名称
+                     * 设置<p>schema名称</p>
+                     * @param _schemaName <p>schema名称</p>
                      * 
                      */
                     void SetSchemaName(const std::string& _schemaName);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool SchemaNameHasBeenSet() const;
 
                     /**
-                     * 获取表选择模式: all 为当前对象下的所有表对象,partial 为部分表对象
-                     * @return TableMode 表选择模式: all 为当前对象下的所有表对象,partial 为部分表对象
+                     * 获取<p>表选择模式: all 为当前对象下的所有表对象,partial 为部分表对象</p>
+                     * @return TableMode <p>表选择模式: all 为当前对象下的所有表对象,partial 为部分表对象</p>
                      * 
                      */
                     std::string GetTableMode() const;
 
                     /**
-                     * 设置表选择模式: all 为当前对象下的所有表对象,partial 为部分表对象
-                     * @param _tableMode 表选择模式: all 为当前对象下的所有表对象,partial 为部分表对象
+                     * 设置<p>表选择模式: all 为当前对象下的所有表对象,partial 为部分表对象</p>
+                     * @param _tableMode <p>表选择模式: all 为当前对象下的所有表对象,partial 为部分表对象</p>
                      * 
                      */
                     void SetTableMode(const std::string& _tableMode);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool TableModeHasBeenSet() const;
 
                     /**
-                     * 获取用于一致性校验的表配置，当 TableMode 为 partial 时，需要填写
-                     * @return Tables 用于一致性校验的表配置，当 TableMode 为 partial 时，需要填写
+                     * 获取<p>用于一致性校验的表配置，当 TableMode 为 partial 时，需要填写</p>
+                     * @return Tables <p>用于一致性校验的表配置，当 TableMode 为 partial 时，需要填写</p>
                      * 
                      */
                     std::vector<CompareTableItem> GetTables() const;
 
                     /**
-                     * 设置用于一致性校验的表配置，当 TableMode 为 partial 时，需要填写
-                     * @param _tables 用于一致性校验的表配置，当 TableMode 为 partial 时，需要填写
+                     * 设置<p>用于一致性校验的表配置，当 TableMode 为 partial 时，需要填写</p>
+                     * @param _tables <p>用于一致性校验的表配置，当 TableMode 为 partial 时，需要填写</p>
                      * 
                      */
                     void SetTables(const std::vector<CompareTableItem>& _tables);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool TablesHasBeenSet() const;
 
                     /**
-                     * 获取视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象(一致性校验不校验视图，当前参数未启作用)
-                     * @return ViewMode 视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象(一致性校验不校验视图，当前参数未启作用)
+                     * 获取<p>视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象(一致性校验不校验视图，当前参数未启作用)</p>
+                     * @return ViewMode <p>视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象(一致性校验不校验视图，当前参数未启作用)</p>
                      * 
                      */
                     std::string GetViewMode() const;
 
                     /**
-                     * 设置视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象(一致性校验不校验视图，当前参数未启作用)
-                     * @param _viewMode 视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象(一致性校验不校验视图，当前参数未启作用)
+                     * 设置<p>视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象(一致性校验不校验视图，当前参数未启作用)</p>
+                     * @param _viewMode <p>视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象(一致性校验不校验视图，当前参数未启作用)</p>
                      * 
                      */
                     void SetViewMode(const std::string& _viewMode);
@@ -175,18 +175,18 @@ namespace TencentCloud
                     bool ViewModeHasBeenSet() const;
 
                     /**
-                     * 获取用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写(一致性校验不校验视图，当前参数未启作用)
+                     * 获取<p>用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写(一致性校验不校验视图，当前参数未启作用)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Views 用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写(一致性校验不校验视图，当前参数未启作用)
+                     * @return Views <p>用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写(一致性校验不校验视图，当前参数未启作用)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CompareViewItem> GetViews() const;
 
                     /**
-                     * 设置用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写(一致性校验不校验视图，当前参数未启作用)
+                     * 设置<p>用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写(一致性校验不校验视图，当前参数未启作用)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _views 用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写(一致性校验不校验视图，当前参数未启作用)
+                     * @param _views <p>用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写(一致性校验不校验视图，当前参数未启作用)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -202,43 +202,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据库名
+                     * <p>数据库名</p>
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;
 
                     /**
-                     * 数据库选择模式: all 为当前对象下的所有对象,partial 为部分对象
+                     * <p>数据库选择模式: all 为当前对象下的所有对象,partial 为部分对象</p>
                      */
                     std::string m_dbMode;
                     bool m_dbModeHasBeenSet;
 
                     /**
-                     * schema名称
+                     * <p>schema名称</p>
                      */
                     std::string m_schemaName;
                     bool m_schemaNameHasBeenSet;
 
                     /**
-                     * 表选择模式: all 为当前对象下的所有表对象,partial 为部分表对象
+                     * <p>表选择模式: all 为当前对象下的所有表对象,partial 为部分表对象</p>
                      */
                     std::string m_tableMode;
                     bool m_tableModeHasBeenSet;
 
                     /**
-                     * 用于一致性校验的表配置，当 TableMode 为 partial 时，需要填写
+                     * <p>用于一致性校验的表配置，当 TableMode 为 partial 时，需要填写</p>
                      */
                     std::vector<CompareTableItem> m_tables;
                     bool m_tablesHasBeenSet;
 
                     /**
-                     * 视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象(一致性校验不校验视图，当前参数未启作用)
+                     * <p>视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象(一致性校验不校验视图，当前参数未启作用)</p>
                      */
                     std::string m_viewMode;
                     bool m_viewModeHasBeenSet;
 
                     /**
-                     * 用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写(一致性校验不校验视图，当前参数未启作用)
+                     * <p>用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写(一致性校验不校验视图，当前参数未启作用)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CompareViewItem> m_views;

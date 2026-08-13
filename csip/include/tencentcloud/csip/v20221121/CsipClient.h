@@ -29,10 +29,14 @@
 #include <tencentcloud/csip/v20221121/model/AddNewBindRoleUserResponse.h>
 #include <tencentcloud/csip/v20221121/model/AddVulWhitelistRequest.h>
 #include <tencentcloud/csip/v20221121/model/AddVulWhitelistResponse.h>
+#include <tencentcloud/csip/v20221121/model/CancelEdrAlertIgnoreRequest.h>
+#include <tencentcloud/csip/v20221121/model/CancelEdrAlertIgnoreResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateAccessKeyCheckTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateAccessKeyCheckTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateAccessKeySyncTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateAccessKeySyncTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateCSIPManualMalwareScanRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateCSIPManualMalwareScanResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateCosAssetSyncTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateCosAssetSyncTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateCosObjectScanTaskRequest.h>
@@ -79,6 +83,10 @@
 #include <tencentcloud/csip/v20221121/model/CreateDspmRiskExportJobResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmWhitelistStrategyRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmWhitelistStrategyResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateEDRManualScanRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateEDRManualScanResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateEdrAlertExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateEdrAlertExportJobResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateHostVulExportJobRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateHostVulExportJobResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateIaCAccessTokenRequest.h>
@@ -101,6 +109,8 @@
 #include <tencentcloud/csip/v20221121/model/CreateVulReScanResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateVulScanManualRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateVulScanManualResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteCSIPMalwareScanTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteCSIPMalwareScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteCosAkAssetRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteCosAkAssetResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteCosPolicyRequest.h>
@@ -133,6 +143,10 @@
 #include <tencentcloud/csip/v20221121/model/DeleteDspmRestoreLogListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDspmWhitelistStrategyRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDspmWhitelistStrategyResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteEDRRulesRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteEDRRulesResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteEDRScanTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteEDRScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteIaCAccessTokenRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteIaCAccessTokenResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteIaCFileRequest.h>
@@ -181,6 +195,10 @@
 #include <tencentcloud/csip/v20221121/model/DescribeCLSLogIndexV3Response.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCLSLogListV3Request.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCLSLogListV3Response.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCSIPMalwareScanTaskDetailRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCSIPMalwareScanTaskDetailResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCSIPMalwareScanTaskProgressRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCSIPMalwareScanTaskProgressResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCSIPRiskStatisticsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCSIPRiskStatisticsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCVMAssetInfoRequest.h>
@@ -373,10 +391,26 @@
 #include <tencentcloud/csip/v20221121/model/DescribeDspmWhitelistStrategyResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeEDRRuleListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeEDRRuleListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEDRScanRecordListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEDRScanRecordListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEDRScanTaskDetailRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEDRScanTaskDetailResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEdrAlertCountForAssetRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEdrAlertCountForAssetResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEdrAlertCountForContainerRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEdrAlertCountForContainerResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeEdrAlertInfoRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeEdrAlertInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeEdrAlertListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeEdrAlertListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEdrAlertMultiAttackStagesRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEdrAlertMultiAttackStagesResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEdrAlertSummaryRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEdrAlertSummaryResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEdrExportJobDownloadURLRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEdrExportJobDownloadURLResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEdrExportJobListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEdrExportJobListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeExposeAssetCategoryRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeExposeAssetCategoryResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeExposePathRequest.h>
@@ -419,6 +453,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeListenerListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeNICAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeNICAssetsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeNetAttackSettingRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeNetAttackSettingResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeNotifyAssetConfigRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeNotifyAssetConfigResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeNotifySettingRequest.h>
@@ -437,6 +473,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribePublicIpAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeRepositoryImageAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeRepositoryImageAssetsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeReverseShellSystemPolicyConfigRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeReverseShellSystemPolicyConfigResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeRiskBucketListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeRiskBucketListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeRiskCallRecordRequest.h>
@@ -543,6 +581,10 @@
 #include <tencentcloud/csip/v20221121/model/DescribeVulViewVulRiskListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DownloadDspmExportLogRequest.h>
 #include <tencentcloud/csip/v20221121/model/DownloadDspmExportLogResponse.h>
+#include <tencentcloud/csip/v20221121/model/ExportCSIPMalwareScanTaskDetailRequest.h>
+#include <tencentcloud/csip/v20221121/model/ExportCSIPMalwareScanTaskDetailResponse.h>
+#include <tencentcloud/csip/v20221121/model/ExportEDRRulesRequest.h>
+#include <tencentcloud/csip/v20221121/model/ExportEDRRulesResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyAILinkSettingRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyAILinkSettingResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyAlarmRiskStatusRequest.h>
@@ -609,12 +651,22 @@
 #include <tencentcloud/csip/v20221121/model/ModifyDspmWhitelistStrategyResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyEDRRuleRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyEDRRuleResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyEDRRuleStatusRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyEDRRuleStatusResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyEDRRulesActionRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyEDRRulesActionResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyEdrAlertIsolationRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyEdrAlertIsolationResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyEdrAlertPermanentIgnoreRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyEdrAlertPermanentIgnoreResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyEdrAlertStatusRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyEdrAlertStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyIaCTokenPeriodRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyIaCTokenPeriodResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyMachineRemarkRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyMachineRemarkResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyNetAttackSettingRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyNetAttackSettingResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyNotifyAssetConfigRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyNotifyAssetConfigResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyNotifySettingRequest.h>
@@ -625,6 +677,8 @@
 #include <tencentcloud/csip/v20221121/model/ModifyOrganizationAccountStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyPolicyStatusRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyPolicyStatusResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyReverseShellSystemPolicyConfigRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyReverseShellSystemPolicyConfigResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyRiskCenterRiskStatusRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyRiskCenterRiskStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyRiskCenterScanTaskRequest.h>
@@ -643,8 +697,16 @@
 #include <tencentcloud/csip/v20221121/model/RetryDspmExportLogResponse.h>
 #include <tencentcloud/csip/v20221121/model/RevertDspmAssetAccountRequest.h>
 #include <tencentcloud/csip/v20221121/model/RevertDspmAssetAccountResponse.h>
+#include <tencentcloud/csip/v20221121/model/ScanCSIPTaskAgainRequest.h>
+#include <tencentcloud/csip/v20221121/model/ScanCSIPTaskAgainResponse.h>
+#include <tencentcloud/csip/v20221121/model/ScanEDRTaskAgainRequest.h>
+#include <tencentcloud/csip/v20221121/model/ScanEDRTaskAgainResponse.h>
 #include <tencentcloud/csip/v20221121/model/SendDspmAssetLoginSmsCodeRequest.h>
 #include <tencentcloud/csip/v20221121/model/SendDspmAssetLoginSmsCodeResponse.h>
+#include <tencentcloud/csip/v20221121/model/StopCSIPManualMalwareScanRequest.h>
+#include <tencentcloud/csip/v20221121/model/StopCSIPManualMalwareScanResponse.h>
+#include <tencentcloud/csip/v20221121/model/StopEDRScanTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/StopEDRScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/StopRiskCenterTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/StopRiskCenterTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/StopVulScanTaskRequest.h>
@@ -684,12 +746,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddVulWhitelistResponse> AddVulWhitelistOutcome;
                 typedef std::future<AddVulWhitelistOutcome> AddVulWhitelistOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::AddVulWhitelistRequest&, AddVulWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddVulWhitelistAsyncHandler;
+                typedef Outcome<Core::Error, Model::CancelEdrAlertIgnoreResponse> CancelEdrAlertIgnoreOutcome;
+                typedef std::future<CancelEdrAlertIgnoreOutcome> CancelEdrAlertIgnoreOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CancelEdrAlertIgnoreRequest&, CancelEdrAlertIgnoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelEdrAlertIgnoreAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAccessKeyCheckTaskResponse> CreateAccessKeyCheckTaskOutcome;
                 typedef std::future<CreateAccessKeyCheckTaskOutcome> CreateAccessKeyCheckTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateAccessKeyCheckTaskRequest&, CreateAccessKeyCheckTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessKeyCheckTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAccessKeySyncTaskResponse> CreateAccessKeySyncTaskOutcome;
                 typedef std::future<CreateAccessKeySyncTaskOutcome> CreateAccessKeySyncTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateAccessKeySyncTaskRequest&, CreateAccessKeySyncTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessKeySyncTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCSIPManualMalwareScanResponse> CreateCSIPManualMalwareScanOutcome;
+                typedef std::future<CreateCSIPManualMalwareScanOutcome> CreateCSIPManualMalwareScanOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateCSIPManualMalwareScanRequest&, CreateCSIPManualMalwareScanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCSIPManualMalwareScanAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCosAssetSyncTaskResponse> CreateCosAssetSyncTaskOutcome;
                 typedef std::future<CreateCosAssetSyncTaskOutcome> CreateCosAssetSyncTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateCosAssetSyncTaskRequest&, CreateCosAssetSyncTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCosAssetSyncTaskAsyncHandler;
@@ -759,6 +827,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDspmWhitelistStrategyResponse> CreateDspmWhitelistStrategyOutcome;
                 typedef std::future<CreateDspmWhitelistStrategyOutcome> CreateDspmWhitelistStrategyOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateDspmWhitelistStrategyRequest&, CreateDspmWhitelistStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmWhitelistStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateEDRManualScanResponse> CreateEDRManualScanOutcome;
+                typedef std::future<CreateEDRManualScanOutcome> CreateEDRManualScanOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateEDRManualScanRequest&, CreateEDRManualScanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEDRManualScanAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateEdrAlertExportJobResponse> CreateEdrAlertExportJobOutcome;
+                typedef std::future<CreateEdrAlertExportJobOutcome> CreateEdrAlertExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateEdrAlertExportJobRequest&, CreateEdrAlertExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEdrAlertExportJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateHostVulExportJobResponse> CreateHostVulExportJobOutcome;
                 typedef std::future<CreateHostVulExportJobOutcome> CreateHostVulExportJobOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateHostVulExportJobRequest&, CreateHostVulExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHostVulExportJobAsyncHandler;
@@ -792,6 +866,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateVulScanManualResponse> CreateVulScanManualOutcome;
                 typedef std::future<CreateVulScanManualOutcome> CreateVulScanManualOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateVulScanManualRequest&, CreateVulScanManualOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVulScanManualAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCSIPMalwareScanTaskResponse> DeleteCSIPMalwareScanTaskOutcome;
+                typedef std::future<DeleteCSIPMalwareScanTaskOutcome> DeleteCSIPMalwareScanTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteCSIPMalwareScanTaskRequest&, DeleteCSIPMalwareScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCSIPMalwareScanTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCosAkAssetResponse> DeleteCosAkAssetOutcome;
                 typedef std::future<DeleteCosAkAssetOutcome> DeleteCosAkAssetOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteCosAkAssetRequest&, DeleteCosAkAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCosAkAssetAsyncHandler;
@@ -840,6 +917,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDspmWhitelistStrategyResponse> DeleteDspmWhitelistStrategyOutcome;
                 typedef std::future<DeleteDspmWhitelistStrategyOutcome> DeleteDspmWhitelistStrategyOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteDspmWhitelistStrategyRequest&, DeleteDspmWhitelistStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmWhitelistStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteEDRRulesResponse> DeleteEDRRulesOutcome;
+                typedef std::future<DeleteEDRRulesOutcome> DeleteEDRRulesOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteEDRRulesRequest&, DeleteEDRRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEDRRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteEDRScanTaskResponse> DeleteEDRScanTaskOutcome;
+                typedef std::future<DeleteEDRScanTaskOutcome> DeleteEDRScanTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteEDRScanTaskRequest&, DeleteEDRScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEDRScanTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteIaCAccessTokenResponse> DeleteIaCAccessTokenOutcome;
                 typedef std::future<DeleteIaCAccessTokenOutcome> DeleteIaCAccessTokenOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteIaCAccessTokenRequest&, DeleteIaCAccessTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIaCAccessTokenAsyncHandler;
@@ -912,6 +995,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCLSLogListV3Response> DescribeCLSLogListV3Outcome;
                 typedef std::future<DescribeCLSLogListV3Outcome> DescribeCLSLogListV3OutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeCLSLogListV3Request&, DescribeCLSLogListV3Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCLSLogListV3AsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCSIPMalwareScanTaskDetailResponse> DescribeCSIPMalwareScanTaskDetailOutcome;
+                typedef std::future<DescribeCSIPMalwareScanTaskDetailOutcome> DescribeCSIPMalwareScanTaskDetailOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCSIPMalwareScanTaskDetailRequest&, DescribeCSIPMalwareScanTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCSIPMalwareScanTaskDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCSIPMalwareScanTaskProgressResponse> DescribeCSIPMalwareScanTaskProgressOutcome;
+                typedef std::future<DescribeCSIPMalwareScanTaskProgressOutcome> DescribeCSIPMalwareScanTaskProgressOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCSIPMalwareScanTaskProgressRequest&, DescribeCSIPMalwareScanTaskProgressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCSIPMalwareScanTaskProgressAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCSIPRiskStatisticsResponse> DescribeCSIPRiskStatisticsOutcome;
                 typedef std::future<DescribeCSIPRiskStatisticsOutcome> DescribeCSIPRiskStatisticsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeCSIPRiskStatisticsRequest&, DescribeCSIPRiskStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCSIPRiskStatisticsAsyncHandler;
@@ -1200,12 +1289,36 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEDRRuleListResponse> DescribeEDRRuleListOutcome;
                 typedef std::future<DescribeEDRRuleListOutcome> DescribeEDRRuleListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeEDRRuleListRequest&, DescribeEDRRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEDRRuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEDRScanRecordListResponse> DescribeEDRScanRecordListOutcome;
+                typedef std::future<DescribeEDRScanRecordListOutcome> DescribeEDRScanRecordListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeEDRScanRecordListRequest&, DescribeEDRScanRecordListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEDRScanRecordListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEDRScanTaskDetailResponse> DescribeEDRScanTaskDetailOutcome;
+                typedef std::future<DescribeEDRScanTaskDetailOutcome> DescribeEDRScanTaskDetailOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeEDRScanTaskDetailRequest&, DescribeEDRScanTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEDRScanTaskDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEdrAlertCountForAssetResponse> DescribeEdrAlertCountForAssetOutcome;
+                typedef std::future<DescribeEdrAlertCountForAssetOutcome> DescribeEdrAlertCountForAssetOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeEdrAlertCountForAssetRequest&, DescribeEdrAlertCountForAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdrAlertCountForAssetAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEdrAlertCountForContainerResponse> DescribeEdrAlertCountForContainerOutcome;
+                typedef std::future<DescribeEdrAlertCountForContainerOutcome> DescribeEdrAlertCountForContainerOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeEdrAlertCountForContainerRequest&, DescribeEdrAlertCountForContainerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdrAlertCountForContainerAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEdrAlertInfoResponse> DescribeEdrAlertInfoOutcome;
                 typedef std::future<DescribeEdrAlertInfoOutcome> DescribeEdrAlertInfoOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeEdrAlertInfoRequest&, DescribeEdrAlertInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdrAlertInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEdrAlertListResponse> DescribeEdrAlertListOutcome;
                 typedef std::future<DescribeEdrAlertListOutcome> DescribeEdrAlertListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeEdrAlertListRequest&, DescribeEdrAlertListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdrAlertListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEdrAlertMultiAttackStagesResponse> DescribeEdrAlertMultiAttackStagesOutcome;
+                typedef std::future<DescribeEdrAlertMultiAttackStagesOutcome> DescribeEdrAlertMultiAttackStagesOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeEdrAlertMultiAttackStagesRequest&, DescribeEdrAlertMultiAttackStagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdrAlertMultiAttackStagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEdrAlertSummaryResponse> DescribeEdrAlertSummaryOutcome;
+                typedef std::future<DescribeEdrAlertSummaryOutcome> DescribeEdrAlertSummaryOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeEdrAlertSummaryRequest&, DescribeEdrAlertSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdrAlertSummaryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEdrExportJobDownloadURLResponse> DescribeEdrExportJobDownloadURLOutcome;
+                typedef std::future<DescribeEdrExportJobDownloadURLOutcome> DescribeEdrExportJobDownloadURLOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeEdrExportJobDownloadURLRequest&, DescribeEdrExportJobDownloadURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdrExportJobDownloadURLAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEdrExportJobListResponse> DescribeEdrExportJobListOutcome;
+                typedef std::future<DescribeEdrExportJobListOutcome> DescribeEdrExportJobListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeEdrExportJobListRequest&, DescribeEdrExportJobListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdrExportJobListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExposeAssetCategoryResponse> DescribeExposeAssetCategoryOutcome;
                 typedef std::future<DescribeExposeAssetCategoryOutcome> DescribeExposeAssetCategoryOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeExposeAssetCategoryRequest&, DescribeExposeAssetCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExposeAssetCategoryAsyncHandler;
@@ -1269,6 +1382,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNICAssetsResponse> DescribeNICAssetsOutcome;
                 typedef std::future<DescribeNICAssetsOutcome> DescribeNICAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeNICAssetsRequest&, DescribeNICAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNICAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNetAttackSettingResponse> DescribeNetAttackSettingOutcome;
+                typedef std::future<DescribeNetAttackSettingOutcome> DescribeNetAttackSettingOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeNetAttackSettingRequest&, DescribeNetAttackSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNetAttackSettingAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNotifyAssetConfigResponse> DescribeNotifyAssetConfigOutcome;
                 typedef std::future<DescribeNotifyAssetConfigOutcome> DescribeNotifyAssetConfigOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeNotifyAssetConfigRequest&, DescribeNotifyAssetConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotifyAssetConfigAsyncHandler;
@@ -1296,6 +1412,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRepositoryImageAssetsResponse> DescribeRepositoryImageAssetsOutcome;
                 typedef std::future<DescribeRepositoryImageAssetsOutcome> DescribeRepositoryImageAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeRepositoryImageAssetsRequest&, DescribeRepositoryImageAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRepositoryImageAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeReverseShellSystemPolicyConfigResponse> DescribeReverseShellSystemPolicyConfigOutcome;
+                typedef std::future<DescribeReverseShellSystemPolicyConfigOutcome> DescribeReverseShellSystemPolicyConfigOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeReverseShellSystemPolicyConfigRequest&, DescribeReverseShellSystemPolicyConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReverseShellSystemPolicyConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRiskBucketListResponse> DescribeRiskBucketListOutcome;
                 typedef std::future<DescribeRiskBucketListOutcome> DescribeRiskBucketListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeRiskBucketListRequest&, DescribeRiskBucketListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskBucketListAsyncHandler;
@@ -1455,6 +1574,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DownloadDspmExportLogResponse> DownloadDspmExportLogOutcome;
                 typedef std::future<DownloadDspmExportLogOutcome> DownloadDspmExportLogOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DownloadDspmExportLogRequest&, DownloadDspmExportLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadDspmExportLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportCSIPMalwareScanTaskDetailResponse> ExportCSIPMalwareScanTaskDetailOutcome;
+                typedef std::future<ExportCSIPMalwareScanTaskDetailOutcome> ExportCSIPMalwareScanTaskDetailOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ExportCSIPMalwareScanTaskDetailRequest&, ExportCSIPMalwareScanTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportCSIPMalwareScanTaskDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportEDRRulesResponse> ExportEDRRulesOutcome;
+                typedef std::future<ExportEDRRulesOutcome> ExportEDRRulesOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ExportEDRRulesRequest&, ExportEDRRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportEDRRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAILinkSettingResponse> ModifyAILinkSettingOutcome;
                 typedef std::future<ModifyAILinkSettingOutcome> ModifyAILinkSettingOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyAILinkSettingRequest&, ModifyAILinkSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAILinkSettingAsyncHandler;
@@ -1554,15 +1679,30 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyEDRRuleResponse> ModifyEDRRuleOutcome;
                 typedef std::future<ModifyEDRRuleOutcome> ModifyEDRRuleOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyEDRRuleRequest&, ModifyEDRRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEDRRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyEDRRuleStatusResponse> ModifyEDRRuleStatusOutcome;
+                typedef std::future<ModifyEDRRuleStatusOutcome> ModifyEDRRuleStatusOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyEDRRuleStatusRequest&, ModifyEDRRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEDRRuleStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyEDRRulesActionResponse> ModifyEDRRulesActionOutcome;
+                typedef std::future<ModifyEDRRulesActionOutcome> ModifyEDRRulesActionOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyEDRRulesActionRequest&, ModifyEDRRulesActionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEDRRulesActionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyEdrAlertIsolationResponse> ModifyEdrAlertIsolationOutcome;
+                typedef std::future<ModifyEdrAlertIsolationOutcome> ModifyEdrAlertIsolationOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyEdrAlertIsolationRequest&, ModifyEdrAlertIsolationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEdrAlertIsolationAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyEdrAlertPermanentIgnoreResponse> ModifyEdrAlertPermanentIgnoreOutcome;
                 typedef std::future<ModifyEdrAlertPermanentIgnoreOutcome> ModifyEdrAlertPermanentIgnoreOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyEdrAlertPermanentIgnoreRequest&, ModifyEdrAlertPermanentIgnoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEdrAlertPermanentIgnoreAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyEdrAlertStatusResponse> ModifyEdrAlertStatusOutcome;
+                typedef std::future<ModifyEdrAlertStatusOutcome> ModifyEdrAlertStatusOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyEdrAlertStatusRequest&, ModifyEdrAlertStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEdrAlertStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyIaCTokenPeriodResponse> ModifyIaCTokenPeriodOutcome;
                 typedef std::future<ModifyIaCTokenPeriodOutcome> ModifyIaCTokenPeriodOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyIaCTokenPeriodRequest&, ModifyIaCTokenPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIaCTokenPeriodAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyMachineRemarkResponse> ModifyMachineRemarkOutcome;
                 typedef std::future<ModifyMachineRemarkOutcome> ModifyMachineRemarkOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyMachineRemarkRequest&, ModifyMachineRemarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMachineRemarkAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyNetAttackSettingResponse> ModifyNetAttackSettingOutcome;
+                typedef std::future<ModifyNetAttackSettingOutcome> ModifyNetAttackSettingOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyNetAttackSettingRequest&, ModifyNetAttackSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNetAttackSettingAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyNotifyAssetConfigResponse> ModifyNotifyAssetConfigOutcome;
                 typedef std::future<ModifyNotifyAssetConfigOutcome> ModifyNotifyAssetConfigOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyNotifyAssetConfigRequest&, ModifyNotifyAssetConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNotifyAssetConfigAsyncHandler;
@@ -1578,6 +1718,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPolicyStatusResponse> ModifyPolicyStatusOutcome;
                 typedef std::future<ModifyPolicyStatusOutcome> ModifyPolicyStatusOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyPolicyStatusRequest&, ModifyPolicyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPolicyStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyReverseShellSystemPolicyConfigResponse> ModifyReverseShellSystemPolicyConfigOutcome;
+                typedef std::future<ModifyReverseShellSystemPolicyConfigOutcome> ModifyReverseShellSystemPolicyConfigOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyReverseShellSystemPolicyConfigRequest&, ModifyReverseShellSystemPolicyConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReverseShellSystemPolicyConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRiskCenterRiskStatusResponse> ModifyRiskCenterRiskStatusOutcome;
                 typedef std::future<ModifyRiskCenterRiskStatusOutcome> ModifyRiskCenterRiskStatusOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyRiskCenterRiskStatusRequest&, ModifyRiskCenterRiskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRiskCenterRiskStatusAsyncHandler;
@@ -1605,9 +1748,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RevertDspmAssetAccountResponse> RevertDspmAssetAccountOutcome;
                 typedef std::future<RevertDspmAssetAccountOutcome> RevertDspmAssetAccountOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::RevertDspmAssetAccountRequest&, RevertDspmAssetAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevertDspmAssetAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::ScanCSIPTaskAgainResponse> ScanCSIPTaskAgainOutcome;
+                typedef std::future<ScanCSIPTaskAgainOutcome> ScanCSIPTaskAgainOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ScanCSIPTaskAgainRequest&, ScanCSIPTaskAgainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScanCSIPTaskAgainAsyncHandler;
+                typedef Outcome<Core::Error, Model::ScanEDRTaskAgainResponse> ScanEDRTaskAgainOutcome;
+                typedef std::future<ScanEDRTaskAgainOutcome> ScanEDRTaskAgainOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ScanEDRTaskAgainRequest&, ScanEDRTaskAgainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScanEDRTaskAgainAsyncHandler;
                 typedef Outcome<Core::Error, Model::SendDspmAssetLoginSmsCodeResponse> SendDspmAssetLoginSmsCodeOutcome;
                 typedef std::future<SendDspmAssetLoginSmsCodeOutcome> SendDspmAssetLoginSmsCodeOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::SendDspmAssetLoginSmsCodeRequest&, SendDspmAssetLoginSmsCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendDspmAssetLoginSmsCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopCSIPManualMalwareScanResponse> StopCSIPManualMalwareScanOutcome;
+                typedef std::future<StopCSIPManualMalwareScanOutcome> StopCSIPManualMalwareScanOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::StopCSIPManualMalwareScanRequest&, StopCSIPManualMalwareScanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopCSIPManualMalwareScanAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopEDRScanTaskResponse> StopEDRScanTaskOutcome;
+                typedef std::future<StopEDRScanTaskOutcome> StopEDRScanTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::StopEDRScanTaskRequest&, StopEDRScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopEDRScanTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopRiskCenterTaskResponse> StopRiskCenterTaskOutcome;
                 typedef std::future<StopRiskCenterTaskOutcome> StopRiskCenterTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::StopRiskCenterTaskRequest&, StopRiskCenterTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopRiskCenterTaskAsyncHandler;
@@ -1663,6 +1818,15 @@ namespace TencentCloud
                 AddVulWhitelistOutcomeCallable AddVulWhitelistCallable(const Model::AddVulWhitelistRequest& request);
 
                 /**
+                 *取消已永久忽略的EDR多行为告警，从AI-Link永久忽略白名单移除对应主机+规则记录，并将告警状态恢复为待处理（PENDING）
+                 * @param req CancelEdrAlertIgnoreRequest
+                 * @return CancelEdrAlertIgnoreOutcome
+                 */
+                CancelEdrAlertIgnoreOutcome CancelEdrAlertIgnore(const Model::CancelEdrAlertIgnoreRequest &request);
+                void CancelEdrAlertIgnoreAsync(const Model::CancelEdrAlertIgnoreRequest& request, const CancelEdrAlertIgnoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelEdrAlertIgnoreOutcomeCallable CancelEdrAlertIgnoreCallable(const Model::CancelEdrAlertIgnoreRequest& request);
+
+                /**
                  *检测AK 异步任务
                  * @param req CreateAccessKeyCheckTaskRequest
                  * @return CreateAccessKeyCheckTaskOutcome
@@ -1679,6 +1843,15 @@ namespace TencentCloud
                 CreateAccessKeySyncTaskOutcome CreateAccessKeySyncTask(const Model::CreateAccessKeySyncTaskRequest &request);
                 void CreateAccessKeySyncTaskAsync(const Model::CreateAccessKeySyncTaskRequest& request, const CreateAccessKeySyncTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAccessKeySyncTaskOutcomeCallable CreateAccessKeySyncTaskCallable(const Model::CreateAccessKeySyncTaskRequest& request);
+
+                /**
+                 *CSIP 手动扫描创建接口
+                 * @param req CreateCSIPManualMalwareScanRequest
+                 * @return CreateCSIPManualMalwareScanOutcome
+                 */
+                CreateCSIPManualMalwareScanOutcome CreateCSIPManualMalwareScan(const Model::CreateCSIPManualMalwareScanRequest &request);
+                void CreateCSIPManualMalwareScanAsync(const Model::CreateCSIPManualMalwareScanRequest& request, const CreateCSIPManualMalwareScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCSIPManualMalwareScanOutcomeCallable CreateCSIPManualMalwareScanCallable(const Model::CreateCSIPManualMalwareScanRequest& request);
 
                 /**
                  *创建资产同步任务
@@ -1888,6 +2061,24 @@ namespace TencentCloud
                 CreateDspmWhitelistStrategyOutcomeCallable CreateDspmWhitelistStrategyCallable(const Model::CreateDspmWhitelistStrategyRequest& request);
 
                 /**
+                 *点击开始扫描后触发，支持多账号、多资产类型。同时选主机和容器集群时拆分为两个独立任务（主机+容器）。
+                 * @param req CreateEDRManualScanRequest
+                 * @return CreateEDRManualScanOutcome
+                 */
+                CreateEDRManualScanOutcome CreateEDRManualScan(const Model::CreateEDRManualScanRequest &request);
+                void CreateEDRManualScanAsync(const Model::CreateEDRManualScanRequest& request, const CreateEDRManualScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEDRManualScanOutcomeCallable CreateEDRManualScanCallable(const Model::CreateEDRManualScanRequest& request);
+
+                /**
+                 *创建EDR告警导出任务
+                 * @param req CreateEdrAlertExportJobRequest
+                 * @return CreateEdrAlertExportJobOutcome
+                 */
+                CreateEdrAlertExportJobOutcome CreateEdrAlertExportJob(const Model::CreateEdrAlertExportJobRequest &request);
+                void CreateEdrAlertExportJobAsync(const Model::CreateEdrAlertExportJobRequest& request, const CreateEdrAlertExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEdrAlertExportJobOutcomeCallable CreateEdrAlertExportJobCallable(const Model::CreateEdrAlertExportJobRequest& request);
+
+                /**
                  *创建主机列漏洞表导出任务
                  * @param req CreateHostVulExportJobRequest
                  * @return CreateHostVulExportJobOutcome
@@ -1985,6 +2176,15 @@ namespace TencentCloud
                 CreateVulScanManualOutcome CreateVulScanManual(const Model::CreateVulScanManualRequest &request);
                 void CreateVulScanManualAsync(const Model::CreateVulScanManualRequest& request, const CreateVulScanManualAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateVulScanManualOutcomeCallable CreateVulScanManualCallable(const Model::CreateVulScanManualRequest& request);
+
+                /**
+                 *CSIP 手动扫描任务删除接口
+                 * @param req DeleteCSIPMalwareScanTaskRequest
+                 * @return DeleteCSIPMalwareScanTaskOutcome
+                 */
+                DeleteCSIPMalwareScanTaskOutcome DeleteCSIPMalwareScanTask(const Model::DeleteCSIPMalwareScanTaskRequest &request);
+                void DeleteCSIPMalwareScanTaskAsync(const Model::DeleteCSIPMalwareScanTaskRequest& request, const DeleteCSIPMalwareScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCSIPMalwareScanTaskOutcomeCallable DeleteCSIPMalwareScanTaskCallable(const Model::DeleteCSIPMalwareScanTaskRequest& request);
 
                 /**
                  *删除已删除的cos ak资产
@@ -2129,6 +2329,24 @@ namespace TencentCloud
                 DeleteDspmWhitelistStrategyOutcome DeleteDspmWhitelistStrategy(const Model::DeleteDspmWhitelistStrategyRequest &request);
                 void DeleteDspmWhitelistStrategyAsync(const Model::DeleteDspmWhitelistStrategyRequest& request, const DeleteDspmWhitelistStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDspmWhitelistStrategyOutcomeCallable DeleteDspmWhitelistStrategyCallable(const Model::DeleteDspmWhitelistStrategyRequest& request);
+
+                /**
+                 *删除EDR策略
+                 * @param req DeleteEDRRulesRequest
+                 * @return DeleteEDRRulesOutcome
+                 */
+                DeleteEDRRulesOutcome DeleteEDRRules(const Model::DeleteEDRRulesRequest &request);
+                void DeleteEDRRulesAsync(const Model::DeleteEDRRulesRequest& request, const DeleteEDRRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteEDRRulesOutcomeCallable DeleteEDRRulesCallable(const Model::DeleteEDRRulesRequest& request);
+
+                /**
+                 *删除已终止的扫描任务（物理删除主表及明细表）。只允许删除终态任务，只有创建者可操作。
+                 * @param req DeleteEDRScanTaskRequest
+                 * @return DeleteEDRScanTaskOutcome
+                 */
+                DeleteEDRScanTaskOutcome DeleteEDRScanTask(const Model::DeleteEDRScanTaskRequest &request);
+                void DeleteEDRScanTaskAsync(const Model::DeleteEDRScanTaskRequest& request, const DeleteEDRScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteEDRScanTaskOutcomeCallable DeleteEDRScanTaskCallable(const Model::DeleteEDRScanTaskRequest& request);
 
                 /**
                  *删除IaC检测接入Token
@@ -2345,6 +2563,24 @@ namespace TencentCloud
                 DescribeCLSLogListV3Outcome DescribeCLSLogListV3(const Model::DescribeCLSLogListV3Request &request);
                 void DescribeCLSLogListV3Async(const Model::DescribeCLSLogListV3Request& request, const DescribeCLSLogListV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCLSLogListV3OutcomeCallable DescribeCLSLogListV3Callable(const Model::DescribeCLSLogListV3Request& request);
+
+                /**
+                 *CSIP 扫描任务主机详情接口
+                 * @param req DescribeCSIPMalwareScanTaskDetailRequest
+                 * @return DescribeCSIPMalwareScanTaskDetailOutcome
+                 */
+                DescribeCSIPMalwareScanTaskDetailOutcome DescribeCSIPMalwareScanTaskDetail(const Model::DescribeCSIPMalwareScanTaskDetailRequest &request);
+                void DescribeCSIPMalwareScanTaskDetailAsync(const Model::DescribeCSIPMalwareScanTaskDetailRequest& request, const DescribeCSIPMalwareScanTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCSIPMalwareScanTaskDetailOutcomeCallable DescribeCSIPMalwareScanTaskDetailCallable(const Model::DescribeCSIPMalwareScanTaskDetailRequest& request);
+
+                /**
+                 *CSIP 手动扫描进度查询接口
+                 * @param req DescribeCSIPMalwareScanTaskProgressRequest
+                 * @return DescribeCSIPMalwareScanTaskProgressOutcome
+                 */
+                DescribeCSIPMalwareScanTaskProgressOutcome DescribeCSIPMalwareScanTaskProgress(const Model::DescribeCSIPMalwareScanTaskProgressRequest &request);
+                void DescribeCSIPMalwareScanTaskProgressAsync(const Model::DescribeCSIPMalwareScanTaskProgressRequest& request, const DescribeCSIPMalwareScanTaskProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCSIPMalwareScanTaskProgressOutcomeCallable DescribeCSIPMalwareScanTaskProgressCallable(const Model::DescribeCSIPMalwareScanTaskProgressRequest& request);
 
                 /**
                  *获取风险中心风险概况示例
@@ -3211,6 +3447,42 @@ namespace TencentCloud
                 DescribeEDRRuleListOutcomeCallable DescribeEDRRuleListCallable(const Model::DescribeEDRRuleListRequest& request);
 
                 /**
+                 *查询扫描任务列表。Filter.Filters支持Name：Keyword(模糊OperatorType=9)、ScanType(MANUAL/CYCLE)、TaskType(HOST/CONTAINER)、Status(WAIT/SCANNING/FINISHED/FAILED/CANCELED)、AppId(账号)。
+                 * @param req DescribeEDRScanRecordListRequest
+                 * @return DescribeEDRScanRecordListOutcome
+                 */
+                DescribeEDRScanRecordListOutcome DescribeEDRScanRecordList(const Model::DescribeEDRScanRecordListRequest &request);
+                void DescribeEDRScanRecordListAsync(const Model::DescribeEDRScanRecordListRequest& request, const DescribeEDRScanRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEDRScanRecordListOutcomeCallable DescribeEDRScanRecordListCallable(const Model::DescribeEDRScanRecordListRequest& request);
+
+                /**
+                 *查询扫描任务详情。Filter.Filters支持Name：Status（资产扫描状态，OperatorType=7 IN匹配，取值WAIT/SCANNING/FINISHED/FAILED）。
+                 * @param req DescribeEDRScanTaskDetailRequest
+                 * @return DescribeEDRScanTaskDetailOutcome
+                 */
+                DescribeEDRScanTaskDetailOutcome DescribeEDRScanTaskDetail(const Model::DescribeEDRScanTaskDetailRequest &request);
+                void DescribeEDRScanTaskDetailAsync(const Model::DescribeEDRScanTaskDetailRequest& request, const DescribeEDRScanTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEDRScanTaskDetailOutcomeCallable DescribeEDRScanTaskDetailCallable(const Model::DescribeEDRScanTaskDetailRequest& request);
+
+                /**
+                 *获取EDR告警数量统计，供资产模块调用。根据传入的MemberId和InstanceIDs，查询EDR告警表并返回告警记录条数信息。当InstanceIDs为空时返回汇总统计，非空时按InstanceIDs粒度分别返回统计。
+                 * @param req DescribeEdrAlertCountForAssetRequest
+                 * @return DescribeEdrAlertCountForAssetOutcome
+                 */
+                DescribeEdrAlertCountForAssetOutcome DescribeEdrAlertCountForAsset(const Model::DescribeEdrAlertCountForAssetRequest &request);
+                void DescribeEdrAlertCountForAssetAsync(const Model::DescribeEdrAlertCountForAssetRequest& request, const DescribeEdrAlertCountForAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEdrAlertCountForAssetOutcomeCallable DescribeEdrAlertCountForAssetCallable(const Model::DescribeEdrAlertCountForAssetRequest& request);
+
+                /**
+                 *容器场景告警数量统计
+                 * @param req DescribeEdrAlertCountForContainerRequest
+                 * @return DescribeEdrAlertCountForContainerOutcome
+                 */
+                DescribeEdrAlertCountForContainerOutcome DescribeEdrAlertCountForContainer(const Model::DescribeEdrAlertCountForContainerRequest &request);
+                void DescribeEdrAlertCountForContainerAsync(const Model::DescribeEdrAlertCountForContainerRequest& request, const DescribeEdrAlertCountForContainerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEdrAlertCountForContainerOutcomeCallable DescribeEdrAlertCountForContainerCallable(const Model::DescribeEdrAlertCountForContainerRequest& request);
+
+                /**
                  *获取EDR告警详情，包含告警内容JSON、资产富化、情报富化等完整信息
                  * @param req DescribeEdrAlertInfoRequest
                  * @return DescribeEdrAlertInfoOutcome
@@ -3227,6 +3499,42 @@ namespace TencentCloud
                 DescribeEdrAlertListOutcome DescribeEdrAlertList(const Model::DescribeEdrAlertListRequest &request);
                 void DescribeEdrAlertListAsync(const Model::DescribeEdrAlertListRequest& request, const DescribeEdrAlertListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEdrAlertListOutcomeCallable DescribeEdrAlertListCallable(const Model::DescribeEdrAlertListRequest& request);
+
+                /**
+                 *EDR告警多攻击阶段查询
+                 * @param req DescribeEdrAlertMultiAttackStagesRequest
+                 * @return DescribeEdrAlertMultiAttackStagesOutcome
+                 */
+                DescribeEdrAlertMultiAttackStagesOutcome DescribeEdrAlertMultiAttackStages(const Model::DescribeEdrAlertMultiAttackStagesRequest &request);
+                void DescribeEdrAlertMultiAttackStagesAsync(const Model::DescribeEdrAlertMultiAttackStagesRequest& request, const DescribeEdrAlertMultiAttackStagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEdrAlertMultiAttackStagesOutcomeCallable DescribeEdrAlertMultiAttackStagesCallable(const Model::DescribeEdrAlertMultiAttackStagesRequest& request);
+
+                /**
+                 *获取EDR告警统计
+                 * @param req DescribeEdrAlertSummaryRequest
+                 * @return DescribeEdrAlertSummaryOutcome
+                 */
+                DescribeEdrAlertSummaryOutcome DescribeEdrAlertSummary(const Model::DescribeEdrAlertSummaryRequest &request);
+                void DescribeEdrAlertSummaryAsync(const Model::DescribeEdrAlertSummaryRequest& request, const DescribeEdrAlertSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEdrAlertSummaryOutcomeCallable DescribeEdrAlertSummaryCallable(const Model::DescribeEdrAlertSummaryRequest& request);
+
+                /**
+                 *获取EDR导出下载链接
+                 * @param req DescribeEdrExportJobDownloadURLRequest
+                 * @return DescribeEdrExportJobDownloadURLOutcome
+                 */
+                DescribeEdrExportJobDownloadURLOutcome DescribeEdrExportJobDownloadURL(const Model::DescribeEdrExportJobDownloadURLRequest &request);
+                void DescribeEdrExportJobDownloadURLAsync(const Model::DescribeEdrExportJobDownloadURLRequest& request, const DescribeEdrExportJobDownloadURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEdrExportJobDownloadURLOutcomeCallable DescribeEdrExportJobDownloadURLCallable(const Model::DescribeEdrExportJobDownloadURLRequest& request);
+
+                /**
+                 *导出EDR任务列表
+                 * @param req DescribeEdrExportJobListRequest
+                 * @return DescribeEdrExportJobListOutcome
+                 */
+                DescribeEdrExportJobListOutcome DescribeEdrExportJobList(const Model::DescribeEdrExportJobListRequest &request);
+                void DescribeEdrExportJobListAsync(const Model::DescribeEdrExportJobListRequest& request, const DescribeEdrExportJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEdrExportJobListOutcomeCallable DescribeEdrExportJobListCallable(const Model::DescribeEdrExportJobListRequest& request);
 
                 /**
                  *云边界分析资产分类
@@ -3418,6 +3726,15 @@ namespace TencentCloud
                 DescribeNICAssetsOutcomeCallable DescribeNICAssetsCallable(const Model::DescribeNICAssetsRequest& request);
 
                 /**
+                 *查询网络攻击检测开关及资产范围配置
+                 * @param req DescribeNetAttackSettingRequest
+                 * @return DescribeNetAttackSettingOutcome
+                 */
+                DescribeNetAttackSettingOutcome DescribeNetAttackSetting(const Model::DescribeNetAttackSettingRequest &request);
+                void DescribeNetAttackSettingAsync(const Model::DescribeNetAttackSettingRequest& request, const DescribeNetAttackSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNetAttackSettingOutcomeCallable DescribeNetAttackSettingCallable(const Model::DescribeNetAttackSettingRequest& request);
+
+                /**
                  *获取通知资产范围配置
                  * @param req DescribeNotifyAssetConfigRequest
                  * @return DescribeNotifyAssetConfigOutcome
@@ -3497,6 +3814,15 @@ namespace TencentCloud
                 DescribeRepositoryImageAssetsOutcome DescribeRepositoryImageAssets(const Model::DescribeRepositoryImageAssetsRequest &request);
                 void DescribeRepositoryImageAssetsAsync(const Model::DescribeRepositoryImageAssetsRequest& request, const DescribeRepositoryImageAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRepositoryImageAssetsOutcomeCallable DescribeRepositoryImageAssetsCallable(const Model::DescribeRepositoryImageAssetsRequest& request);
+
+                /**
+                 *查询反弹Shell内网告警与资产范围配置
+                 * @param req DescribeReverseShellSystemPolicyConfigRequest
+                 * @return DescribeReverseShellSystemPolicyConfigOutcome
+                 */
+                DescribeReverseShellSystemPolicyConfigOutcome DescribeReverseShellSystemPolicyConfig(const Model::DescribeReverseShellSystemPolicyConfigRequest &request);
+                void DescribeReverseShellSystemPolicyConfigAsync(const Model::DescribeReverseShellSystemPolicyConfigRequest& request, const DescribeReverseShellSystemPolicyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReverseShellSystemPolicyConfigOutcomeCallable DescribeReverseShellSystemPolicyConfigCallable(const Model::DescribeReverseShellSystemPolicyConfigRequest& request);
 
                 /**
                  *查看风险关联的存储桶信息
@@ -3976,6 +4302,24 @@ namespace TencentCloud
                 DownloadDspmExportLogOutcomeCallable DownloadDspmExportLogCallable(const Model::DownloadDspmExportLogRequest& request);
 
                 /**
+                 *导出CSIP扫描任务主机详情为Excel文件，异步生成后通过DescribeExportMachines查询下载地址
+                 * @param req ExportCSIPMalwareScanTaskDetailRequest
+                 * @return ExportCSIPMalwareScanTaskDetailOutcome
+                 */
+                ExportCSIPMalwareScanTaskDetailOutcome ExportCSIPMalwareScanTaskDetail(const Model::ExportCSIPMalwareScanTaskDetailRequest &request);
+                void ExportCSIPMalwareScanTaskDetailAsync(const Model::ExportCSIPMalwareScanTaskDetailRequest& request, const ExportCSIPMalwareScanTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportCSIPMalwareScanTaskDetailOutcomeCallable ExportCSIPMalwareScanTaskDetailCallable(const Model::ExportCSIPMalwareScanTaskDetailRequest& request);
+
+                /**
+                 *导出EDR策略列表
+                 * @param req ExportEDRRulesRequest
+                 * @return ExportEDRRulesOutcome
+                 */
+                ExportEDRRulesOutcome ExportEDRRules(const Model::ExportEDRRulesRequest &request);
+                void ExportEDRRulesAsync(const Model::ExportEDRRulesRequest& request, const ExportEDRRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportEDRRulesOutcomeCallable ExportEDRRulesCallable(const Model::ExportEDRRulesRequest& request);
+
+                /**
                  *修改AI-Link智链引擎配置
                  * @param req ModifyAILinkSettingRequest
                  * @return ModifyAILinkSettingOutcome
@@ -4273,6 +4617,33 @@ namespace TencentCloud
                 ModifyEDRRuleOutcomeCallable ModifyEDRRuleCallable(const Model::ModifyEDRRuleRequest& request);
 
                 /**
+                 *修改EDR策略开关状态
+                 * @param req ModifyEDRRuleStatusRequest
+                 * @return ModifyEDRRuleStatusOutcome
+                 */
+                ModifyEDRRuleStatusOutcome ModifyEDRRuleStatus(const Model::ModifyEDRRuleStatusRequest &request);
+                void ModifyEDRRuleStatusAsync(const Model::ModifyEDRRuleStatusRequest& request, const ModifyEDRRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyEDRRuleStatusOutcomeCallable ModifyEDRRuleStatusCallable(const Model::ModifyEDRRuleStatusRequest& request);
+
+                /**
+                 *批量修改EDR策略动作
+                 * @param req ModifyEDRRulesActionRequest
+                 * @return ModifyEDRRulesActionOutcome
+                 */
+                ModifyEDRRulesActionOutcome ModifyEDRRulesAction(const Model::ModifyEDRRulesActionRequest &request);
+                void ModifyEDRRulesActionAsync(const Model::ModifyEDRRulesActionRequest& request, const ModifyEDRRulesActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyEDRRulesActionOutcomeCallable ModifyEDRRulesActionCallable(const Model::ModifyEDRRulesActionRequest& request);
+
+                /**
+                 *EDR告警隔离和恢复
+                 * @param req ModifyEdrAlertIsolationRequest
+                 * @return ModifyEdrAlertIsolationOutcome
+                 */
+                ModifyEdrAlertIsolationOutcome ModifyEdrAlertIsolation(const Model::ModifyEdrAlertIsolationRequest &request);
+                void ModifyEdrAlertIsolationAsync(const Model::ModifyEdrAlertIsolationRequest& request, const ModifyEdrAlertIsolationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyEdrAlertIsolationOutcomeCallable ModifyEdrAlertIsolationCallable(const Model::ModifyEdrAlertIsolationRequest& request);
+
+                /**
                  *永久忽略EDR多行为告警，将告警对应的主机+规则加入AI-Link永久忽略白名单，后续同类告警将自动丢弃
                  * @param req ModifyEdrAlertPermanentIgnoreRequest
                  * @return ModifyEdrAlertPermanentIgnoreOutcome
@@ -4280,6 +4651,15 @@ namespace TencentCloud
                 ModifyEdrAlertPermanentIgnoreOutcome ModifyEdrAlertPermanentIgnore(const Model::ModifyEdrAlertPermanentIgnoreRequest &request);
                 void ModifyEdrAlertPermanentIgnoreAsync(const Model::ModifyEdrAlertPermanentIgnoreRequest& request, const ModifyEdrAlertPermanentIgnoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyEdrAlertPermanentIgnoreOutcomeCallable ModifyEdrAlertPermanentIgnoreCallable(const Model::ModifyEdrAlertPermanentIgnoreRequest& request);
+
+                /**
+                 *EDR告警状态处置
+                 * @param req ModifyEdrAlertStatusRequest
+                 * @return ModifyEdrAlertStatusOutcome
+                 */
+                ModifyEdrAlertStatusOutcome ModifyEdrAlertStatus(const Model::ModifyEdrAlertStatusRequest &request);
+                void ModifyEdrAlertStatusAsync(const Model::ModifyEdrAlertStatusRequest& request, const ModifyEdrAlertStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyEdrAlertStatusOutcomeCallable ModifyEdrAlertStatusCallable(const Model::ModifyEdrAlertStatusRequest& request);
 
                 /**
                  *修改IaC检测接入Token存储周期
@@ -4298,6 +4678,15 @@ namespace TencentCloud
                 ModifyMachineRemarkOutcome ModifyMachineRemark(const Model::ModifyMachineRemarkRequest &request);
                 void ModifyMachineRemarkAsync(const Model::ModifyMachineRemarkRequest& request, const ModifyMachineRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyMachineRemarkOutcomeCallable ModifyMachineRemarkCallable(const Model::ModifyMachineRemarkRequest& request);
+
+                /**
+                 *修改网络攻击检测开关及资产范围配置
+                 * @param req ModifyNetAttackSettingRequest
+                 * @return ModifyNetAttackSettingOutcome
+                 */
+                ModifyNetAttackSettingOutcome ModifyNetAttackSetting(const Model::ModifyNetAttackSettingRequest &request);
+                void ModifyNetAttackSettingAsync(const Model::ModifyNetAttackSettingRequest& request, const ModifyNetAttackSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNetAttackSettingOutcomeCallable ModifyNetAttackSettingCallable(const Model::ModifyNetAttackSettingRequest& request);
 
                 /**
                  *修改通知资产范围配置
@@ -4343,6 +4732,15 @@ namespace TencentCloud
                 ModifyPolicyStatusOutcome ModifyPolicyStatus(const Model::ModifyPolicyStatusRequest &request);
                 void ModifyPolicyStatusAsync(const Model::ModifyPolicyStatusRequest& request, const ModifyPolicyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPolicyStatusOutcomeCallable ModifyPolicyStatusCallable(const Model::ModifyPolicyStatusRequest& request);
+
+                /**
+                 *修改反弹Shell内网告警与资产范围配置
+                 * @param req ModifyReverseShellSystemPolicyConfigRequest
+                 * @return ModifyReverseShellSystemPolicyConfigOutcome
+                 */
+                ModifyReverseShellSystemPolicyConfigOutcome ModifyReverseShellSystemPolicyConfig(const Model::ModifyReverseShellSystemPolicyConfigRequest &request);
+                void ModifyReverseShellSystemPolicyConfigAsync(const Model::ModifyReverseShellSystemPolicyConfigRequest& request, const ModifyReverseShellSystemPolicyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyReverseShellSystemPolicyConfigOutcomeCallable ModifyReverseShellSystemPolicyConfigCallable(const Model::ModifyReverseShellSystemPolicyConfigRequest& request);
 
                 /**
                  *修改风险中心风险状态
@@ -4426,6 +4824,24 @@ namespace TencentCloud
                 RevertDspmAssetAccountOutcomeCallable RevertDspmAssetAccountCallable(const Model::RevertDspmAssetAccountRequest& request);
 
                 /**
+                 *CSIP 手动扫描任务删除接口
+                 * @param req ScanCSIPTaskAgainRequest
+                 * @return ScanCSIPTaskAgainOutcome
+                 */
+                ScanCSIPTaskAgainOutcome ScanCSIPTaskAgain(const Model::ScanCSIPTaskAgainRequest &request);
+                void ScanCSIPTaskAgainAsync(const Model::ScanCSIPTaskAgainRequest& request, const ScanCSIPTaskAgainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ScanCSIPTaskAgainOutcomeCallable ScanCSIPTaskAgainCallable(const Model::ScanCSIPTaskAgainRequest& request);
+
+                /**
+                 *基于原任务配置新建扫描任务。AssetId为空时从TaskId获取全部资产信息；AssetId非空时仅含该单资产。
+                 * @param req ScanEDRTaskAgainRequest
+                 * @return ScanEDRTaskAgainOutcome
+                 */
+                ScanEDRTaskAgainOutcome ScanEDRTaskAgain(const Model::ScanEDRTaskAgainRequest &request);
+                void ScanEDRTaskAgainAsync(const Model::ScanEDRTaskAgainRequest& request, const ScanEDRTaskAgainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ScanEDRTaskAgainOutcomeCallable ScanEDRTaskAgainCallable(const Model::ScanEDRTaskAgainRequest& request);
+
+                /**
                  *发送Dspm资产访问验证码
                  * @param req SendDspmAssetLoginSmsCodeRequest
                  * @return SendDspmAssetLoginSmsCodeOutcome
@@ -4433,6 +4849,24 @@ namespace TencentCloud
                 SendDspmAssetLoginSmsCodeOutcome SendDspmAssetLoginSmsCode(const Model::SendDspmAssetLoginSmsCodeRequest &request);
                 void SendDspmAssetLoginSmsCodeAsync(const Model::SendDspmAssetLoginSmsCodeRequest& request, const SendDspmAssetLoginSmsCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SendDspmAssetLoginSmsCodeOutcomeCallable SendDspmAssetLoginSmsCodeCallable(const Model::SendDspmAssetLoginSmsCodeRequest& request);
+
+                /**
+                 *CSIP 手动扫描停止接口
+                 * @param req StopCSIPManualMalwareScanRequest
+                 * @return StopCSIPManualMalwareScanOutcome
+                 */
+                StopCSIPManualMalwareScanOutcome StopCSIPManualMalwareScan(const Model::StopCSIPManualMalwareScanRequest &request);
+                void StopCSIPManualMalwareScanAsync(const Model::StopCSIPManualMalwareScanRequest& request, const StopCSIPManualMalwareScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopCSIPManualMalwareScanOutcomeCallable StopCSIPManualMalwareScanCallable(const Model::StopCSIPManualMalwareScanRequest& request);
+
+                /**
+                 *停止或取消扫描任务。SCANNING状态调RPC停止，WAIT状态直接改库取消。只有任务创建者可操作。
+                 * @param req StopEDRScanTaskRequest
+                 * @return StopEDRScanTaskOutcome
+                 */
+                StopEDRScanTaskOutcome StopEDRScanTask(const Model::StopEDRScanTaskRequest &request);
+                void StopEDRScanTaskAsync(const Model::StopEDRScanTaskRequest& request, const StopEDRScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopEDRScanTaskOutcomeCallable StopEDRScanTaskCallable(const Model::StopEDRScanTaskRequest& request);
 
                 /**
                  *停止扫风险中心扫描任务

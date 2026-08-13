@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据库名
+                     * 获取<p>数据库名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DBName 数据库名
+                     * @return DBName <p>数据库名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDBName() const;
 
                     /**
-                     * 设置数据库名
+                     * 设置<p>数据库名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dBName 数据库名
+                     * @param _dBName <p>数据库名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool DBNameHasBeenSet() const;
 
                     /**
-                     * 获取schema名
-                     * @return SchemaName schema名
+                     * 获取<p>schema名</p>
+                     * @return SchemaName <p>schema名</p>
                      * 
                      */
                     std::string GetSchemaName() const;
 
                     /**
-                     * 设置schema名
-                     * @param _schemaName schema名
+                     * 设置<p>schema名</p>
+                     * @param _schemaName <p>schema名</p>
                      * 
                      */
                     void SetSchemaName(const std::string& _schemaName);
@@ -93,18 +93,18 @@ namespace TencentCloud
                     bool SchemaNameHasBeenSet() const;
 
                     /**
-                     * 获取数据表名
+                     * 获取<p>数据表名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TableName 数据表名
+                     * @return TableName <p>数据表名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
-                     * 设置数据表名
+                     * 设置<p>数据表名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tableName 数据表名
+                     * @param _tableName <p>数据表名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -118,18 +118,18 @@ namespace TencentCloud
                     bool TableNameHasBeenSet() const;
 
                     /**
-                     * 获取分块号
+                     * 获取<p>分块号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ChunkId 分块号
+                     * @return ChunkId <p>分块号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetChunkId() const;
 
                     /**
-                     * 设置分块号
+                     * 设置<p>分块号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _chunkId 分块号
+                     * @param _chunkId <p>分块号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -143,18 +143,18 @@ namespace TencentCloud
                     bool ChunkIdHasBeenSet() const;
 
                     /**
-                     * 获取数据标识符，比如主键信息等
+                     * 获取<p>数据标识符，比如主键信息等</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Identifier 数据标识符，比如主键信息等
+                     * @return Identifier <p>数据标识符，比如主键信息等</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdentifier() const;
 
                     /**
-                     * 设置数据标识符，比如主键信息等
+                     * 设置<p>数据标识符，比如主键信息等</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _identifier 数据标识符，比如主键信息等
+                     * @param _identifier <p>数据标识符，比如主键信息等</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -168,18 +168,18 @@ namespace TencentCloud
                     bool IdentifierHasBeenSet() const;
 
                     /**
-                     * 获取不一致类型，可能的取值为：data - 两边数据不一致；srcLack - 源缺失；dstLack - 目标缺失
+                     * 获取<p>不一致类型，可能的取值为：data - 两边数据不一致；srcLack - 源缺失；dstLack - 目标缺失</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DiffType 不一致类型，可能的取值为：data - 两边数据不一致；srcLack - 源缺失；dstLack - 目标缺失
+                     * @return DiffType <p>不一致类型，可能的取值为：data - 两边数据不一致；srcLack - 源缺失；dstLack - 目标缺失</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiffType() const;
 
                     /**
-                     * 设置不一致类型，可能的取值为：data - 两边数据不一致；srcLack - 源缺失；dstLack - 目标缺失
+                     * 设置<p>不一致类型，可能的取值为：data - 两边数据不一致；srcLack - 源缺失；dstLack - 目标缺失</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _diffType 不一致类型，可能的取值为：data - 两边数据不一致；srcLack - 源缺失；dstLack - 目标缺失
+                     * @param _diffType <p>不一致类型，可能的取值为：data - 两边数据不一致；srcLack - 源缺失；dstLack - 目标缺失</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -193,18 +193,18 @@ namespace TencentCloud
                     bool DiffTypeHasBeenSet() const;
 
                     /**
-                     * 获取表结构信息
+                     * 获取<p>表结构信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SchemaInfo 表结构信息
+                     * @return SchemaInfo <p>表结构信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSchemaInfo() const;
 
                     /**
-                     * 设置表结构信息
+                     * 设置<p>表结构信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _schemaInfo 表结构信息
+                     * @param _schemaInfo <p>表结构信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -218,18 +218,18 @@ namespace TencentCloud
                     bool SchemaInfoHasBeenSet() const;
 
                     /**
-                     * 获取源端数据
+                     * 获取<p>源端数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SrcItem 源端数据
+                     * @return SrcItem <p>源端数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSrcItem() const;
 
                     /**
-                     * 设置源端数据
+                     * 设置<p>源端数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _srcItem 源端数据
+                     * @param _srcItem <p>源端数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -243,18 +243,18 @@ namespace TencentCloud
                     bool SrcItemHasBeenSet() const;
 
                     /**
-                     * 获取目标端数据
+                     * 获取<p>目标端数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DstItem 目标端数据
+                     * @return DstItem <p>目标端数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDstItem() const;
 
                     /**
-                     * 设置目标端数据
+                     * 设置<p>目标端数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dstItem 目标端数据
+                     * @param _dstItem <p>目标端数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -268,18 +268,18 @@ namespace TencentCloud
                     bool DstItemHasBeenSet() const;
 
                     /**
-                     * 获取完成时间
+                     * 获取<p>完成时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FinishedAt 完成时间
+                     * @return FinishedAt <p>完成时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFinishedAt() const;
 
                     /**
-                     * 设置完成时间
+                     * 设置<p>完成时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _finishedAt 完成时间
+                     * @param _finishedAt <p>完成时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -295,69 +295,69 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据库名
+                     * <p>数据库名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dBName;
                     bool m_dBNameHasBeenSet;
 
                     /**
-                     * schema名
+                     * <p>schema名</p>
                      */
                     std::string m_schemaName;
                     bool m_schemaNameHasBeenSet;
 
                     /**
-                     * 数据表名
+                     * <p>数据表名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
 
                     /**
-                     * 分块号
+                     * <p>分块号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_chunkId;
                     bool m_chunkIdHasBeenSet;
 
                     /**
-                     * 数据标识符，比如主键信息等
+                     * <p>数据标识符，比如主键信息等</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_identifier;
                     bool m_identifierHasBeenSet;
 
                     /**
-                     * 不一致类型，可能的取值为：data - 两边数据不一致；srcLack - 源缺失；dstLack - 目标缺失
+                     * <p>不一致类型，可能的取值为：data - 两边数据不一致；srcLack - 源缺失；dstLack - 目标缺失</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diffType;
                     bool m_diffTypeHasBeenSet;
 
                     /**
-                     * 表结构信息
+                     * <p>表结构信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_schemaInfo;
                     bool m_schemaInfoHasBeenSet;
 
                     /**
-                     * 源端数据
+                     * <p>源端数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_srcItem;
                     bool m_srcItemHasBeenSet;
 
                     /**
-                     * 目标端数据
+                     * <p>目标端数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_dstItem;
                     bool m_dstItemHasBeenSet;
 
                     /**
-                     * 完成时间
+                     * <p>完成时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_finishedAt;

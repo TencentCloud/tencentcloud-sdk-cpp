@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订阅 ID 筛选，精确匹配
-                     * @return SubscribeId 订阅 ID 筛选，精确匹配
+                     * 获取<p>订阅 ID 筛选，精确匹配</p>
+                     * @return SubscribeId <p>订阅 ID 筛选，精确匹配</p>
                      * 
                      */
                     std::string GetSubscribeId() const;
 
                     /**
-                     * 设置订阅 ID 筛选，精确匹配
-                     * @param _subscribeId 订阅 ID 筛选，精确匹配
+                     * 设置<p>订阅 ID 筛选，精确匹配</p>
+                     * @param _subscribeId <p>订阅 ID 筛选，精确匹配</p>
                      * 
                      */
                     void SetSubscribeId(const std::string& _subscribeId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool SubscribeIdHasBeenSet() const;
 
                     /**
-                     * 获取订阅 ID 筛选，精确匹配
-                     * @return SubscribeIds 订阅 ID 筛选，精确匹配
+                     * 获取<p>订阅 ID 筛选，精确匹配</p>
+                     * @return SubscribeIds <p>订阅 ID 筛选，精确匹配</p>
                      * 
                      */
                     std::vector<std::string> GetSubscribeIds() const;
 
                     /**
-                     * 设置订阅 ID 筛选，精确匹配
-                     * @param _subscribeIds 订阅 ID 筛选，精确匹配
+                     * 设置<p>订阅 ID 筛选，精确匹配</p>
+                     * @param _subscribeIds <p>订阅 ID 筛选，精确匹配</p>
                      * 
                      */
                     void SetSubscribeIds(const std::vector<std::string>& _subscribeIds);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool SubscribeIdsHasBeenSet() const;
 
                     /**
-                     * 获取订阅名称，前缀模糊匹配
-                     * @return SubscribeName 订阅名称，前缀模糊匹配
+                     * 获取<p>订阅名称，前缀模糊匹配</p>
+                     * @return SubscribeName <p>订阅名称，前缀模糊匹配</p>
                      * 
                      */
                     std::string GetSubscribeName() const;
 
                     /**
-                     * 设置订阅名称，前缀模糊匹配
-                     * @param _subscribeName 订阅名称，前缀模糊匹配
+                     * 设置<p>订阅名称，前缀模糊匹配</p>
+                     * @param _subscribeName <p>订阅名称，前缀模糊匹配</p>
                      * 
                      */
                     void SetSubscribeName(const std::string& _subscribeName);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool SubscribeNameHasBeenSet() const;
 
                     /**
-                     * 获取订阅的云上数据库实例的 ID，精确匹配
-                     * @return InstanceId 订阅的云上数据库实例的 ID，精确匹配
+                     * 获取<p>订阅的云上数据库实例的 ID，精确匹配</p>
+                     * @return InstanceId <p>订阅的云上数据库实例的 ID，精确匹配</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置订阅的云上数据库实例的 ID，精确匹配
-                     * @param _instanceId 订阅的云上数据库实例的 ID，精确匹配
+                     * 设置<p>订阅的云上数据库实例的 ID，精确匹配</p>
+                     * @param _instanceId <p>订阅的云上数据库实例的 ID，精确匹配</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取订阅的topicName
-                     * @return Topic 订阅的topicName
+                     * 获取<p>订阅的topicName</p>
+                     * @return Topic <p>订阅的topicName</p>
                      * 
                      */
                     std::string GetTopic() const;
 
                     /**
-                     * 设置订阅的topicName
-                     * @param _topic 订阅的topicName
+                     * 设置<p>订阅的topicName</p>
+                     * @param _topic <p>订阅的topicName</p>
                      * 
                      */
                     void SetTopic(const std::string& _topic);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool TopicHasBeenSet() const;
 
                     /**
-                     * 获取计费模式筛选，可能的值：0-包年包月，1-按量计费
-                     * @return PayType 计费模式筛选，可能的值：0-包年包月，1-按量计费
+                     * 获取<p>计费模式筛选，可能的值：0-包年包月，1-按量计费</p>
+                     * @return PayType <p>计费模式筛选，可能的值：0-包年包月，1-按量计费</p>
                      * 
                      */
                     int64_t GetPayType() const;
 
                     /**
-                     * 设置计费模式筛选，可能的值：0-包年包月，1-按量计费
-                     * @param _payType 计费模式筛选，可能的值：0-包年包月，1-按量计费
+                     * 设置<p>计费模式筛选，可能的值：0-包年包月，1-按量计费</p>
+                     * @param _payType <p>计费模式筛选，可能的值：0-包年包月，1-按量计费</p>
                      * 
                      */
                     void SetPayType(const int64_t& _payType);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool PayTypeHasBeenSet() const;
 
                     /**
-                     * 获取订阅的数据库产品，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)
-                     * @return Product 订阅的数据库产品，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)
+                     * 获取<p>订阅的数据库产品，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)</p>
+                     * @return Product <p>订阅的数据库产品，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)</p>
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置订阅的数据库产品，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)
-                     * @param _product 订阅的数据库产品，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)
+                     * 设置<p>订阅的数据库产品，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)</p>
+                     * @param _product <p>订阅的数据库产品，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)</p>
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining，按量转包年包月中 post2PrePayIng
-                     * @return Status 数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining，按量转包年包月中 post2PrePayIng
+                     * 获取<p>数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining，按量转包年包月中 post2PrePayIng</p>
+                     * @return Status <p>数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining，按量转包年包月中 post2PrePayIng</p>
                      * 
                      */
                     std::vector<std::string> GetStatus() const;
 
                     /**
-                     * 设置数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining，按量转包年包月中 post2PrePayIng
-                     * @param _status 数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining，按量转包年包月中 post2PrePayIng
+                     * 设置<p>数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining，按量转包年包月中 post2PrePayIng</p>
+                     * @param _status <p>数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining，按量转包年包月中 post2PrePayIng</p>
                      * 
                      */
                     void SetStatus(const std::vector<std::string>& _status);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error
-                     * @return SubsStatus 数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error
+                     * 获取<p>数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error</p>
+                     * @return SubsStatus <p>数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error</p>
                      * 
                      */
                     std::vector<std::string> GetSubsStatus() const;
 
                     /**
-                     * 设置数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error
-                     * @param _subsStatus 数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error
+                     * 设置<p>数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error</p>
+                     * @param _subsStatus <p>数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error</p>
                      * 
                      */
                     void SetSubsStatus(const std::vector<std::string>& _subsStatus);
@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool SubsStatusHasBeenSet() const;
 
                     /**
-                     * 获取返回记录的起始偏移量。默认0
-                     * @return Offset 返回记录的起始偏移量。默认0
+                     * 获取<p>返回记录的起始偏移量。默认0</p>
+                     * @return Offset <p>返回记录的起始偏移量。默认0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置返回记录的起始偏移量。默认0
-                     * @param _offset 返回记录的起始偏移量。默认0
+                     * 设置<p>返回记录的起始偏移量。默认0</p>
+                     * @param _offset <p>返回记录的起始偏移量。默认0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -254,15 +254,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取单次返回的记录数量。默认20，最大100
-                     * @return Limit 单次返回的记录数量。默认20，最大100
+                     * 获取<p>单次返回的记录数量。默认20，最大100</p>
+                     * @return Limit <p>单次返回的记录数量。默认20，最大100</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置单次返回的记录数量。默认20，最大100
-                     * @param _limit 单次返回的记录数量。默认20，最大100
+                     * 设置<p>单次返回的记录数量。默认20，最大100</p>
+                     * @param _limit <p>单次返回的记录数量。默认20，最大100</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -275,15 +275,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取排序方向，可选的值为"DESC"和"ASC"，默认为"DESC"，按创建时间逆序排序
-                     * @return OrderDirection 排序方向，可选的值为"DESC"和"ASC"，默认为"DESC"，按创建时间逆序排序
+                     * 获取<p>排序方向，可选的值为&quot;DESC&quot;和&quot;ASC&quot;，默认为&quot;DESC&quot;，按创建时间逆序排序</p>
+                     * @return OrderDirection <p>排序方向，可选的值为&quot;DESC&quot;和&quot;ASC&quot;，默认为&quot;DESC&quot;，按创建时间逆序排序</p>
                      * 
                      */
                     std::string GetOrderDirection() const;
 
                     /**
-                     * 设置排序方向，可选的值为"DESC"和"ASC"，默认为"DESC"，按创建时间逆序排序
-                     * @param _orderDirection 排序方向，可选的值为"DESC"和"ASC"，默认为"DESC"，按创建时间逆序排序
+                     * 设置<p>排序方向，可选的值为&quot;DESC&quot;和&quot;ASC&quot;，默认为&quot;DESC&quot;，按创建时间逆序排序</p>
+                     * @param _orderDirection <p>排序方向，可选的值为&quot;DESC&quot;和&quot;ASC&quot;，默认为&quot;DESC&quot;，按创建时间逆序排序</p>
                      * 
                      */
                     void SetOrderDirection(const std::string& _orderDirection);
@@ -296,15 +296,15 @@ namespace TencentCloud
                     bool OrderDirectionHasBeenSet() const;
 
                     /**
-                     * 获取tag 过滤条件，多个 TagFilter 之间关系为且
-                     * @return TagFilters tag 过滤条件，多个 TagFilter 之间关系为且
+                     * 获取<p>tag 过滤条件，多个 TagFilter 之间关系为且</p>
+                     * @return TagFilters <p>tag 过滤条件，多个 TagFilter 之间关系为且</p>
                      * 
                      */
                     std::vector<TagFilter> GetTagFilters() const;
 
                     /**
-                     * 设置tag 过滤条件，多个 TagFilter 之间关系为且
-                     * @param _tagFilters tag 过滤条件，多个 TagFilter 之间关系为且
+                     * 设置<p>tag 过滤条件，多个 TagFilter 之间关系为且</p>
+                     * @param _tagFilters <p>tag 过滤条件，多个 TagFilter 之间关系为且</p>
                      * 
                      */
                     void SetTagFilters(const std::vector<TagFilter>& _tagFilters);
@@ -319,79 +319,79 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订阅 ID 筛选，精确匹配
+                     * <p>订阅 ID 筛选，精确匹配</p>
                      */
                     std::string m_subscribeId;
                     bool m_subscribeIdHasBeenSet;
 
                     /**
-                     * 订阅 ID 筛选，精确匹配
+                     * <p>订阅 ID 筛选，精确匹配</p>
                      */
                     std::vector<std::string> m_subscribeIds;
                     bool m_subscribeIdsHasBeenSet;
 
                     /**
-                     * 订阅名称，前缀模糊匹配
+                     * <p>订阅名称，前缀模糊匹配</p>
                      */
                     std::string m_subscribeName;
                     bool m_subscribeNameHasBeenSet;
 
                     /**
-                     * 订阅的云上数据库实例的 ID，精确匹配
+                     * <p>订阅的云上数据库实例的 ID，精确匹配</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 订阅的topicName
+                     * <p>订阅的topicName</p>
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
 
                     /**
-                     * 计费模式筛选，可能的值：0-包年包月，1-按量计费
+                     * <p>计费模式筛选，可能的值：0-包年包月，1-按量计费</p>
                      */
                     int64_t m_payType;
                     bool m_payTypeHasBeenSet;
 
                     /**
-                     * 订阅的数据库产品，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)
+                     * <p>订阅的数据库产品，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)</p>
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
 
                     /**
-                     * 数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining，按量转包年包月中 post2PrePayIng
+                     * <p>数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining，按量转包年包月中 post2PrePayIng</p>
                      */
                     std::vector<std::string> m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error
+                     * <p>数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error</p>
                      */
                     std::vector<std::string> m_subsStatus;
                     bool m_subsStatusHasBeenSet;
 
                     /**
-                     * 返回记录的起始偏移量。默认0
+                     * <p>返回记录的起始偏移量。默认0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 单次返回的记录数量。默认20，最大100
+                     * <p>单次返回的记录数量。默认20，最大100</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 排序方向，可选的值为"DESC"和"ASC"，默认为"DESC"，按创建时间逆序排序
+                     * <p>排序方向，可选的值为&quot;DESC&quot;和&quot;ASC&quot;，默认为&quot;DESC&quot;，按创建时间逆序排序</p>
                      */
                     std::string m_orderDirection;
                     bool m_orderDirectionHasBeenSet;
 
                     /**
-                     * tag 过滤条件，多个 TagFilter 之间关系为且
+                     * <p>tag 过滤条件，多个 TagFilter 之间关系为且</p>
                      */
                     std::vector<TagFilter> m_tagFilters;
                     bool m_tagFiltersHasBeenSet;

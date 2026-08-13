@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务 Id
-                     * @return JobId 任务 Id
+                     * 获取<p>任务 Id</p>
+                     * @return JobId <p>任务 Id</p>
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置任务 Id
-                     * @param _jobId 任务 Id
+                     * 设置<p>任务 Id</p>
+                     * @param _jobId <p>任务 Id</p>
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取分页设置，表示每页显示多少条任务，默认为 20
-                     * @return Limit 分页设置，表示每页显示多少条任务，默认为 20
+                     * 获取<p>分页设置，表示每页显示多少条任务，默认为 20</p>
+                     * @return Limit <p>分页设置，表示每页显示多少条任务，默认为 20</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页设置，表示每页显示多少条任务，默认为 20
-                     * @param _limit 分页设置，表示每页显示多少条任务，默认为 20
+                     * 设置<p>分页设置，表示每页显示多少条任务，默认为 20</p>
+                     * @param _limit <p>分页设置，表示每页显示多少条任务，默认为 20</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量
-                     * @return Offset 分页偏移量
+                     * 获取<p>分页偏移量</p>
+                     * @return Offset <p>分页偏移量</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量
-                     * @param _offset 分页偏移量
+                     * 设置<p>分页偏移量</p>
+                     * @param _offset <p>分页偏移量</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取校验任务 ID
-                     * @return CompareTaskId 校验任务 ID
+                     * 获取<p>校验任务 ID</p>
+                     * @return CompareTaskId <p>校验任务 ID</p>
                      * 
                      */
                     std::string GetCompareTaskId() const;
 
                     /**
-                     * 设置校验任务 ID
-                     * @param _compareTaskId 校验任务 ID
+                     * 设置<p>校验任务 ID</p>
+                     * @param _compareTaskId <p>校验任务 ID</p>
                      * 
                      */
                     void SetCompareTaskId(const std::string& _compareTaskId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool CompareTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
-                     * @return Status 任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
+                     * 获取<p>任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止</p>
+                     * @return Status <p>任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止</p>
                      * 
                      */
                     std::vector<std::string> GetStatus() const;
 
                     /**
-                     * 设置任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
-                     * @param _status 任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
+                     * 设置<p>任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止</p>
+                     * @param _status <p>任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止</p>
                      * 
                      */
                     void SetStatus(const std::vector<std::string>& _status);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务 Id
+                     * <p>任务 Id</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 分页设置，表示每页显示多少条任务，默认为 20
+                     * <p>分页设置，表示每页显示多少条任务，默认为 20</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页偏移量
+                     * <p>分页偏移量</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 校验任务 ID
+                     * <p>校验任务 ID</p>
                      */
                     std::string m_compareTaskId;
                     bool m_compareTaskIdHasBeenSet;
 
                     /**
-                     * 任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
+                     * <p>任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止</p>
                      */
                     std::vector<std::string> m_status;
                     bool m_statusHasBeenSet;

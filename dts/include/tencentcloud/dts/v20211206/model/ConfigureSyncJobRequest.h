@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool RunModeHasBeenSet() const;
 
                     /**
-                     * 获取<p>期待启动时间，当RunMode取值为Timed时，此值必填，形如：&quot;2006-01-02 15:04:05&quot;</p>
-                     * @return ExpectRunTime <p>期待启动时间，当RunMode取值为Timed时，此值必填，形如：&quot;2006-01-02 15:04:05&quot;</p>
+                     * 获取<p>期待启动时间，当 <code>RunMode</code> 取值为 <code>Timed</code> 时此值必填。当 <code>DateTimeISOFormat=true</code> 时按 RFC 3339 传入（如 <code>2026-04-23T20:21:35+08:00</code>），否则按 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）传入</p>
+                     * @return ExpectRunTime <p>期待启动时间，当 <code>RunMode</code> 取值为 <code>Timed</code> 时此值必填。当 <code>DateTimeISOFormat=true</code> 时按 RFC 3339 传入（如 <code>2026-04-23T20:21:35+08:00</code>），否则按 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）传入</p>
                      * 
                      */
                     std::string GetExpectRunTime() const;
 
                     /**
-                     * 设置<p>期待启动时间，当RunMode取值为Timed时，此值必填，形如：&quot;2006-01-02 15:04:05&quot;</p>
-                     * @param _expectRunTime <p>期待启动时间，当RunMode取值为Timed时，此值必填，形如：&quot;2006-01-02 15:04:05&quot;</p>
+                     * 设置<p>期待启动时间，当 <code>RunMode</code> 取值为 <code>Timed</code> 时此值必填。当 <code>DateTimeISOFormat=true</code> 时按 RFC 3339 传入（如 <code>2026-04-23T20:21:35+08:00</code>），否则按 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）传入</p>
+                     * @param _expectRunTime <p>期待启动时间，当 <code>RunMode</code> 取值为 <code>Timed</code> 时此值必填。当 <code>DateTimeISOFormat=true</code> 时按 RFC 3339 传入（如 <code>2026-04-23T20:21:35+08:00</code>），否则按 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）传入</p>
                      * 
                      */
                     void SetExpectRunTime(const std::string& _expectRunTime);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool DstNodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>同步任务选项；该字段下的RateLimitOption暂时无法生效、如果需要修改限速、可通过ModifySyncRateLimit接口完成限速</p>
-                     * @return Options <p>同步任务选项；该字段下的RateLimitOption暂时无法生效、如果需要修改限速、可通过ModifySyncRateLimit接口完成限速</p>
+                     * 获取<p>同步任务选项</p>
+                     * @return Options <p>同步任务选项</p>
                      * 
                      */
                     Options GetOptions() const;
 
                     /**
-                     * 设置<p>同步任务选项；该字段下的RateLimitOption暂时无法生效、如果需要修改限速、可通过ModifySyncRateLimit接口完成限速</p>
-                     * @param _options <p>同步任务选项；该字段下的RateLimitOption暂时无法生效、如果需要修改限速、可通过ModifySyncRateLimit接口完成限速</p>
+                     * 设置<p>同步任务选项</p>
+                     * @param _options <p>同步任务选项</p>
                      * 
                      */
                     void SetOptions(const Options& _options);
@@ -448,7 +448,7 @@ namespace TencentCloud
                     bool m_runModeHasBeenSet;
 
                     /**
-                     * <p>期待启动时间，当RunMode取值为Timed时，此值必填，形如：&quot;2006-01-02 15:04:05&quot;</p>
+                     * <p>期待启动时间，当 <code>RunMode</code> 取值为 <code>Timed</code> 时此值必填。当 <code>DateTimeISOFormat=true</code> 时按 RFC 3339 传入（如 <code>2026-04-23T20:21:35+08:00</code>），否则按 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）传入</p>
                      */
                     std::string m_expectRunTime;
                     bool m_expectRunTimeHasBeenSet;
@@ -496,7 +496,7 @@ namespace TencentCloud
                     bool m_dstNodeTypeHasBeenSet;
 
                     /**
-                     * <p>同步任务选项；该字段下的RateLimitOption暂时无法生效、如果需要修改限速、可通过ModifySyncRateLimit接口完成限速</p>
+                     * <p>同步任务选项</p>
                      */
                     Options m_options;
                     bool m_optionsHasBeenSet;

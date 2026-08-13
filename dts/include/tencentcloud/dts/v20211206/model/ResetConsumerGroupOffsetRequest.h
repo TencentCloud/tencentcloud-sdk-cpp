@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订阅实例id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
-                     * @return SubscribeId 订阅实例id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+                     * 获取<p>订阅实例id，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
+                     * @return SubscribeId <p>订阅实例id，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
                      * 
                      */
                     std::string GetSubscribeId() const;
 
                     /**
-                     * 设置订阅实例id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
-                     * @param _subscribeId 订阅实例id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+                     * 设置<p>订阅实例id，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
+                     * @param _subscribeId <p>订阅实例id，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
                      * 
                      */
                     void SetSubscribeId(const std::string& _subscribeId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SubscribeIdHasBeenSet() const;
 
                     /**
-                     * 获取订阅的kafka topic，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
-                     * @return TopicName 订阅的kafka topic，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+                     * 获取<p>订阅的kafka topic，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
+                     * @return TopicName <p>订阅的kafka topic，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置订阅的kafka topic，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
-                     * @param _topicName 订阅的kafka topic，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+                     * 设置<p>订阅的kafka topic，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
+                     * @param _topicName <p>订阅的kafka topic，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/api/571/102947)接口获取。
-                     * @return ConsumerGroupName 消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/api/571/102947)接口获取。
+                     * 获取<p>消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。可通过<a href="https://cloud.tencent.com/document/api/571/102947">DescribeConsumerGroups</a>接口获取。</p>
+                     * @return ConsumerGroupName <p>消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。可通过<a href="https://cloud.tencent.com/document/api/571/102947">DescribeConsumerGroups</a>接口获取。</p>
                      * 
                      */
                     std::string GetConsumerGroupName() const;
 
                     /**
-                     * 设置消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/api/571/102947)接口获取。
-                     * @param _consumerGroupName 消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/api/571/102947)接口获取。
+                     * 设置<p>消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。可通过<a href="https://cloud.tencent.com/document/api/571/102947">DescribeConsumerGroups</a>接口获取。</p>
+                     * @param _consumerGroupName <p>消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。可通过<a href="https://cloud.tencent.com/document/api/571/102947">DescribeConsumerGroups</a>接口获取。</p>
                      * 
                      */
                     void SetConsumerGroupName(const std::string& _consumerGroupName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ConsumerGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取需要修改offset的分区编号，可通过[DescribeOffsetByTime](https://cloud.tencent.com/document/api/571/102946)接口获取。
-                     * @return PartitionNos 需要修改offset的分区编号，可通过[DescribeOffsetByTime](https://cloud.tencent.com/document/api/571/102946)接口获取。
+                     * 获取<p>需要修改offset的分区编号，可通过<a href="https://cloud.tencent.com/document/api/571/102946">DescribeOffsetByTime</a>接口获取。</p>
+                     * @return PartitionNos <p>需要修改offset的分区编号，可通过<a href="https://cloud.tencent.com/document/api/571/102946">DescribeOffsetByTime</a>接口获取。</p>
                      * 
                      */
                     std::vector<int64_t> GetPartitionNos() const;
 
                     /**
-                     * 设置需要修改offset的分区编号，可通过[DescribeOffsetByTime](https://cloud.tencent.com/document/api/571/102946)接口获取。
-                     * @param _partitionNos 需要修改offset的分区编号，可通过[DescribeOffsetByTime](https://cloud.tencent.com/document/api/571/102946)接口获取。
+                     * 设置<p>需要修改offset的分区编号，可通过<a href="https://cloud.tencent.com/document/api/571/102946">DescribeOffsetByTime</a>接口获取。</p>
+                     * @param _partitionNos <p>需要修改offset的分区编号，可通过<a href="https://cloud.tencent.com/document/api/571/102946">DescribeOffsetByTime</a>接口获取。</p>
                      * 
                      */
                     void SetPartitionNos(const std::vector<int64_t>& _partitionNos);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool PartitionNosHasBeenSet() const;
 
                     /**
-                     * 获取重置方式。枚举值为 earliest-从最开始位置开始消费；latest-从最新位置开始消费；datetime-从指定时间前最近的checkpoint开始消费
-                     * @return ResetMode 重置方式。枚举值为 earliest-从最开始位置开始消费；latest-从最新位置开始消费；datetime-从指定时间前最近的checkpoint开始消费
+                     * 获取<p>重置方式。枚举值为 earliest-从最开始位置开始消费；latest-从最新位置开始消费；datetime-从指定时间前最近的checkpoint开始消费</p>
+                     * @return ResetMode <p>重置方式。枚举值为 earliest-从最开始位置开始消费；latest-从最新位置开始消费；datetime-从指定时间前最近的checkpoint开始消费</p>
                      * 
                      */
                     std::string GetResetMode() const;
 
                     /**
-                     * 设置重置方式。枚举值为 earliest-从最开始位置开始消费；latest-从最新位置开始消费；datetime-从指定时间前最近的checkpoint开始消费
-                     * @param _resetMode 重置方式。枚举值为 earliest-从最开始位置开始消费；latest-从最新位置开始消费；datetime-从指定时间前最近的checkpoint开始消费
+                     * 设置<p>重置方式。枚举值为 earliest-从最开始位置开始消费；latest-从最新位置开始消费；datetime-从指定时间前最近的checkpoint开始消费</p>
+                     * @param _resetMode <p>重置方式。枚举值为 earliest-从最开始位置开始消费；latest-从最新位置开始消费；datetime-从指定时间前最近的checkpoint开始消费</p>
                      * 
                      */
                     void SetResetMode(const std::string& _resetMode);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ResetModeHasBeenSet() const;
 
                     /**
-                     * 获取当 ResetMode 为 datetime 时，该项需要填，格式为：Y-m-d h:m:s。如果不填，默认用0时间，效果与earliest相同。
-                     * @return ResetDatetime 当 ResetMode 为 datetime 时，该项需要填，格式为：Y-m-d h:m:s。如果不填，默认用0时间，效果与earliest相同。
+                     * 获取<p>当 <code>ResetMode</code> 为 <code>datetime</code> 时该项需要填。当 <code>DateTimeISOFormat=true</code> 时按 RFC 3339 传入（如 <code>2026-04-23T20:21:35+08:00</code>），否则按 <code>Y-m-d h:m:s</code>（北京时间）传入。如果不填，默认用 0 时间，效果与 <code>earliest</code> 相同。 </p><p>参数格式：2026-04-23T20:21:35+08:00</p>
+                     * @return ResetDatetime <p>当 <code>ResetMode</code> 为 <code>datetime</code> 时该项需要填。当 <code>DateTimeISOFormat=true</code> 时按 RFC 3339 传入（如 <code>2026-04-23T20:21:35+08:00</code>），否则按 <code>Y-m-d h:m:s</code>（北京时间）传入。如果不填，默认用 0 时间，效果与 <code>earliest</code> 相同。 </p><p>参数格式：2026-04-23T20:21:35+08:00</p>
                      * 
                      */
                     std::string GetResetDatetime() const;
 
                     /**
-                     * 设置当 ResetMode 为 datetime 时，该项需要填，格式为：Y-m-d h:m:s。如果不填，默认用0时间，效果与earliest相同。
-                     * @param _resetDatetime 当 ResetMode 为 datetime 时，该项需要填，格式为：Y-m-d h:m:s。如果不填，默认用0时间，效果与earliest相同。
+                     * 设置<p>当 <code>ResetMode</code> 为 <code>datetime</code> 时该项需要填。当 <code>DateTimeISOFormat=true</code> 时按 RFC 3339 传入（如 <code>2026-04-23T20:21:35+08:00</code>），否则按 <code>Y-m-d h:m:s</code>（北京时间）传入。如果不填，默认用 0 时间，效果与 <code>earliest</code> 相同。 </p><p>参数格式：2026-04-23T20:21:35+08:00</p>
+                     * @param _resetDatetime <p>当 <code>ResetMode</code> 为 <code>datetime</code> 时该项需要填。当 <code>DateTimeISOFormat=true</code> 时按 RFC 3339 传入（如 <code>2026-04-23T20:21:35+08:00</code>），否则按 <code>Y-m-d h:m:s</code>（北京时间）传入。如果不填，默认用 0 时间，效果与 <code>earliest</code> 相同。 </p><p>参数格式：2026-04-23T20:21:35+08:00</p>
                      * 
                      */
                     void SetResetDatetime(const std::string& _resetDatetime);
@@ -171,37 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订阅实例id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+                     * <p>订阅实例id，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
                      */
                     std::string m_subscribeId;
                     bool m_subscribeIdHasBeenSet;
 
                     /**
-                     * 订阅的kafka topic，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+                     * <p>订阅的kafka topic，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/api/571/102947)接口获取。
+                     * <p>消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。可通过<a href="https://cloud.tencent.com/document/api/571/102947">DescribeConsumerGroups</a>接口获取。</p>
                      */
                     std::string m_consumerGroupName;
                     bool m_consumerGroupNameHasBeenSet;
 
                     /**
-                     * 需要修改offset的分区编号，可通过[DescribeOffsetByTime](https://cloud.tencent.com/document/api/571/102946)接口获取。
+                     * <p>需要修改offset的分区编号，可通过<a href="https://cloud.tencent.com/document/api/571/102946">DescribeOffsetByTime</a>接口获取。</p>
                      */
                     std::vector<int64_t> m_partitionNos;
                     bool m_partitionNosHasBeenSet;
 
                     /**
-                     * 重置方式。枚举值为 earliest-从最开始位置开始消费；latest-从最新位置开始消费；datetime-从指定时间前最近的checkpoint开始消费
+                     * <p>重置方式。枚举值为 earliest-从最开始位置开始消费；latest-从最新位置开始消费；datetime-从指定时间前最近的checkpoint开始消费</p>
                      */
                     std::string m_resetMode;
                     bool m_resetModeHasBeenSet;
 
                     /**
-                     * 当 ResetMode 为 datetime 时，该项需要填，格式为：Y-m-d h:m:s。如果不填，默认用0时间，效果与earliest相同。
+                     * <p>当 <code>ResetMode</code> 为 <code>datetime</code> 时该项需要填。当 <code>DateTimeISOFormat=true</code> 时按 RFC 3339 传入（如 <code>2026-04-23T20:21:35+08:00</code>），否则按 <code>Y-m-d h:m:s</code>（北京时间）传入。如果不填，默认用 0 时间，效果与 <code>earliest</code> 相同。 </p><p>参数格式：2026-04-23T20:21:35+08:00</p>
                      */
                     std::string m_resetDatetime;
                     bool m_resetDatetimeHasBeenSet;

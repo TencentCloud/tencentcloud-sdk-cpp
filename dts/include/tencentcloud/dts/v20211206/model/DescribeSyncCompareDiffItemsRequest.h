@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取迁移任务 Id
-                     * @return JobId 迁移任务 Id
+                     * 获取<p>迁移任务 Id</p>
+                     * @return JobId <p>迁移任务 Id</p>
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置迁移任务 Id
-                     * @param _jobId 迁移任务 Id
+                     * 设置<p>迁移任务 Id</p>
+                     * @param _jobId <p>迁移任务 Id</p>
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取校验任务 Id
-                     * @return CompareTaskId 校验任务 Id
+                     * 获取<p>校验任务 Id</p>
+                     * @return CompareTaskId <p>校验任务 Id</p>
                      * 
                      */
                     std::string GetCompareTaskId() const;
 
                     /**
-                     * 设置校验任务 Id
-                     * @param _compareTaskId 校验任务 Id
+                     * 设置<p>校验任务 Id</p>
+                     * @param _compareTaskId <p>校验任务 Id</p>
                      * 
                      */
                     void SetCompareTaskId(const std::string& _compareTaskId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool CompareTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库名
-                     * @return DBName 数据库名
+                     * 获取<p>数据库名</p>
+                     * @return DBName <p>数据库名</p>
                      * 
                      */
                     std::string GetDBName() const;
 
                     /**
-                     * 设置数据库名
-                     * @param _dBName 数据库名
+                     * 设置<p>数据库名</p>
+                     * @param _dBName <p>数据库名</p>
                      * 
                      */
                     void SetDBName(const std::string& _dBName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DBNameHasBeenSet() const;
 
                     /**
-                     * 获取schema名
-                     * @return SchemaName schema名
+                     * 获取<p>schema名</p>
+                     * @return SchemaName <p>schema名</p>
                      * 
                      */
                     std::string GetSchemaName() const;
 
                     /**
-                     * 设置schema名
-                     * @param _schemaName schema名
+                     * 设置<p>schema名</p>
+                     * @param _schemaName <p>schema名</p>
                      * 
                      */
                     void SetSchemaName(const std::string& _schemaName);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool SchemaNameHasBeenSet() const;
 
                     /**
-                     * 获取数据表名
-                     * @return TableName 数据表名
+                     * 获取<p>数据表名</p>
+                     * @return TableName <p>数据表名</p>
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
-                     * 设置数据表名
-                     * @param _tableName 数据表名
+                     * 设置<p>数据表名</p>
+                     * @param _tableName <p>数据表名</p>
                      * 
                      */
                     void SetTableName(const std::string& _tableName);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool TableNameHasBeenSet() const;
 
                     /**
-                     * 获取数据分块号
-                     * @return ChunkId 数据分块号
+                     * 获取<p>数据分块号</p>
+                     * @return ChunkId <p>数据分块号</p>
                      * 
                      */
                     int64_t GetChunkId() const;
 
                     /**
-                     * 设置数据分块号
-                     * @param _chunkId 数据分块号
+                     * 设置<p>数据分块号</p>
+                     * @param _chunkId <p>数据分块号</p>
                      * 
                      */
                     void SetChunkId(const int64_t& _chunkId);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool ChunkIdHasBeenSet() const;
 
                     /**
-                     * 获取分页条件，查询结果返回条数
-                     * @return Limit 分页条件，查询结果返回条数
+                     * 获取<p>分页条件，查询结果返回条数</p>
+                     * @return Limit <p>分页条件，查询结果返回条数</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页条件，查询结果返回条数
-                     * @param _limit 分页条件，查询结果返回条数
+                     * 设置<p>分页条件，查询结果返回条数</p>
+                     * @param _limit <p>分页条件，查询结果返回条数</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页条件，查询的起始位置
-                     * @return Offset 分页条件，查询的起始位置
+                     * 获取<p>分页条件，查询的起始位置</p>
+                     * @return Offset <p>分页条件，查询的起始位置</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页条件，查询的起始位置
-                     * @param _offset 分页条件，查询的起始位置
+                     * 设置<p>分页条件，查询的起始位置</p>
+                     * @param _offset <p>分页条件，查询的起始位置</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -213,49 +213,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 迁移任务 Id
+                     * <p>迁移任务 Id</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 校验任务 Id
+                     * <p>校验任务 Id</p>
                      */
                     std::string m_compareTaskId;
                     bool m_compareTaskIdHasBeenSet;
 
                     /**
-                     * 数据库名
+                     * <p>数据库名</p>
                      */
                     std::string m_dBName;
                     bool m_dBNameHasBeenSet;
 
                     /**
-                     * schema名
+                     * <p>schema名</p>
                      */
                     std::string m_schemaName;
                     bool m_schemaNameHasBeenSet;
 
                     /**
-                     * 数据表名
+                     * <p>数据表名</p>
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
 
                     /**
-                     * 数据分块号
+                     * <p>数据分块号</p>
                      */
                     int64_t m_chunkId;
                     bool m_chunkIdHasBeenSet;
 
                     /**
-                     * 分页条件，查询结果返回条数
+                     * <p>分页条件，查询结果返回条数</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页条件，查询的起始位置
+                     * <p>分页条件，查询的起始位置</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

@@ -53,15 +53,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警通知渠道组名称。
-                     * @return Name 告警通知渠道组名称。
+                     * 获取<p>告警通知渠道组名称。</p>
+                     * @return Name <p>告警通知渠道组名称。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置告警通知渠道组名称。
-                     * @param _name 告警通知渠道组名称。
+                     * 设置<p>告警通知渠道组名称。</p>
+                     * @param _name <p>告警通知渠道组名称。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -74,15 +74,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取告警通知渠道组绑定的标签信息。
-                     * @return Tags 告警通知渠道组绑定的标签信息。
+                     * 获取<p>告警通知渠道组绑定的标签信息。</p>
+                     * @return Tags <p>告警通知渠道组绑定的标签信息。</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置告警通知渠道组绑定的标签信息。
-                     * @param _tags 告警通知渠道组绑定的标签信息。
+                     * 设置<p>告警通知渠道组绑定的标签信息。</p>
+                     * @param _tags <p>告警通知渠道组绑定的标签信息。</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -95,27 +95,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取告警模板的类型。可选值：
-<br><li> Trigger - 告警触发</li>
-<br><li> Recovery - 告警恢复</li>
-<br><li> All - 告警触发和告警恢复</li>
-                     * @return Type 告警模板的类型。可选值：
-<br><li> Trigger - 告警触发</li>
-<br><li> Recovery - 告警恢复</li>
-<br><li> All - 告警触发和告警恢复</li>
+                     * 获取<p>告警模板的类型。可选值：<br><br><li> Trigger - 告警触发</li><br><br><li> Recovery - 告警恢复</li><br><br><li> All - 告警触发和告警恢复</li></p>
+                     * @return Type <p>告警模板的类型。可选值：<br><br><li> Trigger - 告警触发</li><br><br><li> Recovery - 告警恢复</li><br><br><li> All - 告警触发和告警恢复</li></p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置告警模板的类型。可选值：
-<br><li> Trigger - 告警触发</li>
-<br><li> Recovery - 告警恢复</li>
-<br><li> All - 告警触发和告警恢复</li>
-                     * @param _type 告警模板的类型。可选值：
-<br><li> Trigger - 告警触发</li>
-<br><li> Recovery - 告警恢复</li>
-<br><li> All - 告警触发和告警恢复</li>
+                     * 设置<p>告警模板的类型。可选值：<br><br><li> Trigger - 告警触发</li><br><br><li> Recovery - 告警恢复</li><br><br><li> All - 告警触发和告警恢复</li></p>
+                     * @param _type <p>告警模板的类型。可选值：<br><br><li> Trigger - 告警触发</li><br><br><li> Recovery - 告警恢复</li><br><br><li> All - 告警触发和告警恢复</li></p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -128,15 +116,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取告警通知模板接收者信息。
-                     * @return NoticeReceivers 告警通知模板接收者信息。
+                     * 获取<p>告警通知模板接收者信息。</p>
+                     * @return NoticeReceivers <p>告警通知模板接收者信息。</p>
                      * 
                      */
                     std::vector<NoticeReceiver> GetNoticeReceivers() const;
 
                     /**
-                     * 设置告警通知模板接收者信息。
-                     * @param _noticeReceivers 告警通知模板接收者信息。
+                     * 设置<p>告警通知模板接收者信息。</p>
+                     * @param _noticeReceivers <p>告警通知模板接收者信息。</p>
                      * 
                      */
                     void SetNoticeReceivers(const std::vector<NoticeReceiver>& _noticeReceivers);
@@ -149,15 +137,15 @@ namespace TencentCloud
                     bool NoticeReceiversHasBeenSet() const;
 
                     /**
-                     * 获取告警通知模板回调信息。
-                     * @return WebCallbacks 告警通知模板回调信息。
+                     * 获取<p>告警通知模板回调信息。</p>
+                     * @return WebCallbacks <p>告警通知模板回调信息。</p>
                      * 
                      */
                     std::vector<WebCallback> GetWebCallbacks() const;
 
                     /**
-                     * 设置告警通知模板回调信息。
-                     * @param _webCallbacks 告警通知模板回调信息。
+                     * 设置<p>告警通知模板回调信息。</p>
+                     * @param _webCallbacks <p>告警通知模板回调信息。</p>
                      * 
                      */
                     void SetWebCallbacks(const std::vector<WebCallback>& _webCallbacks);
@@ -170,15 +158,15 @@ namespace TencentCloud
                     bool WebCallbacksHasBeenSet() const;
 
                     /**
-                     * 获取告警通知模板ID。
-                     * @return AlarmNoticeId 告警通知模板ID。
+                     * 获取<p>告警通知模板ID。</p>
+                     * @return AlarmNoticeId <p>告警通知模板ID。</p>
                      * 
                      */
                     std::string GetAlarmNoticeId() const;
 
                     /**
-                     * 设置告警通知模板ID。
-                     * @param _alarmNoticeId 告警通知模板ID。
+                     * 设置<p>告警通知模板ID。</p>
+                     * @param _alarmNoticeId <p>告警通知模板ID。</p>
                      * 
                      */
                     void SetAlarmNoticeId(const std::string& _alarmNoticeId);
@@ -191,15 +179,15 @@ namespace TencentCloud
                     bool AlarmNoticeIdHasBeenSet() const;
 
                     /**
-                     * 获取通知规则。
-                     * @return NoticeRules 通知规则。
+                     * 获取<p>通知规则。</p>
+                     * @return NoticeRules <p>通知规则。</p>
                      * 
                      */
                     std::vector<NoticeRule> GetNoticeRules() const;
 
                     /**
-                     * 设置通知规则。
-                     * @param _noticeRules 通知规则。
+                     * 设置<p>通知规则。</p>
+                     * @param _noticeRules <p>通知规则。</p>
                      * 
                      */
                     void SetNoticeRules(const std::vector<NoticeRule>& _noticeRules);
@@ -212,19 +200,15 @@ namespace TencentCloud
                     bool NoticeRulesHasBeenSet() const;
 
                     /**
-                     * 获取免登录操作告警开关。
-参数值： 1：关闭 2：开启（默认开启）
-                     * @return AlarmShieldStatus 免登录操作告警开关。
-参数值： 1：关闭 2：开启（默认开启）
+                     * 获取<p>免登录操作告警开关。<br>参数值： 1：关闭 2：开启（默认开启）</p>
+                     * @return AlarmShieldStatus <p>免登录操作告警开关。<br>参数值： 1：关闭 2：开启（默认开启）</p>
                      * 
                      */
                     uint64_t GetAlarmShieldStatus() const;
 
                     /**
-                     * 设置免登录操作告警开关。
-参数值： 1：关闭 2：开启（默认开启）
-                     * @param _alarmShieldStatus 免登录操作告警开关。
-参数值： 1：关闭 2：开启（默认开启）
+                     * 设置<p>免登录操作告警开关。<br>参数值： 1：关闭 2：开启（默认开启）</p>
+                     * @param _alarmShieldStatus <p>免登录操作告警开关。<br>参数值： 1：关闭 2：开启（默认开启）</p>
                      * 
                      */
                     void SetAlarmShieldStatus(const uint64_t& _alarmShieldStatus);
@@ -237,15 +221,36 @@ namespace TencentCloud
                     bool AlarmShieldStatusHasBeenSet() const;
 
                     /**
-                     * 获取调用链接域名。http:// 或者 https:// 开头，不能/结尾
-                     * @return JumpDomain 调用链接域名。http:// 或者 https:// 开头，不能/结尾
+                     * 获取<p>告警详情需要安全认证登录开关，未传时默认&quot;关闭&quot;</p><p>枚举值：</p><ul><li>1： 关闭（默认值）</li><li>2： 开启</li></ul>
+                     * @return SecureDetailStatus <p>告警详情需要安全认证登录开关，未传时默认&quot;关闭&quot;</p><p>枚举值：</p><ul><li>1： 关闭（默认值）</li><li>2： 开启</li></ul>
+                     * 
+                     */
+                    uint64_t GetSecureDetailStatus() const;
+
+                    /**
+                     * 设置<p>告警详情需要安全认证登录开关，未传时默认&quot;关闭&quot;</p><p>枚举值：</p><ul><li>1： 关闭（默认值）</li><li>2： 开启</li></ul>
+                     * @param _secureDetailStatus <p>告警详情需要安全认证登录开关，未传时默认&quot;关闭&quot;</p><p>枚举值：</p><ul><li>1： 关闭（默认值）</li><li>2： 开启</li></ul>
+                     * 
+                     */
+                    void SetSecureDetailStatus(const uint64_t& _secureDetailStatus);
+
+                    /**
+                     * 判断参数 SecureDetailStatus 是否已赋值
+                     * @return SecureDetailStatus 是否已赋值
+                     * 
+                     */
+                    bool SecureDetailStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>调用链接域名。http:// 或者 https:// 开头，不能/结尾</p>
+                     * @return JumpDomain <p>调用链接域名。http:// 或者 https:// 开头，不能/结尾</p>
                      * 
                      */
                     std::string GetJumpDomain() const;
 
                     /**
-                     * 设置调用链接域名。http:// 或者 https:// 开头，不能/结尾
-                     * @param _jumpDomain 调用链接域名。http:// 或者 https:// 开头，不能/结尾
+                     * 设置<p>调用链接域名。http:// 或者 https:// 开头，不能/结尾</p>
+                     * @param _jumpDomain <p>调用链接域名。http:// 或者 https:// 开头，不能/结尾</p>
                      * 
                      */
                     void SetJumpDomain(const std::string& _jumpDomain);
@@ -258,18 +263,18 @@ namespace TencentCloud
                     bool JumpDomainHasBeenSet() const;
 
                     /**
-                     * 获取投递相关信息。
+                     * 获取<p>投递相关信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlarmNoticeDeliverConfig 投递相关信息。
+                     * @return AlarmNoticeDeliverConfig <p>投递相关信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AlarmNoticeDeliverConfig GetAlarmNoticeDeliverConfig() const;
 
                     /**
-                     * 设置投递相关信息。
+                     * 设置<p>投递相关信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _alarmNoticeDeliverConfig 投递相关信息。
+                     * @param _alarmNoticeDeliverConfig <p>投递相关信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -283,15 +288,15 @@ namespace TencentCloud
                     bool AlarmNoticeDeliverConfigHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。格式： YYYY-MM-DD HH:MM:SS
-                     * @return CreateTime 创建时间。格式： YYYY-MM-DD HH:MM:SS
+                     * 获取<p>创建时间。格式： YYYY-MM-DD HH:MM:SS</p>
+                     * @return CreateTime <p>创建时间。格式： YYYY-MM-DD HH:MM:SS</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间。格式： YYYY-MM-DD HH:MM:SS
-                     * @param _createTime 创建时间。格式： YYYY-MM-DD HH:MM:SS
+                     * 设置<p>创建时间。格式： YYYY-MM-DD HH:MM:SS</p>
+                     * @param _createTime <p>创建时间。格式： YYYY-MM-DD HH:MM:SS</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -304,15 +309,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取最近更新时间。格式： YYYY-MM-DD HH:MM:SS
-                     * @return UpdateTime 最近更新时间。格式： YYYY-MM-DD HH:MM:SS
+                     * 获取<p>最近更新时间。格式： YYYY-MM-DD HH:MM:SS</p>
+                     * @return UpdateTime <p>最近更新时间。格式： YYYY-MM-DD HH:MM:SS</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置最近更新时间。格式： YYYY-MM-DD HH:MM:SS
-                     * @param _updateTime 最近更新时间。格式： YYYY-MM-DD HH:MM:SS
+                     * 设置<p>最近更新时间。格式： YYYY-MM-DD HH:MM:SS</p>
+                     * @param _updateTime <p>最近更新时间。格式： YYYY-MM-DD HH:MM:SS</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -325,43 +330,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取投递日志开关。
-
-参数值：
-
-1：关闭
-
-2：开启 
-
-                     * @return DeliverStatus 投递日志开关。
-
-参数值：
-
-1：关闭
-
-2：开启 
-
+                     * 获取<p>投递日志开关。</p><p>参数值：</p><p>1：关闭</p><p>2：开启</p>
+                     * @return DeliverStatus <p>投递日志开关。</p><p>参数值：</p><p>1：关闭</p><p>2：开启</p>
                      * 
                      */
                     uint64_t GetDeliverStatus() const;
 
                     /**
-                     * 设置投递日志开关。
-
-参数值：
-
-1：关闭
-
-2：开启 
-
-                     * @param _deliverStatus 投递日志开关。
-
-参数值：
-
-1：关闭
-
-2：开启 
-
+                     * 设置<p>投递日志开关。</p><p>参数值：</p><p>1：关闭</p><p>2：开启</p>
+                     * @param _deliverStatus <p>投递日志开关。</p><p>参数值：</p><p>1：关闭</p><p>2：开启</p>
                      * 
                      */
                     void SetDeliverStatus(const uint64_t& _deliverStatus);
@@ -374,47 +351,15 @@ namespace TencentCloud
                     bool DeliverStatusHasBeenSet() const;
 
                     /**
-                     * 获取投递日志标识。
-
-参数值：
-
-1：未启用
-
-2：已启用
-
-3：投递异常
-                     * @return DeliverFlag 投递日志标识。
-
-参数值：
-
-1：未启用
-
-2：已启用
-
-3：投递异常
+                     * 获取<p>投递日志标识。</p><p>参数值：</p><p>1：未启用</p><p>2：已启用</p><p>3：投递异常</p>
+                     * @return DeliverFlag <p>投递日志标识。</p><p>参数值：</p><p>1：未启用</p><p>2：已启用</p><p>3：投递异常</p>
                      * 
                      */
                     uint64_t GetDeliverFlag() const;
 
                     /**
-                     * 设置投递日志标识。
-
-参数值：
-
-1：未启用
-
-2：已启用
-
-3：投递异常
-                     * @param _deliverFlag 投递日志标识。
-
-参数值：
-
-1：未启用
-
-2：已启用
-
-3：投递异常
+                     * 设置<p>投递日志标识。</p><p>参数值：</p><p>1：未启用</p><p>2：已启用</p><p>3：投递异常</p>
+                     * @param _deliverFlag <p>投递日志标识。</p><p>参数值：</p><p>1：未启用</p><p>2：已启用</p><p>3：投递异常</p>
                      * 
                      */
                     void SetDeliverFlag(const uint64_t& _deliverFlag);
@@ -427,18 +372,18 @@ namespace TencentCloud
                     bool DeliverFlagHasBeenSet() const;
 
                     /**
-                     * 获取通知渠道组配置的告警屏蔽统计状态数量信息。
+                     * 获取<p>通知渠道组配置的告警屏蔽统计状态数量信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlarmShieldCount 通知渠道组配置的告警屏蔽统计状态数量信息。
+                     * @return AlarmShieldCount <p>通知渠道组配置的告警屏蔽统计状态数量信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AlarmShieldCount GetAlarmShieldCount() const;
 
                     /**
-                     * 设置通知渠道组配置的告警屏蔽统计状态数量信息。
+                     * 设置<p>通知渠道组配置的告警屏蔽统计状态数量信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _alarmShieldCount 通知渠道组配置的告警屏蔽统计状态数量信息。
+                     * @param _alarmShieldCount <p>通知渠道组配置的告警屏蔽统计状态数量信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -452,23 +397,15 @@ namespace TencentCloud
                     bool AlarmShieldCountHasBeenSet() const;
 
                     /**
-                     * 获取统一设定自定义回调参数。
--  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。
--  false:优先使用告警策略中单独配置的请求头及请求内容。
-                     * @return CallbackPrioritize 统一设定自定义回调参数。
--  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。
--  false:优先使用告警策略中单独配置的请求头及请求内容。
+                     * 获取<p>统一设定自定义回调参数。</p><ul><li>true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。</li><li>false:优先使用告警策略中单独配置的请求头及请求内容。</li></ul>
+                     * @return CallbackPrioritize <p>统一设定自定义回调参数。</p><ul><li>true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。</li><li>false:优先使用告警策略中单独配置的请求头及请求内容。</li></ul>
                      * 
                      */
                     bool GetCallbackPrioritize() const;
 
                     /**
-                     * 设置统一设定自定义回调参数。
--  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。
--  false:优先使用告警策略中单独配置的请求头及请求内容。
-                     * @param _callbackPrioritize 统一设定自定义回调参数。
--  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。
--  false:优先使用告警策略中单独配置的请求头及请求内容。
+                     * 设置<p>统一设定自定义回调参数。</p><ul><li>true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。</li><li>false:优先使用告警策略中单独配置的请求头及请求内容。</li></ul>
+                     * @param _callbackPrioritize <p>统一设定自定义回调参数。</p><ul><li>true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。</li><li>false:优先使用告警策略中单独配置的请求头及请求内容。</li></ul>
                      * 
                      */
                     void SetCallbackPrioritize(const bool& _callbackPrioritize);
@@ -483,120 +420,105 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警通知渠道组名称。
+                     * <p>告警通知渠道组名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 告警通知渠道组绑定的标签信息。
+                     * <p>告警通知渠道组绑定的标签信息。</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 告警模板的类型。可选值：
-<br><li> Trigger - 告警触发</li>
-<br><li> Recovery - 告警恢复</li>
-<br><li> All - 告警触发和告警恢复</li>
+                     * <p>告警模板的类型。可选值：<br><br><li> Trigger - 告警触发</li><br><br><li> Recovery - 告警恢复</li><br><br><li> All - 告警触发和告警恢复</li></p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 告警通知模板接收者信息。
+                     * <p>告警通知模板接收者信息。</p>
                      */
                     std::vector<NoticeReceiver> m_noticeReceivers;
                     bool m_noticeReceiversHasBeenSet;
 
                     /**
-                     * 告警通知模板回调信息。
+                     * <p>告警通知模板回调信息。</p>
                      */
                     std::vector<WebCallback> m_webCallbacks;
                     bool m_webCallbacksHasBeenSet;
 
                     /**
-                     * 告警通知模板ID。
+                     * <p>告警通知模板ID。</p>
                      */
                     std::string m_alarmNoticeId;
                     bool m_alarmNoticeIdHasBeenSet;
 
                     /**
-                     * 通知规则。
+                     * <p>通知规则。</p>
                      */
                     std::vector<NoticeRule> m_noticeRules;
                     bool m_noticeRulesHasBeenSet;
 
                     /**
-                     * 免登录操作告警开关。
-参数值： 1：关闭 2：开启（默认开启）
+                     * <p>免登录操作告警开关。<br>参数值： 1：关闭 2：开启（默认开启）</p>
                      */
                     uint64_t m_alarmShieldStatus;
                     bool m_alarmShieldStatusHasBeenSet;
 
                     /**
-                     * 调用链接域名。http:// 或者 https:// 开头，不能/结尾
+                     * <p>告警详情需要安全认证登录开关，未传时默认&quot;关闭&quot;</p><p>枚举值：</p><ul><li>1： 关闭（默认值）</li><li>2： 开启</li></ul>
+                     */
+                    uint64_t m_secureDetailStatus;
+                    bool m_secureDetailStatusHasBeenSet;
+
+                    /**
+                     * <p>调用链接域名。http:// 或者 https:// 开头，不能/结尾</p>
                      */
                     std::string m_jumpDomain;
                     bool m_jumpDomainHasBeenSet;
 
                     /**
-                     * 投递相关信息。
+                     * <p>投递相关信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AlarmNoticeDeliverConfig m_alarmNoticeDeliverConfig;
                     bool m_alarmNoticeDeliverConfigHasBeenSet;
 
                     /**
-                     * 创建时间。格式： YYYY-MM-DD HH:MM:SS
+                     * <p>创建时间。格式： YYYY-MM-DD HH:MM:SS</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 最近更新时间。格式： YYYY-MM-DD HH:MM:SS
+                     * <p>最近更新时间。格式： YYYY-MM-DD HH:MM:SS</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 投递日志开关。
-
-参数值：
-
-1：关闭
-
-2：开启 
-
+                     * <p>投递日志开关。</p><p>参数值：</p><p>1：关闭</p><p>2：开启</p>
                      */
                     uint64_t m_deliverStatus;
                     bool m_deliverStatusHasBeenSet;
 
                     /**
-                     * 投递日志标识。
-
-参数值：
-
-1：未启用
-
-2：已启用
-
-3：投递异常
+                     * <p>投递日志标识。</p><p>参数值：</p><p>1：未启用</p><p>2：已启用</p><p>3：投递异常</p>
                      */
                     uint64_t m_deliverFlag;
                     bool m_deliverFlagHasBeenSet;
 
                     /**
-                     * 通知渠道组配置的告警屏蔽统计状态数量信息。
+                     * <p>通知渠道组配置的告警屏蔽统计状态数量信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AlarmShieldCount m_alarmShieldCount;
                     bool m_alarmShieldCountHasBeenSet;
 
                     /**
-                     * 统一设定自定义回调参数。
--  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。
--  false:优先使用告警策略中单独配置的请求头及请求内容。
+                     * <p>统一设定自定义回调参数。</p><ul><li>true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。</li><li>false:优先使用告警策略中单独配置的请求头及请求内容。</li></ul>
                      */
                     bool m_callbackPrioritize;
                     bool m_callbackPrioritizeHasBeenSet;

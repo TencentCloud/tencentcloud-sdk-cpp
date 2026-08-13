@@ -30,7 +30,9 @@ KnowledgeTaskConfig::KnowledgeTaskConfig() :
     m_genDocSummaryHasBeenSet(false),
     m_genParaSummaryHasBeenSet(false),
     m_enableImageUnderstandingHasBeenSet(false),
-    m_enableExtractDbHasBeenSet(false)
+    m_enableExtractDbHasBeenSet(false),
+    m_enableGraphBuildHasBeenSet(false),
+    m_enableTreeBuildHasBeenSet(false)
 {
 }
 
@@ -155,6 +157,26 @@ CoreInternalOutcome KnowledgeTaskConfig::Deserialize(const rapidjson::Value &val
         m_enableExtractDbHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableGraphBuild") && !value["EnableGraphBuild"].IsNull())
+    {
+        if (!value["EnableGraphBuild"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeTaskConfig.EnableGraphBuild` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableGraphBuild = value["EnableGraphBuild"].GetInt64();
+        m_enableGraphBuildHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableTreeBuild") && !value["EnableTreeBuild"].IsNull())
+    {
+        if (!value["EnableTreeBuild"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeTaskConfig.EnableTreeBuild` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableTreeBuild = value["EnableTreeBuild"].GetInt64();
+        m_enableTreeBuildHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -257,6 +279,22 @@ void KnowledgeTaskConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "EnableExtractDb";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableExtractDb, allocator);
+    }
+
+    if (m_enableGraphBuildHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableGraphBuild";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableGraphBuild, allocator);
+    }
+
+    if (m_enableTreeBuildHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableTreeBuild";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableTreeBuild, allocator);
     }
 
 }
@@ -420,5 +458,37 @@ void KnowledgeTaskConfig::SetEnableExtractDb(const int64_t& _enableExtractDb)
 bool KnowledgeTaskConfig::EnableExtractDbHasBeenSet() const
 {
     return m_enableExtractDbHasBeenSet;
+}
+
+int64_t KnowledgeTaskConfig::GetEnableGraphBuild() const
+{
+    return m_enableGraphBuild;
+}
+
+void KnowledgeTaskConfig::SetEnableGraphBuild(const int64_t& _enableGraphBuild)
+{
+    m_enableGraphBuild = _enableGraphBuild;
+    m_enableGraphBuildHasBeenSet = true;
+}
+
+bool KnowledgeTaskConfig::EnableGraphBuildHasBeenSet() const
+{
+    return m_enableGraphBuildHasBeenSet;
+}
+
+int64_t KnowledgeTaskConfig::GetEnableTreeBuild() const
+{
+    return m_enableTreeBuild;
+}
+
+void KnowledgeTaskConfig::SetEnableTreeBuild(const int64_t& _enableTreeBuild)
+{
+    m_enableTreeBuild = _enableTreeBuild;
+    m_enableTreeBuildHasBeenSet = true;
+}
+
+bool KnowledgeTaskConfig::EnableTreeBuildHasBeenSet() const
+{
+    return m_enableTreeBuildHasBeenSet;
 }
 

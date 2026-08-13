@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取CHC物理服务器ID。
-                     * @return ChcId CHC物理服务器ID。
+                     * 获取<p>CHC物理服务器ID。</p>
+                     * @return ChcId <p>CHC物理服务器ID。</p>
                      * 
                      */
                     std::string GetChcId() const;
 
                     /**
-                     * 设置CHC物理服务器ID。
-                     * @param _chcId CHC物理服务器ID。
+                     * 设置<p>CHC物理服务器ID。</p>
+                     * @param _chcId <p>CHC物理服务器ID。</p>
                      * 
                      */
                     void SetChcId(const std::string& _chcId);
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool ChcIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称。
-                     * @return InstanceName 实例名称。
+                     * 获取<p>实例名称。</p>
+                     * @return InstanceName <p>实例名称。</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称。
-                     * @param _instanceName 实例名称。
+                     * 设置<p>实例名称。</p>
+                     * @param _instanceName <p>实例名称。</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取服务器序列号。
-                     * @return SerialNumber 服务器序列号。
+                     * 获取<p>服务器序列号。</p>
+                     * @return SerialNumber <p>服务器序列号。</p>
                      * 
                      */
                     std::string GetSerialNumber() const;
 
                     /**
-                     * 设置服务器序列号。
-                     * @param _serialNumber 服务器序列号。
+                     * 设置<p>服务器序列号。</p>
+                     * @param _serialNumber <p>服务器序列号。</p>
                      * 
                      */
                     void SetSerialNumber(const std::string& _serialNumber);
@@ -114,47 +114,15 @@ namespace TencentCloud
                     bool SerialNumberHasBeenSet() const;
 
                     /**
-                     * 获取CHC的状态<br/>
-<ul>
-<li>INIT: 设备已录入。还未配置带外和部署网络</li>
-<li>READY: 已配置带外和部署网络</li>
-<li>PREPARED: 可分配云主机</li>
-<li>ONLINE: 已分配云主机</li>
-<li>OPERATING: 设备操作中，如正在配置带外网络等。</li>
-<li>CLEAR_NETWORK_FAILED: 清理带外和部署网络失败</li>
-</ul>
-                     * @return InstanceState CHC的状态<br/>
-<ul>
-<li>INIT: 设备已录入。还未配置带外和部署网络</li>
-<li>READY: 已配置带外和部署网络</li>
-<li>PREPARED: 可分配云主机</li>
-<li>ONLINE: 已分配云主机</li>
-<li>OPERATING: 设备操作中，如正在配置带外网络等。</li>
-<li>CLEAR_NETWORK_FAILED: 清理带外和部署网络失败</li>
-</ul>
+                     * 获取<p>CHC的状态<br></p><ul><li>INIT: 设备已录入。还未配置带外和部署网络</li><li>READY: 已配置带外和部署网络</li><li>PREPARED: 可分配云主机</li><li>ONLINE: 已分配云主机</li><li>OPERATING: 设备操作中，如正在配置带外网络等。</li><li>CLEAR_NETWORK_FAILED: 清理带外和部署网络失败</li></ul>
+                     * @return InstanceState <p>CHC的状态<br></p><ul><li>INIT: 设备已录入。还未配置带外和部署网络</li><li>READY: 已配置带外和部署网络</li><li>PREPARED: 可分配云主机</li><li>ONLINE: 已分配云主机</li><li>OPERATING: 设备操作中，如正在配置带外网络等。</li><li>CLEAR_NETWORK_FAILED: 清理带外和部署网络失败</li></ul>
                      * 
                      */
                     std::string GetInstanceState() const;
 
                     /**
-                     * 设置CHC的状态<br/>
-<ul>
-<li>INIT: 设备已录入。还未配置带外和部署网络</li>
-<li>READY: 已配置带外和部署网络</li>
-<li>PREPARED: 可分配云主机</li>
-<li>ONLINE: 已分配云主机</li>
-<li>OPERATING: 设备操作中，如正在配置带外网络等。</li>
-<li>CLEAR_NETWORK_FAILED: 清理带外和部署网络失败</li>
-</ul>
-                     * @param _instanceState CHC的状态<br/>
-<ul>
-<li>INIT: 设备已录入。还未配置带外和部署网络</li>
-<li>READY: 已配置带外和部署网络</li>
-<li>PREPARED: 可分配云主机</li>
-<li>ONLINE: 已分配云主机</li>
-<li>OPERATING: 设备操作中，如正在配置带外网络等。</li>
-<li>CLEAR_NETWORK_FAILED: 清理带外和部署网络失败</li>
-</ul>
+                     * 设置<p>CHC的状态<br></p><ul><li>INIT: 设备已录入。还未配置带外和部署网络</li><li>READY: 已配置带外和部署网络</li><li>PREPARED: 可分配云主机</li><li>ONLINE: 已分配云主机</li><li>OPERATING: 设备操作中，如正在配置带外网络等。</li><li>CLEAR_NETWORK_FAILED: 清理带外和部署网络失败</li></ul>
+                     * @param _instanceState <p>CHC的状态<br></p><ul><li>INIT: 设备已录入。还未配置带外和部署网络</li><li>READY: 已配置带外和部署网络</li><li>PREPARED: 可分配云主机</li><li>ONLINE: 已分配云主机</li><li>OPERATING: 设备操作中，如正在配置带外网络等。</li><li>CLEAR_NETWORK_FAILED: 清理带外和部署网络失败</li></ul>
                      * 
                      */
                     void SetInstanceState(const std::string& _instanceState);
@@ -167,15 +135,15 @@ namespace TencentCloud
                     bool InstanceStateHasBeenSet() const;
 
                     /**
-                     * 获取设备类型。
-                     * @return DeviceType 设备类型。
+                     * 获取<p>设备类型。</p>
+                     * @return DeviceType <p>设备类型。</p>
                      * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
-                     * 设置设备类型。
-                     * @param _deviceType 设备类型。
+                     * 设置<p>设备类型。</p>
+                     * @param _deviceType <p>设备类型。</p>
                      * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
@@ -188,15 +156,15 @@ namespace TencentCloud
                     bool DeviceTypeHasBeenSet() const;
 
                     /**
-                     * 获取所属可用区
-                     * @return Placement 所属可用区
+                     * 获取<p>所属可用区。</p>
+                     * @return Placement <p>所属可用区。</p>
                      * 
                      */
                     Placement GetPlacement() const;
 
                     /**
-                     * 设置所属可用区
-                     * @param _placement 所属可用区
+                     * 设置<p>所属可用区。</p>
+                     * @param _placement <p>所属可用区。</p>
                      * 
                      */
                     void SetPlacement(const Placement& _placement);
@@ -209,15 +177,15 @@ namespace TencentCloud
                     bool PlacementHasBeenSet() const;
 
                     /**
-                     * 获取带外网络。
-                     * @return BmcVirtualPrivateCloud 带外网络。
+                     * 获取<p>带外网络。</p>
+                     * @return BmcVirtualPrivateCloud <p>带外网络。</p>
                      * 
                      */
                     VirtualPrivateCloud GetBmcVirtualPrivateCloud() const;
 
                     /**
-                     * 设置带外网络。
-                     * @param _bmcVirtualPrivateCloud 带外网络。
+                     * 设置<p>带外网络。</p>
+                     * @param _bmcVirtualPrivateCloud <p>带外网络。</p>
                      * 
                      */
                     void SetBmcVirtualPrivateCloud(const VirtualPrivateCloud& _bmcVirtualPrivateCloud);
@@ -230,15 +198,15 @@ namespace TencentCloud
                     bool BmcVirtualPrivateCloudHasBeenSet() const;
 
                     /**
-                     * 获取带外网络Ip。
-                     * @return BmcIp 带外网络Ip。
+                     * 获取<p>带外网络IP。</p>
+                     * @return BmcIp <p>带外网络IP。</p>
                      * 
                      */
                     std::string GetBmcIp() const;
 
                     /**
-                     * 设置带外网络Ip。
-                     * @param _bmcIp 带外网络Ip。
+                     * 设置<p>带外网络IP。</p>
+                     * @param _bmcIp <p>带外网络IP。</p>
                      * 
                      */
                     void SetBmcIp(const std::string& _bmcIp);
@@ -251,15 +219,15 @@ namespace TencentCloud
                     bool BmcIpHasBeenSet() const;
 
                     /**
-                     * 获取带外网络安全组Id。
-                     * @return BmcSecurityGroupIds 带外网络安全组Id。
+                     * 获取<p>带外网络安全组ID。</p>
+                     * @return BmcSecurityGroupIds <p>带外网络安全组ID。</p>
                      * 
                      */
                     std::vector<std::string> GetBmcSecurityGroupIds() const;
 
                     /**
-                     * 设置带外网络安全组Id。
-                     * @param _bmcSecurityGroupIds 带外网络安全组Id。
+                     * 设置<p>带外网络安全组ID。</p>
+                     * @param _bmcSecurityGroupIds <p>带外网络安全组ID。</p>
                      * 
                      */
                     void SetBmcSecurityGroupIds(const std::vector<std::string>& _bmcSecurityGroupIds);
@@ -272,15 +240,15 @@ namespace TencentCloud
                     bool BmcSecurityGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取部署网络。
-                     * @return DeployVirtualPrivateCloud 部署网络。
+                     * 获取<p>部署网络。</p>
+                     * @return DeployVirtualPrivateCloud <p>部署网络。</p>
                      * 
                      */
                     VirtualPrivateCloud GetDeployVirtualPrivateCloud() const;
 
                     /**
-                     * 设置部署网络。
-                     * @param _deployVirtualPrivateCloud 部署网络。
+                     * 设置<p>部署网络。</p>
+                     * @param _deployVirtualPrivateCloud <p>部署网络。</p>
                      * 
                      */
                     void SetDeployVirtualPrivateCloud(const VirtualPrivateCloud& _deployVirtualPrivateCloud);
@@ -293,15 +261,15 @@ namespace TencentCloud
                     bool DeployVirtualPrivateCloudHasBeenSet() const;
 
                     /**
-                     * 获取部署网络Ip。
-                     * @return DeployIp 部署网络Ip。
+                     * 获取<p>部署网络IP。</p>
+                     * @return DeployIp <p>部署网络IP。</p>
                      * 
                      */
                     std::string GetDeployIp() const;
 
                     /**
-                     * 设置部署网络Ip。
-                     * @param _deployIp 部署网络Ip。
+                     * 设置<p>部署网络IP。</p>
+                     * @param _deployIp <p>部署网络IP。</p>
                      * 
                      */
                     void SetDeployIp(const std::string& _deployIp);
@@ -314,15 +282,15 @@ namespace TencentCloud
                     bool DeployIpHasBeenSet() const;
 
                     /**
-                     * 获取部署网络安全组Id。
-                     * @return DeploySecurityGroupIds 部署网络安全组Id。
+                     * 获取<p>部署网络安全组ID。</p>
+                     * @return DeploySecurityGroupIds <p>部署网络安全组ID。</p>
                      * 
                      */
                     std::vector<std::string> GetDeploySecurityGroupIds() const;
 
                     /**
-                     * 设置部署网络安全组Id。
-                     * @param _deploySecurityGroupIds 部署网络安全组Id。
+                     * 设置<p>部署网络安全组ID。</p>
+                     * @param _deploySecurityGroupIds <p>部署网络安全组ID。</p>
                      * 
                      */
                     void SetDeploySecurityGroupIds(const std::vector<std::string>& _deploySecurityGroupIds);
@@ -335,15 +303,15 @@ namespace TencentCloud
                     bool DeploySecurityGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取关联的云主机Id。
-                     * @return CvmInstanceId 关联的云主机Id。
+                     * 获取<p>关联的云主机ID。</p>
+                     * @return CvmInstanceId <p>关联的云主机ID。</p>
                      * 
                      */
                     std::string GetCvmInstanceId() const;
 
                     /**
-                     * 设置关联的云主机Id。
-                     * @param _cvmInstanceId 关联的云主机Id。
+                     * 设置<p>关联的云主机ID。</p>
+                     * @param _cvmInstanceId <p>关联的云主机ID。</p>
                      * 
                      */
                     void SetCvmInstanceId(const std::string& _cvmInstanceId);
@@ -356,15 +324,15 @@ namespace TencentCloud
                     bool CvmInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取服务器导入的时间。
-                     * @return CreatedTime 服务器导入的时间。
+                     * 获取<p>服务器导入的时间。</p>
+                     * @return CreatedTime <p>服务器导入的时间。</p>
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置服务器导入的时间。
-                     * @param _createdTime 服务器导入的时间。
+                     * 设置<p>服务器导入的时间。</p>
+                     * @param _createdTime <p>服务器导入的时间。</p>
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -377,15 +345,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取机型的硬件描述，分别为CPU核数，内存容量和磁盘容量
-                     * @return HardwareDescription 机型的硬件描述，分别为CPU核数，内存容量和磁盘容量
+                     * 获取<p>机型的硬件描述，分别为CPU核数，内存容量和磁盘容量。</p>
+                     * @return HardwareDescription <p>机型的硬件描述，分别为CPU核数，内存容量和磁盘容量。</p>
                      * 
                      */
                     std::string GetHardwareDescription() const;
 
                     /**
-                     * 设置机型的硬件描述，分别为CPU核数，内存容量和磁盘容量
-                     * @param _hardwareDescription 机型的硬件描述，分别为CPU核数，内存容量和磁盘容量
+                     * 设置<p>机型的硬件描述，分别为CPU核数，内存容量和磁盘容量。</p>
+                     * @param _hardwareDescription <p>机型的硬件描述，分别为CPU核数，内存容量和磁盘容量。</p>
                      * 
                      */
                     void SetHardwareDescription(const std::string& _hardwareDescription);
@@ -398,15 +366,15 @@ namespace TencentCloud
                     bool HardwareDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取CHC物理服务器的CPU核数
-                     * @return CPU CHC物理服务器的CPU核数
+                     * 获取<p>CHC物理服务器的CPU核数。</p>
+                     * @return CPU <p>CHC物理服务器的CPU核数。</p>
                      * 
                      */
                     int64_t GetCPU() const;
 
                     /**
-                     * 设置CHC物理服务器的CPU核数
-                     * @param _cPU CHC物理服务器的CPU核数
+                     * 设置<p>CHC物理服务器的CPU核数。</p>
+                     * @param _cPU <p>CHC物理服务器的CPU核数。</p>
                      * 
                      */
                     void SetCPU(const int64_t& _cPU);
@@ -419,15 +387,15 @@ namespace TencentCloud
                     bool CPUHasBeenSet() const;
 
                     /**
-                     * 获取CHC物理服务器的内存大小，单位为GB
-                     * @return Memory CHC物理服务器的内存大小，单位为GB
+                     * 获取<p>CHC物理服务器的内存大小，单位为GB。</p>
+                     * @return Memory <p>CHC物理服务器的内存大小，单位为GB。</p>
                      * 
                      */
                     int64_t GetMemory() const;
 
                     /**
-                     * 设置CHC物理服务器的内存大小，单位为GB
-                     * @param _memory CHC物理服务器的内存大小，单位为GB
+                     * 设置<p>CHC物理服务器的内存大小，单位为GB。</p>
+                     * @param _memory <p>CHC物理服务器的内存大小，单位为GB。</p>
                      * 
                      */
                     void SetMemory(const int64_t& _memory);
@@ -440,15 +408,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取CHC物理服务器的磁盘信息
-                     * @return Disk CHC物理服务器的磁盘信息
+                     * 获取<p>CHC物理服务器的磁盘信息。</p>
+                     * @return Disk <p>CHC物理服务器的磁盘信息。</p>
                      * 
                      */
                     std::string GetDisk() const;
 
                     /**
-                     * 设置CHC物理服务器的磁盘信息
-                     * @param _disk CHC物理服务器的磁盘信息
+                     * 设置<p>CHC物理服务器的磁盘信息。</p>
+                     * @param _disk <p>CHC物理服务器的磁盘信息。</p>
                      * 
                      */
                     void SetDisk(const std::string& _disk);
@@ -461,15 +429,15 @@ namespace TencentCloud
                     bool DiskHasBeenSet() const;
 
                     /**
-                     * 获取带外网络下分配的MAC地址
-                     * @return BmcMAC 带外网络下分配的MAC地址
+                     * 获取<p>带外网络下分配的MAC地址。</p>
+                     * @return BmcMAC <p>带外网络下分配的MAC地址。</p>
                      * 
                      */
                     std::string GetBmcMAC() const;
 
                     /**
-                     * 设置带外网络下分配的MAC地址
-                     * @param _bmcMAC 带外网络下分配的MAC地址
+                     * 设置<p>带外网络下分配的MAC地址。</p>
+                     * @param _bmcMAC <p>带外网络下分配的MAC地址。</p>
                      * 
                      */
                     void SetBmcMAC(const std::string& _bmcMAC);
@@ -482,15 +450,15 @@ namespace TencentCloud
                     bool BmcMACHasBeenSet() const;
 
                     /**
-                     * 获取部署网络下分配的MAC地址
-                     * @return DeployMAC 部署网络下分配的MAC地址
+                     * 获取<p>部署网络下分配的MAC地址。</p>
+                     * @return DeployMAC <p>部署网络下分配的MAC地址。</p>
                      * 
                      */
                     std::string GetDeployMAC() const;
 
                     /**
-                     * 设置部署网络下分配的MAC地址
-                     * @param _deployMAC 部署网络下分配的MAC地址
+                     * 设置<p>部署网络下分配的MAC地址。</p>
+                     * @param _deployMAC <p>部署网络下分配的MAC地址。</p>
                      * 
                      */
                     void SetDeployMAC(const std::string& _deployMAC);
@@ -503,23 +471,15 @@ namespace TencentCloud
                     bool DeployMACHasBeenSet() const;
 
                     /**
-                     * 获取设备托管类型。
-HOSTING: 托管
-TENANT: 租赁
-                     * @return TenantType 设备托管类型。
-HOSTING: 托管
-TENANT: 租赁
+                     * 获取<p>设备托管类型。</p><p>枚举值：</p><ul><li>HOSTING： 托管类型。</li><li>TENANT： 租赁类型。</li></ul>
+                     * @return TenantType <p>设备托管类型。</p><p>枚举值：</p><ul><li>HOSTING： 托管类型。</li><li>TENANT： 租赁类型。</li></ul>
                      * 
                      */
                     std::string GetTenantType() const;
 
                     /**
-                     * 设置设备托管类型。
-HOSTING: 托管
-TENANT: 租赁
-                     * @param _tenantType 设备托管类型。
-HOSTING: 托管
-TENANT: 租赁
+                     * 设置<p>设备托管类型。</p><p>枚举值：</p><ul><li>HOSTING： 托管类型。</li><li>TENANT： 租赁类型。</li></ul>
+                     * @param _tenantType <p>设备托管类型。</p><p>枚举值：</p><ul><li>HOSTING： 托管类型。</li><li>TENANT： 租赁类型。</li></ul>
                      * 
                      */
                     void SetTenantType(const std::string& _tenantType);
@@ -532,15 +492,15 @@ TENANT: 租赁
                     bool TenantTypeHasBeenSet() const;
 
                     /**
-                     * 获取chc dhcp选项，用于minios调试。
-                     * @return DeployExtraConfig chc dhcp选项，用于minios调试。
+                     * 获取<p>CHC DHCP选项，用于客户自建PXE环境。</p>
+                     * @return DeployExtraConfig <p>CHC DHCP选项，用于客户自建PXE环境。</p>
                      * 
                      */
                     ChcDeployExtraConfig GetDeployExtraConfig() const;
 
                     /**
-                     * 设置chc dhcp选项，用于minios调试。
-                     * @param _deployExtraConfig chc dhcp选项，用于minios调试。
+                     * 设置<p>CHC DHCP选项，用于客户自建PXE环境。</p>
+                     * @param _deployExtraConfig <p>CHC DHCP选项，用于客户自建PXE环境。</p>
                      * 
                      */
                     void SetDeployExtraConfig(const ChcDeployExtraConfig& _deployExtraConfig);
@@ -553,15 +513,15 @@ TENANT: 租赁
                     bool DeployExtraConfigHasBeenSet() const;
 
                     /**
-                     * 获取GPU型号。
-                     * @return Gpu GPU型号。
+                     * 获取<p>GPU型号。</p>
+                     * @return Gpu <p>GPU型号。</p>
                      * 
                      */
                     std::string GetGpu() const;
 
                     /**
-                     * 设置GPU型号。
-                     * @param _gpu GPU型号。
+                     * 设置<p>GPU型号。</p>
+                     * @param _gpu <p>GPU型号。</p>
                      * 
                      */
                     void SetGpu(const std::string& _gpu);
@@ -574,15 +534,15 @@ TENANT: 租赁
                     bool GpuHasBeenSet() const;
 
                     /**
-                     * 获取网卡型号。主要指RDMA网卡。
-                     * @return NetworkCard 网卡型号。主要指RDMA网卡。
+                     * 获取<p>网卡型号。主要指RDMA网卡。</p>
+                     * @return NetworkCard <p>网卡型号。主要指RDMA网卡。</p>
                      * 
                      */
                     std::string GetNetworkCard() const;
 
                     /**
-                     * 设置网卡型号。主要指RDMA网卡。
-                     * @param _networkCard 网卡型号。主要指RDMA网卡。
+                     * 设置<p>网卡型号。主要指RDMA网卡。</p>
+                     * @param _networkCard <p>网卡型号。主要指RDMA网卡。</p>
                      * 
                      */
                     void SetNetworkCard(const std::string& _networkCard);
@@ -595,15 +555,15 @@ TENANT: 租赁
                     bool NetworkCardHasBeenSet() const;
 
                     /**
-                     * 获取是否是预定义机型。
-                     * @return IsPredefinedType 是否是预定义机型。
+                     * 获取<p>是否是预定义机型。</p>
+                     * @return IsPredefinedType <p>是否是预定义机型。</p>
                      * 
                      */
                     bool GetIsPredefinedType() const;
 
                     /**
-                     * 设置是否是预定义机型。
-                     * @param _isPredefinedType 是否是预定义机型。
+                     * 设置<p>是否是预定义机型。</p>
+                     * @param _isPredefinedType <p>是否是预定义机型。</p>
                      * 
                      */
                     void SetIsPredefinedType(const bool& _isPredefinedType);
@@ -616,15 +576,15 @@ TENANT: 租赁
                     bool IsPredefinedTypeHasBeenSet() const;
 
                     /**
-                     * 获取CHC云主机机型。
-                     * @return ChcInstanceType CHC云主机机型。
+                     * 获取<p>CHC云主机机型。</p>
+                     * @return ChcInstanceType <p>CHC云主机机型。</p>
                      * 
                      */
                     std::string GetChcInstanceType() const;
 
                     /**
-                     * 设置CHC云主机机型。
-                     * @param _chcInstanceType CHC云主机机型。
+                     * 设置<p>CHC云主机机型。</p>
+                     * @param _chcInstanceType <p>CHC云主机机型。</p>
                      * 
                      */
                     void SetChcInstanceType(const std::string& _chcInstanceType);
@@ -637,15 +597,15 @@ TENANT: 租赁
                     bool ChcInstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取CHC云主机机型簇。
-                     * @return ChcInstanceFamily CHC云主机机型簇。
+                     * 获取<p>CHC云主机机型簇。</p>
+                     * @return ChcInstanceFamily <p>CHC云主机机型簇。</p>
                      * 
                      */
                     std::string GetChcInstanceFamily() const;
 
                     /**
-                     * 设置CHC云主机机型簇。
-                     * @param _chcInstanceFamily CHC云主机机型簇。
+                     * 设置<p>CHC云主机机型簇。</p>
+                     * @param _chcInstanceFamily <p>CHC云主机机型簇。</p>
                      * 
                      */
                     void SetChcInstanceFamily(const std::string& _chcInstanceFamily);
@@ -658,15 +618,15 @@ TENANT: 租赁
                     bool ChcInstanceFamilyHasBeenSet() const;
 
                     /**
-                     * 获取CHC云主机机型簇名称。
-                     * @return ChcInstanceFamilyName CHC云主机机型簇名称。
+                     * 获取<p>CHC云主机机型簇名称。</p>
+                     * @return ChcInstanceFamilyName <p>CHC云主机机型簇名称。</p>
                      * 
                      */
                     std::string GetChcInstanceFamilyName() const;
 
                     /**
-                     * 设置CHC云主机机型簇名称。
-                     * @param _chcInstanceFamilyName CHC云主机机型簇名称。
+                     * 设置<p>CHC云主机机型簇名称。</p>
+                     * @param _chcInstanceFamilyName <p>CHC云主机机型簇名称。</p>
                      * 
                      */
                     void SetChcInstanceFamilyName(const std::string& _chcInstanceFamilyName);
@@ -679,15 +639,15 @@ TENANT: 租赁
                     bool ChcInstanceFamilyNameHasBeenSet() const;
 
                     /**
-                     * 获取转售客户的AppId。
-                     * @return ResaleAppId 转售客户的AppId。
+                     * 获取<p>转售客户的AppID。</p>
+                     * @return ResaleAppId <p>转售客户的AppID。</p>
                      * 
                      */
                     std::string GetResaleAppId() const;
 
                     /**
-                     * 设置转售客户的AppId。
-                     * @param _resaleAppId 转售客户的AppId。
+                     * 设置<p>转售客户的AppID。</p>
+                     * @param _resaleAppId <p>转售客户的AppID。</p>
                      * 
                      */
                     void SetResaleAppId(const std::string& _resaleAppId);
@@ -700,15 +660,15 @@ TENANT: 租赁
                     bool ResaleAppIdHasBeenSet() const;
 
                     /**
-                     * 获取转售客户的账号ID。
-                     * @return ResaleAccountId 转售客户的账号ID。
+                     * 获取<p>转售客户的账号ID。</p>
+                     * @return ResaleAccountId <p>转售客户的账号ID。</p>
                      * 
                      */
                     std::string GetResaleAccountId() const;
 
                     /**
-                     * 设置转售客户的账号ID。
-                     * @param _resaleAccountId 转售客户的账号ID。
+                     * 设置<p>转售客户的账号ID。</p>
+                     * @param _resaleAccountId <p>转售客户的账号ID。</p>
                      * 
                      */
                     void SetResaleAccountId(const std::string& _resaleAccountId);
@@ -721,39 +681,15 @@ TENANT: 租赁
                     bool ResaleAccountIdHasBeenSet() const;
 
                     /**
-                     * 获取售卖状态。<br/>
-<ul>
-<li>NOT_FOR_SALE:不可售卖</li>
-<li>AVAILABLE: 可售卖</li>
-<li>SOLD: 已售卖</li>
-</ul>
-
-                     * @return SaleStatus 售卖状态。<br/>
-<ul>
-<li>NOT_FOR_SALE:不可售卖</li>
-<li>AVAILABLE: 可售卖</li>
-<li>SOLD: 已售卖</li>
-</ul>
-
+                     * 获取<p>售卖状态。<br></p><ul><li>NOT_FOR_SALE:不可售卖</li><li>AVAILABLE: 可售卖</li><li>SOLD: 已售卖</li></ul>
+                     * @return SaleStatus <p>售卖状态。<br></p><ul><li>NOT_FOR_SALE:不可售卖</li><li>AVAILABLE: 可售卖</li><li>SOLD: 已售卖</li></ul>
                      * 
                      */
                     std::string GetSaleStatus() const;
 
                     /**
-                     * 设置售卖状态。<br/>
-<ul>
-<li>NOT_FOR_SALE:不可售卖</li>
-<li>AVAILABLE: 可售卖</li>
-<li>SOLD: 已售卖</li>
-</ul>
-
-                     * @param _saleStatus 售卖状态。<br/>
-<ul>
-<li>NOT_FOR_SALE:不可售卖</li>
-<li>AVAILABLE: 可售卖</li>
-<li>SOLD: 已售卖</li>
-</ul>
-
+                     * 设置<p>售卖状态。<br></p><ul><li>NOT_FOR_SALE:不可售卖</li><li>AVAILABLE: 可售卖</li><li>SOLD: 已售卖</li></ul>
+                     * @param _saleStatus <p>售卖状态。<br></p><ul><li>NOT_FOR_SALE:不可售卖</li><li>AVAILABLE: 可售卖</li><li>SOLD: 已售卖</li></ul>
                      * 
                      */
                     void SetSaleStatus(const std::string& _saleStatus);
@@ -766,15 +702,15 @@ TENANT: 租赁
                     bool SaleStatusHasBeenSet() const;
 
                     /**
-                     * 获取CHC物理服务器关联的标签列表。
-                     * @return Tags CHC物理服务器关联的标签列表。
+                     * 获取<p>CHC物理服务器关联的标签列表。</p>
+                     * @return Tags <p>CHC物理服务器关联的标签列表。</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置CHC物理服务器关联的标签列表。
-                     * @param _tags CHC物理服务器关联的标签列表。
+                     * 设置<p>CHC物理服务器关联的标签列表。</p>
+                     * @param _tags <p>CHC物理服务器关联的标签列表。</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -787,15 +723,15 @@ TENANT: 租赁
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取最近操作
-                     * @return LatestOperation 最近操作
+                     * 获取<p>最近操作。</p>
+                     * @return LatestOperation <p>最近操作。</p>
                      * 
                      */
                     std::string GetLatestOperation() const;
 
                     /**
-                     * 设置最近操作
-                     * @param _latestOperation 最近操作
+                     * 设置<p>最近操作。</p>
+                     * @param _latestOperation <p>最近操作。</p>
                      * 
                      */
                     void SetLatestOperation(const std::string& _latestOperation);
@@ -808,15 +744,15 @@ TENANT: 租赁
                     bool LatestOperationHasBeenSet() const;
 
                     /**
-                     * 获取最近操作错误码
-                     * @return LatestOperationErrorCode 最近操作错误码
+                     * 获取<p>最近操作错误码。</p>
+                     * @return LatestOperationErrorCode <p>最近操作错误码。</p>
                      * 
                      */
                     std::string GetLatestOperationErrorCode() const;
 
                     /**
-                     * 设置最近操作错误码
-                     * @param _latestOperationErrorCode 最近操作错误码
+                     * 设置<p>最近操作错误码。</p>
+                     * @param _latestOperationErrorCode <p>最近操作错误码。</p>
                      * 
                      */
                     void SetLatestOperationErrorCode(const std::string& _latestOperationErrorCode);
@@ -829,15 +765,15 @@ TENANT: 租赁
                     bool LatestOperationErrorCodeHasBeenSet() const;
 
                     /**
-                     * 获取最近操作错误详情和建议项
-                     * @return LatestOperationErrorMsg 最近操作错误详情和建议项
+                     * 获取<p>最近操作错误详情和建议项。</p>
+                     * @return LatestOperationErrorMsg <p>最近操作错误详情和建议项。</p>
                      * 
                      */
                     std::string GetLatestOperationErrorMsg() const;
 
                     /**
-                     * 设置最近操作错误详情和建议项
-                     * @param _latestOperationErrorMsg 最近操作错误详情和建议项
+                     * 设置<p>最近操作错误详情和建议项。</p>
+                     * @param _latestOperationErrorMsg <p>最近操作错误详情和建议项。</p>
                      * 
                      */
                     void SetLatestOperationErrorMsg(const std::string& _latestOperationErrorMsg);
@@ -850,15 +786,15 @@ TENANT: 租赁
                     bool LatestOperationErrorMsgHasBeenSet() const;
 
                     /**
-                     * 获取最近操作名称
-                     * @return LatestOperationName 最近操作名称
+                     * 获取<p>最近操作名称。</p>
+                     * @return LatestOperationName <p>最近操作名称。</p>
                      * 
                      */
                     std::string GetLatestOperationName() const;
 
                     /**
-                     * 设置最近操作名称
-                     * @param _latestOperationName 最近操作名称
+                     * 设置<p>最近操作名称。</p>
+                     * @param _latestOperationName <p>最近操作名称。</p>
                      * 
                      */
                     void SetLatestOperationName(const std::string& _latestOperationName);
@@ -871,15 +807,15 @@ TENANT: 租赁
                     bool LatestOperationNameHasBeenSet() const;
 
                     /**
-                     * 获取最近操作状态
-                     * @return LatestOperationState 最近操作状态
+                     * 获取<p>最近操作状态。</p><p>枚举值：</p><ul><li>SUCCESS： 成功。</li><li>FAILED： 失败。</li></ul>
+                     * @return LatestOperationState <p>最近操作状态。</p><p>枚举值：</p><ul><li>SUCCESS： 成功。</li><li>FAILED： 失败。</li></ul>
                      * 
                      */
                     std::string GetLatestOperationState() const;
 
                     /**
-                     * 设置最近操作状态
-                     * @param _latestOperationState 最近操作状态
+                     * 设置<p>最近操作状态。</p><p>枚举值：</p><ul><li>SUCCESS： 成功。</li><li>FAILED： 失败。</li></ul>
+                     * @param _latestOperationState <p>最近操作状态。</p><p>枚举值：</p><ul><li>SUCCESS： 成功。</li><li>FAILED： 失败。</li></ul>
                      * 
                      */
                     void SetLatestOperationState(const std::string& _latestOperationState);
@@ -891,245 +827,310 @@ TENANT: 租赁
                      */
                     bool LatestOperationStateHasBeenSet() const;
 
+                    /**
+                     * 获取<p>所在的CHC网关的ID，只有专属网关才会返回。</p>
+                     * @return ChcGatewayId <p>所在的CHC网关的ID，只有专属网关才会返回。</p>
+                     * 
+                     */
+                    std::string GetChcGatewayId() const;
+
+                    /**
+                     * 设置<p>所在的CHC网关的ID，只有专属网关才会返回。</p>
+                     * @param _chcGatewayId <p>所在的CHC网关的ID，只有专属网关才会返回。</p>
+                     * 
+                     */
+                    void SetChcGatewayId(const std::string& _chcGatewayId);
+
+                    /**
+                     * 判断参数 ChcGatewayId 是否已赋值
+                     * @return ChcGatewayId 是否已赋值
+                     * 
+                     */
+                    bool ChcGatewayIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>所属的CDC集群ID。</p>
+                     * @return DedicatedClusterId <p>所属的CDC集群ID。</p>
+                     * 
+                     */
+                    std::string GetDedicatedClusterId() const;
+
+                    /**
+                     * 设置<p>所属的CDC集群ID。</p>
+                     * @param _dedicatedClusterId <p>所属的CDC集群ID。</p>
+                     * 
+                     */
+                    void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
+
+                    /**
+                     * 判断参数 DedicatedClusterId 是否已赋值
+                     * @return DedicatedClusterId 是否已赋值
+                     * 
+                     */
+                    bool DedicatedClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>业务网卡网络模式。</p><p>枚举值：</p><ul><li>DEPLOY： 部署网络模式</li><li>BUSINESS： 业务网络模式</li></ul>
+                     * @return NetworkMode <p>业务网卡网络模式。</p><p>枚举值：</p><ul><li>DEPLOY： 部署网络模式</li><li>BUSINESS： 业务网络模式</li></ul>
+                     * 
+                     */
+                    std::string GetNetworkMode() const;
+
+                    /**
+                     * 设置<p>业务网卡网络模式。</p><p>枚举值：</p><ul><li>DEPLOY： 部署网络模式</li><li>BUSINESS： 业务网络模式</li></ul>
+                     * @param _networkMode <p>业务网卡网络模式。</p><p>枚举值：</p><ul><li>DEPLOY： 部署网络模式</li><li>BUSINESS： 业务网络模式</li></ul>
+                     * 
+                     */
+                    void SetNetworkMode(const std::string& _networkMode);
+
+                    /**
+                     * 判断参数 NetworkMode 是否已赋值
+                     * @return NetworkMode 是否已赋值
+                     * 
+                     */
+                    bool NetworkModeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * CHC物理服务器ID。
+                     * <p>CHC物理服务器ID。</p>
                      */
                     std::string m_chcId;
                     bool m_chcIdHasBeenSet;
 
                     /**
-                     * 实例名称。
+                     * <p>实例名称。</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 服务器序列号。
+                     * <p>服务器序列号。</p>
                      */
                     std::string m_serialNumber;
                     bool m_serialNumberHasBeenSet;
 
                     /**
-                     * CHC的状态<br/>
-<ul>
-<li>INIT: 设备已录入。还未配置带外和部署网络</li>
-<li>READY: 已配置带外和部署网络</li>
-<li>PREPARED: 可分配云主机</li>
-<li>ONLINE: 已分配云主机</li>
-<li>OPERATING: 设备操作中，如正在配置带外网络等。</li>
-<li>CLEAR_NETWORK_FAILED: 清理带外和部署网络失败</li>
-</ul>
+                     * <p>CHC的状态<br></p><ul><li>INIT: 设备已录入。还未配置带外和部署网络</li><li>READY: 已配置带外和部署网络</li><li>PREPARED: 可分配云主机</li><li>ONLINE: 已分配云主机</li><li>OPERATING: 设备操作中，如正在配置带外网络等。</li><li>CLEAR_NETWORK_FAILED: 清理带外和部署网络失败</li></ul>
                      */
                     std::string m_instanceState;
                     bool m_instanceStateHasBeenSet;
 
                     /**
-                     * 设备类型。
+                     * <p>设备类型。</p>
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;
 
                     /**
-                     * 所属可用区
+                     * <p>所属可用区。</p>
                      */
                     Placement m_placement;
                     bool m_placementHasBeenSet;
 
                     /**
-                     * 带外网络。
+                     * <p>带外网络。</p>
                      */
                     VirtualPrivateCloud m_bmcVirtualPrivateCloud;
                     bool m_bmcVirtualPrivateCloudHasBeenSet;
 
                     /**
-                     * 带外网络Ip。
+                     * <p>带外网络IP。</p>
                      */
                     std::string m_bmcIp;
                     bool m_bmcIpHasBeenSet;
 
                     /**
-                     * 带外网络安全组Id。
+                     * <p>带外网络安全组ID。</p>
                      */
                     std::vector<std::string> m_bmcSecurityGroupIds;
                     bool m_bmcSecurityGroupIdsHasBeenSet;
 
                     /**
-                     * 部署网络。
+                     * <p>部署网络。</p>
                      */
                     VirtualPrivateCloud m_deployVirtualPrivateCloud;
                     bool m_deployVirtualPrivateCloudHasBeenSet;
 
                     /**
-                     * 部署网络Ip。
+                     * <p>部署网络IP。</p>
                      */
                     std::string m_deployIp;
                     bool m_deployIpHasBeenSet;
 
                     /**
-                     * 部署网络安全组Id。
+                     * <p>部署网络安全组ID。</p>
                      */
                     std::vector<std::string> m_deploySecurityGroupIds;
                     bool m_deploySecurityGroupIdsHasBeenSet;
 
                     /**
-                     * 关联的云主机Id。
+                     * <p>关联的云主机ID。</p>
                      */
                     std::string m_cvmInstanceId;
                     bool m_cvmInstanceIdHasBeenSet;
 
                     /**
-                     * 服务器导入的时间。
+                     * <p>服务器导入的时间。</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 机型的硬件描述，分别为CPU核数，内存容量和磁盘容量
+                     * <p>机型的硬件描述，分别为CPU核数，内存容量和磁盘容量。</p>
                      */
                     std::string m_hardwareDescription;
                     bool m_hardwareDescriptionHasBeenSet;
 
                     /**
-                     * CHC物理服务器的CPU核数
+                     * <p>CHC物理服务器的CPU核数。</p>
                      */
                     int64_t m_cPU;
                     bool m_cPUHasBeenSet;
 
                     /**
-                     * CHC物理服务器的内存大小，单位为GB
+                     * <p>CHC物理服务器的内存大小，单位为GB。</p>
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * CHC物理服务器的磁盘信息
+                     * <p>CHC物理服务器的磁盘信息。</p>
                      */
                     std::string m_disk;
                     bool m_diskHasBeenSet;
 
                     /**
-                     * 带外网络下分配的MAC地址
+                     * <p>带外网络下分配的MAC地址。</p>
                      */
                     std::string m_bmcMAC;
                     bool m_bmcMACHasBeenSet;
 
                     /**
-                     * 部署网络下分配的MAC地址
+                     * <p>部署网络下分配的MAC地址。</p>
                      */
                     std::string m_deployMAC;
                     bool m_deployMACHasBeenSet;
 
                     /**
-                     * 设备托管类型。
-HOSTING: 托管
-TENANT: 租赁
+                     * <p>设备托管类型。</p><p>枚举值：</p><ul><li>HOSTING： 托管类型。</li><li>TENANT： 租赁类型。</li></ul>
                      */
                     std::string m_tenantType;
                     bool m_tenantTypeHasBeenSet;
 
                     /**
-                     * chc dhcp选项，用于minios调试。
+                     * <p>CHC DHCP选项，用于客户自建PXE环境。</p>
                      */
                     ChcDeployExtraConfig m_deployExtraConfig;
                     bool m_deployExtraConfigHasBeenSet;
 
                     /**
-                     * GPU型号。
+                     * <p>GPU型号。</p>
                      */
                     std::string m_gpu;
                     bool m_gpuHasBeenSet;
 
                     /**
-                     * 网卡型号。主要指RDMA网卡。
+                     * <p>网卡型号。主要指RDMA网卡。</p>
                      */
                     std::string m_networkCard;
                     bool m_networkCardHasBeenSet;
 
                     /**
-                     * 是否是预定义机型。
+                     * <p>是否是预定义机型。</p>
                      */
                     bool m_isPredefinedType;
                     bool m_isPredefinedTypeHasBeenSet;
 
                     /**
-                     * CHC云主机机型。
+                     * <p>CHC云主机机型。</p>
                      */
                     std::string m_chcInstanceType;
                     bool m_chcInstanceTypeHasBeenSet;
 
                     /**
-                     * CHC云主机机型簇。
+                     * <p>CHC云主机机型簇。</p>
                      */
                     std::string m_chcInstanceFamily;
                     bool m_chcInstanceFamilyHasBeenSet;
 
                     /**
-                     * CHC云主机机型簇名称。
+                     * <p>CHC云主机机型簇名称。</p>
                      */
                     std::string m_chcInstanceFamilyName;
                     bool m_chcInstanceFamilyNameHasBeenSet;
 
                     /**
-                     * 转售客户的AppId。
+                     * <p>转售客户的AppID。</p>
                      */
                     std::string m_resaleAppId;
                     bool m_resaleAppIdHasBeenSet;
 
                     /**
-                     * 转售客户的账号ID。
+                     * <p>转售客户的账号ID。</p>
                      */
                     std::string m_resaleAccountId;
                     bool m_resaleAccountIdHasBeenSet;
 
                     /**
-                     * 售卖状态。<br/>
-<ul>
-<li>NOT_FOR_SALE:不可售卖</li>
-<li>AVAILABLE: 可售卖</li>
-<li>SOLD: 已售卖</li>
-</ul>
-
+                     * <p>售卖状态。<br></p><ul><li>NOT_FOR_SALE:不可售卖</li><li>AVAILABLE: 可售卖</li><li>SOLD: 已售卖</li></ul>
                      */
                     std::string m_saleStatus;
                     bool m_saleStatusHasBeenSet;
 
                     /**
-                     * CHC物理服务器关联的标签列表。
+                     * <p>CHC物理服务器关联的标签列表。</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 最近操作
+                     * <p>最近操作。</p>
                      */
                     std::string m_latestOperation;
                     bool m_latestOperationHasBeenSet;
 
                     /**
-                     * 最近操作错误码
+                     * <p>最近操作错误码。</p>
                      */
                     std::string m_latestOperationErrorCode;
                     bool m_latestOperationErrorCodeHasBeenSet;
 
                     /**
-                     * 最近操作错误详情和建议项
+                     * <p>最近操作错误详情和建议项。</p>
                      */
                     std::string m_latestOperationErrorMsg;
                     bool m_latestOperationErrorMsgHasBeenSet;
 
                     /**
-                     * 最近操作名称
+                     * <p>最近操作名称。</p>
                      */
                     std::string m_latestOperationName;
                     bool m_latestOperationNameHasBeenSet;
 
                     /**
-                     * 最近操作状态
+                     * <p>最近操作状态。</p><p>枚举值：</p><ul><li>SUCCESS： 成功。</li><li>FAILED： 失败。</li></ul>
                      */
                     std::string m_latestOperationState;
                     bool m_latestOperationStateHasBeenSet;
+
+                    /**
+                     * <p>所在的CHC网关的ID，只有专属网关才会返回。</p>
+                     */
+                    std::string m_chcGatewayId;
+                    bool m_chcGatewayIdHasBeenSet;
+
+                    /**
+                     * <p>所属的CDC集群ID。</p>
+                     */
+                    std::string m_dedicatedClusterId;
+                    bool m_dedicatedClusterIdHasBeenSet;
+
+                    /**
+                     * <p>业务网卡网络模式。</p><p>枚举值：</p><ul><li>DEPLOY： 部署网络模式</li><li>BUSINESS： 业务网络模式</li></ul>
+                     */
+                    std::string m_networkMode;
+                    bool m_networkModeHasBeenSet;
 
                 };
             }

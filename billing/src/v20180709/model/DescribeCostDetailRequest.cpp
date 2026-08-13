@@ -31,7 +31,10 @@ DescribeCostDetailRequest::DescribeCostDetailRequest() :
     m_monthHasBeenSet(false),
     m_productCodeHasBeenSet(false),
     m_payModeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+    m_resourceIdHasBeenSet(false),
+    m_businessCodeHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
+    m_regionIdHasBeenSet(false)
 {
 }
 
@@ -112,6 +115,30 @@ string DescribeCostDetailRequest::ToJsonString() const
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_businessCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_businessCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_regionId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +291,54 @@ void DescribeCostDetailRequest::SetResourceId(const string& _resourceId)
 bool DescribeCostDetailRequest::ResourceIdHasBeenSet() const
 {
     return m_resourceIdHasBeenSet;
+}
+
+string DescribeCostDetailRequest::GetBusinessCode() const
+{
+    return m_businessCode;
+}
+
+void DescribeCostDetailRequest::SetBusinessCode(const string& _businessCode)
+{
+    m_businessCode = _businessCode;
+    m_businessCodeHasBeenSet = true;
+}
+
+bool DescribeCostDetailRequest::BusinessCodeHasBeenSet() const
+{
+    return m_businessCodeHasBeenSet;
+}
+
+string DescribeCostDetailRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void DescribeCostDetailRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool DescribeCostDetailRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
+string DescribeCostDetailRequest::GetRegionId() const
+{
+    return m_regionId;
+}
+
+void DescribeCostDetailRequest::SetRegionId(const string& _regionId)
+{
+    m_regionId = _regionId;
+    m_regionIdHasBeenSet = true;
+}
+
+bool DescribeCostDetailRequest::RegionIdHasBeenSet() const
+{
+    return m_regionIdHasBeenSet;
 }
 
 

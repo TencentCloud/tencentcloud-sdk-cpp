@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tms/v20201229/model/Tag.h>
 #include <tencentcloud/tms/v20201229/model/HitInfo.h>
+#include <tencentcloud/tms/v20201229/model/HitSnippetInfo.h>
 
 
 namespace TencentCloud
@@ -133,15 +134,15 @@ namespace TencentCloud
                     bool ScoreHasBeenSet() const;
 
                     /**
-                     * 获取<p>该字段用于返回自定义关键词对应的词库类型，取值为<strong>1</strong>（黑白库）和<strong>2</strong>（自定义关键词库），若未配置自定义关键词库,则默认值为1（黑白库匹配）。</p>
-                     * @return LibType <p>该字段用于返回自定义关键词对应的词库类型，取值为<strong>1</strong>（黑白库）和<strong>2</strong>（自定义关键词库），若未配置自定义关键词库,则默认值为1（黑白库匹配）。</p>
+                     * 获取<p>该字段用于返回自定义关键词对应的词库类型，取值为<strong>1</strong>（黑白库）和<strong>2</strong>（自定义关键词库），若未配置自定义关键词库,则默认值为1（黑白库匹配）。</p><p>枚举值：</p><ul><li>1： 黑白库</li><li>2： 自定义关键词库</li></ul>
+                     * @return LibType <p>该字段用于返回自定义关键词对应的词库类型，取值为<strong>1</strong>（黑白库）和<strong>2</strong>（自定义关键词库），若未配置自定义关键词库,则默认值为1（黑白库匹配）。</p><p>枚举值：</p><ul><li>1： 黑白库</li><li>2： 自定义关键词库</li></ul>
                      * 
                      */
                     int64_t GetLibType() const;
 
                     /**
-                     * 设置<p>该字段用于返回自定义关键词对应的词库类型，取值为<strong>1</strong>（黑白库）和<strong>2</strong>（自定义关键词库），若未配置自定义关键词库,则默认值为1（黑白库匹配）。</p>
-                     * @param _libType <p>该字段用于返回自定义关键词对应的词库类型，取值为<strong>1</strong>（黑白库）和<strong>2</strong>（自定义关键词库），若未配置自定义关键词库,则默认值为1（黑白库匹配）。</p>
+                     * 设置<p>该字段用于返回自定义关键词对应的词库类型，取值为<strong>1</strong>（黑白库）和<strong>2</strong>（自定义关键词库），若未配置自定义关键词库,则默认值为1（黑白库匹配）。</p><p>枚举值：</p><ul><li>1： 黑白库</li><li>2： 自定义关键词库</li></ul>
+                     * @param _libType <p>该字段用于返回自定义关键词对应的词库类型，取值为<strong>1</strong>（黑白库）和<strong>2</strong>（自定义关键词库），若未配置自定义关键词库,则默认值为1（黑白库匹配）。</p><p>枚举值：</p><ul><li>1： 黑白库</li><li>2： 自定义关键词库</li></ul>
                      * 
                      */
                     void SetLibType(const int64_t& _libType);
@@ -262,6 +263,31 @@ namespace TencentCloud
                      */
                     bool HitInfosHasBeenSet() const;
 
+                    /**
+                     * 获取<p>该字段用于标记导致本次审核命中标签的原文内容位置信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HitSnippetInfos <p>该字段用于标记导致本次审核命中标签的原文内容位置信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<HitSnippetInfo> GetHitSnippetInfos() const;
+
+                    /**
+                     * 设置<p>该字段用于标记导致本次审核命中标签的原文内容位置信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hitSnippetInfos <p>该字段用于标记导致本次审核命中标签的原文内容位置信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHitSnippetInfos(const std::vector<HitSnippetInfo>& _hitSnippetInfos);
+
+                    /**
+                     * 判断参数 HitSnippetInfos 是否已赋值
+                     * @return HitSnippetInfos 是否已赋值
+                     * 
+                     */
+                    bool HitSnippetInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -289,7 +315,7 @@ namespace TencentCloud
                     bool m_scoreHasBeenSet;
 
                     /**
-                     * <p>该字段用于返回自定义关键词对应的词库类型，取值为<strong>1</strong>（黑白库）和<strong>2</strong>（自定义关键词库），若未配置自定义关键词库,则默认值为1（黑白库匹配）。</p>
+                     * <p>该字段用于返回自定义关键词对应的词库类型，取值为<strong>1</strong>（黑白库）和<strong>2</strong>（自定义关键词库），若未配置自定义关键词库,则默认值为1（黑白库匹配）。</p><p>枚举值：</p><ul><li>1： 黑白库</li><li>2： 自定义关键词库</li></ul>
                      */
                     int64_t m_libType;
                     bool m_libTypeHasBeenSet;
@@ -324,6 +350,13 @@ namespace TencentCloud
                      */
                     std::vector<HitInfo> m_hitInfos;
                     bool m_hitInfosHasBeenSet;
+
+                    /**
+                     * <p>该字段用于标记导致本次审核命中标签的原文内容位置信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<HitSnippetInfo> m_hitSnippetInfos;
+                    bool m_hitSnippetInfosHasBeenSet;
 
                 };
             }

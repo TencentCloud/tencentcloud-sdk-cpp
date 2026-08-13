@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool NodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>节点类型<li>hotData: 热数据节点</li></p><li>warmData: 冷数据节点</li><li>dedicatedMaster: 专用主节点</li>默认值为hotData
-                     * @return Type <p>节点类型<li>hotData: 热数据节点</li></p><li>warmData: 冷数据节点</li><li>dedicatedMaster: 专用主节点</li>默认值为hotData
+                     * 获取<p>节点类型</p><p>枚举值：</p><ul><li>hotData： 热数据节点</li><li>warmData： 冷数据节点</li><li>dedicatedMaster： 专用主节点</li><li>dedicatedCoordinating： 专用协调节点</li><li>dedicatedMl： 专用机器学习节点</li></ul>
+                     * @return Type <p>节点类型</p><p>枚举值：</p><ul><li>hotData： 热数据节点</li><li>warmData： 冷数据节点</li><li>dedicatedMaster： 专用主节点</li><li>dedicatedCoordinating： 专用协调节点</li><li>dedicatedMl： 专用机器学习节点</li></ul>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置<p>节点类型<li>hotData: 热数据节点</li></p><li>warmData: 冷数据节点</li><li>dedicatedMaster: 专用主节点</li>默认值为hotData
-                     * @param _type <p>节点类型<li>hotData: 热数据节点</li></p><li>warmData: 冷数据节点</li><li>dedicatedMaster: 专用主节点</li>默认值为hotData
+                     * 设置<p>节点类型</p><p>枚举值：</p><ul><li>hotData： 热数据节点</li><li>warmData： 冷数据节点</li><li>dedicatedMaster： 专用主节点</li><li>dedicatedCoordinating： 专用协调节点</li><li>dedicatedMl： 专用机器学习节点</li></ul>
+                     * @param _type <p>节点类型</p><p>枚举值：</p><ul><li>hotData： 热数据节点</li><li>warmData： 冷数据节点</li><li>dedicatedMaster： 专用主节点</li><li>dedicatedCoordinating： 专用协调节点</li><li>dedicatedMl： 专用机器学习节点</li></ul>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -385,7 +385,7 @@ namespace TencentCloud
                     bool m_nodeTypeHasBeenSet;
 
                     /**
-                     * <p>节点类型<li>hotData: 热数据节点</li></p><li>warmData: 冷数据节点</li><li>dedicatedMaster: 专用主节点</li>默认值为hotData
+                     * <p>节点类型</p><p>枚举值：</p><ul><li>hotData： 热数据节点</li><li>warmData： 冷数据节点</li><li>dedicatedMaster： 专用主节点</li><li>dedicatedCoordinating： 专用协调节点</li><li>dedicatedMl： 专用机器学习节点</li></ul>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

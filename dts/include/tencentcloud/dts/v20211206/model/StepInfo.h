@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取<p>步骤开始时间，可能为空</p>
-                     * @return StartTime <p>步骤开始时间，可能为空</p>
+                     * 获取<p>步骤开始时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return StartTime <p>步骤开始时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置<p>步骤开始时间，可能为空</p>
-                     * @param _startTime <p>步骤开始时间，可能为空</p>
+                     * 设置<p>步骤开始时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @param _startTime <p>步骤开始时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>完成时间</p>
-                     * @return FinishTime <p>完成时间</p>
+                     * 获取<p>完成时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return FinishTime <p>完成时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
-                     * 设置<p>完成时间</p>
-                     * @param _finishTime <p>完成时间</p>
+                     * 设置<p>完成时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @param _finishTime <p>完成时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
@@ -271,13 +271,13 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * <p>步骤开始时间，可能为空</p>
+                     * <p>步骤开始时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * <p>完成时间</p>
+                     * <p>完成时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;

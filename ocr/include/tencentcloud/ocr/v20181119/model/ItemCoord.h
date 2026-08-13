@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool YHasBeenSet() const;
 
                     /**
-                     * 获取<p>宽width。</p>
-                     * @return Width <p>宽width。</p>
+                     * 获取<p>宽width。</p><p>单位：px</p>
+                     * @return Width <p>宽width。</p><p>单位：px</p>
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置<p>宽width。</p>
-                     * @param _width <p>宽width。</p>
+                     * 设置<p>宽width。</p><p>单位：px</p>
+                     * @param _width <p>宽width。</p><p>单位：px</p>
                      * 
                      */
                     void SetWidth(const int64_t& _width);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取<p>高height。</p>
-                     * @return Height <p>高height。</p>
+                     * 获取<p>高height。</p><p>单位：px</p>
+                     * @return Height <p>高height。</p><p>单位：px</p>
                      * 
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置<p>高height。</p>
-                     * @param _height <p>高height。</p>
+                     * 设置<p>高height。</p><p>单位：px</p>
+                     * @param _height <p>高height。</p><p>单位：px</p>
                      * 
                      */
                     void SetHeight(const int64_t& _height);
@@ -145,13 +145,13 @@ namespace TencentCloud
                     bool m_yHasBeenSet;
 
                     /**
-                     * <p>宽width。</p>
+                     * <p>宽width。</p><p>单位：px</p>
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * <p>高height。</p>
+                     * <p>高height。</p><p>单位：px</p>
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;

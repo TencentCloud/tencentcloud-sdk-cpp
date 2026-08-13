@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询结果的数量
-                     * @return TotalCount 查询结果的数量
+                     * 获取<p>查询结果的数量</p>
+                     * @return TotalCount <p>查询结果的数量</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,9 +59,9 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取查询结果详情
+                     * 获取<p>查询结果详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Items 查询结果详情
+                     * @return Items <p>查询结果详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,13 +77,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询结果的数量
+                     * <p>查询结果的数量</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 查询结果详情
+                     * <p>查询结果详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DiffChunkItem> m_items;

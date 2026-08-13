@@ -14,36 +14,33 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CDS_V20180420_MODEL_AUDITCAPABILITY_H_
-#define TENCENTCLOUD_CDS_V20180420_MODEL_AUDITCAPABILITY_H_
+#ifndef TENCENTCLOUD_CSIP_V20221121_MODEL_DELETEEDRRULESRESPONSE_H_
+#define TENCENTCLOUD_CSIP_V20221121_MODEL_DELETEEDRRULESRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
-#include <tencentcloud/core/utils/rapidjson/document.h>
-#include <tencentcloud/core/utils/rapidjson/writer.h>
-#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 
 
 namespace TencentCloud
 {
-    namespace Cds
+    namespace Csip
     {
-        namespace V20180420
+        namespace V20221121
         {
             namespace Model
             {
                 /**
-                * 资产支持的审计能力
+                * DeleteEDRRules返回参数结构体
                 */
-                class AuditCapability : public AbstractModel
+                class DeleteEDRRulesResponse : public AbstractModel
                 {
                 public:
-                    AuditCapability();
-                    ~AuditCapability() = default;
-                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
-                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+                    DeleteEDRRulesResponse();
+                    ~DeleteEDRRulesResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:
@@ -54,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CDS_V20180420_MODEL_AUDITCAPABILITY_H_
+#endif // !TENCENTCLOUD_CSIP_V20221121_MODEL_DELETEEDRRULESRESPONSE_H_

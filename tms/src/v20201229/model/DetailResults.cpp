@@ -30,7 +30,8 @@ DetailResults::DetailResults() :
     m_libNameHasBeenSet(false),
     m_subLabelHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_hitInfosHasBeenSet(false)
+    m_hitInfosHasBeenSet(false),
+    m_hitSnippetInfosHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,26 @@ CoreInternalOutcome DetailResults::Deserialize(const rapidjson::Value &value)
         m_hitInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("HitSnippetInfos") && !value["HitSnippetInfos"].IsNull())
+    {
+        if (!value["HitSnippetInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DetailResults.HitSnippetInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["HitSnippetInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            HitSnippetInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_hitSnippetInfos.push_back(item);
+        }
+        m_hitSnippetInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +283,21 @@ void DetailResults::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
 
         int i=0;
         for (auto itr = m_hitInfos.begin(); itr != m_hitInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_hitSnippetInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HitSnippetInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_hitSnippetInfos.begin(); itr != m_hitSnippetInfos.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -429,5 +465,21 @@ void DetailResults::SetHitInfos(const vector<HitInfo>& _hitInfos)
 bool DetailResults::HitInfosHasBeenSet() const
 {
     return m_hitInfosHasBeenSet;
+}
+
+vector<HitSnippetInfo> DetailResults::GetHitSnippetInfos() const
+{
+    return m_hitSnippetInfos;
+}
+
+void DetailResults::SetHitSnippetInfos(const vector<HitSnippetInfo>& _hitSnippetInfos)
+{
+    m_hitSnippetInfos = _hitSnippetInfos;
+    m_hitSnippetInfosHasBeenSet = true;
+}
+
+bool DetailResults::HitSnippetInfosHasBeenSet() const
+{
+    return m_hitSnippetInfosHasBeenSet;
 }
 

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
-                     * @return BeginTime 目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * 获取<p>目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。</p>
+                     * @return BeginTime <p>目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。</p>
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
-                     * @param _beginTime 目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * 设置<p>目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。</p>
+                     * @param _beginTime <p>目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。</p>
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
-                     * @return EndTime 目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * 获取<p>目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。</p>
+                     * @return EndTime <p>目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
-                     * @param _endTime 目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * 设置<p>目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。</p>
+                     * @param _endTime <p>目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取每次获取数据量，最大值为100
-                     * @return Limit 每次获取数据量，最大值为100
+                     * 获取<p>每次获取数据量，最大值为100</p>
+                     * @return Limit <p>每次获取数据量，最大值为100</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每次获取数据量，最大值为100
-                     * @param _limit 每次获取数据量，最大值为100
+                     * 设置<p>每次获取数据量，最大值为100</p>
+                     * @param _limit <p>每次获取数据量，最大值为100</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量,默认从0开始
-                     * @return Offset 偏移量,默认从0开始
+                     * 获取<p>偏移量,默认从0开始</p>
+                     * @return Offset <p>偏移量,默认从0开始</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量,默认从0开始
-                     * @param _offset 偏移量,默认从0开始
+                     * 设置<p>偏移量,默认从0开始</p>
+                     * @param _offset <p>偏移量,默认从0开始</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询账单数据的用户UIN
-                     * @return PayerUin 查询账单数据的用户UIN
+                     * 获取<p>查询账单数据的用户UIN</p>
+                     * @return PayerUin <p>查询账单数据的用户UIN</p>
                      * 
                      */
                     std::string GetPayerUin() const;
 
                     /**
-                     * 设置查询账单数据的用户UIN
-                     * @param _payerUin 查询账单数据的用户UIN
+                     * 设置<p>查询账单数据的用户UIN</p>
+                     * @param _payerUin <p>查询账单数据的用户UIN</p>
                      * 
                      */
                     void SetPayerUin(const std::string& _payerUin);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool PayerUinHasBeenSet() const;
 
                     /**
-                     * 获取是否需要返回记录数量，0不需要，1需要，默认不需要
-                     * @return NeedRecordNum 是否需要返回记录数量，0不需要，1需要，默认不需要
+                     * 获取<p>是否需要返回记录数量，0不需要，1需要，默认不需要</p>
+                     * @return NeedRecordNum <p>是否需要返回记录数量，0不需要，1需要，默认不需要</p>
                      * 
                      */
                     uint64_t GetNeedRecordNum() const;
 
                     /**
-                     * 设置是否需要返回记录数量，0不需要，1需要，默认不需要
-                     * @param _needRecordNum 是否需要返回记录数量，0不需要，1需要，默认不需要
+                     * 设置<p>是否需要返回记录数量，0不需要，1需要，默认不需要</p>
+                     * @param _needRecordNum <p>是否需要返回记录数量，0不需要，1需要，默认不需要</p>
                      * 
                      */
                     void SetNeedRecordNum(const uint64_t& _needRecordNum);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool NeedRecordNumHasBeenSet() const;
 
                     /**
-                     * 获取是否需要返回过滤条件，0不需要，1需要，默认不需要
-                     * @return NeedConditionValue 是否需要返回过滤条件，0不需要，1需要，默认不需要
+                     * 获取<p>是否需要返回过滤条件，0不需要，1需要，默认不需要</p>
+                     * @return NeedConditionValue <p>是否需要返回过滤条件，0不需要，1需要，默认不需要</p>
                      * 
                      */
                     uint64_t GetNeedConditionValue() const;
 
                     /**
-                     * 设置是否需要返回过滤条件，0不需要，1需要，默认不需要
-                     * @param _needConditionValue 是否需要返回过滤条件，0不需要，1需要，默认不需要
+                     * 设置<p>是否需要返回过滤条件，0不需要，1需要，默认不需要</p>
+                     * @param _needConditionValue <p>是否需要返回过滤条件，0不需要，1需要，默认不需要</p>
                      * 
                      */
                     void SetNeedConditionValue(const uint64_t& _needConditionValue);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool NeedConditionValueHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，只支持ResourceKeyword(资源关键字，支持资源id及资源名称模糊查询)，ProjectIds（项目id），RegionIds(地域id)，PayModes(付费模式，可选prePay和postPay)，HideFreeCost（是否隐藏0元流水，可选0和1），OrderByCost（按费用排序规则，可选desc和asc）
-                     * @return Conditions 过滤条件，只支持ResourceKeyword(资源关键字，支持资源id及资源名称模糊查询)，ProjectIds（项目id），RegionIds(地域id)，PayModes(付费模式，可选prePay和postPay)，HideFreeCost（是否隐藏0元流水，可选0和1），OrderByCost（按费用排序规则，可选desc和asc）
+                     * 获取<p>过滤条件，只支持ResourceKeyword(资源关键字，支持资源id及资源名称模糊查询)，ProjectIds（项目id），RegionIds(地域id)，PayModes(付费模式，可选prePay和postPay)，HideFreeCost（是否隐藏0元流水，可选0和1），OrderByCost（按费用排序规则，可选desc和asc）</p>
+                     * @return Conditions <p>过滤条件，只支持ResourceKeyword(资源关键字，支持资源id及资源名称模糊查询)，ProjectIds（项目id），RegionIds(地域id)，PayModes(付费模式，可选prePay和postPay)，HideFreeCost（是否隐藏0元流水，可选0和1），OrderByCost（按费用排序规则，可选desc和asc）</p>
                      * 
                      */
                     Conditions GetConditions() const;
 
                     /**
-                     * 设置过滤条件，只支持ResourceKeyword(资源关键字，支持资源id及资源名称模糊查询)，ProjectIds（项目id），RegionIds(地域id)，PayModes(付费模式，可选prePay和postPay)，HideFreeCost（是否隐藏0元流水，可选0和1），OrderByCost（按费用排序规则，可选desc和asc）
-                     * @param _conditions 过滤条件，只支持ResourceKeyword(资源关键字，支持资源id及资源名称模糊查询)，ProjectIds（项目id），RegionIds(地域id)，PayModes(付费模式，可选prePay和postPay)，HideFreeCost（是否隐藏0元流水，可选0和1），OrderByCost（按费用排序规则，可选desc和asc）
+                     * 设置<p>过滤条件，只支持ResourceKeyword(资源关键字，支持资源id及资源名称模糊查询)，ProjectIds（项目id），RegionIds(地域id)，PayModes(付费模式，可选prePay和postPay)，HideFreeCost（是否隐藏0元流水，可选0和1），OrderByCost（按费用排序规则，可选desc和asc）</p>
+                     * @param _conditions <p>过滤条件，只支持ResourceKeyword(资源关键字，支持资源id及资源名称模糊查询)，ProjectIds（项目id），RegionIds(地域id)，PayModes(付费模式，可选prePay和postPay)，HideFreeCost（是否隐藏0元流水，可选0和1），OrderByCost（按费用排序规则，可选desc和asc）</p>
                      * 
                      */
                     void SetConditions(const Conditions& _conditions);
@@ -211,55 +211,109 @@ namespace TencentCloud
                      */
                     bool ConditionsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>分账标签键，用户自定义</p>
+                     * @return TagKey <p>分账标签键，用户自定义</p>
+                     * 
+                     */
+                    std::string GetTagKey() const;
+
+                    /**
+                     * 设置<p>分账标签键，用户自定义</p>
+                     * @param _tagKey <p>分账标签键，用户自定义</p>
+                     * 
+                     */
+                    void SetTagKey(const std::string& _tagKey);
+
+                    /**
+                     * 判断参数 TagKey 是否已赋值
+                     * @return TagKey 是否已赋值
+                     * 
+                     */
+                    bool TagKeyHasBeenSet() const;
+
+                    /**
+                     * 获取<p>分账标签值，该参数为空表示该标签键下未设置标签值的记录</p>
+                     * @return TagValue <p>分账标签值，该参数为空表示该标签键下未设置标签值的记录</p>
+                     * 
+                     */
+                    std::string GetTagValue() const;
+
+                    /**
+                     * 设置<p>分账标签值，该参数为空表示该标签键下未设置标签值的记录</p>
+                     * @param _tagValue <p>分账标签值，该参数为空表示该标签键下未设置标签值的记录</p>
+                     * 
+                     */
+                    void SetTagValue(const std::string& _tagValue);
+
+                    /**
+                     * 判断参数 TagValue 是否已赋值
+                     * @return TagValue 是否已赋值
+                     * 
+                     */
+                    bool TagValueHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * <p>目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。</p>
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * <p>目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 每次获取数据量，最大值为100
+                     * <p>每次获取数据量，最大值为100</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量,默认从0开始
+                     * <p>偏移量,默认从0开始</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询账单数据的用户UIN
+                     * <p>查询账单数据的用户UIN</p>
                      */
                     std::string m_payerUin;
                     bool m_payerUinHasBeenSet;
 
                     /**
-                     * 是否需要返回记录数量，0不需要，1需要，默认不需要
+                     * <p>是否需要返回记录数量，0不需要，1需要，默认不需要</p>
                      */
                     uint64_t m_needRecordNum;
                     bool m_needRecordNumHasBeenSet;
 
                     /**
-                     * 是否需要返回过滤条件，0不需要，1需要，默认不需要
+                     * <p>是否需要返回过滤条件，0不需要，1需要，默认不需要</p>
                      */
                     uint64_t m_needConditionValue;
                     bool m_needConditionValueHasBeenSet;
 
                     /**
-                     * 过滤条件，只支持ResourceKeyword(资源关键字，支持资源id及资源名称模糊查询)，ProjectIds（项目id），RegionIds(地域id)，PayModes(付费模式，可选prePay和postPay)，HideFreeCost（是否隐藏0元流水，可选0和1），OrderByCost（按费用排序规则，可选desc和asc）
+                     * <p>过滤条件，只支持ResourceKeyword(资源关键字，支持资源id及资源名称模糊查询)，ProjectIds（项目id），RegionIds(地域id)，PayModes(付费模式，可选prePay和postPay)，HideFreeCost（是否隐藏0元流水，可选0和1），OrderByCost（按费用排序规则，可选desc和asc）</p>
                      */
                     Conditions m_conditions;
                     bool m_conditionsHasBeenSet;
+
+                    /**
+                     * <p>分账标签键，用户自定义</p>
+                     */
+                    std::string m_tagKey;
+                    bool m_tagKeyHasBeenSet;
+
+                    /**
+                     * <p>分账标签值，该参数为空表示该标签键下未设置标签值的记录</p>
+                     */
+                    std::string m_tagValue;
+                    bool m_tagValueHasBeenSet;
 
                 };
             }

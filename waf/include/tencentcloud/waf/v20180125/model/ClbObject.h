@@ -490,6 +490,27 @@ namespace TencentCloud
                     bool ApiStatusHasBeenSet() const;
 
                     /**
+                     * 获取<p>LLMWAF开关</p>
+                     * @return LLMStatus <p>LLMWAF开关</p>
+                     * 
+                     */
+                    int64_t GetLLMStatus() const;
+
+                    /**
+                     * 设置<p>LLMWAF开关</p>
+                     * @param _lLMStatus <p>LLMWAF开关</p>
+                     * 
+                     */
+                    void SetLLMStatus(const int64_t& _lLMStatus);
+
+                    /**
+                     * 判断参数 LLMStatus 是否已赋值
+                     * @return LLMStatus 是否已赋值
+                     * 
+                     */
+                    bool LLMStatusHasBeenSet() const;
+
+                    /**
                      * 获取<p>对象接入模式，0表示镜像模式，1表示清洗模式，2表示体检模式，默认为清洗模式</p>
                      * @return ObjectFlowMode <p>对象接入模式，0表示镜像模式，1表示清洗模式，2表示体检模式，默认为清洗模式</p>
                      * 
@@ -847,6 +868,12 @@ namespace TencentCloud
                      */
                     int64_t m_apiStatus;
                     bool m_apiStatusHasBeenSet;
+
+                    /**
+                     * <p>LLMWAF开关</p>
+                     */
+                    int64_t m_lLMStatus;
+                    bool m_lLMStatusHasBeenSet;
 
                     /**
                      * <p>对象接入模式，0表示镜像模式，1表示清洗模式，2表示体检模式，默认为清洗模式</p>

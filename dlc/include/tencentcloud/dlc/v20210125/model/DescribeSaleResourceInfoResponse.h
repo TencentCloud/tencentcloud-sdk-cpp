@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可售卖资源规格列表
-                     * @return SaleResourceInfoList 可售卖资源规格列表
+                     * 获取可售卖资源规格列表，包含规格、步长、单账户上限、以及库存情况
+                     * @return SaleResourceInfoList 可售卖资源规格列表，包含规格、步长、单账户上限、以及库存情况
                      * 
                      */
                     std::vector<ResourceSaleInfo> GetSaleResourceInfoList() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 可售卖资源规格列表
+                     * 可售卖资源规格列表，包含规格、步长、单账户上限、以及库存情况
                      */
                     std::vector<ResourceSaleInfo> m_saleResourceInfoList;
                     bool m_saleResourceInfoListHasBeenSet;

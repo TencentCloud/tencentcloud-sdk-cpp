@@ -78,7 +78,8 @@ CynosdbClusterDetail::CynosdbClusterDetail() :
     m_archiveStatusHasBeenSet(false),
     m_archiveProgressHasBeenSet(false),
     m_clusterLevelHasBeenSet(false),
-    m_isOpenTDEHasBeenSet(false)
+    m_isOpenTDEHasBeenSet(false),
+    m_realZoneHasBeenSet(false)
 {
 }
 
@@ -737,6 +738,16 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
         m_isOpenTDEHasBeenSet = true;
     }
 
+    if (value.HasMember("RealZone") && !value["RealZone"].IsNull())
+    {
+        if (!value["RealZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.RealZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_realZone = string(value["RealZone"].GetString());
+        m_realZoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1254,6 +1265,14 @@ void CynosdbClusterDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "IsOpenTDE";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isOpenTDE, allocator);
+    }
+
+    if (m_realZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realZone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2185,5 +2204,21 @@ void CynosdbClusterDetail::SetIsOpenTDE(const bool& _isOpenTDE)
 bool CynosdbClusterDetail::IsOpenTDEHasBeenSet() const
 {
     return m_isOpenTDEHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetRealZone() const
+{
+    return m_realZone;
+}
+
+void CynosdbClusterDetail::SetRealZone(const string& _realZone)
+{
+    m_realZone = _realZone;
+    m_realZoneHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::RealZoneHasBeenSet() const
+{
+    return m_realZoneHasBeenSet;
 }
 

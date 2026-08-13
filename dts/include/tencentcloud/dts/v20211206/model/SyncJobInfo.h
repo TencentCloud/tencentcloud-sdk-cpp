@@ -53,15 +53,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取同步任务id，如：sync-btso140
-                     * @return JobId 同步任务id，如：sync-btso140
+                     * 获取<p>同步任务id，如：sync-btso140</p>
+                     * @return JobId <p>同步任务id，如：sync-btso140</p>
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置同步任务id，如：sync-btso140
-                     * @param _jobId 同步任务id，如：sync-btso140
+                     * 设置<p>同步任务id，如：sync-btso140</p>
+                     * @param _jobId <p>同步任务id，如：sync-btso140</p>
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -74,15 +74,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取同步任务名
-                     * @return JobName 同步任务名
+                     * 获取<p>同步任务名</p>
+                     * @return JobName <p>同步任务名</p>
                      * 
                      */
                     std::string GetJobName() const;
 
                     /**
-                     * 设置同步任务名
-                     * @param _jobName 同步任务名
+                     * 设置<p>同步任务名</p>
+                     * @param _jobName <p>同步任务名</p>
                      * 
                      */
                     void SetJobName(const std::string& _jobName);
@@ -95,15 +95,15 @@ namespace TencentCloud
                     bool JobNameHasBeenSet() const;
 
                     /**
-                     * 获取付款方式，PostPay(按量付费)、PrePay(包年包月)
-                     * @return PayMode 付款方式，PostPay(按量付费)、PrePay(包年包月)
+                     * 获取<p>付款方式，PostPay(按量付费)、PrePay(包年包月)</p>
+                     * @return PayMode <p>付款方式，PostPay(按量付费)、PrePay(包年包月)</p>
                      * 
                      */
                     std::string GetPayMode() const;
 
                     /**
-                     * 设置付款方式，PostPay(按量付费)、PrePay(包年包月)
-                     * @param _payMode 付款方式，PostPay(按量付费)、PrePay(包年包月)
+                     * 设置<p>付款方式，PostPay(按量付费)、PrePay(包年包月)</p>
+                     * @param _payMode <p>付款方式，PostPay(按量付费)、PrePay(包年包月)</p>
                      * 
                      */
                     void SetPayMode(const std::string& _payMode);
@@ -116,15 +116,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取运行模式，Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)
-                     * @return RunMode 运行模式，Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)
+                     * 获取<p>运行模式，Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)</p>
+                     * @return RunMode <p>运行模式，Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)</p>
                      * 
                      */
                     std::string GetRunMode() const;
 
                     /**
-                     * 设置运行模式，Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)
-                     * @param _runMode 运行模式，Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)
+                     * 设置<p>运行模式，Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)</p>
+                     * @param _runMode <p>运行模式，Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)</p>
                      * 
                      */
                     void SetRunMode(const std::string& _runMode);
@@ -137,15 +137,15 @@ namespace TencentCloud
                     bool RunModeHasBeenSet() const;
 
                     /**
-                     * 获取期待运行时间，格式为 yyyy-mm-dd hh:mm:ss
-                     * @return ExpectRunTime 期待运行时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * 获取<p>期待运行时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return ExpectRunTime <p>期待运行时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetExpectRunTime() const;
 
                     /**
-                     * 设置期待运行时间，格式为 yyyy-mm-dd hh:mm:ss
-                     * @param _expectRunTime 期待运行时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * 设置<p>期待运行时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @param _expectRunTime <p>期待运行时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     void SetExpectRunTime(const std::string& _expectRunTime);
@@ -158,15 +158,15 @@ namespace TencentCloud
                     bool ExpectRunTimeHasBeenSet() const;
 
                     /**
-                     * 获取支持的所有操作
-                     * @return AllActions 支持的所有操作
+                     * 获取<p>支持的所有操作</p>
+                     * @return AllActions <p>支持的所有操作</p>
                      * 
                      */
                     std::vector<std::string> GetAllActions() const;
 
                     /**
-                     * 设置支持的所有操作
-                     * @param _allActions 支持的所有操作
+                     * 设置<p>支持的所有操作</p>
+                     * @param _allActions <p>支持的所有操作</p>
                      * 
                      */
                     void SetAllActions(const std::vector<std::string>& _allActions);
@@ -179,18 +179,18 @@ namespace TencentCloud
                     bool AllActionsHasBeenSet() const;
 
                     /**
-                     * 获取当前状态能进行的操作
+                     * 获取<p>当前状态能进行的操作</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Actions 当前状态能进行的操作
+                     * @return Actions <p>当前状态能进行的操作</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetActions() const;
 
                     /**
-                     * 设置当前状态能进行的操作
+                     * 设置<p>当前状态能进行的操作</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _actions 当前状态能进行的操作
+                     * @param _actions <p>当前状态能进行的操作</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -204,15 +204,15 @@ namespace TencentCloud
                     bool ActionsHasBeenSet() const;
 
                     /**
-                     * 获取同步选项
-                     * @return Options 同步选项
+                     * 获取<p>同步选项</p>
+                     * @return Options <p>同步选项</p>
                      * 
                      */
                     Options GetOptions() const;
 
                     /**
-                     * 设置同步选项
-                     * @param _options 同步选项
+                     * 设置<p>同步选项</p>
+                     * @param _options <p>同步选项</p>
                      * 
                      */
                     void SetOptions(const Options& _options);
@@ -225,15 +225,15 @@ namespace TencentCloud
                     bool OptionsHasBeenSet() const;
 
                     /**
-                     * 获取同步库表对象
-                     * @return Objects 同步库表对象
+                     * 获取<p>同步库表对象</p>
+                     * @return Objects <p>同步库表对象</p>
                      * 
                      */
                     Objects GetObjects() const;
 
                     /**
-                     * 设置同步库表对象
-                     * @param _objects 同步库表对象
+                     * 设置<p>同步库表对象</p>
+                     * @param _objects <p>同步库表对象</p>
                      * 
                      */
                     void SetObjects(const Objects& _objects);
@@ -246,15 +246,15 @@ namespace TencentCloud
                     bool ObjectsHasBeenSet() const;
 
                     /**
-                     * 获取任务规格
-                     * @return Specification 任务规格
+                     * 获取<p>任务规格</p>
+                     * @return Specification <p>任务规格</p>
                      * 
                      */
                     std::string GetSpecification() const;
 
                     /**
-                     * 设置任务规格
-                     * @param _specification 任务规格
+                     * 设置<p>任务规格</p>
+                     * @param _specification <p>任务规格</p>
                      * 
                      */
                     void SetSpecification(const std::string& _specification);
@@ -267,15 +267,15 @@ namespace TencentCloud
                     bool SpecificationHasBeenSet() const;
 
                     /**
-                     * 获取过期时间，格式为 yyyy-mm-dd hh:mm:ss
-                     * @return ExpireTime 过期时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * 获取<p>过期时间，格式为 yyyy-mm-dd hh:mm:ss</p>
+                     * @return ExpireTime <p>过期时间，格式为 yyyy-mm-dd hh:mm:ss</p>
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置过期时间，格式为 yyyy-mm-dd hh:mm:ss
-                     * @param _expireTime 过期时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * 设置<p>过期时间，格式为 yyyy-mm-dd hh:mm:ss</p>
+                     * @param _expireTime <p>过期时间，格式为 yyyy-mm-dd hh:mm:ss</p>
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -288,15 +288,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取源端地域，如：ap-guangzhou等
-                     * @return SrcRegion 源端地域，如：ap-guangzhou等
+                     * 获取<p>源端地域，如：ap-guangzhou等</p>
+                     * @return SrcRegion <p>源端地域，如：ap-guangzhou等</p>
                      * 
                      */
                     std::string GetSrcRegion() const;
 
                     /**
-                     * 设置源端地域，如：ap-guangzhou等
-                     * @param _srcRegion 源端地域，如：ap-guangzhou等
+                     * 设置<p>源端地域，如：ap-guangzhou等</p>
+                     * @param _srcRegion <p>源端地域，如：ap-guangzhou等</p>
                      * 
                      */
                     void SetSrcRegion(const std::string& _srcRegion);
@@ -309,15 +309,15 @@ namespace TencentCloud
                     bool SrcRegionHasBeenSet() const;
 
                     /**
-                     * 获取源端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。
-                     * @return SrcDatabaseType 源端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。
+                     * 获取<p>源端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。</p>
+                     * @return SrcDatabaseType <p>源端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。</p>
                      * 
                      */
                     std::string GetSrcDatabaseType() const;
 
                     /**
-                     * 设置源端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。
-                     * @param _srcDatabaseType 源端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。
+                     * 设置<p>源端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。</p>
+                     * @param _srcDatabaseType <p>源端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。</p>
                      * 
                      */
                     void SetSrcDatabaseType(const std::string& _srcDatabaseType);
@@ -330,15 +330,15 @@ namespace TencentCloud
                     bool SrcDatabaseTypeHasBeenSet() const;
 
                     /**
-                     * 获取源端接入类型，cdb(云数据库)、cvm(云服务器自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)
-                     * @return SrcAccessType 源端接入类型，cdb(云数据库)、cvm(云服务器自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)
+                     * 获取<p>源端接入类型，cdb(云数据库)、cvm(云服务器自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)</p>
+                     * @return SrcAccessType <p>源端接入类型，cdb(云数据库)、cvm(云服务器自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)</p>
                      * 
                      */
                     std::string GetSrcAccessType() const;
 
                     /**
-                     * 设置源端接入类型，cdb(云数据库)、cvm(云服务器自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)
-                     * @param _srcAccessType 源端接入类型，cdb(云数据库)、cvm(云服务器自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)
+                     * 设置<p>源端接入类型，cdb(云数据库)、cvm(云服务器自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)</p>
+                     * @param _srcAccessType <p>源端接入类型，cdb(云数据库)、cvm(云服务器自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)</p>
                      * 
                      */
                     void SetSrcAccessType(const std::string& _srcAccessType);
@@ -351,15 +351,15 @@ namespace TencentCloud
                     bool SrcAccessTypeHasBeenSet() const;
 
                     /**
-                     * 获取源端信息，单节点数据库使用
-                     * @return SrcInfo 源端信息，单节点数据库使用
+                     * 获取<p>源端信息，单节点数据库使用</p>
+                     * @return SrcInfo <p>源端信息，单节点数据库使用</p>
                      * 
                      */
                     Endpoint GetSrcInfo() const;
 
                     /**
-                     * 设置源端信息，单节点数据库使用
-                     * @param _srcInfo 源端信息，单节点数据库使用
+                     * 设置<p>源端信息，单节点数据库使用</p>
+                     * @param _srcInfo <p>源端信息，单节点数据库使用</p>
                      * 
                      */
                     void SetSrcInfo(const Endpoint& _srcInfo);
@@ -372,15 +372,15 @@ namespace TencentCloud
                     bool SrcInfoHasBeenSet() const;
 
                     /**
-                     * 获取枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster
-                     * @return SrcNodeType 枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster
+                     * 获取<p>枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster</p>
+                     * @return SrcNodeType <p>枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster</p>
                      * 
                      */
                     std::string GetSrcNodeType() const;
 
                     /**
-                     * 设置枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster
-                     * @param _srcNodeType 枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster
+                     * 设置<p>枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster</p>
+                     * @param _srcNodeType <p>枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster</p>
                      * 
                      */
                     void SetSrcNodeType(const std::string& _srcNodeType);
@@ -393,15 +393,15 @@ namespace TencentCloud
                     bool SrcNodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取源端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。
-                     * @return SrcInfos 源端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。
+                     * 获取<p>源端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。</p>
+                     * @return SrcInfos <p>源端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。</p>
                      * 
                      */
                     SyncDBEndpointInfos GetSrcInfos() const;
 
                     /**
-                     * 设置源端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。
-                     * @param _srcInfos 源端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。
+                     * 设置<p>源端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。</p>
+                     * @param _srcInfos <p>源端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。</p>
                      * 
                      */
                     void SetSrcInfos(const SyncDBEndpointInfos& _srcInfos);
@@ -414,15 +414,15 @@ namespace TencentCloud
                     bool SrcInfosHasBeenSet() const;
 
                     /**
-                     * 获取目标端地域，如：ap-guangzhou等
-                     * @return DstRegion 目标端地域，如：ap-guangzhou等
+                     * 获取<p>目标端地域，如：ap-guangzhou等</p>
+                     * @return DstRegion <p>目标端地域，如：ap-guangzhou等</p>
                      * 
                      */
                     std::string GetDstRegion() const;
 
                     /**
-                     * 设置目标端地域，如：ap-guangzhou等
-                     * @param _dstRegion 目标端地域，如：ap-guangzhou等
+                     * 设置<p>目标端地域，如：ap-guangzhou等</p>
+                     * @param _dstRegion <p>目标端地域，如：ap-guangzhou等</p>
                      * 
                      */
                     void SetDstRegion(const std::string& _dstRegion);
@@ -435,15 +435,15 @@ namespace TencentCloud
                     bool DstRegionHasBeenSet() const;
 
                     /**
-                     * 获取目标端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。
-                     * @return DstDatabaseType 目标端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。
+                     * 获取<p>目标端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。</p>
+                     * @return DstDatabaseType <p>目标端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。</p>
                      * 
                      */
                     std::string GetDstDatabaseType() const;
 
                     /**
-                     * 设置目标端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。
-                     * @param _dstDatabaseType 目标端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。
+                     * 设置<p>目标端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。</p>
+                     * @param _dstDatabaseType <p>目标端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。</p>
                      * 
                      */
                     void SetDstDatabaseType(const std::string& _dstDatabaseType);
@@ -456,15 +456,15 @@ namespace TencentCloud
                     bool DstDatabaseTypeHasBeenSet() const;
 
                     /**
-                     * 获取目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)
-                     * @return DstAccessType 目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)
+                     * 获取<p>目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)</p>
+                     * @return DstAccessType <p>目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)</p>
                      * 
                      */
                     std::string GetDstAccessType() const;
 
                     /**
-                     * 设置目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)
-                     * @param _dstAccessType 目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)
+                     * 设置<p>目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)</p>
+                     * @param _dstAccessType <p>目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)</p>
                      * 
                      */
                     void SetDstAccessType(const std::string& _dstAccessType);
@@ -477,15 +477,15 @@ namespace TencentCloud
                     bool DstAccessTypeHasBeenSet() const;
 
                     /**
-                     * 获取目标端信息，单节点数据库使用
-                     * @return DstInfo 目标端信息，单节点数据库使用
+                     * 获取<p>目标端信息，单节点数据库使用</p>
+                     * @return DstInfo <p>目标端信息，单节点数据库使用</p>
                      * 
                      */
                     Endpoint GetDstInfo() const;
 
                     /**
-                     * 设置目标端信息，单节点数据库使用
-                     * @param _dstInfo 目标端信息，单节点数据库使用
+                     * 设置<p>目标端信息，单节点数据库使用</p>
+                     * @param _dstInfo <p>目标端信息，单节点数据库使用</p>
                      * 
                      */
                     void SetDstInfo(const Endpoint& _dstInfo);
@@ -498,15 +498,15 @@ namespace TencentCloud
                     bool DstInfoHasBeenSet() const;
 
                     /**
-                     * 获取枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster
-                     * @return DstNodeType 枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster
+                     * 获取<p>枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster</p>
+                     * @return DstNodeType <p>枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster</p>
                      * 
                      */
                     std::string GetDstNodeType() const;
 
                     /**
-                     * 设置枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster
-                     * @param _dstNodeType 枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster
+                     * 设置<p>枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster</p>
+                     * @param _dstNodeType <p>枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster</p>
                      * 
                      */
                     void SetDstNodeType(const std::string& _dstNodeType);
@@ -519,15 +519,15 @@ namespace TencentCloud
                     bool DstNodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取目标端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。
-                     * @return DstInfos 目标端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。
+                     * 获取<p>目标端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。</p>
+                     * @return DstInfos <p>目标端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。</p>
                      * 
                      */
                     SyncDBEndpointInfos GetDstInfos() const;
 
                     /**
-                     * 设置目标端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。
-                     * @param _dstInfos 目标端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。
+                     * 设置<p>目标端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。</p>
+                     * @param _dstInfos <p>目标端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。</p>
                      * 
                      */
                     void SetDstInfos(const SyncDBEndpointInfos& _dstInfos);
@@ -540,15 +540,15 @@ namespace TencentCloud
                     bool DstInfosHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，格式为 yyyy-mm-dd hh:mm:ss
-                     * @return CreateTime 创建时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * 获取<p>创建时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return CreateTime <p>创建时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间，格式为 yyyy-mm-dd hh:mm:ss
-                     * @param _createTime 创建时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * 设置<p>创建时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @param _createTime <p>创建时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -561,15 +561,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取开始时间，格式为 yyyy-mm-dd hh:mm:ss
-                     * @return StartTime 开始时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * 获取<p>开始时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return StartTime <p>开始时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间，格式为 yyyy-mm-dd hh:mm:ss
-                     * @param _startTime 开始时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * 设置<p>开始时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @param _startTime <p>开始时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -582,15 +582,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务状态，UnInitialized(未初始化)、Initialized(已初始化)、Checking(校验中)、CheckPass(校验通过)、CheckNotPass(校验不通过)、ReadyRunning(准备运行)、Running(运行中)、Pausing(暂停中)、Paused(已暂停)、Stopping(停止中)、Stopped(已结束)、ResumableErr(任务错误)、Resuming(恢复中)、Failed(失败)、Released(已释放)、Resetting(重置中)、Unknown(未知)
-                     * @return Status 任务状态，UnInitialized(未初始化)、Initialized(已初始化)、Checking(校验中)、CheckPass(校验通过)、CheckNotPass(校验不通过)、ReadyRunning(准备运行)、Running(运行中)、Pausing(暂停中)、Paused(已暂停)、Stopping(停止中)、Stopped(已结束)、ResumableErr(任务错误)、Resuming(恢复中)、Failed(失败)、Released(已释放)、Resetting(重置中)、Unknown(未知)
+                     * 获取<p>任务状态，UnInitialized(未初始化)、Initialized(已初始化)、Checking(校验中)、CheckPass(校验通过)、CheckNotPass(校验不通过)、ReadyRunning(准备运行)、Running(运行中)、Pausing(暂停中)、Paused(已暂停)、Stopping(停止中)、Stopped(已结束)、ResumableErr(任务错误)、Resuming(恢复中)、Failed(失败)、Released(已释放)、Resetting(重置中)、Unknown(未知)</p>
+                     * @return Status <p>任务状态，UnInitialized(未初始化)、Initialized(已初始化)、Checking(校验中)、CheckPass(校验通过)、CheckNotPass(校验不通过)、ReadyRunning(准备运行)、Running(运行中)、Pausing(暂停中)、Paused(已暂停)、Stopping(停止中)、Stopped(已结束)、ResumableErr(任务错误)、Resuming(恢复中)、Failed(失败)、Released(已释放)、Resetting(重置中)、Unknown(未知)</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置任务状态，UnInitialized(未初始化)、Initialized(已初始化)、Checking(校验中)、CheckPass(校验通过)、CheckNotPass(校验不通过)、ReadyRunning(准备运行)、Running(运行中)、Pausing(暂停中)、Paused(已暂停)、Stopping(停止中)、Stopped(已结束)、ResumableErr(任务错误)、Resuming(恢复中)、Failed(失败)、Released(已释放)、Resetting(重置中)、Unknown(未知)
-                     * @param _status 任务状态，UnInitialized(未初始化)、Initialized(已初始化)、Checking(校验中)、CheckPass(校验通过)、CheckNotPass(校验不通过)、ReadyRunning(准备运行)、Running(运行中)、Pausing(暂停中)、Paused(已暂停)、Stopping(停止中)、Stopped(已结束)、ResumableErr(任务错误)、Resuming(恢复中)、Failed(失败)、Released(已释放)、Resetting(重置中)、Unknown(未知)
+                     * 设置<p>任务状态，UnInitialized(未初始化)、Initialized(已初始化)、Checking(校验中)、CheckPass(校验通过)、CheckNotPass(校验不通过)、ReadyRunning(准备运行)、Running(运行中)、Pausing(暂停中)、Paused(已暂停)、Stopping(停止中)、Stopped(已结束)、ResumableErr(任务错误)、Resuming(恢复中)、Failed(失败)、Released(已释放)、Resetting(重置中)、Unknown(未知)</p>
+                     * @param _status <p>任务状态，UnInitialized(未初始化)、Initialized(已初始化)、Checking(校验中)、CheckPass(校验通过)、CheckNotPass(校验不通过)、ReadyRunning(准备运行)、Running(运行中)、Pausing(暂停中)、Paused(已暂停)、Stopping(停止中)、Stopped(已结束)、ResumableErr(任务错误)、Resuming(恢复中)、Failed(失败)、Released(已释放)、Resetting(重置中)、Unknown(未知)</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -603,15 +603,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取结束时间，格式为 yyyy-mm-dd hh:mm:ss
-                     * @return EndTime 结束时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * 获取<p>结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return EndTime <p>结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间，格式为 yyyy-mm-dd hh:mm:ss
-                     * @param _endTime 结束时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * 设置<p>结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @param _endTime <p>结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -624,15 +624,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取标签相关信息
-                     * @return Tags 标签相关信息
+                     * 获取<p>标签相关信息</p>
+                     * @return Tags <p>标签相关信息</p>
                      * 
                      */
                     std::vector<TagItem> GetTags() const;
 
                     /**
-                     * 设置标签相关信息
-                     * @param _tags 标签相关信息
+                     * 设置<p>标签相关信息</p>
+                     * @param _tags <p>标签相关信息</p>
                      * 
                      */
                     void SetTags(const std::vector<TagItem>& _tags);
@@ -645,15 +645,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取同步任务运行步骤信息
-                     * @return Detail 同步任务运行步骤信息
+                     * 获取<p>同步任务运行步骤信息</p>
+                     * @return Detail <p>同步任务运行步骤信息</p>
                      * 
                      */
                     SyncDetailInfo GetDetail() const;
 
                     /**
-                     * 设置同步任务运行步骤信息
-                     * @param _detail 同步任务运行步骤信息
+                     * 设置<p>同步任务运行步骤信息</p>
+                     * @param _detail <p>同步任务运行步骤信息</p>
                      * 
                      */
                     void SetDetail(const SyncDetailInfo& _detail);
@@ -666,15 +666,15 @@ namespace TencentCloud
                     bool DetailHasBeenSet() const;
 
                     /**
-                     * 获取用于计费的状态，可能取值有：Normal(正常状态)、Resizing(变配中)、Renewing(续费中)、Isolating(隔离中)、Isolated(已隔离)、Offlining(下线中)、Offlined(已下线)、NotBilled(未计费)、Recovering(解隔离)、PostPay2Prepaying(按量计费转包年包月中)、PrePay2Postpaying(包年包月转按量计费中)
-                     * @return TradeStatus 用于计费的状态，可能取值有：Normal(正常状态)、Resizing(变配中)、Renewing(续费中)、Isolating(隔离中)、Isolated(已隔离)、Offlining(下线中)、Offlined(已下线)、NotBilled(未计费)、Recovering(解隔离)、PostPay2Prepaying(按量计费转包年包月中)、PrePay2Postpaying(包年包月转按量计费中)
+                     * 获取<p>用于计费的状态，可能取值有：Normal(正常状态)、Resizing(变配中)、Renewing(续费中)、Isolating(隔离中)、Isolated(已隔离)、Offlining(下线中)、Offlined(已下线)、NotBilled(未计费)、Recovering(解隔离)、PostPay2Prepaying(按量计费转包年包月中)、PrePay2Postpaying(包年包月转按量计费中)</p>
+                     * @return TradeStatus <p>用于计费的状态，可能取值有：Normal(正常状态)、Resizing(变配中)、Renewing(续费中)、Isolating(隔离中)、Isolated(已隔离)、Offlining(下线中)、Offlined(已下线)、NotBilled(未计费)、Recovering(解隔离)、PostPay2Prepaying(按量计费转包年包月中)、PrePay2Postpaying(包年包月转按量计费中)</p>
                      * 
                      */
                     std::string GetTradeStatus() const;
 
                     /**
-                     * 设置用于计费的状态，可能取值有：Normal(正常状态)、Resizing(变配中)、Renewing(续费中)、Isolating(隔离中)、Isolated(已隔离)、Offlining(下线中)、Offlined(已下线)、NotBilled(未计费)、Recovering(解隔离)、PostPay2Prepaying(按量计费转包年包月中)、PrePay2Postpaying(包年包月转按量计费中)
-                     * @param _tradeStatus 用于计费的状态，可能取值有：Normal(正常状态)、Resizing(变配中)、Renewing(续费中)、Isolating(隔离中)、Isolated(已隔离)、Offlining(下线中)、Offlined(已下线)、NotBilled(未计费)、Recovering(解隔离)、PostPay2Prepaying(按量计费转包年包月中)、PrePay2Postpaying(包年包月转按量计费中)
+                     * 设置<p>用于计费的状态，可能取值有：Normal(正常状态)、Resizing(变配中)、Renewing(续费中)、Isolating(隔离中)、Isolated(已隔离)、Offlining(下线中)、Offlined(已下线)、NotBilled(未计费)、Recovering(解隔离)、PostPay2Prepaying(按量计费转包年包月中)、PrePay2Postpaying(包年包月转按量计费中)</p>
+                     * @param _tradeStatus <p>用于计费的状态，可能取值有：Normal(正常状态)、Resizing(变配中)、Renewing(续费中)、Isolating(隔离中)、Isolated(已隔离)、Offlining(下线中)、Offlined(已下线)、NotBilled(未计费)、Recovering(解隔离)、PostPay2Prepaying(按量计费转包年包月中)、PrePay2Postpaying(包年包月转按量计费中)</p>
                      * 
                      */
                     void SetTradeStatus(const std::string& _tradeStatus);
@@ -687,15 +687,15 @@ namespace TencentCloud
                     bool TradeStatusHasBeenSet() const;
 
                     /**
-                     * 获取同步链路规格，如micro,small,medium,large
-                     * @return InstanceClass 同步链路规格，如micro,small,medium,large
+                     * 获取<p>同步链路规格，如micro,small,medium,large</p>
+                     * @return InstanceClass <p>同步链路规格，如micro,small,medium,large</p>
                      * 
                      */
                     std::string GetInstanceClass() const;
 
                     /**
-                     * 设置同步链路规格，如micro,small,medium,large
-                     * @param _instanceClass 同步链路规格，如micro,small,medium,large
+                     * 设置<p>同步链路规格，如micro,small,medium,large</p>
+                     * @param _instanceClass <p>同步链路规格，如micro,small,medium,large</p>
                      * 
                      */
                     void SetInstanceClass(const std::string& _instanceClass);
@@ -708,15 +708,15 @@ namespace TencentCloud
                     bool InstanceClassHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费）
-                     * @return AutoRenew 自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费）
+                     * 获取<p>自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费）</p>
+                     * @return AutoRenew <p>自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费）</p>
                      * 
                      */
                     uint64_t GetAutoRenew() const;
 
                     /**
-                     * 设置自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费）
-                     * @param _autoRenew 自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费）
+                     * 设置<p>自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费）</p>
+                     * @param _autoRenew <p>自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费）</p>
                      * 
                      */
                     void SetAutoRenew(const uint64_t& _autoRenew);
@@ -729,15 +729,15 @@ namespace TencentCloud
                     bool AutoRenewHasBeenSet() const;
 
                     /**
-                     * 获取下线时间，格式为 yyyy-mm-dd hh:mm:ss
-                     * @return OfflineTime 下线时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * 获取<p>下线时间，格式为 yyyy-mm-dd hh:mm:ss</p>
+                     * @return OfflineTime <p>下线时间，格式为 yyyy-mm-dd hh:mm:ss</p>
                      * 
                      */
                     std::string GetOfflineTime() const;
 
                     /**
-                     * 设置下线时间，格式为 yyyy-mm-dd hh:mm:ss
-                     * @param _offlineTime 下线时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * 设置<p>下线时间，格式为 yyyy-mm-dd hh:mm:ss</p>
+                     * @param _offlineTime <p>下线时间，格式为 yyyy-mm-dd hh:mm:ss</p>
                      * 
                      */
                     void SetOfflineTime(const std::string& _offlineTime);
@@ -750,15 +750,15 @@ namespace TencentCloud
                     bool OfflineTimeHasBeenSet() const;
 
                     /**
-                     * 获取动态修改对象，修改任务的状态等
-                     * @return OptObjStatus 动态修改对象，修改任务的状态等
+                     * 获取<p>动态修改对象，修改任务的状态等</p>
+                     * @return OptObjStatus <p>动态修改对象，修改任务的状态等</p>
                      * 
                      */
                     std::string GetOptObjStatus() const;
 
                     /**
-                     * 设置动态修改对象，修改任务的状态等
-                     * @param _optObjStatus 动态修改对象，修改任务的状态等
+                     * 设置<p>动态修改对象，修改任务的状态等</p>
+                     * @param _optObjStatus <p>动态修改对象，修改任务的状态等</p>
                      * 
                      */
                     void SetOptObjStatus(const std::string& _optObjStatus);
@@ -771,15 +771,15 @@ namespace TencentCloud
                     bool OptObjStatusHasBeenSet() const;
 
                     /**
-                     * 获取自动重试时间段设置
-                     * @return AutoRetryTimeRangeMinutes 自动重试时间段设置
+                     * 获取<p>自动重试时间段设置</p>
+                     * @return AutoRetryTimeRangeMinutes <p>自动重试时间段设置</p>
                      * 
                      */
                     int64_t GetAutoRetryTimeRangeMinutes() const;
 
                     /**
-                     * 设置自动重试时间段设置
-                     * @param _autoRetryTimeRangeMinutes 自动重试时间段设置
+                     * 设置<p>自动重试时间段设置</p>
+                     * @param _autoRetryTimeRangeMinutes <p>自动重试时间段设置</p>
                      * 
                      */
                     void SetAutoRetryTimeRangeMinutes(const int64_t& _autoRetryTimeRangeMinutes);
@@ -792,15 +792,15 @@ namespace TencentCloud
                     bool AutoRetryTimeRangeMinutesHasBeenSet() const;
 
                     /**
-                     * 获取全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
-                     * @return DumperResumeCtrl 全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
+                     * 获取<p>全量导出可重入标识：enum::&quot;yes&quot;/&quot;no&quot;。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传</p>
+                     * @return DumperResumeCtrl <p>全量导出可重入标识：enum::&quot;yes&quot;/&quot;no&quot;。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传</p>
                      * 
                      */
                     std::string GetDumperResumeCtrl() const;
 
                     /**
-                     * 设置全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
-                     * @param _dumperResumeCtrl 全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
+                     * 设置<p>全量导出可重入标识：enum::&quot;yes&quot;/&quot;no&quot;。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传</p>
+                     * @param _dumperResumeCtrl <p>全量导出可重入标识：enum::&quot;yes&quot;/&quot;no&quot;。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传</p>
                      * 
                      */
                     void SetDumperResumeCtrl(const std::string& _dumperResumeCtrl);
@@ -815,218 +815,218 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 同步任务id，如：sync-btso140
+                     * <p>同步任务id，如：sync-btso140</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 同步任务名
+                     * <p>同步任务名</p>
                      */
                     std::string m_jobName;
                     bool m_jobNameHasBeenSet;
 
                     /**
-                     * 付款方式，PostPay(按量付费)、PrePay(包年包月)
+                     * <p>付款方式，PostPay(按量付费)、PrePay(包年包月)</p>
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 运行模式，Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)
+                     * <p>运行模式，Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)</p>
                      */
                     std::string m_runMode;
                     bool m_runModeHasBeenSet;
 
                     /**
-                     * 期待运行时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * <p>期待运行时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_expectRunTime;
                     bool m_expectRunTimeHasBeenSet;
 
                     /**
-                     * 支持的所有操作
+                     * <p>支持的所有操作</p>
                      */
                     std::vector<std::string> m_allActions;
                     bool m_allActionsHasBeenSet;
 
                     /**
-                     * 当前状态能进行的操作
+                     * <p>当前状态能进行的操作</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_actions;
                     bool m_actionsHasBeenSet;
 
                     /**
-                     * 同步选项
+                     * <p>同步选项</p>
                      */
                     Options m_options;
                     bool m_optionsHasBeenSet;
 
                     /**
-                     * 同步库表对象
+                     * <p>同步库表对象</p>
                      */
                     Objects m_objects;
                     bool m_objectsHasBeenSet;
 
                     /**
-                     * 任务规格
+                     * <p>任务规格</p>
                      */
                     std::string m_specification;
                     bool m_specificationHasBeenSet;
 
                     /**
-                     * 过期时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * <p>过期时间，格式为 yyyy-mm-dd hh:mm:ss</p>
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 源端地域，如：ap-guangzhou等
+                     * <p>源端地域，如：ap-guangzhou等</p>
                      */
                     std::string m_srcRegion;
                     bool m_srcRegionHasBeenSet;
 
                     /**
-                     * 源端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。
+                     * <p>源端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。</p>
                      */
                     std::string m_srcDatabaseType;
                     bool m_srcDatabaseTypeHasBeenSet;
 
                     /**
-                     * 源端接入类型，cdb(云数据库)、cvm(云服务器自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)
+                     * <p>源端接入类型，cdb(云数据库)、cvm(云服务器自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)</p>
                      */
                     std::string m_srcAccessType;
                     bool m_srcAccessTypeHasBeenSet;
 
                     /**
-                     * 源端信息，单节点数据库使用
+                     * <p>源端信息，单节点数据库使用</p>
                      */
                     Endpoint m_srcInfo;
                     bool m_srcInfoHasBeenSet;
 
                     /**
-                     * 枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster
+                     * <p>枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster</p>
                      */
                     std::string m_srcNodeType;
                     bool m_srcNodeTypeHasBeenSet;
 
                     /**
-                     * 源端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。
+                     * <p>源端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。</p>
                      */
                     SyncDBEndpointInfos m_srcInfos;
                     bool m_srcInfosHasBeenSet;
 
                     /**
-                     * 目标端地域，如：ap-guangzhou等
+                     * <p>目标端地域，如：ap-guangzhou等</p>
                      */
                     std::string m_dstRegion;
                     bool m_dstRegionHasBeenSet;
 
                     /**
-                     * 目标端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。
+                     * <p>目标端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。</p>
                      */
                     std::string m_dstDatabaseType;
                     bool m_dstDatabaseTypeHasBeenSet;
 
                     /**
-                     * 目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)
+                     * <p>目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)</p>
                      */
                     std::string m_dstAccessType;
                     bool m_dstAccessTypeHasBeenSet;
 
                     /**
-                     * 目标端信息，单节点数据库使用
+                     * <p>目标端信息，单节点数据库使用</p>
                      */
                     Endpoint m_dstInfo;
                     bool m_dstInfoHasBeenSet;
 
                     /**
-                     * 枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster
+                     * <p>枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster</p>
                      */
                     std::string m_dstNodeType;
                     bool m_dstNodeTypeHasBeenSet;
 
                     /**
-                     * 目标端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。
+                     * <p>目标端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。</p>
                      */
                     SyncDBEndpointInfos m_dstInfos;
                     bool m_dstInfosHasBeenSet;
 
                     /**
-                     * 创建时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * <p>创建时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 开始时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * <p>开始时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 任务状态，UnInitialized(未初始化)、Initialized(已初始化)、Checking(校验中)、CheckPass(校验通过)、CheckNotPass(校验不通过)、ReadyRunning(准备运行)、Running(运行中)、Pausing(暂停中)、Paused(已暂停)、Stopping(停止中)、Stopped(已结束)、ResumableErr(任务错误)、Resuming(恢复中)、Failed(失败)、Released(已释放)、Resetting(重置中)、Unknown(未知)
+                     * <p>任务状态，UnInitialized(未初始化)、Initialized(已初始化)、Checking(校验中)、CheckPass(校验通过)、CheckNotPass(校验不通过)、ReadyRunning(准备运行)、Running(运行中)、Pausing(暂停中)、Paused(已暂停)、Stopping(停止中)、Stopped(已结束)、ResumableErr(任务错误)、Resuming(恢复中)、Failed(失败)、Released(已释放)、Resetting(重置中)、Unknown(未知)</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 结束时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * <p>结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 标签相关信息
+                     * <p>标签相关信息</p>
                      */
                     std::vector<TagItem> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 同步任务运行步骤信息
+                     * <p>同步任务运行步骤信息</p>
                      */
                     SyncDetailInfo m_detail;
                     bool m_detailHasBeenSet;
 
                     /**
-                     * 用于计费的状态，可能取值有：Normal(正常状态)、Resizing(变配中)、Renewing(续费中)、Isolating(隔离中)、Isolated(已隔离)、Offlining(下线中)、Offlined(已下线)、NotBilled(未计费)、Recovering(解隔离)、PostPay2Prepaying(按量计费转包年包月中)、PrePay2Postpaying(包年包月转按量计费中)
+                     * <p>用于计费的状态，可能取值有：Normal(正常状态)、Resizing(变配中)、Renewing(续费中)、Isolating(隔离中)、Isolated(已隔离)、Offlining(下线中)、Offlined(已下线)、NotBilled(未计费)、Recovering(解隔离)、PostPay2Prepaying(按量计费转包年包月中)、PrePay2Postpaying(包年包月转按量计费中)</p>
                      */
                     std::string m_tradeStatus;
                     bool m_tradeStatusHasBeenSet;
 
                     /**
-                     * 同步链路规格，如micro,small,medium,large
+                     * <p>同步链路规格，如micro,small,medium,large</p>
                      */
                     std::string m_instanceClass;
                     bool m_instanceClassHasBeenSet;
 
                     /**
-                     * 自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费）
+                     * <p>自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费）</p>
                      */
                     uint64_t m_autoRenew;
                     bool m_autoRenewHasBeenSet;
 
                     /**
-                     * 下线时间，格式为 yyyy-mm-dd hh:mm:ss
+                     * <p>下线时间，格式为 yyyy-mm-dd hh:mm:ss</p>
                      */
                     std::string m_offlineTime;
                     bool m_offlineTimeHasBeenSet;
 
                     /**
-                     * 动态修改对象，修改任务的状态等
+                     * <p>动态修改对象，修改任务的状态等</p>
                      */
                     std::string m_optObjStatus;
                     bool m_optObjStatusHasBeenSet;
 
                     /**
-                     * 自动重试时间段设置
+                     * <p>自动重试时间段设置</p>
                      */
                     int64_t m_autoRetryTimeRangeMinutes;
                     bool m_autoRetryTimeRangeMinutesHasBeenSet;
 
                     /**
-                     * 全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
+                     * <p>全量导出可重入标识：enum::&quot;yes&quot;/&quot;no&quot;。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传</p>
                      */
                     std::string m_dumperResumeCtrl;
                     bool m_dumperResumeCtrlHasBeenSet;

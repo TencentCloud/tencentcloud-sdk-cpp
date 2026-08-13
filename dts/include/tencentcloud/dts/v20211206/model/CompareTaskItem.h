@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务id
-                     * @return JobId 任务id
+                     * 获取<p>任务id</p>
+                     * @return JobId <p>任务id</p>
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置任务id
-                     * @param _jobId 任务id
+                     * 设置<p>任务id</p>
+                     * @param _jobId <p>任务id</p>
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取对比任务 Id
-                     * @return CompareTaskId 对比任务 Id
+                     * 获取<p>对比任务 Id</p>
+                     * @return CompareTaskId <p>对比任务 Id</p>
                      * 
                      */
                     std::string GetCompareTaskId() const;
 
                     /**
-                     * 设置对比任务 Id
-                     * @param _compareTaskId 对比任务 Id
+                     * 设置<p>对比任务 Id</p>
+                     * @param _compareTaskId <p>对比任务 Id</p>
                      * 
                      */
                     void SetCompareTaskId(const std::string& _compareTaskId);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool CompareTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取对比任务名称
-                     * @return TaskName 对比任务名称
+                     * 获取<p>对比任务名称</p>
+                     * @return TaskName <p>对比任务名称</p>
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
-                     * 设置对比任务名称
-                     * @param _taskName 对比任务名称
+                     * 设置<p>对比任务名称</p>
+                     * @param _taskName <p>对比任务名称</p>
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool TaskNameHasBeenSet() const;
 
                     /**
-                     * 获取对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
-                     * @return Status 对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
+                     * 获取<p>对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止</p>
+                     * @return Status <p>对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
-                     * @param _status 对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
+                     * 设置<p>对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止</p>
+                     * @param _status <p>对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -134,15 +134,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取对比任务配置
-                     * @return Config 对比任务配置
+                     * 获取<p>对比任务配置</p>
+                     * @return Config <p>对比任务配置</p>
                      * 
                      */
                     CompareObject GetConfig() const;
 
                     /**
-                     * 设置对比任务配置
-                     * @param _config 对比任务配置
+                     * 设置<p>对比任务配置</p>
+                     * @param _config <p>对比任务配置</p>
                      * 
                      */
                     void SetConfig(const CompareObject& _config);
@@ -155,15 +155,15 @@ namespace TencentCloud
                     bool ConfigHasBeenSet() const;
 
                     /**
-                     * 获取对比任务校验详情
-                     * @return CheckProcess 对比任务校验详情
+                     * 获取<p>对比任务校验详情</p>
+                     * @return CheckProcess <p>对比任务校验详情</p>
                      * 
                      */
                     ProcessProgress GetCheckProcess() const;
 
                     /**
-                     * 设置对比任务校验详情
-                     * @param _checkProcess 对比任务校验详情
+                     * 设置<p>对比任务校验详情</p>
+                     * @param _checkProcess <p>对比任务校验详情</p>
                      * 
                      */
                     void SetCheckProcess(const ProcessProgress& _checkProcess);
@@ -176,15 +176,15 @@ namespace TencentCloud
                     bool CheckProcessHasBeenSet() const;
 
                     /**
-                     * 获取对比任务运行详情
-                     * @return CompareProcess 对比任务运行详情
+                     * 获取<p>对比任务运行详情</p>
+                     * @return CompareProcess <p>对比任务运行详情</p>
                      * 
                      */
                     ProcessProgress GetCompareProcess() const;
 
                     /**
-                     * 设置对比任务运行详情
-                     * @param _compareProcess 对比任务运行详情
+                     * 设置<p>对比任务运行详情</p>
+                     * @param _compareProcess <p>对比任务运行详情</p>
                      * 
                      */
                     void SetCompareProcess(const ProcessProgress& _compareProcess);
@@ -197,15 +197,15 @@ namespace TencentCloud
                     bool CompareProcessHasBeenSet() const;
 
                     /**
-                     * 获取对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过
-                     * @return Conclusion 对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过
+                     * 获取<p>对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过</p>
+                     * @return Conclusion <p>对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过</p>
                      * 
                      */
                     std::string GetConclusion() const;
 
                     /**
-                     * 设置对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过
-                     * @param _conclusion 对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过
+                     * 设置<p>对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过</p>
+                     * @param _conclusion <p>对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过</p>
                      * 
                      */
                     void SetConclusion(const std::string& _conclusion);
@@ -218,15 +218,15 @@ namespace TencentCloud
                     bool ConclusionHasBeenSet() const;
 
                     /**
-                     * 获取任务创建时间
-                     * @return CreatedAt 任务创建时间
+                     * 获取<p>任务创建时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return CreatedAt <p>任务创建时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
-                     * 设置任务创建时间
-                     * @param _createdAt 任务创建时间
+                     * 设置<p>任务创建时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @param _createdAt <p>任务创建时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -239,15 +239,15 @@ namespace TencentCloud
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取任务启动时间
-                     * @return StartedAt 任务启动时间
+                     * 获取<p>任务启动时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return StartedAt <p>任务启动时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetStartedAt() const;
 
                     /**
-                     * 设置任务启动时间
-                     * @param _startedAt 任务启动时间
+                     * 设置<p>任务启动时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @param _startedAt <p>任务启动时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     void SetStartedAt(const std::string& _startedAt);
@@ -260,15 +260,15 @@ namespace TencentCloud
                     bool StartedAtHasBeenSet() const;
 
                     /**
-                     * 获取对比结束时间
-                     * @return FinishedAt 对比结束时间
+                     * 获取<p>对比结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return FinishedAt <p>对比结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetFinishedAt() const;
 
                     /**
-                     * 设置对比结束时间
-                     * @param _finishedAt 对比结束时间
+                     * 设置<p>对比结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @param _finishedAt <p>对比结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     void SetFinishedAt(const std::string& _finishedAt);
@@ -281,15 +281,15 @@ namespace TencentCloud
                     bool FinishedAtHasBeenSet() const;
 
                     /**
-                     * 获取对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
-                     * @return Method 对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
+                     * 获取<p>对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)</p>
+                     * @return Method <p>对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)</p>
                      * 
                      */
                     std::string GetMethod() const;
 
                     /**
-                     * 设置对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
-                     * @param _method 对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
+                     * 设置<p>对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)</p>
+                     * @param _method <p>对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)</p>
                      * 
                      */
                     void SetMethod(const std::string& _method);
@@ -302,15 +302,15 @@ namespace TencentCloud
                     bool MethodHasBeenSet() const;
 
                     /**
-                     * 获取对比配置信息
-                     * @return Options 对比配置信息
+                     * 获取<p>对比配置信息</p>
+                     * @return Options <p>对比配置信息</p>
                      * 
                      */
                     CompareOptions GetOptions() const;
 
                     /**
-                     * 设置对比配置信息
-                     * @param _options 对比配置信息
+                     * 设置<p>对比配置信息</p>
+                     * @param _options <p>对比配置信息</p>
                      * 
                      */
                     void SetOptions(const CompareOptions& _options);
@@ -323,15 +323,15 @@ namespace TencentCloud
                     bool OptionsHasBeenSet() const;
 
                     /**
-                     * 获取一致性校验提示信息
-                     * @return Message 一致性校验提示信息
+                     * 获取<p>一致性校验提示信息</p>
+                     * @return Message <p>一致性校验提示信息</p>
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置一致性校验提示信息
-                     * @param _message 一致性校验提示信息
+                     * 设置<p>一致性校验提示信息</p>
+                     * @param _message <p>一致性校验提示信息</p>
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -346,85 +346,85 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务id
+                     * <p>任务id</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 对比任务 Id
+                     * <p>对比任务 Id</p>
                      */
                     std::string m_compareTaskId;
                     bool m_compareTaskIdHasBeenSet;
 
                     /**
-                     * 对比任务名称
+                     * <p>对比任务名称</p>
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
-                     * 对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
+                     * <p>对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 对比任务配置
+                     * <p>对比任务配置</p>
                      */
                     CompareObject m_config;
                     bool m_configHasBeenSet;
 
                     /**
-                     * 对比任务校验详情
+                     * <p>对比任务校验详情</p>
                      */
                     ProcessProgress m_checkProcess;
                     bool m_checkProcessHasBeenSet;
 
                     /**
-                     * 对比任务运行详情
+                     * <p>对比任务运行详情</p>
                      */
                     ProcessProgress m_compareProcess;
                     bool m_compareProcessHasBeenSet;
 
                     /**
-                     * 对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过
+                     * <p>对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过</p>
                      */
                     std::string m_conclusion;
                     bool m_conclusionHasBeenSet;
 
                     /**
-                     * 任务创建时间
+                     * <p>任务创建时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * 任务启动时间
+                     * <p>任务启动时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_startedAt;
                     bool m_startedAtHasBeenSet;
 
                     /**
-                     * 对比结束时间
+                     * <p>对比结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_finishedAt;
                     bool m_finishedAtHasBeenSet;
 
                     /**
-                     * 对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
+                     * <p>对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)</p>
                      */
                     std::string m_method;
                     bool m_methodHasBeenSet;
 
                     /**
-                     * 对比配置信息
+                     * <p>对比配置信息</p>
                      */
                     CompareOptions m_options;
                     bool m_optionsHasBeenSet;
 
                     /**
-                     * 一致性校验提示信息
+                     * <p>一致性校验提示信息</p>
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

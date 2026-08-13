@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取报表 Id
-                     * @return Id 报表 Id
+                     * 获取<p>报表 Id</p>
+                     * @return Id <p>报表 Id</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置报表 Id
-                     * @param _id 报表 Id
+                     * 设置<p>报表 Id</p>
+                     * @param _id <p>报表 Id</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 报表 Id
+                     * <p>报表 Id</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;

@@ -32,7 +32,6 @@ set(cds_public_header_model
   include/tencentcloud/cds/v20180420/model/DescribeReportMissionListResponse.h
   include/tencentcloud/cds/v20180420/model/CdsAuditInstance.h
   include/tencentcloud/cds/v20180420/model/DescribeDbauditUsedRegionsResponse.h
-  include/tencentcloud/cds/v20180420/model/AuditCapability.h
   include/tencentcloud/cds/v20180420/model/CreateTimerReportResponse.h
   include/tencentcloud/cds/v20180420/model/RegionInfo.h
   include/tencentcloud/cds/v20180420/model/DescribeDbauditInstancesRequest.h
@@ -66,7 +65,6 @@ set(cds_src
   src/v20180420/model/DescribeReportMissionListResponse.cpp
   src/v20180420/model/CdsAuditInstance.cpp
   src/v20180420/model/DescribeDbauditUsedRegionsResponse.cpp
-  src/v20180420/model/AuditCapability.cpp
   src/v20180420/model/CreateTimerReportResponse.cpp
   src/v20180420/model/RegionInfo.cpp
   src/v20180420/model/DescribeDbauditInstancesRequest.cpp

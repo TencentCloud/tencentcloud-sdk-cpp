@@ -47,8 +47,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据是否准备好，0未准备好，1准备好
-                     * @return Ready 数据是否准备好，0未准备好，1准备好
+                     * 获取<p>数据是否准备好，0未准备好，1准备好</p>
+                     * @return Ready <p>数据是否准备好，0未准备好，1准备好</p>
                      * 
                      */
                     uint64_t GetReady() const;
@@ -61,8 +61,8 @@ namespace TencentCloud
                     bool ReadyHasBeenSet() const;
 
                     /**
-                     * 获取消耗详情
-                     * @return Total 消耗详情
+                     * 获取<p>消耗详情</p>
+                     * @return Total <p>消耗详情</p>
                      * 
                      */
                     ConsumptionSummaryTotal GetTotal() const;
@@ -75,9 +75,9 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件
+                     * 获取<p>过滤条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ConditionValue 过滤条件
+                     * @return ConditionValue <p>过滤条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -91,9 +91,9 @@ namespace TencentCloud
                     bool ConditionValueHasBeenSet() const;
 
                     /**
-                     * 获取记录数量
+                     * 获取<p>记录数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RecordNum 记录数量
+                     * @return RecordNum <p>记录数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -107,8 +107,8 @@ namespace TencentCloud
                     bool RecordNumHasBeenSet() const;
 
                     /**
-                     * 获取资源消耗详情
-                     * @return Data 资源消耗详情
+                     * 获取<p>资源消耗详情</p>
+                     * @return Data <p>资源消耗详情</p>
                      * 
                      */
                     std::vector<ConsumptionResourceSummaryDataItem> GetData() const;
@@ -123,33 +123,33 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据是否准备好，0未准备好，1准备好
+                     * <p>数据是否准备好，0未准备好，1准备好</p>
                      */
                     uint64_t m_ready;
                     bool m_readyHasBeenSet;
 
                     /**
-                     * 消耗详情
+                     * <p>消耗详情</p>
                      */
                     ConsumptionSummaryTotal m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 过滤条件
+                     * <p>过滤条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ConsumptionResourceSummaryConditionValue m_conditionValue;
                     bool m_conditionValueHasBeenSet;
 
                     /**
-                     * 记录数量
+                     * <p>记录数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_recordNum;
                     bool m_recordNumHasBeenSet;
 
                     /**
-                     * 资源消耗详情
+                     * <p>资源消耗详情</p>
                      */
                     std::vector<ConsumptionResourceSummaryDataItem> m_data;
                     bool m_dataHasBeenSet;

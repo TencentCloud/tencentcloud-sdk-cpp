@@ -30,7 +30,9 @@ DescribeCostSummaryByResourceRequest::DescribeCostSummaryByResourceRequest() :
     m_payerUinHasBeenSet(false),
     m_needRecordNumHasBeenSet(false),
     m_needConditionValueHasBeenSet(false),
-    m_conditionsHasBeenSet(false)
+    m_conditionsHasBeenSet(false),
+    m_tagKeyHasBeenSet(false),
+    m_tagValueHasBeenSet(false)
 {
 }
 
@@ -104,6 +106,22 @@ string DescribeCostSummaryByResourceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_conditions.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tagKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tagKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagValue";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tagValue.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -240,6 +258,38 @@ void DescribeCostSummaryByResourceRequest::SetConditions(const Conditions& _cond
 bool DescribeCostSummaryByResourceRequest::ConditionsHasBeenSet() const
 {
     return m_conditionsHasBeenSet;
+}
+
+string DescribeCostSummaryByResourceRequest::GetTagKey() const
+{
+    return m_tagKey;
+}
+
+void DescribeCostSummaryByResourceRequest::SetTagKey(const string& _tagKey)
+{
+    m_tagKey = _tagKey;
+    m_tagKeyHasBeenSet = true;
+}
+
+bool DescribeCostSummaryByResourceRequest::TagKeyHasBeenSet() const
+{
+    return m_tagKeyHasBeenSet;
+}
+
+string DescribeCostSummaryByResourceRequest::GetTagValue() const
+{
+    return m_tagValue;
+}
+
+void DescribeCostSummaryByResourceRequest::SetTagValue(const string& _tagValue)
+{
+    m_tagValue = _tagValue;
+    m_tagValueHasBeenSet = true;
+}
+
+bool DescribeCostSummaryByResourceRequest::TagValueHasBeenSet() const
+{
+    return m_tagValueHasBeenSet;
 }
 
 

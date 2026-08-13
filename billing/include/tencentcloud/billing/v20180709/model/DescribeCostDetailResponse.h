@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取消耗明细
-                     * @return DetailSet 消耗明细
+                     * 获取<p>消耗明细</p>
+                     * @return DetailSet <p>消耗明细</p>
                      * 
                      */
                     std::vector<CostDetail> GetDetailSet() const;
@@ -59,9 +59,9 @@ namespace TencentCloud
                     bool DetailSetHasBeenSet() const;
 
                     /**
-                     * 获取记录数
+                     * 获取<p>记录数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Total 记录数
+                     * @return Total <p>记录数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,13 +77,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 消耗明细
+                     * <p>消耗明细</p>
                      */
                     std::vector<CostDetail> m_detailSet;
                     bool m_detailSetHasBeenSet;
 
                     /**
-                     * 记录数
+                     * <p>记录数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_total;

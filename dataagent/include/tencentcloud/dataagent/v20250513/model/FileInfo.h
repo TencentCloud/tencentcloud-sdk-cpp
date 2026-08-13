@@ -362,6 +362,90 @@ namespace TencentCloud
                      */
                     bool CapabilitiesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>0:关闭 1:开启图谱构建（入库时构建图谱），默认0</p>
+                     * @return EnableGraphBuild <p>0:关闭 1:开启图谱构建（入库时构建图谱），默认0</p>
+                     * 
+                     */
+                    int64_t GetEnableGraphBuild() const;
+
+                    /**
+                     * 设置<p>0:关闭 1:开启图谱构建（入库时构建图谱），默认0</p>
+                     * @param _enableGraphBuild <p>0:关闭 1:开启图谱构建（入库时构建图谱），默认0</p>
+                     * 
+                     */
+                    void SetEnableGraphBuild(const int64_t& _enableGraphBuild);
+
+                    /**
+                     * 判断参数 EnableGraphBuild 是否已赋值
+                     * @return EnableGraphBuild 是否已赋值
+                     * 
+                     */
+                    bool EnableGraphBuildHasBeenSet() const;
+
+                    /**
+                     * 获取<p>0:关闭 1:开启树构建（入库时构建树），默认0</p>
+                     * @return EnableTreeBuild <p>0:关闭 1:开启树构建（入库时构建树），默认0</p>
+                     * 
+                     */
+                    int64_t GetEnableTreeBuild() const;
+
+                    /**
+                     * 设置<p>0:关闭 1:开启树构建（入库时构建树），默认0</p>
+                     * @param _enableTreeBuild <p>0:关闭 1:开启树构建（入库时构建树），默认0</p>
+                     * 
+                     */
+                    void SetEnableTreeBuild(const int64_t& _enableTreeBuild);
+
+                    /**
+                     * 判断参数 EnableTreeBuild 是否已赋值
+                     * @return EnableTreeBuild 是否已赋值
+                     * 
+                     */
+                    bool EnableTreeBuildHasBeenSet() const;
+
+                    /**
+                     * 获取<p>图谱构建状态：null=未启用图谱; 0=待入库; 1=入库中; 2=入库成功; -1=入库失败（仅 EnableGraphBuild=1 时有意义）</p>
+                     * @return GraphBuildStatus <p>图谱构建状态：null=未启用图谱; 0=待入库; 1=入库中; 2=入库成功; -1=入库失败（仅 EnableGraphBuild=1 时有意义）</p>
+                     * 
+                     */
+                    int64_t GetGraphBuildStatus() const;
+
+                    /**
+                     * 设置<p>图谱构建状态：null=未启用图谱; 0=待入库; 1=入库中; 2=入库成功; -1=入库失败（仅 EnableGraphBuild=1 时有意义）</p>
+                     * @param _graphBuildStatus <p>图谱构建状态：null=未启用图谱; 0=待入库; 1=入库中; 2=入库成功; -1=入库失败（仅 EnableGraphBuild=1 时有意义）</p>
+                     * 
+                     */
+                    void SetGraphBuildStatus(const int64_t& _graphBuildStatus);
+
+                    /**
+                     * 判断参数 GraphBuildStatus 是否已赋值
+                     * @return GraphBuildStatus 是否已赋值
+                     * 
+                     */
+                    bool GraphBuildStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>图谱构建状态：null=未启用图谱; 0=待入库; 1=入库中; 2=入库成功; -1=入库失败（仅 EnableGraphBuild=1 时有意义）</p>
+                     * @return TreeBuildStatus <p>图谱构建状态：null=未启用图谱; 0=待入库; 1=入库中; 2=入库成功; -1=入库失败（仅 EnableGraphBuild=1 时有意义）</p>
+                     * 
+                     */
+                    int64_t GetTreeBuildStatus() const;
+
+                    /**
+                     * 设置<p>图谱构建状态：null=未启用图谱; 0=待入库; 1=入库中; 2=入库成功; -1=入库失败（仅 EnableGraphBuild=1 时有意义）</p>
+                     * @param _treeBuildStatus <p>图谱构建状态：null=未启用图谱; 0=待入库; 1=入库中; 2=入库成功; -1=入库失败（仅 EnableGraphBuild=1 时有意义）</p>
+                     * 
+                     */
+                    void SetTreeBuildStatus(const int64_t& _treeBuildStatus);
+
+                    /**
+                     * 判断参数 TreeBuildStatus 是否已赋值
+                     * @return TreeBuildStatus 是否已赋值
+                     * 
+                     */
+                    bool TreeBuildStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -453,6 +537,30 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_capabilities;
                     bool m_capabilitiesHasBeenSet;
+
+                    /**
+                     * <p>0:关闭 1:开启图谱构建（入库时构建图谱），默认0</p>
+                     */
+                    int64_t m_enableGraphBuild;
+                    bool m_enableGraphBuildHasBeenSet;
+
+                    /**
+                     * <p>0:关闭 1:开启树构建（入库时构建树），默认0</p>
+                     */
+                    int64_t m_enableTreeBuild;
+                    bool m_enableTreeBuildHasBeenSet;
+
+                    /**
+                     * <p>图谱构建状态：null=未启用图谱; 0=待入库; 1=入库中; 2=入库成功; -1=入库失败（仅 EnableGraphBuild=1 时有意义）</p>
+                     */
+                    int64_t m_graphBuildStatus;
+                    bool m_graphBuildStatusHasBeenSet;
+
+                    /**
+                     * <p>图谱构建状态：null=未启用图谱; 0=待入库; 1=入库中; 2=入库成功; -1=入库失败（仅 EnableGraphBuild=1 时有意义）</p>
+                     */
+                    int64_t m_treeBuildStatus;
+                    bool m_treeBuildStatusHasBeenSet;
 
                 };
             }

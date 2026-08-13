@@ -29,6 +29,7 @@ AlarmNotice::AlarmNotice() :
     m_alarmNoticeIdHasBeenSet(false),
     m_noticeRulesHasBeenSet(false),
     m_alarmShieldStatusHasBeenSet(false),
+    m_secureDetailStatusHasBeenSet(false),
     m_jumpDomainHasBeenSet(false),
     m_alarmNoticeDeliverConfigHasBeenSet(false),
     m_createTimeHasBeenSet(false),
@@ -163,6 +164,16 @@ CoreInternalOutcome AlarmNotice::Deserialize(const rapidjson::Value &value)
         }
         m_alarmShieldStatus = value["AlarmShieldStatus"].GetUint64();
         m_alarmShieldStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecureDetailStatus") && !value["SecureDetailStatus"].IsNull())
+    {
+        if (!value["SecureDetailStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.SecureDetailStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_secureDetailStatus = value["SecureDetailStatus"].GetUint64();
+        m_secureDetailStatusHasBeenSet = true;
     }
 
     if (value.HasMember("JumpDomain") && !value["JumpDomain"].IsNull())
@@ -356,6 +367,14 @@ void AlarmNotice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "AlarmShieldStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_alarmShieldStatus, allocator);
+    }
+
+    if (m_secureDetailStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecureDetailStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_secureDetailStatus, allocator);
     }
 
     if (m_jumpDomainHasBeenSet)
@@ -553,6 +572,22 @@ void AlarmNotice::SetAlarmShieldStatus(const uint64_t& _alarmShieldStatus)
 bool AlarmNotice::AlarmShieldStatusHasBeenSet() const
 {
     return m_alarmShieldStatusHasBeenSet;
+}
+
+uint64_t AlarmNotice::GetSecureDetailStatus() const
+{
+    return m_secureDetailStatus;
+}
+
+void AlarmNotice::SetSecureDetailStatus(const uint64_t& _secureDetailStatus)
+{
+    m_secureDetailStatus = _secureDetailStatus;
+    m_secureDetailStatusHasBeenSet = true;
+}
+
+bool AlarmNotice::SecureDetailStatusHasBeenSet() const
+{
+    return m_secureDetailStatusHasBeenSet;
 }
 
 string AlarmNotice::GetJumpDomain() const

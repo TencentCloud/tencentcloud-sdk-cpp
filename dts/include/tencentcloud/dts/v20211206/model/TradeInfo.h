@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取交易订单号
-                     * @return DealName 交易订单号
+                     * 获取<p>交易订单号</p>
+                     * @return DealName <p>交易订单号</p>
                      * 
                      */
                     std::string GetDealName() const;
 
                     /**
-                     * 设置交易订单号
-                     * @param _dealName 交易订单号
+                     * 设置<p>交易订单号</p>
+                     * @param _dealName <p>交易订单号</p>
                      * 
                      */
                     void SetDealName(const std::string& _dealName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DealNameHasBeenSet() const;
 
                     /**
-                     * 获取上一次交易订单号
-                     * @return LastDealName 上一次交易订单号
+                     * 获取<p>上一次交易订单号</p>
+                     * @return LastDealName <p>上一次交易订单号</p>
                      * 
                      */
                     std::string GetLastDealName() const;
 
                     /**
-                     * 设置上一次交易订单号
-                     * @param _lastDealName 上一次交易订单号
+                     * 设置<p>上一次交易订单号</p>
+                     * @param _lastDealName <p>上一次交易订单号</p>
                      * 
                      */
                     void SetLastDealName(const std::string& _lastDealName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool LastDealNameHasBeenSet() const;
 
                     /**
-                     * 获取实例规格，包括：micro、small、medium、large、xlarge、2xlarge等
-                     * @return InstanceClass 实例规格，包括：micro、small、medium、large、xlarge、2xlarge等
+                     * 获取<p>实例规格，包括：micro、small、medium、large、xlarge、2xlarge等</p>
+                     * @return InstanceClass <p>实例规格，包括：micro、small、medium、large、xlarge、2xlarge等</p>
                      * 
                      */
                     std::string GetInstanceClass() const;
 
                     /**
-                     * 设置实例规格，包括：micro、small、medium、large、xlarge、2xlarge等
-                     * @param _instanceClass 实例规格，包括：micro、small、medium、large、xlarge、2xlarge等
+                     * 设置<p>实例规格，包括：micro、small、medium、large、xlarge、2xlarge等</p>
+                     * @param _instanceClass <p>实例规格，包括：micro、small、medium、large、xlarge、2xlarge等</p>
                      * 
                      */
                     void SetInstanceClass(const std::string& _instanceClass);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool InstanceClassHasBeenSet() const;
 
                     /**
-                     * 获取计费任务状态， normal(计费或待计费)、resizing(变配中)、reversing(冲正中，比较短暂的状态)、isolating(隔离中，比较短暂的状态)、isolated(已隔离)、offlining(下线中)、offlined(已下线)、notBilled(未计费)
-                     * @return TradeStatus 计费任务状态， normal(计费或待计费)、resizing(变配中)、reversing(冲正中，比较短暂的状态)、isolating(隔离中，比较短暂的状态)、isolated(已隔离)、offlining(下线中)、offlined(已下线)、notBilled(未计费)
+                     * 获取<p>计费任务状态， normal(计费或待计费)、resizing(变配中)、reversing(冲正中，比较短暂的状态)、isolating(隔离中，比较短暂的状态)、isolated(已隔离)、offlining(下线中)、offlined(已下线)、notBilled(未计费)</p>
+                     * @return TradeStatus <p>计费任务状态， normal(计费或待计费)、resizing(变配中)、reversing(冲正中，比较短暂的状态)、isolating(隔离中，比较短暂的状态)、isolated(已隔离)、offlining(下线中)、offlined(已下线)、notBilled(未计费)</p>
                      * 
                      */
                     std::string GetTradeStatus() const;
 
                     /**
-                     * 设置计费任务状态， normal(计费或待计费)、resizing(变配中)、reversing(冲正中，比较短暂的状态)、isolating(隔离中，比较短暂的状态)、isolated(已隔离)、offlining(下线中)、offlined(已下线)、notBilled(未计费)
-                     * @param _tradeStatus 计费任务状态， normal(计费或待计费)、resizing(变配中)、reversing(冲正中，比较短暂的状态)、isolating(隔离中，比较短暂的状态)、isolated(已隔离)、offlining(下线中)、offlined(已下线)、notBilled(未计费)
+                     * 设置<p>计费任务状态， normal(计费或待计费)、resizing(变配中)、reversing(冲正中，比较短暂的状态)、isolating(隔离中，比较短暂的状态)、isolated(已隔离)、offlining(下线中)、offlined(已下线)、notBilled(未计费)</p>
+                     * @param _tradeStatus <p>计费任务状态， normal(计费或待计费)、resizing(变配中)、reversing(冲正中，比较短暂的状态)、isolating(隔离中，比较短暂的状态)、isolated(已隔离)、offlining(下线中)、offlined(已下线)、notBilled(未计费)</p>
                      * 
                      */
                     void SetTradeStatus(const std::string& _tradeStatus);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool TradeStatusHasBeenSet() const;
 
                     /**
-                     * 获取到期时间，格式为"yyyy-mm-dd hh:mm:ss"
-                     * @return ExpireTime 到期时间，格式为"yyyy-mm-dd hh:mm:ss"
+                     * 获取<p>到期时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return ExpireTime <p>到期时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置到期时间，格式为"yyyy-mm-dd hh:mm:ss"
-                     * @param _expireTime 到期时间，格式为"yyyy-mm-dd hh:mm:ss"
+                     * 设置<p>到期时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @param _expireTime <p>到期时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取下线时间，格式为"yyyy-mm-dd hh:mm:ss"
-                     * @return OfflineTime 下线时间，格式为"yyyy-mm-dd hh:mm:ss"
+                     * 获取<p>下线时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return OfflineTime <p>下线时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetOfflineTime() const;
 
                     /**
-                     * 设置下线时间，格式为"yyyy-mm-dd hh:mm:ss"
-                     * @param _offlineTime 下线时间，格式为"yyyy-mm-dd hh:mm:ss"
+                     * 设置<p>下线时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @param _offlineTime <p>下线时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     void SetOfflineTime(const std::string& _offlineTime);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool OfflineTimeHasBeenSet() const;
 
                     /**
-                     * 获取隔离时间，格式为"yyyy-mm-dd hh:mm:ss"
-                     * @return IsolateTime 隔离时间，格式为"yyyy-mm-dd hh:mm:ss"
+                     * 获取<p>隔离时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return IsolateTime <p>隔离时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetIsolateTime() const;
 
                     /**
-                     * 设置隔离时间，格式为"yyyy-mm-dd hh:mm:ss"
-                     * @param _isolateTime 隔离时间，格式为"yyyy-mm-dd hh:mm:ss"
+                     * 设置<p>隔离时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @param _isolateTime <p>隔离时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     void SetIsolateTime(const std::string& _isolateTime);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool IsolateTimeHasBeenSet() const;
 
                     /**
-                     * 获取下线原因
-                     * @return OfflineReason 下线原因
+                     * 获取<p>下线原因</p>
+                     * @return OfflineReason <p>下线原因</p>
                      * 
                      */
                     std::string GetOfflineReason() const;
 
                     /**
-                     * 设置下线原因
-                     * @param _offlineReason 下线原因
+                     * 设置<p>下线原因</p>
+                     * @param _offlineReason <p>下线原因</p>
                      * 
                      */
                     void SetOfflineReason(const std::string& _offlineReason);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool OfflineReasonHasBeenSet() const;
 
                     /**
-                     * 获取隔离原因
-                     * @return IsolateReason 隔离原因
+                     * 获取<p>隔离原因</p>
+                     * @return IsolateReason <p>隔离原因</p>
                      * 
                      */
                     std::string GetIsolateReason() const;
 
                     /**
-                     * 设置隔离原因
-                     * @param _isolateReason 隔离原因
+                     * 设置<p>隔离原因</p>
+                     * @param _isolateReason <p>隔离原因</p>
                      * 
                      */
                     void SetIsolateReason(const std::string& _isolateReason);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool IsolateReasonHasBeenSet() const;
 
                     /**
-                     * 获取付费类型，包括：postpay(后付费)、prepay(预付费)
-                     * @return PayType 付费类型，包括：postpay(后付费)、prepay(预付费)
+                     * 获取<p>付费类型，包括：postpay(后付费)、prepay(预付费)</p>
+                     * @return PayType <p>付费类型，包括：postpay(后付费)、prepay(预付费)</p>
                      * 
                      */
                     std::string GetPayType() const;
 
                     /**
-                     * 设置付费类型，包括：postpay(后付费)、prepay(预付费)
-                     * @param _payType 付费类型，包括：postpay(后付费)、prepay(预付费)
+                     * 设置<p>付费类型，包括：postpay(后付费)、prepay(预付费)</p>
+                     * @param _payType <p>付费类型，包括：postpay(后付费)、prepay(预付费)</p>
                      * 
                      */
                     void SetPayType(const std::string& _payType);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool PayTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务计费类型，包括：billing(计费)、notBilling(不计费)、 promotions(促销活动中)
-                     * @return BillingType 任务计费类型，包括：billing(计费)、notBilling(不计费)、 promotions(促销活动中)
+                     * 获取<p>任务计费类型，包括：billing(计费)、notBilling(不计费)、 promotions(促销活动中)</p>
+                     * @return BillingType <p>任务计费类型，包括：billing(计费)、notBilling(不计费)、 promotions(促销活动中)</p>
                      * 
                      */
                     std::string GetBillingType() const;
 
                     /**
-                     * 设置任务计费类型，包括：billing(计费)、notBilling(不计费)、 promotions(促销活动中)
-                     * @param _billingType 任务计费类型，包括：billing(计费)、notBilling(不计费)、 promotions(促销活动中)
+                     * 设置<p>任务计费类型，包括：billing(计费)、notBilling(不计费)、 promotions(促销活动中)</p>
+                     * @param _billingType <p>任务计费类型，包括：billing(计费)、notBilling(不计费)、 promotions(促销活动中)</p>
                      * 
                      */
                     void SetBillingType(const std::string& _billingType);
@@ -280,67 +280,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 交易订单号
+                     * <p>交易订单号</p>
                      */
                     std::string m_dealName;
                     bool m_dealNameHasBeenSet;
 
                     /**
-                     * 上一次交易订单号
+                     * <p>上一次交易订单号</p>
                      */
                     std::string m_lastDealName;
                     bool m_lastDealNameHasBeenSet;
 
                     /**
-                     * 实例规格，包括：micro、small、medium、large、xlarge、2xlarge等
+                     * <p>实例规格，包括：micro、small、medium、large、xlarge、2xlarge等</p>
                      */
                     std::string m_instanceClass;
                     bool m_instanceClassHasBeenSet;
 
                     /**
-                     * 计费任务状态， normal(计费或待计费)、resizing(变配中)、reversing(冲正中，比较短暂的状态)、isolating(隔离中，比较短暂的状态)、isolated(已隔离)、offlining(下线中)、offlined(已下线)、notBilled(未计费)
+                     * <p>计费任务状态， normal(计费或待计费)、resizing(变配中)、reversing(冲正中，比较短暂的状态)、isolating(隔离中，比较短暂的状态)、isolated(已隔离)、offlining(下线中)、offlined(已下线)、notBilled(未计费)</p>
                      */
                     std::string m_tradeStatus;
                     bool m_tradeStatusHasBeenSet;
 
                     /**
-                     * 到期时间，格式为"yyyy-mm-dd hh:mm:ss"
+                     * <p>到期时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 下线时间，格式为"yyyy-mm-dd hh:mm:ss"
+                     * <p>下线时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_offlineTime;
                     bool m_offlineTimeHasBeenSet;
 
                     /**
-                     * 隔离时间，格式为"yyyy-mm-dd hh:mm:ss"
+                     * <p>隔离时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_isolateTime;
                     bool m_isolateTimeHasBeenSet;
 
                     /**
-                     * 下线原因
+                     * <p>下线原因</p>
                      */
                     std::string m_offlineReason;
                     bool m_offlineReasonHasBeenSet;
 
                     /**
-                     * 隔离原因
+                     * <p>隔离原因</p>
                      */
                     std::string m_isolateReason;
                     bool m_isolateReasonHasBeenSet;
 
                     /**
-                     * 付费类型，包括：postpay(后付费)、prepay(预付费)
+                     * <p>付费类型，包括：postpay(后付费)、prepay(预付费)</p>
                      */
                     std::string m_payType;
                     bool m_payTypeHasBeenSet;
 
                     /**
-                     * 任务计费类型，包括：billing(计费)、notBilling(不计费)、 promotions(促销活动中)
+                     * <p>任务计费类型，包括：billing(计费)、notBilling(不计费)、 promotions(促销活动中)</p>
                      */
                     std::string m_billingType;
                     bool m_billingTypeHasBeenSet;

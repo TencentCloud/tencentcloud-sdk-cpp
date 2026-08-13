@@ -149,8 +149,8 @@ namespace TencentCloud
                     bool SubsStatusHasBeenSet() const;
 
                     /**
-                     * 获取<p>修改时间。</p>
-                     * @return ModifyTime <p>修改时间。</p>
+                     * 获取<p>修改时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>Y-m-d h:m:s</code>（北京时间）。</p>
+                     * @return ModifyTime <p>修改时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>Y-m-d h:m:s</code>（北京时间）。</p>
                      * 
                      */
                     std::string GetModifyTime() const;
@@ -163,8 +163,8 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>创建时间。</p>
-                     * @return CreateTime <p>创建时间。</p>
+                     * 获取<p>创建时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>Y-m-d h:m:s</code>（北京时间）。</p>
+                     * @return CreateTime <p>创建时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>Y-m-d h:m:s</code>（北京时间）。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
@@ -177,8 +177,8 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>隔离时间。</p>
-                     * @return IsolateTime <p>隔离时间。</p>
+                     * 获取<p>隔离时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>Y-m-d h:m:s</code>（北京时间）。</p>
+                     * @return IsolateTime <p>隔离时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>Y-m-d h:m:s</code>（北京时间）。</p>
                      * 
                      */
                     std::string GetIsolateTime() const;
@@ -191,8 +191,8 @@ namespace TencentCloud
                     bool IsolateTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>包年包月任务的到期时间。</p>
-                     * @return ExpireTime <p>包年包月任务的到期时间。</p>
+                     * 获取<p>包年包月任务的到期时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>Y-m-d h:m:s</code>（北京时间）。</p>
+                     * @return ExpireTime <p>包年包月任务的到期时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>Y-m-d h:m:s</code>（北京时间）。</p>
                      * 
                      */
                     std::string GetExpireTime() const;
@@ -205,8 +205,8 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>下线时间。</p>
-                     * @return OfflineTime <p>下线时间。</p>
+                     * 获取<p>下线时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>Y-m-d h:m:s</code>（北京时间）。</p>
+                     * @return OfflineTime <p>下线时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>Y-m-d h:m:s</code>（北京时间）。</p>
                      * 
                      */
                     std::string GetOfflineTime() const;
@@ -545,31 +545,31 @@ namespace TencentCloud
                     bool m_subsStatusHasBeenSet;
 
                     /**
-                     * <p>修改时间。</p>
+                     * <p>修改时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>Y-m-d h:m:s</code>（北京时间）。</p>
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * <p>创建时间。</p>
+                     * <p>创建时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>Y-m-d h:m:s</code>（北京时间）。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * <p>隔离时间。</p>
+                     * <p>隔离时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>Y-m-d h:m:s</code>（北京时间）。</p>
                      */
                     std::string m_isolateTime;
                     bool m_isolateTimeHasBeenSet;
 
                     /**
-                     * <p>包年包月任务的到期时间。</p>
+                     * <p>包年包月任务的到期时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>Y-m-d h:m:s</code>（北京时间）。</p>
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * <p>下线时间。</p>
+                     * <p>下线时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>Y-m-d h:m:s</code>（北京时间）。</p>
                      */
                     std::string m_offlineTime;
                     bool m_offlineTimeHasBeenSet;

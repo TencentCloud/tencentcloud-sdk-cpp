@@ -220,15 +220,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取<p>可用区</p>
-                     * @return Zone <p>可用区</p>
+                     * 获取<p>集群主可用区</p>
+                     * @return Zone <p>集群主可用区</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置<p>可用区</p>
-                     * @param _zone <p>可用区</p>
+                     * 设置<p>集群主可用区</p>
+                     * @param _zone <p>集群主可用区</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -1064,15 +1064,15 @@ namespace TencentCloud
                     bool ResourceTagsHasBeenSet() const;
 
                     /**
-                     * 获取<p>主可用区</p>
-                     * @return MasterZone <p>主可用区</p>
+                     * 获取<p>读写实例当前所在可用区</p>
+                     * @return MasterZone <p>读写实例当前所在可用区</p>
                      * 
                      */
                     std::string GetMasterZone() const;
 
                     /**
-                     * 设置<p>主可用区</p>
-                     * @param _masterZone <p>主可用区</p>
+                     * 设置<p>读写实例当前所在可用区</p>
+                     * @param _masterZone <p>读写实例当前所在可用区</p>
                      * 
                      */
                     void SetMasterZone(const std::string& _masterZone);
@@ -1302,6 +1302,27 @@ namespace TencentCloud
                      */
                     bool GdnIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>实例当前所在可用区</p>
+                     * @return RealZone <p>实例当前所在可用区</p>
+                     * 
+                     */
+                    std::string GetRealZone() const;
+
+                    /**
+                     * 设置<p>实例当前所在可用区</p>
+                     * @param _realZone <p>实例当前所在可用区</p>
+                     * 
+                     */
+                    void SetRealZone(const std::string& _realZone);
+
+                    /**
+                     * 判断参数 RealZone 是否已赋值
+                     * @return RealZone 是否已赋值
+                     * 
+                     */
+                    bool RealZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1353,7 +1374,7 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * <p>可用区</p>
+                     * <p>集群主可用区</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
@@ -1594,7 +1615,7 @@ namespace TencentCloud
                     bool m_resourceTagsHasBeenSet;
 
                     /**
-                     * <p>主可用区</p>
+                     * <p>读写实例当前所在可用区</p>
                      */
                     std::string m_masterZone;
                     bool m_masterZoneHasBeenSet;
@@ -1660,6 +1681,12 @@ namespace TencentCloud
                      */
                     std::string m_gdnId;
                     bool m_gdnIdHasBeenSet;
+
+                    /**
+                     * <p>实例当前所在可用区</p>
+                     */
+                    std::string m_realZone;
+                    bool m_realZoneHasBeenSet;
 
                 };
             }

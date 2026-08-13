@@ -495,6 +495,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/GetLabDetailRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeUpdatableDataEnginesRequest.h
   include/tencentcloud/dlc/v20210125/model/ModifySparkAppBatchRequest.h
+  include/tencentcloud/dlc/v20210125/model/ImageDto.h
   include/tencentcloud/dlc/v20210125/model/DeleteTableRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeStoreLocationRequest.h
   include/tencentcloud/dlc/v20210125/model/AddUsersToWorkGroupResponse.h
@@ -726,6 +727,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeStandardEngineResourceGroupConfigInfoRequest.h
   include/tencentcloud/dlc/v20210125/model/ListExampleCategoriesResponse.h
   include/tencentcloud/dlc/v20210125/model/StreamingStatistics.h
+  include/tencentcloud/dlc/v20210125/model/ListImagesResponse.h
   include/tencentcloud/dlc/v20210125/model/TaskResponseInfo.h
   include/tencentcloud/dlc/v20210125/model/OperateEngineResourceGroupFailMessage.h
   include/tencentcloud/dlc/v20210125/model/GetRayJobHistoryRequest.h
@@ -766,6 +768,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CancelTasksResponse.h
   include/tencentcloud/dlc/v20210125/model/EventLogItem.h
   include/tencentcloud/dlc/v20210125/model/InitializeTCLakeResponse.h
+  include/tencentcloud/dlc/v20210125/model/ListImagesRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeDataEnginesRequest.h
   include/tencentcloud/dlc/v20210125/model/JobLogResult.h
   include/tencentcloud/dlc/v20210125/model/DropDMSDatabaseResponse.h
@@ -1297,6 +1300,7 @@ set(dlc_src
   src/v20210125/model/GetLabDetailRequest.cpp
   src/v20210125/model/DescribeUpdatableDataEnginesRequest.cpp
   src/v20210125/model/ModifySparkAppBatchRequest.cpp
+  src/v20210125/model/ImageDto.cpp
   src/v20210125/model/DeleteTableRequest.cpp
   src/v20210125/model/DescribeStoreLocationRequest.cpp
   src/v20210125/model/AddUsersToWorkGroupResponse.cpp
@@ -1528,6 +1532,7 @@ set(dlc_src
   src/v20210125/model/DescribeStandardEngineResourceGroupConfigInfoRequest.cpp
   src/v20210125/model/ListExampleCategoriesResponse.cpp
   src/v20210125/model/StreamingStatistics.cpp
+  src/v20210125/model/ListImagesResponse.cpp
   src/v20210125/model/TaskResponseInfo.cpp
   src/v20210125/model/OperateEngineResourceGroupFailMessage.cpp
   src/v20210125/model/GetRayJobHistoryRequest.cpp
@@ -1568,6 +1573,7 @@ set(dlc_src
   src/v20210125/model/CancelTasksResponse.cpp
   src/v20210125/model/EventLogItem.cpp
   src/v20210125/model/InitializeTCLakeResponse.cpp
+  src/v20210125/model/ListImagesRequest.cpp
   src/v20210125/model/DescribeDataEnginesRequest.cpp
   src/v20210125/model/JobLogResult.cpp
   src/v20210125/model/DropDMSDatabaseResponse.cpp

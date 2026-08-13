@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群详细信息
-                     * @return Detail 集群详细信息
+                     * 获取<p>集群详细信息</p>
+                     * @return Detail <p>集群详细信息</p>
                      * 
                      */
                     CynosdbClusterDetail GetDetail() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群详细信息
+                     * <p>集群详细信息</p>
                      */
                     CynosdbClusterDetail m_detail;
                     bool m_detailHasBeenSet;

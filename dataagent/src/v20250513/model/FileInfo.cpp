@@ -35,7 +35,11 @@ FileInfo::FileInfo() :
     m_isShowCaseHasBeenSet(false),
     m_documentSummaryHasBeenSet(false),
     m_webUrlHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false)
+    m_capabilitiesHasBeenSet(false),
+    m_enableGraphBuildHasBeenSet(false),
+    m_enableTreeBuildHasBeenSet(false),
+    m_graphBuildStatusHasBeenSet(false),
+    m_treeBuildStatusHasBeenSet(false)
 {
 }
 
@@ -204,6 +208,46 @@ CoreInternalOutcome FileInfo::Deserialize(const rapidjson::Value &value)
         m_capabilitiesHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableGraphBuild") && !value["EnableGraphBuild"].IsNull())
+    {
+        if (!value["EnableGraphBuild"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileInfo.EnableGraphBuild` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableGraphBuild = value["EnableGraphBuild"].GetInt64();
+        m_enableGraphBuildHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableTreeBuild") && !value["EnableTreeBuild"].IsNull())
+    {
+        if (!value["EnableTreeBuild"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileInfo.EnableTreeBuild` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableTreeBuild = value["EnableTreeBuild"].GetInt64();
+        m_enableTreeBuildHasBeenSet = true;
+    }
+
+    if (value.HasMember("GraphBuildStatus") && !value["GraphBuildStatus"].IsNull())
+    {
+        if (!value["GraphBuildStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileInfo.GraphBuildStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_graphBuildStatus = value["GraphBuildStatus"].GetInt64();
+        m_graphBuildStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("TreeBuildStatus") && !value["TreeBuildStatus"].IsNull())
+    {
+        if (!value["TreeBuildStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileInfo.TreeBuildStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_treeBuildStatus = value["TreeBuildStatus"].GetInt64();
+        m_treeBuildStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -335,6 +379,38 @@ void FileInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_enableGraphBuildHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableGraphBuild";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableGraphBuild, allocator);
+    }
+
+    if (m_enableTreeBuildHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableTreeBuild";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableTreeBuild, allocator);
+    }
+
+    if (m_graphBuildStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GraphBuildStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_graphBuildStatus, allocator);
+    }
+
+    if (m_treeBuildStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TreeBuildStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_treeBuildStatus, allocator);
     }
 
 }
@@ -578,5 +654,69 @@ void FileInfo::SetCapabilities(const vector<string>& _capabilities)
 bool FileInfo::CapabilitiesHasBeenSet() const
 {
     return m_capabilitiesHasBeenSet;
+}
+
+int64_t FileInfo::GetEnableGraphBuild() const
+{
+    return m_enableGraphBuild;
+}
+
+void FileInfo::SetEnableGraphBuild(const int64_t& _enableGraphBuild)
+{
+    m_enableGraphBuild = _enableGraphBuild;
+    m_enableGraphBuildHasBeenSet = true;
+}
+
+bool FileInfo::EnableGraphBuildHasBeenSet() const
+{
+    return m_enableGraphBuildHasBeenSet;
+}
+
+int64_t FileInfo::GetEnableTreeBuild() const
+{
+    return m_enableTreeBuild;
+}
+
+void FileInfo::SetEnableTreeBuild(const int64_t& _enableTreeBuild)
+{
+    m_enableTreeBuild = _enableTreeBuild;
+    m_enableTreeBuildHasBeenSet = true;
+}
+
+bool FileInfo::EnableTreeBuildHasBeenSet() const
+{
+    return m_enableTreeBuildHasBeenSet;
+}
+
+int64_t FileInfo::GetGraphBuildStatus() const
+{
+    return m_graphBuildStatus;
+}
+
+void FileInfo::SetGraphBuildStatus(const int64_t& _graphBuildStatus)
+{
+    m_graphBuildStatus = _graphBuildStatus;
+    m_graphBuildStatusHasBeenSet = true;
+}
+
+bool FileInfo::GraphBuildStatusHasBeenSet() const
+{
+    return m_graphBuildStatusHasBeenSet;
+}
+
+int64_t FileInfo::GetTreeBuildStatus() const
+{
+    return m_treeBuildStatus;
+}
+
+void FileInfo::SetTreeBuildStatus(const int64_t& _treeBuildStatus)
+{
+    m_treeBuildStatus = _treeBuildStatus;
+    m_treeBuildStatusHasBeenSet = true;
+}
+
+bool FileInfo::TreeBuildStatusHasBeenSet() const
+{
+    return m_treeBuildStatusHasBeenSet;
 }
 

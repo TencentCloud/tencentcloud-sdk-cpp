@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数量
+                     * 获取<p>数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount 数量
+                     * @return TotalCount <p>数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取一致性校验任务列表
+                     * 获取<p>一致性校验任务列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Items 一致性校验任务列表
+                     * @return Items <p>一致性校验任务列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -79,14 +79,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数量
+                     * <p>数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 一致性校验任务列表
+                     * <p>一致性校验任务列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CompareTaskItem> m_items;

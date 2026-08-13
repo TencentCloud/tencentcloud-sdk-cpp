@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取校验配置参数
-                     * @return Options 校验配置参数
+                     * 获取<p>校验配置参数</p>
+                     * @return Options <p>校验配置参数</p>
                      * 
                      */
                     CompareOptions GetOptions() const;
 
                     /**
-                     * 设置校验配置参数
-                     * @param _options 校验配置参数
+                     * 设置<p>校验配置参数</p>
+                     * @param _options <p>校验配置参数</p>
                      * 
                      */
                     void SetOptions(const CompareOptions& _options);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool OptionsHasBeenSet() const;
 
                     /**
-                     * 获取一致性校验对比对象
-                     * @return Objects 一致性校验对比对象
+                     * 获取<p>一致性校验对比对象</p>
+                     * @return Objects <p>一致性校验对比对象</p>
                      * 
                      */
                     CompareObject GetObjects() const;
 
                     /**
-                     * 设置一致性校验对比对象
-                     * @param _objects 一致性校验对比对象
+                     * 设置<p>一致性校验对比对象</p>
+                     * @param _objects <p>一致性校验对比对象</p>
                      * 
                      */
                     void SetObjects(const CompareObject& _objects);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool ObjectsHasBeenSet() const;
 
                     /**
-                     * 获取对比结论: same,different
-                     * @return Conclusion 对比结论: same,different
+                     * 获取<p>对比结论: same,different</p>
+                     * @return Conclusion <p>对比结论: same,different</p>
                      * 
                      */
                     std::string GetConclusion() const;
 
                     /**
-                     * 设置对比结论: same,different
-                     * @param _conclusion 对比结论: same,different
+                     * 设置<p>对比结论: same,different</p>
+                     * @param _conclusion <p>对比结论: same,different</p>
                      * 
                      */
                     void SetConclusion(const std::string& _conclusion);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool ConclusionHasBeenSet() const;
 
                     /**
-                     * 获取任务状态: success,failed
-                     * @return Status 任务状态: success,failed
+                     * 获取<p>任务状态: success,failed</p>
+                     * @return Status <p>任务状态: success,failed</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置任务状态: success,failed
-                     * @param _status 任务状态: success,failed
+                     * 设置<p>任务状态: success,failed</p>
+                     * @param _status <p>任务状态: success,failed</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取总的表数量
-                     * @return TotalTables 总的表数量
+                     * 获取<p>总的表数量</p>
+                     * @return TotalTables <p>总的表数量</p>
                      * 
                      */
                     uint64_t GetTotalTables() const;
 
                     /**
-                     * 设置总的表数量
-                     * @param _totalTables 总的表数量
+                     * 设置<p>总的表数量</p>
+                     * @param _totalTables <p>总的表数量</p>
                      * 
                      */
                     void SetTotalTables(const uint64_t& _totalTables);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool TotalTablesHasBeenSet() const;
 
                     /**
-                     * 获取已校验的表数量
-                     * @return CheckedTables 已校验的表数量
+                     * 获取<p>已校验的表数量</p>
+                     * @return CheckedTables <p>已校验的表数量</p>
                      * 
                      */
                     uint64_t GetCheckedTables() const;
 
                     /**
-                     * 设置已校验的表数量
-                     * @param _checkedTables 已校验的表数量
+                     * 设置<p>已校验的表数量</p>
+                     * @param _checkedTables <p>已校验的表数量</p>
                      * 
                      */
                     void SetCheckedTables(const uint64_t& _checkedTables);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool CheckedTablesHasBeenSet() const;
 
                     /**
-                     * 获取不一致的表数量
-                     * @return DifferentTables 不一致的表数量
+                     * 获取<p>不一致的表数量</p>
+                     * @return DifferentTables <p>不一致的表数量</p>
                      * 
                      */
                     uint64_t GetDifferentTables() const;
 
                     /**
-                     * 设置不一致的表数量
-                     * @param _differentTables 不一致的表数量
+                     * 设置<p>不一致的表数量</p>
+                     * @param _differentTables <p>不一致的表数量</p>
                      * 
                      */
                     void SetDifferentTables(const uint64_t& _differentTables);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool DifferentTablesHasBeenSet() const;
 
                     /**
-                     * 获取跳过校验的表数量
-                     * @return SkippedTables 跳过校验的表数量
+                     * 获取<p>跳过校验的表数量</p>
+                     * @return SkippedTables <p>跳过校验的表数量</p>
                      * 
                      */
                     uint64_t GetSkippedTables() const;
 
                     /**
-                     * 设置跳过校验的表数量
-                     * @param _skippedTables 跳过校验的表数量
+                     * 设置<p>跳过校验的表数量</p>
+                     * @param _skippedTables <p>跳过校验的表数量</p>
                      * 
                      */
                     void SetSkippedTables(const uint64_t& _skippedTables);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool SkippedTablesHasBeenSet() const;
 
                     /**
-                     * 获取预估表总数
-                     * @return NearlyTableCount 预估表总数
+                     * 获取<p>预估表总数</p>
+                     * @return NearlyTableCount <p>预估表总数</p>
                      * 
                      */
                     uint64_t GetNearlyTableCount() const;
 
                     /**
-                     * 设置预估表总数
-                     * @param _nearlyTableCount 预估表总数
+                     * 设置<p>预估表总数</p>
+                     * @param _nearlyTableCount <p>预估表总数</p>
                      * 
                      */
                     void SetNearlyTableCount(const uint64_t& _nearlyTableCount);
@@ -238,15 +238,15 @@ namespace TencentCloud
                     bool NearlyTableCountHasBeenSet() const;
 
                     /**
-                     * 获取不一致的数据行数量
-                     * @return DifferentRows 不一致的数据行数量
+                     * 获取<p>不一致的数据行数量</p>
+                     * @return DifferentRows <p>不一致的数据行数量</p>
                      * 
                      */
                     uint64_t GetDifferentRows() const;
 
                     /**
-                     * 设置不一致的数据行数量
-                     * @param _differentRows 不一致的数据行数量
+                     * 设置<p>不一致的数据行数量</p>
+                     * @param _differentRows <p>不一致的数据行数量</p>
                      * 
                      */
                     void SetDifferentRows(const uint64_t& _differentRows);
@@ -259,15 +259,15 @@ namespace TencentCloud
                     bool DifferentRowsHasBeenSet() const;
 
                     /**
-                     * 获取源库行数，当对比类型为**行数对比**时此项有意义
-                     * @return SrcSampleRows 源库行数，当对比类型为**行数对比**时此项有意义
+                     * 获取<p>源库行数，当对比类型为<strong>行数对比</strong>时此项有意义</p>
+                     * @return SrcSampleRows <p>源库行数，当对比类型为<strong>行数对比</strong>时此项有意义</p>
                      * 
                      */
                     uint64_t GetSrcSampleRows() const;
 
                     /**
-                     * 设置源库行数，当对比类型为**行数对比**时此项有意义
-                     * @param _srcSampleRows 源库行数，当对比类型为**行数对比**时此项有意义
+                     * 设置<p>源库行数，当对比类型为<strong>行数对比</strong>时此项有意义</p>
+                     * @param _srcSampleRows <p>源库行数，当对比类型为<strong>行数对比</strong>时此项有意义</p>
                      * 
                      */
                     void SetSrcSampleRows(const uint64_t& _srcSampleRows);
@@ -280,15 +280,15 @@ namespace TencentCloud
                     bool SrcSampleRowsHasBeenSet() const;
 
                     /**
-                     * 获取目标库行数，当对比类型为**行数对比**时此项有意义
-                     * @return DstSampleRows 目标库行数，当对比类型为**行数对比**时此项有意义
+                     * 获取<p>目标库行数，当对比类型为<strong>行数对比</strong>时此项有意义</p>
+                     * @return DstSampleRows <p>目标库行数，当对比类型为<strong>行数对比</strong>时此项有意义</p>
                      * 
                      */
                     uint64_t GetDstSampleRows() const;
 
                     /**
-                     * 设置目标库行数，当对比类型为**行数对比**时此项有意义
-                     * @param _dstSampleRows 目标库行数，当对比类型为**行数对比**时此项有意义
+                     * 设置<p>目标库行数，当对比类型为<strong>行数对比</strong>时此项有意义</p>
+                     * @param _dstSampleRows <p>目标库行数，当对比类型为<strong>行数对比</strong>时此项有意义</p>
                      * 
                      */
                     void SetDstSampleRows(const uint64_t& _dstSampleRows);
@@ -301,15 +301,15 @@ namespace TencentCloud
                     bool DstSampleRowsHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartedAt 开始时间
+                     * 获取<p>开始时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return StartedAt <p>开始时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetStartedAt() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startedAt 开始时间
+                     * 设置<p>开始时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @param _startedAt <p>开始时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     void SetStartedAt(const std::string& _startedAt);
@@ -322,15 +322,15 @@ namespace TencentCloud
                     bool StartedAtHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return FinishedAt 结束时间
+                     * 获取<p>结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return FinishedAt <p>结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetFinishedAt() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _finishedAt 结束时间
+                     * 设置<p>结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @param _finishedAt <p>结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     void SetFinishedAt(const std::string& _finishedAt);
@@ -345,85 +345,85 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 校验配置参数
+                     * <p>校验配置参数</p>
                      */
                     CompareOptions m_options;
                     bool m_optionsHasBeenSet;
 
                     /**
-                     * 一致性校验对比对象
+                     * <p>一致性校验对比对象</p>
                      */
                     CompareObject m_objects;
                     bool m_objectsHasBeenSet;
 
                     /**
-                     * 对比结论: same,different
+                     * <p>对比结论: same,different</p>
                      */
                     std::string m_conclusion;
                     bool m_conclusionHasBeenSet;
 
                     /**
-                     * 任务状态: success,failed
+                     * <p>任务状态: success,failed</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 总的表数量
+                     * <p>总的表数量</p>
                      */
                     uint64_t m_totalTables;
                     bool m_totalTablesHasBeenSet;
 
                     /**
-                     * 已校验的表数量
+                     * <p>已校验的表数量</p>
                      */
                     uint64_t m_checkedTables;
                     bool m_checkedTablesHasBeenSet;
 
                     /**
-                     * 不一致的表数量
+                     * <p>不一致的表数量</p>
                      */
                     uint64_t m_differentTables;
                     bool m_differentTablesHasBeenSet;
 
                     /**
-                     * 跳过校验的表数量
+                     * <p>跳过校验的表数量</p>
                      */
                     uint64_t m_skippedTables;
                     bool m_skippedTablesHasBeenSet;
 
                     /**
-                     * 预估表总数
+                     * <p>预估表总数</p>
                      */
                     uint64_t m_nearlyTableCount;
                     bool m_nearlyTableCountHasBeenSet;
 
                     /**
-                     * 不一致的数据行数量
+                     * <p>不一致的数据行数量</p>
                      */
                     uint64_t m_differentRows;
                     bool m_differentRowsHasBeenSet;
 
                     /**
-                     * 源库行数，当对比类型为**行数对比**时此项有意义
+                     * <p>源库行数，当对比类型为<strong>行数对比</strong>时此项有意义</p>
                      */
                     uint64_t m_srcSampleRows;
                     bool m_srcSampleRowsHasBeenSet;
 
                     /**
-                     * 目标库行数，当对比类型为**行数对比**时此项有意义
+                     * <p>目标库行数，当对比类型为<strong>行数对比</strong>时此项有意义</p>
                      */
                     uint64_t m_dstSampleRows;
                     bool m_dstSampleRowsHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * <p>开始时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_startedAt;
                     bool m_startedAtHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * <p>结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_finishedAt;
                     bool m_finishedAtHasBeenSet;

@@ -11190,6 +11190,56 @@ DlcClient::ListExamplesOutcomeCallable DlcClient::ListExamplesCallable(const Lis
     return prom->get_future();
 }
 
+DlcClient::ListImagesOutcome DlcClient::ListImages(const ListImagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListImages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListImagesResponse rsp = ListImagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListImagesOutcome(rsp);
+        else
+            return ListImagesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListImagesOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ListImagesAsync(const ListImagesRequest& request, const ListImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListImagesRequest&;
+    using Resp = ListImagesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListImages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ListImagesOutcomeCallable DlcClient::ListImagesCallable(const ListImagesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListImagesOutcome>>();
+    ListImagesAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ListImagesRequest&,
+        ListImagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::ListInferenceEnginesOutcome DlcClient::ListInferenceEngines(const ListInferenceEnginesRequest &request)
 {
     auto outcome = MakeRequest(request, "ListInferenceEngines");

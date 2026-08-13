@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取kafka分区编号
-                     * @return PartitionNo kafka分区编号
+                     * 获取<p>kafka分区编号</p>
+                     * @return PartitionNo <p>kafka分区编号</p>
                      * 
                      */
                     uint64_t GetPartitionNo() const;
 
                     /**
-                     * 设置kafka分区编号
-                     * @param _partitionNo kafka分区编号
+                     * 设置<p>kafka分区编号</p>
+                     * @param _partitionNo <p>kafka分区编号</p>
                      * 
                      */
                     void SetPartitionNo(const uint64_t& _partitionNo);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PartitionNoHasBeenSet() const;
 
                     /**
-                     * 获取kafka offset
-                     * @return Offset kafka offset
+                     * 获取<p>kafka offset</p>
+                     * @return Offset <p>kafka offset</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置kafka offset
-                     * @param _offset kafka offset
+                     * 设置<p>kafka offset</p>
+                     * @param _offset <p>kafka offset</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * kafka分区编号
+                     * <p>kafka分区编号</p>
                      */
                     uint64_t m_partitionNo;
                     bool m_partitionNoHasBeenSet;
 
                     /**
-                     * kafka offset
+                     * <p>kafka offset</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时间与Offset的对应
-                     * @return Items 时间与Offset的对应
+                     * 获取<p>时间与Offset的对应</p>
+                     * @return Items <p>时间与Offset的对应</p>
                      * 
                      */
                     std::vector<OffsetTimeMap> GetItems() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 时间与Offset的对应
+                     * <p>时间与Offset的对应</p>
                      */
                     std::vector<OffsetTimeMap> m_items;
                     bool m_itemsHasBeenSet;

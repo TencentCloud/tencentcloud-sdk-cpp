@@ -26,7 +26,6 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cds/v20180420/model/DsgcBindingInfo.h>
 #include <tencentcloud/cds/v20180420/model/IdWithName.h>
-#include <tencentcloud/cds/v20180420/model/AuditCapability.h>
 
 
 namespace TencentCloud
@@ -911,27 +910,6 @@ namespace TencentCloud
                     bool IsNewCloudAuditHasBeenSet() const;
 
                     /**
-                     * 获取<p>审计功能支持说明</p>
-                     * @return AuditCapability <p>审计功能支持说明</p>
-                     * 
-                     */
-                    std::vector<AuditCapability> GetAuditCapability() const;
-
-                    /**
-                     * 设置<p>审计功能支持说明</p>
-                     * @param _auditCapability <p>审计功能支持说明</p>
-                     * 
-                     */
-                    void SetAuditCapability(const std::vector<AuditCapability>& _auditCapability);
-
-                    /**
-                     * 判断参数 AuditCapability 是否已赋值
-                     * @return AuditCapability 是否已赋值
-                     * 
-                     */
-                    bool AuditCapabilityHasBeenSet() const;
-
-                    /**
                      * 获取<p>1</p><p>取值范围：[0, 1]</p>
                      * @return TrafficMirrorOn <p>1</p><p>取值范围：[0, 1]</p>
                      * 
@@ -993,6 +971,27 @@ namespace TencentCloud
                      * 
                      */
                     bool InstanceGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>该资产所在的资产组</p>
+                     * @return AssetGroups <p>该资产所在的资产组</p>
+                     * 
+                     */
+                    std::vector<IdWithName> GetAssetGroups() const;
+
+                    /**
+                     * 设置<p>该资产所在的资产组</p>
+                     * @param _assetGroups <p>该资产所在的资产组</p>
+                     * 
+                     */
+                    void SetAssetGroups(const std::vector<IdWithName>& _assetGroups);
+
+                    /**
+                     * 判断参数 AssetGroups 是否已赋值
+                     * @return AssetGroups 是否已赋值
+                     * 
+                     */
+                    bool AssetGroupsHasBeenSet() const;
 
                 private:
 
@@ -1243,12 +1242,6 @@ namespace TencentCloud
                     bool m_isNewCloudAuditHasBeenSet;
 
                     /**
-                     * <p>审计功能支持说明</p>
-                     */
-                    std::vector<AuditCapability> m_auditCapability;
-                    bool m_auditCapabilityHasBeenSet;
-
-                    /**
                      * <p>1</p><p>取值范围：[0, 1]</p>
                      */
                     int64_t m_trafficMirrorOn;
@@ -1265,6 +1258,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceGroupId;
                     bool m_instanceGroupIdHasBeenSet;
+
+                    /**
+                     * <p>该资产所在的资产组</p>
+                     */
+                    std::vector<IdWithName> m_assetGroups;
+                    bool m_assetGroupsHasBeenSet;
 
                 };
             }

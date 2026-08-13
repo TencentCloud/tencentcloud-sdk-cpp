@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取库名
-                     * @return Db 库名
+                     * 获取<p>库名</p>
+                     * @return Db <p>库名</p>
                      * 
                      */
                     std::string GetDb() const;
 
                     /**
-                     * 设置库名
-                     * @param _db 库名
+                     * 设置<p>库名</p>
+                     * @param _db <p>库名</p>
                      * 
                      */
                     void SetDb(const std::string& _db);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DbHasBeenSet() const;
 
                     /**
-                     * 获取schema名
-                     * @return Schema schema名
+                     * 获取<p>schema名</p>
+                     * @return Schema <p>schema名</p>
                      * 
                      */
                     std::string GetSchema() const;
 
                     /**
-                     * 设置schema名
-                     * @param _schema schema名
+                     * 设置<p>schema名</p>
+                     * @param _schema <p>schema名</p>
                      * 
                      */
                     void SetSchema(const std::string& _schema);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool SchemaHasBeenSet() const;
 
                     /**
-                     * 获取表名
-                     * @return Table 表名
+                     * 获取<p>表名</p>
+                     * @return Table <p>表名</p>
                      * 
                      */
                     std::string GetTable() const;
 
                     /**
-                     * 设置表名
-                     * @param _table 表名
+                     * 设置<p>表名</p>
+                     * @param _table <p>表名</p>
                      * 
                      */
                     void SetTable(const std::string& _table);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool TableHasBeenSet() const;
 
                     /**
-                     * 获取校验结果
-                     * @return Conclusion 校验结果
+                     * 获取<p>校验结果</p>
+                     * @return Conclusion <p>校验结果</p>
                      * 
                      */
                     std::string GetConclusion() const;
 
                     /**
-                     * 设置校验结果
-                     * @param _conclusion 校验结果
+                     * 设置<p>校验结果</p>
+                     * @param _conclusion <p>校验结果</p>
                      * 
                      */
                     void SetConclusion(const std::string& _conclusion);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ConclusionHasBeenSet() const;
 
                     /**
-                     * 获取校验状态。仅全量阶段有意义
-                     * @return Status 校验状态。仅全量阶段有意义
+                     * 获取<p>校验状态。仅全量阶段有意义</p>
+                     * @return Status <p>校验状态。仅全量阶段有意义</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置校验状态。仅全量阶段有意义
-                     * @param _status 校验状态。仅全量阶段有意义
+                     * 设置<p>校验状态。仅全量阶段有意义</p>
+                     * @param _status <p>校验状态。仅全量阶段有意义</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取校验进度。仅全量阶段有意义
-                     * @return Progress 校验进度。仅全量阶段有意义
+                     * 获取<p>校验进度。仅全量阶段有意义</p>
+                     * @return Progress <p>校验进度。仅全量阶段有意义</p>
                      * 
                      */
                     int64_t GetProgress() const;
 
                     /**
-                     * 设置校验进度。仅全量阶段有意义
-                     * @param _progress 校验进度。仅全量阶段有意义
+                     * 设置<p>校验进度。仅全量阶段有意义</p>
+                     * @param _progress <p>校验进度。仅全量阶段有意义</p>
                      * 
                      */
                     void SetProgress(const int64_t& _progress);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取不一致行数
-                     * @return RowCount 不一致行数
+                     * 获取<p>不一致行数</p>
+                     * @return RowCount <p>不一致行数</p>
                      * 
                      */
                     int64_t GetRowCount() const;
 
                     /**
-                     * 设置不一致行数
-                     * @param _rowCount 不一致行数
+                     * 设置<p>不一致行数</p>
+                     * @param _rowCount <p>不一致行数</p>
                      * 
                      */
                     void SetRowCount(const int64_t& _rowCount);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool RowCountHasBeenSet() const;
 
                     /**
-                     * 获取该表开始校验的时间
-                     * @return StartedAt 该表开始校验的时间
+                     * 获取<p>该表开始校验的时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return StartedAt <p>该表开始校验的时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetStartedAt() const;
 
                     /**
-                     * 设置该表开始校验的时间
-                     * @param _startedAt 该表开始校验的时间
+                     * 设置<p>该表开始校验的时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @param _startedAt <p>该表开始校验的时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     void SetStartedAt(const std::string& _startedAt);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool StartedAtHasBeenSet() const;
 
                     /**
-                     * 获取该表校验结束的时间
-                     * @return FinishedAt 该表校验结束的时间
+                     * 获取<p>该表校验结束的时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return FinishedAt <p>该表校验结束的时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetFinishedAt() const;
 
                     /**
-                     * 设置该表校验结束的时间
-                     * @param _finishedAt 该表校验结束的时间
+                     * 设置<p>该表校验结束的时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @param _finishedAt <p>该表校验结束的时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     void SetFinishedAt(const std::string& _finishedAt);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool FinishedAtHasBeenSet() const;
 
                     /**
-                     * 获取预计该表校验结束的时间
-                     * @return ExpectedAt 预计该表校验结束的时间
+                     * 获取<p>预计该表校验结束的时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @return ExpectedAt <p>预计该表校验结束的时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     std::string GetExpectedAt() const;
 
                     /**
-                     * 设置预计该表校验结束的时间
-                     * @param _expectedAt 预计该表校验结束的时间
+                     * 设置<p>预计该表校验结束的时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
+                     * @param _expectedAt <p>预计该表校验结束的时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      * 
                      */
                     void SetExpectedAt(const std::string& _expectedAt);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool ExpectedAtHasBeenSet() const;
 
                     /**
-                     * 获取源端行数，如果是行数校验此值有意义
-                     * @return SrcItem 源端行数，如果是行数校验此值有意义
+                     * 获取<p>源端行数，如果是行数校验此值有意义</p>
+                     * @return SrcItem <p>源端行数，如果是行数校验此值有意义</p>
                      * 
                      */
                     std::string GetSrcItem() const;
 
                     /**
-                     * 设置源端行数，如果是行数校验此值有意义
-                     * @param _srcItem 源端行数，如果是行数校验此值有意义
+                     * 设置<p>源端行数，如果是行数校验此值有意义</p>
+                     * @param _srcItem <p>源端行数，如果是行数校验此值有意义</p>
                      * 
                      */
                     void SetSrcItem(const std::string& _srcItem);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool SrcItemHasBeenSet() const;
 
                     /**
-                     * 获取目标端行数，如果是行数校验此值有意义
-                     * @return DstItem 目标端行数，如果是行数校验此值有意义
+                     * 获取<p>目标端行数，如果是行数校验此值有意义</p>
+                     * @return DstItem <p>目标端行数，如果是行数校验此值有意义</p>
                      * 
                      */
                     std::string GetDstItem() const;
 
                     /**
-                     * 设置目标端行数，如果是行数校验此值有意义
-                     * @param _dstItem 目标端行数，如果是行数校验此值有意义
+                     * 设置<p>目标端行数，如果是行数校验此值有意义</p>
+                     * @param _dstItem <p>目标端行数，如果是行数校验此值有意义</p>
                      * 
                      */
                     void SetDstItem(const std::string& _dstItem);
@@ -301,73 +301,73 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 库名
+                     * <p>库名</p>
                      */
                     std::string m_db;
                     bool m_dbHasBeenSet;
 
                     /**
-                     * schema名
+                     * <p>schema名</p>
                      */
                     std::string m_schema;
                     bool m_schemaHasBeenSet;
 
                     /**
-                     * 表名
+                     * <p>表名</p>
                      */
                     std::string m_table;
                     bool m_tableHasBeenSet;
 
                     /**
-                     * 校验结果
+                     * <p>校验结果</p>
                      */
                     std::string m_conclusion;
                     bool m_conclusionHasBeenSet;
 
                     /**
-                     * 校验状态。仅全量阶段有意义
+                     * <p>校验状态。仅全量阶段有意义</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 校验进度。仅全量阶段有意义
+                     * <p>校验进度。仅全量阶段有意义</p>
                      */
                     int64_t m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
-                     * 不一致行数
+                     * <p>不一致行数</p>
                      */
                     int64_t m_rowCount;
                     bool m_rowCountHasBeenSet;
 
                     /**
-                     * 该表开始校验的时间
+                     * <p>该表开始校验的时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_startedAt;
                     bool m_startedAtHasBeenSet;
 
                     /**
-                     * 该表校验结束的时间
+                     * <p>该表校验结束的时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_finishedAt;
                     bool m_finishedAtHasBeenSet;
 
                     /**
-                     * 预计该表校验结束的时间
+                     * <p>预计该表校验结束的时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>
                      */
                     std::string m_expectedAt;
                     bool m_expectedAtHasBeenSet;
 
                     /**
-                     * 源端行数，如果是行数校验此值有意义
+                     * <p>源端行数，如果是行数校验此值有意义</p>
                      */
                     std::string m_srcItem;
                     bool m_srcItemHasBeenSet;
 
                     /**
-                     * 目标端行数，如果是行数校验此值有意义
+                     * <p>目标端行数，如果是行数校验此值有意义</p>
                      */
                     std::string m_dstItem;
                     bool m_dstItemHasBeenSet;

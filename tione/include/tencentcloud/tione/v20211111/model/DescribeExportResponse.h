@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志下载任务的ID
-                     * @return ExportId 日志下载任务的ID
+                     * 获取<p>日志下载任务的ID</p>
+                     * @return ExportId <p>日志下载任务的ID</p>
                      * 
                      */
                     std::string GetExportId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool ExportIdHasBeenSet() const;
 
                     /**
-                     * 获取日志下载文件名
-                     * @return FileName 日志下载文件名
+                     * 获取<p>日志下载文件名</p>
+                     * @return FileName <p>日志下载文件名</p>
                      * 
                      */
                     std::string GetFileName() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取日志导出路径,有效期一个小时，请尽快使用该路径下载。
-                     * @return CosPath 日志导出路径,有效期一个小时，请尽快使用该路径下载。
+                     * 获取<p>日志导出路径,有效期一个小时，请尽快使用该路径下载。</p>
+                     * @return CosPath <p>日志导出路径,有效期一个小时，请尽快使用该路径下载。</p>
                      * 
                      */
                     std::string GetCosPath() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool CosPathHasBeenSet() const;
 
                     /**
-                     * 获取下载任务创建时间
-                     * @return CreateTime 下载任务创建时间
+                     * 获取<p>下载任务创建时间</p>
+                     * @return CreateTime <p>下载任务创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取日志文件大小
-                     * @return FileSize 日志文件大小
+                     * 获取<p>日志文件大小</p>
+                     * @return FileSize <p>日志文件大小</p>
                      * 
                      */
                     std::string GetFileSize() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool FileSizeHasBeenSet() const;
 
                     /**
-                     * 获取日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中
-                     * @return Status 日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中
+                     * 获取<p>日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中</p>
+                     * @return Status <p>日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中</p>
                      * 
                      */
                     std::string GetStatus() const;
@@ -130,37 +130,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志下载任务的ID
+                     * <p>日志下载任务的ID</p>
                      */
                     std::string m_exportId;
                     bool m_exportIdHasBeenSet;
 
                     /**
-                     * 日志下载文件名
+                     * <p>日志下载文件名</p>
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 日志导出路径,有效期一个小时，请尽快使用该路径下载。
+                     * <p>日志导出路径,有效期一个小时，请尽快使用该路径下载。</p>
                      */
                     std::string m_cosPath;
                     bool m_cosPathHasBeenSet;
 
                     /**
-                     * 下载任务创建时间
+                     * <p>下载任务创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 日志文件大小
+                     * <p>日志文件大小</p>
                      */
                     std::string m_fileSize;
                     bool m_fileSizeHasBeenSet;
 
                     /**
-                     * 日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中
+                     * <p>日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

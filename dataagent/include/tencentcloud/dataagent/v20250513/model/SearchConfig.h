@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取检索类型：0:混合搜索 1：向量搜索 2：全文搜索
-                     * @return Type 检索类型：0:混合搜索 1：向量搜索 2：全文搜索
+                     * 获取<p>检索类型：0:混合搜索 1：向量搜索 2：全文搜索</p>
+                     * @return Type <p>检索类型：0:混合搜索 1：向量搜索 2：全文搜索</p>
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置检索类型：0:混合搜索 1：向量搜索 2：全文搜索
-                     * @param _type 检索类型：0:混合搜索 1：向量搜索 2：全文搜索
+                     * 设置<p>检索类型：0:混合搜索 1：向量搜索 2：全文搜索</p>
+                     * @param _type <p>检索类型：0:混合搜索 1：向量搜索 2：全文搜索</p>
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取召回数量最大值
-                     * @return Num 召回数量最大值
+                     * 获取<p>召回数量最大值</p>
+                     * @return Num <p>召回数量最大值</p>
                      * 
                      */
                     int64_t GetNum() const;
 
                     /**
-                     * 设置召回数量最大值
-                     * @param _num 召回数量最大值
+                     * 设置<p>召回数量最大值</p>
+                     * @param _num <p>召回数量最大值</p>
                      * 
                      */
                     void SetNum(const int64_t& _num);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NumHasBeenSet() const;
 
                     /**
-                     * 获取权重配置
-                     * @return EmbeddingWeight 权重配置
+                     * 获取<p>权重配置</p>
+                     * @return EmbeddingWeight <p>权重配置</p>
                      * 
                      */
                     double GetEmbeddingWeight() const;
 
                     /**
-                     * 设置权重配置
-                     * @param _embeddingWeight 权重配置
+                     * 设置<p>权重配置</p>
+                     * @param _embeddingWeight <p>权重配置</p>
                      * 
                      */
                     void SetEmbeddingWeight(const double& _embeddingWeight);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool EmbeddingWeightHasBeenSet() const;
 
                     /**
-                     * 获取0:关闭 1:开启，默认1
-                     * @return Rerank 0:关闭 1:开启，默认1
+                     * 获取<p>0:关闭 1:开启，默认1</p>
+                     * @return Rerank <p>0:关闭 1:开启，默认1</p>
                      * 
                      */
                     int64_t GetRerank() const;
 
                     /**
-                     * 设置0:关闭 1:开启，默认1
-                     * @param _rerank 0:关闭 1:开启，默认1
+                     * 设置<p>0:关闭 1:开启，默认1</p>
+                     * @param _rerank <p>0:关闭 1:开启，默认1</p>
                      * 
                      */
                     void SetRerank(const int64_t& _rerank);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool RerankHasBeenSet() const;
 
                     /**
-                     * 获取0:关闭 1:开启，默认0
-                     * @return AutoRag 0:关闭 1:开启，默认0
+                     * 获取<p>0:关闭 1:开启，默认0</p>
+                     * @return AutoRag <p>0:关闭 1:开启，默认0</p>
                      * 
                      */
                     int64_t GetAutoRag() const;
 
                     /**
-                     * 设置0:关闭 1:开启，默认0
-                     * @param _autoRag 0:关闭 1:开启，默认0
+                     * 设置<p>0:关闭 1:开启，默认0</p>
+                     * @param _autoRag <p>0:关闭 1:开启，默认0</p>
                      * 
                      */
                     void SetAutoRag(const int64_t& _autoRag);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool AutoRagHasBeenSet() const;
 
                     /**
-                     * 获取AutoRag关联的知识库ID列表
-                     * @return KnowledgeBaseIds AutoRag关联的知识库ID列表
+                     * 获取<p>AutoRag关联的知识库ID列表</p>
+                     * @return KnowledgeBaseIds <p>AutoRag关联的知识库ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetKnowledgeBaseIds() const;
 
                     /**
-                     * 设置AutoRag关联的知识库ID列表
-                     * @param _knowledgeBaseIds AutoRag关联的知识库ID列表
+                     * 设置<p>AutoRag关联的知识库ID列表</p>
+                     * @param _knowledgeBaseIds <p>AutoRag关联的知识库ID列表</p>
                      * 
                      */
                     void SetKnowledgeBaseIds(const std::vector<std::string>& _knowledgeBaseIds);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool KnowledgeBaseIdsHasBeenSet() const;
 
                     /**
-                     * 获取AutoRag搜索状态：0-未完成，1-已完成。仅当AutoRag=1时，该字段有效
-                     * @return SearchStatus AutoRag搜索状态：0-未完成，1-已完成。仅当AutoRag=1时，该字段有效
+                     * 获取<p>AutoRag搜索状态：0-未完成，1-已完成。仅当AutoRag=1时，该字段有效</p>
+                     * @return SearchStatus <p>AutoRag搜索状态：0-未完成，1-已完成。仅当AutoRag=1时，该字段有效</p>
                      * 
                      */
                     int64_t GetSearchStatus() const;
 
                     /**
-                     * 设置AutoRag搜索状态：0-未完成，1-已完成。仅当AutoRag=1时，该字段有效
-                     * @param _searchStatus AutoRag搜索状态：0-未完成，1-已完成。仅当AutoRag=1时，该字段有效
+                     * 设置<p>AutoRag搜索状态：0-未完成，1-已完成。仅当AutoRag=1时，该字段有效</p>
+                     * @param _searchStatus <p>AutoRag搜索状态：0-未完成，1-已完成。仅当AutoRag=1时，该字段有效</p>
                      * 
                      */
                     void SetSearchStatus(const int64_t& _searchStatus);
@@ -193,49 +193,103 @@ namespace TencentCloud
                      */
                     bool SearchStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>0:关闭 1:开启图谱检索，默认0</p>
+                     * @return EnableGraphSearch <p>0:关闭 1:开启图谱检索，默认0</p>
+                     * 
+                     */
+                    int64_t GetEnableGraphSearch() const;
+
+                    /**
+                     * 设置<p>0:关闭 1:开启图谱检索，默认0</p>
+                     * @param _enableGraphSearch <p>0:关闭 1:开启图谱检索，默认0</p>
+                     * 
+                     */
+                    void SetEnableGraphSearch(const int64_t& _enableGraphSearch);
+
+                    /**
+                     * 判断参数 EnableGraphSearch 是否已赋值
+                     * @return EnableGraphSearch 是否已赋值
+                     * 
+                     */
+                    bool EnableGraphSearchHasBeenSet() const;
+
+                    /**
+                     * 获取<p>0:关闭 1:开启树检索，默认0</p>
+                     * @return EnableTreeSearch <p>0:关闭 1:开启树检索，默认0</p>
+                     * 
+                     */
+                    int64_t GetEnableTreeSearch() const;
+
+                    /**
+                     * 设置<p>0:关闭 1:开启树检索，默认0</p>
+                     * @param _enableTreeSearch <p>0:关闭 1:开启树检索，默认0</p>
+                     * 
+                     */
+                    void SetEnableTreeSearch(const int64_t& _enableTreeSearch);
+
+                    /**
+                     * 判断参数 EnableTreeSearch 是否已赋值
+                     * @return EnableTreeSearch 是否已赋值
+                     * 
+                     */
+                    bool EnableTreeSearchHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 检索类型：0:混合搜索 1：向量搜索 2：全文搜索
+                     * <p>检索类型：0:混合搜索 1：向量搜索 2：全文搜索</p>
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 召回数量最大值
+                     * <p>召回数量最大值</p>
                      */
                     int64_t m_num;
                     bool m_numHasBeenSet;
 
                     /**
-                     * 权重配置
+                     * <p>权重配置</p>
                      */
                     double m_embeddingWeight;
                     bool m_embeddingWeightHasBeenSet;
 
                     /**
-                     * 0:关闭 1:开启，默认1
+                     * <p>0:关闭 1:开启，默认1</p>
                      */
                     int64_t m_rerank;
                     bool m_rerankHasBeenSet;
 
                     /**
-                     * 0:关闭 1:开启，默认0
+                     * <p>0:关闭 1:开启，默认0</p>
                      */
                     int64_t m_autoRag;
                     bool m_autoRagHasBeenSet;
 
                     /**
-                     * AutoRag关联的知识库ID列表
+                     * <p>AutoRag关联的知识库ID列表</p>
                      */
                     std::vector<std::string> m_knowledgeBaseIds;
                     bool m_knowledgeBaseIdsHasBeenSet;
 
                     /**
-                     * AutoRag搜索状态：0-未完成，1-已完成。仅当AutoRag=1时，该字段有效
+                     * <p>AutoRag搜索状态：0-未完成，1-已完成。仅当AutoRag=1时，该字段有效</p>
                      */
                     int64_t m_searchStatus;
                     bool m_searchStatusHasBeenSet;
+
+                    /**
+                     * <p>0:关闭 1:开启图谱检索，默认0</p>
+                     */
+                    int64_t m_enableGraphSearch;
+                    bool m_enableGraphSearchHasBeenSet;
+
+                    /**
+                     * <p>0:关闭 1:开启树检索，默认0</p>
+                     */
+                    int64_t m_enableTreeSearch;
+                    bool m_enableTreeSearchHasBeenSet;
 
                 };
             }

@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool QuotaTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>仅当QuotaLimit=Text时有效，用于选择需要进行配额限制ApiToken</p>
-                     * @return ApiToken <p>仅当QuotaLimit=Text时有效，用于选择需要进行配额限制ApiToken</p>
+                     * 获取<p>仅当QuotaType=Text时有效，用于选择需要进行配额限制ApiToken</p>
+                     * @return ApiToken <p>仅当QuotaType=Text时有效，用于选择需要进行配额限制ApiToken</p>
                      * 
                      */
                     std::string GetApiToken() const;
 
                     /**
-                     * 设置<p>仅当QuotaLimit=Text时有效，用于选择需要进行配额限制ApiToken</p>
-                     * @param _apiToken <p>仅当QuotaLimit=Text时有效，用于选择需要进行配额限制ApiToken</p>
+                     * 设置<p>仅当QuotaType=Text时有效，用于选择需要进行配额限制ApiToken</p>
+                     * @param _apiToken <p>仅当QuotaType=Text时有效，用于选择需要进行配额限制ApiToken</p>
                      * 
                      */
                     void SetApiToken(const std::string& _apiToken);
@@ -162,7 +162,7 @@ namespace TencentCloud
                     bool m_quotaTypeHasBeenSet;
 
                     /**
-                     * <p>仅当QuotaLimit=Text时有效，用于选择需要进行配额限制ApiToken</p>
+                     * <p>仅当QuotaType=Text时有效，用于选择需要进行配额限制ApiToken</p>
                      */
                     std::string m_apiToken;
                     bool m_apiTokenHasBeenSet;

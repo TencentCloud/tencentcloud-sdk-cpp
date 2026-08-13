@@ -62,10 +62,10 @@ AssetsInfo::AssetsInfo() :
     m_groupNameHasBeenSet(false),
     m_assetGroupIdHasBeenSet(false),
     m_isNewCloudAuditHasBeenSet(false),
-    m_auditCapabilityHasBeenSet(false),
     m_trafficMirrorOnHasBeenSet(false),
     m_auditScopeHasBeenSet(false),
-    m_instanceGroupIdHasBeenSet(false)
+    m_instanceGroupIdHasBeenSet(false),
+    m_assetGroupsHasBeenSet(false)
 {
 }
 
@@ -511,26 +511,6 @@ CoreInternalOutcome AssetsInfo::Deserialize(const rapidjson::Value &value)
         m_isNewCloudAuditHasBeenSet = true;
     }
 
-    if (value.HasMember("AuditCapability") && !value["AuditCapability"].IsNull())
-    {
-        if (!value["AuditCapability"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `AssetsInfo.AuditCapability` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["AuditCapability"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            AuditCapability item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_auditCapability.push_back(item);
-        }
-        m_auditCapabilityHasBeenSet = true;
-    }
-
     if (value.HasMember("TrafficMirrorOn") && !value["TrafficMirrorOn"].IsNull())
     {
         if (!value["TrafficMirrorOn"].IsInt64())
@@ -559,6 +539,26 @@ CoreInternalOutcome AssetsInfo::Deserialize(const rapidjson::Value &value)
         }
         m_instanceGroupId = string(value["InstanceGroupId"].GetString());
         m_instanceGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssetGroups") && !value["AssetGroups"].IsNull())
+    {
+        if (!value["AssetGroups"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AssetsInfo.AssetGroups` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AssetGroups"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            IdWithName item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_assetGroups.push_back(item);
+        }
+        m_assetGroupsHasBeenSet = true;
     }
 
 
@@ -911,21 +911,6 @@ void AssetsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, m_isNewCloudAudit, allocator);
     }
 
-    if (m_auditCapabilityHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AuditCapability";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_auditCapability.begin(); itr != m_auditCapability.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
     if (m_trafficMirrorOnHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -948,6 +933,21 @@ void AssetsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "InstanceGroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assetGroupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetGroups";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_assetGroups.begin(); itr != m_assetGroups.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1609,22 +1609,6 @@ bool AssetsInfo::IsNewCloudAuditHasBeenSet() const
     return m_isNewCloudAuditHasBeenSet;
 }
 
-vector<AuditCapability> AssetsInfo::GetAuditCapability() const
-{
-    return m_auditCapability;
-}
-
-void AssetsInfo::SetAuditCapability(const vector<AuditCapability>& _auditCapability)
-{
-    m_auditCapability = _auditCapability;
-    m_auditCapabilityHasBeenSet = true;
-}
-
-bool AssetsInfo::AuditCapabilityHasBeenSet() const
-{
-    return m_auditCapabilityHasBeenSet;
-}
-
 int64_t AssetsInfo::GetTrafficMirrorOn() const
 {
     return m_trafficMirrorOn;
@@ -1671,5 +1655,21 @@ void AssetsInfo::SetInstanceGroupId(const string& _instanceGroupId)
 bool AssetsInfo::InstanceGroupIdHasBeenSet() const
 {
     return m_instanceGroupIdHasBeenSet;
+}
+
+vector<IdWithName> AssetsInfo::GetAssetGroups() const
+{
+    return m_assetGroups;
+}
+
+void AssetsInfo::SetAssetGroups(const vector<IdWithName>& _assetGroups)
+{
+    m_assetGroups = _assetGroups;
+    m_assetGroupsHasBeenSet = true;
+}
+
+bool AssetsInfo::AssetGroupsHasBeenSet() const
+{
+    return m_assetGroupsHasBeenSet;
 }
 

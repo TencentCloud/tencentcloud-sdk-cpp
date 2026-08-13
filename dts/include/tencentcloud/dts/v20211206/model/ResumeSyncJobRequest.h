@@ -43,19 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
-
-                     * @return JobId 同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
-
+                     * 获取<p>同步任务id，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
+                     * @return JobId <p>同步任务id，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
-
-                     * @param _jobId 同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
-
+                     * 设置<p>同步任务id，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
+                     * @param _jobId <p>同步任务id，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -70,8 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
-
+                     * <p>同步任务id，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;

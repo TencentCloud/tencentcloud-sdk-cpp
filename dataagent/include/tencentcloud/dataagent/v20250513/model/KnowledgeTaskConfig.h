@@ -261,6 +261,48 @@ namespace TencentCloud
                      */
                     bool EnableExtractDbHasBeenSet() const;
 
+                    /**
+                     * 获取<p>0:关闭 1:开启图谱构建（入库时），默认0</p>
+                     * @return EnableGraphBuild <p>0:关闭 1:开启图谱构建（入库时），默认0</p>
+                     * 
+                     */
+                    int64_t GetEnableGraphBuild() const;
+
+                    /**
+                     * 设置<p>0:关闭 1:开启图谱构建（入库时），默认0</p>
+                     * @param _enableGraphBuild <p>0:关闭 1:开启图谱构建（入库时），默认0</p>
+                     * 
+                     */
+                    void SetEnableGraphBuild(const int64_t& _enableGraphBuild);
+
+                    /**
+                     * 判断参数 EnableGraphBuild 是否已赋值
+                     * @return EnableGraphBuild 是否已赋值
+                     * 
+                     */
+                    bool EnableGraphBuildHasBeenSet() const;
+
+                    /**
+                     * 获取<p>0:关闭 1:开启树构建（入库时），默认0</p>
+                     * @return EnableTreeBuild <p>0:关闭 1:开启树构建（入库时），默认0</p>
+                     * 
+                     */
+                    int64_t GetEnableTreeBuild() const;
+
+                    /**
+                     * 设置<p>0:关闭 1:开启树构建（入库时），默认0</p>
+                     * @param _enableTreeBuild <p>0:关闭 1:开启树构建（入库时），默认0</p>
+                     * 
+                     */
+                    void SetEnableTreeBuild(const int64_t& _enableTreeBuild);
+
+                    /**
+                     * 判断参数 EnableTreeBuild 是否已赋值
+                     * @return EnableTreeBuild 是否已赋值
+                     * 
+                     */
+                    bool EnableTreeBuildHasBeenSet() const;
+
                 private:
 
                     /**
@@ -323,6 +365,18 @@ namespace TencentCloud
                      */
                     int64_t m_enableExtractDb;
                     bool m_enableExtractDbHasBeenSet;
+
+                    /**
+                     * <p>0:关闭 1:开启图谱构建（入库时），默认0</p>
+                     */
+                    int64_t m_enableGraphBuild;
+                    bool m_enableGraphBuildHasBeenSet;
+
+                    /**
+                     * <p>0:关闭 1:开启树构建（入库时），默认0</p>
+                     */
+                    int64_t m_enableTreeBuild;
+                    bool m_enableTreeBuildHasBeenSet;
 
                 };
             }

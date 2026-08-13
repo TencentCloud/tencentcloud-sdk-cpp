@@ -364,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取报表模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateId 报表模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
                      * 设置报表模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _templateId 报表模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
@@ -389,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取包含资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetsList 包含资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetsInfo> GetAssetsList() const;
 
                     /**
                      * 设置包含资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assetsList 包含资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssetsList(const std::vector<AssetsInfo>& _assetsList);
@@ -414,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CntDay 时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCntDay() const;
 
                     /**
                      * 设置时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cntDay 时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCntDay(const int64_t& _cntDay);
@@ -531,21 +519,18 @@ namespace TencentCloud
 
                     /**
                      * 报表模板
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
                      * 包含资产
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetsInfo> m_assetsList;
                     bool m_assetsListHasBeenSet;
 
                     /**
                      * 时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cntDay;
                     bool m_cntDayHasBeenSet;

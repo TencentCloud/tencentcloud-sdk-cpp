@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数量
-                     * @return TotalCount 数量
+                     * 获取<p>数量</p>
+                     * @return TotalCount <p>数量</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取一致性校验列表
-                     * @return Items 一致性校验列表
+                     * 获取<p>一致性校验列表</p>
+                     * @return Items <p>一致性校验列表</p>
                      * 
                      */
                     std::vector<CompareTaskItem> GetItems() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数量
+                     * <p>数量</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 一致性校验列表
+                     * <p>一致性校验列表</p>
                      */
                     std::vector<CompareTaskItem> m_items;
                     bool m_itemsHasBeenSet;

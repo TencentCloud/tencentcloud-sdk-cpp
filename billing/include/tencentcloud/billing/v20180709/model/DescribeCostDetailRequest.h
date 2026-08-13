@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数量，最大值为100
-                     * @return Limit 数量，最大值为100
+                     * 获取<p>数量，最大值为100</p>
+                     * @return Limit <p>数量，最大值为100</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置数量，最大值为100
-                     * @param _limit 数量，最大值为100
+                     * 设置<p>数量，最大值为100</p>
+                     * @param _limit <p>数量，最大值为100</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取<p>偏移量</p>
+                     * @return Offset <p>偏移量</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置<p>偏移量</p>
+                     * @param _offset <p>偏移量</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取周期开始时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。
-                     * @return BeginTime 周期开始时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。
+                     * 获取<p>周期开始时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&amp;EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。</p>
+                     * @return BeginTime <p>周期开始时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&amp;EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。</p>
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置周期开始时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。
-                     * @param _beginTime 周期开始时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。
+                     * 设置<p>周期开始时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&amp;EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。</p>
+                     * @param _beginTime <p>周期开始时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&amp;EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。</p>
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取周期结束时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。
-                     * @return EndTime 周期结束时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。
+                     * 获取<p>周期结束时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&amp;EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。</p>
+                     * @return EndTime <p>周期结束时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&amp;EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置周期结束时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。
-                     * @param _endTime 周期结束时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。
+                     * 设置<p>周期结束时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&amp;EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。</p>
+                     * @param _endTime <p>周期结束时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&amp;EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -127,19 +127,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否需要访问列表的总记录数，用于前端分页
-1-表示需要， 0-表示不需要
-                     * @return NeedRecordNum 是否需要访问列表的总记录数，用于前端分页
-1-表示需要， 0-表示不需要
+                     * 获取<p>是否需要访问列表的总记录数，用于前端分页<br>1-表示需要， 0-表示不需要</p>
+                     * @return NeedRecordNum <p>是否需要访问列表的总记录数，用于前端分页<br>1-表示需要， 0-表示不需要</p>
                      * 
                      */
                     uint64_t GetNeedRecordNum() const;
 
                     /**
-                     * 设置是否需要访问列表的总记录数，用于前端分页
-1-表示需要， 0-表示不需要
-                     * @param _needRecordNum 是否需要访问列表的总记录数，用于前端分页
-1-表示需要， 0-表示不需要
+                     * 设置<p>是否需要访问列表的总记录数，用于前端分页<br>1-表示需要， 0-表示不需要</p>
+                     * @param _needRecordNum <p>是否需要访问列表的总记录数，用于前端分页<br>1-表示需要， 0-表示不需要</p>
                      * 
                      */
                     void SetNeedRecordNum(const uint64_t& _needRecordNum);
@@ -152,15 +148,15 @@ namespace TencentCloud
                     bool NeedRecordNumHasBeenSet() const;
 
                     /**
-                     * 获取月份，格式为yyyy-mm，Month和BeginTime&EndTime必传一个，如果有传BeginTime&EndTime则Month字段无效。不能早于开通消耗账单的月份，最多可拉取18个月内的数据。
-                     * @return Month 月份，格式为yyyy-mm，Month和BeginTime&EndTime必传一个，如果有传BeginTime&EndTime则Month字段无效。不能早于开通消耗账单的月份，最多可拉取18个月内的数据。
+                     * 获取<p>月份，格式为yyyy-mm，Month和BeginTime&amp;EndTime必传一个，如果有传BeginTime&amp;EndTime则Month字段无效。不能早于开通消耗账单的月份，最多可拉取18个月内的数据。</p>
+                     * @return Month <p>月份，格式为yyyy-mm，Month和BeginTime&amp;EndTime必传一个，如果有传BeginTime&amp;EndTime则Month字段无效。不能早于开通消耗账单的月份，最多可拉取18个月内的数据。</p>
                      * 
                      */
                     std::string GetMonth() const;
 
                     /**
-                     * 设置月份，格式为yyyy-mm，Month和BeginTime&EndTime必传一个，如果有传BeginTime&EndTime则Month字段无效。不能早于开通消耗账单的月份，最多可拉取18个月内的数据。
-                     * @param _month 月份，格式为yyyy-mm，Month和BeginTime&EndTime必传一个，如果有传BeginTime&EndTime则Month字段无效。不能早于开通消耗账单的月份，最多可拉取18个月内的数据。
+                     * 设置<p>月份，格式为yyyy-mm，Month和BeginTime&amp;EndTime必传一个，如果有传BeginTime&amp;EndTime则Month字段无效。不能早于开通消耗账单的月份，最多可拉取18个月内的数据。</p>
+                     * @param _month <p>月份，格式为yyyy-mm，Month和BeginTime&amp;EndTime必传一个，如果有传BeginTime&amp;EndTime则Month字段无效。不能早于开通消耗账单的月份，最多可拉取18个月内的数据。</p>
                      * 
                      */
                     void SetMonth(const std::string& _month);
@@ -173,15 +169,15 @@ namespace TencentCloud
                     bool MonthHasBeenSet() const;
 
                     /**
-                     * 获取查询指定产品信息
-                     * @return ProductCode 查询指定产品信息
+                     * 获取<p>查询指定产品信息</p>
+                     * @return ProductCode <p>查询指定产品信息</p>
                      * 
                      */
                     std::string GetProductCode() const;
 
                     /**
-                     * 设置查询指定产品信息
-                     * @param _productCode 查询指定产品信息
+                     * 设置<p>查询指定产品信息</p>
+                     * @param _productCode <p>查询指定产品信息</p>
                      * 
                      */
                     void SetProductCode(const std::string& _productCode);
@@ -194,15 +190,15 @@ namespace TencentCloud
                     bool ProductCodeHasBeenSet() const;
 
                     /**
-                     * 获取付费模式 prePay/postPay
-                     * @return PayMode 付费模式 prePay/postPay
+                     * 获取<p>付费模式 prePay/postPay</p>
+                     * @return PayMode <p>付费模式 prePay/postPay</p>
                      * 
                      */
                     std::string GetPayMode() const;
 
                     /**
-                     * 设置付费模式 prePay/postPay
-                     * @param _payMode 付费模式 prePay/postPay
+                     * 设置<p>付费模式 prePay/postPay</p>
+                     * @param _payMode <p>付费模式 prePay/postPay</p>
                      * 
                      */
                     void SetPayMode(const std::string& _payMode);
@@ -215,15 +211,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取查询指定资源信息
-                     * @return ResourceId 查询指定资源信息
+                     * 获取<p>查询指定资源信息</p>
+                     * @return ResourceId <p>查询指定资源信息</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置查询指定资源信息
-                     * @param _resourceId 查询指定资源信息
+                     * 设置<p>查询指定资源信息</p>
+                     * @param _resourceId <p>查询指定资源信息</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -235,62 +231,142 @@ namespace TencentCloud
                      */
                     bool ResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>产品名称代码</p>
+                     * @return BusinessCode <p>产品名称代码</p>
+                     * 
+                     */
+                    std::string GetBusinessCode() const;
+
+                    /**
+                     * 设置<p>产品名称代码</p>
+                     * @param _businessCode <p>产品名称代码</p>
+                     * 
+                     */
+                    void SetBusinessCode(const std::string& _businessCode);
+
+                    /**
+                     * 判断参数 BusinessCode 是否已赋值
+                     * @return BusinessCode 是否已赋值
+                     * 
+                     */
+                    bool BusinessCodeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>项目ID:资源所属项目ID</p>
+                     * @return ProjectId <p>项目ID:资源所属项目ID</p>
+                     * 
+                     */
+                    std::string GetProjectId() const;
+
+                    /**
+                     * 设置<p>项目ID:资源所属项目ID</p>
+                     * @param _projectId <p>项目ID:资源所属项目ID</p>
+                     * 
+                     */
+                    void SetProjectId(const std::string& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>地域ID</p>
+                     * @return RegionId <p>地域ID</p>
+                     * 
+                     */
+                    std::string GetRegionId() const;
+
+                    /**
+                     * 设置<p>地域ID</p>
+                     * @param _regionId <p>地域ID</p>
+                     * 
+                     */
+                    void SetRegionId(const std::string& _regionId);
+
+                    /**
+                     * 判断参数 RegionId 是否已赋值
+                     * @return RegionId 是否已赋值
+                     * 
+                     */
+                    bool RegionIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 数量，最大值为100
+                     * <p>数量，最大值为100</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * <p>偏移量</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 周期开始时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。
+                     * <p>周期开始时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&amp;EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。</p>
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 周期结束时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。
+                     * <p>周期结束时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&amp;EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 是否需要访问列表的总记录数，用于前端分页
-1-表示需要， 0-表示不需要
+                     * <p>是否需要访问列表的总记录数，用于前端分页<br>1-表示需要， 0-表示不需要</p>
                      */
                     uint64_t m_needRecordNum;
                     bool m_needRecordNumHasBeenSet;
 
                     /**
-                     * 月份，格式为yyyy-mm，Month和BeginTime&EndTime必传一个，如果有传BeginTime&EndTime则Month字段无效。不能早于开通消耗账单的月份，最多可拉取18个月内的数据。
+                     * <p>月份，格式为yyyy-mm，Month和BeginTime&amp;EndTime必传一个，如果有传BeginTime&amp;EndTime则Month字段无效。不能早于开通消耗账单的月份，最多可拉取18个月内的数据。</p>
                      */
                     std::string m_month;
                     bool m_monthHasBeenSet;
 
                     /**
-                     * 查询指定产品信息
+                     * <p>查询指定产品信息</p>
                      */
                     std::string m_productCode;
                     bool m_productCodeHasBeenSet;
 
                     /**
-                     * 付费模式 prePay/postPay
+                     * <p>付费模式 prePay/postPay</p>
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 查询指定资源信息
+                     * <p>查询指定资源信息</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
+
+                    /**
+                     * <p>产品名称代码</p>
+                     */
+                    std::string m_businessCode;
+                    bool m_businessCodeHasBeenSet;
+
+                    /**
+                     * <p>项目ID:资源所属项目ID</p>
+                     */
+                    std::string m_projectId;
+                    bool m_projectIdHasBeenSet;
+
+                    /**
+                     * <p>地域ID</p>
+                     */
+                    std::string m_regionId;
+                    bool m_regionIdHasBeenSet;
 
                 };
             }

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通知渠道组名称。最大支持255个字节。 不支持 '|'。
-                     * @return Name 通知渠道组名称。最大支持255个字节。 不支持 '|'。
+                     * 获取<p>通知渠道组名称。最大支持255个字节。 不支持 &#39;|&#39;。</p>
+                     * @return Name <p>通知渠道组名称。最大支持255个字节。 不支持 &#39;|&#39;。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置通知渠道组名称。最大支持255个字节。 不支持 '|'。
-                     * @param _name 通知渠道组名称。最大支持255个字节。 不支持 '|'。
+                     * 设置<p>通知渠道组名称。最大支持255个字节。 不支持 &#39;|&#39;。</p>
+                     * @param _name <p>通知渠道组名称。最大支持255个字节。 不支持 &#39;|&#39;。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取标签描述列表，通过指定该参数可以同时绑定标签到相应的通知渠道组。最大支持50个标签键值对，并且不能有重复的键值对。
-                     * @return Tags 标签描述列表，通过指定该参数可以同时绑定标签到相应的通知渠道组。最大支持50个标签键值对，并且不能有重复的键值对。
+                     * 获取<p>标签描述列表，通过指定该参数可以同时绑定标签到相应的通知渠道组。最大支持50个标签键值对，并且不能有重复的键值对。</p>
+                     * @return Tags <p>标签描述列表，通过指定该参数可以同时绑定标签到相应的通知渠道组。最大支持50个标签键值对，并且不能有重复的键值对。</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签描述列表，通过指定该参数可以同时绑定标签到相应的通知渠道组。最大支持50个标签键值对，并且不能有重复的键值对。
-                     * @param _tags 标签描述列表，通过指定该参数可以同时绑定标签到相应的通知渠道组。最大支持50个标签键值对，并且不能有重复的键值对。
+                     * 设置<p>标签描述列表，通过指定该参数可以同时绑定标签到相应的通知渠道组。最大支持50个标签键值对，并且不能有重复的键值对。</p>
+                     * @param _tags <p>标签描述列表，通过指定该参数可以同时绑定标签到相应的通知渠道组。最大支持50个标签键值对，并且不能有重复的键值对。</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -90,31 +90,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取【简易模式】（简易模式/告警模式二选一，分别配置相应参数）
-需要发送通知的告警类型。可选值：
-- Trigger - 告警触发
-- Recovery - 告警恢复
-- All - 告警触发和告警恢复
-                     * @return Type 【简易模式】（简易模式/告警模式二选一，分别配置相应参数）
-需要发送通知的告警类型。可选值：
-- Trigger - 告警触发
-- Recovery - 告警恢复
-- All - 告警触发和告警恢复
+                     * 获取<p>【简易模式】（简易模式/告警模式二选一，分别配置相应参数）<br>需要发送通知的告警类型。可选值：</p><ul><li>Trigger - 告警触发</li><li>Recovery - 告警恢复</li><li>All - 告警触发和告警恢复</li></ul>
+                     * @return Type <p>【简易模式】（简易模式/告警模式二选一，分别配置相应参数）<br>需要发送通知的告警类型。可选值：</p><ul><li>Trigger - 告警触发</li><li>Recovery - 告警恢复</li><li>All - 告警触发和告警恢复</li></ul>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置【简易模式】（简易模式/告警模式二选一，分别配置相应参数）
-需要发送通知的告警类型。可选值：
-- Trigger - 告警触发
-- Recovery - 告警恢复
-- All - 告警触发和告警恢复
-                     * @param _type 【简易模式】（简易模式/告警模式二选一，分别配置相应参数）
-需要发送通知的告警类型。可选值：
-- Trigger - 告警触发
-- Recovery - 告警恢复
-- All - 告警触发和告警恢复
+                     * 设置<p>【简易模式】（简易模式/告警模式二选一，分别配置相应参数）<br>需要发送通知的告警类型。可选值：</p><ul><li>Trigger - 告警触发</li><li>Recovery - 告警恢复</li><li>All - 告警触发和告警恢复</li></ul>
+                     * @param _type <p>【简易模式】（简易模式/告警模式二选一，分别配置相应参数）<br>需要发送通知的告警类型。可选值：</p><ul><li>Trigger - 告警触发</li><li>Recovery - 告警恢复</li><li>All - 告警触发和告警恢复</li></ul>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -127,19 +111,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取【简易模式】（简易模式/告警模式二选一，分别配置相应参数）
-通知接收对象。
-                     * @return NoticeReceivers 【简易模式】（简易模式/告警模式二选一，分别配置相应参数）
-通知接收对象。
+                     * 获取<p>【简易模式】（简易模式/告警模式二选一，分别配置相应参数）<br>通知接收对象。</p>
+                     * @return NoticeReceivers <p>【简易模式】（简易模式/告警模式二选一，分别配置相应参数）<br>通知接收对象。</p>
                      * 
                      */
                     std::vector<NoticeReceiver> GetNoticeReceivers() const;
 
                     /**
-                     * 设置【简易模式】（简易模式/告警模式二选一，分别配置相应参数）
-通知接收对象。
-                     * @param _noticeReceivers 【简易模式】（简易模式/告警模式二选一，分别配置相应参数）
-通知接收对象。
+                     * 设置<p>【简易模式】（简易模式/告警模式二选一，分别配置相应参数）<br>通知接收对象。</p>
+                     * @param _noticeReceivers <p>【简易模式】（简易模式/告警模式二选一，分别配置相应参数）<br>通知接收对象。</p>
                      * 
                      */
                     void SetNoticeReceivers(const std::vector<NoticeReceiver>& _noticeReceivers);
@@ -152,19 +132,15 @@ namespace TencentCloud
                     bool NoticeReceiversHasBeenSet() const;
 
                     /**
-                     * 获取【简易模式】（简易模式/告警模式二选一，分别配置相应参数）
-接口回调信息（包括企业微信、钉钉、飞书）。
-                     * @return WebCallbacks 【简易模式】（简易模式/告警模式二选一，分别配置相应参数）
-接口回调信息（包括企业微信、钉钉、飞书）。
+                     * 获取<p>【简易模式】（简易模式/告警模式二选一，分别配置相应参数）<br>接口回调信息（包括企业微信、钉钉、飞书）。</p>
+                     * @return WebCallbacks <p>【简易模式】（简易模式/告警模式二选一，分别配置相应参数）<br>接口回调信息（包括企业微信、钉钉、飞书）。</p>
                      * 
                      */
                     std::vector<WebCallback> GetWebCallbacks() const;
 
                     /**
-                     * 设置【简易模式】（简易模式/告警模式二选一，分别配置相应参数）
-接口回调信息（包括企业微信、钉钉、飞书）。
-                     * @param _webCallbacks 【简易模式】（简易模式/告警模式二选一，分别配置相应参数）
-接口回调信息（包括企业微信、钉钉、飞书）。
+                     * 设置<p>【简易模式】（简易模式/告警模式二选一，分别配置相应参数）<br>接口回调信息（包括企业微信、钉钉、飞书）。</p>
+                     * @param _webCallbacks <p>【简易模式】（简易模式/告警模式二选一，分别配置相应参数）<br>接口回调信息（包括企业微信、钉钉、飞书）。</p>
                      * 
                      */
                     void SetWebCallbacks(const std::vector<WebCallback>& _webCallbacks);
@@ -177,19 +153,15 @@ namespace TencentCloud
                     bool WebCallbacksHasBeenSet() const;
 
                     /**
-                     * 获取【高级模式】（简易模式/告警模式二选一，分别配置相应参数）
-通知规则。
-                     * @return NoticeRules 【高级模式】（简易模式/告警模式二选一，分别配置相应参数）
-通知规则。
+                     * 获取<p>【高级模式】（简易模式/告警模式二选一，分别配置相应参数）<br>通知规则。</p>
+                     * @return NoticeRules <p>【高级模式】（简易模式/告警模式二选一，分别配置相应参数）<br>通知规则。</p>
                      * 
                      */
                     std::vector<NoticeRule> GetNoticeRules() const;
 
                     /**
-                     * 设置【高级模式】（简易模式/告警模式二选一，分别配置相应参数）
-通知规则。
-                     * @param _noticeRules 【高级模式】（简易模式/告警模式二选一，分别配置相应参数）
-通知规则。
+                     * 设置<p>【高级模式】（简易模式/告警模式二选一，分别配置相应参数）<br>通知规则。</p>
+                     * @param _noticeRules <p>【高级模式】（简易模式/告警模式二选一，分别配置相应参数）<br>通知规则。</p>
                      * 
                      */
                     void SetNoticeRules(const std::vector<NoticeRule>& _noticeRules);
@@ -202,15 +174,15 @@ namespace TencentCloud
                     bool NoticeRulesHasBeenSet() const;
 
                     /**
-                     * 获取查询数据链接。http:// 或者 https:// 开头，不能/结尾
-                     * @return JumpDomain 查询数据链接。http:// 或者 https:// 开头，不能/结尾
+                     * 获取<p>查询数据链接。http:// 或者 https:// 开头，不能/结尾</p>
+                     * @return JumpDomain <p>查询数据链接。http:// 或者 https:// 开头，不能/结尾</p>
                      * 
                      */
                     std::string GetJumpDomain() const;
 
                     /**
-                     * 设置查询数据链接。http:// 或者 https:// 开头，不能/结尾
-                     * @param _jumpDomain 查询数据链接。http:// 或者 https:// 开头，不能/结尾
+                     * 设置<p>查询数据链接。http:// 或者 https:// 开头，不能/结尾</p>
+                     * @param _jumpDomain <p>查询数据链接。http:// 或者 https:// 开头，不能/结尾</p>
                      * 
                      */
                     void SetJumpDomain(const std::string& _jumpDomain);
@@ -223,27 +195,15 @@ namespace TencentCloud
                     bool JumpDomainHasBeenSet() const;
 
                     /**
-                     * 获取投递日志开关。可取值如下：
-1：关闭（默认值）；
-2：开启 
-投递日志开关开启时， DeliverConfig参数必填。
-                     * @return DeliverStatus 投递日志开关。可取值如下：
-1：关闭（默认值）；
-2：开启 
-投递日志开关开启时， DeliverConfig参数必填。
+                     * 获取<p>投递日志开关。可取值如下：<br>1：关闭（默认值）；<br>2：开启<br>投递日志开关开启时， DeliverConfig参数必填。</p>
+                     * @return DeliverStatus <p>投递日志开关。可取值如下：<br>1：关闭（默认值）；<br>2：开启<br>投递日志开关开启时， DeliverConfig参数必填。</p>
                      * 
                      */
                     uint64_t GetDeliverStatus() const;
 
                     /**
-                     * 设置投递日志开关。可取值如下：
-1：关闭（默认值）；
-2：开启 
-投递日志开关开启时， DeliverConfig参数必填。
-                     * @param _deliverStatus 投递日志开关。可取值如下：
-1：关闭（默认值）；
-2：开启 
-投递日志开关开启时， DeliverConfig参数必填。
+                     * 设置<p>投递日志开关。可取值如下：<br>1：关闭（默认值）；<br>2：开启<br>投递日志开关开启时， DeliverConfig参数必填。</p>
+                     * @param _deliverStatus <p>投递日志开关。可取值如下：<br>1：关闭（默认值）；<br>2：开启<br>投递日志开关开启时， DeliverConfig参数必填。</p>
                      * 
                      */
                     void SetDeliverStatus(const uint64_t& _deliverStatus);
@@ -256,15 +216,15 @@ namespace TencentCloud
                     bool DeliverStatusHasBeenSet() const;
 
                     /**
-                     * 获取投递日志配置参数。当DeliverStatus开启时，必填。
-                     * @return DeliverConfig 投递日志配置参数。当DeliverStatus开启时，必填。
+                     * 获取<p>投递日志配置参数。当DeliverStatus开启时，必填。</p>
+                     * @return DeliverConfig <p>投递日志配置参数。当DeliverStatus开启时，必填。</p>
                      * 
                      */
                     DeliverConfig GetDeliverConfig() const;
 
                     /**
-                     * 设置投递日志配置参数。当DeliverStatus开启时，必填。
-                     * @param _deliverConfig 投递日志配置参数。当DeliverStatus开启时，必填。
+                     * 设置<p>投递日志配置参数。当DeliverStatus开启时，必填。</p>
+                     * @param _deliverConfig <p>投递日志配置参数。当DeliverStatus开启时，必填。</p>
                      * 
                      */
                     void SetDeliverConfig(const DeliverConfig& _deliverConfig);
@@ -277,23 +237,15 @@ namespace TencentCloud
                     bool DeliverConfigHasBeenSet() const;
 
                     /**
-                     * 获取免登录操作告警开关。可取值如下：
--      1：关闭
--      2：开启（默认值）
-                     * @return AlarmShieldStatus 免登录操作告警开关。可取值如下：
--      1：关闭
--      2：开启（默认值）
+                     * 获取<p>免登录操作告警开关。可取值如下：</p><ul><li>1：关闭</li><li>2：开启（默认值）</li></ul>
+                     * @return AlarmShieldStatus <p>免登录操作告警开关。可取值如下：</p><ul><li>1：关闭</li><li>2：开启（默认值）</li></ul>
                      * 
                      */
                     uint64_t GetAlarmShieldStatus() const;
 
                     /**
-                     * 设置免登录操作告警开关。可取值如下：
--      1：关闭
--      2：开启（默认值）
-                     * @param _alarmShieldStatus 免登录操作告警开关。可取值如下：
--      1：关闭
--      2：开启（默认值）
+                     * 设置<p>免登录操作告警开关。可取值如下：</p><ul><li>1：关闭</li><li>2：开启（默认值）</li></ul>
+                     * @param _alarmShieldStatus <p>免登录操作告警开关。可取值如下：</p><ul><li>1：关闭</li><li>2：开启（默认值）</li></ul>
                      * 
                      */
                     void SetAlarmShieldStatus(const uint64_t& _alarmShieldStatus);
@@ -306,23 +258,36 @@ namespace TencentCloud
                     bool AlarmShieldStatusHasBeenSet() const;
 
                     /**
-                     * 获取统一设定自定义回调参数。
--  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。
--  false:优先使用告警策略中单独配置的请求头及请求内容。
-                     * @return CallbackPrioritize 统一设定自定义回调参数。
--  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。
--  false:优先使用告警策略中单独配置的请求头及请求内容。
+                     * 获取<p>告警详情安全认证跳转开关，未传时默认&quot;关闭&quot;</p><p>枚举值：</p><ul><li>1： 关闭（默认值）</li><li>2： 开启</li></ul>
+                     * @return SecureDetailStatus <p>告警详情安全认证跳转开关，未传时默认&quot;关闭&quot;</p><p>枚举值：</p><ul><li>1： 关闭（默认值）</li><li>2： 开启</li></ul>
+                     * 
+                     */
+                    uint64_t GetSecureDetailStatus() const;
+
+                    /**
+                     * 设置<p>告警详情安全认证跳转开关，未传时默认&quot;关闭&quot;</p><p>枚举值：</p><ul><li>1： 关闭（默认值）</li><li>2： 开启</li></ul>
+                     * @param _secureDetailStatus <p>告警详情安全认证跳转开关，未传时默认&quot;关闭&quot;</p><p>枚举值：</p><ul><li>1： 关闭（默认值）</li><li>2： 开启</li></ul>
+                     * 
+                     */
+                    void SetSecureDetailStatus(const uint64_t& _secureDetailStatus);
+
+                    /**
+                     * 判断参数 SecureDetailStatus 是否已赋值
+                     * @return SecureDetailStatus 是否已赋值
+                     * 
+                     */
+                    bool SecureDetailStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>统一设定自定义回调参数。</p><ul><li>true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。</li><li>false:优先使用告警策略中单独配置的请求头及请求内容。</li></ul>
+                     * @return CallbackPrioritize <p>统一设定自定义回调参数。</p><ul><li>true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。</li><li>false:优先使用告警策略中单独配置的请求头及请求内容。</li></ul>
                      * 
                      */
                     bool GetCallbackPrioritize() const;
 
                     /**
-                     * 设置统一设定自定义回调参数。
--  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。
--  false:优先使用告警策略中单独配置的请求头及请求内容。
-                     * @param _callbackPrioritize 统一设定自定义回调参数。
--  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。
--  false:优先使用告警策略中单独配置的请求头及请求内容。
+                     * 设置<p>统一设定自定义回调参数。</p><ul><li>true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。</li><li>false:优先使用告警策略中单独配置的请求头及请求内容。</li></ul>
+                     * @param _callbackPrioritize <p>统一设定自定义回调参数。</p><ul><li>true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。</li><li>false:优先使用告警策略中单独配置的请求头及请求内容。</li></ul>
                      * 
                      */
                     void SetCallbackPrioritize(const bool& _callbackPrioritize);
@@ -337,81 +302,73 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通知渠道组名称。最大支持255个字节。 不支持 '|'。
+                     * <p>通知渠道组名称。最大支持255个字节。 不支持 &#39;|&#39;。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 标签描述列表，通过指定该参数可以同时绑定标签到相应的通知渠道组。最大支持50个标签键值对，并且不能有重复的键值对。
+                     * <p>标签描述列表，通过指定该参数可以同时绑定标签到相应的通知渠道组。最大支持50个标签键值对，并且不能有重复的键值对。</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 【简易模式】（简易模式/告警模式二选一，分别配置相应参数）
-需要发送通知的告警类型。可选值：
-- Trigger - 告警触发
-- Recovery - 告警恢复
-- All - 告警触发和告警恢复
+                     * <p>【简易模式】（简易模式/告警模式二选一，分别配置相应参数）<br>需要发送通知的告警类型。可选值：</p><ul><li>Trigger - 告警触发</li><li>Recovery - 告警恢复</li><li>All - 告警触发和告警恢复</li></ul>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 【简易模式】（简易模式/告警模式二选一，分别配置相应参数）
-通知接收对象。
+                     * <p>【简易模式】（简易模式/告警模式二选一，分别配置相应参数）<br>通知接收对象。</p>
                      */
                     std::vector<NoticeReceiver> m_noticeReceivers;
                     bool m_noticeReceiversHasBeenSet;
 
                     /**
-                     * 【简易模式】（简易模式/告警模式二选一，分别配置相应参数）
-接口回调信息（包括企业微信、钉钉、飞书）。
+                     * <p>【简易模式】（简易模式/告警模式二选一，分别配置相应参数）<br>接口回调信息（包括企业微信、钉钉、飞书）。</p>
                      */
                     std::vector<WebCallback> m_webCallbacks;
                     bool m_webCallbacksHasBeenSet;
 
                     /**
-                     * 【高级模式】（简易模式/告警模式二选一，分别配置相应参数）
-通知规则。
+                     * <p>【高级模式】（简易模式/告警模式二选一，分别配置相应参数）<br>通知规则。</p>
                      */
                     std::vector<NoticeRule> m_noticeRules;
                     bool m_noticeRulesHasBeenSet;
 
                     /**
-                     * 查询数据链接。http:// 或者 https:// 开头，不能/结尾
+                     * <p>查询数据链接。http:// 或者 https:// 开头，不能/结尾</p>
                      */
                     std::string m_jumpDomain;
                     bool m_jumpDomainHasBeenSet;
 
                     /**
-                     * 投递日志开关。可取值如下：
-1：关闭（默认值）；
-2：开启 
-投递日志开关开启时， DeliverConfig参数必填。
+                     * <p>投递日志开关。可取值如下：<br>1：关闭（默认值）；<br>2：开启<br>投递日志开关开启时， DeliverConfig参数必填。</p>
                      */
                     uint64_t m_deliverStatus;
                     bool m_deliverStatusHasBeenSet;
 
                     /**
-                     * 投递日志配置参数。当DeliverStatus开启时，必填。
+                     * <p>投递日志配置参数。当DeliverStatus开启时，必填。</p>
                      */
                     DeliverConfig m_deliverConfig;
                     bool m_deliverConfigHasBeenSet;
 
                     /**
-                     * 免登录操作告警开关。可取值如下：
--      1：关闭
--      2：开启（默认值）
+                     * <p>免登录操作告警开关。可取值如下：</p><ul><li>1：关闭</li><li>2：开启（默认值）</li></ul>
                      */
                     uint64_t m_alarmShieldStatus;
                     bool m_alarmShieldStatusHasBeenSet;
 
                     /**
-                     * 统一设定自定义回调参数。
--  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。
--  false:优先使用告警策略中单独配置的请求头及请求内容。
+                     * <p>告警详情安全认证跳转开关，未传时默认&quot;关闭&quot;</p><p>枚举值：</p><ul><li>1： 关闭（默认值）</li><li>2： 开启</li></ul>
+                     */
+                    uint64_t m_secureDetailStatus;
+                    bool m_secureDetailStatusHasBeenSet;
+
+                    /**
+                     * <p>统一设定自定义回调参数。</p><ul><li>true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。</li><li>false:优先使用告警策略中单独配置的请求头及请求内容。</li></ul>
                      */
                     bool m_callbackPrioritize;
                     bool m_callbackPrioritizeHasBeenSet;
