@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool AutoActiveHasBeenSet() const;
 
                     /**
-                     * 获取<p>营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。</p>
-                     * @return BusinessLicense <p>营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。</p>
+                     * 获取<p>营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。<br>和BusinessLicenseId二选一即可</p>
+                     * @return BusinessLicense <p>营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。<br>和BusinessLicenseId二选一即可</p>
                      * 
                      */
                     std::string GetBusinessLicense() const;
 
                     /**
-                     * 设置<p>营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。</p>
-                     * @param _businessLicense <p>营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。</p>
+                     * 设置<p>营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。<br>和BusinessLicenseId二选一即可</p>
+                     * @param _businessLicense <p>营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。<br>和BusinessLicenseId二选一即可</p>
                      * 
                      */
                     void SetBusinessLicense(const std::string& _businessLicense);
@@ -550,6 +550,27 @@ namespace TencentCloud
                      */
                     bool ProxyOrganizationIdCardTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>营业执照正面照（支持PNG或JPG格式）的FileId（通过UploadFiles获取），且文件大小不得超过8MB。<br>和BusinessLicense二选一即可</p>
+                     * @return BusinessLicenseId <p>营业执照正面照（支持PNG或JPG格式）的FileId（通过UploadFiles获取），且文件大小不得超过8MB。<br>和BusinessLicense二选一即可</p>
+                     * 
+                     */
+                    std::string GetBusinessLicenseId() const;
+
+                    /**
+                     * 设置<p>营业执照正面照（支持PNG或JPG格式）的FileId（通过UploadFiles获取），且文件大小不得超过8MB。<br>和BusinessLicense二选一即可</p>
+                     * @param _businessLicenseId <p>营业执照正面照（支持PNG或JPG格式）的FileId（通过UploadFiles获取），且文件大小不得超过8MB。<br>和BusinessLicense二选一即可</p>
+                     * 
+                     */
+                    void SetBusinessLicenseId(const std::string& _businessLicenseId);
+
+                    /**
+                     * 判断参数 BusinessLicenseId 是否已赋值
+                     * @return BusinessLicenseId 是否已赋值
+                     * 
+                     */
+                    bool BusinessLicenseIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -643,7 +664,7 @@ namespace TencentCloud
                     bool m_autoActiveHasBeenSet;
 
                     /**
-                     * <p>营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。</p>
+                     * <p>营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。<br>和BusinessLicenseId二选一即可</p>
                      */
                     std::string m_businessLicense;
                     bool m_businessLicenseHasBeenSet;
@@ -695,6 +716,12 @@ namespace TencentCloud
                      */
                     std::string m_proxyOrganizationIdCardType;
                     bool m_proxyOrganizationIdCardTypeHasBeenSet;
+
+                    /**
+                     * <p>营业执照正面照（支持PNG或JPG格式）的FileId（通过UploadFiles获取），且文件大小不得超过8MB。<br>和BusinessLicense二选一即可</p>
+                     */
+                    std::string m_businessLicenseId;
+                    bool m_businessLicenseIdHasBeenSet;
 
                 };
             }

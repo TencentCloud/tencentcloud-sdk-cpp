@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取智能卡证分类结果。当图片类型不支持分类识别或者识别出的类型不在请求参数DiscernType指定的范围内时，返回结果中的Type字段将为空字符串，Name字段将返回"其它"
-                     * @return ClassifyDetectInfos 智能卡证分类结果。当图片类型不支持分类识别或者识别出的类型不在请求参数DiscernType指定的范围内时，返回结果中的Type字段将为空字符串，Name字段将返回"其它"
+                     * 获取<p>智能卡证分类结果。当图片类型不支持分类识别或者识别出的类型不在请求参数DiscernType指定的范围内时，返回结果中的Type字段将为空字符串，Name字段将返回&quot;其它&quot;</p>
+                     * @return ClassifyDetectInfos <p>智能卡证分类结果。当图片类型不支持分类识别或者识别出的类型不在请求参数DiscernType指定的范围内时，返回结果中的Type字段将为空字符串，Name字段将返回&quot;其它&quot;</p>
                      * 
                      */
                     std::vector<ClassifyDetectInfo> GetClassifyDetectInfos() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 智能卡证分类结果。当图片类型不支持分类识别或者识别出的类型不在请求参数DiscernType指定的范围内时，返回结果中的Type字段将为空字符串，Name字段将返回"其它"
+                     * <p>智能卡证分类结果。当图片类型不支持分类识别或者识别出的类型不在请求参数DiscernType指定的范围内时，返回结果中的Type字段将为空字符串，Name字段将返回&quot;其它&quot;</p>
                      */
                     std::vector<ClassifyDetectInfo> m_classifyDetectInfos;
                     bool m_classifyDetectInfosHasBeenSet;

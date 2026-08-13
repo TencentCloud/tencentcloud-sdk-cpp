@@ -44,14 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备播状态，范围[0,1,2]
-0. 正常直播状态
-1. 备播状态
-2. 备播切换正常直播中，在配置了延播时长时出现
-                     * @return EmergencyStatus 备播状态，范围[0,1,2]
-0. 正常直播状态
-1. 备播状态
-2. 备播切换正常直播中，在配置了延播时长时出现
+                     * 获取<p>备播状态，范围[0,1,2]</p><ol start="0"><li>正常直播状态</li><li>备播状态</li><li>备播切换正常直播中，在配置了延播时长时出现</li></ol>
+                     * @return EmergencyStatus <p>备播状态，范围[0,1,2]</p><ol start="0"><li>正常直播状态</li><li>备播状态</li><li>备播切换正常直播中，在配置了延播时长时出现</li></ol>
                      * 
                      */
                     int64_t GetEmergencyStatus() const;
@@ -66,10 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 备播状态，范围[0,1,2]
-0. 正常直播状态
-1. 备播状态
-2. 备播切换正常直播中，在配置了延播时长时出现
+                     * <p>备播状态，范围[0,1,2]</p><ol start="0"><li>正常直播状态</li><li>备播状态</li><li>备播切换正常直播中，在配置了延播时长时出现</li></ol>
                      */
                     int64_t m_emergencyStatus;
                     bool m_emergencyStatusHasBeenSet;

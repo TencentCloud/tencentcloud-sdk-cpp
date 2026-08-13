@@ -29,7 +29,8 @@ NoticeContentTmplItem::NoticeContentTmplItem() :
     m_teamsRobotHasBeenSet(false),
     m_pagerDutyRobotHasBeenSet(false),
     m_googleChatRobotHasBeenSet(false),
-    m_slackRobotHasBeenSet(false)
+    m_slackRobotHasBeenSet(false),
+    m_teamsWorkflowRobotHasBeenSet(false)
 {
 }
 
@@ -218,6 +219,26 @@ CoreInternalOutcome NoticeContentTmplItem::Deserialize(const rapidjson::Value &v
         m_slackRobotHasBeenSet = true;
     }
 
+    if (value.HasMember("TeamsWorkflowRobot") && !value["TeamsWorkflowRobot"].IsNull())
+    {
+        if (!value["TeamsWorkflowRobot"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NoticeContentTmplItem.TeamsWorkflowRobot` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TeamsWorkflowRobot"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TeamsWorkflowRobotNoticeTmplMatcher item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_teamsWorkflowRobot.push_back(item);
+        }
+        m_teamsWorkflowRobotHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -354,6 +375,21 @@ void NoticeContentTmplItem::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
 
         int i=0;
         for (auto itr = m_slackRobot.begin(); itr != m_slackRobot.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_teamsWorkflowRobotHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TeamsWorkflowRobot";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_teamsWorkflowRobot.begin(); itr != m_teamsWorkflowRobot.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -505,5 +541,21 @@ void NoticeContentTmplItem::SetSlackRobot(const vector<SlackRobotNoticeTmplMatch
 bool NoticeContentTmplItem::SlackRobotHasBeenSet() const
 {
     return m_slackRobotHasBeenSet;
+}
+
+vector<TeamsWorkflowRobotNoticeTmplMatcher> NoticeContentTmplItem::GetTeamsWorkflowRobot() const
+{
+    return m_teamsWorkflowRobot;
+}
+
+void NoticeContentTmplItem::SetTeamsWorkflowRobot(const vector<TeamsWorkflowRobotNoticeTmplMatcher>& _teamsWorkflowRobot)
+{
+    m_teamsWorkflowRobot = _teamsWorkflowRobot;
+    m_teamsWorkflowRobotHasBeenSet = true;
+}
+
+bool NoticeContentTmplItem::TeamsWorkflowRobotHasBeenSet() const
+{
+    return m_teamsWorkflowRobotHasBeenSet;
 }
 

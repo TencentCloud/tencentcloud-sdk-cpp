@@ -23,7 +23,8 @@ using namespace TencentCloud::Live::V20180801::Model;
 using namespace std;
 
 SwitchCasterToEmergencyRequest::SwitchCasterToEmergencyRequest() :
-    m_casterIdHasBeenSet(false)
+    m_casterIdHasBeenSet(false),
+    m_fromBeginningHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string SwitchCasterToEmergencyRequest::ToJsonString() const
         string key = "CasterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_casterId, allocator);
+    }
+
+    if (m_fromBeginningHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FromBeginning";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_fromBeginning, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void SwitchCasterToEmergencyRequest::SetCasterId(const uint64_t& _casterId)
 bool SwitchCasterToEmergencyRequest::CasterIdHasBeenSet() const
 {
     return m_casterIdHasBeenSet;
+}
+
+bool SwitchCasterToEmergencyRequest::GetFromBeginning() const
+{
+    return m_fromBeginning;
+}
+
+void SwitchCasterToEmergencyRequest::SetFromBeginning(const bool& _fromBeginning)
+{
+    m_fromBeginning = _fromBeginning;
+    m_fromBeginningHasBeenSet = true;
+}
+
+bool SwitchCasterToEmergencyRequest::FromBeginningHasBeenSet() const
+{
+    return m_fromBeginningHasBeenSet;
 }
 
 

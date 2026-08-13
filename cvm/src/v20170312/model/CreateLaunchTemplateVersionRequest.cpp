@@ -53,7 +53,8 @@ CreateLaunchTemplateVersionRequest::CreateLaunchTemplateVersionRequest() :
     m_disableApiTerminationHasBeenSet(false),
     m_enableJumboFrameHasBeenSet(false),
     m_metadataHasBeenSet(false),
-    m_templateDataModifyActionHasBeenSet(false)
+    m_templateDataModifyActionHasBeenSet(false),
+    m_networkInterfacesHasBeenSet(false)
 {
 }
 
@@ -344,6 +345,21 @@ string CreateLaunchTemplateVersionRequest::ToJsonString() const
         string key = "TemplateDataModifyAction";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_templateDataModifyAction.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkInterfacesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkInterfaces";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_networkInterfaces.begin(); itr != m_networkInterfaces.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -848,6 +864,22 @@ void CreateLaunchTemplateVersionRequest::SetTemplateDataModifyAction(const strin
 bool CreateLaunchTemplateVersionRequest::TemplateDataModifyActionHasBeenSet() const
 {
     return m_templateDataModifyActionHasBeenSet;
+}
+
+vector<NetworkInterfaces> CreateLaunchTemplateVersionRequest::GetNetworkInterfaces() const
+{
+    return m_networkInterfaces;
+}
+
+void CreateLaunchTemplateVersionRequest::SetNetworkInterfaces(const vector<NetworkInterfaces>& _networkInterfaces)
+{
+    m_networkInterfaces = _networkInterfaces;
+    m_networkInterfacesHasBeenSet = true;
+}
+
+bool CreateLaunchTemplateVersionRequest::NetworkInterfacesHasBeenSet() const
+{
+    return m_networkInterfacesHasBeenSet;
 }
 
 

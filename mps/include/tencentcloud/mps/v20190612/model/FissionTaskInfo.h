@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>视频输出时长</p><p>取值范围：[1, 15]</p><p>单位：秒</p><p>默认值：15</p>
-                     * @return Duration <p>视频输出时长</p><p>取值范围：[1, 15]</p><p>单位：秒</p><p>默认值：15</p>
+                     * 获取<p>视频输出时长</p><p>取值范围：[4, 15]</p><p>单位：秒</p><p>默认值：15</p>
+                     * @return Duration <p>视频输出时长</p><p>取值范围：[4, 15]</p><p>单位：秒</p><p>默认值：15</p>
                      * 
                      */
                     uint64_t GetDuration() const;
 
                     /**
-                     * 设置<p>视频输出时长</p><p>取值范围：[1, 15]</p><p>单位：秒</p><p>默认值：15</p>
-                     * @param _duration <p>视频输出时长</p><p>取值范围：[1, 15]</p><p>单位：秒</p><p>默认值：15</p>
+                     * 设置<p>视频输出时长</p><p>取值范围：[4, 15]</p><p>单位：秒</p><p>默认值：15</p>
+                     * @param _duration <p>视频输出时长</p><p>取值范围：[4, 15]</p><p>单位：秒</p><p>默认值：15</p>
                      * 
                      */
                     void SetDuration(const uint64_t& _duration);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool MarketHasBeenSet() const;
 
                     /**
-                     * 获取<p>口播/字幕语言</p><p>枚举值：</p><ul><li>english： 英文</li><li>chinese： 中文</li><li>japanese： 日语</li><li>korean： 汉语</li><li>spanish： 西班牙语</li><li>portuguese： 葡萄牙语</li><li>music_only： 纯音乐无口播</li></ul>
-                     * @return Language <p>口播/字幕语言</p><p>枚举值：</p><ul><li>english： 英文</li><li>chinese： 中文</li><li>japanese： 日语</li><li>korean： 汉语</li><li>spanish： 西班牙语</li><li>portuguese： 葡萄牙语</li><li>music_only： 纯音乐无口播</li></ul>
+                     * 获取<p>口播/字幕语言</p><p>枚举值：</p><ul><li>english： 英文</li><li>chinese： 中文</li><li>japanese： 日语</li><li>korean： 韩语</li><li>spanish： 西班牙语</li><li>portuguese： 葡萄牙语</li><li>music_only： 纯音乐无口播</li></ul>
+                     * @return Language <p>口播/字幕语言</p><p>枚举值：</p><ul><li>english： 英文</li><li>chinese： 中文</li><li>japanese： 日语</li><li>korean： 韩语</li><li>spanish： 西班牙语</li><li>portuguese： 葡萄牙语</li><li>music_only： 纯音乐无口播</li></ul>
                      * 
                      */
                     std::string GetLanguage() const;
 
                     /**
-                     * 设置<p>口播/字幕语言</p><p>枚举值：</p><ul><li>english： 英文</li><li>chinese： 中文</li><li>japanese： 日语</li><li>korean： 汉语</li><li>spanish： 西班牙语</li><li>portuguese： 葡萄牙语</li><li>music_only： 纯音乐无口播</li></ul>
-                     * @param _language <p>口播/字幕语言</p><p>枚举值：</p><ul><li>english： 英文</li><li>chinese： 中文</li><li>japanese： 日语</li><li>korean： 汉语</li><li>spanish： 西班牙语</li><li>portuguese： 葡萄牙语</li><li>music_only： 纯音乐无口播</li></ul>
+                     * 设置<p>口播/字幕语言</p><p>枚举值：</p><ul><li>english： 英文</li><li>chinese： 中文</li><li>japanese： 日语</li><li>korean： 韩语</li><li>spanish： 西班牙语</li><li>portuguese： 葡萄牙语</li><li>music_only： 纯音乐无口播</li></ul>
+                     * @param _language <p>口播/字幕语言</p><p>枚举值：</p><ul><li>english： 英文</li><li>chinese： 中文</li><li>japanese： 日语</li><li>korean： 韩语</li><li>spanish： 西班牙语</li><li>portuguese： 葡萄牙语</li><li>music_only： 纯音乐无口播</li></ul>
                      * 
                      */
                     void SetLanguage(const std::string& _language);
@@ -239,7 +239,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>视频输出时长</p><p>取值范围：[1, 15]</p><p>单位：秒</p><p>默认值：15</p>
+                     * <p>视频输出时长</p><p>取值范围：[4, 15]</p><p>单位：秒</p><p>默认值：15</p>
                      */
                     uint64_t m_duration;
                     bool m_durationHasBeenSet;
@@ -269,7 +269,7 @@ namespace TencentCloud
                     bool m_marketHasBeenSet;
 
                     /**
-                     * <p>口播/字幕语言</p><p>枚举值：</p><ul><li>english： 英文</li><li>chinese： 中文</li><li>japanese： 日语</li><li>korean： 汉语</li><li>spanish： 西班牙语</li><li>portuguese： 葡萄牙语</li><li>music_only： 纯音乐无口播</li></ul>
+                     * <p>口播/字幕语言</p><p>枚举值：</p><ul><li>english： 英文</li><li>chinese： 中文</li><li>japanese： 日语</li><li>korean： 韩语</li><li>spanish： 西班牙语</li><li>portuguese： 葡萄牙语</li><li>music_only： 纯音乐无口播</li></ul>
                      */
                     std::string m_language;
                     bool m_languageHasBeenSet;

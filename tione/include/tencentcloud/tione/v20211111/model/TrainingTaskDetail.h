@@ -951,15 +951,15 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取<p>任务状态，eg：STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成</p>
-                     * @return Status <p>任务状态，eg：STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成</p>
+                     * 获取<p>任务状态</p><p>枚举值：</p><ul><li>SUBMITTING： 排队中</li><li>STARTING： 启动中</li><li>RUNNING： 运行中</li><li>STOPPING： 停止中</li><li>STOPPED： 已停止</li><li>FAILED： 异常</li><li>SUCCEED： 已完成</li><li>SUBMIT_FAILED： 提交失败</li></ul>
+                     * @return Status <p>任务状态</p><p>枚举值：</p><ul><li>SUBMITTING： 排队中</li><li>STARTING： 启动中</li><li>RUNNING： 运行中</li><li>STOPPING： 停止中</li><li>STOPPED： 已停止</li><li>FAILED： 异常</li><li>SUCCEED： 已完成</li><li>SUBMIT_FAILED： 提交失败</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置<p>任务状态，eg：STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成</p>
-                     * @param _status <p>任务状态，eg：STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成</p>
+                     * 设置<p>任务状态</p><p>枚举值：</p><ul><li>SUBMITTING： 排队中</li><li>STARTING： 启动中</li><li>RUNNING： 运行中</li><li>STOPPING： 停止中</li><li>STOPPED： 已停止</li><li>FAILED： 异常</li><li>SUCCEED： 已完成</li><li>SUBMIT_FAILED： 提交失败</li></ul>
+                     * @param _status <p>任务状态</p><p>枚举值：</p><ul><li>SUBMITTING： 排队中</li><li>STARTING： 启动中</li><li>RUNNING： 运行中</li><li>STOPPING： 停止中</li><li>STOPPED： 已停止</li><li>FAILED： 异常</li><li>SUCCEED： 已完成</li><li>SUBMIT_FAILED： 提交失败</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -1314,7 +1314,7 @@ namespace TencentCloud
                     bool m_messageHasBeenSet;
 
                     /**
-                     * <p>任务状态，eg：STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成</p>
+                     * <p>任务状态</p><p>枚举值：</p><ul><li>SUBMITTING： 排队中</li><li>STARTING： 启动中</li><li>RUNNING： 运行中</li><li>STOPPING： 停止中</li><li>STOPPED： 已停止</li><li>FAILED： 异常</li><li>SUCCEED： 已完成</li><li>SUBMIT_FAILED： 提交失败</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

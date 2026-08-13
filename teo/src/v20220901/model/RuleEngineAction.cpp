@@ -62,7 +62,8 @@ RuleEngineAction::RuleEngineAction() :
     m_setContentIdentifierParametersHasBeenSet(false),
     m_varyParametersHasBeenSet(false),
     m_contentCompressionParametersHasBeenSet(false),
-    m_originAuthenticationParametersHasBeenSet(false)
+    m_originAuthenticationParametersHasBeenSet(false),
+    m_customActionParametersHasBeenSet(false)
 {
 }
 
@@ -778,6 +779,23 @@ CoreInternalOutcome RuleEngineAction::Deserialize(const rapidjson::Value &value)
         m_originAuthenticationParametersHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomActionParameters") && !value["CustomActionParameters"].IsNull())
+    {
+        if (!value["CustomActionParameters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleEngineAction.CustomActionParameters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_customActionParameters.Deserialize(value["CustomActionParameters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_customActionParametersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1160,6 +1178,15 @@ void RuleEngineAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_originAuthenticationParameters.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_customActionParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomActionParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customActionParameters.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1835,5 +1862,21 @@ void RuleEngineAction::SetOriginAuthenticationParameters(const OriginAuthenticat
 bool RuleEngineAction::OriginAuthenticationParametersHasBeenSet() const
 {
     return m_originAuthenticationParametersHasBeenSet;
+}
+
+CustomActionParameters RuleEngineAction::GetCustomActionParameters() const
+{
+    return m_customActionParameters;
+}
+
+void RuleEngineAction::SetCustomActionParameters(const CustomActionParameters& _customActionParameters)
+{
+    m_customActionParameters = _customActionParameters;
+    m_customActionParametersHasBeenSet = true;
+}
+
+bool RuleEngineAction::CustomActionParametersHasBeenSet() const
+{
+    return m_customActionParametersHasBeenSet;
 }
 

@@ -8190,6 +8190,56 @@ TeoClient::DownloadL7LogsOutcomeCallable TeoClient::DownloadL7LogsCallable(const
     return prom->get_future();
 }
 
+TeoClient::DummyParseZoneFullConfigOutcome TeoClient::DummyParseZoneFullConfig(const DummyParseZoneFullConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DummyParseZoneFullConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DummyParseZoneFullConfigResponse rsp = DummyParseZoneFullConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DummyParseZoneFullConfigOutcome(rsp);
+        else
+            return DummyParseZoneFullConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DummyParseZoneFullConfigOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DummyParseZoneFullConfigAsync(const DummyParseZoneFullConfigRequest& request, const DummyParseZoneFullConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DummyParseZoneFullConfigRequest&;
+    using Resp = DummyParseZoneFullConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DummyParseZoneFullConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DummyParseZoneFullConfigOutcomeCallable TeoClient::DummyParseZoneFullConfigCallable(const DummyParseZoneFullConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DummyParseZoneFullConfigOutcome>>();
+    DummyParseZoneFullConfigAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DummyParseZoneFullConfigRequest&,
+        DummyParseZoneFullConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TeoClient::EdgeKVDeleteOutcome TeoClient::EdgeKVDelete(const EdgeKVDeleteRequest &request)
 {
     auto outcome = MakeRequest(request, "EdgeKVDelete");

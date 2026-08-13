@@ -33,6 +33,7 @@
 #include <tencentcloud/monitor/v20230616/model/PagerDutyRobotNoticeTmplMatcher.h>
 #include <tencentcloud/monitor/v20230616/model/GoogleChatRobotNoticeTmplMatcher.h>
 #include <tencentcloud/monitor/v20230616/model/SlackRobotNoticeTmplMatcher.h>
+#include <tencentcloud/monitor/v20230616/model/TeamsWorkflowRobotNoticeTmplMatcher.h>
 
 
 namespace TencentCloud
@@ -272,6 +273,27 @@ namespace TencentCloud
                      */
                     bool SlackRobotHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Teams 工作流渠道</p>
+                     * @return TeamsWorkflowRobot <p>Teams 工作流渠道</p>
+                     * 
+                     */
+                    std::vector<TeamsWorkflowRobotNoticeTmplMatcher> GetTeamsWorkflowRobot() const;
+
+                    /**
+                     * 设置<p>Teams 工作流渠道</p>
+                     * @param _teamsWorkflowRobot <p>Teams 工作流渠道</p>
+                     * 
+                     */
+                    void SetTeamsWorkflowRobot(const std::vector<TeamsWorkflowRobotNoticeTmplMatcher>& _teamsWorkflowRobot);
+
+                    /**
+                     * 判断参数 TeamsWorkflowRobot 是否已赋值
+                     * @return TeamsWorkflowRobot 是否已赋值
+                     * 
+                     */
+                    bool TeamsWorkflowRobotHasBeenSet() const;
+
                 private:
 
                     /**
@@ -334,6 +356,12 @@ namespace TencentCloud
                      */
                     std::vector<SlackRobotNoticeTmplMatcher> m_slackRobot;
                     bool m_slackRobotHasBeenSet;
+
+                    /**
+                     * <p>Teams 工作流渠道</p>
+                     */
+                    std::vector<TeamsWorkflowRobotNoticeTmplMatcher> m_teamsWorkflowRobot;
+                    bool m_teamsWorkflowRobotHasBeenSet;
 
                 };
             }

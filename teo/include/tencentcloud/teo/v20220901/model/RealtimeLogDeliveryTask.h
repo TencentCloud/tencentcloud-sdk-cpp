@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/CustomField.h>
+#include <tencentcloud/teo/v20220901/model/CustomExpressionField.h>
 #include <tencentcloud/teo/v20220901/model/DeliveryCondition.h>
 #include <tencentcloud/teo/v20220901/model/LogFormat.h>
 #include <tencentcloud/teo/v20220901/model/CLSTopic.h>
@@ -116,15 +117,15 @@ namespace TencentCloud
                     bool DeliveryStatusHasBeenSet() const;
 
                     /**
-                     * 获取<p>实时日志投递任务类型，取值有： <li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 AWS S3 兼容存储桶地址；</li><li>log_analysis：推送到 EdgeOne 日志分析。</li></p>
-                     * @return TaskType <p>实时日志投递任务类型，取值有： <li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 AWS S3 兼容存储桶地址；</li><li>log_analysis：推送到 EdgeOne 日志分析。</li></p>
+                     * 获取<p>实时日志投递任务类型，取值有： <ul><li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 S3 兼容（兼容 SigV4 鉴权算法）的对象存储的地址；</li><li>log_analysis：推送到 EdgeOne 日志分析。</li></ul></p>
+                     * @return TaskType <p>实时日志投递任务类型，取值有： <ul><li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 S3 兼容（兼容 SigV4 鉴权算法）的对象存储的地址；</li><li>log_analysis：推送到 EdgeOne 日志分析。</li></ul></p>
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置<p>实时日志投递任务类型，取值有： <li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 AWS S3 兼容存储桶地址；</li><li>log_analysis：推送到 EdgeOne 日志分析。</li></p>
-                     * @param _taskType <p>实时日志投递任务类型，取值有： <li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 AWS S3 兼容存储桶地址；</li><li>log_analysis：推送到 EdgeOne 日志分析。</li></p>
+                     * 设置<p>实时日志投递任务类型，取值有： <ul><li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 S3 兼容（兼容 SigV4 鉴权算法）的对象存储的地址；</li><li>log_analysis：推送到 EdgeOne 日志分析。</li></ul></p>
+                     * @param _taskType <p>实时日志投递任务类型，取值有： <ul><li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 S3 兼容（兼容 SigV4 鉴权算法）的对象存储的地址；</li><li>log_analysis：推送到 EdgeOne 日志分析。</li></ul></p>
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -240,6 +241,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CustomFieldsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>投递的自定义表达式字段列表。</p>
+                     * @return CustomExpressionFields <p>投递的自定义表达式字段列表。</p>
+                     * 
+                     */
+                    std::vector<CustomExpressionField> GetCustomExpressionFields() const;
+
+                    /**
+                     * 设置<p>投递的自定义表达式字段列表。</p>
+                     * @param _customExpressionFields <p>投递的自定义表达式字段列表。</p>
+                     * 
+                     */
+                    void SetCustomExpressionFields(const std::vector<CustomExpressionField>& _customExpressionFields);
+
+                    /**
+                     * 判断参数 CustomExpressionFields 是否已赋值
+                     * @return CustomExpressionFields 是否已赋值
+                     * 
+                     */
+                    bool CustomExpressionFieldsHasBeenSet() const;
 
                     /**
                      * 获取<p>日志投递的过滤条件。</p>
@@ -359,18 +381,18 @@ namespace TencentCloud
                     bool CustomEndpointHasBeenSet() const;
 
                     /**
-                     * 获取<p>AWS S3 兼容存储桶的配置信息。</p>
+                     * 获取<p>S3 兼容（兼容 SigV4 鉴权算法）的对象存储的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return S3 <p>AWS S3 兼容存储桶的配置信息。</p>
+                     * @return S3 <p>S3 兼容（兼容 SigV4 鉴权算法）的对象存储的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     S3 GetS3() const;
 
                     /**
-                     * 设置<p>AWS S3 兼容存储桶的配置信息。</p>
+                     * 设置<p>S3 兼容（兼容 SigV4 鉴权算法）的对象存储的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _s3 <p>AWS S3 兼容存储桶的配置信息。</p>
+                     * @param _s3 <p>S3 兼容（兼容 SigV4 鉴权算法）的对象存储的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -446,7 +468,7 @@ namespace TencentCloud
                     bool m_deliveryStatusHasBeenSet;
 
                     /**
-                     * <p>实时日志投递任务类型，取值有： <li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 AWS S3 兼容存储桶地址；</li><li>log_analysis：推送到 EdgeOne 日志分析。</li></p>
+                     * <p>实时日志投递任务类型，取值有： <ul><li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 S3 兼容（兼容 SigV4 鉴权算法）的对象存储的地址；</li><li>log_analysis：推送到 EdgeOne 日志分析。</li></ul></p>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
@@ -482,6 +504,12 @@ namespace TencentCloud
                     bool m_customFieldsHasBeenSet;
 
                     /**
+                     * <p>投递的自定义表达式字段列表。</p>
+                     */
+                    std::vector<CustomExpressionField> m_customExpressionFields;
+                    bool m_customExpressionFieldsHasBeenSet;
+
+                    /**
                      * <p>日志投递的过滤条件。</p>
                      */
                     std::vector<DeliveryCondition> m_deliveryConditions;
@@ -515,7 +543,7 @@ namespace TencentCloud
                     bool m_customEndpointHasBeenSet;
 
                     /**
-                     * <p>AWS S3 兼容存储桶的配置信息。</p>
+                     * <p>S3 兼容（兼容 SigV4 鉴权算法）的对象存储的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     S3 m_s3;

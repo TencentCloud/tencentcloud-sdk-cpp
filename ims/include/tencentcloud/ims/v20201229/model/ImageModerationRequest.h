@@ -45,19 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取该字段表示使用的策略的具体编号，该字段需要先在[内容安全控制台](https://console.cloud.tencent.com/cms/clouds/manage)中配置。
-备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。
-                     * @return BizType 该字段表示使用的策略的具体编号，该字段需要先在[内容安全控制台](https://console.cloud.tencent.com/cms/clouds/manage)中配置。
-备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。
+                     * 获取<p>该字段表示使用的策略的具体编号，该字段需要先在<a href="https://console.cloud.tencent.com/cms/clouds/manage">内容安全控制台</a>中配置。<br>备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。</p>
+                     * @return BizType <p>该字段表示使用的策略的具体编号，该字段需要先在<a href="https://console.cloud.tencent.com/cms/clouds/manage">内容安全控制台</a>中配置。<br>备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。</p>
                      * 
                      */
                     std::string GetBizType() const;
 
                     /**
-                     * 设置该字段表示使用的策略的具体编号，该字段需要先在[内容安全控制台](https://console.cloud.tencent.com/cms/clouds/manage)中配置。
-备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。
-                     * @param _bizType 该字段表示使用的策略的具体编号，该字段需要先在[内容安全控制台](https://console.cloud.tencent.com/cms/clouds/manage)中配置。
-备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。
+                     * 设置<p>该字段表示使用的策略的具体编号，该字段需要先在<a href="https://console.cloud.tencent.com/cms/clouds/manage">内容安全控制台</a>中配置。<br>备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。</p>
+                     * @param _bizType <p>该字段表示使用的策略的具体编号，该字段需要先在<a href="https://console.cloud.tencent.com/cms/clouds/manage">内容安全控制台</a>中配置。<br>备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。</p>
                      * 
                      */
                     void SetBizType(const std::string& _bizType);
@@ -70,15 +66,15 @@ namespace TencentCloud
                     bool BizTypeHasBeenSet() const;
 
                     /**
-                     * 获取该字段表示您为待检测对象分配的数据ID，传入后可方便您对文件进行标识和管理。<br>取值：由英文字母（大小写均可）、数字及四个特殊符号（_，-，@，#）组成，**长度不超过64个字符**。
-                     * @return DataId 该字段表示您为待检测对象分配的数据ID，传入后可方便您对文件进行标识和管理。<br>取值：由英文字母（大小写均可）、数字及四个特殊符号（_，-，@，#）组成，**长度不超过64个字符**。
+                     * 获取<p>该字段表示您为待检测对象分配的数据ID，传入后可方便您对文件进行标识和管理。<br>取值：由英文字母（大小写均可）、数字及四个特殊符号（_，-，@，#）组成，<strong>长度不超过64个字符</strong>。</p>
+                     * @return DataId <p>该字段表示您为待检测对象分配的数据ID，传入后可方便您对文件进行标识和管理。<br>取值：由英文字母（大小写均可）、数字及四个特殊符号（_，-，@，#）组成，<strong>长度不超过64个字符</strong>。</p>
                      * 
                      */
                     std::string GetDataId() const;
 
                     /**
-                     * 设置该字段表示您为待检测对象分配的数据ID，传入后可方便您对文件进行标识和管理。<br>取值：由英文字母（大小写均可）、数字及四个特殊符号（_，-，@，#）组成，**长度不超过64个字符**。
-                     * @param _dataId 该字段表示您为待检测对象分配的数据ID，传入后可方便您对文件进行标识和管理。<br>取值：由英文字母（大小写均可）、数字及四个特殊符号（_，-，@，#）组成，**长度不超过64个字符**。
+                     * 设置<p>该字段表示您为待检测对象分配的数据ID，传入后可方便您对文件进行标识和管理。<br>取值：由英文字母（大小写均可）、数字及四个特殊符号（_，-，@，#）组成，<strong>长度不超过64个字符</strong>。</p>
+                     * @param _dataId <p>该字段表示您为待检测对象分配的数据ID，传入后可方便您对文件进行标识和管理。<br>取值：由英文字母（大小写均可）、数字及四个特殊符号（_，-，@，#）组成，<strong>长度不超过64个字符</strong>。</p>
                      * 
                      */
                     void SetDataId(const std::string& _dataId);
@@ -91,15 +87,15 @@ namespace TencentCloud
                     bool DataIdHasBeenSet() const;
 
                     /**
-                     * 获取该字段表示待检测图片文件内容的Base64编码，由于云API对请求包体有大小限制，图片的**Base64编码内容大小不得超过10MB**。<br/>备注：**该字段与FileUrl必须选择输入其中一个**。
-                     * @return FileContent 该字段表示待检测图片文件内容的Base64编码，由于云API对请求包体有大小限制，图片的**Base64编码内容大小不得超过10MB**。<br/>备注：**该字段与FileUrl必须选择输入其中一个**。
+                     * 获取<p>该字段表示待检测图片文件内容的Base64编码，由于云API对请求包体有大小限制，图片的<strong>Base64编码内容大小不得超过10MB</strong>。<br>备注：<strong>该字段与FileUrl必须选择输入其中一个</strong>。</p>
+                     * @return FileContent <p>该字段表示待检测图片文件内容的Base64编码，由于云API对请求包体有大小限制，图片的<strong>Base64编码内容大小不得超过10MB</strong>。<br>备注：<strong>该字段与FileUrl必须选择输入其中一个</strong>。</p>
                      * 
                      */
                     std::string GetFileContent() const;
 
                     /**
-                     * 设置该字段表示待检测图片文件内容的Base64编码，由于云API对请求包体有大小限制，图片的**Base64编码内容大小不得超过10MB**。<br/>备注：**该字段与FileUrl必须选择输入其中一个**。
-                     * @param _fileContent 该字段表示待检测图片文件内容的Base64编码，由于云API对请求包体有大小限制，图片的**Base64编码内容大小不得超过10MB**。<br/>备注：**该字段与FileUrl必须选择输入其中一个**。
+                     * 设置<p>该字段表示待检测图片文件内容的Base64编码，由于云API对请求包体有大小限制，图片的<strong>Base64编码内容大小不得超过10MB</strong>。<br>备注：<strong>该字段与FileUrl必须选择输入其中一个</strong>。</p>
+                     * @param _fileContent <p>该字段表示待检测图片文件内容的Base64编码，由于云API对请求包体有大小限制，图片的<strong>Base64编码内容大小不得超过10MB</strong>。<br>备注：<strong>该字段与FileUrl必须选择输入其中一个</strong>。</p>
                      * 
                      */
                     void SetFileContent(const std::string& _fileContent);
@@ -112,15 +108,15 @@ namespace TencentCloud
                     bool FileContentHasBeenSet() const;
 
                     /**
-                     * 获取该字段表示待检测图片文件的访问链接，URL源图**大小不超过30MB**。<br />备注：该字段与FileContent必须选择输入其中一个。
-                     * @return FileUrl 该字段表示待检测图片文件的访问链接，URL源图**大小不超过30MB**。<br />备注：该字段与FileContent必须选择输入其中一个。
+                     * 获取<p>该字段表示待检测图片文件的访问链接，URL源图<strong>大小不超过30MB</strong>。<br>备注：该字段与FileContent必须选择输入其中一个。</p>
+                     * @return FileUrl <p>该字段表示待检测图片文件的访问链接，URL源图<strong>大小不超过30MB</strong>。<br>备注：该字段与FileContent必须选择输入其中一个。</p>
                      * 
                      */
                     std::string GetFileUrl() const;
 
                     /**
-                     * 设置该字段表示待检测图片文件的访问链接，URL源图**大小不超过30MB**。<br />备注：该字段与FileContent必须选择输入其中一个。
-                     * @param _fileUrl 该字段表示待检测图片文件的访问链接，URL源图**大小不超过30MB**。<br />备注：该字段与FileContent必须选择输入其中一个。
+                     * 设置<p>该字段表示待检测图片文件的访问链接，URL源图<strong>大小不超过30MB</strong>。<br>备注：该字段与FileContent必须选择输入其中一个。</p>
+                     * @param _fileUrl <p>该字段表示待检测图片文件的访问链接，URL源图<strong>大小不超过30MB</strong>。<br>备注：该字段与FileContent必须选择输入其中一个。</p>
                      * 
                      */
                     void SetFileUrl(const std::string& _fileUrl);
@@ -133,15 +129,15 @@ namespace TencentCloud
                     bool FileUrlHasBeenSet() const;
 
                     /**
-                     * 获取**GIF检测专用**，用于表示GIF截帧频率（每隔多少张图片抽取一帧进行检测）；默认值为0，此时只会检测GIF的第一帧或不进行切分处理。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。
-                     * @return Interval **GIF检测专用**，用于表示GIF截帧频率（每隔多少张图片抽取一帧进行检测）；默认值为0，此时只会检测GIF的第一帧或不进行切分处理。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。
+                     * 获取<p><strong>GIF检测专用</strong>，用于表示GIF截帧频率（每隔多少张图片抽取一帧进行检测）；默认值为0，此时只会检测GIF的第一帧或不进行切分处理。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。</p>
+                     * @return Interval <p><strong>GIF检测专用</strong>，用于表示GIF截帧频率（每隔多少张图片抽取一帧进行检测）；默认值为0，此时只会检测GIF的第一帧或不进行切分处理。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。</p>
                      * 
                      */
                     int64_t GetInterval() const;
 
                     /**
-                     * 设置**GIF检测专用**，用于表示GIF截帧频率（每隔多少张图片抽取一帧进行检测）；默认值为0，此时只会检测GIF的第一帧或不进行切分处理。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。
-                     * @param _interval **GIF检测专用**，用于表示GIF截帧频率（每隔多少张图片抽取一帧进行检测）；默认值为0，此时只会检测GIF的第一帧或不进行切分处理。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。
+                     * 设置<p><strong>GIF检测专用</strong>，用于表示GIF截帧频率（每隔多少张图片抽取一帧进行检测）；默认值为0，此时只会检测GIF的第一帧或不进行切分处理。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。</p>
+                     * @param _interval <p><strong>GIF检测专用</strong>，用于表示GIF截帧频率（每隔多少张图片抽取一帧进行检测）；默认值为0，此时只会检测GIF的第一帧或不进行切分处理。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。</p>
                      * 
                      */
                     void SetInterval(const int64_t& _interval);
@@ -154,15 +150,15 @@ namespace TencentCloud
                     bool IntervalHasBeenSet() const;
 
                     /**
-                     * 获取**GIF检测专用**，用于标识最大截帧数量；默认值为1，此时只会检测输入GIF的第一帧不进行切分处理（可能会造成处理超时）。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。
-                     * @return MaxFrames **GIF检测专用**，用于标识最大截帧数量；默认值为1，此时只会检测输入GIF的第一帧不进行切分处理（可能会造成处理超时）。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。
+                     * 获取<p><strong>GIF检测专用</strong>，用于标识最大截帧数量；默认值为1，此时只会检测输入GIF的第一帧不进行切分处理（可能会造成处理超时）。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。</p>
+                     * @return MaxFrames <p><strong>GIF检测专用</strong>，用于标识最大截帧数量；默认值为1，此时只会检测输入GIF的第一帧不进行切分处理（可能会造成处理超时）。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。</p>
                      * 
                      */
                     int64_t GetMaxFrames() const;
 
                     /**
-                     * 设置**GIF检测专用**，用于标识最大截帧数量；默认值为1，此时只会检测输入GIF的第一帧不进行切分处理（可能会造成处理超时）。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。
-                     * @param _maxFrames **GIF检测专用**，用于标识最大截帧数量；默认值为1，此时只会检测输入GIF的第一帧不进行切分处理（可能会造成处理超时）。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。
+                     * 设置<p><strong>GIF检测专用</strong>，用于标识最大截帧数量；默认值为1，此时只会检测输入GIF的第一帧不进行切分处理（可能会造成处理超时）。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。</p>
+                     * @param _maxFrames <p><strong>GIF检测专用</strong>，用于标识最大截帧数量；默认值为1，此时只会检测输入GIF的第一帧不进行切分处理（可能会造成处理超时）。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。</p>
                      * 
                      */
                     void SetMaxFrames(const int64_t& _maxFrames);
@@ -175,15 +171,15 @@ namespace TencentCloud
                     bool MaxFramesHasBeenSet() const;
 
                     /**
-                     * 获取该字段表示待检测对象对应的用户相关信息，若填入则可甄别相应违规风险用户。
-                     * @return User 该字段表示待检测对象对应的用户相关信息，若填入则可甄别相应违规风险用户。
+                     * 获取<p>该字段表示待检测对象对应的用户相关信息，若填入则可甄别相应违规风险用户。</p>
+                     * @return User <p>该字段表示待检测对象对应的用户相关信息，若填入则可甄别相应违规风险用户。</p>
                      * 
                      */
                     User GetUser() const;
 
                     /**
-                     * 设置该字段表示待检测对象对应的用户相关信息，若填入则可甄别相应违规风险用户。
-                     * @param _user 该字段表示待检测对象对应的用户相关信息，若填入则可甄别相应违规风险用户。
+                     * 设置<p>该字段表示待检测对象对应的用户相关信息，若填入则可甄别相应违规风险用户。</p>
+                     * @param _user <p>该字段表示待检测对象对应的用户相关信息，若填入则可甄别相应违规风险用户。</p>
                      * 
                      */
                     void SetUser(const User& _user);
@@ -196,15 +192,15 @@ namespace TencentCloud
                     bool UserHasBeenSet() const;
 
                     /**
-                     * 获取该字段表示待检测对象对应的设备相关信息，若填入则可甄别相应违规风险设备。
-                     * @return Device 该字段表示待检测对象对应的设备相关信息，若填入则可甄别相应违规风险设备。
+                     * 获取<p>该字段表示待检测对象对应的设备相关信息，若填入则可甄别相应违规风险设备。</p>
+                     * @return Device <p>该字段表示待检测对象对应的设备相关信息，若填入则可甄别相应违规风险设备。</p>
                      * 
                      */
                     Device GetDevice() const;
 
                     /**
-                     * 设置该字段表示待检测对象对应的设备相关信息，若填入则可甄别相应违规风险设备。
-                     * @param _device 该字段表示待检测对象对应的设备相关信息，若填入则可甄别相应违规风险设备。
+                     * 设置<p>该字段表示待检测对象对应的设备相关信息，若填入则可甄别相应违规风险设备。</p>
+                     * @param _device <p>该字段表示待检测对象对应的设备相关信息，若填入则可甄别相应违规风险设备。</p>
                      * 
                      */
                     void SetDevice(const Device& _device);
@@ -217,15 +213,15 @@ namespace TencentCloud
                     bool DeviceHasBeenSet() const;
 
                     /**
-                     * 获取该字段表示输入的图片审核类型，取值含：IMAGE（内容安全）、IMAGE_AIGC（AI生成识别）两种，默认值为IMAGE。
-                     * @return Type 该字段表示输入的图片审核类型，取值含：IMAGE（内容安全）、IMAGE_AIGC（AI生成识别）两种，默认值为IMAGE。
+                     * 获取<p>该字段表示输入的图片审核类型，取值含：IMAGE（内容安全）、IMAGE_AIGC（AI生成识别）两种，默认值为IMAGE。</p>
+                     * @return Type <p>该字段表示输入的图片审核类型，取值含：IMAGE（内容安全）、IMAGE_AIGC（AI生成识别）两种，默认值为IMAGE。</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置该字段表示输入的图片审核类型，取值含：IMAGE（内容安全）、IMAGE_AIGC（AI生成识别）两种，默认值为IMAGE。
-                     * @param _type 该字段表示输入的图片审核类型，取值含：IMAGE（内容安全）、IMAGE_AIGC（AI生成识别）两种，默认值为IMAGE。
+                     * 设置<p>该字段表示输入的图片审核类型，取值含：IMAGE（内容安全）、IMAGE_AIGC（AI生成识别）两种，默认值为IMAGE。</p>
+                     * @param _type <p>该字段表示输入的图片审核类型，取值含：IMAGE（内容安全）、IMAGE_AIGC（AI生成识别）两种，默认值为IMAGE。</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -237,62 +233,88 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>该字段表示输入的策略标识用于调用业务来区分策略场景</p>
+                     * @return BizTag <p>该字段表示输入的策略标识用于调用业务来区分策略场景</p>
+                     * 
+                     */
+                    std::string GetBizTag() const;
+
+                    /**
+                     * 设置<p>该字段表示输入的策略标识用于调用业务来区分策略场景</p>
+                     * @param _bizTag <p>该字段表示输入的策略标识用于调用业务来区分策略场景</p>
+                     * 
+                     */
+                    void SetBizTag(const std::string& _bizTag);
+
+                    /**
+                     * 判断参数 BizTag 是否已赋值
+                     * @return BizTag 是否已赋值
+                     * 
+                     */
+                    bool BizTagHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 该字段表示使用的策略的具体编号，该字段需要先在[内容安全控制台](https://console.cloud.tencent.com/cms/clouds/manage)中配置。
-备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。
+                     * <p>该字段表示使用的策略的具体编号，该字段需要先在<a href="https://console.cloud.tencent.com/cms/clouds/manage">内容安全控制台</a>中配置。<br>备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。</p>
                      */
                     std::string m_bizType;
                     bool m_bizTypeHasBeenSet;
 
                     /**
-                     * 该字段表示您为待检测对象分配的数据ID，传入后可方便您对文件进行标识和管理。<br>取值：由英文字母（大小写均可）、数字及四个特殊符号（_，-，@，#）组成，**长度不超过64个字符**。
+                     * <p>该字段表示您为待检测对象分配的数据ID，传入后可方便您对文件进行标识和管理。<br>取值：由英文字母（大小写均可）、数字及四个特殊符号（_，-，@，#）组成，<strong>长度不超过64个字符</strong>。</p>
                      */
                     std::string m_dataId;
                     bool m_dataIdHasBeenSet;
 
                     /**
-                     * 该字段表示待检测图片文件内容的Base64编码，由于云API对请求包体有大小限制，图片的**Base64编码内容大小不得超过10MB**。<br/>备注：**该字段与FileUrl必须选择输入其中一个**。
+                     * <p>该字段表示待检测图片文件内容的Base64编码，由于云API对请求包体有大小限制，图片的<strong>Base64编码内容大小不得超过10MB</strong>。<br>备注：<strong>该字段与FileUrl必须选择输入其中一个</strong>。</p>
                      */
                     std::string m_fileContent;
                     bool m_fileContentHasBeenSet;
 
                     /**
-                     * 该字段表示待检测图片文件的访问链接，URL源图**大小不超过30MB**。<br />备注：该字段与FileContent必须选择输入其中一个。
+                     * <p>该字段表示待检测图片文件的访问链接，URL源图<strong>大小不超过30MB</strong>。<br>备注：该字段与FileContent必须选择输入其中一个。</p>
                      */
                     std::string m_fileUrl;
                     bool m_fileUrlHasBeenSet;
 
                     /**
-                     * **GIF检测专用**，用于表示GIF截帧频率（每隔多少张图片抽取一帧进行检测）；默认值为0，此时只会检测GIF的第一帧或不进行切分处理。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。
+                     * <p><strong>GIF检测专用</strong>，用于表示GIF截帧频率（每隔多少张图片抽取一帧进行检测）；默认值为0，此时只会检测GIF的第一帧或不进行切分处理。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。</p>
                      */
                     int64_t m_interval;
                     bool m_intervalHasBeenSet;
 
                     /**
-                     * **GIF检测专用**，用于标识最大截帧数量；默认值为1，此时只会检测输入GIF的第一帧不进行切分处理（可能会造成处理超时）。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。
+                     * <p><strong>GIF检测专用</strong>，用于标识最大截帧数量；默认值为1，此时只会检测输入GIF的第一帧不进行切分处理（可能会造成处理超时）。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。</p>
                      */
                     int64_t m_maxFrames;
                     bool m_maxFramesHasBeenSet;
 
                     /**
-                     * 该字段表示待检测对象对应的用户相关信息，若填入则可甄别相应违规风险用户。
+                     * <p>该字段表示待检测对象对应的用户相关信息，若填入则可甄别相应违规风险用户。</p>
                      */
                     User m_user;
                     bool m_userHasBeenSet;
 
                     /**
-                     * 该字段表示待检测对象对应的设备相关信息，若填入则可甄别相应违规风险设备。
+                     * <p>该字段表示待检测对象对应的设备相关信息，若填入则可甄别相应违规风险设备。</p>
                      */
                     Device m_device;
                     bool m_deviceHasBeenSet;
 
                     /**
-                     * 该字段表示输入的图片审核类型，取值含：IMAGE（内容安全）、IMAGE_AIGC（AI生成识别）两种，默认值为IMAGE。
+                     * <p>该字段表示输入的图片审核类型，取值含：IMAGE（内容安全）、IMAGE_AIGC（AI生成识别）两种，默认值为IMAGE。</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * <p>该字段表示输入的策略标识用于调用业务来区分策略场景</p>
+                     */
+                    std::string m_bizTag;
+                    bool m_bizTagHasBeenSet;
 
                 };
             }

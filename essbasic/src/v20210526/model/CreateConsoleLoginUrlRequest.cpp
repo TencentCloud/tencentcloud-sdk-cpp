@@ -46,7 +46,8 @@ CreateConsoleLoginUrlRequest::CreateConsoleLoginUrlRequest() :
     m_bankAccountNumberHasBeenSet(false),
     m_operatorHasBeenSet(false),
     m_jumpEventsHasBeenSet(false),
-    m_proxyOrganizationIdCardTypeHasBeenSet(false)
+    m_proxyOrganizationIdCardTypeHasBeenSet(false),
+    m_businessLicenseIdHasBeenSet(false)
 {
 }
 
@@ -267,6 +268,14 @@ string CreateConsoleLoginUrlRequest::ToJsonString() const
         string key = "ProxyOrganizationIdCardType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_proxyOrganizationIdCardType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_businessLicenseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessLicenseId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_businessLicenseId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -659,6 +668,22 @@ void CreateConsoleLoginUrlRequest::SetProxyOrganizationIdCardType(const string& 
 bool CreateConsoleLoginUrlRequest::ProxyOrganizationIdCardTypeHasBeenSet() const
 {
     return m_proxyOrganizationIdCardTypeHasBeenSet;
+}
+
+string CreateConsoleLoginUrlRequest::GetBusinessLicenseId() const
+{
+    return m_businessLicenseId;
+}
+
+void CreateConsoleLoginUrlRequest::SetBusinessLicenseId(const string& _businessLicenseId)
+{
+    m_businessLicenseId = _businessLicenseId;
+    m_businessLicenseIdHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::BusinessLicenseIdHasBeenSet() const
+{
+    return m_businessLicenseIdHasBeenSet;
 }
 
 

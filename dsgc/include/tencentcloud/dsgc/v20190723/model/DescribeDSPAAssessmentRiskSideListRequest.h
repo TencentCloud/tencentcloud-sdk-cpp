@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取DSPA实例ID
-                     * @return DspaId DSPA实例ID
+                     * 获取<p>DSPA实例ID</p>
+                     * @return DspaId <p>DSPA实例ID</p>
                      * 
                      */
                     std::string GetDspaId() const;
 
                     /**
-                     * 设置DSPA实例ID
-                     * @param _dspaId DSPA实例ID
+                     * 设置<p>DSPA实例ID</p>
+                     * @param _dspaId <p>DSPA实例ID</p>
                      * 
                      */
                     void SetDspaId(const std::string& _dspaId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DspaIdHasBeenSet() const;
 
                     /**
-                     * 获取评估模板id
-                     * @return TemplateId 评估模板id
+                     * 获取<p>评估模板id</p>
+                     * @return TemplateId <p>评估模板id</p>
                      * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置评估模板id
-                     * @param _templateId 评估模板id
+                     * 设置<p>评估模板id</p>
+                     * @param _templateId <p>评估模板id</p>
                      * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * DSPA实例ID
+                     * <p>DSPA实例ID</p>
                      */
                     std::string m_dspaId;
                     bool m_dspaIdHasBeenSet;
 
                     /**
-                     * 评估模板id
+                     * <p>评估模板id</p>
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份日志保留时长
-                     * @return BackupLogSaveTime 备份日志保留时长
+                     * 获取<p>备份日志保留时长</p>
+                     * @return BackupLogSaveTime <p>备份日志保留时长</p>
                      * 
                      */
                     int64_t GetBackupLogSaveTime() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool BackupLogSaveTimeHasBeenSet() const;
 
                     /**
-                     * 获取恢复日志保留时长
-                     * @return RestoreLogSaveTime 恢复日志保留时长
+                     * 获取<p>恢复日志保留时长</p>
+                     * @return RestoreLogSaveTime <p>恢复日志保留时长</p>
                      * 
                      */
                     int64_t GetRestoreLogSaveTime() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool RestoreLogSaveTimeHasBeenSet() const;
 
                     /**
-                     * 获取日志最大生命周期限制
-                     * @return LogMaxSaveTime 日志最大生命周期限制
+                     * 获取<p>日志最大生命周期限制</p>
+                     * @return LogMaxSaveTime <p>日志最大生命周期限制</p>
                      * 
                      */
                     int64_t GetLogMaxSaveTime() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool LogMaxSaveTimeHasBeenSet() const;
 
                     /**
-                     * 获取在线日志最大天数限制
-                     * @return OnlineLogMaxSaveTime 在线日志最大天数限制
+                     * 获取<p>在线日志最大天数限制</p>
+                     * @return OnlineLogMaxSaveTime <p>在线日志最大天数限制</p>
                      * 
                      */
                     int64_t GetOnlineLogMaxSaveTime() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool OnlineLogMaxSaveTimeHasBeenSet() const;
 
                     /**
-                     * 获取最大在线日志条数，单位是：个
-                     * @return MaxOnlineLogCount 最大在线日志条数，单位是：个
+                     * 获取<p>最大在线日志条数，单位是：个</p>
+                     * @return MaxOnlineLogCount <p>最大在线日志条数，单位是：个</p>
                      * 
                      */
                     int64_t GetMaxOnlineLogCount() const;
@@ -116,31 +116,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 备份日志保留时长
+                     * <p>备份日志保留时长</p>
                      */
                     int64_t m_backupLogSaveTime;
                     bool m_backupLogSaveTimeHasBeenSet;
 
                     /**
-                     * 恢复日志保留时长
+                     * <p>恢复日志保留时长</p>
                      */
                     int64_t m_restoreLogSaveTime;
                     bool m_restoreLogSaveTimeHasBeenSet;
 
                     /**
-                     * 日志最大生命周期限制
+                     * <p>日志最大生命周期限制</p>
                      */
                     int64_t m_logMaxSaveTime;
                     bool m_logMaxSaveTimeHasBeenSet;
 
                     /**
-                     * 在线日志最大天数限制
+                     * <p>在线日志最大天数限制</p>
                      */
                     int64_t m_onlineLogMaxSaveTime;
                     bool m_onlineLogMaxSaveTimeHasBeenSet;
 
                     /**
-                     * 最大在线日志条数，单位是：个
+                     * <p>最大在线日志条数，单位是：个</p>
                      */
                     int64_t m_maxOnlineLogCount;
                     bool m_maxOnlineLogCountHasBeenSet;

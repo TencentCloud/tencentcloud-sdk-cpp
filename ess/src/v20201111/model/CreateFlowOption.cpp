@@ -44,7 +44,8 @@ CreateFlowOption::CreateFlowOption() :
     m_hideSignCodeAfterStartHasBeenSet(false),
     m_previewAfterStartHasBeenSet(false),
     m_signAfterStartHasBeenSet(false),
-    m_needFlowDraftHasBeenSet(false)
+    m_needFlowDraftHasBeenSet(false),
+    m_ccInfoVisibilityHasBeenSet(false)
 {
 }
 
@@ -322,6 +323,16 @@ CoreInternalOutcome CreateFlowOption::Deserialize(const rapidjson::Value &value)
         m_needFlowDraftHasBeenSet = true;
     }
 
+    if (value.HasMember("CcInfoVisibility") && !value["CcInfoVisibility"].IsNull())
+    {
+        if (!value["CcInfoVisibility"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.CcInfoVisibility` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ccInfoVisibility = value["CcInfoVisibility"].GetInt64();
+        m_ccInfoVisibilityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -547,6 +558,14 @@ void CreateFlowOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "NeedFlowDraft";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_needFlowDraft, allocator);
+    }
+
+    if (m_ccInfoVisibilityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CcInfoVisibility";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ccInfoVisibility, allocator);
     }
 
 }
@@ -934,5 +953,21 @@ void CreateFlowOption::SetNeedFlowDraft(const bool& _needFlowDraft)
 bool CreateFlowOption::NeedFlowDraftHasBeenSet() const
 {
     return m_needFlowDraftHasBeenSet;
+}
+
+int64_t CreateFlowOption::GetCcInfoVisibility() const
+{
+    return m_ccInfoVisibility;
+}
+
+void CreateFlowOption::SetCcInfoVisibility(const int64_t& _ccInfoVisibility)
+{
+    m_ccInfoVisibility = _ccInfoVisibility;
+    m_ccInfoVisibilityHasBeenSet = true;
+}
+
+bool CreateFlowOption::CcInfoVisibilityHasBeenSet() const
+{
+    return m_ccInfoVisibilityHasBeenSet;
 }
 

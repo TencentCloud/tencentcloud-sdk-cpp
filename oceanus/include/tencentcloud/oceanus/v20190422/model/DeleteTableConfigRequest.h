@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取作业ID
-                     * @return JobId 作业ID
+                     * 获取<p>作业ID</p>
+                     * @return JobId <p>作业ID</p>
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置作业ID
-                     * @param _jobId 作业ID
+                     * 设置<p>作业ID</p>
+                     * @param _jobId <p>作业ID</p>
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取调试作业ID
-                     * @return DebugId 调试作业ID
+                     * 获取<p>调试作业ID</p>
+                     * @return DebugId <p>调试作业ID</p>
                      * 
                      */
                     int64_t GetDebugId() const;
 
                     /**
-                     * 设置调试作业ID
-                     * @param _debugId 调试作业ID
+                     * 设置<p>调试作业ID</p>
+                     * @param _debugId <p>调试作业ID</p>
                      * 
                      */
                     void SetDebugId(const int64_t& _debugId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DebugIdHasBeenSet() const;
 
                     /**
-                     * 获取表名
-                     * @return TableName 表名
+                     * 获取<p>表名</p>
+                     * @return TableName <p>表名</p>
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
-                     * 设置表名
-                     * @param _tableName 表名
+                     * 设置<p>表名</p>
+                     * @param _tableName <p>表名</p>
                      * 
                      */
                     void SetTableName(const std::string& _tableName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool TableNameHasBeenSet() const;
 
                     /**
-                     * 获取工作空间 SerialId
-                     * @return WorkSpaceId 工作空间 SerialId
+                     * 获取<p>工作空间 SerialId</p>
+                     * @return WorkSpaceId <p>工作空间 SerialId</p>
                      * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
-                     * 设置工作空间 SerialId
-                     * @param _workSpaceId 工作空间 SerialId
+                     * 设置<p>工作空间 SerialId</p>
+                     * @param _workSpaceId <p>工作空间 SerialId</p>
                      * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 作业ID
+                     * <p>作业ID</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 调试作业ID
+                     * <p>调试作业ID</p>
                      */
                     int64_t m_debugId;
                     bool m_debugIdHasBeenSet;
 
                     /**
-                     * 表名
+                     * <p>表名</p>
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
 
                     /**
-                     * 工作空间 SerialId
+                     * <p>工作空间 SerialId</p>
                      */
                     std::string m_workSpaceId;
                     bool m_workSpaceIdHasBeenSet;

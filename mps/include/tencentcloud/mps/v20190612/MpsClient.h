@@ -207,6 +207,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeAigcAudioTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAigcImageTaskRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAigcImageTaskResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeAigcTaskListRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeAigcTaskListResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAigcTaskStatusRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAigcTaskStatusResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAigcVideoTaskRequest.h>
@@ -759,6 +761,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAigcImageTaskResponse> DescribeAigcImageTaskOutcome;
                 typedef std::future<DescribeAigcImageTaskOutcome> DescribeAigcImageTaskOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeAigcImageTaskRequest&, DescribeAigcImageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcImageTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAigcTaskListResponse> DescribeAigcTaskListOutcome;
+                typedef std::future<DescribeAigcTaskListOutcome> DescribeAigcTaskListOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeAigcTaskListRequest&, DescribeAigcTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcTaskListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAigcTaskStatusResponse> DescribeAigcTaskStatusOutcome;
                 typedef std::future<DescribeAigcTaskStatusOutcome> DescribeAigcTaskStatusOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeAigcTaskStatusRequest&, DescribeAigcTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcTaskStatusAsyncHandler;
@@ -2015,6 +2020,15 @@ namespace TencentCloud
                 DescribeAigcImageTaskOutcome DescribeAigcImageTask(const Model::DescribeAigcImageTaskRequest &request);
                 void DescribeAigcImageTaskAsync(const Model::DescribeAigcImageTaskRequest& request, const DescribeAigcImageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAigcImageTaskOutcomeCallable DescribeAigcImageTaskCallable(const Model::DescribeAigcImageTaskRequest& request);
+
+                /**
+                 *查询AIGC任务列表详细信息
+                 * @param req DescribeAigcTaskListRequest
+                 * @return DescribeAigcTaskListOutcome
+                 */
+                DescribeAigcTaskListOutcome DescribeAigcTaskList(const Model::DescribeAigcTaskListRequest &request);
+                void DescribeAigcTaskListAsync(const Model::DescribeAigcTaskListRequest& request, const DescribeAigcTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAigcTaskListOutcomeCallable DescribeAigcTaskListCallable(const Model::DescribeAigcTaskListRequest& request);
 
                 /**
                  *查询AIGC场景任务接口

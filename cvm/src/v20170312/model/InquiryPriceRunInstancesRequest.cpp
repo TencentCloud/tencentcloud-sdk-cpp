@@ -44,7 +44,8 @@ InquiryPriceRunInstancesRequest::InquiryPriceRunInstancesRequest() :
     m_metadataHasBeenSet(false),
     m_hpcClusterIdHasBeenSet(false),
     m_cpuTopologyHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false)
+    m_launchTemplateHasBeenSet(false),
+    m_networkInterfacesHasBeenSet(false)
 {
 }
 
@@ -259,6 +260,21 @@ string InquiryPriceRunInstancesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_launchTemplate.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_networkInterfacesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkInterfaces";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_networkInterfaces.begin(); itr != m_networkInterfaces.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -619,6 +635,22 @@ void InquiryPriceRunInstancesRequest::SetLaunchTemplate(const LaunchTemplate& _l
 bool InquiryPriceRunInstancesRequest::LaunchTemplateHasBeenSet() const
 {
     return m_launchTemplateHasBeenSet;
+}
+
+vector<NetworkInterfaces> InquiryPriceRunInstancesRequest::GetNetworkInterfaces() const
+{
+    return m_networkInterfaces;
+}
+
+void InquiryPriceRunInstancesRequest::SetNetworkInterfaces(const vector<NetworkInterfaces>& _networkInterfaces)
+{
+    m_networkInterfaces = _networkInterfaces;
+    m_networkInterfacesHasBeenSet = true;
+}
+
+bool InquiryPriceRunInstancesRequest::NetworkInterfacesHasBeenSet() const
+{
+    return m_networkInterfacesHasBeenSet;
 }
 
 

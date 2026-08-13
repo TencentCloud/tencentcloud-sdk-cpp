@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取风险id
-                     * @return RiskId 风险id
+                     * 获取<p>风险id</p>
+                     * @return RiskId <p>风险id</p>
                      * 
                      */
                     std::string GetRiskId() const;
 
                     /**
-                     * 设置风险id
-                     * @param _riskId 风险id
+                     * 设置<p>风险id</p>
+                     * @param _riskId <p>风险id</p>
                      * 
                      */
                     void SetRiskId(const std::string& _riskId);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool RiskIdHasBeenSet() const;
 
                     /**
-                     * 获取风险名称
-                     * @return RiskName 风险名称
+                     * 获取<p>风险名称</p>
+                     * @return RiskName <p>风险名称</p>
                      * 
                      */
                     std::string GetRiskName() const;
 
                     /**
-                     * 设置风险名称
-                     * @param _riskName 风险名称
+                     * 设置<p>风险名称</p>
+                     * @param _riskName <p>风险名称</p>
                      * 
                      */
                     void SetRiskName(const std::string& _riskName);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool RiskNameHasBeenSet() const;
 
                     /**
-                     * 获取风险英文名称
-                     * @return RiskNameEn 风险英文名称
+                     * 获取<p>风险英文名称</p>
+                     * @return RiskNameEn <p>风险英文名称</p>
                      * 
                      */
                     std::string GetRiskNameEn() const;
 
                     /**
-                     * 设置风险英文名称
-                     * @param _riskNameEn 风险英文名称
+                     * 设置<p>风险英文名称</p>
+                     * @param _riskNameEn <p>风险英文名称</p>
                      * 
                      */
                     void SetRiskNameEn(const std::string& _riskNameEn);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool RiskNameEnHasBeenSet() const;
 
                     /**
-                     * 获取策略类型
-                     * @return StrategyType 策略类型
+                     * 获取<p>策略类型</p>
+                     * @return StrategyType <p>策略类型</p>
                      * 
                      */
                     std::string GetStrategyType() const;
 
                     /**
-                     * 设置策略类型
-                     * @param _strategyType 策略类型
+                     * 设置<p>策略类型</p>
+                     * @param _strategyType <p>策略类型</p>
                      * 
                      */
                     void SetStrategyType(const std::string& _strategyType);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool StrategyTypeHasBeenSet() const;
 
                     /**
-                     * 获取策略类别
-                     * @return StrategyCategory 策略类别
+                     * 获取<p>策略类别</p>
+                     * @return StrategyCategory <p>策略类别</p>
                      * 
                      */
                     std::string GetStrategyCategory() const;
 
                     /**
-                     * 设置策略类别
-                     * @param _strategyCategory 策略类别
+                     * 设置<p>策略类别</p>
+                     * @param _strategyCategory <p>策略类别</p>
                      * 
                      */
                     void SetStrategyCategory(const std::string& _strategyCategory);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool StrategyCategoryHasBeenSet() const;
 
                     /**
-                     * 获取风险等级
-                     * @return RiskLevel 风险等级
+                     * 获取<p>风险等级</p>
+                     * @return RiskLevel <p>风险等级</p>
                      * 
                      */
                     std::string GetRiskLevel() const;
 
                     /**
-                     * 设置风险等级
-                     * @param _riskLevel 风险等级
+                     * 设置<p>风险等级</p>
+                     * @param _riskLevel <p>风险等级</p>
                      * 
                      */
                     void SetRiskLevel(const std::string& _riskLevel);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool RiskLevelHasBeenSet() const;
 
                     /**
-                     * 获取资产实例Id
-                     * @return AssetId 资产实例Id
+                     * 获取<p>资产实例Id</p>
+                     * @return AssetId <p>资产实例Id</p>
                      * 
                      */
                     std::string GetAssetId() const;
 
                     /**
-                     * 设置资产实例Id
-                     * @param _assetId 资产实例Id
+                     * 设置<p>资产实例Id</p>
+                     * @param _assetId <p>资产实例Id</p>
                      * 
                      */
                     void SetAssetId(const std::string& _assetId);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool AssetIdHasBeenSet() const;
 
                     /**
-                     * 获取资产类型
-                     * @return AssetType 资产类型
+                     * 获取<p>资产类型</p>
+                     * @return AssetType <p>资产类型</p>
                      * 
                      */
                     std::string GetAssetType() const;
 
                     /**
-                     * 设置资产类型
-                     * @param _assetType 资产类型
+                     * 设置<p>资产类型</p>
+                     * @param _assetType <p>资产类型</p>
                      * 
                      */
                     void SetAssetType(const std::string& _assetType);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool AssetTypeHasBeenSet() const;
 
                     /**
-                     * 获取资产名
-                     * @return AssetName 资产名
+                     * 获取<p>资产名</p>
+                     * @return AssetName <p>资产名</p>
                      * 
                      */
                     std::string GetAssetName() const;
 
                     /**
-                     * 设置资产名
-                     * @param _assetName 资产名
+                     * 设置<p>资产名</p>
+                     * @param _assetName <p>资产名</p>
                      * 
                      */
                     void SetAssetName(const std::string& _assetName);
@@ -238,15 +238,15 @@ namespace TencentCloud
                     bool AssetNameHasBeenSet() const;
 
                     /**
-                     * 获取地域
-                     * @return AssetRegion 地域
+                     * 获取<p>地域</p>
+                     * @return AssetRegion <p>地域</p>
                      * 
                      */
                     std::string GetAssetRegion() const;
 
                     /**
-                     * 设置地域
-                     * @param _assetRegion 地域
+                     * 设置<p>地域</p>
+                     * @param _assetRegion <p>地域</p>
                      * 
                      */
                     void SetAssetRegion(const std::string& _assetRegion);
@@ -259,15 +259,15 @@ namespace TencentCloud
                     bool AssetRegionHasBeenSet() const;
 
                     /**
-                     * 获取资产账号
-                     * @return Account 资产账号
+                     * 获取<p>资产账号</p>
+                     * @return Account <p>资产账号</p>
                      * 
                      */
                     std::string GetAccount() const;
 
                     /**
-                     * 设置资产账号
-                     * @param _account 资产账号
+                     * 设置<p>资产账号</p>
+                     * @param _account <p>资产账号</p>
                      * 
                      */
                     void SetAccount(const std::string& _account);
@@ -280,15 +280,15 @@ namespace TencentCloud
                     bool AccountHasBeenSet() const;
 
                     /**
-                     * 获取主机地址
-                     * @return Host 主机地址
+                     * 获取<p>主机地址</p>
+                     * @return Host <p>主机地址</p>
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置主机地址
-                     * @param _host 主机地址
+                     * 设置<p>主机地址</p>
+                     * @param _host <p>主机地址</p>
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -301,15 +301,15 @@ namespace TencentCloud
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取账号类型
-                     * @return AccountType 账号类型
+                     * 获取<p>账号类型</p>
+                     * @return AccountType <p>账号类型</p>
                      * 
                      */
                     int64_t GetAccountType() const;
 
                     /**
-                     * 设置账号类型
-                     * @param _accountType 账号类型
+                     * 设置<p>账号类型</p>
+                     * @param _accountType <p>账号类型</p>
                      * 
                      */
                     void SetAccountType(const int64_t& _accountType);
@@ -322,15 +322,15 @@ namespace TencentCloud
                     bool AccountTypeHasBeenSet() const;
 
                     /**
-                     * 获取风险检出时间
-                     * @return DetectTime 风险检出时间
+                     * 获取<p>风险检出时间</p>
+                     * @return DetectTime <p>风险检出时间</p>
                      * 
                      */
                     std::string GetDetectTime() const;
 
                     /**
-                     * 设置风险检出时间
-                     * @param _detectTime 风险检出时间
+                     * 设置<p>风险检出时间</p>
+                     * @param _detectTime <p>风险检出时间</p>
                      * 
                      */
                     void SetDetectTime(const std::string& _detectTime);
@@ -343,15 +343,15 @@ namespace TencentCloud
                     bool DetectTimeHasBeenSet() const;
 
                     /**
-                     * 获取处理状态 0-未处理 1-已处置 2-已忽略
-                     * @return Status 处理状态 0-未处理 1-已处置 2-已忽略
+                     * 获取<p>处理状态 0-未处理 1-已处置 2-已忽略</p>
+                     * @return Status <p>处理状态 0-未处理 1-已处置 2-已忽略</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置处理状态 0-未处理 1-已处置 2-已忽略
-                     * @param _status 处理状态 0-未处理 1-已处置 2-已忽略
+                     * 设置<p>处理状态 0-未处理 1-已处置 2-已忽略</p>
+                     * @param _status <p>处理状态 0-未处理 1-已处置 2-已忽略</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -364,15 +364,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取身份id
-                     * @return IdentifyId 身份id
+                     * 获取<p>身份id</p>
+                     * @return IdentifyId <p>身份id</p>
                      * 
                      */
                     std::string GetIdentifyId() const;
 
                     /**
-                     * 设置身份id
-                     * @param _identifyId 身份id
+                     * 设置<p>身份id</p>
+                     * @param _identifyId <p>身份id</p>
                      * 
                      */
                     void SetIdentifyId(const std::string& _identifyId);
@@ -385,15 +385,15 @@ namespace TencentCloud
                     bool IdentifyIdHasBeenSet() const;
 
                     /**
-                     * 获取所属云账号uin用户
-                     * @return OwnerUin 所属云账号uin用户
+                     * 获取<p>所属云账号uin用户</p>
+                     * @return OwnerUin <p>所属云账号uin用户</p>
                      * 
                      */
                     DspmUinUser GetOwnerUin() const;
 
                     /**
-                     * 设置所属云账号uin用户
-                     * @param _ownerUin 所属云账号uin用户
+                     * 设置<p>所属云账号uin用户</p>
+                     * @param _ownerUin <p>所属云账号uin用户</p>
                      * 
                      */
                     void SetOwnerUin(const DspmUinUser& _ownerUin);
@@ -406,15 +406,15 @@ namespace TencentCloud
                     bool OwnerUinHasBeenSet() const;
 
                     /**
-                     * 获取所属个人用户信息
-                     * @return Person 所属个人用户信息
+                     * 获取<p>所属个人用户信息</p>
+                     * @return Person <p>所属个人用户信息</p>
                      * 
                      */
                     DspmPersonUser GetPerson() const;
 
                     /**
-                     * 设置所属个人用户信息
-                     * @param _person 所属个人用户信息
+                     * 设置<p>所属个人用户信息</p>
+                     * @param _person <p>所属个人用户信息</p>
                      * 
                      */
                     void SetPerson(const DspmPersonUser& _person);
@@ -427,15 +427,15 @@ namespace TencentCloud
                     bool PersonHasBeenSet() const;
 
                     /**
-                     * 获取风险数据。
-                     * @return RiskData 风险数据。
+                     * 获取<p>风险数据。</p>
+                     * @return RiskData <p>风险数据。</p>
                      * 
                      */
                     std::string GetRiskData() const;
 
                     /**
-                     * 设置风险数据。
-                     * @param _riskData 风险数据。
+                     * 设置<p>风险数据。</p>
+                     * @param _riskData <p>风险数据。</p>
                      * 
                      */
                     void SetRiskData(const std::string& _riskData);
@@ -448,15 +448,15 @@ namespace TencentCloud
                     bool RiskDataHasBeenSet() const;
 
                     /**
-                     * 获取是否资产管理员
-                     * @return IsAssetManager 是否资产管理员
+                     * 获取<p>是否资产管理员</p>
+                     * @return IsAssetManager <p>是否资产管理员</p>
                      * 
                      */
                     int64_t GetIsAssetManager() const;
 
                     /**
-                     * 设置是否资产管理员
-                     * @param _isAssetManager 是否资产管理员
+                     * 设置<p>是否资产管理员</p>
+                     * @param _isAssetManager <p>是否资产管理员</p>
                      * 
                      */
                     void SetIsAssetManager(const int64_t& _isAssetManager);
@@ -469,15 +469,15 @@ namespace TencentCloud
                     bool IsAssetManagerHasBeenSet() const;
 
                     /**
-                     * 获取数据起始时间
-                     * @return DataBeginTime 数据起始时间
+                     * 获取<p>数据起始时间</p>
+                     * @return DataBeginTime <p>数据起始时间</p>
                      * 
                      */
                     std::string GetDataBeginTime() const;
 
                     /**
-                     * 设置数据起始时间
-                     * @param _dataBeginTime 数据起始时间
+                     * 设置<p>数据起始时间</p>
+                     * @param _dataBeginTime <p>数据起始时间</p>
                      * 
                      */
                     void SetDataBeginTime(const std::string& _dataBeginTime);
@@ -490,15 +490,15 @@ namespace TencentCloud
                     bool DataBeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取数据结束时间
-                     * @return DataEndTime 数据结束时间
+                     * 获取<p>数据结束时间</p>
+                     * @return DataEndTime <p>数据结束时间</p>
                      * 
                      */
                     std::string GetDataEndTime() const;
 
                     /**
-                     * 设置数据结束时间
-                     * @param _dataEndTime 数据结束时间
+                     * 设置<p>数据结束时间</p>
+                     * @param _dataEndTime <p>数据结束时间</p>
                      * 
                      */
                     void SetDataEndTime(const std::string& _dataEndTime);
@@ -511,15 +511,15 @@ namespace TencentCloud
                     bool DataEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取风险类型。risk-风险；alarm-告警。
-                     * @return RiskType 风险类型。risk-风险；alarm-告警。
+                     * 获取<p>风险类型。risk-风险；alarm-告警。</p>
+                     * @return RiskType <p>风险类型。risk-风险；alarm-告警。</p>
                      * 
                      */
                     std::string GetRiskType() const;
 
                     /**
-                     * 设置风险类型。risk-风险；alarm-告警。
-                     * @param _riskType 风险类型。risk-风险；alarm-告警。
+                     * 设置<p>风险类型。risk-风险；alarm-告警。</p>
+                     * @param _riskType <p>风险类型。risk-风险；alarm-告警。</p>
                      * 
                      */
                     void SetRiskType(const std::string& _riskType);
@@ -532,15 +532,15 @@ namespace TencentCloud
                     bool RiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取资产所属账号app id
-                     * @return AppId 资产所属账号app id
+                     * 获取<p>资产所属账号app id</p>
+                     * @return AppId <p>资产所属账号app id</p>
                      * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
-                     * 设置资产所属账号app id
-                     * @param _appId 资产所属账号app id
+                     * 设置<p>资产所属账号app id</p>
+                     * @param _appId <p>资产所属账号app id</p>
                      * 
                      */
                     void SetAppId(const uint64_t& _appId);
@@ -553,15 +553,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取账号昵称
-                     * @return NickName 账号昵称
+                     * 获取<p>账号昵称</p>
+                     * @return NickName <p>账号昵称</p>
                      * 
                      */
                     std::string GetNickName() const;
 
                     /**
-                     * 设置账号昵称
-                     * @param _nickName 账号昵称
+                     * 设置<p>账号昵称</p>
+                     * @param _nickName <p>账号昵称</p>
                      * 
                      */
                     void SetNickName(const std::string& _nickName);
@@ -574,15 +574,15 @@ namespace TencentCloud
                     bool NickNameHasBeenSet() const;
 
                     /**
-                     * 获取资产所属账号uin
-                     * @return Uin 资产所属账号uin
+                     * 获取<p>资产所属账号uin</p>
+                     * @return Uin <p>资产所属账号uin</p>
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置资产所属账号uin
-                     * @param _uin 资产所属账号uin
+                     * 设置<p>资产所属账号uin</p>
+                     * @param _uin <p>资产所属账号uin</p>
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -594,163 +594,254 @@ namespace TencentCloud
                      */
                     bool UinHasBeenSet() const;
 
+                    /**
+                     * 获取<p>MongoDb的集群类型，非 MongoDB 资产固定 0</p><p>枚举值：</p><ul><li>0： 副本集</li><li>1： 分片</li></ul><p>默认值：0</p>
+                     * @return ClusterType <p>MongoDb的集群类型，非 MongoDB 资产固定 0</p><p>枚举值：</p><ul><li>0： 副本集</li><li>1： 分片</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetClusterType() const;
+
+                    /**
+                     * 设置<p>MongoDb的集群类型，非 MongoDB 资产固定 0</p><p>枚举值：</p><ul><li>0： 副本集</li><li>1： 分片</li></ul><p>默认值：0</p>
+                     * @param _clusterType <p>MongoDb的集群类型，非 MongoDB 资产固定 0</p><p>枚举值：</p><ul><li>0： 副本集</li><li>1： 分片</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    void SetClusterType(const int64_t& _clusterType);
+
+                    /**
+                     * 判断参数 ClusterType 是否已赋值
+                     * @return ClusterType 是否已赋值
+                     * 
+                     */
+                    bool ClusterTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterId <p>集群ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置<p>集群ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterId <p>集群ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群名</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterName <p>集群名</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClusterName() const;
+
+                    /**
+                     * 设置<p>集群名</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterName <p>集群名</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterName(const std::string& _clusterName);
+
+                    /**
+                     * 判断参数 ClusterName 是否已赋值
+                     * @return ClusterName 是否已赋值
+                     * 
+                     */
+                    bool ClusterNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 风险id
+                     * <p>风险id</p>
                      */
                     std::string m_riskId;
                     bool m_riskIdHasBeenSet;
 
                     /**
-                     * 风险名称
+                     * <p>风险名称</p>
                      */
                     std::string m_riskName;
                     bool m_riskNameHasBeenSet;
 
                     /**
-                     * 风险英文名称
+                     * <p>风险英文名称</p>
                      */
                     std::string m_riskNameEn;
                     bool m_riskNameEnHasBeenSet;
 
                     /**
-                     * 策略类型
+                     * <p>策略类型</p>
                      */
                     std::string m_strategyType;
                     bool m_strategyTypeHasBeenSet;
 
                     /**
-                     * 策略类别
+                     * <p>策略类别</p>
                      */
                     std::string m_strategyCategory;
                     bool m_strategyCategoryHasBeenSet;
 
                     /**
-                     * 风险等级
+                     * <p>风险等级</p>
                      */
                     std::string m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
-                     * 资产实例Id
+                     * <p>资产实例Id</p>
                      */
                     std::string m_assetId;
                     bool m_assetIdHasBeenSet;
 
                     /**
-                     * 资产类型
+                     * <p>资产类型</p>
                      */
                     std::string m_assetType;
                     bool m_assetTypeHasBeenSet;
 
                     /**
-                     * 资产名
+                     * <p>资产名</p>
                      */
                     std::string m_assetName;
                     bool m_assetNameHasBeenSet;
 
                     /**
-                     * 地域
+                     * <p>地域</p>
                      */
                     std::string m_assetRegion;
                     bool m_assetRegionHasBeenSet;
 
                     /**
-                     * 资产账号
+                     * <p>资产账号</p>
                      */
                     std::string m_account;
                     bool m_accountHasBeenSet;
 
                     /**
-                     * 主机地址
+                     * <p>主机地址</p>
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
-                     * 账号类型
+                     * <p>账号类型</p>
                      */
                     int64_t m_accountType;
                     bool m_accountTypeHasBeenSet;
 
                     /**
-                     * 风险检出时间
+                     * <p>风险检出时间</p>
                      */
                     std::string m_detectTime;
                     bool m_detectTimeHasBeenSet;
 
                     /**
-                     * 处理状态 0-未处理 1-已处置 2-已忽略
+                     * <p>处理状态 0-未处理 1-已处置 2-已忽略</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 身份id
+                     * <p>身份id</p>
                      */
                     std::string m_identifyId;
                     bool m_identifyIdHasBeenSet;
 
                     /**
-                     * 所属云账号uin用户
+                     * <p>所属云账号uin用户</p>
                      */
                     DspmUinUser m_ownerUin;
                     bool m_ownerUinHasBeenSet;
 
                     /**
-                     * 所属个人用户信息
+                     * <p>所属个人用户信息</p>
                      */
                     DspmPersonUser m_person;
                     bool m_personHasBeenSet;
 
                     /**
-                     * 风险数据。
+                     * <p>风险数据。</p>
                      */
                     std::string m_riskData;
                     bool m_riskDataHasBeenSet;
 
                     /**
-                     * 是否资产管理员
+                     * <p>是否资产管理员</p>
                      */
                     int64_t m_isAssetManager;
                     bool m_isAssetManagerHasBeenSet;
 
                     /**
-                     * 数据起始时间
+                     * <p>数据起始时间</p>
                      */
                     std::string m_dataBeginTime;
                     bool m_dataBeginTimeHasBeenSet;
 
                     /**
-                     * 数据结束时间
+                     * <p>数据结束时间</p>
                      */
                     std::string m_dataEndTime;
                     bool m_dataEndTimeHasBeenSet;
 
                     /**
-                     * 风险类型。risk-风险；alarm-告警。
+                     * <p>风险类型。risk-风险；alarm-告警。</p>
                      */
                     std::string m_riskType;
                     bool m_riskTypeHasBeenSet;
 
                     /**
-                     * 资产所属账号app id
+                     * <p>资产所属账号app id</p>
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 账号昵称
+                     * <p>账号昵称</p>
                      */
                     std::string m_nickName;
                     bool m_nickNameHasBeenSet;
 
                     /**
-                     * 资产所属账号uin
+                     * <p>资产所属账号uin</p>
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
+
+                    /**
+                     * <p>MongoDb的集群类型，非 MongoDB 资产固定 0</p><p>枚举值：</p><ul><li>0： 副本集</li><li>1： 分片</li></ul><p>默认值：0</p>
+                     */
+                    int64_t m_clusterType;
+                    bool m_clusterTypeHasBeenSet;
+
+                    /**
+                     * <p>集群ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * <p>集群名</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterName;
+                    bool m_clusterNameHasBeenSet;
 
                 };
             }

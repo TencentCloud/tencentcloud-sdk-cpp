@@ -30,6 +30,7 @@ RealtimeLogDeliveryTask::RealtimeLogDeliveryTask() :
     m_areaHasBeenSet(false),
     m_fieldsHasBeenSet(false),
     m_customFieldsHasBeenSet(false),
+    m_customExpressionFieldsHasBeenSet(false),
     m_deliveryConditionsHasBeenSet(false),
     m_sampleHasBeenSet(false),
     m_logFormatHasBeenSet(false),
@@ -150,6 +151,26 @@ CoreInternalOutcome RealtimeLogDeliveryTask::Deserialize(const rapidjson::Value 
             m_customFields.push_back(item);
         }
         m_customFieldsHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomExpressionFields") && !value["CustomExpressionFields"].IsNull())
+    {
+        if (!value["CustomExpressionFields"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RealtimeLogDeliveryTask.CustomExpressionFields` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CustomExpressionFields"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CustomExpressionField item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_customExpressionFields.push_back(item);
+        }
+        m_customExpressionFieldsHasBeenSet = true;
     }
 
     if (value.HasMember("DeliveryConditions") && !value["DeliveryConditions"].IsNull())
@@ -360,6 +381,21 @@ void RealtimeLogDeliveryTask::ToJsonObject(rapidjson::Value &value, rapidjson::D
 
         int i=0;
         for (auto itr = m_customFields.begin(); itr != m_customFields.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_customExpressionFieldsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomExpressionFields";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_customExpressionFields.begin(); itr != m_customExpressionFields.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -586,6 +622,22 @@ void RealtimeLogDeliveryTask::SetCustomFields(const vector<CustomField>& _custom
 bool RealtimeLogDeliveryTask::CustomFieldsHasBeenSet() const
 {
     return m_customFieldsHasBeenSet;
+}
+
+vector<CustomExpressionField> RealtimeLogDeliveryTask::GetCustomExpressionFields() const
+{
+    return m_customExpressionFields;
+}
+
+void RealtimeLogDeliveryTask::SetCustomExpressionFields(const vector<CustomExpressionField>& _customExpressionFields)
+{
+    m_customExpressionFields = _customExpressionFields;
+    m_customExpressionFieldsHasBeenSet = true;
+}
+
+bool RealtimeLogDeliveryTask::CustomExpressionFieldsHasBeenSet() const
+{
+    return m_customExpressionFieldsHasBeenSet;
 }
 
 vector<DeliveryCondition> RealtimeLogDeliveryTask::GetDeliveryConditions() const

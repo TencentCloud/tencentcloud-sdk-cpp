@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集团账号的成员id
-                     * @return MemberId 集团账号的成员id
+                     * 获取<p>集团账号的成员id</p>
+                     * @return MemberId <p>集团账号的成员id</p>
                      * 
                      */
                     std::vector<std::string> GetMemberId() const;
 
                     /**
-                     * 设置集团账号的成员id
-                     * @param _memberId 集团账号的成员id
+                     * 设置<p>集团账号的成员id</p>
+                     * @param _memberId <p>集团账号的成员id</p>
                      * 
                      */
                     void SetMemberId(const std::vector<std::string>& _memberId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool MemberIdHasBeenSet() const;
 
                     /**
-                     * 获取要下载的导出任务ID
-                     * @return TaskId 要下载的导出任务ID
+                     * 获取<p>要下载的导出任务ID</p>
+                     * @return TaskId <p>要下载的导出任务ID</p>
                      * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
-                     * 设置要下载的导出任务ID
-                     * @param _taskId 要下载的导出任务ID
+                     * 设置<p>要下载的导出任务ID</p>
+                     * @param _taskId <p>要下载的导出任务ID</p>
                      * 
                      */
                     void SetTaskId(const int64_t& _taskId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集团账号的成员id
+                     * <p>集团账号的成员id</p>
                      */
                     std::vector<std::string> m_memberId;
                     bool m_memberIdHasBeenSet;
 
                     /**
-                     * 要下载的导出任务ID
+                     * <p>要下载的导出任务ID</p>
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;

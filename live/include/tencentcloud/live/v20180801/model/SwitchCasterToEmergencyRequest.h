@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导播台ID。
-                     * @return CasterId 导播台ID。
+                     * 获取<p>导播台ID。</p>
+                     * @return CasterId <p>导播台ID。</p>
                      * 
                      */
                     uint64_t GetCasterId() const;
 
                     /**
-                     * 设置导播台ID。
-                     * @param _casterId 导播台ID。
+                     * 设置<p>导播台ID。</p>
+                     * @param _casterId <p>导播台ID。</p>
                      * 
                      */
                     void SetCasterId(const uint64_t& _casterId);
@@ -63,13 +63,40 @@ namespace TencentCloud
                      */
                     bool CasterIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否启用从头开始播放功能，仅对单点播输入源生效</p><p>默认值：false</p>
+                     * @return FromBeginning <p>是否启用从头开始播放功能，仅对单点播输入源生效</p><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetFromBeginning() const;
+
+                    /**
+                     * 设置<p>是否启用从头开始播放功能，仅对单点播输入源生效</p><p>默认值：false</p>
+                     * @param _fromBeginning <p>是否启用从头开始播放功能，仅对单点播输入源生效</p><p>默认值：false</p>
+                     * 
+                     */
+                    void SetFromBeginning(const bool& _fromBeginning);
+
+                    /**
+                     * 判断参数 FromBeginning 是否已赋值
+                     * @return FromBeginning 是否已赋值
+                     * 
+                     */
+                    bool FromBeginningHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 导播台ID。
+                     * <p>导播台ID。</p>
                      */
                     uint64_t m_casterId;
                     bool m_casterIdHasBeenSet;
+
+                    /**
+                     * <p>是否启用从头开始播放功能，仅对单点播输入源生效</p><p>默认值：false</p>
+                     */
+                    bool m_fromBeginning;
+                    bool m_fromBeginningHasBeenSet;
 
                 };
             }

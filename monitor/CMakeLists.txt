@@ -559,6 +559,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20230616/model/NoticeContentTmplItem.h
   include/tencentcloud/monitor/v20230616/model/QCloudYeheNoticeTmplItem.h
   include/tencentcloud/monitor/v20230616/model/CreateNoticeContentTmplResponse.h
+  include/tencentcloud/monitor/v20230616/model/TeamsWorkflowRobotNoticeTmpl.h
   include/tencentcloud/monitor/v20230616/model/NoticeContentTmplBindPolicyCount.h
   include/tencentcloud/monitor/v20230616/model/AlarmLable.h
   include/tencentcloud/monitor/v20230616/model/AIWorkbenchSREDigitalTwinWorkLog.h
@@ -566,6 +567,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20230616/model/TriggerAIWorkbenchSREDigitalTwinTaskResponse.h
   include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogListResponse.h
   include/tencentcloud/monitor/v20230616/model/TriggerDigitalTwinTaskResp.h
+  include/tencentcloud/monitor/v20230616/model/TeamsWorkflowRobotNoticeTmplMatcher.h
   include/tencentcloud/monitor/v20230616/model/ModifyNoticeContentTmplResponse.h
   include/tencentcloud/monitor/v20230616/model/DescribeNoticeContentTmplResponse.h
   include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogDetailRequest.h
@@ -1142,6 +1144,7 @@ set(monitor_src
   src/v20230616/model/NoticeContentTmplItem.cpp
   src/v20230616/model/QCloudYeheNoticeTmplItem.cpp
   src/v20230616/model/CreateNoticeContentTmplResponse.cpp
+  src/v20230616/model/TeamsWorkflowRobotNoticeTmpl.cpp
   src/v20230616/model/NoticeContentTmplBindPolicyCount.cpp
   src/v20230616/model/AlarmLable.cpp
   src/v20230616/model/AIWorkbenchSREDigitalTwinWorkLog.cpp
@@ -1149,6 +1152,7 @@ set(monitor_src
   src/v20230616/model/TriggerAIWorkbenchSREDigitalTwinTaskResponse.cpp
   src/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogListResponse.cpp
   src/v20230616/model/TriggerDigitalTwinTaskResp.cpp
+  src/v20230616/model/TeamsWorkflowRobotNoticeTmplMatcher.cpp
   src/v20230616/model/ModifyNoticeContentTmplResponse.cpp
   src/v20230616/model/DescribeNoticeContentTmplResponse.cpp
   src/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogDetailRequest.cpp

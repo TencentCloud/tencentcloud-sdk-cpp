@@ -34,6 +34,7 @@
 #include <tencentcloud/cvm/v20170312/model/Metadata.h>
 #include <tencentcloud/cvm/v20170312/model/CpuTopology.h>
 #include <tencentcloud/cvm/v20170312/model/LaunchTemplate.h>
+#include <tencentcloud/cvm/v20170312/model/NetworkInterfaces.h>
 
 
 namespace TencentCloud
@@ -517,6 +518,27 @@ namespace TencentCloud
                      */
                     bool LaunchTemplateHasBeenSet() const;
 
+                    /**
+                     * 获取<p>多网卡参数信息。 此功能仅部分地区灰度开放，如需使用<a href="https://console.cloud.tencent.com/workorder/category">请提交工单咨询</a></p>
+                     * @return NetworkInterfaces <p>多网卡参数信息。 此功能仅部分地区灰度开放，如需使用<a href="https://console.cloud.tencent.com/workorder/category">请提交工单咨询</a></p>
+                     * 
+                     */
+                    std::vector<NetworkInterfaces> GetNetworkInterfaces() const;
+
+                    /**
+                     * 设置<p>多网卡参数信息。 此功能仅部分地区灰度开放，如需使用<a href="https://console.cloud.tencent.com/workorder/category">请提交工单咨询</a></p>
+                     * @param _networkInterfaces <p>多网卡参数信息。 此功能仅部分地区灰度开放，如需使用<a href="https://console.cloud.tencent.com/workorder/category">请提交工单咨询</a></p>
+                     * 
+                     */
+                    void SetNetworkInterfaces(const std::vector<NetworkInterfaces>& _networkInterfaces);
+
+                    /**
+                     * 判断参数 NetworkInterfaces 是否已赋值
+                     * @return NetworkInterfaces 是否已赋值
+                     * 
+                     */
+                    bool NetworkInterfacesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -650,6 +672,12 @@ namespace TencentCloud
                      */
                     LaunchTemplate m_launchTemplate;
                     bool m_launchTemplateHasBeenSet;
+
+                    /**
+                     * <p>多网卡参数信息。 此功能仅部分地区灰度开放，如需使用<a href="https://console.cloud.tencent.com/workorder/category">请提交工单咨询</a></p>
+                     */
+                    std::vector<NetworkInterfaces> m_networkInterfaces;
+                    bool m_networkInterfacesHasBeenSet;
 
                 };
             }

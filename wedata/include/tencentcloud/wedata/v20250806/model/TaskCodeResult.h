@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取代码内容
+                     * 获取<p>base64编码的代码内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CodeInfo 代码内容
+                     * @return CodeInfo <p>base64编码的代码内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCodeInfo() const;
 
                     /**
-                     * 设置代码内容
+                     * 设置<p>base64编码的代码内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _codeInfo 代码内容
+                     * @param _codeInfo <p>base64编码的代码内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool CodeInfoHasBeenSet() const;
 
                     /**
-                     * 获取代码文件大小，单位KB
+                     * 获取<p>代码文件大小，单位KB</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CodeFileSize 代码文件大小，单位KB
+                     * @return CodeFileSize <p>代码文件大小，单位KB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCodeFileSize() const;
 
                     /**
-                     * 设置代码文件大小，单位KB
+                     * 设置<p>代码文件大小，单位KB</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _codeFileSize 代码文件大小，单位KB
+                     * @param _codeFileSize <p>代码文件大小，单位KB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,14 +99,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 代码内容
+                     * <p>base64编码的代码内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_codeInfo;
                     bool m_codeInfoHasBeenSet;
 
                     /**
-                     * 代码文件大小，单位KB
+                     * <p>代码文件大小，单位KB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_codeFileSize;

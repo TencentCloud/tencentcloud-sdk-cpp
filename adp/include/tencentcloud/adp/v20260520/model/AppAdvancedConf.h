@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/adp/v20260520/model/DialogCustomConfig.h>
 #include <tencentcloud/adp/v20260520/model/IntentAchievementInfo.h>
 
 
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启上下文改写
-                     * @return EnableContextRewrite 是否开启上下文改写
+                     * 获取<p>是否开启上下文改写</p>
+                     * @return EnableContextRewrite <p>是否开启上下文改写</p>
                      * 
                      */
                     bool GetEnableContextRewrite() const;
 
                     /**
-                     * 设置是否开启上下文改写
-                     * @param _enableContextRewrite 是否开启上下文改写
+                     * 设置<p>是否开启上下文改写</p>
+                     * @param _enableContextRewrite <p>是否开启上下文改写</p>
                      * 
                      */
                     void SetEnableContextRewrite(const bool& _enableContextRewrite);
@@ -69,15 +70,15 @@ namespace TencentCloud
                     bool EnableContextRewriteHasBeenSet() const;
 
                     /**
-                     * 获取是否开启图文检索
-                     * @return EnableImageTextRetrieval 是否开启图文检索
+                     * 获取<p>是否开启图文检索</p>
+                     * @return EnableImageTextRetrieval <p>是否开启图文检索</p>
                      * 
                      */
                     bool GetEnableImageTextRetrieval() const;
 
                     /**
-                     * 设置是否开启图文检索
-                     * @param _enableImageTextRetrieval 是否开启图文检索
+                     * 设置<p>是否开启图文检索</p>
+                     * @param _enableImageTextRetrieval <p>是否开启图文检索</p>
                      * 
                      */
                     void SetEnableImageTextRetrieval(const bool& _enableImageTextRetrieval);
@@ -90,15 +91,15 @@ namespace TencentCloud
                     bool EnableImageTextRetrievalHasBeenSet() const;
 
                     /**
-                     * 获取回复灵活度
-                     * @return ReplyFlexibility 回复灵活度
+                     * 获取<p>回复灵活度</p>
+                     * @return ReplyFlexibility <p>回复灵活度</p>
                      * 
                      */
                     uint64_t GetReplyFlexibility() const;
 
                     /**
-                     * 设置回复灵活度
-                     * @param _replyFlexibility 回复灵活度
+                     * 设置<p>回复灵活度</p>
+                     * @param _replyFlexibility <p>回复灵活度</p>
                      * 
                      */
                     void SetReplyFlexibility(const uint64_t& _replyFlexibility);
@@ -111,15 +112,40 @@ namespace TencentCloud
                     bool ReplyFlexibilityHasBeenSet() const;
 
                     /**
-                     * 获取意图达成优先级
-                     * @return IntentAchievement 意图达成优先级
+                     * 获取<p>对话端自定义配置(所有模式共用,允许对话中动态修改配置)</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DialogCustomConfig <p>对话端自定义配置(所有模式共用,允许对话中动态修改配置)</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    DialogCustomConfig GetDialogCustomConfig() const;
+
+                    /**
+                     * 设置<p>对话端自定义配置(所有模式共用,允许对话中动态修改配置)</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dialogCustomConfig <p>对话端自定义配置(所有模式共用,允许对话中动态修改配置)</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDialogCustomConfig(const DialogCustomConfig& _dialogCustomConfig);
+
+                    /**
+                     * 判断参数 DialogCustomConfig 是否已赋值
+                     * @return DialogCustomConfig 是否已赋值
+                     * 
+                     */
+                    bool DialogCustomConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>意图达成优先级</p>
+                     * @return IntentAchievement <p>意图达成优先级</p>
                      * 
                      */
                     std::vector<IntentAchievementInfo> GetIntentAchievement() const;
 
                     /**
-                     * 设置意图达成优先级
-                     * @param _intentAchievement 意图达成优先级
+                     * 设置<p>意图达成优先级</p>
+                     * @param _intentAchievement <p>意图达成优先级</p>
                      * 
                      */
                     void SetIntentAchievement(const std::vector<IntentAchievementInfo>& _intentAchievement);
@@ -134,25 +160,32 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否开启上下文改写
+                     * <p>是否开启上下文改写</p>
                      */
                     bool m_enableContextRewrite;
                     bool m_enableContextRewriteHasBeenSet;
 
                     /**
-                     * 是否开启图文检索
+                     * <p>是否开启图文检索</p>
                      */
                     bool m_enableImageTextRetrieval;
                     bool m_enableImageTextRetrievalHasBeenSet;
 
                     /**
-                     * 回复灵活度
+                     * <p>回复灵活度</p>
                      */
                     uint64_t m_replyFlexibility;
                     bool m_replyFlexibilityHasBeenSet;
 
                     /**
-                     * 意图达成优先级
+                     * <p>对话端自定义配置(所有模式共用,允许对话中动态修改配置)</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DialogCustomConfig m_dialogCustomConfig;
+                    bool m_dialogCustomConfigHasBeenSet;
+
+                    /**
+                     * <p>意图达成优先级</p>
                      */
                     std::vector<IntentAchievementInfo> m_intentAchievement;
                     bool m_intentAchievementHasBeenSet;

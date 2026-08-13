@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集团账号的成员id
-                     * @return MemberId 集团账号的成员id
+                     * 获取<p>集团账号的成员id</p>
+                     * @return MemberId <p>集团账号的成员id</p>
                      * 
                      */
                     std::vector<std::string> GetMemberId() const;
 
                     /**
-                     * 设置集团账号的成员id
-                     * @param _memberId 集团账号的成员id
+                     * 设置<p>集团账号的成员id</p>
+                     * @param _memberId <p>集团账号的成员id</p>
                      * 
                      */
                     void SetMemberId(const std::vector<std::string>& _memberId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool MemberIdHasBeenSet() const;
 
                     /**
-                     * 获取备份日志保留时长
-                     * @return BackupLogSaveTime 备份日志保留时长
+                     * 获取<p>备份日志保留时长</p>
+                     * @return BackupLogSaveTime <p>备份日志保留时长</p>
                      * 
                      */
                     int64_t GetBackupLogSaveTime() const;
 
                     /**
-                     * 设置备份日志保留时长
-                     * @param _backupLogSaveTime 备份日志保留时长
+                     * 设置<p>备份日志保留时长</p>
+                     * @param _backupLogSaveTime <p>备份日志保留时长</p>
                      * 
                      */
                     void SetBackupLogSaveTime(const int64_t& _backupLogSaveTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool BackupLogSaveTimeHasBeenSet() const;
 
                     /**
-                     * 获取恢复日志保留时长
-                     * @return RestoreLogSaveTime 恢复日志保留时长
+                     * 获取<p>恢复日志保留时长</p>
+                     * @return RestoreLogSaveTime <p>恢复日志保留时长</p>
                      * 
                      */
                     int64_t GetRestoreLogSaveTime() const;
 
                     /**
-                     * 设置恢复日志保留时长
-                     * @param _restoreLogSaveTime 恢复日志保留时长
+                     * 设置<p>恢复日志保留时长</p>
+                     * @param _restoreLogSaveTime <p>恢复日志保留时长</p>
                      * 
                      */
                     void SetRestoreLogSaveTime(const int64_t& _restoreLogSaveTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool RestoreLogSaveTimeHasBeenSet() const;
 
                     /**
-                     * 获取日志最大生命周期限制
-                     * @return LogMaxSaveTime 日志最大生命周期限制
+                     * 获取<p>日志最大生命周期限制</p>
+                     * @return LogMaxSaveTime <p>日志最大生命周期限制</p>
                      * 
                      */
                     int64_t GetLogMaxSaveTime() const;
 
                     /**
-                     * 设置日志最大生命周期限制
-                     * @param _logMaxSaveTime 日志最大生命周期限制
+                     * 设置<p>日志最大生命周期限制</p>
+                     * @param _logMaxSaveTime <p>日志最大生命周期限制</p>
                      * 
                      */
                     void SetLogMaxSaveTime(const int64_t& _logMaxSaveTime);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool LogMaxSaveTimeHasBeenSet() const;
 
                     /**
-                     * 获取在线日志最大天数限制
-                     * @return OnlineLogMaxSaveTime 在线日志最大天数限制
+                     * 获取<p>在线日志最大天数限制</p>
+                     * @return OnlineLogMaxSaveTime <p>在线日志最大天数限制</p>
                      * 
                      */
                     int64_t GetOnlineLogMaxSaveTime() const;
 
                     /**
-                     * 设置在线日志最大天数限制
-                     * @param _onlineLogMaxSaveTime 在线日志最大天数限制
+                     * 设置<p>在线日志最大天数限制</p>
+                     * @param _onlineLogMaxSaveTime <p>在线日志最大天数限制</p>
                      * 
                      */
                     void SetOnlineLogMaxSaveTime(const int64_t& _onlineLogMaxSaveTime);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集团账号的成员id
+                     * <p>集团账号的成员id</p>
                      */
                     std::vector<std::string> m_memberId;
                     bool m_memberIdHasBeenSet;
 
                     /**
-                     * 备份日志保留时长
+                     * <p>备份日志保留时长</p>
                      */
                     int64_t m_backupLogSaveTime;
                     bool m_backupLogSaveTimeHasBeenSet;
 
                     /**
-                     * 恢复日志保留时长
+                     * <p>恢复日志保留时长</p>
                      */
                     int64_t m_restoreLogSaveTime;
                     bool m_restoreLogSaveTimeHasBeenSet;
 
                     /**
-                     * 日志最大生命周期限制
+                     * <p>日志最大生命周期限制</p>
                      */
                     int64_t m_logMaxSaveTime;
                     bool m_logMaxSaveTimeHasBeenSet;
 
                     /**
-                     * 在线日志最大天数限制
+                     * <p>在线日志最大天数限制</p>
                      */
                     int64_t m_onlineLogMaxSaveTime;
                     bool m_onlineLogMaxSaveTimeHasBeenSet;

@@ -61,7 +61,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/AgentModelConfig.h
   include/tencentcloud/adp/v20260520/model/ReleaseRecord.h
   include/tencentcloud/adp/v20260520/model/SearchResourceStatusInfo.h
-  include/tencentcloud/adp/v20260520/model/Plugin.h
+  include/tencentcloud/adp/v20260520/model/DialogCustomConfig.h
   include/tencentcloud/adp/v20260520/model/ApiKeyAuthConfig.h
   include/tencentcloud/adp/v20260520/model/CreateConversationResponse.h
   include/tencentcloud/adp/v20260520/model/CopyAgentFromAppRequest.h
@@ -285,6 +285,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/DeleteConversationRequest.h
   include/tencentcloud/adp/v20260520/model/PluginConfig.h
   include/tencentcloud/adp/v20260520/model/ModelBadge.h
+  include/tencentcloud/adp/v20260520/model/Plugin.h
   include/tencentcloud/adp/v20260520/model/DescribeAppTriggerRunLogListResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeAppResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeAuditLogMetaRequest.h
@@ -379,7 +380,7 @@ set(adp_src
   src/v20260520/model/AgentModelConfig.cpp
   src/v20260520/model/ReleaseRecord.cpp
   src/v20260520/model/SearchResourceStatusInfo.cpp
-  src/v20260520/model/Plugin.cpp
+  src/v20260520/model/DialogCustomConfig.cpp
   src/v20260520/model/ApiKeyAuthConfig.cpp
   src/v20260520/model/CreateConversationResponse.cpp
   src/v20260520/model/CopyAgentFromAppRequest.cpp
@@ -603,6 +604,7 @@ set(adp_src
   src/v20260520/model/DeleteConversationRequest.cpp
   src/v20260520/model/PluginConfig.cpp
   src/v20260520/model/ModelBadge.cpp
+  src/v20260520/model/Plugin.cpp
   src/v20260520/model/DescribeAppTriggerRunLogListResponse.cpp
   src/v20260520/model/DescribeAppResponse.cpp
   src/v20260520/model/DescribeAuditLogMetaRequest.cpp

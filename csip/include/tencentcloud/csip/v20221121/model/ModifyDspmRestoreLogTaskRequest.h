@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份日志Id
-                     * @return Id 备份日志Id
+                     * 获取<p>备份日志Id</p>
+                     * @return Id <p>备份日志Id</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置备份日志Id
-                     * @param _id 备份日志Id
+                     * 设置<p>备份日志Id</p>
+                     * @param _id <p>备份日志Id</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取集团账号的成员id
-                     * @return MemberId 集团账号的成员id
+                     * 获取<p>集团账号的成员id</p>
+                     * @return MemberId <p>集团账号的成员id</p>
                      * 
                      */
                     std::vector<std::string> GetMemberId() const;
 
                     /**
-                     * 设置集团账号的成员id
-                     * @param _memberId 集团账号的成员id
+                     * 设置<p>集团账号的成员id</p>
+                     * @param _memberId <p>集团账号的成员id</p>
                      * 
                      */
                     void SetMemberId(const std::vector<std::string>& _memberId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 备份日志Id
+                     * <p>备份日志Id</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 集团账号的成员id
+                     * <p>集团账号的成员id</p>
                      */
                     std::vector<std::string> m_memberId;
                     bool m_memberIdHasBeenSet;

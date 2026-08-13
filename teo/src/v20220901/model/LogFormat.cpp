@@ -27,6 +27,7 @@ LogFormat::LogFormat() :
     m_recordPrefixHasBeenSet(false),
     m_recordSuffixHasBeenSet(false),
     m_recordDelimiterHasBeenSet(false),
+    m_recordTemplateHasBeenSet(false),
     m_fieldDelimiterHasBeenSet(false)
 {
 }
@@ -96,6 +97,16 @@ CoreInternalOutcome LogFormat::Deserialize(const rapidjson::Value &value)
         m_recordDelimiterHasBeenSet = true;
     }
 
+    if (value.HasMember("RecordTemplate") && !value["RecordTemplate"].IsNull())
+    {
+        if (!value["RecordTemplate"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogFormat.RecordTemplate` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordTemplate = string(value["RecordTemplate"].GetString());
+        m_recordTemplateHasBeenSet = true;
+    }
+
     if (value.HasMember("FieldDelimiter") && !value["FieldDelimiter"].IsNull())
     {
         if (!value["FieldDelimiter"].IsString())
@@ -159,6 +170,14 @@ void LogFormat::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "RecordDelimiter";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_recordDelimiter.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordTemplateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordTemplate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordTemplate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fieldDelimiterHasBeenSet)
@@ -266,6 +285,22 @@ void LogFormat::SetRecordDelimiter(const string& _recordDelimiter)
 bool LogFormat::RecordDelimiterHasBeenSet() const
 {
     return m_recordDelimiterHasBeenSet;
+}
+
+string LogFormat::GetRecordTemplate() const
+{
+    return m_recordTemplate;
+}
+
+void LogFormat::SetRecordTemplate(const string& _recordTemplate)
+{
+    m_recordTemplate = _recordTemplate;
+    m_recordTemplateHasBeenSet = true;
+}
+
+bool LogFormat::RecordTemplateHasBeenSet() const
+{
+    return m_recordTemplateHasBeenSet;
 }
 
 string LogFormat::GetFieldDelimiter() const

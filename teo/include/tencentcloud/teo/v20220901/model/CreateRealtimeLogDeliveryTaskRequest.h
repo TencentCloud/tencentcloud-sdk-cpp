@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/CustomField.h>
+#include <tencentcloud/teo/v20220901/model/CustomExpressionField.h>
 #include <tencentcloud/teo/v20220901/model/DeliveryCondition.h>
 #include <tencentcloud/teo/v20220901/model/LogFormat.h>
 #include <tencentcloud/teo/v20220901/model/CLSTopic.h>
@@ -217,6 +218,27 @@ namespace TencentCloud
                     bool CustomFieldsHasBeenSet() const;
 
                     /**
+                     * 获取<p>投递的自定义表达式字段列表，可以通过自定义日志推送字段名称和取值表达式，实现个性化的实时日志内容推送，使用详情见 [自定义日志字段表达式]()。<br>仅七层访问日志（LogType= l7-access-logs 或 domain）支持添加自定义字段。<br>允许配置的自定义字段个数有配额限制，如遇配额不足请 [联系我们](https://cloud.tencent.com/online-service?from=sales&amp;source=PRESALE) 。<br>**注意**：若 CustomExpressionFields 中存在命名 与 Fields 和 CustomFields 中同名的字段，以  CustomExpressionFields 中的取值为准。</p>
+                     * @return CustomExpressionFields <p>投递的自定义表达式字段列表，可以通过自定义日志推送字段名称和取值表达式，实现个性化的实时日志内容推送，使用详情见 [自定义日志字段表达式]()。<br>仅七层访问日志（LogType= l7-access-logs 或 domain）支持添加自定义字段。<br>允许配置的自定义字段个数有配额限制，如遇配额不足请 [联系我们](https://cloud.tencent.com/online-service?from=sales&amp;source=PRESALE) 。<br>**注意**：若 CustomExpressionFields 中存在命名 与 Fields 和 CustomFields 中同名的字段，以  CustomExpressionFields 中的取值为准。</p>
+                     * 
+                     */
+                    std::vector<CustomExpressionField> GetCustomExpressionFields() const;
+
+                    /**
+                     * 设置<p>投递的自定义表达式字段列表，可以通过自定义日志推送字段名称和取值表达式，实现个性化的实时日志内容推送，使用详情见 [自定义日志字段表达式]()。<br>仅七层访问日志（LogType= l7-access-logs 或 domain）支持添加自定义字段。<br>允许配置的自定义字段个数有配额限制，如遇配额不足请 [联系我们](https://cloud.tencent.com/online-service?from=sales&amp;source=PRESALE) 。<br>**注意**：若 CustomExpressionFields 中存在命名 与 Fields 和 CustomFields 中同名的字段，以  CustomExpressionFields 中的取值为准。</p>
+                     * @param _customExpressionFields <p>投递的自定义表达式字段列表，可以通过自定义日志推送字段名称和取值表达式，实现个性化的实时日志内容推送，使用详情见 [自定义日志字段表达式]()。<br>仅七层访问日志（LogType= l7-access-logs 或 domain）支持添加自定义字段。<br>允许配置的自定义字段个数有配额限制，如遇配额不足请 [联系我们](https://cloud.tencent.com/online-service?from=sales&amp;source=PRESALE) 。<br>**注意**：若 CustomExpressionFields 中存在命名 与 Fields 和 CustomFields 中同名的字段，以  CustomExpressionFields 中的取值为准。</p>
+                     * 
+                     */
+                    void SetCustomExpressionFields(const std::vector<CustomExpressionField>& _customExpressionFields);
+
+                    /**
+                     * 判断参数 CustomExpressionFields 是否已赋值
+                     * @return CustomExpressionFields 是否已赋值
+                     * 
+                     */
+                    bool CustomExpressionFieldsHasBeenSet() const;
+
+                    /**
                      * 获取<p>日志投递的过滤条件，不填表示投递全量日志。</p>
                      * @return DeliveryConditions <p>日志投递的过滤条件，不填表示投递全量日志。</p>
                      * 
@@ -391,6 +413,12 @@ namespace TencentCloud
                      */
                     std::vector<CustomField> m_customFields;
                     bool m_customFieldsHasBeenSet;
+
+                    /**
+                     * <p>投递的自定义表达式字段列表，可以通过自定义日志推送字段名称和取值表达式，实现个性化的实时日志内容推送，使用详情见 [自定义日志字段表达式]()。<br>仅七层访问日志（LogType= l7-access-logs 或 domain）支持添加自定义字段。<br>允许配置的自定义字段个数有配额限制，如遇配额不足请 [联系我们](https://cloud.tencent.com/online-service?from=sales&amp;source=PRESALE) 。<br>**注意**：若 CustomExpressionFields 中存在命名 与 Fields 和 CustomFields 中同名的字段，以  CustomExpressionFields 中的取值为准。</p>
+                     */
+                    std::vector<CustomExpressionField> m_customExpressionFields;
+                    bool m_customExpressionFieldsHasBeenSet;
 
                     /**
                      * <p>日志投递的过滤条件，不填表示投递全量日志。</p>

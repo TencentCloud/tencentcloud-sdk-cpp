@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据集总量（名称维度）
+                     * 获取<p>数据集总量（名称维度）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount 数据集总量（名称维度）
+                     * @return TotalCount <p>数据集总量（名称维度）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取数据集按照数据集名称聚合的分组
+                     * 获取<p>数据集按照数据集名称聚合的分组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DatasetGroups 数据集按照数据集名称聚合的分组
+                     * @return DatasetGroups <p>数据集按照数据集名称聚合的分组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,9 +77,9 @@ namespace TencentCloud
                     bool DatasetGroupsHasBeenSet() const;
 
                     /**
-                     * 获取数据集ID总量
+                     * 获取<p>数据集ID总量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DatasetIdNums 数据集ID总量
+                     * @return DatasetIdNums <p>数据集ID总量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,8 +93,8 @@ namespace TencentCloud
                     bool DatasetIdNumsHasBeenSet() const;
 
                     /**
-                     * 获取若开启了CFSChecking，则检查CFS是否准备完毕。若CFS未准备完毕，则返回true，并且TotalCount为0，DatasetGroups为空。
-                     * @return CFSNotReady 若开启了CFSChecking，则检查CFS是否准备完毕。若CFS未准备完毕，则返回true，并且TotalCount为0，DatasetGroups为空。
+                     * 获取<p>若开启了CFSChecking，则检查CFS是否准备完毕。若CFS未准备完毕，则返回true，并且TotalCount为0，DatasetGroups为空。</p>
+                     * @return CFSNotReady <p>若开启了CFSChecking，则检查CFS是否准备完毕。若CFS未准备完毕，则返回true，并且TotalCount为0，DatasetGroups为空。</p>
                      * 
                      */
                     bool GetCFSNotReady() const;
@@ -109,28 +109,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据集总量（名称维度）
+                     * <p>数据集总量（名称维度）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 数据集按照数据集名称聚合的分组
+                     * <p>数据集按照数据集名称聚合的分组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DatasetGroup> m_datasetGroups;
                     bool m_datasetGroupsHasBeenSet;
 
                     /**
-                     * 数据集ID总量
+                     * <p>数据集ID总量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_datasetIdNums;
                     bool m_datasetIdNumsHasBeenSet;
 
                     /**
-                     * 若开启了CFSChecking，则检查CFS是否准备完毕。若CFS未准备完毕，则返回true，并且TotalCount为0，DatasetGroups为空。
+                     * <p>若开启了CFSChecking，则检查CFS是否准备完毕。若CFS未准备完毕，则返回true，并且TotalCount为0，DatasetGroups为空。</p>
                      */
                     bool m_cFSNotReady;
                     bool m_cFSNotReadyHasBeenSet;

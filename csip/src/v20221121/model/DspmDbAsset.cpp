@@ -55,7 +55,9 @@ DspmDbAsset::DspmDbAsset() :
     m_accountOptSupportedHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_clusterTypeHasBeenSet(false),
-    m_identifyScanSupportedHasBeenSet(false)
+    m_identifyScanSupportedHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
+    m_clusterNameHasBeenSet(false)
 {
 }
 
@@ -438,6 +440,26 @@ CoreInternalOutcome DspmDbAsset::Deserialize(const rapidjson::Value &value)
         m_identifyScanSupportedHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterId") && !value["ClusterId"].IsNull())
+    {
+        if (!value["ClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspmDbAsset.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterId = string(value["ClusterId"].GetString());
+        m_clusterIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterName") && !value["ClusterName"].IsNull())
+    {
+        if (!value["ClusterName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspmDbAsset.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterName = string(value["ClusterName"].GetString());
+        m_clusterNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -732,6 +754,22 @@ void DspmDbAsset::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "IdentifyScanSupported";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_identifyScanSupported, allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1295,5 +1333,37 @@ void DspmDbAsset::SetIdentifyScanSupported(const int64_t& _identifyScanSupported
 bool DspmDbAsset::IdentifyScanSupportedHasBeenSet() const
 {
     return m_identifyScanSupportedHasBeenSet;
+}
+
+string DspmDbAsset::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DspmDbAsset::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DspmDbAsset::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
+string DspmDbAsset::GetClusterName() const
+{
+    return m_clusterName;
+}
+
+void DspmDbAsset::SetClusterName(const string& _clusterName)
+{
+    m_clusterName = _clusterName;
+    m_clusterNameHasBeenSet = true;
+}
+
+bool DspmDbAsset::ClusterNameHasBeenSet() const
+{
+    return m_clusterNameHasBeenSet;
 }
 

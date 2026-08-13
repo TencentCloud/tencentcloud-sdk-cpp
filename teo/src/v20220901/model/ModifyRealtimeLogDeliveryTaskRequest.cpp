@@ -30,6 +30,7 @@ ModifyRealtimeLogDeliveryTaskRequest::ModifyRealtimeLogDeliveryTaskRequest() :
     m_entityListHasBeenSet(false),
     m_fieldsHasBeenSet(false),
     m_customFieldsHasBeenSet(false),
+    m_customExpressionFieldsHasBeenSet(false),
     m_deliveryConditionsHasBeenSet(false),
     m_sampleHasBeenSet(false),
     m_logFormatHasBeenSet(false),
@@ -112,6 +113,21 @@ string ModifyRealtimeLogDeliveryTaskRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_customFields.begin(); itr != m_customFields.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_customExpressionFieldsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomExpressionFields";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_customExpressionFields.begin(); itr != m_customExpressionFields.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -286,6 +302,22 @@ void ModifyRealtimeLogDeliveryTaskRequest::SetCustomFields(const vector<CustomFi
 bool ModifyRealtimeLogDeliveryTaskRequest::CustomFieldsHasBeenSet() const
 {
     return m_customFieldsHasBeenSet;
+}
+
+vector<CustomExpressionField> ModifyRealtimeLogDeliveryTaskRequest::GetCustomExpressionFields() const
+{
+    return m_customExpressionFields;
+}
+
+void ModifyRealtimeLogDeliveryTaskRequest::SetCustomExpressionFields(const vector<CustomExpressionField>& _customExpressionFields)
+{
+    m_customExpressionFields = _customExpressionFields;
+    m_customExpressionFieldsHasBeenSet = true;
+}
+
+bool ModifyRealtimeLogDeliveryTaskRequest::CustomExpressionFieldsHasBeenSet() const
+{
+    return m_customExpressionFieldsHasBeenSet;
 }
 
 vector<DeliveryCondition> ModifyRealtimeLogDeliveryTaskRequest::GetDeliveryConditions() const

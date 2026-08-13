@@ -31,7 +31,8 @@ ImageModerationRequest::ImageModerationRequest() :
     m_maxFramesHasBeenSet(false),
     m_userHasBeenSet(false),
     m_deviceHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_bizTagHasBeenSet(false)
 {
 }
 
@@ -114,6 +115,14 @@ string ImageModerationRequest::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bizTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BizTag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_bizTag.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -266,6 +275,22 @@ void ImageModerationRequest::SetType(const string& _type)
 bool ImageModerationRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string ImageModerationRequest::GetBizTag() const
+{
+    return m_bizTag;
+}
+
+void ImageModerationRequest::SetBizTag(const string& _bizTag)
+{
+    m_bizTag = _bizTag;
+    m_bizTagHasBeenSet = true;
+}
+
+bool ImageModerationRequest::BizTagHasBeenSet() const
+{
+    return m_bizTagHasBeenSet;
 }
 
 

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总数目
-                     * @return TotalCount 总数目
+                     * 获取<p>总数目</p>
+                     * @return TotalCount <p>总数目</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取日志信息列表
-                     * @return List 日志信息列表
+                     * 获取<p>日志信息列表</p>
+                     * @return List <p>日志信息列表</p>
                      * 
                      */
                     std::vector<AuditLogInfo> GetList() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总数目
+                     * <p>总数目</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 日志信息列表
+                     * <p>日志信息列表</p>
                      */
                     std::vector<AuditLogInfo> m_list;
                     bool m_listHasBeenSet;

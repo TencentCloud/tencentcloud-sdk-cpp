@@ -4640,6 +4640,56 @@ MpsClient::DescribeAigcImageTaskOutcomeCallable MpsClient::DescribeAigcImageTask
     return prom->get_future();
 }
 
+MpsClient::DescribeAigcTaskListOutcome MpsClient::DescribeAigcTaskList(const DescribeAigcTaskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAigcTaskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAigcTaskListResponse rsp = DescribeAigcTaskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAigcTaskListOutcome(rsp);
+        else
+            return DescribeAigcTaskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAigcTaskListOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeAigcTaskListAsync(const DescribeAigcTaskListRequest& request, const DescribeAigcTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAigcTaskListRequest&;
+    using Resp = DescribeAigcTaskListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAigcTaskList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::DescribeAigcTaskListOutcomeCallable MpsClient::DescribeAigcTaskListCallable(const DescribeAigcTaskListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAigcTaskListOutcome>>();
+    DescribeAigcTaskListAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const DescribeAigcTaskListRequest&,
+        DescribeAigcTaskListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::DescribeAigcTaskStatusOutcome MpsClient::DescribeAigcTaskStatus(const DescribeAigcTaskStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAigcTaskStatus");

@@ -55,7 +55,8 @@ RunInstancesRequest::RunInstancesRequest() :
     m_chcIdsHasBeenSet(false),
     m_partitionNumberHasBeenSet(false),
     m_disableApiTerminationHasBeenSet(false),
-    m_enableJumboFrameHasBeenSet(false)
+    m_enableJumboFrameHasBeenSet(false),
+    m_networkInterfacesHasBeenSet(false)
 {
 }
 
@@ -369,6 +370,21 @@ string RunInstancesRequest::ToJsonString() const
         string key = "EnableJumboFrame";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableJumboFrame, allocator);
+    }
+
+    if (m_networkInterfacesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkInterfaces";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_networkInterfaces.begin(); itr != m_networkInterfaces.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -905,6 +921,22 @@ void RunInstancesRequest::SetEnableJumboFrame(const bool& _enableJumboFrame)
 bool RunInstancesRequest::EnableJumboFrameHasBeenSet() const
 {
     return m_enableJumboFrameHasBeenSet;
+}
+
+vector<NetworkInterfaces> RunInstancesRequest::GetNetworkInterfaces() const
+{
+    return m_networkInterfaces;
+}
+
+void RunInstancesRequest::SetNetworkInterfaces(const vector<NetworkInterfaces>& _networkInterfaces)
+{
+    m_networkInterfaces = _networkInterfaces;
+    m_networkInterfacesHasBeenSet = true;
+}
+
+bool RunInstancesRequest::NetworkInterfacesHasBeenSet() const
+{
+    return m_networkInterfacesHasBeenSet;
 }
 
 

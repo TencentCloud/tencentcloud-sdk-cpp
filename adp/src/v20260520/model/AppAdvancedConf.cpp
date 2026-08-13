@@ -24,6 +24,7 @@ AppAdvancedConf::AppAdvancedConf() :
     m_enableContextRewriteHasBeenSet(false),
     m_enableImageTextRetrievalHasBeenSet(false),
     m_replyFlexibilityHasBeenSet(false),
+    m_dialogCustomConfigHasBeenSet(false),
     m_intentAchievementHasBeenSet(false)
 {
 }
@@ -61,6 +62,23 @@ CoreInternalOutcome AppAdvancedConf::Deserialize(const rapidjson::Value &value)
         }
         m_replyFlexibility = value["ReplyFlexibility"].GetUint64();
         m_replyFlexibilityHasBeenSet = true;
+    }
+
+    if (value.HasMember("DialogCustomConfig") && !value["DialogCustomConfig"].IsNull())
+    {
+        if (!value["DialogCustomConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppAdvancedConf.DialogCustomConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dialogCustomConfig.Deserialize(value["DialogCustomConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dialogCustomConfigHasBeenSet = true;
     }
 
     if (value.HasMember("IntentAchievement") && !value["IntentAchievement"].IsNull())
@@ -112,6 +130,15 @@ void AppAdvancedConf::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ReplyFlexibility";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_replyFlexibility, allocator);
+    }
+
+    if (m_dialogCustomConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DialogCustomConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dialogCustomConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_intentAchievementHasBeenSet)
@@ -178,6 +205,22 @@ void AppAdvancedConf::SetReplyFlexibility(const uint64_t& _replyFlexibility)
 bool AppAdvancedConf::ReplyFlexibilityHasBeenSet() const
 {
     return m_replyFlexibilityHasBeenSet;
+}
+
+DialogCustomConfig AppAdvancedConf::GetDialogCustomConfig() const
+{
+    return m_dialogCustomConfig;
+}
+
+void AppAdvancedConf::SetDialogCustomConfig(const DialogCustomConfig& _dialogCustomConfig)
+{
+    m_dialogCustomConfig = _dialogCustomConfig;
+    m_dialogCustomConfigHasBeenSet = true;
+}
+
+bool AppAdvancedConf::DialogCustomConfigHasBeenSet() const
+{
+    return m_dialogCustomConfigHasBeenSet;
 }
 
 vector<IntentAchievementInfo> AppAdvancedConf::GetIntentAchievement() const
