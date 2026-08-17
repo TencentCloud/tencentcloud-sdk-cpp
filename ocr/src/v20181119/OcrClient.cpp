@@ -3690,6 +3690,56 @@ OcrClient::VerifyBizLicenseEnterprise4OutcomeCallable OcrClient::VerifyBizLicens
     return prom->get_future();
 }
 
+OcrClient::VerifyGeneralCardWarnOutcome OcrClient::VerifyGeneralCardWarn(const VerifyGeneralCardWarnRequest &request)
+{
+    auto outcome = MakeRequest(request, "VerifyGeneralCardWarn");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyGeneralCardWarnResponse rsp = VerifyGeneralCardWarnResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyGeneralCardWarnOutcome(rsp);
+        else
+            return VerifyGeneralCardWarnOutcome(o.GetError());
+    }
+    else
+    {
+        return VerifyGeneralCardWarnOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::VerifyGeneralCardWarnAsync(const VerifyGeneralCardWarnRequest& request, const VerifyGeneralCardWarnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const VerifyGeneralCardWarnRequest&;
+    using Resp = VerifyGeneralCardWarnResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "VerifyGeneralCardWarn", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OcrClient::VerifyGeneralCardWarnOutcomeCallable OcrClient::VerifyGeneralCardWarnCallable(const VerifyGeneralCardWarnRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<VerifyGeneralCardWarnOutcome>>();
+    VerifyGeneralCardWarnAsync(
+    request,
+    [prom](
+        const OcrClient*,
+        const VerifyGeneralCardWarnRequest&,
+        VerifyGeneralCardWarnOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OcrClient::VerifyOfdVatInvoiceOCROutcome OcrClient::VerifyOfdVatInvoiceOCR(const VerifyOfdVatInvoiceOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "VerifyOfdVatInvoiceOCR");

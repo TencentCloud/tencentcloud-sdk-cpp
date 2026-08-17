@@ -48,87 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取原子任务类型：
-<li>input: 起始节点</li>
-<li>output：终止节点</li>
-<li>action-trans：转码</li>
-<li>action-samplesnapshot：采样截图</li>
-<li>action-AIAnalysis: 分析</li>
-<li>action-AIRecognition：识别</li>
-<li>action-aiReview：审核</li>
-<li>action-animated-graphics：转动图</li>
-<li>action-image-sprite：雪碧图</li>
-<li>action-snapshotByTimeOffset: 时间点截图</li>
-<li>action-adaptive-substream：自适应码流</li>
-<li>action-AIQualityControl：媒体质检</li>
-<li>action-SmartSubtitles：智能字幕</li>
-<li>action-exec-rules：判断规则</li>
-<li>action-SmartErase：智能擦除</li>
-
-
-
-                     * @return ActivityType 原子任务类型：
-<li>input: 起始节点</li>
-<li>output：终止节点</li>
-<li>action-trans：转码</li>
-<li>action-samplesnapshot：采样截图</li>
-<li>action-AIAnalysis: 分析</li>
-<li>action-AIRecognition：识别</li>
-<li>action-aiReview：审核</li>
-<li>action-animated-graphics：转动图</li>
-<li>action-image-sprite：雪碧图</li>
-<li>action-snapshotByTimeOffset: 时间点截图</li>
-<li>action-adaptive-substream：自适应码流</li>
-<li>action-AIQualityControl：媒体质检</li>
-<li>action-SmartSubtitles：智能字幕</li>
-<li>action-exec-rules：判断规则</li>
-<li>action-SmartErase：智能擦除</li>
-
-
-
+                     * 获取<p>原子任务类型：</p><li>input: 起始节点</li><li>output：终止节点</li><li>action-trans：转码</li><li>action-samplesnapshot：采样截图</li><li>action-AIAnalysis: 分析</li><li>action-AIRecognition：识别</li><li>action-aiReview：审核</li><li>action-animated-graphics：转动图</li><li>action-image-sprite：雪碧图</li><li>action-snapshotByTimeOffset: 时间点截图</li><li>action-adaptive-substream：自适应码流</li><li>action-AIQualityControl：媒体质检</li><li>action-SmartSubtitles：智能字幕</li><li>action-exec-rules：判断规则</li><li>action-SmartErase：智能擦除</li>
+                     * @return ActivityType <p>原子任务类型：</p><li>input: 起始节点</li><li>output：终止节点</li><li>action-trans：转码</li><li>action-samplesnapshot：采样截图</li><li>action-AIAnalysis: 分析</li><li>action-AIRecognition：识别</li><li>action-aiReview：审核</li><li>action-animated-graphics：转动图</li><li>action-image-sprite：雪碧图</li><li>action-snapshotByTimeOffset: 时间点截图</li><li>action-adaptive-substream：自适应码流</li><li>action-AIQualityControl：媒体质检</li><li>action-SmartSubtitles：智能字幕</li><li>action-exec-rules：判断规则</li><li>action-SmartErase：智能擦除</li>
                      * 
                      */
                     std::string GetActivityType() const;
 
                     /**
-                     * 设置原子任务类型：
-<li>input: 起始节点</li>
-<li>output：终止节点</li>
-<li>action-trans：转码</li>
-<li>action-samplesnapshot：采样截图</li>
-<li>action-AIAnalysis: 分析</li>
-<li>action-AIRecognition：识别</li>
-<li>action-aiReview：审核</li>
-<li>action-animated-graphics：转动图</li>
-<li>action-image-sprite：雪碧图</li>
-<li>action-snapshotByTimeOffset: 时间点截图</li>
-<li>action-adaptive-substream：自适应码流</li>
-<li>action-AIQualityControl：媒体质检</li>
-<li>action-SmartSubtitles：智能字幕</li>
-<li>action-exec-rules：判断规则</li>
-<li>action-SmartErase：智能擦除</li>
-
-
-
-                     * @param _activityType 原子任务类型：
-<li>input: 起始节点</li>
-<li>output：终止节点</li>
-<li>action-trans：转码</li>
-<li>action-samplesnapshot：采样截图</li>
-<li>action-AIAnalysis: 分析</li>
-<li>action-AIRecognition：识别</li>
-<li>action-aiReview：审核</li>
-<li>action-animated-graphics：转动图</li>
-<li>action-image-sprite：雪碧图</li>
-<li>action-snapshotByTimeOffset: 时间点截图</li>
-<li>action-adaptive-substream：自适应码流</li>
-<li>action-AIQualityControl：媒体质检</li>
-<li>action-SmartSubtitles：智能字幕</li>
-<li>action-exec-rules：判断规则</li>
-<li>action-SmartErase：智能擦除</li>
-
-
-
+                     * 设置<p>原子任务类型：</p><li>input: 起始节点</li><li>output：终止节点</li><li>action-trans：转码</li><li>action-samplesnapshot：采样截图</li><li>action-AIAnalysis: 分析</li><li>action-AIRecognition：识别</li><li>action-aiReview：审核</li><li>action-animated-graphics：转动图</li><li>action-image-sprite：雪碧图</li><li>action-snapshotByTimeOffset: 时间点截图</li><li>action-adaptive-substream：自适应码流</li><li>action-AIQualityControl：媒体质检</li><li>action-SmartSubtitles：智能字幕</li><li>action-exec-rules：判断规则</li><li>action-SmartErase：智能擦除</li>
+                     * @param _activityType <p>原子任务类型：</p><li>input: 起始节点</li><li>output：终止节点</li><li>action-trans：转码</li><li>action-samplesnapshot：采样截图</li><li>action-AIAnalysis: 分析</li><li>action-AIRecognition：识别</li><li>action-aiReview：审核</li><li>action-animated-graphics：转动图</li><li>action-image-sprite：雪碧图</li><li>action-snapshotByTimeOffset: 时间点截图</li><li>action-adaptive-substream：自适应码流</li><li>action-AIQualityControl：媒体质检</li><li>action-SmartSubtitles：智能字幕</li><li>action-exec-rules：判断规则</li><li>action-SmartErase：智能擦除</li>
                      * 
                      */
                     void SetActivityType(const std::string& _activityType);
@@ -141,15 +69,15 @@ namespace TencentCloud
                     bool ActivityTypeHasBeenSet() const;
 
                     /**
-                     * 获取后驱节点索引数组
-                     * @return ReardriveIndex 后驱节点索引数组
+                     * 获取<p>后驱节点索引数组</p>
+                     * @return ReardriveIndex <p>后驱节点索引数组</p>
                      * 
                      */
                     std::vector<int64_t> GetReardriveIndex() const;
 
                     /**
-                     * 设置后驱节点索引数组
-                     * @param _reardriveIndex 后驱节点索引数组
+                     * 设置<p>后驱节点索引数组</p>
+                     * @param _reardriveIndex <p>后驱节点索引数组</p>
                      * 
                      */
                     void SetReardriveIndex(const std::vector<int64_t>& _reardriveIndex);
@@ -162,18 +90,18 @@ namespace TencentCloud
                     bool ReardriveIndexHasBeenSet() const;
 
                     /**
-                     * 获取原子任务参数
+                     * 获取<p>原子任务参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ActivityPara 原子任务参数
+                     * @return ActivityPara <p>原子任务参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ActivityPara GetActivityPara() const;
 
                     /**
-                     * 设置原子任务参数
+                     * 设置<p>原子任务参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _activityPara 原子任务参数
+                     * @param _activityPara <p>原子任务参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -189,37 +117,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 原子任务类型：
-<li>input: 起始节点</li>
-<li>output：终止节点</li>
-<li>action-trans：转码</li>
-<li>action-samplesnapshot：采样截图</li>
-<li>action-AIAnalysis: 分析</li>
-<li>action-AIRecognition：识别</li>
-<li>action-aiReview：审核</li>
-<li>action-animated-graphics：转动图</li>
-<li>action-image-sprite：雪碧图</li>
-<li>action-snapshotByTimeOffset: 时间点截图</li>
-<li>action-adaptive-substream：自适应码流</li>
-<li>action-AIQualityControl：媒体质检</li>
-<li>action-SmartSubtitles：智能字幕</li>
-<li>action-exec-rules：判断规则</li>
-<li>action-SmartErase：智能擦除</li>
-
-
-
+                     * <p>原子任务类型：</p><li>input: 起始节点</li><li>output：终止节点</li><li>action-trans：转码</li><li>action-samplesnapshot：采样截图</li><li>action-AIAnalysis: 分析</li><li>action-AIRecognition：识别</li><li>action-aiReview：审核</li><li>action-animated-graphics：转动图</li><li>action-image-sprite：雪碧图</li><li>action-snapshotByTimeOffset: 时间点截图</li><li>action-adaptive-substream：自适应码流</li><li>action-AIQualityControl：媒体质检</li><li>action-SmartSubtitles：智能字幕</li><li>action-exec-rules：判断规则</li><li>action-SmartErase：智能擦除</li>
                      */
                     std::string m_activityType;
                     bool m_activityTypeHasBeenSet;
 
                     /**
-                     * 后驱节点索引数组
+                     * <p>后驱节点索引数组</p>
                      */
                     std::vector<int64_t> m_reardriveIndex;
                     bool m_reardriveIndexHasBeenSet;
 
                     /**
-                     * 原子任务参数
+                     * <p>原子任务参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ActivityPara m_activityPara;

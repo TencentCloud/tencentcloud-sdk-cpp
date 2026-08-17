@@ -41,6 +41,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/EstateCertOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/GeneralHandwritingOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/WordItem.h
+  include/tencentcloud/ocr/v20181119/model/VerifyGeneralCardWarnRequest.h
   include/tencentcloud/ocr/v20181119/model/MLIDPassportOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/OverseasInvoice.h
   include/tencentcloud/ocr/v20181119/model/ItemInfo.h
@@ -147,6 +148,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/VatInvoiceInfo.h
   include/tencentcloud/ocr/v20181119/model/OnlineTaxiItineraryInfo.h
   include/tencentcloud/ocr/v20181119/model/ExtractDocMultiResponse.h
+  include/tencentcloud/ocr/v20181119/model/VerifyGeneralCardWarnResponse.h
   include/tencentcloud/ocr/v20181119/model/MachinePrintedInvoice.h
   include/tencentcloud/ocr/v20181119/model/FinancialBillItem.h
   include/tencentcloud/ocr/v20181119/model/ShoppingReceipt.h
@@ -346,6 +348,7 @@ set(ocr_src
   src/v20181119/model/EstateCertOCRResponse.cpp
   src/v20181119/model/GeneralHandwritingOCRResponse.cpp
   src/v20181119/model/WordItem.cpp
+  src/v20181119/model/VerifyGeneralCardWarnRequest.cpp
   src/v20181119/model/MLIDPassportOCRRequest.cpp
   src/v20181119/model/OverseasInvoice.cpp
   src/v20181119/model/ItemInfo.cpp
@@ -452,6 +455,7 @@ set(ocr_src
   src/v20181119/model/VatInvoiceInfo.cpp
   src/v20181119/model/OnlineTaxiItineraryInfo.cpp
   src/v20181119/model/ExtractDocMultiResponse.cpp
+  src/v20181119/model/VerifyGeneralCardWarnResponse.cpp
   src/v20181119/model/MachinePrintedInvoice.cpp
   src/v20181119/model/FinancialBillItem.cpp
   src/v20181119/model/ShoppingReceipt.cpp

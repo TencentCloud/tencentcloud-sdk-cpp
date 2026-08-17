@@ -169,6 +169,8 @@
 #include <tencentcloud/ocr/v20181119/model/VerifyBizLicenseEnterprise3Response.h>
 #include <tencentcloud/ocr/v20181119/model/VerifyBizLicenseEnterprise4Request.h>
 #include <tencentcloud/ocr/v20181119/model/VerifyBizLicenseEnterprise4Response.h>
+#include <tencentcloud/ocr/v20181119/model/VerifyGeneralCardWarnRequest.h>
+#include <tencentcloud/ocr/v20181119/model/VerifyGeneralCardWarnResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VerifyOfdVatInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/VerifyOfdVatInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VerifyScenePhotoRequest.h>
@@ -410,6 +412,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::VerifyBizLicenseEnterprise4Response> VerifyBizLicenseEnterprise4Outcome;
                 typedef std::future<VerifyBizLicenseEnterprise4Outcome> VerifyBizLicenseEnterprise4OutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::VerifyBizLicenseEnterprise4Request&, VerifyBizLicenseEnterprise4Outcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyBizLicenseEnterprise4AsyncHandler;
+                typedef Outcome<Core::Error, Model::VerifyGeneralCardWarnResponse> VerifyGeneralCardWarnOutcome;
+                typedef std::future<VerifyGeneralCardWarnOutcome> VerifyGeneralCardWarnOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::VerifyGeneralCardWarnRequest&, VerifyGeneralCardWarnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyGeneralCardWarnAsyncHandler;
                 typedef Outcome<Core::Error, Model::VerifyOfdVatInvoiceOCRResponse> VerifyOfdVatInvoiceOCROutcome;
                 typedef std::future<VerifyOfdVatInvoiceOCROutcome> VerifyOfdVatInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::VerifyOfdVatInvoiceOCRRequest&, VerifyOfdVatInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyOfdVatInvoiceOCRAsyncHandler;
@@ -1720,6 +1725,15 @@ namespace TencentCloud
                 VerifyBizLicenseEnterprise4Outcome VerifyBizLicenseEnterprise4(const Model::VerifyBizLicenseEnterprise4Request &request);
                 void VerifyBizLicenseEnterprise4Async(const Model::VerifyBizLicenseEnterprise4Request& request, const VerifyBizLicenseEnterprise4AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 VerifyBizLicenseEnterprise4OutcomeCallable VerifyBizLicenseEnterprise4Callable(const Model::VerifyBizLicenseEnterprise4Request& request);
+
+                /**
+                 *提供针对卡证（如身份证、营业执照等）图片的PS篡改、AIGC合成、图片质量检测能力，可应用于业务流程中对卡证图片真实性、有效性校验的场景。
+                 * @param req VerifyGeneralCardWarnRequest
+                 * @return VerifyGeneralCardWarnOutcome
+                 */
+                VerifyGeneralCardWarnOutcome VerifyGeneralCardWarn(const Model::VerifyGeneralCardWarnRequest &request);
+                void VerifyGeneralCardWarnAsync(const Model::VerifyGeneralCardWarnRequest& request, const VerifyGeneralCardWarnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VerifyGeneralCardWarnOutcomeCallable VerifyGeneralCardWarnCallable(const Model::VerifyGeneralCardWarnRequest& request);
 
                 /**
                  *本接口支持OFD格式的增值税电子普通发票、增值税电子专用发票、电子发票（普通发票）、电子发票（增值税专用发票）、电子发票（铁路电子客票）、电子发票（航空运输电子客票行程单）识别，返回发票代码、发票号码、开票日期、验证码、机器编号、密码区，购买方和销售方信息，包括名称、纳税人识别号、地址电话、开户行及账号，以及价税合计、开票人、收款人、复核人、税额、不含税金额等字段信息。

@@ -55,19 +55,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取区域左上角X坐标。
-如当Unit取1即使用百分比单位时，0.05表示区域左上角离整个画面左上角的横向距离为画面宽度的5%。
-                     * @return LeftTopX 区域左上角X坐标。
-如当Unit取1即使用百分比单位时，0.05表示区域左上角离整个画面左上角的横向距离为画面宽度的5%。
+                     * 获取<p>区域左上角X坐标。<br>如当Unit取1即使用百分比单位时，0.05表示区域左上角离整个画面左上角的横向距离为画面宽度的5%。</p>
+                     * @return LeftTopX <p>区域左上角X坐标。<br>如当Unit取1即使用百分比单位时，0.05表示区域左上角离整个画面左上角的横向距离为画面宽度的5%。</p>
                      * 
                      */
                     double GetLeftTopX() const;
 
                     /**
-                     * 设置区域左上角X坐标。
-如当Unit取1即使用百分比单位时，0.05表示区域左上角离整个画面左上角的横向距离为画面宽度的5%。
-                     * @param _leftTopX 区域左上角X坐标。
-如当Unit取1即使用百分比单位时，0.05表示区域左上角离整个画面左上角的横向距离为画面宽度的5%。
+                     * 设置<p>区域左上角X坐标。<br>如当Unit取1即使用百分比单位时，0.05表示区域左上角离整个画面左上角的横向距离为画面宽度的5%。</p>
+                     * @param _leftTopX <p>区域左上角X坐标。<br>如当Unit取1即使用百分比单位时，0.05表示区域左上角离整个画面左上角的横向距离为画面宽度的5%。</p>
                      * 
                      */
                     void SetLeftTopX(const double& _leftTopX);
@@ -80,19 +76,15 @@ namespace TencentCloud
                     bool LeftTopXHasBeenSet() const;
 
                     /**
-                     * 获取区域左上角Y坐标。
-如当Unit取1即使用百分比单位时，0.1表示区域左上角离整个画面左上角的纵向距离为画面高度的10%。
-                     * @return LeftTopY 区域左上角Y坐标。
-如当Unit取1即使用百分比单位时，0.1表示区域左上角离整个画面左上角的纵向距离为画面高度的10%。
+                     * 获取<p>区域左上角Y坐标。<br>如当Unit取1即使用百分比单位时，0.1表示区域左上角离整个画面左上角的纵向距离为画面高度的10%。</p>
+                     * @return LeftTopY <p>区域左上角Y坐标。<br>如当Unit取1即使用百分比单位时，0.1表示区域左上角离整个画面左上角的纵向距离为画面高度的10%。</p>
                      * 
                      */
                     double GetLeftTopY() const;
 
                     /**
-                     * 设置区域左上角Y坐标。
-如当Unit取1即使用百分比单位时，0.1表示区域左上角离整个画面左上角的纵向距离为画面高度的10%。
-                     * @param _leftTopY 区域左上角Y坐标。
-如当Unit取1即使用百分比单位时，0.1表示区域左上角离整个画面左上角的纵向距离为画面高度的10%。
+                     * 设置<p>区域左上角Y坐标。<br>如当Unit取1即使用百分比单位时，0.1表示区域左上角离整个画面左上角的纵向距离为画面高度的10%。</p>
+                     * @param _leftTopY <p>区域左上角Y坐标。<br>如当Unit取1即使用百分比单位时，0.1表示区域左上角离整个画面左上角的纵向距离为画面高度的10%。</p>
                      * 
                      */
                     void SetLeftTopY(const double& _leftTopY);
@@ -105,19 +97,15 @@ namespace TencentCloud
                     bool LeftTopYHasBeenSet() const;
 
                     /**
-                     * 获取区域右下角X坐标。
-如当Unit取1即使用百分比单位时，0.75表示区域右下角离整个画面左上角的横向距离为画面宽度的75%。
-                     * @return RightBottomX 区域右下角X坐标。
-如当Unit取1即使用百分比单位时，0.75表示区域右下角离整个画面左上角的横向距离为画面宽度的75%。
+                     * 获取<p>区域右下角X坐标。<br>如当Unit取1即使用百分比单位时，0.75表示区域右下角离整个画面左上角的横向距离为画面宽度的75%。</p>
+                     * @return RightBottomX <p>区域右下角X坐标。<br>如当Unit取1即使用百分比单位时，0.75表示区域右下角离整个画面左上角的横向距离为画面宽度的75%。</p>
                      * 
                      */
                     double GetRightBottomX() const;
 
                     /**
-                     * 设置区域右下角X坐标。
-如当Unit取1即使用百分比单位时，0.75表示区域右下角离整个画面左上角的横向距离为画面宽度的75%。
-                     * @param _rightBottomX 区域右下角X坐标。
-如当Unit取1即使用百分比单位时，0.75表示区域右下角离整个画面左上角的横向距离为画面宽度的75%。
+                     * 设置<p>区域右下角X坐标。<br>如当Unit取1即使用百分比单位时，0.75表示区域右下角离整个画面左上角的横向距离为画面宽度的75%。</p>
+                     * @param _rightBottomX <p>区域右下角X坐标。<br>如当Unit取1即使用百分比单位时，0.75表示区域右下角离整个画面左上角的横向距离为画面宽度的75%。</p>
                      * 
                      */
                     void SetRightBottomX(const double& _rightBottomX);
@@ -130,19 +118,15 @@ namespace TencentCloud
                     bool RightBottomXHasBeenSet() const;
 
                     /**
-                     * 获取区域右下角Y坐标。
-如当Unit取1即使用百分比单位时，0.9表示区域右下角离整个画面左上角的纵向距离为画面高度的90%。
-                     * @return RightBottomY 区域右下角Y坐标。
-如当Unit取1即使用百分比单位时，0.9表示区域右下角离整个画面左上角的纵向距离为画面高度的90%。
+                     * 获取<p>区域右下角Y坐标。<br>如当Unit取1即使用百分比单位时，0.9表示区域右下角离整个画面左上角的纵向距离为画面高度的90%。</p>
+                     * @return RightBottomY <p>区域右下角Y坐标。<br>如当Unit取1即使用百分比单位时，0.9表示区域右下角离整个画面左上角的纵向距离为画面高度的90%。</p>
                      * 
                      */
                     double GetRightBottomY() const;
 
                     /**
-                     * 设置区域右下角Y坐标。
-如当Unit取1即使用百分比单位时，0.9表示区域右下角离整个画面左上角的纵向距离为画面高度的90%。
-                     * @param _rightBottomY 区域右下角Y坐标。
-如当Unit取1即使用百分比单位时，0.9表示区域右下角离整个画面左上角的纵向距离为画面高度的90%。
+                     * 设置<p>区域右下角Y坐标。<br>如当Unit取1即使用百分比单位时，0.9表示区域右下角离整个画面左上角的纵向距离为画面高度的90%。</p>
+                     * @param _rightBottomY <p>区域右下角Y坐标。<br>如当Unit取1即使用百分比单位时，0.9表示区域右下角离整个画面左上角的纵向距离为画面高度的90%。</p>
                      * 
                      */
                     void SetRightBottomY(const double& _rightBottomY);
@@ -155,23 +139,15 @@ namespace TencentCloud
                     bool RightBottomYHasBeenSet() const;
 
                     /**
-                     * 获取坐标单位
-- 1 百分比
-- 2 像素值
-                     * @return Unit 坐标单位
-- 1 百分比
-- 2 像素值
+                     * 获取<p>坐标单位</p><ul><li>1 百分比</li><li>2 像素值</li></ul>
+                     * @return Unit <p>坐标单位</p><ul><li>1 百分比</li><li>2 像素值</li></ul>
                      * 
                      */
                     uint64_t GetUnit() const;
 
                     /**
-                     * 设置坐标单位
-- 1 百分比
-- 2 像素值
-                     * @param _unit 坐标单位
-- 1 百分比
-- 2 像素值
+                     * 设置<p>坐标单位</p><ul><li>1 百分比</li><li>2 像素值</li></ul>
+                     * @param _unit <p>坐标单位</p><ul><li>1 百分比</li><li>2 像素值</li></ul>
                      * 
                      */
                     void SetUnit(const uint64_t& _unit);
@@ -186,37 +162,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 区域左上角X坐标。
-如当Unit取1即使用百分比单位时，0.05表示区域左上角离整个画面左上角的横向距离为画面宽度的5%。
+                     * <p>区域左上角X坐标。<br>如当Unit取1即使用百分比单位时，0.05表示区域左上角离整个画面左上角的横向距离为画面宽度的5%。</p>
                      */
                     double m_leftTopX;
                     bool m_leftTopXHasBeenSet;
 
                     /**
-                     * 区域左上角Y坐标。
-如当Unit取1即使用百分比单位时，0.1表示区域左上角离整个画面左上角的纵向距离为画面高度的10%。
+                     * <p>区域左上角Y坐标。<br>如当Unit取1即使用百分比单位时，0.1表示区域左上角离整个画面左上角的纵向距离为画面高度的10%。</p>
                      */
                     double m_leftTopY;
                     bool m_leftTopYHasBeenSet;
 
                     /**
-                     * 区域右下角X坐标。
-如当Unit取1即使用百分比单位时，0.75表示区域右下角离整个画面左上角的横向距离为画面宽度的75%。
+                     * <p>区域右下角X坐标。<br>如当Unit取1即使用百分比单位时，0.75表示区域右下角离整个画面左上角的横向距离为画面宽度的75%。</p>
                      */
                     double m_rightBottomX;
                     bool m_rightBottomXHasBeenSet;
 
                     /**
-                     * 区域右下角Y坐标。
-如当Unit取1即使用百分比单位时，0.9表示区域右下角离整个画面左上角的纵向距离为画面高度的90%。
+                     * <p>区域右下角Y坐标。<br>如当Unit取1即使用百分比单位时，0.9表示区域右下角离整个画面左上角的纵向距离为画面高度的90%。</p>
                      */
                     double m_rightBottomY;
                     bool m_rightBottomYHasBeenSet;
 
                     /**
-                     * 坐标单位
-- 1 百分比
-- 2 像素值
+                     * <p>坐标单位</p><ul><li>1 百分比</li><li>2 像素值</li></ul>
                      */
                     uint64_t m_unit;
                     bool m_unitHasBeenSet;

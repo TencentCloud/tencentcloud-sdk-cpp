@@ -28,7 +28,8 @@ CloneVoiceResponse::CloneVoiceResponse() :
     m_msgHasBeenSet(false),
     m_voiceIdHasBeenSet(false),
     m_audioDataHasBeenSet(false),
-    m_audioUrlHasBeenSet(false)
+    m_audioUrlHasBeenSet(false),
+    m_extInfoHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome CloneVoiceResponse::Deserialize(const string &payload)
         m_audioUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExtInfo") && !rsp["ExtInfo"].IsNull())
+    {
+        if (!rsp["ExtInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extInfo = string(rsp["ExtInfo"].GetString());
+        m_extInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +175,14 @@ string CloneVoiceResponse::ToJsonString() const
         string key = "AudioUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_audioUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -226,6 +245,16 @@ string CloneVoiceResponse::GetAudioUrl() const
 bool CloneVoiceResponse::AudioUrlHasBeenSet() const
 {
     return m_audioUrlHasBeenSet;
+}
+
+string CloneVoiceResponse::GetExtInfo() const
+{
+    return m_extInfo;
+}
+
+bool CloneVoiceResponse::ExtInfoHasBeenSet() const
+{
+    return m_extInfoHasBeenSet;
 }
 
 

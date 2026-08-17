@@ -113,6 +113,20 @@ namespace TencentCloud
                      */
                     bool AudioUrlHasBeenSet() const;
 
+                    /**
+                     * 获取<p>扩展信息，json字符串</p>
+                     * @return ExtInfo <p>扩展信息，json字符串</p>
+                     * 
+                     */
+                    std::string GetExtInfo() const;
+
+                    /**
+                     * 判断参数 ExtInfo 是否已赋值
+                     * @return ExtInfo 是否已赋值
+                     * 
+                     */
+                    bool ExtInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +158,12 @@ namespace TencentCloud
                      */
                     std::string m_audioUrl;
                     bool m_audioUrlHasBeenSet;
+
+                    /**
+                     * <p>扩展信息，json字符串</p>
+                     */
+                    std::string m_extInfo;
+                    bool m_extInfoHasBeenSet;
 
                 };
             }

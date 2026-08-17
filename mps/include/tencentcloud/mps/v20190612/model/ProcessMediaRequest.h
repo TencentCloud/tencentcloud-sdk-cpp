@@ -31,6 +31,7 @@
 #include <tencentcloud/mps/v20190612/model/SmartSubtitlesTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/SmartEraseTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/TaskNotifyConfig.h>
+#include <tencentcloud/mps/v20190612/model/Activity.h>
 
 
 namespace TencentCloud
@@ -53,15 +54,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体处理的文件输入信息。
-                     * @return InputInfo 媒体处理的文件输入信息。
+                     * 获取<p>媒体处理的文件输入信息。</p>
+                     * @return InputInfo <p>媒体处理的文件输入信息。</p>
                      * 
                      */
                     MediaInputInfo GetInputInfo() const;
 
                     /**
-                     * 设置媒体处理的文件输入信息。
-                     * @param _inputInfo 媒体处理的文件输入信息。
+                     * 设置<p>媒体处理的文件输入信息。</p>
+                     * @param _inputInfo <p>媒体处理的文件输入信息。</p>
                      * 
                      */
                     void SetInputInfo(const MediaInputInfo& _inputInfo);
@@ -74,19 +75,15 @@ namespace TencentCloud
                     bool InputInfoHasBeenSet() const;
 
                     /**
-                     * 获取媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
-注意：当InputInfo.Type为URL时，该参数是必填项
-                     * @return OutputStorage 媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
-注意：当InputInfo.Type为URL时，该参数是必填项
+                     * 获取<p>媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。<br>注意：当InputInfo.Type为URL时，该参数是必填项</p>
+                     * @return OutputStorage <p>媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。<br>注意：当InputInfo.Type为URL时，该参数是必填项</p>
                      * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
-                     * 设置媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
-注意：当InputInfo.Type为URL时，该参数是必填项
-                     * @param _outputStorage 媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
-注意：当InputInfo.Type为URL时，该参数是必填项
+                     * 设置<p>媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。<br>注意：当InputInfo.Type为URL时，该参数是必填项</p>
+                     * @param _outputStorage <p>媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。<br>注意：当InputInfo.Type为URL时，该参数是必填项</p>
                      * 
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
@@ -99,19 +96,15 @@ namespace TencentCloud
                     bool OutputStorageHasBeenSet() const;
 
                     /**
-                     * 获取媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
-如果不填，表示与 InputInfo 中文件所在的目录一致。
-                     * @return OutputDir 媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
-如果不填，表示与 InputInfo 中文件所在的目录一致。
+                     * 获取<p>媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如<code>/movie/201907/</code>。<br>如果不填，表示与 InputInfo 中文件所在的目录一致。</p>
+                     * @return OutputDir <p>媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如<code>/movie/201907/</code>。<br>如果不填，表示与 InputInfo 中文件所在的目录一致。</p>
                      * 
                      */
                     std::string GetOutputDir() const;
 
                     /**
-                     * 设置媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
-如果不填，表示与 InputInfo 中文件所在的目录一致。
-                     * @param _outputDir 媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
-如果不填，表示与 InputInfo 中文件所在的目录一致。
+                     * 设置<p>媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如<code>/movie/201907/</code>。<br>如果不填，表示与 InputInfo 中文件所在的目录一致。</p>
+                     * @param _outputDir <p>媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如<code>/movie/201907/</code>。<br>如果不填，表示与 InputInfo 中文件所在的目录一致。</p>
                      * 
                      */
                     void SetOutputDir(const std::string& _outputDir);
@@ -124,43 +117,15 @@ namespace TencentCloud
                     bool OutputDirHasBeenSet() const;
 
                     /**
-                     * 获取编排ID。
-注意1：对于OutputStorage、OutputDir参数：
-<li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li>
-<li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若创建任务接口（ProcessMedia）有指定输出，将覆盖原有编排的默认输出。</li>
-<li>即输出设置的优先级：编排子任务节点 > 任务接口指定 > 对应编排内的配置 </li>
-注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessMedia）有设置，将覆盖原有编排的默认回调。
-
-注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。
-                     * @return ScheduleId 编排ID。
-注意1：对于OutputStorage、OutputDir参数：
-<li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li>
-<li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若创建任务接口（ProcessMedia）有指定输出，将覆盖原有编排的默认输出。</li>
-<li>即输出设置的优先级：编排子任务节点 > 任务接口指定 > 对应编排内的配置 </li>
-注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessMedia）有设置，将覆盖原有编排的默认回调。
-
-注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。
+                     * 获取<p>编排ID。<br>注意1：对于OutputStorage、OutputDir参数：</p><li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li><li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若创建任务接口（ProcessMedia）有指定输出，将覆盖原有编排的默认输出。</li><li>即输出设置的优先级：编排子任务节点 &gt; 任务接口指定 &gt; 对应编排内的配置 </li>注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessMedia）有设置，将覆盖原有编排的默认回调。<p>注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。</p>
+                     * @return ScheduleId <p>编排ID。<br>注意1：对于OutputStorage、OutputDir参数：</p><li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li><li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若创建任务接口（ProcessMedia）有指定输出，将覆盖原有编排的默认输出。</li><li>即输出设置的优先级：编排子任务节点 &gt; 任务接口指定 &gt; 对应编排内的配置 </li>注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessMedia）有设置，将覆盖原有编排的默认回调。<p>注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。</p>
                      * 
                      */
                     int64_t GetScheduleId() const;
 
                     /**
-                     * 设置编排ID。
-注意1：对于OutputStorage、OutputDir参数：
-<li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li>
-<li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若创建任务接口（ProcessMedia）有指定输出，将覆盖原有编排的默认输出。</li>
-<li>即输出设置的优先级：编排子任务节点 > 任务接口指定 > 对应编排内的配置 </li>
-注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessMedia）有设置，将覆盖原有编排的默认回调。
-
-注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。
-                     * @param _scheduleId 编排ID。
-注意1：对于OutputStorage、OutputDir参数：
-<li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li>
-<li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若创建任务接口（ProcessMedia）有指定输出，将覆盖原有编排的默认输出。</li>
-<li>即输出设置的优先级：编排子任务节点 > 任务接口指定 > 对应编排内的配置 </li>
-注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessMedia）有设置，将覆盖原有编排的默认回调。
-
-注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。
+                     * 设置<p>编排ID。<br>注意1：对于OutputStorage、OutputDir参数：</p><li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li><li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若创建任务接口（ProcessMedia）有指定输出，将覆盖原有编排的默认输出。</li><li>即输出设置的优先级：编排子任务节点 &gt; 任务接口指定 &gt; 对应编排内的配置 </li>注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessMedia）有设置，将覆盖原有编排的默认回调。<p>注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。</p>
+                     * @param _scheduleId <p>编排ID。<br>注意1：对于OutputStorage、OutputDir参数：</p><li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li><li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若创建任务接口（ProcessMedia）有指定输出，将覆盖原有编排的默认输出。</li><li>即输出设置的优先级：编排子任务节点 &gt; 任务接口指定 &gt; 对应编排内的配置 </li>注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessMedia）有设置，将覆盖原有编排的默认回调。<p>注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。</p>
                      * 
                      */
                     void SetScheduleId(const int64_t& _scheduleId);
@@ -173,15 +138,15 @@ namespace TencentCloud
                     bool ScheduleIdHasBeenSet() const;
 
                     /**
-                     * 获取媒体处理类型任务参数。
-                     * @return MediaProcessTask 媒体处理类型任务参数。
+                     * 获取<p>媒体处理类型任务参数。</p>
+                     * @return MediaProcessTask <p>媒体处理类型任务参数。</p>
                      * 
                      */
                     MediaProcessTaskInput GetMediaProcessTask() const;
 
                     /**
-                     * 设置媒体处理类型任务参数。
-                     * @param _mediaProcessTask 媒体处理类型任务参数。
+                     * 设置<p>媒体处理类型任务参数。</p>
+                     * @param _mediaProcessTask <p>媒体处理类型任务参数。</p>
                      * 
                      */
                     void SetMediaProcessTask(const MediaProcessTaskInput& _mediaProcessTask);
@@ -194,15 +159,15 @@ namespace TencentCloud
                     bool MediaProcessTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容审核类型任务参数。
-                     * @return AiContentReviewTask 视频内容审核类型任务参数。
+                     * 获取<p>视频内容审核类型任务参数。</p>
+                     * @return AiContentReviewTask <p>视频内容审核类型任务参数。</p>
                      * 
                      */
                     AiContentReviewTaskInput GetAiContentReviewTask() const;
 
                     /**
-                     * 设置视频内容审核类型任务参数。
-                     * @param _aiContentReviewTask 视频内容审核类型任务参数。
+                     * 设置<p>视频内容审核类型任务参数。</p>
+                     * @param _aiContentReviewTask <p>视频内容审核类型任务参数。</p>
                      * 
                      */
                     void SetAiContentReviewTask(const AiContentReviewTaskInput& _aiContentReviewTask);
@@ -215,15 +180,15 @@ namespace TencentCloud
                     bool AiContentReviewTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析类型任务参数。
-                     * @return AiAnalysisTask 视频内容分析类型任务参数。
+                     * 获取<p>视频内容分析类型任务参数。</p>
+                     * @return AiAnalysisTask <p>视频内容分析类型任务参数。</p>
                      * 
                      */
                     AiAnalysisTaskInput GetAiAnalysisTask() const;
 
                     /**
-                     * 设置视频内容分析类型任务参数。
-                     * @param _aiAnalysisTask 视频内容分析类型任务参数。
+                     * 设置<p>视频内容分析类型任务参数。</p>
+                     * @param _aiAnalysisTask <p>视频内容分析类型任务参数。</p>
                      * 
                      */
                     void SetAiAnalysisTask(const AiAnalysisTaskInput& _aiAnalysisTask);
@@ -236,15 +201,15 @@ namespace TencentCloud
                     bool AiAnalysisTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容识别类型任务参数。
-                     * @return AiRecognitionTask 视频内容识别类型任务参数。
+                     * 获取<p>视频内容识别类型任务参数。</p>
+                     * @return AiRecognitionTask <p>视频内容识别类型任务参数。</p>
                      * 
                      */
                     AiRecognitionTaskInput GetAiRecognitionTask() const;
 
                     /**
-                     * 设置视频内容识别类型任务参数。
-                     * @param _aiRecognitionTask 视频内容识别类型任务参数。
+                     * 设置<p>视频内容识别类型任务参数。</p>
+                     * @param _aiRecognitionTask <p>视频内容识别类型任务参数。</p>
                      * 
                      */
                     void SetAiRecognitionTask(const AiRecognitionTaskInput& _aiRecognitionTask);
@@ -257,15 +222,15 @@ namespace TencentCloud
                     bool AiRecognitionTaskHasBeenSet() const;
 
                     /**
-                     * 获取媒体质检类型任务参数。
-                     * @return AiQualityControlTask 媒体质检类型任务参数。
+                     * 获取<p>媒体质检类型任务参数。</p>
+                     * @return AiQualityControlTask <p>媒体质检类型任务参数。</p>
                      * 
                      */
                     AiQualityControlTaskInput GetAiQualityControlTask() const;
 
                     /**
-                     * 设置媒体质检类型任务参数。
-                     * @param _aiQualityControlTask 媒体质检类型任务参数。
+                     * 设置<p>媒体质检类型任务参数。</p>
+                     * @param _aiQualityControlTask <p>媒体质检类型任务参数。</p>
                      * 
                      */
                     void SetAiQualityControlTask(const AiQualityControlTaskInput& _aiQualityControlTask);
@@ -278,15 +243,15 @@ namespace TencentCloud
                     bool AiQualityControlTaskHasBeenSet() const;
 
                     /**
-                     * 获取智能字幕
-                     * @return SmartSubtitlesTask 智能字幕
+                     * 获取<p>智能字幕</p>
+                     * @return SmartSubtitlesTask <p>智能字幕</p>
                      * 
                      */
                     SmartSubtitlesTaskInput GetSmartSubtitlesTask() const;
 
                     /**
-                     * 设置智能字幕
-                     * @param _smartSubtitlesTask 智能字幕
+                     * 设置<p>智能字幕</p>
+                     * @param _smartSubtitlesTask <p>智能字幕</p>
                      * 
                      */
                     void SetSmartSubtitlesTask(const SmartSubtitlesTaskInput& _smartSubtitlesTask);
@@ -299,15 +264,15 @@ namespace TencentCloud
                     bool SmartSubtitlesTaskHasBeenSet() const;
 
                     /**
-                     * 获取智能擦除类型任务参数
-                     * @return SmartEraseTask 智能擦除类型任务参数
+                     * 获取<p>智能擦除类型任务参数</p>
+                     * @return SmartEraseTask <p>智能擦除类型任务参数</p>
                      * 
                      */
                     SmartEraseTaskInput GetSmartEraseTask() const;
 
                     /**
-                     * 设置智能擦除类型任务参数
-                     * @param _smartEraseTask 智能擦除类型任务参数
+                     * 设置<p>智能擦除类型任务参数</p>
+                     * @param _smartEraseTask <p>智能擦除类型任务参数</p>
                      * 
                      */
                     void SetSmartEraseTask(const SmartEraseTaskInput& _smartEraseTask);
@@ -320,15 +285,15 @@ namespace TencentCloud
                     bool SmartEraseTaskHasBeenSet() const;
 
                     /**
-                     * 获取任务的事件通知信息，不填代表不获取事件通知。
-                     * @return TaskNotifyConfig 任务的事件通知信息，不填代表不获取事件通知。
+                     * 获取<p>任务的事件通知信息，不填代表不获取事件通知。</p>
+                     * @return TaskNotifyConfig <p>任务的事件通知信息，不填代表不获取事件通知。</p>
                      * 
                      */
                     TaskNotifyConfig GetTaskNotifyConfig() const;
 
                     /**
-                     * 设置任务的事件通知信息，不填代表不获取事件通知。
-                     * @param _taskNotifyConfig 任务的事件通知信息，不填代表不获取事件通知。
+                     * 设置<p>任务的事件通知信息，不填代表不获取事件通知。</p>
+                     * @param _taskNotifyConfig <p>任务的事件通知信息，不填代表不获取事件通知。</p>
                      * 
                      */
                     void SetTaskNotifyConfig(const TaskNotifyConfig& _taskNotifyConfig);
@@ -341,15 +306,15 @@ namespace TencentCloud
                     bool TaskNotifyConfigHasBeenSet() const;
 
                     /**
-                     * 获取任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
-                     * @return TasksPriority 任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
+                     * 获取<p>任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>
+                     * @return TasksPriority <p>任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>
                      * 
                      */
                     int64_t GetTasksPriority() const;
 
                     /**
-                     * 设置任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
-                     * @param _tasksPriority 任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
+                     * 设置<p>任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>
+                     * @param _tasksPriority <p>任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>
                      * 
                      */
                     void SetTasksPriority(const int64_t& _tasksPriority);
@@ -362,15 +327,15 @@ namespace TencentCloud
                     bool TasksPriorityHasBeenSet() const;
 
                     /**
-                     * 获取用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不传该参数或者参数为空字符串则本次请求不做去重操作。
-                     * @return SessionId 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不传该参数或者参数为空字符串则本次请求不做去重操作。
+                     * 获取<p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不传该参数或者参数为空字符串则本次请求不做去重操作。</p>
+                     * @return SessionId <p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不传该参数或者参数为空字符串则本次请求不做去重操作。</p>
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不传该参数或者参数为空字符串则本次请求不做去重操作。
-                     * @param _sessionId 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不传该参数或者参数为空字符串则本次请求不做去重操作。
+                     * 设置<p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不传该参数或者参数为空字符串则本次请求不做去重操作。</p>
+                     * @param _sessionId <p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不传该参数或者参数为空字符串则本次请求不做去重操作。</p>
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -383,15 +348,15 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @return SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 获取<p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
+                     * @return SessionContext <p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @param _sessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 设置<p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
+                     * @param _sessionContext <p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -404,23 +369,15 @@ namespace TencentCloud
                     bool SessionContextHasBeenSet() const;
 
                     /**
-                     * 获取任务类型，默认Online
-<li> Online：实时任务</li>
-<li> Offline：闲时任务，不保证实效性，默认3天内处理完</li>
-                     * @return TaskType 任务类型，默认Online
-<li> Online：实时任务</li>
-<li> Offline：闲时任务，不保证实效性，默认3天内处理完</li>
+                     * 获取<p>任务类型，默认Online</p><li> Online：实时任务</li><li> Offline：闲时任务，不保证实效性，默认3天内处理完</li>
+                     * @return TaskType <p>任务类型，默认Online</p><li> Online：实时任务</li><li> Offline：闲时任务，不保证实效性，默认3天内处理完</li>
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置任务类型，默认Online
-<li> Online：实时任务</li>
-<li> Offline：闲时任务，不保证实效性，默认3天内处理完</li>
-                     * @param _taskType 任务类型，默认Online
-<li> Online：实时任务</li>
-<li> Offline：闲时任务，不保证实效性，默认3天内处理完</li>
+                     * 设置<p>任务类型，默认Online</p><li> Online：实时任务</li><li> Offline：闲时任务，不保证实效性，默认3天内处理完</li>
+                     * @param _taskType <p>任务类型，默认Online</p><li> Online：实时任务</li><li> Offline：闲时任务，不保证实效性，默认3天内处理完</li>
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -433,15 +390,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
-                     * @return ResourceId 资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
+                     * 获取<p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>
+                     * @return ResourceId <p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
-                     * @param _resourceId 资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
+                     * 设置<p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>
+                     * @param _resourceId <p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -454,27 +411,36 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取是否跳过元信息获取，可选值： 
-0：表示不跳过 
-1：表示跳过 
-默认值：0	
-                     * @return SkipMateData 是否跳过元信息获取，可选值： 
-0：表示不跳过 
-1：表示跳过 
-默认值：0	
+                     * 获取<p>媒体编排任务组<br>注意：填写此参数ScheduleId字段将失效，Activities优先级大于ScheduleId</p>
+                     * @return Activities <p>媒体编排任务组<br>注意：填写此参数ScheduleId字段将失效，Activities优先级大于ScheduleId</p>
+                     * 
+                     */
+                    std::vector<Activity> GetActivities() const;
+
+                    /**
+                     * 设置<p>媒体编排任务组<br>注意：填写此参数ScheduleId字段将失效，Activities优先级大于ScheduleId</p>
+                     * @param _activities <p>媒体编排任务组<br>注意：填写此参数ScheduleId字段将失效，Activities优先级大于ScheduleId</p>
+                     * 
+                     */
+                    void SetActivities(const std::vector<Activity>& _activities);
+
+                    /**
+                     * 判断参数 Activities 是否已赋值
+                     * @return Activities 是否已赋值
+                     * 
+                     */
+                    bool ActivitiesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否跳过元信息获取，可选值：<br>0：表示不跳过<br>1：表示跳过<br>默认值：0</p>
+                     * @return SkipMateData <p>是否跳过元信息获取，可选值：<br>0：表示不跳过<br>1：表示跳过<br>默认值：0</p>
                      * 
                      */
                     int64_t GetSkipMateData() const;
 
                     /**
-                     * 设置是否跳过元信息获取，可选值： 
-0：表示不跳过 
-1：表示跳过 
-默认值：0	
-                     * @param _skipMateData 是否跳过元信息获取，可选值： 
-0：表示不跳过 
-1：表示跳过 
-默认值：0	
+                     * 设置<p>是否跳过元信息获取，可选值：<br>0：表示不跳过<br>1：表示跳过<br>默认值：0</p>
+                     * @param _skipMateData <p>是否跳过元信息获取，可选值：<br>0：表示不跳过<br>1：表示跳过<br>默认值：0</p>
                      * 
                      */
                     void SetSkipMateData(const int64_t& _skipMateData);
@@ -489,123 +455,115 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒体处理的文件输入信息。
+                     * <p>媒体处理的文件输入信息。</p>
                      */
                     MediaInputInfo m_inputInfo;
                     bool m_inputInfoHasBeenSet;
 
                     /**
-                     * 媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
-注意：当InputInfo.Type为URL时，该参数是必填项
+                     * <p>媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。<br>注意：当InputInfo.Type为URL时，该参数是必填项</p>
                      */
                     TaskOutputStorage m_outputStorage;
                     bool m_outputStorageHasBeenSet;
 
                     /**
-                     * 媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
-如果不填，表示与 InputInfo 中文件所在的目录一致。
+                     * <p>媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如<code>/movie/201907/</code>。<br>如果不填，表示与 InputInfo 中文件所在的目录一致。</p>
                      */
                     std::string m_outputDir;
                     bool m_outputDirHasBeenSet;
 
                     /**
-                     * 编排ID。
-注意1：对于OutputStorage、OutputDir参数：
-<li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li>
-<li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若创建任务接口（ProcessMedia）有指定输出，将覆盖原有编排的默认输出。</li>
-<li>即输出设置的优先级：编排子任务节点 > 任务接口指定 > 对应编排内的配置 </li>
-注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessMedia）有设置，将覆盖原有编排的默认回调。
-
-注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。
+                     * <p>编排ID。<br>注意1：对于OutputStorage、OutputDir参数：</p><li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li><li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若创建任务接口（ProcessMedia）有指定输出，将覆盖原有编排的默认输出。</li><li>即输出设置的优先级：编排子任务节点 &gt; 任务接口指定 &gt; 对应编排内的配置 </li>注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessMedia）有设置，将覆盖原有编排的默认回调。<p>注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。</p>
                      */
                     int64_t m_scheduleId;
                     bool m_scheduleIdHasBeenSet;
 
                     /**
-                     * 媒体处理类型任务参数。
+                     * <p>媒体处理类型任务参数。</p>
                      */
                     MediaProcessTaskInput m_mediaProcessTask;
                     bool m_mediaProcessTaskHasBeenSet;
 
                     /**
-                     * 视频内容审核类型任务参数。
+                     * <p>视频内容审核类型任务参数。</p>
                      */
                     AiContentReviewTaskInput m_aiContentReviewTask;
                     bool m_aiContentReviewTaskHasBeenSet;
 
                     /**
-                     * 视频内容分析类型任务参数。
+                     * <p>视频内容分析类型任务参数。</p>
                      */
                     AiAnalysisTaskInput m_aiAnalysisTask;
                     bool m_aiAnalysisTaskHasBeenSet;
 
                     /**
-                     * 视频内容识别类型任务参数。
+                     * <p>视频内容识别类型任务参数。</p>
                      */
                     AiRecognitionTaskInput m_aiRecognitionTask;
                     bool m_aiRecognitionTaskHasBeenSet;
 
                     /**
-                     * 媒体质检类型任务参数。
+                     * <p>媒体质检类型任务参数。</p>
                      */
                     AiQualityControlTaskInput m_aiQualityControlTask;
                     bool m_aiQualityControlTaskHasBeenSet;
 
                     /**
-                     * 智能字幕
+                     * <p>智能字幕</p>
                      */
                     SmartSubtitlesTaskInput m_smartSubtitlesTask;
                     bool m_smartSubtitlesTaskHasBeenSet;
 
                     /**
-                     * 智能擦除类型任务参数
+                     * <p>智能擦除类型任务参数</p>
                      */
                     SmartEraseTaskInput m_smartEraseTask;
                     bool m_smartEraseTaskHasBeenSet;
 
                     /**
-                     * 任务的事件通知信息，不填代表不获取事件通知。
+                     * <p>任务的事件通知信息，不填代表不获取事件通知。</p>
                      */
                     TaskNotifyConfig m_taskNotifyConfig;
                     bool m_taskNotifyConfigHasBeenSet;
 
                     /**
-                     * 任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
+                     * <p>任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>
                      */
                     int64_t m_tasksPriority;
                     bool m_tasksPriorityHasBeenSet;
 
                     /**
-                     * 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不传该参数或者参数为空字符串则本次请求不做去重操作。
+                     * <p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不传该参数或者参数为空字符串则本次请求不做去重操作。</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * <p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
 
                     /**
-                     * 任务类型，默认Online
-<li> Online：实时任务</li>
-<li> Offline：闲时任务，不保证实效性，默认3天内处理完</li>
+                     * <p>任务类型，默认Online</p><li> Online：实时任务</li><li> Offline：闲时任务，不保证实效性，默认3天内处理完</li>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
+                     * <p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 是否跳过元信息获取，可选值： 
-0：表示不跳过 
-1：表示跳过 
-默认值：0	
+                     * <p>媒体编排任务组<br>注意：填写此参数ScheduleId字段将失效，Activities优先级大于ScheduleId</p>
+                     */
+                    std::vector<Activity> m_activities;
+                    bool m_activitiesHasBeenSet;
+
+                    /**
+                     * <p>是否跳过元信息获取，可选值：<br>0：表示不跳过<br>1：表示跳过<br>默认值：0</p>
                      */
                     int64_t m_skipMateData;
                     bool m_skipMateDataHasBeenSet;

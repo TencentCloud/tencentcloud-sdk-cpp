@@ -40,6 +40,7 @@ ProcessMediaRequest::ProcessMediaRequest() :
     m_sessionContextHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
+    m_activitiesHasBeenSet(false),
     m_skipMateDataHasBeenSet(false)
 {
 }
@@ -195,6 +196,21 @@ string ProcessMediaRequest::ToJsonString() const
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_activitiesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Activities";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_activities.begin(); itr != m_activities.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_skipMateDataHasBeenSet)
@@ -483,6 +499,22 @@ void ProcessMediaRequest::SetResourceId(const string& _resourceId)
 bool ProcessMediaRequest::ResourceIdHasBeenSet() const
 {
     return m_resourceIdHasBeenSet;
+}
+
+vector<Activity> ProcessMediaRequest::GetActivities() const
+{
+    return m_activities;
+}
+
+void ProcessMediaRequest::SetActivities(const vector<Activity>& _activities)
+{
+    m_activities = _activities;
+    m_activitiesHasBeenSet = true;
+}
+
+bool ProcessMediaRequest::ActivitiesHasBeenSet() const
+{
+    return m_activitiesHasBeenSet;
 }
 
 int64_t ProcessMediaRequest::GetSkipMateData() const
