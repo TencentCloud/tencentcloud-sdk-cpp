@@ -152,6 +152,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/DescribeServiceProviderHealthStatusResponse.h
   include/tencentcloud/clb/v20180317/model/ModifyTargetWeightResponse.h
   include/tencentcloud/clb/v20180317/model/ZoneResource.h
+  include/tencentcloud/clb/v20180317/model/StickyConfig.h
   include/tencentcloud/clb/v20180317/model/DescribeExclusiveClustersResponse.h
   include/tencentcloud/clb/v20180317/model/BatchModifyTargetTagRequest.h
   include/tencentcloud/clb/v20180317/model/LoadBalancerHealth.h
@@ -347,6 +348,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/DisassociateModelsFromModelRouterResponse.h
   include/tencentcloud/clb/v20180317/model/TargetGroupHealthCheck.h
   include/tencentcloud/clb/v20180317/model/BatchRegisterTargetsRequest.h
+  include/tencentcloud/clb/v20180317/model/ModelRouterBillingConfigOutput.h
   include/tencentcloud/clb/v20180317/model/DescribeResourcesRequest.h
   include/tencentcloud/clb/v20180317/model/ServiceProviderItem.h
   include/tencentcloud/clb/v20180317/model/Resource.h
@@ -616,6 +618,7 @@ set(clb_src
   src/v20180317/model/DescribeServiceProviderHealthStatusResponse.cpp
   src/v20180317/model/ModifyTargetWeightResponse.cpp
   src/v20180317/model/ZoneResource.cpp
+  src/v20180317/model/StickyConfig.cpp
   src/v20180317/model/DescribeExclusiveClustersResponse.cpp
   src/v20180317/model/BatchModifyTargetTagRequest.cpp
   src/v20180317/model/LoadBalancerHealth.cpp
@@ -811,6 +814,7 @@ set(clb_src
   src/v20180317/model/DisassociateModelsFromModelRouterResponse.cpp
   src/v20180317/model/TargetGroupHealthCheck.cpp
   src/v20180317/model/BatchRegisterTargetsRequest.cpp
+  src/v20180317/model/ModelRouterBillingConfigOutput.cpp
   src/v20180317/model/DescribeResourcesRequest.cpp
   src/v20180317/model/ServiceProviderItem.cpp
   src/v20180317/model/Resource.cpp

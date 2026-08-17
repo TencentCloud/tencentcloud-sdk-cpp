@@ -69,7 +69,9 @@ ModifyApmInstanceRequest::ModifyApmInstanceRequest() :
     m_enableHeadSamplerHasBeenSet(false),
     m_headSamplerTypeHasBeenSet(false),
     m_headSamplerArgHasBeenSet(false),
-    m_disableAiAbilityHasBeenSet(false)
+    m_disableAiAbilityHasBeenSet(false),
+    m_crossAccountStatusHasBeenSet(false),
+    m_crossAccountPeerIdHasBeenSet(false)
 {
 }
 
@@ -466,6 +468,22 @@ string ModifyApmInstanceRequest::ToJsonString() const
         string key = "DisableAiAbility";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_disableAiAbility, allocator);
+    }
+
+    if (m_crossAccountStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CrossAccountStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_crossAccountStatus, allocator);
+    }
+
+    if (m_crossAccountPeerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CrossAccountPeerId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_crossAccountPeerId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1226,6 +1244,38 @@ void ModifyApmInstanceRequest::SetDisableAiAbility(const int64_t& _disableAiAbil
 bool ModifyApmInstanceRequest::DisableAiAbilityHasBeenSet() const
 {
     return m_disableAiAbilityHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetCrossAccountStatus() const
+{
+    return m_crossAccountStatus;
+}
+
+void ModifyApmInstanceRequest::SetCrossAccountStatus(const int64_t& _crossAccountStatus)
+{
+    m_crossAccountStatus = _crossAccountStatus;
+    m_crossAccountStatusHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::CrossAccountStatusHasBeenSet() const
+{
+    return m_crossAccountStatusHasBeenSet;
+}
+
+string ModifyApmInstanceRequest::GetCrossAccountPeerId() const
+{
+    return m_crossAccountPeerId;
+}
+
+void ModifyApmInstanceRequest::SetCrossAccountPeerId(const string& _crossAccountPeerId)
+{
+    m_crossAccountPeerId = _crossAccountPeerId;
+    m_crossAccountPeerIdHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::CrossAccountPeerIdHasBeenSet() const
+{
+    return m_crossAccountPeerIdHasBeenSet;
 }
 
 

@@ -40,7 +40,11 @@ CreateInferenceServiceRequest::CreateInferenceServiceRequest() :
     m_minReplicasHasBeenSet(false),
     m_maxReplicasHasBeenSet(false),
     m_autoscalerOptionsHasBeenSet(false),
-    m_apiKeyIdsHasBeenSet(false)
+    m_apiKeyIdsHasBeenSet(false),
+    m_advancedOptionsHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false),
+    m_isCustomHasBeenSet(false),
+    m_runtimeEnvHasBeenSet(false)
 {
 }
 
@@ -198,6 +202,45 @@ string CreateInferenceServiceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_advancedOptionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedOptions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_advancedOptions.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_isCustomHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCustom";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isCustom, allocator);
+    }
+
+    if (m_runtimeEnvHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuntimeEnv";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_runtimeEnv.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -494,6 +537,70 @@ void CreateInferenceServiceRequest::SetApiKeyIds(const vector<string>& _apiKeyId
 bool CreateInferenceServiceRequest::ApiKeyIdsHasBeenSet() const
 {
     return m_apiKeyIdsHasBeenSet;
+}
+
+string CreateInferenceServiceRequest::GetAdvancedOptions() const
+{
+    return m_advancedOptions;
+}
+
+void CreateInferenceServiceRequest::SetAdvancedOptions(const string& _advancedOptions)
+{
+    m_advancedOptions = _advancedOptions;
+    m_advancedOptionsHasBeenSet = true;
+}
+
+bool CreateInferenceServiceRequest::AdvancedOptionsHasBeenSet() const
+{
+    return m_advancedOptionsHasBeenSet;
+}
+
+vector<Tag> CreateInferenceServiceRequest::GetResourceTags() const
+{
+    return m_resourceTags;
+}
+
+void CreateInferenceServiceRequest::SetResourceTags(const vector<Tag>& _resourceTags)
+{
+    m_resourceTags = _resourceTags;
+    m_resourceTagsHasBeenSet = true;
+}
+
+bool CreateInferenceServiceRequest::ResourceTagsHasBeenSet() const
+{
+    return m_resourceTagsHasBeenSet;
+}
+
+bool CreateInferenceServiceRequest::GetIsCustom() const
+{
+    return m_isCustom;
+}
+
+void CreateInferenceServiceRequest::SetIsCustom(const bool& _isCustom)
+{
+    m_isCustom = _isCustom;
+    m_isCustomHasBeenSet = true;
+}
+
+bool CreateInferenceServiceRequest::IsCustomHasBeenSet() const
+{
+    return m_isCustomHasBeenSet;
+}
+
+string CreateInferenceServiceRequest::GetRuntimeEnv() const
+{
+    return m_runtimeEnv;
+}
+
+void CreateInferenceServiceRequest::SetRuntimeEnv(const string& _runtimeEnv)
+{
+    m_runtimeEnv = _runtimeEnv;
+    m_runtimeEnvHasBeenSet = true;
+}
+
+bool CreateInferenceServiceRequest::RuntimeEnvHasBeenSet() const
+{
+    return m_runtimeEnvHasBeenSet;
 }
 
 

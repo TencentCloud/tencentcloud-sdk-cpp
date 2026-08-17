@@ -43,7 +43,8 @@ InferenceModelInfo::InferenceModelInfo() :
     m_uinHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_subAccountUinHasBeenSet(false)
+    m_subAccountUinHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false)
 {
 }
 
@@ -291,6 +292,26 @@ CoreInternalOutcome InferenceModelInfo::Deserialize(const rapidjson::Value &valu
         m_subAccountUinHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceTags") && !value["ResourceTags"].IsNull())
+    {
+        if (!value["ResourceTags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InferenceModelInfo.ResourceTags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ResourceTags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_resourceTags.push_back(item);
+        }
+        m_resourceTagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -495,6 +516,21 @@ void InferenceModelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "SubAccountUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subAccountUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -866,5 +902,21 @@ void InferenceModelInfo::SetSubAccountUin(const string& _subAccountUin)
 bool InferenceModelInfo::SubAccountUinHasBeenSet() const
 {
     return m_subAccountUinHasBeenSet;
+}
+
+vector<Tag> InferenceModelInfo::GetResourceTags() const
+{
+    return m_resourceTags;
+}
+
+void InferenceModelInfo::SetResourceTags(const vector<Tag>& _resourceTags)
+{
+    m_resourceTags = _resourceTags;
+    m_resourceTagsHasBeenSet = true;
+}
+
+bool InferenceModelInfo::ResourceTagsHasBeenSet() const
+{
+    return m_resourceTagsHasBeenSet;
 }
 

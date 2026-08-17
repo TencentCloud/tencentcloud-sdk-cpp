@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dlc/v20210125/model/CpuSummaryItem.h>
+#include <tencentcloud/dlc/v20210125/model/Tag.h>
 
 
 namespace TencentCloud
@@ -450,6 +451,62 @@ namespace TencentCloud
                      */
                     bool ResourceConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>AdvancedOptions 高级参数 JSON 字符串（扁平 KV 结构，取自第一个部署）</p>
+                     * @return AdvancedOptions <p>AdvancedOptions 高级参数 JSON 字符串（扁平 KV 结构，取自第一个部署）</p>
+                     * 
+                     */
+                    std::string GetAdvancedOptions() const;
+
+                    /**
+                     * 判断参数 AdvancedOptions 是否已赋值
+                     * @return AdvancedOptions 是否已赋值
+                     * 
+                     */
+                    bool AdvancedOptionsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>系统标签列表（TagKey-TagValue）</p>
+                     * @return ResourceTags <p>系统标签列表（TagKey-TagValue）</p>
+                     * 
+                     */
+                    std::vector<Tag> GetResourceTags() const;
+
+                    /**
+                     * 判断参数 ResourceTags 是否已赋值
+                     * @return ResourceTags 是否已赋值
+                     * 
+                     */
+                    bool ResourceTagsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>部署模式</p>
+                     * @return DeploymentMode <p>部署模式</p>
+                     * 
+                     */
+                    std::string GetDeploymentMode() const;
+
+                    /**
+                     * 判断参数 DeploymentMode 是否已赋值
+                     * @return DeploymentMode 是否已赋值
+                     * 
+                     */
+                    bool DeploymentModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否是自定义 RayServe 创建</p>
+                     * @return IsCustom <p>是否是自定义 RayServe 创建</p>
+                     * 
+                     */
+                    bool GetIsCustom() const;
+
+                    /**
+                     * 判断参数 IsCustom 是否已赋值
+                     * @return IsCustom 是否已赋值
+                     * 
+                     */
+                    bool IsCustomHasBeenSet() const;
+
                 private:
 
                     /**
@@ -628,6 +685,30 @@ namespace TencentCloud
                      */
                     std::string m_resourceConfig;
                     bool m_resourceConfigHasBeenSet;
+
+                    /**
+                     * <p>AdvancedOptions 高级参数 JSON 字符串（扁平 KV 结构，取自第一个部署）</p>
+                     */
+                    std::string m_advancedOptions;
+                    bool m_advancedOptionsHasBeenSet;
+
+                    /**
+                     * <p>系统标签列表（TagKey-TagValue）</p>
+                     */
+                    std::vector<Tag> m_resourceTags;
+                    bool m_resourceTagsHasBeenSet;
+
+                    /**
+                     * <p>部署模式</p>
+                     */
+                    std::string m_deploymentMode;
+                    bool m_deploymentModeHasBeenSet;
+
+                    /**
+                     * <p>是否是自定义 RayServe 创建</p>
+                     */
+                    bool m_isCustom;
+                    bool m_isCustomHasBeenSet;
 
                 };
             }

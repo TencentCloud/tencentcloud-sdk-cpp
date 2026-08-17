@@ -33,7 +33,8 @@ ListTWeSeeTasksRequest::ListTWeSeeTasksRequest() :
     m_startTimeMsHasBeenSet(false),
     m_endTimeMsHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_fileURLExpireTimeHasBeenSet(false)
+    m_fileURLExpireTimeHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,21 @@ string ListTWeSeeTasksRequest::ToJsonString() const
         string key = "FileURLExpireTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_fileURLExpireTime, allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -319,6 +335,22 @@ void ListTWeSeeTasksRequest::SetFileURLExpireTime(const int64_t& _fileURLExpireT
 bool ListTWeSeeTasksRequest::FileURLExpireTimeHasBeenSet() const
 {
     return m_fileURLExpireTimeHasBeenSet;
+}
+
+vector<VisionRecognitionTaskFilter> ListTWeSeeTasksRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void ListTWeSeeTasksRequest::SetFilters(const vector<VisionRecognitionTaskFilter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool ListTWeSeeTasksRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

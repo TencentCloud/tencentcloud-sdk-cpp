@@ -21,6 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/Tag.h>
+#include <tencentcloud/dlc/v20210125/model/GooseFSConfig.h>
 
 
 namespace TencentCloud
@@ -273,6 +275,69 @@ namespace TencentCloud
                      */
                     bool ModelUidHasBeenSet() const;
 
+                    /**
+                     * 获取<p>系统标签列表（TagKey-TagValue）</p>
+                     * @return ResourceTags <p>系统标签列表（TagKey-TagValue）</p>
+                     * 
+                     */
+                    std::vector<Tag> GetResourceTags() const;
+
+                    /**
+                     * 设置<p>系统标签列表（TagKey-TagValue）</p>
+                     * @param _resourceTags <p>系统标签列表（TagKey-TagValue）</p>
+                     * 
+                     */
+                    void SetResourceTags(const std::vector<Tag>& _resourceTags);
+
+                    /**
+                     * 判断参数 ResourceTags 是否已赋值
+                     * @return ResourceTags 是否已赋值
+                     * 
+                     */
+                    bool ResourceTagsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模型文件来源于goosefs</p>
+                     * @return GooseFSConfig <p>模型文件来源于goosefs</p>
+                     * 
+                     */
+                    GooseFSConfig GetGooseFSConfig() const;
+
+                    /**
+                     * 设置<p>模型文件来源于goosefs</p>
+                     * @param _gooseFSConfig <p>模型文件来源于goosefs</p>
+                     * 
+                     */
+                    void SetGooseFSConfig(const GooseFSConfig& _gooseFSConfig);
+
+                    /**
+                     * 判断参数 GooseFSConfig 是否已赋值
+                     * @return GooseFSConfig 是否已赋值
+                     * 
+                     */
+                    bool GooseFSConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模型上传来源类型</p><p>枚举值：</p><ul><li>Local： 本地上传</li><li>COS： COS上传</li><li>CFS： CFS上传</li><li>CFSTurbo： CFSTurbo上传</li><li>GooseFS： GooseFS上传</li></ul>
+                     * @return StorageType <p>模型上传来源类型</p><p>枚举值：</p><ul><li>Local： 本地上传</li><li>COS： COS上传</li><li>CFS： CFS上传</li><li>CFSTurbo： CFSTurbo上传</li><li>GooseFS： GooseFS上传</li></ul>
+                     * 
+                     */
+                    std::string GetStorageType() const;
+
+                    /**
+                     * 设置<p>模型上传来源类型</p><p>枚举值：</p><ul><li>Local： 本地上传</li><li>COS： COS上传</li><li>CFS： CFS上传</li><li>CFSTurbo： CFSTurbo上传</li><li>GooseFS： GooseFS上传</li></ul>
+                     * @param _storageType <p>模型上传来源类型</p><p>枚举值：</p><ul><li>Local： 本地上传</li><li>COS： COS上传</li><li>CFS： CFS上传</li><li>CFSTurbo： CFSTurbo上传</li><li>GooseFS： GooseFS上传</li></ul>
+                     * 
+                     */
+                    void SetStorageType(const std::string& _storageType);
+
+                    /**
+                     * 判断参数 StorageType 是否已赋值
+                     * @return StorageType 是否已赋值
+                     * 
+                     */
+                    bool StorageTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -340,6 +405,24 @@ namespace TencentCloud
                      */
                     std::string m_modelUid;
                     bool m_modelUidHasBeenSet;
+
+                    /**
+                     * <p>系统标签列表（TagKey-TagValue）</p>
+                     */
+                    std::vector<Tag> m_resourceTags;
+                    bool m_resourceTagsHasBeenSet;
+
+                    /**
+                     * <p>模型文件来源于goosefs</p>
+                     */
+                    GooseFSConfig m_gooseFSConfig;
+                    bool m_gooseFSConfigHasBeenSet;
+
+                    /**
+                     * <p>模型上传来源类型</p><p>枚举值：</p><ul><li>Local： 本地上传</li><li>COS： COS上传</li><li>CFS： CFS上传</li><li>CFSTurbo： CFSTurbo上传</li><li>GooseFS： GooseFS上传</li></ul>
+                     */
+                    std::string m_storageType;
+                    bool m_storageTypeHasBeenSet;
 
                 };
             }

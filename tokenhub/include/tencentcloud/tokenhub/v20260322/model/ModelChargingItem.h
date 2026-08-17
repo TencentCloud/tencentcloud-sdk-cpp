@@ -151,6 +151,69 @@ namespace TencentCloud
                      */
                     bool PeakPriceHasBeenSet() const;
 
+                    /**
+                     * 获取<p>规格描述，例如视觉/语音类模型有值（如 有参考视频 540P、图生视频 首帧 720P、动作控制 1080P、有声-未指定音色），其他模型为空。</p>
+                     * @return Specification <p>规格描述，例如视觉/语音类模型有值（如 有参考视频 540P、图生视频 首帧 720P、动作控制 1080P、有声-未指定音色），其他模型为空。</p>
+                     * 
+                     */
+                    std::string GetSpecification() const;
+
+                    /**
+                     * 设置<p>规格描述，例如视觉/语音类模型有值（如 有参考视频 540P、图生视频 首帧 720P、动作控制 1080P、有声-未指定音色），其他模型为空。</p>
+                     * @param _specification <p>规格描述，例如视觉/语音类模型有值（如 有参考视频 540P、图生视频 首帧 720P、动作控制 1080P、有声-未指定音色），其他模型为空。</p>
+                     * 
+                     */
+                    void SetSpecification(const std::string& _specification);
+
+                    /**
+                     * 判断参数 Specification 是否已赋值
+                     * @return Specification 是否已赋值
+                     * 
+                     */
+                    bool SpecificationHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Token 用量描述，例如视觉/语音类模型有值（如 第1秒 62,500 Tokens，后续每秒 15,625 Tokens），其他模型为空。</p>
+                     * @return Usage <p>Token 用量描述，例如视觉/语音类模型有值（如 第1秒 62,500 Tokens，后续每秒 15,625 Tokens），其他模型为空。</p>
+                     * 
+                     */
+                    std::string GetUsage() const;
+
+                    /**
+                     * 设置<p>Token 用量描述，例如视觉/语音类模型有值（如 第1秒 62,500 Tokens，后续每秒 15,625 Tokens），其他模型为空。</p>
+                     * @param _usage <p>Token 用量描述，例如视觉/语音类模型有值（如 第1秒 62,500 Tokens，后续每秒 15,625 Tokens），其他模型为空。</p>
+                     * 
+                     */
+                    void SetUsage(const std::string& _usage);
+
+                    /**
+                     * 判断参数 Usage 是否已赋值
+                     * @return Usage 是否已赋值
+                     * 
+                     */
+                    bool UsageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>参考费用/预估费用描述，例如视觉/语音类模型有值（如 第1秒 0.625 元，后续每秒 0.15625 元），其他模型为空。</p>
+                     * @return ReferencePrice <p>参考费用/预估费用描述，例如视觉/语音类模型有值（如 第1秒 0.625 元，后续每秒 0.15625 元），其他模型为空。</p>
+                     * 
+                     */
+                    std::string GetReferencePrice() const;
+
+                    /**
+                     * 设置<p>参考费用/预估费用描述，例如视觉/语音类模型有值（如 第1秒 0.625 元，后续每秒 0.15625 元），其他模型为空。</p>
+                     * @param _referencePrice <p>参考费用/预估费用描述，例如视觉/语音类模型有值（如 第1秒 0.625 元，后续每秒 0.15625 元），其他模型为空。</p>
+                     * 
+                     */
+                    void SetReferencePrice(const std::string& _referencePrice);
+
+                    /**
+                     * 判断参数 ReferencePrice 是否已赋值
+                     * @return ReferencePrice 是否已赋值
+                     * 
+                     */
+                    bool ReferencePriceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +245,24 @@ namespace TencentCloud
                      */
                     std::string m_peakPrice;
                     bool m_peakPriceHasBeenSet;
+
+                    /**
+                     * <p>规格描述，例如视觉/语音类模型有值（如 有参考视频 540P、图生视频 首帧 720P、动作控制 1080P、有声-未指定音色），其他模型为空。</p>
+                     */
+                    std::string m_specification;
+                    bool m_specificationHasBeenSet;
+
+                    /**
+                     * <p>Token 用量描述，例如视觉/语音类模型有值（如 第1秒 62,500 Tokens，后续每秒 15,625 Tokens），其他模型为空。</p>
+                     */
+                    std::string m_usage;
+                    bool m_usageHasBeenSet;
+
+                    /**
+                     * <p>参考费用/预估费用描述，例如视觉/语音类模型有值（如 第1秒 0.625 元，后续每秒 0.15625 元），其他模型为空。</p>
+                     */
+                    std::string m_referencePrice;
+                    bool m_referencePriceHasBeenSet;
 
                 };
             }

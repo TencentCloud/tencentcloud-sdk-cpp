@@ -84,7 +84,9 @@ ModifyApmApplicationConfigRequest::ModifyApmApplicationConfigRequest() :
     m_useDefaultFuseConfigHasBeenSet(false),
     m_enableHeadSamplerHasBeenSet(false),
     m_headSamplerTypeHasBeenSet(false),
-    m_headSamplerArgHasBeenSet(false)
+    m_headSamplerArgHasBeenSet(false),
+    m_crossAccountStatusHasBeenSet(false),
+    m_crossAccountPeerIdHasBeenSet(false)
 {
 }
 
@@ -605,6 +607,22 @@ string ModifyApmApplicationConfigRequest::ToJsonString() const
         string key = "HeadSamplerArg";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_headSamplerArg, allocator);
+    }
+
+    if (m_crossAccountStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CrossAccountStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_crossAccountStatus, allocator);
+    }
+
+    if (m_crossAccountPeerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CrossAccountPeerId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_crossAccountPeerId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1605,6 +1623,38 @@ void ModifyApmApplicationConfigRequest::SetHeadSamplerArg(const int64_t& _headSa
 bool ModifyApmApplicationConfigRequest::HeadSamplerArgHasBeenSet() const
 {
     return m_headSamplerArgHasBeenSet;
+}
+
+int64_t ModifyApmApplicationConfigRequest::GetCrossAccountStatus() const
+{
+    return m_crossAccountStatus;
+}
+
+void ModifyApmApplicationConfigRequest::SetCrossAccountStatus(const int64_t& _crossAccountStatus)
+{
+    m_crossAccountStatus = _crossAccountStatus;
+    m_crossAccountStatusHasBeenSet = true;
+}
+
+bool ModifyApmApplicationConfigRequest::CrossAccountStatusHasBeenSet() const
+{
+    return m_crossAccountStatusHasBeenSet;
+}
+
+string ModifyApmApplicationConfigRequest::GetCrossAccountPeerId() const
+{
+    return m_crossAccountPeerId;
+}
+
+void ModifyApmApplicationConfigRequest::SetCrossAccountPeerId(const string& _crossAccountPeerId)
+{
+    m_crossAccountPeerId = _crossAccountPeerId;
+    m_crossAccountPeerIdHasBeenSet = true;
+}
+
+bool ModifyApmApplicationConfigRequest::CrossAccountPeerIdHasBeenSet() const
+{
+    return m_crossAccountPeerIdHasBeenSet;
 }
 
 

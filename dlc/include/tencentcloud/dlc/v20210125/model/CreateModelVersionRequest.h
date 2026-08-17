@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/GooseFSConfig.h>
 
 
 namespace TencentCloud
@@ -147,6 +148,48 @@ namespace TencentCloud
                      */
                     bool UseCustomStorageHasBeenSet() const;
 
+                    /**
+                     * 获取<p>创建模型时，模型从goosfe里面选取，则需要传递该参数</p>
+                     * @return GooseFSConfig <p>创建模型时，模型从goosfe里面选取，则需要传递该参数</p>
+                     * 
+                     */
+                    GooseFSConfig GetGooseFSConfig() const;
+
+                    /**
+                     * 设置<p>创建模型时，模型从goosfe里面选取，则需要传递该参数</p>
+                     * @param _gooseFSConfig <p>创建模型时，模型从goosfe里面选取，则需要传递该参数</p>
+                     * 
+                     */
+                    void SetGooseFSConfig(const GooseFSConfig& _gooseFSConfig);
+
+                    /**
+                     * 判断参数 GooseFSConfig 是否已赋值
+                     * @return GooseFSConfig 是否已赋值
+                     * 
+                     */
+                    bool GooseFSConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模型上传路径类型</p><p>枚举值：</p><ul><li>LOCAL： 本地上传</li><li>CFS： CFS上传</li><li>COS： COS上传</li><li>CFSTurbo： CFSTurbo上传</li><li>GooseFS： GooseFS上传</li></ul><p>选择cos、cfs、cfstrubo则必须要传storageuri，选择local时不能传递goosefsconfig</p>
+                     * @return StorageType <p>模型上传路径类型</p><p>枚举值：</p><ul><li>LOCAL： 本地上传</li><li>CFS： CFS上传</li><li>COS： COS上传</li><li>CFSTurbo： CFSTurbo上传</li><li>GooseFS： GooseFS上传</li></ul><p>选择cos、cfs、cfstrubo则必须要传storageuri，选择local时不能传递goosefsconfig</p>
+                     * 
+                     */
+                    std::string GetStorageType() const;
+
+                    /**
+                     * 设置<p>模型上传路径类型</p><p>枚举值：</p><ul><li>LOCAL： 本地上传</li><li>CFS： CFS上传</li><li>COS： COS上传</li><li>CFSTurbo： CFSTurbo上传</li><li>GooseFS： GooseFS上传</li></ul><p>选择cos、cfs、cfstrubo则必须要传storageuri，选择local时不能传递goosefsconfig</p>
+                     * @param _storageType <p>模型上传路径类型</p><p>枚举值：</p><ul><li>LOCAL： 本地上传</li><li>CFS： CFS上传</li><li>COS： COS上传</li><li>CFSTurbo： CFSTurbo上传</li><li>GooseFS： GooseFS上传</li></ul><p>选择cos、cfs、cfstrubo则必须要传storageuri，选择local时不能传递goosefsconfig</p>
+                     * 
+                     */
+                    void SetStorageType(const std::string& _storageType);
+
+                    /**
+                     * 判断参数 StorageType 是否已赋值
+                     * @return StorageType 是否已赋值
+                     * 
+                     */
+                    bool StorageTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +221,18 @@ namespace TencentCloud
                      */
                     bool m_useCustomStorage;
                     bool m_useCustomStorageHasBeenSet;
+
+                    /**
+                     * <p>创建模型时，模型从goosfe里面选取，则需要传递该参数</p>
+                     */
+                    GooseFSConfig m_gooseFSConfig;
+                    bool m_gooseFSConfigHasBeenSet;
+
+                    /**
+                     * <p>模型上传路径类型</p><p>枚举值：</p><ul><li>LOCAL： 本地上传</li><li>CFS： CFS上传</li><li>COS： COS上传</li><li>CFSTurbo： CFSTurbo上传</li><li>GooseFS： GooseFS上传</li></ul><p>选择cos、cfs、cfstrubo则必须要传storageuri，选择local时不能传递goosefsconfig</p>
+                     */
+                    std::string m_storageType;
+                    bool m_storageTypeHasBeenSet;
 
                 };
             }

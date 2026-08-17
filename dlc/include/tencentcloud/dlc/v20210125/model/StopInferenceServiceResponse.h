@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dlc/v20210125/model/CpuSummaryItem.h>
+#include <tencentcloud/dlc/v20210125/model/Tag.h>
 
 
 namespace TencentCloud
@@ -406,6 +407,50 @@ namespace TencentCloud
                      */
                     bool ResourceConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>系统标签列表（TagKey-TagValue）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceTags <p>系统标签列表（TagKey-TagValue）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Tag> GetResourceTags() const;
+
+                    /**
+                     * 判断参数 ResourceTags 是否已赋值
+                     * @return ResourceTags 是否已赋值
+                     * 
+                     */
+                    bool ResourceTagsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>部署模式</p>
+                     * @return DeploymentMode <p>部署模式</p>
+                     * 
+                     */
+                    std::string GetDeploymentMode() const;
+
+                    /**
+                     * 判断参数 DeploymentMode 是否已赋值
+                     * @return DeploymentMode 是否已赋值
+                     * 
+                     */
+                    bool DeploymentModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否为自定义代码部署</p>
+                     * @return IsCustom <p>是否为自定义代码部署</p>
+                     * 
+                     */
+                    bool GetIsCustom() const;
+
+                    /**
+                     * 判断参数 IsCustom 是否已赋值
+                     * @return IsCustom 是否已赋值
+                     * 
+                     */
+                    bool IsCustomHasBeenSet() const;
+
                 private:
 
                     /**
@@ -565,6 +610,25 @@ namespace TencentCloud
                      */
                     std::string m_resourceConfig;
                     bool m_resourceConfigHasBeenSet;
+
+                    /**
+                     * <p>系统标签列表（TagKey-TagValue）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_resourceTags;
+                    bool m_resourceTagsHasBeenSet;
+
+                    /**
+                     * <p>部署模式</p>
+                     */
+                    std::string m_deploymentMode;
+                    bool m_deploymentModeHasBeenSet;
+
+                    /**
+                     * <p>是否为自定义代码部署</p>
+                     */
+                    bool m_isCustom;
+                    bool m_isCustomHasBeenSet;
 
                 };
             }

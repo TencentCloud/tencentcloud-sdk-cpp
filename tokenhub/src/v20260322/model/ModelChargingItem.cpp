@@ -25,7 +25,10 @@ ModelChargingItem::ModelChargingItem() :
     m_displayNameHasBeenSet(false),
     m_priceHasBeenSet(false),
     m_priceUnitHasBeenSet(false),
-    m_peakPriceHasBeenSet(false)
+    m_peakPriceHasBeenSet(false),
+    m_specificationHasBeenSet(false),
+    m_usageHasBeenSet(false),
+    m_referencePriceHasBeenSet(false)
 {
 }
 
@@ -84,6 +87,36 @@ CoreInternalOutcome ModelChargingItem::Deserialize(const rapidjson::Value &value
         m_peakPriceHasBeenSet = true;
     }
 
+    if (value.HasMember("Specification") && !value["Specification"].IsNull())
+    {
+        if (!value["Specification"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelChargingItem.Specification` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_specification = string(value["Specification"].GetString());
+        m_specificationHasBeenSet = true;
+    }
+
+    if (value.HasMember("Usage") && !value["Usage"].IsNull())
+    {
+        if (!value["Usage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelChargingItem.Usage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_usage = string(value["Usage"].GetString());
+        m_usageHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReferencePrice") && !value["ReferencePrice"].IsNull())
+    {
+        if (!value["ReferencePrice"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelChargingItem.ReferencePrice` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_referencePrice = string(value["ReferencePrice"].GetString());
+        m_referencePriceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +162,30 @@ void ModelChargingItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "PeakPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_peakPrice.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_specificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Specification";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_specification.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_usageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Usage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_usage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_referencePriceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReferencePrice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_referencePrice.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +269,53 @@ void ModelChargingItem::SetPeakPrice(const string& _peakPrice)
 bool ModelChargingItem::PeakPriceHasBeenSet() const
 {
     return m_peakPriceHasBeenSet;
+}
+
+string ModelChargingItem::GetSpecification() const
+{
+    return m_specification;
+}
+
+void ModelChargingItem::SetSpecification(const string& _specification)
+{
+    m_specification = _specification;
+    m_specificationHasBeenSet = true;
+}
+
+bool ModelChargingItem::SpecificationHasBeenSet() const
+{
+    return m_specificationHasBeenSet;
+}
+
+string ModelChargingItem::GetUsage() const
+{
+    return m_usage;
+}
+
+void ModelChargingItem::SetUsage(const string& _usage)
+{
+    m_usage = _usage;
+    m_usageHasBeenSet = true;
+}
+
+bool ModelChargingItem::UsageHasBeenSet() const
+{
+    return m_usageHasBeenSet;
+}
+
+string ModelChargingItem::GetReferencePrice() const
+{
+    return m_referencePrice;
+}
+
+void ModelChargingItem::SetReferencePrice(const string& _referencePrice)
+{
+    m_referencePrice = _referencePrice;
+    m_referencePriceHasBeenSet = true;
+}
+
+bool ModelChargingItem::ReferencePriceHasBeenSet() const
+{
+    return m_referencePriceHasBeenSet;
 }
 

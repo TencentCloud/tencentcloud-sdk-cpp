@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/clb/v20180317/model/RoutingStrategyArgs.h>
+#include <tencentcloud/clb/v20180317/model/StickyConfig.h>
 
 
 namespace TencentCloud
@@ -131,6 +132,27 @@ namespace TencentCloud
                      */
                     bool NumRetriesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>粘连路由配置参数</p>
+                     * @return StickyConfig <p>粘连路由配置参数</p>
+                     * 
+                     */
+                    StickyConfig GetStickyConfig() const;
+
+                    /**
+                     * 设置<p>粘连路由配置参数</p>
+                     * @param _stickyConfig <p>粘连路由配置参数</p>
+                     * 
+                     */
+                    void SetStickyConfig(const StickyConfig& _stickyConfig);
+
+                    /**
+                     * 判断参数 StickyConfig 是否已赋值
+                     * @return StickyConfig 是否已赋值
+                     * 
+                     */
+                    bool StickyConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -156,6 +178,12 @@ namespace TencentCloud
                      */
                     uint64_t m_numRetries;
                     bool m_numRetriesHasBeenSet;
+
+                    /**
+                     * <p>粘连路由配置参数</p>
+                     */
+                    StickyConfig m_stickyConfig;
+                    bool m_stickyConfigHasBeenSet;
 
                 };
             }

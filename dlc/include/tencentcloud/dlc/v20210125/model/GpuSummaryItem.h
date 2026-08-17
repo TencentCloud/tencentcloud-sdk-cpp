@@ -46,7 +46,103 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取<p>GPU 型号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GpuType <p>GPU 型号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGpuType() const;
+
+                    /**
+                     * 设置<p>GPU 型号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _gpuType <p>GPU 型号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGpuType(const std::string& _gpuType);
+
+                    /**
+                     * 判断参数 GpuType 是否已赋值
+                     * @return GpuType 是否已赋值
+                     * 
+                     */
+                    bool GpuTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>GPU 总数（gpuNum × replicas）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GpuCount <p>GPU 总数（gpuNum × replicas）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetGpuCount() const;
+
+                    /**
+                     * 设置<p>GPU 总数（gpuNum × replicas）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _gpuCount <p>GPU 总数（gpuNum × replicas）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGpuCount(const int64_t& _gpuCount);
+
+                    /**
+                     * 判断参数 GpuCount 是否已赋值
+                     * @return GpuCount 是否已赋值
+                     * 
+                     */
+                    bool GpuCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>运行中的副本数</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Replicas <p>运行中的副本数</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetReplicas() const;
+
+                    /**
+                     * 设置<p>运行中的副本数</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _replicas <p>运行中的副本数</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReplicas(const int64_t& _replicas);
+
+                    /**
+                     * 判断参数 Replicas 是否已赋值
+                     * @return Replicas 是否已赋值
+                     * 
+                     */
+                    bool ReplicasHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>GPU 型号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gpuType;
+                    bool m_gpuTypeHasBeenSet;
+
+                    /**
+                     * <p>GPU 总数（gpuNum × replicas）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_gpuCount;
+                    bool m_gpuCountHasBeenSet;
+
+                    /**
+                     * <p>运行中的副本数</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_replicas;
+                    bool m_replicasHasBeenSet;
 
                 };
             }

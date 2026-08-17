@@ -37,7 +37,9 @@ CreateModelRouterRequest::CreateModelRouterRequest() :
     m_tagsHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_modelRouterBillingConfigHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_eipAddressIdHasBeenSet(false),
+    m_bandwidthHasBeenSet(false)
 {
 }
 
@@ -177,6 +179,22 @@ string CreateModelRouterRequest::ToJsonString() const
         string key = "ClientToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eipAddressIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EipAddressId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_eipAddressId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bandwidth, allocator);
     }
 
 
@@ -425,6 +443,38 @@ void CreateModelRouterRequest::SetClientToken(const string& _clientToken)
 bool CreateModelRouterRequest::ClientTokenHasBeenSet() const
 {
     return m_clientTokenHasBeenSet;
+}
+
+string CreateModelRouterRequest::GetEipAddressId() const
+{
+    return m_eipAddressId;
+}
+
+void CreateModelRouterRequest::SetEipAddressId(const string& _eipAddressId)
+{
+    m_eipAddressId = _eipAddressId;
+    m_eipAddressIdHasBeenSet = true;
+}
+
+bool CreateModelRouterRequest::EipAddressIdHasBeenSet() const
+{
+    return m_eipAddressIdHasBeenSet;
+}
+
+uint64_t CreateModelRouterRequest::GetBandwidth() const
+{
+    return m_bandwidth;
+}
+
+void CreateModelRouterRequest::SetBandwidth(const uint64_t& _bandwidth)
+{
+    m_bandwidth = _bandwidth;
+    m_bandwidthHasBeenSet = true;
+}
+
+bool CreateModelRouterRequest::BandwidthHasBeenSet() const
+{
+    return m_bandwidthHasBeenSet;
 }
 
 

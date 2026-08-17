@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志集ID
-                     * @return LogsetId 日志集ID
+                     * 获取<p>日志集ID</p>
+                     * @return LogsetId <p>日志集ID</p>
                      * 
                      */
                     std::string GetLogsetId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志集ID
+                     * <p>日志集ID</p>
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;

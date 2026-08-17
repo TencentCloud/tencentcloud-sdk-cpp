@@ -24,7 +24,8 @@ RouterSettingWithoutFallBack::RouterSettingWithoutFallBack() :
     m_routingStrategyHasBeenSet(false),
     m_crossModelGroupRoutingStrategyHasBeenSet(false),
     m_routingStrategyArgsHasBeenSet(false),
-    m_numRetriesHasBeenSet(false)
+    m_numRetriesHasBeenSet(false),
+    m_stickyConfigHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,23 @@ CoreInternalOutcome RouterSettingWithoutFallBack::Deserialize(const rapidjson::V
         m_numRetriesHasBeenSet = true;
     }
 
+    if (value.HasMember("StickyConfig") && !value["StickyConfig"].IsNull())
+    {
+        if (!value["StickyConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RouterSettingWithoutFallBack.StickyConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_stickyConfig.Deserialize(value["StickyConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_stickyConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +136,15 @@ void RouterSettingWithoutFallBack::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "NumRetries";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_numRetries, allocator);
+    }
+
+    if (m_stickyConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StickyConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_stickyConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -185,5 +212,21 @@ void RouterSettingWithoutFallBack::SetNumRetries(const uint64_t& _numRetries)
 bool RouterSettingWithoutFallBack::NumRetriesHasBeenSet() const
 {
     return m_numRetriesHasBeenSet;
+}
+
+StickyConfig RouterSettingWithoutFallBack::GetStickyConfig() const
+{
+    return m_stickyConfig;
+}
+
+void RouterSettingWithoutFallBack::SetStickyConfig(const StickyConfig& _stickyConfig)
+{
+    m_stickyConfig = _stickyConfig;
+    m_stickyConfigHasBeenSet = true;
+}
+
+bool RouterSettingWithoutFallBack::StickyConfigHasBeenSet() const
+{
+    return m_stickyConfigHasBeenSet;
 }
 

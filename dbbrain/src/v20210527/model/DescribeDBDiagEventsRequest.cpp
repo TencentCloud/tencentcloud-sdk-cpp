@@ -26,6 +26,7 @@ DescribeDBDiagEventsRequest::DescribeDBDiagEventsRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_severitiesHasBeenSet(false),
+    m_diagItemsHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
     m_productHasBeenSet(false),
     m_offsetHasBeenSet(false),
@@ -66,6 +67,19 @@ string DescribeDBDiagEventsRequest::ToJsonString() const
         for (auto itr = m_severities.begin(); itr != m_severities.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_diagItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiagItems";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_diagItems.begin(); itr != m_diagItems.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -160,6 +174,22 @@ void DescribeDBDiagEventsRequest::SetSeverities(const vector<int64_t>& _severiti
 bool DescribeDBDiagEventsRequest::SeveritiesHasBeenSet() const
 {
     return m_severitiesHasBeenSet;
+}
+
+vector<string> DescribeDBDiagEventsRequest::GetDiagItems() const
+{
+    return m_diagItems;
+}
+
+void DescribeDBDiagEventsRequest::SetDiagItems(const vector<string>& _diagItems)
+{
+    m_diagItems = _diagItems;
+    m_diagItemsHasBeenSet = true;
+}
+
+bool DescribeDBDiagEventsRequest::DiagItemsHasBeenSet() const
+{
+    return m_diagItemsHasBeenSet;
 }
 
 vector<string> DescribeDBDiagEventsRequest::GetInstanceIds() const

@@ -23,6 +23,7 @@ using namespace std;
 Model::Model() :
     m_modelNameHasBeenSet(false),
     m_modelIdHasBeenSet(false),
+    m_extraModelIdsHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_summaryHasBeenSet(false),
@@ -66,6 +67,19 @@ CoreInternalOutcome Model::Deserialize(const rapidjson::Value &value)
         }
         m_modelId = string(value["ModelId"].GetString());
         m_modelIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExtraModelIds") && !value["ExtraModelIds"].IsNull())
+    {
+        if (!value["ExtraModelIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Model.ExtraModelIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExtraModelIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_extraModelIds.push_back((*itr).GetString());
+        }
+        m_extraModelIdsHasBeenSet = true;
     }
 
     if (value.HasMember("DisplayName") && !value["DisplayName"].IsNull())
@@ -302,6 +316,19 @@ void Model::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         value.AddMember(iKey, rapidjson::Value(m_modelId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_extraModelIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraModelIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_extraModelIds.begin(); itr != m_extraModelIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_displayNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -487,6 +514,22 @@ void Model::SetModelId(const string& _modelId)
 bool Model::ModelIdHasBeenSet() const
 {
     return m_modelIdHasBeenSet;
+}
+
+vector<string> Model::GetExtraModelIds() const
+{
+    return m_extraModelIds;
+}
+
+void Model::SetExtraModelIds(const vector<string>& _extraModelIds)
+{
+    m_extraModelIds = _extraModelIds;
+    m_extraModelIdsHasBeenSet = true;
+}
+
+bool Model::ExtraModelIdsHasBeenSet() const
+{
+    return m_extraModelIdsHasBeenSet;
 }
 
 string Model::GetDisplayName() const

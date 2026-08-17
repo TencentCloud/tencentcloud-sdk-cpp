@@ -30,6 +30,7 @@
 #include <tencentcloud/clb/v20180317/model/RouterSettingWithFallBack.h>
 #include <tencentcloud/clb/v20180317/model/ServiceEndPoints.h>
 #include <tencentcloud/clb/v20180317/model/TagInfo.h>
+#include <tencentcloud/clb/v20180317/model/ModelRouterBillingConfigOutput.h>
 
 
 namespace TencentCloud
@@ -568,6 +569,27 @@ namespace TencentCloud
                      */
                     bool EipAddressIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>计费信息</p>
+                     * @return BillingConfig <p>计费信息</p>
+                     * 
+                     */
+                    ModelRouterBillingConfigOutput GetBillingConfig() const;
+
+                    /**
+                     * 设置<p>计费信息</p>
+                     * @param _billingConfig <p>计费信息</p>
+                     * 
+                     */
+                    void SetBillingConfig(const ModelRouterBillingConfigOutput& _billingConfig);
+
+                    /**
+                     * 判断参数 BillingConfig 是否已赋值
+                     * @return BillingConfig 是否已赋值
+                     * 
+                     */
+                    bool BillingConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -716,6 +738,12 @@ namespace TencentCloud
                      */
                     std::string m_eipAddressId;
                     bool m_eipAddressIdHasBeenSet;
+
+                    /**
+                     * <p>计费信息</p>
+                     */
+                    ModelRouterBillingConfigOutput m_billingConfig;
+                    bool m_billingConfigHasBeenSet;
 
                 };
             }

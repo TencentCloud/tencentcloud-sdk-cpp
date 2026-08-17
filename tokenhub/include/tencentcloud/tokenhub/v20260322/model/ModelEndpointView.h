@@ -110,6 +110,27 @@ namespace TencentCloud
                     bool ModelIdHasBeenSet() const;
 
                     /**
+                     * 获取<p>模型id别名列表</p>
+                     * @return ExtraModelIds <p>模型id别名列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetExtraModelIds() const;
+
+                    /**
+                     * 设置<p>模型id别名列表</p>
+                     * @param _extraModelIds <p>模型id别名列表</p>
+                     * 
+                     */
+                    void SetExtraModelIds(const std::vector<std::string>& _extraModelIds);
+
+                    /**
+                     * 判断参数 ExtraModelIds 是否已赋值
+                     * @return ExtraModelIds 是否已赋值
+                     * 
+                     */
+                    bool ExtraModelIdsHasBeenSet() const;
+
+                    /**
                      * 获取<p>模型名称。</p>
                      * @return ModelName <p>模型名称。</p>
                      * 
@@ -150,6 +171,27 @@ namespace TencentCloud
                      * 
                      */
                     bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模型状态</p><p>枚举值：</p><ul><li>online： 在线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护中</li><li>offline： 下线</li></ul>
+                     * @return ModelStatus <p>模型状态</p><p>枚举值：</p><ul><li>online： 在线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护中</li><li>offline： 下线</li></ul>
+                     * 
+                     */
+                    std::string GetModelStatus() const;
+
+                    /**
+                     * 设置<p>模型状态</p><p>枚举值：</p><ul><li>online： 在线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护中</li><li>offline： 下线</li></ul>
+                     * @param _modelStatus <p>模型状态</p><p>枚举值：</p><ul><li>online： 在线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护中</li><li>offline： 下线</li></ul>
+                     * 
+                     */
+                    void SetModelStatus(const std::string& _modelStatus);
+
+                    /**
+                     * 判断参数 ModelStatus 是否已赋值
+                     * @return ModelStatus 是否已赋值
+                     * 
+                     */
+                    bool ModelStatusHasBeenSet() const;
 
                     /**
                      * 获取<p>服务类型。固定为 TEXT_GENERATION（文本生成）。</p>
@@ -319,6 +361,12 @@ namespace TencentCloud
                     bool m_modelIdHasBeenSet;
 
                     /**
+                     * <p>模型id别名列表</p>
+                     */
+                    std::vector<std::string> m_extraModelIds;
+                    bool m_extraModelIdsHasBeenSet;
+
+                    /**
                      * <p>模型名称。</p>
                      */
                     std::string m_modelName;
@@ -329,6 +377,12 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>模型状态</p><p>枚举值：</p><ul><li>online： 在线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护中</li><li>offline： 下线</li></ul>
+                     */
+                    std::string m_modelStatus;
+                    bool m_modelStatusHasBeenSet;
 
                     /**
                      * <p>服务类型。固定为 TEXT_GENERATION（文本生成）。</p>

@@ -48,7 +48,10 @@ GetInferenceServiceResponse::GetInferenceServiceResponse() :
     m_gpuResourceSummaryHasBeenSet(false),
     m_subAccountUinHasBeenSet(false),
     m_cpuResourceSummaryHasBeenSet(false),
-    m_resourceConfigHasBeenSet(false)
+    m_resourceConfigHasBeenSet(false),
+    m_deploymentModeHasBeenSet(false),
+    m_isCustomHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false)
 {
 }
 
@@ -353,6 +356,46 @@ CoreInternalOutcome GetInferenceServiceResponse::Deserialize(const string &paylo
         m_resourceConfigHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DeploymentMode") && !rsp["DeploymentMode"].IsNull())
+    {
+        if (!rsp["DeploymentMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeploymentMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deploymentMode = string(rsp["DeploymentMode"].GetString());
+        m_deploymentModeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsCustom") && !rsp["IsCustom"].IsNull())
+    {
+        if (!rsp["IsCustom"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsCustom` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCustom = rsp["IsCustom"].GetBool();
+        m_isCustomHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ResourceTags") && !rsp["ResourceTags"].IsNull())
+    {
+        if (!rsp["ResourceTags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ResourceTags` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ResourceTags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_resourceTags.push_back(item);
+        }
+        m_resourceTagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -569,6 +612,37 @@ string GetInferenceServiceResponse::ToJsonString() const
         string key = "ResourceConfig";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deploymentModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeploymentMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deploymentMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isCustomHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCustom";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCustom, allocator);
+    }
+
+    if (m_resourceTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -831,6 +905,36 @@ string GetInferenceServiceResponse::GetResourceConfig() const
 bool GetInferenceServiceResponse::ResourceConfigHasBeenSet() const
 {
     return m_resourceConfigHasBeenSet;
+}
+
+string GetInferenceServiceResponse::GetDeploymentMode() const
+{
+    return m_deploymentMode;
+}
+
+bool GetInferenceServiceResponse::DeploymentModeHasBeenSet() const
+{
+    return m_deploymentModeHasBeenSet;
+}
+
+bool GetInferenceServiceResponse::GetIsCustom() const
+{
+    return m_isCustom;
+}
+
+bool GetInferenceServiceResponse::IsCustomHasBeenSet() const
+{
+    return m_isCustomHasBeenSet;
+}
+
+vector<Tag> GetInferenceServiceResponse::GetResourceTags() const
+{
+    return m_resourceTags;
+}
+
+bool GetInferenceServiceResponse::ResourceTagsHasBeenSet() const
+{
+    return m_resourceTagsHasBeenSet;
 }
 
 

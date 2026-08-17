@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/Tag.h>
 
 
 namespace TencentCloud
@@ -613,6 +614,31 @@ namespace TencentCloud
                      */
                     bool SubAccountUinHasBeenSet() const;
 
+                    /**
+                     * 获取<p>系统标签列表（TagKey-TagValue）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceTags <p>系统标签列表（TagKey-TagValue）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Tag> GetResourceTags() const;
+
+                    /**
+                     * 设置<p>系统标签列表（TagKey-TagValue）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceTags <p>系统标签列表（TagKey-TagValue）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceTags(const std::vector<Tag>& _resourceTags);
+
+                    /**
+                     * 判断参数 ResourceTags 是否已赋值
+                     * @return ResourceTags 是否已赋值
+                     * 
+                     */
+                    bool ResourceTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -773,6 +799,13 @@ namespace TencentCloud
                      */
                     std::string m_subAccountUin;
                     bool m_subAccountUinHasBeenSet;
+
+                    /**
+                     * <p>系统标签列表（TagKey-TagValue）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_resourceTags;
+                    bool m_resourceTagsHasBeenSet;
 
                 };
             }

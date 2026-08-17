@@ -365,6 +365,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/BatchProductionInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteDeviceRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateDeviceSDPAnswerRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/VisionRecognitionTaskFilter.h
   include/tencentcloud/iotexplorer/v20190423/model/ControlDeviceDataRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/TalkSTTConfigInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/ListFirmwaresResponse.h
@@ -981,6 +982,7 @@ set(iotexplorer_src
   src/v20190423/model/BatchProductionInfo.cpp
   src/v20190423/model/DeleteDeviceRequest.cpp
   src/v20190423/model/CreateDeviceSDPAnswerRequest.cpp
+  src/v20190423/model/VisionRecognitionTaskFilter.cpp
   src/v20190423/model/ControlDeviceDataRequest.cpp
   src/v20190423/model/TalkSTTConfigInfo.cpp
   src/v20190423/model/ListFirmwaresResponse.cpp

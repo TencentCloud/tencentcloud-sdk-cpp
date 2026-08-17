@@ -27,6 +27,7 @@
 #include <tencentcloud/clb/v20180317/model/ClusterInfo.h>
 #include <tencentcloud/clb/v20180317/model/CreditUsage.h>
 #include <tencentcloud/clb/v20180317/model/TagInfo.h>
+#include <tencentcloud/clb/v20180317/model/ModelRouterBillingConfigOutput.h>
 
 
 namespace TencentCloud
@@ -416,14 +417,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>带宽</p><p>单位：Mbps</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bandwidth <p>带宽</p><p>单位：Mbps</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBandwidth() const;
 
                     /**
                      * 设置<p>带宽</p><p>单位：Mbps</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bandwidth <p>带宽</p><p>单位：Mbps</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBandwidth(const uint64_t& _bandwidth);
@@ -455,6 +460,27 @@ namespace TencentCloud
                      * 
                      */
                     bool EipAddressIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>计费信息</p>
+                     * @return BillingConfig <p>计费信息</p>
+                     * 
+                     */
+                    ModelRouterBillingConfigOutput GetBillingConfig() const;
+
+                    /**
+                     * 设置<p>计费信息</p>
+                     * @param _billingConfig <p>计费信息</p>
+                     * 
+                     */
+                    void SetBillingConfig(const ModelRouterBillingConfigOutput& _billingConfig);
+
+                    /**
+                     * 判断参数 BillingConfig 是否已赋值
+                     * @return BillingConfig 是否已赋值
+                     * 
+                     */
+                    bool BillingConfigHasBeenSet() const;
 
                 private:
 
@@ -564,6 +590,7 @@ namespace TencentCloud
 
                     /**
                      * <p>带宽</p><p>单位：Mbps</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
@@ -573,6 +600,12 @@ namespace TencentCloud
                      */
                     std::string m_eipAddressId;
                     bool m_eipAddressIdHasBeenSet;
+
+                    /**
+                     * <p>计费信息</p>
+                     */
+                    ModelRouterBillingConfigOutput m_billingConfig;
+                    bool m_billingConfigHasBeenSet;
 
                 };
             }

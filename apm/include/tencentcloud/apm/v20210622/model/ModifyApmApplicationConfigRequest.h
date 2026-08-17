@@ -1286,15 +1286,15 @@ namespace TencentCloud
                     bool UseDefaultFuseConfigHasBeenSet() const;
 
                     /**
-                     * 获取<p>是否开启探针头采样</p>
-                     * @return EnableHeadSampler <p>是否开启探针头采样</p>
+                     * 获取<p>是否开启探针头采样</p><p>（受限）</p>
+                     * @return EnableHeadSampler <p>是否开启探针头采样</p><p>（受限）</p>
                      * 
                      */
                     bool GetEnableHeadSampler() const;
 
                     /**
-                     * 设置<p>是否开启探针头采样</p>
-                     * @param _enableHeadSampler <p>是否开启探针头采样</p>
+                     * 设置<p>是否开启探针头采样</p><p>（受限）</p>
+                     * @param _enableHeadSampler <p>是否开启探针头采样</p><p>（受限）</p>
                      * 
                      */
                     void SetEnableHeadSampler(const bool& _enableHeadSampler);
@@ -1307,15 +1307,15 @@ namespace TencentCloud
                     bool EnableHeadSamplerHasBeenSet() const;
 
                     /**
-                     * 获取<p>头采样类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 跟随parent</li></ul>
-                     * @return HeadSamplerType <p>头采样类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 跟随parent</li></ul>
+                     * 获取<p>头采样类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 跟随parent</li></ul><p>（受限）</p>
+                     * @return HeadSamplerType <p>头采样类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 跟随parent</li></ul><p>（受限）</p>
                      * 
                      */
                     std::string GetHeadSamplerType() const;
 
                     /**
-                     * 设置<p>头采样类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 跟随parent</li></ul>
-                     * @param _headSamplerType <p>头采样类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 跟随parent</li></ul>
+                     * 设置<p>头采样类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 跟随parent</li></ul><p>（受限）</p>
+                     * @param _headSamplerType <p>头采样类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 跟随parent</li></ul><p>（受限）</p>
                      * 
                      */
                     void SetHeadSamplerType(const std::string& _headSamplerType);
@@ -1328,15 +1328,15 @@ namespace TencentCloud
                     bool HeadSamplerTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>采样率</p><p>取值范围：[0, 100]</p><p>默认值：100</p>
-                     * @return HeadSamplerArg <p>采样率</p><p>取值范围：[0, 100]</p><p>默认值：100</p>
+                     * 获取<p>采样率</p><p>取值范围：[0, 100]</p><p>默认值：100</p><p>（受限）</p>
+                     * @return HeadSamplerArg <p>采样率</p><p>取值范围：[0, 100]</p><p>默认值：100</p><p>（受限）</p>
                      * 
                      */
                     int64_t GetHeadSamplerArg() const;
 
                     /**
-                     * 设置<p>采样率</p><p>取值范围：[0, 100]</p><p>默认值：100</p>
-                     * @param _headSamplerArg <p>采样率</p><p>取值范围：[0, 100]</p><p>默认值：100</p>
+                     * 设置<p>采样率</p><p>取值范围：[0, 100]</p><p>默认值：100</p><p>（受限）</p>
+                     * @param _headSamplerArg <p>采样率</p><p>取值范围：[0, 100]</p><p>默认值：100</p><p>（受限）</p>
                      * 
                      */
                     void SetHeadSamplerArg(const int64_t& _headSamplerArg);
@@ -1347,6 +1347,48 @@ namespace TencentCloud
                      * 
                      */
                     bool HeadSamplerArgHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否为跨账号</p><p>枚举值：</p><ul><li>0： 否</li><li>1： 是</li></ul>
+                     * @return CrossAccountStatus <p>是否为跨账号</p><p>枚举值：</p><ul><li>0： 否</li><li>1： 是</li></ul>
+                     * 
+                     */
+                    int64_t GetCrossAccountStatus() const;
+
+                    /**
+                     * 设置<p>是否为跨账号</p><p>枚举值：</p><ul><li>0： 否</li><li>1： 是</li></ul>
+                     * @param _crossAccountStatus <p>是否为跨账号</p><p>枚举值：</p><ul><li>0： 否</li><li>1： 是</li></ul>
+                     * 
+                     */
+                    void SetCrossAccountStatus(const int64_t& _crossAccountStatus);
+
+                    /**
+                     * 判断参数 CrossAccountStatus 是否已赋值
+                     * @return CrossAccountStatus 是否已赋值
+                     * 
+                     */
+                    bool CrossAccountStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>跨账号关联ID</p>
+                     * @return CrossAccountPeerId <p>跨账号关联ID</p>
+                     * 
+                     */
+                    std::string GetCrossAccountPeerId() const;
+
+                    /**
+                     * 设置<p>跨账号关联ID</p>
+                     * @param _crossAccountPeerId <p>跨账号关联ID</p>
+                     * 
+                     */
+                    void SetCrossAccountPeerId(const std::string& _crossAccountPeerId);
+
+                    /**
+                     * 判断参数 CrossAccountPeerId 是否已赋值
+                     * @return CrossAccountPeerId 是否已赋值
+                     * 
+                     */
+                    bool CrossAccountPeerIdHasBeenSet() const;
 
                 private:
 
@@ -1705,22 +1747,34 @@ namespace TencentCloud
                     bool m_useDefaultFuseConfigHasBeenSet;
 
                     /**
-                     * <p>是否开启探针头采样</p>
+                     * <p>是否开启探针头采样</p><p>（受限）</p>
                      */
                     bool m_enableHeadSampler;
                     bool m_enableHeadSamplerHasBeenSet;
 
                     /**
-                     * <p>头采样类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 跟随parent</li></ul>
+                     * <p>头采样类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 跟随parent</li></ul><p>（受限）</p>
                      */
                     std::string m_headSamplerType;
                     bool m_headSamplerTypeHasBeenSet;
 
                     /**
-                     * <p>采样率</p><p>取值范围：[0, 100]</p><p>默认值：100</p>
+                     * <p>采样率</p><p>取值范围：[0, 100]</p><p>默认值：100</p><p>（受限）</p>
                      */
                     int64_t m_headSamplerArg;
                     bool m_headSamplerArgHasBeenSet;
+
+                    /**
+                     * <p>是否为跨账号</p><p>枚举值：</p><ul><li>0： 否</li><li>1： 是</li></ul>
+                     */
+                    int64_t m_crossAccountStatus;
+                    bool m_crossAccountStatusHasBeenSet;
+
+                    /**
+                     * <p>跨账号关联ID</p>
+                     */
+                    std::string m_crossAccountPeerId;
+                    bool m_crossAccountPeerIdHasBeenSet;
 
                 };
             }

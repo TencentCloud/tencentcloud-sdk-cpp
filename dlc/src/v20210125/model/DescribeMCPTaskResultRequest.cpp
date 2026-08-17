@@ -23,7 +23,8 @@ using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
 DescribeMCPTaskResultRequest::DescribeMCPTaskResultRequest() :
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeMCPTaskResultRequest::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nextTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NextToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_nextToken.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeMCPTaskResultRequest::SetTaskId(const string& _taskId)
 bool DescribeMCPTaskResultRequest::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+string DescribeMCPTaskResultRequest::GetNextToken() const
+{
+    return m_nextToken;
+}
+
+void DescribeMCPTaskResultRequest::SetNextToken(const string& _nextToken)
+{
+    m_nextToken = _nextToken;
+    m_nextTokenHasBeenSet = true;
+}
+
+bool DescribeMCPTaskResultRequest::NextTokenHasBeenSet() const
+{
+    return m_nextTokenHasBeenSet;
 }
 
 

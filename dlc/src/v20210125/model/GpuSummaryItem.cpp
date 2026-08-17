@@ -20,7 +20,10 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-GpuSummaryItem::GpuSummaryItem()
+GpuSummaryItem::GpuSummaryItem() :
+    m_gpuTypeHasBeenSet(false),
+    m_gpuCountHasBeenSet(false),
+    m_replicasHasBeenSet(false)
 {
 }
 
@@ -29,6 +32,36 @@ CoreInternalOutcome GpuSummaryItem::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
+    if (value.HasMember("GpuType") && !value["GpuType"].IsNull())
+    {
+        if (!value["GpuType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GpuSummaryItem.GpuType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gpuType = string(value["GpuType"].GetString());
+        m_gpuTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("GpuCount") && !value["GpuCount"].IsNull())
+    {
+        if (!value["GpuCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GpuSummaryItem.GpuCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gpuCount = value["GpuCount"].GetInt64();
+        m_gpuCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("Replicas") && !value["Replicas"].IsNull())
+    {
+        if (!value["Replicas"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GpuSummaryItem.Replicas` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_replicas = value["Replicas"].GetInt64();
+        m_replicasHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -36,6 +69,78 @@ CoreInternalOutcome GpuSummaryItem::Deserialize(const rapidjson::Value &value)
 void GpuSummaryItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_gpuTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GpuType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gpuType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gpuCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GpuCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gpuCount, allocator);
+    }
+
+    if (m_replicasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Replicas";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_replicas, allocator);
+    }
+
 }
 
+
+string GpuSummaryItem::GetGpuType() const
+{
+    return m_gpuType;
+}
+
+void GpuSummaryItem::SetGpuType(const string& _gpuType)
+{
+    m_gpuType = _gpuType;
+    m_gpuTypeHasBeenSet = true;
+}
+
+bool GpuSummaryItem::GpuTypeHasBeenSet() const
+{
+    return m_gpuTypeHasBeenSet;
+}
+
+int64_t GpuSummaryItem::GetGpuCount() const
+{
+    return m_gpuCount;
+}
+
+void GpuSummaryItem::SetGpuCount(const int64_t& _gpuCount)
+{
+    m_gpuCount = _gpuCount;
+    m_gpuCountHasBeenSet = true;
+}
+
+bool GpuSummaryItem::GpuCountHasBeenSet() const
+{
+    return m_gpuCountHasBeenSet;
+}
+
+int64_t GpuSummaryItem::GetReplicas() const
+{
+    return m_replicas;
+}
+
+void GpuSummaryItem::SetReplicas(const int64_t& _replicas)
+{
+    m_replicas = _replicas;
+    m_replicasHasBeenSet = true;
+}
+
+bool GpuSummaryItem::ReplicasHasBeenSet() const
+{
+    return m_replicasHasBeenSet;
+}
 

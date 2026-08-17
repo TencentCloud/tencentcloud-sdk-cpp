@@ -39,7 +39,8 @@ ModelRouterSet::ModelRouterSet() :
     m_vipHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
-    m_eipAddressIdHasBeenSet(false)
+    m_eipAddressIdHasBeenSet(false),
+    m_billingConfigHasBeenSet(false)
 {
 }
 
@@ -265,6 +266,23 @@ CoreInternalOutcome ModelRouterSet::Deserialize(const rapidjson::Value &value)
         m_eipAddressIdHasBeenSet = true;
     }
 
+    if (value.HasMember("BillingConfig") && !value["BillingConfig"].IsNull())
+    {
+        if (!value["BillingConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelRouterSet.BillingConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_billingConfig.Deserialize(value["BillingConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_billingConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -437,6 +455,15 @@ void ModelRouterSet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "EipAddressId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_eipAddressId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_billingConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillingConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_billingConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -744,5 +771,21 @@ void ModelRouterSet::SetEipAddressId(const string& _eipAddressId)
 bool ModelRouterSet::EipAddressIdHasBeenSet() const
 {
     return m_eipAddressIdHasBeenSet;
+}
+
+ModelRouterBillingConfigOutput ModelRouterSet::GetBillingConfig() const
+{
+    return m_billingConfig;
+}
+
+void ModelRouterSet::SetBillingConfig(const ModelRouterBillingConfigOutput& _billingConfig)
+{
+    m_billingConfig = _billingConfig;
+    m_billingConfigHasBeenSet = true;
+}
+
+bool ModelRouterSet::BillingConfigHasBeenSet() const
+{
+    return m_billingConfigHasBeenSet;
 }
 

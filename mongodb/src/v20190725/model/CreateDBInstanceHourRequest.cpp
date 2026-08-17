@@ -30,8 +30,8 @@ CreateDBInstanceHourRequest::CreateDBInstanceHourRequest() :
     m_mongoVersionHasBeenSet(false),
     m_machineCodeHasBeenSet(false),
     m_goodsNumHasBeenSet(false),
-    m_zoneHasBeenSet(false),
     m_clusterTypeHasBeenSet(false),
+    m_zoneHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_passwordHasBeenSet(false),
@@ -121,20 +121,20 @@ string CreateDBInstanceHourRequest::ToJsonString() const
         d.AddMember(iKey, m_goodsNum, allocator);
     }
 
-    if (m_zoneHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Zone";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_clusterTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcIdHasBeenSet)
@@ -463,22 +463,6 @@ bool CreateDBInstanceHourRequest::GoodsNumHasBeenSet() const
     return m_goodsNumHasBeenSet;
 }
 
-string CreateDBInstanceHourRequest::GetZone() const
-{
-    return m_zone;
-}
-
-void CreateDBInstanceHourRequest::SetZone(const string& _zone)
-{
-    m_zone = _zone;
-    m_zoneHasBeenSet = true;
-}
-
-bool CreateDBInstanceHourRequest::ZoneHasBeenSet() const
-{
-    return m_zoneHasBeenSet;
-}
-
 string CreateDBInstanceHourRequest::GetClusterType() const
 {
     return m_clusterType;
@@ -493,6 +477,22 @@ void CreateDBInstanceHourRequest::SetClusterType(const string& _clusterType)
 bool CreateDBInstanceHourRequest::ClusterTypeHasBeenSet() const
 {
     return m_clusterTypeHasBeenSet;
+}
+
+string CreateDBInstanceHourRequest::GetZone() const
+{
+    return m_zone;
+}
+
+void CreateDBInstanceHourRequest::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
 }
 
 string CreateDBInstanceHourRequest::GetVpcId() const

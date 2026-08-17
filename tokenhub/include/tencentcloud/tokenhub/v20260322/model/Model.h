@@ -94,6 +94,27 @@ namespace TencentCloud
                     bool ModelIdHasBeenSet() const;
 
                     /**
+                     * 获取<p>模型id别名列表</p>
+                     * @return ExtraModelIds <p>模型id别名列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetExtraModelIds() const;
+
+                    /**
+                     * 设置<p>模型id别名列表</p>
+                     * @param _extraModelIds <p>模型id别名列表</p>
+                     * 
+                     */
+                    void SetExtraModelIds(const std::vector<std::string>& _extraModelIds);
+
+                    /**
+                     * 判断参数 ExtraModelIds 是否已赋值
+                     * @return ExtraModelIds 是否已赋值
+                     * 
+                     */
+                    bool ExtraModelIdsHasBeenSet() const;
+
+                    /**
                      * 获取<p>模型显示名称。</p>
                      * @return DisplayName <p>模型显示名称。</p>
                      * 
@@ -463,6 +484,12 @@ namespace TencentCloud
                      */
                     std::string m_modelId;
                     bool m_modelIdHasBeenSet;
+
+                    /**
+                     * <p>模型id别名列表</p>
+                     */
+                    std::vector<std::string> m_extraModelIds;
+                    bool m_extraModelIdsHasBeenSet;
 
                     /**
                      * <p>模型显示名称。</p>

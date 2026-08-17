@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool RateLimitConfigHasBeenSet() const;
 
                     /**
-                     * 获取<p>路由配置</p>
-                     * @return RouterSetting <p>路由配置</p>
+                     * 获取<p>路由配置</p><p>新创建实例时，默认会开启粘连路由</p>
+                     * @return RouterSetting <p>路由配置</p><p>新创建实例时，默认会开启粘连路由</p>
                      * 
                      */
                     RouterSettingWithoutFallBack GetRouterSetting() const;
 
                     /**
-                     * 设置<p>路由配置</p>
-                     * @param _routerSetting <p>路由配置</p>
+                     * 设置<p>路由配置</p><p>新创建实例时，默认会开启粘连路由</p>
+                     * @param _routerSetting <p>路由配置</p><p>新创建实例时，默认会开启粘连路由</p>
                      * 
                      */
                     void SetRouterSetting(const RouterSettingWithoutFallBack& _routerSetting);
@@ -362,6 +362,48 @@ namespace TencentCloud
                      */
                     bool ClientTokenHasBeenSet() const;
 
+                    /**
+                     * 获取<p>弹性公网IP的ID</p>
+                     * @return EipAddressId <p>弹性公网IP的ID</p>
+                     * 
+                     */
+                    std::string GetEipAddressId() const;
+
+                    /**
+                     * 设置<p>弹性公网IP的ID</p>
+                     * @param _eipAddressId <p>弹性公网IP的ID</p>
+                     * 
+                     */
+                    void SetEipAddressId(const std::string& _eipAddressId);
+
+                    /**
+                     * 判断参数 EipAddressId 是否已赋值
+                     * @return EipAddressId 是否已赋值
+                     * 
+                     */
+                    bool EipAddressIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>单位</p><p>取值范围：[1, 2048]</p><p>单位：Mbps</p>
+                     * @return Bandwidth <p>单位</p><p>取值范围：[1, 2048]</p><p>单位：Mbps</p>
+                     * 
+                     */
+                    uint64_t GetBandwidth() const;
+
+                    /**
+                     * 设置<p>单位</p><p>取值范围：[1, 2048]</p><p>单位：Mbps</p>
+                     * @param _bandwidth <p>单位</p><p>取值范围：[1, 2048]</p><p>单位：Mbps</p>
+                     * 
+                     */
+                    void SetBandwidth(const uint64_t& _bandwidth);
+
+                    /**
+                     * 判断参数 Bandwidth 是否已赋值
+                     * @return Bandwidth 是否已赋值
+                     * 
+                     */
+                    bool BandwidthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -413,7 +455,7 @@ namespace TencentCloud
                     bool m_rateLimitConfigHasBeenSet;
 
                     /**
-                     * <p>路由配置</p>
+                     * <p>路由配置</p><p>新创建实例时，默认会开启粘连路由</p>
                      */
                     RouterSettingWithoutFallBack m_routerSetting;
                     bool m_routerSettingHasBeenSet;
@@ -453,6 +495,18 @@ namespace TencentCloud
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
+
+                    /**
+                     * <p>弹性公网IP的ID</p>
+                     */
+                    std::string m_eipAddressId;
+                    bool m_eipAddressIdHasBeenSet;
+
+                    /**
+                     * <p>单位</p><p>取值范围：[1, 2048]</p><p>单位：Mbps</p>
+                     */
+                    uint64_t m_bandwidth;
+                    bool m_bandwidthHasBeenSet;
 
                 };
             }

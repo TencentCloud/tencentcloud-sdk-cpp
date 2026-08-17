@@ -27,8 +27,12 @@
 #include <tencentcloud/mna/v20210119/model/ActivateHardwareResponse.h>
 #include <tencentcloud/mna/v20210119/model/AddApplicationRequest.h>
 #include <tencentcloud/mna/v20210119/model/AddApplicationResponse.h>
+#include <tencentcloud/mna/v20210119/model/AddCustomerGatewayClusterRequest.h>
+#include <tencentcloud/mna/v20210119/model/AddCustomerGatewayClusterResponse.h>
 #include <tencentcloud/mna/v20210119/model/AddDeviceRequest.h>
 #include <tencentcloud/mna/v20210119/model/AddDeviceResponse.h>
+#include <tencentcloud/mna/v20210119/model/AddGatewayRequest.h>
+#include <tencentcloud/mna/v20210119/model/AddGatewayResponse.h>
 #include <tencentcloud/mna/v20210119/model/AddGroupRequest.h>
 #include <tencentcloud/mna/v20210119/model/AddGroupResponse.h>
 #include <tencentcloud/mna/v20210119/model/AddHardwareRequest.h>
@@ -39,12 +43,18 @@
 #include <tencentcloud/mna/v20210119/model/CreateEncryptedKeyResponse.h>
 #include <tencentcloud/mna/v20210119/model/DeleteApplicationRequest.h>
 #include <tencentcloud/mna/v20210119/model/DeleteApplicationResponse.h>
+#include <tencentcloud/mna/v20210119/model/DeleteCustomerGatewayClusterRequest.h>
+#include <tencentcloud/mna/v20210119/model/DeleteCustomerGatewayClusterResponse.h>
 #include <tencentcloud/mna/v20210119/model/DeleteDeviceRequest.h>
 #include <tencentcloud/mna/v20210119/model/DeleteDeviceResponse.h>
+#include <tencentcloud/mna/v20210119/model/DeleteGatewayRequest.h>
+#include <tencentcloud/mna/v20210119/model/DeleteGatewayResponse.h>
 #include <tencentcloud/mna/v20210119/model/DeleteGroupRequest.h>
 #include <tencentcloud/mna/v20210119/model/DeleteGroupResponse.h>
 #include <tencentcloud/mna/v20210119/model/DeleteL3ConnRequest.h>
 #include <tencentcloud/mna/v20210119/model/DeleteL3ConnResponse.h>
+#include <tencentcloud/mna/v20210119/model/DescribeAccessPointListRequest.h>
+#include <tencentcloud/mna/v20210119/model/DescribeAccessPointListResponse.h>
 #include <tencentcloud/mna/v20210119/model/DescribeAccessRegionsRequest.h>
 #include <tencentcloud/mna/v20210119/model/DescribeAccessRegionsResponse.h>
 #include <tencentcloud/mna/v20210119/model/DownloadActiveDeviceCountRequest.h>
@@ -53,6 +63,8 @@
 #include <tencentcloud/mna/v20210119/model/GetActiveDeviceCountResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetApplicationRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetApplicationResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetCustomerGatewayClusterListRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetCustomerGatewayClusterListResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetDestIPByNameRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetDestIPByNameResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetDeviceRequest.h>
@@ -107,6 +119,8 @@
 #include <tencentcloud/mna/v20210119/model/GroupDeleteDeviceResponse.h>
 #include <tencentcloud/mna/v20210119/model/ModifyDeviceAccessRegionsRequest.h>
 #include <tencentcloud/mna/v20210119/model/ModifyDeviceAccessRegionsResponse.h>
+#include <tencentcloud/mna/v20210119/model/ModifyDeviceAccessScopeRequest.h>
+#include <tencentcloud/mna/v20210119/model/ModifyDeviceAccessScopeResponse.h>
 #include <tencentcloud/mna/v20210119/model/ModifyPackageRenewFlagRequest.h>
 #include <tencentcloud/mna/v20210119/model/ModifyPackageRenewFlagResponse.h>
 #include <tencentcloud/mna/v20210119/model/OrderFlowPackageRequest.h>
@@ -121,6 +135,8 @@
 #include <tencentcloud/mna/v20210119/model/UpdateApplicationInfoResponse.h>
 #include <tencentcloud/mna/v20210119/model/UpdateApplicationKeyRequest.h>
 #include <tencentcloud/mna/v20210119/model/UpdateApplicationKeyResponse.h>
+#include <tencentcloud/mna/v20210119/model/UpdateCustomerGatewayClusterRequest.h>
+#include <tencentcloud/mna/v20210119/model/UpdateCustomerGatewayClusterResponse.h>
 #include <tencentcloud/mna/v20210119/model/UpdateDeviceRequest.h>
 #include <tencentcloud/mna/v20210119/model/UpdateDeviceResponse.h>
 #include <tencentcloud/mna/v20210119/model/UpdateGroupRequest.h>
@@ -153,9 +169,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddApplicationResponse> AddApplicationOutcome;
                 typedef std::future<AddApplicationOutcome> AddApplicationOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::AddApplicationRequest&, AddApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddApplicationAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddCustomerGatewayClusterResponse> AddCustomerGatewayClusterOutcome;
+                typedef std::future<AddCustomerGatewayClusterOutcome> AddCustomerGatewayClusterOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::AddCustomerGatewayClusterRequest&, AddCustomerGatewayClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCustomerGatewayClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddDeviceResponse> AddDeviceOutcome;
                 typedef std::future<AddDeviceOutcome> AddDeviceOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::AddDeviceRequest&, AddDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddGatewayResponse> AddGatewayOutcome;
+                typedef std::future<AddGatewayOutcome> AddGatewayOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::AddGatewayRequest&, AddGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddGatewayAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddGroupResponse> AddGroupOutcome;
                 typedef std::future<AddGroupOutcome> AddGroupOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::AddGroupRequest&, AddGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddGroupAsyncHandler;
@@ -171,15 +193,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteApplicationResponse> DeleteApplicationOutcome;
                 typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::DeleteApplicationRequest&, DeleteApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCustomerGatewayClusterResponse> DeleteCustomerGatewayClusterOutcome;
+                typedef std::future<DeleteCustomerGatewayClusterOutcome> DeleteCustomerGatewayClusterOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::DeleteCustomerGatewayClusterRequest&, DeleteCustomerGatewayClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomerGatewayClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDeviceResponse> DeleteDeviceOutcome;
                 typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::DeleteDeviceRequest&, DeleteDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGatewayResponse> DeleteGatewayOutcome;
+                typedef std::future<DeleteGatewayOutcome> DeleteGatewayOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::DeleteGatewayRequest&, DeleteGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGatewayAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteGroupResponse> DeleteGroupOutcome;
                 typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::DeleteGroupRequest&, DeleteGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteL3ConnResponse> DeleteL3ConnOutcome;
                 typedef std::future<DeleteL3ConnOutcome> DeleteL3ConnOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::DeleteL3ConnRequest&, DeleteL3ConnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteL3ConnAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAccessPointListResponse> DescribeAccessPointListOutcome;
+                typedef std::future<DescribeAccessPointListOutcome> DescribeAccessPointListOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::DescribeAccessPointListRequest&, DescribeAccessPointListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessPointListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAccessRegionsResponse> DescribeAccessRegionsOutcome;
                 typedef std::future<DescribeAccessRegionsOutcome> DescribeAccessRegionsOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::DescribeAccessRegionsRequest&, DescribeAccessRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessRegionsAsyncHandler;
@@ -192,6 +223,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetApplicationResponse> GetApplicationOutcome;
                 typedef std::future<GetApplicationOutcome> GetApplicationOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetApplicationRequest&, GetApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetApplicationAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetCustomerGatewayClusterListResponse> GetCustomerGatewayClusterListOutcome;
+                typedef std::future<GetCustomerGatewayClusterListOutcome> GetCustomerGatewayClusterListOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetCustomerGatewayClusterListRequest&, GetCustomerGatewayClusterListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCustomerGatewayClusterListAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetDestIPByNameResponse> GetDestIPByNameOutcome;
                 typedef std::future<GetDestIPByNameOutcome> GetDestIPByNameOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetDestIPByNameRequest&, GetDestIPByNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDestIPByNameAsyncHandler;
@@ -273,6 +307,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDeviceAccessRegionsResponse> ModifyDeviceAccessRegionsOutcome;
                 typedef std::future<ModifyDeviceAccessRegionsOutcome> ModifyDeviceAccessRegionsOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::ModifyDeviceAccessRegionsRequest&, ModifyDeviceAccessRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceAccessRegionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDeviceAccessScopeResponse> ModifyDeviceAccessScopeOutcome;
+                typedef std::future<ModifyDeviceAccessScopeOutcome> ModifyDeviceAccessScopeOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::ModifyDeviceAccessScopeRequest&, ModifyDeviceAccessScopeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceAccessScopeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyPackageRenewFlagResponse> ModifyPackageRenewFlagOutcome;
                 typedef std::future<ModifyPackageRenewFlagOutcome> ModifyPackageRenewFlagOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::ModifyPackageRenewFlagRequest&, ModifyPackageRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPackageRenewFlagAsyncHandler;
@@ -294,6 +331,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateApplicationKeyResponse> UpdateApplicationKeyOutcome;
                 typedef std::future<UpdateApplicationKeyOutcome> UpdateApplicationKeyOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::UpdateApplicationKeyRequest&, UpdateApplicationKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateApplicationKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateCustomerGatewayClusterResponse> UpdateCustomerGatewayClusterOutcome;
+                typedef std::future<UpdateCustomerGatewayClusterOutcome> UpdateCustomerGatewayClusterOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::UpdateCustomerGatewayClusterRequest&, UpdateCustomerGatewayClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCustomerGatewayClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateDeviceResponse> UpdateDeviceOutcome;
                 typedef std::future<UpdateDeviceOutcome> UpdateDeviceOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::UpdateDeviceRequest&, UpdateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDeviceAsyncHandler;
@@ -334,6 +374,17 @@ namespace TencentCloud
                 AddApplicationOutcomeCallable AddApplicationCallable(const Model::AddApplicationRequest& request);
 
                 /**
+                 *创建客户自有网关集群。
+
+用于承载客户侧的自有网关实例，创建成功后返回集群 ID。
+                 * @param req AddCustomerGatewayClusterRequest
+                 * @return AddCustomerGatewayClusterOutcome
+                 */
+                AddCustomerGatewayClusterOutcome AddCustomerGatewayCluster(const Model::AddCustomerGatewayClusterRequest &request);
+                void AddCustomerGatewayClusterAsync(const Model::AddCustomerGatewayClusterRequest& request, const AddCustomerGatewayClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddCustomerGatewayClusterOutcomeCallable AddCustomerGatewayClusterCallable(const Model::AddCustomerGatewayClusterRequest& request);
+
+                /**
                  *新建设备记录
                  * @param req AddDeviceRequest
                  * @return AddDeviceOutcome
@@ -341,6 +392,17 @@ namespace TencentCloud
                 AddDeviceOutcome AddDevice(const Model::AddDeviceRequest &request);
                 void AddDeviceAsync(const Model::AddDeviceRequest& request, const AddDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddDeviceOutcomeCallable AddDeviceCallable(const Model::AddDeviceRequest& request);
+
+                /**
+                 *向指定的客户自有网关集群注册一个网关实例。
+
+注册成功后返回网关实例 ID、鉴权 Token 及 Agent 相关地址信息，用于后续网关 Agent 上报。
+                 * @param req AddGatewayRequest
+                 * @return AddGatewayOutcome
+                 */
+                AddGatewayOutcome AddGateway(const Model::AddGatewayRequest &request);
+                void AddGatewayAsync(const Model::AddGatewayRequest& request, const AddGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddGatewayOutcomeCallable AddGatewayCallable(const Model::AddGatewayRequest& request);
 
                 /**
                  *新建分组
@@ -388,6 +450,17 @@ namespace TencentCloud
                 DeleteApplicationOutcomeCallable DeleteApplicationCallable(const Model::DeleteApplicationRequest& request);
 
                 /**
+                 *删除客户自有网关集群。
+
+删除指定的客户自有网关集群，操作不可逆。调用接口后，若通过 GetCustomerGatewayClusterList 接口查询不到对应集群，则表示删除成功。
+                 * @param req DeleteCustomerGatewayClusterRequest
+                 * @return DeleteCustomerGatewayClusterOutcome
+                 */
+                DeleteCustomerGatewayClusterOutcome DeleteCustomerGatewayCluster(const Model::DeleteCustomerGatewayClusterRequest &request);
+                void DeleteCustomerGatewayClusterAsync(const Model::DeleteCustomerGatewayClusterRequest& request, const DeleteCustomerGatewayClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCustomerGatewayClusterOutcomeCallable DeleteCustomerGatewayClusterCallable(const Model::DeleteCustomerGatewayClusterRequest& request);
+
+                /**
                  *删除设备信息
                  * @param req DeleteDeviceRequest
                  * @return DeleteDeviceOutcome
@@ -395,6 +468,17 @@ namespace TencentCloud
                 DeleteDeviceOutcome DeleteDevice(const Model::DeleteDeviceRequest &request);
                 void DeleteDeviceAsync(const Model::DeleteDeviceRequest& request, const DeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDeviceOutcomeCallable DeleteDeviceCallable(const Model::DeleteDeviceRequest& request);
+
+                /**
+                 *从指定集群下删除一个客户自有网关实例。
+
+删除后，通过 GetCustomerGatewayClusterList 查询不到对应实例，则表示删除成功。
+                 * @param req DeleteGatewayRequest
+                 * @return DeleteGatewayOutcome
+                 */
+                DeleteGatewayOutcome DeleteGateway(const Model::DeleteGatewayRequest &request);
+                void DeleteGatewayAsync(const Model::DeleteGatewayRequest& request, const DeleteGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGatewayOutcomeCallable DeleteGatewayCallable(const Model::DeleteGatewayRequest& request);
 
                 /**
                  *删除分组
@@ -413,6 +497,15 @@ namespace TencentCloud
                 DeleteL3ConnOutcome DeleteL3Conn(const Model::DeleteL3ConnRequest &request);
                 void DeleteL3ConnAsync(const Model::DeleteL3ConnRequest& request, const DeleteL3ConnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteL3ConnOutcomeCallable DeleteL3ConnCallable(const Model::DeleteL3ConnRequest& request);
+
+                /**
+                 *此接口用来查询接入点列表。
+                 * @param req DescribeAccessPointListRequest
+                 * @return DescribeAccessPointListOutcome
+                 */
+                DescribeAccessPointListOutcome DescribeAccessPointList(const Model::DescribeAccessPointListRequest &request);
+                void DescribeAccessPointListAsync(const Model::DescribeAccessPointListRequest& request, const DescribeAccessPointListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccessPointListOutcomeCallable DescribeAccessPointListCallable(const Model::DescribeAccessPointListRequest& request);
 
                 /**
                  *查询可接入地域列表。
@@ -449,6 +542,17 @@ namespace TencentCloud
                 GetApplicationOutcome GetApplication(const Model::GetApplicationRequest &request);
                 void GetApplicationAsync(const Model::GetApplicationRequest& request, const GetApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetApplicationOutcomeCallable GetApplicationCallable(const Model::GetApplicationRequest& request);
+
+                /**
+                 *查询客户自有网关集群列表。
+
+支持按集群名称关键字过滤，使用 Offset/Limit 分页返回集群及其下网关实例信息。
+                 * @param req GetCustomerGatewayClusterListRequest
+                 * @return GetCustomerGatewayClusterListOutcome
+                 */
+                GetCustomerGatewayClusterListOutcome GetCustomerGatewayClusterList(const Model::GetCustomerGatewayClusterListRequest &request);
+                void GetCustomerGatewayClusterListAsync(const Model::GetCustomerGatewayClusterListRequest& request, const GetCustomerGatewayClusterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetCustomerGatewayClusterListOutcomeCallable GetCustomerGatewayClusterListCallable(const Model::GetCustomerGatewayClusterListRequest& request);
 
                 /**
                  *统计单个设备访问目标IP地址信息
@@ -694,6 +798,15 @@ namespace TencentCloud
                 ModifyDeviceAccessRegionsOutcomeCallable ModifyDeviceAccessRegionsCallable(const Model::ModifyDeviceAccessRegionsRequest& request);
 
                 /**
+                 *修改设备接入网关类型。
+                 * @param req ModifyDeviceAccessScopeRequest
+                 * @return ModifyDeviceAccessScopeOutcome
+                 */
+                ModifyDeviceAccessScopeOutcome ModifyDeviceAccessScope(const Model::ModifyDeviceAccessScopeRequest &request);
+                void ModifyDeviceAccessScopeAsync(const Model::ModifyDeviceAccessScopeRequest& request, const ModifyDeviceAccessScopeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDeviceAccessScopeOutcomeCallable ModifyDeviceAccessScopeCallable(const Model::ModifyDeviceAccessScopeRequest& request);
+
+                /**
                  *可开启/关闭流量包自动续费，不影响当前周期正在生效的流量包。
                  * @param req ModifyPackageRenewFlagRequest
                  * @return ModifyPackageRenewFlagOutcome
@@ -755,6 +868,17 @@ namespace TencentCloud
                 UpdateApplicationKeyOutcome UpdateApplicationKey(const Model::UpdateApplicationKeyRequest &request);
                 void UpdateApplicationKeyAsync(const Model::UpdateApplicationKeyRequest& request, const UpdateApplicationKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateApplicationKeyOutcomeCallable UpdateApplicationKeyCallable(const Model::UpdateApplicationKeyRequest& request);
+
+                /**
+                 *更新客户自有网关集群配置。
+
+目前仅支持修改集群的公网访问 IP。
+                 * @param req UpdateCustomerGatewayClusterRequest
+                 * @return UpdateCustomerGatewayClusterOutcome
+                 */
+                UpdateCustomerGatewayClusterOutcome UpdateCustomerGatewayCluster(const Model::UpdateCustomerGatewayClusterRequest &request);
+                void UpdateCustomerGatewayClusterAsync(const Model::UpdateCustomerGatewayClusterRequest& request, const UpdateCustomerGatewayClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateCustomerGatewayClusterOutcomeCallable UpdateCustomerGatewayClusterCallable(const Model::UpdateCustomerGatewayClusterRequest& request);
 
                 /**
                  *更新设备信息

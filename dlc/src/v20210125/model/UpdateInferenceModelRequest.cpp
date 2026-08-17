@@ -27,7 +27,8 @@ UpdateInferenceModelRequest::UpdateInferenceModelRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_parameterSizeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,21 @@ string UpdateInferenceModelRequest::ToJsonString() const
         for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_resourceTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -169,6 +185,22 @@ void UpdateInferenceModelRequest::SetTags(const vector<string>& _tags)
 bool UpdateInferenceModelRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+vector<Tag> UpdateInferenceModelRequest::GetResourceTags() const
+{
+    return m_resourceTags;
+}
+
+void UpdateInferenceModelRequest::SetResourceTags(const vector<Tag>& _resourceTags)
+{
+    m_resourceTags = _resourceTags;
+    m_resourceTagsHasBeenSet = true;
+}
+
+bool UpdateInferenceModelRequest::ResourceTagsHasBeenSet() const
+{
+    return m_resourceTagsHasBeenSet;
 }
 
 

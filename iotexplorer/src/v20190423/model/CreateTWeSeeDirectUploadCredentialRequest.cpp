@@ -33,7 +33,8 @@ CreateTWeSeeDirectUploadCredentialRequest::CreateTWeSeeDirectUploadCredentialReq
     m_durationSecondsHasBeenSet(false),
     m_maxInvokeCountHasBeenSet(false),
     m_storageRegionHasBeenSet(false),
-    m_uploadMethodHasBeenSet(false)
+    m_uploadMethodHasBeenSet(false),
+    m_uploadTargetHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,14 @@ string CreateTWeSeeDirectUploadCredentialRequest::ToJsonString() const
         string key = "UploadMethod";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_uploadMethod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uploadTargetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UploadTarget";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_uploadTarget.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -315,6 +324,22 @@ void CreateTWeSeeDirectUploadCredentialRequest::SetUploadMethod(const string& _u
 bool CreateTWeSeeDirectUploadCredentialRequest::UploadMethodHasBeenSet() const
 {
     return m_uploadMethodHasBeenSet;
+}
+
+string CreateTWeSeeDirectUploadCredentialRequest::GetUploadTarget() const
+{
+    return m_uploadTarget;
+}
+
+void CreateTWeSeeDirectUploadCredentialRequest::SetUploadTarget(const string& _uploadTarget)
+{
+    m_uploadTarget = _uploadTarget;
+    m_uploadTargetHasBeenSet = true;
+}
+
+bool CreateTWeSeeDirectUploadCredentialRequest::UploadTargetHasBeenSet() const
+{
+    return m_uploadTargetHasBeenSet;
 }
 
 

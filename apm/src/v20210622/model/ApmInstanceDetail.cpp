@@ -78,7 +78,9 @@ ApmInstanceDetail::ApmInstanceDetail() :
     m_urlLongSegmentThresholdHasBeenSet(false),
     m_urlNumberSegmentThresholdHasBeenSet(false),
     m_logSpanIdKeyHasBeenSet(false),
-    m_disableAiAbilityHasBeenSet(false)
+    m_disableAiAbilityHasBeenSet(false),
+    m_crossAccountStatusHasBeenSet(false),
+    m_crossAccountPeerIdHasBeenSet(false)
 {
 }
 
@@ -680,6 +682,26 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         m_disableAiAbilityHasBeenSet = true;
     }
 
+    if (value.HasMember("CrossAccountStatus") && !value["CrossAccountStatus"].IsNull())
+    {
+        if (!value["CrossAccountStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.CrossAccountStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_crossAccountStatus = value["CrossAccountStatus"].GetInt64();
+        m_crossAccountStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("CrossAccountPeerId") && !value["CrossAccountPeerId"].IsNull())
+    {
+        if (!value["CrossAccountPeerId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.CrossAccountPeerId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_crossAccountPeerId = string(value["CrossAccountPeerId"].GetString());
+        m_crossAccountPeerIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1161,6 +1183,22 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "DisableAiAbility";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_disableAiAbility, allocator);
+    }
+
+    if (m_crossAccountStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CrossAccountStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_crossAccountStatus, allocator);
+    }
+
+    if (m_crossAccountPeerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CrossAccountPeerId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_crossAccountPeerId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2092,5 +2130,37 @@ void ApmInstanceDetail::SetDisableAiAbility(const int64_t& _disableAiAbility)
 bool ApmInstanceDetail::DisableAiAbilityHasBeenSet() const
 {
     return m_disableAiAbilityHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetCrossAccountStatus() const
+{
+    return m_crossAccountStatus;
+}
+
+void ApmInstanceDetail::SetCrossAccountStatus(const int64_t& _crossAccountStatus)
+{
+    m_crossAccountStatus = _crossAccountStatus;
+    m_crossAccountStatusHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::CrossAccountStatusHasBeenSet() const
+{
+    return m_crossAccountStatusHasBeenSet;
+}
+
+string ApmInstanceDetail::GetCrossAccountPeerId() const
+{
+    return m_crossAccountPeerId;
+}
+
+void ApmInstanceDetail::SetCrossAccountPeerId(const string& _crossAccountPeerId)
+{
+    m_crossAccountPeerId = _crossAccountPeerId;
+    m_crossAccountPeerIdHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::CrossAccountPeerIdHasBeenSet() const
+{
+    return m_crossAccountPeerIdHasBeenSet;
 }
 

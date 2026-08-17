@@ -27,7 +27,9 @@ CreateModelVersionRequest::CreateModelVersionRequest() :
     m_modelVersionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_storageUriHasBeenSet(false),
-    m_useCustomStorageHasBeenSet(false)
+    m_useCustomStorageHasBeenSet(false),
+    m_gooseFSConfigHasBeenSet(false),
+    m_storageTypeHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,23 @@ string CreateModelVersionRequest::ToJsonString() const
         string key = "UseCustomStorage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_useCustomStorage, allocator);
+    }
+
+    if (m_gooseFSConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GooseFSConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_gooseFSConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_storageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +183,38 @@ void CreateModelVersionRequest::SetUseCustomStorage(const bool& _useCustomStorag
 bool CreateModelVersionRequest::UseCustomStorageHasBeenSet() const
 {
     return m_useCustomStorageHasBeenSet;
+}
+
+GooseFSConfig CreateModelVersionRequest::GetGooseFSConfig() const
+{
+    return m_gooseFSConfig;
+}
+
+void CreateModelVersionRequest::SetGooseFSConfig(const GooseFSConfig& _gooseFSConfig)
+{
+    m_gooseFSConfig = _gooseFSConfig;
+    m_gooseFSConfigHasBeenSet = true;
+}
+
+bool CreateModelVersionRequest::GooseFSConfigHasBeenSet() const
+{
+    return m_gooseFSConfigHasBeenSet;
+}
+
+string CreateModelVersionRequest::GetStorageType() const
+{
+    return m_storageType;
+}
+
+void CreateModelVersionRequest::SetStorageType(const string& _storageType)
+{
+    m_storageType = _storageType;
+    m_storageTypeHasBeenSet = true;
+}
+
+bool CreateModelVersionRequest::StorageTypeHasBeenSet() const
+{
+    return m_storageTypeHasBeenSet;
 }
 
 

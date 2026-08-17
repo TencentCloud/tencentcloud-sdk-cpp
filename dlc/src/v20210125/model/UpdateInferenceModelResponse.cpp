@@ -43,7 +43,8 @@ UpdateInferenceModelResponse::UpdateInferenceModelResponse() :
     m_appIdHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_subAccountUinHasBeenSet(false)
+    m_subAccountUinHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false)
 {
 }
 
@@ -287,6 +288,26 @@ CoreInternalOutcome UpdateInferenceModelResponse::Deserialize(const string &payl
         m_subAccountUinHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ResourceTags") && !rsp["ResourceTags"].IsNull())
+    {
+        if (!rsp["ResourceTags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ResourceTags` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ResourceTags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_resourceTags.push_back(item);
+        }
+        m_resourceTagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -465,6 +486,21 @@ string UpdateInferenceModelResponse::ToJsonString() const
         string key = "SubAccountUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subAccountUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -677,6 +713,16 @@ string UpdateInferenceModelResponse::GetSubAccountUin() const
 bool UpdateInferenceModelResponse::SubAccountUinHasBeenSet() const
 {
     return m_subAccountUinHasBeenSet;
+}
+
+vector<Tag> UpdateInferenceModelResponse::GetResourceTags() const
+{
+    return m_resourceTags;
+}
+
+bool UpdateInferenceModelResponse::ResourceTagsHasBeenSet() const
+{
+    return m_resourceTagsHasBeenSet;
 }
 
 

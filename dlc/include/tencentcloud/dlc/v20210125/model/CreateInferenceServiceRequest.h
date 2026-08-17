@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/Tag.h>
 
 
 namespace TencentCloud
@@ -420,6 +421,90 @@ namespace TencentCloud
                      */
                     bool ApiKeyIdsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>AdvancedOptions 高级参数 JSON 字符串（可选），扁平 KV 结构，作用于 K8s RayService CR YAML 字段级</p>
+                     * @return AdvancedOptions <p>AdvancedOptions 高级参数 JSON 字符串（可选），扁平 KV 结构，作用于 K8s RayService CR YAML 字段级</p>
+                     * 
+                     */
+                    std::string GetAdvancedOptions() const;
+
+                    /**
+                     * 设置<p>AdvancedOptions 高级参数 JSON 字符串（可选），扁平 KV 结构，作用于 K8s RayService CR YAML 字段级</p>
+                     * @param _advancedOptions <p>AdvancedOptions 高级参数 JSON 字符串（可选），扁平 KV 结构，作用于 K8s RayService CR YAML 字段级</p>
+                     * 
+                     */
+                    void SetAdvancedOptions(const std::string& _advancedOptions);
+
+                    /**
+                     * 判断参数 AdvancedOptions 是否已赋值
+                     * @return AdvancedOptions 是否已赋值
+                     * 
+                     */
+                    bool AdvancedOptionsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>系统标签列表（TagKey-TagValue）</p>
+                     * @return ResourceTags <p>系统标签列表（TagKey-TagValue）</p>
+                     * 
+                     */
+                    std::vector<Tag> GetResourceTags() const;
+
+                    /**
+                     * 设置<p>系统标签列表（TagKey-TagValue）</p>
+                     * @param _resourceTags <p>系统标签列表（TagKey-TagValue）</p>
+                     * 
+                     */
+                    void SetResourceTags(const std::vector<Tag>& _resourceTags);
+
+                    /**
+                     * 判断参数 ResourceTags 是否已赋值
+                     * @return ResourceTags 是否已赋值
+                     * 
+                     */
+                    bool ResourceTagsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自定义RayServe提交</p>
+                     * @return IsCustom <p>自定义RayServe提交</p>
+                     * 
+                     */
+                    bool GetIsCustom() const;
+
+                    /**
+                     * 设置<p>自定义RayServe提交</p>
+                     * @param _isCustom <p>自定义RayServe提交</p>
+                     * 
+                     */
+                    void SetIsCustom(const bool& _isCustom);
+
+                    /**
+                     * 判断参数 IsCustom 是否已赋值
+                     * @return IsCustom 是否已赋值
+                     * 
+                     */
+                    bool IsCustomHasBeenSet() const;
+
+                    /**
+                     * 获取<p>python runtime env</p>
+                     * @return RuntimeEnv <p>python runtime env</p>
+                     * 
+                     */
+                    std::string GetRuntimeEnv() const;
+
+                    /**
+                     * 设置<p>python runtime env</p>
+                     * @param _runtimeEnv <p>python runtime env</p>
+                     * 
+                     */
+                    void SetRuntimeEnv(const std::string& _runtimeEnv);
+
+                    /**
+                     * 判断参数 RuntimeEnv 是否已赋值
+                     * @return RuntimeEnv 是否已赋值
+                     * 
+                     */
+                    bool RuntimeEnvHasBeenSet() const;
+
                 private:
 
                     /**
@@ -529,6 +614,30 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_apiKeyIds;
                     bool m_apiKeyIdsHasBeenSet;
+
+                    /**
+                     * <p>AdvancedOptions 高级参数 JSON 字符串（可选），扁平 KV 结构，作用于 K8s RayService CR YAML 字段级</p>
+                     */
+                    std::string m_advancedOptions;
+                    bool m_advancedOptionsHasBeenSet;
+
+                    /**
+                     * <p>系统标签列表（TagKey-TagValue）</p>
+                     */
+                    std::vector<Tag> m_resourceTags;
+                    bool m_resourceTagsHasBeenSet;
+
+                    /**
+                     * <p>自定义RayServe提交</p>
+                     */
+                    bool m_isCustom;
+                    bool m_isCustomHasBeenSet;
+
+                    /**
+                     * <p>python runtime env</p>
+                     */
+                    std::string m_runtimeEnv;
+                    bool m_runtimeEnvHasBeenSet;
 
                 };
             }

@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>下一次请求数据</p>
+                     * @return NextToken <p>下一次请求数据</p>
+                     * 
+                     */
+                    std::string GetNextToken() const;
+
+                    /**
+                     * 设置<p>下一次请求数据</p>
+                     * @param _nextToken <p>下一次请求数据</p>
+                     * 
+                     */
+                    void SetNextToken(const std::string& _nextToken);
+
+                    /**
+                     * 判断参数 NextToken 是否已赋值
+                     * @return NextToken 是否已赋值
+                     * 
+                     */
+                    bool NextTokenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * <p>下一次请求数据</p>
+                     */
+                    std::string m_nextToken;
+                    bool m_nextTokenHasBeenSet;
 
                 };
             }

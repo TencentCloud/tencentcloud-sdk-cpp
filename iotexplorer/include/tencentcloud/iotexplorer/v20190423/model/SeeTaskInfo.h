@@ -52,15 +52,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务 ID
-                     * @return TaskId 任务 ID
+                     * 获取<p>任务 ID</p>
+                     * @return TaskId <p>任务 ID</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务 ID
-                     * @param _taskId 任务 ID
+                     * 设置<p>任务 ID</p>
+                     * @param _taskId <p>任务 ID</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -73,35 +73,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务状态。可能取值：
-
-- `1`：失败
-- `2`：空结果
-- `3`：有效结果
-- `4`：处理中
-                     * @return Status 任务状态。可能取值：
-
-- `1`：失败
-- `2`：空结果
-- `3`：有效结果
-- `4`：处理中
+                     * 获取<p>任务状态。可能取值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li><li><code>4</code>：处理中</li></ul>
+                     * @return Status <p>任务状态。可能取值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li><li><code>4</code>：处理中</li></ul>
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置任务状态。可能取值：
-
-- `1`：失败
-- `2`：空结果
-- `3`：有效结果
-- `4`：处理中
-                     * @param _status 任务状态。可能取值：
-
-- `1`：失败
-- `2`：空结果
-- `3`：有效结果
-- `4`：处理中
+                     * 设置<p>任务状态。可能取值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li><li><code>4</code>：处理中</li></ul>
+                     * @param _status <p>任务状态。可能取值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li><li><code>4</code>：处理中</li></ul>
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -114,15 +94,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取任务元数据
-                     * @return Metadata 任务元数据
+                     * 获取<p>任务元数据</p>
+                     * @return Metadata <p>任务元数据</p>
                      * 
                      */
                     SeeTaskMetadata GetMetadata() const;
 
                     /**
-                     * 设置任务元数据
-                     * @param _metadata 任务元数据
+                     * 设置<p>任务元数据</p>
+                     * @param _metadata <p>任务元数据</p>
                      * 
                      */
                     void SetMetadata(const SeeTaskMetadata& _metadata);
@@ -135,27 +115,15 @@ namespace TencentCloud
                     bool MetadataHasBeenSet() const;
 
                     /**
-                     * 获取算法类目。可能取值：
-
-- `COMPREHENSION`：视觉理解
-- `HIGHLIGHT`：视频浓缩
-                     * @return ServiceCategory 算法类目。可能取值：
-
-- `COMPREHENSION`：视觉理解
-- `HIGHLIGHT`：视频浓缩
+                     * 获取<p>算法类目。可能取值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li></ul>
+                     * @return ServiceCategory <p>算法类目。可能取值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li></ul>
                      * 
                      */
                     std::string GetServiceCategory() const;
 
                     /**
-                     * 设置算法类目。可能取值：
-
-- `COMPREHENSION`：视觉理解
-- `HIGHLIGHT`：视频浓缩
-                     * @param _serviceCategory 算法类目。可能取值：
-
-- `COMPREHENSION`：视觉理解
-- `HIGHLIGHT`：视频浓缩
+                     * 设置<p>算法类目。可能取值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li></ul>
+                     * @param _serviceCategory <p>算法类目。可能取值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li></ul>
                      * 
                      */
                     void SetServiceCategory(const std::string& _serviceCategory);
@@ -168,31 +136,15 @@ namespace TencentCloud
                     bool ServiceCategoryHasBeenSet() const;
 
                     /**
-                     * 获取算法类型。可能取值：
-
-- `VID_COMP`：视频理解
-- `IMG_COMP`：图片理解
-- `COMP_HIGHLIGHT`：视频浓缩
-                     * @return ServiceType 算法类型。可能取值：
-
-- `VID_COMP`：视频理解
-- `IMG_COMP`：图片理解
-- `COMP_HIGHLIGHT`：视频浓缩
+                     * 获取<p>算法类型。可能取值：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul>
+                     * @return ServiceType <p>算法类型。可能取值：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul>
                      * 
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置算法类型。可能取值：
-
-- `VID_COMP`：视频理解
-- `IMG_COMP`：图片理解
-- `COMP_HIGHLIGHT`：视频浓缩
-                     * @param _serviceType 算法类型。可能取值：
-
-- `VID_COMP`：视频理解
-- `IMG_COMP`：图片理解
-- `COMP_HIGHLIGHT`：视频浓缩
+                     * 设置<p>算法类型。可能取值：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul>
+                     * @param _serviceType <p>算法类型。可能取值：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul>
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -205,27 +157,15 @@ namespace TencentCloud
                     bool ServiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取套餐规格。可能取值：
-
-- `POSTPAID`：后付费（适用于视频理解、图片理解）
-- `BASIC`：包年包月基础版（适用于视频理解）
-                     * @return ServiceTier 套餐规格。可能取值：
-
-- `POSTPAID`：后付费（适用于视频理解、图片理解）
-- `BASIC`：包年包月基础版（适用于视频理解）
+                     * 获取<p>套餐规格。可能取值：</p><ul><li><code>POSTPAID</code>：后付费（适用于视频理解、图片理解）</li><li><code>BASIC</code>：包年包月基础版（适用于视频理解）</li></ul>
+                     * @return ServiceTier <p>套餐规格。可能取值：</p><ul><li><code>POSTPAID</code>：后付费（适用于视频理解、图片理解）</li><li><code>BASIC</code>：包年包月基础版（适用于视频理解）</li></ul>
                      * 
                      */
                     std::string GetServiceTier() const;
 
                     /**
-                     * 设置套餐规格。可能取值：
-
-- `POSTPAID`：后付费（适用于视频理解、图片理解）
-- `BASIC`：包年包月基础版（适用于视频理解）
-                     * @param _serviceTier 套餐规格。可能取值：
-
-- `POSTPAID`：后付费（适用于视频理解、图片理解）
-- `BASIC`：包年包月基础版（适用于视频理解）
+                     * 设置<p>套餐规格。可能取值：</p><ul><li><code>POSTPAID</code>：后付费（适用于视频理解、图片理解）</li><li><code>BASIC</code>：包年包月基础版（适用于视频理解）</li></ul>
+                     * @param _serviceTier <p>套餐规格。可能取值：</p><ul><li><code>POSTPAID</code>：后付费（适用于视频理解、图片理解）</li><li><code>BASIC</code>：包年包月基础版（适用于视频理解）</li></ul>
                      * 
                      */
                     void SetServiceTier(const std::string& _serviceTier);
@@ -238,15 +178,15 @@ namespace TencentCloud
                     bool ServiceTierHasBeenSet() const;
 
                     /**
-                     * 获取视觉理解结果（适用于视频理解、图片理解）
-                     * @return ComprehensionResult 视觉理解结果（适用于视频理解、图片理解）
+                     * 获取<p>视觉理解结果（适用于视频理解、图片理解）</p>
+                     * @return ComprehensionResult <p>视觉理解结果（适用于视频理解、图片理解）</p>
                      * 
                      */
                     SeeComprehensionResult GetComprehensionResult() const;
 
                     /**
-                     * 设置视觉理解结果（适用于视频理解、图片理解）
-                     * @param _comprehensionResult 视觉理解结果（适用于视频理解、图片理解）
+                     * 设置<p>视觉理解结果（适用于视频理解、图片理解）</p>
+                     * @param _comprehensionResult <p>视觉理解结果（适用于视频理解、图片理解）</p>
                      * 
                      */
                     void SetComprehensionResult(const SeeComprehensionResult& _comprehensionResult);
@@ -259,15 +199,15 @@ namespace TencentCloud
                     bool ComprehensionResultHasBeenSet() const;
 
                     /**
-                     * 获取视频语义浓缩结果（适用于视频语义浓缩）
-                     * @return CompHighlightResult 视频语义浓缩结果（适用于视频语义浓缩）
+                     * 获取<p>视频语义浓缩结果（适用于视频语义浓缩）</p>
+                     * @return CompHighlightResult <p>视频语义浓缩结果（适用于视频语义浓缩）</p>
                      * 
                      */
                     SeeCompHighlightResult GetCompHighlightResult() const;
 
                     /**
-                     * 设置视频语义浓缩结果（适用于视频语义浓缩）
-                     * @param _compHighlightResult 视频语义浓缩结果（适用于视频语义浓缩）
+                     * 设置<p>视频语义浓缩结果（适用于视频语义浓缩）</p>
+                     * @param _compHighlightResult <p>视频语义浓缩结果（适用于视频语义浓缩）</p>
                      * 
                      */
                     void SetCompHighlightResult(const SeeCompHighlightResult& _compHighlightResult);
@@ -280,15 +220,15 @@ namespace TencentCloud
                     bool CompHighlightResultHasBeenSet() const;
 
                     /**
-                     * 获取标签持续检测结果
-                     * @return DetectContinuousResult 标签持续检测结果
+                     * 获取<p>标签持续检测结果</p>
+                     * @return DetectContinuousResult <p>标签持续检测结果</p>
                      * 
                      */
                     SeeDetectContinuousResult GetDetectContinuousResult() const;
 
                     /**
-                     * 设置标签持续检测结果
-                     * @param _detectContinuousResult 标签持续检测结果
+                     * 设置<p>标签持续检测结果</p>
+                     * @param _detectContinuousResult <p>标签持续检测结果</p>
                      * 
                      */
                     void SetDetectContinuousResult(const SeeDetectContinuousResult& _detectContinuousResult);
@@ -301,15 +241,15 @@ namespace TencentCloud
                     bool DetectContinuousResultHasBeenSet() const;
 
                     /**
-                     * 获取完成该任务所消耗的基础能力额度
-                     * @return CostBasic 完成该任务所消耗的基础能力额度
+                     * 获取<p>完成该任务所消耗的基础能力额度</p>
+                     * @return CostBasic <p>完成该任务所消耗的基础能力额度</p>
                      * 
                      */
                     int64_t GetCostBasic() const;
 
                     /**
-                     * 设置完成该任务所消耗的基础能力额度
-                     * @param _costBasic 完成该任务所消耗的基础能力额度
+                     * 设置<p>完成该任务所消耗的基础能力额度</p>
+                     * @param _costBasic <p>完成该任务所消耗的基础能力额度</p>
                      * 
                      */
                     void SetCostBasic(const int64_t& _costBasic);
@@ -322,15 +262,15 @@ namespace TencentCloud
                     bool CostBasicHasBeenSet() const;
 
                     /**
-                     * 获取完成该任务所消耗的高级能力额度
-                     * @return CostAdvanced 完成该任务所消耗的高级能力额度
+                     * 获取<p>完成该任务所消耗的高级能力额度</p>
+                     * @return CostAdvanced <p>完成该任务所消耗的高级能力额度</p>
                      * 
                      */
                     int64_t GetCostAdvanced() const;
 
                     /**
-                     * 设置完成该任务所消耗的高级能力额度
-                     * @param _costAdvanced 完成该任务所消耗的高级能力额度
+                     * 设置<p>完成该任务所消耗的高级能力额度</p>
+                     * @param _costAdvanced <p>完成该任务所消耗的高级能力额度</p>
                      * 
                      */
                     void SetCostAdvanced(const int64_t& _costAdvanced);
@@ -343,15 +283,15 @@ namespace TencentCloud
                     bool CostAdvancedHasBeenSet() const;
 
                     /**
-                     * 获取输出文件名列表
-                     * @return Files 输出文件名列表
+                     * 获取<p>输出文件名列表</p>
+                     * @return Files <p>输出文件名列表</p>
                      * 
                      */
                     std::vector<std::string> GetFiles() const;
 
                     /**
-                     * 设置输出文件名列表
-                     * @param _files 输出文件名列表
+                     * 设置<p>输出文件名列表</p>
+                     * @param _files <p>输出文件名列表</p>
                      * 
                      */
                     void SetFiles(const std::vector<std::string>& _files);
@@ -364,15 +304,15 @@ namespace TencentCloud
                     bool FilesHasBeenSet() const;
 
                     /**
-                     * 获取输出文件详情列表
-                     * @return FilesInfo 输出文件详情列表
+                     * 获取<p>输出文件详情列表</p>
+                     * @return FilesInfo <p>输出文件详情列表</p>
                      * 
                      */
                     std::vector<CloudStorageAIServiceTaskFileInfo> GetFilesInfo() const;
 
                     /**
-                     * 设置输出文件详情列表
-                     * @param _filesInfo 输出文件详情列表
+                     * 设置<p>输出文件详情列表</p>
+                     * @param _filesInfo <p>输出文件详情列表</p>
                      * 
                      */
                     void SetFilesInfo(const std::vector<CloudStorageAIServiceTaskFileInfo>& _filesInfo);
@@ -385,15 +325,15 @@ namespace TencentCloud
                     bool FilesInfoHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
@@ -406,15 +346,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取最后更新时间
-                     * @return UpdateTime 最后更新时间
+                     * 获取<p>最后更新时间</p>
+                     * @return UpdateTime <p>最后更新时间</p>
                      * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
-                     * 设置最后更新时间
-                     * @param _updateTime 最后更新时间
+                     * 设置<p>最后更新时间</p>
+                     * @param _updateTime <p>最后更新时间</p>
                      * 
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
@@ -426,112 +366,124 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>直传 COS 的对象 URI</p>
+                     * @return COSURI <p>直传 COS 的对象 URI</p>
+                     * 
+                     */
+                    std::string GetCOSURI() const;
+
+                    /**
+                     * 设置<p>直传 COS 的对象 URI</p>
+                     * @param _cOSURI <p>直传 COS 的对象 URI</p>
+                     * 
+                     */
+                    void SetCOSURI(const std::string& _cOSURI);
+
+                    /**
+                     * 判断参数 COSURI 是否已赋值
+                     * @return COSURI 是否已赋值
+                     * 
+                     */
+                    bool COSURIHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务 ID
+                     * <p>任务 ID</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务状态。可能取值：
-
-- `1`：失败
-- `2`：空结果
-- `3`：有效结果
-- `4`：处理中
+                     * <p>任务状态。可能取值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li><li><code>4</code>：处理中</li></ul>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 任务元数据
+                     * <p>任务元数据</p>
                      */
                     SeeTaskMetadata m_metadata;
                     bool m_metadataHasBeenSet;
 
                     /**
-                     * 算法类目。可能取值：
-
-- `COMPREHENSION`：视觉理解
-- `HIGHLIGHT`：视频浓缩
+                     * <p>算法类目。可能取值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li></ul>
                      */
                     std::string m_serviceCategory;
                     bool m_serviceCategoryHasBeenSet;
 
                     /**
-                     * 算法类型。可能取值：
-
-- `VID_COMP`：视频理解
-- `IMG_COMP`：图片理解
-- `COMP_HIGHLIGHT`：视频浓缩
+                     * <p>算法类型。可能取值：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul>
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
 
                     /**
-                     * 套餐规格。可能取值：
-
-- `POSTPAID`：后付费（适用于视频理解、图片理解）
-- `BASIC`：包年包月基础版（适用于视频理解）
+                     * <p>套餐规格。可能取值：</p><ul><li><code>POSTPAID</code>：后付费（适用于视频理解、图片理解）</li><li><code>BASIC</code>：包年包月基础版（适用于视频理解）</li></ul>
                      */
                     std::string m_serviceTier;
                     bool m_serviceTierHasBeenSet;
 
                     /**
-                     * 视觉理解结果（适用于视频理解、图片理解）
+                     * <p>视觉理解结果（适用于视频理解、图片理解）</p>
                      */
                     SeeComprehensionResult m_comprehensionResult;
                     bool m_comprehensionResultHasBeenSet;
 
                     /**
-                     * 视频语义浓缩结果（适用于视频语义浓缩）
+                     * <p>视频语义浓缩结果（适用于视频语义浓缩）</p>
                      */
                     SeeCompHighlightResult m_compHighlightResult;
                     bool m_compHighlightResultHasBeenSet;
 
                     /**
-                     * 标签持续检测结果
+                     * <p>标签持续检测结果</p>
                      */
                     SeeDetectContinuousResult m_detectContinuousResult;
                     bool m_detectContinuousResultHasBeenSet;
 
                     /**
-                     * 完成该任务所消耗的基础能力额度
+                     * <p>完成该任务所消耗的基础能力额度</p>
                      */
                     int64_t m_costBasic;
                     bool m_costBasicHasBeenSet;
 
                     /**
-                     * 完成该任务所消耗的高级能力额度
+                     * <p>完成该任务所消耗的高级能力额度</p>
                      */
                     int64_t m_costAdvanced;
                     bool m_costAdvancedHasBeenSet;
 
                     /**
-                     * 输出文件名列表
+                     * <p>输出文件名列表</p>
                      */
                     std::vector<std::string> m_files;
                     bool m_filesHasBeenSet;
 
                     /**
-                     * 输出文件详情列表
+                     * <p>输出文件详情列表</p>
                      */
                     std::vector<CloudStorageAIServiceTaskFileInfo> m_filesInfo;
                     bool m_filesInfoHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 最后更新时间
+                     * <p>最后更新时间</p>
                      */
                     int64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * <p>直传 COS 的对象 URI</p>
+                     */
+                    std::string m_cOSURI;
+                    bool m_cOSURIHasBeenSet;
 
                 };
             }

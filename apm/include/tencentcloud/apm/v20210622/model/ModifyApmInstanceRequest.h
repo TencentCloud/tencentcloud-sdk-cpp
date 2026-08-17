@@ -1030,6 +1030,48 @@ namespace TencentCloud
                      */
                     bool DisableAiAbilityHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否为跨账号</p><p>枚举值：</p><ul><li>0： 否</li><li>1： 是</li></ul>
+                     * @return CrossAccountStatus <p>是否为跨账号</p><p>枚举值：</p><ul><li>0： 否</li><li>1： 是</li></ul>
+                     * 
+                     */
+                    int64_t GetCrossAccountStatus() const;
+
+                    /**
+                     * 设置<p>是否为跨账号</p><p>枚举值：</p><ul><li>0： 否</li><li>1： 是</li></ul>
+                     * @param _crossAccountStatus <p>是否为跨账号</p><p>枚举值：</p><ul><li>0： 否</li><li>1： 是</li></ul>
+                     * 
+                     */
+                    void SetCrossAccountStatus(const int64_t& _crossAccountStatus);
+
+                    /**
+                     * 判断参数 CrossAccountStatus 是否已赋值
+                     * @return CrossAccountStatus 是否已赋值
+                     * 
+                     */
+                    bool CrossAccountStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>跨账号关联ID</p>
+                     * @return CrossAccountPeerId <p>跨账号关联ID</p>
+                     * 
+                     */
+                    std::string GetCrossAccountPeerId() const;
+
+                    /**
+                     * 设置<p>跨账号关联ID</p>
+                     * @param _crossAccountPeerId <p>跨账号关联ID</p>
+                     * 
+                     */
+                    void SetCrossAccountPeerId(const std::string& _crossAccountPeerId);
+
+                    /**
+                     * 判断参数 CrossAccountPeerId 是否已赋值
+                     * @return CrossAccountPeerId 是否已赋值
+                     * 
+                     */
+                    bool CrossAccountPeerIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1313,6 +1355,18 @@ namespace TencentCloud
                      */
                     int64_t m_disableAiAbility;
                     bool m_disableAiAbilityHasBeenSet;
+
+                    /**
+                     * <p>是否为跨账号</p><p>枚举值：</p><ul><li>0： 否</li><li>1： 是</li></ul>
+                     */
+                    int64_t m_crossAccountStatus;
+                    bool m_crossAccountStatusHasBeenSet;
+
+                    /**
+                     * <p>跨账号关联ID</p>
+                     */
+                    std::string m_crossAccountPeerId;
+                    bool m_crossAccountPeerIdHasBeenSet;
 
                 };
             }

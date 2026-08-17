@@ -33,7 +33,10 @@ CreateInferenceModelRequest::CreateInferenceModelRequest() :
     m_storageUriHasBeenSet(false),
     m_useCustomStorageHasBeenSet(false),
     m_tasksHasBeenSet(false),
-    m_modelUidHasBeenSet(false)
+    m_modelUidHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false),
+    m_gooseFSConfigHasBeenSet(false),
+    m_storageTypeHasBeenSet(false)
 {
 }
 
@@ -140,6 +143,38 @@ string CreateInferenceModelRequest::ToJsonString() const
         string key = "ModelUid";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_modelUid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_gooseFSConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GooseFSConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_gooseFSConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_storageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -324,6 +359,54 @@ void CreateInferenceModelRequest::SetModelUid(const string& _modelUid)
 bool CreateInferenceModelRequest::ModelUidHasBeenSet() const
 {
     return m_modelUidHasBeenSet;
+}
+
+vector<Tag> CreateInferenceModelRequest::GetResourceTags() const
+{
+    return m_resourceTags;
+}
+
+void CreateInferenceModelRequest::SetResourceTags(const vector<Tag>& _resourceTags)
+{
+    m_resourceTags = _resourceTags;
+    m_resourceTagsHasBeenSet = true;
+}
+
+bool CreateInferenceModelRequest::ResourceTagsHasBeenSet() const
+{
+    return m_resourceTagsHasBeenSet;
+}
+
+GooseFSConfig CreateInferenceModelRequest::GetGooseFSConfig() const
+{
+    return m_gooseFSConfig;
+}
+
+void CreateInferenceModelRequest::SetGooseFSConfig(const GooseFSConfig& _gooseFSConfig)
+{
+    m_gooseFSConfig = _gooseFSConfig;
+    m_gooseFSConfigHasBeenSet = true;
+}
+
+bool CreateInferenceModelRequest::GooseFSConfigHasBeenSet() const
+{
+    return m_gooseFSConfigHasBeenSet;
+}
+
+string CreateInferenceModelRequest::GetStorageType() const
+{
+    return m_storageType;
+}
+
+void CreateInferenceModelRequest::SetStorageType(const string& _storageType)
+{
+    m_storageType = _storageType;
+    m_storageTypeHasBeenSet = true;
+}
+
+bool CreateInferenceModelRequest::StorageTypeHasBeenSet() const
+{
+    return m_storageTypeHasBeenSet;
 }
 
 

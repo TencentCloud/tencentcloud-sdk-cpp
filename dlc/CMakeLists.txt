@@ -345,6 +345,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeWorkGroupInfoRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeOtherCHDFSBindingListRequest.h
   include/tencentcloud/dlc/v20210125/model/CancelTaskResponse.h
+  include/tencentcloud/dlc/v20210125/model/GooseFSConfig.h
   include/tencentcloud/dlc/v20210125/model/TableInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeFlowListResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSQLResponse.h
@@ -1150,6 +1151,7 @@ set(dlc_src
   src/v20210125/model/DescribeWorkGroupInfoRequest.cpp
   src/v20210125/model/DescribeOtherCHDFSBindingListRequest.cpp
   src/v20210125/model/CancelTaskResponse.cpp
+  src/v20210125/model/GooseFSConfig.cpp
   src/v20210125/model/TableInfo.cpp
   src/v20210125/model/DescribeFlowListResponse.cpp
   src/v20210125/model/DescribeSparkSessionBatchSQLResponse.cpp

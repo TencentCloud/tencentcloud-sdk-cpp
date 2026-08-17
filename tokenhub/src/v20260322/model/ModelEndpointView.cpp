@@ -24,8 +24,10 @@ ModelEndpointView::ModelEndpointView() :
     m_endpointIdHasBeenSet(false),
     m_endpointNameHasBeenSet(false),
     m_modelIdHasBeenSet(false),
+    m_extraModelIdsHasBeenSet(false),
     m_modelNameHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_modelStatusHasBeenSet(false),
     m_serviceTypeHasBeenSet(false),
     m_chargeTypeHasBeenSet(false),
     m_paymentEnabledHasBeenSet(false),
@@ -71,6 +73,19 @@ CoreInternalOutcome ModelEndpointView::Deserialize(const rapidjson::Value &value
         m_modelIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtraModelIds") && !value["ExtraModelIds"].IsNull())
+    {
+        if (!value["ExtraModelIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ModelEndpointView.ExtraModelIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExtraModelIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_extraModelIds.push_back((*itr).GetString());
+        }
+        m_extraModelIdsHasBeenSet = true;
+    }
+
     if (value.HasMember("ModelName") && !value["ModelName"].IsNull())
     {
         if (!value["ModelName"].IsString())
@@ -89,6 +104,16 @@ CoreInternalOutcome ModelEndpointView::Deserialize(const rapidjson::Value &value
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModelStatus") && !value["ModelStatus"].IsNull())
+    {
+        if (!value["ModelStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelEndpointView.ModelStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modelStatus = string(value["ModelStatus"].GetString());
+        m_modelStatusHasBeenSet = true;
     }
 
     if (value.HasMember("ServiceType") && !value["ServiceType"].IsNull())
@@ -192,6 +217,19 @@ void ModelEndpointView::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, rapidjson::Value(m_modelId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_extraModelIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraModelIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_extraModelIds.begin(); itr != m_extraModelIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_modelNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -206,6 +244,14 @@ void ModelEndpointView::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serviceTypeHasBeenSet)
@@ -315,6 +361,22 @@ bool ModelEndpointView::ModelIdHasBeenSet() const
     return m_modelIdHasBeenSet;
 }
 
+vector<string> ModelEndpointView::GetExtraModelIds() const
+{
+    return m_extraModelIds;
+}
+
+void ModelEndpointView::SetExtraModelIds(const vector<string>& _extraModelIds)
+{
+    m_extraModelIds = _extraModelIds;
+    m_extraModelIdsHasBeenSet = true;
+}
+
+bool ModelEndpointView::ExtraModelIdsHasBeenSet() const
+{
+    return m_extraModelIdsHasBeenSet;
+}
+
 string ModelEndpointView::GetModelName() const
 {
     return m_modelName;
@@ -345,6 +407,22 @@ void ModelEndpointView::SetStatus(const string& _status)
 bool ModelEndpointView::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string ModelEndpointView::GetModelStatus() const
+{
+    return m_modelStatus;
+}
+
+void ModelEndpointView::SetModelStatus(const string& _modelStatus)
+{
+    m_modelStatus = _modelStatus;
+    m_modelStatusHasBeenSet = true;
+}
+
+bool ModelEndpointView::ModelStatusHasBeenSet() const
+{
+    return m_modelStatusHasBeenSet;
 }
 
 string ModelEndpointView::GetServiceType() const

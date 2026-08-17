@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>日志主题id</p>
-                     * @return TopicId <p>日志主题id</p>
+                     * 获取<p>日志主题id</p><p>仅在创建日志主题时，开启了日志修改/删除开关的主题，支持日志修改/删除。该功能暂时仅面向白名单内客户使用。</p>
+                     * @return TopicId <p>日志主题id</p><p>仅在创建日志主题时，开启了日志修改/删除开关的主题，支持日志修改/删除。该功能暂时仅面向白名单内客户使用。</p>
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置<p>日志主题id</p>
-                     * @param _topicId <p>日志主题id</p>
+                     * 设置<p>日志主题id</p><p>仅在创建日志主题时，开启了日志修改/删除开关的主题，支持日志修改/删除。该功能暂时仅面向白名单内客户使用。</p>
+                     * @param _topicId <p>日志主题id</p><p>仅在创建日志主题时，开启了日志修改/删除开关的主题，支持日志修改/删除。该功能暂时仅面向白名单内客户使用。</p>
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -129,7 +129,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>日志主题id</p>
+                     * <p>日志主题id</p><p>仅在创建日志主题时，开启了日志修改/删除开关的主题，支持日志修改/删除。该功能暂时仅面向白名单内客户使用。</p>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;

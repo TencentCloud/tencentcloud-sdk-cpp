@@ -274,6 +274,27 @@ namespace TencentCloud
                      */
                     bool UploadMethodHasBeenSet() const;
 
+                    /**
+                     * 获取<p>上传目标</p><p>枚举值：</p><ul><li>session： 一次性上传会话（默认，通过入参传递 ComprehensionConfig 等上传参数）</li><li>stream： 上传到指定设备（加载对应设备的 ComprehensionConfig 等配置）</li></ul><p>默认值：session</p>
+                     * @return UploadTarget <p>上传目标</p><p>枚举值：</p><ul><li>session： 一次性上传会话（默认，通过入参传递 ComprehensionConfig 等上传参数）</li><li>stream： 上传到指定设备（加载对应设备的 ComprehensionConfig 等配置）</li></ul><p>默认值：session</p>
+                     * 
+                     */
+                    std::string GetUploadTarget() const;
+
+                    /**
+                     * 设置<p>上传目标</p><p>枚举值：</p><ul><li>session： 一次性上传会话（默认，通过入参传递 ComprehensionConfig 等上传参数）</li><li>stream： 上传到指定设备（加载对应设备的 ComprehensionConfig 等配置）</li></ul><p>默认值：session</p>
+                     * @param _uploadTarget <p>上传目标</p><p>枚举值：</p><ul><li>session： 一次性上传会话（默认，通过入参传递 ComprehensionConfig 等上传参数）</li><li>stream： 上传到指定设备（加载对应设备的 ComprehensionConfig 等配置）</li></ul><p>默认值：session</p>
+                     * 
+                     */
+                    void SetUploadTarget(const std::string& _uploadTarget);
+
+                    /**
+                     * 判断参数 UploadTarget 是否已赋值
+                     * @return UploadTarget 是否已赋值
+                     * 
+                     */
+                    bool UploadTargetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -341,6 +362,12 @@ namespace TencentCloud
                      */
                     std::string m_uploadMethod;
                     bool m_uploadMethodHasBeenSet;
+
+                    /**
+                     * <p>上传目标</p><p>枚举值：</p><ul><li>session： 一次性上传会话（默认，通过入参传递 ComprehensionConfig 等上传参数）</li><li>stream： 上传到指定设备（加载对应设备的 ComprehensionConfig 等配置）</li></ul><p>默认值：session</p>
+                     */
+                    std::string m_uploadTarget;
+                    bool m_uploadTargetHasBeenSet;
 
                 };
             }

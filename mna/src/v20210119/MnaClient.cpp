@@ -140,6 +140,56 @@ MnaClient::AddApplicationOutcomeCallable MnaClient::AddApplicationCallable(const
     return prom->get_future();
 }
 
+MnaClient::AddCustomerGatewayClusterOutcome MnaClient::AddCustomerGatewayCluster(const AddCustomerGatewayClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddCustomerGatewayCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddCustomerGatewayClusterResponse rsp = AddCustomerGatewayClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddCustomerGatewayClusterOutcome(rsp);
+        else
+            return AddCustomerGatewayClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return AddCustomerGatewayClusterOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::AddCustomerGatewayClusterAsync(const AddCustomerGatewayClusterRequest& request, const AddCustomerGatewayClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddCustomerGatewayClusterRequest&;
+    using Resp = AddCustomerGatewayClusterResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddCustomerGatewayCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MnaClient::AddCustomerGatewayClusterOutcomeCallable MnaClient::AddCustomerGatewayClusterCallable(const AddCustomerGatewayClusterRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddCustomerGatewayClusterOutcome>>();
+    AddCustomerGatewayClusterAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const AddCustomerGatewayClusterRequest&,
+        AddCustomerGatewayClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MnaClient::AddDeviceOutcome MnaClient::AddDevice(const AddDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "AddDevice");
@@ -182,6 +232,56 @@ MnaClient::AddDeviceOutcomeCallable MnaClient::AddDeviceCallable(const AddDevice
         const MnaClient*,
         const AddDeviceRequest&,
         AddDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MnaClient::AddGatewayOutcome MnaClient::AddGateway(const AddGatewayRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddGateway");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddGatewayResponse rsp = AddGatewayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddGatewayOutcome(rsp);
+        else
+            return AddGatewayOutcome(o.GetError());
+    }
+    else
+    {
+        return AddGatewayOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::AddGatewayAsync(const AddGatewayRequest& request, const AddGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddGatewayRequest&;
+    using Resp = AddGatewayResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddGateway", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MnaClient::AddGatewayOutcomeCallable MnaClient::AddGatewayCallable(const AddGatewayRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddGatewayOutcome>>();
+    AddGatewayAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const AddGatewayRequest&,
+        AddGatewayOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -440,6 +540,56 @@ MnaClient::DeleteApplicationOutcomeCallable MnaClient::DeleteApplicationCallable
     return prom->get_future();
 }
 
+MnaClient::DeleteCustomerGatewayClusterOutcome MnaClient::DeleteCustomerGatewayCluster(const DeleteCustomerGatewayClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCustomerGatewayCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCustomerGatewayClusterResponse rsp = DeleteCustomerGatewayClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCustomerGatewayClusterOutcome(rsp);
+        else
+            return DeleteCustomerGatewayClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCustomerGatewayClusterOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::DeleteCustomerGatewayClusterAsync(const DeleteCustomerGatewayClusterRequest& request, const DeleteCustomerGatewayClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCustomerGatewayClusterRequest&;
+    using Resp = DeleteCustomerGatewayClusterResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCustomerGatewayCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MnaClient::DeleteCustomerGatewayClusterOutcomeCallable MnaClient::DeleteCustomerGatewayClusterCallable(const DeleteCustomerGatewayClusterRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCustomerGatewayClusterOutcome>>();
+    DeleteCustomerGatewayClusterAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const DeleteCustomerGatewayClusterRequest&,
+        DeleteCustomerGatewayClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MnaClient::DeleteDeviceOutcome MnaClient::DeleteDevice(const DeleteDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteDevice");
@@ -482,6 +632,56 @@ MnaClient::DeleteDeviceOutcomeCallable MnaClient::DeleteDeviceCallable(const Del
         const MnaClient*,
         const DeleteDeviceRequest&,
         DeleteDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MnaClient::DeleteGatewayOutcome MnaClient::DeleteGateway(const DeleteGatewayRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGateway");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGatewayResponse rsp = DeleteGatewayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGatewayOutcome(rsp);
+        else
+            return DeleteGatewayOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGatewayOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::DeleteGatewayAsync(const DeleteGatewayRequest& request, const DeleteGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteGatewayRequest&;
+    using Resp = DeleteGatewayResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteGateway", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MnaClient::DeleteGatewayOutcomeCallable MnaClient::DeleteGatewayCallable(const DeleteGatewayRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteGatewayOutcome>>();
+    DeleteGatewayAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const DeleteGatewayRequest&,
+        DeleteGatewayOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -582,6 +782,56 @@ MnaClient::DeleteL3ConnOutcomeCallable MnaClient::DeleteL3ConnCallable(const Del
         const MnaClient*,
         const DeleteL3ConnRequest&,
         DeleteL3ConnOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MnaClient::DescribeAccessPointListOutcome MnaClient::DescribeAccessPointList(const DescribeAccessPointListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccessPointList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccessPointListResponse rsp = DescribeAccessPointListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccessPointListOutcome(rsp);
+        else
+            return DescribeAccessPointListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccessPointListOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::DescribeAccessPointListAsync(const DescribeAccessPointListRequest& request, const DescribeAccessPointListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAccessPointListRequest&;
+    using Resp = DescribeAccessPointListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccessPointList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MnaClient::DescribeAccessPointListOutcomeCallable MnaClient::DescribeAccessPointListCallable(const DescribeAccessPointListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAccessPointListOutcome>>();
+    DescribeAccessPointListAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const DescribeAccessPointListRequest&,
+        DescribeAccessPointListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -782,6 +1032,56 @@ MnaClient::GetApplicationOutcomeCallable MnaClient::GetApplicationCallable(const
         const MnaClient*,
         const GetApplicationRequest&,
         GetApplicationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MnaClient::GetCustomerGatewayClusterListOutcome MnaClient::GetCustomerGatewayClusterList(const GetCustomerGatewayClusterListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetCustomerGatewayClusterList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetCustomerGatewayClusterListResponse rsp = GetCustomerGatewayClusterListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetCustomerGatewayClusterListOutcome(rsp);
+        else
+            return GetCustomerGatewayClusterListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetCustomerGatewayClusterListOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::GetCustomerGatewayClusterListAsync(const GetCustomerGatewayClusterListRequest& request, const GetCustomerGatewayClusterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetCustomerGatewayClusterListRequest&;
+    using Resp = GetCustomerGatewayClusterListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetCustomerGatewayClusterList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MnaClient::GetCustomerGatewayClusterListOutcomeCallable MnaClient::GetCustomerGatewayClusterListCallable(const GetCustomerGatewayClusterListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetCustomerGatewayClusterListOutcome>>();
+    GetCustomerGatewayClusterListAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GetCustomerGatewayClusterListRequest&,
+        GetCustomerGatewayClusterListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2140,6 +2440,56 @@ MnaClient::ModifyDeviceAccessRegionsOutcomeCallable MnaClient::ModifyDeviceAcces
     return prom->get_future();
 }
 
+MnaClient::ModifyDeviceAccessScopeOutcome MnaClient::ModifyDeviceAccessScope(const ModifyDeviceAccessScopeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDeviceAccessScope");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDeviceAccessScopeResponse rsp = ModifyDeviceAccessScopeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDeviceAccessScopeOutcome(rsp);
+        else
+            return ModifyDeviceAccessScopeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDeviceAccessScopeOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::ModifyDeviceAccessScopeAsync(const ModifyDeviceAccessScopeRequest& request, const ModifyDeviceAccessScopeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDeviceAccessScopeRequest&;
+    using Resp = ModifyDeviceAccessScopeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDeviceAccessScope", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MnaClient::ModifyDeviceAccessScopeOutcomeCallable MnaClient::ModifyDeviceAccessScopeCallable(const ModifyDeviceAccessScopeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDeviceAccessScopeOutcome>>();
+    ModifyDeviceAccessScopeAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const ModifyDeviceAccessScopeRequest&,
+        ModifyDeviceAccessScopeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MnaClient::ModifyPackageRenewFlagOutcome MnaClient::ModifyPackageRenewFlag(const ModifyPackageRenewFlagRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyPackageRenewFlag");
@@ -2482,6 +2832,56 @@ MnaClient::UpdateApplicationKeyOutcomeCallable MnaClient::UpdateApplicationKeyCa
         const MnaClient*,
         const UpdateApplicationKeyRequest&,
         UpdateApplicationKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MnaClient::UpdateCustomerGatewayClusterOutcome MnaClient::UpdateCustomerGatewayCluster(const UpdateCustomerGatewayClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateCustomerGatewayCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateCustomerGatewayClusterResponse rsp = UpdateCustomerGatewayClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateCustomerGatewayClusterOutcome(rsp);
+        else
+            return UpdateCustomerGatewayClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateCustomerGatewayClusterOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::UpdateCustomerGatewayClusterAsync(const UpdateCustomerGatewayClusterRequest& request, const UpdateCustomerGatewayClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateCustomerGatewayClusterRequest&;
+    using Resp = UpdateCustomerGatewayClusterResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateCustomerGatewayCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MnaClient::UpdateCustomerGatewayClusterOutcomeCallable MnaClient::UpdateCustomerGatewayClusterCallable(const UpdateCustomerGatewayClusterRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateCustomerGatewayClusterOutcome>>();
+    UpdateCustomerGatewayClusterAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const UpdateCustomerGatewayClusterRequest&,
+        UpdateCustomerGatewayClusterOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
