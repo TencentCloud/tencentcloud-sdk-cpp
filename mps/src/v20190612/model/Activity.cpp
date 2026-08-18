@@ -22,6 +22,7 @@ using namespace std;
 
 Activity::Activity() :
     m_activityTypeHasBeenSet(false),
+    m_predriveIndexHasBeenSet(false),
     m_reardriveIndexHasBeenSet(false),
     m_activityParaHasBeenSet(false)
 {
@@ -40,6 +41,19 @@ CoreInternalOutcome Activity::Deserialize(const rapidjson::Value &value)
         }
         m_activityType = string(value["ActivityType"].GetString());
         m_activityTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PredriveIndex") && !value["PredriveIndex"].IsNull())
+    {
+        if (!value["PredriveIndex"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Activity.PredriveIndex` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PredriveIndex"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_predriveIndex.push_back((*itr).GetInt64());
+        }
+        m_predriveIndexHasBeenSet = true;
     }
 
     if (value.HasMember("ReardriveIndex") && !value["ReardriveIndex"].IsNull())
@@ -87,6 +101,19 @@ void Activity::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         value.AddMember(iKey, rapidjson::Value(m_activityType.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_predriveIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PredriveIndex";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_predriveIndex.begin(); itr != m_predriveIndex.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
     if (m_reardriveIndexHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -126,6 +153,22 @@ void Activity::SetActivityType(const string& _activityType)
 bool Activity::ActivityTypeHasBeenSet() const
 {
     return m_activityTypeHasBeenSet;
+}
+
+vector<int64_t> Activity::GetPredriveIndex() const
+{
+    return m_predriveIndex;
+}
+
+void Activity::SetPredriveIndex(const vector<int64_t>& _predriveIndex)
+{
+    m_predriveIndex = _predriveIndex;
+    m_predriveIndexHasBeenSet = true;
+}
+
+bool Activity::PredriveIndexHasBeenSet() const
+{
+    return m_predriveIndexHasBeenSet;
 }
 
 vector<int64_t> Activity::GetReardriveIndex() const

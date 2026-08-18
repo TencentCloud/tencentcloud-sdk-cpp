@@ -130,6 +130,27 @@ namespace TencentCloud
                      */
                     bool AspectRatioHasBeenSet() const;
 
+                    /**
+                     * 获取<p>附加参数。</p>
+                     * @return AdditionalParameters <p>附加参数。</p>
+                     * 
+                     */
+                    std::string GetAdditionalParameters() const;
+
+                    /**
+                     * 设置<p>附加参数。</p>
+                     * @param _additionalParameters <p>附加参数。</p>
+                     * 
+                     */
+                    void SetAdditionalParameters(const std::string& _additionalParameters);
+
+                    /**
+                     * 判断参数 AdditionalParameters 是否已赋值
+                     * @return AdditionalParameters 是否已赋值
+                     * 
+                     */
+                    bool AdditionalParametersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +176,12 @@ namespace TencentCloud
                      */
                     std::string m_aspectRatio;
                     bool m_aspectRatioHasBeenSet;
+
+                    /**
+                     * <p>附加参数。</p>
+                     */
+                    std::string m_additionalParameters;
+                    bool m_additionalParametersHasBeenSet;
 
                 };
             }

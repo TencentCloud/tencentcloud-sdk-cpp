@@ -24,7 +24,8 @@ CreateImageConfig::CreateImageConfig() :
     m_modelHasBeenSet(false),
     m_promptHasBeenSet(false),
     m_resolutionHasBeenSet(false),
-    m_aspectRatioHasBeenSet(false)
+    m_aspectRatioHasBeenSet(false),
+    m_additionalParametersHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome CreateImageConfig::Deserialize(const rapidjson::Value &value
         m_aspectRatioHasBeenSet = true;
     }
 
+    if (value.HasMember("AdditionalParameters") && !value["AdditionalParameters"].IsNull())
+    {
+        if (!value["AdditionalParameters"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateImageConfig.AdditionalParameters` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_additionalParameters = string(value["AdditionalParameters"].GetString());
+        m_additionalParametersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void CreateImageConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "AspectRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_aspectRatio.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_additionalParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdditionalParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_additionalParameters.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void CreateImageConfig::SetAspectRatio(const string& _aspectRatio)
 bool CreateImageConfig::AspectRatioHasBeenSet() const
 {
     return m_aspectRatioHasBeenSet;
+}
+
+string CreateImageConfig::GetAdditionalParameters() const
+{
+    return m_additionalParameters;
+}
+
+void CreateImageConfig::SetAdditionalParameters(const string& _additionalParameters)
+{
+    m_additionalParameters = _additionalParameters;
+    m_additionalParametersHasBeenSet = true;
+}
+
+bool CreateImageConfig::AdditionalParametersHasBeenSet() const
+{
+    return m_additionalParametersHasBeenSet;
 }
 

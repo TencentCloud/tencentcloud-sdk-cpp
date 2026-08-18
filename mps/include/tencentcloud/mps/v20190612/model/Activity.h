@@ -69,6 +69,27 @@ namespace TencentCloud
                     bool ActivityTypeHasBeenSet() const;
 
                     /**
+                     * 获取<p>前驱节点索引数组。<br>注意：创建和修改编排时，该参数无效，由服务端自动生成。</p>
+                     * @return PredriveIndex <p>前驱节点索引数组。<br>注意：创建和修改编排时，该参数无效，由服务端自动生成。</p>
+                     * 
+                     */
+                    std::vector<int64_t> GetPredriveIndex() const;
+
+                    /**
+                     * 设置<p>前驱节点索引数组。<br>注意：创建和修改编排时，该参数无效，由服务端自动生成。</p>
+                     * @param _predriveIndex <p>前驱节点索引数组。<br>注意：创建和修改编排时，该参数无效，由服务端自动生成。</p>
+                     * 
+                     */
+                    void SetPredriveIndex(const std::vector<int64_t>& _predriveIndex);
+
+                    /**
+                     * 判断参数 PredriveIndex 是否已赋值
+                     * @return PredriveIndex 是否已赋值
+                     * 
+                     */
+                    bool PredriveIndexHasBeenSet() const;
+
+                    /**
                      * 获取<p>后驱节点索引数组</p>
                      * @return ReardriveIndex <p>后驱节点索引数组</p>
                      * 
@@ -121,6 +142,12 @@ namespace TencentCloud
                      */
                     std::string m_activityType;
                     bool m_activityTypeHasBeenSet;
+
+                    /**
+                     * <p>前驱节点索引数组。<br>注意：创建和修改编排时，该参数无效，由服务端自动生成。</p>
+                     */
+                    std::vector<int64_t> m_predriveIndex;
+                    bool m_predriveIndexHasBeenSet;
 
                     /**
                      * <p>后驱节点索引数组</p>
