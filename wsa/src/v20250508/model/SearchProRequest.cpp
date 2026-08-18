@@ -26,8 +26,6 @@ SearchProRequest::SearchProRequest() :
     m_queryHasBeenSet(false),
     m_modeHasBeenSet(false),
     m_siteHasBeenSet(false),
-    m_fromTimeHasBeenSet(false),
-    m_toTimeHasBeenSet(false),
     m_cntHasBeenSet(false),
     m_industryHasBeenSet(false),
     m_freshnessHasBeenSet(false),
@@ -64,22 +62,6 @@ string SearchProRequest::ToJsonString() const
         string key = "Site";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_site.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_fromTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FromTime";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_fromTime, allocator);
-    }
-
-    if (m_toTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ToTime";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_toTime, allocator);
     }
 
     if (m_cntHasBeenSet)
@@ -168,38 +150,6 @@ void SearchProRequest::SetSite(const string& _site)
 bool SearchProRequest::SiteHasBeenSet() const
 {
     return m_siteHasBeenSet;
-}
-
-int64_t SearchProRequest::GetFromTime() const
-{
-    return m_fromTime;
-}
-
-void SearchProRequest::SetFromTime(const int64_t& _fromTime)
-{
-    m_fromTime = _fromTime;
-    m_fromTimeHasBeenSet = true;
-}
-
-bool SearchProRequest::FromTimeHasBeenSet() const
-{
-    return m_fromTimeHasBeenSet;
-}
-
-int64_t SearchProRequest::GetToTime() const
-{
-    return m_toTime;
-}
-
-void SearchProRequest::SetToTime(const int64_t& _toTime)
-{
-    m_toTime = _toTime;
-    m_toTimeHasBeenSet = true;
-}
-
-bool SearchProRequest::ToTimeHasBeenSet() const
-{
-    return m_toTimeHasBeenSet;
 }
 
 uint64_t SearchProRequest::GetCnt() const

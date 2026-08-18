@@ -30,7 +30,8 @@ DescribeTopicDetailRequest::DescribeTopicDetailRequest() :
     m_aclRuleNameHasBeenSet(false),
     m_orderByHasBeenSet(false),
     m_orderTypeHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_searchWordIgnoreCaseFlagHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,14 @@ string DescribeTopicDetailRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_searchWordIgnoreCaseFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchWordIgnoreCaseFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_searchWordIgnoreCaseFlag, allocator);
     }
 
 
@@ -246,6 +255,22 @@ void DescribeTopicDetailRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeTopicDetailRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+bool DescribeTopicDetailRequest::GetSearchWordIgnoreCaseFlag() const
+{
+    return m_searchWordIgnoreCaseFlag;
+}
+
+void DescribeTopicDetailRequest::SetSearchWordIgnoreCaseFlag(const bool& _searchWordIgnoreCaseFlag)
+{
+    m_searchWordIgnoreCaseFlag = _searchWordIgnoreCaseFlag;
+    m_searchWordIgnoreCaseFlagHasBeenSet = true;
+}
+
+bool DescribeTopicDetailRequest::SearchWordIgnoreCaseFlagHasBeenSet() const
+{
+    return m_searchWordIgnoreCaseFlagHasBeenSet;
 }
 
 

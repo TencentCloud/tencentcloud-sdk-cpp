@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取有规则冲突时返回的已有冲突规则信息
+                     * 获取<p>有规则冲突时返回的已有冲突规则信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CheckResults 有规则冲突时返回的已有冲突规则信息
+                     * @return CheckResults <p>有规则冲突时返回的已有冲突规则信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 有规则冲突时返回的已有冲突规则信息
+                     * <p>有规则冲突时返回的已有冲突规则信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CheckResult> m_checkResults;

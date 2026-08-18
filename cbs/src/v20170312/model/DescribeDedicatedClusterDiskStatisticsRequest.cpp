@@ -22,7 +22,8 @@
 using namespace TencentCloud::Cbs::V20170312::Model;
 using namespace std;
 
-DescribeDedicatedClusterDiskStatisticsRequest::DescribeDedicatedClusterDiskStatisticsRequest()
+DescribeDedicatedClusterDiskStatisticsRequest::DescribeDedicatedClusterDiskStatisticsRequest() :
+    m_dedicatedClusterIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeDedicatedClusterDiskStatisticsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_dedicatedClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DedicatedClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dedicatedClusterId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeDedicatedClusterDiskStatisticsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeDedicatedClusterDiskStatisticsRequest::GetDedicatedClusterId() const
+{
+    return m_dedicatedClusterId;
+}
+
+void DescribeDedicatedClusterDiskStatisticsRequest::SetDedicatedClusterId(const string& _dedicatedClusterId)
+{
+    m_dedicatedClusterId = _dedicatedClusterId;
+    m_dedicatedClusterIdHasBeenSet = true;
+}
+
+bool DescribeDedicatedClusterDiskStatisticsRequest::DedicatedClusterIdHasBeenSet() const
+{
+    return m_dedicatedClusterIdHasBeenSet;
+}
 
 

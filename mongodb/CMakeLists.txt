@@ -197,6 +197,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/AuditLogFile.h
   include/tencentcloud/mongodb/v20190725/model/EnableTransparentDataEncryptionResponse.h
   include/tencentcloud/mongodb/v20190725/model/IncreaseDBInstanceConnectionLimitRequest.h
+  include/tencentcloud/mongodb/v20190725/model/ModifyShardSpecInfo.h
   include/tencentcloud/mongodb/v20190725/model/DescribeAuditLogFilesRequest.h
   include/tencentcloud/mongodb/v20190725/model/SetBackupRulesRequest.h
   include/tencentcloud/mongodb/v20190725/model/AssignProjectRequest.h
@@ -461,6 +462,7 @@ set(mongodb_src
   src/v20190725/model/AuditLogFile.cpp
   src/v20190725/model/EnableTransparentDataEncryptionResponse.cpp
   src/v20190725/model/IncreaseDBInstanceConnectionLimitRequest.cpp
+  src/v20190725/model/ModifyShardSpecInfo.cpp
   src/v20190725/model/DescribeAuditLogFilesRequest.cpp
   src/v20190725/model/SetBackupRulesRequest.cpp
   src/v20190725/model/AssignProjectRequest.cpp

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取监听器 ID。
-                     * @return ListenerId 监听器 ID。
+                     * 获取<p>监听器 ID。</p>
+                     * @return ListenerId <p>监听器 ID。</p>
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置监听器 ID。
-                     * @param _listenerId 监听器 ID。
+                     * 设置<p>监听器 ID。</p>
+                     * @param _listenerId <p>监听器 ID。</p>
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取绑定端口。
-                     * @return Port 绑定端口。
+                     * 获取<p>绑定端口。</p>
+                     * @return Port <p>绑定端口。</p>
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置绑定端口。
-                     * @param _port 绑定端口。
+                     * 设置<p>绑定端口。</p>
+                     * @param _port <p>绑定端口。</p>
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取子机 ID。表示绑定主网卡主 IP。
-                     * @return InstanceId 子机 ID。表示绑定主网卡主 IP。
+                     * 获取<p>子机 ID。表示绑定主网卡主 IP。</p>
+                     * @return InstanceId <p>子机 ID。表示绑定主网卡主 IP。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置子机 ID。表示绑定主网卡主 IP。
-                     * @param _instanceId 子机 ID。表示绑定主网卡主 IP。
+                     * 设置<p>子机 ID。表示绑定主网卡主 IP。</p>
+                     * @param _instanceId <p>子机 ID。表示绑定主网卡主 IP。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -110,19 +110,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取绑定 IP 时需要传入此参数，支持弹性网卡的 IP 和其他内网 IP，如果是弹性网卡则必须先绑定至CVM，然后才能绑定到负载均衡实例。
-注意：参数 InstanceId、EniIp 只能传入一个且必须传入一个。如果绑定双栈IPV6子机，必须传该参数。
-                     * @return EniIp 绑定 IP 时需要传入此参数，支持弹性网卡的 IP 和其他内网 IP，如果是弹性网卡则必须先绑定至CVM，然后才能绑定到负载均衡实例。
-注意：参数 InstanceId、EniIp 只能传入一个且必须传入一个。如果绑定双栈IPV6子机，必须传该参数。
+                     * 获取<p>绑定 IP 时需要传入此参数，支持弹性网卡的 IP 和其他内网 IP，如果是弹性网卡则必须先绑定至CVM，然后才能绑定到负载均衡实例。注意：参数 InstanceId、EniIp 只能传入一个且必须传入一个。如果绑定双栈IPV6子机，必须传该参数。如果是跨地域绑定，则必须传该参数，不支持传InstanceId参数。</p>
+                     * @return EniIp <p>绑定 IP 时需要传入此参数，支持弹性网卡的 IP 和其他内网 IP，如果是弹性网卡则必须先绑定至CVM，然后才能绑定到负载均衡实例。注意：参数 InstanceId、EniIp 只能传入一个且必须传入一个。如果绑定双栈IPV6子机，必须传该参数。如果是跨地域绑定，则必须传该参数，不支持传InstanceId参数。</p>
                      * 
                      */
                     std::string GetEniIp() const;
 
                     /**
-                     * 设置绑定 IP 时需要传入此参数，支持弹性网卡的 IP 和其他内网 IP，如果是弹性网卡则必须先绑定至CVM，然后才能绑定到负载均衡实例。
-注意：参数 InstanceId、EniIp 只能传入一个且必须传入一个。如果绑定双栈IPV6子机，必须传该参数。
-                     * @param _eniIp 绑定 IP 时需要传入此参数，支持弹性网卡的 IP 和其他内网 IP，如果是弹性网卡则必须先绑定至CVM，然后才能绑定到负载均衡实例。
-注意：参数 InstanceId、EniIp 只能传入一个且必须传入一个。如果绑定双栈IPV6子机，必须传该参数。
+                     * 设置<p>绑定 IP 时需要传入此参数，支持弹性网卡的 IP 和其他内网 IP，如果是弹性网卡则必须先绑定至CVM，然后才能绑定到负载均衡实例。注意：参数 InstanceId、EniIp 只能传入一个且必须传入一个。如果绑定双栈IPV6子机，必须传该参数。如果是跨地域绑定，则必须传该参数，不支持传InstanceId参数。</p>
+                     * @param _eniIp <p>绑定 IP 时需要传入此参数，支持弹性网卡的 IP 和其他内网 IP，如果是弹性网卡则必须先绑定至CVM，然后才能绑定到负载均衡实例。注意：参数 InstanceId、EniIp 只能传入一个且必须传入一个。如果绑定双栈IPV6子机，必须传该参数。如果是跨地域绑定，则必须传该参数，不支持传InstanceId参数。</p>
                      * 
                      */
                     void SetEniIp(const std::string& _eniIp);
@@ -135,15 +131,15 @@ namespace TencentCloud
                     bool EniIpHasBeenSet() const;
 
                     /**
-                     * 获取子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
-                     * @return Weight 子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
+                     * 获取<p>子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。</p>
+                     * @return Weight <p>子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。</p>
                      * 
                      */
                     int64_t GetWeight() const;
 
                     /**
-                     * 设置子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
-                     * @param _weight 子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
+                     * 设置<p>子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。</p>
+                     * @param _weight <p>子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。</p>
                      * 
                      */
                     void SetWeight(const int64_t& _weight);
@@ -156,15 +152,15 @@ namespace TencentCloud
                     bool WeightHasBeenSet() const;
 
                     /**
-                     * 获取七层规则 ID。7层负载均衡该参数必填
-                     * @return LocationId 七层规则 ID。7层负载均衡该参数必填
+                     * 获取<p>七层规则 ID。7层负载均衡该参数必填</p>
+                     * @return LocationId <p>七层规则 ID。7层负载均衡该参数必填</p>
                      * 
                      */
                     std::string GetLocationId() const;
 
                     /**
-                     * 设置七层规则 ID。7层负载均衡该参数必填
-                     * @param _locationId 七层规则 ID。7层负载均衡该参数必填
+                     * 设置<p>七层规则 ID。7层负载均衡该参数必填</p>
+                     * @param _locationId <p>七层规则 ID。7层负载均衡该参数必填</p>
                      * 
                      */
                     void SetLocationId(const std::string& _locationId);
@@ -177,15 +173,15 @@ namespace TencentCloud
                     bool LocationIdHasBeenSet() const;
 
                     /**
-                     * 获取标签。
-                     * @return Tag 标签。
+                     * 获取<p>标签。</p>
+                     * @return Tag <p>标签。</p>
                      * 
                      */
                     std::string GetTag() const;
 
                     /**
-                     * 设置标签。
-                     * @param _tag 标签。
+                     * 设置<p>标签。</p>
+                     * @param _tag <p>标签。</p>
                      * 
                      */
                     void SetTag(const std::string& _tag);
@@ -200,44 +196,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 监听器 ID。
+                     * <p>监听器 ID。</p>
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 绑定端口。
+                     * <p>绑定端口。</p>
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 子机 ID。表示绑定主网卡主 IP。
+                     * <p>子机 ID。表示绑定主网卡主 IP。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 绑定 IP 时需要传入此参数，支持弹性网卡的 IP 和其他内网 IP，如果是弹性网卡则必须先绑定至CVM，然后才能绑定到负载均衡实例。
-注意：参数 InstanceId、EniIp 只能传入一个且必须传入一个。如果绑定双栈IPV6子机，必须传该参数。
+                     * <p>绑定 IP 时需要传入此参数，支持弹性网卡的 IP 和其他内网 IP，如果是弹性网卡则必须先绑定至CVM，然后才能绑定到负载均衡实例。注意：参数 InstanceId、EniIp 只能传入一个且必须传入一个。如果绑定双栈IPV6子机，必须传该参数。如果是跨地域绑定，则必须传该参数，不支持传InstanceId参数。</p>
                      */
                     std::string m_eniIp;
                     bool m_eniIpHasBeenSet;
 
                     /**
-                     * 子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
+                     * <p>子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。</p>
                      */
                     int64_t m_weight;
                     bool m_weightHasBeenSet;
 
                     /**
-                     * 七层规则 ID。7层负载均衡该参数必填
+                     * <p>七层规则 ID。7层负载均衡该参数必填</p>
                      */
                     std::string m_locationId;
                     bool m_locationIdHasBeenSet;
 
                     /**
-                     * 标签。
+                     * <p>标签。</p>
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;

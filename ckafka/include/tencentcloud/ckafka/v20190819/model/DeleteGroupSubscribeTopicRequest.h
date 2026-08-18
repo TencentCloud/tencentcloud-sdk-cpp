@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id
-                     * @return InstanceId ckafka集群实例Id
+                     * 获取<p>ckafka集群实例Id</p>
+                     * @return InstanceId <p>ckafka集群实例Id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id
-                     * @param _instanceId ckafka集群实例Id
+                     * 设置<p>ckafka集群实例Id</p>
+                     * @param _instanceId <p>ckafka集群实例Id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取消费分组名称
-                     * @return Group 消费分组名称
+                     * 获取<p>消费分组名称</p>
+                     * @return Group <p>消费分组名称</p>
                      * 
                      */
                     std::string GetGroup() const;
 
                     /**
-                     * 设置消费分组名称
-                     * @param _group 消费分组名称
+                     * 设置<p>消费分组名称</p>
+                     * @param _group <p>消费分组名称</p>
                      * 
                      */
                     void SetGroup(const std::string& _group);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool GroupHasBeenSet() const;
 
                     /**
-                     * 获取主题名
-                     * @return Topic 主题名
+                     * 获取<p>主题名</p>
+                     * @return Topic <p>主题名</p>
                      * 
                      */
                     std::string GetTopic() const;
 
                     /**
-                     * 设置主题名
-                     * @param _topic 主题名
+                     * 设置<p>主题名</p>
+                     * @param _topic <p>主题名</p>
                      * 
                      */
                     void SetTopic(const std::string& _topic);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka集群实例Id
+                     * <p>ckafka集群实例Id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 消费分组名称
+                     * <p>消费分组名称</p>
                      */
                     std::string m_group;
                     bool m_groupHasBeenSet;
 
                     /**
-                     * 主题名
+                     * <p>主题名</p>
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;

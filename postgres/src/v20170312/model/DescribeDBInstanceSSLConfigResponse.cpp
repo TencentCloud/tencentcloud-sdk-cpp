@@ -26,7 +26,10 @@ using namespace std;
 DescribeDBInstanceSSLConfigResponse::DescribeDBInstanceSSLConfigResponse() :
     m_sSLEnabledHasBeenSet(false),
     m_cAUrlHasBeenSet(false),
-    m_connectAddressHasBeenSet(false)
+    m_connectAddressHasBeenSet(false),
+    m_cACertHasBeenSet(false),
+    m_cAJKSHasBeenSet(false),
+    m_cAP7BHasBeenSet(false)
 {
 }
 
@@ -94,6 +97,36 @@ CoreInternalOutcome DescribeDBInstanceSSLConfigResponse::Deserialize(const strin
         m_connectAddressHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CACert") && !rsp["CACert"].IsNull())
+    {
+        if (!rsp["CACert"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CACert` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cACert = string(rsp["CACert"].GetString());
+        m_cACertHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CAJKS") && !rsp["CAJKS"].IsNull())
+    {
+        if (!rsp["CAJKS"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CAJKS` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cAJKS = string(rsp["CAJKS"].GetString());
+        m_cAJKSHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CAP7B") && !rsp["CAP7B"].IsNull())
+    {
+        if (!rsp["CAP7B"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CAP7B` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cAP7B = string(rsp["CAP7B"].GetString());
+        m_cAP7BHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +159,30 @@ string DescribeDBInstanceSSLConfigResponse::ToJsonString() const
         string key = "ConnectAddress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_connectAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cACertHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CACert";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cACert.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cAJKSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CAJKS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cAJKS.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cAP7BHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CAP7B";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cAP7B.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +225,36 @@ string DescribeDBInstanceSSLConfigResponse::GetConnectAddress() const
 bool DescribeDBInstanceSSLConfigResponse::ConnectAddressHasBeenSet() const
 {
     return m_connectAddressHasBeenSet;
+}
+
+string DescribeDBInstanceSSLConfigResponse::GetCACert() const
+{
+    return m_cACert;
+}
+
+bool DescribeDBInstanceSSLConfigResponse::CACertHasBeenSet() const
+{
+    return m_cACertHasBeenSet;
+}
+
+string DescribeDBInstanceSSLConfigResponse::GetCAJKS() const
+{
+    return m_cAJKS;
+}
+
+bool DescribeDBInstanceSSLConfigResponse::CAJKSHasBeenSet() const
+{
+    return m_cAJKSHasBeenSet;
+}
+
+string DescribeDBInstanceSSLConfigResponse::GetCAP7B() const
+{
+    return m_cAP7B;
+}
+
+bool DescribeDBInstanceSSLConfigResponse::CAP7BHasBeenSet() const
+{
+    return m_cAP7BHasBeenSet;
 }
 
 

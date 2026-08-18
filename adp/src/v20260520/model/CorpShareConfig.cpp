@@ -23,7 +23,8 @@ using namespace std;
 CorpShareConfig::CorpShareConfig() :
     m_enabledHasBeenSet(false),
     m_shareScopeHasBeenSet(false),
-    m_tagIdListHasBeenSet(false)
+    m_tagIdListHasBeenSet(false),
+    m_shareScopeListHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,26 @@ CoreInternalOutcome CorpShareConfig::Deserialize(const rapidjson::Value &value)
         m_tagIdListHasBeenSet = true;
     }
 
+    if (value.HasMember("ShareScopeList") && !value["ShareScopeList"].IsNull())
+    {
+        if (!value["ShareScopeList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CorpShareConfig.ShareScopeList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ShareScopeList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Identity item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_shareScopeList.push_back(item);
+        }
+        m_shareScopeListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -98,6 +119,21 @@ void CorpShareConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         for (auto itr = m_tagIdList.begin(); itr != m_tagIdList.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_shareScopeListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShareScopeList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_shareScopeList.begin(); itr != m_shareScopeList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -150,5 +186,21 @@ void CorpShareConfig::SetTagIdList(const vector<string>& _tagIdList)
 bool CorpShareConfig::TagIdListHasBeenSet() const
 {
     return m_tagIdListHasBeenSet;
+}
+
+vector<Identity> CorpShareConfig::GetShareScopeList() const
+{
+    return m_shareScopeList;
+}
+
+void CorpShareConfig::SetShareScopeList(const vector<Identity>& _shareScopeList)
+{
+    m_shareScopeList = _shareScopeList;
+    m_shareScopeListHasBeenSet = true;
+}
+
+bool CorpShareConfig::ShareScopeListHasBeenSet() const
+{
+    return m_shareScopeListHasBeenSet;
 }
 

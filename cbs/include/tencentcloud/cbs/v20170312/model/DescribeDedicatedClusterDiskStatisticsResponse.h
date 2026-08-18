@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cbs/v20170312/model/DedicatedClusterDiskStatistic.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>云服务器独享集群云硬盘统计信息。</p>
+                     * @return DedicatedClusterDiskStatisticSet <p>云服务器独享集群云硬盘统计信息。</p>
+                     * 
+                     */
+                    std::vector<DedicatedClusterDiskStatistic> GetDedicatedClusterDiskStatisticSet() const;
+
+                    /**
+                     * 判断参数 DedicatedClusterDiskStatisticSet 是否已赋值
+                     * @return DedicatedClusterDiskStatisticSet 是否已赋值
+                     * 
+                     */
+                    bool DedicatedClusterDiskStatisticSetHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>云服务器独享集群云硬盘统计信息。</p>
+                     */
+                    std::vector<DedicatedClusterDiskStatistic> m_dedicatedClusterDiskStatisticSet;
+                    bool m_dedicatedClusterDiskStatisticSetHasBeenSet;
 
                 };
             }

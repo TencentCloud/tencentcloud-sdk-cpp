@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取偏移量。取值是limit的整数倍。默认值 : 0。
-                     * @return Offset 偏移量。取值是limit的整数倍。默认值 : 0。
+                     * 获取<p>偏移量。取值是limit的整数倍。默认值 : 0。</p>
+                     * @return Offset <p>偏移量。取值是limit的整数倍。默认值 : 0。</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量。取值是limit的整数倍。默认值 : 0。
-                     * @param _offset 偏移量。取值是limit的整数倍。默认值 : 0。
+                     * 设置<p>偏移量。取值是limit的整数倍。默认值 : 0。</p>
+                     * @param _offset <p>偏移量。取值是limit的整数倍。默认值 : 0。</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取限制数目。取值范围：1~50。默认值：10。
-                     * @return Limit 限制数目。取值范围：1~50。默认值：10。
+                     * 获取<p>限制数目。取值范围：1~50。默认值：10。</p>
+                     * @return Limit <p>限制数目。取值范围：1~50。默认值：10。</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置限制数目。取值范围：1~50。默认值：10。
-                     * @param _limit 限制数目。取值范围：1~50。默认值：10。
+                     * 设置<p>限制数目。取值范围：1~50。默认值：10。</p>
+                     * @param _limit <p>限制数目。取值范围：1~50。默认值：10。</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取成员uin。
-                     * @return MemberUin 成员uin。
+                     * 获取<p>成员uin。</p>
+                     * @return MemberUin <p>成员uin。</p>
                      * 
                      */
                     int64_t GetMemberUin() const;
 
                     /**
-                     * 设置成员uin。
-                     * @param _memberUin 成员uin。
+                     * 设置<p>成员uin。</p>
+                     * @param _memberUin <p>成员uin。</p>
                      * 
                      */
                     void SetMemberUin(const int64_t& _memberUin);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool MemberUinHasBeenSet() const;
 
                     /**
-                     * 获取集团管理员子账号uin。
-                     * @return OrgSubAccountUin 集团管理员子账号uin。
+                     * 获取<p>集团管理员子账号uin。</p>
+                     * @return OrgSubAccountUin <p>集团管理员子账号uin。</p>
                      * 
                      */
                     int64_t GetOrgSubAccountUin() const;
 
                     /**
-                     * 设置集团管理员子账号uin。
-                     * @param _orgSubAccountUin 集团管理员子账号uin。
+                     * 设置<p>集团管理员子账号uin。</p>
+                     * @param _orgSubAccountUin <p>集团管理员子账号uin。</p>
                      * 
                      */
                     void SetOrgSubAccountUin(const int64_t& _orgSubAccountUin);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OrgSubAccountUinHasBeenSet() const;
 
                     /**
-                     * 获取成员访问策略Id。
-                     * @return PolicyId 成员访问策略Id。
+                     * 获取<p>成员访问策略Id。</p>
+                     * @return PolicyId <p>成员访问策略Id。</p>
                      * 
                      */
                     int64_t GetPolicyId() const;
 
                     /**
-                     * 设置成员访问策略Id。
-                     * @param _policyId 成员访问策略Id。
+                     * 设置<p>成员访问策略Id。</p>
+                     * @param _policyId <p>成员访问策略Id。</p>
                      * 
                      */
                     void SetPolicyId(const int64_t& _policyId);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 偏移量。取值是limit的整数倍。默认值 : 0。
+                     * <p>偏移量。取值是limit的整数倍。默认值 : 0。</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 限制数目。取值范围：1~50。默认值：10。
+                     * <p>限制数目。取值范围：1~50。默认值：10。</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 成员uin。
+                     * <p>成员uin。</p>
                      */
                     int64_t m_memberUin;
                     bool m_memberUinHasBeenSet;
 
                     /**
-                     * 集团管理员子账号uin。
+                     * <p>集团管理员子账号uin。</p>
                      */
                     int64_t m_orgSubAccountUin;
                     bool m_orgSubAccountUinHasBeenSet;
 
                     /**
-                     * 成员访问策略Id。
+                     * <p>成员访问策略Id。</p>
                      */
                     int64_t m_policyId;
                     bool m_policyIdHasBeenSet;

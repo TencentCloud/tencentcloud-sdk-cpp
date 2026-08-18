@@ -25,8 +25,6 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/dataagent/v20250513/model/AddChunkRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/AddChunkResponse.h>
-#include <tencentcloud/dataagent/v20250513/model/AddSceneRequest.h>
-#include <tencentcloud/dataagent/v20250513/model/AddSceneResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/AppendKnowledgeTaskRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/AppendKnowledgeTaskResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/ChatAIRequest.h>
@@ -37,8 +35,6 @@
 #include <tencentcloud/dataagent/v20250513/model/DeleteChunkResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/DeleteDataAgentSessionRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/DeleteDataAgentSessionResponse.h>
-#include <tencentcloud/dataagent/v20250513/model/DeleteSceneRequest.h>
-#include <tencentcloud/dataagent/v20250513/model/DeleteSceneResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/ExecuteAgentApiRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/ExecuteAgentApiResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/ExecuteAgentApiV1Request.h>
@@ -67,14 +63,10 @@
 #include <tencentcloud/dataagent/v20250513/model/QueryKnowledgeTaskResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/QueryModelsRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/QueryModelsResponse.h>
-#include <tencentcloud/dataagent/v20250513/model/QuerySceneListRequest.h>
-#include <tencentcloud/dataagent/v20250513/model/QuerySceneListResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/QueryUserAuthorityRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/QueryUserAuthorityResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/StopChatAIRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/StopChatAIResponse.h>
-#include <tencentcloud/dataagent/v20250513/model/UpdateSceneRequest.h>
-#include <tencentcloud/dataagent/v20250513/model/UpdateSceneResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/UploadAndCommitFileRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/UploadAndCommitFileResponse.h>
 
@@ -94,9 +86,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddChunkResponse> AddChunkOutcome;
                 typedef std::future<AddChunkOutcome> AddChunkOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::AddChunkRequest&, AddChunkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddChunkAsyncHandler;
-                typedef Outcome<Core::Error, Model::AddSceneResponse> AddSceneOutcome;
-                typedef std::future<AddSceneOutcome> AddSceneOutcomeCallable;
-                typedef std::function<void(const DataagentClient*, const Model::AddSceneRequest&, AddSceneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddSceneAsyncHandler;
                 typedef Outcome<Core::Error, Model::AppendKnowledgeTaskResponse> AppendKnowledgeTaskOutcome;
                 typedef std::future<AppendKnowledgeTaskOutcome> AppendKnowledgeTaskOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::AppendKnowledgeTaskRequest&, AppendKnowledgeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AppendKnowledgeTaskAsyncHandler;
@@ -112,9 +101,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDataAgentSessionResponse> DeleteDataAgentSessionOutcome;
                 typedef std::future<DeleteDataAgentSessionOutcome> DeleteDataAgentSessionOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::DeleteDataAgentSessionRequest&, DeleteDataAgentSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataAgentSessionAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteSceneResponse> DeleteSceneOutcome;
-                typedef std::future<DeleteSceneOutcome> DeleteSceneOutcomeCallable;
-                typedef std::function<void(const DataagentClient*, const Model::DeleteSceneRequest&, DeleteSceneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSceneAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExecuteAgentApiResponse> ExecuteAgentApiOutcome;
                 typedef std::future<ExecuteAgentApiOutcome> ExecuteAgentApiOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::ExecuteAgentApiRequest&, ExecuteAgentApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteAgentApiAsyncHandler;
@@ -157,18 +143,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryModelsResponse> QueryModelsOutcome;
                 typedef std::future<QueryModelsOutcome> QueryModelsOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::QueryModelsRequest&, QueryModelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryModelsAsyncHandler;
-                typedef Outcome<Core::Error, Model::QuerySceneListResponse> QuerySceneListOutcome;
-                typedef std::future<QuerySceneListOutcome> QuerySceneListOutcomeCallable;
-                typedef std::function<void(const DataagentClient*, const Model::QuerySceneListRequest&, QuerySceneListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuerySceneListAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryUserAuthorityResponse> QueryUserAuthorityOutcome;
                 typedef std::future<QueryUserAuthorityOutcome> QueryUserAuthorityOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::QueryUserAuthorityRequest&, QueryUserAuthorityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryUserAuthorityAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopChatAIResponse> StopChatAIOutcome;
                 typedef std::future<StopChatAIOutcome> StopChatAIOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::StopChatAIRequest&, StopChatAIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopChatAIAsyncHandler;
-                typedef Outcome<Core::Error, Model::UpdateSceneResponse> UpdateSceneOutcome;
-                typedef std::future<UpdateSceneOutcome> UpdateSceneOutcomeCallable;
-                typedef std::function<void(const DataagentClient*, const Model::UpdateSceneRequest&, UpdateSceneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSceneAsyncHandler;
                 typedef Outcome<Core::Error, Model::UploadAndCommitFileResponse> UploadAndCommitFileOutcome;
                 typedef std::future<UploadAndCommitFileOutcome> UploadAndCommitFileOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::UploadAndCommitFileRequest&, UploadAndCommitFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadAndCommitFileAsyncHandler;
@@ -183,15 +163,6 @@ namespace TencentCloud
                 AddChunkOutcome AddChunk(const Model::AddChunkRequest &request);
                 void AddChunkAsync(const Model::AddChunkRequest& request, const AddChunkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddChunkOutcomeCallable AddChunkCallable(const Model::AddChunkRequest& request);
-
-                /**
-                 *新增场景
-                 * @param req AddSceneRequest
-                 * @return AddSceneOutcome
-                 */
-                AddSceneOutcome AddScene(const Model::AddSceneRequest &request);
-                void AddSceneAsync(const Model::AddSceneRequest& request, const AddSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                AddSceneOutcomeCallable AddSceneCallable(const Model::AddSceneRequest& request);
 
                 /**
                  *追加文件
@@ -237,15 +208,6 @@ namespace TencentCloud
                 DeleteDataAgentSessionOutcome DeleteDataAgentSession(const Model::DeleteDataAgentSessionRequest &request);
                 void DeleteDataAgentSessionAsync(const Model::DeleteDataAgentSessionRequest& request, const DeleteDataAgentSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDataAgentSessionOutcomeCallable DeleteDataAgentSessionCallable(const Model::DeleteDataAgentSessionRequest& request);
-
-                /**
-                 *删除场景
-                 * @param req DeleteSceneRequest
-                 * @return DeleteSceneOutcome
-                 */
-                DeleteSceneOutcome DeleteScene(const Model::DeleteSceneRequest &request);
-                void DeleteSceneAsync(const Model::DeleteSceneRequest& request, const DeleteSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteSceneOutcomeCallable DeleteSceneCallable(const Model::DeleteSceneRequest& request);
 
                 /**
                  *执行datateam相关的命令行请求
@@ -374,15 +336,6 @@ namespace TencentCloud
                 QueryModelsOutcomeCallable QueryModelsCallable(const Model::QueryModelsRequest& request);
 
                 /**
-                 *查询场景列表
-                 * @param req QuerySceneListRequest
-                 * @return QuerySceneListOutcome
-                 */
-                QuerySceneListOutcome QuerySceneList(const Model::QuerySceneListRequest &request);
-                void QuerySceneListAsync(const Model::QuerySceneListRequest& request, const QuerySceneListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                QuerySceneListOutcomeCallable QuerySceneListCallable(const Model::QuerySceneListRequest& request);
-
-                /**
                  *查询对象权限
                  * @param req QueryUserAuthorityRequest
                  * @return QueryUserAuthorityOutcome
@@ -399,15 +352,6 @@ namespace TencentCloud
                 StopChatAIOutcome StopChatAI(const Model::StopChatAIRequest &request);
                 void StopChatAIAsync(const Model::StopChatAIRequest& request, const StopChatAIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopChatAIOutcomeCallable StopChatAICallable(const Model::StopChatAIRequest& request);
-
-                /**
-                 *更新场景
-                 * @param req UpdateSceneRequest
-                 * @return UpdateSceneOutcome
-                 */
-                UpdateSceneOutcome UpdateScene(const Model::UpdateSceneRequest &request);
-                void UpdateSceneAsync(const Model::UpdateSceneRequest& request, const UpdateSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                UpdateSceneOutcomeCallable UpdateSceneCallable(const Model::UpdateSceneRequest& request);
 
                 /**
                  *上传提交文件

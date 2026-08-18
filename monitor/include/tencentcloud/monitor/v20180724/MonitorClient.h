@@ -313,6 +313,8 @@
 #include <tencentcloud/monitor/v20180724/model/ModifyPrometheusConfigResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyPrometheusGlobalNotificationRequest.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyPrometheusGlobalNotificationResponse.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyPrometheusInstanceAccessPointsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyPrometheusInstanceAccessPointsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyPrometheusInstanceAttributesRequest.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyPrometheusInstanceAttributesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyPrometheusRecordRuleYamlRequest.h>
@@ -832,6 +834,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPrometheusGlobalNotificationResponse> ModifyPrometheusGlobalNotificationOutcome;
                 typedef std::future<ModifyPrometheusGlobalNotificationOutcome> ModifyPrometheusGlobalNotificationOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::ModifyPrometheusGlobalNotificationRequest&, ModifyPrometheusGlobalNotificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrometheusGlobalNotificationAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPrometheusInstanceAccessPointsResponse> ModifyPrometheusInstanceAccessPointsOutcome;
+                typedef std::future<ModifyPrometheusInstanceAccessPointsOutcome> ModifyPrometheusInstanceAccessPointsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::ModifyPrometheusInstanceAccessPointsRequest&, ModifyPrometheusInstanceAccessPointsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrometheusInstanceAccessPointsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyPrometheusInstanceAttributesResponse> ModifyPrometheusInstanceAttributesOutcome;
                 typedef std::future<ModifyPrometheusInstanceAttributesOutcome> ModifyPrometheusInstanceAttributesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::ModifyPrometheusInstanceAttributesRequest&, ModifyPrometheusInstanceAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrometheusInstanceAttributesAsyncHandler;
@@ -2290,6 +2295,15 @@ namespace TencentCloud
                 ModifyPrometheusGlobalNotificationOutcome ModifyPrometheusGlobalNotification(const Model::ModifyPrometheusGlobalNotificationRequest &request);
                 void ModifyPrometheusGlobalNotificationAsync(const Model::ModifyPrometheusGlobalNotificationRequest& request, const ModifyPrometheusGlobalNotificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPrometheusGlobalNotificationOutcomeCallable ModifyPrometheusGlobalNotificationCallable(const Model::ModifyPrometheusGlobalNotificationRequest& request);
+
+                /**
+                 *ModifyPrometheusInstanceAccessPoints 用于管理 Prometheus 实例的访问入口，当前支持 HTTP 与 HTTPS 两种协议：默认启用 HTTP，HTTPS（mTLS）为可选项，但至少需启用一种协议。现阶段对 Prometheus 的读写均通过私有网络入口完成；由于 HTTPS 依赖 mTLS，配置与运维复杂度更高，且在绝大多数场景下并无必要，因此通常不建议启用。
+                 * @param req ModifyPrometheusInstanceAccessPointsRequest
+                 * @return ModifyPrometheusInstanceAccessPointsOutcome
+                 */
+                ModifyPrometheusInstanceAccessPointsOutcome ModifyPrometheusInstanceAccessPoints(const Model::ModifyPrometheusInstanceAccessPointsRequest &request);
+                void ModifyPrometheusInstanceAccessPointsAsync(const Model::ModifyPrometheusInstanceAccessPointsRequest& request, const ModifyPrometheusInstanceAccessPointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPrometheusInstanceAccessPointsOutcomeCallable ModifyPrometheusInstanceAccessPointsCallable(const Model::ModifyPrometheusInstanceAccessPointsRequest& request);
 
                 /**
                  *修改 Prometheus 实例相关属性

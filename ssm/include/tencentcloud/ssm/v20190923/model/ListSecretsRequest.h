@@ -232,6 +232,27 @@ namespace TencentCloud
                      */
                     bool EncryptTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>云产品实例 ID</p>
+                     * @return InstanceID <p>云产品实例 ID</p>
+                     * 
+                     */
+                    std::string GetInstanceID() const;
+
+                    /**
+                     * 设置<p>云产品实例 ID</p>
+                     * @param _instanceID <p>云产品实例 ID</p>
+                     * 
+                     */
+                    void SetInstanceID(const std::string& _instanceID);
+
+                    /**
+                     * 判断参数 InstanceID 是否已赋值
+                     * @return InstanceID 是否已赋值
+                     * 
+                     */
+                    bool InstanceIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -287,6 +308,12 @@ namespace TencentCloud
                      */
                     uint64_t m_encryptType;
                     bool m_encryptTypeHasBeenSet;
+
+                    /**
+                     * <p>云产品实例 ID</p>
+                     */
+                    std::string m_instanceID;
+                    bool m_instanceIDHasBeenSet;
 
                 };
             }

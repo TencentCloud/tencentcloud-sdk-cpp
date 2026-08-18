@@ -25,6 +25,7 @@ set(goosefs_public_header_model
   include/tencentcloud/goosefs/v20220519/model/UpdateFilesetGeneralConfigResponse.h
   include/tencentcloud/goosefs/v20220519/model/CreateDataRepositoryTaskResponse.h
   include/tencentcloud/goosefs/v20220519/model/DeleteFileSystemRequest.h
+  include/tencentcloud/goosefs/v20220519/model/MountPointEntry.h
   include/tencentcloud/goosefs/v20220519/model/DeleteFilesetResponse.h
   include/tencentcloud/goosefs/v20220519/model/ListLoadTasksResponse.h
   include/tencentcloud/goosefs/v20220519/model/UpdateLoadTaskPriorityResponse.h
@@ -122,6 +123,7 @@ set(goosefs_src
   src/v20220519/model/UpdateFilesetGeneralConfigResponse.cpp
   src/v20220519/model/CreateDataRepositoryTaskResponse.cpp
   src/v20220519/model/DeleteFileSystemRequest.cpp
+  src/v20220519/model/MountPointEntry.cpp
   src/v20220519/model/DeleteFilesetResponse.cpp
   src/v20220519/model/ListLoadTasksResponse.cpp
   src/v20220519/model/UpdateLoadTaskPriorityResponse.cpp

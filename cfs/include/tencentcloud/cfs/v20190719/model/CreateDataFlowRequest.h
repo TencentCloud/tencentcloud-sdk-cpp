@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件系统 ID ，通过查询文件系统 [DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170) 获取
-                     * @return FileSystemId 文件系统 ID ，通过查询文件系统 [DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170) 获取
+                     * 获取<p>文件系统 ID ，通过查询文件系统 <a href="https://cloud.tencent.com/document/product/582/38170">DescribeCfsFileSystems</a> 获取</p>
+                     * @return FileSystemId <p>文件系统 ID ，通过查询文件系统 <a href="https://cloud.tencent.com/document/product/582/38170">DescribeCfsFileSystems</a> 获取</p>
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置文件系统 ID ，通过查询文件系统 [DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170) 获取
-                     * @param _fileSystemId 文件系统 ID ，通过查询文件系统 [DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170) 获取
+                     * 设置<p>文件系统 ID ，通过查询文件系统 <a href="https://cloud.tencent.com/document/product/582/38170">DescribeCfsFileSystems</a> 获取</p>
+                     * @param _fileSystemId <p>文件系统 ID ，通过查询文件系统 <a href="https://cloud.tencent.com/document/product/582/38170">DescribeCfsFileSystems</a> 获取</p>
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取源端数据类型；包含S3_COS，S3_L5 
-                     * @return SourceStorageType 源端数据类型；包含S3_COS，S3_L5 
+                     * 获取<p>源端数据类型；包含S3_COS，S3_L5</p>
+                     * @return SourceStorageType <p>源端数据类型；包含S3_COS，S3_L5</p>
                      * 
                      */
                     std::string GetSourceStorageType() const;
 
                     /**
-                     * 设置源端数据类型；包含S3_COS，S3_L5 
-                     * @param _sourceStorageType 源端数据类型；包含S3_COS，S3_L5 
+                     * 设置<p>源端数据类型；包含S3_COS，S3_L5</p>
+                     * @param _sourceStorageType <p>源端数据类型；包含S3_COS，S3_L5</p>
                      * 
                      */
                     void SetSourceStorageType(const std::string& _sourceStorageType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SourceStorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取源端存储地址
-                     * @return SourceStorageAddress 源端存储地址
+                     * 获取<p>源端存储地址</p>
+                     * @return SourceStorageAddress <p>源端存储地址</p>
                      * 
                      */
                     std::string GetSourceStorageAddress() const;
 
                     /**
-                     * 设置源端存储地址
-                     * @param _sourceStorageAddress 源端存储地址
+                     * 设置<p>源端存储地址</p>
+                     * @param _sourceStorageAddress <p>源端存储地址</p>
                      * 
                      */
                     void SetSourceStorageAddress(const std::string& _sourceStorageAddress);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool SourceStorageAddressHasBeenSet() const;
 
                     /**
-                     * 获取源端路径
-                     * @return SourcePath 源端路径
+                     * 获取<p>源端路径</p>
+                     * @return SourcePath <p>源端路径</p>
                      * 
                      */
                     std::string GetSourcePath() const;
 
                     /**
-                     * 设置源端路径
-                     * @param _sourcePath 源端路径
+                     * 设置<p>源端路径</p>
+                     * @param _sourcePath <p>源端路径</p>
                      * 
                      */
                     void SetSourcePath(const std::string& _sourcePath);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool SourcePathHasBeenSet() const;
 
                     /**
-                     * 获取文件系统内目标路径
-                     * @return TargetPath 文件系统内目标路径
+                     * 获取<p>设置数据流动时指定的文件系统内目标路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/subdir/test1/test2</li></ul>
+                     * @return TargetPath <p>设置数据流动时指定的文件系统内目标路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/subdir/test1/test2</li></ul>
                      * 
                      */
                     std::string GetTargetPath() const;
 
                     /**
-                     * 设置文件系统内目标路径
-                     * @param _targetPath 文件系统内目标路径
+                     * 设置<p>设置数据流动时指定的文件系统内目标路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/subdir/test1/test2</li></ul>
+                     * @param _targetPath <p>设置数据流动时指定的文件系统内目标路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/subdir/test1/test2</li></ul>
                      * 
                      */
                     void SetTargetPath(const std::string& _targetPath);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool TargetPathHasBeenSet() const;
 
                     /**
-                     * 获取密钥 ID
-                     * @return SecretId 密钥 ID
+                     * 获取<p>密钥 ID</p>
+                     * @return SecretId <p>密钥 ID</p>
                      * 
                      */
                     std::string GetSecretId() const;
 
                     /**
-                     * 设置密钥 ID
-                     * @param _secretId 密钥 ID
+                     * 设置<p>密钥 ID</p>
+                     * @param _secretId <p>密钥 ID</p>
                      * 
                      */
                     void SetSecretId(const std::string& _secretId);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool SecretIdHasBeenSet() const;
 
                     /**
-                     * 获取密钥 key
-                     * @return SecretKey 密钥 key
+                     * 获取<p>密钥 key</p>
+                     * @return SecretKey <p>密钥 key</p>
                      * 
                      */
                     std::string GetSecretKey() const;
 
                     /**
-                     * 设置密钥 key
-                     * @param _secretKey 密钥 key
+                     * 设置<p>密钥 key</p>
+                     * @param _secretKey <p>密钥 key</p>
                      * 
                      */
                     void SetSecretKey(const std::string& _secretKey);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool SecretKeyHasBeenSet() const;
 
                     /**
-                     * 获取数据流动名称；支持不超过64字符长度，支持中文、数字、_、-
-                     * @return DataFlowName 数据流动名称；支持不超过64字符长度，支持中文、数字、_、-
+                     * 获取<p>数据流动名称；支持不超过64字符长度，支持中文、数字、_、-</p>
+                     * @return DataFlowName <p>数据流动名称；支持不超过64字符长度，支持中文、数字、_、-</p>
                      * 
                      */
                     std::string GetDataFlowName() const;
 
                     /**
-                     * 设置数据流动名称；支持不超过64字符长度，支持中文、数字、_、-
-                     * @param _dataFlowName 数据流动名称；支持不超过64字符长度，支持中文、数字、_、-
+                     * 设置<p>数据流动名称；支持不超过64字符长度，支持中文、数字、_、-</p>
+                     * @param _dataFlowName <p>数据流动名称；支持不超过64字符长度，支持中文、数字、_、-</p>
                      * 
                      */
                     void SetDataFlowName(const std::string& _dataFlowName);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool DataFlowNameHasBeenSet() const;
 
                     /**
-                     * 获取 0：不开启自动更新  1：开启自动更新
-                     * @return AutoRefresh  0：不开启自动更新  1：开启自动更新
+                     * 获取<p>0：不开启自动更新  1：开启自动更新</p>
+                     * @return AutoRefresh <p>0：不开启自动更新  1：开启自动更新</p>
                      * 
                      */
                     uint64_t GetAutoRefresh() const;
 
                     /**
-                     * 设置 0：不开启自动更新  1：开启自动更新
-                     * @param _autoRefresh  0：不开启自动更新  1：开启自动更新
+                     * 设置<p>0：不开启自动更新  1：开启自动更新</p>
+                     * @param _autoRefresh <p>0：不开启自动更新  1：开启自动更新</p>
                      * 
                      */
                     void SetAutoRefresh(const uint64_t& _autoRefresh);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool AutoRefreshHasBeenSet() const;
 
                     /**
-                     * 获取KafkaConsumer 消费时使用的Topic参数
-                     * @return UserKafkaTopic KafkaConsumer 消费时使用的Topic参数
+                     * 获取<p>KafkaConsumer 消费时使用的Topic参数</p>
+                     * @return UserKafkaTopic <p>KafkaConsumer 消费时使用的Topic参数</p>
                      * 
                      */
                     std::string GetUserKafkaTopic() const;
 
                     /**
-                     * 设置KafkaConsumer 消费时使用的Topic参数
-                     * @param _userKafkaTopic KafkaConsumer 消费时使用的Topic参数
+                     * 设置<p>KafkaConsumer 消费时使用的Topic参数</p>
+                     * @param _userKafkaTopic <p>KafkaConsumer 消费时使用的Topic参数</p>
                      * 
                      */
                     void SetUserKafkaTopic(const std::string& _userKafkaTopic);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool UserKafkaTopicHasBeenSet() const;
 
                     /**
-                     * 获取	服务地址 示例值：kafkaconsumer-ap-beijing.cls.tencentyun.com:9095
-                     * @return ServerAddr 	服务地址 示例值：kafkaconsumer-ap-beijing.cls.tencentyun.com:9095
+                     * 获取<p>服务地址 示例值：kafkaconsumer-ap-beijing.cls.tencentyun.com:9095</p>
+                     * @return ServerAddr <p>服务地址 示例值：kafkaconsumer-ap-beijing.cls.tencentyun.com:9095</p>
                      * 
                      */
                     std::string GetServerAddr() const;
 
                     /**
-                     * 设置	服务地址 示例值：kafkaconsumer-ap-beijing.cls.tencentyun.com:9095
-                     * @param _serverAddr 	服务地址 示例值：kafkaconsumer-ap-beijing.cls.tencentyun.com:9095
+                     * 设置<p>服务地址 示例值：kafkaconsumer-ap-beijing.cls.tencentyun.com:9095</p>
+                     * @param _serverAddr <p>服务地址 示例值：kafkaconsumer-ap-beijing.cls.tencentyun.com:9095</p>
                      * 
                      */
                     void SetServerAddr(const std::string& _serverAddr);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool ServerAddrHasBeenSet() const;
 
                     /**
-                     * 获取Kafka消费用户名.示例值：name
-                     * @return UserName Kafka消费用户名.示例值：name
+                     * 获取<p>Kafka消费用户名.示例值：name</p>
+                     * @return UserName <p>Kafka消费用户名.示例值：name</p>
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置Kafka消费用户名.示例值：name
-                     * @param _userName Kafka消费用户名.示例值：name
+                     * 设置<p>Kafka消费用户名.示例值：name</p>
+                     * @param _userName <p>Kafka消费用户名.示例值：name</p>
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取Kafka消费用户密码。默认${SecretId}#${SecretKey}。
-                     * @return Password Kafka消费用户密码。默认${SecretId}#${SecretKey}。
+                     * 获取<p>Kafka消费用户密码。默认${SecretId}#${SecretKey}。</p>
+                     * @return Password <p>Kafka消费用户密码。默认${SecretId}#${SecretKey}。</p>
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置Kafka消费用户密码。默认${SecretId}#${SecretKey}。
-                     * @param _password Kafka消费用户密码。默认${SecretId}#${SecretKey}。
+                     * 设置<p>Kafka消费用户密码。默认${SecretId}#${SecretKey}。</p>
+                     * @param _password <p>Kafka消费用户密码。默认${SecretId}#${SecretKey}。</p>
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -318,79 +318,79 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件系统 ID ，通过查询文件系统 [DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170) 获取
+                     * <p>文件系统 ID ，通过查询文件系统 <a href="https://cloud.tencent.com/document/product/582/38170">DescribeCfsFileSystems</a> 获取</p>
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 源端数据类型；包含S3_COS，S3_L5 
+                     * <p>源端数据类型；包含S3_COS，S3_L5</p>
                      */
                     std::string m_sourceStorageType;
                     bool m_sourceStorageTypeHasBeenSet;
 
                     /**
-                     * 源端存储地址
+                     * <p>源端存储地址</p>
                      */
                     std::string m_sourceStorageAddress;
                     bool m_sourceStorageAddressHasBeenSet;
 
                     /**
-                     * 源端路径
+                     * <p>源端路径</p>
                      */
                     std::string m_sourcePath;
                     bool m_sourcePathHasBeenSet;
 
                     /**
-                     * 文件系统内目标路径
+                     * <p>设置数据流动时指定的文件系统内目标路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/subdir/test1/test2</li></ul>
                      */
                     std::string m_targetPath;
                     bool m_targetPathHasBeenSet;
 
                     /**
-                     * 密钥 ID
+                     * <p>密钥 ID</p>
                      */
                     std::string m_secretId;
                     bool m_secretIdHasBeenSet;
 
                     /**
-                     * 密钥 key
+                     * <p>密钥 key</p>
                      */
                     std::string m_secretKey;
                     bool m_secretKeyHasBeenSet;
 
                     /**
-                     * 数据流动名称；支持不超过64字符长度，支持中文、数字、_、-
+                     * <p>数据流动名称；支持不超过64字符长度，支持中文、数字、_、-</p>
                      */
                     std::string m_dataFlowName;
                     bool m_dataFlowNameHasBeenSet;
 
                     /**
-                     *  0：不开启自动更新  1：开启自动更新
+                     * <p>0：不开启自动更新  1：开启自动更新</p>
                      */
                     uint64_t m_autoRefresh;
                     bool m_autoRefreshHasBeenSet;
 
                     /**
-                     * KafkaConsumer 消费时使用的Topic参数
+                     * <p>KafkaConsumer 消费时使用的Topic参数</p>
                      */
                     std::string m_userKafkaTopic;
                     bool m_userKafkaTopicHasBeenSet;
 
                     /**
-                     * 	服务地址 示例值：kafkaconsumer-ap-beijing.cls.tencentyun.com:9095
+                     * <p>服务地址 示例值：kafkaconsumer-ap-beijing.cls.tencentyun.com:9095</p>
                      */
                     std::string m_serverAddr;
                     bool m_serverAddrHasBeenSet;
 
                     /**
-                     * Kafka消费用户名.示例值：name
+                     * <p>Kafka消费用户名.示例值：name</p>
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * Kafka消费用户密码。默认${SecretId}#${SecretKey}。
+                     * <p>Kafka消费用户密码。默认${SecretId}#${SecretKey}。</p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;

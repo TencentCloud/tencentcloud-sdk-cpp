@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取表的列名列表
+                     * 获取<p>表的列名列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ColumnNames 表的列名列表
+                     * @return ColumnNames <p>表的列名列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool ColumnNamesHasBeenSet() const;
 
                     /**
-                     * 获取表的行数据列表
+                     * 获取<p>表的行数据列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TableRecordSet 表的行数据列表
+                     * @return TableRecordSet <p>表的行数据列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,9 +77,9 @@ namespace TencentCloud
                     bool TableRecordSetHasBeenSet() const;
 
                     /**
-                     * 获取异步预览任务ID
+                     * 获取<p>异步预览任务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskId 异步预览任务ID
+                     * @return TaskId <p>异步预览任务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,9 +93,9 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取异步预览结果状态: 0 初始化， 1 执行中， 2 执行成功
+                     * 获取<p>异步预览结果状态: 0 初始化， 1 执行中， 2 执行成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AsyncState 异步预览结果状态: 0 初始化， 1 执行中， 2 执行成功
+                     * @return AsyncState <p>异步预览结果状态: 0 初始化， 1 执行中， 2 执行成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -111,28 +111,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 表的列名列表
+                     * <p>表的列名列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_columnNames;
                     bool m_columnNamesHasBeenSet;
 
                     /**
-                     * 表的行数据列表
+                     * <p>表的行数据列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TableRecord> m_tableRecordSet;
                     bool m_tableRecordSetHasBeenSet;
 
                     /**
-                     * 异步预览任务ID
+                     * <p>异步预览任务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 异步预览结果状态: 0 初始化， 1 执行中， 2 执行成功
+                     * <p>异步预览结果状态: 0 初始化， 1 执行中， 2 执行成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_asyncState;

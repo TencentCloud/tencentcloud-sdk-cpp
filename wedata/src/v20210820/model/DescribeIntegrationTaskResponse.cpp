@@ -26,7 +26,8 @@ using namespace std;
 DescribeIntegrationTaskResponse::DescribeIntegrationTaskResponse() :
     m_taskInfoHasBeenSet(false),
     m_agentStatusHasBeenSet(false),
-    m_taskVersionHasBeenSet(false)
+    m_taskVersionHasBeenSet(false),
+    m_taskVersionListHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,26 @@ CoreInternalOutcome DescribeIntegrationTaskResponse::Deserialize(const string &p
         m_taskVersionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TaskVersionList") && !rsp["TaskVersionList"].IsNull())
+    {
+        if (!rsp["TaskVersionList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TaskVersionList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["TaskVersionList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RealtimeTaskInstanceVO item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_taskVersionList.push_back(item);
+        }
+        m_taskVersionListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -150,6 +171,21 @@ string DescribeIntegrationTaskResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_taskVersion.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_taskVersionListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskVersionList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_taskVersionList.begin(); itr != m_taskVersionList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -192,6 +228,16 @@ TaskVersionInstance DescribeIntegrationTaskResponse::GetTaskVersion() const
 bool DescribeIntegrationTaskResponse::TaskVersionHasBeenSet() const
 {
     return m_taskVersionHasBeenSet;
+}
+
+vector<RealtimeTaskInstanceVO> DescribeIntegrationTaskResponse::GetTaskVersionList() const
+{
+    return m_taskVersionList;
+}
+
+bool DescribeIntegrationTaskResponse::TaskVersionListHasBeenSet() const
+{
+    return m_taskVersionListHasBeenSet;
 }
 
 

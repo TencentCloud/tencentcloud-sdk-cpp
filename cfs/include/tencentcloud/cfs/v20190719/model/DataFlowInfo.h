@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据流动管理 ID
-                     * @return DataFlowId 数据流动管理 ID
+                     * 获取<p>数据流动管理 ID</p>
+                     * @return DataFlowId <p>数据流动管理 ID</p>
                      * 
                      */
                     std::string GetDataFlowId() const;
 
                     /**
-                     * 设置数据流动管理 ID
-                     * @param _dataFlowId 数据流动管理 ID
+                     * 设置<p>数据流动管理 ID</p>
+                     * @param _dataFlowId <p>数据流动管理 ID</p>
                      * 
                      */
                     void SetDataFlowId(const std::string& _dataFlowId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DataFlowIdHasBeenSet() const;
 
                     /**
-                     * 获取数据流动名称
-                     * @return DataFlowName 数据流动名称
+                     * 获取<p>数据流动名称</p>
+                     * @return DataFlowName <p>数据流动名称</p>
                      * 
                      */
                     std::string GetDataFlowName() const;
 
                     /**
-                     * 设置数据流动名称
-                     * @param _dataFlowName 数据流动名称
+                     * 设置<p>数据流动名称</p>
+                     * @param _dataFlowName <p>数据流动名称</p>
                      * 
                      */
                     void SetDataFlowName(const std::string& _dataFlowName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DataFlowNameHasBeenSet() const;
 
                     /**
-                     * 获取源端数据类型
-                     * @return SourceStorageType 源端数据类型
+                     * 获取<p>源端数据类型</p>
+                     * @return SourceStorageType <p>源端数据类型</p>
                      * 
                      */
                     std::string GetSourceStorageType() const;
 
                     /**
-                     * 设置源端数据类型
-                     * @param _sourceStorageType 源端数据类型
+                     * 设置<p>源端数据类型</p>
+                     * @param _sourceStorageType <p>源端数据类型</p>
                      * 
                      */
                     void SetSourceStorageType(const std::string& _sourceStorageType);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool SourceStorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取源端存储地址
-                     * @return SourceStorageAddress 源端存储地址
+                     * 获取<p>源端存储地址</p>
+                     * @return SourceStorageAddress <p>源端存储地址</p>
                      * 
                      */
                     std::string GetSourceStorageAddress() const;
 
                     /**
-                     * 设置源端存储地址
-                     * @param _sourceStorageAddress 源端存储地址
+                     * 设置<p>源端存储地址</p>
+                     * @param _sourceStorageAddress <p>源端存储地址</p>
                      * 
                      */
                     void SetSourceStorageAddress(const std::string& _sourceStorageAddress);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool SourceStorageAddressHasBeenSet() const;
 
                     /**
-                     * 获取源端路径
-                     * @return SourcePath 源端路径
+                     * 获取<p>源端路径</p>
+                     * @return SourcePath <p>源端路径</p>
                      * 
                      */
                     std::string GetSourcePath() const;
 
                     /**
-                     * 设置源端路径
-                     * @param _sourcePath 源端路径
+                     * 设置<p>源端路径</p>
+                     * @param _sourcePath <p>源端路径</p>
                      * 
                      */
                     void SetSourcePath(const std::string& _sourcePath);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool SourcePathHasBeenSet() const;
 
                     /**
-                     * 获取目录路径
-                     * @return TargetPath 目录路径
+                     * 获取<p>设置数据流动时指定的文件系统内目标路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/subdir/test1/test2</li></ul>
+                     * @return TargetPath <p>设置数据流动时指定的文件系统内目标路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/subdir/test1/test2</li></ul>
                      * 
                      */
                     std::string GetTargetPath() const;
 
                     /**
-                     * 设置目录路径
-                     * @param _targetPath 目录路径
+                     * 设置<p>设置数据流动时指定的文件系统内目标路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/subdir/test1/test2</li></ul>
+                     * @param _targetPath <p>设置数据流动时指定的文件系统内目标路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/subdir/test1/test2</li></ul>
                      * 
                      */
                     void SetTargetPath(const std::string& _targetPath);
@@ -173,27 +173,15 @@ namespace TencentCloud
                     bool TargetPathHasBeenSet() const;
 
                     /**
-                     * 获取available：已生效
-pending：配置中
-unavailable：失效
-deleting：删除中
-                     * @return Status available：已生效
-pending：配置中
-unavailable：失效
-deleting：删除中
+                     * 获取<p>available：已生效<br>pending：配置中<br>unavailable：失效<br>deleting：删除中</p>
+                     * @return Status <p>available：已生效<br>pending：配置中<br>unavailable：失效<br>deleting：删除中</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置available：已生效
-pending：配置中
-unavailable：失效
-deleting：删除中
-                     * @param _status available：已生效
-pending：配置中
-unavailable：失效
-deleting：删除中
+                     * 设置<p>available：已生效<br>pending：配置中<br>unavailable：失效<br>deleting：删除中</p>
+                     * @param _status <p>available：已生效<br>pending：配置中<br>unavailable：失效<br>deleting：删除中</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -206,15 +194,15 @@ deleting：删除中
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreationTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreationTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreationTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _creationTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _creationTime <p>创建时间</p>
                      * 
                      */
                     void SetCreationTime(const std::string& _creationTime);
@@ -227,15 +215,15 @@ deleting：删除中
                     bool CreationTimeHasBeenSet() const;
 
                     /**
-                     * 获取文件系统 ID
-                     * @return FileSystemId 文件系统 ID
+                     * 获取<p>文件系统 ID</p>
+                     * @return FileSystemId <p>文件系统 ID</p>
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置文件系统 ID
-                     * @param _fileSystemId 文件系统 ID
+                     * 设置<p>文件系统 ID</p>
+                     * @param _fileSystemId <p>文件系统 ID</p>
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -248,23 +236,15 @@ deleting：删除中
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取0：不开启自动更新
-
-1：开启自动更新
-                     * @return AutoRefresh 0：不开启自动更新
-
-1：开启自动更新
+                     * 获取<p>0：不开启自动更新</p><p>1：开启自动更新</p>
+                     * @return AutoRefresh <p>0：不开启自动更新</p><p>1：开启自动更新</p>
                      * 
                      */
                     uint64_t GetAutoRefresh() const;
 
                     /**
-                     * 设置0：不开启自动更新
-
-1：开启自动更新
-                     * @param _autoRefresh 0：不开启自动更新
-
-1：开启自动更新
+                     * 设置<p>0：不开启自动更新</p><p>1：开启自动更新</p>
+                     * @param _autoRefresh <p>0：不开启自动更新</p><p>1：开启自动更新</p>
                      * 
                      */
                     void SetAutoRefresh(const uint64_t& _autoRefresh);
@@ -277,15 +257,15 @@ deleting：删除中
                     bool AutoRefreshHasBeenSet() const;
 
                     /**
-                     * 获取KafkaConsumer 消费时使用的Topic参数
-                     * @return UserKafkaTopic KafkaConsumer 消费时使用的Topic参数
+                     * 获取<p>KafkaConsumer 消费时使用的Topic参数</p>
+                     * @return UserKafkaTopic <p>KafkaConsumer 消费时使用的Topic参数</p>
                      * 
                      */
                     std::string GetUserKafkaTopic() const;
 
                     /**
-                     * 设置KafkaConsumer 消费时使用的Topic参数
-                     * @param _userKafkaTopic KafkaConsumer 消费时使用的Topic参数
+                     * 设置<p>KafkaConsumer 消费时使用的Topic参数</p>
+                     * @param _userKafkaTopic <p>KafkaConsumer 消费时使用的Topic参数</p>
                      * 
                      */
                     void SetUserKafkaTopic(const std::string& _userKafkaTopic);
@@ -298,15 +278,15 @@ deleting：删除中
                     bool UserKafkaTopicHasBeenSet() const;
 
                     /**
-                     * 获取服务地址
-                     * @return ServerAddr 服务地址
+                     * 获取<p>服务地址</p>
+                     * @return ServerAddr <p>服务地址</p>
                      * 
                      */
                     std::string GetServerAddr() const;
 
                     /**
-                     * 设置服务地址
-                     * @param _serverAddr 服务地址
+                     * 设置<p>服务地址</p>
+                     * @param _serverAddr <p>服务地址</p>
                      * 
                      */
                     void SetServerAddr(const std::string& _serverAddr);
@@ -319,15 +299,15 @@ deleting：删除中
                     bool ServerAddrHasBeenSet() const;
 
                     /**
-                     * 获取Kafka消费用户名
-                     * @return UserName Kafka消费用户名
+                     * 获取<p>Kafka消费用户名</p>
+                     * @return UserName <p>Kafka消费用户名</p>
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置Kafka消费用户名
-                     * @param _userName Kafka消费用户名
+                     * 设置<p>Kafka消费用户名</p>
+                     * @param _userName <p>Kafka消费用户名</p>
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -340,23 +320,15 @@ deleting：删除中
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取自动刷新的状态，available：已生效
-pending：配置中
-unavailable：失效
-                     * @return AutoRefreshStatus 自动刷新的状态，available：已生效
-pending：配置中
-unavailable：失效
+                     * 获取<p>自动刷新的状态，available：已生效<br>pending：配置中<br>unavailable：失效</p>
+                     * @return AutoRefreshStatus <p>自动刷新的状态，available：已生效<br>pending：配置中<br>unavailable：失效</p>
                      * 
                      */
                     std::string GetAutoRefreshStatus() const;
 
                     /**
-                     * 设置自动刷新的状态，available：已生效
-pending：配置中
-unavailable：失效
-                     * @param _autoRefreshStatus 自动刷新的状态，available：已生效
-pending：配置中
-unavailable：失效
+                     * 设置<p>自动刷新的状态，available：已生效<br>pending：配置中<br>unavailable：失效</p>
+                     * @param _autoRefreshStatus <p>自动刷新的状态，available：已生效<br>pending：配置中<br>unavailable：失效</p>
                      * 
                      */
                     void SetAutoRefreshStatus(const std::string& _autoRefreshStatus);
@@ -369,15 +341,15 @@ unavailable：失效
                     bool AutoRefreshStatusHasBeenSet() const;
 
                     /**
-                     * 获取自动刷新开启时间
-                     * @return AutoRefreshTime 自动刷新开启时间
+                     * 获取<p>自动刷新开启时间</p>
+                     * @return AutoRefreshTime <p>自动刷新开启时间</p>
                      * 
                      */
                     std::string GetAutoRefreshTime() const;
 
                     /**
-                     * 设置自动刷新开启时间
-                     * @param _autoRefreshTime 自动刷新开启时间
+                     * 设置<p>自动刷新开启时间</p>
+                     * @param _autoRefreshTime <p>自动刷新开启时间</p>
                      * 
                      */
                     void SetAutoRefreshTime(const std::string& _autoRefreshTime);
@@ -392,98 +364,91 @@ unavailable：失效
                 private:
 
                     /**
-                     * 数据流动管理 ID
+                     * <p>数据流动管理 ID</p>
                      */
                     std::string m_dataFlowId;
                     bool m_dataFlowIdHasBeenSet;
 
                     /**
-                     * 数据流动名称
+                     * <p>数据流动名称</p>
                      */
                     std::string m_dataFlowName;
                     bool m_dataFlowNameHasBeenSet;
 
                     /**
-                     * 源端数据类型
+                     * <p>源端数据类型</p>
                      */
                     std::string m_sourceStorageType;
                     bool m_sourceStorageTypeHasBeenSet;
 
                     /**
-                     * 源端存储地址
+                     * <p>源端存储地址</p>
                      */
                     std::string m_sourceStorageAddress;
                     bool m_sourceStorageAddressHasBeenSet;
 
                     /**
-                     * 源端路径
+                     * <p>源端路径</p>
                      */
                     std::string m_sourcePath;
                     bool m_sourcePathHasBeenSet;
 
                     /**
-                     * 目录路径
+                     * <p>设置数据流动时指定的文件系统内目标路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/subdir/test1/test2</li></ul>
                      */
                     std::string m_targetPath;
                     bool m_targetPathHasBeenSet;
 
                     /**
-                     * available：已生效
-pending：配置中
-unavailable：失效
-deleting：删除中
+                     * <p>available：已生效<br>pending：配置中<br>unavailable：失效<br>deleting：删除中</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_creationTime;
                     bool m_creationTimeHasBeenSet;
 
                     /**
-                     * 文件系统 ID
+                     * <p>文件系统 ID</p>
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 0：不开启自动更新
-
-1：开启自动更新
+                     * <p>0：不开启自动更新</p><p>1：开启自动更新</p>
                      */
                     uint64_t m_autoRefresh;
                     bool m_autoRefreshHasBeenSet;
 
                     /**
-                     * KafkaConsumer 消费时使用的Topic参数
+                     * <p>KafkaConsumer 消费时使用的Topic参数</p>
                      */
                     std::string m_userKafkaTopic;
                     bool m_userKafkaTopicHasBeenSet;
 
                     /**
-                     * 服务地址
+                     * <p>服务地址</p>
                      */
                     std::string m_serverAddr;
                     bool m_serverAddrHasBeenSet;
 
                     /**
-                     * Kafka消费用户名
+                     * <p>Kafka消费用户名</p>
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 自动刷新的状态，available：已生效
-pending：配置中
-unavailable：失效
+                     * <p>自动刷新的状态，available：已生效<br>pending：配置中<br>unavailable：失效</p>
                      */
                     std::string m_autoRefreshStatus;
                     bool m_autoRefreshStatusHasBeenSet;
 
                     /**
-                     * 自动刷新开启时间
+                     * <p>自动刷新开启时间</p>
                      */
                     std::string m_autoRefreshTime;
                     bool m_autoRefreshTimeHasBeenSet;

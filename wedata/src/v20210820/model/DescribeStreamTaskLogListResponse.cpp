@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeStreamTaskLogListResponse::DescribeStreamTaskLogListResponse() :
     m_listOverHasBeenSet(false),
-    m_logContentListHasBeenSet(false)
+    m_logContentListHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome DescribeStreamTaskLogListResponse::Deserialize(const string 
         m_logContentListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Context") && !rsp["Context"].IsNull())
+    {
+        if (!rsp["Context"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Context` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_context = string(rsp["Context"].GetString());
+        m_contextHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeStreamTaskLogListResponse::ToJsonString() const
         }
     }
 
+    if (m_contextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Context";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_context.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ vector<LogContentInfo> DescribeStreamTaskLogListResponse::GetLogContentList() co
 bool DescribeStreamTaskLogListResponse::LogContentListHasBeenSet() const
 {
     return m_logContentListHasBeenSet;
+}
+
+string DescribeStreamTaskLogListResponse::GetContext() const
+{
+    return m_context;
+}
+
+bool DescribeStreamTaskLogListResponse::ContextHasBeenSet() const
+{
+    return m_contextHasBeenSet;
 }
 
 

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取作业任务数量
-                     * @return JobTotal 作业任务数量
+                     * 获取<p>作业任务数量</p>
+                     * @return JobTotal <p>作业任务数量</p>
                      * 
                      */
                     uint64_t GetJobTotal() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool JobTotalHasBeenSet() const;
 
                     /**
-                     * 获取排队中的作业任务数量
-                     * @return QueuingJobTotal 排队中的作业任务数量
+                     * 获取<p>排队中的作业任务数量</p>
+                     * @return QueuingJobTotal <p>排队中的作业任务数量</p>
                      * 
                      */
                     uint64_t GetQueuingJobTotal() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool QueuingJobTotalHasBeenSet() const;
 
                     /**
-                     * 获取运行中的作业数量
-                     * @return RunningJobTotal 运行中的作业数量
+                     * 获取<p>运行中的作业数量</p>
+                     * @return RunningJobTotal <p>运行中的作业数量</p>
                      * 
                      */
                     uint64_t GetRunningJobTotal() const;
@@ -88,19 +88,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 作业任务数量
+                     * <p>作业任务数量</p>
                      */
                     uint64_t m_jobTotal;
                     bool m_jobTotalHasBeenSet;
 
                     /**
-                     * 排队中的作业任务数量
+                     * <p>排队中的作业任务数量</p>
                      */
                     uint64_t m_queuingJobTotal;
                     bool m_queuingJobTotalHasBeenSet;
 
                     /**
-                     * 运行中的作业数量
+                     * <p>运行中的作业数量</p>
                      */
                     uint64_t m_runningJobTotal;
                     bool m_runningJobTotalHasBeenSet;

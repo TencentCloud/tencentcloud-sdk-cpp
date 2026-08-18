@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件系统 ID,通过[查询文件系统列表](https://cloud.tencent.com/document/api/582/38170)获取
-                     * @return FileSystemId 文件系统 ID,通过[查询文件系统列表](https://cloud.tencent.com/document/api/582/38170)获取
+                     * 获取<p>文件系统 ID,通过<a href="https://cloud.tencent.com/document/api/582/38170">查询文件系统列表</a>获取</p>
+                     * @return FileSystemId <p>文件系统 ID,通过<a href="https://cloud.tencent.com/document/api/582/38170">查询文件系统列表</a>获取</p>
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置文件系统 ID,通过[查询文件系统列表](https://cloud.tencent.com/document/api/582/38170)获取
-                     * @param _fileSystemId 文件系统 ID,通过[查询文件系统列表](https://cloud.tencent.com/document/api/582/38170)获取
+                     * 设置<p>文件系统 ID,通过<a href="https://cloud.tencent.com/document/api/582/38170">查询文件系统列表</a>获取</p>
+                     * @param _fileSystemId <p>文件系统 ID,通过<a href="https://cloud.tencent.com/document/api/582/38170">查询文件系统列表</a>获取</p>
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取指定配额类型，包括Uid、Gid，Dir，分别代表用户配额，用户组配额，目录配额
-                     * @return UserType 指定配额类型，包括Uid、Gid，Dir，分别代表用户配额，用户组配额，目录配额
+                     * 获取<p>指定配额类型，包括Uid、Gid，Dir，分别代表用户配额，用户组配额，目录配额</p>
+                     * @return UserType <p>指定配额类型，包括Uid、Gid，Dir，分别代表用户配额，用户组配额，目录配额</p>
                      * 
                      */
                     std::string GetUserType() const;
 
                     /**
-                     * 设置指定配额类型，包括Uid、Gid，Dir，分别代表用户配额，用户组配额，目录配额
-                     * @param _userType 指定配额类型，包括Uid、Gid，Dir，分别代表用户配额，用户组配额，目录配额
+                     * 设置<p>指定配额类型，包括Uid、Gid，Dir，分别代表用户配额，用户组配额，目录配额</p>
+                     * @param _userType <p>指定配额类型，包括Uid、Gid，Dir，分别代表用户配额，用户组配额，目录配额</p>
                      * 
                      */
                     void SetUserType(const std::string& _userType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool UserTypeHasBeenSet() const;
 
                     /**
-                     * 获取UID/GID信息
-                     * @return UserId UID/GID信息
+                     * 获取<p>UID/GID信息</p>
+                     * @return UserId <p>UID/GID信息</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置UID/GID信息
-                     * @param _userId UID/GID信息
+                     * 设置<p>UID/GID信息</p>
+                     * @param _userId <p>UID/GID信息</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取容量硬限制，单位GiB。设置范围10-10000000。
-                     * @return CapacityHardLimit 容量硬限制，单位GiB。设置范围10-10000000。
+                     * 获取<p>容量硬限制，单位GiB。设置范围10-10000000。</p>
+                     * @return CapacityHardLimit <p>容量硬限制，单位GiB。设置范围10-10000000。</p>
                      * 
                      */
                     uint64_t GetCapacityHardLimit() const;
 
                     /**
-                     * 设置容量硬限制，单位GiB。设置范围10-10000000。
-                     * @param _capacityHardLimit 容量硬限制，单位GiB。设置范围10-10000000。
+                     * 设置<p>容量硬限制，单位GiB。设置范围10-10000000。</p>
+                     * @param _capacityHardLimit <p>容量硬限制，单位GiB。设置范围10-10000000。</p>
                      * 
                      */
                     void SetCapacityHardLimit(const uint64_t& _capacityHardLimit);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool CapacityHardLimitHasBeenSet() const;
 
                     /**
-                     * 获取文件硬限制，单位个。设置范围1000-100000000
-                     * @return FileHardLimit 文件硬限制，单位个。设置范围1000-100000000
+                     * 获取<p>文件硬限制，单位个。设置范围1000-100000000</p>
+                     * @return FileHardLimit <p>文件硬限制，单位个。设置范围1000-100000000</p>
                      * 
                      */
                     uint64_t GetFileHardLimit() const;
 
                     /**
-                     * 设置文件硬限制，单位个。设置范围1000-100000000
-                     * @param _fileHardLimit 文件硬限制，单位个。设置范围1000-100000000
+                     * 设置<p>文件硬限制，单位个。设置范围1000-100000000</p>
+                     * @param _fileHardLimit <p>文件硬限制，单位个。设置范围1000-100000000</p>
                      * 
                      */
                     void SetFileHardLimit(const uint64_t& _fileHardLimit);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool FileHardLimitHasBeenSet() const;
 
                     /**
-                     * 获取需设置目录配额的目录绝对路径，不同目录不可存在包含关系
-                     * @return DirectoryPath 需设置目录配额的目录绝对路径，不同目录不可存在包含关系
+                     * 获取<p>需设置配额的目录路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。不同目录之间不可存在包含关系。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/subdir/test1/test2</li></ul>
+                     * @return DirectoryPath <p>需设置配额的目录路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。不同目录之间不可存在包含关系。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/subdir/test1/test2</li></ul>
                      * 
                      */
                     std::string GetDirectoryPath() const;
 
                     /**
-                     * 设置需设置目录配额的目录绝对路径，不同目录不可存在包含关系
-                     * @param _directoryPath 需设置目录配额的目录绝对路径，不同目录不可存在包含关系
+                     * 设置<p>需设置配额的目录路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。不同目录之间不可存在包含关系。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/subdir/test1/test2</li></ul>
+                     * @param _directoryPath <p>需设置配额的目录路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。不同目录之间不可存在包含关系。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/subdir/test1/test2</li></ul>
                      * 
                      */
                     void SetDirectoryPath(const std::string& _directoryPath);
@@ -171,37 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件系统 ID,通过[查询文件系统列表](https://cloud.tencent.com/document/api/582/38170)获取
+                     * <p>文件系统 ID,通过<a href="https://cloud.tencent.com/document/api/582/38170">查询文件系统列表</a>获取</p>
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 指定配额类型，包括Uid、Gid，Dir，分别代表用户配额，用户组配额，目录配额
+                     * <p>指定配额类型，包括Uid、Gid，Dir，分别代表用户配额，用户组配额，目录配额</p>
                      */
                     std::string m_userType;
                     bool m_userTypeHasBeenSet;
 
                     /**
-                     * UID/GID信息
+                     * <p>UID/GID信息</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 容量硬限制，单位GiB。设置范围10-10000000。
+                     * <p>容量硬限制，单位GiB。设置范围10-10000000。</p>
                      */
                     uint64_t m_capacityHardLimit;
                     bool m_capacityHardLimitHasBeenSet;
 
                     /**
-                     * 文件硬限制，单位个。设置范围1000-100000000
+                     * <p>文件硬限制，单位个。设置范围1000-100000000</p>
                      */
                     uint64_t m_fileHardLimit;
                     bool m_fileHardLimitHasBeenSet;
 
                     /**
-                     * 需设置目录配额的目录绝对路径，不同目录不可存在包含关系
+                     * <p>需设置配额的目录路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。不同目录之间不可存在包含关系。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/subdir/test1/test2</li></ul>
                      */
                     std::string m_directoryPath;
                     bool m_directoryPathHasBeenSet;

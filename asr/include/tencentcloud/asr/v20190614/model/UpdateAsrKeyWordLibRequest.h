@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取关键词表ID
-                     * @return KeyWordLibId 关键词表ID
+                     * 获取<p>关键词表ID</p>
+                     * @return KeyWordLibId <p>关键词表ID</p>
                      * 
                      */
                     std::string GetKeyWordLibId() const;
 
                     /**
-                     * 设置关键词表ID
-                     * @param _keyWordLibId 关键词表ID
+                     * 设置<p>关键词表ID</p>
+                     * @param _keyWordLibId <p>关键词表ID</p>
                      * 
                      */
                     void SetKeyWordLibId(const std::string& _keyWordLibId);
@@ -64,19 +64,15 @@ namespace TencentCloud
                     bool KeyWordLibIdHasBeenSet() const;
 
                     /**
-                     * 获取词表名称，长度在1-20之间
-仅限中英文数字-_
-                     * @return Name 词表名称，长度在1-20之间
-仅限中英文数字-_
+                     * 获取<p>词表名称，长度在1-20之间<br>仅限中英文数字-_</p>
+                     * @return Name <p>词表名称，长度在1-20之间<br>仅限中英文数字-_</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置词表名称，长度在1-20之间
-仅限中英文数字-_
-                     * @param _name 词表名称，长度在1-20之间
-仅限中英文数字-_
+                     * 设置<p>词表名称，长度在1-20之间<br>仅限中英文数字-_</p>
+                     * @param _name <p>词表名称，长度在1-20之间<br>仅限中英文数字-_</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -89,27 +85,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取- 词文件（纯文本文件）以行分隔 ，进行二进制base64编码
-- 格式要求：TXT 每行只有一个词，不满足格式则报错无法上传 
-- 每个词最多5个汉字或15个字符，单个词库最多不超过100个词
-- 此参数为空则只更新词表名称
-                     * @return KeyWordFile - 词文件（纯文本文件）以行分隔 ，进行二进制base64编码
-- 格式要求：TXT 每行只有一个词，不满足格式则报错无法上传 
-- 每个词最多5个汉字或15个字符，单个词库最多不超过100个词
-- 此参数为空则只更新词表名称
+                     * 获取<ul><li>词文件（纯文本文件）以行分隔 ，进行二进制base64编码</li><li>格式要求：TXT 每行只有一个词，不满足格式则报错无法上传 </li><li>每个词最多5个汉字或15个字符，单个词库最多不超过100个词</li><li>此参数为空则只更新词表名称</li></ul>
+                     * @return KeyWordFile <ul><li>词文件（纯文本文件）以行分隔 ，进行二进制base64编码</li><li>格式要求：TXT 每行只有一个词，不满足格式则报错无法上传 </li><li>每个词最多5个汉字或15个字符，单个词库最多不超过100个词</li><li>此参数为空则只更新词表名称</li></ul>
                      * 
                      */
                     std::string GetKeyWordFile() const;
 
                     /**
-                     * 设置- 词文件（纯文本文件）以行分隔 ，进行二进制base64编码
-- 格式要求：TXT 每行只有一个词，不满足格式则报错无法上传 
-- 每个词最多5个汉字或15个字符，单个词库最多不超过100个词
-- 此参数为空则只更新词表名称
-                     * @param _keyWordFile - 词文件（纯文本文件）以行分隔 ，进行二进制base64编码
-- 格式要求：TXT 每行只有一个词，不满足格式则报错无法上传 
-- 每个词最多5个汉字或15个字符，单个词库最多不超过100个词
-- 此参数为空则只更新词表名称
+                     * 设置<ul><li>词文件（纯文本文件）以行分隔 ，进行二进制base64编码</li><li>格式要求：TXT 每行只有一个词，不满足格式则报错无法上传 </li><li>每个词最多5个汉字或15个字符，单个词库最多不超过100个词</li><li>此参数为空则只更新词表名称</li></ul>
+                     * @param _keyWordFile <ul><li>词文件（纯文本文件）以行分隔 ，进行二进制base64编码</li><li>格式要求：TXT 每行只有一个词，不满足格式则报错无法上传 </li><li>每个词最多5个汉字或15个字符，单个词库最多不超过100个词</li><li>此参数为空则只更新词表名称</li></ul>
                      * 
                      */
                     void SetKeyWordFile(const std::string& _keyWordFile);
@@ -124,23 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 关键词表ID
+                     * <p>关键词表ID</p>
                      */
                     std::string m_keyWordLibId;
                     bool m_keyWordLibIdHasBeenSet;
 
                     /**
-                     * 词表名称，长度在1-20之间
-仅限中英文数字-_
+                     * <p>词表名称，长度在1-20之间<br>仅限中英文数字-_</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * - 词文件（纯文本文件）以行分隔 ，进行二进制base64编码
-- 格式要求：TXT 每行只有一个词，不满足格式则报错无法上传 
-- 每个词最多5个汉字或15个字符，单个词库最多不超过100个词
-- 此参数为空则只更新词表名称
+                     * <ul><li>词文件（纯文本文件）以行分隔 ，进行二进制base64编码</li><li>格式要求：TXT 每行只有一个词，不满足格式则报错无法上传 </li><li>每个词最多5个汉字或15个字符，单个词库最多不超过100个词</li><li>此参数为空则只更新词表名称</li></ul>
                      */
                     std::string m_keyWordFile;
                     bool m_keyWordFileHasBeenSet;

@@ -515,6 +515,111 @@ namespace TencentCloud
                      */
                     bool RawLogKeyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>采集范围。空数组表示采集全部Unit，非空数组表示采集指定Unit</p>
+                     * @return Units <p>采集范围。空数组表示采集全部Unit，非空数组表示采集指定Unit</p>
+                     * 
+                     */
+                    std::vector<std::string> GetUnits() const;
+
+                    /**
+                     * 设置<p>采集范围。空数组表示采集全部Unit，非空数组表示采集指定Unit</p>
+                     * @param _units <p>采集范围。空数组表示采集全部Unit，非空数组表示采集指定Unit</p>
+                     * 
+                     */
+                    void SetUnits(const std::vector<std::string>& _units);
+
+                    /**
+                     * 判断参数 Units 是否已赋值
+                     * @return Units 是否已赋值
+                     * 
+                     */
+                    bool UnitsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否采集内核日志</p><p>默认值：true</p>
+                     * @return IncludeKernel <p>是否采集内核日志</p><p>默认值：true</p>
+                     * 
+                     */
+                    bool GetIncludeKernel() const;
+
+                    /**
+                     * 设置<p>是否采集内核日志</p><p>默认值：true</p>
+                     * @param _includeKernel <p>是否采集内核日志</p><p>默认值：true</p>
+                     * 
+                     */
+                    void SetIncludeKernel(const bool& _includeKernel);
+
+                    /**
+                     * 判断参数 IncludeKernel 是否已赋值
+                     * @return IncludeKernel 是否已赋值
+                     * 
+                     */
+                    bool IncludeKernelHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否使用journal原始时间。true ：用 journal 原始时间；false： 用采集时间 </p><p>默认值：false</p>
+                     * @return UseJournalTime <p>是否使用journal原始时间。true ：用 journal 原始时间；false： 用采集时间 </p><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetUseJournalTime() const;
+
+                    /**
+                     * 设置<p>是否使用journal原始时间。true ：用 journal 原始时间；false： 用采集时间 </p><p>默认值：false</p>
+                     * @param _useJournalTime <p>是否使用journal原始时间。true ：用 journal 原始时间；false： 用采集时间 </p><p>默认值：false</p>
+                     * 
+                     */
+                    void SetUseJournalTime(const bool& _useJournalTime);
+
+                    /**
+                     * 判断参数 UseJournalTime 是否已赋值
+                     * @return UseJournalTime 是否已赋值
+                     * 
+                     */
+                    bool UseJournalTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>字段间分隔符数组（长度 = keys.length），每个元素是前一字段结尾到当前字段开头的分隔串</p>
+                     * @return KeysDelimiter <p>字段间分隔符数组（长度 = keys.length），每个元素是前一字段结尾到当前字段开头的分隔串</p>
+                     * 
+                     */
+                    std::vector<std::string> GetKeysDelimiter() const;
+
+                    /**
+                     * 设置<p>字段间分隔符数组（长度 = keys.length），每个元素是前一字段结尾到当前字段开头的分隔串</p>
+                     * @param _keysDelimiter <p>字段间分隔符数组（长度 = keys.length），每个元素是前一字段结尾到当前字段开头的分隔串</p>
+                     * 
+                     */
+                    void SetKeysDelimiter(const std::vector<std::string>& _keysDelimiter);
+
+                    /**
+                     * 判断参数 KeysDelimiter 是否已赋值
+                     * @return KeysDelimiter 是否已赋值
+                     * 
+                     */
+                    bool KeysDelimiterHasBeenSet() const;
+
+                    /**
+                     * 获取<p>字段标志位数组（长度 = keys.length），<code>0</code> = 普通字段，<code>1</code> = 包含子字段需二次拆分</p>
+                     * @return KeysFlag <p>字段标志位数组（长度 = keys.length），<code>0</code> = 普通字段，<code>1</code> = 包含子字段需二次拆分</p>
+                     * 
+                     */
+                    std::vector<int64_t> GetKeysFlag() const;
+
+                    /**
+                     * 设置<p>字段标志位数组（长度 = keys.length），<code>0</code> = 普通字段，<code>1</code> = 包含子字段需二次拆分</p>
+                     * @param _keysFlag <p>字段标志位数组（长度 = keys.length），<code>0</code> = 普通字段，<code>1</code> = 包含子字段需二次拆分</p>
+                     * 
+                     */
+                    void SetKeysFlag(const std::vector<int64_t>& _keysFlag);
+
+                    /**
+                     * 判断参数 KeysFlag 是否已赋值
+                     * @return KeysFlag 是否已赋值
+                     * 
+                     */
+                    bool KeysFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -648,6 +753,36 @@ namespace TencentCloud
                      */
                     std::string m_rawLogKey;
                     bool m_rawLogKeyHasBeenSet;
+
+                    /**
+                     * <p>采集范围。空数组表示采集全部Unit，非空数组表示采集指定Unit</p>
+                     */
+                    std::vector<std::string> m_units;
+                    bool m_unitsHasBeenSet;
+
+                    /**
+                     * <p>是否采集内核日志</p><p>默认值：true</p>
+                     */
+                    bool m_includeKernel;
+                    bool m_includeKernelHasBeenSet;
+
+                    /**
+                     * <p>是否使用journal原始时间。true ：用 journal 原始时间；false： 用采集时间 </p><p>默认值：false</p>
+                     */
+                    bool m_useJournalTime;
+                    bool m_useJournalTimeHasBeenSet;
+
+                    /**
+                     * <p>字段间分隔符数组（长度 = keys.length），每个元素是前一字段结尾到当前字段开头的分隔串</p>
+                     */
+                    std::vector<std::string> m_keysDelimiter;
+                    bool m_keysDelimiterHasBeenSet;
+
+                    /**
+                     * <p>字段标志位数组（长度 = keys.length），<code>0</code> = 普通字段，<code>1</code> = 包含子字段需二次拆分</p>
+                     */
+                    std::vector<int64_t> m_keysFlag;
+                    bool m_keysFlagHasBeenSet;
 
                 };
             }

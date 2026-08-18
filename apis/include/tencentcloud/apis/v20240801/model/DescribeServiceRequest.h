@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceID 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceID <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceID 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceID <p>实例ID</p>
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取业务ID
-                     * @return ID 业务ID
+                     * 获取<p>业务ID</p>
+                     * @return ID <p>业务ID</p>
                      * 
                      */
                     std::string GetID() const;
 
                     /**
-                     * 设置业务ID
-                     * @param _iD 业务ID
+                     * 设置<p>业务ID</p>
+                     * @param _iD <p>业务ID</p>
                      * 
                      */
                     void SetID(const std::string& _iD);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * 业务ID
+                     * <p>业务ID</p>
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;

@@ -88,6 +88,48 @@ namespace TencentCloud
                      */
                     bool VersionIdHasBeenSet() const;
 
+                    /**
+                     * 获取
+                     * @return EncryptionPublicKey 
+                     * 
+                     */
+                    std::string GetEncryptionPublicKey() const;
+
+                    /**
+                     * 设置
+                     * @param _encryptionPublicKey 
+                     * 
+                     */
+                    void SetEncryptionPublicKey(const std::string& _encryptionPublicKey);
+
+                    /**
+                     * 判断参数 EncryptionPublicKey 是否已赋值
+                     * @return EncryptionPublicKey 是否已赋值
+                     * 
+                     */
+                    bool EncryptionPublicKeyHasBeenSet() const;
+
+                    /**
+                     * 获取
+                     * @return EncryptionAlgorithm 
+                     * 
+                     */
+                    std::string GetEncryptionAlgorithm() const;
+
+                    /**
+                     * 设置
+                     * @param _encryptionAlgorithm 
+                     * 
+                     */
+                    void SetEncryptionAlgorithm(const std::string& _encryptionAlgorithm);
+
+                    /**
+                     * 判断参数 EncryptionAlgorithm 是否已赋值
+                     * @return EncryptionAlgorithm 是否已赋值
+                     * 
+                     */
+                    bool EncryptionAlgorithmHasBeenSet() const;
+
                 private:
 
                     /**
@@ -102,6 +144,18 @@ namespace TencentCloud
                      */
                     std::string m_versionId;
                     bool m_versionIdHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    std::string m_encryptionPublicKey;
+                    bool m_encryptionPublicKeyHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    std::string m_encryptionAlgorithm;
+                    bool m_encryptionAlgorithmHasBeenSet;
 
                 };
             }

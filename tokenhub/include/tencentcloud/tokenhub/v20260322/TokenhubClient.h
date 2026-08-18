@@ -59,6 +59,8 @@
 #include <tencentcloud/tokenhub/v20260322/model/DescribeModelEndpointListResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeModelListRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeModelListResponse.h>
+#include <tencentcloud/tokenhub/v20260322/model/DescribeModelQuotaRequest.h>
+#include <tencentcloud/tokenhub/v20260322/model/DescribeModelQuotaResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanApiKeyRequest.h>
@@ -157,6 +159,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeModelListResponse> DescribeModelListOutcome;
                 typedef std::future<DescribeModelListOutcome> DescribeModelListOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::DescribeModelListRequest&, DescribeModelListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeModelQuotaResponse> DescribeModelQuotaOutcome;
+                typedef std::future<DescribeModelQuotaOutcome> DescribeModelQuotaOutcomeCallable;
+                typedef std::function<void(const TokenhubClient*, const Model::DescribeModelQuotaRequest&, DescribeModelQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelQuotaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTokenPlanResponse> DescribeTokenPlanOutcome;
                 typedef std::future<DescribeTokenPlanOutcome> DescribeTokenPlanOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::DescribeTokenPlanRequest&, DescribeTokenPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTokenPlanAsyncHandler;
@@ -399,6 +404,15 @@ namespace TencentCloud
                 DescribeModelListOutcome DescribeModelList(const Model::DescribeModelListRequest &request);
                 void DescribeModelListAsync(const Model::DescribeModelListRequest& request, const DescribeModelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeModelListOutcomeCallable DescribeModelListCallable(const Model::DescribeModelListRequest& request);
+
+                /**
+                 *查询指定模型的 TPM 和 QPM 配额上限。
+                 * @param req DescribeModelQuotaRequest
+                 * @return DescribeModelQuotaOutcome
+                 */
+                DescribeModelQuotaOutcome DescribeModelQuota(const Model::DescribeModelQuotaRequest &request);
+                void DescribeModelQuotaAsync(const Model::DescribeModelQuotaRequest& request, const DescribeModelQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeModelQuotaOutcomeCallable DescribeModelQuotaCallable(const Model::DescribeModelQuotaRequest& request);
 
                 /**
                  *查询 TokenPlan 套餐详情。

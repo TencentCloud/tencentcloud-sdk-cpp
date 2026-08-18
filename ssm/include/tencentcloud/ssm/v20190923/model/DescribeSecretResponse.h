@@ -352,6 +352,20 @@ namespace TencentCloud
                      */
                     bool AccountInfoListHasBeenSet() const;
 
+                    /**
+                     * 获取
+                     * @return NextRotationTime 
+                     * 
+                     */
+                    std::string GetNextRotationTime() const;
+
+                    /**
+                     * 判断参数 NextRotationTime 是否已赋值
+                     * @return NextRotationTime 是否已赋值
+                     * 
+                     */
+                    bool NextRotationTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -485,6 +499,12 @@ namespace TencentCloud
                      */
                     std::vector<SecretAccountInfo> m_accountInfoList;
                     bool m_accountInfoListHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    std::string m_nextRotationTime;
+                    bool m_nextRotationTimeHasBeenSet;
 
                 };
             }

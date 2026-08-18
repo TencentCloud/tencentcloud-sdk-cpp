@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取agent的版本号
-                     * @return AgentVersion agent的版本号
+                     * 获取<p>agent的版本号</p>
+                     * @return AgentVersion <p>agent的版本号</p>
                      * 
                      */
                     std::string GetAgentVersion() const;
 
                     /**
-                     * 设置agent的版本号
-                     * @param _agentVersion agent的版本号
+                     * 设置<p>agent的版本号</p>
+                     * @param _agentVersion <p>agent的版本号</p>
                      * 
                      */
                     void SetAgentVersion(const std::string& _agentVersion);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AgentVersionHasBeenSet() const;
 
                     /**
-                     * 获取agent的IP地址
-                     * @return AgentIp agent的IP地址
+                     * 获取<p>agent的IP地址</p>
+                     * @return AgentIp <p>agent的IP地址</p>
                      * 
                      */
                     std::string GetAgentIp() const;
 
                     /**
-                     * 设置agent的IP地址
-                     * @param _agentIp agent的IP地址
+                     * 设置<p>agent的IP地址</p>
+                     * @param _agentIp <p>agent的IP地址</p>
                      * 
                      */
                     void SetAgentIp(const std::string& _agentIp);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool AgentIpHasBeenSet() const;
 
                     /**
-                     * 获取机器组标签列表
-                     * @return Labels 机器组标签列表
+                     * 获取<p>机器组标签列表</p>
+                     * @return Labels <p>机器组标签列表</p>
                      * 
                      */
                     std::vector<std::string> GetLabels() const;
 
                     /**
-                     * 设置机器组标签列表
-                     * @param _labels 机器组标签列表
+                     * 设置<p>机器组标签列表</p>
+                     * @param _labels <p>机器组标签列表</p>
                      * 
                      */
                     void SetLabels(const std::vector<std::string>& _labels);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取agent的instance id
-                     * @return InstanceId agent的instance id
+                     * 获取<p>agent的instance id</p>
+                     * @return InstanceId <p>agent的instance id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置agent的instance id
-                     * @param _instanceId agent的instance id
+                     * 设置<p>agent的instance id</p>
+                     * @param _instanceId <p>agent的instance id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * agent的版本号
+                     * <p>agent的版本号</p>
                      */
                     std::string m_agentVersion;
                     bool m_agentVersionHasBeenSet;
 
                     /**
-                     * agent的IP地址
+                     * <p>agent的IP地址</p>
                      */
                     std::string m_agentIp;
                     bool m_agentIpHasBeenSet;
 
                     /**
-                     * 机器组标签列表
+                     * <p>机器组标签列表</p>
                      */
                     std::vector<std::string> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * agent的instance id
+                     * <p>agent的instance id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

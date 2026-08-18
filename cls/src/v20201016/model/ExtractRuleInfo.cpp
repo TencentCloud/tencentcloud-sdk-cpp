@@ -41,7 +41,12 @@ ExtractRuleInfo::ExtractRuleInfo() :
     m_metaTagsHasBeenSet(false),
     m_eventLogRulesHasBeenSet(false),
     m_advanceFilterRulesHasBeenSet(false),
-    m_rawLogKeyHasBeenSet(false)
+    m_rawLogKeyHasBeenSet(false),
+    m_unitsHasBeenSet(false),
+    m_includeKernelHasBeenSet(false),
+    m_useJournalTimeHasBeenSet(false),
+    m_keysDelimiterHasBeenSet(false),
+    m_keysFlagHasBeenSet(false)
 {
 }
 
@@ -303,6 +308,65 @@ CoreInternalOutcome ExtractRuleInfo::Deserialize(const rapidjson::Value &value)
         m_rawLogKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("Units") && !value["Units"].IsNull())
+    {
+        if (!value["Units"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.Units` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Units"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_units.push_back((*itr).GetString());
+        }
+        m_unitsHasBeenSet = true;
+    }
+
+    if (value.HasMember("IncludeKernel") && !value["IncludeKernel"].IsNull())
+    {
+        if (!value["IncludeKernel"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.IncludeKernel` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_includeKernel = value["IncludeKernel"].GetBool();
+        m_includeKernelHasBeenSet = true;
+    }
+
+    if (value.HasMember("UseJournalTime") && !value["UseJournalTime"].IsNull())
+    {
+        if (!value["UseJournalTime"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.UseJournalTime` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_useJournalTime = value["UseJournalTime"].GetBool();
+        m_useJournalTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("KeysDelimiter") && !value["KeysDelimiter"].IsNull())
+    {
+        if (!value["KeysDelimiter"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.KeysDelimiter` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["KeysDelimiter"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_keysDelimiter.push_back((*itr).GetString());
+        }
+        m_keysDelimiterHasBeenSet = true;
+    }
+
+    if (value.HasMember("KeysFlag") && !value["KeysFlag"].IsNull())
+    {
+        if (!value["KeysFlag"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.KeysFlag` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["KeysFlag"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_keysFlag.push_back((*itr).GetInt64());
+        }
+        m_keysFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -509,6 +573,61 @@ void ExtractRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "RawLogKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_rawLogKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_unitsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Units";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_units.begin(); itr != m_units.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_includeKernelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncludeKernel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_includeKernel, allocator);
+    }
+
+    if (m_useJournalTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseJournalTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useJournalTime, allocator);
+    }
+
+    if (m_keysDelimiterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeysDelimiter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_keysDelimiter.begin(); itr != m_keysDelimiter.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_keysFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeysFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_keysFlag.begin(); itr != m_keysFlag.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -848,5 +967,85 @@ void ExtractRuleInfo::SetRawLogKey(const string& _rawLogKey)
 bool ExtractRuleInfo::RawLogKeyHasBeenSet() const
 {
     return m_rawLogKeyHasBeenSet;
+}
+
+vector<string> ExtractRuleInfo::GetUnits() const
+{
+    return m_units;
+}
+
+void ExtractRuleInfo::SetUnits(const vector<string>& _units)
+{
+    m_units = _units;
+    m_unitsHasBeenSet = true;
+}
+
+bool ExtractRuleInfo::UnitsHasBeenSet() const
+{
+    return m_unitsHasBeenSet;
+}
+
+bool ExtractRuleInfo::GetIncludeKernel() const
+{
+    return m_includeKernel;
+}
+
+void ExtractRuleInfo::SetIncludeKernel(const bool& _includeKernel)
+{
+    m_includeKernel = _includeKernel;
+    m_includeKernelHasBeenSet = true;
+}
+
+bool ExtractRuleInfo::IncludeKernelHasBeenSet() const
+{
+    return m_includeKernelHasBeenSet;
+}
+
+bool ExtractRuleInfo::GetUseJournalTime() const
+{
+    return m_useJournalTime;
+}
+
+void ExtractRuleInfo::SetUseJournalTime(const bool& _useJournalTime)
+{
+    m_useJournalTime = _useJournalTime;
+    m_useJournalTimeHasBeenSet = true;
+}
+
+bool ExtractRuleInfo::UseJournalTimeHasBeenSet() const
+{
+    return m_useJournalTimeHasBeenSet;
+}
+
+vector<string> ExtractRuleInfo::GetKeysDelimiter() const
+{
+    return m_keysDelimiter;
+}
+
+void ExtractRuleInfo::SetKeysDelimiter(const vector<string>& _keysDelimiter)
+{
+    m_keysDelimiter = _keysDelimiter;
+    m_keysDelimiterHasBeenSet = true;
+}
+
+bool ExtractRuleInfo::KeysDelimiterHasBeenSet() const
+{
+    return m_keysDelimiterHasBeenSet;
+}
+
+vector<int64_t> ExtractRuleInfo::GetKeysFlag() const
+{
+    return m_keysFlag;
+}
+
+void ExtractRuleInfo::SetKeysFlag(const vector<int64_t>& _keysFlag)
+{
+    m_keysFlag = _keysFlag;
+    m_keysFlagHasBeenSet = true;
+}
+
+bool ExtractRuleInfo::KeysFlagHasBeenSet() const
+{
+    return m_keysFlagHasBeenSet;
 }
 

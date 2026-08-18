@@ -24,7 +24,6 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/adp/v20260520/model/ClawAgentCustomConfig.h>
 #include <tencentcloud/adp/v20260520/model/ClawAgentAgentTeamConfig.h>
 #include <tencentcloud/adp/v20260520/model/ClawAgentLongMemoryConfig.h>
 
@@ -48,31 +47,6 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
-
-                    /**
-                     * 获取调用方自定义配置(控制C端用户在对话时可动态传入哪些自定义配置)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CustomConfig 调用方自定义配置(控制C端用户在对话时可动态传入哪些自定义配置)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    ClawAgentCustomConfig GetCustomConfig() const;
-
-                    /**
-                     * 设置调用方自定义配置(控制C端用户在对话时可动态传入哪些自定义配置)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _customConfig 调用方自定义配置(控制C端用户在对话时可动态传入哪些自定义配置)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetCustomConfig(const ClawAgentCustomConfig& _customConfig);
-
-                    /**
-                     * 判断参数 CustomConfig 是否已赋值
-                     * @return CustomConfig 是否已赋值
-                     * 
-                     */
-                    bool CustomConfigHasBeenSet() const;
 
                     /**
                      * 获取Agent团队协作配置
@@ -125,13 +99,6 @@ namespace TencentCloud
                     bool LongMemoryConfigHasBeenSet() const;
 
                 private:
-
-                    /**
-                     * 调用方自定义配置(控制C端用户在对话时可动态传入哪些自定义配置)
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    ClawAgentCustomConfig m_customConfig;
-                    bool m_customConfigHasBeenSet;
 
                     /**
                      * Agent团队协作配置

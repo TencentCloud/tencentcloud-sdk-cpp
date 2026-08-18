@@ -24,6 +24,7 @@
 #include <tencentcloud/wedata/v20210820/model/IntegrationTaskInfo.h>
 #include <tencentcloud/wedata/v20210820/model/AgentStatus.h>
 #include <tencentcloud/wedata/v20210820/model/TaskVersionInstance.h>
+#include <tencentcloud/wedata/v20210820/model/RealtimeTaskInstanceVO.h>
 
 
 namespace TencentCloud
@@ -47,9 +48,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务信息
+                     * 获取<p>任务信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskInfo 任务信息
+                     * @return TaskInfo <p>任务信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,9 +64,9 @@ namespace TencentCloud
                     bool TaskInfoHasBeenSet() const;
 
                     /**
-                     * 获取采集器统计信息
+                     * 获取<p>采集器统计信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AgentStatus 采集器统计信息
+                     * @return AgentStatus <p>采集器统计信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -79,9 +80,9 @@ namespace TencentCloud
                     bool AgentStatusHasBeenSet() const;
 
                     /**
-                     * 获取任务版本信息
+                     * 获取<p>任务版本信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskVersion 任务版本信息
+                     * @return TaskVersion <p>任务版本信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -94,28 +95,48 @@ namespace TencentCloud
                      */
                     bool TaskVersionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>历史实例信息</p>
+                     * @return TaskVersionList <p>历史实例信息</p>
+                     * 
+                     */
+                    std::vector<RealtimeTaskInstanceVO> GetTaskVersionList() const;
+
+                    /**
+                     * 判断参数 TaskVersionList 是否已赋值
+                     * @return TaskVersionList 是否已赋值
+                     * 
+                     */
+                    bool TaskVersionListHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务信息
+                     * <p>任务信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IntegrationTaskInfo m_taskInfo;
                     bool m_taskInfoHasBeenSet;
 
                     /**
-                     * 采集器统计信息
+                     * <p>采集器统计信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AgentStatus m_agentStatus;
                     bool m_agentStatusHasBeenSet;
 
                     /**
-                     * 任务版本信息
+                     * <p>任务版本信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskVersionInstance m_taskVersion;
                     bool m_taskVersionHasBeenSet;
+
+                    /**
+                     * <p>历史实例信息</p>
+                     */
+                    std::vector<RealtimeTaskInstanceVO> m_taskVersionList;
+                    bool m_taskVersionListHasBeenSet;
 
                 };
             }

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取关键词表ID数据
-                     * @return Data 关键词表ID数据
+                     * 获取<p>关键词表ID数据</p>
+                     * @return Data <p>关键词表ID数据</p>
                      * 
                      */
                     KeyWordLibIdData GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 关键词表ID数据
+                     * <p>关键词表ID数据</p>
                      */
                     KeyWordLibIdData m_data;
                     bool m_dataHasBeenSet;

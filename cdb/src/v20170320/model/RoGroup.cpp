@@ -36,7 +36,8 @@ RoGroup::RoGroup() :
     m_uniqSubnetIdHasBeenSet(false),
     m_roGroupRegionHasBeenSet(false),
     m_roGroupZoneHasBeenSet(false),
-    m_delayReplicationTimeHasBeenSet(false)
+    m_delayReplicationTimeHasBeenSet(false),
+    m_roGroupTypeHasBeenSet(false)
 {
 }
 
@@ -215,6 +216,16 @@ CoreInternalOutcome RoGroup::Deserialize(const rapidjson::Value &value)
         m_delayReplicationTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("RoGroupType") && !value["RoGroupType"].IsNull())
+    {
+        if (!value["RoGroupType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoGroup.RoGroupType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_roGroupType = string(value["RoGroupType"].GetString());
+        m_roGroupTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -355,6 +366,14 @@ void RoGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "DelayReplicationTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_delayReplicationTime, allocator);
+    }
+
+    if (m_roGroupTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoGroupType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roGroupType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -614,5 +633,21 @@ void RoGroup::SetDelayReplicationTime(const int64_t& _delayReplicationTime)
 bool RoGroup::DelayReplicationTimeHasBeenSet() const
 {
     return m_delayReplicationTimeHasBeenSet;
+}
+
+string RoGroup::GetRoGroupType() const
+{
+    return m_roGroupType;
+}
+
+void RoGroup::SetRoGroupType(const string& _roGroupType)
+{
+    m_roGroupType = _roGroupType;
+    m_roGroupTypeHasBeenSet = true;
+}
+
+bool RoGroup::RoGroupTypeHasBeenSet() const
+{
+    return m_roGroupTypeHasBeenSet;
 }
 

@@ -23,9 +23,9 @@ using namespace TencentCloud::Chc::V20230418::Model;
 using namespace std;
 
 ExportCustomerWorkOrderDetailRequest::ExportCustomerWorkOrderDetailRequest() :
-    m_workOrderTypeHasBeenSet(false),
     m_beginDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false)
+    m_endDateTimeHasBeenSet(false),
+    m_workOrderTypeHasBeenSet(false)
 {
 }
 
@@ -35,19 +35,6 @@ string ExportCustomerWorkOrderDetailRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_workOrderTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "WorkOrderType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_workOrderType.begin(); itr != m_workOrderType.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
 
     if (m_beginDateTimeHasBeenSet)
     {
@@ -65,6 +52,19 @@ string ExportCustomerWorkOrderDetailRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_endDateTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_workOrderTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkOrderType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_workOrderType.begin(); itr != m_workOrderType.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -72,22 +72,6 @@ string ExportCustomerWorkOrderDetailRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-vector<string> ExportCustomerWorkOrderDetailRequest::GetWorkOrderType() const
-{
-    return m_workOrderType;
-}
-
-void ExportCustomerWorkOrderDetailRequest::SetWorkOrderType(const vector<string>& _workOrderType)
-{
-    m_workOrderType = _workOrderType;
-    m_workOrderTypeHasBeenSet = true;
-}
-
-bool ExportCustomerWorkOrderDetailRequest::WorkOrderTypeHasBeenSet() const
-{
-    return m_workOrderTypeHasBeenSet;
-}
 
 string ExportCustomerWorkOrderDetailRequest::GetBeginDateTime() const
 {
@@ -119,6 +103,22 @@ void ExportCustomerWorkOrderDetailRequest::SetEndDateTime(const string& _endDate
 bool ExportCustomerWorkOrderDetailRequest::EndDateTimeHasBeenSet() const
 {
     return m_endDateTimeHasBeenSet;
+}
+
+vector<string> ExportCustomerWorkOrderDetailRequest::GetWorkOrderType() const
+{
+    return m_workOrderType;
+}
+
+void ExportCustomerWorkOrderDetailRequest::SetWorkOrderType(const vector<string>& _workOrderType)
+{
+    m_workOrderType = _workOrderType;
+    m_workOrderTypeHasBeenSet = true;
+}
+
+bool ExportCustomerWorkOrderDetailRequest::WorkOrderTypeHasBeenSet() const
+{
+    return m_workOrderTypeHasBeenSet;
 }
 
 

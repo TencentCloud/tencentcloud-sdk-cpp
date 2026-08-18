@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取UID/GID信息
-                     * @return UserId UID/GID信息
+                     * 获取<p>UID/GID信息</p>
+                     * @return UserId <p>UID/GID信息</p>
                      * 
                      */
                     std::string GetUserId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * UID/GID信息
+                     * <p>UID/GID信息</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;

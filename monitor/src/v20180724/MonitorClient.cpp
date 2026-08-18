@@ -7290,6 +7290,56 @@ MonitorClient::ModifyPrometheusGlobalNotificationOutcomeCallable MonitorClient::
     return prom->get_future();
 }
 
+MonitorClient::ModifyPrometheusInstanceAccessPointsOutcome MonitorClient::ModifyPrometheusInstanceAccessPoints(const ModifyPrometheusInstanceAccessPointsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPrometheusInstanceAccessPoints");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPrometheusInstanceAccessPointsResponse rsp = ModifyPrometheusInstanceAccessPointsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPrometheusInstanceAccessPointsOutcome(rsp);
+        else
+            return ModifyPrometheusInstanceAccessPointsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPrometheusInstanceAccessPointsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ModifyPrometheusInstanceAccessPointsAsync(const ModifyPrometheusInstanceAccessPointsRequest& request, const ModifyPrometheusInstanceAccessPointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyPrometheusInstanceAccessPointsRequest&;
+    using Resp = ModifyPrometheusInstanceAccessPointsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyPrometheusInstanceAccessPoints", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::ModifyPrometheusInstanceAccessPointsOutcomeCallable MonitorClient::ModifyPrometheusInstanceAccessPointsCallable(const ModifyPrometheusInstanceAccessPointsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyPrometheusInstanceAccessPointsOutcome>>();
+    ModifyPrometheusInstanceAccessPointsAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const ModifyPrometheusInstanceAccessPointsRequest&,
+        ModifyPrometheusInstanceAccessPointsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MonitorClient::ModifyPrometheusInstanceAttributesOutcome MonitorClient::ModifyPrometheusInstanceAttributes(const ModifyPrometheusInstanceAttributesRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyPrometheusInstanceAttributes");

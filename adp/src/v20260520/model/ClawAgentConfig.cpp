@@ -21,7 +21,6 @@ using namespace TencentCloud::Adp::V20260520::Model;
 using namespace std;
 
 ClawAgentConfig::ClawAgentConfig() :
-    m_customConfigHasBeenSet(false),
     m_agentTeamConfigHasBeenSet(false),
     m_longMemoryConfigHasBeenSet(false)
 {
@@ -31,23 +30,6 @@ CoreInternalOutcome ClawAgentConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("CustomConfig") && !value["CustomConfig"].IsNull())
-    {
-        if (!value["CustomConfig"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `ClawAgentConfig.CustomConfig` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_customConfig.Deserialize(value["CustomConfig"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_customConfigHasBeenSet = true;
-    }
 
     if (value.HasMember("AgentTeamConfig") && !value["AgentTeamConfig"].IsNull())
     {
@@ -90,15 +72,6 @@ CoreInternalOutcome ClawAgentConfig::Deserialize(const rapidjson::Value &value)
 void ClawAgentConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_customConfigHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CustomConfig";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_customConfig.ToJsonObject(value[key.c_str()], allocator);
-    }
-
     if (m_agentTeamConfigHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -119,22 +92,6 @@ void ClawAgentConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
 
 }
 
-
-ClawAgentCustomConfig ClawAgentConfig::GetCustomConfig() const
-{
-    return m_customConfig;
-}
-
-void ClawAgentConfig::SetCustomConfig(const ClawAgentCustomConfig& _customConfig)
-{
-    m_customConfig = _customConfig;
-    m_customConfigHasBeenSet = true;
-}
-
-bool ClawAgentConfig::CustomConfigHasBeenSet() const
-{
-    return m_customConfigHasBeenSet;
-}
 
 ClawAgentAgentTeamConfig ClawAgentConfig::GetAgentTeamConfig() const
 {

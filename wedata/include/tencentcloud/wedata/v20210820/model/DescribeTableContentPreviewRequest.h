@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取表ID
-                     * @return TableId 表ID
+                     * 获取<p>表ID</p>
+                     * @return TableId <p>表ID</p>
                      * 
                      */
                     std::string GetTableId() const;
 
                     /**
-                     * 设置表ID
-                     * @param _tableId 表ID
+                     * 设置<p>表ID</p>
+                     * @param _tableId <p>表ID</p>
                      * 
                      */
                     void SetTableId(const std::string& _tableId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TableIdHasBeenSet() const;
 
                     /**
-                     * 获取组件类型枚举值，支持的值有 HDFS/HBASE/HIVE/KAFKA
-                     * @return TechnologyType 组件类型枚举值，支持的值有 HDFS/HBASE/HIVE/KAFKA
+                     * 获取<p>组件类型枚举值，支持的值有 HDFS/HBASE/HIVE/KAFKA</p>
+                     * @return TechnologyType <p>组件类型枚举值，支持的值有 HDFS/HBASE/HIVE/KAFKA</p>
                      * 
                      */
                     std::string GetTechnologyType() const;
 
                     /**
-                     * 设置组件类型枚举值，支持的值有 HDFS/HBASE/HIVE/KAFKA
-                     * @param _technologyType 组件类型枚举值，支持的值有 HDFS/HBASE/HIVE/KAFKA
+                     * 设置<p>组件类型枚举值，支持的值有 HDFS/HBASE/HIVE/KAFKA</p>
+                     * @param _technologyType <p>组件类型枚举值，支持的值有 HDFS/HBASE/HIVE/KAFKA</p>
                      * 
                      */
                     void SetTechnologyType(const std::string& _technologyType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TechnologyTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群id
-                     * @return ClusterId 集群id
+                     * 获取<p>集群id</p>
+                     * @return ClusterId <p>集群id</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群id
-                     * @param _clusterId 集群id
+                     * 设置<p>集群id</p>
+                     * @param _clusterId <p>集群id</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取资源类型枚举值，支持的值有TOPIC/PATH/TABLE/DATABASE
-                     * @return ResourceType 资源类型枚举值，支持的值有TOPIC/PATH/TABLE/DATABASE
+                     * 获取<p>资源类型枚举值，支持的值有TOPIC/PATH/TABLE/DATABASE</p>
+                     * @return ResourceType <p>资源类型枚举值，支持的值有TOPIC/PATH/TABLE/DATABASE</p>
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置资源类型枚举值，支持的值有TOPIC/PATH/TABLE/DATABASE
-                     * @param _resourceType 资源类型枚举值，支持的值有TOPIC/PATH/TABLE/DATABASE
+                     * 设置<p>资源类型枚举值，支持的值有TOPIC/PATH/TABLE/DATABASE</p>
+                     * @param _resourceType <p>资源类型枚举值，支持的值有TOPIC/PATH/TABLE/DATABASE</p>
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取表名
-                     * @return TableName 表名
+                     * 获取<p>表名</p>
+                     * @return TableName <p>表名</p>
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
-                     * 设置表名
-                     * @param _tableName 表名
+                     * 设置<p>表名</p>
+                     * @param _tableName <p>表名</p>
                      * 
                      */
                     void SetTableName(const std::string& _tableName);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool TableNameHasBeenSet() const;
 
                     /**
-                     * 获取项目id
-                     * @return ProjectId 项目id
+                     * 获取<p>项目id</p>
+                     * @return ProjectId <p>项目id</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目id
-                     * @param _projectId 项目id
+                     * 设置<p>项目id</p>
+                     * @param _projectId <p>项目id</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取预览的行数，默认10行
-                     * @return RowNum 预览的行数，默认10行
+                     * 获取<p>预览的行数，默认10行</p>
+                     * @return RowNum <p>预览的行数，默认10行</p>
                      * 
                      */
                     int64_t GetRowNum() const;
 
                     /**
-                     * 设置预览的行数，默认10行
-                     * @param _rowNum 预览的行数，默认10行
+                     * 设置<p>预览的行数，默认10行</p>
+                     * @param _rowNum <p>预览的行数，默认10行</p>
                      * 
                      */
                     void SetRowNum(const int64_t& _rowNum);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool RowNumHasBeenSet() const;
 
                     /**
-                     * 获取数据库名，kafka或其他无数据库概念的不填
-                     * @return DatabaseName 数据库名，kafka或其他无数据库概念的不填
+                     * 获取<p>数据库名，kafka或其他无数据库概念的不填</p>
+                     * @return DatabaseName <p>数据库名，kafka或其他无数据库概念的不填</p>
                      * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
-                     * 设置数据库名，kafka或其他无数据库概念的不填
-                     * @param _databaseName 数据库名，kafka或其他无数据库概念的不填
+                     * 设置<p>数据库名，kafka或其他无数据库概念的不填</p>
+                     * @param _databaseName <p>数据库名，kafka或其他无数据库概念的不填</p>
                      * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
-                     * 获取异步查询预览结果时填写
-                     * @return TaskId 异步查询预览结果时填写
+                     * 获取<p>异步查询预览结果时填写</p>
+                     * @return TaskId <p>异步查询预览结果时填写</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置异步查询预览结果时填写
-                     * @param _taskId 异步查询预览结果时填写
+                     * 设置<p>异步查询预览结果时填写</p>
+                     * @param _taskId <p>异步查询预览结果时填写</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取分区信息
-                     * @return PartitionName 分区信息
+                     * 获取<p>分区信息</p>
+                     * @return PartitionName <p>分区信息</p>
                      * 
                      */
                     std::string GetPartitionName() const;
 
                     /**
-                     * 设置分区信息
-                     * @param _partitionName 分区信息
+                     * 设置<p>分区信息</p>
+                     * @param _partitionName <p>分区信息</p>
                      * 
                      */
                     void SetPartitionName(const std::string& _partitionName);
@@ -252,67 +252,148 @@ namespace TencentCloud
                      */
                     bool PartitionNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>资源组ID</p>
+                     * @return ResourceGroupId <p>资源组ID</p>
+                     * 
+                     */
+                    std::string GetResourceGroupId() const;
+
+                    /**
+                     * 设置<p>资源组ID</p>
+                     * @param _resourceGroupId <p>资源组ID</p>
+                     * 
+                     */
+                    void SetResourceGroupId(const std::string& _resourceGroupId);
+
+                    /**
+                     * 判断参数 ResourceGroupId 是否已赋值
+                     * @return ResourceGroupId 是否已赋值
+                     * 
+                     */
+                    bool ResourceGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>执行SQL</p>
+                     * @return Sql <p>执行SQL</p>
+                     * 
+                     */
+                    std::string GetSql() const;
+
+                    /**
+                     * 设置<p>执行SQL</p>
+                     * @param _sql <p>执行SQL</p>
+                     * 
+                     */
+                    void SetSql(const std::string& _sql);
+
+                    /**
+                     * 判断参数 Sql 是否已赋值
+                     * @return Sql 是否已赋值
+                     * 
+                     */
+                    bool SqlHasBeenSet() const;
+
+                    /**
+                     * 获取<p>引擎名</p>
+                     * @return EngineId <p>引擎名</p>
+                     * 
+                     */
+                    std::string GetEngineId() const;
+
+                    /**
+                     * 设置<p>引擎名</p>
+                     * @param _engineId <p>引擎名</p>
+                     * 
+                     */
+                    void SetEngineId(const std::string& _engineId);
+
+                    /**
+                     * 判断参数 EngineId 是否已赋值
+                     * @return EngineId 是否已赋值
+                     * 
+                     */
+                    bool EngineIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 表ID
+                     * <p>表ID</p>
                      */
                     std::string m_tableId;
                     bool m_tableIdHasBeenSet;
 
                     /**
-                     * 组件类型枚举值，支持的值有 HDFS/HBASE/HIVE/KAFKA
+                     * <p>组件类型枚举值，支持的值有 HDFS/HBASE/HIVE/KAFKA</p>
                      */
                     std::string m_technologyType;
                     bool m_technologyTypeHasBeenSet;
 
                     /**
-                     * 集群id
+                     * <p>集群id</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 资源类型枚举值，支持的值有TOPIC/PATH/TABLE/DATABASE
+                     * <p>资源类型枚举值，支持的值有TOPIC/PATH/TABLE/DATABASE</p>
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 表名
+                     * <p>表名</p>
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
 
                     /**
-                     * 项目id
+                     * <p>项目id</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 预览的行数，默认10行
+                     * <p>预览的行数，默认10行</p>
                      */
                     int64_t m_rowNum;
                     bool m_rowNumHasBeenSet;
 
                     /**
-                     * 数据库名，kafka或其他无数据库概念的不填
+                     * <p>数据库名，kafka或其他无数据库概念的不填</p>
                      */
                     std::string m_databaseName;
                     bool m_databaseNameHasBeenSet;
 
                     /**
-                     * 异步查询预览结果时填写
+                     * <p>异步查询预览结果时填写</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 分区信息
+                     * <p>分区信息</p>
                      */
                     std::string m_partitionName;
                     bool m_partitionNameHasBeenSet;
+
+                    /**
+                     * <p>资源组ID</p>
+                     */
+                    std::string m_resourceGroupId;
+                    bool m_resourceGroupIdHasBeenSet;
+
+                    /**
+                     * <p>执行SQL</p>
+                     */
+                    std::string m_sql;
+                    bool m_sqlHasBeenSet;
+
+                    /**
+                     * <p>引擎名</p>
+                     */
+                    std::string m_engineId;
+                    bool m_engineIdHasBeenSet;
 
                 };
             }

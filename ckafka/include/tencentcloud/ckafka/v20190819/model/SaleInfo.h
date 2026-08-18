@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取手动设置的flag标志，true表示售罄，false表示可售。
-                     * @return Flag 手动设置的flag标志，true表示售罄，false表示可售。
+                     * 获取<p>手动设置的flag标志，true表示售罄，false表示可售。</p>
+                     * @return Flag <p>手动设置的flag标志，true表示售罄，false表示可售。</p>
                      * 
                      */
                     bool GetFlag() const;
 
                     /**
-                     * 设置手动设置的flag标志，true表示售罄，false表示可售。
-                     * @param _flag 手动设置的flag标志，true表示售罄，false表示可售。
+                     * 设置<p>手动设置的flag标志，true表示售罄，false表示可售。</p>
+                     * @param _flag <p>手动设置的flag标志，true表示售罄，false表示可售。</p>
                      * 
                      */
                     void SetFlag(const bool& _flag);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool FlagHasBeenSet() const;
 
                     /**
-                     * 获取ckafka版本号(1.1.1/2.4.2/0.10.2)
-                     * @return Version ckafka版本号(1.1.1/2.4.2/0.10.2)
+                     * 获取<p>ckafka版本号(1.1.1/2.4.2/0.10.2)</p>
+                     * @return Version <p>ckafka版本号(1.1.1/2.4.2/0.10.2)</p>
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
-                     * 设置ckafka版本号(1.1.1/2.4.2/0.10.2)
-                     * @param _version ckafka版本号(1.1.1/2.4.2/0.10.2)
+                     * 设置<p>ckafka版本号(1.1.1/2.4.2/0.10.2)</p>
+                     * @param _version <p>ckafka版本号(1.1.1/2.4.2/0.10.2)</p>
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取专业版、标准版标志
-                     * @return Platform 专业版、标准版标志
+                     * 获取<p>专业版、标准版标志</p>
+                     * @return Platform <p>专业版、标准版标志</p>
                      * 
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置专业版、标准版标志
-                     * @param _platform 专业版、标准版标志
+                     * 设置<p>专业版、标准版标志</p>
+                     * @param _platform <p>专业版、标准版标志</p>
                      * 
                      */
                     void SetPlatform(const std::string& _platform);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取售罄标志：true售罄
-                     * @return SoldOut 售罄标志：true售罄
+                     * 获取<p>售罄标志：true售罄</p>
+                     * @return SoldOut <p>售罄标志：true售罄</p>
                      * 
                      */
                     bool GetSoldOut() const;
 
                     /**
-                     * 设置售罄标志：true售罄
-                     * @param _soldOut 售罄标志：true售罄
+                     * 设置<p>售罄标志：true售罄</p>
+                     * @param _soldOut <p>售罄标志：true售罄</p>
                      * 
                      */
                     void SetSoldOut(const bool& _soldOut);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 手动设置的flag标志，true表示售罄，false表示可售。
+                     * <p>手动设置的flag标志，true表示售罄，false表示可售。</p>
                      */
                     bool m_flag;
                     bool m_flagHasBeenSet;
 
                     /**
-                     * ckafka版本号(1.1.1/2.4.2/0.10.2)
+                     * <p>ckafka版本号(1.1.1/2.4.2/0.10.2)</p>
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 专业版、标准版标志
+                     * <p>专业版、标准版标志</p>
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 售罄标志：true售罄
+                     * <p>售罄标志：true售罄</p>
                      */
                     bool m_soldOut;
                     bool m_soldOutHasBeenSet;

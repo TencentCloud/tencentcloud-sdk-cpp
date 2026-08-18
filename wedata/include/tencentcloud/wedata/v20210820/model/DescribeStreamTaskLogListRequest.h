@@ -273,6 +273,27 @@ namespace TencentCloud
                      */
                     bool JobTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>滚动查询游标</p>
+                     * @return Context <p>滚动查询游标</p>
+                     * 
+                     */
+                    std::string GetContext() const;
+
+                    /**
+                     * 设置<p>滚动查询游标</p>
+                     * @param _context <p>滚动查询游标</p>
+                     * 
+                     */
+                    void SetContext(const std::string& _context);
+
+                    /**
+                     * 判断参数 Context 是否已赋值
+                     * @return Context 是否已赋值
+                     * 
+                     */
+                    bool ContextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -340,6 +361,12 @@ namespace TencentCloud
                      */
                     std::string m_jobType;
                     bool m_jobTypeHasBeenSet;
+
+                    /**
+                     * <p>滚动查询游标</p>
+                     */
+                    std::string m_context;
+                    bool m_contextHasBeenSet;
 
                 };
             }

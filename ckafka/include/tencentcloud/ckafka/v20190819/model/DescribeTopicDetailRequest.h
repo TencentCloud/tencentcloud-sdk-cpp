@@ -211,6 +211,27 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取<p>搜索topic时是否忽略大小写敏感</p>
+                     * @return SearchWordIgnoreCaseFlag <p>搜索topic时是否忽略大小写敏感</p>
+                     * 
+                     */
+                    bool GetSearchWordIgnoreCaseFlag() const;
+
+                    /**
+                     * 设置<p>搜索topic时是否忽略大小写敏感</p>
+                     * @param _searchWordIgnoreCaseFlag <p>搜索topic时是否忽略大小写敏感</p>
+                     * 
+                     */
+                    void SetSearchWordIgnoreCaseFlag(const bool& _searchWordIgnoreCaseFlag);
+
+                    /**
+                     * 判断参数 SearchWordIgnoreCaseFlag 是否已赋值
+                     * @return SearchWordIgnoreCaseFlag 是否已赋值
+                     * 
+                     */
+                    bool SearchWordIgnoreCaseFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -260,6 +281,12 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * <p>搜索topic时是否忽略大小写敏感</p>
+                     */
+                    bool m_searchWordIgnoreCaseFlag;
+                    bool m_searchWordIgnoreCaseFlagHasBeenSet;
 
                 };
             }

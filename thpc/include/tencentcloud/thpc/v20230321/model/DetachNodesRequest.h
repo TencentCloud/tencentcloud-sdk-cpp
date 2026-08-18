@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群id
-                     * @return ClusterId 集群id
+                     * 获取<p>集群id</p>
+                     * @return ClusterId <p>集群id</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群id
-                     * @param _clusterId 集群id
+                     * 设置<p>集群id</p>
+                     * @param _clusterId <p>集群id</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取集群中的节点id
-                     * @return NodeIds 集群中的节点id
+                     * 获取<p>集群中的节点id</p>
+                     * @return NodeIds <p>集群中的节点id</p>
                      * 
                      */
                     std::vector<std::string> GetNodeIds() const;
 
                     /**
-                     * 设置集群中的节点id
-                     * @param _nodeIds 集群中的节点id
+                     * 设置<p>集群中的节点id</p>
+                     * @param _nodeIds <p>集群中的节点id</p>
                      * 
                      */
                     void SetNodeIds(const std::vector<std::string>& _nodeIds);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群id
+                     * <p>集群id</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 集群中的节点id
+                     * <p>集群中的节点id</p>
                      */
                     std::vector<std::string> m_nodeIds;
                     bool m_nodeIdsHasBeenSet;

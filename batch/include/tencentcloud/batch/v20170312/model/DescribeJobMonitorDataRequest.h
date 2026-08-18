@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)
-                     * @return JobId 作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)
+                     * 获取<p>作业ID；JobId详见<a href="https://cloud.tencent.com/document/product/599/15909">作业列表</a></p>
+                     * @return JobId <p>作业ID；JobId详见<a href="https://cloud.tencent.com/document/product/599/15909">作业列表</a></p>
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)
-                     * @param _jobId 作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)
+                     * 设置<p>作业ID；JobId详见<a href="https://cloud.tencent.com/document/product/599/15909">作业列表</a></p>
+                     * @param _jobId <p>作业ID；JobId详见<a href="https://cloud.tencent.com/document/product/599/15909">作业列表</a></p>
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取作业的Task名称，详见[作业详情](https://cloud.tencent.com/document/product/599/15904)。
-                     * @return TaskName 作业的Task名称，详见[作业详情](https://cloud.tencent.com/document/product/599/15904)。
+                     * 获取<p>作业的Task名称，详见<a href="https://cloud.tencent.com/document/product/599/15904">作业详情</a>。</p>
+                     * @return TaskName <p>作业的Task名称，详见<a href="https://cloud.tencent.com/document/product/599/15904">作业详情</a>。</p>
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
-                     * 设置作业的Task名称，详见[作业详情](https://cloud.tencent.com/document/product/599/15904)。
-                     * @param _taskName 作业的Task名称，详见[作业详情](https://cloud.tencent.com/document/product/599/15904)。
+                     * 设置<p>作业的Task名称，详见<a href="https://cloud.tencent.com/document/product/599/15904">作业详情</a>。</p>
+                     * @param _taskName <p>作业的Task名称，详见<a href="https://cloud.tencent.com/document/product/599/15904">作业详情</a>。</p>
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool TaskNameHasBeenSet() const;
 
                     /**
-                     * 获取作业任务实例的序号，详见[任务详情](https://cloud.tencent.com/document/product/599/15905)
-                     * @return TaskInstanceIndex 作业任务实例的序号，详见[任务详情](https://cloud.tencent.com/document/product/599/15905)
+                     * 获取<p>作业任务实例的序号，详见<a href="https://cloud.tencent.com/document/product/599/15905">任务详情</a></p>
+                     * @return TaskInstanceIndex <p>作业任务实例的序号，详见<a href="https://cloud.tencent.com/document/product/599/15905">任务详情</a></p>
                      * 
                      */
                     int64_t GetTaskInstanceIndex() const;
 
                     /**
-                     * 设置作业任务实例的序号，详见[任务详情](https://cloud.tencent.com/document/product/599/15905)
-                     * @param _taskInstanceIndex 作业任务实例的序号，详见[任务详情](https://cloud.tencent.com/document/product/599/15905)
+                     * 设置<p>作业任务实例的序号，详见<a href="https://cloud.tencent.com/document/product/599/15905">任务详情</a></p>
+                     * @param _taskInstanceIndex <p>作业任务实例的序号，详见<a href="https://cloud.tencent.com/document/product/599/15905">任务详情</a></p>
                      * 
                      */
                     void SetTaskInstanceIndex(const int64_t& _taskInstanceIndex);
@@ -107,43 +107,15 @@ namespace TencentCloud
                     bool TaskInstanceIndexHasBeenSet() const;
 
                     /**
-                     * 获取支持查询的指标；当前支持查询的任务指标；
-
-- CpuUsage：cpu利用率，单位：%
-- MemUsage：内存利用率，单位：%
-- LanOuttraffic：内网出带宽，单位：Bytes/s
-- LanIntraffic：内网入带宽，单位：Bytes/s
-- MaxDiskUsage：所有磁盘中的使用率最高的磁盘使用率，单位：%
-- TargetDiskUsage：指定磁盘的使用率，单位：%；配合Dimensions参数使用
-                     * @return MetricName 支持查询的指标；当前支持查询的任务指标；
-
-- CpuUsage：cpu利用率，单位：%
-- MemUsage：内存利用率，单位：%
-- LanOuttraffic：内网出带宽，单位：Bytes/s
-- LanIntraffic：内网入带宽，单位：Bytes/s
-- MaxDiskUsage：所有磁盘中的使用率最高的磁盘使用率，单位：%
-- TargetDiskUsage：指定磁盘的使用率，单位：%；配合Dimensions参数使用
+                     * 获取<p>支持查询的指标；当前支持查询的任务指标；</p><ul><li>CpuUsage：cpu利用率，单位：%</li><li>MemUsage：内存利用率，单位：%</li><li>LanOuttraffic：内网出带宽，单位：Bytes/s</li><li>LanIntraffic：内网入带宽，单位：Bytes/s</li><li>MaxDiskUsage：所有磁盘中的使用率最高的磁盘使用率，单位：%</li><li>TargetDiskUsage：指定磁盘的使用率，单位：%；配合Dimensions参数使用</li></ul>
+                     * @return MetricName <p>支持查询的指标；当前支持查询的任务指标；</p><ul><li>CpuUsage：cpu利用率，单位：%</li><li>MemUsage：内存利用率，单位：%</li><li>LanOuttraffic：内网出带宽，单位：Bytes/s</li><li>LanIntraffic：内网入带宽，单位：Bytes/s</li><li>MaxDiskUsage：所有磁盘中的使用率最高的磁盘使用率，单位：%</li><li>TargetDiskUsage：指定磁盘的使用率，单位：%；配合Dimensions参数使用</li></ul>
                      * 
                      */
                     std::string GetMetricName() const;
 
                     /**
-                     * 设置支持查询的指标；当前支持查询的任务指标；
-
-- CpuUsage：cpu利用率，单位：%
-- MemUsage：内存利用率，单位：%
-- LanOuttraffic：内网出带宽，单位：Bytes/s
-- LanIntraffic：内网入带宽，单位：Bytes/s
-- MaxDiskUsage：所有磁盘中的使用率最高的磁盘使用率，单位：%
-- TargetDiskUsage：指定磁盘的使用率，单位：%；配合Dimensions参数使用
-                     * @param _metricName 支持查询的指标；当前支持查询的任务指标；
-
-- CpuUsage：cpu利用率，单位：%
-- MemUsage：内存利用率，单位：%
-- LanOuttraffic：内网出带宽，单位：Bytes/s
-- LanIntraffic：内网入带宽，单位：Bytes/s
-- MaxDiskUsage：所有磁盘中的使用率最高的磁盘使用率，单位：%
-- TargetDiskUsage：指定磁盘的使用率，单位：%；配合Dimensions参数使用
+                     * 设置<p>支持查询的指标；当前支持查询的任务指标；</p><ul><li>CpuUsage：cpu利用率，单位：%</li><li>MemUsage：内存利用率，单位：%</li><li>LanOuttraffic：内网出带宽，单位：Bytes/s</li><li>LanIntraffic：内网入带宽，单位：Bytes/s</li><li>MaxDiskUsage：所有磁盘中的使用率最高的磁盘使用率，单位：%</li><li>TargetDiskUsage：指定磁盘的使用率，单位：%；配合Dimensions参数使用</li></ul>
+                     * @param _metricName <p>支持查询的指标；当前支持查询的任务指标；</p><ul><li>CpuUsage：cpu利用率，单位：%</li><li>MemUsage：内存利用率，单位：%</li><li>LanOuttraffic：内网出带宽，单位：Bytes/s</li><li>LanIntraffic：内网入带宽，单位：Bytes/s</li><li>MaxDiskUsage：所有磁盘中的使用率最高的磁盘使用率，单位：%</li><li>TargetDiskUsage：指定磁盘的使用率，单位：%；配合Dimensions参数使用</li></ul>
                      * 
                      */
                     void SetMetricName(const std::string& _metricName);
@@ -156,15 +128,15 @@ namespace TencentCloud
                     bool MetricNameHasBeenSet() const;
 
                     /**
-                     * 获取查询任务实例的起始时间；如果未传入查询起始时间或传入的时间小于任务实例的创建时间（任务实例创建时间详见[任务详情](https://cloud.tencent.com/document/product/599/15905)），会自动将查询时间调整到任务实例的创建时间。传入时间格式只支持零时区格式。
-                     * @return StartTime 查询任务实例的起始时间；如果未传入查询起始时间或传入的时间小于任务实例的创建时间（任务实例创建时间详见[任务详情](https://cloud.tencent.com/document/product/599/15905)），会自动将查询时间调整到任务实例的创建时间。传入时间格式只支持零时区格式。
+                     * 获取<p>查询任务实例的起始时间；如果未传入查询起始时间或传入的时间小于任务实例的创建时间（任务实例创建时间详见<a href="https://cloud.tencent.com/document/product/599/15905">任务详情</a>），会自动将查询时间调整到任务实例的创建时间。传入时间格式只支持零时区格式。</p>
+                     * @return StartTime <p>查询任务实例的起始时间；如果未传入查询起始时间或传入的时间小于任务实例的创建时间（任务实例创建时间详见<a href="https://cloud.tencent.com/document/product/599/15905">任务详情</a>），会自动将查询时间调整到任务实例的创建时间。传入时间格式只支持零时区格式。</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置查询任务实例的起始时间；如果未传入查询起始时间或传入的时间小于任务实例的创建时间（任务实例创建时间详见[任务详情](https://cloud.tencent.com/document/product/599/15905)），会自动将查询时间调整到任务实例的创建时间。传入时间格式只支持零时区格式。
-                     * @param _startTime 查询任务实例的起始时间；如果未传入查询起始时间或传入的时间小于任务实例的创建时间（任务实例创建时间详见[任务详情](https://cloud.tencent.com/document/product/599/15905)），会自动将查询时间调整到任务实例的创建时间。传入时间格式只支持零时区格式。
+                     * 设置<p>查询任务实例的起始时间；如果未传入查询起始时间或传入的时间小于任务实例的创建时间（任务实例创建时间详见<a href="https://cloud.tencent.com/document/product/599/15905">任务详情</a>），会自动将查询时间调整到任务实例的创建时间。传入时间格式只支持零时区格式。</p>
+                     * @param _startTime <p>查询任务实例的起始时间；如果未传入查询起始时间或传入的时间小于任务实例的创建时间（任务实例创建时间详见<a href="https://cloud.tencent.com/document/product/599/15905">任务详情</a>），会自动将查询时间调整到任务实例的创建时间。传入时间格式只支持零时区格式。</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -177,15 +149,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询任务实例的终止时间；如果未传入查询终止时间或传入的时间大于任务实例的终止时间（任务实例终止时间详见[任务详情](https://cloud.tencent.com/document/product/599/15905)），并且任务实例已经结束，会自动将查询终止时间调整到任务实例的终止时间；如果任务实例未结束，会自动将查询终止时间调整到当前时间。传入时间格式只支持零时区格式。
-                     * @return EndTime 查询任务实例的终止时间；如果未传入查询终止时间或传入的时间大于任务实例的终止时间（任务实例终止时间详见[任务详情](https://cloud.tencent.com/document/product/599/15905)），并且任务实例已经结束，会自动将查询终止时间调整到任务实例的终止时间；如果任务实例未结束，会自动将查询终止时间调整到当前时间。传入时间格式只支持零时区格式。
+                     * 获取<p>查询任务实例的终止时间；如果未传入查询终止时间或传入的时间大于任务实例的终止时间（任务实例终止时间详见<a href="https://cloud.tencent.com/document/product/599/15905">任务详情</a>），并且任务实例已经结束，会自动将查询终止时间调整到任务实例的终止时间；如果任务实例未结束，会自动将查询终止时间调整到当前时间。传入时间格式只支持零时区格式。</p>
+                     * @return EndTime <p>查询任务实例的终止时间；如果未传入查询终止时间或传入的时间大于任务实例的终止时间（任务实例终止时间详见<a href="https://cloud.tencent.com/document/product/599/15905">任务详情</a>），并且任务实例已经结束，会自动将查询终止时间调整到任务实例的终止时间；如果任务实例未结束，会自动将查询终止时间调整到当前时间。传入时间格式只支持零时区格式。</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置查询任务实例的终止时间；如果未传入查询终止时间或传入的时间大于任务实例的终止时间（任务实例终止时间详见[任务详情](https://cloud.tencent.com/document/product/599/15905)），并且任务实例已经结束，会自动将查询终止时间调整到任务实例的终止时间；如果任务实例未结束，会自动将查询终止时间调整到当前时间。传入时间格式只支持零时区格式。
-                     * @param _endTime 查询任务实例的终止时间；如果未传入查询终止时间或传入的时间大于任务实例的终止时间（任务实例终止时间详见[任务详情](https://cloud.tencent.com/document/product/599/15905)），并且任务实例已经结束，会自动将查询终止时间调整到任务实例的终止时间；如果任务实例未结束，会自动将查询终止时间调整到当前时间。传入时间格式只支持零时区格式。
+                     * 设置<p>查询任务实例的终止时间；如果未传入查询终止时间或传入的时间大于任务实例的终止时间（任务实例终止时间详见<a href="https://cloud.tencent.com/document/product/599/15905">任务详情</a>），并且任务实例已经结束，会自动将查询终止时间调整到任务实例的终止时间；如果任务实例未结束，会自动将查询终止时间调整到当前时间。传入时间格式只支持零时区格式。</p>
+                     * @param _endTime <p>查询任务实例的终止时间；如果未传入查询终止时间或传入的时间大于任务实例的终止时间（任务实例终止时间详见<a href="https://cloud.tencent.com/document/product/599/15905">任务详情</a>），并且任务实例已经结束，会自动将查询终止时间调整到任务实例的终止时间；如果任务实例未结束，会自动将查询终止时间调整到当前时间。传入时间格式只支持零时区格式。</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -198,31 +170,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询指标的扩展参数；当前只支持TargetDiskUsage;
-
-- TargetDiskUsage
-    -支持的查询维度diskname, 维度值为磁盘挂载名，例如vdb；如果不传此参数，默认查询vdb磁盘的使用率。
-    样例：[{"Name":"diskname", "Value":"vdb"}]
-                     * @return Dimensions 查询指标的扩展参数；当前只支持TargetDiskUsage;
-
-- TargetDiskUsage
-    -支持的查询维度diskname, 维度值为磁盘挂载名，例如vdb；如果不传此参数，默认查询vdb磁盘的使用率。
-    样例：[{"Name":"diskname", "Value":"vdb"}]
+                     * 获取<p>查询指标的扩展参数；当前只支持TargetDiskUsage;</p><ul><li>TargetDiskUsage<br>  -支持的查询维度diskname, 维度值为磁盘挂载名，例如vdb；如果不传此参数，默认查询vdb磁盘的使用率。<br>  样例：[{&quot;Name&quot;:&quot;diskname&quot;, &quot;Value&quot;:&quot;vdb&quot;}]</li></ul>
+                     * @return Dimensions <p>查询指标的扩展参数；当前只支持TargetDiskUsage;</p><ul><li>TargetDiskUsage<br>  -支持的查询维度diskname, 维度值为磁盘挂载名，例如vdb；如果不传此参数，默认查询vdb磁盘的使用率。<br>  样例：[{&quot;Name&quot;:&quot;diskname&quot;, &quot;Value&quot;:&quot;vdb&quot;}]</li></ul>
                      * 
                      */
                     std::vector<Dimension> GetDimensions() const;
 
                     /**
-                     * 设置查询指标的扩展参数；当前只支持TargetDiskUsage;
-
-- TargetDiskUsage
-    -支持的查询维度diskname, 维度值为磁盘挂载名，例如vdb；如果不传此参数，默认查询vdb磁盘的使用率。
-    样例：[{"Name":"diskname", "Value":"vdb"}]
-                     * @param _dimensions 查询指标的扩展参数；当前只支持TargetDiskUsage;
-
-- TargetDiskUsage
-    -支持的查询维度diskname, 维度值为磁盘挂载名，例如vdb；如果不传此参数，默认查询vdb磁盘的使用率。
-    样例：[{"Name":"diskname", "Value":"vdb"}]
+                     * 设置<p>查询指标的扩展参数；当前只支持TargetDiskUsage;</p><ul><li>TargetDiskUsage<br>  -支持的查询维度diskname, 维度值为磁盘挂载名，例如vdb；如果不传此参数，默认查询vdb磁盘的使用率。<br>  样例：[{&quot;Name&quot;:&quot;diskname&quot;, &quot;Value&quot;:&quot;vdb&quot;}]</li></ul>
+                     * @param _dimensions <p>查询指标的扩展参数；当前只支持TargetDiskUsage;</p><ul><li>TargetDiskUsage<br>  -支持的查询维度diskname, 维度值为磁盘挂载名，例如vdb；如果不传此参数，默认查询vdb磁盘的使用率。<br>  样例：[{&quot;Name&quot;:&quot;diskname&quot;, &quot;Value&quot;:&quot;vdb&quot;}]</li></ul>
                      * 
                      */
                     void SetDimensions(const std::vector<Dimension>& _dimensions);
@@ -237,54 +193,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)
+                     * <p>作业ID；JobId详见<a href="https://cloud.tencent.com/document/product/599/15909">作业列表</a></p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 作业的Task名称，详见[作业详情](https://cloud.tencent.com/document/product/599/15904)。
+                     * <p>作业的Task名称，详见<a href="https://cloud.tencent.com/document/product/599/15904">作业详情</a>。</p>
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
-                     * 作业任务实例的序号，详见[任务详情](https://cloud.tencent.com/document/product/599/15905)
+                     * <p>作业任务实例的序号，详见<a href="https://cloud.tencent.com/document/product/599/15905">任务详情</a></p>
                      */
                     int64_t m_taskInstanceIndex;
                     bool m_taskInstanceIndexHasBeenSet;
 
                     /**
-                     * 支持查询的指标；当前支持查询的任务指标；
-
-- CpuUsage：cpu利用率，单位：%
-- MemUsage：内存利用率，单位：%
-- LanOuttraffic：内网出带宽，单位：Bytes/s
-- LanIntraffic：内网入带宽，单位：Bytes/s
-- MaxDiskUsage：所有磁盘中的使用率最高的磁盘使用率，单位：%
-- TargetDiskUsage：指定磁盘的使用率，单位：%；配合Dimensions参数使用
+                     * <p>支持查询的指标；当前支持查询的任务指标；</p><ul><li>CpuUsage：cpu利用率，单位：%</li><li>MemUsage：内存利用率，单位：%</li><li>LanOuttraffic：内网出带宽，单位：Bytes/s</li><li>LanIntraffic：内网入带宽，单位：Bytes/s</li><li>MaxDiskUsage：所有磁盘中的使用率最高的磁盘使用率，单位：%</li><li>TargetDiskUsage：指定磁盘的使用率，单位：%；配合Dimensions参数使用</li></ul>
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;
 
                     /**
-                     * 查询任务实例的起始时间；如果未传入查询起始时间或传入的时间小于任务实例的创建时间（任务实例创建时间详见[任务详情](https://cloud.tencent.com/document/product/599/15905)），会自动将查询时间调整到任务实例的创建时间。传入时间格式只支持零时区格式。
+                     * <p>查询任务实例的起始时间；如果未传入查询起始时间或传入的时间小于任务实例的创建时间（任务实例创建时间详见<a href="https://cloud.tencent.com/document/product/599/15905">任务详情</a>），会自动将查询时间调整到任务实例的创建时间。传入时间格式只支持零时区格式。</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询任务实例的终止时间；如果未传入查询终止时间或传入的时间大于任务实例的终止时间（任务实例终止时间详见[任务详情](https://cloud.tencent.com/document/product/599/15905)），并且任务实例已经结束，会自动将查询终止时间调整到任务实例的终止时间；如果任务实例未结束，会自动将查询终止时间调整到当前时间。传入时间格式只支持零时区格式。
+                     * <p>查询任务实例的终止时间；如果未传入查询终止时间或传入的时间大于任务实例的终止时间（任务实例终止时间详见<a href="https://cloud.tencent.com/document/product/599/15905">任务详情</a>），并且任务实例已经结束，会自动将查询终止时间调整到任务实例的终止时间；如果任务实例未结束，会自动将查询终止时间调整到当前时间。传入时间格式只支持零时区格式。</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 查询指标的扩展参数；当前只支持TargetDiskUsage;
-
-- TargetDiskUsage
-    -支持的查询维度diskname, 维度值为磁盘挂载名，例如vdb；如果不传此参数，默认查询vdb磁盘的使用率。
-    样例：[{"Name":"diskname", "Value":"vdb"}]
+                     * <p>查询指标的扩展参数；当前只支持TargetDiskUsage;</p><ul><li>TargetDiskUsage<br>  -支持的查询维度diskname, 维度值为磁盘挂载名，例如vdb；如果不传此参数，默认查询vdb磁盘的使用率。<br>  样例：[{&quot;Name&quot;:&quot;diskname&quot;, &quot;Value&quot;:&quot;vdb&quot;}]</li></ul>
                      */
                     std::vector<Dimension> m_dimensions;
                     bool m_dimensionsHasBeenSet;

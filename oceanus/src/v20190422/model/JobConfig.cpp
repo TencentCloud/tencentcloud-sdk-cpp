@@ -64,7 +64,8 @@ JobConfig::JobConfig() :
     m_checkpointIntervalSecondHasBeenSet(false),
     m_variableReplaceModeHasBeenSet(false),
     m_stateCOSBucketHasBeenSet(false),
-    m_logCOSBucketHasBeenSet(false)
+    m_logCOSBucketHasBeenSet(false),
+    m_isLockedHasBeenSet(false)
 {
 }
 
@@ -571,6 +572,16 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
         m_logCOSBucketHasBeenSet = true;
     }
 
+    if (value.HasMember("IsLocked") && !value["IsLocked"].IsNull())
+    {
+        if (!value["IsLocked"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.IsLocked` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isLocked = value["IsLocked"].GetInt64();
+        m_isLockedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -953,6 +964,14 @@ void JobConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "LogCOSBucket";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logCOSBucket.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isLockedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsLocked";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isLocked, allocator);
     }
 
 }
@@ -1660,5 +1679,21 @@ void JobConfig::SetLogCOSBucket(const string& _logCOSBucket)
 bool JobConfig::LogCOSBucketHasBeenSet() const
 {
     return m_logCOSBucketHasBeenSet;
+}
+
+int64_t JobConfig::GetIsLocked() const
+{
+    return m_isLocked;
+}
+
+void JobConfig::SetIsLocked(const int64_t& _isLocked)
+{
+    m_isLocked = _isLocked;
+    m_isLockedHasBeenSet = true;
+}
+
+bool JobConfig::IsLockedHasBeenSet() const
+{
+    return m_isLockedHasBeenSet;
 }
 

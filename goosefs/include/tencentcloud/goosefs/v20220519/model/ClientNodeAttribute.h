@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/goosefs/v20220519/model/MountPointEntry.h>
 
 
 namespace TencentCloud
@@ -214,6 +215,27 @@ namespace TencentCloud
                      */
                     bool ClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取
+                     * @return MountPoints 
+                     * 
+                     */
+                    std::vector<MountPointEntry> GetMountPoints() const;
+
+                    /**
+                     * 设置
+                     * @param _mountPoints 
+                     * 
+                     */
+                    void SetMountPoints(const std::vector<MountPointEntry>& _mountPoints);
+
+                    /**
+                     * 判断参数 MountPoints 是否已赋值
+                     * @return MountPoints 是否已赋值
+                     * 
+                     */
+                    bool MountPointsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +285,12 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    std::vector<MountPointEntry> m_mountPoints;
+                    bool m_mountPointsHasBeenSet;
 
                 };
             }

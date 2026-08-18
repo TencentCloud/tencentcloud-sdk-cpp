@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务id
-                     * @return TaskId 任务id
+                     * 获取<p>任务id</p>
+                     * @return TaskId <p>任务id</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务id
-                     * @param _taskId 任务id
+                     * 设置<p>任务id</p>
+                     * @param _taskId <p>任务id</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取项目id
-                     * @return ProjectId 项目id
+                     * 获取<p>项目id</p>
+                     * @return ProjectId <p>项目id</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目id
-                     * @param _projectId 项目id
+                     * 设置<p>项目id</p>
+                     * @param _projectId <p>项目id</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取任务类型，201: 实时集成任务,   202：离线集成任务，不传默认值为201 实时任务类型
-                     * @return TaskType 任务类型，201: 实时集成任务,   202：离线集成任务，不传默认值为201 实时任务类型
+                     * 获取<p>任务类型，201: 实时集成任务,   202：离线集成任务，不传默认值为201 实时任务类型</p>
+                     * @return TaskType <p>任务类型，201: 实时集成任务,   202：离线集成任务，不传默认值为201 实时任务类型</p>
                      * 
                      */
                     uint64_t GetTaskType() const;
 
                     /**
-                     * 设置任务类型，201: 实时集成任务,   202：离线集成任务，不传默认值为201 实时任务类型
-                     * @param _taskType 任务类型，201: 实时集成任务,   202：离线集成任务，不传默认值为201 实时任务类型
+                     * 设置<p>任务类型，201: 实时集成任务,   202：离线集成任务，不传默认值为201 实时任务类型</p>
+                     * @param _taskType <p>任务类型，201: 实时集成任务,   202：离线集成任务，不传默认值为201 实时任务类型</p>
                      * 
                      */
                     void SetTaskType(const uint64_t& _taskType);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取提交版本号
-                     * @return InstanceVersion 提交版本号
+                     * 获取<p>提交版本号</p>
+                     * @return InstanceVersion <p>提交版本号</p>
                      * 
                      */
                     int64_t GetInstanceVersion() const;
 
                     /**
-                     * 设置提交版本号
-                     * @param _instanceVersion 提交版本号
+                     * 设置<p>提交版本号</p>
+                     * @param _instanceVersion <p>提交版本号</p>
                      * 
                      */
                     void SetInstanceVersion(const int64_t& _instanceVersion);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool InstanceVersionHasBeenSet() const;
 
                     /**
-                     * 获取额外参数
-                     * @return ExtConfig 额外参数
+                     * 获取<p>额外参数</p>
+                     * @return ExtConfig <p>额外参数</p>
                      * 
                      */
                     std::vector<RecordField> GetExtConfig() const;
 
                     /**
-                     * 设置额外参数
-                     * @param _extConfig 额外参数
+                     * 设置<p>额外参数</p>
+                     * @param _extConfig <p>额外参数</p>
                      * 
                      */
                     void SetExtConfig(const std::vector<RecordField>& _extConfig);
@@ -151,31 +151,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务id
+                     * <p>任务id</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 项目id
+                     * <p>项目id</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 任务类型，201: 实时集成任务,   202：离线集成任务，不传默认值为201 实时任务类型
+                     * <p>任务类型，201: 实时集成任务,   202：离线集成任务，不传默认值为201 实时任务类型</p>
                      */
                     uint64_t m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 提交版本号
+                     * <p>提交版本号</p>
                      */
                     int64_t m_instanceVersion;
                     bool m_instanceVersionHasBeenSet;
 
                     /**
-                     * 额外参数
+                     * <p>额外参数</p>
                      */
                     std::vector<RecordField> m_extConfig;
                     bool m_extConfigHasBeenSet;

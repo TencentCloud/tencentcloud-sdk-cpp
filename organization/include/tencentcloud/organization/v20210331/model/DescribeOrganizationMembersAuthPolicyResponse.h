@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取访问授权策略列表。
+                     * 获取<p>访问授权策略列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Items 访问授权策略列表。
+                     * @return Items <p>访问授权策略列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool ItemsHasBeenSet() const;
 
                     /**
-                     * 获取总数目。
+                     * 获取<p>总数目。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Total 总数目。
+                     * @return Total <p>总数目。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -79,14 +79,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 访问授权策略列表。
+                     * <p>访问授权策略列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<OrgMembersAuthPolicy> m_items;
                     bool m_itemsHasBeenSet;
 
                     /**
-                     * 总数目。
+                     * <p>总数目。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_total;

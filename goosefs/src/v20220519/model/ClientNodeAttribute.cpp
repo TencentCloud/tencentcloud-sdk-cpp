@@ -28,7 +28,8 @@ ClientNodeAttribute::ClientNodeAttribute() :
     m_subnetIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_mountPointHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_mountPointsHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,26 @@ CoreInternalOutcome ClientNodeAttribute::Deserialize(const rapidjson::Value &val
         m_clusterIdHasBeenSet = true;
     }
 
+    if (value.HasMember("MountPoints") && !value["MountPoints"].IsNull())
+    {
+        if (!value["MountPoints"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClientNodeAttribute.MountPoints` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MountPoints"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MountPointEntry item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_mountPoints.push_back(item);
+        }
+        m_mountPointsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +207,21 @@ void ClientNodeAttribute::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mountPointsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MountPoints";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_mountPoints.begin(); itr != m_mountPoints.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -317,5 +353,21 @@ void ClientNodeAttribute::SetClusterId(const string& _clusterId)
 bool ClientNodeAttribute::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+vector<MountPointEntry> ClientNodeAttribute::GetMountPoints() const
+{
+    return m_mountPoints;
+}
+
+void ClientNodeAttribute::SetMountPoints(const vector<MountPointEntry>& _mountPoints)
+{
+    m_mountPoints = _mountPoints;
+    m_mountPointsHasBeenSet = true;
+}
+
+bool ClientNodeAttribute::MountPointsHasBeenSet() const
+{
+    return m_mountPointsHasBeenSet;
 }
 

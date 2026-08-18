@@ -1125,6 +1125,27 @@ namespace TencentCloud
                      */
                     bool LogCOSBucketHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否支持滚动删除，0，手动删除，1，自动滚动删除</p>
+                     * @return IsLocked <p>是否支持滚动删除，0，手动删除，1，自动滚动删除</p>
+                     * 
+                     */
+                    int64_t GetIsLocked() const;
+
+                    /**
+                     * 设置<p>是否支持滚动删除，0，手动删除，1，自动滚动删除</p>
+                     * @param _isLocked <p>是否支持滚动删除，0，手动删除，1，自动滚动删除</p>
+                     * 
+                     */
+                    void SetIsLocked(const int64_t& _isLocked);
+
+                    /**
+                     * 判断参数 IsLocked 是否已赋值
+                     * @return IsLocked 是否已赋值
+                     * 
+                     */
+                    bool IsLockedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1427,6 +1448,12 @@ namespace TencentCloud
                      */
                     std::string m_logCOSBucket;
                     bool m_logCOSBucketHasBeenSet;
+
+                    /**
+                     * <p>是否支持滚动删除，0，手动删除，1，自动滚动删除</p>
+                     */
+                    int64_t m_isLocked;
+                    bool m_isLockedHasBeenSet;
 
                 };
             }

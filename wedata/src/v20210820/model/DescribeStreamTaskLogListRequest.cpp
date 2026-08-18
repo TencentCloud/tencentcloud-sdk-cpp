@@ -33,7 +33,8 @@ DescribeStreamTaskLogListRequest::DescribeStreamTaskLogListRequest() :
     m_orderTypeHasBeenSet(false),
     m_runningOrderIdHasBeenSet(false),
     m_keywordHasBeenSet(false),
-    m_jobTypeHasBeenSet(false)
+    m_jobTypeHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,14 @@ string DescribeStreamTaskLogListRequest::ToJsonString() const
         string key = "JobType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_jobType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Context";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_context.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -314,6 +323,22 @@ void DescribeStreamTaskLogListRequest::SetJobType(const string& _jobType)
 bool DescribeStreamTaskLogListRequest::JobTypeHasBeenSet() const
 {
     return m_jobTypeHasBeenSet;
+}
+
+string DescribeStreamTaskLogListRequest::GetContext() const
+{
+    return m_context;
+}
+
+void DescribeStreamTaskLogListRequest::SetContext(const string& _context)
+{
+    m_context = _context;
+    m_contextHasBeenSet = true;
+}
+
+bool DescribeStreamTaskLogListRequest::ContextHasBeenSet() const
+{
+    return m_contextHasBeenSet;
 }
 
 

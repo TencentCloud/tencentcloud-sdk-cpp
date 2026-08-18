@@ -237,6 +237,69 @@ namespace TencentCloud
                      */
                     bool ClusterMountSetHasBeenSet() const;
 
+                    /**
+                     * 获取
+                     * @return Zone 
+                     * 
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置
+                     * @param _zone 
+                     * 
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     * 
+                     */
+                    bool ZoneHasBeenSet() const;
+
+                    /**
+                     * 获取
+                     * @return MountStorageNum 
+                     * 
+                     */
+                    uint64_t GetMountStorageNum() const;
+
+                    /**
+                     * 设置
+                     * @param _mountStorageNum 
+                     * 
+                     */
+                    void SetMountStorageNum(const uint64_t& _mountStorageNum);
+
+                    /**
+                     * 判断参数 MountStorageNum 是否已赋值
+                     * @return MountStorageNum 是否已赋值
+                     * 
+                     */
+                    bool MountStorageNumHasBeenSet() const;
+
+                    /**
+                     * 获取
+                     * @return StorageFileSystemId 
+                     * 
+                     */
+                    std::string GetStorageFileSystemId() const;
+
+                    /**
+                     * 设置
+                     * @param _storageFileSystemId 
+                     * 
+                     */
+                    void SetStorageFileSystemId(const std::string& _storageFileSystemId);
+
+                    /**
+                     * 判断参数 StorageFileSystemId 是否已赋值
+                     * @return StorageFileSystemId 是否已赋值
+                     * 
+                     */
+                    bool StorageFileSystemIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -292,6 +355,24 @@ namespace TencentCloud
                      */
                     std::vector<ClusterMountAttr> m_clusterMountSet;
                     bool m_clusterMountSetHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    uint64_t m_mountStorageNum;
+                    bool m_mountStorageNumHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    std::string m_storageFileSystemId;
+                    bool m_storageFileSystemIdHasBeenSet;
 
                 };
             }

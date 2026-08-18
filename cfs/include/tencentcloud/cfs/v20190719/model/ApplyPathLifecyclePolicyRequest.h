@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取生命周期管理策略ID
-                     * @return LifecyclePolicyID 生命周期管理策略ID
+                     * 获取<p>生命周期管理策略ID</p>
+                     * @return LifecyclePolicyID <p>生命周期管理策略ID</p>
                      * 
                      */
                     std::string GetLifecyclePolicyID() const;
 
                     /**
-                     * 设置生命周期管理策略ID
-                     * @param _lifecyclePolicyID 生命周期管理策略ID
+                     * 设置<p>生命周期管理策略ID</p>
+                     * @param _lifecyclePolicyID <p>生命周期管理策略ID</p>
                      * 
                      */
                     void SetLifecyclePolicyID(const std::string& _lifecyclePolicyID);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool LifecyclePolicyIDHasBeenSet() const;
 
                     /**
-                     * 获取生命周期管理策略关联目录的绝对路径列表
-                     * @return Paths 生命周期管理策略关联目录的绝对路径列表
+                     * 获取<p>生命周期管理策略所关联的目录路径列表，每个路径必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。</p><p>示例：</p><ul><li>若挂载的是CFS根目录 /，需关联挂载路径下的 test1/test2，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需关联挂载路径下的 test1/test2，则入参值为 /cfs/subdir/test1/test2</li></ul>
+                     * @return Paths <p>生命周期管理策略所关联的目录路径列表，每个路径必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。</p><p>示例：</p><ul><li>若挂载的是CFS根目录 /，需关联挂载路径下的 test1/test2，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需关联挂载路径下的 test1/test2，则入参值为 /cfs/subdir/test1/test2</li></ul>
                      * 
                      */
                     std::vector<PathInfo> GetPaths() const;
 
                     /**
-                     * 设置生命周期管理策略关联目录的绝对路径列表
-                     * @param _paths 生命周期管理策略关联目录的绝对路径列表
+                     * 设置<p>生命周期管理策略所关联的目录路径列表，每个路径必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。</p><p>示例：</p><ul><li>若挂载的是CFS根目录 /，需关联挂载路径下的 test1/test2，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需关联挂载路径下的 test1/test2，则入参值为 /cfs/subdir/test1/test2</li></ul>
+                     * @param _paths <p>生命周期管理策略所关联的目录路径列表，每个路径必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。</p><p>示例：</p><ul><li>若挂载的是CFS根目录 /，需关联挂载路径下的 test1/test2，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需关联挂载路径下的 test1/test2，则入参值为 /cfs/subdir/test1/test2</li></ul>
                      * 
                      */
                     void SetPaths(const std::vector<PathInfo>& _paths);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 生命周期管理策略ID
+                     * <p>生命周期管理策略ID</p>
                      */
                     std::string m_lifecyclePolicyID;
                     bool m_lifecyclePolicyIDHasBeenSet;
 
                     /**
-                     * 生命周期管理策略关联目录的绝对路径列表
+                     * <p>生命周期管理策略所关联的目录路径列表，每个路径必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。</p><p>示例：</p><ul><li>若挂载的是CFS根目录 /，需关联挂载路径下的 test1/test2，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需关联挂载路径下的 test1/test2，则入参值为 /cfs/subdir/test1/test2</li></ul>
                      */
                     std::vector<PathInfo> m_paths;
                     bool m_pathsHasBeenSet;

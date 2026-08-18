@@ -93,6 +93,10 @@
 #include <tencentcloud/adp/v20260520/model/DescribeAuditLogListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeAuditLogMetaRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeAuditLogMetaResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeConcurrencyLimitDetailListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeConcurrencyLimitDetailListResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeConsumptionDetailListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeConsumptionDetailListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeConversationRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeConversationResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeConversationListRequest.h>
@@ -101,6 +105,8 @@
 #include <tencentcloud/adp/v20260520/model/DescribeConversationMessageListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeLatestReleaseRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeLatestReleaseResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeMetricOverviewListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeMetricOverviewListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeModelListRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeModelListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribePluginRequest.h>
@@ -123,6 +129,10 @@
 #include <tencentcloud/adp/v20260520/model/DescribeSpaceListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeSystemVariableListRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeSystemVariableListResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeUsageDetailListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeUsageDetailListResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeUsageSummaryListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeUsageSummaryListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeVariableRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeVariableResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeVariableListRequest.h>
@@ -284,6 +294,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAuditLogMetaResponse> DescribeAuditLogMetaOutcome;
                 typedef std::future<DescribeAuditLogMetaOutcome> DescribeAuditLogMetaOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeAuditLogMetaRequest&, DescribeAuditLogMetaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogMetaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConcurrencyLimitDetailListResponse> DescribeConcurrencyLimitDetailListOutcome;
+                typedef std::future<DescribeConcurrencyLimitDetailListOutcome> DescribeConcurrencyLimitDetailListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeConcurrencyLimitDetailListRequest&, DescribeConcurrencyLimitDetailListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConcurrencyLimitDetailListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConsumptionDetailListResponse> DescribeConsumptionDetailListOutcome;
+                typedef std::future<DescribeConsumptionDetailListOutcome> DescribeConsumptionDetailListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeConsumptionDetailListRequest&, DescribeConsumptionDetailListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumptionDetailListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeConversationResponse> DescribeConversationOutcome;
                 typedef std::future<DescribeConversationOutcome> DescribeConversationOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeConversationRequest&, DescribeConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConversationAsyncHandler;
@@ -296,6 +312,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLatestReleaseResponse> DescribeLatestReleaseOutcome;
                 typedef std::future<DescribeLatestReleaseOutcome> DescribeLatestReleaseOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeLatestReleaseRequest&, DescribeLatestReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLatestReleaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMetricOverviewListResponse> DescribeMetricOverviewListOutcome;
+                typedef std::future<DescribeMetricOverviewListOutcome> DescribeMetricOverviewListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeMetricOverviewListRequest&, DescribeMetricOverviewListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMetricOverviewListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeModelListResponse> DescribeModelListOutcome;
                 typedef std::future<DescribeModelListOutcome> DescribeModelListOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeModelListRequest&, DescribeModelListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelListAsyncHandler;
@@ -329,6 +348,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSystemVariableListResponse> DescribeSystemVariableListOutcome;
                 typedef std::future<DescribeSystemVariableListOutcome> DescribeSystemVariableListOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeSystemVariableListRequest&, DescribeSystemVariableListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSystemVariableListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUsageDetailListResponse> DescribeUsageDetailListOutcome;
+                typedef std::future<DescribeUsageDetailListOutcome> DescribeUsageDetailListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeUsageDetailListRequest&, DescribeUsageDetailListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsageDetailListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUsageSummaryListResponse> DescribeUsageSummaryListOutcome;
+                typedef std::future<DescribeUsageSummaryListOutcome> DescribeUsageSummaryListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeUsageSummaryListRequest&, DescribeUsageSummaryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsageSummaryListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVariableResponse> DescribeVariableOutcome;
                 typedef std::future<DescribeVariableOutcome> DescribeVariableOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeVariableRequest&, DescribeVariableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVariableAsyncHandler;
@@ -711,6 +736,24 @@ namespace TencentCloud
                 DescribeAuditLogMetaOutcomeCallable DescribeAuditLogMetaCallable(const Model::DescribeAuditLogMetaRequest& request);
 
                 /**
+                 *查询并发超限明细，包含QPM/TPM超限与专属并发超限记录，返回超限发生时间、空间、应用、模型及请求内容
+                 * @param req DescribeConcurrencyLimitDetailListRequest
+                 * @return DescribeConcurrencyLimitDetailListOutcome
+                 */
+                DescribeConcurrencyLimitDetailListOutcome DescribeConcurrencyLimitDetailList(const Model::DescribeConcurrencyLimitDetailListRequest &request);
+                void DescribeConcurrencyLimitDetailListAsync(const Model::DescribeConcurrencyLimitDetailListRequest& request, const DescribeConcurrencyLimitDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConcurrencyLimitDetailListOutcomeCallable DescribeConcurrencyLimitDetailListCallable(const Model::DescribeConcurrencyLimitDetailListRequest& request);
+
+                /**
+                 *查询资源消耗明细，包含计费相关字段（消耗类型、消耗目标、消耗场景、套餐包及PU消耗等）
+                 * @param req DescribeConsumptionDetailListRequest
+                 * @return DescribeConsumptionDetailListOutcome
+                 */
+                DescribeConsumptionDetailListOutcome DescribeConsumptionDetailList(const Model::DescribeConsumptionDetailListRequest &request);
+                void DescribeConsumptionDetailListAsync(const Model::DescribeConsumptionDetailListRequest& request, const DescribeConsumptionDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConsumptionDetailListOutcomeCallable DescribeConsumptionDetailListCallable(const Model::DescribeConsumptionDetailListRequest& request);
+
+                /**
                  *查看会话信息
                  * @param req DescribeConversationRequest
                  * @return DescribeConversationOutcome
@@ -745,6 +788,15 @@ namespace TencentCloud
                 DescribeLatestReleaseOutcome DescribeLatestRelease(const Model::DescribeLatestReleaseRequest &request);
                 void DescribeLatestReleaseAsync(const Model::DescribeLatestReleaseRequest& request, const DescribeLatestReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLatestReleaseOutcomeCallable DescribeLatestReleaseCallable(const Model::DescribeLatestReleaseRequest& request);
+
+                /**
+                 *查询看板总览KPI卡片数据，通过resource_type区分资源看板与业务看板域，返回各域KPI指标列表
+                 * @param req DescribeMetricOverviewListRequest
+                 * @return DescribeMetricOverviewListOutcome
+                 */
+                DescribeMetricOverviewListOutcome DescribeMetricOverviewList(const Model::DescribeMetricOverviewListRequest &request);
+                void DescribeMetricOverviewListAsync(const Model::DescribeMetricOverviewListRequest& request, const DescribeMetricOverviewListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMetricOverviewListOutcomeCallable DescribeMetricOverviewListCallable(const Model::DescribeMetricOverviewListRequest& request);
 
                 /**
                  *查询模型列表
@@ -844,6 +896,24 @@ namespace TencentCloud
                 DescribeSystemVariableListOutcome DescribeSystemVariableList(const Model::DescribeSystemVariableListRequest &request);
                 void DescribeSystemVariableListAsync(const Model::DescribeSystemVariableListRequest& request, const DescribeSystemVariableListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSystemVariableListOutcomeCallable DescribeSystemVariableListCallable(const Model::DescribeSystemVariableListRequest& request);
+
+                /**
+                 *查询资源调用时序明细，支持模型和插件两类资源，按时间顺序返回每条调用记录的详细信息
+                 * @param req DescribeUsageDetailListRequest
+                 * @return DescribeUsageDetailListOutcome
+                 */
+                DescribeUsageDetailListOutcome DescribeUsageDetailList(const Model::DescribeUsageDetailListRequest &request);
+                void DescribeUsageDetailListAsync(const Model::DescribeUsageDetailListRequest& request, const DescribeUsageDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUsageDetailListOutcomeCallable DescribeUsageDetailListCallable(const Model::DescribeUsageDetailListRequest& request);
+
+                /**
+                 *查询资源用量聚合明细，支持模型、插件、平台三类资源，按空间/应用维度聚合展示调用次数、Token消耗等指标
+                 * @param req DescribeUsageSummaryListRequest
+                 * @return DescribeUsageSummaryListOutcome
+                 */
+                DescribeUsageSummaryListOutcome DescribeUsageSummaryList(const Model::DescribeUsageSummaryListRequest &request);
+                void DescribeUsageSummaryListAsync(const Model::DescribeUsageSummaryListRequest& request, const DescribeUsageSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUsageSummaryListOutcomeCallable DescribeUsageSummaryListCallable(const Model::DescribeUsageSummaryListRequest& request);
 
                 /**
                  *获取参数变量

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取true 代表开通 ，false 代表未开通
-                     * @return SSLEnabled true 代表开通 ，false 代表未开通
+                     * 获取<p>true 代表开通 ，false 代表未开通</p>
+                     * @return SSLEnabled <p>true 代表开通 ，false 代表未开通</p>
                      * 
                      */
                     bool GetSSLEnabled() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool SSLEnabledHasBeenSet() const;
 
                     /**
-                     * 获取云端根证书下载链接
-                     * @return CAUrl 云端根证书下载链接
+                     * 获取<p>云端根证书下载链接</p>
+                     * @return CAUrl <p>云端根证书下载链接</p>
                      * 
                      */
                     std::string GetCAUrl() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool CAUrlHasBeenSet() const;
 
                     /**
-                     * 获取服务器证书中配置的内网或外网连接地址
-                     * @return ConnectAddress 服务器证书中配置的内网或外网连接地址
+                     * 获取<p>服务器证书中配置的内网或外网连接地址</p>
+                     * @return ConnectAddress <p>服务器证书中配置的内网或外网连接地址</p>
                      * 
                      */
                     std::string GetConnectAddress() const;
@@ -85,25 +85,85 @@ namespace TencentCloud
                      */
                     bool ConnectAddressHasBeenSet() const;
 
+                    /**
+                     * 获取<p>CA证书公钥，仅云盘版</p>
+                     * @return CACert <p>CA证书公钥，仅云盘版</p>
+                     * 
+                     */
+                    std::string GetCACert() const;
+
+                    /**
+                     * 判断参数 CACert 是否已赋值
+                     * @return CACert 是否已赋值
+                     * 
+                     */
+                    bool CACertHasBeenSet() const;
+
+                    /**
+                     * 获取<p>JKS公钥，仅云盘版</p>
+                     * @return CAJKS <p>JKS公钥，仅云盘版</p>
+                     * 
+                     */
+                    std::string GetCAJKS() const;
+
+                    /**
+                     * 判断参数 CAJKS 是否已赋值
+                     * @return CAJKS 是否已赋值
+                     * 
+                     */
+                    bool CAJKSHasBeenSet() const;
+
+                    /**
+                     * 获取<p>CAP7B公钥，仅云盘版</p>
+                     * @return CAP7B <p>CAP7B公钥，仅云盘版</p>
+                     * 
+                     */
+                    std::string GetCAP7B() const;
+
+                    /**
+                     * 判断参数 CAP7B 是否已赋值
+                     * @return CAP7B 是否已赋值
+                     * 
+                     */
+                    bool CAP7BHasBeenSet() const;
+
                 private:
 
                     /**
-                     * true 代表开通 ，false 代表未开通
+                     * <p>true 代表开通 ，false 代表未开通</p>
                      */
                     bool m_sSLEnabled;
                     bool m_sSLEnabledHasBeenSet;
 
                     /**
-                     * 云端根证书下载链接
+                     * <p>云端根证书下载链接</p>
                      */
                     std::string m_cAUrl;
                     bool m_cAUrlHasBeenSet;
 
                     /**
-                     * 服务器证书中配置的内网或外网连接地址
+                     * <p>服务器证书中配置的内网或外网连接地址</p>
                      */
                     std::string m_connectAddress;
                     bool m_connectAddressHasBeenSet;
+
+                    /**
+                     * <p>CA证书公钥，仅云盘版</p>
+                     */
+                    std::string m_cACert;
+                    bool m_cACertHasBeenSet;
+
+                    /**
+                     * <p>JKS公钥，仅云盘版</p>
+                     */
+                    std::string m_cAJKS;
+                    bool m_cAJKSHasBeenSet;
+
+                    /**
+                     * <p>CAP7B公钥，仅云盘版</p>
+                     */
+                    std::string m_cAP7B;
+                    bool m_cAP7BHasBeenSet;
 
                 };
             }

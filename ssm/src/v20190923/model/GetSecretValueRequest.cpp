@@ -24,7 +24,9 @@ using namespace std;
 
 GetSecretValueRequest::GetSecretValueRequest() :
     m_secretNameHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
+    m_versionIdHasBeenSet(false),
+    m_encryptionPublicKeyHasBeenSet(false),
+    m_encryptionAlgorithmHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string GetSecretValueRequest::ToJsonString() const
         string key = "VersionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_versionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptionPublicKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptionPublicKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_encryptionPublicKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptionAlgorithmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptionAlgorithm";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_encryptionAlgorithm.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +107,38 @@ void GetSecretValueRequest::SetVersionId(const string& _versionId)
 bool GetSecretValueRequest::VersionIdHasBeenSet() const
 {
     return m_versionIdHasBeenSet;
+}
+
+string GetSecretValueRequest::GetEncryptionPublicKey() const
+{
+    return m_encryptionPublicKey;
+}
+
+void GetSecretValueRequest::SetEncryptionPublicKey(const string& _encryptionPublicKey)
+{
+    m_encryptionPublicKey = _encryptionPublicKey;
+    m_encryptionPublicKeyHasBeenSet = true;
+}
+
+bool GetSecretValueRequest::EncryptionPublicKeyHasBeenSet() const
+{
+    return m_encryptionPublicKeyHasBeenSet;
+}
+
+string GetSecretValueRequest::GetEncryptionAlgorithm() const
+{
+    return m_encryptionAlgorithm;
+}
+
+void GetSecretValueRequest::SetEncryptionAlgorithm(const string& _encryptionAlgorithm)
+{
+    m_encryptionAlgorithm = _encryptionAlgorithm;
+    m_encryptionAlgorithmHasBeenSet = true;
+}
+
+bool GetSecretValueRequest::EncryptionAlgorithmHasBeenSet() const
+{
+    return m_encryptionAlgorithmHasBeenSet;
 }
 
 

@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>文件系统路径</p>
-                     * @return FsPath <p>文件系统路径</p>
+                     * 获取<p>文件系统内目录路径，不涉及实际挂载子目录/根目录，无需以/cfs/作为前缀</p>
+                     * @return FsPath <p>文件系统内目录路径，不涉及实际挂载子目录/根目录，无需以/cfs/作为前缀</p>
                      * 
                      */
                     std::string GetFsPath() const;
 
                     /**
-                     * 设置<p>文件系统路径</p>
-                     * @param _fsPath <p>文件系统路径</p>
+                     * 设置<p>文件系统内目录路径，不涉及实际挂载子目录/根目录，无需以/cfs/作为前缀</p>
+                     * @param _fsPath <p>文件系统内目录路径，不涉及实际挂载子目录/根目录，无需以/cfs/作为前缀</p>
                      * 
                      */
                     void SetFsPath(const std::string& _fsPath);
@@ -417,7 +417,7 @@ namespace TencentCloud
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * <p>文件系统路径</p>
+                     * <p>文件系统内目录路径，不涉及实际挂载子目录/根目录，无需以/cfs/作为前缀</p>
                      */
                     std::string m_fsPath;
                     bool m_fsPathHasBeenSet;

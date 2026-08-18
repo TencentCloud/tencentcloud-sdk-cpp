@@ -32,7 +32,10 @@ DescribeTableContentPreviewRequest::DescribeTableContentPreviewRequest() :
     m_rowNumHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
     m_taskIdHasBeenSet(false),
-    m_partitionNameHasBeenSet(false)
+    m_partitionNameHasBeenSet(false),
+    m_resourceGroupIdHasBeenSet(false),
+    m_sqlHasBeenSet(false),
+    m_engineIdHasBeenSet(false)
 {
 }
 
@@ -121,6 +124,30 @@ string DescribeTableContentPreviewRequest::ToJsonString() const
         string key = "PartitionName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_partitionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sqlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sql";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sql.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_engineIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_engineId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -289,6 +316,54 @@ void DescribeTableContentPreviewRequest::SetPartitionName(const string& _partiti
 bool DescribeTableContentPreviewRequest::PartitionNameHasBeenSet() const
 {
     return m_partitionNameHasBeenSet;
+}
+
+string DescribeTableContentPreviewRequest::GetResourceGroupId() const
+{
+    return m_resourceGroupId;
+}
+
+void DescribeTableContentPreviewRequest::SetResourceGroupId(const string& _resourceGroupId)
+{
+    m_resourceGroupId = _resourceGroupId;
+    m_resourceGroupIdHasBeenSet = true;
+}
+
+bool DescribeTableContentPreviewRequest::ResourceGroupIdHasBeenSet() const
+{
+    return m_resourceGroupIdHasBeenSet;
+}
+
+string DescribeTableContentPreviewRequest::GetSql() const
+{
+    return m_sql;
+}
+
+void DescribeTableContentPreviewRequest::SetSql(const string& _sql)
+{
+    m_sql = _sql;
+    m_sqlHasBeenSet = true;
+}
+
+bool DescribeTableContentPreviewRequest::SqlHasBeenSet() const
+{
+    return m_sqlHasBeenSet;
+}
+
+string DescribeTableContentPreviewRequest::GetEngineId() const
+{
+    return m_engineId;
+}
+
+void DescribeTableContentPreviewRequest::SetEngineId(const string& _engineId)
+{
+    m_engineId = _engineId;
+    m_engineIdHasBeenSet = true;
+}
+
+bool DescribeTableContentPreviewRequest::EngineIdHasBeenSet() const
+{
+    return m_engineIdHasBeenSet;
 }
 
 

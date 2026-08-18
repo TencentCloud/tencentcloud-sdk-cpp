@@ -43,36 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务工单类型
-                     * @return WorkOrderType 服务工单类型
-                     * 
-                     */
-                    std::vector<std::string> GetWorkOrderType() const;
-
-                    /**
-                     * 设置服务工单类型
-                     * @param _workOrderType 服务工单类型
-                     * 
-                     */
-                    void SetWorkOrderType(const std::vector<std::string>& _workOrderType);
-
-                    /**
-                     * 判断参数 WorkOrderType 是否已赋值
-                     * @return WorkOrderType 是否已赋值
-                     * 
-                     */
-                    bool WorkOrderTypeHasBeenSet() const;
-
-                    /**
-                     * 获取要导出的工单的起始时间
-                     * @return BeginDateTime 要导出的工单的起始时间
+                     * 获取<p>要导出的工单的起始时间</p>
+                     * @return BeginDateTime <p>要导出的工单的起始时间</p>
                      * 
                      */
                     std::string GetBeginDateTime() const;
 
                     /**
-                     * 设置要导出的工单的起始时间
-                     * @param _beginDateTime 要导出的工单的起始时间
+                     * 设置<p>要导出的工单的起始时间</p>
+                     * @param _beginDateTime <p>要导出的工单的起始时间</p>
                      * 
                      */
                     void SetBeginDateTime(const std::string& _beginDateTime);
@@ -85,15 +64,15 @@ namespace TencentCloud
                     bool BeginDateTimeHasBeenSet() const;
 
                     /**
-                     * 获取要导出的工单的结束时间
-                     * @return EndDateTime 要导出的工单的结束时间
+                     * 获取<p>要导出的工单的结束时间</p>
+                     * @return EndDateTime <p>要导出的工单的结束时间</p>
                      * 
                      */
                     std::string GetEndDateTime() const;
 
                     /**
-                     * 设置要导出的工单的结束时间
-                     * @param _endDateTime 要导出的工单的结束时间
+                     * 设置<p>要导出的工单的结束时间</p>
+                     * @param _endDateTime <p>要导出的工单的结束时间</p>
                      * 
                      */
                     void SetEndDateTime(const std::string& _endDateTime);
@@ -105,25 +84,46 @@ namespace TencentCloud
                      */
                     bool EndDateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>服务工单类型</p>
+                     * @return WorkOrderType <p>服务工单类型</p>
+                     * 
+                     */
+                    std::vector<std::string> GetWorkOrderType() const;
+
+                    /**
+                     * 设置<p>服务工单类型</p>
+                     * @param _workOrderType <p>服务工单类型</p>
+                     * 
+                     */
+                    void SetWorkOrderType(const std::vector<std::string>& _workOrderType);
+
+                    /**
+                     * 判断参数 WorkOrderType 是否已赋值
+                     * @return WorkOrderType 是否已赋值
+                     * 
+                     */
+                    bool WorkOrderTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 服务工单类型
-                     */
-                    std::vector<std::string> m_workOrderType;
-                    bool m_workOrderTypeHasBeenSet;
-
-                    /**
-                     * 要导出的工单的起始时间
+                     * <p>要导出的工单的起始时间</p>
                      */
                     std::string m_beginDateTime;
                     bool m_beginDateTimeHasBeenSet;
 
                     /**
-                     * 要导出的工单的结束时间
+                     * <p>要导出的工单的结束时间</p>
                      */
                     std::string m_endDateTime;
                     bool m_endDateTimeHasBeenSet;
+
+                    /**
+                     * <p>服务工单类型</p>
+                     */
+                    std::vector<std::string> m_workOrderType;
+                    bool m_workOrderTypeHasBeenSet;
 
                 };
             }

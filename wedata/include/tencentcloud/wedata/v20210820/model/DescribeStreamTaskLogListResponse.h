@@ -76,6 +76,20 @@ namespace TencentCloud
                      */
                     bool LogContentListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>滚动查询游标</p>
+                     * @return Context <p>滚动查询游标</p>
+                     * 
+                     */
+                    std::string GetContext() const;
+
+                    /**
+                     * 判断参数 Context 是否已赋值
+                     * @return Context 是否已赋值
+                     * 
+                     */
+                    bool ContextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +105,12 @@ namespace TencentCloud
                      */
                     std::vector<LogContentInfo> m_logContentList;
                     bool m_logContentListHasBeenSet;
+
+                    /**
+                     * <p>滚动查询游标</p>
+                     */
+                    std::string m_context;
+                    bool m_contextHasBeenSet;
 
                 };
             }

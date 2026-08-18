@@ -46,9 +46,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取采集配置
+                     * 获取<p>采集配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LogConfigs 采集配置
+                     * @return LogConfigs <p>采集配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -62,9 +62,9 @@ namespace TencentCloud
                     bool LogConfigsHasBeenSet() const;
 
                     /**
-                     * 获取服务日志的配置信息
+                     * 获取<p>服务日志的配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServiceLogConfigs 服务日志的配置信息
+                     * @return ServiceLogConfigs <p>服务日志的配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -78,9 +78,9 @@ namespace TencentCloud
                     bool ServiceLogConfigsHasBeenSet() const;
 
                     /**
-                     * 获取弃用
+                     * 获取<p>弃用</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastVersion 弃用
+                     * @return LastVersion <p>弃用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -94,9 +94,9 @@ namespace TencentCloud
                     bool LastVersionHasBeenSet() const;
 
                     /**
-                     * 获取弃用
+                     * 获取<p>弃用</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NeedUpdate 弃用
+                     * @return NeedUpdate <p>弃用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -110,9 +110,9 @@ namespace TencentCloud
                     bool NeedUpdateHasBeenSet() const;
 
                     /**
-                     * 获取弃用
+                     * 获取<p>弃用</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return URL 弃用
+                     * @return URL <p>弃用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -126,9 +126,9 @@ namespace TencentCloud
                     bool URLHasBeenSet() const;
 
                     /**
-                     * 获取弃用
+                     * 获取<p>弃用</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FileMd5 弃用
+                     * @return FileMd5 <p>弃用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -144,42 +144,42 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 采集配置
+                     * <p>采集配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LogConfigInfo> m_logConfigs;
                     bool m_logConfigsHasBeenSet;
 
                     /**
-                     * 服务日志的配置信息
+                     * <p>服务日志的配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ServiceLogConfigInfo> m_serviceLogConfigs;
                     bool m_serviceLogConfigsHasBeenSet;
 
                     /**
-                     * 弃用
+                     * <p>弃用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastVersion;
                     bool m_lastVersionHasBeenSet;
 
                     /**
-                     * 弃用
+                     * <p>弃用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_needUpdate;
                     bool m_needUpdateHasBeenSet;
 
                     /**
-                     * 弃用
+                     * <p>弃用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uRL;
                     bool m_uRLHasBeenSet;
 
                     /**
-                     * 弃用
+                     * <p>弃用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileMd5;

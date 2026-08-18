@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/adp/v20260520/model/Identity.h>
 
 
 namespace TencentCloud
@@ -68,15 +69,15 @@ namespace TencentCloud
                     bool EnabledHasBeenSet() const;
 
                     /**
-                     * 获取<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>SHARE_SCOPE_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>SHARE_SCOPE_TYPE_ALL</td><td>1</td><td></td></tr><tr><td>SHARE_SCOPE_TYPE_ACCOUNT</td><td>2</td><td></td></tr></tbody></table>
-                     * @return ShareScope <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>SHARE_SCOPE_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>SHARE_SCOPE_TYPE_ALL</td><td>1</td><td></td></tr><tr><td>SHARE_SCOPE_TYPE_ACCOUNT</td><td>2</td><td></td></tr></tbody></table>
+                     * 获取<p>共享范围类型，1：企业全员，2：指定账户，3：指定空间</p>
+                     * @return ShareScope <p>共享范围类型，1：企业全员，2：指定账户，3：指定空间</p>
                      * 
                      */
                     int64_t GetShareScope() const;
 
                     /**
-                     * 设置<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>SHARE_SCOPE_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>SHARE_SCOPE_TYPE_ALL</td><td>1</td><td></td></tr><tr><td>SHARE_SCOPE_TYPE_ACCOUNT</td><td>2</td><td></td></tr></tbody></table>
-                     * @param _shareScope <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>SHARE_SCOPE_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>SHARE_SCOPE_TYPE_ALL</td><td>1</td><td></td></tr><tr><td>SHARE_SCOPE_TYPE_ACCOUNT</td><td>2</td><td></td></tr></tbody></table>
+                     * 设置<p>共享范围类型，1：企业全员，2：指定账户，3：指定空间</p>
+                     * @param _shareScope <p>共享范围类型，1：企业全员，2：指定账户，3：指定空间</p>
                      * 
                      */
                     void SetShareScope(const int64_t& _shareScope);
@@ -109,6 +110,27 @@ namespace TencentCloud
                      */
                     bool TagIdListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>共享范围信息(用户时StrId为uin,Name为用户名称;空间时StrId为空间ID,Name为空间名称)</p>
+                     * @return ShareScopeList <p>共享范围信息(用户时StrId为uin,Name为用户名称;空间时StrId为空间ID,Name为空间名称)</p>
+                     * 
+                     */
+                    std::vector<Identity> GetShareScopeList() const;
+
+                    /**
+                     * 设置<p>共享范围信息(用户时StrId为uin,Name为用户名称;空间时StrId为空间ID,Name为空间名称)</p>
+                     * @param _shareScopeList <p>共享范围信息(用户时StrId为uin,Name为用户名称;空间时StrId为空间ID,Name为空间名称)</p>
+                     * 
+                     */
+                    void SetShareScopeList(const std::vector<Identity>& _shareScopeList);
+
+                    /**
+                     * 判断参数 ShareScopeList 是否已赋值
+                     * @return ShareScopeList 是否已赋值
+                     * 
+                     */
+                    bool ShareScopeListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -118,7 +140,7 @@ namespace TencentCloud
                     bool m_enabledHasBeenSet;
 
                     /**
-                     * <table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>SHARE_SCOPE_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>SHARE_SCOPE_TYPE_ALL</td><td>1</td><td></td></tr><tr><td>SHARE_SCOPE_TYPE_ACCOUNT</td><td>2</td><td></td></tr></tbody></table>
+                     * <p>共享范围类型，1：企业全员，2：指定账户，3：指定空间</p>
                      */
                     int64_t m_shareScope;
                     bool m_shareScopeHasBeenSet;
@@ -128,6 +150,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_tagIdList;
                     bool m_tagIdListHasBeenSet;
+
+                    /**
+                     * <p>共享范围信息(用户时StrId为uin,Name为用户名称;空间时StrId为空间ID,Name为空间名称)</p>
+                     */
+                    std::vector<Identity> m_shareScopeList;
+                    bool m_shareScopeListHasBeenSet;
 
                 };
             }

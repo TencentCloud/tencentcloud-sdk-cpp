@@ -29,7 +29,10 @@ CustomerClusterAttr::CustomerClusterAttr() :
     m_clusterTypeHasBeenSet(false),
     m_managerNodesHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_clusterMountSetHasBeenSet(false)
+    m_clusterMountSetHasBeenSet(false),
+    m_zoneHasBeenSet(false),
+    m_mountStorageNumHasBeenSet(false),
+    m_storageFileSystemIdHasBeenSet(false)
 {
 }
 
@@ -148,6 +151,36 @@ CoreInternalOutcome CustomerClusterAttr::Deserialize(const rapidjson::Value &val
         m_clusterMountSetHasBeenSet = true;
     }
 
+    if (value.HasMember("Zone") && !value["Zone"].IsNull())
+    {
+        if (!value["Zone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomerClusterAttr.Zone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zone = string(value["Zone"].GetString());
+        m_zoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("MountStorageNum") && !value["MountStorageNum"].IsNull())
+    {
+        if (!value["MountStorageNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomerClusterAttr.MountStorageNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_mountStorageNum = value["MountStorageNum"].GetUint64();
+        m_mountStorageNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("StorageFileSystemId") && !value["StorageFileSystemId"].IsNull())
+    {
+        if (!value["StorageFileSystemId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomerClusterAttr.StorageFileSystemId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageFileSystemId = string(value["StorageFileSystemId"].GetString());
+        m_storageFileSystemIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -239,6 +272,30 @@ void CustomerClusterAttr::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mountStorageNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MountStorageNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mountStorageNum, allocator);
+    }
+
+    if (m_storageFileSystemIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageFileSystemId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageFileSystemId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -386,5 +443,53 @@ void CustomerClusterAttr::SetClusterMountSet(const vector<ClusterMountAttr>& _cl
 bool CustomerClusterAttr::ClusterMountSetHasBeenSet() const
 {
     return m_clusterMountSetHasBeenSet;
+}
+
+string CustomerClusterAttr::GetZone() const
+{
+    return m_zone;
+}
+
+void CustomerClusterAttr::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool CustomerClusterAttr::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
+}
+
+uint64_t CustomerClusterAttr::GetMountStorageNum() const
+{
+    return m_mountStorageNum;
+}
+
+void CustomerClusterAttr::SetMountStorageNum(const uint64_t& _mountStorageNum)
+{
+    m_mountStorageNum = _mountStorageNum;
+    m_mountStorageNumHasBeenSet = true;
+}
+
+bool CustomerClusterAttr::MountStorageNumHasBeenSet() const
+{
+    return m_mountStorageNumHasBeenSet;
+}
+
+string CustomerClusterAttr::GetStorageFileSystemId() const
+{
+    return m_storageFileSystemId;
+}
+
+void CustomerClusterAttr::SetStorageFileSystemId(const string& _storageFileSystemId)
+{
+    m_storageFileSystemId = _storageFileSystemId;
+    m_storageFileSystemIdHasBeenSet = true;
+}
+
+bool CustomerClusterAttr::StorageFileSystemIdHasBeenSet() const
+{
+    return m_storageFileSystemIdHasBeenSet;
 }
 

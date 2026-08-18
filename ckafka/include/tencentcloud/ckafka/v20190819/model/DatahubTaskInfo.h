@@ -383,6 +383,27 @@ namespace TencentCloud
                      */
                     bool AutoExpandFlagHasBeenSet() const;
 
+                    /**
+                     * 获取<p>不影响任务执行的警告信息</p>
+                     * @return WarnMessage <p>不影响任务执行的警告信息</p>
+                     * 
+                     */
+                    std::string GetWarnMessage() const;
+
+                    /**
+                     * 设置<p>不影响任务执行的警告信息</p>
+                     * @param _warnMessage <p>不影响任务执行的警告信息</p>
+                     * 
+                     */
+                    void SetWarnMessage(const std::string& _warnMessage);
+
+                    /**
+                     * 判断参数 WarnMessage 是否已赋值
+                     * @return WarnMessage 是否已赋值
+                     * 
+                     */
+                    bool WarnMessageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -480,6 +501,12 @@ namespace TencentCloud
                      */
                     bool m_autoExpandFlag;
                     bool m_autoExpandFlagHasBeenSet;
+
+                    /**
+                     * <p>不影响任务执行的警告信息</p>
+                     */
+                    std::string m_warnMessage;
+                    bool m_warnMessageHasBeenSet;
 
                 };
             }

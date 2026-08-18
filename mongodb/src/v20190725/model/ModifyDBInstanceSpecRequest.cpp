@@ -34,7 +34,8 @@ ModifyDBInstanceSpecRequest::ModifyDBInstanceSpecRequest() :
     m_addNodeListHasBeenSet(false),
     m_removeNodeListHasBeenSet(false),
     m_cpuHasBeenSet(false),
-    m_machineCodeHasBeenSet(false)
+    m_machineCodeHasBeenSet(false),
+    m_modifyShardListHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,21 @@ string ModifyDBInstanceSpecRequest::ToJsonString() const
         string key = "MachineCode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_machineCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifyShardListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyShardList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_modifyShardList.begin(); itr != m_modifyShardList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -353,6 +369,22 @@ void ModifyDBInstanceSpecRequest::SetMachineCode(const string& _machineCode)
 bool ModifyDBInstanceSpecRequest::MachineCodeHasBeenSet() const
 {
     return m_machineCodeHasBeenSet;
+}
+
+vector<ModifyShardSpecInfo> ModifyDBInstanceSpecRequest::GetModifyShardList() const
+{
+    return m_modifyShardList;
+}
+
+void ModifyDBInstanceSpecRequest::SetModifyShardList(const vector<ModifyShardSpecInfo>& _modifyShardList)
+{
+    m_modifyShardList = _modifyShardList;
+    m_modifyShardListHasBeenSet = true;
+}
+
+bool ModifyDBInstanceSpecRequest::ModifyShardListHasBeenSet() const
+{
+    return m_modifyShardListHasBeenSet;
 }
 
 

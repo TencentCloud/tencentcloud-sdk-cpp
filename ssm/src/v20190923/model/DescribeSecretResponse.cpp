@@ -45,7 +45,8 @@ DescribeSecretResponse::DescribeSecretResponse() :
     m_encryptSwitchingHasBeenSet(false),
     m_createUinStringHasBeenSet(false),
     m_targetUinStringHasBeenSet(false),
-    m_accountInfoListHasBeenSet(false)
+    m_accountInfoListHasBeenSet(false),
+    m_nextRotationTimeHasBeenSet(false)
 {
 }
 
@@ -316,6 +317,16 @@ CoreInternalOutcome DescribeSecretResponse::Deserialize(const string &payload)
         m_accountInfoListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NextRotationTime") && !rsp["NextRotationTime"].IsNull())
+    {
+        if (!rsp["NextRotationTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NextRotationTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nextRotationTime = string(rsp["NextRotationTime"].GetString());
+        m_nextRotationTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -512,6 +523,14 @@ string DescribeSecretResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_nextRotationTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NextRotationTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nextRotationTime.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -744,6 +763,16 @@ vector<SecretAccountInfo> DescribeSecretResponse::GetAccountInfoList() const
 bool DescribeSecretResponse::AccountInfoListHasBeenSet() const
 {
     return m_accountInfoListHasBeenSet;
+}
+
+string DescribeSecretResponse::GetNextRotationTime() const
+{
+    return m_nextRotationTime;
+}
+
+bool DescribeSecretResponse::NextRotationTimeHasBeenSet() const
+{
+    return m_nextRotationTimeHasBeenSet;
 }
 
 

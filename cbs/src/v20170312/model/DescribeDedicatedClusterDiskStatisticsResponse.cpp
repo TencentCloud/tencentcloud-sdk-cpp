@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cbs::V20170312::Model;
 using namespace std;
 
-DescribeDedicatedClusterDiskStatisticsResponse::DescribeDedicatedClusterDiskStatisticsResponse()
+DescribeDedicatedClusterDiskStatisticsResponse::DescribeDedicatedClusterDiskStatisticsResponse() :
+    m_dedicatedClusterDiskStatisticSetHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome DescribeDedicatedClusterDiskStatisticsResponse::Deserialize(
     }
 
 
+    if (rsp.HasMember("DedicatedClusterDiskStatisticSet") && !rsp["DedicatedClusterDiskStatisticSet"].IsNull())
+    {
+        if (!rsp["DedicatedClusterDiskStatisticSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DedicatedClusterDiskStatisticSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["DedicatedClusterDiskStatisticSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DedicatedClusterDiskStatistic item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dedicatedClusterDiskStatisticSet.push_back(item);
+        }
+        m_dedicatedClusterDiskStatisticSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +91,21 @@ string DescribeDedicatedClusterDiskStatisticsResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_dedicatedClusterDiskStatisticSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DedicatedClusterDiskStatisticSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dedicatedClusterDiskStatisticSet.begin(); itr != m_dedicatedClusterDiskStatisticSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +118,15 @@ string DescribeDedicatedClusterDiskStatisticsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<DedicatedClusterDiskStatistic> DescribeDedicatedClusterDiskStatisticsResponse::GetDedicatedClusterDiskStatisticSet() const
+{
+    return m_dedicatedClusterDiskStatisticSet;
+}
+
+bool DescribeDedicatedClusterDiskStatisticsResponse::DedicatedClusterDiskStatisticSetHasBeenSet() const
+{
+    return m_dedicatedClusterDiskStatisticSetHasBeenSet;
+}
 
 

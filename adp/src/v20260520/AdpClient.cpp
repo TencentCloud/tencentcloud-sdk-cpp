@@ -1790,6 +1790,106 @@ AdpClient::DescribeAuditLogMetaOutcomeCallable AdpClient::DescribeAuditLogMetaCa
     return prom->get_future();
 }
 
+AdpClient::DescribeConcurrencyLimitDetailListOutcome AdpClient::DescribeConcurrencyLimitDetailList(const DescribeConcurrencyLimitDetailListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConcurrencyLimitDetailList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConcurrencyLimitDetailListResponse rsp = DescribeConcurrencyLimitDetailListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConcurrencyLimitDetailListOutcome(rsp);
+        else
+            return DescribeConcurrencyLimitDetailListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConcurrencyLimitDetailListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeConcurrencyLimitDetailListAsync(const DescribeConcurrencyLimitDetailListRequest& request, const DescribeConcurrencyLimitDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeConcurrencyLimitDetailListRequest&;
+    using Resp = DescribeConcurrencyLimitDetailListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeConcurrencyLimitDetailList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeConcurrencyLimitDetailListOutcomeCallable AdpClient::DescribeConcurrencyLimitDetailListCallable(const DescribeConcurrencyLimitDetailListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeConcurrencyLimitDetailListOutcome>>();
+    DescribeConcurrencyLimitDetailListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeConcurrencyLimitDetailListRequest&,
+        DescribeConcurrencyLimitDetailListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeConsumptionDetailListOutcome AdpClient::DescribeConsumptionDetailList(const DescribeConsumptionDetailListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConsumptionDetailList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConsumptionDetailListResponse rsp = DescribeConsumptionDetailListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConsumptionDetailListOutcome(rsp);
+        else
+            return DescribeConsumptionDetailListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConsumptionDetailListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeConsumptionDetailListAsync(const DescribeConsumptionDetailListRequest& request, const DescribeConsumptionDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeConsumptionDetailListRequest&;
+    using Resp = DescribeConsumptionDetailListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeConsumptionDetailList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeConsumptionDetailListOutcomeCallable AdpClient::DescribeConsumptionDetailListCallable(const DescribeConsumptionDetailListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeConsumptionDetailListOutcome>>();
+    DescribeConsumptionDetailListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeConsumptionDetailListRequest&,
+        DescribeConsumptionDetailListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::DescribeConversationOutcome AdpClient::DescribeConversation(const DescribeConversationRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeConversation");
@@ -1982,6 +2082,56 @@ AdpClient::DescribeLatestReleaseOutcomeCallable AdpClient::DescribeLatestRelease
         const AdpClient*,
         const DescribeLatestReleaseRequest&,
         DescribeLatestReleaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeMetricOverviewListOutcome AdpClient::DescribeMetricOverviewList(const DescribeMetricOverviewListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMetricOverviewList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMetricOverviewListResponse rsp = DescribeMetricOverviewListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMetricOverviewListOutcome(rsp);
+        else
+            return DescribeMetricOverviewListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMetricOverviewListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeMetricOverviewListAsync(const DescribeMetricOverviewListRequest& request, const DescribeMetricOverviewListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMetricOverviewListRequest&;
+    using Resp = DescribeMetricOverviewListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMetricOverviewList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeMetricOverviewListOutcomeCallable AdpClient::DescribeMetricOverviewListCallable(const DescribeMetricOverviewListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMetricOverviewListOutcome>>();
+    DescribeMetricOverviewListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeMetricOverviewListRequest&,
+        DescribeMetricOverviewListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2532,6 +2682,106 @@ AdpClient::DescribeSystemVariableListOutcomeCallable AdpClient::DescribeSystemVa
         const AdpClient*,
         const DescribeSystemVariableListRequest&,
         DescribeSystemVariableListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeUsageDetailListOutcome AdpClient::DescribeUsageDetailList(const DescribeUsageDetailListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUsageDetailList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUsageDetailListResponse rsp = DescribeUsageDetailListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUsageDetailListOutcome(rsp);
+        else
+            return DescribeUsageDetailListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUsageDetailListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeUsageDetailListAsync(const DescribeUsageDetailListRequest& request, const DescribeUsageDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeUsageDetailListRequest&;
+    using Resp = DescribeUsageDetailListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeUsageDetailList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeUsageDetailListOutcomeCallable AdpClient::DescribeUsageDetailListCallable(const DescribeUsageDetailListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeUsageDetailListOutcome>>();
+    DescribeUsageDetailListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeUsageDetailListRequest&,
+        DescribeUsageDetailListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeUsageSummaryListOutcome AdpClient::DescribeUsageSummaryList(const DescribeUsageSummaryListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUsageSummaryList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUsageSummaryListResponse rsp = DescribeUsageSummaryListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUsageSummaryListOutcome(rsp);
+        else
+            return DescribeUsageSummaryListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUsageSummaryListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeUsageSummaryListAsync(const DescribeUsageSummaryListRequest& request, const DescribeUsageSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeUsageSummaryListRequest&;
+    using Resp = DescribeUsageSummaryListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeUsageSummaryList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeUsageSummaryListOutcomeCallable AdpClient::DescribeUsageSummaryListCallable(const DescribeUsageSummaryListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeUsageSummaryListOutcome>>();
+    DescribeUsageSummaryListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeUsageSummaryListRequest&,
+        DescribeUsageSummaryListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

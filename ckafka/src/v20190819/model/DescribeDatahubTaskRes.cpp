@@ -40,7 +40,8 @@ DescribeDatahubTaskRes::DescribeDatahubTaskRes() :
     m_isolateStatusHasBeenSet(false),
     m_taskMaxHasBeenSet(false),
     m_syncThrottleLimitHasBeenSet(false),
-    m_autoExpandFlagHasBeenSet(false)
+    m_autoExpandFlagHasBeenSet(false),
+    m_warnMessageHasBeenSet(false)
 {
 }
 
@@ -297,6 +298,16 @@ CoreInternalOutcome DescribeDatahubTaskRes::Deserialize(const rapidjson::Value &
         m_autoExpandFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("WarnMessage") && !value["WarnMessage"].IsNull())
+    {
+        if (!value["WarnMessage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDatahubTaskRes.WarnMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_warnMessage = string(value["WarnMessage"].GetString());
+        m_warnMessageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -480,6 +491,14 @@ void DescribeDatahubTaskRes::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "AutoExpandFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoExpandFlag, allocator);
+    }
+
+    if (m_warnMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WarnMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_warnMessage.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -803,5 +822,21 @@ void DescribeDatahubTaskRes::SetAutoExpandFlag(const bool& _autoExpandFlag)
 bool DescribeDatahubTaskRes::AutoExpandFlagHasBeenSet() const
 {
     return m_autoExpandFlagHasBeenSet;
+}
+
+string DescribeDatahubTaskRes::GetWarnMessage() const
+{
+    return m_warnMessage;
+}
+
+void DescribeDatahubTaskRes::SetWarnMessage(const string& _warnMessage)
+{
+    m_warnMessage = _warnMessage;
+    m_warnMessageHasBeenSet = true;
+}
+
+bool DescribeDatahubTaskRes::WarnMessageHasBeenSet() const
+{
+    return m_warnMessageHasBeenSet;
 }
 

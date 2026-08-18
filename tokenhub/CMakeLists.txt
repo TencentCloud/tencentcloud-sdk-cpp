@@ -72,8 +72,9 @@ set(tokenhub_public_header_model
   include/tencentcloud/tokenhub/v20260322/model/TokenPlanPackageInfo.h
   include/tencentcloud/tokenhub/v20260322/model/UsageStats.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeUsageRankListResponse.h
-  include/tencentcloud/tokenhub/v20260322/model/DescribeApiKeyResponse.h
+  include/tencentcloud/tokenhub/v20260322/model/DescribeModelQuotaResponse.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanApiKeySecretRequest.h
+  include/tencentcloud/tokenhub/v20260322/model/DescribeModelQuotaRequest.h
   include/tencentcloud/tokenhub/v20260322/model/ModelChargingInfo.h
   include/tencentcloud/tokenhub/v20260322/model/ModifyApiKeyStatusRequest.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanRequest.h
@@ -115,6 +116,7 @@ set(tokenhub_public_header_model
   include/tencentcloud/tokenhub/v20260322/model/DeleteEndpointRequest.h
   include/tencentcloud/tokenhub/v20260322/model/RenewTokenPlanTeamOrderRequest.h
   include/tencentcloud/tokenhub/v20260322/model/ModelSiteRegion.h
+  include/tencentcloud/tokenhub/v20260322/model/DescribeApiKeyResponse.h
   include/tencentcloud/tokenhub/v20260322/model/ModifyApiKeyStatusResponse.h
   include/tencentcloud/tokenhub/v20260322/model/CreateTokenPlanTeamOrderAndBuyResponse.h
   include/tencentcloud/tokenhub/v20260322/model/RequestFilter.h
@@ -178,8 +180,9 @@ set(tokenhub_src
   src/v20260322/model/TokenPlanPackageInfo.cpp
   src/v20260322/model/UsageStats.cpp
   src/v20260322/model/DescribeUsageRankListResponse.cpp
-  src/v20260322/model/DescribeApiKeyResponse.cpp
+  src/v20260322/model/DescribeModelQuotaResponse.cpp
   src/v20260322/model/DescribeTokenPlanApiKeySecretRequest.cpp
+  src/v20260322/model/DescribeModelQuotaRequest.cpp
   src/v20260322/model/ModelChargingInfo.cpp
   src/v20260322/model/ModifyApiKeyStatusRequest.cpp
   src/v20260322/model/DescribeTokenPlanRequest.cpp
@@ -221,6 +224,7 @@ set(tokenhub_src
   src/v20260322/model/DeleteEndpointRequest.cpp
   src/v20260322/model/RenewTokenPlanTeamOrderRequest.cpp
   src/v20260322/model/ModelSiteRegion.cpp
+  src/v20260322/model/DescribeApiKeyResponse.cpp
   src/v20260322/model/ModifyApiKeyStatusResponse.cpp
   src/v20260322/model/CreateTokenPlanTeamOrderAndBuyResponse.cpp
   src/v20260322/model/RequestFilter.cpp

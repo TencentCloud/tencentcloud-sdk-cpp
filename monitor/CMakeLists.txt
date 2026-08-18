@@ -26,6 +26,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/AlarmPolicyTriggerTask.h
   include/tencentcloud/monitor/v20180724/model/GetTopNMonitorDataRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribePrometheusRegionsResponse.h
+  include/tencentcloud/monitor/v20180724/model/ModifyPrometheusInstanceAccessPointsRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeOnCallFormRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribePrometheusInstancesOverviewRequest.h
   include/tencentcloud/monitor/v20180724/model/ModifyGrafanaInstanceResponse.h
@@ -292,6 +293,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/BindingPolicyTagResponse.h
   include/tencentcloud/monitor/v20180724/model/DeleteServiceDiscoveryResponse.h
   include/tencentcloud/monitor/v20180724/model/CreateExporterIntegrationRequest.h
+  include/tencentcloud/monitor/v20180724/model/ModifyPrometheusInstanceAccessPointsResponse.h
   include/tencentcloud/monitor/v20180724/model/ModifyPrometheusConfigResponse.h
   include/tencentcloud/monitor/v20180724/model/PrometheusAgent.h
   include/tencentcloud/monitor/v20180724/model/CreatePrometheusAlertPolicyResponse.h
@@ -611,6 +613,7 @@ set(monitor_src
   src/v20180724/model/AlarmPolicyTriggerTask.cpp
   src/v20180724/model/GetTopNMonitorDataRequest.cpp
   src/v20180724/model/DescribePrometheusRegionsResponse.cpp
+  src/v20180724/model/ModifyPrometheusInstanceAccessPointsRequest.cpp
   src/v20180724/model/DescribeOnCallFormRequest.cpp
   src/v20180724/model/DescribePrometheusInstancesOverviewRequest.cpp
   src/v20180724/model/ModifyGrafanaInstanceResponse.cpp
@@ -877,6 +880,7 @@ set(monitor_src
   src/v20180724/model/BindingPolicyTagResponse.cpp
   src/v20180724/model/DeleteServiceDiscoveryResponse.cpp
   src/v20180724/model/CreateExporterIntegrationRequest.cpp
+  src/v20180724/model/ModifyPrometheusInstanceAccessPointsResponse.cpp
   src/v20180724/model/ModifyPrometheusConfigResponse.cpp
   src/v20180724/model/PrometheusAgent.cpp
   src/v20180724/model/CreatePrometheusAlertPolicyResponse.cpp

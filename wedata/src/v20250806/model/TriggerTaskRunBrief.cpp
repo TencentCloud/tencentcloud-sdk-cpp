@@ -77,7 +77,9 @@ TriggerTaskRunBrief::TriggerTaskRunBrief() :
     m_supportRerunHasBeenSet(false),
     m_workflowExecutionStateHasBeenSet(false),
     m_executionResultHasBeenSet(false),
-    m_dependencyTriggerPolicyHasBeenSet(false)
+    m_dependencyTriggerPolicyHasBeenSet(false),
+    m_associatedEntityExistHasBeenSet(false),
+    m_scheduleRunTypeHasBeenSet(false)
 {
 }
 
@@ -659,6 +661,26 @@ CoreInternalOutcome TriggerTaskRunBrief::Deserialize(const rapidjson::Value &val
         m_dependencyTriggerPolicyHasBeenSet = true;
     }
 
+    if (value.HasMember("AssociatedEntityExist") && !value["AssociatedEntityExist"].IsNull())
+    {
+        if (!value["AssociatedEntityExist"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerTaskRunBrief.AssociatedEntityExist` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_associatedEntityExist = value["AssociatedEntityExist"].GetBool();
+        m_associatedEntityExistHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScheduleRunType") && !value["ScheduleRunType"].IsNull())
+    {
+        if (!value["ScheduleRunType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerTaskRunBrief.ScheduleRunType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleRunType = string(value["ScheduleRunType"].GetString());
+        m_scheduleRunTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1125,6 +1147,22 @@ void TriggerTaskRunBrief::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "DependencyTriggerPolicy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dependencyTriggerPolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_associatedEntityExistHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssociatedEntityExist";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_associatedEntityExist, allocator);
+    }
+
+    if (m_scheduleRunTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleRunType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleRunType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2040,5 +2078,37 @@ void TriggerTaskRunBrief::SetDependencyTriggerPolicy(const string& _dependencyTr
 bool TriggerTaskRunBrief::DependencyTriggerPolicyHasBeenSet() const
 {
     return m_dependencyTriggerPolicyHasBeenSet;
+}
+
+bool TriggerTaskRunBrief::GetAssociatedEntityExist() const
+{
+    return m_associatedEntityExist;
+}
+
+void TriggerTaskRunBrief::SetAssociatedEntityExist(const bool& _associatedEntityExist)
+{
+    m_associatedEntityExist = _associatedEntityExist;
+    m_associatedEntityExistHasBeenSet = true;
+}
+
+bool TriggerTaskRunBrief::AssociatedEntityExistHasBeenSet() const
+{
+    return m_associatedEntityExistHasBeenSet;
+}
+
+string TriggerTaskRunBrief::GetScheduleRunType() const
+{
+    return m_scheduleRunType;
+}
+
+void TriggerTaskRunBrief::SetScheduleRunType(const string& _scheduleRunType)
+{
+    m_scheduleRunType = _scheduleRunType;
+    m_scheduleRunTypeHasBeenSet = true;
+}
+
+bool TriggerTaskRunBrief::ScheduleRunTypeHasBeenSet() const
+{
+    return m_scheduleRunTypeHasBeenSet;
 }
 

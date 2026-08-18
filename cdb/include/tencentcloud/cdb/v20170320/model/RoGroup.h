@@ -383,6 +383,27 @@ namespace TencentCloud
                      */
                     bool DelayReplicationTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>只读组类型。</p><p>枚举值：</p><ul><li>normal： 普通RO组</li><li>direct： 纯网络转发模式</li><li>default： 默认RO组</li></ul><p>默认值：normal</p>
+                     * @return RoGroupType <p>只读组类型。</p><p>枚举值：</p><ul><li>normal： 普通RO组</li><li>direct： 纯网络转发模式</li><li>default： 默认RO组</li></ul><p>默认值：normal</p>
+                     * 
+                     */
+                    std::string GetRoGroupType() const;
+
+                    /**
+                     * 设置<p>只读组类型。</p><p>枚举值：</p><ul><li>normal： 普通RO组</li><li>direct： 纯网络转发模式</li><li>default： 默认RO组</li></ul><p>默认值：normal</p>
+                     * @param _roGroupType <p>只读组类型。</p><p>枚举值：</p><ul><li>normal： 普通RO组</li><li>direct： 纯网络转发模式</li><li>default： 默认RO组</li></ul><p>默认值：normal</p>
+                     * 
+                     */
+                    void SetRoGroupType(const std::string& _roGroupType);
+
+                    /**
+                     * 判断参数 RoGroupType 是否已赋值
+                     * @return RoGroupType 是否已赋值
+                     * 
+                     */
+                    bool RoGroupTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -480,6 +501,12 @@ namespace TencentCloud
                      */
                     int64_t m_delayReplicationTime;
                     bool m_delayReplicationTimeHasBeenSet;
+
+                    /**
+                     * <p>只读组类型。</p><p>枚举值：</p><ul><li>normal： 普通RO组</li><li>direct： 纯网络转发模式</li><li>default： 默认RO组</li></ul><p>默认值：normal</p>
+                     */
+                    std::string m_roGroupType;
+                    bool m_roGroupTypeHasBeenSet;
 
                 };
             }

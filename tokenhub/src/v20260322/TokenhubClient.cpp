@@ -940,6 +940,56 @@ TokenhubClient::DescribeModelListOutcomeCallable TokenhubClient::DescribeModelLi
     return prom->get_future();
 }
 
+TokenhubClient::DescribeModelQuotaOutcome TokenhubClient::DescribeModelQuota(const DescribeModelQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelQuotaResponse rsp = DescribeModelQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelQuotaOutcome(rsp);
+        else
+            return DescribeModelQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelQuotaOutcome(outcome.GetError());
+    }
+}
+
+void TokenhubClient::DescribeModelQuotaAsync(const DescribeModelQuotaRequest& request, const DescribeModelQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeModelQuotaRequest&;
+    using Resp = DescribeModelQuotaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeModelQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TokenhubClient::DescribeModelQuotaOutcomeCallable TokenhubClient::DescribeModelQuotaCallable(const DescribeModelQuotaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeModelQuotaOutcome>>();
+    DescribeModelQuotaAsync(
+    request,
+    [prom](
+        const TokenhubClient*,
+        const DescribeModelQuotaRequest&,
+        DescribeModelQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TokenhubClient::DescribeTokenPlanOutcome TokenhubClient::DescribeTokenPlan(const DescribeTokenPlanRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTokenPlan");

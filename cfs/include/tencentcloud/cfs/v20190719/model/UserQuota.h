@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指定配额类型，包括Uid、Gid、Dir
-                     * @return UserType 指定配额类型，包括Uid、Gid、Dir
+                     * 获取<p>指定配额类型，包括Uid、Gid、Dir</p>
+                     * @return UserType <p>指定配额类型，包括Uid、Gid、Dir</p>
                      * 
                      */
                     std::string GetUserType() const;
 
                     /**
-                     * 设置指定配额类型，包括Uid、Gid、Dir
-                     * @param _userType 指定配额类型，包括Uid、Gid、Dir
+                     * 设置<p>指定配额类型，包括Uid、Gid、Dir</p>
+                     * @param _userType <p>指定配额类型，包括Uid、Gid、Dir</p>
                      * 
                      */
                     void SetUserType(const std::string& _userType);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool UserTypeHasBeenSet() const;
 
                     /**
-                     * 获取UID/GID信息
-                     * @return UserId UID/GID信息
+                     * 获取<p>UID/GID信息</p>
+                     * @return UserId <p>UID/GID信息</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置UID/GID信息
-                     * @param _userId UID/GID信息
+                     * 设置<p>UID/GID信息</p>
+                     * @param _userId <p>UID/GID信息</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取容量硬限制，单位GiB
-                     * @return CapacityHardLimit 容量硬限制，单位GiB
+                     * 获取<p>容量硬限制，单位GiB</p>
+                     * @return CapacityHardLimit <p>容量硬限制，单位GiB</p>
                      * 
                      */
                     uint64_t GetCapacityHardLimit() const;
 
                     /**
-                     * 设置容量硬限制，单位GiB
-                     * @param _capacityHardLimit 容量硬限制，单位GiB
+                     * 设置<p>容量硬限制，单位GiB</p>
+                     * @param _capacityHardLimit <p>容量硬限制，单位GiB</p>
                      * 
                      */
                     void SetCapacityHardLimit(const uint64_t& _capacityHardLimit);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool CapacityHardLimitHasBeenSet() const;
 
                     /**
-                     * 获取文件硬限制，单位个
-                     * @return FileHardLimit 文件硬限制，单位个
+                     * 获取<p>文件硬限制，单位个</p>
+                     * @return FileHardLimit <p>文件硬限制，单位个</p>
                      * 
                      */
                     uint64_t GetFileHardLimit() const;
 
                     /**
-                     * 设置文件硬限制，单位个
-                     * @param _fileHardLimit 文件硬限制，单位个
+                     * 设置<p>文件硬限制，单位个</p>
+                     * @param _fileHardLimit <p>文件硬限制，单位个</p>
                      * 
                      */
                     void SetFileHardLimit(const uint64_t& _fileHardLimit);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool FileHardLimitHasBeenSet() const;
 
                     /**
-                     * 获取文件系统ID
-                     * @return FileSystemId 文件系统ID
+                     * 获取<p>文件系统ID</p>
+                     * @return FileSystemId <p>文件系统ID</p>
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置文件系统ID
-                     * @param _fileSystemId 文件系统ID
+                     * 设置<p>文件系统ID</p>
+                     * @param _fileSystemId <p>文件系统ID</p>
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取容量使用，单位GiB
-                     * @return CapacityUsed 容量使用，单位GiB
+                     * 获取<p>容量使用，单位GiB</p>
+                     * @return CapacityUsed <p>容量使用，单位GiB</p>
                      * 
                      */
                     uint64_t GetCapacityUsed() const;
 
                     /**
-                     * 设置容量使用，单位GiB
-                     * @param _capacityUsed 容量使用，单位GiB
+                     * 设置<p>容量使用，单位GiB</p>
+                     * @param _capacityUsed <p>容量使用，单位GiB</p>
                      * 
                      */
                     void SetCapacityUsed(const uint64_t& _capacityUsed);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool CapacityUsedHasBeenSet() const;
 
                     /**
-                     * 获取文件使用个数，单位个
-                     * @return FileUsed 文件使用个数，单位个
+                     * 获取<p>文件使用个数，单位个</p>
+                     * @return FileUsed <p>文件使用个数，单位个</p>
                      * 
                      */
                     uint64_t GetFileUsed() const;
 
                     /**
-                     * 设置文件使用个数，单位个
-                     * @param _fileUsed 文件使用个数，单位个
+                     * 设置<p>文件使用个数，单位个</p>
+                     * @param _fileUsed <p>文件使用个数，单位个</p>
                      * 
                      */
                     void SetFileUsed(const uint64_t& _fileUsed);
@@ -194,18 +194,18 @@ namespace TencentCloud
                     bool FileUsedHasBeenSet() const;
 
                     /**
-                     * 获取目录配额的目录绝对路径
+                     * 获取<p>需设置配额的目录路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。不同目录之间不可存在包含关系。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/subdir/test1/test2</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DirectoryPath 目录配额的目录绝对路径
+                     * @return DirectoryPath <p>需设置配额的目录路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。不同目录之间不可存在包含关系。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/subdir/test1/test2</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDirectoryPath() const;
 
                     /**
-                     * 设置目录配额的目录绝对路径
+                     * 设置<p>需设置配额的目录路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。不同目录之间不可存在包含关系。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/subdir/test1/test2</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _directoryPath 目录配额的目录绝对路径
+                     * @param _directoryPath <p>需设置配额的目录路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。不同目录之间不可存在包含关系。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/subdir/test1/test2</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -219,15 +219,15 @@ namespace TencentCloud
                     bool DirectoryPathHasBeenSet() const;
 
                     /**
-                     * 获取配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败
-                     * @return Status 配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败
+                     * 获取<p>配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败</p>
+                     * @return Status <p>配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败
-                     * @param _status 配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败
+                     * 设置<p>配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败</p>
+                     * @param _status <p>配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -242,56 +242,56 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 指定配额类型，包括Uid、Gid、Dir
+                     * <p>指定配额类型，包括Uid、Gid、Dir</p>
                      */
                     std::string m_userType;
                     bool m_userTypeHasBeenSet;
 
                     /**
-                     * UID/GID信息
+                     * <p>UID/GID信息</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 容量硬限制，单位GiB
+                     * <p>容量硬限制，单位GiB</p>
                      */
                     uint64_t m_capacityHardLimit;
                     bool m_capacityHardLimitHasBeenSet;
 
                     /**
-                     * 文件硬限制，单位个
+                     * <p>文件硬限制，单位个</p>
                      */
                     uint64_t m_fileHardLimit;
                     bool m_fileHardLimitHasBeenSet;
 
                     /**
-                     * 文件系统ID
+                     * <p>文件系统ID</p>
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 容量使用，单位GiB
+                     * <p>容量使用，单位GiB</p>
                      */
                     uint64_t m_capacityUsed;
                     bool m_capacityUsedHasBeenSet;
 
                     /**
-                     * 文件使用个数，单位个
+                     * <p>文件使用个数，单位个</p>
                      */
                     uint64_t m_fileUsed;
                     bool m_fileUsedHasBeenSet;
 
                     /**
-                     * 目录配额的目录绝对路径
+                     * <p>需设置配额的目录路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。不同目录之间不可存在包含关系。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/subdir/test1/test2</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_directoryPath;
                     bool m_directoryPathHasBeenSet;
 
                     /**
-                     * 配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败
+                     * <p>配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
