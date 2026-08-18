@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务id
-                     * @return TaskId 任务id
+                     * 获取<p>任务id</p>
+                     * @return TaskId <p>任务id</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务id
-                     * @param _taskId 任务id
+                     * 设置<p>任务id</p>
+                     * @param _taskId <p>任务id</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -67,13 +67,45 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>DatahubId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatahubId <p>DatahubId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatahubId() const;
+
+                    /**
+                     * 设置<p>DatahubId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _datahubId <p>DatahubId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatahubId(const std::string& _datahubId);
+
+                    /**
+                     * 判断参数 DatahubId 是否已赋值
+                     * @return DatahubId 是否已赋值
+                     * 
+                     */
+                    bool DatahubIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务id
+                     * <p>任务id</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * <p>DatahubId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_datahubId;
+                    bool m_datahubIdHasBeenSet;
 
                 };
             }

@@ -41,6 +41,7 @@
 #include <tencentcloud/ckafka/v20190819/model/CtsdbParam.h>
 #include <tencentcloud/ckafka/v20190819/model/ScfParam.h>
 #include <tencentcloud/ckafka/v20190819/model/MqttParam.h>
+#include <tencentcloud/ckafka/v20190819/model/IcebergParam.h>
 
 
 namespace TencentCloud
@@ -64,131 +65,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源类型  type类型如下: 
-KAFKA,
-EB_ES,
-EB_COS,
-EB_CLS,
-EB_,
-MONGODB,
-HTTP,
-TDW,
-ES,
-CLICKHOUSE,
-DTS,
-CLS,
-COS,
-TOPIC,
-MYSQL,
-MQTT,
-MYSQL_DATA,
-DORIS,
-POSTGRESQL,
-TDSQL_C_POSTGRESQL,
-TDSQL_POSTGRESQL,
-WAREHOUSE_POSTGRESQL,
-TDSQL_C_MYSQL,
-MARIADB,
-SQLSERVER,
-CTSDB,
-SCF
-
-
-                     * @return Type 资源类型  type类型如下: 
-KAFKA,
-EB_ES,
-EB_COS,
-EB_CLS,
-EB_,
-MONGODB,
-HTTP,
-TDW,
-ES,
-CLICKHOUSE,
-DTS,
-CLS,
-COS,
-TOPIC,
-MYSQL,
-MQTT,
-MYSQL_DATA,
-DORIS,
-POSTGRESQL,
-TDSQL_C_POSTGRESQL,
-TDSQL_POSTGRESQL,
-WAREHOUSE_POSTGRESQL,
-TDSQL_C_MYSQL,
-MARIADB,
-SQLSERVER,
-CTSDB,
-SCF
-
-
+                     * 获取<p>资源类型  type类型如下:<br>KAFKA,<br>EB_ES,<br>EB_COS,<br>EB_CLS,<br>EB_,<br>MONGODB,<br>HTTP,<br>TDW,<br>ES,<br>CLICKHOUSE,<br>DTS,<br>CLS,<br>COS,<br>TOPIC,<br>MYSQL,<br>MQTT,<br>MYSQL_DATA,<br>DORIS,<br>POSTGRESQL,<br>TDSQL_C_POSTGRESQL,<br>TDSQL_POSTGRESQL,<br>WAREHOUSE_POSTGRESQL,<br>TDSQL_C_MYSQL,<br>MARIADB,<br>SQLSERVER,<br>CTSDB,<br>SCF</p>
+                     * @return Type <p>资源类型  type类型如下:<br>KAFKA,<br>EB_ES,<br>EB_COS,<br>EB_CLS,<br>EB_,<br>MONGODB,<br>HTTP,<br>TDW,<br>ES,<br>CLICKHOUSE,<br>DTS,<br>CLS,<br>COS,<br>TOPIC,<br>MYSQL,<br>MQTT,<br>MYSQL_DATA,<br>DORIS,<br>POSTGRESQL,<br>TDSQL_C_POSTGRESQL,<br>TDSQL_POSTGRESQL,<br>WAREHOUSE_POSTGRESQL,<br>TDSQL_C_MYSQL,<br>MARIADB,<br>SQLSERVER,<br>CTSDB,<br>SCF</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置资源类型  type类型如下: 
-KAFKA,
-EB_ES,
-EB_COS,
-EB_CLS,
-EB_,
-MONGODB,
-HTTP,
-TDW,
-ES,
-CLICKHOUSE,
-DTS,
-CLS,
-COS,
-TOPIC,
-MYSQL,
-MQTT,
-MYSQL_DATA,
-DORIS,
-POSTGRESQL,
-TDSQL_C_POSTGRESQL,
-TDSQL_POSTGRESQL,
-WAREHOUSE_POSTGRESQL,
-TDSQL_C_MYSQL,
-MARIADB,
-SQLSERVER,
-CTSDB,
-SCF
-
-
-                     * @param _type 资源类型  type类型如下: 
-KAFKA,
-EB_ES,
-EB_COS,
-EB_CLS,
-EB_,
-MONGODB,
-HTTP,
-TDW,
-ES,
-CLICKHOUSE,
-DTS,
-CLS,
-COS,
-TOPIC,
-MYSQL,
-MQTT,
-MYSQL_DATA,
-DORIS,
-POSTGRESQL,
-TDSQL_C_POSTGRESQL,
-TDSQL_POSTGRESQL,
-WAREHOUSE_POSTGRESQL,
-TDSQL_C_MYSQL,
-MARIADB,
-SQLSERVER,
-CTSDB,
-SCF
-
-
+                     * 设置<p>资源类型  type类型如下:<br>KAFKA,<br>EB_ES,<br>EB_COS,<br>EB_CLS,<br>EB_,<br>MONGODB,<br>HTTP,<br>TDW,<br>ES,<br>CLICKHOUSE,<br>DTS,<br>CLS,<br>COS,<br>TOPIC,<br>MYSQL,<br>MQTT,<br>MYSQL_DATA,<br>DORIS,<br>POSTGRESQL,<br>TDSQL_C_POSTGRESQL,<br>TDSQL_POSTGRESQL,<br>WAREHOUSE_POSTGRESQL,<br>TDSQL_C_MYSQL,<br>MARIADB,<br>SQLSERVER,<br>CTSDB,<br>SCF</p>
+                     * @param _type <p>资源类型  type类型如下:<br>KAFKA,<br>EB_ES,<br>EB_COS,<br>EB_CLS,<br>EB_,<br>MONGODB,<br>HTTP,<br>TDW,<br>ES,<br>CLICKHOUSE,<br>DTS,<br>CLS,<br>COS,<br>TOPIC,<br>MYSQL,<br>MQTT,<br>MYSQL_DATA,<br>DORIS,<br>POSTGRESQL,<br>TDSQL_C_POSTGRESQL,<br>TDSQL_POSTGRESQL,<br>WAREHOUSE_POSTGRESQL,<br>TDSQL_C_MYSQL,<br>MARIADB,<br>SQLSERVER,<br>CTSDB,<br>SCF</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -201,18 +86,18 @@ SCF
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取ckafka配置，Type为KAFKA时必填
+                     * 获取<p>ckafka配置，Type为KAFKA时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KafkaParam ckafka配置，Type为KAFKA时必填
+                     * @return KafkaParam <p>ckafka配置，Type为KAFKA时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KafkaParam GetKafkaParam() const;
 
                     /**
-                     * 设置ckafka配置，Type为KAFKA时必填
+                     * 设置<p>ckafka配置，Type为KAFKA时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kafkaParam ckafka配置，Type为KAFKA时必填
+                     * @param _kafkaParam <p>ckafka配置，Type为KAFKA时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -226,18 +111,18 @@ SCF
                     bool KafkaParamHasBeenSet() const;
 
                     /**
-                     * 获取EB配置，Type为EB时必填
+                     * 获取<p>EB配置，Type为EB时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EventBusParam EB配置，Type为EB时必填
+                     * @return EventBusParam <p>EB配置，Type为EB时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EventBusParam GetEventBusParam() const;
 
                     /**
-                     * 设置EB配置，Type为EB时必填
+                     * 设置<p>EB配置，Type为EB时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _eventBusParam EB配置，Type为EB时必填
+                     * @param _eventBusParam <p>EB配置，Type为EB时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -251,18 +136,18 @@ SCF
                     bool EventBusParamHasBeenSet() const;
 
                     /**
-                     * 获取MongoDB配置，Type为MONGODB时必填
+                     * 获取<p>MongoDB配置，Type为MONGODB时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MongoDBParam MongoDB配置，Type为MONGODB时必填
+                     * @return MongoDBParam <p>MongoDB配置，Type为MONGODB时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MongoDBParam GetMongoDBParam() const;
 
                     /**
-                     * 设置MongoDB配置，Type为MONGODB时必填
+                     * 设置<p>MongoDB配置，Type为MONGODB时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mongoDBParam MongoDB配置，Type为MONGODB时必填
+                     * @param _mongoDBParam <p>MongoDB配置，Type为MONGODB时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -276,18 +161,18 @@ SCF
                     bool MongoDBParamHasBeenSet() const;
 
                     /**
-                     * 获取Es配置，Type为ES时必填
+                     * 获取<p>Es配置，Type为ES时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EsParam Es配置，Type为ES时必填
+                     * @return EsParam <p>Es配置，Type为ES时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EsParam GetEsParam() const;
 
                     /**
-                     * 设置Es配置，Type为ES时必填
+                     * 设置<p>Es配置，Type为ES时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _esParam Es配置，Type为ES时必填
+                     * @param _esParam <p>Es配置，Type为ES时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -301,18 +186,18 @@ SCF
                     bool EsParamHasBeenSet() const;
 
                     /**
-                     * 获取Tdw配置，Type为TDW时必填
+                     * 获取<p>Tdw配置，Type为TDW时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TdwParam Tdw配置，Type为TDW时必填
+                     * @return TdwParam <p>Tdw配置，Type为TDW时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TdwParam GetTdwParam() const;
 
                     /**
-                     * 设置Tdw配置，Type为TDW时必填
+                     * 设置<p>Tdw配置，Type为TDW时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tdwParam Tdw配置，Type为TDW时必填
+                     * @param _tdwParam <p>Tdw配置，Type为TDW时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -326,18 +211,18 @@ SCF
                     bool TdwParamHasBeenSet() const;
 
                     /**
-                     * 获取Dts配置，Type为DTS时必填
+                     * 获取<p>Dts配置，Type为DTS时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DtsParam Dts配置，Type为DTS时必填
+                     * @return DtsParam <p>Dts配置，Type为DTS时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DtsParam GetDtsParam() const;
 
                     /**
-                     * 设置Dts配置，Type为DTS时必填
+                     * 设置<p>Dts配置，Type为DTS时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dtsParam Dts配置，Type为DTS时必填
+                     * @param _dtsParam <p>Dts配置，Type为DTS时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -351,18 +236,18 @@ SCF
                     bool DtsParamHasBeenSet() const;
 
                     /**
-                     * 获取ClickHouse配置，Type为CLICKHOUSE时必填
+                     * 获取<p>ClickHouse配置，Type为CLICKHOUSE时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClickHouseParam ClickHouse配置，Type为CLICKHOUSE时必填
+                     * @return ClickHouseParam <p>ClickHouse配置，Type为CLICKHOUSE时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ClickHouseParam GetClickHouseParam() const;
 
                     /**
-                     * 设置ClickHouse配置，Type为CLICKHOUSE时必填
+                     * 设置<p>ClickHouse配置，Type为CLICKHOUSE时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clickHouseParam ClickHouse配置，Type为CLICKHOUSE时必填
+                     * @param _clickHouseParam <p>ClickHouse配置，Type为CLICKHOUSE时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -376,18 +261,18 @@ SCF
                     bool ClickHouseParamHasBeenSet() const;
 
                     /**
-                     * 获取Cls配置，Type为CLS时必填
+                     * 获取<p>Cls配置，Type为CLS时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClsParam Cls配置，Type为CLS时必填
+                     * @return ClsParam <p>Cls配置，Type为CLS时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ClsParam GetClsParam() const;
 
                     /**
-                     * 设置Cls配置，Type为CLS时必填
+                     * 设置<p>Cls配置，Type为CLS时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clsParam Cls配置，Type为CLS时必填
+                     * @param _clsParam <p>Cls配置，Type为CLS时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -401,18 +286,18 @@ SCF
                     bool ClsParamHasBeenSet() const;
 
                     /**
-                     * 获取Cos配置，Type为COS时必填
+                     * 获取<p>Cos配置，Type为COS时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CosParam Cos配置，Type为COS时必填
+                     * @return CosParam <p>Cos配置，Type为COS时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CosParam GetCosParam() const;
 
                     /**
-                     * 设置Cos配置，Type为COS时必填
+                     * 设置<p>Cos配置，Type为COS时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cosParam Cos配置，Type为COS时必填
+                     * @param _cosParam <p>Cos配置，Type为COS时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -426,18 +311,18 @@ SCF
                     bool CosParamHasBeenSet() const;
 
                     /**
-                     * 获取MySQL配置，Type为MYSQL时必填
+                     * 获取<p>MySQL配置，Type为MYSQL时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MySQLParam MySQL配置，Type为MYSQL时必填
+                     * @return MySQLParam <p>MySQL配置，Type为MYSQL时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MySQLParam GetMySQLParam() const;
 
                     /**
-                     * 设置MySQL配置，Type为MYSQL时必填
+                     * 设置<p>MySQL配置，Type为MYSQL时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mySQLParam MySQL配置，Type为MYSQL时必填
+                     * @param _mySQLParam <p>MySQL配置，Type为MYSQL时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -451,18 +336,18 @@ SCF
                     bool MySQLParamHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
+                     * 获取<p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PostgreSQLParam PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
+                     * @return PostgreSQLParam <p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PostgreSQLParam GetPostgreSQLParam() const;
 
                     /**
-                     * 设置PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
+                     * 设置<p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _postgreSQLParam PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
+                     * @param _postgreSQLParam <p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -476,18 +361,18 @@ SCF
                     bool PostgreSQLParamHasBeenSet() const;
 
                     /**
-                     * 获取Topic配置，Type为Topic时必填
+                     * 获取<p>Topic配置，Type为Topic时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TopicParam Topic配置，Type为Topic时必填
+                     * @return TopicParam <p>Topic配置，Type为Topic时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TopicParam GetTopicParam() const;
 
                     /**
-                     * 设置Topic配置，Type为Topic时必填
+                     * 设置<p>Topic配置，Type为Topic时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _topicParam Topic配置，Type为Topic时必填
+                     * @param _topicParam <p>Topic配置，Type为Topic时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -501,18 +386,18 @@ SCF
                     bool TopicParamHasBeenSet() const;
 
                     /**
-                     * 获取MariaDB配置，Type为MARIADB时必填
+                     * 获取<p>MariaDB配置，Type为MARIADB时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MariaDBParam MariaDB配置，Type为MARIADB时必填
+                     * @return MariaDBParam <p>MariaDB配置，Type为MARIADB时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MariaDBParam GetMariaDBParam() const;
 
                     /**
-                     * 设置MariaDB配置，Type为MARIADB时必填
+                     * 设置<p>MariaDB配置，Type为MARIADB时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mariaDBParam MariaDB配置，Type为MARIADB时必填
+                     * @param _mariaDBParam <p>MariaDB配置，Type为MARIADB时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -526,18 +411,18 @@ SCF
                     bool MariaDBParamHasBeenSet() const;
 
                     /**
-                     * 获取SQLServer配置，Type为SQLSERVER时必填
+                     * 获取<p>SQLServer配置，Type为SQLSERVER时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SQLServerParam SQLServer配置，Type为SQLSERVER时必填
+                     * @return SQLServerParam <p>SQLServer配置，Type为SQLSERVER时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SQLServerParam GetSQLServerParam() const;
 
                     /**
-                     * 设置SQLServer配置，Type为SQLSERVER时必填
+                     * 设置<p>SQLServer配置，Type为SQLSERVER时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sQLServerParam SQLServer配置，Type为SQLSERVER时必填
+                     * @param _sQLServerParam <p>SQLServer配置，Type为SQLSERVER时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -551,18 +436,18 @@ SCF
                     bool SQLServerParamHasBeenSet() const;
 
                     /**
-                     * 获取Ctsdb配置，Type为CTSDB时必填
+                     * 获取<p>Ctsdb配置，Type为CTSDB时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CtsdbParam Ctsdb配置，Type为CTSDB时必填
+                     * @return CtsdbParam <p>Ctsdb配置，Type为CTSDB时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CtsdbParam GetCtsdbParam() const;
 
                     /**
-                     * 设置Ctsdb配置，Type为CTSDB时必填
+                     * 设置<p>Ctsdb配置，Type为CTSDB时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ctsdbParam Ctsdb配置，Type为CTSDB时必填
+                     * @param _ctsdbParam <p>Ctsdb配置，Type为CTSDB时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -576,18 +461,18 @@ SCF
                     bool CtsdbParamHasBeenSet() const;
 
                     /**
-                     * 获取Scf配置，Type为SCF时必填
+                     * 获取<p>Scf配置，Type为SCF时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScfParam Scf配置，Type为SCF时必填
+                     * @return ScfParam <p>Scf配置，Type为SCF时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ScfParam GetScfParam() const;
 
                     /**
-                     * 设置Scf配置，Type为SCF时必填
+                     * 设置<p>Scf配置，Type为SCF时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scfParam Scf配置，Type为SCF时必填
+                     * @param _scfParam <p>Scf配置，Type为SCF时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -601,18 +486,18 @@ SCF
                     bool ScfParamHasBeenSet() const;
 
                     /**
-                     * 获取MQTT配置，Type为 MQTT 时必填
+                     * 获取<p>MQTT配置，Type为 MQTT 时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MqttParam MQTT配置，Type为 MQTT 时必填
+                     * @return MqttParam <p>MQTT配置，Type为 MQTT 时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MqttParam GetMqttParam() const;
 
                     /**
-                     * 设置MQTT配置，Type为 MQTT 时必填
+                     * 设置<p>MQTT配置，Type为 MQTT 时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mqttParam MQTT配置，Type为 MQTT 时必填
+                     * @param _mqttParam <p>MQTT配置，Type为 MQTT 时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -625,161 +510,159 @@ SCF
                      */
                     bool MqttParamHasBeenSet() const;
 
+                    /**
+                     * 获取<p>IceBerg配置</p>
+                     * @return IcebergParam <p>IceBerg配置</p>
+                     * 
+                     */
+                    IcebergParam GetIcebergParam() const;
+
+                    /**
+                     * 设置<p>IceBerg配置</p>
+                     * @param _icebergParam <p>IceBerg配置</p>
+                     * 
+                     */
+                    void SetIcebergParam(const IcebergParam& _icebergParam);
+
+                    /**
+                     * 判断参数 IcebergParam 是否已赋值
+                     * @return IcebergParam 是否已赋值
+                     * 
+                     */
+                    bool IcebergParamHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 资源类型  type类型如下: 
-KAFKA,
-EB_ES,
-EB_COS,
-EB_CLS,
-EB_,
-MONGODB,
-HTTP,
-TDW,
-ES,
-CLICKHOUSE,
-DTS,
-CLS,
-COS,
-TOPIC,
-MYSQL,
-MQTT,
-MYSQL_DATA,
-DORIS,
-POSTGRESQL,
-TDSQL_C_POSTGRESQL,
-TDSQL_POSTGRESQL,
-WAREHOUSE_POSTGRESQL,
-TDSQL_C_MYSQL,
-MARIADB,
-SQLSERVER,
-CTSDB,
-SCF
-
-
+                     * <p>资源类型  type类型如下:<br>KAFKA,<br>EB_ES,<br>EB_COS,<br>EB_CLS,<br>EB_,<br>MONGODB,<br>HTTP,<br>TDW,<br>ES,<br>CLICKHOUSE,<br>DTS,<br>CLS,<br>COS,<br>TOPIC,<br>MYSQL,<br>MQTT,<br>MYSQL_DATA,<br>DORIS,<br>POSTGRESQL,<br>TDSQL_C_POSTGRESQL,<br>TDSQL_POSTGRESQL,<br>WAREHOUSE_POSTGRESQL,<br>TDSQL_C_MYSQL,<br>MARIADB,<br>SQLSERVER,<br>CTSDB,<br>SCF</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * ckafka配置，Type为KAFKA时必填
+                     * <p>ckafka配置，Type为KAFKA时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KafkaParam m_kafkaParam;
                     bool m_kafkaParamHasBeenSet;
 
                     /**
-                     * EB配置，Type为EB时必填
+                     * <p>EB配置，Type为EB时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EventBusParam m_eventBusParam;
                     bool m_eventBusParamHasBeenSet;
 
                     /**
-                     * MongoDB配置，Type为MONGODB时必填
+                     * <p>MongoDB配置，Type为MONGODB时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MongoDBParam m_mongoDBParam;
                     bool m_mongoDBParamHasBeenSet;
 
                     /**
-                     * Es配置，Type为ES时必填
+                     * <p>Es配置，Type为ES时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EsParam m_esParam;
                     bool m_esParamHasBeenSet;
 
                     /**
-                     * Tdw配置，Type为TDW时必填
+                     * <p>Tdw配置，Type为TDW时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TdwParam m_tdwParam;
                     bool m_tdwParamHasBeenSet;
 
                     /**
-                     * Dts配置，Type为DTS时必填
+                     * <p>Dts配置，Type为DTS时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DtsParam m_dtsParam;
                     bool m_dtsParamHasBeenSet;
 
                     /**
-                     * ClickHouse配置，Type为CLICKHOUSE时必填
+                     * <p>ClickHouse配置，Type为CLICKHOUSE时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ClickHouseParam m_clickHouseParam;
                     bool m_clickHouseParamHasBeenSet;
 
                     /**
-                     * Cls配置，Type为CLS时必填
+                     * <p>Cls配置，Type为CLS时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ClsParam m_clsParam;
                     bool m_clsParamHasBeenSet;
 
                     /**
-                     * Cos配置，Type为COS时必填
+                     * <p>Cos配置，Type为COS时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CosParam m_cosParam;
                     bool m_cosParamHasBeenSet;
 
                     /**
-                     * MySQL配置，Type为MYSQL时必填
+                     * <p>MySQL配置，Type为MYSQL时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MySQLParam m_mySQLParam;
                     bool m_mySQLParamHasBeenSet;
 
                     /**
-                     * PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
+                     * <p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PostgreSQLParam m_postgreSQLParam;
                     bool m_postgreSQLParamHasBeenSet;
 
                     /**
-                     * Topic配置，Type为Topic时必填
+                     * <p>Topic配置，Type为Topic时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TopicParam m_topicParam;
                     bool m_topicParamHasBeenSet;
 
                     /**
-                     * MariaDB配置，Type为MARIADB时必填
+                     * <p>MariaDB配置，Type为MARIADB时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MariaDBParam m_mariaDBParam;
                     bool m_mariaDBParamHasBeenSet;
 
                     /**
-                     * SQLServer配置，Type为SQLSERVER时必填
+                     * <p>SQLServer配置，Type为SQLSERVER时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SQLServerParam m_sQLServerParam;
                     bool m_sQLServerParamHasBeenSet;
 
                     /**
-                     * Ctsdb配置，Type为CTSDB时必填
+                     * <p>Ctsdb配置，Type为CTSDB时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CtsdbParam m_ctsdbParam;
                     bool m_ctsdbParamHasBeenSet;
 
                     /**
-                     * Scf配置，Type为SCF时必填
+                     * <p>Scf配置，Type为SCF时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScfParam m_scfParam;
                     bool m_scfParamHasBeenSet;
 
                     /**
-                     * MQTT配置，Type为 MQTT 时必填
+                     * <p>MQTT配置，Type为 MQTT 时必填</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MqttParam m_mqttParam;
                     bool m_mqttParamHasBeenSet;
+
+                    /**
+                     * <p>IceBerg配置</p>
+                     */
+                    IcebergParam m_icebergParam;
+                    bool m_icebergParamHasBeenSet;
 
                 };
             }

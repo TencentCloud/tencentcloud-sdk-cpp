@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>触发方式，非必填，外部结构的TriggerMode字段优先级比当前字段高</p><ul><li>定时触发：TIME_TRIGGER</li><li>持续运行：CONTINUE_RUN（暂不支持）</li><li>文件到达：FILE_ARRIVAL（暂不支持）</li></ul><p>注意：</p><ul><li>TIME_TRIGGER 和 CONTINUE_RUN 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；</li><li>FILE_ARRIVAL 模式下，FileArrivalPath、TriggerMinimumIntervalSecond、TriggerWaitTimeSecond 必填；</li></ul><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li></ul>
+                     * 获取<p>触发方式，非必填，外部结构的TriggerMode字段优先级比当前字段高</p><ul><li>定时触发：TIME_TRIGGER</li><li>文件到达：FILE_ARRIVAL</li><li>持续运行：CONTINUE_RUN（暂不支持）</li></ul><p>注意：</p><ul><li>TIME_TRIGGER 和 CONTINUE_RUN 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；</li><li>FILE_ARRIVAL 模式下，FileArrivalPath、TriggerMinimumIntervalSecond、TriggerWaitTimeSecond 必填；</li></ul><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li><li>FILE_ARRIVAL： 文件到达</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TriggerMode <p>触发方式，非必填，外部结构的TriggerMode字段优先级比当前字段高</p><ul><li>定时触发：TIME_TRIGGER</li><li>持续运行：CONTINUE_RUN（暂不支持）</li><li>文件到达：FILE_ARRIVAL（暂不支持）</li></ul><p>注意：</p><ul><li>TIME_TRIGGER 和 CONTINUE_RUN 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；</li><li>FILE_ARRIVAL 模式下，FileArrivalPath、TriggerMinimumIntervalSecond、TriggerWaitTimeSecond 必填；</li></ul><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li></ul>
+                     * @return TriggerMode <p>触发方式，非必填，外部结构的TriggerMode字段优先级比当前字段高</p><ul><li>定时触发：TIME_TRIGGER</li><li>文件到达：FILE_ARRIVAL</li><li>持续运行：CONTINUE_RUN（暂不支持）</li></ul><p>注意：</p><ul><li>TIME_TRIGGER 和 CONTINUE_RUN 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；</li><li>FILE_ARRIVAL 模式下，FileArrivalPath、TriggerMinimumIntervalSecond、TriggerWaitTimeSecond 必填；</li></ul><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li><li>FILE_ARRIVAL： 文件到达</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTriggerMode() const;
 
                     /**
-                     * 设置<p>触发方式，非必填，外部结构的TriggerMode字段优先级比当前字段高</p><ul><li>定时触发：TIME_TRIGGER</li><li>持续运行：CONTINUE_RUN（暂不支持）</li><li>文件到达：FILE_ARRIVAL（暂不支持）</li></ul><p>注意：</p><ul><li>TIME_TRIGGER 和 CONTINUE_RUN 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；</li><li>FILE_ARRIVAL 模式下，FileArrivalPath、TriggerMinimumIntervalSecond、TriggerWaitTimeSecond 必填；</li></ul><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li></ul>
+                     * 设置<p>触发方式，非必填，外部结构的TriggerMode字段优先级比当前字段高</p><ul><li>定时触发：TIME_TRIGGER</li><li>文件到达：FILE_ARRIVAL</li><li>持续运行：CONTINUE_RUN（暂不支持）</li></ul><p>注意：</p><ul><li>TIME_TRIGGER 和 CONTINUE_RUN 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；</li><li>FILE_ARRIVAL 模式下，FileArrivalPath、TriggerMinimumIntervalSecond、TriggerWaitTimeSecond 必填；</li></ul><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li><li>FILE_ARRIVAL： 文件到达</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _triggerMode <p>触发方式，非必填，外部结构的TriggerMode字段优先级比当前字段高</p><ul><li>定时触发：TIME_TRIGGER</li><li>持续运行：CONTINUE_RUN（暂不支持）</li><li>文件到达：FILE_ARRIVAL（暂不支持）</li></ul><p>注意：</p><ul><li>TIME_TRIGGER 和 CONTINUE_RUN 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；</li><li>FILE_ARRIVAL 模式下，FileArrivalPath、TriggerMinimumIntervalSecond、TriggerWaitTimeSecond 必填；</li></ul><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li></ul>
+                     * @param _triggerMode <p>触发方式，非必填，外部结构的TriggerMode字段优先级比当前字段高</p><ul><li>定时触发：TIME_TRIGGER</li><li>文件到达：FILE_ARRIVAL</li><li>持续运行：CONTINUE_RUN（暂不支持）</li></ul><p>注意：</p><ul><li>TIME_TRIGGER 和 CONTINUE_RUN 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；</li><li>FILE_ARRIVAL 模式下，FileArrivalPath、TriggerMinimumIntervalSecond、TriggerWaitTimeSecond 必填；</li></ul><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li><li>FILE_ARRIVAL： 文件到达</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -297,56 +297,6 @@ namespace TencentCloud
                     bool FileArrivalPathHasBeenSet() const;
 
                     /**
-                     * 获取<p>文件到达模式下    触发最短间隔时间（单位：秒）</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TriggerMinimumIntervalSecond <p>文件到达模式下    触发最短间隔时间（单位：秒）</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    uint64_t GetTriggerMinimumIntervalSecond() const;
-
-                    /**
-                     * 设置<p>文件到达模式下    触发最短间隔时间（单位：秒）</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _triggerMinimumIntervalSecond <p>文件到达模式下    触发最短间隔时间（单位：秒）</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetTriggerMinimumIntervalSecond(const uint64_t& _triggerMinimumIntervalSecond);
-
-                    /**
-                     * 判断参数 TriggerMinimumIntervalSecond 是否已赋值
-                     * @return TriggerMinimumIntervalSecond 是否已赋值
-                     * 
-                     */
-                    bool TriggerMinimumIntervalSecondHasBeenSet() const;
-
-                    /**
-                     * 获取<p>文件到达模式下    触发等待时间（单位：秒）</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TriggerWaitTimeSecond <p>文件到达模式下    触发等待时间（单位：秒）</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    uint64_t GetTriggerWaitTimeSecond() const;
-
-                    /**
-                     * 设置<p>文件到达模式下    触发等待时间（单位：秒）</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _triggerWaitTimeSecond <p>文件到达模式下    触发等待时间（单位：秒）</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetTriggerWaitTimeSecond(const uint64_t& _triggerWaitTimeSecond);
-
-                    /**
-                     * 判断参数 TriggerWaitTimeSecond 是否已赋值
-                     * @return TriggerWaitTimeSecond 是否已赋值
-                     * 
-                     */
-                    bool TriggerWaitTimeSecondHasBeenSet() const;
-
-                    /**
                      * 获取<p>Trigger 状态 启动ACTIVE，暂停PAUSED。外部的TriggerStatus优先级大于当前值</p><p>枚举值：</p><ul><li>ACTIVE： 启动</li><li>PAUSED： 暂停</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchedulerStatus <p>Trigger 状态 启动ACTIVE，暂停PAUSED。外部的TriggerStatus优先级大于当前值</p><p>枚举值：</p><ul><li>ACTIVE： 启动</li><li>PAUSED： 暂停</li></ul>
@@ -371,10 +321,110 @@ namespace TencentCloud
                      */
                     bool SchedulerStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>文件到达模式下 文件匹配规则</p><p>入参限制：文件名匹配仅支持文件名和 *，不能包含路径分隔符 /</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileNamePattern <p>文件到达模式下 文件匹配规则</p><p>入参限制：文件名匹配仅支持文件名和 *，不能包含路径分隔符 /</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFileNamePattern() const;
+
+                    /**
+                     * 设置<p>文件到达模式下 文件匹配规则</p><p>入参限制：文件名匹配仅支持文件名和 *，不能包含路径分隔符 /</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fileNamePattern <p>文件到达模式下 文件匹配规则</p><p>入参限制：文件名匹配仅支持文件名和 *，不能包含路径分隔符 /</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFileNamePattern(const std::string& _fileNamePattern);
+
+                    /**
+                     * 判断参数 FileNamePattern 是否已赋值
+                     * @return FileNamePattern 是否已赋值
+                     * 
+                     */
+                    bool FileNamePatternHasBeenSet() const;
+
+                    /**
+                     * 获取<p>文件到达模式下 是否递归检测子目录</p><p>取值范围：[0, 1]</p><p>默认值：1</p><p>默认 1（开启） 0 （关闭）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Recursive <p>文件到达模式下 是否递归检测子目录</p><p>取值范围：[0, 1]</p><p>默认值：1</p><p>默认 1（开启） 0 （关闭）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRecursive() const;
+
+                    /**
+                     * 设置<p>文件到达模式下 是否递归检测子目录</p><p>取值范围：[0, 1]</p><p>默认值：1</p><p>默认 1（开启） 0 （关闭）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _recursive <p>文件到达模式下 是否递归检测子目录</p><p>取值范围：[0, 1]</p><p>默认值：1</p><p>默认 1（开启） 0 （关闭）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRecursive(const int64_t& _recursive);
+
+                    /**
+                     * 判断参数 Recursive 是否已赋值
+                     * @return Recursive 是否已赋值
+                     * 
+                     */
+                    bool RecursiveHasBeenSet() const;
+
+                    /**
+                     * 获取<p>文件到达模式下    触发最短间隔时间</p><p>单位：秒</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TriggerMinimumIntervalSecond <p>文件到达模式下    触发最短间隔时间</p><p>单位：秒</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTriggerMinimumIntervalSecond() const;
+
+                    /**
+                     * 设置<p>文件到达模式下    触发最短间隔时间</p><p>单位：秒</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _triggerMinimumIntervalSecond <p>文件到达模式下    触发最短间隔时间</p><p>单位：秒</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTriggerMinimumIntervalSecond(const int64_t& _triggerMinimumIntervalSecond);
+
+                    /**
+                     * 判断参数 TriggerMinimumIntervalSecond 是否已赋值
+                     * @return TriggerMinimumIntervalSecond 是否已赋值
+                     * 
+                     */
+                    bool TriggerMinimumIntervalSecondHasBeenSet() const;
+
+                    /**
+                     * 获取<p>文件到达模式下    触发等待时间</p><p>单位：秒</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TriggerWaitTimeSecond <p>文件到达模式下    触发等待时间</p><p>单位：秒</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTriggerWaitTimeSecond() const;
+
+                    /**
+                     * 设置<p>文件到达模式下    触发等待时间</p><p>单位：秒</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _triggerWaitTimeSecond <p>文件到达模式下    触发等待时间</p><p>单位：秒</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTriggerWaitTimeSecond(const int64_t& _triggerWaitTimeSecond);
+
+                    /**
+                     * 判断参数 TriggerWaitTimeSecond 是否已赋值
+                     * @return TriggerWaitTimeSecond 是否已赋值
+                     * 
+                     */
+                    bool TriggerWaitTimeSecondHasBeenSet() const;
+
                 private:
 
                     /**
-                     * <p>触发方式，非必填，外部结构的TriggerMode字段优先级比当前字段高</p><ul><li>定时触发：TIME_TRIGGER</li><li>持续运行：CONTINUE_RUN（暂不支持）</li><li>文件到达：FILE_ARRIVAL（暂不支持）</li></ul><p>注意：</p><ul><li>TIME_TRIGGER 和 CONTINUE_RUN 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；</li><li>FILE_ARRIVAL 模式下，FileArrivalPath、TriggerMinimumIntervalSecond、TriggerWaitTimeSecond 必填；</li></ul><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li></ul>
+                     * <p>触发方式，非必填，外部结构的TriggerMode字段优先级比当前字段高</p><ul><li>定时触发：TIME_TRIGGER</li><li>文件到达：FILE_ARRIVAL</li><li>持续运行：CONTINUE_RUN（暂不支持）</li></ul><p>注意：</p><ul><li>TIME_TRIGGER 和 CONTINUE_RUN 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；</li><li>FILE_ARRIVAL 模式下，FileArrivalPath、TriggerMinimumIntervalSecond、TriggerWaitTimeSecond 必填；</li></ul><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li><li>FILE_ARRIVAL： 文件到达</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_triggerMode;
@@ -444,25 +494,39 @@ namespace TencentCloud
                     bool m_fileArrivalPathHasBeenSet;
 
                     /**
-                     * <p>文件到达模式下    触发最短间隔时间（单位：秒）</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    uint64_t m_triggerMinimumIntervalSecond;
-                    bool m_triggerMinimumIntervalSecondHasBeenSet;
-
-                    /**
-                     * <p>文件到达模式下    触发等待时间（单位：秒）</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    uint64_t m_triggerWaitTimeSecond;
-                    bool m_triggerWaitTimeSecondHasBeenSet;
-
-                    /**
                      * <p>Trigger 状态 启动ACTIVE，暂停PAUSED。外部的TriggerStatus优先级大于当前值</p><p>枚举值：</p><ul><li>ACTIVE： 启动</li><li>PAUSED： 暂停</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_schedulerStatus;
                     bool m_schedulerStatusHasBeenSet;
+
+                    /**
+                     * <p>文件到达模式下 文件匹配规则</p><p>入参限制：文件名匹配仅支持文件名和 *，不能包含路径分隔符 /</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fileNamePattern;
+                    bool m_fileNamePatternHasBeenSet;
+
+                    /**
+                     * <p>文件到达模式下 是否递归检测子目录</p><p>取值范围：[0, 1]</p><p>默认值：1</p><p>默认 1（开启） 0 （关闭）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_recursive;
+                    bool m_recursiveHasBeenSet;
+
+                    /**
+                     * <p>文件到达模式下    触发最短间隔时间</p><p>单位：秒</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_triggerMinimumIntervalSecond;
+                    bool m_triggerMinimumIntervalSecondHasBeenSet;
+
+                    /**
+                     * <p>文件到达模式下    触发等待时间</p><p>单位：秒</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_triggerWaitTimeSecond;
+                    bool m_triggerWaitTimeSecondHasBeenSet;
 
                 };
             }

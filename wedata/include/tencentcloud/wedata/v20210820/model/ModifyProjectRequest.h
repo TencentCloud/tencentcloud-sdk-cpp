@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标修改的项目ID
-                     * @return ProjectId 目标修改的项目ID
+                     * 获取<p>目标修改的项目ID</p>
+                     * @return ProjectId <p>目标修改的项目ID</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置目标修改的项目ID
-                     * @param _projectId 目标修改的项目ID
+                     * 设置<p>目标修改的项目ID</p>
+                     * @param _projectId <p>目标修改的项目ID</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取项目显示名称，可以为中文名,需要租户范围内唯一
-                     * @return DisplayName 项目显示名称，可以为中文名,需要租户范围内唯一
+                     * 获取<p>项目显示名称，可以为中文名,需要租户范围内唯一</p>
+                     * @return DisplayName <p>项目显示名称，可以为中文名,需要租户范围内唯一</p>
                      * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
-                     * 设置项目显示名称，可以为中文名,需要租户范围内唯一
-                     * @param _displayName 项目显示名称，可以为中文名,需要租户范围内唯一
+                     * 设置<p>项目显示名称，可以为中文名,需要租户范围内唯一</p>
+                     * @param _displayName <p>项目显示名称，可以为中文名,需要租户范围内唯一</p>
                      * 
                      */
                     void SetDisplayName(const std::string& _displayName);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool DisplayNameHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Description 备注
+                     * 获取<p>备注</p>
+                     * @return Description <p>备注</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置备注
-                     * @param _description 备注
+                     * 设置<p>备注</p>
+                     * @param _description <p>备注</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取true/false则修改，不带该参数不修改。
-                     * @return TaskSubmitApproval true/false则修改，不带该参数不修改。
+                     * 获取<p>true/false则修改，不带该参数不修改。</p>
+                     * @return TaskSubmitApproval <p>true/false则修改，不带该参数不修改。</p>
                      * 
                      */
                     bool GetTaskSubmitApproval() const;
 
                     /**
-                     * 设置true/false则修改，不带该参数不修改。
-                     * @param _taskSubmitApproval true/false则修改，不带该参数不修改。
+                     * 设置<p>true/false则修改，不带该参数不修改。</p>
+                     * @param _taskSubmitApproval <p>true/false则修改，不带该参数不修改。</p>
                      * 
                      */
                     void SetTaskSubmitApproval(const bool& _taskSubmitApproval);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool TaskSubmitApprovalHasBeenSet() const;
 
                     /**
-                     * 获取资源池信息
-                     * @return ResourcePoolInfo 资源池信息
+                     * 获取<p>资源池信息</p>
+                     * @return ResourcePoolInfo <p>资源池信息</p>
                      * 
                      */
                     ResourcePoolInfo GetResourcePoolInfo() const;
 
                     /**
-                     * 设置资源池信息
-                     * @param _resourcePoolInfo 资源池信息
+                     * 设置<p>资源池信息</p>
+                     * @param _resourcePoolInfo <p>资源池信息</p>
                      * 
                      */
                     void SetResourcePoolInfo(const ResourcePoolInfo& _resourcePoolInfo);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool ResourcePoolInfoHasBeenSet() const;
 
                     /**
-                     * 获取项目管理员
-                     * @return ProjectManagers 项目管理员
+                     * 获取<p>项目管理员</p>
+                     * @return ProjectManagers <p>项目管理员</p>
                      * 
                      */
                     std::vector<std::string> GetProjectManagers() const;
 
                     /**
-                     * 设置项目管理员
-                     * @param _projectManagers 项目管理员
+                     * 设置<p>项目管理员</p>
+                     * @param _projectManagers <p>项目管理员</p>
                      * 
                      */
                     void SetProjectManagers(const std::vector<std::string>& _projectManagers);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool ProjectManagersHasBeenSet() const;
 
                     /**
-                     * 获取调度任务严格模式
-                     * @return TaskStrictMode 调度任务严格模式
+                     * 获取<p>调度任务严格模式</p>
+                     * @return TaskStrictMode <p>调度任务严格模式</p>
                      * 
                      */
                     bool GetTaskStrictMode() const;
 
                     /**
-                     * 设置调度任务严格模式
-                     * @param _taskStrictMode 调度任务严格模式
+                     * 设置<p>调度任务严格模式</p>
+                     * @param _taskStrictMode <p>调度任务严格模式</p>
                      * 
                      */
                     void SetTaskStrictMode(const bool& _taskStrictMode);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool TaskStrictModeHasBeenSet() const;
 
                     /**
-                     * 获取以后新增选项可以直接通过前端的json格式写入去实现
-                     * @return ExtraOptions 以后新增选项可以直接通过前端的json格式写入去实现
+                     * 获取<p>以后新增选项可以直接通过前端的json格式写入去实现</p>
+                     * @return ExtraOptions <p>以后新增选项可以直接通过前端的json格式写入去实现</p>
                      * 
                      */
                     std::string GetExtraOptions() const;
 
                     /**
-                     * 设置以后新增选项可以直接通过前端的json格式写入去实现
-                     * @param _extraOptions 以后新增选项可以直接通过前端的json格式写入去实现
+                     * 设置<p>以后新增选项可以直接通过前端的json格式写入去实现</p>
+                     * @param _extraOptions <p>以后新增选项可以直接通过前端的json格式写入去实现</p>
                      * 
                      */
                     void SetExtraOptions(const std::string& _extraOptions);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool ExtraOptionsHasBeenSet() const;
 
                     /**
-                     * 获取项目类型，SIMPLE：简单模式 STANDARD：标准模式
-                     * @return Model 项目类型，SIMPLE：简单模式 STANDARD：标准模式
+                     * 获取<p>项目类型，SIMPLE：简单模式 STANDARD：标准模式</p>
+                     * @return Model <p>项目类型，SIMPLE：简单模式 STANDARD：标准模式</p>
                      * 
                      */
                     std::string GetModel() const;
 
                     /**
-                     * 设置项目类型，SIMPLE：简单模式 STANDARD：标准模式
-                     * @param _model 项目类型，SIMPLE：简单模式 STANDARD：标准模式
+                     * 设置<p>项目类型，SIMPLE：简单模式 STANDARD：标准模式</p>
+                     * @param _model <p>项目类型，SIMPLE：简单模式 STANDARD：标准模式</p>
                      * 
                      */
                     void SetModel(const std::string& _model);
@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool ModelHasBeenSet() const;
 
                     /**
-                     * 获取项目负责人
-                     * @return ProjectOwner 项目负责人
+                     * 获取<p>项目负责人</p>
+                     * @return ProjectOwner <p>项目负责人</p>
                      * 
                      */
                     std::vector<std::string> GetProjectOwner() const;
 
                     /**
-                     * 设置项目负责人
-                     * @param _projectOwner 项目负责人
+                     * 设置<p>项目负责人</p>
+                     * @param _projectOwner <p>项目负责人</p>
                      * 
                      */
                     void SetProjectOwner(const std::vector<std::string>& _projectOwner);
@@ -254,15 +254,15 @@ namespace TencentCloud
                     bool ProjectOwnerHasBeenSet() const;
 
                     /**
-                     * 获取更新类型
-                     * @return ModifyType 更新类型
+                     * 获取<p>更新类型</p>
+                     * @return ModifyType <p>更新类型</p>
                      * 
                      */
                     std::string GetModifyType() const;
 
                     /**
-                     * 设置更新类型
-                     * @param _modifyType 更新类型
+                     * 设置<p>更新类型</p>
+                     * @param _modifyType <p>更新类型</p>
                      * 
                      */
                     void SetModifyType(const std::string& _modifyType);
@@ -277,67 +277,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标修改的项目ID
+                     * <p>目标修改的项目ID</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 项目显示名称，可以为中文名,需要租户范围内唯一
+                     * <p>项目显示名称，可以为中文名,需要租户范围内唯一</p>
                      */
                     std::string m_displayName;
                     bool m_displayNameHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * true/false则修改，不带该参数不修改。
+                     * <p>true/false则修改，不带该参数不修改。</p>
                      */
                     bool m_taskSubmitApproval;
                     bool m_taskSubmitApprovalHasBeenSet;
 
                     /**
-                     * 资源池信息
+                     * <p>资源池信息</p>
                      */
                     ResourcePoolInfo m_resourcePoolInfo;
                     bool m_resourcePoolInfoHasBeenSet;
 
                     /**
-                     * 项目管理员
+                     * <p>项目管理员</p>
                      */
                     std::vector<std::string> m_projectManagers;
                     bool m_projectManagersHasBeenSet;
 
                     /**
-                     * 调度任务严格模式
+                     * <p>调度任务严格模式</p>
                      */
                     bool m_taskStrictMode;
                     bool m_taskStrictModeHasBeenSet;
 
                     /**
-                     * 以后新增选项可以直接通过前端的json格式写入去实现
+                     * <p>以后新增选项可以直接通过前端的json格式写入去实现</p>
                      */
                     std::string m_extraOptions;
                     bool m_extraOptionsHasBeenSet;
 
                     /**
-                     * 项目类型，SIMPLE：简单模式 STANDARD：标准模式
+                     * <p>项目类型，SIMPLE：简单模式 STANDARD：标准模式</p>
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;
 
                     /**
-                     * 项目负责人
+                     * <p>项目负责人</p>
                      */
                     std::vector<std::string> m_projectOwner;
                     bool m_projectOwnerHasBeenSet;
 
                     /**
-                     * 更新类型
+                     * <p>更新类型</p>
                      */
                     std::string m_modifyType;
                     bool m_modifyTypeHasBeenSet;

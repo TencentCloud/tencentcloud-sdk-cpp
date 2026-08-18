@@ -1190,6 +1190,56 @@ ThpcClient::DetachNodesOutcomeCallable ThpcClient::DetachNodesCallable(const Det
     return prom->get_future();
 }
 
+ThpcClient::InquirePriceModifyWorkspacesChargeTypeOutcome ThpcClient::InquirePriceModifyWorkspacesChargeType(const InquirePriceModifyWorkspacesChargeTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePriceModifyWorkspacesChargeType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePriceModifyWorkspacesChargeTypeResponse rsp = InquirePriceModifyWorkspacesChargeTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePriceModifyWorkspacesChargeTypeOutcome(rsp);
+        else
+            return InquirePriceModifyWorkspacesChargeTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePriceModifyWorkspacesChargeTypeOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::InquirePriceModifyWorkspacesChargeTypeAsync(const InquirePriceModifyWorkspacesChargeTypeRequest& request, const InquirePriceModifyWorkspacesChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const InquirePriceModifyWorkspacesChargeTypeRequest&;
+    using Resp = InquirePriceModifyWorkspacesChargeTypeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "InquirePriceModifyWorkspacesChargeType", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ThpcClient::InquirePriceModifyWorkspacesChargeTypeOutcomeCallable ThpcClient::InquirePriceModifyWorkspacesChargeTypeCallable(const InquirePriceModifyWorkspacesChargeTypeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<InquirePriceModifyWorkspacesChargeTypeOutcome>>();
+    InquirePriceModifyWorkspacesChargeTypeAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const InquirePriceModifyWorkspacesChargeTypeRequest&,
+        InquirePriceModifyWorkspacesChargeTypeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ThpcClient::ModifyClusterDeletionProtectionOutcome ThpcClient::ModifyClusterDeletionProtection(const ModifyClusterDeletionProtectionRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyClusterDeletionProtection");
@@ -1382,6 +1432,56 @@ ThpcClient::ModifyWorkspacesAttributeOutcomeCallable ThpcClient::ModifyWorkspace
         const ThpcClient*,
         const ModifyWorkspacesAttributeRequest&,
         ModifyWorkspacesAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ThpcClient::ModifyWorkspacesChargeTypeOutcome ThpcClient::ModifyWorkspacesChargeType(const ModifyWorkspacesChargeTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyWorkspacesChargeType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyWorkspacesChargeTypeResponse rsp = ModifyWorkspacesChargeTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyWorkspacesChargeTypeOutcome(rsp);
+        else
+            return ModifyWorkspacesChargeTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyWorkspacesChargeTypeOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::ModifyWorkspacesChargeTypeAsync(const ModifyWorkspacesChargeTypeRequest& request, const ModifyWorkspacesChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyWorkspacesChargeTypeRequest&;
+    using Resp = ModifyWorkspacesChargeTypeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyWorkspacesChargeType", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ThpcClient::ModifyWorkspacesChargeTypeOutcomeCallable ThpcClient::ModifyWorkspacesChargeTypeCallable(const ModifyWorkspacesChargeTypeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyWorkspacesChargeTypeOutcome>>();
+    ModifyWorkspacesChargeTypeAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const ModifyWorkspacesChargeTypeRequest&,
+        ModifyWorkspacesChargeTypeOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

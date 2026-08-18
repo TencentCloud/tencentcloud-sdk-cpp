@@ -38,7 +38,8 @@ DatahubResource::DatahubResource() :
     m_sQLServerParamHasBeenSet(false),
     m_ctsdbParamHasBeenSet(false),
     m_scfParamHasBeenSet(false),
-    m_mqttParamHasBeenSet(false)
+    m_mqttParamHasBeenSet(false),
+    m_icebergParamHasBeenSet(false)
 {
 }
 
@@ -346,6 +347,23 @@ CoreInternalOutcome DatahubResource::Deserialize(const rapidjson::Value &value)
         m_mqttParamHasBeenSet = true;
     }
 
+    if (value.HasMember("IcebergParam") && !value["IcebergParam"].IsNull())
+    {
+        if (!value["IcebergParam"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatahubResource.IcebergParam` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_icebergParam.Deserialize(value["IcebergParam"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_icebergParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -512,6 +530,15 @@ void DatahubResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mqttParam.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_icebergParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IcebergParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_icebergParam.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -803,5 +830,21 @@ void DatahubResource::SetMqttParam(const MqttParam& _mqttParam)
 bool DatahubResource::MqttParamHasBeenSet() const
 {
     return m_mqttParamHasBeenSet;
+}
+
+IcebergParam DatahubResource::GetIcebergParam() const
+{
+    return m_icebergParam;
+}
+
+void DatahubResource::SetIcebergParam(const IcebergParam& _icebergParam)
+{
+    m_icebergParam = _icebergParam;
+    m_icebergParamHasBeenSet = true;
+}
+
+bool DatahubResource::IcebergParamHasBeenSet() const
+{
+    return m_icebergParamHasBeenSet;
 }
 

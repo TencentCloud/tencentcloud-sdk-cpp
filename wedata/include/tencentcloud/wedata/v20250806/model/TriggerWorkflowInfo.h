@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作流ID
+                     * 获取<p>工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkflowId 工作流ID
+                     * @return WorkflowId <p>工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkflowId() const;
 
                     /**
-                     * 设置工作流ID
+                     * 设置<p>工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workflowId 工作流ID
+                     * @param _workflowId <p>工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool WorkflowIdHasBeenSet() const;
 
                     /**
-                     * 获取工作流名称
+                     * 获取<p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkflowName 工作流名称
+                     * @return WorkflowName <p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkflowName() const;
 
                     /**
-                     * 设置工作流名称
+                     * 设置<p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workflowName 工作流名称
+                     * @param _workflowName <p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool WorkflowNameHasBeenSet() const;
 
                     /**
-                     * 获取负责人ID
+                     * 获取<p>负责人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OwnerUin 负责人ID
+                     * @return OwnerUin <p>负责人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOwnerUin() const;
 
                     /**
-                     * 设置负责人ID
+                     * 设置<p>负责人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ownerUin 负责人ID
+                     * @param _ownerUin <p>负责人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool OwnerUinHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间
+                     * @return CreateTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
+                     * 设置<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 创建时间
+                     * @param _createTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取最新修改时间
+                     * 获取<p>最新修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModifyTime 最新修改时间
+                     * @return ModifyTime <p>最新修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置最新修改时间
+                     * 设置<p>最新修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modifyTime 最新修改时间
+                     * @param _modifyTime <p>最新修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取最后更新人ID
+                     * 获取<p>最后更新人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateUserUin 最后更新人ID
+                     * @return UpdateUserUin <p>最后更新人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateUserUin() const;
 
                     /**
-                     * 设置最后更新人ID
+                     * 设置<p>最后更新人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateUserUin 最后更新人ID
+                     * @param _updateUserUin <p>最后更新人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool UpdateUserUinHasBeenSet() const;
 
                     /**
-                     * 获取工作流描述
+                     * 获取<p>工作流描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkflowDesc 工作流描述
+                     * @return WorkflowDesc <p>工作流描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkflowDesc() const;
 
                     /**
-                     * 设置工作流描述
+                     * 设置<p>工作流描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workflowDesc 工作流描述
+                     * @param _workflowDesc <p>工作流描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool WorkflowDescHasBeenSet() const;
 
                     /**
-                     * 获取创建人ID
+                     * 获取<p>创建人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateUserUin 创建人ID
+                     * @return CreateUserUin <p>创建人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateUserUin() const;
 
                     /**
-                     * 设置创建人ID
+                     * 设置<p>创建人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createUserUin 创建人ID
+                     * @param _createUserUin <p>创建人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -246,63 +246,95 @@ namespace TencentCloud
                      */
                     bool CreateUserUinHasBeenSet() const;
 
+                    /**
+                     * 获取<p>运行账号ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExecuteUserUin <p>运行账号ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExecuteUserUin() const;
+
+                    /**
+                     * 设置<p>运行账号ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _executeUserUin <p>运行账号ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExecuteUserUin(const std::string& _executeUserUin);
+
+                    /**
+                     * 判断参数 ExecuteUserUin 是否已赋值
+                     * @return ExecuteUserUin 是否已赋值
+                     * 
+                     */
+                    bool ExecuteUserUinHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 工作流ID
+                     * <p>工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workflowId;
                     bool m_workflowIdHasBeenSet;
 
                     /**
-                     * 工作流名称
+                     * <p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workflowName;
                     bool m_workflowNameHasBeenSet;
 
                     /**
-                     * 负责人ID
+                     * <p>负责人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ownerUin;
                     bool m_ownerUinHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 最新修改时间
+                     * <p>最新修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 最后更新人ID
+                     * <p>最后更新人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateUserUin;
                     bool m_updateUserUinHasBeenSet;
 
                     /**
-                     * 工作流描述
+                     * <p>工作流描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workflowDesc;
                     bool m_workflowDescHasBeenSet;
 
                     /**
-                     * 创建人ID
+                     * <p>创建人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createUserUin;
                     bool m_createUserUinHasBeenSet;
+
+                    /**
+                     * <p>运行账号ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_executeUserUin;
+                    bool m_executeUserUinHasBeenSet;
 
                 };
             }

@@ -319,6 +319,27 @@ namespace TencentCloud
                      */
                     bool TriggerModeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>运行账号ID,未传时默认使用当前登录用户ID</p>
+                     * @return ExecuteUserUin <p>运行账号ID,未传时默认使用当前登录用户ID</p>
+                     * 
+                     */
+                    std::string GetExecuteUserUin() const;
+
+                    /**
+                     * 设置<p>运行账号ID,未传时默认使用当前登录用户ID</p>
+                     * @param _executeUserUin <p>运行账号ID,未传时默认使用当前登录用户ID</p>
+                     * 
+                     */
+                    void SetExecuteUserUin(const std::string& _executeUserUin);
+
+                    /**
+                     * 判断参数 ExecuteUserUin 是否已赋值
+                     * @return ExecuteUserUin 是否已赋值
+                     * 
+                     */
+                    bool ExecuteUserUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -398,6 +419,12 @@ namespace TencentCloud
                      */
                     std::string m_triggerMode;
                     bool m_triggerModeHasBeenSet;
+
+                    /**
+                     * <p>运行账号ID,未传时默认使用当前登录用户ID</p>
+                     */
+                    std::string m_executeUserUin;
+                    bool m_executeUserUinHasBeenSet;
 
                 };
             }

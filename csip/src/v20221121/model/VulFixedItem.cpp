@@ -31,7 +31,8 @@ VulFixedItem::VulFixedItem() :
     m_instanceIdHasBeenSet(false),
     m_componentCountHasBeenSet(false),
     m_componentsHasBeenSet(false),
-    m_latestFixTimeHasBeenSet(false)
+    m_latestFixTimeHasBeenSet(false),
+    m_vPRExplainInfoHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,23 @@ CoreInternalOutcome VulFixedItem::Deserialize(const rapidjson::Value &value)
         m_latestFixTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("VPRExplainInfo") && !value["VPRExplainInfo"].IsNull())
+    {
+        if (!value["VPRExplainInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulFixedItem.VPRExplainInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_vPRExplainInfo.Deserialize(value["VPRExplainInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_vPRExplainInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +277,15 @@ void VulFixedItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "LatestFixTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_latestFixTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vPRExplainInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VPRExplainInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_vPRExplainInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -438,5 +465,21 @@ void VulFixedItem::SetLatestFixTime(const string& _latestFixTime)
 bool VulFixedItem::LatestFixTimeHasBeenSet() const
 {
     return m_latestFixTimeHasBeenSet;
+}
+
+VPRExplainInfo VulFixedItem::GetVPRExplainInfo() const
+{
+    return m_vPRExplainInfo;
+}
+
+void VulFixedItem::SetVPRExplainInfo(const VPRExplainInfo& _vPRExplainInfo)
+{
+    m_vPRExplainInfo = _vPRExplainInfo;
+    m_vPRExplainInfoHasBeenSet = true;
+}
+
+bool VulFixedItem::VPRExplainInfoHasBeenSet() const
+{
+    return m_vPRExplainInfoHasBeenSet;
 }
 

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ProjectId <p>项目ID</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _projectId <p>项目ID</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取工作流ID
-                     * @return WorkflowId 工作流ID
+                     * 获取<p>工作流ID</p>
+                     * @return WorkflowId <p>工作流ID</p>
                      * 
                      */
                     std::string GetWorkflowId() const;
 
                     /**
-                     * 设置工作流ID
-                     * @param _workflowId 工作流ID
+                     * 设置<p>工作流ID</p>
+                     * @param _workflowId <p>工作流ID</p>
                      * 
                      */
                     void SetWorkflowId(const std::string& _workflowId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool WorkflowIdHasBeenSet() const;
 
                     /**
-                     * 获取责任人ID
-                     * @return NewSetting 责任人ID
+                     * 获取<p>责任人ID</p>
+                     * @return NewSetting <p>责任人ID</p>
                      * 
                      */
                     UpdateTriggerWorkflowPartially GetNewSetting() const;
 
                     /**
-                     * 设置责任人ID
-                     * @param _newSetting 责任人ID
+                     * 设置<p>责任人ID</p>
+                     * @param _newSetting <p>责任人ID</p>
                      * 
                      */
                     void SetNewSetting(const UpdateTriggerWorkflowPartially& _newSetting);
@@ -107,31 +107,15 @@ namespace TencentCloud
                     bool NewSettingHasBeenSet() const;
 
                     /**
-                     * 获取删除字段内容，采用属性路径的形式标识，删除的值以":"分割，多个值以","分割
- // 删除调度参数中 ParamKey 为 aa,bb 的属性 "WorkflowParams:aa,bb"
- // 删除配置的 TriggerId 为 da46d950-d5ca-4cfb-a5a9-f3c2eeea1bf0 的调度配置"TriggerWorkflowSchedulerConfigurations :da46d950-d5ca-4cfb-a5a9-f3c2eeea1bf0" 
-// 删除spark sql通用参数 "GeneralTaskParams: SPARK_SQL" 
-
-                     * @return FieldToRemoveList 删除字段内容，采用属性路径的形式标识，删除的值以":"分割，多个值以","分割
- // 删除调度参数中 ParamKey 为 aa,bb 的属性 "WorkflowParams:aa,bb"
- // 删除配置的 TriggerId 为 da46d950-d5ca-4cfb-a5a9-f3c2eeea1bf0 的调度配置"TriggerWorkflowSchedulerConfigurations :da46d950-d5ca-4cfb-a5a9-f3c2eeea1bf0" 
-// 删除spark sql通用参数 "GeneralTaskParams: SPARK_SQL" 
-
+                     * 获取<p>删除字段内容，采用属性路径的形式标识，删除的值以&quot;:&quot;分割，多个值以&quot;,&quot;分割<br> // 删除调度参数中 ParamKey 为 aa,bb 的属性 &quot;WorkflowParams:aa,bb&quot;<br> // 删除配置的 TriggerId 为 da46d950-d5ca-4cfb-a5a9-f3c2eeea1bf0 的调度配置&quot;TriggerWorkflowSchedulerConfigurations :da46d950-d5ca-4cfb-a5a9-f3c2eeea1bf0&quot;<br>// 删除spark sql通用参数 &quot;GeneralTaskParams: SPARK_SQL&quot;</p>
+                     * @return FieldToRemoveList <p>删除字段内容，采用属性路径的形式标识，删除的值以&quot;:&quot;分割，多个值以&quot;,&quot;分割<br> // 删除调度参数中 ParamKey 为 aa,bb 的属性 &quot;WorkflowParams:aa,bb&quot;<br> // 删除配置的 TriggerId 为 da46d950-d5ca-4cfb-a5a9-f3c2eeea1bf0 的调度配置&quot;TriggerWorkflowSchedulerConfigurations :da46d950-d5ca-4cfb-a5a9-f3c2eeea1bf0&quot;<br>// 删除spark sql通用参数 &quot;GeneralTaskParams: SPARK_SQL&quot;</p>
                      * 
                      */
                     std::vector<std::string> GetFieldToRemoveList() const;
 
                     /**
-                     * 设置删除字段内容，采用属性路径的形式标识，删除的值以":"分割，多个值以","分割
- // 删除调度参数中 ParamKey 为 aa,bb 的属性 "WorkflowParams:aa,bb"
- // 删除配置的 TriggerId 为 da46d950-d5ca-4cfb-a5a9-f3c2eeea1bf0 的调度配置"TriggerWorkflowSchedulerConfigurations :da46d950-d5ca-4cfb-a5a9-f3c2eeea1bf0" 
-// 删除spark sql通用参数 "GeneralTaskParams: SPARK_SQL" 
-
-                     * @param _fieldToRemoveList 删除字段内容，采用属性路径的形式标识，删除的值以":"分割，多个值以","分割
- // 删除调度参数中 ParamKey 为 aa,bb 的属性 "WorkflowParams:aa,bb"
- // 删除配置的 TriggerId 为 da46d950-d5ca-4cfb-a5a9-f3c2eeea1bf0 的调度配置"TriggerWorkflowSchedulerConfigurations :da46d950-d5ca-4cfb-a5a9-f3c2eeea1bf0" 
-// 删除spark sql通用参数 "GeneralTaskParams: SPARK_SQL" 
-
+                     * 设置<p>删除字段内容，采用属性路径的形式标识，删除的值以&quot;:&quot;分割，多个值以&quot;,&quot;分割<br> // 删除调度参数中 ParamKey 为 aa,bb 的属性 &quot;WorkflowParams:aa,bb&quot;<br> // 删除配置的 TriggerId 为 da46d950-d5ca-4cfb-a5a9-f3c2eeea1bf0 的调度配置&quot;TriggerWorkflowSchedulerConfigurations :da46d950-d5ca-4cfb-a5a9-f3c2eeea1bf0&quot;<br>// 删除spark sql通用参数 &quot;GeneralTaskParams: SPARK_SQL&quot;</p>
+                     * @param _fieldToRemoveList <p>删除字段内容，采用属性路径的形式标识，删除的值以&quot;:&quot;分割，多个值以&quot;,&quot;分割<br> // 删除调度参数中 ParamKey 为 aa,bb 的属性 &quot;WorkflowParams:aa,bb&quot;<br> // 删除配置的 TriggerId 为 da46d950-d5ca-4cfb-a5a9-f3c2eeea1bf0 的调度配置&quot;TriggerWorkflowSchedulerConfigurations :da46d950-d5ca-4cfb-a5a9-f3c2eeea1bf0&quot;<br>// 删除spark sql通用参数 &quot;GeneralTaskParams: SPARK_SQL&quot;</p>
                      * 
                      */
                     void SetFieldToRemoveList(const std::vector<std::string>& _fieldToRemoveList);
@@ -146,29 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 工作流ID
+                     * <p>工作流ID</p>
                      */
                     std::string m_workflowId;
                     bool m_workflowIdHasBeenSet;
 
                     /**
-                     * 责任人ID
+                     * <p>责任人ID</p>
                      */
                     UpdateTriggerWorkflowPartially m_newSetting;
                     bool m_newSettingHasBeenSet;
 
                     /**
-                     * 删除字段内容，采用属性路径的形式标识，删除的值以":"分割，多个值以","分割
- // 删除调度参数中 ParamKey 为 aa,bb 的属性 "WorkflowParams:aa,bb"
- // 删除配置的 TriggerId 为 da46d950-d5ca-4cfb-a5a9-f3c2eeea1bf0 的调度配置"TriggerWorkflowSchedulerConfigurations :da46d950-d5ca-4cfb-a5a9-f3c2eeea1bf0" 
-// 删除spark sql通用参数 "GeneralTaskParams: SPARK_SQL" 
-
+                     * <p>删除字段内容，采用属性路径的形式标识，删除的值以&quot;:&quot;分割，多个值以&quot;,&quot;分割<br> // 删除调度参数中 ParamKey 为 aa,bb 的属性 &quot;WorkflowParams:aa,bb&quot;<br> // 删除配置的 TriggerId 为 da46d950-d5ca-4cfb-a5a9-f3c2eeea1bf0 的调度配置&quot;TriggerWorkflowSchedulerConfigurations :da46d950-d5ca-4cfb-a5a9-f3c2eeea1bf0&quot;<br>// 删除spark sql通用参数 &quot;GeneralTaskParams: SPARK_SQL&quot;</p>
                      */
                     std::vector<std::string> m_fieldToRemoveList;
                     bool m_fieldToRemoveListHasBeenSet;

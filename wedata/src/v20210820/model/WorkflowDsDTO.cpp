@@ -38,7 +38,9 @@ WorkflowDsDTO::WorkflowDsDTO() :
     m_updateUserHasBeenSet(false),
     m_updateUserIdHasBeenSet(false),
     m_bundleIdHasBeenSet(false),
-    m_bundleInfoHasBeenSet(false)
+    m_bundleInfoHasBeenSet(false),
+    m_executeUserUinHasBeenSet(false),
+    m_executeUserNameHasBeenSet(false)
 {
 }
 
@@ -257,6 +259,26 @@ CoreInternalOutcome WorkflowDsDTO::Deserialize(const rapidjson::Value &value)
         m_bundleInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("ExecuteUserUin") && !value["ExecuteUserUin"].IsNull())
+    {
+        if (!value["ExecuteUserUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowDsDTO.ExecuteUserUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_executeUserUin = string(value["ExecuteUserUin"].GetString());
+        m_executeUserUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExecuteUserName") && !value["ExecuteUserName"].IsNull())
+    {
+        if (!value["ExecuteUserName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowDsDTO.ExecuteUserName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_executeUserName = string(value["ExecuteUserName"].GetString());
+        m_executeUserNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -427,6 +449,22 @@ void WorkflowDsDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "BundleInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_bundleInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executeUserUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecuteUserUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_executeUserUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executeUserNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecuteUserName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_executeUserName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -718,5 +756,37 @@ void WorkflowDsDTO::SetBundleInfo(const string& _bundleInfo)
 bool WorkflowDsDTO::BundleInfoHasBeenSet() const
 {
     return m_bundleInfoHasBeenSet;
+}
+
+string WorkflowDsDTO::GetExecuteUserUin() const
+{
+    return m_executeUserUin;
+}
+
+void WorkflowDsDTO::SetExecuteUserUin(const string& _executeUserUin)
+{
+    m_executeUserUin = _executeUserUin;
+    m_executeUserUinHasBeenSet = true;
+}
+
+bool WorkflowDsDTO::ExecuteUserUinHasBeenSet() const
+{
+    return m_executeUserUinHasBeenSet;
+}
+
+string WorkflowDsDTO::GetExecuteUserName() const
+{
+    return m_executeUserName;
+}
+
+void WorkflowDsDTO::SetExecuteUserName(const string& _executeUserName)
+{
+    m_executeUserName = _executeUserName;
+    m_executeUserNameHasBeenSet = true;
+}
+
+bool WorkflowDsDTO::ExecuteUserNameHasBeenSet() const
+{
+    return m_executeUserNameHasBeenSet;
 }
 

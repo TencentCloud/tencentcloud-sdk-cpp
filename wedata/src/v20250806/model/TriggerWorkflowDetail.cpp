@@ -33,7 +33,8 @@ TriggerWorkflowDetail::TriggerWorkflowDetail() :
     m_generalTaskParamsHasBeenSet(false),
     m_schedulerStatusHasBeenSet(false),
     m_triggerWorkflowRunConfigurationHasBeenSet(false),
-    m_triggerModeHasBeenSet(false)
+    m_triggerModeHasBeenSet(false),
+    m_executeUserUinHasBeenSet(false)
 {
 }
 
@@ -209,6 +210,16 @@ CoreInternalOutcome TriggerWorkflowDetail::Deserialize(const rapidjson::Value &v
         m_triggerModeHasBeenSet = true;
     }
 
+    if (value.HasMember("ExecuteUserUin") && !value["ExecuteUserUin"].IsNull())
+    {
+        if (!value["ExecuteUserUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerWorkflowDetail.ExecuteUserUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_executeUserUin = string(value["ExecuteUserUin"].GetString());
+        m_executeUserUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -340,6 +351,14 @@ void TriggerWorkflowDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "TriggerMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_triggerMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executeUserUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecuteUserUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_executeUserUin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -551,5 +570,21 @@ void TriggerWorkflowDetail::SetTriggerMode(const string& _triggerMode)
 bool TriggerWorkflowDetail::TriggerModeHasBeenSet() const
 {
     return m_triggerModeHasBeenSet;
+}
+
+string TriggerWorkflowDetail::GetExecuteUserUin() const
+{
+    return m_executeUserUin;
+}
+
+void TriggerWorkflowDetail::SetExecuteUserUin(const string& _executeUserUin)
+{
+    m_executeUserUin = _executeUserUin;
+    m_executeUserUinHasBeenSet = true;
+}
+
+bool TriggerWorkflowDetail::ExecuteUserUinHasBeenSet() const
+{
+    return m_executeUserUinHasBeenSet;
 }
 

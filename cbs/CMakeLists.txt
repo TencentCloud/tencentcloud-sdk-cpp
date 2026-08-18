@@ -24,6 +24,7 @@ set(cbs_public_header_model
   include/tencentcloud/cbs/v20170312/model/ModifyDiskExtraPerformanceRequest.h
   include/tencentcloud/cbs/v20170312/model/SwitchParameterCreateRemoteDisksResponse.h
   include/tencentcloud/cbs/v20170312/model/ModifyDiskAttributesResponse.h
+  include/tencentcloud/cbs/v20170312/model/DescribeDedicatedClusterDiskStatisticsResponse.h
   include/tencentcloud/cbs/v20170312/model/DescribeDiskBackupsRequest.h
   include/tencentcloud/cbs/v20170312/model/InquirePriceModifyDiskBackupQuotaRequest.h
   include/tencentcloud/cbs/v20170312/model/AutoSnapshotPolicy.h
@@ -82,6 +83,7 @@ set(cbs_public_header_model
   include/tencentcloud/cbs/v20170312/model/ModifyDisksRenewFlagResponse.h
   include/tencentcloud/cbs/v20170312/model/SwitchParameterRenewRemoteDisksRequest.h
   include/tencentcloud/cbs/v20170312/model/CopyAutoSnapshotPolicyCrossAccountResponse.h
+  include/tencentcloud/cbs/v20170312/model/DescribeDedicatedClusterDiskStatisticsRequest.h
   include/tencentcloud/cbs/v20170312/model/DeleteAutoSnapshotPoliciesResponse.h
   include/tencentcloud/cbs/v20170312/model/DescribeDisksResponse.h
   include/tencentcloud/cbs/v20170312/model/Placement.h
@@ -172,6 +174,7 @@ set(cbs_src
   src/v20170312/model/ModifyDiskExtraPerformanceRequest.cpp
   src/v20170312/model/SwitchParameterCreateRemoteDisksResponse.cpp
   src/v20170312/model/ModifyDiskAttributesResponse.cpp
+  src/v20170312/model/DescribeDedicatedClusterDiskStatisticsResponse.cpp
   src/v20170312/model/DescribeDiskBackupsRequest.cpp
   src/v20170312/model/InquirePriceModifyDiskBackupQuotaRequest.cpp
   src/v20170312/model/AutoSnapshotPolicy.cpp
@@ -230,6 +233,7 @@ set(cbs_src
   src/v20170312/model/ModifyDisksRenewFlagResponse.cpp
   src/v20170312/model/SwitchParameterRenewRemoteDisksRequest.cpp
   src/v20170312/model/CopyAutoSnapshotPolicyCrossAccountResponse.cpp
+  src/v20170312/model/DescribeDedicatedClusterDiskStatisticsRequest.cpp
   src/v20170312/model/DeleteAutoSnapshotPoliciesResponse.cpp
   src/v20170312/model/DescribeDisksResponse.cpp
   src/v20170312/model/Placement.cpp

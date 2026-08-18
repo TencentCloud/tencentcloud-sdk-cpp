@@ -887,6 +887,27 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
+                     * 获取<p>CDC集群ID，非CDC场景无需指定该入参</p>
+                     * @return CdcId <p>CDC集群ID，非CDC场景无需指定该入参</p>
+                     * 
+                     */
+                    std::string GetCdcId() const;
+
+                    /**
+                     * 设置<p>CDC集群ID，非CDC场景无需指定该入参</p>
+                     * @param _cdcId <p>CDC集群ID，非CDC场景无需指定该入参</p>
+                     * 
+                     */
+                    void SetCdcId(const std::string& _cdcId);
+
+                    /**
+                     * 判断参数 CdcId 是否已赋值
+                     * @return CdcId 是否已赋值
+                     * 
+                     */
+                    bool CdcIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>集群类型:cage——金融围拢，cdc——CDB ON CDC；dedicate——独享集群</p>
                      * @return ClusterType <p>集群类型:cage——金融围拢，cdc——CDB ON CDC；dedicate——独享集群</p>
                      * 
@@ -1211,6 +1232,12 @@ namespace TencentCloud
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
+
+                    /**
+                     * <p>CDC集群ID，非CDC场景无需指定该入参</p>
+                     */
+                    std::string m_cdcId;
+                    bool m_cdcIdHasBeenSet;
 
                     /**
                      * <p>集群类型:cage——金融围拢，cdc——CDB ON CDC；dedicate——独享集群</p>

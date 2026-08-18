@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取电子签平台给企业分配的ID（在不同应用下同一个企业会分配通用的ID）
-                     * @return OrganizationId 电子签平台给企业分配的ID（在不同应用下同一个企业会分配通用的ID）
+                     * 获取<p>电子签平台给企业分配的ID（在不同应用下同一个企业会分配通用的ID）</p>
+                     * @return OrganizationId <p>电子签平台给企业分配的ID（在不同应用下同一个企业会分配通用的ID）</p>
                      * 
                      */
                     std::string GetOrganizationId() const;
 
                     /**
-                     * 设置电子签平台给企业分配的ID（在不同应用下同一个企业会分配通用的ID）
-                     * @param _organizationId 电子签平台给企业分配的ID（在不同应用下同一个企业会分配通用的ID）
+                     * 设置<p>电子签平台给企业分配的ID（在不同应用下同一个企业会分配通用的ID）</p>
+                     * @param _organizationId <p>电子签平台给企业分配的ID（在不同应用下同一个企业会分配通用的ID）</p>
                      * 
                      */
                     void SetOrganizationId(const std::string& _organizationId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool OrganizationIdHasBeenSet() const;
 
                     /**
-                     * 获取第三方平台子客企业的唯一标识
-                     * @return OrganizationOpenId 第三方平台子客企业的唯一标识
+                     * 获取<p>第三方平台子客企业的唯一标识</p>
+                     * @return OrganizationOpenId <p>第三方平台子客企业的唯一标识</p>
                      * 
                      */
                     std::string GetOrganizationOpenId() const;
 
                     /**
-                     * 设置第三方平台子客企业的唯一标识
-                     * @param _organizationOpenId 第三方平台子客企业的唯一标识
+                     * 设置<p>第三方平台子客企业的唯一标识</p>
+                     * @param _organizationOpenId <p>第三方平台子客企业的唯一标识</p>
                      * 
                      */
                     void SetOrganizationOpenId(const std::string& _organizationOpenId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool OrganizationOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取第三方平台子客企业名称
-                     * @return OrganizationName 第三方平台子客企业名称
+                     * 获取<p>第三方平台子客企业名称</p>
+                     * @return OrganizationName <p>第三方平台子客企业名称</p>
                      * 
                      */
                     std::string GetOrganizationName() const;
 
                     /**
-                     * 设置第三方平台子客企业名称
-                     * @param _organizationName 第三方平台子客企业名称
+                     * 设置<p>第三方平台子客企业名称</p>
+                     * @param _organizationName <p>第三方平台子客企业名称</p>
                      * 
                      */
                     void SetOrganizationName(const std::string& _organizationName);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool OrganizationNameHasBeenSet() const;
 
                     /**
-                     * 获取企业的统一社会信用代码
-                     * @return UnifiedSocialCreditCode 企业的统一社会信用代码
+                     * 获取<p>企业的统一社会信用代码</p>
+                     * @return UnifiedSocialCreditCode <p>企业的统一社会信用代码</p>
                      * 
                      */
                     std::string GetUnifiedSocialCreditCode() const;
 
                     /**
-                     * 设置企业的统一社会信用代码
-                     * @param _unifiedSocialCreditCode 企业的统一社会信用代码
+                     * 设置<p>企业的统一社会信用代码</p>
+                     * @param _unifiedSocialCreditCode <p>企业的统一社会信用代码</p>
                      * 
                      */
                     void SetUnifiedSocialCreditCode(const std::string& _unifiedSocialCreditCode);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool UnifiedSocialCreditCodeHasBeenSet() const;
 
                     /**
-                     * 获取企业法定代表人的姓名
-                     * @return LegalName 企业法定代表人的姓名
+                     * 获取<p>企业法定代表人的姓名</p>
+                     * @return LegalName <p>企业法定代表人的姓名</p>
                      * 
                      */
                     std::string GetLegalName() const;
 
                     /**
-                     * 设置企业法定代表人的姓名
-                     * @param _legalName 企业法定代表人的姓名
+                     * 设置<p>企业法定代表人的姓名</p>
+                     * @param _legalName <p>企业法定代表人的姓名</p>
                      * 
                      */
                     void SetLegalName(const std::string& _legalName);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool LegalNameHasBeenSet() const;
 
                     /**
-                     * 获取企业法定代表人作为第三方平台子客企业员工的唯一标识
-                     * @return LegalOpenId 企业法定代表人作为第三方平台子客企业员工的唯一标识
+                     * 获取<p>企业法定代表人作为第三方平台子客企业员工的唯一标识</p>
+                     * @return LegalOpenId <p>企业法定代表人作为第三方平台子客企业员工的唯一标识</p>
                      * 
                      */
                     std::string GetLegalOpenId() const;
 
                     /**
-                     * 设置企业法定代表人作为第三方平台子客企业员工的唯一标识
-                     * @param _legalOpenId 企业法定代表人作为第三方平台子客企业员工的唯一标识
+                     * 设置<p>企业法定代表人作为第三方平台子客企业员工的唯一标识</p>
+                     * @param _legalOpenId <p>企业法定代表人作为第三方平台子客企业员工的唯一标识</p>
                      * 
                      */
                     void SetLegalOpenId(const std::string& _legalOpenId);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool LegalOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取企业超级管理员的姓名
-                     * @return AdminName 企业超级管理员的姓名
+                     * 获取<p>企业超级管理员的姓名</p>
+                     * @return AdminName <p>企业超级管理员的姓名</p>
                      * 
                      */
                     std::string GetAdminName() const;
 
                     /**
-                     * 设置企业超级管理员的姓名
-                     * @param _adminName 企业超级管理员的姓名
+                     * 设置<p>企业超级管理员的姓名</p>
+                     * @param _adminName <p>企业超级管理员的姓名</p>
                      * 
                      */
                     void SetAdminName(const std::string& _adminName);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool AdminNameHasBeenSet() const;
 
                     /**
-                     * 获取企业超级管理员作为第三方平台子客企业员工的唯一标识
-                     * @return AdminOpenId 企业超级管理员作为第三方平台子客企业员工的唯一标识
+                     * 获取<p>企业超级管理员作为第三方平台子客企业员工的唯一标识</p>
+                     * @return AdminOpenId <p>企业超级管理员作为第三方平台子客企业员工的唯一标识</p>
                      * 
                      */
                     std::string GetAdminOpenId() const;
 
                     /**
-                     * 设置企业超级管理员作为第三方平台子客企业员工的唯一标识
-                     * @param _adminOpenId 企业超级管理员作为第三方平台子客企业员工的唯一标识
+                     * 设置<p>企业超级管理员作为第三方平台子客企业员工的唯一标识</p>
+                     * @param _adminOpenId <p>企业超级管理员作为第三方平台子客企业员工的唯一标识</p>
                      * 
                      */
                     void SetAdminOpenId(const std::string& _adminOpenId);
@@ -215,19 +215,15 @@ namespace TencentCloud
                     bool AdminOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取企业超级管理员的手机号码
-**注**：`手机号码脱敏（隐藏部分用*替代）`
-                     * @return AdminMobile 企业超级管理员的手机号码
-**注**：`手机号码脱敏（隐藏部分用*替代）`
+                     * 获取<p>企业超级管理员的手机号码<br><strong>注</strong>：<code>手机号码脱敏（隐藏部分用*替代）</code></p>
+                     * @return AdminMobile <p>企业超级管理员的手机号码<br><strong>注</strong>：<code>手机号码脱敏（隐藏部分用*替代）</code></p>
                      * 
                      */
                     std::string GetAdminMobile() const;
 
                     /**
-                     * 设置企业超级管理员的手机号码
-**注**：`手机号码脱敏（隐藏部分用*替代）`
-                     * @param _adminMobile 企业超级管理员的手机号码
-**注**：`手机号码脱敏（隐藏部分用*替代）`
+                     * 设置<p>企业超级管理员的手机号码<br><strong>注</strong>：<code>手机号码脱敏（隐藏部分用*替代）</code></p>
+                     * @param _adminMobile <p>企业超级管理员的手机号码<br><strong>注</strong>：<code>手机号码脱敏（隐藏部分用*替代）</code></p>
                      * 
                      */
                     void SetAdminMobile(const std::string& _adminMobile);
@@ -240,47 +236,15 @@ namespace TencentCloud
                     bool AdminMobileHasBeenSet() const;
 
                     /**
-                     * 获取企业认证状态字段。值如下：
-<ul>
-  <li>**"UNVERIFIED"**： 未认证的企业</li>
-  <li>**"VERIFYINGLEGALPENDINGAUTHORIZATION"**： 认证中待法人授权的企业</li>
-  <li>**"VERIFYINGAUTHORIZATIONFILEPENDING"**： 认证中授权书审核中的企业</li>
-  <li>**"VERIFYINGAUTHORIZATIONFILEREJECT"**： 认证中授权书已驳回的企业</li>
-  <li>**"VERIFYING"**： 认证中的企业</li>
-  <li>**"VERIFIED"**： 已认证的企业</li>
-</ul>
-                     * @return AuthorizationStatus 企业认证状态字段。值如下：
-<ul>
-  <li>**"UNVERIFIED"**： 未认证的企业</li>
-  <li>**"VERIFYINGLEGALPENDINGAUTHORIZATION"**： 认证中待法人授权的企业</li>
-  <li>**"VERIFYINGAUTHORIZATIONFILEPENDING"**： 认证中授权书审核中的企业</li>
-  <li>**"VERIFYINGAUTHORIZATIONFILEREJECT"**： 认证中授权书已驳回的企业</li>
-  <li>**"VERIFYING"**： 认证中的企业</li>
-  <li>**"VERIFIED"**： 已认证的企业</li>
-</ul>
+                     * 获取<p>企业认证状态枚举值及说明如下：</p><table>  <thead>    <tr>      <th>枚举值</th>      <th>说明</th>    </tr>  </thead>  <tbody>    <tr>      <td><code>UNVERIFIED</code></td>      <td>企业未认证</td>    </tr>    <tr>      <td><code>VERIFYING</code></td>      <td>企业认证中，还未选择授权方式</td>    </tr>    <tr>      <td><code>VERIFYINGLEGALPENDINGAUTHORIZATION</code></td>      <td>企业认证中，待法人授权或法人认证</td>    </tr>    <tr>      <td><code>VERIFYINGAUTHORIZATIONFILEPENDING</code></td>      <td>企业认证中，已上传授权书，授权书待审核</td>    </tr>    <tr>      <td><code>VERIFYINGAUTHORIZATIONFILEREJECT</code></td>      <td>企业认证中，授权书审核被驳回</td>    </tr>    <tr>      <td><code>VERIFIED</code></td>      <td>企业已认证成功</td>    </tr>  </tbody></table><p>企业认证流程的典型流转路径如下：</p><pre><code>UNVERIFIED → VERIFYING（提交企业信息，选择授权方式）                ├─ 法人授权 → VERIFYINGLEGALPENDINGAUTHORIZATION → VERIFIED                ├─ 法人认证 → VERIFYINGLEGALPENDINGAUTHORIZATION → VERIFIED                └─ 授权书 → VERIFYINGAUTHORIZATIONFILEPENDING                              ├─ 审核通过 → VERIFIED                              └─ 审核驳回 → VERIFYINGAUTHORIZATIONFILEREJECT</code></pre><p>枚举值：</p><ul><li>UNVERIFIED： 企业未认证</li><li>VERIFYING： 企业认证中，还未选择授权方式</li><li>VERIFYINGLEGALPENDINGAUTHORIZATION： 企业认证中，待法人授权或法人认证</li><li>VERIFYINGAUTHORIZATIONFILEPENDING： 企业认证中，已上传授权书，授权书待审核</li><li>VERIFYINGAUTHORIZATIONFILEREJECT： 企业认证中，授权书审核被驳回</li><li>VERIFIED： 企业已认证成功</li></ul>
+                     * @return AuthorizationStatus <p>企业认证状态枚举值及说明如下：</p><table>  <thead>    <tr>      <th>枚举值</th>      <th>说明</th>    </tr>  </thead>  <tbody>    <tr>      <td><code>UNVERIFIED</code></td>      <td>企业未认证</td>    </tr>    <tr>      <td><code>VERIFYING</code></td>      <td>企业认证中，还未选择授权方式</td>    </tr>    <tr>      <td><code>VERIFYINGLEGALPENDINGAUTHORIZATION</code></td>      <td>企业认证中，待法人授权或法人认证</td>    </tr>    <tr>      <td><code>VERIFYINGAUTHORIZATIONFILEPENDING</code></td>      <td>企业认证中，已上传授权书，授权书待审核</td>    </tr>    <tr>      <td><code>VERIFYINGAUTHORIZATIONFILEREJECT</code></td>      <td>企业认证中，授权书审核被驳回</td>    </tr>    <tr>      <td><code>VERIFIED</code></td>      <td>企业已认证成功</td>    </tr>  </tbody></table><p>企业认证流程的典型流转路径如下：</p><pre><code>UNVERIFIED → VERIFYING（提交企业信息，选择授权方式）                ├─ 法人授权 → VERIFYINGLEGALPENDINGAUTHORIZATION → VERIFIED                ├─ 法人认证 → VERIFYINGLEGALPENDINGAUTHORIZATION → VERIFIED                └─ 授权书 → VERIFYINGAUTHORIZATIONFILEPENDING                              ├─ 审核通过 → VERIFIED                              └─ 审核驳回 → VERIFYINGAUTHORIZATIONFILEREJECT</code></pre><p>枚举值：</p><ul><li>UNVERIFIED： 企业未认证</li><li>VERIFYING： 企业认证中，还未选择授权方式</li><li>VERIFYINGLEGALPENDINGAUTHORIZATION： 企业认证中，待法人授权或法人认证</li><li>VERIFYINGAUTHORIZATIONFILEPENDING： 企业认证中，已上传授权书，授权书待审核</li><li>VERIFYINGAUTHORIZATIONFILEREJECT： 企业认证中，授权书审核被驳回</li><li>VERIFIED： 企业已认证成功</li></ul>
                      * 
                      */
                     std::string GetAuthorizationStatus() const;
 
                     /**
-                     * 设置企业认证状态字段。值如下：
-<ul>
-  <li>**"UNVERIFIED"**： 未认证的企业</li>
-  <li>**"VERIFYINGLEGALPENDINGAUTHORIZATION"**： 认证中待法人授权的企业</li>
-  <li>**"VERIFYINGAUTHORIZATIONFILEPENDING"**： 认证中授权书审核中的企业</li>
-  <li>**"VERIFYINGAUTHORIZATIONFILEREJECT"**： 认证中授权书已驳回的企业</li>
-  <li>**"VERIFYING"**： 认证中的企业</li>
-  <li>**"VERIFIED"**： 已认证的企业</li>
-</ul>
-                     * @param _authorizationStatus 企业认证状态字段。值如下：
-<ul>
-  <li>**"UNVERIFIED"**： 未认证的企业</li>
-  <li>**"VERIFYINGLEGALPENDINGAUTHORIZATION"**： 认证中待法人授权的企业</li>
-  <li>**"VERIFYINGAUTHORIZATIONFILEPENDING"**： 认证中授权书审核中的企业</li>
-  <li>**"VERIFYINGAUTHORIZATIONFILEREJECT"**： 认证中授权书已驳回的企业</li>
-  <li>**"VERIFYING"**： 认证中的企业</li>
-  <li>**"VERIFIED"**： 已认证的企业</li>
-</ul>
+                     * 设置<p>企业认证状态枚举值及说明如下：</p><table>  <thead>    <tr>      <th>枚举值</th>      <th>说明</th>    </tr>  </thead>  <tbody>    <tr>      <td><code>UNVERIFIED</code></td>      <td>企业未认证</td>    </tr>    <tr>      <td><code>VERIFYING</code></td>      <td>企业认证中，还未选择授权方式</td>    </tr>    <tr>      <td><code>VERIFYINGLEGALPENDINGAUTHORIZATION</code></td>      <td>企业认证中，待法人授权或法人认证</td>    </tr>    <tr>      <td><code>VERIFYINGAUTHORIZATIONFILEPENDING</code></td>      <td>企业认证中，已上传授权书，授权书待审核</td>    </tr>    <tr>      <td><code>VERIFYINGAUTHORIZATIONFILEREJECT</code></td>      <td>企业认证中，授权书审核被驳回</td>    </tr>    <tr>      <td><code>VERIFIED</code></td>      <td>企业已认证成功</td>    </tr>  </tbody></table><p>企业认证流程的典型流转路径如下：</p><pre><code>UNVERIFIED → VERIFYING（提交企业信息，选择授权方式）                ├─ 法人授权 → VERIFYINGLEGALPENDINGAUTHORIZATION → VERIFIED                ├─ 法人认证 → VERIFYINGLEGALPENDINGAUTHORIZATION → VERIFIED                └─ 授权书 → VERIFYINGAUTHORIZATIONFILEPENDING                              ├─ 审核通过 → VERIFIED                              └─ 审核驳回 → VERIFYINGAUTHORIZATIONFILEREJECT</code></pre><p>枚举值：</p><ul><li>UNVERIFIED： 企业未认证</li><li>VERIFYING： 企业认证中，还未选择授权方式</li><li>VERIFYINGLEGALPENDINGAUTHORIZATION： 企业认证中，待法人授权或法人认证</li><li>VERIFYINGAUTHORIZATIONFILEPENDING： 企业认证中，已上传授权书，授权书待审核</li><li>VERIFYINGAUTHORIZATIONFILEREJECT： 企业认证中，授权书审核被驳回</li><li>VERIFIED： 企业已认证成功</li></ul>
+                     * @param _authorizationStatus <p>企业认证状态枚举值及说明如下：</p><table>  <thead>    <tr>      <th>枚举值</th>      <th>说明</th>    </tr>  </thead>  <tbody>    <tr>      <td><code>UNVERIFIED</code></td>      <td>企业未认证</td>    </tr>    <tr>      <td><code>VERIFYING</code></td>      <td>企业认证中，还未选择授权方式</td>    </tr>    <tr>      <td><code>VERIFYINGLEGALPENDINGAUTHORIZATION</code></td>      <td>企业认证中，待法人授权或法人认证</td>    </tr>    <tr>      <td><code>VERIFYINGAUTHORIZATIONFILEPENDING</code></td>      <td>企业认证中，已上传授权书，授权书待审核</td>    </tr>    <tr>      <td><code>VERIFYINGAUTHORIZATIONFILEREJECT</code></td>      <td>企业认证中，授权书审核被驳回</td>    </tr>    <tr>      <td><code>VERIFIED</code></td>      <td>企业已认证成功</td>    </tr>  </tbody></table><p>企业认证流程的典型流转路径如下：</p><pre><code>UNVERIFIED → VERIFYING（提交企业信息，选择授权方式）                ├─ 法人授权 → VERIFYINGLEGALPENDINGAUTHORIZATION → VERIFIED                ├─ 法人认证 → VERIFYINGLEGALPENDINGAUTHORIZATION → VERIFIED                └─ 授权书 → VERIFYINGAUTHORIZATIONFILEPENDING                              ├─ 审核通过 → VERIFIED                              └─ 审核驳回 → VERIFYINGAUTHORIZATIONFILEREJECT</code></pre><p>枚举值：</p><ul><li>UNVERIFIED： 企业未认证</li><li>VERIFYING： 企业认证中，还未选择授权方式</li><li>VERIFYINGLEGALPENDINGAUTHORIZATION： 企业认证中，待法人授权或法人认证</li><li>VERIFYINGAUTHORIZATIONFILEPENDING： 企业认证中，已上传授权书，授权书待审核</li><li>VERIFYINGAUTHORIZATIONFILEREJECT： 企业认证中，授权书审核被驳回</li><li>VERIFIED： 企业已认证成功</li></ul>
                      * 
                      */
                     void SetAuthorizationStatus(const std::string& _authorizationStatus);
@@ -293,39 +257,15 @@ namespace TencentCloud
                     bool AuthorizationStatusHasBeenSet() const;
 
                     /**
-                     * 获取企业认证方式字段。值如下：
-<ul>
-  <li>**"AuthorizationInit"**： 暂未选择授权方式</li>
-  <li>**"AuthorizationFile"**： 授权书</li>
-  <li>**"AuthorizationLegalPerson"**： 法人授权超管</li>
-  <li>**"AuthorizationLegalIdentity"**： 法人直接认证</li>
-</ul>
-                     * @return AuthorizationType 企业认证方式字段。值如下：
-<ul>
-  <li>**"AuthorizationInit"**： 暂未选择授权方式</li>
-  <li>**"AuthorizationFile"**： 授权书</li>
-  <li>**"AuthorizationLegalPerson"**： 法人授权超管</li>
-  <li>**"AuthorizationLegalIdentity"**： 法人直接认证</li>
-</ul>
+                     * 获取<p>企业认证方式字段。值如下：</p><ul>  <li>**"AuthorizationInit"**： 暂未选择授权方式</li>  <li>**"AuthorizationFile"**： 授权书</li>  <li>**"AuthorizationLegalPerson"**： 法人授权超管</li>  <li>**"AuthorizationLegalIdentity"**： 法人直接认证</li></ul>
+                     * @return AuthorizationType <p>企业认证方式字段。值如下：</p><ul>  <li>**"AuthorizationInit"**： 暂未选择授权方式</li>  <li>**"AuthorizationFile"**： 授权书</li>  <li>**"AuthorizationLegalPerson"**： 法人授权超管</li>  <li>**"AuthorizationLegalIdentity"**： 法人直接认证</li></ul>
                      * 
                      */
                     std::string GetAuthorizationType() const;
 
                     /**
-                     * 设置企业认证方式字段。值如下：
-<ul>
-  <li>**"AuthorizationInit"**： 暂未选择授权方式</li>
-  <li>**"AuthorizationFile"**： 授权书</li>
-  <li>**"AuthorizationLegalPerson"**： 法人授权超管</li>
-  <li>**"AuthorizationLegalIdentity"**： 法人直接认证</li>
-</ul>
-                     * @param _authorizationType 企业认证方式字段。值如下：
-<ul>
-  <li>**"AuthorizationInit"**： 暂未选择授权方式</li>
-  <li>**"AuthorizationFile"**： 授权书</li>
-  <li>**"AuthorizationLegalPerson"**： 法人授权超管</li>
-  <li>**"AuthorizationLegalIdentity"**： 法人直接认证</li>
-</ul>
+                     * 设置<p>企业认证方式字段。值如下：</p><ul>  <li>**"AuthorizationInit"**： 暂未选择授权方式</li>  <li>**"AuthorizationFile"**： 授权书</li>  <li>**"AuthorizationLegalPerson"**： 法人授权超管</li>  <li>**"AuthorizationLegalIdentity"**： 法人直接认证</li></ul>
+                     * @param _authorizationType <p>企业认证方式字段。值如下：</p><ul>  <li>**"AuthorizationInit"**： 暂未选择授权方式</li>  <li>**"AuthorizationFile"**： 授权书</li>  <li>**"AuthorizationLegalPerson"**： 法人授权超管</li>  <li>**"AuthorizationLegalIdentity"**： 法人直接认证</li></ul>
                      * 
                      */
                     void SetAuthorizationType(const std::string& _authorizationType);
@@ -338,31 +278,15 @@ namespace TencentCloud
                     bool AuthorizationTypeHasBeenSet() const;
 
                     /**
-                     * 获取子企业激活状态。值如下：
-<ul>
-  <li>**0**： 未激活</li>
-  <li>**1**： 已激活</li>
-</ul>
-                     * @return ActiveStatus 子企业激活状态。值如下：
-<ul>
-  <li>**0**： 未激活</li>
-  <li>**1**： 已激活</li>
-</ul>
+                     * 获取<p>子企业激活状态。值如下：</p><ul>  <li>**0**： 未激活</li>  <li>**1**： 已激活</li></ul>
+                     * @return ActiveStatus <p>子企业激活状态。值如下：</p><ul>  <li>**0**： 未激活</li>  <li>**1**： 已激活</li></ul>
                      * 
                      */
                     int64_t GetActiveStatus() const;
 
                     /**
-                     * 设置子企业激活状态。值如下：
-<ul>
-  <li>**0**： 未激活</li>
-  <li>**1**： 已激活</li>
-</ul>
-                     * @param _activeStatus 子企业激活状态。值如下：
-<ul>
-  <li>**0**： 未激活</li>
-  <li>**1**： 已激活</li>
-</ul>
+                     * 设置<p>子企业激活状态。值如下：</p><ul>  <li>**0**： 未激活</li>  <li>**1**： 已激活</li></ul>
+                     * @param _activeStatus <p>子企业激活状态。值如下：</p><ul>  <li>**0**： 未激活</li>  <li>**1**： 已激活</li></ul>
                      * 
                      */
                     void SetActiveStatus(const int64_t& _activeStatus);
@@ -375,15 +299,15 @@ namespace TencentCloud
                     bool ActiveStatusHasBeenSet() const;
 
                     /**
-                     * 获取账号到期时间，时间戳
-                     * @return LicenseExpireTime 账号到期时间，时间戳
+                     * 获取<p>账号到期时间，时间戳</p>
+                     * @return LicenseExpireTime <p>账号到期时间，时间戳</p>
                      * 
                      */
                     int64_t GetLicenseExpireTime() const;
 
                     /**
-                     * 设置账号到期时间，时间戳
-                     * @param _licenseExpireTime 账号到期时间，时间戳
+                     * 设置<p>账号到期时间，时间戳</p>
+                     * @param _licenseExpireTime <p>账号到期时间，时间戳</p>
                      * 
                      */
                     void SetLicenseExpireTime(const int64_t& _licenseExpireTime);
@@ -395,104 +319,112 @@ namespace TencentCloud
                      */
                     bool LicenseExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否已提交企业认证信息</p><p>默认值：false</p><p>此参数表示客户是否已提交企业信息。如图所示，在点击提交按钮之前，该字段为 <code>false</code>；点击提交按钮之后，该字段变为 <code>true</code>。</p><img src="https://qcloudimg.tencent-cloud.cn/raw/548d838430b60e797dbfba80cb4a3ef7.png" alt="企业信息提交状态示意图"><p><strong>注意：</strong>该字段并非在变为 <code>true</code> 后就不再变化。任何导致当前认证记录失效的操作都会将其重置为 <code>false</code>，包括但不限于：重新提交企业信息、审核被拒绝后重新上传企业信息等操作。</p>
+                     * @return HasSubmittedAuthInfo <p>是否已提交企业认证信息</p><p>默认值：false</p><p>此参数表示客户是否已提交企业信息。如图所示，在点击提交按钮之前，该字段为 <code>false</code>；点击提交按钮之后，该字段变为 <code>true</code>。</p><img src="https://qcloudimg.tencent-cloud.cn/raw/548d838430b60e797dbfba80cb4a3ef7.png" alt="企业信息提交状态示意图"><p><strong>注意：</strong>该字段并非在变为 <code>true</code> 后就不再变化。任何导致当前认证记录失效的操作都会将其重置为 <code>false</code>，包括但不限于：重新提交企业信息、审核被拒绝后重新上传企业信息等操作。</p>
+                     * 
+                     */
+                    bool GetHasSubmittedAuthInfo() const;
+
+                    /**
+                     * 设置<p>是否已提交企业认证信息</p><p>默认值：false</p><p>此参数表示客户是否已提交企业信息。如图所示，在点击提交按钮之前，该字段为 <code>false</code>；点击提交按钮之后，该字段变为 <code>true</code>。</p><img src="https://qcloudimg.tencent-cloud.cn/raw/548d838430b60e797dbfba80cb4a3ef7.png" alt="企业信息提交状态示意图"><p><strong>注意：</strong>该字段并非在变为 <code>true</code> 后就不再变化。任何导致当前认证记录失效的操作都会将其重置为 <code>false</code>，包括但不限于：重新提交企业信息、审核被拒绝后重新上传企业信息等操作。</p>
+                     * @param _hasSubmittedAuthInfo <p>是否已提交企业认证信息</p><p>默认值：false</p><p>此参数表示客户是否已提交企业信息。如图所示，在点击提交按钮之前，该字段为 <code>false</code>；点击提交按钮之后，该字段变为 <code>true</code>。</p><img src="https://qcloudimg.tencent-cloud.cn/raw/548d838430b60e797dbfba80cb4a3ef7.png" alt="企业信息提交状态示意图"><p><strong>注意：</strong>该字段并非在变为 <code>true</code> 后就不再变化。任何导致当前认证记录失效的操作都会将其重置为 <code>false</code>，包括但不限于：重新提交企业信息、审核被拒绝后重新上传企业信息等操作。</p>
+                     * 
+                     */
+                    void SetHasSubmittedAuthInfo(const bool& _hasSubmittedAuthInfo);
+
+                    /**
+                     * 判断参数 HasSubmittedAuthInfo 是否已赋值
+                     * @return HasSubmittedAuthInfo 是否已赋值
+                     * 
+                     */
+                    bool HasSubmittedAuthInfoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 电子签平台给企业分配的ID（在不同应用下同一个企业会分配通用的ID）
+                     * <p>电子签平台给企业分配的ID（在不同应用下同一个企业会分配通用的ID）</p>
                      */
                     std::string m_organizationId;
                     bool m_organizationIdHasBeenSet;
 
                     /**
-                     * 第三方平台子客企业的唯一标识
+                     * <p>第三方平台子客企业的唯一标识</p>
                      */
                     std::string m_organizationOpenId;
                     bool m_organizationOpenIdHasBeenSet;
 
                     /**
-                     * 第三方平台子客企业名称
+                     * <p>第三方平台子客企业名称</p>
                      */
                     std::string m_organizationName;
                     bool m_organizationNameHasBeenSet;
 
                     /**
-                     * 企业的统一社会信用代码
+                     * <p>企业的统一社会信用代码</p>
                      */
                     std::string m_unifiedSocialCreditCode;
                     bool m_unifiedSocialCreditCodeHasBeenSet;
 
                     /**
-                     * 企业法定代表人的姓名
+                     * <p>企业法定代表人的姓名</p>
                      */
                     std::string m_legalName;
                     bool m_legalNameHasBeenSet;
 
                     /**
-                     * 企业法定代表人作为第三方平台子客企业员工的唯一标识
+                     * <p>企业法定代表人作为第三方平台子客企业员工的唯一标识</p>
                      */
                     std::string m_legalOpenId;
                     bool m_legalOpenIdHasBeenSet;
 
                     /**
-                     * 企业超级管理员的姓名
+                     * <p>企业超级管理员的姓名</p>
                      */
                     std::string m_adminName;
                     bool m_adminNameHasBeenSet;
 
                     /**
-                     * 企业超级管理员作为第三方平台子客企业员工的唯一标识
+                     * <p>企业超级管理员作为第三方平台子客企业员工的唯一标识</p>
                      */
                     std::string m_adminOpenId;
                     bool m_adminOpenIdHasBeenSet;
 
                     /**
-                     * 企业超级管理员的手机号码
-**注**：`手机号码脱敏（隐藏部分用*替代）`
+                     * <p>企业超级管理员的手机号码<br><strong>注</strong>：<code>手机号码脱敏（隐藏部分用*替代）</code></p>
                      */
                     std::string m_adminMobile;
                     bool m_adminMobileHasBeenSet;
 
                     /**
-                     * 企业认证状态字段。值如下：
-<ul>
-  <li>**"UNVERIFIED"**： 未认证的企业</li>
-  <li>**"VERIFYINGLEGALPENDINGAUTHORIZATION"**： 认证中待法人授权的企业</li>
-  <li>**"VERIFYINGAUTHORIZATIONFILEPENDING"**： 认证中授权书审核中的企业</li>
-  <li>**"VERIFYINGAUTHORIZATIONFILEREJECT"**： 认证中授权书已驳回的企业</li>
-  <li>**"VERIFYING"**： 认证中的企业</li>
-  <li>**"VERIFIED"**： 已认证的企业</li>
-</ul>
+                     * <p>企业认证状态枚举值及说明如下：</p><table>  <thead>    <tr>      <th>枚举值</th>      <th>说明</th>    </tr>  </thead>  <tbody>    <tr>      <td><code>UNVERIFIED</code></td>      <td>企业未认证</td>    </tr>    <tr>      <td><code>VERIFYING</code></td>      <td>企业认证中，还未选择授权方式</td>    </tr>    <tr>      <td><code>VERIFYINGLEGALPENDINGAUTHORIZATION</code></td>      <td>企业认证中，待法人授权或法人认证</td>    </tr>    <tr>      <td><code>VERIFYINGAUTHORIZATIONFILEPENDING</code></td>      <td>企业认证中，已上传授权书，授权书待审核</td>    </tr>    <tr>      <td><code>VERIFYINGAUTHORIZATIONFILEREJECT</code></td>      <td>企业认证中，授权书审核被驳回</td>    </tr>    <tr>      <td><code>VERIFIED</code></td>      <td>企业已认证成功</td>    </tr>  </tbody></table><p>企业认证流程的典型流转路径如下：</p><pre><code>UNVERIFIED → VERIFYING（提交企业信息，选择授权方式）                ├─ 法人授权 → VERIFYINGLEGALPENDINGAUTHORIZATION → VERIFIED                ├─ 法人认证 → VERIFYINGLEGALPENDINGAUTHORIZATION → VERIFIED                └─ 授权书 → VERIFYINGAUTHORIZATIONFILEPENDING                              ├─ 审核通过 → VERIFIED                              └─ 审核驳回 → VERIFYINGAUTHORIZATIONFILEREJECT</code></pre><p>枚举值：</p><ul><li>UNVERIFIED： 企业未认证</li><li>VERIFYING： 企业认证中，还未选择授权方式</li><li>VERIFYINGLEGALPENDINGAUTHORIZATION： 企业认证中，待法人授权或法人认证</li><li>VERIFYINGAUTHORIZATIONFILEPENDING： 企业认证中，已上传授权书，授权书待审核</li><li>VERIFYINGAUTHORIZATIONFILEREJECT： 企业认证中，授权书审核被驳回</li><li>VERIFIED： 企业已认证成功</li></ul>
                      */
                     std::string m_authorizationStatus;
                     bool m_authorizationStatusHasBeenSet;
 
                     /**
-                     * 企业认证方式字段。值如下：
-<ul>
-  <li>**"AuthorizationInit"**： 暂未选择授权方式</li>
-  <li>**"AuthorizationFile"**： 授权书</li>
-  <li>**"AuthorizationLegalPerson"**： 法人授权超管</li>
-  <li>**"AuthorizationLegalIdentity"**： 法人直接认证</li>
-</ul>
+                     * <p>企业认证方式字段。值如下：</p><ul>  <li>**"AuthorizationInit"**： 暂未选择授权方式</li>  <li>**"AuthorizationFile"**： 授权书</li>  <li>**"AuthorizationLegalPerson"**： 法人授权超管</li>  <li>**"AuthorizationLegalIdentity"**： 法人直接认证</li></ul>
                      */
                     std::string m_authorizationType;
                     bool m_authorizationTypeHasBeenSet;
 
                     /**
-                     * 子企业激活状态。值如下：
-<ul>
-  <li>**0**： 未激活</li>
-  <li>**1**： 已激活</li>
-</ul>
+                     * <p>子企业激活状态。值如下：</p><ul>  <li>**0**： 未激活</li>  <li>**1**： 已激活</li></ul>
                      */
                     int64_t m_activeStatus;
                     bool m_activeStatusHasBeenSet;
 
                     /**
-                     * 账号到期时间，时间戳
+                     * <p>账号到期时间，时间戳</p>
                      */
                     int64_t m_licenseExpireTime;
                     bool m_licenseExpireTimeHasBeenSet;
+
+                    /**
+                     * <p>是否已提交企业认证信息</p><p>默认值：false</p><p>此参数表示客户是否已提交企业信息。如图所示，在点击提交按钮之前，该字段为 <code>false</code>；点击提交按钮之后，该字段变为 <code>true</code>。</p><img src="https://qcloudimg.tencent-cloud.cn/raw/548d838430b60e797dbfba80cb4a3ef7.png" alt="企业信息提交状态示意图"><p><strong>注意：</strong>该字段并非在变为 <code>true</code> 后就不再变化。任何导致当前认证记录失效的操作都会将其重置为 <code>false</code>，包括但不限于：重新提交企业信息、审核被拒绝后重新上传企业信息等操作。</p>
+                     */
+                    bool m_hasSubmittedAuthInfo;
+                    bool m_hasSubmittedAuthInfoHasBeenSet;
 
                 };
             }

@@ -28,7 +28,8 @@ TriggerWorkflowInfo::TriggerWorkflowInfo() :
     m_modifyTimeHasBeenSet(false),
     m_updateUserUinHasBeenSet(false),
     m_workflowDescHasBeenSet(false),
-    m_createUserUinHasBeenSet(false)
+    m_createUserUinHasBeenSet(false),
+    m_executeUserUinHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome TriggerWorkflowInfo::Deserialize(const rapidjson::Value &val
         m_createUserUinHasBeenSet = true;
     }
 
+    if (value.HasMember("ExecuteUserUin") && !value["ExecuteUserUin"].IsNull())
+    {
+        if (!value["ExecuteUserUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerWorkflowInfo.ExecuteUserUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_executeUserUin = string(value["ExecuteUserUin"].GetString());
+        m_executeUserUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void TriggerWorkflowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "CreateUserUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createUserUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executeUserUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecuteUserUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_executeUserUin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void TriggerWorkflowInfo::SetCreateUserUin(const string& _createUserUin)
 bool TriggerWorkflowInfo::CreateUserUinHasBeenSet() const
 {
     return m_createUserUinHasBeenSet;
+}
+
+string TriggerWorkflowInfo::GetExecuteUserUin() const
+{
+    return m_executeUserUin;
+}
+
+void TriggerWorkflowInfo::SetExecuteUserUin(const string& _executeUserUin)
+{
+    m_executeUserUin = _executeUserUin;
+    m_executeUserUinHasBeenSet = true;
+}
+
+bool TriggerWorkflowInfo::ExecuteUserUinHasBeenSet() const
+{
+    return m_executeUserUinHasBeenSet;
 }
 

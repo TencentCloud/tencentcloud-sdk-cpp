@@ -31,6 +31,7 @@ ListTriggerWorkflowsRequest::ListTriggerWorkflowsRequest() :
     m_bundleIdHasBeenSet(false),
     m_ownerUinHasBeenSet(false),
     m_createUserUinHasBeenSet(false),
+    m_executeUserUinHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
     m_createTimeHasBeenSet(false)
 {
@@ -105,6 +106,14 @@ string ListTriggerWorkflowsRequest::ToJsonString() const
         string key = "CreateUserUin";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_createUserUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executeUserUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecuteUserUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_executeUserUin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_modifyTimeHasBeenSet)
@@ -267,6 +276,22 @@ void ListTriggerWorkflowsRequest::SetCreateUserUin(const string& _createUserUin)
 bool ListTriggerWorkflowsRequest::CreateUserUinHasBeenSet() const
 {
     return m_createUserUinHasBeenSet;
+}
+
+string ListTriggerWorkflowsRequest::GetExecuteUserUin() const
+{
+    return m_executeUserUin;
+}
+
+void ListTriggerWorkflowsRequest::SetExecuteUserUin(const string& _executeUserUin)
+{
+    m_executeUserUin = _executeUserUin;
+    m_executeUserUinHasBeenSet = true;
+}
+
+bool ListTriggerWorkflowsRequest::ExecuteUserUinHasBeenSet() const
+{
+    return m_executeUserUinHasBeenSet;
 }
 
 vector<string> ListTriggerWorkflowsRequest::GetModifyTime() const

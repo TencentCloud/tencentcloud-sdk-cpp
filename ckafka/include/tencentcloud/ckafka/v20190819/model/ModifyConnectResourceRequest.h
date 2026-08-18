@@ -33,6 +33,7 @@
 #include <tencentcloud/ckafka/v20190819/model/DorisModifyConnectParam.h>
 #include <tencentcloud/ckafka/v20190819/model/KafkaConnectParam.h>
 #include <tencentcloud/ckafka/v20190819/model/MqttConnectParam.h>
+#include <tencentcloud/ckafka/v20190819/model/IcebergConnectParam.h>
 
 
 namespace TencentCloud
@@ -390,6 +391,27 @@ namespace TencentCloud
                      */
                     bool MqttConnectParamHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Iceberg配置，Type为ICEBERG时必填</p>
+                     * @return IcebergConnectParam <p>Iceberg配置，Type为ICEBERG时必填</p>
+                     * 
+                     */
+                    IcebergConnectParam GetIcebergConnectParam() const;
+
+                    /**
+                     * 设置<p>Iceberg配置，Type为ICEBERG时必填</p>
+                     * @param _icebergConnectParam <p>Iceberg配置，Type为ICEBERG时必填</p>
+                     * 
+                     */
+                    void SetIcebergConnectParam(const IcebergConnectParam& _icebergConnectParam);
+
+                    /**
+                     * 判断参数 IcebergConnectParam 是否已赋值
+                     * @return IcebergConnectParam 是否已赋值
+                     * 
+                     */
+                    bool IcebergConnectParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -487,6 +509,12 @@ namespace TencentCloud
                      */
                     MqttConnectParam m_mqttConnectParam;
                     bool m_mqttConnectParamHasBeenSet;
+
+                    /**
+                     * <p>Iceberg配置，Type为ICEBERG时必填</p>
+                     */
+                    IcebergConnectParam m_icebergConnectParam;
+                    bool m_icebergConnectParamHasBeenSet;
 
                 };
             }

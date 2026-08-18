@@ -31,6 +31,7 @@ HTTPServiceDomain::HTTPServiceDomain() :
     m_enableHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_dNSStatusHasBeenSet(false),
+    m_platformCnameDNSStatusHasBeenSet(false),
     m_routesHasBeenSet(false),
     m_extensionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
@@ -141,6 +142,16 @@ CoreInternalOutcome HTTPServiceDomain::Deserialize(const rapidjson::Value &value
         }
         m_dNSStatus = string(value["DNSStatus"].GetString());
         m_dNSStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("PlatformCnameDNSStatus") && !value["PlatformCnameDNSStatus"].IsNull())
+    {
+        if (!value["PlatformCnameDNSStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HTTPServiceDomain.PlatformCnameDNSStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_platformCnameDNSStatus = string(value["PlatformCnameDNSStatus"].GetString());
+        m_platformCnameDNSStatusHasBeenSet = true;
     }
 
     if (value.HasMember("Routes") && !value["Routes"].IsNull())
@@ -285,6 +296,14 @@ void HTTPServiceDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "DNSStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dNSStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_platformCnameDNSStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlatformCnameDNSStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_platformCnameDNSStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_routesHasBeenSet)
@@ -488,6 +507,22 @@ void HTTPServiceDomain::SetDNSStatus(const string& _dNSStatus)
 bool HTTPServiceDomain::DNSStatusHasBeenSet() const
 {
     return m_dNSStatusHasBeenSet;
+}
+
+string HTTPServiceDomain::GetPlatformCnameDNSStatus() const
+{
+    return m_platformCnameDNSStatus;
+}
+
+void HTTPServiceDomain::SetPlatformCnameDNSStatus(const string& _platformCnameDNSStatus)
+{
+    m_platformCnameDNSStatus = _platformCnameDNSStatus;
+    m_platformCnameDNSStatusHasBeenSet = true;
+}
+
+bool HTTPServiceDomain::PlatformCnameDNSStatusHasBeenSet() const
+{
+    return m_platformCnameDNSStatusHasBeenSet;
 }
 
 vector<HTTPServiceRoute> HTTPServiceDomain::GetRoutes() const

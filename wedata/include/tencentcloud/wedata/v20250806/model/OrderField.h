@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取排序字段名称
-                     * @return Name 排序字段名称
+                     * 获取<p>排序字段名称</p>
+                     * @return Name <p>排序字段名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置排序字段名称
-                     * @param _name 排序字段名称
+                     * 设置<p>排序字段名称</p>
+                     * @param _name <p>排序字段名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取排序方向：ASC|DESC
-                     * @return Direction 排序方向：ASC|DESC
+                     * 获取<p>排序方向：ASC|DESC</p>
+                     * @return Direction <p>排序方向：ASC|DESC</p>
                      * 
                      */
                     std::string GetDirection() const;
 
                     /**
-                     * 设置排序方向：ASC|DESC
-                     * @param _direction 排序方向：ASC|DESC
+                     * 设置<p>排序方向：ASC|DESC</p>
+                     * @param _direction <p>排序方向：ASC|DESC</p>
                      * 
                      */
                     void SetDirection(const std::string& _direction);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 排序字段名称
+                     * <p>排序字段名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 排序方向：ASC|DESC
+                     * <p>排序方向：ASC|DESC</p>
                      */
                     std::string m_direction;
                     bool m_directionHasBeenSet;

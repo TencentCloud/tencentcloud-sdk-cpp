@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询工作流分页信息
-                     * @return Data 查询工作流分页信息
+                     * 获取<p>查询工作流分页信息</p>
+                     * @return Data <p>查询工作流分页信息</p>
                      * 
                      */
                     ListTriggerWorkflowInfo GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询工作流分页信息
+                     * <p>查询工作流分页信息</p>
                      */
                     ListTriggerWorkflowInfo m_data;
                     bool m_dataHasBeenSet;

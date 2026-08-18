@@ -43,23 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取一个或多个待操作的实例ID，每次请求批量实例的上限为100。<br>可以通过以下方式获取可用的实例ID：
-<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li>
-<li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。</li>
-                     * @return InstanceIds 一个或多个待操作的实例ID，每次请求批量实例的上限为100。<br>可以通过以下方式获取可用的实例ID：
-<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li>
-<li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。</li>
+                     * 获取<p>一个或多个待操作的实例ID，每次请求批量实例的上限为100。<br>可以通过以下方式获取可用的实例ID：</p><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li><li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 <code>InstanceId</code> 获取实例ID。</li>
+                     * @return InstanceIds <p>一个或多个待操作的实例ID，每次请求批量实例的上限为100。<br>可以通过以下方式获取可用的实例ID：</p><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li><li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 <code>InstanceId</code> 获取实例ID。</li>
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置一个或多个待操作的实例ID，每次请求批量实例的上限为100。<br>可以通过以下方式获取可用的实例ID：
-<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li>
-<li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。</li>
-                     * @param _instanceIds 一个或多个待操作的实例ID，每次请求批量实例的上限为100。<br>可以通过以下方式获取可用的实例ID：
-<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li>
-<li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。</li>
+                     * 设置<p>一个或多个待操作的实例ID，每次请求批量实例的上限为100。<br>可以通过以下方式获取可用的实例ID：</p><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li><li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 <code>InstanceId</code> 获取实例ID。</li>
+                     * @param _instanceIds <p>一个或多个待操作的实例ID，每次请求批量实例的上限为100。<br>可以通过以下方式获取可用的实例ID：</p><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li><li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 <code>InstanceId</code> 获取实例ID。</li>
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -72,23 +64,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取密钥对ID列表，列表长度上限为100。可以通过以下方式获取可用的密钥ID：
-<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。</li>
-<li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 `KeyId` 获取密钥对ID。</li>
-                     * @return KeyIds 密钥对ID列表，列表长度上限为100。可以通过以下方式获取可用的密钥ID：
-<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。</li>
-<li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 `KeyId` 获取密钥对ID。</li>
+                     * 获取<p>密钥对ID列表，列表长度上限为100。可以通过以下方式获取可用的密钥ID：</p><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。</li><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 <code>KeyId</code> 获取密钥对ID。</li>
+                     * @return KeyIds <p>密钥对ID列表，列表长度上限为100。可以通过以下方式获取可用的密钥ID：</p><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。</li><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 <code>KeyId</code> 获取密钥对ID。</li>
                      * 
                      */
                     std::vector<std::string> GetKeyIds() const;
 
                     /**
-                     * 设置密钥对ID列表，列表长度上限为100。可以通过以下方式获取可用的密钥ID：
-<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。</li>
-<li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 `KeyId` 获取密钥对ID。</li>
-                     * @param _keyIds 密钥对ID列表，列表长度上限为100。可以通过以下方式获取可用的密钥ID：
-<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。</li>
-<li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 `KeyId` 获取密钥对ID。</li>
+                     * 设置<p>密钥对ID列表，列表长度上限为100。可以通过以下方式获取可用的密钥ID：</p><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。</li><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 <code>KeyId</code> 获取密钥对ID。</li>
+                     * @param _keyIds <p>密钥对ID列表，列表长度上限为100。可以通过以下方式获取可用的密钥ID：</p><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。</li><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 <code>KeyId</code> 获取密钥对ID。</li>
                      * 
                      */
                     void SetKeyIds(const std::vector<std::string>& _keyIds);
@@ -101,23 +85,15 @@ namespace TencentCloud
                     bool KeyIdsHasBeenSet() const;
 
                     /**
-                     * 获取是否强制关机，默认值为 false。常规场景下，建议手动关机后解绑密钥。取值范围：
-<li>true：先执行强制关机，再解绑密钥。</li>
-<li>false：不执行强制关机，仅支持对已关机状态实例进行解绑操作。</li>
-                     * @return ForceStop 是否强制关机，默认值为 false。常规场景下，建议手动关机后解绑密钥。取值范围：
-<li>true：先执行强制关机，再解绑密钥。</li>
-<li>false：不执行强制关机，仅支持对已关机状态实例进行解绑操作。</li>
+                     * 获取<p>是否强制关机，默认值为 false。常规场景下，建议手动关机后解绑密钥。取值范围：</p><li>true：先执行强制关机，再解绑密钥。</li><li>false：不执行强制关机，仅支持对已关机状态实例进行解绑操作。</li>
+                     * @return ForceStop <p>是否强制关机，默认值为 false。常规场景下，建议手动关机后解绑密钥。取值范围：</p><li>true：先执行强制关机，再解绑密钥。</li><li>false：不执行强制关机，仅支持对已关机状态实例进行解绑操作。</li>
                      * 
                      */
                     bool GetForceStop() const;
 
                     /**
-                     * 设置是否强制关机，默认值为 false。常规场景下，建议手动关机后解绑密钥。取值范围：
-<li>true：先执行强制关机，再解绑密钥。</li>
-<li>false：不执行强制关机，仅支持对已关机状态实例进行解绑操作。</li>
-                     * @param _forceStop 是否强制关机，默认值为 false。常规场景下，建议手动关机后解绑密钥。取值范围：
-<li>true：先执行强制关机，再解绑密钥。</li>
-<li>false：不执行强制关机，仅支持对已关机状态实例进行解绑操作。</li>
+                     * 设置<p>是否强制关机，默认值为 false。常规场景下，建议手动关机后解绑密钥。取值范围：</p><li>true：先执行强制关机，再解绑密钥。</li><li>false：不执行强制关机，仅支持对已关机状态实例进行解绑操作。</li>
+                     * @param _forceStop <p>是否强制关机，默认值为 false。常规场景下，建议手动关机后解绑密钥。取值范围：</p><li>true：先执行强制关机，再解绑密钥。</li><li>false：不执行强制关机，仅支持对已关机状态实例进行解绑操作。</li>
                      * 
                      */
                     void SetForceStop(const bool& _forceStop);
@@ -132,25 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 一个或多个待操作的实例ID，每次请求批量实例的上限为100。<br>可以通过以下方式获取可用的实例ID：
-<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li>
-<li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。</li>
+                     * <p>一个或多个待操作的实例ID，每次请求批量实例的上限为100。<br>可以通过以下方式获取可用的实例ID：</p><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li><li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 <code>InstanceId</code> 获取实例ID。</li>
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 密钥对ID列表，列表长度上限为100。可以通过以下方式获取可用的密钥ID：
-<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。</li>
-<li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 `KeyId` 获取密钥对ID。</li>
+                     * <p>密钥对ID列表，列表长度上限为100。可以通过以下方式获取可用的密钥ID：</p><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。</li><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 <code>KeyId</code> 获取密钥对ID。</li>
                      */
                     std::vector<std::string> m_keyIds;
                     bool m_keyIdsHasBeenSet;
 
                     /**
-                     * 是否强制关机，默认值为 false。常规场景下，建议手动关机后解绑密钥。取值范围：
-<li>true：先执行强制关机，再解绑密钥。</li>
-<li>false：不执行强制关机，仅支持对已关机状态实例进行解绑操作。</li>
+                     * <p>是否强制关机，默认值为 false。常规场景下，建议手动关机后解绑密钥。取值范围：</p><li>true：先执行强制关机，再解绑密钥。</li><li>false：不执行强制关机，仅支持对已关机状态实例进行解绑操作。</li>
                      */
                     bool m_forceStop;
                     bool m_forceStopHasBeenSet;

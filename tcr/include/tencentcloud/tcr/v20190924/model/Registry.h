@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool EnableAnonymousHasBeenSet() const;
 
                     /**
-                     * 获取<p>Token有效时间</p>
-                     * @return TokenValidTime <p>Token有效时间</p>
+                     * 获取<p>Token有效时间，单位：小时</p>
+                     * @return TokenValidTime <p>Token有效时间，单位：小时</p>
                      * 
                      */
                     uint64_t GetTokenValidTime() const;
 
                     /**
-                     * 设置<p>Token有效时间</p>
-                     * @param _tokenValidTime <p>Token有效时间</p>
+                     * 设置<p>Token有效时间，单位：小时</p>
+                     * @param _tokenValidTime <p>Token有效时间，单位：小时</p>
                      * 
                      */
                     void SetTokenValidTime(const uint64_t& _tokenValidTime);
@@ -507,7 +507,7 @@ namespace TencentCloud
                     bool m_enableAnonymousHasBeenSet;
 
                     /**
-                     * <p>Token有效时间</p>
+                     * <p>Token有效时间，单位：小时</p>
                      */
                     uint64_t m_tokenValidTime;
                     bool m_tokenValidTimeHasBeenSet;

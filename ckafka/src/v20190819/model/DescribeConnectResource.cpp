@@ -44,6 +44,7 @@ DescribeConnectResource::DescribeConnectResource() :
     m_dorisConnectParamHasBeenSet(false),
     m_kafkaConnectParamHasBeenSet(false),
     m_mqttConnectParamHasBeenSet(false),
+    m_icebergConnectParamHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -370,6 +371,23 @@ CoreInternalOutcome DescribeConnectResource::Deserialize(const rapidjson::Value 
         m_mqttConnectParamHasBeenSet = true;
     }
 
+    if (value.HasMember("IcebergConnectParam") && !value["IcebergConnectParam"].IsNull())
+    {
+        if (!value["IcebergConnectParam"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeConnectResource.IcebergConnectParam` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_icebergConnectParam.Deserialize(value["IcebergConnectParam"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_icebergConnectParamHasBeenSet = true;
+    }
+
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
@@ -596,6 +614,15 @@ void DescribeConnectResource::ToJsonObject(rapidjson::Value &value, rapidjson::D
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mqttConnectParam.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_icebergConnectParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IcebergConnectParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_icebergConnectParam.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_tagsHasBeenSet)
@@ -982,6 +1009,22 @@ void DescribeConnectResource::SetMqttConnectParam(const MqttConnectParam& _mqttC
 bool DescribeConnectResource::MqttConnectParamHasBeenSet() const
 {
     return m_mqttConnectParamHasBeenSet;
+}
+
+IcebergConnectParam DescribeConnectResource::GetIcebergConnectParam() const
+{
+    return m_icebergConnectParam;
+}
+
+void DescribeConnectResource::SetIcebergConnectParam(const IcebergConnectParam& _icebergConnectParam)
+{
+    m_icebergConnectParam = _icebergConnectParam;
+    m_icebergConnectParamHasBeenSet = true;
+}
+
+bool DescribeConnectResource::IcebergConnectParamHasBeenSet() const
+{
+    return m_icebergConnectParamHasBeenSet;
 }
 
 vector<Tag> DescribeConnectResource::GetTags() const

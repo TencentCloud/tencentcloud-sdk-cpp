@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ProjectId <p>项目ID</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _projectId <p>项目ID</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取请求的数据页数。默认值为1，取值大于等于1
-                     * @return PageNumber 请求的数据页数。默认值为1，取值大于等于1
+                     * 获取<p>请求的数据页数。默认值为1，取值大于等于1</p>
+                     * @return PageNumber <p>请求的数据页数。默认值为1，取值大于等于1</p>
                      * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
-                     * 设置请求的数据页数。默认值为1，取值大于等于1
-                     * @param _pageNumber 请求的数据页数。默认值为1，取值大于等于1
+                     * 设置<p>请求的数据页数。默认值为1，取值大于等于1</p>
+                     * @param _pageNumber <p>请求的数据页数。默认值为1，取值大于等于1</p>
                      * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取每页显示的数据条数。默认值为10 ，最小值为10，最大值为200
-                     * @return PageSize 每页显示的数据条数。默认值为10 ，最小值为10，最大值为200
+                     * 获取<p>每页显示的数据条数。默认值为10 ，最小值为10，最大值为200</p>
+                     * @return PageSize <p>每页显示的数据条数。默认值为10 ，最小值为10，最大值为200</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置每页显示的数据条数。默认值为10 ，最小值为10，最大值为200
-                     * @param _pageSize 每页显示的数据条数。默认值为10 ，最小值为10，最大值为200
+                     * 设置<p>每页显示的数据条数。默认值为10 ，最小值为10，最大值为200</p>
+                     * @param _pageSize <p>每页显示的数据条数。默认值为10 ，最小值为10，最大值为200</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取搜索关键词
-                     * @return Keyword 搜索关键词
+                     * 获取<p>搜索关键词</p>
+                     * @return Keyword <p>搜索关键词</p>
                      * 
                      */
                     std::string GetKeyword() const;
 
                     /**
-                     * 设置搜索关键词
-                     * @param _keyword 搜索关键词
+                     * 设置<p>搜索关键词</p>
+                     * @param _keyword <p>搜索关键词</p>
                      * 
                      */
                     void SetKeyword(const std::string& _keyword);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool KeywordHasBeenSet() const;
 
                     /**
-                     * 获取工作流所属文件夹
-                     * @return ParentFolderPath 工作流所属文件夹
+                     * 获取<p>工作流所属文件夹</p>
+                     * @return ParentFolderPath <p>工作流所属文件夹</p>
                      * 
                      */
                     std::string GetParentFolderPath() const;
 
                     /**
-                     * 设置工作流所属文件夹
-                     * @param _parentFolderPath 工作流所属文件夹
+                     * 设置<p>工作流所属文件夹</p>
+                     * @param _parentFolderPath <p>工作流所属文件夹</p>
                      * 
                      */
                     void SetParentFolderPath(const std::string& _parentFolderPath);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ParentFolderPathHasBeenSet() const;
 
                     /**
-                     * 获取bundleId项
-                     * @return BundleId bundleId项
+                     * 获取<p>bundleId项</p>
+                     * @return BundleId <p>bundleId项</p>
                      * 
                      */
                     std::string GetBundleId() const;
 
                     /**
-                     * 设置bundleId项
-                     * @param _bundleId bundleId项
+                     * 设置<p>bundleId项</p>
+                     * @param _bundleId <p>bundleId项</p>
                      * 
                      */
                     void SetBundleId(const std::string& _bundleId);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool BundleIdHasBeenSet() const;
 
                     /**
-                     * 获取负责人ID
-                     * @return OwnerUin 负责人ID
+                     * 获取<p>负责人ID</p>
+                     * @return OwnerUin <p>负责人ID</p>
                      * 
                      */
                     std::string GetOwnerUin() const;
 
                     /**
-                     * 设置负责人ID
-                     * @param _ownerUin 负责人ID
+                     * 设置<p>负责人ID</p>
+                     * @param _ownerUin <p>负责人ID</p>
                      * 
                      */
                     void SetOwnerUin(const std::string& _ownerUin);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool OwnerUinHasBeenSet() const;
 
                     /**
-                     * 获取创建人ID
-                     * @return CreateUserUin 创建人ID
+                     * 获取<p>创建人ID</p>
+                     * @return CreateUserUin <p>创建人ID</p>
                      * 
                      */
                     std::string GetCreateUserUin() const;
 
                     /**
-                     * 设置创建人ID
-                     * @param _createUserUin 创建人ID
+                     * 设置<p>创建人ID</p>
+                     * @param _createUserUin <p>创建人ID</p>
                      * 
                      */
                     void SetCreateUserUin(const std::string& _createUserUin);
@@ -211,15 +211,36 @@ namespace TencentCloud
                     bool CreateUserUinHasBeenSet() const;
 
                     /**
-                     * 获取修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间
-                     * @return ModifyTime 修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间
+                     * 获取<p>运行账号ID</p>
+                     * @return ExecuteUserUin <p>运行账号ID</p>
+                     * 
+                     */
+                    std::string GetExecuteUserUin() const;
+
+                    /**
+                     * 设置<p>运行账号ID</p>
+                     * @param _executeUserUin <p>运行账号ID</p>
+                     * 
+                     */
+                    void SetExecuteUserUin(const std::string& _executeUserUin);
+
+                    /**
+                     * 判断参数 ExecuteUserUin 是否已赋值
+                     * @return ExecuteUserUin 是否已赋值
+                     * 
+                     */
+                    bool ExecuteUserUinHasBeenSet() const;
+
+                    /**
+                     * 获取<p>修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>
+                     * @return ModifyTime <p>修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>
                      * 
                      */
                     std::vector<std::string> GetModifyTime() const;
 
                     /**
-                     * 设置修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间
-                     * @param _modifyTime 修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间
+                     * 设置<p>修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>
+                     * @param _modifyTime <p>修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>
                      * 
                      */
                     void SetModifyTime(const std::vector<std::string>& _modifyTime);
@@ -232,15 +253,15 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间
-                     * @return CreateTime 创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间
+                     * 获取<p>创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>
+                     * @return CreateTime <p>创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>
                      * 
                      */
                     std::vector<std::string> GetCreateTime() const;
 
                     /**
-                     * 设置创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间
-                     * @param _createTime 创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间
+                     * 设置<p>创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>
+                     * @param _createTime <p>创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>
                      * 
                      */
                     void SetCreateTime(const std::vector<std::string>& _createTime);
@@ -255,61 +276,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 请求的数据页数。默认值为1，取值大于等于1
+                     * <p>请求的数据页数。默认值为1，取值大于等于1</p>
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 每页显示的数据条数。默认值为10 ，最小值为10，最大值为200
+                     * <p>每页显示的数据条数。默认值为10 ，最小值为10，最大值为200</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 搜索关键词
+                     * <p>搜索关键词</p>
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;
 
                     /**
-                     * 工作流所属文件夹
+                     * <p>工作流所属文件夹</p>
                      */
                     std::string m_parentFolderPath;
                     bool m_parentFolderPathHasBeenSet;
 
                     /**
-                     * bundleId项
+                     * <p>bundleId项</p>
                      */
                     std::string m_bundleId;
                     bool m_bundleIdHasBeenSet;
 
                     /**
-                     * 负责人ID
+                     * <p>负责人ID</p>
                      */
                     std::string m_ownerUin;
                     bool m_ownerUinHasBeenSet;
 
                     /**
-                     * 创建人ID
+                     * <p>创建人ID</p>
                      */
                     std::string m_createUserUin;
                     bool m_createUserUinHasBeenSet;
 
                     /**
-                     * 修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间
+                     * <p>运行账号ID</p>
+                     */
+                    std::string m_executeUserUin;
+                    bool m_executeUserUinHasBeenSet;
+
+                    /**
+                     * <p>修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>
                      */
                     std::vector<std::string> m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间
+                     * <p>创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>
                      */
                     std::vector<std::string> m_createTime;
                     bool m_createTimeHasBeenSet;

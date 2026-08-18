@@ -69,6 +69,8 @@
 #include <tencentcloud/thpc/v20230321/model/DescribeWorkspacesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DetachNodesRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DetachNodesResponse.h>
+#include <tencentcloud/thpc/v20230321/model/InquirePriceModifyWorkspacesChargeTypeRequest.h>
+#include <tencentcloud/thpc/v20230321/model/InquirePriceModifyWorkspacesChargeTypeResponse.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyClusterDeletionProtectionRequest.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyClusterDeletionProtectionResponse.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyInitNodeScriptsRequest.h>
@@ -77,6 +79,8 @@
 #include <tencentcloud/thpc/v20230321/model/ModifyNodeAttributeResponse.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyWorkspacesAttributeRequest.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyWorkspacesAttributeResponse.h>
+#include <tencentcloud/thpc/v20230321/model/ModifyWorkspacesChargeTypeRequest.h>
+#include <tencentcloud/thpc/v20230321/model/ModifyWorkspacesChargeTypeResponse.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyWorkspacesRenewFlagRequest.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyWorkspacesRenewFlagResponse.h>
 #include <tencentcloud/thpc/v20230321/model/SetAutoScalingConfigurationRequest.h>
@@ -170,6 +174,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetachNodesResponse> DetachNodesOutcome;
                 typedef std::future<DetachNodesOutcome> DetachNodesOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DetachNodesRequest&, DetachNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachNodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquirePriceModifyWorkspacesChargeTypeResponse> InquirePriceModifyWorkspacesChargeTypeOutcome;
+                typedef std::future<InquirePriceModifyWorkspacesChargeTypeOutcome> InquirePriceModifyWorkspacesChargeTypeOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::InquirePriceModifyWorkspacesChargeTypeRequest&, InquirePriceModifyWorkspacesChargeTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceModifyWorkspacesChargeTypeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyClusterDeletionProtectionResponse> ModifyClusterDeletionProtectionOutcome;
                 typedef std::future<ModifyClusterDeletionProtectionOutcome> ModifyClusterDeletionProtectionOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::ModifyClusterDeletionProtectionRequest&, ModifyClusterDeletionProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterDeletionProtectionAsyncHandler;
@@ -182,6 +189,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyWorkspacesAttributeResponse> ModifyWorkspacesAttributeOutcome;
                 typedef std::future<ModifyWorkspacesAttributeOutcome> ModifyWorkspacesAttributeOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::ModifyWorkspacesAttributeRequest&, ModifyWorkspacesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWorkspacesAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyWorkspacesChargeTypeResponse> ModifyWorkspacesChargeTypeOutcome;
+                typedef std::future<ModifyWorkspacesChargeTypeOutcome> ModifyWorkspacesChargeTypeOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::ModifyWorkspacesChargeTypeRequest&, ModifyWorkspacesChargeTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWorkspacesChargeTypeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyWorkspacesRenewFlagResponse> ModifyWorkspacesRenewFlagOutcome;
                 typedef std::future<ModifyWorkspacesRenewFlagOutcome> ModifyWorkspacesRenewFlagOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::ModifyWorkspacesRenewFlagRequest&, ModifyWorkspacesRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWorkspacesRenewFlagAsyncHandler;
@@ -415,6 +425,15 @@ namespace TencentCloud
                 DetachNodesOutcomeCallable DetachNodesCallable(const Model::DetachNodesRequest& request);
 
                 /**
+                 *查询按量计费工作空间转换为包年包月的价格。不会创建订单或变更资源。
+                 * @param req InquirePriceModifyWorkspacesChargeTypeRequest
+                 * @return InquirePriceModifyWorkspacesChargeTypeOutcome
+                 */
+                InquirePriceModifyWorkspacesChargeTypeOutcome InquirePriceModifyWorkspacesChargeType(const Model::InquirePriceModifyWorkspacesChargeTypeRequest &request);
+                void InquirePriceModifyWorkspacesChargeTypeAsync(const Model::InquirePriceModifyWorkspacesChargeTypeRequest& request, const InquirePriceModifyWorkspacesChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquirePriceModifyWorkspacesChargeTypeOutcomeCallable InquirePriceModifyWorkspacesChargeTypeCallable(const Model::InquirePriceModifyWorkspacesChargeTypeRequest& request);
+
+                /**
                  *修改集群删除保护状态
                  * @param req ModifyClusterDeletionProtectionRequest
                  * @return ModifyClusterDeletionProtectionOutcome
@@ -449,6 +468,15 @@ namespace TencentCloud
                 ModifyWorkspacesAttributeOutcome ModifyWorkspacesAttribute(const Model::ModifyWorkspacesAttributeRequest &request);
                 void ModifyWorkspacesAttributeAsync(const Model::ModifyWorkspacesAttributeRequest& request, const ModifyWorkspacesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyWorkspacesAttributeOutcomeCallable ModifyWorkspacesAttributeCallable(const Model::ModifyWorkspacesAttributeRequest& request);
+
+                /**
+                 *正式提交按量计费工作空间转包年包月订单。仅支持 ONLINE 且计费模式为 POSTPAID_BY_HOUR 的工作空间。
+                 * @param req ModifyWorkspacesChargeTypeRequest
+                 * @return ModifyWorkspacesChargeTypeOutcome
+                 */
+                ModifyWorkspacesChargeTypeOutcome ModifyWorkspacesChargeType(const Model::ModifyWorkspacesChargeTypeRequest &request);
+                void ModifyWorkspacesChargeTypeAsync(const Model::ModifyWorkspacesChargeTypeRequest& request, const ModifyWorkspacesChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyWorkspacesChargeTypeOutcomeCallable ModifyWorkspacesChargeTypeCallable(const Model::ModifyWorkspacesChargeTypeRequest& request);
 
                 /**
                  *本接口 (ModifyWorkspacesAttribute) 用于修改工作空间的属性（目前只支持修改工作空间的名称）。

@@ -33,7 +33,8 @@ ChannelOrganizationInfo::ChannelOrganizationInfo() :
     m_authorizationStatusHasBeenSet(false),
     m_authorizationTypeHasBeenSet(false),
     m_activeStatusHasBeenSet(false),
-    m_licenseExpireTimeHasBeenSet(false)
+    m_licenseExpireTimeHasBeenSet(false),
+    m_hasSubmittedAuthInfoHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome ChannelOrganizationInfo::Deserialize(const rapidjson::Value 
         m_licenseExpireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("HasSubmittedAuthInfo") && !value["HasSubmittedAuthInfo"].IsNull())
+    {
+        if (!value["HasSubmittedAuthInfo"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChannelOrganizationInfo.HasSubmittedAuthInfo` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasSubmittedAuthInfo = value["HasSubmittedAuthInfo"].GetBool();
+        m_hasSubmittedAuthInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void ChannelOrganizationInfo::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "LicenseExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_licenseExpireTime, allocator);
+    }
+
+    if (m_hasSubmittedAuthInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasSubmittedAuthInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasSubmittedAuthInfo, allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void ChannelOrganizationInfo::SetLicenseExpireTime(const int64_t& _licenseExpire
 bool ChannelOrganizationInfo::LicenseExpireTimeHasBeenSet() const
 {
     return m_licenseExpireTimeHasBeenSet;
+}
+
+bool ChannelOrganizationInfo::GetHasSubmittedAuthInfo() const
+{
+    return m_hasSubmittedAuthInfo;
+}
+
+void ChannelOrganizationInfo::SetHasSubmittedAuthInfo(const bool& _hasSubmittedAuthInfo)
+{
+    m_hasSubmittedAuthInfo = _hasSubmittedAuthInfo;
+    m_hasSubmittedAuthInfoHasBeenSet = true;
+}
+
+bool ChannelOrganizationInfo::HasSubmittedAuthInfoHasBeenSet() const
+{
+    return m_hasSubmittedAuthInfoHasBeenSet;
 }
 

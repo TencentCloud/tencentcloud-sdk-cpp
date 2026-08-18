@@ -66,27 +66,6 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取<p>Lab 镜像地址（必填，用于开发工具如 Jupyter/VSCode/WebShell）。前端在&quot;内置 / 自定义&quot;两态中选择此值；当 Image 字段未显式传入时，后端会基于该字段按 R1（镜像表命中）/R2（同值 fallback）派生 Ray 集群镜像。</p>
-                     * @return LabImage <p>Lab 镜像地址（必填，用于开发工具如 Jupyter/VSCode/WebShell）。前端在&quot;内置 / 自定义&quot;两态中选择此值；当 Image 字段未显式传入时，后端会基于该字段按 R1（镜像表命中）/R2（同值 fallback）派生 Ray 集群镜像。</p>
-                     * 
-                     */
-                    std::string GetLabImage() const;
-
-                    /**
-                     * 设置<p>Lab 镜像地址（必填，用于开发工具如 Jupyter/VSCode/WebShell）。前端在&quot;内置 / 自定义&quot;两态中选择此值；当 Image 字段未显式传入时，后端会基于该字段按 R1（镜像表命中）/R2（同值 fallback）派生 Ray 集群镜像。</p>
-                     * @param _labImage <p>Lab 镜像地址（必填，用于开发工具如 Jupyter/VSCode/WebShell）。前端在&quot;内置 / 自定义&quot;两态中选择此值；当 Image 字段未显式传入时，后端会基于该字段按 R1（镜像表命中）/R2（同值 fallback）派生 Ray 集群镜像。</p>
-                     * 
-                     */
-                    void SetLabImage(const std::string& _labImage);
-
-                    /**
-                     * 判断参数 LabImage 是否已赋值
-                     * @return LabImage 是否已赋值
-                     * 
-                     */
-                    bool LabImageHasBeenSet() const;
-
-                    /**
                      * 获取<p>资源分区ID</p>
                      * @return ResourcePartitionId <p>资源分区ID</p>
                      * 
@@ -129,27 +108,6 @@ namespace TencentCloud
                     bool QueueHasBeenSet() const;
 
                     /**
-                     * 获取<p>数据实验室描述</p>
-                     * @return Description <p>数据实验室描述</p>
-                     * 
-                     */
-                    std::string GetDescription() const;
-
-                    /**
-                     * 设置<p>数据实验室描述</p>
-                     * @param _description <p>数据实验室描述</p>
-                     * 
-                     */
-                    void SetDescription(const std::string& _description);
-
-                    /**
-                     * 判断参数 Description 是否已赋值
-                     * @return Description 是否已赋值
-                     * 
-                     */
-                    bool DescriptionHasBeenSet() const;
-
-                    /**
                      * 获取<p>Ray 集群镜像地址（可选，OpenAPI/SDK 高级控制入口）。前端不再传递此字段；为空时后端按 R1（镜像表查询命中）→ R2（同值 fallback）顺序自动派生。非空时直接作为 Ray 集群镜像，跳过派生（EXPLICIT），且后端不校验其与 LabImage 的兼容性。</p>
                      * @return Image <p>Ray 集群镜像地址（可选，OpenAPI/SDK 高级控制入口）。前端不再传递此字段；为空时后端按 R1（镜像表查询命中）→ R2（同值 fallback）顺序自动派生。非空时直接作为 Ray 集群镜像，跳过派生（EXPLICIT），且后端不校验其与 LabImage 的兼容性。</p>
                      * 
@@ -169,6 +127,48 @@ namespace TencentCloud
                      * 
                      */
                     bool ImageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Lab 镜像地址（必填，用于开发工具如 Jupyter/VSCode/WebShell）。前端在&quot;内置 / 自定义&quot;两态中选择此值；当 Image 字段未显式传入时，后端会基于该字段按 R1（镜像表命中）/R2（同值 fallback）派生 Ray 集群镜像。</p>
+                     * @return LabImage <p>Lab 镜像地址（必填，用于开发工具如 Jupyter/VSCode/WebShell）。前端在&quot;内置 / 自定义&quot;两态中选择此值；当 Image 字段未显式传入时，后端会基于该字段按 R1（镜像表命中）/R2（同值 fallback）派生 Ray 集群镜像。</p>
+                     * 
+                     */
+                    std::string GetLabImage() const;
+
+                    /**
+                     * 设置<p>Lab 镜像地址（必填，用于开发工具如 Jupyter/VSCode/WebShell）。前端在&quot;内置 / 自定义&quot;两态中选择此值；当 Image 字段未显式传入时，后端会基于该字段按 R1（镜像表命中）/R2（同值 fallback）派生 Ray 集群镜像。</p>
+                     * @param _labImage <p>Lab 镜像地址（必填，用于开发工具如 Jupyter/VSCode/WebShell）。前端在&quot;内置 / 自定义&quot;两态中选择此值；当 Image 字段未显式传入时，后端会基于该字段按 R1（镜像表命中）/R2（同值 fallback）派生 Ray 集群镜像。</p>
+                     * 
+                     */
+                    void SetLabImage(const std::string& _labImage);
+
+                    /**
+                     * 判断参数 LabImage 是否已赋值
+                     * @return LabImage 是否已赋值
+                     * 
+                     */
+                    bool LabImageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>数据实验室描述</p>
+                     * @return Description <p>数据实验室描述</p>
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置<p>数据实验室描述</p>
+                     * @param _description <p>数据实验室描述</p>
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取<p>镜像拉取策略（Always, IfNotPresent, Never）</p>
@@ -515,12 +515,6 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * <p>Lab 镜像地址（必填，用于开发工具如 Jupyter/VSCode/WebShell）。前端在&quot;内置 / 自定义&quot;两态中选择此值；当 Image 字段未显式传入时，后端会基于该字段按 R1（镜像表命中）/R2（同值 fallback）派生 Ray 集群镜像。</p>
-                     */
-                    std::string m_labImage;
-                    bool m_labImageHasBeenSet;
-
-                    /**
                      * <p>资源分区ID</p>
                      */
                     std::string m_resourcePartitionId;
@@ -533,16 +527,22 @@ namespace TencentCloud
                     bool m_queueHasBeenSet;
 
                     /**
-                     * <p>数据实验室描述</p>
-                     */
-                    std::string m_description;
-                    bool m_descriptionHasBeenSet;
-
-                    /**
                      * <p>Ray 集群镜像地址（可选，OpenAPI/SDK 高级控制入口）。前端不再传递此字段；为空时后端按 R1（镜像表查询命中）→ R2（同值 fallback）顺序自动派生。非空时直接作为 Ray 集群镜像，跳过派生（EXPLICIT），且后端不校验其与 LabImage 的兼容性。</p>
                      */
                     std::string m_image;
                     bool m_imageHasBeenSet;
+
+                    /**
+                     * <p>Lab 镜像地址（必填，用于开发工具如 Jupyter/VSCode/WebShell）。前端在&quot;内置 / 自定义&quot;两态中选择此值；当 Image 字段未显式传入时，后端会基于该字段按 R1（镜像表命中）/R2（同值 fallback）派生 Ray 集群镜像。</p>
+                     */
+                    std::string m_labImage;
+                    bool m_labImageHasBeenSet;
+
+                    /**
+                     * <p>数据实验室描述</p>
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                     /**
                      * <p>镜像拉取策略（Always, IfNotPresent, Never）</p>

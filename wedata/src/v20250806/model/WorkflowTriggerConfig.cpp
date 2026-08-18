@@ -31,9 +31,11 @@ WorkflowTriggerConfig::WorkflowTriggerConfig() :
     m_crontabExpressionHasBeenSet(false),
     m_triggerIdHasBeenSet(false),
     m_fileArrivalPathHasBeenSet(false),
+    m_schedulerStatusHasBeenSet(false),
+    m_fileNamePatternHasBeenSet(false),
+    m_recursiveHasBeenSet(false),
     m_triggerMinimumIntervalSecondHasBeenSet(false),
-    m_triggerWaitTimeSecondHasBeenSet(false),
-    m_schedulerStatusHasBeenSet(false)
+    m_triggerWaitTimeSecondHasBeenSet(false)
 {
 }
 
@@ -142,26 +144,6 @@ CoreInternalOutcome WorkflowTriggerConfig::Deserialize(const rapidjson::Value &v
         m_fileArrivalPathHasBeenSet = true;
     }
 
-    if (value.HasMember("TriggerMinimumIntervalSecond") && !value["TriggerMinimumIntervalSecond"].IsNull())
-    {
-        if (!value["TriggerMinimumIntervalSecond"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `WorkflowTriggerConfig.TriggerMinimumIntervalSecond` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_triggerMinimumIntervalSecond = value["TriggerMinimumIntervalSecond"].GetUint64();
-        m_triggerMinimumIntervalSecondHasBeenSet = true;
-    }
-
-    if (value.HasMember("TriggerWaitTimeSecond") && !value["TriggerWaitTimeSecond"].IsNull())
-    {
-        if (!value["TriggerWaitTimeSecond"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `WorkflowTriggerConfig.TriggerWaitTimeSecond` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_triggerWaitTimeSecond = value["TriggerWaitTimeSecond"].GetUint64();
-        m_triggerWaitTimeSecondHasBeenSet = true;
-    }
-
     if (value.HasMember("SchedulerStatus") && !value["SchedulerStatus"].IsNull())
     {
         if (!value["SchedulerStatus"].IsString())
@@ -170,6 +152,46 @@ CoreInternalOutcome WorkflowTriggerConfig::Deserialize(const rapidjson::Value &v
         }
         m_schedulerStatus = string(value["SchedulerStatus"].GetString());
         m_schedulerStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileNamePattern") && !value["FileNamePattern"].IsNull())
+    {
+        if (!value["FileNamePattern"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowTriggerConfig.FileNamePattern` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileNamePattern = string(value["FileNamePattern"].GetString());
+        m_fileNamePatternHasBeenSet = true;
+    }
+
+    if (value.HasMember("Recursive") && !value["Recursive"].IsNull())
+    {
+        if (!value["Recursive"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowTriggerConfig.Recursive` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_recursive = value["Recursive"].GetInt64();
+        m_recursiveHasBeenSet = true;
+    }
+
+    if (value.HasMember("TriggerMinimumIntervalSecond") && !value["TriggerMinimumIntervalSecond"].IsNull())
+    {
+        if (!value["TriggerMinimumIntervalSecond"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowTriggerConfig.TriggerMinimumIntervalSecond` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_triggerMinimumIntervalSecond = value["TriggerMinimumIntervalSecond"].GetInt64();
+        m_triggerMinimumIntervalSecondHasBeenSet = true;
+    }
+
+    if (value.HasMember("TriggerWaitTimeSecond") && !value["TriggerWaitTimeSecond"].IsNull())
+    {
+        if (!value["TriggerWaitTimeSecond"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowTriggerConfig.TriggerWaitTimeSecond` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_triggerWaitTimeSecond = value["TriggerWaitTimeSecond"].GetInt64();
+        m_triggerWaitTimeSecondHasBeenSet = true;
     }
 
 
@@ -259,6 +281,30 @@ void WorkflowTriggerConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         value.AddMember(iKey, rapidjson::Value(m_fileArrivalPath.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_schedulerStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchedulerStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schedulerStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileNamePatternHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileNamePattern";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileNamePattern.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recursiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Recursive";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recursive, allocator);
+    }
+
     if (m_triggerMinimumIntervalSecondHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -273,14 +319,6 @@ void WorkflowTriggerConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "TriggerWaitTimeSecond";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_triggerWaitTimeSecond, allocator);
-    }
-
-    if (m_schedulerStatusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SchedulerStatus";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_schedulerStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -446,38 +484,6 @@ bool WorkflowTriggerConfig::FileArrivalPathHasBeenSet() const
     return m_fileArrivalPathHasBeenSet;
 }
 
-uint64_t WorkflowTriggerConfig::GetTriggerMinimumIntervalSecond() const
-{
-    return m_triggerMinimumIntervalSecond;
-}
-
-void WorkflowTriggerConfig::SetTriggerMinimumIntervalSecond(const uint64_t& _triggerMinimumIntervalSecond)
-{
-    m_triggerMinimumIntervalSecond = _triggerMinimumIntervalSecond;
-    m_triggerMinimumIntervalSecondHasBeenSet = true;
-}
-
-bool WorkflowTriggerConfig::TriggerMinimumIntervalSecondHasBeenSet() const
-{
-    return m_triggerMinimumIntervalSecondHasBeenSet;
-}
-
-uint64_t WorkflowTriggerConfig::GetTriggerWaitTimeSecond() const
-{
-    return m_triggerWaitTimeSecond;
-}
-
-void WorkflowTriggerConfig::SetTriggerWaitTimeSecond(const uint64_t& _triggerWaitTimeSecond)
-{
-    m_triggerWaitTimeSecond = _triggerWaitTimeSecond;
-    m_triggerWaitTimeSecondHasBeenSet = true;
-}
-
-bool WorkflowTriggerConfig::TriggerWaitTimeSecondHasBeenSet() const
-{
-    return m_triggerWaitTimeSecondHasBeenSet;
-}
-
 string WorkflowTriggerConfig::GetSchedulerStatus() const
 {
     return m_schedulerStatus;
@@ -492,5 +498,69 @@ void WorkflowTriggerConfig::SetSchedulerStatus(const string& _schedulerStatus)
 bool WorkflowTriggerConfig::SchedulerStatusHasBeenSet() const
 {
     return m_schedulerStatusHasBeenSet;
+}
+
+string WorkflowTriggerConfig::GetFileNamePattern() const
+{
+    return m_fileNamePattern;
+}
+
+void WorkflowTriggerConfig::SetFileNamePattern(const string& _fileNamePattern)
+{
+    m_fileNamePattern = _fileNamePattern;
+    m_fileNamePatternHasBeenSet = true;
+}
+
+bool WorkflowTriggerConfig::FileNamePatternHasBeenSet() const
+{
+    return m_fileNamePatternHasBeenSet;
+}
+
+int64_t WorkflowTriggerConfig::GetRecursive() const
+{
+    return m_recursive;
+}
+
+void WorkflowTriggerConfig::SetRecursive(const int64_t& _recursive)
+{
+    m_recursive = _recursive;
+    m_recursiveHasBeenSet = true;
+}
+
+bool WorkflowTriggerConfig::RecursiveHasBeenSet() const
+{
+    return m_recursiveHasBeenSet;
+}
+
+int64_t WorkflowTriggerConfig::GetTriggerMinimumIntervalSecond() const
+{
+    return m_triggerMinimumIntervalSecond;
+}
+
+void WorkflowTriggerConfig::SetTriggerMinimumIntervalSecond(const int64_t& _triggerMinimumIntervalSecond)
+{
+    m_triggerMinimumIntervalSecond = _triggerMinimumIntervalSecond;
+    m_triggerMinimumIntervalSecondHasBeenSet = true;
+}
+
+bool WorkflowTriggerConfig::TriggerMinimumIntervalSecondHasBeenSet() const
+{
+    return m_triggerMinimumIntervalSecondHasBeenSet;
+}
+
+int64_t WorkflowTriggerConfig::GetTriggerWaitTimeSecond() const
+{
+    return m_triggerWaitTimeSecond;
+}
+
+void WorkflowTriggerConfig::SetTriggerWaitTimeSecond(const int64_t& _triggerWaitTimeSecond)
+{
+    m_triggerWaitTimeSecond = _triggerWaitTimeSecond;
+    m_triggerWaitTimeSecondHasBeenSet = true;
+}
+
+bool WorkflowTriggerConfig::TriggerWaitTimeSecondHasBeenSet() const
+{
+    return m_triggerWaitTimeSecondHasBeenSet;
 }
 

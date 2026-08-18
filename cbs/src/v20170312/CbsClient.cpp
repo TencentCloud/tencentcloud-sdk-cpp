@@ -990,6 +990,56 @@ CbsClient::DescribeAutoSnapshotPoliciesOutcomeCallable CbsClient::DescribeAutoSn
     return prom->get_future();
 }
 
+CbsClient::DescribeDedicatedClusterDiskStatisticsOutcome CbsClient::DescribeDedicatedClusterDiskStatistics(const DescribeDedicatedClusterDiskStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDedicatedClusterDiskStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDedicatedClusterDiskStatisticsResponse rsp = DescribeDedicatedClusterDiskStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDedicatedClusterDiskStatisticsOutcome(rsp);
+        else
+            return DescribeDedicatedClusterDiskStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDedicatedClusterDiskStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::DescribeDedicatedClusterDiskStatisticsAsync(const DescribeDedicatedClusterDiskStatisticsRequest& request, const DescribeDedicatedClusterDiskStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDedicatedClusterDiskStatisticsRequest&;
+    using Resp = DescribeDedicatedClusterDiskStatisticsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDedicatedClusterDiskStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CbsClient::DescribeDedicatedClusterDiskStatisticsOutcomeCallable CbsClient::DescribeDedicatedClusterDiskStatisticsCallable(const DescribeDedicatedClusterDiskStatisticsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDedicatedClusterDiskStatisticsOutcome>>();
+    DescribeDedicatedClusterDiskStatisticsAsync(
+    request,
+    [prom](
+        const CbsClient*,
+        const DescribeDedicatedClusterDiskStatisticsRequest&,
+        DescribeDedicatedClusterDiskStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CbsClient::DescribeDiskAssociatedAutoSnapshotPolicyOutcome CbsClient::DescribeDiskAssociatedAutoSnapshotPolicy(const DescribeDiskAssociatedAutoSnapshotPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDiskAssociatedAutoSnapshotPolicy");

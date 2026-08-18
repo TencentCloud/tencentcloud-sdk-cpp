@@ -31,7 +31,8 @@ UpdateTriggerWorkflowPartially::UpdateTriggerWorkflowPartially() :
     m_generalTaskParamsHasBeenSet(false),
     m_triggerWorkflowRunConfigurationHasBeenSet(false),
     m_schedulerStatusHasBeenSet(false),
-    m_triggerModeHasBeenSet(false)
+    m_triggerModeHasBeenSet(false),
+    m_executeUserUinHasBeenSet(false)
 {
 }
 
@@ -187,6 +188,16 @@ CoreInternalOutcome UpdateTriggerWorkflowPartially::Deserialize(const rapidjson:
         m_triggerModeHasBeenSet = true;
     }
 
+    if (value.HasMember("ExecuteUserUin") && !value["ExecuteUserUin"].IsNull())
+    {
+        if (!value["ExecuteUserUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateTriggerWorkflowPartially.ExecuteUserUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_executeUserUin = string(value["ExecuteUserUin"].GetString());
+        m_executeUserUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -302,6 +313,14 @@ void UpdateTriggerWorkflowPartially::ToJsonObject(rapidjson::Value &value, rapid
         string key = "TriggerMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_triggerMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executeUserUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecuteUserUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_executeUserUin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -481,5 +500,21 @@ void UpdateTriggerWorkflowPartially::SetTriggerMode(const string& _triggerMode)
 bool UpdateTriggerWorkflowPartially::TriggerModeHasBeenSet() const
 {
     return m_triggerModeHasBeenSet;
+}
+
+string UpdateTriggerWorkflowPartially::GetExecuteUserUin() const
+{
+    return m_executeUserUin;
+}
+
+void UpdateTriggerWorkflowPartially::SetExecuteUserUin(const string& _executeUserUin)
+{
+    m_executeUserUin = _executeUserUin;
+    m_executeUserUinHasBeenSet = true;
+}
+
+bool UpdateTriggerWorkflowPartially::ExecuteUserUinHasBeenSet() const
+{
+    return m_executeUserUinHasBeenSet;
 }
 

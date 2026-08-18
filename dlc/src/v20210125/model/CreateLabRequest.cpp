@@ -24,11 +24,11 @@ using namespace std;
 
 CreateLabRequest::CreateLabRequest() :
     m_nameHasBeenSet(false),
-    m_labImageHasBeenSet(false),
     m_resourcePartitionIdHasBeenSet(false),
     m_queueHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_imageHasBeenSet(false),
+    m_labImageHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_imagePullPolicyHasBeenSet(false),
     m_resourceConfigHasBeenSet(false),
     m_resourceConfigIdHasBeenSet(false),
@@ -63,14 +63,6 @@ string CreateLabRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_labImageHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LabImage";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_labImage.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_resourcePartitionIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -87,20 +79,28 @@ string CreateLabRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_queue.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_descriptionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Description";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_imageHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Image";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_image.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_labImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LabImage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_labImage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imagePullPolicyHasBeenSet)
@@ -268,22 +268,6 @@ bool CreateLabRequest::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
-string CreateLabRequest::GetLabImage() const
-{
-    return m_labImage;
-}
-
-void CreateLabRequest::SetLabImage(const string& _labImage)
-{
-    m_labImage = _labImage;
-    m_labImageHasBeenSet = true;
-}
-
-bool CreateLabRequest::LabImageHasBeenSet() const
-{
-    return m_labImageHasBeenSet;
-}
-
 string CreateLabRequest::GetResourcePartitionId() const
 {
     return m_resourcePartitionId;
@@ -316,22 +300,6 @@ bool CreateLabRequest::QueueHasBeenSet() const
     return m_queueHasBeenSet;
 }
 
-string CreateLabRequest::GetDescription() const
-{
-    return m_description;
-}
-
-void CreateLabRequest::SetDescription(const string& _description)
-{
-    m_description = _description;
-    m_descriptionHasBeenSet = true;
-}
-
-bool CreateLabRequest::DescriptionHasBeenSet() const
-{
-    return m_descriptionHasBeenSet;
-}
-
 string CreateLabRequest::GetImage() const
 {
     return m_image;
@@ -346,6 +314,38 @@ void CreateLabRequest::SetImage(const string& _image)
 bool CreateLabRequest::ImageHasBeenSet() const
 {
     return m_imageHasBeenSet;
+}
+
+string CreateLabRequest::GetLabImage() const
+{
+    return m_labImage;
+}
+
+void CreateLabRequest::SetLabImage(const string& _labImage)
+{
+    m_labImage = _labImage;
+    m_labImageHasBeenSet = true;
+}
+
+bool CreateLabRequest::LabImageHasBeenSet() const
+{
+    return m_labImageHasBeenSet;
+}
+
+string CreateLabRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void CreateLabRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool CreateLabRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 string CreateLabRequest::GetImagePullPolicy() const

@@ -61,6 +61,8 @@
 #include <tencentcloud/cbs/v20170312/model/DeleteSnapshotsResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeAutoSnapshotPoliciesRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeAutoSnapshotPoliciesResponse.h>
+#include <tencentcloud/cbs/v20170312/model/DescribeDedicatedClusterDiskStatisticsRequest.h>
+#include <tencentcloud/cbs/v20170312/model/DescribeDedicatedClusterDiskStatisticsResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeDiskAssociatedAutoSnapshotPolicyRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeDiskAssociatedAutoSnapshotPolicyResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeDiskBackupsRequest.h>
@@ -214,6 +216,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAutoSnapshotPoliciesResponse> DescribeAutoSnapshotPoliciesOutcome;
                 typedef std::future<DescribeAutoSnapshotPoliciesOutcome> DescribeAutoSnapshotPoliciesOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DescribeAutoSnapshotPoliciesRequest&, DescribeAutoSnapshotPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoSnapshotPoliciesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDedicatedClusterDiskStatisticsResponse> DescribeDedicatedClusterDiskStatisticsOutcome;
+                typedef std::future<DescribeDedicatedClusterDiskStatisticsOutcome> DescribeDedicatedClusterDiskStatisticsOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::DescribeDedicatedClusterDiskStatisticsRequest&, DescribeDedicatedClusterDiskStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDedicatedClusterDiskStatisticsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDiskAssociatedAutoSnapshotPolicyResponse> DescribeDiskAssociatedAutoSnapshotPolicyOutcome;
                 typedef std::future<DescribeDiskAssociatedAutoSnapshotPolicyOutcome> DescribeDiskAssociatedAutoSnapshotPolicyOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DescribeDiskAssociatedAutoSnapshotPolicyRequest&, DescribeDiskAssociatedAutoSnapshotPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiskAssociatedAutoSnapshotPolicyAsyncHandler;
@@ -553,6 +558,15 @@ namespace TencentCloud
                 DescribeAutoSnapshotPoliciesOutcome DescribeAutoSnapshotPolicies(const Model::DescribeAutoSnapshotPoliciesRequest &request);
                 void DescribeAutoSnapshotPoliciesAsync(const Model::DescribeAutoSnapshotPoliciesRequest& request, const DescribeAutoSnapshotPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAutoSnapshotPoliciesOutcomeCallable DescribeAutoSnapshotPoliciesCallable(const Model::DescribeAutoSnapshotPoliciesRequest& request);
+
+                /**
+                 *查询 CVM CDC 独享集群云硬盘统计信息。
+                 * @param req DescribeDedicatedClusterDiskStatisticsRequest
+                 * @return DescribeDedicatedClusterDiskStatisticsOutcome
+                 */
+                DescribeDedicatedClusterDiskStatisticsOutcome DescribeDedicatedClusterDiskStatistics(const Model::DescribeDedicatedClusterDiskStatisticsRequest &request);
+                void DescribeDedicatedClusterDiskStatisticsAsync(const Model::DescribeDedicatedClusterDiskStatisticsRequest& request, const DescribeDedicatedClusterDiskStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDedicatedClusterDiskStatisticsOutcomeCallable DescribeDedicatedClusterDiskStatisticsCallable(const Model::DescribeDedicatedClusterDiskStatisticsRequest& request);
 
                 /**
                  *本接口（DescribeDiskAssociatedAutoSnapshotPolicy）用于查询云盘绑定的定期快照策略。

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取AIGC 生图任务的输出文件信息。
-                     * @return FileInfos AIGC 生图任务的输出文件信息。
+                     * 获取<p>AIGC 生图任务的输出文件信息。</p>
+                     * @return FileInfos <p>AIGC 生图任务的输出文件信息。</p>
                      * 
                      */
                     std::vector<AigcImageTaskOutputFileInfo> GetFileInfos() const;
 
                     /**
-                     * 设置AIGC 生图任务的输出文件信息。
-                     * @param _fileInfos AIGC 生图任务的输出文件信息。
+                     * 设置<p>AIGC 生图任务的输出文件信息。</p>
+                     * @param _fileInfos <p>AIGC 生图任务的输出文件信息。</p>
                      * 
                      */
                     void SetFileInfos(const std::vector<AigcImageTaskOutputFileInfo>& _fileInfos);
@@ -71,7 +71,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * AIGC 生图任务的输出文件信息。
+                     * <p>AIGC 生图任务的输出文件信息。</p>
                      */
                     std::vector<AigcImageTaskOutputFileInfo> m_fileInfos;
                     bool m_fileInfosHasBeenSet;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取单独售卖Topic的Topic名称
-                     * @return Resource 单独售卖Topic的Topic名称
+                     * 获取<p>单独售卖Topic的Topic名称</p>
+                     * @return Resource <p>单独售卖Topic的Topic名称</p>
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
-                     * 设置单独售卖Topic的Topic名称
-                     * @param _resource 单独售卖Topic的Topic名称
+                     * 设置<p>单独售卖Topic的Topic名称</p>
+                     * @param _resource <p>单独售卖Topic的Topic名称</p>
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -68,18 +68,18 @@ namespace TencentCloud
                     bool ResourceHasBeenSet() const;
 
                     /**
-                     * 获取Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp
+                     * 获取<p>Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OffsetType Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp
+                     * @return OffsetType <p>Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOffsetType() const;
 
                     /**
-                     * 设置Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp
+                     * 设置<p>Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _offsetType Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp
+                     * @param _offsetType <p>Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,18 +93,18 @@ namespace TencentCloud
                     bool OffsetTypeHasBeenSet() const;
 
                     /**
-                     * 获取Offset类型为timestamp时必传，传时间戳，精确到秒
+                     * 获取<p>Offset类型为timestamp时必传，传时间戳，精确到秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StartTime Offset类型为timestamp时必传，传时间戳，精确到秒
+                     * @return StartTime <p>Offset类型为timestamp时必传，传时间戳，精确到秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置Offset类型为timestamp时必传，传时间戳，精确到秒
+                     * 设置<p>Offset类型为timestamp时必传，传时间戳，精确到秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _startTime Offset类型为timestamp时必传，传时间戳，精确到秒
+                     * @param _startTime <p>Offset类型为timestamp时必传，传时间戳，精确到秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -118,15 +118,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取Topic的TopicId【出参】
-                     * @return TopicId Topic的TopicId【出参】
+                     * 获取<p>Topic的TopicId【出参】</p>
+                     * @return TopicId <p>Topic的TopicId【出参】</p>
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置Topic的TopicId【出参】
-                     * @param _topicId Topic的TopicId【出参】
+                     * 设置<p>Topic的TopicId【出参】</p>
+                     * @param _topicId <p>Topic的TopicId【出参】</p>
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -139,15 +139,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取写入Topic时是否进行压缩，不开启填"none"，开启的话，可选择"gzip", "snappy", "lz4"中的一个进行填写。
-                     * @return CompressionType 写入Topic时是否进行压缩，不开启填"none"，开启的话，可选择"gzip", "snappy", "lz4"中的一个进行填写。
+                     * 获取<p>写入Topic时是否进行压缩，不开启填&quot;none&quot;，开启的话，可选择&quot;gzip&quot;, &quot;snappy&quot;, &quot;lz4&quot;中的一个进行填写。</p>
+                     * @return CompressionType <p>写入Topic时是否进行压缩，不开启填&quot;none&quot;，开启的话，可选择&quot;gzip&quot;, &quot;snappy&quot;, &quot;lz4&quot;中的一个进行填写。</p>
                      * 
                      */
                     std::string GetCompressionType() const;
 
                     /**
-                     * 设置写入Topic时是否进行压缩，不开启填"none"，开启的话，可选择"gzip", "snappy", "lz4"中的一个进行填写。
-                     * @param _compressionType 写入Topic时是否进行压缩，不开启填"none"，开启的话，可选择"gzip", "snappy", "lz4"中的一个进行填写。
+                     * 设置<p>写入Topic时是否进行压缩，不开启填&quot;none&quot;，开启的话，可选择&quot;gzip&quot;, &quot;snappy&quot;, &quot;lz4&quot;中的一个进行填写。</p>
+                     * @param _compressionType <p>写入Topic时是否进行压缩，不开启填&quot;none&quot;，开启的话，可选择&quot;gzip&quot;, &quot;snappy&quot;, &quot;lz4&quot;中的一个进行填写。</p>
                      * 
                      */
                     void SetCompressionType(const std::string& _compressionType);
@@ -160,15 +160,15 @@ namespace TencentCloud
                     bool CompressionTypeHasBeenSet() const;
 
                     /**
-                     * 获取使用的Topic是否需要自动创建（目前只支持SOURCE流入任务）
-                     * @return UseAutoCreateTopic 使用的Topic是否需要自动创建（目前只支持SOURCE流入任务）
+                     * 获取<p>使用的Topic是否需要自动创建（目前只支持SOURCE流入任务）</p>
+                     * @return UseAutoCreateTopic <p>使用的Topic是否需要自动创建（目前只支持SOURCE流入任务）</p>
                      * 
                      */
                     bool GetUseAutoCreateTopic() const;
 
                     /**
-                     * 设置使用的Topic是否需要自动创建（目前只支持SOURCE流入任务）
-                     * @param _useAutoCreateTopic 使用的Topic是否需要自动创建（目前只支持SOURCE流入任务）
+                     * 设置<p>使用的Topic是否需要自动创建（目前只支持SOURCE流入任务）</p>
+                     * @param _useAutoCreateTopic <p>使用的Topic是否需要自动创建（目前只支持SOURCE流入任务）</p>
                      * 
                      */
                     void SetUseAutoCreateTopic(const bool& _useAutoCreateTopic);
@@ -181,15 +181,15 @@ namespace TencentCloud
                     bool UseAutoCreateTopicHasBeenSet() const;
 
                     /**
-                     * 获取源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
-                     * @return MsgMultiple 源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
+                     * 获取<p>源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)</p>
+                     * @return MsgMultiple <p>源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)</p>
                      * 
                      */
                     int64_t GetMsgMultiple() const;
 
                     /**
-                     * 设置源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
-                     * @param _msgMultiple 源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
+                     * 设置<p>源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)</p>
+                     * @param _msgMultiple <p>源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)</p>
                      * 
                      */
                     void SetMsgMultiple(const int64_t& _msgMultiple);
@@ -204,45 +204,45 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 单独售卖Topic的Topic名称
+                     * <p>单独售卖Topic的Topic名称</p>
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
-                     * Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp
+                     * <p>Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_offsetType;
                     bool m_offsetTypeHasBeenSet;
 
                     /**
-                     * Offset类型为timestamp时必传，传时间戳，精确到秒
+                     * <p>Offset类型为timestamp时必传，传时间戳，精确到秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * Topic的TopicId【出参】
+                     * <p>Topic的TopicId【出参】</p>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 写入Topic时是否进行压缩，不开启填"none"，开启的话，可选择"gzip", "snappy", "lz4"中的一个进行填写。
+                     * <p>写入Topic时是否进行压缩，不开启填&quot;none&quot;，开启的话，可选择&quot;gzip&quot;, &quot;snappy&quot;, &quot;lz4&quot;中的一个进行填写。</p>
                      */
                     std::string m_compressionType;
                     bool m_compressionTypeHasBeenSet;
 
                     /**
-                     * 使用的Topic是否需要自动创建（目前只支持SOURCE流入任务）
+                     * <p>使用的Topic是否需要自动创建（目前只支持SOURCE流入任务）</p>
                      */
                     bool m_useAutoCreateTopic;
                     bool m_useAutoCreateTopicHasBeenSet;
 
                     /**
-                     * 源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
+                     * <p>源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)</p>
                      */
                     int64_t m_msgMultiple;
                     bool m_msgMultipleHasBeenSet;

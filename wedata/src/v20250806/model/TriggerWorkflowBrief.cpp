@@ -30,7 +30,8 @@ TriggerWorkflowBrief::TriggerWorkflowBrief() :
     m_workflowTriggerConfigHasBeenSet(false),
     m_userNameInChargeHasBeenSet(false),
     m_userUinInChargeHasBeenSet(false),
-    m_workflowParamsHasBeenSet(false)
+    m_workflowParamsHasBeenSet(false),
+    m_executeUserUinHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,16 @@ CoreInternalOutcome TriggerWorkflowBrief::Deserialize(const rapidjson::Value &va
         m_workflowParamsHasBeenSet = true;
     }
 
+    if (value.HasMember("ExecuteUserUin") && !value["ExecuteUserUin"].IsNull())
+    {
+        if (!value["ExecuteUserUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerWorkflowBrief.ExecuteUserUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_executeUserUin = string(value["ExecuteUserUin"].GetString());
+        m_executeUserUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +243,14 @@ void TriggerWorkflowBrief::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "WorkflowParams";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_workflowParams.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executeUserUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecuteUserUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_executeUserUin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -395,5 +414,21 @@ void TriggerWorkflowBrief::SetWorkflowParams(const string& _workflowParams)
 bool TriggerWorkflowBrief::WorkflowParamsHasBeenSet() const
 {
     return m_workflowParamsHasBeenSet;
+}
+
+string TriggerWorkflowBrief::GetExecuteUserUin() const
+{
+    return m_executeUserUin;
+}
+
+void TriggerWorkflowBrief::SetExecuteUserUin(const string& _executeUserUin)
+{
+    m_executeUserUin = _executeUserUin;
+    m_executeUserUinHasBeenSet = true;
+}
+
+bool TriggerWorkflowBrief::ExecuteUserUinHasBeenSet() const
+{
+    return m_executeUserUinHasBeenSet;
 }
 

@@ -42,7 +42,9 @@ DescribeConnectResourceResp::DescribeConnectResourceResp() :
     m_dorisConnectParamHasBeenSet(false),
     m_kafkaConnectParamHasBeenSet(false),
     m_mqttConnectParamHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_icebergConnectParamHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_icebergDatabasesHasBeenSet(false)
 {
 }
 
@@ -348,6 +350,23 @@ CoreInternalOutcome DescribeConnectResourceResp::Deserialize(const rapidjson::Va
         m_mqttConnectParamHasBeenSet = true;
     }
 
+    if (value.HasMember("IcebergConnectParam") && !value["IcebergConnectParam"].IsNull())
+    {
+        if (!value["IcebergConnectParam"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeConnectResourceResp.IcebergConnectParam` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_icebergConnectParam.Deserialize(value["IcebergConnectParam"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_icebergConnectParamHasBeenSet = true;
+    }
+
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
         if (!value["Tags"].IsArray())
@@ -366,6 +385,26 @@ CoreInternalOutcome DescribeConnectResourceResp::Deserialize(const rapidjson::Va
             m_tags.push_back(item);
         }
         m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("IcebergDatabases") && !value["IcebergDatabases"].IsNull())
+    {
+        if (!value["IcebergDatabases"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeConnectResourceResp.IcebergDatabases` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["IcebergDatabases"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            IcebergDatabaseInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_icebergDatabases.push_back(item);
+        }
+        m_icebergDatabasesHasBeenSet = true;
     }
 
 
@@ -560,6 +599,15 @@ void DescribeConnectResourceResp::ToJsonObject(rapidjson::Value &value, rapidjso
         m_mqttConnectParam.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_icebergConnectParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IcebergConnectParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_icebergConnectParam.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_tagsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -569,6 +617,21 @@ void DescribeConnectResourceResp::ToJsonObject(rapidjson::Value &value, rapidjso
 
         int i=0;
         for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_icebergDatabasesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IcebergDatabases";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_icebergDatabases.begin(); itr != m_icebergDatabases.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -914,6 +977,22 @@ bool DescribeConnectResourceResp::MqttConnectParamHasBeenSet() const
     return m_mqttConnectParamHasBeenSet;
 }
 
+IcebergConnectParam DescribeConnectResourceResp::GetIcebergConnectParam() const
+{
+    return m_icebergConnectParam;
+}
+
+void DescribeConnectResourceResp::SetIcebergConnectParam(const IcebergConnectParam& _icebergConnectParam)
+{
+    m_icebergConnectParam = _icebergConnectParam;
+    m_icebergConnectParamHasBeenSet = true;
+}
+
+bool DescribeConnectResourceResp::IcebergConnectParamHasBeenSet() const
+{
+    return m_icebergConnectParamHasBeenSet;
+}
+
 vector<Tag> DescribeConnectResourceResp::GetTags() const
 {
     return m_tags;
@@ -928,5 +1007,21 @@ void DescribeConnectResourceResp::SetTags(const vector<Tag>& _tags)
 bool DescribeConnectResourceResp::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+vector<IcebergDatabaseInfo> DescribeConnectResourceResp::GetIcebergDatabases() const
+{
+    return m_icebergDatabases;
+}
+
+void DescribeConnectResourceResp::SetIcebergDatabases(const vector<IcebergDatabaseInfo>& _icebergDatabases)
+{
+    m_icebergDatabases = _icebergDatabases;
+    m_icebergDatabasesHasBeenSet = true;
+}
+
+bool DescribeConnectResourceResp::IcebergDatabasesHasBeenSet() const
+{
+    return m_icebergDatabasesHasBeenSet;
 }
 

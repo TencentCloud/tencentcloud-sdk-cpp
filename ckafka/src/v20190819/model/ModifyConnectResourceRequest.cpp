@@ -38,7 +38,8 @@ ModifyConnectResourceRequest::ModifyConnectResourceRequest() :
     m_ctsdbConnectParamHasBeenSet(false),
     m_dorisConnectParamHasBeenSet(false),
     m_kafkaConnectParamHasBeenSet(false),
-    m_mqttConnectParamHasBeenSet(false)
+    m_mqttConnectParamHasBeenSet(false),
+    m_icebergConnectParamHasBeenSet(false)
 {
 }
 
@@ -187,6 +188,15 @@ string ModifyConnectResourceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mqttConnectParam.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_icebergConnectParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IcebergConnectParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_icebergConnectParam.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -451,6 +461,22 @@ void ModifyConnectResourceRequest::SetMqttConnectParam(const MqttConnectParam& _
 bool ModifyConnectResourceRequest::MqttConnectParamHasBeenSet() const
 {
     return m_mqttConnectParamHasBeenSet;
+}
+
+IcebergConnectParam ModifyConnectResourceRequest::GetIcebergConnectParam() const
+{
+    return m_icebergConnectParam;
+}
+
+void ModifyConnectResourceRequest::SetIcebergConnectParam(const IcebergConnectParam& _icebergConnectParam)
+{
+    m_icebergConnectParam = _icebergConnectParam;
+    m_icebergConnectParamHasBeenSet = true;
+}
+
+bool ModifyConnectResourceRequest::IcebergConnectParamHasBeenSet() const
+{
+    return m_icebergConnectParamHasBeenSet;
 }
 
 

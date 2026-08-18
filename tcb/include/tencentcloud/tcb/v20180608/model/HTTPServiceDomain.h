@@ -259,6 +259,27 @@ namespace TencentCloud
                     bool DNSStatusHasBeenSet() const;
 
                     /**
+                     * 获取<p>是否CNAME到平台任一网关入口，默认接入/CDN/EO，不含CustomCname</p><p>枚举值：</p><ul><li>EMPTY： 解析为空</li><li>OK： 命中</li><li>INVALID：  解析到其他非目标地址</li></ul>
+                     * @return PlatformCnameDNSStatus <p>是否CNAME到平台任一网关入口，默认接入/CDN/EO，不含CustomCname</p><p>枚举值：</p><ul><li>EMPTY： 解析为空</li><li>OK： 命中</li><li>INVALID：  解析到其他非目标地址</li></ul>
+                     * 
+                     */
+                    std::string GetPlatformCnameDNSStatus() const;
+
+                    /**
+                     * 设置<p>是否CNAME到平台任一网关入口，默认接入/CDN/EO，不含CustomCname</p><p>枚举值：</p><ul><li>EMPTY： 解析为空</li><li>OK： 命中</li><li>INVALID：  解析到其他非目标地址</li></ul>
+                     * @param _platformCnameDNSStatus <p>是否CNAME到平台任一网关入口，默认接入/CDN/EO，不含CustomCname</p><p>枚举值：</p><ul><li>EMPTY： 解析为空</li><li>OK： 命中</li><li>INVALID：  解析到其他非目标地址</li></ul>
+                     * 
+                     */
+                    void SetPlatformCnameDNSStatus(const std::string& _platformCnameDNSStatus);
+
+                    /**
+                     * 判断参数 PlatformCnameDNSStatus 是否已赋值
+                     * @return PlatformCnameDNSStatus 是否已赋值
+                     * 
+                     */
+                    bool PlatformCnameDNSStatusHasBeenSet() const;
+
+                    /**
                      * 获取<p>HTTP访问服务路由信息</p>
                      * @return Routes <p>HTTP访问服务路由信息</p>
                      * 
@@ -301,15 +322,15 @@ namespace TencentCloud
                     bool ExtensionHasBeenSet() const;
 
                     /**
-                     * 获取<p>域名创建时间</p>
-                     * @return CreateTime <p>域名创建时间</p>
+                     * 获取<p>域名创建时间，格式  YYYY-MM-DDTHH:mm:ss±HH:mm，时区为 UTC+8</p>
+                     * @return CreateTime <p>域名创建时间，格式  YYYY-MM-DDTHH:mm:ss±HH:mm，时区为 UTC+8</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置<p>域名创建时间</p>
-                     * @param _createTime <p>域名创建时间</p>
+                     * 设置<p>域名创建时间，格式  YYYY-MM-DDTHH:mm:ss±HH:mm，时区为 UTC+8</p>
+                     * @param _createTime <p>域名创建时间，格式  YYYY-MM-DDTHH:mm:ss±HH:mm，时区为 UTC+8</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -322,15 +343,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>域名更新时间</p>
-                     * @return UpdateTime <p>域名更新时间</p>
+                     * 获取<p>域名更新时间，格式  YYYY-MM-DDTHH:mm:ss±HH:mm，时区为 UTC+8</p>
+                     * @return UpdateTime <p>域名更新时间，格式  YYYY-MM-DDTHH:mm:ss±HH:mm，时区为 UTC+8</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置<p>域名更新时间</p>
-                     * @param _updateTime <p>域名更新时间</p>
+                     * 设置<p>域名更新时间，格式  YYYY-MM-DDTHH:mm:ss±HH:mm，时区为 UTC+8</p>
+                     * @param _updateTime <p>域名更新时间，格式  YYYY-MM-DDTHH:mm:ss±HH:mm，时区为 UTC+8</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -405,6 +426,12 @@ namespace TencentCloud
                     bool m_dNSStatusHasBeenSet;
 
                     /**
+                     * <p>是否CNAME到平台任一网关入口，默认接入/CDN/EO，不含CustomCname</p><p>枚举值：</p><ul><li>EMPTY： 解析为空</li><li>OK： 命中</li><li>INVALID：  解析到其他非目标地址</li></ul>
+                     */
+                    std::string m_platformCnameDNSStatus;
+                    bool m_platformCnameDNSStatusHasBeenSet;
+
+                    /**
                      * <p>HTTP访问服务路由信息</p>
                      */
                     std::vector<HTTPServiceRoute> m_routes;
@@ -417,13 +444,13 @@ namespace TencentCloud
                     bool m_extensionHasBeenSet;
 
                     /**
-                     * <p>域名创建时间</p>
+                     * <p>域名创建时间，格式  YYYY-MM-DDTHH:mm:ss±HH:mm，时区为 UTC+8</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * <p>域名更新时间</p>
+                     * <p>域名更新时间，格式  YYYY-MM-DDTHH:mm:ss±HH:mm，时区为 UTC+8</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

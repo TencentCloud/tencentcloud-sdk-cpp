@@ -24,9 +24,9 @@ using namespace std;
 
 UpdateLabRequest::UpdateLabRequest() :
     m_nameHasBeenSet(false),
+    m_imageHasBeenSet(false),
     m_labImageHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_imageHasBeenSet(false),
     m_imagePullPolicyHasBeenSet(false),
     m_resourceConfigIdHasBeenSet(false),
     m_groupIdHasBeenSet(false),
@@ -59,6 +59,14 @@ string UpdateLabRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_imageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Image";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_image.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_labImageHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -73,14 +81,6 @@ string UpdateLabRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_imageHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Image";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_image.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imagePullPolicyHasBeenSet)
@@ -227,6 +227,22 @@ bool UpdateLabRequest::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
+string UpdateLabRequest::GetImage() const
+{
+    return m_image;
+}
+
+void UpdateLabRequest::SetImage(const string& _image)
+{
+    m_image = _image;
+    m_imageHasBeenSet = true;
+}
+
+bool UpdateLabRequest::ImageHasBeenSet() const
+{
+    return m_imageHasBeenSet;
+}
+
 string UpdateLabRequest::GetLabImage() const
 {
     return m_labImage;
@@ -257,22 +273,6 @@ void UpdateLabRequest::SetDescription(const string& _description)
 bool UpdateLabRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
-}
-
-string UpdateLabRequest::GetImage() const
-{
-    return m_image;
-}
-
-void UpdateLabRequest::SetImage(const string& _image)
-{
-    m_image = _image;
-    m_imageHasBeenSet = true;
-}
-
-bool UpdateLabRequest::ImageHasBeenSet() const
-{
-    return m_imageHasBeenSet;
 }
 
 string UpdateLabRequest::GetImagePullPolicy() const

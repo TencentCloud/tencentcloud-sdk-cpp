@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Es实例资源Id
-                     * @return Resource Es实例资源Id
+                     * 获取<p>Es实例资源Id</p>
+                     * @return Resource <p>Es实例资源Id</p>
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
-                     * 设置Es实例资源Id
-                     * @param _resource Es实例资源Id
+                     * 设置<p>Es实例资源Id</p>
+                     * @param _resource <p>Es实例资源Id</p>
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool ResourceHasBeenSet() const;
 
                     /**
-                     * 获取Es的连接port
-                     * @return Port Es的连接port
+                     * 获取<p>Es的连接port</p>
+                     * @return Port <p>Es的连接port</p>
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置Es的连接port
-                     * @param _port Es的连接port
+                     * 设置<p>Es的连接port</p>
+                     * @param _port <p>Es的连接port</p>
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取Es用户名
-                     * @return UserName Es用户名
+                     * 获取<p>Es用户名</p>
+                     * @return UserName <p>Es用户名</p>
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置Es用户名
-                     * @param _userName Es用户名
+                     * 设置<p>Es用户名</p>
+                     * @param _userName <p>Es用户名</p>
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取Es密码
-                     * @return Password Es密码
+                     * 获取<p>Es密码</p>
+                     * @return Password <p>Es密码</p>
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置Es密码
-                     * @param _password Es密码
+                     * 设置<p>Es密码</p>
+                     * @param _password <p>Es密码</p>
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -134,15 +134,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取是否为自建集群
-                     * @return SelfBuilt 是否为自建集群
+                     * 获取<p>是否为自建集群</p>
+                     * @return SelfBuilt <p>是否为自建集群</p>
                      * 
                      */
                     bool GetSelfBuilt() const;
 
                     /**
-                     * 设置是否为自建集群
-                     * @param _selfBuilt 是否为自建集群
+                     * 设置<p>是否为自建集群</p>
+                     * @param _selfBuilt <p>是否为自建集群</p>
                      * 
                      */
                     void SetSelfBuilt(const bool& _selfBuilt);
@@ -155,15 +155,15 @@ namespace TencentCloud
                     bool SelfBuiltHasBeenSet() const;
 
                     /**
-                     * 获取实例vip
-                     * @return ServiceVip 实例vip
+                     * 获取<p>实例vip</p>
+                     * @return ServiceVip <p>实例vip</p>
                      * 
                      */
                     std::string GetServiceVip() const;
 
                     /**
-                     * 设置实例vip
-                     * @param _serviceVip 实例vip
+                     * 设置<p>实例vip</p>
+                     * @param _serviceVip <p>实例vip</p>
                      * 
                      */
                     void SetServiceVip(const std::string& _serviceVip);
@@ -176,15 +176,15 @@ namespace TencentCloud
                     bool ServiceVipHasBeenSet() const;
 
                     /**
-                     * 获取实例的vpcId
-                     * @return UniqVpcId 实例的vpcId
+                     * 获取<p>实例的vpcId</p>
+                     * @return UniqVpcId <p>实例的vpcId</p>
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
-                     * 设置实例的vpcId
-                     * @param _uniqVpcId 实例的vpcId
+                     * 设置<p>实例的vpcId</p>
+                     * @param _uniqVpcId <p>实例的vpcId</p>
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -197,15 +197,15 @@ namespace TencentCloud
                     bool UniqVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取Es是否抛弃解析失败的消息
-                     * @return DropInvalidMessage Es是否抛弃解析失败的消息
+                     * 获取<p>Es是否抛弃解析失败的消息</p>
+                     * @return DropInvalidMessage <p>Es是否抛弃解析失败的消息</p>
                      * 
                      */
                     bool GetDropInvalidMessage() const;
 
                     /**
-                     * 设置Es是否抛弃解析失败的消息
-                     * @param _dropInvalidMessage Es是否抛弃解析失败的消息
+                     * 设置<p>Es是否抛弃解析失败的消息</p>
+                     * @param _dropInvalidMessage <p>Es是否抛弃解析失败的消息</p>
                      * 
                      */
                     void SetDropInvalidMessage(const bool& _dropInvalidMessage);
@@ -218,15 +218,15 @@ namespace TencentCloud
                     bool DropInvalidMessageHasBeenSet() const;
 
                     /**
-                     * 获取Es自定义index名称
-                     * @return Index Es自定义index名称
+                     * 获取<p>Es自定义index名称</p>
+                     * @return Index <p>Es自定义index名称</p>
                      * 
                      */
                     std::string GetIndex() const;
 
                     /**
-                     * 设置Es自定义index名称
-                     * @param _index Es自定义index名称
+                     * 设置<p>Es自定义index名称</p>
+                     * @param _index <p>Es自定义index名称</p>
                      * 
                      */
                     void SetIndex(const std::string& _index);
@@ -239,15 +239,15 @@ namespace TencentCloud
                     bool IndexHasBeenSet() const;
 
                     /**
-                     * 获取Es自定义日期后缀
-                     * @return DateFormat Es自定义日期后缀
+                     * 获取<p>Es自定义日期后缀</p>
+                     * @return DateFormat <p>Es自定义日期后缀</p>
                      * 
                      */
                     std::string GetDateFormat() const;
 
                     /**
-                     * 设置Es自定义日期后缀
-                     * @param _dateFormat Es自定义日期后缀
+                     * 设置<p>Es自定义日期后缀</p>
+                     * @param _dateFormat <p>Es自定义日期后缀</p>
                      * 
                      */
                     void SetDateFormat(const std::string& _dateFormat);
@@ -260,15 +260,15 @@ namespace TencentCloud
                     bool DateFormatHasBeenSet() const;
 
                     /**
-                     * 获取非json格式数据的自定义key
-                     * @return ContentKey 非json格式数据的自定义key
+                     * 获取<p>非json格式数据的自定义key</p>
+                     * @return ContentKey <p>非json格式数据的自定义key</p>
                      * 
                      */
                     std::string GetContentKey() const;
 
                     /**
-                     * 设置非json格式数据的自定义key
-                     * @param _contentKey 非json格式数据的自定义key
+                     * 设置<p>非json格式数据的自定义key</p>
+                     * @param _contentKey <p>非json格式数据的自定义key</p>
                      * 
                      */
                     void SetContentKey(const std::string& _contentKey);
@@ -281,15 +281,15 @@ namespace TencentCloud
                     bool ContentKeyHasBeenSet() const;
 
                     /**
-                     * 获取Es是否抛弃非json格式的消息
-                     * @return DropInvalidJsonMessage Es是否抛弃非json格式的消息
+                     * 获取<p>Es是否抛弃非json格式的消息</p>
+                     * @return DropInvalidJsonMessage <p>Es是否抛弃非json格式的消息</p>
                      * 
                      */
                     bool GetDropInvalidJsonMessage() const;
 
                     /**
-                     * 设置Es是否抛弃非json格式的消息
-                     * @param _dropInvalidJsonMessage Es是否抛弃非json格式的消息
+                     * 设置<p>Es是否抛弃非json格式的消息</p>
+                     * @param _dropInvalidJsonMessage <p>Es是否抛弃非json格式的消息</p>
                      * 
                      */
                     void SetDropInvalidJsonMessage(const bool& _dropInvalidJsonMessage);
@@ -302,15 +302,15 @@ namespace TencentCloud
                     bool DropInvalidJsonMessageHasBeenSet() const;
 
                     /**
-                     * 获取转储到Es中的文档ID取值字段名
-                     * @return DocumentIdField 转储到Es中的文档ID取值字段名
+                     * 获取<p>转储到Es中的文档ID取值字段名</p>
+                     * @return DocumentIdField <p>转储到Es中的文档ID取值字段名</p>
                      * 
                      */
                     std::string GetDocumentIdField() const;
 
                     /**
-                     * 设置转储到Es中的文档ID取值字段名
-                     * @param _documentIdField 转储到Es中的文档ID取值字段名
+                     * 设置<p>转储到Es中的文档ID取值字段名</p>
+                     * @param _documentIdField <p>转储到Es中的文档ID取值字段名</p>
                      * 
                      */
                     void SetDocumentIdField(const std::string& _documentIdField);
@@ -323,15 +323,15 @@ namespace TencentCloud
                     bool DocumentIdFieldHasBeenSet() const;
 
                     /**
-                     * 获取Es自定义index名称的类型，STRING，JSONPATH，默认为STRING
-                     * @return IndexType Es自定义index名称的类型，STRING，JSONPATH，默认为STRING
+                     * 获取<p>Es自定义index名称的类型，STRING，JSONPATH，默认为STRING</p>
+                     * @return IndexType <p>Es自定义index名称的类型，STRING，JSONPATH，默认为STRING</p>
                      * 
                      */
                     std::string GetIndexType() const;
 
                     /**
-                     * 设置Es自定义index名称的类型，STRING，JSONPATH，默认为STRING
-                     * @param _indexType Es自定义index名称的类型，STRING，JSONPATH，默认为STRING
+                     * 设置<p>Es自定义index名称的类型，STRING，JSONPATH，默认为STRING</p>
+                     * @param _indexType <p>Es自定义index名称的类型，STRING，JSONPATH，默认为STRING</p>
                      * 
                      */
                     void SetIndexType(const std::string& _indexType);
@@ -344,15 +344,15 @@ namespace TencentCloud
                     bool IndexTypeHasBeenSet() const;
 
                     /**
-                     * 获取当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效
-                     * @return DropCls 当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效
+                     * 获取<p>当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效</p>
+                     * @return DropCls <p>当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效</p>
                      * 
                      */
                     DropCls GetDropCls() const;
 
                     /**
-                     * 设置当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效
-                     * @param _dropCls 当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效
+                     * 设置<p>当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效</p>
+                     * @param _dropCls <p>当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效</p>
                      * 
                      */
                     void SetDropCls(const DropCls& _dropCls);
@@ -365,15 +365,15 @@ namespace TencentCloud
                     bool DropClsHasBeenSet() const;
 
                     /**
-                     * 获取转储到ES的消息为Database的binlog时，如果需要同步数据库操作，即增删改的操作到ES时填写数据库表主键
-                     * @return DatabasePrimaryKey 转储到ES的消息为Database的binlog时，如果需要同步数据库操作，即增删改的操作到ES时填写数据库表主键
+                     * 获取<p>转储到ES的消息为Database的binlog时，如果需要同步数据库操作，即增删改的操作到ES时填写数据库表主键</p>
+                     * @return DatabasePrimaryKey <p>转储到ES的消息为Database的binlog时，如果需要同步数据库操作，即增删改的操作到ES时填写数据库表主键</p>
                      * 
                      */
                     std::string GetDatabasePrimaryKey() const;
 
                     /**
-                     * 设置转储到ES的消息为Database的binlog时，如果需要同步数据库操作，即增删改的操作到ES时填写数据库表主键
-                     * @param _databasePrimaryKey 转储到ES的消息为Database的binlog时，如果需要同步数据库操作，即增删改的操作到ES时填写数据库表主键
+                     * 设置<p>转储到ES的消息为Database的binlog时，如果需要同步数据库操作，即增删改的操作到ES时填写数据库表主键</p>
+                     * @param _databasePrimaryKey <p>转储到ES的消息为Database的binlog时，如果需要同步数据库操作，即增删改的操作到ES时填写数据库表主键</p>
                      * 
                      */
                     void SetDatabasePrimaryKey(const std::string& _databasePrimaryKey);
@@ -386,15 +386,15 @@ namespace TencentCloud
                     bool DatabasePrimaryKeyHasBeenSet() const;
 
                     /**
-                     * 获取死信队列
-                     * @return DropDlq 死信队列
+                     * 获取<p>死信队列</p>
+                     * @return DropDlq <p>死信队列</p>
                      * 
                      */
                     FailureParam GetDropDlq() const;
 
                     /**
-                     * 设置死信队列
-                     * @param _dropDlq 死信队列
+                     * 设置<p>死信队列</p>
+                     * @param _dropDlq <p>死信队列</p>
                      * 
                      */
                     void SetDropDlq(const FailureParam& _dropDlq);
@@ -407,15 +407,15 @@ namespace TencentCloud
                     bool DropDlqHasBeenSet() const;
 
                     /**
-                     * 获取使用数据订阅格式导入 es 时，消息与 es 索引字段映射关系。不填默认为默认字段匹配
-                     * @return RecordMappingList 使用数据订阅格式导入 es 时，消息与 es 索引字段映射关系。不填默认为默认字段匹配
+                     * 获取<p>使用数据订阅格式导入 es 时，消息与 es 索引字段映射关系。不填默认为默认字段匹配</p>
+                     * @return RecordMappingList <p>使用数据订阅格式导入 es 时，消息与 es 索引字段映射关系。不填默认为默认字段匹配</p>
                      * 
                      */
                     std::vector<EsRecordMapping> GetRecordMappingList() const;
 
                     /**
-                     * 设置使用数据订阅格式导入 es 时，消息与 es 索引字段映射关系。不填默认为默认字段匹配
-                     * @param _recordMappingList 使用数据订阅格式导入 es 时，消息与 es 索引字段映射关系。不填默认为默认字段匹配
+                     * 设置<p>使用数据订阅格式导入 es 时，消息与 es 索引字段映射关系。不填默认为默认字段匹配</p>
+                     * @param _recordMappingList <p>使用数据订阅格式导入 es 时，消息与 es 索引字段映射关系。不填默认为默认字段匹配</p>
                      * 
                      */
                     void SetRecordMappingList(const std::vector<EsRecordMapping>& _recordMappingList);
@@ -428,15 +428,15 @@ namespace TencentCloud
                     bool RecordMappingListHasBeenSet() const;
 
                     /**
-                     * 获取消息要映射为 es 索引中 @timestamp 的字段，如果当前配置为空，则使用消息的时间戳进行映射
-                     * @return DateField 消息要映射为 es 索引中 @timestamp 的字段，如果当前配置为空，则使用消息的时间戳进行映射
+                     * 获取<p>消息要映射为 es 索引中 @timestamp 的字段，如果当前配置为空，则使用消息的时间戳进行映射</p>
+                     * @return DateField <p>消息要映射为 es 索引中 @timestamp 的字段，如果当前配置为空，则使用消息的时间戳进行映射</p>
                      * 
                      */
                     std::string GetDateField() const;
 
                     /**
-                     * 设置消息要映射为 es 索引中 @timestamp 的字段，如果当前配置为空，则使用消息的时间戳进行映射
-                     * @param _dateField 消息要映射为 es 索引中 @timestamp 的字段，如果当前配置为空，则使用消息的时间戳进行映射
+                     * 设置<p>消息要映射为 es 索引中 @timestamp 的字段，如果当前配置为空，则使用消息的时间戳进行映射</p>
+                     * @param _dateField <p>消息要映射为 es 索引中 @timestamp 的字段，如果当前配置为空，则使用消息的时间戳进行映射</p>
                      * 
                      */
                     void SetDateField(const std::string& _dateField);
@@ -449,15 +449,15 @@ namespace TencentCloud
                     bool DateFieldHasBeenSet() const;
 
                     /**
-                     * 获取用来区分当前索引映射，属于新建索引还是存量索引。"EXIST_MAPPING"：从存量索引中选择；"NEW_MAPPING"：新建索引
-                     * @return RecordMappingMode 用来区分当前索引映射，属于新建索引还是存量索引。"EXIST_MAPPING"：从存量索引中选择；"NEW_MAPPING"：新建索引
+                     * 获取<p>用来区分当前索引映射，属于新建索引还是存量索引。&quot;EXIST_MAPPING&quot;：从存量索引中选择；&quot;NEW_MAPPING&quot;：新建索引</p>
+                     * @return RecordMappingMode <p>用来区分当前索引映射，属于新建索引还是存量索引。&quot;EXIST_MAPPING&quot;：从存量索引中选择；&quot;NEW_MAPPING&quot;：新建索引</p>
                      * 
                      */
                     std::string GetRecordMappingMode() const;
 
                     /**
-                     * 设置用来区分当前索引映射，属于新建索引还是存量索引。"EXIST_MAPPING"：从存量索引中选择；"NEW_MAPPING"：新建索引
-                     * @param _recordMappingMode 用来区分当前索引映射，属于新建索引还是存量索引。"EXIST_MAPPING"：从存量索引中选择；"NEW_MAPPING"：新建索引
+                     * 设置<p>用来区分当前索引映射，属于新建索引还是存量索引。&quot;EXIST_MAPPING&quot;：从存量索引中选择；&quot;NEW_MAPPING&quot;：新建索引</p>
+                     * @param _recordMappingMode <p>用来区分当前索引映射，属于新建索引还是存量索引。&quot;EXIST_MAPPING&quot;：从存量索引中选择；&quot;NEW_MAPPING&quot;：新建索引</p>
                      * 
                      */
                     void SetRecordMappingMode(const std::string& _recordMappingMode);
@@ -469,127 +469,154 @@ namespace TencentCloud
                      */
                     bool RecordMappingModeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>集群版 ES 连接协议，默认http协议</p><p>枚举值：</p><ul><li>http： http协议</li><li>https： https协议</li></ul>
+                     * @return Protocol <p>集群版 ES 连接协议，默认http协议</p><p>枚举值：</p><ul><li>http： http协议</li><li>https： https协议</li></ul>
+                     * 
+                     */
+                    std::string GetProtocol() const;
+
+                    /**
+                     * 设置<p>集群版 ES 连接协议，默认http协议</p><p>枚举值：</p><ul><li>http： http协议</li><li>https： https协议</li></ul>
+                     * @param _protocol <p>集群版 ES 连接协议，默认http协议</p><p>枚举值：</p><ul><li>http： http协议</li><li>https： https协议</li></ul>
+                     * 
+                     */
+                    void SetProtocol(const std::string& _protocol);
+
+                    /**
+                     * 判断参数 Protocol 是否已赋值
+                     * @return Protocol 是否已赋值
+                     * 
+                     */
+                    bool ProtocolHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Es实例资源Id
+                     * <p>Es实例资源Id</p>
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
-                     * Es的连接port
+                     * <p>Es的连接port</p>
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * Es用户名
+                     * <p>Es用户名</p>
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * Es密码
+                     * <p>Es密码</p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 是否为自建集群
+                     * <p>是否为自建集群</p>
                      */
                     bool m_selfBuilt;
                     bool m_selfBuiltHasBeenSet;
 
                     /**
-                     * 实例vip
+                     * <p>实例vip</p>
                      */
                     std::string m_serviceVip;
                     bool m_serviceVipHasBeenSet;
 
                     /**
-                     * 实例的vpcId
+                     * <p>实例的vpcId</p>
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
-                     * Es是否抛弃解析失败的消息
+                     * <p>Es是否抛弃解析失败的消息</p>
                      */
                     bool m_dropInvalidMessage;
                     bool m_dropInvalidMessageHasBeenSet;
 
                     /**
-                     * Es自定义index名称
+                     * <p>Es自定义index名称</p>
                      */
                     std::string m_index;
                     bool m_indexHasBeenSet;
 
                     /**
-                     * Es自定义日期后缀
+                     * <p>Es自定义日期后缀</p>
                      */
                     std::string m_dateFormat;
                     bool m_dateFormatHasBeenSet;
 
                     /**
-                     * 非json格式数据的自定义key
+                     * <p>非json格式数据的自定义key</p>
                      */
                     std::string m_contentKey;
                     bool m_contentKeyHasBeenSet;
 
                     /**
-                     * Es是否抛弃非json格式的消息
+                     * <p>Es是否抛弃非json格式的消息</p>
                      */
                     bool m_dropInvalidJsonMessage;
                     bool m_dropInvalidJsonMessageHasBeenSet;
 
                     /**
-                     * 转储到Es中的文档ID取值字段名
+                     * <p>转储到Es中的文档ID取值字段名</p>
                      */
                     std::string m_documentIdField;
                     bool m_documentIdFieldHasBeenSet;
 
                     /**
-                     * Es自定义index名称的类型，STRING，JSONPATH，默认为STRING
+                     * <p>Es自定义index名称的类型，STRING，JSONPATH，默认为STRING</p>
                      */
                     std::string m_indexType;
                     bool m_indexTypeHasBeenSet;
 
                     /**
-                     * 当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效
+                     * <p>当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效</p>
                      */
                     DropCls m_dropCls;
                     bool m_dropClsHasBeenSet;
 
                     /**
-                     * 转储到ES的消息为Database的binlog时，如果需要同步数据库操作，即增删改的操作到ES时填写数据库表主键
+                     * <p>转储到ES的消息为Database的binlog时，如果需要同步数据库操作，即增删改的操作到ES时填写数据库表主键</p>
                      */
                     std::string m_databasePrimaryKey;
                     bool m_databasePrimaryKeyHasBeenSet;
 
                     /**
-                     * 死信队列
+                     * <p>死信队列</p>
                      */
                     FailureParam m_dropDlq;
                     bool m_dropDlqHasBeenSet;
 
                     /**
-                     * 使用数据订阅格式导入 es 时，消息与 es 索引字段映射关系。不填默认为默认字段匹配
+                     * <p>使用数据订阅格式导入 es 时，消息与 es 索引字段映射关系。不填默认为默认字段匹配</p>
                      */
                     std::vector<EsRecordMapping> m_recordMappingList;
                     bool m_recordMappingListHasBeenSet;
 
                     /**
-                     * 消息要映射为 es 索引中 @timestamp 的字段，如果当前配置为空，则使用消息的时间戳进行映射
+                     * <p>消息要映射为 es 索引中 @timestamp 的字段，如果当前配置为空，则使用消息的时间戳进行映射</p>
                      */
                     std::string m_dateField;
                     bool m_dateFieldHasBeenSet;
 
                     /**
-                     * 用来区分当前索引映射，属于新建索引还是存量索引。"EXIST_MAPPING"：从存量索引中选择；"NEW_MAPPING"：新建索引
+                     * <p>用来区分当前索引映射，属于新建索引还是存量索引。&quot;EXIST_MAPPING&quot;：从存量索引中选择；&quot;NEW_MAPPING&quot;：新建索引</p>
                      */
                     std::string m_recordMappingMode;
                     bool m_recordMappingModeHasBeenSet;
+
+                    /**
+                     * <p>集群版 ES 连接协议，默认http协议</p><p>枚举值：</p><ul><li>http： http协议</li><li>https： https协议</li></ul>
+                     */
+                    std::string m_protocol;
+                    bool m_protocolHasBeenSet;
 
                 };
             }

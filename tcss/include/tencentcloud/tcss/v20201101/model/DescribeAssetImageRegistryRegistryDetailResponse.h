@@ -199,8 +199,8 @@ namespace TencentCloud
                     bool ConnDetectDetailHasBeenSet() const;
 
                     /**
-                     * 获取<p>tcr情况下instance_id</p>
-                     * @return InstanceID <p>tcr情况下instance_id</p>
+                     * 获取<p>TCR实例ID</p>
+                     * @return InstanceID <p>TCR实例ID</p>
                      * 
                      */
                     std::string GetInstanceID() const;
@@ -337,7 +337,7 @@ namespace TencentCloud
                     bool m_connDetectDetailHasBeenSet;
 
                     /**
-                     * <p>tcr情况下instance_id</p>
+                     * <p>TCR实例ID</p>
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;

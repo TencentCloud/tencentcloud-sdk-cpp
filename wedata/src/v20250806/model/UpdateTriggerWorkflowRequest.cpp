@@ -35,7 +35,8 @@ UpdateTriggerWorkflowRequest::UpdateTriggerWorkflowRequest() :
     m_generalTaskParamsHasBeenSet(false),
     m_triggerWorkflowRunConfigurationHasBeenSet(false),
     m_schedulerStatusHasBeenSet(false),
-    m_triggerModeHasBeenSet(false)
+    m_triggerModeHasBeenSet(false),
+    m_executeUserUinHasBeenSet(false)
 {
 }
 
@@ -170,6 +171,14 @@ string UpdateTriggerWorkflowRequest::ToJsonString() const
         string key = "TriggerMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_triggerMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executeUserUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecuteUserUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_executeUserUin.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -386,6 +395,22 @@ void UpdateTriggerWorkflowRequest::SetTriggerMode(const string& _triggerMode)
 bool UpdateTriggerWorkflowRequest::TriggerModeHasBeenSet() const
 {
     return m_triggerModeHasBeenSet;
+}
+
+string UpdateTriggerWorkflowRequest::GetExecuteUserUin() const
+{
+    return m_executeUserUin;
+}
+
+void UpdateTriggerWorkflowRequest::SetExecuteUserUin(const string& _executeUserUin)
+{
+    m_executeUserUin = _executeUserUin;
+    m_executeUserUinHasBeenSet = true;
+}
+
+bool UpdateTriggerWorkflowRequest::ExecuteUserUinHasBeenSet() const
+{
+    return m_executeUserUinHasBeenSet;
 }
 
 

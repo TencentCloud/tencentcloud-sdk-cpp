@@ -28,7 +28,11 @@ EsConnectParam::EsConnectParam() :
     m_selfBuiltHasBeenSet(false),
     m_serviceVipHasBeenSet(false),
     m_uniqVpcIdHasBeenSet(false),
-    m_isUpdateHasBeenSet(false)
+    m_isUpdateHasBeenSet(false),
+    m_esTypeHasBeenSet(false),
+    m_esVersionHasBeenSet(false),
+    m_endpointUrlHasBeenSet(false),
+    m_protocolHasBeenSet(false)
 {
 }
 
@@ -117,6 +121,46 @@ CoreInternalOutcome EsConnectParam::Deserialize(const rapidjson::Value &value)
         m_isUpdateHasBeenSet = true;
     }
 
+    if (value.HasMember("EsType") && !value["EsType"].IsNull())
+    {
+        if (!value["EsType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EsConnectParam.EsType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_esType = string(value["EsType"].GetString());
+        m_esTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("EsVersion") && !value["EsVersion"].IsNull())
+    {
+        if (!value["EsVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EsConnectParam.EsVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_esVersion = string(value["EsVersion"].GetString());
+        m_esVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndpointUrl") && !value["EndpointUrl"].IsNull())
+    {
+        if (!value["EndpointUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EsConnectParam.EndpointUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_endpointUrl = string(value["EndpointUrl"].GetString());
+        m_endpointUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
+    {
+        if (!value["Protocol"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EsConnectParam.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protocol = string(value["Protocol"].GetString());
+        m_protocolHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +230,38 @@ void EsConnectParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "IsUpdate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isUpdate, allocator);
+    }
+
+    if (m_esTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EsType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_esType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_esVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EsVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_esVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endpointUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndpointUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endpointUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +393,69 @@ void EsConnectParam::SetIsUpdate(const bool& _isUpdate)
 bool EsConnectParam::IsUpdateHasBeenSet() const
 {
     return m_isUpdateHasBeenSet;
+}
+
+string EsConnectParam::GetEsType() const
+{
+    return m_esType;
+}
+
+void EsConnectParam::SetEsType(const string& _esType)
+{
+    m_esType = _esType;
+    m_esTypeHasBeenSet = true;
+}
+
+bool EsConnectParam::EsTypeHasBeenSet() const
+{
+    return m_esTypeHasBeenSet;
+}
+
+string EsConnectParam::GetEsVersion() const
+{
+    return m_esVersion;
+}
+
+void EsConnectParam::SetEsVersion(const string& _esVersion)
+{
+    m_esVersion = _esVersion;
+    m_esVersionHasBeenSet = true;
+}
+
+bool EsConnectParam::EsVersionHasBeenSet() const
+{
+    return m_esVersionHasBeenSet;
+}
+
+string EsConnectParam::GetEndpointUrl() const
+{
+    return m_endpointUrl;
+}
+
+void EsConnectParam::SetEndpointUrl(const string& _endpointUrl)
+{
+    m_endpointUrl = _endpointUrl;
+    m_endpointUrlHasBeenSet = true;
+}
+
+bool EsConnectParam::EndpointUrlHasBeenSet() const
+{
+    return m_endpointUrlHasBeenSet;
+}
+
+string EsConnectParam::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void EsConnectParam::SetProtocol(const string& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool EsConnectParam::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
 }
 

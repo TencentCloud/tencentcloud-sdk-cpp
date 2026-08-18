@@ -52,7 +52,11 @@ TriggerWorkflowRunBrief::TriggerWorkflowRunBrief() :
     m_plannedSchedulingTimeHasBeenSet(false),
     m_cycleTypeHasBeenSet(false),
     m_userNameInChargeHasBeenSet(false),
-    m_userUinInChargeHasBeenSet(false)
+    m_userUinInChargeHasBeenSet(false),
+    m_associatedEntityExistHasBeenSet(false),
+    m_parentWorkflowExecutionIdHasBeenSet(false),
+    m_parentTaskExecutionIdHasBeenSet(false),
+    m_parentTaskExecutionNameHasBeenSet(false)
 {
 }
 
@@ -384,6 +388,46 @@ CoreInternalOutcome TriggerWorkflowRunBrief::Deserialize(const rapidjson::Value 
         m_userUinInChargeHasBeenSet = true;
     }
 
+    if (value.HasMember("AssociatedEntityExist") && !value["AssociatedEntityExist"].IsNull())
+    {
+        if (!value["AssociatedEntityExist"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerWorkflowRunBrief.AssociatedEntityExist` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_associatedEntityExist = value["AssociatedEntityExist"].GetBool();
+        m_associatedEntityExistHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParentWorkflowExecutionId") && !value["ParentWorkflowExecutionId"].IsNull())
+    {
+        if (!value["ParentWorkflowExecutionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerWorkflowRunBrief.ParentWorkflowExecutionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentWorkflowExecutionId = string(value["ParentWorkflowExecutionId"].GetString());
+        m_parentWorkflowExecutionIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParentTaskExecutionId") && !value["ParentTaskExecutionId"].IsNull())
+    {
+        if (!value["ParentTaskExecutionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerWorkflowRunBrief.ParentTaskExecutionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentTaskExecutionId = string(value["ParentTaskExecutionId"].GetString());
+        m_parentTaskExecutionIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParentTaskExecutionName") && !value["ParentTaskExecutionName"].IsNull())
+    {
+        if (!value["ParentTaskExecutionName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerWorkflowRunBrief.ParentTaskExecutionName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentTaskExecutionName = string(value["ParentTaskExecutionName"].GetString());
+        m_parentTaskExecutionNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -650,6 +694,38 @@ void TriggerWorkflowRunBrief::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "UserUinInCharge";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userUinInCharge.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_associatedEntityExistHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssociatedEntityExist";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_associatedEntityExist, allocator);
+    }
+
+    if (m_parentWorkflowExecutionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentWorkflowExecutionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentWorkflowExecutionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parentTaskExecutionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentTaskExecutionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentTaskExecutionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parentTaskExecutionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentTaskExecutionName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentTaskExecutionName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1165,5 +1241,69 @@ void TriggerWorkflowRunBrief::SetUserUinInCharge(const string& _userUinInCharge)
 bool TriggerWorkflowRunBrief::UserUinInChargeHasBeenSet() const
 {
     return m_userUinInChargeHasBeenSet;
+}
+
+bool TriggerWorkflowRunBrief::GetAssociatedEntityExist() const
+{
+    return m_associatedEntityExist;
+}
+
+void TriggerWorkflowRunBrief::SetAssociatedEntityExist(const bool& _associatedEntityExist)
+{
+    m_associatedEntityExist = _associatedEntityExist;
+    m_associatedEntityExistHasBeenSet = true;
+}
+
+bool TriggerWorkflowRunBrief::AssociatedEntityExistHasBeenSet() const
+{
+    return m_associatedEntityExistHasBeenSet;
+}
+
+string TriggerWorkflowRunBrief::GetParentWorkflowExecutionId() const
+{
+    return m_parentWorkflowExecutionId;
+}
+
+void TriggerWorkflowRunBrief::SetParentWorkflowExecutionId(const string& _parentWorkflowExecutionId)
+{
+    m_parentWorkflowExecutionId = _parentWorkflowExecutionId;
+    m_parentWorkflowExecutionIdHasBeenSet = true;
+}
+
+bool TriggerWorkflowRunBrief::ParentWorkflowExecutionIdHasBeenSet() const
+{
+    return m_parentWorkflowExecutionIdHasBeenSet;
+}
+
+string TriggerWorkflowRunBrief::GetParentTaskExecutionId() const
+{
+    return m_parentTaskExecutionId;
+}
+
+void TriggerWorkflowRunBrief::SetParentTaskExecutionId(const string& _parentTaskExecutionId)
+{
+    m_parentTaskExecutionId = _parentTaskExecutionId;
+    m_parentTaskExecutionIdHasBeenSet = true;
+}
+
+bool TriggerWorkflowRunBrief::ParentTaskExecutionIdHasBeenSet() const
+{
+    return m_parentTaskExecutionIdHasBeenSet;
+}
+
+string TriggerWorkflowRunBrief::GetParentTaskExecutionName() const
+{
+    return m_parentTaskExecutionName;
+}
+
+void TriggerWorkflowRunBrief::SetParentTaskExecutionName(const string& _parentTaskExecutionName)
+{
+    m_parentTaskExecutionName = _parentTaskExecutionName;
+    m_parentTaskExecutionNameHasBeenSet = true;
+}
+
+bool TriggerWorkflowRunBrief::ParentTaskExecutionNameHasBeenSet() const
+{
+    return m_parentTaskExecutionNameHasBeenSet;
 }
 

@@ -113,6 +113,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/OrganizationInfo.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmSupportedAssetTypeRequest.h
   include/tencentcloud/csip/v20221121/model/ExportCSIPMalwareScanTaskDetailRequest.h
+  include/tencentcloud/csip/v20221121/model/VPRExplainDimension.h
   include/tencentcloud/csip/v20221121/model/TagCount.h
   include/tencentcloud/csip/v20221121/model/UpdateAccessKeyAlarmStatusResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeVulRiskListResponse.h
@@ -134,6 +135,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/EDRRuleTagItem.h
   include/tencentcloud/csip/v20221121/model/CloudCountDesc.h
   include/tencentcloud/csip/v20221121/model/DiskPartitionInfo.h
+  include/tencentcloud/csip/v20221121/model/VPRExplainInfo.h
   include/tencentcloud/csip/v20221121/model/KBUpdateMachineItem.h
   include/tencentcloud/csip/v20221121/model/DescribeEdrAlertSummaryRequest.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmBackupSettingRequest.h
@@ -146,6 +148,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/SkillScanEngineResult.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskCenterAssetViewCFGRiskListResponse.h
   include/tencentcloud/csip/v20221121/model/DspmPersonIdentifyItem.h
+  include/tencentcloud/csip/v20221121/model/VPRExplainDimensionItem.h
   include/tencentcloud/csip/v20221121/model/DescribeVulHostRelateComponentResponse.h
   include/tencentcloud/csip/v20221121/model/ScanTaskInfoList.h
   include/tencentcloud/csip/v20221121/model/DspmIdentifyAssetStatistic.h
@@ -1133,6 +1136,7 @@ set(csip_src
   src/v20221121/model/OrganizationInfo.cpp
   src/v20221121/model/DescribeDspmSupportedAssetTypeRequest.cpp
   src/v20221121/model/ExportCSIPMalwareScanTaskDetailRequest.cpp
+  src/v20221121/model/VPRExplainDimension.cpp
   src/v20221121/model/TagCount.cpp
   src/v20221121/model/UpdateAccessKeyAlarmStatusResponse.cpp
   src/v20221121/model/DescribeVulRiskListResponse.cpp
@@ -1154,6 +1158,7 @@ set(csip_src
   src/v20221121/model/EDRRuleTagItem.cpp
   src/v20221121/model/CloudCountDesc.cpp
   src/v20221121/model/DiskPartitionInfo.cpp
+  src/v20221121/model/VPRExplainInfo.cpp
   src/v20221121/model/KBUpdateMachineItem.cpp
   src/v20221121/model/DescribeEdrAlertSummaryRequest.cpp
   src/v20221121/model/ModifyDspmBackupSettingRequest.cpp
@@ -1166,6 +1171,7 @@ set(csip_src
   src/v20221121/model/SkillScanEngineResult.cpp
   src/v20221121/model/DescribeRiskCenterAssetViewCFGRiskListResponse.cpp
   src/v20221121/model/DspmPersonIdentifyItem.cpp
+  src/v20221121/model/VPRExplainDimensionItem.cpp
   src/v20221121/model/DescribeVulHostRelateComponentResponse.cpp
   src/v20221121/model/ScanTaskInfoList.cpp
   src/v20221121/model/DspmIdentifyAssetStatistic.cpp

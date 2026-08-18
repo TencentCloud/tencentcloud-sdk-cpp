@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取true代表成功，false代表失败
-                     * @return Data true代表成功，false代表失败
+                     * 获取<p>true代表成功，false代表失败</p>
+                     * @return Data <p>true代表成功，false代表失败</p>
                      * 
                      */
                     UpdateTriggerWorkflowResult GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * true代表成功，false代表失败
+                     * <p>true代表成功，false代表失败</p>
                      */
                     UpdateTriggerWorkflowResult m_data;
                     bool m_dataHasBeenSet;
