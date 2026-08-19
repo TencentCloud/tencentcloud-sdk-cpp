@@ -44,19 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取SDK人脸核身流程的标识。
-- 调用[GetFaceIdToken](https://cloud.tencent.com/document/product/1007/49198)接口时生成。
-                     * @return FaceIdToken SDK人脸核身流程的标识。
-- 调用[GetFaceIdToken](https://cloud.tencent.com/document/product/1007/49198)接口时生成。
+                     * 获取<p>SDK人脸核身流程的标识。</p><ul><li>调用<a href="https://cloud.tencent.com/document/product/1007/49198">GetFaceIdToken</a>接口时生成。</li></ul>
+                     * @return FaceIdToken <p>SDK人脸核身流程的标识。</p><ul><li>调用<a href="https://cloud.tencent.com/document/product/1007/49198">GetFaceIdToken</a>接口时生成。</li></ul>
                      * 
                      */
                     std::string GetFaceIdToken() const;
 
                     /**
-                     * 设置SDK人脸核身流程的标识。
-- 调用[GetFaceIdToken](https://cloud.tencent.com/document/product/1007/49198)接口时生成。
-                     * @param _faceIdToken SDK人脸核身流程的标识。
-- 调用[GetFaceIdToken](https://cloud.tencent.com/document/product/1007/49198)接口时生成。
+                     * 设置<p>SDK人脸核身流程的标识。</p><ul><li>调用<a href="https://cloud.tencent.com/document/product/1007/49198">GetFaceIdToken</a>接口时生成。</li></ul>
+                     * @param _faceIdToken <p>SDK人脸核身流程的标识。</p><ul><li>调用<a href="https://cloud.tencent.com/document/product/1007/49198">GetFaceIdToken</a>接口时生成。</li></ul>
                      * 
                      */
                     void SetFaceIdToken(const std::string& _faceIdToken);
@@ -69,19 +65,15 @@ namespace TencentCloud
                     bool FaceIdTokenHasBeenSet() const;
 
                     /**
-                     * 获取是否需要拉取视频。
-- 默认false：不需要。
-                     * @return IsNeedVideo 是否需要拉取视频。
-- 默认false：不需要。
+                     * 获取<p>是否需要拉取视频。</p><ul><li>默认false：不需要。</li></ul>
+                     * @return IsNeedVideo <p>是否需要拉取视频。</p><ul><li>默认false：不需要。</li></ul>
                      * 
                      */
                     bool GetIsNeedVideo() const;
 
                     /**
-                     * 设置是否需要拉取视频。
-- 默认false：不需要。
-                     * @param _isNeedVideo 是否需要拉取视频。
-- 默认false：不需要。
+                     * 设置<p>是否需要拉取视频。</p><ul><li>默认false：不需要。</li></ul>
+                     * @param _isNeedVideo <p>是否需要拉取视频。</p><ul><li>默认false：不需要。</li></ul>
                      * 
                      */
                     void SetIsNeedVideo(const bool& _isNeedVideo);
@@ -94,19 +86,15 @@ namespace TencentCloud
                     bool IsNeedVideoHasBeenSet() const;
 
                     /**
-                     * 获取是否需要拉取截帧。
-- 默认false：不需要。
-                     * @return IsNeedBestFrame 是否需要拉取截帧。
-- 默认false：不需要。
+                     * 获取<p>是否需要拉取截帧。</p><ul><li>默认false：不需要。</li></ul>
+                     * @return IsNeedBestFrame <p>是否需要拉取截帧。</p><ul><li>默认false：不需要。</li></ul>
                      * 
                      */
                     bool GetIsNeedBestFrame() const;
 
                     /**
-                     * 设置是否需要拉取截帧。
-- 默认false：不需要。
-                     * @param _isNeedBestFrame 是否需要拉取截帧。
-- 默认false：不需要。
+                     * 设置<p>是否需要拉取截帧。</p><ul><li>默认false：不需要。</li></ul>
+                     * @param _isNeedBestFrame <p>是否需要拉取截帧。</p><ul><li>默认false：不需要。</li></ul>
                      * 
                      */
                     void SetIsNeedBestFrame(const bool& _isNeedBestFrame);
@@ -119,15 +107,15 @@ namespace TencentCloud
                     bool IsNeedBestFrameHasBeenSet() const;
 
                     /**
-                     * 获取是否对回包整体进行加密。
-                     * @return IsEncryptResponse 是否对回包整体进行加密。
+                     * 获取<p>是否对回包整体进行加密。</p>
+                     * @return IsEncryptResponse <p>是否对回包整体进行加密。</p>
                      * 
                      */
                     bool GetIsEncryptResponse() const;
 
                     /**
-                     * 设置是否对回包整体进行加密。
-                     * @param _isEncryptResponse 是否对回包整体进行加密。
+                     * 设置<p>是否对回包整体进行加密。</p>
+                     * @param _isEncryptResponse <p>是否对回包整体进行加密。</p>
                      * 
                      */
                     void SetIsEncryptResponse(const bool& _isEncryptResponse);
@@ -140,19 +128,15 @@ namespace TencentCloud
                     bool IsEncryptResponseHasBeenSet() const;
 
                     /**
-                     * 获取是否需要对返回中的敏感信息进行加密。  
-只需指定加密算法Algorithm即可，其余字段传入默认值。
-                     * @return Encryption 是否需要对返回中的敏感信息进行加密。  
-只需指定加密算法Algorithm即可，其余字段传入默认值。
+                     * 获取<p>是否需要对返回中的敏感信息进行加密。<br>只需指定加密算法Algorithm即可，其余字段传入默认值。</p>
+                     * @return Encryption <p>是否需要对返回中的敏感信息进行加密。<br>只需指定加密算法Algorithm即可，其余字段传入默认值。</p>
                      * 
                      */
                     Encryption GetEncryption() const;
 
                     /**
-                     * 设置是否需要对返回中的敏感信息进行加密。  
-只需指定加密算法Algorithm即可，其余字段传入默认值。
-                     * @param _encryption 是否需要对返回中的敏感信息进行加密。  
-只需指定加密算法Algorithm即可，其余字段传入默认值。
+                     * 设置<p>是否需要对返回中的敏感信息进行加密。<br>只需指定加密算法Algorithm即可，其余字段传入默认值。</p>
+                     * @param _encryption <p>是否需要对返回中的敏感信息进行加密。<br>只需指定加密算法Algorithm即可，其余字段传入默认值。</p>
                      * 
                      */
                     void SetEncryption(const Encryption& _encryption);
@@ -167,35 +151,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * SDK人脸核身流程的标识。
-- 调用[GetFaceIdToken](https://cloud.tencent.com/document/product/1007/49198)接口时生成。
+                     * <p>SDK人脸核身流程的标识。</p><ul><li>调用<a href="https://cloud.tencent.com/document/product/1007/49198">GetFaceIdToken</a>接口时生成。</li></ul>
                      */
                     std::string m_faceIdToken;
                     bool m_faceIdTokenHasBeenSet;
 
                     /**
-                     * 是否需要拉取视频。
-- 默认false：不需要。
+                     * <p>是否需要拉取视频。</p><ul><li>默认false：不需要。</li></ul>
                      */
                     bool m_isNeedVideo;
                     bool m_isNeedVideoHasBeenSet;
 
                     /**
-                     * 是否需要拉取截帧。
-- 默认false：不需要。
+                     * <p>是否需要拉取截帧。</p><ul><li>默认false：不需要。</li></ul>
                      */
                     bool m_isNeedBestFrame;
                     bool m_isNeedBestFrameHasBeenSet;
 
                     /**
-                     * 是否对回包整体进行加密。
+                     * <p>是否对回包整体进行加密。</p>
                      */
                     bool m_isEncryptResponse;
                     bool m_isEncryptResponseHasBeenSet;
 
                     /**
-                     * 是否需要对返回中的敏感信息进行加密。  
-只需指定加密算法Algorithm即可，其余字段传入默认值。
+                     * <p>是否需要对返回中的敏感信息进行加密。<br>只需指定加密算法Algorithm即可，其余字段传入默认值。</p>
                      */
                     Encryption m_encryption;
                     bool m_encryptionHasBeenSet;

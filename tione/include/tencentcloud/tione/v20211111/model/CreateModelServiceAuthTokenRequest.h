@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务组 id
-                     * @return ServiceGroupId 服务组 id
+                     * 获取<p>服务组 id</p>
+                     * @return ServiceGroupId <p>服务组 id</p>
                      * 
                      */
                     std::string GetServiceGroupId() const;
 
                     /**
-                     * 设置服务组 id
-                     * @param _serviceGroupId 服务组 id
+                     * 设置<p>服务组 id</p>
+                     * @param _serviceGroupId <p>服务组 id</p>
                      * 
                      */
                     void SetServiceGroupId(const std::string& _serviceGroupId);
@@ -64,15 +64,36 @@ namespace TencentCloud
                     bool ServiceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取token 名称
-                     * @return Name token 名称
+                     * 获取<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * @return TiProjectId <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * 
+                     */
+                    std::string GetTiProjectId() const;
+
+                    /**
+                     * 设置<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * @param _tiProjectId <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * 
+                     */
+                    void SetTiProjectId(const std::string& _tiProjectId);
+
+                    /**
+                     * 判断参数 TiProjectId 是否已赋值
+                     * @return TiProjectId 是否已赋值
+                     * 
+                     */
+                    bool TiProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>token 名称</p>
+                     * @return Name <p>token 名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置token 名称
-                     * @param _name token 名称
+                     * 设置<p>token 名称</p>
+                     * @param _name <p>token 名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -85,15 +106,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Description 描述
-                     * @return Description Description 描述
+                     * 获取<p>Description 描述</p>
+                     * @return Description <p>Description 描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置Description 描述
-                     * @param _description Description 描述
+                     * 设置<p>Description 描述</p>
+                     * @param _description <p>Description 描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -108,19 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务组 id
+                     * <p>服务组 id</p>
                      */
                     std::string m_serviceGroupId;
                     bool m_serviceGroupIdHasBeenSet;
 
                     /**
-                     * token 名称
+                     * <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     */
+                    std::string m_tiProjectId;
+                    bool m_tiProjectIdHasBeenSet;
+
+                    /**
+                     * <p>token 名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Description 描述
+                     * <p>Description 描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

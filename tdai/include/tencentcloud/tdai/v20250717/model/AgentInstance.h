@@ -470,6 +470,69 @@ namespace TencentCloud
                      */
                     bool CreatingProgressHasBeenSet() const;
 
+                    /**
+                     * 获取<p>实例关联的角色名称</p>
+                     * @return RoleName <p>实例关联的角色名称</p>
+                     * 
+                     */
+                    std::string GetRoleName() const;
+
+                    /**
+                     * 设置<p>实例关联的角色名称</p>
+                     * @param _roleName <p>实例关联的角色名称</p>
+                     * 
+                     */
+                    void SetRoleName(const std::string& _roleName);
+
+                    /**
+                     * 判断参数 RoleName 是否已赋值
+                     * @return RoleName 是否已赋值
+                     * 
+                     */
+                    bool RoleNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>实例下线时间</p><p>参数格式：2026-08-12 17:02:43</p>
+                     * @return OfflineTime <p>实例下线时间</p><p>参数格式：2026-08-12 17:02:43</p>
+                     * 
+                     */
+                    std::string GetOfflineTime() const;
+
+                    /**
+                     * 设置<p>实例下线时间</p><p>参数格式：2026-08-12 17:02:43</p>
+                     * @param _offlineTime <p>实例下线时间</p><p>参数格式：2026-08-12 17:02:43</p>
+                     * 
+                     */
+                    void SetOfflineTime(const std::string& _offlineTime);
+
+                    /**
+                     * 判断参数 OfflineTime 是否已赋值
+                     * @return OfflineTime 是否已赋值
+                     * 
+                     */
+                    bool OfflineTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>商业化资源归属</p>
+                     * @return ProductName <p>商业化资源归属</p>
+                     * 
+                     */
+                    std::string GetProductName() const;
+
+                    /**
+                     * 设置<p>商业化资源归属</p>
+                     * @param _productName <p>商业化资源归属</p>
+                     * 
+                     */
+                    void SetProductName(const std::string& _productName);
+
+                    /**
+                     * 判断参数 ProductName 是否已赋值
+                     * @return ProductName 是否已赋值
+                     * 
+                     */
+                    bool ProductNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -591,6 +654,24 @@ namespace TencentCloud
                      */
                     CreatingProgress m_creatingProgress;
                     bool m_creatingProgressHasBeenSet;
+
+                    /**
+                     * <p>实例关联的角色名称</p>
+                     */
+                    std::string m_roleName;
+                    bool m_roleNameHasBeenSet;
+
+                    /**
+                     * <p>实例下线时间</p><p>参数格式：2026-08-12 17:02:43</p>
+                     */
+                    std::string m_offlineTime;
+                    bool m_offlineTimeHasBeenSet;
+
+                    /**
+                     * <p>商业化资源归属</p>
+                     */
+                    std::string m_productName;
+                    bool m_productNameHasBeenSet;
 
                 };
             }

@@ -26,6 +26,8 @@ AigcAudioTaskInput::AigcAudioTaskInput() :
     m_sceneTypeHasBeenSet(false),
     m_promptHasBeenSet(false),
     m_negativePromptHasBeenSet(false),
+    m_audioInfosHasBeenSet(false),
+    m_videoInfosHasBeenSet(false),
     m_enhancePromptHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
     m_additionalParametersHasBeenSet(false)
@@ -85,6 +87,46 @@ CoreInternalOutcome AigcAudioTaskInput::Deserialize(const rapidjson::Value &valu
         }
         m_negativePrompt = string(value["NegativePrompt"].GetString());
         m_negativePromptHasBeenSet = true;
+    }
+
+    if (value.HasMember("AudioInfos") && !value["AudioInfos"].IsNull())
+    {
+        if (!value["AudioInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AigcAudioTaskInput.AudioInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AudioInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AigcAudioReferenceAudioInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_audioInfos.push_back(item);
+        }
+        m_audioInfosHasBeenSet = true;
+    }
+
+    if (value.HasMember("VideoInfos") && !value["VideoInfos"].IsNull())
+    {
+        if (!value["VideoInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AigcAudioTaskInput.VideoInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["VideoInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AigcAudioReferenceVideoInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_videoInfos.push_back(item);
+        }
+        m_videoInfosHasBeenSet = true;
     }
 
     if (value.HasMember("EnhancePrompt") && !value["EnhancePrompt"].IsNull())
@@ -169,6 +211,36 @@ void AigcAudioTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "NegativePrompt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_negativePrompt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_audioInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_audioInfos.begin(); itr != m_audioInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_videoInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_videoInfos.begin(); itr != m_videoInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_enhancePromptHasBeenSet)
@@ -277,6 +349,38 @@ void AigcAudioTaskInput::SetNegativePrompt(const string& _negativePrompt)
 bool AigcAudioTaskInput::NegativePromptHasBeenSet() const
 {
     return m_negativePromptHasBeenSet;
+}
+
+vector<AigcAudioReferenceAudioInfo> AigcAudioTaskInput::GetAudioInfos() const
+{
+    return m_audioInfos;
+}
+
+void AigcAudioTaskInput::SetAudioInfos(const vector<AigcAudioReferenceAudioInfo>& _audioInfos)
+{
+    m_audioInfos = _audioInfos;
+    m_audioInfosHasBeenSet = true;
+}
+
+bool AigcAudioTaskInput::AudioInfosHasBeenSet() const
+{
+    return m_audioInfosHasBeenSet;
+}
+
+vector<AigcAudioReferenceVideoInfo> AigcAudioTaskInput::GetVideoInfos() const
+{
+    return m_videoInfos;
+}
+
+void AigcAudioTaskInput::SetVideoInfos(const vector<AigcAudioReferenceVideoInfo>& _videoInfos)
+{
+    m_videoInfos = _videoInfos;
+    m_videoInfosHasBeenSet = true;
+}
+
+bool AigcAudioTaskInput::VideoInfosHasBeenSet() const
+{
+    return m_videoInfosHasBeenSet;
 }
 
 bool AigcAudioTaskInput::GetEnhancePrompt() const

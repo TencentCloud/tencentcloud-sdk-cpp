@@ -31,7 +31,8 @@ GetFaceIdTokenRequest::GetFaceIdTokenRequest() :
     m_extraHasBeenSet(false),
     m_useCosHasBeenSet(false),
     m_encryptionHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
+    m_ruleIdHasBeenSet(false),
+    m_metaDataHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,14 @@ string GetFaceIdTokenRequest::ToJsonString() const
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metaDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetaData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_metaData.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -265,6 +274,22 @@ void GetFaceIdTokenRequest::SetRuleId(const string& _ruleId)
 bool GetFaceIdTokenRequest::RuleIdHasBeenSet() const
 {
     return m_ruleIdHasBeenSet;
+}
+
+string GetFaceIdTokenRequest::GetMetaData() const
+{
+    return m_metaData;
+}
+
+void GetFaceIdTokenRequest::SetMetaData(const string& _metaData)
+{
+    m_metaData = _metaData;
+    m_metaDataHasBeenSet = true;
+}
+
+bool GetFaceIdTokenRequest::MetaDataHasBeenSet() const
+{
+    return m_metaDataHasBeenSet;
 }
 
 

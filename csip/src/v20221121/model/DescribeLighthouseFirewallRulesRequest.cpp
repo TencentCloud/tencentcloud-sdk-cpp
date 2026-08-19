@@ -1,0 +1,99 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/csip/v20221121/model/DescribeLighthouseFirewallRulesRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Csip::V20221121::Model;
+using namespace std;
+
+DescribeLighthouseFirewallRulesRequest::DescribeLighthouseFirewallRulesRequest() :
+    m_assetIDHasBeenSet(false),
+    m_memberIdHasBeenSet(false)
+{
+}
+
+string DescribeLighthouseFirewallRulesRequest::ToJsonString() const
+{
+    rapidjson::Document d;
+    d.SetObject();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_assetIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_assetID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_memberIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_memberId.begin(); itr != m_memberId.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+string DescribeLighthouseFirewallRulesRequest::GetAssetID() const
+{
+    return m_assetID;
+}
+
+void DescribeLighthouseFirewallRulesRequest::SetAssetID(const string& _assetID)
+{
+    m_assetID = _assetID;
+    m_assetIDHasBeenSet = true;
+}
+
+bool DescribeLighthouseFirewallRulesRequest::AssetIDHasBeenSet() const
+{
+    return m_assetIDHasBeenSet;
+}
+
+vector<string> DescribeLighthouseFirewallRulesRequest::GetMemberId() const
+{
+    return m_memberId;
+}
+
+void DescribeLighthouseFirewallRulesRequest::SetMemberId(const vector<string>& _memberId)
+{
+    m_memberId = _memberId;
+    m_memberIdHasBeenSet = true;
+}
+
+bool DescribeLighthouseFirewallRulesRequest::MemberIdHasBeenSet() const
+{
+    return m_memberIdHasBeenSet;
+}
+
+

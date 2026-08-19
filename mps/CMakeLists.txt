@@ -335,7 +335,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskOcrFullTextSegmentItem.h
   include/tencentcloud/mps/v20190612/model/EditMediaOutputConfig.h
   include/tencentcloud/mps/v20190612/model/ModifyPersonSampleResponse.h
-  include/tencentcloud/mps/v20190612/model/ScheduleQualityControlTaskResult.h
+  include/tencentcloud/mps/v20190612/model/ImageQualityConfig.h
   include/tencentcloud/mps/v20190612/model/ModifyStreamPackageSourceLocationRequest.h
   include/tencentcloud/mps/v20190612/model/AiQualityControlTaskInput.h
   include/tencentcloud/mps/v20190612/model/VideoDBEntryTaskResult.h
@@ -408,7 +408,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/CreateAigcAudioTaskRequest.h
   include/tencentcloud/mps/v20190612/model/MediaProcessTaskResult.h
   include/tencentcloud/mps/v20190612/model/DeleteStreamPackageLinearAssemblyChannelRequest.h
-  include/tencentcloud/mps/v20190612/model/UserDefineConfigureInfo.h
+  include/tencentcloud/mps/v20190612/model/ScheduleQualityControlTaskResult.h
   include/tencentcloud/mps/v20190612/model/SubtitlePosition.h
   include/tencentcloud/mps/v20190612/model/DeleteQualityControlTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/UsageDetail.h
@@ -1004,6 +1004,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/UserDefineOcrTextReviewTemplateInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/ModifyBlindWatermarkTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowRequest.h
+  include/tencentcloud/mps/v20190612/model/UserDefineConfigureInfo.h
   include/tencentcloud/mps/v20190612/model/UrlInputInfo.h
   include/tencentcloud/mps/v20190612/model/ComposeAudioStream.h
   include/tencentcloud/mps/v20190612/model/DetectVideoWatermarkResponse.h
@@ -1426,7 +1427,7 @@ set(mps_src
   src/v20190612/model/AiRecognitionTaskOcrFullTextSegmentItem.cpp
   src/v20190612/model/EditMediaOutputConfig.cpp
   src/v20190612/model/ModifyPersonSampleResponse.cpp
-  src/v20190612/model/ScheduleQualityControlTaskResult.cpp
+  src/v20190612/model/ImageQualityConfig.cpp
   src/v20190612/model/ModifyStreamPackageSourceLocationRequest.cpp
   src/v20190612/model/AiQualityControlTaskInput.cpp
   src/v20190612/model/VideoDBEntryTaskResult.cpp
@@ -1499,7 +1500,7 @@ set(mps_src
   src/v20190612/model/CreateAigcAudioTaskRequest.cpp
   src/v20190612/model/MediaProcessTaskResult.cpp
   src/v20190612/model/DeleteStreamPackageLinearAssemblyChannelRequest.cpp
-  src/v20190612/model/UserDefineConfigureInfo.cpp
+  src/v20190612/model/ScheduleQualityControlTaskResult.cpp
   src/v20190612/model/SubtitlePosition.cpp
   src/v20190612/model/DeleteQualityControlTemplateRequest.cpp
   src/v20190612/model/UsageDetail.cpp
@@ -2095,6 +2096,7 @@ set(mps_src
   src/v20190612/model/UserDefineOcrTextReviewTemplateInfoForUpdate.cpp
   src/v20190612/model/ModifyBlindWatermarkTemplateRequest.cpp
   src/v20190612/model/DescribeStreamLinkFlowRequest.cpp
+  src/v20190612/model/UserDefineConfigureInfo.cpp
   src/v20190612/model/UrlInputInfo.cpp
   src/v20190612/model/ComposeAudioStream.cpp
   src/v20190612/model/DetectVideoWatermarkResponse.cpp

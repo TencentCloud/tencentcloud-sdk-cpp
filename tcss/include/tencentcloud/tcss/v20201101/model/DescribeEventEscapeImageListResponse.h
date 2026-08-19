@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取风险容器镜像列表
-                     * @return List 风险容器镜像列表
+                     * 获取<p>风险容器镜像列表</p>
+                     * @return List <p>风险容器镜像列表</p>
                      * 
                      */
                     std::vector<EventEscapeImageInfo> GetList() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ListHasBeenSet() const;
 
                     /**
-                     * 获取事件总数量
-                     * @return TotalCount 事件总数量
+                     * 获取<p>事件总数量</p>
+                     * @return TotalCount <p>事件总数量</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 风险容器镜像列表
+                     * <p>风险容器镜像列表</p>
                      */
                     std::vector<EventEscapeImageInfo> m_list;
                     bool m_listHasBeenSet;
 
                     /**
-                     * 事件总数量
+                     * <p>事件总数量</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

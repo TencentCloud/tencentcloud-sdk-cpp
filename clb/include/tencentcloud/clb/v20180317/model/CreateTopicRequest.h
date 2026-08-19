@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/clb/v20180317/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志主题的名称。
-                     * @return TopicName 日志主题的名称。
+                     * 获取<p>日志主题的名称。</p>
+                     * @return TopicName <p>日志主题的名称。</p>
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置日志主题的名称。
-                     * @param _topicName 日志主题的名称。
+                     * 设置<p>日志主题的名称。</p>
+                     * @param _topicName <p>日志主题的名称。</p>
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。
-                     * @return PartitionCount 主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。
+                     * 获取<p>主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。</p>
+                     * @return PartitionCount <p>主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。</p>
                      * 
                      */
                     uint64_t GetPartitionCount() const;
 
                     /**
-                     * 设置主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。
-                     * @param _partitionCount 主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。
+                     * 设置<p>主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。</p>
+                     * @param _partitionCount <p>主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。</p>
                      * 
                      */
                     void SetPartitionCount(const uint64_t& _partitionCount);
@@ -85,15 +86,15 @@ namespace TencentCloud
                     bool PartitionCountHasBeenSet() const;
 
                     /**
-                     * 获取日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
-                     * @return TopicType 日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     * 获取<p>日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。</p>
+                     * @return TopicType <p>日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。</p>
                      * 
                      */
                     std::string GetTopicType() const;
 
                     /**
-                     * 设置日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
-                     * @param _topicType 日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     * 设置<p>日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。</p>
+                     * @param _topicType <p>日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。</p>
                      * 
                      */
                     void SetTopicType(const std::string& _topicType);
@@ -106,23 +107,15 @@ namespace TencentCloud
                     bool TopicTypeHasBeenSet() const;
 
                     /**
-                     * 获取存储时间，单位天，默认为 30。
-- 日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。
-- 日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。
-                     * @return Period 存储时间，单位天，默认为 30。
-- 日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。
-- 日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。
+                     * 获取<p>存储时间，单位天，默认为 30。</p><ul><li>日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。</li><li>日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。</li></ul>
+                     * @return Period <p>存储时间，单位天，默认为 30。</p><ul><li>日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。</li><li>日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。</li></ul>
                      * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
-                     * 设置存储时间，单位天，默认为 30。
-- 日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。
-- 日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。
-                     * @param _period 存储时间，单位天，默认为 30。
-- 日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。
-- 日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。
+                     * 设置<p>存储时间，单位天，默认为 30。</p><ul><li>日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。</li><li>日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。</li></ul>
+                     * @param _period <p>存储时间，单位天，默认为 30。</p><ul><li>日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。</li><li>日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。</li></ul>
                      * 
                      */
                     void SetPeriod(const uint64_t& _period);
@@ -135,15 +128,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。
-                     * @return StorageType 日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。
+                     * 获取<p>日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。</p>
+                     * @return StorageType <p>日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。</p>
                      * 
                      */
                     std::string GetStorageType() const;
 
                     /**
-                     * 设置日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。
-                     * @param _storageType 日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。
+                     * 设置<p>日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。</p>
+                     * @param _storageType <p>日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。</p>
                      * 
                      */
                     void SetStorageType(const std::string& _storageType);
@@ -155,39 +148,64 @@ namespace TencentCloud
                      */
                     bool StorageTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>标签</p><p>最多支持一次传入20个</p>
+                     * @return Tags <p>标签</p><p>最多支持一次传入20个</p>
+                     * 
+                     */
+                    std::vector<TagInfo> GetTags() const;
+
+                    /**
+                     * 设置<p>标签</p><p>最多支持一次传入20个</p>
+                     * @param _tags <p>标签</p><p>最多支持一次传入20个</p>
+                     * 
+                     */
+                    void SetTags(const std::vector<TagInfo>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 日志主题的名称。
+                     * <p>日志主题的名称。</p>
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。
+                     * <p>主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。</p>
                      */
                     uint64_t m_partitionCount;
                     bool m_partitionCountHasBeenSet;
 
                     /**
-                     * 日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     * <p>日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。</p>
                      */
                     std::string m_topicType;
                     bool m_topicTypeHasBeenSet;
 
                     /**
-                     * 存储时间，单位天，默认为 30。
-- 日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。
-- 日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。
+                     * <p>存储时间，单位天，默认为 30。</p><ul><li>日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。</li><li>日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。</li></ul>
                      */
                     uint64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。
+                     * <p>日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。</p>
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;
+
+                    /**
+                     * <p>标签</p><p>最多支持一次传入20个</p>
+                     */
+                    std::vector<TagInfo> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

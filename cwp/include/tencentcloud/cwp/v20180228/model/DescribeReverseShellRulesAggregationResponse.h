@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取列表内容
-                     * @return List 列表内容
+                     * 获取<p>列表内容</p>
+                     * @return List <p>列表内容</p>
                      * 
                      */
                     std::vector<ReverseShellRuleAggregation> GetList() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ListHasBeenSet() const;
 
                     /**
-                     * 获取总条数
-                     * @return TotalCount 总条数
+                     * 获取<p>总条数</p>
+                     * @return TotalCount <p>总条数</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 列表内容
+                     * <p>列表内容</p>
                      */
                     std::vector<ReverseShellRuleAggregation> m_list;
                     bool m_listHasBeenSet;
 
                     /**
-                     * 总条数
+                     * <p>总条数</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

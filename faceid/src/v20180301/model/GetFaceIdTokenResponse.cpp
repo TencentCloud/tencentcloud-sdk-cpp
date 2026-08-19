@@ -24,7 +24,8 @@ using namespace TencentCloud::Faceid::V20180301::Model;
 using namespace std;
 
 GetFaceIdTokenResponse::GetFaceIdTokenResponse() :
-    m_faceIdTokenHasBeenSet(false)
+    m_faceIdTokenHasBeenSet(false),
+    m_clientConfigHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome GetFaceIdTokenResponse::Deserialize(const string &payload)
         m_faceIdTokenHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ClientConfig") && !rsp["ClientConfig"].IsNull())
+    {
+        if (!rsp["ClientConfig"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClientConfig` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientConfig = string(rsp["ClientConfig"].GetString());
+        m_clientConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string GetFaceIdTokenResponse::ToJsonString() const
         string key = "FaceIdToken";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_faceIdToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientConfig.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ string GetFaceIdTokenResponse::GetFaceIdToken() const
 bool GetFaceIdTokenResponse::FaceIdTokenHasBeenSet() const
 {
     return m_faceIdTokenHasBeenSet;
+}
+
+string GetFaceIdTokenResponse::GetClientConfig() const
+{
+    return m_clientConfig;
+}
+
+bool GetFaceIdTokenResponse::ClientConfigHasBeenSet() const
+{
+    return m_clientConfigHasBeenSet;
 }
 
 

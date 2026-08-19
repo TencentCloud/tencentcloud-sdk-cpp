@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务组 id
-                     * @return ServiceGroupId 服务组 id
+                     * 获取<p>服务组 id</p>
+                     * @return ServiceGroupId <p>服务组 id</p>
                      * 
                      */
                     std::string GetServiceGroupId() const;
 
                     /**
-                     * 设置服务组 id
-                     * @param _serviceGroupId 服务组 id
+                     * 设置<p>服务组 id</p>
+                     * @param _serviceGroupId <p>服务组 id</p>
                      * 
                      */
                     void SetServiceGroupId(const std::string& _serviceGroupId);
@@ -65,15 +65,36 @@ namespace TencentCloud
                     bool ServiceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取是否需要重置，如果为 true，重置 token 值
-                     * @return NeedReset 是否需要重置，如果为 true，重置 token 值
+                     * 获取<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * @return TiProjectId <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * 
+                     */
+                    std::string GetTiProjectId() const;
+
+                    /**
+                     * 设置<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * @param _tiProjectId <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * 
+                     */
+                    void SetTiProjectId(const std::string& _tiProjectId);
+
+                    /**
+                     * 判断参数 TiProjectId 是否已赋值
+                     * @return TiProjectId 是否已赋值
+                     * 
+                     */
+                    bool TiProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否需要重置，如果为 true，重置 token 值</p>
+                     * @return NeedReset <p>是否需要重置，如果为 true，重置 token 值</p>
                      * 
                      */
                     bool GetNeedReset() const;
 
                     /**
-                     * 设置是否需要重置，如果为 true，重置 token 值
-                     * @param _needReset 是否需要重置，如果为 true，重置 token 值
+                     * 设置<p>是否需要重置，如果为 true，重置 token 值</p>
+                     * @param _needReset <p>是否需要重置，如果为 true，重置 token 值</p>
                      * 
                      */
                     void SetNeedReset(const bool& _needReset);
@@ -86,15 +107,15 @@ namespace TencentCloud
                     bool NeedResetHasBeenSet() const;
 
                     /**
-                     * 获取AuthToken 数据
-                     * @return AuthToken AuthToken 数据
+                     * 获取<p>AuthToken 数据</p>
+                     * @return AuthToken <p>AuthToken 数据</p>
                      * 
                      */
                     AuthToken GetAuthToken() const;
 
                     /**
-                     * 设置AuthToken 数据
-                     * @param _authToken AuthToken 数据
+                     * 设置<p>AuthToken 数据</p>
+                     * @param _authToken <p>AuthToken 数据</p>
                      * 
                      */
                     void SetAuthToken(const AuthToken& _authToken);
@@ -109,19 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务组 id
+                     * <p>服务组 id</p>
                      */
                     std::string m_serviceGroupId;
                     bool m_serviceGroupIdHasBeenSet;
 
                     /**
-                     * 是否需要重置，如果为 true，重置 token 值
+                     * <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     */
+                    std::string m_tiProjectId;
+                    bool m_tiProjectIdHasBeenSet;
+
+                    /**
+                     * <p>是否需要重置，如果为 true，重置 token 值</p>
                      */
                     bool m_needReset;
                     bool m_needResetHasBeenSet;
 
                     /**
-                     * AuthToken 数据
+                     * <p>AuthToken 数据</p>
                      */
                     AuthToken m_authToken;
                     bool m_authTokenHasBeenSet;

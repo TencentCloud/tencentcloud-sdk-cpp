@@ -254,6 +254,27 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>企业版是否使用平台大账号模式发货</p>
+                     * @return UsePlatformAccount <p>企业版是否使用平台大账号模式发货</p>
+                     * 
+                     */
+                    bool GetUsePlatformAccount() const;
+
+                    /**
+                     * 设置<p>企业版是否使用平台大账号模式发货</p>
+                     * @param _usePlatformAccount <p>企业版是否使用平台大账号模式发货</p>
+                     * 
+                     */
+                    void SetUsePlatformAccount(const bool& _usePlatformAccount);
+
+                    /**
+                     * 判断参数 UsePlatformAccount 是否已赋值
+                     * @return UsePlatformAccount 是否已赋值
+                     * 
+                     */
+                    bool UsePlatformAccountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -315,6 +336,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * <p>企业版是否使用平台大账号模式发货</p>
+                     */
+                    bool m_usePlatformAccount;
+                    bool m_usePlatformAccountHasBeenSet;
 
                 };
             }

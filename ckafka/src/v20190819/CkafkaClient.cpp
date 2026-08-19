@@ -40,6 +40,56 @@ CkafkaClient::CkafkaClient(const Credential &credential, const string &region, c
 }
 
 
+CkafkaClient::AssociateRoutesSecurityGroupOutcome CkafkaClient::AssociateRoutesSecurityGroup(const AssociateRoutesSecurityGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssociateRoutesSecurityGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssociateRoutesSecurityGroupResponse rsp = AssociateRoutesSecurityGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssociateRoutesSecurityGroupOutcome(rsp);
+        else
+            return AssociateRoutesSecurityGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return AssociateRoutesSecurityGroupOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::AssociateRoutesSecurityGroupAsync(const AssociateRoutesSecurityGroupRequest& request, const AssociateRoutesSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AssociateRoutesSecurityGroupRequest&;
+    using Resp = AssociateRoutesSecurityGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AssociateRoutesSecurityGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CkafkaClient::AssociateRoutesSecurityGroupOutcomeCallable CkafkaClient::AssociateRoutesSecurityGroupCallable(const AssociateRoutesSecurityGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AssociateRoutesSecurityGroupOutcome>>();
+    AssociateRoutesSecurityGroupAsync(
+    request,
+    [prom](
+        const CkafkaClient*,
+        const AssociateRoutesSecurityGroupRequest&,
+        AssociateRoutesSecurityGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CkafkaClient::AuthorizeTokenOutcome CkafkaClient::AuthorizeToken(const AuthorizeTokenRequest &request)
 {
     auto outcome = MakeRequest(request, "AuthorizeToken");
@@ -3840,6 +3890,56 @@ CkafkaClient::DescribeUserOutcomeCallable CkafkaClient::DescribeUserCallable(con
     return prom->get_future();
 }
 
+CkafkaClient::DisassociateRoutesSecurityGroupOutcome CkafkaClient::DisassociateRoutesSecurityGroup(const DisassociateRoutesSecurityGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisassociateRoutesSecurityGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisassociateRoutesSecurityGroupResponse rsp = DisassociateRoutesSecurityGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisassociateRoutesSecurityGroupOutcome(rsp);
+        else
+            return DisassociateRoutesSecurityGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DisassociateRoutesSecurityGroupOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DisassociateRoutesSecurityGroupAsync(const DisassociateRoutesSecurityGroupRequest& request, const DisassociateRoutesSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DisassociateRoutesSecurityGroupRequest&;
+    using Resp = DisassociateRoutesSecurityGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DisassociateRoutesSecurityGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CkafkaClient::DisassociateRoutesSecurityGroupOutcomeCallable CkafkaClient::DisassociateRoutesSecurityGroupCallable(const DisassociateRoutesSecurityGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DisassociateRoutesSecurityGroupOutcome>>();
+    DisassociateRoutesSecurityGroupAsync(
+    request,
+    [prom](
+        const CkafkaClient*,
+        const DisassociateRoutesSecurityGroupRequest&,
+        DisassociateRoutesSecurityGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CkafkaClient::FetchDatahubMessageByOffsetOutcome CkafkaClient::FetchDatahubMessageByOffset(const FetchDatahubMessageByOffsetRequest &request)
 {
     auto outcome = MakeRequest(request, "FetchDatahubMessageByOffset");
@@ -4682,6 +4782,56 @@ CkafkaClient::ModifyPasswordOutcomeCallable CkafkaClient::ModifyPasswordCallable
         const CkafkaClient*,
         const ModifyPasswordRequest&,
         ModifyPasswordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CkafkaClient::ModifyRouteSecurityGroupsOutcome CkafkaClient::ModifyRouteSecurityGroups(const ModifyRouteSecurityGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRouteSecurityGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRouteSecurityGroupsResponse rsp = ModifyRouteSecurityGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRouteSecurityGroupsOutcome(rsp);
+        else
+            return ModifyRouteSecurityGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRouteSecurityGroupsOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::ModifyRouteSecurityGroupsAsync(const ModifyRouteSecurityGroupsRequest& request, const ModifyRouteSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyRouteSecurityGroupsRequest&;
+    using Resp = ModifyRouteSecurityGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyRouteSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CkafkaClient::ModifyRouteSecurityGroupsOutcomeCallable CkafkaClient::ModifyRouteSecurityGroupsCallable(const ModifyRouteSecurityGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyRouteSecurityGroupsOutcome>>();
+    ModifyRouteSecurityGroupsAsync(
+    request,
+    [prom](
+        const CkafkaClient*,
+        const ModifyRouteSecurityGroupsRequest&,
+        ModifyRouteSecurityGroupsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

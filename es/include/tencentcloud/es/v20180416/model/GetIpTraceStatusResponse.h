@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启IP溯源
-                     * @return OpenIpTrace 是否开启IP溯源
+                     * 获取<p>是否开启IP溯源</p>
+                     * @return OpenIpTrace <p>是否开启IP溯源</p>
                      * 
                      */
                     bool GetOpenIpTrace() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool OpenIpTraceHasBeenSet() const;
 
                     /**
-                     * 获取IP溯源开启持续时间，单位：秒
-                     * @return DurationTime IP溯源开启持续时间，单位：秒
+                     * 获取<p>IP溯源开启持续时间，单位：秒</p>
+                     * @return DurationTime <p>IP溯源开启持续时间，单位：秒</p>
                      * 
                      */
                     int64_t GetDurationTime() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool DurationTimeHasBeenSet() const;
 
                     /**
-                     * 获取IP溯源配置
-                     * @return IpTraceConfig IP溯源配置
+                     * 获取<p>IP溯源配置</p>
+                     * @return IpTraceConfig <p>IP溯源配置</p>
                      * 
                      */
                     IpTraceConfig GetIpTraceConfig() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool IpTraceConfigHasBeenSet() const;
 
                     /**
-                     * 获取上次执行时间
-                     * @return LastStartTime 上次执行时间
+                     * 获取<p>上次执行时间</p>
+                     * @return LastStartTime <p>上次执行时间</p>
                      * 
                      */
                     std::string GetLastStartTime() const;
@@ -101,8 +101,8 @@ namespace TencentCloud
                     bool LastStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取上次关闭时间
-                     * @return LastEndTime 上次关闭时间
+                     * 获取<p>上次关闭时间</p>
+                     * @return LastEndTime <p>上次关闭时间</p>
                      * 
                      */
                     std::string GetLastEndTime() const;
@@ -115,8 +115,8 @@ namespace TencentCloud
                     bool LastEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否过滤Kibana节点IP
-                     * @return FilterKibanaIp 是否过滤Kibana节点IP
+                     * 获取<p>是否过滤Kibana节点IP</p>
+                     * @return FilterKibanaIp <p>是否过滤Kibana节点IP</p>
                      * 
                      */
                     bool GetFilterKibanaIp() const;
@@ -131,37 +131,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否开启IP溯源
+                     * <p>是否开启IP溯源</p>
                      */
                     bool m_openIpTrace;
                     bool m_openIpTraceHasBeenSet;
 
                     /**
-                     * IP溯源开启持续时间，单位：秒
+                     * <p>IP溯源开启持续时间，单位：秒</p>
                      */
                     int64_t m_durationTime;
                     bool m_durationTimeHasBeenSet;
 
                     /**
-                     * IP溯源配置
+                     * <p>IP溯源配置</p>
                      */
                     IpTraceConfig m_ipTraceConfig;
                     bool m_ipTraceConfigHasBeenSet;
 
                     /**
-                     * 上次执行时间
+                     * <p>上次执行时间</p>
                      */
                     std::string m_lastStartTime;
                     bool m_lastStartTimeHasBeenSet;
 
                     /**
-                     * 上次关闭时间
+                     * <p>上次关闭时间</p>
                      */
                     std::string m_lastEndTime;
                     bool m_lastEndTimeHasBeenSet;
 
                     /**
-                     * 是否过滤Kibana节点IP
+                     * <p>是否过滤Kibana节点IP</p>
                      */
                     bool m_filterKibanaIp;
                     bool m_filterKibanaIpHasBeenSet;

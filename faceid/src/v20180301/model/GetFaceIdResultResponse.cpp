@@ -37,7 +37,8 @@ GetFaceIdResultResponse::GetFaceIdResultResponse() :
     m_livenessInfoTagHasBeenSet(false),
     m_deviceInfoLevelHasBeenSet(false),
     m_encryptionHasBeenSet(false),
-    m_encryptedBodyHasBeenSet(false)
+    m_encryptedBodyHasBeenSet(false),
+    m_idCardFrontBase64HasBeenSet(false)
 {
 }
 
@@ -222,6 +223,16 @@ CoreInternalOutcome GetFaceIdResultResponse::Deserialize(const string &payload)
         m_encryptedBodyHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IdCardFrontBase64") && !rsp["IdCardFrontBase64"].IsNull())
+    {
+        if (!rsp["IdCardFrontBase64"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IdCardFrontBase64` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_idCardFrontBase64 = string(rsp["IdCardFrontBase64"].GetString());
+        m_idCardFrontBase64HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -343,6 +354,14 @@ string GetFaceIdResultResponse::ToJsonString() const
         string key = "EncryptedBody";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_encryptedBody.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idCardFrontBase64HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdCardFrontBase64";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_idCardFrontBase64.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -495,6 +514,16 @@ string GetFaceIdResultResponse::GetEncryptedBody() const
 bool GetFaceIdResultResponse::EncryptedBodyHasBeenSet() const
 {
     return m_encryptedBodyHasBeenSet;
+}
+
+string GetFaceIdResultResponse::GetIdCardFrontBase64() const
+{
+    return m_idCardFrontBase64;
+}
+
+bool GetFaceIdResultResponse::IdCardFrontBase64HasBeenSet() const
+{
+    return m_idCardFrontBase64HasBeenSet;
 }
 
 

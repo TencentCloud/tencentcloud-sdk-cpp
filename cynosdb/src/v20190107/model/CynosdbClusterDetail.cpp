@@ -79,7 +79,9 @@ CynosdbClusterDetail::CynosdbClusterDetail() :
     m_archiveProgressHasBeenSet(false),
     m_clusterLevelHasBeenSet(false),
     m_isOpenTDEHasBeenSet(false),
-    m_realZoneHasBeenSet(false)
+    m_realZoneHasBeenSet(false),
+    m_storageOverUseHasBeenSet(false),
+    m_storageAutoExpandHasBeenSet(false)
 {
 }
 
@@ -748,6 +750,26 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
         m_realZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("StorageOverUse") && !value["StorageOverUse"].IsNull())
+    {
+        if (!value["StorageOverUse"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.StorageOverUse` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageOverUse = string(value["StorageOverUse"].GetString());
+        m_storageOverUseHasBeenSet = true;
+    }
+
+    if (value.HasMember("StorageAutoExpand") && !value["StorageAutoExpand"].IsNull())
+    {
+        if (!value["StorageAutoExpand"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.StorageAutoExpand` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageAutoExpand = string(value["StorageAutoExpand"].GetString());
+        m_storageAutoExpandHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1273,6 +1295,22 @@ void CynosdbClusterDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "RealZone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_realZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageOverUseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageOverUse";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageOverUse.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageAutoExpandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageAutoExpand";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageAutoExpand.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2220,5 +2258,37 @@ void CynosdbClusterDetail::SetRealZone(const string& _realZone)
 bool CynosdbClusterDetail::RealZoneHasBeenSet() const
 {
     return m_realZoneHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetStorageOverUse() const
+{
+    return m_storageOverUse;
+}
+
+void CynosdbClusterDetail::SetStorageOverUse(const string& _storageOverUse)
+{
+    m_storageOverUse = _storageOverUse;
+    m_storageOverUseHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::StorageOverUseHasBeenSet() const
+{
+    return m_storageOverUseHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetStorageAutoExpand() const
+{
+    return m_storageAutoExpand;
+}
+
+void CynosdbClusterDetail::SetStorageAutoExpand(const string& _storageAutoExpand)
+{
+    m_storageAutoExpand = _storageAutoExpand;
+    m_storageAutoExpandHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::StorageAutoExpandHasBeenSet() const
+{
+    return m_storageAutoExpandHasBeenSet;
 }
 

@@ -298,6 +298,27 @@ namespace TencentCloud
                      */
                     bool TokenTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>隐私浏览器类型，当检测到隐私浏览器时返回，仅H5。</p>
+                     * @return PrivacyBrowser <p>隐私浏览器类型，当检测到隐私浏览器时返回，仅H5。</p>
+                     * 
+                     */
+                    std::string GetPrivacyBrowser() const;
+
+                    /**
+                     * 设置<p>隐私浏览器类型，当检测到隐私浏览器时返回，仅H5。</p>
+                     * @param _privacyBrowser <p>隐私浏览器类型，当检测到隐私浏览器时返回，仅H5。</p>
+                     * 
+                     */
+                    void SetPrivacyBrowser(const std::string& _privacyBrowser);
+
+                    /**
+                     * 判断参数 PrivacyBrowser 是否已赋值
+                     * @return PrivacyBrowser 是否已赋值
+                     * 
+                     */
+                    bool PrivacyBrowserHasBeenSet() const;
+
                 private:
 
                     /**
@@ -371,6 +392,12 @@ namespace TencentCloud
                      */
                     std::string m_tokenTime;
                     bool m_tokenTimeHasBeenSet;
+
+                    /**
+                     * <p>隐私浏览器类型，当检测到隐私浏览器时返回，仅H5。</p>
+                     */
+                    std::string m_privacyBrowser;
+                    bool m_privacyBrowserHasBeenSet;
 
                 };
             }

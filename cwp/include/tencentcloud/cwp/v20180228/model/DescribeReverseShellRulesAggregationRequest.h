@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回数量，默认为10，最大值为100。
-                     * @return Limit 返回数量，默认为10，最大值为100。
+                     * 获取<p>返回数量，默认为10，最大值为100。</p>
+                     * @return Limit <p>返回数量，默认为10，最大值为100。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为10，最大值为100。
-                     * @param _limit 返回数量，默认为10，最大值为100。
+                     * 设置<p>返回数量，默认为10，最大值为100。</p>
+                     * @param _limit <p>返回数量，默认为10，最大值为100。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0。
-                     * @return Offset 偏移量，默认为0。
+                     * 获取<p>偏移量，默认为0。</p>
+                     * @return Offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0。
-                     * @param _offset 偏移量，默认为0。
+                     * 设置<p>偏移量，默认为0。</p>
+                     * @param _offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -86,19 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件。
-<li>Keywords - String - 是否必填：否 - 关键字(进程名称)</li>
-                     * @return Filters 过滤条件。
-<li>Keywords - String - 是否必填：否 - 关键字(进程名称)</li>
+                     * 获取<p>过滤条件。</p><li>Keywords - String - 是否必填：否 - 关键字(进程名称)</li>
+                     * @return Filters <p>过滤条件。</p><li>Keywords - String - 是否必填：否 - 关键字(进程名称)</li>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件。
-<li>Keywords - String - 是否必填：否 - 关键字(进程名称)</li>
-                     * @param _filters 过滤条件。
-<li>Keywords - String - 是否必填：否 - 关键字(进程名称)</li>
+                     * 设置<p>过滤条件。</p><li>Keywords - String - 是否必填：否 - 关键字(进程名称)</li>
+                     * @param _filters <p>过滤条件。</p><li>Keywords - String - 是否必填：否 - 关键字(进程名称)</li>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -111,15 +107,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，目前有：CreateTime、ModifyTime，默认按照ModifyTime排序
-                     * @return By 排序字段，目前有：CreateTime、ModifyTime，默认按照ModifyTime排序
+                     * 获取<p>排序字段，目前有：CreateTime、ModifyTime，默认按照ModifyTime排序</p>
+                     * @return By <p>排序字段，目前有：CreateTime、ModifyTime，默认按照ModifyTime排序</p>
                      * 
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置排序字段，目前有：CreateTime、ModifyTime，默认按照ModifyTime排序
-                     * @param _by 排序字段，目前有：CreateTime、ModifyTime，默认按照ModifyTime排序
+                     * 设置<p>排序字段，目前有：CreateTime、ModifyTime，默认按照ModifyTime排序</p>
+                     * @param _by <p>排序字段，目前有：CreateTime、ModifyTime，默认按照ModifyTime排序</p>
                      * 
                      */
                     void SetBy(const std::string& _by);
@@ -132,15 +128,15 @@ namespace TencentCloud
                     bool ByHasBeenSet() const;
 
                     /**
-                     * 获取排序升序还是倒序，DESC有ASC、
-                     * @return Order 排序升序还是倒序，DESC有ASC、
+                     * 获取<p>排序升序还是倒序，DESC有ASC、</p>
+                     * @return Order <p>排序升序还是倒序，DESC有ASC、</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序升序还是倒序，DESC有ASC、
-                     * @param _order 排序升序还是倒序，DESC有ASC、
+                     * 设置<p>排序升序还是倒序，DESC有ASC、</p>
+                     * @param _order <p>排序升序还是倒序，DESC有ASC、</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -155,32 +151,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回数量，默认为10，最大值为100。
+                     * <p>返回数量，默认为10，最大值为100。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0。
+                     * <p>偏移量，默认为0。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 过滤条件。
-<li>Keywords - String - 是否必填：否 - 关键字(进程名称)</li>
+                     * <p>过滤条件。</p><li>Keywords - String - 是否必填：否 - 关键字(进程名称)</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 排序字段，目前有：CreateTime、ModifyTime，默认按照ModifyTime排序
+                     * <p>排序字段，目前有：CreateTime、ModifyTime，默认按照ModifyTime排序</p>
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;
 
                     /**
-                     * 排序升序还是倒序，DESC有ASC、
+                     * <p>排序升序还是倒序，DESC有ASC、</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;

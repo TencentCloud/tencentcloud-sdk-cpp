@@ -32,7 +32,8 @@ Device::Device() :
     m_systemVersionHasBeenSet(false),
     m_sdkBuildVersionHasBeenSet(false),
     m_signTokenHasBeenSet(false),
-    m_tokenTimeHasBeenSet(false)
+    m_tokenTimeHasBeenSet(false),
+    m_privacyBrowserHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
         m_tokenTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("PrivacyBrowser") && !value["PrivacyBrowser"].IsNull())
+    {
+        if (!value["PrivacyBrowser"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.PrivacyBrowser` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privacyBrowser = string(value["PrivacyBrowser"].GetString());
+        m_privacyBrowserHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void Device::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "TokenTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tokenTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privacyBrowserHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrivacyBrowser";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privacyBrowser.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void Device::SetTokenTime(const string& _tokenTime)
 bool Device::TokenTimeHasBeenSet() const
 {
     return m_tokenTimeHasBeenSet;
+}
+
+string Device::GetPrivacyBrowser() const
+{
+    return m_privacyBrowser;
+}
+
+void Device::SetPrivacyBrowser(const string& _privacyBrowser)
+{
+    m_privacyBrowser = _privacyBrowser;
+    m_privacyBrowserHasBeenSet = true;
+}
+
+bool Device::PrivacyBrowserHasBeenSet() const
+{
+    return m_privacyBrowserHasBeenSet;
 }
 

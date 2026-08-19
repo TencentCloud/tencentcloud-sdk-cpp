@@ -32,7 +32,8 @@ CreateAgentInstanceRequest::CreateAgentInstanceRequest() :
     m_templateIdHasBeenSet(false),
     m_skillsHasBeenSet(false),
     m_soulIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_usePlatformAccountHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,14 @@ string CreateAgentInstanceRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_usePlatformAccountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsePlatformAccount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_usePlatformAccount, allocator);
     }
 
 
@@ -308,6 +317,22 @@ void CreateAgentInstanceRequest::SetDescription(const string& _description)
 bool CreateAgentInstanceRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+bool CreateAgentInstanceRequest::GetUsePlatformAccount() const
+{
+    return m_usePlatformAccount;
+}
+
+void CreateAgentInstanceRequest::SetUsePlatformAccount(const bool& _usePlatformAccount)
+{
+    m_usePlatformAccount = _usePlatformAccount;
+    m_usePlatformAccountHasBeenSet = true;
+}
+
+bool CreateAgentInstanceRequest::UsePlatformAccountHasBeenSet() const
+{
+    return m_usePlatformAccountHasBeenSet;
 }
 
 

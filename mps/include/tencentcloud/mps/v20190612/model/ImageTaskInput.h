@@ -37,6 +37,7 @@
 #include <tencentcloud/mps/v20190612/model/AiExpansionConfig.h>
 #include <tencentcloud/mps/v20190612/model/AiStoryboardConfig.h>
 #include <tencentcloud/mps/v20190612/model/UnderstandImageConfig.h>
+#include <tencentcloud/mps/v20190612/model/ImageQualityConfig.h>
 
 
 namespace TencentCloud
@@ -348,6 +349,27 @@ namespace TencentCloud
                      */
                     bool UnderstandImageConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>图片质量评估配置</p>
+                     * @return ImageQualityConfig <p>图片质量评估配置</p>
+                     * 
+                     */
+                    ImageQualityConfig GetImageQualityConfig() const;
+
+                    /**
+                     * 设置<p>图片质量评估配置</p>
+                     * @param _imageQualityConfig <p>图片质量评估配置</p>
+                     * 
+                     */
+                    void SetImageQualityConfig(const ImageQualityConfig& _imageQualityConfig);
+
+                    /**
+                     * 判断参数 ImageQualityConfig 是否已赋值
+                     * @return ImageQualityConfig 是否已赋值
+                     * 
+                     */
+                    bool ImageQualityConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -431,6 +453,12 @@ namespace TencentCloud
                      */
                     UnderstandImageConfig m_understandImageConfig;
                     bool m_understandImageConfigHasBeenSet;
+
+                    /**
+                     * <p>图片质量评估配置</p>
+                     */
+                    ImageQualityConfig m_imageQualityConfig;
+                    bool m_imageQualityConfigHasBeenSet;
 
                 };
             }

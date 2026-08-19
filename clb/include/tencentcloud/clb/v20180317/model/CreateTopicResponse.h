@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志主题的 ID。
-                     * @return TopicId 日志主题的 ID。
+                     * 获取<p>日志主题的 ID。</p>
+                     * @return TopicId <p>日志主题的 ID。</p>
                      * 
                      */
                     std::string GetTopicId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志主题的 ID。
+                     * <p>日志主题的 ID。</p>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;

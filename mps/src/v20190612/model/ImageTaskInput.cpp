@@ -33,7 +33,8 @@ ImageTaskInput::ImageTaskInput() :
     m_aiCutoutConfigHasBeenSet(false),
     m_aiExpansionConfigHasBeenSet(false),
     m_aiStoryboardConfigHasBeenSet(false),
-    m_understandImageConfigHasBeenSet(false)
+    m_understandImageConfigHasBeenSet(false),
+    m_imageQualityConfigHasBeenSet(false)
 {
 }
 
@@ -263,6 +264,23 @@ CoreInternalOutcome ImageTaskInput::Deserialize(const rapidjson::Value &value)
         m_understandImageConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageQualityConfig") && !value["ImageQualityConfig"].IsNull())
+    {
+        if (!value["ImageQualityConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageTaskInput.ImageQualityConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_imageQualityConfig.Deserialize(value["ImageQualityConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageQualityConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -385,6 +403,15 @@ void ImageTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_understandImageConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_imageQualityConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageQualityConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageQualityConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -596,5 +623,21 @@ void ImageTaskInput::SetUnderstandImageConfig(const UnderstandImageConfig& _unde
 bool ImageTaskInput::UnderstandImageConfigHasBeenSet() const
 {
     return m_understandImageConfigHasBeenSet;
+}
+
+ImageQualityConfig ImageTaskInput::GetImageQualityConfig() const
+{
+    return m_imageQualityConfig;
+}
+
+void ImageTaskInput::SetImageQualityConfig(const ImageQualityConfig& _imageQualityConfig)
+{
+    m_imageQualityConfig = _imageQualityConfig;
+    m_imageQualityConfigHasBeenSet = true;
+}
+
+bool ImageTaskInput::ImageQualityConfigHasBeenSet() const
+{
+    return m_imageQualityConfigHasBeenSet;
 }
 

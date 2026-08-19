@@ -40,7 +40,10 @@ AgentInstance::AgentInstance() :
     m_allowedActionsHasBeenSet(false),
     m_lastActiveTimeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_creatingProgressHasBeenSet(false)
+    m_creatingProgressHasBeenSet(false),
+    m_roleNameHasBeenSet(false),
+    m_offlineTimeHasBeenSet(false),
+    m_productNameHasBeenSet(false)
 {
 }
 
@@ -289,6 +292,36 @@ CoreInternalOutcome AgentInstance::Deserialize(const rapidjson::Value &value)
         m_creatingProgressHasBeenSet = true;
     }
 
+    if (value.HasMember("RoleName") && !value["RoleName"].IsNull())
+    {
+        if (!value["RoleName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentInstance.RoleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_roleName = string(value["RoleName"].GetString());
+        m_roleNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("OfflineTime") && !value["OfflineTime"].IsNull())
+    {
+        if (!value["OfflineTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentInstance.OfflineTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_offlineTime = string(value["OfflineTime"].GetString());
+        m_offlineTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProductName") && !value["ProductName"].IsNull())
+    {
+        if (!value["ProductName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentInstance.ProductName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productName = string(value["ProductName"].GetString());
+        m_productNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -480,6 +513,30 @@ void AgentInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_creatingProgress.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_roleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offlineTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OfflineTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_offlineTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -803,5 +860,53 @@ void AgentInstance::SetCreatingProgress(const CreatingProgress& _creatingProgres
 bool AgentInstance::CreatingProgressHasBeenSet() const
 {
     return m_creatingProgressHasBeenSet;
+}
+
+string AgentInstance::GetRoleName() const
+{
+    return m_roleName;
+}
+
+void AgentInstance::SetRoleName(const string& _roleName)
+{
+    m_roleName = _roleName;
+    m_roleNameHasBeenSet = true;
+}
+
+bool AgentInstance::RoleNameHasBeenSet() const
+{
+    return m_roleNameHasBeenSet;
+}
+
+string AgentInstance::GetOfflineTime() const
+{
+    return m_offlineTime;
+}
+
+void AgentInstance::SetOfflineTime(const string& _offlineTime)
+{
+    m_offlineTime = _offlineTime;
+    m_offlineTimeHasBeenSet = true;
+}
+
+bool AgentInstance::OfflineTimeHasBeenSet() const
+{
+    return m_offlineTimeHasBeenSet;
+}
+
+string AgentInstance::GetProductName() const
+{
+    return m_productName;
+}
+
+void AgentInstance::SetProductName(const string& _productName)
+{
+    m_productName = _productName;
+    m_productNameHasBeenSet = true;
+}
+
+bool AgentInstance::ProductNameHasBeenSet() const
+{
+    return m_productNameHasBeenSet;
 }
 

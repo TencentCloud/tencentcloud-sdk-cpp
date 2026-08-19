@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用于发起核身流程的URL，仅微信H5场景使用。
-                     * @return Url 用于发起核身流程的URL，仅微信H5场景使用。
+                     * 获取<p>用于发起核身流程的URL，仅微信H5场景使用。</p>
+                     * @return Url <p>用于发起核身流程的URL，仅微信H5场景使用。</p>
                      * 
                      */
                     std::string GetUrl() const;
@@ -58,12 +58,8 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取一次核验流程的唯一标识。
-- 有效时间为7,200秒，超过有效期再进行人脸核验会报错，请在有效期内进行核验。
-- 完成人脸核验后，需根据此标识调用[获取实名核身结果信息增强版](https://cloud.tencent.com/document/api/1007/41957)获取用户最终验证结果信息。
-                     * @return BizToken 一次核验流程的唯一标识。
-- 有效时间为7,200秒，超过有效期再进行人脸核验会报错，请在有效期内进行核验。
-- 完成人脸核验后，需根据此标识调用[获取实名核身结果信息增强版](https://cloud.tencent.com/document/api/1007/41957)获取用户最终验证结果信息。
+                     * 获取<p>一次核验流程的唯一标识。</p><ul><li>有效时间为7,200秒，超过有效期再进行人脸核验会报错，请在有效期内进行核验。</li><li>完成人脸核验后，需根据此标识调用<a href="https://cloud.tencent.com/document/api/1007/41957">获取实名核身结果信息增强版</a>获取用户最终验证结果信息。</li></ul>
+                     * @return BizToken <p>一次核验流程的唯一标识。</p><ul><li>有效时间为7,200秒，超过有效期再进行人脸核验会报错，请在有效期内进行核验。</li><li>完成人脸核验后，需根据此标识调用<a href="https://cloud.tencent.com/document/api/1007/41957">获取实名核身结果信息增强版</a>获取用户最终验证结果信息。</li></ul>
                      * 
                      */
                     std::string GetBizToken() const;
@@ -78,15 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用于发起核身流程的URL，仅微信H5场景使用。
+                     * <p>用于发起核身流程的URL，仅微信H5场景使用。</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 一次核验流程的唯一标识。
-- 有效时间为7,200秒，超过有效期再进行人脸核验会报错，请在有效期内进行核验。
-- 完成人脸核验后，需根据此标识调用[获取实名核身结果信息增强版](https://cloud.tencent.com/document/api/1007/41957)获取用户最终验证结果信息。
+                     * <p>一次核验流程的唯一标识。</p><ul><li>有效时间为7,200秒，超过有效期再进行人脸核验会报错，请在有效期内进行核验。</li><li>完成人脸核验后，需根据此标识调用<a href="https://cloud.tencent.com/document/api/1007/41957">获取实名核身结果信息增强版</a>获取用户最终验证结果信息。</li></ul>
                      */
                     std::string m_bizToken;
                     bool m_bizTokenHasBeenSet;

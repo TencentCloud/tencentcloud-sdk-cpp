@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/AigcAudioReferenceAudioInfo.h>
+#include <tencentcloud/vod/v20180717/model/AigcAudioReferenceVideoInfo.h>
 #include <tencentcloud/vod/v20180717/model/AigcAudioOutputConfig.h>
 
 
@@ -153,6 +155,48 @@ namespace TencentCloud
                     bool NegativePromptHasBeenSet() const;
 
                     /**
+                     * 获取<p>参考音频信息</p>
+                     * @return AudioInfos <p>参考音频信息</p>
+                     * 
+                     */
+                    std::vector<AigcAudioReferenceAudioInfo> GetAudioInfos() const;
+
+                    /**
+                     * 设置<p>参考音频信息</p>
+                     * @param _audioInfos <p>参考音频信息</p>
+                     * 
+                     */
+                    void SetAudioInfos(const std::vector<AigcAudioReferenceAudioInfo>& _audioInfos);
+
+                    /**
+                     * 判断参数 AudioInfos 是否已赋值
+                     * @return AudioInfos 是否已赋值
+                     * 
+                     */
+                    bool AudioInfosHasBeenSet() const;
+
+                    /**
+                     * 获取<p>参考视频信息</p>
+                     * @return VideoInfos <p>参考视频信息</p>
+                     * 
+                     */
+                    std::vector<AigcAudioReferenceVideoInfo> GetVideoInfos() const;
+
+                    /**
+                     * 设置<p>参考视频信息</p>
+                     * @param _videoInfos <p>参考视频信息</p>
+                     * 
+                     */
+                    void SetVideoInfos(const std::vector<AigcAudioReferenceVideoInfo>& _videoInfos);
+
+                    /**
+                     * 判断参数 VideoInfos 是否已赋值
+                     * @return VideoInfos 是否已赋值
+                     * 
+                     */
+                    bool VideoInfosHasBeenSet() const;
+
+                    /**
                      * 获取<p>是否自动优化提示词。开启时将自动优化传入的Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
                      * @return EnhancePrompt <p>是否自动优化提示词。开启时将自动优化传入的Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
                      * 
@@ -246,6 +290,18 @@ namespace TencentCloud
                      */
                     std::string m_negativePrompt;
                     bool m_negativePromptHasBeenSet;
+
+                    /**
+                     * <p>参考音频信息</p>
+                     */
+                    std::vector<AigcAudioReferenceAudioInfo> m_audioInfos;
+                    bool m_audioInfosHasBeenSet;
+
+                    /**
+                     * <p>参考视频信息</p>
+                     */
+                    std::vector<AigcAudioReferenceVideoInfo> m_videoInfos;
+                    bool m_videoInfosHasBeenSet;
 
                     /**
                      * <p>是否自动优化提示词。开启时将自动优化传入的Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>

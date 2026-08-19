@@ -25,6 +25,7 @@ using namespace std;
 ChatCompletionRequest::ChatCompletionRequest() :
     m_modelHasBeenSet(false),
     m_messagesHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false),
     m_temperatureHasBeenSet(false),
     m_topPHasBeenSet(false),
     m_maxTokensHasBeenSet(false)
@@ -59,6 +60,14 @@ string ChatCompletionRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_temperatureHasBeenSet)
@@ -123,6 +132,22 @@ void ChatCompletionRequest::SetMessages(const vector<Message>& _messages)
 bool ChatCompletionRequest::MessagesHasBeenSet() const
 {
     return m_messagesHasBeenSet;
+}
+
+string ChatCompletionRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void ChatCompletionRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool ChatCompletionRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 double ChatCompletionRequest::GetTemperature() const

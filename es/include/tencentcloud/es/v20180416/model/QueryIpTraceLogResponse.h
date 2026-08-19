@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总数
-                     * @return Total 总数
+                     * 获取<p>总数</p>
+                     * @return Total <p>总数</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取IP溯源日志列表
-                     * @return IpTraceLogList IP溯源日志列表
+                     * 获取<p>IP溯源日志列表</p>
+                     * @return IpTraceLogList <p>IP溯源日志列表</p>
                      * 
                      */
                     std::vector<IpTraceLogEntry> GetIpTraceLogList() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总数
+                     * <p>总数</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * IP溯源日志列表
+                     * <p>IP溯源日志列表</p>
                      */
                     std::vector<IpTraceLogEntry> m_ipTraceLogList;
                     bool m_ipTraceLogListHasBeenSet;

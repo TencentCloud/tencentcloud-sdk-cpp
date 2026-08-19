@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取对话的模型服务组ID
-                     * @return Model 对话的模型服务组ID
+                     * 获取<p>对话的模型服务组ID</p>
+                     * @return Model <p>对话的模型服务组ID</p>
                      * 
                      */
                     std::string GetModel() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool ModelHasBeenSet() const;
 
                     /**
-                     * 获取本次问答的答案。
-                     * @return Choices 本次问答的答案。
+                     * 获取<p>本次问答的答案。</p>
+                     * @return Choices <p>本次问答的答案。</p>
                      * 
                      */
                     std::vector<Choice> GetChoices() const;
@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool ChoicesHasBeenSet() const;
 
                     /**
-                     * 获取会话Id。
-                     * @return Id 会话Id。
+                     * 获取<p>会话Id。</p>
+                     * @return Id <p>会话Id。</p>
                      * 
                      */
                     std::string GetId() const;
@@ -88,8 +88,8 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取token统计
-                     * @return Usage token统计
+                     * 获取<p>token统计</p>
+                     * @return Usage <p>token统计</p>
                      * 
                      */
                     Usage GetUsage() const;
@@ -104,25 +104,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 对话的模型服务组ID
+                     * <p>对话的模型服务组ID</p>
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;
 
                     /**
-                     * 本次问答的答案。
+                     * <p>本次问答的答案。</p>
                      */
                     std::vector<Choice> m_choices;
                     bool m_choicesHasBeenSet;
 
                     /**
-                     * 会话Id。
+                     * <p>会话Id。</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * token统计
+                     * <p>token统计</p>
                      */
                     Usage m_usage;
                     bool m_usageHasBeenSet;

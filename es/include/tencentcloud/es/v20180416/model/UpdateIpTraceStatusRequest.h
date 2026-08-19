@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return InstanceId 集群ID
+                     * 获取<p>集群ID。该字段为必填字段。</p>
+                     * @return InstanceId <p>集群ID。该字段为必填字段。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _instanceId 集群ID
+                     * 设置<p>集群ID。该字段为必填字段。</p>
+                     * @param _instanceId <p>集群ID。该字段为必填字段。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取IP溯源配置开关
-                     * @return OpenIpTrace IP溯源配置开关
+                     * 获取<p>IP溯源配置开关。该字段为必填字段。</p>
+                     * @return OpenIpTrace <p>IP溯源配置开关。该字段为必填字段。</p>
                      * 
                      */
                     bool GetOpenIpTrace() const;
 
                     /**
-                     * 设置IP溯源配置开关
-                     * @param _openIpTrace IP溯源配置开关
+                     * 设置<p>IP溯源配置开关。该字段为必填字段。</p>
+                     * @param _openIpTrace <p>IP溯源配置开关。该字段为必填字段。</p>
                      * 
                      */
                     void SetOpenIpTrace(const bool& _openIpTrace);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool OpenIpTraceHasBeenSet() const;
 
                     /**
-                     * 获取IP溯源开启持续时间，单位：秒
-                     * @return DurationTime IP溯源开启持续时间，单位：秒
+                     * 获取<p>IP溯源开启持续时间，单位：秒。该字段为必填字段。</p>
+                     * @return DurationTime <p>IP溯源开启持续时间，单位：秒。该字段为必填字段。</p>
                      * 
                      */
                     int64_t GetDurationTime() const;
 
                     /**
-                     * 设置IP溯源开启持续时间，单位：秒
-                     * @param _durationTime IP溯源开启持续时间，单位：秒
+                     * 设置<p>IP溯源开启持续时间，单位：秒。该字段为必填字段。</p>
+                     * @param _durationTime <p>IP溯源开启持续时间，单位：秒。该字段为必填字段。</p>
                      * 
                      */
                     void SetDurationTime(const int64_t& _durationTime);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool DurationTimeHasBeenSet() const;
 
                     /**
-                     * 获取IP溯源配置
-                     * @return IpTraceConfig IP溯源配置
+                     * 获取<p>IP溯源配置。该字段为必填字段。</p>
+                     * @return IpTraceConfig <p>IP溯源配置。该字段为必填字段。</p>
                      * 
                      */
                     IpTraceConfig GetIpTraceConfig() const;
 
                     /**
-                     * 设置IP溯源配置
-                     * @param _ipTraceConfig IP溯源配置
+                     * 设置<p>IP溯源配置。该字段为必填字段。</p>
+                     * @param _ipTraceConfig <p>IP溯源配置。该字段为必填字段。</p>
                      * 
                      */
                     void SetIpTraceConfig(const IpTraceConfig& _ipTraceConfig);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool IpTraceConfigHasBeenSet() const;
 
                     /**
-                     * 获取是否过滤kibana节点IP
-                     * @return FilterKibanaIp 是否过滤kibana节点IP
+                     * 获取<p>是否过滤kibana节点IP。</p>
+                     * @return FilterKibanaIp <p>是否过滤kibana节点IP。</p>
                      * 
                      */
                     bool GetFilterKibanaIp() const;
 
                     /**
-                     * 设置是否过滤kibana节点IP
-                     * @param _filterKibanaIp 是否过滤kibana节点IP
+                     * 设置<p>是否过滤kibana节点IP。</p>
+                     * @param _filterKibanaIp <p>是否过滤kibana节点IP。</p>
                      * 
                      */
                     void SetFilterKibanaIp(const bool& _filterKibanaIp);
@@ -151,31 +151,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID。该字段为必填字段。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * IP溯源配置开关
+                     * <p>IP溯源配置开关。该字段为必填字段。</p>
                      */
                     bool m_openIpTrace;
                     bool m_openIpTraceHasBeenSet;
 
                     /**
-                     * IP溯源开启持续时间，单位：秒
+                     * <p>IP溯源开启持续时间，单位：秒。该字段为必填字段。</p>
                      */
                     int64_t m_durationTime;
                     bool m_durationTimeHasBeenSet;
 
                     /**
-                     * IP溯源配置
+                     * <p>IP溯源配置。该字段为必填字段。</p>
                      */
                     IpTraceConfig m_ipTraceConfig;
                     bool m_ipTraceConfigHasBeenSet;
 
                     /**
-                     * 是否过滤kibana节点IP
+                     * <p>是否过滤kibana节点IP。</p>
                      */
                     bool m_filterKibanaIp;
                     bool m_filterKibanaIpHasBeenSet;

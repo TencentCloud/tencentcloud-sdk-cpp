@@ -42,7 +42,34 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>模型 ID。可通过 DescribeModelList 获取。</p>
+                     * @return ModelId <p>模型 ID。可通过 DescribeModelList 获取。</p>
+                     * 
+                     */
+                    std::string GetModelId() const;
+
+                    /**
+                     * 设置<p>模型 ID。可通过 DescribeModelList 获取。</p>
+                     * @param _modelId <p>模型 ID。可通过 DescribeModelList 获取。</p>
+                     * 
+                     */
+                    void SetModelId(const std::string& _modelId);
+
+                    /**
+                     * 判断参数 ModelId 是否已赋值
+                     * @return ModelId 是否已赋值
+                     * 
+                     */
+                    bool ModelIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>模型 ID。可通过 DescribeModelList 获取。</p>
+                     */
+                    std::string m_modelId;
+                    bool m_modelIdHasBeenSet;
 
                 };
             }

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取IP时间列表
-                     * @return IpTraceList IP时间列表
+                     * 获取<p>IP时间列表</p>
+                     * @return IpTraceList <p>IP时间列表</p>
                      * 
                      */
                     std::vector<IpTimePair> GetIpTraceList() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * IP时间列表
+                     * <p>IP时间列表</p>
                      */
                     std::vector<IpTimePair> m_ipTraceList;
                     bool m_ipTraceListHasBeenSet;

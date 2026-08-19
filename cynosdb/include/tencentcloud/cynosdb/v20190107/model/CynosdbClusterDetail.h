@@ -1292,6 +1292,48 @@ namespace TencentCloud
                      */
                     bool RealZoneHasBeenSet() const;
 
+                    /**
+                     * 获取<p>超限开启状态</p><p>枚举值：</p><ul><li>yes： 超限开启</li><li>no： 超限关闭</li></ul><p>默认值：no</p>
+                     * @return StorageOverUse <p>超限开启状态</p><p>枚举值：</p><ul><li>yes： 超限开启</li><li>no： 超限关闭</li></ul><p>默认值：no</p>
+                     * 
+                     */
+                    std::string GetStorageOverUse() const;
+
+                    /**
+                     * 设置<p>超限开启状态</p><p>枚举值：</p><ul><li>yes： 超限开启</li><li>no： 超限关闭</li></ul><p>默认值：no</p>
+                     * @param _storageOverUse <p>超限开启状态</p><p>枚举值：</p><ul><li>yes： 超限开启</li><li>no： 超限关闭</li></ul><p>默认值：no</p>
+                     * 
+                     */
+                    void SetStorageOverUse(const std::string& _storageOverUse);
+
+                    /**
+                     * 判断参数 StorageOverUse 是否已赋值
+                     * @return StorageOverUse 是否已赋值
+                     * 
+                     */
+                    bool StorageOverUseHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自动扩容开启状态</p><p>枚举值：</p><ul><li>yes： 已开启</li><li>no： 关闭</li></ul><p>默认值：no</p>
+                     * @return StorageAutoExpand <p>自动扩容开启状态</p><p>枚举值：</p><ul><li>yes： 已开启</li><li>no： 关闭</li></ul><p>默认值：no</p>
+                     * 
+                     */
+                    std::string GetStorageAutoExpand() const;
+
+                    /**
+                     * 设置<p>自动扩容开启状态</p><p>枚举值：</p><ul><li>yes： 已开启</li><li>no： 关闭</li></ul><p>默认值：no</p>
+                     * @param _storageAutoExpand <p>自动扩容开启状态</p><p>枚举值：</p><ul><li>yes： 已开启</li><li>no： 关闭</li></ul><p>默认值：no</p>
+                     * 
+                     */
+                    void SetStorageAutoExpand(const std::string& _storageAutoExpand);
+
+                    /**
+                     * 判断参数 StorageAutoExpand 是否已赋值
+                     * @return StorageAutoExpand 是否已赋值
+                     * 
+                     */
+                    bool StorageAutoExpandHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1647,6 +1689,18 @@ namespace TencentCloud
                      */
                     std::string m_realZone;
                     bool m_realZoneHasBeenSet;
+
+                    /**
+                     * <p>超限开启状态</p><p>枚举值：</p><ul><li>yes： 超限开启</li><li>no： 超限关闭</li></ul><p>默认值：no</p>
+                     */
+                    std::string m_storageOverUse;
+                    bool m_storageOverUseHasBeenSet;
+
+                    /**
+                     * <p>自动扩容开启状态</p><p>枚举值：</p><ul><li>yes： 已开启</li><li>no： 关闭</li></ul><p>默认值：no</p>
+                     */
+                    std::string m_storageAutoExpand;
+                    bool m_storageAutoExpandHasBeenSet;
 
                 };
             }

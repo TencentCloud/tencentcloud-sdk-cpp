@@ -22,7 +22,8 @@
 using namespace TencentCloud::Tokenhub::V20260322::Model;
 using namespace std;
 
-DescribeModelQuotaRequest::DescribeModelQuotaRequest()
+DescribeModelQuotaRequest::DescribeModelQuotaRequest() :
+    m_modelIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeModelQuotaRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_modelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeModelQuotaRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeModelQuotaRequest::GetModelId() const
+{
+    return m_modelId;
+}
+
+void DescribeModelQuotaRequest::SetModelId(const string& _modelId)
+{
+    m_modelId = _modelId;
+    m_modelIdHasBeenSet = true;
+}
+
+bool DescribeModelQuotaRequest::ModelIdHasBeenSet() const
+{
+    return m_modelIdHasBeenSet;
+}
 
 

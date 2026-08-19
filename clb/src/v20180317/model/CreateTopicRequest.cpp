@@ -27,7 +27,8 @@ CreateTopicRequest::CreateTopicRequest() :
     m_partitionCountHasBeenSet(false),
     m_topicTypeHasBeenSet(false),
     m_periodHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
+    m_storageTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,21 @@ string CreateTopicRequest::ToJsonString() const
         string key = "StorageType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -164,6 +180,22 @@ void CreateTopicRequest::SetStorageType(const string& _storageType)
 bool CreateTopicRequest::StorageTypeHasBeenSet() const
 {
     return m_storageTypeHasBeenSet;
+}
+
+vector<TagInfo> CreateTopicRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateTopicRequest::SetTags(const vector<TagInfo>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateTopicRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

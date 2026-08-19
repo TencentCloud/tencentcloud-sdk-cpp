@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要返回的数量，默认为10，最大值为100
-                     * @return Limit 需要返回的数量，默认为10，最大值为100
+                     * 获取<p>需要返回的数量，默认为10，最大值为100</p>
+                     * @return Limit <p>需要返回的数量，默认为10，最大值为100</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置需要返回的数量，默认为10，最大值为100
-                     * @param _limit 需要返回的数量，默认为10，最大值为100
+                     * 设置<p>需要返回的数量，默认为10，最大值为100</p>
+                     * @param _limit <p>需要返回的数量，默认为10，最大值为100</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0。
-                     * @return Offset 偏移量，默认为0。
+                     * 获取<p>偏移量，默认为0。</p>
+                     * @return Offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0。
-                     * @param _offset 偏移量，默认为0。
+                     * 设置<p>偏移量，默认为0。</p>
+                     * @param _offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -86,31 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取过滤参数:
-EventType: 事件类型(MOUNT_SENSITIVE_PTAH:敏感路径挂载 PRIVILEGE_CONTAINER_START:特权容器)
-Status: 事件状态(EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略)
-ImageID: 镜像id
-ImageName:镜像名称
-                     * @return Filters 过滤参数:
-EventType: 事件类型(MOUNT_SENSITIVE_PTAH:敏感路径挂载 PRIVILEGE_CONTAINER_START:特权容器)
-Status: 事件状态(EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略)
-ImageID: 镜像id
-ImageName:镜像名称
+                     * 获取<p>过滤参数:<br>EventType: 事件类型(MOUNT_SENSITIVE_PTAH:敏感路径挂载 PRIVILEGE_CONTAINER_START:特权容器)<br>Status: 事件状态(EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略)<br>ImageID: 镜像id<br>ImageName:镜像名称</p>
+                     * @return Filters <p>过滤参数:<br>EventType: 事件类型(MOUNT_SENSITIVE_PTAH:敏感路径挂载 PRIVILEGE_CONTAINER_START:特权容器)<br>Status: 事件状态(EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略)<br>ImageID: 镜像id<br>ImageName:镜像名称</p>
                      * 
                      */
                     std::vector<RunTimeFilters> GetFilters() const;
 
                     /**
-                     * 设置过滤参数:
-EventType: 事件类型(MOUNT_SENSITIVE_PTAH:敏感路径挂载 PRIVILEGE_CONTAINER_START:特权容器)
-Status: 事件状态(EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略)
-ImageID: 镜像id
-ImageName:镜像名称
-                     * @param _filters 过滤参数:
-EventType: 事件类型(MOUNT_SENSITIVE_PTAH:敏感路径挂载 PRIVILEGE_CONTAINER_START:特权容器)
-Status: 事件状态(EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略)
-ImageID: 镜像id
-ImageName:镜像名称
+                     * 设置<p>过滤参数:<br>EventType: 事件类型(MOUNT_SENSITIVE_PTAH:敏感路径挂载 PRIVILEGE_CONTAINER_START:特权容器)<br>Status: 事件状态(EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略)<br>ImageID: 镜像id<br>ImageName:镜像名称</p>
+                     * @param _filters <p>过滤参数:<br>EventType: 事件类型(MOUNT_SENSITIVE_PTAH:敏感路径挂载 PRIVILEGE_CONTAINER_START:特权容器)<br>Status: 事件状态(EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略)<br>ImageID: 镜像id<br>ImageName:镜像名称</p>
                      * 
                      */
                     void SetFilters(const std::vector<RunTimeFilters>& _filters);
@@ -123,15 +107,15 @@ ImageName:镜像名称
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取升序降序,asc desc
-                     * @return Order 升序降序,asc desc
+                     * 获取<p>升序降序,asc desc</p>
+                     * @return Order <p>升序降序,asc desc</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置升序降序,asc desc
-                     * @param _order 升序降序,asc desc
+                     * 设置<p>升序降序,asc desc</p>
+                     * @param _order <p>升序降序,asc desc</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -144,15 +128,15 @@ ImageName:镜像名称
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取排序字段
-                     * @return By 排序字段
+                     * 获取<p>排序字段</p>
+                     * @return By <p>排序字段</p>
                      * 
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置排序字段
-                     * @param _by 排序字段
+                     * 设置<p>排序字段</p>
+                     * @param _by <p>排序字段</p>
                      * 
                      */
                     void SetBy(const std::string& _by);
@@ -167,35 +151,31 @@ ImageName:镜像名称
                 private:
 
                     /**
-                     * 需要返回的数量，默认为10，最大值为100
+                     * <p>需要返回的数量，默认为10，最大值为100</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0。
+                     * <p>偏移量，默认为0。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 过滤参数:
-EventType: 事件类型(MOUNT_SENSITIVE_PTAH:敏感路径挂载 PRIVILEGE_CONTAINER_START:特权容器)
-Status: 事件状态(EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略)
-ImageID: 镜像id
-ImageName:镜像名称
+                     * <p>过滤参数:<br>EventType: 事件类型(MOUNT_SENSITIVE_PTAH:敏感路径挂载 PRIVILEGE_CONTAINER_START:特权容器)<br>Status: 事件状态(EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略)<br>ImageID: 镜像id<br>ImageName:镜像名称</p>
                      */
                     std::vector<RunTimeFilters> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 升序降序,asc desc
+                     * <p>升序降序,asc desc</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 排序字段
+                     * <p>排序字段</p>
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;

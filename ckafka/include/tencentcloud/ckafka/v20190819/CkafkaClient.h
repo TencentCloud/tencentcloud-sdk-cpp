@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ckafka/v20190819/model/AssociateRoutesSecurityGroupRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/AssociateRoutesSecurityGroupResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/AuthorizeTokenRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/AuthorizeTokenResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/BatchCreateAclRequest.h>
@@ -175,6 +177,8 @@
 #include <tencentcloud/ckafka/v20190819/model/DescribeTypeInstancesResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeUserRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeUserResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DisassociateRoutesSecurityGroupRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DisassociateRoutesSecurityGroupResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/FetchDatahubMessageByOffsetRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/FetchDatahubMessageByOffsetResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/FetchLatestDatahubMessageListRequest.h>
@@ -209,6 +213,8 @@
 #include <tencentcloud/ckafka/v20190819/model/ModifyInstancePreResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyPasswordRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyPasswordResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/ModifyRouteSecurityGroupsRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/ModifyRouteSecurityGroupsResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyRoutineMaintenanceTaskRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyRoutineMaintenanceTaskResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyThrottleRuleRequest.h>
@@ -241,6 +247,9 @@ namespace TencentCloud
                 CkafkaClient(const Credential &credential, const std::string &region);
                 CkafkaClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AssociateRoutesSecurityGroupResponse> AssociateRoutesSecurityGroupOutcome;
+                typedef std::future<AssociateRoutesSecurityGroupOutcome> AssociateRoutesSecurityGroupOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::AssociateRoutesSecurityGroupRequest&, AssociateRoutesSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateRoutesSecurityGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::AuthorizeTokenResponse> AuthorizeTokenOutcome;
                 typedef std::future<AuthorizeTokenOutcome> AuthorizeTokenOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::AuthorizeTokenRequest&, AuthorizeTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AuthorizeTokenAsyncHandler;
@@ -469,6 +478,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserResponse> DescribeUserOutcome;
                 typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeUserRequest&, DescribeUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisassociateRoutesSecurityGroupResponse> DisassociateRoutesSecurityGroupOutcome;
+                typedef std::future<DisassociateRoutesSecurityGroupOutcome> DisassociateRoutesSecurityGroupOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DisassociateRoutesSecurityGroupRequest&, DisassociateRoutesSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateRoutesSecurityGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::FetchDatahubMessageByOffsetResponse> FetchDatahubMessageByOffsetOutcome;
                 typedef std::future<FetchDatahubMessageByOffsetOutcome> FetchDatahubMessageByOffsetOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::FetchDatahubMessageByOffsetRequest&, FetchDatahubMessageByOffsetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FetchDatahubMessageByOffsetAsyncHandler;
@@ -520,6 +532,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPasswordResponse> ModifyPasswordOutcome;
                 typedef std::future<ModifyPasswordOutcome> ModifyPasswordOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::ModifyPasswordRequest&, ModifyPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPasswordAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRouteSecurityGroupsResponse> ModifyRouteSecurityGroupsOutcome;
+                typedef std::future<ModifyRouteSecurityGroupsOutcome> ModifyRouteSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::ModifyRouteSecurityGroupsRequest&, ModifyRouteSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRouteSecurityGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRoutineMaintenanceTaskResponse> ModifyRoutineMaintenanceTaskOutcome;
                 typedef std::future<ModifyRoutineMaintenanceTaskOutcome> ModifyRoutineMaintenanceTaskOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::ModifyRoutineMaintenanceTaskRequest&, ModifyRoutineMaintenanceTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoutineMaintenanceTaskAsyncHandler;
@@ -549,6 +564,15 @@ namespace TencentCloud
                 typedef std::function<void(const CkafkaClient*, const Model::UpgradeBrokerVersionRequest&, UpgradeBrokerVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeBrokerVersionAsyncHandler;
 
 
+
+                /**
+                 *绑定路由安全组
+                 * @param req AssociateRoutesSecurityGroupRequest
+                 * @return AssociateRoutesSecurityGroupOutcome
+                 */
+                AssociateRoutesSecurityGroupOutcome AssociateRoutesSecurityGroup(const Model::AssociateRoutesSecurityGroupRequest &request);
+                void AssociateRoutesSecurityGroupAsync(const Model::AssociateRoutesSecurityGroupRequest& request, const AssociateRoutesSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssociateRoutesSecurityGroupOutcomeCallable AssociateRoutesSecurityGroupCallable(const Model::AssociateRoutesSecurityGroupRequest& request);
 
                 /**
                  *给实例授权token
@@ -1236,6 +1260,15 @@ namespace TencentCloud
                 DescribeUserOutcomeCallable DescribeUserCallable(const Model::DescribeUserRequest& request);
 
                 /**
+                 *解绑路由安全组
+                 * @param req DisassociateRoutesSecurityGroupRequest
+                 * @return DisassociateRoutesSecurityGroupOutcome
+                 */
+                DisassociateRoutesSecurityGroupOutcome DisassociateRoutesSecurityGroup(const Model::DisassociateRoutesSecurityGroupRequest &request);
+                void DisassociateRoutesSecurityGroupAsync(const Model::DisassociateRoutesSecurityGroupRequest& request, const DisassociateRoutesSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisassociateRoutesSecurityGroupOutcomeCallable DisassociateRoutesSecurityGroupCallable(const Model::DisassociateRoutesSecurityGroupRequest& request);
+
+                /**
                  *根据指定offset位置的消息
                  * @param req FetchDatahubMessageByOffsetRequest
                  * @return FetchDatahubMessageByOffsetOutcome
@@ -1387,6 +1420,15 @@ namespace TencentCloud
                 ModifyPasswordOutcome ModifyPassword(const Model::ModifyPasswordRequest &request);
                 void ModifyPasswordAsync(const Model::ModifyPasswordRequest& request, const ModifyPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPasswordOutcomeCallable ModifyPasswordCallable(const Model::ModifyPasswordRequest& request);
+
+                /**
+                 *修改路由安全组关联
+                 * @param req ModifyRouteSecurityGroupsRequest
+                 * @return ModifyRouteSecurityGroupsOutcome
+                 */
+                ModifyRouteSecurityGroupsOutcome ModifyRouteSecurityGroups(const Model::ModifyRouteSecurityGroupsRequest &request);
+                void ModifyRouteSecurityGroupsAsync(const Model::ModifyRouteSecurityGroupsRequest& request, const ModifyRouteSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRouteSecurityGroupsOutcomeCallable ModifyRouteSecurityGroupsCallable(const Model::ModifyRouteSecurityGroupsRequest& request);
 
                 /**
                  *设置自动化运维属性

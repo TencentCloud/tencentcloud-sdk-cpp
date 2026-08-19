@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取token值。- 有效期 10分钟。- 只能完成1次核身。
-                     * @return FaceIdToken token值。- 有效期 10分钟。- 只能完成1次核身。
+                     * 获取<p>token值。- 有效期 10分钟。- 只能完成1次核身。</p>
+                     * @return FaceIdToken <p>token值。- 有效期 10分钟。- 只能完成1次核身。</p>
                      * 
                      */
                     std::string GetFaceIdToken() const;
@@ -57,13 +57,33 @@ namespace TencentCloud
                      */
                     bool FaceIdTokenHasBeenSet() const;
 
+                    /**
+                     * 获取<p>客户端配置信息，SDK将使用该配置进行后续操作。请将返回值原样传递给客户端SDK。</p>
+                     * @return ClientConfig <p>客户端配置信息，SDK将使用该配置进行后续操作。请将返回值原样传递给客户端SDK。</p>
+                     * 
+                     */
+                    std::string GetClientConfig() const;
+
+                    /**
+                     * 判断参数 ClientConfig 是否已赋值
+                     * @return ClientConfig 是否已赋值
+                     * 
+                     */
+                    bool ClientConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * token值。- 有效期 10分钟。- 只能完成1次核身。
+                     * <p>token值。- 有效期 10分钟。- 只能完成1次核身。</p>
                      */
                     std::string m_faceIdToken;
                     bool m_faceIdTokenHasBeenSet;
+
+                    /**
+                     * <p>客户端配置信息，SDK将使用该配置进行后续操作。请将返回值原样传递给客户端SDK。</p>
+                     */
+                    std::string m_clientConfig;
+                    bool m_clientConfigHasBeenSet;
 
                 };
             }

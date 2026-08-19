@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ES集群ID
-                     * @return InstanceId ES集群ID
+                     * 获取<p>ES集群ID</p>
+                     * @return InstanceId <p>ES集群ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ES集群ID
-                     * @param _instanceId ES集群ID
+                     * 设置<p>ES集群ID</p>
+                     * @param _instanceId <p>ES集群ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取<p>开始时间</p>
+                     * @return StartTime <p>开始时间</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置<p>开始时间</p>
+                     * @param _startTime <p>开始时间</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取<p>结束时间</p>
+                     * @return EndTime <p>结束时间</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置<p>结束时间</p>
+                     * @param _endTime <p>结束时间</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取起始偏移量
-                     * @return Offset 起始偏移量
+                     * 获取<p>起始偏移量</p>
+                     * @return Offset <p>起始偏移量</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置起始偏移量
-                     * @param _offset 起始偏移量
+                     * 设置<p>起始偏移量</p>
+                     * @param _offset <p>起始偏移量</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取数据条数
-                     * @return Limit 数据条数
+                     * 获取<p>数据条数</p>
+                     * @return Limit <p>数据条数</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置数据条数
-                     * @param _limit 数据条数
+                     * 设置<p>数据条数</p>
+                     * @param _limit <p>数据条数</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取访问IP
-                     * @return RemoteIp 访问IP
+                     * 获取<p>访问IP</p>
+                     * @return RemoteIp <p>访问IP</p>
                      * 
                      */
                     std::vector<std::string> GetRemoteIp() const;
 
                     /**
-                     * 设置访问IP
-                     * @param _remoteIp 访问IP
+                     * 设置<p>访问IP</p>
+                     * @param _remoteIp <p>访问IP</p>
                      * 
                      */
                     void SetRemoteIp(const std::vector<std::string>& _remoteIp);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool RemoteIpHasBeenSet() const;
 
                     /**
-                     * 获取Request/Response 请求/返回, 非必填
-                     * @return TraceType Request/Response 请求/返回, 非必填
+                     * 获取<p>Request/Response 请求/返回, 非必填</p>
+                     * @return TraceType <p>Request/Response 请求/返回, 非必填</p>
                      * 
                      */
                     std::vector<std::string> GetTraceType() const;
 
                     /**
-                     * 设置Request/Response 请求/返回, 非必填
-                     * @param _traceType Request/Response 请求/返回, 非必填
+                     * 设置<p>Request/Response 请求/返回, 非必填</p>
+                     * @param _traceType <p>Request/Response 请求/返回, 非必填</p>
                      * 
                      */
                     void SetTraceType(const std::vector<std::string>& _traceType);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool TraceTypeHasBeenSet() const;
 
                     /**
-                     * 获取Public/Private 公网访问/内网访问, 非必填
-                     * @return NetType Public/Private 公网访问/内网访问, 非必填
+                     * 获取<p>Public/Private 公网访问/内网访问, 非必填</p>
+                     * @return NetType <p>Public/Private 公网访问/内网访问, 非必填</p>
                      * 
                      */
                     std::vector<std::string> GetNetType() const;
 
                     /**
-                     * 设置Public/Private 公网访问/内网访问, 非必填
-                     * @param _netType Public/Private 公网访问/内网访问, 非必填
+                     * 设置<p>Public/Private 公网访问/内网访问, 非必填</p>
+                     * @param _netType <p>Public/Private 公网访问/内网访问, 非必填</p>
                      * 
                      */
                     void SetNetType(const std::vector<std::string>& _netType);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool NetTypeHasBeenSet() const;
 
                     /**
-                     * 获取POST/GET/PUT/DELETE/HEAD/OPTIONS/PATCH/CONNECT/TRACE/CONNECT等, 非必填
-                     * @return ReqTypeOrRspStatus POST/GET/PUT/DELETE/HEAD/OPTIONS/PATCH/CONNECT/TRACE/CONNECT等, 非必填
+                     * 获取<p>POST/GET/PUT/DELETE/HEAD/OPTIONS/PATCH/CONNECT/TRACE/CONNECT等, 非必填</p>
+                     * @return ReqTypeOrRspStatus <p>POST/GET/PUT/DELETE/HEAD/OPTIONS/PATCH/CONNECT/TRACE/CONNECT等, 非必填</p>
                      * 
                      */
                     std::vector<std::string> GetReqTypeOrRspStatus() const;
 
                     /**
-                     * 设置POST/GET/PUT/DELETE/HEAD/OPTIONS/PATCH/CONNECT/TRACE/CONNECT等, 非必填
-                     * @param _reqTypeOrRspStatus POST/GET/PUT/DELETE/HEAD/OPTIONS/PATCH/CONNECT/TRACE/CONNECT等, 非必填
+                     * 设置<p>POST/GET/PUT/DELETE/HEAD/OPTIONS/PATCH/CONNECT/TRACE/CONNECT等, 非必填</p>
+                     * @param _reqTypeOrRspStatus <p>POST/GET/PUT/DELETE/HEAD/OPTIONS/PATCH/CONNECT/TRACE/CONNECT等, 非必填</p>
                      * 
                      */
                     void SetReqTypeOrRspStatus(const std::vector<std::string>& _reqTypeOrRspStatus);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool ReqTypeOrRspStatusHasBeenSet() const;
 
                     /**
-                     * 获取关键字模糊查询，支持Lucene Query String
-                     * @return SearchKey 关键字模糊查询，支持Lucene Query String
+                     * 获取<p>关键字模糊查询，支持Lucene Query String</p>
+                     * @return SearchKey <p>关键字模糊查询，支持Lucene Query String</p>
                      * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
-                     * 设置关键字模糊查询，支持Lucene Query String
-                     * @param _searchKey 关键字模糊查询，支持Lucene Query String
+                     * 设置<p>关键字模糊查询，支持Lucene Query String</p>
+                     * @param _searchKey <p>关键字模糊查询，支持Lucene Query String</p>
                      * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool SearchKeyHasBeenSet() const;
 
                     /**
-                     * 获取uri搜索
-                     * @return Uri uri搜索
+                     * 获取<p>uri搜索</p>
+                     * @return Uri <p>uri搜索</p>
                      * 
                      */
                     std::string GetUri() const;
 
                     /**
-                     * 设置uri搜索
-                     * @param _uri uri搜索
+                     * 设置<p>uri搜索</p>
+                     * @param _uri <p>uri搜索</p>
                      * 
                      */
                     void SetUri(const std::string& _uri);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool UriHasBeenSet() const;
 
                     /**
-                     * 获取集群节点IP
-                     * @return NodeIp 集群节点IP
+                     * 获取<p>集群节点IP</p>
+                     * @return NodeIp <p>集群节点IP</p>
                      * 
                      */
                     std::vector<std::string> GetNodeIp() const;
 
                     /**
-                     * 设置集群节点IP
-                     * @param _nodeIp 集群节点IP
+                     * 设置<p>集群节点IP</p>
+                     * @param _nodeIp <p>集群节点IP</p>
                      * 
                      */
                     void SetNodeIp(const std::vector<std::string>& _nodeIp);
@@ -297,73 +297,73 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ES集群ID
+                     * <p>ES集群ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * <p>开始时间</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * <p>结束时间</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 起始偏移量
+                     * <p>起始偏移量</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 数据条数
+                     * <p>数据条数</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 访问IP
+                     * <p>访问IP</p>
                      */
                     std::vector<std::string> m_remoteIp;
                     bool m_remoteIpHasBeenSet;
 
                     /**
-                     * Request/Response 请求/返回, 非必填
+                     * <p>Request/Response 请求/返回, 非必填</p>
                      */
                     std::vector<std::string> m_traceType;
                     bool m_traceTypeHasBeenSet;
 
                     /**
-                     * Public/Private 公网访问/内网访问, 非必填
+                     * <p>Public/Private 公网访问/内网访问, 非必填</p>
                      */
                     std::vector<std::string> m_netType;
                     bool m_netTypeHasBeenSet;
 
                     /**
-                     * POST/GET/PUT/DELETE/HEAD/OPTIONS/PATCH/CONNECT/TRACE/CONNECT等, 非必填
+                     * <p>POST/GET/PUT/DELETE/HEAD/OPTIONS/PATCH/CONNECT/TRACE/CONNECT等, 非必填</p>
                      */
                     std::vector<std::string> m_reqTypeOrRspStatus;
                     bool m_reqTypeOrRspStatusHasBeenSet;
 
                     /**
-                     * 关键字模糊查询，支持Lucene Query String
+                     * <p>关键字模糊查询，支持Lucene Query String</p>
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;
 
                     /**
-                     * uri搜索
+                     * <p>uri搜索</p>
                      */
                     std::string m_uri;
                     bool m_uriHasBeenSet;
 
                     /**
-                     * 集群节点IP
+                     * <p>集群节点IP</p>
                      */
                     std::vector<std::string> m_nodeIp;
                     bool m_nodeIpHasBeenSet;
