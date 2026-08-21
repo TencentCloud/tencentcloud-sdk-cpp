@@ -225,11 +225,11 @@ CoreInternalOutcome TopSqlTpl::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("IoWaitTimeMin") && !value["IoWaitTimeMin"].IsNull())
     {
-        if (!value["IoWaitTimeMin"].IsInt64())
+        if (!value["IoWaitTimeMin"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `TopSqlTpl.IoWaitTimeMin` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TopSqlTpl.IoWaitTimeMin` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_ioWaitTimeMin = value["IoWaitTimeMin"].GetInt64();
+        m_ioWaitTimeMin = value["IoWaitTimeMin"].GetDouble();
         m_ioWaitTimeMinHasBeenSet = true;
     }
 
@@ -941,12 +941,12 @@ bool TopSqlTpl::CpuTimeMaxHasBeenSet() const
     return m_cpuTimeMaxHasBeenSet;
 }
 
-int64_t TopSqlTpl::GetIoWaitTimeMin() const
+double TopSqlTpl::GetIoWaitTimeMin() const
 {
     return m_ioWaitTimeMin;
 }
 
-void TopSqlTpl::SetIoWaitTimeMin(const int64_t& _ioWaitTimeMin)
+void TopSqlTpl::SetIoWaitTimeMin(const double& _ioWaitTimeMin)
 {
     m_ioWaitTimeMin = _ioWaitTimeMin;
     m_ioWaitTimeMinHasBeenSet = true;

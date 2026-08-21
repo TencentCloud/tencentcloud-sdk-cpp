@@ -3940,6 +3940,56 @@ MonitorClient::DescribeGrafanaNotificationChannelsOutcomeCallable MonitorClient:
     return prom->get_future();
 }
 
+MonitorClient::DescribeGrafanaVersionsOutcome MonitorClient::DescribeGrafanaVersions(const DescribeGrafanaVersionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGrafanaVersions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGrafanaVersionsResponse rsp = DescribeGrafanaVersionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGrafanaVersionsOutcome(rsp);
+        else
+            return DescribeGrafanaVersionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGrafanaVersionsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeGrafanaVersionsAsync(const DescribeGrafanaVersionsRequest& request, const DescribeGrafanaVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeGrafanaVersionsRequest&;
+    using Resp = DescribeGrafanaVersionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeGrafanaVersions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribeGrafanaVersionsOutcomeCallable MonitorClient::DescribeGrafanaVersionsCallable(const DescribeGrafanaVersionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeGrafanaVersionsOutcome>>();
+    DescribeGrafanaVersionsAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribeGrafanaVersionsRequest&,
+        DescribeGrafanaVersionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MonitorClient::DescribeGrafanaWhiteListOutcome MonitorClient::DescribeGrafanaWhiteList(const DescribeGrafanaWhiteListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGrafanaWhiteList");

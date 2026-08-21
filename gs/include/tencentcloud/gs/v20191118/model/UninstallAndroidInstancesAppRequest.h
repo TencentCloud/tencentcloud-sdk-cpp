@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return AndroidInstanceIds 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return AndroidInstanceIds <p>实例ID</p>
                      * 
                      */
                     std::vector<std::string> GetAndroidInstanceIds() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _androidInstanceIds 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _androidInstanceIds <p>实例ID</p>
                      * 
                      */
                     void SetAndroidInstanceIds(const std::vector<std::string>& _androidInstanceIds);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AndroidInstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取应用ID
-                     * @return AndroidAppId 应用ID
+                     * 获取<p>应用ID</p>
+                     * @return AndroidAppId <p>应用ID</p>
                      * 
                      */
                     std::string GetAndroidAppId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _androidAppId 应用ID
+                     * 设置<p>应用ID</p>
+                     * @param _androidAppId <p>应用ID</p>
                      * 
                      */
                     void SetAndroidAppId(const std::string& _androidAppId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool AndroidAppIdHasBeenSet() const;
 
                     /**
-                     * 获取包名
-                     * @return PackageName 包名
+                     * 获取<p>包名</p>
+                     * @return PackageName <p>包名</p>
                      * 
                      */
                     std::string GetPackageName() const;
 
                     /**
-                     * 设置包名
-                     * @param _packageName 包名
+                     * 设置<p>包名</p>
+                     * @param _packageName <p>包名</p>
                      * 
                      */
                     void SetPackageName(const std::string& _packageName);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::vector<std::string> m_androidInstanceIds;
                     bool m_androidInstanceIdsHasBeenSet;
 
                     /**
-                     * 应用ID
+                     * <p>应用ID</p>
                      */
                     std::string m_androidAppId;
                     bool m_androidAppIdHasBeenSet;
 
                     /**
-                     * 包名
+                     * <p>包名</p>
                      */
                     std::string m_packageName;
                     bool m_packageNameHasBeenSet;

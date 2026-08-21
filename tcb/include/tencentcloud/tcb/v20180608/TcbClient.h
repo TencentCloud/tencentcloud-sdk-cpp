@@ -29,6 +29,8 @@
 #include <tencentcloud/tcb/v20180608/model/AllocateEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/AssumeRoleForAllocatedEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/AssumeRoleForAllocatedEnvResponse.h>
+#include <tencentcloud/tcb/v20180608/model/BindClsRequest.h>
+#include <tencentcloud/tcb/v20180608/model/BindClsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/BindStorageSourceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/BindStorageSourceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CheckTcbServiceRequest.h>
@@ -250,6 +252,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AssumeRoleForAllocatedEnvResponse> AssumeRoleForAllocatedEnvOutcome;
                 typedef std::future<AssumeRoleForAllocatedEnvOutcome> AssumeRoleForAllocatedEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::AssumeRoleForAllocatedEnvRequest&, AssumeRoleForAllocatedEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssumeRoleForAllocatedEnvAsyncHandler;
+                typedef Outcome<Core::Error, Model::BindClsResponse> BindClsOutcome;
+                typedef std::future<BindClsOutcome> BindClsOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::BindClsRequest&, BindClsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindClsAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindStorageSourceResponse> BindStorageSourceOutcome;
                 typedef std::future<BindStorageSourceOutcome> BindStorageSourceOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::BindStorageSourceRequest&, BindStorageSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindStorageSourceAsyncHandler;
@@ -578,6 +583,17 @@ namespace TencentCloud
                 AssumeRoleForAllocatedEnvOutcome AssumeRoleForAllocatedEnv(const Model::AssumeRoleForAllocatedEnvRequest &request);
                 void AssumeRoleForAllocatedEnvAsync(const Model::AssumeRoleForAllocatedEnvRequest& request, const AssumeRoleForAllocatedEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AssumeRoleForAllocatedEnvOutcomeCallable AssumeRoleForAllocatedEnvCallable(const Model::AssumeRoleForAllocatedEnvRequest& request);
+
+                /**
+                 *绑定自定义CLS日志主题
+
+**绑定自定义 CLS 日志主题需调用腾讯云 CLS「[DescribeTopics](https://cloud.tencent.com/document/api/614/56454)」接口，按传入的 `Region` 拉取用户日志主题列表，仅筛选 `AssumerName` 为空的自有主题，并将其 `LogsetId`、`TopicId` 分别回填为绑定参数 `ClsLogsetId`、`ClsTopicId`（地域取请求参数 `Region` 作为 `ClsRegion`）。**
+                 * @param req BindClsRequest
+                 * @return BindClsOutcome
+                 */
+                BindClsOutcome BindCls(const Model::BindClsRequest &request);
+                void BindClsAsync(const Model::BindClsRequest& request, const BindClsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindClsOutcomeCallable BindClsCallable(const Model::BindClsRequest& request);
 
                 /**
                  *为云存储绑定外部云存储源。

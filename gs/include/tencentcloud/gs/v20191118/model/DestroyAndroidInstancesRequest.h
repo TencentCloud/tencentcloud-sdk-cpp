@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取安卓实例 ID 列表
-                     * @return AndroidInstanceIds 安卓实例 ID 列表
+                     * 获取<p>安卓实例 ID 列表</p>
+                     * @return AndroidInstanceIds <p>安卓实例 ID 列表</p>
                      * 
                      */
                     std::vector<std::string> GetAndroidInstanceIds() const;
 
                     /**
-                     * 设置安卓实例 ID 列表
-                     * @param _androidInstanceIds 安卓实例 ID 列表
+                     * 设置<p>安卓实例 ID 列表</p>
+                     * @param _androidInstanceIds <p>安卓实例 ID 列表</p>
                      * 
                      */
                     void SetAndroidInstanceIds(const std::vector<std::string>& _androidInstanceIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 安卓实例 ID 列表
+                     * <p>安卓实例 ID 列表</p>
                      */
                     std::vector<std::string> m_androidInstanceIds;
                     bool m_androidInstanceIdsHasBeenSet;

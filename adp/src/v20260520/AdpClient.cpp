@@ -340,6 +340,56 @@ AdpClient::CreateConversationOutcomeCallable AdpClient::CreateConversationCallab
     return prom->get_future();
 }
 
+AdpClient::CreateMsgRecordCategoryOutcome AdpClient::CreateMsgRecordCategory(const CreateMsgRecordCategoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMsgRecordCategory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMsgRecordCategoryResponse rsp = CreateMsgRecordCategoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMsgRecordCategoryOutcome(rsp);
+        else
+            return CreateMsgRecordCategoryOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMsgRecordCategoryOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::CreateMsgRecordCategoryAsync(const CreateMsgRecordCategoryRequest& request, const CreateMsgRecordCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMsgRecordCategoryRequest&;
+    using Resp = CreateMsgRecordCategoryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMsgRecordCategory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::CreateMsgRecordCategoryOutcomeCallable AdpClient::CreateMsgRecordCategoryCallable(const CreateMsgRecordCategoryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMsgRecordCategoryOutcome>>();
+    CreateMsgRecordCategoryAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const CreateMsgRecordCategoryRequest&,
+        CreateMsgRecordCategoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::CreatePluginOutcome AdpClient::CreatePlugin(const CreatePluginRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePlugin");
@@ -932,6 +982,56 @@ AdpClient::DeleteConversationOutcomeCallable AdpClient::DeleteConversationCallab
         const AdpClient*,
         const DeleteConversationRequest&,
         DeleteConversationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DeleteMsgRecordCategoryOutcome AdpClient::DeleteMsgRecordCategory(const DeleteMsgRecordCategoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteMsgRecordCategory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteMsgRecordCategoryResponse rsp = DeleteMsgRecordCategoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteMsgRecordCategoryOutcome(rsp);
+        else
+            return DeleteMsgRecordCategoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteMsgRecordCategoryOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DeleteMsgRecordCategoryAsync(const DeleteMsgRecordCategoryRequest& request, const DeleteMsgRecordCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteMsgRecordCategoryRequest&;
+    using Resp = DeleteMsgRecordCategoryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteMsgRecordCategory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DeleteMsgRecordCategoryOutcomeCallable AdpClient::DeleteMsgRecordCategoryCallable(const DeleteMsgRecordCategoryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteMsgRecordCategoryOutcome>>();
+    DeleteMsgRecordCategoryAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DeleteMsgRecordCategoryRequest&,
+        DeleteMsgRecordCategoryOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2190,6 +2290,106 @@ AdpClient::DescribeModelListOutcomeCallable AdpClient::DescribeModelListCallable
     return prom->get_future();
 }
 
+AdpClient::DescribeMsgRecordCategoryListOutcome AdpClient::DescribeMsgRecordCategoryList(const DescribeMsgRecordCategoryListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMsgRecordCategoryList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMsgRecordCategoryListResponse rsp = DescribeMsgRecordCategoryListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMsgRecordCategoryListOutcome(rsp);
+        else
+            return DescribeMsgRecordCategoryListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMsgRecordCategoryListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeMsgRecordCategoryListAsync(const DescribeMsgRecordCategoryListRequest& request, const DescribeMsgRecordCategoryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMsgRecordCategoryListRequest&;
+    using Resp = DescribeMsgRecordCategoryListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMsgRecordCategoryList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeMsgRecordCategoryListOutcomeCallable AdpClient::DescribeMsgRecordCategoryListCallable(const DescribeMsgRecordCategoryListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMsgRecordCategoryListOutcome>>();
+    DescribeMsgRecordCategoryListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeMsgRecordCategoryListRequest&,
+        DescribeMsgRecordCategoryListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeMsgRecordListOutcome AdpClient::DescribeMsgRecordList(const DescribeMsgRecordListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMsgRecordList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMsgRecordListResponse rsp = DescribeMsgRecordListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMsgRecordListOutcome(rsp);
+        else
+            return DescribeMsgRecordListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMsgRecordListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeMsgRecordListAsync(const DescribeMsgRecordListRequest& request, const DescribeMsgRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMsgRecordListRequest&;
+    using Resp = DescribeMsgRecordListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMsgRecordList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeMsgRecordListOutcomeCallable AdpClient::DescribeMsgRecordListCallable(const DescribeMsgRecordListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMsgRecordListOutcome>>();
+    DescribeMsgRecordListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeMsgRecordListRequest&,
+        DescribeMsgRecordListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::DescribePluginOutcome AdpClient::DescribePlugin(const DescribePluginRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePlugin");
@@ -3182,6 +3382,56 @@ AdpClient::ModifyConversationOutcomeCallable AdpClient::ModifyConversationCallab
         const AdpClient*,
         const ModifyConversationRequest&,
         ModifyConversationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::ModifyMsgRecordCategoryOutcome AdpClient::ModifyMsgRecordCategory(const ModifyMsgRecordCategoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMsgRecordCategory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMsgRecordCategoryResponse rsp = ModifyMsgRecordCategoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMsgRecordCategoryOutcome(rsp);
+        else
+            return ModifyMsgRecordCategoryOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMsgRecordCategoryOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::ModifyMsgRecordCategoryAsync(const ModifyMsgRecordCategoryRequest& request, const ModifyMsgRecordCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyMsgRecordCategoryRequest&;
+    using Resp = ModifyMsgRecordCategoryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyMsgRecordCategory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::ModifyMsgRecordCategoryOutcomeCallable AdpClient::ModifyMsgRecordCategoryCallable(const ModifyMsgRecordCategoryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyMsgRecordCategoryOutcome>>();
+    ModifyMsgRecordCategoryAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const ModifyMsgRecordCategoryRequest&,
+        ModifyMsgRecordCategoryOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

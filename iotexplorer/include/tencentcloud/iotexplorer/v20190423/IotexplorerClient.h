@@ -149,6 +149,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteStudioProductResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeSeeCallbackRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeSeeCallbackResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeSeeTasksByConditionRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeSeeTasksByConditionResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeTalkAIBotRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeTalkAIBotResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeTalkAgentRequest.h>
@@ -710,6 +712,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTWeSeeCallbackResponse> DeleteTWeSeeCallbackOutcome;
                 typedef std::future<DeleteTWeSeeCallbackOutcome> DeleteTWeSeeCallbackOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteTWeSeeCallbackRequest&, DeleteTWeSeeCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTWeSeeCallbackAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTWeSeeTasksByConditionResponse> DeleteTWeSeeTasksByConditionOutcome;
+                typedef std::future<DeleteTWeSeeTasksByConditionOutcome> DeleteTWeSeeTasksByConditionOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DeleteTWeSeeTasksByConditionRequest&, DeleteTWeSeeTasksByConditionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTWeSeeTasksByConditionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTWeTalkAIBotResponse> DeleteTWeTalkAIBotOutcome;
                 typedef std::future<DeleteTWeTalkAIBotOutcome> DeleteTWeTalkAIBotOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteTWeTalkAIBotRequest&, DeleteTWeTalkAIBotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTWeTalkAIBotAsyncHandler;
@@ -1854,6 +1859,15 @@ namespace TencentCloud
                 DeleteTWeSeeCallbackOutcome DeleteTWeSeeCallback(const Model::DeleteTWeSeeCallbackRequest &request);
                 void DeleteTWeSeeCallbackAsync(const Model::DeleteTWeSeeCallbackRequest& request, const DeleteTWeSeeCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTWeSeeCallbackOutcomeCallable DeleteTWeSeeCallbackCallable(const Model::DeleteTWeSeeCallbackRequest& request);
+
+                /**
+                 *按条件删除指定设备和算法类目下的 TWeSee 任务及其关联数据。
+                 * @param req DeleteTWeSeeTasksByConditionRequest
+                 * @return DeleteTWeSeeTasksByConditionOutcome
+                 */
+                DeleteTWeSeeTasksByConditionOutcome DeleteTWeSeeTasksByCondition(const Model::DeleteTWeSeeTasksByConditionRequest &request);
+                void DeleteTWeSeeTasksByConditionAsync(const Model::DeleteTWeSeeTasksByConditionRequest& request, const DeleteTWeSeeTasksByConditionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTWeSeeTasksByConditionOutcomeCallable DeleteTWeSeeTasksByConditionCallable(const Model::DeleteTWeSeeTasksByConditionRequest& request);
 
                 /**
                  *用于删除TWeTalk智能体。

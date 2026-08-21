@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取账单月份，格式为2023-04
-                     * @return Month 账单月份，格式为2023-04
+                     * 获取<p>账单月份，格式为2023-04</p>
+                     * @return Month <p>账单月份，格式为2023-04</p>
                      * 
                      */
                     std::string GetMonth() const;
 
                     /**
-                     * 设置账单月份，格式为2023-04
-                     * @param _month 账单月份，格式为2023-04
+                     * 设置<p>账单月份，格式为2023-04</p>
+                     * @param _month <p>账单月份，格式为2023-04</p>
                      * 
                      */
                     void SetMonth(const std::string& _month);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool MonthHasBeenSet() const;
 
                     /**
-                     * 获取账单维度类型，枚举值如下：business、project、region、payMode、tag
-                     * @return GroupType 账单维度类型，枚举值如下：business、project、region、payMode、tag
+                     * 获取<p>账单维度类型，枚举值如下：business、project、region、payMode、tag</p>
+                     * @return GroupType <p>账单维度类型，枚举值如下：business、project、region、payMode、tag</p>
                      * 
                      */
                     std::string GetGroupType() const;
 
                     /**
-                     * 设置账单维度类型，枚举值如下：business、project、region、payMode、tag
-                     * @param _groupType 账单维度类型，枚举值如下：business、project、region、payMode、tag
+                     * 设置<p>账单维度类型，枚举值如下：business、project、region、payMode、tag</p>
+                     * @param _groupType <p>账单维度类型，枚举值如下：business、project、region、payMode、tag</p>
                      * 
                      */
                     void SetGroupType(const std::string& _groupType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool GroupTypeHasBeenSet() const;
 
                     /**
-                     * 获取标签键，GroupType=tag获取标签维度账单时传
-                     * @return TagKey 标签键，GroupType=tag获取标签维度账单时传
+                     * 获取<p>标签键，GroupType=tag获取标签维度账单时传</p>
+                     * @return TagKey <p>标签键，GroupType=tag获取标签维度账单时传</p>
                      * 
                      */
                     std::vector<std::string> GetTagKey() const;
 
                     /**
-                     * 设置标签键，GroupType=tag获取标签维度账单时传
-                     * @param _tagKey 标签键，GroupType=tag获取标签维度账单时传
+                     * 设置<p>标签键，GroupType=tag获取标签维度账单时传</p>
+                     * @param _tagKey <p>标签键，GroupType=tag获取标签维度账单时传</p>
                      * 
                      */
                     void SetTagKey(const std::vector<std::string>& _tagKey);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 账单月份，格式为2023-04
+                     * <p>账单月份，格式为2023-04</p>
                      */
                     std::string m_month;
                     bool m_monthHasBeenSet;
 
                     /**
-                     * 账单维度类型，枚举值如下：business、project、region、payMode、tag
+                     * <p>账单维度类型，枚举值如下：business、project、region、payMode、tag</p>
                      */
                     std::string m_groupType;
                     bool m_groupTypeHasBeenSet;
 
                     /**
-                     * 标签键，GroupType=tag获取标签维度账单时传
+                     * <p>标签键，GroupType=tag获取标签维度账单时传</p>
                      */
                     std::vector<std::string> m_tagKey;
                     bool m_tagKeyHasBeenSet;

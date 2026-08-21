@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取安卓应用列表
-                     * @return Apps 安卓应用列表
+                     * 获取<p>安卓应用列表</p>
+                     * @return Apps <p>安卓应用列表</p>
                      * 
                      */
                     std::vector<AndroidApp> GetApps() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool AppsHasBeenSet() const;
 
                     /**
-                     * 获取安卓应用列表长度
-                     * @return TotalCount 安卓应用列表长度
+                     * 获取<p>安卓应用列表长度</p>
+                     * @return TotalCount <p>安卓应用列表长度</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 安卓应用列表
+                     * <p>安卓应用列表</p>
                      */
                     std::vector<AndroidApp> m_apps;
                     bool m_appsHasBeenSet;
 
                     /**
-                     * 安卓应用列表长度
+                     * <p>安卓应用列表长度</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

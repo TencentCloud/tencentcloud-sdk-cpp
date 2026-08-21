@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例名
-                     * @return InstanceName 实例名
+                     * 获取<p>实例名</p>
+                     * @return InstanceName <p>实例名</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名
-                     * @param _instanceName 实例名
+                     * 设置<p>实例名</p>
+                     * @param _instanceName <p>实例名</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取VPC ID (私有网络 ID)
-                     * @return VpcId VPC ID (私有网络 ID)
+                     * 获取<p>VPC ID (私有网络 ID)</p>
+                     * @return VpcId <p>VPC ID (私有网络 ID)</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC ID (私有网络 ID)
-                     * @param _vpcId VPC ID (私有网络 ID)
+                     * 设置<p>VPC ID (私有网络 ID)</p>
+                     * @param _vpcId <p>VPC ID (私有网络 ID)</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -86,19 +86,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网 ID 数组(VPC ID下的子网 ID，只取第一个)。
-注意：并不是所有可用区都可用（可通过 monitor:DescribePrometheusZones 接口获取可用区状态，选择 ZoneState 和ZoneResourceState 都为1的可用区）
-                     * @return SubnetIds 子网 ID 数组(VPC ID下的子网 ID，只取第一个)。
-注意：并不是所有可用区都可用（可通过 monitor:DescribePrometheusZones 接口获取可用区状态，选择 ZoneState 和ZoneResourceState 都为1的可用区）
+                     * 获取<p>子网 ID 数组(VPC ID下的子网 ID，只取第一个)。<br>注意：并不是所有可用区都可用（可通过 monitor:DescribePrometheusZones 接口获取可用区状态，选择 ZoneState 和ZoneResourceState 都为1的可用区）</p>
+                     * @return SubnetIds <p>子网 ID 数组(VPC ID下的子网 ID，只取第一个)。<br>注意：并不是所有可用区都可用（可通过 monitor:DescribePrometheusZones 接口获取可用区状态，选择 ZoneState 和ZoneResourceState 都为1的可用区）</p>
                      * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
-                     * 设置子网 ID 数组(VPC ID下的子网 ID，只取第一个)。
-注意：并不是所有可用区都可用（可通过 monitor:DescribePrometheusZones 接口获取可用区状态，选择 ZoneState 和ZoneResourceState 都为1的可用区）
-                     * @param _subnetIds 子网 ID 数组(VPC ID下的子网 ID，只取第一个)。
-注意：并不是所有可用区都可用（可通过 monitor:DescribePrometheusZones 接口获取可用区状态，选择 ZoneState 和ZoneResourceState 都为1的可用区）
+                     * 设置<p>子网 ID 数组(VPC ID下的子网 ID，只取第一个)。<br>注意：并不是所有可用区都可用（可通过 monitor:DescribePrometheusZones 接口获取可用区状态，选择 ZoneState 和ZoneResourceState 都为1的可用区）</p>
+                     * @param _subnetIds <p>子网 ID 数组(VPC ID下的子网 ID，只取第一个)。<br>注意：并不是所有可用区都可用（可通过 monitor:DescribePrometheusZones 接口获取可用区状态，选择 ZoneState 和ZoneResourceState 都为1的可用区）</p>
                      * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
@@ -111,15 +107,15 @@ namespace TencentCloud
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
-                     * 获取是否启用外网
-                     * @return EnableInternet 是否启用外网
+                     * 获取<p>是否启用外网</p>
+                     * @return EnableInternet <p>是否启用外网</p>
                      * 
                      */
                     bool GetEnableInternet() const;
 
                     /**
-                     * 设置是否启用外网
-                     * @param _enableInternet 是否启用外网
+                     * 设置<p>是否启用外网</p>
+                     * @param _enableInternet <p>是否启用外网</p>
                      * 
                      */
                     void SetEnableInternet(const bool& _enableInternet);
@@ -132,15 +128,15 @@ namespace TencentCloud
                     bool EnableInternetHasBeenSet() const;
 
                     /**
-                     * 获取Grafana 初始密码(国际站用户必填，国内站用户可不填，不填时会生成随机密码并给主账号发送通知)
-                     * @return GrafanaInitPassword Grafana 初始密码(国际站用户必填，国内站用户可不填，不填时会生成随机密码并给主账号发送通知)
+                     * 获取<p>Grafana 初始密码(国际站用户必填，国内站用户可不填，不填时会生成随机密码并给主账号发送通知)</p>
+                     * @return GrafanaInitPassword <p>Grafana 初始密码(国际站用户必填，国内站用户可不填，不填时会生成随机密码并给主账号发送通知)</p>
                      * 
                      */
                     std::string GetGrafanaInitPassword() const;
 
                     /**
-                     * 设置Grafana 初始密码(国际站用户必填，国内站用户可不填，不填时会生成随机密码并给主账号发送通知)
-                     * @param _grafanaInitPassword Grafana 初始密码(国际站用户必填，国内站用户可不填，不填时会生成随机密码并给主账号发送通知)
+                     * 设置<p>Grafana 初始密码(国际站用户必填，国内站用户可不填，不填时会生成随机密码并给主账号发送通知)</p>
+                     * @param _grafanaInitPassword <p>Grafana 初始密码(国际站用户必填，国内站用户可不填，不填时会生成随机密码并给主账号发送通知)</p>
                      * 
                      */
                     void SetGrafanaInitPassword(const std::string& _grafanaInitPassword);
@@ -153,15 +149,15 @@ namespace TencentCloud
                     bool GrafanaInitPasswordHasBeenSet() const;
 
                     /**
-                     * 获取标签
-                     * @return TagSpecification 标签
+                     * 获取<p>标签</p>
+                     * @return TagSpecification <p>标签</p>
                      * 
                      */
                     std::vector<PrometheusTag> GetTagSpecification() const;
 
                     /**
-                     * 设置标签
-                     * @param _tagSpecification 标签
+                     * 设置<p>标签</p>
+                     * @param _tagSpecification <p>标签</p>
                      * 
                      */
                     void SetTagSpecification(const std::vector<PrometheusTag>& _tagSpecification);
@@ -174,15 +170,36 @@ namespace TencentCloud
                     bool TagSpecificationHasBeenSet() const;
 
                     /**
-                     * 获取是否自动选择代金券，默认为 false
-                     * @return AutoVoucher 是否自动选择代金券，默认为 false
+                     * 获取<p>自定义版本，可用版本从 DescribeGrafanaVersions 接口获取</p>
+                     * @return DockerImage <p>自定义版本，可用版本从 DescribeGrafanaVersions 接口获取</p>
+                     * 
+                     */
+                    std::string GetDockerImage() const;
+
+                    /**
+                     * 设置<p>自定义版本，可用版本从 DescribeGrafanaVersions 接口获取</p>
+                     * @param _dockerImage <p>自定义版本，可用版本从 DescribeGrafanaVersions 接口获取</p>
+                     * 
+                     */
+                    void SetDockerImage(const std::string& _dockerImage);
+
+                    /**
+                     * 判断参数 DockerImage 是否已赋值
+                     * @return DockerImage 是否已赋值
+                     * 
+                     */
+                    bool DockerImageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否自动选择代金券，默认为 false</p>
+                     * @return AutoVoucher <p>是否自动选择代金券，默认为 false</p>
                      * 
                      */
                     bool GetAutoVoucher() const;
 
                     /**
-                     * 设置是否自动选择代金券，默认为 false
-                     * @param _autoVoucher 是否自动选择代金券，默认为 false
+                     * 设置<p>是否自动选择代金券，默认为 false</p>
+                     * @param _autoVoucher <p>是否自动选择代金券，默认为 false</p>
                      * 
                      */
                     void SetAutoVoucher(const bool& _autoVoucher);
@@ -197,44 +214,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例名
+                     * <p>实例名</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * VPC ID (私有网络 ID)
+                     * <p>VPC ID (私有网络 ID)</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网 ID 数组(VPC ID下的子网 ID，只取第一个)。
-注意：并不是所有可用区都可用（可通过 monitor:DescribePrometheusZones 接口获取可用区状态，选择 ZoneState 和ZoneResourceState 都为1的可用区）
+                     * <p>子网 ID 数组(VPC ID下的子网 ID，只取第一个)。<br>注意：并不是所有可用区都可用（可通过 monitor:DescribePrometheusZones 接口获取可用区状态，选择 ZoneState 和ZoneResourceState 都为1的可用区）</p>
                      */
                     std::vector<std::string> m_subnetIds;
                     bool m_subnetIdsHasBeenSet;
 
                     /**
-                     * 是否启用外网
+                     * <p>是否启用外网</p>
                      */
                     bool m_enableInternet;
                     bool m_enableInternetHasBeenSet;
 
                     /**
-                     * Grafana 初始密码(国际站用户必填，国内站用户可不填，不填时会生成随机密码并给主账号发送通知)
+                     * <p>Grafana 初始密码(国际站用户必填，国内站用户可不填，不填时会生成随机密码并给主账号发送通知)</p>
                      */
                     std::string m_grafanaInitPassword;
                     bool m_grafanaInitPasswordHasBeenSet;
 
                     /**
-                     * 标签
+                     * <p>标签</p>
                      */
                     std::vector<PrometheusTag> m_tagSpecification;
                     bool m_tagSpecificationHasBeenSet;
 
                     /**
-                     * 是否自动选择代金券，默认为 false
+                     * <p>自定义版本，可用版本从 DescribeGrafanaVersions 接口获取</p>
+                     */
+                    std::string m_dockerImage;
+                    bool m_dockerImageHasBeenSet;
+
+                    /**
+                     * <p>是否自动选择代金券，默认为 false</p>
                      */
                     bool m_autoVoucher;
                     bool m_autoVoucherHasBeenSet;

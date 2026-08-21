@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取声音复刻任务结果
-                     * @return Data 声音复刻任务结果
+                     * 获取<p>声音复刻任务结果</p>
+                     * @return Data <p>声音复刻任务结果</p>
                      * 
                      */
                     DescribeVRSTaskStatusRespData GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 声音复刻任务结果
+                     * <p>声音复刻任务结果</p>
                      */
                     DescribeVRSTaskStatusRespData m_data;
                     bool m_dataHasBeenSet;

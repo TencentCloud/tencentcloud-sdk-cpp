@@ -48,7 +48,8 @@ FileSystemInfo::FileSystemInfo() :
     m_autoScaleUpRuleHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_exstraPerformanceInfoHasBeenSet(false),
-    m_metaTypeHasBeenSet(false)
+    m_metaTypeHasBeenSet(false),
+    m_scenarioHasBeenSet(false)
 {
 }
 
@@ -378,6 +379,16 @@ CoreInternalOutcome FileSystemInfo::Deserialize(const rapidjson::Value &value)
         m_metaTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Scenario") && !value["Scenario"].IsNull())
+    {
+        if (!value["Scenario"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileSystemInfo.Scenario` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scenario = string(value["Scenario"].GetString());
+        m_scenarioHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -624,6 +635,14 @@ void FileSystemInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "MetaType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_metaType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scenarioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scenario";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scenario.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1075,5 +1094,21 @@ void FileSystemInfo::SetMetaType(const string& _metaType)
 bool FileSystemInfo::MetaTypeHasBeenSet() const
 {
     return m_metaTypeHasBeenSet;
+}
+
+string FileSystemInfo::GetScenario() const
+{
+    return m_scenario;
+}
+
+void FileSystemInfo::SetScenario(const string& _scenario)
+{
+    m_scenario = _scenario;
+    m_scenarioHasBeenSet = true;
+}
+
+bool FileSystemInfo::ScenarioHasBeenSet() const
+{
+    return m_scenarioHasBeenSet;
 }
 

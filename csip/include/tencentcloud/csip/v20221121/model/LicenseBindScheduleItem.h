@@ -1,0 +1,185 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_CSIP_V20221121_MODEL_LICENSEBINDSCHEDULEITEM_H_
+#define TENCENTCLOUD_CSIP_V20221121_MODEL_LICENSEBINDSCHEDULEITEM_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Csip
+    {
+        namespace V20221121
+        {
+            namespace Model
+            {
+                /**
+                * 单台机器的绑定状态明细
+                */
+                class LicenseBindScheduleItem : public AbstractModel
+                {
+                public:
+                    LicenseBindScheduleItem();
+                    ~LicenseBindScheduleItem() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Quuid 实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetQuuid() const;
+
+                    /**
+                     * 设置实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _quuid 实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetQuuid(const std::string& _quuid);
+
+                    /**
+                     * 判断参数 Quuid 是否已赋值
+                     * @return Quuid 是否已赋值
+                     * 
+                     */
+                    bool QuuidHasBeenSet() const;
+
+                    /**
+                     * 获取绑定状态：0-初始化 1-成功 2-失败 3-跳过
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 绑定状态：0-初始化 1-成功 2-失败 3-跳过
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置绑定状态：0-初始化 1-成功 2-失败 3-跳过
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _status 绑定状态：0-初始化 1-成功 2-失败 3-跳过
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ErrMsg 错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetErrMsg() const;
+
+                    /**
+                     * 设置错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _errMsg 错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetErrMsg(const std::string& _errMsg);
+
+                    /**
+                     * 判断参数 ErrMsg 是否已赋值
+                     * @return ErrMsg 是否已赋值
+                     * 
+                     */
+                    bool ErrMsgHasBeenSet() const;
+
+                    /**
+                     * 获取修复建议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FixMessage 修复建议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFixMessage() const;
+
+                    /**
+                     * 设置修复建议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fixMessage 修复建议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFixMessage(const std::string& _fixMessage);
+
+                    /**
+                     * 判断参数 FixMessage 是否已赋值
+                     * @return FixMessage 是否已赋值
+                     * 
+                     */
+                    bool FixMessageHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_quuid;
+                    bool m_quuidHasBeenSet;
+
+                    /**
+                     * 绑定状态：0-初始化 1-成功 2-失败 3-跳过
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_errMsg;
+                    bool m_errMsgHasBeenSet;
+
+                    /**
+                     * 修复建议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fixMessage;
+                    bool m_fixMessageHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_CSIP_V20221121_MODEL_LICENSEBINDSCHEDULEITEM_H_

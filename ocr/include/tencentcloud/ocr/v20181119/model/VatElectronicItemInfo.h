@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目名称
-                     * @return Name 项目名称
+                     * 获取<p>项目名称</p>
+                     * @return Name <p>项目名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置项目名称
-                     * @param _name 项目名称
+                     * 设置<p>项目名称</p>
+                     * @param _name <p>项目名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取数量
-                     * @return Quantity 数量
+                     * 获取<p>数量</p>
+                     * @return Quantity <p>数量</p>
                      * 
                      */
                     std::string GetQuantity() const;
 
                     /**
-                     * 设置数量
-                     * @param _quantity 数量
+                     * 设置<p>数量</p>
+                     * @param _quantity <p>数量</p>
                      * 
                      */
                     void SetQuantity(const std::string& _quantity);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool QuantityHasBeenSet() const;
 
                     /**
-                     * 获取规格型号
-                     * @return Specification 规格型号
+                     * 获取<p>规格型号</p>
+                     * @return Specification <p>规格型号</p>
                      * 
                      */
                     std::string GetSpecification() const;
 
                     /**
-                     * 设置规格型号
-                     * @param _specification 规格型号
+                     * 设置<p>规格型号</p>
+                     * @param _specification <p>规格型号</p>
                      * 
                      */
                     void SetSpecification(const std::string& _specification);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool SpecificationHasBeenSet() const;
 
                     /**
-                     * 获取单价
-                     * @return Price 单价
+                     * 获取<p>单价</p>
+                     * @return Price <p>单价</p>
                      * 
                      */
                     std::string GetPrice() const;
 
                     /**
-                     * 设置单价
-                     * @param _price 单价
+                     * 设置<p>单价</p>
+                     * @param _price <p>单价</p>
                      * 
                      */
                     void SetPrice(const std::string& _price);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool PriceHasBeenSet() const;
 
                     /**
-                     * 获取金额
-                     * @return Total 金额
+                     * 获取<p>金额</p>
+                     * @return Total <p>金额</p>
                      * 
                      */
                     std::string GetTotal() const;
 
                     /**
-                     * 设置金额
-                     * @param _total 金额
+                     * 设置<p>金额</p>
+                     * @param _total <p>金额</p>
                      * 
                      */
                     void SetTotal(const std::string& _total);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取税率
-                     * @return TaxRate 税率
+                     * 获取<p>税率</p>
+                     * @return TaxRate <p>税率</p>
                      * 
                      */
                     std::string GetTaxRate() const;
 
                     /**
-                     * 设置税率
-                     * @param _taxRate 税率
+                     * 设置<p>税率</p>
+                     * @param _taxRate <p>税率</p>
                      * 
                      */
                     void SetTaxRate(const std::string& _taxRate);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool TaxRateHasBeenSet() const;
 
                     /**
-                     * 获取税额
-                     * @return Tax 税额
+                     * 获取<p>税额</p>
+                     * @return Tax <p>税额</p>
                      * 
                      */
                     std::string GetTax() const;
 
                     /**
-                     * 设置税额
-                     * @param _tax 税额
+                     * 设置<p>税额</p>
+                     * @param _tax <p>税额</p>
                      * 
                      */
                     void SetTax(const std::string& _tax);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool TaxHasBeenSet() const;
 
                     /**
-                     * 获取单位
-                     * @return Unit 单位
+                     * 获取<p>单位</p>
+                     * @return Unit <p>单位</p>
                      * 
                      */
                     std::string GetUnit() const;
 
                     /**
-                     * 设置单位
-                     * @param _unit 单位
+                     * 设置<p>单位</p>
+                     * @param _unit <p>单位</p>
                      * 
                      */
                     void SetUnit(const std::string& _unit);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool UnitHasBeenSet() const;
 
                     /**
-                     * 获取运输工具类型
-                     * @return VehicleType 运输工具类型
+                     * 获取<p>运输工具类型</p>
+                     * @return VehicleType <p>运输工具类型</p>
                      * 
                      */
                     std::string GetVehicleType() const;
 
                     /**
-                     * 设置运输工具类型
-                     * @param _vehicleType 运输工具类型
+                     * 设置<p>运输工具类型</p>
+                     * @param _vehicleType <p>运输工具类型</p>
                      * 
                      */
                     void SetVehicleType(const std::string& _vehicleType);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool VehicleTypeHasBeenSet() const;
 
                     /**
-                     * 获取运输工具牌号
-                     * @return VehicleBrand 运输工具牌号
+                     * 获取<p>运输工具牌号</p>
+                     * @return VehicleBrand <p>运输工具牌号</p>
                      * 
                      */
                     std::string GetVehicleBrand() const;
 
                     /**
-                     * 设置运输工具牌号
-                     * @param _vehicleBrand 运输工具牌号
+                     * 设置<p>运输工具牌号</p>
+                     * @param _vehicleBrand <p>运输工具牌号</p>
                      * 
                      */
                     void SetVehicleBrand(const std::string& _vehicleBrand);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool VehicleBrandHasBeenSet() const;
 
                     /**
-                     * 获取起始地
-                     * @return DeparturePlace 起始地
+                     * 获取<p>起始地</p>
+                     * @return DeparturePlace <p>起始地</p>
                      * 
                      */
                     std::string GetDeparturePlace() const;
 
                     /**
-                     * 设置起始地
-                     * @param _departurePlace 起始地
+                     * 设置<p>起始地</p>
+                     * @param _departurePlace <p>起始地</p>
                      * 
                      */
                     void SetDeparturePlace(const std::string& _departurePlace);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool DeparturePlaceHasBeenSet() const;
 
                     /**
-                     * 获取到达地
-                     * @return ArrivalPlace 到达地
+                     * 获取<p>到达地</p>
+                     * @return ArrivalPlace <p>到达地</p>
                      * 
                      */
                     std::string GetArrivalPlace() const;
 
                     /**
-                     * 设置到达地
-                     * @param _arrivalPlace 到达地
+                     * 设置<p>到达地</p>
+                     * @param _arrivalPlace <p>到达地</p>
                      * 
                      */
                     void SetArrivalPlace(const std::string& _arrivalPlace);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool ArrivalPlaceHasBeenSet() const;
 
                     /**
-                     * 获取运输货物名称，仅货物运输服务发票返回
-                     * @return TransportItemsName 运输货物名称，仅货物运输服务发票返回
+                     * 获取<p>运输货物名称，仅货物运输服务发票返回</p>
+                     * @return TransportItemsName <p>运输货物名称，仅货物运输服务发票返回</p>
                      * 
                      */
                     std::string GetTransportItemsName() const;
 
                     /**
-                     * 设置运输货物名称，仅货物运输服务发票返回
-                     * @param _transportItemsName 运输货物名称，仅货物运输服务发票返回
+                     * 设置<p>运输货物名称，仅货物运输服务发票返回</p>
+                     * @param _transportItemsName <p>运输货物名称，仅货物运输服务发票返回</p>
                      * 
                      */
                     void SetTransportItemsName(const std::string& _transportItemsName);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool TransportItemsNameHasBeenSet() const;
 
                     /**
-                     * 获取建筑服务发生地，仅建筑发票返回
-                     * @return PlaceOfBuildingService 建筑服务发生地，仅建筑发票返回
+                     * 获取<p>建筑服务发生地，仅建筑发票返回</p>
+                     * @return PlaceOfBuildingService <p>建筑服务发生地，仅建筑发票返回</p>
                      * 
                      */
                     std::string GetPlaceOfBuildingService() const;
 
                     /**
-                     * 设置建筑服务发生地，仅建筑发票返回
-                     * @param _placeOfBuildingService 建筑服务发生地，仅建筑发票返回
+                     * 设置<p>建筑服务发生地，仅建筑发票返回</p>
+                     * @param _placeOfBuildingService <p>建筑服务发生地，仅建筑发票返回</p>
                      * 
                      */
                     void SetPlaceOfBuildingService(const std::string& _placeOfBuildingService);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool PlaceOfBuildingServiceHasBeenSet() const;
 
                     /**
-                     * 获取建筑项目名称，仅建筑发票返回
-                     * @return BuildingName 建筑项目名称，仅建筑发票返回
+                     * 获取<p>建筑项目名称，仅建筑发票返回</p>
+                     * @return BuildingName <p>建筑项目名称，仅建筑发票返回</p>
                      * 
                      */
                     std::string GetBuildingName() const;
 
                     /**
-                     * 设置建筑项目名称，仅建筑发票返回
-                     * @param _buildingName 建筑项目名称，仅建筑发票返回
+                     * 设置<p>建筑项目名称，仅建筑发票返回</p>
+                     * @param _buildingName <p>建筑项目名称，仅建筑发票返回</p>
                      * 
                      */
                     void SetBuildingName(const std::string& _buildingName);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool BuildingNameHasBeenSet() const;
 
                     /**
-                     * 获取产权证书/不动产权证号，仅不动产经营租赁服务发票返回
-                     * @return EstateNumber 产权证书/不动产权证号，仅不动产经营租赁服务发票返回
+                     * 获取<p>产权证书/不动产权证号，仅不动产经营租赁服务发票返回</p>
+                     * @return EstateNumber <p>产权证书/不动产权证号，仅不动产经营租赁服务发票返回</p>
                      * 
                      */
                     std::string GetEstateNumber() const;
 
                     /**
-                     * 设置产权证书/不动产权证号，仅不动产经营租赁服务发票返回
-                     * @param _estateNumber 产权证书/不动产权证号，仅不动产经营租赁服务发票返回
+                     * 设置<p>产权证书/不动产权证号，仅不动产经营租赁服务发票返回</p>
+                     * @param _estateNumber <p>产权证书/不动产权证号，仅不动产经营租赁服务发票返回</p>
                      * 
                      */
                     void SetEstateNumber(const std::string& _estateNumber);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool EstateNumberHasBeenSet() const;
 
                     /**
-                     * 获取面积单位，仅不动产经营租赁服务发票返回
-                     * @return AreaUnit 面积单位，仅不动产经营租赁服务发票返回
+                     * 获取<p>面积单位，仅不动产经营租赁服务发票返回</p>
+                     * @return AreaUnit <p>面积单位，仅不动产经营租赁服务发票返回</p>
                      * 
                      */
                     std::string GetAreaUnit() const;
 
                     /**
-                     * 设置面积单位，仅不动产经营租赁服务发票返回
-                     * @param _areaUnit 面积单位，仅不动产经营租赁服务发票返回
+                     * 设置<p>面积单位，仅不动产经营租赁服务发票返回</p>
+                     * @param _areaUnit <p>面积单位，仅不动产经营租赁服务发票返回</p>
                      * 
                      */
                     void SetAreaUnit(const std::string& _areaUnit);
@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool AreaUnitHasBeenSet() const;
 
                     /**
-                     * 获取出行人，仅旅客运输服务发票返回
-                     * @return Traveler 出行人，仅旅客运输服务发票返回
+                     * 获取<p>出行人，仅旅客运输服务发票返回</p>
+                     * @return Traveler <p>出行人，仅旅客运输服务发票返回</p>
                      * 
                      */
                     std::string GetTraveler() const;
 
                     /**
-                     * 设置出行人，仅旅客运输服务发票返回
-                     * @param _traveler 出行人，仅旅客运输服务发票返回
+                     * 设置<p>出行人，仅旅客运输服务发票返回</p>
+                     * @param _traveler <p>出行人，仅旅客运输服务发票返回</p>
                      * 
                      */
                     void SetTraveler(const std::string& _traveler);
@@ -425,15 +425,15 @@ namespace TencentCloud
                     bool TravelerHasBeenSet() const;
 
                     /**
-                     * 获取有效身份证件号，仅旅客运输服务发票返回
-                     * @return TravelerID 有效身份证件号，仅旅客运输服务发票返回
+                     * 获取<p>有效身份证件号，仅旅客运输服务发票返回</p>
+                     * @return TravelerID <p>有效身份证件号，仅旅客运输服务发票返回</p>
                      * 
                      */
                     std::string GetTravelerID() const;
 
                     /**
-                     * 设置有效身份证件号，仅旅客运输服务发票返回
-                     * @param _travelerID 有效身份证件号，仅旅客运输服务发票返回
+                     * 设置<p>有效身份证件号，仅旅客运输服务发票返回</p>
+                     * @param _travelerID <p>有效身份证件号，仅旅客运输服务发票返回</p>
                      * 
                      */
                     void SetTravelerID(const std::string& _travelerID);
@@ -446,15 +446,15 @@ namespace TencentCloud
                     bool TravelerIDHasBeenSet() const;
 
                     /**
-                     * 获取出行日期，仅旅客运输服务发票返回
-                     * @return TravelDate 出行日期，仅旅客运输服务发票返回
+                     * 获取<p>出行日期，仅旅客运输服务发票返回</p>
+                     * @return TravelDate <p>出行日期，仅旅客运输服务发票返回</p>
                      * 
                      */
                     std::string GetTravelDate() const;
 
                     /**
-                     * 设置出行日期，仅旅客运输服务发票返回
-                     * @param _travelDate 出行日期，仅旅客运输服务发票返回
+                     * 设置<p>出行日期，仅旅客运输服务发票返回</p>
+                     * @param _travelDate <p>出行日期，仅旅客运输服务发票返回</p>
                      * 
                      */
                     void SetTravelDate(const std::string& _travelDate);
@@ -467,15 +467,15 @@ namespace TencentCloud
                     bool TravelDateHasBeenSet() const;
 
                     /**
-                     * 获取等级，仅旅客运输服务发票返回
-                     * @return TravelLevel 等级，仅旅客运输服务发票返回
+                     * 获取<p>等级，仅旅客运输服务发票返回</p>
+                     * @return TravelLevel <p>等级，仅旅客运输服务发票返回</p>
                      * 
                      */
                     std::string GetTravelLevel() const;
 
                     /**
-                     * 设置等级，仅旅客运输服务发票返回
-                     * @param _travelLevel 等级，仅旅客运输服务发票返回
+                     * 设置<p>等级，仅旅客运输服务发票返回</p>
+                     * @param _travelLevel <p>等级，仅旅客运输服务发票返回</p>
                      * 
                      */
                     void SetTravelLevel(const std::string& _travelLevel);
@@ -487,133 +487,187 @@ namespace TencentCloud
                      */
                     bool TravelLevelHasBeenSet() const;
 
+                    /**
+                     * 获取<p>通行日期起</p>
+                     * @return DateStart <p>通行日期起</p>
+                     * 
+                     */
+                    std::string GetDateStart() const;
+
+                    /**
+                     * 设置<p>通行日期起</p>
+                     * @param _dateStart <p>通行日期起</p>
+                     * 
+                     */
+                    void SetDateStart(const std::string& _dateStart);
+
+                    /**
+                     * 判断参数 DateStart 是否已赋值
+                     * @return DateStart 是否已赋值
+                     * 
+                     */
+                    bool DateStartHasBeenSet() const;
+
+                    /**
+                     * 获取<p>通行日期止</p>
+                     * @return DateEnd <p>通行日期止</p>
+                     * 
+                     */
+                    std::string GetDateEnd() const;
+
+                    /**
+                     * 设置<p>通行日期止</p>
+                     * @param _dateEnd <p>通行日期止</p>
+                     * 
+                     */
+                    void SetDateEnd(const std::string& _dateEnd);
+
+                    /**
+                     * 判断参数 DateEnd 是否已赋值
+                     * @return DateEnd 是否已赋值
+                     * 
+                     */
+                    bool DateEndHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 项目名称
+                     * <p>项目名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 数量
+                     * <p>数量</p>
                      */
                     std::string m_quantity;
                     bool m_quantityHasBeenSet;
 
                     /**
-                     * 规格型号
+                     * <p>规格型号</p>
                      */
                     std::string m_specification;
                     bool m_specificationHasBeenSet;
 
                     /**
-                     * 单价
+                     * <p>单价</p>
                      */
                     std::string m_price;
                     bool m_priceHasBeenSet;
 
                     /**
-                     * 金额
+                     * <p>金额</p>
                      */
                     std::string m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 税率
+                     * <p>税率</p>
                      */
                     std::string m_taxRate;
                     bool m_taxRateHasBeenSet;
 
                     /**
-                     * 税额
+                     * <p>税额</p>
                      */
                     std::string m_tax;
                     bool m_taxHasBeenSet;
 
                     /**
-                     * 单位
+                     * <p>单位</p>
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;
 
                     /**
-                     * 运输工具类型
+                     * <p>运输工具类型</p>
                      */
                     std::string m_vehicleType;
                     bool m_vehicleTypeHasBeenSet;
 
                     /**
-                     * 运输工具牌号
+                     * <p>运输工具牌号</p>
                      */
                     std::string m_vehicleBrand;
                     bool m_vehicleBrandHasBeenSet;
 
                     /**
-                     * 起始地
+                     * <p>起始地</p>
                      */
                     std::string m_departurePlace;
                     bool m_departurePlaceHasBeenSet;
 
                     /**
-                     * 到达地
+                     * <p>到达地</p>
                      */
                     std::string m_arrivalPlace;
                     bool m_arrivalPlaceHasBeenSet;
 
                     /**
-                     * 运输货物名称，仅货物运输服务发票返回
+                     * <p>运输货物名称，仅货物运输服务发票返回</p>
                      */
                     std::string m_transportItemsName;
                     bool m_transportItemsNameHasBeenSet;
 
                     /**
-                     * 建筑服务发生地，仅建筑发票返回
+                     * <p>建筑服务发生地，仅建筑发票返回</p>
                      */
                     std::string m_placeOfBuildingService;
                     bool m_placeOfBuildingServiceHasBeenSet;
 
                     /**
-                     * 建筑项目名称，仅建筑发票返回
+                     * <p>建筑项目名称，仅建筑发票返回</p>
                      */
                     std::string m_buildingName;
                     bool m_buildingNameHasBeenSet;
 
                     /**
-                     * 产权证书/不动产权证号，仅不动产经营租赁服务发票返回
+                     * <p>产权证书/不动产权证号，仅不动产经营租赁服务发票返回</p>
                      */
                     std::string m_estateNumber;
                     bool m_estateNumberHasBeenSet;
 
                     /**
-                     * 面积单位，仅不动产经营租赁服务发票返回
+                     * <p>面积单位，仅不动产经营租赁服务发票返回</p>
                      */
                     std::string m_areaUnit;
                     bool m_areaUnitHasBeenSet;
 
                     /**
-                     * 出行人，仅旅客运输服务发票返回
+                     * <p>出行人，仅旅客运输服务发票返回</p>
                      */
                     std::string m_traveler;
                     bool m_travelerHasBeenSet;
 
                     /**
-                     * 有效身份证件号，仅旅客运输服务发票返回
+                     * <p>有效身份证件号，仅旅客运输服务发票返回</p>
                      */
                     std::string m_travelerID;
                     bool m_travelerIDHasBeenSet;
 
                     /**
-                     * 出行日期，仅旅客运输服务发票返回
+                     * <p>出行日期，仅旅客运输服务发票返回</p>
                      */
                     std::string m_travelDate;
                     bool m_travelDateHasBeenSet;
 
                     /**
-                     * 等级，仅旅客运输服务发票返回
+                     * <p>等级，仅旅客运输服务发票返回</p>
                      */
                     std::string m_travelLevel;
                     bool m_travelLevelHasBeenSet;
+
+                    /**
+                     * <p>通行日期起</p>
+                     */
+                    std::string m_dateStart;
+                    bool m_dateStartHasBeenSet;
+
+                    /**
+                     * <p>通行日期止</p>
+                     */
+                    std::string m_dateEnd;
+                    bool m_dateEndHasBeenSet;
 
                 };
             }

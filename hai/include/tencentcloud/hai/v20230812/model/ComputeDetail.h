@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取算力套餐ID
-                     * @return BundleType 算力套餐ID
+                     * 获取<p>算力套餐ID</p>
+                     * @return BundleType <p>算力套餐ID</p>
                      * 
                      */
                     std::string GetBundleType() const;
 
                     /**
-                     * 设置算力套餐ID
-                     * @param _bundleType 算力套餐ID
+                     * 设置<p>算力套餐ID</p>
+                     * @param _bundleType <p>算力套餐ID</p>
                      * 
                      */
                     void SetBundleType(const std::string& _bundleType);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool BundleTypeHasBeenSet() const;
 
                     /**
-                     * 获取节点数量
-                     * @return Count 节点数量
+                     * 获取<p>节点数量</p>
+                     * @return Count <p>节点数量</p>
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
-                     * 设置节点数量
-                     * @param _count 节点数量
+                     * 设置<p>节点数量</p>
+                     * @param _count <p>节点数量</p>
                      * 
                      */
                     void SetCount(const int64_t& _count);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取显卡数量
-                     * @return GPUCount 显卡数量
+                     * 获取<p>显卡数量</p>
+                     * @return GPUCount <p>显卡数量</p>
                      * 
                      */
                     std::string GetGPUCount() const;
 
                     /**
-                     * 设置显卡数量
-                     * @param _gPUCount 显卡数量
+                     * 设置<p>显卡数量</p>
+                     * @param _gPUCount <p>显卡数量</p>
                      * 
                      */
                     void SetGPUCount(const std::string& _gPUCount);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool GPUCountHasBeenSet() const;
 
                     /**
-                     * 获取显存
-                     * @return GPUMemory 显存
+                     * 获取<p>显存</p>
+                     * @return GPUMemory <p>显存</p>
                      * 
                      */
                     std::string GetGPUMemory() const;
 
                     /**
-                     * 设置显存
-                     * @param _gPUMemory 显存
+                     * 设置<p>显存</p>
+                     * @param _gPUMemory <p>显存</p>
                      * 
                      */
                     void SetGPUMemory(const std::string& _gPUMemory);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool GPUMemoryHasBeenSet() const;
 
                     /**
-                     * 获取算力
-                     * @return GPUPerformance 算力
+                     * 获取<p>算力</p>
+                     * @return GPUPerformance <p>算力</p>
                      * 
                      */
                     std::string GetGPUPerformance() const;
 
                     /**
-                     * 设置算力
-                     * @param _gPUPerformance 算力
+                     * 设置<p>算力</p>
+                     * @param _gPUPerformance <p>算力</p>
                      * 
                      */
                     void SetGPUPerformance(const std::string& _gPUPerformance);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool GPUPerformanceHasBeenSet() const;
 
                     /**
-                     * 获取CPU核数
-                     * @return CPU CPU核数
+                     * 获取<p>CPU核数</p>
+                     * @return CPU <p>CPU核数</p>
                      * 
                      */
                     std::string GetCPU() const;
 
                     /**
-                     * 设置CPU核数
-                     * @param _cPU CPU核数
+                     * 设置<p>CPU核数</p>
+                     * @param _cPU <p>CPU核数</p>
                      * 
                      */
                     void SetCPU(const std::string& _cPU);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool CPUHasBeenSet() const;
 
                     /**
-                     * 获取内存
-                     * @return Memory 内存
+                     * 获取<p>内存</p>
+                     * @return Memory <p>内存</p>
                      * 
                      */
                     std::string GetMemory() const;
 
                     /**
-                     * 设置内存
-                     * @param _memory 内存
+                     * 设置<p>内存</p>
+                     * @param _memory <p>内存</p>
                      * 
                      */
                     void SetMemory(const std::string& _memory);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取该套餐是否支持包年包月
-                     * @return PrepaidEnable 该套餐是否支持包年包月
+                     * 获取<p>该套餐是否支持包年包月</p>
+                     * @return PrepaidEnable <p>该套餐是否支持包年包月</p>
                      * 
                      */
                     bool GetPrepaidEnable() const;
 
                     /**
-                     * 设置该套餐是否支持包年包月
-                     * @param _prepaidEnable 该套餐是否支持包年包月
+                     * 设置<p>该套餐是否支持包年包月</p>
+                     * @param _prepaidEnable <p>该套餐是否支持包年包月</p>
                      * 
                      */
                     void SetPrepaidEnable(const bool& _prepaidEnable);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool PrepaidEnableHasBeenSet() const;
 
                     /**
-                     * 获取该套餐是否支持按量计费
-                     * @return PostpaidEnable 该套餐是否支持按量计费
+                     * 获取<p>该套餐是否支持按量计费</p>
+                     * @return PostpaidEnable <p>该套餐是否支持按量计费</p>
                      * 
                      */
                     bool GetPostpaidEnable() const;
 
                     /**
-                     * 设置该套餐是否支持按量计费
-                     * @param _postpaidEnable 该套餐是否支持按量计费
+                     * 设置<p>该套餐是否支持按量计费</p>
+                     * @param _postpaidEnable <p>该套餐是否支持按量计费</p>
                      * 
                      */
                     void SetPostpaidEnable(const bool& _postpaidEnable);
@@ -238,55 +238,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 算力套餐ID
+                     * <p>算力套餐ID</p>
                      */
                     std::string m_bundleType;
                     bool m_bundleTypeHasBeenSet;
 
                     /**
-                     * 节点数量
+                     * <p>节点数量</p>
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
-                     * 显卡数量
+                     * <p>显卡数量</p>
                      */
                     std::string m_gPUCount;
                     bool m_gPUCountHasBeenSet;
 
                     /**
-                     * 显存
+                     * <p>显存</p>
                      */
                     std::string m_gPUMemory;
                     bool m_gPUMemoryHasBeenSet;
 
                     /**
-                     * 算力
+                     * <p>算力</p>
                      */
                     std::string m_gPUPerformance;
                     bool m_gPUPerformanceHasBeenSet;
 
                     /**
-                     * CPU核数
+                     * <p>CPU核数</p>
                      */
                     std::string m_cPU;
                     bool m_cPUHasBeenSet;
 
                     /**
-                     * 内存
+                     * <p>内存</p>
                      */
                     std::string m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 该套餐是否支持包年包月
+                     * <p>该套餐是否支持包年包月</p>
                      */
                     bool m_prepaidEnable;
                     bool m_prepaidEnableHasBeenSet;
 
                     /**
-                     * 该套餐是否支持按量计费
+                     * <p>该套餐是否支持按量计费</p>
                      */
                     bool m_postpaidEnable;
                     bool m_postpaidEnableHasBeenSet;

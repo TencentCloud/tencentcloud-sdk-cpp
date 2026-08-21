@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分页偏移
-                     * @return Offset 分页偏移
+                     * 获取<p>分页偏移</p>
+                     * @return Offset <p>分页偏移</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移
-                     * @param _offset 分页偏移
+                     * 设置<p>分页偏移</p>
+                     * @param _offset <p>分页偏移</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页数量
-                     * @return Limit 每页数量
+                     * 获取<p>每页数量</p>
+                     * @return Limit <p>每页数量</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每页数量
-                     * @param _limit 每页数量
+                     * 设置<p>每页数量</p>
+                     * @param _limit <p>每页数量</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取应用ID数组
-                     * @return AndroidAppIds 应用ID数组
+                     * 获取<p>应用ID数组</p>
+                     * @return AndroidAppIds <p>应用ID数组</p>
                      * 
                      */
                     std::vector<std::string> GetAndroidAppIds() const;
 
                     /**
-                     * 设置应用ID数组
-                     * @param _androidAppIds 应用ID数组
+                     * 设置<p>应用ID数组</p>
+                     * @param _androidAppIds <p>应用ID数组</p>
                      * 
                      */
                     void SetAndroidAppIds(const std::vector<std::string>& _androidAppIds);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool AndroidAppIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，支持过滤的字段有：UserId、State、UpdateState、Name、AppMode 。其中 Name 为模糊匹配，其他参数为精确匹配。
-                     * @return Filters 过滤条件，支持过滤的字段有：UserId、State、UpdateState、Name、AppMode 。其中 Name 为模糊匹配，其他参数为精确匹配。
+                     * 获取<p>过滤条件，支持过滤的字段有：UserId、State、UpdateState、Name、AppMode 。其中 Name 为模糊匹配，其他参数为精确匹配。</p>
+                     * @return Filters <p>过滤条件，支持过滤的字段有：UserId、State、UpdateState、Name、AppMode 。其中 Name 为模糊匹配，其他参数为精确匹配。</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，支持过滤的字段有：UserId、State、UpdateState、Name、AppMode 。其中 Name 为模糊匹配，其他参数为精确匹配。
-                     * @param _filters 过滤条件，支持过滤的字段有：UserId、State、UpdateState、Name、AppMode 。其中 Name 为模糊匹配，其他参数为精确匹配。
+                     * 设置<p>过滤条件，支持过滤的字段有：UserId、State、UpdateState、Name、AppMode 。其中 Name 为模糊匹配，其他参数为精确匹配。</p>
+                     * @param _filters <p>过滤条件，支持过滤的字段有：UserId、State、UpdateState、Name、AppMode 。其中 Name 为模糊匹配，其他参数为精确匹配。</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -130,25 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分页偏移
+                     * <p>分页偏移</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页数量
+                     * <p>每页数量</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 应用ID数组
+                     * <p>应用ID数组</p>
                      */
                     std::vector<std::string> m_androidAppIds;
                     bool m_androidAppIdsHasBeenSet;
 
                     /**
-                     * 过滤条件，支持过滤的字段有：UserId、State、UpdateState、Name、AppMode 。其中 Name 为模糊匹配，其他参数为精确匹配。
+                     * <p>过滤条件，支持过滤的字段有：UserId、State、UpdateState、Name、AppMode 。其中 Name 为模糊匹配，其他参数为精确匹配。</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

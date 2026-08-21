@@ -189,6 +189,27 @@ namespace TencentCloud
                      */
                     bool LanguageHasBeenSet() const;
 
+                    /**
+                     * 获取<p>拓展参数</p>
+                     * @return ExtraParams <p>拓展参数</p>
+                     * 
+                     */
+                    std::string GetExtraParams() const;
+
+                    /**
+                     * 设置<p>拓展参数</p>
+                     * @param _extraParams <p>拓展参数</p>
+                     * 
+                     */
+                    void SetExtraParams(const std::string& _extraParams);
+
+                    /**
+                     * 判断参数 ExtraParams 是否已赋值
+                     * @return ExtraParams 是否已赋值
+                     * 
+                     */
+                    bool ExtraParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     std::string m_language;
                     bool m_languageHasBeenSet;
+
+                    /**
+                     * <p>拓展参数</p>
+                     */
+                    std::string m_extraParams;
+                    bool m_extraParamsHasBeenSet;
 
                 };
             }

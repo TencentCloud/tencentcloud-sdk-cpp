@@ -42,7 +42,8 @@ CreateCfsFileSystemRequest::CreateCfsFileSystemRequest() :
     m_autoSnapshotPolicyIdHasBeenSet(false),
     m_enableAutoScaleUpHasBeenSet(false),
     m_cfsVersionHasBeenSet(false),
-    m_metaTypeHasBeenSet(false)
+    m_metaTypeHasBeenSet(false),
+    m_scenarioHasBeenSet(false)
 {
 }
 
@@ -218,6 +219,14 @@ string CreateCfsFileSystemRequest::ToJsonString() const
         string key = "MetaType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_metaType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scenarioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scenario";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scenario.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -546,6 +555,22 @@ void CreateCfsFileSystemRequest::SetMetaType(const string& _metaType)
 bool CreateCfsFileSystemRequest::MetaTypeHasBeenSet() const
 {
     return m_metaTypeHasBeenSet;
+}
+
+string CreateCfsFileSystemRequest::GetScenario() const
+{
+    return m_scenario;
+}
+
+void CreateCfsFileSystemRequest::SetScenario(const string& _scenario)
+{
+    m_scenario = _scenario;
+    m_scenarioHasBeenSet = true;
+}
+
+bool CreateCfsFileSystemRequest::ScenarioHasBeenSet() const
+{
+    return m_scenarioHasBeenSet;
 }
 
 

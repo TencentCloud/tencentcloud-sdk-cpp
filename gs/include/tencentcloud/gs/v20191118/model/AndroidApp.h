@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取安卓应用 Id
-                     * @return AndroidAppId 安卓应用 Id
+                     * 获取<p>安卓应用 Id</p>
+                     * @return AndroidAppId <p>安卓应用 Id</p>
                      * 
                      */
                     std::string GetAndroidAppId() const;
 
                     /**
-                     * 设置安卓应用 Id
-                     * @param _androidAppId 安卓应用 Id
+                     * 设置<p>安卓应用 Id</p>
+                     * @param _androidAppId <p>安卓应用 Id</p>
                      * 
                      */
                     void SetAndroidAppId(const std::string& _androidAppId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool AndroidAppIdHasBeenSet() const;
 
                     /**
-                     * 获取安卓应用名称
-                     * @return Name 安卓应用名称
+                     * 获取<p>安卓应用名称</p>
+                     * @return Name <p>安卓应用名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置安卓应用名称
-                     * @param _name 安卓应用名称
+                     * 设置<p>安卓应用名称</p>
+                     * @param _name <p>安卓应用名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取安卓应用状态（上架、下架）
-                     * @return State 安卓应用状态（上架、下架）
+                     * 获取<p>安卓应用状态（上架、下架）</p>
+                     * @return State <p>安卓应用状态（上架、下架）</p>
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置安卓应用状态（上架、下架）
-                     * @param _state 安卓应用状态（上架、下架）
+                     * 设置<p>安卓应用状态（上架、下架）</p>
+                     * @param _state <p>安卓应用状态（上架、下架）</p>
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取安卓应用版本列表
-                     * @return AndroidAppVersionInfo 安卓应用版本列表
+                     * 获取<p>安卓应用版本列表</p>
+                     * @return AndroidAppVersionInfo <p>安卓应用版本列表</p>
                      * 
                      */
                     std::vector<AndroidAppVersionInfo> GetAndroidAppVersionInfo() const;
 
                     /**
-                     * 设置安卓应用版本列表
-                     * @param _androidAppVersionInfo 安卓应用版本列表
+                     * 设置<p>安卓应用版本列表</p>
+                     * @param _androidAppVersionInfo <p>安卓应用版本列表</p>
                      * 
                      */
                     void SetAndroidAppVersionInfo(const std::vector<AndroidAppVersionInfo>& _androidAppVersionInfo);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool AndroidAppVersionInfoHasBeenSet() const;
 
                     /**
-                     * 获取安卓应用创建时间
-                     * @return CreateTime 安卓应用创建时间
+                     * 获取<p>安卓应用创建时间</p>
+                     * @return CreateTime <p>安卓应用创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置安卓应用创建时间
-                     * @param _createTime 安卓应用创建时间
+                     * 设置<p>安卓应用创建时间</p>
+                     * @param _createTime <p>安卓应用创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取用户 Id
-                     * @return UserId 用户 Id
+                     * 获取<p>用户 Id</p>
+                     * @return UserId <p>用户 Id</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户 Id
-                     * @param _userId 用户 Id
+                     * 设置<p>用户 Id</p>
+                     * @param _userId <p>用户 Id</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取应用模式（NORMAL : 普通模式；ADVANCED : 高级模式）
-                     * @return AppMode 应用模式（NORMAL : 普通模式；ADVANCED : 高级模式）
+                     * 获取<p>应用模式（NORMAL : 普通模式；ADVANCED : 高级模式）</p>
+                     * @return AppMode <p>应用模式（NORMAL : 普通模式；ADVANCED : 高级模式）</p>
                      * 
                      */
                     std::string GetAppMode() const;
 
                     /**
-                     * 设置应用模式（NORMAL : 普通模式；ADVANCED : 高级模式）
-                     * @param _appMode 应用模式（NORMAL : 普通模式；ADVANCED : 高级模式）
+                     * 设置<p>应用模式（NORMAL : 普通模式；ADVANCED : 高级模式）</p>
+                     * @param _appMode <p>应用模式（NORMAL : 普通模式；ADVANCED : 高级模式）</p>
                      * 
                      */
                     void SetAppMode(const std::string& _appMode);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool AppModeHasBeenSet() const;
 
                     /**
-                     * 获取应用更新状态，取值：UPLOADING 上传中、CREATING 创建中、CREATE_FAIL 创建失败、CREATE_SUCCESS 创建成功、PACKAGE_NAME_MISMATCH 包名不匹配、VERSION_ALREADY_EXISTS 版本已存在、APP_PARSE_FAIL app 解析失败、APP_EXISTS_SECURITY_RISK app 存在安全风险、NORMAL 默认状态
-                     * @return UpdateState 应用更新状态，取值：UPLOADING 上传中、CREATING 创建中、CREATE_FAIL 创建失败、CREATE_SUCCESS 创建成功、PACKAGE_NAME_MISMATCH 包名不匹配、VERSION_ALREADY_EXISTS 版本已存在、APP_PARSE_FAIL app 解析失败、APP_EXISTS_SECURITY_RISK app 存在安全风险、NORMAL 默认状态
+                     * 获取<p>应用更新状态，取值：UPLOADING 上传中、CREATING 创建中、CREATE_FAIL 创建失败、CREATE_SUCCESS 创建成功、PACKAGE_NAME_MISMATCH 包名不匹配、VERSION_ALREADY_EXISTS 版本已存在、APP_PARSE_FAIL app 解析失败、APP_EXISTS_SECURITY_RISK app 存在安全风险、NORMAL 默认状态</p>
+                     * @return UpdateState <p>应用更新状态，取值：UPLOADING 上传中、CREATING 创建中、CREATE_FAIL 创建失败、CREATE_SUCCESS 创建成功、PACKAGE_NAME_MISMATCH 包名不匹配、VERSION_ALREADY_EXISTS 版本已存在、APP_PARSE_FAIL app 解析失败、APP_EXISTS_SECURITY_RISK app 存在安全风险、NORMAL 默认状态</p>
                      * 
                      */
                     std::string GetUpdateState() const;
 
                     /**
-                     * 设置应用更新状态，取值：UPLOADING 上传中、CREATING 创建中、CREATE_FAIL 创建失败、CREATE_SUCCESS 创建成功、PACKAGE_NAME_MISMATCH 包名不匹配、VERSION_ALREADY_EXISTS 版本已存在、APP_PARSE_FAIL app 解析失败、APP_EXISTS_SECURITY_RISK app 存在安全风险、NORMAL 默认状态
-                     * @param _updateState 应用更新状态，取值：UPLOADING 上传中、CREATING 创建中、CREATE_FAIL 创建失败、CREATE_SUCCESS 创建成功、PACKAGE_NAME_MISMATCH 包名不匹配、VERSION_ALREADY_EXISTS 版本已存在、APP_PARSE_FAIL app 解析失败、APP_EXISTS_SECURITY_RISK app 存在安全风险、NORMAL 默认状态
+                     * 设置<p>应用更新状态，取值：UPLOADING 上传中、CREATING 创建中、CREATE_FAIL 创建失败、CREATE_SUCCESS 创建成功、PACKAGE_NAME_MISMATCH 包名不匹配、VERSION_ALREADY_EXISTS 版本已存在、APP_PARSE_FAIL app 解析失败、APP_EXISTS_SECURITY_RISK app 存在安全风险、NORMAL 默认状态</p>
+                     * @param _updateState <p>应用更新状态，取值：UPLOADING 上传中、CREATING 创建中、CREATE_FAIL 创建失败、CREATE_SUCCESS 创建成功、PACKAGE_NAME_MISMATCH 包名不匹配、VERSION_ALREADY_EXISTS 版本已存在、APP_PARSE_FAIL app 解析失败、APP_EXISTS_SECURITY_RISK app 存在安全风险、NORMAL 默认状态</p>
                      * 
                      */
                     void SetUpdateState(const std::string& _updateState);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool UpdateStateHasBeenSet() const;
 
                     /**
-                     * 获取安卓应用包名
-                     * @return PackageName 安卓应用包名
+                     * 获取<p>安卓应用包名</p>
+                     * @return PackageName <p>安卓应用包名</p>
                      * 
                      */
                     std::string GetPackageName() const;
 
                     /**
-                     * 设置安卓应用包名
-                     * @param _packageName 安卓应用包名
+                     * 设置<p>安卓应用包名</p>
+                     * @param _packageName <p>安卓应用包名</p>
                      * 
                      */
                     void SetPackageName(const std::string& _packageName);
@@ -239,55 +239,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 安卓应用 Id
+                     * <p>安卓应用 Id</p>
                      */
                     std::string m_androidAppId;
                     bool m_androidAppIdHasBeenSet;
 
                     /**
-                     * 安卓应用名称
+                     * <p>安卓应用名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 安卓应用状态（上架、下架）
+                     * <p>安卓应用状态（上架、下架）</p>
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 安卓应用版本列表
+                     * <p>安卓应用版本列表</p>
                      */
                     std::vector<AndroidAppVersionInfo> m_androidAppVersionInfo;
                     bool m_androidAppVersionInfoHasBeenSet;
 
                     /**
-                     * 安卓应用创建时间
+                     * <p>安卓应用创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 用户 Id
+                     * <p>用户 Id</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 应用模式（NORMAL : 普通模式；ADVANCED : 高级模式）
+                     * <p>应用模式（NORMAL : 普通模式；ADVANCED : 高级模式）</p>
                      */
                     std::string m_appMode;
                     bool m_appModeHasBeenSet;
 
                     /**
-                     * 应用更新状态，取值：UPLOADING 上传中、CREATING 创建中、CREATE_FAIL 创建失败、CREATE_SUCCESS 创建成功、PACKAGE_NAME_MISMATCH 包名不匹配、VERSION_ALREADY_EXISTS 版本已存在、APP_PARSE_FAIL app 解析失败、APP_EXISTS_SECURITY_RISK app 存在安全风险、NORMAL 默认状态
+                     * <p>应用更新状态，取值：UPLOADING 上传中、CREATING 创建中、CREATE_FAIL 创建失败、CREATE_SUCCESS 创建成功、PACKAGE_NAME_MISMATCH 包名不匹配、VERSION_ALREADY_EXISTS 版本已存在、APP_PARSE_FAIL app 解析失败、APP_EXISTS_SECURITY_RISK app 存在安全风险、NORMAL 默认状态</p>
                      */
                     std::string m_updateState;
                     bool m_updateStateHasBeenSet;
 
                     /**
-                     * 安卓应用包名
+                     * <p>安卓应用包名</p>
                      */
                     std::string m_packageName;
                     bool m_packageNameHasBeenSet;

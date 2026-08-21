@@ -179,6 +179,8 @@
 #include <tencentcloud/monitor/v20180724/model/DescribeGrafanaIntegrationsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeGrafanaNotificationChannelsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeGrafanaNotificationChannelsResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeGrafanaVersionsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeGrafanaVersionsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeGrafanaWhiteListRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeGrafanaWhiteListResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeInstalledPluginsRequest.h>
@@ -633,6 +635,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGrafanaNotificationChannelsResponse> DescribeGrafanaNotificationChannelsOutcome;
                 typedef std::future<DescribeGrafanaNotificationChannelsOutcome> DescribeGrafanaNotificationChannelsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeGrafanaNotificationChannelsRequest&, DescribeGrafanaNotificationChannelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGrafanaNotificationChannelsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGrafanaVersionsResponse> DescribeGrafanaVersionsOutcome;
+                typedef std::future<DescribeGrafanaVersionsOutcome> DescribeGrafanaVersionsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeGrafanaVersionsRequest&, DescribeGrafanaVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGrafanaVersionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGrafanaWhiteListResponse> DescribeGrafanaWhiteListOutcome;
                 typedef std::future<DescribeGrafanaWhiteListOutcome> DescribeGrafanaWhiteListOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeGrafanaWhiteListRequest&, DescribeGrafanaWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGrafanaWhiteListAsyncHandler;
@@ -1659,6 +1664,15 @@ namespace TencentCloud
                 DescribeGrafanaNotificationChannelsOutcome DescribeGrafanaNotificationChannels(const Model::DescribeGrafanaNotificationChannelsRequest &request);
                 void DescribeGrafanaNotificationChannelsAsync(const Model::DescribeGrafanaNotificationChannelsRequest& request, const DescribeGrafanaNotificationChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGrafanaNotificationChannelsOutcomeCallable DescribeGrafanaNotificationChannelsCallable(const Model::DescribeGrafanaNotificationChannelsRequest& request);
+
+                /**
+                 *列出 Grafana 版本
+                 * @param req DescribeGrafanaVersionsRequest
+                 * @return DescribeGrafanaVersionsOutcome
+                 */
+                DescribeGrafanaVersionsOutcome DescribeGrafanaVersions(const Model::DescribeGrafanaVersionsRequest &request);
+                void DescribeGrafanaVersionsAsync(const Model::DescribeGrafanaVersionsRequest& request, const DescribeGrafanaVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGrafanaVersionsOutcomeCallable DescribeGrafanaVersionsCallable(const Model::DescribeGrafanaVersionsRequest& request);
 
                 /**
                  *列出 Grafana 白名单

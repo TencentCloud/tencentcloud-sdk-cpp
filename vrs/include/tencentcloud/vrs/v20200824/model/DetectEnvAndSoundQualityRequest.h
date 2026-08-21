@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标注文本信息 ID
-                     * @return TextId 标注文本信息 ID
+                     * 获取<p>标注文本信息 ID</p>
+                     * @return TextId <p>标注文本信息 ID</p>
                      * 
                      */
                     std::string GetTextId() const;
 
                     /**
-                     * 设置标注文本信息 ID
-                     * @param _textId 标注文本信息 ID
+                     * 设置<p>标注文本信息 ID</p>
+                     * @param _textId <p>标注文本信息 ID</p>
                      * 
                      */
                     void SetTextId(const std::string& _textId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TextIdHasBeenSet() const;
 
                     /**
-                     * 获取语音数据 要使用base64编码(采用python语言时注意读取文件时需要转成base64字符串编码，例如：str(base64.b64encode(open("input.aac", mode="rb").read()), encoding='utf-8') )。
-                     * @return AudioData 语音数据 要使用base64编码(采用python语言时注意读取文件时需要转成base64字符串编码，例如：str(base64.b64encode(open("input.aac", mode="rb").read()), encoding='utf-8') )。
+                     * 获取<p>语音数据 要使用base64编码(采用python语言时注意读取文件时需要转成base64字符串编码，例如：str(base64.b64encode(open(&quot;input.aac&quot;, mode=&quot;rb&quot;).read()), encoding=&#39;utf-8&#39;) )。</p>
+                     * @return AudioData <p>语音数据 要使用base64编码(采用python语言时注意读取文件时需要转成base64字符串编码，例如：str(base64.b64encode(open(&quot;input.aac&quot;, mode=&quot;rb&quot;).read()), encoding=&#39;utf-8&#39;) )。</p>
                      * 
                      */
                     std::string GetAudioData() const;
 
                     /**
-                     * 设置语音数据 要使用base64编码(采用python语言时注意读取文件时需要转成base64字符串编码，例如：str(base64.b64encode(open("input.aac", mode="rb").read()), encoding='utf-8') )。
-                     * @param _audioData 语音数据 要使用base64编码(采用python语言时注意读取文件时需要转成base64字符串编码，例如：str(base64.b64encode(open("input.aac", mode="rb").read()), encoding='utf-8') )。
+                     * 设置<p>语音数据 要使用base64编码(采用python语言时注意读取文件时需要转成base64字符串编码，例如：str(base64.b64encode(open(&quot;input.aac&quot;, mode=&quot;rb&quot;).read()), encoding=&#39;utf-8&#39;) )。</p>
+                     * @param _audioData <p>语音数据 要使用base64编码(采用python语言时注意读取文件时需要转成base64字符串编码，例如：str(base64.b64encode(open(&quot;input.aac&quot;, mode=&quot;rb&quot;).read()), encoding=&#39;utf-8&#39;) )。</p>
                      * 
                      */
                     void SetAudioData(const std::string& _audioData);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool AudioDataHasBeenSet() const;
 
                     /**
-                     * 获取1:环境检测 2:音质检测
-                     * @return TypeId 1:环境检测 2:音质检测
+                     * 获取<p>1:环境检测 2:音质检测</p>
+                     * @return TypeId <p>1:环境检测 2:音质检测</p>
                      * 
                      */
                     int64_t GetTypeId() const;
 
                     /**
-                     * 设置1:环境检测 2:音质检测
-                     * @param _typeId 1:环境检测 2:音质检测
+                     * 设置<p>1:环境检测 2:音质检测</p>
+                     * @param _typeId <p>1:环境检测 2:音质检测</p>
                      * 
                      */
                     void SetTypeId(const int64_t& _typeId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool TypeIdHasBeenSet() const;
 
                     /**
-                     * 获取音频格式，音频类型(wav,mp3,aac,m4a)
-                     * @return Codec 音频格式，音频类型(wav,mp3,aac,m4a)
+                     * 获取<p>音频格式，音频类型(wav,mp3,aac,m4a)</p>
+                     * @return Codec <p>音频格式，音频类型(wav,mp3,aac,m4a)</p>
                      * 
                      */
                     std::string GetCodec() const;
 
                     /**
-                     * 设置音频格式，音频类型(wav,mp3,aac,m4a)
-                     * @param _codec 音频格式，音频类型(wav,mp3,aac,m4a)
+                     * 设置<p>音频格式，音频类型(wav,mp3,aac,m4a)</p>
+                     * @param _codec <p>音频格式，音频类型(wav,mp3,aac,m4a)</p>
                      * 
                      */
                     void SetCodec(const std::string& _codec);
@@ -127,27 +127,15 @@ namespace TencentCloud
                     bool CodecHasBeenSet() const;
 
                     /**
-                     * 获取音频采样率。
-16000：16k（默认）；
-24000：24k（仅一句话声音复刻支持）；
-48000：48k（仅一句话声音复刻支持）。
-                     * @return SampleRate 音频采样率。
-16000：16k（默认）；
-24000：24k（仅一句话声音复刻支持）；
-48000：48k（仅一句话声音复刻支持）。
+                     * 获取<p>音频采样率。<br>16000：16k（默认）；<br>24000：24k（仅一句话声音复刻支持）；<br>48000：48k（仅一句话声音复刻支持）。</p>
+                     * @return SampleRate <p>音频采样率。<br>16000：16k（默认）；<br>24000：24k（仅一句话声音复刻支持）；<br>48000：48k（仅一句话声音复刻支持）。</p>
                      * 
                      */
                     int64_t GetSampleRate() const;
 
                     /**
-                     * 设置音频采样率。
-16000：16k（默认）；
-24000：24k（仅一句话声音复刻支持）；
-48000：48k（仅一句话声音复刻支持）。
-                     * @param _sampleRate 音频采样率。
-16000：16k（默认）；
-24000：24k（仅一句话声音复刻支持）；
-48000：48k（仅一句话声音复刻支持）。
+                     * 设置<p>音频采样率。<br>16000：16k（默认）；<br>24000：24k（仅一句话声音复刻支持）；<br>48000：48k（仅一句话声音复刻支持）。</p>
+                     * @param _sampleRate <p>音频采样率。<br>16000：16k（默认）；<br>24000：24k（仅一句话声音复刻支持）；<br>48000：48k（仅一句话声音复刻支持）。</p>
                      * 
                      */
                     void SetSampleRate(const int64_t& _sampleRate);
@@ -160,15 +148,15 @@ namespace TencentCloud
                     bool SampleRateHasBeenSet() const;
 
                     /**
-                     * 获取复刻类型。5 - 一句话声音复刻。
-                     * @return TaskType 复刻类型。5 - 一句话声音复刻。
+                     * 获取<p>复刻类型。5 - 一句话声音复刻。</p>
+                     * @return TaskType <p>复刻类型。5 - 一句话声音复刻。</p>
                      * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
-                     * 设置复刻类型。5 - 一句话声音复刻。
-                     * @param _taskType 复刻类型。5 - 一句话声音复刻。
+                     * 设置<p>复刻类型。5 - 一句话声音复刻。</p>
+                     * @param _taskType <p>复刻类型。5 - 一句话声音复刻。</p>
                      * 
                      */
                     void SetTaskType(const int64_t& _taskType);
@@ -183,40 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标注文本信息 ID
+                     * <p>标注文本信息 ID</p>
                      */
                     std::string m_textId;
                     bool m_textIdHasBeenSet;
 
                     /**
-                     * 语音数据 要使用base64编码(采用python语言时注意读取文件时需要转成base64字符串编码，例如：str(base64.b64encode(open("input.aac", mode="rb").read()), encoding='utf-8') )。
+                     * <p>语音数据 要使用base64编码(采用python语言时注意读取文件时需要转成base64字符串编码，例如：str(base64.b64encode(open(&quot;input.aac&quot;, mode=&quot;rb&quot;).read()), encoding=&#39;utf-8&#39;) )。</p>
                      */
                     std::string m_audioData;
                     bool m_audioDataHasBeenSet;
 
                     /**
-                     * 1:环境检测 2:音质检测
+                     * <p>1:环境检测 2:音质检测</p>
                      */
                     int64_t m_typeId;
                     bool m_typeIdHasBeenSet;
 
                     /**
-                     * 音频格式，音频类型(wav,mp3,aac,m4a)
+                     * <p>音频格式，音频类型(wav,mp3,aac,m4a)</p>
                      */
                     std::string m_codec;
                     bool m_codecHasBeenSet;
 
                     /**
-                     * 音频采样率。
-16000：16k（默认）；
-24000：24k（仅一句话声音复刻支持）；
-48000：48k（仅一句话声音复刻支持）。
+                     * <p>音频采样率。<br>16000：16k（默认）；<br>24000：24k（仅一句话声音复刻支持）；<br>48000：48k（仅一句话声音复刻支持）。</p>
                      */
                     int64_t m_sampleRate;
                     bool m_sampleRateHasBeenSet;
 
                     /**
-                     * 复刻类型。5 - 一句话声音复刻。
+                     * <p>复刻类型。5 - 一句话声音复刻。</p>
                      */
                     int64_t m_taskType;
                     bool m_taskTypeHasBeenSet;

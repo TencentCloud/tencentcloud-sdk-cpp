@@ -26,7 +26,8 @@ OSImage::OSImage() :
     m_osNameHasBeenSet(false),
     m_osCustomizeTypeHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_imageIdHasBeenSet(false)
+    m_imageIdHasBeenSet(false),
+    m_archHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome OSImage::Deserialize(const rapidjson::Value &value)
         m_imageIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Arch") && !value["Arch"].IsNull())
+    {
+        if (!value["Arch"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OSImage.Arch` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_arch = string(value["Arch"].GetString());
+        m_archHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void OSImage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ImageId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_imageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_archHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Arch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_arch.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void OSImage::SetImageId(const string& _imageId)
 bool OSImage::ImageIdHasBeenSet() const
 {
     return m_imageIdHasBeenSet;
+}
+
+string OSImage::GetArch() const
+{
+    return m_arch;
+}
+
+void OSImage::SetArch(const string& _arch)
+{
+    m_arch = _arch;
+    m_archHasBeenSet = true;
+}
+
+bool OSImage::ArchHasBeenSet() const
+{
+    return m_archHasBeenSet;
 }
 

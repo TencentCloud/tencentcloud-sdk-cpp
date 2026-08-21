@@ -361,6 +361,27 @@ namespace TencentCloud
                      */
                     bool DerivedFieldsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>日志导出创建时间，毫秒时间戳</p><p>单位：ms</p>
+                     * @return CreateTimestamp <p>日志导出创建时间，毫秒时间戳</p><p>单位：ms</p>
+                     * 
+                     */
+                    uint64_t GetCreateTimestamp() const;
+
+                    /**
+                     * 设置<p>日志导出创建时间，毫秒时间戳</p><p>单位：ms</p>
+                     * @param _createTimestamp <p>日志导出创建时间，毫秒时间戳</p><p>单位：ms</p>
+                     * 
+                     */
+                    void SetCreateTimestamp(const uint64_t& _createTimestamp);
+
+                    /**
+                     * 判断参数 CreateTimestamp 是否已赋值
+                     * @return CreateTimestamp 是否已赋值
+                     * 
+                     */
+                    bool CreateTimestampHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,6 +473,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_derivedFields;
                     bool m_derivedFieldsHasBeenSet;
+
+                    /**
+                     * <p>日志导出创建时间，毫秒时间戳</p><p>单位：ms</p>
+                     */
+                    uint64_t m_createTimestamp;
+                    bool m_createTimestampHasBeenSet;
 
                 };
             }

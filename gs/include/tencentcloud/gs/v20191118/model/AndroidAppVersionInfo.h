@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取安卓应用版本
-                     * @return AndroidAppVersion 安卓应用版本
+                     * 获取<p>安卓应用版本</p>
+                     * @return AndroidAppVersion <p>安卓应用版本</p>
                      * 
                      */
                     std::string GetAndroidAppVersion() const;
 
                     /**
-                     * 设置安卓应用版本
-                     * @param _androidAppVersion 安卓应用版本
+                     * 设置<p>安卓应用版本</p>
+                     * @param _androidAppVersion <p>安卓应用版本</p>
                      * 
                      */
                     void SetAndroidAppVersion(const std::string& _androidAppVersion);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AndroidAppVersionHasBeenSet() const;
 
                     /**
-                     * 获取安卓应用版本创建状态，取值：NORMAL：无（默认）、UPLOADING：上传中、CREATING： 创建中、CREATE_FAIL：创建失败、PACKAGE_NAME_MISMATCH：包名不匹配、VERSION_ALREADY_EXISTS：版本已存在、APP_PARSE_FAIL： app 解析失败、APP_EXISTS_SECURITY_RISK：app 存在安全风险、CREATE_SUCCESS：创建成功
-                     * @return State 安卓应用版本创建状态，取值：NORMAL：无（默认）、UPLOADING：上传中、CREATING： 创建中、CREATE_FAIL：创建失败、PACKAGE_NAME_MISMATCH：包名不匹配、VERSION_ALREADY_EXISTS：版本已存在、APP_PARSE_FAIL： app 解析失败、APP_EXISTS_SECURITY_RISK：app 存在安全风险、CREATE_SUCCESS：创建成功
+                     * 获取<p>安卓应用版本创建状态，取值：NORMAL：无（默认）、UPLOADING：上传中、CREATING： 创建中、CREATE_FAIL：创建失败、PACKAGE_NAME_MISMATCH：包名不匹配、VERSION_ALREADY_EXISTS：版本已存在、APP_PARSE_FAIL： app 解析失败、APP_EXISTS_SECURITY_RISK：app 存在安全风险、CREATE_SUCCESS：创建成功</p>
+                     * @return State <p>安卓应用版本创建状态，取值：NORMAL：无（默认）、UPLOADING：上传中、CREATING： 创建中、CREATE_FAIL：创建失败、PACKAGE_NAME_MISMATCH：包名不匹配、VERSION_ALREADY_EXISTS：版本已存在、APP_PARSE_FAIL： app 解析失败、APP_EXISTS_SECURITY_RISK：app 存在安全风险、CREATE_SUCCESS：创建成功</p>
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置安卓应用版本创建状态，取值：NORMAL：无（默认）、UPLOADING：上传中、CREATING： 创建中、CREATE_FAIL：创建失败、PACKAGE_NAME_MISMATCH：包名不匹配、VERSION_ALREADY_EXISTS：版本已存在、APP_PARSE_FAIL： app 解析失败、APP_EXISTS_SECURITY_RISK：app 存在安全风险、CREATE_SUCCESS：创建成功
-                     * @param _state 安卓应用版本创建状态，取值：NORMAL：无（默认）、UPLOADING：上传中、CREATING： 创建中、CREATE_FAIL：创建失败、PACKAGE_NAME_MISMATCH：包名不匹配、VERSION_ALREADY_EXISTS：版本已存在、APP_PARSE_FAIL： app 解析失败、APP_EXISTS_SECURITY_RISK：app 存在安全风险、CREATE_SUCCESS：创建成功
+                     * 设置<p>安卓应用版本创建状态，取值：NORMAL：无（默认）、UPLOADING：上传中、CREATING： 创建中、CREATE_FAIL：创建失败、PACKAGE_NAME_MISMATCH：包名不匹配、VERSION_ALREADY_EXISTS：版本已存在、APP_PARSE_FAIL： app 解析失败、APP_EXISTS_SECURITY_RISK：app 存在安全风险、CREATE_SUCCESS：创建成功</p>
+                     * @param _state <p>安卓应用版本创建状态，取值：NORMAL：无（默认）、UPLOADING：上传中、CREATING： 创建中、CREATE_FAIL：创建失败、PACKAGE_NAME_MISMATCH：包名不匹配、VERSION_ALREADY_EXISTS：版本已存在、APP_PARSE_FAIL： app 解析失败、APP_EXISTS_SECURITY_RISK：app 存在安全风险、CREATE_SUCCESS：创建成功</p>
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取安卓应用版本创建时间
-                     * @return CreateTime 安卓应用版本创建时间
+                     * 获取<p>安卓应用版本创建时间</p>
+                     * @return CreateTime <p>安卓应用版本创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置安卓应用版本创建时间
-                     * @param _createTime 安卓应用版本创建时间
+                     * 设置<p>安卓应用版本创建时间</p>
+                     * @param _createTime <p>安卓应用版本创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取shell 安装命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
-                     * @return Command shell 安装命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * 获取<p>shell 安装命令（支持多条命令执行，通过 &amp;&amp; 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）</p>
+                     * @return Command <p>shell 安装命令（支持多条命令执行，通过 &amp;&amp; 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）</p>
                      * 
                      */
                     std::string GetCommand() const;
 
                     /**
-                     * 设置shell 安装命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
-                     * @param _command shell 安装命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * 设置<p>shell 安装命令（支持多条命令执行，通过 &amp;&amp; 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）</p>
+                     * @param _command <p>shell 安装命令（支持多条命令执行，通过 &amp;&amp; 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）</p>
                      * 
                      */
                     void SetCommand(const std::string& _command);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool CommandHasBeenSet() const;
 
                     /**
-                     * 获取shell 卸载命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
-                     * @return UninstallCommand shell 卸载命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * 获取<p>shell 卸载命令（支持多条命令执行，通过 &amp;&amp; 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）</p>
+                     * @return UninstallCommand <p>shell 卸载命令（支持多条命令执行，通过 &amp;&amp; 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）</p>
                      * 
                      */
                     std::string GetUninstallCommand() const;
 
                     /**
-                     * 设置shell 卸载命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
-                     * @param _uninstallCommand shell 卸载命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * 设置<p>shell 卸载命令（支持多条命令执行，通过 &amp;&amp; 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）</p>
+                     * @param _uninstallCommand <p>shell 卸载命令（支持多条命令执行，通过 &amp;&amp; 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）</p>
                      * 
                      */
                     void SetUninstallCommand(const std::string& _uninstallCommand);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool UninstallCommandHasBeenSet() const;
 
                     /**
-                     * 获取应用资源清理模式（实例安装应用所用资源），取值：CLEANUP_ON_UNINSTALL（默认值），卸载 App 时清理；CLEANUP_AFTER_INSTALL，安装 App 后立即清理。普通应用只有 CLEANUP_AFTER_INSTALL 模式。
-                     * @return CleanupMode 应用资源清理模式（实例安装应用所用资源），取值：CLEANUP_ON_UNINSTALL（默认值），卸载 App 时清理；CLEANUP_AFTER_INSTALL，安装 App 后立即清理。普通应用只有 CLEANUP_AFTER_INSTALL 模式。
+                     * 获取<p>应用资源清理模式（实例安装应用所用资源），取值：CLEANUP_ON_UNINSTALL（默认值），卸载 App 时清理；CLEANUP_AFTER_INSTALL，安装 App 后立即清理。普通应用只有 CLEANUP_AFTER_INSTALL 模式。</p>
+                     * @return CleanupMode <p>应用资源清理模式（实例安装应用所用资源），取值：CLEANUP_ON_UNINSTALL（默认值），卸载 App 时清理；CLEANUP_AFTER_INSTALL，安装 App 后立即清理。普通应用只有 CLEANUP_AFTER_INSTALL 模式。</p>
                      * 
                      */
                     std::string GetCleanupMode() const;
 
                     /**
-                     * 设置应用资源清理模式（实例安装应用所用资源），取值：CLEANUP_ON_UNINSTALL（默认值），卸载 App 时清理；CLEANUP_AFTER_INSTALL，安装 App 后立即清理。普通应用只有 CLEANUP_AFTER_INSTALL 模式。
-                     * @param _cleanupMode 应用资源清理模式（实例安装应用所用资源），取值：CLEANUP_ON_UNINSTALL（默认值），卸载 App 时清理；CLEANUP_AFTER_INSTALL，安装 App 后立即清理。普通应用只有 CLEANUP_AFTER_INSTALL 模式。
+                     * 设置<p>应用资源清理模式（实例安装应用所用资源），取值：CLEANUP_ON_UNINSTALL（默认值），卸载 App 时清理；CLEANUP_AFTER_INSTALL，安装 App 后立即清理。普通应用只有 CLEANUP_AFTER_INSTALL 模式。</p>
+                     * @param _cleanupMode <p>应用资源清理模式（实例安装应用所用资源），取值：CLEANUP_ON_UNINSTALL（默认值），卸载 App 时清理；CLEANUP_AFTER_INSTALL，安装 App 后立即清理。普通应用只有 CLEANUP_AFTER_INSTALL 模式。</p>
                      * 
                      */
                     void SetCleanupMode(const std::string& _cleanupMode);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool CleanupModeHasBeenSet() const;
 
                     /**
-                     * 获取安卓应用版本名称（版本描述、备注）
-                     * @return AndroidAppVersionName 安卓应用版本名称（版本描述、备注）
+                     * 获取<p>安卓应用版本名称（版本描述、备注）</p>
+                     * @return AndroidAppVersionName <p>安卓应用版本名称（版本描述、备注）</p>
                      * 
                      */
                     std::string GetAndroidAppVersionName() const;
 
                     /**
-                     * 设置安卓应用版本名称（版本描述、备注）
-                     * @param _androidAppVersionName 安卓应用版本名称（版本描述、备注）
+                     * 设置<p>安卓应用版本名称（版本描述、备注）</p>
+                     * @param _androidAppVersionName <p>安卓应用版本名称（版本描述、备注）</p>
                      * 
                      */
                     void SetAndroidAppVersionName(const std::string& _androidAppVersionName);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool AndroidAppVersionNameHasBeenSet() const;
 
                     /**
-                     * 获取安卓应用启动页
-                     * @return Activity 安卓应用启动页
+                     * 获取<p>安卓应用启动页</p>
+                     * @return Activity <p>安卓应用启动页</p>
                      * 
                      */
                     std::string GetActivity() const;
 
                     /**
-                     * 设置安卓应用启动页
-                     * @param _activity 安卓应用启动页
+                     * 设置<p>安卓应用启动页</p>
+                     * @param _activity <p>安卓应用启动页</p>
                      * 
                      */
                     void SetActivity(const std::string& _activity);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ActivityHasBeenSet() const;
 
                     /**
-                     * 获取应用版本号（Version Name）
-                     * @return VersionName 应用版本号（Version Name）
+                     * 获取<p>应用版本号（Version Name）</p>
+                     * @return VersionName <p>应用版本号（Version Name）</p>
                      * 
                      */
                     std::string GetVersionName() const;
 
                     /**
-                     * 设置应用版本号（Version Name）
-                     * @param _versionName 应用版本号（Version Name）
+                     * 设置<p>应用版本号（Version Name）</p>
+                     * @param _versionName <p>应用版本号（Version Name）</p>
                      * 
                      */
                     void SetVersionName(const std::string& _versionName);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool VersionNameHasBeenSet() const;
 
                     /**
-                     * 获取应用包 MD5
-                     * @return MD5 应用包 MD5
+                     * 获取<p>应用包 MD5</p>
+                     * @return MD5 <p>应用包 MD5</p>
                      * 
                      */
                     std::string GetMD5() const;
 
                     /**
-                     * 设置应用包 MD5
-                     * @param _mD5 应用包 MD5
+                     * 设置<p>应用包 MD5</p>
+                     * @param _mD5 <p>应用包 MD5</p>
                      * 
                      */
                     void SetMD5(const std::string& _mD5);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool MD5HasBeenSet() const;
 
                     /**
-                     * 获取应用包文件大小（字节）
-                     * @return FileSize 应用包文件大小（字节）
+                     * 获取<p>应用包文件大小（字节）</p>
+                     * @return FileSize <p>应用包文件大小（字节）</p>
                      * 
                      */
                     int64_t GetFileSize() const;
 
                     /**
-                     * 设置应用包文件大小（字节）
-                     * @param _fileSize 应用包文件大小（字节）
+                     * 设置<p>应用包文件大小（字节）</p>
+                     * @param _fileSize <p>应用包文件大小（字节）</p>
                      * 
                      */
                     void SetFileSize(const int64_t& _fileSize);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool FileSizeHasBeenSet() const;
 
                     /**
-                     * 获取安卓应用包名
-                     * @return PackageName 安卓应用包名
+                     * 获取<p>安卓应用包名</p>
+                     * @return PackageName <p>安卓应用包名</p>
                      * 
                      */
                     std::string GetPackageName() const;
 
                     /**
-                     * 设置安卓应用包名
-                     * @param _packageName 安卓应用包名
+                     * 设置<p>安卓应用包名</p>
+                     * @param _packageName <p>安卓应用包名</p>
                      * 
                      */
                     void SetPackageName(const std::string& _packageName);
@@ -301,73 +301,73 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 安卓应用版本
+                     * <p>安卓应用版本</p>
                      */
                     std::string m_androidAppVersion;
                     bool m_androidAppVersionHasBeenSet;
 
                     /**
-                     * 安卓应用版本创建状态，取值：NORMAL：无（默认）、UPLOADING：上传中、CREATING： 创建中、CREATE_FAIL：创建失败、PACKAGE_NAME_MISMATCH：包名不匹配、VERSION_ALREADY_EXISTS：版本已存在、APP_PARSE_FAIL： app 解析失败、APP_EXISTS_SECURITY_RISK：app 存在安全风险、CREATE_SUCCESS：创建成功
+                     * <p>安卓应用版本创建状态，取值：NORMAL：无（默认）、UPLOADING：上传中、CREATING： 创建中、CREATE_FAIL：创建失败、PACKAGE_NAME_MISMATCH：包名不匹配、VERSION_ALREADY_EXISTS：版本已存在、APP_PARSE_FAIL： app 解析失败、APP_EXISTS_SECURITY_RISK：app 存在安全风险、CREATE_SUCCESS：创建成功</p>
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 安卓应用版本创建时间
+                     * <p>安卓应用版本创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * shell 安装命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * <p>shell 安装命令（支持多条命令执行，通过 &amp;&amp; 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）</p>
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
 
                     /**
-                     * shell 卸载命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）
+                     * <p>shell 卸载命令（支持多条命令执行，通过 &amp;&amp; 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）</p>
                      */
                     std::string m_uninstallCommand;
                     bool m_uninstallCommandHasBeenSet;
 
                     /**
-                     * 应用资源清理模式（实例安装应用所用资源），取值：CLEANUP_ON_UNINSTALL（默认值），卸载 App 时清理；CLEANUP_AFTER_INSTALL，安装 App 后立即清理。普通应用只有 CLEANUP_AFTER_INSTALL 模式。
+                     * <p>应用资源清理模式（实例安装应用所用资源），取值：CLEANUP_ON_UNINSTALL（默认值），卸载 App 时清理；CLEANUP_AFTER_INSTALL，安装 App 后立即清理。普通应用只有 CLEANUP_AFTER_INSTALL 模式。</p>
                      */
                     std::string m_cleanupMode;
                     bool m_cleanupModeHasBeenSet;
 
                     /**
-                     * 安卓应用版本名称（版本描述、备注）
+                     * <p>安卓应用版本名称（版本描述、备注）</p>
                      */
                     std::string m_androidAppVersionName;
                     bool m_androidAppVersionNameHasBeenSet;
 
                     /**
-                     * 安卓应用启动页
+                     * <p>安卓应用启动页</p>
                      */
                     std::string m_activity;
                     bool m_activityHasBeenSet;
 
                     /**
-                     * 应用版本号（Version Name）
+                     * <p>应用版本号（Version Name）</p>
                      */
                     std::string m_versionName;
                     bool m_versionNameHasBeenSet;
 
                     /**
-                     * 应用包 MD5
+                     * <p>应用包 MD5</p>
                      */
                     std::string m_mD5;
                     bool m_mD5HasBeenSet;
 
                     /**
-                     * 应用包文件大小（字节）
+                     * <p>应用包文件大小（字节）</p>
                      */
                     int64_t m_fileSize;
                     bool m_fileSizeHasBeenSet;
 
                     /**
-                     * 安卓应用包名
+                     * <p>安卓应用包名</p>
                      */
                     std::string m_packageName;
                     bool m_packageNameHasBeenSet;

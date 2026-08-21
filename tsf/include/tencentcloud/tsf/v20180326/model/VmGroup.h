@@ -28,6 +28,10 @@
 #include <tencentcloud/tsf/v20180326/model/AgentProfile.h>
 #include <tencentcloud/tsf/v20180326/model/WarmupSetting.h>
 #include <tencentcloud/tsf/v20180326/model/GatewayConfig.h>
+#include <tencentcloud/tsf/v20180326/model/ExclusiveInstance.h>
+#include <tencentcloud/tsf/v20180326/model/ServiceConfig.h>
+#include <tencentcloud/tsf/v20180326/model/ServiceGovernanceConfig.h>
+#include <tencentcloud/tsf/v20180326/model/Tag.h>
 
 
 namespace TencentCloud
@@ -512,15 +516,15 @@ namespace TencentCloud
                     bool ApplicationTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>部署组资源类型</p>
-                     * @return GroupResourceType <p>部署组资源类型</p>
+                     * 获取<p>部署组资源类型</p><p>枚举值：</p><ul><li>GW： 网关</li><li>DEF： 普通业务部署组</li><li>SVL： Serverless</li></ul>
+                     * @return GroupResourceType <p>部署组资源类型</p><p>枚举值：</p><ul><li>GW： 网关</li><li>DEF： 普通业务部署组</li><li>SVL： Serverless</li></ul>
                      * 
                      */
                     std::string GetGroupResourceType() const;
 
                     /**
-                     * 设置<p>部署组资源类型</p>
-                     * @param _groupResourceType <p>部署组资源类型</p>
+                     * 设置<p>部署组资源类型</p><p>枚举值：</p><ul><li>GW： 网关</li><li>DEF： 普通业务部署组</li><li>SVL： Serverless</li></ul>
+                     * @param _groupResourceType <p>部署组资源类型</p><p>枚举值：</p><ul><li>GW： 网关</li><li>DEF： 普通业务部署组</li><li>SVL： Serverless</li></ul>
                      * 
                      */
                     void SetGroupResourceType(const std::string& _groupResourceType);
@@ -1064,6 +1068,615 @@ namespace TencentCloud
                      */
                     bool LivenessAutoRestartHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Mesh Sidecar 数据面版本通道</p><p>枚举值：</p><ul><li>stable： 稳定版</li><li>release： 最新版</li></ul>
+                     * @return MeshSidecarVersion <p>Mesh Sidecar 数据面版本通道</p><p>枚举值：</p><ul><li>stable： 稳定版</li><li>release： 最新版</li></ul>
+                     * 
+                     */
+                    std::string GetMeshSidecarVersion() const;
+
+                    /**
+                     * 设置<p>Mesh Sidecar 数据面版本通道</p><p>枚举值：</p><ul><li>stable： 稳定版</li><li>release： 最新版</li></ul>
+                     * @param _meshSidecarVersion <p>Mesh Sidecar 数据面版本通道</p><p>枚举值：</p><ul><li>stable： 稳定版</li><li>release： 最新版</li></ul>
+                     * 
+                     */
+                    void SetMeshSidecarVersion(const std::string& _meshSidecarVersion);
+
+                    /**
+                     * 判断参数 MeshSidecarVersion 是否已赋值
+                     * @return MeshSidecarVersion 是否已赋值
+                     * 
+                     */
+                    bool MeshSidecarVersionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>业务日志配置 ID 列表</p>
+                     * @return BusinessLogConfigIdList <p>业务日志配置 ID 列表</p>
+                     * 
+                     */
+                    std::string GetBusinessLogConfigIdList() const;
+
+                    /**
+                     * 设置<p>业务日志配置 ID 列表</p>
+                     * @param _businessLogConfigIdList <p>业务日志配置 ID 列表</p>
+                     * 
+                     */
+                    void SetBusinessLogConfigIdList(const std::string& _businessLogConfigIdList);
+
+                    /**
+                     * 判断参数 BusinessLogConfigIdList 是否已赋值
+                     * @return BusinessLogConfigIdList 是否已赋值
+                     * 
+                     */
+                    bool BusinessLogConfigIdListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>业务系统 ID</p>
+                     * @return BusinessLogDeliveryConfigIdList <p>业务系统 ID</p>
+                     * 
+                     */
+                    std::string GetBusinessLogDeliveryConfigIdList() const;
+
+                    /**
+                     * 设置<p>业务系统 ID</p>
+                     * @param _businessLogDeliveryConfigIdList <p>业务系统 ID</p>
+                     * 
+                     */
+                    void SetBusinessLogDeliveryConfigIdList(const std::string& _businessLogDeliveryConfigIdList);
+
+                    /**
+                     * 判断参数 BusinessLogDeliveryConfigIdList 是否已赋值
+                     * @return BusinessLogDeliveryConfigIdList 是否已赋值
+                     * 
+                     */
+                    bool BusinessLogDeliveryConfigIdListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>String型普通说明场景</p>
+                     * @return BusinessSystemId <p>String型普通说明场景</p>
+                     * 
+                     */
+                    std::string GetBusinessSystemId() const;
+
+                    /**
+                     * 设置<p>String型普通说明场景</p>
+                     * @param _businessSystemId <p>String型普通说明场景</p>
+                     * 
+                     */
+                    void SetBusinessSystemId(const std::string& _businessSystemId);
+
+                    /**
+                     * 判断参数 BusinessSystemId 是否已赋值
+                     * @return BusinessSystemId 是否已赋值
+                     * 
+                     */
+                    bool BusinessSystemIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>业务系统名称</p>
+                     * @return BusinessSystemName <p>业务系统名称</p>
+                     * 
+                     */
+                    std::string GetBusinessSystemName() const;
+
+                    /**
+                     * 设置<p>业务系统名称</p>
+                     * @param _businessSystemName <p>业务系统名称</p>
+                     * 
+                     */
+                    void SetBusinessSystemName(const std::string& _businessSystemName);
+
+                    /**
+                     * 判断参数 BusinessSystemName 是否已赋值
+                     * @return BusinessSystemName 是否已赋值
+                     * 
+                     */
+                    bool BusinessSystemNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>CLS 机器组 ID</p>
+                     * @return ClsMachineGroupId <p>CLS 机器组 ID</p>
+                     * 
+                     */
+                    std::string GetClsMachineGroupId() const;
+
+                    /**
+                     * 设置<p>CLS 机器组 ID</p>
+                     * @param _clsMachineGroupId <p>CLS 机器组 ID</p>
+                     * 
+                     */
+                    void SetClsMachineGroupId(const std::string& _clsMachineGroupId);
+
+                    /**
+                     * 判断参数 ClsMachineGroupId 是否已赋值
+                     * @return ClsMachineGroupId 是否已赋值
+                     * 
+                     */
+                    bool ClsMachineGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启服务治理</p>
+                     * @return EnableGovernance <p>是否开启服务治理</p>
+                     * 
+                     */
+                    bool GetEnableGovernance() const;
+
+                    /**
+                     * 设置<p>是否开启服务治理</p>
+                     * @param _enableGovernance <p>是否开启服务治理</p>
+                     * 
+                     */
+                    void SetEnableGovernance(const bool& _enableGovernance);
+
+                    /**
+                     * 判断参数 EnableGovernance 是否已赋值
+                     * @return EnableGovernance 是否已赋值
+                     * 
+                     */
+                    bool EnableGovernanceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启可观测</p>
+                     * @return EnableTelemetry <p>是否开启可观测</p>
+                     * 
+                     */
+                    bool GetEnableTelemetry() const;
+
+                    /**
+                     * 设置<p>是否开启可观测</p>
+                     * @param _enableTelemetry <p>是否开启可观测</p>
+                     * 
+                     */
+                    void SetEnableTelemetry(const bool& _enableTelemetry);
+
+                    /**
+                     * 判断参数 EnableTelemetry 是否已赋值
+                     * @return EnableTelemetry 是否已赋值
+                     * 
+                     */
+                    bool EnableTelemetryHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启 OT Agent</p>
+                     * @return EnableTelemetryAgent <p>是否开启 OT Agent</p>
+                     * 
+                     */
+                    bool GetEnableTelemetryAgent() const;
+
+                    /**
+                     * 设置<p>是否开启 OT Agent</p>
+                     * @param _enableTelemetryAgent <p>是否开启 OT Agent</p>
+                     * 
+                     */
+                    void SetEnableTelemetryAgent(const bool& _enableTelemetryAgent);
+
+                    /**
+                     * 判断参数 EnableTelemetryAgent 是否已赋值
+                     * @return EnableTelemetryAgent 是否已赋值
+                     * 
+                     */
+                    bool EnableTelemetryAgentHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启单元化</p>
+                     * @return EnabledUnit <p>是否开启单元化</p>
+                     * 
+                     */
+                    bool GetEnabledUnit() const;
+
+                    /**
+                     * 设置<p>是否开启单元化</p>
+                     * @param _enabledUnit <p>是否开启单元化</p>
+                     * 
+                     */
+                    void SetEnabledUnit(const bool& _enabledUnit);
+
+                    /**
+                     * 判断参数 EnabledUnit 是否已赋值
+                     * @return EnabledUnit 是否已赋值
+                     * 
+                     */
+                    bool EnabledUnitHasBeenSet() const;
+
+                    /**
+                     * 获取<p>独享注册中心/配置中心实例列表</p>
+                     * @return ExclusiveInstances <p>独享注册中心/配置中心实例列表</p>
+                     * 
+                     */
+                    std::vector<ExclusiveInstance> GetExclusiveInstances() const;
+
+                    /**
+                     * 设置<p>独享注册中心/配置中心实例列表</p>
+                     * @param _exclusiveInstances <p>独享注册中心/配置中心实例列表</p>
+                     * 
+                     */
+                    void SetExclusiveInstances(const std::vector<ExclusiveInstance>& _exclusiveInstances);
+
+                    /**
+                     * 判断参数 ExclusiveInstances 是否已赋值
+                     * @return ExclusiveInstances 是否已赋值
+                     * 
+                     */
+                    bool ExclusiveInstancesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>框架接入类型</p>
+                     * @return FrameworkType <p>框架接入类型</p>
+                     * 
+                     */
+                    std::string GetFrameworkType() const;
+
+                    /**
+                     * 设置<p>框架接入类型</p>
+                     * @param _frameworkType <p>框架接入类型</p>
+                     * 
+                     */
+                    void SetFrameworkType(const std::string& _frameworkType);
+
+                    /**
+                     * 判断参数 FrameworkType 是否已赋值
+                     * @return FrameworkType 是否已赋值
+                     * 
+                     */
+                    bool FrameworkTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务治理实例模式</p>
+                     * @return GovernanceType <p>服务治理实例模式</p>
+                     * 
+                     */
+                    std::string GetGovernanceType() const;
+
+                    /**
+                     * 设置<p>服务治理实例模式</p>
+                     * @param _governanceType <p>服务治理实例模式</p>
+                     * 
+                     */
+                    void SetGovernanceType(const std::string& _governanceType);
+
+                    /**
+                     * 判断参数 GovernanceType 是否已赋值
+                     * @return GovernanceType 是否已赋值
+                     * 
+                     */
+                    bool GovernanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>部署组关联实例 ID 列表</p>
+                     * @return InstanceIdList <p>部署组关联实例 ID 列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetInstanceIdList() const;
+
+                    /**
+                     * 设置<p>部署组关联实例 ID 列表</p>
+                     * @param _instanceIdList <p>部署组关联实例 ID 列表</p>
+                     * 
+                     */
+                    void SetInstanceIdList(const std::vector<std::string>& _instanceIdList);
+
+                    /**
+                     * 判断参数 InstanceIdList 是否已赋值
+                     * @return InstanceIdList 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>部署组是否处于停止状态</p>
+                     * @return IsStop <p>部署组是否处于停止状态</p>
+                     * 
+                     */
+                    std::string GetIsStop() const;
+
+                    /**
+                     * 设置<p>部署组是否处于停止状态</p>
+                     * @param _isStop <p>部署组是否处于停止状态</p>
+                     * 
+                     */
+                    void SetIsStop(const std::string& _isStop);
+
+                    /**
+                     * 判断参数 IsStop 是否已赋值
+                     * @return IsStop 是否已赋值
+                     * 
+                     */
+                    bool IsStopHasBeenSet() const;
+
+                    /**
+                     * 获取<p>K8s 命名空间名称</p>
+                     * @return K8sNamespaceName <p>K8s 命名空间名称</p>
+                     * 
+                     */
+                    std::string GetK8sNamespaceName() const;
+
+                    /**
+                     * 设置<p>K8s 命名空间名称</p>
+                     * @param _k8sNamespaceName <p>K8s 命名空间名称</p>
+                     * 
+                     */
+                    void SetK8sNamespaceName(const std::string& _k8sNamespaceName);
+
+                    /**
+                     * 判断参数 K8sNamespaceName 是否已赋值
+                     * @return K8sNamespaceName 是否已赋值
+                     * 
+                     */
+                    bool K8sNamespaceNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>请求语言</p>
+                     * @return Language <p>请求语言</p>
+                     * 
+                     */
+                    std::string GetLanguage() const;
+
+                    /**
+                     * 设置<p>请求语言</p>
+                     * @param _language <p>请求语言</p>
+                     * 
+                     */
+                    void SetLanguage(const std::string& _language);
+
+                    /**
+                     * 判断参数 Language 是否已赋值
+                     * @return Language 是否已赋值
+                     * 
+                     */
+                    bool LanguageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>微服务子类型</p>
+                     * @return MicroserviceSubType <p>微服务子类型</p>
+                     * 
+                     */
+                    std::string GetMicroserviceSubType() const;
+
+                    /**
+                     * 设置<p>微服务子类型</p>
+                     * @param _microserviceSubType <p>微服务子类型</p>
+                     * 
+                     */
+                    void SetMicroserviceSubType(const std::string& _microserviceSubType);
+
+                    /**
+                     * 判断参数 MicroserviceSubType 是否已赋值
+                     * @return MicroserviceSubType 是否已赋值
+                     * 
+                     */
+                    bool MicroserviceSubTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>非侵入接入子类型</p>
+                     * @return NonInvasiveType <p>非侵入接入子类型</p>
+                     * 
+                     */
+                    std::string GetNonInvasiveType() const;
+
+                    /**
+                     * 设置<p>非侵入接入子类型</p>
+                     * @param _nonInvasiveType <p>非侵入接入子类型</p>
+                     * 
+                     */
+                    void SetNonInvasiveType(const std::string& _nonInvasiveType);
+
+                    /**
+                     * 判断参数 NonInvasiveType 是否已赋值
+                     * @return NonInvasiveType 是否已赋值
+                     * 
+                     */
+                    bool NonInvasiveTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>预停止脚本内容</p>
+                     * @return PreStopScript <p>预停止脚本内容</p>
+                     * 
+                     */
+                    std::string GetPreStopScript() const;
+
+                    /**
+                     * 设置<p>预停止脚本内容</p>
+                     * @param _preStopScript <p>预停止脚本内容</p>
+                     * 
+                     */
+                    void SetPreStopScript(const std::string& _preStopScript);
+
+                    /**
+                     * 判断参数 PreStopScript 是否已赋值
+                     * @return PreStopScript 是否已赋值
+                     * 
+                     */
+                    bool PreStopScriptHasBeenSet() const;
+
+                    /**
+                     * 获取<p>实际使用的 K8s 命名空间名称</p>
+                     * @return RealNamespaceName <p>实际使用的 K8s 命名空间名称</p>
+                     * 
+                     */
+                    std::string GetRealNamespaceName() const;
+
+                    /**
+                     * 设置<p>实际使用的 K8s 命名空间名称</p>
+                     * @param _realNamespaceName <p>实际使用的 K8s 命名空间名称</p>
+                     * 
+                     */
+                    void SetRealNamespaceName(const std::string& _realNamespaceName);
+
+                    /**
+                     * 判断参数 RealNamespaceName 是否已赋值
+                     * @return RealNamespaceName 是否已赋值
+                     * 
+                     */
+                    bool RealNamespaceNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Mesh 服务端口与健康检查配置列表</p>
+                     * @return ServiceConfigList <p>Mesh 服务端口与健康检查配置列表</p>
+                     * 
+                     */
+                    std::vector<ServiceConfig> GetServiceConfigList() const;
+
+                    /**
+                     * 设置<p>Mesh 服务端口与健康检查配置列表</p>
+                     * @param _serviceConfigList <p>Mesh 服务端口与健康检查配置列表</p>
+                     * 
+                     */
+                    void SetServiceConfigList(const std::vector<ServiceConfig>& _serviceConfigList);
+
+                    /**
+                     * 判断参数 ServiceConfigList 是否已赋值
+                     * @return ServiceConfigList 是否已赋值
+                     * 
+                     */
+                    bool ServiceConfigListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务治理配置聚合对象</p>
+                     * @return ServiceGovernanceConfig <p>服务治理配置聚合对象</p>
+                     * 
+                     */
+                    ServiceGovernanceConfig GetServiceGovernanceConfig() const;
+
+                    /**
+                     * 设置<p>服务治理配置聚合对象</p>
+                     * @param _serviceGovernanceConfig <p>服务治理配置聚合对象</p>
+                     * 
+                     */
+                    void SetServiceGovernanceConfig(const ServiceGovernanceConfig& _serviceGovernanceConfig);
+
+                    /**
+                     * 判断参数 ServiceGovernanceConfig 是否已赋值
+                     * @return ServiceGovernanceConfig 是否已赋值
+                     * 
+                     */
+                    bool ServiceGovernanceConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>部署组标签列表</p>
+                     * @return Tags <p>部署组标签列表</p>
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置<p>部署组标签列表</p>
+                     * @param _tags <p>部署组标签列表</p>
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Tapm OT Agent 版本</p>
+                     * @return TapmOtAgentVersion <p>Tapm OT Agent 版本</p>
+                     * 
+                     */
+                    std::string GetTapmOtAgentVersion() const;
+
+                    /**
+                     * 设置<p>Tapm OT Agent 版本</p>
+                     * @param _tapmOtAgentVersion <p>Tapm OT Agent 版本</p>
+                     * 
+                     */
+                    void SetTapmOtAgentVersion(const std::string& _tapmOtAgentVersion);
+
+                    /**
+                     * 判断参数 TapmOtAgentVersion 是否已赋值
+                     * @return TapmOtAgentVersion 是否已赋值
+                     * 
+                     */
+                    bool TapmOtAgentVersionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>单元环境类型</p>
+                     * @return UnitEnvType <p>单元环境类型</p>
+                     * 
+                     */
+                    std::string GetUnitEnvType() const;
+
+                    /**
+                     * 设置<p>单元环境类型</p>
+                     * @param _unitEnvType <p>单元环境类型</p>
+                     * 
+                     */
+                    void SetUnitEnvType(const std::string& _unitEnvType);
+
+                    /**
+                     * 判断参数 UnitEnvType 是否已赋值
+                     * @return UnitEnvType 是否已赋值
+                     * 
+                     */
+                    bool UnitEnvTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>单元 ID</p>
+                     * @return UnitId <p>单元 ID</p>
+                     * 
+                     */
+                    std::string GetUnitId() const;
+
+                    /**
+                     * 设置<p>单元 ID</p>
+                     * @param _unitId <p>单元 ID</p>
+                     * 
+                     */
+                    void SetUnitId(const std::string& _unitId);
+
+                    /**
+                     * 判断参数 UnitId 是否已赋值
+                     * @return UnitId 是否已赋值
+                     * 
+                     */
+                    bool UnitIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>单元类型</p>
+                     * @return UnitName <p>单元类型</p>
+                     * 
+                     */
+                    std::string GetUnitName() const;
+
+                    /**
+                     * 设置<p>单元类型</p>
+                     * @param _unitName <p>单元类型</p>
+                     * 
+                     */
+                    void SetUnitName(const std::string& _unitName);
+
+                    /**
+                     * 判断参数 UnitName 是否已赋值
+                     * @return UnitName 是否已赋值
+                     * 
+                     */
+                    bool UnitNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>部署组资源类型</p>
+                     * @return UnitType <p>部署组资源类型</p>
+                     * 
+                     */
+                    std::string GetUnitType() const;
+
+                    /**
+                     * 设置<p>部署组资源类型</p>
+                     * @param _unitType <p>部署组资源类型</p>
+                     * 
+                     */
+                    void SetUnitType(const std::string& _unitType);
+
+                    /**
+                     * 判断参数 UnitType 是否已赋值
+                     * @return UnitType 是否已赋值
+                     * 
+                     */
+                    bool UnitTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1198,7 +1811,7 @@ namespace TencentCloud
                     bool m_applicationTypeHasBeenSet;
 
                     /**
-                     * <p>部署组资源类型</p>
+                     * <p>部署组资源类型</p><p>枚举值：</p><ul><li>GW： 网关</li><li>DEF： 普通业务部署组</li><li>SVL： Serverless</li></ul>
                      */
                     std::string m_groupResourceType;
                     bool m_groupResourceTypeHasBeenSet;
@@ -1353,6 +1966,180 @@ namespace TencentCloud
                      */
                     bool m_livenessAutoRestart;
                     bool m_livenessAutoRestartHasBeenSet;
+
+                    /**
+                     * <p>Mesh Sidecar 数据面版本通道</p><p>枚举值：</p><ul><li>stable： 稳定版</li><li>release： 最新版</li></ul>
+                     */
+                    std::string m_meshSidecarVersion;
+                    bool m_meshSidecarVersionHasBeenSet;
+
+                    /**
+                     * <p>业务日志配置 ID 列表</p>
+                     */
+                    std::string m_businessLogConfigIdList;
+                    bool m_businessLogConfigIdListHasBeenSet;
+
+                    /**
+                     * <p>业务系统 ID</p>
+                     */
+                    std::string m_businessLogDeliveryConfigIdList;
+                    bool m_businessLogDeliveryConfigIdListHasBeenSet;
+
+                    /**
+                     * <p>String型普通说明场景</p>
+                     */
+                    std::string m_businessSystemId;
+                    bool m_businessSystemIdHasBeenSet;
+
+                    /**
+                     * <p>业务系统名称</p>
+                     */
+                    std::string m_businessSystemName;
+                    bool m_businessSystemNameHasBeenSet;
+
+                    /**
+                     * <p>CLS 机器组 ID</p>
+                     */
+                    std::string m_clsMachineGroupId;
+                    bool m_clsMachineGroupIdHasBeenSet;
+
+                    /**
+                     * <p>是否开启服务治理</p>
+                     */
+                    bool m_enableGovernance;
+                    bool m_enableGovernanceHasBeenSet;
+
+                    /**
+                     * <p>是否开启可观测</p>
+                     */
+                    bool m_enableTelemetry;
+                    bool m_enableTelemetryHasBeenSet;
+
+                    /**
+                     * <p>是否开启 OT Agent</p>
+                     */
+                    bool m_enableTelemetryAgent;
+                    bool m_enableTelemetryAgentHasBeenSet;
+
+                    /**
+                     * <p>是否开启单元化</p>
+                     */
+                    bool m_enabledUnit;
+                    bool m_enabledUnitHasBeenSet;
+
+                    /**
+                     * <p>独享注册中心/配置中心实例列表</p>
+                     */
+                    std::vector<ExclusiveInstance> m_exclusiveInstances;
+                    bool m_exclusiveInstancesHasBeenSet;
+
+                    /**
+                     * <p>框架接入类型</p>
+                     */
+                    std::string m_frameworkType;
+                    bool m_frameworkTypeHasBeenSet;
+
+                    /**
+                     * <p>服务治理实例模式</p>
+                     */
+                    std::string m_governanceType;
+                    bool m_governanceTypeHasBeenSet;
+
+                    /**
+                     * <p>部署组关联实例 ID 列表</p>
+                     */
+                    std::vector<std::string> m_instanceIdList;
+                    bool m_instanceIdListHasBeenSet;
+
+                    /**
+                     * <p>部署组是否处于停止状态</p>
+                     */
+                    std::string m_isStop;
+                    bool m_isStopHasBeenSet;
+
+                    /**
+                     * <p>K8s 命名空间名称</p>
+                     */
+                    std::string m_k8sNamespaceName;
+                    bool m_k8sNamespaceNameHasBeenSet;
+
+                    /**
+                     * <p>请求语言</p>
+                     */
+                    std::string m_language;
+                    bool m_languageHasBeenSet;
+
+                    /**
+                     * <p>微服务子类型</p>
+                     */
+                    std::string m_microserviceSubType;
+                    bool m_microserviceSubTypeHasBeenSet;
+
+                    /**
+                     * <p>非侵入接入子类型</p>
+                     */
+                    std::string m_nonInvasiveType;
+                    bool m_nonInvasiveTypeHasBeenSet;
+
+                    /**
+                     * <p>预停止脚本内容</p>
+                     */
+                    std::string m_preStopScript;
+                    bool m_preStopScriptHasBeenSet;
+
+                    /**
+                     * <p>实际使用的 K8s 命名空间名称</p>
+                     */
+                    std::string m_realNamespaceName;
+                    bool m_realNamespaceNameHasBeenSet;
+
+                    /**
+                     * <p>Mesh 服务端口与健康检查配置列表</p>
+                     */
+                    std::vector<ServiceConfig> m_serviceConfigList;
+                    bool m_serviceConfigListHasBeenSet;
+
+                    /**
+                     * <p>服务治理配置聚合对象</p>
+                     */
+                    ServiceGovernanceConfig m_serviceGovernanceConfig;
+                    bool m_serviceGovernanceConfigHasBeenSet;
+
+                    /**
+                     * <p>部署组标签列表</p>
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * <p>Tapm OT Agent 版本</p>
+                     */
+                    std::string m_tapmOtAgentVersion;
+                    bool m_tapmOtAgentVersionHasBeenSet;
+
+                    /**
+                     * <p>单元环境类型</p>
+                     */
+                    std::string m_unitEnvType;
+                    bool m_unitEnvTypeHasBeenSet;
+
+                    /**
+                     * <p>单元 ID</p>
+                     */
+                    std::string m_unitId;
+                    bool m_unitIdHasBeenSet;
+
+                    /**
+                     * <p>单元类型</p>
+                     */
+                    std::string m_unitName;
+                    bool m_unitNameHasBeenSet;
+
+                    /**
+                     * <p>部署组资源类型</p>
+                     */
+                    std::string m_unitType;
+                    bool m_unitTypeHasBeenSet;
 
                 };
             }

@@ -35,6 +35,8 @@
 #include <tencentcloud/adp/v20260520/model/CreateAppTriggerResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateConversationRequest.h>
 #include <tencentcloud/adp/v20260520/model/CreateConversationResponse.h>
+#include <tencentcloud/adp/v20260520/model/CreateMsgRecordCategoryRequest.h>
+#include <tencentcloud/adp/v20260520/model/CreateMsgRecordCategoryResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreatePluginRequest.h>
 #include <tencentcloud/adp/v20260520/model/CreatePluginResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateReleaseRequest.h>
@@ -59,6 +61,8 @@
 #include <tencentcloud/adp/v20260520/model/DeleteAppTriggerResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeleteConversationRequest.h>
 #include <tencentcloud/adp/v20260520/model/DeleteConversationResponse.h>
+#include <tencentcloud/adp/v20260520/model/DeleteMsgRecordCategoryRequest.h>
+#include <tencentcloud/adp/v20260520/model/DeleteMsgRecordCategoryResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeletePluginRequest.h>
 #include <tencentcloud/adp/v20260520/model/DeletePluginResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeleteSkillRequest.h>
@@ -109,6 +113,10 @@
 #include <tencentcloud/adp/v20260520/model/DescribeMetricOverviewListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeModelListRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeModelListResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeMsgRecordCategoryListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeMsgRecordCategoryListResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeMsgRecordListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeMsgRecordListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribePluginRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribePluginResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribePluginSummaryListRequest.h>
@@ -149,6 +157,8 @@
 #include <tencentcloud/adp/v20260520/model/ModifyAppTriggerResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyConversationRequest.h>
 #include <tencentcloud/adp/v20260520/model/ModifyConversationResponse.h>
+#include <tencentcloud/adp/v20260520/model/ModifyMsgRecordCategoryRequest.h>
+#include <tencentcloud/adp/v20260520/model/ModifyMsgRecordCategoryResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyPluginRequest.h>
 #include <tencentcloud/adp/v20260520/model/ModifyPluginResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifySkillRequest.h>
@@ -207,6 +217,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateConversationResponse> CreateConversationOutcome;
                 typedef std::future<CreateConversationOutcome> CreateConversationOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CreateConversationRequest&, CreateConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConversationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMsgRecordCategoryResponse> CreateMsgRecordCategoryOutcome;
+                typedef std::future<CreateMsgRecordCategoryOutcome> CreateMsgRecordCategoryOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::CreateMsgRecordCategoryRequest&, CreateMsgRecordCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMsgRecordCategoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePluginResponse> CreatePluginOutcome;
                 typedef std::future<CreatePluginOutcome> CreatePluginOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CreatePluginRequest&, CreatePluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePluginAsyncHandler;
@@ -243,6 +256,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteConversationResponse> DeleteConversationOutcome;
                 typedef std::future<DeleteConversationOutcome> DeleteConversationOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DeleteConversationRequest&, DeleteConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConversationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteMsgRecordCategoryResponse> DeleteMsgRecordCategoryOutcome;
+                typedef std::future<DeleteMsgRecordCategoryOutcome> DeleteMsgRecordCategoryOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DeleteMsgRecordCategoryRequest&, DeleteMsgRecordCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMsgRecordCategoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeletePluginResponse> DeletePluginOutcome;
                 typedef std::future<DeletePluginOutcome> DeletePluginOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DeletePluginRequest&, DeletePluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePluginAsyncHandler;
@@ -318,6 +334,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeModelListResponse> DescribeModelListOutcome;
                 typedef std::future<DescribeModelListOutcome> DescribeModelListOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeModelListRequest&, DescribeModelListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMsgRecordCategoryListResponse> DescribeMsgRecordCategoryListOutcome;
+                typedef std::future<DescribeMsgRecordCategoryListOutcome> DescribeMsgRecordCategoryListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeMsgRecordCategoryListRequest&, DescribeMsgRecordCategoryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMsgRecordCategoryListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMsgRecordListResponse> DescribeMsgRecordListOutcome;
+                typedef std::future<DescribeMsgRecordListOutcome> DescribeMsgRecordListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeMsgRecordListRequest&, DescribeMsgRecordListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMsgRecordListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePluginResponse> DescribePluginOutcome;
                 typedef std::future<DescribePluginOutcome> DescribePluginOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribePluginRequest&, DescribePluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePluginAsyncHandler;
@@ -378,6 +400,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyConversationResponse> ModifyConversationOutcome;
                 typedef std::future<ModifyConversationOutcome> ModifyConversationOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ModifyConversationRequest&, ModifyConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConversationAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMsgRecordCategoryResponse> ModifyMsgRecordCategoryOutcome;
+                typedef std::future<ModifyMsgRecordCategoryOutcome> ModifyMsgRecordCategoryOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::ModifyMsgRecordCategoryRequest&, ModifyMsgRecordCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMsgRecordCategoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyPluginResponse> ModifyPluginOutcome;
                 typedef std::future<ModifyPluginOutcome> ModifyPluginOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ModifyPluginRequest&, ModifyPluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPluginAsyncHandler;
@@ -473,6 +498,15 @@ namespace TencentCloud
                 CreateConversationOutcome CreateConversation(const Model::CreateConversationRequest &request);
                 void CreateConversationAsync(const Model::CreateConversationRequest& request, const CreateConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateConversationOutcomeCallable CreateConversationCallable(const Model::CreateConversationRequest& request);
+
+                /**
+                 *创建一条消息记录分类，支持指定分类名称与父分类（ParentId 为 0 时表示一级分类）
+                 * @param req CreateMsgRecordCategoryRequest
+                 * @return CreateMsgRecordCategoryOutcome
+                 */
+                CreateMsgRecordCategoryOutcome CreateMsgRecordCategory(const Model::CreateMsgRecordCategoryRequest &request);
+                void CreateMsgRecordCategoryAsync(const Model::CreateMsgRecordCategoryRequest& request, const CreateMsgRecordCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMsgRecordCategoryOutcomeCallable CreateMsgRecordCategoryCallable(const Model::CreateMsgRecordCategoryRequest& request);
 
                 /**
                  *获取插件详情
@@ -581,6 +615,15 @@ namespace TencentCloud
                 DeleteConversationOutcome DeleteConversation(const Model::DeleteConversationRequest &request);
                 void DeleteConversationAsync(const Model::DeleteConversationRequest& request, const DeleteConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteConversationOutcomeCallable DeleteConversationCallable(const Model::DeleteConversationRequest& request);
+
+                /**
+                 *删除指定的消息记录分类
+                 * @param req DeleteMsgRecordCategoryRequest
+                 * @return DeleteMsgRecordCategoryOutcome
+                 */
+                DeleteMsgRecordCategoryOutcome DeleteMsgRecordCategory(const Model::DeleteMsgRecordCategoryRequest &request);
+                void DeleteMsgRecordCategoryAsync(const Model::DeleteMsgRecordCategoryRequest& request, const DeleteMsgRecordCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteMsgRecordCategoryOutcomeCallable DeleteMsgRecordCategoryCallable(const Model::DeleteMsgRecordCategoryRequest& request);
 
                 /**
                  *修改插件
@@ -808,6 +851,24 @@ namespace TencentCloud
                 DescribeModelListOutcomeCallable DescribeModelListCallable(const Model::DescribeModelListRequest& request);
 
                 /**
+                 *查询应用的消息记录分类树，返回分类及子分类、各分类下记录数量与操作权限
+                 * @param req DescribeMsgRecordCategoryListRequest
+                 * @return DescribeMsgRecordCategoryListOutcome
+                 */
+                DescribeMsgRecordCategoryListOutcome DescribeMsgRecordCategoryList(const Model::DescribeMsgRecordCategoryListRequest &request);
+                void DescribeMsgRecordCategoryListAsync(const Model::DescribeMsgRecordCategoryListRequest& request, const DescribeMsgRecordCategoryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMsgRecordCategoryListOutcomeCallable DescribeMsgRecordCategoryListCallable(const Model::DescribeMsgRecordCategoryListRequest& request);
+
+                /**
+                 *查询应用的对话消息记录列表，支持按渠道类型、反馈类型、意图、调用结果等条件过滤，并支持游标分页与按创建时间排序
+                 * @param req DescribeMsgRecordListRequest
+                 * @return DescribeMsgRecordListOutcome
+                 */
+                DescribeMsgRecordListOutcome DescribeMsgRecordList(const Model::DescribeMsgRecordListRequest &request);
+                void DescribeMsgRecordListAsync(const Model::DescribeMsgRecordListRequest& request, const DescribeMsgRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMsgRecordListOutcomeCallable DescribeMsgRecordListCallable(const Model::DescribeMsgRecordListRequest& request);
+
+                /**
                  *获取插件详情
                  * @param req DescribePluginRequest
                  * @return DescribePluginOutcome
@@ -986,6 +1047,15 @@ namespace TencentCloud
                 ModifyConversationOutcome ModifyConversation(const Model::ModifyConversationRequest &request);
                 void ModifyConversationAsync(const Model::ModifyConversationRequest& request, const ModifyConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyConversationOutcomeCallable ModifyConversationCallable(const Model::ModifyConversationRequest& request);
+
+                /**
+                 *修改指定消息记录分类的名称
+                 * @param req ModifyMsgRecordCategoryRequest
+                 * @return ModifyMsgRecordCategoryOutcome
+                 */
+                ModifyMsgRecordCategoryOutcome ModifyMsgRecordCategory(const Model::ModifyMsgRecordCategoryRequest &request);
+                void ModifyMsgRecordCategoryAsync(const Model::ModifyMsgRecordCategoryRequest& request, const ModifyMsgRecordCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMsgRecordCategoryOutcomeCallable ModifyMsgRecordCategoryCallable(const Model::ModifyMsgRecordCategoryRequest& request);
 
                 /**
                  *修改插件

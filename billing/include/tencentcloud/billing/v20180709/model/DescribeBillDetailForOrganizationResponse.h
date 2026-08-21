@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取详情列表
-                     * @return DetailSet 详情列表
+                     * 获取<p>详情列表</p>
+                     * @return DetailSet <p>详情列表</p>
                      * 
                      */
                     std::vector<DistributionBillDetail> GetDetailSet() const;
@@ -59,9 +59,9 @@ namespace TencentCloud
                     bool DetailSetHasBeenSet() const;
 
                     /**
-                     * 获取总记录数，24小时缓存一次，可能比实际总记录数少
+                     * 获取<p>总记录数，24小时缓存一次，可能比实际总记录数少</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Total 总记录数，24小时缓存一次，可能比实际总记录数少
+                     * @return Total <p>总记录数，24小时缓存一次，可能比实际总记录数少</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -75,8 +75,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取本次请求的上下文信息，可用于下一次请求的请求参数中，加快查询速度
-                     * @return Context 本次请求的上下文信息，可用于下一次请求的请求参数中，加快查询速度
+                     * 获取<p>本次请求的上下文信息，可用于下一次请求的请求参数中，加快查询速度</p>
+                     * @return Context <p>本次请求的上下文信息，可用于下一次请求的请求参数中，加快查询速度</p>
                      * 
                      */
                     std::string GetContext() const;
@@ -91,20 +91,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 详情列表
+                     * <p>详情列表</p>
                      */
                     std::vector<DistributionBillDetail> m_detailSet;
                     bool m_detailSetHasBeenSet;
 
                     /**
-                     * 总记录数，24小时缓存一次，可能比实际总记录数少
+                     * <p>总记录数，24小时缓存一次，可能比实际总记录数少</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 本次请求的上下文信息，可用于下一次请求的请求参数中，加快查询速度
+                     * <p>本次请求的上下文信息，可用于下一次请求的请求参数中，加快查询速度</p>
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;

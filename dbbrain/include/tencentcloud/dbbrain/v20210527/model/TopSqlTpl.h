@@ -453,7 +453,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    int64_t GetIoWaitTimeMin() const;
+                    double GetIoWaitTimeMin() const;
 
                     /**
                      * 设置<p>最小io等待时间，单位秒</p>
@@ -462,7 +462,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetIoWaitTimeMin(const int64_t& _ioWaitTimeMin);
+                    void SetIoWaitTimeMin(const double& _ioWaitTimeMin);
 
                     /**
                      * 判断参数 IoWaitTimeMin 是否已赋值
@@ -982,7 +982,7 @@ namespace TencentCloud
                      * <p>最小io等待时间，单位秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t m_ioWaitTimeMin;
+                    double m_ioWaitTimeMin;
                     bool m_ioWaitTimeMinHasBeenSet;
 
                     /**

@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool PromptHasBeenSet() const;
 
+                    /**
+                     * 获取<p>图片理解模型参数，类型为 JSON 字符串。</p>
+                     * @return Parameters <p>图片理解模型参数，类型为 JSON 字符串。</p>
+                     * 
+                     */
+                    std::string GetParameters() const;
+
+                    /**
+                     * 设置<p>图片理解模型参数，类型为 JSON 字符串。</p>
+                     * @param _parameters <p>图片理解模型参数，类型为 JSON 字符串。</p>
+                     * 
+                     */
+                    void SetParameters(const std::string& _parameters);
+
+                    /**
+                     * 判断参数 Parameters 是否已赋值
+                     * @return Parameters 是否已赋值
+                     * 
+                     */
+                    bool ParametersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
+
+                    /**
+                     * <p>图片理解模型参数，类型为 JSON 字符串。</p>
+                     */
+                    std::string m_parameters;
+                    bool m_parametersHasBeenSet;
 
                 };
             }

@@ -3190,6 +3190,56 @@ IotexplorerClient::DeleteTWeSeeCallbackOutcomeCallable IotexplorerClient::Delete
     return prom->get_future();
 }
 
+IotexplorerClient::DeleteTWeSeeTasksByConditionOutcome IotexplorerClient::DeleteTWeSeeTasksByCondition(const DeleteTWeSeeTasksByConditionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTWeSeeTasksByCondition");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTWeSeeTasksByConditionResponse rsp = DeleteTWeSeeTasksByConditionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTWeSeeTasksByConditionOutcome(rsp);
+        else
+            return DeleteTWeSeeTasksByConditionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTWeSeeTasksByConditionOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DeleteTWeSeeTasksByConditionAsync(const DeleteTWeSeeTasksByConditionRequest& request, const DeleteTWeSeeTasksByConditionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteTWeSeeTasksByConditionRequest&;
+    using Resp = DeleteTWeSeeTasksByConditionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteTWeSeeTasksByCondition", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DeleteTWeSeeTasksByConditionOutcomeCallable IotexplorerClient::DeleteTWeSeeTasksByConditionCallable(const DeleteTWeSeeTasksByConditionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteTWeSeeTasksByConditionOutcome>>();
+    DeleteTWeSeeTasksByConditionAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DeleteTWeSeeTasksByConditionRequest&,
+        DeleteTWeSeeTasksByConditionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::DeleteTWeTalkAIBotOutcome IotexplorerClient::DeleteTWeTalkAIBot(const DeleteTWeTalkAIBotRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteTWeTalkAIBot");

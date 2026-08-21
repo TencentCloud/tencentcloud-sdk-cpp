@@ -22,7 +22,8 @@ using namespace std;
 
 UnderstandImageConfig::UnderstandImageConfig() :
     m_modelHasBeenSet(false),
-    m_promptHasBeenSet(false)
+    m_promptHasBeenSet(false),
+    m_parametersHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome UnderstandImageConfig::Deserialize(const rapidjson::Value &v
         m_promptHasBeenSet = true;
     }
 
+    if (value.HasMember("Parameters") && !value["Parameters"].IsNull())
+    {
+        if (!value["Parameters"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UnderstandImageConfig.Parameters` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parameters = string(value["Parameters"].GetString());
+        m_parametersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void UnderstandImageConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Prompt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_prompt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Parameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parameters.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void UnderstandImageConfig::SetPrompt(const string& _prompt)
 bool UnderstandImageConfig::PromptHasBeenSet() const
 {
     return m_promptHasBeenSet;
+}
+
+string UnderstandImageConfig::GetParameters() const
+{
+    return m_parameters;
+}
+
+void UnderstandImageConfig::SetParameters(const string& _parameters)
+{
+    m_parameters = _parameters;
+    m_parametersHasBeenSet = true;
+}
+
+bool UnderstandImageConfig::ParametersHasBeenSet() const
+{
+    return m_parametersHasBeenSet;
 }
 

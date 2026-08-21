@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取os聚合名称
-                     * @return SeriesName os聚合名称
+                     * 获取<p>os聚合名称</p>
+                     * @return SeriesName <p>os聚合名称</p>
                      * 
                      */
                     std::string GetSeriesName() const;
 
                     /**
-                     * 设置os聚合名称
-                     * @param _seriesName os聚合名称
+                     * 设置<p>os聚合名称</p>
+                     * @param _seriesName <p>os聚合名称</p>
                      * 
                      */
                     void SetSeriesName(const std::string& _seriesName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool SeriesNameHasBeenSet() const;
 
                     /**
-                     * 获取os别名
-                     * @return Alias os别名
+                     * 获取<p>os别名</p>
+                     * @return Alias <p>os别名</p>
                      * 
                      */
                     std::string GetAlias() const;
 
                     /**
-                     * 设置os别名
-                     * @param _alias os别名
+                     * 设置<p>os别名</p>
+                     * @param _alias <p>os别名</p>
                      * 
                      */
                     void SetAlias(const std::string& _alias);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool AliasHasBeenSet() const;
 
                     /**
-                     * 获取os名称
-                     * @return OsName os名称
+                     * 获取<p>os名称</p>
+                     * @return OsName <p>os名称</p>
                      * 
                      */
                     std::string GetOsName() const;
 
                     /**
-                     * 设置os名称
-                     * @param _osName os名称
+                     * 设置<p>os名称</p>
+                     * @param _osName <p>os名称</p>
                      * 
                      */
                     void SetOsName(const std::string& _osName);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool OsNameHasBeenSet() const;
 
                     /**
-                     * 获取操作系统类型(分为定制和非定制，取值分别为:DOCKER_CUSTOMIZE、GENERAL)
-                     * @return OsCustomizeType 操作系统类型(分为定制和非定制，取值分别为:DOCKER_CUSTOMIZE、GENERAL)
+                     * 获取<p>操作系统类型(分为定制和非定制，取值分别为:DOCKER_CUSTOMIZE、GENERAL)</p>
+                     * @return OsCustomizeType <p>操作系统类型(分为定制和非定制，取值分别为:DOCKER_CUSTOMIZE、GENERAL)</p>
                      * 
                      */
                     std::string GetOsCustomizeType() const;
 
                     /**
-                     * 设置操作系统类型(分为定制和非定制，取值分别为:DOCKER_CUSTOMIZE、GENERAL)
-                     * @param _osCustomizeType 操作系统类型(分为定制和非定制，取值分别为:DOCKER_CUSTOMIZE、GENERAL)
+                     * 设置<p>操作系统类型(分为定制和非定制，取值分别为:DOCKER_CUSTOMIZE、GENERAL)</p>
+                     * @param _osCustomizeType <p>操作系统类型(分为定制和非定制，取值分别为:DOCKER_CUSTOMIZE、GENERAL)</p>
                      * 
                      */
                     void SetOsCustomizeType(const std::string& _osCustomizeType);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool OsCustomizeTypeHasBeenSet() const;
 
                     /**
-                     * 获取os是否下线(online表示在线,offline表示下线)
-                     * @return Status os是否下线(online表示在线,offline表示下线)
+                     * 获取<p>os是否下线(online表示在线,offline表示下线)</p>
+                     * @return Status <p>os是否下线(online表示在线,offline表示下线)</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置os是否下线(online表示在线,offline表示下线)
-                     * @param _status os是否下线(online表示在线,offline表示下线)
+                     * 设置<p>os是否下线(online表示在线,offline表示下线)</p>
+                     * @param _status <p>os是否下线(online表示在线,offline表示下线)</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取镜像id
-                     * @return ImageId 镜像id
+                     * 获取<p>镜像id</p>
+                     * @return ImageId <p>镜像id</p>
                      * 
                      */
                     std::string GetImageId() const;
 
                     /**
-                     * 设置镜像id
-                     * @param _imageId 镜像id
+                     * 设置<p>镜像id</p>
+                     * @param _imageId <p>镜像id</p>
                      * 
                      */
                     void SetImageId(const std::string& _imageId);
@@ -172,43 +172,70 @@ namespace TencentCloud
                      */
                     bool ImageIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>架构</p>
+                     * @return Arch <p>架构</p>
+                     * 
+                     */
+                    std::string GetArch() const;
+
+                    /**
+                     * 设置<p>架构</p>
+                     * @param _arch <p>架构</p>
+                     * 
+                     */
+                    void SetArch(const std::string& _arch);
+
+                    /**
+                     * 判断参数 Arch 是否已赋值
+                     * @return Arch 是否已赋值
+                     * 
+                     */
+                    bool ArchHasBeenSet() const;
+
                 private:
 
                     /**
-                     * os聚合名称
+                     * <p>os聚合名称</p>
                      */
                     std::string m_seriesName;
                     bool m_seriesNameHasBeenSet;
 
                     /**
-                     * os别名
+                     * <p>os别名</p>
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
 
                     /**
-                     * os名称
+                     * <p>os名称</p>
                      */
                     std::string m_osName;
                     bool m_osNameHasBeenSet;
 
                     /**
-                     * 操作系统类型(分为定制和非定制，取值分别为:DOCKER_CUSTOMIZE、GENERAL)
+                     * <p>操作系统类型(分为定制和非定制，取值分别为:DOCKER_CUSTOMIZE、GENERAL)</p>
                      */
                     std::string m_osCustomizeType;
                     bool m_osCustomizeTypeHasBeenSet;
 
                     /**
-                     * os是否下线(online表示在线,offline表示下线)
+                     * <p>os是否下线(online表示在线,offline表示下线)</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 镜像id
+                     * <p>镜像id</p>
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;
+
+                    /**
+                     * <p>架构</p>
+                     */
+                    std::string m_arch;
+                    bool m_archHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ using namespace std;
 DescribeServicesRequest::DescribeServicesRequest() :
     m_serviceIdsHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_statesHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,19 @@ string DescribeServicesRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_statesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "States";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_states.begin(); itr != m_states.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -119,6 +133,22 @@ void DescribeServicesRequest::SetOffset(const uint64_t& _offset)
 bool DescribeServicesRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+vector<string> DescribeServicesRequest::GetStates() const
+{
+    return m_states;
+}
+
+void DescribeServicesRequest::SetStates(const vector<string>& _states)
+{
+    m_states = _states;
+    m_statesHasBeenSet = true;
+}
+
+bool DescribeServicesRequest::StatesHasBeenSet() const
+{
+    return m_statesHasBeenSet;
 }
 
 

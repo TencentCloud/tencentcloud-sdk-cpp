@@ -29,6 +29,7 @@ CreateGrafanaInstanceRequest::CreateGrafanaInstanceRequest() :
     m_enableInternetHasBeenSet(false),
     m_grafanaInitPasswordHasBeenSet(false),
     m_tagSpecificationHasBeenSet(false),
+    m_dockerImageHasBeenSet(false),
     m_autoVoucherHasBeenSet(false)
 {
 }
@@ -98,6 +99,14 @@ string CreateGrafanaInstanceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dockerImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DockerImage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dockerImage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_autoVoucherHasBeenSet)
@@ -210,6 +219,22 @@ void CreateGrafanaInstanceRequest::SetTagSpecification(const vector<PrometheusTa
 bool CreateGrafanaInstanceRequest::TagSpecificationHasBeenSet() const
 {
     return m_tagSpecificationHasBeenSet;
+}
+
+string CreateGrafanaInstanceRequest::GetDockerImage() const
+{
+    return m_dockerImage;
+}
+
+void CreateGrafanaInstanceRequest::SetDockerImage(const string& _dockerImage)
+{
+    m_dockerImage = _dockerImage;
+    m_dockerImageHasBeenSet = true;
+}
+
+bool CreateGrafanaInstanceRequest::DockerImageHasBeenSet() const
+{
+    return m_dockerImageHasBeenSet;
 }
 
 bool CreateGrafanaInstanceRequest::GetAutoVoucher() const

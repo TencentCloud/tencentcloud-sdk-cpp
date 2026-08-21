@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取镜像 ID 列表
-                     * @return AndroidInstanceImageIds 镜像 ID 列表
+                     * 获取<p>镜像 ID 列表</p>
+                     * @return AndroidInstanceImageIds <p>镜像 ID 列表</p>
                      * 
                      */
                     std::vector<std::string> GetAndroidInstanceImageIds() const;
 
                     /**
-                     * 设置镜像 ID 列表
-                     * @param _androidInstanceImageIds 镜像 ID 列表
+                     * 设置<p>镜像 ID 列表</p>
+                     * @param _androidInstanceImageIds <p>镜像 ID 列表</p>
                      * 
                      */
                     void SetAndroidInstanceImageIds(const std::vector<std::string>& _androidInstanceImageIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 镜像 ID 列表
+                     * <p>镜像 ID 列表</p>
                      */
                     std::vector<std::string> m_androidInstanceImageIds;
                     bool m_androidInstanceImageIdsHasBeenSet;

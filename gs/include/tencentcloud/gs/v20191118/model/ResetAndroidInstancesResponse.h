@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务集合
-                     * @return TaskSet 任务集合
+                     * 获取<p>任务集合</p>
+                     * @return TaskSet <p>任务集合</p>
                      * 
                      */
                     std::vector<AndroidInstanceTask> GetTaskSet() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务集合
+                     * <p>任务集合</p>
                      */
                     std::vector<AndroidInstanceTask> m_taskSet;
                     bool m_taskSetHasBeenSet;

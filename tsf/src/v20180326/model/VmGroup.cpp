@@ -66,7 +66,36 @@ VmGroup::VmGroup() :
     m_repositoryIdHasBeenSet(false),
     m_repositoryNameHasBeenSet(false),
     m_repositoryTypeHasBeenSet(false),
-    m_livenessAutoRestartHasBeenSet(false)
+    m_livenessAutoRestartHasBeenSet(false),
+    m_meshSidecarVersionHasBeenSet(false),
+    m_businessLogConfigIdListHasBeenSet(false),
+    m_businessLogDeliveryConfigIdListHasBeenSet(false),
+    m_businessSystemIdHasBeenSet(false),
+    m_businessSystemNameHasBeenSet(false),
+    m_clsMachineGroupIdHasBeenSet(false),
+    m_enableGovernanceHasBeenSet(false),
+    m_enableTelemetryHasBeenSet(false),
+    m_enableTelemetryAgentHasBeenSet(false),
+    m_enabledUnitHasBeenSet(false),
+    m_exclusiveInstancesHasBeenSet(false),
+    m_frameworkTypeHasBeenSet(false),
+    m_governanceTypeHasBeenSet(false),
+    m_instanceIdListHasBeenSet(false),
+    m_isStopHasBeenSet(false),
+    m_k8sNamespaceNameHasBeenSet(false),
+    m_languageHasBeenSet(false),
+    m_microserviceSubTypeHasBeenSet(false),
+    m_nonInvasiveTypeHasBeenSet(false),
+    m_preStopScriptHasBeenSet(false),
+    m_realNamespaceNameHasBeenSet(false),
+    m_serviceConfigListHasBeenSet(false),
+    m_serviceGovernanceConfigHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_tapmOtAgentVersionHasBeenSet(false),
+    m_unitEnvTypeHasBeenSet(false),
+    m_unitIdHasBeenSet(false),
+    m_unitNameHasBeenSet(false),
+    m_unitTypeHasBeenSet(false)
 {
 }
 
@@ -569,6 +598,336 @@ CoreInternalOutcome VmGroup::Deserialize(const rapidjson::Value &value)
         m_livenessAutoRestartHasBeenSet = true;
     }
 
+    if (value.HasMember("MeshSidecarVersion") && !value["MeshSidecarVersion"].IsNull())
+    {
+        if (!value["MeshSidecarVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.MeshSidecarVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_meshSidecarVersion = string(value["MeshSidecarVersion"].GetString());
+        m_meshSidecarVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("BusinessLogConfigIdList") && !value["BusinessLogConfigIdList"].IsNull())
+    {
+        if (!value["BusinessLogConfigIdList"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.BusinessLogConfigIdList` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_businessLogConfigIdList = string(value["BusinessLogConfigIdList"].GetString());
+        m_businessLogConfigIdListHasBeenSet = true;
+    }
+
+    if (value.HasMember("BusinessLogDeliveryConfigIdList") && !value["BusinessLogDeliveryConfigIdList"].IsNull())
+    {
+        if (!value["BusinessLogDeliveryConfigIdList"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.BusinessLogDeliveryConfigIdList` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_businessLogDeliveryConfigIdList = string(value["BusinessLogDeliveryConfigIdList"].GetString());
+        m_businessLogDeliveryConfigIdListHasBeenSet = true;
+    }
+
+    if (value.HasMember("BusinessSystemId") && !value["BusinessSystemId"].IsNull())
+    {
+        if (!value["BusinessSystemId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.BusinessSystemId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_businessSystemId = string(value["BusinessSystemId"].GetString());
+        m_businessSystemIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("BusinessSystemName") && !value["BusinessSystemName"].IsNull())
+    {
+        if (!value["BusinessSystemName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.BusinessSystemName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_businessSystemName = string(value["BusinessSystemName"].GetString());
+        m_businessSystemNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClsMachineGroupId") && !value["ClsMachineGroupId"].IsNull())
+    {
+        if (!value["ClsMachineGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.ClsMachineGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clsMachineGroupId = string(value["ClsMachineGroupId"].GetString());
+        m_clsMachineGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableGovernance") && !value["EnableGovernance"].IsNull())
+    {
+        if (!value["EnableGovernance"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.EnableGovernance` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableGovernance = value["EnableGovernance"].GetBool();
+        m_enableGovernanceHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableTelemetry") && !value["EnableTelemetry"].IsNull())
+    {
+        if (!value["EnableTelemetry"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.EnableTelemetry` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableTelemetry = value["EnableTelemetry"].GetBool();
+        m_enableTelemetryHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableTelemetryAgent") && !value["EnableTelemetryAgent"].IsNull())
+    {
+        if (!value["EnableTelemetryAgent"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.EnableTelemetryAgent` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableTelemetryAgent = value["EnableTelemetryAgent"].GetBool();
+        m_enableTelemetryAgentHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnabledUnit") && !value["EnabledUnit"].IsNull())
+    {
+        if (!value["EnabledUnit"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.EnabledUnit` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enabledUnit = value["EnabledUnit"].GetBool();
+        m_enabledUnitHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExclusiveInstances") && !value["ExclusiveInstances"].IsNull())
+    {
+        if (!value["ExclusiveInstances"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VmGroup.ExclusiveInstances` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExclusiveInstances"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ExclusiveInstance item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_exclusiveInstances.push_back(item);
+        }
+        m_exclusiveInstancesHasBeenSet = true;
+    }
+
+    if (value.HasMember("FrameworkType") && !value["FrameworkType"].IsNull())
+    {
+        if (!value["FrameworkType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.FrameworkType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_frameworkType = string(value["FrameworkType"].GetString());
+        m_frameworkTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("GovernanceType") && !value["GovernanceType"].IsNull())
+    {
+        if (!value["GovernanceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.GovernanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_governanceType = string(value["GovernanceType"].GetString());
+        m_governanceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceIdList") && !value["InstanceIdList"].IsNull())
+    {
+        if (!value["InstanceIdList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VmGroup.InstanceIdList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["InstanceIdList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_instanceIdList.push_back((*itr).GetString());
+        }
+        m_instanceIdListHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsStop") && !value["IsStop"].IsNull())
+    {
+        if (!value["IsStop"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.IsStop` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isStop = string(value["IsStop"].GetString());
+        m_isStopHasBeenSet = true;
+    }
+
+    if (value.HasMember("K8sNamespaceName") && !value["K8sNamespaceName"].IsNull())
+    {
+        if (!value["K8sNamespaceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.K8sNamespaceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_k8sNamespaceName = string(value["K8sNamespaceName"].GetString());
+        m_k8sNamespaceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Language") && !value["Language"].IsNull())
+    {
+        if (!value["Language"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.Language` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_language = string(value["Language"].GetString());
+        m_languageHasBeenSet = true;
+    }
+
+    if (value.HasMember("MicroserviceSubType") && !value["MicroserviceSubType"].IsNull())
+    {
+        if (!value["MicroserviceSubType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.MicroserviceSubType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_microserviceSubType = string(value["MicroserviceSubType"].GetString());
+        m_microserviceSubTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NonInvasiveType") && !value["NonInvasiveType"].IsNull())
+    {
+        if (!value["NonInvasiveType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.NonInvasiveType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nonInvasiveType = string(value["NonInvasiveType"].GetString());
+        m_nonInvasiveTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PreStopScript") && !value["PreStopScript"].IsNull())
+    {
+        if (!value["PreStopScript"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.PreStopScript` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_preStopScript = string(value["PreStopScript"].GetString());
+        m_preStopScriptHasBeenSet = true;
+    }
+
+    if (value.HasMember("RealNamespaceName") && !value["RealNamespaceName"].IsNull())
+    {
+        if (!value["RealNamespaceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.RealNamespaceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_realNamespaceName = string(value["RealNamespaceName"].GetString());
+        m_realNamespaceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServiceConfigList") && !value["ServiceConfigList"].IsNull())
+    {
+        if (!value["ServiceConfigList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VmGroup.ServiceConfigList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ServiceConfigList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ServiceConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_serviceConfigList.push_back(item);
+        }
+        m_serviceConfigListHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServiceGovernanceConfig") && !value["ServiceGovernanceConfig"].IsNull())
+    {
+        if (!value["ServiceGovernanceConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.ServiceGovernanceConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_serviceGovernanceConfig.Deserialize(value["ServiceGovernanceConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_serviceGovernanceConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VmGroup.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("TapmOtAgentVersion") && !value["TapmOtAgentVersion"].IsNull())
+    {
+        if (!value["TapmOtAgentVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.TapmOtAgentVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tapmOtAgentVersion = string(value["TapmOtAgentVersion"].GetString());
+        m_tapmOtAgentVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("UnitEnvType") && !value["UnitEnvType"].IsNull())
+    {
+        if (!value["UnitEnvType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.UnitEnvType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_unitEnvType = string(value["UnitEnvType"].GetString());
+        m_unitEnvTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UnitId") && !value["UnitId"].IsNull())
+    {
+        if (!value["UnitId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.UnitId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_unitId = string(value["UnitId"].GetString());
+        m_unitIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("UnitName") && !value["UnitName"].IsNull())
+    {
+        if (!value["UnitName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.UnitName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_unitName = string(value["UnitName"].GetString());
+        m_unitNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("UnitType") && !value["UnitType"].IsNull())
+    {
+        if (!value["UnitType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.UnitType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_unitType = string(value["UnitType"].GetString());
+        m_unitTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -957,6 +1316,265 @@ void VmGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "LivenessAutoRestart";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_livenessAutoRestart, allocator);
+    }
+
+    if (m_meshSidecarVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MeshSidecarVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_meshSidecarVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_businessLogConfigIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessLogConfigIdList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_businessLogConfigIdList.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_businessLogDeliveryConfigIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessLogDeliveryConfigIdList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_businessLogDeliveryConfigIdList.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_businessSystemIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessSystemId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_businessSystemId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_businessSystemNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessSystemName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_businessSystemName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clsMachineGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClsMachineGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clsMachineGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableGovernanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableGovernance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableGovernance, allocator);
+    }
+
+    if (m_enableTelemetryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableTelemetry";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableTelemetry, allocator);
+    }
+
+    if (m_enableTelemetryAgentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableTelemetryAgent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableTelemetryAgent, allocator);
+    }
+
+    if (m_enabledUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnabledUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enabledUnit, allocator);
+    }
+
+    if (m_exclusiveInstancesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExclusiveInstances";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_exclusiveInstances.begin(); itr != m_exclusiveInstances.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_frameworkTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FrameworkType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_frameworkType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_governanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GovernanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_governanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceIdList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceIdList.begin(); itr != m_instanceIdList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_isStopHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsStop";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isStop.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_k8sNamespaceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "K8sNamespaceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_k8sNamespaceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_languageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Language";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_language.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_microserviceSubTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MicroserviceSubType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_microserviceSubType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nonInvasiveTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NonInvasiveType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nonInvasiveType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_preStopScriptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreStopScript";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_preStopScript.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_realNamespaceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealNamespaceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realNamespaceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceConfigListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceConfigList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_serviceConfigList.begin(); itr != m_serviceConfigList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_serviceGovernanceConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceGovernanceConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_serviceGovernanceConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_tapmOtAgentVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TapmOtAgentVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tapmOtAgentVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_unitEnvTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnitEnvType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unitEnvType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_unitIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnitId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unitId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_unitNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnitName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unitName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_unitTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnitType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unitType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1696,5 +2314,469 @@ void VmGroup::SetLivenessAutoRestart(const bool& _livenessAutoRestart)
 bool VmGroup::LivenessAutoRestartHasBeenSet() const
 {
     return m_livenessAutoRestartHasBeenSet;
+}
+
+string VmGroup::GetMeshSidecarVersion() const
+{
+    return m_meshSidecarVersion;
+}
+
+void VmGroup::SetMeshSidecarVersion(const string& _meshSidecarVersion)
+{
+    m_meshSidecarVersion = _meshSidecarVersion;
+    m_meshSidecarVersionHasBeenSet = true;
+}
+
+bool VmGroup::MeshSidecarVersionHasBeenSet() const
+{
+    return m_meshSidecarVersionHasBeenSet;
+}
+
+string VmGroup::GetBusinessLogConfigIdList() const
+{
+    return m_businessLogConfigIdList;
+}
+
+void VmGroup::SetBusinessLogConfigIdList(const string& _businessLogConfigIdList)
+{
+    m_businessLogConfigIdList = _businessLogConfigIdList;
+    m_businessLogConfigIdListHasBeenSet = true;
+}
+
+bool VmGroup::BusinessLogConfigIdListHasBeenSet() const
+{
+    return m_businessLogConfigIdListHasBeenSet;
+}
+
+string VmGroup::GetBusinessLogDeliveryConfigIdList() const
+{
+    return m_businessLogDeliveryConfigIdList;
+}
+
+void VmGroup::SetBusinessLogDeliveryConfigIdList(const string& _businessLogDeliveryConfigIdList)
+{
+    m_businessLogDeliveryConfigIdList = _businessLogDeliveryConfigIdList;
+    m_businessLogDeliveryConfigIdListHasBeenSet = true;
+}
+
+bool VmGroup::BusinessLogDeliveryConfigIdListHasBeenSet() const
+{
+    return m_businessLogDeliveryConfigIdListHasBeenSet;
+}
+
+string VmGroup::GetBusinessSystemId() const
+{
+    return m_businessSystemId;
+}
+
+void VmGroup::SetBusinessSystemId(const string& _businessSystemId)
+{
+    m_businessSystemId = _businessSystemId;
+    m_businessSystemIdHasBeenSet = true;
+}
+
+bool VmGroup::BusinessSystemIdHasBeenSet() const
+{
+    return m_businessSystemIdHasBeenSet;
+}
+
+string VmGroup::GetBusinessSystemName() const
+{
+    return m_businessSystemName;
+}
+
+void VmGroup::SetBusinessSystemName(const string& _businessSystemName)
+{
+    m_businessSystemName = _businessSystemName;
+    m_businessSystemNameHasBeenSet = true;
+}
+
+bool VmGroup::BusinessSystemNameHasBeenSet() const
+{
+    return m_businessSystemNameHasBeenSet;
+}
+
+string VmGroup::GetClsMachineGroupId() const
+{
+    return m_clsMachineGroupId;
+}
+
+void VmGroup::SetClsMachineGroupId(const string& _clsMachineGroupId)
+{
+    m_clsMachineGroupId = _clsMachineGroupId;
+    m_clsMachineGroupIdHasBeenSet = true;
+}
+
+bool VmGroup::ClsMachineGroupIdHasBeenSet() const
+{
+    return m_clsMachineGroupIdHasBeenSet;
+}
+
+bool VmGroup::GetEnableGovernance() const
+{
+    return m_enableGovernance;
+}
+
+void VmGroup::SetEnableGovernance(const bool& _enableGovernance)
+{
+    m_enableGovernance = _enableGovernance;
+    m_enableGovernanceHasBeenSet = true;
+}
+
+bool VmGroup::EnableGovernanceHasBeenSet() const
+{
+    return m_enableGovernanceHasBeenSet;
+}
+
+bool VmGroup::GetEnableTelemetry() const
+{
+    return m_enableTelemetry;
+}
+
+void VmGroup::SetEnableTelemetry(const bool& _enableTelemetry)
+{
+    m_enableTelemetry = _enableTelemetry;
+    m_enableTelemetryHasBeenSet = true;
+}
+
+bool VmGroup::EnableTelemetryHasBeenSet() const
+{
+    return m_enableTelemetryHasBeenSet;
+}
+
+bool VmGroup::GetEnableTelemetryAgent() const
+{
+    return m_enableTelemetryAgent;
+}
+
+void VmGroup::SetEnableTelemetryAgent(const bool& _enableTelemetryAgent)
+{
+    m_enableTelemetryAgent = _enableTelemetryAgent;
+    m_enableTelemetryAgentHasBeenSet = true;
+}
+
+bool VmGroup::EnableTelemetryAgentHasBeenSet() const
+{
+    return m_enableTelemetryAgentHasBeenSet;
+}
+
+bool VmGroup::GetEnabledUnit() const
+{
+    return m_enabledUnit;
+}
+
+void VmGroup::SetEnabledUnit(const bool& _enabledUnit)
+{
+    m_enabledUnit = _enabledUnit;
+    m_enabledUnitHasBeenSet = true;
+}
+
+bool VmGroup::EnabledUnitHasBeenSet() const
+{
+    return m_enabledUnitHasBeenSet;
+}
+
+vector<ExclusiveInstance> VmGroup::GetExclusiveInstances() const
+{
+    return m_exclusiveInstances;
+}
+
+void VmGroup::SetExclusiveInstances(const vector<ExclusiveInstance>& _exclusiveInstances)
+{
+    m_exclusiveInstances = _exclusiveInstances;
+    m_exclusiveInstancesHasBeenSet = true;
+}
+
+bool VmGroup::ExclusiveInstancesHasBeenSet() const
+{
+    return m_exclusiveInstancesHasBeenSet;
+}
+
+string VmGroup::GetFrameworkType() const
+{
+    return m_frameworkType;
+}
+
+void VmGroup::SetFrameworkType(const string& _frameworkType)
+{
+    m_frameworkType = _frameworkType;
+    m_frameworkTypeHasBeenSet = true;
+}
+
+bool VmGroup::FrameworkTypeHasBeenSet() const
+{
+    return m_frameworkTypeHasBeenSet;
+}
+
+string VmGroup::GetGovernanceType() const
+{
+    return m_governanceType;
+}
+
+void VmGroup::SetGovernanceType(const string& _governanceType)
+{
+    m_governanceType = _governanceType;
+    m_governanceTypeHasBeenSet = true;
+}
+
+bool VmGroup::GovernanceTypeHasBeenSet() const
+{
+    return m_governanceTypeHasBeenSet;
+}
+
+vector<string> VmGroup::GetInstanceIdList() const
+{
+    return m_instanceIdList;
+}
+
+void VmGroup::SetInstanceIdList(const vector<string>& _instanceIdList)
+{
+    m_instanceIdList = _instanceIdList;
+    m_instanceIdListHasBeenSet = true;
+}
+
+bool VmGroup::InstanceIdListHasBeenSet() const
+{
+    return m_instanceIdListHasBeenSet;
+}
+
+string VmGroup::GetIsStop() const
+{
+    return m_isStop;
+}
+
+void VmGroup::SetIsStop(const string& _isStop)
+{
+    m_isStop = _isStop;
+    m_isStopHasBeenSet = true;
+}
+
+bool VmGroup::IsStopHasBeenSet() const
+{
+    return m_isStopHasBeenSet;
+}
+
+string VmGroup::GetK8sNamespaceName() const
+{
+    return m_k8sNamespaceName;
+}
+
+void VmGroup::SetK8sNamespaceName(const string& _k8sNamespaceName)
+{
+    m_k8sNamespaceName = _k8sNamespaceName;
+    m_k8sNamespaceNameHasBeenSet = true;
+}
+
+bool VmGroup::K8sNamespaceNameHasBeenSet() const
+{
+    return m_k8sNamespaceNameHasBeenSet;
+}
+
+string VmGroup::GetLanguage() const
+{
+    return m_language;
+}
+
+void VmGroup::SetLanguage(const string& _language)
+{
+    m_language = _language;
+    m_languageHasBeenSet = true;
+}
+
+bool VmGroup::LanguageHasBeenSet() const
+{
+    return m_languageHasBeenSet;
+}
+
+string VmGroup::GetMicroserviceSubType() const
+{
+    return m_microserviceSubType;
+}
+
+void VmGroup::SetMicroserviceSubType(const string& _microserviceSubType)
+{
+    m_microserviceSubType = _microserviceSubType;
+    m_microserviceSubTypeHasBeenSet = true;
+}
+
+bool VmGroup::MicroserviceSubTypeHasBeenSet() const
+{
+    return m_microserviceSubTypeHasBeenSet;
+}
+
+string VmGroup::GetNonInvasiveType() const
+{
+    return m_nonInvasiveType;
+}
+
+void VmGroup::SetNonInvasiveType(const string& _nonInvasiveType)
+{
+    m_nonInvasiveType = _nonInvasiveType;
+    m_nonInvasiveTypeHasBeenSet = true;
+}
+
+bool VmGroup::NonInvasiveTypeHasBeenSet() const
+{
+    return m_nonInvasiveTypeHasBeenSet;
+}
+
+string VmGroup::GetPreStopScript() const
+{
+    return m_preStopScript;
+}
+
+void VmGroup::SetPreStopScript(const string& _preStopScript)
+{
+    m_preStopScript = _preStopScript;
+    m_preStopScriptHasBeenSet = true;
+}
+
+bool VmGroup::PreStopScriptHasBeenSet() const
+{
+    return m_preStopScriptHasBeenSet;
+}
+
+string VmGroup::GetRealNamespaceName() const
+{
+    return m_realNamespaceName;
+}
+
+void VmGroup::SetRealNamespaceName(const string& _realNamespaceName)
+{
+    m_realNamespaceName = _realNamespaceName;
+    m_realNamespaceNameHasBeenSet = true;
+}
+
+bool VmGroup::RealNamespaceNameHasBeenSet() const
+{
+    return m_realNamespaceNameHasBeenSet;
+}
+
+vector<ServiceConfig> VmGroup::GetServiceConfigList() const
+{
+    return m_serviceConfigList;
+}
+
+void VmGroup::SetServiceConfigList(const vector<ServiceConfig>& _serviceConfigList)
+{
+    m_serviceConfigList = _serviceConfigList;
+    m_serviceConfigListHasBeenSet = true;
+}
+
+bool VmGroup::ServiceConfigListHasBeenSet() const
+{
+    return m_serviceConfigListHasBeenSet;
+}
+
+ServiceGovernanceConfig VmGroup::GetServiceGovernanceConfig() const
+{
+    return m_serviceGovernanceConfig;
+}
+
+void VmGroup::SetServiceGovernanceConfig(const ServiceGovernanceConfig& _serviceGovernanceConfig)
+{
+    m_serviceGovernanceConfig = _serviceGovernanceConfig;
+    m_serviceGovernanceConfigHasBeenSet = true;
+}
+
+bool VmGroup::ServiceGovernanceConfigHasBeenSet() const
+{
+    return m_serviceGovernanceConfigHasBeenSet;
+}
+
+vector<Tag> VmGroup::GetTags() const
+{
+    return m_tags;
+}
+
+void VmGroup::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool VmGroup::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+string VmGroup::GetTapmOtAgentVersion() const
+{
+    return m_tapmOtAgentVersion;
+}
+
+void VmGroup::SetTapmOtAgentVersion(const string& _tapmOtAgentVersion)
+{
+    m_tapmOtAgentVersion = _tapmOtAgentVersion;
+    m_tapmOtAgentVersionHasBeenSet = true;
+}
+
+bool VmGroup::TapmOtAgentVersionHasBeenSet() const
+{
+    return m_tapmOtAgentVersionHasBeenSet;
+}
+
+string VmGroup::GetUnitEnvType() const
+{
+    return m_unitEnvType;
+}
+
+void VmGroup::SetUnitEnvType(const string& _unitEnvType)
+{
+    m_unitEnvType = _unitEnvType;
+    m_unitEnvTypeHasBeenSet = true;
+}
+
+bool VmGroup::UnitEnvTypeHasBeenSet() const
+{
+    return m_unitEnvTypeHasBeenSet;
+}
+
+string VmGroup::GetUnitId() const
+{
+    return m_unitId;
+}
+
+void VmGroup::SetUnitId(const string& _unitId)
+{
+    m_unitId = _unitId;
+    m_unitIdHasBeenSet = true;
+}
+
+bool VmGroup::UnitIdHasBeenSet() const
+{
+    return m_unitIdHasBeenSet;
+}
+
+string VmGroup::GetUnitName() const
+{
+    return m_unitName;
+}
+
+void VmGroup::SetUnitName(const string& _unitName)
+{
+    m_unitName = _unitName;
+    m_unitNameHasBeenSet = true;
+}
+
+bool VmGroup::UnitNameHasBeenSet() const
+{
+    return m_unitNameHasBeenSet;
+}
+
+string VmGroup::GetUnitType() const
+{
+    return m_unitType;
+}
+
+void VmGroup::SetUnitType(const string& _unitType)
+{
+    m_unitType = _unitType;
+    m_unitTypeHasBeenSet = true;
+}
+
+bool VmGroup::UnitTypeHasBeenSet() const
+{
+    return m_unitTypeHasBeenSet;
 }
 

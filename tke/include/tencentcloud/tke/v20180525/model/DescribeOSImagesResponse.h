@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取镜像信息列表
-                     * @return OSImageSeriesSet 镜像信息列表
+                     * 获取<p>镜像信息列表</p>
+                     * @return OSImageSeriesSet <p>镜像信息列表</p>
                      * 
                      */
                     std::vector<OSImage> GetOSImageSeriesSet() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool OSImageSeriesSetHasBeenSet() const;
 
                     /**
-                     * 获取镜像数量
-                     * @return TotalCount 镜像数量
+                     * 获取<p>镜像数量</p>
+                     * @return TotalCount <p>镜像数量</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 镜像信息列表
+                     * <p>镜像信息列表</p>
                      */
                     std::vector<OSImage> m_oSImageSeriesSet;
                     bool m_oSImageSeriesSetHasBeenSet;
 
                     /**
-                     * 镜像数量
+                     * <p>镜像数量</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

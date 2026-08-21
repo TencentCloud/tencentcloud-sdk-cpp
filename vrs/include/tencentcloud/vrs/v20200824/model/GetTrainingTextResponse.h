@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文本列表
-                     * @return Data 文本列表
+                     * 获取<p>文本列表</p>
+                     * @return Data <p>文本列表</p>
                      * 
                      */
                     TrainingTexts GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文本列表
+                     * <p>文本列表</p>
                      */
                     TrainingTexts m_data;
                     bool m_dataHasBeenSet;

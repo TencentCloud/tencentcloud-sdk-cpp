@@ -35,7 +35,8 @@ ExportInfo::ExportInfo() :
     m_cosPathHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_syntaxRuleHasBeenSet(false),
-    m_derivedFieldsHasBeenSet(false)
+    m_derivedFieldsHasBeenSet(false),
+    m_createTimestampHasBeenSet(false)
 {
 }
 
@@ -197,6 +198,16 @@ CoreInternalOutcome ExportInfo::Deserialize(const rapidjson::Value &value)
         m_derivedFieldsHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTimestamp") && !value["CreateTimestamp"].IsNull())
+    {
+        if (!value["CreateTimestamp"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExportInfo.CreateTimestamp` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTimestamp = value["CreateTimestamp"].GetUint64();
+        m_createTimestampHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -327,6 +338,14 @@ void ExportInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_createTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTimestamp, allocator);
     }
 
 }
@@ -570,5 +589,21 @@ void ExportInfo::SetDerivedFields(const vector<string>& _derivedFields)
 bool ExportInfo::DerivedFieldsHasBeenSet() const
 {
     return m_derivedFieldsHasBeenSet;
+}
+
+uint64_t ExportInfo::GetCreateTimestamp() const
+{
+    return m_createTimestamp;
+}
+
+void ExportInfo::SetCreateTimestamp(const uint64_t& _createTimestamp)
+{
+    m_createTimestamp = _createTimestamp;
+    m_createTimestampHasBeenSet = true;
+}
+
+bool ExportInfo::CreateTimestampHasBeenSet() const
+{
+    return m_createTimestampHasBeenSet;
 }
 

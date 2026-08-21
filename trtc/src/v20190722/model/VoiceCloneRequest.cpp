@@ -29,7 +29,8 @@ VoiceCloneRequest::VoiceCloneRequest() :
     m_aPIKeyHasBeenSet(false),
     m_promptTextHasBeenSet(false),
     m_modelHasBeenSet(false),
-    m_languageHasBeenSet(false)
+    m_languageHasBeenSet(false),
+    m_extraParamsHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string VoiceCloneRequest::ToJsonString() const
         string key = "Language";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_language.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extraParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraParams";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extraParams.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void VoiceCloneRequest::SetLanguage(const string& _language)
 bool VoiceCloneRequest::LanguageHasBeenSet() const
 {
     return m_languageHasBeenSet;
+}
+
+string VoiceCloneRequest::GetExtraParams() const
+{
+    return m_extraParams;
+}
+
+void VoiceCloneRequest::SetExtraParams(const string& _extraParams)
+{
+    m_extraParams = _extraParams;
+    m_extraParamsHasBeenSet = true;
+}
+
+bool VoiceCloneRequest::ExtraParamsHasBeenSet() const
+{
+    return m_extraParamsHasBeenSet;
 }
 
 
