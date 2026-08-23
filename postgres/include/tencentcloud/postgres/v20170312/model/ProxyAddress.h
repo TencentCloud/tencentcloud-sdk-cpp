@@ -236,6 +236,174 @@ namespace TencentCloud
                      */
                     bool ConnectionPoolLimitHasBeenSet() const;
 
+                    /**
+                     * 获取<p>读写分离开关。启用后 proxy 将读请求分发到只读节点，写请求仍走主节点。</p>
+                     * @return RwSplitEnable <p>读写分离开关。启用后 proxy 将读请求分发到只读节点，写请求仍走主节点。</p>
+                     * 
+                     */
+                    bool GetRwSplitEnable() const;
+
+                    /**
+                     * 设置<p>读写分离开关。启用后 proxy 将读请求分发到只读节点，写请求仍走主节点。</p>
+                     * @param _rwSplitEnable <p>读写分离开关。启用后 proxy 将读请求分发到只读节点，写请求仍走主节点。</p>
+                     * 
+                     */
+                    void SetRwSplitEnable(const bool& _rwSplitEnable);
+
+                    /**
+                     * 判断参数 RwSplitEnable 是否已赋值
+                     * @return RwSplitEnable 是否已赋值
+                     * 
+                     */
+                    bool RwSplitEnableHasBeenSet() const;
+
+                    /**
+                     * 获取<p>权重模式</p><p>枚举值：</p><ul><li>system： 系统自动分配</li><li>custom： 用户自定义权重</li></ul>
+                     * @return WeightMode <p>权重模式</p><p>枚举值：</p><ul><li>system： 系统自动分配</li><li>custom： 用户自定义权重</li></ul>
+                     * 
+                     */
+                    std::string GetWeightMode() const;
+
+                    /**
+                     * 设置<p>权重模式</p><p>枚举值：</p><ul><li>system： 系统自动分配</li><li>custom： 用户自定义权重</li></ul>
+                     * @param _weightMode <p>权重模式</p><p>枚举值：</p><ul><li>system： 系统自动分配</li><li>custom： 用户自定义权重</li></ul>
+                     * 
+                     */
+                    void SetWeightMode(const std::string& _weightMode);
+
+                    /**
+                     * 判断参数 WeightMode 是否已赋值
+                     * @return WeightMode 是否已赋值
+                     * 
+                     */
+                    bool WeightModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>新增只读是否自动加入读写分离</p>
+                     * @return RoAutoAdd <p>新增只读是否自动加入读写分离</p>
+                     * 
+                     */
+                    bool GetRoAutoAdd() const;
+
+                    /**
+                     * 设置<p>新增只读是否自动加入读写分离</p>
+                     * @param _roAutoAdd <p>新增只读是否自动加入读写分离</p>
+                     * 
+                     */
+                    void SetRoAutoAdd(const bool& _roAutoAdd);
+
+                    /**
+                     * 判断参数 RoAutoAdd 是否已赋值
+                     * @return RoAutoAdd 是否已赋值
+                     * 
+                     */
+                    bool RoAutoAddHasBeenSet() const;
+
+                    /**
+                     * 获取<p>延迟剔除开关</p>
+                     * @return LatencyRemove <p>延迟剔除开关</p>
+                     * 
+                     */
+                    bool GetLatencyRemove() const;
+
+                    /**
+                     * 设置<p>延迟剔除开关</p>
+                     * @param _latencyRemove <p>延迟剔除开关</p>
+                     * 
+                     */
+                    void SetLatencyRemove(const bool& _latencyRemove);
+
+                    /**
+                     * 判断参数 LatencyRemove 是否已赋值
+                     * @return LatencyRemove 是否已赋值
+                     * 
+                     */
+                    bool LatencyRemoveHasBeenSet() const;
+
+                    /**
+                     * 获取<p>延迟剔除阈值</p><p>单位：秒</p>
+                     * @return LatencyRemoveTime <p>延迟剔除阈值</p><p>单位：秒</p>
+                     * 
+                     */
+                    uint64_t GetLatencyRemoveTime() const;
+
+                    /**
+                     * 设置<p>延迟剔除阈值</p><p>单位：秒</p>
+                     * @param _latencyRemoveTime <p>延迟剔除阈值</p><p>单位：秒</p>
+                     * 
+                     */
+                    void SetLatencyRemoveTime(const uint64_t& _latencyRemoveTime);
+
+                    /**
+                     * 判断参数 LatencyRemoveTime 是否已赋值
+                     * @return LatencyRemoveTime 是否已赋值
+                     * 
+                     */
+                    bool LatencyRemoveTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>最小保留路由数。在延迟/故障剔除时，至少保留的路由数量，防止所有节点被剔除导致服务不可用。</p>
+                     * @return MinRouteNum <p>最小保留路由数。在延迟/故障剔除时，至少保留的路由数量，防止所有节点被剔除导致服务不可用。</p>
+                     * 
+                     */
+                    uint64_t GetMinRouteNum() const;
+
+                    /**
+                     * 设置<p>最小保留路由数。在延迟/故障剔除时，至少保留的路由数量，防止所有节点被剔除导致服务不可用。</p>
+                     * @param _minRouteNum <p>最小保留路由数。在延迟/故障剔除时，至少保留的路由数量，防止所有节点被剔除导致服务不可用。</p>
+                     * 
+                     */
+                    void SetMinRouteNum(const uint64_t& _minRouteNum);
+
+                    /**
+                     * 判断参数 MinRouteNum 是否已赋值
+                     * @return MinRouteNum 是否已赋值
+                     * 
+                     */
+                    bool MinRouteNumHasBeenSet() const;
+
+                    /**
+                     * 获取<p>只读全部异常时是否回切到主</p>
+                     * @return FailOver <p>只读全部异常时是否回切到主</p>
+                     * 
+                     */
+                    bool GetFailOver() const;
+
+                    /**
+                     * 设置<p>只读全部异常时是否回切到主</p>
+                     * @param _failOver <p>只读全部异常时是否回切到主</p>
+                     * 
+                     */
+                    void SetFailOver(const bool& _failOver);
+
+                    /**
+                     * 判断参数 FailOver 是否已赋值
+                     * @return FailOver 是否已赋值
+                     * 
+                     */
+                    bool FailOverHasBeenSet() const;
+
+                    /**
+                     * 获取<p>负载均衡策略</p><p>枚举值：</p><ul><li>0： 按活跃连接数(默认)</li><li>1： 按请求数</li></ul>
+                     * @return LoadBalancePolicy <p>负载均衡策略</p><p>枚举值：</p><ul><li>0： 按活跃连接数(默认)</li><li>1： 按请求数</li></ul>
+                     * 
+                     */
+                    int64_t GetLoadBalancePolicy() const;
+
+                    /**
+                     * 设置<p>负载均衡策略</p><p>枚举值：</p><ul><li>0： 按活跃连接数(默认)</li><li>1： 按请求数</li></ul>
+                     * @param _loadBalancePolicy <p>负载均衡策略</p><p>枚举值：</p><ul><li>0： 按活跃连接数(默认)</li><li>1： 按请求数</li></ul>
+                     * 
+                     */
+                    void SetLoadBalancePolicy(const int64_t& _loadBalancePolicy);
+
+                    /**
+                     * 判断参数 LoadBalancePolicy 是否已赋值
+                     * @return LoadBalancePolicy 是否已赋值
+                     * 
+                     */
+                    bool LoadBalancePolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -291,6 +459,54 @@ namespace TencentCloud
                      */
                     uint64_t m_connectionPoolLimit;
                     bool m_connectionPoolLimitHasBeenSet;
+
+                    /**
+                     * <p>读写分离开关。启用后 proxy 将读请求分发到只读节点，写请求仍走主节点。</p>
+                     */
+                    bool m_rwSplitEnable;
+                    bool m_rwSplitEnableHasBeenSet;
+
+                    /**
+                     * <p>权重模式</p><p>枚举值：</p><ul><li>system： 系统自动分配</li><li>custom： 用户自定义权重</li></ul>
+                     */
+                    std::string m_weightMode;
+                    bool m_weightModeHasBeenSet;
+
+                    /**
+                     * <p>新增只读是否自动加入读写分离</p>
+                     */
+                    bool m_roAutoAdd;
+                    bool m_roAutoAddHasBeenSet;
+
+                    /**
+                     * <p>延迟剔除开关</p>
+                     */
+                    bool m_latencyRemove;
+                    bool m_latencyRemoveHasBeenSet;
+
+                    /**
+                     * <p>延迟剔除阈值</p><p>单位：秒</p>
+                     */
+                    uint64_t m_latencyRemoveTime;
+                    bool m_latencyRemoveTimeHasBeenSet;
+
+                    /**
+                     * <p>最小保留路由数。在延迟/故障剔除时，至少保留的路由数量，防止所有节点被剔除导致服务不可用。</p>
+                     */
+                    uint64_t m_minRouteNum;
+                    bool m_minRouteNumHasBeenSet;
+
+                    /**
+                     * <p>只读全部异常时是否回切到主</p>
+                     */
+                    bool m_failOver;
+                    bool m_failOverHasBeenSet;
+
+                    /**
+                     * <p>负载均衡策略</p><p>枚举值：</p><ul><li>0： 按活跃连接数(默认)</li><li>1： 按请求数</li></ul>
+                     */
+                    int64_t m_loadBalancePolicy;
+                    bool m_loadBalancePolicyHasBeenSet;
 
                 };
             }

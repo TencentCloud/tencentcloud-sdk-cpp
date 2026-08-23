@@ -33,6 +33,7 @@ BackupFileInfo::BackupFileInfo() :
     m_backupIdHasBeenSet(false),
     m_snapShotTypeHasBeenSet(false),
     m_backupNameHasBeenSet(false),
+    m_existRegionsHasBeenSet(false),
     m_copyStatusHasBeenSet(false),
     m_encryptKeyIdHasBeenSet(false),
     m_encryptRegionHasBeenSet(false),
@@ -164,6 +165,26 @@ CoreInternalOutcome BackupFileInfo::Deserialize(const rapidjson::Value &value)
         }
         m_backupName = string(value["BackupName"].GetString());
         m_backupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExistRegions") && !value["ExistRegions"].IsNull())
+    {
+        if (!value["ExistRegions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BackupFileInfo.ExistRegions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExistRegions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BackupRegionAndIds item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_existRegions.push_back(item);
+        }
+        m_existRegionsHasBeenSet = true;
     }
 
     if (value.HasMember("CopyStatus") && !value["CopyStatus"].IsNull())
@@ -327,6 +348,21 @@ void BackupFileInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "BackupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_backupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_existRegionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExistRegions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_existRegions.begin(); itr != m_existRegions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_copyStatusHasBeenSet)
@@ -569,6 +605,22 @@ void BackupFileInfo::SetBackupName(const string& _backupName)
 bool BackupFileInfo::BackupNameHasBeenSet() const
 {
     return m_backupNameHasBeenSet;
+}
+
+vector<BackupRegionAndIds> BackupFileInfo::GetExistRegions() const
+{
+    return m_existRegions;
+}
+
+void BackupFileInfo::SetExistRegions(const vector<BackupRegionAndIds>& _existRegions)
+{
+    m_existRegions = _existRegions;
+    m_existRegionsHasBeenSet = true;
+}
+
+bool BackupFileInfo::ExistRegionsHasBeenSet() const
+{
+    return m_existRegionsHasBeenSet;
 }
 
 string BackupFileInfo::GetCopyStatus() const

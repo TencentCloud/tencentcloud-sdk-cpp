@@ -53,6 +53,8 @@
 #include <tencentcloud/tke/v20220501/model/DescribeNodePoolsElasticityStrengthResponse.h>
 #include <tencentcloud/tke/v20220501/model/DescribeZoneInstanceConfigInfosRequest.h>
 #include <tencentcloud/tke/v20220501/model/DescribeZoneInstanceConfigInfosResponse.h>
+#include <tencentcloud/tke/v20220501/model/DetachApplicationRoleRequest.h>
+#include <tencentcloud/tke/v20220501/model/DetachApplicationRoleResponse.h>
 #include <tencentcloud/tke/v20220501/model/ModifyClusterMachineRequest.h>
 #include <tencentcloud/tke/v20220501/model/ModifyClusterMachineResponse.h>
 #include <tencentcloud/tke/v20220501/model/ModifyHealthCheckPolicyRequest.h>
@@ -128,6 +130,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeZoneInstanceConfigInfosResponse> DescribeZoneInstanceConfigInfosOutcome;
                 typedef std::future<DescribeZoneInstanceConfigInfosOutcome> DescribeZoneInstanceConfigInfosOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeZoneInstanceConfigInfosRequest&, DescribeZoneInstanceConfigInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZoneInstanceConfigInfosAsyncHandler;
+                typedef Outcome<Core::Error, Model::DetachApplicationRoleResponse> DetachApplicationRoleOutcome;
+                typedef std::future<DetachApplicationRoleOutcome> DetachApplicationRoleOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DetachApplicationRoleRequest&, DetachApplicationRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachApplicationRoleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyClusterMachineResponse> ModifyClusterMachineOutcome;
                 typedef std::future<ModifyClusterMachineOutcome> ModifyClusterMachineOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyClusterMachineRequest&, ModifyClusterMachineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterMachineAsyncHandler;
@@ -378,6 +383,15 @@ namespace TencentCloud
                 DescribeZoneInstanceConfigInfosOutcome DescribeZoneInstanceConfigInfos(const Model::DescribeZoneInstanceConfigInfosRequest &request);
                 void DescribeZoneInstanceConfigInfosAsync(const Model::DescribeZoneInstanceConfigInfosRequest& request, const DescribeZoneInstanceConfigInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeZoneInstanceConfigInfosOutcomeCallable DescribeZoneInstanceConfigInfosCallable(const Model::DescribeZoneInstanceConfigInfosRequest& request);
+
+                /**
+                 *解绑原生节点 Application Role
+                 * @param req DetachApplicationRoleRequest
+                 * @return DetachApplicationRoleOutcome
+                 */
+                DetachApplicationRoleOutcome DetachApplicationRole(const Model::DetachApplicationRoleRequest &request);
+                void DetachApplicationRoleAsync(const Model::DetachApplicationRoleRequest& request, const DetachApplicationRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetachApplicationRoleOutcomeCallable DetachApplicationRoleCallable(const Model::DetachApplicationRoleRequest& request);
 
                 /**
                  *修改原生节点

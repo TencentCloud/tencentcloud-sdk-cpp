@@ -121,6 +121,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/ExposePortConfig.h
   include/tencentcloud/tione/v20211111/model/Option.h
   include/tencentcloud/tione/v20211111/model/DescribeMountLimitsRequest.h
+  include/tencentcloud/tione/v20211111/model/ImageSecret.h
   include/tencentcloud/tione/v20211111/model/DeleteExportResponse.h
   include/tencentcloud/tione/v20211111/model/DefaultInnerCallInfo.h
   include/tencentcloud/tione/v20211111/model/AuthTokenBase.h
@@ -474,6 +475,7 @@ set(tione_src
   src/v20211111/model/ExposePortConfig.cpp
   src/v20211111/model/Option.cpp
   src/v20211111/model/DescribeMountLimitsRequest.cpp
+  src/v20211111/model/ImageSecret.cpp
   src/v20211111/model/DeleteExportResponse.cpp
   src/v20211111/model/DefaultInnerCallInfo.cpp
   src/v20211111/model/AuthTokenBase.cpp

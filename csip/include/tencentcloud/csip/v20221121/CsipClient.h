@@ -27,6 +27,8 @@
 #include <tencentcloud/csip/v20221121/model/AccessAIAnalysisSMTPResponse.h>
 #include <tencentcloud/csip/v20221121/model/AddDspmAssetManagerRequest.h>
 #include <tencentcloud/csip/v20221121/model/AddDspmAssetManagerResponse.h>
+#include <tencentcloud/csip/v20221121/model/AddImageRegistryRequest.h>
+#include <tencentcloud/csip/v20221121/model/AddImageRegistryResponse.h>
 #include <tencentcloud/csip/v20221121/model/AddLoginWhiteListsRequest.h>
 #include <tencentcloud/csip/v20221121/model/AddLoginWhiteListsResponse.h>
 #include <tencentcloud/csip/v20221121/model/AddNewBindRoleUserRequest.h>
@@ -35,12 +37,22 @@
 #include <tencentcloud/csip/v20221121/model/AddVulWhitelistResponse.h>
 #include <tencentcloud/csip/v20221121/model/BatchModifyBaselinePolicyRequest.h>
 #include <tencentcloud/csip/v20221121/model/BatchModifyBaselinePolicyResponse.h>
+#include <tencentcloud/csip/v20221121/model/BatchModifyImageRegistryTimedScanTaskConfigRequest.h>
+#include <tencentcloud/csip/v20221121/model/BatchModifyImageRegistryTimedScanTaskConfigResponse.h>
+#include <tencentcloud/csip/v20221121/model/BatchModifyImageSensitiveWhitelistRequest.h>
+#include <tencentcloud/csip/v20221121/model/BatchModifyImageSensitiveWhitelistResponse.h>
+#include <tencentcloud/csip/v20221121/model/BatchModifyImageVirusWhitelistRequest.h>
+#include <tencentcloud/csip/v20221121/model/BatchModifyImageVirusWhitelistResponse.h>
+#include <tencentcloud/csip/v20221121/model/BatchModifyImageVulWhitelistRequest.h>
+#include <tencentcloud/csip/v20221121/model/BatchModifyImageVulWhitelistResponse.h>
 #include <tencentcloud/csip/v20221121/model/BindClusterOwnerRequest.h>
 #include <tencentcloud/csip/v20221121/model/BindClusterOwnerResponse.h>
 #include <tencentcloud/csip/v20221121/model/CancelEdrAlertIgnoreRequest.h>
 #include <tencentcloud/csip/v20221121/model/CancelEdrAlertIgnoreResponse.h>
 #include <tencentcloud/csip/v20221121/model/CheckCWPExposePathPermissionRequest.h>
 #include <tencentcloud/csip/v20221121/model/CheckCWPExposePathPermissionResponse.h>
+#include <tencentcloud/csip/v20221121/model/CheckImageRegistryInstanceNameDuplicateRequest.h>
+#include <tencentcloud/csip/v20221121/model/CheckImageRegistryInstanceNameDuplicateResponse.h>
 #include <tencentcloud/csip/v20221121/model/CheckIsUltimateVersionRequest.h>
 #include <tencentcloud/csip/v20221121/model/CheckIsUltimateVersionResponse.h>
 #include <tencentcloud/csip/v20221121/model/CheckRiskRequest.h>
@@ -55,6 +67,10 @@
 #include <tencentcloud/csip/v20221121/model/CreateAccessKeySyncTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateAllAssetsExportJobRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateAllAssetsExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateAssetComponentListExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateAssetComponentListExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateAssetComponentRelatedImageListExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateAssetComponentRelatedImageListExportJobResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateAssetFilterViewRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateAssetFilterViewResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateAssetProcessExportJobRequest.h>
@@ -161,6 +177,38 @@
 #include <tencentcloud/csip/v20221121/model/CreateIaCFileExportJobResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateIaCFileReScanTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateIaCFileReScanTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageAssetListExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageAssetListExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageAssociatedContainerListExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageAssociatedContainerListExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageAssociatedHostListExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageAssociatedHostListExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageComponentListExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageComponentListExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageLayerVulListExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageLayerVulListExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageRegistryConnectivityTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageRegistryConnectivityTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageRegistryListExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageRegistryListExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageRegistryScanTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageRegistryScanTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageRegistryTimedScanTaskConfigRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageRegistryTimedScanTaskConfigResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageSensitiveInfoListExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageSensitiveInfoListExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageSensitiveWhitelistRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageSensitiveWhitelistResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageVirusListExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageVirusListExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageVirusWhitelistRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageVirusWhitelistResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageVulListExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageVulListExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageVulSummaryListExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageVulSummaryListExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageVulWhitelistRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateImageVulWhitelistResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreatePodContainerListExportJobRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreatePodContainerListExportJobResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreatePodServiceListExportJobRequest.h>
@@ -247,12 +295,26 @@
 #include <tencentcloud/csip/v20221121/model/DeleteIaCAccessTokenResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteIaCFileRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteIaCFileResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteImageRegistryRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteImageRegistryResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteImageRegistryScanTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteImageRegistryScanTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteImageRegistryTimedScanTaskConfigRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteImageRegistryTimedScanTaskConfigResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteImageSensitiveWhitelistRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteImageSensitiveWhitelistResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteImageVirusWhitelistRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteImageVirusWhitelistResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteImageVulWhitelistRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteImageVulWhitelistResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteLoginWhiteListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteLoginWhiteListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteMachineClearHistoryRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteMachineClearHistoryResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteRiskScanTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteRiskScanTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteSandboxLLMAuditRuleRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteSandboxLLMAuditRuleResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteVulWhitelistRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteVulWhitelistResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteWebhookPoliciesRequest.h>
@@ -261,6 +323,12 @@
 #include <tencentcloud/csip/v20221121/model/DeleteWebhookReceiversResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAIAgentAssetListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAIAgentAssetListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeAIAgentCredentialListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeAIAgentCredentialListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeAIAgentCredentialLocationListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeAIAgentCredentialLocationListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeAIAgentSkillListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeAIAgentSkillListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAIAnalysisFileDownloadURLRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAIAnalysisFileDownloadURLResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAIAnalysisHistoryRequest.h>
@@ -311,6 +379,10 @@
 #include <tencentcloud/csip/v20221121/model/DescribeAgentRunPolicyResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAlertListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAlertListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeAssetComponentListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeAssetComponentListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeAssetComponentRelatedImageListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeAssetComponentRelatedImageListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAssetDetailRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAssetDetailResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAssetFilterViewsRequest.h>
@@ -341,6 +413,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeAssetViewVulRiskListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAssumeRoleRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAssumeRoleResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeBackendScanEngineRegionListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeBackendScanEngineRegionListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeBanModeRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeBanModeResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeBanStatusRequest.h>
@@ -427,6 +501,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeCWPTaskDurationResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCallRecordRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCallRecordResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCheckConnectivityHostListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCheckConnectivityHostListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCheckViewRisksRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCheckViewRisksResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeClbListenerListRequest.h>
@@ -743,6 +819,56 @@
 #include <tencentcloud/csip/v20221121/model/DescribeIaCFileReportResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeIaCTokenListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeIaCTokenListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageAssetDetailRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageAssetDetailResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageAssetListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageAssetListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageAssociatedAssetCountRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageAssociatedAssetCountResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageAssociatedContainerListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageAssociatedContainerListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageAssociatedHostListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageAssociatedHostListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageComponentListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageComponentListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageExportJobListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageExportJobListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageLayerListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageLayerListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageLayerVulListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageLayerVulListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageRegistryAssetOverviewRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageRegistryAssetOverviewResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageRegistryConnectivityTaskResultRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageRegistryConnectivityTaskResultResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageRegistryListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageRegistryListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageRegistryNamespaceListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageRegistryNamespaceListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageRegistryScanSubTaskListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageRegistryScanSubTaskListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageRegistryScanTaskListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageRegistryScanTaskListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageRegistryTimedScanTaskConfigRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageRegistryTimedScanTaskConfigResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageRegistryTimedScanTaskPreviewRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageRegistryTimedScanTaskPreviewResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageSensitiveInfoListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageSensitiveInfoListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageSensitiveWhitelistRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageSensitiveWhitelistResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageVirusListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageVirusListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageVirusWhitelistRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageVirusWhitelistResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageVirusWhitelistDetailRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageVirusWhitelistDetailResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageVulListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageVulListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageVulSummaryListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageVulSummaryListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageVulWhitelistRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeImageVulWhitelistResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeIpInvokeRecordRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeIpInvokeRecordResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeIpInvokeRecordDetailRequest.h>
@@ -801,6 +927,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeNotifyAssetConfigResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeNotifySettingRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeNotifySettingResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeNotifySettingAkRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeNotifySettingAkResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeNotifySettingAlertRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeNotifySettingAlertResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeOrganizationInfoRequest.h>
@@ -831,6 +959,10 @@
 #include <tencentcloud/csip/v20221121/model/DescribePublicIpAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeRaspLicenseListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeRaspLicenseListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeRegistryOverviewRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeRegistryOverviewResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeRegistryRegionListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeRegistryRegionListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeRepositoryImageAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeRepositoryImageAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeReverseShellSystemPolicyConfigRequest.h>
@@ -879,6 +1011,16 @@
 #include <tencentcloud/csip/v20221121/model/DescribeSCFFunctionVersionListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSCFNamespaceListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSCFNamespaceListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSandboxACLAlertListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSandboxACLAlertListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSandboxACLRuleListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSandboxACLRuleListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSandboxACLSystemRuleListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSandboxACLSystemRuleListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSandboxDLPSystemRuleListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSandboxDLPSystemRuleListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSandboxFileRuleListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSandboxFileRuleListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeScanReportListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeScanReportListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeScanStatisticRequest.h>
@@ -899,6 +1041,10 @@
 #include <tencentcloud/csip/v20221121/model/DescribeSecurityScoreOverviewResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSecurityScoreRuleRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSecurityScoreRuleResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSkillScanAlertDetailRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSkillScanAlertDetailResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSkillScanAlertListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSkillScanAlertListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSkillScanPayInfoRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSkillScanPayInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSkillScanResultRequest.h>
@@ -909,6 +1055,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeSubUserInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSubnetAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSubnetAssetsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeTCRInstanceListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeTCRInstanceListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeTagRuleAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeTagRuleAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeTaskLogListRequest.h>
@@ -1129,6 +1277,16 @@
 #include <tencentcloud/csip/v20221121/model/ModifyExposureTagResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyIaCTokenPeriodRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyIaCTokenPeriodResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyImageRegistryRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyImageRegistryResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyImageRegistryTimedScanTaskConfigRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyImageRegistryTimedScanTaskConfigResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyImageSensitiveWhitelistRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyImageSensitiveWhitelistResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyImageVirusWhitelistRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyImageVirusWhitelistResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyImageVulWhitelistRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyImageVulWhitelistResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyLoginWhiteRecordRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyLoginWhiteRecordResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyMachineAutoClearConfigRequest.h>
@@ -1149,8 +1307,12 @@
 #include <tencentcloud/csip/v20221121/model/ModifyNotifyAgentOfflineDurationResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyNotifyAssetConfigRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyNotifyAssetConfigResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyNotifyMemberRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyNotifyMemberResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyNotifySettingRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyNotifySettingResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyNotifySettingAkRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyNotifySettingAkResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyNotifySettingAlertRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyNotifySettingAlertResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyOrganizationAccountStatusRequest.h>
@@ -1171,10 +1333,14 @@
 #include <tencentcloud/csip/v20221121/model/ModifyRiskCenterScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyRiskScanCronConfigRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyRiskScanCronConfigResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifySandboxLLMAuditRuleStatusRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifySandboxLLMAuditRuleStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifySecurityScoreRuleRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifySecurityScoreRuleResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyShareUserCSPMRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyShareUserCSPMResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifySkillScanAlertStatusRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifySkillScanAlertStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyUebaRuleSwitchRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyUebaRuleSwitchResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyVulScanPeriodicRequest.h>
@@ -1223,6 +1389,8 @@
 #include <tencentcloud/csip/v20221121/model/StopCSIPManualMalwareScanResponse.h>
 #include <tencentcloud/csip/v20221121/model/StopEDRScanTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/StopEDRScanTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/StopImageRegistryScanTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/StopImageRegistryScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/StopPreventUninstallRequest.h>
 #include <tencentcloud/csip/v20221121/model/StopPreventUninstallResponse.h>
 #include <tencentcloud/csip/v20221121/model/StopProcessDaemonRequest.h>
@@ -1235,6 +1403,8 @@
 #include <tencentcloud/csip/v20221121/model/SyncDspmAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/SyncDspmUsersRequest.h>
 #include <tencentcloud/csip/v20221121/model/SyncDspmUsersResponse.h>
+#include <tencentcloud/csip/v20221121/model/SyncImageRegistryRequest.h>
+#include <tencentcloud/csip/v20221121/model/SyncImageRegistryResponse.h>
 #include <tencentcloud/csip/v20221121/model/TestWebhookReceiverRequest.h>
 #include <tencentcloud/csip/v20221121/model/TestWebhookReceiverResponse.h>
 #include <tencentcloud/csip/v20221121/model/UninstallClusterAgentRequest.h>
@@ -1269,6 +1439,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddDspmAssetManagerResponse> AddDspmAssetManagerOutcome;
                 typedef std::future<AddDspmAssetManagerOutcome> AddDspmAssetManagerOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::AddDspmAssetManagerRequest&, AddDspmAssetManagerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddDspmAssetManagerAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddImageRegistryResponse> AddImageRegistryOutcome;
+                typedef std::future<AddImageRegistryOutcome> AddImageRegistryOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::AddImageRegistryRequest&, AddImageRegistryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddImageRegistryAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddLoginWhiteListsResponse> AddLoginWhiteListsOutcome;
                 typedef std::future<AddLoginWhiteListsOutcome> AddLoginWhiteListsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::AddLoginWhiteListsRequest&, AddLoginWhiteListsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddLoginWhiteListsAsyncHandler;
@@ -1281,6 +1454,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchModifyBaselinePolicyResponse> BatchModifyBaselinePolicyOutcome;
                 typedef std::future<BatchModifyBaselinePolicyOutcome> BatchModifyBaselinePolicyOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::BatchModifyBaselinePolicyRequest&, BatchModifyBaselinePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchModifyBaselinePolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchModifyImageRegistryTimedScanTaskConfigResponse> BatchModifyImageRegistryTimedScanTaskConfigOutcome;
+                typedef std::future<BatchModifyImageRegistryTimedScanTaskConfigOutcome> BatchModifyImageRegistryTimedScanTaskConfigOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::BatchModifyImageRegistryTimedScanTaskConfigRequest&, BatchModifyImageRegistryTimedScanTaskConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchModifyImageRegistryTimedScanTaskConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchModifyImageSensitiveWhitelistResponse> BatchModifyImageSensitiveWhitelistOutcome;
+                typedef std::future<BatchModifyImageSensitiveWhitelistOutcome> BatchModifyImageSensitiveWhitelistOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::BatchModifyImageSensitiveWhitelistRequest&, BatchModifyImageSensitiveWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchModifyImageSensitiveWhitelistAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchModifyImageVirusWhitelistResponse> BatchModifyImageVirusWhitelistOutcome;
+                typedef std::future<BatchModifyImageVirusWhitelistOutcome> BatchModifyImageVirusWhitelistOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::BatchModifyImageVirusWhitelistRequest&, BatchModifyImageVirusWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchModifyImageVirusWhitelistAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchModifyImageVulWhitelistResponse> BatchModifyImageVulWhitelistOutcome;
+                typedef std::future<BatchModifyImageVulWhitelistOutcome> BatchModifyImageVulWhitelistOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::BatchModifyImageVulWhitelistRequest&, BatchModifyImageVulWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchModifyImageVulWhitelistAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindClusterOwnerResponse> BindClusterOwnerOutcome;
                 typedef std::future<BindClusterOwnerOutcome> BindClusterOwnerOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::BindClusterOwnerRequest&, BindClusterOwnerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindClusterOwnerAsyncHandler;
@@ -1290,6 +1475,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckCWPExposePathPermissionResponse> CheckCWPExposePathPermissionOutcome;
                 typedef std::future<CheckCWPExposePathPermissionOutcome> CheckCWPExposePathPermissionOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CheckCWPExposePathPermissionRequest&, CheckCWPExposePathPermissionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckCWPExposePathPermissionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckImageRegistryInstanceNameDuplicateResponse> CheckImageRegistryInstanceNameDuplicateOutcome;
+                typedef std::future<CheckImageRegistryInstanceNameDuplicateOutcome> CheckImageRegistryInstanceNameDuplicateOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CheckImageRegistryInstanceNameDuplicateRequest&, CheckImageRegistryInstanceNameDuplicateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckImageRegistryInstanceNameDuplicateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckIsUltimateVersionResponse> CheckIsUltimateVersionOutcome;
                 typedef std::future<CheckIsUltimateVersionOutcome> CheckIsUltimateVersionOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CheckIsUltimateVersionRequest&, CheckIsUltimateVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckIsUltimateVersionAsyncHandler;
@@ -1311,6 +1499,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAllAssetsExportJobResponse> CreateAllAssetsExportJobOutcome;
                 typedef std::future<CreateAllAssetsExportJobOutcome> CreateAllAssetsExportJobOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateAllAssetsExportJobRequest&, CreateAllAssetsExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAllAssetsExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAssetComponentListExportJobResponse> CreateAssetComponentListExportJobOutcome;
+                typedef std::future<CreateAssetComponentListExportJobOutcome> CreateAssetComponentListExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateAssetComponentListExportJobRequest&, CreateAssetComponentListExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAssetComponentListExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAssetComponentRelatedImageListExportJobResponse> CreateAssetComponentRelatedImageListExportJobOutcome;
+                typedef std::future<CreateAssetComponentRelatedImageListExportJobOutcome> CreateAssetComponentRelatedImageListExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateAssetComponentRelatedImageListExportJobRequest&, CreateAssetComponentRelatedImageListExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAssetComponentRelatedImageListExportJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAssetFilterViewResponse> CreateAssetFilterViewOutcome;
                 typedef std::future<CreateAssetFilterViewOutcome> CreateAssetFilterViewOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateAssetFilterViewRequest&, CreateAssetFilterViewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAssetFilterViewAsyncHandler;
@@ -1470,6 +1664,54 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateIaCFileReScanTaskResponse> CreateIaCFileReScanTaskOutcome;
                 typedef std::future<CreateIaCFileReScanTaskOutcome> CreateIaCFileReScanTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateIaCFileReScanTaskRequest&, CreateIaCFileReScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIaCFileReScanTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateImageAssetListExportJobResponse> CreateImageAssetListExportJobOutcome;
+                typedef std::future<CreateImageAssetListExportJobOutcome> CreateImageAssetListExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateImageAssetListExportJobRequest&, CreateImageAssetListExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageAssetListExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateImageAssociatedContainerListExportJobResponse> CreateImageAssociatedContainerListExportJobOutcome;
+                typedef std::future<CreateImageAssociatedContainerListExportJobOutcome> CreateImageAssociatedContainerListExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateImageAssociatedContainerListExportJobRequest&, CreateImageAssociatedContainerListExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageAssociatedContainerListExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateImageAssociatedHostListExportJobResponse> CreateImageAssociatedHostListExportJobOutcome;
+                typedef std::future<CreateImageAssociatedHostListExportJobOutcome> CreateImageAssociatedHostListExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateImageAssociatedHostListExportJobRequest&, CreateImageAssociatedHostListExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageAssociatedHostListExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateImageComponentListExportJobResponse> CreateImageComponentListExportJobOutcome;
+                typedef std::future<CreateImageComponentListExportJobOutcome> CreateImageComponentListExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateImageComponentListExportJobRequest&, CreateImageComponentListExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageComponentListExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateImageLayerVulListExportJobResponse> CreateImageLayerVulListExportJobOutcome;
+                typedef std::future<CreateImageLayerVulListExportJobOutcome> CreateImageLayerVulListExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateImageLayerVulListExportJobRequest&, CreateImageLayerVulListExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageLayerVulListExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateImageRegistryConnectivityTaskResponse> CreateImageRegistryConnectivityTaskOutcome;
+                typedef std::future<CreateImageRegistryConnectivityTaskOutcome> CreateImageRegistryConnectivityTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateImageRegistryConnectivityTaskRequest&, CreateImageRegistryConnectivityTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageRegistryConnectivityTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateImageRegistryListExportJobResponse> CreateImageRegistryListExportJobOutcome;
+                typedef std::future<CreateImageRegistryListExportJobOutcome> CreateImageRegistryListExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateImageRegistryListExportJobRequest&, CreateImageRegistryListExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageRegistryListExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateImageRegistryScanTaskResponse> CreateImageRegistryScanTaskOutcome;
+                typedef std::future<CreateImageRegistryScanTaskOutcome> CreateImageRegistryScanTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateImageRegistryScanTaskRequest&, CreateImageRegistryScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageRegistryScanTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateImageRegistryTimedScanTaskConfigResponse> CreateImageRegistryTimedScanTaskConfigOutcome;
+                typedef std::future<CreateImageRegistryTimedScanTaskConfigOutcome> CreateImageRegistryTimedScanTaskConfigOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateImageRegistryTimedScanTaskConfigRequest&, CreateImageRegistryTimedScanTaskConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageRegistryTimedScanTaskConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateImageSensitiveInfoListExportJobResponse> CreateImageSensitiveInfoListExportJobOutcome;
+                typedef std::future<CreateImageSensitiveInfoListExportJobOutcome> CreateImageSensitiveInfoListExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateImageSensitiveInfoListExportJobRequest&, CreateImageSensitiveInfoListExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageSensitiveInfoListExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateImageSensitiveWhitelistResponse> CreateImageSensitiveWhitelistOutcome;
+                typedef std::future<CreateImageSensitiveWhitelistOutcome> CreateImageSensitiveWhitelistOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateImageSensitiveWhitelistRequest&, CreateImageSensitiveWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageSensitiveWhitelistAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateImageVirusListExportJobResponse> CreateImageVirusListExportJobOutcome;
+                typedef std::future<CreateImageVirusListExportJobOutcome> CreateImageVirusListExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateImageVirusListExportJobRequest&, CreateImageVirusListExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageVirusListExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateImageVirusWhitelistResponse> CreateImageVirusWhitelistOutcome;
+                typedef std::future<CreateImageVirusWhitelistOutcome> CreateImageVirusWhitelistOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateImageVirusWhitelistRequest&, CreateImageVirusWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageVirusWhitelistAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateImageVulListExportJobResponse> CreateImageVulListExportJobOutcome;
+                typedef std::future<CreateImageVulListExportJobOutcome> CreateImageVulListExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateImageVulListExportJobRequest&, CreateImageVulListExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageVulListExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateImageVulSummaryListExportJobResponse> CreateImageVulSummaryListExportJobOutcome;
+                typedef std::future<CreateImageVulSummaryListExportJobOutcome> CreateImageVulSummaryListExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateImageVulSummaryListExportJobRequest&, CreateImageVulSummaryListExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageVulSummaryListExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateImageVulWhitelistResponse> CreateImageVulWhitelistOutcome;
+                typedef std::future<CreateImageVulWhitelistOutcome> CreateImageVulWhitelistOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateImageVulWhitelistRequest&, CreateImageVulWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageVulWhitelistAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePodContainerListExportJobResponse> CreatePodContainerListExportJobOutcome;
                 typedef std::future<CreatePodContainerListExportJobOutcome> CreatePodContainerListExportJobOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreatePodContainerListExportJobRequest&, CreatePodContainerListExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePodContainerListExportJobAsyncHandler;
@@ -1599,6 +1841,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteIaCFileResponse> DeleteIaCFileOutcome;
                 typedef std::future<DeleteIaCFileOutcome> DeleteIaCFileOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteIaCFileRequest&, DeleteIaCFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIaCFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteImageRegistryResponse> DeleteImageRegistryOutcome;
+                typedef std::future<DeleteImageRegistryOutcome> DeleteImageRegistryOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteImageRegistryRequest&, DeleteImageRegistryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageRegistryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteImageRegistryScanTaskResponse> DeleteImageRegistryScanTaskOutcome;
+                typedef std::future<DeleteImageRegistryScanTaskOutcome> DeleteImageRegistryScanTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteImageRegistryScanTaskRequest&, DeleteImageRegistryScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageRegistryScanTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteImageRegistryTimedScanTaskConfigResponse> DeleteImageRegistryTimedScanTaskConfigOutcome;
+                typedef std::future<DeleteImageRegistryTimedScanTaskConfigOutcome> DeleteImageRegistryTimedScanTaskConfigOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteImageRegistryTimedScanTaskConfigRequest&, DeleteImageRegistryTimedScanTaskConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageRegistryTimedScanTaskConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteImageSensitiveWhitelistResponse> DeleteImageSensitiveWhitelistOutcome;
+                typedef std::future<DeleteImageSensitiveWhitelistOutcome> DeleteImageSensitiveWhitelistOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteImageSensitiveWhitelistRequest&, DeleteImageSensitiveWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageSensitiveWhitelistAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteImageVirusWhitelistResponse> DeleteImageVirusWhitelistOutcome;
+                typedef std::future<DeleteImageVirusWhitelistOutcome> DeleteImageVirusWhitelistOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteImageVirusWhitelistRequest&, DeleteImageVirusWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageVirusWhitelistAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteImageVulWhitelistResponse> DeleteImageVulWhitelistOutcome;
+                typedef std::future<DeleteImageVulWhitelistOutcome> DeleteImageVulWhitelistOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteImageVulWhitelistRequest&, DeleteImageVulWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageVulWhitelistAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteLoginWhiteListResponse> DeleteLoginWhiteListOutcome;
                 typedef std::future<DeleteLoginWhiteListOutcome> DeleteLoginWhiteListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteLoginWhiteListRequest&, DeleteLoginWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoginWhiteListAsyncHandler;
@@ -1608,6 +1868,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRiskScanTaskResponse> DeleteRiskScanTaskOutcome;
                 typedef std::future<DeleteRiskScanTaskOutcome> DeleteRiskScanTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteRiskScanTaskRequest&, DeleteRiskScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRiskScanTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSandboxLLMAuditRuleResponse> DeleteSandboxLLMAuditRuleOutcome;
+                typedef std::future<DeleteSandboxLLMAuditRuleOutcome> DeleteSandboxLLMAuditRuleOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteSandboxLLMAuditRuleRequest&, DeleteSandboxLLMAuditRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSandboxLLMAuditRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteVulWhitelistResponse> DeleteVulWhitelistOutcome;
                 typedef std::future<DeleteVulWhitelistOutcome> DeleteVulWhitelistOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteVulWhitelistRequest&, DeleteVulWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVulWhitelistAsyncHandler;
@@ -1620,6 +1883,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAIAgentAssetListResponse> DescribeAIAgentAssetListOutcome;
                 typedef std::future<DescribeAIAgentAssetListOutcome> DescribeAIAgentAssetListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeAIAgentAssetListRequest&, DescribeAIAgentAssetListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIAgentAssetListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAIAgentCredentialListResponse> DescribeAIAgentCredentialListOutcome;
+                typedef std::future<DescribeAIAgentCredentialListOutcome> DescribeAIAgentCredentialListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeAIAgentCredentialListRequest&, DescribeAIAgentCredentialListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIAgentCredentialListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAIAgentCredentialLocationListResponse> DescribeAIAgentCredentialLocationListOutcome;
+                typedef std::future<DescribeAIAgentCredentialLocationListOutcome> DescribeAIAgentCredentialLocationListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeAIAgentCredentialLocationListRequest&, DescribeAIAgentCredentialLocationListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIAgentCredentialLocationListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAIAgentSkillListResponse> DescribeAIAgentSkillListOutcome;
+                typedef std::future<DescribeAIAgentSkillListOutcome> DescribeAIAgentSkillListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeAIAgentSkillListRequest&, DescribeAIAgentSkillListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIAgentSkillListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAIAnalysisFileDownloadURLResponse> DescribeAIAnalysisFileDownloadURLOutcome;
                 typedef std::future<DescribeAIAnalysisFileDownloadURLOutcome> DescribeAIAnalysisFileDownloadURLOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeAIAnalysisFileDownloadURLRequest&, DescribeAIAnalysisFileDownloadURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIAnalysisFileDownloadURLAsyncHandler;
@@ -1695,6 +1967,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAlertListResponse> DescribeAlertListOutcome;
                 typedef std::future<DescribeAlertListOutcome> DescribeAlertListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeAlertListRequest&, DescribeAlertListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlertListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetComponentListResponse> DescribeAssetComponentListOutcome;
+                typedef std::future<DescribeAssetComponentListOutcome> DescribeAssetComponentListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeAssetComponentListRequest&, DescribeAssetComponentListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetComponentListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetComponentRelatedImageListResponse> DescribeAssetComponentRelatedImageListOutcome;
+                typedef std::future<DescribeAssetComponentRelatedImageListOutcome> DescribeAssetComponentRelatedImageListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeAssetComponentRelatedImageListRequest&, DescribeAssetComponentRelatedImageListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetComponentRelatedImageListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAssetDetailResponse> DescribeAssetDetailOutcome;
                 typedef std::future<DescribeAssetDetailOutcome> DescribeAssetDetailOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeAssetDetailRequest&, DescribeAssetDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetDetailAsyncHandler;
@@ -1740,6 +2018,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAssumeRoleResponse> DescribeAssumeRoleOutcome;
                 typedef std::future<DescribeAssumeRoleOutcome> DescribeAssumeRoleOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeAssumeRoleRequest&, DescribeAssumeRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssumeRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackendScanEngineRegionListResponse> DescribeBackendScanEngineRegionListOutcome;
+                typedef std::future<DescribeBackendScanEngineRegionListOutcome> DescribeBackendScanEngineRegionListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeBackendScanEngineRegionListRequest&, DescribeBackendScanEngineRegionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackendScanEngineRegionListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBanModeResponse> DescribeBanModeOutcome;
                 typedef std::future<DescribeBanModeOutcome> DescribeBanModeOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeBanModeRequest&, DescribeBanModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBanModeAsyncHandler;
@@ -1869,6 +2150,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCallRecordResponse> DescribeCallRecordOutcome;
                 typedef std::future<DescribeCallRecordOutcome> DescribeCallRecordOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeCallRecordRequest&, DescribeCallRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCallRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCheckConnectivityHostListResponse> DescribeCheckConnectivityHostListOutcome;
+                typedef std::future<DescribeCheckConnectivityHostListOutcome> DescribeCheckConnectivityHostListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCheckConnectivityHostListRequest&, DescribeCheckConnectivityHostListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCheckConnectivityHostListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCheckViewRisksResponse> DescribeCheckViewRisksOutcome;
                 typedef std::future<DescribeCheckViewRisksOutcome> DescribeCheckViewRisksOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeCheckViewRisksRequest&, DescribeCheckViewRisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCheckViewRisksAsyncHandler;
@@ -2343,6 +2627,81 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIaCTokenListResponse> DescribeIaCTokenListOutcome;
                 typedef std::future<DescribeIaCTokenListOutcome> DescribeIaCTokenListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeIaCTokenListRequest&, DescribeIaCTokenListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIaCTokenListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageAssetDetailResponse> DescribeImageAssetDetailOutcome;
+                typedef std::future<DescribeImageAssetDetailOutcome> DescribeImageAssetDetailOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageAssetDetailRequest&, DescribeImageAssetDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageAssetDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageAssetListResponse> DescribeImageAssetListOutcome;
+                typedef std::future<DescribeImageAssetListOutcome> DescribeImageAssetListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageAssetListRequest&, DescribeImageAssetListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageAssetListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageAssociatedAssetCountResponse> DescribeImageAssociatedAssetCountOutcome;
+                typedef std::future<DescribeImageAssociatedAssetCountOutcome> DescribeImageAssociatedAssetCountOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageAssociatedAssetCountRequest&, DescribeImageAssociatedAssetCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageAssociatedAssetCountAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageAssociatedContainerListResponse> DescribeImageAssociatedContainerListOutcome;
+                typedef std::future<DescribeImageAssociatedContainerListOutcome> DescribeImageAssociatedContainerListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageAssociatedContainerListRequest&, DescribeImageAssociatedContainerListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageAssociatedContainerListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageAssociatedHostListResponse> DescribeImageAssociatedHostListOutcome;
+                typedef std::future<DescribeImageAssociatedHostListOutcome> DescribeImageAssociatedHostListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageAssociatedHostListRequest&, DescribeImageAssociatedHostListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageAssociatedHostListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageComponentListResponse> DescribeImageComponentListOutcome;
+                typedef std::future<DescribeImageComponentListOutcome> DescribeImageComponentListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageComponentListRequest&, DescribeImageComponentListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageComponentListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageExportJobListResponse> DescribeImageExportJobListOutcome;
+                typedef std::future<DescribeImageExportJobListOutcome> DescribeImageExportJobListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageExportJobListRequest&, DescribeImageExportJobListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageExportJobListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageLayerListResponse> DescribeImageLayerListOutcome;
+                typedef std::future<DescribeImageLayerListOutcome> DescribeImageLayerListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageLayerListRequest&, DescribeImageLayerListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageLayerListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageLayerVulListResponse> DescribeImageLayerVulListOutcome;
+                typedef std::future<DescribeImageLayerVulListOutcome> DescribeImageLayerVulListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageLayerVulListRequest&, DescribeImageLayerVulListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageLayerVulListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageRegistryAssetOverviewResponse> DescribeImageRegistryAssetOverviewOutcome;
+                typedef std::future<DescribeImageRegistryAssetOverviewOutcome> DescribeImageRegistryAssetOverviewOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageRegistryAssetOverviewRequest&, DescribeImageRegistryAssetOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageRegistryAssetOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageRegistryConnectivityTaskResultResponse> DescribeImageRegistryConnectivityTaskResultOutcome;
+                typedef std::future<DescribeImageRegistryConnectivityTaskResultOutcome> DescribeImageRegistryConnectivityTaskResultOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageRegistryConnectivityTaskResultRequest&, DescribeImageRegistryConnectivityTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageRegistryConnectivityTaskResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageRegistryListResponse> DescribeImageRegistryListOutcome;
+                typedef std::future<DescribeImageRegistryListOutcome> DescribeImageRegistryListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageRegistryListRequest&, DescribeImageRegistryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageRegistryListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageRegistryNamespaceListResponse> DescribeImageRegistryNamespaceListOutcome;
+                typedef std::future<DescribeImageRegistryNamespaceListOutcome> DescribeImageRegistryNamespaceListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageRegistryNamespaceListRequest&, DescribeImageRegistryNamespaceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageRegistryNamespaceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageRegistryScanSubTaskListResponse> DescribeImageRegistryScanSubTaskListOutcome;
+                typedef std::future<DescribeImageRegistryScanSubTaskListOutcome> DescribeImageRegistryScanSubTaskListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageRegistryScanSubTaskListRequest&, DescribeImageRegistryScanSubTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageRegistryScanSubTaskListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageRegistryScanTaskListResponse> DescribeImageRegistryScanTaskListOutcome;
+                typedef std::future<DescribeImageRegistryScanTaskListOutcome> DescribeImageRegistryScanTaskListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageRegistryScanTaskListRequest&, DescribeImageRegistryScanTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageRegistryScanTaskListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageRegistryTimedScanTaskConfigResponse> DescribeImageRegistryTimedScanTaskConfigOutcome;
+                typedef std::future<DescribeImageRegistryTimedScanTaskConfigOutcome> DescribeImageRegistryTimedScanTaskConfigOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageRegistryTimedScanTaskConfigRequest&, DescribeImageRegistryTimedScanTaskConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageRegistryTimedScanTaskConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageRegistryTimedScanTaskPreviewResponse> DescribeImageRegistryTimedScanTaskPreviewOutcome;
+                typedef std::future<DescribeImageRegistryTimedScanTaskPreviewOutcome> DescribeImageRegistryTimedScanTaskPreviewOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageRegistryTimedScanTaskPreviewRequest&, DescribeImageRegistryTimedScanTaskPreviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageRegistryTimedScanTaskPreviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageSensitiveInfoListResponse> DescribeImageSensitiveInfoListOutcome;
+                typedef std::future<DescribeImageSensitiveInfoListOutcome> DescribeImageSensitiveInfoListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageSensitiveInfoListRequest&, DescribeImageSensitiveInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageSensitiveInfoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageSensitiveWhitelistResponse> DescribeImageSensitiveWhitelistOutcome;
+                typedef std::future<DescribeImageSensitiveWhitelistOutcome> DescribeImageSensitiveWhitelistOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageSensitiveWhitelistRequest&, DescribeImageSensitiveWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageSensitiveWhitelistAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageVirusListResponse> DescribeImageVirusListOutcome;
+                typedef std::future<DescribeImageVirusListOutcome> DescribeImageVirusListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageVirusListRequest&, DescribeImageVirusListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageVirusListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageVirusWhitelistResponse> DescribeImageVirusWhitelistOutcome;
+                typedef std::future<DescribeImageVirusWhitelistOutcome> DescribeImageVirusWhitelistOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageVirusWhitelistRequest&, DescribeImageVirusWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageVirusWhitelistAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageVirusWhitelistDetailResponse> DescribeImageVirusWhitelistDetailOutcome;
+                typedef std::future<DescribeImageVirusWhitelistDetailOutcome> DescribeImageVirusWhitelistDetailOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageVirusWhitelistDetailRequest&, DescribeImageVirusWhitelistDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageVirusWhitelistDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageVulListResponse> DescribeImageVulListOutcome;
+                typedef std::future<DescribeImageVulListOutcome> DescribeImageVulListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageVulListRequest&, DescribeImageVulListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageVulListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageVulSummaryListResponse> DescribeImageVulSummaryListOutcome;
+                typedef std::future<DescribeImageVulSummaryListOutcome> DescribeImageVulSummaryListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageVulSummaryListRequest&, DescribeImageVulSummaryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageVulSummaryListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageVulWhitelistResponse> DescribeImageVulWhitelistOutcome;
+                typedef std::future<DescribeImageVulWhitelistOutcome> DescribeImageVulWhitelistOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeImageVulWhitelistRequest&, DescribeImageVulWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageVulWhitelistAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIpInvokeRecordResponse> DescribeIpInvokeRecordOutcome;
                 typedef std::future<DescribeIpInvokeRecordOutcome> DescribeIpInvokeRecordOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeIpInvokeRecordRequest&, DescribeIpInvokeRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpInvokeRecordAsyncHandler;
@@ -2430,6 +2789,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNotifySettingResponse> DescribeNotifySettingOutcome;
                 typedef std::future<DescribeNotifySettingOutcome> DescribeNotifySettingOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeNotifySettingRequest&, DescribeNotifySettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotifySettingAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNotifySettingAkResponse> DescribeNotifySettingAkOutcome;
+                typedef std::future<DescribeNotifySettingAkOutcome> DescribeNotifySettingAkOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeNotifySettingAkRequest&, DescribeNotifySettingAkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotifySettingAkAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNotifySettingAlertResponse> DescribeNotifySettingAlertOutcome;
                 typedef std::future<DescribeNotifySettingAlertOutcome> DescribeNotifySettingAlertOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeNotifySettingAlertRequest&, DescribeNotifySettingAlertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotifySettingAlertAsyncHandler;
@@ -2475,6 +2837,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRaspLicenseListResponse> DescribeRaspLicenseListOutcome;
                 typedef std::future<DescribeRaspLicenseListOutcome> DescribeRaspLicenseListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeRaspLicenseListRequest&, DescribeRaspLicenseListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRaspLicenseListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRegistryOverviewResponse> DescribeRegistryOverviewOutcome;
+                typedef std::future<DescribeRegistryOverviewOutcome> DescribeRegistryOverviewOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeRegistryOverviewRequest&, DescribeRegistryOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegistryOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRegistryRegionListResponse> DescribeRegistryRegionListOutcome;
+                typedef std::future<DescribeRegistryRegionListOutcome> DescribeRegistryRegionListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeRegistryRegionListRequest&, DescribeRegistryRegionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegistryRegionListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRepositoryImageAssetsResponse> DescribeRepositoryImageAssetsOutcome;
                 typedef std::future<DescribeRepositoryImageAssetsOutcome> DescribeRepositoryImageAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeRepositoryImageAssetsRequest&, DescribeRepositoryImageAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRepositoryImageAssetsAsyncHandler;
@@ -2547,6 +2915,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSCFNamespaceListResponse> DescribeSCFNamespaceListOutcome;
                 typedef std::future<DescribeSCFNamespaceListOutcome> DescribeSCFNamespaceListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeSCFNamespaceListRequest&, DescribeSCFNamespaceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSCFNamespaceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSandboxACLAlertListResponse> DescribeSandboxACLAlertListOutcome;
+                typedef std::future<DescribeSandboxACLAlertListOutcome> DescribeSandboxACLAlertListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeSandboxACLAlertListRequest&, DescribeSandboxACLAlertListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxACLAlertListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSandboxACLRuleListResponse> DescribeSandboxACLRuleListOutcome;
+                typedef std::future<DescribeSandboxACLRuleListOutcome> DescribeSandboxACLRuleListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeSandboxACLRuleListRequest&, DescribeSandboxACLRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxACLRuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSandboxACLSystemRuleListResponse> DescribeSandboxACLSystemRuleListOutcome;
+                typedef std::future<DescribeSandboxACLSystemRuleListOutcome> DescribeSandboxACLSystemRuleListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeSandboxACLSystemRuleListRequest&, DescribeSandboxACLSystemRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxACLSystemRuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSandboxDLPSystemRuleListResponse> DescribeSandboxDLPSystemRuleListOutcome;
+                typedef std::future<DescribeSandboxDLPSystemRuleListOutcome> DescribeSandboxDLPSystemRuleListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeSandboxDLPSystemRuleListRequest&, DescribeSandboxDLPSystemRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxDLPSystemRuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSandboxFileRuleListResponse> DescribeSandboxFileRuleListOutcome;
+                typedef std::future<DescribeSandboxFileRuleListOutcome> DescribeSandboxFileRuleListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeSandboxFileRuleListRequest&, DescribeSandboxFileRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxFileRuleListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScanReportListResponse> DescribeScanReportListOutcome;
                 typedef std::future<DescribeScanReportListOutcome> DescribeScanReportListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeScanReportListRequest&, DescribeScanReportListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanReportListAsyncHandler;
@@ -2577,6 +2960,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSecurityScoreRuleResponse> DescribeSecurityScoreRuleOutcome;
                 typedef std::future<DescribeSecurityScoreRuleOutcome> DescribeSecurityScoreRuleOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeSecurityScoreRuleRequest&, DescribeSecurityScoreRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityScoreRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSkillScanAlertDetailResponse> DescribeSkillScanAlertDetailOutcome;
+                typedef std::future<DescribeSkillScanAlertDetailOutcome> DescribeSkillScanAlertDetailOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeSkillScanAlertDetailRequest&, DescribeSkillScanAlertDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSkillScanAlertDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSkillScanAlertListResponse> DescribeSkillScanAlertListOutcome;
+                typedef std::future<DescribeSkillScanAlertListOutcome> DescribeSkillScanAlertListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeSkillScanAlertListRequest&, DescribeSkillScanAlertListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSkillScanAlertListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSkillScanPayInfoResponse> DescribeSkillScanPayInfoOutcome;
                 typedef std::future<DescribeSkillScanPayInfoOutcome> DescribeSkillScanPayInfoOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeSkillScanPayInfoRequest&, DescribeSkillScanPayInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSkillScanPayInfoAsyncHandler;
@@ -2592,6 +2981,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSubnetAssetsResponse> DescribeSubnetAssetsOutcome;
                 typedef std::future<DescribeSubnetAssetsOutcome> DescribeSubnetAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeSubnetAssetsRequest&, DescribeSubnetAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubnetAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTCRInstanceListResponse> DescribeTCRInstanceListOutcome;
+                typedef std::future<DescribeTCRInstanceListOutcome> DescribeTCRInstanceListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeTCRInstanceListRequest&, DescribeTCRInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTCRInstanceListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTagRuleAssetsResponse> DescribeTagRuleAssetsOutcome;
                 typedef std::future<DescribeTagRuleAssetsOutcome> DescribeTagRuleAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeTagRuleAssetsRequest&, DescribeTagRuleAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagRuleAssetsAsyncHandler;
@@ -2922,6 +3314,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyIaCTokenPeriodResponse> ModifyIaCTokenPeriodOutcome;
                 typedef std::future<ModifyIaCTokenPeriodOutcome> ModifyIaCTokenPeriodOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyIaCTokenPeriodRequest&, ModifyIaCTokenPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIaCTokenPeriodAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyImageRegistryResponse> ModifyImageRegistryOutcome;
+                typedef std::future<ModifyImageRegistryOutcome> ModifyImageRegistryOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyImageRegistryRequest&, ModifyImageRegistryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImageRegistryAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyImageRegistryTimedScanTaskConfigResponse> ModifyImageRegistryTimedScanTaskConfigOutcome;
+                typedef std::future<ModifyImageRegistryTimedScanTaskConfigOutcome> ModifyImageRegistryTimedScanTaskConfigOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyImageRegistryTimedScanTaskConfigRequest&, ModifyImageRegistryTimedScanTaskConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImageRegistryTimedScanTaskConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyImageSensitiveWhitelistResponse> ModifyImageSensitiveWhitelistOutcome;
+                typedef std::future<ModifyImageSensitiveWhitelistOutcome> ModifyImageSensitiveWhitelistOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyImageSensitiveWhitelistRequest&, ModifyImageSensitiveWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImageSensitiveWhitelistAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyImageVirusWhitelistResponse> ModifyImageVirusWhitelistOutcome;
+                typedef std::future<ModifyImageVirusWhitelistOutcome> ModifyImageVirusWhitelistOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyImageVirusWhitelistRequest&, ModifyImageVirusWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImageVirusWhitelistAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyImageVulWhitelistResponse> ModifyImageVulWhitelistOutcome;
+                typedef std::future<ModifyImageVulWhitelistOutcome> ModifyImageVulWhitelistOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyImageVulWhitelistRequest&, ModifyImageVulWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImageVulWhitelistAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLoginWhiteRecordResponse> ModifyLoginWhiteRecordOutcome;
                 typedef std::future<ModifyLoginWhiteRecordOutcome> ModifyLoginWhiteRecordOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyLoginWhiteRecordRequest&, ModifyLoginWhiteRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoginWhiteRecordAsyncHandler;
@@ -2952,9 +3359,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyNotifyAssetConfigResponse> ModifyNotifyAssetConfigOutcome;
                 typedef std::future<ModifyNotifyAssetConfigOutcome> ModifyNotifyAssetConfigOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyNotifyAssetConfigRequest&, ModifyNotifyAssetConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNotifyAssetConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyNotifyMemberResponse> ModifyNotifyMemberOutcome;
+                typedef std::future<ModifyNotifyMemberOutcome> ModifyNotifyMemberOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyNotifyMemberRequest&, ModifyNotifyMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNotifyMemberAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyNotifySettingResponse> ModifyNotifySettingOutcome;
                 typedef std::future<ModifyNotifySettingOutcome> ModifyNotifySettingOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyNotifySettingRequest&, ModifyNotifySettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNotifySettingAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyNotifySettingAkResponse> ModifyNotifySettingAkOutcome;
+                typedef std::future<ModifyNotifySettingAkOutcome> ModifyNotifySettingAkOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyNotifySettingAkRequest&, ModifyNotifySettingAkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNotifySettingAkAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyNotifySettingAlertResponse> ModifyNotifySettingAlertOutcome;
                 typedef std::future<ModifyNotifySettingAlertOutcome> ModifyNotifySettingAlertOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyNotifySettingAlertRequest&, ModifyNotifySettingAlertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNotifySettingAlertAsyncHandler;
@@ -2985,12 +3398,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRiskScanCronConfigResponse> ModifyRiskScanCronConfigOutcome;
                 typedef std::future<ModifyRiskScanCronConfigOutcome> ModifyRiskScanCronConfigOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyRiskScanCronConfigRequest&, ModifyRiskScanCronConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRiskScanCronConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySandboxLLMAuditRuleStatusResponse> ModifySandboxLLMAuditRuleStatusOutcome;
+                typedef std::future<ModifySandboxLLMAuditRuleStatusOutcome> ModifySandboxLLMAuditRuleStatusOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifySandboxLLMAuditRuleStatusRequest&, ModifySandboxLLMAuditRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySandboxLLMAuditRuleStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySecurityScoreRuleResponse> ModifySecurityScoreRuleOutcome;
                 typedef std::future<ModifySecurityScoreRuleOutcome> ModifySecurityScoreRuleOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifySecurityScoreRuleRequest&, ModifySecurityScoreRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityScoreRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyShareUserCSPMResponse> ModifyShareUserCSPMOutcome;
                 typedef std::future<ModifyShareUserCSPMOutcome> ModifyShareUserCSPMOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyShareUserCSPMRequest&, ModifyShareUserCSPMOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyShareUserCSPMAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySkillScanAlertStatusResponse> ModifySkillScanAlertStatusOutcome;
+                typedef std::future<ModifySkillScanAlertStatusOutcome> ModifySkillScanAlertStatusOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifySkillScanAlertStatusRequest&, ModifySkillScanAlertStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySkillScanAlertStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyUebaRuleSwitchResponse> ModifyUebaRuleSwitchOutcome;
                 typedef std::future<ModifyUebaRuleSwitchOutcome> ModifyUebaRuleSwitchOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyUebaRuleSwitchRequest&, ModifyUebaRuleSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUebaRuleSwitchAsyncHandler;
@@ -3063,6 +3482,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopEDRScanTaskResponse> StopEDRScanTaskOutcome;
                 typedef std::future<StopEDRScanTaskOutcome> StopEDRScanTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::StopEDRScanTaskRequest&, StopEDRScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopEDRScanTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopImageRegistryScanTaskResponse> StopImageRegistryScanTaskOutcome;
+                typedef std::future<StopImageRegistryScanTaskOutcome> StopImageRegistryScanTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::StopImageRegistryScanTaskRequest&, StopImageRegistryScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopImageRegistryScanTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopPreventUninstallResponse> StopPreventUninstallOutcome;
                 typedef std::future<StopPreventUninstallOutcome> StopPreventUninstallOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::StopPreventUninstallRequest&, StopPreventUninstallOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopPreventUninstallAsyncHandler;
@@ -3081,6 +3503,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SyncDspmUsersResponse> SyncDspmUsersOutcome;
                 typedef std::future<SyncDspmUsersOutcome> SyncDspmUsersOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::SyncDspmUsersRequest&, SyncDspmUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncDspmUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::SyncImageRegistryResponse> SyncImageRegistryOutcome;
+                typedef std::future<SyncImageRegistryOutcome> SyncImageRegistryOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::SyncImageRegistryRequest&, SyncImageRegistryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncImageRegistryAsyncHandler;
                 typedef Outcome<Core::Error, Model::TestWebhookReceiverResponse> TestWebhookReceiverOutcome;
                 typedef std::future<TestWebhookReceiverOutcome> TestWebhookReceiverOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::TestWebhookReceiverRequest&, TestWebhookReceiverOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TestWebhookReceiverAsyncHandler;
@@ -3124,6 +3549,15 @@ namespace TencentCloud
                 AddDspmAssetManagerOutcomeCallable AddDspmAssetManagerCallable(const Model::AddDspmAssetManagerRequest& request);
 
                 /**
+                 *添加镜像仓库信息
+                 * @param req AddImageRegistryRequest
+                 * @return AddImageRegistryOutcome
+                 */
+                AddImageRegistryOutcome AddImageRegistry(const Model::AddImageRegistryRequest &request);
+                void AddImageRegistryAsync(const Model::AddImageRegistryRequest& request, const AddImageRegistryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddImageRegistryOutcomeCallable AddImageRegistryCallable(const Model::AddImageRegistryRequest& request);
+
+                /**
                  *批量添加异地登录白名单
                  * @param req AddLoginWhiteListsRequest
                  * @return AddLoginWhiteListsOutcome
@@ -3160,6 +3594,42 @@ namespace TencentCloud
                 BatchModifyBaselinePolicyOutcomeCallable BatchModifyBaselinePolicyCallable(const Model::BatchModifyBaselinePolicyRequest& request);
 
                 /**
+                 *批量修改镜像仓库定时扫描任务配置
+                 * @param req BatchModifyImageRegistryTimedScanTaskConfigRequest
+                 * @return BatchModifyImageRegistryTimedScanTaskConfigOutcome
+                 */
+                BatchModifyImageRegistryTimedScanTaskConfigOutcome BatchModifyImageRegistryTimedScanTaskConfig(const Model::BatchModifyImageRegistryTimedScanTaskConfigRequest &request);
+                void BatchModifyImageRegistryTimedScanTaskConfigAsync(const Model::BatchModifyImageRegistryTimedScanTaskConfigRequest& request, const BatchModifyImageRegistryTimedScanTaskConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchModifyImageRegistryTimedScanTaskConfigOutcomeCallable BatchModifyImageRegistryTimedScanTaskConfigCallable(const Model::BatchModifyImageRegistryTimedScanTaskConfigRequest& request);
+
+                /**
+                 *批量修改容器镜像敏感信息白名单
+                 * @param req BatchModifyImageSensitiveWhitelistRequest
+                 * @return BatchModifyImageSensitiveWhitelistOutcome
+                 */
+                BatchModifyImageSensitiveWhitelistOutcome BatchModifyImageSensitiveWhitelist(const Model::BatchModifyImageSensitiveWhitelistRequest &request);
+                void BatchModifyImageSensitiveWhitelistAsync(const Model::BatchModifyImageSensitiveWhitelistRequest& request, const BatchModifyImageSensitiveWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchModifyImageSensitiveWhitelistOutcomeCallable BatchModifyImageSensitiveWhitelistCallable(const Model::BatchModifyImageSensitiveWhitelistRequest& request);
+
+                /**
+                 *批量修改镜像木马白名单
+                 * @param req BatchModifyImageVirusWhitelistRequest
+                 * @return BatchModifyImageVirusWhitelistOutcome
+                 */
+                BatchModifyImageVirusWhitelistOutcome BatchModifyImageVirusWhitelist(const Model::BatchModifyImageVirusWhitelistRequest &request);
+                void BatchModifyImageVirusWhitelistAsync(const Model::BatchModifyImageVirusWhitelistRequest& request, const BatchModifyImageVirusWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchModifyImageVirusWhitelistOutcomeCallable BatchModifyImageVirusWhitelistCallable(const Model::BatchModifyImageVirusWhitelistRequest& request);
+
+                /**
+                 *批量修改容器镜像漏洞白名单
+                 * @param req BatchModifyImageVulWhitelistRequest
+                 * @return BatchModifyImageVulWhitelistOutcome
+                 */
+                BatchModifyImageVulWhitelistOutcome BatchModifyImageVulWhitelist(const Model::BatchModifyImageVulWhitelistRequest &request);
+                void BatchModifyImageVulWhitelistAsync(const Model::BatchModifyImageVulWhitelistRequest& request, const BatchModifyImageVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchModifyImageVulWhitelistOutcomeCallable BatchModifyImageVulWhitelistCallable(const Model::BatchModifyImageVulWhitelistRequest& request);
+
+                /**
                  *绑定集群负责人
                  * @param req BindClusterOwnerRequest
                  * @return BindClusterOwnerOutcome
@@ -3185,6 +3655,15 @@ namespace TencentCloud
                 CheckCWPExposePathPermissionOutcome CheckCWPExposePathPermission(const Model::CheckCWPExposePathPermissionRequest &request);
                 void CheckCWPExposePathPermissionAsync(const Model::CheckCWPExposePathPermissionRequest& request, const CheckCWPExposePathPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckCWPExposePathPermissionOutcomeCallable CheckCWPExposePathPermissionCallable(const Model::CheckCWPExposePathPermissionRequest& request);
+
+                /**
+                 *检查镜像仓库实例名是否重复
+                 * @param req CheckImageRegistryInstanceNameDuplicateRequest
+                 * @return CheckImageRegistryInstanceNameDuplicateOutcome
+                 */
+                CheckImageRegistryInstanceNameDuplicateOutcome CheckImageRegistryInstanceNameDuplicate(const Model::CheckImageRegistryInstanceNameDuplicateRequest &request);
+                void CheckImageRegistryInstanceNameDuplicateAsync(const Model::CheckImageRegistryInstanceNameDuplicateRequest& request, const CheckImageRegistryInstanceNameDuplicateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckImageRegistryInstanceNameDuplicateOutcomeCallable CheckImageRegistryInstanceNameDuplicateCallable(const Model::CheckImageRegistryInstanceNameDuplicateRequest& request);
 
                 /**
                  *判断当前用户是否旗舰版
@@ -3250,6 +3729,24 @@ namespace TencentCloud
                 CreateAllAssetsExportJobOutcome CreateAllAssetsExportJob(const Model::CreateAllAssetsExportJobRequest &request);
                 void CreateAllAssetsExportJobAsync(const Model::CreateAllAssetsExportJobRequest& request, const CreateAllAssetsExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAllAssetsExportJobOutcomeCallable CreateAllAssetsExportJobCallable(const Model::CreateAllAssetsExportJobRequest& request);
+
+                /**
+                 *创建镜像资产中组件列表导出任务
+                 * @param req CreateAssetComponentListExportJobRequest
+                 * @return CreateAssetComponentListExportJobOutcome
+                 */
+                CreateAssetComponentListExportJobOutcome CreateAssetComponentListExportJob(const Model::CreateAssetComponentListExportJobRequest &request);
+                void CreateAssetComponentListExportJobAsync(const Model::CreateAssetComponentListExportJobRequest& request, const CreateAssetComponentListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAssetComponentListExportJobOutcomeCallable CreateAssetComponentListExportJobCallable(const Model::CreateAssetComponentListExportJobRequest& request);
+
+                /**
+                 *创建镜像仓库组件关联镜像列表导出任务
+                 * @param req CreateAssetComponentRelatedImageListExportJobRequest
+                 * @return CreateAssetComponentRelatedImageListExportJobOutcome
+                 */
+                CreateAssetComponentRelatedImageListExportJobOutcome CreateAssetComponentRelatedImageListExportJob(const Model::CreateAssetComponentRelatedImageListExportJobRequest &request);
+                void CreateAssetComponentRelatedImageListExportJobAsync(const Model::CreateAssetComponentRelatedImageListExportJobRequest& request, const CreateAssetComponentRelatedImageListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAssetComponentRelatedImageListExportJobOutcomeCallable CreateAssetComponentRelatedImageListExportJobCallable(const Model::CreateAssetComponentRelatedImageListExportJobRequest& request);
 
                 /**
                  *创建资产搜索视图
@@ -3729,6 +4226,150 @@ namespace TencentCloud
                 CreateIaCFileReScanTaskOutcomeCallable CreateIaCFileReScanTaskCallable(const Model::CreateIaCFileReScanTaskRequest& request);
 
                 /**
+                 *创建镜像资产列表导出任务
+                 * @param req CreateImageAssetListExportJobRequest
+                 * @return CreateImageAssetListExportJobOutcome
+                 */
+                CreateImageAssetListExportJobOutcome CreateImageAssetListExportJob(const Model::CreateImageAssetListExportJobRequest &request);
+                void CreateImageAssetListExportJobAsync(const Model::CreateImageAssetListExportJobRequest& request, const CreateImageAssetListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImageAssetListExportJobOutcomeCallable CreateImageAssetListExportJobCallable(const Model::CreateImageAssetListExportJobRequest& request);
+
+                /**
+                 *创建镜像关联容器资产导出任务
+                 * @param req CreateImageAssociatedContainerListExportJobRequest
+                 * @return CreateImageAssociatedContainerListExportJobOutcome
+                 */
+                CreateImageAssociatedContainerListExportJobOutcome CreateImageAssociatedContainerListExportJob(const Model::CreateImageAssociatedContainerListExportJobRequest &request);
+                void CreateImageAssociatedContainerListExportJobAsync(const Model::CreateImageAssociatedContainerListExportJobRequest& request, const CreateImageAssociatedContainerListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImageAssociatedContainerListExportJobOutcomeCallable CreateImageAssociatedContainerListExportJobCallable(const Model::CreateImageAssociatedContainerListExportJobRequest& request);
+
+                /**
+                 *创建镜像关联主机资产列表导出任务
+                 * @param req CreateImageAssociatedHostListExportJobRequest
+                 * @return CreateImageAssociatedHostListExportJobOutcome
+                 */
+                CreateImageAssociatedHostListExportJobOutcome CreateImageAssociatedHostListExportJob(const Model::CreateImageAssociatedHostListExportJobRequest &request);
+                void CreateImageAssociatedHostListExportJobAsync(const Model::CreateImageAssociatedHostListExportJobRequest& request, const CreateImageAssociatedHostListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImageAssociatedHostListExportJobOutcomeCallable CreateImageAssociatedHostListExportJobCallable(const Model::CreateImageAssociatedHostListExportJobRequest& request);
+
+                /**
+                 *创建镜像组件列表导出任务
+                 * @param req CreateImageComponentListExportJobRequest
+                 * @return CreateImageComponentListExportJobOutcome
+                 */
+                CreateImageComponentListExportJobOutcome CreateImageComponentListExportJob(const Model::CreateImageComponentListExportJobRequest &request);
+                void CreateImageComponentListExportJobAsync(const Model::CreateImageComponentListExportJobRequest& request, const CreateImageComponentListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImageComponentListExportJobOutcomeCallable CreateImageComponentListExportJobCallable(const Model::CreateImageComponentListExportJobRequest& request);
+
+                /**
+                 *创建镜像层漏洞列表导出任务
+                 * @param req CreateImageLayerVulListExportJobRequest
+                 * @return CreateImageLayerVulListExportJobOutcome
+                 */
+                CreateImageLayerVulListExportJobOutcome CreateImageLayerVulListExportJob(const Model::CreateImageLayerVulListExportJobRequest &request);
+                void CreateImageLayerVulListExportJobAsync(const Model::CreateImageLayerVulListExportJobRequest& request, const CreateImageLayerVulListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImageLayerVulListExportJobOutcomeCallable CreateImageLayerVulListExportJobCallable(const Model::CreateImageLayerVulListExportJobRequest& request);
+
+                /**
+                 *创建镜像仓库联通性检查任务
+                 * @param req CreateImageRegistryConnectivityTaskRequest
+                 * @return CreateImageRegistryConnectivityTaskOutcome
+                 */
+                CreateImageRegistryConnectivityTaskOutcome CreateImageRegistryConnectivityTask(const Model::CreateImageRegistryConnectivityTaskRequest &request);
+                void CreateImageRegistryConnectivityTaskAsync(const Model::CreateImageRegistryConnectivityTaskRequest& request, const CreateImageRegistryConnectivityTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImageRegistryConnectivityTaskOutcomeCallable CreateImageRegistryConnectivityTaskCallable(const Model::CreateImageRegistryConnectivityTaskRequest& request);
+
+                /**
+                 *创建镜像仓库列表导出任务
+                 * @param req CreateImageRegistryListExportJobRequest
+                 * @return CreateImageRegistryListExportJobOutcome
+                 */
+                CreateImageRegistryListExportJobOutcome CreateImageRegistryListExportJob(const Model::CreateImageRegistryListExportJobRequest &request);
+                void CreateImageRegistryListExportJobAsync(const Model::CreateImageRegistryListExportJobRequest& request, const CreateImageRegistryListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImageRegistryListExportJobOutcomeCallable CreateImageRegistryListExportJobCallable(const Model::CreateImageRegistryListExportJobRequest& request);
+
+                /**
+                 *创建镜像扫描任务
+                 * @param req CreateImageRegistryScanTaskRequest
+                 * @return CreateImageRegistryScanTaskOutcome
+                 */
+                CreateImageRegistryScanTaskOutcome CreateImageRegistryScanTask(const Model::CreateImageRegistryScanTaskRequest &request);
+                void CreateImageRegistryScanTaskAsync(const Model::CreateImageRegistryScanTaskRequest& request, const CreateImageRegistryScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImageRegistryScanTaskOutcomeCallable CreateImageRegistryScanTaskCallable(const Model::CreateImageRegistryScanTaskRequest& request);
+
+                /**
+                 *创建镜像仓库镜像扫描任务配置
+                 * @param req CreateImageRegistryTimedScanTaskConfigRequest
+                 * @return CreateImageRegistryTimedScanTaskConfigOutcome
+                 */
+                CreateImageRegistryTimedScanTaskConfigOutcome CreateImageRegistryTimedScanTaskConfig(const Model::CreateImageRegistryTimedScanTaskConfigRequest &request);
+                void CreateImageRegistryTimedScanTaskConfigAsync(const Model::CreateImageRegistryTimedScanTaskConfigRequest& request, const CreateImageRegistryTimedScanTaskConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImageRegistryTimedScanTaskConfigOutcomeCallable CreateImageRegistryTimedScanTaskConfigCallable(const Model::CreateImageRegistryTimedScanTaskConfigRequest& request);
+
+                /**
+                 *创建镜像敏感信息列表导出任务
+                 * @param req CreateImageSensitiveInfoListExportJobRequest
+                 * @return CreateImageSensitiveInfoListExportJobOutcome
+                 */
+                CreateImageSensitiveInfoListExportJobOutcome CreateImageSensitiveInfoListExportJob(const Model::CreateImageSensitiveInfoListExportJobRequest &request);
+                void CreateImageSensitiveInfoListExportJobAsync(const Model::CreateImageSensitiveInfoListExportJobRequest& request, const CreateImageSensitiveInfoListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImageSensitiveInfoListExportJobOutcomeCallable CreateImageSensitiveInfoListExportJobCallable(const Model::CreateImageSensitiveInfoListExportJobRequest& request);
+
+                /**
+                 *创建容器镜像敏感信息白名单
+                 * @param req CreateImageSensitiveWhitelistRequest
+                 * @return CreateImageSensitiveWhitelistOutcome
+                 */
+                CreateImageSensitiveWhitelistOutcome CreateImageSensitiveWhitelist(const Model::CreateImageSensitiveWhitelistRequest &request);
+                void CreateImageSensitiveWhitelistAsync(const Model::CreateImageSensitiveWhitelistRequest& request, const CreateImageSensitiveWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImageSensitiveWhitelistOutcomeCallable CreateImageSensitiveWhitelistCallable(const Model::CreateImageSensitiveWhitelistRequest& request);
+
+                /**
+                 *创建镜像木马病毒列表导出任务
+                 * @param req CreateImageVirusListExportJobRequest
+                 * @return CreateImageVirusListExportJobOutcome
+                 */
+                CreateImageVirusListExportJobOutcome CreateImageVirusListExportJob(const Model::CreateImageVirusListExportJobRequest &request);
+                void CreateImageVirusListExportJobAsync(const Model::CreateImageVirusListExportJobRequest& request, const CreateImageVirusListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImageVirusListExportJobOutcomeCallable CreateImageVirusListExportJobCallable(const Model::CreateImageVirusListExportJobRequest& request);
+
+                /**
+                 *创建镜像木马白名单
+                 * @param req CreateImageVirusWhitelistRequest
+                 * @return CreateImageVirusWhitelistOutcome
+                 */
+                CreateImageVirusWhitelistOutcome CreateImageVirusWhitelist(const Model::CreateImageVirusWhitelistRequest &request);
+                void CreateImageVirusWhitelistAsync(const Model::CreateImageVirusWhitelistRequest& request, const CreateImageVirusWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImageVirusWhitelistOutcomeCallable CreateImageVirusWhitelistCallable(const Model::CreateImageVirusWhitelistRequest& request);
+
+                /**
+                 *创建镜像漏洞列表导出任务
+                 * @param req CreateImageVulListExportJobRequest
+                 * @return CreateImageVulListExportJobOutcome
+                 */
+                CreateImageVulListExportJobOutcome CreateImageVulListExportJob(const Model::CreateImageVulListExportJobRequest &request);
+                void CreateImageVulListExportJobAsync(const Model::CreateImageVulListExportJobRequest& request, const CreateImageVulListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImageVulListExportJobOutcomeCallable CreateImageVulListExportJobCallable(const Model::CreateImageVulListExportJobRequest& request);
+
+                /**
+                 *创建镜像漏洞概览列表导出任务
+                 * @param req CreateImageVulSummaryListExportJobRequest
+                 * @return CreateImageVulSummaryListExportJobOutcome
+                 */
+                CreateImageVulSummaryListExportJobOutcome CreateImageVulSummaryListExportJob(const Model::CreateImageVulSummaryListExportJobRequest &request);
+                void CreateImageVulSummaryListExportJobAsync(const Model::CreateImageVulSummaryListExportJobRequest& request, const CreateImageVulSummaryListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImageVulSummaryListExportJobOutcomeCallable CreateImageVulSummaryListExportJobCallable(const Model::CreateImageVulSummaryListExportJobRequest& request);
+
+                /**
+                 *创建容器镜像漏洞白名单
+                 * @param req CreateImageVulWhitelistRequest
+                 * @return CreateImageVulWhitelistOutcome
+                 */
+                CreateImageVulWhitelistOutcome CreateImageVulWhitelist(const Model::CreateImageVulWhitelistRequest &request);
+                void CreateImageVulWhitelistAsync(const Model::CreateImageVulWhitelistRequest& request, const CreateImageVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImageVulWhitelistOutcomeCallable CreateImageVulWhitelistCallable(const Model::CreateImageVulWhitelistRequest& request);
+
+                /**
                  *创建Pod关联容器列表导出任务。导出字段包含容器ID、容器名称、运行状态、节点ID、节点类型、镜像ID、镜像名称、隔离状态。支持Filter过滤。导出通过异步任务实现，返回JobId后前端轮询查询导出任务状态。
                  * @param req CreatePodContainerListExportJobRequest
                  * @return CreatePodContainerListExportJobOutcome
@@ -4118,6 +4759,60 @@ namespace TencentCloud
                 DeleteIaCFileOutcomeCallable DeleteIaCFileCallable(const Model::DeleteIaCFileRequest& request);
 
                 /**
+                 *删除镜像仓库信息
+                 * @param req DeleteImageRegistryRequest
+                 * @return DeleteImageRegistryOutcome
+                 */
+                DeleteImageRegistryOutcome DeleteImageRegistry(const Model::DeleteImageRegistryRequest &request);
+                void DeleteImageRegistryAsync(const Model::DeleteImageRegistryRequest& request, const DeleteImageRegistryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteImageRegistryOutcomeCallable DeleteImageRegistryCallable(const Model::DeleteImageRegistryRequest& request);
+
+                /**
+                 *删除镜像仓库扫描任务
+                 * @param req DeleteImageRegistryScanTaskRequest
+                 * @return DeleteImageRegistryScanTaskOutcome
+                 */
+                DeleteImageRegistryScanTaskOutcome DeleteImageRegistryScanTask(const Model::DeleteImageRegistryScanTaskRequest &request);
+                void DeleteImageRegistryScanTaskAsync(const Model::DeleteImageRegistryScanTaskRequest& request, const DeleteImageRegistryScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteImageRegistryScanTaskOutcomeCallable DeleteImageRegistryScanTaskCallable(const Model::DeleteImageRegistryScanTaskRequest& request);
+
+                /**
+                 *删除镜像仓库定时扫描任务配置
+                 * @param req DeleteImageRegistryTimedScanTaskConfigRequest
+                 * @return DeleteImageRegistryTimedScanTaskConfigOutcome
+                 */
+                DeleteImageRegistryTimedScanTaskConfigOutcome DeleteImageRegistryTimedScanTaskConfig(const Model::DeleteImageRegistryTimedScanTaskConfigRequest &request);
+                void DeleteImageRegistryTimedScanTaskConfigAsync(const Model::DeleteImageRegistryTimedScanTaskConfigRequest& request, const DeleteImageRegistryTimedScanTaskConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteImageRegistryTimedScanTaskConfigOutcomeCallable DeleteImageRegistryTimedScanTaskConfigCallable(const Model::DeleteImageRegistryTimedScanTaskConfigRequest& request);
+
+                /**
+                 *删除容器镜像敏感信息白名单
+                 * @param req DeleteImageSensitiveWhitelistRequest
+                 * @return DeleteImageSensitiveWhitelistOutcome
+                 */
+                DeleteImageSensitiveWhitelistOutcome DeleteImageSensitiveWhitelist(const Model::DeleteImageSensitiveWhitelistRequest &request);
+                void DeleteImageSensitiveWhitelistAsync(const Model::DeleteImageSensitiveWhitelistRequest& request, const DeleteImageSensitiveWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteImageSensitiveWhitelistOutcomeCallable DeleteImageSensitiveWhitelistCallable(const Model::DeleteImageSensitiveWhitelistRequest& request);
+
+                /**
+                 *删除镜像木马白名单
+                 * @param req DeleteImageVirusWhitelistRequest
+                 * @return DeleteImageVirusWhitelistOutcome
+                 */
+                DeleteImageVirusWhitelistOutcome DeleteImageVirusWhitelist(const Model::DeleteImageVirusWhitelistRequest &request);
+                void DeleteImageVirusWhitelistAsync(const Model::DeleteImageVirusWhitelistRequest& request, const DeleteImageVirusWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteImageVirusWhitelistOutcomeCallable DeleteImageVirusWhitelistCallable(const Model::DeleteImageVirusWhitelistRequest& request);
+
+                /**
+                 *删除容器镜像漏洞白名单
+                 * @param req DeleteImageVulWhitelistRequest
+                 * @return DeleteImageVulWhitelistOutcome
+                 */
+                DeleteImageVulWhitelistOutcome DeleteImageVulWhitelist(const Model::DeleteImageVulWhitelistRequest &request);
+                void DeleteImageVulWhitelistAsync(const Model::DeleteImageVulWhitelistRequest& request, const DeleteImageVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteImageVulWhitelistOutcomeCallable DeleteImageVulWhitelistCallable(const Model::DeleteImageVulWhitelistRequest& request);
+
+                /**
                  *本接口用于删除异地登录白名单规则。
                  * @param req DeleteLoginWhiteListRequest
                  * @return DeleteLoginWhiteListOutcome
@@ -4143,6 +4838,15 @@ namespace TencentCloud
                 DeleteRiskScanTaskOutcome DeleteRiskScanTask(const Model::DeleteRiskScanTaskRequest &request);
                 void DeleteRiskScanTaskAsync(const Model::DeleteRiskScanTaskRequest& request, const DeleteRiskScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteRiskScanTaskOutcomeCallable DeleteRiskScanTaskCallable(const Model::DeleteRiskScanTaskRequest& request);
+
+                /**
+                 *批量删除 LLM 审计用户规则。任一 ID 不存在或属于其他租户时整体返回错误
+                 * @param req DeleteSandboxLLMAuditRuleRequest
+                 * @return DeleteSandboxLLMAuditRuleOutcome
+                 */
+                DeleteSandboxLLMAuditRuleOutcome DeleteSandboxLLMAuditRule(const Model::DeleteSandboxLLMAuditRuleRequest &request);
+                void DeleteSandboxLLMAuditRuleAsync(const Model::DeleteSandboxLLMAuditRuleRequest& request, const DeleteSandboxLLMAuditRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSandboxLLMAuditRuleOutcomeCallable DeleteSandboxLLMAuditRuleCallable(const Model::DeleteSandboxLLMAuditRuleRequest& request);
 
                 /**
                  *删除漏洞白名单
@@ -4179,6 +4883,33 @@ namespace TencentCloud
                 DescribeAIAgentAssetListOutcome DescribeAIAgentAssetList(const Model::DescribeAIAgentAssetListRequest &request);
                 void DescribeAIAgentAssetListAsync(const Model::DescribeAIAgentAssetListRequest& request, const DescribeAIAgentAssetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAIAgentAssetListOutcomeCallable DescribeAIAgentAssetListCallable(const Model::DescribeAIAgentAssetListRequest& request);
+
+                /**
+                 *获取 AIAgent 资产凭据扫描列表
+                 * @param req DescribeAIAgentCredentialListRequest
+                 * @return DescribeAIAgentCredentialListOutcome
+                 */
+                DescribeAIAgentCredentialListOutcome DescribeAIAgentCredentialList(const Model::DescribeAIAgentCredentialListRequest &request);
+                void DescribeAIAgentCredentialListAsync(const Model::DescribeAIAgentCredentialListRequest& request, const DescribeAIAgentCredentialListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAIAgentCredentialListOutcomeCallable DescribeAIAgentCredentialListCallable(const Model::DescribeAIAgentCredentialListRequest& request);
+
+                /**
+                 *按凭据组行 ID 分页查询单个凭据的泄露位置列表。用于配合 DescribeAIAgentCredentialList 接口拆分后的展开场景，避免单接口在数据倾斜场景下一次拉取几十万行 location 导致性能问题。
+                 * @param req DescribeAIAgentCredentialLocationListRequest
+                 * @return DescribeAIAgentCredentialLocationListOutcome
+                 */
+                DescribeAIAgentCredentialLocationListOutcome DescribeAIAgentCredentialLocationList(const Model::DescribeAIAgentCredentialLocationListRequest &request);
+                void DescribeAIAgentCredentialLocationListAsync(const Model::DescribeAIAgentCredentialLocationListRequest& request, const DescribeAIAgentCredentialLocationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAIAgentCredentialLocationListOutcomeCallable DescribeAIAgentCredentialLocationListCallable(const Model::DescribeAIAgentCredentialLocationListRequest& request);
+
+                /**
+                 *获取 AI Agent skill 列表
+                 * @param req DescribeAIAgentSkillListRequest
+                 * @return DescribeAIAgentSkillListOutcome
+                 */
+                DescribeAIAgentSkillListOutcome DescribeAIAgentSkillList(const Model::DescribeAIAgentSkillListRequest &request);
+                void DescribeAIAgentSkillListAsync(const Model::DescribeAIAgentSkillListRequest& request, const DescribeAIAgentSkillListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAIAgentSkillListOutcomeCallable DescribeAIAgentSkillListCallable(const Model::DescribeAIAgentSkillListRequest& request);
 
                 /**
                  *获取 AI 分析文件的临时下载链接。
@@ -4418,6 +5149,24 @@ namespace TencentCloud
                 DescribeAlertListOutcomeCallable DescribeAlertListCallable(const Model::DescribeAlertListRequest& request);
 
                 /**
+                 *查询资产中组件列表
+                 * @param req DescribeAssetComponentListRequest
+                 * @return DescribeAssetComponentListOutcome
+                 */
+                DescribeAssetComponentListOutcome DescribeAssetComponentList(const Model::DescribeAssetComponentListRequest &request);
+                void DescribeAssetComponentListAsync(const Model::DescribeAssetComponentListRequest& request, const DescribeAssetComponentListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetComponentListOutcomeCallable DescribeAssetComponentListCallable(const Model::DescribeAssetComponentListRequest& request);
+
+                /**
+                 *查询镜像仓库组件关联的镜像列表
+                 * @param req DescribeAssetComponentRelatedImageListRequest
+                 * @return DescribeAssetComponentRelatedImageListOutcome
+                 */
+                DescribeAssetComponentRelatedImageListOutcome DescribeAssetComponentRelatedImageList(const Model::DescribeAssetComponentRelatedImageListRequest &request);
+                void DescribeAssetComponentRelatedImageListAsync(const Model::DescribeAssetComponentRelatedImageListRequest& request, const DescribeAssetComponentRelatedImageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetComponentRelatedImageListOutcomeCallable DescribeAssetComponentRelatedImageListCallable(const Model::DescribeAssetComponentRelatedImageListRequest& request);
+
+                /**
                  *资产详情信息
                  * @param req DescribeAssetDetailRequest
                  * @return DescribeAssetDetailOutcome
@@ -4551,6 +5300,15 @@ namespace TencentCloud
                 DescribeAssumeRoleOutcome DescribeAssumeRole(const Model::DescribeAssumeRoleRequest &request);
                 void DescribeAssumeRoleAsync(const Model::DescribeAssumeRoleRequest& request, const DescribeAssumeRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAssumeRoleOutcomeCallable DescribeAssumeRoleCallable(const Model::DescribeAssumeRoleRequest& request);
+
+                /**
+                 *查询后台扫描引擎地域列表
+                 * @param req DescribeBackendScanEngineRegionListRequest
+                 * @return DescribeBackendScanEngineRegionListOutcome
+                 */
+                DescribeBackendScanEngineRegionListOutcome DescribeBackendScanEngineRegionList(const Model::DescribeBackendScanEngineRegionListRequest &request);
+                void DescribeBackendScanEngineRegionListAsync(const Model::DescribeBackendScanEngineRegionListRequest& request, const DescribeBackendScanEngineRegionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackendScanEngineRegionListOutcomeCallable DescribeBackendScanEngineRegionListCallable(const Model::DescribeBackendScanEngineRegionListRequest& request);
 
                 /**
                  *获取爆破阻断模式
@@ -4938,6 +5696,15 @@ namespace TencentCloud
                 DescribeCallRecordOutcome DescribeCallRecord(const Model::DescribeCallRecordRequest &request);
                 void DescribeCallRecordAsync(const Model::DescribeCallRecordRequest& request, const DescribeCallRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCallRecordOutcomeCallable DescribeCallRecordCallable(const Model::DescribeCallRecordRequest& request);
+
+                /**
+                 *查询联通性检测主机列表
+                 * @param req DescribeCheckConnectivityHostListRequest
+                 * @return DescribeCheckConnectivityHostListOutcome
+                 */
+                DescribeCheckConnectivityHostListOutcome DescribeCheckConnectivityHostList(const Model::DescribeCheckConnectivityHostListRequest &request);
+                void DescribeCheckConnectivityHostListAsync(const Model::DescribeCheckConnectivityHostListRequest& request, const DescribeCheckConnectivityHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCheckConnectivityHostListOutcomeCallable DescribeCheckConnectivityHostListCallable(const Model::DescribeCheckConnectivityHostListRequest& request);
 
                 /**
                  *检查视角下云资源配置风险列表
@@ -6362,6 +7129,231 @@ namespace TencentCloud
                 DescribeIaCTokenListOutcomeCallable DescribeIaCTokenListCallable(const Model::DescribeIaCTokenListRequest& request);
 
                 /**
+                 *查询镜像资产详情
+                 * @param req DescribeImageAssetDetailRequest
+                 * @return DescribeImageAssetDetailOutcome
+                 */
+                DescribeImageAssetDetailOutcome DescribeImageAssetDetail(const Model::DescribeImageAssetDetailRequest &request);
+                void DescribeImageAssetDetailAsync(const Model::DescribeImageAssetDetailRequest& request, const DescribeImageAssetDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageAssetDetailOutcomeCallable DescribeImageAssetDetailCallable(const Model::DescribeImageAssetDetailRequest& request);
+
+                /**
+                 *查询镜像资产列表
+                 * @param req DescribeImageAssetListRequest
+                 * @return DescribeImageAssetListOutcome
+                 */
+                DescribeImageAssetListOutcome DescribeImageAssetList(const Model::DescribeImageAssetListRequest &request);
+                void DescribeImageAssetListAsync(const Model::DescribeImageAssetListRequest& request, const DescribeImageAssetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageAssetListOutcomeCallable DescribeImageAssetListCallable(const Model::DescribeImageAssetListRequest& request);
+
+                /**
+                 *查询镜像关联资产数
+                 * @param req DescribeImageAssociatedAssetCountRequest
+                 * @return DescribeImageAssociatedAssetCountOutcome
+                 */
+                DescribeImageAssociatedAssetCountOutcome DescribeImageAssociatedAssetCount(const Model::DescribeImageAssociatedAssetCountRequest &request);
+                void DescribeImageAssociatedAssetCountAsync(const Model::DescribeImageAssociatedAssetCountRequest& request, const DescribeImageAssociatedAssetCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageAssociatedAssetCountOutcomeCallable DescribeImageAssociatedAssetCountCallable(const Model::DescribeImageAssociatedAssetCountRequest& request);
+
+                /**
+                 *查询镜像关联容器资产
+                 * @param req DescribeImageAssociatedContainerListRequest
+                 * @return DescribeImageAssociatedContainerListOutcome
+                 */
+                DescribeImageAssociatedContainerListOutcome DescribeImageAssociatedContainerList(const Model::DescribeImageAssociatedContainerListRequest &request);
+                void DescribeImageAssociatedContainerListAsync(const Model::DescribeImageAssociatedContainerListRequest& request, const DescribeImageAssociatedContainerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageAssociatedContainerListOutcomeCallable DescribeImageAssociatedContainerListCallable(const Model::DescribeImageAssociatedContainerListRequest& request);
+
+                /**
+                 *查询镜像关联主机资产列表
+                 * @param req DescribeImageAssociatedHostListRequest
+                 * @return DescribeImageAssociatedHostListOutcome
+                 */
+                DescribeImageAssociatedHostListOutcome DescribeImageAssociatedHostList(const Model::DescribeImageAssociatedHostListRequest &request);
+                void DescribeImageAssociatedHostListAsync(const Model::DescribeImageAssociatedHostListRequest& request, const DescribeImageAssociatedHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageAssociatedHostListOutcomeCallable DescribeImageAssociatedHostListCallable(const Model::DescribeImageAssociatedHostListRequest& request);
+
+                /**
+                 *查询镜像组件列表
+                 * @param req DescribeImageComponentListRequest
+                 * @return DescribeImageComponentListOutcome
+                 */
+                DescribeImageComponentListOutcome DescribeImageComponentList(const Model::DescribeImageComponentListRequest &request);
+                void DescribeImageComponentListAsync(const Model::DescribeImageComponentListRequest& request, const DescribeImageComponentListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageComponentListOutcomeCallable DescribeImageComponentListCallable(const Model::DescribeImageComponentListRequest& request);
+
+                /**
+                 *查询镜像仓库导出任务列表
+                 * @param req DescribeImageExportJobListRequest
+                 * @return DescribeImageExportJobListOutcome
+                 */
+                DescribeImageExportJobListOutcome DescribeImageExportJobList(const Model::DescribeImageExportJobListRequest &request);
+                void DescribeImageExportJobListAsync(const Model::DescribeImageExportJobListRequest& request, const DescribeImageExportJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageExportJobListOutcomeCallable DescribeImageExportJobListCallable(const Model::DescribeImageExportJobListRequest& request);
+
+                /**
+                 *查询镜像层信息列表
+                 * @param req DescribeImageLayerListRequest
+                 * @return DescribeImageLayerListOutcome
+                 */
+                DescribeImageLayerListOutcome DescribeImageLayerList(const Model::DescribeImageLayerListRequest &request);
+                void DescribeImageLayerListAsync(const Model::DescribeImageLayerListRequest& request, const DescribeImageLayerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageLayerListOutcomeCallable DescribeImageLayerListCallable(const Model::DescribeImageLayerListRequest& request);
+
+                /**
+                 *查询镜像层漏洞列表
+                 * @param req DescribeImageLayerVulListRequest
+                 * @return DescribeImageLayerVulListOutcome
+                 */
+                DescribeImageLayerVulListOutcome DescribeImageLayerVulList(const Model::DescribeImageLayerVulListRequest &request);
+                void DescribeImageLayerVulListAsync(const Model::DescribeImageLayerVulListRequest& request, const DescribeImageLayerVulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageLayerVulListOutcomeCallable DescribeImageLayerVulListCallable(const Model::DescribeImageLayerVulListRequest& request);
+
+                /**
+                 *查询镜像仓库资产总览
+                 * @param req DescribeImageRegistryAssetOverviewRequest
+                 * @return DescribeImageRegistryAssetOverviewOutcome
+                 */
+                DescribeImageRegistryAssetOverviewOutcome DescribeImageRegistryAssetOverview(const Model::DescribeImageRegistryAssetOverviewRequest &request);
+                void DescribeImageRegistryAssetOverviewAsync(const Model::DescribeImageRegistryAssetOverviewRequest& request, const DescribeImageRegistryAssetOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageRegistryAssetOverviewOutcomeCallable DescribeImageRegistryAssetOverviewCallable(const Model::DescribeImageRegistryAssetOverviewRequest& request);
+
+                /**
+                 *查询镜像仓库联通性检查任务结果
+                 * @param req DescribeImageRegistryConnectivityTaskResultRequest
+                 * @return DescribeImageRegistryConnectivityTaskResultOutcome
+                 */
+                DescribeImageRegistryConnectivityTaskResultOutcome DescribeImageRegistryConnectivityTaskResult(const Model::DescribeImageRegistryConnectivityTaskResultRequest &request);
+                void DescribeImageRegistryConnectivityTaskResultAsync(const Model::DescribeImageRegistryConnectivityTaskResultRequest& request, const DescribeImageRegistryConnectivityTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageRegistryConnectivityTaskResultOutcomeCallable DescribeImageRegistryConnectivityTaskResultCallable(const Model::DescribeImageRegistryConnectivityTaskResultRequest& request);
+
+                /**
+                 *查询镜像仓库列表
+                 * @param req DescribeImageRegistryListRequest
+                 * @return DescribeImageRegistryListOutcome
+                 */
+                DescribeImageRegistryListOutcome DescribeImageRegistryList(const Model::DescribeImageRegistryListRequest &request);
+                void DescribeImageRegistryListAsync(const Model::DescribeImageRegistryListRequest& request, const DescribeImageRegistryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageRegistryListOutcomeCallable DescribeImageRegistryListCallable(const Model::DescribeImageRegistryListRequest& request);
+
+                /**
+                 *查询镜像仓库命名空间列表
+                 * @param req DescribeImageRegistryNamespaceListRequest
+                 * @return DescribeImageRegistryNamespaceListOutcome
+                 */
+                DescribeImageRegistryNamespaceListOutcome DescribeImageRegistryNamespaceList(const Model::DescribeImageRegistryNamespaceListRequest &request);
+                void DescribeImageRegistryNamespaceListAsync(const Model::DescribeImageRegistryNamespaceListRequest& request, const DescribeImageRegistryNamespaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageRegistryNamespaceListOutcomeCallable DescribeImageRegistryNamespaceListCallable(const Model::DescribeImageRegistryNamespaceListRequest& request);
+
+                /**
+                 *查询镜像仓库扫描子任务信息
+                 * @param req DescribeImageRegistryScanSubTaskListRequest
+                 * @return DescribeImageRegistryScanSubTaskListOutcome
+                 */
+                DescribeImageRegistryScanSubTaskListOutcome DescribeImageRegistryScanSubTaskList(const Model::DescribeImageRegistryScanSubTaskListRequest &request);
+                void DescribeImageRegistryScanSubTaskListAsync(const Model::DescribeImageRegistryScanSubTaskListRequest& request, const DescribeImageRegistryScanSubTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageRegistryScanSubTaskListOutcomeCallable DescribeImageRegistryScanSubTaskListCallable(const Model::DescribeImageRegistryScanSubTaskListRequest& request);
+
+                /**
+                 *查询镜像仓库镜像扫描任务列表
+                 * @param req DescribeImageRegistryScanTaskListRequest
+                 * @return DescribeImageRegistryScanTaskListOutcome
+                 */
+                DescribeImageRegistryScanTaskListOutcome DescribeImageRegistryScanTaskList(const Model::DescribeImageRegistryScanTaskListRequest &request);
+                void DescribeImageRegistryScanTaskListAsync(const Model::DescribeImageRegistryScanTaskListRequest& request, const DescribeImageRegistryScanTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageRegistryScanTaskListOutcomeCallable DescribeImageRegistryScanTaskListCallable(const Model::DescribeImageRegistryScanTaskListRequest& request);
+
+                /**
+                 *查看镜像仓库定时扫描任务配置
+                 * @param req DescribeImageRegistryTimedScanTaskConfigRequest
+                 * @return DescribeImageRegistryTimedScanTaskConfigOutcome
+                 */
+                DescribeImageRegistryTimedScanTaskConfigOutcome DescribeImageRegistryTimedScanTaskConfig(const Model::DescribeImageRegistryTimedScanTaskConfigRequest &request);
+                void DescribeImageRegistryTimedScanTaskConfigAsync(const Model::DescribeImageRegistryTimedScanTaskConfigRequest& request, const DescribeImageRegistryTimedScanTaskConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageRegistryTimedScanTaskConfigOutcomeCallable DescribeImageRegistryTimedScanTaskConfigCallable(const Model::DescribeImageRegistryTimedScanTaskConfigRequest& request);
+
+                /**
+                 *查询镜像仓库定时扫描任务预览
+                 * @param req DescribeImageRegistryTimedScanTaskPreviewRequest
+                 * @return DescribeImageRegistryTimedScanTaskPreviewOutcome
+                 */
+                DescribeImageRegistryTimedScanTaskPreviewOutcome DescribeImageRegistryTimedScanTaskPreview(const Model::DescribeImageRegistryTimedScanTaskPreviewRequest &request);
+                void DescribeImageRegistryTimedScanTaskPreviewAsync(const Model::DescribeImageRegistryTimedScanTaskPreviewRequest& request, const DescribeImageRegistryTimedScanTaskPreviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageRegistryTimedScanTaskPreviewOutcomeCallable DescribeImageRegistryTimedScanTaskPreviewCallable(const Model::DescribeImageRegistryTimedScanTaskPreviewRequest& request);
+
+                /**
+                 *查询镜像敏感信息列表
+                 * @param req DescribeImageSensitiveInfoListRequest
+                 * @return DescribeImageSensitiveInfoListOutcome
+                 */
+                DescribeImageSensitiveInfoListOutcome DescribeImageSensitiveInfoList(const Model::DescribeImageSensitiveInfoListRequest &request);
+                void DescribeImageSensitiveInfoListAsync(const Model::DescribeImageSensitiveInfoListRequest& request, const DescribeImageSensitiveInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageSensitiveInfoListOutcomeCallable DescribeImageSensitiveInfoListCallable(const Model::DescribeImageSensitiveInfoListRequest& request);
+
+                /**
+                 *查询容器镜像敏感信息白名单
+                 * @param req DescribeImageSensitiveWhitelistRequest
+                 * @return DescribeImageSensitiveWhitelistOutcome
+                 */
+                DescribeImageSensitiveWhitelistOutcome DescribeImageSensitiveWhitelist(const Model::DescribeImageSensitiveWhitelistRequest &request);
+                void DescribeImageSensitiveWhitelistAsync(const Model::DescribeImageSensitiveWhitelistRequest& request, const DescribeImageSensitiveWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageSensitiveWhitelistOutcomeCallable DescribeImageSensitiveWhitelistCallable(const Model::DescribeImageSensitiveWhitelistRequest& request);
+
+                /**
+                 *查询镜像木马病毒列表
+                 * @param req DescribeImageVirusListRequest
+                 * @return DescribeImageVirusListOutcome
+                 */
+                DescribeImageVirusListOutcome DescribeImageVirusList(const Model::DescribeImageVirusListRequest &request);
+                void DescribeImageVirusListAsync(const Model::DescribeImageVirusListRequest& request, const DescribeImageVirusListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageVirusListOutcomeCallable DescribeImageVirusListCallable(const Model::DescribeImageVirusListRequest& request);
+
+                /**
+                 *查询镜像木马白名单
+                 * @param req DescribeImageVirusWhitelistRequest
+                 * @return DescribeImageVirusWhitelistOutcome
+                 */
+                DescribeImageVirusWhitelistOutcome DescribeImageVirusWhitelist(const Model::DescribeImageVirusWhitelistRequest &request);
+                void DescribeImageVirusWhitelistAsync(const Model::DescribeImageVirusWhitelistRequest& request, const DescribeImageVirusWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageVirusWhitelistOutcomeCallable DescribeImageVirusWhitelistCallable(const Model::DescribeImageVirusWhitelistRequest& request);
+
+                /**
+                 *查询镜像木马白名单详情
+                 * @param req DescribeImageVirusWhitelistDetailRequest
+                 * @return DescribeImageVirusWhitelistDetailOutcome
+                 */
+                DescribeImageVirusWhitelistDetailOutcome DescribeImageVirusWhitelistDetail(const Model::DescribeImageVirusWhitelistDetailRequest &request);
+                void DescribeImageVirusWhitelistDetailAsync(const Model::DescribeImageVirusWhitelistDetailRequest& request, const DescribeImageVirusWhitelistDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageVirusWhitelistDetailOutcomeCallable DescribeImageVirusWhitelistDetailCallable(const Model::DescribeImageVirusWhitelistDetailRequest& request);
+
+                /**
+                 *查询镜像漏洞列表
+                 * @param req DescribeImageVulListRequest
+                 * @return DescribeImageVulListOutcome
+                 */
+                DescribeImageVulListOutcome DescribeImageVulList(const Model::DescribeImageVulListRequest &request);
+                void DescribeImageVulListAsync(const Model::DescribeImageVulListRequest& request, const DescribeImageVulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageVulListOutcomeCallable DescribeImageVulListCallable(const Model::DescribeImageVulListRequest& request);
+
+                /**
+                 *查询镜像漏洞概览列表
+                 * @param req DescribeImageVulSummaryListRequest
+                 * @return DescribeImageVulSummaryListOutcome
+                 */
+                DescribeImageVulSummaryListOutcome DescribeImageVulSummaryList(const Model::DescribeImageVulSummaryListRequest &request);
+                void DescribeImageVulSummaryListAsync(const Model::DescribeImageVulSummaryListRequest& request, const DescribeImageVulSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageVulSummaryListOutcomeCallable DescribeImageVulSummaryListCallable(const Model::DescribeImageVulSummaryListRequest& request);
+
+                /**
+                 *查询容器镜像漏洞白名单
+                 * @param req DescribeImageVulWhitelistRequest
+                 * @return DescribeImageVulWhitelistOutcome
+                 */
+                DescribeImageVulWhitelistOutcome DescribeImageVulWhitelist(const Model::DescribeImageVulWhitelistRequest &request);
+                void DescribeImageVulWhitelistAsync(const Model::DescribeImageVulWhitelistRequest& request, const DescribeImageVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageVulWhitelistOutcomeCallable DescribeImageVulWhitelistCallable(const Model::DescribeImageVulWhitelistRequest& request);
+
+                /**
                  *对象存储异常检测调用记录信息
                  * @param req DescribeIpInvokeRecordRequest
                  * @return DescribeIpInvokeRecordOutcome
@@ -6623,6 +7615,15 @@ namespace TencentCloud
                 DescribeNotifySettingOutcomeCallable DescribeNotifySettingCallable(const Model::DescribeNotifySettingRequest& request);
 
                 /**
+                 *获取通知设置（云API风险治理）
+                 * @param req DescribeNotifySettingAkRequest
+                 * @return DescribeNotifySettingAkOutcome
+                 */
+                DescribeNotifySettingAkOutcome DescribeNotifySettingAk(const Model::DescribeNotifySettingAkRequest &request);
+                void DescribeNotifySettingAkAsync(const Model::DescribeNotifySettingAkRequest& request, const DescribeNotifySettingAkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNotifySettingAkOutcomeCallable DescribeNotifySettingAkCallable(const Model::DescribeNotifySettingAkRequest& request);
+
+                /**
                  *获取告警中心通知高级配置
                  * @param req DescribeNotifySettingAlertRequest
                  * @return DescribeNotifySettingAlertOutcome
@@ -6756,6 +7757,24 @@ namespace TencentCloud
                 DescribeRaspLicenseListOutcome DescribeRaspLicenseList(const Model::DescribeRaspLicenseListRequest &request);
                 void DescribeRaspLicenseListAsync(const Model::DescribeRaspLicenseListRequest& request, const DescribeRaspLicenseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRaspLicenseListOutcomeCallable DescribeRaspLicenseListCallable(const Model::DescribeRaspLicenseListRequest& request);
+
+                /**
+                 *查询仓库总览
+                 * @param req DescribeRegistryOverviewRequest
+                 * @return DescribeRegistryOverviewOutcome
+                 */
+                DescribeRegistryOverviewOutcome DescribeRegistryOverview(const Model::DescribeRegistryOverviewRequest &request);
+                void DescribeRegistryOverviewAsync(const Model::DescribeRegistryOverviewRequest& request, const DescribeRegistryOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRegistryOverviewOutcomeCallable DescribeRegistryOverviewCallable(const Model::DescribeRegistryOverviewRequest& request);
+
+                /**
+                 *查询镜像仓库地域列表
+                 * @param req DescribeRegistryRegionListRequest
+                 * @return DescribeRegistryRegionListOutcome
+                 */
+                DescribeRegistryRegionListOutcome DescribeRegistryRegionList(const Model::DescribeRegistryRegionListRequest &request);
+                void DescribeRegistryRegionListAsync(const Model::DescribeRegistryRegionListRequest& request, const DescribeRegistryRegionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRegistryRegionListOutcomeCallable DescribeRegistryRegionListCallable(const Model::DescribeRegistryRegionListRequest& request);
 
                 /**
                  *仓库镜像列表
@@ -6974,6 +7993,51 @@ namespace TencentCloud
                 DescribeSCFNamespaceListOutcomeCallable DescribeSCFNamespaceListCallable(const Model::DescribeSCFNamespaceListRequest& request);
 
                 /**
+                 *分页查询 ACL 访问控制告警日志列表。支持按 Filter.Name=ID 精确过滤单条告警用于详情页场景
+                 * @param req DescribeSandboxACLAlertListRequest
+                 * @return DescribeSandboxACLAlertListOutcome
+                 */
+                DescribeSandboxACLAlertListOutcome DescribeSandboxACLAlertList(const Model::DescribeSandboxACLAlertListRequest &request);
+                void DescribeSandboxACLAlertListAsync(const Model::DescribeSandboxACLAlertListRequest& request, const DescribeSandboxACLAlertListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSandboxACLAlertListOutcomeCallable DescribeSandboxACLAlertListCallable(const Model::DescribeSandboxACLAlertListRequest& request);
+
+                /**
+                 *查询当前租户的 ACL 用户访问控制规则列表。传入 Filter.Name=RuleID 可精确查询单条规则（用于详情页面场景）
+                 * @param req DescribeSandboxACLRuleListRequest
+                 * @return DescribeSandboxACLRuleListOutcome
+                 */
+                DescribeSandboxACLRuleListOutcome DescribeSandboxACLRuleList(const Model::DescribeSandboxACLRuleListRequest &request);
+                void DescribeSandboxACLRuleListAsync(const Model::DescribeSandboxACLRuleListRequest& request, const DescribeSandboxACLRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSandboxACLRuleListOutcomeCallable DescribeSandboxACLRuleListCallable(const Model::DescribeSandboxACLRuleListRequest& request);
+
+                /**
+                 *查询流量沙箱访问控制（ACL）系统规则列表，系统规则由 CSIP 平台内置，可被用户规则引用
+                 * @param req DescribeSandboxACLSystemRuleListRequest
+                 * @return DescribeSandboxACLSystemRuleListOutcome
+                 */
+                DescribeSandboxACLSystemRuleListOutcome DescribeSandboxACLSystemRuleList(const Model::DescribeSandboxACLSystemRuleListRequest &request);
+                void DescribeSandboxACLSystemRuleListAsync(const Model::DescribeSandboxACLSystemRuleListRequest& request, const DescribeSandboxACLSystemRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSandboxACLSystemRuleListOutcomeCallable DescribeSandboxACLSystemRuleListCallable(const Model::DescribeSandboxACLSystemRuleListRequest& request);
+
+                /**
+                 *查询流量沙箱数据泄露防护（DLP）系统规则列表，系统规则由 CSIP 平台内置，可被用户规则引用
+                 * @param req DescribeSandboxDLPSystemRuleListRequest
+                 * @return DescribeSandboxDLPSystemRuleListOutcome
+                 */
+                DescribeSandboxDLPSystemRuleListOutcome DescribeSandboxDLPSystemRuleList(const Model::DescribeSandboxDLPSystemRuleListRequest &request);
+                void DescribeSandboxDLPSystemRuleListAsync(const Model::DescribeSandboxDLPSystemRuleListRequest& request, const DescribeSandboxDLPSystemRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSandboxDLPSystemRuleListOutcomeCallable DescribeSandboxDLPSystemRuleListCallable(const Model::DescribeSandboxDLPSystemRuleListRequest& request);
+
+                /**
+                 *获取命令沙箱文件规则列表
+                 * @param req DescribeSandboxFileRuleListRequest
+                 * @return DescribeSandboxFileRuleListOutcome
+                 */
+                DescribeSandboxFileRuleListOutcome DescribeSandboxFileRuleList(const Model::DescribeSandboxFileRuleListRequest &request);
+                void DescribeSandboxFileRuleListAsync(const Model::DescribeSandboxFileRuleListRequest& request, const DescribeSandboxFileRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSandboxFileRuleListOutcomeCallable DescribeSandboxFileRuleListCallable(const Model::DescribeSandboxFileRuleListRequest& request);
+
+                /**
                  *获取扫描报告列表
                  * @param req DescribeScanReportListRequest
                  * @return DescribeScanReportListOutcome
@@ -7064,6 +8128,24 @@ namespace TencentCloud
                 DescribeSecurityScoreRuleOutcomeCallable DescribeSecurityScoreRuleCallable(const Model::DescribeSecurityScoreRuleRequest& request);
 
                 /**
+                 *查询 Skill 安全检测告警详情，包含本地告警信息和引擎实时检测数据
+                 * @param req DescribeSkillScanAlertDetailRequest
+                 * @return DescribeSkillScanAlertDetailOutcome
+                 */
+                DescribeSkillScanAlertDetailOutcome DescribeSkillScanAlertDetail(const Model::DescribeSkillScanAlertDetailRequest &request);
+                void DescribeSkillScanAlertDetailAsync(const Model::DescribeSkillScanAlertDetailRequest& request, const DescribeSkillScanAlertDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSkillScanAlertDetailOutcomeCallable DescribeSkillScanAlertDetailCallable(const Model::DescribeSkillScanAlertDetailRequest& request);
+
+                /**
+                 *查询 Skill 安全检测告警列表，支持分页、过滤和排序
+                 * @param req DescribeSkillScanAlertListRequest
+                 * @return DescribeSkillScanAlertListOutcome
+                 */
+                DescribeSkillScanAlertListOutcome DescribeSkillScanAlertList(const Model::DescribeSkillScanAlertListRequest &request);
+                void DescribeSkillScanAlertListAsync(const Model::DescribeSkillScanAlertListRequest& request, const DescribeSkillScanAlertListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSkillScanAlertListOutcomeCallable DescribeSkillScanAlertListCallable(const Model::DescribeSkillScanAlertListRequest& request);
+
+                /**
                  *查询 Skill 安全检测计费信息，包括订单状态、总配额、已消耗配额、到期时间、支付模式等。无订单时返回零值（仅含 TimeNow 和 BetaEndTime）。试用订单通过 ModifyTrialStatus(Module=9) 领取，正式订单通过计费系统创建。
                  * @param req DescribeSkillScanPayInfoRequest
                  * @return DescribeSkillScanPayInfoOutcome
@@ -7107,6 +8189,15 @@ namespace TencentCloud
                 DescribeSubnetAssetsOutcome DescribeSubnetAssets(const Model::DescribeSubnetAssetsRequest &request);
                 void DescribeSubnetAssetsAsync(const Model::DescribeSubnetAssetsRequest& request, const DescribeSubnetAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSubnetAssetsOutcomeCallable DescribeSubnetAssetsCallable(const Model::DescribeSubnetAssetsRequest& request);
+
+                /**
+                 *获取TCR实例列表
+                 * @param req DescribeTCRInstanceListRequest
+                 * @return DescribeTCRInstanceListOutcome
+                 */
+                DescribeTCRInstanceListOutcome DescribeTCRInstanceList(const Model::DescribeTCRInstanceListRequest &request);
+                void DescribeTCRInstanceListAsync(const Model::DescribeTCRInstanceListRequest& request, const DescribeTCRInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTCRInstanceListOutcomeCallable DescribeTCRInstanceListCallable(const Model::DescribeTCRInstanceListRequest& request);
 
                 /**
                  *打标策略生效资产列表
@@ -8111,6 +9202,51 @@ capi 层处理流程：
                 ModifyIaCTokenPeriodOutcomeCallable ModifyIaCTokenPeriodCallable(const Model::ModifyIaCTokenPeriodRequest& request);
 
                 /**
+                 *修改镜像仓库信息
+                 * @param req ModifyImageRegistryRequest
+                 * @return ModifyImageRegistryOutcome
+                 */
+                ModifyImageRegistryOutcome ModifyImageRegistry(const Model::ModifyImageRegistryRequest &request);
+                void ModifyImageRegistryAsync(const Model::ModifyImageRegistryRequest& request, const ModifyImageRegistryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyImageRegistryOutcomeCallable ModifyImageRegistryCallable(const Model::ModifyImageRegistryRequest& request);
+
+                /**
+                 *修改镜像仓库定时扫描任务配置
+                 * @param req ModifyImageRegistryTimedScanTaskConfigRequest
+                 * @return ModifyImageRegistryTimedScanTaskConfigOutcome
+                 */
+                ModifyImageRegistryTimedScanTaskConfigOutcome ModifyImageRegistryTimedScanTaskConfig(const Model::ModifyImageRegistryTimedScanTaskConfigRequest &request);
+                void ModifyImageRegistryTimedScanTaskConfigAsync(const Model::ModifyImageRegistryTimedScanTaskConfigRequest& request, const ModifyImageRegistryTimedScanTaskConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyImageRegistryTimedScanTaskConfigOutcomeCallable ModifyImageRegistryTimedScanTaskConfigCallable(const Model::ModifyImageRegistryTimedScanTaskConfigRequest& request);
+
+                /**
+                 *修改容器镜像敏感信息白名单
+                 * @param req ModifyImageSensitiveWhitelistRequest
+                 * @return ModifyImageSensitiveWhitelistOutcome
+                 */
+                ModifyImageSensitiveWhitelistOutcome ModifyImageSensitiveWhitelist(const Model::ModifyImageSensitiveWhitelistRequest &request);
+                void ModifyImageSensitiveWhitelistAsync(const Model::ModifyImageSensitiveWhitelistRequest& request, const ModifyImageSensitiveWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyImageSensitiveWhitelistOutcomeCallable ModifyImageSensitiveWhitelistCallable(const Model::ModifyImageSensitiveWhitelistRequest& request);
+
+                /**
+                 *查询资产数据库信息
+                 * @param req ModifyImageVirusWhitelistRequest
+                 * @return ModifyImageVirusWhitelistOutcome
+                 */
+                ModifyImageVirusWhitelistOutcome ModifyImageVirusWhitelist(const Model::ModifyImageVirusWhitelistRequest &request);
+                void ModifyImageVirusWhitelistAsync(const Model::ModifyImageVirusWhitelistRequest& request, const ModifyImageVirusWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyImageVirusWhitelistOutcomeCallable ModifyImageVirusWhitelistCallable(const Model::ModifyImageVirusWhitelistRequest& request);
+
+                /**
+                 *修改容器镜像漏洞白名单
+                 * @param req ModifyImageVulWhitelistRequest
+                 * @return ModifyImageVulWhitelistOutcome
+                 */
+                ModifyImageVulWhitelistOutcome ModifyImageVulWhitelist(const Model::ModifyImageVulWhitelistRequest &request);
+                void ModifyImageVulWhitelistAsync(const Model::ModifyImageVulWhitelistRequest& request, const ModifyImageVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyImageVulWhitelistOutcomeCallable ModifyImageVulWhitelistCallable(const Model::ModifyImageVulWhitelistRequest& request);
+
+                /**
                  *更新合并后登录审计白名单信息（服务器列表数目应小于1000）
                  * @param req ModifyLoginWhiteRecordRequest
                  * @return ModifyLoginWhiteRecordOutcome
@@ -8201,6 +9337,15 @@ capi 层处理流程：
                 ModifyNotifyAssetConfigOutcomeCallable ModifyNotifyAssetConfigCallable(const Model::ModifyNotifyAssetConfigRequest& request);
 
                 /**
+                 *修改通知成员账号
+                 * @param req ModifyNotifyMemberRequest
+                 * @return ModifyNotifyMemberOutcome
+                 */
+                ModifyNotifyMemberOutcome ModifyNotifyMember(const Model::ModifyNotifyMemberRequest &request);
+                void ModifyNotifyMemberAsync(const Model::ModifyNotifyMemberRequest& request, const ModifyNotifyMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNotifyMemberOutcomeCallable ModifyNotifyMemberCallable(const Model::ModifyNotifyMemberRequest& request);
+
+                /**
                  *修改通知设置
                  * @param req ModifyNotifySettingRequest
                  * @return ModifyNotifySettingOutcome
@@ -8208,6 +9353,15 @@ capi 层处理流程：
                 ModifyNotifySettingOutcome ModifyNotifySetting(const Model::ModifyNotifySettingRequest &request);
                 void ModifyNotifySettingAsync(const Model::ModifyNotifySettingRequest& request, const ModifyNotifySettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyNotifySettingOutcomeCallable ModifyNotifySettingCallable(const Model::ModifyNotifySettingRequest& request);
+
+                /**
+                 *修改通知设置（云API风险治理）
+                 * @param req ModifyNotifySettingAkRequest
+                 * @return ModifyNotifySettingAkOutcome
+                 */
+                ModifyNotifySettingAkOutcome ModifyNotifySettingAk(const Model::ModifyNotifySettingAkRequest &request);
+                void ModifyNotifySettingAkAsync(const Model::ModifyNotifySettingAkRequest& request, const ModifyNotifySettingAkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNotifySettingAkOutcomeCallable ModifyNotifySettingAkCallable(const Model::ModifyNotifySettingAkRequest& request);
 
                 /**
                  *修改告警中心通知高级配置
@@ -8309,6 +9463,15 @@ capi 层处理流程：
                 ModifyRiskScanCronConfigOutcomeCallable ModifyRiskScanCronConfigCallable(const Model::ModifyRiskScanCronConfigRequest& request);
 
                 /**
+                 *批量切换 LLM 审计用户规则的启禁用状态。任一规则不存在、属于其他租户或已删除时整体返回错误
+                 * @param req ModifySandboxLLMAuditRuleStatusRequest
+                 * @return ModifySandboxLLMAuditRuleStatusOutcome
+                 */
+                ModifySandboxLLMAuditRuleStatusOutcome ModifySandboxLLMAuditRuleStatus(const Model::ModifySandboxLLMAuditRuleStatusRequest &request);
+                void ModifySandboxLLMAuditRuleStatusAsync(const Model::ModifySandboxLLMAuditRuleStatusRequest& request, const ModifySandboxLLMAuditRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySandboxLLMAuditRuleStatusOutcomeCallable ModifySandboxLLMAuditRuleStatusCallable(const Model::ModifySandboxLLMAuditRuleStatusRequest& request);
+
+                /**
                  *修改安全评分规则，必须传入完整规则集
                  * @param req ModifySecurityScoreRuleRequest
                  * @return ModifySecurityScoreRuleOutcome
@@ -8325,6 +9488,15 @@ capi 层处理流程：
                 ModifyShareUserCSPMOutcome ModifyShareUserCSPM(const Model::ModifyShareUserCSPMRequest &request);
                 void ModifyShareUserCSPMAsync(const Model::ModifyShareUserCSPMRequest& request, const ModifyShareUserCSPMAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyShareUserCSPMOutcomeCallable ModifyShareUserCSPMCallable(const Model::ModifyShareUserCSPMRequest& request);
+
+                /**
+                 *批量修改 Skill 安全检测告警的处理状态
+                 * @param req ModifySkillScanAlertStatusRequest
+                 * @return ModifySkillScanAlertStatusOutcome
+                 */
+                ModifySkillScanAlertStatusOutcome ModifySkillScanAlertStatus(const Model::ModifySkillScanAlertStatusRequest &request);
+                void ModifySkillScanAlertStatusAsync(const Model::ModifySkillScanAlertStatusRequest& request, const ModifySkillScanAlertStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySkillScanAlertStatusOutcomeCallable ModifySkillScanAlertStatusCallable(const Model::ModifySkillScanAlertStatusRequest& request);
 
                 /**
                  *更新自定义策略的开关
@@ -8543,6 +9715,15 @@ capi 层处理流程：
                 StopEDRScanTaskOutcomeCallable StopEDRScanTaskCallable(const Model::StopEDRScanTaskRequest& request);
 
                 /**
+                 *停止镜像仓库镜像扫描任务
+                 * @param req StopImageRegistryScanTaskRequest
+                 * @return StopImageRegistryScanTaskOutcome
+                 */
+                StopImageRegistryScanTaskOutcome StopImageRegistryScanTask(const Model::StopImageRegistryScanTaskRequest &request);
+                void StopImageRegistryScanTaskAsync(const Model::StopImageRegistryScanTaskRequest& request, const StopImageRegistryScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopImageRegistryScanTaskOutcomeCallable StopImageRegistryScanTaskCallable(const Model::StopImageRegistryScanTaskRequest& request);
+
+                /**
                  *关闭防卸载功能
                  * @param req StopPreventUninstallRequest
                  * @return StopPreventUninstallOutcome
@@ -8595,6 +9776,15 @@ capi 层处理流程：
                 SyncDspmUsersOutcome SyncDspmUsers(const Model::SyncDspmUsersRequest &request);
                 void SyncDspmUsersAsync(const Model::SyncDspmUsersRequest& request, const SyncDspmUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SyncDspmUsersOutcomeCallable SyncDspmUsersCallable(const Model::SyncDspmUsersRequest& request);
+
+                /**
+                 *镜像仓库同步
+                 * @param req SyncImageRegistryRequest
+                 * @return SyncImageRegistryOutcome
+                 */
+                SyncImageRegistryOutcome SyncImageRegistry(const Model::SyncImageRegistryRequest &request);
+                void SyncImageRegistryAsync(const Model::SyncImageRegistryRequest& request, const SyncImageRegistryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SyncImageRegistryOutcomeCallable SyncImageRegistryCallable(const Model::SyncImageRegistryRequest& request);
 
                 /**
                  *向指定的接收机器人发送一条测试消息，验证可达性与配置正确性。对应表格行内的「测试」按钮。

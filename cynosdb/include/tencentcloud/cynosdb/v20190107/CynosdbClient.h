@@ -191,6 +191,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterReadOnlyResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterServerlessScalePlansRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterServerlessScalePlansResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeClusterStorageAutoExpandRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeClusterStorageAutoExpandResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterTransparentEncryptInfoRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterTransparentEncryptInfoResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClustersRequest.h>
@@ -769,6 +771,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterServerlessScalePlansResponse> DescribeClusterServerlessScalePlansOutcome;
                 typedef std::future<DescribeClusterServerlessScalePlansOutcome> DescribeClusterServerlessScalePlansOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeClusterServerlessScalePlansRequest&, DescribeClusterServerlessScalePlansOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterServerlessScalePlansAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterStorageAutoExpandResponse> DescribeClusterStorageAutoExpandOutcome;
+                typedef std::future<DescribeClusterStorageAutoExpandOutcome> DescribeClusterStorageAutoExpandOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeClusterStorageAutoExpandRequest&, DescribeClusterStorageAutoExpandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterStorageAutoExpandAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterTransparentEncryptInfoResponse> DescribeClusterTransparentEncryptInfoOutcome;
                 typedef std::future<DescribeClusterTransparentEncryptInfoOutcome> DescribeClusterTransparentEncryptInfoOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeClusterTransparentEncryptInfoRequest&, DescribeClusterTransparentEncryptInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterTransparentEncryptInfoAsyncHandler;
@@ -1995,6 +2000,15 @@ namespace TencentCloud
                 DescribeClusterServerlessScalePlansOutcome DescribeClusterServerlessScalePlans(const Model::DescribeClusterServerlessScalePlansRequest &request);
                 void DescribeClusterServerlessScalePlansAsync(const Model::DescribeClusterServerlessScalePlansRequest& request, const DescribeClusterServerlessScalePlansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClusterServerlessScalePlansOutcomeCallable DescribeClusterServerlessScalePlansCallable(const Model::DescribeClusterServerlessScalePlansRequest& request);
+
+                /**
+                 *本接口（DescribeClusterStorageAutoExpand）用于查询自动库容配置。
+                 * @param req DescribeClusterStorageAutoExpandRequest
+                 * @return DescribeClusterStorageAutoExpandOutcome
+                 */
+                DescribeClusterStorageAutoExpandOutcome DescribeClusterStorageAutoExpand(const Model::DescribeClusterStorageAutoExpandRequest &request);
+                void DescribeClusterStorageAutoExpandAsync(const Model::DescribeClusterStorageAutoExpandRequest& request, const DescribeClusterStorageAutoExpandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterStorageAutoExpandOutcomeCallable DescribeClusterStorageAutoExpandCallable(const Model::DescribeClusterStorageAutoExpandRequest& request);
 
                 /**
                  *查询集群透明加密信息

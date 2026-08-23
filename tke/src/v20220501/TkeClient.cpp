@@ -790,6 +790,56 @@ TkeClient::DescribeZoneInstanceConfigInfosOutcomeCallable TkeClient::DescribeZon
     return prom->get_future();
 }
 
+TkeClient::DetachApplicationRoleOutcome TkeClient::DetachApplicationRole(const DetachApplicationRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetachApplicationRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetachApplicationRoleResponse rsp = DetachApplicationRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetachApplicationRoleOutcome(rsp);
+        else
+            return DetachApplicationRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return DetachApplicationRoleOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DetachApplicationRoleAsync(const DetachApplicationRoleRequest& request, const DetachApplicationRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DetachApplicationRoleRequest&;
+    using Resp = DetachApplicationRoleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DetachApplicationRole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DetachApplicationRoleOutcomeCallable TkeClient::DetachApplicationRoleCallable(const DetachApplicationRoleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DetachApplicationRoleOutcome>>();
+    DetachApplicationRoleAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DetachApplicationRoleRequest&,
+        DetachApplicationRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::ModifyClusterMachineOutcome TkeClient::ModifyClusterMachine(const ModifyClusterMachineRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyClusterMachine");

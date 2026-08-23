@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取
-                     * @return AppId 
+                     * 获取<p>appid</p>
+                     * @return AppId <p>appid</p>
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置
-                     * @param _appId 
+                     * 设置<p>appid</p>
+                     * @param _appId <p>appid</p>
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return Uin 
+                     * 获取<p>账号Uin</p>
+                     * @return Uin <p>账号Uin</p>
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置
-                     * @param _uin 
+                     * 设置<p>账号Uin</p>
+                     * @param _uin <p>账号Uin</p>
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return SubUin 
+                     * 获取<p>子账号uin</p>
+                     * @return SubUin <p>子账号uin</p>
                      * 
                      */
                     std::string GetSubUin() const;
 
                     /**
-                     * 设置
-                     * @param _subUin 
+                     * 设置<p>子账号uin</p>
+                     * @param _subUin <p>子账号uin</p>
                      * 
                      */
                     void SetSubUin(const std::string& _subUin);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool SubUinHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return UserId 
+                     * 获取<p>用户ID</p>
+                     * @return UserId <p>用户ID</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置
-                     * @param _userId 
+                     * 设置<p>用户ID</p>
+                     * @param _userId <p>用户ID</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return BotId 
+                     * 获取<p>机器人ID</p>
+                     * @return BotId <p>机器人ID</p>
                      * 
                      */
                     std::string GetBotId() const;
 
                     /**
-                     * 设置
-                     * @param _botId 
+                     * 设置<p>机器人ID</p>
+                     * @param _botId <p>机器人ID</p>
                      * 
                      */
                     void SetBotId(const std::string& _botId);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool BotIdHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return ChatId 
+                     * 获取<p>聊天ID</p>
+                     * @return ChatId <p>聊天ID</p>
                      * 
                      */
                     std::string GetChatId() const;
 
                     /**
-                     * 设置
-                     * @param _chatId 
+                     * 设置<p>聊天ID</p>
+                     * @param _chatId <p>聊天ID</p>
                      * 
                      */
                     void SetChatId(const std::string& _chatId);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool ChatIdHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return Channel 
+                     * 获取<p>渠道标识，如 wecom / qq / wx / feishu / dingtalk / cloud</p>
+                     * @return Channel <p>渠道标识，如 wecom / qq / wx / feishu / dingtalk / cloud</p>
                      * 
                      */
                     std::string GetChannel() const;
 
                     /**
-                     * 设置
-                     * @param _channel 
+                     * 设置<p>渠道标识，如 wecom / qq / wx / feishu / dingtalk / cloud</p>
+                     * @param _channel <p>渠道标识，如 wecom / qq / wx / feishu / dingtalk / cloud</p>
                      * 
                      */
                     void SetChannel(const std::string& _channel);
@@ -196,43 +196,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 
+                     * <p>appid</p>
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 
+                     * <p>账号Uin</p>
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 
+                     * <p>子账号uin</p>
                      */
                     std::string m_subUin;
                     bool m_subUinHasBeenSet;
 
                     /**
-                     * 
+                     * <p>用户ID</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 
+                     * <p>机器人ID</p>
                      */
                     std::string m_botId;
                     bool m_botIdHasBeenSet;
 
                     /**
-                     * 
+                     * <p>聊天ID</p>
                      */
                     std::string m_chatId;
                     bool m_chatIdHasBeenSet;
 
                     /**
-                     * 
+                     * <p>渠道标识，如 wecom / qq / wx / feishu / dingtalk / cloud</p>
                      */
                     std::string m_channel;
                     bool m_channelHasBeenSet;

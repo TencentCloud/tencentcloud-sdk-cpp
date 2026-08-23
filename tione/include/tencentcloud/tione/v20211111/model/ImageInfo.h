@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tione/v20211111/model/ImageSecret.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像，CUSTOM为第三方自定义镜像
-                     * @return ImageType 镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像，CUSTOM为第三方自定义镜像
+                     * 获取<p>镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像，CUSTOM为第三方自定义镜像</p>
+                     * @return ImageType <p>镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像，CUSTOM为第三方自定义镜像</p>
                      * 
                      */
                     std::string GetImageType() const;
 
                     /**
-                     * 设置镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像，CUSTOM为第三方自定义镜像
-                     * @param _imageType 镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像，CUSTOM为第三方自定义镜像
+                     * 设置<p>镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像，CUSTOM为第三方自定义镜像</p>
+                     * @param _imageType <p>镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像，CUSTOM为第三方自定义镜像</p>
                      * 
                      */
                     void SetImageType(const std::string& _imageType);
@@ -68,15 +69,15 @@ namespace TencentCloud
                     bool ImageTypeHasBeenSet() const;
 
                     /**
-                     * 获取镜像地址
-                     * @return ImageUrl 镜像地址
+                     * 获取<p>镜像地址</p>
+                     * @return ImageUrl <p>镜像地址</p>
                      * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
-                     * 设置镜像地址
-                     * @param _imageUrl 镜像地址
+                     * 设置<p>镜像地址</p>
+                     * @param _imageUrl <p>镜像地址</p>
                      * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
@@ -89,18 +90,18 @@ namespace TencentCloud
                     bool ImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取TCR镜像对应的地域
+                     * 获取<p>TCR镜像对应的地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RegistryRegion TCR镜像对应的地域
+                     * @return RegistryRegion <p>TCR镜像对应的地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegistryRegion() const;
 
                     /**
-                     * 设置TCR镜像对应的地域
+                     * 设置<p>TCR镜像对应的地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _registryRegion TCR镜像对应的地域
+                     * @param _registryRegion <p>TCR镜像对应的地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -114,18 +115,18 @@ namespace TencentCloud
                     bool RegistryRegionHasBeenSet() const;
 
                     /**
-                     * 获取TCR镜像对应的实例id
+                     * 获取<p>TCR镜像对应的实例id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RegistryId TCR镜像对应的实例id
+                     * @return RegistryId <p>TCR镜像对应的实例id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
-                     * 设置TCR镜像对应的实例id
+                     * 设置<p>TCR镜像对应的实例id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _registryId TCR镜像对应的实例id
+                     * @param _registryId <p>TCR镜像对应的实例id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -139,18 +140,18 @@ namespace TencentCloud
                     bool RegistryIdHasBeenSet() const;
 
                     /**
-                     * 获取是否允许导出全部内容
+                     * 获取<p>是否允许导出全部内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AllowSaveAllContent 是否允许导出全部内容
+                     * @return AllowSaveAllContent <p>是否允许导出全部内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAllowSaveAllContent() const;
 
                     /**
-                     * 设置是否允许导出全部内容
+                     * 设置<p>是否允许导出全部内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _allowSaveAllContent 是否允许导出全部内容
+                     * @param _allowSaveAllContent <p>是否允许导出全部内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -164,18 +165,18 @@ namespace TencentCloud
                     bool AllowSaveAllContentHasBeenSet() const;
 
                     /**
-                     * 获取镜像名称
+                     * 获取<p>镜像名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ImageName 镜像名称
+                     * @return ImageName <p>镜像名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageName() const;
 
                     /**
-                     * 设置镜像名称
+                     * 设置<p>镜像名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _imageName 镜像名称
+                     * @param _imageName <p>镜像名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -189,18 +190,18 @@ namespace TencentCloud
                     bool ImageNameHasBeenSet() const;
 
                     /**
-                     * 获取是否支持数据构建
+                     * 获取<p>是否支持数据构建</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SupportDataPipeline 是否支持数据构建
+                     * @return SupportDataPipeline <p>是否支持数据构建</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSupportDataPipeline() const;
 
                     /**
-                     * 设置是否支持数据构建
+                     * 设置<p>是否支持数据构建</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _supportDataPipeline 是否支持数据构建
+                     * @param _supportDataPipeline <p>是否支持数据构建</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -213,54 +214,86 @@ namespace TencentCloud
                      */
                     bool SupportDataPipelineHasBeenSet() const;
 
+                    /**
+                     * 获取<p>镜像仓库用户名密码信息(仅当ImageType为CUSTOM第三方镜像的时候需要)</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageSecret <p>镜像仓库用户名密码信息(仅当ImageType为CUSTOM第三方镜像的时候需要)</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ImageSecret GetImageSecret() const;
+
+                    /**
+                     * 设置<p>镜像仓库用户名密码信息(仅当ImageType为CUSTOM第三方镜像的时候需要)</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _imageSecret <p>镜像仓库用户名密码信息(仅当ImageType为CUSTOM第三方镜像的时候需要)</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetImageSecret(const ImageSecret& _imageSecret);
+
+                    /**
+                     * 判断参数 ImageSecret 是否已赋值
+                     * @return ImageSecret 是否已赋值
+                     * 
+                     */
+                    bool ImageSecretHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像，CUSTOM为第三方自定义镜像
+                     * <p>镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像，CUSTOM为第三方自定义镜像</p>
                      */
                     std::string m_imageType;
                     bool m_imageTypeHasBeenSet;
 
                     /**
-                     * 镜像地址
+                     * <p>镜像地址</p>
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
 
                     /**
-                     * TCR镜像对应的地域
+                     * <p>TCR镜像对应的地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_registryRegion;
                     bool m_registryRegionHasBeenSet;
 
                     /**
-                     * TCR镜像对应的实例id
+                     * <p>TCR镜像对应的实例id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_registryId;
                     bool m_registryIdHasBeenSet;
 
                     /**
-                     * 是否允许导出全部内容
+                     * <p>是否允许导出全部内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_allowSaveAllContent;
                     bool m_allowSaveAllContentHasBeenSet;
 
                     /**
-                     * 镜像名称
+                     * <p>镜像名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageName;
                     bool m_imageNameHasBeenSet;
 
                     /**
-                     * 是否支持数据构建
+                     * <p>是否支持数据构建</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_supportDataPipeline;
                     bool m_supportDataPipelineHasBeenSet;
+
+                    /**
+                     * <p>镜像仓库用户名密码信息(仅当ImageType为CUSTOM第三方镜像的时候需要)</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ImageSecret m_imageSecret;
+                    bool m_imageSecretHasBeenSet;
 
                 };
             }

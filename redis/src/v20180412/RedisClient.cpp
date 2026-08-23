@@ -4840,6 +4840,56 @@ RedisClient::ModifyInstancePasswordOutcomeCallable RedisClient::ModifyInstancePa
     return prom->get_future();
 }
 
+RedisClient::ModifyInstancePasswordPolicyOutcome RedisClient::ModifyInstancePasswordPolicy(const ModifyInstancePasswordPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstancePasswordPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstancePasswordPolicyResponse rsp = ModifyInstancePasswordPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstancePasswordPolicyOutcome(rsp);
+        else
+            return ModifyInstancePasswordPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstancePasswordPolicyOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::ModifyInstancePasswordPolicyAsync(const ModifyInstancePasswordPolicyRequest& request, const ModifyInstancePasswordPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyInstancePasswordPolicyRequest&;
+    using Resp = ModifyInstancePasswordPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstancePasswordPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RedisClient::ModifyInstancePasswordPolicyOutcomeCallable RedisClient::ModifyInstancePasswordPolicyCallable(const ModifyInstancePasswordPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyInstancePasswordPolicyOutcome>>();
+    ModifyInstancePasswordPolicyAsync(
+    request,
+    [prom](
+        const RedisClient*,
+        const ModifyInstancePasswordPolicyRequest&,
+        ModifyInstancePasswordPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 RedisClient::ModifyInstanceReadOnlyOutcome RedisClient::ModifyInstanceReadOnly(const ModifyInstanceReadOnlyRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyInstanceReadOnly");

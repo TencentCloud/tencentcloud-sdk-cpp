@@ -215,6 +215,8 @@
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceParamsResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstancePasswordRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstancePasswordResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifyInstancePasswordPolicyRequest.h>
+#include <tencentcloud/redis/v20180412/model/ModifyInstancePasswordPolicyResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceReadOnlyRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceReadOnlyResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyLogRequest.h>
@@ -563,6 +565,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInstancePasswordResponse> ModifyInstancePasswordOutcome;
                 typedef std::future<ModifyInstancePasswordOutcome> ModifyInstancePasswordOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyInstancePasswordRequest&, ModifyInstancePasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancePasswordAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstancePasswordPolicyResponse> ModifyInstancePasswordPolicyOutcome;
+                typedef std::future<ModifyInstancePasswordPolicyOutcome> ModifyInstancePasswordPolicyOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ModifyInstancePasswordPolicyRequest&, ModifyInstancePasswordPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancePasswordPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstanceReadOnlyResponse> ModifyInstanceReadOnlyOutcome;
                 typedef std::future<ModifyInstanceReadOnlyOutcome> ModifyInstanceReadOnlyOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyInstanceReadOnlyRequest&, ModifyInstanceReadOnlyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceReadOnlyAsyncHandler;
@@ -1500,6 +1505,15 @@ namespace TencentCloud
                 ModifyInstancePasswordOutcome ModifyInstancePassword(const Model::ModifyInstancePasswordRequest &request);
                 void ModifyInstancePasswordAsync(const Model::ModifyInstancePasswordRequest& request, const ModifyInstancePasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyInstancePasswordOutcomeCallable ModifyInstancePasswordCallable(const Model::ModifyInstancePasswordRequest& request);
+
+                /**
+                 *本接口（ModifyInstancePasswordPolicy）用于修改实例密码复杂度。
+                 * @param req ModifyInstancePasswordPolicyRequest
+                 * @return ModifyInstancePasswordPolicyOutcome
+                 */
+                ModifyInstancePasswordPolicyOutcome ModifyInstancePasswordPolicy(const Model::ModifyInstancePasswordPolicyRequest &request);
+                void ModifyInstancePasswordPolicyAsync(const Model::ModifyInstancePasswordPolicyRequest& request, const ModifyInstancePasswordPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstancePasswordPolicyOutcomeCallable ModifyInstancePasswordPolicyCallable(const Model::ModifyInstancePasswordPolicyRequest& request);
 
                 /**
                  *本接口（ModifyInstanceReadOnly）用于设置实例输入模式。

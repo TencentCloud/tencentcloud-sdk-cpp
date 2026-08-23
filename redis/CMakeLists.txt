@@ -111,6 +111,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/ModifyInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/RedisCommonInstanceList.h
   include/tencentcloud/redis/v20180412/model/SourceInfo.h
+  include/tencentcloud/redis/v20180412/model/ModifyInstancePasswordPolicyResponse.h
   include/tencentcloud/redis/v20180412/model/ModifyDBInstanceSecurityGroupsResponse.h
   include/tencentcloud/redis/v20180412/model/ChangeMasterInstanceRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceDTSInfoRequest.h
@@ -241,6 +242,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/ResourceBundle.h
   include/tencentcloud/redis/v20180412/model/ManualBackupInstanceRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeReplicationGroupResponse.h
+  include/tencentcloud/redis/v20180412/model/ModifyInstancePasswordPolicyRequest.h
   include/tencentcloud/redis/v20180412/model/ModifyParamTemplateRequest.h
   include/tencentcloud/redis/v20180412/model/AvailableRegion.h
   include/tencentcloud/redis/v20180412/model/FailedInstance.h
@@ -417,6 +419,7 @@ set(redis_src
   src/v20180412/model/ModifyInstanceResponse.cpp
   src/v20180412/model/RedisCommonInstanceList.cpp
   src/v20180412/model/SourceInfo.cpp
+  src/v20180412/model/ModifyInstancePasswordPolicyResponse.cpp
   src/v20180412/model/ModifyDBInstanceSecurityGroupsResponse.cpp
   src/v20180412/model/ChangeMasterInstanceRequest.cpp
   src/v20180412/model/DescribeInstanceDTSInfoRequest.cpp
@@ -547,6 +550,7 @@ set(redis_src
   src/v20180412/model/ResourceBundle.cpp
   src/v20180412/model/ManualBackupInstanceRequest.cpp
   src/v20180412/model/DescribeReplicationGroupResponse.cpp
+  src/v20180412/model/ModifyInstancePasswordPolicyRequest.cpp
   src/v20180412/model/ModifyParamTemplateRequest.cpp
   src/v20180412/model/AvailableRegion.cpp
   src/v20180412/model/FailedInstance.cpp

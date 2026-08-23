@@ -22,6 +22,7 @@ using namespace std;
 
 SubtitleInfoInput::SubtitleInfoInput() :
     m_idHasBeenSet(false),
+    m_streamIndexHasBeenSet(false),
     m_fontTypeHasBeenSet(false),
     m_fontSizeHasBeenSet(false),
     m_fontColorHasBeenSet(false),
@@ -56,6 +57,16 @@ CoreInternalOutcome SubtitleInfoInput::Deserialize(const rapidjson::Value &value
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
+    }
+
+    if (value.HasMember("StreamIndex") && !value["StreamIndex"].IsNull())
+    {
+        if (!value["StreamIndex"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubtitleInfoInput.StreamIndex` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_streamIndex = value["StreamIndex"].GetInt64();
+        m_streamIndexHasBeenSet = true;
     }
 
     if (value.HasMember("FontType") && !value["FontType"].IsNull())
@@ -253,6 +264,14 @@ void SubtitleInfoInput::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_streamIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StreamIndex";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_streamIndex, allocator);
+    }
+
     if (m_fontTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -414,6 +433,22 @@ void SubtitleInfoInput::SetId(const string& _id)
 bool SubtitleInfoInput::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+int64_t SubtitleInfoInput::GetStreamIndex() const
+{
+    return m_streamIndex;
+}
+
+void SubtitleInfoInput::SetStreamIndex(const int64_t& _streamIndex)
+{
+    m_streamIndex = _streamIndex;
+    m_streamIndexHasBeenSet = true;
+}
+
+bool SubtitleInfoInput::StreamIndexHasBeenSet() const
+{
+    return m_streamIndexHasBeenSet;
 }
 
 string SubtitleInfoInput::GetFontType() const

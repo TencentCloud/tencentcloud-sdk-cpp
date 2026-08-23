@@ -140,6 +140,56 @@ CsipClient::AddDspmAssetManagerOutcomeCallable CsipClient::AddDspmAssetManagerCa
     return prom->get_future();
 }
 
+CsipClient::AddImageRegistryOutcome CsipClient::AddImageRegistry(const AddImageRegistryRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddImageRegistry");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddImageRegistryResponse rsp = AddImageRegistryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddImageRegistryOutcome(rsp);
+        else
+            return AddImageRegistryOutcome(o.GetError());
+    }
+    else
+    {
+        return AddImageRegistryOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::AddImageRegistryAsync(const AddImageRegistryRequest& request, const AddImageRegistryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddImageRegistryRequest&;
+    using Resp = AddImageRegistryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddImageRegistry", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::AddImageRegistryOutcomeCallable CsipClient::AddImageRegistryCallable(const AddImageRegistryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddImageRegistryOutcome>>();
+    AddImageRegistryAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const AddImageRegistryRequest&,
+        AddImageRegistryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::AddLoginWhiteListsOutcome CsipClient::AddLoginWhiteLists(const AddLoginWhiteListsRequest &request)
 {
     auto outcome = MakeRequest(request, "AddLoginWhiteLists");
@@ -340,6 +390,206 @@ CsipClient::BatchModifyBaselinePolicyOutcomeCallable CsipClient::BatchModifyBase
     return prom->get_future();
 }
 
+CsipClient::BatchModifyImageRegistryTimedScanTaskConfigOutcome CsipClient::BatchModifyImageRegistryTimedScanTaskConfig(const BatchModifyImageRegistryTimedScanTaskConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchModifyImageRegistryTimedScanTaskConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchModifyImageRegistryTimedScanTaskConfigResponse rsp = BatchModifyImageRegistryTimedScanTaskConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchModifyImageRegistryTimedScanTaskConfigOutcome(rsp);
+        else
+            return BatchModifyImageRegistryTimedScanTaskConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchModifyImageRegistryTimedScanTaskConfigOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::BatchModifyImageRegistryTimedScanTaskConfigAsync(const BatchModifyImageRegistryTimedScanTaskConfigRequest& request, const BatchModifyImageRegistryTimedScanTaskConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const BatchModifyImageRegistryTimedScanTaskConfigRequest&;
+    using Resp = BatchModifyImageRegistryTimedScanTaskConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "BatchModifyImageRegistryTimedScanTaskConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::BatchModifyImageRegistryTimedScanTaskConfigOutcomeCallable CsipClient::BatchModifyImageRegistryTimedScanTaskConfigCallable(const BatchModifyImageRegistryTimedScanTaskConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<BatchModifyImageRegistryTimedScanTaskConfigOutcome>>();
+    BatchModifyImageRegistryTimedScanTaskConfigAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const BatchModifyImageRegistryTimedScanTaskConfigRequest&,
+        BatchModifyImageRegistryTimedScanTaskConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::BatchModifyImageSensitiveWhitelistOutcome CsipClient::BatchModifyImageSensitiveWhitelist(const BatchModifyImageSensitiveWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchModifyImageSensitiveWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchModifyImageSensitiveWhitelistResponse rsp = BatchModifyImageSensitiveWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchModifyImageSensitiveWhitelistOutcome(rsp);
+        else
+            return BatchModifyImageSensitiveWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchModifyImageSensitiveWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::BatchModifyImageSensitiveWhitelistAsync(const BatchModifyImageSensitiveWhitelistRequest& request, const BatchModifyImageSensitiveWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const BatchModifyImageSensitiveWhitelistRequest&;
+    using Resp = BatchModifyImageSensitiveWhitelistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "BatchModifyImageSensitiveWhitelist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::BatchModifyImageSensitiveWhitelistOutcomeCallable CsipClient::BatchModifyImageSensitiveWhitelistCallable(const BatchModifyImageSensitiveWhitelistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<BatchModifyImageSensitiveWhitelistOutcome>>();
+    BatchModifyImageSensitiveWhitelistAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const BatchModifyImageSensitiveWhitelistRequest&,
+        BatchModifyImageSensitiveWhitelistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::BatchModifyImageVirusWhitelistOutcome CsipClient::BatchModifyImageVirusWhitelist(const BatchModifyImageVirusWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchModifyImageVirusWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchModifyImageVirusWhitelistResponse rsp = BatchModifyImageVirusWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchModifyImageVirusWhitelistOutcome(rsp);
+        else
+            return BatchModifyImageVirusWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchModifyImageVirusWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::BatchModifyImageVirusWhitelistAsync(const BatchModifyImageVirusWhitelistRequest& request, const BatchModifyImageVirusWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const BatchModifyImageVirusWhitelistRequest&;
+    using Resp = BatchModifyImageVirusWhitelistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "BatchModifyImageVirusWhitelist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::BatchModifyImageVirusWhitelistOutcomeCallable CsipClient::BatchModifyImageVirusWhitelistCallable(const BatchModifyImageVirusWhitelistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<BatchModifyImageVirusWhitelistOutcome>>();
+    BatchModifyImageVirusWhitelistAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const BatchModifyImageVirusWhitelistRequest&,
+        BatchModifyImageVirusWhitelistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::BatchModifyImageVulWhitelistOutcome CsipClient::BatchModifyImageVulWhitelist(const BatchModifyImageVulWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchModifyImageVulWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchModifyImageVulWhitelistResponse rsp = BatchModifyImageVulWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchModifyImageVulWhitelistOutcome(rsp);
+        else
+            return BatchModifyImageVulWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchModifyImageVulWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::BatchModifyImageVulWhitelistAsync(const BatchModifyImageVulWhitelistRequest& request, const BatchModifyImageVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const BatchModifyImageVulWhitelistRequest&;
+    using Resp = BatchModifyImageVulWhitelistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "BatchModifyImageVulWhitelist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::BatchModifyImageVulWhitelistOutcomeCallable CsipClient::BatchModifyImageVulWhitelistCallable(const BatchModifyImageVulWhitelistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<BatchModifyImageVulWhitelistOutcome>>();
+    BatchModifyImageVulWhitelistAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const BatchModifyImageVulWhitelistRequest&,
+        BatchModifyImageVulWhitelistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::BindClusterOwnerOutcome CsipClient::BindClusterOwner(const BindClusterOwnerRequest &request)
 {
     auto outcome = MakeRequest(request, "BindClusterOwner");
@@ -482,6 +732,56 @@ CsipClient::CheckCWPExposePathPermissionOutcomeCallable CsipClient::CheckCWPExpo
         const CsipClient*,
         const CheckCWPExposePathPermissionRequest&,
         CheckCWPExposePathPermissionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CheckImageRegistryInstanceNameDuplicateOutcome CsipClient::CheckImageRegistryInstanceNameDuplicate(const CheckImageRegistryInstanceNameDuplicateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckImageRegistryInstanceNameDuplicate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckImageRegistryInstanceNameDuplicateResponse rsp = CheckImageRegistryInstanceNameDuplicateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckImageRegistryInstanceNameDuplicateOutcome(rsp);
+        else
+            return CheckImageRegistryInstanceNameDuplicateOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckImageRegistryInstanceNameDuplicateOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CheckImageRegistryInstanceNameDuplicateAsync(const CheckImageRegistryInstanceNameDuplicateRequest& request, const CheckImageRegistryInstanceNameDuplicateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CheckImageRegistryInstanceNameDuplicateRequest&;
+    using Resp = CheckImageRegistryInstanceNameDuplicateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CheckImageRegistryInstanceNameDuplicate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CheckImageRegistryInstanceNameDuplicateOutcomeCallable CsipClient::CheckImageRegistryInstanceNameDuplicateCallable(const CheckImageRegistryInstanceNameDuplicateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CheckImageRegistryInstanceNameDuplicateOutcome>>();
+    CheckImageRegistryInstanceNameDuplicateAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CheckImageRegistryInstanceNameDuplicateRequest&,
+        CheckImageRegistryInstanceNameDuplicateOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -832,6 +1132,106 @@ CsipClient::CreateAllAssetsExportJobOutcomeCallable CsipClient::CreateAllAssetsE
         const CsipClient*,
         const CreateAllAssetsExportJobRequest&,
         CreateAllAssetsExportJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CreateAssetComponentListExportJobOutcome CsipClient::CreateAssetComponentListExportJob(const CreateAssetComponentListExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAssetComponentListExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAssetComponentListExportJobResponse rsp = CreateAssetComponentListExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAssetComponentListExportJobOutcome(rsp);
+        else
+            return CreateAssetComponentListExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAssetComponentListExportJobOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateAssetComponentListExportJobAsync(const CreateAssetComponentListExportJobRequest& request, const CreateAssetComponentListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAssetComponentListExportJobRequest&;
+    using Resp = CreateAssetComponentListExportJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAssetComponentListExportJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateAssetComponentListExportJobOutcomeCallable CsipClient::CreateAssetComponentListExportJobCallable(const CreateAssetComponentListExportJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAssetComponentListExportJobOutcome>>();
+    CreateAssetComponentListExportJobAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateAssetComponentListExportJobRequest&,
+        CreateAssetComponentListExportJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CreateAssetComponentRelatedImageListExportJobOutcome CsipClient::CreateAssetComponentRelatedImageListExportJob(const CreateAssetComponentRelatedImageListExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAssetComponentRelatedImageListExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAssetComponentRelatedImageListExportJobResponse rsp = CreateAssetComponentRelatedImageListExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAssetComponentRelatedImageListExportJobOutcome(rsp);
+        else
+            return CreateAssetComponentRelatedImageListExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAssetComponentRelatedImageListExportJobOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateAssetComponentRelatedImageListExportJobAsync(const CreateAssetComponentRelatedImageListExportJobRequest& request, const CreateAssetComponentRelatedImageListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAssetComponentRelatedImageListExportJobRequest&;
+    using Resp = CreateAssetComponentRelatedImageListExportJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAssetComponentRelatedImageListExportJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateAssetComponentRelatedImageListExportJobOutcomeCallable CsipClient::CreateAssetComponentRelatedImageListExportJobCallable(const CreateAssetComponentRelatedImageListExportJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAssetComponentRelatedImageListExportJobOutcome>>();
+    CreateAssetComponentRelatedImageListExportJobAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateAssetComponentRelatedImageListExportJobRequest&,
+        CreateAssetComponentRelatedImageListExportJobOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3490,6 +3890,806 @@ CsipClient::CreateIaCFileReScanTaskOutcomeCallable CsipClient::CreateIaCFileReSc
     return prom->get_future();
 }
 
+CsipClient::CreateImageAssetListExportJobOutcome CsipClient::CreateImageAssetListExportJob(const CreateImageAssetListExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImageAssetListExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageAssetListExportJobResponse rsp = CreateImageAssetListExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageAssetListExportJobOutcome(rsp);
+        else
+            return CreateImageAssetListExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageAssetListExportJobOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateImageAssetListExportJobAsync(const CreateImageAssetListExportJobRequest& request, const CreateImageAssetListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateImageAssetListExportJobRequest&;
+    using Resp = CreateImageAssetListExportJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateImageAssetListExportJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateImageAssetListExportJobOutcomeCallable CsipClient::CreateImageAssetListExportJobCallable(const CreateImageAssetListExportJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateImageAssetListExportJobOutcome>>();
+    CreateImageAssetListExportJobAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateImageAssetListExportJobRequest&,
+        CreateImageAssetListExportJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CreateImageAssociatedContainerListExportJobOutcome CsipClient::CreateImageAssociatedContainerListExportJob(const CreateImageAssociatedContainerListExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImageAssociatedContainerListExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageAssociatedContainerListExportJobResponse rsp = CreateImageAssociatedContainerListExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageAssociatedContainerListExportJobOutcome(rsp);
+        else
+            return CreateImageAssociatedContainerListExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageAssociatedContainerListExportJobOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateImageAssociatedContainerListExportJobAsync(const CreateImageAssociatedContainerListExportJobRequest& request, const CreateImageAssociatedContainerListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateImageAssociatedContainerListExportJobRequest&;
+    using Resp = CreateImageAssociatedContainerListExportJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateImageAssociatedContainerListExportJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateImageAssociatedContainerListExportJobOutcomeCallable CsipClient::CreateImageAssociatedContainerListExportJobCallable(const CreateImageAssociatedContainerListExportJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateImageAssociatedContainerListExportJobOutcome>>();
+    CreateImageAssociatedContainerListExportJobAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateImageAssociatedContainerListExportJobRequest&,
+        CreateImageAssociatedContainerListExportJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CreateImageAssociatedHostListExportJobOutcome CsipClient::CreateImageAssociatedHostListExportJob(const CreateImageAssociatedHostListExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImageAssociatedHostListExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageAssociatedHostListExportJobResponse rsp = CreateImageAssociatedHostListExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageAssociatedHostListExportJobOutcome(rsp);
+        else
+            return CreateImageAssociatedHostListExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageAssociatedHostListExportJobOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateImageAssociatedHostListExportJobAsync(const CreateImageAssociatedHostListExportJobRequest& request, const CreateImageAssociatedHostListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateImageAssociatedHostListExportJobRequest&;
+    using Resp = CreateImageAssociatedHostListExportJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateImageAssociatedHostListExportJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateImageAssociatedHostListExportJobOutcomeCallable CsipClient::CreateImageAssociatedHostListExportJobCallable(const CreateImageAssociatedHostListExportJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateImageAssociatedHostListExportJobOutcome>>();
+    CreateImageAssociatedHostListExportJobAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateImageAssociatedHostListExportJobRequest&,
+        CreateImageAssociatedHostListExportJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CreateImageComponentListExportJobOutcome CsipClient::CreateImageComponentListExportJob(const CreateImageComponentListExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImageComponentListExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageComponentListExportJobResponse rsp = CreateImageComponentListExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageComponentListExportJobOutcome(rsp);
+        else
+            return CreateImageComponentListExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageComponentListExportJobOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateImageComponentListExportJobAsync(const CreateImageComponentListExportJobRequest& request, const CreateImageComponentListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateImageComponentListExportJobRequest&;
+    using Resp = CreateImageComponentListExportJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateImageComponentListExportJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateImageComponentListExportJobOutcomeCallable CsipClient::CreateImageComponentListExportJobCallable(const CreateImageComponentListExportJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateImageComponentListExportJobOutcome>>();
+    CreateImageComponentListExportJobAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateImageComponentListExportJobRequest&,
+        CreateImageComponentListExportJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CreateImageLayerVulListExportJobOutcome CsipClient::CreateImageLayerVulListExportJob(const CreateImageLayerVulListExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImageLayerVulListExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageLayerVulListExportJobResponse rsp = CreateImageLayerVulListExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageLayerVulListExportJobOutcome(rsp);
+        else
+            return CreateImageLayerVulListExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageLayerVulListExportJobOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateImageLayerVulListExportJobAsync(const CreateImageLayerVulListExportJobRequest& request, const CreateImageLayerVulListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateImageLayerVulListExportJobRequest&;
+    using Resp = CreateImageLayerVulListExportJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateImageLayerVulListExportJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateImageLayerVulListExportJobOutcomeCallable CsipClient::CreateImageLayerVulListExportJobCallable(const CreateImageLayerVulListExportJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateImageLayerVulListExportJobOutcome>>();
+    CreateImageLayerVulListExportJobAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateImageLayerVulListExportJobRequest&,
+        CreateImageLayerVulListExportJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CreateImageRegistryConnectivityTaskOutcome CsipClient::CreateImageRegistryConnectivityTask(const CreateImageRegistryConnectivityTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImageRegistryConnectivityTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageRegistryConnectivityTaskResponse rsp = CreateImageRegistryConnectivityTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageRegistryConnectivityTaskOutcome(rsp);
+        else
+            return CreateImageRegistryConnectivityTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageRegistryConnectivityTaskOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateImageRegistryConnectivityTaskAsync(const CreateImageRegistryConnectivityTaskRequest& request, const CreateImageRegistryConnectivityTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateImageRegistryConnectivityTaskRequest&;
+    using Resp = CreateImageRegistryConnectivityTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateImageRegistryConnectivityTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateImageRegistryConnectivityTaskOutcomeCallable CsipClient::CreateImageRegistryConnectivityTaskCallable(const CreateImageRegistryConnectivityTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateImageRegistryConnectivityTaskOutcome>>();
+    CreateImageRegistryConnectivityTaskAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateImageRegistryConnectivityTaskRequest&,
+        CreateImageRegistryConnectivityTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CreateImageRegistryListExportJobOutcome CsipClient::CreateImageRegistryListExportJob(const CreateImageRegistryListExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImageRegistryListExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageRegistryListExportJobResponse rsp = CreateImageRegistryListExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageRegistryListExportJobOutcome(rsp);
+        else
+            return CreateImageRegistryListExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageRegistryListExportJobOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateImageRegistryListExportJobAsync(const CreateImageRegistryListExportJobRequest& request, const CreateImageRegistryListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateImageRegistryListExportJobRequest&;
+    using Resp = CreateImageRegistryListExportJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateImageRegistryListExportJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateImageRegistryListExportJobOutcomeCallable CsipClient::CreateImageRegistryListExportJobCallable(const CreateImageRegistryListExportJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateImageRegistryListExportJobOutcome>>();
+    CreateImageRegistryListExportJobAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateImageRegistryListExportJobRequest&,
+        CreateImageRegistryListExportJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CreateImageRegistryScanTaskOutcome CsipClient::CreateImageRegistryScanTask(const CreateImageRegistryScanTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImageRegistryScanTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageRegistryScanTaskResponse rsp = CreateImageRegistryScanTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageRegistryScanTaskOutcome(rsp);
+        else
+            return CreateImageRegistryScanTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageRegistryScanTaskOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateImageRegistryScanTaskAsync(const CreateImageRegistryScanTaskRequest& request, const CreateImageRegistryScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateImageRegistryScanTaskRequest&;
+    using Resp = CreateImageRegistryScanTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateImageRegistryScanTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateImageRegistryScanTaskOutcomeCallable CsipClient::CreateImageRegistryScanTaskCallable(const CreateImageRegistryScanTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateImageRegistryScanTaskOutcome>>();
+    CreateImageRegistryScanTaskAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateImageRegistryScanTaskRequest&,
+        CreateImageRegistryScanTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CreateImageRegistryTimedScanTaskConfigOutcome CsipClient::CreateImageRegistryTimedScanTaskConfig(const CreateImageRegistryTimedScanTaskConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImageRegistryTimedScanTaskConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageRegistryTimedScanTaskConfigResponse rsp = CreateImageRegistryTimedScanTaskConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageRegistryTimedScanTaskConfigOutcome(rsp);
+        else
+            return CreateImageRegistryTimedScanTaskConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageRegistryTimedScanTaskConfigOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateImageRegistryTimedScanTaskConfigAsync(const CreateImageRegistryTimedScanTaskConfigRequest& request, const CreateImageRegistryTimedScanTaskConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateImageRegistryTimedScanTaskConfigRequest&;
+    using Resp = CreateImageRegistryTimedScanTaskConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateImageRegistryTimedScanTaskConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateImageRegistryTimedScanTaskConfigOutcomeCallable CsipClient::CreateImageRegistryTimedScanTaskConfigCallable(const CreateImageRegistryTimedScanTaskConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateImageRegistryTimedScanTaskConfigOutcome>>();
+    CreateImageRegistryTimedScanTaskConfigAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateImageRegistryTimedScanTaskConfigRequest&,
+        CreateImageRegistryTimedScanTaskConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CreateImageSensitiveInfoListExportJobOutcome CsipClient::CreateImageSensitiveInfoListExportJob(const CreateImageSensitiveInfoListExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImageSensitiveInfoListExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageSensitiveInfoListExportJobResponse rsp = CreateImageSensitiveInfoListExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageSensitiveInfoListExportJobOutcome(rsp);
+        else
+            return CreateImageSensitiveInfoListExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageSensitiveInfoListExportJobOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateImageSensitiveInfoListExportJobAsync(const CreateImageSensitiveInfoListExportJobRequest& request, const CreateImageSensitiveInfoListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateImageSensitiveInfoListExportJobRequest&;
+    using Resp = CreateImageSensitiveInfoListExportJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateImageSensitiveInfoListExportJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateImageSensitiveInfoListExportJobOutcomeCallable CsipClient::CreateImageSensitiveInfoListExportJobCallable(const CreateImageSensitiveInfoListExportJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateImageSensitiveInfoListExportJobOutcome>>();
+    CreateImageSensitiveInfoListExportJobAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateImageSensitiveInfoListExportJobRequest&,
+        CreateImageSensitiveInfoListExportJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CreateImageSensitiveWhitelistOutcome CsipClient::CreateImageSensitiveWhitelist(const CreateImageSensitiveWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImageSensitiveWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageSensitiveWhitelistResponse rsp = CreateImageSensitiveWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageSensitiveWhitelistOutcome(rsp);
+        else
+            return CreateImageSensitiveWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageSensitiveWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateImageSensitiveWhitelistAsync(const CreateImageSensitiveWhitelistRequest& request, const CreateImageSensitiveWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateImageSensitiveWhitelistRequest&;
+    using Resp = CreateImageSensitiveWhitelistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateImageSensitiveWhitelist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateImageSensitiveWhitelistOutcomeCallable CsipClient::CreateImageSensitiveWhitelistCallable(const CreateImageSensitiveWhitelistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateImageSensitiveWhitelistOutcome>>();
+    CreateImageSensitiveWhitelistAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateImageSensitiveWhitelistRequest&,
+        CreateImageSensitiveWhitelistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CreateImageVirusListExportJobOutcome CsipClient::CreateImageVirusListExportJob(const CreateImageVirusListExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImageVirusListExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageVirusListExportJobResponse rsp = CreateImageVirusListExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageVirusListExportJobOutcome(rsp);
+        else
+            return CreateImageVirusListExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageVirusListExportJobOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateImageVirusListExportJobAsync(const CreateImageVirusListExportJobRequest& request, const CreateImageVirusListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateImageVirusListExportJobRequest&;
+    using Resp = CreateImageVirusListExportJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateImageVirusListExportJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateImageVirusListExportJobOutcomeCallable CsipClient::CreateImageVirusListExportJobCallable(const CreateImageVirusListExportJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateImageVirusListExportJobOutcome>>();
+    CreateImageVirusListExportJobAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateImageVirusListExportJobRequest&,
+        CreateImageVirusListExportJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CreateImageVirusWhitelistOutcome CsipClient::CreateImageVirusWhitelist(const CreateImageVirusWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImageVirusWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageVirusWhitelistResponse rsp = CreateImageVirusWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageVirusWhitelistOutcome(rsp);
+        else
+            return CreateImageVirusWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageVirusWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateImageVirusWhitelistAsync(const CreateImageVirusWhitelistRequest& request, const CreateImageVirusWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateImageVirusWhitelistRequest&;
+    using Resp = CreateImageVirusWhitelistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateImageVirusWhitelist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateImageVirusWhitelistOutcomeCallable CsipClient::CreateImageVirusWhitelistCallable(const CreateImageVirusWhitelistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateImageVirusWhitelistOutcome>>();
+    CreateImageVirusWhitelistAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateImageVirusWhitelistRequest&,
+        CreateImageVirusWhitelistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CreateImageVulListExportJobOutcome CsipClient::CreateImageVulListExportJob(const CreateImageVulListExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImageVulListExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageVulListExportJobResponse rsp = CreateImageVulListExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageVulListExportJobOutcome(rsp);
+        else
+            return CreateImageVulListExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageVulListExportJobOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateImageVulListExportJobAsync(const CreateImageVulListExportJobRequest& request, const CreateImageVulListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateImageVulListExportJobRequest&;
+    using Resp = CreateImageVulListExportJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateImageVulListExportJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateImageVulListExportJobOutcomeCallable CsipClient::CreateImageVulListExportJobCallable(const CreateImageVulListExportJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateImageVulListExportJobOutcome>>();
+    CreateImageVulListExportJobAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateImageVulListExportJobRequest&,
+        CreateImageVulListExportJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CreateImageVulSummaryListExportJobOutcome CsipClient::CreateImageVulSummaryListExportJob(const CreateImageVulSummaryListExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImageVulSummaryListExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageVulSummaryListExportJobResponse rsp = CreateImageVulSummaryListExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageVulSummaryListExportJobOutcome(rsp);
+        else
+            return CreateImageVulSummaryListExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageVulSummaryListExportJobOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateImageVulSummaryListExportJobAsync(const CreateImageVulSummaryListExportJobRequest& request, const CreateImageVulSummaryListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateImageVulSummaryListExportJobRequest&;
+    using Resp = CreateImageVulSummaryListExportJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateImageVulSummaryListExportJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateImageVulSummaryListExportJobOutcomeCallable CsipClient::CreateImageVulSummaryListExportJobCallable(const CreateImageVulSummaryListExportJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateImageVulSummaryListExportJobOutcome>>();
+    CreateImageVulSummaryListExportJobAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateImageVulSummaryListExportJobRequest&,
+        CreateImageVulSummaryListExportJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CreateImageVulWhitelistOutcome CsipClient::CreateImageVulWhitelist(const CreateImageVulWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImageVulWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageVulWhitelistResponse rsp = CreateImageVulWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageVulWhitelistOutcome(rsp);
+        else
+            return CreateImageVulWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageVulWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateImageVulWhitelistAsync(const CreateImageVulWhitelistRequest& request, const CreateImageVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateImageVulWhitelistRequest&;
+    using Resp = CreateImageVulWhitelistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateImageVulWhitelist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateImageVulWhitelistOutcomeCallable CsipClient::CreateImageVulWhitelistCallable(const CreateImageVulWhitelistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateImageVulWhitelistOutcome>>();
+    CreateImageVulWhitelistAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateImageVulWhitelistRequest&,
+        CreateImageVulWhitelistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::CreatePodContainerListExportJobOutcome CsipClient::CreatePodContainerListExportJob(const CreatePodContainerListExportJobRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePodContainerListExportJob");
@@ -5640,6 +6840,306 @@ CsipClient::DeleteIaCFileOutcomeCallable CsipClient::DeleteIaCFileCallable(const
     return prom->get_future();
 }
 
+CsipClient::DeleteImageRegistryOutcome CsipClient::DeleteImageRegistry(const DeleteImageRegistryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteImageRegistry");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteImageRegistryResponse rsp = DeleteImageRegistryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteImageRegistryOutcome(rsp);
+        else
+            return DeleteImageRegistryOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteImageRegistryOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DeleteImageRegistryAsync(const DeleteImageRegistryRequest& request, const DeleteImageRegistryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteImageRegistryRequest&;
+    using Resp = DeleteImageRegistryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteImageRegistry", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DeleteImageRegistryOutcomeCallable CsipClient::DeleteImageRegistryCallable(const DeleteImageRegistryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteImageRegistryOutcome>>();
+    DeleteImageRegistryAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DeleteImageRegistryRequest&,
+        DeleteImageRegistryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DeleteImageRegistryScanTaskOutcome CsipClient::DeleteImageRegistryScanTask(const DeleteImageRegistryScanTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteImageRegistryScanTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteImageRegistryScanTaskResponse rsp = DeleteImageRegistryScanTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteImageRegistryScanTaskOutcome(rsp);
+        else
+            return DeleteImageRegistryScanTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteImageRegistryScanTaskOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DeleteImageRegistryScanTaskAsync(const DeleteImageRegistryScanTaskRequest& request, const DeleteImageRegistryScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteImageRegistryScanTaskRequest&;
+    using Resp = DeleteImageRegistryScanTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteImageRegistryScanTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DeleteImageRegistryScanTaskOutcomeCallable CsipClient::DeleteImageRegistryScanTaskCallable(const DeleteImageRegistryScanTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteImageRegistryScanTaskOutcome>>();
+    DeleteImageRegistryScanTaskAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DeleteImageRegistryScanTaskRequest&,
+        DeleteImageRegistryScanTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DeleteImageRegistryTimedScanTaskConfigOutcome CsipClient::DeleteImageRegistryTimedScanTaskConfig(const DeleteImageRegistryTimedScanTaskConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteImageRegistryTimedScanTaskConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteImageRegistryTimedScanTaskConfigResponse rsp = DeleteImageRegistryTimedScanTaskConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteImageRegistryTimedScanTaskConfigOutcome(rsp);
+        else
+            return DeleteImageRegistryTimedScanTaskConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteImageRegistryTimedScanTaskConfigOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DeleteImageRegistryTimedScanTaskConfigAsync(const DeleteImageRegistryTimedScanTaskConfigRequest& request, const DeleteImageRegistryTimedScanTaskConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteImageRegistryTimedScanTaskConfigRequest&;
+    using Resp = DeleteImageRegistryTimedScanTaskConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteImageRegistryTimedScanTaskConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DeleteImageRegistryTimedScanTaskConfigOutcomeCallable CsipClient::DeleteImageRegistryTimedScanTaskConfigCallable(const DeleteImageRegistryTimedScanTaskConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteImageRegistryTimedScanTaskConfigOutcome>>();
+    DeleteImageRegistryTimedScanTaskConfigAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DeleteImageRegistryTimedScanTaskConfigRequest&,
+        DeleteImageRegistryTimedScanTaskConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DeleteImageSensitiveWhitelistOutcome CsipClient::DeleteImageSensitiveWhitelist(const DeleteImageSensitiveWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteImageSensitiveWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteImageSensitiveWhitelistResponse rsp = DeleteImageSensitiveWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteImageSensitiveWhitelistOutcome(rsp);
+        else
+            return DeleteImageSensitiveWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteImageSensitiveWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DeleteImageSensitiveWhitelistAsync(const DeleteImageSensitiveWhitelistRequest& request, const DeleteImageSensitiveWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteImageSensitiveWhitelistRequest&;
+    using Resp = DeleteImageSensitiveWhitelistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteImageSensitiveWhitelist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DeleteImageSensitiveWhitelistOutcomeCallable CsipClient::DeleteImageSensitiveWhitelistCallable(const DeleteImageSensitiveWhitelistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteImageSensitiveWhitelistOutcome>>();
+    DeleteImageSensitiveWhitelistAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DeleteImageSensitiveWhitelistRequest&,
+        DeleteImageSensitiveWhitelistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DeleteImageVirusWhitelistOutcome CsipClient::DeleteImageVirusWhitelist(const DeleteImageVirusWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteImageVirusWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteImageVirusWhitelistResponse rsp = DeleteImageVirusWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteImageVirusWhitelistOutcome(rsp);
+        else
+            return DeleteImageVirusWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteImageVirusWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DeleteImageVirusWhitelistAsync(const DeleteImageVirusWhitelistRequest& request, const DeleteImageVirusWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteImageVirusWhitelistRequest&;
+    using Resp = DeleteImageVirusWhitelistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteImageVirusWhitelist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DeleteImageVirusWhitelistOutcomeCallable CsipClient::DeleteImageVirusWhitelistCallable(const DeleteImageVirusWhitelistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteImageVirusWhitelistOutcome>>();
+    DeleteImageVirusWhitelistAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DeleteImageVirusWhitelistRequest&,
+        DeleteImageVirusWhitelistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DeleteImageVulWhitelistOutcome CsipClient::DeleteImageVulWhitelist(const DeleteImageVulWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteImageVulWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteImageVulWhitelistResponse rsp = DeleteImageVulWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteImageVulWhitelistOutcome(rsp);
+        else
+            return DeleteImageVulWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteImageVulWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DeleteImageVulWhitelistAsync(const DeleteImageVulWhitelistRequest& request, const DeleteImageVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteImageVulWhitelistRequest&;
+    using Resp = DeleteImageVulWhitelistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteImageVulWhitelist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DeleteImageVulWhitelistOutcomeCallable CsipClient::DeleteImageVulWhitelistCallable(const DeleteImageVulWhitelistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteImageVulWhitelistOutcome>>();
+    DeleteImageVulWhitelistAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DeleteImageVulWhitelistRequest&,
+        DeleteImageVulWhitelistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::DeleteLoginWhiteListOutcome CsipClient::DeleteLoginWhiteList(const DeleteLoginWhiteListRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteLoginWhiteList");
@@ -5782,6 +7282,56 @@ CsipClient::DeleteRiskScanTaskOutcomeCallable CsipClient::DeleteRiskScanTaskCall
         const CsipClient*,
         const DeleteRiskScanTaskRequest&,
         DeleteRiskScanTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DeleteSandboxLLMAuditRuleOutcome CsipClient::DeleteSandboxLLMAuditRule(const DeleteSandboxLLMAuditRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSandboxLLMAuditRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSandboxLLMAuditRuleResponse rsp = DeleteSandboxLLMAuditRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSandboxLLMAuditRuleOutcome(rsp);
+        else
+            return DeleteSandboxLLMAuditRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSandboxLLMAuditRuleOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DeleteSandboxLLMAuditRuleAsync(const DeleteSandboxLLMAuditRuleRequest& request, const DeleteSandboxLLMAuditRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteSandboxLLMAuditRuleRequest&;
+    using Resp = DeleteSandboxLLMAuditRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteSandboxLLMAuditRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DeleteSandboxLLMAuditRuleOutcomeCallable CsipClient::DeleteSandboxLLMAuditRuleCallable(const DeleteSandboxLLMAuditRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteSandboxLLMAuditRuleOutcome>>();
+    DeleteSandboxLLMAuditRuleAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DeleteSandboxLLMAuditRuleRequest&,
+        DeleteSandboxLLMAuditRuleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5982,6 +7532,156 @@ CsipClient::DescribeAIAgentAssetListOutcomeCallable CsipClient::DescribeAIAgentA
         const CsipClient*,
         const DescribeAIAgentAssetListRequest&,
         DescribeAIAgentAssetListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeAIAgentCredentialListOutcome CsipClient::DescribeAIAgentCredentialList(const DescribeAIAgentCredentialListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIAgentCredentialList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIAgentCredentialListResponse rsp = DescribeAIAgentCredentialListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIAgentCredentialListOutcome(rsp);
+        else
+            return DescribeAIAgentCredentialListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIAgentCredentialListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeAIAgentCredentialListAsync(const DescribeAIAgentCredentialListRequest& request, const DescribeAIAgentCredentialListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIAgentCredentialListRequest&;
+    using Resp = DescribeAIAgentCredentialListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIAgentCredentialList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeAIAgentCredentialListOutcomeCallable CsipClient::DescribeAIAgentCredentialListCallable(const DescribeAIAgentCredentialListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIAgentCredentialListOutcome>>();
+    DescribeAIAgentCredentialListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeAIAgentCredentialListRequest&,
+        DescribeAIAgentCredentialListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeAIAgentCredentialLocationListOutcome CsipClient::DescribeAIAgentCredentialLocationList(const DescribeAIAgentCredentialLocationListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIAgentCredentialLocationList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIAgentCredentialLocationListResponse rsp = DescribeAIAgentCredentialLocationListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIAgentCredentialLocationListOutcome(rsp);
+        else
+            return DescribeAIAgentCredentialLocationListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIAgentCredentialLocationListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeAIAgentCredentialLocationListAsync(const DescribeAIAgentCredentialLocationListRequest& request, const DescribeAIAgentCredentialLocationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIAgentCredentialLocationListRequest&;
+    using Resp = DescribeAIAgentCredentialLocationListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIAgentCredentialLocationList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeAIAgentCredentialLocationListOutcomeCallable CsipClient::DescribeAIAgentCredentialLocationListCallable(const DescribeAIAgentCredentialLocationListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIAgentCredentialLocationListOutcome>>();
+    DescribeAIAgentCredentialLocationListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeAIAgentCredentialLocationListRequest&,
+        DescribeAIAgentCredentialLocationListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeAIAgentSkillListOutcome CsipClient::DescribeAIAgentSkillList(const DescribeAIAgentSkillListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIAgentSkillList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIAgentSkillListResponse rsp = DescribeAIAgentSkillListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIAgentSkillListOutcome(rsp);
+        else
+            return DescribeAIAgentSkillListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIAgentSkillListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeAIAgentSkillListAsync(const DescribeAIAgentSkillListRequest& request, const DescribeAIAgentSkillListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIAgentSkillListRequest&;
+    using Resp = DescribeAIAgentSkillListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIAgentSkillList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeAIAgentSkillListOutcomeCallable CsipClient::DescribeAIAgentSkillListCallable(const DescribeAIAgentSkillListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIAgentSkillListOutcome>>();
+    DescribeAIAgentSkillListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeAIAgentSkillListRequest&,
+        DescribeAIAgentSkillListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -7240,6 +8940,106 @@ CsipClient::DescribeAlertListOutcomeCallable CsipClient::DescribeAlertListCallab
     return prom->get_future();
 }
 
+CsipClient::DescribeAssetComponentListOutcome CsipClient::DescribeAssetComponentList(const DescribeAssetComponentListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetComponentList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetComponentListResponse rsp = DescribeAssetComponentListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetComponentListOutcome(rsp);
+        else
+            return DescribeAssetComponentListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetComponentListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeAssetComponentListAsync(const DescribeAssetComponentListRequest& request, const DescribeAssetComponentListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAssetComponentListRequest&;
+    using Resp = DescribeAssetComponentListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetComponentList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeAssetComponentListOutcomeCallable CsipClient::DescribeAssetComponentListCallable(const DescribeAssetComponentListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAssetComponentListOutcome>>();
+    DescribeAssetComponentListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeAssetComponentListRequest&,
+        DescribeAssetComponentListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeAssetComponentRelatedImageListOutcome CsipClient::DescribeAssetComponentRelatedImageList(const DescribeAssetComponentRelatedImageListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetComponentRelatedImageList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetComponentRelatedImageListResponse rsp = DescribeAssetComponentRelatedImageListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetComponentRelatedImageListOutcome(rsp);
+        else
+            return DescribeAssetComponentRelatedImageListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetComponentRelatedImageListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeAssetComponentRelatedImageListAsync(const DescribeAssetComponentRelatedImageListRequest& request, const DescribeAssetComponentRelatedImageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAssetComponentRelatedImageListRequest&;
+    using Resp = DescribeAssetComponentRelatedImageListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetComponentRelatedImageList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeAssetComponentRelatedImageListOutcomeCallable CsipClient::DescribeAssetComponentRelatedImageListCallable(const DescribeAssetComponentRelatedImageListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAssetComponentRelatedImageListOutcome>>();
+    DescribeAssetComponentRelatedImageListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeAssetComponentRelatedImageListRequest&,
+        DescribeAssetComponentRelatedImageListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::DescribeAssetDetailOutcome CsipClient::DescribeAssetDetail(const DescribeAssetDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAssetDetail");
@@ -7982,6 +9782,56 @@ CsipClient::DescribeAssumeRoleOutcomeCallable CsipClient::DescribeAssumeRoleCall
         const CsipClient*,
         const DescribeAssumeRoleRequest&,
         DescribeAssumeRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeBackendScanEngineRegionListOutcome CsipClient::DescribeBackendScanEngineRegionList(const DescribeBackendScanEngineRegionListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackendScanEngineRegionList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackendScanEngineRegionListResponse rsp = DescribeBackendScanEngineRegionListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackendScanEngineRegionListOutcome(rsp);
+        else
+            return DescribeBackendScanEngineRegionListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackendScanEngineRegionListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeBackendScanEngineRegionListAsync(const DescribeBackendScanEngineRegionListRequest& request, const DescribeBackendScanEngineRegionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBackendScanEngineRegionListRequest&;
+    using Resp = DescribeBackendScanEngineRegionListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackendScanEngineRegionList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeBackendScanEngineRegionListOutcomeCallable CsipClient::DescribeBackendScanEngineRegionListCallable(const DescribeBackendScanEngineRegionListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBackendScanEngineRegionListOutcome>>();
+    DescribeBackendScanEngineRegionListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeBackendScanEngineRegionListRequest&,
+        DescribeBackendScanEngineRegionListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -10132,6 +11982,56 @@ CsipClient::DescribeCallRecordOutcomeCallable CsipClient::DescribeCallRecordCall
         const CsipClient*,
         const DescribeCallRecordRequest&,
         DescribeCallRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeCheckConnectivityHostListOutcome CsipClient::DescribeCheckConnectivityHostList(const DescribeCheckConnectivityHostListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCheckConnectivityHostList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCheckConnectivityHostListResponse rsp = DescribeCheckConnectivityHostListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCheckConnectivityHostListOutcome(rsp);
+        else
+            return DescribeCheckConnectivityHostListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCheckConnectivityHostListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeCheckConnectivityHostListAsync(const DescribeCheckConnectivityHostListRequest& request, const DescribeCheckConnectivityHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCheckConnectivityHostListRequest&;
+    using Resp = DescribeCheckConnectivityHostListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCheckConnectivityHostList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeCheckConnectivityHostListOutcomeCallable CsipClient::DescribeCheckConnectivityHostListCallable(const DescribeCheckConnectivityHostListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCheckConnectivityHostListOutcome>>();
+    DescribeCheckConnectivityHostListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeCheckConnectivityHostListRequest&,
+        DescribeCheckConnectivityHostListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -18040,6 +19940,1256 @@ CsipClient::DescribeIaCTokenListOutcomeCallable CsipClient::DescribeIaCTokenList
     return prom->get_future();
 }
 
+CsipClient::DescribeImageAssetDetailOutcome CsipClient::DescribeImageAssetDetail(const DescribeImageAssetDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageAssetDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageAssetDetailResponse rsp = DescribeImageAssetDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageAssetDetailOutcome(rsp);
+        else
+            return DescribeImageAssetDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageAssetDetailOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageAssetDetailAsync(const DescribeImageAssetDetailRequest& request, const DescribeImageAssetDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageAssetDetailRequest&;
+    using Resp = DescribeImageAssetDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageAssetDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageAssetDetailOutcomeCallable CsipClient::DescribeImageAssetDetailCallable(const DescribeImageAssetDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageAssetDetailOutcome>>();
+    DescribeImageAssetDetailAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageAssetDetailRequest&,
+        DescribeImageAssetDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageAssetListOutcome CsipClient::DescribeImageAssetList(const DescribeImageAssetListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageAssetList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageAssetListResponse rsp = DescribeImageAssetListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageAssetListOutcome(rsp);
+        else
+            return DescribeImageAssetListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageAssetListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageAssetListAsync(const DescribeImageAssetListRequest& request, const DescribeImageAssetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageAssetListRequest&;
+    using Resp = DescribeImageAssetListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageAssetList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageAssetListOutcomeCallable CsipClient::DescribeImageAssetListCallable(const DescribeImageAssetListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageAssetListOutcome>>();
+    DescribeImageAssetListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageAssetListRequest&,
+        DescribeImageAssetListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageAssociatedAssetCountOutcome CsipClient::DescribeImageAssociatedAssetCount(const DescribeImageAssociatedAssetCountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageAssociatedAssetCount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageAssociatedAssetCountResponse rsp = DescribeImageAssociatedAssetCountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageAssociatedAssetCountOutcome(rsp);
+        else
+            return DescribeImageAssociatedAssetCountOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageAssociatedAssetCountOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageAssociatedAssetCountAsync(const DescribeImageAssociatedAssetCountRequest& request, const DescribeImageAssociatedAssetCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageAssociatedAssetCountRequest&;
+    using Resp = DescribeImageAssociatedAssetCountResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageAssociatedAssetCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageAssociatedAssetCountOutcomeCallable CsipClient::DescribeImageAssociatedAssetCountCallable(const DescribeImageAssociatedAssetCountRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageAssociatedAssetCountOutcome>>();
+    DescribeImageAssociatedAssetCountAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageAssociatedAssetCountRequest&,
+        DescribeImageAssociatedAssetCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageAssociatedContainerListOutcome CsipClient::DescribeImageAssociatedContainerList(const DescribeImageAssociatedContainerListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageAssociatedContainerList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageAssociatedContainerListResponse rsp = DescribeImageAssociatedContainerListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageAssociatedContainerListOutcome(rsp);
+        else
+            return DescribeImageAssociatedContainerListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageAssociatedContainerListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageAssociatedContainerListAsync(const DescribeImageAssociatedContainerListRequest& request, const DescribeImageAssociatedContainerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageAssociatedContainerListRequest&;
+    using Resp = DescribeImageAssociatedContainerListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageAssociatedContainerList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageAssociatedContainerListOutcomeCallable CsipClient::DescribeImageAssociatedContainerListCallable(const DescribeImageAssociatedContainerListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageAssociatedContainerListOutcome>>();
+    DescribeImageAssociatedContainerListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageAssociatedContainerListRequest&,
+        DescribeImageAssociatedContainerListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageAssociatedHostListOutcome CsipClient::DescribeImageAssociatedHostList(const DescribeImageAssociatedHostListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageAssociatedHostList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageAssociatedHostListResponse rsp = DescribeImageAssociatedHostListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageAssociatedHostListOutcome(rsp);
+        else
+            return DescribeImageAssociatedHostListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageAssociatedHostListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageAssociatedHostListAsync(const DescribeImageAssociatedHostListRequest& request, const DescribeImageAssociatedHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageAssociatedHostListRequest&;
+    using Resp = DescribeImageAssociatedHostListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageAssociatedHostList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageAssociatedHostListOutcomeCallable CsipClient::DescribeImageAssociatedHostListCallable(const DescribeImageAssociatedHostListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageAssociatedHostListOutcome>>();
+    DescribeImageAssociatedHostListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageAssociatedHostListRequest&,
+        DescribeImageAssociatedHostListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageComponentListOutcome CsipClient::DescribeImageComponentList(const DescribeImageComponentListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageComponentList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageComponentListResponse rsp = DescribeImageComponentListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageComponentListOutcome(rsp);
+        else
+            return DescribeImageComponentListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageComponentListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageComponentListAsync(const DescribeImageComponentListRequest& request, const DescribeImageComponentListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageComponentListRequest&;
+    using Resp = DescribeImageComponentListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageComponentList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageComponentListOutcomeCallable CsipClient::DescribeImageComponentListCallable(const DescribeImageComponentListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageComponentListOutcome>>();
+    DescribeImageComponentListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageComponentListRequest&,
+        DescribeImageComponentListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageExportJobListOutcome CsipClient::DescribeImageExportJobList(const DescribeImageExportJobListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageExportJobList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageExportJobListResponse rsp = DescribeImageExportJobListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageExportJobListOutcome(rsp);
+        else
+            return DescribeImageExportJobListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageExportJobListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageExportJobListAsync(const DescribeImageExportJobListRequest& request, const DescribeImageExportJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageExportJobListRequest&;
+    using Resp = DescribeImageExportJobListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageExportJobList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageExportJobListOutcomeCallable CsipClient::DescribeImageExportJobListCallable(const DescribeImageExportJobListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageExportJobListOutcome>>();
+    DescribeImageExportJobListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageExportJobListRequest&,
+        DescribeImageExportJobListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageLayerListOutcome CsipClient::DescribeImageLayerList(const DescribeImageLayerListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageLayerList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageLayerListResponse rsp = DescribeImageLayerListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageLayerListOutcome(rsp);
+        else
+            return DescribeImageLayerListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageLayerListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageLayerListAsync(const DescribeImageLayerListRequest& request, const DescribeImageLayerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageLayerListRequest&;
+    using Resp = DescribeImageLayerListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageLayerList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageLayerListOutcomeCallable CsipClient::DescribeImageLayerListCallable(const DescribeImageLayerListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageLayerListOutcome>>();
+    DescribeImageLayerListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageLayerListRequest&,
+        DescribeImageLayerListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageLayerVulListOutcome CsipClient::DescribeImageLayerVulList(const DescribeImageLayerVulListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageLayerVulList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageLayerVulListResponse rsp = DescribeImageLayerVulListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageLayerVulListOutcome(rsp);
+        else
+            return DescribeImageLayerVulListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageLayerVulListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageLayerVulListAsync(const DescribeImageLayerVulListRequest& request, const DescribeImageLayerVulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageLayerVulListRequest&;
+    using Resp = DescribeImageLayerVulListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageLayerVulList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageLayerVulListOutcomeCallable CsipClient::DescribeImageLayerVulListCallable(const DescribeImageLayerVulListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageLayerVulListOutcome>>();
+    DescribeImageLayerVulListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageLayerVulListRequest&,
+        DescribeImageLayerVulListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageRegistryAssetOverviewOutcome CsipClient::DescribeImageRegistryAssetOverview(const DescribeImageRegistryAssetOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageRegistryAssetOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageRegistryAssetOverviewResponse rsp = DescribeImageRegistryAssetOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageRegistryAssetOverviewOutcome(rsp);
+        else
+            return DescribeImageRegistryAssetOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageRegistryAssetOverviewOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageRegistryAssetOverviewAsync(const DescribeImageRegistryAssetOverviewRequest& request, const DescribeImageRegistryAssetOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageRegistryAssetOverviewRequest&;
+    using Resp = DescribeImageRegistryAssetOverviewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageRegistryAssetOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageRegistryAssetOverviewOutcomeCallable CsipClient::DescribeImageRegistryAssetOverviewCallable(const DescribeImageRegistryAssetOverviewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageRegistryAssetOverviewOutcome>>();
+    DescribeImageRegistryAssetOverviewAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageRegistryAssetOverviewRequest&,
+        DescribeImageRegistryAssetOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageRegistryConnectivityTaskResultOutcome CsipClient::DescribeImageRegistryConnectivityTaskResult(const DescribeImageRegistryConnectivityTaskResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageRegistryConnectivityTaskResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageRegistryConnectivityTaskResultResponse rsp = DescribeImageRegistryConnectivityTaskResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageRegistryConnectivityTaskResultOutcome(rsp);
+        else
+            return DescribeImageRegistryConnectivityTaskResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageRegistryConnectivityTaskResultOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageRegistryConnectivityTaskResultAsync(const DescribeImageRegistryConnectivityTaskResultRequest& request, const DescribeImageRegistryConnectivityTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageRegistryConnectivityTaskResultRequest&;
+    using Resp = DescribeImageRegistryConnectivityTaskResultResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageRegistryConnectivityTaskResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageRegistryConnectivityTaskResultOutcomeCallable CsipClient::DescribeImageRegistryConnectivityTaskResultCallable(const DescribeImageRegistryConnectivityTaskResultRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageRegistryConnectivityTaskResultOutcome>>();
+    DescribeImageRegistryConnectivityTaskResultAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageRegistryConnectivityTaskResultRequest&,
+        DescribeImageRegistryConnectivityTaskResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageRegistryListOutcome CsipClient::DescribeImageRegistryList(const DescribeImageRegistryListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageRegistryList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageRegistryListResponse rsp = DescribeImageRegistryListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageRegistryListOutcome(rsp);
+        else
+            return DescribeImageRegistryListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageRegistryListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageRegistryListAsync(const DescribeImageRegistryListRequest& request, const DescribeImageRegistryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageRegistryListRequest&;
+    using Resp = DescribeImageRegistryListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageRegistryList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageRegistryListOutcomeCallable CsipClient::DescribeImageRegistryListCallable(const DescribeImageRegistryListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageRegistryListOutcome>>();
+    DescribeImageRegistryListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageRegistryListRequest&,
+        DescribeImageRegistryListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageRegistryNamespaceListOutcome CsipClient::DescribeImageRegistryNamespaceList(const DescribeImageRegistryNamespaceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageRegistryNamespaceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageRegistryNamespaceListResponse rsp = DescribeImageRegistryNamespaceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageRegistryNamespaceListOutcome(rsp);
+        else
+            return DescribeImageRegistryNamespaceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageRegistryNamespaceListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageRegistryNamespaceListAsync(const DescribeImageRegistryNamespaceListRequest& request, const DescribeImageRegistryNamespaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageRegistryNamespaceListRequest&;
+    using Resp = DescribeImageRegistryNamespaceListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageRegistryNamespaceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageRegistryNamespaceListOutcomeCallable CsipClient::DescribeImageRegistryNamespaceListCallable(const DescribeImageRegistryNamespaceListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageRegistryNamespaceListOutcome>>();
+    DescribeImageRegistryNamespaceListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageRegistryNamespaceListRequest&,
+        DescribeImageRegistryNamespaceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageRegistryScanSubTaskListOutcome CsipClient::DescribeImageRegistryScanSubTaskList(const DescribeImageRegistryScanSubTaskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageRegistryScanSubTaskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageRegistryScanSubTaskListResponse rsp = DescribeImageRegistryScanSubTaskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageRegistryScanSubTaskListOutcome(rsp);
+        else
+            return DescribeImageRegistryScanSubTaskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageRegistryScanSubTaskListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageRegistryScanSubTaskListAsync(const DescribeImageRegistryScanSubTaskListRequest& request, const DescribeImageRegistryScanSubTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageRegistryScanSubTaskListRequest&;
+    using Resp = DescribeImageRegistryScanSubTaskListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageRegistryScanSubTaskList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageRegistryScanSubTaskListOutcomeCallable CsipClient::DescribeImageRegistryScanSubTaskListCallable(const DescribeImageRegistryScanSubTaskListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageRegistryScanSubTaskListOutcome>>();
+    DescribeImageRegistryScanSubTaskListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageRegistryScanSubTaskListRequest&,
+        DescribeImageRegistryScanSubTaskListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageRegistryScanTaskListOutcome CsipClient::DescribeImageRegistryScanTaskList(const DescribeImageRegistryScanTaskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageRegistryScanTaskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageRegistryScanTaskListResponse rsp = DescribeImageRegistryScanTaskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageRegistryScanTaskListOutcome(rsp);
+        else
+            return DescribeImageRegistryScanTaskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageRegistryScanTaskListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageRegistryScanTaskListAsync(const DescribeImageRegistryScanTaskListRequest& request, const DescribeImageRegistryScanTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageRegistryScanTaskListRequest&;
+    using Resp = DescribeImageRegistryScanTaskListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageRegistryScanTaskList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageRegistryScanTaskListOutcomeCallable CsipClient::DescribeImageRegistryScanTaskListCallable(const DescribeImageRegistryScanTaskListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageRegistryScanTaskListOutcome>>();
+    DescribeImageRegistryScanTaskListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageRegistryScanTaskListRequest&,
+        DescribeImageRegistryScanTaskListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageRegistryTimedScanTaskConfigOutcome CsipClient::DescribeImageRegistryTimedScanTaskConfig(const DescribeImageRegistryTimedScanTaskConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageRegistryTimedScanTaskConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageRegistryTimedScanTaskConfigResponse rsp = DescribeImageRegistryTimedScanTaskConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageRegistryTimedScanTaskConfigOutcome(rsp);
+        else
+            return DescribeImageRegistryTimedScanTaskConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageRegistryTimedScanTaskConfigOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageRegistryTimedScanTaskConfigAsync(const DescribeImageRegistryTimedScanTaskConfigRequest& request, const DescribeImageRegistryTimedScanTaskConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageRegistryTimedScanTaskConfigRequest&;
+    using Resp = DescribeImageRegistryTimedScanTaskConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageRegistryTimedScanTaskConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageRegistryTimedScanTaskConfigOutcomeCallable CsipClient::DescribeImageRegistryTimedScanTaskConfigCallable(const DescribeImageRegistryTimedScanTaskConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageRegistryTimedScanTaskConfigOutcome>>();
+    DescribeImageRegistryTimedScanTaskConfigAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageRegistryTimedScanTaskConfigRequest&,
+        DescribeImageRegistryTimedScanTaskConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageRegistryTimedScanTaskPreviewOutcome CsipClient::DescribeImageRegistryTimedScanTaskPreview(const DescribeImageRegistryTimedScanTaskPreviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageRegistryTimedScanTaskPreview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageRegistryTimedScanTaskPreviewResponse rsp = DescribeImageRegistryTimedScanTaskPreviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageRegistryTimedScanTaskPreviewOutcome(rsp);
+        else
+            return DescribeImageRegistryTimedScanTaskPreviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageRegistryTimedScanTaskPreviewOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageRegistryTimedScanTaskPreviewAsync(const DescribeImageRegistryTimedScanTaskPreviewRequest& request, const DescribeImageRegistryTimedScanTaskPreviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageRegistryTimedScanTaskPreviewRequest&;
+    using Resp = DescribeImageRegistryTimedScanTaskPreviewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageRegistryTimedScanTaskPreview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageRegistryTimedScanTaskPreviewOutcomeCallable CsipClient::DescribeImageRegistryTimedScanTaskPreviewCallable(const DescribeImageRegistryTimedScanTaskPreviewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageRegistryTimedScanTaskPreviewOutcome>>();
+    DescribeImageRegistryTimedScanTaskPreviewAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageRegistryTimedScanTaskPreviewRequest&,
+        DescribeImageRegistryTimedScanTaskPreviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageSensitiveInfoListOutcome CsipClient::DescribeImageSensitiveInfoList(const DescribeImageSensitiveInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageSensitiveInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageSensitiveInfoListResponse rsp = DescribeImageSensitiveInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageSensitiveInfoListOutcome(rsp);
+        else
+            return DescribeImageSensitiveInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageSensitiveInfoListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageSensitiveInfoListAsync(const DescribeImageSensitiveInfoListRequest& request, const DescribeImageSensitiveInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageSensitiveInfoListRequest&;
+    using Resp = DescribeImageSensitiveInfoListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageSensitiveInfoList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageSensitiveInfoListOutcomeCallable CsipClient::DescribeImageSensitiveInfoListCallable(const DescribeImageSensitiveInfoListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageSensitiveInfoListOutcome>>();
+    DescribeImageSensitiveInfoListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageSensitiveInfoListRequest&,
+        DescribeImageSensitiveInfoListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageSensitiveWhitelistOutcome CsipClient::DescribeImageSensitiveWhitelist(const DescribeImageSensitiveWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageSensitiveWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageSensitiveWhitelistResponse rsp = DescribeImageSensitiveWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageSensitiveWhitelistOutcome(rsp);
+        else
+            return DescribeImageSensitiveWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageSensitiveWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageSensitiveWhitelistAsync(const DescribeImageSensitiveWhitelistRequest& request, const DescribeImageSensitiveWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageSensitiveWhitelistRequest&;
+    using Resp = DescribeImageSensitiveWhitelistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageSensitiveWhitelist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageSensitiveWhitelistOutcomeCallable CsipClient::DescribeImageSensitiveWhitelistCallable(const DescribeImageSensitiveWhitelistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageSensitiveWhitelistOutcome>>();
+    DescribeImageSensitiveWhitelistAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageSensitiveWhitelistRequest&,
+        DescribeImageSensitiveWhitelistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageVirusListOutcome CsipClient::DescribeImageVirusList(const DescribeImageVirusListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageVirusList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageVirusListResponse rsp = DescribeImageVirusListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageVirusListOutcome(rsp);
+        else
+            return DescribeImageVirusListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageVirusListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageVirusListAsync(const DescribeImageVirusListRequest& request, const DescribeImageVirusListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageVirusListRequest&;
+    using Resp = DescribeImageVirusListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageVirusList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageVirusListOutcomeCallable CsipClient::DescribeImageVirusListCallable(const DescribeImageVirusListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageVirusListOutcome>>();
+    DescribeImageVirusListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageVirusListRequest&,
+        DescribeImageVirusListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageVirusWhitelistOutcome CsipClient::DescribeImageVirusWhitelist(const DescribeImageVirusWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageVirusWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageVirusWhitelistResponse rsp = DescribeImageVirusWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageVirusWhitelistOutcome(rsp);
+        else
+            return DescribeImageVirusWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageVirusWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageVirusWhitelistAsync(const DescribeImageVirusWhitelistRequest& request, const DescribeImageVirusWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageVirusWhitelistRequest&;
+    using Resp = DescribeImageVirusWhitelistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageVirusWhitelist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageVirusWhitelistOutcomeCallable CsipClient::DescribeImageVirusWhitelistCallable(const DescribeImageVirusWhitelistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageVirusWhitelistOutcome>>();
+    DescribeImageVirusWhitelistAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageVirusWhitelistRequest&,
+        DescribeImageVirusWhitelistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageVirusWhitelistDetailOutcome CsipClient::DescribeImageVirusWhitelistDetail(const DescribeImageVirusWhitelistDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageVirusWhitelistDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageVirusWhitelistDetailResponse rsp = DescribeImageVirusWhitelistDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageVirusWhitelistDetailOutcome(rsp);
+        else
+            return DescribeImageVirusWhitelistDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageVirusWhitelistDetailOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageVirusWhitelistDetailAsync(const DescribeImageVirusWhitelistDetailRequest& request, const DescribeImageVirusWhitelistDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageVirusWhitelistDetailRequest&;
+    using Resp = DescribeImageVirusWhitelistDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageVirusWhitelistDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageVirusWhitelistDetailOutcomeCallable CsipClient::DescribeImageVirusWhitelistDetailCallable(const DescribeImageVirusWhitelistDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageVirusWhitelistDetailOutcome>>();
+    DescribeImageVirusWhitelistDetailAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageVirusWhitelistDetailRequest&,
+        DescribeImageVirusWhitelistDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageVulListOutcome CsipClient::DescribeImageVulList(const DescribeImageVulListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageVulList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageVulListResponse rsp = DescribeImageVulListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageVulListOutcome(rsp);
+        else
+            return DescribeImageVulListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageVulListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageVulListAsync(const DescribeImageVulListRequest& request, const DescribeImageVulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageVulListRequest&;
+    using Resp = DescribeImageVulListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageVulList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageVulListOutcomeCallable CsipClient::DescribeImageVulListCallable(const DescribeImageVulListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageVulListOutcome>>();
+    DescribeImageVulListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageVulListRequest&,
+        DescribeImageVulListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageVulSummaryListOutcome CsipClient::DescribeImageVulSummaryList(const DescribeImageVulSummaryListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageVulSummaryList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageVulSummaryListResponse rsp = DescribeImageVulSummaryListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageVulSummaryListOutcome(rsp);
+        else
+            return DescribeImageVulSummaryListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageVulSummaryListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageVulSummaryListAsync(const DescribeImageVulSummaryListRequest& request, const DescribeImageVulSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageVulSummaryListRequest&;
+    using Resp = DescribeImageVulSummaryListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageVulSummaryList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageVulSummaryListOutcomeCallable CsipClient::DescribeImageVulSummaryListCallable(const DescribeImageVulSummaryListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageVulSummaryListOutcome>>();
+    DescribeImageVulSummaryListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageVulSummaryListRequest&,
+        DescribeImageVulSummaryListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeImageVulWhitelistOutcome CsipClient::DescribeImageVulWhitelist(const DescribeImageVulWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageVulWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageVulWhitelistResponse rsp = DescribeImageVulWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageVulWhitelistOutcome(rsp);
+        else
+            return DescribeImageVulWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageVulWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeImageVulWhitelistAsync(const DescribeImageVulWhitelistRequest& request, const DescribeImageVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageVulWhitelistRequest&;
+    using Resp = DescribeImageVulWhitelistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageVulWhitelist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeImageVulWhitelistOutcomeCallable CsipClient::DescribeImageVulWhitelistCallable(const DescribeImageVulWhitelistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageVulWhitelistOutcome>>();
+    DescribeImageVulWhitelistAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeImageVulWhitelistRequest&,
+        DescribeImageVulWhitelistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::DescribeIpInvokeRecordOutcome CsipClient::DescribeIpInvokeRecord(const DescribeIpInvokeRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeIpInvokeRecord");
@@ -19490,6 +22640,56 @@ CsipClient::DescribeNotifySettingOutcomeCallable CsipClient::DescribeNotifySetti
     return prom->get_future();
 }
 
+CsipClient::DescribeNotifySettingAkOutcome CsipClient::DescribeNotifySettingAk(const DescribeNotifySettingAkRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNotifySettingAk");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNotifySettingAkResponse rsp = DescribeNotifySettingAkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNotifySettingAkOutcome(rsp);
+        else
+            return DescribeNotifySettingAkOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNotifySettingAkOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeNotifySettingAkAsync(const DescribeNotifySettingAkRequest& request, const DescribeNotifySettingAkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeNotifySettingAkRequest&;
+    using Resp = DescribeNotifySettingAkResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeNotifySettingAk", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeNotifySettingAkOutcomeCallable CsipClient::DescribeNotifySettingAkCallable(const DescribeNotifySettingAkRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeNotifySettingAkOutcome>>();
+    DescribeNotifySettingAkAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeNotifySettingAkRequest&,
+        DescribeNotifySettingAkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::DescribeNotifySettingAlertOutcome CsipClient::DescribeNotifySettingAlert(const DescribeNotifySettingAlertRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNotifySettingAlert");
@@ -20232,6 +23432,106 @@ CsipClient::DescribeRaspLicenseListOutcomeCallable CsipClient::DescribeRaspLicen
         const CsipClient*,
         const DescribeRaspLicenseListRequest&,
         DescribeRaspLicenseListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeRegistryOverviewOutcome CsipClient::DescribeRegistryOverview(const DescribeRegistryOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRegistryOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRegistryOverviewResponse rsp = DescribeRegistryOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRegistryOverviewOutcome(rsp);
+        else
+            return DescribeRegistryOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRegistryOverviewOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeRegistryOverviewAsync(const DescribeRegistryOverviewRequest& request, const DescribeRegistryOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRegistryOverviewRequest&;
+    using Resp = DescribeRegistryOverviewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRegistryOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeRegistryOverviewOutcomeCallable CsipClient::DescribeRegistryOverviewCallable(const DescribeRegistryOverviewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRegistryOverviewOutcome>>();
+    DescribeRegistryOverviewAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeRegistryOverviewRequest&,
+        DescribeRegistryOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeRegistryRegionListOutcome CsipClient::DescribeRegistryRegionList(const DescribeRegistryRegionListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRegistryRegionList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRegistryRegionListResponse rsp = DescribeRegistryRegionListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRegistryRegionListOutcome(rsp);
+        else
+            return DescribeRegistryRegionListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRegistryRegionListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeRegistryRegionListAsync(const DescribeRegistryRegionListRequest& request, const DescribeRegistryRegionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRegistryRegionListRequest&;
+    using Resp = DescribeRegistryRegionListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRegistryRegionList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeRegistryRegionListOutcomeCallable CsipClient::DescribeRegistryRegionListCallable(const DescribeRegistryRegionListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRegistryRegionListOutcome>>();
+    DescribeRegistryRegionListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeRegistryRegionListRequest&,
+        DescribeRegistryRegionListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -21440,6 +24740,256 @@ CsipClient::DescribeSCFNamespaceListOutcomeCallable CsipClient::DescribeSCFNames
     return prom->get_future();
 }
 
+CsipClient::DescribeSandboxACLAlertListOutcome CsipClient::DescribeSandboxACLAlertList(const DescribeSandboxACLAlertListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSandboxACLAlertList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSandboxACLAlertListResponse rsp = DescribeSandboxACLAlertListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSandboxACLAlertListOutcome(rsp);
+        else
+            return DescribeSandboxACLAlertListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSandboxACLAlertListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeSandboxACLAlertListAsync(const DescribeSandboxACLAlertListRequest& request, const DescribeSandboxACLAlertListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSandboxACLAlertListRequest&;
+    using Resp = DescribeSandboxACLAlertListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSandboxACLAlertList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeSandboxACLAlertListOutcomeCallable CsipClient::DescribeSandboxACLAlertListCallable(const DescribeSandboxACLAlertListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSandboxACLAlertListOutcome>>();
+    DescribeSandboxACLAlertListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeSandboxACLAlertListRequest&,
+        DescribeSandboxACLAlertListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeSandboxACLRuleListOutcome CsipClient::DescribeSandboxACLRuleList(const DescribeSandboxACLRuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSandboxACLRuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSandboxACLRuleListResponse rsp = DescribeSandboxACLRuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSandboxACLRuleListOutcome(rsp);
+        else
+            return DescribeSandboxACLRuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSandboxACLRuleListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeSandboxACLRuleListAsync(const DescribeSandboxACLRuleListRequest& request, const DescribeSandboxACLRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSandboxACLRuleListRequest&;
+    using Resp = DescribeSandboxACLRuleListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSandboxACLRuleList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeSandboxACLRuleListOutcomeCallable CsipClient::DescribeSandboxACLRuleListCallable(const DescribeSandboxACLRuleListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSandboxACLRuleListOutcome>>();
+    DescribeSandboxACLRuleListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeSandboxACLRuleListRequest&,
+        DescribeSandboxACLRuleListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeSandboxACLSystemRuleListOutcome CsipClient::DescribeSandboxACLSystemRuleList(const DescribeSandboxACLSystemRuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSandboxACLSystemRuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSandboxACLSystemRuleListResponse rsp = DescribeSandboxACLSystemRuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSandboxACLSystemRuleListOutcome(rsp);
+        else
+            return DescribeSandboxACLSystemRuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSandboxACLSystemRuleListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeSandboxACLSystemRuleListAsync(const DescribeSandboxACLSystemRuleListRequest& request, const DescribeSandboxACLSystemRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSandboxACLSystemRuleListRequest&;
+    using Resp = DescribeSandboxACLSystemRuleListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSandboxACLSystemRuleList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeSandboxACLSystemRuleListOutcomeCallable CsipClient::DescribeSandboxACLSystemRuleListCallable(const DescribeSandboxACLSystemRuleListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSandboxACLSystemRuleListOutcome>>();
+    DescribeSandboxACLSystemRuleListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeSandboxACLSystemRuleListRequest&,
+        DescribeSandboxACLSystemRuleListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeSandboxDLPSystemRuleListOutcome CsipClient::DescribeSandboxDLPSystemRuleList(const DescribeSandboxDLPSystemRuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSandboxDLPSystemRuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSandboxDLPSystemRuleListResponse rsp = DescribeSandboxDLPSystemRuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSandboxDLPSystemRuleListOutcome(rsp);
+        else
+            return DescribeSandboxDLPSystemRuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSandboxDLPSystemRuleListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeSandboxDLPSystemRuleListAsync(const DescribeSandboxDLPSystemRuleListRequest& request, const DescribeSandboxDLPSystemRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSandboxDLPSystemRuleListRequest&;
+    using Resp = DescribeSandboxDLPSystemRuleListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSandboxDLPSystemRuleList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeSandboxDLPSystemRuleListOutcomeCallable CsipClient::DescribeSandboxDLPSystemRuleListCallable(const DescribeSandboxDLPSystemRuleListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSandboxDLPSystemRuleListOutcome>>();
+    DescribeSandboxDLPSystemRuleListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeSandboxDLPSystemRuleListRequest&,
+        DescribeSandboxDLPSystemRuleListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeSandboxFileRuleListOutcome CsipClient::DescribeSandboxFileRuleList(const DescribeSandboxFileRuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSandboxFileRuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSandboxFileRuleListResponse rsp = DescribeSandboxFileRuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSandboxFileRuleListOutcome(rsp);
+        else
+            return DescribeSandboxFileRuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSandboxFileRuleListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeSandboxFileRuleListAsync(const DescribeSandboxFileRuleListRequest& request, const DescribeSandboxFileRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSandboxFileRuleListRequest&;
+    using Resp = DescribeSandboxFileRuleListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSandboxFileRuleList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeSandboxFileRuleListOutcomeCallable CsipClient::DescribeSandboxFileRuleListCallable(const DescribeSandboxFileRuleListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSandboxFileRuleListOutcome>>();
+    DescribeSandboxFileRuleListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeSandboxFileRuleListRequest&,
+        DescribeSandboxFileRuleListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::DescribeScanReportListOutcome CsipClient::DescribeScanReportList(const DescribeScanReportListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeScanReportList");
@@ -21940,6 +25490,106 @@ CsipClient::DescribeSecurityScoreRuleOutcomeCallable CsipClient::DescribeSecurit
     return prom->get_future();
 }
 
+CsipClient::DescribeSkillScanAlertDetailOutcome CsipClient::DescribeSkillScanAlertDetail(const DescribeSkillScanAlertDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSkillScanAlertDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSkillScanAlertDetailResponse rsp = DescribeSkillScanAlertDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSkillScanAlertDetailOutcome(rsp);
+        else
+            return DescribeSkillScanAlertDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSkillScanAlertDetailOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeSkillScanAlertDetailAsync(const DescribeSkillScanAlertDetailRequest& request, const DescribeSkillScanAlertDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSkillScanAlertDetailRequest&;
+    using Resp = DescribeSkillScanAlertDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSkillScanAlertDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeSkillScanAlertDetailOutcomeCallable CsipClient::DescribeSkillScanAlertDetailCallable(const DescribeSkillScanAlertDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSkillScanAlertDetailOutcome>>();
+    DescribeSkillScanAlertDetailAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeSkillScanAlertDetailRequest&,
+        DescribeSkillScanAlertDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeSkillScanAlertListOutcome CsipClient::DescribeSkillScanAlertList(const DescribeSkillScanAlertListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSkillScanAlertList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSkillScanAlertListResponse rsp = DescribeSkillScanAlertListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSkillScanAlertListOutcome(rsp);
+        else
+            return DescribeSkillScanAlertListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSkillScanAlertListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeSkillScanAlertListAsync(const DescribeSkillScanAlertListRequest& request, const DescribeSkillScanAlertListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSkillScanAlertListRequest&;
+    using Resp = DescribeSkillScanAlertListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSkillScanAlertList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeSkillScanAlertListOutcomeCallable CsipClient::DescribeSkillScanAlertListCallable(const DescribeSkillScanAlertListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSkillScanAlertListOutcome>>();
+    DescribeSkillScanAlertListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeSkillScanAlertListRequest&,
+        DescribeSkillScanAlertListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::DescribeSkillScanPayInfoOutcome CsipClient::DescribeSkillScanPayInfo(const DescribeSkillScanPayInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSkillScanPayInfo");
@@ -22182,6 +25832,56 @@ CsipClient::DescribeSubnetAssetsOutcomeCallable CsipClient::DescribeSubnetAssets
         const CsipClient*,
         const DescribeSubnetAssetsRequest&,
         DescribeSubnetAssetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeTCRInstanceListOutcome CsipClient::DescribeTCRInstanceList(const DescribeTCRInstanceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTCRInstanceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTCRInstanceListResponse rsp = DescribeTCRInstanceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTCRInstanceListOutcome(rsp);
+        else
+            return DescribeTCRInstanceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTCRInstanceListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeTCRInstanceListAsync(const DescribeTCRInstanceListRequest& request, const DescribeTCRInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTCRInstanceListRequest&;
+    using Resp = DescribeTCRInstanceListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTCRInstanceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeTCRInstanceListOutcomeCallable CsipClient::DescribeTCRInstanceListCallable(const DescribeTCRInstanceListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTCRInstanceListOutcome>>();
+    DescribeTCRInstanceListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeTCRInstanceListRequest&,
+        DescribeTCRInstanceListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -27690,6 +31390,256 @@ CsipClient::ModifyIaCTokenPeriodOutcomeCallable CsipClient::ModifyIaCTokenPeriod
     return prom->get_future();
 }
 
+CsipClient::ModifyImageRegistryOutcome CsipClient::ModifyImageRegistry(const ModifyImageRegistryRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyImageRegistry");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyImageRegistryResponse rsp = ModifyImageRegistryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyImageRegistryOutcome(rsp);
+        else
+            return ModifyImageRegistryOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyImageRegistryOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyImageRegistryAsync(const ModifyImageRegistryRequest& request, const ModifyImageRegistryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyImageRegistryRequest&;
+    using Resp = ModifyImageRegistryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyImageRegistry", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifyImageRegistryOutcomeCallable CsipClient::ModifyImageRegistryCallable(const ModifyImageRegistryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyImageRegistryOutcome>>();
+    ModifyImageRegistryAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifyImageRegistryRequest&,
+        ModifyImageRegistryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifyImageRegistryTimedScanTaskConfigOutcome CsipClient::ModifyImageRegistryTimedScanTaskConfig(const ModifyImageRegistryTimedScanTaskConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyImageRegistryTimedScanTaskConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyImageRegistryTimedScanTaskConfigResponse rsp = ModifyImageRegistryTimedScanTaskConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyImageRegistryTimedScanTaskConfigOutcome(rsp);
+        else
+            return ModifyImageRegistryTimedScanTaskConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyImageRegistryTimedScanTaskConfigOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyImageRegistryTimedScanTaskConfigAsync(const ModifyImageRegistryTimedScanTaskConfigRequest& request, const ModifyImageRegistryTimedScanTaskConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyImageRegistryTimedScanTaskConfigRequest&;
+    using Resp = ModifyImageRegistryTimedScanTaskConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyImageRegistryTimedScanTaskConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifyImageRegistryTimedScanTaskConfigOutcomeCallable CsipClient::ModifyImageRegistryTimedScanTaskConfigCallable(const ModifyImageRegistryTimedScanTaskConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyImageRegistryTimedScanTaskConfigOutcome>>();
+    ModifyImageRegistryTimedScanTaskConfigAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifyImageRegistryTimedScanTaskConfigRequest&,
+        ModifyImageRegistryTimedScanTaskConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifyImageSensitiveWhitelistOutcome CsipClient::ModifyImageSensitiveWhitelist(const ModifyImageSensitiveWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyImageSensitiveWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyImageSensitiveWhitelistResponse rsp = ModifyImageSensitiveWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyImageSensitiveWhitelistOutcome(rsp);
+        else
+            return ModifyImageSensitiveWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyImageSensitiveWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyImageSensitiveWhitelistAsync(const ModifyImageSensitiveWhitelistRequest& request, const ModifyImageSensitiveWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyImageSensitiveWhitelistRequest&;
+    using Resp = ModifyImageSensitiveWhitelistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyImageSensitiveWhitelist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifyImageSensitiveWhitelistOutcomeCallable CsipClient::ModifyImageSensitiveWhitelistCallable(const ModifyImageSensitiveWhitelistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyImageSensitiveWhitelistOutcome>>();
+    ModifyImageSensitiveWhitelistAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifyImageSensitiveWhitelistRequest&,
+        ModifyImageSensitiveWhitelistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifyImageVirusWhitelistOutcome CsipClient::ModifyImageVirusWhitelist(const ModifyImageVirusWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyImageVirusWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyImageVirusWhitelistResponse rsp = ModifyImageVirusWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyImageVirusWhitelistOutcome(rsp);
+        else
+            return ModifyImageVirusWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyImageVirusWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyImageVirusWhitelistAsync(const ModifyImageVirusWhitelistRequest& request, const ModifyImageVirusWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyImageVirusWhitelistRequest&;
+    using Resp = ModifyImageVirusWhitelistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyImageVirusWhitelist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifyImageVirusWhitelistOutcomeCallable CsipClient::ModifyImageVirusWhitelistCallable(const ModifyImageVirusWhitelistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyImageVirusWhitelistOutcome>>();
+    ModifyImageVirusWhitelistAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifyImageVirusWhitelistRequest&,
+        ModifyImageVirusWhitelistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifyImageVulWhitelistOutcome CsipClient::ModifyImageVulWhitelist(const ModifyImageVulWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyImageVulWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyImageVulWhitelistResponse rsp = ModifyImageVulWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyImageVulWhitelistOutcome(rsp);
+        else
+            return ModifyImageVulWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyImageVulWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyImageVulWhitelistAsync(const ModifyImageVulWhitelistRequest& request, const ModifyImageVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyImageVulWhitelistRequest&;
+    using Resp = ModifyImageVulWhitelistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyImageVulWhitelist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifyImageVulWhitelistOutcomeCallable CsipClient::ModifyImageVulWhitelistCallable(const ModifyImageVulWhitelistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyImageVulWhitelistOutcome>>();
+    ModifyImageVulWhitelistAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifyImageVulWhitelistRequest&,
+        ModifyImageVulWhitelistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::ModifyLoginWhiteRecordOutcome CsipClient::ModifyLoginWhiteRecord(const ModifyLoginWhiteRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyLoginWhiteRecord");
@@ -28190,6 +32140,56 @@ CsipClient::ModifyNotifyAssetConfigOutcomeCallable CsipClient::ModifyNotifyAsset
     return prom->get_future();
 }
 
+CsipClient::ModifyNotifyMemberOutcome CsipClient::ModifyNotifyMember(const ModifyNotifyMemberRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNotifyMember");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNotifyMemberResponse rsp = ModifyNotifyMemberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNotifyMemberOutcome(rsp);
+        else
+            return ModifyNotifyMemberOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNotifyMemberOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyNotifyMemberAsync(const ModifyNotifyMemberRequest& request, const ModifyNotifyMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyNotifyMemberRequest&;
+    using Resp = ModifyNotifyMemberResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyNotifyMember", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifyNotifyMemberOutcomeCallable CsipClient::ModifyNotifyMemberCallable(const ModifyNotifyMemberRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyNotifyMemberOutcome>>();
+    ModifyNotifyMemberAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifyNotifyMemberRequest&,
+        ModifyNotifyMemberOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::ModifyNotifySettingOutcome CsipClient::ModifyNotifySetting(const ModifyNotifySettingRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyNotifySetting");
@@ -28232,6 +32232,56 @@ CsipClient::ModifyNotifySettingOutcomeCallable CsipClient::ModifyNotifySettingCa
         const CsipClient*,
         const ModifyNotifySettingRequest&,
         ModifyNotifySettingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifyNotifySettingAkOutcome CsipClient::ModifyNotifySettingAk(const ModifyNotifySettingAkRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNotifySettingAk");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNotifySettingAkResponse rsp = ModifyNotifySettingAkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNotifySettingAkOutcome(rsp);
+        else
+            return ModifyNotifySettingAkOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNotifySettingAkOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyNotifySettingAkAsync(const ModifyNotifySettingAkRequest& request, const ModifyNotifySettingAkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyNotifySettingAkRequest&;
+    using Resp = ModifyNotifySettingAkResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyNotifySettingAk", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifyNotifySettingAkOutcomeCallable CsipClient::ModifyNotifySettingAkCallable(const ModifyNotifySettingAkRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyNotifySettingAkOutcome>>();
+    ModifyNotifySettingAkAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifyNotifySettingAkRequest&,
+        ModifyNotifySettingAkOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -28740,6 +32790,56 @@ CsipClient::ModifyRiskScanCronConfigOutcomeCallable CsipClient::ModifyRiskScanCr
     return prom->get_future();
 }
 
+CsipClient::ModifySandboxLLMAuditRuleStatusOutcome CsipClient::ModifySandboxLLMAuditRuleStatus(const ModifySandboxLLMAuditRuleStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySandboxLLMAuditRuleStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySandboxLLMAuditRuleStatusResponse rsp = ModifySandboxLLMAuditRuleStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySandboxLLMAuditRuleStatusOutcome(rsp);
+        else
+            return ModifySandboxLLMAuditRuleStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySandboxLLMAuditRuleStatusOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifySandboxLLMAuditRuleStatusAsync(const ModifySandboxLLMAuditRuleStatusRequest& request, const ModifySandboxLLMAuditRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifySandboxLLMAuditRuleStatusRequest&;
+    using Resp = ModifySandboxLLMAuditRuleStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifySandboxLLMAuditRuleStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifySandboxLLMAuditRuleStatusOutcomeCallable CsipClient::ModifySandboxLLMAuditRuleStatusCallable(const ModifySandboxLLMAuditRuleStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifySandboxLLMAuditRuleStatusOutcome>>();
+    ModifySandboxLLMAuditRuleStatusAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifySandboxLLMAuditRuleStatusRequest&,
+        ModifySandboxLLMAuditRuleStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::ModifySecurityScoreRuleOutcome CsipClient::ModifySecurityScoreRule(const ModifySecurityScoreRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifySecurityScoreRule");
@@ -28832,6 +32932,56 @@ CsipClient::ModifyShareUserCSPMOutcomeCallable CsipClient::ModifyShareUserCSPMCa
         const CsipClient*,
         const ModifyShareUserCSPMRequest&,
         ModifyShareUserCSPMOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifySkillScanAlertStatusOutcome CsipClient::ModifySkillScanAlertStatus(const ModifySkillScanAlertStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySkillScanAlertStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySkillScanAlertStatusResponse rsp = ModifySkillScanAlertStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySkillScanAlertStatusOutcome(rsp);
+        else
+            return ModifySkillScanAlertStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySkillScanAlertStatusOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifySkillScanAlertStatusAsync(const ModifySkillScanAlertStatusRequest& request, const ModifySkillScanAlertStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifySkillScanAlertStatusRequest&;
+    using Resp = ModifySkillScanAlertStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifySkillScanAlertStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifySkillScanAlertStatusOutcomeCallable CsipClient::ModifySkillScanAlertStatusCallable(const ModifySkillScanAlertStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifySkillScanAlertStatusOutcome>>();
+    ModifySkillScanAlertStatusAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifySkillScanAlertStatusRequest&,
+        ModifySkillScanAlertStatusOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -30040,6 +34190,56 @@ CsipClient::StopEDRScanTaskOutcomeCallable CsipClient::StopEDRScanTaskCallable(c
     return prom->get_future();
 }
 
+CsipClient::StopImageRegistryScanTaskOutcome CsipClient::StopImageRegistryScanTask(const StopImageRegistryScanTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopImageRegistryScanTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopImageRegistryScanTaskResponse rsp = StopImageRegistryScanTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopImageRegistryScanTaskOutcome(rsp);
+        else
+            return StopImageRegistryScanTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return StopImageRegistryScanTaskOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::StopImageRegistryScanTaskAsync(const StopImageRegistryScanTaskRequest& request, const StopImageRegistryScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StopImageRegistryScanTaskRequest&;
+    using Resp = StopImageRegistryScanTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StopImageRegistryScanTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::StopImageRegistryScanTaskOutcomeCallable CsipClient::StopImageRegistryScanTaskCallable(const StopImageRegistryScanTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StopImageRegistryScanTaskOutcome>>();
+    StopImageRegistryScanTaskAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const StopImageRegistryScanTaskRequest&,
+        StopImageRegistryScanTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::StopPreventUninstallOutcome CsipClient::StopPreventUninstall(const StopPreventUninstallRequest &request)
 {
     auto outcome = MakeRequest(request, "StopPreventUninstall");
@@ -30332,6 +34532,56 @@ CsipClient::SyncDspmUsersOutcomeCallable CsipClient::SyncDspmUsersCallable(const
         const CsipClient*,
         const SyncDspmUsersRequest&,
         SyncDspmUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::SyncImageRegistryOutcome CsipClient::SyncImageRegistry(const SyncImageRegistryRequest &request)
+{
+    auto outcome = MakeRequest(request, "SyncImageRegistry");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SyncImageRegistryResponse rsp = SyncImageRegistryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SyncImageRegistryOutcome(rsp);
+        else
+            return SyncImageRegistryOutcome(o.GetError());
+    }
+    else
+    {
+        return SyncImageRegistryOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::SyncImageRegistryAsync(const SyncImageRegistryRequest& request, const SyncImageRegistryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SyncImageRegistryRequest&;
+    using Resp = SyncImageRegistryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SyncImageRegistry", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::SyncImageRegistryOutcomeCallable CsipClient::SyncImageRegistryCallable(const SyncImageRegistryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SyncImageRegistryOutcome>>();
+    SyncImageRegistryAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const SyncImageRegistryRequest&,
+        SyncImageRegistryOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -25,7 +25,8 @@ using namespace std;
 RemoveNodesFromDBCustomClusterRequest::RemoveNodesFromDBCustomClusterRequest() :
     m_clusterIdHasBeenSet(false),
     m_nodeIdsHasBeenSet(false),
-    m_loginSettingsHasBeenSet(false)
+    m_loginSettingsHasBeenSet(false),
+    m_forceHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,14 @@ string RemoveNodesFromDBCustomClusterRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_loginSettings.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_forceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Force";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_force, allocator);
     }
 
 
@@ -120,6 +129,22 @@ void RemoveNodesFromDBCustomClusterRequest::SetLoginSettings(const LoginSettings
 bool RemoveNodesFromDBCustomClusterRequest::LoginSettingsHasBeenSet() const
 {
     return m_loginSettingsHasBeenSet;
+}
+
+bool RemoveNodesFromDBCustomClusterRequest::GetForce() const
+{
+    return m_force;
+}
+
+void RemoveNodesFromDBCustomClusterRequest::SetForce(const bool& _force)
+{
+    m_force = _force;
+    m_forceHasBeenSet = true;
+}
+
+bool RemoveNodesFromDBCustomClusterRequest::ForceHasBeenSet() const
+{
+    return m_forceHasBeenSet;
 }
 
 

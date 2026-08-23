@@ -29,7 +29,15 @@ ProxyAddress::ProxyAddress() :
     m_descriptionHasBeenSet(false),
     m_connectionPoolHasBeenSet(false),
     m_routesHasBeenSet(false),
-    m_connectionPoolLimitHasBeenSet(false)
+    m_connectionPoolLimitHasBeenSet(false),
+    m_rwSplitEnableHasBeenSet(false),
+    m_weightModeHasBeenSet(false),
+    m_roAutoAddHasBeenSet(false),
+    m_latencyRemoveHasBeenSet(false),
+    m_latencyRemoveTimeHasBeenSet(false),
+    m_minRouteNumHasBeenSet(false),
+    m_failOverHasBeenSet(false),
+    m_loadBalancePolicyHasBeenSet(false)
 {
 }
 
@@ -138,6 +146,86 @@ CoreInternalOutcome ProxyAddress::Deserialize(const rapidjson::Value &value)
         m_connectionPoolLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("RwSplitEnable") && !value["RwSplitEnable"].IsNull())
+    {
+        if (!value["RwSplitEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyAddress.RwSplitEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_rwSplitEnable = value["RwSplitEnable"].GetBool();
+        m_rwSplitEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("WeightMode") && !value["WeightMode"].IsNull())
+    {
+        if (!value["WeightMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyAddress.WeightMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_weightMode = string(value["WeightMode"].GetString());
+        m_weightModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RoAutoAdd") && !value["RoAutoAdd"].IsNull())
+    {
+        if (!value["RoAutoAdd"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyAddress.RoAutoAdd` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_roAutoAdd = value["RoAutoAdd"].GetBool();
+        m_roAutoAddHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatencyRemove") && !value["LatencyRemove"].IsNull())
+    {
+        if (!value["LatencyRemove"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyAddress.LatencyRemove` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_latencyRemove = value["LatencyRemove"].GetBool();
+        m_latencyRemoveHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatencyRemoveTime") && !value["LatencyRemoveTime"].IsNull())
+    {
+        if (!value["LatencyRemoveTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyAddress.LatencyRemoveTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_latencyRemoveTime = value["LatencyRemoveTime"].GetUint64();
+        m_latencyRemoveTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MinRouteNum") && !value["MinRouteNum"].IsNull())
+    {
+        if (!value["MinRouteNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyAddress.MinRouteNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_minRouteNum = value["MinRouteNum"].GetUint64();
+        m_minRouteNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("FailOver") && !value["FailOver"].IsNull())
+    {
+        if (!value["FailOver"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyAddress.FailOver` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_failOver = value["FailOver"].GetBool();
+        m_failOverHasBeenSet = true;
+    }
+
+    if (value.HasMember("LoadBalancePolicy") && !value["LoadBalancePolicy"].IsNull())
+    {
+        if (!value["LoadBalancePolicy"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyAddress.LoadBalancePolicy` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_loadBalancePolicy = value["LoadBalancePolicy"].GetInt64();
+        m_loadBalancePolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +310,70 @@ void ProxyAddress::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ConnectionPoolLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_connectionPoolLimit, allocator);
+    }
+
+    if (m_rwSplitEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RwSplitEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rwSplitEnable, allocator);
+    }
+
+    if (m_weightModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WeightMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_weightMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roAutoAddHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoAutoAdd";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_roAutoAdd, allocator);
+    }
+
+    if (m_latencyRemoveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatencyRemove";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_latencyRemove, allocator);
+    }
+
+    if (m_latencyRemoveTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatencyRemoveTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_latencyRemoveTime, allocator);
+    }
+
+    if (m_minRouteNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinRouteNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_minRouteNum, allocator);
+    }
+
+    if (m_failOverHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailOver";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_failOver, allocator);
+    }
+
+    if (m_loadBalancePolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalancePolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_loadBalancePolicy, allocator);
     }
 
 }
@@ -369,5 +521,133 @@ void ProxyAddress::SetConnectionPoolLimit(const uint64_t& _connectionPoolLimit)
 bool ProxyAddress::ConnectionPoolLimitHasBeenSet() const
 {
     return m_connectionPoolLimitHasBeenSet;
+}
+
+bool ProxyAddress::GetRwSplitEnable() const
+{
+    return m_rwSplitEnable;
+}
+
+void ProxyAddress::SetRwSplitEnable(const bool& _rwSplitEnable)
+{
+    m_rwSplitEnable = _rwSplitEnable;
+    m_rwSplitEnableHasBeenSet = true;
+}
+
+bool ProxyAddress::RwSplitEnableHasBeenSet() const
+{
+    return m_rwSplitEnableHasBeenSet;
+}
+
+string ProxyAddress::GetWeightMode() const
+{
+    return m_weightMode;
+}
+
+void ProxyAddress::SetWeightMode(const string& _weightMode)
+{
+    m_weightMode = _weightMode;
+    m_weightModeHasBeenSet = true;
+}
+
+bool ProxyAddress::WeightModeHasBeenSet() const
+{
+    return m_weightModeHasBeenSet;
+}
+
+bool ProxyAddress::GetRoAutoAdd() const
+{
+    return m_roAutoAdd;
+}
+
+void ProxyAddress::SetRoAutoAdd(const bool& _roAutoAdd)
+{
+    m_roAutoAdd = _roAutoAdd;
+    m_roAutoAddHasBeenSet = true;
+}
+
+bool ProxyAddress::RoAutoAddHasBeenSet() const
+{
+    return m_roAutoAddHasBeenSet;
+}
+
+bool ProxyAddress::GetLatencyRemove() const
+{
+    return m_latencyRemove;
+}
+
+void ProxyAddress::SetLatencyRemove(const bool& _latencyRemove)
+{
+    m_latencyRemove = _latencyRemove;
+    m_latencyRemoveHasBeenSet = true;
+}
+
+bool ProxyAddress::LatencyRemoveHasBeenSet() const
+{
+    return m_latencyRemoveHasBeenSet;
+}
+
+uint64_t ProxyAddress::GetLatencyRemoveTime() const
+{
+    return m_latencyRemoveTime;
+}
+
+void ProxyAddress::SetLatencyRemoveTime(const uint64_t& _latencyRemoveTime)
+{
+    m_latencyRemoveTime = _latencyRemoveTime;
+    m_latencyRemoveTimeHasBeenSet = true;
+}
+
+bool ProxyAddress::LatencyRemoveTimeHasBeenSet() const
+{
+    return m_latencyRemoveTimeHasBeenSet;
+}
+
+uint64_t ProxyAddress::GetMinRouteNum() const
+{
+    return m_minRouteNum;
+}
+
+void ProxyAddress::SetMinRouteNum(const uint64_t& _minRouteNum)
+{
+    m_minRouteNum = _minRouteNum;
+    m_minRouteNumHasBeenSet = true;
+}
+
+bool ProxyAddress::MinRouteNumHasBeenSet() const
+{
+    return m_minRouteNumHasBeenSet;
+}
+
+bool ProxyAddress::GetFailOver() const
+{
+    return m_failOver;
+}
+
+void ProxyAddress::SetFailOver(const bool& _failOver)
+{
+    m_failOver = _failOver;
+    m_failOverHasBeenSet = true;
+}
+
+bool ProxyAddress::FailOverHasBeenSet() const
+{
+    return m_failOverHasBeenSet;
+}
+
+int64_t ProxyAddress::GetLoadBalancePolicy() const
+{
+    return m_loadBalancePolicy;
+}
+
+void ProxyAddress::SetLoadBalancePolicy(const int64_t& _loadBalancePolicy)
+{
+    m_loadBalancePolicy = _loadBalancePolicy;
+    m_loadBalancePolicyHasBeenSet = true;
+}
+
+bool ProxyAddress::LoadBalancePolicyHasBeenSet() const
+{
+    return m_loadBalancePolicyHasBeenSet;
 }
 

@@ -832,6 +832,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20220501/model/DescribeGPUInfoRequest.h
   include/tencentcloud/tke/v20220501/model/Filter.h
   include/tencentcloud/tke/v20220501/model/ManagementConfig.h
+  include/tencentcloud/tke/v20220501/model/DetachApplicationRoleResponse.h
   include/tencentcloud/tke/v20220501/model/DeleteNodePoolRequest.h
   include/tencentcloud/tke/v20220501/model/SetMachineLoginResponse.h
   include/tencentcloud/tke/v20220501/model/Machine.h
@@ -859,6 +860,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20220501/model/LifecycleConfig.h
   include/tencentcloud/tke/v20220501/model/InstanceChargePrepaid.h
   include/tencentcloud/tke/v20220501/model/NodeCountSummary.h
+  include/tencentcloud/tke/v20220501/model/DetachApplicationRoleRequest.h
   include/tencentcloud/tke/v20220501/model/UpdateNativeNodePoolParam.h
   include/tencentcloud/tke/v20220501/model/HealthCheckPolicy.h
   include/tencentcloud/tke/v20220501/model/HealthCheckPolicyBinding.h
@@ -1680,6 +1682,7 @@ set(tke_src
   src/v20220501/model/DescribeGPUInfoRequest.cpp
   src/v20220501/model/Filter.cpp
   src/v20220501/model/ManagementConfig.cpp
+  src/v20220501/model/DetachApplicationRoleResponse.cpp
   src/v20220501/model/DeleteNodePoolRequest.cpp
   src/v20220501/model/SetMachineLoginResponse.cpp
   src/v20220501/model/Machine.cpp
@@ -1707,6 +1710,7 @@ set(tke_src
   src/v20220501/model/LifecycleConfig.cpp
   src/v20220501/model/InstanceChargePrepaid.cpp
   src/v20220501/model/NodeCountSummary.cpp
+  src/v20220501/model/DetachApplicationRoleRequest.cpp
   src/v20220501/model/UpdateNativeNodePoolParam.cpp
   src/v20220501/model/HealthCheckPolicy.cpp
   src/v20220501/model/HealthCheckPolicyBinding.cpp

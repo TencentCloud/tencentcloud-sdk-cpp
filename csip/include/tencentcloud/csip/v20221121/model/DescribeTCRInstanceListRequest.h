@@ -1,0 +1,216 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_CSIP_V20221121_MODEL_DESCRIBETCRINSTANCELISTREQUEST_H_
+#define TENCENTCLOUD_CSIP_V20221121_MODEL_DESCRIBETCRINSTANCELISTREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/csip/v20221121/model/Filter.h>
+
+
+namespace TencentCloud
+{
+    namespace Csip
+    {
+        namespace V20221121
+        {
+            namespace Model
+            {
+                /**
+                * DescribeTCRInstanceList请求参数结构体
+                */
+                class DescribeTCRInstanceListRequest : public AbstractModel
+                {
+                public:
+                    DescribeTCRInstanceListRequest();
+                    ~DescribeTCRInstanceListRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取<p>访问密钥Id</p>
+                     * @return AccessKey <p>访问密钥Id</p>
+                     * 
+                     */
+                    std::string GetAccessKey() const;
+
+                    /**
+                     * 设置<p>访问密钥Id</p>
+                     * @param _accessKey <p>访问密钥Id</p>
+                     * 
+                     */
+                    void SetAccessKey(const std::string& _accessKey);
+
+                    /**
+                     * 判断参数 AccessKey 是否已赋值
+                     * @return AccessKey 是否已赋值
+                     * 
+                     */
+                    bool AccessKeyHasBeenSet() const;
+
+                    /**
+                     * 获取<p>访问密钥Key</p>
+                     * @return SecretKey <p>访问密钥Key</p>
+                     * 
+                     */
+                    std::string GetSecretKey() const;
+
+                    /**
+                     * 设置<p>访问密钥Key</p>
+                     * @param _secretKey <p>访问密钥Key</p>
+                     * 
+                     */
+                    void SetSecretKey(const std::string& _secretKey);
+
+                    /**
+                     * 判断参数 SecretKey 是否已赋值
+                     * @return SecretKey 是否已赋值
+                     * 
+                     */
+                    bool SecretKeyHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集团账号的成员id</p>
+                     * @return MemberId <p>集团账号的成员id</p>
+                     * 
+                     */
+                    std::vector<std::string> GetMemberId() const;
+
+                    /**
+                     * 设置<p>集团账号的成员id</p>
+                     * @param _memberId <p>集团账号的成员id</p>
+                     * 
+                     */
+                    void SetMemberId(const std::vector<std::string>& _memberId);
+
+                    /**
+                     * 判断参数 MemberId 是否已赋值
+                     * @return MemberId 是否已赋值
+                     * 
+                     */
+                    bool MemberIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>镜像仓库所在region</p>
+                     * @return RegistryRegion <p>镜像仓库所在region</p>
+                     * 
+                     */
+                    std::vector<std::string> GetRegistryRegion() const;
+
+                    /**
+                     * 设置<p>镜像仓库所在region</p>
+                     * @param _registryRegion <p>镜像仓库所在region</p>
+                     * 
+                     */
+                    void SetRegistryRegion(const std::vector<std::string>& _registryRegion);
+
+                    /**
+                     * 判断参数 RegistryRegion 是否已赋值
+                     * @return RegistryRegion 是否已赋值
+                     * 
+                     */
+                    bool RegistryRegionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>镜像仓库id</p>
+                     * @return RegistryId <p>镜像仓库id</p>
+                     * 
+                     */
+                    std::string GetRegistryId() const;
+
+                    /**
+                     * 设置<p>镜像仓库id</p>
+                     * @param _registryId <p>镜像仓库id</p>
+                     * 
+                     */
+                    void SetRegistryId(const std::string& _registryId);
+
+                    /**
+                     * 判断参数 RegistryId 是否已赋值
+                     * @return RegistryId 是否已赋值
+                     * 
+                     */
+                    bool RegistryIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>筛选项</p>
+                     * @return Filter <p>筛选项</p>
+                     * 
+                     */
+                    Filter GetFilter() const;
+
+                    /**
+                     * 设置<p>筛选项</p>
+                     * @param _filter <p>筛选项</p>
+                     * 
+                     */
+                    void SetFilter(const Filter& _filter);
+
+                    /**
+                     * 判断参数 Filter 是否已赋值
+                     * @return Filter 是否已赋值
+                     * 
+                     */
+                    bool FilterHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * <p>访问密钥Id</p>
+                     */
+                    std::string m_accessKey;
+                    bool m_accessKeyHasBeenSet;
+
+                    /**
+                     * <p>访问密钥Key</p>
+                     */
+                    std::string m_secretKey;
+                    bool m_secretKeyHasBeenSet;
+
+                    /**
+                     * <p>集团账号的成员id</p>
+                     */
+                    std::vector<std::string> m_memberId;
+                    bool m_memberIdHasBeenSet;
+
+                    /**
+                     * <p>镜像仓库所在region</p>
+                     */
+                    std::vector<std::string> m_registryRegion;
+                    bool m_registryRegionHasBeenSet;
+
+                    /**
+                     * <p>镜像仓库id</p>
+                     */
+                    std::string m_registryId;
+                    bool m_registryIdHasBeenSet;
+
+                    /**
+                     * <p>筛选项</p>
+                     */
+                    Filter m_filter;
+                    bool m_filterHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_CSIP_V20221121_MODEL_DESCRIBETCRINSTANCELISTREQUEST_H_

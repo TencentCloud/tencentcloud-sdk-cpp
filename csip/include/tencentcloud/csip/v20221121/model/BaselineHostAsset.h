@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取<p>CWP（云镜）侧主机唯一标识 QUUID。</p>
-                     * @return QUUID <p>CWP（云镜）侧主机唯一标识 QUUID。</p>
+                     * 获取<p>主机唯一标识 QUUID。</p>
+                     * @return QUUID <p>主机唯一标识 QUUID。</p>
                      * 
                      */
                     std::string GetQUUID() const;
 
                     /**
-                     * 设置<p>CWP（云镜）侧主机唯一标识 QUUID。</p>
-                     * @param _qUUID <p>CWP（云镜）侧主机唯一标识 QUUID。</p>
+                     * 设置<p>主机唯一标识 QUUID。</p>
+                     * @param _qUUID <p>主机唯一标识 QUUID。</p>
                      * 
                      */
                     void SetQUUID(const std::string& _qUUID);
@@ -352,7 +352,7 @@ namespace TencentCloud
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * <p>CWP（云镜）侧主机唯一标识 QUUID。</p>
+                     * <p>主机唯一标识 QUUID。</p>
                      */
                     std::string m_qUUID;
                     bool m_qUUIDHasBeenSet;

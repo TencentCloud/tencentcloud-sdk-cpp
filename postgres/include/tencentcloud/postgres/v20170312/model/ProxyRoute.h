@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool WeightHasBeenSet() const;
 
                     /**
-                     * 获取<p>路由状态：available/unavailable</p>
-                     * @return Status <p>路由状态：available/unavailable</p>
+                     * 获取<p>路由状态：online/offline</p><p>枚举值：</p><ul><li>online： 节点处于在线状态</li><li>offline： 节点处于下线状态</li></ul>
+                     * @return Status <p>路由状态：online/offline</p><p>枚举值：</p><ul><li>online： 节点处于在线状态</li><li>offline： 节点处于下线状态</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置<p>路由状态：available/unavailable</p>
-                     * @param _status <p>路由状态：available/unavailable</p>
+                     * 设置<p>路由状态：online/offline</p><p>枚举值：</p><ul><li>online： 节点处于在线状态</li><li>offline： 节点处于下线状态</li></ul>
+                     * @param _status <p>路由状态：online/offline</p><p>枚举值：</p><ul><li>online： 节点处于在线状态</li><li>offline： 节点处于下线状态</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -151,7 +151,7 @@ namespace TencentCloud
                     bool m_weightHasBeenSet;
 
                     /**
-                     * <p>路由状态：available/unavailable</p>
+                     * <p>路由状态：online/offline</p><p>枚举值：</p><ul><li>online： 节点处于在线状态</li><li>offline： 节点处于下线状态</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

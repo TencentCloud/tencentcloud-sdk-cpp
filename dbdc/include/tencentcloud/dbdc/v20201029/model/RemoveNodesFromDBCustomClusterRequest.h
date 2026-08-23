@@ -106,6 +106,27 @@ namespace TencentCloud
                      */
                     bool LoginSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>当节点中还有业务 Pod 在运行，默认会拦截从集群中移除节点的操作。如果该参数为 true，表示强制执行此操作。</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul><p>默认值：false</p>
+                     * @return Force <p>当节点中还有业务 Pod 在运行，默认会拦截从集群中移除节点的操作。如果该参数为 true，表示强制执行此操作。</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetForce() const;
+
+                    /**
+                     * 设置<p>当节点中还有业务 Pod 在运行，默认会拦截从集群中移除节点的操作。如果该参数为 true，表示强制执行此操作。</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul><p>默认值：false</p>
+                     * @param _force <p>当节点中还有业务 Pod 在运行，默认会拦截从集群中移除节点的操作。如果该参数为 true，表示强制执行此操作。</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul><p>默认值：false</p>
+                     * 
+                     */
+                    void SetForce(const bool& _force);
+
+                    /**
+                     * 判断参数 Force 是否已赋值
+                     * @return Force 是否已赋值
+                     * 
+                     */
+                    bool ForceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +146,12 @@ namespace TencentCloud
                      */
                     LoginSettings m_loginSettings;
                     bool m_loginSettingsHasBeenSet;
+
+                    /**
+                     * <p>当节点中还有业务 Pod 在运行，默认会拦截从集群中移除节点的操作。如果该参数为 true，表示强制执行此操作。</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul><p>默认值：false</p>
+                     */
+                    bool m_force;
+                    bool m_forceHasBeenSet;
 
                 };
             }
