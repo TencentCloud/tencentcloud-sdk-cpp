@@ -41,7 +41,11 @@ CloudNativeAPIGatewayLLMModelAPI::CloudNativeAPIGatewayLLMModelAPI() :
     m_tagFilterHasBeenSet(false),
     m_logConfigHasBeenSet(false),
     m_logDesensitizeConfigHasBeenSet(false),
-    m_forwardDesensitizeConfigHasBeenSet(false)
+    m_forwardDesensitizeConfigHasBeenSet(false),
+    m_maxDocumentsConfigHasBeenSet(false),
+    m_sensitiveWordRouteHasBeenSet(false),
+    m_consumerGroupModelScopesHasBeenSet(false),
+    m_consumerInheritModelScopeHasBeenSet(false)
 {
 }
 
@@ -322,6 +326,77 @@ CoreInternalOutcome CloudNativeAPIGatewayLLMModelAPI::Deserialize(const rapidjso
         m_forwardDesensitizeConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxDocumentsConfig") && !value["MaxDocumentsConfig"].IsNull())
+    {
+        if (!value["MaxDocumentsConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelAPI.MaxDocumentsConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_maxDocumentsConfig.Deserialize(value["MaxDocumentsConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_maxDocumentsConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("SensitiveWordRoute") && !value["SensitiveWordRoute"].IsNull())
+    {
+        if (!value["SensitiveWordRoute"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelAPI.SensitiveWordRoute` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_sensitiveWordRoute.Deserialize(value["SensitiveWordRoute"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_sensitiveWordRouteHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConsumerGroupModelScopes") && !value["ConsumerGroupModelScopes"].IsNull())
+    {
+        if (!value["ConsumerGroupModelScopes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelAPI.ConsumerGroupModelScopes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ConsumerGroupModelScopes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AIGWAuthModelScopeItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_consumerGroupModelScopes.push_back(item);
+        }
+        m_consumerGroupModelScopesHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConsumerInheritModelScope") && !value["ConsumerInheritModelScope"].IsNull())
+    {
+        if (!value["ConsumerInheritModelScope"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelAPI.ConsumerInheritModelScope` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_consumerInheritModelScope.Deserialize(value["ConsumerInheritModelScope"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_consumerInheritModelScopeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -515,6 +590,48 @@ void CloudNativeAPIGatewayLLMModelAPI::ToJsonObject(rapidjson::Value &value, rap
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_forwardDesensitizeConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_maxDocumentsConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxDocumentsConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_maxDocumentsConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_sensitiveWordRouteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SensitiveWordRoute";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sensitiveWordRoute.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_consumerGroupModelScopesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumerGroupModelScopes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_consumerGroupModelScopes.begin(); itr != m_consumerGroupModelScopes.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_consumerInheritModelScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumerInheritModelScope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_consumerInheritModelScope.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -854,5 +971,69 @@ void CloudNativeAPIGatewayLLMModelAPI::SetForwardDesensitizeConfig(const AIGWFor
 bool CloudNativeAPIGatewayLLMModelAPI::ForwardDesensitizeConfigHasBeenSet() const
 {
     return m_forwardDesensitizeConfigHasBeenSet;
+}
+
+AIGWRerankMaxDocumentsConfig CloudNativeAPIGatewayLLMModelAPI::GetMaxDocumentsConfig() const
+{
+    return m_maxDocumentsConfig;
+}
+
+void CloudNativeAPIGatewayLLMModelAPI::SetMaxDocumentsConfig(const AIGWRerankMaxDocumentsConfig& _maxDocumentsConfig)
+{
+    m_maxDocumentsConfig = _maxDocumentsConfig;
+    m_maxDocumentsConfigHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelAPI::MaxDocumentsConfigHasBeenSet() const
+{
+    return m_maxDocumentsConfigHasBeenSet;
+}
+
+AIGWSensitiveWordRoute CloudNativeAPIGatewayLLMModelAPI::GetSensitiveWordRoute() const
+{
+    return m_sensitiveWordRoute;
+}
+
+void CloudNativeAPIGatewayLLMModelAPI::SetSensitiveWordRoute(const AIGWSensitiveWordRoute& _sensitiveWordRoute)
+{
+    m_sensitiveWordRoute = _sensitiveWordRoute;
+    m_sensitiveWordRouteHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelAPI::SensitiveWordRouteHasBeenSet() const
+{
+    return m_sensitiveWordRouteHasBeenSet;
+}
+
+vector<AIGWAuthModelScopeItem> CloudNativeAPIGatewayLLMModelAPI::GetConsumerGroupModelScopes() const
+{
+    return m_consumerGroupModelScopes;
+}
+
+void CloudNativeAPIGatewayLLMModelAPI::SetConsumerGroupModelScopes(const vector<AIGWAuthModelScopeItem>& _consumerGroupModelScopes)
+{
+    m_consumerGroupModelScopes = _consumerGroupModelScopes;
+    m_consumerGroupModelScopesHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelAPI::ConsumerGroupModelScopesHasBeenSet() const
+{
+    return m_consumerGroupModelScopesHasBeenSet;
+}
+
+AIGWConsumerModelScope CloudNativeAPIGatewayLLMModelAPI::GetConsumerInheritModelScope() const
+{
+    return m_consumerInheritModelScope;
+}
+
+void CloudNativeAPIGatewayLLMModelAPI::SetConsumerInheritModelScope(const AIGWConsumerModelScope& _consumerInheritModelScope)
+{
+    m_consumerInheritModelScope = _consumerInheritModelScope;
+    m_consumerInheritModelScopeHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelAPI::ConsumerInheritModelScopeHasBeenSet() const
+{
+    return m_consumerInheritModelScopeHasBeenSet;
 }
 

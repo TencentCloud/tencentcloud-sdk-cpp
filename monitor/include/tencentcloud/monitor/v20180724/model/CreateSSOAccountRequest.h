@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>用户账号 ID ，例如：10000000</p>
-                     * @return UserId <p>用户账号 ID ，例如：10000000</p>
+                     * 获取<p>用户子账号 ID ，例如：10000000</p>
+                     * @return UserId <p>用户子账号 ID ，例如：10000000</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置<p>用户账号 ID ，例如：10000000</p>
-                     * @param _userId <p>用户账号 ID ，例如：10000000</p>
+                     * 设置<p>用户子账号 ID ，例如：10000000</p>
+                     * @param _userId <p>用户子账号 ID ，例如：10000000</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -136,7 +136,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * <p>用户账号 ID ，例如：10000000</p>
+                     * <p>用户子账号 ID ，例如：10000000</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目标识，英文名，以字母开头，可包含字母、数字和下划线，不能超过32个字符
-                     * @return ProjectName 项目标识，英文名，以字母开头，可包含字母、数字和下划线，不能超过32个字符
+                     * 获取<p>项目标识，英文名，以字母开头，可包含字母、数字和下划线，不能超过32个字符</p>
+                     * @return ProjectName <p>项目标识，英文名，以字母开头，可包含字母、数字和下划线，不能超过32个字符</p>
                      * 
                      */
                     std::string GetProjectName() const;
 
                     /**
-                     * 设置项目标识，英文名，以字母开头，可包含字母、数字和下划线，不能超过32个字符
-                     * @param _projectName 项目标识，英文名，以字母开头，可包含字母、数字和下划线，不能超过32个字符
+                     * 设置<p>项目标识，英文名，以字母开头，可包含字母、数字和下划线，不能超过32个字符</p>
+                     * @param _projectName <p>项目标识，英文名，以字母开头，可包含字母、数字和下划线，不能超过32个字符</p>
                      * 
                      */
                     void SetProjectName(const std::string& _projectName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ProjectNameHasBeenSet() const;
 
                     /**
-                     * 获取项目显示名称，可以为中文名，以字母开头，可包含字母、数字和下划线，不能超过32个字符
-                     * @return DisplayName 项目显示名称，可以为中文名，以字母开头，可包含字母、数字和下划线，不能超过32个字符
+                     * 获取<p>项目显示名称，可以为中文名，以字母开头，可包含字母、数字和下划线，不能超过32个字符</p>
+                     * @return DisplayName <p>项目显示名称，可以为中文名，以字母开头，可包含字母、数字和下划线，不能超过32个字符</p>
                      * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
-                     * 设置项目显示名称，可以为中文名，以字母开头，可包含字母、数字和下划线，不能超过32个字符
-                     * @param _displayName 项目显示名称，可以为中文名，以字母开头，可包含字母、数字和下划线，不能超过32个字符
+                     * 设置<p>项目显示名称，可以为中文名，以字母开头，可包含字母、数字和下划线，不能超过32个字符</p>
+                     * @param _displayName <p>项目显示名称，可以为中文名，以字母开头，可包含字母、数字和下划线，不能超过32个字符</p>
                      * 
                      */
                     void SetDisplayName(const std::string& _displayName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DisplayNameHasBeenSet() const;
 
                     /**
-                     * 获取项目模式，SIMPLE（默认）：简单模式 STANDARD：标准模式
-                     * @return ProjectModel 项目模式，SIMPLE（默认）：简单模式 STANDARD：标准模式
+                     * 获取<p>项目模式，SIMPLE（默认）：简单模式 STANDARD：标准模式</p>
+                     * @return ProjectModel <p>项目模式，SIMPLE（默认）：简单模式 STANDARD：标准模式</p>
                      * 
                      */
                     std::string GetProjectModel() const;
 
                     /**
-                     * 设置项目模式，SIMPLE（默认）：简单模式 STANDARD：标准模式
-                     * @param _projectModel 项目模式，SIMPLE（默认）：简单模式 STANDARD：标准模式
+                     * 设置<p>项目模式，SIMPLE（默认）：简单模式 STANDARD：标准模式</p>
+                     * @param _projectModel <p>项目模式，SIMPLE（默认）：简单模式 STANDARD：标准模式</p>
                      * 
                      */
                     void SetProjectModel(const std::string& _projectModel);
@@ -109,25 +109,52 @@ namespace TencentCloud
                      */
                     bool ProjectModelHasBeenSet() const;
 
+                    /**
+                     * 获取<p>项目调度模式，task：任务模式 workflow：工作流模式</p>
+                     * @return ScheduleMode <p>项目调度模式，task：任务模式 workflow：工作流模式</p>
+                     * 
+                     */
+                    std::string GetScheduleMode() const;
+
+                    /**
+                     * 设置<p>项目调度模式，task：任务模式 workflow：工作流模式</p>
+                     * @param _scheduleMode <p>项目调度模式，task：任务模式 workflow：工作流模式</p>
+                     * 
+                     */
+                    void SetScheduleMode(const std::string& _scheduleMode);
+
+                    /**
+                     * 判断参数 ScheduleMode 是否已赋值
+                     * @return ScheduleMode 是否已赋值
+                     * 
+                     */
+                    bool ScheduleModeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 项目标识，英文名，以字母开头，可包含字母、数字和下划线，不能超过32个字符
+                     * <p>项目标识，英文名，以字母开头，可包含字母、数字和下划线，不能超过32个字符</p>
                      */
                     std::string m_projectName;
                     bool m_projectNameHasBeenSet;
 
                     /**
-                     * 项目显示名称，可以为中文名，以字母开头，可包含字母、数字和下划线，不能超过32个字符
+                     * <p>项目显示名称，可以为中文名，以字母开头，可包含字母、数字和下划线，不能超过32个字符</p>
                      */
                     std::string m_displayName;
                     bool m_displayNameHasBeenSet;
 
                     /**
-                     * 项目模式，SIMPLE（默认）：简单模式 STANDARD：标准模式
+                     * <p>项目模式，SIMPLE（默认）：简单模式 STANDARD：标准模式</p>
                      */
                     std::string m_projectModel;
                     bool m_projectModelHasBeenSet;
+
+                    /**
+                     * <p>项目调度模式，task：任务模式 workflow：工作流模式</p>
+                     */
+                    std::string m_scheduleMode;
+                    bool m_scheduleModeHasBeenSet;
 
                 };
             }

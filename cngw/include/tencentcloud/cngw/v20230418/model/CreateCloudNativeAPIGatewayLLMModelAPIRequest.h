@@ -27,6 +27,8 @@
 #include <tencentcloud/cngw/v20230418/model/AIGWCrossServiceFallbackConfig.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWTagFilter.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWLogConfig.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWRerankMaxDocumentsConfig.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWSensitiveWordRoute.h>
 
 
 namespace TencentCloud
@@ -342,6 +344,48 @@ namespace TencentCloud
                      */
                     bool LogConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Rerank场景最大文档数高级配置</p>
+                     * @return MaxDocumentsConfig <p>Rerank场景最大文档数高级配置</p>
+                     * 
+                     */
+                    AIGWRerankMaxDocumentsConfig GetMaxDocumentsConfig() const;
+
+                    /**
+                     * 设置<p>Rerank场景最大文档数高级配置</p>
+                     * @param _maxDocumentsConfig <p>Rerank场景最大文档数高级配置</p>
+                     * 
+                     */
+                    void SetMaxDocumentsConfig(const AIGWRerankMaxDocumentsConfig& _maxDocumentsConfig);
+
+                    /**
+                     * 判断参数 MaxDocumentsConfig 是否已赋值
+                     * @return MaxDocumentsConfig 是否已赋值
+                     * 
+                     */
+                    bool MaxDocumentsConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>敏感词路由配置</p>
+                     * @return SensitiveWordRoute <p>敏感词路由配置</p>
+                     * 
+                     */
+                    AIGWSensitiveWordRoute GetSensitiveWordRoute() const;
+
+                    /**
+                     * 设置<p>敏感词路由配置</p>
+                     * @param _sensitiveWordRoute <p>敏感词路由配置</p>
+                     * 
+                     */
+                    void SetSensitiveWordRoute(const AIGWSensitiveWordRoute& _sensitiveWordRoute);
+
+                    /**
+                     * 判断参数 SensitiveWordRoute 是否已赋值
+                     * @return SensitiveWordRoute 是否已赋值
+                     * 
+                     */
+                    bool SensitiveWordRouteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -427,6 +471,18 @@ namespace TencentCloud
                      */
                     AIGWLogConfig m_logConfig;
                     bool m_logConfigHasBeenSet;
+
+                    /**
+                     * <p>Rerank场景最大文档数高级配置</p>
+                     */
+                    AIGWRerankMaxDocumentsConfig m_maxDocumentsConfig;
+                    bool m_maxDocumentsConfigHasBeenSet;
+
+                    /**
+                     * <p>敏感词路由配置</p>
+                     */
+                    AIGWSensitiveWordRoute m_sensitiveWordRoute;
+                    bool m_sensitiveWordRouteHasBeenSet;
 
                 };
             }

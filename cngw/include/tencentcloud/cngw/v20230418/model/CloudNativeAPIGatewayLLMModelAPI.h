@@ -32,6 +32,10 @@
 #include <tencentcloud/cngw/v20230418/model/AIGWLogConfig.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWLogDesensitizeConfig.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWForwardDesensitizeConfig.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWRerankMaxDocumentsConfig.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWSensitiveWordRoute.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWAuthModelScopeItem.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWConsumerModelScope.h>
 
 
 namespace TencentCloud
@@ -495,6 +499,90 @@ namespace TencentCloud
                      */
                     bool ForwardDesensitizeConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>rerank documents 上限</p>
+                     * @return MaxDocumentsConfig <p>rerank documents 上限</p>
+                     * 
+                     */
+                    AIGWRerankMaxDocumentsConfig GetMaxDocumentsConfig() const;
+
+                    /**
+                     * 设置<p>rerank documents 上限</p>
+                     * @param _maxDocumentsConfig <p>rerank documents 上限</p>
+                     * 
+                     */
+                    void SetMaxDocumentsConfig(const AIGWRerankMaxDocumentsConfig& _maxDocumentsConfig);
+
+                    /**
+                     * 判断参数 MaxDocumentsConfig 是否已赋值
+                     * @return MaxDocumentsConfig 是否已赋值
+                     * 
+                     */
+                    bool MaxDocumentsConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>敏感词路由配置</p>
+                     * @return SensitiveWordRoute <p>敏感词路由配置</p>
+                     * 
+                     */
+                    AIGWSensitiveWordRoute GetSensitiveWordRoute() const;
+
+                    /**
+                     * 设置<p>敏感词路由配置</p>
+                     * @param _sensitiveWordRoute <p>敏感词路由配置</p>
+                     * 
+                     */
+                    void SetSensitiveWordRoute(const AIGWSensitiveWordRoute& _sensitiveWordRoute);
+
+                    /**
+                     * 判断参数 SensitiveWordRoute 是否已赋值
+                     * @return SensitiveWordRoute 是否已赋值
+                     * 
+                     */
+                    bool SensitiveWordRouteHasBeenSet() const;
+
+                    /**
+                     * 获取<p>消费者组模型范围</p>
+                     * @return ConsumerGroupModelScopes <p>消费者组模型范围</p>
+                     * 
+                     */
+                    std::vector<AIGWAuthModelScopeItem> GetConsumerGroupModelScopes() const;
+
+                    /**
+                     * 设置<p>消费者组模型范围</p>
+                     * @param _consumerGroupModelScopes <p>消费者组模型范围</p>
+                     * 
+                     */
+                    void SetConsumerGroupModelScopes(const std::vector<AIGWAuthModelScopeItem>& _consumerGroupModelScopes);
+
+                    /**
+                     * 判断参数 ConsumerGroupModelScopes 是否已赋值
+                     * @return ConsumerGroupModelScopes 是否已赋值
+                     * 
+                     */
+                    bool ConsumerGroupModelScopesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>消费者继承的模型范围</p>
+                     * @return ConsumerInheritModelScope <p>消费者继承的模型范围</p>
+                     * 
+                     */
+                    AIGWConsumerModelScope GetConsumerInheritModelScope() const;
+
+                    /**
+                     * 设置<p>消费者继承的模型范围</p>
+                     * @param _consumerInheritModelScope <p>消费者继承的模型范围</p>
+                     * 
+                     */
+                    void SetConsumerInheritModelScope(const AIGWConsumerModelScope& _consumerInheritModelScope);
+
+                    /**
+                     * 判断参数 ConsumerInheritModelScope 是否已赋值
+                     * @return ConsumerInheritModelScope 是否已赋值
+                     * 
+                     */
+                    bool ConsumerInheritModelScopeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -622,6 +710,30 @@ namespace TencentCloud
                      */
                     AIGWForwardDesensitizeConfig m_forwardDesensitizeConfig;
                     bool m_forwardDesensitizeConfigHasBeenSet;
+
+                    /**
+                     * <p>rerank documents 上限</p>
+                     */
+                    AIGWRerankMaxDocumentsConfig m_maxDocumentsConfig;
+                    bool m_maxDocumentsConfigHasBeenSet;
+
+                    /**
+                     * <p>敏感词路由配置</p>
+                     */
+                    AIGWSensitiveWordRoute m_sensitiveWordRoute;
+                    bool m_sensitiveWordRouteHasBeenSet;
+
+                    /**
+                     * <p>消费者组模型范围</p>
+                     */
+                    std::vector<AIGWAuthModelScopeItem> m_consumerGroupModelScopes;
+                    bool m_consumerGroupModelScopesHasBeenSet;
+
+                    /**
+                     * <p>消费者继承的模型范围</p>
+                     */
+                    AIGWConsumerModelScope m_consumerInheritModelScope;
+                    bool m_consumerInheritModelScopeHasBeenSet;
 
                 };
             }

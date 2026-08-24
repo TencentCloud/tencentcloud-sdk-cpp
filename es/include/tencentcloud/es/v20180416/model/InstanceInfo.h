@@ -2501,6 +2501,48 @@ namespace TencentCloud
                      */
                     bool ServerCertSourceHasBeenSet() const;
 
+                    /**
+                     * 获取<p>集群待迁移的VIP</p>
+                     * @return OldEsVip <p>集群待迁移的VIP</p>
+                     * 
+                     */
+                    std::string GetOldEsVip() const;
+
+                    /**
+                     * 设置<p>集群待迁移的VIP</p>
+                     * @param _oldEsVip <p>集群待迁移的VIP</p>
+                     * 
+                     */
+                    void SetOldEsVip(const std::string& _oldEsVip);
+
+                    /**
+                     * 判断参数 OldEsVip 是否已赋值
+                     * @return OldEsVip 是否已赋值
+                     * 
+                     */
+                    bool OldEsVipHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群待迁移的TCP地址</p>
+                     * @return OldEsPrivateTcpUrl <p>集群待迁移的TCP地址</p>
+                     * 
+                     */
+                    std::string GetOldEsPrivateTcpUrl() const;
+
+                    /**
+                     * 设置<p>集群待迁移的TCP地址</p>
+                     * @param _oldEsPrivateTcpUrl <p>集群待迁移的TCP地址</p>
+                     * 
+                     */
+                    void SetOldEsPrivateTcpUrl(const std::string& _oldEsPrivateTcpUrl);
+
+                    /**
+                     * 判断参数 OldEsPrivateTcpUrl 是否已赋值
+                     * @return OldEsPrivateTcpUrl 是否已赋值
+                     * 
+                     */
+                    bool OldEsPrivateTcpUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -3191,6 +3233,18 @@ namespace TencentCloud
                      */
                     std::string m_serverCertSource;
                     bool m_serverCertSourceHasBeenSet;
+
+                    /**
+                     * <p>集群待迁移的VIP</p>
+                     */
+                    std::string m_oldEsVip;
+                    bool m_oldEsVipHasBeenSet;
+
+                    /**
+                     * <p>集群待迁移的TCP地址</p>
+                     */
+                    std::string m_oldEsPrivateTcpUrl;
+                    bool m_oldEsPrivateTcpUrlHasBeenSet;
 
                 };
             }

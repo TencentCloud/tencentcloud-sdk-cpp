@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20250806/model/WorkspaceExt.h>
 
 
 namespace TencentCloud
@@ -47,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目id
+                     * 获取<p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProjectId 项目id
+                     * @return ProjectId <p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目id
+                     * 设置<p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _projectId 项目id
+                     * @param _projectId <p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +73,18 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取项目标识，英文名
+                     * 获取<p>项目标识，英文名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProjectName 项目标识，英文名
+                     * @return ProjectName <p>项目标识，英文名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectName() const;
 
                     /**
-                     * 设置项目标识，英文名
+                     * 设置<p>项目标识，英文名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _projectName 项目标识，英文名
+                     * @param _projectName <p>项目标识，英文名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +98,18 @@ namespace TencentCloud
                     bool ProjectNameHasBeenSet() const;
 
                     /**
-                     * 获取项目显示名称，可以为中文名
+                     * 获取<p>项目显示名称，可以为中文名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DisplayName 项目显示名称，可以为中文名
+                     * @return DisplayName <p>项目显示名称，可以为中文名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
-                     * 设置项目显示名称，可以为中文名
+                     * 设置<p>项目显示名称，可以为中文名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _displayName 项目显示名称，可以为中文名
+                     * @param _displayName <p>项目显示名称，可以为中文名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +123,18 @@ namespace TencentCloud
                     bool DisplayNameHasBeenSet() const;
 
                     /**
-                     * 获取备注
+                     * 获取<p>备注</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 备注
+                     * @return Description <p>备注</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置备注
+                     * 设置<p>备注</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 备注
+                     * @param _description <p>备注</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +148,18 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间
+                     * @return CreateTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
+                     * 设置<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 创建时间
+                     * @param _createTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +173,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取项目创建人id
+                     * 获取<p>项目创建人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatorUin 项目创建人id
+                     * @return CreatorUin <p>项目创建人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatorUin() const;
 
                     /**
-                     * 设置项目创建人id
+                     * 设置<p>项目创建人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _creatorUin 项目创建人id
+                     * @param _creatorUin <p>项目创建人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +198,18 @@ namespace TencentCloud
                     bool CreatorUinHasBeenSet() const;
 
                     /**
-                     * 获取项目责任人id
+                     * 获取<p>项目责任人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProjectOwnerUin 项目责任人id
+                     * @return ProjectOwnerUin <p>项目责任人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectOwnerUin() const;
 
                     /**
-                     * 设置项目责任人id
+                     * 设置<p>项目责任人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _projectOwnerUin 项目责任人id
+                     * @param _projectOwnerUin <p>项目责任人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,15 +223,15 @@ namespace TencentCloud
                     bool ProjectOwnerUinHasBeenSet() const;
 
                     /**
-                     * 获取项目状态：0：禁用，1：启用，-3:禁用中，2：启用中
-                     * @return Status 项目状态：0：禁用，1：启用，-3:禁用中，2：启用中
+                     * 获取<p>项目状态：0：禁用，1：启用，-3:禁用中，2：启用中</p>
+                     * @return Status <p>项目状态：0：禁用，1：启用，-3:禁用中，2：启用中</p>
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置项目状态：0：禁用，1：启用，-3:禁用中，2：启用中
-                     * @param _status 项目状态：0：禁用，1：启用，-3:禁用中，2：启用中
+                     * 设置<p>项目状态：0：禁用，1：启用，-3:禁用中，2：启用中</p>
+                     * @param _status <p>项目状态：0：禁用，1：启用，-3:禁用中，2：启用中</p>
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -243,18 +244,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取项目模式，SIMPLE：简单模式 STANDARD：标准模式
+                     * 获取<p>项目模式，SIMPLE：简单模式 STANDARD：标准模式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProjectModel 项目模式，SIMPLE：简单模式 STANDARD：标准模式
+                     * @return ProjectModel <p>项目模式，SIMPLE：简单模式 STANDARD：标准模式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectModel() const;
 
                     /**
-                     * 设置项目模式，SIMPLE：简单模式 STANDARD：标准模式
+                     * 设置<p>项目模式，SIMPLE：简单模式 STANDARD：标准模式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _projectModel 项目模式，SIMPLE：简单模式 STANDARD：标准模式
+                     * @param _projectModel <p>项目模式，SIMPLE：简单模式 STANDARD：标准模式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -267,69 +268,96 @@ namespace TencentCloud
                      */
                     bool ProjectModelHasBeenSet() const;
 
+                    /**
+                     * 获取<p>项目的额外配置参数，{Key: &quot;scheduleMode&quot;, Value: &quot;task|workflow&quot;}</p>
+                     * @return WorkspaceExt <p>项目的额外配置参数，{Key: &quot;scheduleMode&quot;, Value: &quot;task|workflow&quot;}</p>
+                     * 
+                     */
+                    std::vector<WorkspaceExt> GetWorkspaceExt() const;
+
+                    /**
+                     * 设置<p>项目的额外配置参数，{Key: &quot;scheduleMode&quot;, Value: &quot;task|workflow&quot;}</p>
+                     * @param _workspaceExt <p>项目的额外配置参数，{Key: &quot;scheduleMode&quot;, Value: &quot;task|workflow&quot;}</p>
+                     * 
+                     */
+                    void SetWorkspaceExt(const std::vector<WorkspaceExt>& _workspaceExt);
+
+                    /**
+                     * 判断参数 WorkspaceExt 是否已赋值
+                     * @return WorkspaceExt 是否已赋值
+                     * 
+                     */
+                    bool WorkspaceExtHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 项目id
+                     * <p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 项目标识，英文名
+                     * <p>项目标识，英文名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectName;
                     bool m_projectNameHasBeenSet;
 
                     /**
-                     * 项目显示名称，可以为中文名
+                     * <p>项目显示名称，可以为中文名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_displayName;
                     bool m_displayNameHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 项目创建人id
+                     * <p>项目创建人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creatorUin;
                     bool m_creatorUinHasBeenSet;
 
                     /**
-                     * 项目责任人id
+                     * <p>项目责任人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectOwnerUin;
                     bool m_projectOwnerUinHasBeenSet;
 
                     /**
-                     * 项目状态：0：禁用，1：启用，-3:禁用中，2：启用中
+                     * <p>项目状态：0：禁用，1：启用，-3:禁用中，2：启用中</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 项目模式，SIMPLE：简单模式 STANDARD：标准模式
+                     * <p>项目模式，SIMPLE：简单模式 STANDARD：标准模式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectModel;
                     bool m_projectModelHasBeenSet;
+
+                    /**
+                     * <p>项目的额外配置参数，{Key: &quot;scheduleMode&quot;, Value: &quot;task|workflow&quot;}</p>
+                     */
+                    std::vector<WorkspaceExt> m_workspaceExt;
+                    bool m_workspaceExtHasBeenSet;
 
                 };
             }

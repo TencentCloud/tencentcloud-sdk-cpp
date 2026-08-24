@@ -29,6 +29,7 @@
 #include <tencentcloud/ags/v20250920/model/StorageMount.h>
 #include <tencentcloud/ags/v20250920/model/CustomConfigurationDetail.h>
 #include <tencentcloud/ags/v20250920/model/LogConfiguration.h>
+#include <tencentcloud/ags/v20250920/model/ComputerConfiguration.h>
 
 
 namespace TencentCloud
@@ -367,6 +368,27 @@ namespace TencentCloud
                     bool LogConfigurationHasBeenSet() const;
 
                     /**
+                     * 获取<p>桌面电脑环境类沙箱配置</p>
+                     * @return ComputerConfiguration <p>桌面电脑环境类沙箱配置</p>
+                     * 
+                     */
+                    ComputerConfiguration GetComputerConfiguration() const;
+
+                    /**
+                     * 设置<p>桌面电脑环境类沙箱配置</p>
+                     * @param _computerConfiguration <p>桌面电脑环境类沙箱配置</p>
+                     * 
+                     */
+                    void SetComputerConfiguration(const ComputerConfiguration& _computerConfiguration);
+
+                    /**
+                     * 判断参数 ComputerConfiguration 是否已赋值
+                     * @return ComputerConfiguration 是否已赋值
+                     * 
+                     */
+                    bool ComputerConfigurationHasBeenSet() const;
+
+                    /**
                      * 获取<p>用于说明沙箱工具处于该状态的原因</p>
                      * @return StatusReason <p>用于说明沙箱工具处于该状态的原因</p>
                      * 
@@ -478,6 +500,12 @@ namespace TencentCloud
                      */
                     LogConfiguration m_logConfiguration;
                     bool m_logConfigurationHasBeenSet;
+
+                    /**
+                     * <p>桌面电脑环境类沙箱配置</p>
+                     */
+                    ComputerConfiguration m_computerConfiguration;
+                    bool m_computerConfigurationHasBeenSet;
 
                     /**
                      * <p>用于说明沙箱工具处于该状态的原因</p>

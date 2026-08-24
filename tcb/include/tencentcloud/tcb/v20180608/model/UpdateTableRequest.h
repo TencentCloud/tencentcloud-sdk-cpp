@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取表名
-                     * @return TableName 表名
+                     * 获取<p>表名</p>
+                     * @return TableName <p>表名</p>
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
-                     * 设置表名
-                     * @param _tableName 表名
+                     * 设置<p>表名</p>
+                     * @param _tableName <p>表名</p>
                      * 
                      */
                     void SetTableName(const std::string& _tableName);
@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool TableNameHasBeenSet() const;
 
                     /**
-                     * 获取FlexDB实例ID
-                     * @return Tag FlexDB实例ID
+                     * 获取<p>FlexDB实例ID</p>
+                     * @return Tag <p>FlexDB实例ID</p>
                      * 
                      */
                     std::string GetTag() const;
 
                     /**
-                     * 设置FlexDB实例ID
-                     * @param _tag FlexDB实例ID
+                     * 设置<p>FlexDB实例ID</p>
+                     * @param _tag <p>FlexDB实例ID</p>
                      * 
                      */
                     void SetTag(const std::string& _tag);
@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool TagHasBeenSet() const;
 
                     /**
-                     * 获取待删除索引信息
-                     * @return DropIndexes 待删除索引信息
+                     * 获取<p>待删除索引信息</p>
+                     * @return DropIndexes <p>待删除索引信息</p>
                      * 
                      */
                     std::vector<DropIndex> GetDropIndexes() const;
 
                     /**
-                     * 设置待删除索引信息
-                     * @param _dropIndexes 待删除索引信息
+                     * 设置<p>待删除索引信息</p>
+                     * @param _dropIndexes <p>待删除索引信息</p>
                      * 
                      */
                     void SetDropIndexes(const std::vector<DropIndex>& _dropIndexes);
@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool DropIndexesHasBeenSet() const;
 
                     /**
-                     * 获取待创建索引信息
-                     * @return CreateIndexes 待创建索引信息
+                     * 获取<p>待创建索引信息</p>
+                     * @return CreateIndexes <p>待创建索引信息</p>
                      * 
                      */
                     std::vector<CreateIndex> GetCreateIndexes() const;
 
                     /**
-                     * 设置待创建索引信息
-                     * @param _createIndexes 待创建索引信息
+                     * 设置<p>待创建索引信息</p>
+                     * @param _createIndexes <p>待创建索引信息</p>
                      * 
                      */
                     void SetCreateIndexes(const std::vector<CreateIndex>& _createIndexes);
@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool CreateIndexesHasBeenSet() const;
 
                     /**
-                     * 获取云开发环境ID
-                     * @return EnvId 云开发环境ID
+                     * 获取<p>云开发环境ID</p>
+                     * @return EnvId <p>云开发环境ID</p>
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
-                     * 设置云开发环境ID
-                     * @param _envId 云开发环境ID
+                     * 设置<p>云开发环境ID</p>
+                     * @param _envId <p>云开发环境ID</p>
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
-                     * 获取MongoDB连接器配置
-                     * @return MongoConnector MongoDB连接器配置
+                     * 获取<p>MongoDB连接器配置</p>
+                     * @return MongoConnector <p>MongoDB连接器配置</p>
                      * 
                      */
                     MongoConnector GetMongoConnector() const;
 
                     /**
-                     * 设置MongoDB连接器配置
-                     * @param _mongoConnector MongoDB连接器配置
+                     * 设置<p>MongoDB连接器配置</p>
+                     * @param _mongoConnector <p>MongoDB连接器配置</p>
                      * 
                      */
                     void SetMongoConnector(const MongoConnector& _mongoConnector);
@@ -174,37 +174,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 表名
+                     * <p>表名</p>
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
 
                     /**
-                     * FlexDB实例ID
+                     * <p>FlexDB实例ID</p>
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
-                     * 待删除索引信息
+                     * <p>待删除索引信息</p>
                      */
                     std::vector<DropIndex> m_dropIndexes;
                     bool m_dropIndexesHasBeenSet;
 
                     /**
-                     * 待创建索引信息
+                     * <p>待创建索引信息</p>
                      */
                     std::vector<CreateIndex> m_createIndexes;
                     bool m_createIndexesHasBeenSet;
 
                     /**
-                     * 云开发环境ID
+                     * <p>云开发环境ID</p>
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
 
                     /**
-                     * MongoDB连接器配置
+                     * <p>MongoDB连接器配置</p>
                      */
                     MongoConnector m_mongoConnector;
                     bool m_mongoConnectorHasBeenSet;

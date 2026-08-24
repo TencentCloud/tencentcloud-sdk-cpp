@@ -31,7 +31,8 @@ DDoSAttackEvent::DDoSAttackEvent() :
     m_policyIdHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
     m_areaHasBeenSet(false),
-    m_dDoSBlockDataHasBeenSet(false)
+    m_dDoSBlockDataHasBeenSet(false),
+    m_dDoSAttackDipsHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,19 @@ CoreInternalOutcome DDoSAttackEvent::Deserialize(const rapidjson::Value &value)
         m_dDoSBlockDataHasBeenSet = true;
     }
 
+    if (value.HasMember("DDoSAttackDips") && !value["DDoSAttackDips"].IsNull())
+    {
+        if (!value["DDoSAttackDips"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DDoSAttackEvent.DDoSAttackDips` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DDoSAttackDips"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_dDoSAttackDips.push_back((*itr).GetString());
+        }
+        m_dDoSAttackDipsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +273,19 @@ void DDoSAttackEvent::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_dDoSAttackDipsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DDoSAttackDips";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_dDoSAttackDips.begin(); itr != m_dDoSAttackDips.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -439,5 +466,21 @@ void DDoSAttackEvent::SetDDoSBlockData(const vector<DDoSBlockData>& _dDoSBlockDa
 bool DDoSAttackEvent::DDoSBlockDataHasBeenSet() const
 {
     return m_dDoSBlockDataHasBeenSet;
+}
+
+vector<string> DDoSAttackEvent::GetDDoSAttackDips() const
+{
+    return m_dDoSAttackDips;
+}
+
+void DDoSAttackEvent::SetDDoSAttackDips(const vector<string>& _dDoSAttackDips)
+{
+    m_dDoSAttackDips = _dDoSAttackDips;
+    m_dDoSAttackDipsHasBeenSet = true;
+}
+
+bool DDoSAttackEvent::DDoSAttackDipsHasBeenSet() const
+{
+    return m_dDoSAttackDipsHasBeenSet;
 }
 

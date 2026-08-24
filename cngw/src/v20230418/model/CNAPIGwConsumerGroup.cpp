@@ -27,7 +27,10 @@ CNAPIGwConsumerGroup::CNAPIGwConsumerGroup() :
     m_descriptionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
-    m_bindCountHasBeenSet(false)
+    m_bindCountHasBeenSet(false),
+    m_syncStatusHasBeenSet(false),
+    m_sourceTypeHasBeenSet(false),
+    m_syncedVersionHasBeenSet(false)
 {
 }
 
@@ -106,6 +109,36 @@ CoreInternalOutcome CNAPIGwConsumerGroup::Deserialize(const rapidjson::Value &va
         m_bindCountHasBeenSet = true;
     }
 
+    if (value.HasMember("SyncStatus") && !value["SyncStatus"].IsNull())
+    {
+        if (!value["SyncStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwConsumerGroup.SyncStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncStatus = string(value["SyncStatus"].GetString());
+        m_syncStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceType") && !value["SourceType"].IsNull())
+    {
+        if (!value["SourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwConsumerGroup.SourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceType = string(value["SourceType"].GetString());
+        m_sourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncedVersion") && !value["SyncedVersion"].IsNull())
+    {
+        if (!value["SyncedVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwConsumerGroup.SyncedVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncedVersion = string(value["SyncedVersion"].GetString());
+        m_syncedVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +200,30 @@ void CNAPIGwConsumerGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "BindCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bindCount, allocator);
+    }
+
+    if (m_syncStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_syncStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncedVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncedVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_syncedVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +339,53 @@ void CNAPIGwConsumerGroup::SetBindCount(const uint64_t& _bindCount)
 bool CNAPIGwConsumerGroup::BindCountHasBeenSet() const
 {
     return m_bindCountHasBeenSet;
+}
+
+string CNAPIGwConsumerGroup::GetSyncStatus() const
+{
+    return m_syncStatus;
+}
+
+void CNAPIGwConsumerGroup::SetSyncStatus(const string& _syncStatus)
+{
+    m_syncStatus = _syncStatus;
+    m_syncStatusHasBeenSet = true;
+}
+
+bool CNAPIGwConsumerGroup::SyncStatusHasBeenSet() const
+{
+    return m_syncStatusHasBeenSet;
+}
+
+string CNAPIGwConsumerGroup::GetSourceType() const
+{
+    return m_sourceType;
+}
+
+void CNAPIGwConsumerGroup::SetSourceType(const string& _sourceType)
+{
+    m_sourceType = _sourceType;
+    m_sourceTypeHasBeenSet = true;
+}
+
+bool CNAPIGwConsumerGroup::SourceTypeHasBeenSet() const
+{
+    return m_sourceTypeHasBeenSet;
+}
+
+string CNAPIGwConsumerGroup::GetSyncedVersion() const
+{
+    return m_syncedVersion;
+}
+
+void CNAPIGwConsumerGroup::SetSyncedVersion(const string& _syncedVersion)
+{
+    m_syncedVersion = _syncedVersion;
+    m_syncedVersionHasBeenSet = true;
+}
+
+bool CNAPIGwConsumerGroup::SyncedVersionHasBeenSet() const
+{
+    return m_syncedVersionHasBeenSet;
 }
 

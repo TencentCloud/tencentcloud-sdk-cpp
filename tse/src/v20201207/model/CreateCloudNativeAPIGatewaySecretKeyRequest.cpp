@@ -35,6 +35,12 @@ CreateCloudNativeAPIGatewaySecretKeyRequest::CreateCloudNativeAPIGatewaySecretKe
     m_jWTCredentialConfigHasBeenSet(false),
     m_oAuthCredentialConfigHasBeenSet(false),
     m_oIDCCredentialConfigHasBeenSet(false),
+    m_aKSKCredentialConfigHasBeenSet(false),
+    m_cAMCredentialConfigHasBeenSet(false),
+    m_bearerTokenCredentialConfigHasBeenSet(false),
+    m_customHeaderCredentialConfigHasBeenSet(false),
+    m_queryParamCredentialConfigHasBeenSet(false),
+    m_basicCredentialConfigHasBeenSet(false),
     m_providerHasBeenSet(false)
 {
 }
@@ -143,6 +149,60 @@ string CreateCloudNativeAPIGatewaySecretKeyRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_oIDCCredentialConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_aKSKCredentialConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AKSKCredentialConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aKSKCredentialConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_cAMCredentialConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CAMCredentialConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cAMCredentialConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_bearerTokenCredentialConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BearerTokenCredentialConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_bearerTokenCredentialConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_customHeaderCredentialConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomHeaderCredentialConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customHeaderCredentialConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_queryParamCredentialConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryParamCredentialConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_queryParamCredentialConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_basicCredentialConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BasicCredentialConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_basicCredentialConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_providerHasBeenSet)
@@ -351,6 +411,102 @@ void CreateCloudNativeAPIGatewaySecretKeyRequest::SetOIDCCredentialConfig(const 
 bool CreateCloudNativeAPIGatewaySecretKeyRequest::OIDCCredentialConfigHasBeenSet() const
 {
     return m_oIDCCredentialConfigHasBeenSet;
+}
+
+AIGWAKSKCredentialConfig CreateCloudNativeAPIGatewaySecretKeyRequest::GetAKSKCredentialConfig() const
+{
+    return m_aKSKCredentialConfig;
+}
+
+void CreateCloudNativeAPIGatewaySecretKeyRequest::SetAKSKCredentialConfig(const AIGWAKSKCredentialConfig& _aKSKCredentialConfig)
+{
+    m_aKSKCredentialConfig = _aKSKCredentialConfig;
+    m_aKSKCredentialConfigHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewaySecretKeyRequest::AKSKCredentialConfigHasBeenSet() const
+{
+    return m_aKSKCredentialConfigHasBeenSet;
+}
+
+AIGWCAMCredentialConfig CreateCloudNativeAPIGatewaySecretKeyRequest::GetCAMCredentialConfig() const
+{
+    return m_cAMCredentialConfig;
+}
+
+void CreateCloudNativeAPIGatewaySecretKeyRequest::SetCAMCredentialConfig(const AIGWCAMCredentialConfig& _cAMCredentialConfig)
+{
+    m_cAMCredentialConfig = _cAMCredentialConfig;
+    m_cAMCredentialConfigHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewaySecretKeyRequest::CAMCredentialConfigHasBeenSet() const
+{
+    return m_cAMCredentialConfigHasBeenSet;
+}
+
+AIGWBearerTokenCredentialConfig CreateCloudNativeAPIGatewaySecretKeyRequest::GetBearerTokenCredentialConfig() const
+{
+    return m_bearerTokenCredentialConfig;
+}
+
+void CreateCloudNativeAPIGatewaySecretKeyRequest::SetBearerTokenCredentialConfig(const AIGWBearerTokenCredentialConfig& _bearerTokenCredentialConfig)
+{
+    m_bearerTokenCredentialConfig = _bearerTokenCredentialConfig;
+    m_bearerTokenCredentialConfigHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewaySecretKeyRequest::BearerTokenCredentialConfigHasBeenSet() const
+{
+    return m_bearerTokenCredentialConfigHasBeenSet;
+}
+
+AIGWCustomHeaderCredentialConfig CreateCloudNativeAPIGatewaySecretKeyRequest::GetCustomHeaderCredentialConfig() const
+{
+    return m_customHeaderCredentialConfig;
+}
+
+void CreateCloudNativeAPIGatewaySecretKeyRequest::SetCustomHeaderCredentialConfig(const AIGWCustomHeaderCredentialConfig& _customHeaderCredentialConfig)
+{
+    m_customHeaderCredentialConfig = _customHeaderCredentialConfig;
+    m_customHeaderCredentialConfigHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewaySecretKeyRequest::CustomHeaderCredentialConfigHasBeenSet() const
+{
+    return m_customHeaderCredentialConfigHasBeenSet;
+}
+
+AIGWQueryParamCredentialConfig CreateCloudNativeAPIGatewaySecretKeyRequest::GetQueryParamCredentialConfig() const
+{
+    return m_queryParamCredentialConfig;
+}
+
+void CreateCloudNativeAPIGatewaySecretKeyRequest::SetQueryParamCredentialConfig(const AIGWQueryParamCredentialConfig& _queryParamCredentialConfig)
+{
+    m_queryParamCredentialConfig = _queryParamCredentialConfig;
+    m_queryParamCredentialConfigHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewaySecretKeyRequest::QueryParamCredentialConfigHasBeenSet() const
+{
+    return m_queryParamCredentialConfigHasBeenSet;
+}
+
+AIGWBasicCredentialConfig CreateCloudNativeAPIGatewaySecretKeyRequest::GetBasicCredentialConfig() const
+{
+    return m_basicCredentialConfig;
+}
+
+void CreateCloudNativeAPIGatewaySecretKeyRequest::SetBasicCredentialConfig(const AIGWBasicCredentialConfig& _basicCredentialConfig)
+{
+    m_basicCredentialConfig = _basicCredentialConfig;
+    m_basicCredentialConfigHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewaySecretKeyRequest::BasicCredentialConfigHasBeenSet() const
+{
+    return m_basicCredentialConfigHasBeenSet;
 }
 
 string CreateCloudNativeAPIGatewaySecretKeyRequest::GetProvider() const

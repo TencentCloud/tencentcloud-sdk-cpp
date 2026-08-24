@@ -29,7 +29,8 @@ OperationLog::OperationLog() :
     m_createTimeHasBeenSet(false),
     m_operandHasBeenSet(false),
     m_operationDescHasBeenSet(false),
-    m_securityLevelHasBeenSet(false)
+    m_securityLevelHasBeenSet(false),
+    m_operatorNameHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome OperationLog::Deserialize(const rapidjson::Value &value)
         m_securityLevelHasBeenSet = true;
     }
 
+    if (value.HasMember("OperatorName") && !value["OperatorName"].IsNull())
+    {
+        if (!value["OperatorName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OperationLog.OperatorName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operatorName = string(value["OperatorName"].GetString());
+        m_operatorNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void OperationLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "SecurityLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_securityLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatorNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperatorName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operatorName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void OperationLog::SetSecurityLevel(const string& _securityLevel)
 bool OperationLog::SecurityLevelHasBeenSet() const
 {
     return m_securityLevelHasBeenSet;
+}
+
+string OperationLog::GetOperatorName() const
+{
+    return m_operatorName;
+}
+
+void OperationLog::SetOperatorName(const string& _operatorName)
+{
+    m_operatorName = _operatorName;
+    m_operatorNameHasBeenSet = true;
+}
+
+bool OperationLog::OperatorNameHasBeenSet() const
+{
+    return m_operatorNameHasBeenSet;
 }
 

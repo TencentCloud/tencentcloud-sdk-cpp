@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建证书结果
-                     * @return Result 创建证书结果
+                     * 获取<p>创建证书结果</p>
+                     * @return Result <p>创建证书结果</p>
                      * 
                      */
                     CertificateInfo GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建证书结果
+                     * <p>创建证书结果</p>
                      */
                     CertificateInfo m_result;
                     bool m_resultHasBeenSet;

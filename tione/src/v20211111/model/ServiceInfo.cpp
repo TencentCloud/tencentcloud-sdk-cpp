@@ -61,7 +61,8 @@ ServiceInfo::ServiceInfo() :
     m_instancePerReplicasHasBeenSet(false),
     m_volumeMountsHasBeenSet(false),
     m_schedulingStrategyHasBeenSet(false),
-    m_nodeCountHasBeenSet(false)
+    m_nodeCountHasBeenSet(false),
+    m_inferTemplateIdHasBeenSet(false)
 {
 }
 
@@ -631,6 +632,16 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
         m_nodeCountHasBeenSet = true;
     }
 
+    if (value.HasMember("InferTemplateId") && !value["InferTemplateId"].IsNull())
+    {
+        if (!value["InferTemplateId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.InferTemplateId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inferTemplateId = string(value["InferTemplateId"].GetString());
+        m_inferTemplateIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1017,6 +1028,14 @@ void ServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "NodeCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nodeCount, allocator);
+    }
+
+    if (m_inferTemplateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InferTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inferTemplateId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1676,5 +1695,21 @@ void ServiceInfo::SetNodeCount(const int64_t& _nodeCount)
 bool ServiceInfo::NodeCountHasBeenSet() const
 {
     return m_nodeCountHasBeenSet;
+}
+
+string ServiceInfo::GetInferTemplateId() const
+{
+    return m_inferTemplateId;
+}
+
+void ServiceInfo::SetInferTemplateId(const string& _inferTemplateId)
+{
+    m_inferTemplateId = _inferTemplateId;
+    m_inferTemplateIdHasBeenSet = true;
+}
+
+bool ServiceInfo::InferTemplateIdHasBeenSet() const
+{
+    return m_inferTemplateIdHasBeenSet;
 }
 

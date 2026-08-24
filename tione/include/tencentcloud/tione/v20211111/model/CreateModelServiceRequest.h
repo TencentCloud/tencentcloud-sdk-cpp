@@ -1046,6 +1046,27 @@ namespace TencentCloud
                      */
                     bool ResourceSupplyAttributeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>推理模板 ID</p>
+                     * @return InferTemplateId <p>推理模板 ID</p>
+                     * 
+                     */
+                    std::string GetInferTemplateId() const;
+
+                    /**
+                     * 设置<p>推理模板 ID</p>
+                     * @param _inferTemplateId <p>推理模板 ID</p>
+                     * 
+                     */
+                    void SetInferTemplateId(const std::string& _inferTemplateId);
+
+                    /**
+                     * 判断参数 InferTemplateId 是否已赋值
+                     * @return InferTemplateId 是否已赋值
+                     * 
+                     */
+                    bool InferTemplateIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1329,6 +1350,12 @@ namespace TencentCloud
                      */
                     ResourceSupplyAttribute m_resourceSupplyAttribute;
                     bool m_resourceSupplyAttributeHasBeenSet;
+
+                    /**
+                     * <p>推理模板 ID</p>
+                     */
+                    std::string m_inferTemplateId;
+                    bool m_inferTemplateIdHasBeenSet;
 
                 };
             }

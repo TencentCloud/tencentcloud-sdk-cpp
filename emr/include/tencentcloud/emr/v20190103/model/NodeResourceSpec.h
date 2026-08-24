@@ -191,6 +191,27 @@ namespace TencentCloud
                      */
                     bool SoftwareConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义主机名</p>
+                     * @return CustomNodeName <p>自定义主机名</p>
+                     * 
+                     */
+                    std::string GetCustomNodeName() const;
+
+                    /**
+                     * 设置<p>自定义主机名</p>
+                     * @param _customNodeName <p>自定义主机名</p>
+                     * 
+                     */
+                    void SetCustomNodeName(const std::string& _customNodeName);
+
+                    /**
+                     * 判断参数 CustomNodeName 是否已赋值
+                     * @return CustomNodeName 是否已赋值
+                     * 
+                     */
+                    bool CustomNodeNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     std::vector<ServiceDeploy> m_softwareConfig;
                     bool m_softwareConfigHasBeenSet;
+
+                    /**
+                     * <p>自定义主机名</p>
+                     */
+                    std::string m_customNodeName;
+                    bool m_customNodeNameHasBeenSet;
 
                 };
             }

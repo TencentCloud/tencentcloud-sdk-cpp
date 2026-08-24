@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取EMR实例ID
-                     * @return InstanceId EMR实例ID
+                     * 获取<p>EMR实例ID</p>
+                     * @return InstanceId <p>EMR实例ID</p>
                      * 
                      */
                     int64_t GetInstanceId() const;
 
                     /**
-                     * 设置EMR实例ID
-                     * @param _instanceId EMR实例ID
+                     * 设置<p>EMR实例ID</p>
+                     * @param _instanceId <p>EMR实例ID</p>
                      * 
                      */
                     void SetInstanceId(const int64_t& _instanceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取操作名称
-                     * @return Operation 操作名称
+                     * 获取<p>操作名称</p>
+                     * @return Operation <p>操作名称</p>
                      * 
                      */
                     std::string GetOperation() const;
 
                     /**
-                     * 设置操作名称
-                     * @param _operation 操作名称
+                     * 设置<p>操作名称</p>
+                     * @param _operation <p>操作名称</p>
                      * 
                      */
                     void SetOperation(const std::string& _operation);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool OperationHasBeenSet() const;
 
                     /**
-                     * 获取操作类型
-                     * @return OperationType 操作类型
+                     * 获取<p>操作类型</p>
+                     * @return OperationType <p>操作类型</p>
                      * 
                      */
                     int64_t GetOperationType() const;
 
                     /**
-                     * 设置操作类型
-                     * @param _operationType 操作类型
+                     * 设置<p>操作类型</p>
+                     * @param _operationType <p>操作类型</p>
                      * 
                      */
                     void SetOperationType(const int64_t& _operationType);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool OperationTypeHasBeenSet() const;
 
                     /**
-                     * 获取用户类型
-                     * @return UserType 用户类型
+                     * 获取<p>用户类型</p>
+                     * @return UserType <p>用户类型</p>
                      * 
                      */
                     int64_t GetUserType() const;
 
                     /**
-                     * 设置用户类型
-                     * @param _userType 用户类型
+                     * 设置<p>用户类型</p>
+                     * @param _userType <p>用户类型</p>
                      * 
                      */
                     void SetUserType(const int64_t& _userType);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool UserTypeHasBeenSet() const;
 
                     /**
-                     * 获取操作者
-                     * @return Operator 操作者
+                     * 获取<p>操作者</p>
+                     * @return Operator <p>操作者</p>
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者
-                     * @param _operator 操作者
+                     * 设置<p>操作者</p>
+                     * @param _operator <p>操作者</p>
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取操作时间
-                     * @return CreateTime 操作时间
+                     * 获取<p>操作时间</p>
+                     * @return CreateTime <p>操作时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置操作时间
-                     * @param _createTime 操作时间
+                     * 设置<p>操作时间</p>
+                     * @param _createTime <p>操作时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取操作对象
-                     * @return Operand 操作对象
+                     * 获取<p>操作对象</p>
+                     * @return Operand <p>操作对象</p>
                      * 
                      */
                     std::string GetOperand() const;
 
                     /**
-                     * 设置操作对象
-                     * @param _operand 操作对象
+                     * 设置<p>操作对象</p>
+                     * @param _operand <p>操作对象</p>
                      * 
                      */
                     void SetOperand(const std::string& _operand);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool OperandHasBeenSet() const;
 
                     /**
-                     * 获取操作详情
-                     * @return OperationDesc 操作详情
+                     * 获取<p>操作详情</p>
+                     * @return OperationDesc <p>操作详情</p>
                      * 
                      */
                     std::string GetOperationDesc() const;
 
                     /**
-                     * 设置操作详情
-                     * @param _operationDesc 操作详情
+                     * 设置<p>操作详情</p>
+                     * @param _operationDesc <p>操作详情</p>
                      * 
                      */
                     void SetOperationDesc(const std::string& _operationDesc);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool OperationDescHasBeenSet() const;
 
                     /**
-                     * 获取安全级别
-                     * @return SecurityLevel 安全级别
+                     * 获取<p>安全级别</p>
+                     * @return SecurityLevel <p>安全级别</p>
                      * 
                      */
                     std::string GetSecurityLevel() const;
 
                     /**
-                     * 设置安全级别
-                     * @param _securityLevel 安全级别
+                     * 设置<p>安全级别</p>
+                     * @param _securityLevel <p>安全级别</p>
                      * 
                      */
                     void SetSecurityLevel(const std::string& _securityLevel);
@@ -235,61 +235,88 @@ namespace TencentCloud
                      */
                     bool SecurityLevelHasBeenSet() const;
 
+                    /**
+                     * 获取<p>操作者名称</p>
+                     * @return OperatorName <p>操作者名称</p>
+                     * 
+                     */
+                    std::string GetOperatorName() const;
+
+                    /**
+                     * 设置<p>操作者名称</p>
+                     * @param _operatorName <p>操作者名称</p>
+                     * 
+                     */
+                    void SetOperatorName(const std::string& _operatorName);
+
+                    /**
+                     * 判断参数 OperatorName 是否已赋值
+                     * @return OperatorName 是否已赋值
+                     * 
+                     */
+                    bool OperatorNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * EMR实例ID
+                     * <p>EMR实例ID</p>
                      */
                     int64_t m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 操作名称
+                     * <p>操作名称</p>
                      */
                     std::string m_operation;
                     bool m_operationHasBeenSet;
 
                     /**
-                     * 操作类型
+                     * <p>操作类型</p>
                      */
                     int64_t m_operationType;
                     bool m_operationTypeHasBeenSet;
 
                     /**
-                     * 用户类型
+                     * <p>用户类型</p>
                      */
                     int64_t m_userType;
                     bool m_userTypeHasBeenSet;
 
                     /**
-                     * 操作者
+                     * <p>操作者</p>
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 操作时间
+                     * <p>操作时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 操作对象
+                     * <p>操作对象</p>
                      */
                     std::string m_operand;
                     bool m_operandHasBeenSet;
 
                     /**
-                     * 操作详情
+                     * <p>操作详情</p>
                      */
                     std::string m_operationDesc;
                     bool m_operationDescHasBeenSet;
 
                     /**
-                     * 安全级别
+                     * <p>安全级别</p>
                      */
                     std::string m_securityLevel;
                     bool m_securityLevelHasBeenSet;
+
+                    /**
+                     * <p>操作者名称</p>
+                     */
+                    std::string m_operatorName;
+                    bool m_operatorNameHasBeenSet;
 
                 };
             }

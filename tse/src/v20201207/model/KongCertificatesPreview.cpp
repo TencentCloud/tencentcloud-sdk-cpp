@@ -31,7 +31,10 @@ KongCertificatesPreview::KongCertificatesPreview() :
     m_createTimeHasBeenSet(false),
     m_issueTimeHasBeenSet(false),
     m_certSourceHasBeenSet(false),
-    m_certIdHasBeenSet(false)
+    m_certIdHasBeenSet(false),
+    m_certTypeHasBeenSet(false),
+    m_certUsageHasBeenSet(false),
+    m_referCountHasBeenSet(false)
 {
 }
 
@@ -153,6 +156,36 @@ CoreInternalOutcome KongCertificatesPreview::Deserialize(const rapidjson::Value 
         m_certIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CertType") && !value["CertType"].IsNull())
+    {
+        if (!value["CertType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KongCertificatesPreview.CertType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_certType = string(value["CertType"].GetString());
+        m_certTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CertUsage") && !value["CertUsage"].IsNull())
+    {
+        if (!value["CertUsage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KongCertificatesPreview.CertUsage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_certUsage = string(value["CertUsage"].GetString());
+        m_certUsageHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReferCount") && !value["ReferCount"].IsNull())
+    {
+        if (!value["ReferCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KongCertificatesPreview.ReferCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_referCount = value["ReferCount"].GetUint64();
+        m_referCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +284,30 @@ void KongCertificatesPreview::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "CertId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_certId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certUsageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertUsage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certUsage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_referCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReferCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_referCount, allocator);
     }
 
 }
@@ -430,5 +487,53 @@ void KongCertificatesPreview::SetCertId(const string& _certId)
 bool KongCertificatesPreview::CertIdHasBeenSet() const
 {
     return m_certIdHasBeenSet;
+}
+
+string KongCertificatesPreview::GetCertType() const
+{
+    return m_certType;
+}
+
+void KongCertificatesPreview::SetCertType(const string& _certType)
+{
+    m_certType = _certType;
+    m_certTypeHasBeenSet = true;
+}
+
+bool KongCertificatesPreview::CertTypeHasBeenSet() const
+{
+    return m_certTypeHasBeenSet;
+}
+
+string KongCertificatesPreview::GetCertUsage() const
+{
+    return m_certUsage;
+}
+
+void KongCertificatesPreview::SetCertUsage(const string& _certUsage)
+{
+    m_certUsage = _certUsage;
+    m_certUsageHasBeenSet = true;
+}
+
+bool KongCertificatesPreview::CertUsageHasBeenSet() const
+{
+    return m_certUsageHasBeenSet;
+}
+
+uint64_t KongCertificatesPreview::GetReferCount() const
+{
+    return m_referCount;
+}
+
+void KongCertificatesPreview::SetReferCount(const uint64_t& _referCount)
+{
+    m_referCount = _referCount;
+    m_referCountHasBeenSet = true;
+}
+
+bool KongCertificatesPreview::ReferCountHasBeenSet() const
+{
+    return m_referCountHasBeenSet;
 }
 

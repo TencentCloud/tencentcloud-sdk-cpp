@@ -43,7 +43,122 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>预付费总订单号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BigDealIds <p>预付费总订单号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetBigDealIds() const;
+
+                    /**
+                     * 判断参数 BigDealIds 是否已赋值
+                     * @return BigDealIds 是否已赋值
+                     * 
+                     */
+                    bool BigDealIdsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>冻结流水</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TranId <p>冻结流水</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTranId() const;
+
+                    /**
+                     * 判断参数 TranId 是否已赋值
+                     * @return TranId 是否已赋值
+                     * 
+                     */
+                    bool TranIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>订单号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DealNames <p>订单号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetDealNames() const;
+
+                    /**
+                     * 判断参数 DealNames 是否已赋值
+                     * @return DealNames 是否已赋值
+                     * 
+                     */
+                    bool DealNamesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>资源id</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceIds <p>资源id</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetResourceIds() const;
+
+                    /**
+                     * 判断参数 ResourceIds 是否已赋值
+                     * @return ResourceIds 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群id</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterIds <p>集群id</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetClusterIds() const;
+
+                    /**
+                     * 判断参数 ClusterIds 是否已赋值
+                     * @return ClusterIds 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>预付费总订单号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_bigDealIds;
+                    bool m_bigDealIdsHasBeenSet;
+
+                    /**
+                     * <p>冻结流水</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tranId;
+                    bool m_tranIdHasBeenSet;
+
+                    /**
+                     * <p>订单号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_dealNames;
+                    bool m_dealNamesHasBeenSet;
+
+                    /**
+                     * <p>资源id</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_resourceIds;
+                    bool m_resourceIdsHasBeenSet;
+
+                    /**
+                     * <p>集群id</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_clusterIds;
+                    bool m_clusterIdsHasBeenSet;
 
                 };
             }

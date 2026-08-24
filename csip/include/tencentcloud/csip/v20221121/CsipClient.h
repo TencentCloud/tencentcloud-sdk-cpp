@@ -131,6 +131,8 @@
 #include <tencentcloud/csip/v20221121/model/CreateDspmAssetIdentifyInfoExportJobResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmAssetsExportJobRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmAssetsExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmAuditFilterStrategyRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmAuditFilterStrategyResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmExportTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmExportTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmIdentifyCategoryRequest.h>
@@ -151,8 +153,12 @@
 #include <tencentcloud/csip/v20221121/model/CreateDspmIdentifyRuleResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmPersonalIdentifyRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmPersonalIdentifyResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmResourceRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmResourceResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmRiskExportJobRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmRiskExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmRiskStrategyRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmRiskStrategyResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmWhitelistStrategyRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmWhitelistStrategyResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateDynamicAssetsExportJobRequest.h>
@@ -261,8 +267,12 @@
 #include <tencentcloud/csip/v20221121/model/DeleteDspmApplyOrderResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDspmAssetAccountRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDspmAssetAccountResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmAuditFilterStrategyRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmAuditFilterStrategyResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDspmBackupLogListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDspmBackupLogListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmCkafkaConfigRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmCkafkaConfigResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDspmExportTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDspmExportTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDspmIdentifyCategoryRequest.h>
@@ -281,6 +291,10 @@
 #include <tencentcloud/csip/v20221121/model/DeleteDspmPersonalIdentifyResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDspmRestoreLogListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDspmRestoreLogListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmRiskStrategyRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmRiskStrategyResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmShareUserDataRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmShareUserDataResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDspmWhitelistStrategyRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDspmWhitelistStrategyResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteEDRRulesRequest.h>
@@ -687,10 +701,16 @@
 #include <tencentcloud/csip/v20221121/model/DescribeDspmAssetTableListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmAssetsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAuditFilterStrategyRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAuditFilterStrategyResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmBackupLogListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmBackupLogListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmBackupSettingRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmBackupSettingResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmCkafkaRouteListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmCkafkaRouteListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmCkafkaTopicListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmCkafkaTopicListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmDictionaryListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmDictionaryListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmExportTaskRequest.h>
@@ -719,14 +739,20 @@
 #include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyRuleListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyRuleTestResultRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyRuleTestResultResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmLogDeliveryTypeRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmLogDeliveryTypeResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmLogListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmLogListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmLogTypeConfigListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmLogTypeConfigListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmPayInfoRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmPayInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmPersonApplyHistoryRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmPersonApplyHistoryResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmPersonalIdentifyListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmPersonalIdentifyListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmResourceRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmResourceResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmRiskRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmRiskResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmRiskDetailRequest.h>
@@ -737,6 +763,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeDspmRiskStrategyGroupResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmRiskTendencyRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmRiskTendencyResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmSessionListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmSessionListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmStatisticsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmStatisticsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmSupportedAssetTypeRequest.h>
@@ -745,6 +773,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeDspmSyncAssetsStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmSyncUsersStatusRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmSyncUsersStatusResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmUserCkafkaInstanceListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmUserCkafkaInstanceListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmWhitelistStrategyRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmWhitelistStrategyResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDynamicAssetsRequest.h>
@@ -1221,8 +1251,16 @@
 #include <tencentcloud/csip/v20221121/model/ModifyDspmAssetLogDeliverySwitchResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmAssetSecurityAnalysisSwitchRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmAssetSecurityAnalysisSwitchResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmAuditFilterStrategyRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmAuditFilterStrategyResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmBackupSettingRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmBackupSettingResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmCkafkaSaveRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmCkafkaSaveResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmCkafkaStartRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmCkafkaStartResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmCkafkaStopRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmCkafkaStopResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyCategoryRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyCategoryResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyComplianceGroupRequest.h>
@@ -1243,6 +1281,8 @@
 #include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyRuleStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmIpInfoRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmIpInfoResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmLogDeliveryTypeRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmLogDeliveryTypeResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmPersonalIdentifyRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmPersonalIdentifyResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmRestoreLogTaskRequest.h>
@@ -1339,6 +1379,8 @@
 #include <tencentcloud/csip/v20221121/model/ModifySecurityScoreRuleResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyShareUserCSPMRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyShareUserCSPMResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyShareUserDspmRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyShareUserDspmResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifySkillScanAlertStatusRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifySkillScanAlertStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyUebaRuleSwitchRequest.h>
@@ -1379,6 +1421,8 @@
 #include <tencentcloud/csip/v20221121/model/ScanEDRTaskAgainResponse.h>
 #include <tencentcloud/csip/v20221121/model/SendDspmAssetLoginSmsCodeRequest.h>
 #include <tencentcloud/csip/v20221121/model/SendDspmAssetLoginSmsCodeResponse.h>
+#include <tencentcloud/csip/v20221121/model/SendDspmCkafkaTestRequest.h>
+#include <tencentcloud/csip/v20221121/model/SendDspmCkafkaTestResponse.h>
 #include <tencentcloud/csip/v20221121/model/StartOrModifyPreventUninstallRequest.h>
 #include <tencentcloud/csip/v20221121/model/StartOrModifyPreventUninstallResponse.h>
 #include <tencentcloud/csip/v20221121/model/StartOrModifyProcessDaemonRequest.h>
@@ -1595,6 +1639,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDspmAssetsExportJobResponse> CreateDspmAssetsExportJobOutcome;
                 typedef std::future<CreateDspmAssetsExportJobOutcome> CreateDspmAssetsExportJobOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateDspmAssetsExportJobRequest&, CreateDspmAssetsExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmAssetsExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDspmAuditFilterStrategyResponse> CreateDspmAuditFilterStrategyOutcome;
+                typedef std::future<CreateDspmAuditFilterStrategyOutcome> CreateDspmAuditFilterStrategyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateDspmAuditFilterStrategyRequest&, CreateDspmAuditFilterStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmAuditFilterStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDspmExportTaskResponse> CreateDspmExportTaskOutcome;
                 typedef std::future<CreateDspmExportTaskOutcome> CreateDspmExportTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateDspmExportTaskRequest&, CreateDspmExportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmExportTaskAsyncHandler;
@@ -1625,9 +1672,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDspmPersonalIdentifyResponse> CreateDspmPersonalIdentifyOutcome;
                 typedef std::future<CreateDspmPersonalIdentifyOutcome> CreateDspmPersonalIdentifyOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateDspmPersonalIdentifyRequest&, CreateDspmPersonalIdentifyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmPersonalIdentifyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDspmResourceResponse> CreateDspmResourceOutcome;
+                typedef std::future<CreateDspmResourceOutcome> CreateDspmResourceOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateDspmResourceRequest&, CreateDspmResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmResourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDspmRiskExportJobResponse> CreateDspmRiskExportJobOutcome;
                 typedef std::future<CreateDspmRiskExportJobOutcome> CreateDspmRiskExportJobOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateDspmRiskExportJobRequest&, CreateDspmRiskExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmRiskExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDspmRiskStrategyResponse> CreateDspmRiskStrategyOutcome;
+                typedef std::future<CreateDspmRiskStrategyOutcome> CreateDspmRiskStrategyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateDspmRiskStrategyRequest&, CreateDspmRiskStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmRiskStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDspmWhitelistStrategyResponse> CreateDspmWhitelistStrategyOutcome;
                 typedef std::future<CreateDspmWhitelistStrategyOutcome> CreateDspmWhitelistStrategyOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateDspmWhitelistStrategyRequest&, CreateDspmWhitelistStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmWhitelistStrategyAsyncHandler;
@@ -1790,9 +1843,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDspmAssetAccountResponse> DeleteDspmAssetAccountOutcome;
                 typedef std::future<DeleteDspmAssetAccountOutcome> DeleteDspmAssetAccountOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteDspmAssetAccountRequest&, DeleteDspmAssetAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmAssetAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDspmAuditFilterStrategyResponse> DeleteDspmAuditFilterStrategyOutcome;
+                typedef std::future<DeleteDspmAuditFilterStrategyOutcome> DeleteDspmAuditFilterStrategyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteDspmAuditFilterStrategyRequest&, DeleteDspmAuditFilterStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmAuditFilterStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDspmBackupLogListResponse> DeleteDspmBackupLogListOutcome;
                 typedef std::future<DeleteDspmBackupLogListOutcome> DeleteDspmBackupLogListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteDspmBackupLogListRequest&, DeleteDspmBackupLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmBackupLogListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDspmCkafkaConfigResponse> DeleteDspmCkafkaConfigOutcome;
+                typedef std::future<DeleteDspmCkafkaConfigOutcome> DeleteDspmCkafkaConfigOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteDspmCkafkaConfigRequest&, DeleteDspmCkafkaConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmCkafkaConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDspmExportTaskResponse> DeleteDspmExportTaskOutcome;
                 typedef std::future<DeleteDspmExportTaskOutcome> DeleteDspmExportTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteDspmExportTaskRequest&, DeleteDspmExportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmExportTaskAsyncHandler;
@@ -1820,6 +1879,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDspmRestoreLogListResponse> DeleteDspmRestoreLogListOutcome;
                 typedef std::future<DeleteDspmRestoreLogListOutcome> DeleteDspmRestoreLogListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteDspmRestoreLogListRequest&, DeleteDspmRestoreLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmRestoreLogListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDspmRiskStrategyResponse> DeleteDspmRiskStrategyOutcome;
+                typedef std::future<DeleteDspmRiskStrategyOutcome> DeleteDspmRiskStrategyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteDspmRiskStrategyRequest&, DeleteDspmRiskStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmRiskStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDspmShareUserDataResponse> DeleteDspmShareUserDataOutcome;
+                typedef std::future<DeleteDspmShareUserDataOutcome> DeleteDspmShareUserDataOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteDspmShareUserDataRequest&, DeleteDspmShareUserDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmShareUserDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDspmWhitelistStrategyResponse> DeleteDspmWhitelistStrategyOutcome;
                 typedef std::future<DeleteDspmWhitelistStrategyOutcome> DeleteDspmWhitelistStrategyOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteDspmWhitelistStrategyRequest&, DeleteDspmWhitelistStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmWhitelistStrategyAsyncHandler;
@@ -2429,12 +2494,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDspmAssetsResponse> DescribeDspmAssetsOutcome;
                 typedef std::future<DescribeDspmAssetsOutcome> DescribeDspmAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDspmAssetsRequest&, DescribeDspmAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmAuditFilterStrategyResponse> DescribeDspmAuditFilterStrategyOutcome;
+                typedef std::future<DescribeDspmAuditFilterStrategyOutcome> DescribeDspmAuditFilterStrategyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmAuditFilterStrategyRequest&, DescribeDspmAuditFilterStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAuditFilterStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDspmBackupLogListResponse> DescribeDspmBackupLogListOutcome;
                 typedef std::future<DescribeDspmBackupLogListOutcome> DescribeDspmBackupLogListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDspmBackupLogListRequest&, DescribeDspmBackupLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmBackupLogListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDspmBackupSettingResponse> DescribeDspmBackupSettingOutcome;
                 typedef std::future<DescribeDspmBackupSettingOutcome> DescribeDspmBackupSettingOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDspmBackupSettingRequest&, DescribeDspmBackupSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmBackupSettingAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmCkafkaRouteListResponse> DescribeDspmCkafkaRouteListOutcome;
+                typedef std::future<DescribeDspmCkafkaRouteListOutcome> DescribeDspmCkafkaRouteListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmCkafkaRouteListRequest&, DescribeDspmCkafkaRouteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmCkafkaRouteListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmCkafkaTopicListResponse> DescribeDspmCkafkaTopicListOutcome;
+                typedef std::future<DescribeDspmCkafkaTopicListOutcome> DescribeDspmCkafkaTopicListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmCkafkaTopicListRequest&, DescribeDspmCkafkaTopicListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmCkafkaTopicListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDspmDictionaryListResponse> DescribeDspmDictionaryListOutcome;
                 typedef std::future<DescribeDspmDictionaryListOutcome> DescribeDspmDictionaryListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDspmDictionaryListRequest&, DescribeDspmDictionaryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmDictionaryListAsyncHandler;
@@ -2477,9 +2551,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDspmIdentifyRuleTestResultResponse> DescribeDspmIdentifyRuleTestResultOutcome;
                 typedef std::future<DescribeDspmIdentifyRuleTestResultOutcome> DescribeDspmIdentifyRuleTestResultOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDspmIdentifyRuleTestResultRequest&, DescribeDspmIdentifyRuleTestResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmIdentifyRuleTestResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmLogDeliveryTypeResponse> DescribeDspmLogDeliveryTypeOutcome;
+                typedef std::future<DescribeDspmLogDeliveryTypeOutcome> DescribeDspmLogDeliveryTypeOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmLogDeliveryTypeRequest&, DescribeDspmLogDeliveryTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmLogDeliveryTypeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDspmLogListResponse> DescribeDspmLogListOutcome;
                 typedef std::future<DescribeDspmLogListOutcome> DescribeDspmLogListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDspmLogListRequest&, DescribeDspmLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmLogListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmLogTypeConfigListResponse> DescribeDspmLogTypeConfigListOutcome;
+                typedef std::future<DescribeDspmLogTypeConfigListOutcome> DescribeDspmLogTypeConfigListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmLogTypeConfigListRequest&, DescribeDspmLogTypeConfigListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmLogTypeConfigListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDspmPayInfoResponse> DescribeDspmPayInfoOutcome;
                 typedef std::future<DescribeDspmPayInfoOutcome> DescribeDspmPayInfoOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDspmPayInfoRequest&, DescribeDspmPayInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmPayInfoAsyncHandler;
@@ -2489,6 +2569,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDspmPersonalIdentifyListResponse> DescribeDspmPersonalIdentifyListOutcome;
                 typedef std::future<DescribeDspmPersonalIdentifyListOutcome> DescribeDspmPersonalIdentifyListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDspmPersonalIdentifyListRequest&, DescribeDspmPersonalIdentifyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmPersonalIdentifyListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmResourceResponse> DescribeDspmResourceOutcome;
+                typedef std::future<DescribeDspmResourceOutcome> DescribeDspmResourceOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmResourceRequest&, DescribeDspmResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmResourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDspmRiskResponse> DescribeDspmRiskOutcome;
                 typedef std::future<DescribeDspmRiskOutcome> DescribeDspmRiskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDspmRiskRequest&, DescribeDspmRiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmRiskAsyncHandler;
@@ -2504,6 +2587,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDspmRiskTendencyResponse> DescribeDspmRiskTendencyOutcome;
                 typedef std::future<DescribeDspmRiskTendencyOutcome> DescribeDspmRiskTendencyOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDspmRiskTendencyRequest&, DescribeDspmRiskTendencyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmRiskTendencyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmSessionListResponse> DescribeDspmSessionListOutcome;
+                typedef std::future<DescribeDspmSessionListOutcome> DescribeDspmSessionListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmSessionListRequest&, DescribeDspmSessionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmSessionListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDspmStatisticsResponse> DescribeDspmStatisticsOutcome;
                 typedef std::future<DescribeDspmStatisticsOutcome> DescribeDspmStatisticsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDspmStatisticsRequest&, DescribeDspmStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmStatisticsAsyncHandler;
@@ -2516,6 +2602,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDspmSyncUsersStatusResponse> DescribeDspmSyncUsersStatusOutcome;
                 typedef std::future<DescribeDspmSyncUsersStatusOutcome> DescribeDspmSyncUsersStatusOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDspmSyncUsersStatusRequest&, DescribeDspmSyncUsersStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmSyncUsersStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmUserCkafkaInstanceListResponse> DescribeDspmUserCkafkaInstanceListOutcome;
+                typedef std::future<DescribeDspmUserCkafkaInstanceListOutcome> DescribeDspmUserCkafkaInstanceListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmUserCkafkaInstanceListRequest&, DescribeDspmUserCkafkaInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmUserCkafkaInstanceListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDspmWhitelistStrategyResponse> DescribeDspmWhitelistStrategyOutcome;
                 typedef std::future<DescribeDspmWhitelistStrategyOutcome> DescribeDspmWhitelistStrategyOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDspmWhitelistStrategyRequest&, DescribeDspmWhitelistStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmWhitelistStrategyAsyncHandler;
@@ -3230,9 +3319,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDspmAssetSecurityAnalysisSwitchResponse> ModifyDspmAssetSecurityAnalysisSwitchOutcome;
                 typedef std::future<ModifyDspmAssetSecurityAnalysisSwitchOutcome> ModifyDspmAssetSecurityAnalysisSwitchOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyDspmAssetSecurityAnalysisSwitchRequest&, ModifyDspmAssetSecurityAnalysisSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmAssetSecurityAnalysisSwitchAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmAuditFilterStrategyResponse> ModifyDspmAuditFilterStrategyOutcome;
+                typedef std::future<ModifyDspmAuditFilterStrategyOutcome> ModifyDspmAuditFilterStrategyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmAuditFilterStrategyRequest&, ModifyDspmAuditFilterStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmAuditFilterStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDspmBackupSettingResponse> ModifyDspmBackupSettingOutcome;
                 typedef std::future<ModifyDspmBackupSettingOutcome> ModifyDspmBackupSettingOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyDspmBackupSettingRequest&, ModifyDspmBackupSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmBackupSettingAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmCkafkaSaveResponse> ModifyDspmCkafkaSaveOutcome;
+                typedef std::future<ModifyDspmCkafkaSaveOutcome> ModifyDspmCkafkaSaveOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmCkafkaSaveRequest&, ModifyDspmCkafkaSaveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmCkafkaSaveAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmCkafkaStartResponse> ModifyDspmCkafkaStartOutcome;
+                typedef std::future<ModifyDspmCkafkaStartOutcome> ModifyDspmCkafkaStartOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmCkafkaStartRequest&, ModifyDspmCkafkaStartOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmCkafkaStartAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmCkafkaStopResponse> ModifyDspmCkafkaStopOutcome;
+                typedef std::future<ModifyDspmCkafkaStopOutcome> ModifyDspmCkafkaStopOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmCkafkaStopRequest&, ModifyDspmCkafkaStopOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmCkafkaStopAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDspmIdentifyCategoryResponse> ModifyDspmIdentifyCategoryOutcome;
                 typedef std::future<ModifyDspmIdentifyCategoryOutcome> ModifyDspmIdentifyCategoryOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyDspmIdentifyCategoryRequest&, ModifyDspmIdentifyCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmIdentifyCategoryAsyncHandler;
@@ -3263,6 +3364,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDspmIpInfoResponse> ModifyDspmIpInfoOutcome;
                 typedef std::future<ModifyDspmIpInfoOutcome> ModifyDspmIpInfoOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyDspmIpInfoRequest&, ModifyDspmIpInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmIpInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmLogDeliveryTypeResponse> ModifyDspmLogDeliveryTypeOutcome;
+                typedef std::future<ModifyDspmLogDeliveryTypeOutcome> ModifyDspmLogDeliveryTypeOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmLogDeliveryTypeRequest&, ModifyDspmLogDeliveryTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmLogDeliveryTypeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDspmPersonalIdentifyResponse> ModifyDspmPersonalIdentifyOutcome;
                 typedef std::future<ModifyDspmPersonalIdentifyOutcome> ModifyDspmPersonalIdentifyOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyDspmPersonalIdentifyRequest&, ModifyDspmPersonalIdentifyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmPersonalIdentifyAsyncHandler;
@@ -3407,6 +3511,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyShareUserCSPMResponse> ModifyShareUserCSPMOutcome;
                 typedef std::future<ModifyShareUserCSPMOutcome> ModifyShareUserCSPMOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyShareUserCSPMRequest&, ModifyShareUserCSPMOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyShareUserCSPMAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyShareUserDspmResponse> ModifyShareUserDspmOutcome;
+                typedef std::future<ModifyShareUserDspmOutcome> ModifyShareUserDspmOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyShareUserDspmRequest&, ModifyShareUserDspmOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyShareUserDspmAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySkillScanAlertStatusResponse> ModifySkillScanAlertStatusOutcome;
                 typedef std::future<ModifySkillScanAlertStatusOutcome> ModifySkillScanAlertStatusOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifySkillScanAlertStatusRequest&, ModifySkillScanAlertStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySkillScanAlertStatusAsyncHandler;
@@ -3467,6 +3574,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SendDspmAssetLoginSmsCodeResponse> SendDspmAssetLoginSmsCodeOutcome;
                 typedef std::future<SendDspmAssetLoginSmsCodeOutcome> SendDspmAssetLoginSmsCodeOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::SendDspmAssetLoginSmsCodeRequest&, SendDspmAssetLoginSmsCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendDspmAssetLoginSmsCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::SendDspmCkafkaTestResponse> SendDspmCkafkaTestOutcome;
+                typedef std::future<SendDspmCkafkaTestOutcome> SendDspmCkafkaTestOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::SendDspmCkafkaTestRequest&, SendDspmCkafkaTestOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendDspmCkafkaTestAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartOrModifyPreventUninstallResponse> StartOrModifyPreventUninstallOutcome;
                 typedef std::future<StartOrModifyPreventUninstallOutcome> StartOrModifyPreventUninstallOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::StartOrModifyPreventUninstallRequest&, StartOrModifyPreventUninstallOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartOrModifyPreventUninstallAsyncHandler;
@@ -4019,6 +4129,15 @@ namespace TencentCloud
                 CreateDspmAssetsExportJobOutcomeCallable CreateDspmAssetsExportJobCallable(const Model::CreateDspmAssetsExportJobRequest& request);
 
                 /**
+                 *创建Dspm审计过滤策略
+                 * @param req CreateDspmAuditFilterStrategyRequest
+                 * @return CreateDspmAuditFilterStrategyOutcome
+                 */
+                CreateDspmAuditFilterStrategyOutcome CreateDspmAuditFilterStrategy(const Model::CreateDspmAuditFilterStrategyRequest &request);
+                void CreateDspmAuditFilterStrategyAsync(const Model::CreateDspmAuditFilterStrategyRequest& request, const CreateDspmAuditFilterStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDspmAuditFilterStrategyOutcomeCallable CreateDspmAuditFilterStrategyCallable(const Model::CreateDspmAuditFilterStrategyRequest& request);
+
+                /**
                  *创建日志导出任务
                  * @param req CreateDspmExportTaskRequest
                  * @return CreateDspmExportTaskOutcome
@@ -4109,6 +4228,15 @@ namespace TencentCloud
                 CreateDspmPersonalIdentifyOutcomeCallable CreateDspmPersonalIdentifyCallable(const Model::CreateDspmPersonalIdentifyRequest& request);
 
                 /**
+                 *创建Dspm实例
+                 * @param req CreateDspmResourceRequest
+                 * @return CreateDspmResourceOutcome
+                 */
+                CreateDspmResourceOutcome CreateDspmResource(const Model::CreateDspmResourceRequest &request);
+                void CreateDspmResourceAsync(const Model::CreateDspmResourceRequest& request, const CreateDspmResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDspmResourceOutcomeCallable CreateDspmResourceCallable(const Model::CreateDspmResourceRequest& request);
+
+                /**
                  *创建Dspm风险导出任务
                  * @param req CreateDspmRiskExportJobRequest
                  * @return CreateDspmRiskExportJobOutcome
@@ -4116,6 +4244,15 @@ namespace TencentCloud
                 CreateDspmRiskExportJobOutcome CreateDspmRiskExportJob(const Model::CreateDspmRiskExportJobRequest &request);
                 void CreateDspmRiskExportJobAsync(const Model::CreateDspmRiskExportJobRequest& request, const CreateDspmRiskExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDspmRiskExportJobOutcomeCallable CreateDspmRiskExportJobCallable(const Model::CreateDspmRiskExportJobRequest& request);
+
+                /**
+                 *创建Dspm自定义风险策略
+                 * @param req CreateDspmRiskStrategyRequest
+                 * @return CreateDspmRiskStrategyOutcome
+                 */
+                CreateDspmRiskStrategyOutcome CreateDspmRiskStrategy(const Model::CreateDspmRiskStrategyRequest &request);
+                void CreateDspmRiskStrategyAsync(const Model::CreateDspmRiskStrategyRequest& request, const CreateDspmRiskStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDspmRiskStrategyOutcomeCallable CreateDspmRiskStrategyCallable(const Model::CreateDspmRiskStrategyRequest& request);
 
                 /**
                  *创建Dspm白名单策略
@@ -4606,6 +4743,15 @@ namespace TencentCloud
                 DeleteDspmAssetAccountOutcomeCallable DeleteDspmAssetAccountCallable(const Model::DeleteDspmAssetAccountRequest& request);
 
                 /**
+                 *删除Dspm审计过滤策略
+                 * @param req DeleteDspmAuditFilterStrategyRequest
+                 * @return DeleteDspmAuditFilterStrategyOutcome
+                 */
+                DeleteDspmAuditFilterStrategyOutcome DeleteDspmAuditFilterStrategy(const Model::DeleteDspmAuditFilterStrategyRequest &request);
+                void DeleteDspmAuditFilterStrategyAsync(const Model::DeleteDspmAuditFilterStrategyRequest& request, const DeleteDspmAuditFilterStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDspmAuditFilterStrategyOutcomeCallable DeleteDspmAuditFilterStrategyCallable(const Model::DeleteDspmAuditFilterStrategyRequest& request);
+
+                /**
                  *删除备份日志
                  * @param req DeleteDspmBackupLogListRequest
                  * @return DeleteDspmBackupLogListOutcome
@@ -4613,6 +4759,15 @@ namespace TencentCloud
                 DeleteDspmBackupLogListOutcome DeleteDspmBackupLogList(const Model::DeleteDspmBackupLogListRequest &request);
                 void DeleteDspmBackupLogListAsync(const Model::DeleteDspmBackupLogListRequest& request, const DeleteDspmBackupLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDspmBackupLogListOutcomeCallable DeleteDspmBackupLogListCallable(const Model::DeleteDspmBackupLogListRequest& request);
+
+                /**
+                 *取消日志投递配置
+                 * @param req DeleteDspmCkafkaConfigRequest
+                 * @return DeleteDspmCkafkaConfigOutcome
+                 */
+                DeleteDspmCkafkaConfigOutcome DeleteDspmCkafkaConfig(const Model::DeleteDspmCkafkaConfigRequest &request);
+                void DeleteDspmCkafkaConfigAsync(const Model::DeleteDspmCkafkaConfigRequest& request, const DeleteDspmCkafkaConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDspmCkafkaConfigOutcomeCallable DeleteDspmCkafkaConfigCallable(const Model::DeleteDspmCkafkaConfigRequest& request);
 
                 /**
                  *删除导出任务
@@ -4694,6 +4849,24 @@ namespace TencentCloud
                 DeleteDspmRestoreLogListOutcome DeleteDspmRestoreLogList(const Model::DeleteDspmRestoreLogListRequest &request);
                 void DeleteDspmRestoreLogListAsync(const Model::DeleteDspmRestoreLogListRequest& request, const DeleteDspmRestoreLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDspmRestoreLogListOutcomeCallable DeleteDspmRestoreLogListCallable(const Model::DeleteDspmRestoreLogListRequest& request);
+
+                /**
+                 *删除Dspm自定义风险策略。仅支持删除自定义策略（rule_source=custom）；内置策略不可删除，请通过 ModifyDspmRiskStrategy 的 IsEnabled 禁用。
+                 * @param req DeleteDspmRiskStrategyRequest
+                 * @return DeleteDspmRiskStrategyOutcome
+                 */
+                DeleteDspmRiskStrategyOutcome DeleteDspmRiskStrategy(const Model::DeleteDspmRiskStrategyRequest &request);
+                void DeleteDspmRiskStrategyAsync(const Model::DeleteDspmRiskStrategyRequest& request, const DeleteDspmRiskStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDspmRiskStrategyOutcomeCallable DeleteDspmRiskStrategyCallable(const Model::DeleteDspmRiskStrategyRequest& request);
+
+                /**
+                 *删除dspmg共享账号数据
+                 * @param req DeleteDspmShareUserDataRequest
+                 * @return DeleteDspmShareUserDataOutcome
+                 */
+                DeleteDspmShareUserDataOutcome DeleteDspmShareUserData(const Model::DeleteDspmShareUserDataRequest &request);
+                void DeleteDspmShareUserDataAsync(const Model::DeleteDspmShareUserDataRequest& request, const DeleteDspmShareUserDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDspmShareUserDataOutcomeCallable DeleteDspmShareUserDataCallable(const Model::DeleteDspmShareUserDataRequest& request);
 
                 /**
                  *删除Dspm白名单策略
@@ -6535,6 +6708,15 @@ namespace TencentCloud
                 DescribeDspmAssetsOutcomeCallable DescribeDspmAssetsCallable(const Model::DescribeDspmAssetsRequest& request);
 
                 /**
+                 *查询dspm审计过滤策略
+                 * @param req DescribeDspmAuditFilterStrategyRequest
+                 * @return DescribeDspmAuditFilterStrategyOutcome
+                 */
+                DescribeDspmAuditFilterStrategyOutcome DescribeDspmAuditFilterStrategy(const Model::DescribeDspmAuditFilterStrategyRequest &request);
+                void DescribeDspmAuditFilterStrategyAsync(const Model::DescribeDspmAuditFilterStrategyRequest& request, const DescribeDspmAuditFilterStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmAuditFilterStrategyOutcomeCallable DescribeDspmAuditFilterStrategyCallable(const Model::DescribeDspmAuditFilterStrategyRequest& request);
+
+                /**
                  *查询备份日志列表
                  * @param req DescribeDspmBackupLogListRequest
                  * @return DescribeDspmBackupLogListOutcome
@@ -6551,6 +6733,24 @@ namespace TencentCloud
                 DescribeDspmBackupSettingOutcome DescribeDspmBackupSetting(const Model::DescribeDspmBackupSettingRequest &request);
                 void DescribeDspmBackupSettingAsync(const Model::DescribeDspmBackupSettingRequest& request, const DescribeDspmBackupSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDspmBackupSettingOutcomeCallable DescribeDspmBackupSettingCallable(const Model::DescribeDspmBackupSettingRequest& request);
+
+                /**
+                 *查询Ckafka实例的路由信息
+                 * @param req DescribeDspmCkafkaRouteListRequest
+                 * @return DescribeDspmCkafkaRouteListOutcome
+                 */
+                DescribeDspmCkafkaRouteListOutcome DescribeDspmCkafkaRouteList(const Model::DescribeDspmCkafkaRouteListRequest &request);
+                void DescribeDspmCkafkaRouteListAsync(const Model::DescribeDspmCkafkaRouteListRequest& request, const DescribeDspmCkafkaRouteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmCkafkaRouteListOutcomeCallable DescribeDspmCkafkaRouteListCallable(const Model::DescribeDspmCkafkaRouteListRequest& request);
+
+                /**
+                 *查询实例的主题列表
+                 * @param req DescribeDspmCkafkaTopicListRequest
+                 * @return DescribeDspmCkafkaTopicListOutcome
+                 */
+                DescribeDspmCkafkaTopicListOutcome DescribeDspmCkafkaTopicList(const Model::DescribeDspmCkafkaTopicListRequest &request);
+                void DescribeDspmCkafkaTopicListAsync(const Model::DescribeDspmCkafkaTopicListRequest& request, const DescribeDspmCkafkaTopicListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmCkafkaTopicListOutcomeCallable DescribeDspmCkafkaTopicListCallable(const Model::DescribeDspmCkafkaTopicListRequest& request);
 
                 /**
                  *查询dspm字典信息列表
@@ -6679,6 +6879,15 @@ namespace TencentCloud
                 DescribeDspmIdentifyRuleTestResultOutcomeCallable DescribeDspmIdentifyRuleTestResultCallable(const Model::DescribeDspmIdentifyRuleTestResultRequest& request);
 
                 /**
+                 *查询日志投递的日志类型
+                 * @param req DescribeDspmLogDeliveryTypeRequest
+                 * @return DescribeDspmLogDeliveryTypeOutcome
+                 */
+                DescribeDspmLogDeliveryTypeOutcome DescribeDspmLogDeliveryType(const Model::DescribeDspmLogDeliveryTypeRequest &request);
+                void DescribeDspmLogDeliveryTypeAsync(const Model::DescribeDspmLogDeliveryTypeRequest& request, const DescribeDspmLogDeliveryTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmLogDeliveryTypeOutcomeCallable DescribeDspmLogDeliveryTypeCallable(const Model::DescribeDspmLogDeliveryTypeRequest& request);
+
+                /**
                  *查询日志列表信息
                  * @param req DescribeDspmLogListRequest
                  * @return DescribeDspmLogListOutcome
@@ -6686,6 +6895,15 @@ namespace TencentCloud
                 DescribeDspmLogListOutcome DescribeDspmLogList(const Model::DescribeDspmLogListRequest &request);
                 void DescribeDspmLogListAsync(const Model::DescribeDspmLogListRequest& request, const DescribeDspmLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDspmLogListOutcomeCallable DescribeDspmLogListCallable(const Model::DescribeDspmLogListRequest& request);
+
+                /**
+                 *查询租户日志投递配置
+                 * @param req DescribeDspmLogTypeConfigListRequest
+                 * @return DescribeDspmLogTypeConfigListOutcome
+                 */
+                DescribeDspmLogTypeConfigListOutcome DescribeDspmLogTypeConfigList(const Model::DescribeDspmLogTypeConfigListRequest &request);
+                void DescribeDspmLogTypeConfigListAsync(const Model::DescribeDspmLogTypeConfigListRequest& request, const DescribeDspmLogTypeConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmLogTypeConfigListOutcomeCallable DescribeDspmLogTypeConfigListCallable(const Model::DescribeDspmLogTypeConfigListRequest& request);
 
                 /**
                  *获取已购Dspm订单信息
@@ -6713,6 +6931,15 @@ namespace TencentCloud
                 DescribeDspmPersonalIdentifyListOutcome DescribeDspmPersonalIdentifyList(const Model::DescribeDspmPersonalIdentifyListRequest &request);
                 void DescribeDspmPersonalIdentifyListAsync(const Model::DescribeDspmPersonalIdentifyListRequest& request, const DescribeDspmPersonalIdentifyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDspmPersonalIdentifyListOutcomeCallable DescribeDspmPersonalIdentifyListCallable(const Model::DescribeDspmPersonalIdentifyListRequest& request);
+
+                /**
+                 *查询Dspm实例
+                 * @param req DescribeDspmResourceRequest
+                 * @return DescribeDspmResourceOutcome
+                 */
+                DescribeDspmResourceOutcome DescribeDspmResource(const Model::DescribeDspmResourceRequest &request);
+                void DescribeDspmResourceAsync(const Model::DescribeDspmResourceRequest& request, const DescribeDspmResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmResourceOutcomeCallable DescribeDspmResourceCallable(const Model::DescribeDspmResourceRequest& request);
 
                 /**
                  *查询Dspm风险记录
@@ -6760,6 +6987,15 @@ namespace TencentCloud
                 DescribeDspmRiskTendencyOutcomeCallable DescribeDspmRiskTendencyCallable(const Model::DescribeDspmRiskTendencyRequest& request);
 
                 /**
+                 *查询审计会话列表信息
+                 * @param req DescribeDspmSessionListRequest
+                 * @return DescribeDspmSessionListOutcome
+                 */
+                DescribeDspmSessionListOutcome DescribeDspmSessionList(const Model::DescribeDspmSessionListRequest &request);
+                void DescribeDspmSessionListAsync(const Model::DescribeDspmSessionListRequest& request, const DescribeDspmSessionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmSessionListOutcomeCallable DescribeDspmSessionListCallable(const Model::DescribeDspmSessionListRequest& request);
+
+                /**
                  *查询Dspm统计信息
                  * @param req DescribeDspmStatisticsRequest
                  * @return DescribeDspmStatisticsOutcome
@@ -6794,6 +7030,15 @@ namespace TencentCloud
                 DescribeDspmSyncUsersStatusOutcome DescribeDspmSyncUsersStatus(const Model::DescribeDspmSyncUsersStatusRequest &request);
                 void DescribeDspmSyncUsersStatusAsync(const Model::DescribeDspmSyncUsersStatusRequest& request, const DescribeDspmSyncUsersStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDspmSyncUsersStatusOutcomeCallable DescribeDspmSyncUsersStatusCallable(const Model::DescribeDspmSyncUsersStatusRequest& request);
+
+                /**
+                 *查询租户ckafka实例列表
+                 * @param req DescribeDspmUserCkafkaInstanceListRequest
+                 * @return DescribeDspmUserCkafkaInstanceListOutcome
+                 */
+                DescribeDspmUserCkafkaInstanceListOutcome DescribeDspmUserCkafkaInstanceList(const Model::DescribeDspmUserCkafkaInstanceListRequest &request);
+                void DescribeDspmUserCkafkaInstanceListAsync(const Model::DescribeDspmUserCkafkaInstanceListRequest& request, const DescribeDspmUserCkafkaInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmUserCkafkaInstanceListOutcomeCallable DescribeDspmUserCkafkaInstanceListCallable(const Model::DescribeDspmUserCkafkaInstanceListRequest& request);
 
                 /**
                  *查询Dspm白名单策略
@@ -8950,6 +9195,15 @@ capi 层处理流程：
                 ModifyDspmAssetSecurityAnalysisSwitchOutcomeCallable ModifyDspmAssetSecurityAnalysisSwitchCallable(const Model::ModifyDspmAssetSecurityAnalysisSwitchRequest& request);
 
                 /**
+                 *修改Dspm审计过滤策略
+                 * @param req ModifyDspmAuditFilterStrategyRequest
+                 * @return ModifyDspmAuditFilterStrategyOutcome
+                 */
+                ModifyDspmAuditFilterStrategyOutcome ModifyDspmAuditFilterStrategy(const Model::ModifyDspmAuditFilterStrategyRequest &request);
+                void ModifyDspmAuditFilterStrategyAsync(const Model::ModifyDspmAuditFilterStrategyRequest& request, const ModifyDspmAuditFilterStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmAuditFilterStrategyOutcomeCallable ModifyDspmAuditFilterStrategyCallable(const Model::ModifyDspmAuditFilterStrategyRequest& request);
+
+                /**
                  *修改日志备份设置
                  * @param req ModifyDspmBackupSettingRequest
                  * @return ModifyDspmBackupSettingOutcome
@@ -8957,6 +9211,33 @@ capi 层处理流程：
                 ModifyDspmBackupSettingOutcome ModifyDspmBackupSetting(const Model::ModifyDspmBackupSettingRequest &request);
                 void ModifyDspmBackupSettingAsync(const Model::ModifyDspmBackupSettingRequest& request, const ModifyDspmBackupSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDspmBackupSettingOutcomeCallable ModifyDspmBackupSettingCallable(const Model::ModifyDspmBackupSettingRequest& request);
+
+                /**
+                 *租户Ckafka配置保存
+                 * @param req ModifyDspmCkafkaSaveRequest
+                 * @return ModifyDspmCkafkaSaveOutcome
+                 */
+                ModifyDspmCkafkaSaveOutcome ModifyDspmCkafkaSave(const Model::ModifyDspmCkafkaSaveRequest &request);
+                void ModifyDspmCkafkaSaveAsync(const Model::ModifyDspmCkafkaSaveRequest& request, const ModifyDspmCkafkaSaveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmCkafkaSaveOutcomeCallable ModifyDspmCkafkaSaveCallable(const Model::ModifyDspmCkafkaSaveRequest& request);
+
+                /**
+                 *日志投递开启
+                 * @param req ModifyDspmCkafkaStartRequest
+                 * @return ModifyDspmCkafkaStartOutcome
+                 */
+                ModifyDspmCkafkaStartOutcome ModifyDspmCkafkaStart(const Model::ModifyDspmCkafkaStartRequest &request);
+                void ModifyDspmCkafkaStartAsync(const Model::ModifyDspmCkafkaStartRequest& request, const ModifyDspmCkafkaStartAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmCkafkaStartOutcomeCallable ModifyDspmCkafkaStartCallable(const Model::ModifyDspmCkafkaStartRequest& request);
+
+                /**
+                 *日志类型投递关闭
+                 * @param req ModifyDspmCkafkaStopRequest
+                 * @return ModifyDspmCkafkaStopOutcome
+                 */
+                ModifyDspmCkafkaStopOutcome ModifyDspmCkafkaStop(const Model::ModifyDspmCkafkaStopRequest &request);
+                void ModifyDspmCkafkaStopAsync(const Model::ModifyDspmCkafkaStopRequest& request, const ModifyDspmCkafkaStopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmCkafkaStopOutcomeCallable ModifyDspmCkafkaStopCallable(const Model::ModifyDspmCkafkaStopRequest& request);
 
                 /**
                  *修改dspm数据识别分类
@@ -9047,6 +9328,15 @@ capi 层处理流程：
                 ModifyDspmIpInfoOutcome ModifyDspmIpInfo(const Model::ModifyDspmIpInfoRequest &request);
                 void ModifyDspmIpInfoAsync(const Model::ModifyDspmIpInfoRequest& request, const ModifyDspmIpInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDspmIpInfoOutcomeCallable ModifyDspmIpInfoCallable(const Model::ModifyDspmIpInfoRequest& request);
+
+                /**
+                 *修改日志投递配置信息
+                 * @param req ModifyDspmLogDeliveryTypeRequest
+                 * @return ModifyDspmLogDeliveryTypeOutcome
+                 */
+                ModifyDspmLogDeliveryTypeOutcome ModifyDspmLogDeliveryType(const Model::ModifyDspmLogDeliveryTypeRequest &request);
+                void ModifyDspmLogDeliveryTypeAsync(const Model::ModifyDspmLogDeliveryTypeRequest& request, const ModifyDspmLogDeliveryTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmLogDeliveryTypeOutcomeCallable ModifyDspmLogDeliveryTypeCallable(const Model::ModifyDspmLogDeliveryTypeRequest& request);
 
                 /**
                  *修改Dspm个人身份id
@@ -9490,6 +9780,15 @@ capi 层处理流程：
                 ModifyShareUserCSPMOutcomeCallable ModifyShareUserCSPMCallable(const Model::ModifyShareUserCSPMRequest& request);
 
                 /**
+                 *编辑dspm监测账号
+                 * @param req ModifyShareUserDspmRequest
+                 * @return ModifyShareUserDspmOutcome
+                 */
+                ModifyShareUserDspmOutcome ModifyShareUserDspm(const Model::ModifyShareUserDspmRequest &request);
+                void ModifyShareUserDspmAsync(const Model::ModifyShareUserDspmRequest& request, const ModifyShareUserDspmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyShareUserDspmOutcomeCallable ModifyShareUserDspmCallable(const Model::ModifyShareUserDspmRequest& request);
+
+                /**
                  *批量修改 Skill 安全检测告警的处理状态
                  * @param req ModifySkillScanAlertStatusRequest
                  * @return ModifySkillScanAlertStatusOutcome
@@ -9668,6 +9967,15 @@ capi 层处理流程：
                 SendDspmAssetLoginSmsCodeOutcome SendDspmAssetLoginSmsCode(const Model::SendDspmAssetLoginSmsCodeRequest &request);
                 void SendDspmAssetLoginSmsCodeAsync(const Model::SendDspmAssetLoginSmsCodeRequest& request, const SendDspmAssetLoginSmsCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SendDspmAssetLoginSmsCodeOutcomeCallable SendDspmAssetLoginSmsCodeCallable(const Model::SendDspmAssetLoginSmsCodeRequest& request);
+
+                /**
+                 *租户Ckafka联通性测试
+                 * @param req SendDspmCkafkaTestRequest
+                 * @return SendDspmCkafkaTestOutcome
+                 */
+                SendDspmCkafkaTestOutcome SendDspmCkafkaTest(const Model::SendDspmCkafkaTestRequest &request);
+                void SendDspmCkafkaTestAsync(const Model::SendDspmCkafkaTestRequest& request, const SendDspmCkafkaTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SendDspmCkafkaTestOutcomeCallable SendDspmCkafkaTestCallable(const Model::SendDspmCkafkaTestRequest& request);
 
                 /**
                  *开启或者修改防卸载功能配置

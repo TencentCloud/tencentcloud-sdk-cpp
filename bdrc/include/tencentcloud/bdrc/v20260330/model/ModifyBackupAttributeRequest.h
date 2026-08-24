@@ -1,0 +1,161 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_BDRC_V20260330_MODEL_MODIFYBACKUPATTRIBUTEREQUEST_H_
+#define TENCENTCLOUD_BDRC_V20260330_MODEL_MODIFYBACKUPATTRIBUTEREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Bdrc
+    {
+        namespace V20260330
+        {
+            namespace Model
+            {
+                /**
+                * ModifyBackupAttribute请求参数结构体
+                */
+                class ModifyBackupAttributeRequest : public AbstractModel
+                {
+                public:
+                    ModifyBackupAttributeRequest();
+                    ~ModifyBackupAttributeRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取备份ID。该字段的取值取决于ResourceType：当ResourceType=CVM（默认）时，需传入备份组ID（BackupGroupId），可通过DescribeBackupGroups（查询备份组列表）查询
+                     * @return BackupId 备份ID。该字段的取值取决于ResourceType：当ResourceType=CVM（默认）时，需传入备份组ID（BackupGroupId），可通过DescribeBackupGroups（查询备份组列表）查询
+                     * 
+                     */
+                    std::string GetBackupId() const;
+
+                    /**
+                     * 设置备份ID。该字段的取值取决于ResourceType：当ResourceType=CVM（默认）时，需传入备份组ID（BackupGroupId），可通过DescribeBackupGroups（查询备份组列表）查询
+                     * @param _backupId 备份ID。该字段的取值取决于ResourceType：当ResourceType=CVM（默认）时，需传入备份组ID（BackupGroupId），可通过DescribeBackupGroups（查询备份组列表）查询
+                     * 
+                     */
+                    void SetBackupId(const std::string& _backupId);
+
+                    /**
+                     * 判断参数 BackupId 是否已赋值
+                     * @return BackupId 是否已赋值
+                     * 
+                     */
+                    bool BackupIdHasBeenSet() const;
+
+                    /**
+                     * 获取备份的名称。
+                     * @return BackupName 备份的名称。
+                     * 
+                     */
+                    std::string GetBackupName() const;
+
+                    /**
+                     * 设置备份的名称。
+                     * @param _backupName 备份的名称。
+                     * 
+                     */
+                    void SetBackupName(const std::string& _backupName);
+
+                    /**
+                     * 判断参数 BackupName 是否已赋值
+                     * @return BackupName 是否已赋值
+                     * 
+                     */
+                    bool BackupNameHasBeenSet() const;
+
+                    /**
+                     * 获取是否为永久保留的备份。
+                     * @return IsPermanent 是否为永久保留的备份。
+                     * 
+                     */
+                    bool GetIsPermanent() const;
+
+                    /**
+                     * 设置是否为永久保留的备份。
+                     * @param _isPermanent 是否为永久保留的备份。
+                     * 
+                     */
+                    void SetIsPermanent(const bool& _isPermanent);
+
+                    /**
+                     * 判断参数 IsPermanent 是否已赋值
+                     * @return IsPermanent 是否已赋值
+                     * 
+                     */
+                    bool IsPermanentHasBeenSet() const;
+
+                    /**
+                     * 获取备份到期时间。
+                     * @return Deadline 备份到期时间。
+                     * 
+                     */
+                    std::string GetDeadline() const;
+
+                    /**
+                     * 设置备份到期时间。
+                     * @param _deadline 备份到期时间。
+                     * 
+                     */
+                    void SetDeadline(const std::string& _deadline);
+
+                    /**
+                     * 判断参数 Deadline 是否已赋值
+                     * @return Deadline 是否已赋值
+                     * 
+                     */
+                    bool DeadlineHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 备份ID。该字段的取值取决于ResourceType：当ResourceType=CVM（默认）时，需传入备份组ID（BackupGroupId），可通过DescribeBackupGroups（查询备份组列表）查询
+                     */
+                    std::string m_backupId;
+                    bool m_backupIdHasBeenSet;
+
+                    /**
+                     * 备份的名称。
+                     */
+                    std::string m_backupName;
+                    bool m_backupNameHasBeenSet;
+
+                    /**
+                     * 是否为永久保留的备份。
+                     */
+                    bool m_isPermanent;
+                    bool m_isPermanentHasBeenSet;
+
+                    /**
+                     * 备份到期时间。
+                     */
+                    std::string m_deadline;
+                    bool m_deadlineHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_BDRC_V20260330_MODEL_MODIFYBACKUPATTRIBUTEREQUEST_H_

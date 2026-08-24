@@ -25,7 +25,8 @@ using namespace std;
 DescribeCloudNativeAPIGatewayMCPServerListRequest::DescribeCloudNativeAPIGatewayMCPServerListRequest() :
     m_gatewayIdHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_secretKeyIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeCloudNativeAPIGatewayMCPServerListRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_secretKeyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_secretKeyId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeCloudNativeAPIGatewayMCPServerListRequest::SetOffset(const uint64_t
 bool DescribeCloudNativeAPIGatewayMCPServerListRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewayMCPServerListRequest::GetSecretKeyId() const
+{
+    return m_secretKeyId;
+}
+
+void DescribeCloudNativeAPIGatewayMCPServerListRequest::SetSecretKeyId(const string& _secretKeyId)
+{
+    m_secretKeyId = _secretKeyId;
+    m_secretKeyIdHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayMCPServerListRequest::SecretKeyIdHasBeenSet() const
+{
+    return m_secretKeyIdHasBeenSet;
 }
 
 

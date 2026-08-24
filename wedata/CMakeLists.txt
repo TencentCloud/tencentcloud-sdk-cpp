@@ -93,6 +93,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/TriggerWorkflowResult.h
   include/tencentcloud/wedata/v20250806/model/CodePermissionsResultItem.h
   include/tencentcloud/wedata/v20250806/model/GetTaskVersionResponse.h
+  include/tencentcloud/wedata/v20250806/model/WorkspaceExt.h
   include/tencentcloud/wedata/v20250806/model/GetOpsWorkflowRequest.h
   include/tencentcloud/wedata/v20250806/model/ListTaskVersionsResponse.h
   include/tencentcloud/wedata/v20250806/model/ProjectBrief.h
@@ -1743,6 +1744,7 @@ set(wedata_src
   src/v20250806/model/TriggerWorkflowResult.cpp
   src/v20250806/model/CodePermissionsResultItem.cpp
   src/v20250806/model/GetTaskVersionResponse.cpp
+  src/v20250806/model/WorkspaceExt.cpp
   src/v20250806/model/GetOpsWorkflowRequest.cpp
   src/v20250806/model/ListTaskVersionsResponse.cpp
   src/v20250806/model/ProjectBrief.cpp

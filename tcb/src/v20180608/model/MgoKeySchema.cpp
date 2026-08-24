@@ -23,7 +23,8 @@ using namespace std;
 MgoKeySchema::MgoKeySchema() :
     m_mgoIndexKeysHasBeenSet(false),
     m_mgoIsUniqueHasBeenSet(false),
-    m_mgoIsSparseHasBeenSet(false)
+    m_mgoIsSparseHasBeenSet(false),
+    m_partialFilterExpressionHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome MgoKeySchema::Deserialize(const rapidjson::Value &value)
         m_mgoIsSparseHasBeenSet = true;
     }
 
+    if (value.HasMember("PartialFilterExpression") && !value["PartialFilterExpression"].IsNull())
+    {
+        if (!value["PartialFilterExpression"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MgoKeySchema.PartialFilterExpression` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_partialFilterExpression = string(value["PartialFilterExpression"].GetString());
+        m_partialFilterExpressionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +119,14 @@ void MgoKeySchema::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "MgoIsSparse";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mgoIsSparse, allocator);
+    }
+
+    if (m_partialFilterExpressionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PartialFilterExpression";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_partialFilterExpression.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -159,5 +178,21 @@ void MgoKeySchema::SetMgoIsSparse(const bool& _mgoIsSparse)
 bool MgoKeySchema::MgoIsSparseHasBeenSet() const
 {
     return m_mgoIsSparseHasBeenSet;
+}
+
+string MgoKeySchema::GetPartialFilterExpression() const
+{
+    return m_partialFilterExpression;
+}
+
+void MgoKeySchema::SetPartialFilterExpression(const string& _partialFilterExpression)
+{
+    m_partialFilterExpression = _partialFilterExpression;
+    m_partialFilterExpressionHasBeenSet = true;
+}
+
+bool MgoKeySchema::PartialFilterExpressionHasBeenSet() const
+{
+    return m_partialFilterExpressionHasBeenSet;
 }
 

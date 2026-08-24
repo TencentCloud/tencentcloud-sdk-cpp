@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取CMK的总数量
-                     * @return TotalCount CMK的总数量
+                     * 获取<p>CMK的总数量</p>
+                     * @return TotalCount <p>CMK的总数量</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取返回的属性信息列表。
-                     * @return KeyMetadatas 返回的属性信息列表。
+                     * 获取<p>返回的属性信息列表。</p>
+                     * @return KeyMetadatas <p>返回的属性信息列表。</p>
                      * 
                      */
                     std::vector<KeyMetadata> GetKeyMetadatas() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * CMK的总数量
+                     * <p>CMK的总数量</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 返回的属性信息列表。
+                     * <p>返回的属性信息列表。</p>
                      */
                     std::vector<KeyMetadata> m_keyMetadatas;
                     bool m_keyMetadatasHasBeenSet;

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配置ID。
-                     * @return Id 配置ID。
+                     * 获取<p>配置ID。</p>
+                     * @return Id <p>配置ID。</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置配置ID。
-                     * @param _id 配置ID。
+                     * 设置<p>配置ID。</p>
+                     * @param _id <p>配置ID。</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取集群实例ID。
-                     * @return ClusterId 集群实例ID。
+                     * 获取<p>集群实例ID。</p>
+                     * @return ClusterId <p>集群实例ID。</p>
                      * 
                      */
                     int64_t GetClusterId() const;
 
                     /**
-                     * 设置集群实例ID。
-                     * @param _clusterId 集群实例ID。
+                     * 设置<p>集群实例ID。</p>
+                     * @param _clusterId <p>集群实例ID。</p>
                      * 
                      */
                     void SetClusterId(const int64_t& _clusterId);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取自动扩缩容保留最小实例数。
-                     * @return ScaleLowerBound 自动扩缩容保留最小实例数。
+                     * 获取<p>自动扩缩容保留最小实例数。</p>
+                     * @return ScaleLowerBound <p>自动扩缩容保留最小实例数。</p>
                      * 
                      */
                     int64_t GetScaleLowerBound() const;
 
                     /**
-                     * 设置自动扩缩容保留最小实例数。
-                     * @param _scaleLowerBound 自动扩缩容保留最小实例数。
+                     * 设置<p>自动扩缩容保留最小实例数。</p>
+                     * @param _scaleLowerBound <p>自动扩缩容保留最小实例数。</p>
                      * 
                      */
                     void SetScaleLowerBound(const int64_t& _scaleLowerBound);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool ScaleLowerBoundHasBeenSet() const;
 
                     /**
-                     * 获取自动扩缩容最大实例数。
-                     * @return ScaleUpperBound 自动扩缩容最大实例数。
+                     * 获取<p>自动扩缩容最大实例数。</p>
+                     * @return ScaleUpperBound <p>自动扩缩容最大实例数。</p>
                      * 
                      */
                     int64_t GetScaleUpperBound() const;
 
                     /**
-                     * 设置自动扩缩容最大实例数。
-                     * @param _scaleUpperBound 自动扩缩容最大实例数。
+                     * 设置<p>自动扩缩容最大实例数。</p>
+                     * @param _scaleUpperBound <p>自动扩缩容最大实例数。</p>
                      * 
                      */
                     void SetScaleUpperBound(const int64_t& _scaleUpperBound);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool ScaleUpperBoundHasBeenSet() const;
 
                     /**
-                     * 获取扩容规则类型，1为按负载指标扩容规则，2为按时间扩容规则
-                     * @return StrategyType 扩容规则类型，1为按负载指标扩容规则，2为按时间扩容规则
+                     * 获取<p>扩容规则类型，1为按负载指标扩容规则，2为按时间扩容规则</p>
+                     * @return StrategyType <p>扩容规则类型，1为按负载指标扩容规则，2为按时间扩容规则</p>
                      * 
                      */
                     int64_t GetStrategyType() const;
 
                     /**
-                     * 设置扩容规则类型，1为按负载指标扩容规则，2为按时间扩容规则
-                     * @param _strategyType 扩容规则类型，1为按负载指标扩容规则，2为按时间扩容规则
+                     * 设置<p>扩容规则类型，1为按负载指标扩容规则，2为按时间扩容规则</p>
+                     * @param _strategyType <p>扩容规则类型，1为按负载指标扩容规则，2为按时间扩容规则</p>
                      * 
                      */
                     void SetStrategyType(const int64_t& _strategyType);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool StrategyTypeHasBeenSet() const;
 
                     /**
-                     * 获取下次可扩容时间。
-                     * @return NextTimeCanScale 下次可扩容时间。
+                     * 获取<p>下次可扩容时间。</p>
+                     * @return NextTimeCanScale <p>下次可扩容时间。</p>
                      * 
                      */
                     uint64_t GetNextTimeCanScale() const;
 
                     /**
-                     * 设置下次可扩容时间。
-                     * @param _nextTimeCanScale 下次可扩容时间。
+                     * 设置<p>下次可扩容时间。</p>
+                     * @param _nextTimeCanScale <p>下次可扩容时间。</p>
                      * 
                      */
                     void SetNextTimeCanScale(const uint64_t& _nextTimeCanScale);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool NextTimeCanScaleHasBeenSet() const;
 
                     /**
-                     * 获取优雅缩容开关
-                     * @return GraceDownFlag 优雅缩容开关
+                     * 获取<p>优雅缩容开关</p>
+                     * @return GraceDownFlag <p>优雅缩容开关</p>
                      * 
                      */
                     bool GetGraceDownFlag() const;
 
                     /**
-                     * 设置优雅缩容开关
-                     * @param _graceDownFlag 优雅缩容开关
+                     * 设置<p>优雅缩容开关</p>
+                     * @param _graceDownFlag <p>优雅缩容开关</p>
                      * 
                      */
                     void SetGraceDownFlag(const bool& _graceDownFlag);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool GraceDownFlagHasBeenSet() const;
 
                     /**
-                     * 获取"CVM"表示规格全部使用CVM相关类型，"POD"表示规格使用容器相关类型,默认为"CVM"。
-                     * @return HardwareType "CVM"表示规格全部使用CVM相关类型，"POD"表示规格使用容器相关类型,默认为"CVM"。
+                     * 获取<p>&quot;CVM&quot;表示规格全部使用CVM相关类型，&quot;POD&quot;表示规格使用容器相关类型,默认为&quot;CVM&quot;。</p>
+                     * @return HardwareType <p>&quot;CVM&quot;表示规格全部使用CVM相关类型，&quot;POD&quot;表示规格使用容器相关类型,默认为&quot;CVM&quot;。</p>
                      * 
                      */
                     std::string GetHardwareType() const;
 
                     /**
-                     * 设置"CVM"表示规格全部使用CVM相关类型，"POD"表示规格使用容器相关类型,默认为"CVM"。
-                     * @param _hardwareType "CVM"表示规格全部使用CVM相关类型，"POD"表示规格使用容器相关类型,默认为"CVM"。
+                     * 设置<p>&quot;CVM&quot;表示规格全部使用CVM相关类型，&quot;POD&quot;表示规格使用容器相关类型,默认为&quot;CVM&quot;。</p>
+                     * @param _hardwareType <p>&quot;CVM&quot;表示规格全部使用CVM相关类型，&quot;POD&quot;表示规格使用容器相关类型,默认为&quot;CVM&quot;。</p>
                      * 
                      */
                     void SetHardwareType(const std::string& _hardwareType);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool HardwareTypeHasBeenSet() const;
 
                     /**
-                     * 获取"POSTPAY"表示只使用按量计费，"SPOT_FIRST"表示竞价实例优先，只有HardwareType为"HOST"时支持竞价实例优先，"POD"只支持纯按量计费。
-                     * @return PayMode "POSTPAY"表示只使用按量计费，"SPOT_FIRST"表示竞价实例优先，只有HardwareType为"HOST"时支持竞价实例优先，"POD"只支持纯按量计费。
+                     * 获取<p>&quot;POSTPAY&quot;表示只使用按量计费，&quot;SPOT_FIRST&quot;表示竞价实例优先，只有HardwareType为&quot;HOST&quot;时支持竞价实例优先，&quot;POD&quot;只支持纯按量计费。</p>
+                     * @return PayMode <p>&quot;POSTPAY&quot;表示只使用按量计费，&quot;SPOT_FIRST&quot;表示竞价实例优先，只有HardwareType为&quot;HOST&quot;时支持竞价实例优先，&quot;POD&quot;只支持纯按量计费。</p>
                      * 
                      */
                     std::string GetPayMode() const;
 
                     /**
-                     * 设置"POSTPAY"表示只使用按量计费，"SPOT_FIRST"表示竞价实例优先，只有HardwareType为"HOST"时支持竞价实例优先，"POD"只支持纯按量计费。
-                     * @param _payMode "POSTPAY"表示只使用按量计费，"SPOT_FIRST"表示竞价实例优先，只有HardwareType为"HOST"时支持竞价实例优先，"POD"只支持纯按量计费。
+                     * 设置<p>&quot;POSTPAY&quot;表示只使用按量计费，&quot;SPOT_FIRST&quot;表示竞价实例优先，只有HardwareType为&quot;HOST&quot;时支持竞价实例优先，&quot;POD&quot;只支持纯按量计费。</p>
+                     * @param _payMode <p>&quot;POSTPAY&quot;表示只使用按量计费，&quot;SPOT_FIRST&quot;表示竞价实例优先，只有HardwareType为&quot;HOST&quot;时支持竞价实例优先，&quot;POD&quot;只支持纯按量计费。</p>
                      * 
                      */
                     void SetPayMode(const std::string& _payMode);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取竞价实例优先的场景下，按量计费资源数量的最低百分比，整数
-                     * @return PostPayPercentMin 竞价实例优先的场景下，按量计费资源数量的最低百分比，整数
+                     * 获取<p>竞价实例优先的场景下，按量计费资源数量的最低百分比，整数</p>
+                     * @return PostPayPercentMin <p>竞价实例优先的场景下，按量计费资源数量的最低百分比，整数</p>
                      * 
                      */
                     int64_t GetPostPayPercentMin() const;
 
                     /**
-                     * 设置竞价实例优先的场景下，按量计费资源数量的最低百分比，整数
-                     * @param _postPayPercentMin 竞价实例优先的场景下，按量计费资源数量的最低百分比，整数
+                     * 设置<p>竞价实例优先的场景下，按量计费资源数量的最低百分比，整数</p>
+                     * @param _postPayPercentMin <p>竞价实例优先的场景下，按量计费资源数量的最低百分比，整数</p>
                      * 
                      */
                     void SetPostPayPercentMin(const int64_t& _postPayPercentMin);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool PostPayPercentMinHasBeenSet() const;
 
                     /**
-                     * 获取预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；0表示默认不勾选（0），1表示勾选
-                     * @return ChangeToPod 预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；0表示默认不勾选（0），1表示勾选
+                     * 获取<p>预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；0表示默认不勾选（0），1表示勾选</p>
+                     * @return ChangeToPod <p>预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；0表示默认不勾选（0），1表示勾选</p>
                      * 
                      */
                     int64_t GetChangeToPod() const;
 
                     /**
-                     * 设置预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；0表示默认不勾选（0），1表示勾选
-                     * @param _changeToPod 预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；0表示默认不勾选（0），1表示勾选
+                     * 设置<p>预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；0表示默认不勾选（0），1表示勾选</p>
+                     * @param _changeToPod <p>预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；0表示默认不勾选（0），1表示勾选</p>
                      * 
                      */
                     void SetChangeToPod(const int64_t& _changeToPod);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool ChangeToPodHasBeenSet() const;
 
                     /**
-                     * 获取伸缩组名
-                     * @return GroupName 伸缩组名
+                     * 获取<p>伸缩组名</p>
+                     * @return GroupName <p>伸缩组名</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置伸缩组名
-                     * @param _groupName 伸缩组名
+                     * 设置<p>伸缩组名</p>
+                     * @param _groupName <p>伸缩组名</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取标签
-                     * @return YarnNodeLabel 标签
+                     * 获取<p>标签</p>
+                     * @return YarnNodeLabel <p>标签</p>
                      * 
                      */
                     std::string GetYarnNodeLabel() const;
 
                     /**
-                     * 设置标签
-                     * @param _yarnNodeLabel 标签
+                     * 设置<p>标签</p>
+                     * @param _yarnNodeLabel <p>标签</p>
                      * 
                      */
                     void SetYarnNodeLabel(const std::string& _yarnNodeLabel);
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool YarnNodeLabelHasBeenSet() const;
 
                     /**
-                     * 获取对应的计算组
-                     * @return WarehouseName 对应的计算组
+                     * 获取<p>对应的计算组</p>
+                     * @return WarehouseName <p>对应的计算组</p>
                      * 
                      */
                     std::string GetWarehouseName() const;
 
                     /**
-                     * 设置对应的计算组
-                     * @param _warehouseName 对应的计算组
+                     * 设置<p>对应的计算组</p>
+                     * @param _warehouseName <p>对应的计算组</p>
                      * 
                      */
                     void SetWarehouseName(const std::string& _warehouseName);
@@ -342,15 +342,15 @@ namespace TencentCloud
                     bool WarehouseNameHasBeenSet() const;
 
                     /**
-                     * 获取伸缩组状态
-                     * @return GroupStatus 伸缩组状态
+                     * 获取<p>伸缩组状态</p>
+                     * @return GroupStatus <p>伸缩组状态</p>
                      * 
                      */
                     int64_t GetGroupStatus() const;
 
                     /**
-                     * 设置伸缩组状态
-                     * @param _groupStatus 伸缩组状态
+                     * 设置<p>伸缩组状态</p>
+                     * @param _groupStatus <p>伸缩组状态</p>
                      * 
                      */
                     void SetGroupStatus(const int64_t& _groupStatus);
@@ -363,15 +363,15 @@ namespace TencentCloud
                     bool GroupStatusHasBeenSet() const;
 
                     /**
-                     * 获取并行伸缩 0关闭；1开启
-                     * @return Parallel 并行伸缩 0关闭；1开启
+                     * 获取<p>并行伸缩 0关闭；1开启</p>
+                     * @return Parallel <p>并行伸缩 0关闭；1开启</p>
                      * 
                      */
                     int64_t GetParallel() const;
 
                     /**
-                     * 设置并行伸缩 0关闭；1开启
-                     * @param _parallel 并行伸缩 0关闭；1开启
+                     * 设置<p>并行伸缩 0关闭；1开启</p>
+                     * @param _parallel <p>并行伸缩 0关闭；1开启</p>
                      * 
                      */
                     void SetParallel(const int64_t& _parallel);
@@ -384,15 +384,15 @@ namespace TencentCloud
                     bool ParallelHasBeenSet() const;
 
                     /**
-                     * 获取是否支持MNode
-                     * @return EnableMNode 是否支持MNode
+                     * 获取<p>是否支持MNode</p>
+                     * @return EnableMNode <p>是否支持MNode</p>
                      * 
                      */
                     int64_t GetEnableMNode() const;
 
                     /**
-                     * 设置是否支持MNode
-                     * @param _enableMNode 是否支持MNode
+                     * 设置<p>是否支持MNode</p>
+                     * @param _enableMNode <p>是否支持MNode</p>
                      * 
                      */
                     void SetEnableMNode(const int64_t& _enableMNode);
@@ -405,18 +405,18 @@ namespace TencentCloud
                     bool EnableMNodeHasBeenSet() const;
 
                     /**
-                     * 获取伸缩组更多设置
+                     * 获取<p>伸缩组更多设置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExtraAdvanceAttrs 伸缩组更多设置
+                     * @return ExtraAdvanceAttrs <p>伸缩组更多设置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AutoScaleGroupAdvanceAttrs GetExtraAdvanceAttrs() const;
 
                     /**
-                     * 设置伸缩组更多设置
+                     * 设置<p>伸缩组更多设置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _extraAdvanceAttrs 伸缩组更多设置
+                     * @param _extraAdvanceAttrs <p>伸缩组更多设置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -429,116 +429,143 @@ namespace TencentCloud
                      */
                     bool ExtraAdvanceAttrsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义主机名</p>
+                     * @return CustomNodeName <p>自定义主机名</p>
+                     * 
+                     */
+                    std::string GetCustomNodeName() const;
+
+                    /**
+                     * 设置<p>自定义主机名</p>
+                     * @param _customNodeName <p>自定义主机名</p>
+                     * 
+                     */
+                    void SetCustomNodeName(const std::string& _customNodeName);
+
+                    /**
+                     * 判断参数 CustomNodeName 是否已赋值
+                     * @return CustomNodeName 是否已赋值
+                     * 
+                     */
+                    bool CustomNodeNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 配置ID。
+                     * <p>配置ID。</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 集群实例ID。
+                     * <p>集群实例ID。</p>
                      */
                     int64_t m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 自动扩缩容保留最小实例数。
+                     * <p>自动扩缩容保留最小实例数。</p>
                      */
                     int64_t m_scaleLowerBound;
                     bool m_scaleLowerBoundHasBeenSet;
 
                     /**
-                     * 自动扩缩容最大实例数。
+                     * <p>自动扩缩容最大实例数。</p>
                      */
                     int64_t m_scaleUpperBound;
                     bool m_scaleUpperBoundHasBeenSet;
 
                     /**
-                     * 扩容规则类型，1为按负载指标扩容规则，2为按时间扩容规则
+                     * <p>扩容规则类型，1为按负载指标扩容规则，2为按时间扩容规则</p>
                      */
                     int64_t m_strategyType;
                     bool m_strategyTypeHasBeenSet;
 
                     /**
-                     * 下次可扩容时间。
+                     * <p>下次可扩容时间。</p>
                      */
                     uint64_t m_nextTimeCanScale;
                     bool m_nextTimeCanScaleHasBeenSet;
 
                     /**
-                     * 优雅缩容开关
+                     * <p>优雅缩容开关</p>
                      */
                     bool m_graceDownFlag;
                     bool m_graceDownFlagHasBeenSet;
 
                     /**
-                     * "CVM"表示规格全部使用CVM相关类型，"POD"表示规格使用容器相关类型,默认为"CVM"。
+                     * <p>&quot;CVM&quot;表示规格全部使用CVM相关类型，&quot;POD&quot;表示规格使用容器相关类型,默认为&quot;CVM&quot;。</p>
                      */
                     std::string m_hardwareType;
                     bool m_hardwareTypeHasBeenSet;
 
                     /**
-                     * "POSTPAY"表示只使用按量计费，"SPOT_FIRST"表示竞价实例优先，只有HardwareType为"HOST"时支持竞价实例优先，"POD"只支持纯按量计费。
+                     * <p>&quot;POSTPAY&quot;表示只使用按量计费，&quot;SPOT_FIRST&quot;表示竞价实例优先，只有HardwareType为&quot;HOST&quot;时支持竞价实例优先，&quot;POD&quot;只支持纯按量计费。</p>
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 竞价实例优先的场景下，按量计费资源数量的最低百分比，整数
+                     * <p>竞价实例优先的场景下，按量计费资源数量的最低百分比，整数</p>
                      */
                     int64_t m_postPayPercentMin;
                     bool m_postPayPercentMinHasBeenSet;
 
                     /**
-                     * 预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；0表示默认不勾选（0），1表示勾选
+                     * <p>预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；0表示默认不勾选（0），1表示勾选</p>
                      */
                     int64_t m_changeToPod;
                     bool m_changeToPodHasBeenSet;
 
                     /**
-                     * 伸缩组名
+                     * <p>伸缩组名</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 标签
+                     * <p>标签</p>
                      */
                     std::string m_yarnNodeLabel;
                     bool m_yarnNodeLabelHasBeenSet;
 
                     /**
-                     * 对应的计算组
+                     * <p>对应的计算组</p>
                      */
                     std::string m_warehouseName;
                     bool m_warehouseNameHasBeenSet;
 
                     /**
-                     * 伸缩组状态
+                     * <p>伸缩组状态</p>
                      */
                     int64_t m_groupStatus;
                     bool m_groupStatusHasBeenSet;
 
                     /**
-                     * 并行伸缩 0关闭；1开启
+                     * <p>并行伸缩 0关闭；1开启</p>
                      */
                     int64_t m_parallel;
                     bool m_parallelHasBeenSet;
 
                     /**
-                     * 是否支持MNode
+                     * <p>是否支持MNode</p>
                      */
                     int64_t m_enableMNode;
                     bool m_enableMNodeHasBeenSet;
 
                     /**
-                     * 伸缩组更多设置
+                     * <p>伸缩组更多设置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AutoScaleGroupAdvanceAttrs m_extraAdvanceAttrs;
                     bool m_extraAdvanceAttrsHasBeenSet;
+
+                    /**
+                     * <p>自定义主机名</p>
+                     */
+                    std::string m_customNodeName;
+                    bool m_customNodeNameHasBeenSet;
 
                 };
             }

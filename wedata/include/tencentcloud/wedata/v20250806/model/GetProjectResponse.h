@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目信息
+                     * 获取<p>项目信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 项目信息
+                     * @return Data <p>项目信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目信息
+                     * <p>项目信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Project m_data;

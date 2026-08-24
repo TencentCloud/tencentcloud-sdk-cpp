@@ -36,6 +36,7 @@ SandboxTool::SandboxTool() :
     m_storageMountsHasBeenSet(false),
     m_customConfigurationHasBeenSet(false),
     m_logConfigurationHasBeenSet(false),
+    m_computerConfigurationHasBeenSet(false),
     m_statusReasonHasBeenSet(false)
 {
 }
@@ -236,6 +237,23 @@ CoreInternalOutcome SandboxTool::Deserialize(const rapidjson::Value &value)
         m_logConfigurationHasBeenSet = true;
     }
 
+    if (value.HasMember("ComputerConfiguration") && !value["ComputerConfiguration"].IsNull())
+    {
+        if (!value["ComputerConfiguration"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SandboxTool.ComputerConfiguration` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_computerConfiguration.Deserialize(value["ComputerConfiguration"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_computerConfigurationHasBeenSet = true;
+    }
+
     if (value.HasMember("StatusReason") && !value["StatusReason"].IsNull())
     {
         if (!value["StatusReason"].IsString())
@@ -388,6 +406,15 @@ void SandboxTool::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_logConfiguration.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_computerConfigurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputerConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_computerConfiguration.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_statusReasonHasBeenSet)
@@ -639,6 +666,22 @@ void SandboxTool::SetLogConfiguration(const LogConfiguration& _logConfiguration)
 bool SandboxTool::LogConfigurationHasBeenSet() const
 {
     return m_logConfigurationHasBeenSet;
+}
+
+ComputerConfiguration SandboxTool::GetComputerConfiguration() const
+{
+    return m_computerConfiguration;
+}
+
+void SandboxTool::SetComputerConfiguration(const ComputerConfiguration& _computerConfiguration)
+{
+    m_computerConfiguration = _computerConfiguration;
+    m_computerConfigurationHasBeenSet = true;
+}
+
+bool SandboxTool::ComputerConfigurationHasBeenSet() const
+{
+    return m_computerConfigurationHasBeenSet;
 }
 
 string SandboxTool::GetStatusReason() const

@@ -24,9 +24,11 @@ using namespace std;
 
 CreateCloudNativeAPIGatewayCertificateRequest::CreateCloudNativeAPIGatewayCertificateRequest() :
     m_gatewayIdHasBeenSet(false),
-    m_bindDomainsHasBeenSet(false),
     m_certIdHasBeenSet(false),
+    m_bindDomainsHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_certTypeHasBeenSet(false),
+    m_certUsageHasBeenSet(false),
     m_keyHasBeenSet(false),
     m_crtHasBeenSet(false)
 {
@@ -47,6 +49,14 @@ string CreateCloudNativeAPIGatewayCertificateRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_gatewayId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_certIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_bindDomainsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -60,20 +70,28 @@ string CreateCloudNativeAPIGatewayCertificateRequest::ToJsonString() const
         }
     }
 
-    if (m_certIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CertId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_certId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_nameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certUsageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertUsage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certUsage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keyHasBeenSet)
@@ -116,22 +134,6 @@ bool CreateCloudNativeAPIGatewayCertificateRequest::GatewayIdHasBeenSet() const
     return m_gatewayIdHasBeenSet;
 }
 
-vector<string> CreateCloudNativeAPIGatewayCertificateRequest::GetBindDomains() const
-{
-    return m_bindDomains;
-}
-
-void CreateCloudNativeAPIGatewayCertificateRequest::SetBindDomains(const vector<string>& _bindDomains)
-{
-    m_bindDomains = _bindDomains;
-    m_bindDomainsHasBeenSet = true;
-}
-
-bool CreateCloudNativeAPIGatewayCertificateRequest::BindDomainsHasBeenSet() const
-{
-    return m_bindDomainsHasBeenSet;
-}
-
 string CreateCloudNativeAPIGatewayCertificateRequest::GetCertId() const
 {
     return m_certId;
@@ -148,6 +150,22 @@ bool CreateCloudNativeAPIGatewayCertificateRequest::CertIdHasBeenSet() const
     return m_certIdHasBeenSet;
 }
 
+vector<string> CreateCloudNativeAPIGatewayCertificateRequest::GetBindDomains() const
+{
+    return m_bindDomains;
+}
+
+void CreateCloudNativeAPIGatewayCertificateRequest::SetBindDomains(const vector<string>& _bindDomains)
+{
+    m_bindDomains = _bindDomains;
+    m_bindDomainsHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayCertificateRequest::BindDomainsHasBeenSet() const
+{
+    return m_bindDomainsHasBeenSet;
+}
+
 string CreateCloudNativeAPIGatewayCertificateRequest::GetName() const
 {
     return m_name;
@@ -162,6 +180,38 @@ void CreateCloudNativeAPIGatewayCertificateRequest::SetName(const string& _name)
 bool CreateCloudNativeAPIGatewayCertificateRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string CreateCloudNativeAPIGatewayCertificateRequest::GetCertType() const
+{
+    return m_certType;
+}
+
+void CreateCloudNativeAPIGatewayCertificateRequest::SetCertType(const string& _certType)
+{
+    m_certType = _certType;
+    m_certTypeHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayCertificateRequest::CertTypeHasBeenSet() const
+{
+    return m_certTypeHasBeenSet;
+}
+
+string CreateCloudNativeAPIGatewayCertificateRequest::GetCertUsage() const
+{
+    return m_certUsage;
+}
+
+void CreateCloudNativeAPIGatewayCertificateRequest::SetCertUsage(const string& _certUsage)
+{
+    m_certUsage = _certUsage;
+    m_certUsageHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayCertificateRequest::CertUsageHasBeenSet() const
+{
+    return m_certUsageHasBeenSet;
 }
 
 string CreateCloudNativeAPIGatewayCertificateRequest::GetKey() const

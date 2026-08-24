@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询偏移量
-                     * @return Offset 查询偏移量
+                     * 获取<p>查询偏移量</p>
+                     * @return Offset <p>查询偏移量</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置查询偏移量
-                     * @param _offset 查询偏移量
+                     * 设置<p>查询偏移量</p>
+                     * @param _offset <p>查询偏移量</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询数量
-                     * @return Limit 查询数量
+                     * 获取<p>查询数量</p>
+                     * @return Limit <p>查询数量</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置查询数量
-                     * @param _limit 查询数量
+                     * 设置<p>查询数量</p>
+                     * @param _limit <p>查询数量</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取Grafana 实例 ID 数组
-                     * @return InstanceIds Grafana 实例 ID 数组
+                     * 获取<p>Grafana 实例 ID 数组</p>
+                     * @return InstanceIds <p>Grafana 实例 ID 数组</p>
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置Grafana 实例 ID 数组
-                     * @param _instanceIds Grafana 实例 ID 数组
+                     * 设置<p>Grafana 实例 ID 数组</p>
+                     * @param _instanceIds <p>Grafana 实例 ID 数组</p>
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取Grafana 实例名，支持前缀模糊搜索
-                     * @return InstanceName Grafana 实例名，支持前缀模糊搜索
+                     * 获取<p>Grafana 实例名，支持前缀模糊搜索</p>
+                     * @return InstanceName <p>Grafana 实例名，支持前缀模糊搜索</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置Grafana 实例名，支持前缀模糊搜索
-                     * @param _instanceName Grafana 实例名，支持前缀模糊搜索
+                     * 设置<p>Grafana 实例名，支持前缀模糊搜索</p>
+                     * @param _instanceName <p>Grafana 实例名，支持前缀模糊搜索</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取查询状态
-                     * @return InstanceStatus 查询状态
+                     * 获取<p>查询状态</p>
+                     * @return InstanceStatus <p>查询状态</p>
                      * 
                      */
                     std::vector<int64_t> GetInstanceStatus() const;
 
                     /**
-                     * 设置查询状态
-                     * @param _instanceStatus 查询状态
+                     * 设置<p>查询状态</p>
+                     * @param _instanceStatus <p>查询状态</p>
                      * 
                      */
                     void SetInstanceStatus(const std::vector<int64_t>& _instanceStatus);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool InstanceStatusHasBeenSet() const;
 
                     /**
-                     * 获取标签过滤数组
-                     * @return TagFilters 标签过滤数组
+                     * 获取<p>标签过滤数组</p>
+                     * @return TagFilters <p>标签过滤数组</p>
                      * 
                      */
                     std::vector<PrometheusTag> GetTagFilters() const;
 
                     /**
-                     * 设置标签过滤数组
-                     * @param _tagFilters 标签过滤数组
+                     * 设置<p>标签过滤数组</p>
+                     * @param _tagFilters <p>标签过滤数组</p>
                      * 
                      */
                     void SetTagFilters(const std::vector<PrometheusTag>& _tagFilters);
@@ -172,37 +172,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询偏移量
+                     * <p>查询偏移量</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询数量
+                     * <p>查询数量</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * Grafana 实例 ID 数组
+                     * <p>Grafana 实例 ID 数组</p>
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * Grafana 实例名，支持前缀模糊搜索
+                     * <p>Grafana 实例名，支持前缀模糊搜索</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 查询状态
+                     * <p>查询状态</p>
                      */
                     std::vector<int64_t> m_instanceStatus;
                     bool m_instanceStatusHasBeenSet;
 
                     /**
-                     * 标签过滤数组
+                     * <p>标签过滤数组</p>
                      */
                     std::vector<PrometheusTag> m_tagFilters;
                     bool m_tagFiltersHasBeenSet;

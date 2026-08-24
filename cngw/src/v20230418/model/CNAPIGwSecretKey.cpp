@@ -38,7 +38,16 @@ CNAPIGwSecretKey::CNAPIGwSecretKey() :
     m_secretKeyIdHasBeenSet(false),
     m_secretTypeHasBeenSet(false),
     m_secretValueHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_syncStatusHasBeenSet(false),
+    m_sourceTypeHasBeenSet(false),
+    m_syncedVersionHasBeenSet(false),
+    m_aKSKCredentialConfigHasBeenSet(false),
+    m_cAMCredentialConfigHasBeenSet(false),
+    m_bearerTokenCredentialConfigHasBeenSet(false),
+    m_basicCredentialConfigHasBeenSet(false),
+    m_customHeaderCredentialConfigHasBeenSet(false),
+    m_queryParamCredentialConfigHasBeenSet(false)
 {
 }
 
@@ -248,6 +257,138 @@ CoreInternalOutcome CNAPIGwSecretKey::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("SyncStatus") && !value["SyncStatus"].IsNull())
+    {
+        if (!value["SyncStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.SyncStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncStatus = string(value["SyncStatus"].GetString());
+        m_syncStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceType") && !value["SourceType"].IsNull())
+    {
+        if (!value["SourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.SourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceType = string(value["SourceType"].GetString());
+        m_sourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncedVersion") && !value["SyncedVersion"].IsNull())
+    {
+        if (!value["SyncedVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.SyncedVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncedVersion = string(value["SyncedVersion"].GetString());
+        m_syncedVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("AKSKCredentialConfig") && !value["AKSKCredentialConfig"].IsNull())
+    {
+        if (!value["AKSKCredentialConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.AKSKCredentialConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aKSKCredentialConfig.Deserialize(value["AKSKCredentialConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aKSKCredentialConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("CAMCredentialConfig") && !value["CAMCredentialConfig"].IsNull())
+    {
+        if (!value["CAMCredentialConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.CAMCredentialConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cAMCredentialConfig.Deserialize(value["CAMCredentialConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cAMCredentialConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("BearerTokenCredentialConfig") && !value["BearerTokenCredentialConfig"].IsNull())
+    {
+        if (!value["BearerTokenCredentialConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.BearerTokenCredentialConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_bearerTokenCredentialConfig.Deserialize(value["BearerTokenCredentialConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_bearerTokenCredentialConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("BasicCredentialConfig") && !value["BasicCredentialConfig"].IsNull())
+    {
+        if (!value["BasicCredentialConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.BasicCredentialConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_basicCredentialConfig.Deserialize(value["BasicCredentialConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_basicCredentialConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomHeaderCredentialConfig") && !value["CustomHeaderCredentialConfig"].IsNull())
+    {
+        if (!value["CustomHeaderCredentialConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.CustomHeaderCredentialConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_customHeaderCredentialConfig.Deserialize(value["CustomHeaderCredentialConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_customHeaderCredentialConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("QueryParamCredentialConfig") && !value["QueryParamCredentialConfig"].IsNull())
+    {
+        if (!value["QueryParamCredentialConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.QueryParamCredentialConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_queryParamCredentialConfig.Deserialize(value["QueryParamCredentialConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_queryParamCredentialConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -400,6 +541,84 @@ void CNAPIGwSecretKey::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_syncStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncedVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncedVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_syncedVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aKSKCredentialConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AKSKCredentialConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aKSKCredentialConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cAMCredentialConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CAMCredentialConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cAMCredentialConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_bearerTokenCredentialConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BearerTokenCredentialConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_bearerTokenCredentialConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_basicCredentialConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BasicCredentialConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_basicCredentialConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_customHeaderCredentialConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomHeaderCredentialConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customHeaderCredentialConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_queryParamCredentialConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryParamCredentialConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_queryParamCredentialConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -691,5 +910,149 @@ void CNAPIGwSecretKey::SetStatus(const string& _status)
 bool CNAPIGwSecretKey::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string CNAPIGwSecretKey::GetSyncStatus() const
+{
+    return m_syncStatus;
+}
+
+void CNAPIGwSecretKey::SetSyncStatus(const string& _syncStatus)
+{
+    m_syncStatus = _syncStatus;
+    m_syncStatusHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::SyncStatusHasBeenSet() const
+{
+    return m_syncStatusHasBeenSet;
+}
+
+string CNAPIGwSecretKey::GetSourceType() const
+{
+    return m_sourceType;
+}
+
+void CNAPIGwSecretKey::SetSourceType(const string& _sourceType)
+{
+    m_sourceType = _sourceType;
+    m_sourceTypeHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::SourceTypeHasBeenSet() const
+{
+    return m_sourceTypeHasBeenSet;
+}
+
+string CNAPIGwSecretKey::GetSyncedVersion() const
+{
+    return m_syncedVersion;
+}
+
+void CNAPIGwSecretKey::SetSyncedVersion(const string& _syncedVersion)
+{
+    m_syncedVersion = _syncedVersion;
+    m_syncedVersionHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::SyncedVersionHasBeenSet() const
+{
+    return m_syncedVersionHasBeenSet;
+}
+
+AIGWAKSKCredentialConfig CNAPIGwSecretKey::GetAKSKCredentialConfig() const
+{
+    return m_aKSKCredentialConfig;
+}
+
+void CNAPIGwSecretKey::SetAKSKCredentialConfig(const AIGWAKSKCredentialConfig& _aKSKCredentialConfig)
+{
+    m_aKSKCredentialConfig = _aKSKCredentialConfig;
+    m_aKSKCredentialConfigHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::AKSKCredentialConfigHasBeenSet() const
+{
+    return m_aKSKCredentialConfigHasBeenSet;
+}
+
+AIGWCAMCredentialConfig CNAPIGwSecretKey::GetCAMCredentialConfig() const
+{
+    return m_cAMCredentialConfig;
+}
+
+void CNAPIGwSecretKey::SetCAMCredentialConfig(const AIGWCAMCredentialConfig& _cAMCredentialConfig)
+{
+    m_cAMCredentialConfig = _cAMCredentialConfig;
+    m_cAMCredentialConfigHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::CAMCredentialConfigHasBeenSet() const
+{
+    return m_cAMCredentialConfigHasBeenSet;
+}
+
+AIGWBearerTokenCredentialConfig CNAPIGwSecretKey::GetBearerTokenCredentialConfig() const
+{
+    return m_bearerTokenCredentialConfig;
+}
+
+void CNAPIGwSecretKey::SetBearerTokenCredentialConfig(const AIGWBearerTokenCredentialConfig& _bearerTokenCredentialConfig)
+{
+    m_bearerTokenCredentialConfig = _bearerTokenCredentialConfig;
+    m_bearerTokenCredentialConfigHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::BearerTokenCredentialConfigHasBeenSet() const
+{
+    return m_bearerTokenCredentialConfigHasBeenSet;
+}
+
+AIGWBasicCredentialConfig CNAPIGwSecretKey::GetBasicCredentialConfig() const
+{
+    return m_basicCredentialConfig;
+}
+
+void CNAPIGwSecretKey::SetBasicCredentialConfig(const AIGWBasicCredentialConfig& _basicCredentialConfig)
+{
+    m_basicCredentialConfig = _basicCredentialConfig;
+    m_basicCredentialConfigHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::BasicCredentialConfigHasBeenSet() const
+{
+    return m_basicCredentialConfigHasBeenSet;
+}
+
+AIGWCustomHeaderCredentialConfig CNAPIGwSecretKey::GetCustomHeaderCredentialConfig() const
+{
+    return m_customHeaderCredentialConfig;
+}
+
+void CNAPIGwSecretKey::SetCustomHeaderCredentialConfig(const AIGWCustomHeaderCredentialConfig& _customHeaderCredentialConfig)
+{
+    m_customHeaderCredentialConfig = _customHeaderCredentialConfig;
+    m_customHeaderCredentialConfigHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::CustomHeaderCredentialConfigHasBeenSet() const
+{
+    return m_customHeaderCredentialConfigHasBeenSet;
+}
+
+AIGWQueryParamCredentialConfig CNAPIGwSecretKey::GetQueryParamCredentialConfig() const
+{
+    return m_queryParamCredentialConfig;
+}
+
+void CNAPIGwSecretKey::SetQueryParamCredentialConfig(const AIGWQueryParamCredentialConfig& _queryParamCredentialConfig)
+{
+    m_queryParamCredentialConfig = _queryParamCredentialConfig;
+    m_queryParamCredentialConfigHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::QueryParamCredentialConfigHasBeenSet() const
+{
+    return m_queryParamCredentialConfigHasBeenSet;
 }
 

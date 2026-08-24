@@ -6890,6 +6890,56 @@ WafClient::DestroyPostCLSFlowOutcomeCallable WafClient::DestroyPostCLSFlowCallab
     return prom->get_future();
 }
 
+WafClient::EnableClientMsgOutcome WafClient::EnableClientMsg(const EnableClientMsgRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableClientMsg");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableClientMsgResponse rsp = EnableClientMsgResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableClientMsgOutcome(rsp);
+        else
+            return EnableClientMsgOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableClientMsgOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::EnableClientMsgAsync(const EnableClientMsgRequest& request, const EnableClientMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EnableClientMsgRequest&;
+    using Resp = EnableClientMsgResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EnableClientMsg", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::EnableClientMsgOutcomeCallable WafClient::EnableClientMsgCallable(const EnableClientMsgRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EnableClientMsgOutcome>>();
+    EnableClientMsgAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const EnableClientMsgRequest&,
+        EnableClientMsgOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::EnableRateLimitsV2Outcome WafClient::EnableRateLimitsV2(const EnableRateLimitsV2Request &request)
 {
     auto outcome = MakeRequest(request, "EnableRateLimitsV2");
@@ -10482,6 +10532,56 @@ WafClient::QueryBypassAllStatusOutcomeCallable WafClient::QueryBypassAllStatusCa
         const WafClient*,
         const QueryBypassAllStatusRequest&,
         QueryBypassAllStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::QueryClientMsgOutcome WafClient::QueryClientMsg(const QueryClientMsgRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryClientMsg");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryClientMsgResponse rsp = QueryClientMsgResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryClientMsgOutcome(rsp);
+        else
+            return QueryClientMsgOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryClientMsgOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::QueryClientMsgAsync(const QueryClientMsgRequest& request, const QueryClientMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const QueryClientMsgRequest&;
+    using Resp = QueryClientMsgResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "QueryClientMsg", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::QueryClientMsgOutcomeCallable WafClient::QueryClientMsgCallable(const QueryClientMsgRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<QueryClientMsgOutcome>>();
+    QueryClientMsgAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const QueryClientMsgRequest&,
+        QueryClientMsgOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

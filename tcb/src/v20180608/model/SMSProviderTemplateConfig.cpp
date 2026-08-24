@@ -25,10 +25,12 @@ SMSProviderTemplateConfig::SMSProviderTemplateConfig() :
     m_templateIdHasBeenSet(false),
     m_sdkAppIdHasBeenSet(false),
     m_signNameHasBeenSet(false),
+    m_authTypeHasBeenSet(false),
     m_secretIdHasBeenSet(false),
     m_secretKeyHasBeenSet(false),
     m_senderIdHasBeenSet(false),
-    m_templateExtendParamHasBeenSet(false)
+    m_templateExtendParamHasBeenSet(false),
+    m_credentialAuthKeyIdHasBeenSet(false)
 {
 }
 
@@ -75,6 +77,16 @@ CoreInternalOutcome SMSProviderTemplateConfig::Deserialize(const rapidjson::Valu
         }
         m_signName = string(value["SignName"].GetString());
         m_signNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AuthType") && !value["AuthType"].IsNull())
+    {
+        if (!value["AuthType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SMSProviderTemplateConfig.AuthType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_authType = string(value["AuthType"].GetString());
+        m_authTypeHasBeenSet = true;
     }
 
     if (value.HasMember("SecretId") && !value["SecretId"].IsNull())
@@ -127,6 +139,16 @@ CoreInternalOutcome SMSProviderTemplateConfig::Deserialize(const rapidjson::Valu
         m_templateExtendParamHasBeenSet = true;
     }
 
+    if (value.HasMember("CredentialAuthKeyId") && !value["CredentialAuthKeyId"].IsNull())
+    {
+        if (!value["CredentialAuthKeyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SMSProviderTemplateConfig.CredentialAuthKeyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_credentialAuthKeyId = string(value["CredentialAuthKeyId"].GetString());
+        m_credentialAuthKeyIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -166,6 +188,14 @@ void SMSProviderTemplateConfig::ToJsonObject(rapidjson::Value &value, rapidjson:
         value.AddMember(iKey, rapidjson::Value(m_signName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_authTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_authType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_secretIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -203,6 +233,14 @@ void SMSProviderTemplateConfig::ToJsonObject(rapidjson::Value &value, rapidjson:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_credentialAuthKeyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CredentialAuthKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_credentialAuthKeyId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -272,6 +310,22 @@ bool SMSProviderTemplateConfig::SignNameHasBeenSet() const
     return m_signNameHasBeenSet;
 }
 
+string SMSProviderTemplateConfig::GetAuthType() const
+{
+    return m_authType;
+}
+
+void SMSProviderTemplateConfig::SetAuthType(const string& _authType)
+{
+    m_authType = _authType;
+    m_authTypeHasBeenSet = true;
+}
+
+bool SMSProviderTemplateConfig::AuthTypeHasBeenSet() const
+{
+    return m_authTypeHasBeenSet;
+}
+
 string SMSProviderTemplateConfig::GetSecretId() const
 {
     return m_secretId;
@@ -334,5 +388,21 @@ void SMSProviderTemplateConfig::SetTemplateExtendParam(const vector<SMSTemplateP
 bool SMSProviderTemplateConfig::TemplateExtendParamHasBeenSet() const
 {
     return m_templateExtendParamHasBeenSet;
+}
+
+string SMSProviderTemplateConfig::GetCredentialAuthKeyId() const
+{
+    return m_credentialAuthKeyId;
+}
+
+void SMSProviderTemplateConfig::SetCredentialAuthKeyId(const string& _credentialAuthKeyId)
+{
+    m_credentialAuthKeyId = _credentialAuthKeyId;
+    m_credentialAuthKeyIdHasBeenSet = true;
+}
+
+bool SMSProviderTemplateConfig::CredentialAuthKeyIdHasBeenSet() const
+{
+    return m_credentialAuthKeyIdHasBeenSet;
 }
 

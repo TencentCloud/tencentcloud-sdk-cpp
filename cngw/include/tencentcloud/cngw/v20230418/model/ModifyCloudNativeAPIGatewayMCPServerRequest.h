@@ -276,6 +276,27 @@ namespace TencentCloud
                      */
                     bool HealthCheckHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启保留原Host功能</p>
+                     * @return PreserveHost <p>是否开启保留原Host功能</p>
+                     * 
+                     */
+                    bool GetPreserveHost() const;
+
+                    /**
+                     * 设置<p>是否开启保留原Host功能</p>
+                     * @param _preserveHost <p>是否开启保留原Host功能</p>
+                     * 
+                     */
+                    void SetPreserveHost(const bool& _preserveHost);
+
+                    /**
+                     * 判断参数 PreserveHost 是否已赋值
+                     * @return PreserveHost 是否已赋值
+                     * 
+                     */
+                    bool PreserveHostHasBeenSet() const;
+
                 private:
 
                     /**
@@ -343,6 +364,12 @@ namespace TencentCloud
                      */
                     AIGWHealthCheckSetting m_healthCheck;
                     bool m_healthCheckHasBeenSet;
+
+                    /**
+                     * <p>是否开启保留原Host功能</p>
+                     */
+                    bool m_preserveHost;
+                    bool m_preserveHostHasBeenSet;
 
                 };
             }

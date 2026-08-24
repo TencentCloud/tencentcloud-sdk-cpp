@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>需要开通服务的子网ID</p>
-                     * @return SubnetId <p>需要开通服务的子网ID</p>
+                     * 获取<p>需要开通服务的子网ID，此字段即将废除，请填写DeploySubnets包含的子网</p>
+                     * @return SubnetId <p>需要开通服务的子网ID，此字段即将废除，请填写DeploySubnets包含的子网</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置<p>需要开通服务的子网ID</p>
-                     * @param _subnetId <p>需要开通服务的子网ID</p>
+                     * 设置<p>需要开通服务的子网ID，此字段即将废除，请填写DeploySubnets包含的子网</p>
+                     * @param _subnetId <p>需要开通服务的子网ID，此字段即将废除，请填写DeploySubnets包含的子网</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>需要开通服务的子网网段</p>
-                     * @return CidrBlock <p>需要开通服务的子网网段</p>
+                     * 获取<p>需要开通服务的子网网段，此字段即将废除，请填写DeploySubnets包含的子网</p>
+                     * @return CidrBlock <p>需要开通服务的子网网段，此字段即将废除，请填写DeploySubnets包含的子网</p>
                      * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
-                     * 设置<p>需要开通服务的子网网段</p>
-                     * @param _cidrBlock <p>需要开通服务的子网网段</p>
+                     * 设置<p>需要开通服务的子网网段，此字段即将废除，请填写DeploySubnets包含的子网</p>
+                     * @param _cidrBlock <p>需要开通服务的子网网段，此字段即将废除，请填写DeploySubnets包含的子网</p>
                      * 
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool VpcCidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取<p>需要开通服务的子网名称</p>
-                     * @return SubnetName <p>需要开通服务的子网名称</p>
+                     * 获取<p>需要开通服务的子网名称，此字段即将废除，请填写DeploySubnets包含的子网</p>
+                     * @return SubnetName <p>需要开通服务的子网名称，此字段即将废除，请填写DeploySubnets包含的子网</p>
                      * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
-                     * 设置<p>需要开通服务的子网名称</p>
-                     * @param _subnetName <p>需要开通服务的子网名称</p>
+                     * 设置<p>需要开通服务的子网名称，此字段即将废除，请填写DeploySubnets包含的子网</p>
+                     * @param _subnetName <p>需要开通服务的子网名称，此字段即将废除，请填写DeploySubnets包含的子网</p>
                      * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
@@ -359,15 +359,15 @@ namespace TencentCloud
                     bool ExternalAccessHasBeenSet() const;
 
                     /**
-                     * 获取<p>开通堡垒机的子网信息</p>
-                     * @return DeploySubnets <p>开通堡垒机的子网信息</p>
+                     * 获取<p>开通堡垒机的子网信息，最多支持2个子网</p>
+                     * @return DeploySubnets <p>开通堡垒机的子网信息，最多支持2个子网</p>
                      * 
                      */
                     std::vector<ParamInitResourceSubnet> GetDeploySubnets() const;
 
                     /**
-                     * 设置<p>开通堡垒机的子网信息</p>
-                     * @param _deploySubnets <p>开通堡垒机的子网信息</p>
+                     * 设置<p>开通堡垒机的子网信息，最多支持2个子网</p>
+                     * @param _deploySubnets <p>开通堡垒机的子网信息，最多支持2个子网</p>
                      * 
                      */
                     void SetDeploySubnets(const std::vector<ParamInitResourceSubnet>& _deploySubnets);
@@ -443,15 +443,15 @@ namespace TencentCloud
                     bool IntranetVpcNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>开通内网访问的子网信息</p>
-                     * @return IntranetSubnets <p>开通内网访问的子网信息</p>
+                     * 获取<p>开通内网访问的子网信息，最多支持2个子网</p>
+                     * @return IntranetSubnets <p>开通内网访问的子网信息，最多支持2个子网</p>
                      * 
                      */
                     std::vector<ParamInitResourceSubnet> GetIntranetSubnets() const;
 
                     /**
-                     * 设置<p>开通内网访问的子网信息</p>
-                     * @param _intranetSubnets <p>开通内网访问的子网信息</p>
+                     * 设置<p>开通内网访问的子网信息，最多支持2个子网</p>
+                     * @param _intranetSubnets <p>开通内网访问的子网信息，最多支持2个子网</p>
                      * 
                      */
                     void SetIntranetSubnets(const std::vector<ParamInitResourceSubnet>& _intranetSubnets);
@@ -490,13 +490,13 @@ namespace TencentCloud
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * <p>需要开通服务的子网ID</p>
+                     * <p>需要开通服务的子网ID，此字段即将废除，请填写DeploySubnets包含的子网</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * <p>需要开通服务的子网网段</p>
+                     * <p>需要开通服务的子网网段，此字段即将废除，请填写DeploySubnets包含的子网</p>
                      */
                     std::string m_cidrBlock;
                     bool m_cidrBlockHasBeenSet;
@@ -514,7 +514,7 @@ namespace TencentCloud
                     bool m_vpcCidrBlockHasBeenSet;
 
                     /**
-                     * <p>需要开通服务的子网名称</p>
+                     * <p>需要开通服务的子网名称，此字段即将废除，请填写DeploySubnets包含的子网</p>
                      */
                     std::string m_subnetName;
                     bool m_subnetNameHasBeenSet;
@@ -556,7 +556,7 @@ namespace TencentCloud
                     bool m_externalAccessHasBeenSet;
 
                     /**
-                     * <p>开通堡垒机的子网信息</p>
+                     * <p>开通堡垒机的子网信息，最多支持2个子网</p>
                      */
                     std::vector<ParamInitResourceSubnet> m_deploySubnets;
                     bool m_deploySubnetsHasBeenSet;
@@ -580,7 +580,7 @@ namespace TencentCloud
                     bool m_intranetVpcNameHasBeenSet;
 
                     /**
-                     * <p>开通内网访问的子网信息</p>
+                     * <p>开通内网访问的子网信息，最多支持2个子网</p>
                      */
                     std::vector<ParamInitResourceSubnet> m_intranetSubnets;
                     bool m_intranetSubnetsHasBeenSet;

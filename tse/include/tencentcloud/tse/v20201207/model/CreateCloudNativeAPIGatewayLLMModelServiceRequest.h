@@ -26,6 +26,7 @@
 #include <tencentcloud/tse/v20201207/model/AIGWLLMQuotaLimit.h>
 #include <tencentcloud/tse/v20201207/model/AIGWModelRewriteRule.h>
 #include <tencentcloud/tse/v20201207/model/KeyValue.h>
+#include <tencentcloud/tse/v20201207/model/AIGWLoadBalanceConfig.h>
 
 
 namespace TencentCloud
@@ -719,6 +720,27 @@ namespace TencentCloud
                      */
                     bool ExternalInstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>负载均衡配置</p>
+                     * @return LoadBalanceConfig <p>负载均衡配置</p>
+                     * 
+                     */
+                    AIGWLoadBalanceConfig GetLoadBalanceConfig() const;
+
+                    /**
+                     * 设置<p>负载均衡配置</p>
+                     * @param _loadBalanceConfig <p>负载均衡配置</p>
+                     * 
+                     */
+                    void SetLoadBalanceConfig(const AIGWLoadBalanceConfig& _loadBalanceConfig);
+
+                    /**
+                     * 判断参数 LoadBalanceConfig 是否已赋值
+                     * @return LoadBalanceConfig 是否已赋值
+                     * 
+                     */
+                    bool LoadBalanceConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -912,6 +934,12 @@ namespace TencentCloud
                      */
                     std::string m_externalInstanceId;
                     bool m_externalInstanceIdHasBeenSet;
+
+                    /**
+                     * <p>负载均衡配置</p>
+                     */
+                    AIGWLoadBalanceConfig m_loadBalanceConfig;
+                    bool m_loadBalanceConfigHasBeenSet;
 
                 };
             }

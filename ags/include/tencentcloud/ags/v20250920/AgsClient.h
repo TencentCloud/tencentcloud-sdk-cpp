@@ -23,26 +23,38 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ags/v20250920/model/AcquireDeploymentTokenRequest.h>
+#include <tencentcloud/ags/v20250920/model/AcquireDeploymentTokenResponse.h>
 #include <tencentcloud/ags/v20250920/model/AcquireSandboxInstanceTokenRequest.h>
 #include <tencentcloud/ags/v20250920/model/AcquireSandboxInstanceTokenResponse.h>
 #include <tencentcloud/ags/v20250920/model/CreateAPIKeyRequest.h>
 #include <tencentcloud/ags/v20250920/model/CreateAPIKeyResponse.h>
+#include <tencentcloud/ags/v20250920/model/CreateDeploymentRequest.h>
+#include <tencentcloud/ags/v20250920/model/CreateDeploymentResponse.h>
 #include <tencentcloud/ags/v20250920/model/CreatePreCacheImageTaskRequest.h>
 #include <tencentcloud/ags/v20250920/model/CreatePreCacheImageTaskResponse.h>
 #include <tencentcloud/ags/v20250920/model/CreateSandboxToolRequest.h>
 #include <tencentcloud/ags/v20250920/model/CreateSandboxToolResponse.h>
 #include <tencentcloud/ags/v20250920/model/DeleteAPIKeyRequest.h>
 #include <tencentcloud/ags/v20250920/model/DeleteAPIKeyResponse.h>
+#include <tencentcloud/ags/v20250920/model/DeleteDeploymentRequest.h>
+#include <tencentcloud/ags/v20250920/model/DeleteDeploymentResponse.h>
 #include <tencentcloud/ags/v20250920/model/DeleteSandboxToolRequest.h>
 #include <tencentcloud/ags/v20250920/model/DeleteSandboxToolResponse.h>
 #include <tencentcloud/ags/v20250920/model/DescribeAPIKeyListRequest.h>
 #include <tencentcloud/ags/v20250920/model/DescribeAPIKeyListResponse.h>
+#include <tencentcloud/ags/v20250920/model/DescribeDeploymentRequest.h>
+#include <tencentcloud/ags/v20250920/model/DescribeDeploymentResponse.h>
+#include <tencentcloud/ags/v20250920/model/DescribeDeploymentListRequest.h>
+#include <tencentcloud/ags/v20250920/model/DescribeDeploymentListResponse.h>
 #include <tencentcloud/ags/v20250920/model/DescribePreCacheImageTaskRequest.h>
 #include <tencentcloud/ags/v20250920/model/DescribePreCacheImageTaskResponse.h>
 #include <tencentcloud/ags/v20250920/model/DescribeSandboxInstanceListRequest.h>
 #include <tencentcloud/ags/v20250920/model/DescribeSandboxInstanceListResponse.h>
 #include <tencentcloud/ags/v20250920/model/DescribeSandboxToolListRequest.h>
 #include <tencentcloud/ags/v20250920/model/DescribeSandboxToolListResponse.h>
+#include <tencentcloud/ags/v20250920/model/ModifyDeploymentRequest.h>
+#include <tencentcloud/ags/v20250920/model/ModifyDeploymentResponse.h>
 #include <tencentcloud/ags/v20250920/model/PauseSandboxInstanceRequest.h>
 #include <tencentcloud/ags/v20250920/model/PauseSandboxInstanceResponse.h>
 #include <tencentcloud/ags/v20250920/model/ResumeSandboxInstanceRequest.h>
@@ -69,12 +81,18 @@ namespace TencentCloud
                 AgsClient(const Credential &credential, const std::string &region);
                 AgsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AcquireDeploymentTokenResponse> AcquireDeploymentTokenOutcome;
+                typedef std::future<AcquireDeploymentTokenOutcome> AcquireDeploymentTokenOutcomeCallable;
+                typedef std::function<void(const AgsClient*, const Model::AcquireDeploymentTokenRequest&, AcquireDeploymentTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AcquireDeploymentTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::AcquireSandboxInstanceTokenResponse> AcquireSandboxInstanceTokenOutcome;
                 typedef std::future<AcquireSandboxInstanceTokenOutcome> AcquireSandboxInstanceTokenOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::AcquireSandboxInstanceTokenRequest&, AcquireSandboxInstanceTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AcquireSandboxInstanceTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAPIKeyResponse> CreateAPIKeyOutcome;
                 typedef std::future<CreateAPIKeyOutcome> CreateAPIKeyOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::CreateAPIKeyRequest&, CreateAPIKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAPIKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDeploymentResponse> CreateDeploymentOutcome;
+                typedef std::future<CreateDeploymentOutcome> CreateDeploymentOutcomeCallable;
+                typedef std::function<void(const AgsClient*, const Model::CreateDeploymentRequest&, CreateDeploymentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeploymentAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePreCacheImageTaskResponse> CreatePreCacheImageTaskOutcome;
                 typedef std::future<CreatePreCacheImageTaskOutcome> CreatePreCacheImageTaskOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::CreatePreCacheImageTaskRequest&, CreatePreCacheImageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePreCacheImageTaskAsyncHandler;
@@ -84,12 +102,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAPIKeyResponse> DeleteAPIKeyOutcome;
                 typedef std::future<DeleteAPIKeyOutcome> DeleteAPIKeyOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::DeleteAPIKeyRequest&, DeleteAPIKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAPIKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDeploymentResponse> DeleteDeploymentOutcome;
+                typedef std::future<DeleteDeploymentOutcome> DeleteDeploymentOutcomeCallable;
+                typedef std::function<void(const AgsClient*, const Model::DeleteDeploymentRequest&, DeleteDeploymentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeploymentAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSandboxToolResponse> DeleteSandboxToolOutcome;
                 typedef std::future<DeleteSandboxToolOutcome> DeleteSandboxToolOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::DeleteSandboxToolRequest&, DeleteSandboxToolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSandboxToolAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAPIKeyListResponse> DescribeAPIKeyListOutcome;
                 typedef std::future<DescribeAPIKeyListOutcome> DescribeAPIKeyListOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::DescribeAPIKeyListRequest&, DescribeAPIKeyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAPIKeyListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeploymentResponse> DescribeDeploymentOutcome;
+                typedef std::future<DescribeDeploymentOutcome> DescribeDeploymentOutcomeCallable;
+                typedef std::function<void(const AgsClient*, const Model::DescribeDeploymentRequest&, DescribeDeploymentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeploymentAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeploymentListResponse> DescribeDeploymentListOutcome;
+                typedef std::future<DescribeDeploymentListOutcome> DescribeDeploymentListOutcomeCallable;
+                typedef std::function<void(const AgsClient*, const Model::DescribeDeploymentListRequest&, DescribeDeploymentListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeploymentListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePreCacheImageTaskResponse> DescribePreCacheImageTaskOutcome;
                 typedef std::future<DescribePreCacheImageTaskOutcome> DescribePreCacheImageTaskOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::DescribePreCacheImageTaskRequest&, DescribePreCacheImageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePreCacheImageTaskAsyncHandler;
@@ -99,6 +126,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSandboxToolListResponse> DescribeSandboxToolListOutcome;
                 typedef std::future<DescribeSandboxToolListOutcome> DescribeSandboxToolListOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::DescribeSandboxToolListRequest&, DescribeSandboxToolListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxToolListAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDeploymentResponse> ModifyDeploymentOutcome;
+                typedef std::future<ModifyDeploymentOutcome> ModifyDeploymentOutcomeCallable;
+                typedef std::function<void(const AgsClient*, const Model::ModifyDeploymentRequest&, ModifyDeploymentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeploymentAsyncHandler;
                 typedef Outcome<Core::Error, Model::PauseSandboxInstanceResponse> PauseSandboxInstanceOutcome;
                 typedef std::future<PauseSandboxInstanceOutcome> PauseSandboxInstanceOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::PauseSandboxInstanceRequest&, PauseSandboxInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PauseSandboxInstanceAsyncHandler;
@@ -121,6 +151,15 @@ namespace TencentCloud
 
 
                 /**
+                 *获取 Deployment 访问 Token
+                 * @param req AcquireDeploymentTokenRequest
+                 * @return AcquireDeploymentTokenOutcome
+                 */
+                AcquireDeploymentTokenOutcome AcquireDeploymentToken(const Model::AcquireDeploymentTokenRequest &request);
+                void AcquireDeploymentTokenAsync(const Model::AcquireDeploymentTokenRequest& request, const AcquireDeploymentTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AcquireDeploymentTokenOutcomeCallable AcquireDeploymentTokenCallable(const Model::AcquireDeploymentTokenRequest& request);
+
+                /**
                  *获取访问沙箱工具时所需要使用的访问Token，创建沙箱实例后需调用此接口获取沙箱实例访问Token。
 此Token可用于调用代码沙箱实例执行代码，或浏览器沙箱实例进行浏览器操作等。
                  * @param req AcquireSandboxInstanceTokenRequest
@@ -138,6 +177,15 @@ namespace TencentCloud
                 CreateAPIKeyOutcome CreateAPIKey(const Model::CreateAPIKeyRequest &request);
                 void CreateAPIKeyAsync(const Model::CreateAPIKeyRequest& request, const CreateAPIKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAPIKeyOutcomeCallable CreateAPIKeyCallable(const Model::CreateAPIKeyRequest& request);
+
+                /**
+                 *创建 Deployment
+                 * @param req CreateDeploymentRequest
+                 * @return CreateDeploymentOutcome
+                 */
+                CreateDeploymentOutcome CreateDeployment(const Model::CreateDeploymentRequest &request);
+                void CreateDeploymentAsync(const Model::CreateDeploymentRequest& request, const CreateDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDeploymentOutcomeCallable CreateDeploymentCallable(const Model::CreateDeploymentRequest& request);
 
                 /**
                  *创建镜像预热任务
@@ -167,6 +215,15 @@ namespace TencentCloud
                 DeleteAPIKeyOutcomeCallable DeleteAPIKeyCallable(const Model::DeleteAPIKeyRequest& request);
 
                 /**
+                 *删除 Deployment
+                 * @param req DeleteDeploymentRequest
+                 * @return DeleteDeploymentOutcome
+                 */
+                DeleteDeploymentOutcome DeleteDeployment(const Model::DeleteDeploymentRequest &request);
+                void DeleteDeploymentAsync(const Model::DeleteDeploymentRequest& request, const DeleteDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDeploymentOutcomeCallable DeleteDeploymentCallable(const Model::DeleteDeploymentRequest& request);
+
+                /**
                  *删除沙箱工具
                  * @param req DeleteSandboxToolRequest
                  * @return DeleteSandboxToolOutcome
@@ -183,6 +240,24 @@ namespace TencentCloud
                 DescribeAPIKeyListOutcome DescribeAPIKeyList(const Model::DescribeAPIKeyListRequest &request);
                 void DescribeAPIKeyListAsync(const Model::DescribeAPIKeyListRequest& request, const DescribeAPIKeyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAPIKeyListOutcomeCallable DescribeAPIKeyListCallable(const Model::DescribeAPIKeyListRequest& request);
+
+                /**
+                 *查询 Deployment 信息
+                 * @param req DescribeDeploymentRequest
+                 * @return DescribeDeploymentOutcome
+                 */
+                DescribeDeploymentOutcome DescribeDeployment(const Model::DescribeDeploymentRequest &request);
+                void DescribeDeploymentAsync(const Model::DescribeDeploymentRequest& request, const DescribeDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeploymentOutcomeCallable DescribeDeploymentCallable(const Model::DescribeDeploymentRequest& request);
+
+                /**
+                 *查询 Deployment 列表
+                 * @param req DescribeDeploymentListRequest
+                 * @return DescribeDeploymentListOutcome
+                 */
+                DescribeDeploymentListOutcome DescribeDeploymentList(const Model::DescribeDeploymentListRequest &request);
+                void DescribeDeploymentListAsync(const Model::DescribeDeploymentListRequest& request, const DescribeDeploymentListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeploymentListOutcomeCallable DescribeDeploymentListCallable(const Model::DescribeDeploymentListRequest& request);
 
                 /**
                  *查询镜像预热任务信息
@@ -210,6 +285,15 @@ namespace TencentCloud
                 DescribeSandboxToolListOutcome DescribeSandboxToolList(const Model::DescribeSandboxToolListRequest &request);
                 void DescribeSandboxToolListAsync(const Model::DescribeSandboxToolListRequest& request, const DescribeSandboxToolListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSandboxToolListOutcomeCallable DescribeSandboxToolListCallable(const Model::DescribeSandboxToolListRequest& request);
+
+                /**
+                 *修改 Deployment
+                 * @param req ModifyDeploymentRequest
+                 * @return ModifyDeploymentOutcome
+                 */
+                ModifyDeploymentOutcome ModifyDeployment(const Model::ModifyDeploymentRequest &request);
+                void ModifyDeploymentAsync(const Model::ModifyDeploymentRequest& request, const ModifyDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDeploymentOutcomeCallable ModifyDeploymentCallable(const Model::ModifyDeploymentRequest& request);
 
                 /**
                  *暂停沙箱实例

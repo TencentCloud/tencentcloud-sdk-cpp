@@ -446,6 +446,31 @@ namespace TencentCloud
                      */
                     bool ExecuteUserUinHasBeenSet() const;
 
+                    /**
+                     * 获取<p>周期类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CycleType <p>周期类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCycleType() const;
+
+                    /**
+                     * 设置<p>周期类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cycleType <p>周期类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCycleType(const std::string& _cycleType);
+
+                    /**
+                     * 判断参数 CycleType 是否已赋值
+                     * @return CycleType 是否已赋值
+                     * 
+                     */
+                    bool CycleTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -559,6 +584,13 @@ namespace TencentCloud
                      */
                     std::string m_executeUserUin;
                     bool m_executeUserUinHasBeenSet;
+
+                    /**
+                     * <p>周期类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cycleType;
+                    bool m_cycleTypeHasBeenSet;
 
                 };
             }

@@ -26,6 +26,7 @@ ModifyCloudNativeAPIGatewayConsumerRequest::ModifyCloudNativeAPIGatewayConsumerR
     m_gatewayIdHasBeenSet(false),
     m_consumerIdHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_priorityHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
 }
@@ -59,6 +60,14 @@ string ModifyCloudNativeAPIGatewayConsumerRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_priorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Priority";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_priority.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
@@ -123,6 +132,22 @@ void ModifyCloudNativeAPIGatewayConsumerRequest::SetName(const string& _name)
 bool ModifyCloudNativeAPIGatewayConsumerRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string ModifyCloudNativeAPIGatewayConsumerRequest::GetPriority() const
+{
+    return m_priority;
+}
+
+void ModifyCloudNativeAPIGatewayConsumerRequest::SetPriority(const string& _priority)
+{
+    m_priority = _priority;
+    m_priorityHasBeenSet = true;
+}
+
+bool ModifyCloudNativeAPIGatewayConsumerRequest::PriorityHasBeenSet() const
+{
+    return m_priorityHasBeenSet;
 }
 
 string ModifyCloudNativeAPIGatewayConsumerRequest::GetDescription() const

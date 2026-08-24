@@ -101,6 +101,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeCallbackResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeDirectUploadCredentialRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeDirectUploadCredentialResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeePersonRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeePersonResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeePostPaidServiceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeePostPaidServiceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeRecognitionTaskRequest.h>
@@ -149,6 +151,10 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteStudioProductResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeSeeCallbackRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeSeeCallbackResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeSeeFaceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeSeeFaceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeSeePersonRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeSeePersonResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeSeeTasksByConditionRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeSeeTasksByConditionResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeTalkAIBotRequest.h>
@@ -277,6 +283,10 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeCallbackResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeConfigRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeConfigResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeFaceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeFaceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeePersonRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeePersonResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeePostPaidServiceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeePostPaidServiceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeRecognitionTaskRequest.h>
@@ -363,6 +373,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetWechatDeviceTicketRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetWechatDeviceTicketResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ImportTWeSeeFacesRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ImportTWeSeeFacesResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/InheritCloudStorageUserRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/InheritCloudStorageUserResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/InquireTWeSeeSubscriptionCreatePriceRequest.h>
@@ -393,6 +405,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ListProductOtaModulesResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListTWeSeeCallbackRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListTWeSeeCallbackResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ListTWeSeePersonsRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ListTWeSeePersonsResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListTWeSeeTasksRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListTWeSeeTasksResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListTopicPolicyRequest.h>
@@ -429,6 +443,10 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeSeeCallbackResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeSeeConfigRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeSeeConfigResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeSeeFaceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeSeeFaceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeSeePersonRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeSeePersonResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeSeeSubscriptionRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeSeeSubscriptionResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeSeeSubscriptionRenewFlagRequest.h>
@@ -640,6 +658,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTWeSeeDirectUploadCredentialResponse> CreateTWeSeeDirectUploadCredentialOutcome;
                 typedef std::future<CreateTWeSeeDirectUploadCredentialOutcome> CreateTWeSeeDirectUploadCredentialOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateTWeSeeDirectUploadCredentialRequest&, CreateTWeSeeDirectUploadCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTWeSeeDirectUploadCredentialAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTWeSeePersonResponse> CreateTWeSeePersonOutcome;
+                typedef std::future<CreateTWeSeePersonOutcome> CreateTWeSeePersonOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateTWeSeePersonRequest&, CreateTWeSeePersonOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTWeSeePersonAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTWeSeePostPaidServiceResponse> CreateTWeSeePostPaidServiceOutcome;
                 typedef std::future<CreateTWeSeePostPaidServiceOutcome> CreateTWeSeePostPaidServiceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateTWeSeePostPaidServiceRequest&, CreateTWeSeePostPaidServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTWeSeePostPaidServiceAsyncHandler;
@@ -712,6 +733,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTWeSeeCallbackResponse> DeleteTWeSeeCallbackOutcome;
                 typedef std::future<DeleteTWeSeeCallbackOutcome> DeleteTWeSeeCallbackOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteTWeSeeCallbackRequest&, DeleteTWeSeeCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTWeSeeCallbackAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTWeSeeFaceResponse> DeleteTWeSeeFaceOutcome;
+                typedef std::future<DeleteTWeSeeFaceOutcome> DeleteTWeSeeFaceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DeleteTWeSeeFaceRequest&, DeleteTWeSeeFaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTWeSeeFaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTWeSeePersonResponse> DeleteTWeSeePersonOutcome;
+                typedef std::future<DeleteTWeSeePersonOutcome> DeleteTWeSeePersonOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DeleteTWeSeePersonRequest&, DeleteTWeSeePersonOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTWeSeePersonAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTWeSeeTasksByConditionResponse> DeleteTWeSeeTasksByConditionOutcome;
                 typedef std::future<DeleteTWeSeeTasksByConditionOutcome> DeleteTWeSeeTasksByConditionOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteTWeSeeTasksByConditionRequest&, DeleteTWeSeeTasksByConditionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTWeSeeTasksByConditionAsyncHandler;
@@ -904,6 +931,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTWeSeeConfigResponse> DescribeTWeSeeConfigOutcome;
                 typedef std::future<DescribeTWeSeeConfigOutcome> DescribeTWeSeeConfigOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeTWeSeeConfigRequest&, DescribeTWeSeeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTWeSeeConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTWeSeeFaceResponse> DescribeTWeSeeFaceOutcome;
+                typedef std::future<DescribeTWeSeeFaceOutcome> DescribeTWeSeeFaceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeTWeSeeFaceRequest&, DescribeTWeSeeFaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTWeSeeFaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTWeSeePersonResponse> DescribeTWeSeePersonOutcome;
+                typedef std::future<DescribeTWeSeePersonOutcome> DescribeTWeSeePersonOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeTWeSeePersonRequest&, DescribeTWeSeePersonOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTWeSeePersonAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTWeSeePostPaidServiceResponse> DescribeTWeSeePostPaidServiceOutcome;
                 typedef std::future<DescribeTWeSeePostPaidServiceOutcome> DescribeTWeSeePostPaidServiceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeTWeSeePostPaidServiceRequest&, DescribeTWeSeePostPaidServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTWeSeePostPaidServiceAsyncHandler;
@@ -1033,6 +1066,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetWechatDeviceTicketResponse> GetWechatDeviceTicketOutcome;
                 typedef std::future<GetWechatDeviceTicketOutcome> GetWechatDeviceTicketOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetWechatDeviceTicketRequest&, GetWechatDeviceTicketOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetWechatDeviceTicketAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImportTWeSeeFacesResponse> ImportTWeSeeFacesOutcome;
+                typedef std::future<ImportTWeSeeFacesOutcome> ImportTWeSeeFacesOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ImportTWeSeeFacesRequest&, ImportTWeSeeFacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportTWeSeeFacesAsyncHandler;
                 typedef Outcome<Core::Error, Model::InheritCloudStorageUserResponse> InheritCloudStorageUserOutcome;
                 typedef std::future<InheritCloudStorageUserOutcome> InheritCloudStorageUserOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::InheritCloudStorageUserRequest&, InheritCloudStorageUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InheritCloudStorageUserAsyncHandler;
@@ -1078,6 +1114,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListTWeSeeCallbackResponse> ListTWeSeeCallbackOutcome;
                 typedef std::future<ListTWeSeeCallbackOutcome> ListTWeSeeCallbackOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ListTWeSeeCallbackRequest&, ListTWeSeeCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTWeSeeCallbackAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListTWeSeePersonsResponse> ListTWeSeePersonsOutcome;
+                typedef std::future<ListTWeSeePersonsOutcome> ListTWeSeePersonsOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ListTWeSeePersonsRequest&, ListTWeSeePersonsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTWeSeePersonsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListTWeSeeTasksResponse> ListTWeSeeTasksOutcome;
                 typedef std::future<ListTWeSeeTasksOutcome> ListTWeSeeTasksOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ListTWeSeeTasksRequest&, ListTWeSeeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTWeSeeTasksAsyncHandler;
@@ -1132,6 +1171,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTWeSeeConfigResponse> ModifyTWeSeeConfigOutcome;
                 typedef std::future<ModifyTWeSeeConfigOutcome> ModifyTWeSeeConfigOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyTWeSeeConfigRequest&, ModifyTWeSeeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTWeSeeConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTWeSeeFaceResponse> ModifyTWeSeeFaceOutcome;
+                typedef std::future<ModifyTWeSeeFaceOutcome> ModifyTWeSeeFaceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ModifyTWeSeeFaceRequest&, ModifyTWeSeeFaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTWeSeeFaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTWeSeePersonResponse> ModifyTWeSeePersonOutcome;
+                typedef std::future<ModifyTWeSeePersonOutcome> ModifyTWeSeePersonOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ModifyTWeSeePersonRequest&, ModifyTWeSeePersonOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTWeSeePersonAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTWeSeeSubscriptionResponse> ModifyTWeSeeSubscriptionOutcome;
                 typedef std::future<ModifyTWeSeeSubscriptionOutcome> ModifyTWeSeeSubscriptionOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyTWeSeeSubscriptionRequest&, ModifyTWeSeeSubscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTWeSeeSubscriptionAsyncHandler;
@@ -1645,6 +1690,15 @@ namespace TencentCloud
                 CreateTWeSeeDirectUploadCredentialOutcomeCallable CreateTWeSeeDirectUploadCredentialCallable(const Model::CreateTWeSeeDirectUploadCredentialRequest& request);
 
                 /**
+                 *创建一个 TWeSee 人员，可关联已导入的人脸。
+                 * @param req CreateTWeSeePersonRequest
+                 * @return CreateTWeSeePersonOutcome
+                 */
+                CreateTWeSeePersonOutcome CreateTWeSeePerson(const Model::CreateTWeSeePersonRequest &request);
+                void CreateTWeSeePersonAsync(const Model::CreateTWeSeePersonRequest& request, const CreateTWeSeePersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTWeSeePersonOutcomeCallable CreateTWeSeePersonCallable(const Model::CreateTWeSeePersonRequest& request);
+
+                /**
                  *开通 TWeSee 后付费服务
                  * @param req CreateTWeSeePostPaidServiceRequest
                  * @return CreateTWeSeePostPaidServiceOutcome
@@ -1859,6 +1913,24 @@ namespace TencentCloud
                 DeleteTWeSeeCallbackOutcome DeleteTWeSeeCallback(const Model::DeleteTWeSeeCallbackRequest &request);
                 void DeleteTWeSeeCallbackAsync(const Model::DeleteTWeSeeCallbackRequest& request, const DeleteTWeSeeCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTWeSeeCallbackOutcomeCallable DeleteTWeSeeCallbackCallable(const Model::DeleteTWeSeeCallbackRequest& request);
+
+                /**
+                 *删除指定 TWeSee 人脸。
+                 * @param req DeleteTWeSeeFaceRequest
+                 * @return DeleteTWeSeeFaceOutcome
+                 */
+                DeleteTWeSeeFaceOutcome DeleteTWeSeeFace(const Model::DeleteTWeSeeFaceRequest &request);
+                void DeleteTWeSeeFaceAsync(const Model::DeleteTWeSeeFaceRequest& request, const DeleteTWeSeeFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTWeSeeFaceOutcomeCallable DeleteTWeSeeFaceCallable(const Model::DeleteTWeSeeFaceRequest& request);
+
+                /**
+                 *删除指定 TWeSee 人员，可选择同时删除其关联人脸。
+                 * @param req DeleteTWeSeePersonRequest
+                 * @return DeleteTWeSeePersonOutcome
+                 */
+                DeleteTWeSeePersonOutcome DeleteTWeSeePerson(const Model::DeleteTWeSeePersonRequest &request);
+                void DeleteTWeSeePersonAsync(const Model::DeleteTWeSeePersonRequest& request, const DeleteTWeSeePersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTWeSeePersonOutcomeCallable DeleteTWeSeePersonCallable(const Model::DeleteTWeSeePersonRequest& request);
 
                 /**
                  *按条件删除指定设备和算法类目下的 TWeSee 任务及其关联数据。
@@ -2437,6 +2509,24 @@ namespace TencentCloud
                 DescribeTWeSeeConfigOutcomeCallable DescribeTWeSeeConfigCallable(const Model::DescribeTWeSeeConfigRequest& request);
 
                 /**
+                 *查询指定 TWeSee 人脸详情。
+                 * @param req DescribeTWeSeeFaceRequest
+                 * @return DescribeTWeSeeFaceOutcome
+                 */
+                DescribeTWeSeeFaceOutcome DescribeTWeSeeFace(const Model::DescribeTWeSeeFaceRequest &request);
+                void DescribeTWeSeeFaceAsync(const Model::DescribeTWeSeeFaceRequest& request, const DescribeTWeSeeFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTWeSeeFaceOutcomeCallable DescribeTWeSeeFaceCallable(const Model::DescribeTWeSeeFaceRequest& request);
+
+                /**
+                 *查询指定 TWeSee 人员详情及其代表人脸。
+                 * @param req DescribeTWeSeePersonRequest
+                 * @return DescribeTWeSeePersonOutcome
+                 */
+                DescribeTWeSeePersonOutcome DescribeTWeSeePerson(const Model::DescribeTWeSeePersonRequest &request);
+                void DescribeTWeSeePersonAsync(const Model::DescribeTWeSeePersonRequest& request, const DescribeTWeSeePersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTWeSeePersonOutcomeCallable DescribeTWeSeePersonCallable(const Model::DescribeTWeSeePersonRequest& request);
+
+                /**
                  *查询 TWeSee 后付费服务
                  * @param req DescribeTWeSeePostPaidServiceRequest
                  * @return DescribeTWeSeePostPaidServiceOutcome
@@ -2826,6 +2916,15 @@ namespace TencentCloud
                 GetWechatDeviceTicketOutcomeCallable GetWechatDeviceTicketCallable(const Model::GetWechatDeviceTicketRequest& request);
 
                 /**
+                 *检测图片中的人脸，并返回可用于人员管理的人脸元数据。
+                 * @param req ImportTWeSeeFacesRequest
+                 * @return ImportTWeSeeFacesOutcome
+                 */
+                ImportTWeSeeFacesOutcome ImportTWeSeeFaces(const Model::ImportTWeSeeFacesRequest &request);
+                void ImportTWeSeeFacesAsync(const Model::ImportTWeSeeFacesRequest& request, const ImportTWeSeeFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImportTWeSeeFacesOutcomeCallable ImportTWeSeeFacesCallable(const Model::ImportTWeSeeFacesRequest& request);
+
+                /**
                  *继承云存用户
                  * @param req InheritCloudStorageUserRequest
                  * @return InheritCloudStorageUserOutcome
@@ -2959,6 +3058,15 @@ namespace TencentCloud
                 ListTWeSeeCallbackOutcome ListTWeSeeCallback(const Model::ListTWeSeeCallbackRequest &request);
                 void ListTWeSeeCallbackAsync(const Model::ListTWeSeeCallbackRequest& request, const ListTWeSeeCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListTWeSeeCallbackOutcomeCallable ListTWeSeeCallbackCallable(const Model::ListTWeSeeCallbackRequest& request);
+
+                /**
+                 *查询指定设备的 TWeSee 人员列表。
+                 * @param req ListTWeSeePersonsRequest
+                 * @return ListTWeSeePersonsOutcome
+                 */
+                ListTWeSeePersonsOutcome ListTWeSeePersons(const Model::ListTWeSeePersonsRequest &request);
+                void ListTWeSeePersonsAsync(const Model::ListTWeSeePersonsRequest& request, const ListTWeSeePersonsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListTWeSeePersonsOutcomeCallable ListTWeSeePersonsCallable(const Model::ListTWeSeePersonsRequest& request);
 
                 /**
                  *短摘要列表查询
@@ -3121,6 +3229,24 @@ namespace TencentCloud
                 ModifyTWeSeeConfigOutcome ModifyTWeSeeConfig(const Model::ModifyTWeSeeConfigRequest &request);
                 void ModifyTWeSeeConfigAsync(const Model::ModifyTWeSeeConfigRequest& request, const ModifyTWeSeeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTWeSeeConfigOutcomeCallable ModifyTWeSeeConfigCallable(const Model::ModifyTWeSeeConfigRequest& request);
+
+                /**
+                 *将 TWeSee 人脸关联到指定人员，或修改其代表人脸状态。
+                 * @param req ModifyTWeSeeFaceRequest
+                 * @return ModifyTWeSeeFaceOutcome
+                 */
+                ModifyTWeSeeFaceOutcome ModifyTWeSeeFace(const Model::ModifyTWeSeeFaceRequest &request);
+                void ModifyTWeSeeFaceAsync(const Model::ModifyTWeSeeFaceRequest& request, const ModifyTWeSeeFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTWeSeeFaceOutcomeCallable ModifyTWeSeeFaceCallable(const Model::ModifyTWeSeeFaceRequest& request);
+
+                /**
+                 *修改指定 TWeSee 人员的名称或记忆状态。Name、IsRemembered 至少传入一项，不支持取消持久记忆。
+                 * @param req ModifyTWeSeePersonRequest
+                 * @return ModifyTWeSeePersonOutcome
+                 */
+                ModifyTWeSeePersonOutcome ModifyTWeSeePerson(const Model::ModifyTWeSeePersonRequest &request);
+                void ModifyTWeSeePersonAsync(const Model::ModifyTWeSeePersonRequest& request, const ModifyTWeSeePersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTWeSeePersonOutcomeCallable ModifyTWeSeePersonCallable(const Model::ModifyTWeSeePersonRequest& request);
 
                 /**
                  *修改 TWeSee 预付费订阅

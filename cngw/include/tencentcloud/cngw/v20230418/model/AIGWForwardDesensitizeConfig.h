@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * AI 网关 A 层转发脱敏配置（请求转发到 LLM 供应商前对 messages 替换为占位符）
+                * AI 网关转发脱敏配置
                 */
                 class AIGWForwardDesensitizeConfig : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>转发脱敏开关</p>
-                     * @return Enabled <p>转发脱敏开关</p>
+                     * 获取<p>转发脱敏配置总开关</p>
+                     * @return Enabled <p>转发脱敏配置总开关</p>
                      * 
                      */
                     bool GetEnabled() const;
 
                     /**
-                     * 设置<p>转发脱敏开关</p>
-                     * @param _enabled <p>转发脱敏开关</p>
+                     * 设置<p>转发脱敏配置总开关</p>
+                     * @param _enabled <p>转发脱敏配置总开关</p>
                      * 
                      */
                     void SetEnabled(const bool& _enabled);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool EnabledHasBeenSet() const;
 
                     /**
-                     * 获取<p>预定义规则类型</p><p>枚举值：</p><ul><li>Phone： 电话号码</li><li>IdCard： 身份证号</li><li>BankCard： 银行卡号</li><li>Email： 电子邮箱地址</li><li>IP： IP地址</li><li>Name： 姓名</li></ul>
-                     * @return PredefinedRuleTypes <p>预定义规则类型</p><p>枚举值：</p><ul><li>Phone： 电话号码</li><li>IdCard： 身份证号</li><li>BankCard： 银行卡号</li><li>Email： 电子邮箱地址</li><li>IP： IP地址</li><li>Name： 姓名</li></ul>
+                     * 获取<p>内置规则类型：Phone、IdCard、BankCard、Email、IP、Name</p>
+                     * @return PredefinedRuleTypes <p>内置规则类型：Phone、IdCard、BankCard、Email、IP、Name</p>
                      * 
                      */
                     std::vector<std::string> GetPredefinedRuleTypes() const;
 
                     /**
-                     * 设置<p>预定义规则类型</p><p>枚举值：</p><ul><li>Phone： 电话号码</li><li>IdCard： 身份证号</li><li>BankCard： 银行卡号</li><li>Email： 电子邮箱地址</li><li>IP： IP地址</li><li>Name： 姓名</li></ul>
-                     * @param _predefinedRuleTypes <p>预定义规则类型</p><p>枚举值：</p><ul><li>Phone： 电话号码</li><li>IdCard： 身份证号</li><li>BankCard： 银行卡号</li><li>Email： 电子邮箱地址</li><li>IP： IP地址</li><li>Name： 姓名</li></ul>
+                     * 设置<p>内置规则类型：Phone、IdCard、BankCard、Email、IP、Name</p>
+                     * @param _predefinedRuleTypes <p>内置规则类型：Phone、IdCard、BankCard、Email、IP、Name</p>
                      * 
                      */
                     void SetPredefinedRuleTypes(const std::vector<std::string>& _predefinedRuleTypes);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool PredefinedRuleTypesHasBeenSet() const;
 
                     /**
-                     * 获取<p>自定义脱敏规则</p>
-                     * @return CustomRules <p>自定义脱敏规则</p>
+                     * 获取<p>自定义规则，最多 20 条</p>
+                     * @return CustomRules <p>自定义规则，最多 20 条</p>
                      * 
                      */
                     std::vector<AIGWCustomDesensitizeRule> GetCustomRules() const;
 
                     /**
-                     * 设置<p>自定义脱敏规则</p>
-                     * @param _customRules <p>自定义脱敏规则</p>
+                     * 设置<p>自定义规则，最多 20 条</p>
+                     * @param _customRules <p>自定义规则，最多 20 条</p>
                      * 
                      */
                     void SetCustomRules(const std::vector<AIGWCustomDesensitizeRule>& _customRules);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool CustomRulesHasBeenSet() const;
 
                     /**
-                     * 获取<p>掩码</p>
-                     * @return PlaceholderFormat <p>掩码</p>
+                     * 获取<p>内置规则占位符格式，最长 32；为空时默认 [{type}]</p>
+                     * @return PlaceholderFormat <p>内置规则占位符格式，最长 32；为空时默认 [{type}]</p>
                      * 
                      */
                     std::string GetPlaceholderFormat() const;
 
                     /**
-                     * 设置<p>掩码</p>
-                     * @param _placeholderFormat <p>掩码</p>
+                     * 设置<p>内置规则占位符格式，最长 32；为空时默认 [{type}]</p>
+                     * @param _placeholderFormat <p>内置规则占位符格式，最长 32；为空时默认 [{type}]</p>
                      * 
                      */
                     void SetPlaceholderFormat(const std::string& _placeholderFormat);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool PlaceholderFormatHasBeenSet() const;
 
                     /**
-                     * 获取<p>脱敏异常处理</p><p>枚举值：</p><ul><li>Reject： 拒绝请求</li><li>Skip： 跳过</li></ul>
-                     * @return OnFailure <p>脱敏异常处理</p><p>枚举值：</p><ul><li>Reject： 拒绝请求</li><li>Skip： 跳过</li></ul>
+                     * 获取<p>脱敏失败处理：Reject（拒绝请求）或 Skip（跳过脱敏并转发）</p>
+                     * @return OnFailure <p>脱敏失败处理：Reject（拒绝请求）或 Skip（跳过脱敏并转发）</p>
                      * 
                      */
                     std::string GetOnFailure() const;
 
                     /**
-                     * 设置<p>脱敏异常处理</p><p>枚举值：</p><ul><li>Reject： 拒绝请求</li><li>Skip： 跳过</li></ul>
-                     * @param _onFailure <p>脱敏异常处理</p><p>枚举值：</p><ul><li>Reject： 拒绝请求</li><li>Skip： 跳过</li></ul>
+                     * 设置<p>脱敏失败处理：Reject（拒绝请求）或 Skip（跳过脱敏并转发）</p>
+                     * @param _onFailure <p>脱敏失败处理：Reject（拒绝请求）或 Skip（跳过脱敏并转发）</p>
                      * 
                      */
                     void SetOnFailure(const std::string& _onFailure);
@@ -155,31 +155,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>转发脱敏开关</p>
+                     * <p>转发脱敏配置总开关</p>
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
-                     * <p>预定义规则类型</p><p>枚举值：</p><ul><li>Phone： 电话号码</li><li>IdCard： 身份证号</li><li>BankCard： 银行卡号</li><li>Email： 电子邮箱地址</li><li>IP： IP地址</li><li>Name： 姓名</li></ul>
+                     * <p>内置规则类型：Phone、IdCard、BankCard、Email、IP、Name</p>
                      */
                     std::vector<std::string> m_predefinedRuleTypes;
                     bool m_predefinedRuleTypesHasBeenSet;
 
                     /**
-                     * <p>自定义脱敏规则</p>
+                     * <p>自定义规则，最多 20 条</p>
                      */
                     std::vector<AIGWCustomDesensitizeRule> m_customRules;
                     bool m_customRulesHasBeenSet;
 
                     /**
-                     * <p>掩码</p>
+                     * <p>内置规则占位符格式，最长 32；为空时默认 [{type}]</p>
                      */
                     std::string m_placeholderFormat;
                     bool m_placeholderFormatHasBeenSet;
 
                     /**
-                     * <p>脱敏异常处理</p><p>枚举值：</p><ul><li>Reject： 拒绝请求</li><li>Skip： 跳过</li></ul>
+                     * <p>脱敏失败处理：Reject（拒绝请求）或 Skip（跳过脱敏并转发）</p>
                      */
                     std::string m_onFailure;
                     bool m_onFailureHasBeenSet;

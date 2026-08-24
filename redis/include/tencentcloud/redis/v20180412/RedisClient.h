@@ -117,6 +117,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceParamRecordsResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceParamsRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceParamsResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstancePasswordPolicyRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstancePasswordPolicyResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceSecurityGroupRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceSecurityGroupResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceShardsRequest.h>
@@ -418,6 +420,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceParamsResponse> DescribeInstanceParamsOutcome;
                 typedef std::future<DescribeInstanceParamsOutcome> DescribeInstanceParamsOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeInstanceParamsRequest&, DescribeInstanceParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceParamsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstancePasswordPolicyResponse> DescribeInstancePasswordPolicyOutcome;
+                typedef std::future<DescribeInstancePasswordPolicyOutcome> DescribeInstancePasswordPolicyOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeInstancePasswordPolicyRequest&, DescribeInstancePasswordPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancePasswordPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceSecurityGroupResponse> DescribeInstanceSecurityGroupOutcome;
                 typedef std::future<DescribeInstanceSecurityGroupOutcome> DescribeInstanceSecurityGroupOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeInstanceSecurityGroupRequest&, DescribeInstanceSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSecurityGroupAsyncHandler;
@@ -1062,6 +1067,15 @@ namespace TencentCloud
                 DescribeInstanceParamsOutcome DescribeInstanceParams(const Model::DescribeInstanceParamsRequest &request);
                 void DescribeInstanceParamsAsync(const Model::DescribeInstanceParamsRequest& request, const DescribeInstanceParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceParamsOutcomeCallable DescribeInstanceParamsCallable(const Model::DescribeInstanceParamsRequest& request);
+
+                /**
+                 *查询指定实例当前密码复杂度配置
+                 * @param req DescribeInstancePasswordPolicyRequest
+                 * @return DescribeInstancePasswordPolicyOutcome
+                 */
+                DescribeInstancePasswordPolicyOutcome DescribeInstancePasswordPolicy(const Model::DescribeInstancePasswordPolicyRequest &request);
+                void DescribeInstancePasswordPolicyAsync(const Model::DescribeInstancePasswordPolicyRequest& request, const DescribeInstancePasswordPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancePasswordPolicyOutcomeCallable DescribeInstancePasswordPolicyCallable(const Model::DescribeInstancePasswordPolicyRequest& request);
 
                 /**
                  *本接口（DescribeInstanceSecurityGroup）用于查询实例安全组信息。

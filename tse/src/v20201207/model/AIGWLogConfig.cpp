@@ -26,7 +26,9 @@ AIGWLogConfig::AIGWLogConfig() :
     m_requestLogPayloadMaxSizeHasBeenSet(false),
     m_responseLogPayloadMaxSizeHasBeenSet(false),
     m_requestLogPayloadModeHasBeenSet(false),
-    m_responseLogPayloadModeHasBeenSet(false)
+    m_responseLogPayloadModeHasBeenSet(false),
+    m_requestLogPayloadTruncationPolicyHasBeenSet(false),
+    m_responseLogPayloadTruncationPolicyHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome AIGWLogConfig::Deserialize(const rapidjson::Value &value)
         m_responseLogPayloadModeHasBeenSet = true;
     }
 
+    if (value.HasMember("RequestLogPayloadTruncationPolicy") && !value["RequestLogPayloadTruncationPolicy"].IsNull())
+    {
+        if (!value["RequestLogPayloadTruncationPolicy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWLogConfig.RequestLogPayloadTruncationPolicy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestLogPayloadTruncationPolicy = string(value["RequestLogPayloadTruncationPolicy"].GetString());
+        m_requestLogPayloadTruncationPolicyHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResponseLogPayloadTruncationPolicy") && !value["ResponseLogPayloadTruncationPolicy"].IsNull())
+    {
+        if (!value["ResponseLogPayloadTruncationPolicy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWLogConfig.ResponseLogPayloadTruncationPolicy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_responseLogPayloadTruncationPolicy = string(value["ResponseLogPayloadTruncationPolicy"].GetString());
+        m_responseLogPayloadTruncationPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void AIGWLogConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "ResponseLogPayloadMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_responseLogPayloadMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requestLogPayloadTruncationPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestLogPayloadTruncationPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_requestLogPayloadTruncationPolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_responseLogPayloadTruncationPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResponseLogPayloadTruncationPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_responseLogPayloadTruncationPolicy.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void AIGWLogConfig::SetResponseLogPayloadMode(const string& _responseLogPayloadM
 bool AIGWLogConfig::ResponseLogPayloadModeHasBeenSet() const
 {
     return m_responseLogPayloadModeHasBeenSet;
+}
+
+string AIGWLogConfig::GetRequestLogPayloadTruncationPolicy() const
+{
+    return m_requestLogPayloadTruncationPolicy;
+}
+
+void AIGWLogConfig::SetRequestLogPayloadTruncationPolicy(const string& _requestLogPayloadTruncationPolicy)
+{
+    m_requestLogPayloadTruncationPolicy = _requestLogPayloadTruncationPolicy;
+    m_requestLogPayloadTruncationPolicyHasBeenSet = true;
+}
+
+bool AIGWLogConfig::RequestLogPayloadTruncationPolicyHasBeenSet() const
+{
+    return m_requestLogPayloadTruncationPolicyHasBeenSet;
+}
+
+string AIGWLogConfig::GetResponseLogPayloadTruncationPolicy() const
+{
+    return m_responseLogPayloadTruncationPolicy;
+}
+
+void AIGWLogConfig::SetResponseLogPayloadTruncationPolicy(const string& _responseLogPayloadTruncationPolicy)
+{
+    m_responseLogPayloadTruncationPolicy = _responseLogPayloadTruncationPolicy;
+    m_responseLogPayloadTruncationPolicyHasBeenSet = true;
+}
+
+bool AIGWLogConfig::ResponseLogPayloadTruncationPolicyHasBeenSet() const
+{
+    return m_responseLogPayloadTruncationPolicyHasBeenSet;
 }
 

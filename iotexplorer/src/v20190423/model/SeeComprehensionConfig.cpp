@@ -29,7 +29,9 @@ SeeComprehensionConfig::SeeComprehensionConfig() :
     m_customDetectQueriesHasBeenSet(false),
     m_maxDurationHasBeenSet(false),
     m_enableKeywordsHasBeenSet(false),
-    m_summaryPromptHasBeenSet(false)
+    m_summaryPromptHasBeenSet(false),
+    m_enableFaceDetectionHasBeenSet(false),
+    m_inputRotateDegreeHasBeenSet(false)
 {
 }
 
@@ -141,6 +143,26 @@ CoreInternalOutcome SeeComprehensionConfig::Deserialize(const rapidjson::Value &
         m_summaryPromptHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableFaceDetection") && !value["EnableFaceDetection"].IsNull())
+    {
+        if (!value["EnableFaceDetection"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SeeComprehensionConfig.EnableFaceDetection` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableFaceDetection = value["EnableFaceDetection"].GetBool();
+        m_enableFaceDetectionHasBeenSet = true;
+    }
+
+    if (value.HasMember("InputRotateDegree") && !value["InputRotateDegree"].IsNull())
+    {
+        if (!value["InputRotateDegree"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SeeComprehensionConfig.InputRotateDegree` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputRotateDegree = value["InputRotateDegree"].GetInt64();
+        m_inputRotateDegreeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -230,6 +252,22 @@ void SeeComprehensionConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "SummaryPrompt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_summaryPrompt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableFaceDetectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableFaceDetection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableFaceDetection, allocator);
+    }
+
+    if (m_inputRotateDegreeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputRotateDegree";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_inputRotateDegree, allocator);
     }
 
 }
@@ -377,5 +415,37 @@ void SeeComprehensionConfig::SetSummaryPrompt(const string& _summaryPrompt)
 bool SeeComprehensionConfig::SummaryPromptHasBeenSet() const
 {
     return m_summaryPromptHasBeenSet;
+}
+
+bool SeeComprehensionConfig::GetEnableFaceDetection() const
+{
+    return m_enableFaceDetection;
+}
+
+void SeeComprehensionConfig::SetEnableFaceDetection(const bool& _enableFaceDetection)
+{
+    m_enableFaceDetection = _enableFaceDetection;
+    m_enableFaceDetectionHasBeenSet = true;
+}
+
+bool SeeComprehensionConfig::EnableFaceDetectionHasBeenSet() const
+{
+    return m_enableFaceDetectionHasBeenSet;
+}
+
+int64_t SeeComprehensionConfig::GetInputRotateDegree() const
+{
+    return m_inputRotateDegree;
+}
+
+void SeeComprehensionConfig::SetInputRotateDegree(const int64_t& _inputRotateDegree)
+{
+    m_inputRotateDegree = _inputRotateDegree;
+    m_inputRotateDegreeHasBeenSet = true;
+}
+
+bool SeeComprehensionConfig::InputRotateDegreeHasBeenSet() const
+{
+    return m_inputRotateDegreeHasBeenSet;
 }
 

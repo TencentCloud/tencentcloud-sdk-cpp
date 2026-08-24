@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询结果的总条数。
-                     * @return TotalCount 查询结果的总条数。
+                     * 获取<p>查询结果的总条数。</p>
+                     * @return TotalCount <p>查询结果的总条数。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,9 +59,9 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取DDoS攻击数据内容列表。
+                     * 获取<p>DDoS 攻击数据内容列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data DDoS攻击数据内容列表。
+                     * @return Data <p>DDoS 攻击数据内容列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,13 +77,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询结果的总条数。
+                     * <p>查询结果的总条数。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * DDoS攻击数据内容列表。
+                     * <p>DDoS 攻击数据内容列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SecEntry> m_data;

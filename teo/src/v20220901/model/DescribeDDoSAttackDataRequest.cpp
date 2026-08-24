@@ -29,7 +29,8 @@ DescribeDDoSAttackDataRequest::DescribeDDoSAttackDataRequest() :
     m_zoneIdsHasBeenSet(false),
     m_policyIdsHasBeenSet(false),
     m_intervalHasBeenSet(false),
-    m_areaHasBeenSet(false)
+    m_areaHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,21 @@ string DescribeDDoSAttackDataRequest::ToJsonString() const
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -229,6 +245,22 @@ void DescribeDDoSAttackDataRequest::SetArea(const string& _area)
 bool DescribeDDoSAttackDataRequest::AreaHasBeenSet() const
 {
     return m_areaHasBeenSet;
+}
+
+vector<QueryCondition> DescribeDDoSAttackDataRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeDDoSAttackDataRequest::SetFilters(const vector<QueryCondition>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeDDoSAttackDataRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

@@ -33,7 +33,8 @@ ModifyCloudNativeAPIGatewayMCPServerRequest::ModifyCloudNativeAPIGatewayMCPServe
     m_sessionConfigHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_enableHealthCheckHasBeenSet(false),
-    m_healthCheckHasBeenSet(false)
+    m_healthCheckHasBeenSet(false),
+    m_preserveHostHasBeenSet(false)
 {
 }
 
@@ -133,6 +134,14 @@ string ModifyCloudNativeAPIGatewayMCPServerRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_healthCheck.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_preserveHostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreserveHost";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_preserveHost, allocator);
     }
 
 
@@ -317,6 +326,22 @@ void ModifyCloudNativeAPIGatewayMCPServerRequest::SetHealthCheck(const AIGWHealt
 bool ModifyCloudNativeAPIGatewayMCPServerRequest::HealthCheckHasBeenSet() const
 {
     return m_healthCheckHasBeenSet;
+}
+
+bool ModifyCloudNativeAPIGatewayMCPServerRequest::GetPreserveHost() const
+{
+    return m_preserveHost;
+}
+
+void ModifyCloudNativeAPIGatewayMCPServerRequest::SetPreserveHost(const bool& _preserveHost)
+{
+    m_preserveHost = _preserveHost;
+    m_preserveHostHasBeenSet = true;
+}
+
+bool ModifyCloudNativeAPIGatewayMCPServerRequest::PreserveHostHasBeenSet() const
+{
+    return m_preserveHostHasBeenSet;
 }
 
 

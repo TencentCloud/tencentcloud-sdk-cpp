@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ags/v20250920/model/MountOption.h>
 #include <tencentcloud/ags/v20250920/model/CustomConfigurationDetail.h>
+#include <tencentcloud/ags/v20250920/model/ComputerConfiguration.h>
 #include <tencentcloud/ags/v20250920/model/MetadataVar.h>
 
 
@@ -302,6 +303,27 @@ namespace TencentCloud
                     bool CustomConfigurationHasBeenSet() const;
 
                     /**
+                     * 获取<p>桌面电脑环境类沙箱配置</p>
+                     * @return ComputerConfiguration <p>桌面电脑环境类沙箱配置</p>
+                     * 
+                     */
+                    ComputerConfiguration GetComputerConfiguration() const;
+
+                    /**
+                     * 设置<p>桌面电脑环境类沙箱配置</p>
+                     * @param _computerConfiguration <p>桌面电脑环境类沙箱配置</p>
+                     * 
+                     */
+                    void SetComputerConfiguration(const ComputerConfiguration& _computerConfiguration);
+
+                    /**
+                     * 判断参数 ComputerConfiguration 是否已赋值
+                     * @return ComputerConfiguration 是否已赋值
+                     * 
+                     */
+                    bool ComputerConfigurationHasBeenSet() const;
+
+                    /**
                      * 获取<p>网络模式</p><p>枚举值：</p><ul><li>PUBLIC： 公网访问</li><li>SANDBOX： 无网络</li><li>INTERNAL_SERVICE： 腾讯云内部公共服务</li></ul><p>可以覆盖工具级别的网络配置。但如果一个工具本身就不支持 VPC 网络，那么即便在实例设置里选了 VPC 模式，也是无效的</p>
                      * @return NetworkMode <p>网络模式</p><p>枚举值：</p><ul><li>PUBLIC： 公网访问</li><li>SANDBOX： 无网络</li><li>INTERNAL_SERVICE： 腾讯云内部公共服务</li></ul><p>可以覆盖工具级别的网络配置。但如果一个工具本身就不支持 VPC 网络，那么即便在实例设置里选了 VPC 模式，也是无效的</p>
                      * 
@@ -437,6 +459,12 @@ namespace TencentCloud
                      */
                     CustomConfigurationDetail m_customConfiguration;
                     bool m_customConfigurationHasBeenSet;
+
+                    /**
+                     * <p>桌面电脑环境类沙箱配置</p>
+                     */
+                    ComputerConfiguration m_computerConfiguration;
+                    bool m_computerConfigurationHasBeenSet;
 
                     /**
                      * <p>网络模式</p><p>枚举值：</p><ul><li>PUBLIC： 公网访问</li><li>SANDBOX： 无网络</li><li>INTERNAL_SERVICE： 腾讯云内部公共服务</li></ul><p>可以覆盖工具级别的网络配置。但如果一个工具本身就不支持 VPC 网络，那么即便在实例设置里选了 VPC 模式，也是无效的</p>

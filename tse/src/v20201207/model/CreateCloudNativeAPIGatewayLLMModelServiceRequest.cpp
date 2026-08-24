@@ -54,7 +54,8 @@ CreateCloudNativeAPIGatewayLLMModelServiceRequest::CreateCloudNativeAPIGatewayLL
     m_customProviderNameHasBeenSet(false),
     m_keyRotationEnabledHasBeenSet(false),
     m_keyRotationPeriodDaysHasBeenSet(false),
-    m_externalInstanceIdHasBeenSet(false)
+    m_externalInstanceIdHasBeenSet(false),
+    m_loadBalanceConfigHasBeenSet(false)
 {
 }
 
@@ -346,6 +347,15 @@ string CreateCloudNativeAPIGatewayLLMModelServiceRequest::ToJsonString() const
         string key = "ExternalInstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_externalInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loadBalanceConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalanceConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_loadBalanceConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -866,6 +876,22 @@ void CreateCloudNativeAPIGatewayLLMModelServiceRequest::SetExternalInstanceId(co
 bool CreateCloudNativeAPIGatewayLLMModelServiceRequest::ExternalInstanceIdHasBeenSet() const
 {
     return m_externalInstanceIdHasBeenSet;
+}
+
+AIGWLoadBalanceConfig CreateCloudNativeAPIGatewayLLMModelServiceRequest::GetLoadBalanceConfig() const
+{
+    return m_loadBalanceConfig;
+}
+
+void CreateCloudNativeAPIGatewayLLMModelServiceRequest::SetLoadBalanceConfig(const AIGWLoadBalanceConfig& _loadBalanceConfig)
+{
+    m_loadBalanceConfig = _loadBalanceConfig;
+    m_loadBalanceConfigHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayLLMModelServiceRequest::LoadBalanceConfigHasBeenSet() const
+{
+    return m_loadBalanceConfigHasBeenSet;
 }
 
 

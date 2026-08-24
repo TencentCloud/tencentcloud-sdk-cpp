@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0
-                     * @return Offset 含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0
+                     * 获取<p>含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0</p>
+                     * @return Offset <p>含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0
-                     * @param _offset 含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0
+                     * 设置<p>含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0</p>
+                     * @param _offset <p>含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为10，最大值为200
-                     * @return Limit 含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为10，最大值为200
+                     * 获取<p>含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为10，最大值为200</p>
+                     * @return Limit <p>含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为10，最大值为200</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为10，最大值为200
-                     * @param _limit 含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为10，最大值为200
+                     * 设置<p>含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为10，最大值为200</p>
+                     * @param _limit <p>含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为10，最大值为200</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取根据创建者角色筛选，默认 0 表示用户自己创建的数据密钥， 1 表示授权其它云产品自动创建的数据密钥
-                     * @return Role 根据创建者角色筛选，默认 0 表示用户自己创建的数据密钥， 1 表示授权其它云产品自动创建的数据密钥
+                     * 获取<p>根据创建者角色筛选，默认 0 表示用户自己创建的数据密钥， 1 表示授权其它云产品自动创建的数据密钥</p>
+                     * @return Role <p>根据创建者角色筛选，默认 0 表示用户自己创建的数据密钥， 1 表示授权其它云产品自动创建的数据密钥</p>
                      * 
                      */
                     uint64_t GetRole() const;
 
                     /**
-                     * 设置根据创建者角色筛选，默认 0 表示用户自己创建的数据密钥， 1 表示授权其它云产品自动创建的数据密钥
-                     * @param _role 根据创建者角色筛选，默认 0 表示用户自己创建的数据密钥， 1 表示授权其它云产品自动创建的数据密钥
+                     * 设置<p>根据创建者角色筛选，默认 0 表示用户自己创建的数据密钥， 1 表示授权其它云产品自动创建的数据密钥</p>
+                     * @param _role <p>根据创建者角色筛选，默认 0 表示用户自己创建的数据密钥， 1 表示授权其它云产品自动创建的数据密钥</p>
                      * 
                      */
                     void SetRole(const uint64_t& _role);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool RoleHasBeenSet() const;
 
                     /**
-                     * 获取根据DataKey创建时间排序， 0 表示按照降序排序，1表示按照升序排序
-                     * @return OrderType 根据DataKey创建时间排序， 0 表示按照降序排序，1表示按照升序排序
+                     * 获取<p>根据DataKey创建时间排序， 0 表示按照降序排序，1表示按照升序排序</p>
+                     * @return OrderType <p>根据DataKey创建时间排序， 0 表示按照降序排序，1表示按照升序排序</p>
                      * 
                      */
                     uint64_t GetOrderType() const;
 
                     /**
-                     * 设置根据DataKey创建时间排序， 0 表示按照降序排序，1表示按照升序排序
-                     * @param _orderType 根据DataKey创建时间排序， 0 表示按照降序排序，1表示按照升序排序
+                     * 设置<p>根据DataKey创建时间排序， 0 表示按照降序排序，1表示按照升序排序</p>
+                     * @param _orderType <p>根据DataKey创建时间排序， 0 表示按照降序排序，1表示按照升序排序</p>
                      * 
                      */
                     void SetOrderType(const uint64_t& _orderType);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取根据DataKey状态筛选， 0表示全部DataKey， 1 表示仅查询Enabled DataKey， 2 表示仅查询Disabled DataKey，3 表示查询PendingDelete 状态的DataKey(处于计划删除状态的Key)。
-                     * @return KeyState 根据DataKey状态筛选， 0表示全部DataKey， 1 表示仅查询Enabled DataKey， 2 表示仅查询Disabled DataKey，3 表示查询PendingDelete 状态的DataKey(处于计划删除状态的Key)。
+                     * 获取<p>根据DataKey状态筛选， 0表示全部DataKey， 1 表示仅查询Enabled DataKey， 2 表示仅查询Disabled DataKey，3 表示查询PendingDelete 状态的DataKey(处于计划删除状态的Key)。</p>
+                     * @return KeyState <p>根据DataKey状态筛选， 0表示全部DataKey， 1 表示仅查询Enabled DataKey， 2 表示仅查询Disabled DataKey，3 表示查询PendingDelete 状态的DataKey(处于计划删除状态的Key)。</p>
                      * 
                      */
                     uint64_t GetKeyState() const;
 
                     /**
-                     * 设置根据DataKey状态筛选， 0表示全部DataKey， 1 表示仅查询Enabled DataKey， 2 表示仅查询Disabled DataKey，3 表示查询PendingDelete 状态的DataKey(处于计划删除状态的Key)。
-                     * @param _keyState 根据DataKey状态筛选， 0表示全部DataKey， 1 表示仅查询Enabled DataKey， 2 表示仅查询Disabled DataKey，3 表示查询PendingDelete 状态的DataKey(处于计划删除状态的Key)。
+                     * 设置<p>根据DataKey状态筛选， 0表示全部DataKey， 1 表示仅查询Enabled DataKey， 2 表示仅查询Disabled DataKey，3 表示查询PendingDelete 状态的DataKey(处于计划删除状态的Key)。</p>
+                     * @param _keyState <p>根据DataKey状态筛选， 0表示全部DataKey， 1 表示仅查询Enabled DataKey， 2 表示仅查询Disabled DataKey，3 表示查询PendingDelete 状态的DataKey(处于计划删除状态的Key)。</p>
                      * 
                      */
                     void SetKeyState(const uint64_t& _keyState);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool KeyStateHasBeenSet() const;
 
                     /**
-                     * 获取根据DataKeyId或者DataKeyName进行模糊匹配查询
-                     * @return SearchKeyAlias 根据DataKeyId或者DataKeyName进行模糊匹配查询
+                     * 获取<p>根据DataKeyId或者DataKeyName进行模糊匹配查询</p>
+                     * @return SearchKeyAlias <p>根据DataKeyId或者DataKeyName进行模糊匹配查询</p>
                      * 
                      */
                     std::string GetSearchKeyAlias() const;
 
                     /**
-                     * 设置根据DataKeyId或者DataKeyName进行模糊匹配查询
-                     * @param _searchKeyAlias 根据DataKeyId或者DataKeyName进行模糊匹配查询
+                     * 设置<p>根据DataKeyId或者DataKeyName进行模糊匹配查询</p>
+                     * @param _searchKeyAlias <p>根据DataKeyId或者DataKeyName进行模糊匹配查询</p>
                      * 
                      */
                     void SetSearchKeyAlias(const std::string& _searchKeyAlias);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool SearchKeyAliasHasBeenSet() const;
 
                     /**
-                     * 获取根据DateKey类型筛选， "TENCENT_KMS" 表示筛选密钥材料由KMS创建的数据密钥， "EXTERNAL" 表示筛选密钥材料需要用户导入的 EXTERNAL类型数据密钥，"ALL" 或者不设置表示两种类型都查询，大小写敏感。
-                     * @return Origin 根据DateKey类型筛选， "TENCENT_KMS" 表示筛选密钥材料由KMS创建的数据密钥， "EXTERNAL" 表示筛选密钥材料需要用户导入的 EXTERNAL类型数据密钥，"ALL" 或者不设置表示两种类型都查询，大小写敏感。
+                     * 获取<p>根据DateKey类型筛选， &quot;TENCENT_KMS&quot; 表示筛选密钥材料由KMS创建的数据密钥， &quot;EXTERNAL&quot; 表示筛选密钥材料需要用户导入的 EXTERNAL类型数据密钥，&quot;ALL&quot; 或者不设置表示两种类型都查询，大小写敏感。</p>
+                     * @return Origin <p>根据DateKey类型筛选， &quot;TENCENT_KMS&quot; 表示筛选密钥材料由KMS创建的数据密钥， &quot;EXTERNAL&quot; 表示筛选密钥材料需要用户导入的 EXTERNAL类型数据密钥，&quot;ALL&quot; 或者不设置表示两种类型都查询，大小写敏感。</p>
                      * 
                      */
                     std::string GetOrigin() const;
 
                     /**
-                     * 设置根据DateKey类型筛选， "TENCENT_KMS" 表示筛选密钥材料由KMS创建的数据密钥， "EXTERNAL" 表示筛选密钥材料需要用户导入的 EXTERNAL类型数据密钥，"ALL" 或者不设置表示两种类型都查询，大小写敏感。
-                     * @param _origin 根据DateKey类型筛选， "TENCENT_KMS" 表示筛选密钥材料由KMS创建的数据密钥， "EXTERNAL" 表示筛选密钥材料需要用户导入的 EXTERNAL类型数据密钥，"ALL" 或者不设置表示两种类型都查询，大小写敏感。
+                     * 设置<p>根据DateKey类型筛选， &quot;TENCENT_KMS&quot; 表示筛选密钥材料由KMS创建的数据密钥， &quot;EXTERNAL&quot; 表示筛选密钥材料需要用户导入的 EXTERNAL类型数据密钥，&quot;ALL&quot; 或者不设置表示两种类型都查询，大小写敏感。</p>
+                     * @param _origin <p>根据DateKey类型筛选， &quot;TENCENT_KMS&quot; 表示筛选密钥材料由KMS创建的数据密钥， &quot;EXTERNAL&quot; 表示筛选密钥材料需要用户导入的 EXTERNAL类型数据密钥，&quot;ALL&quot; 或者不设置表示两种类型都查询，大小写敏感。</p>
                      * 
                      */
                     void SetOrigin(const std::string& _origin);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool OriginHasBeenSet() const;
 
                     /**
-                     * 获取KMS 高级版对应的 HSM 集群 ID。
-                     * @return HsmClusterId KMS 高级版对应的 HSM 集群 ID。
+                     * 获取<p>KMS 高级版对应的 HSM 集群 ID。当指定集群ID时查询集群的密钥列表；当指定default时,查询公有云共享版的密钥列表；当为空，默认查询所有的密钥列表包括集群和非集群。</p>
+                     * @return HsmClusterId <p>KMS 高级版对应的 HSM 集群 ID。当指定集群ID时查询集群的密钥列表；当指定default时,查询公有云共享版的密钥列表；当为空，默认查询所有的密钥列表包括集群和非集群。</p>
                      * 
                      */
                     std::string GetHsmClusterId() const;
 
                     /**
-                     * 设置KMS 高级版对应的 HSM 集群 ID。
-                     * @param _hsmClusterId KMS 高级版对应的 HSM 集群 ID。
+                     * 设置<p>KMS 高级版对应的 HSM 集群 ID。当指定集群ID时查询集群的密钥列表；当指定default时,查询公有云共享版的密钥列表；当为空，默认查询所有的密钥列表包括集群和非集群。</p>
+                     * @param _hsmClusterId <p>KMS 高级版对应的 HSM 集群 ID。当指定集群ID时查询集群的密钥列表；当指定default时,查询公有云共享版的密钥列表；当为空，默认查询所有的密钥列表包括集群和非集群。</p>
                      * 
                      */
                     void SetHsmClusterId(const std::string& _hsmClusterId);
@@ -213,15 +213,15 @@ namespace TencentCloud
                     bool HsmClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取根密钥全局唯一标识符
-                     * @return KeyId 根密钥全局唯一标识符
+                     * 获取<p>根密钥全局唯一标识符</p>
+                     * @return KeyId <p>根密钥全局唯一标识符</p>
                      * 
                      */
                     std::string GetKeyId() const;
 
                     /**
-                     * 设置根密钥全局唯一标识符
-                     * @param _keyId 根密钥全局唯一标识符
+                     * 设置<p>根密钥全局唯一标识符</p>
+                     * @param _keyId <p>根密钥全局唯一标识符</p>
                      * 
                      */
                     void SetKeyId(const std::string& _keyId);
@@ -234,15 +234,15 @@ namespace TencentCloud
                     bool KeyIdHasBeenSet() const;
 
                     /**
-                     * 获取数据密钥的长度
-                     * @return DataKeyLen 数据密钥的长度
+                     * 获取<p>数据密钥的长度</p>
+                     * @return DataKeyLen <p>数据密钥的长度</p>
                      * 
                      */
                     uint64_t GetDataKeyLen() const;
 
                     /**
-                     * 设置数据密钥的长度
-                     * @param _dataKeyLen 数据密钥的长度
+                     * 设置<p>数据密钥的长度</p>
+                     * @param _dataKeyLen <p>数据密钥的长度</p>
                      * 
                      */
                     void SetDataKeyLen(const uint64_t& _dataKeyLen);
@@ -255,15 +255,15 @@ namespace TencentCloud
                     bool DataKeyLenHasBeenSet() const;
 
                     /**
-                     * 获取标签过滤条件
-                     * @return TagFilters 标签过滤条件
+                     * 获取<p>标签过滤条件</p>
+                     * @return TagFilters <p>标签过滤条件</p>
                      * 
                      */
                     std::vector<TagFilter> GetTagFilters() const;
 
                     /**
-                     * 设置标签过滤条件
-                     * @param _tagFilters 标签过滤条件
+                     * 设置<p>标签过滤条件</p>
+                     * @param _tagFilters <p>标签过滤条件</p>
                      * 
                      */
                     void SetTagFilters(const std::vector<TagFilter>& _tagFilters);
@@ -276,15 +276,15 @@ namespace TencentCloud
                     bool TagFiltersHasBeenSet() const;
 
                     /**
-                     * 获取成员账号信息数组
-                     * @return MemberAccounts 成员账号信息数组
+                     * 获取<p>成员账号信息数组</p>
+                     * @return MemberAccounts <p>成员账号信息数组</p>
                      * 
                      */
                     std::vector<MemberAccount> GetMemberAccounts() const;
 
                     /**
-                     * 设置成员账号信息数组
-                     * @param _memberAccounts 成员账号信息数组
+                     * 设置<p>成员账号信息数组</p>
+                     * @param _memberAccounts <p>成员账号信息数组</p>
                      * 
                      */
                     void SetMemberAccounts(const std::vector<MemberAccount>& _memberAccounts);
@@ -299,73 +299,73 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0
+                     * <p>含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为10，最大值为200
+                     * <p>含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为10，最大值为200</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 根据创建者角色筛选，默认 0 表示用户自己创建的数据密钥， 1 表示授权其它云产品自动创建的数据密钥
+                     * <p>根据创建者角色筛选，默认 0 表示用户自己创建的数据密钥， 1 表示授权其它云产品自动创建的数据密钥</p>
                      */
                     uint64_t m_role;
                     bool m_roleHasBeenSet;
 
                     /**
-                     * 根据DataKey创建时间排序， 0 表示按照降序排序，1表示按照升序排序
+                     * <p>根据DataKey创建时间排序， 0 表示按照降序排序，1表示按照升序排序</p>
                      */
                     uint64_t m_orderType;
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 根据DataKey状态筛选， 0表示全部DataKey， 1 表示仅查询Enabled DataKey， 2 表示仅查询Disabled DataKey，3 表示查询PendingDelete 状态的DataKey(处于计划删除状态的Key)。
+                     * <p>根据DataKey状态筛选， 0表示全部DataKey， 1 表示仅查询Enabled DataKey， 2 表示仅查询Disabled DataKey，3 表示查询PendingDelete 状态的DataKey(处于计划删除状态的Key)。</p>
                      */
                     uint64_t m_keyState;
                     bool m_keyStateHasBeenSet;
 
                     /**
-                     * 根据DataKeyId或者DataKeyName进行模糊匹配查询
+                     * <p>根据DataKeyId或者DataKeyName进行模糊匹配查询</p>
                      */
                     std::string m_searchKeyAlias;
                     bool m_searchKeyAliasHasBeenSet;
 
                     /**
-                     * 根据DateKey类型筛选， "TENCENT_KMS" 表示筛选密钥材料由KMS创建的数据密钥， "EXTERNAL" 表示筛选密钥材料需要用户导入的 EXTERNAL类型数据密钥，"ALL" 或者不设置表示两种类型都查询，大小写敏感。
+                     * <p>根据DateKey类型筛选， &quot;TENCENT_KMS&quot; 表示筛选密钥材料由KMS创建的数据密钥， &quot;EXTERNAL&quot; 表示筛选密钥材料需要用户导入的 EXTERNAL类型数据密钥，&quot;ALL&quot; 或者不设置表示两种类型都查询，大小写敏感。</p>
                      */
                     std::string m_origin;
                     bool m_originHasBeenSet;
 
                     /**
-                     * KMS 高级版对应的 HSM 集群 ID。
+                     * <p>KMS 高级版对应的 HSM 集群 ID。当指定集群ID时查询集群的密钥列表；当指定default时,查询公有云共享版的密钥列表；当为空，默认查询所有的密钥列表包括集群和非集群。</p>
                      */
                     std::string m_hsmClusterId;
                     bool m_hsmClusterIdHasBeenSet;
 
                     /**
-                     * 根密钥全局唯一标识符
+                     * <p>根密钥全局唯一标识符</p>
                      */
                     std::string m_keyId;
                     bool m_keyIdHasBeenSet;
 
                     /**
-                     * 数据密钥的长度
+                     * <p>数据密钥的长度</p>
                      */
                     uint64_t m_dataKeyLen;
                     bool m_dataKeyLenHasBeenSet;
 
                     /**
-                     * 标签过滤条件
+                     * <p>标签过滤条件</p>
                      */
                     std::vector<TagFilter> m_tagFilters;
                     bool m_tagFiltersHasBeenSet;
 
                     /**
-                     * 成员账号信息数组
+                     * <p>成员账号信息数组</p>
                      */
                     std::vector<MemberAccount> m_memberAccounts;
                     bool m_memberAccountsHasBeenSet;

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取索引字段
-                     * @return MgoIndexKeys 索引字段
+                     * 获取<p>索引字段</p>
+                     * @return MgoIndexKeys <p>索引字段</p>
                      * 
                      */
                     std::vector<MgoIndexKeys> GetMgoIndexKeys() const;
 
                     /**
-                     * 设置索引字段
-                     * @param _mgoIndexKeys 索引字段
+                     * 设置<p>索引字段</p>
+                     * @param _mgoIndexKeys <p>索引字段</p>
                      * 
                      */
                     void SetMgoIndexKeys(const std::vector<MgoIndexKeys>& _mgoIndexKeys);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool MgoIndexKeysHasBeenSet() const;
 
                     /**
-                     * 获取是否唯一索引
-                     * @return MgoIsUnique 是否唯一索引
+                     * 获取<p>是否唯一索引</p>
+                     * @return MgoIsUnique <p>是否唯一索引</p>
                      * 
                      */
                     bool GetMgoIsUnique() const;
 
                     /**
-                     * 设置是否唯一索引
-                     * @param _mgoIsUnique 是否唯一索引
+                     * 设置<p>是否唯一索引</p>
+                     * @param _mgoIsUnique <p>是否唯一索引</p>
                      * 
                      */
                     void SetMgoIsUnique(const bool& _mgoIsUnique);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool MgoIsUniqueHasBeenSet() const;
 
                     /**
-                     * 获取是否稀疏索引
-                     * @return MgoIsSparse 是否稀疏索引
+                     * 获取<p>是否稀疏索引</p>
+                     * @return MgoIsSparse <p>是否稀疏索引</p>
                      * 
                      */
                     bool GetMgoIsSparse() const;
 
                     /**
-                     * 设置是否稀疏索引
-                     * @param _mgoIsSparse 是否稀疏索引
+                     * 设置<p>是否稀疏索引</p>
+                     * @param _mgoIsSparse <p>是否稀疏索引</p>
                      * 
                      */
                     void SetMgoIsSparse(const bool& _mgoIsSparse);
@@ -110,25 +110,52 @@ namespace TencentCloud
                      */
                     bool MgoIsSparseHasBeenSet() const;
 
+                    /**
+                     * 获取<p>稀疏索引表达式</p>
+                     * @return PartialFilterExpression <p>稀疏索引表达式</p>
+                     * 
+                     */
+                    std::string GetPartialFilterExpression() const;
+
+                    /**
+                     * 设置<p>稀疏索引表达式</p>
+                     * @param _partialFilterExpression <p>稀疏索引表达式</p>
+                     * 
+                     */
+                    void SetPartialFilterExpression(const std::string& _partialFilterExpression);
+
+                    /**
+                     * 判断参数 PartialFilterExpression 是否已赋值
+                     * @return PartialFilterExpression 是否已赋值
+                     * 
+                     */
+                    bool PartialFilterExpressionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 索引字段
+                     * <p>索引字段</p>
                      */
                     std::vector<MgoIndexKeys> m_mgoIndexKeys;
                     bool m_mgoIndexKeysHasBeenSet;
 
                     /**
-                     * 是否唯一索引
+                     * <p>是否唯一索引</p>
                      */
                     bool m_mgoIsUnique;
                     bool m_mgoIsUniqueHasBeenSet;
 
                     /**
-                     * 是否稀疏索引
+                     * <p>是否稀疏索引</p>
                      */
                     bool m_mgoIsSparse;
                     bool m_mgoIsSparseHasBeenSet;
+
+                    /**
+                     * <p>稀疏索引表达式</p>
+                     */
+                    std::string m_partialFilterExpression;
+                    bool m_partialFilterExpressionHasBeenSet;
 
                 };
             }

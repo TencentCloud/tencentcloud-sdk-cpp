@@ -236,6 +236,48 @@ namespace TencentCloud
                      */
                     bool SummaryPromptHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启人脸检测</p>
+                     * @return EnableFaceDetection <p>是否开启人脸检测</p>
+                     * 
+                     */
+                    bool GetEnableFaceDetection() const;
+
+                    /**
+                     * 设置<p>是否开启人脸检测</p>
+                     * @param _enableFaceDetection <p>是否开启人脸检测</p>
+                     * 
+                     */
+                    void SetEnableFaceDetection(const bool& _enableFaceDetection);
+
+                    /**
+                     * 判断参数 EnableFaceDetection 是否已赋值
+                     * @return EnableFaceDetection 是否已赋值
+                     * 
+                     */
+                    bool EnableFaceDetectionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>画面旋转角度</p><p>枚举值：</p><ul><li>0： 不旋转</li><li>90： 顺时针旋转90度</li><li>-90： 逆时针旋转90度</li><li>180： 旋转180度</li></ul><p>默认值：0</p>
+                     * @return InputRotateDegree <p>画面旋转角度</p><p>枚举值：</p><ul><li>0： 不旋转</li><li>90： 顺时针旋转90度</li><li>-90： 逆时针旋转90度</li><li>180： 旋转180度</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetInputRotateDegree() const;
+
+                    /**
+                     * 设置<p>画面旋转角度</p><p>枚举值：</p><ul><li>0： 不旋转</li><li>90： 顺时针旋转90度</li><li>-90： 逆时针旋转90度</li><li>180： 旋转180度</li></ul><p>默认值：0</p>
+                     * @param _inputRotateDegree <p>画面旋转角度</p><p>枚举值：</p><ul><li>0： 不旋转</li><li>90： 顺时针旋转90度</li><li>-90： 逆时针旋转90度</li><li>180： 旋转180度</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    void SetInputRotateDegree(const int64_t& _inputRotateDegree);
+
+                    /**
+                     * 判断参数 InputRotateDegree 是否已赋值
+                     * @return InputRotateDegree 是否已赋值
+                     * 
+                     */
+                    bool InputRotateDegreeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -291,6 +333,18 @@ namespace TencentCloud
                      */
                     std::string m_summaryPrompt;
                     bool m_summaryPromptHasBeenSet;
+
+                    /**
+                     * <p>是否开启人脸检测</p>
+                     */
+                    bool m_enableFaceDetection;
+                    bool m_enableFaceDetectionHasBeenSet;
+
+                    /**
+                     * <p>画面旋转角度</p><p>枚举值：</p><ul><li>0： 不旋转</li><li>90： 顺时针旋转90度</li><li>-90： 逆时针旋转90度</li><li>180： 旋转180度</li></ul><p>默认值：0</p>
+                     */
+                    int64_t m_inputRotateDegree;
+                    bool m_inputRotateDegreeHasBeenSet;
 
                 };
             }

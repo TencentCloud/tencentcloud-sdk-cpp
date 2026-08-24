@@ -26,7 +26,8 @@ NodeResourceSpec::NodeResourceSpec() :
     m_tagsHasBeenSet(false),
     m_dataDiskHasBeenSet(false),
     m_localDataDiskHasBeenSet(false),
-    m_softwareConfigHasBeenSet(false)
+    m_softwareConfigHasBeenSet(false),
+    m_customNodeNameHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,16 @@ CoreInternalOutcome NodeResourceSpec::Deserialize(const rapidjson::Value &value)
         m_softwareConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomNodeName") && !value["CustomNodeName"].IsNull())
+    {
+        if (!value["CustomNodeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeResourceSpec.CustomNodeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customNodeName = string(value["CustomNodeName"].GetString());
+        m_customNodeNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -233,6 +244,14 @@ void NodeResourceSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_customNodeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomNodeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customNodeName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -332,5 +351,21 @@ void NodeResourceSpec::SetSoftwareConfig(const vector<ServiceDeploy>& _softwareC
 bool NodeResourceSpec::SoftwareConfigHasBeenSet() const
 {
     return m_softwareConfigHasBeenSet;
+}
+
+string NodeResourceSpec::GetCustomNodeName() const
+{
+    return m_customNodeName;
+}
+
+void NodeResourceSpec::SetCustomNodeName(const string& _customNodeName)
+{
+    m_customNodeName = _customNodeName;
+    m_customNodeNameHasBeenSet = true;
+}
+
+bool NodeResourceSpec::CustomNodeNameHasBeenSet() const
+{
+    return m_customNodeNameHasBeenSet;
 }
 

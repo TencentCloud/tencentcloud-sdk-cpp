@@ -25,8 +25,12 @@ CNAPIGwConsumer::CNAPIGwConsumer() :
     m_nameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
+    m_priorityHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_consumerGroupsHasBeenSet(false)
+    m_consumerGroupsHasBeenSet(false),
+    m_syncStatusHasBeenSet(false),
+    m_sourceTypeHasBeenSet(false),
+    m_syncedVersionHasBeenSet(false)
 {
 }
 
@@ -75,6 +79,16 @@ CoreInternalOutcome CNAPIGwConsumer::Deserialize(const rapidjson::Value &value)
         m_modifyTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Priority") && !value["Priority"].IsNull())
+    {
+        if (!value["Priority"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwConsumer.Priority` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_priority = string(value["Priority"].GetString());
+        m_priorityHasBeenSet = true;
+    }
+
     if (value.HasMember("Description") && !value["Description"].IsNull())
     {
         if (!value["Description"].IsString())
@@ -103,6 +117,36 @@ CoreInternalOutcome CNAPIGwConsumer::Deserialize(const rapidjson::Value &value)
             m_consumerGroups.push_back(item);
         }
         m_consumerGroupsHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncStatus") && !value["SyncStatus"].IsNull())
+    {
+        if (!value["SyncStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwConsumer.SyncStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncStatus = string(value["SyncStatus"].GetString());
+        m_syncStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceType") && !value["SourceType"].IsNull())
+    {
+        if (!value["SourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwConsumer.SourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceType = string(value["SourceType"].GetString());
+        m_sourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncedVersion") && !value["SyncedVersion"].IsNull())
+    {
+        if (!value["SyncedVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwConsumer.SyncedVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncedVersion = string(value["SyncedVersion"].GetString());
+        m_syncedVersionHasBeenSet = true;
     }
 
 
@@ -144,6 +188,14 @@ void CNAPIGwConsumer::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_priorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Priority";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_priority.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_descriptionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -165,6 +217,30 @@ void CNAPIGwConsumer::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_syncStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_syncStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncedVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncedVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_syncedVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -234,6 +310,22 @@ bool CNAPIGwConsumer::ModifyTimeHasBeenSet() const
     return m_modifyTimeHasBeenSet;
 }
 
+string CNAPIGwConsumer::GetPriority() const
+{
+    return m_priority;
+}
+
+void CNAPIGwConsumer::SetPriority(const string& _priority)
+{
+    m_priority = _priority;
+    m_priorityHasBeenSet = true;
+}
+
+bool CNAPIGwConsumer::PriorityHasBeenSet() const
+{
+    return m_priorityHasBeenSet;
+}
+
 string CNAPIGwConsumer::GetDescription() const
 {
     return m_description;
@@ -264,5 +356,53 @@ void CNAPIGwConsumer::SetConsumerGroups(const vector<CNAPIGwConsumerGroup>& _con
 bool CNAPIGwConsumer::ConsumerGroupsHasBeenSet() const
 {
     return m_consumerGroupsHasBeenSet;
+}
+
+string CNAPIGwConsumer::GetSyncStatus() const
+{
+    return m_syncStatus;
+}
+
+void CNAPIGwConsumer::SetSyncStatus(const string& _syncStatus)
+{
+    m_syncStatus = _syncStatus;
+    m_syncStatusHasBeenSet = true;
+}
+
+bool CNAPIGwConsumer::SyncStatusHasBeenSet() const
+{
+    return m_syncStatusHasBeenSet;
+}
+
+string CNAPIGwConsumer::GetSourceType() const
+{
+    return m_sourceType;
+}
+
+void CNAPIGwConsumer::SetSourceType(const string& _sourceType)
+{
+    m_sourceType = _sourceType;
+    m_sourceTypeHasBeenSet = true;
+}
+
+bool CNAPIGwConsumer::SourceTypeHasBeenSet() const
+{
+    return m_sourceTypeHasBeenSet;
+}
+
+string CNAPIGwConsumer::GetSyncedVersion() const
+{
+    return m_syncedVersion;
+}
+
+void CNAPIGwConsumer::SetSyncedVersion(const string& _syncedVersion)
+{
+    m_syncedVersion = _syncedVersion;
+    m_syncedVersionHasBeenSet = true;
+}
+
+bool CNAPIGwConsumer::SyncedVersionHasBeenSet() const
+{
+    return m_syncedVersionHasBeenSet;
 }
 

@@ -27,6 +27,7 @@ CropEnhanceImageOCRResponse::CropEnhanceImageOCRResponse() :
     m_croppedWidthHasBeenSet(false),
     m_croppedHeightHasBeenSet(false),
     m_croppedImageHasBeenSet(false),
+    m_croppedImageUrlHasBeenSet(false),
     m_positionHasBeenSet(false),
     m_angleHasBeenSet(false)
 {
@@ -96,6 +97,16 @@ CoreInternalOutcome CropEnhanceImageOCRResponse::Deserialize(const string &paylo
         m_croppedImageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CroppedImageUrl") && !rsp["CroppedImageUrl"].IsNull())
+    {
+        if (!rsp["CroppedImageUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CroppedImageUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_croppedImageUrl = string(rsp["CroppedImageUrl"].GetString());
+        m_croppedImageUrlHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Position") && !rsp["Position"].IsNull())
     {
         if (!rsp["Position"].IsArray())
@@ -151,6 +162,14 @@ string CropEnhanceImageOCRResponse::ToJsonString() const
         string key = "CroppedImage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_croppedImage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_croppedImageUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CroppedImageUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_croppedImageUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_positionHasBeenSet)
@@ -214,6 +233,16 @@ string CropEnhanceImageOCRResponse::GetCroppedImage() const
 bool CropEnhanceImageOCRResponse::CroppedImageHasBeenSet() const
 {
     return m_croppedImageHasBeenSet;
+}
+
+string CropEnhanceImageOCRResponse::GetCroppedImageUrl() const
+{
+    return m_croppedImageUrl;
+}
+
+bool CropEnhanceImageOCRResponse::CroppedImageUrlHasBeenSet() const
+{
+    return m_croppedImageUrlHasBeenSet;
 }
 
 vector<int64_t> CropEnhanceImageOCRResponse::GetPosition() const

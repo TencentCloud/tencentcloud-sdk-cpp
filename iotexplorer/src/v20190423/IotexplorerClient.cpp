@@ -1990,6 +1990,56 @@ IotexplorerClient::CreateTWeSeeDirectUploadCredentialOutcomeCallable Iotexplorer
     return prom->get_future();
 }
 
+IotexplorerClient::CreateTWeSeePersonOutcome IotexplorerClient::CreateTWeSeePerson(const CreateTWeSeePersonRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTWeSeePerson");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTWeSeePersonResponse rsp = CreateTWeSeePersonResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTWeSeePersonOutcome(rsp);
+        else
+            return CreateTWeSeePersonOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTWeSeePersonOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateTWeSeePersonAsync(const CreateTWeSeePersonRequest& request, const CreateTWeSeePersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateTWeSeePersonRequest&;
+    using Resp = CreateTWeSeePersonResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateTWeSeePerson", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::CreateTWeSeePersonOutcomeCallable IotexplorerClient::CreateTWeSeePersonCallable(const CreateTWeSeePersonRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateTWeSeePersonOutcome>>();
+    CreateTWeSeePersonAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const CreateTWeSeePersonRequest&,
+        CreateTWeSeePersonOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::CreateTWeSeePostPaidServiceOutcome IotexplorerClient::CreateTWeSeePostPaidService(const CreateTWeSeePostPaidServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTWeSeePostPaidService");
@@ -3182,6 +3232,106 @@ IotexplorerClient::DeleteTWeSeeCallbackOutcomeCallable IotexplorerClient::Delete
         const IotexplorerClient*,
         const DeleteTWeSeeCallbackRequest&,
         DeleteTWeSeeCallbackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::DeleteTWeSeeFaceOutcome IotexplorerClient::DeleteTWeSeeFace(const DeleteTWeSeeFaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTWeSeeFace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTWeSeeFaceResponse rsp = DeleteTWeSeeFaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTWeSeeFaceOutcome(rsp);
+        else
+            return DeleteTWeSeeFaceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTWeSeeFaceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DeleteTWeSeeFaceAsync(const DeleteTWeSeeFaceRequest& request, const DeleteTWeSeeFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteTWeSeeFaceRequest&;
+    using Resp = DeleteTWeSeeFaceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteTWeSeeFace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DeleteTWeSeeFaceOutcomeCallable IotexplorerClient::DeleteTWeSeeFaceCallable(const DeleteTWeSeeFaceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteTWeSeeFaceOutcome>>();
+    DeleteTWeSeeFaceAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DeleteTWeSeeFaceRequest&,
+        DeleteTWeSeeFaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::DeleteTWeSeePersonOutcome IotexplorerClient::DeleteTWeSeePerson(const DeleteTWeSeePersonRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTWeSeePerson");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTWeSeePersonResponse rsp = DeleteTWeSeePersonResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTWeSeePersonOutcome(rsp);
+        else
+            return DeleteTWeSeePersonOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTWeSeePersonOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DeleteTWeSeePersonAsync(const DeleteTWeSeePersonRequest& request, const DeleteTWeSeePersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteTWeSeePersonRequest&;
+    using Resp = DeleteTWeSeePersonResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteTWeSeePerson", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DeleteTWeSeePersonOutcomeCallable IotexplorerClient::DeleteTWeSeePersonCallable(const DeleteTWeSeePersonRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteTWeSeePersonOutcome>>();
+    DeleteTWeSeePersonAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DeleteTWeSeePersonRequest&,
+        DeleteTWeSeePersonOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -6390,6 +6540,106 @@ IotexplorerClient::DescribeTWeSeeConfigOutcomeCallable IotexplorerClient::Descri
     return prom->get_future();
 }
 
+IotexplorerClient::DescribeTWeSeeFaceOutcome IotexplorerClient::DescribeTWeSeeFace(const DescribeTWeSeeFaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTWeSeeFace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTWeSeeFaceResponse rsp = DescribeTWeSeeFaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTWeSeeFaceOutcome(rsp);
+        else
+            return DescribeTWeSeeFaceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTWeSeeFaceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeTWeSeeFaceAsync(const DescribeTWeSeeFaceRequest& request, const DescribeTWeSeeFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTWeSeeFaceRequest&;
+    using Resp = DescribeTWeSeeFaceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTWeSeeFace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DescribeTWeSeeFaceOutcomeCallable IotexplorerClient::DescribeTWeSeeFaceCallable(const DescribeTWeSeeFaceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTWeSeeFaceOutcome>>();
+    DescribeTWeSeeFaceAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DescribeTWeSeeFaceRequest&,
+        DescribeTWeSeeFaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::DescribeTWeSeePersonOutcome IotexplorerClient::DescribeTWeSeePerson(const DescribeTWeSeePersonRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTWeSeePerson");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTWeSeePersonResponse rsp = DescribeTWeSeePersonResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTWeSeePersonOutcome(rsp);
+        else
+            return DescribeTWeSeePersonOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTWeSeePersonOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeTWeSeePersonAsync(const DescribeTWeSeePersonRequest& request, const DescribeTWeSeePersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTWeSeePersonRequest&;
+    using Resp = DescribeTWeSeePersonResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTWeSeePerson", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DescribeTWeSeePersonOutcomeCallable IotexplorerClient::DescribeTWeSeePersonCallable(const DescribeTWeSeePersonRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTWeSeePersonOutcome>>();
+    DescribeTWeSeePersonAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DescribeTWeSeePersonRequest&,
+        DescribeTWeSeePersonOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::DescribeTWeSeePostPaidServiceOutcome IotexplorerClient::DescribeTWeSeePostPaidService(const DescribeTWeSeePostPaidServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTWeSeePostPaidService");
@@ -8540,6 +8790,56 @@ IotexplorerClient::GetWechatDeviceTicketOutcomeCallable IotexplorerClient::GetWe
     return prom->get_future();
 }
 
+IotexplorerClient::ImportTWeSeeFacesOutcome IotexplorerClient::ImportTWeSeeFaces(const ImportTWeSeeFacesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImportTWeSeeFaces");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImportTWeSeeFacesResponse rsp = ImportTWeSeeFacesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImportTWeSeeFacesOutcome(rsp);
+        else
+            return ImportTWeSeeFacesOutcome(o.GetError());
+    }
+    else
+    {
+        return ImportTWeSeeFacesOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ImportTWeSeeFacesAsync(const ImportTWeSeeFacesRequest& request, const ImportTWeSeeFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ImportTWeSeeFacesRequest&;
+    using Resp = ImportTWeSeeFacesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ImportTWeSeeFaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::ImportTWeSeeFacesOutcomeCallable IotexplorerClient::ImportTWeSeeFacesCallable(const ImportTWeSeeFacesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ImportTWeSeeFacesOutcome>>();
+    ImportTWeSeeFacesAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const ImportTWeSeeFacesRequest&,
+        ImportTWeSeeFacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::InheritCloudStorageUserOutcome IotexplorerClient::InheritCloudStorageUser(const InheritCloudStorageUserRequest &request)
 {
     auto outcome = MakeRequest(request, "InheritCloudStorageUser");
@@ -9282,6 +9582,56 @@ IotexplorerClient::ListTWeSeeCallbackOutcomeCallable IotexplorerClient::ListTWeS
         const IotexplorerClient*,
         const ListTWeSeeCallbackRequest&,
         ListTWeSeeCallbackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::ListTWeSeePersonsOutcome IotexplorerClient::ListTWeSeePersons(const ListTWeSeePersonsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTWeSeePersons");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTWeSeePersonsResponse rsp = ListTWeSeePersonsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTWeSeePersonsOutcome(rsp);
+        else
+            return ListTWeSeePersonsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTWeSeePersonsOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ListTWeSeePersonsAsync(const ListTWeSeePersonsRequest& request, const ListTWeSeePersonsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListTWeSeePersonsRequest&;
+    using Resp = ListTWeSeePersonsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListTWeSeePersons", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::ListTWeSeePersonsOutcomeCallable IotexplorerClient::ListTWeSeePersonsCallable(const ListTWeSeePersonsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListTWeSeePersonsOutcome>>();
+    ListTWeSeePersonsAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const ListTWeSeePersonsRequest&,
+        ListTWeSeePersonsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -10182,6 +10532,106 @@ IotexplorerClient::ModifyTWeSeeConfigOutcomeCallable IotexplorerClient::ModifyTW
         const IotexplorerClient*,
         const ModifyTWeSeeConfigRequest&,
         ModifyTWeSeeConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::ModifyTWeSeeFaceOutcome IotexplorerClient::ModifyTWeSeeFace(const ModifyTWeSeeFaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTWeSeeFace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTWeSeeFaceResponse rsp = ModifyTWeSeeFaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTWeSeeFaceOutcome(rsp);
+        else
+            return ModifyTWeSeeFaceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTWeSeeFaceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ModifyTWeSeeFaceAsync(const ModifyTWeSeeFaceRequest& request, const ModifyTWeSeeFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyTWeSeeFaceRequest&;
+    using Resp = ModifyTWeSeeFaceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyTWeSeeFace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::ModifyTWeSeeFaceOutcomeCallable IotexplorerClient::ModifyTWeSeeFaceCallable(const ModifyTWeSeeFaceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyTWeSeeFaceOutcome>>();
+    ModifyTWeSeeFaceAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const ModifyTWeSeeFaceRequest&,
+        ModifyTWeSeeFaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::ModifyTWeSeePersonOutcome IotexplorerClient::ModifyTWeSeePerson(const ModifyTWeSeePersonRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTWeSeePerson");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTWeSeePersonResponse rsp = ModifyTWeSeePersonResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTWeSeePersonOutcome(rsp);
+        else
+            return ModifyTWeSeePersonOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTWeSeePersonOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ModifyTWeSeePersonAsync(const ModifyTWeSeePersonRequest& request, const ModifyTWeSeePersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyTWeSeePersonRequest&;
+    using Resp = ModifyTWeSeePersonResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyTWeSeePerson", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::ModifyTWeSeePersonOutcomeCallable IotexplorerClient::ModifyTWeSeePersonCallable(const ModifyTWeSeePersonRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyTWeSeePersonOutcome>>();
+    ModifyTWeSeePersonAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const ModifyTWeSeePersonRequest&,
+        ModifyTWeSeePersonOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

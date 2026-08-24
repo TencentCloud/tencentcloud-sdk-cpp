@@ -28,6 +28,7 @@
 #include <tencentcloud/iotexplorer/v20190423/model/SeeComprehensionResult.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SeeCompHighlightResult.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SeeDetectContinuousResult.h>
+#include <tencentcloud/iotexplorer/v20190423/model/SeeFaceRecognitionResult.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CloudStorageAIServiceTaskFileInfo.h>
 
 
@@ -241,6 +242,27 @@ namespace TencentCloud
                     bool DetectContinuousResultHasBeenSet() const;
 
                     /**
+                     * 获取<p>人脸检测结果</p>
+                     * @return FaceRecognitionResult <p>人脸检测结果</p>
+                     * 
+                     */
+                    SeeFaceRecognitionResult GetFaceRecognitionResult() const;
+
+                    /**
+                     * 设置<p>人脸检测结果</p>
+                     * @param _faceRecognitionResult <p>人脸检测结果</p>
+                     * 
+                     */
+                    void SetFaceRecognitionResult(const SeeFaceRecognitionResult& _faceRecognitionResult);
+
+                    /**
+                     * 判断参数 FaceRecognitionResult 是否已赋值
+                     * @return FaceRecognitionResult 是否已赋值
+                     * 
+                     */
+                    bool FaceRecognitionResultHasBeenSet() const;
+
+                    /**
                      * 获取<p>完成该任务所消耗的基础能力额度</p>
                      * @return CostBasic <p>完成该任务所消耗的基础能力额度</p>
                      * 
@@ -442,6 +464,12 @@ namespace TencentCloud
                      */
                     SeeDetectContinuousResult m_detectContinuousResult;
                     bool m_detectContinuousResultHasBeenSet;
+
+                    /**
+                     * <p>人脸检测结果</p>
+                     */
+                    SeeFaceRecognitionResult m_faceRecognitionResult;
+                    bool m_faceRecognitionResultHasBeenSet;
 
                     /**
                      * <p>完成该任务所消耗的基础能力额度</p>

@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例名称。
-                     * @return ClusterName 实例名称。
+                     * 获取<p>实例名称。</p>
+                     * @return ClusterName <p>实例名称。</p>
                      * 
                      */
                     std::string GetClusterName() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取云盘版实例的读写地址信息。
-                     * @return ReadWriteAddress 云盘版实例的读写地址信息。
+                     * 获取<p>云盘版实例的读写地址信息。</p>
+                     * @return ReadWriteAddress <p>云盘版实例的读写地址信息。</p>
                      * 
                      */
                     AddressInfo GetReadWriteAddress() const;
@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool ReadWriteAddressHasBeenSet() const;
 
                     /**
-                     * 获取云盘版实例的只读地址信息。
-                     * @return ReadOnlyAddress 云盘版实例的只读地址信息。
+                     * 获取<p>云盘版实例的只读地址信息。</p>
+                     * @return ReadOnlyAddress <p>云盘版实例的只读地址信息。</p>
                      * 
                      */
                     std::vector<AddressInfo> GetReadOnlyAddress() const;
@@ -88,8 +88,8 @@ namespace TencentCloud
                     bool ReadOnlyAddressHasBeenSet() const;
 
                     /**
-                     * 获取云盘版实例的节点列表信息。
-                     * @return NodeList 云盘版实例的节点列表信息。
+                     * 获取<p>云盘版实例的节点列表信息。</p>
+                     * @return NodeList <p>云盘版实例的节点列表信息。</p>
                      * 
                      */
                     std::vector<ClusterNodeInfo> GetNodeList() const;
@@ -102,8 +102,8 @@ namespace TencentCloud
                     bool NodeListHasBeenSet() const;
 
                     /**
-                     * 获取只读空间保护阈值,单位GB
-                     * @return ReadonlyLimit 只读空间保护阈值,单位GB
+                     * 获取<p>只读空间保护阈值,单位GB</p>
+                     * @return ReadonlyLimit <p>只读空间保护阈值,单位GB</p>
                      * 
                      */
                     int64_t GetReadonlyLimit() const;
@@ -116,8 +116,8 @@ namespace TencentCloud
                     bool ReadonlyLimitHasBeenSet() const;
 
                     /**
-                     * 获取实例节点数。
-                     * @return NodeCount 实例节点数。
+                     * 获取<p>实例节点数。</p>
+                     * @return NodeCount <p>实例节点数。</p>
                      * 
                      */
                     int64_t GetNodeCount() const;
@@ -132,37 +132,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例名称。
+                     * <p>实例名称。</p>
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 云盘版实例的读写地址信息。
+                     * <p>云盘版实例的读写地址信息。</p>
                      */
                     AddressInfo m_readWriteAddress;
                     bool m_readWriteAddressHasBeenSet;
 
                     /**
-                     * 云盘版实例的只读地址信息。
+                     * <p>云盘版实例的只读地址信息。</p>
                      */
                     std::vector<AddressInfo> m_readOnlyAddress;
                     bool m_readOnlyAddressHasBeenSet;
 
                     /**
-                     * 云盘版实例的节点列表信息。
+                     * <p>云盘版实例的节点列表信息。</p>
                      */
                     std::vector<ClusterNodeInfo> m_nodeList;
                     bool m_nodeListHasBeenSet;
 
                     /**
-                     * 只读空间保护阈值,单位GB
+                     * <p>只读空间保护阈值,单位GB</p>
                      */
                     int64_t m_readonlyLimit;
                     bool m_readonlyLimitHasBeenSet;
 
                     /**
-                     * 实例节点数。
+                     * <p>实例节点数。</p>
                      */
                     int64_t m_nodeCount;
                     bool m_nodeCountHasBeenSet;

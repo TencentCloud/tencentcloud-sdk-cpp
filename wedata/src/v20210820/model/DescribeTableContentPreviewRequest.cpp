@@ -35,7 +35,8 @@ DescribeTableContentPreviewRequest::DescribeTableContentPreviewRequest() :
     m_partitionNameHasBeenSet(false),
     m_resourceGroupIdHasBeenSet(false),
     m_sqlHasBeenSet(false),
-    m_engineIdHasBeenSet(false)
+    m_engineIdHasBeenSet(false),
+    m_engineTypeDetailHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,14 @@ string DescribeTableContentPreviewRequest::ToJsonString() const
         string key = "EngineId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_engineId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_engineTypeDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineTypeDetail";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_engineTypeDetail.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -364,6 +373,22 @@ void DescribeTableContentPreviewRequest::SetEngineId(const string& _engineId)
 bool DescribeTableContentPreviewRequest::EngineIdHasBeenSet() const
 {
     return m_engineIdHasBeenSet;
+}
+
+string DescribeTableContentPreviewRequest::GetEngineTypeDetail() const
+{
+    return m_engineTypeDetail;
+}
+
+void DescribeTableContentPreviewRequest::SetEngineTypeDetail(const string& _engineTypeDetail)
+{
+    m_engineTypeDetail = _engineTypeDetail;
+    m_engineTypeDetailHasBeenSet = true;
+}
+
+bool DescribeTableContentPreviewRequest::EngineTypeDetailHasBeenSet() const
+{
+    return m_engineTypeDetailHasBeenSet;
 }
 
 

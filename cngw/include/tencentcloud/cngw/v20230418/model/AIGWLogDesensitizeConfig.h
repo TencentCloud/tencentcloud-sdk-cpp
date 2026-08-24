@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * AI 网关 B 层日志脱敏配置（写入 LLM Log 前对 payload 掩码）
+                * AI 网关日志脱敏配置
                 */
                 class AIGWLogDesensitizeConfig : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>日志脱敏开关</p>
-                     * @return Enabled <p>日志脱敏开关</p>
+                     * 获取<p>日志脱敏配置总开关</p>
+                     * @return Enabled <p>日志脱敏配置总开关</p>
                      * 
                      */
                     bool GetEnabled() const;
 
                     /**
-                     * 设置<p>日志脱敏开关</p>
-                     * @param _enabled <p>日志脱敏开关</p>
+                     * 设置<p>日志脱敏配置总开关</p>
+                     * @param _enabled <p>日志脱敏配置总开关</p>
                      * 
                      */
                     void SetEnabled(const bool& _enabled);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool EnabledHasBeenSet() const;
 
                     /**
-                     * 获取<p>预定义规则类型</p><p>枚举值：</p><ul><li>Phone： 电话号码</li><li>IdCard： 身份证号</li><li>BankCard： 银行卡号</li><li>Email： 邮箱地址</li><li>IP： IP地址</li><li>Name： 姓名</li></ul>
-                     * @return PredefinedRuleTypes <p>预定义规则类型</p><p>枚举值：</p><ul><li>Phone： 电话号码</li><li>IdCard： 身份证号</li><li>BankCard： 银行卡号</li><li>Email： 邮箱地址</li><li>IP： IP地址</li><li>Name： 姓名</li></ul>
+                     * 获取<p>内置规则类型：Phone、IdCard、BankCard、Email、IP、Name</p>
+                     * @return PredefinedRuleTypes <p>内置规则类型：Phone、IdCard、BankCard、Email、IP、Name</p>
                      * 
                      */
                     std::vector<std::string> GetPredefinedRuleTypes() const;
 
                     /**
-                     * 设置<p>预定义规则类型</p><p>枚举值：</p><ul><li>Phone： 电话号码</li><li>IdCard： 身份证号</li><li>BankCard： 银行卡号</li><li>Email： 邮箱地址</li><li>IP： IP地址</li><li>Name： 姓名</li></ul>
-                     * @param _predefinedRuleTypes <p>预定义规则类型</p><p>枚举值：</p><ul><li>Phone： 电话号码</li><li>IdCard： 身份证号</li><li>BankCard： 银行卡号</li><li>Email： 邮箱地址</li><li>IP： IP地址</li><li>Name： 姓名</li></ul>
+                     * 设置<p>内置规则类型：Phone、IdCard、BankCard、Email、IP、Name</p>
+                     * @param _predefinedRuleTypes <p>内置规则类型：Phone、IdCard、BankCard、Email、IP、Name</p>
                      * 
                      */
                     void SetPredefinedRuleTypes(const std::vector<std::string>& _predefinedRuleTypes);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool PredefinedRuleTypesHasBeenSet() const;
 
                     /**
-                     * 获取<p>自定义脱敏规则</p>
-                     * @return CustomRules <p>自定义脱敏规则</p>
+                     * 获取<p>自定义规则，最多 20 条</p>
+                     * @return CustomRules <p>自定义规则，最多 20 条</p>
                      * 
                      */
                     std::vector<AIGWCustomDesensitizeRule> GetCustomRules() const;
 
                     /**
-                     * 设置<p>自定义脱敏规则</p>
-                     * @param _customRules <p>自定义脱敏规则</p>
+                     * 设置<p>自定义规则，最多 20 条</p>
+                     * @param _customRules <p>自定义规则，最多 20 条</p>
                      * 
                      */
                     void SetCustomRules(const std::vector<AIGWCustomDesensitizeRule>& _customRules);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool CustomRulesHasBeenSet() const;
 
                     /**
-                     * 获取<p>日志脱敏范围</p><p>枚举值：</p><ul><li>Request： 请求</li><li>Response： 响应</li></ul>
-                     * @return Scope <p>日志脱敏范围</p><p>枚举值：</p><ul><li>Request： 请求</li><li>Response： 响应</li></ul>
+                     * 获取<p>脱敏方向：Request、Response；为空时默认两者</p>
+                     * @return Scope <p>脱敏方向：Request、Response；为空时默认两者</p>
                      * 
                      */
                     std::vector<std::string> GetScope() const;
 
                     /**
-                     * 设置<p>日志脱敏范围</p><p>枚举值：</p><ul><li>Request： 请求</li><li>Response： 响应</li></ul>
-                     * @param _scope <p>日志脱敏范围</p><p>枚举值：</p><ul><li>Request： 请求</li><li>Response： 响应</li></ul>
+                     * 设置<p>脱敏方向：Request、Response；为空时默认两者</p>
+                     * @param _scope <p>脱敏方向：Request、Response；为空时默认两者</p>
                      * 
                      */
                     void SetScope(const std::vector<std::string>& _scope);
@@ -134,25 +134,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>日志脱敏开关</p>
+                     * <p>日志脱敏配置总开关</p>
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
-                     * <p>预定义规则类型</p><p>枚举值：</p><ul><li>Phone： 电话号码</li><li>IdCard： 身份证号</li><li>BankCard： 银行卡号</li><li>Email： 邮箱地址</li><li>IP： IP地址</li><li>Name： 姓名</li></ul>
+                     * <p>内置规则类型：Phone、IdCard、BankCard、Email、IP、Name</p>
                      */
                     std::vector<std::string> m_predefinedRuleTypes;
                     bool m_predefinedRuleTypesHasBeenSet;
 
                     /**
-                     * <p>自定义脱敏规则</p>
+                     * <p>自定义规则，最多 20 条</p>
                      */
                     std::vector<AIGWCustomDesensitizeRule> m_customRules;
                     bool m_customRulesHasBeenSet;
 
                     /**
-                     * <p>日志脱敏范围</p><p>枚举值：</p><ul><li>Request： 请求</li><li>Response： 响应</li></ul>
+                     * <p>脱敏方向：Request、Response；为空时默认两者</p>
                      */
                     std::vector<std::string> m_scope;
                     bool m_scopeHasBeenSet;

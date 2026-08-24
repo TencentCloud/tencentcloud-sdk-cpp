@@ -833,6 +833,27 @@ namespace TencentCloud
                      */
                     bool TargetProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>推理模板 ID，在内置大模型场景下使用</p>
+                     * @return InferTemplateId <p>推理模板 ID，在内置大模型场景下使用</p>
+                     * 
+                     */
+                    std::string GetInferTemplateId() const;
+
+                    /**
+                     * 设置<p>推理模板 ID，在内置大模型场景下使用</p>
+                     * @param _inferTemplateId <p>推理模板 ID，在内置大模型场景下使用</p>
+                     * 
+                     */
+                    void SetInferTemplateId(const std::string& _inferTemplateId);
+
+                    /**
+                     * 判断参数 InferTemplateId 是否已赋值
+                     * @return InferTemplateId 是否已赋值
+                     * 
+                     */
+                    bool InferTemplateIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1056,6 +1077,12 @@ namespace TencentCloud
                      */
                     int64_t m_targetProjectId;
                     bool m_targetProjectIdHasBeenSet;
+
+                    /**
+                     * <p>推理模板 ID，在内置大模型场景下使用</p>
+                     */
+                    std::string m_inferTemplateId;
+                    bool m_inferTemplateIdHasBeenSet;
 
                 };
             }

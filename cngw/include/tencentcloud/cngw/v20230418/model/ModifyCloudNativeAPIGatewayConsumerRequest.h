@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网关实例id
-                     * @return GatewayId 网关实例id
+                     * 获取<p>网关实例id</p>
+                     * @return GatewayId <p>网关实例id</p>
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
-                     * 设置网关实例id
-                     * @param _gatewayId 网关实例id
+                     * 设置<p>网关实例id</p>
+                     * @param _gatewayId <p>网关实例id</p>
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -106,6 +106,27 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
+                     * 获取<p>消费者优先级</p><p>枚举值：</p><ul><li>High： 高优</li><li>Medium： 中优</li><li>Low： 低优</li></ul>
+                     * @return Priority <p>消费者优先级</p><p>枚举值：</p><ul><li>High： 高优</li><li>Medium： 中优</li><li>Low： 低优</li></ul>
+                     * 
+                     */
+                    std::string GetPriority() const;
+
+                    /**
+                     * 设置<p>消费者优先级</p><p>枚举值：</p><ul><li>High： 高优</li><li>Medium： 中优</li><li>Low： 低优</li></ul>
+                     * @param _priority <p>消费者优先级</p><p>枚举值：</p><ul><li>High： 高优</li><li>Medium： 中优</li><li>Low： 低优</li></ul>
+                     * 
+                     */
+                    void SetPriority(const std::string& _priority);
+
+                    /**
+                     * 判断参数 Priority 是否已赋值
+                     * @return Priority 是否已赋值
+                     * 
+                     */
+                    bool PriorityHasBeenSet() const;
+
+                    /**
                      * 获取<p>消费者描述。最长 200 字符。</p>
                      * @return Description <p>消费者描述。最长 200 字符。</p>
                      * 
@@ -129,7 +150,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 网关实例id
+                     * <p>网关实例id</p>
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
@@ -145,6 +166,12 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * <p>消费者优先级</p><p>枚举值：</p><ul><li>High： 高优</li><li>Medium： 中优</li><li>Low： 低优</li></ul>
+                     */
+                    std::string m_priority;
+                    bool m_priorityHasBeenSet;
 
                     /**
                      * <p>消费者描述。最长 200 字符。</p>

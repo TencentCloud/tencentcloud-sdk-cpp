@@ -23,7 +23,12 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
-TransferClusterPrepayToPostpayResponse::TransferClusterPrepayToPostpayResponse()
+TransferClusterPrepayToPostpayResponse::TransferClusterPrepayToPostpayResponse() :
+    m_bigDealIdsHasBeenSet(false),
+    m_tranIdHasBeenSet(false),
+    m_dealNamesHasBeenSet(false),
+    m_resourceIdsHasBeenSet(false),
+    m_clusterIdsHasBeenSet(false)
 {
 }
 
@@ -61,6 +66,68 @@ CoreInternalOutcome TransferClusterPrepayToPostpayResponse::Deserialize(const st
     }
 
 
+    if (rsp.HasMember("BigDealIds") && !rsp["BigDealIds"].IsNull())
+    {
+        if (!rsp["BigDealIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BigDealIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["BigDealIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_bigDealIds.push_back((*itr).GetString());
+        }
+        m_bigDealIdsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TranId") && !rsp["TranId"].IsNull())
+    {
+        if (!rsp["TranId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TranId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tranId = string(rsp["TranId"].GetString());
+        m_tranIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DealNames") && !rsp["DealNames"].IsNull())
+    {
+        if (!rsp["DealNames"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DealNames` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["DealNames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_dealNames.push_back((*itr).GetString());
+        }
+        m_dealNamesHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ResourceIds") && !rsp["ResourceIds"].IsNull())
+    {
+        if (!rsp["ResourceIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ResourceIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ResourceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_resourceIds.push_back((*itr).GetString());
+        }
+        m_resourceIdsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ClusterIds") && !rsp["ClusterIds"].IsNull())
+    {
+        if (!rsp["ClusterIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClusterIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ClusterIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_clusterIds.push_back((*itr).GetString());
+        }
+        m_clusterIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +137,66 @@ string TransferClusterPrepayToPostpayResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_bigDealIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BigDealIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_bigDealIds.begin(); itr != m_bigDealIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tranIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TranId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tranId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dealNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DealNames";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_dealNames.begin(); itr != m_dealNames.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_resourceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_resourceIds.begin(); itr != m_resourceIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_clusterIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_clusterIds.begin(); itr != m_clusterIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +209,55 @@ string TransferClusterPrepayToPostpayResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> TransferClusterPrepayToPostpayResponse::GetBigDealIds() const
+{
+    return m_bigDealIds;
+}
+
+bool TransferClusterPrepayToPostpayResponse::BigDealIdsHasBeenSet() const
+{
+    return m_bigDealIdsHasBeenSet;
+}
+
+string TransferClusterPrepayToPostpayResponse::GetTranId() const
+{
+    return m_tranId;
+}
+
+bool TransferClusterPrepayToPostpayResponse::TranIdHasBeenSet() const
+{
+    return m_tranIdHasBeenSet;
+}
+
+vector<string> TransferClusterPrepayToPostpayResponse::GetDealNames() const
+{
+    return m_dealNames;
+}
+
+bool TransferClusterPrepayToPostpayResponse::DealNamesHasBeenSet() const
+{
+    return m_dealNamesHasBeenSet;
+}
+
+vector<string> TransferClusterPrepayToPostpayResponse::GetResourceIds() const
+{
+    return m_resourceIds;
+}
+
+bool TransferClusterPrepayToPostpayResponse::ResourceIdsHasBeenSet() const
+{
+    return m_resourceIdsHasBeenSet;
+}
+
+vector<string> TransferClusterPrepayToPostpayResponse::GetClusterIds() const
+{
+    return m_clusterIds;
+}
+
+bool TransferClusterPrepayToPostpayResponse::ClusterIdsHasBeenSet() const
+{
+    return m_clusterIdsHasBeenSet;
+}
 
 

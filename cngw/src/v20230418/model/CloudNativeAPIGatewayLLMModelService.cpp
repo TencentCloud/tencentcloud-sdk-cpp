@@ -54,7 +54,16 @@ CloudNativeAPIGatewayLLMModelService::CloudNativeAPIGatewayLLMModelService() :
     m_customProviderNameHasBeenSet(false),
     m_keyRotationEnabledHasBeenSet(false),
     m_keyRotationPeriodDaysHasBeenSet(false),
-    m_externalInstanceIdHasBeenSet(false)
+    m_externalInstanceIdHasBeenSet(false),
+    m_loadBalanceConfigHasBeenSet(false),
+    m_canPublishHasBeenSet(false),
+    m_publishStatusHasBeenSet(false),
+    m_syncStatusHasBeenSet(false),
+    m_sourceTypeHasBeenSet(false),
+    m_syncedVersionHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_enableHealthCheckHasBeenSet(false),
+    m_healthCheckHasBeenSet(false)
 {
 }
 
@@ -447,6 +456,110 @@ CoreInternalOutcome CloudNativeAPIGatewayLLMModelService::Deserialize(const rapi
         m_externalInstanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("LoadBalanceConfig") && !value["LoadBalanceConfig"].IsNull())
+    {
+        if (!value["LoadBalanceConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.LoadBalanceConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_loadBalanceConfig.Deserialize(value["LoadBalanceConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_loadBalanceConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("CanPublish") && !value["CanPublish"].IsNull())
+    {
+        if (!value["CanPublish"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.CanPublish` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_canPublish = value["CanPublish"].GetBool();
+        m_canPublishHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublishStatus") && !value["PublishStatus"].IsNull())
+    {
+        if (!value["PublishStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.PublishStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publishStatus = string(value["PublishStatus"].GetString());
+        m_publishStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncStatus") && !value["SyncStatus"].IsNull())
+    {
+        if (!value["SyncStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.SyncStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncStatus = string(value["SyncStatus"].GetString());
+        m_syncStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceType") && !value["SourceType"].IsNull())
+    {
+        if (!value["SourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.SourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceType = string(value["SourceType"].GetString());
+        m_sourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncedVersion") && !value["SyncedVersion"].IsNull())
+    {
+        if (!value["SyncedVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.SyncedVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncedVersion = string(value["SyncedVersion"].GetString());
+        m_syncedVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableHealthCheck") && !value["EnableHealthCheck"].IsNull())
+    {
+        if (!value["EnableHealthCheck"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.EnableHealthCheck` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableHealthCheck = value["EnableHealthCheck"].GetBool();
+        m_enableHealthCheckHasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthCheck") && !value["HealthCheck"].IsNull())
+    {
+        if (!value["HealthCheck"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.HealthCheck` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_healthCheck.Deserialize(value["HealthCheck"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_healthCheckHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -746,6 +859,80 @@ void CloudNativeAPIGatewayLLMModelService::ToJsonObject(rapidjson::Value &value,
         string key = "ExternalInstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_externalInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loadBalanceConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalanceConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_loadBalanceConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_canPublishHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanPublish";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_canPublish, allocator);
+    }
+
+    if (m_publishStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublishStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publishStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_syncStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncedVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncedVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_syncedVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableHealthCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableHealthCheck";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableHealthCheck, allocator);
+    }
+
+    if (m_healthCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheck";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_healthCheck.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1293,5 +1480,149 @@ void CloudNativeAPIGatewayLLMModelService::SetExternalInstanceId(const string& _
 bool CloudNativeAPIGatewayLLMModelService::ExternalInstanceIdHasBeenSet() const
 {
     return m_externalInstanceIdHasBeenSet;
+}
+
+AIGWLoadBalanceConfig CloudNativeAPIGatewayLLMModelService::GetLoadBalanceConfig() const
+{
+    return m_loadBalanceConfig;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetLoadBalanceConfig(const AIGWLoadBalanceConfig& _loadBalanceConfig)
+{
+    m_loadBalanceConfig = _loadBalanceConfig;
+    m_loadBalanceConfigHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::LoadBalanceConfigHasBeenSet() const
+{
+    return m_loadBalanceConfigHasBeenSet;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::GetCanPublish() const
+{
+    return m_canPublish;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetCanPublish(const bool& _canPublish)
+{
+    m_canPublish = _canPublish;
+    m_canPublishHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::CanPublishHasBeenSet() const
+{
+    return m_canPublishHasBeenSet;
+}
+
+string CloudNativeAPIGatewayLLMModelService::GetPublishStatus() const
+{
+    return m_publishStatus;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetPublishStatus(const string& _publishStatus)
+{
+    m_publishStatus = _publishStatus;
+    m_publishStatusHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::PublishStatusHasBeenSet() const
+{
+    return m_publishStatusHasBeenSet;
+}
+
+string CloudNativeAPIGatewayLLMModelService::GetSyncStatus() const
+{
+    return m_syncStatus;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetSyncStatus(const string& _syncStatus)
+{
+    m_syncStatus = _syncStatus;
+    m_syncStatusHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::SyncStatusHasBeenSet() const
+{
+    return m_syncStatusHasBeenSet;
+}
+
+string CloudNativeAPIGatewayLLMModelService::GetSourceType() const
+{
+    return m_sourceType;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetSourceType(const string& _sourceType)
+{
+    m_sourceType = _sourceType;
+    m_sourceTypeHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::SourceTypeHasBeenSet() const
+{
+    return m_sourceTypeHasBeenSet;
+}
+
+string CloudNativeAPIGatewayLLMModelService::GetSyncedVersion() const
+{
+    return m_syncedVersion;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetSyncedVersion(const string& _syncedVersion)
+{
+    m_syncedVersion = _syncedVersion;
+    m_syncedVersionHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::SyncedVersionHasBeenSet() const
+{
+    return m_syncedVersionHasBeenSet;
+}
+
+string CloudNativeAPIGatewayLLMModelService::GetStatus() const
+{
+    return m_status;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::GetEnableHealthCheck() const
+{
+    return m_enableHealthCheck;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetEnableHealthCheck(const bool& _enableHealthCheck)
+{
+    m_enableHealthCheck = _enableHealthCheck;
+    m_enableHealthCheckHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::EnableHealthCheckHasBeenSet() const
+{
+    return m_enableHealthCheckHasBeenSet;
+}
+
+AIGWLLMHealthCheckSetting CloudNativeAPIGatewayLLMModelService::GetHealthCheck() const
+{
+    return m_healthCheck;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetHealthCheck(const AIGWLLMHealthCheckSetting& _healthCheck)
+{
+    m_healthCheck = _healthCheck;
+    m_healthCheckHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::HealthCheckHasBeenSet() const
+{
+    return m_healthCheckHasBeenSet;
 }
 

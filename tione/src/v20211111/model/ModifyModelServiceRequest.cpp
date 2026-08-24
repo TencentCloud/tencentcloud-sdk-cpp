@@ -59,7 +59,8 @@ ModifyModelServiceRequest::ModifyModelServiceRequest() :
     m_resourceGroupIdHasBeenSet(false),
     m_volumeMountsHasBeenSet(false),
     m_schedulingStrategyHasBeenSet(false),
-    m_targetProjectIdHasBeenSet(false)
+    m_targetProjectIdHasBeenSet(false),
+    m_inferTemplateIdHasBeenSet(false)
 {
 }
 
@@ -402,6 +403,14 @@ string ModifyModelServiceRequest::ToJsonString() const
         string key = "TargetProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_targetProjectId, allocator);
+    }
+
+    if (m_inferTemplateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InferTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_inferTemplateId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1002,6 +1011,22 @@ void ModifyModelServiceRequest::SetTargetProjectId(const int64_t& _targetProject
 bool ModifyModelServiceRequest::TargetProjectIdHasBeenSet() const
 {
     return m_targetProjectIdHasBeenSet;
+}
+
+string ModifyModelServiceRequest::GetInferTemplateId() const
+{
+    return m_inferTemplateId;
+}
+
+void ModifyModelServiceRequest::SetInferTemplateId(const string& _inferTemplateId)
+{
+    m_inferTemplateId = _inferTemplateId;
+    m_inferTemplateIdHasBeenSet = true;
+}
+
+bool ModifyModelServiceRequest::InferTemplateIdHasBeenSet() const
+{
+    return m_inferTemplateIdHasBeenSet;
 }
 
 

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务 ID
-                     * @return TaskId 任务 ID
+                     * 获取<p>任务 ID</p>
+                     * @return TaskId <p>任务 ID</p>
                      * 
                      */
                     std::string GetTaskId() const;
@@ -59,18 +59,8 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务状态。可能取值：
-
-- `1`：失败
-- `2`：空结果
-- `3`：有效结果
-- `4`：处理中
-                     * @return Status 任务状态。可能取值：
-
-- `1`：失败
-- `2`：空结果
-- `3`：有效结果
-- `4`：处理中
+                     * 获取<p>任务状态。可能取值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li><li><code>4</code>：处理中</li></ul>
+                     * @return Status <p>任务状态。可能取值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li><li><code>4</code>：处理中</li></ul>
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -83,8 +73,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取视觉理解结果
-                     * @return ComprehensionResult 视觉理解结果
+                     * 获取<p>视觉理解结果</p>
+                     * @return ComprehensionResult <p>视觉理解结果</p>
                      * 
                      */
                     SeeComprehensionResult GetComprehensionResult() const;
@@ -97,8 +87,8 @@ namespace TencentCloud
                     bool ComprehensionResultHasBeenSet() const;
 
                     /**
-                     * 获取完成该任务所消耗的基础能力额度
-                     * @return CostBasic 完成该任务所消耗的基础能力额度
+                     * 获取<p>完成该任务所消耗的基础能力额度</p>
+                     * @return CostBasic <p>完成该任务所消耗的基础能力额度</p>
                      * 
                      */
                     int64_t GetCostBasic() const;
@@ -111,8 +101,8 @@ namespace TencentCloud
                     bool CostBasicHasBeenSet() const;
 
                     /**
-                     * 获取完成该任务所消耗的高级能力额度
-                     * @return CostAdvanced 完成该任务所消耗的高级能力额度
+                     * 获取<p>完成该任务所消耗的高级能力额度</p>
+                     * @return CostAdvanced <p>完成该任务所消耗的高级能力额度</p>
                      * 
                      */
                     int64_t GetCostAdvanced() const;
@@ -127,36 +117,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务 ID
+                     * <p>任务 ID</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务状态。可能取值：
-
-- `1`：失败
-- `2`：空结果
-- `3`：有效结果
-- `4`：处理中
+                     * <p>任务状态。可能取值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li><li><code>4</code>：处理中</li></ul>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 视觉理解结果
+                     * <p>视觉理解结果</p>
                      */
                     SeeComprehensionResult m_comprehensionResult;
                     bool m_comprehensionResultHasBeenSet;
 
                     /**
-                     * 完成该任务所消耗的基础能力额度
+                     * <p>完成该任务所消耗的基础能力额度</p>
                      */
                     int64_t m_costBasic;
                     bool m_costBasicHasBeenSet;
 
                     /**
-                     * 完成该任务所消耗的高级能力额度
+                     * <p>完成该任务所消耗的高级能力额度</p>
                      */
                     int64_t m_costAdvanced;
                     bool m_costAdvancedHasBeenSet;

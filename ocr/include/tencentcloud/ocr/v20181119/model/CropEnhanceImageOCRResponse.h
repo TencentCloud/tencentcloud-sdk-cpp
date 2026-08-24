@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool CroppedHeightHasBeenSet() const;
 
                     /**
-                     * 获取<p>图像处理后的jpg图片，base64格式</p>
-                     * @return CroppedImage <p>图像处理后的jpg图片，base64格式</p>
+                     * 获取<p>图像处理后的jpg图片，base64格式</p><p><strong><p><code>该字段后续不返回内容，请使用CroppedImageUrl</code></p></strong></p>
+                     * @return CroppedImage <p>图像处理后的jpg图片，base64格式</p><p><strong><p><code>该字段后续不返回内容，请使用CroppedImageUrl</code></p></strong></p>
                      * 
                      */
                     std::string GetCroppedImage() const;
@@ -84,6 +84,20 @@ namespace TencentCloud
                      * 
                      */
                     bool CroppedImageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>图像处理后的jpg图片</p><p>参数格式：url格式</p>
+                     * @return CroppedImageUrl <p>图像处理后的jpg图片</p><p>参数格式：url格式</p>
+                     * 
+                     */
+                    std::string GetCroppedImageUrl() const;
+
+                    /**
+                     * 判断参数 CroppedImageUrl 是否已赋值
+                     * @return CroppedImageUrl 是否已赋值
+                     * 
+                     */
+                    bool CroppedImageUrlHasBeenSet() const;
 
                     /**
                      * 获取<p>切图区域的4个角点坐标, 是个长度为8的数组<br>[0,1,2,3,4,5,6,7]</p><p>(0,1) 左上角坐标<br>(2,3) 右上角坐标<br>(4,5) 右下角坐标<br>(6,7) 左下角坐标</p>
@@ -130,10 +144,16 @@ namespace TencentCloud
                     bool m_croppedHeightHasBeenSet;
 
                     /**
-                     * <p>图像处理后的jpg图片，base64格式</p>
+                     * <p>图像处理后的jpg图片，base64格式</p><p><strong><p><code>该字段后续不返回内容，请使用CroppedImageUrl</code></p></strong></p>
                      */
                     std::string m_croppedImage;
                     bool m_croppedImageHasBeenSet;
+
+                    /**
+                     * <p>图像处理后的jpg图片</p><p>参数格式：url格式</p>
+                     */
+                    std::string m_croppedImageUrl;
+                    bool m_croppedImageUrlHasBeenSet;
 
                     /**
                      * <p>切图区域的4个角点坐标, 是个长度为8的数组<br>[0,1,2,3,4,5,6,7]</p><p>(0,1) 左上角坐标<br>(2,3) 右上角坐标<br>(4,5) 右下角坐标<br>(6,7) 左下角坐标</p>

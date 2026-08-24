@@ -1,0 +1,219 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/iotexplorer/v20190423/model/ListTWeSeePersonsRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Iotexplorer::V20190423::Model;
+using namespace std;
+
+ListTWeSeePersonsRequest::ListTWeSeePersonsRequest() :
+    m_productIdHasBeenSet(false),
+    m_deviceNameHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_channelIdHasBeenSet(false),
+    m_faceLimitHasBeenSet(false),
+    m_isRememberedHasBeenSet(false)
+{
+}
+
+string ListTWeSeePersonsRequest::ToJsonString() const
+{
+    rapidjson::Document d;
+    d.SetObject();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_productIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_channelId, allocator);
+    }
+
+    if (m_faceLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FaceLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_faceLimit, allocator);
+    }
+
+    if (m_isRememberedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsRemembered";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isRemembered, allocator);
+    }
+
+
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+string ListTWeSeePersonsRequest::GetProductId() const
+{
+    return m_productId;
+}
+
+void ListTWeSeePersonsRequest::SetProductId(const string& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool ListTWeSeePersonsRequest::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
+}
+
+string ListTWeSeePersonsRequest::GetDeviceName() const
+{
+    return m_deviceName;
+}
+
+void ListTWeSeePersonsRequest::SetDeviceName(const string& _deviceName)
+{
+    m_deviceName = _deviceName;
+    m_deviceNameHasBeenSet = true;
+}
+
+bool ListTWeSeePersonsRequest::DeviceNameHasBeenSet() const
+{
+    return m_deviceNameHasBeenSet;
+}
+
+uint64_t ListTWeSeePersonsRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void ListTWeSeePersonsRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool ListTWeSeePersonsRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+uint64_t ListTWeSeePersonsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void ListTWeSeePersonsRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool ListTWeSeePersonsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+uint64_t ListTWeSeePersonsRequest::GetChannelId() const
+{
+    return m_channelId;
+}
+
+void ListTWeSeePersonsRequest::SetChannelId(const uint64_t& _channelId)
+{
+    m_channelId = _channelId;
+    m_channelIdHasBeenSet = true;
+}
+
+bool ListTWeSeePersonsRequest::ChannelIdHasBeenSet() const
+{
+    return m_channelIdHasBeenSet;
+}
+
+uint64_t ListTWeSeePersonsRequest::GetFaceLimit() const
+{
+    return m_faceLimit;
+}
+
+void ListTWeSeePersonsRequest::SetFaceLimit(const uint64_t& _faceLimit)
+{
+    m_faceLimit = _faceLimit;
+    m_faceLimitHasBeenSet = true;
+}
+
+bool ListTWeSeePersonsRequest::FaceLimitHasBeenSet() const
+{
+    return m_faceLimitHasBeenSet;
+}
+
+bool ListTWeSeePersonsRequest::GetIsRemembered() const
+{
+    return m_isRemembered;
+}
+
+void ListTWeSeePersonsRequest::SetIsRemembered(const bool& _isRemembered)
+{
+    m_isRemembered = _isRemembered;
+    m_isRememberedHasBeenSet = true;
+}
+
+bool ListTWeSeePersonsRequest::IsRememberedHasBeenSet() const
+{
+    return m_isRememberedHasBeenSet;
+}
+
+

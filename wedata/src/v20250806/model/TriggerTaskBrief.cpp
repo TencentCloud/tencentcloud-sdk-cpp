@@ -36,7 +36,8 @@ TriggerTaskBrief::TriggerTaskBrief() :
     m_executionStateHasBeenSet(false),
     m_executionStartTimeHasBeenSet(false),
     m_dependencyTriggerPolicyHasBeenSet(false),
-    m_executeUserUinHasBeenSet(false)
+    m_executeUserUinHasBeenSet(false),
+    m_cycleTypeHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,16 @@ CoreInternalOutcome TriggerTaskBrief::Deserialize(const rapidjson::Value &value)
         m_executeUserUinHasBeenSet = true;
     }
 
+    if (value.HasMember("CycleType") && !value["CycleType"].IsNull())
+    {
+        if (!value["CycleType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerTaskBrief.CycleType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cycleType = string(value["CycleType"].GetString());
+        m_cycleTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +349,14 @@ void TriggerTaskBrief::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ExecuteUserUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_executeUserUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cycleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CycleType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cycleType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -597,5 +616,21 @@ void TriggerTaskBrief::SetExecuteUserUin(const string& _executeUserUin)
 bool TriggerTaskBrief::ExecuteUserUinHasBeenSet() const
 {
     return m_executeUserUinHasBeenSet;
+}
+
+string TriggerTaskBrief::GetCycleType() const
+{
+    return m_cycleType;
+}
+
+void TriggerTaskBrief::SetCycleType(const string& _cycleType)
+{
+    m_cycleType = _cycleType;
+    m_cycleTypeHasBeenSet = true;
+}
+
+bool TriggerTaskBrief::CycleTypeHasBeenSet() const
+{
+    return m_cycleTypeHasBeenSet;
 }
 

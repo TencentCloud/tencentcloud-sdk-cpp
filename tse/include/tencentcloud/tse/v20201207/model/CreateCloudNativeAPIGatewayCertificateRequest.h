@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网关ID
-                     * @return GatewayId 网关ID
+                     * 获取<p>网关ID</p>
+                     * @return GatewayId <p>网关ID</p>
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
-                     * 设置网关ID
-                     * @param _gatewayId 网关ID
+                     * 设置<p>网关ID</p>
+                     * @param _gatewayId <p>网关ID</p>
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -64,36 +64,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取绑定的域名
-                     * @return BindDomains 绑定的域名
-                     * 
-                     */
-                    std::vector<std::string> GetBindDomains() const;
-
-                    /**
-                     * 设置绑定的域名
-                     * @param _bindDomains 绑定的域名
-                     * 
-                     */
-                    void SetBindDomains(const std::vector<std::string>& _bindDomains);
-
-                    /**
-                     * 判断参数 BindDomains 是否已赋值
-                     * @return BindDomains 是否已赋值
-                     * 
-                     */
-                    bool BindDomainsHasBeenSet() const;
-
-                    /**
-                     * 获取ssl平台证书 Id
-                     * @return CertId ssl平台证书 Id
+                     * 获取<p>ssl平台证书 Id</p>
+                     * @return CertId <p>ssl平台证书 Id</p>
                      * 
                      */
                     std::string GetCertId() const;
 
                     /**
-                     * 设置ssl平台证书 Id
-                     * @param _certId ssl平台证书 Id
+                     * 设置<p>ssl平台证书 Id</p>
+                     * @param _certId <p>ssl平台证书 Id</p>
                      * 
                      */
                     void SetCertId(const std::string& _certId);
@@ -106,15 +85,36 @@ namespace TencentCloud
                     bool CertIdHasBeenSet() const;
 
                     /**
-                     * 获取证书名称
-                     * @return Name 证书名称
+                     * 获取<p>绑定的域名</p>
+                     * @return BindDomains <p>绑定的域名</p>
+                     * 
+                     */
+                    std::vector<std::string> GetBindDomains() const;
+
+                    /**
+                     * 设置<p>绑定的域名</p>
+                     * @param _bindDomains <p>绑定的域名</p>
+                     * 
+                     */
+                    void SetBindDomains(const std::vector<std::string>& _bindDomains);
+
+                    /**
+                     * 判断参数 BindDomains 是否已赋值
+                     * @return BindDomains 是否已赋值
+                     * 
+                     */
+                    bool BindDomainsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>证书名称</p>
+                     * @return Name <p>证书名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置证书名称
-                     * @param _name 证书名称
+                     * 设置<p>证书名称</p>
+                     * @param _name <p>证书名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -127,15 +127,57 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取证书私钥
-                     * @return Key 证书私钥
+                     * 获取<p>证书类型</p><p>枚举值：</p><ul><li>SVR： 服务证书</li><li>CA： CA证书</li></ul>
+                     * @return CertType <p>证书类型</p><p>枚举值：</p><ul><li>SVR： 服务证书</li><li>CA： CA证书</li></ul>
+                     * 
+                     */
+                    std::string GetCertType() const;
+
+                    /**
+                     * 设置<p>证书类型</p><p>枚举值：</p><ul><li>SVR： 服务证书</li><li>CA： CA证书</li></ul>
+                     * @param _certType <p>证书类型</p><p>枚举值：</p><ul><li>SVR： 服务证书</li><li>CA： CA证书</li></ul>
+                     * 
+                     */
+                    void SetCertType(const std::string& _certType);
+
+                    /**
+                     * 判断参数 CertType 是否已赋值
+                     * @return CertType 是否已赋值
+                     * 
+                     */
+                    bool CertTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>证书用途</p><p>枚举值：</p><ul><li>SERVER： 用作服务端证书</li><li>CLIENT： 用作客户端证书</li></ul>
+                     * @return CertUsage <p>证书用途</p><p>枚举值：</p><ul><li>SERVER： 用作服务端证书</li><li>CLIENT： 用作客户端证书</li></ul>
+                     * 
+                     */
+                    std::string GetCertUsage() const;
+
+                    /**
+                     * 设置<p>证书用途</p><p>枚举值：</p><ul><li>SERVER： 用作服务端证书</li><li>CLIENT： 用作客户端证书</li></ul>
+                     * @param _certUsage <p>证书用途</p><p>枚举值：</p><ul><li>SERVER： 用作服务端证书</li><li>CLIENT： 用作客户端证书</li></ul>
+                     * 
+                     */
+                    void SetCertUsage(const std::string& _certUsage);
+
+                    /**
+                     * 判断参数 CertUsage 是否已赋值
+                     * @return CertUsage 是否已赋值
+                     * 
+                     */
+                    bool CertUsageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>证书私钥</p>
+                     * @return Key <p>证书私钥</p>
                      * @deprecated
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置证书私钥
-                     * @param _key 证书私钥
+                     * 设置<p>证书私钥</p>
+                     * @param _key <p>证书私钥</p>
                      * @deprecated
                      */
                     void SetKey(const std::string& _key);
@@ -148,15 +190,15 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取证书pem格式
-                     * @return Crt 证书pem格式
+                     * 获取<p>证书pem格式</p>
+                     * @return Crt <p>证书pem格式</p>
                      * @deprecated
                      */
                     std::string GetCrt() const;
 
                     /**
-                     * 设置证书pem格式
-                     * @param _crt 证书pem格式
+                     * 设置<p>证书pem格式</p>
+                     * @param _crt <p>证书pem格式</p>
                      * @deprecated
                      */
                     void SetCrt(const std::string& _crt);
@@ -171,37 +213,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 网关ID
+                     * <p>网关ID</p>
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 绑定的域名
-                     */
-                    std::vector<std::string> m_bindDomains;
-                    bool m_bindDomainsHasBeenSet;
-
-                    /**
-                     * ssl平台证书 Id
+                     * <p>ssl平台证书 Id</p>
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;
 
                     /**
-                     * 证书名称
+                     * <p>绑定的域名</p>
+                     */
+                    std::vector<std::string> m_bindDomains;
+                    bool m_bindDomainsHasBeenSet;
+
+                    /**
+                     * <p>证书名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 证书私钥
+                     * <p>证书类型</p><p>枚举值：</p><ul><li>SVR： 服务证书</li><li>CA： CA证书</li></ul>
+                     */
+                    std::string m_certType;
+                    bool m_certTypeHasBeenSet;
+
+                    /**
+                     * <p>证书用途</p><p>枚举值：</p><ul><li>SERVER： 用作服务端证书</li><li>CLIENT： 用作客户端证书</li></ul>
+                     */
+                    std::string m_certUsage;
+                    bool m_certUsageHasBeenSet;
+
+                    /**
+                     * <p>证书私钥</p>
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 证书pem格式
+                     * <p>证书pem格式</p>
                      */
                     std::string m_crt;
                     bool m_crtHasBeenSet;

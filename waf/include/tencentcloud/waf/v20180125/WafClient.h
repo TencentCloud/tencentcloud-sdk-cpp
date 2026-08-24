@@ -297,6 +297,8 @@
 #include <tencentcloud/waf/v20180125/model/DestroyPostCKafkaFlowResponse.h>
 #include <tencentcloud/waf/v20180125/model/DestroyPostCLSFlowRequest.h>
 #include <tencentcloud/waf/v20180125/model/DestroyPostCLSFlowResponse.h>
+#include <tencentcloud/waf/v20180125/model/EnableClientMsgRequest.h>
+#include <tencentcloud/waf/v20180125/model/EnableClientMsgResponse.h>
 #include <tencentcloud/waf/v20180125/model/EnableRateLimitsV2Request.h>
 #include <tencentcloud/waf/v20180125/model/EnableRateLimitsV2Response.h>
 #include <tencentcloud/waf/v20180125/model/FreshAntiFakeUrlRequest.h>
@@ -441,6 +443,8 @@
 #include <tencentcloud/waf/v20180125/model/PostAttackDownloadTaskResponse.h>
 #include <tencentcloud/waf/v20180125/model/QueryBypassAllStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/QueryBypassAllStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/QueryClientMsgRequest.h>
+#include <tencentcloud/waf/v20180125/model/QueryClientMsgResponse.h>
 #include <tencentcloud/waf/v20180125/model/RefreshAccessCheckResultRequest.h>
 #include <tencentcloud/waf/v20180125/model/RefreshAccessCheckResultResponse.h>
 #include <tencentcloud/waf/v20180125/model/RemoveBypassAllRuleRequest.h>
@@ -894,6 +898,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DestroyPostCLSFlowResponse> DestroyPostCLSFlowOutcome;
                 typedef std::future<DestroyPostCLSFlowOutcome> DestroyPostCLSFlowOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DestroyPostCLSFlowRequest&, DestroyPostCLSFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyPostCLSFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableClientMsgResponse> EnableClientMsgOutcome;
+                typedef std::future<EnableClientMsgOutcome> EnableClientMsgOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::EnableClientMsgRequest&, EnableClientMsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableClientMsgAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableRateLimitsV2Response> EnableRateLimitsV2Outcome;
                 typedef std::future<EnableRateLimitsV2Outcome> EnableRateLimitsV2OutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::EnableRateLimitsV2Request&, EnableRateLimitsV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableRateLimitsV2AsyncHandler;
@@ -1110,6 +1117,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryBypassAllStatusResponse> QueryBypassAllStatusOutcome;
                 typedef std::future<QueryBypassAllStatusOutcome> QueryBypassAllStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::QueryBypassAllStatusRequest&, QueryBypassAllStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryBypassAllStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryClientMsgResponse> QueryClientMsgOutcome;
+                typedef std::future<QueryClientMsgOutcome> QueryClientMsgOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::QueryClientMsgRequest&, QueryClientMsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryClientMsgAsyncHandler;
                 typedef Outcome<Core::Error, Model::RefreshAccessCheckResultResponse> RefreshAccessCheckResultOutcome;
                 typedef std::future<RefreshAccessCheckResultOutcome> RefreshAccessCheckResultOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::RefreshAccessCheckResultRequest&, RefreshAccessCheckResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefreshAccessCheckResultAsyncHandler;
@@ -2391,6 +2401,15 @@ namespace TencentCloud
                 DestroyPostCLSFlowOutcomeCallable DestroyPostCLSFlowCallable(const Model::DestroyPostCLSFlowRequest& request);
 
                 /**
+                 *开关开启后，会将客户端的ip和port透传到后端
+                 * @param req EnableClientMsgRequest
+                 * @return EnableClientMsgOutcome
+                 */
+                EnableClientMsgOutcome EnableClientMsg(const Model::EnableClientMsgRequest &request);
+                void EnableClientMsgAsync(const Model::EnableClientMsgRequest& request, const EnableClientMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableClientMsgOutcomeCallable EnableClientMsgCallable(const Model::EnableClientMsgRequest& request);
+
+                /**
                  *批量更改自研版限流规则开关
                  * @param req EnableRateLimitsV2Request
                  * @return EnableRateLimitsV2Outcome
@@ -3038,6 +3057,15 @@ namespace TencentCloud
                 QueryBypassAllStatusOutcome QueryBypassAllStatus(const Model::QueryBypassAllStatusRequest &request);
                 void QueryBypassAllStatusAsync(const Model::QueryBypassAllStatusRequest& request, const QueryBypassAllStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryBypassAllStatusOutcomeCallable QueryBypassAllStatusCallable(const Model::QueryBypassAllStatusRequest& request);
+
+                /**
+                 *查询是否开启透传客户端信息
+                 * @param req QueryClientMsgRequest
+                 * @return QueryClientMsgOutcome
+                 */
+                QueryClientMsgOutcome QueryClientMsg(const Model::QueryClientMsgRequest &request);
+                void QueryClientMsgAsync(const Model::QueryClientMsgRequest& request, const QueryClientMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryClientMsgOutcomeCallable QueryClientMsgCallable(const Model::QueryClientMsgRequest& request);
 
                 /**
                  *刷新接入检查的结果，后台会生成接入检查任务

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * AI 网关自定义脱敏规则（A 层 / B 层共用结构体，MaskFormat 含义随所属层不同）
+                * AI 网关自定义脱敏规则
                 */
                 class AIGWCustomDesensitizeRule : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>自定义脱敏规则名称</p>
-                     * @return Name <p>自定义脱敏规则名称</p>
+                     * 获取<p>规则名称，同一配置内唯一，最长 64</p>
+                     * @return Name <p>规则名称，同一配置内唯一，最长 64</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置<p>自定义脱敏规则名称</p>
-                     * @param _name <p>自定义脱敏规则名称</p>
+                     * 设置<p>规则名称，同一配置内唯一，最长 64</p>
+                     * @param _name <p>规则名称，同一配置内唯一，最长 64</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取<p>自定义脱敏规则匹配正则</p>
-                     * @return Pattern <p>自定义脱敏规则匹配正则</p>
+                     * 获取<p>RE2 兼容的正则表达式</p>
+                     * @return Pattern <p>RE2 兼容的正则表达式</p>
                      * 
                      */
                     std::string GetPattern() const;
 
                     /**
-                     * 设置<p>自定义脱敏规则匹配正则</p>
-                     * @param _pattern <p>自定义脱敏规则匹配正则</p>
+                     * 设置<p>RE2 兼容的正则表达式</p>
+                     * @param _pattern <p>RE2 兼容的正则表达式</p>
                      * 
                      */
                     void SetPattern(const std::string& _pattern);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool PatternHasBeenSet() const;
 
                     /**
-                     * 获取<p>自定义脱敏规则掩码</p>
-                     * @return MaskFormat <p>自定义脱敏规则掩码</p>
+                     * 获取<p>日志场景为掩码格式，转发场景为占位符；最长 64</p>
+                     * @return MaskFormat <p>日志场景为掩码格式，转发场景为占位符；最长 64</p>
                      * 
                      */
                     std::string GetMaskFormat() const;
 
                     /**
-                     * 设置<p>自定义脱敏规则掩码</p>
-                     * @param _maskFormat <p>自定义脱敏规则掩码</p>
+                     * 设置<p>日志场景为掩码格式，转发场景为占位符；最长 64</p>
+                     * @param _maskFormat <p>日志场景为掩码格式，转发场景为占位符；最长 64</p>
                      * 
                      */
                     void SetMaskFormat(const std::string& _maskFormat);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool MaskFormatHasBeenSet() const;
 
                     /**
-                     * 获取<p>自定义脱敏规则开关</p>
-                     * @return Enabled <p>自定义脱敏规则开关</p>
+                     * 获取<p>单条自定义规则是否启用</p>
+                     * @return Enabled <p>单条自定义规则是否启用</p>
                      * 
                      */
                     bool GetEnabled() const;
 
                     /**
-                     * 设置<p>自定义脱敏规则开关</p>
-                     * @param _enabled <p>自定义脱敏规则开关</p>
+                     * 设置<p>单条自定义规则是否启用</p>
+                     * @param _enabled <p>单条自定义规则是否启用</p>
                      * 
                      */
                     void SetEnabled(const bool& _enabled);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>自定义脱敏规则名称</p>
+                     * <p>规则名称，同一配置内唯一，最长 64</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * <p>自定义脱敏规则匹配正则</p>
+                     * <p>RE2 兼容的正则表达式</p>
                      */
                     std::string m_pattern;
                     bool m_patternHasBeenSet;
 
                     /**
-                     * <p>自定义脱敏规则掩码</p>
+                     * <p>日志场景为掩码格式，转发场景为占位符；最长 64</p>
                      */
                     std::string m_maskFormat;
                     bool m_maskFormatHasBeenSet;
 
                     /**
-                     * <p>自定义脱敏规则开关</p>
+                     * <p>单条自定义规则是否启用</p>
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;

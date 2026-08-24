@@ -43,19 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志主题Id
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
-                     * @return TopicId 日志主题Id
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * 获取<p>日志主题Id</p><ul><li>通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</li></ul>
+                     * @return TopicId <p>日志主题Id</p><ul><li>通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</li></ul>
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题Id
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
-                     * @param _topicId 日志主题Id
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * 设置<p>日志主题Id</p><ul><li>通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</li></ul>
+                     * @param _topicId <p>日志主题Id</p><ul><li>通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</li></ul>
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -68,15 +64,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取日志导出数量,  最大值5000万
-                     * @return Count 日志导出数量,  最大值5000万
+                     * 获取<p>日志导出数量,  最大值5000万</p>
+                     * @return Count <p>日志导出数量,  最大值5000万</p>
                      * 
                      */
                     uint64_t GetCount() const;
 
                     /**
-                     * 设置日志导出数量,  最大值5000万
-                     * @param _count 日志导出数量,  最大值5000万
+                     * 设置<p>日志导出数量,  最大值5000万</p>
+                     * @param _count <p>日志导出数量,  最大值5000万</p>
                      * 
                      */
                     void SetCount(const uint64_t& _count);
@@ -89,15 +85,15 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取日志导出检索语句，不支持<a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>
-                     * @return Query 日志导出检索语句，不支持<a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>
+                     * 获取<p>日志导出检索语句，不支持<a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a></p>
+                     * @return Query <p>日志导出检索语句，不支持<a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a></p>
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
-                     * 设置日志导出检索语句，不支持<a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>
-                     * @param _query 日志导出检索语句，不支持<a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>
+                     * 设置<p>日志导出检索语句，不支持<a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a></p>
+                     * @param _query <p>日志导出检索语句，不支持<a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a></p>
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -110,15 +106,15 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取日志导出起始时间，毫秒时间戳
-                     * @return From 日志导出起始时间，毫秒时间戳
+                     * 获取<p>日志导出起始时间，毫秒时间戳</p>
+                     * @return From <p>日志导出起始时间，毫秒时间戳</p>
                      * 
                      */
                     int64_t GetFrom() const;
 
                     /**
-                     * 设置日志导出起始时间，毫秒时间戳
-                     * @param _from 日志导出起始时间，毫秒时间戳
+                     * 设置<p>日志导出起始时间，毫秒时间戳</p>
+                     * @param _from <p>日志导出起始时间，毫秒时间戳</p>
                      * 
                      */
                     void SetFrom(const int64_t& _from);
@@ -131,15 +127,15 @@ namespace TencentCloud
                     bool FromHasBeenSet() const;
 
                     /**
-                     * 获取日志导出结束时间，毫秒时间戳
-                     * @return To 日志导出结束时间，毫秒时间戳
+                     * 获取<p>日志导出结束时间，毫秒时间戳</p>
+                     * @return To <p>日志导出结束时间，毫秒时间戳</p>
                      * 
                      */
                     int64_t GetTo() const;
 
                     /**
-                     * 设置日志导出结束时间，毫秒时间戳
-                     * @param _to 日志导出结束时间，毫秒时间戳
+                     * 设置<p>日志导出结束时间，毫秒时间戳</p>
+                     * @param _to <p>日志导出结束时间，毫秒时间戳</p>
                      * 
                      */
                     void SetTo(const int64_t& _to);
@@ -152,15 +148,15 @@ namespace TencentCloud
                     bool ToHasBeenSet() const;
 
                     /**
-                     * 获取日志导出时间排序。desc，asc，默认为desc
-                     * @return Order 日志导出时间排序。desc，asc，默认为desc
+                     * 获取<p>日志导出时间排序。desc，asc，默认为desc</p>
+                     * @return Order <p>日志导出时间排序。desc，asc，默认为desc</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置日志导出时间排序。desc，asc，默认为desc
-                     * @param _order 日志导出时间排序。desc，asc，默认为desc
+                     * 设置<p>日志导出时间排序。desc，asc，默认为desc</p>
+                     * @param _order <p>日志导出时间排序。desc，asc，默认为desc</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -173,15 +169,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取日志导出数据格式。json，csv，默认为json
-                     * @return Format 日志导出数据格式。json，csv，默认为json
+                     * 获取<p>日志导出数据格式。json，csv，默认为json</p>
+                     * @return Format <p>日志导出数据格式。json，csv，默认为json</p>
                      * 
                      */
                     std::string GetFormat() const;
 
                     /**
-                     * 设置日志导出数据格式。json，csv，默认为json
-                     * @param _format 日志导出数据格式。json，csv，默认为json
+                     * 设置<p>日志导出数据格式。json，csv，默认为json</p>
+                     * @param _format <p>日志导出数据格式。json，csv，默认为json</p>
                      * 
                      */
                     void SetFormat(const std::string& _format);
@@ -194,19 +190,15 @@ namespace TencentCloud
                     bool FormatHasBeenSet() const;
 
                     /**
-                     * 获取语法规则,  默认值为0。
-0：Lucene语法，1：CQL语法。
-                     * @return SyntaxRule 语法规则,  默认值为0。
-0：Lucene语法，1：CQL语法。
+                     * 获取<p>检索语法规则，默认值为1，推荐使用1 。</p><ul><li>0：Lucene语法</li><li>1：CQL语法（CLS Query Language，日志服务专用检索语法）</li></ul><p>详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>。</p>
+                     * @return SyntaxRule <p>检索语法规则，默认值为1，推荐使用1 。</p><ul><li>0：Lucene语法</li><li>1：CQL语法（CLS Query Language，日志服务专用检索语法）</li></ul><p>详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>。</p>
                      * 
                      */
                     uint64_t GetSyntaxRule() const;
 
                     /**
-                     * 设置语法规则,  默认值为0。
-0：Lucene语法，1：CQL语法。
-                     * @param _syntaxRule 语法规则,  默认值为0。
-0：Lucene语法，1：CQL语法。
+                     * 设置<p>检索语法规则，默认值为1，推荐使用1 。</p><ul><li>0：Lucene语法</li><li>1：CQL语法（CLS Query Language，日志服务专用检索语法）</li></ul><p>详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>。</p>
+                     * @param _syntaxRule <p>检索语法规则，默认值为1，推荐使用1 。</p><ul><li>0：Lucene语法</li><li>1：CQL语法（CLS Query Language，日志服务专用检索语法）</li></ul><p>详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>。</p>
                      * 
                      */
                     void SetSyntaxRule(const uint64_t& _syntaxRule);
@@ -219,15 +211,15 @@ namespace TencentCloud
                     bool SyntaxRuleHasBeenSet() const;
 
                     /**
-                     * 获取导出字段
-                     * @return DerivedFields 导出字段
+                     * 获取<p>导出字段</p>
+                     * @return DerivedFields <p>导出字段</p>
                      * 
                      */
                     std::vector<std::string> GetDerivedFields() const;
 
                     /**
-                     * 设置导出字段
-                     * @param _derivedFields 导出字段
+                     * 设置<p>导出字段</p>
+                     * @param _derivedFields <p>导出字段</p>
                      * 
                      */
                     void SetDerivedFields(const std::vector<std::string>& _derivedFields);
@@ -242,57 +234,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志主题Id
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * <p>日志主题Id</p><ul><li>通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</li></ul>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 日志导出数量,  最大值5000万
+                     * <p>日志导出数量,  最大值5000万</p>
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
-                     * 日志导出检索语句，不支持<a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>
+                     * <p>日志导出检索语句，不支持<a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a></p>
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 日志导出起始时间，毫秒时间戳
+                     * <p>日志导出起始时间，毫秒时间戳</p>
                      */
                     int64_t m_from;
                     bool m_fromHasBeenSet;
 
                     /**
-                     * 日志导出结束时间，毫秒时间戳
+                     * <p>日志导出结束时间，毫秒时间戳</p>
                      */
                     int64_t m_to;
                     bool m_toHasBeenSet;
 
                     /**
-                     * 日志导出时间排序。desc，asc，默认为desc
+                     * <p>日志导出时间排序。desc，asc，默认为desc</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 日志导出数据格式。json，csv，默认为json
+                     * <p>日志导出数据格式。json，csv，默认为json</p>
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;
 
                     /**
-                     * 语法规则,  默认值为0。
-0：Lucene语法，1：CQL语法。
+                     * <p>检索语法规则，默认值为1，推荐使用1 。</p><ul><li>0：Lucene语法</li><li>1：CQL语法（CLS Query Language，日志服务专用检索语法）</li></ul><p>详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>。</p>
                      */
                     uint64_t m_syntaxRule;
                     bool m_syntaxRuleHasBeenSet;
 
                     /**
-                     * 导出字段
+                     * <p>导出字段</p>
                      */
                     std::vector<std::string> m_derivedFields;
                     bool m_derivedFieldsHasBeenSet;

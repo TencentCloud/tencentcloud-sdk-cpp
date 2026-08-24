@@ -25,7 +25,8 @@ VerificationConfig::VerificationConfig() :
     m_nameHasBeenSet(false),
     m_methodHasBeenSet(false),
     m_smsDayLimitHasBeenSet(false),
-    m_templateProviderHasBeenSet(false)
+    m_templateProviderHasBeenSet(false),
+    m_cloudFunctionHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,23 @@ CoreInternalOutcome VerificationConfig::Deserialize(const rapidjson::Value &valu
         m_templateProviderHasBeenSet = true;
     }
 
+    if (value.HasMember("CloudFunction") && !value["CloudFunction"].IsNull())
+    {
+        if (!value["CloudFunction"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VerificationConfig.CloudFunction` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cloudFunction.Deserialize(value["CloudFunction"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cloudFunctionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +155,15 @@ void VerificationConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_templateProvider.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cloudFunctionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudFunction";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cloudFunction.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -220,5 +247,21 @@ void VerificationConfig::SetTemplateProvider(const SMSProviderTemplateConfig& _t
 bool VerificationConfig::TemplateProviderHasBeenSet() const
 {
     return m_templateProviderHasBeenSet;
+}
+
+SMSCloudFunctionConfig VerificationConfig::GetCloudFunction() const
+{
+    return m_cloudFunction;
+}
+
+void VerificationConfig::SetCloudFunction(const SMSCloudFunctionConfig& _cloudFunction)
+{
+    m_cloudFunction = _cloudFunction;
+    m_cloudFunctionHasBeenSet = true;
+}
+
+bool VerificationConfig::CloudFunctionHasBeenSet() const
+{
+    return m_cloudFunctionHasBeenSet;
 }
 

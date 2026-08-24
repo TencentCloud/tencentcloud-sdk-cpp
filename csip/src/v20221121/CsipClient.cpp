@@ -2740,6 +2740,56 @@ CsipClient::CreateDspmAssetsExportJobOutcomeCallable CsipClient::CreateDspmAsset
     return prom->get_future();
 }
 
+CsipClient::CreateDspmAuditFilterStrategyOutcome CsipClient::CreateDspmAuditFilterStrategy(const CreateDspmAuditFilterStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDspmAuditFilterStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDspmAuditFilterStrategyResponse rsp = CreateDspmAuditFilterStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDspmAuditFilterStrategyOutcome(rsp);
+        else
+            return CreateDspmAuditFilterStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDspmAuditFilterStrategyOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateDspmAuditFilterStrategyAsync(const CreateDspmAuditFilterStrategyRequest& request, const CreateDspmAuditFilterStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateDspmAuditFilterStrategyRequest&;
+    using Resp = CreateDspmAuditFilterStrategyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateDspmAuditFilterStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateDspmAuditFilterStrategyOutcomeCallable CsipClient::CreateDspmAuditFilterStrategyCallable(const CreateDspmAuditFilterStrategyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateDspmAuditFilterStrategyOutcome>>();
+    CreateDspmAuditFilterStrategyAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateDspmAuditFilterStrategyRequest&,
+        CreateDspmAuditFilterStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::CreateDspmExportTaskOutcome CsipClient::CreateDspmExportTask(const CreateDspmExportTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDspmExportTask");
@@ -3240,6 +3290,56 @@ CsipClient::CreateDspmPersonalIdentifyOutcomeCallable CsipClient::CreateDspmPers
     return prom->get_future();
 }
 
+CsipClient::CreateDspmResourceOutcome CsipClient::CreateDspmResource(const CreateDspmResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDspmResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDspmResourceResponse rsp = CreateDspmResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDspmResourceOutcome(rsp);
+        else
+            return CreateDspmResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDspmResourceOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateDspmResourceAsync(const CreateDspmResourceRequest& request, const CreateDspmResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateDspmResourceRequest&;
+    using Resp = CreateDspmResourceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateDspmResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateDspmResourceOutcomeCallable CsipClient::CreateDspmResourceCallable(const CreateDspmResourceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateDspmResourceOutcome>>();
+    CreateDspmResourceAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateDspmResourceRequest&,
+        CreateDspmResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::CreateDspmRiskExportJobOutcome CsipClient::CreateDspmRiskExportJob(const CreateDspmRiskExportJobRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDspmRiskExportJob");
@@ -3282,6 +3382,56 @@ CsipClient::CreateDspmRiskExportJobOutcomeCallable CsipClient::CreateDspmRiskExp
         const CsipClient*,
         const CreateDspmRiskExportJobRequest&,
         CreateDspmRiskExportJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CreateDspmRiskStrategyOutcome CsipClient::CreateDspmRiskStrategy(const CreateDspmRiskStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDspmRiskStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDspmRiskStrategyResponse rsp = CreateDspmRiskStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDspmRiskStrategyOutcome(rsp);
+        else
+            return CreateDspmRiskStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDspmRiskStrategyOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateDspmRiskStrategyAsync(const CreateDspmRiskStrategyRequest& request, const CreateDspmRiskStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateDspmRiskStrategyRequest&;
+    using Resp = CreateDspmRiskStrategyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateDspmRiskStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateDspmRiskStrategyOutcomeCallable CsipClient::CreateDspmRiskStrategyCallable(const CreateDspmRiskStrategyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateDspmRiskStrategyOutcome>>();
+    CreateDspmRiskStrategyAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateDspmRiskStrategyRequest&,
+        CreateDspmRiskStrategyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5990,6 +6140,56 @@ CsipClient::DeleteDspmAssetAccountOutcomeCallable CsipClient::DeleteDspmAssetAcc
     return prom->get_future();
 }
 
+CsipClient::DeleteDspmAuditFilterStrategyOutcome CsipClient::DeleteDspmAuditFilterStrategy(const DeleteDspmAuditFilterStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDspmAuditFilterStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDspmAuditFilterStrategyResponse rsp = DeleteDspmAuditFilterStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDspmAuditFilterStrategyOutcome(rsp);
+        else
+            return DeleteDspmAuditFilterStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDspmAuditFilterStrategyOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DeleteDspmAuditFilterStrategyAsync(const DeleteDspmAuditFilterStrategyRequest& request, const DeleteDspmAuditFilterStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDspmAuditFilterStrategyRequest&;
+    using Resp = DeleteDspmAuditFilterStrategyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDspmAuditFilterStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DeleteDspmAuditFilterStrategyOutcomeCallable CsipClient::DeleteDspmAuditFilterStrategyCallable(const DeleteDspmAuditFilterStrategyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDspmAuditFilterStrategyOutcome>>();
+    DeleteDspmAuditFilterStrategyAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DeleteDspmAuditFilterStrategyRequest&,
+        DeleteDspmAuditFilterStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::DeleteDspmBackupLogListOutcome CsipClient::DeleteDspmBackupLogList(const DeleteDspmBackupLogListRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteDspmBackupLogList");
@@ -6032,6 +6232,56 @@ CsipClient::DeleteDspmBackupLogListOutcomeCallable CsipClient::DeleteDspmBackupL
         const CsipClient*,
         const DeleteDspmBackupLogListRequest&,
         DeleteDspmBackupLogListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DeleteDspmCkafkaConfigOutcome CsipClient::DeleteDspmCkafkaConfig(const DeleteDspmCkafkaConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDspmCkafkaConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDspmCkafkaConfigResponse rsp = DeleteDspmCkafkaConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDspmCkafkaConfigOutcome(rsp);
+        else
+            return DeleteDspmCkafkaConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDspmCkafkaConfigOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DeleteDspmCkafkaConfigAsync(const DeleteDspmCkafkaConfigRequest& request, const DeleteDspmCkafkaConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDspmCkafkaConfigRequest&;
+    using Resp = DeleteDspmCkafkaConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDspmCkafkaConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DeleteDspmCkafkaConfigOutcomeCallable CsipClient::DeleteDspmCkafkaConfigCallable(const DeleteDspmCkafkaConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDspmCkafkaConfigOutcome>>();
+    DeleteDspmCkafkaConfigAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DeleteDspmCkafkaConfigRequest&,
+        DeleteDspmCkafkaConfigOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -6482,6 +6732,106 @@ CsipClient::DeleteDspmRestoreLogListOutcomeCallable CsipClient::DeleteDspmRestor
         const CsipClient*,
         const DeleteDspmRestoreLogListRequest&,
         DeleteDspmRestoreLogListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DeleteDspmRiskStrategyOutcome CsipClient::DeleteDspmRiskStrategy(const DeleteDspmRiskStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDspmRiskStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDspmRiskStrategyResponse rsp = DeleteDspmRiskStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDspmRiskStrategyOutcome(rsp);
+        else
+            return DeleteDspmRiskStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDspmRiskStrategyOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DeleteDspmRiskStrategyAsync(const DeleteDspmRiskStrategyRequest& request, const DeleteDspmRiskStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDspmRiskStrategyRequest&;
+    using Resp = DeleteDspmRiskStrategyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDspmRiskStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DeleteDspmRiskStrategyOutcomeCallable CsipClient::DeleteDspmRiskStrategyCallable(const DeleteDspmRiskStrategyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDspmRiskStrategyOutcome>>();
+    DeleteDspmRiskStrategyAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DeleteDspmRiskStrategyRequest&,
+        DeleteDspmRiskStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DeleteDspmShareUserDataOutcome CsipClient::DeleteDspmShareUserData(const DeleteDspmShareUserDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDspmShareUserData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDspmShareUserDataResponse rsp = DeleteDspmShareUserDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDspmShareUserDataOutcome(rsp);
+        else
+            return DeleteDspmShareUserDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDspmShareUserDataOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DeleteDspmShareUserDataAsync(const DeleteDspmShareUserDataRequest& request, const DeleteDspmShareUserDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDspmShareUserDataRequest&;
+    using Resp = DeleteDspmShareUserDataResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDspmShareUserData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DeleteDspmShareUserDataOutcomeCallable CsipClient::DeleteDspmShareUserDataCallable(const DeleteDspmShareUserDataRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDspmShareUserDataOutcome>>();
+    DeleteDspmShareUserDataAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DeleteDspmShareUserDataRequest&,
+        DeleteDspmShareUserDataOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -16640,6 +16990,56 @@ CsipClient::DescribeDspmAssetsOutcomeCallable CsipClient::DescribeDspmAssetsCall
     return prom->get_future();
 }
 
+CsipClient::DescribeDspmAuditFilterStrategyOutcome CsipClient::DescribeDspmAuditFilterStrategy(const DescribeDspmAuditFilterStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDspmAuditFilterStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDspmAuditFilterStrategyResponse rsp = DescribeDspmAuditFilterStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDspmAuditFilterStrategyOutcome(rsp);
+        else
+            return DescribeDspmAuditFilterStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDspmAuditFilterStrategyOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeDspmAuditFilterStrategyAsync(const DescribeDspmAuditFilterStrategyRequest& request, const DescribeDspmAuditFilterStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDspmAuditFilterStrategyRequest&;
+    using Resp = DescribeDspmAuditFilterStrategyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDspmAuditFilterStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeDspmAuditFilterStrategyOutcomeCallable CsipClient::DescribeDspmAuditFilterStrategyCallable(const DescribeDspmAuditFilterStrategyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDspmAuditFilterStrategyOutcome>>();
+    DescribeDspmAuditFilterStrategyAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeDspmAuditFilterStrategyRequest&,
+        DescribeDspmAuditFilterStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::DescribeDspmBackupLogListOutcome CsipClient::DescribeDspmBackupLogList(const DescribeDspmBackupLogListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDspmBackupLogList");
@@ -16732,6 +17132,106 @@ CsipClient::DescribeDspmBackupSettingOutcomeCallable CsipClient::DescribeDspmBac
         const CsipClient*,
         const DescribeDspmBackupSettingRequest&,
         DescribeDspmBackupSettingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeDspmCkafkaRouteListOutcome CsipClient::DescribeDspmCkafkaRouteList(const DescribeDspmCkafkaRouteListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDspmCkafkaRouteList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDspmCkafkaRouteListResponse rsp = DescribeDspmCkafkaRouteListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDspmCkafkaRouteListOutcome(rsp);
+        else
+            return DescribeDspmCkafkaRouteListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDspmCkafkaRouteListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeDspmCkafkaRouteListAsync(const DescribeDspmCkafkaRouteListRequest& request, const DescribeDspmCkafkaRouteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDspmCkafkaRouteListRequest&;
+    using Resp = DescribeDspmCkafkaRouteListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDspmCkafkaRouteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeDspmCkafkaRouteListOutcomeCallable CsipClient::DescribeDspmCkafkaRouteListCallable(const DescribeDspmCkafkaRouteListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDspmCkafkaRouteListOutcome>>();
+    DescribeDspmCkafkaRouteListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeDspmCkafkaRouteListRequest&,
+        DescribeDspmCkafkaRouteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeDspmCkafkaTopicListOutcome CsipClient::DescribeDspmCkafkaTopicList(const DescribeDspmCkafkaTopicListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDspmCkafkaTopicList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDspmCkafkaTopicListResponse rsp = DescribeDspmCkafkaTopicListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDspmCkafkaTopicListOutcome(rsp);
+        else
+            return DescribeDspmCkafkaTopicListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDspmCkafkaTopicListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeDspmCkafkaTopicListAsync(const DescribeDspmCkafkaTopicListRequest& request, const DescribeDspmCkafkaTopicListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDspmCkafkaTopicListRequest&;
+    using Resp = DescribeDspmCkafkaTopicListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDspmCkafkaTopicList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeDspmCkafkaTopicListOutcomeCallable CsipClient::DescribeDspmCkafkaTopicListCallable(const DescribeDspmCkafkaTopicListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDspmCkafkaTopicListOutcome>>();
+    DescribeDspmCkafkaTopicListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeDspmCkafkaTopicListRequest&,
+        DescribeDspmCkafkaTopicListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -17440,6 +17940,56 @@ CsipClient::DescribeDspmIdentifyRuleTestResultOutcomeCallable CsipClient::Descri
     return prom->get_future();
 }
 
+CsipClient::DescribeDspmLogDeliveryTypeOutcome CsipClient::DescribeDspmLogDeliveryType(const DescribeDspmLogDeliveryTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDspmLogDeliveryType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDspmLogDeliveryTypeResponse rsp = DescribeDspmLogDeliveryTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDspmLogDeliveryTypeOutcome(rsp);
+        else
+            return DescribeDspmLogDeliveryTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDspmLogDeliveryTypeOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeDspmLogDeliveryTypeAsync(const DescribeDspmLogDeliveryTypeRequest& request, const DescribeDspmLogDeliveryTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDspmLogDeliveryTypeRequest&;
+    using Resp = DescribeDspmLogDeliveryTypeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDspmLogDeliveryType", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeDspmLogDeliveryTypeOutcomeCallable CsipClient::DescribeDspmLogDeliveryTypeCallable(const DescribeDspmLogDeliveryTypeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDspmLogDeliveryTypeOutcome>>();
+    DescribeDspmLogDeliveryTypeAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeDspmLogDeliveryTypeRequest&,
+        DescribeDspmLogDeliveryTypeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::DescribeDspmLogListOutcome CsipClient::DescribeDspmLogList(const DescribeDspmLogListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDspmLogList");
@@ -17482,6 +18032,56 @@ CsipClient::DescribeDspmLogListOutcomeCallable CsipClient::DescribeDspmLogListCa
         const CsipClient*,
         const DescribeDspmLogListRequest&,
         DescribeDspmLogListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeDspmLogTypeConfigListOutcome CsipClient::DescribeDspmLogTypeConfigList(const DescribeDspmLogTypeConfigListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDspmLogTypeConfigList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDspmLogTypeConfigListResponse rsp = DescribeDspmLogTypeConfigListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDspmLogTypeConfigListOutcome(rsp);
+        else
+            return DescribeDspmLogTypeConfigListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDspmLogTypeConfigListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeDspmLogTypeConfigListAsync(const DescribeDspmLogTypeConfigListRequest& request, const DescribeDspmLogTypeConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDspmLogTypeConfigListRequest&;
+    using Resp = DescribeDspmLogTypeConfigListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDspmLogTypeConfigList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeDspmLogTypeConfigListOutcomeCallable CsipClient::DescribeDspmLogTypeConfigListCallable(const DescribeDspmLogTypeConfigListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDspmLogTypeConfigListOutcome>>();
+    DescribeDspmLogTypeConfigListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeDspmLogTypeConfigListRequest&,
+        DescribeDspmLogTypeConfigListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -17632,6 +18232,56 @@ CsipClient::DescribeDspmPersonalIdentifyListOutcomeCallable CsipClient::Describe
         const CsipClient*,
         const DescribeDspmPersonalIdentifyListRequest&,
         DescribeDspmPersonalIdentifyListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeDspmResourceOutcome CsipClient::DescribeDspmResource(const DescribeDspmResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDspmResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDspmResourceResponse rsp = DescribeDspmResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDspmResourceOutcome(rsp);
+        else
+            return DescribeDspmResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDspmResourceOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeDspmResourceAsync(const DescribeDspmResourceRequest& request, const DescribeDspmResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDspmResourceRequest&;
+    using Resp = DescribeDspmResourceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDspmResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeDspmResourceOutcomeCallable CsipClient::DescribeDspmResourceCallable(const DescribeDspmResourceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDspmResourceOutcome>>();
+    DescribeDspmResourceAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeDspmResourceRequest&,
+        DescribeDspmResourceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -17890,6 +18540,56 @@ CsipClient::DescribeDspmRiskTendencyOutcomeCallable CsipClient::DescribeDspmRisk
     return prom->get_future();
 }
 
+CsipClient::DescribeDspmSessionListOutcome CsipClient::DescribeDspmSessionList(const DescribeDspmSessionListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDspmSessionList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDspmSessionListResponse rsp = DescribeDspmSessionListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDspmSessionListOutcome(rsp);
+        else
+            return DescribeDspmSessionListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDspmSessionListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeDspmSessionListAsync(const DescribeDspmSessionListRequest& request, const DescribeDspmSessionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDspmSessionListRequest&;
+    using Resp = DescribeDspmSessionListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDspmSessionList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeDspmSessionListOutcomeCallable CsipClient::DescribeDspmSessionListCallable(const DescribeDspmSessionListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDspmSessionListOutcome>>();
+    DescribeDspmSessionListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeDspmSessionListRequest&,
+        DescribeDspmSessionListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::DescribeDspmStatisticsOutcome CsipClient::DescribeDspmStatistics(const DescribeDspmStatisticsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDspmStatistics");
@@ -18082,6 +18782,56 @@ CsipClient::DescribeDspmSyncUsersStatusOutcomeCallable CsipClient::DescribeDspmS
         const CsipClient*,
         const DescribeDspmSyncUsersStatusRequest&,
         DescribeDspmSyncUsersStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeDspmUserCkafkaInstanceListOutcome CsipClient::DescribeDspmUserCkafkaInstanceList(const DescribeDspmUserCkafkaInstanceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDspmUserCkafkaInstanceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDspmUserCkafkaInstanceListResponse rsp = DescribeDspmUserCkafkaInstanceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDspmUserCkafkaInstanceListOutcome(rsp);
+        else
+            return DescribeDspmUserCkafkaInstanceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDspmUserCkafkaInstanceListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeDspmUserCkafkaInstanceListAsync(const DescribeDspmUserCkafkaInstanceListRequest& request, const DescribeDspmUserCkafkaInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDspmUserCkafkaInstanceListRequest&;
+    using Resp = DescribeDspmUserCkafkaInstanceListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDspmUserCkafkaInstanceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeDspmUserCkafkaInstanceListOutcomeCallable CsipClient::DescribeDspmUserCkafkaInstanceListCallable(const DescribeDspmUserCkafkaInstanceListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDspmUserCkafkaInstanceListOutcome>>();
+    DescribeDspmUserCkafkaInstanceListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeDspmUserCkafkaInstanceListRequest&,
+        DescribeDspmUserCkafkaInstanceListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -29990,6 +30740,56 @@ CsipClient::ModifyDspmAssetSecurityAnalysisSwitchOutcomeCallable CsipClient::Mod
     return prom->get_future();
 }
 
+CsipClient::ModifyDspmAuditFilterStrategyOutcome CsipClient::ModifyDspmAuditFilterStrategy(const ModifyDspmAuditFilterStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDspmAuditFilterStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDspmAuditFilterStrategyResponse rsp = ModifyDspmAuditFilterStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDspmAuditFilterStrategyOutcome(rsp);
+        else
+            return ModifyDspmAuditFilterStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDspmAuditFilterStrategyOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyDspmAuditFilterStrategyAsync(const ModifyDspmAuditFilterStrategyRequest& request, const ModifyDspmAuditFilterStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDspmAuditFilterStrategyRequest&;
+    using Resp = ModifyDspmAuditFilterStrategyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDspmAuditFilterStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifyDspmAuditFilterStrategyOutcomeCallable CsipClient::ModifyDspmAuditFilterStrategyCallable(const ModifyDspmAuditFilterStrategyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDspmAuditFilterStrategyOutcome>>();
+    ModifyDspmAuditFilterStrategyAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifyDspmAuditFilterStrategyRequest&,
+        ModifyDspmAuditFilterStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::ModifyDspmBackupSettingOutcome CsipClient::ModifyDspmBackupSetting(const ModifyDspmBackupSettingRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDspmBackupSetting");
@@ -30032,6 +30832,156 @@ CsipClient::ModifyDspmBackupSettingOutcomeCallable CsipClient::ModifyDspmBackupS
         const CsipClient*,
         const ModifyDspmBackupSettingRequest&,
         ModifyDspmBackupSettingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifyDspmCkafkaSaveOutcome CsipClient::ModifyDspmCkafkaSave(const ModifyDspmCkafkaSaveRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDspmCkafkaSave");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDspmCkafkaSaveResponse rsp = ModifyDspmCkafkaSaveResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDspmCkafkaSaveOutcome(rsp);
+        else
+            return ModifyDspmCkafkaSaveOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDspmCkafkaSaveOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyDspmCkafkaSaveAsync(const ModifyDspmCkafkaSaveRequest& request, const ModifyDspmCkafkaSaveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDspmCkafkaSaveRequest&;
+    using Resp = ModifyDspmCkafkaSaveResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDspmCkafkaSave", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifyDspmCkafkaSaveOutcomeCallable CsipClient::ModifyDspmCkafkaSaveCallable(const ModifyDspmCkafkaSaveRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDspmCkafkaSaveOutcome>>();
+    ModifyDspmCkafkaSaveAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifyDspmCkafkaSaveRequest&,
+        ModifyDspmCkafkaSaveOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifyDspmCkafkaStartOutcome CsipClient::ModifyDspmCkafkaStart(const ModifyDspmCkafkaStartRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDspmCkafkaStart");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDspmCkafkaStartResponse rsp = ModifyDspmCkafkaStartResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDspmCkafkaStartOutcome(rsp);
+        else
+            return ModifyDspmCkafkaStartOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDspmCkafkaStartOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyDspmCkafkaStartAsync(const ModifyDspmCkafkaStartRequest& request, const ModifyDspmCkafkaStartAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDspmCkafkaStartRequest&;
+    using Resp = ModifyDspmCkafkaStartResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDspmCkafkaStart", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifyDspmCkafkaStartOutcomeCallable CsipClient::ModifyDspmCkafkaStartCallable(const ModifyDspmCkafkaStartRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDspmCkafkaStartOutcome>>();
+    ModifyDspmCkafkaStartAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifyDspmCkafkaStartRequest&,
+        ModifyDspmCkafkaStartOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifyDspmCkafkaStopOutcome CsipClient::ModifyDspmCkafkaStop(const ModifyDspmCkafkaStopRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDspmCkafkaStop");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDspmCkafkaStopResponse rsp = ModifyDspmCkafkaStopResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDspmCkafkaStopOutcome(rsp);
+        else
+            return ModifyDspmCkafkaStopOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDspmCkafkaStopOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyDspmCkafkaStopAsync(const ModifyDspmCkafkaStopRequest& request, const ModifyDspmCkafkaStopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDspmCkafkaStopRequest&;
+    using Resp = ModifyDspmCkafkaStopResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDspmCkafkaStop", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifyDspmCkafkaStopOutcomeCallable CsipClient::ModifyDspmCkafkaStopCallable(const ModifyDspmCkafkaStopRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDspmCkafkaStopOutcome>>();
+    ModifyDspmCkafkaStopAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifyDspmCkafkaStopRequest&,
+        ModifyDspmCkafkaStopOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -30532,6 +31482,56 @@ CsipClient::ModifyDspmIpInfoOutcomeCallable CsipClient::ModifyDspmIpInfoCallable
         const CsipClient*,
         const ModifyDspmIpInfoRequest&,
         ModifyDspmIpInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifyDspmLogDeliveryTypeOutcome CsipClient::ModifyDspmLogDeliveryType(const ModifyDspmLogDeliveryTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDspmLogDeliveryType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDspmLogDeliveryTypeResponse rsp = ModifyDspmLogDeliveryTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDspmLogDeliveryTypeOutcome(rsp);
+        else
+            return ModifyDspmLogDeliveryTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDspmLogDeliveryTypeOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyDspmLogDeliveryTypeAsync(const ModifyDspmLogDeliveryTypeRequest& request, const ModifyDspmLogDeliveryTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDspmLogDeliveryTypeRequest&;
+    using Resp = ModifyDspmLogDeliveryTypeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDspmLogDeliveryType", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifyDspmLogDeliveryTypeOutcomeCallable CsipClient::ModifyDspmLogDeliveryTypeCallable(const ModifyDspmLogDeliveryTypeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDspmLogDeliveryTypeOutcome>>();
+    ModifyDspmLogDeliveryTypeAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifyDspmLogDeliveryTypeRequest&,
+        ModifyDspmLogDeliveryTypeOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -32940,6 +33940,56 @@ CsipClient::ModifyShareUserCSPMOutcomeCallable CsipClient::ModifyShareUserCSPMCa
     return prom->get_future();
 }
 
+CsipClient::ModifyShareUserDspmOutcome CsipClient::ModifyShareUserDspm(const ModifyShareUserDspmRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyShareUserDspm");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyShareUserDspmResponse rsp = ModifyShareUserDspmResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyShareUserDspmOutcome(rsp);
+        else
+            return ModifyShareUserDspmOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyShareUserDspmOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyShareUserDspmAsync(const ModifyShareUserDspmRequest& request, const ModifyShareUserDspmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyShareUserDspmRequest&;
+    using Resp = ModifyShareUserDspmResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyShareUserDspm", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifyShareUserDspmOutcomeCallable CsipClient::ModifyShareUserDspmCallable(const ModifyShareUserDspmRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyShareUserDspmOutcome>>();
+    ModifyShareUserDspmAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifyShareUserDspmRequest&,
+        ModifyShareUserDspmOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::ModifySkillScanAlertStatusOutcome CsipClient::ModifySkillScanAlertStatus(const ModifySkillScanAlertStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifySkillScanAlertStatus");
@@ -33932,6 +34982,56 @@ CsipClient::SendDspmAssetLoginSmsCodeOutcomeCallable CsipClient::SendDspmAssetLo
         const CsipClient*,
         const SendDspmAssetLoginSmsCodeRequest&,
         SendDspmAssetLoginSmsCodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::SendDspmCkafkaTestOutcome CsipClient::SendDspmCkafkaTest(const SendDspmCkafkaTestRequest &request)
+{
+    auto outcome = MakeRequest(request, "SendDspmCkafkaTest");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SendDspmCkafkaTestResponse rsp = SendDspmCkafkaTestResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SendDspmCkafkaTestOutcome(rsp);
+        else
+            return SendDspmCkafkaTestOutcome(o.GetError());
+    }
+    else
+    {
+        return SendDspmCkafkaTestOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::SendDspmCkafkaTestAsync(const SendDspmCkafkaTestRequest& request, const SendDspmCkafkaTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SendDspmCkafkaTestRequest&;
+    using Resp = SendDspmCkafkaTestResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SendDspmCkafkaTest", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::SendDspmCkafkaTestOutcomeCallable CsipClient::SendDspmCkafkaTestCallable(const SendDspmCkafkaTestRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SendDspmCkafkaTestOutcome>>();
+    SendDspmCkafkaTestAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const SendDspmCkafkaTestRequest&,
+        SendDspmCkafkaTestOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

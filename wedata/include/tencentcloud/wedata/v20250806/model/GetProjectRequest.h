@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目id。一般使用项目Id来查询，与projectName必须存在一个。
-                     * @return ProjectId 项目id。一般使用项目Id来查询，与projectName必须存在一个。
+                     * 获取<p>项目id。一般使用项目Id来查询，与projectName必须存在一个。</p>
+                     * @return ProjectId <p>项目id。一般使用项目Id来查询，与projectName必须存在一个。</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目id。一般使用项目Id来查询，与projectName必须存在一个。
-                     * @param _projectId 项目id。一般使用项目Id来查询，与projectName必须存在一个。
+                     * 设置<p>项目id。一般使用项目Id来查询，与projectName必须存在一个。</p>
+                     * @param _projectId <p>项目id。一般使用项目Id来查询，与projectName必须存在一个。</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目id。一般使用项目Id来查询，与projectName必须存在一个。
+                     * <p>项目id。一般使用项目Id来查询，与projectName必须存在一个。</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;

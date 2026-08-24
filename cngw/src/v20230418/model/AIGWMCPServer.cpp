@@ -40,7 +40,8 @@ AIGWMCPServer::AIGWMCPServer() :
     m_healthCheckHasBeenSet(false),
     m_toolCountLimitHasBeenSet(false),
     m_conflictStrategyHasBeenSet(false),
-    m_marketStatusHasBeenSet(false)
+    m_marketStatusHasBeenSet(false),
+    m_preserveHostHasBeenSet(false)
 {
 }
 
@@ -270,6 +271,16 @@ CoreInternalOutcome AIGWMCPServer::Deserialize(const rapidjson::Value &value)
         m_marketStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("PreserveHost") && !value["PreserveHost"].IsNull())
+    {
+        if (!value["PreserveHost"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWMCPServer.PreserveHost` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_preserveHost = value["PreserveHost"].GetBool();
+        m_preserveHostHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -438,6 +449,14 @@ void AIGWMCPServer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "MarketStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_marketStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_preserveHostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreserveHost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_preserveHost, allocator);
     }
 
 }
@@ -761,5 +780,21 @@ void AIGWMCPServer::SetMarketStatus(const string& _marketStatus)
 bool AIGWMCPServer::MarketStatusHasBeenSet() const
 {
     return m_marketStatusHasBeenSet;
+}
+
+bool AIGWMCPServer::GetPreserveHost() const
+{
+    return m_preserveHost;
+}
+
+void AIGWMCPServer::SetPreserveHost(const bool& _preserveHost)
+{
+    m_preserveHost = _preserveHost;
+    m_preserveHostHasBeenSet = true;
+}
+
+bool AIGWMCPServer::PreserveHostHasBeenSet() const
+{
+    return m_preserveHostHasBeenSet;
 }
 

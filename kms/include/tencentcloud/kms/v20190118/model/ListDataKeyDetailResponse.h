@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回的属性信息列表。
-                     * @return DataKeyMetadatas 返回的属性信息列表。
+                     * 获取<p>返回的属性信息列表。</p>
+                     * @return DataKeyMetadatas <p>返回的属性信息列表。</p>
                      * 
                      */
                     std::vector<DataKeyMetadata> GetDataKeyMetadatas() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool DataKeyMetadatasHasBeenSet() const;
 
                     /**
-                     * 获取DataKey的总数量
-                     * @return TotalCount DataKey的总数量
+                     * 获取<p>DataKey的总数量</p>
+                     * @return TotalCount <p>DataKey的总数量</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回的属性信息列表。
+                     * <p>返回的属性信息列表。</p>
                      */
                     std::vector<DataKeyMetadata> m_dataKeyMetadatas;
                     bool m_dataKeyMetadatasHasBeenSet;
 
                     /**
-                     * DataKey的总数量
+                     * <p>DataKey的总数量</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

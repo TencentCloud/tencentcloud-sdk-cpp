@@ -36,7 +36,9 @@ CreateCloudNativeAPIGatewayLLMModelAPIRequest::CreateCloudNativeAPIGatewayLLMMod
     m_enableCrossServiceFallbackHasBeenSet(false),
     m_crossServiceFallbackConfigHasBeenSet(false),
     m_tagFilterHasBeenSet(false),
-    m_logConfigHasBeenSet(false)
+    m_logConfigHasBeenSet(false),
+    m_maxDocumentsConfigHasBeenSet(false),
+    m_sensitiveWordRouteHasBeenSet(false)
 {
 }
 
@@ -180,6 +182,24 @@ string CreateCloudNativeAPIGatewayLLMModelAPIRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_logConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_maxDocumentsConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxDocumentsConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_maxDocumentsConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_sensitiveWordRouteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SensitiveWordRoute";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sensitiveWordRoute.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -412,6 +432,38 @@ void CreateCloudNativeAPIGatewayLLMModelAPIRequest::SetLogConfig(const AIGWLogCo
 bool CreateCloudNativeAPIGatewayLLMModelAPIRequest::LogConfigHasBeenSet() const
 {
     return m_logConfigHasBeenSet;
+}
+
+AIGWRerankMaxDocumentsConfig CreateCloudNativeAPIGatewayLLMModelAPIRequest::GetMaxDocumentsConfig() const
+{
+    return m_maxDocumentsConfig;
+}
+
+void CreateCloudNativeAPIGatewayLLMModelAPIRequest::SetMaxDocumentsConfig(const AIGWRerankMaxDocumentsConfig& _maxDocumentsConfig)
+{
+    m_maxDocumentsConfig = _maxDocumentsConfig;
+    m_maxDocumentsConfigHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayLLMModelAPIRequest::MaxDocumentsConfigHasBeenSet() const
+{
+    return m_maxDocumentsConfigHasBeenSet;
+}
+
+AIGWSensitiveWordRoute CreateCloudNativeAPIGatewayLLMModelAPIRequest::GetSensitiveWordRoute() const
+{
+    return m_sensitiveWordRoute;
+}
+
+void CreateCloudNativeAPIGatewayLLMModelAPIRequest::SetSensitiveWordRoute(const AIGWSensitiveWordRoute& _sensitiveWordRoute)
+{
+    m_sensitiveWordRoute = _sensitiveWordRoute;
+    m_sensitiveWordRouteHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayLLMModelAPIRequest::SensitiveWordRouteHasBeenSet() const
+{
+    return m_sensitiveWordRouteHasBeenSet;
 }
 
 

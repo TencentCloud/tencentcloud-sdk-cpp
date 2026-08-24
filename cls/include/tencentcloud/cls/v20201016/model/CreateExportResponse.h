@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志导出ID。
-                     * @return ExportId 日志导出ID。
+                     * 获取<p>日志导出ID。</p>
+                     * @return ExportId <p>日志导出ID。</p>
                      * 
                      */
                     std::string GetExportId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志导出ID。
+                     * <p>日志导出ID。</p>
                      */
                     std::string m_exportId;
                     bool m_exportIdHasBeenSet;

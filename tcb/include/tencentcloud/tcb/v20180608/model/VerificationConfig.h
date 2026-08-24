@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcb/v20180608/model/SMSProviderTemplateConfig.h>
+#include <tencentcloud/tcb/v20180608/model/SMSCloudFunctionConfig.h>
 
 
 namespace TencentCloud
@@ -58,18 +59,18 @@ ErrorMessage：字符串（ErrorCode 非 0 时，返回错误信息）
 
 
                     /**
-                     * 获取<p>短信验证码发送通道类型。</p><p>枚举值：</p><ul><li>default： 使用默认云开发短信包发送短信</li><li>apis： 使用云开发自定义 APIs 作为短信发送通道，需配合 Name 和 Method 参数使用。不传则不修改当前配置。</li><li>template： 自定义短信模板配置，需要配置TemplateProvider</li></ul>
+                     * 获取<p>短信验证码发送通道类型。</p><p>枚举值：</p><ul><li>default： 使用默认云开发短信包发送短信</li><li>apis： 使用云开发自定义 APIs 作为短信发送通道，需配合 Name 和 Method 参数使用。不传则不修改当前配置。</li><li>template： 自定义短信模板配置，需要配置TemplateProvider</li><li>function： 云函数通道（第三方短信服务商），需要配置CloudFunction</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type <p>短信验证码发送通道类型。</p><p>枚举值：</p><ul><li>default： 使用默认云开发短信包发送短信</li><li>apis： 使用云开发自定义 APIs 作为短信发送通道，需配合 Name 和 Method 参数使用。不传则不修改当前配置。</li><li>template： 自定义短信模板配置，需要配置TemplateProvider</li></ul>
+                     * @return Type <p>短信验证码发送通道类型。</p><p>枚举值：</p><ul><li>default： 使用默认云开发短信包发送短信</li><li>apis： 使用云开发自定义 APIs 作为短信发送通道，需配合 Name 和 Method 参数使用。不传则不修改当前配置。</li><li>template： 自定义短信模板配置，需要配置TemplateProvider</li><li>function： 云函数通道（第三方短信服务商），需要配置CloudFunction</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置<p>短信验证码发送通道类型。</p><p>枚举值：</p><ul><li>default： 使用默认云开发短信包发送短信</li><li>apis： 使用云开发自定义 APIs 作为短信发送通道，需配合 Name 和 Method 参数使用。不传则不修改当前配置。</li><li>template： 自定义短信模板配置，需要配置TemplateProvider</li></ul>
+                     * 设置<p>短信验证码发送通道类型。</p><p>枚举值：</p><ul><li>default： 使用默认云开发短信包发送短信</li><li>apis： 使用云开发自定义 APIs 作为短信发送通道，需配合 Name 和 Method 参数使用。不传则不修改当前配置。</li><li>template： 自定义短信模板配置，需要配置TemplateProvider</li><li>function： 云函数通道（第三方短信服务商），需要配置CloudFunction</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type <p>短信验证码发送通道类型。</p><p>枚举值：</p><ul><li>default： 使用默认云开发短信包发送短信</li><li>apis： 使用云开发自定义 APIs 作为短信发送通道，需配合 Name 和 Method 参数使用。不传则不修改当前配置。</li><li>template： 自定义短信模板配置，需要配置TemplateProvider</li></ul>
+                     * @param _type <p>短信验证码发送通道类型。</p><p>枚举值：</p><ul><li>default： 使用默认云开发短信包发送短信</li><li>apis： 使用云开发自定义 APIs 作为短信发送通道，需配合 Name 和 Method 参数使用。不传则不修改当前配置。</li><li>template： 自定义短信模板配置，需要配置TemplateProvider</li><li>function： 云函数通道（第三方短信服务商），需要配置CloudFunction</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -182,10 +183,35 @@ ErrorMessage：字符串（ErrorCode 非 0 时，返回错误信息）
                      */
                     bool TemplateProviderHasBeenSet() const;
 
+                    /**
+                     * 获取<p>云函数短信通道配置，当 Type 为 function 时必填</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CloudFunction <p>云函数短信通道配置，当 Type 为 function 时必填</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SMSCloudFunctionConfig GetCloudFunction() const;
+
+                    /**
+                     * 设置<p>云函数短信通道配置，当 Type 为 function 时必填</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cloudFunction <p>云函数短信通道配置，当 Type 为 function 时必填</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCloudFunction(const SMSCloudFunctionConfig& _cloudFunction);
+
+                    /**
+                     * 判断参数 CloudFunction 是否已赋值
+                     * @return CloudFunction 是否已赋值
+                     * 
+                     */
+                    bool CloudFunctionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * <p>短信验证码发送通道类型。</p><p>枚举值：</p><ul><li>default： 使用默认云开发短信包发送短信</li><li>apis： 使用云开发自定义 APIs 作为短信发送通道，需配合 Name 和 Method 参数使用。不传则不修改当前配置。</li><li>template： 自定义短信模板配置，需要配置TemplateProvider</li></ul>
+                     * <p>短信验证码发送通道类型。</p><p>枚举值：</p><ul><li>default： 使用默认云开发短信包发送短信</li><li>apis： 使用云开发自定义 APIs 作为短信发送通道，需配合 Name 和 Method 参数使用。不传则不修改当前配置。</li><li>template： 自定义短信模板配置，需要配置TemplateProvider</li><li>function： 云函数通道（第三方短信服务商），需要配置CloudFunction</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
@@ -218,6 +244,13 @@ ErrorMessage：字符串（ErrorCode 非 0 时，返回错误信息）
                      */
                     SMSProviderTemplateConfig m_templateProvider;
                     bool m_templateProviderHasBeenSet;
+
+                    /**
+                     * <p>云函数短信通道配置，当 Type 为 function 时必填</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SMSCloudFunctionConfig m_cloudFunction;
+                    bool m_cloudFunctionHasBeenSet;
 
                 };
             }

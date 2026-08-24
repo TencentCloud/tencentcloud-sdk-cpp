@@ -29,6 +29,8 @@
 #include <tencentcloud/tse/v20201207/model/AIGWLLMQuotaLimit.h>
 #include <tencentcloud/tse/v20201207/model/AIGWModelRewriteRule.h>
 #include <tencentcloud/tse/v20201207/model/KeyValue.h>
+#include <tencentcloud/tse/v20201207/model/AIGWLoadBalanceConfig.h>
+#include <tencentcloud/tse/v20201207/model/AIGWLLMHealthCheckSetting.h>
 
 
 namespace TencentCloud
@@ -765,6 +767,195 @@ namespace TencentCloud
                      */
                     bool ExternalInstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>负载均衡配置</p>
+                     * @return LoadBalanceConfig <p>负载均衡配置</p>
+                     * 
+                     */
+                    AIGWLoadBalanceConfig GetLoadBalanceConfig() const;
+
+                    /**
+                     * 设置<p>负载均衡配置</p>
+                     * @param _loadBalanceConfig <p>负载均衡配置</p>
+                     * 
+                     */
+                    void SetLoadBalanceConfig(const AIGWLoadBalanceConfig& _loadBalanceConfig);
+
+                    /**
+                     * 判断参数 LoadBalanceConfig 是否已赋值
+                     * @return LoadBalanceConfig 是否已赋值
+                     * 
+                     */
+                    bool LoadBalanceConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模型服务是否发布到广场</p><p>枚举值：</p><ul><li>Published： 已发布</li><li>Unpublished： 未发布</li></ul>
+                     * @return PublishStatus <p>模型服务是否发布到广场</p><p>枚举值：</p><ul><li>Published： 已发布</li><li>Unpublished： 未发布</li></ul>
+                     * 
+                     */
+                    std::string GetPublishStatus() const;
+
+                    /**
+                     * 设置<p>模型服务是否发布到广场</p><p>枚举值：</p><ul><li>Published： 已发布</li><li>Unpublished： 未发布</li></ul>
+                     * @param _publishStatus <p>模型服务是否发布到广场</p><p>枚举值：</p><ul><li>Published： 已发布</li><li>Unpublished： 未发布</li></ul>
+                     * 
+                     */
+                    void SetPublishStatus(const std::string& _publishStatus);
+
+                    /**
+                     * 判断参数 PublishStatus 是否已赋值
+                     * @return PublishStatus 是否已赋值
+                     * 
+                     */
+                    bool PublishStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模型服务是否可以发布</p>
+                     * @return CanPublish <p>模型服务是否可以发布</p>
+                     * 
+                     */
+                    bool GetCanPublish() const;
+
+                    /**
+                     * 设置<p>模型服务是否可以发布</p>
+                     * @param _canPublish <p>模型服务是否可以发布</p>
+                     * 
+                     */
+                    void SetCanPublish(const bool& _canPublish);
+
+                    /**
+                     * 判断参数 CanPublish 是否已赋值
+                     * @return CanPublish 是否已赋值
+                     * 
+                     */
+                    bool CanPublishHasBeenSet() const;
+
+                    /**
+                     * 获取<p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li><li>Success： 成功</li></ul>
+                     * @return SyncStatus <p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li><li>Success： 成功</li></ul>
+                     * 
+                     */
+                    std::string GetSyncStatus() const;
+
+                    /**
+                     * 设置<p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li><li>Success： 成功</li></ul>
+                     * @param _syncStatus <p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li><li>Success： 成功</li></ul>
+                     * 
+                     */
+                    void SetSyncStatus(const std::string& _syncStatus);
+
+                    /**
+                     * 判断参数 SyncStatus 是否已赋值
+                     * @return SyncStatus 是否已赋值
+                     * 
+                     */
+                    bool SyncStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>资源类型</p><p>枚举值：</p><ul><li>Public： 公共</li><li>Private： 私有</li><li>SourceDelete： 资源删除</li></ul>
+                     * @return SourceType <p>资源类型</p><p>枚举值：</p><ul><li>Public： 公共</li><li>Private： 私有</li><li>SourceDelete： 资源删除</li></ul>
+                     * 
+                     */
+                    std::string GetSourceType() const;
+
+                    /**
+                     * 设置<p>资源类型</p><p>枚举值：</p><ul><li>Public： 公共</li><li>Private： 私有</li><li>SourceDelete： 资源删除</li></ul>
+                     * @param _sourceType <p>资源类型</p><p>枚举值：</p><ul><li>Public： 公共</li><li>Private： 私有</li><li>SourceDelete： 资源删除</li></ul>
+                     * 
+                     */
+                    void SetSourceType(const std::string& _sourceType);
+
+                    /**
+                     * 判断参数 SourceType 是否已赋值
+                     * @return SourceType 是否已赋值
+                     * 
+                     */
+                    bool SourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>同步版本</p>
+                     * @return SyncedVersion <p>同步版本</p>
+                     * 
+                     */
+                    std::string GetSyncedVersion() const;
+
+                    /**
+                     * 设置<p>同步版本</p>
+                     * @param _syncedVersion <p>同步版本</p>
+                     * 
+                     */
+                    void SetSyncedVersion(const std::string& _syncedVersion);
+
+                    /**
+                     * 判断参数 SyncedVersion 是否已赋值
+                     * @return SyncedVersion 是否已赋值
+                     * 
+                     */
+                    bool SyncedVersionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>健康状态</p><p>枚举值：</p><ul><li>Error： 异常</li></ul>
+                     * @return Status <p>健康状态</p><p>枚举值：</p><ul><li>Error： 异常</li></ul>
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置<p>健康状态</p><p>枚举值：</p><ul><li>Error： 异常</li></ul>
+                     * @param _status <p>健康状态</p><p>枚举值：</p><ul><li>Error： 异常</li></ul>
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启健康检查</p>
+                     * @return EnableHealthCheck <p>是否开启健康检查</p>
+                     * 
+                     */
+                    bool GetEnableHealthCheck() const;
+
+                    /**
+                     * 设置<p>是否开启健康检查</p>
+                     * @param _enableHealthCheck <p>是否开启健康检查</p>
+                     * 
+                     */
+                    void SetEnableHealthCheck(const bool& _enableHealthCheck);
+
+                    /**
+                     * 判断参数 EnableHealthCheck 是否已赋值
+                     * @return EnableHealthCheck 是否已赋值
+                     * 
+                     */
+                    bool EnableHealthCheckHasBeenSet() const;
+
+                    /**
+                     * 获取<p>健康检查配置</p>
+                     * @return HealthCheck <p>健康检查配置</p>
+                     * 
+                     */
+                    AIGWLLMHealthCheckSetting GetHealthCheck() const;
+
+                    /**
+                     * 设置<p>健康检查配置</p>
+                     * @param _healthCheck <p>健康检查配置</p>
+                     * 
+                     */
+                    void SetHealthCheck(const AIGWLLMHealthCheckSetting& _healthCheck);
+
+                    /**
+                     * 判断参数 HealthCheck 是否已赋值
+                     * @return HealthCheck 是否已赋值
+                     * 
+                     */
+                    bool HealthCheckHasBeenSet() const;
+
                 private:
 
                     /**
@@ -970,6 +1161,60 @@ namespace TencentCloud
                      */
                     std::string m_externalInstanceId;
                     bool m_externalInstanceIdHasBeenSet;
+
+                    /**
+                     * <p>负载均衡配置</p>
+                     */
+                    AIGWLoadBalanceConfig m_loadBalanceConfig;
+                    bool m_loadBalanceConfigHasBeenSet;
+
+                    /**
+                     * <p>模型服务是否发布到广场</p><p>枚举值：</p><ul><li>Published： 已发布</li><li>Unpublished： 未发布</li></ul>
+                     */
+                    std::string m_publishStatus;
+                    bool m_publishStatusHasBeenSet;
+
+                    /**
+                     * <p>模型服务是否可以发布</p>
+                     */
+                    bool m_canPublish;
+                    bool m_canPublishHasBeenSet;
+
+                    /**
+                     * <p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li><li>Success： 成功</li></ul>
+                     */
+                    std::string m_syncStatus;
+                    bool m_syncStatusHasBeenSet;
+
+                    /**
+                     * <p>资源类型</p><p>枚举值：</p><ul><li>Public： 公共</li><li>Private： 私有</li><li>SourceDelete： 资源删除</li></ul>
+                     */
+                    std::string m_sourceType;
+                    bool m_sourceTypeHasBeenSet;
+
+                    /**
+                     * <p>同步版本</p>
+                     */
+                    std::string m_syncedVersion;
+                    bool m_syncedVersionHasBeenSet;
+
+                    /**
+                     * <p>健康状态</p><p>枚举值：</p><ul><li>Error： 异常</li></ul>
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>是否开启健康检查</p>
+                     */
+                    bool m_enableHealthCheck;
+                    bool m_enableHealthCheckHasBeenSet;
+
+                    /**
+                     * <p>健康检查配置</p>
+                     */
+                    AIGWLLMHealthCheckSetting m_healthCheck;
+                    bool m_healthCheckHasBeenSet;
 
                 };
             }

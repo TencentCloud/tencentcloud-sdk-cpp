@@ -24,6 +24,12 @@
 #include <tencentcloud/tse/v20201207/model/AIGWJWTCredentialConfig.h>
 #include <tencentcloud/tse/v20201207/model/AIGWOAuthCredentialConfig.h>
 #include <tencentcloud/tse/v20201207/model/AIGWOIDCCredentialConfig.h>
+#include <tencentcloud/tse/v20201207/model/AIGWAKSKCredentialConfig.h>
+#include <tencentcloud/tse/v20201207/model/AIGWCAMCredentialConfig.h>
+#include <tencentcloud/tse/v20201207/model/AIGWBearerTokenCredentialConfig.h>
+#include <tencentcloud/tse/v20201207/model/AIGWCustomHeaderCredentialConfig.h>
+#include <tencentcloud/tse/v20201207/model/AIGWQueryParamCredentialConfig.h>
+#include <tencentcloud/tse/v20201207/model/AIGWBasicCredentialConfig.h>
 
 
 namespace TencentCloud
@@ -298,6 +304,132 @@ namespace TencentCloud
                     bool OIDCCredentialConfigHasBeenSet() const;
 
                     /**
+                     * 获取<p>AK/SK凭证配置</p>
+                     * @return AKSKCredentialConfig <p>AK/SK凭证配置</p>
+                     * 
+                     */
+                    AIGWAKSKCredentialConfig GetAKSKCredentialConfig() const;
+
+                    /**
+                     * 设置<p>AK/SK凭证配置</p>
+                     * @param _aKSKCredentialConfig <p>AK/SK凭证配置</p>
+                     * 
+                     */
+                    void SetAKSKCredentialConfig(const AIGWAKSKCredentialConfig& _aKSKCredentialConfig);
+
+                    /**
+                     * 判断参数 AKSKCredentialConfig 是否已赋值
+                     * @return AKSKCredentialConfig 是否已赋值
+                     * 
+                     */
+                    bool AKSKCredentialConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>CAM凭证配置</p>
+                     * @return CAMCredentialConfig <p>CAM凭证配置</p>
+                     * 
+                     */
+                    AIGWCAMCredentialConfig GetCAMCredentialConfig() const;
+
+                    /**
+                     * 设置<p>CAM凭证配置</p>
+                     * @param _cAMCredentialConfig <p>CAM凭证配置</p>
+                     * 
+                     */
+                    void SetCAMCredentialConfig(const AIGWCAMCredentialConfig& _cAMCredentialConfig);
+
+                    /**
+                     * 判断参数 CAMCredentialConfig 是否已赋值
+                     * @return CAMCredentialConfig 是否已赋值
+                     * 
+                     */
+                    bool CAMCredentialConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Bearer Token凭证配置</p>
+                     * @return BearerTokenCredentialConfig <p>Bearer Token凭证配置</p>
+                     * 
+                     */
+                    AIGWBearerTokenCredentialConfig GetBearerTokenCredentialConfig() const;
+
+                    /**
+                     * 设置<p>Bearer Token凭证配置</p>
+                     * @param _bearerTokenCredentialConfig <p>Bearer Token凭证配置</p>
+                     * 
+                     */
+                    void SetBearerTokenCredentialConfig(const AIGWBearerTokenCredentialConfig& _bearerTokenCredentialConfig);
+
+                    /**
+                     * 判断参数 BearerTokenCredentialConfig 是否已赋值
+                     * @return BearerTokenCredentialConfig 是否已赋值
+                     * 
+                     */
+                    bool BearerTokenCredentialConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自定义Header凭证配置</p>
+                     * @return CustomHeaderCredentialConfig <p>自定义Header凭证配置</p>
+                     * 
+                     */
+                    AIGWCustomHeaderCredentialConfig GetCustomHeaderCredentialConfig() const;
+
+                    /**
+                     * 设置<p>自定义Header凭证配置</p>
+                     * @param _customHeaderCredentialConfig <p>自定义Header凭证配置</p>
+                     * 
+                     */
+                    void SetCustomHeaderCredentialConfig(const AIGWCustomHeaderCredentialConfig& _customHeaderCredentialConfig);
+
+                    /**
+                     * 判断参数 CustomHeaderCredentialConfig 是否已赋值
+                     * @return CustomHeaderCredentialConfig 是否已赋值
+                     * 
+                     */
+                    bool CustomHeaderCredentialConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自定义Query参数凭证配置</p>
+                     * @return QueryParamCredentialConfig <p>自定义Query参数凭证配置</p>
+                     * 
+                     */
+                    AIGWQueryParamCredentialConfig GetQueryParamCredentialConfig() const;
+
+                    /**
+                     * 设置<p>自定义Query参数凭证配置</p>
+                     * @param _queryParamCredentialConfig <p>自定义Query参数凭证配置</p>
+                     * 
+                     */
+                    void SetQueryParamCredentialConfig(const AIGWQueryParamCredentialConfig& _queryParamCredentialConfig);
+
+                    /**
+                     * 判断参数 QueryParamCredentialConfig 是否已赋值
+                     * @return QueryParamCredentialConfig 是否已赋值
+                     * 
+                     */
+                    bool QueryParamCredentialConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Basic Auth凭证配置</p>
+                     * @return BasicCredentialConfig <p>Basic Auth凭证配置</p>
+                     * 
+                     */
+                    AIGWBasicCredentialConfig GetBasicCredentialConfig() const;
+
+                    /**
+                     * 设置<p>Basic Auth凭证配置</p>
+                     * @param _basicCredentialConfig <p>Basic Auth凭证配置</p>
+                     * 
+                     */
+                    void SetBasicCredentialConfig(const AIGWBasicCredentialConfig& _basicCredentialConfig);
+
+                    /**
+                     * 判断参数 BasicCredentialConfig 是否已赋值
+                     * @return BasicCredentialConfig 是否已赋值
+                     * 
+                     */
+                    bool BasicCredentialConfigHasBeenSet() const;
+
+                    /**
                      * 获取<p>第三方平台类型</p><p>枚举值：</p><ul><li>Dify： Dify平台</li></ul>
                      * @return Provider <p>第三方平台类型</p><p>枚举值：</p><ul><li>Dify： Dify平台</li></ul>
                      * 
@@ -391,6 +523,42 @@ namespace TencentCloud
                      */
                     AIGWOIDCCredentialConfig m_oIDCCredentialConfig;
                     bool m_oIDCCredentialConfigHasBeenSet;
+
+                    /**
+                     * <p>AK/SK凭证配置</p>
+                     */
+                    AIGWAKSKCredentialConfig m_aKSKCredentialConfig;
+                    bool m_aKSKCredentialConfigHasBeenSet;
+
+                    /**
+                     * <p>CAM凭证配置</p>
+                     */
+                    AIGWCAMCredentialConfig m_cAMCredentialConfig;
+                    bool m_cAMCredentialConfigHasBeenSet;
+
+                    /**
+                     * <p>Bearer Token凭证配置</p>
+                     */
+                    AIGWBearerTokenCredentialConfig m_bearerTokenCredentialConfig;
+                    bool m_bearerTokenCredentialConfigHasBeenSet;
+
+                    /**
+                     * <p>自定义Header凭证配置</p>
+                     */
+                    AIGWCustomHeaderCredentialConfig m_customHeaderCredentialConfig;
+                    bool m_customHeaderCredentialConfigHasBeenSet;
+
+                    /**
+                     * <p>自定义Query参数凭证配置</p>
+                     */
+                    AIGWQueryParamCredentialConfig m_queryParamCredentialConfig;
+                    bool m_queryParamCredentialConfigHasBeenSet;
+
+                    /**
+                     * <p>Basic Auth凭证配置</p>
+                     */
+                    AIGWBasicCredentialConfig m_basicCredentialConfig;
+                    bool m_basicCredentialConfigHasBeenSet;
 
                     /**
                      * <p>第三方平台类型</p><p>枚举值：</p><ul><li>Dify： Dify平台</li></ul>

@@ -2390,6 +2390,56 @@ RedisClient::DescribeInstanceParamsOutcomeCallable RedisClient::DescribeInstance
     return prom->get_future();
 }
 
+RedisClient::DescribeInstancePasswordPolicyOutcome RedisClient::DescribeInstancePasswordPolicy(const DescribeInstancePasswordPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstancePasswordPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstancePasswordPolicyResponse rsp = DescribeInstancePasswordPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstancePasswordPolicyOutcome(rsp);
+        else
+            return DescribeInstancePasswordPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstancePasswordPolicyOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeInstancePasswordPolicyAsync(const DescribeInstancePasswordPolicyRequest& request, const DescribeInstancePasswordPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeInstancePasswordPolicyRequest&;
+    using Resp = DescribeInstancePasswordPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstancePasswordPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RedisClient::DescribeInstancePasswordPolicyOutcomeCallable RedisClient::DescribeInstancePasswordPolicyCallable(const DescribeInstancePasswordPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeInstancePasswordPolicyOutcome>>();
+    DescribeInstancePasswordPolicyAsync(
+    request,
+    [prom](
+        const RedisClient*,
+        const DescribeInstancePasswordPolicyRequest&,
+        DescribeInstancePasswordPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 RedisClient::DescribeInstanceSecurityGroupOutcome RedisClient::DescribeInstanceSecurityGroup(const DescribeInstanceSecurityGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceSecurityGroup");

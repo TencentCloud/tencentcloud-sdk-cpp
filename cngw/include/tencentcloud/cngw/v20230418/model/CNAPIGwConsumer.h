@@ -132,6 +132,27 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
+                     * 获取<p>消费者优先级</p><p>枚举值：</p><ul><li>High： 高优</li><li>Medium： 中优</li><li>Low： 低优</li></ul>
+                     * @return Priority <p>消费者优先级</p><p>枚举值：</p><ul><li>High： 高优</li><li>Medium： 中优</li><li>Low： 低优</li></ul>
+                     * 
+                     */
+                    std::string GetPriority() const;
+
+                    /**
+                     * 设置<p>消费者优先级</p><p>枚举值：</p><ul><li>High： 高优</li><li>Medium： 中优</li><li>Low： 低优</li></ul>
+                     * @param _priority <p>消费者优先级</p><p>枚举值：</p><ul><li>High： 高优</li><li>Medium： 中优</li><li>Low： 低优</li></ul>
+                     * 
+                     */
+                    void SetPriority(const std::string& _priority);
+
+                    /**
+                     * 判断参数 Priority 是否已赋值
+                     * @return Priority 是否已赋值
+                     * 
+                     */
+                    bool PriorityHasBeenSet() const;
+
+                    /**
                      * 获取<p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description <p>描述</p>
@@ -181,6 +202,69 @@ namespace TencentCloud
                      */
                     bool ConsumerGroupsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li></ul>
+                     * @return SyncStatus <p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li></ul>
+                     * 
+                     */
+                    std::string GetSyncStatus() const;
+
+                    /**
+                     * 设置<p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li></ul>
+                     * @param _syncStatus <p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li></ul>
+                     * 
+                     */
+                    void SetSyncStatus(const std::string& _syncStatus);
+
+                    /**
+                     * 判断参数 SyncStatus 是否已赋值
+                     * @return SyncStatus 是否已赋值
+                     * 
+                     */
+                    bool SyncStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>资源类型</p><p>枚举值：</p><ul><li>ModelService： 模型服务</li><li>Consumer： 消费者</li><li>SecretKey： 密钥</li></ul>
+                     * @return SourceType <p>资源类型</p><p>枚举值：</p><ul><li>ModelService： 模型服务</li><li>Consumer： 消费者</li><li>SecretKey： 密钥</li></ul>
+                     * 
+                     */
+                    std::string GetSourceType() const;
+
+                    /**
+                     * 设置<p>资源类型</p><p>枚举值：</p><ul><li>ModelService： 模型服务</li><li>Consumer： 消费者</li><li>SecretKey： 密钥</li></ul>
+                     * @param _sourceType <p>资源类型</p><p>枚举值：</p><ul><li>ModelService： 模型服务</li><li>Consumer： 消费者</li><li>SecretKey： 密钥</li></ul>
+                     * 
+                     */
+                    void SetSourceType(const std::string& _sourceType);
+
+                    /**
+                     * 判断参数 SourceType 是否已赋值
+                     * @return SourceType 是否已赋值
+                     * 
+                     */
+                    bool SourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>同步版本</p>
+                     * @return SyncedVersion <p>同步版本</p>
+                     * 
+                     */
+                    std::string GetSyncedVersion() const;
+
+                    /**
+                     * 设置<p>同步版本</p>
+                     * @param _syncedVersion <p>同步版本</p>
+                     * 
+                     */
+                    void SetSyncedVersion(const std::string& _syncedVersion);
+
+                    /**
+                     * 判断参数 SyncedVersion 是否已赋值
+                     * @return SyncedVersion 是否已赋值
+                     * 
+                     */
+                    bool SyncedVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -208,6 +292,12 @@ namespace TencentCloud
                     bool m_modifyTimeHasBeenSet;
 
                     /**
+                     * <p>消费者优先级</p><p>枚举值：</p><ul><li>High： 高优</li><li>Medium： 中优</li><li>Low： 低优</li></ul>
+                     */
+                    std::string m_priority;
+                    bool m_priorityHasBeenSet;
+
+                    /**
                      * <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -220,6 +310,24 @@ namespace TencentCloud
                      */
                     std::vector<CNAPIGwConsumerGroup> m_consumerGroups;
                     bool m_consumerGroupsHasBeenSet;
+
+                    /**
+                     * <p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li></ul>
+                     */
+                    std::string m_syncStatus;
+                    bool m_syncStatusHasBeenSet;
+
+                    /**
+                     * <p>资源类型</p><p>枚举值：</p><ul><li>ModelService： 模型服务</li><li>Consumer： 消费者</li><li>SecretKey： 密钥</li></ul>
+                     */
+                    std::string m_sourceType;
+                    bool m_sourceTypeHasBeenSet;
+
+                    /**
+                     * <p>同步版本</p>
+                     */
+                    std::string m_syncedVersion;
+                    bool m_syncedVersionHasBeenSet;
 
                 };
             }

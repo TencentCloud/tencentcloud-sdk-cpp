@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取输入视频 / 图片的 URL
-                     * @return InputURL 输入视频 / 图片的 URL
+                     * 获取<p>输入视频 / 图片的 URL</p>
+                     * @return InputURL <p>输入视频 / 图片的 URL</p>
                      * 
                      */
                     std::string GetInputURL() const;
 
                     /**
-                     * 设置输入视频 / 图片的 URL
-                     * @param _inputURL 输入视频 / 图片的 URL
+                     * 设置<p>输入视频 / 图片的 URL</p>
+                     * @param _inputURL <p>输入视频 / 图片的 URL</p>
                      * 
                      */
                     void SetInputURL(const std::string& _inputURL);
@@ -66,27 +66,15 @@ namespace TencentCloud
                     bool InputURLHasBeenSet() const;
 
                     /**
-                     * 获取算法类型。可选值：
-
-- `VID_COMP`：视频理解
-- `IMG_COMP`：图片理解
-                     * @return ServiceType 算法类型。可选值：
-
-- `VID_COMP`：视频理解
-- `IMG_COMP`：图片理解
+                     * 获取<p>算法类型。可选值：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li></ul>
+                     * @return ServiceType <p>算法类型。可选值：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li></ul>
                      * 
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置算法类型。可选值：
-
-- `VID_COMP`：视频理解
-- `IMG_COMP`：图片理解
-                     * @param _serviceType 算法类型。可选值：
-
-- `VID_COMP`：视频理解
-- `IMG_COMP`：图片理解
+                     * 设置<p>算法类型。可选值：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li></ul>
+                     * @param _serviceType <p>算法类型。可选值：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li></ul>
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -99,15 +87,15 @@ namespace TencentCloud
                     bool ServiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务元数据
-                     * @return Metadata 任务元数据
+                     * 获取<p>任务元数据</p>
+                     * @return Metadata <p>任务元数据</p>
                      * 
                      */
                     SeeTaskMetadata GetMetadata() const;
 
                     /**
-                     * 设置任务元数据
-                     * @param _metadata 任务元数据
+                     * 设置<p>任务元数据</p>
+                     * @param _metadata <p>任务元数据</p>
                      * 
                      */
                     void SetMetadata(const SeeTaskMetadata& _metadata);
@@ -120,15 +108,15 @@ namespace TencentCloud
                     bool MetadataHasBeenSet() const;
 
                     /**
-                     * 获取视觉理解配置项
-                     * @return ComprehensionConfig 视觉理解配置项
+                     * 获取<p>视觉理解配置项</p>
+                     * @return ComprehensionConfig <p>视觉理解配置项</p>
                      * 
                      */
                     SeeComprehensionConfig GetComprehensionConfig() const;
 
                     /**
-                     * 设置视觉理解配置项
-                     * @param _comprehensionConfig 视觉理解配置项
+                     * 设置<p>视觉理解配置项</p>
+                     * @param _comprehensionConfig <p>视觉理解配置项</p>
                      * 
                      */
                     void SetComprehensionConfig(const SeeComprehensionConfig& _comprehensionConfig);
@@ -141,15 +129,15 @@ namespace TencentCloud
                     bool ComprehensionConfigHasBeenSet() const;
 
                     /**
-                     * 获取等待结果的超时时间（单位：秒）。填 0 表示无需等待结果。最大超时时长 25 秒，默认超时时长 20 秒。
-                     * @return WaitResultTimeout 等待结果的超时时间（单位：秒）。填 0 表示无需等待结果。最大超时时长 25 秒，默认超时时长 20 秒。
+                     * 获取<p>等待结果的超时时间（单位：秒）。填 0 表示无需等待结果。最大超时时长 25 秒，默认超时时长 20 秒。</p>
+                     * @return WaitResultTimeout <p>等待结果的超时时间（单位：秒）。填 0 表示无需等待结果。最大超时时长 25 秒，默认超时时长 20 秒。</p>
                      * 
                      */
                     int64_t GetWaitResultTimeout() const;
 
                     /**
-                     * 设置等待结果的超时时间（单位：秒）。填 0 表示无需等待结果。最大超时时长 25 秒，默认超时时长 20 秒。
-                     * @param _waitResultTimeout 等待结果的超时时间（单位：秒）。填 0 表示无需等待结果。最大超时时长 25 秒，默认超时时长 20 秒。
+                     * 设置<p>等待结果的超时时间（单位：秒）。填 0 表示无需等待结果。最大超时时长 25 秒，默认超时时长 20 秒。</p>
+                     * @param _waitResultTimeout <p>等待结果的超时时间（单位：秒）。填 0 表示无需等待结果。最大超时时长 25 秒，默认超时时长 20 秒。</p>
                      * 
                      */
                     void SetWaitResultTimeout(const int64_t& _waitResultTimeout);
@@ -162,15 +150,15 @@ namespace TencentCloud
                     bool WaitResultTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取回调目标 ID
-                     * @return CallbackId 回调目标 ID
+                     * 获取<p>回调目标 ID</p>
+                     * @return CallbackId <p>回调目标 ID</p>
                      * 
                      */
                     std::string GetCallbackId() const;
 
                     /**
-                     * 设置回调目标 ID
-                     * @param _callbackId 回调目标 ID
+                     * 设置<p>回调目标 ID</p>
+                     * @param _callbackId <p>回调目标 ID</p>
                      * 
                      */
                     void SetCallbackId(const std::string& _callbackId);
@@ -185,40 +173,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 输入视频 / 图片的 URL
+                     * <p>输入视频 / 图片的 URL</p>
                      */
                     std::string m_inputURL;
                     bool m_inputURLHasBeenSet;
 
                     /**
-                     * 算法类型。可选值：
-
-- `VID_COMP`：视频理解
-- `IMG_COMP`：图片理解
+                     * <p>算法类型。可选值：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li></ul>
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
 
                     /**
-                     * 任务元数据
+                     * <p>任务元数据</p>
                      */
                     SeeTaskMetadata m_metadata;
                     bool m_metadataHasBeenSet;
 
                     /**
-                     * 视觉理解配置项
+                     * <p>视觉理解配置项</p>
                      */
                     SeeComprehensionConfig m_comprehensionConfig;
                     bool m_comprehensionConfigHasBeenSet;
 
                     /**
-                     * 等待结果的超时时间（单位：秒）。填 0 表示无需等待结果。最大超时时长 25 秒，默认超时时长 20 秒。
+                     * <p>等待结果的超时时间（单位：秒）。填 0 表示无需等待结果。最大超时时长 25 秒，默认超时时长 20 秒。</p>
                      */
                     int64_t m_waitResultTimeout;
                     bool m_waitResultTimeoutHasBeenSet;
 
                     /**
-                     * 回调目标 ID
+                     * <p>回调目标 ID</p>
                      */
                     std::string m_callbackId;
                     bool m_callbackIdHasBeenSet;

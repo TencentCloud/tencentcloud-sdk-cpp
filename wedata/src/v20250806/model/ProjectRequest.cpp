@@ -23,7 +23,8 @@ using namespace std;
 ProjectRequest::ProjectRequest() :
     m_projectNameHasBeenSet(false),
     m_displayNameHasBeenSet(false),
-    m_projectModelHasBeenSet(false)
+    m_projectModelHasBeenSet(false),
+    m_scheduleModeHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome ProjectRequest::Deserialize(const rapidjson::Value &value)
         m_projectModelHasBeenSet = true;
     }
 
+    if (value.HasMember("ScheduleMode") && !value["ScheduleMode"].IsNull())
+    {
+        if (!value["ScheduleMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProjectRequest.ScheduleMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleMode = string(value["ScheduleMode"].GetString());
+        m_scheduleModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void ProjectRequest::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ProjectModel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_projectModel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void ProjectRequest::SetProjectModel(const string& _projectModel)
 bool ProjectRequest::ProjectModelHasBeenSet() const
 {
     return m_projectModelHasBeenSet;
+}
+
+string ProjectRequest::GetScheduleMode() const
+{
+    return m_scheduleMode;
+}
+
+void ProjectRequest::SetScheduleMode(const string& _scheduleMode)
+{
+    m_scheduleMode = _scheduleMode;
+    m_scheduleModeHasBeenSet = true;
+}
+
+bool ProjectRequest::ScheduleModeHasBeenSet() const
+{
+    return m_scheduleModeHasBeenSet;
 }
 

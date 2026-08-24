@@ -1,0 +1,188 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_CREATETWESEEPERSONREQUEST_H_
+#define TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_CREATETWESEEPERSONREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Iotexplorer
+    {
+        namespace V20190423
+        {
+            namespace Model
+            {
+                /**
+                * CreateTWeSeePerson请求参数结构体
+                */
+                class CreateTWeSeePersonRequest : public AbstractModel
+                {
+                public:
+                    CreateTWeSeePersonRequest();
+                    ~CreateTWeSeePersonRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取产品 ID
+                     * @return ProductId 产品 ID
+                     * 
+                     */
+                    std::string GetProductId() const;
+
+                    /**
+                     * 设置产品 ID
+                     * @param _productId 产品 ID
+                     * 
+                     */
+                    void SetProductId(const std::string& _productId);
+
+                    /**
+                     * 判断参数 ProductId 是否已赋值
+                     * @return ProductId 是否已赋值
+                     * 
+                     */
+                    bool ProductIdHasBeenSet() const;
+
+                    /**
+                     * 获取设备名称
+                     * @return DeviceName 设备名称
+                     * 
+                     */
+                    std::string GetDeviceName() const;
+
+                    /**
+                     * 设置设备名称
+                     * @param _deviceName 设备名称
+                     * 
+                     */
+                    void SetDeviceName(const std::string& _deviceName);
+
+                    /**
+                     * 判断参数 DeviceName 是否已赋值
+                     * @return DeviceName 是否已赋值
+                     * 
+                     */
+                    bool DeviceNameHasBeenSet() const;
+
+                    /**
+                     * 获取人员名称，最多 64 个字符
+                     * @return Name 人员名称，最多 64 个字符
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置人员名称，最多 64 个字符
+                     * @param _name 人员名称，最多 64 个字符
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取人脸 ID 列表，最多 5 个
+                     * @return FaceIds 人脸 ID 列表，最多 5 个
+                     * 
+                     */
+                    std::vector<std::string> GetFaceIds() const;
+
+                    /**
+                     * 设置人脸 ID 列表，最多 5 个
+                     * @param _faceIds 人脸 ID 列表，最多 5 个
+                     * 
+                     */
+                    void SetFaceIds(const std::vector<std::string>& _faceIds);
+
+                    /**
+                     * 判断参数 FaceIds 是否已赋值
+                     * @return FaceIds 是否已赋值
+                     * 
+                     */
+                    bool FaceIdsHasBeenSet() const;
+
+                    /**
+                     * 获取通道 ID，默认值为 0
+                     * @return ChannelId 通道 ID，默认值为 0
+                     * 
+                     */
+                    uint64_t GetChannelId() const;
+
+                    /**
+                     * 设置通道 ID，默认值为 0
+                     * @param _channelId 通道 ID，默认值为 0
+                     * 
+                     */
+                    void SetChannelId(const uint64_t& _channelId);
+
+                    /**
+                     * 判断参数 ChannelId 是否已赋值
+                     * @return ChannelId 是否已赋值
+                     * 
+                     */
+                    bool ChannelIdHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 产品 ID
+                     */
+                    std::string m_productId;
+                    bool m_productIdHasBeenSet;
+
+                    /**
+                     * 设备名称
+                     */
+                    std::string m_deviceName;
+                    bool m_deviceNameHasBeenSet;
+
+                    /**
+                     * 人员名称，最多 64 个字符
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * 人脸 ID 列表，最多 5 个
+                     */
+                    std::vector<std::string> m_faceIds;
+                    bool m_faceIdsHasBeenSet;
+
+                    /**
+                     * 通道 ID，默认值为 0
+                     */
+                    uint64_t m_channelId;
+                    bool m_channelIdHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_CREATETWESEEPERSONREQUEST_H_

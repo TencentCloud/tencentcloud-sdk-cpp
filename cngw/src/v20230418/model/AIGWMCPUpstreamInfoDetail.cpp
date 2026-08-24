@@ -32,7 +32,8 @@ AIGWMCPUpstreamInfoDetail::AIGWMCPUpstreamInfoDetail() :
     m_serviceNameHasBeenSet(false),
     m_serviceGroupHasBeenSet(false),
     m_mCPEndpointHasBeenSet(false),
-    m_messageEndpointHasBeenSet(false)
+    m_messageEndpointHasBeenSet(false),
+    m_tLSConfigHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,23 @@ CoreInternalOutcome AIGWMCPUpstreamInfoDetail::Deserialize(const rapidjson::Valu
         m_messageEndpointHasBeenSet = true;
     }
 
+    if (value.HasMember("TLSConfig") && !value["TLSConfig"].IsNull())
+    {
+        if (!value["TLSConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWMCPUpstreamInfoDetail.TLSConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tLSConfig.Deserialize(value["TLSConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tLSConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +280,15 @@ void AIGWMCPUpstreamInfoDetail::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "MessageEndpoint";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_messageEndpoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tLSConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TLSConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tLSConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -457,5 +484,21 @@ void AIGWMCPUpstreamInfoDetail::SetMessageEndpoint(const string& _messageEndpoin
 bool AIGWMCPUpstreamInfoDetail::MessageEndpointHasBeenSet() const
 {
     return m_messageEndpointHasBeenSet;
+}
+
+AIGWUpstreamTLSConfig AIGWMCPUpstreamInfoDetail::GetTLSConfig() const
+{
+    return m_tLSConfig;
+}
+
+void AIGWMCPUpstreamInfoDetail::SetTLSConfig(const AIGWUpstreamTLSConfig& _tLSConfig)
+{
+    m_tLSConfig = _tLSConfig;
+    m_tLSConfigHasBeenSet = true;
+}
+
+bool AIGWMCPUpstreamInfoDetail::TLSConfigHasBeenSet() const
+{
+    return m_tLSConfigHasBeenSet;
 }
 

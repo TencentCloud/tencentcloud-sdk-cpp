@@ -172,6 +172,48 @@ namespace TencentCloud
                      */
                     bool ResponseLogPayloadModeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>请求 Body 大小裁剪策略</p><p>枚举值：</p><ul><li>Bounded： 裁剪大小</li><li>UnBounded： 不裁剪大小</li></ul>
+                     * @return RequestLogPayloadTruncationPolicy <p>请求 Body 大小裁剪策略</p><p>枚举值：</p><ul><li>Bounded： 裁剪大小</li><li>UnBounded： 不裁剪大小</li></ul>
+                     * 
+                     */
+                    std::string GetRequestLogPayloadTruncationPolicy() const;
+
+                    /**
+                     * 设置<p>请求 Body 大小裁剪策略</p><p>枚举值：</p><ul><li>Bounded： 裁剪大小</li><li>UnBounded： 不裁剪大小</li></ul>
+                     * @param _requestLogPayloadTruncationPolicy <p>请求 Body 大小裁剪策略</p><p>枚举值：</p><ul><li>Bounded： 裁剪大小</li><li>UnBounded： 不裁剪大小</li></ul>
+                     * 
+                     */
+                    void SetRequestLogPayloadTruncationPolicy(const std::string& _requestLogPayloadTruncationPolicy);
+
+                    /**
+                     * 判断参数 RequestLogPayloadTruncationPolicy 是否已赋值
+                     * @return RequestLogPayloadTruncationPolicy 是否已赋值
+                     * 
+                     */
+                    bool RequestLogPayloadTruncationPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取<p>响应 Body 大小裁剪策略</p><p>枚举值：</p><ul><li>Bounded： 裁剪大小</li><li>UnBounded： 不裁剪大小</li></ul>
+                     * @return ResponseLogPayloadTruncationPolicy <p>响应 Body 大小裁剪策略</p><p>枚举值：</p><ul><li>Bounded： 裁剪大小</li><li>UnBounded： 不裁剪大小</li></ul>
+                     * 
+                     */
+                    std::string GetResponseLogPayloadTruncationPolicy() const;
+
+                    /**
+                     * 设置<p>响应 Body 大小裁剪策略</p><p>枚举值：</p><ul><li>Bounded： 裁剪大小</li><li>UnBounded： 不裁剪大小</li></ul>
+                     * @param _responseLogPayloadTruncationPolicy <p>响应 Body 大小裁剪策略</p><p>枚举值：</p><ul><li>Bounded： 裁剪大小</li><li>UnBounded： 不裁剪大小</li></ul>
+                     * 
+                     */
+                    void SetResponseLogPayloadTruncationPolicy(const std::string& _responseLogPayloadTruncationPolicy);
+
+                    /**
+                     * 判断参数 ResponseLogPayloadTruncationPolicy 是否已赋值
+                     * @return ResponseLogPayloadTruncationPolicy 是否已赋值
+                     * 
+                     */
+                    bool ResponseLogPayloadTruncationPolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +251,18 @@ namespace TencentCloud
                      */
                     std::string m_responseLogPayloadMode;
                     bool m_responseLogPayloadModeHasBeenSet;
+
+                    /**
+                     * <p>请求 Body 大小裁剪策略</p><p>枚举值：</p><ul><li>Bounded： 裁剪大小</li><li>UnBounded： 不裁剪大小</li></ul>
+                     */
+                    std::string m_requestLogPayloadTruncationPolicy;
+                    bool m_requestLogPayloadTruncationPolicyHasBeenSet;
+
+                    /**
+                     * <p>响应 Body 大小裁剪策略</p><p>枚举值：</p><ul><li>Bounded： 裁剪大小</li><li>UnBounded： 不裁剪大小</li></ul>
+                     */
+                    std::string m_responseLogPayloadTruncationPolicy;
+                    bool m_responseLogPayloadTruncationPolicyHasBeenSet;
 
                 };
             }

@@ -30,6 +30,7 @@ SeeTaskInfo::SeeTaskInfo() :
     m_comprehensionResultHasBeenSet(false),
     m_compHighlightResultHasBeenSet(false),
     m_detectContinuousResultHasBeenSet(false),
+    m_faceRecognitionResultHasBeenSet(false),
     m_costBasicHasBeenSet(false),
     m_costAdvancedHasBeenSet(false),
     m_filesHasBeenSet(false),
@@ -161,6 +162,23 @@ CoreInternalOutcome SeeTaskInfo::Deserialize(const rapidjson::Value &value)
         }
 
         m_detectContinuousResultHasBeenSet = true;
+    }
+
+    if (value.HasMember("FaceRecognitionResult") && !value["FaceRecognitionResult"].IsNull())
+    {
+        if (!value["FaceRecognitionResult"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SeeTaskInfo.FaceRecognitionResult` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_faceRecognitionResult.Deserialize(value["FaceRecognitionResult"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_faceRecognitionResultHasBeenSet = true;
     }
 
     if (value.HasMember("CostBasic") && !value["CostBasic"].IsNull())
@@ -327,6 +345,15 @@ void SeeTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_detectContinuousResult.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_faceRecognitionResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FaceRecognitionResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_faceRecognitionResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_costBasicHasBeenSet)
@@ -542,6 +569,22 @@ void SeeTaskInfo::SetDetectContinuousResult(const SeeDetectContinuousResult& _de
 bool SeeTaskInfo::DetectContinuousResultHasBeenSet() const
 {
     return m_detectContinuousResultHasBeenSet;
+}
+
+SeeFaceRecognitionResult SeeTaskInfo::GetFaceRecognitionResult() const
+{
+    return m_faceRecognitionResult;
+}
+
+void SeeTaskInfo::SetFaceRecognitionResult(const SeeFaceRecognitionResult& _faceRecognitionResult)
+{
+    m_faceRecognitionResult = _faceRecognitionResult;
+    m_faceRecognitionResultHasBeenSet = true;
+}
+
+bool SeeTaskInfo::FaceRecognitionResultHasBeenSet() const
+{
+    return m_faceRecognitionResultHasBeenSet;
 }
 
 int64_t SeeTaskInfo::GetCostBasic() const

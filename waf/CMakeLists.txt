@@ -54,6 +54,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DescribeWafAutoDenyRulesRequest.h
   include/tencentcloud/waf/v20180125/model/MajorEventsProPkg.h
   include/tencentcloud/waf/v20180125/model/GenerateDealsAndPayNewRequest.h
+  include/tencentcloud/waf/v20180125/model/QueryClientMsgRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteCustomWhiteRuleResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyHostModeResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyBotSceneStatusResponse.h
@@ -220,6 +221,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/QueryBypassAllStatusRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeOwaspRulesRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeCCRuleListRequest.h
+  include/tencentcloud/waf/v20180125/model/EnableClientMsgRequest.h
   include/tencentcloud/waf/v20180125/model/ResponseCode.h
   include/tencentcloud/waf/v20180125/model/PeakPointsItem.h
   include/tencentcloud/waf/v20180125/model/TopicExtendInfo.h
@@ -267,6 +269,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ApiDetailSampleHistory.h
   include/tencentcloud/waf/v20180125/model/WafThreatenIntelligenceDetails.h
   include/tencentcloud/waf/v20180125/model/DescribeDomainWhiteRulesRequest.h
+  include/tencentcloud/waf/v20180125/model/QueryClientMsgResponse.h
   include/tencentcloud/waf/v20180125/model/DescribePeakPointsResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyInstanceRenewFlagRequest.h
   include/tencentcloud/waf/v20180125/model/UserWhiteRuleItem.h
@@ -623,6 +626,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DescribeDomainRulesResponse.h
   include/tencentcloud/waf/v20180125/model/DeleteProtectGroupRequest.h
   include/tencentcloud/waf/v20180125/model/CreateDealsResponse.h
+  include/tencentcloud/waf/v20180125/model/EnableClientMsgResponse.h
   include/tencentcloud/waf/v20180125/model/DestroyPostCKafkaFlowResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeCiphersDetailRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeDomainVerifyResultResponse.h
@@ -719,6 +723,7 @@ set(waf_src
   src/v20180125/model/DescribeWafAutoDenyRulesRequest.cpp
   src/v20180125/model/MajorEventsProPkg.cpp
   src/v20180125/model/GenerateDealsAndPayNewRequest.cpp
+  src/v20180125/model/QueryClientMsgRequest.cpp
   src/v20180125/model/DeleteCustomWhiteRuleResponse.cpp
   src/v20180125/model/ModifyHostModeResponse.cpp
   src/v20180125/model/ModifyBotSceneStatusResponse.cpp
@@ -885,6 +890,7 @@ set(waf_src
   src/v20180125/model/QueryBypassAllStatusRequest.cpp
   src/v20180125/model/DescribeOwaspRulesRequest.cpp
   src/v20180125/model/DescribeCCRuleListRequest.cpp
+  src/v20180125/model/EnableClientMsgRequest.cpp
   src/v20180125/model/ResponseCode.cpp
   src/v20180125/model/PeakPointsItem.cpp
   src/v20180125/model/TopicExtendInfo.cpp
@@ -932,6 +938,7 @@ set(waf_src
   src/v20180125/model/ApiDetailSampleHistory.cpp
   src/v20180125/model/WafThreatenIntelligenceDetails.cpp
   src/v20180125/model/DescribeDomainWhiteRulesRequest.cpp
+  src/v20180125/model/QueryClientMsgResponse.cpp
   src/v20180125/model/DescribePeakPointsResponse.cpp
   src/v20180125/model/ModifyInstanceRenewFlagRequest.cpp
   src/v20180125/model/UserWhiteRuleItem.cpp
@@ -1288,6 +1295,7 @@ set(waf_src
   src/v20180125/model/DescribeDomainRulesResponse.cpp
   src/v20180125/model/DeleteProtectGroupRequest.cpp
   src/v20180125/model/CreateDealsResponse.cpp
+  src/v20180125/model/EnableClientMsgResponse.cpp
   src/v20180125/model/DestroyPostCKafkaFlowResponse.cpp
   src/v20180125/model/DescribeCiphersDetailRequest.cpp
   src/v20180125/model/DescribeDomainVerifyResultResponse.cpp

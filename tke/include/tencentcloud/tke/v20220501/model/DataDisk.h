@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云盘类型
+                     * 获取<p>云盘类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DiskType 云盘类型
+                     * @return DiskType <p>云盘类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置云盘类型
+                     * 设置<p>云盘类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _diskType 云盘类型
+                     * @param _diskType <p>云盘类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取文件系统(ext3/ext4/xfs)
+                     * 获取<p>文件系统(ext3/ext4/xfs)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FileSystem 文件系统(ext3/ext4/xfs)
+                     * @return FileSystem <p>文件系统(ext3/ext4/xfs)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileSystem() const;
 
                     /**
-                     * 设置文件系统(ext3/ext4/xfs)
+                     * 设置<p>文件系统(ext3/ext4/xfs)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fileSystem 文件系统(ext3/ext4/xfs)
+                     * @param _fileSystem <p>文件系统(ext3/ext4/xfs)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool FileSystemHasBeenSet() const;
 
                     /**
-                     * 获取云盘大小(G）
+                     * 获取<p>云盘大小(G）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DiskSize 云盘大小(G）
+                     * @return DiskSize <p>云盘大小(G）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置云盘大小(G）
+                     * 设置<p>云盘大小(G）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _diskSize 云盘大小(G）
+                     * @param _diskSize <p>云盘大小(G）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取是否自动化格式盘并挂载
+                     * 获取<p>是否自动化格式盘并挂载</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AutoFormatAndMount 是否自动化格式盘并挂载
+                     * @return AutoFormatAndMount <p>是否自动化格式盘并挂载</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAutoFormatAndMount() const;
 
                     /**
-                     * 设置是否自动化格式盘并挂载
+                     * 设置<p>是否自动化格式盘并挂载</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _autoFormatAndMount 是否自动化格式盘并挂载
+                     * @param _autoFormatAndMount <p>是否自动化格式盘并挂载</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool AutoFormatAndMountHasBeenSet() const;
 
                     /**
-                     * 获取挂载设备名或分区名
+                     * 获取<p>挂载设备名或分区名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DiskPartition 挂载设备名或分区名
+                     * @return DiskPartition <p>挂载设备名或分区名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiskPartition() const;
 
                     /**
-                     * 设置挂载设备名或分区名
+                     * 设置<p>挂载设备名或分区名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _diskPartition 挂载设备名或分区名
+                     * @param _diskPartition <p>挂载设备名或分区名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool DiskPartitionHasBeenSet() const;
 
                     /**
-                     * 获取挂载目录
+                     * 获取<p>挂载目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MountTarget 挂载目录
+                     * @return MountTarget <p>挂载目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMountTarget() const;
 
                     /**
-                     * 设置挂载目录
+                     * 设置<p>挂载目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mountTarget 挂载目录
+                     * @param _mountTarget <p>挂载目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool MountTargetHasBeenSet() const;
 
                     /**
-                     * 获取传入该参数用于创建加密云盘，取值固定为ENCRYPT
+                     * 获取<p>传入该参数用于创建加密云盘，取值固定为ENCRYPT</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Encrypt 传入该参数用于创建加密云盘，取值固定为ENCRYPT
+                     * @return Encrypt <p>传入该参数用于创建加密云盘，取值固定为ENCRYPT</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEncrypt() const;
 
                     /**
-                     * 设置传入该参数用于创建加密云盘，取值固定为ENCRYPT
+                     * 设置<p>传入该参数用于创建加密云盘，取值固定为ENCRYPT</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _encrypt 传入该参数用于创建加密云盘，取值固定为ENCRYPT
+                     * @param _encrypt <p>传入该参数用于创建加密云盘，取值固定为ENCRYPT</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool EncryptHasBeenSet() const;
 
                     /**
-                     * 获取购买加密盘时自定义密钥，当传入该参数时, Encrypt入参不为空
+                     * 获取<p>购买加密盘时自定义密钥，当传入该参数时, Encrypt入参不为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KmsKeyId 购买加密盘时自定义密钥，当传入该参数时, Encrypt入参不为空
+                     * @return KmsKeyId <p>购买加密盘时自定义密钥，当传入该参数时, Encrypt入参不为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKmsKeyId() const;
 
                     /**
-                     * 设置购买加密盘时自定义密钥，当传入该参数时, Encrypt入参不为空
+                     * 设置<p>购买加密盘时自定义密钥，当传入该参数时, Encrypt入参不为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kmsKeyId 购买加密盘时自定义密钥，当传入该参数时, Encrypt入参不为空
+                     * @param _kmsKeyId <p>购买加密盘时自定义密钥，当传入该参数时, Encrypt入参不为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool KmsKeyIdHasBeenSet() const;
 
                     /**
-                     * 获取快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照
+                     * 获取<p>快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SnapshotId 快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照
+                     * @return SnapshotId <p>快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
-                     * 设置快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照
+                     * 设置<p>快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _snapshotId 快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照
+                     * @param _snapshotId <p>快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -272,18 +272,18 @@ namespace TencentCloud
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘性能，单位：MB/s。使用此参数可给云硬盘购买额外的性能
+                     * 获取<p>云硬盘性能，单位：MB/s。使用此参数可给云硬盘购买额外的性能</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ThroughputPerformance 云硬盘性能，单位：MB/s。使用此参数可给云硬盘购买额外的性能
+                     * @return ThroughputPerformance <p>云硬盘性能，单位：MB/s。使用此参数可给云硬盘购买额外的性能</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetThroughputPerformance() const;
 
                     /**
-                     * 设置云硬盘性能，单位：MB/s。使用此参数可给云硬盘购买额外的性能
+                     * 设置<p>云硬盘性能，单位：MB/s。使用此参数可给云硬盘购买额外的性能</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _throughputPerformance 云硬盘性能，单位：MB/s。使用此参数可给云硬盘购买额外的性能
+                     * @param _throughputPerformance <p>云硬盘性能，单位：MB/s。使用此参数可给云硬盘购买额外的性能</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -299,70 +299,70 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云盘类型
+                     * <p>云盘类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 文件系统(ext3/ext4/xfs)
+                     * <p>文件系统(ext3/ext4/xfs)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileSystem;
                     bool m_fileSystemHasBeenSet;
 
                     /**
-                     * 云盘大小(G）
+                     * <p>云盘大小(G）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 是否自动化格式盘并挂载
+                     * <p>是否自动化格式盘并挂载</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_autoFormatAndMount;
                     bool m_autoFormatAndMountHasBeenSet;
 
                     /**
-                     * 挂载设备名或分区名
+                     * <p>挂载设备名或分区名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskPartition;
                     bool m_diskPartitionHasBeenSet;
 
                     /**
-                     * 挂载目录
+                     * <p>挂载目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mountTarget;
                     bool m_mountTargetHasBeenSet;
 
                     /**
-                     * 传入该参数用于创建加密云盘，取值固定为ENCRYPT
+                     * <p>传入该参数用于创建加密云盘，取值固定为ENCRYPT</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_encrypt;
                     bool m_encryptHasBeenSet;
 
                     /**
-                     * 购买加密盘时自定义密钥，当传入该参数时, Encrypt入参不为空
+                     * <p>购买加密盘时自定义密钥，当传入该参数时, Encrypt入参不为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kmsKeyId;
                     bool m_kmsKeyIdHasBeenSet;
 
                     /**
-                     * 快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照
+                     * <p>快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_snapshotId;
                     bool m_snapshotIdHasBeenSet;
 
                     /**
-                     * 云硬盘性能，单位：MB/s。使用此参数可给云硬盘购买额外的性能
+                     * <p>云硬盘性能，单位：MB/s。使用此参数可给云硬盘购买额外的性能</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_throughputPerformance;

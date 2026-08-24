@@ -50,7 +50,9 @@ ModifyCloudNativeAPIGatewayLLMModelServiceRequest::ModifyCloudNativeAPIGatewayLL
     m_sourceIdHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
-    m_protocolHasBeenSet(false)
+    m_protocolHasBeenSet(false),
+    m_customProviderNameHasBeenSet(false),
+    m_loadBalanceConfigHasBeenSet(false)
 {
 }
 
@@ -305,6 +307,23 @@ string ModifyCloudNativeAPIGatewayLLMModelServiceRequest::ToJsonString() const
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customProviderNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomProviderName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customProviderName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loadBalanceConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalanceConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_loadBalanceConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -761,6 +780,38 @@ void ModifyCloudNativeAPIGatewayLLMModelServiceRequest::SetProtocol(const string
 bool ModifyCloudNativeAPIGatewayLLMModelServiceRequest::ProtocolHasBeenSet() const
 {
     return m_protocolHasBeenSet;
+}
+
+string ModifyCloudNativeAPIGatewayLLMModelServiceRequest::GetCustomProviderName() const
+{
+    return m_customProviderName;
+}
+
+void ModifyCloudNativeAPIGatewayLLMModelServiceRequest::SetCustomProviderName(const string& _customProviderName)
+{
+    m_customProviderName = _customProviderName;
+    m_customProviderNameHasBeenSet = true;
+}
+
+bool ModifyCloudNativeAPIGatewayLLMModelServiceRequest::CustomProviderNameHasBeenSet() const
+{
+    return m_customProviderNameHasBeenSet;
+}
+
+AIGWLoadBalanceConfig ModifyCloudNativeAPIGatewayLLMModelServiceRequest::GetLoadBalanceConfig() const
+{
+    return m_loadBalanceConfig;
+}
+
+void ModifyCloudNativeAPIGatewayLLMModelServiceRequest::SetLoadBalanceConfig(const AIGWLoadBalanceConfig& _loadBalanceConfig)
+{
+    m_loadBalanceConfig = _loadBalanceConfig;
+    m_loadBalanceConfigHasBeenSet = true;
+}
+
+bool ModifyCloudNativeAPIGatewayLLMModelServiceRequest::LoadBalanceConfigHasBeenSet() const
+{
+    return m_loadBalanceConfigHasBeenSet;
 }
 
 

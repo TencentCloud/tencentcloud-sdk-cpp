@@ -29,7 +29,8 @@ Project::Project() :
     m_creatorUinHasBeenSet(false),
     m_projectOwnerUinHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_projectModelHasBeenSet(false)
+    m_projectModelHasBeenSet(false),
+    m_workspaceExtHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,26 @@ CoreInternalOutcome Project::Deserialize(const rapidjson::Value &value)
         m_projectModelHasBeenSet = true;
     }
 
+    if (value.HasMember("WorkspaceExt") && !value["WorkspaceExt"].IsNull())
+    {
+        if (!value["WorkspaceExt"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Project.WorkspaceExt` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["WorkspaceExt"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            WorkspaceExt item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_workspaceExt.push_back(item);
+        }
+        m_workspaceExtHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +226,21 @@ void Project::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ProjectModel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_projectModel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workspaceExtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkspaceExt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_workspaceExt.begin(); itr != m_workspaceExt.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -352,5 +388,21 @@ void Project::SetProjectModel(const string& _projectModel)
 bool Project::ProjectModelHasBeenSet() const
 {
     return m_projectModelHasBeenSet;
+}
+
+vector<WorkspaceExt> Project::GetWorkspaceExt() const
+{
+    return m_workspaceExt;
+}
+
+void Project::SetWorkspaceExt(const vector<WorkspaceExt>& _workspaceExt)
+{
+    m_workspaceExt = _workspaceExt;
+    m_workspaceExtHasBeenSet = true;
+}
+
+bool Project::WorkspaceExtHasBeenSet() const
+{
+    return m_workspaceExtHasBeenSet;
 }
 

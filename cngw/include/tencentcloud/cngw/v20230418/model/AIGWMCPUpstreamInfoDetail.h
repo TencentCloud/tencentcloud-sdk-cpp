@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWUpstreamTLSConfig.h>
 
 
 namespace TencentCloud
@@ -298,6 +299,27 @@ namespace TencentCloud
                      */
                     bool MessageEndpointHasBeenSet() const;
 
+                    /**
+                     * 获取<p>TLS配置</p>
+                     * @return TLSConfig <p>TLS配置</p>
+                     * 
+                     */
+                    AIGWUpstreamTLSConfig GetTLSConfig() const;
+
+                    /**
+                     * 设置<p>TLS配置</p>
+                     * @param _tLSConfig <p>TLS配置</p>
+                     * 
+                     */
+                    void SetTLSConfig(const AIGWUpstreamTLSConfig& _tLSConfig);
+
+                    /**
+                     * 判断参数 TLSConfig 是否已赋值
+                     * @return TLSConfig 是否已赋值
+                     * 
+                     */
+                    bool TLSConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -371,6 +393,12 @@ namespace TencentCloud
                      */
                     std::string m_messageEndpoint;
                     bool m_messageEndpointHasBeenSet;
+
+                    /**
+                     * <p>TLS配置</p>
+                     */
+                    AIGWUpstreamTLSConfig m_tLSConfig;
+                    bool m_tLSConfigHasBeenSet;
 
                 };
             }

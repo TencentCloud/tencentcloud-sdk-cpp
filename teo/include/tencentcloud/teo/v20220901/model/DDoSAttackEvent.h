@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取事件ID。
-                     * @return EventId 事件ID。
+                     * 获取<p>事件 ID。</p>
+                     * @return EventId <p>事件 ID。</p>
                      * 
                      */
                     std::string GetEventId() const;
 
                     /**
-                     * 设置事件ID。
-                     * @param _eventId 事件ID。
+                     * 设置<p>事件 ID。</p>
+                     * @param _eventId <p>事件 ID。</p>
                      * 
                      */
                     void SetEventId(const std::string& _eventId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool EventIdHasBeenSet() const;
 
                     /**
-                     * 获取攻击类型(对应交互事件名称)。
-                     * @return AttackType 攻击类型(对应交互事件名称)。
+                     * 获取<p>攻击类型。</p>
+                     * @return AttackType <p>攻击类型。</p>
                      * 
                      */
                     std::string GetAttackType() const;
 
                     /**
-                     * 设置攻击类型(对应交互事件名称)。
-                     * @param _attackType 攻击类型(对应交互事件名称)。
+                     * 设置<p>攻击类型。</p>
+                     * @param _attackType <p>攻击类型。</p>
                      * 
                      */
                     void SetAttackType(const std::string& _attackType);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool AttackTypeHasBeenSet() const;
 
                     /**
-                     * 获取攻击状态。
-                     * @return AttackStatus 攻击状态。
+                     * 获取<p>攻击状态。</p><p>枚举值：</p><ul><li>0： 观察中</li><li>1： 攻击中</li><li>2： 攻击结束</li></ul>
+                     * @return AttackStatus <p>攻击状态。</p><p>枚举值：</p><ul><li>0： 观察中</li><li>1： 攻击中</li><li>2： 攻击结束</li></ul>
                      * 
                      */
                     int64_t GetAttackStatus() const;
 
                     /**
-                     * 设置攻击状态。
-                     * @param _attackStatus 攻击状态。
+                     * 设置<p>攻击状态。</p><p>枚举值：</p><ul><li>0： 观察中</li><li>1： 攻击中</li><li>2： 攻击结束</li></ul>
+                     * @param _attackStatus <p>攻击状态。</p><p>枚举值：</p><ul><li>0： 观察中</li><li>1： 攻击中</li><li>2： 攻击结束</li></ul>
                      * 
                      */
                     void SetAttackStatus(const int64_t& _attackStatus);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool AttackStatusHasBeenSet() const;
 
                     /**
-                     * 获取攻击最大带宽，单位为 bps。
-                     * @return AttackMaxBandWidth 攻击最大带宽，单位为 bps。
+                     * 获取<p>攻击最大带宽，单位为 bps。</p>
+                     * @return AttackMaxBandWidth <p>攻击最大带宽，单位为 bps。</p>
                      * 
                      */
                     int64_t GetAttackMaxBandWidth() const;
 
                     /**
-                     * 设置攻击最大带宽，单位为 bps。
-                     * @param _attackMaxBandWidth 攻击最大带宽，单位为 bps。
+                     * 设置<p>攻击最大带宽，单位为 bps。</p>
+                     * @param _attackMaxBandWidth <p>攻击最大带宽，单位为 bps。</p>
                      * 
                      */
                     void SetAttackMaxBandWidth(const int64_t& _attackMaxBandWidth);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool AttackMaxBandWidthHasBeenSet() const;
 
                     /**
-                     * 获取攻击包速率峰值，单位为 pps。
-                     * @return AttackPacketMaxRate 攻击包速率峰值，单位为 pps。
+                     * 获取<p>攻击包速率峰值，单位为 pps。</p>
+                     * @return AttackPacketMaxRate <p>攻击包速率峰值，单位为 pps。</p>
                      * 
                      */
                     int64_t GetAttackPacketMaxRate() const;
 
                     /**
-                     * 设置攻击包速率峰值，单位为 pps。
-                     * @param _attackPacketMaxRate 攻击包速率峰值，单位为 pps。
+                     * 设置<p>攻击包速率峰值，单位为 pps。</p>
+                     * @param _attackPacketMaxRate <p>攻击包速率峰值，单位为 pps。</p>
                      * 
                      */
                     void SetAttackPacketMaxRate(const int64_t& _attackPacketMaxRate);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool AttackPacketMaxRateHasBeenSet() const;
 
                     /**
-                     * 获取攻击开始时间，单位为s。
-                     * @return AttackStartTime 攻击开始时间，单位为s。
+                     * 获取<p>攻击开始时间戳。</p><p>单位：秒</p>
+                     * @return AttackStartTime <p>攻击开始时间戳。</p><p>单位：秒</p>
                      * 
                      */
                     int64_t GetAttackStartTime() const;
 
                     /**
-                     * 设置攻击开始时间，单位为s。
-                     * @param _attackStartTime 攻击开始时间，单位为s。
+                     * 设置<p>攻击开始时间戳。</p><p>单位：秒</p>
+                     * @param _attackStartTime <p>攻击开始时间戳。</p><p>单位：秒</p>
                      * 
                      */
                     void SetAttackStartTime(const int64_t& _attackStartTime);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool AttackStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取攻击结束时间，单位为s。
-                     * @return AttackEndTime 攻击结束时间，单位为s。
+                     * 获取<p>攻击结束时间戳。</p><p>单位：秒</p>
+                     * @return AttackEndTime <p>攻击结束时间戳。</p><p>单位：秒</p>
                      * 
                      */
                     int64_t GetAttackEndTime() const;
 
                     /**
-                     * 设置攻击结束时间，单位为s。
-                     * @param _attackEndTime 攻击结束时间，单位为s。
+                     * 设置<p>攻击结束时间戳。</p><p>单位：秒</p>
+                     * @param _attackEndTime <p>攻击结束时间戳。</p><p>单位：秒</p>
                      * 
                      */
                     void SetAttackEndTime(const int64_t& _attackEndTime);
@@ -195,18 +195,18 @@ namespace TencentCloud
                     bool AttackEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取DDoS策略组ID。
+                     * 获取<p>DDoS 策略组 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PolicyId DDoS策略组ID。
+                     * @return PolicyId <p>DDoS 策略组 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPolicyId() const;
 
                     /**
-                     * 设置DDoS策略组ID。
+                     * 设置<p>DDoS 策略组 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _policyId DDoS策略组ID。
+                     * @param _policyId <p>DDoS 策略组 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -220,18 +220,18 @@ namespace TencentCloud
                     bool PolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取站点ID。
+                     * 获取<p>站点 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ZoneId 站点ID。
+                     * @return ZoneId <p>站点 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置站点ID。
+                     * 设置<p>站点 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _zoneId 站点ID。
+                     * @param _zoneId <p>站点 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -245,26 +245,18 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取攻击事件所属地区，取值有：
-<li>overseas：全球（除中国大陆地区）数据；</li>
-<li>mainland：中国大陆地区数据。</li>
+                     * 获取<p>攻击事件所属地区。</p><p>枚举值：</p><ul><li>overseas： 全球（除中国大陆地区）数据；</li><li>mainland： 中国大陆地区数据。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Area 攻击事件所属地区，取值有：
-<li>overseas：全球（除中国大陆地区）数据；</li>
-<li>mainland：中国大陆地区数据。</li>
+                     * @return Area <p>攻击事件所属地区。</p><p>枚举值：</p><ul><li>overseas： 全球（除中国大陆地区）数据；</li><li>mainland： 中国大陆地区数据。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置攻击事件所属地区，取值有：
-<li>overseas：全球（除中国大陆地区）数据；</li>
-<li>mainland：中国大陆地区数据。</li>
+                     * 设置<p>攻击事件所属地区。</p><p>枚举值：</p><ul><li>overseas： 全球（除中国大陆地区）数据；</li><li>mainland： 中国大陆地区数据。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _area 攻击事件所属地区，取值有：
-<li>overseas：全球（除中国大陆地区）数据；</li>
-<li>mainland：中国大陆地区数据。</li>
+                     * @param _area <p>攻击事件所属地区。</p><p>枚举值：</p><ul><li>overseas： 全球（除中国大陆地区）数据；</li><li>mainland： 中国大陆地区数据。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -278,18 +270,18 @@ namespace TencentCloud
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取封禁解封信息。
+                     * 获取<p>封禁解封信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DDoSBlockData 封禁解封信息。
+                     * @return DDoSBlockData <p>封禁解封信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DDoSBlockData> GetDDoSBlockData() const;
 
                     /**
-                     * 设置封禁解封信息。
+                     * 设置<p>封禁解封信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dDoSBlockData 封禁解封信息。
+                     * @param _dDoSBlockData <p>封禁解封信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -302,79 +294,104 @@ namespace TencentCloud
                      */
                     bool DDoSBlockDataHasBeenSet() const;
 
+                    /**
+                     * 获取<p>被 DDoS 攻击的目的 IP 列表。</p>
+                     * @return DDoSAttackDips <p>被 DDoS 攻击的目的 IP 列表。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetDDoSAttackDips() const;
+
+                    /**
+                     * 设置<p>被 DDoS 攻击的目的 IP 列表。</p>
+                     * @param _dDoSAttackDips <p>被 DDoS 攻击的目的 IP 列表。</p>
+                     * 
+                     */
+                    void SetDDoSAttackDips(const std::vector<std::string>& _dDoSAttackDips);
+
+                    /**
+                     * 判断参数 DDoSAttackDips 是否已赋值
+                     * @return DDoSAttackDips 是否已赋值
+                     * 
+                     */
+                    bool DDoSAttackDipsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 事件ID。
+                     * <p>事件 ID。</p>
                      */
                     std::string m_eventId;
                     bool m_eventIdHasBeenSet;
 
                     /**
-                     * 攻击类型(对应交互事件名称)。
+                     * <p>攻击类型。</p>
                      */
                     std::string m_attackType;
                     bool m_attackTypeHasBeenSet;
 
                     /**
-                     * 攻击状态。
+                     * <p>攻击状态。</p><p>枚举值：</p><ul><li>0： 观察中</li><li>1： 攻击中</li><li>2： 攻击结束</li></ul>
                      */
                     int64_t m_attackStatus;
                     bool m_attackStatusHasBeenSet;
 
                     /**
-                     * 攻击最大带宽，单位为 bps。
+                     * <p>攻击最大带宽，单位为 bps。</p>
                      */
                     int64_t m_attackMaxBandWidth;
                     bool m_attackMaxBandWidthHasBeenSet;
 
                     /**
-                     * 攻击包速率峰值，单位为 pps。
+                     * <p>攻击包速率峰值，单位为 pps。</p>
                      */
                     int64_t m_attackPacketMaxRate;
                     bool m_attackPacketMaxRateHasBeenSet;
 
                     /**
-                     * 攻击开始时间，单位为s。
+                     * <p>攻击开始时间戳。</p><p>单位：秒</p>
                      */
                     int64_t m_attackStartTime;
                     bool m_attackStartTimeHasBeenSet;
 
                     /**
-                     * 攻击结束时间，单位为s。
+                     * <p>攻击结束时间戳。</p><p>单位：秒</p>
                      */
                     int64_t m_attackEndTime;
                     bool m_attackEndTimeHasBeenSet;
 
                     /**
-                     * DDoS策略组ID。
+                     * <p>DDoS 策略组 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_policyId;
                     bool m_policyIdHasBeenSet;
 
                     /**
-                     * 站点ID。
+                     * <p>站点 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 攻击事件所属地区，取值有：
-<li>overseas：全球（除中国大陆地区）数据；</li>
-<li>mainland：中国大陆地区数据。</li>
+                     * <p>攻击事件所属地区。</p><p>枚举值：</p><ul><li>overseas： 全球（除中国大陆地区）数据；</li><li>mainland： 中国大陆地区数据。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
 
                     /**
-                     * 封禁解封信息。
+                     * <p>封禁解封信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DDoSBlockData> m_dDoSBlockData;
                     bool m_dDoSBlockDataHasBeenSet;
+
+                    /**
+                     * <p>被 DDoS 攻击的目的 IP 列表。</p>
+                     */
+                    std::vector<std::string> m_dDoSAttackDips;
+                    bool m_dDoSAttackDipsHasBeenSet;
 
                 };
             }

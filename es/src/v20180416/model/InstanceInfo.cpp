@@ -125,7 +125,9 @@ InstanceInfo::InstanceInfo() :
     m_delayDestroyIntervalHasBeenSet(false),
     m_enableAutoReplaceHasBeenSet(false),
     m_openMTLSHasBeenSet(false),
-    m_serverCertSourceHasBeenSet(false)
+    m_serverCertSourceHasBeenSet(false),
+    m_oldEsVipHasBeenSet(false),
+    m_oldEsPrivateTcpUrlHasBeenSet(false)
 {
 }
 
@@ -1310,6 +1312,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_serverCertSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("OldEsVip") && !value["OldEsVip"].IsNull())
+    {
+        if (!value["OldEsVip"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.OldEsVip` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_oldEsVip = string(value["OldEsVip"].GetString());
+        m_oldEsVipHasBeenSet = true;
+    }
+
+    if (value.HasMember("OldEsPrivateTcpUrl") && !value["OldEsPrivateTcpUrl"].IsNull())
+    {
+        if (!value["OldEsPrivateTcpUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.OldEsPrivateTcpUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_oldEsPrivateTcpUrl = string(value["OldEsPrivateTcpUrl"].GetString());
+        m_oldEsPrivateTcpUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -2211,6 +2233,22 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ServerCertSource";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_serverCertSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_oldEsVipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OldEsVip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_oldEsVip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_oldEsPrivateTcpUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OldEsPrivateTcpUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_oldEsPrivateTcpUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -3894,5 +3932,37 @@ void InstanceInfo::SetServerCertSource(const string& _serverCertSource)
 bool InstanceInfo::ServerCertSourceHasBeenSet() const
 {
     return m_serverCertSourceHasBeenSet;
+}
+
+string InstanceInfo::GetOldEsVip() const
+{
+    return m_oldEsVip;
+}
+
+void InstanceInfo::SetOldEsVip(const string& _oldEsVip)
+{
+    m_oldEsVip = _oldEsVip;
+    m_oldEsVipHasBeenSet = true;
+}
+
+bool InstanceInfo::OldEsVipHasBeenSet() const
+{
+    return m_oldEsVipHasBeenSet;
+}
+
+string InstanceInfo::GetOldEsPrivateTcpUrl() const
+{
+    return m_oldEsPrivateTcpUrl;
+}
+
+void InstanceInfo::SetOldEsPrivateTcpUrl(const string& _oldEsPrivateTcpUrl)
+{
+    m_oldEsPrivateTcpUrl = _oldEsPrivateTcpUrl;
+    m_oldEsPrivateTcpUrlHasBeenSet = true;
+}
+
+bool InstanceInfo::OldEsPrivateTcpUrlHasBeenSet() const
+{
+    return m_oldEsPrivateTcpUrlHasBeenSet;
 }
 

@@ -33,6 +33,7 @@ SandboxInstance::SandboxInstance() :
     m_updateTimeHasBeenSet(false),
     m_mountOptionsHasBeenSet(false),
     m_customConfigurationHasBeenSet(false),
+    m_computerConfigurationHasBeenSet(false),
     m_networkModeHasBeenSet(false),
     m_metadataHasBeenSet(false),
     m_authModeHasBeenSet(false)
@@ -179,6 +180,23 @@ CoreInternalOutcome SandboxInstance::Deserialize(const rapidjson::Value &value)
         }
 
         m_customConfigurationHasBeenSet = true;
+    }
+
+    if (value.HasMember("ComputerConfiguration") && !value["ComputerConfiguration"].IsNull())
+    {
+        if (!value["ComputerConfiguration"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SandboxInstance.ComputerConfiguration` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_computerConfiguration.Deserialize(value["ComputerConfiguration"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_computerConfigurationHasBeenSet = true;
     }
 
     if (value.HasMember("NetworkMode") && !value["NetworkMode"].IsNull())
@@ -330,6 +348,15 @@ void SandboxInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_customConfiguration.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_computerConfigurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputerConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_computerConfiguration.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_networkModeHasBeenSet)
@@ -556,6 +583,22 @@ void SandboxInstance::SetCustomConfiguration(const CustomConfigurationDetail& _c
 bool SandboxInstance::CustomConfigurationHasBeenSet() const
 {
     return m_customConfigurationHasBeenSet;
+}
+
+ComputerConfiguration SandboxInstance::GetComputerConfiguration() const
+{
+    return m_computerConfiguration;
+}
+
+void SandboxInstance::SetComputerConfiguration(const ComputerConfiguration& _computerConfiguration)
+{
+    m_computerConfiguration = _computerConfiguration;
+    m_computerConfigurationHasBeenSet = true;
+}
+
+bool SandboxInstance::ComputerConfigurationHasBeenSet() const
+{
+    return m_computerConfigurationHasBeenSet;
 }
 
 string SandboxInstance::GetNetworkMode() const

@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>密钥凭证ID</p>
+                     * @return SecretKeyId <p>密钥凭证ID</p>
+                     * 
+                     */
+                    std::string GetSecretKeyId() const;
+
+                    /**
+                     * 设置<p>密钥凭证ID</p>
+                     * @param _secretKeyId <p>密钥凭证ID</p>
+                     * 
+                     */
+                    void SetSecretKeyId(const std::string& _secretKeyId);
+
+                    /**
+                     * 判断参数 SecretKeyId 是否已赋值
+                     * @return SecretKeyId 是否已赋值
+                     * 
+                     */
+                    bool SecretKeyIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * <p>密钥凭证ID</p>
+                     */
+                    std::string m_secretKeyId;
+                    bool m_secretKeyIdHasBeenSet;
 
                 };
             }

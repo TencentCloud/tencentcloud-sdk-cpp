@@ -27,6 +27,12 @@
 #include <tencentcloud/cngw/v20230418/model/AIGWJWTCredentialConfig.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWOAuthCredentialConfig.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWOIDCCredentialConfig.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWAKSKCredentialConfig.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWCAMCredentialConfig.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWBearerTokenCredentialConfig.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWBasicCredentialConfig.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWCustomHeaderCredentialConfig.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWQueryParamCredentialConfig.h>
 
 
 namespace TencentCloud
@@ -276,15 +282,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取<p>OAuth凭证配置</p>
-                     * @return OAuthCredentialConfig <p>OAuth凭证配置</p>
+                     * 获取<p>OAuth2凭证配置</p>
+                     * @return OAuthCredentialConfig <p>OAuth2凭证配置</p>
                      * 
                      */
                     AIGWOAuthCredentialConfig GetOAuthCredentialConfig() const;
 
                     /**
-                     * 设置<p>OAuth凭证配置</p>
-                     * @param _oAuthCredentialConfig <p>OAuth凭证配置</p>
+                     * 设置<p>OAuth2凭证配置</p>
+                     * @param _oAuthCredentialConfig <p>OAuth2凭证配置</p>
                      * 
                      */
                     void SetOAuthCredentialConfig(const AIGWOAuthCredentialConfig& _oAuthCredentialConfig);
@@ -318,15 +324,15 @@ namespace TencentCloud
                     bool OIDCCredentialConfigHasBeenSet() const;
 
                     /**
-                     * 获取<p>secret key provider方</p><p>枚举值：</p><ul><li>Dify： Dify</li></ul>
-                     * @return Provider <p>secret key provider方</p><p>枚举值：</p><ul><li>Dify： Dify</li></ul>
+                     * 获取<p>Agent 密钥类型</p>
+                     * @return Provider <p>Agent 密钥类型</p>
                      * 
                      */
                     std::string GetProvider() const;
 
                     /**
-                     * 设置<p>secret key provider方</p><p>枚举值：</p><ul><li>Dify： Dify</li></ul>
-                     * @param _provider <p>secret key provider方</p><p>枚举值：</p><ul><li>Dify： Dify</li></ul>
+                     * 设置<p>Agent 密钥类型</p>
+                     * @param _provider <p>Agent 密钥类型</p>
                      * 
                      */
                     void SetProvider(const std::string& _provider);
@@ -443,6 +449,195 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li><li>Success： 成功</li></ul>
+                     * @return SyncStatus <p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li><li>Success： 成功</li></ul>
+                     * 
+                     */
+                    std::string GetSyncStatus() const;
+
+                    /**
+                     * 设置<p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li><li>Success： 成功</li></ul>
+                     * @param _syncStatus <p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li><li>Success： 成功</li></ul>
+                     * 
+                     */
+                    void SetSyncStatus(const std::string& _syncStatus);
+
+                    /**
+                     * 判断参数 SyncStatus 是否已赋值
+                     * @return SyncStatus 是否已赋值
+                     * 
+                     */
+                    bool SyncStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>资源类型</p><p>枚举值：</p><ul><li>Public： 公共</li><li>Private： 私有</li><li>SourceDeleted： 资源删除</li></ul>
+                     * @return SourceType <p>资源类型</p><p>枚举值：</p><ul><li>Public： 公共</li><li>Private： 私有</li><li>SourceDeleted： 资源删除</li></ul>
+                     * 
+                     */
+                    std::string GetSourceType() const;
+
+                    /**
+                     * 设置<p>资源类型</p><p>枚举值：</p><ul><li>Public： 公共</li><li>Private： 私有</li><li>SourceDeleted： 资源删除</li></ul>
+                     * @param _sourceType <p>资源类型</p><p>枚举值：</p><ul><li>Public： 公共</li><li>Private： 私有</li><li>SourceDeleted： 资源删除</li></ul>
+                     * 
+                     */
+                    void SetSourceType(const std::string& _sourceType);
+
+                    /**
+                     * 判断参数 SourceType 是否已赋值
+                     * @return SourceType 是否已赋值
+                     * 
+                     */
+                    bool SourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>同步版本</p>
+                     * @return SyncedVersion <p>同步版本</p>
+                     * 
+                     */
+                    std::string GetSyncedVersion() const;
+
+                    /**
+                     * 设置<p>同步版本</p>
+                     * @param _syncedVersion <p>同步版本</p>
+                     * 
+                     */
+                    void SetSyncedVersion(const std::string& _syncedVersion);
+
+                    /**
+                     * 判断参数 SyncedVersion 是否已赋值
+                     * @return SyncedVersion 是否已赋值
+                     * 
+                     */
+                    bool SyncedVersionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>AK/SK凭证配置</p>
+                     * @return AKSKCredentialConfig <p>AK/SK凭证配置</p>
+                     * 
+                     */
+                    AIGWAKSKCredentialConfig GetAKSKCredentialConfig() const;
+
+                    /**
+                     * 设置<p>AK/SK凭证配置</p>
+                     * @param _aKSKCredentialConfig <p>AK/SK凭证配置</p>
+                     * 
+                     */
+                    void SetAKSKCredentialConfig(const AIGWAKSKCredentialConfig& _aKSKCredentialConfig);
+
+                    /**
+                     * 判断参数 AKSKCredentialConfig 是否已赋值
+                     * @return AKSKCredentialConfig 是否已赋值
+                     * 
+                     */
+                    bool AKSKCredentialConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>CAM凭证配置</p>
+                     * @return CAMCredentialConfig <p>CAM凭证配置</p>
+                     * 
+                     */
+                    AIGWCAMCredentialConfig GetCAMCredentialConfig() const;
+
+                    /**
+                     * 设置<p>CAM凭证配置</p>
+                     * @param _cAMCredentialConfig <p>CAM凭证配置</p>
+                     * 
+                     */
+                    void SetCAMCredentialConfig(const AIGWCAMCredentialConfig& _cAMCredentialConfig);
+
+                    /**
+                     * 判断参数 CAMCredentialConfig 是否已赋值
+                     * @return CAMCredentialConfig 是否已赋值
+                     * 
+                     */
+                    bool CAMCredentialConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Bearer Token凭证配置</p>
+                     * @return BearerTokenCredentialConfig <p>Bearer Token凭证配置</p>
+                     * 
+                     */
+                    AIGWBearerTokenCredentialConfig GetBearerTokenCredentialConfig() const;
+
+                    /**
+                     * 设置<p>Bearer Token凭证配置</p>
+                     * @param _bearerTokenCredentialConfig <p>Bearer Token凭证配置</p>
+                     * 
+                     */
+                    void SetBearerTokenCredentialConfig(const AIGWBearerTokenCredentialConfig& _bearerTokenCredentialConfig);
+
+                    /**
+                     * 判断参数 BearerTokenCredentialConfig 是否已赋值
+                     * @return BearerTokenCredentialConfig 是否已赋值
+                     * 
+                     */
+                    bool BearerTokenCredentialConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Basic Auth凭证配置</p>
+                     * @return BasicCredentialConfig <p>Basic Auth凭证配置</p>
+                     * 
+                     */
+                    AIGWBasicCredentialConfig GetBasicCredentialConfig() const;
+
+                    /**
+                     * 设置<p>Basic Auth凭证配置</p>
+                     * @param _basicCredentialConfig <p>Basic Auth凭证配置</p>
+                     * 
+                     */
+                    void SetBasicCredentialConfig(const AIGWBasicCredentialConfig& _basicCredentialConfig);
+
+                    /**
+                     * 判断参数 BasicCredentialConfig 是否已赋值
+                     * @return BasicCredentialConfig 是否已赋值
+                     * 
+                     */
+                    bool BasicCredentialConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自定义Header凭证配置</p>
+                     * @return CustomHeaderCredentialConfig <p>自定义Header凭证配置</p>
+                     * 
+                     */
+                    AIGWCustomHeaderCredentialConfig GetCustomHeaderCredentialConfig() const;
+
+                    /**
+                     * 设置<p>自定义Header凭证配置</p>
+                     * @param _customHeaderCredentialConfig <p>自定义Header凭证配置</p>
+                     * 
+                     */
+                    void SetCustomHeaderCredentialConfig(const AIGWCustomHeaderCredentialConfig& _customHeaderCredentialConfig);
+
+                    /**
+                     * 判断参数 CustomHeaderCredentialConfig 是否已赋值
+                     * @return CustomHeaderCredentialConfig 是否已赋值
+                     * 
+                     */
+                    bool CustomHeaderCredentialConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自定义Query参数凭证配置</p>
+                     * @return QueryParamCredentialConfig <p>自定义Query参数凭证配置</p>
+                     * 
+                     */
+                    AIGWQueryParamCredentialConfig GetQueryParamCredentialConfig() const;
+
+                    /**
+                     * 设置<p>自定义Query参数凭证配置</p>
+                     * @param _queryParamCredentialConfig <p>自定义Query参数凭证配置</p>
+                     * 
+                     */
+                    void SetQueryParamCredentialConfig(const AIGWQueryParamCredentialConfig& _queryParamCredentialConfig);
+
+                    /**
+                     * 判断参数 QueryParamCredentialConfig 是否已赋值
+                     * @return QueryParamCredentialConfig 是否已赋值
+                     * 
+                     */
+                    bool QueryParamCredentialConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -510,7 +705,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * <p>OAuth凭证配置</p>
+                     * <p>OAuth2凭证配置</p>
                      */
                     AIGWOAuthCredentialConfig m_oAuthCredentialConfig;
                     bool m_oAuthCredentialConfigHasBeenSet;
@@ -522,7 +717,7 @@ namespace TencentCloud
                     bool m_oIDCCredentialConfigHasBeenSet;
 
                     /**
-                     * <p>secret key provider方</p><p>枚举值：</p><ul><li>Dify： Dify</li></ul>
+                     * <p>Agent 密钥类型</p>
                      */
                     std::string m_provider;
                     bool m_providerHasBeenSet;
@@ -556,6 +751,60 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li><li>Success： 成功</li></ul>
+                     */
+                    std::string m_syncStatus;
+                    bool m_syncStatusHasBeenSet;
+
+                    /**
+                     * <p>资源类型</p><p>枚举值：</p><ul><li>Public： 公共</li><li>Private： 私有</li><li>SourceDeleted： 资源删除</li></ul>
+                     */
+                    std::string m_sourceType;
+                    bool m_sourceTypeHasBeenSet;
+
+                    /**
+                     * <p>同步版本</p>
+                     */
+                    std::string m_syncedVersion;
+                    bool m_syncedVersionHasBeenSet;
+
+                    /**
+                     * <p>AK/SK凭证配置</p>
+                     */
+                    AIGWAKSKCredentialConfig m_aKSKCredentialConfig;
+                    bool m_aKSKCredentialConfigHasBeenSet;
+
+                    /**
+                     * <p>CAM凭证配置</p>
+                     */
+                    AIGWCAMCredentialConfig m_cAMCredentialConfig;
+                    bool m_cAMCredentialConfigHasBeenSet;
+
+                    /**
+                     * <p>Bearer Token凭证配置</p>
+                     */
+                    AIGWBearerTokenCredentialConfig m_bearerTokenCredentialConfig;
+                    bool m_bearerTokenCredentialConfigHasBeenSet;
+
+                    /**
+                     * <p>Basic Auth凭证配置</p>
+                     */
+                    AIGWBasicCredentialConfig m_basicCredentialConfig;
+                    bool m_basicCredentialConfigHasBeenSet;
+
+                    /**
+                     * <p>自定义Header凭证配置</p>
+                     */
+                    AIGWCustomHeaderCredentialConfig m_customHeaderCredentialConfig;
+                    bool m_customHeaderCredentialConfigHasBeenSet;
+
+                    /**
+                     * <p>自定义Query参数凭证配置</p>
+                     */
+                    AIGWQueryParamCredentialConfig m_queryParamCredentialConfig;
+                    bool m_queryParamCredentialConfigHasBeenSet;
 
                 };
             }

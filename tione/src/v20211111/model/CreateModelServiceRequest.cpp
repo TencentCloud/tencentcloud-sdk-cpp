@@ -69,7 +69,8 @@ CreateModelServiceRequest::CreateModelServiceRequest() :
     m_schedulingStrategyHasBeenSet(false),
     m_gatewayLogConfigHasBeenSet(false),
     m_gatewayConfigHasBeenSet(false),
-    m_resourceSupplyAttributeHasBeenSet(false)
+    m_resourceSupplyAttributeHasBeenSet(false),
+    m_inferTemplateIdHasBeenSet(false)
 {
 }
 
@@ -502,6 +503,14 @@ string CreateModelServiceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_resourceSupplyAttribute.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_inferTemplateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InferTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_inferTemplateId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1262,6 +1271,22 @@ void CreateModelServiceRequest::SetResourceSupplyAttribute(const ResourceSupplyA
 bool CreateModelServiceRequest::ResourceSupplyAttributeHasBeenSet() const
 {
     return m_resourceSupplyAttributeHasBeenSet;
+}
+
+string CreateModelServiceRequest::GetInferTemplateId() const
+{
+    return m_inferTemplateId;
+}
+
+void CreateModelServiceRequest::SetInferTemplateId(const string& _inferTemplateId)
+{
+    m_inferTemplateId = _inferTemplateId;
+    m_inferTemplateIdHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::InferTemplateIdHasBeenSet() const
+{
+    return m_inferTemplateIdHasBeenSet;
 }
 
 

@@ -26,7 +26,9 @@ DescribeCloudNativeAPIGatewayCertificatesRequest::DescribeCloudNativeAPIGatewayC
     m_gatewayIdHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_certTypeHasBeenSet(false),
+    m_certUsageHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,22 @@ string DescribeCloudNativeAPIGatewayCertificatesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_certTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certUsageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertUsage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certUsage.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -146,6 +164,38 @@ void DescribeCloudNativeAPIGatewayCertificatesRequest::SetFilters(const vector<L
 bool DescribeCloudNativeAPIGatewayCertificatesRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewayCertificatesRequest::GetCertType() const
+{
+    return m_certType;
+}
+
+void DescribeCloudNativeAPIGatewayCertificatesRequest::SetCertType(const string& _certType)
+{
+    m_certType = _certType;
+    m_certTypeHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayCertificatesRequest::CertTypeHasBeenSet() const
+{
+    return m_certTypeHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewayCertificatesRequest::GetCertUsage() const
+{
+    return m_certUsage;
+}
+
+void DescribeCloudNativeAPIGatewayCertificatesRequest::SetCertUsage(const string& _certUsage)
+{
+    m_certUsage = _certUsage;
+    m_certUsageHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayCertificatesRequest::CertUsageHasBeenSet() const
+{
+    return m_certUsageHasBeenSet;
 }
 
 

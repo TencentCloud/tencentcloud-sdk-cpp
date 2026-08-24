@@ -317,6 +317,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/MessageLocalized.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudAppVersionRequest.h
   include/tencentcloud/tcb/v20180608/model/OwnershipVerificationDnsInfo.h
+  include/tencentcloud/tcb/v20180608/model/SMSCloudFunctionConfig.h
   include/tencentcloud/tcb/v20180608/model/DescribeTableResponse.h
   include/tencentcloud/tcb/v20180608/model/MetricUsage.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunBuildLogResponse.h
@@ -642,6 +643,7 @@ set(tcb_src
   src/v20180608/model/MessageLocalized.cpp
   src/v20180608/model/DescribeCloudAppVersionRequest.cpp
   src/v20180608/model/OwnershipVerificationDnsInfo.cpp
+  src/v20180608/model/SMSCloudFunctionConfig.cpp
   src/v20180608/model/DescribeTableResponse.cpp
   src/v20180608/model/MetricUsage.cpp
   src/v20180608/model/DescribeCloudBaseRunBuildLogResponse.cpp

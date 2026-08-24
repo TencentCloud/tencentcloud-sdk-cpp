@@ -40,6 +40,56 @@ AgsClient::AgsClient(const Credential &credential, const string &region, const C
 }
 
 
+AgsClient::AcquireDeploymentTokenOutcome AgsClient::AcquireDeploymentToken(const AcquireDeploymentTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "AcquireDeploymentToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AcquireDeploymentTokenResponse rsp = AcquireDeploymentTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AcquireDeploymentTokenOutcome(rsp);
+        else
+            return AcquireDeploymentTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return AcquireDeploymentTokenOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::AcquireDeploymentTokenAsync(const AcquireDeploymentTokenRequest& request, const AcquireDeploymentTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AcquireDeploymentTokenRequest&;
+    using Resp = AcquireDeploymentTokenResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AcquireDeploymentToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::AcquireDeploymentTokenOutcomeCallable AgsClient::AcquireDeploymentTokenCallable(const AcquireDeploymentTokenRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AcquireDeploymentTokenOutcome>>();
+    AcquireDeploymentTokenAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const AcquireDeploymentTokenRequest&,
+        AcquireDeploymentTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AgsClient::AcquireSandboxInstanceTokenOutcome AgsClient::AcquireSandboxInstanceToken(const AcquireSandboxInstanceTokenRequest &request)
 {
     auto outcome = MakeRequest(request, "AcquireSandboxInstanceToken");
@@ -132,6 +182,56 @@ AgsClient::CreateAPIKeyOutcomeCallable AgsClient::CreateAPIKeyCallable(const Cre
         const AgsClient*,
         const CreateAPIKeyRequest&,
         CreateAPIKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AgsClient::CreateDeploymentOutcome AgsClient::CreateDeployment(const CreateDeploymentRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDeployment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDeploymentResponse rsp = CreateDeploymentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDeploymentOutcome(rsp);
+        else
+            return CreateDeploymentOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDeploymentOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::CreateDeploymentAsync(const CreateDeploymentRequest& request, const CreateDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateDeploymentRequest&;
+    using Resp = CreateDeploymentResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateDeployment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::CreateDeploymentOutcomeCallable AgsClient::CreateDeploymentCallable(const CreateDeploymentRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateDeploymentOutcome>>();
+    CreateDeploymentAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const CreateDeploymentRequest&,
+        CreateDeploymentOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -290,6 +390,56 @@ AgsClient::DeleteAPIKeyOutcomeCallable AgsClient::DeleteAPIKeyCallable(const Del
     return prom->get_future();
 }
 
+AgsClient::DeleteDeploymentOutcome AgsClient::DeleteDeployment(const DeleteDeploymentRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDeployment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDeploymentResponse rsp = DeleteDeploymentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDeploymentOutcome(rsp);
+        else
+            return DeleteDeploymentOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDeploymentOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::DeleteDeploymentAsync(const DeleteDeploymentRequest& request, const DeleteDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDeploymentRequest&;
+    using Resp = DeleteDeploymentResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDeployment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::DeleteDeploymentOutcomeCallable AgsClient::DeleteDeploymentCallable(const DeleteDeploymentRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDeploymentOutcome>>();
+    DeleteDeploymentAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const DeleteDeploymentRequest&,
+        DeleteDeploymentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AgsClient::DeleteSandboxToolOutcome AgsClient::DeleteSandboxTool(const DeleteSandboxToolRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteSandboxTool");
@@ -382,6 +532,106 @@ AgsClient::DescribeAPIKeyListOutcomeCallable AgsClient::DescribeAPIKeyListCallab
         const AgsClient*,
         const DescribeAPIKeyListRequest&,
         DescribeAPIKeyListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AgsClient::DescribeDeploymentOutcome AgsClient::DescribeDeployment(const DescribeDeploymentRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeployment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeploymentResponse rsp = DescribeDeploymentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeploymentOutcome(rsp);
+        else
+            return DescribeDeploymentOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeploymentOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::DescribeDeploymentAsync(const DescribeDeploymentRequest& request, const DescribeDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDeploymentRequest&;
+    using Resp = DescribeDeploymentResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeployment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::DescribeDeploymentOutcomeCallable AgsClient::DescribeDeploymentCallable(const DescribeDeploymentRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDeploymentOutcome>>();
+    DescribeDeploymentAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const DescribeDeploymentRequest&,
+        DescribeDeploymentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AgsClient::DescribeDeploymentListOutcome AgsClient::DescribeDeploymentList(const DescribeDeploymentListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeploymentList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeploymentListResponse rsp = DescribeDeploymentListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeploymentListOutcome(rsp);
+        else
+            return DescribeDeploymentListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeploymentListOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::DescribeDeploymentListAsync(const DescribeDeploymentListRequest& request, const DescribeDeploymentListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDeploymentListRequest&;
+    using Resp = DescribeDeploymentListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeploymentList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::DescribeDeploymentListOutcomeCallable AgsClient::DescribeDeploymentListCallable(const DescribeDeploymentListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDeploymentListOutcome>>();
+    DescribeDeploymentListAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const DescribeDeploymentListRequest&,
+        DescribeDeploymentListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -532,6 +782,56 @@ AgsClient::DescribeSandboxToolListOutcomeCallable AgsClient::DescribeSandboxTool
         const AgsClient*,
         const DescribeSandboxToolListRequest&,
         DescribeSandboxToolListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AgsClient::ModifyDeploymentOutcome AgsClient::ModifyDeployment(const ModifyDeploymentRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDeployment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDeploymentResponse rsp = ModifyDeploymentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDeploymentOutcome(rsp);
+        else
+            return ModifyDeploymentOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDeploymentOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::ModifyDeploymentAsync(const ModifyDeploymentRequest& request, const ModifyDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDeploymentRequest&;
+    using Resp = ModifyDeploymentResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDeployment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::ModifyDeploymentOutcomeCallable AgsClient::ModifyDeploymentCallable(const ModifyDeploymentRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDeploymentOutcome>>();
+    ModifyDeploymentAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const ModifyDeploymentRequest&,
+        ModifyDeploymentOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

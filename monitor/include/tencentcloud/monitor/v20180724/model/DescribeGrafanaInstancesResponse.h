@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取已废弃，请使用 Instances
-                     * @return InstanceSet 已废弃，请使用 Instances
+                     * 获取<p>已废弃，请使用 Instances</p>
+                     * @return InstanceSet <p>已废弃，请使用 Instances</p>
                      * 
                      */
                     std::vector<GrafanaInstanceInfo> GetInstanceSet() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool InstanceSetHasBeenSet() const;
 
                     /**
-                     * 获取符合查询条件的实例总数
-                     * @return TotalCount 符合查询条件的实例总数
+                     * 获取<p>符合查询条件的实例总数</p>
+                     * @return TotalCount <p>符合查询条件的实例总数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取实例列表
-                     * @return Instances 实例列表
+                     * 获取<p>实例列表</p>
+                     * @return Instances <p>实例列表</p>
                      * 
                      */
                     std::vector<GrafanaInstanceInfo> GetInstances() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 已废弃，请使用 Instances
+                     * <p>已废弃，请使用 Instances</p>
                      */
                     std::vector<GrafanaInstanceInfo> m_instanceSet;
                     bool m_instanceSetHasBeenSet;
 
                     /**
-                     * 符合查询条件的实例总数
+                     * <p>符合查询条件的实例总数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 实例列表
+                     * <p>实例列表</p>
                      */
                     std::vector<GrafanaInstanceInfo> m_instances;
                     bool m_instancesHasBeenSet;
