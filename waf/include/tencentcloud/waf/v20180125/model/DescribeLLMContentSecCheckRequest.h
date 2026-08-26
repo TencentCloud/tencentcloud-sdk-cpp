@@ -295,6 +295,27 @@ namespace TencentCloud
                      */
                     bool IntentContentHasBeenSet() const;
 
+                    /**
+                     * 获取<p>客户端来源IP地址，用于白名单匹配等场景，支持IPv4和IPv6格式</p>
+                     * @return ClientIP <p>客户端来源IP地址，用于白名单匹配等场景，支持IPv4和IPv6格式</p>
+                     * 
+                     */
+                    std::string GetClientIP() const;
+
+                    /**
+                     * 设置<p>客户端来源IP地址，用于白名单匹配等场景，支持IPv4和IPv6格式</p>
+                     * @param _clientIP <p>客户端来源IP地址，用于白名单匹配等场景，支持IPv4和IPv6格式</p>
+                     * 
+                     */
+                    void SetClientIP(const std::string& _clientIP);
+
+                    /**
+                     * 判断参数 ClientIP 是否已赋值
+                     * @return ClientIP 是否已赋值
+                     * 
+                     */
+                    bool ClientIPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -368,6 +389,12 @@ namespace TencentCloud
                      */
                     IntentContent m_intentContent;
                     bool m_intentContentHasBeenSet;
+
+                    /**
+                     * <p>客户端来源IP地址，用于白名单匹配等场景，支持IPv4和IPv6格式</p>
+                     */
+                    std::string m_clientIP;
+                    bool m_clientIPHasBeenSet;
 
                 };
             }

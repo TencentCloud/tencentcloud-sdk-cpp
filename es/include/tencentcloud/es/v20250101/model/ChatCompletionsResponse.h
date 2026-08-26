@@ -47,8 +47,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取此次请求的id
-                     * @return Id 此次请求的id
+                     * 获取<p>此次请求的id</p>
+                     * @return Id <p>此次请求的id</p>
                      * 
                      */
                     std::string GetId() const;
@@ -61,8 +61,8 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取回复内容
-                     * @return Choices 回复内容
+                     * 获取<p>回复内容</p>
+                     * @return Choices <p>回复内容</p>
                      * 
                      */
                     std::vector<Choice> GetChoices() const;
@@ -75,8 +75,8 @@ namespace TencentCloud
                     bool ChoicesHasBeenSet() const;
 
                     /**
-                     * 获取token使用量
-                     * @return Usage token使用量
+                     * 获取<p>token使用量</p>
+                     * @return Usage <p>token使用量</p>
                      * 
                      */
                     TokenUsage GetUsage() const;
@@ -89,9 +89,9 @@ namespace TencentCloud
                     bool UsageHasBeenSet() const;
 
                     /**
-                     * 获取联网搜索结果。
+                     * 获取<p>联网搜索结果。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OnlineSearchContent 联网搜索结果。
+                     * @return OnlineSearchContent <p>联网搜索结果。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -107,25 +107,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 此次请求的id
+                     * <p>此次请求的id</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 回复内容
+                     * <p>回复内容</p>
                      */
                     std::vector<Choice> m_choices;
                     bool m_choicesHasBeenSet;
 
                     /**
-                     * token使用量
+                     * <p>token使用量</p>
                      */
                     TokenUsage m_usage;
                     bool m_usageHasBeenSet;
 
                     /**
-                     * 联网搜索结果。
+                     * <p>联网搜索结果。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WebContent> m_onlineSearchContent;

@@ -26,7 +26,14 @@ UserManagerUserBriefInfo::UserManagerUserBriefInfo() :
     m_userTypeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_supportDownLoadKeyTabHasBeenSet(false),
-    m_downLoadKeyTabUrlHasBeenSet(false)
+    m_downLoadKeyTabUrlHasBeenSet(false),
+    m_groupsHasBeenSet(false),
+    m_uinHasBeenSet(false),
+    m_stateHasBeenSet(false),
+    m_displayPasswdUpdateTimeHasBeenSet(false),
+    m_passwdUpdateTimeHasBeenSet(false),
+    m_passwdUsedDayHasBeenSet(false),
+    m_passwdUsedHourHasBeenSet(false)
 {
 }
 
@@ -95,6 +102,79 @@ CoreInternalOutcome UserManagerUserBriefInfo::Deserialize(const rapidjson::Value
         m_downLoadKeyTabUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("Groups") && !value["Groups"].IsNull())
+    {
+        if (!value["Groups"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UserManagerUserBriefInfo.Groups` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Groups"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_groups.push_back((*itr).GetString());
+        }
+        m_groupsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Uin") && !value["Uin"].IsNull())
+    {
+        if (!value["Uin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserManagerUserBriefInfo.Uin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uin = string(value["Uin"].GetString());
+        m_uinHasBeenSet = true;
+    }
+
+    if (value.HasMember("State") && !value["State"].IsNull())
+    {
+        if (!value["State"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserManagerUserBriefInfo.State` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_state = value["State"].GetInt64();
+        m_stateHasBeenSet = true;
+    }
+
+    if (value.HasMember("DisplayPasswdUpdateTime") && !value["DisplayPasswdUpdateTime"].IsNull())
+    {
+        if (!value["DisplayPasswdUpdateTime"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserManagerUserBriefInfo.DisplayPasswdUpdateTime` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_displayPasswdUpdateTime = value["DisplayPasswdUpdateTime"].GetBool();
+        m_displayPasswdUpdateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PasswdUpdateTime") && !value["PasswdUpdateTime"].IsNull())
+    {
+        if (!value["PasswdUpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserManagerUserBriefInfo.PasswdUpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_passwdUpdateTime = string(value["PasswdUpdateTime"].GetString());
+        m_passwdUpdateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PasswdUsedDay") && !value["PasswdUsedDay"].IsNull())
+    {
+        if (!value["PasswdUsedDay"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserManagerUserBriefInfo.PasswdUsedDay` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_passwdUsedDay = value["PasswdUsedDay"].GetInt64();
+        m_passwdUsedDayHasBeenSet = true;
+    }
+
+    if (value.HasMember("PasswdUsedHour") && !value["PasswdUsedHour"].IsNull())
+    {
+        if (!value["PasswdUsedHour"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserManagerUserBriefInfo.PasswdUsedHour` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_passwdUsedHour = value["PasswdUsedHour"].GetInt64();
+        m_passwdUsedHourHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +228,67 @@ void UserManagerUserBriefInfo::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "DownLoadKeyTabUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_downLoadKeyTabUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Groups";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_groups.begin(); itr != m_groups.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_uinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "State";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_state, allocator);
+    }
+
+    if (m_displayPasswdUpdateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisplayPasswdUpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_displayPasswdUpdateTime, allocator);
+    }
+
+    if (m_passwdUpdateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PasswdUpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_passwdUpdateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_passwdUsedDayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PasswdUsedDay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_passwdUsedDay, allocator);
+    }
+
+    if (m_passwdUsedHourHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PasswdUsedHour";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_passwdUsedHour, allocator);
     }
 
 }
@@ -247,5 +388,117 @@ void UserManagerUserBriefInfo::SetDownLoadKeyTabUrl(const string& _downLoadKeyTa
 bool UserManagerUserBriefInfo::DownLoadKeyTabUrlHasBeenSet() const
 {
     return m_downLoadKeyTabUrlHasBeenSet;
+}
+
+vector<string> UserManagerUserBriefInfo::GetGroups() const
+{
+    return m_groups;
+}
+
+void UserManagerUserBriefInfo::SetGroups(const vector<string>& _groups)
+{
+    m_groups = _groups;
+    m_groupsHasBeenSet = true;
+}
+
+bool UserManagerUserBriefInfo::GroupsHasBeenSet() const
+{
+    return m_groupsHasBeenSet;
+}
+
+string UserManagerUserBriefInfo::GetUin() const
+{
+    return m_uin;
+}
+
+void UserManagerUserBriefInfo::SetUin(const string& _uin)
+{
+    m_uin = _uin;
+    m_uinHasBeenSet = true;
+}
+
+bool UserManagerUserBriefInfo::UinHasBeenSet() const
+{
+    return m_uinHasBeenSet;
+}
+
+int64_t UserManagerUserBriefInfo::GetState() const
+{
+    return m_state;
+}
+
+void UserManagerUserBriefInfo::SetState(const int64_t& _state)
+{
+    m_state = _state;
+    m_stateHasBeenSet = true;
+}
+
+bool UserManagerUserBriefInfo::StateHasBeenSet() const
+{
+    return m_stateHasBeenSet;
+}
+
+bool UserManagerUserBriefInfo::GetDisplayPasswdUpdateTime() const
+{
+    return m_displayPasswdUpdateTime;
+}
+
+void UserManagerUserBriefInfo::SetDisplayPasswdUpdateTime(const bool& _displayPasswdUpdateTime)
+{
+    m_displayPasswdUpdateTime = _displayPasswdUpdateTime;
+    m_displayPasswdUpdateTimeHasBeenSet = true;
+}
+
+bool UserManagerUserBriefInfo::DisplayPasswdUpdateTimeHasBeenSet() const
+{
+    return m_displayPasswdUpdateTimeHasBeenSet;
+}
+
+string UserManagerUserBriefInfo::GetPasswdUpdateTime() const
+{
+    return m_passwdUpdateTime;
+}
+
+void UserManagerUserBriefInfo::SetPasswdUpdateTime(const string& _passwdUpdateTime)
+{
+    m_passwdUpdateTime = _passwdUpdateTime;
+    m_passwdUpdateTimeHasBeenSet = true;
+}
+
+bool UserManagerUserBriefInfo::PasswdUpdateTimeHasBeenSet() const
+{
+    return m_passwdUpdateTimeHasBeenSet;
+}
+
+int64_t UserManagerUserBriefInfo::GetPasswdUsedDay() const
+{
+    return m_passwdUsedDay;
+}
+
+void UserManagerUserBriefInfo::SetPasswdUsedDay(const int64_t& _passwdUsedDay)
+{
+    m_passwdUsedDay = _passwdUsedDay;
+    m_passwdUsedDayHasBeenSet = true;
+}
+
+bool UserManagerUserBriefInfo::PasswdUsedDayHasBeenSet() const
+{
+    return m_passwdUsedDayHasBeenSet;
+}
+
+int64_t UserManagerUserBriefInfo::GetPasswdUsedHour() const
+{
+    return m_passwdUsedHour;
+}
+
+void UserManagerUserBriefInfo::SetPasswdUsedHour(const int64_t& _passwdUsedHour)
+{
+    m_passwdUsedHour = _passwdUsedHour;
+    m_passwdUsedHourHasBeenSet = true;
+}
+
+bool UserManagerUserBriefInfo::PasswdUsedHourHasBeenSet() const
+{
+    return m_passwdUsedHourHasBeenSet;
 }
 

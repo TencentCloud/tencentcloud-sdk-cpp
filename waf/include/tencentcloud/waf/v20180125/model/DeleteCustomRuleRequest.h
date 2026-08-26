@@ -66,14 +66,22 @@ namespace TencentCloud
 
                     /**
                      * 获取删除的规则ID
+说明：支持批量删除，多个规则ID用英文逗号分隔
+与DomainRuleIdList二选一，优先使用DomainRuleIdList
                      * @return RuleId 删除的规则ID
+说明：支持批量删除，多个规则ID用英文逗号分隔
+与DomainRuleIdList二选一，优先使用DomainRuleIdList
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置删除的规则ID
+说明：支持批量删除，多个规则ID用英文逗号分隔
+与DomainRuleIdList二选一，优先使用DomainRuleIdList
                      * @param _ruleId 删除的规则ID
+说明：支持批量删除，多个规则ID用英文逗号分隔
+与DomainRuleIdList二选一，优先使用DomainRuleIdList
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -108,14 +116,18 @@ namespace TencentCloud
 
                     /**
                      * 获取批量删除的规则列表
+说明：支持跨域名批量删除，每个元素指定域名和规则ID。如果不为空则忽略Domain和RuleId字段
                      * @return DomainRuleIdList 批量删除的规则列表
+说明：支持跨域名批量删除，每个元素指定域名和规则ID。如果不为空则忽略Domain和RuleId字段
                      * 
                      */
                     std::vector<DomainRuleId> GetDomainRuleIdList() const;
 
                     /**
                      * 设置批量删除的规则列表
+说明：支持跨域名批量删除，每个元素指定域名和规则ID。如果不为空则忽略Domain和RuleId字段
                      * @param _domainRuleIdList 批量删除的规则列表
+说明：支持跨域名批量删除，每个元素指定域名和规则ID。如果不为空则忽略Domain和RuleId字段
                      * 
                      */
                     void SetDomainRuleIdList(const std::vector<DomainRuleId>& _domainRuleIdList);
@@ -137,6 +149,8 @@ namespace TencentCloud
 
                     /**
                      * 删除的规则ID
+说明：支持批量删除，多个规则ID用英文逗号分隔
+与DomainRuleIdList二选一，优先使用DomainRuleIdList
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
@@ -149,6 +163,7 @@ namespace TencentCloud
 
                     /**
                      * 批量删除的规则列表
+说明：支持跨域名批量删除，每个元素指定域名和规则ID。如果不为空则忽略Domain和RuleId字段
                      */
                     std::vector<DomainRuleId> m_domainRuleIdList;
                     bool m_domainRuleIdListHasBeenSet;

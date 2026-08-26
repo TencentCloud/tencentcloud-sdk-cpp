@@ -92,21 +92,21 @@ namespace TencentCloud
                     /**
                      * 获取<p>数据项集合</p>
                      * @return RuleSet <p>数据项集合</p>
-                     * 
+                     * @deprecated
                      */
                     std::vector<CosIdentifyRuleDetail> GetRuleSet() const;
 
                     /**
                      * 设置<p>数据项集合</p>
                      * @param _ruleSet <p>数据项集合</p>
-                     * 
+                     * @deprecated
                      */
                     void SetRuleSet(const std::vector<CosIdentifyRuleDetail>& _ruleSet);
 
                     /**
                      * 判断参数 RuleSet 是否已赋值
                      * @return RuleSet 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool RuleSetHasBeenSet() const;
 

@@ -40,6 +40,156 @@ MonitorClient::MonitorClient(const Credential &credential, const string &region,
 }
 
 
+MonitorClient::CancelAIWorkbenchChatOutcome MonitorClient::CancelAIWorkbenchChat(const CancelAIWorkbenchChatRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelAIWorkbenchChat");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelAIWorkbenchChatResponse rsp = CancelAIWorkbenchChatResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelAIWorkbenchChatOutcome(rsp);
+        else
+            return CancelAIWorkbenchChatOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelAIWorkbenchChatOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CancelAIWorkbenchChatAsync(const CancelAIWorkbenchChatRequest& request, const CancelAIWorkbenchChatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CancelAIWorkbenchChatRequest&;
+    using Resp = CancelAIWorkbenchChatResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CancelAIWorkbenchChat", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::CancelAIWorkbenchChatOutcomeCallable MonitorClient::CancelAIWorkbenchChatCallable(const CancelAIWorkbenchChatRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CancelAIWorkbenchChatOutcome>>();
+    CancelAIWorkbenchChatAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const CancelAIWorkbenchChatRequest&,
+        CancelAIWorkbenchChatOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::CreateAIWorkbenchAgentOutcome MonitorClient::CreateAIWorkbenchAgent(const CreateAIWorkbenchAgentRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAIWorkbenchAgent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAIWorkbenchAgentResponse rsp = CreateAIWorkbenchAgentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAIWorkbenchAgentOutcome(rsp);
+        else
+            return CreateAIWorkbenchAgentOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAIWorkbenchAgentOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreateAIWorkbenchAgentAsync(const CreateAIWorkbenchAgentRequest& request, const CreateAIWorkbenchAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAIWorkbenchAgentRequest&;
+    using Resp = CreateAIWorkbenchAgentResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAIWorkbenchAgent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::CreateAIWorkbenchAgentOutcomeCallable MonitorClient::CreateAIWorkbenchAgentCallable(const CreateAIWorkbenchAgentRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAIWorkbenchAgentOutcome>>();
+    CreateAIWorkbenchAgentAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const CreateAIWorkbenchAgentRequest&,
+        CreateAIWorkbenchAgentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::CreateAIWorkbenchTaskOutcome MonitorClient::CreateAIWorkbenchTask(const CreateAIWorkbenchTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAIWorkbenchTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAIWorkbenchTaskResponse rsp = CreateAIWorkbenchTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAIWorkbenchTaskOutcome(rsp);
+        else
+            return CreateAIWorkbenchTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAIWorkbenchTaskOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreateAIWorkbenchTaskAsync(const CreateAIWorkbenchTaskRequest& request, const CreateAIWorkbenchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAIWorkbenchTaskRequest&;
+    using Resp = CreateAIWorkbenchTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAIWorkbenchTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::CreateAIWorkbenchTaskOutcomeCallable MonitorClient::CreateAIWorkbenchTaskCallable(const CreateAIWorkbenchTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAIWorkbenchTaskOutcome>>();
+    CreateAIWorkbenchTaskAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const CreateAIWorkbenchTaskRequest&,
+        CreateAIWorkbenchTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MonitorClient::CreateNoticeContentTmplOutcome MonitorClient::CreateNoticeContentTmpl(const CreateNoticeContentTmplRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateNoticeContentTmpl");
@@ -90,6 +240,106 @@ MonitorClient::CreateNoticeContentTmplOutcomeCallable MonitorClient::CreateNotic
     return prom->get_future();
 }
 
+MonitorClient::DeleteAIWorkbenchAgentOutcome MonitorClient::DeleteAIWorkbenchAgent(const DeleteAIWorkbenchAgentRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAIWorkbenchAgent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAIWorkbenchAgentResponse rsp = DeleteAIWorkbenchAgentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAIWorkbenchAgentOutcome(rsp);
+        else
+            return DeleteAIWorkbenchAgentOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAIWorkbenchAgentOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DeleteAIWorkbenchAgentAsync(const DeleteAIWorkbenchAgentRequest& request, const DeleteAIWorkbenchAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAIWorkbenchAgentRequest&;
+    using Resp = DeleteAIWorkbenchAgentResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAIWorkbenchAgent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DeleteAIWorkbenchAgentOutcomeCallable MonitorClient::DeleteAIWorkbenchAgentCallable(const DeleteAIWorkbenchAgentRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAIWorkbenchAgentOutcome>>();
+    DeleteAIWorkbenchAgentAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DeleteAIWorkbenchAgentRequest&,
+        DeleteAIWorkbenchAgentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::DeleteAIWorkbenchTaskOutcome MonitorClient::DeleteAIWorkbenchTask(const DeleteAIWorkbenchTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAIWorkbenchTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAIWorkbenchTaskResponse rsp = DeleteAIWorkbenchTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAIWorkbenchTaskOutcome(rsp);
+        else
+            return DeleteAIWorkbenchTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAIWorkbenchTaskOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DeleteAIWorkbenchTaskAsync(const DeleteAIWorkbenchTaskRequest& request, const DeleteAIWorkbenchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAIWorkbenchTaskRequest&;
+    using Resp = DeleteAIWorkbenchTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAIWorkbenchTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DeleteAIWorkbenchTaskOutcomeCallable MonitorClient::DeleteAIWorkbenchTaskCallable(const DeleteAIWorkbenchTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAIWorkbenchTaskOutcome>>();
+    DeleteAIWorkbenchTaskAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DeleteAIWorkbenchTaskRequest&,
+        DeleteAIWorkbenchTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MonitorClient::DeleteNoticeContentTmplsOutcome MonitorClient::DeleteNoticeContentTmpls(const DeleteNoticeContentTmplsRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteNoticeContentTmpls");
@@ -132,6 +382,156 @@ MonitorClient::DeleteNoticeContentTmplsOutcomeCallable MonitorClient::DeleteNoti
         const MonitorClient*,
         const DeleteNoticeContentTmplsRequest&,
         DeleteNoticeContentTmplsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::DescribeAIWorkbenchAgentOutcome MonitorClient::DescribeAIWorkbenchAgent(const DescribeAIWorkbenchAgentRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIWorkbenchAgent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIWorkbenchAgentResponse rsp = DescribeAIWorkbenchAgentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIWorkbenchAgentOutcome(rsp);
+        else
+            return DescribeAIWorkbenchAgentOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIWorkbenchAgentOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeAIWorkbenchAgentAsync(const DescribeAIWorkbenchAgentRequest& request, const DescribeAIWorkbenchAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIWorkbenchAgentRequest&;
+    using Resp = DescribeAIWorkbenchAgentResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIWorkbenchAgent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribeAIWorkbenchAgentOutcomeCallable MonitorClient::DescribeAIWorkbenchAgentCallable(const DescribeAIWorkbenchAgentRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIWorkbenchAgentOutcome>>();
+    DescribeAIWorkbenchAgentAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribeAIWorkbenchAgentRequest&,
+        DescribeAIWorkbenchAgentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::DescribeAIWorkbenchArtifactOutcome MonitorClient::DescribeAIWorkbenchArtifact(const DescribeAIWorkbenchArtifactRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIWorkbenchArtifact");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIWorkbenchArtifactResponse rsp = DescribeAIWorkbenchArtifactResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIWorkbenchArtifactOutcome(rsp);
+        else
+            return DescribeAIWorkbenchArtifactOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIWorkbenchArtifactOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeAIWorkbenchArtifactAsync(const DescribeAIWorkbenchArtifactRequest& request, const DescribeAIWorkbenchArtifactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIWorkbenchArtifactRequest&;
+    using Resp = DescribeAIWorkbenchArtifactResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIWorkbenchArtifact", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribeAIWorkbenchArtifactOutcomeCallable MonitorClient::DescribeAIWorkbenchArtifactCallable(const DescribeAIWorkbenchArtifactRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIWorkbenchArtifactOutcome>>();
+    DescribeAIWorkbenchArtifactAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribeAIWorkbenchArtifactRequest&,
+        DescribeAIWorkbenchArtifactOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::DescribeAIWorkbenchExecutionOutcome MonitorClient::DescribeAIWorkbenchExecution(const DescribeAIWorkbenchExecutionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIWorkbenchExecution");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIWorkbenchExecutionResponse rsp = DescribeAIWorkbenchExecutionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIWorkbenchExecutionOutcome(rsp);
+        else
+            return DescribeAIWorkbenchExecutionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIWorkbenchExecutionOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeAIWorkbenchExecutionAsync(const DescribeAIWorkbenchExecutionRequest& request, const DescribeAIWorkbenchExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIWorkbenchExecutionRequest&;
+    using Resp = DescribeAIWorkbenchExecutionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIWorkbenchExecution", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribeAIWorkbenchExecutionOutcomeCallable MonitorClient::DescribeAIWorkbenchExecutionCallable(const DescribeAIWorkbenchExecutionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIWorkbenchExecutionOutcome>>();
+    DescribeAIWorkbenchExecutionAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribeAIWorkbenchExecutionRequest&,
+        DescribeAIWorkbenchExecutionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -290,6 +690,106 @@ MonitorClient::DescribeAIWorkbenchSREDigitalTwinWorkLogListOutcomeCallable Monit
     return prom->get_future();
 }
 
+MonitorClient::DescribeAIWorkbenchSessionOutcome MonitorClient::DescribeAIWorkbenchSession(const DescribeAIWorkbenchSessionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIWorkbenchSession");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIWorkbenchSessionResponse rsp = DescribeAIWorkbenchSessionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIWorkbenchSessionOutcome(rsp);
+        else
+            return DescribeAIWorkbenchSessionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIWorkbenchSessionOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeAIWorkbenchSessionAsync(const DescribeAIWorkbenchSessionRequest& request, const DescribeAIWorkbenchSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIWorkbenchSessionRequest&;
+    using Resp = DescribeAIWorkbenchSessionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIWorkbenchSession", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribeAIWorkbenchSessionOutcomeCallable MonitorClient::DescribeAIWorkbenchSessionCallable(const DescribeAIWorkbenchSessionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIWorkbenchSessionOutcome>>();
+    DescribeAIWorkbenchSessionAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribeAIWorkbenchSessionRequest&,
+        DescribeAIWorkbenchSessionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::DescribeAIWorkbenchSkillOutcome MonitorClient::DescribeAIWorkbenchSkill(const DescribeAIWorkbenchSkillRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIWorkbenchSkill");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIWorkbenchSkillResponse rsp = DescribeAIWorkbenchSkillResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIWorkbenchSkillOutcome(rsp);
+        else
+            return DescribeAIWorkbenchSkillOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIWorkbenchSkillOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeAIWorkbenchSkillAsync(const DescribeAIWorkbenchSkillRequest& request, const DescribeAIWorkbenchSkillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIWorkbenchSkillRequest&;
+    using Resp = DescribeAIWorkbenchSkillResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIWorkbenchSkill", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribeAIWorkbenchSkillOutcomeCallable MonitorClient::DescribeAIWorkbenchSkillCallable(const DescribeAIWorkbenchSkillRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIWorkbenchSkillOutcome>>();
+    DescribeAIWorkbenchSkillAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribeAIWorkbenchSkillRequest&,
+        DescribeAIWorkbenchSkillOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MonitorClient::DescribeAlarmNotifyHistoriesOutcome MonitorClient::DescribeAlarmNotifyHistories(const DescribeAlarmNotifyHistoriesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAlarmNotifyHistories");
@@ -390,6 +890,556 @@ MonitorClient::DescribeNoticeContentTmplOutcomeCallable MonitorClient::DescribeN
     return prom->get_future();
 }
 
+MonitorClient::GetAIWorkbenchArtifactDownloadURLOutcome MonitorClient::GetAIWorkbenchArtifactDownloadURL(const GetAIWorkbenchArtifactDownloadURLRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetAIWorkbenchArtifactDownloadURL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetAIWorkbenchArtifactDownloadURLResponse rsp = GetAIWorkbenchArtifactDownloadURLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetAIWorkbenchArtifactDownloadURLOutcome(rsp);
+        else
+            return GetAIWorkbenchArtifactDownloadURLOutcome(o.GetError());
+    }
+    else
+    {
+        return GetAIWorkbenchArtifactDownloadURLOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::GetAIWorkbenchArtifactDownloadURLAsync(const GetAIWorkbenchArtifactDownloadURLRequest& request, const GetAIWorkbenchArtifactDownloadURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetAIWorkbenchArtifactDownloadURLRequest&;
+    using Resp = GetAIWorkbenchArtifactDownloadURLResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetAIWorkbenchArtifactDownloadURL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::GetAIWorkbenchArtifactDownloadURLOutcomeCallable MonitorClient::GetAIWorkbenchArtifactDownloadURLCallable(const GetAIWorkbenchArtifactDownloadURLRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetAIWorkbenchArtifactDownloadURLOutcome>>();
+    GetAIWorkbenchArtifactDownloadURLAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const GetAIWorkbenchArtifactDownloadURLRequest&,
+        GetAIWorkbenchArtifactDownloadURLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::ListAIWorkbenchAgentsOutcome MonitorClient::ListAIWorkbenchAgents(const ListAIWorkbenchAgentsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAIWorkbenchAgents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAIWorkbenchAgentsResponse rsp = ListAIWorkbenchAgentsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAIWorkbenchAgentsOutcome(rsp);
+        else
+            return ListAIWorkbenchAgentsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAIWorkbenchAgentsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ListAIWorkbenchAgentsAsync(const ListAIWorkbenchAgentsRequest& request, const ListAIWorkbenchAgentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListAIWorkbenchAgentsRequest&;
+    using Resp = ListAIWorkbenchAgentsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListAIWorkbenchAgents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::ListAIWorkbenchAgentsOutcomeCallable MonitorClient::ListAIWorkbenchAgentsCallable(const ListAIWorkbenchAgentsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListAIWorkbenchAgentsOutcome>>();
+    ListAIWorkbenchAgentsAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const ListAIWorkbenchAgentsRequest&,
+        ListAIWorkbenchAgentsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::ListAIWorkbenchArtifactsOutcome MonitorClient::ListAIWorkbenchArtifacts(const ListAIWorkbenchArtifactsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAIWorkbenchArtifacts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAIWorkbenchArtifactsResponse rsp = ListAIWorkbenchArtifactsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAIWorkbenchArtifactsOutcome(rsp);
+        else
+            return ListAIWorkbenchArtifactsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAIWorkbenchArtifactsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ListAIWorkbenchArtifactsAsync(const ListAIWorkbenchArtifactsRequest& request, const ListAIWorkbenchArtifactsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListAIWorkbenchArtifactsRequest&;
+    using Resp = ListAIWorkbenchArtifactsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListAIWorkbenchArtifacts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::ListAIWorkbenchArtifactsOutcomeCallable MonitorClient::ListAIWorkbenchArtifactsCallable(const ListAIWorkbenchArtifactsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListAIWorkbenchArtifactsOutcome>>();
+    ListAIWorkbenchArtifactsAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const ListAIWorkbenchArtifactsRequest&,
+        ListAIWorkbenchArtifactsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::ListAIWorkbenchExecutionsOutcome MonitorClient::ListAIWorkbenchExecutions(const ListAIWorkbenchExecutionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAIWorkbenchExecutions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAIWorkbenchExecutionsResponse rsp = ListAIWorkbenchExecutionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAIWorkbenchExecutionsOutcome(rsp);
+        else
+            return ListAIWorkbenchExecutionsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAIWorkbenchExecutionsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ListAIWorkbenchExecutionsAsync(const ListAIWorkbenchExecutionsRequest& request, const ListAIWorkbenchExecutionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListAIWorkbenchExecutionsRequest&;
+    using Resp = ListAIWorkbenchExecutionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListAIWorkbenchExecutions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::ListAIWorkbenchExecutionsOutcomeCallable MonitorClient::ListAIWorkbenchExecutionsCallable(const ListAIWorkbenchExecutionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListAIWorkbenchExecutionsOutcome>>();
+    ListAIWorkbenchExecutionsAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const ListAIWorkbenchExecutionsRequest&,
+        ListAIWorkbenchExecutionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::ListAIWorkbenchMCPsOutcome MonitorClient::ListAIWorkbenchMCPs(const ListAIWorkbenchMCPsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAIWorkbenchMCPs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAIWorkbenchMCPsResponse rsp = ListAIWorkbenchMCPsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAIWorkbenchMCPsOutcome(rsp);
+        else
+            return ListAIWorkbenchMCPsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAIWorkbenchMCPsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ListAIWorkbenchMCPsAsync(const ListAIWorkbenchMCPsRequest& request, const ListAIWorkbenchMCPsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListAIWorkbenchMCPsRequest&;
+    using Resp = ListAIWorkbenchMCPsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListAIWorkbenchMCPs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::ListAIWorkbenchMCPsOutcomeCallable MonitorClient::ListAIWorkbenchMCPsCallable(const ListAIWorkbenchMCPsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListAIWorkbenchMCPsOutcome>>();
+    ListAIWorkbenchMCPsAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const ListAIWorkbenchMCPsRequest&,
+        ListAIWorkbenchMCPsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::ListAIWorkbenchMessagesOutcome MonitorClient::ListAIWorkbenchMessages(const ListAIWorkbenchMessagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAIWorkbenchMessages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAIWorkbenchMessagesResponse rsp = ListAIWorkbenchMessagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAIWorkbenchMessagesOutcome(rsp);
+        else
+            return ListAIWorkbenchMessagesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAIWorkbenchMessagesOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ListAIWorkbenchMessagesAsync(const ListAIWorkbenchMessagesRequest& request, const ListAIWorkbenchMessagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListAIWorkbenchMessagesRequest&;
+    using Resp = ListAIWorkbenchMessagesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListAIWorkbenchMessages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::ListAIWorkbenchMessagesOutcomeCallable MonitorClient::ListAIWorkbenchMessagesCallable(const ListAIWorkbenchMessagesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListAIWorkbenchMessagesOutcome>>();
+    ListAIWorkbenchMessagesAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const ListAIWorkbenchMessagesRequest&,
+        ListAIWorkbenchMessagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::ListAIWorkbenchResourceInstancesOutcome MonitorClient::ListAIWorkbenchResourceInstances(const ListAIWorkbenchResourceInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAIWorkbenchResourceInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAIWorkbenchResourceInstancesResponse rsp = ListAIWorkbenchResourceInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAIWorkbenchResourceInstancesOutcome(rsp);
+        else
+            return ListAIWorkbenchResourceInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAIWorkbenchResourceInstancesOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ListAIWorkbenchResourceInstancesAsync(const ListAIWorkbenchResourceInstancesRequest& request, const ListAIWorkbenchResourceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListAIWorkbenchResourceInstancesRequest&;
+    using Resp = ListAIWorkbenchResourceInstancesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListAIWorkbenchResourceInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::ListAIWorkbenchResourceInstancesOutcomeCallable MonitorClient::ListAIWorkbenchResourceInstancesCallable(const ListAIWorkbenchResourceInstancesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListAIWorkbenchResourceInstancesOutcome>>();
+    ListAIWorkbenchResourceInstancesAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const ListAIWorkbenchResourceInstancesRequest&,
+        ListAIWorkbenchResourceInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::ListAIWorkbenchResourceMapsOutcome MonitorClient::ListAIWorkbenchResourceMaps(const ListAIWorkbenchResourceMapsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAIWorkbenchResourceMaps");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAIWorkbenchResourceMapsResponse rsp = ListAIWorkbenchResourceMapsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAIWorkbenchResourceMapsOutcome(rsp);
+        else
+            return ListAIWorkbenchResourceMapsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAIWorkbenchResourceMapsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ListAIWorkbenchResourceMapsAsync(const ListAIWorkbenchResourceMapsRequest& request, const ListAIWorkbenchResourceMapsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListAIWorkbenchResourceMapsRequest&;
+    using Resp = ListAIWorkbenchResourceMapsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListAIWorkbenchResourceMaps", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::ListAIWorkbenchResourceMapsOutcomeCallable MonitorClient::ListAIWorkbenchResourceMapsCallable(const ListAIWorkbenchResourceMapsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListAIWorkbenchResourceMapsOutcome>>();
+    ListAIWorkbenchResourceMapsAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const ListAIWorkbenchResourceMapsRequest&,
+        ListAIWorkbenchResourceMapsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::ListAIWorkbenchSessionsOutcome MonitorClient::ListAIWorkbenchSessions(const ListAIWorkbenchSessionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAIWorkbenchSessions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAIWorkbenchSessionsResponse rsp = ListAIWorkbenchSessionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAIWorkbenchSessionsOutcome(rsp);
+        else
+            return ListAIWorkbenchSessionsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAIWorkbenchSessionsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ListAIWorkbenchSessionsAsync(const ListAIWorkbenchSessionsRequest& request, const ListAIWorkbenchSessionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListAIWorkbenchSessionsRequest&;
+    using Resp = ListAIWorkbenchSessionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListAIWorkbenchSessions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::ListAIWorkbenchSessionsOutcomeCallable MonitorClient::ListAIWorkbenchSessionsCallable(const ListAIWorkbenchSessionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListAIWorkbenchSessionsOutcome>>();
+    ListAIWorkbenchSessionsAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const ListAIWorkbenchSessionsRequest&,
+        ListAIWorkbenchSessionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::ListAIWorkbenchSkillsOutcome MonitorClient::ListAIWorkbenchSkills(const ListAIWorkbenchSkillsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAIWorkbenchSkills");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAIWorkbenchSkillsResponse rsp = ListAIWorkbenchSkillsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAIWorkbenchSkillsOutcome(rsp);
+        else
+            return ListAIWorkbenchSkillsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAIWorkbenchSkillsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ListAIWorkbenchSkillsAsync(const ListAIWorkbenchSkillsRequest& request, const ListAIWorkbenchSkillsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListAIWorkbenchSkillsRequest&;
+    using Resp = ListAIWorkbenchSkillsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListAIWorkbenchSkills", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::ListAIWorkbenchSkillsOutcomeCallable MonitorClient::ListAIWorkbenchSkillsCallable(const ListAIWorkbenchSkillsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListAIWorkbenchSkillsOutcome>>();
+    ListAIWorkbenchSkillsAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const ListAIWorkbenchSkillsRequest&,
+        ListAIWorkbenchSkillsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::ListAIWorkbenchTasksOutcome MonitorClient::ListAIWorkbenchTasks(const ListAIWorkbenchTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAIWorkbenchTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAIWorkbenchTasksResponse rsp = ListAIWorkbenchTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAIWorkbenchTasksOutcome(rsp);
+        else
+            return ListAIWorkbenchTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAIWorkbenchTasksOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ListAIWorkbenchTasksAsync(const ListAIWorkbenchTasksRequest& request, const ListAIWorkbenchTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListAIWorkbenchTasksRequest&;
+    using Resp = ListAIWorkbenchTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListAIWorkbenchTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::ListAIWorkbenchTasksOutcomeCallable MonitorClient::ListAIWorkbenchTasksCallable(const ListAIWorkbenchTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListAIWorkbenchTasksOutcome>>();
+    ListAIWorkbenchTasksAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const ListAIWorkbenchTasksRequest&,
+        ListAIWorkbenchTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MonitorClient::ModifyNoticeContentTmplOutcome MonitorClient::ModifyNoticeContentTmpl(const ModifyNoticeContentTmplRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyNoticeContentTmpl");
@@ -482,6 +1532,106 @@ MonitorClient::TriggerAIWorkbenchSREDigitalTwinTaskOutcomeCallable MonitorClient
         const MonitorClient*,
         const TriggerAIWorkbenchSREDigitalTwinTaskRequest&,
         TriggerAIWorkbenchSREDigitalTwinTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::TriggerAIWorkbenchTaskOutcome MonitorClient::TriggerAIWorkbenchTask(const TriggerAIWorkbenchTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "TriggerAIWorkbenchTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TriggerAIWorkbenchTaskResponse rsp = TriggerAIWorkbenchTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TriggerAIWorkbenchTaskOutcome(rsp);
+        else
+            return TriggerAIWorkbenchTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return TriggerAIWorkbenchTaskOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::TriggerAIWorkbenchTaskAsync(const TriggerAIWorkbenchTaskRequest& request, const TriggerAIWorkbenchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const TriggerAIWorkbenchTaskRequest&;
+    using Resp = TriggerAIWorkbenchTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "TriggerAIWorkbenchTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::TriggerAIWorkbenchTaskOutcomeCallable MonitorClient::TriggerAIWorkbenchTaskCallable(const TriggerAIWorkbenchTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<TriggerAIWorkbenchTaskOutcome>>();
+    TriggerAIWorkbenchTaskAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const TriggerAIWorkbenchTaskRequest&,
+        TriggerAIWorkbenchTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::UpdateAIWorkbenchAgentOutcome MonitorClient::UpdateAIWorkbenchAgent(const UpdateAIWorkbenchAgentRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAIWorkbenchAgent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAIWorkbenchAgentResponse rsp = UpdateAIWorkbenchAgentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAIWorkbenchAgentOutcome(rsp);
+        else
+            return UpdateAIWorkbenchAgentOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAIWorkbenchAgentOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UpdateAIWorkbenchAgentAsync(const UpdateAIWorkbenchAgentRequest& request, const UpdateAIWorkbenchAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateAIWorkbenchAgentRequest&;
+    using Resp = UpdateAIWorkbenchAgentResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateAIWorkbenchAgent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::UpdateAIWorkbenchAgentOutcomeCallable MonitorClient::UpdateAIWorkbenchAgentCallable(const UpdateAIWorkbenchAgentRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateAIWorkbenchAgentOutcome>>();
+    UpdateAIWorkbenchAgentAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const UpdateAIWorkbenchAgentRequest&,
+        UpdateAIWorkbenchAgentOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool CreateSnapshotHasBeenSet() const;
 
                     /**
-                     * 获取<p>快照名称，CreateSnapshot为true时有效<br>入参限制：最长128个字符</p>
-                     * @return SnapshotName <p>快照名称，CreateSnapshot为true时有效<br>入参限制：最长128个字符</p>
+                     * 获取<p>快照名称，CreateSnapshot为true时有效入参限制：最长60个字符超长自动截断</p>
+                     * @return SnapshotName <p>快照名称，CreateSnapshot为true时有效入参限制：最长60个字符超长自动截断</p>
                      * 
                      */
                     std::string GetSnapshotName() const;
 
                     /**
-                     * 设置<p>快照名称，CreateSnapshot为true时有效<br>入参限制：最长128个字符</p>
-                     * @param _snapshotName <p>快照名称，CreateSnapshot为true时有效<br>入参限制：最长128个字符</p>
+                     * 设置<p>快照名称，CreateSnapshot为true时有效入参限制：最长60个字符超长自动截断</p>
+                     * @param _snapshotName <p>快照名称，CreateSnapshot为true时有效入参限制：最长60个字符超长自动截断</p>
                      * 
                      */
                     void SetSnapshotName(const std::string& _snapshotName);
@@ -190,7 +190,7 @@ namespace TencentCloud
                     bool m_createSnapshotHasBeenSet;
 
                     /**
-                     * <p>快照名称，CreateSnapshot为true时有效<br>入参限制：最长128个字符</p>
+                     * <p>快照名称，CreateSnapshot为true时有效入参限制：最长60个字符超长自动截断</p>
                      */
                     std::string m_snapshotName;
                     bool m_snapshotNameHasBeenSet;

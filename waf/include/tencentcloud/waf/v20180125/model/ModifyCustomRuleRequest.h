@@ -88,14 +88,18 @@ namespace TencentCloud
 
                     /**
                      * 获取编辑的规则名称
+入参限制：1-128个字符，不允许特殊字符
                      * @return RuleName 编辑的规则名称
+入参限制：1-128个字符，不允许特殊字符
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置编辑的规则名称
+入参限制：1-128个字符，不允许特殊字符
                      * @param _ruleName 编辑的规则名称
+入参限制：1-128个字符，不允许特殊字符
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -108,15 +112,27 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
-                     * @return RuleAction 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
+                     * 获取动作类型
+取值说明：1-阻断，2-人机识别（滑块），3-观察，4-重定向，5-JS校验，6-人机识别（无感验证-拦截），7-人机识别（无感验证-观察），8-语音验证码
+入参限制：必填，取值范围为1-8
+约束条件：当RuleAction为4（重定向）时，Redirect参数不能为空
+                     * @return RuleAction 动作类型
+取值说明：1-阻断，2-人机识别（滑块），3-观察，4-重定向，5-JS校验，6-人机识别（无感验证-拦截），7-人机识别（无感验证-观察），8-语音验证码
+入参限制：必填，取值范围为1-8
+约束条件：当RuleAction为4（重定向）时，Redirect参数不能为空
                      * 
                      */
                     std::string GetRuleAction() const;
 
                     /**
-                     * 设置动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
-                     * @param _ruleAction 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
+                     * 设置动作类型
+取值说明：1-阻断，2-人机识别（滑块），3-观察，4-重定向，5-JS校验，6-人机识别（无感验证-拦截），7-人机识别（无感验证-观察），8-语音验证码
+入参限制：必填，取值范围为1-8
+约束条件：当RuleAction为4（重定向）时，Redirect参数不能为空
+                     * @param _ruleAction 动作类型
+取值说明：1-阻断，2-人机识别（滑块），3-观察，4-重定向，5-JS校验，6-人机识别（无感验证-拦截），7-人机识别（无感验证-观察），8-语音验证码
+入参限制：必填，取值范围为1-8
+约束条件：当RuleAction为4（重定向）时，Redirect参数不能为空
                      * 
                      */
                     void SetRuleAction(const std::string& _ruleAction);
@@ -373,14 +389,22 @@ namespace TencentCloud
 
                     /**
                      * 获取匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+默认值：and
+入参限制：不区分大小写，仅支持and或or
                      * @return LogicalOp 匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+默认值：and
+入参限制：不区分大小写，仅支持and或or
                      * 
                      */
                     std::string GetLogicalOp() const;
 
                     /**
                      * 设置匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+默认值：and
+入参限制：不区分大小写，仅支持and或or
                      * @param _logicalOp 匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+默认值：and
+入参限制：不区分大小写，仅支持and或or
                      * 
                      */
                     void SetLogicalOp(const std::string& _logicalOp);
@@ -393,15 +417,23 @@ namespace TencentCloud
                     bool LogicalOpHasBeenSet() const;
 
                     /**
-                     * 获取规则生效比例
-                     * @return ActionRatio 规则生效比例
+                     * 获取动作灰度比例，即规则命中后执行动作的流量百分比
+取值范围：1-100
+默认值：100（全量生效）
+                     * @return ActionRatio 动作灰度比例，即规则命中后执行动作的流量百分比
+取值范围：1-100
+默认值：100（全量生效）
                      * 
                      */
                     uint64_t GetActionRatio() const;
 
                     /**
-                     * 设置规则生效比例
-                     * @param _actionRatio 规则生效比例
+                     * 设置动作灰度比例，即规则命中后执行动作的流量百分比
+取值范围：1-100
+默认值：100（全量生效）
+                     * @param _actionRatio 动作灰度比例，即规则命中后执行动作的流量百分比
+取值范围：1-100
+默认值：100（全量生效）
                      * 
                      */
                     void SetActionRatio(const uint64_t& _actionRatio);
@@ -429,12 +461,16 @@ namespace TencentCloud
 
                     /**
                      * 编辑的规则名称
+入参限制：1-128个字符，不允许特殊字符
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
+                     * 动作类型
+取值说明：1-阻断，2-人机识别（滑块），3-观察，4-重定向，5-JS校验，6-人机识别（无感验证-拦截），7-人机识别（无感验证-观察），8-语音验证码
+入参限制：必填，取值范围为1-8
+约束条件：当RuleAction为4（重定向）时，Redirect参数不能为空
                      */
                     std::string m_ruleAction;
                     bool m_ruleActionHasBeenSet;
@@ -510,12 +546,16 @@ namespace TencentCloud
 
                     /**
                      * 匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+默认值：and
+入参限制：不区分大小写，仅支持and或or
                      */
                     std::string m_logicalOp;
                     bool m_logicalOpHasBeenSet;
 
                     /**
-                     * 规则生效比例
+                     * 动作灰度比例，即规则命中后执行动作的流量百分比
+取值范围：1-100
+默认值：100（全量生效）
                      */
                     uint64_t m_actionRatio;
                     bool m_actionRatioHasBeenSet;

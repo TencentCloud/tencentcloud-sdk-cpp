@@ -290,6 +290,56 @@ MonitorClient::CleanGrafanaInstanceOutcomeCallable MonitorClient::CleanGrafanaIn
     return prom->get_future();
 }
 
+MonitorClient::CreateAlarmHistoryShieldOutcome MonitorClient::CreateAlarmHistoryShield(const CreateAlarmHistoryShieldRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAlarmHistoryShield");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAlarmHistoryShieldResponse rsp = CreateAlarmHistoryShieldResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAlarmHistoryShieldOutcome(rsp);
+        else
+            return CreateAlarmHistoryShieldOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAlarmHistoryShieldOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreateAlarmHistoryShieldAsync(const CreateAlarmHistoryShieldRequest& request, const CreateAlarmHistoryShieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAlarmHistoryShieldRequest&;
+    using Resp = CreateAlarmHistoryShieldResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAlarmHistoryShield", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::CreateAlarmHistoryShieldOutcomeCallable MonitorClient::CreateAlarmHistoryShieldCallable(const CreateAlarmHistoryShieldRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAlarmHistoryShieldOutcome>>();
+    CreateAlarmHistoryShieldAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const CreateAlarmHistoryShieldRequest&,
+        CreateAlarmHistoryShieldOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MonitorClient::CreateAlarmNoticeOutcome MonitorClient::CreateAlarmNotice(const CreateAlarmNoticeRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAlarmNotice");
@@ -1490,6 +1540,56 @@ MonitorClient::CreateSSOAccountOutcomeCallable MonitorClient::CreateSSOAccountCa
     return prom->get_future();
 }
 
+MonitorClient::DeleteAlarmHistoryShieldsOutcome MonitorClient::DeleteAlarmHistoryShields(const DeleteAlarmHistoryShieldsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAlarmHistoryShields");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAlarmHistoryShieldsResponse rsp = DeleteAlarmHistoryShieldsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAlarmHistoryShieldsOutcome(rsp);
+        else
+            return DeleteAlarmHistoryShieldsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAlarmHistoryShieldsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DeleteAlarmHistoryShieldsAsync(const DeleteAlarmHistoryShieldsRequest& request, const DeleteAlarmHistoryShieldsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAlarmHistoryShieldsRequest&;
+    using Resp = DeleteAlarmHistoryShieldsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAlarmHistoryShields", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DeleteAlarmHistoryShieldsOutcomeCallable MonitorClient::DeleteAlarmHistoryShieldsCallable(const DeleteAlarmHistoryShieldsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAlarmHistoryShieldsOutcome>>();
+    DeleteAlarmHistoryShieldsAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DeleteAlarmHistoryShieldsRequest&,
+        DeleteAlarmHistoryShieldsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MonitorClient::DeleteAlarmNoticesOutcome MonitorClient::DeleteAlarmNotices(const DeleteAlarmNoticesRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAlarmNotices");
@@ -2682,6 +2782,56 @@ MonitorClient::DescribeAlarmHistoriesOutcomeCallable MonitorClient::DescribeAlar
         const MonitorClient*,
         const DescribeAlarmHistoriesRequest&,
         DescribeAlarmHistoriesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::DescribeAlarmHistoryShieldOutcome MonitorClient::DescribeAlarmHistoryShield(const DescribeAlarmHistoryShieldRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAlarmHistoryShield");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAlarmHistoryShieldResponse rsp = DescribeAlarmHistoryShieldResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAlarmHistoryShieldOutcome(rsp);
+        else
+            return DescribeAlarmHistoryShieldOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAlarmHistoryShieldOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeAlarmHistoryShieldAsync(const DescribeAlarmHistoryShieldRequest& request, const DescribeAlarmHistoryShieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAlarmHistoryShieldRequest&;
+    using Resp = DescribeAlarmHistoryShieldResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAlarmHistoryShield", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribeAlarmHistoryShieldOutcomeCallable MonitorClient::DescribeAlarmHistoryShieldCallable(const DescribeAlarmHistoryShieldRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAlarmHistoryShieldOutcome>>();
+    DescribeAlarmHistoryShieldAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribeAlarmHistoryShieldRequest&,
+        DescribeAlarmHistoryShieldOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -6682,6 +6832,56 @@ MonitorClient::InstallPluginsOutcomeCallable MonitorClient::InstallPluginsCallab
         const MonitorClient*,
         const InstallPluginsRequest&,
         InstallPluginsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::ModifyAlarmHistoryShieldOutcome MonitorClient::ModifyAlarmHistoryShield(const ModifyAlarmHistoryShieldRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAlarmHistoryShield");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAlarmHistoryShieldResponse rsp = ModifyAlarmHistoryShieldResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAlarmHistoryShieldOutcome(rsp);
+        else
+            return ModifyAlarmHistoryShieldOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAlarmHistoryShieldOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ModifyAlarmHistoryShieldAsync(const ModifyAlarmHistoryShieldRequest& request, const ModifyAlarmHistoryShieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyAlarmHistoryShieldRequest&;
+    using Resp = ModifyAlarmHistoryShieldResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyAlarmHistoryShield", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::ModifyAlarmHistoryShieldOutcomeCallable MonitorClient::ModifyAlarmHistoryShieldCallable(const ModifyAlarmHistoryShieldRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyAlarmHistoryShieldOutcome>>();
+    ModifyAlarmHistoryShieldAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const ModifyAlarmHistoryShieldRequest&,
+        ModifyAlarmHistoryShieldOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -36,7 +36,8 @@ DescribeTableContentPreviewRequest::DescribeTableContentPreviewRequest() :
     m_resourceGroupIdHasBeenSet(false),
     m_sqlHasBeenSet(false),
     m_engineIdHasBeenSet(false),
-    m_engineTypeDetailHasBeenSet(false)
+    m_engineTypeDetailHasBeenSet(false),
+    m_datasourceIdHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,14 @@ string DescribeTableContentPreviewRequest::ToJsonString() const
         string key = "EngineTypeDetail";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_engineTypeDetail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_datasourceId, allocator);
     }
 
 
@@ -389,6 +398,22 @@ void DescribeTableContentPreviewRequest::SetEngineTypeDetail(const string& _engi
 bool DescribeTableContentPreviewRequest::EngineTypeDetailHasBeenSet() const
 {
     return m_engineTypeDetailHasBeenSet;
+}
+
+uint64_t DescribeTableContentPreviewRequest::GetDatasourceId() const
+{
+    return m_datasourceId;
+}
+
+void DescribeTableContentPreviewRequest::SetDatasourceId(const uint64_t& _datasourceId)
+{
+    m_datasourceId = _datasourceId;
+    m_datasourceIdHasBeenSet = true;
+}
+
+bool DescribeTableContentPreviewRequest::DatasourceIdHasBeenSet() const
+{
+    return m_datasourceIdHasBeenSet;
 }
 
 

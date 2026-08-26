@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeDspmIdentifyRuleDetailRequest::DescribeDspmIdentifyRuleDetailRequest() :
     m_idHasBeenSet(false),
-    m_memberIdHasBeenSet(false)
+    m_memberIdHasBeenSet(false),
+    m_operationSourceHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,14 @@ string DescribeDspmIdentifyRuleDetailRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_operationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operationSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -94,6 +103,22 @@ void DescribeDspmIdentifyRuleDetailRequest::SetMemberId(const vector<string>& _m
 bool DescribeDspmIdentifyRuleDetailRequest::MemberIdHasBeenSet() const
 {
     return m_memberIdHasBeenSet;
+}
+
+string DescribeDspmIdentifyRuleDetailRequest::GetOperationSource() const
+{
+    return m_operationSource;
+}
+
+void DescribeDspmIdentifyRuleDetailRequest::SetOperationSource(const string& _operationSource)
+{
+    m_operationSource = _operationSource;
+    m_operationSourceHasBeenSet = true;
+}
+
+bool DescribeDspmIdentifyRuleDetailRequest::OperationSourceHasBeenSet() const
+{
+    return m_operationSourceHasBeenSet;
 }
 
 

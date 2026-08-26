@@ -84,6 +84,48 @@ namespace TencentCloud
                      */
                     bool SampleRateSetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>appid；传 DefaultSampleRate 时必填；只修改已有桶时可选</p>
+                     * @return TargetAppId <p>appid；传 DefaultSampleRate 时必填；只修改已有桶时可选</p>
+                     * 
+                     */
+                    uint64_t GetTargetAppId() const;
+
+                    /**
+                     * 设置<p>appid；传 DefaultSampleRate 时必填；只修改已有桶时可选</p>
+                     * @param _targetAppId <p>appid；传 DefaultSampleRate 时必填；只修改已有桶时可选</p>
+                     * 
+                     */
+                    void SetTargetAppId(const uint64_t& _targetAppId);
+
+                    /**
+                     * 判断参数 TargetAppId 是否已赋值
+                     * @return TargetAppId 是否已赋值
+                     * 
+                     */
+                    bool TargetAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>传入时修改 TargetAppId 的新增桶默认值； 不传时不修改默认值</p><p>取值范围：[0.001, 1]</p>
+                     * @return DefaultSampleRate <p>传入时修改 TargetAppId 的新增桶默认值； 不传时不修改默认值</p><p>取值范围：[0.001, 1]</p>
+                     * 
+                     */
+                    double GetDefaultSampleRate() const;
+
+                    /**
+                     * 设置<p>传入时修改 TargetAppId 的新增桶默认值； 不传时不修改默认值</p><p>取值范围：[0.001, 1]</p>
+                     * @param _defaultSampleRate <p>传入时修改 TargetAppId 的新增桶默认值； 不传时不修改默认值</p><p>取值范围：[0.001, 1]</p>
+                     * 
+                     */
+                    void SetDefaultSampleRate(const double& _defaultSampleRate);
+
+                    /**
+                     * 判断参数 DefaultSampleRate 是否已赋值
+                     * @return DefaultSampleRate 是否已赋值
+                     * 
+                     */
+                    bool DefaultSampleRateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +139,18 @@ namespace TencentCloud
                      */
                     std::vector<double> m_sampleRateSet;
                     bool m_sampleRateSetHasBeenSet;
+
+                    /**
+                     * <p>appid；传 DefaultSampleRate 时必填；只修改已有桶时可选</p>
+                     */
+                    uint64_t m_targetAppId;
+                    bool m_targetAppIdHasBeenSet;
+
+                    /**
+                     * <p>传入时修改 TargetAppId 的新增桶默认值； 不传时不修改默认值</p><p>取值范围：[0.001, 1]</p>
+                     */
+                    double m_defaultSampleRate;
+                    bool m_defaultSampleRateHasBeenSet;
 
                 };
             }

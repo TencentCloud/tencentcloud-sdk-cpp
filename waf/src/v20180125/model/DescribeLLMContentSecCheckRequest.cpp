@@ -34,7 +34,8 @@ DescribeLLMContentSecCheckRequest::DescribeLLMContentSecCheckRequest() :
     m_toolNameHasBeenSet(false),
     m_toolArgsHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_intentContentHasBeenSet(false)
+    m_intentContentHasBeenSet(false),
+    m_clientIPHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,14 @@ string DescribeLLMContentSecCheckRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_intentContent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_clientIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientIP";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clientIP.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -340,6 +349,22 @@ void DescribeLLMContentSecCheckRequest::SetIntentContent(const IntentContent& _i
 bool DescribeLLMContentSecCheckRequest::IntentContentHasBeenSet() const
 {
     return m_intentContentHasBeenSet;
+}
+
+string DescribeLLMContentSecCheckRequest::GetClientIP() const
+{
+    return m_clientIP;
+}
+
+void DescribeLLMContentSecCheckRequest::SetClientIP(const string& _clientIP)
+{
+    m_clientIP = _clientIP;
+    m_clientIPHasBeenSet = true;
+}
+
+bool DescribeLLMContentSecCheckRequest::ClientIPHasBeenSet() const
+{
+    return m_clientIPHasBeenSet;
 }
 
 

@@ -33,7 +33,8 @@ MediaTranscodeItem::MediaTranscodeItem() :
     m_md5HasBeenSet(false),
     m_audioStreamSetHasBeenSet(false),
     m_videoStreamSetHasBeenSet(false),
-    m_callBackExtInfoHasBeenSet(false)
+    m_callBackExtInfoHasBeenSet(false),
+    m_usageHasBeenSet(false)
 {
 }
 
@@ -199,6 +200,23 @@ CoreInternalOutcome MediaTranscodeItem::Deserialize(const rapidjson::Value &valu
         m_callBackExtInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("Usage") && !value["Usage"].IsNull())
+    {
+        if (!value["Usage"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaTranscodeItem.Usage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_usage.Deserialize(value["Usage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_usageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -323,6 +341,15 @@ void MediaTranscodeItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "CallBackExtInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_callBackExtInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_usageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Usage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_usage.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -534,5 +561,21 @@ void MediaTranscodeItem::SetCallBackExtInfo(const string& _callBackExtInfo)
 bool MediaTranscodeItem::CallBackExtInfoHasBeenSet() const
 {
     return m_callBackExtInfoHasBeenSet;
+}
+
+MediaUsageItem MediaTranscodeItem::GetUsage() const
+{
+    return m_usage;
+}
+
+void MediaTranscodeItem::SetUsage(const MediaUsageItem& _usage)
+{
+    m_usage = _usage;
+    m_usageHasBeenSet = true;
+}
+
+bool MediaTranscodeItem::UsageHasBeenSet() const
+{
+    return m_usageHasBeenSet;
 }
 

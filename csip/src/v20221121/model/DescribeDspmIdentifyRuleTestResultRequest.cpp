@@ -28,7 +28,8 @@ DescribeDspmIdentifyRuleTestResultRequest::DescribeDspmIdentifyRuleTestResultReq
     m_ruleIdHasBeenSet(false),
     m_memberIdHasBeenSet(false),
     m_structuredTestContentHasBeenSet(false),
-    m_unStructuredTestContentHasBeenSet(false)
+    m_unStructuredTestContentHasBeenSet(false),
+    m_operationSourceHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,14 @@ string DescribeDspmIdentifyRuleTestResultRequest::ToJsonString() const
         string key = "UnStructuredTestContent";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_unStructuredTestContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operationSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -201,6 +210,22 @@ void DescribeDspmIdentifyRuleTestResultRequest::SetUnStructuredTestContent(const
 bool DescribeDspmIdentifyRuleTestResultRequest::UnStructuredTestContentHasBeenSet() const
 {
     return m_unStructuredTestContentHasBeenSet;
+}
+
+string DescribeDspmIdentifyRuleTestResultRequest::GetOperationSource() const
+{
+    return m_operationSource;
+}
+
+void DescribeDspmIdentifyRuleTestResultRequest::SetOperationSource(const string& _operationSource)
+{
+    m_operationSource = _operationSource;
+    m_operationSourceHasBeenSet = true;
+}
+
+bool DescribeDspmIdentifyRuleTestResultRequest::OperationSourceHasBeenSet() const
+{
+    return m_operationSourceHasBeenSet;
 }
 
 

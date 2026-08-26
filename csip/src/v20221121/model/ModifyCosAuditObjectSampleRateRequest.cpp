@@ -24,7 +24,9 @@ using namespace std;
 
 ModifyCosAuditObjectSampleRateRequest::ModifyCosAuditObjectSampleRateRequest() :
     m_bucketIdSetHasBeenSet(false),
-    m_sampleRateSetHasBeenSet(false)
+    m_sampleRateSetHasBeenSet(false),
+    m_targetAppIdHasBeenSet(false),
+    m_defaultSampleRateHasBeenSet(false)
 {
 }
 
@@ -59,6 +61,22 @@ string ModifyCosAuditObjectSampleRateRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
         }
+    }
+
+    if (m_targetAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_targetAppId, allocator);
+    }
+
+    if (m_defaultSampleRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultSampleRate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_defaultSampleRate, allocator);
     }
 
 
@@ -99,6 +117,38 @@ void ModifyCosAuditObjectSampleRateRequest::SetSampleRateSet(const vector<double
 bool ModifyCosAuditObjectSampleRateRequest::SampleRateSetHasBeenSet() const
 {
     return m_sampleRateSetHasBeenSet;
+}
+
+uint64_t ModifyCosAuditObjectSampleRateRequest::GetTargetAppId() const
+{
+    return m_targetAppId;
+}
+
+void ModifyCosAuditObjectSampleRateRequest::SetTargetAppId(const uint64_t& _targetAppId)
+{
+    m_targetAppId = _targetAppId;
+    m_targetAppIdHasBeenSet = true;
+}
+
+bool ModifyCosAuditObjectSampleRateRequest::TargetAppIdHasBeenSet() const
+{
+    return m_targetAppIdHasBeenSet;
+}
+
+double ModifyCosAuditObjectSampleRateRequest::GetDefaultSampleRate() const
+{
+    return m_defaultSampleRate;
+}
+
+void ModifyCosAuditObjectSampleRateRequest::SetDefaultSampleRate(const double& _defaultSampleRate)
+{
+    m_defaultSampleRate = _defaultSampleRate;
+    m_defaultSampleRateHasBeenSet = true;
+}
+
+bool ModifyCosAuditObjectSampleRateRequest::DefaultSampleRateHasBeenSet() const
+{
+    return m_defaultSampleRateHasBeenSet;
 }
 
 

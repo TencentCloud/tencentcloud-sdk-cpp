@@ -29,7 +29,8 @@ CreateAIAgentCallRequest::CreateAIAgentCallRequest() :
     m_callersHasBeenSet(false),
     m_promptVariablesHasBeenSet(false),
     m_variablesHasBeenSet(false),
-    m_maxRingTimeoutSecondHasBeenSet(false)
+    m_maxRingTimeoutSecondHasBeenSet(false),
+    m_acquireTimeoutSecondHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,14 @@ string CreateAIAgentCallRequest::ToJsonString() const
         string key = "MaxRingTimeoutSecond";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxRingTimeoutSecond, allocator);
+    }
+
+    if (m_acquireTimeoutSecondHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AcquireTimeoutSecond";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_acquireTimeoutSecond, allocator);
     }
 
 
@@ -233,6 +242,22 @@ void CreateAIAgentCallRequest::SetMaxRingTimeoutSecond(const int64_t& _maxRingTi
 bool CreateAIAgentCallRequest::MaxRingTimeoutSecondHasBeenSet() const
 {
     return m_maxRingTimeoutSecondHasBeenSet;
+}
+
+uint64_t CreateAIAgentCallRequest::GetAcquireTimeoutSecond() const
+{
+    return m_acquireTimeoutSecond;
+}
+
+void CreateAIAgentCallRequest::SetAcquireTimeoutSecond(const uint64_t& _acquireTimeoutSecond)
+{
+    m_acquireTimeoutSecond = _acquireTimeoutSecond;
+    m_acquireTimeoutSecondHasBeenSet = true;
+}
+
+bool CreateAIAgentCallRequest::AcquireTimeoutSecondHasBeenSet() const
+{
+    return m_acquireTimeoutSecondHasBeenSet;
 }
 
 

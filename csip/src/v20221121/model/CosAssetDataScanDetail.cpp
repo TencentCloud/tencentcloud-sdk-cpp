@@ -25,7 +25,10 @@ CosAssetDataScanDetail::CosAssetDataScanDetail() :
     m_progressHasBeenSet(false),
     m_latestScanTimeHasBeenSet(false),
     m_errorInfoHasBeenSet(false),
-    m_categoryDetailsHasBeenSet(false)
+    m_categoryDetailsHasBeenSet(false),
+    m_ruleDetailsHasBeenSet(false),
+    m_levelDetailsHasBeenSet(false),
+    m_isFullScannedHasBeenSet(false)
 {
 }
 
@@ -94,6 +97,56 @@ CoreInternalOutcome CosAssetDataScanDetail::Deserialize(const rapidjson::Value &
         m_categoryDetailsHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleDetails") && !value["RuleDetails"].IsNull())
+    {
+        if (!value["RuleDetails"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CosAssetDataScanDetail.RuleDetails` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RuleDetails"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CosIdentifyRuleDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ruleDetails.push_back(item);
+        }
+        m_ruleDetailsHasBeenSet = true;
+    }
+
+    if (value.HasMember("LevelDetails") && !value["LevelDetails"].IsNull())
+    {
+        if (!value["LevelDetails"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CosAssetDataScanDetail.LevelDetails` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["LevelDetails"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CosIdentifyLevelDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_levelDetails.push_back(item);
+        }
+        m_levelDetailsHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsFullScanned") && !value["IsFullScanned"].IsNull())
+    {
+        if (!value["IsFullScanned"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosAssetDataScanDetail.IsFullScanned` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isFullScanned = value["IsFullScanned"].GetBool();
+        m_isFullScannedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -146,6 +199,44 @@ void CosAssetDataScanDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Do
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_ruleDetailsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleDetails";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ruleDetails.begin(); itr != m_ruleDetails.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_levelDetailsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LevelDetails";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_levelDetails.begin(); itr != m_levelDetails.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_isFullScannedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsFullScanned";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isFullScanned, allocator);
     }
 
 }
@@ -229,5 +320,53 @@ void CosAssetDataScanDetail::SetCategoryDetails(const vector<CosIdentifyCategory
 bool CosAssetDataScanDetail::CategoryDetailsHasBeenSet() const
 {
     return m_categoryDetailsHasBeenSet;
+}
+
+vector<CosIdentifyRuleDetail> CosAssetDataScanDetail::GetRuleDetails() const
+{
+    return m_ruleDetails;
+}
+
+void CosAssetDataScanDetail::SetRuleDetails(const vector<CosIdentifyRuleDetail>& _ruleDetails)
+{
+    m_ruleDetails = _ruleDetails;
+    m_ruleDetailsHasBeenSet = true;
+}
+
+bool CosAssetDataScanDetail::RuleDetailsHasBeenSet() const
+{
+    return m_ruleDetailsHasBeenSet;
+}
+
+vector<CosIdentifyLevelDetail> CosAssetDataScanDetail::GetLevelDetails() const
+{
+    return m_levelDetails;
+}
+
+void CosAssetDataScanDetail::SetLevelDetails(const vector<CosIdentifyLevelDetail>& _levelDetails)
+{
+    m_levelDetails = _levelDetails;
+    m_levelDetailsHasBeenSet = true;
+}
+
+bool CosAssetDataScanDetail::LevelDetailsHasBeenSet() const
+{
+    return m_levelDetailsHasBeenSet;
+}
+
+bool CosAssetDataScanDetail::GetIsFullScanned() const
+{
+    return m_isFullScanned;
+}
+
+void CosAssetDataScanDetail::SetIsFullScanned(const bool& _isFullScanned)
+{
+    m_isFullScanned = _isFullScanned;
+    m_isFullScannedHasBeenSet = true;
+}
+
+bool CosAssetDataScanDetail::IsFullScannedHasBeenSet() const
+{
+    return m_isFullScannedHasBeenSet;
 }
 

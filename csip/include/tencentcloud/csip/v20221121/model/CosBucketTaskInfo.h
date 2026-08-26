@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取appid
-                     * @return AppId appid
+                     * 获取<p>appid</p>
+                     * @return AppId <p>appid</p>
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置appid
-                     * @param _appId appid
+                     * 设置<p>appid</p>
+                     * @param _appId <p>appid</p>
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取存储桶名
-                     * @return BucketName 存储桶名
+                     * 获取<p>存储桶名</p>
+                     * @return BucketName <p>存储桶名</p>
                      * 
                      */
                     std::string GetBucketName() const;
 
                     /**
-                     * 设置存储桶名
-                     * @param _bucketName 存储桶名
+                     * 设置<p>存储桶名</p>
+                     * @param _bucketName <p>存储桶名</p>
                      * 
                      */
                     void SetBucketName(const std::string& _bucketName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool BucketNameHasBeenSet() const;
 
                     /**
-                     * 获取任务id
-                     * @return TaskId 任务id
+                     * 获取<p>任务id</p>
+                     * @return TaskId <p>任务id</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务id
-                     * @param _taskId 任务id
+                     * 设置<p>任务id</p>
+                     * @param _taskId <p>任务id</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取最后一次扫描时间
-                     * @return LastScanTime 最后一次扫描时间
+                     * 获取<p>最后一次扫描时间</p>
+                     * @return LastScanTime <p>最后一次扫描时间</p>
                      * 
                      */
                     int64_t GetLastScanTime() const;
 
                     /**
-                     * 设置最后一次扫描时间
-                     * @param _lastScanTime 最后一次扫描时间
+                     * 设置<p>最后一次扫描时间</p>
+                     * @param _lastScanTime <p>最后一次扫描时间</p>
                      * 
                      */
                     void SetLastScanTime(const int64_t& _lastScanTime);
@@ -130,31 +130,85 @@ namespace TencentCloud
                      */
                     bool LastScanTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>识别文件数量</p>
+                     * @return IdentifyFileCount <p>识别文件数量</p>
+                     * 
+                     */
+                    uint64_t GetIdentifyFileCount() const;
+
+                    /**
+                     * 设置<p>识别文件数量</p>
+                     * @param _identifyFileCount <p>识别文件数量</p>
+                     * 
+                     */
+                    void SetIdentifyFileCount(const uint64_t& _identifyFileCount);
+
+                    /**
+                     * 判断参数 IdentifyFileCount 是否已赋值
+                     * @return IdentifyFileCount 是否已赋值
+                     * 
+                     */
+                    bool IdentifyFileCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>敏感文件数量</p>
+                     * @return SensitiveFileCount <p>敏感文件数量</p>
+                     * 
+                     */
+                    uint64_t GetSensitiveFileCount() const;
+
+                    /**
+                     * 设置<p>敏感文件数量</p>
+                     * @param _sensitiveFileCount <p>敏感文件数量</p>
+                     * 
+                     */
+                    void SetSensitiveFileCount(const uint64_t& _sensitiveFileCount);
+
+                    /**
+                     * 判断参数 SensitiveFileCount 是否已赋值
+                     * @return SensitiveFileCount 是否已赋值
+                     * 
+                     */
+                    bool SensitiveFileCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * appid
+                     * <p>appid</p>
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 存储桶名
+                     * <p>存储桶名</p>
                      */
                     std::string m_bucketName;
                     bool m_bucketNameHasBeenSet;
 
                     /**
-                     * 任务id
+                     * <p>任务id</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 最后一次扫描时间
+                     * <p>最后一次扫描时间</p>
                      */
                     int64_t m_lastScanTime;
                     bool m_lastScanTimeHasBeenSet;
+
+                    /**
+                     * <p>识别文件数量</p>
+                     */
+                    uint64_t m_identifyFileCount;
+                    bool m_identifyFileCountHasBeenSet;
+
+                    /**
+                     * <p>敏感文件数量</p>
+                     */
+                    uint64_t m_sensitiveFileCount;
+                    bool m_sensitiveFileCountHasBeenSet;
 
                 };
             }

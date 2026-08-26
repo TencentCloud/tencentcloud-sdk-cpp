@@ -23,7 +23,10 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Csip::V20221121::Model;
 using namespace std;
 
-ModifyCosAuditObjectSampleRateResponse::ModifyCosAuditObjectSampleRateResponse()
+ModifyCosAuditObjectSampleRateResponse::ModifyCosAuditObjectSampleRateResponse() :
+    m_defaultSampleRateUpdatedHasBeenSet(false),
+    m_defaultSampleRateHasBeenSet(false),
+    m_updatedBucketCountHasBeenSet(false)
 {
 }
 
@@ -61,6 +64,36 @@ CoreInternalOutcome ModifyCosAuditObjectSampleRateResponse::Deserialize(const st
     }
 
 
+    if (rsp.HasMember("DefaultSampleRateUpdated") && !rsp["DefaultSampleRateUpdated"].IsNull())
+    {
+        if (!rsp["DefaultSampleRateUpdated"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DefaultSampleRateUpdated` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultSampleRateUpdated = rsp["DefaultSampleRateUpdated"].GetBool();
+        m_defaultSampleRateUpdatedHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DefaultSampleRate") && !rsp["DefaultSampleRate"].IsNull())
+    {
+        if (!rsp["DefaultSampleRate"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `DefaultSampleRate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultSampleRate = rsp["DefaultSampleRate"].GetDouble();
+        m_defaultSampleRateHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("UpdatedBucketCount") && !rsp["UpdatedBucketCount"].IsNull())
+    {
+        if (!rsp["UpdatedBucketCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdatedBucketCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_updatedBucketCount = rsp["UpdatedBucketCount"].GetUint64();
+        m_updatedBucketCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +103,30 @@ string ModifyCosAuditObjectSampleRateResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_defaultSampleRateUpdatedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultSampleRateUpdated";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defaultSampleRateUpdated, allocator);
+    }
+
+    if (m_defaultSampleRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultSampleRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defaultSampleRate, allocator);
+    }
+
+    if (m_updatedBucketCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdatedBucketCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_updatedBucketCount, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +139,35 @@ string ModifyCosAuditObjectSampleRateResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+bool ModifyCosAuditObjectSampleRateResponse::GetDefaultSampleRateUpdated() const
+{
+    return m_defaultSampleRateUpdated;
+}
+
+bool ModifyCosAuditObjectSampleRateResponse::DefaultSampleRateUpdatedHasBeenSet() const
+{
+    return m_defaultSampleRateUpdatedHasBeenSet;
+}
+
+double ModifyCosAuditObjectSampleRateResponse::GetDefaultSampleRate() const
+{
+    return m_defaultSampleRate;
+}
+
+bool ModifyCosAuditObjectSampleRateResponse::DefaultSampleRateHasBeenSet() const
+{
+    return m_defaultSampleRateHasBeenSet;
+}
+
+uint64_t ModifyCosAuditObjectSampleRateResponse::GetUpdatedBucketCount() const
+{
+    return m_updatedBucketCount;
+}
+
+bool ModifyCosAuditObjectSampleRateResponse::UpdatedBucketCountHasBeenSet() const
+{
+    return m_updatedBucketCountHasBeenSet;
+}
 
 

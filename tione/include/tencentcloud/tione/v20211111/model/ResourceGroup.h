@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源组id
-                     * @return ResourceGroupId 资源组id
+                     * 获取<p>资源组id</p>
+                     * @return ResourceGroupId <p>资源组id</p>
                      * 
                      */
                     std::string GetResourceGroupId() const;
 
                     /**
-                     * 设置资源组id
-                     * @param _resourceGroupId 资源组id
+                     * 设置<p>资源组id</p>
+                     * @param _resourceGroupId <p>资源组id</p>
                      * 
                      */
                     void SetResourceGroupId(const std::string& _resourceGroupId);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool ResourceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取资源组名称
-                     * @return ResourceGroupName 资源组名称
+                     * 获取<p>资源组名称</p>
+                     * @return ResourceGroupName <p>资源组名称</p>
                      * 
                      */
                     std::string GetResourceGroupName() const;
 
                     /**
-                     * 设置资源组名称
-                     * @param _resourceGroupName 资源组名称
+                     * 设置<p>资源组名称</p>
+                     * @param _resourceGroupName <p>资源组名称</p>
                      * 
                      */
                     void SetResourceGroupName(const std::string& _resourceGroupName);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool ResourceGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取可用节点个数(运行中的节点)
-                     * @return FreeInstance 可用节点个数(运行中的节点)
+                     * 获取<p>可用节点个数(运行中的节点)</p>
+                     * @return FreeInstance <p>可用节点个数(运行中的节点)</p>
                      * 
                      */
                     uint64_t GetFreeInstance() const;
 
                     /**
-                     * 设置可用节点个数(运行中的节点)
-                     * @param _freeInstance 可用节点个数(运行中的节点)
+                     * 设置<p>可用节点个数(运行中的节点)</p>
+                     * @param _freeInstance <p>可用节点个数(运行中的节点)</p>
                      * 
                      */
                     void SetFreeInstance(const uint64_t& _freeInstance);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool FreeInstanceHasBeenSet() const;
 
                     /**
-                     * 获取总节点个数(所有节点)
-                     * @return TotalInstance 总节点个数(所有节点)
+                     * 获取<p>总节点个数(所有节点)</p>
+                     * @return TotalInstance <p>总节点个数(所有节点)</p>
                      * 
                      */
                     uint64_t GetTotalInstance() const;
 
                     /**
-                     * 设置总节点个数(所有节点)
-                     * @param _totalInstance 总节点个数(所有节点)
+                     * 设置<p>总节点个数(所有节点)</p>
+                     * @param _totalInstance <p>总节点个数(所有节点)</p>
                      * 
                      */
                     void SetTotalInstance(const uint64_t& _totalInstance);
@@ -134,18 +134,18 @@ namespace TencentCloud
                     bool TotalInstanceHasBeenSet() const;
 
                     /**
-                     * 获取资源组已用的资源
+                     * 获取<p>资源组已用的资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UsedResource 资源组已用的资源
+                     * @return UsedResource <p>资源组已用的资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GroupResource GetUsedResource() const;
 
                     /**
-                     * 设置资源组已用的资源
+                     * 设置<p>资源组已用的资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _usedResource 资源组已用的资源
+                     * @param _usedResource <p>资源组已用的资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -159,18 +159,18 @@ namespace TencentCloud
                     bool UsedResourceHasBeenSet() const;
 
                     /**
-                     * 获取资源组总资源
+                     * 获取<p>资源组总资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalResource 资源组总资源
+                     * @return TotalResource <p>资源组总资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GroupResource GetTotalResource() const;
 
                     /**
-                     * 设置资源组总资源
+                     * 设置<p>资源组总资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _totalResource 资源组总资源
+                     * @param _totalResource <p>资源组总资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -184,18 +184,18 @@ namespace TencentCloud
                     bool TotalResourceHasBeenSet() const;
 
                     /**
-                     * 获取节点信息
+                     * 获取<p>节点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceSet 节点信息
+                     * @return InstanceSet <p>节点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Instance> GetInstanceSet() const;
 
                     /**
-                     * 设置节点信息
+                     * 设置<p>节点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceSet 节点信息
+                     * @param _instanceSet <p>节点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -209,18 +209,18 @@ namespace TencentCloud
                     bool InstanceSetHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
+                     * 获取<p>标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TagSet 标签列表
+                     * @return TagSet <p>标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
-                     * 设置标签列表
+                     * 设置<p>标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tagSet 标签列表
+                     * @param _tagSet <p>标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -236,52 +236,52 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源组id
+                     * <p>资源组id</p>
                      */
                     std::string m_resourceGroupId;
                     bool m_resourceGroupIdHasBeenSet;
 
                     /**
-                     * 资源组名称
+                     * <p>资源组名称</p>
                      */
                     std::string m_resourceGroupName;
                     bool m_resourceGroupNameHasBeenSet;
 
                     /**
-                     * 可用节点个数(运行中的节点)
+                     * <p>可用节点个数(运行中的节点)</p>
                      */
                     uint64_t m_freeInstance;
                     bool m_freeInstanceHasBeenSet;
 
                     /**
-                     * 总节点个数(所有节点)
+                     * <p>总节点个数(所有节点)</p>
                      */
                     uint64_t m_totalInstance;
                     bool m_totalInstanceHasBeenSet;
 
                     /**
-                     * 资源组已用的资源
+                     * <p>资源组已用的资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GroupResource m_usedResource;
                     bool m_usedResourceHasBeenSet;
 
                     /**
-                     * 资源组总资源
+                     * <p>资源组总资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GroupResource m_totalResource;
                     bool m_totalResourceHasBeenSet;
 
                     /**
-                     * 节点信息
+                     * <p>节点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Instance> m_instanceSet;
                     bool m_instanceSetHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * <p>标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tagSet;

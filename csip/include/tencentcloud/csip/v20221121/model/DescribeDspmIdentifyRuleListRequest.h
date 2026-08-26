@@ -85,6 +85,27 @@ namespace TencentCloud
                      */
                     bool FilterHasBeenSet() const;
 
+                    /**
+                     * 获取<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>
+                     * @return OperationSource <p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>
+                     * 
+                     */
+                    std::string GetOperationSource() const;
+
+                    /**
+                     * 设置<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>
+                     * @param _operationSource <p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>
+                     * 
+                     */
+                    void SetOperationSource(const std::string& _operationSource);
+
+                    /**
+                     * 判断参数 OperationSource 是否已赋值
+                     * @return OperationSource 是否已赋值
+                     * 
+                     */
+                    bool OperationSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +119,12 @@ namespace TencentCloud
                      */
                     Filter m_filter;
                     bool m_filterHasBeenSet;
+
+                    /**
+                     * <p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>
+                     */
+                    std::string m_operationSource;
+                    bool m_operationSourceHasBeenSet;
 
                 };
             }

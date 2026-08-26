@@ -27,7 +27,8 @@ ModifyDspmIdentifyLevelGroupRequest::ModifyDspmIdentifyLevelGroupRequest() :
     m_nameHasBeenSet(false),
     m_memberIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_levelItemsHasBeenSet(false)
+    m_levelItemsHasBeenSet(false),
+    m_operationSourceHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,14 @@ string ModifyDspmIdentifyLevelGroupRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_operationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operationSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -176,6 +185,22 @@ void ModifyDspmIdentifyLevelGroupRequest::SetLevelItems(const vector<DspmIdentif
 bool ModifyDspmIdentifyLevelGroupRequest::LevelItemsHasBeenSet() const
 {
     return m_levelItemsHasBeenSet;
+}
+
+string ModifyDspmIdentifyLevelGroupRequest::GetOperationSource() const
+{
+    return m_operationSource;
+}
+
+void ModifyDspmIdentifyLevelGroupRequest::SetOperationSource(const string& _operationSource)
+{
+    m_operationSource = _operationSource;
+    m_operationSourceHasBeenSet = true;
+}
+
+bool ModifyDspmIdentifyLevelGroupRequest::OperationSourceHasBeenSet() const
+{
+    return m_operationSourceHasBeenSet;
 }
 
 

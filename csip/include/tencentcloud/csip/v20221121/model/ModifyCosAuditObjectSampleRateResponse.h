@@ -43,7 +43,67 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>本次是否实际提交了默认采样率</p>
+                     * @return DefaultSampleRateUpdated <p>本次是否实际提交了默认采样率</p>
+                     * 
+                     */
+                    bool GetDefaultSampleRateUpdated() const;
+
+                    /**
+                     * 判断参数 DefaultSampleRateUpdated 是否已赋值
+                     * @return DefaultSampleRateUpdated 是否已赋值
+                     * 
+                     */
+                    bool DefaultSampleRateUpdatedHasBeenSet() const;
+
+                    /**
+                     * 获取<p>DefaultSampleRateUpdated=true 时返回修改后的值</p>
+                     * @return DefaultSampleRate <p>DefaultSampleRateUpdated=true 时返回修改后的值</p>
+                     * 
+                     */
+                    double GetDefaultSampleRate() const;
+
+                    /**
+                     * 判断参数 DefaultSampleRate 是否已赋值
+                     * @return DefaultSampleRate 是否已赋值
+                     * 
+                     */
+                    bool DefaultSampleRateHasBeenSet() const;
+
+                    /**
+                     * 获取<p>本次成功提交的已有桶数量</p>
+                     * @return UpdatedBucketCount <p>本次成功提交的已有桶数量</p>
+                     * 
+                     */
+                    uint64_t GetUpdatedBucketCount() const;
+
+                    /**
+                     * 判断参数 UpdatedBucketCount 是否已赋值
+                     * @return UpdatedBucketCount 是否已赋值
+                     * 
+                     */
+                    bool UpdatedBucketCountHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>本次是否实际提交了默认采样率</p>
+                     */
+                    bool m_defaultSampleRateUpdated;
+                    bool m_defaultSampleRateUpdatedHasBeenSet;
+
+                    /**
+                     * <p>DefaultSampleRateUpdated=true 时返回修改后的值</p>
+                     */
+                    double m_defaultSampleRate;
+                    bool m_defaultSampleRateHasBeenSet;
+
+                    /**
+                     * <p>本次成功提交的已有桶数量</p>
+                     */
+                    uint64_t m_updatedBucketCount;
+                    bool m_updatedBucketCountHasBeenSet;
 
                 };
             }

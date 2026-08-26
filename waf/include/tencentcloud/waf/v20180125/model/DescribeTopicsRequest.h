@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取分页的偏移量，默认值为0。
-                     * @return Offset 分页的偏移量，默认值为0。
+                     * 获取<p>分页的偏移量，默认值为0。</p>
+                     * @return Offset <p>分页的偏移量，默认值为0。</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页的偏移量，默认值为0。
-                     * @param _offset 分页的偏移量，默认值为0。
+                     * 设置<p>分页的偏移量，默认值为0。</p>
+                     * @param _offset <p>分页的偏移量，默认值为0。</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页单页限制数目，默认值为20，最大值100。
-                     * @return Limit 分页单页限制数目，默认值为20，最大值100。
+                     * 获取<p>分页单页限制数目，默认值为20，最大值100。</p>
+                     * @return Limit <p>分页单页限制数目，默认值为20，最大值100。</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页单页限制数目，默认值为20，最大值100。
-                     * @param _limit 分页单页限制数目，默认值为20，最大值100。
+                     * 设置<p>分页单页限制数目，默认值为20，最大值100。</p>
+                     * @param _limit <p>分页单页限制数目，默认值为20，最大值100。</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -107,31 +107,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取控制Filters相关字段是否为精确匹配。
-<ul><li>0: 默认值，topicName 和 logsetName 模糊匹配</li>
-<li>1: topicName   精确匹配</li>
-<li>2: logsetName精确匹配</li>
-<li>3: topicName 和logsetName 都精确匹配</li></ul>
-                     * @return PreciseSearch 控制Filters相关字段是否为精确匹配。
-<ul><li>0: 默认值，topicName 和 logsetName 模糊匹配</li>
-<li>1: topicName   精确匹配</li>
-<li>2: logsetName精确匹配</li>
-<li>3: topicName 和logsetName 都精确匹配</li></ul>
+                     * 获取<p>控制Filters相关字段是否为精确匹配。</p><ul><li>0: 默认值，topicName 和 logsetName 模糊匹配</li><li>1: topicName   精确匹配</li><li>2: logsetName精确匹配</li><li>3: topicName 和logsetName 都精确匹配</li></ul>
+                     * @return PreciseSearch <p>控制Filters相关字段是否为精确匹配。</p><ul><li>0: 默认值，topicName 和 logsetName 模糊匹配</li><li>1: topicName   精确匹配</li><li>2: logsetName精确匹配</li><li>3: topicName 和logsetName 都精确匹配</li></ul>
                      * 
                      */
                     uint64_t GetPreciseSearch() const;
 
                     /**
-                     * 设置控制Filters相关字段是否为精确匹配。
-<ul><li>0: 默认值，topicName 和 logsetName 模糊匹配</li>
-<li>1: topicName   精确匹配</li>
-<li>2: logsetName精确匹配</li>
-<li>3: topicName 和logsetName 都精确匹配</li></ul>
-                     * @param _preciseSearch 控制Filters相关字段是否为精确匹配。
-<ul><li>0: 默认值，topicName 和 logsetName 模糊匹配</li>
-<li>1: topicName   精确匹配</li>
-<li>2: logsetName精确匹配</li>
-<li>3: topicName 和logsetName 都精确匹配</li></ul>
+                     * 设置<p>控制Filters相关字段是否为精确匹配。</p><ul><li>0: 默认值，topicName 和 logsetName 模糊匹配</li><li>1: topicName   精确匹配</li><li>2: logsetName精确匹配</li><li>3: topicName 和logsetName 都精确匹配</li></ul>
+                     * @param _preciseSearch <p>控制Filters相关字段是否为精确匹配。</p><ul><li>0: 默认值，topicName 和 logsetName 模糊匹配</li><li>1: topicName   精确匹配</li><li>2: logsetName精确匹配</li><li>3: topicName 和logsetName 都精确匹配</li></ul>
                      * 
                      */
                     void SetPreciseSearch(const uint64_t& _preciseSearch);
@@ -144,23 +128,15 @@ namespace TencentCloud
                     bool PreciseSearchHasBeenSet() const;
 
                     /**
-                     * 获取主题类型
-<ul><li>0:日志主题，默认值</li>
-<li>1:指标主题</li></ul>
-                     * @return BizType 主题类型
-<ul><li>0:日志主题，默认值</li>
-<li>1:指标主题</li></ul>
+                     * 获取<p>主题类型</p><ul><li>0:日志主题，默认值</li><li>1:指标主题</li></ul>
+                     * @return BizType <p>主题类型</p><ul><li>0:日志主题，默认值</li><li>1:指标主题</li></ul>
                      * 
                      */
                     uint64_t GetBizType() const;
 
                     /**
-                     * 设置主题类型
-<ul><li>0:日志主题，默认值</li>
-<li>1:指标主题</li></ul>
-                     * @param _bizType 主题类型
-<ul><li>0:日志主题，默认值</li>
-<li>1:指标主题</li></ul>
+                     * 设置<p>主题类型</p><ul><li>0:日志主题，默认值</li><li>1:指标主题</li></ul>
+                     * @param _bizType <p>主题类型</p><ul><li>0:日志主题，默认值</li><li>1:指标主题</li></ul>
                      * 
                      */
                     void SetBizType(const uint64_t& _bizType);
@@ -181,31 +157,25 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 分页的偏移量，默认值为0。
+                     * <p>分页的偏移量，默认值为0。</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页单页限制数目，默认值为20，最大值100。
+                     * <p>分页单页限制数目，默认值为20，最大值100。</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 控制Filters相关字段是否为精确匹配。
-<ul><li>0: 默认值，topicName 和 logsetName 模糊匹配</li>
-<li>1: topicName   精确匹配</li>
-<li>2: logsetName精确匹配</li>
-<li>3: topicName 和logsetName 都精确匹配</li></ul>
+                     * <p>控制Filters相关字段是否为精确匹配。</p><ul><li>0: 默认值，topicName 和 logsetName 模糊匹配</li><li>1: topicName   精确匹配</li><li>2: logsetName精确匹配</li><li>3: topicName 和logsetName 都精确匹配</li></ul>
                      */
                     uint64_t m_preciseSearch;
                     bool m_preciseSearchHasBeenSet;
 
                     /**
-                     * 主题类型
-<ul><li>0:日志主题，默认值</li>
-<li>1:指标主题</li></ul>
+                     * <p>主题类型</p><ul><li>0:日志主题，默认值</li><li>1:指标主题</li></ul>
                      */
                     uint64_t m_bizType;
                     bool m_bizTypeHasBeenSet;

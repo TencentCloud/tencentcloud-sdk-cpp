@@ -26,7 +26,8 @@ ModifyDspmIdentifyComplianceRuleLevelInfoRequest::ModifyDspmIdentifyComplianceRu
     m_complianceIdHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
     m_levelIdHasBeenSet(false),
-    m_memberIdHasBeenSet(false)
+    m_memberIdHasBeenSet(false),
+    m_operationSourceHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,14 @@ string ModifyDspmIdentifyComplianceRuleLevelInfoRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_operationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operationSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -144,6 +153,22 @@ void ModifyDspmIdentifyComplianceRuleLevelInfoRequest::SetMemberId(const vector<
 bool ModifyDspmIdentifyComplianceRuleLevelInfoRequest::MemberIdHasBeenSet() const
 {
     return m_memberIdHasBeenSet;
+}
+
+string ModifyDspmIdentifyComplianceRuleLevelInfoRequest::GetOperationSource() const
+{
+    return m_operationSource;
+}
+
+void ModifyDspmIdentifyComplianceRuleLevelInfoRequest::SetOperationSource(const string& _operationSource)
+{
+    m_operationSource = _operationSource;
+    m_operationSourceHasBeenSet = true;
+}
+
+bool ModifyDspmIdentifyComplianceRuleLevelInfoRequest::OperationSourceHasBeenSet() const
+{
+    return m_operationSourceHasBeenSet;
 }
 
 

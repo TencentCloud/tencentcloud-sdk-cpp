@@ -3840,6 +3840,56 @@ CsipClient::CreateHighBaseLineRisksExportJobOutcomeCallable CsipClient::CreateHi
     return prom->get_future();
 }
 
+CsipClient::CreateHostImageListExportJobOutcome CsipClient::CreateHostImageListExportJob(const CreateHostImageListExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateHostImageListExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateHostImageListExportJobResponse rsp = CreateHostImageListExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateHostImageListExportJobOutcome(rsp);
+        else
+            return CreateHostImageListExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateHostImageListExportJobOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateHostImageListExportJobAsync(const CreateHostImageListExportJobRequest& request, const CreateHostImageListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateHostImageListExportJobRequest&;
+    using Resp = CreateHostImageListExportJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateHostImageListExportJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateHostImageListExportJobOutcomeCallable CsipClient::CreateHostImageListExportJobCallable(const CreateHostImageListExportJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateHostImageListExportJobOutcome>>();
+    CreateHostImageListExportJobAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateHostImageListExportJobRequest&,
+        CreateHostImageListExportJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::CreateHostVulExportJobOutcome CsipClient::CreateHostVulExportJob(const CreateHostVulExportJobRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateHostVulExportJob");
@@ -5082,6 +5132,206 @@ CsipClient::CreateRiskDetailExportJobOutcomeCallable CsipClient::CreateRiskDetai
         const CsipClient*,
         const CreateRiskDetailExportJobRequest&,
         CreateRiskDetailExportJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CreateSandboxACLRuleOutcome CsipClient::CreateSandboxACLRule(const CreateSandboxACLRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSandboxACLRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSandboxACLRuleResponse rsp = CreateSandboxACLRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSandboxACLRuleOutcome(rsp);
+        else
+            return CreateSandboxACLRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSandboxACLRuleOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateSandboxACLRuleAsync(const CreateSandboxACLRuleRequest& request, const CreateSandboxACLRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateSandboxACLRuleRequest&;
+    using Resp = CreateSandboxACLRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateSandboxACLRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateSandboxACLRuleOutcomeCallable CsipClient::CreateSandboxACLRuleCallable(const CreateSandboxACLRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateSandboxACLRuleOutcome>>();
+    CreateSandboxACLRuleAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateSandboxACLRuleRequest&,
+        CreateSandboxACLRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CreateSandboxDLPRuleOutcome CsipClient::CreateSandboxDLPRule(const CreateSandboxDLPRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSandboxDLPRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSandboxDLPRuleResponse rsp = CreateSandboxDLPRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSandboxDLPRuleOutcome(rsp);
+        else
+            return CreateSandboxDLPRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSandboxDLPRuleOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateSandboxDLPRuleAsync(const CreateSandboxDLPRuleRequest& request, const CreateSandboxDLPRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateSandboxDLPRuleRequest&;
+    using Resp = CreateSandboxDLPRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateSandboxDLPRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateSandboxDLPRuleOutcomeCallable CsipClient::CreateSandboxDLPRuleCallable(const CreateSandboxDLPRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateSandboxDLPRuleOutcome>>();
+    CreateSandboxDLPRuleAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateSandboxDLPRuleRequest&,
+        CreateSandboxDLPRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CreateSandboxFileRuleOutcome CsipClient::CreateSandboxFileRule(const CreateSandboxFileRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSandboxFileRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSandboxFileRuleResponse rsp = CreateSandboxFileRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSandboxFileRuleOutcome(rsp);
+        else
+            return CreateSandboxFileRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSandboxFileRuleOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateSandboxFileRuleAsync(const CreateSandboxFileRuleRequest& request, const CreateSandboxFileRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateSandboxFileRuleRequest&;
+    using Resp = CreateSandboxFileRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateSandboxFileRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateSandboxFileRuleOutcomeCallable CsipClient::CreateSandboxFileRuleCallable(const CreateSandboxFileRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateSandboxFileRuleOutcome>>();
+    CreateSandboxFileRuleAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateSandboxFileRuleRequest&,
+        CreateSandboxFileRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::CreateSandboxLLMAuditRuleOutcome CsipClient::CreateSandboxLLMAuditRule(const CreateSandboxLLMAuditRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSandboxLLMAuditRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSandboxLLMAuditRuleResponse rsp = CreateSandboxLLMAuditRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSandboxLLMAuditRuleOutcome(rsp);
+        else
+            return CreateSandboxLLMAuditRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSandboxLLMAuditRuleOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateSandboxLLMAuditRuleAsync(const CreateSandboxLLMAuditRuleRequest& request, const CreateSandboxLLMAuditRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateSandboxLLMAuditRuleRequest&;
+    using Resp = CreateSandboxLLMAuditRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateSandboxLLMAuditRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateSandboxLLMAuditRuleOutcomeCallable CsipClient::CreateSandboxLLMAuditRuleCallable(const CreateSandboxLLMAuditRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateSandboxLLMAuditRuleOutcome>>();
+    CreateSandboxLLMAuditRuleAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateSandboxLLMAuditRuleRequest&,
+        CreateSandboxLLMAuditRuleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -7640,6 +7890,156 @@ CsipClient::DeleteRiskScanTaskOutcomeCallable CsipClient::DeleteRiskScanTaskCall
     return prom->get_future();
 }
 
+CsipClient::DeleteSandboxACLRuleOutcome CsipClient::DeleteSandboxACLRule(const DeleteSandboxACLRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSandboxACLRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSandboxACLRuleResponse rsp = DeleteSandboxACLRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSandboxACLRuleOutcome(rsp);
+        else
+            return DeleteSandboxACLRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSandboxACLRuleOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DeleteSandboxACLRuleAsync(const DeleteSandboxACLRuleRequest& request, const DeleteSandboxACLRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteSandboxACLRuleRequest&;
+    using Resp = DeleteSandboxACLRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteSandboxACLRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DeleteSandboxACLRuleOutcomeCallable CsipClient::DeleteSandboxACLRuleCallable(const DeleteSandboxACLRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteSandboxACLRuleOutcome>>();
+    DeleteSandboxACLRuleAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DeleteSandboxACLRuleRequest&,
+        DeleteSandboxACLRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DeleteSandboxDLPRuleOutcome CsipClient::DeleteSandboxDLPRule(const DeleteSandboxDLPRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSandboxDLPRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSandboxDLPRuleResponse rsp = DeleteSandboxDLPRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSandboxDLPRuleOutcome(rsp);
+        else
+            return DeleteSandboxDLPRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSandboxDLPRuleOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DeleteSandboxDLPRuleAsync(const DeleteSandboxDLPRuleRequest& request, const DeleteSandboxDLPRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteSandboxDLPRuleRequest&;
+    using Resp = DeleteSandboxDLPRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteSandboxDLPRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DeleteSandboxDLPRuleOutcomeCallable CsipClient::DeleteSandboxDLPRuleCallable(const DeleteSandboxDLPRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteSandboxDLPRuleOutcome>>();
+    DeleteSandboxDLPRuleAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DeleteSandboxDLPRuleRequest&,
+        DeleteSandboxDLPRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DeleteSandboxFileRuleOutcome CsipClient::DeleteSandboxFileRule(const DeleteSandboxFileRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSandboxFileRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSandboxFileRuleResponse rsp = DeleteSandboxFileRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSandboxFileRuleOutcome(rsp);
+        else
+            return DeleteSandboxFileRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSandboxFileRuleOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DeleteSandboxFileRuleAsync(const DeleteSandboxFileRuleRequest& request, const DeleteSandboxFileRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteSandboxFileRuleRequest&;
+    using Resp = DeleteSandboxFileRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteSandboxFileRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DeleteSandboxFileRuleOutcomeCallable CsipClient::DeleteSandboxFileRuleCallable(const DeleteSandboxFileRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteSandboxFileRuleOutcome>>();
+    DeleteSandboxFileRuleAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DeleteSandboxFileRuleRequest&,
+        DeleteSandboxFileRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::DeleteSandboxLLMAuditRuleOutcome CsipClient::DeleteSandboxLLMAuditRule(const DeleteSandboxLLMAuditRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteSandboxLLMAuditRule");
@@ -9082,6 +9482,56 @@ CsipClient::DescribeAccessKeyUserListOutcomeCallable CsipClient::DescribeAccessK
         const CsipClient*,
         const DescribeAccessKeyUserListRequest&,
         DescribeAccessKeyUserListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeAccessKeyWhiteListOutcome CsipClient::DescribeAccessKeyWhiteList(const DescribeAccessKeyWhiteListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccessKeyWhiteList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccessKeyWhiteListResponse rsp = DescribeAccessKeyWhiteListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccessKeyWhiteListOutcome(rsp);
+        else
+            return DescribeAccessKeyWhiteListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccessKeyWhiteListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeAccessKeyWhiteListAsync(const DescribeAccessKeyWhiteListRequest& request, const DescribeAccessKeyWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAccessKeyWhiteListRequest&;
+    using Resp = DescribeAccessKeyWhiteListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccessKeyWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeAccessKeyWhiteListOutcomeCallable CsipClient::DescribeAccessKeyWhiteListCallable(const DescribeAccessKeyWhiteListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAccessKeyWhiteListOutcome>>();
+    DescribeAccessKeyWhiteListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeAccessKeyWhiteListRequest&,
+        DescribeAccessKeyWhiteListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -11540,6 +11990,56 @@ CsipClient::DescribeCLSLogListV3OutcomeCallable CsipClient::DescribeCLSLogListV3
     return prom->get_future();
 }
 
+CsipClient::DescribeCSCPayInfoOutcome CsipClient::DescribeCSCPayInfo(const DescribeCSCPayInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCSCPayInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCSCPayInfoResponse rsp = DescribeCSCPayInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCSCPayInfoOutcome(rsp);
+        else
+            return DescribeCSCPayInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCSCPayInfoOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeCSCPayInfoAsync(const DescribeCSCPayInfoRequest& request, const DescribeCSCPayInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCSCPayInfoRequest&;
+    using Resp = DescribeCSCPayInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCSCPayInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeCSCPayInfoOutcomeCallable CsipClient::DescribeCSCPayInfoCallable(const DescribeCSCPayInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCSCPayInfoOutcome>>();
+    DescribeCSCPayInfoAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeCSCPayInfoRequest&,
+        DescribeCSCPayInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::DescribeCSIPLicenseBindScheduleOutcome CsipClient::DescribeCSIPLicenseBindSchedule(const DescribeCSIPLicenseBindScheduleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCSIPLicenseBindSchedule");
@@ -11732,6 +12232,56 @@ CsipClient::DescribeCSIPRiskStatisticsOutcomeCallable CsipClient::DescribeCSIPRi
         const CsipClient*,
         const DescribeCSIPRiskStatisticsRequest&,
         DescribeCSIPRiskStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeCSPMPayInfoOutcome CsipClient::DescribeCSPMPayInfo(const DescribeCSPMPayInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCSPMPayInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCSPMPayInfoResponse rsp = DescribeCSPMPayInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCSPMPayInfoOutcome(rsp);
+        else
+            return DescribeCSPMPayInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCSPMPayInfoOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeCSPMPayInfoAsync(const DescribeCSPMPayInfoRequest& request, const DescribeCSPMPayInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCSPMPayInfoRequest&;
+    using Resp = DescribeCSPMPayInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCSPMPayInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeCSPMPayInfoOutcomeCallable CsipClient::DescribeCSPMPayInfoCallable(const DescribeCSPMPayInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCSPMPayInfoOutcome>>();
+    DescribeCSPMPayInfoAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeCSPMPayInfoRequest&,
+        DescribeCSPMPayInfoOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -25640,6 +26190,106 @@ CsipClient::DescribeSandboxACLSystemRuleListOutcomeCallable CsipClient::Describe
     return prom->get_future();
 }
 
+CsipClient::DescribeSandboxDLPAlertListOutcome CsipClient::DescribeSandboxDLPAlertList(const DescribeSandboxDLPAlertListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSandboxDLPAlertList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSandboxDLPAlertListResponse rsp = DescribeSandboxDLPAlertListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSandboxDLPAlertListOutcome(rsp);
+        else
+            return DescribeSandboxDLPAlertListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSandboxDLPAlertListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeSandboxDLPAlertListAsync(const DescribeSandboxDLPAlertListRequest& request, const DescribeSandboxDLPAlertListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSandboxDLPAlertListRequest&;
+    using Resp = DescribeSandboxDLPAlertListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSandboxDLPAlertList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeSandboxDLPAlertListOutcomeCallable CsipClient::DescribeSandboxDLPAlertListCallable(const DescribeSandboxDLPAlertListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSandboxDLPAlertListOutcome>>();
+    DescribeSandboxDLPAlertListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeSandboxDLPAlertListRequest&,
+        DescribeSandboxDLPAlertListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeSandboxDLPRuleListOutcome CsipClient::DescribeSandboxDLPRuleList(const DescribeSandboxDLPRuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSandboxDLPRuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSandboxDLPRuleListResponse rsp = DescribeSandboxDLPRuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSandboxDLPRuleListOutcome(rsp);
+        else
+            return DescribeSandboxDLPRuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSandboxDLPRuleListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeSandboxDLPRuleListAsync(const DescribeSandboxDLPRuleListRequest& request, const DescribeSandboxDLPRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSandboxDLPRuleListRequest&;
+    using Resp = DescribeSandboxDLPRuleListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSandboxDLPRuleList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeSandboxDLPRuleListOutcomeCallable CsipClient::DescribeSandboxDLPRuleListCallable(const DescribeSandboxDLPRuleListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSandboxDLPRuleListOutcome>>();
+    DescribeSandboxDLPRuleListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeSandboxDLPRuleListRequest&,
+        DescribeSandboxDLPRuleListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::DescribeSandboxDLPSystemRuleListOutcome CsipClient::DescribeSandboxDLPSystemRuleList(const DescribeSandboxDLPSystemRuleListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSandboxDLPSystemRuleList");
@@ -25732,6 +26382,156 @@ CsipClient::DescribeSandboxFileRuleListOutcomeCallable CsipClient::DescribeSandb
         const CsipClient*,
         const DescribeSandboxFileRuleListRequest&,
         DescribeSandboxFileRuleListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeSandboxLLMAuditAlertListOutcome CsipClient::DescribeSandboxLLMAuditAlertList(const DescribeSandboxLLMAuditAlertListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSandboxLLMAuditAlertList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSandboxLLMAuditAlertListResponse rsp = DescribeSandboxLLMAuditAlertListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSandboxLLMAuditAlertListOutcome(rsp);
+        else
+            return DescribeSandboxLLMAuditAlertListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSandboxLLMAuditAlertListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeSandboxLLMAuditAlertListAsync(const DescribeSandboxLLMAuditAlertListRequest& request, const DescribeSandboxLLMAuditAlertListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSandboxLLMAuditAlertListRequest&;
+    using Resp = DescribeSandboxLLMAuditAlertListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSandboxLLMAuditAlertList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeSandboxLLMAuditAlertListOutcomeCallable CsipClient::DescribeSandboxLLMAuditAlertListCallable(const DescribeSandboxLLMAuditAlertListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSandboxLLMAuditAlertListOutcome>>();
+    DescribeSandboxLLMAuditAlertListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeSandboxLLMAuditAlertListRequest&,
+        DescribeSandboxLLMAuditAlertListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeSandboxLLMAuditRuleListOutcome CsipClient::DescribeSandboxLLMAuditRuleList(const DescribeSandboxLLMAuditRuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSandboxLLMAuditRuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSandboxLLMAuditRuleListResponse rsp = DescribeSandboxLLMAuditRuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSandboxLLMAuditRuleListOutcome(rsp);
+        else
+            return DescribeSandboxLLMAuditRuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSandboxLLMAuditRuleListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeSandboxLLMAuditRuleListAsync(const DescribeSandboxLLMAuditRuleListRequest& request, const DescribeSandboxLLMAuditRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSandboxLLMAuditRuleListRequest&;
+    using Resp = DescribeSandboxLLMAuditRuleListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSandboxLLMAuditRuleList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeSandboxLLMAuditRuleListOutcomeCallable CsipClient::DescribeSandboxLLMAuditRuleListCallable(const DescribeSandboxLLMAuditRuleListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSandboxLLMAuditRuleListOutcome>>();
+    DescribeSandboxLLMAuditRuleListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeSandboxLLMAuditRuleListRequest&,
+        DescribeSandboxLLMAuditRuleListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeSandboxLLMAuditSystemRuleListOutcome CsipClient::DescribeSandboxLLMAuditSystemRuleList(const DescribeSandboxLLMAuditSystemRuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSandboxLLMAuditSystemRuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSandboxLLMAuditSystemRuleListResponse rsp = DescribeSandboxLLMAuditSystemRuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSandboxLLMAuditSystemRuleListOutcome(rsp);
+        else
+            return DescribeSandboxLLMAuditSystemRuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSandboxLLMAuditSystemRuleListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeSandboxLLMAuditSystemRuleListAsync(const DescribeSandboxLLMAuditSystemRuleListRequest& request, const DescribeSandboxLLMAuditSystemRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSandboxLLMAuditSystemRuleListRequest&;
+    using Resp = DescribeSandboxLLMAuditSystemRuleListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSandboxLLMAuditSystemRuleList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeSandboxLLMAuditSystemRuleListOutcomeCallable CsipClient::DescribeSandboxLLMAuditSystemRuleListCallable(const DescribeSandboxLLMAuditSystemRuleListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSandboxLLMAuditSystemRuleListOutcome>>();
+    DescribeSandboxLLMAuditSystemRuleListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeSandboxLLMAuditSystemRuleListRequest&,
+        DescribeSandboxLLMAuditSystemRuleListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -26490,6 +27290,56 @@ CsipClient::DescribeSourceIPAssetOutcomeCallable CsipClient::DescribeSourceIPAss
     return prom->get_future();
 }
 
+CsipClient::DescribeSourceIPDetailOutcome CsipClient::DescribeSourceIPDetail(const DescribeSourceIPDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSourceIPDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSourceIPDetailResponse rsp = DescribeSourceIPDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSourceIPDetailOutcome(rsp);
+        else
+            return DescribeSourceIPDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSourceIPDetailOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeSourceIPDetailAsync(const DescribeSourceIPDetailRequest& request, const DescribeSourceIPDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSourceIPDetailRequest&;
+    using Resp = DescribeSourceIPDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSourceIPDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeSourceIPDetailOutcomeCallable CsipClient::DescribeSourceIPDetailCallable(const DescribeSourceIPDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSourceIPDetailOutcome>>();
+    DescribeSourceIPDetailAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeSourceIPDetailRequest&,
+        DescribeSourceIPDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::DescribeSubUserInfoOutcome CsipClient::DescribeSubUserInfo(const DescribeSubUserInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSubUserInfo");
@@ -27040,6 +27890,56 @@ CsipClient::DescribeUebaUserSummaryOutcomeCallable CsipClient::DescribeUebaUserS
     return prom->get_future();
 }
 
+CsipClient::DescribeUserAKInfoListOutcome CsipClient::DescribeUserAKInfoList(const DescribeUserAKInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserAKInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserAKInfoListResponse rsp = DescribeUserAKInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserAKInfoListOutcome(rsp);
+        else
+            return DescribeUserAKInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserAKInfoListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeUserAKInfoListAsync(const DescribeUserAKInfoListRequest& request, const DescribeUserAKInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeUserAKInfoListRequest&;
+    using Resp = DescribeUserAKInfoListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserAKInfoList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeUserAKInfoListOutcomeCallable CsipClient::DescribeUserAKInfoListCallable(const DescribeUserAKInfoListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeUserAKInfoListOutcome>>();
+    DescribeUserAKInfoListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeUserAKInfoListRequest&,
+        DescribeUserAKInfoListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::DescribeUserCSPMInfoListOutcome CsipClient::DescribeUserCSPMInfoList(const DescribeUserCSPMInfoListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserCSPMInfoList");
@@ -27432,6 +28332,56 @@ CsipClient::DescribeVdbAndPocInfoOutcomeCallable CsipClient::DescribeVdbAndPocIn
         const CsipClient*,
         const DescribeVdbAndPocInfoRequest&,
         DescribeVdbAndPocInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeVoucherEligibilityOutcome CsipClient::DescribeVoucherEligibility(const DescribeVoucherEligibilityRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVoucherEligibility");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVoucherEligibilityResponse rsp = DescribeVoucherEligibilityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVoucherEligibilityOutcome(rsp);
+        else
+            return DescribeVoucherEligibilityOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVoucherEligibilityOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeVoucherEligibilityAsync(const DescribeVoucherEligibilityRequest& request, const DescribeVoucherEligibilityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeVoucherEligibilityRequest&;
+    using Resp = DescribeVoucherEligibilityResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeVoucherEligibility", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeVoucherEligibilityOutcomeCallable CsipClient::DescribeVoucherEligibilityCallable(const DescribeVoucherEligibilityRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeVoucherEligibilityOutcome>>();
+    DescribeVoucherEligibilityAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeVoucherEligibilityRequest&,
+        DescribeVoucherEligibilityOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -28840,6 +29790,106 @@ CsipClient::InstallClusterAgentOutcomeCallable CsipClient::InstallClusterAgentCa
     return prom->get_future();
 }
 
+CsipClient::InstallKeySandboxSkillOutcome CsipClient::InstallKeySandboxSkill(const InstallKeySandboxSkillRequest &request)
+{
+    auto outcome = MakeRequest(request, "InstallKeySandboxSkill");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InstallKeySandboxSkillResponse rsp = InstallKeySandboxSkillResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InstallKeySandboxSkillOutcome(rsp);
+        else
+            return InstallKeySandboxSkillOutcome(o.GetError());
+    }
+    else
+    {
+        return InstallKeySandboxSkillOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::InstallKeySandboxSkillAsync(const InstallKeySandboxSkillRequest& request, const InstallKeySandboxSkillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const InstallKeySandboxSkillRequest&;
+    using Resp = InstallKeySandboxSkillResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "InstallKeySandboxSkill", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::InstallKeySandboxSkillOutcomeCallable CsipClient::InstallKeySandboxSkillCallable(const InstallKeySandboxSkillRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<InstallKeySandboxSkillOutcome>>();
+    InstallKeySandboxSkillAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const InstallKeySandboxSkillRequest&,
+        InstallKeySandboxSkillOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::InstallSandboxPluginOutcome CsipClient::InstallSandboxPlugin(const InstallSandboxPluginRequest &request)
+{
+    auto outcome = MakeRequest(request, "InstallSandboxPlugin");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InstallSandboxPluginResponse rsp = InstallSandboxPluginResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InstallSandboxPluginOutcome(rsp);
+        else
+            return InstallSandboxPluginOutcome(o.GetError());
+    }
+    else
+    {
+        return InstallSandboxPluginOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::InstallSandboxPluginAsync(const InstallSandboxPluginRequest& request, const InstallSandboxPluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const InstallSandboxPluginRequest&;
+    using Resp = InstallSandboxPluginResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "InstallSandboxPlugin", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::InstallSandboxPluginOutcomeCallable CsipClient::InstallSandboxPluginCallable(const InstallSandboxPluginRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<InstallSandboxPluginOutcome>>();
+    InstallSandboxPluginAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const InstallSandboxPluginRequest&,
+        InstallSandboxPluginOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::ModifyAILinkSettingOutcome CsipClient::ModifyAILinkSetting(const ModifyAILinkSettingRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAILinkSetting");
@@ -29982,6 +31032,56 @@ CsipClient::ModifyCSIPRaspLicenseUnBindsOutcomeCallable CsipClient::ModifyCSIPRa
         const CsipClient*,
         const ModifyCSIPRaspLicenseUnBindsRequest&,
         ModifyCSIPRaspLicenseUnBindsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifyClusterDefendStatusOutcome CsipClient::ModifyClusterDefendStatus(const ModifyClusterDefendStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterDefendStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterDefendStatusResponse rsp = ModifyClusterDefendStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterDefendStatusOutcome(rsp);
+        else
+            return ModifyClusterDefendStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterDefendStatusOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyClusterDefendStatusAsync(const ModifyClusterDefendStatusRequest& request, const ModifyClusterDefendStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyClusterDefendStatusRequest&;
+    using Resp = ModifyClusterDefendStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterDefendStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifyClusterDefendStatusOutcomeCallable CsipClient::ModifyClusterDefendStatusCallable(const ModifyClusterDefendStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyClusterDefendStatusOutcome>>();
+    ModifyClusterDefendStatusAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifyClusterDefendStatusRequest&,
+        ModifyClusterDefendStatusOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -33790,6 +34890,406 @@ CsipClient::ModifyRiskScanCronConfigOutcomeCallable CsipClient::ModifyRiskScanCr
     return prom->get_future();
 }
 
+CsipClient::ModifySandboxACLRuleOutcome CsipClient::ModifySandboxACLRule(const ModifySandboxACLRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySandboxACLRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySandboxACLRuleResponse rsp = ModifySandboxACLRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySandboxACLRuleOutcome(rsp);
+        else
+            return ModifySandboxACLRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySandboxACLRuleOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifySandboxACLRuleAsync(const ModifySandboxACLRuleRequest& request, const ModifySandboxACLRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifySandboxACLRuleRequest&;
+    using Resp = ModifySandboxACLRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifySandboxACLRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifySandboxACLRuleOutcomeCallable CsipClient::ModifySandboxACLRuleCallable(const ModifySandboxACLRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifySandboxACLRuleOutcome>>();
+    ModifySandboxACLRuleAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifySandboxACLRuleRequest&,
+        ModifySandboxACLRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifySandboxACLRuleStatusOutcome CsipClient::ModifySandboxACLRuleStatus(const ModifySandboxACLRuleStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySandboxACLRuleStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySandboxACLRuleStatusResponse rsp = ModifySandboxACLRuleStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySandboxACLRuleStatusOutcome(rsp);
+        else
+            return ModifySandboxACLRuleStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySandboxACLRuleStatusOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifySandboxACLRuleStatusAsync(const ModifySandboxACLRuleStatusRequest& request, const ModifySandboxACLRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifySandboxACLRuleStatusRequest&;
+    using Resp = ModifySandboxACLRuleStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifySandboxACLRuleStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifySandboxACLRuleStatusOutcomeCallable CsipClient::ModifySandboxACLRuleStatusCallable(const ModifySandboxACLRuleStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifySandboxACLRuleStatusOutcome>>();
+    ModifySandboxACLRuleStatusAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifySandboxACLRuleStatusRequest&,
+        ModifySandboxACLRuleStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifySandboxAlertStatusOutcome CsipClient::ModifySandboxAlertStatus(const ModifySandboxAlertStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySandboxAlertStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySandboxAlertStatusResponse rsp = ModifySandboxAlertStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySandboxAlertStatusOutcome(rsp);
+        else
+            return ModifySandboxAlertStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySandboxAlertStatusOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifySandboxAlertStatusAsync(const ModifySandboxAlertStatusRequest& request, const ModifySandboxAlertStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifySandboxAlertStatusRequest&;
+    using Resp = ModifySandboxAlertStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifySandboxAlertStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifySandboxAlertStatusOutcomeCallable CsipClient::ModifySandboxAlertStatusCallable(const ModifySandboxAlertStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifySandboxAlertStatusOutcome>>();
+    ModifySandboxAlertStatusAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifySandboxAlertStatusRequest&,
+        ModifySandboxAlertStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifySandboxDLPRuleOutcome CsipClient::ModifySandboxDLPRule(const ModifySandboxDLPRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySandboxDLPRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySandboxDLPRuleResponse rsp = ModifySandboxDLPRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySandboxDLPRuleOutcome(rsp);
+        else
+            return ModifySandboxDLPRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySandboxDLPRuleOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifySandboxDLPRuleAsync(const ModifySandboxDLPRuleRequest& request, const ModifySandboxDLPRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifySandboxDLPRuleRequest&;
+    using Resp = ModifySandboxDLPRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifySandboxDLPRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifySandboxDLPRuleOutcomeCallable CsipClient::ModifySandboxDLPRuleCallable(const ModifySandboxDLPRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifySandboxDLPRuleOutcome>>();
+    ModifySandboxDLPRuleAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifySandboxDLPRuleRequest&,
+        ModifySandboxDLPRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifySandboxDLPRuleStatusOutcome CsipClient::ModifySandboxDLPRuleStatus(const ModifySandboxDLPRuleStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySandboxDLPRuleStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySandboxDLPRuleStatusResponse rsp = ModifySandboxDLPRuleStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySandboxDLPRuleStatusOutcome(rsp);
+        else
+            return ModifySandboxDLPRuleStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySandboxDLPRuleStatusOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifySandboxDLPRuleStatusAsync(const ModifySandboxDLPRuleStatusRequest& request, const ModifySandboxDLPRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifySandboxDLPRuleStatusRequest&;
+    using Resp = ModifySandboxDLPRuleStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifySandboxDLPRuleStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifySandboxDLPRuleStatusOutcomeCallable CsipClient::ModifySandboxDLPRuleStatusCallable(const ModifySandboxDLPRuleStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifySandboxDLPRuleStatusOutcome>>();
+    ModifySandboxDLPRuleStatusAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifySandboxDLPRuleStatusRequest&,
+        ModifySandboxDLPRuleStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifySandboxFileRuleOutcome CsipClient::ModifySandboxFileRule(const ModifySandboxFileRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySandboxFileRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySandboxFileRuleResponse rsp = ModifySandboxFileRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySandboxFileRuleOutcome(rsp);
+        else
+            return ModifySandboxFileRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySandboxFileRuleOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifySandboxFileRuleAsync(const ModifySandboxFileRuleRequest& request, const ModifySandboxFileRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifySandboxFileRuleRequest&;
+    using Resp = ModifySandboxFileRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifySandboxFileRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifySandboxFileRuleOutcomeCallable CsipClient::ModifySandboxFileRuleCallable(const ModifySandboxFileRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifySandboxFileRuleOutcome>>();
+    ModifySandboxFileRuleAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifySandboxFileRuleRequest&,
+        ModifySandboxFileRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifySandboxFileRuleStatusOutcome CsipClient::ModifySandboxFileRuleStatus(const ModifySandboxFileRuleStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySandboxFileRuleStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySandboxFileRuleStatusResponse rsp = ModifySandboxFileRuleStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySandboxFileRuleStatusOutcome(rsp);
+        else
+            return ModifySandboxFileRuleStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySandboxFileRuleStatusOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifySandboxFileRuleStatusAsync(const ModifySandboxFileRuleStatusRequest& request, const ModifySandboxFileRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifySandboxFileRuleStatusRequest&;
+    using Resp = ModifySandboxFileRuleStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifySandboxFileRuleStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifySandboxFileRuleStatusOutcomeCallable CsipClient::ModifySandboxFileRuleStatusCallable(const ModifySandboxFileRuleStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifySandboxFileRuleStatusOutcome>>();
+    ModifySandboxFileRuleStatusAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifySandboxFileRuleStatusRequest&,
+        ModifySandboxFileRuleStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifySandboxLLMAuditRuleOutcome CsipClient::ModifySandboxLLMAuditRule(const ModifySandboxLLMAuditRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySandboxLLMAuditRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySandboxLLMAuditRuleResponse rsp = ModifySandboxLLMAuditRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySandboxLLMAuditRuleOutcome(rsp);
+        else
+            return ModifySandboxLLMAuditRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySandboxLLMAuditRuleOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifySandboxLLMAuditRuleAsync(const ModifySandboxLLMAuditRuleRequest& request, const ModifySandboxLLMAuditRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifySandboxLLMAuditRuleRequest&;
+    using Resp = ModifySandboxLLMAuditRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifySandboxLLMAuditRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifySandboxLLMAuditRuleOutcomeCallable CsipClient::ModifySandboxLLMAuditRuleCallable(const ModifySandboxLLMAuditRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifySandboxLLMAuditRuleOutcome>>();
+    ModifySandboxLLMAuditRuleAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifySandboxLLMAuditRuleRequest&,
+        ModifySandboxLLMAuditRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::ModifySandboxLLMAuditRuleStatusOutcome CsipClient::ModifySandboxLLMAuditRuleStatus(const ModifySandboxLLMAuditRuleStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifySandboxLLMAuditRuleStatus");
@@ -33882,6 +35382,56 @@ CsipClient::ModifySecurityScoreRuleOutcomeCallable CsipClient::ModifySecuritySco
         const CsipClient*,
         const ModifySecurityScoreRuleRequest&,
         ModifySecurityScoreRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::ModifyShareUserAKOutcome CsipClient::ModifyShareUserAK(const ModifyShareUserAKRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyShareUserAK");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyShareUserAKResponse rsp = ModifyShareUserAKResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyShareUserAKOutcome(rsp);
+        else
+            return ModifyShareUserAKOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyShareUserAKOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyShareUserAKAsync(const ModifyShareUserAKRequest& request, const ModifyShareUserAKAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyShareUserAKRequest&;
+    using Resp = ModifyShareUserAKResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyShareUserAK", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::ModifyShareUserAKOutcomeCallable CsipClient::ModifyShareUserAKCallable(const ModifyShareUserAKRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyShareUserAKOutcome>>();
+    ModifyShareUserAKAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const ModifyShareUserAKRequest&,
+        ModifyShareUserAKOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -35782,6 +37332,56 @@ CsipClient::UninstallClusterAgentOutcomeCallable CsipClient::UninstallClusterAge
         const CsipClient*,
         const UninstallClusterAgentRequest&,
         UninstallClusterAgentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::UninstallKeySandboxSkillOutcome CsipClient::UninstallKeySandboxSkill(const UninstallKeySandboxSkillRequest &request)
+{
+    auto outcome = MakeRequest(request, "UninstallKeySandboxSkill");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UninstallKeySandboxSkillResponse rsp = UninstallKeySandboxSkillResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UninstallKeySandboxSkillOutcome(rsp);
+        else
+            return UninstallKeySandboxSkillOutcome(o.GetError());
+    }
+    else
+    {
+        return UninstallKeySandboxSkillOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::UninstallKeySandboxSkillAsync(const UninstallKeySandboxSkillRequest& request, const UninstallKeySandboxSkillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UninstallKeySandboxSkillRequest&;
+    using Resp = UninstallKeySandboxSkillResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UninstallKeySandboxSkill", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::UninstallKeySandboxSkillOutcomeCallable CsipClient::UninstallKeySandboxSkillCallable(const UninstallKeySandboxSkillRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UninstallKeySandboxSkillOutcome>>();
+    UninstallKeySandboxSkillAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const UninstallKeySandboxSkillRequest&,
+        UninstallKeySandboxSkillOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

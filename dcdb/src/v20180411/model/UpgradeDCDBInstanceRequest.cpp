@@ -33,7 +33,8 @@ UpgradeDCDBInstanceRequest::UpgradeDCDBInstanceRequest() :
     m_zonesHasBeenSet(false),
     m_switchStartTimeHasBeenSet(false),
     m_switchEndTimeHasBeenSet(false),
-    m_switchAutoRetryHasBeenSet(false)
+    m_switchAutoRetryHasBeenSet(false),
+    m_switchIntervalHasBeenSet(false)
 {
 }
 
@@ -143,6 +144,14 @@ string UpgradeDCDBInstanceRequest::ToJsonString() const
         string key = "SwitchAutoRetry";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_switchAutoRetry, allocator);
+    }
+
+    if (m_switchIntervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SwitchInterval";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_switchInterval, allocator);
     }
 
 
@@ -327,6 +336,22 @@ void UpgradeDCDBInstanceRequest::SetSwitchAutoRetry(const int64_t& _switchAutoRe
 bool UpgradeDCDBInstanceRequest::SwitchAutoRetryHasBeenSet() const
 {
     return m_switchAutoRetryHasBeenSet;
+}
+
+int64_t UpgradeDCDBInstanceRequest::GetSwitchInterval() const
+{
+    return m_switchInterval;
+}
+
+void UpgradeDCDBInstanceRequest::SetSwitchInterval(const int64_t& _switchInterval)
+{
+    m_switchInterval = _switchInterval;
+    m_switchIntervalHasBeenSet = true;
+}
+
+bool UpgradeDCDBInstanceRequest::SwitchIntervalHasBeenSet() const
+{
+    return m_switchIntervalHasBeenSet;
 }
 
 

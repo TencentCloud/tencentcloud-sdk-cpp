@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteDspmIdentifyLevelGroupRequest::DeleteDspmIdentifyLevelGroupRequest() :
     m_idsHasBeenSet(false),
-    m_memberIdHasBeenSet(false)
+    m_memberIdHasBeenSet(false),
+    m_operationSourceHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string DeleteDspmIdentifyLevelGroupRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_operationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operationSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -99,6 +108,22 @@ void DeleteDspmIdentifyLevelGroupRequest::SetMemberId(const vector<string>& _mem
 bool DeleteDspmIdentifyLevelGroupRequest::MemberIdHasBeenSet() const
 {
     return m_memberIdHasBeenSet;
+}
+
+string DeleteDspmIdentifyLevelGroupRequest::GetOperationSource() const
+{
+    return m_operationSource;
+}
+
+void DeleteDspmIdentifyLevelGroupRequest::SetOperationSource(const string& _operationSource)
+{
+    m_operationSource = _operationSource;
+    m_operationSourceHasBeenSet = true;
+}
+
+bool DeleteDspmIdentifyLevelGroupRequest::OperationSourceHasBeenSet() const
+{
+    return m_operationSourceHasBeenSet;
 }
 
 

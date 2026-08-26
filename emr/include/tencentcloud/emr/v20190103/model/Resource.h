@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/MultiDisk.h>
 #include <tencentcloud/emr/v20190103/model/Tag.h>
+#include <tencentcloud/emr/v20190103/model/GpuImageDriverSpec.h>
 
 
 namespace TencentCloud
@@ -371,6 +372,48 @@ namespace TencentCloud
                      */
                     bool HCCHpcClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义主机名</p>
+                     * @return CustomNodeName <p>自定义主机名</p>
+                     * 
+                     */
+                    std::string GetCustomNodeName() const;
+
+                    /**
+                     * 设置<p>自定义主机名</p>
+                     * @param _customNodeName <p>自定义主机名</p>
+                     * 
+                     */
+                    void SetCustomNodeName(const std::string& _customNodeName);
+
+                    /**
+                     * 判断参数 CustomNodeName 是否已赋值
+                     * @return CustomNodeName 是否已赋值
+                     * 
+                     */
+                    bool CustomNodeNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>GPU镜像驱动配置</p>
+                     * @return GpuImageDriver <p>GPU镜像驱动配置</p>
+                     * 
+                     */
+                    GpuImageDriverSpec GetGpuImageDriver() const;
+
+                    /**
+                     * 设置<p>GPU镜像驱动配置</p>
+                     * @param _gpuImageDriver <p>GPU镜像驱动配置</p>
+                     * 
+                     */
+                    void SetGpuImageDriver(const GpuImageDriverSpec& _gpuImageDriver);
+
+                    /**
+                     * 判断参数 GpuImageDriver 是否已赋值
+                     * @return GpuImageDriver 是否已赋值
+                     * 
+                     */
+                    bool GpuImageDriverHasBeenSet() const;
+
                 private:
 
                     /**
@@ -464,6 +507,18 @@ namespace TencentCloud
                      */
                     std::string m_hCCHpcClusterId;
                     bool m_hCCHpcClusterIdHasBeenSet;
+
+                    /**
+                     * <p>自定义主机名</p>
+                     */
+                    std::string m_customNodeName;
+                    bool m_customNodeNameHasBeenSet;
+
+                    /**
+                     * <p>GPU镜像驱动配置</p>
+                     */
+                    GpuImageDriverSpec m_gpuImageDriver;
+                    bool m_gpuImageDriverHasBeenSet;
 
                 };
             }

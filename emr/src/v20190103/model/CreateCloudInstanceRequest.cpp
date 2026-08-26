@@ -43,7 +43,9 @@ CreateCloudInstanceRequest::CreateCloudInstanceRequest() :
     m_needCdbAuditHasBeenSet(false),
     m_sgIPHasBeenSet(false),
     m_containerExtraConfHasBeenSet(false),
-    m_enableSparkAppMonitorInfoHasBeenSet(false)
+    m_enableSparkAppMonitorInfoHasBeenSet(false),
+    m_computeResourceGroupIdsHasBeenSet(false),
+    m_terminateProtectionHasBeenSet(false)
 {
 }
 
@@ -251,6 +253,27 @@ string CreateCloudInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_enableSparkAppMonitorInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_computeResourceGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeResourceGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_computeResourceGroupIds.begin(); itr != m_computeResourceGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_terminateProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TerminateProtection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_terminateProtection, allocator);
     }
 
 
@@ -595,6 +618,38 @@ void CreateCloudInstanceRequest::SetEnableSparkAppMonitorInfo(const EnableSparkA
 bool CreateCloudInstanceRequest::EnableSparkAppMonitorInfoHasBeenSet() const
 {
     return m_enableSparkAppMonitorInfoHasBeenSet;
+}
+
+vector<string> CreateCloudInstanceRequest::GetComputeResourceGroupIds() const
+{
+    return m_computeResourceGroupIds;
+}
+
+void CreateCloudInstanceRequest::SetComputeResourceGroupIds(const vector<string>& _computeResourceGroupIds)
+{
+    m_computeResourceGroupIds = _computeResourceGroupIds;
+    m_computeResourceGroupIdsHasBeenSet = true;
+}
+
+bool CreateCloudInstanceRequest::ComputeResourceGroupIdsHasBeenSet() const
+{
+    return m_computeResourceGroupIdsHasBeenSet;
+}
+
+bool CreateCloudInstanceRequest::GetTerminateProtection() const
+{
+    return m_terminateProtection;
+}
+
+void CreateCloudInstanceRequest::SetTerminateProtection(const bool& _terminateProtection)
+{
+    m_terminateProtection = _terminateProtection;
+    m_terminateProtectionHasBeenSet = true;
+}
+
+bool CreateCloudInstanceRequest::TerminateProtectionHasBeenSet() const
+{
+    return m_terminateProtectionHasBeenSet;
 }
 
 

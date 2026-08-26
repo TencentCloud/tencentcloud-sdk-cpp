@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool NoteHasBeenSet() const;
 
                     /**
-                     * 获取规则执行的方式，TimedJob为定时执行，CronJob为周期执行
-                     * @return JobType 规则执行的方式，TimedJob为定时执行，CronJob为周期执行
+                     * 获取规则执行的方式，TimedJob为定时执行，CronJob为周期执行，JobType为空时，永久生效
+                     * @return JobType 规则执行的方式，TimedJob为定时执行，CronJob为周期执行，JobType为空时，永久生效
                      * 
                      */
                     std::string GetJobType() const;
 
                     /**
-                     * 设置规则执行的方式，TimedJob为定时执行，CronJob为周期执行
-                     * @param _jobType 规则执行的方式，TimedJob为定时执行，CronJob为周期执行
+                     * 设置规则执行的方式，TimedJob为定时执行，CronJob为周期执行，JobType为空时，永久生效
+                     * @param _jobType 规则执行的方式，TimedJob为定时执行，CronJob为周期执行，JobType为空时，永久生效
                      * 
                      */
                     void SetJobType(const std::string& _jobType);
@@ -309,7 +309,7 @@ namespace TencentCloud
                     bool m_noteHasBeenSet;
 
                     /**
-                     * 规则执行的方式，TimedJob为定时执行，CronJob为周期执行
+                     * 规则执行的方式，TimedJob为定时执行，CronJob为周期执行，JobType为空时，永久生效
                      */
                     std::string m_jobType;
                     bool m_jobTypeHasBeenSet;

@@ -30,7 +30,8 @@ UpgradeDedicatedDCDBInstanceRequest::UpgradeDedicatedDCDBInstanceRequest() :
     m_splitShardConfigHasBeenSet(false),
     m_switchAutoRetryHasBeenSet(false),
     m_switchStartTimeHasBeenSet(false),
-    m_switchEndTimeHasBeenSet(false)
+    m_switchEndTimeHasBeenSet(false),
+    m_switchIntervalHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,14 @@ string UpgradeDedicatedDCDBInstanceRequest::ToJsonString() const
         string key = "SwitchEndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_switchEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_switchIntervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SwitchInterval";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_switchInterval, allocator);
     }
 
 
@@ -242,6 +251,22 @@ void UpgradeDedicatedDCDBInstanceRequest::SetSwitchEndTime(const string& _switch
 bool UpgradeDedicatedDCDBInstanceRequest::SwitchEndTimeHasBeenSet() const
 {
     return m_switchEndTimeHasBeenSet;
+}
+
+int64_t UpgradeDedicatedDCDBInstanceRequest::GetSwitchInterval() const
+{
+    return m_switchInterval;
+}
+
+void UpgradeDedicatedDCDBInstanceRequest::SetSwitchInterval(const int64_t& _switchInterval)
+{
+    m_switchInterval = _switchInterval;
+    m_switchIntervalHasBeenSet = true;
+}
+
+bool UpgradeDedicatedDCDBInstanceRequest::SwitchIntervalHasBeenSet() const
+{
+    return m_switchIntervalHasBeenSet;
 }
 
 

@@ -30,6 +30,7 @@ PrometheusClusterAgentBasic::PrometheusClusterAgentBasic() :
     m_notInstallBasicScrapeHasBeenSet(false),
     m_notScrapeHasBeenSet(false),
     m_dropAllHasBeenSet(false),
+    m_collectAllHasBeenSet(false),
     m_openDefaultRecordHasBeenSet(false)
 {
 }
@@ -146,6 +147,16 @@ CoreInternalOutcome PrometheusClusterAgentBasic::Deserialize(const rapidjson::Va
         m_dropAllHasBeenSet = true;
     }
 
+    if (value.HasMember("CollectAll") && !value["CollectAll"].IsNull())
+    {
+        if (!value["CollectAll"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusClusterAgentBasic.CollectAll` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_collectAll = value["CollectAll"].GetBool();
+        m_collectAllHasBeenSet = true;
+    }
+
     if (value.HasMember("OpenDefaultRecord") && !value["OpenDefaultRecord"].IsNull())
     {
         if (!value["OpenDefaultRecord"].IsBool())
@@ -241,6 +252,14 @@ void PrometheusClusterAgentBasic::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "DropAll";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dropAll, allocator);
+    }
+
+    if (m_collectAllHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CollectAll";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_collectAll, allocator);
     }
 
     if (m_openDefaultRecordHasBeenSet)
@@ -396,6 +415,22 @@ void PrometheusClusterAgentBasic::SetDropAll(const bool& _dropAll)
 bool PrometheusClusterAgentBasic::DropAllHasBeenSet() const
 {
     return m_dropAllHasBeenSet;
+}
+
+bool PrometheusClusterAgentBasic::GetCollectAll() const
+{
+    return m_collectAll;
+}
+
+void PrometheusClusterAgentBasic::SetCollectAll(const bool& _collectAll)
+{
+    m_collectAll = _collectAll;
+    m_collectAllHasBeenSet = true;
+}
+
+bool PrometheusClusterAgentBasic::CollectAllHasBeenSet() const
+{
+    return m_collectAllHasBeenSet;
 }
 
 bool PrometheusClusterAgentBasic::GetOpenDefaultRecord() const

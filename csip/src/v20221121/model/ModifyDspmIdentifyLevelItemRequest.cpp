@@ -26,7 +26,8 @@ ModifyDspmIdentifyLevelItemRequest::ModifyDspmIdentifyLevelItemRequest() :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_memberIdHasBeenSet(false),
-    m_levelScoreHasBeenSet(false)
+    m_levelScoreHasBeenSet(false),
+    m_operationSourceHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,14 @@ string ModifyDspmIdentifyLevelItemRequest::ToJsonString() const
         string key = "LevelScore";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_levelScore, allocator);
+    }
+
+    if (m_operationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operationSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -144,6 +153,22 @@ void ModifyDspmIdentifyLevelItemRequest::SetLevelScore(const uint64_t& _levelSco
 bool ModifyDspmIdentifyLevelItemRequest::LevelScoreHasBeenSet() const
 {
     return m_levelScoreHasBeenSet;
+}
+
+string ModifyDspmIdentifyLevelItemRequest::GetOperationSource() const
+{
+    return m_operationSource;
+}
+
+void ModifyDspmIdentifyLevelItemRequest::SetOperationSource(const string& _operationSource)
+{
+    m_operationSource = _operationSource;
+    m_operationSourceHasBeenSet = true;
+}
+
+bool ModifyDspmIdentifyLevelItemRequest::OperationSourceHasBeenSet() const
+{
+    return m_operationSourceHasBeenSet;
 }
 
 

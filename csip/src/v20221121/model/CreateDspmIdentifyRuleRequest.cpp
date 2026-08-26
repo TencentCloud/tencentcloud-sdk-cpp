@@ -28,7 +28,8 @@ CreateDspmIdentifyRuleRequest::CreateDspmIdentifyRuleRequest() :
     m_descriptionHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_structuredRuleHasBeenSet(false),
-    m_unStructuredRuleHasBeenSet(false)
+    m_unStructuredRuleHasBeenSet(false),
+    m_operationSourceHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string CreateDspmIdentifyRuleRequest::ToJsonString() const
         string key = "UnStructuredRule";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_unStructuredRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operationSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -194,6 +203,22 @@ void CreateDspmIdentifyRuleRequest::SetUnStructuredRule(const string& _unStructu
 bool CreateDspmIdentifyRuleRequest::UnStructuredRuleHasBeenSet() const
 {
     return m_unStructuredRuleHasBeenSet;
+}
+
+string CreateDspmIdentifyRuleRequest::GetOperationSource() const
+{
+    return m_operationSource;
+}
+
+void CreateDspmIdentifyRuleRequest::SetOperationSource(const string& _operationSource)
+{
+    m_operationSource = _operationSource;
+    m_operationSourceHasBeenSet = true;
+}
+
+bool CreateDspmIdentifyRuleRequest::OperationSourceHasBeenSet() const
+{
+    return m_operationSourceHasBeenSet;
 }
 
 

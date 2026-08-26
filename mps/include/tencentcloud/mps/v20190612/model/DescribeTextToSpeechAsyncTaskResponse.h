@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>错误码，成功时返回0</p>
-                     * @return ErrorCode <p>错误码，成功时返回0</p>
+                     * 获取<p>错误码，成功时返回0，处理中返回100</p>
+                     * @return ErrorCode <p>错误码，成功时返回0，处理中返回100</p>
                      * 
                      */
                     int64_t GetErrorCode() const;
@@ -130,7 +130,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>错误码，成功时返回0</p>
+                     * <p>错误码，成功时返回0，处理中返回100</p>
                      */
                     int64_t m_errorCode;
                     bool m_errorCodeHasBeenSet;

@@ -24,7 +24,9 @@ CosBucketTaskInfo::CosBucketTaskInfo() :
     m_appIdHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
     m_taskIdHasBeenSet(false),
-    m_lastScanTimeHasBeenSet(false)
+    m_lastScanTimeHasBeenSet(false),
+    m_identifyFileCountHasBeenSet(false),
+    m_sensitiveFileCountHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome CosBucketTaskInfo::Deserialize(const rapidjson::Value &value
         m_lastScanTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("IdentifyFileCount") && !value["IdentifyFileCount"].IsNull())
+    {
+        if (!value["IdentifyFileCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosBucketTaskInfo.IdentifyFileCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_identifyFileCount = value["IdentifyFileCount"].GetUint64();
+        m_identifyFileCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("SensitiveFileCount") && !value["SensitiveFileCount"].IsNull())
+    {
+        if (!value["SensitiveFileCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosBucketTaskInfo.SensitiveFileCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sensitiveFileCount = value["SensitiveFileCount"].GetUint64();
+        m_sensitiveFileCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void CosBucketTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "LastScanTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastScanTime, allocator);
+    }
+
+    if (m_identifyFileCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdentifyFileCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_identifyFileCount, allocator);
+    }
+
+    if (m_sensitiveFileCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SensitiveFileCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sensitiveFileCount, allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void CosBucketTaskInfo::SetLastScanTime(const int64_t& _lastScanTime)
 bool CosBucketTaskInfo::LastScanTimeHasBeenSet() const
 {
     return m_lastScanTimeHasBeenSet;
+}
+
+uint64_t CosBucketTaskInfo::GetIdentifyFileCount() const
+{
+    return m_identifyFileCount;
+}
+
+void CosBucketTaskInfo::SetIdentifyFileCount(const uint64_t& _identifyFileCount)
+{
+    m_identifyFileCount = _identifyFileCount;
+    m_identifyFileCountHasBeenSet = true;
+}
+
+bool CosBucketTaskInfo::IdentifyFileCountHasBeenSet() const
+{
+    return m_identifyFileCountHasBeenSet;
+}
+
+uint64_t CosBucketTaskInfo::GetSensitiveFileCount() const
+{
+    return m_sensitiveFileCount;
+}
+
+void CosBucketTaskInfo::SetSensitiveFileCount(const uint64_t& _sensitiveFileCount)
+{
+    m_sensitiveFileCount = _sensitiveFileCount;
+    m_sensitiveFileCountHasBeenSet = true;
+}
+
+bool CosBucketTaskInfo::SensitiveFileCountHasBeenSet() const
+{
+    return m_sensitiveFileCountHasBeenSet;
 }
 

@@ -27,7 +27,8 @@ UpdateSandboxToolRequest::UpdateSandboxToolRequest() :
     m_descriptionHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_customConfigurationHasBeenSet(false)
+    m_customConfigurationHasBeenSet(false),
+    m_computerConfigurationHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,15 @@ string UpdateSandboxToolRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_customConfiguration.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_computerConfigurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputerConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_computerConfiguration.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -173,6 +183,22 @@ void UpdateSandboxToolRequest::SetCustomConfiguration(const CustomConfiguration&
 bool UpdateSandboxToolRequest::CustomConfigurationHasBeenSet() const
 {
     return m_customConfigurationHasBeenSet;
+}
+
+ComputerConfiguration UpdateSandboxToolRequest::GetComputerConfiguration() const
+{
+    return m_computerConfiguration;
+}
+
+void UpdateSandboxToolRequest::SetComputerConfiguration(const ComputerConfiguration& _computerConfiguration)
+{
+    m_computerConfiguration = _computerConfiguration;
+    m_computerConfigurationHasBeenSet = true;
+}
+
+bool UpdateSandboxToolRequest::ComputerConfigurationHasBeenSet() const
+{
+    return m_computerConfigurationHasBeenSet;
 }
 
 

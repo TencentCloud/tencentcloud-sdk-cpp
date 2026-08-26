@@ -58,8 +58,10 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取SessionID
-                     * @return SessionID SessionID
+                     * 获取会话ID
+说明：新增时返回系统生成的SessionID，更新时返回请求中传入的SessionID
+                     * @return SessionID 会话ID
+说明：新增时返回系统生成的SessionID，更新时返回请求中传入的SessionID
                      * 
                      */
                     int64_t GetSessionID() const;
@@ -80,7 +82,8 @@ namespace TencentCloud
                     bool m_dataHasBeenSet;
 
                     /**
-                     * SessionID
+                     * 会话ID
+说明：新增时返回系统生成的SessionID，更新时返回请求中传入的SessionID
                      */
                     int64_t m_sessionID;
                     bool m_sessionIDHasBeenSet;

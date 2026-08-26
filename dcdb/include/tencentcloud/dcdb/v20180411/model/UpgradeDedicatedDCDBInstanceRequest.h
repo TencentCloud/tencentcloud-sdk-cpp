@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取升级类型，取值为ADD，SPLIT和EXPAND。ADD-添加分片；SPLIT-切分某个分片；EXPAND-垂直扩容某个分片
-                     * @return UpgradeType 升级类型，取值为ADD，SPLIT和EXPAND。ADD-添加分片；SPLIT-切分某个分片；EXPAND-垂直扩容某个分片
+                     * 获取<p>升级类型，取值为ADD，SPLIT和EXPAND。ADD-添加分片；SPLIT-切分某个分片；EXPAND-垂直扩容某个分片</p>
+                     * @return UpgradeType <p>升级类型，取值为ADD，SPLIT和EXPAND。ADD-添加分片；SPLIT-切分某个分片；EXPAND-垂直扩容某个分片</p>
                      * 
                      */
                     std::string GetUpgradeType() const;
 
                     /**
-                     * 设置升级类型，取值为ADD，SPLIT和EXPAND。ADD-添加分片；SPLIT-切分某个分片；EXPAND-垂直扩容某个分片
-                     * @param _upgradeType 升级类型，取值为ADD，SPLIT和EXPAND。ADD-添加分片；SPLIT-切分某个分片；EXPAND-垂直扩容某个分片
+                     * 设置<p>升级类型，取值为ADD，SPLIT和EXPAND。ADD-添加分片；SPLIT-切分某个分片；EXPAND-垂直扩容某个分片</p>
+                     * @param _upgradeType <p>升级类型，取值为ADD，SPLIT和EXPAND。ADD-添加分片；SPLIT-切分某个分片；EXPAND-垂直扩容某个分片</p>
                      * 
                      */
                     void SetUpgradeType(const std::string& _upgradeType);
@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool UpgradeTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例ID，形如 dcdbt-mlfjm74h
-                     * @return InstanceId 实例ID，形如 dcdbt-mlfjm74h
+                     * 获取<p>实例ID，形如 dcdbt-mlfjm74h</p>
+                     * @return InstanceId <p>实例ID，形如 dcdbt-mlfjm74h</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，形如 dcdbt-mlfjm74h
-                     * @param _instanceId 实例ID，形如 dcdbt-mlfjm74h
+                     * 设置<p>实例ID，形如 dcdbt-mlfjm74h</p>
+                     * @param _instanceId <p>实例ID，形如 dcdbt-mlfjm74h</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取当UpgradeType取值为ADD时，添加分片的配置参数
-                     * @return AddShardConfig 当UpgradeType取值为ADD时，添加分片的配置参数
+                     * 获取<p>当UpgradeType取值为ADD时，添加分片的配置参数</p>
+                     * @return AddShardConfig <p>当UpgradeType取值为ADD时，添加分片的配置参数</p>
                      * 
                      */
                     AddShardConfig GetAddShardConfig() const;
 
                     /**
-                     * 设置当UpgradeType取值为ADD时，添加分片的配置参数
-                     * @param _addShardConfig 当UpgradeType取值为ADD时，添加分片的配置参数
+                     * 设置<p>当UpgradeType取值为ADD时，添加分片的配置参数</p>
+                     * @param _addShardConfig <p>当UpgradeType取值为ADD时，添加分片的配置参数</p>
                      * 
                      */
                     void SetAddShardConfig(const AddShardConfig& _addShardConfig);
@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool AddShardConfigHasBeenSet() const;
 
                     /**
-                     * 获取当UpgradeType取值为EXPAND时，垂直扩容分片的配置参数
-                     * @return ExpandShardConfig 当UpgradeType取值为EXPAND时，垂直扩容分片的配置参数
+                     * 获取<p>当UpgradeType取值为EXPAND时，垂直扩容分片的配置参数</p>
+                     * @return ExpandShardConfig <p>当UpgradeType取值为EXPAND时，垂直扩容分片的配置参数</p>
                      * 
                      */
                     ExpandShardConfig GetExpandShardConfig() const;
 
                     /**
-                     * 设置当UpgradeType取值为EXPAND时，垂直扩容分片的配置参数
-                     * @param _expandShardConfig 当UpgradeType取值为EXPAND时，垂直扩容分片的配置参数
+                     * 设置<p>当UpgradeType取值为EXPAND时，垂直扩容分片的配置参数</p>
+                     * @param _expandShardConfig <p>当UpgradeType取值为EXPAND时，垂直扩容分片的配置参数</p>
                      * 
                      */
                     void SetExpandShardConfig(const ExpandShardConfig& _expandShardConfig);
@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool ExpandShardConfigHasBeenSet() const;
 
                     /**
-                     * 获取当UpgradeType取值为SPLIT时，切分分片的配置参数
-                     * @return SplitShardConfig 当UpgradeType取值为SPLIT时，切分分片的配置参数
+                     * 获取<p>当UpgradeType取值为SPLIT时，切分分片的配置参数</p>
+                     * @return SplitShardConfig <p>当UpgradeType取值为SPLIT时，切分分片的配置参数</p>
                      * 
                      */
                     SplitShardConfig GetSplitShardConfig() const;
 
                     /**
-                     * 设置当UpgradeType取值为SPLIT时，切分分片的配置参数
-                     * @param _splitShardConfig 当UpgradeType取值为SPLIT时，切分分片的配置参数
+                     * 设置<p>当UpgradeType取值为SPLIT时，切分分片的配置参数</p>
+                     * @param _splitShardConfig <p>当UpgradeType取值为SPLIT时，切分分片的配置参数</p>
                      * 
                      */
                     void SetSplitShardConfig(const SplitShardConfig& _splitShardConfig);
@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool SplitShardConfigHasBeenSet() const;
 
                     /**
-                     * 获取错过切换时间窗口时，是否自动重试一次，0-否，1-是
-                     * @return SwitchAutoRetry 错过切换时间窗口时，是否自动重试一次，0-否，1-是
+                     * 获取<p>错过切换时间窗口时，是否自动重试一次，0-否，1-是</p>
+                     * @return SwitchAutoRetry <p>错过切换时间窗口时，是否自动重试一次，0-否，1-是</p>
                      * 
                      */
                     int64_t GetSwitchAutoRetry() const;
 
                     /**
-                     * 设置错过切换时间窗口时，是否自动重试一次，0-否，1-是
-                     * @param _switchAutoRetry 错过切换时间窗口时，是否自动重试一次，0-否，1-是
+                     * 设置<p>错过切换时间窗口时，是否自动重试一次，0-否，1-是</p>
+                     * @param _switchAutoRetry <p>错过切换时间窗口时，是否自动重试一次，0-否，1-是</p>
                      * 
                      */
                     void SetSwitchAutoRetry(const int64_t& _switchAutoRetry);
@@ -172,15 +172,15 @@ namespace TencentCloud
                     bool SwitchAutoRetryHasBeenSet() const;
 
                     /**
-                     * 获取切换时间窗口开始时间
-                     * @return SwitchStartTime 切换时间窗口开始时间
+                     * 获取<p>切换时间窗口开始时间</p>
+                     * @return SwitchStartTime <p>切换时间窗口开始时间</p>
                      * 
                      */
                     std::string GetSwitchStartTime() const;
 
                     /**
-                     * 设置切换时间窗口开始时间
-                     * @param _switchStartTime 切换时间窗口开始时间
+                     * 设置<p>切换时间窗口开始时间</p>
+                     * @param _switchStartTime <p>切换时间窗口开始时间</p>
                      * 
                      */
                     void SetSwitchStartTime(const std::string& _switchStartTime);
@@ -193,15 +193,15 @@ namespace TencentCloud
                     bool SwitchStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取切换时间窗口结束时间
-                     * @return SwitchEndTime 切换时间窗口结束时间
+                     * 获取<p>切换时间窗口结束时间</p>
+                     * @return SwitchEndTime <p>切换时间窗口结束时间</p>
                      * 
                      */
                     std::string GetSwitchEndTime() const;
 
                     /**
-                     * 设置切换时间窗口结束时间
-                     * @param _switchEndTime 切换时间窗口结束时间
+                     * 设置<p>切换时间窗口结束时间</p>
+                     * @param _switchEndTime <p>切换时间窗口结束时间</p>
                      * 
                      */
                     void SetSwitchEndTime(const std::string& _switchEndTime);
@@ -213,55 +213,82 @@ namespace TencentCloud
                      */
                     bool SwitchEndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>多个分片同时发起扩容，并发切换中的切换时间间隔，即当前分片切换开始时间和下一个分片的切换开始时间间隔，不传默认为1。</p><p>取值范围：[1, 180]</p><p>单位：秒</p>
+                     * @return SwitchInterval <p>多个分片同时发起扩容，并发切换中的切换时间间隔，即当前分片切换开始时间和下一个分片的切换开始时间间隔，不传默认为1。</p><p>取值范围：[1, 180]</p><p>单位：秒</p>
+                     * 
+                     */
+                    int64_t GetSwitchInterval() const;
+
+                    /**
+                     * 设置<p>多个分片同时发起扩容，并发切换中的切换时间间隔，即当前分片切换开始时间和下一个分片的切换开始时间间隔，不传默认为1。</p><p>取值范围：[1, 180]</p><p>单位：秒</p>
+                     * @param _switchInterval <p>多个分片同时发起扩容，并发切换中的切换时间间隔，即当前分片切换开始时间和下一个分片的切换开始时间间隔，不传默认为1。</p><p>取值范围：[1, 180]</p><p>单位：秒</p>
+                     * 
+                     */
+                    void SetSwitchInterval(const int64_t& _switchInterval);
+
+                    /**
+                     * 判断参数 SwitchInterval 是否已赋值
+                     * @return SwitchInterval 是否已赋值
+                     * 
+                     */
+                    bool SwitchIntervalHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 升级类型，取值为ADD，SPLIT和EXPAND。ADD-添加分片；SPLIT-切分某个分片；EXPAND-垂直扩容某个分片
+                     * <p>升级类型，取值为ADD，SPLIT和EXPAND。ADD-添加分片；SPLIT-切分某个分片；EXPAND-垂直扩容某个分片</p>
                      */
                     std::string m_upgradeType;
                     bool m_upgradeTypeHasBeenSet;
 
                     /**
-                     * 实例ID，形如 dcdbt-mlfjm74h
+                     * <p>实例ID，形如 dcdbt-mlfjm74h</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 当UpgradeType取值为ADD时，添加分片的配置参数
+                     * <p>当UpgradeType取值为ADD时，添加分片的配置参数</p>
                      */
                     AddShardConfig m_addShardConfig;
                     bool m_addShardConfigHasBeenSet;
 
                     /**
-                     * 当UpgradeType取值为EXPAND时，垂直扩容分片的配置参数
+                     * <p>当UpgradeType取值为EXPAND时，垂直扩容分片的配置参数</p>
                      */
                     ExpandShardConfig m_expandShardConfig;
                     bool m_expandShardConfigHasBeenSet;
 
                     /**
-                     * 当UpgradeType取值为SPLIT时，切分分片的配置参数
+                     * <p>当UpgradeType取值为SPLIT时，切分分片的配置参数</p>
                      */
                     SplitShardConfig m_splitShardConfig;
                     bool m_splitShardConfigHasBeenSet;
 
                     /**
-                     * 错过切换时间窗口时，是否自动重试一次，0-否，1-是
+                     * <p>错过切换时间窗口时，是否自动重试一次，0-否，1-是</p>
                      */
                     int64_t m_switchAutoRetry;
                     bool m_switchAutoRetryHasBeenSet;
 
                     /**
-                     * 切换时间窗口开始时间
+                     * <p>切换时间窗口开始时间</p>
                      */
                     std::string m_switchStartTime;
                     bool m_switchStartTimeHasBeenSet;
 
                     /**
-                     * 切换时间窗口结束时间
+                     * <p>切换时间窗口结束时间</p>
                      */
                     std::string m_switchEndTime;
                     bool m_switchEndTimeHasBeenSet;
+
+                    /**
+                     * <p>多个分片同时发起扩容，并发切换中的切换时间间隔，即当前分片切换开始时间和下一个分片的切换开始时间间隔，不传默认为1。</p><p>取值范围：[1, 180]</p><p>单位：秒</p>
+                     */
+                    int64_t m_switchInterval;
+                    bool m_switchIntervalHasBeenSet;
 
                 };
             }

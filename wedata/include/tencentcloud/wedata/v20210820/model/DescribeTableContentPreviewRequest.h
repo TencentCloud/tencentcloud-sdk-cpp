@@ -336,6 +336,27 @@ namespace TencentCloud
                      */
                     bool EngineTypeDetailHasBeenSet() const;
 
+                    /**
+                     * 获取<p>数据源ID</p>
+                     * @return DatasourceId <p>数据源ID</p>
+                     * 
+                     */
+                    uint64_t GetDatasourceId() const;
+
+                    /**
+                     * 设置<p>数据源ID</p>
+                     * @param _datasourceId <p>数据源ID</p>
+                     * 
+                     */
+                    void SetDatasourceId(const uint64_t& _datasourceId);
+
+                    /**
+                     * 判断参数 DatasourceId 是否已赋值
+                     * @return DatasourceId 是否已赋值
+                     * 
+                     */
+                    bool DatasourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -421,6 +442,12 @@ namespace TencentCloud
                      */
                     std::string m_engineTypeDetail;
                     bool m_engineTypeDetailHasBeenSet;
+
+                    /**
+                     * <p>数据源ID</p>
+                     */
+                    uint64_t m_datasourceId;
+                    bool m_datasourceIdHasBeenSet;
 
                 };
             }

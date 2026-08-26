@@ -175,6 +175,8 @@
 #include <tencentcloud/csip/v20221121/model/CreateExposuresExportJobResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateHighBaseLineRisksExportJobRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateHighBaseLineRisksExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateHostImageListExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateHostImageListExportJobResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateHostVulExportJobRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateHostVulExportJobResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateIaCAccessTokenRequest.h>
@@ -225,6 +227,14 @@
 #include <tencentcloud/csip/v20221121/model/CreateRiskCenterScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateRiskDetailExportJobRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateRiskDetailExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateSandboxACLRuleRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateSandboxACLRuleResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateSandboxDLPRuleRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateSandboxDLPRuleResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateSandboxFileRuleRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateSandboxFileRuleResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateSandboxLLMAuditRuleRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateSandboxLLMAuditRuleResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateScanStatisticExportJobRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateScanStatisticExportJobResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateScanTaskRequest.h>
@@ -327,6 +337,12 @@
 #include <tencentcloud/csip/v20221121/model/DeleteMachineClearHistoryResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteRiskScanTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteRiskScanTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteSandboxACLRuleRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteSandboxACLRuleResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteSandboxDLPRuleRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteSandboxDLPRuleResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteSandboxFileRuleRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteSandboxFileRuleResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteSandboxLLMAuditRuleRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteSandboxLLMAuditRuleResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteVulWhitelistRequest.h>
@@ -385,6 +401,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeAccessKeyUserDetailResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAccessKeyUserListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAccessKeyUserListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeAccessKeyWhiteListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeAccessKeyWhiteListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAgentConfigSettingRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAgentConfigSettingResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAgentRunModeRequest.h>
@@ -483,6 +501,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeCLSLogIndexV3Response.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCLSLogListV3Request.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCLSLogListV3Response.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCSCPayInfoRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCSCPayInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCSIPLicenseBindScheduleRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCSIPLicenseBindScheduleResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCSIPMalwareScanTaskDetailRequest.h>
@@ -491,6 +511,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeCSIPMalwareScanTaskProgressResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCSIPRiskStatisticsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCSIPRiskStatisticsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCSPMPayInfoRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCSPMPayInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCVMAssetInfoRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCVMAssetInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCVMAssetsRequest.h>
@@ -1047,10 +1069,20 @@
 #include <tencentcloud/csip/v20221121/model/DescribeSandboxACLRuleListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSandboxACLSystemRuleListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSandboxACLSystemRuleListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSandboxDLPAlertListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSandboxDLPAlertListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSandboxDLPRuleListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSandboxDLPRuleListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSandboxDLPSystemRuleListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSandboxDLPSystemRuleListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSandboxFileRuleListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSandboxFileRuleListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSandboxLLMAuditAlertListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSandboxLLMAuditAlertListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSandboxLLMAuditRuleListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSandboxLLMAuditRuleListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSandboxLLMAuditSystemRuleListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSandboxLLMAuditSystemRuleListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeScanReportListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeScanReportListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeScanStatisticRequest.h>
@@ -1081,6 +1113,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeSkillScanResultResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSourceIPAssetRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSourceIPAssetResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSourceIPDetailRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSourceIPDetailResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSubUserInfoRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSubUserInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSubnetAssetsRequest.h>
@@ -1103,6 +1137,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeUebaRuleResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeUebaUserSummaryRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeUebaUserSummaryResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeUserAKInfoListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeUserAKInfoListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeUserCSPMInfoListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeUserCSPMInfoListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeUserCallRecordRequest.h>
@@ -1119,6 +1155,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeVULRiskDetailResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeVdbAndPocInfoRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeVdbAndPocInfoResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVoucherEligibilityRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeVoucherEligibilityResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeVpcAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeVpcAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeVulComponentRelateHostRequest.h>
@@ -1175,6 +1213,10 @@
 #include <tencentcloud/csip/v20221121/model/ExportTasksResponse.h>
 #include <tencentcloud/csip/v20221121/model/InstallClusterAgentRequest.h>
 #include <tencentcloud/csip/v20221121/model/InstallClusterAgentResponse.h>
+#include <tencentcloud/csip/v20221121/model/InstallKeySandboxSkillRequest.h>
+#include <tencentcloud/csip/v20221121/model/InstallKeySandboxSkillResponse.h>
+#include <tencentcloud/csip/v20221121/model/InstallSandboxPluginRequest.h>
+#include <tencentcloud/csip/v20221121/model/InstallSandboxPluginResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyAILinkSettingRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyAILinkSettingResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyAIScheduleRequest.h>
@@ -1221,6 +1263,8 @@
 #include <tencentcloud/csip/v20221121/model/ModifyCSIPRaspLicenseBindsResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyCSIPRaspLicenseUnBindsRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyCSIPRaspLicenseUnBindsResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyClusterDefendStatusRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyClusterDefendStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyCosAuditBucketMonitorStatusRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyCosAuditBucketMonitorStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyCosAuditMonitorAccountRequest.h>
@@ -1373,10 +1417,28 @@
 #include <tencentcloud/csip/v20221121/model/ModifyRiskCenterScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyRiskScanCronConfigRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyRiskScanCronConfigResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifySandboxACLRuleRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifySandboxACLRuleResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifySandboxACLRuleStatusRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifySandboxACLRuleStatusResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifySandboxAlertStatusRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifySandboxAlertStatusResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifySandboxDLPRuleRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifySandboxDLPRuleResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifySandboxDLPRuleStatusRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifySandboxDLPRuleStatusResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifySandboxFileRuleRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifySandboxFileRuleResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifySandboxFileRuleStatusRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifySandboxFileRuleStatusResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifySandboxLLMAuditRuleRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifySandboxLLMAuditRuleResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifySandboxLLMAuditRuleStatusRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifySandboxLLMAuditRuleStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifySecurityScoreRuleRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifySecurityScoreRuleResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyShareUserAKRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyShareUserAKResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyShareUserCSPMRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyShareUserCSPMResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyShareUserDspmRequest.h>
@@ -1453,6 +1515,8 @@
 #include <tencentcloud/csip/v20221121/model/TestWebhookReceiverResponse.h>
 #include <tencentcloud/csip/v20221121/model/UninstallClusterAgentRequest.h>
 #include <tencentcloud/csip/v20221121/model/UninstallClusterAgentResponse.h>
+#include <tencentcloud/csip/v20221121/model/UninstallKeySandboxSkillRequest.h>
+#include <tencentcloud/csip/v20221121/model/UninstallKeySandboxSkillResponse.h>
 #include <tencentcloud/csip/v20221121/model/UpdateAccessKeyAlarmStatusRequest.h>
 #include <tencentcloud/csip/v20221121/model/UpdateAccessKeyAlarmStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/UpdateAccessKeyRemarkRequest.h>
@@ -1705,6 +1769,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateHighBaseLineRisksExportJobResponse> CreateHighBaseLineRisksExportJobOutcome;
                 typedef std::future<CreateHighBaseLineRisksExportJobOutcome> CreateHighBaseLineRisksExportJobOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateHighBaseLineRisksExportJobRequest&, CreateHighBaseLineRisksExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHighBaseLineRisksExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateHostImageListExportJobResponse> CreateHostImageListExportJobOutcome;
+                typedef std::future<CreateHostImageListExportJobOutcome> CreateHostImageListExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateHostImageListExportJobRequest&, CreateHostImageListExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHostImageListExportJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateHostVulExportJobResponse> CreateHostVulExportJobOutcome;
                 typedef std::future<CreateHostVulExportJobOutcome> CreateHostVulExportJobOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateHostVulExportJobRequest&, CreateHostVulExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHostVulExportJobAsyncHandler;
@@ -1780,6 +1847,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRiskDetailExportJobResponse> CreateRiskDetailExportJobOutcome;
                 typedef std::future<CreateRiskDetailExportJobOutcome> CreateRiskDetailExportJobOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateRiskDetailExportJobRequest&, CreateRiskDetailExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRiskDetailExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSandboxACLRuleResponse> CreateSandboxACLRuleOutcome;
+                typedef std::future<CreateSandboxACLRuleOutcome> CreateSandboxACLRuleOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateSandboxACLRuleRequest&, CreateSandboxACLRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSandboxACLRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSandboxDLPRuleResponse> CreateSandboxDLPRuleOutcome;
+                typedef std::future<CreateSandboxDLPRuleOutcome> CreateSandboxDLPRuleOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateSandboxDLPRuleRequest&, CreateSandboxDLPRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSandboxDLPRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSandboxFileRuleResponse> CreateSandboxFileRuleOutcome;
+                typedef std::future<CreateSandboxFileRuleOutcome> CreateSandboxFileRuleOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateSandboxFileRuleRequest&, CreateSandboxFileRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSandboxFileRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSandboxLLMAuditRuleResponse> CreateSandboxLLMAuditRuleOutcome;
+                typedef std::future<CreateSandboxLLMAuditRuleOutcome> CreateSandboxLLMAuditRuleOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateSandboxLLMAuditRuleRequest&, CreateSandboxLLMAuditRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSandboxLLMAuditRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateScanStatisticExportJobResponse> CreateScanStatisticExportJobOutcome;
                 typedef std::future<CreateScanStatisticExportJobOutcome> CreateScanStatisticExportJobOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateScanStatisticExportJobRequest&, CreateScanStatisticExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScanStatisticExportJobAsyncHandler;
@@ -1933,6 +2012,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRiskScanTaskResponse> DeleteRiskScanTaskOutcome;
                 typedef std::future<DeleteRiskScanTaskOutcome> DeleteRiskScanTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteRiskScanTaskRequest&, DeleteRiskScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRiskScanTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSandboxACLRuleResponse> DeleteSandboxACLRuleOutcome;
+                typedef std::future<DeleteSandboxACLRuleOutcome> DeleteSandboxACLRuleOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteSandboxACLRuleRequest&, DeleteSandboxACLRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSandboxACLRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSandboxDLPRuleResponse> DeleteSandboxDLPRuleOutcome;
+                typedef std::future<DeleteSandboxDLPRuleOutcome> DeleteSandboxDLPRuleOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteSandboxDLPRuleRequest&, DeleteSandboxDLPRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSandboxDLPRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSandboxFileRuleResponse> DeleteSandboxFileRuleOutcome;
+                typedef std::future<DeleteSandboxFileRuleOutcome> DeleteSandboxFileRuleOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteSandboxFileRuleRequest&, DeleteSandboxFileRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSandboxFileRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSandboxLLMAuditRuleResponse> DeleteSandboxLLMAuditRuleOutcome;
                 typedef std::future<DeleteSandboxLLMAuditRuleOutcome> DeleteSandboxLLMAuditRuleOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteSandboxLLMAuditRuleRequest&, DeleteSandboxLLMAuditRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSandboxLLMAuditRuleAsyncHandler;
@@ -2020,6 +2108,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccessKeyUserListResponse> DescribeAccessKeyUserListOutcome;
                 typedef std::future<DescribeAccessKeyUserListOutcome> DescribeAccessKeyUserListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeAccessKeyUserListRequest&, DescribeAccessKeyUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessKeyUserListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAccessKeyWhiteListResponse> DescribeAccessKeyWhiteListOutcome;
+                typedef std::future<DescribeAccessKeyWhiteListOutcome> DescribeAccessKeyWhiteListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeAccessKeyWhiteListRequest&, DescribeAccessKeyWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessKeyWhiteListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAgentConfigSettingResponse> DescribeAgentConfigSettingOutcome;
                 typedef std::future<DescribeAgentConfigSettingOutcome> DescribeAgentConfigSettingOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeAgentConfigSettingRequest&, DescribeAgentConfigSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentConfigSettingAsyncHandler;
@@ -2167,6 +2258,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCLSLogListV3Response> DescribeCLSLogListV3Outcome;
                 typedef std::future<DescribeCLSLogListV3Outcome> DescribeCLSLogListV3OutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeCLSLogListV3Request&, DescribeCLSLogListV3Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCLSLogListV3AsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCSCPayInfoResponse> DescribeCSCPayInfoOutcome;
+                typedef std::future<DescribeCSCPayInfoOutcome> DescribeCSCPayInfoOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCSCPayInfoRequest&, DescribeCSCPayInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCSCPayInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCSIPLicenseBindScheduleResponse> DescribeCSIPLicenseBindScheduleOutcome;
                 typedef std::future<DescribeCSIPLicenseBindScheduleOutcome> DescribeCSIPLicenseBindScheduleOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeCSIPLicenseBindScheduleRequest&, DescribeCSIPLicenseBindScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCSIPLicenseBindScheduleAsyncHandler;
@@ -2179,6 +2273,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCSIPRiskStatisticsResponse> DescribeCSIPRiskStatisticsOutcome;
                 typedef std::future<DescribeCSIPRiskStatisticsOutcome> DescribeCSIPRiskStatisticsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeCSIPRiskStatisticsRequest&, DescribeCSIPRiskStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCSIPRiskStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCSPMPayInfoResponse> DescribeCSPMPayInfoOutcome;
+                typedef std::future<DescribeCSPMPayInfoOutcome> DescribeCSPMPayInfoOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCSPMPayInfoRequest&, DescribeCSPMPayInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCSPMPayInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCVMAssetInfoResponse> DescribeCVMAssetInfoOutcome;
                 typedef std::future<DescribeCVMAssetInfoOutcome> DescribeCVMAssetInfoOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeCVMAssetInfoRequest&, DescribeCVMAssetInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCVMAssetInfoAsyncHandler;
@@ -3013,12 +3110,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSandboxACLSystemRuleListResponse> DescribeSandboxACLSystemRuleListOutcome;
                 typedef std::future<DescribeSandboxACLSystemRuleListOutcome> DescribeSandboxACLSystemRuleListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeSandboxACLSystemRuleListRequest&, DescribeSandboxACLSystemRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxACLSystemRuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSandboxDLPAlertListResponse> DescribeSandboxDLPAlertListOutcome;
+                typedef std::future<DescribeSandboxDLPAlertListOutcome> DescribeSandboxDLPAlertListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeSandboxDLPAlertListRequest&, DescribeSandboxDLPAlertListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxDLPAlertListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSandboxDLPRuleListResponse> DescribeSandboxDLPRuleListOutcome;
+                typedef std::future<DescribeSandboxDLPRuleListOutcome> DescribeSandboxDLPRuleListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeSandboxDLPRuleListRequest&, DescribeSandboxDLPRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxDLPRuleListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSandboxDLPSystemRuleListResponse> DescribeSandboxDLPSystemRuleListOutcome;
                 typedef std::future<DescribeSandboxDLPSystemRuleListOutcome> DescribeSandboxDLPSystemRuleListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeSandboxDLPSystemRuleListRequest&, DescribeSandboxDLPSystemRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxDLPSystemRuleListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSandboxFileRuleListResponse> DescribeSandboxFileRuleListOutcome;
                 typedef std::future<DescribeSandboxFileRuleListOutcome> DescribeSandboxFileRuleListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeSandboxFileRuleListRequest&, DescribeSandboxFileRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxFileRuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSandboxLLMAuditAlertListResponse> DescribeSandboxLLMAuditAlertListOutcome;
+                typedef std::future<DescribeSandboxLLMAuditAlertListOutcome> DescribeSandboxLLMAuditAlertListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeSandboxLLMAuditAlertListRequest&, DescribeSandboxLLMAuditAlertListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxLLMAuditAlertListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSandboxLLMAuditRuleListResponse> DescribeSandboxLLMAuditRuleListOutcome;
+                typedef std::future<DescribeSandboxLLMAuditRuleListOutcome> DescribeSandboxLLMAuditRuleListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeSandboxLLMAuditRuleListRequest&, DescribeSandboxLLMAuditRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxLLMAuditRuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSandboxLLMAuditSystemRuleListResponse> DescribeSandboxLLMAuditSystemRuleListOutcome;
+                typedef std::future<DescribeSandboxLLMAuditSystemRuleListOutcome> DescribeSandboxLLMAuditSystemRuleListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeSandboxLLMAuditSystemRuleListRequest&, DescribeSandboxLLMAuditSystemRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxLLMAuditSystemRuleListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScanReportListResponse> DescribeScanReportListOutcome;
                 typedef std::future<DescribeScanReportListOutcome> DescribeScanReportListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeScanReportListRequest&, DescribeScanReportListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanReportListAsyncHandler;
@@ -3064,6 +3176,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSourceIPAssetResponse> DescribeSourceIPAssetOutcome;
                 typedef std::future<DescribeSourceIPAssetOutcome> DescribeSourceIPAssetOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeSourceIPAssetRequest&, DescribeSourceIPAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSourceIPAssetAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSourceIPDetailResponse> DescribeSourceIPDetailOutcome;
+                typedef std::future<DescribeSourceIPDetailOutcome> DescribeSourceIPDetailOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeSourceIPDetailRequest&, DescribeSourceIPDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSourceIPDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSubUserInfoResponse> DescribeSubUserInfoOutcome;
                 typedef std::future<DescribeSubUserInfoOutcome> DescribeSubUserInfoOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeSubUserInfoRequest&, DescribeSubUserInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubUserInfoAsyncHandler;
@@ -3097,6 +3212,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUebaUserSummaryResponse> DescribeUebaUserSummaryOutcome;
                 typedef std::future<DescribeUebaUserSummaryOutcome> DescribeUebaUserSummaryOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeUebaUserSummaryRequest&, DescribeUebaUserSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUebaUserSummaryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserAKInfoListResponse> DescribeUserAKInfoListOutcome;
+                typedef std::future<DescribeUserAKInfoListOutcome> DescribeUserAKInfoListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeUserAKInfoListRequest&, DescribeUserAKInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserAKInfoListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserCSPMInfoListResponse> DescribeUserCSPMInfoListOutcome;
                 typedef std::future<DescribeUserCSPMInfoListOutcome> DescribeUserCSPMInfoListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeUserCSPMInfoListRequest&, DescribeUserCSPMInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserCSPMInfoListAsyncHandler;
@@ -3121,6 +3239,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVdbAndPocInfoResponse> DescribeVdbAndPocInfoOutcome;
                 typedef std::future<DescribeVdbAndPocInfoOutcome> DescribeVdbAndPocInfoOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeVdbAndPocInfoRequest&, DescribeVdbAndPocInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVdbAndPocInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVoucherEligibilityResponse> DescribeVoucherEligibilityOutcome;
+                typedef std::future<DescribeVoucherEligibilityOutcome> DescribeVoucherEligibilityOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeVoucherEligibilityRequest&, DescribeVoucherEligibilityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVoucherEligibilityAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVpcAssetsResponse> DescribeVpcAssetsOutcome;
                 typedef std::future<DescribeVpcAssetsOutcome> DescribeVpcAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeVpcAssetsRequest&, DescribeVpcAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcAssetsAsyncHandler;
@@ -3205,6 +3326,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InstallClusterAgentResponse> InstallClusterAgentOutcome;
                 typedef std::future<InstallClusterAgentOutcome> InstallClusterAgentOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::InstallClusterAgentRequest&, InstallClusterAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstallClusterAgentAsyncHandler;
+                typedef Outcome<Core::Error, Model::InstallKeySandboxSkillResponse> InstallKeySandboxSkillOutcome;
+                typedef std::future<InstallKeySandboxSkillOutcome> InstallKeySandboxSkillOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::InstallKeySandboxSkillRequest&, InstallKeySandboxSkillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstallKeySandboxSkillAsyncHandler;
+                typedef Outcome<Core::Error, Model::InstallSandboxPluginResponse> InstallSandboxPluginOutcome;
+                typedef std::future<InstallSandboxPluginOutcome> InstallSandboxPluginOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::InstallSandboxPluginRequest&, InstallSandboxPluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstallSandboxPluginAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAILinkSettingResponse> ModifyAILinkSettingOutcome;
                 typedef std::future<ModifyAILinkSettingOutcome> ModifyAILinkSettingOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyAILinkSettingRequest&, ModifyAILinkSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAILinkSettingAsyncHandler;
@@ -3274,6 +3401,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCSIPRaspLicenseUnBindsResponse> ModifyCSIPRaspLicenseUnBindsOutcome;
                 typedef std::future<ModifyCSIPRaspLicenseUnBindsOutcome> ModifyCSIPRaspLicenseUnBindsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyCSIPRaspLicenseUnBindsRequest&, ModifyCSIPRaspLicenseUnBindsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCSIPRaspLicenseUnBindsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyClusterDefendStatusResponse> ModifyClusterDefendStatusOutcome;
+                typedef std::future<ModifyClusterDefendStatusOutcome> ModifyClusterDefendStatusOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyClusterDefendStatusRequest&, ModifyClusterDefendStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterDefendStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCosAuditBucketMonitorStatusResponse> ModifyCosAuditBucketMonitorStatusOutcome;
                 typedef std::future<ModifyCosAuditBucketMonitorStatusOutcome> ModifyCosAuditBucketMonitorStatusOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyCosAuditBucketMonitorStatusRequest&, ModifyCosAuditBucketMonitorStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCosAuditBucketMonitorStatusAsyncHandler;
@@ -3502,12 +3632,39 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRiskScanCronConfigResponse> ModifyRiskScanCronConfigOutcome;
                 typedef std::future<ModifyRiskScanCronConfigOutcome> ModifyRiskScanCronConfigOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyRiskScanCronConfigRequest&, ModifyRiskScanCronConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRiskScanCronConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySandboxACLRuleResponse> ModifySandboxACLRuleOutcome;
+                typedef std::future<ModifySandboxACLRuleOutcome> ModifySandboxACLRuleOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifySandboxACLRuleRequest&, ModifySandboxACLRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySandboxACLRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySandboxACLRuleStatusResponse> ModifySandboxACLRuleStatusOutcome;
+                typedef std::future<ModifySandboxACLRuleStatusOutcome> ModifySandboxACLRuleStatusOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifySandboxACLRuleStatusRequest&, ModifySandboxACLRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySandboxACLRuleStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySandboxAlertStatusResponse> ModifySandboxAlertStatusOutcome;
+                typedef std::future<ModifySandboxAlertStatusOutcome> ModifySandboxAlertStatusOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifySandboxAlertStatusRequest&, ModifySandboxAlertStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySandboxAlertStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySandboxDLPRuleResponse> ModifySandboxDLPRuleOutcome;
+                typedef std::future<ModifySandboxDLPRuleOutcome> ModifySandboxDLPRuleOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifySandboxDLPRuleRequest&, ModifySandboxDLPRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySandboxDLPRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySandboxDLPRuleStatusResponse> ModifySandboxDLPRuleStatusOutcome;
+                typedef std::future<ModifySandboxDLPRuleStatusOutcome> ModifySandboxDLPRuleStatusOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifySandboxDLPRuleStatusRequest&, ModifySandboxDLPRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySandboxDLPRuleStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySandboxFileRuleResponse> ModifySandboxFileRuleOutcome;
+                typedef std::future<ModifySandboxFileRuleOutcome> ModifySandboxFileRuleOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifySandboxFileRuleRequest&, ModifySandboxFileRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySandboxFileRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySandboxFileRuleStatusResponse> ModifySandboxFileRuleStatusOutcome;
+                typedef std::future<ModifySandboxFileRuleStatusOutcome> ModifySandboxFileRuleStatusOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifySandboxFileRuleStatusRequest&, ModifySandboxFileRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySandboxFileRuleStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySandboxLLMAuditRuleResponse> ModifySandboxLLMAuditRuleOutcome;
+                typedef std::future<ModifySandboxLLMAuditRuleOutcome> ModifySandboxLLMAuditRuleOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifySandboxLLMAuditRuleRequest&, ModifySandboxLLMAuditRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySandboxLLMAuditRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySandboxLLMAuditRuleStatusResponse> ModifySandboxLLMAuditRuleStatusOutcome;
                 typedef std::future<ModifySandboxLLMAuditRuleStatusOutcome> ModifySandboxLLMAuditRuleStatusOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifySandboxLLMAuditRuleStatusRequest&, ModifySandboxLLMAuditRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySandboxLLMAuditRuleStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySecurityScoreRuleResponse> ModifySecurityScoreRuleOutcome;
                 typedef std::future<ModifySecurityScoreRuleOutcome> ModifySecurityScoreRuleOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifySecurityScoreRuleRequest&, ModifySecurityScoreRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityScoreRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyShareUserAKResponse> ModifyShareUserAKOutcome;
+                typedef std::future<ModifyShareUserAKOutcome> ModifyShareUserAKOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyShareUserAKRequest&, ModifyShareUserAKOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyShareUserAKAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyShareUserCSPMResponse> ModifyShareUserCSPMOutcome;
                 typedef std::future<ModifyShareUserCSPMOutcome> ModifyShareUserCSPMOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyShareUserCSPMRequest&, ModifyShareUserCSPMOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyShareUserCSPMAsyncHandler;
@@ -3622,6 +3779,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UninstallClusterAgentResponse> UninstallClusterAgentOutcome;
                 typedef std::future<UninstallClusterAgentOutcome> UninstallClusterAgentOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::UninstallClusterAgentRequest&, UninstallClusterAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UninstallClusterAgentAsyncHandler;
+                typedef Outcome<Core::Error, Model::UninstallKeySandboxSkillResponse> UninstallKeySandboxSkillOutcome;
+                typedef std::future<UninstallKeySandboxSkillOutcome> UninstallKeySandboxSkillOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::UninstallKeySandboxSkillRequest&, UninstallKeySandboxSkillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UninstallKeySandboxSkillAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateAccessKeyAlarmStatusResponse> UpdateAccessKeyAlarmStatusOutcome;
                 typedef std::future<UpdateAccessKeyAlarmStatusOutcome> UpdateAccessKeyAlarmStatusOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::UpdateAccessKeyAlarmStatusRequest&, UpdateAccessKeyAlarmStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAccessKeyAlarmStatusAsyncHandler;
@@ -4327,6 +4487,15 @@ namespace TencentCloud
                 CreateHighBaseLineRisksExportJobOutcomeCallable CreateHighBaseLineRisksExportJobCallable(const Model::CreateHighBaseLineRisksExportJobRequest& request);
 
                 /**
+                 *创建本地镜像列表导出任务。导出字段包含镜像ID、镜像名、镜像版本、关联容器数、关联主机数、创建时间、所属账号昵称，以及扫描状态/漏洞/木马/敏感信息等风险字段。支持Filter过滤。导出通过异步任务实现，返回JobId后前端轮询查询导出任务状态。单账号模式下自动排除NickName字段。
+                 * @param req CreateHostImageListExportJobRequest
+                 * @return CreateHostImageListExportJobOutcome
+                 */
+                CreateHostImageListExportJobOutcome CreateHostImageListExportJob(const Model::CreateHostImageListExportJobRequest &request);
+                void CreateHostImageListExportJobAsync(const Model::CreateHostImageListExportJobRequest& request, const CreateHostImageListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateHostImageListExportJobOutcomeCallable CreateHostImageListExportJobCallable(const Model::CreateHostImageListExportJobRequest& request);
+
+                /**
                  *创建主机列漏洞表导出任务
                  * @param req CreateHostVulExportJobRequest
                  * @return CreateHostVulExportJobOutcome
@@ -4550,6 +4719,42 @@ namespace TencentCloud
                 CreateRiskDetailExportJobOutcome CreateRiskDetailExportJob(const Model::CreateRiskDetailExportJobRequest &request);
                 void CreateRiskDetailExportJobAsync(const Model::CreateRiskDetailExportJobRequest& request, const CreateRiskDetailExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateRiskDetailExportJobOutcomeCallable CreateRiskDetailExportJobCallable(const Model::CreateRiskDetailExportJobRequest& request);
+
+                /**
+                 *创建一条 ACL 用户访问控制规则。可选择引用若干条系统规则，亦可自定义规则，两者至少提供其一
+                 * @param req CreateSandboxACLRuleRequest
+                 * @return CreateSandboxACLRuleOutcome
+                 */
+                CreateSandboxACLRuleOutcome CreateSandboxACLRule(const Model::CreateSandboxACLRuleRequest &request);
+                void CreateSandboxACLRuleAsync(const Model::CreateSandboxACLRuleRequest& request, const CreateSandboxACLRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSandboxACLRuleOutcomeCallable CreateSandboxACLRuleCallable(const Model::CreateSandboxACLRuleRequest& request);
+
+                /**
+                 *创建一条 DLP 用户规则。可引用若干系统规则（SystemRuleIDList），亦可自定义规则（UserRuleContent，名称 + 正则），两者至少提供其一；UserRuleInfo 为新增可选的结构化入参，与 UserRuleContent 同时传入时以 UserRuleInfo 为准
+                 * @param req CreateSandboxDLPRuleRequest
+                 * @return CreateSandboxDLPRuleOutcome
+                 */
+                CreateSandboxDLPRuleOutcome CreateSandboxDLPRule(const Model::CreateSandboxDLPRuleRequest &request);
+                void CreateSandboxDLPRuleAsync(const Model::CreateSandboxDLPRuleRequest& request, const CreateSandboxDLPRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSandboxDLPRuleOutcomeCallable CreateSandboxDLPRuleCallable(const Model::CreateSandboxDLPRuleRequest& request);
+
+                /**
+                 *创建命令沙箱文件访问规则
+                 * @param req CreateSandboxFileRuleRequest
+                 * @return CreateSandboxFileRuleOutcome
+                 */
+                CreateSandboxFileRuleOutcome CreateSandboxFileRule(const Model::CreateSandboxFileRuleRequest &request);
+                void CreateSandboxFileRuleAsync(const Model::CreateSandboxFileRuleRequest& request, const CreateSandboxFileRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSandboxFileRuleOutcomeCallable CreateSandboxFileRuleCallable(const Model::CreateSandboxFileRuleRequest& request);
+
+                /**
+                 *创建一条 LLM 审计用户规则。必须引用至少一条系统规则，不支持用户自定义规则内容
+                 * @param req CreateSandboxLLMAuditRuleRequest
+                 * @return CreateSandboxLLMAuditRuleOutcome
+                 */
+                CreateSandboxLLMAuditRuleOutcome CreateSandboxLLMAuditRule(const Model::CreateSandboxLLMAuditRuleRequest &request);
+                void CreateSandboxLLMAuditRuleAsync(const Model::CreateSandboxLLMAuditRuleRequest& request, const CreateSandboxLLMAuditRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSandboxLLMAuditRuleOutcomeCallable CreateSandboxLLMAuditRuleCallable(const Model::CreateSandboxLLMAuditRuleRequest& request);
 
                 /**
                  *暴露面扫描结果导出任务
@@ -5013,6 +5218,33 @@ namespace TencentCloud
                 DeleteRiskScanTaskOutcomeCallable DeleteRiskScanTaskCallable(const Model::DeleteRiskScanTaskRequest& request);
 
                 /**
+                 *批量删除 ACL 用户规则。删除后规则不再返回到列表查询，并不再对流量生效。任一 ID 不存在或属于其他租户时整体返回错误
+                 * @param req DeleteSandboxACLRuleRequest
+                 * @return DeleteSandboxACLRuleOutcome
+                 */
+                DeleteSandboxACLRuleOutcome DeleteSandboxACLRule(const Model::DeleteSandboxACLRuleRequest &request);
+                void DeleteSandboxACLRuleAsync(const Model::DeleteSandboxACLRuleRequest& request, const DeleteSandboxACLRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSandboxACLRuleOutcomeCallable DeleteSandboxACLRuleCallable(const Model::DeleteSandboxACLRuleRequest& request);
+
+                /**
+                 *批量删除 DLP 用户规则。任一 ID 不存在或属于其他租户时整体返回错误
+                 * @param req DeleteSandboxDLPRuleRequest
+                 * @return DeleteSandboxDLPRuleOutcome
+                 */
+                DeleteSandboxDLPRuleOutcome DeleteSandboxDLPRule(const Model::DeleteSandboxDLPRuleRequest &request);
+                void DeleteSandboxDLPRuleAsync(const Model::DeleteSandboxDLPRuleRequest& request, const DeleteSandboxDLPRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSandboxDLPRuleOutcomeCallable DeleteSandboxDLPRuleCallable(const Model::DeleteSandboxDLPRuleRequest& request);
+
+                /**
+                 *创建命令沙箱文件访问规则
+                 * @param req DeleteSandboxFileRuleRequest
+                 * @return DeleteSandboxFileRuleOutcome
+                 */
+                DeleteSandboxFileRuleOutcome DeleteSandboxFileRule(const Model::DeleteSandboxFileRuleRequest &request);
+                void DeleteSandboxFileRuleAsync(const Model::DeleteSandboxFileRuleRequest& request, const DeleteSandboxFileRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSandboxFileRuleOutcomeCallable DeleteSandboxFileRuleCallable(const Model::DeleteSandboxFileRuleRequest& request);
+
+                /**
                  *批量删除 LLM 审计用户规则。任一 ID 不存在或属于其他租户时整体返回错误
                  * @param req DeleteSandboxLLMAuditRuleRequest
                  * @return DeleteSandboxLLMAuditRuleOutcome
@@ -5284,6 +5516,15 @@ namespace TencentCloud
                 DescribeAccessKeyUserListOutcome DescribeAccessKeyUserList(const Model::DescribeAccessKeyUserListRequest &request);
                 void DescribeAccessKeyUserListAsync(const Model::DescribeAccessKeyUserListRequest& request, const DescribeAccessKeyUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAccessKeyUserListOutcomeCallable DescribeAccessKeyUserListCallable(const Model::DescribeAccessKeyUserListRequest& request);
+
+                /**
+                 *访问密钥告警记录列表
+                 * @param req DescribeAccessKeyWhiteListRequest
+                 * @return DescribeAccessKeyWhiteListOutcome
+                 */
+                DescribeAccessKeyWhiteListOutcome DescribeAccessKeyWhiteList(const Model::DescribeAccessKeyWhiteListRequest &request);
+                void DescribeAccessKeyWhiteListAsync(const Model::DescribeAccessKeyWhiteListRequest& request, const DescribeAccessKeyWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccessKeyWhiteListOutcomeCallable DescribeAccessKeyWhiteListCallable(const Model::DescribeAccessKeyWhiteListRequest& request);
 
                 /**
                  *查询客户端配置设置（配置组），从DescribeAgentRunMode拆分出的独立接口
@@ -5727,6 +5968,15 @@ namespace TencentCloud
                 DescribeCLSLogListV3OutcomeCallable DescribeCLSLogListV3Callable(const Model::DescribeCLSLogListV3Request& request);
 
                 /**
+                 *查询当前账号的合并版计费信息，包括订单状态、付费模式以及配额等详细信息。
+                 * @param req DescribeCSCPayInfoRequest
+                 * @return DescribeCSCPayInfoOutcome
+                 */
+                DescribeCSCPayInfoOutcome DescribeCSCPayInfo(const Model::DescribeCSCPayInfoRequest &request);
+                void DescribeCSCPayInfoAsync(const Model::DescribeCSCPayInfoRequest& request, const DescribeCSCPayInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCSCPayInfoOutcomeCallable DescribeCSCPayInfoCallable(const Model::DescribeCSCPayInfoRequest& request);
+
+                /**
                  *查询ModifyCSIPLicenseBinds返回的异步绑定任务进度。
                  * @param req DescribeCSIPLicenseBindScheduleRequest
                  * @return DescribeCSIPLicenseBindScheduleOutcome
@@ -5761,6 +6011,15 @@ namespace TencentCloud
                 DescribeCSIPRiskStatisticsOutcome DescribeCSIPRiskStatistics(const Model::DescribeCSIPRiskStatisticsRequest &request);
                 void DescribeCSIPRiskStatisticsAsync(const Model::DescribeCSIPRiskStatisticsRequest& request, const DescribeCSIPRiskStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCSIPRiskStatisticsOutcomeCallable DescribeCSIPRiskStatisticsCallable(const Model::DescribeCSIPRiskStatisticsRequest& request);
+
+                /**
+                 *获取已购CSPM订单信息
+                 * @param req DescribeCSPMPayInfoRequest
+                 * @return DescribeCSPMPayInfoOutcome
+                 */
+                DescribeCSPMPayInfoOutcome DescribeCSPMPayInfo(const Model::DescribeCSPMPayInfoRequest &request);
+                void DescribeCSPMPayInfoAsync(const Model::DescribeCSPMPayInfoRequest& request, const DescribeCSPMPayInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCSPMPayInfoOutcomeCallable DescribeCSPMPayInfoCallable(const Model::DescribeCSPMPayInfoRequest& request);
 
                 /**
                  *cvm详情
@@ -8265,6 +8524,24 @@ namespace TencentCloud
                 DescribeSandboxACLSystemRuleListOutcomeCallable DescribeSandboxACLSystemRuleListCallable(const Model::DescribeSandboxACLSystemRuleListRequest& request);
 
                 /**
+                 *分页查询 DLP 数据泄露告警日志列表。支持按 Filter.Name=ID 精确过滤单条告警用于详情页场景
+                 * @param req DescribeSandboxDLPAlertListRequest
+                 * @return DescribeSandboxDLPAlertListOutcome
+                 */
+                DescribeSandboxDLPAlertListOutcome DescribeSandboxDLPAlertList(const Model::DescribeSandboxDLPAlertListRequest &request);
+                void DescribeSandboxDLPAlertListAsync(const Model::DescribeSandboxDLPAlertListRequest& request, const DescribeSandboxDLPAlertListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSandboxDLPAlertListOutcomeCallable DescribeSandboxDLPAlertListCallable(const Model::DescribeSandboxDLPAlertListRequest& request);
+
+                /**
+                 *查询当前租户的 DLP 用户规则列表。传入 Filter.Name=RuleID 可精确查询单条规则（用于详情页面场景）
+                 * @param req DescribeSandboxDLPRuleListRequest
+                 * @return DescribeSandboxDLPRuleListOutcome
+                 */
+                DescribeSandboxDLPRuleListOutcome DescribeSandboxDLPRuleList(const Model::DescribeSandboxDLPRuleListRequest &request);
+                void DescribeSandboxDLPRuleListAsync(const Model::DescribeSandboxDLPRuleListRequest& request, const DescribeSandboxDLPRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSandboxDLPRuleListOutcomeCallable DescribeSandboxDLPRuleListCallable(const Model::DescribeSandboxDLPRuleListRequest& request);
+
+                /**
                  *查询流量沙箱数据泄露防护（DLP）系统规则列表，系统规则由 CSIP 平台内置，可被用户规则引用
                  * @param req DescribeSandboxDLPSystemRuleListRequest
                  * @return DescribeSandboxDLPSystemRuleListOutcome
@@ -8281,6 +8558,33 @@ namespace TencentCloud
                 DescribeSandboxFileRuleListOutcome DescribeSandboxFileRuleList(const Model::DescribeSandboxFileRuleListRequest &request);
                 void DescribeSandboxFileRuleListAsync(const Model::DescribeSandboxFileRuleListRequest& request, const DescribeSandboxFileRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSandboxFileRuleListOutcomeCallable DescribeSandboxFileRuleListCallable(const Model::DescribeSandboxFileRuleListRequest& request);
+
+                /**
+                 *分页查询 LLM 审计告警日志列表。支持按 Filter.Name=ID 精确过滤单条告警用于详情页场景
+                 * @param req DescribeSandboxLLMAuditAlertListRequest
+                 * @return DescribeSandboxLLMAuditAlertListOutcome
+                 */
+                DescribeSandboxLLMAuditAlertListOutcome DescribeSandboxLLMAuditAlertList(const Model::DescribeSandboxLLMAuditAlertListRequest &request);
+                void DescribeSandboxLLMAuditAlertListAsync(const Model::DescribeSandboxLLMAuditAlertListRequest& request, const DescribeSandboxLLMAuditAlertListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSandboxLLMAuditAlertListOutcomeCallable DescribeSandboxLLMAuditAlertListCallable(const Model::DescribeSandboxLLMAuditAlertListRequest& request);
+
+                /**
+                 *查询当前租户的 LLM 审计用户规则列表。LLM 审计规则不支持用户自定义内容，只能引用系统规则组合。传入 Filter.Name=RuleID 可精确查询单条规则（用于详情页面场景）
+                 * @param req DescribeSandboxLLMAuditRuleListRequest
+                 * @return DescribeSandboxLLMAuditRuleListOutcome
+                 */
+                DescribeSandboxLLMAuditRuleListOutcome DescribeSandboxLLMAuditRuleList(const Model::DescribeSandboxLLMAuditRuleListRequest &request);
+                void DescribeSandboxLLMAuditRuleListAsync(const Model::DescribeSandboxLLMAuditRuleListRequest& request, const DescribeSandboxLLMAuditRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSandboxLLMAuditRuleListOutcomeCallable DescribeSandboxLLMAuditRuleListCallable(const Model::DescribeSandboxLLMAuditRuleListRequest& request);
+
+                /**
+                 *查询 LLM 审计系统规则列表，系统规则由 CSIP 平台内置（来源于 LLM 审计系统规则库），按 LLM 推理防护 / ToolCall 防护拆分为两个扁平规则数组返回，可被用户规则引用
+                 * @param req DescribeSandboxLLMAuditSystemRuleListRequest
+                 * @return DescribeSandboxLLMAuditSystemRuleListOutcome
+                 */
+                DescribeSandboxLLMAuditSystemRuleListOutcome DescribeSandboxLLMAuditSystemRuleList(const Model::DescribeSandboxLLMAuditSystemRuleListRequest &request);
+                void DescribeSandboxLLMAuditSystemRuleListAsync(const Model::DescribeSandboxLLMAuditSystemRuleListRequest& request, const DescribeSandboxLLMAuditSystemRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSandboxLLMAuditSystemRuleListOutcomeCallable DescribeSandboxLLMAuditSystemRuleListCallable(const Model::DescribeSandboxLLMAuditSystemRuleListRequest& request);
 
                 /**
                  *获取扫描报告列表
@@ -8418,6 +8722,15 @@ namespace TencentCloud
                 DescribeSourceIPAssetOutcomeCallable DescribeSourceIPAssetCallable(const Model::DescribeSourceIPAssetRequest& request);
 
                 /**
+                 *获取用户访问密钥资产列表（源IP视角）
+                 * @param req DescribeSourceIPDetailRequest
+                 * @return DescribeSourceIPDetailOutcome
+                 */
+                DescribeSourceIPDetailOutcome DescribeSourceIPDetail(const Model::DescribeSourceIPDetailRequest &request);
+                void DescribeSourceIPDetailAsync(const Model::DescribeSourceIPDetailRequest& request, const DescribeSourceIPDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSourceIPDetailOutcomeCallable DescribeSourceIPDetailCallable(const Model::DescribeSourceIPDetailRequest& request);
+
+                /**
                  *查询集团的子账号列表
                  * @param req DescribeSubUserInfoRequest
                  * @return DescribeSubUserInfoOutcome
@@ -8517,6 +8830,15 @@ namespace TencentCloud
                 DescribeUebaUserSummaryOutcomeCallable DescribeUebaUserSummaryCallable(const Model::DescribeUebaUserSummaryRequest& request);
 
                 /**
+                 *获取账号AK信息
+                 * @param req DescribeUserAKInfoListRequest
+                 * @return DescribeUserAKInfoListOutcome
+                 */
+                DescribeUserAKInfoListOutcome DescribeUserAKInfoList(const Model::DescribeUserAKInfoListRequest &request);
+                void DescribeUserAKInfoListAsync(const Model::DescribeUserAKInfoListRequest& request, const DescribeUserAKInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserAKInfoListOutcomeCallable DescribeUserAKInfoListCallable(const Model::DescribeUserAKInfoListRequest& request);
+
+                /**
                  *获取账号CSPM信息
                  * @param req DescribeUserCSPMInfoListRequest
                  * @return DescribeUserCSPMInfoListOutcome
@@ -8587,6 +8909,15 @@ namespace TencentCloud
                 DescribeVdbAndPocInfoOutcome DescribeVdbAndPocInfo(const Model::DescribeVdbAndPocInfoRequest &request);
                 void DescribeVdbAndPocInfoAsync(const Model::DescribeVdbAndPocInfoRequest& request, const DescribeVdbAndPocInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVdbAndPocInfoOutcomeCallable DescribeVdbAndPocInfoCallable(const Model::DescribeVdbAndPocInfoRequest& request);
+
+                /**
+                 *检查当前用户是否有资格领取指定活动的代金券。
+                 * @param req DescribeVoucherEligibilityRequest
+                 * @return DescribeVoucherEligibilityOutcome
+                 */
+                DescribeVoucherEligibilityOutcome DescribeVoucherEligibility(const Model::DescribeVoucherEligibilityRequest &request);
+                void DescribeVoucherEligibilityAsync(const Model::DescribeVoucherEligibilityRequest& request, const DescribeVoucherEligibilityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVoucherEligibilityOutcomeCallable DescribeVoucherEligibilityCallable(const Model::DescribeVoucherEligibilityRequest& request);
 
                 /**
                  *获取vpc列表
@@ -8851,6 +9182,24 @@ capi 层处理流程：
                 InstallClusterAgentOutcomeCallable InstallClusterAgentCallable(const Model::InstallClusterAgentRequest& request);
 
                 /**
+                 *在指定的机器实例上安装密钥沙箱SKILL。支持批量操作，一次可传入多个实例ID。安装后，目标机器上的AI Agent即可通过密钥沙箱代理访问凭据，无需接触明文密钥。已安装的实例重复调用不会报错（幂等），直接视为成功。
+                 * @param req InstallKeySandboxSkillRequest
+                 * @return InstallKeySandboxSkillOutcome
+                 */
+                InstallKeySandboxSkillOutcome InstallKeySandboxSkill(const Model::InstallKeySandboxSkillRequest &request);
+                void InstallKeySandboxSkillAsync(const Model::InstallKeySandboxSkillRequest& request, const InstallKeySandboxSkillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InstallKeySandboxSkillOutcomeCallable InstallKeySandboxSkillCallable(const Model::InstallKeySandboxSkillRequest& request);
+
+                /**
+                 *触发将流量沙箱插件安装到指定范围内的 AI Agent 资产。通过 BelongAssetType 区分主机/容器维度，通过 EffectScope 指定安装目标（INCLUDE=仅安装到指定资产，EXCLUDE=全部资产减去指定资产）。接口仅触发下发动作，不等待完成
+                 * @param req InstallSandboxPluginRequest
+                 * @return InstallSandboxPluginOutcome
+                 */
+                InstallSandboxPluginOutcome InstallSandboxPlugin(const Model::InstallSandboxPluginRequest &request);
+                void InstallSandboxPluginAsync(const Model::InstallSandboxPluginRequest& request, const InstallSandboxPluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InstallSandboxPluginOutcomeCallable InstallSandboxPluginCallable(const Model::InstallSandboxPluginRequest& request);
+
+                /**
                  *修改AI-Link智链引擎配置
                  * @param req ModifyAILinkSettingRequest
                  * @return ModifyAILinkSettingOutcome
@@ -9058,6 +9407,15 @@ capi 层处理流程：
                 ModifyCSIPRaspLicenseUnBindsOutcome ModifyCSIPRaspLicenseUnBinds(const Model::ModifyCSIPRaspLicenseUnBindsRequest &request);
                 void ModifyCSIPRaspLicenseUnBindsAsync(const Model::ModifyCSIPRaspLicenseUnBindsRequest& request, const ModifyCSIPRaspLicenseUnBindsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCSIPRaspLicenseUnBindsOutcomeCallable ModifyCSIPRaspLicenseUnBindsCallable(const Model::ModifyCSIPRaspLicenseUnBindsRequest& request);
+
+                /**
+                 *修改集群防护状态
+                 * @param req ModifyClusterDefendStatusRequest
+                 * @return ModifyClusterDefendStatusOutcome
+                 */
+                ModifyClusterDefendStatusOutcome ModifyClusterDefendStatus(const Model::ModifyClusterDefendStatusRequest &request);
+                void ModifyClusterDefendStatusAsync(const Model::ModifyClusterDefendStatusRequest& request, const ModifyClusterDefendStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterDefendStatusOutcomeCallable ModifyClusterDefendStatusCallable(const Model::ModifyClusterDefendStatusRequest& request);
 
                 /**
                  *修改存储桶监测状态
@@ -9753,6 +10111,78 @@ capi 层处理流程：
                 ModifyRiskScanCronConfigOutcomeCallable ModifyRiskScanCronConfigCallable(const Model::ModifyRiskScanCronConfigRequest& request);
 
                 /**
+                 *修改已有的 ACL 用户规则。未传字段保持原值，支持部分字段更新
+                 * @param req ModifySandboxACLRuleRequest
+                 * @return ModifySandboxACLRuleOutcome
+                 */
+                ModifySandboxACLRuleOutcome ModifySandboxACLRule(const Model::ModifySandboxACLRuleRequest &request);
+                void ModifySandboxACLRuleAsync(const Model::ModifySandboxACLRuleRequest& request, const ModifySandboxACLRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySandboxACLRuleOutcomeCallable ModifySandboxACLRuleCallable(const Model::ModifySandboxACLRuleRequest& request);
+
+                /**
+                 *批量切换 ACL 用户规则的启禁用状态。任一规则不存在、属于其他租户或已删除时整体返回错误
+                 * @param req ModifySandboxACLRuleStatusRequest
+                 * @return ModifySandboxACLRuleStatusOutcome
+                 */
+                ModifySandboxACLRuleStatusOutcome ModifySandboxACLRuleStatus(const Model::ModifySandboxACLRuleStatusRequest &request);
+                void ModifySandboxACLRuleStatusAsync(const Model::ModifySandboxACLRuleStatusRequest& request, const ModifySandboxACLRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySandboxACLRuleStatusOutcomeCallable ModifySandboxACLRuleStatusCallable(const Model::ModifySandboxACLRuleStatusRequest& request);
+
+                /**
+                 *批量更新流量沙箱告警（覆盖 ACL / DLP / LLM 审计三类）。通过 AlertType + BelongAssetType 定位告警来源。Status 支持 HANDLED / IGNORE 修改状态，以及 DELETE 删除。任一告警 ID 不存在或属于其他租户时整体返回错误。注：加白（PASS）不经本接口，由 Create/Modify***Rule 通过 AlertID 回写触发
+                 * @param req ModifySandboxAlertStatusRequest
+                 * @return ModifySandboxAlertStatusOutcome
+                 */
+                ModifySandboxAlertStatusOutcome ModifySandboxAlertStatus(const Model::ModifySandboxAlertStatusRequest &request);
+                void ModifySandboxAlertStatusAsync(const Model::ModifySandboxAlertStatusRequest& request, const ModifySandboxAlertStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySandboxAlertStatusOutcomeCallable ModifySandboxAlertStatusCallable(const Model::ModifySandboxAlertStatusRequest& request);
+
+                /**
+                 *修改已存在的 DLP 用户规则。未传字段保持原值，支持部分字段更新；不支持修改 BelongAssetType
+                 * @param req ModifySandboxDLPRuleRequest
+                 * @return ModifySandboxDLPRuleOutcome
+                 */
+                ModifySandboxDLPRuleOutcome ModifySandboxDLPRule(const Model::ModifySandboxDLPRuleRequest &request);
+                void ModifySandboxDLPRuleAsync(const Model::ModifySandboxDLPRuleRequest& request, const ModifySandboxDLPRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySandboxDLPRuleOutcomeCallable ModifySandboxDLPRuleCallable(const Model::ModifySandboxDLPRuleRequest& request);
+
+                /**
+                 *批量切换 DLP 用户规则的启禁用状态。任一规则不存在、属于其他租户或已删除时整体返回错误
+                 * @param req ModifySandboxDLPRuleStatusRequest
+                 * @return ModifySandboxDLPRuleStatusOutcome
+                 */
+                ModifySandboxDLPRuleStatusOutcome ModifySandboxDLPRuleStatus(const Model::ModifySandboxDLPRuleStatusRequest &request);
+                void ModifySandboxDLPRuleStatusAsync(const Model::ModifySandboxDLPRuleStatusRequest& request, const ModifySandboxDLPRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySandboxDLPRuleStatusOutcomeCallable ModifySandboxDLPRuleStatusCallable(const Model::ModifySandboxDLPRuleStatusRequest& request);
+
+                /**
+                 *修改命令沙箱文件访问规则
+                 * @param req ModifySandboxFileRuleRequest
+                 * @return ModifySandboxFileRuleOutcome
+                 */
+                ModifySandboxFileRuleOutcome ModifySandboxFileRule(const Model::ModifySandboxFileRuleRequest &request);
+                void ModifySandboxFileRuleAsync(const Model::ModifySandboxFileRuleRequest& request, const ModifySandboxFileRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySandboxFileRuleOutcomeCallable ModifySandboxFileRuleCallable(const Model::ModifySandboxFileRuleRequest& request);
+
+                /**
+                 *批量启用或禁用命令沙箱文件访问规则
+                 * @param req ModifySandboxFileRuleStatusRequest
+                 * @return ModifySandboxFileRuleStatusOutcome
+                 */
+                ModifySandboxFileRuleStatusOutcome ModifySandboxFileRuleStatus(const Model::ModifySandboxFileRuleStatusRequest &request);
+                void ModifySandboxFileRuleStatusAsync(const Model::ModifySandboxFileRuleStatusRequest& request, const ModifySandboxFileRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySandboxFileRuleStatusOutcomeCallable ModifySandboxFileRuleStatusCallable(const Model::ModifySandboxFileRuleStatusRequest& request);
+
+                /**
+                 *修改已有的 LLM 审计用户规则。未传字段保持原值，支持部分字段更新
+                 * @param req ModifySandboxLLMAuditRuleRequest
+                 * @return ModifySandboxLLMAuditRuleOutcome
+                 */
+                ModifySandboxLLMAuditRuleOutcome ModifySandboxLLMAuditRule(const Model::ModifySandboxLLMAuditRuleRequest &request);
+                void ModifySandboxLLMAuditRuleAsync(const Model::ModifySandboxLLMAuditRuleRequest& request, const ModifySandboxLLMAuditRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySandboxLLMAuditRuleOutcomeCallable ModifySandboxLLMAuditRuleCallable(const Model::ModifySandboxLLMAuditRuleRequest& request);
+
+                /**
                  *批量切换 LLM 审计用户规则的启禁用状态。任一规则不存在、属于其他租户或已删除时整体返回错误
                  * @param req ModifySandboxLLMAuditRuleStatusRequest
                  * @return ModifySandboxLLMAuditRuleStatusOutcome
@@ -9769,6 +10199,15 @@ capi 层处理流程：
                 ModifySecurityScoreRuleOutcome ModifySecurityScoreRule(const Model::ModifySecurityScoreRuleRequest &request);
                 void ModifySecurityScoreRuleAsync(const Model::ModifySecurityScoreRuleRequest& request, const ModifySecurityScoreRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySecurityScoreRuleOutcomeCallable ModifySecurityScoreRuleCallable(const Model::ModifySecurityScoreRuleRequest& request);
+
+                /**
+                 *编辑ak监测账号
+                 * @param req ModifyShareUserAKRequest
+                 * @return ModifyShareUserAKOutcome
+                 */
+                ModifyShareUserAKOutcome ModifyShareUserAK(const Model::ModifyShareUserAKRequest &request);
+                void ModifyShareUserAKAsync(const Model::ModifyShareUserAKRequest& request, const ModifyShareUserAKAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyShareUserAKOutcomeCallable ModifyShareUserAKCallable(const Model::ModifyShareUserAKRequest& request);
 
                 /**
                  *编辑CSPM共享账号
@@ -10111,6 +10550,15 @@ capi 层处理流程：
                 UninstallClusterAgentOutcome UninstallClusterAgent(const Model::UninstallClusterAgentRequest &request);
                 void UninstallClusterAgentAsync(const Model::UninstallClusterAgentRequest& request, const UninstallClusterAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UninstallClusterAgentOutcomeCallable UninstallClusterAgentCallable(const Model::UninstallClusterAgentRequest& request);
+
+                /**
+                 *从指定的机器实例上卸载密钥沙箱SKILL。支持批量操作，一次可传入多个实例ID。卸载后，目标机器上的AI Agent将无法再通过密钥沙箱代理访问凭据。未安装的实例重复调用不会报错（幂等），直接视为成功。
+                 * @param req UninstallKeySandboxSkillRequest
+                 * @return UninstallKeySandboxSkillOutcome
+                 */
+                UninstallKeySandboxSkillOutcome UninstallKeySandboxSkill(const Model::UninstallKeySandboxSkillRequest &request);
+                void UninstallKeySandboxSkillAsync(const Model::UninstallKeySandboxSkillRequest& request, const UninstallKeySandboxSkillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UninstallKeySandboxSkillOutcomeCallable UninstallKeySandboxSkillCallable(const Model::UninstallKeySandboxSkillRequest& request);
 
                 /**
                  *标记风险或者告警为 已处置/已忽略

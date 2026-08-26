@@ -35,7 +35,9 @@ Resource::Resource() :
     m_diskNumHasBeenSet(false),
     m_gpuDescHasBeenSet(false),
     m_partitionNumberHasBeenSet(false),
-    m_hCCHpcClusterIdHasBeenSet(false)
+    m_hCCHpcClusterIdHasBeenSet(false),
+    m_customNodeNameHasBeenSet(false),
+    m_gpuImageDriverHasBeenSet(false)
 {
 }
 
@@ -214,6 +216,33 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         m_hCCHpcClusterIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomNodeName") && !value["CustomNodeName"].IsNull())
+    {
+        if (!value["CustomNodeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.CustomNodeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customNodeName = string(value["CustomNodeName"].GetString());
+        m_customNodeNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("GpuImageDriver") && !value["GpuImageDriver"].IsNull())
+    {
+        if (!value["GpuImageDriver"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.GpuImageDriver` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_gpuImageDriver.Deserialize(value["GpuImageDriver"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_gpuImageDriverHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -353,6 +382,23 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "HCCHpcClusterId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hCCHpcClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customNodeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomNodeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customNodeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gpuImageDriverHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GpuImageDriver";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_gpuImageDriver.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -596,5 +642,37 @@ void Resource::SetHCCHpcClusterId(const string& _hCCHpcClusterId)
 bool Resource::HCCHpcClusterIdHasBeenSet() const
 {
     return m_hCCHpcClusterIdHasBeenSet;
+}
+
+string Resource::GetCustomNodeName() const
+{
+    return m_customNodeName;
+}
+
+void Resource::SetCustomNodeName(const string& _customNodeName)
+{
+    m_customNodeName = _customNodeName;
+    m_customNodeNameHasBeenSet = true;
+}
+
+bool Resource::CustomNodeNameHasBeenSet() const
+{
+    return m_customNodeNameHasBeenSet;
+}
+
+GpuImageDriverSpec Resource::GetGpuImageDriver() const
+{
+    return m_gpuImageDriver;
+}
+
+void Resource::SetGpuImageDriver(const GpuImageDriverSpec& _gpuImageDriver)
+{
+    m_gpuImageDriver = _gpuImageDriver;
+    m_gpuImageDriverHasBeenSet = true;
+}
+
+bool Resource::GpuImageDriverHasBeenSet() const
+{
+    return m_gpuImageDriverHasBeenSet;
 }
 

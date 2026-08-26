@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * cos概览页面数据结构
+                * 对象存储审计概览页面数据结构
                 */
                 class CosOverview : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资产总数
-                     * @return AssetCount 资产总数
+                     * 获取<p>资产总数</p>
+                     * @return AssetCount <p>资产总数</p>
                      * 
                      */
                     int64_t GetAssetCount() const;
 
                     /**
-                     * 设置资产总数
-                     * @param _assetCount 资产总数
+                     * 设置<p>资产总数</p>
+                     * @param _assetCount <p>资产总数</p>
                      * 
                      */
                     void SetAssetCount(const int64_t& _assetCount);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool AssetCountHasBeenSet() const;
 
                     /**
-                     * 获取需要立即处理的资产数
-                     * @return AlarmAssetCount 需要立即处理的资产数
+                     * 获取<p>需要立即处理的资产数</p>
+                     * @return AlarmAssetCount <p>需要立即处理的资产数</p>
                      * 
                      */
                     int64_t GetAlarmAssetCount() const;
 
                     /**
-                     * 设置需要立即处理的资产数
-                     * @param _alarmAssetCount 需要立即处理的资产数
+                     * 设置<p>需要立即处理的资产数</p>
+                     * @param _alarmAssetCount <p>需要立即处理的资产数</p>
                      * 
                      */
                     void SetAlarmAssetCount(const int64_t& _alarmAssetCount);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool AlarmAssetCountHasBeenSet() const;
 
                     /**
-                     * 获取需要加固的资产数
-                     * @return RiskAssetCount 需要加固的资产数
+                     * 获取<p>需要加固的资产数</p>
+                     * @return RiskAssetCount <p>需要加固的资产数</p>
                      * 
                      */
                     int64_t GetRiskAssetCount() const;
 
                     /**
-                     * 设置需要加固的资产数
-                     * @param _riskAssetCount 需要加固的资产数
+                     * 设置<p>需要加固的资产数</p>
+                     * @param _riskAssetCount <p>需要加固的资产数</p>
                      * 
                      */
                     void SetRiskAssetCount(const int64_t& _riskAssetCount);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool RiskAssetCountHasBeenSet() const;
 
                     /**
-                     * 获取告警总数
-                     * @return AlarmCount 告警总数
+                     * 获取<p>告警总数</p>
+                     * @return AlarmCount <p>告警总数</p>
                      * 
                      */
                     int64_t GetAlarmCount() const;
 
                     /**
-                     * 设置告警总数
-                     * @param _alarmCount 告警总数
+                     * 设置<p>告警总数</p>
+                     * @param _alarmCount <p>告警总数</p>
                      * 
                      */
                     void SetAlarmCount(const int64_t& _alarmCount);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool AlarmCountHasBeenSet() const;
 
                     /**
-                     * 获取当日新增告警总数
-                     * @return IncrementAlarmCount 当日新增告警总数
+                     * 获取<p>当日新增告警总数</p>
+                     * @return IncrementAlarmCount <p>当日新增告警总数</p>
                      * 
                      */
                     int64_t GetIncrementAlarmCount() const;
 
                     /**
-                     * 设置当日新增告警总数
-                     * @param _incrementAlarmCount 当日新增告警总数
+                     * 设置<p>当日新增告警总数</p>
+                     * @param _incrementAlarmCount <p>当日新增告警总数</p>
                      * 
                      */
                     void SetIncrementAlarmCount(const int64_t& _incrementAlarmCount);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool IncrementAlarmCountHasBeenSet() const;
 
                     /**
-                     * 获取风险总数
-                     * @return RiskCount 风险总数
+                     * 获取<p>风险总数</p>
+                     * @return RiskCount <p>风险总数</p>
                      * 
                      */
                     int64_t GetRiskCount() const;
 
                     /**
-                     * 设置风险总数
-                     * @param _riskCount 风险总数
+                     * 设置<p>风险总数</p>
+                     * @param _riskCount <p>风险总数</p>
                      * 
                      */
                     void SetRiskCount(const int64_t& _riskCount);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool RiskCountHasBeenSet() const;
 
                     /**
-                     * 获取当日新增告警总数
-                     * @return IncrementRiskCount 当日新增告警总数
+                     * 获取<p>当日新增告警总数</p>
+                     * @return IncrementRiskCount <p>当日新增告警总数</p>
                      * 
                      */
                     int64_t GetIncrementRiskCount() const;
 
                     /**
-                     * 设置当日新增告警总数
-                     * @param _incrementRiskCount 当日新增告警总数
+                     * 设置<p>当日新增告警总数</p>
+                     * @param _incrementRiskCount <p>当日新增告警总数</p>
                      * 
                      */
                     void SetIncrementRiskCount(const int64_t& _incrementRiskCount);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool IncrementRiskCountHasBeenSet() const;
 
                     /**
-                     * 获取风险top详情
-                     * @return RiskTop 风险top详情
+                     * 获取<p>风险top详情</p>
+                     * @return RiskTop <p>风险top详情</p>
                      * 
                      */
                     std::vector<CosRiskInfo> GetRiskTop() const;
 
                     /**
-                     * 设置风险top详情
-                     * @param _riskTop 风险top详情
+                     * 设置<p>风险top详情</p>
+                     * @param _riskTop <p>风险top详情</p>
                      * 
                      */
                     void SetRiskTop(const std::vector<CosRiskInfo>& _riskTop);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool RiskTopHasBeenSet() const;
 
                     /**
-                     * 获取告警风险top
-                     * @return AlarmTop 告警风险top
+                     * 获取<p>告警风险top</p>
+                     * @return AlarmTop <p>告警风险top</p>
                      * 
                      */
                     std::vector<CosRiskInfo> GetAlarmTop() const;
 
                     /**
-                     * 设置告警风险top
-                     * @param _alarmTop 告警风险top
+                     * 设置<p>告警风险top</p>
+                     * @param _alarmTop <p>告警风险top</p>
                      * 
                      */
                     void SetAlarmTop(const std::vector<CosRiskInfo>& _alarmTop);
@@ -236,61 +236,88 @@ namespace TencentCloud
                      */
                     bool AlarmTopHasBeenSet() const;
 
+                    /**
+                     * 获取<p>高等级敏感文件数</p>
+                     * @return HighLevelSensitiveFileCount <p>高等级敏感文件数</p>
+                     * 
+                     */
+                    int64_t GetHighLevelSensitiveFileCount() const;
+
+                    /**
+                     * 设置<p>高等级敏感文件数</p>
+                     * @param _highLevelSensitiveFileCount <p>高等级敏感文件数</p>
+                     * 
+                     */
+                    void SetHighLevelSensitiveFileCount(const int64_t& _highLevelSensitiveFileCount);
+
+                    /**
+                     * 判断参数 HighLevelSensitiveFileCount 是否已赋值
+                     * @return HighLevelSensitiveFileCount 是否已赋值
+                     * 
+                     */
+                    bool HighLevelSensitiveFileCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 资产总数
+                     * <p>资产总数</p>
                      */
                     int64_t m_assetCount;
                     bool m_assetCountHasBeenSet;
 
                     /**
-                     * 需要立即处理的资产数
+                     * <p>需要立即处理的资产数</p>
                      */
                     int64_t m_alarmAssetCount;
                     bool m_alarmAssetCountHasBeenSet;
 
                     /**
-                     * 需要加固的资产数
+                     * <p>需要加固的资产数</p>
                      */
                     int64_t m_riskAssetCount;
                     bool m_riskAssetCountHasBeenSet;
 
                     /**
-                     * 告警总数
+                     * <p>告警总数</p>
                      */
                     int64_t m_alarmCount;
                     bool m_alarmCountHasBeenSet;
 
                     /**
-                     * 当日新增告警总数
+                     * <p>当日新增告警总数</p>
                      */
                     int64_t m_incrementAlarmCount;
                     bool m_incrementAlarmCountHasBeenSet;
 
                     /**
-                     * 风险总数
+                     * <p>风险总数</p>
                      */
                     int64_t m_riskCount;
                     bool m_riskCountHasBeenSet;
 
                     /**
-                     * 当日新增告警总数
+                     * <p>当日新增告警总数</p>
                      */
                     int64_t m_incrementRiskCount;
                     bool m_incrementRiskCountHasBeenSet;
 
                     /**
-                     * 风险top详情
+                     * <p>风险top详情</p>
                      */
                     std::vector<CosRiskInfo> m_riskTop;
                     bool m_riskTopHasBeenSet;
 
                     /**
-                     * 告警风险top
+                     * <p>告警风险top</p>
                      */
                     std::vector<CosRiskInfo> m_alarmTop;
                     bool m_alarmTopHasBeenSet;
+
+                    /**
+                     * <p>高等级敏感文件数</p>
+                     */
+                    int64_t m_highLevelSensitiveFileCount;
+                    bool m_highLevelSensitiveFileCountHasBeenSet;
 
                 };
             }

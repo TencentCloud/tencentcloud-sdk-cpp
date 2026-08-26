@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeDspmIdentifyRuleListRequest::DescribeDspmIdentifyRuleListRequest() :
     m_memberIdHasBeenSet(false),
-    m_filterHasBeenSet(false)
+    m_filterHasBeenSet(false),
+    m_operationSourceHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,14 @@ string DescribeDspmIdentifyRuleListRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_filter.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_operationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operationSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -95,6 +104,22 @@ void DescribeDspmIdentifyRuleListRequest::SetFilter(const Filter& _filter)
 bool DescribeDspmIdentifyRuleListRequest::FilterHasBeenSet() const
 {
     return m_filterHasBeenSet;
+}
+
+string DescribeDspmIdentifyRuleListRequest::GetOperationSource() const
+{
+    return m_operationSource;
+}
+
+void DescribeDspmIdentifyRuleListRequest::SetOperationSource(const string& _operationSource)
+{
+    m_operationSource = _operationSource;
+    m_operationSourceHasBeenSet = true;
+}
+
+bool DescribeDspmIdentifyRuleListRequest::OperationSourceHasBeenSet() const
+{
+    return m_operationSourceHasBeenSet;
 }
 
 

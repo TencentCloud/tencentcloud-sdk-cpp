@@ -33,6 +33,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/DynamicPodSpec.h
   include/tencentcloud/emr/v20190103/model/CustomImage.h
   include/tencentcloud/emr/v20190103/model/DescribeDynamicInstanceDetailResponse.h
+  include/tencentcloud/emr/v20190103/model/GpuImageDriverSpec.h
   include/tencentcloud/emr/v20190103/model/ResetYarnConfigRequest.h
   include/tencentcloud/emr/v20190103/model/ComputeResourceAdvanceParams.h
   include/tencentcloud/emr/v20190103/model/ServiceDeployInfo.h
@@ -457,6 +458,7 @@ set(emr_src
   src/v20190103/model/DynamicPodSpec.cpp
   src/v20190103/model/CustomImage.cpp
   src/v20190103/model/DescribeDynamicInstanceDetailResponse.cpp
+  src/v20190103/model/GpuImageDriverSpec.cpp
   src/v20190103/model/ResetYarnConfigRequest.cpp
   src/v20190103/model/ComputeResourceAdvanceParams.cpp
   src/v20190103/model/ServiceDeployInfo.cpp

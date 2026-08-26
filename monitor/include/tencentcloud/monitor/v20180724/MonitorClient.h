@@ -33,6 +33,8 @@
 #include <tencentcloud/monitor/v20180724/model/CheckAddressByPrometheusResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CleanGrafanaInstanceRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CleanGrafanaInstanceResponse.h>
+#include <tencentcloud/monitor/v20180724/model/CreateAlarmHistoryShieldRequest.h>
+#include <tencentcloud/monitor/v20180724/model/CreateAlarmHistoryShieldResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateAlarmNoticeRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreateAlarmNoticeResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateAlarmPolicyRequest.h>
@@ -81,6 +83,8 @@
 #include <tencentcloud/monitor/v20180724/model/CreateRecordingRuleResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateSSOAccountRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreateSSOAccountResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteAlarmHistoryShieldsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteAlarmHistoryShieldsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteAlarmNoticesRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteAlarmNoticesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteAlarmPolicyRequest.h>
@@ -129,6 +133,8 @@
 #include <tencentcloud/monitor/v20180724/model/DescribeAlarmEventsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAlarmHistoriesRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAlarmHistoriesResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAlarmHistoryShieldRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAlarmHistoryShieldResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAlarmMetricsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAlarmMetricsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAlarmNoticeRequest.h>
@@ -289,6 +295,8 @@
 #include <tencentcloud/monitor/v20180724/model/GetTopNMonitorDataResponse.h>
 #include <tencentcloud/monitor/v20180724/model/InstallPluginsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/InstallPluginsResponse.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyAlarmHistoryShieldRequest.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyAlarmHistoryShieldResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyAlarmNoticeRequest.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyAlarmNoticeResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyConditionRequest.h>
@@ -416,6 +424,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CleanGrafanaInstanceResponse> CleanGrafanaInstanceOutcome;
                 typedef std::future<CleanGrafanaInstanceOutcome> CleanGrafanaInstanceOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CleanGrafanaInstanceRequest&, CleanGrafanaInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CleanGrafanaInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAlarmHistoryShieldResponse> CreateAlarmHistoryShieldOutcome;
+                typedef std::future<CreateAlarmHistoryShieldOutcome> CreateAlarmHistoryShieldOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::CreateAlarmHistoryShieldRequest&, CreateAlarmHistoryShieldOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlarmHistoryShieldAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAlarmNoticeResponse> CreateAlarmNoticeOutcome;
                 typedef std::future<CreateAlarmNoticeOutcome> CreateAlarmNoticeOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreateAlarmNoticeRequest&, CreateAlarmNoticeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlarmNoticeAsyncHandler;
@@ -488,6 +499,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSSOAccountResponse> CreateSSOAccountOutcome;
                 typedef std::future<CreateSSOAccountOutcome> CreateSSOAccountOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreateSSOAccountRequest&, CreateSSOAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSSOAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAlarmHistoryShieldsResponse> DeleteAlarmHistoryShieldsOutcome;
+                typedef std::future<DeleteAlarmHistoryShieldsOutcome> DeleteAlarmHistoryShieldsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DeleteAlarmHistoryShieldsRequest&, DeleteAlarmHistoryShieldsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlarmHistoryShieldsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAlarmNoticesResponse> DeleteAlarmNoticesOutcome;
                 typedef std::future<DeleteAlarmNoticesOutcome> DeleteAlarmNoticesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DeleteAlarmNoticesRequest&, DeleteAlarmNoticesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlarmNoticesAsyncHandler;
@@ -560,6 +574,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAlarmHistoriesResponse> DescribeAlarmHistoriesOutcome;
                 typedef std::future<DescribeAlarmHistoriesOutcome> DescribeAlarmHistoriesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeAlarmHistoriesRequest&, DescribeAlarmHistoriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmHistoriesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAlarmHistoryShieldResponse> DescribeAlarmHistoryShieldOutcome;
+                typedef std::future<DescribeAlarmHistoryShieldOutcome> DescribeAlarmHistoryShieldOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeAlarmHistoryShieldRequest&, DescribeAlarmHistoryShieldOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmHistoryShieldAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAlarmMetricsResponse> DescribeAlarmMetricsOutcome;
                 typedef std::future<DescribeAlarmMetricsOutcome> DescribeAlarmMetricsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeAlarmMetricsRequest&, DescribeAlarmMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmMetricsAsyncHandler;
@@ -800,6 +817,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InstallPluginsResponse> InstallPluginsOutcome;
                 typedef std::future<InstallPluginsOutcome> InstallPluginsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::InstallPluginsRequest&, InstallPluginsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstallPluginsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAlarmHistoryShieldResponse> ModifyAlarmHistoryShieldOutcome;
+                typedef std::future<ModifyAlarmHistoryShieldOutcome> ModifyAlarmHistoryShieldOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::ModifyAlarmHistoryShieldRequest&, ModifyAlarmHistoryShieldOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmHistoryShieldAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAlarmNoticeResponse> ModifyAlarmNoticeOutcome;
                 typedef std::future<ModifyAlarmNoticeOutcome> ModifyAlarmNoticeOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::ModifyAlarmNoticeRequest&, ModifyAlarmNoticeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmNoticeAsyncHandler;
@@ -994,6 +1014,15 @@ namespace TencentCloud
                 CleanGrafanaInstanceOutcome CleanGrafanaInstance(const Model::CleanGrafanaInstanceRequest &request);
                 void CleanGrafanaInstanceAsync(const Model::CleanGrafanaInstanceRequest& request, const CleanGrafanaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CleanGrafanaInstanceOutcomeCallable CleanGrafanaInstanceCallable(const Model::CleanGrafanaInstanceRequest& request);
+
+                /**
+                 *创建小程序告警屏蔽规则
+                 * @param req CreateAlarmHistoryShieldRequest
+                 * @return CreateAlarmHistoryShieldOutcome
+                 */
+                CreateAlarmHistoryShieldOutcome CreateAlarmHistoryShield(const Model::CreateAlarmHistoryShieldRequest &request);
+                void CreateAlarmHistoryShieldAsync(const Model::CreateAlarmHistoryShieldRequest& request, const CreateAlarmHistoryShieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAlarmHistoryShieldOutcomeCallable CreateAlarmHistoryShieldCallable(const Model::CreateAlarmHistoryShieldRequest& request);
 
                 /**
                  *创建通知模板
@@ -1219,6 +1248,15 @@ namespace TencentCloud
                 CreateSSOAccountOutcomeCallable CreateSSOAccountCallable(const Model::CreateSSOAccountRequest& request);
 
                 /**
+                 *删除小程序告警屏蔽规则
+                 * @param req DeleteAlarmHistoryShieldsRequest
+                 * @return DeleteAlarmHistoryShieldsOutcome
+                 */
+                DeleteAlarmHistoryShieldsOutcome DeleteAlarmHistoryShields(const Model::DeleteAlarmHistoryShieldsRequest &request);
+                void DeleteAlarmHistoryShieldsAsync(const Model::DeleteAlarmHistoryShieldsRequest& request, const DeleteAlarmHistoryShieldsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAlarmHistoryShieldsOutcomeCallable DeleteAlarmHistoryShieldsCallable(const Model::DeleteAlarmHistoryShieldsRequest& request);
+
+                /**
                  *删除告警通知模板
                  * @param req DeleteAlarmNoticesRequest
                  * @return DeleteAlarmNoticesOutcome
@@ -1439,6 +1477,15 @@ namespace TencentCloud
                 DescribeAlarmHistoriesOutcome DescribeAlarmHistories(const Model::DescribeAlarmHistoriesRequest &request);
                 void DescribeAlarmHistoriesAsync(const Model::DescribeAlarmHistoriesRequest& request, const DescribeAlarmHistoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAlarmHistoriesOutcomeCallable DescribeAlarmHistoriesCallable(const Model::DescribeAlarmHistoriesRequest& request);
+
+                /**
+                 *获取小程序告警屏蔽规则
+                 * @param req DescribeAlarmHistoryShieldRequest
+                 * @return DescribeAlarmHistoryShieldOutcome
+                 */
+                DescribeAlarmHistoryShieldOutcome DescribeAlarmHistoryShield(const Model::DescribeAlarmHistoryShieldRequest &request);
+                void DescribeAlarmHistoryShieldAsync(const Model::DescribeAlarmHistoryShieldRequest& request, const DescribeAlarmHistoryShieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAlarmHistoryShieldOutcomeCallable DescribeAlarmHistoryShieldCallable(const Model::DescribeAlarmHistoryShieldRequest& request);
 
                 /**
                  *查询告警指标列表
@@ -2190,6 +2237,15 @@ namespace TencentCloud
                 InstallPluginsOutcome InstallPlugins(const Model::InstallPluginsRequest &request);
                 void InstallPluginsAsync(const Model::InstallPluginsRequest& request, const InstallPluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InstallPluginsOutcomeCallable InstallPluginsCallable(const Model::InstallPluginsRequest& request);
+
+                /**
+                 *修改小程序告警屏蔽规则
+                 * @param req ModifyAlarmHistoryShieldRequest
+                 * @return ModifyAlarmHistoryShieldOutcome
+                 */
+                ModifyAlarmHistoryShieldOutcome ModifyAlarmHistoryShield(const Model::ModifyAlarmHistoryShieldRequest &request);
+                void ModifyAlarmHistoryShieldAsync(const Model::ModifyAlarmHistoryShieldRequest& request, const ModifyAlarmHistoryShieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAlarmHistoryShieldOutcomeCallable ModifyAlarmHistoryShieldCallable(const Model::ModifyAlarmHistoryShieldRequest& request);
 
                 /**
                  *编辑告警通知模板

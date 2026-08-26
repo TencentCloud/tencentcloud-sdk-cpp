@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/csip/v20221121/model/CosIdentifyCategoryDetail.h>
+#include <tencentcloud/csip/v20221121/model/CosIdentifyRuleDetail.h>
+#include <tencentcloud/csip/v20221121/model/CosIdentifyLevelDetail.h>
 
 
 namespace TencentCloud
@@ -152,6 +154,69 @@ namespace TencentCloud
                      */
                     bool CategoryDetailsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>无</p>
+                     * @return RuleDetails <p>无</p>
+                     * 
+                     */
+                    std::vector<CosIdentifyRuleDetail> GetRuleDetails() const;
+
+                    /**
+                     * 设置<p>无</p>
+                     * @param _ruleDetails <p>无</p>
+                     * 
+                     */
+                    void SetRuleDetails(const std::vector<CosIdentifyRuleDetail>& _ruleDetails);
+
+                    /**
+                     * 判断参数 RuleDetails 是否已赋值
+                     * @return RuleDetails 是否已赋值
+                     * 
+                     */
+                    bool RuleDetailsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>无</p>
+                     * @return LevelDetails <p>无</p>
+                     * 
+                     */
+                    std::vector<CosIdentifyLevelDetail> GetLevelDetails() const;
+
+                    /**
+                     * 设置<p>无</p>
+                     * @param _levelDetails <p>无</p>
+                     * 
+                     */
+                    void SetLevelDetails(const std::vector<CosIdentifyLevelDetail>& _levelDetails);
+
+                    /**
+                     * 判断参数 LevelDetails 是否已赋值
+                     * @return LevelDetails 是否已赋值
+                     * 
+                     */
+                    bool LevelDetailsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否已发起全量扫描</p>
+                     * @return IsFullScanned <p>是否已发起全量扫描</p>
+                     * 
+                     */
+                    bool GetIsFullScanned() const;
+
+                    /**
+                     * 设置<p>是否已发起全量扫描</p>
+                     * @param _isFullScanned <p>是否已发起全量扫描</p>
+                     * 
+                     */
+                    void SetIsFullScanned(const bool& _isFullScanned);
+
+                    /**
+                     * 判断参数 IsFullScanned 是否已赋值
+                     * @return IsFullScanned 是否已赋值
+                     * 
+                     */
+                    bool IsFullScannedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -183,6 +248,24 @@ namespace TencentCloud
                      */
                     std::vector<CosIdentifyCategoryDetail> m_categoryDetails;
                     bool m_categoryDetailsHasBeenSet;
+
+                    /**
+                     * <p>无</p>
+                     */
+                    std::vector<CosIdentifyRuleDetail> m_ruleDetails;
+                    bool m_ruleDetailsHasBeenSet;
+
+                    /**
+                     * <p>无</p>
+                     */
+                    std::vector<CosIdentifyLevelDetail> m_levelDetails;
+                    bool m_levelDetailsHasBeenSet;
+
+                    /**
+                     * <p>是否已发起全量扫描</p>
+                     */
+                    bool m_isFullScanned;
+                    bool m_isFullScannedHasBeenSet;
 
                 };
             }

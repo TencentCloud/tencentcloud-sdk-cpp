@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份策略ID
-                     * @return PolicyId 备份策略ID
+                     * 获取<p>备份策略ID</p>
+                     * @return PolicyId <p>备份策略ID</p>
                      * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
-                     * 设置备份策略ID
-                     * @param _policyId 备份策略ID
+                     * 设置<p>备份策略ID</p>
+                     * @param _policyId <p>备份策略ID</p>
                      * 
                      */
                     void SetPolicyId(const std::string& _policyId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool PolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取备份库ID
-                     * @return BackupStorageId 备份库ID
+                     * 获取<p>备份库ID</p>
+                     * @return BackupStorageId <p>备份库ID</p>
                      * 
                      */
                     std::string GetBackupStorageId() const;
 
                     /**
-                     * 设置备份库ID
-                     * @param _backupStorageId 备份库ID
+                     * 设置<p>备份库ID</p>
+                     * @param _backupStorageId <p>备份库ID</p>
                      * 
                      */
                     void SetBackupStorageId(const std::string& _backupStorageId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool BackupStorageIdHasBeenSet() const;
 
                     /**
-                     * 获取计划名称
-                     * @return PlanName 计划名称
+                     * 获取<p>计划名称</p>
+                     * @return PlanName <p>计划名称</p>
                      * 
                      */
                     std::string GetPlanName() const;
 
                     /**
-                     * 设置计划名称
-                     * @param _planName 计划名称
+                     * 设置<p>计划名称</p>
+                     * @param _planName <p>计划名称</p>
                      * 
                      */
                     void SetPlanName(const std::string& _planName);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool PlanNameHasBeenSet() const;
 
                     /**
-                     * 获取实例配置列表，[1,20]
-                     * @return Resources 实例配置列表，[1,20]
+                     * 获取<p>实例配置列表，[1,20]</p>
+                     * @return Resources <p>实例配置列表，[1,20]</p>
                      * 
                      */
                     std::vector<ResourcePlan> GetResources() const;
 
                     /**
-                     * 设置实例配置列表，[1,20]
-                     * @param _resources 实例配置列表，[1,20]
+                     * 设置<p>实例配置列表，[1,20]</p>
+                     * @param _resources <p>实例配置列表，[1,20]</p>
                      * 
                      */
                     void SetResources(const std::vector<ResourcePlan>& _resources);
@@ -127,31 +127,58 @@ namespace TencentCloud
                      */
                     bool ResourcesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>资源类型</p><p>枚举值：</p><ul><li>CVM_AGENT： CVM文件备份</li><li>CFS_AGENT： 文件系统备份</li><li>COS_AGENT： COS备份</li></ul><p>默认值：CVM_AGENT</p>
+                     * @return ResourceType <p>资源类型</p><p>枚举值：</p><ul><li>CVM_AGENT： CVM文件备份</li><li>CFS_AGENT： 文件系统备份</li><li>COS_AGENT： COS备份</li></ul><p>默认值：CVM_AGENT</p>
+                     * 
+                     */
+                    std::string GetResourceType() const;
+
+                    /**
+                     * 设置<p>资源类型</p><p>枚举值：</p><ul><li>CVM_AGENT： CVM文件备份</li><li>CFS_AGENT： 文件系统备份</li><li>COS_AGENT： COS备份</li></ul><p>默认值：CVM_AGENT</p>
+                     * @param _resourceType <p>资源类型</p><p>枚举值：</p><ul><li>CVM_AGENT： CVM文件备份</li><li>CFS_AGENT： 文件系统备份</li><li>COS_AGENT： COS备份</li></ul><p>默认值：CVM_AGENT</p>
+                     * 
+                     */
+                    void SetResourceType(const std::string& _resourceType);
+
+                    /**
+                     * 判断参数 ResourceType 是否已赋值
+                     * @return ResourceType 是否已赋值
+                     * 
+                     */
+                    bool ResourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 备份策略ID
+                     * <p>备份策略ID</p>
                      */
                     std::string m_policyId;
                     bool m_policyIdHasBeenSet;
 
                     /**
-                     * 备份库ID
+                     * <p>备份库ID</p>
                      */
                     std::string m_backupStorageId;
                     bool m_backupStorageIdHasBeenSet;
 
                     /**
-                     * 计划名称
+                     * <p>计划名称</p>
                      */
                     std::string m_planName;
                     bool m_planNameHasBeenSet;
 
                     /**
-                     * 实例配置列表，[1,20]
+                     * <p>实例配置列表，[1,20]</p>
                      */
                     std::vector<ResourcePlan> m_resources;
                     bool m_resourcesHasBeenSet;
+
+                    /**
+                     * <p>资源类型</p><p>枚举值：</p><ul><li>CVM_AGENT： CVM文件备份</li><li>CFS_AGENT： 文件系统备份</li><li>COS_AGENT： COS备份</li></ul><p>默认值：CVM_AGENT</p>
+                     */
+                    std::string m_resourceType;
+                    bool m_resourceTypeHasBeenSet;
 
                 };
             }

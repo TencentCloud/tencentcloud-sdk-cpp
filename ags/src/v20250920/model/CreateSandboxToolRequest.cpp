@@ -33,6 +33,7 @@ CreateSandboxToolRequest::CreateSandboxToolRequest() :
     m_roleArnHasBeenSet(false),
     m_storageMountsHasBeenSet(false),
     m_customConfigurationHasBeenSet(false),
+    m_computerConfigurationHasBeenSet(false),
     m_logConfigurationHasBeenSet(false),
     m_persistentHasBeenSet(false)
 {
@@ -139,6 +140,15 @@ string CreateSandboxToolRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_customConfiguration.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_computerConfigurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputerConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_computerConfiguration.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_logConfigurationHasBeenSet)
@@ -324,6 +334,22 @@ void CreateSandboxToolRequest::SetCustomConfiguration(const CustomConfiguration&
 bool CreateSandboxToolRequest::CustomConfigurationHasBeenSet() const
 {
     return m_customConfigurationHasBeenSet;
+}
+
+ComputerConfiguration CreateSandboxToolRequest::GetComputerConfiguration() const
+{
+    return m_computerConfiguration;
+}
+
+void CreateSandboxToolRequest::SetComputerConfiguration(const ComputerConfiguration& _computerConfiguration)
+{
+    m_computerConfiguration = _computerConfiguration;
+    m_computerConfigurationHasBeenSet = true;
+}
+
+bool CreateSandboxToolRequest::ComputerConfigurationHasBeenSet() const
+{
+    return m_computerConfigurationHasBeenSet;
 }
 
 LogConfiguration CreateSandboxToolRequest::GetLogConfiguration() const

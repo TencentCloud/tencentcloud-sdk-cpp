@@ -44,10 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取长订单号。可以据此调用 DescribeOrders
- 查询订单详细信息，或在支付失败时调用用户账号相关接口进行支付。
-                     * @return DealName 长订单号。可以据此调用 DescribeOrders
- 查询订单详细信息，或在支付失败时调用用户账号相关接口进行支付。
+                     * 获取<p>长订单号。可以据此调用 DescribeOrders<br> 查询订单详细信息，或在支付失败时调用用户账号相关接口进行支付。</p>
+                     * @return DealName <p>长订单号。可以据此调用 DescribeOrders<br> 查询订单详细信息，或在支付失败时调用用户账号相关接口进行支付。</p>
                      * 
                      */
                     std::string GetDealName() const;
@@ -62,8 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 长订单号。可以据此调用 DescribeOrders
- 查询订单详细信息，或在支付失败时调用用户账号相关接口进行支付。
+                     * <p>长订单号。可以据此调用 DescribeOrders<br> 查询订单详细信息，或在支付失败时调用用户账号相关接口进行支付。</p>
                      */
                     std::string m_dealName;
                     bool m_dealNameHasBeenSet;

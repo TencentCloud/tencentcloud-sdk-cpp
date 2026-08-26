@@ -433,6 +433,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/DescribeStreamPackageLinearAssemblyChannelAlertsRequest.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskDelLogoInput.h
   include/tencentcloud/mps/v20190612/model/DescribeAigcImageTaskResponse.h
+  include/tencentcloud/mps/v20190612/model/MediaUsageItem.h
   include/tencentcloud/mps/v20190612/model/SmartSubtitleTaskBatchOutput.h
   include/tencentcloud/mps/v20190612/model/BatchStopStreamLinkFlowRequest.h
   include/tencentcloud/mps/v20190612/model/DeleteStreamPackageLinearAssemblyProgramsByChannelResponse.h
@@ -1525,6 +1526,7 @@ set(mps_src
   src/v20190612/model/DescribeStreamPackageLinearAssemblyChannelAlertsRequest.cpp
   src/v20190612/model/AiAnalysisTaskDelLogoInput.cpp
   src/v20190612/model/DescribeAigcImageTaskResponse.cpp
+  src/v20190612/model/MediaUsageItem.cpp
   src/v20190612/model/SmartSubtitleTaskBatchOutput.cpp
   src/v20190612/model/BatchStopStreamLinkFlowRequest.cpp
   src/v20190612/model/DeleteStreamPackageLinearAssemblyProgramsByChannelResponse.cpp

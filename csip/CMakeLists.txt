@@ -77,7 +77,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/VPRExplainDimensionItem.h
   include/tencentcloud/csip/v20221121/model/DeleteImageRegistryScanTaskRequest.h
   include/tencentcloud/csip/v20221121/model/DspmStatisticsItem.h
-  include/tencentcloud/csip/v20221121/model/DspmIdentifyAssetStatistic.h
+  include/tencentcloud/csip/v20221121/model/CheckImageRegistryInstanceNameDuplicateRequest.h
   include/tencentcloud/csip/v20221121/model/ImageAssociatedAssetCount.h
   include/tencentcloud/csip/v20221121/model/DescribeCosAuditDictionaryListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeCustomRiskRuleDetailRequest.h
@@ -127,7 +127,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/CreateImageSensitiveWhitelistRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeCWPOrderListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeVulRiskRelateHostRequest.h
-  include/tencentcloud/csip/v20221121/model/DescribePodContainerListResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribeBaselineSyncConfResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeCFGRiskStatisticsResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeImageVirusWhitelistDetailRequest.h
   include/tencentcloud/csip/v20221121/model/UebaUserSummaryElement.h
@@ -171,6 +171,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeUebaRuleResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeAssetTreeResponse.h
   include/tencentcloud/csip/v20221121/model/ModifyBaselineSyncConfRequest.h
+  include/tencentcloud/csip/v20221121/model/CreateSandboxLLMAuditRuleRequest.h
   include/tencentcloud/csip/v20221121/model/EdrAlertCategoryCount.h
   include/tencentcloud/csip/v20221121/model/DescribeEdrAlertThreatTagsResponse.h
   include/tencentcloud/csip/v20221121/model/DeleteDspmAssetAccountResponse.h
@@ -197,7 +198,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/ModifyVulScanPeriodicRequest.h
   include/tencentcloud/csip/v20221121/model/DeleteDspmBackupLogListResponse.h
   include/tencentcloud/csip/v20221121/model/CreateImageAssetListExportJobRequest.h
-  include/tencentcloud/csip/v20221121/model/DspmAssetAccountIdentify.h
+  include/tencentcloud/csip/v20221121/model/BaselineOverviewStatistic.h
   include/tencentcloud/csip/v20221121/model/DescribeCosAlarmTrendDataRequest.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmWhitelistStrategyRequest.h
   include/tencentcloud/csip/v20221121/model/ContainerWebServiceItem.h
@@ -217,6 +218,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/CreateDspmAuditFilterStrategyRequest.h
   include/tencentcloud/csip/v20221121/model/UserCSPMInfo.h
   include/tencentcloud/csip/v20221121/model/DescribeAssetTagsResponse.h
+  include/tencentcloud/csip/v20221121/model/UninstallKeySandboxSkillResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeVulScanTaskDetailResponse.h
   include/tencentcloud/csip/v20221121/model/AssetViewVULRisk.h
   include/tencentcloud/csip/v20221121/model/HostInfo.h
@@ -235,6 +237,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/ScanEDRTaskAgainResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeIpInvokeRecordRequest.h
   include/tencentcloud/csip/v20221121/model/AssetTagTreeNode.h
+  include/tencentcloud/csip/v20221121/model/TrafficSandboxDLPRuleContentItem.h
   include/tencentcloud/csip/v20221121/model/FieldStyle.h
   include/tencentcloud/csip/v20221121/model/CreateCloudFunctionExportJobRequest.h
   include/tencentcloud/csip/v20221121/model/ModifyOrganizationAccountStatusRequest.h
@@ -245,13 +248,13 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/ModifyDspmCkafkaStartRequest.h
   include/tencentcloud/csip/v20221121/model/ExportTasksRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeUebaRuleRequest.h
-  include/tencentcloud/csip/v20221121/model/AssetProcessItem.h
+  include/tencentcloud/csip/v20221121/model/DescribeDspmAssetFieldSamplesResponse.h
   include/tencentcloud/csip/v20221121/model/AssetItem.h
   include/tencentcloud/csip/v20221121/model/AssetComponent.h
   include/tencentcloud/csip/v20221121/model/CustomAgentRunModePolicy.h
   include/tencentcloud/csip/v20221121/model/RiskDetailItem.h
   include/tencentcloud/csip/v20221121/model/DescribeClbListenerListResponse.h
-  include/tencentcloud/csip/v20221121/model/ModifyDspmIdentifyLevelGroupRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeSandboxDLPRuleListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeNatRulesRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeLighthouseFirewallRulesRequest.h
   include/tencentcloud/csip/v20221121/model/SCFNamespaceInfo.h
@@ -269,13 +272,14 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DspmUinUser.h
   include/tencentcloud/csip/v20221121/model/AssetFilters.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmRiskStrategyResponse.h
+  include/tencentcloud/csip/v20221121/model/CreateSandboxFileRuleResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskTrendDataResponse.h
   include/tencentcloud/csip/v20221121/model/ModifyEdrAlertIsolationRequest.h
   include/tencentcloud/csip/v20221121/model/HostVulRisk.h
   include/tencentcloud/csip/v20221121/model/DescribeCallRecordResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeIaCFileListRequest.h
   include/tencentcloud/csip/v20221121/model/CosAkSet.h
-  include/tencentcloud/csip/v20221121/model/DataSearchBug.h
+  include/tencentcloud/csip/v20221121/model/DescribeDspmIdentifyComplianceGroupDetailRequest.h
   include/tencentcloud/csip/v20221121/model/AIAgentSkillInfo.h
   include/tencentcloud/csip/v20221121/model/ClusterNodeListItem.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAssetDatabasesRequest.h
@@ -300,6 +304,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DeleteIaCAccessTokenResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeCheckConnectivityHostListResponse.h
   include/tencentcloud/csip/v20221121/model/VulFixItem.h
+  include/tencentcloud/csip/v20221121/model/InstallKeySandboxSkillResponse.h
   include/tencentcloud/csip/v20221121/model/ModifyNFSScanConfResponse.h
   include/tencentcloud/csip/v20221121/model/AccessKeyRisk.h
   include/tencentcloud/csip/v20221121/model/DBAssetVO.h
@@ -316,6 +321,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/ModifyLoginWhiteRecordResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeSecurityGroupPolicyResponse.h
   include/tencentcloud/csip/v20221121/model/AutoTagRuleItem.h
+  include/tencentcloud/csip/v20221121/model/ModifySandboxACLRuleRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeAssetRiskListResponse.h
   include/tencentcloud/csip/v20221121/model/CreateDspmIdentifyCategoryResponse.h
   include/tencentcloud/csip/v20221121/model/AccessCredentialOutput.h
@@ -343,6 +349,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/LoginWhiteCombinedInfo.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAssetAccountsResponse.h
   include/tencentcloud/csip/v20221121/model/CreatePublicAssetsExportJobResponse.h
+  include/tencentcloud/csip/v20221121/model/ModifyNotifyAssetConfigRequest.h
   include/tencentcloud/csip/v20221121/model/DeleteCSIPMalwareScanTaskRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAssetIdsResponse.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmAssetSecurityAnalysisSwitchResponse.h
@@ -371,6 +378,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/RuleContentProcessNetwork.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmApproveStatusResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeImageAssociatedAssetCountResponse.h
+  include/tencentcloud/csip/v20221121/model/DeleteSandboxACLRuleRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeAIAnalysisHistoryResponse.h
   include/tencentcloud/csip/v20221121/model/ModifyAILinkSettingResponse.h
   include/tencentcloud/csip/v20221121/model/TrafficSandboxACLRuleContentItem.h
@@ -378,6 +386,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/ModifyDspmIdentifyInfoRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeBanStatusRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeAIAgentAssetListRequest.h
+  include/tencentcloud/csip/v20221121/model/NewAlertKey.h
   include/tencentcloud/csip/v20221121/model/DescribeAssetFilterViewsRequest.h
   include/tencentcloud/csip/v20221121/model/CreateScanStatisticExportJobResponse.h
   include/tencentcloud/csip/v20221121/model/AccessAIAnalysisSMTPResponse.h
@@ -399,10 +408,11 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DeleteSandboxLLMAuditRuleResponse.h
   include/tencentcloud/csip/v20221121/model/StatisticalFilter.h
   include/tencentcloud/csip/v20221121/model/DspmIdentifyCategoryItem.h
+  include/tencentcloud/csip/v20221121/model/DescribeSandboxDLPRuleListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskCenterAssetViewVULRiskListResponse.h
   include/tencentcloud/csip/v20221121/model/OsName.h
   include/tencentcloud/csip/v20221121/model/ModifyRiskCenterRiskStatusRequest.h
-  include/tencentcloud/csip/v20221121/model/NewAlertKey.h
+  include/tencentcloud/csip/v20221121/model/DescribeAccessKeyWhiteListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeLoginTypeGlobalConfResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAssetLoginCredentialResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeCosPolicyResponse.h
@@ -416,11 +426,13 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeExposureTrendResponse.h
   include/tencentcloud/csip/v20221121/model/ModifyCosAuditBucketMonitorStatusRequest.h
   include/tencentcloud/csip/v20221121/model/CreateClusterAssetSyncTaskRequest.h
+  include/tencentcloud/csip/v20221121/model/ModifyDspmIdentifyComplianceRuleLevelInfoResponse.h
   include/tencentcloud/csip/v20221121/model/AssetHeaderItem.h
+  include/tencentcloud/csip/v20221121/model/CreateSandboxLLMAuditRuleResponse.h
   include/tencentcloud/csip/v20221121/model/ImageRegistryExportJobInfo.h
   include/tencentcloud/csip/v20221121/model/InquireInfo.h
   include/tencentcloud/csip/v20221121/model/DescribeBruteAttackRulesResponse.h
-  include/tencentcloud/csip/v20221121/model/CheckImageRegistryInstanceNameDuplicateRequest.h
+  include/tencentcloud/csip/v20221121/model/DspmIdentifyAssetStatistic.h
   include/tencentcloud/csip/v20221121/model/LogDeliveryCkafkaConfig.h
   include/tencentcloud/csip/v20221121/model/DescribeClusterSuperNodeInfoResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeComplianceOverviewResponse.h
@@ -444,6 +456,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/SkillScanItem.h
   include/tencentcloud/csip/v20221121/model/DescribeVULListRequest.h
   include/tencentcloud/csip/v20221121/model/ModifyNotifyMemberResponse.h
+  include/tencentcloud/csip/v20221121/model/DspmAssetCount.h
   include/tencentcloud/csip/v20221121/model/CFGViewCFGRisk.h
   include/tencentcloud/csip/v20221121/model/DescribeCWPMachinesResponse.h
   include/tencentcloud/csip/v20221121/model/ModifyAssetTagsByAssetInfoResponse.h
@@ -462,6 +475,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/CreateDspmApplyOrderRequest.h
   include/tencentcloud/csip/v20221121/model/CreateAssetComponentListExportJobRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAssetDatabaseListResponse.h
+  include/tencentcloud/csip/v20221121/model/TrafficSandboxLLMAuditRuleRef.h
   include/tencentcloud/csip/v20221121/model/DspmAccessRecordId.h
   include/tencentcloud/csip/v20221121/model/DescribeAssetTagTreeResponse.h
   include/tencentcloud/csip/v20221121/model/DspmIdentifyRuleItem.h
@@ -476,6 +490,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/OperateRiskRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmRiskStrategyRequest.h
   include/tencentcloud/csip/v20221121/model/UninstallClusterAgentRequest.h
+  include/tencentcloud/csip/v20221121/model/ModifySandboxFileRuleResponse.h
   include/tencentcloud/csip/v20221121/model/CreateAIScheduleResponse.h
   include/tencentcloud/csip/v20221121/model/CreateVulScanManualResponse.h
   include/tencentcloud/csip/v20221121/model/ModifyNotifySettingAlertRequest.h
@@ -486,7 +501,9 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeRiskCenterCFGViewCFGRiskListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeComplianceStatisticsRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmIdentifyRuleTestResultResponse.h
+  include/tencentcloud/csip/v20221121/model/InstallKeySandboxSkillRequest.h
   include/tencentcloud/csip/v20221121/model/VPRRatingStage.h
+  include/tencentcloud/csip/v20221121/model/CreateSandboxFileRuleRequest.h
   include/tencentcloud/csip/v20221121/model/RegionInfo.h
   include/tencentcloud/csip/v20221121/model/DescribePolicyHitDataResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskTrendDataRequest.h
@@ -500,7 +517,9 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/ModifyDspmCkafkaSaveResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeBaselinePolicyCategoryListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeVulViewVulRiskListResponse.h
+  include/tencentcloud/csip/v20221121/model/CreateHostImageListExportJobRequest.h
   include/tencentcloud/csip/v20221121/model/DeleteImageVulWhitelistRequest.h
+  include/tencentcloud/csip/v20221121/model/ModifySandboxDLPRuleResponse.h
   include/tencentcloud/csip/v20221121/model/EdrAlertTargetForIgnore.h
   include/tencentcloud/csip/v20221121/model/DescribeTaskLogListRequest.h
   include/tencentcloud/csip/v20221121/model/DspmAssetAccessTopologyItem.h
@@ -550,6 +569,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/ContainerPortItem.h
   include/tencentcloud/csip/v20221121/model/DescribeBucketInvokeIpListRequest.h
   include/tencentcloud/csip/v20221121/model/OrganizationInfo.h
+  include/tencentcloud/csip/v20221121/model/TrafficSandboxLLMAuditAlertInfo.h
   include/tencentcloud/csip/v20221121/model/CreateClusterNodeListExportJobResponse.h
   include/tencentcloud/csip/v20221121/model/CreateImageSensitiveInfoListExportJobResponse.h
   include/tencentcloud/csip/v20221121/model/ScanBaselinePolicyListRequest.h
@@ -590,6 +610,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/AssetTagModifyAssetItem.h
   include/tencentcloud/csip/v20221121/model/DescribeGatewayAssetsResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmApproveOrderListRequest.h
+  include/tencentcloud/csip/v20221121/model/StopCSIPManualMalwareScanResponse.h
   include/tencentcloud/csip/v20221121/model/CreateImageRegistryScanTaskRequest.h
   include/tencentcloud/csip/v20221121/model/SkillScanRuleHit.h
   include/tencentcloud/csip/v20221121/model/ModifyImageVirusWhitelistRequest.h
@@ -607,9 +628,10 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DeleteImageSensitiveWhitelistResponse.h
   include/tencentcloud/csip/v20221121/model/CosOverview.h
   include/tencentcloud/csip/v20221121/model/DescribeCosIdentifyFileListRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeCSCPayInfoRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeHostVulItemVPRInfoResponse.h
   include/tencentcloud/csip/v20221121/model/NetworkSegment.h
-  include/tencentcloud/csip/v20221121/model/DescribeLoginTypeHostResponse.h
+  include/tencentcloud/csip/v20221121/model/CreateSandboxDLPRuleResponse.h
   include/tencentcloud/csip/v20221121/model/DescribePreventUninstallHostRequest.h
   include/tencentcloud/csip/v20221121/model/CreateDspmAccessExportJobRequest.h
   include/tencentcloud/csip/v20221121/model/CreateClusterAssetSyncTaskResponse.h
@@ -619,7 +641,8 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/CreateExposureAutoTagRuleRequest.h
   include/tencentcloud/csip/v20221121/model/StopCSIPManualMalwareScanRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskCenterServerRiskListResponse.h
-  include/tencentcloud/csip/v20221121/model/UpdateClusterOwnerRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeCSCPayInfoResponse.h
+  include/tencentcloud/csip/v20221121/model/TrafficSandboxDLPUserRuleInfo.h
   include/tencentcloud/csip/v20221121/model/TrafficSandboxAssetScope.h
   include/tencentcloud/csip/v20221121/model/DescribeVulComponentRelateHostRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeSandboxACLSystemRuleListResponse.h
@@ -642,6 +665,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/HostAutoScaleConfig.h
   include/tencentcloud/csip/v20221121/model/CreateBaselineFixRecordExportJobRequest.h
   include/tencentcloud/csip/v20221121/model/ExportClientSettingHostListResponse.h
+  include/tencentcloud/csip/v20221121/model/DeleteSandboxDLPRuleRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeBaselineAggregatedItemListRequest.h
   include/tencentcloud/csip/v20221121/model/STSCredentialOutput.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmExportTaskResponse.h
@@ -685,7 +709,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/CreateCFGRiskPDFReportExportJobRequest.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmIdentifyInfoResponse.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmIdentifyComplianceGroupRequest.h
-  include/tencentcloud/csip/v20221121/model/DescribeBaselineSyncConfResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribePodContainerListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmIdentifyIdListResponse.h
   include/tencentcloud/csip/v20221121/model/AIRecommendAction.h
   include/tencentcloud/csip/v20221121/model/VulScanTask.h
@@ -759,6 +783,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/CreateDspmPersonalIdentifyRequest.h
   include/tencentcloud/csip/v20221121/model/CreateCosPolicyRequest.h
   include/tencentcloud/csip/v20221121/model/StandardItem.h
+  include/tencentcloud/csip/v20221121/model/DescribeSandboxLLMAuditSystemRuleListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeVulFixableMachineListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeAssetLastSyncTimeRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeImageSensitiveWhitelistResponse.h
@@ -781,9 +806,11 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeAIScheduleListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeCSIPLicenseBindScheduleRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeProcessDaemonHostResponse.h
+  include/tencentcloud/csip/v20221121/model/ModifySandboxDLPRuleStatusRequest.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmIdentifyComplianceGroupStatusResponse.h
   include/tencentcloud/csip/v20221121/model/TrafficSandboxACLRuleInfo.h
   include/tencentcloud/csip/v20221121/model/DescribeAssetProcessListRequest.h
+  include/tencentcloud/csip/v20221121/model/ModifyClusterDefendStatusRequest.h
   include/tencentcloud/csip/v20221121/model/CosRiskAlarmInfo.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAssetAccountPresetPrivilegesRequest.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmIdentifyCategoryRequest.h
@@ -818,10 +845,11 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/StartOrModifyProcessDaemonResponse.h
   include/tencentcloud/csip/v20221121/model/BaselineFixRecord.h
   include/tencentcloud/csip/v20221121/model/DescribeCosSourceIpRequest.h
-  include/tencentcloud/csip/v20221121/model/StopCSIPManualMalwareScanResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribeUserAKInfoListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeEdrExcludeNetworkSegmentsResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeCVMAssetInfoRequest.h
   include/tencentcloud/csip/v20221121/model/CreateImageLayerVulListExportJobRequest.h
+  include/tencentcloud/csip/v20221121/model/WebsiteRisk.h
   include/tencentcloud/csip/v20221121/model/DspmRiskCount.h
   include/tencentcloud/csip/v20221121/model/DescribeClusterContainerProcessListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAssetAccountRecycledPrivilegesResponse.h
@@ -869,6 +897,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeDspmSyncUsersStatusRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeLighthouseFirewallRulesResponse.h
   include/tencentcloud/csip/v20221121/model/NotifyAssetConfigItem.h
+  include/tencentcloud/csip/v20221121/model/ModifyMachinesLoginTypeRequest.h
   include/tencentcloud/csip/v20221121/model/CredentialEffectScope.h
   include/tencentcloud/csip/v20221121/model/AIAgentCredentialLocation.h
   include/tencentcloud/csip/v20221121/model/DescribeTaskLogListResponse.h
@@ -877,13 +906,14 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeCustomRiskRulesRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeNotifySettingAlertResponse.h
   include/tencentcloud/csip/v20221121/model/CosPermissionInfo.h
-  include/tencentcloud/csip/v20221121/model/DescribeDspmDictionaryListResponse.h
+  include/tencentcloud/csip/v20221121/model/DomainInfo.h
   include/tencentcloud/csip/v20221121/model/DescribeMalwareTimingScanSettingResponse.h
   include/tencentcloud/csip/v20221121/model/Tag.h
   include/tencentcloud/csip/v20221121/model/DescribeCSIPMalwareScanTaskDetailResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAuditFilterStrategy.h
   include/tencentcloud/csip/v20221121/model/DescribeCFGRiskStatisticsRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAssetSecurityAnalyseStatusResponse.h
+  include/tencentcloud/csip/v20221121/model/ModifySandboxFileRuleRequest.h
   include/tencentcloud/csip/v20221121/model/ImageIDWithAppIdItem.h
   include/tencentcloud/csip/v20221121/model/MultiAttackStageItem.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmLogTypeConfigListResponse.h
@@ -903,7 +933,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/ModifyBaselineUserOtherConfResponse.h
   include/tencentcloud/csip/v20221121/model/ModifyWebhookPolicyStatusRequest.h
   include/tencentcloud/csip/v20221121/model/DownloadDspmExportLogResponse.h
-  include/tencentcloud/csip/v20221121/model/CreateBaselineMainTaskExportJobResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribeSourceIPDetailResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeBaselineAggregatedPolicyListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeCheckViewRisksRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAssetFieldListRequest.h
@@ -914,6 +944,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/CreateAssetProcessExportJobResponse.h
   include/tencentcloud/csip/v20221121/model/ProjectInfo.h
   include/tencentcloud/csip/v20221121/model/DescribeClusterContainerDetailRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeSecurityRiskTrendResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeVULRiskDetailResponse.h
   include/tencentcloud/csip/v20221121/model/ModifyRiskCenterScanTaskResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeImageRegistryNamespaceListRequest.h
@@ -922,8 +953,10 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeDspmLogTypeConfigListRequest.h
   include/tencentcloud/csip/v20221121/model/EDRExportJobItem.h
   include/tencentcloud/csip/v20221121/model/DescribeEdrExportJobListResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribeUserAKInfoListRequest.h
   include/tencentcloud/csip/v20221121/model/DspmAssetIdentifyInfo.h
   include/tencentcloud/csip/v20221121/model/ModifyBanModeResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribeSandboxLLMAuditRuleListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAssetAccountIdentifyRequest.h
   include/tencentcloud/csip/v20221121/model/CreateDspmAuditFilterStrategyResponse.h
   include/tencentcloud/csip/v20221121/model/RiskRuleInfo.h
@@ -990,9 +1023,11 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/ModifyAssetTagRequest.h
   include/tencentcloud/csip/v20221121/model/DspmDatabasePrivilege.h
   include/tencentcloud/csip/v20221121/model/ImageRegistryScanSubTaskInfo.h
+  include/tencentcloud/csip/v20221121/model/DeleteSandboxFileRuleResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeScanTaskRecordListResponse.h
   include/tencentcloud/csip/v20221121/model/CreateRiskDetailExportJobRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeClusterPodDetailRequest.h
+  include/tencentcloud/csip/v20221121/model/UninstallKeySandboxSkillRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmPersonalIdentifyListRequest.h
   include/tencentcloud/csip/v20221121/model/EDRScanTaskHostItem.h
   include/tencentcloud/csip/v20221121/model/VulScanTaskDetail.h
@@ -1038,6 +1073,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/HostLoginWhiteObj.h
   include/tencentcloud/csip/v20221121/model/ImageVirusWhitelistDetail.h
   include/tencentcloud/csip/v20221121/model/DescribePortDetectListResponse.h
+  include/tencentcloud/csip/v20221121/model/TrafficSandboxDLPRuleInfo.h
   include/tencentcloud/csip/v20221121/model/KeyValue.h
   include/tencentcloud/csip/v20221121/model/ModifyAssetCoreAttributeRequest.h
   include/tencentcloud/csip/v20221121/model/OperateRiskRulePolicyRequest.h
@@ -1070,9 +1106,10 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/ModifyDspmWhitelistStrategyResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeKeySandboxCredentialRequest.h
   include/tencentcloud/csip/v20221121/model/DspmApproverStep.h
-  include/tencentcloud/csip/v20221121/model/DescribeDspmIdentifyComplianceGroupDetailRequest.h
+  include/tencentcloud/csip/v20221121/model/DeleteSandboxFileRuleRequest.h
   include/tencentcloud/csip/v20221121/model/CreateImageRegistryConnectivityTaskRequest.h
   include/tencentcloud/csip/v20221121/model/CreateAssetTagResponse.h
+  include/tencentcloud/csip/v20221121/model/TrafficSandboxLLMAuditRuleInfo.h
   include/tencentcloud/csip/v20221121/model/ModifyExposureAutoTagRuleResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeSCFAliasListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeCloudFunctionListRequest.h
@@ -1093,8 +1130,10 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/ClusterPodListItem.h
   include/tencentcloud/csip/v20221121/model/DspmPersonIdentifyItem.h
   include/tencentcloud/csip/v20221121/model/DescribeImageAssetListRequest.h
-  include/tencentcloud/csip/v20221121/model/ModifyDspmIdentifyComplianceRuleLevelInfoResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribeSandboxDLPAlertListRequest.h
   include/tencentcloud/csip/v20221121/model/RegionConfig.h
+  include/tencentcloud/csip/v20221121/model/ModifySandboxLLMAuditRuleResponse.h
+  include/tencentcloud/csip/v20221121/model/ModifySandboxACLRuleStatusRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeUserDspmInfoListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeCosAlarmListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeVulItemListRequest.h
@@ -1133,6 +1172,8 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeAssetTagAttributesRequest.h
   include/tencentcloud/csip/v20221121/model/DspmIpCount.h
   include/tencentcloud/csip/v20221121/model/DescribeClusterPodDetailResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribeCSPMPayInfoResponse.h
+  include/tencentcloud/csip/v20221121/model/UserAKInfo.h
   include/tencentcloud/csip/v20221121/model/MachineDetail.h
   include/tencentcloud/csip/v20221121/model/DescribeProcessDaemonHostRequest.h
   include/tencentcloud/csip/v20221121/model/ModifyNetAttackSettingResponse.h
@@ -1153,7 +1194,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeBaselinePolicyListResponse.h
   include/tencentcloud/csip/v20221121/model/ModifyRaspLicenseBindsResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeEDRScanRecordListResponse.h
-  include/tencentcloud/csip/v20221121/model/BaselineOverviewStatistic.h
+  include/tencentcloud/csip/v20221121/model/DspmAssetAccountIdentify.h
   include/tencentcloud/csip/v20221121/model/CreateDspmIdentifyInfoListExportJobRequest.h
   include/tencentcloud/csip/v20221121/model/CreateVulFixTaskRequest.h
   include/tencentcloud/csip/v20221121/model/BaselineAggregatedPolicy.h
@@ -1161,13 +1202,13 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/ModifyDspmLogDeliveryTypeResponse.h
   include/tencentcloud/csip/v20221121/model/CreateIaCAccessTokenRequest.h
   include/tencentcloud/csip/v20221121/model/SyncImageRegistryResponse.h
-  include/tencentcloud/csip/v20221121/model/ModifyMachinesLoginTypeRequest.h
+  include/tencentcloud/csip/v20221121/model/CosIdentifyLevelDetail.h
   include/tencentcloud/csip/v20221121/model/ModifySandboxLLMAuditRuleStatusRequest.h
-  include/tencentcloud/csip/v20221121/model/DomainInfo.h
+  include/tencentcloud/csip/v20221121/model/DescribeDspmDictionaryListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeAgentRunPolicyRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeIaCFileListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeBaselineAggregatedPolicyListResponse.h
-  include/tencentcloud/csip/v20221121/model/DescribeSecurityRiskTrendResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribeAccessKeyWhiteListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeLoginTypeGlobalConfRequest.h
   include/tencentcloud/csip/v20221121/model/ComponentDetailItem.h
   include/tencentcloud/csip/v20221121/model/DescribeCLSLogIndexV3Request.h
@@ -1225,6 +1266,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeCWPMachinesRequest.h
   include/tencentcloud/csip/v20221121/model/BatchModifyBaselinePolicyRequest.h
   include/tencentcloud/csip/v20221121/model/DspmIdentifyComplianceRuleRelation.h
+  include/tencentcloud/csip/v20221121/model/OrderQuotaInfo.h
   include/tencentcloud/csip/v20221121/model/LogSearchInfos.h
   include/tencentcloud/csip/v20221121/model/CreateAssetViewRisksExportJobRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeSandboxFileRuleListRequest.h
@@ -1250,6 +1292,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeAccessKeyRiskDetailRequest.h
   include/tencentcloud/csip/v20221121/model/AddImageRegistryRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeEdrExcludeNetworkSegmentsRequest.h
+  include/tencentcloud/csip/v20221121/model/DeleteSandboxACLRuleResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeCosIpInvokeLogResponse.h
   include/tencentcloud/csip/v20221121/model/DeleteDspmShareUserDataRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeImageAssetDetailRequest.h
@@ -1322,7 +1365,9 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeVulLabelListResponse.h
   include/tencentcloud/csip/v20221121/model/DeleteDspmIdentifyComplianceRuleRelationRequest.h
   include/tencentcloud/csip/v20221121/model/LogItem.h
+  include/tencentcloud/csip/v20221121/model/TrafficSandboxLLMAuditSystemRuleItem.h
   include/tencentcloud/csip/v20221121/model/CreateDspmWhitelistStrategyRequest.h
+  include/tencentcloud/csip/v20221121/model/TrafficSandboxDLPTrafficRuleItem.h
   include/tencentcloud/csip/v20221121/model/DescribeExportJobDownloadURLRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAssetDatabaseListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeIaCTokenListRequest.h
@@ -1343,6 +1388,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeImageVirusListRequest.h
   include/tencentcloud/csip/v20221121/model/AIAnalysisSession.h
   include/tencentcloud/csip/v20221121/model/DeleteDspmRestoreLogListResponse.h
+  include/tencentcloud/csip/v20221121/model/CreateHostImageListExportJobResponse.h
   include/tencentcloud/csip/v20221121/model/DspmAssetInstance.h
   include/tencentcloud/csip/v20221121/model/CreateDspmIdentifyInfoListExportJobResponse.h
   include/tencentcloud/csip/v20221121/model/TaskCenterVulRiskInputParam.h
@@ -1352,6 +1398,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeUserInfoResponse.h
   include/tencentcloud/csip/v20221121/model/Tags.h
   include/tencentcloud/csip/v20221121/model/DescribeAssetComponentListRequest.h
+  include/tencentcloud/csip/v20221121/model/ModifyShareUserAKRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeAbTestUserRequest.h
   include/tencentcloud/csip/v20221121/model/ProtectionConfigItem.h
   include/tencentcloud/csip/v20221121/model/DescribeCosRiskActionListResponse.h
@@ -1430,6 +1477,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/ModifyAlarmRiskStatusRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeCosObjectScanTaskRequest.h
   include/tencentcloud/csip/v20221121/model/ModifyPayConfigRequest.h
+  include/tencentcloud/csip/v20221121/model/ModifySandboxACLRuleResponse.h
   include/tencentcloud/csip/v20221121/model/TableField.h
   include/tencentcloud/csip/v20221121/model/AgentRunModePolicy.h
   include/tencentcloud/csip/v20221121/model/RoleInfo.h
@@ -1442,9 +1490,11 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeCspmShardConfigResponse.h
   include/tencentcloud/csip/v20221121/model/DspmIdentifyInfoItem.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmCkafkaTopicListRequest.h
-  include/tencentcloud/csip/v20221121/model/DescribeDspmAssetFieldSamplesResponse.h
+  include/tencentcloud/csip/v20221121/model/AssetProcessItem.h
   include/tencentcloud/csip/v20221121/model/SubnetAsset.h
   include/tencentcloud/csip/v20221121/model/ContainerEnvInfo.h
+  include/tencentcloud/csip/v20221121/model/ModifySandboxAlertStatusRequest.h
+  include/tencentcloud/csip/v20221121/model/ModifySandboxACLRuleStatusResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeExportJobDownloadURLResponse.h
   include/tencentcloud/csip/v20221121/model/VULRiskAdvanceCFGList.h
   include/tencentcloud/csip/v20221121/model/ContainerAppItem.h
@@ -1458,6 +1508,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeAIAnalysisFileDownloadURLResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeVulFixedListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeVulFixTaskListResponse.h
+  include/tencentcloud/csip/v20221121/model/ModifyClusterDefendStatusResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeMachineLoginTypeResponse.h
   include/tencentcloud/csip/v20221121/model/AssetRiskItem.h
   include/tencentcloud/csip/v20221121/model/DeleteDspmAssetAccountRequest.h
@@ -1478,6 +1529,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeVulFixTaskListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeNotifyAssetConfigRequest.h
   include/tencentcloud/csip/v20221121/model/StopPreventUninstallResponse.h
+  include/tencentcloud/csip/v20221121/model/ModifyDspmIdentifyLevelGroupRequest.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmApplyingIdentifyComplianceGroupResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmExportTaskRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeVulScanTaskListRequest.h
@@ -1582,6 +1634,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/ProviderNode.h
   include/tencentcloud/csip/v20221121/model/ImageRegistryInfo.h
   include/tencentcloud/csip/v20221121/model/DescribeCWPMachineOsListResponse.h
+  include/tencentcloud/csip/v20221121/model/InstallSandboxPluginResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeCosAccessPermissionsResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeClusterContainerListResponse.h
   include/tencentcloud/csip/v20221121/model/LogDeliveryInfo.h
@@ -1595,7 +1648,10 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/RepositoryImageVO.h
   include/tencentcloud/csip/v20221121/model/UpdateClusterOwnerResponse.h
   include/tencentcloud/csip/v20221121/model/DeleteDomainAndIpResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribeSandboxDLPAlertListResponse.h
   include/tencentcloud/csip/v20221121/model/ModifyCosAuditObjectSampleRateRequest.h
+  include/tencentcloud/csip/v20221121/model/DataSearchBug.h
+  include/tencentcloud/csip/v20221121/model/TrafficSandboxDLPFileSizeRange.h
   include/tencentcloud/csip/v20221121/model/DescribeScanStatisticResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeExposuresRequest.h
   include/tencentcloud/csip/v20221121/model/DeleteCosAkAssetResponse.h
@@ -1605,6 +1661,8 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/LicenseBindFailedItem.h
   include/tencentcloud/csip/v20221121/model/CustomRiskRuleItem.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAssetSupportedPrivilegesRequest.h
+  include/tencentcloud/csip/v20221121/model/ModifySandboxDLPRuleStatusResponse.h
+  include/tencentcloud/csip/v20221121/model/TrafficSandboxDLPURLRuleItem.h
   include/tencentcloud/csip/v20221121/model/DescribeEdrAlertCountForAssetResponse.h
   include/tencentcloud/csip/v20221121/model/ModifyImageRegistryResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeAIAnalysisHistoryRequest.h
@@ -1628,6 +1686,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeEDRScanRecordListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeOrganizationUserInfoRequest.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmAssetAccountPrivilegesRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeLoginTypeHostResponse.h
   include/tencentcloud/csip/v20221121/model/FilterDataObject.h
   include/tencentcloud/csip/v20221121/model/DspmIdentifyLevelGroupItem.h
   include/tencentcloud/csip/v20221121/model/UpdateAccessKeyRemarkResponse.h
@@ -1639,9 +1698,11 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/WebhookReceiverBrief.h
   include/tencentcloud/csip/v20221121/model/DescribeClusterInstallCommandRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeVpcAssetsResponse.h
+  include/tencentcloud/csip/v20221121/model/CreateSandboxACLRuleResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeClusterContainerWebServiceListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeImageVirusWhitelistRequest.h
   include/tencentcloud/csip/v20221121/model/ExportClientSettingHostListRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeSourceIPDetailRequest.h
   include/tencentcloud/csip/v20221121/model/ModifyCSIPRaspLicenseBindsRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeImageAssociatedHostListRequest.h
   include/tencentcloud/csip/v20221121/model/LogAppCollectPath.h
@@ -1653,6 +1714,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/CreateIaCAccessTokenResponse.h
   include/tencentcloud/csip/v20221121/model/DspmAssetTypeCount.h
   include/tencentcloud/csip/v20221121/model/DeleteWebhookReceiversRequest.h
+  include/tencentcloud/csip/v20221121/model/ModifySandboxAlertStatusResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeLoginTypeHostRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmApproveHistoryRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeClusterAssetListResponse.h
@@ -1673,6 +1735,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeVdbAndPocInfoResponse.h
   include/tencentcloud/csip/v20221121/model/TrafficSandboxEffectScope.h
   include/tencentcloud/csip/v20221121/model/DescribeBaselineMainTaskItemListRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeSandboxLLMAuditAlertListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeNotifySettingAlertRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmLogListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeImageRegistryTimedScanTaskPreviewRequest.h
@@ -1686,6 +1749,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/CreateImageVirusWhitelistResponse.h
   include/tencentcloud/csip/v20221121/model/CreateCosObjectScanTaskRequest.h
   include/tencentcloud/csip/v20221121/model/ScanBaselinePolicyListResponse.h
+  include/tencentcloud/csip/v20221121/model/UpdateClusterOwnerRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeScanTaskListResponse.h
   include/tencentcloud/csip/v20221121/model/LicenseUnbindFailedItem.h
   include/tencentcloud/csip/v20221121/model/DeleteDspmApplyOrderResponse.h
@@ -1718,11 +1782,12 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/TaskLogInfo.h
   include/tencentcloud/csip/v20221121/model/LogColumn.h
   include/tencentcloud/csip/v20221121/model/DescribeTaskLogURLResponse.h
-  include/tencentcloud/csip/v20221121/model/ModifyNotifyAssetConfigRequest.h
+  include/tencentcloud/csip/v20221121/model/DeleteSandboxDLPRuleResponse.h
   include/tencentcloud/csip/v20221121/model/StopImageRegistryScanTaskResponse.h
   include/tencentcloud/csip/v20221121/model/Machine.h
   include/tencentcloud/csip/v20221121/model/DescribeCosAuditDictionaryListResponse.h
   include/tencentcloud/csip/v20221121/model/DeleteAIAnalysisSMTPAccessRequest.h
+  include/tencentcloud/csip/v20221121/model/ModifySandboxFileRuleStatusRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeComplianceStandardTermTreeRequest.h
   include/tencentcloud/csip/v20221121/model/CreateClusterNamespaceListExportJobResponse.h
   include/tencentcloud/csip/v20221121/model/EdrAlertDetail.h
@@ -1737,7 +1802,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeTagRuleAssetsRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeBaselineSyncConfRequest.h
   include/tencentcloud/csip/v20221121/model/ModifyUebaRuleSwitchRequest.h
-  include/tencentcloud/csip/v20221121/model/DspmAssetCount.h
+  include/tencentcloud/csip/v20221121/model/CreateBaselineMainTaskExportJobResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeScanStatisticRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeCFGRiskReportStatisticsRequest.h
   include/tencentcloud/csip/v20221121/model/ModifyNotifySettingAlertResponse.h
@@ -1761,6 +1826,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/VulImpactComponentInfo.h
   include/tencentcloud/csip/v20221121/model/CVMAssetVO.h
   include/tencentcloud/csip/v20221121/model/VULBaseInfo.h
+  include/tencentcloud/csip/v20221121/model/DescribeCSPMPayInfoRequest.h
   include/tencentcloud/csip/v20221121/model/ModifyEDRRulesActionRequest.h
   include/tencentcloud/csip/v20221121/model/CreateImageAssetListExportJobResponse.h
   include/tencentcloud/csip/v20221121/model/NatSnatRuleItem.h
@@ -1793,16 +1859,19 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeDspmRiskDetailResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeCosRiskScanTaskRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeEdrAlertMultiAttackStagesRequest.h
+  include/tencentcloud/csip/v20221121/model/ModifySandboxFileRuleStatusResponse.h
   include/tencentcloud/csip/v20221121/model/DeleteCosPolicyResponse.h
   include/tencentcloud/csip/v20221121/model/SkillScanEngineResult.h
   include/tencentcloud/csip/v20221121/model/DescribeMultiCloudAssetCountRequest.h
-  include/tencentcloud/csip/v20221121/model/WebsiteRisk.h
+  include/tencentcloud/csip/v20221121/model/ModifySandboxDLPRuleRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeClusterServiceListResponse.h
   include/tencentcloud/csip/v20221121/model/RiskCenterOverviewTrendAnalysis.h
   include/tencentcloud/csip/v20221121/model/VULViewVULRisk.h
   include/tencentcloud/csip/v20221121/model/DescribeCVMAssetsResponse.h
+  include/tencentcloud/csip/v20221121/model/ModifyShareUserAKResponse.h
   include/tencentcloud/csip/v20221121/model/CreateAllAssetsExportJobResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmBackupSettingRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeSandboxLLMAuditAlertListRequest.h
   include/tencentcloud/csip/v20221121/model/BatchModifyImageVirusWhitelistRequest.h
   include/tencentcloud/csip/v20221121/model/CosSourceIpInfo.h
   include/tencentcloud/csip/v20221121/model/ServiceSupport.h
@@ -1818,6 +1887,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeUserCallRecordRequest.h
   include/tencentcloud/csip/v20221121/model/AlertInfo.h
   include/tencentcloud/csip/v20221121/model/DspmWhitelistStrategy.h
+  include/tencentcloud/csip/v20221121/model/TrafficSandboxDLPAlertInfo.h
   include/tencentcloud/csip/v20221121/model/CreateDspmIdentifyLevelGroupRequest.h
   include/tencentcloud/csip/v20221121/model/CreateVulRisksExportJobResponse.h
   include/tencentcloud/csip/v20221121/model/TrafficRuleState.h
@@ -1857,6 +1927,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeOtherCloudAssetsRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeAILinkSettingResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeSecurityRiskTrendRequest.h
+  include/tencentcloud/csip/v20221121/model/ModifySandboxLLMAuditRuleRequest.h
   include/tencentcloud/csip/v20221121/model/CosAlarmRiskIdInfo.h
   include/tencentcloud/csip/v20221121/model/DescribeClusterAssetsResponse.h
   include/tencentcloud/csip/v20221121/model/CreateImageVulListExportJobRequest.h
@@ -1871,12 +1942,14 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/CreateImageVirusListExportJobRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeExposeRisksRequest.h
   include/tencentcloud/csip/v20221121/model/ExportTasksResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribeVoucherEligibilityRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeDbAssetInfoResponse.h
   include/tencentcloud/csip/v20221121/model/BugInfoDetail.h
   include/tencentcloud/csip/v20221121/model/DescribeAIScheduleTaskDetailRequest.h
   include/tencentcloud/csip/v20221121/model/CosInvokeIpVpcInfo.h
   include/tencentcloud/csip/v20221121/model/CreateCFGRisksExportJobRequest.h
   include/tencentcloud/csip/v20221121/model/ClbListenerItem.h
+  include/tencentcloud/csip/v20221121/model/DescribeSandboxLLMAuditSystemRuleListRequest.h
   include/tencentcloud/csip/v20221121/model/VulFixTaskDetailItem.h
   include/tencentcloud/csip/v20221121/model/ModifyVulWhitelistConfigResponse.h
   include/tencentcloud/csip/v20221121/model/WebhookAssetScope.h
@@ -1897,6 +1970,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/CreateDspmRiskStrategyResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeCosAkInvokeIpListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeCosBucketRiskResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribeVoucherEligibilityResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmResourceResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeCosRoleAccessPermissionsRequest.h
   include/tencentcloud/csip/v20221121/model/DeleteEDRScanTaskRequest.h
@@ -1946,6 +2020,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/CreateDspmIdentifyCategoryRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAccessRecordRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeClusterContainerComponentListRequest.h
+  include/tencentcloud/csip/v20221121/model/InstallSandboxPluginRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeVulScanPeriodicResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeAgentRunModeRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskCenterVULViewVULRiskListResponse.h
@@ -1962,6 +2037,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/StopImageRegistryScanTaskRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeCosBucketListRequest.h
   include/tencentcloud/csip/v20221121/model/DeleteBaselineSelfDefinedPolicyListRequest.h
+  include/tencentcloud/csip/v20221121/model/CreateSandboxACLRuleRequest.h
   include/tencentcloud/csip/v20221121/model/CreatePodContainerListExportJobRequest.h
   include/tencentcloud/csip/v20221121/model/DeleteCSIPMalwareScanTaskResponse.h
   include/tencentcloud/csip/v20221121/model/ServerRiskSuggestion.h
@@ -1977,6 +2053,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/CreateScanStatisticExportJobRequest.h
   include/tencentcloud/csip/v20221121/model/BaselineUserOtherConf.h
   include/tencentcloud/csip/v20221121/model/DescribeVulFixedHostDetailResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribeSandboxLLMAuditRuleListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeHostKBRiskListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeBaselinePolicyItemListResponse.h
   include/tencentcloud/csip/v20221121/model/AssetFilterOptions.h
@@ -1991,8 +2068,10 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DeleteDspmIdentifyComplianceCategoryRelationResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeCSIPRiskStatisticsRequest.h
   include/tencentcloud/csip/v20221121/model/ModifyAssetFilterViewResponse.h
+  include/tencentcloud/csip/v20221121/model/CreateSandboxDLPRuleRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeReverseShellSystemPolicyConfigRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeAIAgentSkillListRequest.h
+  include/tencentcloud/csip/v20221121/model/AccessKeyWhiteList.h
   include/tencentcloud/csip/v20221121/model/ModifySecurityScoreRuleResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeIaCFileOverviewRequest.h
   include/tencentcloud/csip/v20221121/model/CreateAssetComponentRelatedImageListExportJobRequest.h
@@ -2069,7 +2148,7 @@ set(csip_src
   src/v20221121/model/VPRExplainDimensionItem.cpp
   src/v20221121/model/DeleteImageRegistryScanTaskRequest.cpp
   src/v20221121/model/DspmStatisticsItem.cpp
-  src/v20221121/model/DspmIdentifyAssetStatistic.cpp
+  src/v20221121/model/CheckImageRegistryInstanceNameDuplicateRequest.cpp
   src/v20221121/model/ImageAssociatedAssetCount.cpp
   src/v20221121/model/DescribeCosAuditDictionaryListRequest.cpp
   src/v20221121/model/DescribeCustomRiskRuleDetailRequest.cpp
@@ -2119,7 +2198,7 @@ set(csip_src
   src/v20221121/model/CreateImageSensitiveWhitelistRequest.cpp
   src/v20221121/model/DescribeCWPOrderListResponse.cpp
   src/v20221121/model/DescribeVulRiskRelateHostRequest.cpp
-  src/v20221121/model/DescribePodContainerListResponse.cpp
+  src/v20221121/model/DescribeBaselineSyncConfResponse.cpp
   src/v20221121/model/DescribeCFGRiskStatisticsResponse.cpp
   src/v20221121/model/DescribeImageVirusWhitelistDetailRequest.cpp
   src/v20221121/model/UebaUserSummaryElement.cpp
@@ -2163,6 +2242,7 @@ set(csip_src
   src/v20221121/model/DescribeUebaRuleResponse.cpp
   src/v20221121/model/DescribeAssetTreeResponse.cpp
   src/v20221121/model/ModifyBaselineSyncConfRequest.cpp
+  src/v20221121/model/CreateSandboxLLMAuditRuleRequest.cpp
   src/v20221121/model/EdrAlertCategoryCount.cpp
   src/v20221121/model/DescribeEdrAlertThreatTagsResponse.cpp
   src/v20221121/model/DeleteDspmAssetAccountResponse.cpp
@@ -2189,7 +2269,7 @@ set(csip_src
   src/v20221121/model/ModifyVulScanPeriodicRequest.cpp
   src/v20221121/model/DeleteDspmBackupLogListResponse.cpp
   src/v20221121/model/CreateImageAssetListExportJobRequest.cpp
-  src/v20221121/model/DspmAssetAccountIdentify.cpp
+  src/v20221121/model/BaselineOverviewStatistic.cpp
   src/v20221121/model/DescribeCosAlarmTrendDataRequest.cpp
   src/v20221121/model/ModifyDspmWhitelistStrategyRequest.cpp
   src/v20221121/model/ContainerWebServiceItem.cpp
@@ -2209,6 +2289,7 @@ set(csip_src
   src/v20221121/model/CreateDspmAuditFilterStrategyRequest.cpp
   src/v20221121/model/UserCSPMInfo.cpp
   src/v20221121/model/DescribeAssetTagsResponse.cpp
+  src/v20221121/model/UninstallKeySandboxSkillResponse.cpp
   src/v20221121/model/DescribeVulScanTaskDetailResponse.cpp
   src/v20221121/model/AssetViewVULRisk.cpp
   src/v20221121/model/HostInfo.cpp
@@ -2227,6 +2308,7 @@ set(csip_src
   src/v20221121/model/ScanEDRTaskAgainResponse.cpp
   src/v20221121/model/DescribeIpInvokeRecordRequest.cpp
   src/v20221121/model/AssetTagTreeNode.cpp
+  src/v20221121/model/TrafficSandboxDLPRuleContentItem.cpp
   src/v20221121/model/FieldStyle.cpp
   src/v20221121/model/CreateCloudFunctionExportJobRequest.cpp
   src/v20221121/model/ModifyOrganizationAccountStatusRequest.cpp
@@ -2237,13 +2319,13 @@ set(csip_src
   src/v20221121/model/ModifyDspmCkafkaStartRequest.cpp
   src/v20221121/model/ExportTasksRequest.cpp
   src/v20221121/model/DescribeUebaRuleRequest.cpp
-  src/v20221121/model/AssetProcessItem.cpp
+  src/v20221121/model/DescribeDspmAssetFieldSamplesResponse.cpp
   src/v20221121/model/AssetItem.cpp
   src/v20221121/model/AssetComponent.cpp
   src/v20221121/model/CustomAgentRunModePolicy.cpp
   src/v20221121/model/RiskDetailItem.cpp
   src/v20221121/model/DescribeClbListenerListResponse.cpp
-  src/v20221121/model/ModifyDspmIdentifyLevelGroupRequest.cpp
+  src/v20221121/model/DescribeSandboxDLPRuleListResponse.cpp
   src/v20221121/model/DescribeNatRulesRequest.cpp
   src/v20221121/model/DescribeLighthouseFirewallRulesRequest.cpp
   src/v20221121/model/SCFNamespaceInfo.cpp
@@ -2261,13 +2343,14 @@ set(csip_src
   src/v20221121/model/DspmUinUser.cpp
   src/v20221121/model/AssetFilters.cpp
   src/v20221121/model/ModifyDspmRiskStrategyResponse.cpp
+  src/v20221121/model/CreateSandboxFileRuleResponse.cpp
   src/v20221121/model/DescribeRiskTrendDataResponse.cpp
   src/v20221121/model/ModifyEdrAlertIsolationRequest.cpp
   src/v20221121/model/HostVulRisk.cpp
   src/v20221121/model/DescribeCallRecordResponse.cpp
   src/v20221121/model/DescribeIaCFileListRequest.cpp
   src/v20221121/model/CosAkSet.cpp
-  src/v20221121/model/DataSearchBug.cpp
+  src/v20221121/model/DescribeDspmIdentifyComplianceGroupDetailRequest.cpp
   src/v20221121/model/AIAgentSkillInfo.cpp
   src/v20221121/model/ClusterNodeListItem.cpp
   src/v20221121/model/DescribeDspmAssetDatabasesRequest.cpp
@@ -2292,6 +2375,7 @@ set(csip_src
   src/v20221121/model/DeleteIaCAccessTokenResponse.cpp
   src/v20221121/model/DescribeCheckConnectivityHostListResponse.cpp
   src/v20221121/model/VulFixItem.cpp
+  src/v20221121/model/InstallKeySandboxSkillResponse.cpp
   src/v20221121/model/ModifyNFSScanConfResponse.cpp
   src/v20221121/model/AccessKeyRisk.cpp
   src/v20221121/model/DBAssetVO.cpp
@@ -2308,6 +2392,7 @@ set(csip_src
   src/v20221121/model/ModifyLoginWhiteRecordResponse.cpp
   src/v20221121/model/DescribeSecurityGroupPolicyResponse.cpp
   src/v20221121/model/AutoTagRuleItem.cpp
+  src/v20221121/model/ModifySandboxACLRuleRequest.cpp
   src/v20221121/model/DescribeAssetRiskListResponse.cpp
   src/v20221121/model/CreateDspmIdentifyCategoryResponse.cpp
   src/v20221121/model/AccessCredentialOutput.cpp
@@ -2335,6 +2420,7 @@ set(csip_src
   src/v20221121/model/LoginWhiteCombinedInfo.cpp
   src/v20221121/model/DescribeDspmAssetAccountsResponse.cpp
   src/v20221121/model/CreatePublicAssetsExportJobResponse.cpp
+  src/v20221121/model/ModifyNotifyAssetConfigRequest.cpp
   src/v20221121/model/DeleteCSIPMalwareScanTaskRequest.cpp
   src/v20221121/model/DescribeDspmAssetIdsResponse.cpp
   src/v20221121/model/ModifyDspmAssetSecurityAnalysisSwitchResponse.cpp
@@ -2363,6 +2449,7 @@ set(csip_src
   src/v20221121/model/RuleContentProcessNetwork.cpp
   src/v20221121/model/ModifyDspmApproveStatusResponse.cpp
   src/v20221121/model/DescribeImageAssociatedAssetCountResponse.cpp
+  src/v20221121/model/DeleteSandboxACLRuleRequest.cpp
   src/v20221121/model/DescribeAIAnalysisHistoryResponse.cpp
   src/v20221121/model/ModifyAILinkSettingResponse.cpp
   src/v20221121/model/TrafficSandboxACLRuleContentItem.cpp
@@ -2370,6 +2457,7 @@ set(csip_src
   src/v20221121/model/ModifyDspmIdentifyInfoRequest.cpp
   src/v20221121/model/DescribeBanStatusRequest.cpp
   src/v20221121/model/DescribeAIAgentAssetListRequest.cpp
+  src/v20221121/model/NewAlertKey.cpp
   src/v20221121/model/DescribeAssetFilterViewsRequest.cpp
   src/v20221121/model/CreateScanStatisticExportJobResponse.cpp
   src/v20221121/model/AccessAIAnalysisSMTPResponse.cpp
@@ -2391,10 +2479,11 @@ set(csip_src
   src/v20221121/model/DeleteSandboxLLMAuditRuleResponse.cpp
   src/v20221121/model/StatisticalFilter.cpp
   src/v20221121/model/DspmIdentifyCategoryItem.cpp
+  src/v20221121/model/DescribeSandboxDLPRuleListRequest.cpp
   src/v20221121/model/DescribeRiskCenterAssetViewVULRiskListResponse.cpp
   src/v20221121/model/OsName.cpp
   src/v20221121/model/ModifyRiskCenterRiskStatusRequest.cpp
-  src/v20221121/model/NewAlertKey.cpp
+  src/v20221121/model/DescribeAccessKeyWhiteListResponse.cpp
   src/v20221121/model/DescribeLoginTypeGlobalConfResponse.cpp
   src/v20221121/model/DescribeDspmAssetLoginCredentialResponse.cpp
   src/v20221121/model/DescribeCosPolicyResponse.cpp
@@ -2408,11 +2497,13 @@ set(csip_src
   src/v20221121/model/DescribeExposureTrendResponse.cpp
   src/v20221121/model/ModifyCosAuditBucketMonitorStatusRequest.cpp
   src/v20221121/model/CreateClusterAssetSyncTaskRequest.cpp
+  src/v20221121/model/ModifyDspmIdentifyComplianceRuleLevelInfoResponse.cpp
   src/v20221121/model/AssetHeaderItem.cpp
+  src/v20221121/model/CreateSandboxLLMAuditRuleResponse.cpp
   src/v20221121/model/ImageRegistryExportJobInfo.cpp
   src/v20221121/model/InquireInfo.cpp
   src/v20221121/model/DescribeBruteAttackRulesResponse.cpp
-  src/v20221121/model/CheckImageRegistryInstanceNameDuplicateRequest.cpp
+  src/v20221121/model/DspmIdentifyAssetStatistic.cpp
   src/v20221121/model/LogDeliveryCkafkaConfig.cpp
   src/v20221121/model/DescribeClusterSuperNodeInfoResponse.cpp
   src/v20221121/model/DescribeComplianceOverviewResponse.cpp
@@ -2436,6 +2527,7 @@ set(csip_src
   src/v20221121/model/SkillScanItem.cpp
   src/v20221121/model/DescribeVULListRequest.cpp
   src/v20221121/model/ModifyNotifyMemberResponse.cpp
+  src/v20221121/model/DspmAssetCount.cpp
   src/v20221121/model/CFGViewCFGRisk.cpp
   src/v20221121/model/DescribeCWPMachinesResponse.cpp
   src/v20221121/model/ModifyAssetTagsByAssetInfoResponse.cpp
@@ -2454,6 +2546,7 @@ set(csip_src
   src/v20221121/model/CreateDspmApplyOrderRequest.cpp
   src/v20221121/model/CreateAssetComponentListExportJobRequest.cpp
   src/v20221121/model/DescribeDspmAssetDatabaseListResponse.cpp
+  src/v20221121/model/TrafficSandboxLLMAuditRuleRef.cpp
   src/v20221121/model/DspmAccessRecordId.cpp
   src/v20221121/model/DescribeAssetTagTreeResponse.cpp
   src/v20221121/model/DspmIdentifyRuleItem.cpp
@@ -2468,6 +2561,7 @@ set(csip_src
   src/v20221121/model/OperateRiskRequest.cpp
   src/v20221121/model/DescribeDspmRiskStrategyRequest.cpp
   src/v20221121/model/UninstallClusterAgentRequest.cpp
+  src/v20221121/model/ModifySandboxFileRuleResponse.cpp
   src/v20221121/model/CreateAIScheduleResponse.cpp
   src/v20221121/model/CreateVulScanManualResponse.cpp
   src/v20221121/model/ModifyNotifySettingAlertRequest.cpp
@@ -2478,7 +2572,9 @@ set(csip_src
   src/v20221121/model/DescribeRiskCenterCFGViewCFGRiskListResponse.cpp
   src/v20221121/model/DescribeComplianceStatisticsRequest.cpp
   src/v20221121/model/DescribeDspmIdentifyRuleTestResultResponse.cpp
+  src/v20221121/model/InstallKeySandboxSkillRequest.cpp
   src/v20221121/model/VPRRatingStage.cpp
+  src/v20221121/model/CreateSandboxFileRuleRequest.cpp
   src/v20221121/model/RegionInfo.cpp
   src/v20221121/model/DescribePolicyHitDataResponse.cpp
   src/v20221121/model/DescribeRiskTrendDataRequest.cpp
@@ -2492,7 +2588,9 @@ set(csip_src
   src/v20221121/model/ModifyDspmCkafkaSaveResponse.cpp
   src/v20221121/model/DescribeBaselinePolicyCategoryListRequest.cpp
   src/v20221121/model/DescribeVulViewVulRiskListResponse.cpp
+  src/v20221121/model/CreateHostImageListExportJobRequest.cpp
   src/v20221121/model/DeleteImageVulWhitelistRequest.cpp
+  src/v20221121/model/ModifySandboxDLPRuleResponse.cpp
   src/v20221121/model/EdrAlertTargetForIgnore.cpp
   src/v20221121/model/DescribeTaskLogListRequest.cpp
   src/v20221121/model/DspmAssetAccessTopologyItem.cpp
@@ -2542,6 +2640,7 @@ set(csip_src
   src/v20221121/model/ContainerPortItem.cpp
   src/v20221121/model/DescribeBucketInvokeIpListRequest.cpp
   src/v20221121/model/OrganizationInfo.cpp
+  src/v20221121/model/TrafficSandboxLLMAuditAlertInfo.cpp
   src/v20221121/model/CreateClusterNodeListExportJobResponse.cpp
   src/v20221121/model/CreateImageSensitiveInfoListExportJobResponse.cpp
   src/v20221121/model/ScanBaselinePolicyListRequest.cpp
@@ -2582,6 +2681,7 @@ set(csip_src
   src/v20221121/model/AssetTagModifyAssetItem.cpp
   src/v20221121/model/DescribeGatewayAssetsResponse.cpp
   src/v20221121/model/DescribeDspmApproveOrderListRequest.cpp
+  src/v20221121/model/StopCSIPManualMalwareScanResponse.cpp
   src/v20221121/model/CreateImageRegistryScanTaskRequest.cpp
   src/v20221121/model/SkillScanRuleHit.cpp
   src/v20221121/model/ModifyImageVirusWhitelistRequest.cpp
@@ -2599,9 +2699,10 @@ set(csip_src
   src/v20221121/model/DeleteImageSensitiveWhitelistResponse.cpp
   src/v20221121/model/CosOverview.cpp
   src/v20221121/model/DescribeCosIdentifyFileListRequest.cpp
+  src/v20221121/model/DescribeCSCPayInfoRequest.cpp
   src/v20221121/model/DescribeHostVulItemVPRInfoResponse.cpp
   src/v20221121/model/NetworkSegment.cpp
-  src/v20221121/model/DescribeLoginTypeHostResponse.cpp
+  src/v20221121/model/CreateSandboxDLPRuleResponse.cpp
   src/v20221121/model/DescribePreventUninstallHostRequest.cpp
   src/v20221121/model/CreateDspmAccessExportJobRequest.cpp
   src/v20221121/model/CreateClusterAssetSyncTaskResponse.cpp
@@ -2611,7 +2712,8 @@ set(csip_src
   src/v20221121/model/CreateExposureAutoTagRuleRequest.cpp
   src/v20221121/model/StopCSIPManualMalwareScanRequest.cpp
   src/v20221121/model/DescribeRiskCenterServerRiskListResponse.cpp
-  src/v20221121/model/UpdateClusterOwnerRequest.cpp
+  src/v20221121/model/DescribeCSCPayInfoResponse.cpp
+  src/v20221121/model/TrafficSandboxDLPUserRuleInfo.cpp
   src/v20221121/model/TrafficSandboxAssetScope.cpp
   src/v20221121/model/DescribeVulComponentRelateHostRequest.cpp
   src/v20221121/model/DescribeSandboxACLSystemRuleListResponse.cpp
@@ -2634,6 +2736,7 @@ set(csip_src
   src/v20221121/model/HostAutoScaleConfig.cpp
   src/v20221121/model/CreateBaselineFixRecordExportJobRequest.cpp
   src/v20221121/model/ExportClientSettingHostListResponse.cpp
+  src/v20221121/model/DeleteSandboxDLPRuleRequest.cpp
   src/v20221121/model/DescribeBaselineAggregatedItemListRequest.cpp
   src/v20221121/model/STSCredentialOutput.cpp
   src/v20221121/model/DescribeDspmExportTaskResponse.cpp
@@ -2677,7 +2780,7 @@ set(csip_src
   src/v20221121/model/CreateCFGRiskPDFReportExportJobRequest.cpp
   src/v20221121/model/ModifyDspmIdentifyInfoResponse.cpp
   src/v20221121/model/ModifyDspmIdentifyComplianceGroupRequest.cpp
-  src/v20221121/model/DescribeBaselineSyncConfResponse.cpp
+  src/v20221121/model/DescribePodContainerListResponse.cpp
   src/v20221121/model/DescribeDspmIdentifyIdListResponse.cpp
   src/v20221121/model/AIRecommendAction.cpp
   src/v20221121/model/VulScanTask.cpp
@@ -2751,6 +2854,7 @@ set(csip_src
   src/v20221121/model/CreateDspmPersonalIdentifyRequest.cpp
   src/v20221121/model/CreateCosPolicyRequest.cpp
   src/v20221121/model/StandardItem.cpp
+  src/v20221121/model/DescribeSandboxLLMAuditSystemRuleListResponse.cpp
   src/v20221121/model/DescribeVulFixableMachineListResponse.cpp
   src/v20221121/model/DescribeAssetLastSyncTimeRequest.cpp
   src/v20221121/model/DescribeImageSensitiveWhitelistResponse.cpp
@@ -2773,9 +2877,11 @@ set(csip_src
   src/v20221121/model/DescribeAIScheduleListResponse.cpp
   src/v20221121/model/DescribeCSIPLicenseBindScheduleRequest.cpp
   src/v20221121/model/DescribeProcessDaemonHostResponse.cpp
+  src/v20221121/model/ModifySandboxDLPRuleStatusRequest.cpp
   src/v20221121/model/ModifyDspmIdentifyComplianceGroupStatusResponse.cpp
   src/v20221121/model/TrafficSandboxACLRuleInfo.cpp
   src/v20221121/model/DescribeAssetProcessListRequest.cpp
+  src/v20221121/model/ModifyClusterDefendStatusRequest.cpp
   src/v20221121/model/CosRiskAlarmInfo.cpp
   src/v20221121/model/DescribeDspmAssetAccountPresetPrivilegesRequest.cpp
   src/v20221121/model/ModifyDspmIdentifyCategoryRequest.cpp
@@ -2810,10 +2916,11 @@ set(csip_src
   src/v20221121/model/StartOrModifyProcessDaemonResponse.cpp
   src/v20221121/model/BaselineFixRecord.cpp
   src/v20221121/model/DescribeCosSourceIpRequest.cpp
-  src/v20221121/model/StopCSIPManualMalwareScanResponse.cpp
+  src/v20221121/model/DescribeUserAKInfoListResponse.cpp
   src/v20221121/model/DescribeEdrExcludeNetworkSegmentsResponse.cpp
   src/v20221121/model/DescribeCVMAssetInfoRequest.cpp
   src/v20221121/model/CreateImageLayerVulListExportJobRequest.cpp
+  src/v20221121/model/WebsiteRisk.cpp
   src/v20221121/model/DspmRiskCount.cpp
   src/v20221121/model/DescribeClusterContainerProcessListRequest.cpp
   src/v20221121/model/DescribeDspmAssetAccountRecycledPrivilegesResponse.cpp
@@ -2861,6 +2968,7 @@ set(csip_src
   src/v20221121/model/DescribeDspmSyncUsersStatusRequest.cpp
   src/v20221121/model/DescribeLighthouseFirewallRulesResponse.cpp
   src/v20221121/model/NotifyAssetConfigItem.cpp
+  src/v20221121/model/ModifyMachinesLoginTypeRequest.cpp
   src/v20221121/model/CredentialEffectScope.cpp
   src/v20221121/model/AIAgentCredentialLocation.cpp
   src/v20221121/model/DescribeTaskLogListResponse.cpp
@@ -2869,13 +2977,14 @@ set(csip_src
   src/v20221121/model/DescribeCustomRiskRulesRequest.cpp
   src/v20221121/model/DescribeNotifySettingAlertResponse.cpp
   src/v20221121/model/CosPermissionInfo.cpp
-  src/v20221121/model/DescribeDspmDictionaryListResponse.cpp
+  src/v20221121/model/DomainInfo.cpp
   src/v20221121/model/DescribeMalwareTimingScanSettingResponse.cpp
   src/v20221121/model/Tag.cpp
   src/v20221121/model/DescribeCSIPMalwareScanTaskDetailResponse.cpp
   src/v20221121/model/DescribeDspmAuditFilterStrategy.cpp
   src/v20221121/model/DescribeCFGRiskStatisticsRequest.cpp
   src/v20221121/model/DescribeDspmAssetSecurityAnalyseStatusResponse.cpp
+  src/v20221121/model/ModifySandboxFileRuleRequest.cpp
   src/v20221121/model/ImageIDWithAppIdItem.cpp
   src/v20221121/model/MultiAttackStageItem.cpp
   src/v20221121/model/DescribeDspmLogTypeConfigListResponse.cpp
@@ -2895,7 +3004,7 @@ set(csip_src
   src/v20221121/model/ModifyBaselineUserOtherConfResponse.cpp
   src/v20221121/model/ModifyWebhookPolicyStatusRequest.cpp
   src/v20221121/model/DownloadDspmExportLogResponse.cpp
-  src/v20221121/model/CreateBaselineMainTaskExportJobResponse.cpp
+  src/v20221121/model/DescribeSourceIPDetailResponse.cpp
   src/v20221121/model/DescribeBaselineAggregatedPolicyListRequest.cpp
   src/v20221121/model/DescribeCheckViewRisksRequest.cpp
   src/v20221121/model/DescribeDspmAssetFieldListRequest.cpp
@@ -2906,6 +3015,7 @@ set(csip_src
   src/v20221121/model/CreateAssetProcessExportJobResponse.cpp
   src/v20221121/model/ProjectInfo.cpp
   src/v20221121/model/DescribeClusterContainerDetailRequest.cpp
+  src/v20221121/model/DescribeSecurityRiskTrendResponse.cpp
   src/v20221121/model/DescribeVULRiskDetailResponse.cpp
   src/v20221121/model/ModifyRiskCenterScanTaskResponse.cpp
   src/v20221121/model/DescribeImageRegistryNamespaceListRequest.cpp
@@ -2914,8 +3024,10 @@ set(csip_src
   src/v20221121/model/DescribeDspmLogTypeConfigListRequest.cpp
   src/v20221121/model/EDRExportJobItem.cpp
   src/v20221121/model/DescribeEdrExportJobListResponse.cpp
+  src/v20221121/model/DescribeUserAKInfoListRequest.cpp
   src/v20221121/model/DspmAssetIdentifyInfo.cpp
   src/v20221121/model/ModifyBanModeResponse.cpp
+  src/v20221121/model/DescribeSandboxLLMAuditRuleListRequest.cpp
   src/v20221121/model/DescribeDspmAssetAccountIdentifyRequest.cpp
   src/v20221121/model/CreateDspmAuditFilterStrategyResponse.cpp
   src/v20221121/model/RiskRuleInfo.cpp
@@ -2982,9 +3094,11 @@ set(csip_src
   src/v20221121/model/ModifyAssetTagRequest.cpp
   src/v20221121/model/DspmDatabasePrivilege.cpp
   src/v20221121/model/ImageRegistryScanSubTaskInfo.cpp
+  src/v20221121/model/DeleteSandboxFileRuleResponse.cpp
   src/v20221121/model/DescribeScanTaskRecordListResponse.cpp
   src/v20221121/model/CreateRiskDetailExportJobRequest.cpp
   src/v20221121/model/DescribeClusterPodDetailRequest.cpp
+  src/v20221121/model/UninstallKeySandboxSkillRequest.cpp
   src/v20221121/model/DescribeDspmPersonalIdentifyListRequest.cpp
   src/v20221121/model/EDRScanTaskHostItem.cpp
   src/v20221121/model/VulScanTaskDetail.cpp
@@ -3030,6 +3144,7 @@ set(csip_src
   src/v20221121/model/HostLoginWhiteObj.cpp
   src/v20221121/model/ImageVirusWhitelistDetail.cpp
   src/v20221121/model/DescribePortDetectListResponse.cpp
+  src/v20221121/model/TrafficSandboxDLPRuleInfo.cpp
   src/v20221121/model/KeyValue.cpp
   src/v20221121/model/ModifyAssetCoreAttributeRequest.cpp
   src/v20221121/model/OperateRiskRulePolicyRequest.cpp
@@ -3062,9 +3177,10 @@ set(csip_src
   src/v20221121/model/ModifyDspmWhitelistStrategyResponse.cpp
   src/v20221121/model/DescribeKeySandboxCredentialRequest.cpp
   src/v20221121/model/DspmApproverStep.cpp
-  src/v20221121/model/DescribeDspmIdentifyComplianceGroupDetailRequest.cpp
+  src/v20221121/model/DeleteSandboxFileRuleRequest.cpp
   src/v20221121/model/CreateImageRegistryConnectivityTaskRequest.cpp
   src/v20221121/model/CreateAssetTagResponse.cpp
+  src/v20221121/model/TrafficSandboxLLMAuditRuleInfo.cpp
   src/v20221121/model/ModifyExposureAutoTagRuleResponse.cpp
   src/v20221121/model/DescribeSCFAliasListResponse.cpp
   src/v20221121/model/DescribeCloudFunctionListRequest.cpp
@@ -3085,8 +3201,10 @@ set(csip_src
   src/v20221121/model/ClusterPodListItem.cpp
   src/v20221121/model/DspmPersonIdentifyItem.cpp
   src/v20221121/model/DescribeImageAssetListRequest.cpp
-  src/v20221121/model/ModifyDspmIdentifyComplianceRuleLevelInfoResponse.cpp
+  src/v20221121/model/DescribeSandboxDLPAlertListRequest.cpp
   src/v20221121/model/RegionConfig.cpp
+  src/v20221121/model/ModifySandboxLLMAuditRuleResponse.cpp
+  src/v20221121/model/ModifySandboxACLRuleStatusRequest.cpp
   src/v20221121/model/DescribeUserDspmInfoListRequest.cpp
   src/v20221121/model/DescribeCosAlarmListRequest.cpp
   src/v20221121/model/DescribeVulItemListRequest.cpp
@@ -3125,6 +3243,8 @@ set(csip_src
   src/v20221121/model/DescribeAssetTagAttributesRequest.cpp
   src/v20221121/model/DspmIpCount.cpp
   src/v20221121/model/DescribeClusterPodDetailResponse.cpp
+  src/v20221121/model/DescribeCSPMPayInfoResponse.cpp
+  src/v20221121/model/UserAKInfo.cpp
   src/v20221121/model/MachineDetail.cpp
   src/v20221121/model/DescribeProcessDaemonHostRequest.cpp
   src/v20221121/model/ModifyNetAttackSettingResponse.cpp
@@ -3145,7 +3265,7 @@ set(csip_src
   src/v20221121/model/DescribeBaselinePolicyListResponse.cpp
   src/v20221121/model/ModifyRaspLicenseBindsResponse.cpp
   src/v20221121/model/DescribeEDRScanRecordListResponse.cpp
-  src/v20221121/model/BaselineOverviewStatistic.cpp
+  src/v20221121/model/DspmAssetAccountIdentify.cpp
   src/v20221121/model/CreateDspmIdentifyInfoListExportJobRequest.cpp
   src/v20221121/model/CreateVulFixTaskRequest.cpp
   src/v20221121/model/BaselineAggregatedPolicy.cpp
@@ -3153,13 +3273,13 @@ set(csip_src
   src/v20221121/model/ModifyDspmLogDeliveryTypeResponse.cpp
   src/v20221121/model/CreateIaCAccessTokenRequest.cpp
   src/v20221121/model/SyncImageRegistryResponse.cpp
-  src/v20221121/model/ModifyMachinesLoginTypeRequest.cpp
+  src/v20221121/model/CosIdentifyLevelDetail.cpp
   src/v20221121/model/ModifySandboxLLMAuditRuleStatusRequest.cpp
-  src/v20221121/model/DomainInfo.cpp
+  src/v20221121/model/DescribeDspmDictionaryListResponse.cpp
   src/v20221121/model/DescribeAgentRunPolicyRequest.cpp
   src/v20221121/model/DescribeIaCFileListResponse.cpp
   src/v20221121/model/DescribeBaselineAggregatedPolicyListResponse.cpp
-  src/v20221121/model/DescribeSecurityRiskTrendResponse.cpp
+  src/v20221121/model/DescribeAccessKeyWhiteListRequest.cpp
   src/v20221121/model/DescribeLoginTypeGlobalConfRequest.cpp
   src/v20221121/model/ComponentDetailItem.cpp
   src/v20221121/model/DescribeCLSLogIndexV3Request.cpp
@@ -3217,6 +3337,7 @@ set(csip_src
   src/v20221121/model/DescribeCWPMachinesRequest.cpp
   src/v20221121/model/BatchModifyBaselinePolicyRequest.cpp
   src/v20221121/model/DspmIdentifyComplianceRuleRelation.cpp
+  src/v20221121/model/OrderQuotaInfo.cpp
   src/v20221121/model/LogSearchInfos.cpp
   src/v20221121/model/CreateAssetViewRisksExportJobRequest.cpp
   src/v20221121/model/DescribeSandboxFileRuleListRequest.cpp
@@ -3242,6 +3363,7 @@ set(csip_src
   src/v20221121/model/DescribeAccessKeyRiskDetailRequest.cpp
   src/v20221121/model/AddImageRegistryRequest.cpp
   src/v20221121/model/DescribeEdrExcludeNetworkSegmentsRequest.cpp
+  src/v20221121/model/DeleteSandboxACLRuleResponse.cpp
   src/v20221121/model/DescribeCosIpInvokeLogResponse.cpp
   src/v20221121/model/DeleteDspmShareUserDataRequest.cpp
   src/v20221121/model/DescribeImageAssetDetailRequest.cpp
@@ -3314,7 +3436,9 @@ set(csip_src
   src/v20221121/model/DescribeVulLabelListResponse.cpp
   src/v20221121/model/DeleteDspmIdentifyComplianceRuleRelationRequest.cpp
   src/v20221121/model/LogItem.cpp
+  src/v20221121/model/TrafficSandboxLLMAuditSystemRuleItem.cpp
   src/v20221121/model/CreateDspmWhitelistStrategyRequest.cpp
+  src/v20221121/model/TrafficSandboxDLPTrafficRuleItem.cpp
   src/v20221121/model/DescribeExportJobDownloadURLRequest.cpp
   src/v20221121/model/DescribeDspmAssetDatabaseListRequest.cpp
   src/v20221121/model/DescribeIaCTokenListRequest.cpp
@@ -3335,6 +3459,7 @@ set(csip_src
   src/v20221121/model/DescribeImageVirusListRequest.cpp
   src/v20221121/model/AIAnalysisSession.cpp
   src/v20221121/model/DeleteDspmRestoreLogListResponse.cpp
+  src/v20221121/model/CreateHostImageListExportJobResponse.cpp
   src/v20221121/model/DspmAssetInstance.cpp
   src/v20221121/model/CreateDspmIdentifyInfoListExportJobResponse.cpp
   src/v20221121/model/TaskCenterVulRiskInputParam.cpp
@@ -3344,6 +3469,7 @@ set(csip_src
   src/v20221121/model/DescribeUserInfoResponse.cpp
   src/v20221121/model/Tags.cpp
   src/v20221121/model/DescribeAssetComponentListRequest.cpp
+  src/v20221121/model/ModifyShareUserAKRequest.cpp
   src/v20221121/model/DescribeAbTestUserRequest.cpp
   src/v20221121/model/ProtectionConfigItem.cpp
   src/v20221121/model/DescribeCosRiskActionListResponse.cpp
@@ -3422,6 +3548,7 @@ set(csip_src
   src/v20221121/model/ModifyAlarmRiskStatusRequest.cpp
   src/v20221121/model/DescribeCosObjectScanTaskRequest.cpp
   src/v20221121/model/ModifyPayConfigRequest.cpp
+  src/v20221121/model/ModifySandboxACLRuleResponse.cpp
   src/v20221121/model/TableField.cpp
   src/v20221121/model/AgentRunModePolicy.cpp
   src/v20221121/model/RoleInfo.cpp
@@ -3434,9 +3561,11 @@ set(csip_src
   src/v20221121/model/DescribeCspmShardConfigResponse.cpp
   src/v20221121/model/DspmIdentifyInfoItem.cpp
   src/v20221121/model/DescribeDspmCkafkaTopicListRequest.cpp
-  src/v20221121/model/DescribeDspmAssetFieldSamplesResponse.cpp
+  src/v20221121/model/AssetProcessItem.cpp
   src/v20221121/model/SubnetAsset.cpp
   src/v20221121/model/ContainerEnvInfo.cpp
+  src/v20221121/model/ModifySandboxAlertStatusRequest.cpp
+  src/v20221121/model/ModifySandboxACLRuleStatusResponse.cpp
   src/v20221121/model/DescribeExportJobDownloadURLResponse.cpp
   src/v20221121/model/VULRiskAdvanceCFGList.cpp
   src/v20221121/model/ContainerAppItem.cpp
@@ -3450,6 +3579,7 @@ set(csip_src
   src/v20221121/model/DescribeAIAnalysisFileDownloadURLResponse.cpp
   src/v20221121/model/DescribeVulFixedListRequest.cpp
   src/v20221121/model/DescribeVulFixTaskListResponse.cpp
+  src/v20221121/model/ModifyClusterDefendStatusResponse.cpp
   src/v20221121/model/DescribeMachineLoginTypeResponse.cpp
   src/v20221121/model/AssetRiskItem.cpp
   src/v20221121/model/DeleteDspmAssetAccountRequest.cpp
@@ -3470,6 +3600,7 @@ set(csip_src
   src/v20221121/model/DescribeVulFixTaskListRequest.cpp
   src/v20221121/model/DescribeNotifyAssetConfigRequest.cpp
   src/v20221121/model/StopPreventUninstallResponse.cpp
+  src/v20221121/model/ModifyDspmIdentifyLevelGroupRequest.cpp
   src/v20221121/model/ModifyDspmApplyingIdentifyComplianceGroupResponse.cpp
   src/v20221121/model/DescribeDspmExportTaskRequest.cpp
   src/v20221121/model/DescribeVulScanTaskListRequest.cpp
@@ -3574,6 +3705,7 @@ set(csip_src
   src/v20221121/model/ProviderNode.cpp
   src/v20221121/model/ImageRegistryInfo.cpp
   src/v20221121/model/DescribeCWPMachineOsListResponse.cpp
+  src/v20221121/model/InstallSandboxPluginResponse.cpp
   src/v20221121/model/DescribeCosAccessPermissionsResponse.cpp
   src/v20221121/model/DescribeClusterContainerListResponse.cpp
   src/v20221121/model/LogDeliveryInfo.cpp
@@ -3587,7 +3719,10 @@ set(csip_src
   src/v20221121/model/RepositoryImageVO.cpp
   src/v20221121/model/UpdateClusterOwnerResponse.cpp
   src/v20221121/model/DeleteDomainAndIpResponse.cpp
+  src/v20221121/model/DescribeSandboxDLPAlertListResponse.cpp
   src/v20221121/model/ModifyCosAuditObjectSampleRateRequest.cpp
+  src/v20221121/model/DataSearchBug.cpp
+  src/v20221121/model/TrafficSandboxDLPFileSizeRange.cpp
   src/v20221121/model/DescribeScanStatisticResponse.cpp
   src/v20221121/model/DescribeExposuresRequest.cpp
   src/v20221121/model/DeleteCosAkAssetResponse.cpp
@@ -3597,6 +3732,8 @@ set(csip_src
   src/v20221121/model/LicenseBindFailedItem.cpp
   src/v20221121/model/CustomRiskRuleItem.cpp
   src/v20221121/model/DescribeDspmAssetSupportedPrivilegesRequest.cpp
+  src/v20221121/model/ModifySandboxDLPRuleStatusResponse.cpp
+  src/v20221121/model/TrafficSandboxDLPURLRuleItem.cpp
   src/v20221121/model/DescribeEdrAlertCountForAssetResponse.cpp
   src/v20221121/model/ModifyImageRegistryResponse.cpp
   src/v20221121/model/DescribeAIAnalysisHistoryRequest.cpp
@@ -3620,6 +3757,7 @@ set(csip_src
   src/v20221121/model/DescribeEDRScanRecordListRequest.cpp
   src/v20221121/model/DescribeOrganizationUserInfoRequest.cpp
   src/v20221121/model/ModifyDspmAssetAccountPrivilegesRequest.cpp
+  src/v20221121/model/DescribeLoginTypeHostResponse.cpp
   src/v20221121/model/FilterDataObject.cpp
   src/v20221121/model/DspmIdentifyLevelGroupItem.cpp
   src/v20221121/model/UpdateAccessKeyRemarkResponse.cpp
@@ -3631,9 +3769,11 @@ set(csip_src
   src/v20221121/model/WebhookReceiverBrief.cpp
   src/v20221121/model/DescribeClusterInstallCommandRequest.cpp
   src/v20221121/model/DescribeVpcAssetsResponse.cpp
+  src/v20221121/model/CreateSandboxACLRuleResponse.cpp
   src/v20221121/model/DescribeClusterContainerWebServiceListResponse.cpp
   src/v20221121/model/DescribeImageVirusWhitelistRequest.cpp
   src/v20221121/model/ExportClientSettingHostListRequest.cpp
+  src/v20221121/model/DescribeSourceIPDetailRequest.cpp
   src/v20221121/model/ModifyCSIPRaspLicenseBindsRequest.cpp
   src/v20221121/model/DescribeImageAssociatedHostListRequest.cpp
   src/v20221121/model/LogAppCollectPath.cpp
@@ -3645,6 +3785,7 @@ set(csip_src
   src/v20221121/model/CreateIaCAccessTokenResponse.cpp
   src/v20221121/model/DspmAssetTypeCount.cpp
   src/v20221121/model/DeleteWebhookReceiversRequest.cpp
+  src/v20221121/model/ModifySandboxAlertStatusResponse.cpp
   src/v20221121/model/DescribeLoginTypeHostRequest.cpp
   src/v20221121/model/DescribeDspmApproveHistoryRequest.cpp
   src/v20221121/model/DescribeClusterAssetListResponse.cpp
@@ -3665,6 +3806,7 @@ set(csip_src
   src/v20221121/model/DescribeVdbAndPocInfoResponse.cpp
   src/v20221121/model/TrafficSandboxEffectScope.cpp
   src/v20221121/model/DescribeBaselineMainTaskItemListRequest.cpp
+  src/v20221121/model/DescribeSandboxLLMAuditAlertListResponse.cpp
   src/v20221121/model/DescribeNotifySettingAlertRequest.cpp
   src/v20221121/model/DescribeDspmLogListRequest.cpp
   src/v20221121/model/DescribeImageRegistryTimedScanTaskPreviewRequest.cpp
@@ -3678,6 +3820,7 @@ set(csip_src
   src/v20221121/model/CreateImageVirusWhitelistResponse.cpp
   src/v20221121/model/CreateCosObjectScanTaskRequest.cpp
   src/v20221121/model/ScanBaselinePolicyListResponse.cpp
+  src/v20221121/model/UpdateClusterOwnerRequest.cpp
   src/v20221121/model/DescribeScanTaskListResponse.cpp
   src/v20221121/model/LicenseUnbindFailedItem.cpp
   src/v20221121/model/DeleteDspmApplyOrderResponse.cpp
@@ -3710,11 +3853,12 @@ set(csip_src
   src/v20221121/model/TaskLogInfo.cpp
   src/v20221121/model/LogColumn.cpp
   src/v20221121/model/DescribeTaskLogURLResponse.cpp
-  src/v20221121/model/ModifyNotifyAssetConfigRequest.cpp
+  src/v20221121/model/DeleteSandboxDLPRuleResponse.cpp
   src/v20221121/model/StopImageRegistryScanTaskResponse.cpp
   src/v20221121/model/Machine.cpp
   src/v20221121/model/DescribeCosAuditDictionaryListResponse.cpp
   src/v20221121/model/DeleteAIAnalysisSMTPAccessRequest.cpp
+  src/v20221121/model/ModifySandboxFileRuleStatusRequest.cpp
   src/v20221121/model/DescribeComplianceStandardTermTreeRequest.cpp
   src/v20221121/model/CreateClusterNamespaceListExportJobResponse.cpp
   src/v20221121/model/EdrAlertDetail.cpp
@@ -3729,7 +3873,7 @@ set(csip_src
   src/v20221121/model/DescribeTagRuleAssetsRequest.cpp
   src/v20221121/model/DescribeBaselineSyncConfRequest.cpp
   src/v20221121/model/ModifyUebaRuleSwitchRequest.cpp
-  src/v20221121/model/DspmAssetCount.cpp
+  src/v20221121/model/CreateBaselineMainTaskExportJobResponse.cpp
   src/v20221121/model/DescribeScanStatisticRequest.cpp
   src/v20221121/model/DescribeCFGRiskReportStatisticsRequest.cpp
   src/v20221121/model/ModifyNotifySettingAlertResponse.cpp
@@ -3753,6 +3897,7 @@ set(csip_src
   src/v20221121/model/VulImpactComponentInfo.cpp
   src/v20221121/model/CVMAssetVO.cpp
   src/v20221121/model/VULBaseInfo.cpp
+  src/v20221121/model/DescribeCSPMPayInfoRequest.cpp
   src/v20221121/model/ModifyEDRRulesActionRequest.cpp
   src/v20221121/model/CreateImageAssetListExportJobResponse.cpp
   src/v20221121/model/NatSnatRuleItem.cpp
@@ -3785,16 +3930,19 @@ set(csip_src
   src/v20221121/model/DescribeDspmRiskDetailResponse.cpp
   src/v20221121/model/DescribeCosRiskScanTaskRequest.cpp
   src/v20221121/model/DescribeEdrAlertMultiAttackStagesRequest.cpp
+  src/v20221121/model/ModifySandboxFileRuleStatusResponse.cpp
   src/v20221121/model/DeleteCosPolicyResponse.cpp
   src/v20221121/model/SkillScanEngineResult.cpp
   src/v20221121/model/DescribeMultiCloudAssetCountRequest.cpp
-  src/v20221121/model/WebsiteRisk.cpp
+  src/v20221121/model/ModifySandboxDLPRuleRequest.cpp
   src/v20221121/model/DescribeClusterServiceListResponse.cpp
   src/v20221121/model/RiskCenterOverviewTrendAnalysis.cpp
   src/v20221121/model/VULViewVULRisk.cpp
   src/v20221121/model/DescribeCVMAssetsResponse.cpp
+  src/v20221121/model/ModifyShareUserAKResponse.cpp
   src/v20221121/model/CreateAllAssetsExportJobResponse.cpp
   src/v20221121/model/DescribeDspmBackupSettingRequest.cpp
+  src/v20221121/model/DescribeSandboxLLMAuditAlertListRequest.cpp
   src/v20221121/model/BatchModifyImageVirusWhitelistRequest.cpp
   src/v20221121/model/CosSourceIpInfo.cpp
   src/v20221121/model/ServiceSupport.cpp
@@ -3810,6 +3958,7 @@ set(csip_src
   src/v20221121/model/DescribeUserCallRecordRequest.cpp
   src/v20221121/model/AlertInfo.cpp
   src/v20221121/model/DspmWhitelistStrategy.cpp
+  src/v20221121/model/TrafficSandboxDLPAlertInfo.cpp
   src/v20221121/model/CreateDspmIdentifyLevelGroupRequest.cpp
   src/v20221121/model/CreateVulRisksExportJobResponse.cpp
   src/v20221121/model/TrafficRuleState.cpp
@@ -3849,6 +3998,7 @@ set(csip_src
   src/v20221121/model/DescribeOtherCloudAssetsRequest.cpp
   src/v20221121/model/DescribeAILinkSettingResponse.cpp
   src/v20221121/model/DescribeSecurityRiskTrendRequest.cpp
+  src/v20221121/model/ModifySandboxLLMAuditRuleRequest.cpp
   src/v20221121/model/CosAlarmRiskIdInfo.cpp
   src/v20221121/model/DescribeClusterAssetsResponse.cpp
   src/v20221121/model/CreateImageVulListExportJobRequest.cpp
@@ -3863,12 +4013,14 @@ set(csip_src
   src/v20221121/model/CreateImageVirusListExportJobRequest.cpp
   src/v20221121/model/DescribeExposeRisksRequest.cpp
   src/v20221121/model/ExportTasksResponse.cpp
+  src/v20221121/model/DescribeVoucherEligibilityRequest.cpp
   src/v20221121/model/DescribeDbAssetInfoResponse.cpp
   src/v20221121/model/BugInfoDetail.cpp
   src/v20221121/model/DescribeAIScheduleTaskDetailRequest.cpp
   src/v20221121/model/CosInvokeIpVpcInfo.cpp
   src/v20221121/model/CreateCFGRisksExportJobRequest.cpp
   src/v20221121/model/ClbListenerItem.cpp
+  src/v20221121/model/DescribeSandboxLLMAuditSystemRuleListRequest.cpp
   src/v20221121/model/VulFixTaskDetailItem.cpp
   src/v20221121/model/ModifyVulWhitelistConfigResponse.cpp
   src/v20221121/model/WebhookAssetScope.cpp
@@ -3889,6 +4041,7 @@ set(csip_src
   src/v20221121/model/CreateDspmRiskStrategyResponse.cpp
   src/v20221121/model/DescribeCosAkInvokeIpListRequest.cpp
   src/v20221121/model/DescribeCosBucketRiskResponse.cpp
+  src/v20221121/model/DescribeVoucherEligibilityResponse.cpp
   src/v20221121/model/DescribeDspmResourceResponse.cpp
   src/v20221121/model/DescribeCosRoleAccessPermissionsRequest.cpp
   src/v20221121/model/DeleteEDRScanTaskRequest.cpp
@@ -3938,6 +4091,7 @@ set(csip_src
   src/v20221121/model/CreateDspmIdentifyCategoryRequest.cpp
   src/v20221121/model/DescribeDspmAccessRecordRequest.cpp
   src/v20221121/model/DescribeClusterContainerComponentListRequest.cpp
+  src/v20221121/model/InstallSandboxPluginRequest.cpp
   src/v20221121/model/DescribeVulScanPeriodicResponse.cpp
   src/v20221121/model/DescribeAgentRunModeRequest.cpp
   src/v20221121/model/DescribeRiskCenterVULViewVULRiskListResponse.cpp
@@ -3954,6 +4108,7 @@ set(csip_src
   src/v20221121/model/StopImageRegistryScanTaskRequest.cpp
   src/v20221121/model/DescribeCosBucketListRequest.cpp
   src/v20221121/model/DeleteBaselineSelfDefinedPolicyListRequest.cpp
+  src/v20221121/model/CreateSandboxACLRuleRequest.cpp
   src/v20221121/model/CreatePodContainerListExportJobRequest.cpp
   src/v20221121/model/DeleteCSIPMalwareScanTaskResponse.cpp
   src/v20221121/model/ServerRiskSuggestion.cpp
@@ -3969,6 +4124,7 @@ set(csip_src
   src/v20221121/model/CreateScanStatisticExportJobRequest.cpp
   src/v20221121/model/BaselineUserOtherConf.cpp
   src/v20221121/model/DescribeVulFixedHostDetailResponse.cpp
+  src/v20221121/model/DescribeSandboxLLMAuditRuleListResponse.cpp
   src/v20221121/model/DescribeHostKBRiskListRequest.cpp
   src/v20221121/model/DescribeBaselinePolicyItemListResponse.cpp
   src/v20221121/model/AssetFilterOptions.cpp
@@ -3983,8 +4139,10 @@ set(csip_src
   src/v20221121/model/DeleteDspmIdentifyComplianceCategoryRelationResponse.cpp
   src/v20221121/model/DescribeCSIPRiskStatisticsRequest.cpp
   src/v20221121/model/ModifyAssetFilterViewResponse.cpp
+  src/v20221121/model/CreateSandboxDLPRuleRequest.cpp
   src/v20221121/model/DescribeReverseShellSystemPolicyConfigRequest.cpp
   src/v20221121/model/DescribeAIAgentSkillListRequest.cpp
+  src/v20221121/model/AccessKeyWhiteList.cpp
   src/v20221121/model/ModifySecurityScoreRuleResponse.cpp
   src/v20221121/model/DescribeIaCFileOverviewRequest.cpp
   src/v20221121/model/CreateAssetComponentRelatedImageListExportJobRequest.cpp

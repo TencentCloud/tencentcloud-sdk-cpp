@@ -26,7 +26,8 @@ CreateFileBackupPlanRequest::CreateFileBackupPlanRequest() :
     m_policyIdHasBeenSet(false),
     m_backupStorageIdHasBeenSet(false),
     m_planNameHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
+    m_resourcesHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,14 @@ string CreateFileBackupPlanRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_resourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -146,6 +155,22 @@ void CreateFileBackupPlanRequest::SetResources(const vector<ResourcePlan>& _reso
 bool CreateFileBackupPlanRequest::ResourcesHasBeenSet() const
 {
     return m_resourcesHasBeenSet;
+}
+
+string CreateFileBackupPlanRequest::GetResourceType() const
+{
+    return m_resourceType;
+}
+
+void CreateFileBackupPlanRequest::SetResourceType(const string& _resourceType)
+{
+    m_resourceType = _resourceType;
+    m_resourceTypeHasBeenSet = true;
+}
+
+bool CreateFileBackupPlanRequest::ResourceTypeHasBeenSet() const
+{
+    return m_resourceTypeHasBeenSet;
 }
 
 

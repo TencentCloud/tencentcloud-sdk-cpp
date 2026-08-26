@@ -26,7 +26,8 @@ CreateDspmIdentifyComplianceGroupCopyRequest::CreateDspmIdentifyComplianceGroupC
     m_fromIdHasBeenSet(false),
     m_memberIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_operationSourceHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,14 @@ string CreateDspmIdentifyComplianceGroupCopyRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operationSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -144,6 +153,22 @@ void CreateDspmIdentifyComplianceGroupCopyRequest::SetDescription(const string& 
 bool CreateDspmIdentifyComplianceGroupCopyRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string CreateDspmIdentifyComplianceGroupCopyRequest::GetOperationSource() const
+{
+    return m_operationSource;
+}
+
+void CreateDspmIdentifyComplianceGroupCopyRequest::SetOperationSource(const string& _operationSource)
+{
+    m_operationSource = _operationSource;
+    m_operationSourceHasBeenSet = true;
+}
+
+bool CreateDspmIdentifyComplianceGroupCopyRequest::OperationSourceHasBeenSet() const
+{
+    return m_operationSourceHasBeenSet;
 }
 
 

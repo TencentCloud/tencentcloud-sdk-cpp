@@ -31,7 +31,8 @@ UpgradeHourDCDBInstanceRequest::UpgradeHourDCDBInstanceRequest() :
     m_switchStartTimeHasBeenSet(false),
     m_switchEndTimeHasBeenSet(false),
     m_switchAutoRetryHasBeenSet(false),
-    m_zonesHasBeenSet(false)
+    m_zonesHasBeenSet(false),
+    m_switchIntervalHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,14 @@ string UpgradeHourDCDBInstanceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_switchIntervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SwitchInterval";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_switchInterval, allocator);
     }
 
 
@@ -272,6 +281,22 @@ void UpgradeHourDCDBInstanceRequest::SetZones(const vector<string>& _zones)
 bool UpgradeHourDCDBInstanceRequest::ZonesHasBeenSet() const
 {
     return m_zonesHasBeenSet;
+}
+
+int64_t UpgradeHourDCDBInstanceRequest::GetSwitchInterval() const
+{
+    return m_switchInterval;
+}
+
+void UpgradeHourDCDBInstanceRequest::SetSwitchInterval(const int64_t& _switchInterval)
+{
+    m_switchInterval = _switchInterval;
+    m_switchIntervalHasBeenSet = true;
+}
+
+bool UpgradeHourDCDBInstanceRequest::SwitchIntervalHasBeenSet() const
+{
+    return m_switchIntervalHasBeenSet;
 }
 
 

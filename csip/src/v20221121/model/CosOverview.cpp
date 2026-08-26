@@ -29,7 +29,8 @@ CosOverview::CosOverview() :
     m_riskCountHasBeenSet(false),
     m_incrementRiskCountHasBeenSet(false),
     m_riskTopHasBeenSet(false),
-    m_alarmTopHasBeenSet(false)
+    m_alarmTopHasBeenSet(false),
+    m_highLevelSensitiveFileCountHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,16 @@ CoreInternalOutcome CosOverview::Deserialize(const rapidjson::Value &value)
         m_alarmTopHasBeenSet = true;
     }
 
+    if (value.HasMember("HighLevelSensitiveFileCount") && !value["HighLevelSensitiveFileCount"].IsNull())
+    {
+        if (!value["HighLevelSensitiveFileCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosOverview.HighLevelSensitiveFileCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_highLevelSensitiveFileCount = value["HighLevelSensitiveFileCount"].GetInt64();
+        m_highLevelSensitiveFileCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -239,6 +250,14 @@ void CosOverview::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_highLevelSensitiveFileCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HighLevelSensitiveFileCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_highLevelSensitiveFileCount, allocator);
     }
 
 }
@@ -386,5 +405,21 @@ void CosOverview::SetAlarmTop(const vector<CosRiskInfo>& _alarmTop)
 bool CosOverview::AlarmTopHasBeenSet() const
 {
     return m_alarmTopHasBeenSet;
+}
+
+int64_t CosOverview::GetHighLevelSensitiveFileCount() const
+{
+    return m_highLevelSensitiveFileCount;
+}
+
+void CosOverview::SetHighLevelSensitiveFileCount(const int64_t& _highLevelSensitiveFileCount)
+{
+    m_highLevelSensitiveFileCount = _highLevelSensitiveFileCount;
+    m_highLevelSensitiveFileCountHasBeenSet = true;
+}
+
+bool CosOverview::HighLevelSensitiveFileCountHasBeenSet() const
+{
+    return m_highLevelSensitiveFileCountHasBeenSet;
 }
 

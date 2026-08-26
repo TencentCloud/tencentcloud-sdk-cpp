@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制。
-                     * @return Messages 会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制。
+                     * 获取<p>会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制。</p>
+                     * @return Messages <p>会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制。</p>
                      * 
                      */
                     std::vector<Message> GetMessages() const;
 
                     /**
-                     * 设置会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制。
-                     * @param _messages 会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制。
+                     * 设置<p>会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制。</p>
+                     * @param _messages <p>会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制。</p>
                      * 
                      */
                     void SetMessages(const std::vector<Message>& _messages);
@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool MessagesHasBeenSet() const;
 
                     /**
-                     * 获取模型名称，可选模型列表：hunyuan-turbo，hunyuan-large，hunyuan-large-longcontext，hunyuan-standard，hunyuan-standard-256K，deepseek-r1，deepseek-v3，deepseek-r1-distill-qwen-32b。
-                     * @return ModelName 模型名称，可选模型列表：hunyuan-turbo，hunyuan-large，hunyuan-large-longcontext，hunyuan-standard，hunyuan-standard-256K，deepseek-r1，deepseek-v3，deepseek-r1-distill-qwen-32b。
+                     * 获取<p>模型名称，可选模型列表：hunyuan-turbo，hunyuan-large，hunyuan-large-longcontext，hunyuan-standard，hunyuan-standard-256K，deepseek-r1，deepseek-v3，deepseek-r1-distill-qwen-32b。</p>
+                     * @return ModelName <p>模型名称，可选模型列表：hunyuan-turbo，hunyuan-large，hunyuan-large-longcontext，hunyuan-standard，hunyuan-standard-256K，deepseek-r1，deepseek-v3，deepseek-r1-distill-qwen-32b。</p>
                      * 
                      */
                     std::string GetModelName() const;
 
                     /**
-                     * 设置模型名称，可选模型列表：hunyuan-turbo，hunyuan-large，hunyuan-large-longcontext，hunyuan-standard，hunyuan-standard-256K，deepseek-r1，deepseek-v3，deepseek-r1-distill-qwen-32b。
-                     * @param _modelName 模型名称，可选模型列表：hunyuan-turbo，hunyuan-large，hunyuan-large-longcontext，hunyuan-standard，hunyuan-standard-256K，deepseek-r1，deepseek-v3，deepseek-r1-distill-qwen-32b。
+                     * 设置<p>模型名称，可选模型列表：hunyuan-turbo，hunyuan-large，hunyuan-large-longcontext，hunyuan-standard，hunyuan-standard-256K，deepseek-r1，deepseek-v3，deepseek-r1-distill-qwen-32b。</p>
+                     * @param _modelName <p>模型名称，可选模型列表：hunyuan-turbo，hunyuan-large，hunyuan-large-longcontext，hunyuan-standard，hunyuan-standard-256K，deepseek-r1，deepseek-v3，deepseek-r1-distill-qwen-32b。</p>
                      * 
                      */
                     void SetModelName(const std::string& _modelName);
@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool ModelNameHasBeenSet() const;
 
                     /**
-                     * 获取是否以流式接口的形式返回数据，默认true。
-                     * @return Stream 是否以流式接口的形式返回数据，默认true。
+                     * 获取<p>是否以流式接口的形式返回数据，默认true。</p>
+                     * @return Stream <p>是否以流式接口的形式返回数据，默认true。</p>
                      * 
                      */
                     bool GetStream() const;
 
                     /**
-                     * 设置是否以流式接口的形式返回数据，默认true。
-                     * @param _stream 是否以流式接口的形式返回数据，默认true。
+                     * 设置<p>是否以流式接口的形式返回数据，默认true。</p>
+                     * @param _stream <p>是否以流式接口的形式返回数据，默认true。</p>
                      * 
                      */
                     void SetStream(const bool& _stream);
@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool StreamHasBeenSet() const;
 
                     /**
-                     * 获取取值区间为[0.0, 1.0], 非必要不建议使用, 不合理的取值会影响效果 。
-                     * @return TopP 取值区间为[0.0, 1.0], 非必要不建议使用, 不合理的取值会影响效果 。
+                     * 获取<p>取值区间为[0.0, 1.0], 非必要不建议使用, 不合理的取值会影响效果 。</p>
+                     * @return TopP <p>取值区间为[0.0, 1.0], 非必要不建议使用, 不合理的取值会影响效果 。</p>
                      * 
                      */
                     double GetTopP() const;
 
                     /**
-                     * 设置取值区间为[0.0, 1.0], 非必要不建议使用, 不合理的取值会影响效果 。
-                     * @param _topP 取值区间为[0.0, 1.0], 非必要不建议使用, 不合理的取值会影响效果 。
+                     * 设置<p>取值区间为[0.0, 1.0], 非必要不建议使用, 不合理的取值会影响效果 。</p>
+                     * @param _topP <p>取值区间为[0.0, 1.0], 非必要不建议使用, 不合理的取值会影响效果 。</p>
                      * 
                      */
                     void SetTopP(const double& _topP);
@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool TopPHasBeenSet() const;
 
                     /**
-                     * 获取取值区间为[0.0, 2.0], 非必要不建议使用, 不合理的取值会影响效果 。
-                     * @return Temperature 取值区间为[0.0, 2.0], 非必要不建议使用, 不合理的取值会影响效果 。
+                     * 获取<p>取值区间为[0.0, 2.0], 非必要不建议使用, 不合理的取值会影响效果 。</p>
+                     * @return Temperature <p>取值区间为[0.0, 2.0], 非必要不建议使用, 不合理的取值会影响效果 。</p>
                      * 
                      */
                     double GetTemperature() const;
 
                     /**
-                     * 设置取值区间为[0.0, 2.0], 非必要不建议使用, 不合理的取值会影响效果 。
-                     * @param _temperature 取值区间为[0.0, 2.0], 非必要不建议使用, 不合理的取值会影响效果 。
+                     * 设置<p>取值区间为[0.0, 2.0], 非必要不建议使用, 不合理的取值会影响效果 。</p>
+                     * @param _temperature <p>取值区间为[0.0, 2.0], 非必要不建议使用, 不合理的取值会影响效果 。</p>
                      * 
                      */
                     void SetTemperature(const double& _temperature);
@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool TemperatureHasBeenSet() const;
 
                     /**
-                     * 获取是否开启联网搜索。默认为 false。
-                     * @return OnlineSearch 是否开启联网搜索。默认为 false。
+                     * 获取<p>是否开启联网搜索。默认为 false。</p>
+                     * @return OnlineSearch <p>是否开启联网搜索。默认为 false。</p>
                      * 
                      */
                     bool GetOnlineSearch() const;
 
                     /**
-                     * 设置是否开启联网搜索。默认为 false。
-                     * @param _onlineSearch 是否开启联网搜索。默认为 false。
+                     * 设置<p>是否开启联网搜索。默认为 false。</p>
+                     * @param _onlineSearch <p>是否开启联网搜索。默认为 false。</p>
                      * 
                      */
                     void SetOnlineSearch(const bool& _onlineSearch);
@@ -172,15 +172,15 @@ namespace TencentCloud
                     bool OnlineSearchHasBeenSet() const;
 
                     /**
-                     * 获取当 OnlineSearch 为 true 时，指定的搜索引擎，默认为 bing。
-                     * @return OnlineSearchOptions 当 OnlineSearch 为 true 时，指定的搜索引擎，默认为 bing。
+                     * 获取<p>当 OnlineSearch 为 true 时，指定的搜索引擎，默认为 bing。</p>
+                     * @return OnlineSearchOptions <p>当 OnlineSearch 为 true 时，指定的搜索引擎，默认为 bing。</p>
                      * 
                      */
                     OnlineSearchOptions GetOnlineSearchOptions() const;
 
                     /**
-                     * 设置当 OnlineSearch 为 true 时，指定的搜索引擎，默认为 bing。
-                     * @param _onlineSearchOptions 当 OnlineSearch 为 true 时，指定的搜索引擎，默认为 bing。
+                     * 设置<p>当 OnlineSearch 为 true 时，指定的搜索引擎，默认为 bing。</p>
+                     * @param _onlineSearchOptions <p>当 OnlineSearch 为 true 时，指定的搜索引擎，默认为 bing。</p>
                      * 
                      */
                     void SetOnlineSearchOptions(const OnlineSearchOptions& _onlineSearchOptions);
@@ -193,15 +193,15 @@ namespace TencentCloud
                     bool OnlineSearchOptionsHasBeenSet() const;
 
                     /**
-                     * 获取可调用的工具列表，当前支持模型：hunyuan-turbo, deepseek-v3。
-                     * @return Tools 可调用的工具列表，当前支持模型：hunyuan-turbo, deepseek-v3。
+                     * 获取<p>可调用的工具列表，当前支持模型：hunyuan-turbo, deepseek-v3。</p>
+                     * @return Tools <p>可调用的工具列表，当前支持模型：hunyuan-turbo, deepseek-v3。</p>
                      * 
                      */
                     std::vector<Tool> GetTools() const;
 
                     /**
-                     * 设置可调用的工具列表，当前支持模型：hunyuan-turbo, deepseek-v3。
-                     * @param _tools 可调用的工具列表，当前支持模型：hunyuan-turbo, deepseek-v3。
+                     * 设置<p>可调用的工具列表，当前支持模型：hunyuan-turbo, deepseek-v3。</p>
+                     * @param _tools <p>可调用的工具列表，当前支持模型：hunyuan-turbo, deepseek-v3。</p>
                      * 
                      */
                     void SetTools(const std::vector<Tool>& _tools);
@@ -214,15 +214,15 @@ namespace TencentCloud
                     bool ToolsHasBeenSet() const;
 
                     /**
-                     * 获取工具使用选项，可选值包括 none、auto、custom。说明：1. 仅对 hunyuan-turbo、deepseek-v3 模型生效。2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。3. 未设置时，默认值为auto
-                     * @return ToolChoice 工具使用选项，可选值包括 none、auto、custom。说明：1. 仅对 hunyuan-turbo、deepseek-v3 模型生效。2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。3. 未设置时，默认值为auto
+                     * 获取<p>工具使用选项，可选值包括 none、auto、custom。说明：1. 仅对 hunyuan-turbo、deepseek-v3 模型生效。2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。3. 未设置时，默认值为auto</p>
+                     * @return ToolChoice <p>工具使用选项，可选值包括 none、auto、custom。说明：1. 仅对 hunyuan-turbo、deepseek-v3 模型生效。2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。3. 未设置时，默认值为auto</p>
                      * 
                      */
                     std::string GetToolChoice() const;
 
                     /**
-                     * 设置工具使用选项，可选值包括 none、auto、custom。说明：1. 仅对 hunyuan-turbo、deepseek-v3 模型生效。2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。3. 未设置时，默认值为auto
-                     * @param _toolChoice 工具使用选项，可选值包括 none、auto、custom。说明：1. 仅对 hunyuan-turbo、deepseek-v3 模型生效。2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。3. 未设置时，默认值为auto
+                     * 设置<p>工具使用选项，可选值包括 none、auto、custom。说明：1. 仅对 hunyuan-turbo、deepseek-v3 模型生效。2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。3. 未设置时，默认值为auto</p>
+                     * @param _toolChoice <p>工具使用选项，可选值包括 none、auto、custom。说明：1. 仅对 hunyuan-turbo、deepseek-v3 模型生效。2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。3. 未设置时，默认值为auto</p>
                      * 
                      */
                     void SetToolChoice(const std::string& _toolChoice);
@@ -235,15 +235,15 @@ namespace TencentCloud
                     bool ToolChoiceHasBeenSet() const;
 
                     /**
-                     * 获取强制模型调用指定的工具，当参数ToolChoice为custom时，此参数为必填
-                     * @return CustomTool 强制模型调用指定的工具，当参数ToolChoice为custom时，此参数为必填
+                     * 获取<p>强制模型调用指定的工具，当参数ToolChoice为custom时，此参数为必填</p>
+                     * @return CustomTool <p>强制模型调用指定的工具，当参数ToolChoice为custom时，此参数为必填</p>
                      * 
                      */
                     Tool GetCustomTool() const;
 
                     /**
-                     * 设置强制模型调用指定的工具，当参数ToolChoice为custom时，此参数为必填
-                     * @param _customTool 强制模型调用指定的工具，当参数ToolChoice为custom时，此参数为必填
+                     * 设置<p>强制模型调用指定的工具，当参数ToolChoice为custom时，此参数为必填</p>
+                     * @param _customTool <p>强制模型调用指定的工具，当参数ToolChoice为custom时，此参数为必填</p>
                      * 
                      */
                     void SetCustomTool(const Tool& _customTool);
@@ -258,61 +258,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制。
+                     * <p>会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制。</p>
                      */
                     std::vector<Message> m_messages;
                     bool m_messagesHasBeenSet;
 
                     /**
-                     * 模型名称，可选模型列表：hunyuan-turbo，hunyuan-large，hunyuan-large-longcontext，hunyuan-standard，hunyuan-standard-256K，deepseek-r1，deepseek-v3，deepseek-r1-distill-qwen-32b。
+                     * <p>模型名称，可选模型列表：hunyuan-turbo，hunyuan-large，hunyuan-large-longcontext，hunyuan-standard，hunyuan-standard-256K，deepseek-r1，deepseek-v3，deepseek-r1-distill-qwen-32b。</p>
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;
 
                     /**
-                     * 是否以流式接口的形式返回数据，默认true。
+                     * <p>是否以流式接口的形式返回数据，默认true。</p>
                      */
                     bool m_stream;
                     bool m_streamHasBeenSet;
 
                     /**
-                     * 取值区间为[0.0, 1.0], 非必要不建议使用, 不合理的取值会影响效果 。
+                     * <p>取值区间为[0.0, 1.0], 非必要不建议使用, 不合理的取值会影响效果 。</p>
                      */
                     double m_topP;
                     bool m_topPHasBeenSet;
 
                     /**
-                     * 取值区间为[0.0, 2.0], 非必要不建议使用, 不合理的取值会影响效果 。
+                     * <p>取值区间为[0.0, 2.0], 非必要不建议使用, 不合理的取值会影响效果 。</p>
                      */
                     double m_temperature;
                     bool m_temperatureHasBeenSet;
 
                     /**
-                     * 是否开启联网搜索。默认为 false。
+                     * <p>是否开启联网搜索。默认为 false。</p>
                      */
                     bool m_onlineSearch;
                     bool m_onlineSearchHasBeenSet;
 
                     /**
-                     * 当 OnlineSearch 为 true 时，指定的搜索引擎，默认为 bing。
+                     * <p>当 OnlineSearch 为 true 时，指定的搜索引擎，默认为 bing。</p>
                      */
                     OnlineSearchOptions m_onlineSearchOptions;
                     bool m_onlineSearchOptionsHasBeenSet;
 
                     /**
-                     * 可调用的工具列表，当前支持模型：hunyuan-turbo, deepseek-v3。
+                     * <p>可调用的工具列表，当前支持模型：hunyuan-turbo, deepseek-v3。</p>
                      */
                     std::vector<Tool> m_tools;
                     bool m_toolsHasBeenSet;
 
                     /**
-                     * 工具使用选项，可选值包括 none、auto、custom。说明：1. 仅对 hunyuan-turbo、deepseek-v3 模型生效。2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。3. 未设置时，默认值为auto
+                     * <p>工具使用选项，可选值包括 none、auto、custom。说明：1. 仅对 hunyuan-turbo、deepseek-v3 模型生效。2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。3. 未设置时，默认值为auto</p>
                      */
                     std::string m_toolChoice;
                     bool m_toolChoiceHasBeenSet;
 
                     /**
-                     * 强制模型调用指定的工具，当参数ToolChoice为custom时，此参数为必填
+                     * <p>强制模型调用指定的工具，当参数ToolChoice为custom时，此参数为必填</p>
                      */
                     Tool m_customTool;
                     bool m_customToolHasBeenSet;

@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeDspmIdentifyComplianceGroupDetailRequest::DescribeDspmIdentifyComplianceGroupDetailRequest() :
     m_memberIdHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_operationSourceHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,14 @@ string DescribeDspmIdentifyComplianceGroupDetailRequest::ToJsonString() const
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_id, allocator);
+    }
+
+    if (m_operationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operationSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -94,6 +103,22 @@ void DescribeDspmIdentifyComplianceGroupDetailRequest::SetId(const uint64_t& _id
 bool DescribeDspmIdentifyComplianceGroupDetailRequest::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+string DescribeDspmIdentifyComplianceGroupDetailRequest::GetOperationSource() const
+{
+    return m_operationSource;
+}
+
+void DescribeDspmIdentifyComplianceGroupDetailRequest::SetOperationSource(const string& _operationSource)
+{
+    m_operationSource = _operationSource;
+    m_operationSourceHasBeenSet = true;
+}
+
+bool DescribeDspmIdentifyComplianceGroupDetailRequest::OperationSourceHasBeenSet() const
+{
+    return m_operationSourceHasBeenSet;
 }
 
 

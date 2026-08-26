@@ -340,6 +340,48 @@ namespace TencentCloud
                      */
                     bool PostProductListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>该 AppId 新增桶默认采样率，单位为 0～1 比率</p><p>取值范围：[0.001, 1]</p>
+                     * @return DefaultSampleRate <p>该 AppId 新增桶默认采样率，单位为 0～1 比率</p><p>取值范围：[0.001, 1]</p>
+                     * 
+                     */
+                    double GetDefaultSampleRate() const;
+
+                    /**
+                     * 设置<p>该 AppId 新增桶默认采样率，单位为 0～1 比率</p><p>取值范围：[0.001, 1]</p>
+                     * @param _defaultSampleRate <p>该 AppId 新增桶默认采样率，单位为 0～1 比率</p><p>取值范围：[0.001, 1]</p>
+                     * 
+                     */
+                    void SetDefaultSampleRate(const double& _defaultSampleRate);
+
+                    /**
+                     * 判断参数 DefaultSampleRate 是否已赋值
+                     * @return DefaultSampleRate 是否已赋值
+                     * 
+                     */
+                    bool DefaultSampleRateHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否白名单，仅用于控制前端范围和精度</p>
+                     * @return BucketSamplingRateWhitelist <p>是否白名单，仅用于控制前端范围和精度</p>
+                     * 
+                     */
+                    bool GetBucketSamplingRateWhitelist() const;
+
+                    /**
+                     * 设置<p>是否白名单，仅用于控制前端范围和精度</p>
+                     * @param _bucketSamplingRateWhitelist <p>是否白名单，仅用于控制前端范围和精度</p>
+                     * 
+                     */
+                    void SetBucketSamplingRateWhitelist(const bool& _bucketSamplingRateWhitelist);
+
+                    /**
+                     * 判断参数 BucketSamplingRateWhitelist 是否已赋值
+                     * @return BucketSamplingRateWhitelist 是否已赋值
+                     * 
+                     */
+                    bool BucketSamplingRateWhitelistHasBeenSet() const;
+
                 private:
 
                     /**
@@ -425,6 +467,18 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_postProductList;
                     bool m_postProductListHasBeenSet;
+
+                    /**
+                     * <p>该 AppId 新增桶默认采样率，单位为 0～1 比率</p><p>取值范围：[0.001, 1]</p>
+                     */
+                    double m_defaultSampleRate;
+                    bool m_defaultSampleRateHasBeenSet;
+
+                    /**
+                     * <p>是否白名单，仅用于控制前端范围和精度</p>
+                     */
+                    bool m_bucketSamplingRateWhitelist;
+                    bool m_bucketSamplingRateWhitelistHasBeenSet;
 
                 };
             }

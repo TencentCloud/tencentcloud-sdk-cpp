@@ -25,7 +25,8 @@ using namespace std;
 DeleteDspmIdentifyComplianceCategoryRelationRequest::DeleteDspmIdentifyComplianceCategoryRelationRequest() :
     m_complianceIdHasBeenSet(false),
     m_categoryIdHasBeenSet(false),
-    m_memberIdHasBeenSet(false)
+    m_memberIdHasBeenSet(false),
+    m_operationSourceHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string DeleteDspmIdentifyComplianceCategoryRelationRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_operationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operationSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void DeleteDspmIdentifyComplianceCategoryRelationRequest::SetMemberId(const vect
 bool DeleteDspmIdentifyComplianceCategoryRelationRequest::MemberIdHasBeenSet() const
 {
     return m_memberIdHasBeenSet;
+}
+
+string DeleteDspmIdentifyComplianceCategoryRelationRequest::GetOperationSource() const
+{
+    return m_operationSource;
+}
+
+void DeleteDspmIdentifyComplianceCategoryRelationRequest::SetOperationSource(const string& _operationSource)
+{
+    m_operationSource = _operationSource;
+    m_operationSourceHasBeenSet = true;
+}
+
+bool DeleteDspmIdentifyComplianceCategoryRelationRequest::OperationSourceHasBeenSet() const
+{
+    return m_operationSourceHasBeenSet;
 }
 
 

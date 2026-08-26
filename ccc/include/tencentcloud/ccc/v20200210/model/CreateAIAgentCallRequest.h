@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @return SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 获取<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
+                     * @return SdkAppId <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
-                     * 设置应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @param _sdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 设置<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
+                     * @param _sdkAppId <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取AI智能体ID
-                     * @return AIAgentId AI智能体ID
+                     * 获取<p>AI智能体ID</p>
+                     * @return AIAgentId <p>AI智能体ID</p>
                      * 
                      */
                     uint64_t GetAIAgentId() const;
 
                     /**
-                     * 设置AI智能体ID
-                     * @param _aIAgentId AI智能体ID
+                     * 设置<p>AI智能体ID</p>
+                     * @param _aIAgentId <p>AI智能体ID</p>
                      * 
                      */
                     void SetAIAgentId(const uint64_t& _aIAgentId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool AIAgentIdHasBeenSet() const;
 
                     /**
-                     * 获取被叫号码
-                     * @return Callee 被叫号码
+                     * 获取<p>被叫号码</p>
+                     * @return Callee <p>被叫号码</p>
                      * 
                      */
                     std::string GetCallee() const;
 
                     /**
-                     * 设置被叫号码
-                     * @param _callee 被叫号码
+                     * 设置<p>被叫号码</p>
+                     * @param _callee <p>被叫号码</p>
                      * 
                      */
                     void SetCallee(const std::string& _callee);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool CalleeHasBeenSet() const;
 
                     /**
-                     * 获取主叫号码列表
-                     * @return Callers 主叫号码列表
+                     * 获取<p>主叫号码列表</p>
+                     * @return Callers <p>主叫号码列表</p>
                      * 
                      */
                     std::vector<std::string> GetCallers() const;
 
                     /**
-                     * 设置主叫号码列表
-                     * @param _callers 主叫号码列表
+                     * 设置<p>主叫号码列表</p>
+                     * @param _callers <p>主叫号码列表</p>
                      * 
                      */
                     void SetCallers(const std::vector<std::string>& _callers);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool CallersHasBeenSet() const;
 
                     /**
-                     * 获取提示词变量
-                     * @return PromptVariables 提示词变量
+                     * 获取<p>提示词变量</p>
+                     * @return PromptVariables <p>提示词变量</p>
                      * @deprecated
                      */
                     std::vector<Variable> GetPromptVariables() const;
 
                     /**
-                     * 设置提示词变量
-                     * @param _promptVariables 提示词变量
+                     * 设置<p>提示词变量</p>
+                     * @param _promptVariables <p>提示词变量</p>
                      * @deprecated
                      */
                     void SetPromptVariables(const std::vector<Variable>& _promptVariables);
@@ -149,31 +149,15 @@ namespace TencentCloud
                     bool PromptVariablesHasBeenSet() const;
 
                     /**
-                     * 获取通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  
-
-1. dify-inputs-xxx 为dify的inputs变量
-2.  dify-inputs-user 为dify的user值
-3.  dify-inputs-conversation_id 为dify的conversation_id值
-                     * @return Variables 通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  
-
-1. dify-inputs-xxx 为dify的inputs变量
-2.  dify-inputs-user 为dify的user值
-3.  dify-inputs-conversation_id 为dify的conversation_id值
+                     * 获取<p>通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  </p><ol><li>dify-inputs-xxx 为dify的inputs变量</li><li>dify-inputs-user 为dify的user值</li><li>dify-inputs-conversation_id 为dify的conversation_id值</li></ol>
+                     * @return Variables <p>通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  </p><ol><li>dify-inputs-xxx 为dify的inputs变量</li><li>dify-inputs-user 为dify的user值</li><li>dify-inputs-conversation_id 为dify的conversation_id值</li></ol>
                      * 
                      */
                     std::vector<Variable> GetVariables() const;
 
                     /**
-                     * 设置通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  
-
-1. dify-inputs-xxx 为dify的inputs变量
-2.  dify-inputs-user 为dify的user值
-3.  dify-inputs-conversation_id 为dify的conversation_id值
-                     * @param _variables 通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  
-
-1. dify-inputs-xxx 为dify的inputs变量
-2.  dify-inputs-user 为dify的user值
-3.  dify-inputs-conversation_id 为dify的conversation_id值
+                     * 设置<p>通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  </p><ol><li>dify-inputs-xxx 为dify的inputs变量</li><li>dify-inputs-user 为dify的user值</li><li>dify-inputs-conversation_id 为dify的conversation_id值</li></ol>
+                     * @param _variables <p>通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  </p><ol><li>dify-inputs-xxx 为dify的inputs变量</li><li>dify-inputs-user 为dify的user值</li><li>dify-inputs-conversation_id 为dify的conversation_id值</li></ol>
                      * 
                      */
                     void SetVariables(const std::vector<Variable>& _variables);
@@ -186,15 +170,15 @@ namespace TencentCloud
                     bool VariablesHasBeenSet() const;
 
                     /**
-                     * 获取最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数
-                     * @return MaxRingTimeoutSecond 最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数
+                     * 获取<p>最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数</p>
+                     * @return MaxRingTimeoutSecond <p>最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数</p>
                      * 
                      */
                     int64_t GetMaxRingTimeoutSecond() const;
 
                     /**
-                     * 设置最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数
-                     * @param _maxRingTimeoutSecond 最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数
+                     * 设置<p>最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数</p>
+                     * @param _maxRingTimeoutSecond <p>最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数</p>
                      * 
                      */
                     void SetMaxRingTimeoutSecond(const int64_t& _maxRingTimeoutSecond);
@@ -206,53 +190,76 @@ namespace TencentCloud
                      */
                     bool MaxRingTimeoutSecondHasBeenSet() const;
 
+                    /**
+                     * 获取<p>智能体并发不足时，排队等待超时时间，单位秒</p><p>取值范围：[0, 5]</p><p>默认值：5</p>
+                     * @return AcquireTimeoutSecond <p>智能体并发不足时，排队等待超时时间，单位秒</p><p>取值范围：[0, 5]</p><p>默认值：5</p>
+                     * 
+                     */
+                    uint64_t GetAcquireTimeoutSecond() const;
+
+                    /**
+                     * 设置<p>智能体并发不足时，排队等待超时时间，单位秒</p><p>取值范围：[0, 5]</p><p>默认值：5</p>
+                     * @param _acquireTimeoutSecond <p>智能体并发不足时，排队等待超时时间，单位秒</p><p>取值范围：[0, 5]</p><p>默认值：5</p>
+                     * 
+                     */
+                    void SetAcquireTimeoutSecond(const uint64_t& _acquireTimeoutSecond);
+
+                    /**
+                     * 判断参数 AcquireTimeoutSecond 是否已赋值
+                     * @return AcquireTimeoutSecond 是否已赋值
+                     * 
+                     */
+                    bool AcquireTimeoutSecondHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      */
                     int64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * AI智能体ID
+                     * <p>AI智能体ID</p>
                      */
                     uint64_t m_aIAgentId;
                     bool m_aIAgentIdHasBeenSet;
 
                     /**
-                     * 被叫号码
+                     * <p>被叫号码</p>
                      */
                     std::string m_callee;
                     bool m_calleeHasBeenSet;
 
                     /**
-                     * 主叫号码列表
+                     * <p>主叫号码列表</p>
                      */
                     std::vector<std::string> m_callers;
                     bool m_callersHasBeenSet;
 
                     /**
-                     * 提示词变量
+                     * <p>提示词变量</p>
                      */
                     std::vector<Variable> m_promptVariables;
                     bool m_promptVariablesHasBeenSet;
 
                     /**
-                     * 通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  
-
-1. dify-inputs-xxx 为dify的inputs变量
-2.  dify-inputs-user 为dify的user值
-3.  dify-inputs-conversation_id 为dify的conversation_id值
+                     * <p>通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  </p><ol><li>dify-inputs-xxx 为dify的inputs变量</li><li>dify-inputs-user 为dify的user值</li><li>dify-inputs-conversation_id 为dify的conversation_id值</li></ol>
                      */
                     std::vector<Variable> m_variables;
                     bool m_variablesHasBeenSet;
 
                     /**
-                     * 最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数
+                     * <p>最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数</p>
                      */
                     int64_t m_maxRingTimeoutSecond;
                     bool m_maxRingTimeoutSecondHasBeenSet;
+
+                    /**
+                     * <p>智能体并发不足时，排队等待超时时间，单位秒</p><p>取值范围：[0, 5]</p><p>默认值：5</p>
+                     */
+                    uint64_t m_acquireTimeoutSecond;
+                    bool m_acquireTimeoutSecondHasBeenSet;
 
                 };
             }

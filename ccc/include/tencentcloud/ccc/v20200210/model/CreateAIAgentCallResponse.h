@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取新创建的会话 ID
-                     * @return SessionId 新创建的会话 ID
+                     * 获取<p>新创建的会话 ID</p>
+                     * @return SessionId <p>新创建的会话 ID</p>
                      * 
                      */
                     std::string GetSessionId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 新创建的会话 ID
+                     * <p>新创建的会话 ID</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;

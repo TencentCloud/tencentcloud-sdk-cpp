@@ -46,14 +46,18 @@ namespace TencentCloud
 
                     /**
                      * 获取规则名称
+入参限制：1-128个字符，不允许特殊字符
                      * @return Name 规则名称
+入参限制：1-128个字符，不允许特殊字符
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置规则名称
+入参限制：1-128个字符，不允许特殊字符
                      * @param _name 规则名称
+入参限制：1-128个字符，不允许特殊字符
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -66,15 +70,19 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取优先级
-                     * @return SortId 优先级
+                     * 获取优先级，0-100的整数，数字越小，代表这条规则的执行优先级越高
+默认值：0
+                     * @return SortId 优先级，0-100的整数，数字越小，代表这条规则的执行优先级越高
+默认值：0
                      * 
                      */
                     std::string GetSortId() const;
 
                     /**
-                     * 设置优先级
-                     * @param _sortId 优先级
+                     * 设置优先级，0-100的整数，数字越小，代表这条规则的执行优先级越高
+默认值：0
+                     * @param _sortId 优先级，0-100的整数，数字越小，代表这条规则的执行优先级越高
+默认值：0
                      * 
                      */
                     void SetSortId(const std::string& _sortId);
@@ -129,15 +137,27 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
-                     * @return ActionType 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
+                     * 获取动作类型
+取值说明：1-阻断，2-人机识别（滑块），3-观察，4-重定向，5-JS校验，6-人机识别（无感验证-拦截），7-人机识别（无感验证-观察），8-语音验证码
+入参限制：必填，取值范围为1-8
+约束条件：当ActionType为4（重定向）时，Redirect参数不能为空
+                     * @return ActionType 动作类型
+取值说明：1-阻断，2-人机识别（滑块），3-观察，4-重定向，5-JS校验，6-人机识别（无感验证-拦截），7-人机识别（无感验证-观察），8-语音验证码
+入参限制：必填，取值范围为1-8
+约束条件：当ActionType为4（重定向）时，Redirect参数不能为空
                      * 
                      */
                     std::string GetActionType() const;
 
                     /**
-                     * 设置动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
-                     * @param _actionType 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
+                     * 设置动作类型
+取值说明：1-阻断，2-人机识别（滑块），3-观察，4-重定向，5-JS校验，6-人机识别（无感验证-拦截），7-人机识别（无感验证-观察），8-语音验证码
+入参限制：必填，取值范围为1-8
+约束条件：当ActionType为4（重定向）时，Redirect参数不能为空
+                     * @param _actionType 动作类型
+取值说明：1-阻断，2-人机识别（滑块），3-观察，4-重定向，5-JS校验，6-人机识别（无感验证-拦截），7-人机识别（无感验证-观察），8-语音验证码
+入参限制：必填，取值范围为1-8
+约束条件：当ActionType为4（重定向）时，Redirect参数不能为空
                      * 
                      */
                     void SetActionType(const std::string& _actionType);
@@ -171,15 +191,23 @@ namespace TencentCloud
                     bool RedirectHasBeenSet() const;
 
                     /**
-                     * 获取过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
-                     * @return ExpireTime 过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
+                     * 获取过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59
+取值说明：0表示永不过期
+默认值：0（解析失败时也默认为0）
+                     * @return ExpireTime 过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59
+取值说明：0表示永不过期
+默认值：0（解析失败时也默认为0）
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
-                     * @param _expireTime 过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
+                     * 设置过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59
+取值说明：0表示永不过期
+默认值：0（解析失败时也默认为0）
+                     * @param _expireTime 过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59
+取值说明：0表示永不过期
+默认值：0（解析失败时也默认为0）
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -382,14 +410,22 @@ namespace TencentCloud
 
                     /**
                      * 获取匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+默认值：and
+入参限制：不区分大小写，仅支持and或or
                      * @return LogicalOp 匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+默认值：and
+入参限制：不区分大小写，仅支持and或or
                      * 
                      */
                     std::string GetLogicalOp() const;
 
                     /**
                      * 设置匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+默认值：and
+入参限制：不区分大小写，仅支持and或or
                      * @param _logicalOp 匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+默认值：and
+入参限制：不区分大小写，仅支持and或or
                      * 
                      */
                     void SetLogicalOp(const std::string& _logicalOp);
@@ -402,15 +438,23 @@ namespace TencentCloud
                     bool LogicalOpHasBeenSet() const;
 
                     /**
-                     * 获取按照动作灰度的比例，默认是100
-                     * @return ActionRatio 按照动作灰度的比例，默认是100
+                     * 获取动作灰度比例，即规则命中后执行动作的流量百分比
+取值范围：1-100
+默认值：100（全量生效）
+                     * @return ActionRatio 动作灰度比例，即规则命中后执行动作的流量百分比
+取值范围：1-100
+默认值：100（全量生效）
                      * 
                      */
                     uint64_t GetActionRatio() const;
 
                     /**
-                     * 设置按照动作灰度的比例，默认是100
-                     * @param _actionRatio 按照动作灰度的比例，默认是100
+                     * 设置动作灰度比例，即规则命中后执行动作的流量百分比
+取值范围：1-100
+默认值：100（全量生效）
+                     * @param _actionRatio 动作灰度比例，即规则命中后执行动作的流量百分比
+取值范围：1-100
+默认值：100（全量生效）
                      * 
                      */
                     void SetActionRatio(const uint64_t& _actionRatio);
@@ -426,12 +470,14 @@ namespace TencentCloud
 
                     /**
                      * 规则名称
+入参限制：1-128个字符，不允许特殊字符
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 优先级
+                     * 优先级，0-100的整数，数字越小，代表这条规则的执行优先级越高
+默认值：0
                      */
                     std::string m_sortId;
                     bool m_sortIdHasBeenSet;
@@ -449,7 +495,10 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
+                     * 动作类型
+取值说明：1-阻断，2-人机识别（滑块），3-观察，4-重定向，5-JS校验，6-人机识别（无感验证-拦截），7-人机识别（无感验证-观察），8-语音验证码
+入参限制：必填，取值范围为1-8
+约束条件：当ActionType为4（重定向）时，Redirect参数不能为空
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
@@ -461,7 +510,9 @@ namespace TencentCloud
                     bool m_redirectHasBeenSet;
 
                     /**
-                     * 过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
+                     * 过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59
+取值说明：0表示永不过期
+默认值：0（解析失败时也默认为0）
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
@@ -522,12 +573,16 @@ namespace TencentCloud
 
                     /**
                      * 匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系
+默认值：and
+入参限制：不区分大小写，仅支持and或or
                      */
                     std::string m_logicalOp;
                     bool m_logicalOpHasBeenSet;
 
                     /**
-                     * 按照动作灰度的比例，默认是100
+                     * 动作灰度比例，即规则命中后执行动作的流量百分比
+取值范围：1-100
+默认值：100（全量生效）
                      */
                     uint64_t m_actionRatio;
                     bool m_actionRatioHasBeenSet;

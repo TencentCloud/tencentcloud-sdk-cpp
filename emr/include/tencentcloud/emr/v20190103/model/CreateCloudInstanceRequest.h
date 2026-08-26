@@ -491,6 +491,48 @@ namespace TencentCloud
                      */
                     bool EnableSparkAppMonitorInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>已有EMR资源节点组Id列表</p>
+                     * @return ComputeResourceGroupIds <p>已有EMR资源节点组Id列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetComputeResourceGroupIds() const;
+
+                    /**
+                     * 设置<p>已有EMR资源节点组Id列表</p>
+                     * @param _computeResourceGroupIds <p>已有EMR资源节点组Id列表</p>
+                     * 
+                     */
+                    void SetComputeResourceGroupIds(const std::vector<std::string>& _computeResourceGroupIds);
+
+                    /**
+                     * 判断参数 ComputeResourceGroupIds 是否已赋值
+                     * @return ComputeResourceGroupIds 是否已赋值
+                     * 
+                     */
+                    bool ComputeResourceGroupIdsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启实例保护</p>
+                     * @return TerminateProtection <p>是否开启实例保护</p>
+                     * 
+                     */
+                    bool GetTerminateProtection() const;
+
+                    /**
+                     * 设置<p>是否开启实例保护</p>
+                     * @param _terminateProtection <p>是否开启实例保护</p>
+                     * 
+                     */
+                    void SetTerminateProtection(const bool& _terminateProtection);
+
+                    /**
+                     * 判断参数 TerminateProtection 是否已赋值
+                     * @return TerminateProtection 是否已赋值
+                     * 
+                     */
+                    bool TerminateProtectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -618,6 +660,18 @@ namespace TencentCloud
                      */
                     EnableSparkAppMonitorInfo m_enableSparkAppMonitorInfo;
                     bool m_enableSparkAppMonitorInfoHasBeenSet;
+
+                    /**
+                     * <p>已有EMR资源节点组Id列表</p>
+                     */
+                    std::vector<std::string> m_computeResourceGroupIds;
+                    bool m_computeResourceGroupIdsHasBeenSet;
+
+                    /**
+                     * <p>是否开启实例保护</p>
+                     */
+                    bool m_terminateProtection;
+                    bool m_terminateProtectionHasBeenSet;
 
                 };
             }

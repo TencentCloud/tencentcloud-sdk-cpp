@@ -34,7 +34,9 @@ CosBucketBillingInfo::CosBucketBillingInfo() :
     m_logFeatureWhitelistHasBeenSet(false),
     m_isHaveNewPostOrderHasBeenSet(false),
     m_isHaveOldPostOrderHasBeenSet(false),
-    m_postProductListHasBeenSet(false)
+    m_postProductListHasBeenSet(false),
+    m_defaultSampleRateHasBeenSet(false),
+    m_bucketSamplingRateWhitelistHasBeenSet(false)
 {
 }
 
@@ -186,6 +188,26 @@ CoreInternalOutcome CosBucketBillingInfo::Deserialize(const rapidjson::Value &va
         m_postProductListHasBeenSet = true;
     }
 
+    if (value.HasMember("DefaultSampleRate") && !value["DefaultSampleRate"].IsNull())
+    {
+        if (!value["DefaultSampleRate"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosBucketBillingInfo.DefaultSampleRate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultSampleRate = value["DefaultSampleRate"].GetDouble();
+        m_defaultSampleRateHasBeenSet = true;
+    }
+
+    if (value.HasMember("BucketSamplingRateWhitelist") && !value["BucketSamplingRateWhitelist"].IsNull())
+    {
+        if (!value["BucketSamplingRateWhitelist"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosBucketBillingInfo.BucketSamplingRateWhitelist` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_bucketSamplingRateWhitelist = value["BucketSamplingRateWhitelist"].GetBool();
+        m_bucketSamplingRateWhitelistHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -308,6 +330,22 @@ void CosBucketBillingInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_defaultSampleRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultSampleRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defaultSampleRate, allocator);
+    }
+
+    if (m_bucketSamplingRateWhitelistHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BucketSamplingRateWhitelist";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bucketSamplingRateWhitelist, allocator);
     }
 
 }
@@ -535,5 +573,37 @@ void CosBucketBillingInfo::SetPostProductList(const vector<int64_t>& _postProduc
 bool CosBucketBillingInfo::PostProductListHasBeenSet() const
 {
     return m_postProductListHasBeenSet;
+}
+
+double CosBucketBillingInfo::GetDefaultSampleRate() const
+{
+    return m_defaultSampleRate;
+}
+
+void CosBucketBillingInfo::SetDefaultSampleRate(const double& _defaultSampleRate)
+{
+    m_defaultSampleRate = _defaultSampleRate;
+    m_defaultSampleRateHasBeenSet = true;
+}
+
+bool CosBucketBillingInfo::DefaultSampleRateHasBeenSet() const
+{
+    return m_defaultSampleRateHasBeenSet;
+}
+
+bool CosBucketBillingInfo::GetBucketSamplingRateWhitelist() const
+{
+    return m_bucketSamplingRateWhitelist;
+}
+
+void CosBucketBillingInfo::SetBucketSamplingRateWhitelist(const bool& _bucketSamplingRateWhitelist)
+{
+    m_bucketSamplingRateWhitelist = _bucketSamplingRateWhitelist;
+    m_bucketSamplingRateWhitelistHasBeenSet = true;
+}
+
+bool CosBucketBillingInfo::BucketSamplingRateWhitelistHasBeenSet() const
+{
+    return m_bucketSamplingRateWhitelistHasBeenSet;
 }
 

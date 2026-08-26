@@ -38,7 +38,8 @@ DynamicInstanceForm::DynamicInstanceForm() :
     m_supportTokenHasBeenSet(false),
     m_cFSTurboVolumesHasBeenSet(false),
     m_imageInfoV2HasBeenSet(false),
-    m_gooseFSVolumesHasBeenSet(false)
+    m_gooseFSVolumesHasBeenSet(false),
+    m_enableHistoryServerHasBeenSet(false)
 {
 }
 
@@ -351,6 +352,16 @@ CoreInternalOutcome DynamicInstanceForm::Deserialize(const rapidjson::Value &val
         m_gooseFSVolumesHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableHistoryServer") && !value["EnableHistoryServer"].IsNull())
+    {
+        if (!value["EnableHistoryServer"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DynamicInstanceForm.EnableHistoryServer` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableHistoryServer = value["EnableHistoryServer"].GetBool();
+        m_enableHistoryServerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -579,6 +590,14 @@ void DynamicInstanceForm::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_enableHistoryServerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableHistoryServer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableHistoryServer, allocator);
     }
 
 }
@@ -870,5 +889,21 @@ void DynamicInstanceForm::SetGooseFSVolumes(const vector<GooseFSVolume>& _gooseF
 bool DynamicInstanceForm::GooseFSVolumesHasBeenSet() const
 {
     return m_gooseFSVolumesHasBeenSet;
+}
+
+bool DynamicInstanceForm::GetEnableHistoryServer() const
+{
+    return m_enableHistoryServer;
+}
+
+void DynamicInstanceForm::SetEnableHistoryServer(const bool& _enableHistoryServer)
+{
+    m_enableHistoryServer = _enableHistoryServer;
+    m_enableHistoryServerHasBeenSet = true;
+}
+
+bool DynamicInstanceForm::EnableHistoryServerHasBeenSet() const
+{
+    return m_enableHistoryServerHasBeenSet;
 }
 
