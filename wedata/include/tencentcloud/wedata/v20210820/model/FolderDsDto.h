@@ -49,18 +49,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件夹id
+                     * 获取<p>文件夹id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id 文件夹id
+                     * @return Id <p>文件夹id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置文件夹id
+                     * 设置<p>文件夹id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _id 文件夹id
+                     * @param _id <p>文件夹id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,18 +74,18 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间
+                     * @return CreateTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
+                     * 设置<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 创建时间
+                     * @param _createTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,18 +99,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取文件夹名称
+                     * 获取<p>文件夹名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 文件夹名称
+                     * @return Name <p>文件夹名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置文件夹名称
+                     * 设置<p>文件夹名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 文件夹名称
+                     * @param _name <p>文件夹名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,18 +124,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取所属项目id
+                     * 获取<p>所属项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProjectId 所属项目id
+                     * @return ProjectId <p>所属项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置所属项目id
+                     * 设置<p>所属项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _projectId 所属项目id
+                     * @param _projectId <p>所属项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -149,18 +149,18 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
+                     * 获取<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间
+                     * @return UpdateTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
+                     * 设置<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 更新时间
+                     * @param _updateTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -174,18 +174,18 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取父文件夹id
+                     * 获取<p>父文件夹id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ParentsFolderId 父文件夹id
+                     * @return ParentsFolderId <p>父文件夹id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParentsFolderId() const;
 
                     /**
-                     * 设置父文件夹id
+                     * 设置<p>父文件夹id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _parentsFolderId 父文件夹id
+                     * @param _parentsFolderId <p>父文件夹id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -199,18 +199,18 @@ namespace TencentCloud
                     bool ParentsFolderIdHasBeenSet() const;
 
                     /**
-                     * 获取工作流总数
+                     * 获取<p>工作流总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Total 工作流总数
+                     * @return Total <p>工作流总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
 
                     /**
-                     * 设置工作流总数
+                     * 设置<p>工作流总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _total 工作流总数
+                     * @param _total <p>工作流总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -224,18 +224,18 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取工作流列表
+                     * 获取<p>工作流列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Workflows 工作流列表
+                     * @return Workflows <p>工作流列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<WorkflowCanvasOpsDto> GetWorkflows() const;
 
                     /**
-                     * 设置工作流列表
+                     * 设置<p>工作流列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workflows 工作流列表
+                     * @param _workflows <p>工作流列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -249,18 +249,18 @@ namespace TencentCloud
                     bool WorkflowsHasBeenSet() const;
 
                     /**
-                     * 获取子文件夹总数
+                     * 获取<p>子文件夹总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalFolders 子文件夹总数
+                     * @return TotalFolders <p>子文件夹总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalFolders() const;
 
                     /**
-                     * 设置子文件夹总数
+                     * 设置<p>子文件夹总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _totalFolders 子文件夹总数
+                     * @param _totalFolders <p>子文件夹总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -274,18 +274,18 @@ namespace TencentCloud
                     bool TotalFoldersHasBeenSet() const;
 
                     /**
-                     * 获取子文件夹列表
+                     * 获取<p>子文件夹列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Folders 子文件夹列表
+                     * @return Folders <p>子文件夹列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FolderDsDto> GetFolders() const;
 
                     /**
-                     * 设置子文件夹列表
+                     * 设置<p>子文件夹列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _folders 子文件夹列表
+                     * @param _folders <p>子文件夹列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -299,18 +299,18 @@ namespace TencentCloud
                     bool FoldersHasBeenSet() const;
 
                     /**
-                     * 获取搜索类型
+                     * 获取<p>搜索类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FindType 搜索类型
+                     * @return FindType <p>搜索类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFindType() const;
 
                     /**
-                     * 设置搜索类型
+                     * 设置<p>搜索类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _findType 搜索类型
+                     * @param _findType <p>搜索类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -323,84 +323,116 @@ namespace TencentCloud
                      */
                     bool FindTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Privilege <p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPrivilege() const;
+
+                    /**
+                     * 设置<p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _privilege <p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPrivilege(const std::string& _privilege);
+
+                    /**
+                     * 判断参数 Privilege 是否已赋值
+                     * @return Privilege 是否已赋值
+                     * 
+                     */
+                    bool PrivilegeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 文件夹id
+                     * <p>文件夹id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 文件夹名称
+                     * <p>文件夹名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 所属项目id
+                     * <p>所属项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 父文件夹id
+                     * <p>父文件夹id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parentsFolderId;
                     bool m_parentsFolderIdHasBeenSet;
 
                     /**
-                     * 工作流总数
+                     * <p>工作流总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 工作流列表
+                     * <p>工作流列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WorkflowCanvasOpsDto> m_workflows;
                     bool m_workflowsHasBeenSet;
 
                     /**
-                     * 子文件夹总数
+                     * <p>子文件夹总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalFolders;
                     bool m_totalFoldersHasBeenSet;
 
                     /**
-                     * 子文件夹列表
+                     * <p>子文件夹列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FolderDsDto> m_folders;
                     bool m_foldersHasBeenSet;
 
                     /**
-                     * 搜索类型
+                     * <p>搜索类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_findType;
                     bool m_findTypeHasBeenSet;
+
+                    /**
+                     * <p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_privilege;
+                    bool m_privilegeHasBeenSet;
 
                 };
             }

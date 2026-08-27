@@ -39,7 +39,8 @@ WorkflowExtOpsDto::WorkflowExtOpsDto() :
     m_workflowTypeHasBeenSet(false),
     m_bundleIdHasBeenSet(false),
     m_bundleInfoHasBeenSet(false),
-    m_nestedBySpTaskIdsHasBeenSet(false)
+    m_nestedBySpTaskIdsHasBeenSet(false),
+    m_privilegeHasBeenSet(false)
 {
 }
 
@@ -241,6 +242,16 @@ CoreInternalOutcome WorkflowExtOpsDto::Deserialize(const rapidjson::Value &value
         m_nestedBySpTaskIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("Privilege") && !value["Privilege"].IsNull())
+    {
+        if (!value["Privilege"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowExtOpsDto.Privilege` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privilege = string(value["Privilege"].GetString());
+        m_privilegeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -403,6 +414,14 @@ void WorkflowExtOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_privilegeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Privilege";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privilege.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -710,5 +729,21 @@ void WorkflowExtOpsDto::SetNestedBySpTaskIds(const vector<string>& _nestedBySpTa
 bool WorkflowExtOpsDto::NestedBySpTaskIdsHasBeenSet() const
 {
     return m_nestedBySpTaskIdsHasBeenSet;
+}
+
+string WorkflowExtOpsDto::GetPrivilege() const
+{
+    return m_privilege;
+}
+
+void WorkflowExtOpsDto::SetPrivilege(const string& _privilege)
+{
+    m_privilege = _privilege;
+    m_privilegeHasBeenSet = true;
+}
+
+bool WorkflowExtOpsDto::PrivilegeHasBeenSet() const
+{
+    return m_privilegeHasBeenSet;
 }
 

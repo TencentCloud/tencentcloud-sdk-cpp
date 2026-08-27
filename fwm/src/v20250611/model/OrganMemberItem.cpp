@@ -37,7 +37,11 @@ OrganMemberItem::OrganMemberItem() :
     m_cfwInstanceIdHasBeenSet(false),
     m_policyAnalysisEnabledHasBeenSet(false),
     m_memberCreateTimeHasBeenSet(false),
-    m_joinTypeHasBeenSet(false)
+    m_joinTypeHasBeenSet(false),
+    m_cfwPayStatusHasBeenSet(false),
+    m_cfwCapableHasBeenSet(false),
+    m_sgManagedHasBeenSet(false),
+    m_isCfwPostPayHasBeenSet(false)
 {
 }
 
@@ -223,6 +227,46 @@ CoreInternalOutcome OrganMemberItem::Deserialize(const rapidjson::Value &value)
         m_joinTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("CfwPayStatus") && !value["CfwPayStatus"].IsNull())
+    {
+        if (!value["CfwPayStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganMemberItem.CfwPayStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cfwPayStatus = value["CfwPayStatus"].GetInt64();
+        m_cfwPayStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("CfwCapable") && !value["CfwCapable"].IsNull())
+    {
+        if (!value["CfwCapable"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganMemberItem.CfwCapable` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cfwCapable = value["CfwCapable"].GetInt64();
+        m_cfwCapableHasBeenSet = true;
+    }
+
+    if (value.HasMember("SgManaged") && !value["SgManaged"].IsNull())
+    {
+        if (!value["SgManaged"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganMemberItem.SgManaged` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sgManaged = value["SgManaged"].GetInt64();
+        m_sgManagedHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsCfwPostPay") && !value["IsCfwPostPay"].IsNull())
+    {
+        if (!value["IsCfwPostPay"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganMemberItem.IsCfwPostPay` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCfwPostPay = value["IsCfwPostPay"].GetInt64();
+        m_isCfwPostPayHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -365,6 +409,38 @@ void OrganMemberItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "JoinType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_joinType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cfwPayStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CfwPayStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cfwPayStatus, allocator);
+    }
+
+    if (m_cfwCapableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CfwCapable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cfwCapable, allocator);
+    }
+
+    if (m_sgManagedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SgManaged";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sgManaged, allocator);
+    }
+
+    if (m_isCfwPostPayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCfwPostPay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCfwPostPay, allocator);
     }
 
 }
@@ -640,5 +716,69 @@ void OrganMemberItem::SetJoinType(const string& _joinType)
 bool OrganMemberItem::JoinTypeHasBeenSet() const
 {
     return m_joinTypeHasBeenSet;
+}
+
+int64_t OrganMemberItem::GetCfwPayStatus() const
+{
+    return m_cfwPayStatus;
+}
+
+void OrganMemberItem::SetCfwPayStatus(const int64_t& _cfwPayStatus)
+{
+    m_cfwPayStatus = _cfwPayStatus;
+    m_cfwPayStatusHasBeenSet = true;
+}
+
+bool OrganMemberItem::CfwPayStatusHasBeenSet() const
+{
+    return m_cfwPayStatusHasBeenSet;
+}
+
+int64_t OrganMemberItem::GetCfwCapable() const
+{
+    return m_cfwCapable;
+}
+
+void OrganMemberItem::SetCfwCapable(const int64_t& _cfwCapable)
+{
+    m_cfwCapable = _cfwCapable;
+    m_cfwCapableHasBeenSet = true;
+}
+
+bool OrganMemberItem::CfwCapableHasBeenSet() const
+{
+    return m_cfwCapableHasBeenSet;
+}
+
+int64_t OrganMemberItem::GetSgManaged() const
+{
+    return m_sgManaged;
+}
+
+void OrganMemberItem::SetSgManaged(const int64_t& _sgManaged)
+{
+    m_sgManaged = _sgManaged;
+    m_sgManagedHasBeenSet = true;
+}
+
+bool OrganMemberItem::SgManagedHasBeenSet() const
+{
+    return m_sgManagedHasBeenSet;
+}
+
+int64_t OrganMemberItem::GetIsCfwPostPay() const
+{
+    return m_isCfwPostPay;
+}
+
+void OrganMemberItem::SetIsCfwPostPay(const int64_t& _isCfwPostPay)
+{
+    m_isCfwPostPay = _isCfwPostPay;
+    m_isCfwPostPayHasBeenSet = true;
+}
+
+bool OrganMemberItem::IsCfwPostPayHasBeenSet() const
+{
+    return m_isCfwPostPayHasBeenSet;
 }
 

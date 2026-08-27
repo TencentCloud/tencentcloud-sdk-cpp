@@ -62,7 +62,8 @@ MakePlanOpsDto::MakePlanOpsDto() :
     m_runScheduleTimeZoneHasBeenSet(false),
     m_runScheduleRangeStartTimeHasBeenSet(false),
     m_runScheduleRangeEndTimeHasBeenSet(false),
-    m_runScheduleRangeWeekDaysHasBeenSet(false)
+    m_runScheduleRangeWeekDaysHasBeenSet(false),
+    m_privilegeHasBeenSet(false)
 {
 }
 
@@ -534,6 +535,16 @@ CoreInternalOutcome MakePlanOpsDto::Deserialize(const rapidjson::Value &value)
         m_runScheduleRangeWeekDaysHasBeenSet = true;
     }
 
+    if (value.HasMember("Privilege") && !value["Privilege"].IsNull())
+    {
+        if (!value["Privilege"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.Privilege` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privilege = string(value["Privilege"].GetString());
+        m_privilegeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -907,6 +918,14 @@ void MakePlanOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_privilegeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Privilege";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privilege.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1582,5 +1601,21 @@ void MakePlanOpsDto::SetRunScheduleRangeWeekDays(const vector<int64_t>& _runSche
 bool MakePlanOpsDto::RunScheduleRangeWeekDaysHasBeenSet() const
 {
     return m_runScheduleRangeWeekDaysHasBeenSet;
+}
+
+string MakePlanOpsDto::GetPrivilege() const
+{
+    return m_privilege;
+}
+
+void MakePlanOpsDto::SetPrivilege(const string& _privilege)
+{
+    m_privilege = _privilege;
+    m_privilegeHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::PrivilegeHasBeenSet() const
+{
+    return m_privilegeHasBeenSet;
 }
 

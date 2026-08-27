@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警消息Id
-                     * @return AlarmMessageId 告警消息Id
+                     * 获取<p>告警消息Id</p>
+                     * @return AlarmMessageId <p>告警消息Id</p>
                      * 
                      */
                     uint64_t GetAlarmMessageId() const;
 
                     /**
-                     * 设置告警消息Id
-                     * @param _alarmMessageId 告警消息Id
+                     * 设置<p>告警消息Id</p>
+                     * @param _alarmMessageId <p>告警消息Id</p>
                      * 
                      */
                     void SetAlarmMessageId(const uint64_t& _alarmMessageId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AlarmMessageIdHasBeenSet() const;
 
                     /**
-                     * 获取告警时间，同一条告警可能发送多次，只显示最新的告警时间
-                     * @return AlarmTime 告警时间，同一条告警可能发送多次，只显示最新的告警时间
+                     * 获取<p>告警时间，同一条告警可能发送多次，只显示最新的告警时间</p>
+                     * @return AlarmTime <p>告警时间，同一条告警可能发送多次，只显示最新的告警时间</p>
                      * 
                      */
                     std::string GetAlarmTime() const;
 
                     /**
-                     * 设置告警时间，同一条告警可能发送多次，只显示最新的告警时间
-                     * @param _alarmTime 告警时间，同一条告警可能发送多次，只显示最新的告警时间
+                     * 设置<p>告警时间，同一条告警可能发送多次，只显示最新的告警时间</p>
+                     * @param _alarmTime <p>告警时间，同一条告警可能发送多次，只显示最新的告警时间</p>
                      * 
                      */
                     void SetAlarmTime(const std::string& _alarmTime);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool AlarmTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务名称
-                     * @return TaskName 任务名称
+                     * 获取<p>任务名称</p>
+                     * @return TaskName <p>任务名称</p>
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
-                     * 设置任务名称
-                     * @param _taskName 任务名称
+                     * 设置<p>任务名称</p>
+                     * @param _taskName <p>任务名称</p>
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool TaskNameHasBeenSet() const;
 
                     /**
-                     * 获取任务Id
-                     * @return TaskId 任务Id
+                     * 获取<p>任务Id</p>
+                     * @return TaskId <p>任务Id</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务Id
-                     * @param _taskId 任务Id
+                     * 设置<p>任务Id</p>
+                     * @param _taskId <p>任务Id</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务的实例数据时间
-                     * @return CurRunDate 任务的实例数据时间
+                     * 获取<p>任务的实例数据时间</p>
+                     * @return CurRunDate <p>任务的实例数据时间</p>
                      * 
                      */
                     std::string GetCurRunDate() const;
 
                     /**
-                     * 设置任务的实例数据时间
-                     * @param _curRunDate 任务的实例数据时间
+                     * 设置<p>任务的实例数据时间</p>
+                     * @param _curRunDate <p>任务的实例数据时间</p>
                      * 
                      */
                     void SetCurRunDate(const std::string& _curRunDate);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool CurRunDateHasBeenSet() const;
 
                     /**
-                     * 获取告警原因
-                     * @return AlarmReason 告警原因
+                     * 获取<p>告警原因</p>
+                     * @return AlarmReason <p>告警原因</p>
                      * 
                      */
                     std::string GetAlarmReason() const;
 
                     /**
-                     * 设置告警原因
-                     * @param _alarmReason 告警原因
+                     * 设置<p>告警原因</p>
+                     * @param _alarmReason <p>告警原因</p>
                      * 
                      */
                     void SetAlarmReason(const std::string& _alarmReason);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool AlarmReasonHasBeenSet() const;
 
                     /**
-                     * 获取告警级别，1.普通， 2.重要，3.紧急
-                     * @return AlarmLevel 告警级别，1.普通， 2.重要，3.紧急
+                     * 获取<p>告警级别，1.普通， 2.重要，3.紧急</p>
+                     * @return AlarmLevel <p>告警级别，1.普通， 2.重要，3.紧急</p>
                      * 
                      */
                     uint64_t GetAlarmLevel() const;
 
                     /**
-                     * 设置告警级别，1.普通， 2.重要，3.紧急
-                     * @param _alarmLevel 告警级别，1.普通， 2.重要，3.紧急
+                     * 设置<p>告警级别，1.普通， 2.重要，3.紧急</p>
+                     * @param _alarmLevel <p>告警级别，1.普通， 2.重要，3.紧急</p>
                      * 
                      */
                     void SetAlarmLevel(const uint64_t& _alarmLevel);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool AlarmLevelHasBeenSet() const;
 
                     /**
-                     * 获取告警规则Id
-                     * @return AlarmRuleId 告警规则Id
+                     * 获取<p>告警规则Id</p>
+                     * @return AlarmRuleId <p>告警规则Id</p>
                      * 
                      */
                     std::string GetAlarmRuleId() const;
 
                     /**
-                     * 设置告警规则Id
-                     * @param _alarmRuleId 告警规则Id
+                     * 设置<p>告警规则Id</p>
+                     * @param _alarmRuleId <p>告警规则Id</p>
                      * 
                      */
                     void SetAlarmRuleId(const std::string& _alarmRuleId);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool AlarmRuleIdHasBeenSet() const;
 
                     /**
-                     * 获取告警渠道 1.邮件，2.短信，3.微信，4.语音，5.企业微信，6.Http，7.企业微信群， 8.飞书群，9.钉钉群，10.Slack群,11.Teams群（默认1.邮件），7.企业微信群，8.飞书群，9.钉钉群，10.Slack群，11.Teams群 
-                     * @return AlarmWays 告警渠道 1.邮件，2.短信，3.微信，4.语音，5.企业微信，6.Http，7.企业微信群， 8.飞书群，9.钉钉群，10.Slack群,11.Teams群（默认1.邮件），7.企业微信群，8.飞书群，9.钉钉群，10.Slack群，11.Teams群 
+                     * 获取<p>告警渠道 1.邮件，2.短信，3.微信，4.语音，5.企业微信，6.Http，7.企业微信群， 8.飞书群，9.钉钉群，10.Slack群,11.Teams群（默认1.邮件），7.企业微信群，8.飞书群，9.钉钉群，10.Slack群，11.Teams群</p>
+                     * @return AlarmWays <p>告警渠道 1.邮件，2.短信，3.微信，4.语音，5.企业微信，6.Http，7.企业微信群， 8.飞书群，9.钉钉群，10.Slack群,11.Teams群（默认1.邮件），7.企业微信群，8.飞书群，9.钉钉群，10.Slack群，11.Teams群</p>
                      * 
                      */
                     std::vector<std::string> GetAlarmWays() const;
 
                     /**
-                     * 设置告警渠道 1.邮件，2.短信，3.微信，4.语音，5.企业微信，6.Http，7.企业微信群， 8.飞书群，9.钉钉群，10.Slack群,11.Teams群（默认1.邮件），7.企业微信群，8.飞书群，9.钉钉群，10.Slack群，11.Teams群 
-                     * @param _alarmWays 告警渠道 1.邮件，2.短信，3.微信，4.语音，5.企业微信，6.Http，7.企业微信群， 8.飞书群，9.钉钉群，10.Slack群,11.Teams群（默认1.邮件），7.企业微信群，8.飞书群，9.钉钉群，10.Slack群，11.Teams群 
+                     * 设置<p>告警渠道 1.邮件，2.短信，3.微信，4.语音，5.企业微信，6.Http，7.企业微信群， 8.飞书群，9.钉钉群，10.Slack群,11.Teams群（默认1.邮件），7.企业微信群，8.飞书群，9.钉钉群，10.Slack群，11.Teams群</p>
+                     * @param _alarmWays <p>告警渠道 1.邮件，2.短信，3.微信，4.语音，5.企业微信，6.Http，7.企业微信群， 8.飞书群，9.钉钉群，10.Slack群,11.Teams群（默认1.邮件），7.企业微信群，8.飞书群，9.钉钉群，10.Slack群，11.Teams群</p>
                      * 
                      */
                     void SetAlarmWays(const std::vector<std::string>& _alarmWays);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool AlarmWaysHasBeenSet() const;
 
                     /**
-                     * 获取告警接收人
-                     * @return AlarmRecipients 告警接收人
+                     * 获取<p>告警接收人</p>
+                     * @return AlarmRecipients <p>告警接收人</p>
                      * 
                      */
                     std::vector<std::string> GetAlarmRecipients() const;
 
                     /**
-                     * 设置告警接收人
-                     * @param _alarmRecipients 告警接收人
+                     * 设置<p>告警接收人</p>
+                     * @param _alarmRecipients <p>告警接收人</p>
                      * 
                      */
                     void SetAlarmRecipients(const std::vector<std::string>& _alarmRecipients);
@@ -256,67 +256,99 @@ namespace TencentCloud
                      */
                     bool AlarmRecipientsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义邮箱列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CustomEmails <p>自定义邮箱列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetCustomEmails() const;
+
+                    /**
+                     * 设置<p>自定义邮箱列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _customEmails <p>自定义邮箱列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCustomEmails(const std::vector<std::string>& _customEmails);
+
+                    /**
+                     * 判断参数 CustomEmails 是否已赋值
+                     * @return CustomEmails 是否已赋值
+                     * 
+                     */
+                    bool CustomEmailsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 告警消息Id
+                     * <p>告警消息Id</p>
                      */
                     uint64_t m_alarmMessageId;
                     bool m_alarmMessageIdHasBeenSet;
 
                     /**
-                     * 告警时间，同一条告警可能发送多次，只显示最新的告警时间
+                     * <p>告警时间，同一条告警可能发送多次，只显示最新的告警时间</p>
                      */
                     std::string m_alarmTime;
                     bool m_alarmTimeHasBeenSet;
 
                     /**
-                     * 任务名称
+                     * <p>任务名称</p>
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
-                     * 任务Id
+                     * <p>任务Id</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务的实例数据时间
+                     * <p>任务的实例数据时间</p>
                      */
                     std::string m_curRunDate;
                     bool m_curRunDateHasBeenSet;
 
                     /**
-                     * 告警原因
+                     * <p>告警原因</p>
                      */
                     std::string m_alarmReason;
                     bool m_alarmReasonHasBeenSet;
 
                     /**
-                     * 告警级别，1.普通， 2.重要，3.紧急
+                     * <p>告警级别，1.普通， 2.重要，3.紧急</p>
                      */
                     uint64_t m_alarmLevel;
                     bool m_alarmLevelHasBeenSet;
 
                     /**
-                     * 告警规则Id
+                     * <p>告警规则Id</p>
                      */
                     std::string m_alarmRuleId;
                     bool m_alarmRuleIdHasBeenSet;
 
                     /**
-                     * 告警渠道 1.邮件，2.短信，3.微信，4.语音，5.企业微信，6.Http，7.企业微信群， 8.飞书群，9.钉钉群，10.Slack群,11.Teams群（默认1.邮件），7.企业微信群，8.飞书群，9.钉钉群，10.Slack群，11.Teams群 
+                     * <p>告警渠道 1.邮件，2.短信，3.微信，4.语音，5.企业微信，6.Http，7.企业微信群， 8.飞书群，9.钉钉群，10.Slack群,11.Teams群（默认1.邮件），7.企业微信群，8.飞书群，9.钉钉群，10.Slack群，11.Teams群</p>
                      */
                     std::vector<std::string> m_alarmWays;
                     bool m_alarmWaysHasBeenSet;
 
                     /**
-                     * 告警接收人
+                     * <p>告警接收人</p>
                      */
                     std::vector<std::string> m_alarmRecipients;
                     bool m_alarmRecipientsHasBeenSet;
+
+                    /**
+                     * <p>自定义邮箱列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_customEmails;
+                    bool m_customEmailsHasBeenSet;
 
                 };
             }

@@ -2707,6 +2707,31 @@ namespace TencentCloud
                      */
                     bool LastUpdateTimestampHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Privilege <p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPrivilege() const;
+
+                    /**
+                     * 设置<p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _privilege <p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPrivilege(const std::string& _privilege);
+
+                    /**
+                     * 判断参数 Privilege 是否已赋值
+                     * @return Privilege 是否已赋值
+                     * 
+                     */
+                    bool PrivilegeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -3450,6 +3475,13 @@ namespace TencentCloud
                      */
                     uint64_t m_lastUpdateTimestamp;
                     bool m_lastUpdateTimestampHasBeenSet;
+
+                    /**
+                     * <p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_privilege;
+                    bool m_privilegeHasBeenSet;
 
                 };
             }

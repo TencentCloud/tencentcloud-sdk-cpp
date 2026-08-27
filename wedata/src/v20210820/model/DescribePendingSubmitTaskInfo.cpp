@@ -29,7 +29,8 @@ DescribePendingSubmitTaskInfo::DescribePendingSubmitTaskInfo() :
     m_submitPreCheckDetailListHasBeenSet(false),
     m_executorGroupIdHasBeenSet(false),
     m_executorGroupNameHasBeenSet(false),
-    m_taskTypeIdHasBeenSet(false)
+    m_taskTypeIdHasBeenSet(false),
+    m_privilegeHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,16 @@ CoreInternalOutcome DescribePendingSubmitTaskInfo::Deserialize(const rapidjson::
         m_taskTypeIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Privilege") && !value["Privilege"].IsNull())
+    {
+        if (!value["Privilege"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribePendingSubmitTaskInfo.Privilege` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privilege = string(value["Privilege"].GetString());
+        m_privilegeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +233,14 @@ void DescribePendingSubmitTaskInfo::ToJsonObject(rapidjson::Value &value, rapidj
         string key = "TaskTypeId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskTypeId, allocator);
+    }
+
+    if (m_privilegeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Privilege";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privilege.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -369,5 +388,21 @@ void DescribePendingSubmitTaskInfo::SetTaskTypeId(const int64_t& _taskTypeId)
 bool DescribePendingSubmitTaskInfo::TaskTypeIdHasBeenSet() const
 {
     return m_taskTypeIdHasBeenSet;
+}
+
+string DescribePendingSubmitTaskInfo::GetPrivilege() const
+{
+    return m_privilege;
+}
+
+void DescribePendingSubmitTaskInfo::SetPrivilege(const string& _privilege)
+{
+    m_privilege = _privilege;
+    m_privilegeHasBeenSet = true;
+}
+
+bool DescribePendingSubmitTaskInfo::PrivilegeHasBeenSet() const
+{
+    return m_privilegeHasBeenSet;
 }
 

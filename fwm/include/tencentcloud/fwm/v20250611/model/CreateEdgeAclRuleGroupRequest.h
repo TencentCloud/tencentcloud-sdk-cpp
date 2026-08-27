@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则组名称，长度1-50字符
-                     * @return GroupName 规则组名称，长度1-50字符
+                     * 获取<p>规则组名称，长度1-50字符</p>
+                     * @return GroupName <p>规则组名称，长度1-50字符</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置规则组名称，长度1-50字符
-                     * @param _groupName 规则组名称，长度1-50字符
+                     * 设置<p>规则组名称，长度1-50字符</p>
+                     * @param _groupName <p>规则组名称，长度1-50字符</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取产品类型，固定为 cfw_edge_acl
-                     * @return Product 产品类型，固定为 cfw_edge_acl
+                     * 获取<p>产品类型，固定为 cfw_edge_acl</p>
+                     * @return Product <p>产品类型，固定为 cfw_edge_acl</p>
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置产品类型，固定为 cfw_edge_acl
-                     * @param _product 产品类型，固定为 cfw_edge_acl
+                     * 设置<p>产品类型，固定为 cfw_edge_acl</p>
+                     * @param _product <p>产品类型，固定为 cfw_edge_acl</p>
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取规则列表
-                     * @return Rules 规则列表
+                     * 获取<p>规则列表</p>
+                     * @return Rules <p>规则列表</p>
                      * 
                      */
                     std::vector<EdgeAclRuleInfo> GetRules() const;
 
                     /**
-                     * 设置规则列表
-                     * @param _rules 规则列表
+                     * 设置<p>规则列表</p>
+                     * @param _rules <p>规则列表</p>
                      * 
                      */
                     void SetRules(const std::vector<EdgeAclRuleInfo>& _rules);
@@ -109,19 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规则组名称，长度1-50字符
+                     * <p>规则组名称，长度1-50字符</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 产品类型，固定为 cfw_edge_acl
+                     * <p>产品类型，固定为 cfw_edge_acl</p>
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
 
                     /**
-                     * 规则列表
+                     * <p>规则列表</p>
                      */
                     std::vector<EdgeAclRuleInfo> m_rules;
                     bool m_rulesHasBeenSet;

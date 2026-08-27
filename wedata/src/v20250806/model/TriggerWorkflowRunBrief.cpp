@@ -56,7 +56,8 @@ TriggerWorkflowRunBrief::TriggerWorkflowRunBrief() :
     m_associatedEntityExistHasBeenSet(false),
     m_parentWorkflowExecutionIdHasBeenSet(false),
     m_parentTaskExecutionIdHasBeenSet(false),
-    m_parentTaskExecutionNameHasBeenSet(false)
+    m_parentTaskExecutionNameHasBeenSet(false),
+    m_privilegeHasBeenSet(false)
 {
 }
 
@@ -428,6 +429,16 @@ CoreInternalOutcome TriggerWorkflowRunBrief::Deserialize(const rapidjson::Value 
         m_parentTaskExecutionNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Privilege") && !value["Privilege"].IsNull())
+    {
+        if (!value["Privilege"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerWorkflowRunBrief.Privilege` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privilege = string(value["Privilege"].GetString());
+        m_privilegeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -726,6 +737,14 @@ void TriggerWorkflowRunBrief::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "ParentTaskExecutionName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_parentTaskExecutionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privilegeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Privilege";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privilege.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1305,5 +1324,21 @@ void TriggerWorkflowRunBrief::SetParentTaskExecutionName(const string& _parentTa
 bool TriggerWorkflowRunBrief::ParentTaskExecutionNameHasBeenSet() const
 {
     return m_parentTaskExecutionNameHasBeenSet;
+}
+
+string TriggerWorkflowRunBrief::GetPrivilege() const
+{
+    return m_privilege;
+}
+
+void TriggerWorkflowRunBrief::SetPrivilege(const string& _privilege)
+{
+    m_privilege = _privilege;
+    m_privilegeHasBeenSet = true;
+}
+
+bool TriggerWorkflowRunBrief::PrivilegeHasBeenSet() const
+{
+    return m_privilegeHasBeenSet;
 }
 

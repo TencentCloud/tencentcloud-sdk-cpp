@@ -294,6 +294,90 @@ namespace TencentCloud
                      */
                     bool CustomDestPathHasBeenSet() const;
 
+                    /**
+                     * 获取<p>输出的COS桶，用于存放任务执行的相关结果（当前用于存放任务失败时的失败文件列表）</p>
+                     * @return OutputBucket <p>输出的COS桶，用于存放任务执行的相关结果（当前用于存放任务失败时的失败文件列表）</p>
+                     * 
+                     */
+                    std::string GetOutputBucket() const;
+
+                    /**
+                     * 设置<p>输出的COS桶，用于存放任务执行的相关结果（当前用于存放任务失败时的失败文件列表）</p>
+                     * @param _outputBucket <p>输出的COS桶，用于存放任务执行的相关结果（当前用于存放任务失败时的失败文件列表）</p>
+                     * 
+                     */
+                    void SetOutputBucket(const std::string& _outputBucket);
+
+                    /**
+                     * 判断参数 OutputBucket 是否已赋值
+                     * @return OutputBucket 是否已赋值
+                     * 
+                     */
+                    bool OutputBucketHasBeenSet() const;
+
+                    /**
+                     * 获取<p>输出的COS桶的前缀，用于存放任务执行的相关结果（当前用于存放任务失败时的失败文件列表）</p>
+                     * @return OutputPrefix <p>输出的COS桶的前缀，用于存放任务执行的相关结果（当前用于存放任务失败时的失败文件列表）</p>
+                     * 
+                     */
+                    std::string GetOutputPrefix() const;
+
+                    /**
+                     * 设置<p>输出的COS桶的前缀，用于存放任务执行的相关结果（当前用于存放任务失败时的失败文件列表）</p>
+                     * @param _outputPrefix <p>输出的COS桶的前缀，用于存放任务执行的相关结果（当前用于存放任务失败时的失败文件列表）</p>
+                     * 
+                     */
+                    void SetOutputPrefix(const std::string& _outputPrefix);
+
+                    /**
+                     * 判断参数 OutputPrefix 是否已赋值
+                     * @return OutputPrefix 是否已赋值
+                     * 
+                     */
+                    bool OutputPrefixHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否支持自定义数据源路径(暂时仅支持清单过滤使用)</p>
+                     * @return EnableCustomSrcPath <p>是否支持自定义数据源路径(暂时仅支持清单过滤使用)</p>
+                     * 
+                     */
+                    bool GetEnableCustomSrcPath() const;
+
+                    /**
+                     * 设置<p>是否支持自定义数据源路径(暂时仅支持清单过滤使用)</p>
+                     * @param _enableCustomSrcPath <p>是否支持自定义数据源路径(暂时仅支持清单过滤使用)</p>
+                     * 
+                     */
+                    void SetEnableCustomSrcPath(const bool& _enableCustomSrcPath);
+
+                    /**
+                     * 判断参数 EnableCustomSrcPath 是否已赋值
+                     * @return EnableCustomSrcPath 是否已赋值
+                     * 
+                     */
+                    bool EnableCustomSrcPathHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自定义数据源路径(暂时仅支持清单过滤使用)</p>
+                     * @return CustomSrcPath <p>自定义数据源路径(暂时仅支持清单过滤使用)</p>
+                     * 
+                     */
+                    std::string GetCustomSrcPath() const;
+
+                    /**
+                     * 设置<p>自定义数据源路径(暂时仅支持清单过滤使用)</p>
+                     * @param _customSrcPath <p>自定义数据源路径(暂时仅支持清单过滤使用)</p>
+                     * 
+                     */
+                    void SetCustomSrcPath(const std::string& _customSrcPath);
+
+                    /**
+                     * 判断参数 CustomSrcPath 是否已赋值
+                     * @return CustomSrcPath 是否已赋值
+                     * 
+                     */
+                    bool CustomSrcPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +451,30 @@ namespace TencentCloud
                      */
                     std::string m_customDestPath;
                     bool m_customDestPathHasBeenSet;
+
+                    /**
+                     * <p>输出的COS桶，用于存放任务执行的相关结果（当前用于存放任务失败时的失败文件列表）</p>
+                     */
+                    std::string m_outputBucket;
+                    bool m_outputBucketHasBeenSet;
+
+                    /**
+                     * <p>输出的COS桶的前缀，用于存放任务执行的相关结果（当前用于存放任务失败时的失败文件列表）</p>
+                     */
+                    std::string m_outputPrefix;
+                    bool m_outputPrefixHasBeenSet;
+
+                    /**
+                     * <p>是否支持自定义数据源路径(暂时仅支持清单过滤使用)</p>
+                     */
+                    bool m_enableCustomSrcPath;
+                    bool m_enableCustomSrcPathHasBeenSet;
+
+                    /**
+                     * <p>自定义数据源路径(暂时仅支持清单过滤使用)</p>
+                     */
+                    std::string m_customSrcPath;
+                    bool m_customSrcPathHasBeenSet;
 
                 };
             }

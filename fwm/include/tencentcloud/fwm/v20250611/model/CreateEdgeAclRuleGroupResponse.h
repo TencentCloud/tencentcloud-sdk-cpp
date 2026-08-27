@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建的规则组ID
-                     * @return GroupId 创建的规则组ID
+                     * 获取<p>创建的规则组ID</p>
+                     * @return GroupId <p>创建的规则组ID</p>
                      * 
                      */
                     std::string GetGroupId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建的规则组ID
+                     * <p>创建的规则组ID</p>
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

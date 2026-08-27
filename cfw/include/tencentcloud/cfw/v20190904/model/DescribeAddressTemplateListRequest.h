@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取偏移量，分页用
-                     * @return Offset 偏移量，分页用
+                     * 获取<p>偏移量，分页用</p>
+                     * @return Offset <p>偏移量，分页用</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，分页用
-                     * @param _offset 偏移量，分页用
+                     * 设置<p>偏移量，分页用</p>
+                     * @param _offset <p>偏移量，分页用</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取条数，分页用
-                     * @return Limit 条数，分页用
+                     * 获取<p>条数，分页用</p>
+                     * @return Limit <p>条数，分页用</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置条数，分页用
-                     * @param _limit 条数，分页用
+                     * 设置<p>条数，分页用</p>
+                     * @param _limit <p>条数，分页用</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，取值：UpdateTime最近更新时间，RulesNum关联规则数
-                     * @return By 排序字段，取值：UpdateTime最近更新时间，RulesNum关联规则数
+                     * 获取<p>排序字段，取值：UpdateTime最近更新时间，RulesNum关联规则数</p>
+                     * @return By <p>排序字段，取值：UpdateTime最近更新时间，RulesNum关联规则数</p>
                      * 
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置排序字段，取值：UpdateTime最近更新时间，RulesNum关联规则数
-                     * @param _by 排序字段，取值：UpdateTime最近更新时间，RulesNum关联规则数
+                     * 设置<p>排序字段，取值：UpdateTime最近更新时间，RulesNum关联规则数</p>
+                     * @param _by <p>排序字段，取值：UpdateTime最近更新时间，RulesNum关联规则数</p>
                      * 
                      */
                     void SetBy(const std::string& _by);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ByHasBeenSet() const;
 
                     /**
-                     * 获取排序，取值 ：asc正序，desc逆序
-                     * @return Order 排序，取值 ：asc正序，desc逆序
+                     * 获取<p>排序，取值 ：asc正序，desc逆序</p>
+                     * @return Order <p>排序，取值 ：asc正序，desc逆序</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序，取值 ：asc正序，desc逆序
-                     * @param _order 排序，取值 ：asc正序，desc逆序
+                     * 设置<p>排序，取值 ：asc正序，desc逆序</p>
+                     * @param _order <p>排序，取值 ：asc正序，desc逆序</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取搜索值
-                     * @return SearchValue 搜索值
+                     * 获取<p>搜索值</p>
+                     * @return SearchValue <p>搜索值</p>
                      * 
                      */
                     std::string GetSearchValue() const;
 
                     /**
-                     * 设置搜索值
-                     * @param _searchValue 搜索值
+                     * 设置<p>搜索值</p>
+                     * @param _searchValue <p>搜索值</p>
                      * 
                      */
                     void SetSearchValue(const std::string& _searchValue);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool SearchValueHasBeenSet() const;
 
                     /**
-                     * 获取检索地址模板唯一id
-                     * @return Uuid 检索地址模板唯一id
+                     * 获取<p>检索地址模板唯一id</p>
+                     * @return Uuid <p>检索地址模板唯一id</p>
                      * 
                      */
                     std::string GetUuid() const;
 
                     /**
-                     * 设置检索地址模板唯一id
-                     * @param _uuid 检索地址模板唯一id
+                     * 设置<p>检索地址模板唯一id</p>
+                     * @param _uuid <p>检索地址模板唯一id</p>
                      * 
                      */
                     void SetUuid(const std::string& _uuid);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool UuidHasBeenSet() const;
 
                     /**
-                     * 获取模板类型，取值：1：ip模板，5：域名模板，6：协议端口模板
-                     * @return TemplateType 模板类型，取值：1：ip模板，5：域名模板，6：协议端口模板
+                     * 获取<p>模板类型，取值：1：ip模板，5：域名模板，6：协议端口模板</p>
+                     * @return TemplateType <p>模板类型，取值：1：ip模板，5：域名模板，6：协议端口模板</p>
                      * 
                      */
                     std::string GetTemplateType() const;
 
                     /**
-                     * 设置模板类型，取值：1：ip模板，5：域名模板，6：协议端口模板
-                     * @param _templateType 模板类型，取值：1：ip模板，5：域名模板，6：协议端口模板
+                     * 设置<p>模板类型，取值：1：ip模板，5：域名模板，6：协议端口模板</p>
+                     * @param _templateType <p>模板类型，取值：1：ip模板，5：域名模板，6：协议端口模板</p>
                      * 
                      */
                     void SetTemplateType(const std::string& _templateType);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool TemplateTypeHasBeenSet() const;
 
                     /**
-                     * 获取模板Id
-                     * @return TemplateId 模板Id
+                     * 获取<p>模板Id</p>
+                     * @return TemplateId <p>模板Id</p>
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置模板Id
-                     * @param _templateId 模板Id
+                     * 设置<p>模板Id</p>
+                     * @param _templateId <p>模板Id</p>
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -210,55 +210,82 @@ namespace TencentCloud
                      */
                     bool TemplateIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模板来源</p>
+                     * @return SourceType <p>模板来源</p>
+                     * 
+                     */
+                    std::string GetSourceType() const;
+
+                    /**
+                     * 设置<p>模板来源</p>
+                     * @param _sourceType <p>模板来源</p>
+                     * 
+                     */
+                    void SetSourceType(const std::string& _sourceType);
+
+                    /**
+                     * 判断参数 SourceType 是否已赋值
+                     * @return SourceType 是否已赋值
+                     * 
+                     */
+                    bool SourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 偏移量，分页用
+                     * <p>偏移量，分页用</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 条数，分页用
+                     * <p>条数，分页用</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 排序字段，取值：UpdateTime最近更新时间，RulesNum关联规则数
+                     * <p>排序字段，取值：UpdateTime最近更新时间，RulesNum关联规则数</p>
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;
 
                     /**
-                     * 排序，取值 ：asc正序，desc逆序
+                     * <p>排序，取值 ：asc正序，desc逆序</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 搜索值
+                     * <p>搜索值</p>
                      */
                     std::string m_searchValue;
                     bool m_searchValueHasBeenSet;
 
                     /**
-                     * 检索地址模板唯一id
+                     * <p>检索地址模板唯一id</p>
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
 
                     /**
-                     * 模板类型，取值：1：ip模板，5：域名模板，6：协议端口模板
+                     * <p>模板类型，取值：1：ip模板，5：域名模板，6：协议端口模板</p>
                      */
                     std::string m_templateType;
                     bool m_templateTypeHasBeenSet;
 
                     /**
-                     * 模板Id
+                     * <p>模板Id</p>
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
+
+                    /**
+                     * <p>模板来源</p>
+                     */
+                    std::string m_sourceType;
+                    bool m_sourceTypeHasBeenSet;
 
                 };
             }

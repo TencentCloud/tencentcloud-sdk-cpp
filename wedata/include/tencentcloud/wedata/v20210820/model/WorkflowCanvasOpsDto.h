@@ -49,18 +49,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作流id
+                     * 获取<p>工作流id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkflowId 工作流id
+                     * @return WorkflowId <p>工作流id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkflowId() const;
 
                     /**
-                     * 设置工作流id
+                     * 设置<p>工作流id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workflowId 工作流id
+                     * @param _workflowId <p>工作流id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,18 +74,18 @@ namespace TencentCloud
                     bool WorkflowIdHasBeenSet() const;
 
                     /**
-                     * 获取工作流详情描述
+                     * 获取<p>工作流详情描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkflowDesc 工作流详情描述
+                     * @return WorkflowDesc <p>工作流详情描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkflowDesc() const;
 
                     /**
-                     * 设置工作流详情描述
+                     * 设置<p>工作流详情描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workflowDesc 工作流详情描述
+                     * @param _workflowDesc <p>工作流详情描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,18 +99,18 @@ namespace TencentCloud
                     bool WorkflowDescHasBeenSet() const;
 
                     /**
-                     * 获取工作流名称
+                     * 获取<p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkflowName 工作流名称
+                     * @return WorkflowName <p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkflowName() const;
 
                     /**
-                     * 设置工作流名称
+                     * 设置<p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workflowName 工作流名称
+                     * @param _workflowName <p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,18 +124,18 @@ namespace TencentCloud
                     bool WorkflowNameHasBeenSet() const;
 
                     /**
-                     * 获取所属文件夹id
+                     * 获取<p>所属文件夹id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FolderId 所属文件夹id
+                     * @return FolderId <p>所属文件夹id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFolderId() const;
 
                     /**
-                     * 设置所属文件夹id
+                     * 设置<p>所属文件夹id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _folderId 所属文件夹id
+                     * @param _folderId <p>所属文件夹id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -149,18 +149,18 @@ namespace TencentCloud
                     bool FolderIdHasBeenSet() const;
 
                     /**
-                     * 获取所属文件夹ids
+                     * 获取<p>所属文件夹ids</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FolderIds 所属文件夹ids
+                     * @return FolderIds <p>所属文件夹ids</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetFolderIds() const;
 
                     /**
-                     * 设置所属文件夹ids
+                     * 设置<p>所属文件夹ids</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _folderIds 所属文件夹ids
+                     * @param _folderIds <p>所属文件夹ids</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -174,18 +174,18 @@ namespace TencentCloud
                     bool FolderIdsHasBeenSet() const;
 
                     /**
-                     * 获取任务列表
+                     * 获取<p>任务列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tasks 任务列表
+                     * @return Tasks <p>任务列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TaskOpsDto> GetTasks() const;
 
                     /**
-                     * 设置任务列表
+                     * 设置<p>任务列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tasks 任务列表
+                     * @param _tasks <p>任务列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -199,18 +199,18 @@ namespace TencentCloud
                     bool TasksHasBeenSet() const;
 
                     /**
-                     * 获取任务依赖边列表
+                     * 获取<p>任务依赖边列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Links 任务依赖边列表
+                     * @return Links <p>任务依赖边列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LinkOpsDto> GetLinks() const;
 
                     /**
-                     * 设置任务依赖边列表
+                     * 设置<p>任务依赖边列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _links 任务依赖边列表
+                     * @param _links <p>任务依赖边列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -224,18 +224,18 @@ namespace TencentCloud
                     bool LinksHasBeenSet() const;
 
                     /**
-                     * 获取工作流所属用户分组id,若有多个分号隔开: a;b;c
+                     * 获取<p>工作流所属用户分组id,若有多个分号隔开: a;b;c</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserGroupId 工作流所属用户分组id,若有多个分号隔开: a;b;c
+                     * @return UserGroupId <p>工作流所属用户分组id,若有多个分号隔开: a;b;c</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserGroupId() const;
 
                     /**
-                     * 设置工作流所属用户分组id,若有多个分号隔开: a;b;c
+                     * 设置<p>工作流所属用户分组id,若有多个分号隔开: a;b;c</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _userGroupId 工作流所属用户分组id,若有多个分号隔开: a;b;c
+                     * @param _userGroupId <p>工作流所属用户分组id,若有多个分号隔开: a;b;c</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -249,18 +249,18 @@ namespace TencentCloud
                     bool UserGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取工作流所属用户分组名称,若有多个分号隔开: a;b;c
+                     * 获取<p>工作流所属用户分组名称,若有多个分号隔开: a;b;c</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserGroupName 工作流所属用户分组名称,若有多个分号隔开: a;b;c
+                     * @return UserGroupName <p>工作流所属用户分组名称,若有多个分号隔开: a;b;c</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserGroupName() const;
 
                     /**
-                     * 设置工作流所属用户分组名称,若有多个分号隔开: a;b;c
+                     * 设置<p>工作流所属用户分组名称,若有多个分号隔开: a;b;c</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _userGroupName 工作流所属用户分组名称,若有多个分号隔开: a;b;c
+                     * @param _userGroupName <p>工作流所属用户分组名称,若有多个分号隔开: a;b;c</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -274,18 +274,18 @@ namespace TencentCloud
                     bool UserGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取项目id
+                     * 获取<p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProjectId 项目id
+                     * @return ProjectId <p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目id
+                     * 设置<p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _projectId 项目id
+                     * @param _projectId <p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -299,18 +299,18 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取项目标识
+                     * 获取<p>项目标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProjectIdent 项目标识
+                     * @return ProjectIdent <p>项目标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectIdent() const;
 
                     /**
-                     * 设置项目标识
+                     * 设置<p>项目标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _projectIdent 项目标识
+                     * @param _projectIdent <p>项目标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -324,18 +324,18 @@ namespace TencentCloud
                     bool ProjectIdentHasBeenSet() const;
 
                     /**
-                     * 获取项目名称
+                     * 获取<p>项目名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProjectName 项目名称
+                     * @return ProjectName <p>项目名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectName() const;
 
                     /**
-                     * 设置项目名称
+                     * 设置<p>项目名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _projectName 项目名称
+                     * @param _projectName <p>项目名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -349,18 +349,18 @@ namespace TencentCloud
                     bool ProjectNameHasBeenSet() const;
 
                     /**
-                     * 获取责任人
+                     * 获取<p>责任人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Owner 责任人
+                     * @return Owner <p>责任人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOwner() const;
 
                     /**
-                     * 设置责任人
+                     * 设置<p>责任人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _owner 责任人
+                     * @param _owner <p>责任人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -374,18 +374,18 @@ namespace TencentCloud
                     bool OwnerHasBeenSet() const;
 
                     /**
-                     * 获取责任人UserId
+                     * 获取<p>责任人UserId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OwnerId 责任人UserId
+                     * @return OwnerId <p>责任人UserId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOwnerId() const;
 
                     /**
-                     * 设置责任人UserId
+                     * 设置<p>责任人UserId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ownerId 责任人UserId
+                     * @param _ownerId <p>责任人UserId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -399,18 +399,18 @@ namespace TencentCloud
                     bool OwnerIdHasBeenSet() const;
 
                     /**
-                     * 获取工作流类型，周期cycle，手动manual
+                     * 获取<p>工作流类型，周期cycle，手动manual</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkflowType 工作流类型，周期cycle，手动manual
+                     * @return WorkflowType <p>工作流类型，周期cycle，手动manual</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkflowType() const;
 
                     /**
-                     * 设置工作流类型，周期cycle，手动manual
+                     * 设置<p>工作流类型，周期cycle，手动manual</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workflowType 工作流类型，周期cycle，手动manual
+                     * @param _workflowType <p>工作流类型，周期cycle，手动manual</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -423,112 +423,144 @@ namespace TencentCloud
                      */
                     bool WorkflowTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Privilege <p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPrivilege() const;
+
+                    /**
+                     * 设置<p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _privilege <p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPrivilege(const std::string& _privilege);
+
+                    /**
+                     * 判断参数 Privilege 是否已赋值
+                     * @return Privilege 是否已赋值
+                     * 
+                     */
+                    bool PrivilegeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 工作流id
+                     * <p>工作流id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workflowId;
                     bool m_workflowIdHasBeenSet;
 
                     /**
-                     * 工作流详情描述
+                     * <p>工作流详情描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workflowDesc;
                     bool m_workflowDescHasBeenSet;
 
                     /**
-                     * 工作流名称
+                     * <p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workflowName;
                     bool m_workflowNameHasBeenSet;
 
                     /**
-                     * 所属文件夹id
+                     * <p>所属文件夹id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_folderId;
                     bool m_folderIdHasBeenSet;
 
                     /**
-                     * 所属文件夹ids
+                     * <p>所属文件夹ids</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_folderIds;
                     bool m_folderIdsHasBeenSet;
 
                     /**
-                     * 任务列表
+                     * <p>任务列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskOpsDto> m_tasks;
                     bool m_tasksHasBeenSet;
 
                     /**
-                     * 任务依赖边列表
+                     * <p>任务依赖边列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LinkOpsDto> m_links;
                     bool m_linksHasBeenSet;
 
                     /**
-                     * 工作流所属用户分组id,若有多个分号隔开: a;b;c
+                     * <p>工作流所属用户分组id,若有多个分号隔开: a;b;c</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userGroupId;
                     bool m_userGroupIdHasBeenSet;
 
                     /**
-                     * 工作流所属用户分组名称,若有多个分号隔开: a;b;c
+                     * <p>工作流所属用户分组名称,若有多个分号隔开: a;b;c</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userGroupName;
                     bool m_userGroupNameHasBeenSet;
 
                     /**
-                     * 项目id
+                     * <p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 项目标识
+                     * <p>项目标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectIdent;
                     bool m_projectIdentHasBeenSet;
 
                     /**
-                     * 项目名称
+                     * <p>项目名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectName;
                     bool m_projectNameHasBeenSet;
 
                     /**
-                     * 责任人
+                     * <p>责任人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_owner;
                     bool m_ownerHasBeenSet;
 
                     /**
-                     * 责任人UserId
+                     * <p>责任人UserId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ownerId;
                     bool m_ownerIdHasBeenSet;
 
                     /**
-                     * 工作流类型，周期cycle，手动manual
+                     * <p>工作流类型，周期cycle，手动manual</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workflowType;
                     bool m_workflowTypeHasBeenSet;
+
+                    /**
+                     * <p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_privilege;
+                    bool m_privilegeHasBeenSet;
 
                 };
             }

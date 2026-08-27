@@ -35,7 +35,8 @@ WorkflowCanvasOpsDto::WorkflowCanvasOpsDto() :
     m_projectNameHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
-    m_workflowTypeHasBeenSet(false)
+    m_workflowTypeHasBeenSet(false),
+    m_privilegeHasBeenSet(false)
 {
 }
 
@@ -217,6 +218,16 @@ CoreInternalOutcome WorkflowCanvasOpsDto::Deserialize(const rapidjson::Value &va
         m_workflowTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Privilege") && !value["Privilege"].IsNull())
+    {
+        if (!value["Privilege"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowCanvasOpsDto.Privilege` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privilege = string(value["Privilege"].GetString());
+        m_privilegeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -361,6 +372,14 @@ void WorkflowCanvasOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "WorkflowType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_workflowType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privilegeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Privilege";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privilege.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -604,5 +623,21 @@ void WorkflowCanvasOpsDto::SetWorkflowType(const string& _workflowType)
 bool WorkflowCanvasOpsDto::WorkflowTypeHasBeenSet() const
 {
     return m_workflowTypeHasBeenSet;
+}
+
+string WorkflowCanvasOpsDto::GetPrivilege() const
+{
+    return m_privilege;
+}
+
+void WorkflowCanvasOpsDto::SetPrivilege(const string& _privilege)
+{
+    m_privilege = _privilege;
+    m_privilegeHasBeenSet = true;
+}
+
+bool WorkflowCanvasOpsDto::PrivilegeHasBeenSet() const
+{
+    return m_privilegeHasBeenSet;
 }
 

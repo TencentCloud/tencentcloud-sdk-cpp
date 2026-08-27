@@ -563,7 +563,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20230616/model/FeiShuRobotNoticeTmplMatcher.h
   include/tencentcloud/monitor/v20230616/model/AIWorkbenchSREDigitalTwinTask.h
   include/tencentcloud/monitor/v20230616/model/TriggerAIWorkbenchTaskResponse.h
-  include/tencentcloud/monitor/v20230616/model/AIWorkbenchSREDigitalTwinWorkLogDetail.h
+  include/tencentcloud/monitor/v20230616/model/NotifyRelatedNotice.h
   include/tencentcloud/monitor/v20230616/model/NoticeContentTmplItem.h
   include/tencentcloud/monitor/v20230616/model/ResourceMapInfo.h
   include/tencentcloud/monitor/v20230616/model/AgentInfo.h
@@ -573,12 +573,14 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20230616/model/TriggerDigitalTwinTaskResp.h
   include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchArtifactRequest.h
   include/tencentcloud/monitor/v20230616/model/SlackRobotNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/ModifyDispenseExternalRuleStatusRequest.h
   include/tencentcloud/monitor/v20230616/model/ListAIWorkbenchSessionsRequest.h
   include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogDetailRequest.h
   include/tencentcloud/monitor/v20230616/model/ListAIWorkbenchAgentsResponse.h
   include/tencentcloud/monitor/v20230616/model/ListAIWorkbenchSkillsRequest.h
   include/tencentcloud/monitor/v20230616/model/SlackRobotNoticeTmplMatcher.h
   include/tencentcloud/monitor/v20230616/model/DingDingRobotNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/DispenseFilter.h
   include/tencentcloud/monitor/v20230616/model/WebhookNoticeTmplHeader.h
   include/tencentcloud/monitor/v20230616/model/PageByNumParams.h
   include/tencentcloud/monitor/v20230616/model/GetAIWorkbenchArtifactDownloadURLRequest.h
@@ -586,15 +588,20 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20230616/model/AlarmNotifyHistory.h
   include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSessionRequest.h
   include/tencentcloud/monitor/v20230616/model/ListAIWorkbenchSessionsResponse.h
-  include/tencentcloud/monitor/v20230616/model/ListAIWorkbenchTasksResponse.h
+  include/tencentcloud/monitor/v20230616/model/Producer.h
+  include/tencentcloud/monitor/v20230616/model/DeleteDispenseExternalRuleRequest.h
+  include/tencentcloud/monitor/v20230616/model/DescribeExtNamespaceResponse.h
   include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchExecutionResponse.h
   include/tencentcloud/monitor/v20230616/model/ResourceInstance.h
   include/tencentcloud/monitor/v20230616/model/TriggerAIWorkbenchSREDigitalTwinTaskResponse.h
   include/tencentcloud/monitor/v20230616/model/PagerDutyRobotNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/ListAIWorkbenchTasksResponse.h
   include/tencentcloud/monitor/v20230616/model/Tag.h
   include/tencentcloud/monitor/v20230616/model/DeleteAIWorkbenchAgentResponse.h
+  include/tencentcloud/monitor/v20230616/model/DispenseRegion.h
   include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogListRequest.h
-  include/tencentcloud/monitor/v20230616/model/QCloudYeheWeChatNoticeTmplItem.h
+  include/tencentcloud/monitor/v20230616/model/ExtMetric.h
+  include/tencentcloud/monitor/v20230616/model/DescribeKafkaResponse.h
   include/tencentcloud/monitor/v20230616/model/DescribeAlarmNotifyHistoriesRequest.h
   include/tencentcloud/monitor/v20230616/model/UpdateAIWorkbenchAgentResponse.h
   include/tencentcloud/monitor/v20230616/model/TeamsRobotNoticeTmpl.h
@@ -602,6 +609,8 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20230616/model/NoticeContentTmpl.h
   include/tencentcloud/monitor/v20230616/model/SessionInfo.h
   include/tencentcloud/monitor/v20230616/model/PageByNoResult.h
+  include/tencentcloud/monitor/v20230616/model/ListAIWorkbenchResourceMapsResponse.h
+  include/tencentcloud/monitor/v20230616/model/DescribeExtMetricRequest.h
   include/tencentcloud/monitor/v20230616/model/TeamsWorkflowRobotNoticeTmpl.h
   include/tencentcloud/monitor/v20230616/model/ListAIWorkbenchMCPsResponse.h
   include/tencentcloud/monitor/v20230616/model/SkillInfo.h
@@ -611,23 +620,30 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20230616/model/ListAIWorkbenchResourceMapsRequest.h
   include/tencentcloud/monitor/v20230616/model/ListAIWorkbenchArtifactsResponse.h
   include/tencentcloud/monitor/v20230616/model/CancelAIWorkbenchChatRequest.h
+  include/tencentcloud/monitor/v20230616/model/ModifyDispenseExternalRuleRequest.h
   include/tencentcloud/monitor/v20230616/model/DescribeAlarmNotifyHistoriesResponse.h
   include/tencentcloud/monitor/v20230616/model/InstructionConfig.h
   include/tencentcloud/monitor/v20230616/model/DeleteAIWorkbenchTaskResponse.h
   include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSREDigitalTwinTaskListResponse.h
   include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSessionResponse.h
+  include/tencentcloud/monitor/v20230616/model/ListAIWorkbenchTasksRequest.h
   include/tencentcloud/monitor/v20230616/model/WeWorkRobotNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogDetailResponse.h
   include/tencentcloud/monitor/v20230616/model/TriggerAIWorkbenchTaskRequest.h
   include/tencentcloud/monitor/v20230616/model/DescribeNoticeContentTmplRequest.h
   include/tencentcloud/monitor/v20230616/model/ListAIWorkbenchMessagesResponse.h
   include/tencentcloud/monitor/v20230616/model/TaskInfo.h
+  include/tencentcloud/monitor/v20230616/model/DescribeDispenseExternalRuleRequest.h
+  include/tencentcloud/monitor/v20230616/model/DescribeKafkaRequest.h
   include/tencentcloud/monitor/v20230616/model/ListAIWorkbenchArtifactsRequest.h
   include/tencentcloud/monitor/v20230616/model/CreateAIWorkbenchAgentResponse.h
   include/tencentcloud/monitor/v20230616/model/DeleteNoticeContentTmplsRequest.h
   include/tencentcloud/monitor/v20230616/model/PageByNoParams.h
+  include/tencentcloud/monitor/v20230616/model/CreateDispenseExternalRuleRequest.h
   include/tencentcloud/monitor/v20230616/model/ListAIWorkbenchResourceInstancesRequest.h
   include/tencentcloud/monitor/v20230616/model/ChannelsReceivers.h
   include/tencentcloud/monitor/v20230616/model/CreateAIWorkbenchTaskResponse.h
+  include/tencentcloud/monitor/v20230616/model/DescribeDispenseExternalRuleResponse.h
   include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchExecutionRequest.h
   include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSREDigitalTwinTaskListRequest.h
   include/tencentcloud/monitor/v20230616/model/AIWorkbenchSREDigitalTwinWorkLogList.h
@@ -637,46 +653,58 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20230616/model/PageByNumResult.h
   include/tencentcloud/monitor/v20230616/model/CreateAIWorkbenchAgentRequest.h
   include/tencentcloud/monitor/v20230616/model/EnvEntry.h
-  include/tencentcloud/monitor/v20230616/model/ListAIWorkbenchResourceMapsResponse.h
+  include/tencentcloud/monitor/v20230616/model/KafkaConnectivity.h
   include/tencentcloud/monitor/v20230616/model/QCloudYeheNoticeTmplMatcher.h
   include/tencentcloud/monitor/v20230616/model/ListAIWorkbenchMessagesRequest.h
   include/tencentcloud/monitor/v20230616/model/QCloudYeheNoticeTmplItem.h
   include/tencentcloud/monitor/v20230616/model/ListAIWorkbenchExecutionsResponse.h
   include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchAgentRequest.h
   include/tencentcloud/monitor/v20230616/model/GoogleChatRobotNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/Rule.h
   include/tencentcloud/monitor/v20230616/model/ArtifactInfo.h
   include/tencentcloud/monitor/v20230616/model/ListAIWorkbenchResourceInstancesResponse.h
-  include/tencentcloud/monitor/v20230616/model/NotifyRelatedNotice.h
+  include/tencentcloud/monitor/v20230616/model/AIWorkbenchSREDigitalTwinWorkLogDetail.h
   include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSkillRequest.h
   include/tencentcloud/monitor/v20230616/model/GoogleChatRobotNoticeTmplMatcher.h
+  include/tencentcloud/monitor/v20230616/model/DescribeDispenseExternalRuleListResponse.h
   include/tencentcloud/monitor/v20230616/model/MessageInfo.h
   include/tencentcloud/monitor/v20230616/model/QCloudYeheNoticeTmpl.h
   include/tencentcloud/monitor/v20230616/model/MCPInfo.h
+  include/tencentcloud/monitor/v20230616/model/CreateDispenseExternalRuleResponse.h
   include/tencentcloud/monitor/v20230616/model/CreateNoticeContentTmplRequest.h
-  include/tencentcloud/monitor/v20230616/model/ListAIWorkbenchTasksRequest.h
+  include/tencentcloud/monitor/v20230616/model/QCloudYeheWeChatNoticeTmplItem.h
+  include/tencentcloud/monitor/v20230616/model/DescribeExtNamespaceRequest.h
   include/tencentcloud/monitor/v20230616/model/WebhookNoticeTmplMatcher.h
-  include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogDetailResponse.h
+  include/tencentcloud/monitor/v20230616/model/DispenseCondition.h
   include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchAgentResponse.h
   include/tencentcloud/monitor/v20230616/model/ExecutionInfo.h
   include/tencentcloud/monitor/v20230616/model/GetAIWorkbenchArtifactDownloadURLResponse.h
   include/tencentcloud/monitor/v20230616/model/PagerDutyRobotNoticeTmplHeader.h
   include/tencentcloud/monitor/v20230616/model/NoticeContentTmplBindPolicyCount.h
+  include/tencentcloud/monitor/v20230616/model/DescribeDispenseRegionRequest.h
+  include/tencentcloud/monitor/v20230616/model/DescribeDispenseExternalRuleListRequest.h
   include/tencentcloud/monitor/v20230616/model/TriggerAIWorkbenchSREDigitalTwinTaskRequest.h
   include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogListResponse.h
   include/tencentcloud/monitor/v20230616/model/CreateAIWorkbenchTaskRequest.h
   include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchArtifactResponse.h
   include/tencentcloud/monitor/v20230616/model/CancelAIWorkbenchChatResponse.h
   include/tencentcloud/monitor/v20230616/model/ModifyNoticeContentTmplResponse.h
+  include/tencentcloud/monitor/v20230616/model/ModifyDispenseExternalRuleStatusResponse.h
   include/tencentcloud/monitor/v20230616/model/WeWorkRobotNoticeTmplMatcher.h
   include/tencentcloud/monitor/v20230616/model/ContentBlockInfo.h
   include/tencentcloud/monitor/v20230616/model/PagerDutyRobotNoticeTmplMatcher.h
+  include/tencentcloud/monitor/v20230616/model/DeleteDispenseExternalRuleResponse.h
   include/tencentcloud/monitor/v20230616/model/FeiShuRobotNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/DispenseGlobalTag.h
   include/tencentcloud/monitor/v20230616/model/ListAIWorkbenchAgentsRequest.h
+  include/tencentcloud/monitor/v20230616/model/DescribeDispenseRegionResponse.h
   include/tencentcloud/monitor/v20230616/model/DeleteNoticeContentTmplsResponse.h
   include/tencentcloud/monitor/v20230616/model/AIWorkbenchSREDigitalTwinTaskList.h
   include/tencentcloud/monitor/v20230616/model/UpdateAIWorkbenchAgentRequest.h
   include/tencentcloud/monitor/v20230616/model/ModifyNoticeContentTmplRequest.h
+  include/tencentcloud/monitor/v20230616/model/DescribeExtMetricResponse.h
   include/tencentcloud/monitor/v20230616/model/EnvVar.h
+  include/tencentcloud/monitor/v20230616/model/ModifyDispenseExternalRuleResponse.h
   )
 
 set(monitor_src
@@ -1225,7 +1253,7 @@ set(monitor_src
   src/v20230616/model/FeiShuRobotNoticeTmplMatcher.cpp
   src/v20230616/model/AIWorkbenchSREDigitalTwinTask.cpp
   src/v20230616/model/TriggerAIWorkbenchTaskResponse.cpp
-  src/v20230616/model/AIWorkbenchSREDigitalTwinWorkLogDetail.cpp
+  src/v20230616/model/NotifyRelatedNotice.cpp
   src/v20230616/model/NoticeContentTmplItem.cpp
   src/v20230616/model/ResourceMapInfo.cpp
   src/v20230616/model/AgentInfo.cpp
@@ -1235,12 +1263,14 @@ set(monitor_src
   src/v20230616/model/TriggerDigitalTwinTaskResp.cpp
   src/v20230616/model/DescribeAIWorkbenchArtifactRequest.cpp
   src/v20230616/model/SlackRobotNoticeTmpl.cpp
+  src/v20230616/model/ModifyDispenseExternalRuleStatusRequest.cpp
   src/v20230616/model/ListAIWorkbenchSessionsRequest.cpp
   src/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogDetailRequest.cpp
   src/v20230616/model/ListAIWorkbenchAgentsResponse.cpp
   src/v20230616/model/ListAIWorkbenchSkillsRequest.cpp
   src/v20230616/model/SlackRobotNoticeTmplMatcher.cpp
   src/v20230616/model/DingDingRobotNoticeTmpl.cpp
+  src/v20230616/model/DispenseFilter.cpp
   src/v20230616/model/WebhookNoticeTmplHeader.cpp
   src/v20230616/model/PageByNumParams.cpp
   src/v20230616/model/GetAIWorkbenchArtifactDownloadURLRequest.cpp
@@ -1248,15 +1278,20 @@ set(monitor_src
   src/v20230616/model/AlarmNotifyHistory.cpp
   src/v20230616/model/DescribeAIWorkbenchSessionRequest.cpp
   src/v20230616/model/ListAIWorkbenchSessionsResponse.cpp
-  src/v20230616/model/ListAIWorkbenchTasksResponse.cpp
+  src/v20230616/model/Producer.cpp
+  src/v20230616/model/DeleteDispenseExternalRuleRequest.cpp
+  src/v20230616/model/DescribeExtNamespaceResponse.cpp
   src/v20230616/model/DescribeAIWorkbenchExecutionResponse.cpp
   src/v20230616/model/ResourceInstance.cpp
   src/v20230616/model/TriggerAIWorkbenchSREDigitalTwinTaskResponse.cpp
   src/v20230616/model/PagerDutyRobotNoticeTmpl.cpp
+  src/v20230616/model/ListAIWorkbenchTasksResponse.cpp
   src/v20230616/model/Tag.cpp
   src/v20230616/model/DeleteAIWorkbenchAgentResponse.cpp
+  src/v20230616/model/DispenseRegion.cpp
   src/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogListRequest.cpp
-  src/v20230616/model/QCloudYeheWeChatNoticeTmplItem.cpp
+  src/v20230616/model/ExtMetric.cpp
+  src/v20230616/model/DescribeKafkaResponse.cpp
   src/v20230616/model/DescribeAlarmNotifyHistoriesRequest.cpp
   src/v20230616/model/UpdateAIWorkbenchAgentResponse.cpp
   src/v20230616/model/TeamsRobotNoticeTmpl.cpp
@@ -1264,6 +1299,8 @@ set(monitor_src
   src/v20230616/model/NoticeContentTmpl.cpp
   src/v20230616/model/SessionInfo.cpp
   src/v20230616/model/PageByNoResult.cpp
+  src/v20230616/model/ListAIWorkbenchResourceMapsResponse.cpp
+  src/v20230616/model/DescribeExtMetricRequest.cpp
   src/v20230616/model/TeamsWorkflowRobotNoticeTmpl.cpp
   src/v20230616/model/ListAIWorkbenchMCPsResponse.cpp
   src/v20230616/model/SkillInfo.cpp
@@ -1273,23 +1310,30 @@ set(monitor_src
   src/v20230616/model/ListAIWorkbenchResourceMapsRequest.cpp
   src/v20230616/model/ListAIWorkbenchArtifactsResponse.cpp
   src/v20230616/model/CancelAIWorkbenchChatRequest.cpp
+  src/v20230616/model/ModifyDispenseExternalRuleRequest.cpp
   src/v20230616/model/DescribeAlarmNotifyHistoriesResponse.cpp
   src/v20230616/model/InstructionConfig.cpp
   src/v20230616/model/DeleteAIWorkbenchTaskResponse.cpp
   src/v20230616/model/DescribeAIWorkbenchSREDigitalTwinTaskListResponse.cpp
   src/v20230616/model/DescribeAIWorkbenchSessionResponse.cpp
+  src/v20230616/model/ListAIWorkbenchTasksRequest.cpp
   src/v20230616/model/WeWorkRobotNoticeTmpl.cpp
+  src/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogDetailResponse.cpp
   src/v20230616/model/TriggerAIWorkbenchTaskRequest.cpp
   src/v20230616/model/DescribeNoticeContentTmplRequest.cpp
   src/v20230616/model/ListAIWorkbenchMessagesResponse.cpp
   src/v20230616/model/TaskInfo.cpp
+  src/v20230616/model/DescribeDispenseExternalRuleRequest.cpp
+  src/v20230616/model/DescribeKafkaRequest.cpp
   src/v20230616/model/ListAIWorkbenchArtifactsRequest.cpp
   src/v20230616/model/CreateAIWorkbenchAgentResponse.cpp
   src/v20230616/model/DeleteNoticeContentTmplsRequest.cpp
   src/v20230616/model/PageByNoParams.cpp
+  src/v20230616/model/CreateDispenseExternalRuleRequest.cpp
   src/v20230616/model/ListAIWorkbenchResourceInstancesRequest.cpp
   src/v20230616/model/ChannelsReceivers.cpp
   src/v20230616/model/CreateAIWorkbenchTaskResponse.cpp
+  src/v20230616/model/DescribeDispenseExternalRuleResponse.cpp
   src/v20230616/model/DescribeAIWorkbenchExecutionRequest.cpp
   src/v20230616/model/DescribeAIWorkbenchSREDigitalTwinTaskListRequest.cpp
   src/v20230616/model/AIWorkbenchSREDigitalTwinWorkLogList.cpp
@@ -1299,46 +1343,58 @@ set(monitor_src
   src/v20230616/model/PageByNumResult.cpp
   src/v20230616/model/CreateAIWorkbenchAgentRequest.cpp
   src/v20230616/model/EnvEntry.cpp
-  src/v20230616/model/ListAIWorkbenchResourceMapsResponse.cpp
+  src/v20230616/model/KafkaConnectivity.cpp
   src/v20230616/model/QCloudYeheNoticeTmplMatcher.cpp
   src/v20230616/model/ListAIWorkbenchMessagesRequest.cpp
   src/v20230616/model/QCloudYeheNoticeTmplItem.cpp
   src/v20230616/model/ListAIWorkbenchExecutionsResponse.cpp
   src/v20230616/model/DescribeAIWorkbenchAgentRequest.cpp
   src/v20230616/model/GoogleChatRobotNoticeTmpl.cpp
+  src/v20230616/model/Rule.cpp
   src/v20230616/model/ArtifactInfo.cpp
   src/v20230616/model/ListAIWorkbenchResourceInstancesResponse.cpp
-  src/v20230616/model/NotifyRelatedNotice.cpp
+  src/v20230616/model/AIWorkbenchSREDigitalTwinWorkLogDetail.cpp
   src/v20230616/model/DescribeAIWorkbenchSkillRequest.cpp
   src/v20230616/model/GoogleChatRobotNoticeTmplMatcher.cpp
+  src/v20230616/model/DescribeDispenseExternalRuleListResponse.cpp
   src/v20230616/model/MessageInfo.cpp
   src/v20230616/model/QCloudYeheNoticeTmpl.cpp
   src/v20230616/model/MCPInfo.cpp
+  src/v20230616/model/CreateDispenseExternalRuleResponse.cpp
   src/v20230616/model/CreateNoticeContentTmplRequest.cpp
-  src/v20230616/model/ListAIWorkbenchTasksRequest.cpp
+  src/v20230616/model/QCloudYeheWeChatNoticeTmplItem.cpp
+  src/v20230616/model/DescribeExtNamespaceRequest.cpp
   src/v20230616/model/WebhookNoticeTmplMatcher.cpp
-  src/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogDetailResponse.cpp
+  src/v20230616/model/DispenseCondition.cpp
   src/v20230616/model/DescribeAIWorkbenchAgentResponse.cpp
   src/v20230616/model/ExecutionInfo.cpp
   src/v20230616/model/GetAIWorkbenchArtifactDownloadURLResponse.cpp
   src/v20230616/model/PagerDutyRobotNoticeTmplHeader.cpp
   src/v20230616/model/NoticeContentTmplBindPolicyCount.cpp
+  src/v20230616/model/DescribeDispenseRegionRequest.cpp
+  src/v20230616/model/DescribeDispenseExternalRuleListRequest.cpp
   src/v20230616/model/TriggerAIWorkbenchSREDigitalTwinTaskRequest.cpp
   src/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogListResponse.cpp
   src/v20230616/model/CreateAIWorkbenchTaskRequest.cpp
   src/v20230616/model/DescribeAIWorkbenchArtifactResponse.cpp
   src/v20230616/model/CancelAIWorkbenchChatResponse.cpp
   src/v20230616/model/ModifyNoticeContentTmplResponse.cpp
+  src/v20230616/model/ModifyDispenseExternalRuleStatusResponse.cpp
   src/v20230616/model/WeWorkRobotNoticeTmplMatcher.cpp
   src/v20230616/model/ContentBlockInfo.cpp
   src/v20230616/model/PagerDutyRobotNoticeTmplMatcher.cpp
+  src/v20230616/model/DeleteDispenseExternalRuleResponse.cpp
   src/v20230616/model/FeiShuRobotNoticeTmpl.cpp
+  src/v20230616/model/DispenseGlobalTag.cpp
   src/v20230616/model/ListAIWorkbenchAgentsRequest.cpp
+  src/v20230616/model/DescribeDispenseRegionResponse.cpp
   src/v20230616/model/DeleteNoticeContentTmplsResponse.cpp
   src/v20230616/model/AIWorkbenchSREDigitalTwinTaskList.cpp
   src/v20230616/model/UpdateAIWorkbenchAgentRequest.cpp
   src/v20230616/model/ModifyNoticeContentTmplRequest.cpp
+  src/v20230616/model/DescribeExtMetricResponse.cpp
   src/v20230616/model/EnvVar.cpp
+  src/v20230616/model/ModifyDispenseExternalRuleResponse.cpp
   )
 
 set(monitor_include

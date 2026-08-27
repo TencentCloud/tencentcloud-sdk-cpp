@@ -51,7 +51,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_sgIPHasBeenSet(false),
     m_partitionNumberHasBeenSet(false),
     m_webUiVersionHasBeenSet(false),
-    m_enableCbsSysEncryptFlagHasBeenSet(false)
+    m_enableCbsSysEncryptFlagHasBeenSet(false),
+    m_metaDBGroupInfoHasBeenSet(false)
 {
 }
 
@@ -341,6 +342,21 @@ string CreateClusterRequest::ToJsonString() const
         string key = "EnableCbsSysEncryptFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableCbsSysEncryptFlag, allocator);
+    }
+
+    if (m_metaDBGroupInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetaDBGroupInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_metaDBGroupInfo.begin(); itr != m_metaDBGroupInfo.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -813,6 +829,22 @@ void CreateClusterRequest::SetEnableCbsSysEncryptFlag(const bool& _enableCbsSysE
 bool CreateClusterRequest::EnableCbsSysEncryptFlagHasBeenSet() const
 {
     return m_enableCbsSysEncryptFlagHasBeenSet;
+}
+
+vector<CustomMetaDBInfo> CreateClusterRequest::GetMetaDBGroupInfo() const
+{
+    return m_metaDBGroupInfo;
+}
+
+void CreateClusterRequest::SetMetaDBGroupInfo(const vector<CustomMetaDBInfo>& _metaDBGroupInfo)
+{
+    m_metaDBGroupInfo = _metaDBGroupInfo;
+    m_metaDBGroupInfoHasBeenSet = true;
+}
+
+bool CreateClusterRequest::MetaDBGroupInfoHasBeenSet() const
+{
+    return m_metaDBGroupInfoHasBeenSet;
 }
 
 

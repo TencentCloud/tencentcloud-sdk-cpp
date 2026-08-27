@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取固定值，为"monitor"
-                     * @return Module 固定值，为"monitor"
+                     * 获取<p>固定值，为&quot;monitor&quot;</p>
+                     * @return Module <p>固定值，为&quot;monitor&quot;</p>
                      * 
                      */
                     std::string GetModule() const;
 
                     /**
-                     * 设置固定值，为"monitor"
-                     * @param _module 固定值，为"monitor"
+                     * 设置<p>固定值，为&quot;monitor&quot;</p>
+                     * @param _module <p>固定值，为&quot;monitor&quot;</p>
                      * 
                      */
                     void SetModule(const std::string& _module);
@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取值班表名称
-                     * @return OnCallFormName 值班表名称
+                     * 获取<p>值班表名称</p>
+                     * @return OnCallFormName <p>值班表名称</p>
                      * 
                      */
                     std::string GetOnCallFormName() const;
 
                     /**
-                     * 设置值班表名称
-                     * @param _onCallFormName 值班表名称
+                     * 设置<p>值班表名称</p>
+                     * @param _onCallFormName <p>值班表名称</p>
                      * 
                      */
                     void SetOnCallFormName(const std::string& _onCallFormName);
@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool OnCallFormNameHasBeenSet() const;
 
                     /**
-                     * 获取值班人员id组
-                     * @return StaffInfos 值班人员id组
+                     * 获取<p>值班人员id组</p>
+                     * @return StaffInfos <p>值班人员id组</p>
                      * 
                      */
                     std::vector<StaffInfo> GetStaffInfos() const;
 
                     /**
-                     * 设置值班人员id组
-                     * @param _staffInfos 值班人员id组
+                     * 设置<p>值班人员id组</p>
+                     * @param _staffInfos <p>值班人员id组</p>
                      * 
                      */
                     void SetStaffInfos(const std::vector<StaffInfo>& _staffInfos);
@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool StaffInfosHasBeenSet() const;
 
                     /**
-                     * 获取轮转类型
-                     * @return RotationType 轮转类型
+                     * 获取<p>轮转类型</p>
+                     * @return RotationType <p>轮转类型</p>
                      * 
                      */
                     std::string GetRotationType() const;
 
                     /**
-                     * 设置轮转类型
-                     * @param _rotationType 轮转类型
+                     * 设置<p>轮转类型</p>
+                     * @param _rotationType <p>轮转类型</p>
                      * 
                      */
                     void SetRotationType(const std::string& _rotationType);
@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool RotationTypeHasBeenSet() const;
 
                     /**
-                     * 获取换班时间
-                     * @return ShiftTime 换班时间
+                     * 获取<p>换班时间</p>
+                     * @return ShiftTime <p>换班时间</p>
                      * 
                      */
                     std::string GetShiftTime() const;
 
                     /**
-                     * 设置换班时间
-                     * @param _shiftTime 换班时间
+                     * 设置<p>换班时间</p>
+                     * @param _shiftTime <p>换班时间</p>
                      * 
                      */
                     void SetShiftTime(const std::string& _shiftTime);
@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool ShiftTimeHasBeenSet() const;
 
                     /**
-                     * 获取有效期开始时间，单位s
-                     * @return EffectiveStartTime 有效期开始时间，单位s
+                     * 获取<p>有效期开始时间，单位s</p>
+                     * @return EffectiveStartTime <p>有效期开始时间，单位s</p>
                      * 
                      */
                     int64_t GetEffectiveStartTime() const;
 
                     /**
-                     * 设置有效期开始时间，单位s
-                     * @param _effectiveStartTime 有效期开始时间，单位s
+                     * 设置<p>有效期开始时间，单位s</p>
+                     * @param _effectiveStartTime <p>有效期开始时间，单位s</p>
                      * 
                      */
                     void SetEffectiveStartTime(const int64_t& _effectiveStartTime);
@@ -172,15 +172,15 @@ namespace TencentCloud
                     bool EffectiveStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取有效期结束时间，单位s
-                     * @return EffectiveEndTime 有效期结束时间，单位s
+                     * 获取<p>有效期结束时间，单位s</p>
+                     * @return EffectiveEndTime <p>有效期结束时间，单位s</p>
                      * 
                      */
                     int64_t GetEffectiveEndTime() const;
 
                     /**
-                     * 设置有效期结束时间，单位s
-                     * @param _effectiveEndTime 有效期结束时间，单位s
+                     * 设置<p>有效期结束时间，单位s</p>
+                     * @param _effectiveEndTime <p>有效期结束时间，单位s</p>
                      * 
                      */
                     void SetEffectiveEndTime(const int64_t& _effectiveEndTime);
@@ -193,15 +193,15 @@ namespace TencentCloud
                     bool EffectiveEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取时区(-12 - 12)
-                     * @return TimeZone 时区(-12 - 12)
+                     * 获取<p>时区(-12 - 12)</p>
+                     * @return TimeZone <p>时区(-12 - 12)</p>
                      * 
                      */
                     double GetTimeZone() const;
 
                     /**
-                     * 设置时区(-12 - 12)
-                     * @param _timeZone 时区(-12 - 12)
+                     * 设置<p>时区(-12 - 12)</p>
+                     * @param _timeZone <p>时区(-12 - 12)</p>
                      * 
                      */
                     void SetTimeZone(const double& _timeZone);
@@ -214,15 +214,15 @@ namespace TencentCloud
                     bool TimeZoneHasBeenSet() const;
 
                     /**
-                     * 获取值班表描述
-                     * @return OnCallFormDesc 值班表描述
+                     * 获取<p>值班表描述</p>
+                     * @return OnCallFormDesc <p>值班表描述</p>
                      * 
                      */
                     std::string GetOnCallFormDesc() const;
 
                     /**
-                     * 设置值班表描述
-                     * @param _onCallFormDesc 值班表描述
+                     * 设置<p>值班表描述</p>
+                     * @param _onCallFormDesc <p>值班表描述</p>
                      * 
                      */
                     void SetOnCallFormDesc(const std::string& _onCallFormDesc);
@@ -235,15 +235,15 @@ namespace TencentCloud
                     bool OnCallFormDescHasBeenSet() const;
 
                     /**
-                     * 获取轮班信息
-                     * @return CoverStaffInfos 轮班信息
+                     * 获取<p>轮班信息</p>
+                     * @return CoverStaffInfos <p>轮班信息</p>
                      * 
                      */
                     std::vector<CoverStaffInfo> GetCoverStaffInfos() const;
 
                     /**
-                     * 设置轮班信息
-                     * @param _coverStaffInfos 轮班信息
+                     * 设置<p>轮班信息</p>
+                     * @param _coverStaffInfos <p>轮班信息</p>
                      * 
                      */
                     void SetCoverStaffInfos(const std::vector<CoverStaffInfo>& _coverStaffInfos);
@@ -256,15 +256,15 @@ namespace TencentCloud
                     bool CoverStaffInfosHasBeenSet() const;
 
                     /**
-                     * 获取模板绑定的标签
-                     * @return Tags 模板绑定的标签
+                     * 获取<p>模板绑定的标签</p>
+                     * @return Tags <p>模板绑定的标签</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置模板绑定的标签
-                     * @param _tags 模板绑定的标签
+                     * 设置<p>模板绑定的标签</p>
+                     * @param _tags <p>模板绑定的标签</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -279,67 +279,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 固定值，为"monitor"
+                     * <p>固定值，为&quot;monitor&quot;</p>
                      */
                     std::string m_module;
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 值班表名称
+                     * <p>值班表名称</p>
                      */
                     std::string m_onCallFormName;
                     bool m_onCallFormNameHasBeenSet;
 
                     /**
-                     * 值班人员id组
+                     * <p>值班人员id组</p>
                      */
                     std::vector<StaffInfo> m_staffInfos;
                     bool m_staffInfosHasBeenSet;
 
                     /**
-                     * 轮转类型
+                     * <p>轮转类型</p>
                      */
                     std::string m_rotationType;
                     bool m_rotationTypeHasBeenSet;
 
                     /**
-                     * 换班时间
+                     * <p>换班时间</p>
                      */
                     std::string m_shiftTime;
                     bool m_shiftTimeHasBeenSet;
 
                     /**
-                     * 有效期开始时间，单位s
+                     * <p>有效期开始时间，单位s</p>
                      */
                     int64_t m_effectiveStartTime;
                     bool m_effectiveStartTimeHasBeenSet;
 
                     /**
-                     * 有效期结束时间，单位s
+                     * <p>有效期结束时间，单位s</p>
                      */
                     int64_t m_effectiveEndTime;
                     bool m_effectiveEndTimeHasBeenSet;
 
                     /**
-                     * 时区(-12 - 12)
+                     * <p>时区(-12 - 12)</p>
                      */
                     double m_timeZone;
                     bool m_timeZoneHasBeenSet;
 
                     /**
-                     * 值班表描述
+                     * <p>值班表描述</p>
                      */
                     std::string m_onCallFormDesc;
                     bool m_onCallFormDescHasBeenSet;
 
                     /**
-                     * 轮班信息
+                     * <p>轮班信息</p>
                      */
                     std::vector<CoverStaffInfo> m_coverStaffInfos;
                     bool m_coverStaffInfosHasBeenSet;
 
                     /**
-                     * 模板绑定的标签
+                     * <p>模板绑定的标签</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

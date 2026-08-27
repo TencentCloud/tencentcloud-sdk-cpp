@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取类型
-                     * @return Type 类型
+                     * 获取<p>类型</p>
+                     * @return Type <p>类型</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型
-                     * @param _type 类型
+                     * 设置<p>类型</p>
+                     * @param _type <p>类型</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取接入点
-                     * @return Url 接入点
+                     * 获取<p>接入点</p>
+                     * @return Url <p>接入点</p>
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置接入点
-                     * @param _url 接入点
+                     * 设置<p>接入点</p>
+                     * @param _url <p>接入点</p>
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取vpc信息
-                     * @return VpcId vpc信息
+                     * 获取<p>vpc信息</p>
+                     * @return VpcId <p>vpc信息</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置vpc信息
-                     * @param _vpcId vpc信息
+                     * 设置<p>vpc信息</p>
+                     * @param _vpcId <p>vpc信息</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网信息
-                     * @return SubnetId 子网信息
+                     * 获取<p>子网信息</p>
+                     * @return SubnetId <p>子网信息</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网信息
-                     * @param _subnetId 子网信息
+                     * 设置<p>子网信息</p>
+                     * @param _subnetId <p>子网信息</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取主机
-                     * @return Host 主机
+                     * 获取<p>主机</p>
+                     * @return Host <p>主机</p>
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置主机
-                     * @param _host 主机
+                     * 设置<p>主机</p>
+                     * @param _host <p>主机</p>
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取端口
-                     * @return Port 端口
+                     * 获取<p>端口</p>
+                     * @return Port <p>端口</p>
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置端口
-                     * @param _port 端口
+                     * 设置<p>端口</p>
+                     * @param _port <p>端口</p>
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取接入点ip
-                     * @return Ip 接入点ip
+                     * 获取<p>接入点ip</p>
+                     * @return Ip <p>接入点ip</p>
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置接入点ip
-                     * @param _ip 接入点ip
+                     * 设置<p>接入点ip</p>
+                     * @param _ip <p>接入点ip</p>
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -193,49 +193,103 @@ namespace TencentCloud
                      */
                     bool IpHasBeenSet() const;
 
+                    /**
+                     * 获取<p>端口是否打开</p>
+                     * @return PortEnable <p>端口是否打开</p>
+                     * 
+                     */
+                    bool GetPortEnable() const;
+
+                    /**
+                     * 设置<p>端口是否打开</p>
+                     * @param _portEnable <p>端口是否打开</p>
+                     * 
+                     */
+                    void SetPortEnable(const bool& _portEnable);
+
+                    /**
+                     * 判断参数 PortEnable 是否已赋值
+                     * @return PortEnable 是否已赋值
+                     * 
+                     */
+                    bool PortEnableHasBeenSet() const;
+
+                    /**
+                     * 获取<p>vpce唯一id</p>
+                     * @return VpcEndpointId <p>vpce唯一id</p>
+                     * 
+                     */
+                    std::string GetVpcEndpointId() const;
+
+                    /**
+                     * 设置<p>vpce唯一id</p>
+                     * @param _vpcEndpointId <p>vpce唯一id</p>
+                     * 
+                     */
+                    void SetVpcEndpointId(const std::string& _vpcEndpointId);
+
+                    /**
+                     * 判断参数 VpcEndpointId 是否已赋值
+                     * @return VpcEndpointId 是否已赋值
+                     * 
+                     */
+                    bool VpcEndpointIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 类型
+                     * <p>类型</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 接入点
+                     * <p>接入点</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * vpc信息
+                     * <p>vpc信息</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网信息
+                     * <p>子网信息</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 主机
+                     * <p>主机</p>
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
-                     * 端口
+                     * <p>端口</p>
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 接入点ip
+                     * <p>接入点ip</p>
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
+
+                    /**
+                     * <p>端口是否打开</p>
+                     */
+                    bool m_portEnable;
+                    bool m_portEnableHasBeenSet;
+
+                    /**
+                     * <p>vpce唯一id</p>
+                     */
+                    std::string m_vpcEndpointId;
+                    bool m_vpcEndpointIdHasBeenSet;
 
                 };
             }

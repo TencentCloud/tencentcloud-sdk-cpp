@@ -234,6 +234,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/PromptRewriteModel.h
   include/tencentcloud/adp/v20260520/model/ViewScope.h
   include/tencentcloud/adp/v20260520/model/CreateConversationRequest.h
+  include/tencentcloud/adp/v20260520/model/AgentExternalToolConfig.h
   include/tencentcloud/adp/v20260520/model/DescribeMsgRecordCategoryListRequest.h
   include/tencentcloud/adp/v20260520/model/CallSource.h
   include/tencentcloud/adp/v20260520/model/ConsumptionUsage.h
@@ -595,6 +596,7 @@ set(adp_src
   src/v20260520/model/PromptRewriteModel.cpp
   src/v20260520/model/ViewScope.cpp
   src/v20260520/model/CreateConversationRequest.cpp
+  src/v20260520/model/AgentExternalToolConfig.cpp
   src/v20260520/model/DescribeMsgRecordCategoryListRequest.cpp
   src/v20260520/model/CallSource.cpp
   src/v20260520/model/ConsumptionUsage.cpp

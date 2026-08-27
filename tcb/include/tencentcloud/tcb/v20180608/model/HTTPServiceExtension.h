@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcb/v20180608/model/HTTPServiceHeadersHandler.h>
+#include <tencentcloud/tcb/v20180608/model/HTTPServiceCacheSet.h>
 
 
 namespace TencentCloud
@@ -36,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * HTTP访问服务路由扩展字段
+                * HTTPService 路由扩展字段
                 */
                 class HTTPServiceExtension : public AbstractModel
                 {
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取添加请求头列表
-                     * @return HeadersHandler 添加请求头列表
+                     * 获取<p>添加请求头列表</p>
+                     * @return HeadersHandler <p>添加请求头列表</p>
                      * 
                      */
                     HTTPServiceHeadersHandler GetHeadersHandler() const;
 
                     /**
-                     * 设置添加请求头列表
-                     * @param _headersHandler 添加请求头列表
+                     * 设置<p>添加请求头列表</p>
+                     * @param _headersHandler <p>添加请求头列表</p>
                      * 
                      */
                     void SetHeadersHandler(const HTTPServiceHeadersHandler& _headersHandler);
@@ -68,13 +69,40 @@ namespace TencentCloud
                      */
                     bool HeadersHandlerHasBeenSet() const;
 
+                    /**
+                     * 获取<p>HTTPService 缓存配置，包含Cache 节点缓存 / MaxAge 浏览器缓存 / CacheKey 自定义缓存键</p>
+                     * @return Cache <p>HTTPService 缓存配置，包含Cache 节点缓存 / MaxAge 浏览器缓存 / CacheKey 自定义缓存键</p>
+                     * 
+                     */
+                    HTTPServiceCacheSet GetCache() const;
+
+                    /**
+                     * 设置<p>HTTPService 缓存配置，包含Cache 节点缓存 / MaxAge 浏览器缓存 / CacheKey 自定义缓存键</p>
+                     * @param _cache <p>HTTPService 缓存配置，包含Cache 节点缓存 / MaxAge 浏览器缓存 / CacheKey 自定义缓存键</p>
+                     * 
+                     */
+                    void SetCache(const HTTPServiceCacheSet& _cache);
+
+                    /**
+                     * 判断参数 Cache 是否已赋值
+                     * @return Cache 是否已赋值
+                     * 
+                     */
+                    bool CacheHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 添加请求头列表
+                     * <p>添加请求头列表</p>
                      */
                     HTTPServiceHeadersHandler m_headersHandler;
                     bool m_headersHandlerHasBeenSet;
+
+                    /**
+                     * <p>HTTPService 缓存配置，包含Cache 节点缓存 / MaxAge 浏览器缓存 / CacheKey 自定义缓存键</p>
+                     */
+                    HTTPServiceCacheSet m_cache;
+                    bool m_cacheHasBeenSet;
 
                 };
             }

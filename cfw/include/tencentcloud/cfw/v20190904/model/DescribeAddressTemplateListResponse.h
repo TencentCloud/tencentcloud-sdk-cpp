@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板总数
-                     * @return Total 模板总数
+                     * 获取<p>模板总数</p>
+                     * @return Total <p>模板总数</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取模板列表数据
-                     * @return Data 模板列表数据
+                     * 获取<p>模板列表数据</p>
+                     * @return Data <p>模板列表数据</p>
                      * 
                      */
                     std::vector<TemplateListInfo> GetData() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取模板名称列表
-                     * @return NameList 模板名称列表
+                     * 获取<p>模板名称列表</p>
+                     * @return NameList <p>模板名称列表</p>
                      * 
                      */
                     std::vector<std::string> GetNameList() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool NameListHasBeenSet() const;
 
                     /**
-                     * 获取Ip地址模板数量
-                     * @return IpTemplateCount Ip地址模板数量
+                     * 获取<p>Ip地址模板数量</p>
+                     * @return IpTemplateCount <p>Ip地址模板数量</p>
                      * 
                      */
                     int64_t GetIpTemplateCount() const;
@@ -101,8 +101,8 @@ namespace TencentCloud
                     bool IpTemplateCountHasBeenSet() const;
 
                     /**
-                     * 获取域名地址模板数量
-                     * @return DomainTemplateCount 域名地址模板数量
+                     * 获取<p>域名地址模板数量</p>
+                     * @return DomainTemplateCount <p>域名地址模板数量</p>
                      * 
                      */
                     int64_t GetDomainTemplateCount() const;
@@ -115,8 +115,8 @@ namespace TencentCloud
                     bool DomainTemplateCountHasBeenSet() const;
 
                     /**
-                     * 获取协议端口模板数量
-                     * @return PortTemplateCount 协议端口模板数量
+                     * 获取<p>协议端口模板数量</p>
+                     * @return PortTemplateCount <p>协议端口模板数量</p>
                      * 
                      */
                     int64_t GetPortTemplateCount() const;
@@ -129,8 +129,8 @@ namespace TencentCloud
                     bool PortTemplateCountHasBeenSet() const;
 
                     /**
-                     * 获取已使用的地址模板数
-                     * @return UsedTemplateCount 已使用的地址模板数
+                     * 获取<p>已使用的地址模板数</p>
+                     * @return UsedTemplateCount <p>已使用的地址模板数</p>
                      * 
                      */
                     int64_t GetUsedTemplateCount() const;
@@ -143,8 +143,8 @@ namespace TencentCloud
                     bool UsedTemplateCountHasBeenSet() const;
 
                     /**
-                     * 获取地址模板配额数量
-                     * @return TemplateQuotaCount 地址模板配额数量
+                     * 获取<p>地址模板配额数量</p>
+                     * @return TemplateQuotaCount <p>地址模板配额数量</p>
                      * 
                      */
                     int64_t GetTemplateQuotaCount() const;
@@ -156,55 +156,75 @@ namespace TencentCloud
                      */
                     bool TemplateQuotaCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>容器服务地址模板数量</p>
+                     * @return TkeTemplateCount <p>容器服务地址模板数量</p>
+                     * 
+                     */
+                    int64_t GetTkeTemplateCount() const;
+
+                    /**
+                     * 判断参数 TkeTemplateCount 是否已赋值
+                     * @return TkeTemplateCount 是否已赋值
+                     * 
+                     */
+                    bool TkeTemplateCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 模板总数
+                     * <p>模板总数</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 模板列表数据
+                     * <p>模板列表数据</p>
                      */
                     std::vector<TemplateListInfo> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 模板名称列表
+                     * <p>模板名称列表</p>
                      */
                     std::vector<std::string> m_nameList;
                     bool m_nameListHasBeenSet;
 
                     /**
-                     * Ip地址模板数量
+                     * <p>Ip地址模板数量</p>
                      */
                     int64_t m_ipTemplateCount;
                     bool m_ipTemplateCountHasBeenSet;
 
                     /**
-                     * 域名地址模板数量
+                     * <p>域名地址模板数量</p>
                      */
                     int64_t m_domainTemplateCount;
                     bool m_domainTemplateCountHasBeenSet;
 
                     /**
-                     * 协议端口模板数量
+                     * <p>协议端口模板数量</p>
                      */
                     int64_t m_portTemplateCount;
                     bool m_portTemplateCountHasBeenSet;
 
                     /**
-                     * 已使用的地址模板数
+                     * <p>已使用的地址模板数</p>
                      */
                     int64_t m_usedTemplateCount;
                     bool m_usedTemplateCountHasBeenSet;
 
                     /**
-                     * 地址模板配额数量
+                     * <p>地址模板配额数量</p>
                      */
                     int64_t m_templateQuotaCount;
                     bool m_templateQuotaCountHasBeenSet;
+
+                    /**
+                     * <p>容器服务地址模板数量</p>
+                     */
+                    int64_t m_tkeTemplateCount;
+                    bool m_tkeTemplateCountHasBeenSet;
 
                 };
             }

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>交易类型：purchase-新购，renew-续费，modify-变配</p>
-                     * @return ActionType <p>交易类型：purchase-新购，renew-续费，modify-变配</p>
+                     * 获取<p>交易类型：purchase-新购</p>
+                     * @return ActionType <p>交易类型：purchase-新购</p>
                      * 
                      */
                     std::string GetActionType() const;
 
                     /**
-                     * 设置<p>交易类型：purchase-新购，renew-续费，modify-变配</p>
-                     * @param _actionType <p>交易类型：purchase-新购，renew-续费，modify-变配</p>
+                     * 设置<p>交易类型：purchase-新购</p>
+                     * @param _actionType <p>交易类型：purchase-新购</p>
                      * 
                      */
                     void SetActionType(const std::string& _actionType);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ActionTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>付费模式：0-后付费，1-预付费</p>
-                     * @return PayMode <p>付费模式：0-后付费，1-预付费</p>
+                     * 获取<p>付费模式：1-预付费</p>
+                     * @return PayMode <p>付费模式：1-预付费</p>
                      * 
                      */
                     uint64_t GetPayMode() const;
 
                     /**
-                     * 设置<p>付费模式：0-后付费，1-预付费</p>
-                     * @param _payMode <p>付费模式：0-后付费，1-预付费</p>
+                     * 设置<p>付费模式：1-预付费</p>
+                     * @param _payMode <p>付费模式：1-预付费</p>
                      * 
                      */
                     void SetPayMode(const uint64_t& _payMode);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool ResourceQuotaListHasBeenSet() const;
 
                     /**
-                     * 获取<p>时间大小，预付费时为购买月数，后付费时为3600</p>
-                     * @return TimeSpan <p>时间大小，预付费时为购买月数，后付费时为3600</p>
+                     * 获取<p>时间大小，预付费时为购买月数</p>
+                     * @return TimeSpan <p>时间大小，预付费时为购买月数</p>
                      * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
-                     * 设置<p>时间大小，预付费时为购买月数，后付费时为3600</p>
-                     * @param _timeSpan <p>时间大小，预付费时为购买月数，后付费时为3600</p>
+                     * 设置<p>时间大小，预付费时为购买月数</p>
+                     * @param _timeSpan <p>时间大小，预付费时为购买月数</p>
                      * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取<p>时间单位，预付费为m（月），后付费为s（秒）</p>
-                     * @return TimeUnit <p>时间单位，预付费为m（月），后付费为s（秒）</p>
+                     * 获取<p>时间单位，预付费为m（月）</p>
+                     * @return TimeUnit <p>时间单位，预付费为m（月）</p>
                      * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
-                     * 设置<p>时间单位，预付费为m（月），后付费为s（秒）</p>
-                     * @param _timeUnit <p>时间单位，预付费为m（月），后付费为s（秒）</p>
+                     * 设置<p>时间单位，预付费为m（月）</p>
+                     * @param _timeUnit <p>时间单位，预付费为m（月）</p>
                      * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取<p>队列描述</p>
-                     * @return Description <p>队列描述</p>
+                     * 获取<p>资源包描述</p>
+                     * @return Description <p>资源包描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置<p>队列描述</p>
-                     * @param _description <p>队列描述</p>
+                     * 设置<p>资源包描述</p>
+                     * @param _description <p>资源包描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -214,13 +214,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>交易类型：purchase-新购，renew-续费，modify-变配</p>
+                     * <p>交易类型：purchase-新购</p>
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
 
                     /**
-                     * <p>付费模式：0-后付费，1-预付费</p>
+                     * <p>付费模式：1-预付费</p>
                      */
                     uint64_t m_payMode;
                     bool m_payModeHasBeenSet;
@@ -232,13 +232,13 @@ namespace TencentCloud
                     bool m_resourceQuotaListHasBeenSet;
 
                     /**
-                     * <p>时间大小，预付费时为购买月数，后付费时为3600</p>
+                     * <p>时间大小，预付费时为购买月数</p>
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * <p>时间单位，预付费为m（月），后付费为s（秒）</p>
+                     * <p>时间单位，预付费为m（月）</p>
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
@@ -256,7 +256,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * <p>队列描述</p>
+                     * <p>资源包描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取失败删除的排班id
-                     * @return FailedOnCallFormIDs 失败删除的排班id
+                     * 获取<p>失败删除的排班id</p>
+                     * @return FailedOnCallFormIDs <p>失败删除的排班id</p>
                      * 
                      */
                     std::vector<std::string> GetFailedOnCallFormIDs() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool FailedOnCallFormIDsHasBeenSet() const;
 
                     /**
-                     * 获取成功删除的排班id
-                     * @return SuccessOnCallFormIDs 成功删除的排班id
+                     * 获取<p>成功删除的排班id</p>
+                     * @return SuccessOnCallFormIDs <p>成功删除的排班id</p>
                      * 
                      */
                     std::vector<std::string> GetSuccessOnCallFormIDs() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 失败删除的排班id
+                     * <p>失败删除的排班id</p>
                      */
                     std::vector<std::string> m_failedOnCallFormIDs;
                     bool m_failedOnCallFormIDsHasBeenSet;
 
                     /**
-                     * 成功删除的排班id
+                     * <p>成功删除的排班id</p>
                      */
                     std::vector<std::string> m_successOnCallFormIDs;
                     bool m_successOnCallFormIDsHasBeenSet;

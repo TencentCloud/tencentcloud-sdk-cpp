@@ -27,7 +27,9 @@ MQTTEndpointItem::MQTTEndpointItem() :
     m_subnetIdHasBeenSet(false),
     m_hostHasBeenSet(false),
     m_portHasBeenSet(false),
-    m_ipHasBeenSet(false)
+    m_ipHasBeenSet(false),
+    m_portEnableHasBeenSet(false),
+    m_vpcEndpointIdHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome MQTTEndpointItem::Deserialize(const rapidjson::Value &value)
         m_ipHasBeenSet = true;
     }
 
+    if (value.HasMember("PortEnable") && !value["PortEnable"].IsNull())
+    {
+        if (!value["PortEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `MQTTEndpointItem.PortEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_portEnable = value["PortEnable"].GetBool();
+        m_portEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcEndpointId") && !value["VpcEndpointId"].IsNull())
+    {
+        if (!value["VpcEndpointId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MQTTEndpointItem.VpcEndpointId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcEndpointId = string(value["VpcEndpointId"].GetString());
+        m_vpcEndpointIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void MQTTEndpointItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Ip";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_portEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PortEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_portEnable, allocator);
+    }
+
+    if (m_vpcEndpointIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcEndpointId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcEndpointId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void MQTTEndpointItem::SetIp(const string& _ip)
 bool MQTTEndpointItem::IpHasBeenSet() const
 {
     return m_ipHasBeenSet;
+}
+
+bool MQTTEndpointItem::GetPortEnable() const
+{
+    return m_portEnable;
+}
+
+void MQTTEndpointItem::SetPortEnable(const bool& _portEnable)
+{
+    m_portEnable = _portEnable;
+    m_portEnableHasBeenSet = true;
+}
+
+bool MQTTEndpointItem::PortEnableHasBeenSet() const
+{
+    return m_portEnableHasBeenSet;
+}
+
+string MQTTEndpointItem::GetVpcEndpointId() const
+{
+    return m_vpcEndpointId;
+}
+
+void MQTTEndpointItem::SetVpcEndpointId(const string& _vpcEndpointId)
+{
+    m_vpcEndpointId = _vpcEndpointId;
+    m_vpcEndpointIdHasBeenSet = true;
+}
+
+bool MQTTEndpointItem::VpcEndpointIdHasBeenSet() const
+{
+    return m_vpcEndpointIdHasBeenSet;
 }
 

@@ -30,6 +30,7 @@
 #include <tencentcloud/adp/v20260520/model/AgentPlugin.h>
 #include <tencentcloud/adp/v20260520/model/AgentSkill.h>
 #include <tencentcloud/adp/v20260520/model/AgentAdvancedConfig.h>
+#include <tencentcloud/adp/v20260520/model/AgentExternalToolConfig.h>
 
 
 namespace TencentCloud
@@ -220,6 +221,27 @@ namespace TencentCloud
                      */
                     bool AdvancedConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>调用方执行的 Function Tool 列表</p><p>入参限制：仅在 C 端用户态 Agent 场景可用，B 端配置态 Agent 忽略该字段与</p>
+                     * @return ExternalToolList <p>调用方执行的 Function Tool 列表</p><p>入参限制：仅在 C 端用户态 Agent 场景可用，B 端配置态 Agent 忽略该字段与</p>
+                     * 
+                     */
+                    std::vector<AgentExternalToolConfig> GetExternalToolList() const;
+
+                    /**
+                     * 设置<p>调用方执行的 Function Tool 列表</p><p>入参限制：仅在 C 端用户态 Agent 场景可用，B 端配置态 Agent 忽略该字段与</p>
+                     * @param _externalToolList <p>调用方执行的 Function Tool 列表</p><p>入参限制：仅在 C 端用户态 Agent 场景可用，B 端配置态 Agent 忽略该字段与</p>
+                     * 
+                     */
+                    void SetExternalToolList(const std::vector<AgentExternalToolConfig>& _externalToolList);
+
+                    /**
+                     * 判断参数 ExternalToolList 是否已赋值
+                     * @return ExternalToolList 是否已赋值
+                     * 
+                     */
+                    bool ExternalToolListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -269,6 +291,12 @@ namespace TencentCloud
                      */
                     AgentAdvancedConfig m_advancedConfig;
                     bool m_advancedConfigHasBeenSet;
+
+                    /**
+                     * <p>调用方执行的 Function Tool 列表</p><p>入参限制：仅在 C 端用户态 Agent 场景可用，B 端配置态 Agent 忽略该字段与</p>
+                     */
+                    std::vector<AgentExternalToolConfig> m_externalToolList;
+                    bool m_externalToolListHasBeenSet;
 
                 };
             }

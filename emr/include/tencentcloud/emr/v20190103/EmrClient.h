@@ -113,6 +113,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeJobFlowResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeKyuubiQueryInfoRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeKyuubiQueryInfoResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeMetaDBInfoRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeMetaDBInfoResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeNodeDataDisksRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeNodeDataDisksResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeNodeResourceConfigFastRequest.h>
@@ -374,6 +376,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKyuubiQueryInfoResponse> DescribeKyuubiQueryInfoOutcome;
                 typedef std::future<DescribeKyuubiQueryInfoOutcome> DescribeKyuubiQueryInfoOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeKyuubiQueryInfoRequest&, DescribeKyuubiQueryInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKyuubiQueryInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMetaDBInfoResponse> DescribeMetaDBInfoOutcome;
+                typedef std::future<DescribeMetaDBInfoOutcome> DescribeMetaDBInfoOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeMetaDBInfoRequest&, DescribeMetaDBInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMetaDBInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNodeDataDisksResponse> DescribeNodeDataDisksOutcome;
                 typedef std::future<DescribeNodeDataDisksOutcome> DescribeNodeDataDisksOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeNodeDataDisksRequest&, DescribeNodeDataDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodeDataDisksAsyncHandler;
@@ -952,6 +957,15 @@ namespace TencentCloud
                 DescribeKyuubiQueryInfoOutcome DescribeKyuubiQueryInfo(const Model::DescribeKyuubiQueryInfoRequest &request);
                 void DescribeKyuubiQueryInfoAsync(const Model::DescribeKyuubiQueryInfoRequest& request, const DescribeKyuubiQueryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeKyuubiQueryInfoOutcomeCallable DescribeKyuubiQueryInfoCallable(const Model::DescribeKyuubiQueryInfoRequest& request);
+
+                /**
+                 *集群metadb数据
+                 * @param req DescribeMetaDBInfoRequest
+                 * @return DescribeMetaDBInfoOutcome
+                 */
+                DescribeMetaDBInfoOutcome DescribeMetaDBInfo(const Model::DescribeMetaDBInfoRequest &request);
+                void DescribeMetaDBInfoAsync(const Model::DescribeMetaDBInfoRequest& request, const DescribeMetaDBInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMetaDBInfoOutcomeCallable DescribeMetaDBInfoCallable(const Model::DescribeMetaDBInfoRequest& request);
 
                 /**
                  *查询节点数据盘信息

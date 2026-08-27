@@ -29,12 +29,16 @@
 #include <tencentcloud/monitor/v20230616/model/CreateAIWorkbenchAgentResponse.h>
 #include <tencentcloud/monitor/v20230616/model/CreateAIWorkbenchTaskRequest.h>
 #include <tencentcloud/monitor/v20230616/model/CreateAIWorkbenchTaskResponse.h>
+#include <tencentcloud/monitor/v20230616/model/CreateDispenseExternalRuleRequest.h>
+#include <tencentcloud/monitor/v20230616/model/CreateDispenseExternalRuleResponse.h>
 #include <tencentcloud/monitor/v20230616/model/CreateNoticeContentTmplRequest.h>
 #include <tencentcloud/monitor/v20230616/model/CreateNoticeContentTmplResponse.h>
 #include <tencentcloud/monitor/v20230616/model/DeleteAIWorkbenchAgentRequest.h>
 #include <tencentcloud/monitor/v20230616/model/DeleteAIWorkbenchAgentResponse.h>
 #include <tencentcloud/monitor/v20230616/model/DeleteAIWorkbenchTaskRequest.h>
 #include <tencentcloud/monitor/v20230616/model/DeleteAIWorkbenchTaskResponse.h>
+#include <tencentcloud/monitor/v20230616/model/DeleteDispenseExternalRuleRequest.h>
+#include <tencentcloud/monitor/v20230616/model/DeleteDispenseExternalRuleResponse.h>
 #include <tencentcloud/monitor/v20230616/model/DeleteNoticeContentTmplsRequest.h>
 #include <tencentcloud/monitor/v20230616/model/DeleteNoticeContentTmplsResponse.h>
 #include <tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchAgentRequest.h>
@@ -55,6 +59,18 @@
 #include <tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSkillResponse.h>
 #include <tencentcloud/monitor/v20230616/model/DescribeAlarmNotifyHistoriesRequest.h>
 #include <tencentcloud/monitor/v20230616/model/DescribeAlarmNotifyHistoriesResponse.h>
+#include <tencentcloud/monitor/v20230616/model/DescribeDispenseExternalRuleRequest.h>
+#include <tencentcloud/monitor/v20230616/model/DescribeDispenseExternalRuleResponse.h>
+#include <tencentcloud/monitor/v20230616/model/DescribeDispenseExternalRuleListRequest.h>
+#include <tencentcloud/monitor/v20230616/model/DescribeDispenseExternalRuleListResponse.h>
+#include <tencentcloud/monitor/v20230616/model/DescribeDispenseRegionRequest.h>
+#include <tencentcloud/monitor/v20230616/model/DescribeDispenseRegionResponse.h>
+#include <tencentcloud/monitor/v20230616/model/DescribeExtMetricRequest.h>
+#include <tencentcloud/monitor/v20230616/model/DescribeExtMetricResponse.h>
+#include <tencentcloud/monitor/v20230616/model/DescribeExtNamespaceRequest.h>
+#include <tencentcloud/monitor/v20230616/model/DescribeExtNamespaceResponse.h>
+#include <tencentcloud/monitor/v20230616/model/DescribeKafkaRequest.h>
+#include <tencentcloud/monitor/v20230616/model/DescribeKafkaResponse.h>
 #include <tencentcloud/monitor/v20230616/model/DescribeNoticeContentTmplRequest.h>
 #include <tencentcloud/monitor/v20230616/model/DescribeNoticeContentTmplResponse.h>
 #include <tencentcloud/monitor/v20230616/model/GetAIWorkbenchArtifactDownloadURLRequest.h>
@@ -79,6 +95,10 @@
 #include <tencentcloud/monitor/v20230616/model/ListAIWorkbenchSkillsResponse.h>
 #include <tencentcloud/monitor/v20230616/model/ListAIWorkbenchTasksRequest.h>
 #include <tencentcloud/monitor/v20230616/model/ListAIWorkbenchTasksResponse.h>
+#include <tencentcloud/monitor/v20230616/model/ModifyDispenseExternalRuleRequest.h>
+#include <tencentcloud/monitor/v20230616/model/ModifyDispenseExternalRuleResponse.h>
+#include <tencentcloud/monitor/v20230616/model/ModifyDispenseExternalRuleStatusRequest.h>
+#include <tencentcloud/monitor/v20230616/model/ModifyDispenseExternalRuleStatusResponse.h>
 #include <tencentcloud/monitor/v20230616/model/ModifyNoticeContentTmplRequest.h>
 #include <tencentcloud/monitor/v20230616/model/ModifyNoticeContentTmplResponse.h>
 #include <tencentcloud/monitor/v20230616/model/TriggerAIWorkbenchSREDigitalTwinTaskRequest.h>
@@ -110,6 +130,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAIWorkbenchTaskResponse> CreateAIWorkbenchTaskOutcome;
                 typedef std::future<CreateAIWorkbenchTaskOutcome> CreateAIWorkbenchTaskOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreateAIWorkbenchTaskRequest&, CreateAIWorkbenchTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAIWorkbenchTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDispenseExternalRuleResponse> CreateDispenseExternalRuleOutcome;
+                typedef std::future<CreateDispenseExternalRuleOutcome> CreateDispenseExternalRuleOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::CreateDispenseExternalRuleRequest&, CreateDispenseExternalRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDispenseExternalRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateNoticeContentTmplResponse> CreateNoticeContentTmplOutcome;
                 typedef std::future<CreateNoticeContentTmplOutcome> CreateNoticeContentTmplOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreateNoticeContentTmplRequest&, CreateNoticeContentTmplOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNoticeContentTmplAsyncHandler;
@@ -119,6 +142,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAIWorkbenchTaskResponse> DeleteAIWorkbenchTaskOutcome;
                 typedef std::future<DeleteAIWorkbenchTaskOutcome> DeleteAIWorkbenchTaskOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DeleteAIWorkbenchTaskRequest&, DeleteAIWorkbenchTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAIWorkbenchTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDispenseExternalRuleResponse> DeleteDispenseExternalRuleOutcome;
+                typedef std::future<DeleteDispenseExternalRuleOutcome> DeleteDispenseExternalRuleOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DeleteDispenseExternalRuleRequest&, DeleteDispenseExternalRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDispenseExternalRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteNoticeContentTmplsResponse> DeleteNoticeContentTmplsOutcome;
                 typedef std::future<DeleteNoticeContentTmplsOutcome> DeleteNoticeContentTmplsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DeleteNoticeContentTmplsRequest&, DeleteNoticeContentTmplsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNoticeContentTmplsAsyncHandler;
@@ -149,6 +175,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAlarmNotifyHistoriesResponse> DescribeAlarmNotifyHistoriesOutcome;
                 typedef std::future<DescribeAlarmNotifyHistoriesOutcome> DescribeAlarmNotifyHistoriesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeAlarmNotifyHistoriesRequest&, DescribeAlarmNotifyHistoriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmNotifyHistoriesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDispenseExternalRuleResponse> DescribeDispenseExternalRuleOutcome;
+                typedef std::future<DescribeDispenseExternalRuleOutcome> DescribeDispenseExternalRuleOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeDispenseExternalRuleRequest&, DescribeDispenseExternalRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDispenseExternalRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDispenseExternalRuleListResponse> DescribeDispenseExternalRuleListOutcome;
+                typedef std::future<DescribeDispenseExternalRuleListOutcome> DescribeDispenseExternalRuleListOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeDispenseExternalRuleListRequest&, DescribeDispenseExternalRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDispenseExternalRuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDispenseRegionResponse> DescribeDispenseRegionOutcome;
+                typedef std::future<DescribeDispenseRegionOutcome> DescribeDispenseRegionOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeDispenseRegionRequest&, DescribeDispenseRegionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDispenseRegionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExtMetricResponse> DescribeExtMetricOutcome;
+                typedef std::future<DescribeExtMetricOutcome> DescribeExtMetricOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeExtMetricRequest&, DescribeExtMetricOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtMetricAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExtNamespaceResponse> DescribeExtNamespaceOutcome;
+                typedef std::future<DescribeExtNamespaceOutcome> DescribeExtNamespaceOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeExtNamespaceRequest&, DescribeExtNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtNamespaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKafkaResponse> DescribeKafkaOutcome;
+                typedef std::future<DescribeKafkaOutcome> DescribeKafkaOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeKafkaRequest&, DescribeKafkaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKafkaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNoticeContentTmplResponse> DescribeNoticeContentTmplOutcome;
                 typedef std::future<DescribeNoticeContentTmplOutcome> DescribeNoticeContentTmplOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeNoticeContentTmplRequest&, DescribeNoticeContentTmplOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNoticeContentTmplAsyncHandler;
@@ -185,6 +229,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListAIWorkbenchTasksResponse> ListAIWorkbenchTasksOutcome;
                 typedef std::future<ListAIWorkbenchTasksOutcome> ListAIWorkbenchTasksOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::ListAIWorkbenchTasksRequest&, ListAIWorkbenchTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAIWorkbenchTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDispenseExternalRuleResponse> ModifyDispenseExternalRuleOutcome;
+                typedef std::future<ModifyDispenseExternalRuleOutcome> ModifyDispenseExternalRuleOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::ModifyDispenseExternalRuleRequest&, ModifyDispenseExternalRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDispenseExternalRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDispenseExternalRuleStatusResponse> ModifyDispenseExternalRuleStatusOutcome;
+                typedef std::future<ModifyDispenseExternalRuleStatusOutcome> ModifyDispenseExternalRuleStatusOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::ModifyDispenseExternalRuleStatusRequest&, ModifyDispenseExternalRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDispenseExternalRuleStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyNoticeContentTmplResponse> ModifyNoticeContentTmplOutcome;
                 typedef std::future<ModifyNoticeContentTmplOutcome> ModifyNoticeContentTmplOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::ModifyNoticeContentTmplRequest&, ModifyNoticeContentTmplOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNoticeContentTmplAsyncHandler;
@@ -228,6 +278,15 @@ namespace TencentCloud
                 CreateAIWorkbenchTaskOutcomeCallable CreateAIWorkbenchTaskCallable(const Model::CreateAIWorkbenchTaskRequest& request);
 
                 /**
+                 *转发接口：创建转发规则
+                 * @param req CreateDispenseExternalRuleRequest
+                 * @return CreateDispenseExternalRuleOutcome
+                 */
+                CreateDispenseExternalRuleOutcome CreateDispenseExternalRule(const Model::CreateDispenseExternalRuleRequest &request);
+                void CreateDispenseExternalRuleAsync(const Model::CreateDispenseExternalRuleRequest& request, const CreateDispenseExternalRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDispenseExternalRuleOutcomeCallable CreateDispenseExternalRuleCallable(const Model::CreateDispenseExternalRuleRequest& request);
+
+                /**
                  *创建自定义通知内容模板
                  * @param req CreateNoticeContentTmplRequest
                  * @return CreateNoticeContentTmplOutcome
@@ -253,6 +312,15 @@ namespace TencentCloud
                 DeleteAIWorkbenchTaskOutcome DeleteAIWorkbenchTask(const Model::DeleteAIWorkbenchTaskRequest &request);
                 void DeleteAIWorkbenchTaskAsync(const Model::DeleteAIWorkbenchTaskRequest& request, const DeleteAIWorkbenchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAIWorkbenchTaskOutcomeCallable DeleteAIWorkbenchTaskCallable(const Model::DeleteAIWorkbenchTaskRequest& request);
+
+                /**
+                 *规则删除接口
+                 * @param req DeleteDispenseExternalRuleRequest
+                 * @return DeleteDispenseExternalRuleOutcome
+                 */
+                DeleteDispenseExternalRuleOutcome DeleteDispenseExternalRule(const Model::DeleteDispenseExternalRuleRequest &request);
+                void DeleteDispenseExternalRuleAsync(const Model::DeleteDispenseExternalRuleRequest& request, const DeleteDispenseExternalRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDispenseExternalRuleOutcomeCallable DeleteDispenseExternalRuleCallable(const Model::DeleteDispenseExternalRuleRequest& request);
 
                 /**
                  *删除通知内容模板
@@ -343,6 +411,60 @@ namespace TencentCloud
                 DescribeAlarmNotifyHistoriesOutcome DescribeAlarmNotifyHistories(const Model::DescribeAlarmNotifyHistoriesRequest &request);
                 void DescribeAlarmNotifyHistoriesAsync(const Model::DescribeAlarmNotifyHistoriesRequest& request, const DescribeAlarmNotifyHistoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAlarmNotifyHistoriesOutcomeCallable DescribeAlarmNotifyHistoriesCallable(const Model::DescribeAlarmNotifyHistoriesRequest& request);
+
+                /**
+                 *转发规则查询接口
+                 * @param req DescribeDispenseExternalRuleRequest
+                 * @return DescribeDispenseExternalRuleOutcome
+                 */
+                DescribeDispenseExternalRuleOutcome DescribeDispenseExternalRule(const Model::DescribeDispenseExternalRuleRequest &request);
+                void DescribeDispenseExternalRuleAsync(const Model::DescribeDispenseExternalRuleRequest& request, const DescribeDispenseExternalRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDispenseExternalRuleOutcomeCallable DescribeDispenseExternalRuleCallable(const Model::DescribeDispenseExternalRuleRequest& request);
+
+                /**
+                 *查询所有列表
+                 * @param req DescribeDispenseExternalRuleListRequest
+                 * @return DescribeDispenseExternalRuleListOutcome
+                 */
+                DescribeDispenseExternalRuleListOutcome DescribeDispenseExternalRuleList(const Model::DescribeDispenseExternalRuleListRequest &request);
+                void DescribeDispenseExternalRuleListAsync(const Model::DescribeDispenseExternalRuleListRequest& request, const DescribeDispenseExternalRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDispenseExternalRuleListOutcomeCallable DescribeDispenseExternalRuleListCallable(const Model::DescribeDispenseExternalRuleListRequest& request);
+
+                /**
+                 *转发地域列表查询接口
+                 * @param req DescribeDispenseRegionRequest
+                 * @return DescribeDispenseRegionOutcome
+                 */
+                DescribeDispenseRegionOutcome DescribeDispenseRegion(const Model::DescribeDispenseRegionRequest &request);
+                void DescribeDispenseRegionAsync(const Model::DescribeDispenseRegionRequest& request, const DescribeDispenseRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDispenseRegionOutcomeCallable DescribeDispenseRegionCallable(const Model::DescribeDispenseRegionRequest& request);
+
+                /**
+                 *查询对外指标
+                 * @param req DescribeExtMetricRequest
+                 * @return DescribeExtMetricOutcome
+                 */
+                DescribeExtMetricOutcome DescribeExtMetric(const Model::DescribeExtMetricRequest &request);
+                void DescribeExtMetricAsync(const Model::DescribeExtMetricRequest& request, const DescribeExtMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExtMetricOutcomeCallable DescribeExtMetricCallable(const Model::DescribeExtMetricRequest& request);
+
+                /**
+                 *转发查询对外命名空间接口
+                 * @param req DescribeExtNamespaceRequest
+                 * @return DescribeExtNamespaceOutcome
+                 */
+                DescribeExtNamespaceOutcome DescribeExtNamespace(const Model::DescribeExtNamespaceRequest &request);
+                void DescribeExtNamespaceAsync(const Model::DescribeExtNamespaceRequest& request, const DescribeExtNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExtNamespaceOutcomeCallable DescribeExtNamespaceCallable(const Model::DescribeExtNamespaceRequest& request);
+
+                /**
+                 *转发kafka连通性测试
+                 * @param req DescribeKafkaRequest
+                 * @return DescribeKafkaOutcome
+                 */
+                DescribeKafkaOutcome DescribeKafka(const Model::DescribeKafkaRequest &request);
+                void DescribeKafkaAsync(const Model::DescribeKafkaRequest& request, const DescribeKafkaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKafkaOutcomeCallable DescribeKafkaCallable(const Model::DescribeKafkaRequest& request);
 
                 /**
                  *根据查询条件获取自定义通知内容模板，若所有查询条件空，则获取账号下所有模板
@@ -451,6 +573,24 @@ namespace TencentCloud
                 ListAIWorkbenchTasksOutcome ListAIWorkbenchTasks(const Model::ListAIWorkbenchTasksRequest &request);
                 void ListAIWorkbenchTasksAsync(const Model::ListAIWorkbenchTasksRequest& request, const ListAIWorkbenchTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListAIWorkbenchTasksOutcomeCallable ListAIWorkbenchTasksCallable(const Model::ListAIWorkbenchTasksRequest& request);
+
+                /**
+                 *转发规则更新接口
+                 * @param req ModifyDispenseExternalRuleRequest
+                 * @return ModifyDispenseExternalRuleOutcome
+                 */
+                ModifyDispenseExternalRuleOutcome ModifyDispenseExternalRule(const Model::ModifyDispenseExternalRuleRequest &request);
+                void ModifyDispenseExternalRuleAsync(const Model::ModifyDispenseExternalRuleRequest& request, const ModifyDispenseExternalRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDispenseExternalRuleOutcomeCallable ModifyDispenseExternalRuleCallable(const Model::ModifyDispenseExternalRuleRequest& request);
+
+                /**
+                 *新增规则开启关闭接口
+                 * @param req ModifyDispenseExternalRuleStatusRequest
+                 * @return ModifyDispenseExternalRuleStatusOutcome
+                 */
+                ModifyDispenseExternalRuleStatusOutcome ModifyDispenseExternalRuleStatus(const Model::ModifyDispenseExternalRuleStatusRequest &request);
+                void ModifyDispenseExternalRuleStatusAsync(const Model::ModifyDispenseExternalRuleStatusRequest& request, const ModifyDispenseExternalRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDispenseExternalRuleStatusOutcomeCallable ModifyDispenseExternalRuleStatusCallable(const Model::ModifyDispenseExternalRuleStatusRequest& request);
 
                 /**
                  *修改通知内容模板

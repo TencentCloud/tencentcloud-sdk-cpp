@@ -30,7 +30,8 @@ DescribeAddressTemplateListRequest::DescribeAddressTemplateListRequest() :
     m_searchValueHasBeenSet(false),
     m_uuidHasBeenSet(false),
     m_templateTypeHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
+    m_templateIdHasBeenSet(false),
+    m_sourceTypeHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string DescribeAddressTemplateListRequest::ToJsonString() const
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sourceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +248,22 @@ void DescribeAddressTemplateListRequest::SetTemplateId(const string& _templateId
 bool DescribeAddressTemplateListRequest::TemplateIdHasBeenSet() const
 {
     return m_templateIdHasBeenSet;
+}
+
+string DescribeAddressTemplateListRequest::GetSourceType() const
+{
+    return m_sourceType;
+}
+
+void DescribeAddressTemplateListRequest::SetSourceType(const string& _sourceType)
+{
+    m_sourceType = _sourceType;
+    m_sourceTypeHasBeenSet = true;
+}
+
+bool DescribeAddressTemplateListRequest::SourceTypeHasBeenSet() const
+{
+    return m_sourceTypeHasBeenSet;
 }
 
 

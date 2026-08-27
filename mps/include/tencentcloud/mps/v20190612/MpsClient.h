@@ -35,6 +35,8 @@
 #include <tencentcloud/mps/v20190612/model/BatchStartStreamLinkFlowResponse.h>
 #include <tencentcloud/mps/v20190612/model/BatchStopStreamLinkFlowRequest.h>
 #include <tencentcloud/mps/v20190612/model/BatchStopStreamLinkFlowResponse.h>
+#include <tencentcloud/mps/v20190612/model/ChangeVoiceRequest.h>
+#include <tencentcloud/mps/v20190612/model/ChangeVoiceResponse.h>
 #include <tencentcloud/mps/v20190612/model/CloneViralRequest.h>
 #include <tencentcloud/mps/v20190612/model/CloneViralResponse.h>
 #include <tencentcloud/mps/v20190612/model/CloneVoiceRequest.h>
@@ -503,6 +505,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchStopStreamLinkFlowResponse> BatchStopStreamLinkFlowOutcome;
                 typedef std::future<BatchStopStreamLinkFlowOutcome> BatchStopStreamLinkFlowOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::BatchStopStreamLinkFlowRequest&, BatchStopStreamLinkFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchStopStreamLinkFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChangeVoiceResponse> ChangeVoiceOutcome;
+                typedef std::future<ChangeVoiceOutcome> ChangeVoiceOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ChangeVoiceRequest&, ChangeVoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChangeVoiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloneViralResponse> CloneViralOutcome;
                 typedef std::future<CloneViralOutcome> CloneViralOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CloneViralRequest&, CloneViralOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneViralAsyncHandler;
@@ -1214,6 +1219,15 @@ namespace TencentCloud
                 BatchStopStreamLinkFlowOutcome BatchStopStreamLinkFlow(const Model::BatchStopStreamLinkFlowRequest &request);
                 void BatchStopStreamLinkFlowAsync(const Model::BatchStopStreamLinkFlowRequest& request, const BatchStopStreamLinkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchStopStreamLinkFlowOutcomeCallable BatchStopStreamLinkFlowCallable(const Model::BatchStopStreamLinkFlowRequest& request);
+
+                /**
+                 *同步音色转换，根据输入音频和指定音色将输入音频转换为指定音色
+                 * @param req ChangeVoiceRequest
+                 * @return ChangeVoiceOutcome
+                 */
+                ChangeVoiceOutcome ChangeVoice(const Model::ChangeVoiceRequest &request);
+                void ChangeVoiceAsync(const Model::ChangeVoiceRequest& request, const ChangeVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChangeVoiceOutcomeCallable ChangeVoiceCallable(const Model::ChangeVoiceRequest& request);
 
                 /**
                  *爆款复刻。输入爆款参考视频+商品图，生成风格/节奏对齐的视频

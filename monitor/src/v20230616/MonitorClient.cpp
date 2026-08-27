@@ -190,6 +190,56 @@ MonitorClient::CreateAIWorkbenchTaskOutcomeCallable MonitorClient::CreateAIWorkb
     return prom->get_future();
 }
 
+MonitorClient::CreateDispenseExternalRuleOutcome MonitorClient::CreateDispenseExternalRule(const CreateDispenseExternalRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDispenseExternalRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDispenseExternalRuleResponse rsp = CreateDispenseExternalRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDispenseExternalRuleOutcome(rsp);
+        else
+            return CreateDispenseExternalRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDispenseExternalRuleOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreateDispenseExternalRuleAsync(const CreateDispenseExternalRuleRequest& request, const CreateDispenseExternalRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateDispenseExternalRuleRequest&;
+    using Resp = CreateDispenseExternalRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateDispenseExternalRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::CreateDispenseExternalRuleOutcomeCallable MonitorClient::CreateDispenseExternalRuleCallable(const CreateDispenseExternalRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateDispenseExternalRuleOutcome>>();
+    CreateDispenseExternalRuleAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const CreateDispenseExternalRuleRequest&,
+        CreateDispenseExternalRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MonitorClient::CreateNoticeContentTmplOutcome MonitorClient::CreateNoticeContentTmpl(const CreateNoticeContentTmplRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateNoticeContentTmpl");
@@ -332,6 +382,56 @@ MonitorClient::DeleteAIWorkbenchTaskOutcomeCallable MonitorClient::DeleteAIWorkb
         const MonitorClient*,
         const DeleteAIWorkbenchTaskRequest&,
         DeleteAIWorkbenchTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::DeleteDispenseExternalRuleOutcome MonitorClient::DeleteDispenseExternalRule(const DeleteDispenseExternalRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDispenseExternalRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDispenseExternalRuleResponse rsp = DeleteDispenseExternalRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDispenseExternalRuleOutcome(rsp);
+        else
+            return DeleteDispenseExternalRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDispenseExternalRuleOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DeleteDispenseExternalRuleAsync(const DeleteDispenseExternalRuleRequest& request, const DeleteDispenseExternalRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDispenseExternalRuleRequest&;
+    using Resp = DeleteDispenseExternalRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDispenseExternalRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DeleteDispenseExternalRuleOutcomeCallable MonitorClient::DeleteDispenseExternalRuleCallable(const DeleteDispenseExternalRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDispenseExternalRuleOutcome>>();
+    DeleteDispenseExternalRuleAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DeleteDispenseExternalRuleRequest&,
+        DeleteDispenseExternalRuleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -832,6 +932,306 @@ MonitorClient::DescribeAlarmNotifyHistoriesOutcomeCallable MonitorClient::Descri
         const MonitorClient*,
         const DescribeAlarmNotifyHistoriesRequest&,
         DescribeAlarmNotifyHistoriesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::DescribeDispenseExternalRuleOutcome MonitorClient::DescribeDispenseExternalRule(const DescribeDispenseExternalRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDispenseExternalRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDispenseExternalRuleResponse rsp = DescribeDispenseExternalRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDispenseExternalRuleOutcome(rsp);
+        else
+            return DescribeDispenseExternalRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDispenseExternalRuleOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeDispenseExternalRuleAsync(const DescribeDispenseExternalRuleRequest& request, const DescribeDispenseExternalRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDispenseExternalRuleRequest&;
+    using Resp = DescribeDispenseExternalRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDispenseExternalRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribeDispenseExternalRuleOutcomeCallable MonitorClient::DescribeDispenseExternalRuleCallable(const DescribeDispenseExternalRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDispenseExternalRuleOutcome>>();
+    DescribeDispenseExternalRuleAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribeDispenseExternalRuleRequest&,
+        DescribeDispenseExternalRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::DescribeDispenseExternalRuleListOutcome MonitorClient::DescribeDispenseExternalRuleList(const DescribeDispenseExternalRuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDispenseExternalRuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDispenseExternalRuleListResponse rsp = DescribeDispenseExternalRuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDispenseExternalRuleListOutcome(rsp);
+        else
+            return DescribeDispenseExternalRuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDispenseExternalRuleListOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeDispenseExternalRuleListAsync(const DescribeDispenseExternalRuleListRequest& request, const DescribeDispenseExternalRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDispenseExternalRuleListRequest&;
+    using Resp = DescribeDispenseExternalRuleListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDispenseExternalRuleList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribeDispenseExternalRuleListOutcomeCallable MonitorClient::DescribeDispenseExternalRuleListCallable(const DescribeDispenseExternalRuleListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDispenseExternalRuleListOutcome>>();
+    DescribeDispenseExternalRuleListAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribeDispenseExternalRuleListRequest&,
+        DescribeDispenseExternalRuleListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::DescribeDispenseRegionOutcome MonitorClient::DescribeDispenseRegion(const DescribeDispenseRegionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDispenseRegion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDispenseRegionResponse rsp = DescribeDispenseRegionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDispenseRegionOutcome(rsp);
+        else
+            return DescribeDispenseRegionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDispenseRegionOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeDispenseRegionAsync(const DescribeDispenseRegionRequest& request, const DescribeDispenseRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDispenseRegionRequest&;
+    using Resp = DescribeDispenseRegionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDispenseRegion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribeDispenseRegionOutcomeCallable MonitorClient::DescribeDispenseRegionCallable(const DescribeDispenseRegionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDispenseRegionOutcome>>();
+    DescribeDispenseRegionAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribeDispenseRegionRequest&,
+        DescribeDispenseRegionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::DescribeExtMetricOutcome MonitorClient::DescribeExtMetric(const DescribeExtMetricRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExtMetric");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExtMetricResponse rsp = DescribeExtMetricResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExtMetricOutcome(rsp);
+        else
+            return DescribeExtMetricOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExtMetricOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeExtMetricAsync(const DescribeExtMetricRequest& request, const DescribeExtMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeExtMetricRequest&;
+    using Resp = DescribeExtMetricResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeExtMetric", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribeExtMetricOutcomeCallable MonitorClient::DescribeExtMetricCallable(const DescribeExtMetricRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeExtMetricOutcome>>();
+    DescribeExtMetricAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribeExtMetricRequest&,
+        DescribeExtMetricOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::DescribeExtNamespaceOutcome MonitorClient::DescribeExtNamespace(const DescribeExtNamespaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExtNamespace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExtNamespaceResponse rsp = DescribeExtNamespaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExtNamespaceOutcome(rsp);
+        else
+            return DescribeExtNamespaceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExtNamespaceOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeExtNamespaceAsync(const DescribeExtNamespaceRequest& request, const DescribeExtNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeExtNamespaceRequest&;
+    using Resp = DescribeExtNamespaceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeExtNamespace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribeExtNamespaceOutcomeCallable MonitorClient::DescribeExtNamespaceCallable(const DescribeExtNamespaceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeExtNamespaceOutcome>>();
+    DescribeExtNamespaceAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribeExtNamespaceRequest&,
+        DescribeExtNamespaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::DescribeKafkaOutcome MonitorClient::DescribeKafka(const DescribeKafkaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKafka");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKafkaResponse rsp = DescribeKafkaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKafkaOutcome(rsp);
+        else
+            return DescribeKafkaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKafkaOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeKafkaAsync(const DescribeKafkaRequest& request, const DescribeKafkaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeKafkaRequest&;
+    using Resp = DescribeKafkaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeKafka", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribeKafkaOutcomeCallable MonitorClient::DescribeKafkaCallable(const DescribeKafkaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeKafkaOutcome>>();
+    DescribeKafkaAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribeKafkaRequest&,
+        DescribeKafkaOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1432,6 +1832,106 @@ MonitorClient::ListAIWorkbenchTasksOutcomeCallable MonitorClient::ListAIWorkbenc
         const MonitorClient*,
         const ListAIWorkbenchTasksRequest&,
         ListAIWorkbenchTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::ModifyDispenseExternalRuleOutcome MonitorClient::ModifyDispenseExternalRule(const ModifyDispenseExternalRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDispenseExternalRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDispenseExternalRuleResponse rsp = ModifyDispenseExternalRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDispenseExternalRuleOutcome(rsp);
+        else
+            return ModifyDispenseExternalRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDispenseExternalRuleOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ModifyDispenseExternalRuleAsync(const ModifyDispenseExternalRuleRequest& request, const ModifyDispenseExternalRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDispenseExternalRuleRequest&;
+    using Resp = ModifyDispenseExternalRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDispenseExternalRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::ModifyDispenseExternalRuleOutcomeCallable MonitorClient::ModifyDispenseExternalRuleCallable(const ModifyDispenseExternalRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDispenseExternalRuleOutcome>>();
+    ModifyDispenseExternalRuleAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const ModifyDispenseExternalRuleRequest&,
+        ModifyDispenseExternalRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::ModifyDispenseExternalRuleStatusOutcome MonitorClient::ModifyDispenseExternalRuleStatus(const ModifyDispenseExternalRuleStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDispenseExternalRuleStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDispenseExternalRuleStatusResponse rsp = ModifyDispenseExternalRuleStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDispenseExternalRuleStatusOutcome(rsp);
+        else
+            return ModifyDispenseExternalRuleStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDispenseExternalRuleStatusOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ModifyDispenseExternalRuleStatusAsync(const ModifyDispenseExternalRuleStatusRequest& request, const ModifyDispenseExternalRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDispenseExternalRuleStatusRequest&;
+    using Resp = ModifyDispenseExternalRuleStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDispenseExternalRuleStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::ModifyDispenseExternalRuleStatusOutcomeCallable MonitorClient::ModifyDispenseExternalRuleStatusCallable(const ModifyDispenseExternalRuleStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDispenseExternalRuleStatusOutcome>>();
+    ModifyDispenseExternalRuleStatusAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const ModifyDispenseExternalRuleStatusRequest&,
+        ModifyDispenseExternalRuleStatusOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

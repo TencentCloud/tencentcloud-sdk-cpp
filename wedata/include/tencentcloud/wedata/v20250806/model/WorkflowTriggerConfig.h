@@ -372,18 +372,68 @@ namespace TencentCloud
                     bool RecursiveHasBeenSet() const;
 
                     /**
-                     * 获取<p>文件到达模式下    触发最短间隔时间</p><p>单位：秒</p>
+                     * 获取<p>文件到达模式下 最小触发间隔</p><p>取值范围：[1, 1440]</p><p>单位：分钟</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TriggerMinimumIntervalSecond <p>文件到达模式下    触发最短间隔时间</p><p>单位：秒</p>
+                     * @return TriggerMinimumInterval <p>文件到达模式下 最小触发间隔</p><p>取值范围：[1, 1440]</p><p>单位：分钟</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTriggerMinimumInterval() const;
+
+                    /**
+                     * 设置<p>文件到达模式下 最小触发间隔</p><p>取值范围：[1, 1440]</p><p>单位：分钟</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _triggerMinimumInterval <p>文件到达模式下 最小触发间隔</p><p>取值范围：[1, 1440]</p><p>单位：分钟</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTriggerMinimumInterval(const int64_t& _triggerMinimumInterval);
+
+                    /**
+                     * 判断参数 TriggerMinimumInterval 是否已赋值
+                     * @return TriggerMinimumInterval 是否已赋值
+                     * 
+                     */
+                    bool TriggerMinimumIntervalHasBeenSet() const;
+
+                    /**
+                     * 获取<p>文件到达模式下 文件批次等待时间</p><p>取值范围：[1, 60]</p><p>单位：分钟</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TriggerWaitTime <p>文件到达模式下 文件批次等待时间</p><p>取值范围：[1, 60]</p><p>单位：分钟</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTriggerWaitTime() const;
+
+                    /**
+                     * 设置<p>文件到达模式下 文件批次等待时间</p><p>取值范围：[1, 60]</p><p>单位：分钟</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _triggerWaitTime <p>文件到达模式下 文件批次等待时间</p><p>取值范围：[1, 60]</p><p>单位：分钟</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTriggerWaitTime(const int64_t& _triggerWaitTime);
+
+                    /**
+                     * 判断参数 TriggerWaitTime 是否已赋值
+                     * @return TriggerWaitTime 是否已赋值
+                     * 
+                     */
+                    bool TriggerWaitTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>文件到达模式下    触发最短间隔时间</p><p>单位：秒</p><p>后续废弃 勿用</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TriggerMinimumIntervalSecond <p>文件到达模式下    触发最短间隔时间</p><p>单位：秒</p><p>后续废弃 勿用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTriggerMinimumIntervalSecond() const;
 
                     /**
-                     * 设置<p>文件到达模式下    触发最短间隔时间</p><p>单位：秒</p>
+                     * 设置<p>文件到达模式下    触发最短间隔时间</p><p>单位：秒</p><p>后续废弃 勿用</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _triggerMinimumIntervalSecond <p>文件到达模式下    触发最短间隔时间</p><p>单位：秒</p>
+                     * @param _triggerMinimumIntervalSecond <p>文件到达模式下    触发最短间隔时间</p><p>单位：秒</p><p>后续废弃 勿用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -397,18 +447,18 @@ namespace TencentCloud
                     bool TriggerMinimumIntervalSecondHasBeenSet() const;
 
                     /**
-                     * 获取<p>文件到达模式下    触发等待时间</p><p>单位：秒</p>
+                     * 获取<p>文件到达模式下    触发等待时间</p><p>单位：秒</p><p>后续废弃 勿用</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TriggerWaitTimeSecond <p>文件到达模式下    触发等待时间</p><p>单位：秒</p>
+                     * @return TriggerWaitTimeSecond <p>文件到达模式下    触发等待时间</p><p>单位：秒</p><p>后续废弃 勿用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTriggerWaitTimeSecond() const;
 
                     /**
-                     * 设置<p>文件到达模式下    触发等待时间</p><p>单位：秒</p>
+                     * 设置<p>文件到达模式下    触发等待时间</p><p>单位：秒</p><p>后续废弃 勿用</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _triggerWaitTimeSecond <p>文件到达模式下    触发等待时间</p><p>单位：秒</p>
+                     * @param _triggerWaitTimeSecond <p>文件到达模式下    触发等待时间</p><p>单位：秒</p><p>后续废弃 勿用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -515,14 +565,28 @@ namespace TencentCloud
                     bool m_recursiveHasBeenSet;
 
                     /**
-                     * <p>文件到达模式下    触发最短间隔时间</p><p>单位：秒</p>
+                     * <p>文件到达模式下 最小触发间隔</p><p>取值范围：[1, 1440]</p><p>单位：分钟</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_triggerMinimumInterval;
+                    bool m_triggerMinimumIntervalHasBeenSet;
+
+                    /**
+                     * <p>文件到达模式下 文件批次等待时间</p><p>取值范围：[1, 60]</p><p>单位：分钟</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_triggerWaitTime;
+                    bool m_triggerWaitTimeHasBeenSet;
+
+                    /**
+                     * <p>文件到达模式下    触发最短间隔时间</p><p>单位：秒</p><p>后续废弃 勿用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_triggerMinimumIntervalSecond;
                     bool m_triggerMinimumIntervalSecondHasBeenSet;
 
                     /**
-                     * <p>文件到达模式下    触发等待时间</p><p>单位：秒</p>
+                     * <p>文件到达模式下    触发等待时间</p><p>单位：秒</p><p>后续废弃 勿用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_triggerWaitTimeSecond;

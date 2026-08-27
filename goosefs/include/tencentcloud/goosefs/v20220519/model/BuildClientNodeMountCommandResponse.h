@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取挂载命令
-                     * @return Command 挂载命令
+                     * 获取<p>挂载命令</p>
+                     * @return Command <p>挂载命令</p>
                      * 
                      */
                     std::string GetCommand() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 挂载命令
+                     * <p>挂载命令</p>
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;

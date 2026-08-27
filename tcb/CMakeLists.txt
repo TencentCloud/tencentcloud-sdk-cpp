@@ -36,6 +36,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/AddProviderRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyClsTopicResponse.h
   include/tencentcloud/tcb/v20180608/model/DeleteProviderResponse.h
+  include/tencentcloud/tcb/v20180608/model/HTTPServiceRuleCondition.h
   include/tencentcloud/tcb/v20180608/model/CreateIndex.h
   include/tencentcloud/tcb/v20180608/model/ClusterDetail.h
   include/tencentcloud/tcb/v20180608/model/DbInstance.h
@@ -43,6 +44,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/ModifyStorageSourceResponse.h
   include/tencentcloud/tcb/v20180608/model/SMSProviderTemplateConfig.h
   include/tencentcloud/tcb/v20180608/model/CloudAppVersionItem.h
+  include/tencentcloud/tcb/v20180608/model/HTTPServiceCacheKeyParams.h
   include/tencentcloud/tcb/v20180608/model/CreateVmInstanceRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvsRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyUserResponse.h
@@ -80,6 +82,8 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeLoginConfigRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateHTTPServiceRouteRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateHostingDomainRequest.h
+  include/tencentcloud/tcb/v20180608/model/HTTPServiceDomainParam.h
+  include/tencentcloud/tcb/v20180608/model/HTTPServiceCacheParams.h
   include/tencentcloud/tcb/v20180608/model/SMSTemplateParams.h
   include/tencentcloud/tcb/v20180608/model/UnbindStorageSourceResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudAppInfoRequest.h
@@ -126,7 +130,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeCloudAppVersionListResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateStaticStoreRequest.h
   include/tencentcloud/tcb/v20180608/model/HTTPServiceExtension.h
-  include/tencentcloud/tcb/v20180608/model/LocalizedTemplate.h
+  include/tencentcloud/tcb/v20180608/model/HTTPServiceCacheSet.h
   include/tencentcloud/tcb/v20180608/model/DescribeBillingInfoResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateAuthDomainResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyDatabaseACLRequest.h
@@ -253,6 +257,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeStaticStoreResponse.h
   include/tencentcloud/tcb/v20180608/model/ValueDetail.h
   include/tencentcloud/tcb/v20180608/model/DescribeResourcePermissionRequest.h
+  include/tencentcloud/tcb/v20180608/model/HTTPServiceCacheAction.h
   include/tencentcloud/tcb/v20180608/model/ResourcePermission.h
   include/tencentcloud/tcb/v20180608/model/Variable.h
   include/tencentcloud/tcb/v20180608/model/ModifyHTTPServiceRouteResponse.h
@@ -293,12 +298,13 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/SearchClsLogRequest.h
   include/tencentcloud/tcb/v20180608/model/InquireVmPriceRequest.h
   include/tencentcloud/tcb/v20180608/model/CheckTcbServiceRequest.h
-  include/tencentcloud/tcb/v20180608/model/HTTPServiceDomainParam.h
+  include/tencentcloud/tcb/v20180608/model/HTTPServiceCacheRule.h
   include/tencentcloud/tcb/v20180608/model/PermissionInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeManagedAIModelListResponse.h
   include/tencentcloud/tcb/v20180608/model/DeleteVmInstanceResponse.h
   include/tencentcloud/tcb/v20180608/model/PlanInfo.h
   include/tencentcloud/tcb/v20180608/model/StaticEnvironment.h
+  include/tencentcloud/tcb/v20180608/model/LocalizedTemplate.h
   include/tencentcloud/tcb/v20180608/model/Tag.h
   include/tencentcloud/tcb/v20180608/model/CreateEnvRequest.h
   include/tencentcloud/tcb/v20180608/model/DeleteHTTPServiceRouteRequest.h
@@ -362,6 +368,7 @@ set(tcb_src
   src/v20180608/model/AddProviderRequest.cpp
   src/v20180608/model/ModifyClsTopicResponse.cpp
   src/v20180608/model/DeleteProviderResponse.cpp
+  src/v20180608/model/HTTPServiceRuleCondition.cpp
   src/v20180608/model/CreateIndex.cpp
   src/v20180608/model/ClusterDetail.cpp
   src/v20180608/model/DbInstance.cpp
@@ -369,6 +376,7 @@ set(tcb_src
   src/v20180608/model/ModifyStorageSourceResponse.cpp
   src/v20180608/model/SMSProviderTemplateConfig.cpp
   src/v20180608/model/CloudAppVersionItem.cpp
+  src/v20180608/model/HTTPServiceCacheKeyParams.cpp
   src/v20180608/model/CreateVmInstanceRequest.cpp
   src/v20180608/model/DescribeEnvsRequest.cpp
   src/v20180608/model/ModifyUserResponse.cpp
@@ -406,6 +414,8 @@ set(tcb_src
   src/v20180608/model/DescribeLoginConfigRequest.cpp
   src/v20180608/model/CreateHTTPServiceRouteRequest.cpp
   src/v20180608/model/CreateHostingDomainRequest.cpp
+  src/v20180608/model/HTTPServiceDomainParam.cpp
+  src/v20180608/model/HTTPServiceCacheParams.cpp
   src/v20180608/model/SMSTemplateParams.cpp
   src/v20180608/model/UnbindStorageSourceResponse.cpp
   src/v20180608/model/DescribeCloudAppInfoRequest.cpp
@@ -452,7 +462,7 @@ set(tcb_src
   src/v20180608/model/DescribeCloudAppVersionListResponse.cpp
   src/v20180608/model/CreateStaticStoreRequest.cpp
   src/v20180608/model/HTTPServiceExtension.cpp
-  src/v20180608/model/LocalizedTemplate.cpp
+  src/v20180608/model/HTTPServiceCacheSet.cpp
   src/v20180608/model/DescribeBillingInfoResponse.cpp
   src/v20180608/model/CreateAuthDomainResponse.cpp
   src/v20180608/model/ModifyDatabaseACLRequest.cpp
@@ -579,6 +589,7 @@ set(tcb_src
   src/v20180608/model/DescribeStaticStoreResponse.cpp
   src/v20180608/model/ValueDetail.cpp
   src/v20180608/model/DescribeResourcePermissionRequest.cpp
+  src/v20180608/model/HTTPServiceCacheAction.cpp
   src/v20180608/model/ResourcePermission.cpp
   src/v20180608/model/Variable.cpp
   src/v20180608/model/ModifyHTTPServiceRouteResponse.cpp
@@ -619,12 +630,13 @@ set(tcb_src
   src/v20180608/model/SearchClsLogRequest.cpp
   src/v20180608/model/InquireVmPriceRequest.cpp
   src/v20180608/model/CheckTcbServiceRequest.cpp
-  src/v20180608/model/HTTPServiceDomainParam.cpp
+  src/v20180608/model/HTTPServiceCacheRule.cpp
   src/v20180608/model/PermissionInfo.cpp
   src/v20180608/model/DescribeManagedAIModelListResponse.cpp
   src/v20180608/model/DeleteVmInstanceResponse.cpp
   src/v20180608/model/PlanInfo.cpp
   src/v20180608/model/StaticEnvironment.cpp
+  src/v20180608/model/LocalizedTemplate.cpp
   src/v20180608/model/Tag.cpp
   src/v20180608/model/CreateEnvRequest.cpp
   src/v20180608/model/DeleteHTTPServiceRouteRequest.cpp

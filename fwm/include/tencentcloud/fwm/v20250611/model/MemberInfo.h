@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取成员AppId
-                     * @return AppId 成员AppId
+                     * 获取<p>成员AppId</p>
+                     * @return AppId <p>成员AppId</p>
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
-                     * 设置成员AppId
-                     * @param _appId 成员AppId
+                     * 设置<p>成员AppId</p>
+                     * @param _appId <p>成员AppId</p>
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取成员Uin
-                     * @return Uin 成员Uin
+                     * 获取<p>成员Uin</p>
+                     * @return Uin <p>成员Uin</p>
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置成员Uin
-                     * @param _uin 成员Uin
+                     * 设置<p>成员Uin</p>
+                     * @param _uin <p>成员Uin</p>
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取成员昵称
-                     * @return Nickname 成员昵称
+                     * 获取<p>成员昵称</p>
+                     * @return Nickname <p>成员昵称</p>
                      * 
                      */
                     std::string GetNickname() const;
 
                     /**
-                     * 设置成员昵称
-                     * @param _nickname 成员昵称
+                     * 设置<p>成员昵称</p>
+                     * @param _nickname <p>成员昵称</p>
                      * 
                      */
                     void SetNickname(const std::string& _nickname);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool NicknameHasBeenSet() const;
 
                     /**
-                     * 获取成员Id
-                     * @return MemberId 成员Id
+                     * 获取<p>成员Id</p>
+                     * @return MemberId <p>成员Id</p>
                      * 
                      */
                     std::string GetMemberId() const;
 
                     /**
-                     * 设置成员Id
-                     * @param _memberId 成员Id
+                     * 设置<p>成员Id</p>
+                     * @param _memberId <p>成员Id</p>
                      * 
                      */
                     void SetMemberId(const std::string& _memberId);
@@ -130,31 +130,58 @@ namespace TencentCloud
                      */
                     bool MemberIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>所属部门</p>
+                     * @return NodeName <p>所属部门</p>
+                     * 
+                     */
+                    std::string GetNodeName() const;
+
+                    /**
+                     * 设置<p>所属部门</p>
+                     * @param _nodeName <p>所属部门</p>
+                     * 
+                     */
+                    void SetNodeName(const std::string& _nodeName);
+
+                    /**
+                     * 判断参数 NodeName 是否已赋值
+                     * @return NodeName 是否已赋值
+                     * 
+                     */
+                    bool NodeNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 成员AppId
+                     * <p>成员AppId</p>
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 成员Uin
+                     * <p>成员Uin</p>
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 成员昵称
+                     * <p>成员昵称</p>
                      */
                     std::string m_nickname;
                     bool m_nicknameHasBeenSet;
 
                     /**
-                     * 成员Id
+                     * <p>成员Id</p>
                      */
                     std::string m_memberId;
                     bool m_memberIdHasBeenSet;
+
+                    /**
+                     * <p>所属部门</p>
+                     */
+                    std::string m_nodeName;
+                    bool m_nodeNameHasBeenSet;
 
                 };
             }

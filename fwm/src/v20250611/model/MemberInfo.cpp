@@ -24,7 +24,8 @@ MemberInfo::MemberInfo() :
     m_appIdHasBeenSet(false),
     m_uinHasBeenSet(false),
     m_nicknameHasBeenSet(false),
-    m_memberIdHasBeenSet(false)
+    m_memberIdHasBeenSet(false),
+    m_nodeNameHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome MemberInfo::Deserialize(const rapidjson::Value &value)
         m_memberIdHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeName") && !value["NodeName"].IsNull())
+    {
+        if (!value["NodeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MemberInfo.NodeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeName = string(value["NodeName"].GetString());
+        m_nodeNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void MemberInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "MemberId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_memberId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void MemberInfo::SetMemberId(const string& _memberId)
 bool MemberInfo::MemberIdHasBeenSet() const
 {
     return m_memberIdHasBeenSet;
+}
+
+string MemberInfo::GetNodeName() const
+{
+    return m_nodeName;
+}
+
+void MemberInfo::SetNodeName(const string& _nodeName)
+{
+    m_nodeName = _nodeName;
+    m_nodeNameHasBeenSet = true;
+}
+
+bool MemberInfo::NodeNameHasBeenSet() const
+{
+    return m_nodeNameHasBeenSet;
 }
 

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取排班信息
-                     * @return OnCallForms 排班信息
+                     * 获取<p>排班信息</p>
+                     * @return OnCallForms <p>排班信息</p>
                      * 
                      */
                     std::vector<OnCallForm> GetOnCallForms() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool OnCallFormsHasBeenSet() const;
 
                     /**
-                     * 获取总数
-                     * @return TotalCount 总数
+                     * 获取<p>总数</p>
+                     * @return TotalCount <p>总数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 排班信息
+                     * <p>排班信息</p>
                      */
                     std::vector<OnCallForm> m_onCallForms;
                     bool m_onCallFormsHasBeenSet;
 
                     /**
-                     * 总数
+                     * <p>总数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

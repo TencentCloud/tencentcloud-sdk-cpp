@@ -96,7 +96,8 @@ InstanceOpsDto::InstanceOpsDto() :
     m_relatedEventListHasBeenSet(false),
     m_proxyTaskIdHasBeenSet(false),
     m_workflowRunNameHasBeenSet(false),
-    m_proxyTaskTypeHasBeenSet(false)
+    m_proxyTaskTypeHasBeenSet(false),
+    m_privilegeHasBeenSet(false)
 {
 }
 
@@ -929,6 +930,16 @@ CoreInternalOutcome InstanceOpsDto::Deserialize(const rapidjson::Value &value)
         m_proxyTaskTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Privilege") && !value["Privilege"].IsNull())
+    {
+        if (!value["Privilege"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.Privilege` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privilege = string(value["Privilege"].GetString());
+        m_privilegeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1577,6 +1588,14 @@ void InstanceOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_proxyTaskType.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_privilegeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Privilege";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privilege.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2796,5 +2815,21 @@ void InstanceOpsDto::SetProxyTaskType(const TaskTypeOpsDto& _proxyTaskType)
 bool InstanceOpsDto::ProxyTaskTypeHasBeenSet() const
 {
     return m_proxyTaskTypeHasBeenSet;
+}
+
+string InstanceOpsDto::GetPrivilege() const
+{
+    return m_privilege;
+}
+
+void InstanceOpsDto::SetPrivilege(const string& _privilege)
+{
+    m_privilege = _privilege;
+    m_privilegeHasBeenSet = true;
+}
+
+bool InstanceOpsDto::PrivilegeHasBeenSet() const
+{
+    return m_privilegeHasBeenSet;
 }
 

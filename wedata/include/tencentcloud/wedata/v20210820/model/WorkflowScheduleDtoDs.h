@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目ID
+                     * 获取<p>项目ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProjectId 项目ID
+                     * @return ProjectId <p>项目ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目ID
+                     * 设置<p>项目ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _projectId 项目ID
+                     * @param _projectId <p>项目ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取工作流ID
+                     * 获取<p>工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkflowId 工作流ID
+                     * @return WorkflowId <p>工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkflowId() const;
 
                     /**
-                     * 设置工作流ID
+                     * 设置<p>工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workflowId 工作流ID
+                     * @param _workflowId <p>工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool WorkflowIdHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间
+                     * @return CreateTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
+                     * 设置<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 创建时间
+                     * @param _createTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取创建人
+                     * 获取<p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Creater 创建人
+                     * @return Creater <p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreater() const;
 
                     /**
-                     * 设置创建人
+                     * 设置<p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _creater 创建人
+                     * @param _creater <p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool CreaterHasBeenSet() const;
 
                     /**
-                     * 获取修改时间
+                     * 获取<p>修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModifyTime 修改时间
+                     * @return ModifyTime <p>修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置修改时间
+                     * 设置<p>修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modifyTime 修改时间
+                     * @param _modifyTime <p>修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取延迟时间
+                     * 获取<p>延迟时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DelayTime 延迟时间
+                     * @return DelayTime <p>延迟时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDelayTime() const;
 
                     /**
-                     * 设置延迟时间
+                     * 设置<p>延迟时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _delayTime 延迟时间
+                     * @param _delayTime <p>延迟时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool DelayTimeHasBeenSet() const;
 
                     /**
-                     * 获取启动时间
+                     * 获取<p>启动时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StartupTime 启动时间
+                     * @return StartupTime <p>启动时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStartupTime() const;
 
                     /**
-                     * 设置启动时间
+                     * 设置<p>启动时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _startupTime 启动时间
+                     * @param _startupTime <p>启动时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool StartupTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务依赖
+                     * 获取<p>任务依赖</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SelfDepend 任务依赖
+                     * @return SelfDepend <p>任务依赖</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSelfDepend() const;
 
                     /**
-                     * 设置任务依赖
+                     * 设置<p>任务依赖</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _selfDepend 任务依赖
+                     * @param _selfDepend <p>任务依赖</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool SelfDependHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
+                     * 获取<p>开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StartTime 开始时间
+                     * @return StartTime <p>开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
+                     * 设置<p>开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _startTime 开始时间
+                     * @param _startTime <p>开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -272,18 +272,18 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
+                     * 获取<p>结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EndTime 结束时间
+                     * @return EndTime <p>结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
+                     * 设置<p>结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _endTime 结束时间
+                     * @param _endTime <p>结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -297,18 +297,18 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取指定运行时间
+                     * 获取<p>指定运行时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskAction 指定运行时间
+                     * @return TaskAction <p>指定运行时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskAction() const;
 
                     /**
-                     * 设置指定运行时间
+                     * 设置<p>指定运行时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskAction 指定运行时间
+                     * @param _taskAction <p>指定运行时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -322,18 +322,18 @@ namespace TencentCloud
                     bool TaskActionHasBeenSet() const;
 
                     /**
-                     * 获取调度周期时间单位
+                     * 获取<p>调度周期时间单位</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CycleType 调度周期时间单位
+                     * @return CycleType <p>调度周期时间单位</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCycleType() const;
 
                     /**
-                     * 设置调度周期时间单位
+                     * 设置<p>调度周期时间单位</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cycleType 调度周期时间单位
+                     * @param _cycleType <p>调度周期时间单位</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -347,18 +347,18 @@ namespace TencentCloud
                     bool CycleTypeHasBeenSet() const;
 
                     /**
-                     * 获取调度周期
+                     * 获取<p>调度周期</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CycleStep 调度周期
+                     * @return CycleStep <p>调度周期</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCycleStep() const;
 
                     /**
-                     * 设置调度周期
+                     * 设置<p>调度周期</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cycleStep 调度周期
+                     * @param _cycleStep <p>调度周期</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -372,18 +372,18 @@ namespace TencentCloud
                     bool CycleStepHasBeenSet() const;
 
                     /**
-                     * 获取Cron表达式
+                     * 获取<p>Cron表达式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CrontabExpression Cron表达式
+                     * @return CrontabExpression <p>Cron表达式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCrontabExpression() const;
 
                     /**
-                     * 设置Cron表达式
+                     * 设置<p>Cron表达式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _crontabExpression Cron表达式
+                     * @param _crontabExpression <p>Cron表达式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -397,18 +397,18 @@ namespace TencentCloud
                     bool CrontabExpressionHasBeenSet() const;
 
                     /**
-                     * 获取执行时间左闭区间
+                     * 获取<p>执行时间左闭区间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExecutionStartTime 执行时间左闭区间
+                     * @return ExecutionStartTime <p>执行时间左闭区间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecutionStartTime() const;
 
                     /**
-                     * 设置执行时间左闭区间
+                     * 设置<p>执行时间左闭区间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _executionStartTime 执行时间左闭区间
+                     * @param _executionStartTime <p>执行时间左闭区间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -422,18 +422,18 @@ namespace TencentCloud
                     bool ExecutionStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取执行时间右闭区间
+                     * 获取<p>执行时间右闭区间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExecutionEndTime 执行时间右闭区间
+                     * @return ExecutionEndTime <p>执行时间右闭区间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecutionEndTime() const;
 
                     /**
-                     * 设置执行时间右闭区间
+                     * 设置<p>执行时间右闭区间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _executionEndTime 执行时间右闭区间
+                     * @param _executionEndTime <p>执行时间右闭区间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -447,18 +447,18 @@ namespace TencentCloud
                     bool ExecutionEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例初始化策略
+                     * 获取<p>实例初始化策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceInitStrategy 实例初始化策略
+                     * @return InstanceInitStrategy <p>实例初始化策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceInitStrategy() const;
 
                     /**
-                     * 设置实例初始化策略
+                     * 设置<p>实例初始化策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceInitStrategy 实例初始化策略
+                     * @param _instanceInitStrategy <p>实例初始化策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -472,18 +472,18 @@ namespace TencentCloud
                     bool InstanceInitStrategyHasBeenSet() const;
 
                     /**
-                     * 获取工作流依赖
+                     * 获取<p>工作流依赖</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DependencyWorkflow 工作流依赖
+                     * @return DependencyWorkflow <p>工作流依赖</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDependencyWorkflow() const;
 
                     /**
-                     * 设置工作流依赖
+                     * 设置<p>工作流依赖</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dependencyWorkflow 工作流依赖
+                     * @param _dependencyWorkflow <p>工作流依赖</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -497,18 +497,18 @@ namespace TencentCloud
                     bool DependencyWorkflowHasBeenSet() const;
 
                     /**
-                     * 获取调度计划
+                     * 获取<p>调度计划</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SchedulerDesc 调度计划
+                     * @return SchedulerDesc <p>调度计划</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSchedulerDesc() const;
 
                     /**
-                     * 设置调度计划
+                     * 设置<p>调度计划</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _schedulerDesc 调度计划
+                     * @param _schedulerDesc <p>调度计划</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -522,18 +522,18 @@ namespace TencentCloud
                     bool SchedulerDescHasBeenSet() const;
 
                     /**
-                     * 获取工作流首次提交时间
+                     * 获取<p>工作流首次提交时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FirstSubmitTime 工作流首次提交时间
+                     * @return FirstSubmitTime <p>工作流首次提交时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFirstSubmitTime() const;
 
                     /**
-                     * 设置工作流首次提交时间
+                     * 设置<p>工作流首次提交时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _firstSubmitTime 工作流首次提交时间
+                     * @param _firstSubmitTime <p>工作流首次提交时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -547,18 +547,18 @@ namespace TencentCloud
                     bool FirstSubmitTimeHasBeenSet() const;
 
                     /**
-                     * 获取工作流最近提交时间
+                     * 获取<p>工作流最近提交时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LatestSubmitTime 工作流最近提交时间
+                     * @return LatestSubmitTime <p>工作流最近提交时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLatestSubmitTime() const;
 
                     /**
-                     * 设置工作流最近提交时间
+                     * 设置<p>工作流最近提交时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _latestSubmitTime 工作流最近提交时间
+                     * @param _latestSubmitTime <p>工作流最近提交时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -572,18 +572,18 @@ namespace TencentCloud
                     bool LatestSubmitTimeHasBeenSet() const;
 
                     /**
-                     * 获取日历调度是否开启
+                     * 获取<p>日历调度是否开启</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CalendarOpen 日历调度是否开启
+                     * @return CalendarOpen <p>日历调度是否开启</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCalendarOpen() const;
 
                     /**
-                     * 设置日历调度是否开启
+                     * 设置<p>日历调度是否开启</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _calendarOpen 日历调度是否开启
+                     * @param _calendarOpen <p>日历调度是否开启</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -597,18 +597,18 @@ namespace TencentCloud
                     bool CalendarOpenHasBeenSet() const;
 
                     /**
-                     * 获取日历调度名称
+                     * 获取<p>日历调度名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CalendarName 日历调度名称
+                     * @return CalendarName <p>日历调度名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCalendarName() const;
 
                     /**
-                     * 设置日历调度名称
+                     * 设置<p>日历调度名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _calendarName 日历调度名称
+                     * @param _calendarName <p>日历调度名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -622,18 +622,18 @@ namespace TencentCloud
                     bool CalendarNameHasBeenSet() const;
 
                     /**
-                     * 获取日历调度id
+                     * 获取<p>日历调度id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CalendarId 日历调度id
+                     * @return CalendarId <p>日历调度id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCalendarId() const;
 
                     /**
-                     * 设置日历调度id
+                     * 设置<p>日历调度id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _calendarId 日历调度id
+                     * @param _calendarId <p>日历调度id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -647,18 +647,18 @@ namespace TencentCloud
                     bool CalendarIdHasBeenSet() const;
 
                     /**
-                     * 获取时区配置
+                     * 获取<p>时区配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScheduleTimeZone 时区配置
+                     * @return ScheduleTimeZone <p>时区配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScheduleTimeZone() const;
 
                     /**
-                     * 设置时区配置
+                     * 设置<p>时区配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scheduleTimeZone 时区配置
+                     * @param _scheduleTimeZone <p>时区配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -671,182 +671,214 @@ namespace TencentCloud
                      */
                     bool ScheduleTimeZoneHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Privilege <p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPrivilege() const;
+
+                    /**
+                     * 设置<p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _privilege <p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPrivilege(const std::string& _privilege);
+
+                    /**
+                     * 判断参数 Privilege 是否已赋值
+                     * @return Privilege 是否已赋值
+                     * 
+                     */
+                    bool PrivilegeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 工作流ID
+                     * <p>工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workflowId;
                     bool m_workflowIdHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 创建人
+                     * <p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creater;
                     bool m_createrHasBeenSet;
 
                     /**
-                     * 修改时间
+                     * <p>修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 延迟时间
+                     * <p>延迟时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_delayTime;
                     bool m_delayTimeHasBeenSet;
 
                     /**
-                     * 启动时间
+                     * <p>启动时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_startupTime;
                     bool m_startupTimeHasBeenSet;
 
                     /**
-                     * 任务依赖
+                     * <p>任务依赖</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_selfDepend;
                     bool m_selfDependHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * <p>开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * <p>结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 指定运行时间
+                     * <p>指定运行时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskAction;
                     bool m_taskActionHasBeenSet;
 
                     /**
-                     * 调度周期时间单位
+                     * <p>调度周期时间单位</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cycleType;
                     bool m_cycleTypeHasBeenSet;
 
                     /**
-                     * 调度周期
+                     * <p>调度周期</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cycleStep;
                     bool m_cycleStepHasBeenSet;
 
                     /**
-                     * Cron表达式
+                     * <p>Cron表达式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_crontabExpression;
                     bool m_crontabExpressionHasBeenSet;
 
                     /**
-                     * 执行时间左闭区间
+                     * <p>执行时间左闭区间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_executionStartTime;
                     bool m_executionStartTimeHasBeenSet;
 
                     /**
-                     * 执行时间右闭区间
+                     * <p>执行时间右闭区间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_executionEndTime;
                     bool m_executionEndTimeHasBeenSet;
 
                     /**
-                     * 实例初始化策略
+                     * <p>实例初始化策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceInitStrategy;
                     bool m_instanceInitStrategyHasBeenSet;
 
                     /**
-                     * 工作流依赖
+                     * <p>工作流依赖</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dependencyWorkflow;
                     bool m_dependencyWorkflowHasBeenSet;
 
                     /**
-                     * 调度计划
+                     * <p>调度计划</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_schedulerDesc;
                     bool m_schedulerDescHasBeenSet;
 
                     /**
-                     * 工作流首次提交时间
+                     * <p>工作流首次提交时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_firstSubmitTime;
                     bool m_firstSubmitTimeHasBeenSet;
 
                     /**
-                     * 工作流最近提交时间
+                     * <p>工作流最近提交时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latestSubmitTime;
                     bool m_latestSubmitTimeHasBeenSet;
 
                     /**
-                     * 日历调度是否开启
+                     * <p>日历调度是否开启</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_calendarOpen;
                     bool m_calendarOpenHasBeenSet;
 
                     /**
-                     * 日历调度名称
+                     * <p>日历调度名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_calendarName;
                     bool m_calendarNameHasBeenSet;
 
                     /**
-                     * 日历调度id
+                     * <p>日历调度id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_calendarId;
                     bool m_calendarIdHasBeenSet;
 
                     /**
-                     * 时区配置
+                     * <p>时区配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scheduleTimeZone;
                     bool m_scheduleTimeZoneHasBeenSet;
+
+                    /**
+                     * <p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_privilege;
+                    bool m_privilegeHasBeenSet;
 
                 };
             }

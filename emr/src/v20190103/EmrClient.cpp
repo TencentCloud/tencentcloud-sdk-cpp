@@ -2290,6 +2290,56 @@ EmrClient::DescribeKyuubiQueryInfoOutcomeCallable EmrClient::DescribeKyuubiQuery
     return prom->get_future();
 }
 
+EmrClient::DescribeMetaDBInfoOutcome EmrClient::DescribeMetaDBInfo(const DescribeMetaDBInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMetaDBInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMetaDBInfoResponse rsp = DescribeMetaDBInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMetaDBInfoOutcome(rsp);
+        else
+            return DescribeMetaDBInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMetaDBInfoOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeMetaDBInfoAsync(const DescribeMetaDBInfoRequest& request, const DescribeMetaDBInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMetaDBInfoRequest&;
+    using Resp = DescribeMetaDBInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMetaDBInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EmrClient::DescribeMetaDBInfoOutcomeCallable EmrClient::DescribeMetaDBInfoCallable(const DescribeMetaDBInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMetaDBInfoOutcome>>();
+    DescribeMetaDBInfoAsync(
+    request,
+    [prom](
+        const EmrClient*,
+        const DescribeMetaDBInfoRequest&,
+        DescribeMetaDBInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EmrClient::DescribeNodeDataDisksOutcome EmrClient::DescribeNodeDataDisks(const DescribeNodeDataDisksRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNodeDataDisks");

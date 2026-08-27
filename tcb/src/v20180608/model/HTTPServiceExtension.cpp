@@ -21,7 +21,8 @@ using namespace TencentCloud::Tcb::V20180608::Model;
 using namespace std;
 
 HTTPServiceExtension::HTTPServiceExtension() :
-    m_headersHandlerHasBeenSet(false)
+    m_headersHandlerHasBeenSet(false),
+    m_cacheHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,23 @@ CoreInternalOutcome HTTPServiceExtension::Deserialize(const rapidjson::Value &va
         m_headersHandlerHasBeenSet = true;
     }
 
+    if (value.HasMember("Cache") && !value["Cache"].IsNull())
+    {
+        if (!value["Cache"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `HTTPServiceExtension.Cache` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cache.Deserialize(value["Cache"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cacheHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -61,6 +79,15 @@ void HTTPServiceExtension::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_headersHandler.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cacheHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cache";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cache.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -80,5 +107,21 @@ void HTTPServiceExtension::SetHeadersHandler(const HTTPServiceHeadersHandler& _h
 bool HTTPServiceExtension::HeadersHandlerHasBeenSet() const
 {
     return m_headersHandlerHasBeenSet;
+}
+
+HTTPServiceCacheSet HTTPServiceExtension::GetCache() const
+{
+    return m_cache;
+}
+
+void HTTPServiceExtension::SetCache(const HTTPServiceCacheSet& _cache)
+{
+    m_cache = _cache;
+    m_cacheHasBeenSet = true;
+}
+
+bool HTTPServiceExtension::CacheHasBeenSet() const
+{
+    return m_cacheHasBeenSet;
 }
 

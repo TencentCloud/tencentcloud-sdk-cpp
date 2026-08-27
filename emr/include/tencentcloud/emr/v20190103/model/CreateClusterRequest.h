@@ -660,6 +660,27 @@ namespace TencentCloud
                      */
                     bool EnableCbsSysEncryptFlagHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义metadb数据</p>
+                     * @return MetaDBGroupInfo <p>自定义metadb数据</p>
+                     * 
+                     */
+                    std::vector<CustomMetaDBInfo> GetMetaDBGroupInfo() const;
+
+                    /**
+                     * 设置<p>自定义metadb数据</p>
+                     * @param _metaDBGroupInfo <p>自定义metadb数据</p>
+                     * 
+                     */
+                    void SetMetaDBGroupInfo(const std::vector<CustomMetaDBInfo>& _metaDBGroupInfo);
+
+                    /**
+                     * 判断参数 MetaDBGroupInfo 是否已赋值
+                     * @return MetaDBGroupInfo 是否已赋值
+                     * 
+                     */
+                    bool MetaDBGroupInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -835,6 +856,12 @@ namespace TencentCloud
                      */
                     bool m_enableCbsSysEncryptFlag;
                     bool m_enableCbsSysEncryptFlagHasBeenSet;
+
+                    /**
+                     * <p>自定义metadb数据</p>
+                     */
+                    std::vector<CustomMetaDBInfo> m_metaDBGroupInfo;
+                    bool m_metaDBGroupInfoHasBeenSet;
 
                 };
             }

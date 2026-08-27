@@ -40,7 +40,8 @@ WorkflowDsDTO::WorkflowDsDTO() :
     m_bundleIdHasBeenSet(false),
     m_bundleInfoHasBeenSet(false),
     m_executeUserUinHasBeenSet(false),
-    m_executeUserNameHasBeenSet(false)
+    m_executeUserNameHasBeenSet(false),
+    m_privilegeHasBeenSet(false)
 {
 }
 
@@ -279,6 +280,16 @@ CoreInternalOutcome WorkflowDsDTO::Deserialize(const rapidjson::Value &value)
         m_executeUserNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Privilege") && !value["Privilege"].IsNull())
+    {
+        if (!value["Privilege"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowDsDTO.Privilege` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privilege = string(value["Privilege"].GetString());
+        m_privilegeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -465,6 +476,14 @@ void WorkflowDsDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "ExecuteUserName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_executeUserName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privilegeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Privilege";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privilege.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -788,5 +807,21 @@ void WorkflowDsDTO::SetExecuteUserName(const string& _executeUserName)
 bool WorkflowDsDTO::ExecuteUserNameHasBeenSet() const
 {
     return m_executeUserNameHasBeenSet;
+}
+
+string WorkflowDsDTO::GetPrivilege() const
+{
+    return m_privilege;
+}
+
+void WorkflowDsDTO::SetPrivilege(const string& _privilege)
+{
+    m_privilege = _privilege;
+    m_privilegeHasBeenSet = true;
+}
+
+bool WorkflowDsDTO::PrivilegeHasBeenSet() const
+{
+    return m_privilegeHasBeenSet;
 }
 

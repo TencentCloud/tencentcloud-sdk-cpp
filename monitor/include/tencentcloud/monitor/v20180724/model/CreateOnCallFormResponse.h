@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取值班表id
-                     * @return OnCallFormID 值班表id
+                     * 获取<p>值班表id</p>
+                     * @return OnCallFormID <p>值班表id</p>
                      * 
                      */
                     std::string GetOnCallFormID() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 值班表id
+                     * <p>值班表id</p>
                      */
                     std::string m_onCallFormID;
                     bool m_onCallFormIDHasBeenSet;

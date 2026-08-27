@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目id
+                     * 获取<p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProjectId 项目id
+                     * @return ProjectId <p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目id
+                     * 设置<p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _projectId 项目id
+                     * @param _projectId <p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取模版名称
+                     * 获取<p>模版名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CodeTemplateName 模版名称
+                     * @return CodeTemplateName <p>模版名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCodeTemplateName() const;
 
                     /**
-                     * 设置模版名称
+                     * 设置<p>模版名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _codeTemplateName 模版名称
+                     * @param _codeTemplateName <p>模版名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool CodeTemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取任务类型
+                     * 获取<p>任务类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskType 任务类型
+                     * @return TaskType <p>任务类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
-                     * 设置任务类型
+                     * 设置<p>任务类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskType 任务类型
+                     * @param _taskType <p>任务类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取代码模版描述
+                     * 获取<p>代码模版描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CodeTemplateDesc 代码模版描述
+                     * @return CodeTemplateDesc <p>代码模版描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCodeTemplateDesc() const;
 
                     /**
-                     * 设置代码模版描述
+                     * 设置<p>代码模版描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _codeTemplateDesc 代码模版描述
+                     * @param _codeTemplateDesc <p>代码模版描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -148,18 +148,18 @@ namespace TencentCloud
                     bool CodeTemplateDescHasBeenSet() const;
 
                     /**
-                     * 获取文件夹id
+                     * 获取<p>文件夹id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FolderId 文件夹id
+                     * @return FolderId <p>文件夹id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFolderId() const;
 
                     /**
-                     * 设置文件夹id
+                     * 设置<p>文件夹id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _folderId 文件夹id
+                     * @param _folderId <p>文件夹id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -173,18 +173,18 @@ namespace TencentCloud
                     bool FolderIdHasBeenSet() const;
 
                     /**
-                     * 获取文件夹名称
+                     * 获取<p>文件夹名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FolderName 文件夹名称
+                     * @return FolderName <p>文件夹名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFolderName() const;
 
                     /**
-                     * 设置文件夹名称
+                     * 设置<p>文件夹名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _folderName 文件夹名称
+                     * @param _folderName <p>文件夹名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -198,18 +198,18 @@ namespace TencentCloud
                     bool FolderNameHasBeenSet() const;
 
                     /**
-                     * 获取责任人名称
+                     * 获取<p>责任人名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InCharge 责任人名称
+                     * @return InCharge <p>责任人名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInCharge() const;
 
                     /**
-                     * 设置责任人名称
+                     * 设置<p>责任人名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _inCharge 责任人名称
+                     * @param _inCharge <p>责任人名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -223,18 +223,18 @@ namespace TencentCloud
                     bool InChargeHasBeenSet() const;
 
                     /**
-                     * 获取责任人id
+                     * 获取<p>责任人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InChargeId 责任人id
+                     * @return InChargeId <p>责任人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInChargeId() const;
 
                     /**
-                     * 设置责任人id
+                     * 设置<p>责任人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _inChargeId 责任人id
+                     * @param _inChargeId <p>责任人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -248,18 +248,18 @@ namespace TencentCloud
                     bool InChargeIdHasBeenSet() const;
 
                     /**
-                     * 获取扩展信息
+                     * 获取<p>扩展信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Ext 扩展信息
+                     * @return Ext <p>扩展信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TaskExtDsVO GetExt() const;
 
                     /**
-                     * 设置扩展信息
+                     * 设置<p>扩展信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ext 扩展信息
+                     * @param _ext <p>扩展信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -273,18 +273,18 @@ namespace TencentCloud
                     bool ExtHasBeenSet() const;
 
                     /**
-                     * 获取模版id
+                     * 获取<p>模版id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CodeTemplateId 模版id
+                     * @return CodeTemplateId <p>模版id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCodeTemplateId() const;
 
                     /**
-                     * 设置模版id
+                     * 设置<p>模版id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _codeTemplateId 模版id
+                     * @param _codeTemplateId <p>模版id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -298,18 +298,18 @@ namespace TencentCloud
                     bool CodeTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取最后更新时间
+                     * 获取<p>最后更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastUpdateTime 最后更新时间
+                     * @return LastUpdateTime <p>最后更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastUpdateTime() const;
 
                     /**
-                     * 设置最后更新时间
+                     * 设置<p>最后更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lastUpdateTime 最后更新时间
+                     * @param _lastUpdateTime <p>最后更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -323,18 +323,18 @@ namespace TencentCloud
                     bool LastUpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新人名称
+                     * 获取<p>更新人名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateUser 更新人名称
+                     * @return UpdateUser <p>更新人名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateUser() const;
 
                     /**
-                     * 设置更新人名称
+                     * 设置<p>更新人名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateUser 更新人名称
+                     * @param _updateUser <p>更新人名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -348,18 +348,18 @@ namespace TencentCloud
                     bool UpdateUserHasBeenSet() const;
 
                     /**
-                     * 获取更新人id
+                     * 获取<p>更新人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateUserId 更新人id
+                     * @return UpdateUserId <p>更新人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateUserId() const;
 
                     /**
-                     * 设置更新人id
+                     * 设置<p>更新人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateUserId 更新人id
+                     * @param _updateUserId <p>更新人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -373,18 +373,18 @@ namespace TencentCloud
                     bool UpdateUserIdHasBeenSet() const;
 
                     /**
-                     * 获取执行ip
+                     * 获取<p>执行ip</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BrokerIp 执行ip
+                     * @return BrokerIp <p>执行ip</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBrokerIp() const;
 
                     /**
-                     * 设置执行ip
+                     * 设置<p>执行ip</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _brokerIp 执行ip
+                     * @param _brokerIp <p>执行ip</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -398,18 +398,18 @@ namespace TencentCloud
                     bool BrokerIpHasBeenSet() const;
 
                     /**
-                     * 获取资源组id
+                     * 获取<p>资源组id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceGroup 资源组id
+                     * @return ResourceGroup <p>资源组id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceGroup() const;
 
                     /**
-                     * 设置资源组id
+                     * 设置<p>资源组id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourceGroup 资源组id
+                     * @param _resourceGroup <p>资源组id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -423,18 +423,18 @@ namespace TencentCloud
                     bool ResourceGroupHasBeenSet() const;
 
                     /**
-                     * 获取是否提交
+                     * 获取<p>是否提交</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Submit 是否提交
+                     * @return Submit <p>是否提交</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSubmit() const;
 
                     /**
-                     * 设置是否提交
+                     * 设置<p>是否提交</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _submit 是否提交
+                     * @param _submit <p>是否提交</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -448,18 +448,18 @@ namespace TencentCloud
                     bool SubmitHasBeenSet() const;
 
                     /**
-                     * 获取模版脚本是否发生变化
+                     * 获取<p>模版脚本是否发生变化</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScriptChange 模版脚本是否发生变化
+                     * @return ScriptChange <p>模版脚本是否发生变化</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetScriptChange() const;
 
                     /**
-                     * 设置模版脚本是否发生变化
+                     * 设置<p>模版脚本是否发生变化</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scriptChange 模版脚本是否发生变化
+                     * @param _scriptChange <p>模版脚本是否发生变化</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -473,18 +473,18 @@ namespace TencentCloud
                     bool ScriptChangeHasBeenSet() const;
 
                     /**
-                     * 获取代码模版脚本，base64编码返回
+                     * 获取<p>代码模版脚本，base64编码返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Content 代码模版脚本，base64编码返回
+                     * @return Content <p>代码模版脚本，base64编码返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置代码模版脚本，base64编码返回
+                     * 设置<p>代码模版脚本，base64编码返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _content 代码模版脚本，base64编码返回
+                     * @param _content <p>代码模版脚本，base64编码返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -497,133 +497,165 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Privilege <p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPrivilege() const;
+
+                    /**
+                     * 设置<p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _privilege <p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPrivilege(const std::string& _privilege);
+
+                    /**
+                     * 判断参数 Privilege 是否已赋值
+                     * @return Privilege 是否已赋值
+                     * 
+                     */
+                    bool PrivilegeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 项目id
+                     * <p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 模版名称
+                     * <p>模版名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_codeTemplateName;
                     bool m_codeTemplateNameHasBeenSet;
 
                     /**
-                     * 任务类型
+                     * <p>任务类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 代码模版描述
+                     * <p>代码模版描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_codeTemplateDesc;
                     bool m_codeTemplateDescHasBeenSet;
 
                     /**
-                     * 文件夹id
+                     * <p>文件夹id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_folderId;
                     bool m_folderIdHasBeenSet;
 
                     /**
-                     * 文件夹名称
+                     * <p>文件夹名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_folderName;
                     bool m_folderNameHasBeenSet;
 
                     /**
-                     * 责任人名称
+                     * <p>责任人名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inCharge;
                     bool m_inChargeHasBeenSet;
 
                     /**
-                     * 责任人id
+                     * <p>责任人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inChargeId;
                     bool m_inChargeIdHasBeenSet;
 
                     /**
-                     * 扩展信息
+                     * <p>扩展信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskExtDsVO m_ext;
                     bool m_extHasBeenSet;
 
                     /**
-                     * 模版id
+                     * <p>模版id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_codeTemplateId;
                     bool m_codeTemplateIdHasBeenSet;
 
                     /**
-                     * 最后更新时间
+                     * <p>最后更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastUpdateTime;
                     bool m_lastUpdateTimeHasBeenSet;
 
                     /**
-                     * 更新人名称
+                     * <p>更新人名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateUser;
                     bool m_updateUserHasBeenSet;
 
                     /**
-                     * 更新人id
+                     * <p>更新人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateUserId;
                     bool m_updateUserIdHasBeenSet;
 
                     /**
-                     * 执行ip
+                     * <p>执行ip</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_brokerIp;
                     bool m_brokerIpHasBeenSet;
 
                     /**
-                     * 资源组id
+                     * <p>资源组id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceGroup;
                     bool m_resourceGroupHasBeenSet;
 
                     /**
-                     * 是否提交
+                     * <p>是否提交</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_submit;
                     bool m_submitHasBeenSet;
 
                     /**
-                     * 模版脚本是否发生变化
+                     * <p>模版脚本是否发生变化</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_scriptChange;
                     bool m_scriptChangeHasBeenSet;
 
                     /**
-                     * 代码模版脚本，base64编码返回
+                     * <p>代码模版脚本，base64编码返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * <p>用户对该资源的最高权限</p><p>枚举值：</p><ul><li>NO_PERMISSIONS： 无权限</li><li>CAN_VIEW： 只读权限</li><li>CAN_MANAGE： 管理权限</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_privilege;
+                    bool m_privilegeHasBeenSet;
 
                 };
             }

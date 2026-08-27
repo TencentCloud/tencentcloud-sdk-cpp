@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总条数
-                     * @return Total 总条数
+                     * 获取<p>总条数</p>
+                     * @return Total <p>总条数</p>
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取规则详情
-                     * @return Data 规则详情
+                     * 获取<p>规则详情</p>
+                     * @return Data <p>规则详情</p>
                      * 
                      */
                     std::vector<IpsRuleDetailNew> GetData() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取返回状态码 0 成功 非0不成功
-                     * @return ReturnCode 返回状态码 0 成功 非0不成功
+                     * 获取<p>返回状态码 0 成功 非0不成功</p>
+                     * @return ReturnCode <p>返回状态码 0 成功 非0不成功</p>
                      * 
                      */
                     int64_t GetReturnCode() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool ReturnCodeHasBeenSet() const;
 
                     /**
-                     * 获取返回信息  success 成功 其他 不成功
-                     * @return ReturnMsg 返回信息  success 成功 其他 不成功
+                     * 获取<p>返回信息  success 成功 其他 不成功</p>
+                     * @return ReturnMsg <p>返回信息  success 成功 其他 不成功</p>
                      * 
                      */
                     std::string GetReturnMsg() const;
@@ -101,9 +101,9 @@ namespace TencentCloud
                     bool ReturnMsgHasBeenSet() const;
 
                     /**
-                     * 获取字段类型
+                     * 获取<p>字段类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Category 字段类型
+                     * @return Category <p>字段类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -119,31 +119,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总条数
+                     * <p>总条数</p>
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 规则详情
+                     * <p>规则详情</p>
                      */
                     std::vector<IpsRuleDetailNew> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 返回状态码 0 成功 非0不成功
+                     * <p>返回状态码 0 成功 非0不成功</p>
                      */
                     int64_t m_returnCode;
                     bool m_returnCodeHasBeenSet;
 
                     /**
-                     * 返回信息  success 成功 其他 不成功
+                     * <p>返回信息  success 成功 其他 不成功</p>
                      */
                     std::string m_returnMsg;
                     bool m_returnMsgHasBeenSet;
 
                     /**
-                     * 字段类型
+                     * <p>字段类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_category;

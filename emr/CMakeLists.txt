@@ -53,6 +53,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeHDFSStorageInfoRequest.h
   include/tencentcloud/emr/v20190103/model/JobFlowResourceSpec.h
+  include/tencentcloud/emr/v20190103/model/DescribeMetaDBInfoResponse.h
   include/tencentcloud/emr/v20190103/model/WebUIInfo.h
   include/tencentcloud/emr/v20190103/model/PrePaySetting.h
   include/tencentcloud/emr/v20190103/model/DescribeGlobalConfigResponse.h
@@ -273,6 +274,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/ModifyBootScriptRequest.h
   include/tencentcloud/emr/v20190103/model/FlowParamsDesc.h
   include/tencentcloud/emr/v20190103/model/ModifyYarnDeployResponse.h
+  include/tencentcloud/emr/v20190103/model/DescribeMetaDBInfoRequest.h
   include/tencentcloud/emr/v20190103/model/UserManagerUserBriefInfo.h
   include/tencentcloud/emr/v20190103/model/Placement.h
   include/tencentcloud/emr/v20190103/model/ComponentDeployInfo.h
@@ -478,6 +480,7 @@ set(emr_src
   src/v20190103/model/InquiryPriceCreateInstanceResponse.cpp
   src/v20190103/model/DescribeHDFSStorageInfoRequest.cpp
   src/v20190103/model/JobFlowResourceSpec.cpp
+  src/v20190103/model/DescribeMetaDBInfoResponse.cpp
   src/v20190103/model/WebUIInfo.cpp
   src/v20190103/model/PrePaySetting.cpp
   src/v20190103/model/DescribeGlobalConfigResponse.cpp
@@ -698,6 +701,7 @@ set(emr_src
   src/v20190103/model/ModifyBootScriptRequest.cpp
   src/v20190103/model/FlowParamsDesc.cpp
   src/v20190103/model/ModifyYarnDeployResponse.cpp
+  src/v20190103/model/DescribeMetaDBInfoRequest.cpp
   src/v20190103/model/UserManagerUserBriefInfo.cpp
   src/v20190103/model/Placement.cpp
   src/v20190103/model/ComponentDeployInfo.cpp

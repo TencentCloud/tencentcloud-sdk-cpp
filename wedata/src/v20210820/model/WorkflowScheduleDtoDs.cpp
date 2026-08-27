@@ -45,7 +45,8 @@ WorkflowScheduleDtoDs::WorkflowScheduleDtoDs() :
     m_calendarOpenHasBeenSet(false),
     m_calendarNameHasBeenSet(false),
     m_calendarIdHasBeenSet(false),
-    m_scheduleTimeZoneHasBeenSet(false)
+    m_scheduleTimeZoneHasBeenSet(false),
+    m_privilegeHasBeenSet(false)
 {
 }
 
@@ -304,6 +305,16 @@ CoreInternalOutcome WorkflowScheduleDtoDs::Deserialize(const rapidjson::Value &v
         m_scheduleTimeZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("Privilege") && !value["Privilege"].IsNull())
+    {
+        if (!value["Privilege"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowScheduleDtoDs.Privilege` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privilege = string(value["Privilege"].GetString());
+        m_privilegeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -509,6 +520,14 @@ void WorkflowScheduleDtoDs::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "ScheduleTimeZone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privilegeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Privilege";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privilege.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -912,5 +931,21 @@ void WorkflowScheduleDtoDs::SetScheduleTimeZone(const string& _scheduleTimeZone)
 bool WorkflowScheduleDtoDs::ScheduleTimeZoneHasBeenSet() const
 {
     return m_scheduleTimeZoneHasBeenSet;
+}
+
+string WorkflowScheduleDtoDs::GetPrivilege() const
+{
+    return m_privilege;
+}
+
+void WorkflowScheduleDtoDs::SetPrivilege(const string& _privilege)
+{
+    m_privilege = _privilege;
+    m_privilegeHasBeenSet = true;
+}
+
+bool WorkflowScheduleDtoDs::PrivilegeHasBeenSet() const
+{
+    return m_privilegeHasBeenSet;
 }
 

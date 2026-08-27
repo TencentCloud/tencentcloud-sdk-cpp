@@ -44,7 +44,8 @@ ManualTriggerRecordOpsDto::ManualTriggerRecordOpsDto() :
     m_parentSpTaskIdHasBeenSet(false),
     m_parentSpInstanceNameHasBeenSet(false),
     m_parentSpInstanceDataTimeHasBeenSet(false),
-    m_scheduleTimeListHasBeenSet(false)
+    m_scheduleTimeListHasBeenSet(false),
+    m_privilegeHasBeenSet(false)
 {
 }
 
@@ -299,6 +300,16 @@ CoreInternalOutcome ManualTriggerRecordOpsDto::Deserialize(const rapidjson::Valu
         m_scheduleTimeListHasBeenSet = true;
     }
 
+    if (value.HasMember("Privilege") && !value["Privilege"].IsNull())
+    {
+        if (!value["Privilege"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ManualTriggerRecordOpsDto.Privilege` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privilege = string(value["Privilege"].GetString());
+        m_privilegeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -506,6 +517,14 @@ void ManualTriggerRecordOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson:
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_privilegeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Privilege";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privilege.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -893,5 +912,21 @@ void ManualTriggerRecordOpsDto::SetScheduleTimeList(const vector<string>& _sched
 bool ManualTriggerRecordOpsDto::ScheduleTimeListHasBeenSet() const
 {
     return m_scheduleTimeListHasBeenSet;
+}
+
+string ManualTriggerRecordOpsDto::GetPrivilege() const
+{
+    return m_privilege;
+}
+
+void ManualTriggerRecordOpsDto::SetPrivilege(const string& _privilege)
+{
+    m_privilege = _privilege;
+    m_privilegeHasBeenSet = true;
+}
+
+bool ManualTriggerRecordOpsDto::PrivilegeHasBeenSet() const
+{
+    return m_privilegeHasBeenSet;
 }
 

@@ -30,6 +30,7 @@
 #include <tencentcloud/adp/v20260520/model/AgentPluginConfig.h>
 #include <tencentcloud/adp/v20260520/model/AgentSkillConfig.h>
 #include <tencentcloud/adp/v20260520/model/AgentAdvancedConfig.h>
+#include <tencentcloud/adp/v20260520/model/AgentExternalToolConfig.h>
 
 
 namespace TencentCloud
@@ -74,15 +75,15 @@ namespace TencentCloud
                     bool ProfileHasBeenSet() const;
 
                     /**
-                     * 获取系统提示词
-                     * @return Instructions 系统提示词
+                     * 获取<p>系统提示词</p>
+                     * @return Instructions <p>系统提示词</p>
                      * 
                      */
                     std::string GetInstructions() const;
 
                     /**
-                     * 设置系统提示词
-                     * @param _instructions 系统提示词
+                     * 设置<p>系统提示词</p>
+                     * @param _instructions <p>系统提示词</p>
                      * 
                      */
                     void SetInstructions(const std::string& _instructions);
@@ -95,15 +96,15 @@ namespace TencentCloud
                     bool InstructionsHasBeenSet() const;
 
                     /**
-                     * 获取主模型配置
-                     * @return Model 主模型配置
+                     * 获取<p>主模型配置</p>
+                     * @return Model <p>主模型配置</p>
                      * 
                      */
                     AgentModelConfig GetModel() const;
 
                     /**
-                     * 设置主模型配置
-                     * @param _model 主模型配置
+                     * 设置<p>主模型配置</p>
+                     * @param _model <p>主模型配置</p>
                      * 
                      */
                     void SetModel(const AgentModelConfig& _model);
@@ -179,15 +180,15 @@ namespace TencentCloud
                     bool SkillListHasBeenSet() const;
 
                     /**
-                     * 获取高级设置
-                     * @return AdvancedConfig 高级设置
+                     * 获取<p>高级设置</p>
+                     * @return AdvancedConfig <p>高级设置</p>
                      * 
                      */
                     AgentAdvancedConfig GetAdvancedConfig() const;
 
                     /**
-                     * 设置高级设置
-                     * @param _advancedConfig 高级设置
+                     * 设置<p>高级设置</p>
+                     * @param _advancedConfig <p>高级设置</p>
                      * 
                      */
                     void SetAdvancedConfig(const AgentAdvancedConfig& _advancedConfig);
@@ -199,6 +200,27 @@ namespace TencentCloud
                      */
                     bool AdvancedConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>调用方执行的 Function Tool 列表</p><p>入参限制：仅在 C 端用户态 Agent 场景可用，B 端配置态 Agent  忽略该字段与</p>
+                     * @return ExternalToolList <p>调用方执行的 Function Tool 列表</p><p>入参限制：仅在 C 端用户态 Agent 场景可用，B 端配置态 Agent  忽略该字段与</p>
+                     * 
+                     */
+                    std::vector<AgentExternalToolConfig> GetExternalToolList() const;
+
+                    /**
+                     * 设置<p>调用方执行的 Function Tool 列表</p><p>入参限制：仅在 C 端用户态 Agent 场景可用，B 端配置态 Agent  忽略该字段与</p>
+                     * @param _externalToolList <p>调用方执行的 Function Tool 列表</p><p>入参限制：仅在 C 端用户态 Agent 场景可用，B 端配置态 Agent  忽略该字段与</p>
+                     * 
+                     */
+                    void SetExternalToolList(const std::vector<AgentExternalToolConfig>& _externalToolList);
+
+                    /**
+                     * 判断参数 ExternalToolList 是否已赋值
+                     * @return ExternalToolList 是否已赋值
+                     * 
+                     */
+                    bool ExternalToolListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -208,13 +230,13 @@ namespace TencentCloud
                     bool m_profileHasBeenSet;
 
                     /**
-                     * 系统提示词
+                     * <p>系统提示词</p>
                      */
                     std::string m_instructions;
                     bool m_instructionsHasBeenSet;
 
                     /**
-                     * 主模型配置
+                     * <p>主模型配置</p>
                      */
                     AgentModelConfig m_model;
                     bool m_modelHasBeenSet;
@@ -238,10 +260,16 @@ namespace TencentCloud
                     bool m_skillListHasBeenSet;
 
                     /**
-                     * 高级设置
+                     * <p>高级设置</p>
                      */
                     AgentAdvancedConfig m_advancedConfig;
                     bool m_advancedConfigHasBeenSet;
+
+                    /**
+                     * <p>调用方执行的 Function Tool 列表</p><p>入参限制：仅在 C 端用户态 Agent 场景可用，B 端配置态 Agent  忽略该字段与</p>
+                     */
+                    std::vector<AgentExternalToolConfig> m_externalToolList;
+                    bool m_externalToolListHasBeenSet;
 
                 };
             }

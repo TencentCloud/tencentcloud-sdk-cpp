@@ -34,7 +34,11 @@ CreateDataRepositoryTaskRequest::CreateDataRepositoryTaskRequest() :
     m_enableDataFlowSubPathHasBeenSet(false),
     m_dataFlowSubPathHasBeenSet(false),
     m_enableCustomDestPathHasBeenSet(false),
-    m_customDestPathHasBeenSet(false)
+    m_customDestPathHasBeenSet(false),
+    m_outputBucketHasBeenSet(false),
+    m_outputPrefixHasBeenSet(false),
+    m_enableCustomSrcPathHasBeenSet(false),
+    m_customSrcPathHasBeenSet(false)
 {
 }
 
@@ -139,6 +143,38 @@ string CreateDataRepositoryTaskRequest::ToJsonString() const
         string key = "CustomDestPath";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_customDestPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputBucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputBucket";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_outputBucket.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputPrefixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputPrefix";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_outputPrefix.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableCustomSrcPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableCustomSrcPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableCustomSrcPath, allocator);
+    }
+
+    if (m_customSrcPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomSrcPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customSrcPath.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -339,6 +375,70 @@ void CreateDataRepositoryTaskRequest::SetCustomDestPath(const string& _customDes
 bool CreateDataRepositoryTaskRequest::CustomDestPathHasBeenSet() const
 {
     return m_customDestPathHasBeenSet;
+}
+
+string CreateDataRepositoryTaskRequest::GetOutputBucket() const
+{
+    return m_outputBucket;
+}
+
+void CreateDataRepositoryTaskRequest::SetOutputBucket(const string& _outputBucket)
+{
+    m_outputBucket = _outputBucket;
+    m_outputBucketHasBeenSet = true;
+}
+
+bool CreateDataRepositoryTaskRequest::OutputBucketHasBeenSet() const
+{
+    return m_outputBucketHasBeenSet;
+}
+
+string CreateDataRepositoryTaskRequest::GetOutputPrefix() const
+{
+    return m_outputPrefix;
+}
+
+void CreateDataRepositoryTaskRequest::SetOutputPrefix(const string& _outputPrefix)
+{
+    m_outputPrefix = _outputPrefix;
+    m_outputPrefixHasBeenSet = true;
+}
+
+bool CreateDataRepositoryTaskRequest::OutputPrefixHasBeenSet() const
+{
+    return m_outputPrefixHasBeenSet;
+}
+
+bool CreateDataRepositoryTaskRequest::GetEnableCustomSrcPath() const
+{
+    return m_enableCustomSrcPath;
+}
+
+void CreateDataRepositoryTaskRequest::SetEnableCustomSrcPath(const bool& _enableCustomSrcPath)
+{
+    m_enableCustomSrcPath = _enableCustomSrcPath;
+    m_enableCustomSrcPathHasBeenSet = true;
+}
+
+bool CreateDataRepositoryTaskRequest::EnableCustomSrcPathHasBeenSet() const
+{
+    return m_enableCustomSrcPathHasBeenSet;
+}
+
+string CreateDataRepositoryTaskRequest::GetCustomSrcPath() const
+{
+    return m_customSrcPath;
+}
+
+void CreateDataRepositoryTaskRequest::SetCustomSrcPath(const string& _customSrcPath)
+{
+    m_customSrcPath = _customSrcPath;
+    m_customSrcPathHasBeenSet = true;
+}
+
+bool CreateDataRepositoryTaskRequest::CustomSrcPathHasBeenSet() const
+{
+    return m_customSrcPathHasBeenSet;
 }
 
 

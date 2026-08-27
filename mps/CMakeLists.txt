@@ -114,6 +114,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/DeleteStreamPackageSSAIChannelRequest.h
   include/tencentcloud/mps/v20190612/model/UserDefineFaceReviewTemplateInfo.h
   include/tencentcloud/mps/v20190612/model/CreateInputHLSPullSettings.h
+  include/tencentcloud/mps/v20190612/model/ChangeVoiceResponse.h
   include/tencentcloud/mps/v20190612/model/DeleteStreamLinkSecurityGroupRequest.h
   include/tencentcloud/mps/v20190612/model/ContentReviewTemplateItem.h
   include/tencentcloud/mps/v20190612/model/ModifySmartEraseTemplateResponse.h
@@ -171,7 +172,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/CustomModel.h
   include/tencentcloud/mps/v20190612/model/CreateAdaptiveDynamicStreamingTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/LLMDetectionResultItem.h
-  include/tencentcloud/mps/v20190612/model/CreateProcessImageTemplateResponse.h
+  include/tencentcloud/mps/v20190612/model/ChangeVoiceRequest.h
   include/tencentcloud/mps/v20190612/model/CreateInputRTMPPullSettings.h
   include/tencentcloud/mps/v20190612/model/TerrorismImgReviewTemplateInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/FailOverOption.h
@@ -835,6 +836,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/DescribeStreamLinkRegionsRequest.h
   include/tencentcloud/mps/v20190612/model/ImageTransformConfig.h
   include/tencentcloud/mps/v20190612/model/ModifySmartEraseTemplateRequest.h
+  include/tencentcloud/mps/v20190612/model/StreamUrlDetail.h
   include/tencentcloud/mps/v20190612/model/ModifyStreamLinkInputResponse.h
   include/tencentcloud/mps/v20190612/model/VODOutputStorage.h
   include/tencentcloud/mps/v20190612/model/HeadTailParameter.h
@@ -848,7 +850,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AiSampleFailFaceInfo.h
   include/tencentcloud/mps/v20190612/model/UserDefineFaceReviewTemplateInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/DescribeInputRTMPSettings.h
-  include/tencentcloud/mps/v20190612/model/StreamUrlDetail.h
+  include/tencentcloud/mps/v20190612/model/CreateProcessImageTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/CloneViralPersona.h
   include/tencentcloud/mps/v20190612/model/AigcVideoReferenceAudioInfo.h
   include/tencentcloud/mps/v20190612/model/DeleteProcessImageTemplateResponse.h
@@ -1207,6 +1209,7 @@ set(mps_src
   src/v20190612/model/DeleteStreamPackageSSAIChannelRequest.cpp
   src/v20190612/model/UserDefineFaceReviewTemplateInfo.cpp
   src/v20190612/model/CreateInputHLSPullSettings.cpp
+  src/v20190612/model/ChangeVoiceResponse.cpp
   src/v20190612/model/DeleteStreamLinkSecurityGroupRequest.cpp
   src/v20190612/model/ContentReviewTemplateItem.cpp
   src/v20190612/model/ModifySmartEraseTemplateResponse.cpp
@@ -1264,7 +1267,7 @@ set(mps_src
   src/v20190612/model/CustomModel.cpp
   src/v20190612/model/CreateAdaptiveDynamicStreamingTemplateRequest.cpp
   src/v20190612/model/LLMDetectionResultItem.cpp
-  src/v20190612/model/CreateProcessImageTemplateResponse.cpp
+  src/v20190612/model/ChangeVoiceRequest.cpp
   src/v20190612/model/CreateInputRTMPPullSettings.cpp
   src/v20190612/model/TerrorismImgReviewTemplateInfoForUpdate.cpp
   src/v20190612/model/FailOverOption.cpp
@@ -1928,6 +1931,7 @@ set(mps_src
   src/v20190612/model/DescribeStreamLinkRegionsRequest.cpp
   src/v20190612/model/ImageTransformConfig.cpp
   src/v20190612/model/ModifySmartEraseTemplateRequest.cpp
+  src/v20190612/model/StreamUrlDetail.cpp
   src/v20190612/model/ModifyStreamLinkInputResponse.cpp
   src/v20190612/model/VODOutputStorage.cpp
   src/v20190612/model/HeadTailParameter.cpp
@@ -1941,7 +1945,7 @@ set(mps_src
   src/v20190612/model/AiSampleFailFaceInfo.cpp
   src/v20190612/model/UserDefineFaceReviewTemplateInfoForUpdate.cpp
   src/v20190612/model/DescribeInputRTMPSettings.cpp
-  src/v20190612/model/StreamUrlDetail.cpp
+  src/v20190612/model/CreateProcessImageTemplateResponse.cpp
   src/v20190612/model/CloneViralPersona.cpp
   src/v20190612/model/AigcVideoReferenceAudioInfo.cpp
   src/v20190612/model/DeleteProcessImageTemplateResponse.cpp

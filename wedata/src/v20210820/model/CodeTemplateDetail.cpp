@@ -38,7 +38,8 @@ CodeTemplateDetail::CodeTemplateDetail() :
     m_resourceGroupHasBeenSet(false),
     m_submitHasBeenSet(false),
     m_scriptChangeHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_privilegeHasBeenSet(false)
 {
 }
 
@@ -234,6 +235,16 @@ CoreInternalOutcome CodeTemplateDetail::Deserialize(const rapidjson::Value &valu
         m_contentHasBeenSet = true;
     }
 
+    if (value.HasMember("Privilege") && !value["Privilege"].IsNull())
+    {
+        if (!value["Privilege"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CodeTemplateDetail.Privilege` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privilege = string(value["Privilege"].GetString());
+        m_privilegeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -384,6 +395,14 @@ void CodeTemplateDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privilegeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Privilege";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privilege.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -675,5 +694,21 @@ void CodeTemplateDetail::SetContent(const string& _content)
 bool CodeTemplateDetail::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+string CodeTemplateDetail::GetPrivilege() const
+{
+    return m_privilege;
+}
+
+void CodeTemplateDetail::SetPrivilege(const string& _privilege)
+{
+    m_privilege = _privilege;
+    m_privilegeHasBeenSet = true;
+}
+
+bool CodeTemplateDetail::PrivilegeHasBeenSet() const
+{
+    return m_privilegeHasBeenSet;
 }
 

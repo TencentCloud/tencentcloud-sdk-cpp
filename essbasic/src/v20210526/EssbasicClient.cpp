@@ -3640,6 +3640,56 @@ EssbasicClient::CreatePersonAuthCertificateImageOutcomeCallable EssbasicClient::
     return prom->get_future();
 }
 
+EssbasicClient::CreateRequestWithEncryptionOutcome EssbasicClient::CreateRequestWithEncryption(const CreateRequestWithEncryptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRequestWithEncryption");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRequestWithEncryptionResponse rsp = CreateRequestWithEncryptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRequestWithEncryptionOutcome(rsp);
+        else
+            return CreateRequestWithEncryptionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRequestWithEncryptionOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreateRequestWithEncryptionAsync(const CreateRequestWithEncryptionRequest& request, const CreateRequestWithEncryptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateRequestWithEncryptionRequest&;
+    using Resp = CreateRequestWithEncryptionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateRequestWithEncryption", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssbasicClient::CreateRequestWithEncryptionOutcomeCallable EssbasicClient::CreateRequestWithEncryptionCallable(const CreateRequestWithEncryptionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateRequestWithEncryptionOutcome>>();
+    CreateRequestWithEncryptionAsync(
+    request,
+    [prom](
+        const EssbasicClient*,
+        const CreateRequestWithEncryptionRequest&,
+        CreateRequestWithEncryptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EssbasicClient::CreateSealByImageOutcome EssbasicClient::CreateSealByImage(const CreateSealByImageRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSealByImage");

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取固定值，为"monitor"
-                     * @return Module 固定值，为"monitor"
+                     * 获取<p>固定值，为&quot;monitor&quot;</p>
+                     * @return Module <p>固定值，为&quot;monitor&quot;</p>
                      * 
                      */
                     std::string GetModule() const;
 
                     /**
-                     * 设置固定值，为"monitor"
-                     * @param _module 固定值，为"monitor"
+                     * 设置<p>固定值，为&quot;monitor&quot;</p>
+                     * @param _module <p>固定值，为&quot;monitor&quot;</p>
                      * 
                      */
                     void SetModule(const std::string& _module);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取分页查询起始位
-                     * @return Offset 分页查询起始位
+                     * 获取<p>分页查询起始位</p>
+                     * @return Offset <p>分页查询起始位</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页查询起始位
-                     * @param _offset 分页查询起始位
+                     * 设置<p>分页查询起始位</p>
+                     * @param _offset <p>分页查询起始位</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页查询页数
-                     * @return Limit 分页查询页数
+                     * 获取<p>分页查询页数</p>
+                     * @return Limit <p>分页查询页数</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页查询页数
-                     * @param _limit 分页查询页数
+                     * 设置<p>分页查询页数</p>
+                     * @param _limit <p>分页查询页数</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取支持userId进行检索
-                     * @return OnCallFormStaffIDs 支持userId进行检索
+                     * 获取<p>支持userId进行检索</p>
+                     * @return OnCallFormStaffIDs <p>支持userId进行检索</p>
                      * 
                      */
                     std::vector<std::string> GetOnCallFormStaffIDs() const;
 
                     /**
-                     * 设置支持userId进行检索
-                     * @param _onCallFormStaffIDs 支持userId进行检索
+                     * 设置<p>支持userId进行检索</p>
+                     * @param _onCallFormStaffIDs <p>支持userId进行检索</p>
                      * 
                      */
                     void SetOnCallFormStaffIDs(const std::vector<std::string>& _onCallFormStaffIDs);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OnCallFormStaffIDsHasBeenSet() const;
 
                     /**
-                     * 获取值班类型
-                     * @return RotationType 值班类型
+                     * 获取<p>值班类型</p>
+                     * @return RotationType <p>值班类型</p>
                      * 
                      */
                     std::string GetRotationType() const;
 
                     /**
-                     * 设置值班类型
-                     * @param _rotationType 值班类型
+                     * 设置<p>值班类型</p>
+                     * @param _rotationType <p>值班类型</p>
                      * 
                      */
                     void SetRotationType(const std::string& _rotationType);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool RotationTypeHasBeenSet() const;
 
                     /**
-                     * 获取排序方式
-                     * @return Order 排序方式
+                     * 获取<p>排序方式</p>
+                     * @return Order <p>排序方式</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序方式
-                     * @param _order 排序方式
+                     * 设置<p>排序方式</p>
+                     * @param _order <p>排序方式</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取支持id、name进行检索
-                     * @return OnCallFormName 支持id、name进行检索
+                     * 获取<p>支持id、name进行检索</p>
+                     * @return OnCallFormName <p>支持id、name进行检索</p>
                      * 
                      */
                     std::string GetOnCallFormName() const;
 
                     /**
-                     * 设置支持id、name进行检索
-                     * @param _onCallFormName 支持id、name进行检索
+                     * 设置<p>支持id、name进行检索</p>
+                     * @param _onCallFormName <p>支持id、name进行检索</p>
                      * 
                      */
                     void SetOnCallFormName(const std::string& _onCallFormName);
@@ -192,43 +192,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 固定值，为"monitor"
+                     * <p>固定值，为&quot;monitor&quot;</p>
                      */
                     std::string m_module;
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 分页查询起始位
+                     * <p>分页查询起始位</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页查询页数
+                     * <p>分页查询页数</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 支持userId进行检索
+                     * <p>支持userId进行检索</p>
                      */
                     std::vector<std::string> m_onCallFormStaffIDs;
                     bool m_onCallFormStaffIDsHasBeenSet;
 
                     /**
-                     * 值班类型
+                     * <p>值班类型</p>
                      */
                     std::string m_rotationType;
                     bool m_rotationTypeHasBeenSet;
 
                     /**
-                     * 排序方式
+                     * <p>排序方式</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 支持id、name进行检索
+                     * <p>支持id、name进行检索</p>
                      */
                     std::string m_onCallFormName;
                     bool m_onCallFormNameHasBeenSet;

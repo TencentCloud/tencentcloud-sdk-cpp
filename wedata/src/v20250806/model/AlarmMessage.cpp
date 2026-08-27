@@ -30,7 +30,8 @@ AlarmMessage::AlarmMessage() :
     m_alarmLevelHasBeenSet(false),
     m_alarmRuleIdHasBeenSet(false),
     m_alarmWaysHasBeenSet(false),
-    m_alarmRecipientsHasBeenSet(false)
+    m_alarmRecipientsHasBeenSet(false),
+    m_customEmailsHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,19 @@ CoreInternalOutcome AlarmMessage::Deserialize(const rapidjson::Value &value)
         m_alarmRecipientsHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomEmails") && !value["CustomEmails"].IsNull())
+    {
+        if (!value["CustomEmails"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AlarmMessage.CustomEmails` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CustomEmails"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_customEmails.push_back((*itr).GetString());
+        }
+        m_customEmailsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -237,6 +251,19 @@ void AlarmMessage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_alarmRecipients.begin(); itr != m_alarmRecipients.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_customEmailsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomEmails";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_customEmails.begin(); itr != m_customEmails.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -403,5 +430,21 @@ void AlarmMessage::SetAlarmRecipients(const vector<string>& _alarmRecipients)
 bool AlarmMessage::AlarmRecipientsHasBeenSet() const
 {
     return m_alarmRecipientsHasBeenSet;
+}
+
+vector<string> AlarmMessage::GetCustomEmails() const
+{
+    return m_customEmails;
+}
+
+void AlarmMessage::SetCustomEmails(const vector<string>& _customEmails)
+{
+    m_customEmails = _customEmails;
+    m_customEmailsHasBeenSet = true;
+}
+
+bool AlarmMessage::CustomEmailsHasBeenSet() const
+{
+    return m_customEmailsHasBeenSet;
 }
 

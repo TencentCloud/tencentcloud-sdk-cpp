@@ -232,6 +232,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeRolesRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeBatchOrganizationRegistrationUrlsRequest.h
   include/tencentcloud/essbasic/v20210526/model/PrepareFlowsResponse.h
+  include/tencentcloud/essbasic/v20210526/model/CreateRequestWithEncryptionResponse.h
   include/tencentcloud/essbasic/v20210526/model/SignUrl.h
   include/tencentcloud/essbasic/v20210526/model/TemplateInfo.h
   include/tencentcloud/essbasic/v20210526/model/IntentionAction.h
@@ -281,6 +282,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/UserThreeFactor.h
   include/tencentcloud/essbasic/v20210526/model/TemplateUserFlowType.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateUserAutoSignEnableUrlRequest.h
+  include/tencentcloud/essbasic/v20210526/model/CreateRequestWithEncryptionRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCancelMultiFlowSignQRCodeRequest.h
   include/tencentcloud/essbasic/v20210526/model/FlowGroupOptions.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeOrganizationSealsRequest.h
@@ -665,6 +667,7 @@ set(essbasic_src
   src/v20210526/model/ChannelDescribeRolesRequest.cpp
   src/v20210526/model/DescribeBatchOrganizationRegistrationUrlsRequest.cpp
   src/v20210526/model/PrepareFlowsResponse.cpp
+  src/v20210526/model/CreateRequestWithEncryptionResponse.cpp
   src/v20210526/model/SignUrl.cpp
   src/v20210526/model/TemplateInfo.cpp
   src/v20210526/model/IntentionAction.cpp
@@ -714,6 +717,7 @@ set(essbasic_src
   src/v20210526/model/UserThreeFactor.cpp
   src/v20210526/model/TemplateUserFlowType.cpp
   src/v20210526/model/ChannelCreateUserAutoSignEnableUrlRequest.cpp
+  src/v20210526/model/CreateRequestWithEncryptionRequest.cpp
   src/v20210526/model/ChannelCancelMultiFlowSignQRCodeRequest.cpp
   src/v20210526/model/FlowGroupOptions.cpp
   src/v20210526/model/ChannelDescribeOrganizationSealsRequest.cpp

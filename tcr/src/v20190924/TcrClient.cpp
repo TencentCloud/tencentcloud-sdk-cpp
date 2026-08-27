@@ -3840,6 +3840,56 @@ TcrClient::DescribeRegionsOutcomeCallable TcrClient::DescribeRegionsCallable(con
     return prom->get_future();
 }
 
+TcrClient::DescribeReplicationExecutionsOutcome TcrClient::DescribeReplicationExecutions(const DescribeReplicationExecutionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReplicationExecutions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReplicationExecutionsResponse rsp = DescribeReplicationExecutionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReplicationExecutionsOutcome(rsp);
+        else
+            return DescribeReplicationExecutionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReplicationExecutionsOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeReplicationExecutionsAsync(const DescribeReplicationExecutionsRequest& request, const DescribeReplicationExecutionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeReplicationExecutionsRequest&;
+    using Resp = DescribeReplicationExecutionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeReplicationExecutions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcrClient::DescribeReplicationExecutionsOutcomeCallable TcrClient::DescribeReplicationExecutionsCallable(const DescribeReplicationExecutionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeReplicationExecutionsOutcome>>();
+    DescribeReplicationExecutionsAsync(
+    request,
+    [prom](
+        const TcrClient*,
+        const DescribeReplicationExecutionsRequest&,
+        DescribeReplicationExecutionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcrClient::DescribeReplicationInstanceCreateTasksOutcome TcrClient::DescribeReplicationInstanceCreateTasks(const DescribeReplicationInstanceCreateTasksRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeReplicationInstanceCreateTasks");
@@ -4032,6 +4082,56 @@ TcrClient::DescribeReplicationPoliciesOutcomeCallable TcrClient::DescribeReplica
         const TcrClient*,
         const DescribeReplicationPoliciesRequest&,
         DescribeReplicationPoliciesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcrClient::DescribeReplicationTasksOutcome TcrClient::DescribeReplicationTasks(const DescribeReplicationTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReplicationTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReplicationTasksResponse rsp = DescribeReplicationTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReplicationTasksOutcome(rsp);
+        else
+            return DescribeReplicationTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReplicationTasksOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeReplicationTasksAsync(const DescribeReplicationTasksRequest& request, const DescribeReplicationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeReplicationTasksRequest&;
+    using Resp = DescribeReplicationTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeReplicationTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcrClient::DescribeReplicationTasksOutcomeCallable TcrClient::DescribeReplicationTasksCallable(const DescribeReplicationTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeReplicationTasksOutcome>>();
+    DescribeReplicationTasksAsync(
+    request,
+    [prom](
+        const TcrClient*,
+        const DescribeReplicationTasksRequest&,
+        DescribeReplicationTasksOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

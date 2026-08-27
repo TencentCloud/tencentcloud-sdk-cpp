@@ -126,7 +126,8 @@ TaskDsDTO::TaskDsDTO() :
     m_bundleInfoHasBeenSet(false),
     m_allowDownstreamDependencyHasBeenSet(false),
     m_dependencyTriggerPolicyHasBeenSet(false),
-    m_lastUpdateTimestampHasBeenSet(false)
+    m_lastUpdateTimestampHasBeenSet(false),
+    m_privilegeHasBeenSet(false)
 {
 }
 
@@ -1299,6 +1300,16 @@ CoreInternalOutcome TaskDsDTO::Deserialize(const rapidjson::Value &value)
         m_lastUpdateTimestampHasBeenSet = true;
     }
 
+    if (value.HasMember("Privilege") && !value["Privilege"].IsNull())
+    {
+        if (!value["Privilege"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskDsDTO.Privilege` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privilege = string(value["Privilege"].GetString());
+        m_privilegeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -2217,6 +2228,14 @@ void TaskDsDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "LastUpdateTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastUpdateTimestamp, allocator);
+    }
+
+    if (m_privilegeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Privilege";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privilege.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -3916,5 +3935,21 @@ void TaskDsDTO::SetLastUpdateTimestamp(const uint64_t& _lastUpdateTimestamp)
 bool TaskDsDTO::LastUpdateTimestampHasBeenSet() const
 {
     return m_lastUpdateTimestampHasBeenSet;
+}
+
+string TaskDsDTO::GetPrivilege() const
+{
+    return m_privilege;
+}
+
+void TaskDsDTO::SetPrivilege(const string& _privilege)
+{
+    m_privilege = _privilege;
+    m_privilegeHasBeenSet = true;
+}
+
+bool TaskDsDTO::PrivilegeHasBeenSet() const
+{
+    return m_privilegeHasBeenSet;
 }
 

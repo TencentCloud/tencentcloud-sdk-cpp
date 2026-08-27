@@ -41,7 +41,8 @@ DescribeBatchOperateTaskDTO::DescribeBatchOperateTaskDTO() :
     m_datasourceTypeHasBeenSet(false),
     m_computeResourceHasBeenSet(false),
     m_dlcRegionHasBeenSet(false),
-    m_isInheritHasBeenSet(false)
+    m_isInheritHasBeenSet(false),
+    m_privilegeHasBeenSet(false)
 {
 }
 
@@ -260,6 +261,16 @@ CoreInternalOutcome DescribeBatchOperateTaskDTO::Deserialize(const rapidjson::Va
         m_isInheritHasBeenSet = true;
     }
 
+    if (value.HasMember("Privilege") && !value["Privilege"].IsNull())
+    {
+        if (!value["Privilege"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBatchOperateTaskDTO.Privilege` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privilege = string(value["Privilege"].GetString());
+        m_privilegeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +444,14 @@ void DescribeBatchOperateTaskDTO::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "IsInherit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_isInherit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privilegeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Privilege";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privilege.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -772,5 +791,21 @@ void DescribeBatchOperateTaskDTO::SetIsInherit(const string& _isInherit)
 bool DescribeBatchOperateTaskDTO::IsInheritHasBeenSet() const
 {
     return m_isInheritHasBeenSet;
+}
+
+string DescribeBatchOperateTaskDTO::GetPrivilege() const
+{
+    return m_privilege;
+}
+
+void DescribeBatchOperateTaskDTO::SetPrivilege(const string& _privilege)
+{
+    m_privilege = _privilege;
+    m_privilegeHasBeenSet = true;
+}
+
+bool DescribeBatchOperateTaskDTO::PrivilegeHasBeenSet() const
+{
+    return m_privilegeHasBeenSet;
 }
 

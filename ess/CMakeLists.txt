@@ -64,6 +64,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/PdfVerifyResult.h
   include/tencentcloud/ess/v20201111/model/CreateUserNameChangeUrlRequest.h
   include/tencentcloud/ess/v20201111/model/AuthRecord.h
+  include/tencentcloud/ess/v20201111/model/CreateRequestWithEncryptionRequest.h
   include/tencentcloud/ess/v20201111/model/UnbindEmployeeUserIdWithClientOpenIdRequest.h
   include/tencentcloud/ess/v20201111/model/CreateBatchInformationExtractionTaskRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowByFilesRequest.h
@@ -394,6 +395,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeContractReviewWebUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CancelFailureFlow.h
   include/tencentcloud/ess/v20201111/model/OperateFlowRemarksResponse.h
+  include/tencentcloud/ess/v20201111/model/CreateRequestWithEncryptionResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeContractReviewTaskListWebUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowRequest.h
@@ -530,6 +532,7 @@ set(ess_src
   src/v20201111/model/PdfVerifyResult.cpp
   src/v20201111/model/CreateUserNameChangeUrlRequest.cpp
   src/v20201111/model/AuthRecord.cpp
+  src/v20201111/model/CreateRequestWithEncryptionRequest.cpp
   src/v20201111/model/UnbindEmployeeUserIdWithClientOpenIdRequest.cpp
   src/v20201111/model/CreateBatchInformationExtractionTaskRequest.cpp
   src/v20201111/model/CreateFlowByFilesRequest.cpp
@@ -860,6 +863,7 @@ set(ess_src
   src/v20201111/model/DescribeContractReviewWebUrlResponse.cpp
   src/v20201111/model/CancelFailureFlow.cpp
   src/v20201111/model/OperateFlowRemarksResponse.cpp
+  src/v20201111/model/CreateRequestWithEncryptionResponse.cpp
   src/v20201111/model/DescribeIntegrationEmployeesRequest.cpp
   src/v20201111/model/DescribeContractReviewTaskListWebUrlResponse.cpp
   src/v20201111/model/CreateFlowRequest.cpp

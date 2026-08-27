@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件系统ID
-                     * @return FileSystemId 文件系统ID
+                     * 获取<p>文件系统ID</p>
+                     * @return FileSystemId <p>文件系统ID</p>
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置文件系统ID
-                     * @param _fileSystemId 文件系统ID
+                     * 设置<p>文件系统ID</p>
+                     * @param _fileSystemId <p>文件系统ID</p>
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取自定义挂载目录的绝对路径, 如果未指定, 则会使用默认值, 格式/goosefsx/${fs_id}-proxy. 比如/goosefsx/x-c60-a2b3d4-proxy
-                     * @return CustomMountDir 自定义挂载目录的绝对路径, 如果未指定, 则会使用默认值, 格式/goosefsx/${fs_id}-proxy. 比如/goosefsx/x-c60-a2b3d4-proxy
+                     * 获取<p>自定义挂载目录的绝对路径, 如果未指定, 则会使用默认值, 格式/goosefsx/${fs_id}-proxy. 比如/goosefsx/x-c60-a2b3d4-proxy</p>
+                     * @return CustomMountDir <p>自定义挂载目录的绝对路径, 如果未指定, 则会使用默认值, 格式/goosefsx/${fs_id}-proxy. 比如/goosefsx/x-c60-a2b3d4-proxy</p>
                      * 
                      */
                     std::string GetCustomMountDir() const;
 
                     /**
-                     * 设置自定义挂载目录的绝对路径, 如果未指定, 则会使用默认值, 格式/goosefsx/${fs_id}-proxy. 比如/goosefsx/x-c60-a2b3d4-proxy
-                     * @param _customMountDir 自定义挂载目录的绝对路径, 如果未指定, 则会使用默认值, 格式/goosefsx/${fs_id}-proxy. 比如/goosefsx/x-c60-a2b3d4-proxy
+                     * 设置<p>自定义挂载目录的绝对路径, 如果未指定, 则会使用默认值, 格式/goosefsx/${fs_id}-proxy. 比如/goosefsx/x-c60-a2b3d4-proxy</p>
+                     * @param _customMountDir <p>自定义挂载目录的绝对路径, 如果未指定, 则会使用默认值, 格式/goosefsx/${fs_id}-proxy. 比如/goosefsx/x-c60-a2b3d4-proxy</p>
                      * 
                      */
                     void SetCustomMountDir(const std::string& _customMountDir);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool CustomMountDirHasBeenSet() const;
 
                     /**
-                     * 获取客户端集群ID
-                     * @return ClusterId 客户端集群ID
+                     * 获取<p>客户端集群ID</p>
+                     * @return ClusterId <p>客户端集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置客户端集群ID
-                     * @param _clusterId 客户端集群ID
+                     * 设置<p>客户端集群ID</p>
+                     * @param _clusterId <p>客户端集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件系统ID
+                     * <p>文件系统ID</p>
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 自定义挂载目录的绝对路径, 如果未指定, 则会使用默认值, 格式/goosefsx/${fs_id}-proxy. 比如/goosefsx/x-c60-a2b3d4-proxy
+                     * <p>自定义挂载目录的绝对路径, 如果未指定, 则会使用默认值, 格式/goosefsx/${fs_id}-proxy. 比如/goosefsx/x-c60-a2b3d4-proxy</p>
                      */
                     std::string m_customMountDir;
                     bool m_customMountDirHasBeenSet;
 
                     /**
-                     * 客户端集群ID
+                     * <p>客户端集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;

@@ -31,7 +31,8 @@ FolderDsDto::FolderDsDto() :
     m_workflowsHasBeenSet(false),
     m_totalFoldersHasBeenSet(false),
     m_foldersHasBeenSet(false),
-    m_findTypeHasBeenSet(false)
+    m_findTypeHasBeenSet(false),
+    m_privilegeHasBeenSet(false)
 {
 }
 
@@ -170,6 +171,16 @@ CoreInternalOutcome FolderDsDto::Deserialize(const rapidjson::Value &value)
         m_findTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Privilege") && !value["Privilege"].IsNull())
+    {
+        if (!value["Privilege"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FolderDsDto.Privilege` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privilege = string(value["Privilege"].GetString());
+        m_privilegeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -277,6 +288,14 @@ void FolderDsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "FindType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_findType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privilegeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Privilege";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privilege.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -456,5 +475,21 @@ void FolderDsDto::SetFindType(const string& _findType)
 bool FolderDsDto::FindTypeHasBeenSet() const
 {
     return m_findTypeHasBeenSet;
+}
+
+string FolderDsDto::GetPrivilege() const
+{
+    return m_privilege;
+}
+
+void FolderDsDto::SetPrivilege(const string& _privilege)
+{
+    m_privilege = _privilege;
+    m_privilegeHasBeenSet = true;
+}
+
+bool FolderDsDto::PrivilegeHasBeenSet() const
+{
+    return m_privilegeHasBeenSet;
 }
 

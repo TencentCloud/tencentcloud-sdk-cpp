@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取固定值，为"monitor"
-                     * @return Module 固定值，为"monitor"
+                     * 获取<p>固定值，为&quot;monitor&quot;</p>
+                     * @return Module <p>固定值，为&quot;monitor&quot;</p>
                      * 
                      */
                     std::string GetModule() const;
 
                     /**
-                     * 设置固定值，为"monitor"
-                     * @param _module 固定值，为"monitor"
+                     * 设置<p>固定值，为&quot;monitor&quot;</p>
+                     * @param _module <p>固定值，为&quot;monitor&quot;</p>
                      * 
                      */
                     void SetModule(const std::string& _module);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取值班id
-                     * @return OnCallFormID 值班id
+                     * 获取<p>值班id</p>
+                     * @return OnCallFormID <p>值班id</p>
                      * 
                      */
                     std::string GetOnCallFormID() const;
 
                     /**
-                     * 设置值班id
-                     * @param _onCallFormID 值班id
+                     * 设置<p>值班id</p>
+                     * @param _onCallFormID <p>值班id</p>
                      * 
                      */
                     void SetOnCallFormID(const std::string& _onCallFormID);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 固定值，为"monitor"
+                     * <p>固定值，为&quot;monitor&quot;</p>
                      */
                     std::string m_module;
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 值班id
+                     * <p>值班id</p>
                      */
                     std::string m_onCallFormID;
                     bool m_onCallFormIDHasBeenSet;

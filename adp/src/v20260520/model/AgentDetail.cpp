@@ -28,7 +28,8 @@ AgentDetail::AgentDetail() :
     m_toolListHasBeenSet(false),
     m_pluginListHasBeenSet(false),
     m_skillListHasBeenSet(false),
-    m_advancedConfigHasBeenSet(false)
+    m_advancedConfigHasBeenSet(false),
+    m_externalToolListHasBeenSet(false)
 {
 }
 
@@ -168,6 +169,26 @@ CoreInternalOutcome AgentDetail::Deserialize(const rapidjson::Value &value)
         m_advancedConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("ExternalToolList") && !value["ExternalToolList"].IsNull())
+    {
+        if (!value["ExternalToolList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AgentDetail.ExternalToolList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExternalToolList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AgentExternalToolConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_externalToolList.push_back(item);
+        }
+        m_externalToolListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -261,6 +282,21 @@ void AgentDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_advancedConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_externalToolListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalToolList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_externalToolList.begin(); itr != m_externalToolList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -392,5 +428,21 @@ void AgentDetail::SetAdvancedConfig(const AgentAdvancedConfig& _advancedConfig)
 bool AgentDetail::AdvancedConfigHasBeenSet() const
 {
     return m_advancedConfigHasBeenSet;
+}
+
+vector<AgentExternalToolConfig> AgentDetail::GetExternalToolList() const
+{
+    return m_externalToolList;
+}
+
+void AgentDetail::SetExternalToolList(const vector<AgentExternalToolConfig>& _externalToolList)
+{
+    m_externalToolList = _externalToolList;
+    m_externalToolListHasBeenSet = true;
+}
+
+bool AgentDetail::ExternalToolListHasBeenSet() const
+{
+    return m_externalToolListHasBeenSet;
 }
 

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取值班详情
-                     * @return OnCallForm 值班详情
+                     * 获取<p>值班详情</p>
+                     * @return OnCallForm <p>值班详情</p>
                      * 
                      */
                     OneOnCallForm GetOnCallForm() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 值班详情
+                     * <p>值班详情</p>
                      */
                     OneOnCallForm m_onCallForm;
                     bool m_onCallFormHasBeenSet;

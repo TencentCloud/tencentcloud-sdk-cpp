@@ -79,7 +79,8 @@ TriggerTaskRunBrief::TriggerTaskRunBrief() :
     m_executionResultHasBeenSet(false),
     m_dependencyTriggerPolicyHasBeenSet(false),
     m_associatedEntityExistHasBeenSet(false),
-    m_scheduleRunTypeHasBeenSet(false)
+    m_scheduleRunTypeHasBeenSet(false),
+    m_privilegeHasBeenSet(false)
 {
 }
 
@@ -681,6 +682,16 @@ CoreInternalOutcome TriggerTaskRunBrief::Deserialize(const rapidjson::Value &val
         m_scheduleRunTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Privilege") && !value["Privilege"].IsNull())
+    {
+        if (!value["Privilege"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerTaskRunBrief.Privilege` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privilege = string(value["Privilege"].GetString());
+        m_privilegeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1163,6 +1174,14 @@ void TriggerTaskRunBrief::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "ScheduleRunType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_scheduleRunType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privilegeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Privilege";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privilege.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2110,5 +2129,21 @@ void TriggerTaskRunBrief::SetScheduleRunType(const string& _scheduleRunType)
 bool TriggerTaskRunBrief::ScheduleRunTypeHasBeenSet() const
 {
     return m_scheduleRunTypeHasBeenSet;
+}
+
+string TriggerTaskRunBrief::GetPrivilege() const
+{
+    return m_privilege;
+}
+
+void TriggerTaskRunBrief::SetPrivilege(const string& _privilege)
+{
+    m_privilege = _privilege;
+    m_privilegeHasBeenSet = true;
+}
+
+bool TriggerTaskRunBrief::PrivilegeHasBeenSet() const
+{
+    return m_privilegeHasBeenSet;
 }
 
