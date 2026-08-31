@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Pulsar专业版集群信息
+                * Pulsar标准版或专业版集群信息
                 */
                 class PulsarProClusterInfo : public AbstractModel
                 {
@@ -245,18 +245,18 @@ namespace TencentCloud
                     bool CanEditRouteHasBeenSet() const;
 
                     /**
-                     * 获取<p>代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储</p>
+                     * 获取<p>代表是专业版和标准版的不同计费规格<br>PULSAR.P1固定存储<br>PULSAR.P2弹性存储<br>PULSAR.S2标准版</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BillingLabelVersion <p>代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储</p>
+                     * @return BillingLabelVersion <p>代表是专业版和标准版的不同计费规格<br>PULSAR.P1固定存储<br>PULSAR.P2弹性存储<br>PULSAR.S2标准版</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBillingLabelVersion() const;
 
                     /**
-                     * 设置<p>代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储</p>
+                     * 设置<p>代表是专业版和标准版的不同计费规格<br>PULSAR.P1固定存储<br>PULSAR.P2弹性存储<br>PULSAR.S2标准版</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _billingLabelVersion <p>代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储</p>
+                     * @param _billingLabelVersion <p>代表是专业版和标准版的不同计费规格<br>PULSAR.P1固定存储<br>PULSAR.P2弹性存储<br>PULSAR.S2标准版</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -345,15 +345,15 @@ namespace TencentCloud
                     bool DefaultPartitionNumberHasBeenSet() const;
 
                     /**
-                     * 获取<p>用户自定义的租户别名，如果没有，会复用专业集群 ID</p>
-                     * @return Tenant <p>用户自定义的租户别名，如果没有，会复用专业集群 ID</p>
+                     * 获取<p>用户自定义的租户别名，如果没有，会复用集群 ID</p>
+                     * @return Tenant <p>用户自定义的租户别名，如果没有，会复用集群 ID</p>
                      * 
                      */
                     std::string GetTenant() const;
 
                     /**
-                     * 设置<p>用户自定义的租户别名，如果没有，会复用专业集群 ID</p>
-                     * @param _tenant <p>用户自定义的租户别名，如果没有，会复用专业集群 ID</p>
+                     * 设置<p>用户自定义的租户别名，如果没有，会复用集群 ID</p>
+                     * @param _tenant <p>用户自定义的租户别名，如果没有，会复用集群 ID</p>
                      * 
                      */
                     void SetTenant(const std::string& _tenant);
@@ -428,6 +428,27 @@ namespace TencentCloud
                      */
                     bool EncryptionStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启磁盘自动扩容。枚举值：0-关闭，1-开启</p>
+                     * @return AutoExpansionEnabled <p>是否开启磁盘自动扩容。枚举值：0-关闭，1-开启</p>
+                     * 
+                     */
+                    int64_t GetAutoExpansionEnabled() const;
+
+                    /**
+                     * 设置<p>是否开启磁盘自动扩容。枚举值：0-关闭，1-开启</p>
+                     * @param _autoExpansionEnabled <p>是否开启磁盘自动扩容。枚举值：0-关闭，1-开启</p>
+                     * 
+                     */
+                    void SetAutoExpansionEnabled(const int64_t& _autoExpansionEnabled);
+
+                    /**
+                     * 判断参数 AutoExpansionEnabled 是否已赋值
+                     * @return AutoExpansionEnabled 是否已赋值
+                     * 
+                     */
+                    bool AutoExpansionEnabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -487,7 +508,7 @@ namespace TencentCloud
                     bool m_canEditRouteHasBeenSet;
 
                     /**
-                     * <p>代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储</p>
+                     * <p>代表是专业版和标准版的不同计费规格<br>PULSAR.P1固定存储<br>PULSAR.P2弹性存储<br>PULSAR.S2标准版</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billingLabelVersion;
@@ -515,7 +536,7 @@ namespace TencentCloud
                     bool m_defaultPartitionNumberHasBeenSet;
 
                     /**
-                     * <p>用户自定义的租户别名，如果没有，会复用专业集群 ID</p>
+                     * <p>用户自定义的租户别名，如果没有，会复用集群 ID</p>
                      */
                     std::string m_tenant;
                     bool m_tenantHasBeenSet;
@@ -537,6 +558,12 @@ namespace TencentCloud
                      */
                     int64_t m_encryptionStatus;
                     bool m_encryptionStatusHasBeenSet;
+
+                    /**
+                     * <p>是否开启磁盘自动扩容。枚举值：0-关闭，1-开启</p>
+                     */
+                    int64_t m_autoExpansionEnabled;
+                    bool m_autoExpansionEnabledHasBeenSet;
 
                 };
             }

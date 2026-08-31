@@ -22,7 +22,8 @@ using namespace std;
 
 AutoScalingConfig::AutoScalingConfig() :
     m_rangeMinHasBeenSet(false),
-    m_rangeMaxHasBeenSet(false)
+    m_rangeMaxHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome AutoScalingConfig::Deserialize(const rapidjson::Value &value
         m_rangeMaxHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceType") && !value["ResourceType"].IsNull())
+    {
+        if (!value["ResourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScalingConfig.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceType = string(value["ResourceType"].GetString());
+        m_resourceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void AutoScalingConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "RangeMax";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rangeMax, allocator);
+    }
+
+    if (m_resourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void AutoScalingConfig::SetRangeMax(const double& _rangeMax)
 bool AutoScalingConfig::RangeMaxHasBeenSet() const
 {
     return m_rangeMaxHasBeenSet;
+}
+
+string AutoScalingConfig::GetResourceType() const
+{
+    return m_resourceType;
+}
+
+void AutoScalingConfig::SetResourceType(const string& _resourceType)
+{
+    m_resourceType = _resourceType;
+    m_resourceTypeHasBeenSet = true;
+}
+
+bool AutoScalingConfig::ResourceTypeHasBeenSet() const
+{
+    return m_resourceTypeHasBeenSet;
 }
 

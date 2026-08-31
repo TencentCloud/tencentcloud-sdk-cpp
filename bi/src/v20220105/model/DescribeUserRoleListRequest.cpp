@@ -29,7 +29,8 @@ DescribeUserRoleListRequest::DescribeUserRoleListRequest() :
     m_userTypeHasBeenSet(false),
     m_keywordHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_isOnlyBindAppUserHasBeenSet(false)
+    m_isOnlyBindAppUserHasBeenSet(false),
+    m_identityTypeHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string DescribeUserRoleListRequest::ToJsonString() const
         string key = "IsOnlyBindAppUser";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isOnlyBindAppUser, allocator);
+    }
+
+    if (m_identityTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdentityType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_identityType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void DescribeUserRoleListRequest::SetIsOnlyBindAppUser(const bool& _isOnlyBindAp
 bool DescribeUserRoleListRequest::IsOnlyBindAppUserHasBeenSet() const
 {
     return m_isOnlyBindAppUserHasBeenSet;
+}
+
+string DescribeUserRoleListRequest::GetIdentityType() const
+{
+    return m_identityType;
+}
+
+void DescribeUserRoleListRequest::SetIdentityType(const string& _identityType)
+{
+    m_identityType = _identityType;
+    m_identityTypeHasBeenSet = true;
+}
+
+bool DescribeUserRoleListRequest::IdentityTypeHasBeenSet() const
+{
+    return m_identityTypeHasBeenSet;
 }
 
 

@@ -127,6 +127,48 @@ namespace TencentCloud
                      */
                     bool EngineTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>查询Order By字段，支持 StorageNodeNum/CreateTime/CreateVersion</p>
+                     * @return OrderBy <p>查询Order By字段，支持 StorageNodeNum/CreateTime/CreateVersion</p>
+                     * 
+                     */
+                    std::string GetOrderBy() const;
+
+                    /**
+                     * 设置<p>查询Order By字段，支持 StorageNodeNum/CreateTime/CreateVersion</p>
+                     * @param _orderBy <p>查询Order By字段，支持 StorageNodeNum/CreateTime/CreateVersion</p>
+                     * 
+                     */
+                    void SetOrderBy(const std::string& _orderBy);
+
+                    /**
+                     * 判断参数 OrderBy 是否已赋值
+                     * @return OrderBy 是否已赋值
+                     * 
+                     */
+                    bool OrderByHasBeenSet() const;
+
+                    /**
+                     * 获取<p>排序方向</p><p>枚举值：</p><ul><li>ASC： 升序</li><li>DESC： 降序</li></ul><p>默认值：DESC</p>
+                     * @return OrderDirection <p>排序方向</p><p>枚举值：</p><ul><li>ASC： 升序</li><li>DESC： 降序</li></ul><p>默认值：DESC</p>
+                     * 
+                     */
+                    std::string GetOrderDirection() const;
+
+                    /**
+                     * 设置<p>排序方向</p><p>枚举值：</p><ul><li>ASC： 升序</li><li>DESC： 降序</li></ul><p>默认值：DESC</p>
+                     * @param _orderDirection <p>排序方向</p><p>枚举值：</p><ul><li>ASC： 升序</li><li>DESC： 降序</li></ul><p>默认值：DESC</p>
+                     * 
+                     */
+                    void SetOrderDirection(const std::string& _orderDirection);
+
+                    /**
+                     * 判断参数 OrderDirection 是否已赋值
+                     * @return OrderDirection 是否已赋值
+                     * 
+                     */
+                    bool OrderDirectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +194,18 @@ namespace TencentCloud
                      */
                     std::string m_engineType;
                     bool m_engineTypeHasBeenSet;
+
+                    /**
+                     * <p>查询Order By字段，支持 StorageNodeNum/CreateTime/CreateVersion</p>
+                     */
+                    std::string m_orderBy;
+                    bool m_orderByHasBeenSet;
+
+                    /**
+                     * <p>排序方向</p><p>枚举值：</p><ul><li>ASC： 升序</li><li>DESC： 降序</li></ul><p>默认值：DESC</p>
+                     */
+                    std::string m_orderDirection;
+                    bool m_orderDirectionHasBeenSet;
 
                 };
             }

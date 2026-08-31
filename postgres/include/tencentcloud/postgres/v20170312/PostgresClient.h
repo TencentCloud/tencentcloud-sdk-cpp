@@ -33,6 +33,8 @@
 #include <tencentcloud/postgres/v20170312/model/CloseAuditServiceResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CloseDBExtranetAccessRequest.h>
 #include <tencentcloud/postgres/v20170312/model/CloseDBExtranetAccessResponse.h>
+#include <tencentcloud/postgres/v20170312/model/CloseDBProxyAddressRequest.h>
+#include <tencentcloud/postgres/v20170312/model/CloseDBProxyAddressResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateAccountRequest.h>
 #include <tencentcloud/postgres/v20170312/model/CreateAccountResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateAuditLogFileRequest.h>
@@ -45,6 +47,8 @@
 #include <tencentcloud/postgres/v20170312/model/CreateDBInstanceNetworkAccessResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateDBProxyRequest.h>
 #include <tencentcloud/postgres/v20170312/model/CreateDBProxyResponse.h>
+#include <tencentcloud/postgres/v20170312/model/CreateDBProxyAddressRequest.h>
+#include <tencentcloud/postgres/v20170312/model/CreateDBProxyAddressResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateDatabaseRequest.h>
 #include <tencentcloud/postgres/v20170312/model/CreateDatabaseResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateInstancesRequest.h>
@@ -123,6 +127,8 @@
 #include <tencentcloud/postgres/v20170312/model/DescribeDBInstancesResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBProxyRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBProxyResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeDBProxySSLConfigRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeDBProxySSLConfigResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBProxySpecsRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBProxySpecsResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBVersionsRequest.h>
@@ -219,6 +225,8 @@
 #include <tencentcloud/postgres/v20170312/model/ModifyDBProxyResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBProxyAddressRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBProxyAddressResponse.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyDBProxySSLConfigRequest.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyDBProxySSLConfigResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDatabaseOwnerRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDatabaseOwnerResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyMaintainTimeWindowRequest.h>
@@ -292,6 +300,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CloseDBExtranetAccessResponse> CloseDBExtranetAccessOutcome;
                 typedef std::future<CloseDBExtranetAccessOutcome> CloseDBExtranetAccessOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CloseDBExtranetAccessRequest&, CloseDBExtranetAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseDBExtranetAccessAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloseDBProxyAddressResponse> CloseDBProxyAddressOutcome;
+                typedef std::future<CloseDBProxyAddressOutcome> CloseDBProxyAddressOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::CloseDBProxyAddressRequest&, CloseDBProxyAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseDBProxyAddressAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAccountResponse> CreateAccountOutcome;
                 typedef std::future<CreateAccountOutcome> CreateAccountOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CreateAccountRequest&, CreateAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccountAsyncHandler;
@@ -310,6 +321,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDBProxyResponse> CreateDBProxyOutcome;
                 typedef std::future<CreateDBProxyOutcome> CreateDBProxyOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CreateDBProxyRequest&, CreateDBProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBProxyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDBProxyAddressResponse> CreateDBProxyAddressOutcome;
+                typedef std::future<CreateDBProxyAddressOutcome> CreateDBProxyAddressOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::CreateDBProxyAddressRequest&, CreateDBProxyAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBProxyAddressAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDatabaseResponse> CreateDatabaseOutcome;
                 typedef std::future<CreateDatabaseOutcome> CreateDatabaseOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CreateDatabaseRequest&, CreateDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatabaseAsyncHandler;
@@ -427,6 +441,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBProxyResponse> DescribeDBProxyOutcome;
                 typedef std::future<DescribeDBProxyOutcome> DescribeDBProxyOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeDBProxyRequest&, DescribeDBProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBProxyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBProxySSLConfigResponse> DescribeDBProxySSLConfigOutcome;
+                typedef std::future<DescribeDBProxySSLConfigOutcome> DescribeDBProxySSLConfigOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DescribeDBProxySSLConfigRequest&, DescribeDBProxySSLConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBProxySSLConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBProxySpecsResponse> DescribeDBProxySpecsOutcome;
                 typedef std::future<DescribeDBProxySpecsOutcome> DescribeDBProxySpecsOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeDBProxySpecsRequest&, DescribeDBProxySpecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBProxySpecsAsyncHandler;
@@ -571,6 +588,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBProxyAddressResponse> ModifyDBProxyAddressOutcome;
                 typedef std::future<ModifyDBProxyAddressOutcome> ModifyDBProxyAddressOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyDBProxyAddressRequest&, ModifyDBProxyAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBProxyAddressAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBProxySSLConfigResponse> ModifyDBProxySSLConfigOutcome;
+                typedef std::future<ModifyDBProxySSLConfigOutcome> ModifyDBProxySSLConfigOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::ModifyDBProxySSLConfigRequest&, ModifyDBProxySSLConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBProxySSLConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDatabaseOwnerResponse> ModifyDatabaseOwnerOutcome;
                 typedef std::future<ModifyDatabaseOwnerOutcome> ModifyDatabaseOwnerOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyDatabaseOwnerRequest&, ModifyDatabaseOwnerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatabaseOwnerAsyncHandler;
@@ -686,6 +706,15 @@ namespace TencentCloud
                 CloseDBExtranetAccessOutcomeCallable CloseDBExtranetAccessCallable(const Model::CloseDBExtranetAccessRequest& request);
 
                 /**
+                 *本接口用于关闭（删除）数据库代理的指定地址。接口为异步操作，返回 TaskId 供调用方通过 DescribeTasks 查询任务执行进度。约束：代理组至少保留一个地址，不允许删除最后一个地址。
+                 * @param req CloseDBProxyAddressRequest
+                 * @return CloseDBProxyAddressOutcome
+                 */
+                CloseDBProxyAddressOutcome CloseDBProxyAddress(const Model::CloseDBProxyAddressRequest &request);
+                void CloseDBProxyAddressAsync(const Model::CloseDBProxyAddressRequest& request, const CloseDBProxyAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseDBProxyAddressOutcomeCallable CloseDBProxyAddressCallable(const Model::CloseDBProxyAddressRequest& request);
+
+                /**
                  *此接口用于创建数据账号，返回的Oid为账号唯一标识。与数据库系统表pg_roles中记录的oid一致。
                  * @param req CreateAccountRequest
                  * @return CreateAccountOutcome
@@ -738,6 +767,15 @@ namespace TencentCloud
                 CreateDBProxyOutcome CreateDBProxy(const Model::CreateDBProxyRequest &request);
                 void CreateDBProxyAsync(const Model::CreateDBProxyRequest& request, const CreateDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDBProxyOutcomeCallable CreateDBProxyCallable(const Model::CreateDBProxyRequest& request);
+
+                /**
+                 *本接口（CreateDBProxyAddress）用于为指定实例的数据库代理创建连接地址。该接口为异步接口，调用成功后返回 TaskId，可通过 DescribeTasks 接口查询任务执行进度。<p>支持同时配置读写分离策略，包括权重模式、路由分配、延迟剔除、故障转移等高级功能。</p>
+                 * @param req CreateDBProxyAddressRequest
+                 * @return CreateDBProxyAddressOutcome
+                 */
+                CreateDBProxyAddressOutcome CreateDBProxyAddress(const Model::CreateDBProxyAddressRequest &request);
+                void CreateDBProxyAddressAsync(const Model::CreateDBProxyAddressRequest& request, const CreateDBProxyAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDBProxyAddressOutcomeCallable CreateDBProxyAddressCallable(const Model::CreateDBProxyAddressRequest& request);
 
                 /**
                  *此接口用于创建数据库，需指定数据库名及所有者。
@@ -1106,6 +1144,15 @@ namespace TencentCloud
                 DescribeDBProxyOutcome DescribeDBProxy(const Model::DescribeDBProxyRequest &request);
                 void DescribeDBProxyAsync(const Model::DescribeDBProxyRequest& request, const DescribeDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBProxyOutcomeCallable DescribeDBProxyCallable(const Model::DescribeDBProxyRequest& request);
+
+                /**
+                 *本接口用于查询指定代理连接地址的 SSL 配置信息，包括 SSL 是否开启、连接地址和 CA 证书下载地址。
+                 * @param req DescribeDBProxySSLConfigRequest
+                 * @return DescribeDBProxySSLConfigOutcome
+                 */
+                DescribeDBProxySSLConfigOutcome DescribeDBProxySSLConfig(const Model::DescribeDBProxySSLConfigRequest &request);
+                void DescribeDBProxySSLConfigAsync(const Model::DescribeDBProxySSLConfigRequest& request, const DescribeDBProxySSLConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBProxySSLConfigOutcomeCallable DescribeDBProxySSLConfigCallable(const Model::DescribeDBProxySSLConfigRequest& request);
 
                 /**
                  *查询代理可售规格
@@ -1541,6 +1588,15 @@ namespace TencentCloud
                 ModifyDBProxyAddressOutcome ModifyDBProxyAddress(const Model::ModifyDBProxyAddressRequest &request);
                 void ModifyDBProxyAddressAsync(const Model::ModifyDBProxyAddressRequest& request, const ModifyDBProxyAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDBProxyAddressOutcomeCallable ModifyDBProxyAddressCallable(const Model::ModifyDBProxyAddressRequest& request);
+
+                /**
+                 *本接口（ModifyDBProxySSLConfig）用于修改数据库代理连接地址的 SSL 配置。该接口为异步接口，调用成功后返回 TaskId，可通过 DescribeTasks 接口查询任务执行进度。<p>当前仅支持物理机（local）存储类型的代理开启 SSL。SSL 开启时需提供 ConnectAddress，且必须与代理地址的 Vip 保持一致。</p><p>当 SSL 状态与当前配置一致时，接口直接返回成功，TaskId 为 0，无需等待任务。</p>
+                 * @param req ModifyDBProxySSLConfigRequest
+                 * @return ModifyDBProxySSLConfigOutcome
+                 */
+                ModifyDBProxySSLConfigOutcome ModifyDBProxySSLConfig(const Model::ModifyDBProxySSLConfigRequest &request);
+                void ModifyDBProxySSLConfigAsync(const Model::ModifyDBProxySSLConfigRequest& request, const ModifyDBProxySSLConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBProxySSLConfigOutcomeCallable ModifyDBProxySSLConfigCallable(const Model::ModifyDBProxySSLConfigRequest& request);
 
                 /**
                  *修改数据库所有者

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务 ID
-                     * @return TaskId 任务 ID
+                     * 获取<p>任务 ID</p>
+                     * @return TaskId <p>任务 ID</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务 ID
-                     * @param _taskId 任务 ID
+                     * 设置<p>任务 ID</p>
+                     * @param _taskId <p>任务 ID</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -63,13 +63,40 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>下载 URL 的过期时间（秒级 UNIX 时间戳）。若传入该参数，则响应中将包含所有文件的下载 URL</p><p>单位：秒</p>
+                     * @return FileURLExpireTime <p>下载 URL 的过期时间（秒级 UNIX 时间戳）。若传入该参数，则响应中将包含所有文件的下载 URL</p><p>单位：秒</p>
+                     * 
+                     */
+                    int64_t GetFileURLExpireTime() const;
+
+                    /**
+                     * 设置<p>下载 URL 的过期时间（秒级 UNIX 时间戳）。若传入该参数，则响应中将包含所有文件的下载 URL</p><p>单位：秒</p>
+                     * @param _fileURLExpireTime <p>下载 URL 的过期时间（秒级 UNIX 时间戳）。若传入该参数，则响应中将包含所有文件的下载 URL</p><p>单位：秒</p>
+                     * 
+                     */
+                    void SetFileURLExpireTime(const int64_t& _fileURLExpireTime);
+
+                    /**
+                     * 判断参数 FileURLExpireTime 是否已赋值
+                     * @return FileURLExpireTime 是否已赋值
+                     * 
+                     */
+                    bool FileURLExpireTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务 ID
+                     * <p>任务 ID</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * <p>下载 URL 的过期时间（秒级 UNIX 时间戳）。若传入该参数，则响应中将包含所有文件的下载 URL</p><p>单位：秒</p>
+                     */
+                    int64_t m_fileURLExpireTime;
+                    bool m_fileURLExpireTimeHasBeenSet;
 
                 };
             }

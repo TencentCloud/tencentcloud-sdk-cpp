@@ -357,6 +357,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterDatabaseResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterGlobalEncryptionRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterGlobalEncryptionResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyClusterLevelRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyClusterLevelResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterNameRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterNameResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterParamRequest.h>
@@ -1020,6 +1022,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyClusterGlobalEncryptionResponse> ModifyClusterGlobalEncryptionOutcome;
                 typedef std::future<ModifyClusterGlobalEncryptionOutcome> ModifyClusterGlobalEncryptionOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyClusterGlobalEncryptionRequest&, ModifyClusterGlobalEncryptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterGlobalEncryptionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyClusterLevelResponse> ModifyClusterLevelOutcome;
+                typedef std::future<ModifyClusterLevelOutcome> ModifyClusterLevelOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyClusterLevelRequest&, ModifyClusterLevelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterLevelAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyClusterNameResponse> ModifyClusterNameOutcome;
                 typedef std::future<ModifyClusterNameOutcome> ModifyClusterNameOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyClusterNameRequest&, ModifyClusterNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterNameAsyncHandler;
@@ -2747,6 +2752,15 @@ namespace TencentCloud
                 ModifyClusterGlobalEncryptionOutcome ModifyClusterGlobalEncryption(const Model::ModifyClusterGlobalEncryptionRequest &request);
                 void ModifyClusterGlobalEncryptionAsync(const Model::ModifyClusterGlobalEncryptionRequest& request, const ModifyClusterGlobalEncryptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyClusterGlobalEncryptionOutcomeCallable ModifyClusterGlobalEncryptionCallable(const Model::ModifyClusterGlobalEncryptionRequest& request);
+
+                /**
+                 *修改集群级别
+                 * @param req ModifyClusterLevelRequest
+                 * @return ModifyClusterLevelOutcome
+                 */
+                ModifyClusterLevelOutcome ModifyClusterLevel(const Model::ModifyClusterLevelRequest &request);
+                void ModifyClusterLevelAsync(const Model::ModifyClusterLevelRequest& request, const ModifyClusterLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterLevelOutcomeCallable ModifyClusterLevelCallable(const Model::ModifyClusterLevelRequest& request);
 
                 /**
                  *本接口（ModifyClusterName）用于修改集群名称。

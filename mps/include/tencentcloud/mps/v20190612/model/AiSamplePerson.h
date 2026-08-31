@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人物 ID。
-                     * @return PersonId 人物 ID。
+                     * 获取<p>人物 ID。</p>
+                     * @return PersonId <p>人物 ID。</p>
                      * 
                      */
                     std::string GetPersonId() const;
 
                     /**
-                     * 设置人物 ID。
-                     * @param _personId 人物 ID。
+                     * 设置<p>人物 ID。</p>
+                     * @param _personId <p>人物 ID。</p>
                      * 
                      */
                     void SetPersonId(const std::string& _personId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool PersonIdHasBeenSet() const;
 
                     /**
-                     * 获取人物名称。
-                     * @return Name 人物名称。
+                     * 获取<p>人物名称。</p>
+                     * @return Name <p>人物名称。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置人物名称。
-                     * @param _name 人物名称。
+                     * 设置<p>人物名称。</p>
+                     * @param _name <p>人物名称。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取人物描述。
-                     * @return Description 人物描述。
+                     * 获取<p>人物描述。</p>
+                     * @return Description <p>人物描述。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置人物描述。
-                     * @param _description 人物描述。
+                     * 设置<p>人物描述。</p>
+                     * @param _description <p>人物描述。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取人脸信息。
-                     * @return FaceInfoSet 人脸信息。
+                     * 获取<p>人脸信息。</p>
+                     * @return FaceInfoSet <p>人脸信息。</p>
                      * 
                      */
                     std::vector<AiSampleFaceInfo> GetFaceInfoSet() const;
 
                     /**
-                     * 设置人脸信息。
-                     * @param _faceInfoSet 人脸信息。
+                     * 设置<p>人脸信息。</p>
+                     * @param _faceInfoSet <p>人脸信息。</p>
                      * 
                      */
                     void SetFaceInfoSet(const std::vector<AiSampleFaceInfo>& _faceInfoSet);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool FaceInfoSetHasBeenSet() const;
 
                     /**
-                     * 获取人物标签。
-                     * @return TagSet 人物标签。
+                     * 获取<p>人物标签。</p>
+                     * @return TagSet <p>人物标签。</p>
                      * 
                      */
                     std::vector<std::string> GetTagSet() const;
 
                     /**
-                     * 设置人物标签。
-                     * @param _tagSet 人物标签。
+                     * 设置<p>人物标签。</p>
+                     * @param _tagSet <p>人物标签。</p>
                      * 
                      */
                     void SetTagSet(const std::vector<std::string>& _tagSet);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool TagSetHasBeenSet() const;
 
                     /**
-                     * 获取应用场景。
-                     * @return UsageSet 应用场景。
+                     * 获取<p>应用场景。</p>
+                     * @return UsageSet <p>应用场景。</p>
                      * 
                      */
                     std::vector<std::string> GetUsageSet() const;
 
                     /**
-                     * 设置应用场景。
-                     * @param _usageSet 应用场景。
+                     * 设置<p>应用场景。</p>
+                     * @param _usageSet <p>应用场景。</p>
                      * 
                      */
                     void SetUsageSet(const std::vector<std::string>& _usageSet);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool UsageSetHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-                     * @return CreateTime 创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * 获取<p>创建时间，使用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
+                     * @return CreateTime <p>创建时间，使用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-                     * @param _createTime 创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * 设置<p>创建时间，使用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
+                     * @param _createTime <p>创建时间，使用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-                     * @return UpdateTime 最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * 获取<p>最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
+                     * @return UpdateTime <p>最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-                     * @param _updateTime 最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * 设置<p>最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
+                     * @param _updateTime <p>最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -218,49 +218,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 人物 ID。
+                     * <p>人物 ID。</p>
                      */
                     std::string m_personId;
                     bool m_personIdHasBeenSet;
 
                     /**
-                     * 人物名称。
+                     * <p>人物名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 人物描述。
+                     * <p>人物描述。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 人脸信息。
+                     * <p>人脸信息。</p>
                      */
                     std::vector<AiSampleFaceInfo> m_faceInfoSet;
                     bool m_faceInfoSetHasBeenSet;
 
                     /**
-                     * 人物标签。
+                     * <p>人物标签。</p>
                      */
                     std::vector<std::string> m_tagSet;
                     bool m_tagSetHasBeenSet;
 
                     /**
-                     * 应用场景。
+                     * <p>应用场景。</p>
                      */
                     std::vector<std::string> m_usageSet;
                     bool m_usageSetHasBeenSet;
 
                     /**
-                     * 创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * <p>创建时间，使用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * <p>最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

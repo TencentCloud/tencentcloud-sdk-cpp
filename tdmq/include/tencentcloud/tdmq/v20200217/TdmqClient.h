@@ -873,7 +873,7 @@ namespace TencentCloud
                 CreateEnvironmentRoleOutcomeCallable CreateEnvironmentRoleCallable(const Model::CreateEnvironmentRoleRequest& request);
 
                 /**
-                 *创建专业集群——预付费，仅通过api调用
+                 *创建Pulsar标准版或专业版实例——预付费，仅通过api调用
                  * @param req CreateProClusterRequest
                  * @return CreateProClusterOutcome
                  */
@@ -1449,7 +1449,7 @@ namespace TencentCloud
                 DescribePublishersOutcomeCallable DescribePublishersCallable(const Model::DescribePublishersRequest& request);
 
                 /**
-                 *获取Pulsar专业版集群实例信息
+                 *获取Pulsar标准版或专业版实例信息
                  * @param req DescribePulsarProInstanceDetailRequest
                  * @return DescribePulsarProInstanceDetailOutcome
                  */
@@ -1458,7 +1458,7 @@ namespace TencentCloud
                 DescribePulsarProInstanceDetailOutcomeCallable DescribePulsarProInstanceDetailCallable(const Model::DescribePulsarProInstanceDetailRequest& request);
 
                 /**
-                 *查询用户已购的Pulsar专业版实例列表
+                 *查询用户已购的Pulsar实例列表
                  * @param req DescribePulsarProInstancesRequest
                  * @return DescribePulsarProInstancesOutcome
                  */
@@ -1903,7 +1903,7 @@ namespace TencentCloud
                 ImportRocketMQTopicsOutcomeCallable ImportRocketMQTopicsCallable(const Model::ImportRocketMQTopicsRequest& request);
 
                 /**
-                 *更新集群信息
+                 *更新虚拟集群信息
                  * @param req ModifyClusterRequest
                  * @return ModifyClusterOutcome
                  */

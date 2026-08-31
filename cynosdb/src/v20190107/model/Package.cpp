@@ -25,6 +25,7 @@ Package::Package() :
     m_packageIdHasBeenSet(false),
     m_packageNameHasBeenSet(false),
     m_packageTypeHasBeenSet(false),
+    m_packageVersionHasBeenSet(false),
     m_packageRegionHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_packageTotalSpecHasBeenSet(false),
@@ -80,6 +81,16 @@ CoreInternalOutcome Package::Deserialize(const rapidjson::Value &value)
         }
         m_packageType = string(value["PackageType"].GetString());
         m_packageTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PackageVersion") && !value["PackageVersion"].IsNull())
+    {
+        if (!value["PackageVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Package.PackageVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_packageVersion = string(value["PackageVersion"].GetString());
+        m_packageVersionHasBeenSet = true;
     }
 
     if (value.HasMember("PackageRegion") && !value["PackageRegion"].IsNull())
@@ -229,6 +240,14 @@ void Package::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "PackageType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_packageType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_packageVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PackageVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_packageVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_packageRegionHasBeenSet)
@@ -382,6 +401,22 @@ void Package::SetPackageType(const string& _packageType)
 bool Package::PackageTypeHasBeenSet() const
 {
     return m_packageTypeHasBeenSet;
+}
+
+string Package::GetPackageVersion() const
+{
+    return m_packageVersion;
+}
+
+void Package::SetPackageVersion(const string& _packageVersion)
+{
+    m_packageVersion = _packageVersion;
+    m_packageVersionHasBeenSet = true;
+}
+
+bool Package::PackageVersionHasBeenSet() const
+{
+    return m_packageVersionHasBeenSet;
 }
 
 string Package::GetPackageRegion() const

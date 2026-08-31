@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>要检索分析的日志的起始时间，<strong>Unix时间戳（毫秒）</strong></p>
-                     * @return From <p>要检索分析的日志的起始时间，<strong>Unix时间戳（毫秒）</strong></p>
+                     * 获取<p>要检索分析的日志的起始时间，<strong>Unix时间戳（毫秒）</strong></p><p>时间范围为左闭右开区间 [From, To)，包含 From 时刻</p>
+                     * @return From <p>要检索分析的日志的起始时间，<strong>Unix时间戳（毫秒）</strong></p><p>时间范围为左闭右开区间 [From, To)，包含 From 时刻</p>
                      * 
                      */
                     int64_t GetFrom() const;
 
                     /**
-                     * 设置<p>要检索分析的日志的起始时间，<strong>Unix时间戳（毫秒）</strong></p>
-                     * @param _from <p>要检索分析的日志的起始时间，<strong>Unix时间戳（毫秒）</strong></p>
+                     * 设置<p>要检索分析的日志的起始时间，<strong>Unix时间戳（毫秒）</strong></p><p>时间范围为左闭右开区间 [From, To)，包含 From 时刻</p>
+                     * @param _from <p>要检索分析的日志的起始时间，<strong>Unix时间戳（毫秒）</strong></p><p>时间范围为左闭右开区间 [From, To)，包含 From 时刻</p>
                      * 
                      */
                     void SetFrom(const int64_t& _from);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool FromHasBeenSet() const;
 
                     /**
-                     * 获取<p>要检索分析的日志的结束时间，<strong>Unix时间戳（毫秒）</strong></p>
-                     * @return To <p>要检索分析的日志的结束时间，<strong>Unix时间戳（毫秒）</strong></p>
+                     * 获取<p>要检索分析的日志的结束时间，<strong>Unix时间戳（毫秒）</strong></p><p>时间范围为左闭右开区间 [From, To)，不包含 To 时刻</p>
+                     * @return To <p>要检索分析的日志的结束时间，<strong>Unix时间戳（毫秒）</strong></p><p>时间范围为左闭右开区间 [From, To)，不包含 To 时刻</p>
                      * 
                      */
                     int64_t GetTo() const;
 
                     /**
-                     * 设置<p>要检索分析的日志的结束时间，<strong>Unix时间戳（毫秒）</strong></p>
-                     * @param _to <p>要检索分析的日志的结束时间，<strong>Unix时间戳（毫秒）</strong></p>
+                     * 设置<p>要检索分析的日志的结束时间，<strong>Unix时间戳（毫秒）</strong></p><p>时间范围为左闭右开区间 [From, To)，不包含 To 时刻</p>
+                     * @param _to <p>要检索分析的日志的结束时间，<strong>Unix时间戳（毫秒）</strong></p><p>时间范围为左闭右开区间 [From, To)，不包含 To 时刻</p>
                      * 
                      */
                     void SetTo(const int64_t& _to);
@@ -361,13 +361,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>要检索分析的日志的起始时间，<strong>Unix时间戳（毫秒）</strong></p>
+                     * <p>要检索分析的日志的起始时间，<strong>Unix时间戳（毫秒）</strong></p><p>时间范围为左闭右开区间 [From, To)，包含 From 时刻</p>
                      */
                     int64_t m_from;
                     bool m_fromHasBeenSet;
 
                     /**
-                     * <p>要检索分析的日志的结束时间，<strong>Unix时间戳（毫秒）</strong></p>
+                     * <p>要检索分析的日志的结束时间，<strong>Unix时间戳（毫秒）</strong></p><p>时间范围为左闭右开区间 [From, To)，不包含 To 时刻</p>
                      */
                     int64_t m_to;
                     bool m_toHasBeenSet;

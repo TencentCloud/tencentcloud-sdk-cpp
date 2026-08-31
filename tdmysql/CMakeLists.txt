@@ -131,6 +131,7 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/AnalysisRelationInfo.h
   include/tencentcloud/tdmysql/v20211122/model/ResourceTag.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyMaintenanceWindowResponse.h
+  include/tencentcloud/tdmysql/v20211122/model/ServerlessNodeNumSpec.h
   include/tencentcloud/tdmysql/v20211122/model/IsolateDBInstanceRequest.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeFlowRequest.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyDBSBackupSetCommentResponse.h
@@ -276,6 +277,7 @@ set(tdmysql_src
   src/v20211122/model/AnalysisRelationInfo.cpp
   src/v20211122/model/ResourceTag.cpp
   src/v20211122/model/ModifyMaintenanceWindowResponse.cpp
+  src/v20211122/model/ServerlessNodeNumSpec.cpp
   src/v20211122/model/IsolateDBInstanceRequest.cpp
   src/v20211122/model/DescribeFlowRequest.cpp
   src/v20211122/model/ModifyDBSBackupSetCommentResponse.cpp

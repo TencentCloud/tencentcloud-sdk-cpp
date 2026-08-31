@@ -288,6 +288,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterStorageAutoExpandRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBackupOverviewResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ReplayInstanceAuditLogRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/ModifyClusterLevelRequest.h
   include/tencentcloud/cynosdb/v20190107/model/MigrateDBItem.h
   include/tencentcloud/cynosdb/v20190107/model/RegionInstanceSpecInfo.h
   include/tencentcloud/cynosdb/v20190107/model/TransferClusterPrepayToPostpayRequest.h
@@ -463,6 +464,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeBinlogConfigRequest.h
   include/tencentcloud/cynosdb/v20190107/model/IsolateLibraDBClusterRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CreateAuditRuleTemplateRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/ModifyClusterLevelResponse.h
   include/tencentcloud/cynosdb/v20190107/model/PauseServerlessRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBinlogListByVaultResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CynosdbCluster.h
@@ -956,6 +958,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeClusterStorageAutoExpandRequest.cpp
   src/v20190107/model/DescribeBackupOverviewResponse.cpp
   src/v20190107/model/ReplayInstanceAuditLogRequest.cpp
+  src/v20190107/model/ModifyClusterLevelRequest.cpp
   src/v20190107/model/MigrateDBItem.cpp
   src/v20190107/model/RegionInstanceSpecInfo.cpp
   src/v20190107/model/TransferClusterPrepayToPostpayRequest.cpp
@@ -1131,6 +1134,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeBinlogConfigRequest.cpp
   src/v20190107/model/IsolateLibraDBClusterRequest.cpp
   src/v20190107/model/CreateAuditRuleTemplateRequest.cpp
+  src/v20190107/model/ModifyClusterLevelResponse.cpp
   src/v20190107/model/PauseServerlessRequest.cpp
   src/v20190107/model/DescribeBinlogListByVaultResponse.cpp
   src/v20190107/model/CynosdbCluster.cpp

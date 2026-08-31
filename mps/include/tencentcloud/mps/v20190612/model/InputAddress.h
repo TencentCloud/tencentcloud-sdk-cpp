@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取输入地址的IP。
-                     * @return Ip 输入地址的IP。
+                     * 获取<p>输入地址的IP。</p>
+                     * @return Ip <p>输入地址的IP。</p>
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置输入地址的IP。
-                     * @param _ip 输入地址的IP。
+                     * 设置<p>输入地址的IP。</p>
+                     * @param _ip <p>输入地址的IP。</p>
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取输入地址的端口。
-                     * @return Port 输入地址的端口。
+                     * 获取<p>输入地址的端口。</p>
+                     * @return Port <p>输入地址的端口。</p>
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置输入地址的端口。
-                     * @param _port 输入地址的端口。
+                     * 设置<p>输入地址的端口。</p>
+                     * @param _port <p>输入地址的端口。</p>
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 输入地址的IP。
+                     * <p>输入地址的IP。</p>
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 输入地址的端口。
+                     * <p>输入地址的端口。</p>
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;

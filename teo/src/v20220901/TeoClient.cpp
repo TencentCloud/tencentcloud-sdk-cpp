@@ -4090,6 +4090,56 @@ TeoClient::DescribeApplicationProxiesOutcomeCallable TeoClient::DescribeApplicat
     return prom->get_future();
 }
 
+TeoClient::DescribeAvailableCustomActionsForRuleEngineOutcome TeoClient::DescribeAvailableCustomActionsForRuleEngine(const DescribeAvailableCustomActionsForRuleEngineRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAvailableCustomActionsForRuleEngine");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAvailableCustomActionsForRuleEngineResponse rsp = DescribeAvailableCustomActionsForRuleEngineResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAvailableCustomActionsForRuleEngineOutcome(rsp);
+        else
+            return DescribeAvailableCustomActionsForRuleEngineOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAvailableCustomActionsForRuleEngineOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeAvailableCustomActionsForRuleEngineAsync(const DescribeAvailableCustomActionsForRuleEngineRequest& request, const DescribeAvailableCustomActionsForRuleEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAvailableCustomActionsForRuleEngineRequest&;
+    using Resp = DescribeAvailableCustomActionsForRuleEngineResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAvailableCustomActionsForRuleEngine", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeAvailableCustomActionsForRuleEngineOutcomeCallable TeoClient::DescribeAvailableCustomActionsForRuleEngineCallable(const DescribeAvailableCustomActionsForRuleEngineRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAvailableCustomActionsForRuleEngineOutcome>>();
+    DescribeAvailableCustomActionsForRuleEngineAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeAvailableCustomActionsForRuleEngineRequest&,
+        DescribeAvailableCustomActionsForRuleEngineOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TeoClient::DescribeAvailablePlansOutcome TeoClient::DescribeAvailablePlans(const DescribeAvailablePlansRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAvailablePlans");

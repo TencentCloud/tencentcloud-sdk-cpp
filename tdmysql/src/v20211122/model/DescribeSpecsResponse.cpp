@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeSpecsResponse::DescribeSpecsResponse() :
     m_hybridNodeSpecsHasBeenSet(false),
-    m_serverlessCcuSpecHasBeenSet(false)
+    m_serverlessCcuSpecHasBeenSet(false),
+    m_serverlessNodeNumSpecHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,23 @@ CoreInternalOutcome DescribeSpecsResponse::Deserialize(const string &payload)
         m_serverlessCcuSpecHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ServerlessNodeNumSpec") && !rsp["ServerlessNodeNumSpec"].IsNull())
+    {
+        if (!rsp["ServerlessNodeNumSpec"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerlessNodeNumSpec` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_serverlessNodeNumSpec.Deserialize(rsp["ServerlessNodeNumSpec"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_serverlessNodeNumSpecHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +161,15 @@ string DescribeSpecsResponse::ToJsonString() const
         }
     }
 
+    if (m_serverlessNodeNumSpecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerlessNodeNumSpec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_serverlessNodeNumSpec.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -173,6 +200,16 @@ vector<ServerlessCcu> DescribeSpecsResponse::GetServerlessCcuSpec() const
 bool DescribeSpecsResponse::ServerlessCcuSpecHasBeenSet() const
 {
     return m_serverlessCcuSpecHasBeenSet;
+}
+
+ServerlessNodeNumSpec DescribeSpecsResponse::GetServerlessNodeNumSpec() const
+{
+    return m_serverlessNodeNumSpec;
+}
+
+bool DescribeSpecsResponse::ServerlessNodeNumSpecHasBeenSet() const
+{
+    return m_serverlessNodeNumSpecHasBeenSet;
 }
 
 

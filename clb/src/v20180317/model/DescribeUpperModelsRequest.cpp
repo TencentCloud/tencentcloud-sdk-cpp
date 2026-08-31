@@ -31,7 +31,8 @@ DescribeUpperModelsRequest::DescribeUpperModelsRequest() :
     m_modelPathHasBeenSet(false),
     m_modelProtocolHasBeenSet(false),
     m_modelProviderHasBeenSet(false),
-    m_serviceProviderIdHasBeenSet(false)
+    m_serviceProviderIdHasBeenSet(false),
+    m_cMRPrivateNetworkTunnelIdHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string DescribeUpperModelsRequest::ToJsonString() const
         string key = "ServiceProviderId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serviceProviderId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cMRPrivateNetworkTunnelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CMRPrivateNetworkTunnelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cMRPrivateNetworkTunnelId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +273,22 @@ void DescribeUpperModelsRequest::SetServiceProviderId(const string& _serviceProv
 bool DescribeUpperModelsRequest::ServiceProviderIdHasBeenSet() const
 {
     return m_serviceProviderIdHasBeenSet;
+}
+
+string DescribeUpperModelsRequest::GetCMRPrivateNetworkTunnelId() const
+{
+    return m_cMRPrivateNetworkTunnelId;
+}
+
+void DescribeUpperModelsRequest::SetCMRPrivateNetworkTunnelId(const string& _cMRPrivateNetworkTunnelId)
+{
+    m_cMRPrivateNetworkTunnelId = _cMRPrivateNetworkTunnelId;
+    m_cMRPrivateNetworkTunnelIdHasBeenSet = true;
+}
+
+bool DescribeUpperModelsRequest::CMRPrivateNetworkTunnelIdHasBeenSet() const
+{
+    return m_cMRPrivateNetworkTunnelIdHasBeenSet;
 }
 
 

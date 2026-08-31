@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/monitor/v20230616/model/RobotNoticeTitleColor.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取内容模板
-                     * @return ContentTmpl 内容模板
+                     * 获取<p>内容模板</p>
+                     * @return ContentTmpl <p>内容模板</p>
                      * 
                      */
                     std::string GetContentTmpl() const;
 
                     /**
-                     * 设置内容模板
-                     * @param _contentTmpl 内容模板
+                     * 设置<p>内容模板</p>
+                     * @param _contentTmpl <p>内容模板</p>
                      * 
                      */
                     void SetContentTmpl(const std::string& _contentTmpl);
@@ -68,15 +69,15 @@ namespace TencentCloud
                     bool ContentTmplHasBeenSet() const;
 
                     /**
-                     * 获取标题模板
-                     * @return TitleTmpl 标题模板
+                     * 获取<p>标题模板</p>
+                     * @return TitleTmpl <p>标题模板</p>
                      * 
                      */
                     std::string GetTitleTmpl() const;
 
                     /**
-                     * 设置标题模板
-                     * @param _titleTmpl 标题模板
+                     * 设置<p>标题模板</p>
+                     * @param _titleTmpl <p>标题模板</p>
                      * 
                      */
                     void SetTitleTmpl(const std::string& _titleTmpl);
@@ -88,19 +89,46 @@ namespace TencentCloud
                      */
                     bool TitleTmplHasBeenSet() const;
 
+                    /**
+                     * 获取<p>通知内容模版标题自定义颜色</p>
+                     * @return TitleColor <p>通知内容模版标题自定义颜色</p>
+                     * 
+                     */
+                    RobotNoticeTitleColor GetTitleColor() const;
+
+                    /**
+                     * 设置<p>通知内容模版标题自定义颜色</p>
+                     * @param _titleColor <p>通知内容模版标题自定义颜色</p>
+                     * 
+                     */
+                    void SetTitleColor(const RobotNoticeTitleColor& _titleColor);
+
+                    /**
+                     * 判断参数 TitleColor 是否已赋值
+                     * @return TitleColor 是否已赋值
+                     * 
+                     */
+                    bool TitleColorHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 内容模板
+                     * <p>内容模板</p>
                      */
                     std::string m_contentTmpl;
                     bool m_contentTmplHasBeenSet;
 
                     /**
-                     * 标题模板
+                     * <p>标题模板</p>
                      */
                     std::string m_titleTmpl;
                     bool m_titleTmplHasBeenSet;
+
+                    /**
+                     * <p>通知内容模版标题自定义颜色</p>
+                     */
+                    RobotNoticeTitleColor m_titleColor;
+                    bool m_titleColorHasBeenSet;
 
                 };
             }

@@ -38,7 +38,13 @@ DescribeDeviceHardwareInfoItem::DescribeDeviceHardwareInfoItem() :
     m_hardDiskSizeHasBeenSet(false),
     m_monitorHasBeenSet(false),
     m_remarkNameHasBeenSet(false),
-    m_biosUuidHasBeenSet(false)
+    m_biosUuidHasBeenSet(false),
+    m_networkCardsHasBeenSet(false),
+    m_videoCardsHasBeenSet(false),
+    m_mainBoardHasBeenSet(false),
+    m_baseBoardSnHasBeenSet(false),
+    m_baseBoardManufacturerHasBeenSet(false),
+    m_audioCardHasBeenSet(false)
 {
 }
 
@@ -227,6 +233,86 @@ CoreInternalOutcome DescribeDeviceHardwareInfoItem::Deserialize(const rapidjson:
         m_biosUuidHasBeenSet = true;
     }
 
+    if (value.HasMember("NetworkCards") && !value["NetworkCards"].IsNull())
+    {
+        if (!value["NetworkCards"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeDeviceHardwareInfoItem.NetworkCards` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NetworkCards"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DeviceNetworkCardBrief item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_networkCards.push_back(item);
+        }
+        m_networkCardsHasBeenSet = true;
+    }
+
+    if (value.HasMember("VideoCards") && !value["VideoCards"].IsNull())
+    {
+        if (!value["VideoCards"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeDeviceHardwareInfoItem.VideoCards` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["VideoCards"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DeviceVideoCardBrief item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_videoCards.push_back(item);
+        }
+        m_videoCardsHasBeenSet = true;
+    }
+
+    if (value.HasMember("MainBoard") && !value["MainBoard"].IsNull())
+    {
+        if (!value["MainBoard"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDeviceHardwareInfoItem.MainBoard` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mainBoard = string(value["MainBoard"].GetString());
+        m_mainBoardHasBeenSet = true;
+    }
+
+    if (value.HasMember("BaseBoardSn") && !value["BaseBoardSn"].IsNull())
+    {
+        if (!value["BaseBoardSn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDeviceHardwareInfoItem.BaseBoardSn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_baseBoardSn = string(value["BaseBoardSn"].GetString());
+        m_baseBoardSnHasBeenSet = true;
+    }
+
+    if (value.HasMember("BaseBoardManufacturer") && !value["BaseBoardManufacturer"].IsNull())
+    {
+        if (!value["BaseBoardManufacturer"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDeviceHardwareInfoItem.BaseBoardManufacturer` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_baseBoardManufacturer = string(value["BaseBoardManufacturer"].GetString());
+        m_baseBoardManufacturerHasBeenSet = true;
+    }
+
+    if (value.HasMember("AudioCard") && !value["AudioCard"].IsNull())
+    {
+        if (!value["AudioCard"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDeviceHardwareInfoItem.AudioCard` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_audioCard = string(value["AudioCard"].GetString());
+        m_audioCardHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +462,68 @@ void DescribeDeviceHardwareInfoItem::ToJsonObject(rapidjson::Value &value, rapid
         string key = "BiosUuid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_biosUuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkCardsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkCards";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_networkCards.begin(); itr != m_networkCards.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_videoCardsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoCards";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_videoCards.begin(); itr != m_videoCards.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_mainBoardHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MainBoard";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mainBoard.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_baseBoardSnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BaseBoardSn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_baseBoardSn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_baseBoardManufacturerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BaseBoardManufacturer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_baseBoardManufacturer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_audioCardHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioCard";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_audioCard.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -667,5 +815,101 @@ void DescribeDeviceHardwareInfoItem::SetBiosUuid(const string& _biosUuid)
 bool DescribeDeviceHardwareInfoItem::BiosUuidHasBeenSet() const
 {
     return m_biosUuidHasBeenSet;
+}
+
+vector<DeviceNetworkCardBrief> DescribeDeviceHardwareInfoItem::GetNetworkCards() const
+{
+    return m_networkCards;
+}
+
+void DescribeDeviceHardwareInfoItem::SetNetworkCards(const vector<DeviceNetworkCardBrief>& _networkCards)
+{
+    m_networkCards = _networkCards;
+    m_networkCardsHasBeenSet = true;
+}
+
+bool DescribeDeviceHardwareInfoItem::NetworkCardsHasBeenSet() const
+{
+    return m_networkCardsHasBeenSet;
+}
+
+vector<DeviceVideoCardBrief> DescribeDeviceHardwareInfoItem::GetVideoCards() const
+{
+    return m_videoCards;
+}
+
+void DescribeDeviceHardwareInfoItem::SetVideoCards(const vector<DeviceVideoCardBrief>& _videoCards)
+{
+    m_videoCards = _videoCards;
+    m_videoCardsHasBeenSet = true;
+}
+
+bool DescribeDeviceHardwareInfoItem::VideoCardsHasBeenSet() const
+{
+    return m_videoCardsHasBeenSet;
+}
+
+string DescribeDeviceHardwareInfoItem::GetMainBoard() const
+{
+    return m_mainBoard;
+}
+
+void DescribeDeviceHardwareInfoItem::SetMainBoard(const string& _mainBoard)
+{
+    m_mainBoard = _mainBoard;
+    m_mainBoardHasBeenSet = true;
+}
+
+bool DescribeDeviceHardwareInfoItem::MainBoardHasBeenSet() const
+{
+    return m_mainBoardHasBeenSet;
+}
+
+string DescribeDeviceHardwareInfoItem::GetBaseBoardSn() const
+{
+    return m_baseBoardSn;
+}
+
+void DescribeDeviceHardwareInfoItem::SetBaseBoardSn(const string& _baseBoardSn)
+{
+    m_baseBoardSn = _baseBoardSn;
+    m_baseBoardSnHasBeenSet = true;
+}
+
+bool DescribeDeviceHardwareInfoItem::BaseBoardSnHasBeenSet() const
+{
+    return m_baseBoardSnHasBeenSet;
+}
+
+string DescribeDeviceHardwareInfoItem::GetBaseBoardManufacturer() const
+{
+    return m_baseBoardManufacturer;
+}
+
+void DescribeDeviceHardwareInfoItem::SetBaseBoardManufacturer(const string& _baseBoardManufacturer)
+{
+    m_baseBoardManufacturer = _baseBoardManufacturer;
+    m_baseBoardManufacturerHasBeenSet = true;
+}
+
+bool DescribeDeviceHardwareInfoItem::BaseBoardManufacturerHasBeenSet() const
+{
+    return m_baseBoardManufacturerHasBeenSet;
+}
+
+string DescribeDeviceHardwareInfoItem::GetAudioCard() const
+{
+    return m_audioCard;
+}
+
+void DescribeDeviceHardwareInfoItem::SetAudioCard(const string& _audioCard)
+{
+    m_audioCard = _audioCard;
+    m_audioCardHasBeenSet = true;
+}
+
+bool DescribeDeviceHardwareInfoItem::AudioCardHasBeenSet() const
+{
+    return m_audioCardHasBeenSet;
 }
 

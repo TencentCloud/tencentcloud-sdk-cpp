@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据订阅实例的 ID，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
-                     * @return SubscribeId 数据订阅实例的 ID，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+                     * 获取<p>数据订阅实例的 ID，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
+                     * @return SubscribeId <p>数据订阅实例的 ID，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
                      * 
                      */
                     std::string GetSubscribeId() const;
 
                     /**
-                     * 设置数据订阅实例的 ID，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
-                     * @param _subscribeId 数据订阅实例的 ID，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+                     * 设置<p>数据订阅实例的 ID，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
+                     * @param _subscribeId <p>数据订阅实例的 ID，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
                      * 
                      */
                     void SetSubscribeId(const std::string& _subscribeId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool SubscribeIdHasBeenSet() const;
 
                     /**
-                     * 获取数据订阅的类型，当 DatabaseType 不为 mongodb 时，枚举值为：all-全实例更新；dml-数据更新；ddl-结构更新；dmlAndDdl-数据更新+结构更新。当 DatabaseType 为 mongodb 时，枚举值为 all-全实例更新；database-订阅单库；collection-订阅单集合
-                     * @return SubscribeMode 数据订阅的类型，当 DatabaseType 不为 mongodb 时，枚举值为：all-全实例更新；dml-数据更新；ddl-结构更新；dmlAndDdl-数据更新+结构更新。当 DatabaseType 为 mongodb 时，枚举值为 all-全实例更新；database-订阅单库；collection-订阅单集合
+                     * 获取<p>数据订阅的类型，当 DatabaseType 不为 mongodb 时，枚举值为：all-全实例更新；dml-数据更新；ddl-结构更新；dmlAndDdl-数据更新+结构更新。当 DatabaseType 为 mongodb 时，枚举值为 all-全实例更新；database-订阅单库；collection-订阅单集合</p>
+                     * @return SubscribeMode <p>数据订阅的类型，当 DatabaseType 不为 mongodb 时，枚举值为：all-全实例更新；dml-数据更新；ddl-结构更新；dmlAndDdl-数据更新+结构更新。当 DatabaseType 为 mongodb 时，枚举值为 all-全实例更新；database-订阅单库；collection-订阅单集合</p>
                      * 
                      */
                     std::string GetSubscribeMode() const;
 
                     /**
-                     * 设置数据订阅的类型，当 DatabaseType 不为 mongodb 时，枚举值为：all-全实例更新；dml-数据更新；ddl-结构更新；dmlAndDdl-数据更新+结构更新。当 DatabaseType 为 mongodb 时，枚举值为 all-全实例更新；database-订阅单库；collection-订阅单集合
-                     * @param _subscribeMode 数据订阅的类型，当 DatabaseType 不为 mongodb 时，枚举值为：all-全实例更新；dml-数据更新；ddl-结构更新；dmlAndDdl-数据更新+结构更新。当 DatabaseType 为 mongodb 时，枚举值为 all-全实例更新；database-订阅单库；collection-订阅单集合
+                     * 设置<p>数据订阅的类型，当 DatabaseType 不为 mongodb 时，枚举值为：all-全实例更新；dml-数据更新；ddl-结构更新；dmlAndDdl-数据更新+结构更新。当 DatabaseType 为 mongodb 时，枚举值为 all-全实例更新；database-订阅单库；collection-订阅单集合</p>
+                     * @param _subscribeMode <p>数据订阅的类型，当 DatabaseType 不为 mongodb 时，枚举值为：all-全实例更新；dml-数据更新；ddl-结构更新；dmlAndDdl-数据更新+结构更新。当 DatabaseType 为 mongodb 时，枚举值为 all-全实例更新；database-订阅单库；collection-订阅单集合</p>
                      * 
                      */
                     void SetSubscribeMode(const std::string& _subscribeMode);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool SubscribeModeHasBeenSet() const;
 
                     /**
-                     * 获取源数据库接入类型，如：extranet(公网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、cdb(云数据库)、cvm(云服务器自建)、intranet(自研上云)、vpc(私有网络vpc)。注意具体可选值依赖当前链路支持能力
-                     * @return AccessType 源数据库接入类型，如：extranet(公网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、cdb(云数据库)、cvm(云服务器自建)、intranet(自研上云)、vpc(私有网络vpc)。注意具体可选值依赖当前链路支持能力
+                     * 获取<p>源数据库接入类型，如：extranet(公网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、cdb(云数据库)、cvm(云服务器自建)、intranet(自研上云)、vpc(私有网络vpc)。注意具体可选值依赖当前链路支持能力</p>
+                     * @return AccessType <p>源数据库接入类型，如：extranet(公网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、cdb(云数据库)、cvm(云服务器自建)、intranet(自研上云)、vpc(私有网络vpc)。注意具体可选值依赖当前链路支持能力</p>
                      * 
                      */
                     std::string GetAccessType() const;
 
                     /**
-                     * 设置源数据库接入类型，如：extranet(公网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、cdb(云数据库)、cvm(云服务器自建)、intranet(自研上云)、vpc(私有网络vpc)。注意具体可选值依赖当前链路支持能力
-                     * @param _accessType 源数据库接入类型，如：extranet(公网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、cdb(云数据库)、cvm(云服务器自建)、intranet(自研上云)、vpc(私有网络vpc)。注意具体可选值依赖当前链路支持能力
+                     * 设置<p>源数据库接入类型，如：extranet(公网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、cdb(云数据库)、cvm(云服务器自建)、intranet(自研上云)、vpc(私有网络vpc)。注意具体可选值依赖当前链路支持能力</p>
+                     * @param _accessType <p>源数据库接入类型，如：extranet(公网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、cdb(云数据库)、cvm(云服务器自建)、intranet(自研上云)、vpc(私有网络vpc)。注意具体可选值依赖当前链路支持能力</p>
                      * 
                      */
                     void SetAccessType(const std::string& _accessType);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool AccessTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据库节点信息
-                     * @return Endpoints 数据库节点信息
+                     * 获取<p>数据库节点信息</p>
+                     * @return Endpoints <p>数据库节点信息</p>
                      * 
                      */
                     std::vector<EndpointItem> GetEndpoints() const;
 
                     /**
-                     * 设置数据库节点信息
-                     * @param _endpoints 数据库节点信息
+                     * 设置<p>数据库节点信息</p>
+                     * @param _endpoints <p>数据库节点信息</p>
                      * 
                      */
                     void SetEndpoints(const std::vector<EndpointItem>& _endpoints);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool EndpointsHasBeenSet() const;
 
                     /**
-                     * 获取Kafka配置
-                     * @return KafkaConfig Kafka配置
+                     * 获取<p>Kafka配置</p>
+                     * @return KafkaConfig <p>Kafka配置</p>
                      * 
                      */
                     SubscribeKafkaConfig GetKafkaConfig() const;
 
                     /**
-                     * 设置Kafka配置
-                     * @param _kafkaConfig Kafka配置
+                     * 设置<p>Kafka配置</p>
+                     * @param _kafkaConfig <p>Kafka配置</p>
                      * 
                      */
                     void SetKafkaConfig(const SubscribeKafkaConfig& _kafkaConfig);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool KafkaConfigHasBeenSet() const;
 
                     /**
-                     * 获取订阅的数据库表信息，当 SubscribeMode 不为 all和ddl 时，SubscribeObjects 为必选参数
-                     * @return SubscribeObjects 订阅的数据库表信息，当 SubscribeMode 不为 all和ddl 时，SubscribeObjects 为必选参数
+                     * 获取<p>订阅的数据库表信息，当 SubscribeMode 不为 all和ddl 时，SubscribeObjects 为必选参数</p>
+                     * @return SubscribeObjects <p>订阅的数据库表信息，当 SubscribeMode 不为 all和ddl 时，SubscribeObjects 为必选参数</p>
                      * 
                      */
                     std::vector<SubscribeObject> GetSubscribeObjects() const;
 
                     /**
-                     * 设置订阅的数据库表信息，当 SubscribeMode 不为 all和ddl 时，SubscribeObjects 为必选参数
-                     * @param _subscribeObjects 订阅的数据库表信息，当 SubscribeMode 不为 all和ddl 时，SubscribeObjects 为必选参数
+                     * 设置<p>订阅的数据库表信息，当 SubscribeMode 不为 all和ddl 时，SubscribeObjects 为必选参数</p>
+                     * @param _subscribeObjects <p>订阅的数据库表信息，当 SubscribeMode 不为 all和ddl 时，SubscribeObjects 为必选参数</p>
                      * 
                      */
                     void SetSubscribeObjects(const std::vector<SubscribeObject>& _subscribeObjects);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool SubscribeObjectsHasBeenSet() const;
 
                     /**
-                     * 获取订阅数据格式，如：protobuf、json、avro。注意具体可选值依赖当前链路支持能力，数据格式详情参考官网的消费demo文档
-                     * @return Protocol 订阅数据格式，如：protobuf、json、avro。注意具体可选值依赖当前链路支持能力，数据格式详情参考官网的消费demo文档
+                     * 获取<p>订阅数据格式，如：protobuf、json、avro。注意具体可选值依赖当前链路支持能力，数据格式详情参考官网的消费demo文档</p>
+                     * @return Protocol <p>订阅数据格式，如：protobuf、json、avro。注意具体可选值依赖当前链路支持能力，数据格式详情参考官网的消费demo文档</p>
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置订阅数据格式，如：protobuf、json、avro。注意具体可选值依赖当前链路支持能力，数据格式详情参考官网的消费demo文档
-                     * @param _protocol 订阅数据格式，如：protobuf、json、avro。注意具体可选值依赖当前链路支持能力，数据格式详情参考官网的消费demo文档
+                     * 设置<p>订阅数据格式，如：protobuf、json、avro。注意具体可选值依赖当前链路支持能力，数据格式详情参考官网的消费demo文档</p>
+                     * @param _protocol <p>订阅数据格式，如：protobuf、json、avro。注意具体可选值依赖当前链路支持能力，数据格式详情参考官网的消费demo文档</p>
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取mongo选填参数：输出聚合设置。
-                     * @return PipelineInfo mongo选填参数：输出聚合设置。
+                     * 获取<p>mongo选填参数：输出聚合设置。</p>
+                     * @return PipelineInfo <p>mongo选填参数：输出聚合设置。</p>
                      * 
                      */
                     std::vector<PipelineInfo> GetPipelineInfo() const;
 
                     /**
-                     * 设置mongo选填参数：输出聚合设置。
-                     * @param _pipelineInfo mongo选填参数：输出聚合设置。
+                     * 设置<p>mongo选填参数：输出聚合设置。</p>
+                     * @param _pipelineInfo <p>mongo选填参数：输出聚合设置。</p>
                      * 
                      */
                     void SetPipelineInfo(const std::vector<PipelineInfo>& _pipelineInfo);
@@ -216,27 +216,15 @@ namespace TencentCloud
                     bool PipelineInfoHasBeenSet() const;
 
                     /**
-                     * 获取为业务添加的额外信息。参数名作key，参数值作value。
-mysql选填参数：ProcessXA-是否处理XA事务，填true处理，不填或填其他值不处理。
-mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream，不填也是默认changeStream。
-其他业务暂没有可选参数。
-                     * @return ExtraAttr 为业务添加的额外信息。参数名作key，参数值作value。
-mysql选填参数：ProcessXA-是否处理XA事务，填true处理，不填或填其他值不处理。
-mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream，不填也是默认changeStream。
-其他业务暂没有可选参数。
+                     * 获取<p>为业务添加的额外信息。参数名作key，参数值作value。<br>mysql选填参数：ProcessXA-是否处理XA事务，填true处理，不填或填其他值不处理。<br>mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream，不填也是默认changeStream。<br>其他业务暂没有可选参数。</p>
+                     * @return ExtraAttr <p>为业务添加的额外信息。参数名作key，参数值作value。<br>mysql选填参数：ProcessXA-是否处理XA事务，填true处理，不填或填其他值不处理。<br>mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream，不填也是默认changeStream。<br>其他业务暂没有可选参数。</p>
                      * 
                      */
                     std::vector<KeyValuePairOption> GetExtraAttr() const;
 
                     /**
-                     * 设置为业务添加的额外信息。参数名作key，参数值作value。
-mysql选填参数：ProcessXA-是否处理XA事务，填true处理，不填或填其他值不处理。
-mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream，不填也是默认changeStream。
-其他业务暂没有可选参数。
-                     * @param _extraAttr 为业务添加的额外信息。参数名作key，参数值作value。
-mysql选填参数：ProcessXA-是否处理XA事务，填true处理，不填或填其他值不处理。
-mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream，不填也是默认changeStream。
-其他业务暂没有可选参数。
+                     * 设置<p>为业务添加的额外信息。参数名作key，参数值作value。<br>mysql选填参数：ProcessXA-是否处理XA事务，填true处理，不填或填其他值不处理。<br>mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream，不填也是默认changeStream。<br>其他业务暂没有可选参数。</p>
+                     * @param _extraAttr <p>为业务添加的额外信息。参数名作key，参数值作value。<br>mysql选填参数：ProcessXA-是否处理XA事务，填true处理，不填或填其他值不处理。<br>mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream，不填也是默认changeStream。<br>其他业务暂没有可选参数。</p>
                      * 
                      */
                     void SetExtraAttr(const std::vector<KeyValuePairOption>& _extraAttr);
@@ -249,15 +237,15 @@ mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream，�
                     bool ExtraAttrHasBeenSet() const;
 
                     /**
-                     * 获取vpc id
-                     * @return ConsumerVpcId vpc id
+                     * 获取<p>vpc id</p>
+                     * @return ConsumerVpcId <p>vpc id</p>
                      * 
                      */
                     std::string GetConsumerVpcId() const;
 
                     /**
-                     * 设置vpc id
-                     * @param _consumerVpcId vpc id
+                     * 设置<p>vpc id</p>
+                     * @param _consumerVpcId <p>vpc id</p>
                      * 
                      */
                     void SetConsumerVpcId(const std::string& _consumerVpcId);
@@ -270,15 +258,15 @@ mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream，�
                     bool ConsumerVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取subnet id
-                     * @return ConsumerSubnetId subnet id
+                     * 获取<p>subnet id</p>
+                     * @return ConsumerSubnetId <p>subnet id</p>
                      * 
                      */
                     std::string GetConsumerSubnetId() const;
 
                     /**
-                     * 设置subnet id
-                     * @param _consumerSubnetId subnet id
+                     * 设置<p>subnet id</p>
+                     * @param _consumerSubnetId <p>subnet id</p>
                      * 
                      */
                     void SetConsumerSubnetId(const std::string& _consumerSubnetId);
@@ -293,70 +281,67 @@ mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream，�
                 private:
 
                     /**
-                     * 数据订阅实例的 ID，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。
+                     * <p>数据订阅实例的 ID，可通过<a href="https://cloud.tencent.com/document/product/571/82103">DescribeSyncJobs</a>接口获取。</p>
                      */
                     std::string m_subscribeId;
                     bool m_subscribeIdHasBeenSet;
 
                     /**
-                     * 数据订阅的类型，当 DatabaseType 不为 mongodb 时，枚举值为：all-全实例更新；dml-数据更新；ddl-结构更新；dmlAndDdl-数据更新+结构更新。当 DatabaseType 为 mongodb 时，枚举值为 all-全实例更新；database-订阅单库；collection-订阅单集合
+                     * <p>数据订阅的类型，当 DatabaseType 不为 mongodb 时，枚举值为：all-全实例更新；dml-数据更新；ddl-结构更新；dmlAndDdl-数据更新+结构更新。当 DatabaseType 为 mongodb 时，枚举值为 all-全实例更新；database-订阅单库；collection-订阅单集合</p>
                      */
                     std::string m_subscribeMode;
                     bool m_subscribeModeHasBeenSet;
 
                     /**
-                     * 源数据库接入类型，如：extranet(公网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、cdb(云数据库)、cvm(云服务器自建)、intranet(自研上云)、vpc(私有网络vpc)。注意具体可选值依赖当前链路支持能力
+                     * <p>源数据库接入类型，如：extranet(公网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、cdb(云数据库)、cvm(云服务器自建)、intranet(自研上云)、vpc(私有网络vpc)。注意具体可选值依赖当前链路支持能力</p>
                      */
                     std::string m_accessType;
                     bool m_accessTypeHasBeenSet;
 
                     /**
-                     * 数据库节点信息
+                     * <p>数据库节点信息</p>
                      */
                     std::vector<EndpointItem> m_endpoints;
                     bool m_endpointsHasBeenSet;
 
                     /**
-                     * Kafka配置
+                     * <p>Kafka配置</p>
                      */
                     SubscribeKafkaConfig m_kafkaConfig;
                     bool m_kafkaConfigHasBeenSet;
 
                     /**
-                     * 订阅的数据库表信息，当 SubscribeMode 不为 all和ddl 时，SubscribeObjects 为必选参数
+                     * <p>订阅的数据库表信息，当 SubscribeMode 不为 all和ddl 时，SubscribeObjects 为必选参数</p>
                      */
                     std::vector<SubscribeObject> m_subscribeObjects;
                     bool m_subscribeObjectsHasBeenSet;
 
                     /**
-                     * 订阅数据格式，如：protobuf、json、avro。注意具体可选值依赖当前链路支持能力，数据格式详情参考官网的消费demo文档
+                     * <p>订阅数据格式，如：protobuf、json、avro。注意具体可选值依赖当前链路支持能力，数据格式详情参考官网的消费demo文档</p>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * mongo选填参数：输出聚合设置。
+                     * <p>mongo选填参数：输出聚合设置。</p>
                      */
                     std::vector<PipelineInfo> m_pipelineInfo;
                     bool m_pipelineInfoHasBeenSet;
 
                     /**
-                     * 为业务添加的额外信息。参数名作key，参数值作value。
-mysql选填参数：ProcessXA-是否处理XA事务，填true处理，不填或填其他值不处理。
-mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream，不填也是默认changeStream。
-其他业务暂没有可选参数。
+                     * <p>为业务添加的额外信息。参数名作key，参数值作value。<br>mysql选填参数：ProcessXA-是否处理XA事务，填true处理，不填或填其他值不处理。<br>mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream，不填也是默认changeStream。<br>其他业务暂没有可选参数。</p>
                      */
                     std::vector<KeyValuePairOption> m_extraAttr;
                     bool m_extraAttrHasBeenSet;
 
                     /**
-                     * vpc id
+                     * <p>vpc id</p>
                      */
                     std::string m_consumerVpcId;
                     bool m_consumerVpcIdHasBeenSet;
 
                     /**
-                     * subnet id
+                     * <p>subnet id</p>
                      */
                     std::string m_consumerSubnetId;
                     bool m_consumerSubnetIdHasBeenSet;

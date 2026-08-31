@@ -914,6 +914,20 @@ namespace TencentCloud
                      */
                     bool EncryptionKmsRegionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>serverless自动变配配置</p>
+                     * @return AutoScaleConfigs <p>serverless自动变配配置</p>
+                     * 
+                     */
+                    std::vector<AutoScalingConfig> GetAutoScaleConfigs() const;
+
+                    /**
+                     * 判断参数 AutoScaleConfigs 是否已赋值
+                     * @return AutoScaleConfigs 是否已赋值
+                     * 
+                     */
+                    bool AutoScaleConfigsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1286,6 +1300,12 @@ namespace TencentCloud
                      */
                     std::string m_encryptionKmsRegion;
                     bool m_encryptionKmsRegionHasBeenSet;
+
+                    /**
+                     * <p>serverless自动变配配置</p>
+                     */
+                    std::vector<AutoScalingConfig> m_autoScaleConfigs;
+                    bool m_autoScaleConfigsHasBeenSet;
 
                 };
             }

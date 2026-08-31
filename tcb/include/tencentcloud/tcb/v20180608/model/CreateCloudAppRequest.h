@@ -258,6 +258,27 @@ namespace TencentCloud
                      */
                     bool SecretsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>选择 NodeRuntime 版本: 16,18,20,22,24 等</p>
+                     * @return NodeJsVersion <p>选择 NodeRuntime 版本: 16,18,20,22,24 等</p>
+                     * 
+                     */
+                    std::string GetNodeJsVersion() const;
+
+                    /**
+                     * 设置<p>选择 NodeRuntime 版本: 16,18,20,22,24 等</p>
+                     * @param _nodeJsVersion <p>选择 NodeRuntime 版本: 16,18,20,22,24 等</p>
+                     * 
+                     */
+                    void SetNodeJsVersion(const std::string& _nodeJsVersion);
+
+                    /**
+                     * 判断参数 NodeJsVersion 是否已赋值
+                     * @return NodeJsVersion 是否已赋值
+                     * 
+                     */
+                    bool NodeJsVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -319,6 +340,12 @@ namespace TencentCloud
                      */
                     std::vector<BuildSecret> m_secrets;
                     bool m_secretsHasBeenSet;
+
+                    /**
+                     * <p>选择 NodeRuntime 版本: 16,18,20,22,24 等</p>
+                     */
+                    std::string m_nodeJsVersion;
+                    bool m_nodeJsVersionHasBeenSet;
 
                 };
             }

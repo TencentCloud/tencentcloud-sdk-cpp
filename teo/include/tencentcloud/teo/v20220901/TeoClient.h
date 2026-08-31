@@ -185,6 +185,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeAliasDomainsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeApplicationProxiesRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeApplicationProxiesResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeAvailableCustomActionsForRuleEngineRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeAvailableCustomActionsForRuleEngineResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeAvailablePlansRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeAvailablePlansResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeBillingDataRequest.h>
@@ -740,6 +742,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApplicationProxiesResponse> DescribeApplicationProxiesOutcome;
                 typedef std::future<DescribeApplicationProxiesOutcome> DescribeApplicationProxiesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeApplicationProxiesRequest&, DescribeApplicationProxiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationProxiesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAvailableCustomActionsForRuleEngineResponse> DescribeAvailableCustomActionsForRuleEngineOutcome;
+                typedef std::future<DescribeAvailableCustomActionsForRuleEngineOutcome> DescribeAvailableCustomActionsForRuleEngineOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeAvailableCustomActionsForRuleEngineRequest&, DescribeAvailableCustomActionsForRuleEngineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailableCustomActionsForRuleEngineAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAvailablePlansResponse> DescribeAvailablePlansOutcome;
                 typedef std::future<DescribeAvailablePlansOutcome> DescribeAvailablePlansOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeAvailablePlansRequest&, DescribeAvailablePlansOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailablePlansAsyncHandler;
@@ -1957,6 +1962,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeApplicationProxiesOutcome DescribeApplicationProxies(const Model::DescribeApplicationProxiesRequest &request);
                 void DescribeApplicationProxiesAsync(const Model::DescribeApplicationProxiesRequest& request, const DescribeApplicationProxiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApplicationProxiesOutcomeCallable DescribeApplicationProxiesCallable(const Model::DescribeApplicationProxiesRequest& request);
+
+                /**
+                 *查询站点规则引擎操作可用的定制配置列表。
+                 * @param req DescribeAvailableCustomActionsForRuleEngineRequest
+                 * @return DescribeAvailableCustomActionsForRuleEngineOutcome
+                 */
+                DescribeAvailableCustomActionsForRuleEngineOutcome DescribeAvailableCustomActionsForRuleEngine(const Model::DescribeAvailableCustomActionsForRuleEngineRequest &request);
+                void DescribeAvailableCustomActionsForRuleEngineAsync(const Model::DescribeAvailableCustomActionsForRuleEngineRequest& request, const DescribeAvailableCustomActionsForRuleEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAvailableCustomActionsForRuleEngineOutcomeCallable DescribeAvailableCustomActionsForRuleEngineCallable(const Model::DescribeAvailableCustomActionsForRuleEngineRequest& request);
 
                 /**
                  *查询当前账户可用套餐信息列表

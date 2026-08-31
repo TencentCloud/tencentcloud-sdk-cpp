@@ -44,7 +44,8 @@ UserRoleListDataUserRoleInfo::UserRoleListDataUserRoleInfo() :
     m_inValidateAppRangeHasBeenSet(false),
     m_appOpenUserIdHasBeenSet(false),
     m_emailActivationStatusHasBeenSet(false),
-    m_userGroupListHasBeenSet(false)
+    m_userGroupListHasBeenSet(false),
+    m_identityTypeHasBeenSet(false)
 {
 }
 
@@ -316,6 +317,16 @@ CoreInternalOutcome UserRoleListDataUserRoleInfo::Deserialize(const rapidjson::V
         m_userGroupListHasBeenSet = true;
     }
 
+    if (value.HasMember("IdentityType") && !value["IdentityType"].IsNull())
+    {
+        if (!value["IdentityType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserRoleListDataUserRoleInfo.IdentityType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_identityType = string(value["IdentityType"].GetString());
+        m_identityTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -532,6 +543,14 @@ void UserRoleListDataUserRoleInfo::ToJsonObject(rapidjson::Value &value, rapidjs
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_identityTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdentityType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_identityType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -919,5 +938,21 @@ void UserRoleListDataUserRoleInfo::SetUserGroupList(const vector<UserGroupDTO>& 
 bool UserRoleListDataUserRoleInfo::UserGroupListHasBeenSet() const
 {
     return m_userGroupListHasBeenSet;
+}
+
+string UserRoleListDataUserRoleInfo::GetIdentityType() const
+{
+    return m_identityType;
+}
+
+void UserRoleListDataUserRoleInfo::SetIdentityType(const string& _identityType)
+{
+    m_identityType = _identityType;
+    m_identityTypeHasBeenSet = true;
+}
+
+bool UserRoleListDataUserRoleInfo::IdentityTypeHasBeenSet() const
+{
+    return m_identityTypeHasBeenSet;
 }
 

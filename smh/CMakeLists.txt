@@ -37,12 +37,14 @@ set(smh_public_header_model
   include/tencentcloud/smh/v20210712/model/ModifyLibraryRequest.h
   include/tencentcloud/smh/v20210712/model/DescribeOfficialOverviewRequest.h
   include/tencentcloud/smh/v20210712/model/DeleteLibraryResponse.h
+  include/tencentcloud/smh/v20210712/model/TagFilter.h
   include/tencentcloud/smh/v20210712/model/DescribeOfficialInstancesResponse.h
   include/tencentcloud/smh/v20210712/model/VerifySmsCodeRequest.h
   include/tencentcloud/smh/v20210712/model/CreateLibraryResponse.h
   include/tencentcloud/smh/v20210712/model/Library.h
   include/tencentcloud/smh/v20210712/model/CreateLibraryRequest.h
   include/tencentcloud/smh/v20210712/model/DescribeOfficialOverviewResponse.h
+  include/tencentcloud/smh/v20210712/model/ResourceTag.h
   )
 
 set(smh_src
@@ -65,12 +67,14 @@ set(smh_src
   src/v20210712/model/ModifyLibraryRequest.cpp
   src/v20210712/model/DescribeOfficialOverviewRequest.cpp
   src/v20210712/model/DeleteLibraryResponse.cpp
+  src/v20210712/model/TagFilter.cpp
   src/v20210712/model/DescribeOfficialInstancesResponse.cpp
   src/v20210712/model/VerifySmsCodeRequest.cpp
   src/v20210712/model/CreateLibraryResponse.cpp
   src/v20210712/model/Library.cpp
   src/v20210712/model/CreateLibraryRequest.cpp
   src/v20210712/model/DescribeOfficialOverviewResponse.cpp
+  src/v20210712/model/ResourceTag.cpp
   )
 
 set(smh_include

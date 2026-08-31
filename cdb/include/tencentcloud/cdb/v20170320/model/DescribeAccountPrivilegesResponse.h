@@ -47,8 +47,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取全局权限数组。
-                     * @return GlobalPrivileges 全局权限数组。
+                     * 获取<p>全局权限数组。</p>
+                     * @return GlobalPrivileges <p>全局权限数组。</p>
                      * 
                      */
                     std::vector<std::string> GetGlobalPrivileges() const;
@@ -61,8 +61,8 @@ namespace TencentCloud
                     bool GlobalPrivilegesHasBeenSet() const;
 
                     /**
-                     * 获取数据库权限数组。
-                     * @return DatabasePrivileges 数据库权限数组。
+                     * 获取<p>数据库权限数组。</p>
+                     * @return DatabasePrivileges <p>数据库权限数组。</p>
                      * 
                      */
                     std::vector<DatabasePrivilege> GetDatabasePrivileges() const;
@@ -75,8 +75,8 @@ namespace TencentCloud
                     bool DatabasePrivilegesHasBeenSet() const;
 
                     /**
-                     * 获取数据库中的表权限数组。
-                     * @return TablePrivileges 数据库中的表权限数组。
+                     * 获取<p>数据库中的表权限数组。</p>
+                     * @return TablePrivileges <p>数据库中的表权限数组。</p>
                      * 
                      */
                     std::vector<TablePrivilege> GetTablePrivileges() const;
@@ -89,8 +89,8 @@ namespace TencentCloud
                     bool TablePrivilegesHasBeenSet() const;
 
                     /**
-                     * 获取数据库表中的列权限数组。
-                     * @return ColumnPrivileges 数据库表中的列权限数组。
+                     * 获取<p>数据库表中的列权限数组。</p>
+                     * @return ColumnPrivileges <p>数据库表中的列权限数组。</p>
                      * 
                      */
                     std::vector<ColumnPrivilege> GetColumnPrivileges() const;
@@ -105,25 +105,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 全局权限数组。
+                     * <p>全局权限数组。</p>
                      */
                     std::vector<std::string> m_globalPrivileges;
                     bool m_globalPrivilegesHasBeenSet;
 
                     /**
-                     * 数据库权限数组。
+                     * <p>数据库权限数组。</p>
                      */
                     std::vector<DatabasePrivilege> m_databasePrivileges;
                     bool m_databasePrivilegesHasBeenSet;
 
                     /**
-                     * 数据库中的表权限数组。
+                     * <p>数据库中的表权限数组。</p>
                      */
                     std::vector<TablePrivilege> m_tablePrivileges;
                     bool m_tablePrivilegesHasBeenSet;
 
                     /**
-                     * 数据库表中的列权限数组。
+                     * <p>数据库表中的列权限数组。</p>
                      */
                     std::vector<ColumnPrivilege> m_columnPrivileges;
                     bool m_columnPrivilegesHasBeenSet;

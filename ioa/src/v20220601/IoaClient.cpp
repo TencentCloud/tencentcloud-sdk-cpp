@@ -440,6 +440,56 @@ IoaClient::CreatePrivilegeCodeOutcomeCallable IoaClient::CreatePrivilegeCodeCall
     return prom->get_future();
 }
 
+IoaClient::DeleteAccountGroupResourcesOutcome IoaClient::DeleteAccountGroupResources(const DeleteAccountGroupResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAccountGroupResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAccountGroupResourcesResponse rsp = DeleteAccountGroupResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAccountGroupResourcesOutcome(rsp);
+        else
+            return DeleteAccountGroupResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAccountGroupResourcesOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DeleteAccountGroupResourcesAsync(const DeleteAccountGroupResourcesRequest& request, const DeleteAccountGroupResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAccountGroupResourcesRequest&;
+    using Resp = DeleteAccountGroupResourcesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAccountGroupResources", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::DeleteAccountGroupResourcesOutcomeCallable IoaClient::DeleteAccountGroupResourcesCallable(const DeleteAccountGroupResourcesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAccountGroupResourcesOutcome>>();
+    DeleteAccountGroupResourcesAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DeleteAccountGroupResourcesRequest&,
+        DeleteAccountGroupResourcesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IoaClient::DeleteDeviceVirtualGroupOutcome IoaClient::DeleteDeviceVirtualGroup(const DeleteDeviceVirtualGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteDeviceVirtualGroup");

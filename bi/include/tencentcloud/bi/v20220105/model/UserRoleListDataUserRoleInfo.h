@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取业务ID
-                     * @return Id 业务ID
+                     * 获取<p>业务ID</p>
+                     * @return Id <p>业务ID</p>
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置业务ID
-                     * @param _id 业务ID
+                     * 设置<p>业务ID</p>
+                     * @param _id <p>业务ID</p>
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -70,18 +70,18 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取角色列表
+                     * 获取<p>角色列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RoleList 角色列表
+                     * @return RoleList <p>角色列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<UserRoleListDataRoleInfo> GetRoleList() const;
 
                     /**
-                     * 设置角色列表
+                     * 设置<p>角色列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _roleList 角色列表
+                     * @param _roleList <p>角色列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -95,18 +95,18 @@ namespace TencentCloud
                     bool RoleListHasBeenSet() const;
 
                     /**
-                     * 获取角色ID列表
+                     * 获取<p>角色ID列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RoleIdList 角色ID列表
+                     * @return RoleIdList <p>角色ID列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetRoleIdList() const;
 
                     /**
-                     * 设置角色ID列表
+                     * 设置<p>角色ID列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _roleIdList 角色ID列表
+                     * @param _roleIdList <p>角色ID列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -120,15 +120,15 @@ namespace TencentCloud
                     bool RoleIdListHasBeenSet() const;
 
                     /**
-                     * 获取用户ID
-                     * @return UserId 用户ID
+                     * 获取<p>用户ID</p>
+                     * @return UserId <p>用户ID</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户ID
-                     * @param _userId 用户ID
+                     * 设置<p>用户ID</p>
+                     * @param _userId <p>用户ID</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -141,15 +141,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取用户名
-                     * @return UserName 用户名
+                     * 获取<p>用户名</p>
+                     * @return UserName <p>用户名</p>
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置用户名
-                     * @param _userName 用户名
+                     * 设置<p>用户名</p>
+                     * @param _userName <p>用户名</p>
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -162,15 +162,15 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取企业ID
-                     * @return CorpId 企业ID
+                     * 获取<p>企业ID</p>
+                     * @return CorpId <p>企业ID</p>
                      * 
                      */
                     std::string GetCorpId() const;
 
                     /**
-                     * 设置企业ID
-                     * @param _corpId 企业ID
+                     * 设置<p>企业ID</p>
+                     * @param _corpId <p>企业ID</p>
                      * 
                      */
                     void SetCorpId(const std::string& _corpId);
@@ -183,18 +183,18 @@ namespace TencentCloud
                     bool CorpIdHasBeenSet() const;
 
                     /**
-                     * 获取邮箱
+                     * 获取<p>邮箱</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Email 邮箱
+                     * @return Email <p>邮箱</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEmail() const;
 
                     /**
-                     * 设置邮箱
+                     * 设置<p>邮箱</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _email 邮箱
+                     * @param _email <p>邮箱</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -208,18 +208,18 @@ namespace TencentCloud
                     bool EmailHasBeenSet() const;
 
                     /**
-                     * 获取创建人
+                     * 获取<p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatedUser 创建人
+                     * @return CreatedUser <p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedUser() const;
 
                     /**
-                     * 设置创建人
+                     * 设置<p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createdUser 创建人
+                     * @param _createdUser <p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -233,18 +233,18 @@ namespace TencentCloud
                     bool CreatedUserHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatedAt 创建时间
+                     * @return CreatedAt <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
-                     * 设置创建时间
+                     * 设置<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createdAt 创建时间
+                     * @param _createdAt <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -258,18 +258,18 @@ namespace TencentCloud
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取更新人
+                     * 获取<p>更新人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdatedUser 更新人
+                     * @return UpdatedUser <p>更新人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedUser() const;
 
                     /**
-                     * 设置更新人
+                     * 设置<p>更新人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updatedUser 更新人
+                     * @param _updatedUser <p>更新人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -283,18 +283,18 @@ namespace TencentCloud
                     bool UpdatedUserHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
+                     * 获取<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdatedAt 更新时间
+                     * @return UpdatedAt <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
-                     * 设置更新时间
+                     * 设置<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updatedAt 更新时间
+                     * @param _updatedAt <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -308,18 +308,18 @@ namespace TencentCloud
                     bool UpdatedAtHasBeenSet() const;
 
                     /**
-                     * 获取最后一次登录时间
+                     * 获取<p>最后一次登录时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastLogin 最后一次登录时间
+                     * @return LastLogin <p>最后一次登录时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastLogin() const;
 
                     /**
-                     * 设置最后一次登录时间
+                     * 设置<p>最后一次登录时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lastLogin 最后一次登录时间
+                     * @param _lastLogin <p>最后一次登录时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -333,18 +333,18 @@ namespace TencentCloud
                     bool LastLoginHasBeenSet() const;
 
                     /**
-                     * 获取账号状态
+                     * 获取<p>账号状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 账号状态
+                     * @return Status <p>账号状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置账号状态
+                     * 设置<p>账号状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 账号状态
+                     * @param _status <p>账号状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -358,18 +358,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取手机号码
+                     * 获取<p>手机号码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PhoneNumber 手机号码
+                     * @return PhoneNumber <p>手机号码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPhoneNumber() const;
 
                     /**
-                     * 设置手机号码
+                     * 设置<p>手机号码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _phoneNumber 手机号码
+                     * @param _phoneNumber <p>手机号码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -383,18 +383,18 @@ namespace TencentCloud
                     bool PhoneNumberHasBeenSet() const;
 
                     /**
-                     * 获取手机号区号
+                     * 获取<p>手机号区号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AreaCode 手机号区号
+                     * @return AreaCode <p>手机号区号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAreaCode() const;
 
                     /**
-                     * 设置手机号区号
+                     * 设置<p>手机号区号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _areaCode 手机号区号
+                     * @param _areaCode <p>手机号区号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -408,18 +408,18 @@ namespace TencentCloud
                     bool AreaCodeHasBeenSet() const;
 
                     /**
-                     * 获取是否为主账号
+                     * 获取<p>是否为主账号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RootAccount 是否为主账号
+                     * @return RootAccount <p>是否为主账号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetRootAccount() const;
 
                     /**
-                     * 设置是否为主账号
+                     * 设置<p>是否为主账号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rootAccount 是否为主账号
+                     * @param _rootAccount <p>是否为主账号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -433,18 +433,18 @@ namespace TencentCloud
                     bool RootAccountHasBeenSet() const;
 
                     /**
-                     * 获取是否为企业管理员
+                     * 获取<p>是否为企业管理员</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CorpAdmin 是否为企业管理员
+                     * @return CorpAdmin <p>是否为企业管理员</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetCorpAdmin() const;
 
                     /**
-                     * 设置是否为企业管理员
+                     * 设置<p>是否为企业管理员</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _corpAdmin 是否为企业管理员
+                     * @param _corpAdmin <p>是否为企业管理员</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -458,18 +458,18 @@ namespace TencentCloud
                     bool CorpAdminHasBeenSet() const;
 
                     /**
-                     * 获取企微用户id
+                     * 获取<p>企微用户id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppUserId 企微用户id
+                     * @return AppUserId <p>企微用户id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppUserId() const;
 
                     /**
-                     * 设置企微用户id
+                     * 设置<p>企微用户id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _appUserId 企微用户id
+                     * @param _appUserId <p>企微用户id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -483,18 +483,18 @@ namespace TencentCloud
                     bool AppUserIdHasBeenSet() const;
 
                     /**
-                     * 获取昵称
+                     * 获取<p>昵称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppUserAliasName 昵称
+                     * @return AppUserAliasName <p>昵称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppUserAliasName() const;
 
                     /**
-                     * 设置昵称
+                     * 设置<p>昵称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _appUserAliasName 昵称
+                     * @param _appUserAliasName <p>昵称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -508,18 +508,18 @@ namespace TencentCloud
                     bool AppUserAliasNameHasBeenSet() const;
 
                     /**
-                     * 获取应用用户名
+                     * 获取<p>应用用户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppUserName 应用用户名
+                     * @return AppUserName <p>应用用户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppUserName() const;
 
                     /**
-                     * 设置应用用户名
+                     * 设置<p>应用用户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _appUserName 应用用户名
+                     * @param _appUserName <p>应用用户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -533,18 +533,18 @@ namespace TencentCloud
                     bool AppUserNameHasBeenSet() const;
 
                     /**
-                     * 获取是否在可见范围内
+                     * 获取<p>是否在可见范围内</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InValidateAppRange 是否在可见范围内
+                     * @return InValidateAppRange <p>是否在可见范围内</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetInValidateAppRange() const;
 
                     /**
-                     * 设置是否在可见范围内
+                     * 设置<p>是否在可见范围内</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _inValidateAppRange 是否在可见范围内
+                     * @param _inValidateAppRange <p>是否在可见范围内</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -558,18 +558,18 @@ namespace TencentCloud
                     bool InValidateAppRangeHasBeenSet() const;
 
                     /**
-                     * 获取用户openid
+                     * 获取<p>用户openid</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppOpenUserId 用户openid
+                     * @return AppOpenUserId <p>用户openid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppOpenUserId() const;
 
                     /**
-                     * 设置用户openid
+                     * 设置<p>用户openid</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _appOpenUserId 用户openid
+                     * @param _appOpenUserId <p>用户openid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -583,18 +583,18 @@ namespace TencentCloud
                     bool AppOpenUserIdHasBeenSet() const;
 
                     /**
-                     * 获取邮箱激活状态
+                     * 获取<p>邮箱激活状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EmailActivationStatus 邮箱激活状态
+                     * @return EmailActivationStatus <p>邮箱激活状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEmailActivationStatus() const;
 
                     /**
-                     * 设置邮箱激活状态
+                     * 设置<p>邮箱激活状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _emailActivationStatus 邮箱激活状态
+                     * @param _emailActivationStatus <p>邮箱激活状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -608,18 +608,18 @@ namespace TencentCloud
                     bool EmailActivationStatusHasBeenSet() const;
 
                     /**
-                     * 获取用户组信息
+                     * 获取<p>用户组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserGroupList 用户组信息
+                     * @return UserGroupList <p>用户组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<UserGroupDTO> GetUserGroupList() const;
 
                     /**
-                     * 设置用户组信息
+                     * 设置<p>用户组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _userGroupList 用户组信息
+                     * @param _userGroupList <p>用户组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -632,171 +632,203 @@ namespace TencentCloud
                      */
                     bool UserGroupListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IdentityType <p>用户类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIdentityType() const;
+
+                    /**
+                     * 设置<p>用户类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _identityType <p>用户类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIdentityType(const std::string& _identityType);
+
+                    /**
+                     * 判断参数 IdentityType 是否已赋值
+                     * @return IdentityType 是否已赋值
+                     * 
+                     */
+                    bool IdentityTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 业务ID
+                     * <p>业务ID</p>
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 角色列表
+                     * <p>角色列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<UserRoleListDataRoleInfo> m_roleList;
                     bool m_roleListHasBeenSet;
 
                     /**
-                     * 角色ID列表
+                     * <p>角色ID列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_roleIdList;
                     bool m_roleIdListHasBeenSet;
 
                     /**
-                     * 用户ID
+                     * <p>用户ID</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 用户名
+                     * <p>用户名</p>
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 企业ID
+                     * <p>企业ID</p>
                      */
                     std::string m_corpId;
                     bool m_corpIdHasBeenSet;
 
                     /**
-                     * 邮箱
+                     * <p>邮箱</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_email;
                     bool m_emailHasBeenSet;
 
                     /**
-                     * 创建人
+                     * <p>创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdUser;
                     bool m_createdUserHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * 更新人
+                     * <p>更新人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedUser;
                     bool m_updatedUserHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
 
                     /**
-                     * 最后一次登录时间
+                     * <p>最后一次登录时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastLogin;
                     bool m_lastLoginHasBeenSet;
 
                     /**
-                     * 账号状态
+                     * <p>账号状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 手机号码
+                     * <p>手机号码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_phoneNumber;
                     bool m_phoneNumberHasBeenSet;
 
                     /**
-                     * 手机号区号
+                     * <p>手机号区号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_areaCode;
                     bool m_areaCodeHasBeenSet;
 
                     /**
-                     * 是否为主账号
+                     * <p>是否为主账号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_rootAccount;
                     bool m_rootAccountHasBeenSet;
 
                     /**
-                     * 是否为企业管理员
+                     * <p>是否为企业管理员</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_corpAdmin;
                     bool m_corpAdminHasBeenSet;
 
                     /**
-                     * 企微用户id
+                     * <p>企微用户id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appUserId;
                     bool m_appUserIdHasBeenSet;
 
                     /**
-                     * 昵称
+                     * <p>昵称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appUserAliasName;
                     bool m_appUserAliasNameHasBeenSet;
 
                     /**
-                     * 应用用户名
+                     * <p>应用用户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appUserName;
                     bool m_appUserNameHasBeenSet;
 
                     /**
-                     * 是否在可见范围内
+                     * <p>是否在可见范围内</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_inValidateAppRange;
                     bool m_inValidateAppRangeHasBeenSet;
 
                     /**
-                     * 用户openid
+                     * <p>用户openid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appOpenUserId;
                     bool m_appOpenUserIdHasBeenSet;
 
                     /**
-                     * 邮箱激活状态
+                     * <p>邮箱激活状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_emailActivationStatus;
                     bool m_emailActivationStatusHasBeenSet;
 
                     /**
-                     * 用户组信息
+                     * <p>用户组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<UserGroupDTO> m_userGroupList;
                     bool m_userGroupListHasBeenSet;
+
+                    /**
+                     * <p>用户类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_identityType;
+                    bool m_identityTypeHasBeenSet;
 
                 };
             }

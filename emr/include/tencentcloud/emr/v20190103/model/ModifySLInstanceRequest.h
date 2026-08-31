@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例唯一标识符（字符串表示）。
-                     * @return InstanceId 实例唯一标识符（字符串表示）。
+                     * 获取<p>实例唯一标识符（字符串表示）。</p>
+                     * @return InstanceId <p>实例唯一标识符（字符串表示）。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例唯一标识符（字符串表示）。
-                     * @param _instanceId 实例唯一标识符（字符串表示）。
+                     * 设置<p>实例唯一标识符（字符串表示）。</p>
+                     * @param _instanceId <p>实例唯一标识符（字符串表示）。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取需要变更的区域名称。
-                     * @return Zone 需要变更的区域名称。
+                     * 获取<p>需要变更的区域名称。</p>
+                     * @return Zone <p>需要变更的区域名称。</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置需要变更的区域名称。
-                     * @param _zone 需要变更的区域名称。
+                     * 设置<p>需要变更的区域名称。</p>
+                     * @param _zone <p>需要变更的区域名称。</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取该区域变配后的目标节点数量，所有区域节点总数应大于等于3，小于等于50。
-                     * @return NodeNum 该区域变配后的目标节点数量，所有区域节点总数应大于等于3，小于等于50。
+                     * 获取<p>该区域变配后的目标节点数量，所有区域节点总数应大于等于3，小于等于50。</p>
+                     * @return NodeNum <p>该区域变配后的目标节点数量，所有区域节点总数应大于等于3，小于等于50。</p>
                      * 
                      */
                     int64_t GetNodeNum() const;
 
                     /**
-                     * 设置该区域变配后的目标节点数量，所有区域节点总数应大于等于3，小于等于50。
-                     * @param _nodeNum 该区域变配后的目标节点数量，所有区域节点总数应大于等于3，小于等于50。
+                     * 设置<p>该区域变配后的目标节点数量，所有区域节点总数应大于等于3，小于等于50。</p>
+                     * @param _nodeNum <p>该区域变配后的目标节点数量，所有区域节点总数应大于等于3，小于等于50。</p>
                      * 
                      */
                     void SetNodeNum(const int64_t& _nodeNum);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NodeNumHasBeenSet() const;
 
                     /**
-                     * 获取唯一随机标识，时效性为5分钟，需要调用者指定 防止客户端重复创建资源，例如 a9a90aa6-****-****-****-fae360632808	
-                     * @return ClientToken 唯一随机标识，时效性为5分钟，需要调用者指定 防止客户端重复创建资源，例如 a9a90aa6-****-****-****-fae360632808	
+                     * 获取<p>唯一随机标识，时效性为5分钟，需要调用者指定 防止客户端重复创建资源，例如 a9a90aa6-<strong><strong>-</strong></strong>-****-fae360632808</p>
+                     * @return ClientToken <p>唯一随机标识，时效性为5分钟，需要调用者指定 防止客户端重复创建资源，例如 a9a90aa6-<strong><strong>-</strong></strong>-****-fae360632808</p>
                      * 
                      */
                     std::string GetClientToken() const;
 
                     /**
-                     * 设置唯一随机标识，时效性为5分钟，需要调用者指定 防止客户端重复创建资源，例如 a9a90aa6-****-****-****-fae360632808	
-                     * @param _clientToken 唯一随机标识，时效性为5分钟，需要调用者指定 防止客户端重复创建资源，例如 a9a90aa6-****-****-****-fae360632808	
+                     * 设置<p>唯一随机标识，时效性为5分钟，需要调用者指定 防止客户端重复创建资源，例如 a9a90aa6-<strong><strong>-</strong></strong>-****-fae360632808</p>
+                     * @param _clientToken <p>唯一随机标识，时效性为5分钟，需要调用者指定 防止客户端重复创建资源，例如 a9a90aa6-<strong><strong>-</strong></strong>-****-fae360632808</p>
                      * 
                      */
                     void SetClientToken(const std::string& _clientToken);
@@ -126,31 +126,58 @@ namespace TencentCloud
                      */
                     bool ClientTokenHasBeenSet() const;
 
+                    /**
+                     * 获取<p>存储空间大小，需要是100的倍数，且不允许比当前存储空间小（只允许扩容）</p><p>单位：GB</p>
+                     * @return DiskSize <p>存储空间大小，需要是100的倍数，且不允许比当前存储空间小（只允许扩容）</p><p>单位：GB</p>
+                     * 
+                     */
+                    int64_t GetDiskSize() const;
+
+                    /**
+                     * 设置<p>存储空间大小，需要是100的倍数，且不允许比当前存储空间小（只允许扩容）</p><p>单位：GB</p>
+                     * @param _diskSize <p>存储空间大小，需要是100的倍数，且不允许比当前存储空间小（只允许扩容）</p><p>单位：GB</p>
+                     * 
+                     */
+                    void SetDiskSize(const int64_t& _diskSize);
+
+                    /**
+                     * 判断参数 DiskSize 是否已赋值
+                     * @return DiskSize 是否已赋值
+                     * 
+                     */
+                    bool DiskSizeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例唯一标识符（字符串表示）。
+                     * <p>实例唯一标识符（字符串表示）。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 需要变更的区域名称。
+                     * <p>需要变更的区域名称。</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 该区域变配后的目标节点数量，所有区域节点总数应大于等于3，小于等于50。
+                     * <p>该区域变配后的目标节点数量，所有区域节点总数应大于等于3，小于等于50。</p>
                      */
                     int64_t m_nodeNum;
                     bool m_nodeNumHasBeenSet;
 
                     /**
-                     * 唯一随机标识，时效性为5分钟，需要调用者指定 防止客户端重复创建资源，例如 a9a90aa6-****-****-****-fae360632808	
+                     * <p>唯一随机标识，时效性为5分钟，需要调用者指定 防止客户端重复创建资源，例如 a9a90aa6-<strong><strong>-</strong></strong>-****-fae360632808</p>
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
+
+                    /**
+                     * <p>存储空间大小，需要是100的倍数，且不允许比当前存储空间小（只允许扩容）</p><p>单位：GB</p>
+                     */
+                    int64_t m_diskSize;
+                    bool m_diskSizeHasBeenSet;
 
                 };
             }

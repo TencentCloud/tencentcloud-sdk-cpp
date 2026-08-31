@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作是否成功
-                     * @return Data 操作是否成功
+                     * 获取<p>操作是否成功</p>
+                     * @return Data <p>操作是否成功</p>
                      * 
                      */
                     DataSourceStatus GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作是否成功
+                     * <p>操作是否成功</p>
                      */
                     DataSourceStatus m_data;
                     bool m_dataHasBeenSet;

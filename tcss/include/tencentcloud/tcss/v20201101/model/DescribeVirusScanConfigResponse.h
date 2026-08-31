@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启定期扫描
-                     * @return EnableScan 是否开启定期扫描
+                     * 获取<p>是否开启定期扫描</p>
+                     * @return EnableScan <p>是否开启定期扫描</p>
                      * 
                      */
                     bool GetEnableScan() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool EnableScanHasBeenSet() const;
 
                     /**
-                     * 获取检测周期每隔多少天
-                     * @return Cycle 检测周期每隔多少天
+                     * 获取<p>检测周期每隔多少天</p>
+                     * @return Cycle <p>检测周期每隔多少天</p>
                      * 
                      */
                     uint64_t GetCycle() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool CycleHasBeenSet() const;
 
                     /**
-                     * 获取扫描开始时间
-                     * @return BeginScanAt 扫描开始时间
+                     * 获取<p>扫描开始时间</p>
+                     * @return BeginScanAt <p>扫描开始时间</p>
                      * 
                      */
                     std::string GetBeginScanAt() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool BeginScanAtHasBeenSet() const;
 
                     /**
-                     * 获取超时时长，单位小时
-                     * @return Timeout 超时时长，单位小时
+                     * 获取<p>超时时长，单位小时</p>
+                     * @return Timeout <p>超时时长，单位小时</p>
                      * 
                      */
                     uint64_t GetTimeout() const;
@@ -101,10 +101,8 @@ namespace TencentCloud
                     bool TimeoutHasBeenSet() const;
 
                     /**
-                     * 获取SCAN_NODE:扫描节点
-SCAN_CONTAINER:扫描容器
-                     * @return ScanRangeType SCAN_NODE:扫描节点
-SCAN_CONTAINER:扫描容器
+                     * 获取<p>SCAN_NODE:扫描节点<br>SCAN_CONTAINER:扫描容器</p>
+                     * @return ScanRangeType <p>SCAN_NODE:扫描节点<br>SCAN_CONTAINER:扫描容器</p>
                      * 
                      */
                     std::string GetScanRangeType() const;
@@ -117,8 +115,8 @@ SCAN_CONTAINER:扫描容器
                     bool ScanRangeTypeHasBeenSet() const;
 
                     /**
-                     * 获取自选扫描范围的容器id或者节点id 
-                     * @return ScanIDs 自选扫描范围的容器id或者节点id 
+                     * 获取<p>自选扫描范围的容器id或者节点id</p>
+                     * @return ScanIDs <p>自选扫描范围的容器id或者节点id</p>
                      * 
                      */
                     std::vector<ScanRangeInfo> GetScanIDs() const;
@@ -131,8 +129,8 @@ SCAN_CONTAINER:扫描容器
                     bool ScanIDsHasBeenSet() const;
 
                     /**
-                     * 获取自选排除或扫描的地址
-                     * @return ScanPath 自选排除或扫描的地址
+                     * 获取<p>自选排除或扫描的地址</p>
+                     * @return ScanPath <p>自选排除或扫描的地址</p>
                      * 
                      */
                     std::vector<std::string> GetScanPath() const;
@@ -145,16 +143,8 @@ SCAN_CONTAINER:扫描容器
                     bool ScanPathHasBeenSet() const;
 
                     /**
-                     * 获取扫描路径模式：
-SCAN_PATH_ALL：全部路径
-SCAN_PATH_DEFAULT：默认路径
-SCAN_PATH_USER_DEFINE：用户自定义路径
-
-                     * @return ScanPathMode 扫描路径模式：
-SCAN_PATH_ALL：全部路径
-SCAN_PATH_DEFAULT：默认路径
-SCAN_PATH_USER_DEFINE：用户自定义路径
-
+                     * 获取<p>扫描路径模式：<br>SCAN_PATH_ALL：全部路径<br>SCAN_PATH_DEFAULT：默认路径<br>SCAN_PATH_USER_DEFINE：用户自定义路径</p>
+                     * @return ScanPathMode <p>扫描路径模式：<br>SCAN_PATH_ALL：全部路径<br>SCAN_PATH_DEFAULT：默认路径<br>SCAN_PATH_USER_DEFINE：用户自定义路径</p>
                      * 
                      */
                     std::string GetScanPathMode() const;
@@ -167,10 +157,8 @@ SCAN_PATH_USER_DEFINE：用户自定义路径
                     bool ScanPathModeHasBeenSet() const;
 
                     /**
-                     * 获取true:包含路径
-false:排除路径
-                     * @return IsIncludePath true:包含路径
-false:排除路径
+                     * 获取<p>true:包含路径<br>false:排除路径</p>
+                     * @return IsIncludePath <p>true:包含路径<br>false:排除路径</p>
                      * 
                      */
                     bool GetIsIncludePath() const;
@@ -185,61 +173,55 @@ false:排除路径
                 private:
 
                     /**
-                     * 是否开启定期扫描
+                     * <p>是否开启定期扫描</p>
                      */
                     bool m_enableScan;
                     bool m_enableScanHasBeenSet;
 
                     /**
-                     * 检测周期每隔多少天
+                     * <p>检测周期每隔多少天</p>
                      */
                     uint64_t m_cycle;
                     bool m_cycleHasBeenSet;
 
                     /**
-                     * 扫描开始时间
+                     * <p>扫描开始时间</p>
                      */
                     std::string m_beginScanAt;
                     bool m_beginScanAtHasBeenSet;
 
                     /**
-                     * 超时时长，单位小时
+                     * <p>超时时长，单位小时</p>
                      */
                     uint64_t m_timeout;
                     bool m_timeoutHasBeenSet;
 
                     /**
-                     * SCAN_NODE:扫描节点
-SCAN_CONTAINER:扫描容器
+                     * <p>SCAN_NODE:扫描节点<br>SCAN_CONTAINER:扫描容器</p>
                      */
                     std::string m_scanRangeType;
                     bool m_scanRangeTypeHasBeenSet;
 
                     /**
-                     * 自选扫描范围的容器id或者节点id 
+                     * <p>自选扫描范围的容器id或者节点id</p>
                      */
                     std::vector<ScanRangeInfo> m_scanIDs;
                     bool m_scanIDsHasBeenSet;
 
                     /**
-                     * 自选排除或扫描的地址
+                     * <p>自选排除或扫描的地址</p>
                      */
                     std::vector<std::string> m_scanPath;
                     bool m_scanPathHasBeenSet;
 
                     /**
-                     * 扫描路径模式：
-SCAN_PATH_ALL：全部路径
-SCAN_PATH_DEFAULT：默认路径
-SCAN_PATH_USER_DEFINE：用户自定义路径
-
+                     * <p>扫描路径模式：<br>SCAN_PATH_ALL：全部路径<br>SCAN_PATH_DEFAULT：默认路径<br>SCAN_PATH_USER_DEFINE：用户自定义路径</p>
                      */
                     std::string m_scanPathMode;
                     bool m_scanPathModeHasBeenSet;
 
                     /**
-                     * true:包含路径
-false:排除路径
+                     * <p>true:包含路径<br>false:排除路径</p>
                      */
                     bool m_isIncludePath;
                     bool m_isIncludePathHasBeenSet;

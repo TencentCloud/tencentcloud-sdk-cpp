@@ -28,7 +28,8 @@ UserInfo::UserInfo() :
     m_areaCodeHasBeenSet(false),
     m_appUserIdHasBeenSet(false),
     m_appUserNameHasBeenSet(false),
-    m_larkOpenIdHasBeenSet(false)
+    m_larkOpenIdHasBeenSet(false),
+    m_identityTypeHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
         m_larkOpenIdHasBeenSet = true;
     }
 
+    if (value.HasMember("IdentityType") && !value["IdentityType"].IsNull())
+    {
+        if (!value["IdentityType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserInfo.IdentityType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_identityType = string(value["IdentityType"].GetString());
+        m_identityTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void UserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "LarkOpenId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_larkOpenId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_identityTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdentityType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_identityType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void UserInfo::SetLarkOpenId(const string& _larkOpenId)
 bool UserInfo::LarkOpenIdHasBeenSet() const
 {
     return m_larkOpenIdHasBeenSet;
+}
+
+string UserInfo::GetIdentityType() const
+{
+    return m_identityType;
+}
+
+void UserInfo::SetIdentityType(const string& _identityType)
+{
+    m_identityType = _identityType;
+    m_identityTypeHasBeenSet = true;
+}
+
+bool UserInfo::IdentityTypeHasBeenSet() const
+{
+    return m_identityTypeHasBeenSet;
 }
 

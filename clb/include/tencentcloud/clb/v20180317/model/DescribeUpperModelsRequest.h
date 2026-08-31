@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool ModelProviderHasBeenSet() const;
 
                     /**
-                     * 获取<p>BYOK 业务 ID，可选</p><p>格式：byok-xxxxxxxx</p>
-                     * @return ServiceProviderId <p>BYOK 业务 ID，可选</p><p>格式：byok-xxxxxxxx</p>
+                     * 获取<p>BYOK 业务 ID，可选</p><p>格式：byok-xxxxxxxx，预留参数</p>
+                     * @return ServiceProviderId <p>BYOK 业务 ID，可选</p><p>格式：byok-xxxxxxxx，预留参数</p>
                      * 
                      */
                     std::string GetServiceProviderId() const;
 
                     /**
-                     * 设置<p>BYOK 业务 ID，可选</p><p>格式：byok-xxxxxxxx</p>
-                     * @param _serviceProviderId <p>BYOK 业务 ID，可选</p><p>格式：byok-xxxxxxxx</p>
+                     * 设置<p>BYOK 业务 ID，可选</p><p>格式：byok-xxxxxxxx，预留参数</p>
+                     * @param _serviceProviderId <p>BYOK 业务 ID，可选</p><p>格式：byok-xxxxxxxx，预留参数</p>
                      * 
                      */
                     void SetServiceProviderId(const std::string& _serviceProviderId);
@@ -230,6 +230,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ServiceProviderIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>    CMR 私网管道ID </p>
+                     * @return CMRPrivateNetworkTunnelId <p>    CMR 私网管道ID </p>
+                     * 
+                     */
+                    std::string GetCMRPrivateNetworkTunnelId() const;
+
+                    /**
+                     * 设置<p>    CMR 私网管道ID </p>
+                     * @param _cMRPrivateNetworkTunnelId <p>    CMR 私网管道ID </p>
+                     * 
+                     */
+                    void SetCMRPrivateNetworkTunnelId(const std::string& _cMRPrivateNetworkTunnelId);
+
+                    /**
+                     * 判断参数 CMRPrivateNetworkTunnelId 是否已赋值
+                     * @return CMRPrivateNetworkTunnelId 是否已赋值
+                     * 
+                     */
+                    bool CMRPrivateNetworkTunnelIdHasBeenSet() const;
 
                 private:
 
@@ -282,10 +303,16 @@ namespace TencentCloud
                     bool m_modelProviderHasBeenSet;
 
                     /**
-                     * <p>BYOK 业务 ID，可选</p><p>格式：byok-xxxxxxxx</p>
+                     * <p>BYOK 业务 ID，可选</p><p>格式：byok-xxxxxxxx，预留参数</p>
                      */
                     std::string m_serviceProviderId;
                     bool m_serviceProviderIdHasBeenSet;
+
+                    /**
+                     * <p>    CMR 私网管道ID </p>
+                     */
+                    std::string m_cMRPrivateNetworkTunnelId;
+                    bool m_cMRPrivateNetworkTunnelIdHasBeenSet;
 
                 };
             }

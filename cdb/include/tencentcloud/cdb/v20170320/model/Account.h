@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 数据库账号信息
+                * 账号信息
                 */
                 class Account : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>账号名，可输入1 - 32个字符。</p>
-                     * @return User <p>账号名，可输入1 - 32个字符。</p>
+                     * 获取账号名称
+                     * @return User 账号名称
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
-                     * 设置<p>账号名，可输入1 - 32个字符。</p>
-                     * @param _user <p>账号名，可输入1 - 32个字符。</p>
+                     * 设置账号名称
+                     * @param _user 账号名称
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool UserHasBeenSet() const;
 
                     /**
-                     * 获取<p>账号的主机。</p><p>IP 形式，支持填入%。</p>
-                     * @return Host <p>账号的主机。</p><p>IP 形式，支持填入%。</p>
+                     * 获取账号的主机地址
+                     * @return Host 账号的主机地址
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置<p>账号的主机。</p><p>IP 形式，支持填入%。</p>
-                     * @param _host <p>账号的主机。</p><p>IP 形式，支持填入%。</p>
+                     * 设置账号的主机地址
+                     * @param _host 账号的主机地址
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>账号名，可输入1 - 32个字符。</p>
+                     * 账号名称
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
-                     * <p>账号的主机。</p><p>IP 形式，支持填入%。</p>
+                     * 账号的主机地址
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;

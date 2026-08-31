@@ -57,15 +57,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取输入Id。
-                     * @return InputId 输入Id。
+                     * 获取<p>输入Id。</p>
+                     * @return InputId <p>输入Id。</p>
                      * 
                      */
                     std::string GetInputId() const;
 
                     /**
-                     * 设置输入Id。
-                     * @param _inputId 输入Id。
+                     * 设置<p>输入Id。</p>
+                     * @param _inputId <p>输入Id。</p>
                      * 
                      */
                     void SetInputId(const std::string& _inputId);
@@ -78,15 +78,15 @@ namespace TencentCloud
                     bool InputIdHasBeenSet() const;
 
                     /**
-                     * 获取输入名称。
-                     * @return InputName 输入名称。
+                     * 获取<p>输入名称。</p>
+                     * @return InputName <p>输入名称。</p>
                      * 
                      */
                     std::string GetInputName() const;
 
                     /**
-                     * 设置输入名称。
-                     * @param _inputName 输入名称。
+                     * 设置<p>输入名称。</p>
+                     * @param _inputName <p>输入名称。</p>
                      * 
                      */
                     void SetInputName(const std::string& _inputName);
@@ -99,18 +99,18 @@ namespace TencentCloud
                     bool InputNameHasBeenSet() const;
 
                     /**
-                     * 获取输入描述。
+                     * 获取<p>输入描述。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 输入描述。
+                     * @return Description <p>输入描述。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置输入描述。
+                     * 设置<p>输入描述。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 输入描述。
+                     * @param _description <p>输入描述。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,15 +124,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取输入协议。
-                     * @return Protocol 输入协议。
+                     * 获取<p>输入协议。</p>
+                     * @return Protocol <p>输入协议。</p>
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置输入协议。
-                     * @param _protocol 输入协议。
+                     * 设置<p>输入协议。</p>
+                     * @param _protocol <p>输入协议。</p>
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -145,15 +145,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取输入地址列表。
-                     * @return InputAddressList 输入地址列表。
+                     * 获取<p>输入地址列表。</p>
+                     * @return InputAddressList <p>输入地址列表。</p>
                      * 
                      */
                     std::vector<InputAddress> GetInputAddressList() const;
 
                     /**
-                     * 设置输入地址列表。
-                     * @param _inputAddressList 输入地址列表。
+                     * 设置<p>输入地址列表。</p>
+                     * @param _inputAddressList <p>输入地址列表。</p>
                      * 
                      */
                     void SetInputAddressList(const std::vector<InputAddress>& _inputAddressList);
@@ -166,15 +166,15 @@ namespace TencentCloud
                     bool InputAddressListHasBeenSet() const;
 
                     /**
-                     * 获取输入IP白名单列表。
-                     * @return AllowIpList 输入IP白名单列表。
+                     * 获取<p>输入IP白名单列表。</p>
+                     * @return AllowIpList <p>输入IP白名单列表。</p>
                      * 
                      */
                     std::vector<std::string> GetAllowIpList() const;
 
                     /**
-                     * 设置输入IP白名单列表。
-                     * @param _allowIpList 输入IP白名单列表。
+                     * 设置<p>输入IP白名单列表。</p>
+                     * @param _allowIpList <p>输入IP白名单列表。</p>
                      * 
                      */
                     void SetAllowIpList(const std::vector<std::string>& _allowIpList);
@@ -187,18 +187,18 @@ namespace TencentCloud
                     bool AllowIpListHasBeenSet() const;
 
                     /**
-                     * 获取输入的SRT配置信息。
+                     * 获取<p>输入的SRT配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SRTSettings 输入的SRT配置信息。
+                     * @return SRTSettings <p>输入的SRT配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribeInputSRTSettings GetSRTSettings() const;
 
                     /**
-                     * 设置输入的SRT配置信息。
+                     * 设置<p>输入的SRT配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sRTSettings 输入的SRT配置信息。
+                     * @param _sRTSettings <p>输入的SRT配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -212,18 +212,18 @@ namespace TencentCloud
                     bool SRTSettingsHasBeenSet() const;
 
                     /**
-                     * 获取输入的RTP配置信息。
+                     * 获取<p>输入的RTP配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RTPSettings 输入的RTP配置信息。
+                     * @return RTPSettings <p>输入的RTP配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribeInputRTPSettings GetRTPSettings() const;
 
                     /**
-                     * 设置输入的RTP配置信息。
+                     * 设置<p>输入的RTP配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rTPSettings 输入的RTP配置信息。
+                     * @param _rTPSettings <p>输入的RTP配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool RTPSettingsHasBeenSet() const;
 
                     /**
-                     * 获取输入的地区。
-                     * @return InputRegion 输入的地区。
+                     * 获取<p>输入的地区。</p>
+                     * @return InputRegion <p>输入的地区。</p>
                      * 
                      */
                     std::string GetInputRegion() const;
 
                     /**
-                     * 设置输入的地区。
-                     * @param _inputRegion 输入的地区。
+                     * 设置<p>输入的地区。</p>
+                     * @param _inputRegion <p>输入的地区。</p>
                      * 
                      */
                     void SetInputRegion(const std::string& _inputRegion);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool InputRegionHasBeenSet() const;
 
                     /**
-                     * 获取输入的RTMP配置信息。
-                     * @return RTMPSettings 输入的RTMP配置信息。
+                     * 获取<p>输入的RTMP配置信息。</p>
+                     * @return RTMPSettings <p>输入的RTMP配置信息。</p>
                      * 
                      */
                     DescribeInputRTMPSettings GetRTMPSettings() const;
 
                     /**
-                     * 设置输入的RTMP配置信息。
-                     * @param _rTMPSettings 输入的RTMP配置信息。
+                     * 设置<p>输入的RTMP配置信息。</p>
+                     * @param _rTMPSettings <p>输入的RTMP配置信息。</p>
                      * 
                      */
                     void SetRTMPSettings(const DescribeInputRTMPSettings& _rTMPSettings);
@@ -279,18 +279,18 @@ namespace TencentCloud
                     bool RTMPSettingsHasBeenSet() const;
 
                     /**
-                     * 获取输入的主备开关。
+                     * 获取<p>输入的主备开关。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FailOver 输入的主备开关。
+                     * @return FailOver <p>输入的主备开关。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFailOver() const;
 
                     /**
-                     * 设置输入的主备开关。
+                     * 设置<p>输入的主备开关。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _failOver 输入的主备开关。
+                     * @param _failOver <p>输入的主备开关。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -304,18 +304,18 @@ namespace TencentCloud
                     bool FailOverHasBeenSet() const;
 
                     /**
-                     * 获取输入的RTMP_PULL配置信息。
+                     * 获取<p>输入的RTMP_PULL配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RTMPPullSettings 输入的RTMP_PULL配置信息。
+                     * @return RTMPPullSettings <p>输入的RTMP_PULL配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribeInputRTMPPullSettings GetRTMPPullSettings() const;
 
                     /**
-                     * 设置输入的RTMP_PULL配置信息。
+                     * 设置<p>输入的RTMP_PULL配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rTMPPullSettings 输入的RTMP_PULL配置信息。
+                     * @param _rTMPPullSettings <p>输入的RTMP_PULL配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -329,18 +329,18 @@ namespace TencentCloud
                     bool RTMPPullSettingsHasBeenSet() const;
 
                     /**
-                     * 获取输入的RTSP_PULL配置信息。
+                     * 获取<p>输入的RTSP_PULL配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RTSPPullSettings 输入的RTSP_PULL配置信息。
+                     * @return RTSPPullSettings <p>输入的RTSP_PULL配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribeInputRTSPPullSettings GetRTSPPullSettings() const;
 
                     /**
-                     * 设置输入的RTSP_PULL配置信息。
+                     * 设置<p>输入的RTSP_PULL配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rTSPPullSettings 输入的RTSP_PULL配置信息。
+                     * @param _rTSPPullSettings <p>输入的RTSP_PULL配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -354,18 +354,18 @@ namespace TencentCloud
                     bool RTSPPullSettingsHasBeenSet() const;
 
                     /**
-                     * 获取输入的HLS_PULL配置信息。
+                     * 获取<p>输入的HLS_PULL配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HLSPullSettings 输入的HLS_PULL配置信息。
+                     * @return HLSPullSettings <p>输入的HLS_PULL配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribeInputHLSPullSettings GetHLSPullSettings() const;
 
                     /**
-                     * 设置输入的HLS_PULL配置信息。
+                     * 设置<p>输入的HLS_PULL配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hLSPullSettings 输入的HLS_PULL配置信息。
+                     * @param _hLSPullSettings <p>输入的HLS_PULL配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -379,18 +379,18 @@ namespace TencentCloud
                     bool HLSPullSettingsHasBeenSet() const;
 
                     /**
-                     * 获取延播平滑吐流配置信息。
+                     * 获取<p>延播平滑吐流配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResilientStream 延播平滑吐流配置信息。
+                     * @return ResilientStream <p>延播平滑吐流配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ResilientStreamConf GetResilientStream() const;
 
                     /**
-                     * 设置延播平滑吐流配置信息。
+                     * 设置<p>延播平滑吐流配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resilientStream 延播平滑吐流配置信息。
+                     * @param _resilientStream <p>延播平滑吐流配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -404,18 +404,18 @@ namespace TencentCloud
                     bool ResilientStreamHasBeenSet() const;
 
                     /**
-                     * 获取绑定的输入安全组 ID。	
+                     * 获取<p>绑定的输入安全组 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SecurityGroupIds 绑定的输入安全组 ID。	
+                     * @return SecurityGroupIds <p>绑定的输入安全组 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置绑定的输入安全组 ID。	
+                     * 设置<p>绑定的输入安全组 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _securityGroupIds 绑定的输入安全组 ID。	
+                     * @param _securityGroupIds <p>绑定的输入安全组 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -429,15 +429,15 @@ namespace TencentCloud
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取可用区配置，开启容灾情况下最多有两个，顺序和pipeline 0、1对应，否则最多只有一个可用区。	
-                     * @return Zones 可用区配置，开启容灾情况下最多有两个，顺序和pipeline 0、1对应，否则最多只有一个可用区。	
+                     * 获取<p>可用区配置，开启容灾情况下最多有两个，顺序和pipeline 0、1对应，否则最多只有一个可用区。</p>
+                     * @return Zones <p>可用区配置，开启容灾情况下最多有两个，顺序和pipeline 0、1对应，否则最多只有一个可用区。</p>
                      * 
                      */
                     std::vector<std::string> GetZones() const;
 
                     /**
-                     * 设置可用区配置，开启容灾情况下最多有两个，顺序和pipeline 0、1对应，否则最多只有一个可用区。	
-                     * @param _zones 可用区配置，开启容灾情况下最多有两个，顺序和pipeline 0、1对应，否则最多只有一个可用区。	
+                     * 设置<p>可用区配置，开启容灾情况下最多有两个，顺序和pipeline 0、1对应，否则最多只有一个可用区。</p>
+                     * @param _zones <p>可用区配置，开启容灾情况下最多有两个，顺序和pipeline 0、1对应，否则最多只有一个可用区。</p>
                      * 
                      */
                     void SetZones(const std::vector<std::string>& _zones);
@@ -450,18 +450,18 @@ namespace TencentCloud
                     bool ZonesHasBeenSet() const;
 
                     /**
-                     * 获取输入的RIST配置信息。
+                     * 获取<p>输入的RIST配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RISTSettings 输入的RIST配置信息。
+                     * @return RISTSettings <p>输入的RIST配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribeInputRISTSettings GetRISTSettings() const;
 
                     /**
-                     * 设置输入的RIST配置信息。
+                     * 设置<p>输入的RIST配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rISTSettings 输入的RIST配置信息。
+                     * @param _rISTSettings <p>输入的RIST配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -475,15 +475,15 @@ namespace TencentCloud
                     bool RISTSettingsHasBeenSet() const;
 
                     /**
-                     * 获取输入模块配置相关的URL信息，包含提供的推流地址，或者配置的第三方源流地址
-                     * @return StreamUrls 输入模块配置相关的URL信息，包含提供的推流地址，或者配置的第三方源流地址
+                     * 获取<p>输入模块配置相关的URL信息，包含提供的推流地址，或者配置的第三方源流地址</p>
+                     * @return StreamUrls <p>输入模块配置相关的URL信息，包含提供的推流地址，或者配置的第三方源流地址</p>
                      * 
                      */
                     std::vector<StreamUrlDetail> GetStreamUrls() const;
 
                     /**
-                     * 设置输入模块配置相关的URL信息，包含提供的推流地址，或者配置的第三方源流地址
-                     * @param _streamUrls 输入模块配置相关的URL信息，包含提供的推流地址，或者配置的第三方源流地址
+                     * 设置<p>输入模块配置相关的URL信息，包含提供的推流地址，或者配置的第三方源流地址</p>
+                     * @param _streamUrls <p>输入模块配置相关的URL信息，包含提供的推流地址，或者配置的第三方源流地址</p>
                      * 
                      */
                     void SetStreamUrls(const std::vector<StreamUrlDetail>& _streamUrls);
@@ -498,125 +498,125 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 输入Id。
+                     * <p>输入Id。</p>
                      */
                     std::string m_inputId;
                     bool m_inputIdHasBeenSet;
 
                     /**
-                     * 输入名称。
+                     * <p>输入名称。</p>
                      */
                     std::string m_inputName;
                     bool m_inputNameHasBeenSet;
 
                     /**
-                     * 输入描述。
+                     * <p>输入描述。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 输入协议。
+                     * <p>输入协议。</p>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 输入地址列表。
+                     * <p>输入地址列表。</p>
                      */
                     std::vector<InputAddress> m_inputAddressList;
                     bool m_inputAddressListHasBeenSet;
 
                     /**
-                     * 输入IP白名单列表。
+                     * <p>输入IP白名单列表。</p>
                      */
                     std::vector<std::string> m_allowIpList;
                     bool m_allowIpListHasBeenSet;
 
                     /**
-                     * 输入的SRT配置信息。
+                     * <p>输入的SRT配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeInputSRTSettings m_sRTSettings;
                     bool m_sRTSettingsHasBeenSet;
 
                     /**
-                     * 输入的RTP配置信息。
+                     * <p>输入的RTP配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeInputRTPSettings m_rTPSettings;
                     bool m_rTPSettingsHasBeenSet;
 
                     /**
-                     * 输入的地区。
+                     * <p>输入的地区。</p>
                      */
                     std::string m_inputRegion;
                     bool m_inputRegionHasBeenSet;
 
                     /**
-                     * 输入的RTMP配置信息。
+                     * <p>输入的RTMP配置信息。</p>
                      */
                     DescribeInputRTMPSettings m_rTMPSettings;
                     bool m_rTMPSettingsHasBeenSet;
 
                     /**
-                     * 输入的主备开关。
+                     * <p>输入的主备开关。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_failOver;
                     bool m_failOverHasBeenSet;
 
                     /**
-                     * 输入的RTMP_PULL配置信息。
+                     * <p>输入的RTMP_PULL配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeInputRTMPPullSettings m_rTMPPullSettings;
                     bool m_rTMPPullSettingsHasBeenSet;
 
                     /**
-                     * 输入的RTSP_PULL配置信息。
+                     * <p>输入的RTSP_PULL配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeInputRTSPPullSettings m_rTSPPullSettings;
                     bool m_rTSPPullSettingsHasBeenSet;
 
                     /**
-                     * 输入的HLS_PULL配置信息。
+                     * <p>输入的HLS_PULL配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeInputHLSPullSettings m_hLSPullSettings;
                     bool m_hLSPullSettingsHasBeenSet;
 
                     /**
-                     * 延播平滑吐流配置信息。
+                     * <p>延播平滑吐流配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ResilientStreamConf m_resilientStream;
                     bool m_resilientStreamHasBeenSet;
 
                     /**
-                     * 绑定的输入安全组 ID。	
+                     * <p>绑定的输入安全组 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
 
                     /**
-                     * 可用区配置，开启容灾情况下最多有两个，顺序和pipeline 0、1对应，否则最多只有一个可用区。	
+                     * <p>可用区配置，开启容灾情况下最多有两个，顺序和pipeline 0、1对应，否则最多只有一个可用区。</p>
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
 
                     /**
-                     * 输入的RIST配置信息。
+                     * <p>输入的RIST配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeInputRISTSettings m_rISTSettings;
                     bool m_rISTSettingsHasBeenSet;
 
                     /**
-                     * 输入模块配置相关的URL信息，包含提供的推流地址，或者配置的第三方源流地址
+                     * <p>输入模块配置相关的URL信息，包含提供的推流地址，或者配置的第三方源流地址</p>
                      */
                     std::vector<StreamUrlDetail> m_streamUrls;
                     bool m_streamUrlsHasBeenSet;

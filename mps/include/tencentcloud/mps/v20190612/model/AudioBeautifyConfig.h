@@ -47,27 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取能力配置开关，可选值：
-<li>ON：开启；</li>
-<li>OFF：关闭。</li>
-默认值：ON。
-                     * @return Switch 能力配置开关，可选值：
-<li>ON：开启；</li>
-<li>OFF：关闭。</li>
-默认值：ON。
+                     * 获取<p>能力配置开关，可选值：</p><li>ON：开启；</li><li>OFF：关闭。</li>默认值：ON。
+                     * @return Switch <p>能力配置开关，可选值：</p><li>ON：开启；</li><li>OFF：关闭。</li>默认值：ON。
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置能力配置开关，可选值：
-<li>ON：开启；</li>
-<li>OFF：关闭。</li>
-默认值：ON。
-                     * @param _switch 能力配置开关，可选值：
-<li>ON：开启；</li>
-<li>OFF：关闭。</li>
-默认值：ON。
+                     * 设置<p>能力配置开关，可选值：</p><li>ON：开启；</li><li>OFF：关闭。</li>默认值：ON。
+                     * @param _switch <p>能力配置开关，可选值：</p><li>ON：开启；</li><li>OFF：关闭。</li>默认值：ON。
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -80,30 +68,18 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取类型，可多选，可选值：
-<li>declick：杂音去除</li>
-<li>deesser：齿音压制</li>
-默认值：declick。
+                     * 获取<p>类型，可多选，可选值：</p><li>declick：杂音去除</li><li>deesser：齿音压制</li>默认值：declick。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Types 类型，可多选，可选值：
-<li>declick：杂音去除</li>
-<li>deesser：齿音压制</li>
-默认值：declick。
+                     * @return Types <p>类型，可多选，可选值：</p><li>declick：杂音去除</li><li>deesser：齿音压制</li>默认值：declick。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTypes() const;
 
                     /**
-                     * 设置类型，可多选，可选值：
-<li>declick：杂音去除</li>
-<li>deesser：齿音压制</li>
-默认值：declick。
+                     * 设置<p>类型，可多选，可选值：</p><li>declick：杂音去除</li><li>deesser：齿音压制</li>默认值：declick。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _types 类型，可多选，可选值：
-<li>declick：杂音去除</li>
-<li>deesser：齿音压制</li>
-默认值：declick。
+                     * @param _types <p>类型，可多选，可选值：</p><li>declick：杂音去除</li><li>deesser：齿音压制</li>默认值：declick。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -119,19 +95,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 能力配置开关，可选值：
-<li>ON：开启；</li>
-<li>OFF：关闭。</li>
-默认值：ON。
+                     * <p>能力配置开关，可选值：</p><li>ON：开启；</li><li>OFF：关闭。</li>默认值：ON。
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 类型，可多选，可选值：
-<li>declick：杂音去除</li>
-<li>deesser：齿音压制</li>
-默认值：declick。
+                     * <p>类型，可多选，可选值：</p><li>declick：杂音去除</li><li>deesser：齿音压制</li>默认值：declick。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_types;

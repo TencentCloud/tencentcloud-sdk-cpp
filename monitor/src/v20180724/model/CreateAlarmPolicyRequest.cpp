@@ -37,6 +37,7 @@ CreateAlarmPolicyRequest::CreateAlarmPolicyRequest() :
     m_triggerTasksHasBeenSet(false),
     m_filterHasBeenSet(false),
     m_groupByHasBeenSet(false),
+    m_isBindAllHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_logAlarmReqInfoHasBeenSet(false),
     m_hierarchicalNoticesHasBeenSet(false),
@@ -184,6 +185,14 @@ string CreateAlarmPolicyRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_isBindAllHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsBindAll";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isBindAll, allocator);
     }
 
     if (m_tagsHasBeenSet)
@@ -494,6 +503,22 @@ void CreateAlarmPolicyRequest::SetGroupBy(const vector<string>& _groupBy)
 bool CreateAlarmPolicyRequest::GroupByHasBeenSet() const
 {
     return m_groupByHasBeenSet;
+}
+
+int64_t CreateAlarmPolicyRequest::GetIsBindAll() const
+{
+    return m_isBindAll;
+}
+
+void CreateAlarmPolicyRequest::SetIsBindAll(const int64_t& _isBindAll)
+{
+    m_isBindAll = _isBindAll;
+    m_isBindAllHasBeenSet = true;
+}
+
+bool CreateAlarmPolicyRequest::IsBindAllHasBeenSet() const
+{
+    return m_isBindAllHasBeenSet;
 }
 
 vector<Tag> CreateAlarmPolicyRequest::GetTags() const

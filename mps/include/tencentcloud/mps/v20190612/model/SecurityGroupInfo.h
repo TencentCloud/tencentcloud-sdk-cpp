@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取安全组 ID。
-                     * @return Id 安全组 ID。
+                     * 获取<p>安全组 ID。</p>
+                     * @return Id <p>安全组 ID。</p>
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置安全组 ID。
-                     * @param _id 安全组 ID。
+                     * 设置<p>安全组 ID。</p>
+                     * @param _id <p>安全组 ID。</p>
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取安全组名称。
-                     * @return Name 安全组名称。
+                     * 获取<p>安全组名称。</p>
+                     * @return Name <p>安全组名称。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置安全组名称。
-                     * @param _name 安全组名称。
+                     * 设置<p>安全组名称。</p>
+                     * @param _name <p>安全组名称。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取白名单列表。
-                     * @return Whitelist 白名单列表。
+                     * 获取<p>白名单列表。</p>
+                     * @return Whitelist <p>白名单列表。</p>
                      * 
                      */
                     std::vector<std::string> GetWhitelist() const;
 
                     /**
-                     * 设置白名单列表。
-                     * @param _whitelist 白名单列表。
+                     * 设置<p>白名单列表。</p>
+                     * @param _whitelist <p>白名单列表。</p>
                      * 
                      */
                     void SetWhitelist(const std::vector<std::string>& _whitelist);
@@ -110,18 +110,18 @@ namespace TencentCloud
                     bool WhitelistHasBeenSet() const;
 
                     /**
-                     * 获取绑定的输入流列表。
+                     * 获取<p>绑定的输入流列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OccupiedInputs 绑定的输入流列表。
+                     * @return OccupiedInputs <p>绑定的输入流列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetOccupiedInputs() const;
 
                     /**
-                     * 设置绑定的输入流列表。
+                     * 设置<p>绑定的输入流列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _occupiedInputs 绑定的输入流列表。
+                     * @param _occupiedInputs <p>绑定的输入流列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool OccupiedInputsHasBeenSet() const;
 
                     /**
-                     * 获取安全组地址。
-                     * @return Region 安全组地址。
+                     * 获取<p>安全组地址。</p>
+                     * @return Region <p>安全组地址。</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置安全组地址。
-                     * @param _region 安全组地址。
+                     * 设置<p>安全组地址。</p>
+                     * @param _region <p>安全组地址。</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -156,18 +156,18 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取绑定的输出流列表。
+                     * 获取<p>绑定的输出流列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OccupiedOutputs 绑定的输出流列表。
+                     * @return OccupiedOutputs <p>绑定的输出流列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetOccupiedOutputs() const;
 
                     /**
-                     * 设置绑定的输出流列表。
+                     * 设置<p>绑定的输出流列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _occupiedOutputs 绑定的输出流列表。
+                     * @param _occupiedOutputs <p>绑定的输出流列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -183,38 +183,38 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 安全组 ID。
+                     * <p>安全组 ID。</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 安全组名称。
+                     * <p>安全组名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 白名单列表。
+                     * <p>白名单列表。</p>
                      */
                     std::vector<std::string> m_whitelist;
                     bool m_whitelistHasBeenSet;
 
                     /**
-                     * 绑定的输入流列表。
+                     * <p>绑定的输入流列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_occupiedInputs;
                     bool m_occupiedInputsHasBeenSet;
 
                     /**
-                     * 安全组地址。
+                     * <p>安全组地址。</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 绑定的输出流列表。
+                     * <p>绑定的输出流列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_occupiedOutputs;

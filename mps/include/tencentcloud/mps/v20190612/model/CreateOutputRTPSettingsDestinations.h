@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取转推的目标IP。
-                     * @return Ip 转推的目标IP。
+                     * 获取<p>转推的目标IP。</p>
+                     * @return Ip <p>转推的目标IP。</p>
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置转推的目标IP。
-                     * @param _ip 转推的目标IP。
+                     * 设置<p>转推的目标IP。</p>
+                     * @param _ip <p>转推的目标IP。</p>
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取转推的目标端口。
-                     * @return Port 转推的目标端口。
+                     * 获取<p>转推的目标端口。</p>
+                     * @return Port <p>转推的目标端口。</p>
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置转推的目标端口。
-                     * @param _port 转推的目标端口。
+                     * 设置<p>转推的目标端口。</p>
+                     * @param _port <p>转推的目标端口。</p>
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 转推的目标IP。
+                     * <p>转推的目标IP。</p>
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 转推的目标端口。
+                     * <p>转推的目标端口。</p>
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;

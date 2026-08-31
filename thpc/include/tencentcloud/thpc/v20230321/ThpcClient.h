@@ -33,6 +33,8 @@
 #include <tencentcloud/thpc/v20230321/model/AttachNodesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/CreateClusterRequest.h>
 #include <tencentcloud/thpc/v20230321/model/CreateClusterResponse.h>
+#include <tencentcloud/thpc/v20230321/model/CreateScheduledActionRequest.h>
+#include <tencentcloud/thpc/v20230321/model/CreateScheduledActionResponse.h>
 #include <tencentcloud/thpc/v20230321/model/CreateWorkspacesRequest.h>
 #include <tencentcloud/thpc/v20230321/model/CreateWorkspacesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DeleteClusterRequest.h>
@@ -45,6 +47,8 @@
 #include <tencentcloud/thpc/v20230321/model/DeleteNodesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DeleteQueueRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DeleteQueueResponse.h>
+#include <tencentcloud/thpc/v20230321/model/DeleteScheduledActionRequest.h>
+#include <tencentcloud/thpc/v20230321/model/DeleteScheduledActionResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeAutoScalingConfigurationRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeAutoScalingConfigurationResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeClusterActivitiesRequest.h>
@@ -55,6 +59,8 @@
 #include <tencentcloud/thpc/v20230321/model/DescribeClustersResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeInitNodeScriptsRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeInitNodeScriptsResponse.h>
+#include <tencentcloud/thpc/v20230321/model/DescribeInstanceFamiliesRequest.h>
+#include <tencentcloud/thpc/v20230321/model/DescribeInstanceFamiliesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeJobSubmitInfoRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeJobSubmitInfoResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeJobsRequest.h>
@@ -63,12 +69,20 @@
 #include <tencentcloud/thpc/v20230321/model/DescribeJobsOverviewResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeNodesRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeNodesResponse.h>
+#include <tencentcloud/thpc/v20230321/model/DescribeQueueAutoScalingRequest.h>
+#include <tencentcloud/thpc/v20230321/model/DescribeQueueAutoScalingResponse.h>
+#include <tencentcloud/thpc/v20230321/model/DescribeQueueAutoScalingOverviewRequest.h>
+#include <tencentcloud/thpc/v20230321/model/DescribeQueueAutoScalingOverviewResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeQueuesRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeQueuesResponse.h>
+#include <tencentcloud/thpc/v20230321/model/DescribeScheduledActionsRequest.h>
+#include <tencentcloud/thpc/v20230321/model/DescribeScheduledActionsResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeWorkspacesRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeWorkspacesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DetachNodesRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DetachNodesResponse.h>
+#include <tencentcloud/thpc/v20230321/model/InquirePriceCreateWorkspacesRequest.h>
+#include <tencentcloud/thpc/v20230321/model/InquirePriceCreateWorkspacesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/InquirePriceModifyWorkspacesChargeTypeRequest.h>
 #include <tencentcloud/thpc/v20230321/model/InquirePriceModifyWorkspacesChargeTypeResponse.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyClusterDeletionProtectionRequest.h>
@@ -77,6 +91,8 @@
 #include <tencentcloud/thpc/v20230321/model/ModifyInitNodeScriptsResponse.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyNodeAttributeRequest.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyNodeAttributeResponse.h>
+#include <tencentcloud/thpc/v20230321/model/ModifyScheduledActionRequest.h>
+#include <tencentcloud/thpc/v20230321/model/ModifyScheduledActionResponse.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyWorkspacesAttributeRequest.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyWorkspacesAttributeResponse.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyWorkspacesChargeTypeRequest.h>
@@ -85,6 +101,8 @@
 #include <tencentcloud/thpc/v20230321/model/ModifyWorkspacesRenewFlagResponse.h>
 #include <tencentcloud/thpc/v20230321/model/SetAutoScalingConfigurationRequest.h>
 #include <tencentcloud/thpc/v20230321/model/SetAutoScalingConfigurationResponse.h>
+#include <tencentcloud/thpc/v20230321/model/SetQueueAutoScalingRequest.h>
+#include <tencentcloud/thpc/v20230321/model/SetQueueAutoScalingResponse.h>
 #include <tencentcloud/thpc/v20230321/model/SubmitJobRequest.h>
 #include <tencentcloud/thpc/v20230321/model/SubmitJobResponse.h>
 #include <tencentcloud/thpc/v20230321/model/TerminateJobRequest.h>
@@ -120,6 +138,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateClusterResponse> CreateClusterOutcome;
                 typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::CreateClusterRequest&, CreateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateScheduledActionResponse> CreateScheduledActionOutcome;
+                typedef std::future<CreateScheduledActionOutcome> CreateScheduledActionOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::CreateScheduledActionRequest&, CreateScheduledActionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScheduledActionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateWorkspacesResponse> CreateWorkspacesOutcome;
                 typedef std::future<CreateWorkspacesOutcome> CreateWorkspacesOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::CreateWorkspacesRequest&, CreateWorkspacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkspacesAsyncHandler;
@@ -138,6 +159,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteQueueResponse> DeleteQueueOutcome;
                 typedef std::future<DeleteQueueOutcome> DeleteQueueOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DeleteQueueRequest&, DeleteQueueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteQueueAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteScheduledActionResponse> DeleteScheduledActionOutcome;
+                typedef std::future<DeleteScheduledActionOutcome> DeleteScheduledActionOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::DeleteScheduledActionRequest&, DeleteScheduledActionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScheduledActionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAutoScalingConfigurationResponse> DescribeAutoScalingConfigurationOutcome;
                 typedef std::future<DescribeAutoScalingConfigurationOutcome> DescribeAutoScalingConfigurationOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DescribeAutoScalingConfigurationRequest&, DescribeAutoScalingConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoScalingConfigurationAsyncHandler;
@@ -153,6 +177,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInitNodeScriptsResponse> DescribeInitNodeScriptsOutcome;
                 typedef std::future<DescribeInitNodeScriptsOutcome> DescribeInitNodeScriptsOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DescribeInitNodeScriptsRequest&, DescribeInitNodeScriptsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInitNodeScriptsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceFamiliesResponse> DescribeInstanceFamiliesOutcome;
+                typedef std::future<DescribeInstanceFamiliesOutcome> DescribeInstanceFamiliesOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::DescribeInstanceFamiliesRequest&, DescribeInstanceFamiliesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceFamiliesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeJobSubmitInfoResponse> DescribeJobSubmitInfoOutcome;
                 typedef std::future<DescribeJobSubmitInfoOutcome> DescribeJobSubmitInfoOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DescribeJobSubmitInfoRequest&, DescribeJobSubmitInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobSubmitInfoAsyncHandler;
@@ -165,15 +192,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNodesResponse> DescribeNodesOutcome;
                 typedef std::future<DescribeNodesOutcome> DescribeNodesOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DescribeNodesRequest&, DescribeNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeQueueAutoScalingResponse> DescribeQueueAutoScalingOutcome;
+                typedef std::future<DescribeQueueAutoScalingOutcome> DescribeQueueAutoScalingOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::DescribeQueueAutoScalingRequest&, DescribeQueueAutoScalingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQueueAutoScalingAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeQueueAutoScalingOverviewResponse> DescribeQueueAutoScalingOverviewOutcome;
+                typedef std::future<DescribeQueueAutoScalingOverviewOutcome> DescribeQueueAutoScalingOverviewOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::DescribeQueueAutoScalingOverviewRequest&, DescribeQueueAutoScalingOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQueueAutoScalingOverviewAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeQueuesResponse> DescribeQueuesOutcome;
                 typedef std::future<DescribeQueuesOutcome> DescribeQueuesOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DescribeQueuesRequest&, DescribeQueuesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQueuesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeScheduledActionsResponse> DescribeScheduledActionsOutcome;
+                typedef std::future<DescribeScheduledActionsOutcome> DescribeScheduledActionsOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::DescribeScheduledActionsRequest&, DescribeScheduledActionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScheduledActionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWorkspacesResponse> DescribeWorkspacesOutcome;
                 typedef std::future<DescribeWorkspacesOutcome> DescribeWorkspacesOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DescribeWorkspacesRequest&, DescribeWorkspacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkspacesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DetachNodesResponse> DetachNodesOutcome;
                 typedef std::future<DetachNodesOutcome> DetachNodesOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DetachNodesRequest&, DetachNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachNodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquirePriceCreateWorkspacesResponse> InquirePriceCreateWorkspacesOutcome;
+                typedef std::future<InquirePriceCreateWorkspacesOutcome> InquirePriceCreateWorkspacesOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::InquirePriceCreateWorkspacesRequest&, InquirePriceCreateWorkspacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceCreateWorkspacesAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquirePriceModifyWorkspacesChargeTypeResponse> InquirePriceModifyWorkspacesChargeTypeOutcome;
                 typedef std::future<InquirePriceModifyWorkspacesChargeTypeOutcome> InquirePriceModifyWorkspacesChargeTypeOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::InquirePriceModifyWorkspacesChargeTypeRequest&, InquirePriceModifyWorkspacesChargeTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceModifyWorkspacesChargeTypeAsyncHandler;
@@ -186,6 +225,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyNodeAttributeResponse> ModifyNodeAttributeOutcome;
                 typedef std::future<ModifyNodeAttributeOutcome> ModifyNodeAttributeOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::ModifyNodeAttributeRequest&, ModifyNodeAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNodeAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyScheduledActionResponse> ModifyScheduledActionOutcome;
+                typedef std::future<ModifyScheduledActionOutcome> ModifyScheduledActionOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::ModifyScheduledActionRequest&, ModifyScheduledActionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyScheduledActionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyWorkspacesAttributeResponse> ModifyWorkspacesAttributeOutcome;
                 typedef std::future<ModifyWorkspacesAttributeOutcome> ModifyWorkspacesAttributeOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::ModifyWorkspacesAttributeRequest&, ModifyWorkspacesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWorkspacesAttributeAsyncHandler;
@@ -198,6 +240,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetAutoScalingConfigurationResponse> SetAutoScalingConfigurationOutcome;
                 typedef std::future<SetAutoScalingConfigurationOutcome> SetAutoScalingConfigurationOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::SetAutoScalingConfigurationRequest&, SetAutoScalingConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAutoScalingConfigurationAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetQueueAutoScalingResponse> SetQueueAutoScalingOutcome;
+                typedef std::future<SetQueueAutoScalingOutcome> SetQueueAutoScalingOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::SetQueueAutoScalingRequest&, SetQueueAutoScalingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetQueueAutoScalingAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitJobResponse> SubmitJobOutcome;
                 typedef std::future<SubmitJobOutcome> SubmitJobOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::SubmitJobRequest&, SubmitJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitJobAsyncHandler;
@@ -260,6 +305,15 @@ namespace TencentCloud
                 CreateClusterOutcomeCallable CreateClusterCallable(const Model::CreateClusterRequest& request);
 
                 /**
+                 *为指定集群队列创建定时伸缩任务，按计划时间自动调整队列的节点数量。
+                 * @param req CreateScheduledActionRequest
+                 * @return CreateScheduledActionOutcome
+                 */
+                CreateScheduledActionOutcome CreateScheduledAction(const Model::CreateScheduledActionRequest &request);
+                void CreateScheduledActionAsync(const Model::CreateScheduledActionRequest& request, const CreateScheduledActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateScheduledActionOutcomeCallable CreateScheduledActionCallable(const Model::CreateScheduledActionRequest& request);
+
+                /**
                  *本接口 (CreateWorkspaces) 用于创建工作空间。
                  * @param req CreateWorkspacesRequest
                  * @return CreateWorkspacesOutcome
@@ -317,6 +371,15 @@ namespace TencentCloud
                 DeleteQueueOutcomeCallable DeleteQueueCallable(const Model::DeleteQueueRequest& request);
 
                 /**
+                 *删除指定的定时伸缩任务。
+                 * @param req DeleteScheduledActionRequest
+                 * @return DeleteScheduledActionOutcome
+                 */
+                DeleteScheduledActionOutcome DeleteScheduledAction(const Model::DeleteScheduledActionRequest &request);
+                void DeleteScheduledActionAsync(const Model::DeleteScheduledActionRequest& request, const DeleteScheduledActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteScheduledActionOutcomeCallable DeleteScheduledActionCallable(const Model::DeleteScheduledActionRequest& request);
+
+                /**
                  *本接口(DescribeAutoScalingConfiguration)用于查询集群弹性伸缩配置信息。本接口仅适用于弹性伸缩类型为THPC_AS的集群。
                  * @param req DescribeAutoScalingConfigurationRequest
                  * @return DescribeAutoScalingConfigurationOutcome
@@ -362,6 +425,15 @@ namespace TencentCloud
                 DescribeInitNodeScriptsOutcomeCallable DescribeInitNodeScriptsCallable(const Model::DescribeInitNodeScriptsRequest& request);
 
                 /**
+                 *查询指定集群可用的机型族列表，用于弹性伸缩配置时选择机型族。
+                 * @param req DescribeInstanceFamiliesRequest
+                 * @return DescribeInstanceFamiliesOutcome
+                 */
+                DescribeInstanceFamiliesOutcome DescribeInstanceFamilies(const Model::DescribeInstanceFamiliesRequest &request);
+                void DescribeInstanceFamiliesAsync(const Model::DescribeInstanceFamiliesRequest& request, const DescribeInstanceFamiliesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceFamiliesOutcomeCallable DescribeInstanceFamiliesCallable(const Model::DescribeInstanceFamiliesRequest& request);
+
+                /**
                  *本接口用于查询作业的提交信息。
                  * @param req DescribeJobSubmitInfoRequest
                  * @return DescribeJobSubmitInfoOutcome
@@ -398,6 +470,24 @@ namespace TencentCloud
                 DescribeNodesOutcomeCallable DescribeNodesCallable(const Model::DescribeNodesRequest& request);
 
                 /**
+                 *查询指定集群的队列弹性伸缩配置信息。
+                 * @param req DescribeQueueAutoScalingRequest
+                 * @return DescribeQueueAutoScalingOutcome
+                 */
+                DescribeQueueAutoScalingOutcome DescribeQueueAutoScaling(const Model::DescribeQueueAutoScalingRequest &request);
+                void DescribeQueueAutoScalingAsync(const Model::DescribeQueueAutoScalingRequest& request, const DescribeQueueAutoScalingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeQueueAutoScalingOutcomeCallable DescribeQueueAutoScalingCallable(const Model::DescribeQueueAutoScalingRequest& request);
+
+                /**
+                 *查询指定集群的队列弹性伸缩概览信息，包括期望容量、当前容量、当前动态节点数、有效定时任务数等。
+                 * @param req DescribeQueueAutoScalingOverviewRequest
+                 * @return DescribeQueueAutoScalingOverviewOutcome
+                 */
+                DescribeQueueAutoScalingOverviewOutcome DescribeQueueAutoScalingOverview(const Model::DescribeQueueAutoScalingOverviewRequest &request);
+                void DescribeQueueAutoScalingOverviewAsync(const Model::DescribeQueueAutoScalingOverviewRequest& request, const DescribeQueueAutoScalingOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeQueueAutoScalingOverviewOutcomeCallable DescribeQueueAutoScalingOverviewCallable(const Model::DescribeQueueAutoScalingOverviewRequest& request);
+
+                /**
                  *本接口(DescribeQueues)用于查询指定集群队列概览信息列表。
                  * @param req DescribeQueuesRequest
                  * @return DescribeQueuesOutcome
@@ -405,6 +495,15 @@ namespace TencentCloud
                 DescribeQueuesOutcome DescribeQueues(const Model::DescribeQueuesRequest &request);
                 void DescribeQueuesAsync(const Model::DescribeQueuesRequest& request, const DescribeQueuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeQueuesOutcomeCallable DescribeQueuesCallable(const Model::DescribeQueuesRequest& request);
+
+                /**
+                 *查询指定集群队列的定时伸缩任务列表。
+                 * @param req DescribeScheduledActionsRequest
+                 * @return DescribeScheduledActionsOutcome
+                 */
+                DescribeScheduledActionsOutcome DescribeScheduledActions(const Model::DescribeScheduledActionsRequest &request);
+                void DescribeScheduledActionsAsync(const Model::DescribeScheduledActionsRequest& request, const DescribeScheduledActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScheduledActionsOutcomeCallable DescribeScheduledActionsCallable(const Model::DescribeScheduledActionsRequest& request);
 
                 /**
                  *本接口（DescribeWorkspaces）用于查询工作空间列表。
@@ -423,6 +522,15 @@ namespace TencentCloud
                 DetachNodesOutcome DetachNodes(const Model::DetachNodesRequest &request);
                 void DetachNodesAsync(const Model::DetachNodesRequest& request, const DetachNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetachNodesOutcomeCallable DetachNodesCallable(const Model::DetachNodesRequest& request);
+
+                /**
+                 *本接口(InquirePriceCreateWorkspaces)用于创建实例询价。
+                 * @param req InquirePriceCreateWorkspacesRequest
+                 * @return InquirePriceCreateWorkspacesOutcome
+                 */
+                InquirePriceCreateWorkspacesOutcome InquirePriceCreateWorkspaces(const Model::InquirePriceCreateWorkspacesRequest &request);
+                void InquirePriceCreateWorkspacesAsync(const Model::InquirePriceCreateWorkspacesRequest& request, const InquirePriceCreateWorkspacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquirePriceCreateWorkspacesOutcomeCallable InquirePriceCreateWorkspacesCallable(const Model::InquirePriceCreateWorkspacesRequest& request);
 
                 /**
                  *查询按量计费工作空间转换为包年包月的价格。不会创建订单或变更资源。
@@ -461,6 +569,15 @@ namespace TencentCloud
                 ModifyNodeAttributeOutcomeCallable ModifyNodeAttributeCallable(const Model::ModifyNodeAttributeRequest& request);
 
                 /**
+                 *修改指定的定时伸缩任务配置。
+                 * @param req ModifyScheduledActionRequest
+                 * @return ModifyScheduledActionOutcome
+                 */
+                ModifyScheduledActionOutcome ModifyScheduledAction(const Model::ModifyScheduledActionRequest &request);
+                void ModifyScheduledActionAsync(const Model::ModifyScheduledActionRequest& request, const ModifyScheduledActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyScheduledActionOutcomeCallable ModifyScheduledActionCallable(const Model::ModifyScheduledActionRequest& request);
+
+                /**
                  *本接口 (ModifyWorkspacesAttribute) 用于修改工作空间的属性（目前只支持修改工作空间的名称）。
                  * @param req ModifyWorkspacesAttributeRequest
                  * @return ModifyWorkspacesAttributeOutcome
@@ -495,6 +612,15 @@ namespace TencentCloud
                 SetAutoScalingConfigurationOutcome SetAutoScalingConfiguration(const Model::SetAutoScalingConfigurationRequest &request);
                 void SetAutoScalingConfigurationAsync(const Model::SetAutoScalingConfigurationRequest& request, const SetAutoScalingConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetAutoScalingConfigurationOutcomeCallable SetAutoScalingConfigurationCallable(const Model::SetAutoScalingConfigurationRequest& request);
+
+                /**
+                 *为指定集群的队列配置弹性伸缩策略，包括伸缩容量、扩容方式等。
+                 * @param req SetQueueAutoScalingRequest
+                 * @return SetQueueAutoScalingOutcome
+                 */
+                SetQueueAutoScalingOutcome SetQueueAutoScaling(const Model::SetQueueAutoScalingRequest &request);
+                void SetQueueAutoScalingAsync(const Model::SetQueueAutoScalingRequest& request, const SetQueueAutoScalingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetQueueAutoScalingOutcomeCallable SetQueueAutoScalingCallable(const Model::SetQueueAutoScalingRequest& request);
 
                 /**
                  *本接口 (SubmitJob) 用于提交一个作业任务。

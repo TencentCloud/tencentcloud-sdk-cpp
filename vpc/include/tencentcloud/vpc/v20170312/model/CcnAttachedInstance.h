@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云联网实例ID。
-                     * @return CcnId 云联网实例ID。
+                     * 获取<p>云联网实例ID。</p>
+                     * @return CcnId <p>云联网实例ID。</p>
                      * 
                      */
                     std::string GetCcnId() const;
 
                     /**
-                     * 设置云联网实例ID。
-                     * @param _ccnId 云联网实例ID。
+                     * 设置<p>云联网实例ID。</p>
+                     * @param _ccnId <p>云联网实例ID。</p>
                      * 
                      */
                     void SetCcnId(const std::string& _ccnId);
@@ -68,27 +68,15 @@ namespace TencentCloud
                     bool CcnIdHasBeenSet() const;
 
                     /**
-                     * 获取关联实例类型：
-<li>`VPC`：私有网络</li>
-<li>`DIRECTCONNECT`：专线网关</li>
-<li>`BMVPC`：黑石私有网络</li>
-                     * @return InstanceType 关联实例类型：
-<li>`VPC`：私有网络</li>
-<li>`DIRECTCONNECT`：专线网关</li>
-<li>`BMVPC`：黑石私有网络</li>
+                     * 获取<p>关联实例类型：</p><li><code>VPC</code>：私有网络</li><li><code>DIRECTCONNECT</code>：专线网关</li><li><code>BMVPC</code>：黑石私有网络</li>
+                     * @return InstanceType <p>关联实例类型：</p><li><code>VPC</code>：私有网络</li><li><code>DIRECTCONNECT</code>：专线网关</li><li><code>BMVPC</code>：黑石私有网络</li>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置关联实例类型：
-<li>`VPC`：私有网络</li>
-<li>`DIRECTCONNECT`：专线网关</li>
-<li>`BMVPC`：黑石私有网络</li>
-                     * @param _instanceType 关联实例类型：
-<li>`VPC`：私有网络</li>
-<li>`DIRECTCONNECT`：专线网关</li>
-<li>`BMVPC`：黑石私有网络</li>
+                     * 设置<p>关联实例类型：</p><li><code>VPC</code>：私有网络</li><li><code>DIRECTCONNECT</code>：专线网关</li><li><code>BMVPC</code>：黑石私有网络</li>
+                     * @param _instanceType <p>关联实例类型：</p><li><code>VPC</code>：私有网络</li><li><code>DIRECTCONNECT</code>：专线网关</li><li><code>BMVPC</code>：黑石私有网络</li>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -101,15 +89,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取关联实例ID。
-                     * @return InstanceId 关联实例ID。
+                     * 获取<p>关联实例ID。</p>
+                     * @return InstanceId <p>关联实例ID。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置关联实例ID。
-                     * @param _instanceId 关联实例ID。
+                     * 设置<p>关联实例ID。</p>
+                     * @param _instanceId <p>关联实例ID。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -122,15 +110,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取关联实例名称。
-                     * @return InstanceName 关联实例名称。
+                     * 获取<p>关联实例名称。</p>
+                     * @return InstanceName <p>关联实例名称。</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置关联实例名称。
-                     * @param _instanceName 关联实例名称。
+                     * 设置<p>关联实例名称。</p>
+                     * @param _instanceName <p>关联实例名称。</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -143,15 +131,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取关联实例所属大区，例如：ap-guangzhou。
-                     * @return InstanceRegion 关联实例所属大区，例如：ap-guangzhou。
+                     * 获取<p>关联实例所属大区，例如：ap-guangzhou。</p>
+                     * @return InstanceRegion <p>关联实例所属大区，例如：ap-guangzhou。</p>
                      * 
                      */
                     std::string GetInstanceRegion() const;
 
                     /**
-                     * 设置关联实例所属大区，例如：ap-guangzhou。
-                     * @param _instanceRegion 关联实例所属大区，例如：ap-guangzhou。
+                     * 设置<p>关联实例所属大区，例如：ap-guangzhou。</p>
+                     * @param _instanceRegion <p>关联实例所属大区，例如：ap-guangzhou。</p>
                      * 
                      */
                     void SetInstanceRegion(const std::string& _instanceRegion);
@@ -164,15 +152,15 @@ namespace TencentCloud
                     bool InstanceRegionHasBeenSet() const;
 
                     /**
-                     * 获取关联实例所属UIN（根账号）。
-                     * @return InstanceUin 关联实例所属UIN（根账号）。
+                     * 获取<p>关联实例所属UIN（根账号）。</p>
+                     * @return InstanceUin <p>关联实例所属UIN（根账号）。</p>
                      * 
                      */
                     std::string GetInstanceUin() const;
 
                     /**
-                     * 设置关联实例所属UIN（根账号）。
-                     * @param _instanceUin 关联实例所属UIN（根账号）。
+                     * 设置<p>关联实例所属UIN（根账号）。</p>
+                     * @param _instanceUin <p>关联实例所属UIN（根账号）。</p>
                      * 
                      */
                     void SetInstanceUin(const std::string& _instanceUin);
@@ -185,15 +173,15 @@ namespace TencentCloud
                     bool InstanceUinHasBeenSet() const;
 
                     /**
-                     * 获取关联实例CIDR。
-                     * @return CidrBlock 关联实例CIDR。
+                     * 获取<p>关联实例CIDR。</p>
+                     * @return CidrBlock <p>关联实例CIDR。</p>
                      * 
                      */
                     std::vector<std::string> GetCidrBlock() const;
 
                     /**
-                     * 设置关联实例CIDR。
-                     * @param _cidrBlock 关联实例CIDR。
+                     * 设置<p>关联实例CIDR。</p>
+                     * @param _cidrBlock <p>关联实例CIDR。</p>
                      * 
                      */
                     void SetCidrBlock(const std::vector<std::string>& _cidrBlock);
@@ -206,51 +194,15 @@ namespace TencentCloud
                     bool CidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取关联实例状态：
-<li>`PENDING`：申请中</li>
-<li>`ACTIVE`：已连接</li>
-<li>`EXPIRED`：已过期</li>
-<li>`REJECTED`：已拒绝</li>
-<li>`DELETED`：已删除</li>
-<li>`FAILED`：失败的（2小时后将异步强制解关联）</li>
-<li>`ATTACHING`：关联中</li>
-<li>`DETACHING`：解关联中</li>
-<li>`DETACHFAILED`：解关联失败（2小时后将异步强制解关联）</li>
-                     * @return State 关联实例状态：
-<li>`PENDING`：申请中</li>
-<li>`ACTIVE`：已连接</li>
-<li>`EXPIRED`：已过期</li>
-<li>`REJECTED`：已拒绝</li>
-<li>`DELETED`：已删除</li>
-<li>`FAILED`：失败的（2小时后将异步强制解关联）</li>
-<li>`ATTACHING`：关联中</li>
-<li>`DETACHING`：解关联中</li>
-<li>`DETACHFAILED`：解关联失败（2小时后将异步强制解关联）</li>
+                     * 获取<p>关联实例状态：</p><li><code>PENDING</code>：申请中</li><li><code>ACTIVE</code>：已连接</li><li><code>EXPIRED</code>：已过期</li><li><code>REJECTED</code>：已拒绝</li><li><code>DELETED</code>：已删除</li><li><code>FAILED</code>：失败的（2小时后将异步强制解关联）</li><li><code>ATTACHING</code>：关联中</li><li><code>DETACHING</code>：解关联中</li><li><code>DETACHFAILED</code>：解关联失败（2小时后将异步强制解关联）</li>
+                     * @return State <p>关联实例状态：</p><li><code>PENDING</code>：申请中</li><li><code>ACTIVE</code>：已连接</li><li><code>EXPIRED</code>：已过期</li><li><code>REJECTED</code>：已拒绝</li><li><code>DELETED</code>：已删除</li><li><code>FAILED</code>：失败的（2小时后将异步强制解关联）</li><li><code>ATTACHING</code>：关联中</li><li><code>DETACHING</code>：解关联中</li><li><code>DETACHFAILED</code>：解关联失败（2小时后将异步强制解关联）</li>
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置关联实例状态：
-<li>`PENDING`：申请中</li>
-<li>`ACTIVE`：已连接</li>
-<li>`EXPIRED`：已过期</li>
-<li>`REJECTED`：已拒绝</li>
-<li>`DELETED`：已删除</li>
-<li>`FAILED`：失败的（2小时后将异步强制解关联）</li>
-<li>`ATTACHING`：关联中</li>
-<li>`DETACHING`：解关联中</li>
-<li>`DETACHFAILED`：解关联失败（2小时后将异步强制解关联）</li>
-                     * @param _state 关联实例状态：
-<li>`PENDING`：申请中</li>
-<li>`ACTIVE`：已连接</li>
-<li>`EXPIRED`：已过期</li>
-<li>`REJECTED`：已拒绝</li>
-<li>`DELETED`：已删除</li>
-<li>`FAILED`：失败的（2小时后将异步强制解关联）</li>
-<li>`ATTACHING`：关联中</li>
-<li>`DETACHING`：解关联中</li>
-<li>`DETACHFAILED`：解关联失败（2小时后将异步强制解关联）</li>
+                     * 设置<p>关联实例状态：</p><li><code>PENDING</code>：申请中</li><li><code>ACTIVE</code>：已连接</li><li><code>EXPIRED</code>：已过期</li><li><code>REJECTED</code>：已拒绝</li><li><code>DELETED</code>：已删除</li><li><code>FAILED</code>：失败的（2小时后将异步强制解关联）</li><li><code>ATTACHING</code>：关联中</li><li><code>DETACHING</code>：解关联中</li><li><code>DETACHFAILED</code>：解关联失败（2小时后将异步强制解关联）</li>
+                     * @param _state <p>关联实例状态：</p><li><code>PENDING</code>：申请中</li><li><code>ACTIVE</code>：已连接</li><li><code>EXPIRED</code>：已过期</li><li><code>REJECTED</code>：已拒绝</li><li><code>DELETED</code>：已删除</li><li><code>FAILED</code>：失败的（2小时后将异步强制解关联）</li><li><code>ATTACHING</code>：关联中</li><li><code>DETACHING</code>：解关联中</li><li><code>DETACHFAILED</code>：解关联失败（2小时后将异步强制解关联）</li>
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -263,15 +215,15 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取关联时间。
-                     * @return AttachedTime 关联时间。
+                     * 获取<p>关联时间。</p>
+                     * @return AttachedTime <p>关联时间。</p>
                      * 
                      */
                     std::string GetAttachedTime() const;
 
                     /**
-                     * 设置关联时间。
-                     * @param _attachedTime 关联时间。
+                     * 设置<p>关联时间。</p>
+                     * @param _attachedTime <p>关联时间。</p>
                      * 
                      */
                     void SetAttachedTime(const std::string& _attachedTime);
@@ -284,15 +236,15 @@ namespace TencentCloud
                     bool AttachedTimeHasBeenSet() const;
 
                     /**
-                     * 获取云联网所属UIN（根账号）。
-                     * @return CcnUin 云联网所属UIN（根账号）。
+                     * 获取<p>云联网所属UIN（根账号）。</p>
+                     * @return CcnUin <p>云联网所属UIN（根账号）。</p>
                      * 
                      */
                     std::string GetCcnUin() const;
 
                     /**
-                     * 设置云联网所属UIN（根账号）。
-                     * @param _ccnUin 云联网所属UIN（根账号）。
+                     * 设置<p>云联网所属UIN（根账号）。</p>
+                     * @param _ccnUin <p>云联网所属UIN（根账号）。</p>
                      * 
                      */
                     void SetCcnUin(const std::string& _ccnUin);
@@ -305,15 +257,15 @@ namespace TencentCloud
                     bool CcnUinHasBeenSet() const;
 
                     /**
-                     * 获取关联实例所属的大地域，如: CHINA_MAINLAND
-                     * @return InstanceArea 关联实例所属的大地域，如: CHINA_MAINLAND
+                     * 获取<p>关联实例所属的大地域，如: CHINA_MAINLAND</p>
+                     * @return InstanceArea <p>关联实例所属的大地域，如: CHINA_MAINLAND</p>
                      * 
                      */
                     std::string GetInstanceArea() const;
 
                     /**
-                     * 设置关联实例所属的大地域，如: CHINA_MAINLAND
-                     * @param _instanceArea 关联实例所属的大地域，如: CHINA_MAINLAND
+                     * 设置<p>关联实例所属的大地域，如: CHINA_MAINLAND</p>
+                     * @param _instanceArea <p>关联实例所属的大地域，如: CHINA_MAINLAND</p>
                      * 
                      */
                     void SetInstanceArea(const std::string& _instanceArea);
@@ -326,15 +278,15 @@ namespace TencentCloud
                     bool InstanceAreaHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Description 备注
+                     * 获取<p>备注</p>
+                     * @return Description <p>备注</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置备注
-                     * @param _description 备注
+                     * 设置<p>备注</p>
+                     * @param _description <p>备注</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -347,15 +299,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取路由表ID
-                     * @return RouteTableId 路由表ID
+                     * 获取<p>路由表ID</p>
+                     * @return RouteTableId <p>路由表ID</p>
                      * 
                      */
                     std::string GetRouteTableId() const;
 
                     /**
-                     * 设置路由表ID
-                     * @param _routeTableId 路由表ID
+                     * 设置<p>路由表ID</p>
+                     * @param _routeTableId <p>路由表ID</p>
                      * 
                      */
                     void SetRouteTableId(const std::string& _routeTableId);
@@ -368,15 +320,15 @@ namespace TencentCloud
                     bool RouteTableIdHasBeenSet() const;
 
                     /**
-                     * 获取路由表名称
-                     * @return RouteTableName 路由表名称
+                     * 获取<p>路由表名称</p>
+                     * @return RouteTableName <p>路由表名称</p>
                      * 
                      */
                     std::string GetRouteTableName() const;
 
                     /**
-                     * 设置路由表名称
-                     * @param _routeTableName 路由表名称
+                     * 设置<p>路由表名称</p>
+                     * @param _routeTableName <p>路由表名称</p>
                      * 
                      */
                     void SetRouteTableName(const std::string& _routeTableName);
@@ -388,103 +340,145 @@ namespace TencentCloud
                      */
                     bool RouteTableNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>别名类型</p>
+                     * @return AliasType <p>别名类型</p>
+                     * 
+                     */
+                    std::string GetAliasType() const;
+
+                    /**
+                     * 设置<p>别名类型</p>
+                     * @param _aliasType <p>别名类型</p>
+                     * 
+                     */
+                    void SetAliasType(const std::string& _aliasType);
+
+                    /**
+                     * 判断参数 AliasType 是否已赋值
+                     * @return AliasType 是否已赋值
+                     * 
+                     */
+                    bool AliasTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>别名ID</p>
+                     * @return AliasInstanceId <p>别名ID</p>
+                     * 
+                     */
+                    std::string GetAliasInstanceId() const;
+
+                    /**
+                     * 设置<p>别名ID</p>
+                     * @param _aliasInstanceId <p>别名ID</p>
+                     * 
+                     */
+                    void SetAliasInstanceId(const std::string& _aliasInstanceId);
+
+                    /**
+                     * 判断参数 AliasInstanceId 是否已赋值
+                     * @return AliasInstanceId 是否已赋值
+                     * 
+                     */
+                    bool AliasInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 云联网实例ID。
+                     * <p>云联网实例ID。</p>
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;
 
                     /**
-                     * 关联实例类型：
-<li>`VPC`：私有网络</li>
-<li>`DIRECTCONNECT`：专线网关</li>
-<li>`BMVPC`：黑石私有网络</li>
+                     * <p>关联实例类型：</p><li><code>VPC</code>：私有网络</li><li><code>DIRECTCONNECT</code>：专线网关</li><li><code>BMVPC</code>：黑石私有网络</li>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 关联实例ID。
+                     * <p>关联实例ID。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 关联实例名称。
+                     * <p>关联实例名称。</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 关联实例所属大区，例如：ap-guangzhou。
+                     * <p>关联实例所属大区，例如：ap-guangzhou。</p>
                      */
                     std::string m_instanceRegion;
                     bool m_instanceRegionHasBeenSet;
 
                     /**
-                     * 关联实例所属UIN（根账号）。
+                     * <p>关联实例所属UIN（根账号）。</p>
                      */
                     std::string m_instanceUin;
                     bool m_instanceUinHasBeenSet;
 
                     /**
-                     * 关联实例CIDR。
+                     * <p>关联实例CIDR。</p>
                      */
                     std::vector<std::string> m_cidrBlock;
                     bool m_cidrBlockHasBeenSet;
 
                     /**
-                     * 关联实例状态：
-<li>`PENDING`：申请中</li>
-<li>`ACTIVE`：已连接</li>
-<li>`EXPIRED`：已过期</li>
-<li>`REJECTED`：已拒绝</li>
-<li>`DELETED`：已删除</li>
-<li>`FAILED`：失败的（2小时后将异步强制解关联）</li>
-<li>`ATTACHING`：关联中</li>
-<li>`DETACHING`：解关联中</li>
-<li>`DETACHFAILED`：解关联失败（2小时后将异步强制解关联）</li>
+                     * <p>关联实例状态：</p><li><code>PENDING</code>：申请中</li><li><code>ACTIVE</code>：已连接</li><li><code>EXPIRED</code>：已过期</li><li><code>REJECTED</code>：已拒绝</li><li><code>DELETED</code>：已删除</li><li><code>FAILED</code>：失败的（2小时后将异步强制解关联）</li><li><code>ATTACHING</code>：关联中</li><li><code>DETACHING</code>：解关联中</li><li><code>DETACHFAILED</code>：解关联失败（2小时后将异步强制解关联）</li>
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 关联时间。
+                     * <p>关联时间。</p>
                      */
                     std::string m_attachedTime;
                     bool m_attachedTimeHasBeenSet;
 
                     /**
-                     * 云联网所属UIN（根账号）。
+                     * <p>云联网所属UIN（根账号）。</p>
                      */
                     std::string m_ccnUin;
                     bool m_ccnUinHasBeenSet;
 
                     /**
-                     * 关联实例所属的大地域，如: CHINA_MAINLAND
+                     * <p>关联实例所属的大地域，如: CHINA_MAINLAND</p>
                      */
                     std::string m_instanceArea;
                     bool m_instanceAreaHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 路由表ID
+                     * <p>路由表ID</p>
                      */
                     std::string m_routeTableId;
                     bool m_routeTableIdHasBeenSet;
 
                     /**
-                     * 路由表名称
+                     * <p>路由表名称</p>
                      */
                     std::string m_routeTableName;
                     bool m_routeTableNameHasBeenSet;
+
+                    /**
+                     * <p>别名类型</p>
+                     */
+                    std::string m_aliasType;
+                    bool m_aliasTypeHasBeenSet;
+
+                    /**
+                     * <p>别名ID</p>
+                     */
+                    std::string m_aliasInstanceId;
+                    bool m_aliasInstanceIdHasBeenSet;
 
                 };
             }

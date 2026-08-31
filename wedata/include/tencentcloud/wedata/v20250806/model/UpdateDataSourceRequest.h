@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据源id
-                     * @return Id 数据源id
+                     * 获取<p>数据源id</p>
+                     * @return Id <p>数据源id</p>
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置数据源id
-                     * @param _id 数据源id
+                     * 设置<p>数据源id</p>
+                     * @param _id <p>数据源id</p>
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取项目id
-                     * @return ProjectId 项目id
+                     * 获取<p>项目id</p>
+                     * @return ProjectId <p>项目id</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目id
-                     * @param _projectId 项目id
+                     * 设置<p>项目id</p>
+                     * @param _projectId <p>项目id</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -86,467 +86,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取数据源的配置信息，以JSON KV存储，根据每个数据源类型不同，而KV存储信息不同
-
-> deployType: 
-CONNSTR_PUBLICDB(公网实例) 
-CONNSTR_CVMDB(自建实例)
-INSTANCE(云实例)
-
-```
-mysql: 自建实例
-{
-    "deployType": "CONNSTR_CVMDB",
-    "url": "jdbc:mysql://1.1.1.1:1111/example#test#123456",
-    "username": "root",
-    "password": "example#test#123456",
-    "region": "ap-shanghai",
-    "vpcId": "vpc-kprq42yo",
-    "type": "MYSQL"
-}
-mysql: 云实例
-{
-    "instanceid": "cdb-12uxdo5e",
-    "db": "db",
-    "region": "ap-shanghai",
-    "username": "msyql",
-    "password": "example#test#123456",
-    "deployType": "INSTANCE",
-    "type": "TENCENT_MYSQL"
-}
-sql_server: 
-{
-    "deployType": "CONNSTR_PUBLICDB",
-    "url": "jdbc:sqlserver://1.1.1.1:223;example#test#123456",
-    "username": "user_1",
-    "password": "example#test#123456",
-    "type": "SQLSERVER"
-}
-redis:
-    redisType:
-    -NO_ACCOUT(免账号)
-    -SELF_ACCOUNT(自定义账号)
-{
-    "deployType": "CONNSTR_PUBLICDB",
-    "username":""
-    "password": "example#test#123456",
-    "ip": "1.1.1.1",
-    "port": "6379",
-    "redisType": "NO_ACCOUT",
-    "type": "REDIS"
-}
-oracle: 
-{
-    "deployType": "CONNSTR_CVMDB",
-    "url": "jdbc:oracle:thin:@1.1.1.1:1521:example#test#123456",
-    "username": "oracle",
-    "password": "example#test#123456",
-    "region": "ap-shanghai",
-    "vpcId": "vpc-kprq42yo",
-    "type": "ORACLE"
-}
-mongodb:
-    advanceParams(自定义参数，会拼接至url后)
-{
-    "advanceParams": [
-        {
-            "key": "authSource",
-            "value": "auth"
-        }
-    ],
-    "db": "admin",
-    "deployType": "CONNSTR_PUBLICDB",
-    "username": "user",
-    "password": "example#test#123456",
-    "type": "MONGODB",
-    "host": "1.1.1.1:9200"
-}
-postgresql:
-{
-    "deployType": "CONNSTR_PUBLICDB",
-    "url": "jdbc:postgresql://1.1.1.1:1921/example#test#123456",
-    "username": "user",
-    "password": "example#test#123456",
-    "type": "POSTGRE"
-}
-kafka:
-    authType:
-        - sasl
-        - jaas
-        - sasl_plaintext
-        - sasl_ssl
-        - GSSAPI
-    ssl:
-        -PLAIN
-        -GSSAPI
-{
-    "deployType": "CONNSTR_PUBLICDB",
-    "host": "1.1.1.1:9092",
-    "ssl": "GSSAPI",
-    "authType": "sasl",
-    "type": "KAFKA",
-    "principal": "aaaa",
-    "serviceName": "kafka"
-}
-
-cos:
-{
-    "region": "ap-shanghai",
-    "deployType": "INSTANCE",
-    "secretId": "aaaaa",
-    "secretKey": "example#test#123456",
-    "bucket": "aaa",
-    "type": "COS"
-}
-
-```
-                     * @return ProdConProperties 数据源的配置信息，以JSON KV存储，根据每个数据源类型不同，而KV存储信息不同
-
-> deployType: 
-CONNSTR_PUBLICDB(公网实例) 
-CONNSTR_CVMDB(自建实例)
-INSTANCE(云实例)
-
-```
-mysql: 自建实例
-{
-    "deployType": "CONNSTR_CVMDB",
-    "url": "jdbc:mysql://1.1.1.1:1111/example#test#123456",
-    "username": "root",
-    "password": "example#test#123456",
-    "region": "ap-shanghai",
-    "vpcId": "vpc-kprq42yo",
-    "type": "MYSQL"
-}
-mysql: 云实例
-{
-    "instanceid": "cdb-12uxdo5e",
-    "db": "db",
-    "region": "ap-shanghai",
-    "username": "msyql",
-    "password": "example#test#123456",
-    "deployType": "INSTANCE",
-    "type": "TENCENT_MYSQL"
-}
-sql_server: 
-{
-    "deployType": "CONNSTR_PUBLICDB",
-    "url": "jdbc:sqlserver://1.1.1.1:223;example#test#123456",
-    "username": "user_1",
-    "password": "example#test#123456",
-    "type": "SQLSERVER"
-}
-redis:
-    redisType:
-    -NO_ACCOUT(免账号)
-    -SELF_ACCOUNT(自定义账号)
-{
-    "deployType": "CONNSTR_PUBLICDB",
-    "username":""
-    "password": "example#test#123456",
-    "ip": "1.1.1.1",
-    "port": "6379",
-    "redisType": "NO_ACCOUT",
-    "type": "REDIS"
-}
-oracle: 
-{
-    "deployType": "CONNSTR_CVMDB",
-    "url": "jdbc:oracle:thin:@1.1.1.1:1521:example#test#123456",
-    "username": "oracle",
-    "password": "example#test#123456",
-    "region": "ap-shanghai",
-    "vpcId": "vpc-kprq42yo",
-    "type": "ORACLE"
-}
-mongodb:
-    advanceParams(自定义参数，会拼接至url后)
-{
-    "advanceParams": [
-        {
-            "key": "authSource",
-            "value": "auth"
-        }
-    ],
-    "db": "admin",
-    "deployType": "CONNSTR_PUBLICDB",
-    "username": "user",
-    "password": "example#test#123456",
-    "type": "MONGODB",
-    "host": "1.1.1.1:9200"
-}
-postgresql:
-{
-    "deployType": "CONNSTR_PUBLICDB",
-    "url": "jdbc:postgresql://1.1.1.1:1921/example#test#123456",
-    "username": "user",
-    "password": "example#test#123456",
-    "type": "POSTGRE"
-}
-kafka:
-    authType:
-        - sasl
-        - jaas
-        - sasl_plaintext
-        - sasl_ssl
-        - GSSAPI
-    ssl:
-        -PLAIN
-        -GSSAPI
-{
-    "deployType": "CONNSTR_PUBLICDB",
-    "host": "1.1.1.1:9092",
-    "ssl": "GSSAPI",
-    "authType": "sasl",
-    "type": "KAFKA",
-    "principal": "aaaa",
-    "serviceName": "kafka"
-}
-
-cos:
-{
-    "region": "ap-shanghai",
-    "deployType": "INSTANCE",
-    "secretId": "aaaaa",
-    "secretKey": "example#test#123456",
-    "bucket": "aaa",
-    "type": "COS"
-}
-
-```
+                     * 获取<p>数据源的配置信息，以JSON KV存储，根据每个数据源类型不同，而KV存储信息不同</p><blockquote><p>deployType:<br>CONNSTR_PUBLICDB(公网实例)<br>CONNSTR_CVMDB(自建实例)<br>INSTANCE(云实例)</p></blockquote><p><pre><code>mysql: 自建实例{    &quot;deployType&quot;: &quot;CONNSTR_CVMDB&quot;,    &quot;url&quot;: &quot;jdbc:mysql://&lt;host&gt;:&lt;port&gt;/&lt;database&gt;&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;region&quot;: &quot;ap-shanghai&quot;,    &quot;vpcId&quot;: &quot;&lt;vpcId&gt;&quot;,    &quot;type&quot;: &quot;MYSQL&quot;}mysql: 云实例{    &quot;instanceid&quot;: &quot;&lt;instanceId&gt;&quot;,    &quot;db&quot;: &quot;&lt;database&gt;&quot;,    &quot;region&quot;: &quot;ap-shanghai&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;deployType&quot;: &quot;INSTANCE&quot;,    &quot;type&quot;: &quot;TENCENT_MYSQL&quot;}sql_server:{    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;url&quot;: &quot;jdbc:sqlserver://&lt;host&gt;:&lt;port&gt;;DatabaseName=&lt;database&gt;&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;type&quot;: &quot;SQLSERVER&quot;}redis:    redisType:    -NO_ACCOUT(免账号)    -SELF_ACCOUNT(自定义账号){    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;ip&quot;: &quot;&lt;host&gt;&quot;,    &quot;port&quot;: &quot;&lt;port&gt;&quot;,    &quot;redisType&quot;: &quot;NO_ACCOUT&quot;,    &quot;type&quot;: &quot;REDIS&quot;}oracle:{    &quot;deployType&quot;: &quot;CONNSTR_CVMDB&quot;,    &quot;url&quot;: &quot;jdbc:oracle:thin:@&lt;host&gt;:&lt;port&gt;:&lt;sid&gt;&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;region&quot;: &quot;ap-shanghai&quot;,    &quot;vpcId&quot;: &quot;&lt;vpcId&gt;&quot;,    &quot;type&quot;: &quot;ORACLE&quot;}mongodb:    advanceParams(自定义参数，会拼接至url后){    &quot;advanceParams&quot;: [        {            &quot;key&quot;: &quot;authSource&quot;,            &quot;value&quot;: &quot;admin&quot;        }    ],    &quot;db&quot;: &quot;&lt;database&gt;&quot;,    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;type&quot;: &quot;MONGODB&quot;,    &quot;host&quot;: &quot;&lt;host&gt;:&lt;port&gt;&quot;}postgresql:{    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;url&quot;: &quot;jdbc:postgresql://&lt;host&gt;:&lt;port&gt;/&lt;database&gt;&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;type&quot;: &quot;POSTGRE&quot;}kafka:    authType:    - sasl    - jaas    - sasl_plaintext    - sasl_ssl    - GSSAPI    ssl:    -PLAIN    -GSSAPI{    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;host&quot;: &quot;&lt;host&gt;:&lt;port&gt;&quot;,    &quot;ssl&quot;: &quot;GSSAPI&quot;,    &quot;authType&quot;: &quot;sasl&quot;,    &quot;type&quot;: &quot;KAFKA&quot;,    &quot;principal&quot;: &quot;&lt;principal&gt;&quot;,    &quot;serviceName&quot;: &quot;kafka&quot;}cos:{    &quot;region&quot;: &quot;ap-shanghai&quot;,    &quot;deployType&quot;: &quot;INSTANCE&quot;,    &quot;secretId&quot;: &quot;&lt;secretId&gt;&quot;,    &quot;secretKey&quot;: &quot;&lt;secretKey&gt;&quot;,    &quot;bucket&quot;: &quot;&lt;bucket&gt;&quot;,    &quot;type&quot;: &quot;COS&quot;}</code></pre></p>
+                     * @return ProdConProperties <p>数据源的配置信息，以JSON KV存储，根据每个数据源类型不同，而KV存储信息不同</p><blockquote><p>deployType:<br>CONNSTR_PUBLICDB(公网实例)<br>CONNSTR_CVMDB(自建实例)<br>INSTANCE(云实例)</p></blockquote><p><pre><code>mysql: 自建实例{    &quot;deployType&quot;: &quot;CONNSTR_CVMDB&quot;,    &quot;url&quot;: &quot;jdbc:mysql://&lt;host&gt;:&lt;port&gt;/&lt;database&gt;&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;region&quot;: &quot;ap-shanghai&quot;,    &quot;vpcId&quot;: &quot;&lt;vpcId&gt;&quot;,    &quot;type&quot;: &quot;MYSQL&quot;}mysql: 云实例{    &quot;instanceid&quot;: &quot;&lt;instanceId&gt;&quot;,    &quot;db&quot;: &quot;&lt;database&gt;&quot;,    &quot;region&quot;: &quot;ap-shanghai&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;deployType&quot;: &quot;INSTANCE&quot;,    &quot;type&quot;: &quot;TENCENT_MYSQL&quot;}sql_server:{    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;url&quot;: &quot;jdbc:sqlserver://&lt;host&gt;:&lt;port&gt;;DatabaseName=&lt;database&gt;&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;type&quot;: &quot;SQLSERVER&quot;}redis:    redisType:    -NO_ACCOUT(免账号)    -SELF_ACCOUNT(自定义账号){    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;ip&quot;: &quot;&lt;host&gt;&quot;,    &quot;port&quot;: &quot;&lt;port&gt;&quot;,    &quot;redisType&quot;: &quot;NO_ACCOUT&quot;,    &quot;type&quot;: &quot;REDIS&quot;}oracle:{    &quot;deployType&quot;: &quot;CONNSTR_CVMDB&quot;,    &quot;url&quot;: &quot;jdbc:oracle:thin:@&lt;host&gt;:&lt;port&gt;:&lt;sid&gt;&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;region&quot;: &quot;ap-shanghai&quot;,    &quot;vpcId&quot;: &quot;&lt;vpcId&gt;&quot;,    &quot;type&quot;: &quot;ORACLE&quot;}mongodb:    advanceParams(自定义参数，会拼接至url后){    &quot;advanceParams&quot;: [        {            &quot;key&quot;: &quot;authSource&quot;,            &quot;value&quot;: &quot;admin&quot;        }    ],    &quot;db&quot;: &quot;&lt;database&gt;&quot;,    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;type&quot;: &quot;MONGODB&quot;,    &quot;host&quot;: &quot;&lt;host&gt;:&lt;port&gt;&quot;}postgresql:{    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;url&quot;: &quot;jdbc:postgresql://&lt;host&gt;:&lt;port&gt;/&lt;database&gt;&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;type&quot;: &quot;POSTGRE&quot;}kafka:    authType:    - sasl    - jaas    - sasl_plaintext    - sasl_ssl    - GSSAPI    ssl:    -PLAIN    -GSSAPI{    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;host&quot;: &quot;&lt;host&gt;:&lt;port&gt;&quot;,    &quot;ssl&quot;: &quot;GSSAPI&quot;,    &quot;authType&quot;: &quot;sasl&quot;,    &quot;type&quot;: &quot;KAFKA&quot;,    &quot;principal&quot;: &quot;&lt;principal&gt;&quot;,    &quot;serviceName&quot;: &quot;kafka&quot;}cos:{    &quot;region&quot;: &quot;ap-shanghai&quot;,    &quot;deployType&quot;: &quot;INSTANCE&quot;,    &quot;secretId&quot;: &quot;&lt;secretId&gt;&quot;,    &quot;secretKey&quot;: &quot;&lt;secretKey&gt;&quot;,    &quot;bucket&quot;: &quot;&lt;bucket&gt;&quot;,    &quot;type&quot;: &quot;COS&quot;}</code></pre></p>
                      * 
                      */
                     std::string GetProdConProperties() const;
 
                     /**
-                     * 设置数据源的配置信息，以JSON KV存储，根据每个数据源类型不同，而KV存储信息不同
-
-> deployType: 
-CONNSTR_PUBLICDB(公网实例) 
-CONNSTR_CVMDB(自建实例)
-INSTANCE(云实例)
-
-```
-mysql: 自建实例
-{
-    "deployType": "CONNSTR_CVMDB",
-    "url": "jdbc:mysql://1.1.1.1:1111/example#test#123456",
-    "username": "root",
-    "password": "example#test#123456",
-    "region": "ap-shanghai",
-    "vpcId": "vpc-kprq42yo",
-    "type": "MYSQL"
-}
-mysql: 云实例
-{
-    "instanceid": "cdb-12uxdo5e",
-    "db": "db",
-    "region": "ap-shanghai",
-    "username": "msyql",
-    "password": "example#test#123456",
-    "deployType": "INSTANCE",
-    "type": "TENCENT_MYSQL"
-}
-sql_server: 
-{
-    "deployType": "CONNSTR_PUBLICDB",
-    "url": "jdbc:sqlserver://1.1.1.1:223;example#test#123456",
-    "username": "user_1",
-    "password": "example#test#123456",
-    "type": "SQLSERVER"
-}
-redis:
-    redisType:
-    -NO_ACCOUT(免账号)
-    -SELF_ACCOUNT(自定义账号)
-{
-    "deployType": "CONNSTR_PUBLICDB",
-    "username":""
-    "password": "example#test#123456",
-    "ip": "1.1.1.1",
-    "port": "6379",
-    "redisType": "NO_ACCOUT",
-    "type": "REDIS"
-}
-oracle: 
-{
-    "deployType": "CONNSTR_CVMDB",
-    "url": "jdbc:oracle:thin:@1.1.1.1:1521:example#test#123456",
-    "username": "oracle",
-    "password": "example#test#123456",
-    "region": "ap-shanghai",
-    "vpcId": "vpc-kprq42yo",
-    "type": "ORACLE"
-}
-mongodb:
-    advanceParams(自定义参数，会拼接至url后)
-{
-    "advanceParams": [
-        {
-            "key": "authSource",
-            "value": "auth"
-        }
-    ],
-    "db": "admin",
-    "deployType": "CONNSTR_PUBLICDB",
-    "username": "user",
-    "password": "example#test#123456",
-    "type": "MONGODB",
-    "host": "1.1.1.1:9200"
-}
-postgresql:
-{
-    "deployType": "CONNSTR_PUBLICDB",
-    "url": "jdbc:postgresql://1.1.1.1:1921/example#test#123456",
-    "username": "user",
-    "password": "example#test#123456",
-    "type": "POSTGRE"
-}
-kafka:
-    authType:
-        - sasl
-        - jaas
-        - sasl_plaintext
-        - sasl_ssl
-        - GSSAPI
-    ssl:
-        -PLAIN
-        -GSSAPI
-{
-    "deployType": "CONNSTR_PUBLICDB",
-    "host": "1.1.1.1:9092",
-    "ssl": "GSSAPI",
-    "authType": "sasl",
-    "type": "KAFKA",
-    "principal": "aaaa",
-    "serviceName": "kafka"
-}
-
-cos:
-{
-    "region": "ap-shanghai",
-    "deployType": "INSTANCE",
-    "secretId": "aaaaa",
-    "secretKey": "example#test#123456",
-    "bucket": "aaa",
-    "type": "COS"
-}
-
-```
-                     * @param _prodConProperties 数据源的配置信息，以JSON KV存储，根据每个数据源类型不同，而KV存储信息不同
-
-> deployType: 
-CONNSTR_PUBLICDB(公网实例) 
-CONNSTR_CVMDB(自建实例)
-INSTANCE(云实例)
-
-```
-mysql: 自建实例
-{
-    "deployType": "CONNSTR_CVMDB",
-    "url": "jdbc:mysql://1.1.1.1:1111/example#test#123456",
-    "username": "root",
-    "password": "example#test#123456",
-    "region": "ap-shanghai",
-    "vpcId": "vpc-kprq42yo",
-    "type": "MYSQL"
-}
-mysql: 云实例
-{
-    "instanceid": "cdb-12uxdo5e",
-    "db": "db",
-    "region": "ap-shanghai",
-    "username": "msyql",
-    "password": "example#test#123456",
-    "deployType": "INSTANCE",
-    "type": "TENCENT_MYSQL"
-}
-sql_server: 
-{
-    "deployType": "CONNSTR_PUBLICDB",
-    "url": "jdbc:sqlserver://1.1.1.1:223;example#test#123456",
-    "username": "user_1",
-    "password": "example#test#123456",
-    "type": "SQLSERVER"
-}
-redis:
-    redisType:
-    -NO_ACCOUT(免账号)
-    -SELF_ACCOUNT(自定义账号)
-{
-    "deployType": "CONNSTR_PUBLICDB",
-    "username":""
-    "password": "example#test#123456",
-    "ip": "1.1.1.1",
-    "port": "6379",
-    "redisType": "NO_ACCOUT",
-    "type": "REDIS"
-}
-oracle: 
-{
-    "deployType": "CONNSTR_CVMDB",
-    "url": "jdbc:oracle:thin:@1.1.1.1:1521:example#test#123456",
-    "username": "oracle",
-    "password": "example#test#123456",
-    "region": "ap-shanghai",
-    "vpcId": "vpc-kprq42yo",
-    "type": "ORACLE"
-}
-mongodb:
-    advanceParams(自定义参数，会拼接至url后)
-{
-    "advanceParams": [
-        {
-            "key": "authSource",
-            "value": "auth"
-        }
-    ],
-    "db": "admin",
-    "deployType": "CONNSTR_PUBLICDB",
-    "username": "user",
-    "password": "example#test#123456",
-    "type": "MONGODB",
-    "host": "1.1.1.1:9200"
-}
-postgresql:
-{
-    "deployType": "CONNSTR_PUBLICDB",
-    "url": "jdbc:postgresql://1.1.1.1:1921/example#test#123456",
-    "username": "user",
-    "password": "example#test#123456",
-    "type": "POSTGRE"
-}
-kafka:
-    authType:
-        - sasl
-        - jaas
-        - sasl_plaintext
-        - sasl_ssl
-        - GSSAPI
-    ssl:
-        -PLAIN
-        -GSSAPI
-{
-    "deployType": "CONNSTR_PUBLICDB",
-    "host": "1.1.1.1:9092",
-    "ssl": "GSSAPI",
-    "authType": "sasl",
-    "type": "KAFKA",
-    "principal": "aaaa",
-    "serviceName": "kafka"
-}
-
-cos:
-{
-    "region": "ap-shanghai",
-    "deployType": "INSTANCE",
-    "secretId": "aaaaa",
-    "secretKey": "example#test#123456",
-    "bucket": "aaa",
-    "type": "COS"
-}
-
-```
+                     * 设置<p>数据源的配置信息，以JSON KV存储，根据每个数据源类型不同，而KV存储信息不同</p><blockquote><p>deployType:<br>CONNSTR_PUBLICDB(公网实例)<br>CONNSTR_CVMDB(自建实例)<br>INSTANCE(云实例)</p></blockquote><p><pre><code>mysql: 自建实例{    &quot;deployType&quot;: &quot;CONNSTR_CVMDB&quot;,    &quot;url&quot;: &quot;jdbc:mysql://&lt;host&gt;:&lt;port&gt;/&lt;database&gt;&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;region&quot;: &quot;ap-shanghai&quot;,    &quot;vpcId&quot;: &quot;&lt;vpcId&gt;&quot;,    &quot;type&quot;: &quot;MYSQL&quot;}mysql: 云实例{    &quot;instanceid&quot;: &quot;&lt;instanceId&gt;&quot;,    &quot;db&quot;: &quot;&lt;database&gt;&quot;,    &quot;region&quot;: &quot;ap-shanghai&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;deployType&quot;: &quot;INSTANCE&quot;,    &quot;type&quot;: &quot;TENCENT_MYSQL&quot;}sql_server:{    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;url&quot;: &quot;jdbc:sqlserver://&lt;host&gt;:&lt;port&gt;;DatabaseName=&lt;database&gt;&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;type&quot;: &quot;SQLSERVER&quot;}redis:    redisType:    -NO_ACCOUT(免账号)    -SELF_ACCOUNT(自定义账号){    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;ip&quot;: &quot;&lt;host&gt;&quot;,    &quot;port&quot;: &quot;&lt;port&gt;&quot;,    &quot;redisType&quot;: &quot;NO_ACCOUT&quot;,    &quot;type&quot;: &quot;REDIS&quot;}oracle:{    &quot;deployType&quot;: &quot;CONNSTR_CVMDB&quot;,    &quot;url&quot;: &quot;jdbc:oracle:thin:@&lt;host&gt;:&lt;port&gt;:&lt;sid&gt;&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;region&quot;: &quot;ap-shanghai&quot;,    &quot;vpcId&quot;: &quot;&lt;vpcId&gt;&quot;,    &quot;type&quot;: &quot;ORACLE&quot;}mongodb:    advanceParams(自定义参数，会拼接至url后){    &quot;advanceParams&quot;: [        {            &quot;key&quot;: &quot;authSource&quot;,            &quot;value&quot;: &quot;admin&quot;        }    ],    &quot;db&quot;: &quot;&lt;database&gt;&quot;,    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;type&quot;: &quot;MONGODB&quot;,    &quot;host&quot;: &quot;&lt;host&gt;:&lt;port&gt;&quot;}postgresql:{    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;url&quot;: &quot;jdbc:postgresql://&lt;host&gt;:&lt;port&gt;/&lt;database&gt;&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;type&quot;: &quot;POSTGRE&quot;}kafka:    authType:    - sasl    - jaas    - sasl_plaintext    - sasl_ssl    - GSSAPI    ssl:    -PLAIN    -GSSAPI{    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;host&quot;: &quot;&lt;host&gt;:&lt;port&gt;&quot;,    &quot;ssl&quot;: &quot;GSSAPI&quot;,    &quot;authType&quot;: &quot;sasl&quot;,    &quot;type&quot;: &quot;KAFKA&quot;,    &quot;principal&quot;: &quot;&lt;principal&gt;&quot;,    &quot;serviceName&quot;: &quot;kafka&quot;}cos:{    &quot;region&quot;: &quot;ap-shanghai&quot;,    &quot;deployType&quot;: &quot;INSTANCE&quot;,    &quot;secretId&quot;: &quot;&lt;secretId&gt;&quot;,    &quot;secretKey&quot;: &quot;&lt;secretKey&gt;&quot;,    &quot;bucket&quot;: &quot;&lt;bucket&gt;&quot;,    &quot;type&quot;: &quot;COS&quot;}</code></pre></p>
+                     * @param _prodConProperties <p>数据源的配置信息，以JSON KV存储，根据每个数据源类型不同，而KV存储信息不同</p><blockquote><p>deployType:<br>CONNSTR_PUBLICDB(公网实例)<br>CONNSTR_CVMDB(自建实例)<br>INSTANCE(云实例)</p></blockquote><p><pre><code>mysql: 自建实例{    &quot;deployType&quot;: &quot;CONNSTR_CVMDB&quot;,    &quot;url&quot;: &quot;jdbc:mysql://&lt;host&gt;:&lt;port&gt;/&lt;database&gt;&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;region&quot;: &quot;ap-shanghai&quot;,    &quot;vpcId&quot;: &quot;&lt;vpcId&gt;&quot;,    &quot;type&quot;: &quot;MYSQL&quot;}mysql: 云实例{    &quot;instanceid&quot;: &quot;&lt;instanceId&gt;&quot;,    &quot;db&quot;: &quot;&lt;database&gt;&quot;,    &quot;region&quot;: &quot;ap-shanghai&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;deployType&quot;: &quot;INSTANCE&quot;,    &quot;type&quot;: &quot;TENCENT_MYSQL&quot;}sql_server:{    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;url&quot;: &quot;jdbc:sqlserver://&lt;host&gt;:&lt;port&gt;;DatabaseName=&lt;database&gt;&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;type&quot;: &quot;SQLSERVER&quot;}redis:    redisType:    -NO_ACCOUT(免账号)    -SELF_ACCOUNT(自定义账号){    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;ip&quot;: &quot;&lt;host&gt;&quot;,    &quot;port&quot;: &quot;&lt;port&gt;&quot;,    &quot;redisType&quot;: &quot;NO_ACCOUT&quot;,    &quot;type&quot;: &quot;REDIS&quot;}oracle:{    &quot;deployType&quot;: &quot;CONNSTR_CVMDB&quot;,    &quot;url&quot;: &quot;jdbc:oracle:thin:@&lt;host&gt;:&lt;port&gt;:&lt;sid&gt;&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;region&quot;: &quot;ap-shanghai&quot;,    &quot;vpcId&quot;: &quot;&lt;vpcId&gt;&quot;,    &quot;type&quot;: &quot;ORACLE&quot;}mongodb:    advanceParams(自定义参数，会拼接至url后){    &quot;advanceParams&quot;: [        {            &quot;key&quot;: &quot;authSource&quot;,            &quot;value&quot;: &quot;admin&quot;        }    ],    &quot;db&quot;: &quot;&lt;database&gt;&quot;,    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;type&quot;: &quot;MONGODB&quot;,    &quot;host&quot;: &quot;&lt;host&gt;:&lt;port&gt;&quot;}postgresql:{    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;url&quot;: &quot;jdbc:postgresql://&lt;host&gt;:&lt;port&gt;/&lt;database&gt;&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;type&quot;: &quot;POSTGRE&quot;}kafka:    authType:    - sasl    - jaas    - sasl_plaintext    - sasl_ssl    - GSSAPI    ssl:    -PLAIN    -GSSAPI{    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;host&quot;: &quot;&lt;host&gt;:&lt;port&gt;&quot;,    &quot;ssl&quot;: &quot;GSSAPI&quot;,    &quot;authType&quot;: &quot;sasl&quot;,    &quot;type&quot;: &quot;KAFKA&quot;,    &quot;principal&quot;: &quot;&lt;principal&gt;&quot;,    &quot;serviceName&quot;: &quot;kafka&quot;}cos:{    &quot;region&quot;: &quot;ap-shanghai&quot;,    &quot;deployType&quot;: &quot;INSTANCE&quot;,    &quot;secretId&quot;: &quot;&lt;secretId&gt;&quot;,    &quot;secretKey&quot;: &quot;&lt;secretKey&gt;&quot;,    &quot;bucket&quot;: &quot;&lt;bucket&gt;&quot;,    &quot;type&quot;: &quot;COS&quot;}</code></pre></p>
                      * 
                      */
                     void SetProdConProperties(const std::string& _prodConProperties);
@@ -559,15 +107,15 @@ cos:
                     bool ProdConPropertiesHasBeenSet() const;
 
                     /**
-                     * 获取若项目为标准模式，则此字段必填
-                     * @return DevConProperties 若项目为标准模式，则此字段必填
+                     * 获取<p>若项目为标准模式，则此字段必填</p>
+                     * @return DevConProperties <p>若项目为标准模式，则此字段必填</p>
                      * 
                      */
                     std::string GetDevConProperties() const;
 
                     /**
-                     * 设置若项目为标准模式，则此字段必填
-                     * @param _devConProperties 若项目为标准模式，则此字段必填
+                     * 设置<p>若项目为标准模式，则此字段必填</p>
+                     * @param _devConProperties <p>若项目为标准模式，则此字段必填</p>
                      * 
                      */
                     void SetDevConProperties(const std::string& _devConProperties);
@@ -580,15 +128,15 @@ cos:
                     bool DevConPropertiesHasBeenSet() const;
 
                     /**
-                     * 获取生产环境数据源文件上传
-                     * @return ProdFileUpload 生产环境数据源文件上传
+                     * 获取<p>生产环境数据源文件上传</p>
+                     * @return ProdFileUpload <p>生产环境数据源文件上传</p>
                      * 
                      */
                     DataSourceFileUpload GetProdFileUpload() const;
 
                     /**
-                     * 设置生产环境数据源文件上传
-                     * @param _prodFileUpload 生产环境数据源文件上传
+                     * 设置<p>生产环境数据源文件上传</p>
+                     * @param _prodFileUpload <p>生产环境数据源文件上传</p>
                      * 
                      */
                     void SetProdFileUpload(const DataSourceFileUpload& _prodFileUpload);
@@ -601,15 +149,15 @@ cos:
                     bool ProdFileUploadHasBeenSet() const;
 
                     /**
-                     * 获取开发环境数据源文件上传
-                     * @return DevFileUpload 开发环境数据源文件上传
+                     * 获取<p>开发环境数据源文件上传</p>
+                     * @return DevFileUpload <p>开发环境数据源文件上传</p>
                      * 
                      */
                     DataSourceFileUpload GetDevFileUpload() const;
 
                     /**
-                     * 设置开发环境数据源文件上传
-                     * @param _devFileUpload 开发环境数据源文件上传
+                     * 设置<p>开发环境数据源文件上传</p>
+                     * @param _devFileUpload <p>开发环境数据源文件上传</p>
                      * 
                      */
                     void SetDevFileUpload(const DataSourceFileUpload& _devFileUpload);
@@ -622,15 +170,15 @@ cos:
                     bool DevFileUploadHasBeenSet() const;
 
                     /**
-                     * 获取数据源展示名，为了可视化查看
-                     * @return DisplayName 数据源展示名，为了可视化查看
+                     * 获取<p>数据源展示名，为了可视化查看</p>
+                     * @return DisplayName <p>数据源展示名，为了可视化查看</p>
                      * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
-                     * 设置数据源展示名，为了可视化查看
-                     * @param _displayName 数据源展示名，为了可视化查看
+                     * 设置<p>数据源展示名，为了可视化查看</p>
+                     * @param _displayName <p>数据源展示名，为了可视化查看</p>
                      * 
                      */
                     void SetDisplayName(const std::string& _displayName);
@@ -643,15 +191,15 @@ cos:
                     bool DisplayNameHasBeenSet() const;
 
                     /**
-                     * 获取数据源描述信息
-                     * @return Description 数据源描述信息
+                     * 获取<p>数据源描述信息</p>
+                     * @return Description <p>数据源描述信息</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置数据源描述信息
-                     * @param _description 数据源描述信息
+                     * 设置<p>数据源描述信息</p>
+                     * @param _description <p>数据源描述信息</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -666,162 +214,49 @@ cos:
                 private:
 
                     /**
-                     * 数据源id
+                     * <p>数据源id</p>
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 项目id
+                     * <p>项目id</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 数据源的配置信息，以JSON KV存储，根据每个数据源类型不同，而KV存储信息不同
-
-> deployType: 
-CONNSTR_PUBLICDB(公网实例) 
-CONNSTR_CVMDB(自建实例)
-INSTANCE(云实例)
-
-```
-mysql: 自建实例
-{
-    "deployType": "CONNSTR_CVMDB",
-    "url": "jdbc:mysql://1.1.1.1:1111/example#test#123456",
-    "username": "root",
-    "password": "example#test#123456",
-    "region": "ap-shanghai",
-    "vpcId": "vpc-kprq42yo",
-    "type": "MYSQL"
-}
-mysql: 云实例
-{
-    "instanceid": "cdb-12uxdo5e",
-    "db": "db",
-    "region": "ap-shanghai",
-    "username": "msyql",
-    "password": "example#test#123456",
-    "deployType": "INSTANCE",
-    "type": "TENCENT_MYSQL"
-}
-sql_server: 
-{
-    "deployType": "CONNSTR_PUBLICDB",
-    "url": "jdbc:sqlserver://1.1.1.1:223;example#test#123456",
-    "username": "user_1",
-    "password": "example#test#123456",
-    "type": "SQLSERVER"
-}
-redis:
-    redisType:
-    -NO_ACCOUT(免账号)
-    -SELF_ACCOUNT(自定义账号)
-{
-    "deployType": "CONNSTR_PUBLICDB",
-    "username":""
-    "password": "example#test#123456",
-    "ip": "1.1.1.1",
-    "port": "6379",
-    "redisType": "NO_ACCOUT",
-    "type": "REDIS"
-}
-oracle: 
-{
-    "deployType": "CONNSTR_CVMDB",
-    "url": "jdbc:oracle:thin:@1.1.1.1:1521:example#test#123456",
-    "username": "oracle",
-    "password": "example#test#123456",
-    "region": "ap-shanghai",
-    "vpcId": "vpc-kprq42yo",
-    "type": "ORACLE"
-}
-mongodb:
-    advanceParams(自定义参数，会拼接至url后)
-{
-    "advanceParams": [
-        {
-            "key": "authSource",
-            "value": "auth"
-        }
-    ],
-    "db": "admin",
-    "deployType": "CONNSTR_PUBLICDB",
-    "username": "user",
-    "password": "example#test#123456",
-    "type": "MONGODB",
-    "host": "1.1.1.1:9200"
-}
-postgresql:
-{
-    "deployType": "CONNSTR_PUBLICDB",
-    "url": "jdbc:postgresql://1.1.1.1:1921/example#test#123456",
-    "username": "user",
-    "password": "example#test#123456",
-    "type": "POSTGRE"
-}
-kafka:
-    authType:
-        - sasl
-        - jaas
-        - sasl_plaintext
-        - sasl_ssl
-        - GSSAPI
-    ssl:
-        -PLAIN
-        -GSSAPI
-{
-    "deployType": "CONNSTR_PUBLICDB",
-    "host": "1.1.1.1:9092",
-    "ssl": "GSSAPI",
-    "authType": "sasl",
-    "type": "KAFKA",
-    "principal": "aaaa",
-    "serviceName": "kafka"
-}
-
-cos:
-{
-    "region": "ap-shanghai",
-    "deployType": "INSTANCE",
-    "secretId": "aaaaa",
-    "secretKey": "example#test#123456",
-    "bucket": "aaa",
-    "type": "COS"
-}
-
-```
+                     * <p>数据源的配置信息，以JSON KV存储，根据每个数据源类型不同，而KV存储信息不同</p><blockquote><p>deployType:<br>CONNSTR_PUBLICDB(公网实例)<br>CONNSTR_CVMDB(自建实例)<br>INSTANCE(云实例)</p></blockquote><p><pre><code>mysql: 自建实例{    &quot;deployType&quot;: &quot;CONNSTR_CVMDB&quot;,    &quot;url&quot;: &quot;jdbc:mysql://&lt;host&gt;:&lt;port&gt;/&lt;database&gt;&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;region&quot;: &quot;ap-shanghai&quot;,    &quot;vpcId&quot;: &quot;&lt;vpcId&gt;&quot;,    &quot;type&quot;: &quot;MYSQL&quot;}mysql: 云实例{    &quot;instanceid&quot;: &quot;&lt;instanceId&gt;&quot;,    &quot;db&quot;: &quot;&lt;database&gt;&quot;,    &quot;region&quot;: &quot;ap-shanghai&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;deployType&quot;: &quot;INSTANCE&quot;,    &quot;type&quot;: &quot;TENCENT_MYSQL&quot;}sql_server:{    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;url&quot;: &quot;jdbc:sqlserver://&lt;host&gt;:&lt;port&gt;;DatabaseName=&lt;database&gt;&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;type&quot;: &quot;SQLSERVER&quot;}redis:    redisType:    -NO_ACCOUT(免账号)    -SELF_ACCOUNT(自定义账号){    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;ip&quot;: &quot;&lt;host&gt;&quot;,    &quot;port&quot;: &quot;&lt;port&gt;&quot;,    &quot;redisType&quot;: &quot;NO_ACCOUT&quot;,    &quot;type&quot;: &quot;REDIS&quot;}oracle:{    &quot;deployType&quot;: &quot;CONNSTR_CVMDB&quot;,    &quot;url&quot;: &quot;jdbc:oracle:thin:@&lt;host&gt;:&lt;port&gt;:&lt;sid&gt;&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;region&quot;: &quot;ap-shanghai&quot;,    &quot;vpcId&quot;: &quot;&lt;vpcId&gt;&quot;,    &quot;type&quot;: &quot;ORACLE&quot;}mongodb:    advanceParams(自定义参数，会拼接至url后){    &quot;advanceParams&quot;: [        {            &quot;key&quot;: &quot;authSource&quot;,            &quot;value&quot;: &quot;admin&quot;        }    ],    &quot;db&quot;: &quot;&lt;database&gt;&quot;,    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;type&quot;: &quot;MONGODB&quot;,    &quot;host&quot;: &quot;&lt;host&gt;:&lt;port&gt;&quot;}postgresql:{    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;url&quot;: &quot;jdbc:postgresql://&lt;host&gt;:&lt;port&gt;/&lt;database&gt;&quot;,    &quot;username&quot;: &quot;&lt;username&gt;&quot;,    &quot;password&quot;: &quot;&lt;password&gt;&quot;,    &quot;type&quot;: &quot;POSTGRE&quot;}kafka:    authType:    - sasl    - jaas    - sasl_plaintext    - sasl_ssl    - GSSAPI    ssl:    -PLAIN    -GSSAPI{    &quot;deployType&quot;: &quot;CONNSTR_PUBLICDB&quot;,    &quot;host&quot;: &quot;&lt;host&gt;:&lt;port&gt;&quot;,    &quot;ssl&quot;: &quot;GSSAPI&quot;,    &quot;authType&quot;: &quot;sasl&quot;,    &quot;type&quot;: &quot;KAFKA&quot;,    &quot;principal&quot;: &quot;&lt;principal&gt;&quot;,    &quot;serviceName&quot;: &quot;kafka&quot;}cos:{    &quot;region&quot;: &quot;ap-shanghai&quot;,    &quot;deployType&quot;: &quot;INSTANCE&quot;,    &quot;secretId&quot;: &quot;&lt;secretId&gt;&quot;,    &quot;secretKey&quot;: &quot;&lt;secretKey&gt;&quot;,    &quot;bucket&quot;: &quot;&lt;bucket&gt;&quot;,    &quot;type&quot;: &quot;COS&quot;}</code></pre></p>
                      */
                     std::string m_prodConProperties;
                     bool m_prodConPropertiesHasBeenSet;
 
                     /**
-                     * 若项目为标准模式，则此字段必填
+                     * <p>若项目为标准模式，则此字段必填</p>
                      */
                     std::string m_devConProperties;
                     bool m_devConPropertiesHasBeenSet;
 
                     /**
-                     * 生产环境数据源文件上传
+                     * <p>生产环境数据源文件上传</p>
                      */
                     DataSourceFileUpload m_prodFileUpload;
                     bool m_prodFileUploadHasBeenSet;
 
                     /**
-                     * 开发环境数据源文件上传
+                     * <p>开发环境数据源文件上传</p>
                      */
                     DataSourceFileUpload m_devFileUpload;
                     bool m_devFileUploadHasBeenSet;
 
                     /**
-                     * 数据源展示名，为了可视化查看
+                     * <p>数据源展示名，为了可视化查看</p>
                      */
                     std::string m_displayName;
                     bool m_displayNameHasBeenSet;
 
                     /**
-                     * 数据源描述信息
+                     * <p>数据源描述信息</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

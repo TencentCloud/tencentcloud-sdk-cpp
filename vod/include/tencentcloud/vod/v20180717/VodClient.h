@@ -27,6 +27,8 @@
 #include <tencentcloud/vod/v20180717/model/ApplyUploadResponse.h>
 #include <tencentcloud/vod/v20180717/model/AttachMediaSubtitlesRequest.h>
 #include <tencentcloud/vod/v20180717/model/AttachMediaSubtitlesResponse.h>
+#include <tencentcloud/vod/v20180717/model/CloneVoiceAsyncRequest.h>
+#include <tencentcloud/vod/v20180717/model/CloneVoiceAsyncResponse.h>
 #include <tencentcloud/vod/v20180717/model/CommitUploadRequest.h>
 #include <tencentcloud/vod/v20180717/model/CommitUploadResponse.h>
 #include <tencentcloud/vod/v20180717/model/ComposeMediaRequest.h>
@@ -193,6 +195,8 @@
 #include <tencentcloud/vod/v20180717/model/DeleteTranscodeTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteVodDomainRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteVodDomainResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteVoiceRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteVoiceResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteWatermarkTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteWatermarkTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteWordSamplesRequest.h>
@@ -323,10 +327,14 @@
 #include <tencentcloud/vod/v20180717/model/DescribeTranscodeTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeVodDomainsRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeVodDomainsResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeVoicesRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeVoicesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeWatermarkTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeWatermarkTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeWordSamplesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeWordSamplesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DesignVoiceAsyncRequest.h>
+#include <tencentcloud/vod/v20180717/model/DesignVoiceAsyncResponse.h>
 #include <tencentcloud/vod/v20180717/model/EditMediaRequest.h>
 #include <tencentcloud/vod/v20180717/model/EditMediaResponse.h>
 #include <tencentcloud/vod/v20180717/model/EnhanceMediaByTemplateRequest.h>
@@ -479,8 +487,12 @@
 #include <tencentcloud/vod/v20180717/model/SimpleHlsClipResponse.h>
 #include <tencentcloud/vod/v20180717/model/SplitMediaRequest.h>
 #include <tencentcloud/vod/v20180717/model/SplitMediaResponse.h>
+#include <tencentcloud/vod/v20180717/model/TextToSpeechAsyncRequest.h>
+#include <tencentcloud/vod/v20180717/model/TextToSpeechAsyncResponse.h>
 #include <tencentcloud/vod/v20180717/model/UpdateAigcApiTokenRequest.h>
 #include <tencentcloud/vod/v20180717/model/UpdateAigcApiTokenResponse.h>
+#include <tencentcloud/vod/v20180717/model/UpdateVoiceRequest.h>
+#include <tencentcloud/vod/v20180717/model/UpdateVoiceResponse.h>
 #include <tencentcloud/vod/v20180717/model/VerifyDomainRecordRequest.h>
 #include <tencentcloud/vod/v20180717/model/VerifyDomainRecordResponse.h>
 #include <tencentcloud/vod/v20180717/model/WeChatMiniProgramPublishRequest.h>
@@ -505,6 +517,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AttachMediaSubtitlesResponse> AttachMediaSubtitlesOutcome;
                 typedef std::future<AttachMediaSubtitlesOutcome> AttachMediaSubtitlesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::AttachMediaSubtitlesRequest&, AttachMediaSubtitlesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachMediaSubtitlesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloneVoiceAsyncResponse> CloneVoiceAsyncOutcome;
+                typedef std::future<CloneVoiceAsyncOutcome> CloneVoiceAsyncOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CloneVoiceAsyncRequest&, CloneVoiceAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneVoiceAsyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::CommitUploadResponse> CommitUploadOutcome;
                 typedef std::future<CommitUploadOutcome> CommitUploadOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CommitUploadRequest&, CommitUploadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CommitUploadAsyncHandler;
@@ -754,6 +769,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteVodDomainResponse> DeleteVodDomainOutcome;
                 typedef std::future<DeleteVodDomainOutcome> DeleteVodDomainOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteVodDomainRequest&, DeleteVodDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVodDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteVoiceResponse> DeleteVoiceOutcome;
+                typedef std::future<DeleteVoiceOutcome> DeleteVoiceOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteVoiceRequest&, DeleteVoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVoiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteWatermarkTemplateResponse> DeleteWatermarkTemplateOutcome;
                 typedef std::future<DeleteWatermarkTemplateOutcome> DeleteWatermarkTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteWatermarkTemplateRequest&, DeleteWatermarkTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWatermarkTemplateAsyncHandler;
@@ -949,12 +967,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVodDomainsResponse> DescribeVodDomainsOutcome;
                 typedef std::future<DescribeVodDomainsOutcome> DescribeVodDomainsOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeVodDomainsRequest&, DescribeVodDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVoicesResponse> DescribeVoicesOutcome;
+                typedef std::future<DescribeVoicesOutcome> DescribeVoicesOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeVoicesRequest&, DescribeVoicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVoicesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWatermarkTemplatesResponse> DescribeWatermarkTemplatesOutcome;
                 typedef std::future<DescribeWatermarkTemplatesOutcome> DescribeWatermarkTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeWatermarkTemplatesRequest&, DescribeWatermarkTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWatermarkTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWordSamplesResponse> DescribeWordSamplesOutcome;
                 typedef std::future<DescribeWordSamplesOutcome> DescribeWordSamplesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeWordSamplesRequest&, DescribeWordSamplesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWordSamplesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DesignVoiceAsyncResponse> DesignVoiceAsyncOutcome;
+                typedef std::future<DesignVoiceAsyncOutcome> DesignVoiceAsyncOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DesignVoiceAsyncRequest&, DesignVoiceAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DesignVoiceAsyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::EditMediaResponse> EditMediaOutcome;
                 typedef std::future<EditMediaOutcome> EditMediaOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::EditMediaRequest&, EditMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EditMediaAsyncHandler;
@@ -1183,9 +1207,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SplitMediaResponse> SplitMediaOutcome;
                 typedef std::future<SplitMediaOutcome> SplitMediaOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::SplitMediaRequest&, SplitMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SplitMediaAsyncHandler;
+                typedef Outcome<Core::Error, Model::TextToSpeechAsyncResponse> TextToSpeechAsyncOutcome;
+                typedef std::future<TextToSpeechAsyncOutcome> TextToSpeechAsyncOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::TextToSpeechAsyncRequest&, TextToSpeechAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToSpeechAsyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateAigcApiTokenResponse> UpdateAigcApiTokenOutcome;
                 typedef std::future<UpdateAigcApiTokenOutcome> UpdateAigcApiTokenOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::UpdateAigcApiTokenRequest&, UpdateAigcApiTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAigcApiTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateVoiceResponse> UpdateVoiceOutcome;
+                typedef std::future<UpdateVoiceOutcome> UpdateVoiceOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::UpdateVoiceRequest&, UpdateVoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateVoiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::VerifyDomainRecordResponse> VerifyDomainRecordOutcome;
                 typedef std::future<VerifyDomainRecordOutcome> VerifyDomainRecordOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::VerifyDomainRecordRequest&, VerifyDomainRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyDomainRecordAsyncHandler;
@@ -1214,6 +1244,15 @@ namespace TencentCloud
                 AttachMediaSubtitlesOutcome AttachMediaSubtitles(const Model::AttachMediaSubtitlesRequest &request);
                 void AttachMediaSubtitlesAsync(const Model::AttachMediaSubtitlesRequest& request, const AttachMediaSubtitlesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AttachMediaSubtitlesOutcomeCallable AttachMediaSubtitlesCallable(const Model::AttachMediaSubtitlesRequest& request);
+
+                /**
+                 *音色设计，根据prompt生成音色ID。克隆/设计音色数量上限默认100
+                 * @param req CloneVoiceAsyncRequest
+                 * @return CloneVoiceAsyncOutcome
+                 */
+                CloneVoiceAsyncOutcome CloneVoiceAsync(const Model::CloneVoiceAsyncRequest &request);
+                void CloneVoiceAsyncAsync(const Model::CloneVoiceAsyncRequest& request, const CloneVoiceAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloneVoiceAsyncOutcomeCallable CloneVoiceAsyncCallable(const Model::CloneVoiceAsyncRequest& request);
 
                 /**
                  *该接口用于确认媒体文件（和封面文件）上传到腾讯云点播的结果，并存储媒体信息，返回文件的播放地址和文件 ID。
@@ -2032,6 +2071,15 @@ namespace TencentCloud
                 DeleteVodDomainOutcomeCallable DeleteVodDomainCallable(const Model::DeleteVodDomainRequest& request);
 
                 /**
+                 *音色设计，根据prompt生成音色ID。克隆/设计音色数量上限默认100
+                 * @param req DeleteVoiceRequest
+                 * @return DeleteVoiceOutcome
+                 */
+                DeleteVoiceOutcome DeleteVoice(const Model::DeleteVoiceRequest &request);
+                void DeleteVoiceAsync(const Model::DeleteVoiceRequest& request, const DeleteVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVoiceOutcomeCallable DeleteVoiceCallable(const Model::DeleteVoiceRequest& request);
+
+                /**
                  *删除用户自定义水印模板。
                  * @param req DeleteWatermarkTemplateRequest
                  * @return DeleteWatermarkTemplateOutcome
@@ -2707,6 +2755,15 @@ namespace TencentCloud
                 DescribeVodDomainsOutcomeCallable DescribeVodDomainsCallable(const Model::DescribeVodDomainsRequest& request);
 
                 /**
+                 *音色设计，根据prompt生成音色ID。克隆/设计音色数量上限默认100
+                 * @param req DescribeVoicesRequest
+                 * @return DescribeVoicesOutcome
+                 */
+                DescribeVoicesOutcome DescribeVoices(const Model::DescribeVoicesRequest &request);
+                void DescribeVoicesAsync(const Model::DescribeVoicesRequest& request, const DescribeVoicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVoicesOutcomeCallable DescribeVoicesCallable(const Model::DescribeVoicesRequest& request);
+
+                /**
                  *查询用户自定义水印模板，支持根据条件，分页查询。
                  * @param req DescribeWatermarkTemplatesRequest
                  * @return DescribeWatermarkTemplatesOutcome
@@ -2723,6 +2780,15 @@ namespace TencentCloud
                 DescribeWordSamplesOutcome DescribeWordSamples(const Model::DescribeWordSamplesRequest &request);
                 void DescribeWordSamplesAsync(const Model::DescribeWordSamplesRequest& request, const DescribeWordSamplesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeWordSamplesOutcomeCallable DescribeWordSamplesCallable(const Model::DescribeWordSamplesRequest& request);
+
+                /**
+                 *音色设计，根据prompt生成音色ID。克隆/设计音色数量上限默认100
+                 * @param req DesignVoiceAsyncRequest
+                 * @return DesignVoiceAsyncOutcome
+                 */
+                DesignVoiceAsyncOutcome DesignVoiceAsync(const Model::DesignVoiceAsyncRequest &request);
+                void DesignVoiceAsyncAsync(const Model::DesignVoiceAsyncRequest& request, const DesignVoiceAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DesignVoiceAsyncOutcomeCallable DesignVoiceAsyncCallable(const Model::DesignVoiceAsyncRequest& request);
 
                 /**
                  *对视频进行编辑（剪辑、拼接等），生成一个新的点播视频。编辑的功能包括：
@@ -3608,6 +3674,15 @@ namespace TencentCloud
                 SplitMediaOutcomeCallable SplitMediaCallable(const Model::SplitMediaRequest& request);
 
                 /**
+                 *音色设计，根据prompt生成音色ID。克隆/设计音色数量上限默认100
+                 * @param req TextToSpeechAsyncRequest
+                 * @return TextToSpeechAsyncOutcome
+                 */
+                TextToSpeechAsyncOutcome TextToSpeechAsync(const Model::TextToSpeechAsyncRequest &request);
+                void TextToSpeechAsyncAsync(const Model::TextToSpeechAsyncRequest& request, const TextToSpeechAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TextToSpeechAsyncOutcomeCallable TextToSpeechAsyncCallable(const Model::TextToSpeechAsyncRequest& request);
+
+                /**
                  *创建AIGC调用API的Token。创建后数据同步有延时，约30秒后可查询或删除。
                  * @param req UpdateAigcApiTokenRequest
                  * @return UpdateAigcApiTokenOutcome
@@ -3615,6 +3690,15 @@ namespace TencentCloud
                 UpdateAigcApiTokenOutcome UpdateAigcApiToken(const Model::UpdateAigcApiTokenRequest &request);
                 void UpdateAigcApiTokenAsync(const Model::UpdateAigcApiTokenRequest& request, const UpdateAigcApiTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateAigcApiTokenOutcomeCallable UpdateAigcApiTokenCallable(const Model::UpdateAigcApiTokenRequest& request);
+
+                /**
+                 *音色设计，根据prompt生成音色ID。克隆/设计音色数量上限默认100
+                 * @param req UpdateVoiceRequest
+                 * @return UpdateVoiceOutcome
+                 */
+                UpdateVoiceOutcome UpdateVoice(const Model::UpdateVoiceRequest &request);
+                void UpdateVoiceAsync(const Model::UpdateVoiceRequest& request, const UpdateVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateVoiceOutcomeCallable UpdateVoiceCallable(const Model::UpdateVoiceRequest& request);
 
                 /**
                  *该接口用于验证域名解析值。

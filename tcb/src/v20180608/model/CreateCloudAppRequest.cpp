@@ -32,7 +32,8 @@ CreateCloudAppRequest::CreateCloudAppRequest() :
     m_commandsHasBeenSet(false),
     m_envHasBeenSet(false),
     m_customStepsHasBeenSet(false),
-    m_secretsHasBeenSet(false)
+    m_secretsHasBeenSet(false),
+    m_nodeJsVersionHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,14 @@ string CreateCloudAppRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_nodeJsVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeJsVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_nodeJsVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -313,6 +322,22 @@ void CreateCloudAppRequest::SetSecrets(const vector<BuildSecret>& _secrets)
 bool CreateCloudAppRequest::SecretsHasBeenSet() const
 {
     return m_secretsHasBeenSet;
+}
+
+string CreateCloudAppRequest::GetNodeJsVersion() const
+{
+    return m_nodeJsVersion;
+}
+
+void CreateCloudAppRequest::SetNodeJsVersion(const string& _nodeJsVersion)
+{
+    m_nodeJsVersion = _nodeJsVersion;
+    m_nodeJsVersionHasBeenSet = true;
+}
+
+bool CreateCloudAppRequest::NodeJsVersionHasBeenSet() const
+{
+    return m_nodeJsVersionHasBeenSet;
 }
 
 

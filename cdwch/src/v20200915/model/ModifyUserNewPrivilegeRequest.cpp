@@ -28,7 +28,8 @@ ModifyUserNewPrivilegeRequest::ModifyUserNewPrivilegeRequest() :
     m_userNameHasBeenSet(false),
     m_allDatabaseHasBeenSet(false),
     m_globalPrivilegesHasBeenSet(false),
-    m_databasePrivilegeListHasBeenSet(false)
+    m_databasePrivilegeListHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,14 @@ string ModifyUserNewPrivilegeRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -201,6 +210,22 @@ void ModifyUserNewPrivilegeRequest::SetDatabasePrivilegeList(const vector<Databa
 bool ModifyUserNewPrivilegeRequest::DatabasePrivilegeListHasBeenSet() const
 {
     return m_databasePrivilegeListHasBeenSet;
+}
+
+string ModifyUserNewPrivilegeRequest::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void ModifyUserNewPrivilegeRequest::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool ModifyUserNewPrivilegeRequest::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
 }
 
 

@@ -23,18 +23,18 @@ using namespace TencentCloud::Iotexplorer::V20190423::Model;
 using namespace std;
 
 ListTWeSeeTasksRequest::ListTWeSeeTasksRequest() :
-    m_productIdHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
-    m_serviceCategoryHasBeenSet(false),
     m_limitHasBeenSet(false),
+    m_productIdHasBeenSet(false),
+    m_serviceCategoryHasBeenSet(false),
+    m_channelIdHasBeenSet(false),
+    m_endTimeMsHasBeenSet(false),
+    m_fileURLExpireTimeHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_serviceTypesHasBeenSet(false),
-    m_channelIdHasBeenSet(false),
     m_startTimeMsHasBeenSet(false),
-    m_endTimeMsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_fileURLExpireTimeHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -45,28 +45,12 @@ string ListTWeSeeTasksRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_productIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProductId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_deviceNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_serviceCategoryHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ServiceCategory";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_serviceCategory.c_str(), allocator).Move(), allocator);
     }
 
     if (m_limitHasBeenSet)
@@ -77,25 +61,20 @@ string ListTWeSeeTasksRequest::ToJsonString() const
         d.AddMember(iKey, m_limit, allocator);
     }
 
-    if (m_offsetHasBeenSet)
+    if (m_productIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
+        string key = "ProductId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_serviceTypesHasBeenSet)
+    if (m_serviceCategoryHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ServiceTypes";
+        string key = "ServiceCategory";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_serviceTypes.begin(); itr != m_serviceTypes.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+        d.AddMember(iKey, rapidjson::Value(m_serviceCategory.c_str(), allocator).Move(), allocator);
     }
 
     if (m_channelIdHasBeenSet)
@@ -106,28 +85,12 @@ string ListTWeSeeTasksRequest::ToJsonString() const
         d.AddMember(iKey, m_channelId, allocator);
     }
 
-    if (m_startTimeMsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StartTimeMs";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_startTimeMs, allocator);
-    }
-
     if (m_endTimeMsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTimeMs";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_endTimeMs, allocator);
-    }
-
-    if (m_statusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_status, allocator);
     }
 
     if (m_fileURLExpireTimeHasBeenSet)
@@ -153,6 +116,43 @@ string ListTWeSeeTasksRequest::ToJsonString() const
         }
     }
 
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_serviceTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_serviceTypes.begin(); itr != m_serviceTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_startTimeMsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTimeMs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_startTimeMs, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_status, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -160,22 +160,6 @@ string ListTWeSeeTasksRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string ListTWeSeeTasksRequest::GetProductId() const
-{
-    return m_productId;
-}
-
-void ListTWeSeeTasksRequest::SetProductId(const string& _productId)
-{
-    m_productId = _productId;
-    m_productIdHasBeenSet = true;
-}
-
-bool ListTWeSeeTasksRequest::ProductIdHasBeenSet() const
-{
-    return m_productIdHasBeenSet;
-}
 
 string ListTWeSeeTasksRequest::GetDeviceName() const
 {
@@ -191,6 +175,38 @@ void ListTWeSeeTasksRequest::SetDeviceName(const string& _deviceName)
 bool ListTWeSeeTasksRequest::DeviceNameHasBeenSet() const
 {
     return m_deviceNameHasBeenSet;
+}
+
+uint64_t ListTWeSeeTasksRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void ListTWeSeeTasksRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool ListTWeSeeTasksRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+string ListTWeSeeTasksRequest::GetProductId() const
+{
+    return m_productId;
+}
+
+void ListTWeSeeTasksRequest::SetProductId(const string& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool ListTWeSeeTasksRequest::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
 }
 
 string ListTWeSeeTasksRequest::GetServiceCategory() const
@@ -209,20 +225,68 @@ bool ListTWeSeeTasksRequest::ServiceCategoryHasBeenSet() const
     return m_serviceCategoryHasBeenSet;
 }
 
-uint64_t ListTWeSeeTasksRequest::GetLimit() const
+uint64_t ListTWeSeeTasksRequest::GetChannelId() const
 {
-    return m_limit;
+    return m_channelId;
 }
 
-void ListTWeSeeTasksRequest::SetLimit(const uint64_t& _limit)
+void ListTWeSeeTasksRequest::SetChannelId(const uint64_t& _channelId)
 {
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
+    m_channelId = _channelId;
+    m_channelIdHasBeenSet = true;
 }
 
-bool ListTWeSeeTasksRequest::LimitHasBeenSet() const
+bool ListTWeSeeTasksRequest::ChannelIdHasBeenSet() const
 {
-    return m_limitHasBeenSet;
+    return m_channelIdHasBeenSet;
+}
+
+int64_t ListTWeSeeTasksRequest::GetEndTimeMs() const
+{
+    return m_endTimeMs;
+}
+
+void ListTWeSeeTasksRequest::SetEndTimeMs(const int64_t& _endTimeMs)
+{
+    m_endTimeMs = _endTimeMs;
+    m_endTimeMsHasBeenSet = true;
+}
+
+bool ListTWeSeeTasksRequest::EndTimeMsHasBeenSet() const
+{
+    return m_endTimeMsHasBeenSet;
+}
+
+int64_t ListTWeSeeTasksRequest::GetFileURLExpireTime() const
+{
+    return m_fileURLExpireTime;
+}
+
+void ListTWeSeeTasksRequest::SetFileURLExpireTime(const int64_t& _fileURLExpireTime)
+{
+    m_fileURLExpireTime = _fileURLExpireTime;
+    m_fileURLExpireTimeHasBeenSet = true;
+}
+
+bool ListTWeSeeTasksRequest::FileURLExpireTimeHasBeenSet() const
+{
+    return m_fileURLExpireTimeHasBeenSet;
+}
+
+vector<VisionRecognitionTaskFilter> ListTWeSeeTasksRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void ListTWeSeeTasksRequest::SetFilters(const vector<VisionRecognitionTaskFilter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool ListTWeSeeTasksRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 uint64_t ListTWeSeeTasksRequest::GetOffset() const
@@ -257,22 +321,6 @@ bool ListTWeSeeTasksRequest::ServiceTypesHasBeenSet() const
     return m_serviceTypesHasBeenSet;
 }
 
-uint64_t ListTWeSeeTasksRequest::GetChannelId() const
-{
-    return m_channelId;
-}
-
-void ListTWeSeeTasksRequest::SetChannelId(const uint64_t& _channelId)
-{
-    m_channelId = _channelId;
-    m_channelIdHasBeenSet = true;
-}
-
-bool ListTWeSeeTasksRequest::ChannelIdHasBeenSet() const
-{
-    return m_channelIdHasBeenSet;
-}
-
 int64_t ListTWeSeeTasksRequest::GetStartTimeMs() const
 {
     return m_startTimeMs;
@@ -289,22 +337,6 @@ bool ListTWeSeeTasksRequest::StartTimeMsHasBeenSet() const
     return m_startTimeMsHasBeenSet;
 }
 
-int64_t ListTWeSeeTasksRequest::GetEndTimeMs() const
-{
-    return m_endTimeMs;
-}
-
-void ListTWeSeeTasksRequest::SetEndTimeMs(const int64_t& _endTimeMs)
-{
-    m_endTimeMs = _endTimeMs;
-    m_endTimeMsHasBeenSet = true;
-}
-
-bool ListTWeSeeTasksRequest::EndTimeMsHasBeenSet() const
-{
-    return m_endTimeMsHasBeenSet;
-}
-
 int64_t ListTWeSeeTasksRequest::GetStatus() const
 {
     return m_status;
@@ -319,38 +351,6 @@ void ListTWeSeeTasksRequest::SetStatus(const int64_t& _status)
 bool ListTWeSeeTasksRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
-}
-
-int64_t ListTWeSeeTasksRequest::GetFileURLExpireTime() const
-{
-    return m_fileURLExpireTime;
-}
-
-void ListTWeSeeTasksRequest::SetFileURLExpireTime(const int64_t& _fileURLExpireTime)
-{
-    m_fileURLExpireTime = _fileURLExpireTime;
-    m_fileURLExpireTimeHasBeenSet = true;
-}
-
-bool ListTWeSeeTasksRequest::FileURLExpireTimeHasBeenSet() const
-{
-    return m_fileURLExpireTimeHasBeenSet;
-}
-
-vector<VisionRecognitionTaskFilter> ListTWeSeeTasksRequest::GetFilters() const
-{
-    return m_filters;
-}
-
-void ListTWeSeeTasksRequest::SetFilters(const vector<VisionRecognitionTaskFilter>& _filters)
-{
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
-}
-
-bool ListTWeSeeTasksRequest::FiltersHasBeenSet() const
-{
-    return m_filtersHasBeenSet;
 }
 
 

@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Pulsar专业版实例信息
+                * Pulsar标准版或专业版实例信息
                 */
                 class PulsarProInstance : public AbstractModel
                 {
@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取<p>实例id</p>
+                     * @return InstanceId <p>实例id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceId 实例id
+                     * 设置<p>实例id</p>
+                     * @param _instanceId <p>实例id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取<p>实例名称</p>
+                     * @return InstanceName <p>实例名称</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _instanceName 实例名称
+                     * 设置<p>实例名称</p>
+                     * @param _instanceName <p>实例名称</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例版本
-                     * @return InstanceVersion 实例版本
+                     * 获取<p>实例版本</p>
+                     * @return InstanceVersion <p>实例版本</p>
                      * 
                      */
                     std::string GetInstanceVersion() const;
 
                     /**
-                     * 设置实例版本
-                     * @param _instanceVersion 实例版本
+                     * 设置<p>实例版本</p>
+                     * @param _instanceVersion <p>实例版本</p>
                      * 
                      */
                     void SetInstanceVersion(const std::string& _instanceVersion);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool InstanceVersionHasBeenSet() const;
 
                     /**
-                     * 获取实例状态，0-创建中，1-正常，2-隔离中，3-已销毁，4 - 异常, 5 - 发货失败，6-变配中，7-变配失败
-                     * @return Status 实例状态，0-创建中，1-正常，2-隔离中，3-已销毁，4 - 异常, 5 - 发货失败，6-变配中，7-变配失败
+                     * 获取<p>实例状态，0-创建中，1-正常，2-隔离中，3-已销毁，4 - 异常, 5 - 发货失败，6-变配中，7-变配失败</p>
+                     * @return Status <p>实例状态，0-创建中，1-正常，2-隔离中，3-已销毁，4 - 异常, 5 - 发货失败，6-变配中，7-变配失败</p>
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置实例状态，0-创建中，1-正常，2-隔离中，3-已销毁，4 - 异常, 5 - 发货失败，6-变配中，7-变配失败
-                     * @param _status 实例状态，0-创建中，1-正常，2-隔离中，3-已销毁，4 - 异常, 5 - 发货失败，6-变配中，7-变配失败
+                     * 设置<p>实例状态，0-创建中，1-正常，2-隔离中，3-已销毁，4 - 异常, 5 - 发货失败，6-变配中，7-变配失败</p>
+                     * @param _status <p>实例状态，0-创建中，1-正常，2-隔离中，3-已销毁，4 - 异常, 5 - 发货失败，6-变配中，7-变配失败</p>
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取实例配置规格名称
-                     * @return ConfigDisplay 实例配置规格名称
+                     * 获取<p>实例配置规格名称</p>
+                     * @return ConfigDisplay <p>实例配置规格名称</p>
                      * 
                      */
                     std::string GetConfigDisplay() const;
 
                     /**
-                     * 设置实例配置规格名称
-                     * @param _configDisplay 实例配置规格名称
+                     * 设置<p>实例配置规格名称</p>
+                     * @param _configDisplay <p>实例配置规格名称</p>
                      * 
                      */
                     void SetConfigDisplay(const std::string& _configDisplay);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool ConfigDisplayHasBeenSet() const;
 
                     /**
-                     * 获取峰值TPS
-                     * @return MaxTps 峰值TPS
+                     * 获取<p>峰值TPS</p>
+                     * @return MaxTps <p>峰值TPS</p>
                      * 
                      */
                     uint64_t GetMaxTps() const;
 
                     /**
-                     * 设置峰值TPS
-                     * @param _maxTps 峰值TPS
+                     * 设置<p>峰值TPS</p>
+                     * @param _maxTps <p>峰值TPS</p>
                      * 
                      */
                     void SetMaxTps(const uint64_t& _maxTps);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool MaxTpsHasBeenSet() const;
 
                     /**
-                     * 获取存储容量，GB为单位
-                     * @return MaxStorage 存储容量，GB为单位
+                     * 获取<p>存储容量，GB为单位</p>
+                     * @return MaxStorage <p>存储容量，GB为单位</p>
                      * 
                      */
                     uint64_t GetMaxStorage() const;
 
                     /**
-                     * 设置存储容量，GB为单位
-                     * @param _maxStorage 存储容量，GB为单位
+                     * 设置<p>存储容量，GB为单位</p>
+                     * @param _maxStorage <p>存储容量，GB为单位</p>
                      * 
                      */
                     void SetMaxStorage(const uint64_t& _maxStorage);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool MaxStorageHasBeenSet() const;
 
                     /**
-                     * 获取实例到期时间，毫秒为单位
-                     * @return ExpireTime 实例到期时间，毫秒为单位
+                     * 获取<p>实例到期时间，毫秒为单位</p>
+                     * @return ExpireTime <p>实例到期时间，毫秒为单位</p>
                      * 
                      */
                     uint64_t GetExpireTime() const;
 
                     /**
-                     * 设置实例到期时间，毫秒为单位
-                     * @param _expireTime 实例到期时间，毫秒为单位
+                     * 设置<p>实例到期时间，毫秒为单位</p>
+                     * @param _expireTime <p>实例到期时间，毫秒为单位</p>
                      * 
                      */
                     void SetExpireTime(const uint64_t& _expireTime);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
-                     * @return AutoRenewFlag 自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
+                     * 获取<p>自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)</p>
+                     * @return AutoRenewFlag <p>自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)</p>
                      * 
                      */
                     uint64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
-                     * @param _autoRenewFlag 自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
+                     * 设置<p>自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)</p>
+                     * @param _autoRenewFlag <p>自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)</p>
                      * 
                      */
                     void SetAutoRenewFlag(const uint64_t& _autoRenewFlag);
@@ -238,15 +238,15 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取0-后付费，1-预付费
-                     * @return PayMode 0-后付费，1-预付费
+                     * 获取<p>0-后付费，1-预付费</p>
+                     * @return PayMode <p>0-后付费，1-预付费</p>
                      * 
                      */
                     uint64_t GetPayMode() const;
 
                     /**
-                     * 设置0-后付费，1-预付费
-                     * @param _payMode 0-后付费，1-预付费
+                     * 设置<p>0-后付费，1-预付费</p>
+                     * @param _payMode <p>0-后付费，1-预付费</p>
                      * 
                      */
                     void SetPayMode(const uint64_t& _payMode);
@@ -259,18 +259,18 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取备注信息
+                     * 获取<p>备注信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Remark 备注信息
+                     * @return Remark <p>备注信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注信息
+                     * 设置<p>备注信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _remark 备注信息
+                     * @param _remark <p>备注信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -284,15 +284,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取实例配置ID
-                     * @return SpecName 实例配置ID
+                     * 获取<p>实例配置ID</p>
+                     * @return SpecName <p>实例配置ID</p>
                      * 
                      */
                     std::string GetSpecName() const;
 
                     /**
-                     * 设置实例配置ID
-                     * @param _specName 实例配置ID
+                     * 设置<p>实例配置ID</p>
+                     * @param _specName <p>实例配置ID</p>
                      * 
                      */
                     void SetSpecName(const std::string& _specName);
@@ -305,18 +305,18 @@ namespace TencentCloud
                     bool SpecNameHasBeenSet() const;
 
                     /**
-                     * 获取规格外弹性TPS
+                     * 获取<p>规格外弹性TPS</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScalableTps 规格外弹性TPS
+                     * @return ScalableTps <p>规格外弹性TPS</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetScalableTps() const;
 
                     /**
-                     * 设置规格外弹性TPS
+                     * 设置<p>规格外弹性TPS</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scalableTps 规格外弹性TPS
+                     * @param _scalableTps <p>规格外弹性TPS</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -330,18 +330,18 @@ namespace TencentCloud
                     bool ScalableTpsHasBeenSet() const;
 
                     /**
-                     * 获取VPC的id
+                     * 获取<p>VPC的id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VpcId VPC的id
+                     * @return VpcId <p>VPC的id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC的id
+                     * 设置<p>VPC的id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vpcId VPC的id
+                     * @param _vpcId <p>VPC的id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -355,18 +355,18 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网id
+                     * 获取<p>子网id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubnetId 子网id
+                     * @return SubnetId <p>子网id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网id
+                     * 设置<p>子网id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subnetId 子网id
+                     * @param _subnetId <p>子网id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -380,15 +380,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取峰值带宽。单位：mbps
-                     * @return MaxBandWidth 峰值带宽。单位：mbps
+                     * 获取<p>峰值带宽。单位：mbps</p>
+                     * @return MaxBandWidth <p>峰值带宽。单位：mbps</p>
                      * 
                      */
                     uint64_t GetMaxBandWidth() const;
 
                     /**
-                     * 设置峰值带宽。单位：mbps
-                     * @param _maxBandWidth 峰值带宽。单位：mbps
+                     * 设置<p>峰值带宽。单位：mbps</p>
+                     * @param _maxBandWidth <p>峰值带宽。单位：mbps</p>
                      * 
                      */
                     void SetMaxBandWidth(const uint64_t& _maxBandWidth);
@@ -401,18 +401,18 @@ namespace TencentCloud
                     bool MaxBandWidthHasBeenSet() const;
 
                     /**
-                     * 获取集群的标签列表
+                     * 获取<p>集群的标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 集群的标签列表
+                     * @return Tags <p>集群的标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置集群的标签列表
+                     * 设置<p>集群的标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tags 集群的标签列表
+                     * @param _tags <p>集群的标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -426,18 +426,18 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取集群创建时间
+                     * 获取<p>集群创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 集群创建时间
+                     * @return CreateTime <p>集群创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置集群创建时间
+                     * 设置<p>集群创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 集群创建时间
+                     * @param _createTime <p>集群创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -451,18 +451,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
+                     * 获取<p>代表是专业版和标准版的不同计费规格<br>PULSAR.P1固定存储<br>PULSAR.P2弹性存储<br>PULSAR.S2标准版</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BillingLabelVersion 代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
+                     * @return BillingLabelVersion <p>代表是专业版和标准版的不同计费规格<br>PULSAR.P1固定存储<br>PULSAR.P2弹性存储<br>PULSAR.S2标准版</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBillingLabelVersion() const;
 
                     /**
-                     * 设置代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
+                     * 设置<p>代表是专业版和标准版的不同计费规格<br>PULSAR.P1固定存储<br>PULSAR.P2弹性存储<br>PULSAR.S2标准版</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _billingLabelVersion 代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
+                     * @param _billingLabelVersion <p>代表是专业版和标准版的不同计费规格<br>PULSAR.P1固定存储<br>PULSAR.P2弹性存储<br>PULSAR.S2标准版</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -476,15 +476,15 @@ namespace TencentCloud
                     bool BillingLabelVersionHasBeenSet() const;
 
                     /**
-                     * 获取自定义租户
-                     * @return Tenant 自定义租户
+                     * 获取<p>自定义租户</p>
+                     * @return Tenant <p>自定义租户</p>
                      * 
                      */
                     std::string GetTenant() const;
 
                     /**
-                     * 设置自定义租户
-                     * @param _tenant 自定义租户
+                     * 设置<p>自定义租户</p>
+                     * @param _tenant <p>自定义租户</p>
                      * 
                      */
                     void SetTenant(const std::string& _tenant);
@@ -497,15 +497,15 @@ namespace TencentCloud
                     bool TenantHasBeenSet() const;
 
                     /**
-                     * 获取集群的证书列表
-                     * @return CertificateList 集群的证书列表
+                     * 获取<p>集群的证书列表</p>
+                     * @return CertificateList <p>集群的证书列表</p>
                      * 
                      */
                     std::vector<CertificateInfo> GetCertificateList() const;
 
                     /**
-                     * 设置集群的证书列表
-                     * @param _certificateList 集群的证书列表
+                     * 设置<p>集群的证书列表</p>
+                     * @param _certificateList <p>集群的证书列表</p>
                      * 
                      */
                     void SetCertificateList(const std::vector<CertificateInfo>& _certificateList);
@@ -520,134 +520,134 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例id
+                     * <p>实例id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * <p>实例名称</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 实例版本
+                     * <p>实例版本</p>
                      */
                     std::string m_instanceVersion;
                     bool m_instanceVersionHasBeenSet;
 
                     /**
-                     * 实例状态，0-创建中，1-正常，2-隔离中，3-已销毁，4 - 异常, 5 - 发货失败，6-变配中，7-变配失败
+                     * <p>实例状态，0-创建中，1-正常，2-隔离中，3-已销毁，4 - 异常, 5 - 发货失败，6-变配中，7-变配失败</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 实例配置规格名称
+                     * <p>实例配置规格名称</p>
                      */
                     std::string m_configDisplay;
                     bool m_configDisplayHasBeenSet;
 
                     /**
-                     * 峰值TPS
+                     * <p>峰值TPS</p>
                      */
                     uint64_t m_maxTps;
                     bool m_maxTpsHasBeenSet;
 
                     /**
-                     * 存储容量，GB为单位
+                     * <p>存储容量，GB为单位</p>
                      */
                     uint64_t m_maxStorage;
                     bool m_maxStorageHasBeenSet;
 
                     /**
-                     * 实例到期时间，毫秒为单位
+                     * <p>实例到期时间，毫秒为单位</p>
                      */
                     uint64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
+                     * <p>自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)</p>
                      */
                     uint64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 0-后付费，1-预付费
+                     * <p>0-后付费，1-预付费</p>
                      */
                     uint64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 备注信息
+                     * <p>备注信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 实例配置ID
+                     * <p>实例配置ID</p>
                      */
                     std::string m_specName;
                     bool m_specNameHasBeenSet;
 
                     /**
-                     * 规格外弹性TPS
+                     * <p>规格外弹性TPS</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_scalableTps;
                     bool m_scalableTpsHasBeenSet;
 
                     /**
-                     * VPC的id
+                     * <p>VPC的id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网id
+                     * <p>子网id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 峰值带宽。单位：mbps
+                     * <p>峰值带宽。单位：mbps</p>
                      */
                     uint64_t m_maxBandWidth;
                     bool m_maxBandWidthHasBeenSet;
 
                     /**
-                     * 集群的标签列表
+                     * <p>集群的标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 集群创建时间
+                     * <p>集群创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
+                     * <p>代表是专业版和标准版的不同计费规格<br>PULSAR.P1固定存储<br>PULSAR.P2弹性存储<br>PULSAR.S2标准版</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billingLabelVersion;
                     bool m_billingLabelVersionHasBeenSet;
 
                     /**
-                     * 自定义租户
+                     * <p>自定义租户</p>
                      */
                     std::string m_tenant;
                     bool m_tenantHasBeenSet;
 
                     /**
-                     * 集群的证书列表
+                     * <p>集群的证书列表</p>
                      */
                     std::vector<CertificateInfo> m_certificateList;
                     bool m_certificateListHasBeenSet;

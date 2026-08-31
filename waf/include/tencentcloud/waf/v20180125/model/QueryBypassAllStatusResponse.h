@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取该用户是否被加入了全局的bypass列表
-                     * @return Result 该用户是否被加入了全局的bypass列表
+                     * 获取<p>该用户是否被加入了全局的bypass列表</p>
+                     * @return Result <p>该用户是否被加入了全局的bypass列表</p>
                      * 
                      */
                     bool GetResult() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 该用户是否被加入了全局的bypass列表
+                     * <p>该用户是否被加入了全局的bypass列表</p>
                      */
                     bool m_result;
                     bool m_resultHasBeenSet;

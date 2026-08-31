@@ -47,6 +47,8 @@
 #include <tencentcloud/mps/v20190612/model/CreateAIRecognitionTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateAdaptiveDynamicStreamingTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateAdaptiveDynamicStreamingTemplateResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateAgentRecordTaskRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateAgentRecordTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateAiDramaTaskRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateAiDramaTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateAiFissionTaskRequest.h>
@@ -205,6 +207,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeAIRecognitionTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAdaptiveDynamicStreamingTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAdaptiveDynamicStreamingTemplatesResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeAgentRecordTaskRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeAgentRecordTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAigcAudioTaskRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAigcAudioTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAigcImageTaskRequest.h>
@@ -443,6 +447,8 @@
 #include <tencentcloud/mps/v20190612/model/ProcessLiveStreamResponse.h>
 #include <tencentcloud/mps/v20190612/model/ProcessMediaRequest.h>
 #include <tencentcloud/mps/v20190612/model/ProcessMediaResponse.h>
+#include <tencentcloud/mps/v20190612/model/QueryHunyuan3DTaskRequest.h>
+#include <tencentcloud/mps/v20190612/model/QueryHunyuan3DTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/QueryProjectRequest.h>
 #include <tencentcloud/mps/v20190612/model/QueryProjectResponse.h>
 #include <tencentcloud/mps/v20190612/model/RecognizeAudioRequest.h>
@@ -459,6 +465,8 @@
 #include <tencentcloud/mps/v20190612/model/StopStreamLinkFlowResponse.h>
 #include <tencentcloud/mps/v20190612/model/StopStreamPackageLinearAssemblyChannelRequest.h>
 #include <tencentcloud/mps/v20190612/model/StopStreamPackageLinearAssemblyChannelResponse.h>
+#include <tencentcloud/mps/v20190612/model/SubmitHunyuan3DTaskRequest.h>
+#include <tencentcloud/mps/v20190612/model/SubmitHunyuan3DTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/SyncDubbingRequest.h>
 #include <tencentcloud/mps/v20190612/model/SyncDubbingResponse.h>
 #include <tencentcloud/mps/v20190612/model/TextToSpeechRequest.h>
@@ -523,6 +531,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAdaptiveDynamicStreamingTemplateResponse> CreateAdaptiveDynamicStreamingTemplateOutcome;
                 typedef std::future<CreateAdaptiveDynamicStreamingTemplateOutcome> CreateAdaptiveDynamicStreamingTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateAdaptiveDynamicStreamingTemplateRequest&, CreateAdaptiveDynamicStreamingTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAdaptiveDynamicStreamingTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAgentRecordTaskResponse> CreateAgentRecordTaskOutcome;
+                typedef std::future<CreateAgentRecordTaskOutcome> CreateAgentRecordTaskOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateAgentRecordTaskRequest&, CreateAgentRecordTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAgentRecordTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAiDramaTaskResponse> CreateAiDramaTaskOutcome;
                 typedef std::future<CreateAiDramaTaskOutcome> CreateAiDramaTaskOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateAiDramaTaskRequest&, CreateAiDramaTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAiDramaTaskAsyncHandler;
@@ -760,6 +771,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAdaptiveDynamicStreamingTemplatesResponse> DescribeAdaptiveDynamicStreamingTemplatesOutcome;
                 typedef std::future<DescribeAdaptiveDynamicStreamingTemplatesOutcome> DescribeAdaptiveDynamicStreamingTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeAdaptiveDynamicStreamingTemplatesRequest&, DescribeAdaptiveDynamicStreamingTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAdaptiveDynamicStreamingTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAgentRecordTaskResponse> DescribeAgentRecordTaskOutcome;
+                typedef std::future<DescribeAgentRecordTaskOutcome> DescribeAgentRecordTaskOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeAgentRecordTaskRequest&, DescribeAgentRecordTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentRecordTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAigcAudioTaskResponse> DescribeAigcAudioTaskOutcome;
                 typedef std::future<DescribeAigcAudioTaskOutcome> DescribeAigcAudioTaskOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeAigcAudioTaskRequest&, DescribeAigcAudioTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcAudioTaskAsyncHandler;
@@ -1117,6 +1131,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ProcessMediaResponse> ProcessMediaOutcome;
                 typedef std::future<ProcessMediaOutcome> ProcessMediaOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ProcessMediaRequest&, ProcessMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ProcessMediaAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryHunyuan3DTaskResponse> QueryHunyuan3DTaskOutcome;
+                typedef std::future<QueryHunyuan3DTaskOutcome> QueryHunyuan3DTaskOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::QueryHunyuan3DTaskRequest&, QueryHunyuan3DTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryHunyuan3DTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryProjectResponse> QueryProjectOutcome;
                 typedef std::future<QueryProjectOutcome> QueryProjectOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::QueryProjectRequest&, QueryProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryProjectAsyncHandler;
@@ -1141,6 +1158,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopStreamPackageLinearAssemblyChannelResponse> StopStreamPackageLinearAssemblyChannelOutcome;
                 typedef std::future<StopStreamPackageLinearAssemblyChannelOutcome> StopStreamPackageLinearAssemblyChannelOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::StopStreamPackageLinearAssemblyChannelRequest&, StopStreamPackageLinearAssemblyChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopStreamPackageLinearAssemblyChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitHunyuan3DTaskResponse> SubmitHunyuan3DTaskOutcome;
+                typedef std::future<SubmitHunyuan3DTaskOutcome> SubmitHunyuan3DTaskOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::SubmitHunyuan3DTaskRequest&, SubmitHunyuan3DTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitHunyuan3DTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::SyncDubbingResponse> SyncDubbingOutcome;
                 typedef std::future<SyncDubbingOutcome> SyncDubbingOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::SyncDubbingRequest&, SyncDubbingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncDubbingAsyncHandler;
@@ -1273,6 +1293,15 @@ namespace TencentCloud
                 CreateAdaptiveDynamicStreamingTemplateOutcome CreateAdaptiveDynamicStreamingTemplate(const Model::CreateAdaptiveDynamicStreamingTemplateRequest &request);
                 void CreateAdaptiveDynamicStreamingTemplateAsync(const Model::CreateAdaptiveDynamicStreamingTemplateRequest& request, const CreateAdaptiveDynamicStreamingTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAdaptiveDynamicStreamingTemplateOutcomeCallable CreateAdaptiveDynamicStreamingTemplateCallable(const Model::CreateAdaptiveDynamicStreamingTemplateRequest& request);
+
+                /**
+                 *调用该接口，用于创建Agent录制任务。
+                 * @param req CreateAgentRecordTaskRequest
+                 * @return CreateAgentRecordTaskOutcome
+                 */
+                CreateAgentRecordTaskOutcome CreateAgentRecordTask(const Model::CreateAgentRecordTaskRequest &request);
+                void CreateAgentRecordTaskAsync(const Model::CreateAgentRecordTaskRequest& request, const CreateAgentRecordTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAgentRecordTaskOutcomeCallable CreateAgentRecordTaskCallable(const Model::CreateAgentRecordTaskRequest& request);
 
                 /**
                  *Ai漫剧工作流，输入剧本，自动拆分分镜，生成Ai漫剧
@@ -2016,6 +2045,15 @@ namespace TencentCloud
                 DescribeAdaptiveDynamicStreamingTemplatesOutcome DescribeAdaptiveDynamicStreamingTemplates(const Model::DescribeAdaptiveDynamicStreamingTemplatesRequest &request);
                 void DescribeAdaptiveDynamicStreamingTemplatesAsync(const Model::DescribeAdaptiveDynamicStreamingTemplatesRequest& request, const DescribeAdaptiveDynamicStreamingTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAdaptiveDynamicStreamingTemplatesOutcomeCallable DescribeAdaptiveDynamicStreamingTemplatesCallable(const Model::DescribeAdaptiveDynamicStreamingTemplatesRequest& request);
+
+                /**
+                 *调用该接口，用于查询Agent录制任务的进度以及获取生成结果。
+                 * @param req DescribeAgentRecordTaskRequest
+                 * @return DescribeAgentRecordTaskOutcome
+                 */
+                DescribeAgentRecordTaskOutcome DescribeAgentRecordTask(const Model::DescribeAgentRecordTaskRequest &request);
+                void DescribeAgentRecordTaskAsync(const Model::DescribeAgentRecordTaskRequest& request, const DescribeAgentRecordTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAgentRecordTaskOutcomeCallable DescribeAgentRecordTaskCallable(const Model::DescribeAgentRecordTaskRequest& request);
 
                 /**
                  *调用该接口，用于查询AIGC生视频任务的进度以及获取生成结果。
@@ -3134,6 +3172,15 @@ namespace TencentCloud
                 ProcessMediaOutcomeCallable ProcessMediaCallable(const Model::ProcessMediaRequest& request);
 
                 /**
+                 *查询混元3D任务对应的结果
+                 * @param req QueryHunyuan3DTaskRequest
+                 * @return QueryHunyuan3DTaskOutcome
+                 */
+                QueryHunyuan3DTaskOutcome QueryHunyuan3DTask(const Model::QueryHunyuan3DTaskRequest &request);
+                void QueryHunyuan3DTaskAsync(const Model::QueryHunyuan3DTaskRequest& request, const QueryHunyuan3DTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryHunyuan3DTaskOutcomeCallable QueryHunyuan3DTaskCallable(const Model::QueryHunyuan3DTaskRequest& request);
+
+                /**
                  *剧集项目查询
                  * @param req QueryProjectRequest
                  * @return QueryProjectOutcome
@@ -3204,6 +3251,15 @@ namespace TencentCloud
                 StopStreamPackageLinearAssemblyChannelOutcome StopStreamPackageLinearAssemblyChannel(const Model::StopStreamPackageLinearAssemblyChannelRequest &request);
                 void StopStreamPackageLinearAssemblyChannelAsync(const Model::StopStreamPackageLinearAssemblyChannelRequest& request, const StopStreamPackageLinearAssemblyChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopStreamPackageLinearAssemblyChannelOutcomeCallable StopStreamPackageLinearAssemblyChannelCallable(const Model::StopStreamPackageLinearAssemblyChannelRequest& request);
+
+                /**
+                 *提交创建混元3D的任务
+                 * @param req SubmitHunyuan3DTaskRequest
+                 * @return SubmitHunyuan3DTaskOutcome
+                 */
+                SubmitHunyuan3DTaskOutcome SubmitHunyuan3DTask(const Model::SubmitHunyuan3DTaskRequest &request);
+                void SubmitHunyuan3DTaskAsync(const Model::SubmitHunyuan3DTaskRequest& request, const SubmitHunyuan3DTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitHunyuan3DTaskOutcomeCallable SubmitHunyuan3DTaskCallable(const Model::SubmitHunyuan3DTaskRequest& request);
 
                 /**
                  *同步接口，返回克隆音色ID或合成音频结果。克隆/设计音色数量上限默认100

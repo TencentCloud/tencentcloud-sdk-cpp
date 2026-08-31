@@ -32,7 +32,9 @@ TestModelInputModalitiesRequest::TestModelInputModalitiesRequest() :
     m_apiBaseHasBeenSet(false),
     m_hostHeaderHasBeenSet(false),
     m_serviceProviderIdHasBeenSet(false),
-    m_verifySSLHasBeenSet(false)
+    m_verifySSLHasBeenSet(false),
+    m_healthCheckProtocolHasBeenSet(false),
+    m_cMRPrivateNetworkTunnelIdHasBeenSet(false)
 {
 }
 
@@ -121,6 +123,22 @@ string TestModelInputModalitiesRequest::ToJsonString() const
         string key = "VerifySSL";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_verifySSL, allocator);
+    }
+
+    if (m_healthCheckProtocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheckProtocol";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_healthCheckProtocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cMRPrivateNetworkTunnelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CMRPrivateNetworkTunnelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cMRPrivateNetworkTunnelId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -289,6 +307,38 @@ void TestModelInputModalitiesRequest::SetVerifySSL(const bool& _verifySSL)
 bool TestModelInputModalitiesRequest::VerifySSLHasBeenSet() const
 {
     return m_verifySSLHasBeenSet;
+}
+
+string TestModelInputModalitiesRequest::GetHealthCheckProtocol() const
+{
+    return m_healthCheckProtocol;
+}
+
+void TestModelInputModalitiesRequest::SetHealthCheckProtocol(const string& _healthCheckProtocol)
+{
+    m_healthCheckProtocol = _healthCheckProtocol;
+    m_healthCheckProtocolHasBeenSet = true;
+}
+
+bool TestModelInputModalitiesRequest::HealthCheckProtocolHasBeenSet() const
+{
+    return m_healthCheckProtocolHasBeenSet;
+}
+
+string TestModelInputModalitiesRequest::GetCMRPrivateNetworkTunnelId() const
+{
+    return m_cMRPrivateNetworkTunnelId;
+}
+
+void TestModelInputModalitiesRequest::SetCMRPrivateNetworkTunnelId(const string& _cMRPrivateNetworkTunnelId)
+{
+    m_cMRPrivateNetworkTunnelId = _cMRPrivateNetworkTunnelId;
+    m_cMRPrivateNetworkTunnelIdHasBeenSet = true;
+}
+
+bool TestModelInputModalitiesRequest::CMRPrivateNetworkTunnelIdHasBeenSet() const
+{
+    return m_cMRPrivateNetworkTunnelIdHasBeenSet;
 }
 
 

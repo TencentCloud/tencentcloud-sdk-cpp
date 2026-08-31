@@ -136,6 +136,31 @@ CCU-计算资源包，DISK-存储资源包
                     bool PackageTypeHasBeenSet() const;
 
                     /**
+                     * 获取资源包套餐版本
+base-基础，common-通用，enterprise-企业
+                     * @return PackageVersion 资源包套餐版本
+base-基础，common-通用，enterprise-企业
+                     * 
+                     */
+                    std::string GetPackageVersion() const;
+
+                    /**
+                     * 设置资源包套餐版本
+base-基础，common-通用，enterprise-企业
+                     * @param _packageVersion 资源包套餐版本
+base-基础，common-通用，enterprise-企业
+                     * 
+                     */
+                    void SetPackageVersion(const std::string& _packageVersion);
+
+                    /**
+                     * 判断参数 PackageVersion 是否已赋值
+                     * @return PackageVersion 是否已赋值
+                     * 
+                     */
+                    bool PackageVersionHasBeenSet() const;
+
+                    /**
                      * 获取资源包使用地域
 china-中国内地通用，overseas-港澳台及海外通用
                      * @return PackageRegion 资源包使用地域
@@ -378,6 +403,13 @@ CCU-计算资源包，DISK-存储资源包
                      */
                     std::string m_packageType;
                     bool m_packageTypeHasBeenSet;
+
+                    /**
+                     * 资源包套餐版本
+base-基础，common-通用，enterprise-企业
+                     */
+                    std::string m_packageVersion;
+                    bool m_packageVersionHasBeenSet;
 
                     /**
                      * 资源包使用地域

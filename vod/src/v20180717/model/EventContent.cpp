@@ -58,7 +58,8 @@ EventContent::EventContent() :
     m_processImageAsyncCompleteEventHasBeenSet(false),
     m_createAigcAdvancedCustomElementCompleteEventHasBeenSet(false),
     m_createAigcCustomVoiceCompleteEventHasBeenSet(false),
-    m_describeAigcFaceInfoAsyncCompleteEventHasBeenSet(false)
+    m_describeAigcFaceInfoAsyncCompleteEventHasBeenSet(false),
+    m_aigcHunyuan3DCompleteEventHasBeenSet(false)
 {
 }
 
@@ -699,6 +700,23 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
         m_describeAigcFaceInfoAsyncCompleteEventHasBeenSet = true;
     }
 
+    if (value.HasMember("AigcHunyuan3DCompleteEvent") && !value["AigcHunyuan3DCompleteEvent"].IsNull())
+    {
+        if (!value["AigcHunyuan3DCompleteEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventContent.AigcHunyuan3DCompleteEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aigcHunyuan3DCompleteEvent.Deserialize(value["AigcHunyuan3DCompleteEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aigcHunyuan3DCompleteEventHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1044,6 +1062,15 @@ void EventContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_describeAigcFaceInfoAsyncCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aigcHunyuan3DCompleteEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AigcHunyuan3DCompleteEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aigcHunyuan3DCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1655,5 +1682,21 @@ void EventContent::SetDescribeAigcFaceInfoAsyncCompleteEvent(const DescribeAigcF
 bool EventContent::DescribeAigcFaceInfoAsyncCompleteEventHasBeenSet() const
 {
     return m_describeAigcFaceInfoAsyncCompleteEventHasBeenSet;
+}
+
+AigcHunyuan3DTask EventContent::GetAigcHunyuan3DCompleteEvent() const
+{
+    return m_aigcHunyuan3DCompleteEvent;
+}
+
+void EventContent::SetAigcHunyuan3DCompleteEvent(const AigcHunyuan3DTask& _aigcHunyuan3DCompleteEvent)
+{
+    m_aigcHunyuan3DCompleteEvent = _aigcHunyuan3DCompleteEvent;
+    m_aigcHunyuan3DCompleteEventHasBeenSet = true;
+}
+
+bool EventContent::AigcHunyuan3DCompleteEventHasBeenSet() const
+{
+    return m_aigcHunyuan3DCompleteEventHasBeenSet;
 }
 

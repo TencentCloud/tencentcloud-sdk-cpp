@@ -290,6 +290,56 @@ PostgresClient::CloseDBExtranetAccessOutcomeCallable PostgresClient::CloseDBExtr
     return prom->get_future();
 }
 
+PostgresClient::CloseDBProxyAddressOutcome PostgresClient::CloseDBProxyAddress(const CloseDBProxyAddressRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseDBProxyAddress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseDBProxyAddressResponse rsp = CloseDBProxyAddressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseDBProxyAddressOutcome(rsp);
+        else
+            return CloseDBProxyAddressOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseDBProxyAddressOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::CloseDBProxyAddressAsync(const CloseDBProxyAddressRequest& request, const CloseDBProxyAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CloseDBProxyAddressRequest&;
+    using Resp = CloseDBProxyAddressResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CloseDBProxyAddress", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PostgresClient::CloseDBProxyAddressOutcomeCallable PostgresClient::CloseDBProxyAddressCallable(const CloseDBProxyAddressRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CloseDBProxyAddressOutcome>>();
+    CloseDBProxyAddressAsync(
+    request,
+    [prom](
+        const PostgresClient*,
+        const CloseDBProxyAddressRequest&,
+        CloseDBProxyAddressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 PostgresClient::CreateAccountOutcome PostgresClient::CreateAccount(const CreateAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAccount");
@@ -582,6 +632,56 @@ PostgresClient::CreateDBProxyOutcomeCallable PostgresClient::CreateDBProxyCallab
         const PostgresClient*,
         const CreateDBProxyRequest&,
         CreateDBProxyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+PostgresClient::CreateDBProxyAddressOutcome PostgresClient::CreateDBProxyAddress(const CreateDBProxyAddressRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDBProxyAddress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDBProxyAddressResponse rsp = CreateDBProxyAddressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDBProxyAddressOutcome(rsp);
+        else
+            return CreateDBProxyAddressOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDBProxyAddressOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::CreateDBProxyAddressAsync(const CreateDBProxyAddressRequest& request, const CreateDBProxyAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateDBProxyAddressRequest&;
+    using Resp = CreateDBProxyAddressResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateDBProxyAddress", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PostgresClient::CreateDBProxyAddressOutcomeCallable PostgresClient::CreateDBProxyAddressCallable(const CreateDBProxyAddressRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateDBProxyAddressOutcome>>();
+    CreateDBProxyAddressAsync(
+    request,
+    [prom](
+        const PostgresClient*,
+        const CreateDBProxyAddressRequest&,
+        CreateDBProxyAddressOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2532,6 +2632,56 @@ PostgresClient::DescribeDBProxyOutcomeCallable PostgresClient::DescribeDBProxyCa
         const PostgresClient*,
         const DescribeDBProxyRequest&,
         DescribeDBProxyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+PostgresClient::DescribeDBProxySSLConfigOutcome PostgresClient::DescribeDBProxySSLConfig(const DescribeDBProxySSLConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBProxySSLConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBProxySSLConfigResponse rsp = DescribeDBProxySSLConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBProxySSLConfigOutcome(rsp);
+        else
+            return DescribeDBProxySSLConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBProxySSLConfigOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeDBProxySSLConfigAsync(const DescribeDBProxySSLConfigRequest& request, const DescribeDBProxySSLConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBProxySSLConfigRequest&;
+    using Resp = DescribeDBProxySSLConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBProxySSLConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PostgresClient::DescribeDBProxySSLConfigOutcomeCallable PostgresClient::DescribeDBProxySSLConfigCallable(const DescribeDBProxySSLConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBProxySSLConfigOutcome>>();
+    DescribeDBProxySSLConfigAsync(
+    request,
+    [prom](
+        const PostgresClient*,
+        const DescribeDBProxySSLConfigRequest&,
+        DescribeDBProxySSLConfigOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4932,6 +5082,56 @@ PostgresClient::ModifyDBProxyAddressOutcomeCallable PostgresClient::ModifyDBProx
         const PostgresClient*,
         const ModifyDBProxyAddressRequest&,
         ModifyDBProxyAddressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+PostgresClient::ModifyDBProxySSLConfigOutcome PostgresClient::ModifyDBProxySSLConfig(const ModifyDBProxySSLConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBProxySSLConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBProxySSLConfigResponse rsp = ModifyDBProxySSLConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBProxySSLConfigOutcome(rsp);
+        else
+            return ModifyDBProxySSLConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBProxySSLConfigOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::ModifyDBProxySSLConfigAsync(const ModifyDBProxySSLConfigRequest& request, const ModifyDBProxySSLConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDBProxySSLConfigRequest&;
+    using Resp = ModifyDBProxySSLConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBProxySSLConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PostgresClient::ModifyDBProxySSLConfigOutcomeCallable PostgresClient::ModifyDBProxySSLConfigCallable(const ModifyDBProxySSLConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDBProxySSLConfigOutcome>>();
+    ModifyDBProxySSLConfigAsync(
+    request,
+    [prom](
+        const PostgresClient*,
+        const ModifyDBProxySSLConfigRequest&,
+        ModifyDBProxySSLConfigOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

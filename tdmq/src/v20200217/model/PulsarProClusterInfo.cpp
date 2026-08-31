@@ -37,7 +37,8 @@ PulsarProClusterInfo::PulsarProClusterInfo() :
     m_tenantHasBeenSet(false),
     m_deleteProtectionHasBeenSet(false),
     m_elasticTpsEnabledHasBeenSet(false),
-    m_encryptionStatusHasBeenSet(false)
+    m_encryptionStatusHasBeenSet(false),
+    m_autoExpansionEnabledHasBeenSet(false)
 {
 }
 
@@ -226,6 +227,16 @@ CoreInternalOutcome PulsarProClusterInfo::Deserialize(const rapidjson::Value &va
         m_encryptionStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoExpansionEnabled") && !value["AutoExpansionEnabled"].IsNull())
+    {
+        if (!value["AutoExpansionEnabled"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarProClusterInfo.AutoExpansionEnabled` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoExpansionEnabled = value["AutoExpansionEnabled"].GetInt64();
+        m_autoExpansionEnabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -374,6 +385,14 @@ void PulsarProClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "EncryptionStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_encryptionStatus, allocator);
+    }
+
+    if (m_autoExpansionEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoExpansionEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoExpansionEnabled, allocator);
     }
 
 }
@@ -649,5 +668,21 @@ void PulsarProClusterInfo::SetEncryptionStatus(const int64_t& _encryptionStatus)
 bool PulsarProClusterInfo::EncryptionStatusHasBeenSet() const
 {
     return m_encryptionStatusHasBeenSet;
+}
+
+int64_t PulsarProClusterInfo::GetAutoExpansionEnabled() const
+{
+    return m_autoExpansionEnabled;
+}
+
+void PulsarProClusterInfo::SetAutoExpansionEnabled(const int64_t& _autoExpansionEnabled)
+{
+    m_autoExpansionEnabled = _autoExpansionEnabled;
+    m_autoExpansionEnabledHasBeenSet = true;
+}
+
+bool PulsarProClusterInfo::AutoExpansionEnabledHasBeenSet() const
+{
+    return m_autoExpansionEnabledHasBeenSet;
 }
 

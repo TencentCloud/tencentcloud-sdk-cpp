@@ -29,6 +29,7 @@
 #include <tencentcloud/iotexplorer/v20190423/model/SeeCompHighlightResult.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SeeDetectContinuousResult.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SeeFaceRecognitionResult.h>
+#include <tencentcloud/iotexplorer/v20190423/model/SeeSummarizeResult.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CloudStorageAIServiceTaskFileInfo.h>
 
 
@@ -116,15 +117,15 @@ namespace TencentCloud
                     bool MetadataHasBeenSet() const;
 
                     /**
-                     * 获取<p>算法类目。可能取值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li></ul>
-                     * @return ServiceCategory <p>算法类目。可能取值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li></ul>
+                     * 获取<p>算法类目。</p><p>枚举值：</p><ul><li>COMPREHENSION： 视觉理解</li><li>HIGHLIGHT： 视频浓缩</li><li>SUMMARIZATION： 每日/每周总结</li></ul>
+                     * @return ServiceCategory <p>算法类目。</p><p>枚举值：</p><ul><li>COMPREHENSION： 视觉理解</li><li>HIGHLIGHT： 视频浓缩</li><li>SUMMARIZATION： 每日/每周总结</li></ul>
                      * 
                      */
                     std::string GetServiceCategory() const;
 
                     /**
-                     * 设置<p>算法类目。可能取值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li></ul>
-                     * @param _serviceCategory <p>算法类目。可能取值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li></ul>
+                     * 设置<p>算法类目。</p><p>枚举值：</p><ul><li>COMPREHENSION： 视觉理解</li><li>HIGHLIGHT： 视频浓缩</li><li>SUMMARIZATION： 每日/每周总结</li></ul>
+                     * @param _serviceCategory <p>算法类目。</p><p>枚举值：</p><ul><li>COMPREHENSION： 视觉理解</li><li>HIGHLIGHT： 视频浓缩</li><li>SUMMARIZATION： 每日/每周总结</li></ul>
                      * 
                      */
                     void SetServiceCategory(const std::string& _serviceCategory);
@@ -137,15 +138,15 @@ namespace TencentCloud
                     bool ServiceCategoryHasBeenSet() const;
 
                     /**
-                     * 获取<p>算法类型。可能取值：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul>
-                     * @return ServiceType <p>算法类型。可能取值：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul>
+                     * 获取<p>算法类型。</p><p>枚举值：</p><ul><li>VID_COMP： 视频理解</li><li>IMG_COMP： 图片理解</li><li>COMP_HIGHLIGHT： 视频浓缩</li><li>DAILY_SUM： 每日总结</li><li>WEEKLY_SUM： 每周总结</li></ul>
+                     * @return ServiceType <p>算法类型。</p><p>枚举值：</p><ul><li>VID_COMP： 视频理解</li><li>IMG_COMP： 图片理解</li><li>COMP_HIGHLIGHT： 视频浓缩</li><li>DAILY_SUM： 每日总结</li><li>WEEKLY_SUM： 每周总结</li></ul>
                      * 
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置<p>算法类型。可能取值：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul>
-                     * @param _serviceType <p>算法类型。可能取值：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul>
+                     * 设置<p>算法类型。</p><p>枚举值：</p><ul><li>VID_COMP： 视频理解</li><li>IMG_COMP： 图片理解</li><li>COMP_HIGHLIGHT： 视频浓缩</li><li>DAILY_SUM： 每日总结</li><li>WEEKLY_SUM： 每周总结</li></ul>
+                     * @param _serviceType <p>算法类型。</p><p>枚举值：</p><ul><li>VID_COMP： 视频理解</li><li>IMG_COMP： 图片理解</li><li>COMP_HIGHLIGHT： 视频浓缩</li><li>DAILY_SUM： 每日总结</li><li>WEEKLY_SUM： 每周总结</li></ul>
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -261,6 +262,27 @@ namespace TencentCloud
                      * 
                      */
                     bool FaceRecognitionResultHasBeenSet() const;
+
+                    /**
+                     * 获取<p>每日或每周总结结果</p>
+                     * @return SummarizeResult <p>每日或每周总结结果</p>
+                     * 
+                     */
+                    SeeSummarizeResult GetSummarizeResult() const;
+
+                    /**
+                     * 设置<p>每日或每周总结结果</p>
+                     * @param _summarizeResult <p>每日或每周总结结果</p>
+                     * 
+                     */
+                    void SetSummarizeResult(const SeeSummarizeResult& _summarizeResult);
+
+                    /**
+                     * 判断参数 SummarizeResult 是否已赋值
+                     * @return SummarizeResult 是否已赋值
+                     * 
+                     */
+                    bool SummarizeResultHasBeenSet() const;
 
                     /**
                      * 获取<p>完成该任务所消耗的基础能力额度</p>
@@ -430,13 +452,13 @@ namespace TencentCloud
                     bool m_metadataHasBeenSet;
 
                     /**
-                     * <p>算法类目。可能取值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li></ul>
+                     * <p>算法类目。</p><p>枚举值：</p><ul><li>COMPREHENSION： 视觉理解</li><li>HIGHLIGHT： 视频浓缩</li><li>SUMMARIZATION： 每日/每周总结</li></ul>
                      */
                     std::string m_serviceCategory;
                     bool m_serviceCategoryHasBeenSet;
 
                     /**
-                     * <p>算法类型。可能取值：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul>
+                     * <p>算法类型。</p><p>枚举值：</p><ul><li>VID_COMP： 视频理解</li><li>IMG_COMP： 图片理解</li><li>COMP_HIGHLIGHT： 视频浓缩</li><li>DAILY_SUM： 每日总结</li><li>WEEKLY_SUM： 每周总结</li></ul>
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
@@ -470,6 +492,12 @@ namespace TencentCloud
                      */
                     SeeFaceRecognitionResult m_faceRecognitionResult;
                     bool m_faceRecognitionResultHasBeenSet;
+
+                    /**
+                     * <p>每日或每周总结结果</p>
+                     */
+                    SeeSummarizeResult m_summarizeResult;
+                    bool m_summarizeResultHasBeenSet;
 
                     /**
                      * <p>完成该任务所消耗的基础能力额度</p>

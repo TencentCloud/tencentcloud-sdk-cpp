@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tdmysql/v20211122/model/StorageNodeSpec.h>
 #include <tencentcloud/tdmysql/v20211122/model/ServerlessCcu.h>
+#include <tencentcloud/tdmysql/v20211122/model/ServerlessNodeNumSpec.h>
 
 
 namespace TencentCloud
@@ -75,6 +76,20 @@ namespace TencentCloud
                      */
                     bool ServerlessCcuSpecHasBeenSet() const;
 
+                    /**
+                     * 获取<p>serverless节点数量配置</p>
+                     * @return ServerlessNodeNumSpec <p>serverless节点数量配置</p>
+                     * 
+                     */
+                    ServerlessNodeNumSpec GetServerlessNodeNumSpec() const;
+
+                    /**
+                     * 判断参数 ServerlessNodeNumSpec 是否已赋值
+                     * @return ServerlessNodeNumSpec 是否已赋值
+                     * 
+                     */
+                    bool ServerlessNodeNumSpecHasBeenSet() const;
+
                 private:
 
                     /**
@@ -89,6 +104,12 @@ namespace TencentCloud
                      */
                     std::vector<ServerlessCcu> m_serverlessCcuSpec;
                     bool m_serverlessCcuSpecHasBeenSet;
+
+                    /**
+                     * <p>serverless节点数量配置</p>
+                     */
+                    ServerlessNodeNumSpec m_serverlessNodeNumSpec;
+                    bool m_serverlessNodeNumSpecHasBeenSet;
 
                 };
             }

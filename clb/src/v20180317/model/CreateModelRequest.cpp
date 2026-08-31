@@ -31,12 +31,15 @@ CreateModelRequest::CreateModelRequest() :
     m_serviceProviderNameHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_apiBaseHasBeenSet(false),
+    m_apiBasesHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_hostHeaderHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_verifySSLHasBeenSet(false),
-    m_healthCheckConfigHasBeenSet(false)
+    m_healthCheckConfigHasBeenSet(false),
+    m_cMRPrivateNetworkTunnelIdHasBeenSet(false),
+    m_healthCheckConfigsHasBeenSet(false)
 {
 }
 
@@ -125,6 +128,21 @@ string CreateModelRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_apiBase.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_apiBasesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiBases";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_apiBases.begin(); itr != m_apiBases.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_vpcIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -179,6 +197,29 @@ string CreateModelRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_healthCheckConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_cMRPrivateNetworkTunnelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CMRPrivateNetworkTunnelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cMRPrivateNetworkTunnelId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthCheckConfigsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheckConfigs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_healthCheckConfigs.begin(); itr != m_healthCheckConfigs.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -317,6 +358,22 @@ bool CreateModelRequest::ApiBaseHasBeenSet() const
     return m_apiBaseHasBeenSet;
 }
 
+vector<ApiBaseItem> CreateModelRequest::GetApiBases() const
+{
+    return m_apiBases;
+}
+
+void CreateModelRequest::SetApiBases(const vector<ApiBaseItem>& _apiBases)
+{
+    m_apiBases = _apiBases;
+    m_apiBasesHasBeenSet = true;
+}
+
+bool CreateModelRequest::ApiBasesHasBeenSet() const
+{
+    return m_apiBasesHasBeenSet;
+}
+
 string CreateModelRequest::GetVpcId() const
 {
     return m_vpcId;
@@ -411,6 +468,38 @@ void CreateModelRequest::SetHealthCheckConfig(const ServiceProviderHealthCheckCo
 bool CreateModelRequest::HealthCheckConfigHasBeenSet() const
 {
     return m_healthCheckConfigHasBeenSet;
+}
+
+string CreateModelRequest::GetCMRPrivateNetworkTunnelId() const
+{
+    return m_cMRPrivateNetworkTunnelId;
+}
+
+void CreateModelRequest::SetCMRPrivateNetworkTunnelId(const string& _cMRPrivateNetworkTunnelId)
+{
+    m_cMRPrivateNetworkTunnelId = _cMRPrivateNetworkTunnelId;
+    m_cMRPrivateNetworkTunnelIdHasBeenSet = true;
+}
+
+bool CreateModelRequest::CMRPrivateNetworkTunnelIdHasBeenSet() const
+{
+    return m_cMRPrivateNetworkTunnelIdHasBeenSet;
+}
+
+vector<ServiceProviderHealthCheckConfigItemInput> CreateModelRequest::GetHealthCheckConfigs() const
+{
+    return m_healthCheckConfigs;
+}
+
+void CreateModelRequest::SetHealthCheckConfigs(const vector<ServiceProviderHealthCheckConfigItemInput>& _healthCheckConfigs)
+{
+    m_healthCheckConfigs = _healthCheckConfigs;
+    m_healthCheckConfigsHasBeenSet = true;
+}
+
+bool CreateModelRequest::HealthCheckConfigsHasBeenSet() const
+{
+    return m_healthCheckConfigsHasBeenSet;
 }
 
 

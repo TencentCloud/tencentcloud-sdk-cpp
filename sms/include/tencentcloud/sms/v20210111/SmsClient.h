@@ -35,6 +35,8 @@
 #include <tencentcloud/sms/v20210111/model/DeleteSmsTemplateResponse.h>
 #include <tencentcloud/sms/v20210111/model/DescribePhoneNumberInfoRequest.h>
 #include <tencentcloud/sms/v20210111/model/DescribePhoneNumberInfoResponse.h>
+#include <tencentcloud/sms/v20210111/model/DescribeSendRecordListRequest.h>
+#include <tencentcloud/sms/v20210111/model/DescribeSendRecordListResponse.h>
 #include <tencentcloud/sms/v20210111/model/DescribeSmsSignListRequest.h>
 #include <tencentcloud/sms/v20210111/model/DescribeSmsSignListResponse.h>
 #include <tencentcloud/sms/v20210111/model/DescribeSmsTemplateListRequest.h>
@@ -93,6 +95,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePhoneNumberInfoResponse> DescribePhoneNumberInfoOutcome;
                 typedef std::future<DescribePhoneNumberInfoOutcome> DescribePhoneNumberInfoOutcomeCallable;
                 typedef std::function<void(const SmsClient*, const Model::DescribePhoneNumberInfoRequest&, DescribePhoneNumberInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhoneNumberInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSendRecordListResponse> DescribeSendRecordListOutcome;
+                typedef std::future<DescribeSendRecordListOutcome> DescribeSendRecordListOutcomeCallable;
+                typedef std::function<void(const SmsClient*, const Model::DescribeSendRecordListRequest&, DescribeSendRecordListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSendRecordListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSmsSignListResponse> DescribeSmsSignListOutcome;
                 typedef std::future<DescribeSmsSignListOutcome> DescribeSmsSignListOutcomeCallable;
                 typedef std::function<void(const SmsClient*, const Model::DescribeSmsSignListRequest&, DescribeSmsSignListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSmsSignListAsyncHandler;
@@ -193,6 +198,15 @@ namespace TencentCloud
                 DescribePhoneNumberInfoOutcome DescribePhoneNumberInfo(const Model::DescribePhoneNumberInfoRequest &request);
                 void DescribePhoneNumberInfoAsync(const Model::DescribePhoneNumberInfoRequest& request, const DescribePhoneNumberInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePhoneNumberInfoOutcomeCallable DescribePhoneNumberInfoCallable(const Model::DescribePhoneNumberInfoRequest& request);
+
+                /**
+                 *本接口 (DescribeSendRecordList) 用于查询单个手机号在指定时间范围内的短信下发记录。
+                 * @param req DescribeSendRecordListRequest
+                 * @return DescribeSendRecordListOutcome
+                 */
+                DescribeSendRecordListOutcome DescribeSendRecordList(const Model::DescribeSendRecordListRequest &request);
+                void DescribeSendRecordListAsync(const Model::DescribeSendRecordListRequest& request, const DescribeSendRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSendRecordListOutcomeCallable DescribeSendRecordListCallable(const Model::DescribeSendRecordListRequest& request);
 
                 /**
                  *本接口 (DescribeSmsSignList) 用于查询短信签名状态。

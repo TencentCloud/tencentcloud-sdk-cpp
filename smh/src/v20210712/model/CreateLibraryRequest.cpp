@@ -27,7 +27,8 @@ CreateLibraryRequest::CreateLibraryRequest() :
     m_remarkHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
     m_bucketRegionHasBeenSet(false),
-    m_libraryExtensionHasBeenSet(false)
+    m_libraryExtensionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,21 @@ string CreateLibraryRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_libraryExtension.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -165,6 +181,22 @@ void CreateLibraryRequest::SetLibraryExtension(const LibraryExtension& _libraryE
 bool CreateLibraryRequest::LibraryExtensionHasBeenSet() const
 {
     return m_libraryExtensionHasBeenSet;
+}
+
+vector<ResourceTag> CreateLibraryRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateLibraryRequest::SetTags(const vector<ResourceTag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateLibraryRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

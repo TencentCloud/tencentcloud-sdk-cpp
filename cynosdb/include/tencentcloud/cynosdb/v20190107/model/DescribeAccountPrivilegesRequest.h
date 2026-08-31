@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取数据库名，为*时，忽略Type/TableName, 表示修改用户全局权限；
-                     * @return Db 数据库名，为*时，忽略Type/TableName, 表示修改用户全局权限；
+                     * 获取数据库名。为*时，忽略Type/TableName，表示查询用户全局权限；不传时默认为*。
+                     * @return Db 数据库名。为*时，忽略Type/TableName，表示查询用户全局权限；不传时默认为*。
                      * 
                      */
                     std::string GetDb() const;
 
                     /**
-                     * 设置数据库名，为*时，忽略Type/TableName, 表示修改用户全局权限；
-                     * @param _db 数据库名，为*时，忽略Type/TableName, 表示修改用户全局权限；
+                     * 设置数据库名。为*时，忽略Type/TableName，表示查询用户全局权限；不传时默认为*。
+                     * @param _db 数据库名。为*时，忽略Type/TableName，表示查询用户全局权限；不传时默认为*。
                      * 
                      */
                     void SetDb(const std::string& _db);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DbHasBeenSet() const;
 
                     /**
-                     * 获取指定数据库下的对象类型，可选"table"，"*"
-                     * @return Type 指定数据库下的对象类型，可选"table"，"*"
+                     * 获取指定数据库下的对象类型，可选"table"、"*"。不传时默认为*；Type为table时，必须指定TableName。
+                     * @return Type 指定数据库下的对象类型，可选"table"、"*"。不传时默认为*；Type为table时，必须指定TableName。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置指定数据库下的对象类型，可选"table"，"*"
-                     * @param _type 指定数据库下的对象类型，可选"table"，"*"
+                     * 设置指定数据库下的对象类型，可选"table"、"*"。不传时默认为*；Type为table时，必须指定TableName。
+                     * @param _type 指定数据库下的对象类型，可选"table"、"*"。不传时默认为*；Type为table时，必须指定TableName。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取当Type="table"时，用来指定表名
-                     * @return TableName 当Type="table"时，用来指定表名
+                     * 获取当Type="table"时，用来指定表名；Type为table时必填。
+                     * @return TableName 当Type="table"时，用来指定表名；Type为table时必填。
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
-                     * 设置当Type="table"时，用来指定表名
-                     * @param _tableName 当Type="table"时，用来指定表名
+                     * 设置当Type="table"时，用来指定表名；Type为table时必填。
+                     * @param _tableName 当Type="table"时，用来指定表名；Type为table时必填。
                      * 
                      */
                     void SetTableName(const std::string& _tableName);
@@ -189,19 +189,19 @@ namespace TencentCloud
                     bool m_hostHasBeenSet;
 
                     /**
-                     * 数据库名，为*时，忽略Type/TableName, 表示修改用户全局权限；
+                     * 数据库名。为*时，忽略Type/TableName，表示查询用户全局权限；不传时默认为*。
                      */
                     std::string m_db;
                     bool m_dbHasBeenSet;
 
                     /**
-                     * 指定数据库下的对象类型，可选"table"，"*"
+                     * 指定数据库下的对象类型，可选"table"、"*"。不传时默认为*；Type为table时，必须指定TableName。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 当Type="table"时，用来指定表名
+                     * 当Type="table"时，用来指定表名；Type为table时必填。
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;

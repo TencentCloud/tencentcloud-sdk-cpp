@@ -290,6 +290,56 @@ ThpcClient::CreateClusterOutcomeCallable ThpcClient::CreateClusterCallable(const
     return prom->get_future();
 }
 
+ThpcClient::CreateScheduledActionOutcome ThpcClient::CreateScheduledAction(const CreateScheduledActionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateScheduledAction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateScheduledActionResponse rsp = CreateScheduledActionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateScheduledActionOutcome(rsp);
+        else
+            return CreateScheduledActionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateScheduledActionOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::CreateScheduledActionAsync(const CreateScheduledActionRequest& request, const CreateScheduledActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateScheduledActionRequest&;
+    using Resp = CreateScheduledActionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateScheduledAction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ThpcClient::CreateScheduledActionOutcomeCallable ThpcClient::CreateScheduledActionCallable(const CreateScheduledActionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateScheduledActionOutcome>>();
+    CreateScheduledActionAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const CreateScheduledActionRequest&,
+        CreateScheduledActionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ThpcClient::CreateWorkspacesOutcome ThpcClient::CreateWorkspaces(const CreateWorkspacesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateWorkspaces");
@@ -590,6 +640,56 @@ ThpcClient::DeleteQueueOutcomeCallable ThpcClient::DeleteQueueCallable(const Del
     return prom->get_future();
 }
 
+ThpcClient::DeleteScheduledActionOutcome ThpcClient::DeleteScheduledAction(const DeleteScheduledActionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteScheduledAction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteScheduledActionResponse rsp = DeleteScheduledActionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteScheduledActionOutcome(rsp);
+        else
+            return DeleteScheduledActionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteScheduledActionOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DeleteScheduledActionAsync(const DeleteScheduledActionRequest& request, const DeleteScheduledActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteScheduledActionRequest&;
+    using Resp = DeleteScheduledActionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteScheduledAction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ThpcClient::DeleteScheduledActionOutcomeCallable ThpcClient::DeleteScheduledActionCallable(const DeleteScheduledActionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteScheduledActionOutcome>>();
+    DeleteScheduledActionAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DeleteScheduledActionRequest&,
+        DeleteScheduledActionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ThpcClient::DescribeAutoScalingConfigurationOutcome ThpcClient::DescribeAutoScalingConfiguration(const DescribeAutoScalingConfigurationRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAutoScalingConfiguration");
@@ -840,6 +940,56 @@ ThpcClient::DescribeInitNodeScriptsOutcomeCallable ThpcClient::DescribeInitNodeS
     return prom->get_future();
 }
 
+ThpcClient::DescribeInstanceFamiliesOutcome ThpcClient::DescribeInstanceFamilies(const DescribeInstanceFamiliesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceFamilies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceFamiliesResponse rsp = DescribeInstanceFamiliesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceFamiliesOutcome(rsp);
+        else
+            return DescribeInstanceFamiliesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceFamiliesOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DescribeInstanceFamiliesAsync(const DescribeInstanceFamiliesRequest& request, const DescribeInstanceFamiliesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeInstanceFamiliesRequest&;
+    using Resp = DescribeInstanceFamiliesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceFamilies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ThpcClient::DescribeInstanceFamiliesOutcomeCallable ThpcClient::DescribeInstanceFamiliesCallable(const DescribeInstanceFamiliesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeInstanceFamiliesOutcome>>();
+    DescribeInstanceFamiliesAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DescribeInstanceFamiliesRequest&,
+        DescribeInstanceFamiliesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ThpcClient::DescribeJobSubmitInfoOutcome ThpcClient::DescribeJobSubmitInfo(const DescribeJobSubmitInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeJobSubmitInfo");
@@ -1040,6 +1190,106 @@ ThpcClient::DescribeNodesOutcomeCallable ThpcClient::DescribeNodesCallable(const
     return prom->get_future();
 }
 
+ThpcClient::DescribeQueueAutoScalingOutcome ThpcClient::DescribeQueueAutoScaling(const DescribeQueueAutoScalingRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeQueueAutoScaling");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeQueueAutoScalingResponse rsp = DescribeQueueAutoScalingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeQueueAutoScalingOutcome(rsp);
+        else
+            return DescribeQueueAutoScalingOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeQueueAutoScalingOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DescribeQueueAutoScalingAsync(const DescribeQueueAutoScalingRequest& request, const DescribeQueueAutoScalingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeQueueAutoScalingRequest&;
+    using Resp = DescribeQueueAutoScalingResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeQueueAutoScaling", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ThpcClient::DescribeQueueAutoScalingOutcomeCallable ThpcClient::DescribeQueueAutoScalingCallable(const DescribeQueueAutoScalingRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeQueueAutoScalingOutcome>>();
+    DescribeQueueAutoScalingAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DescribeQueueAutoScalingRequest&,
+        DescribeQueueAutoScalingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ThpcClient::DescribeQueueAutoScalingOverviewOutcome ThpcClient::DescribeQueueAutoScalingOverview(const DescribeQueueAutoScalingOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeQueueAutoScalingOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeQueueAutoScalingOverviewResponse rsp = DescribeQueueAutoScalingOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeQueueAutoScalingOverviewOutcome(rsp);
+        else
+            return DescribeQueueAutoScalingOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeQueueAutoScalingOverviewOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DescribeQueueAutoScalingOverviewAsync(const DescribeQueueAutoScalingOverviewRequest& request, const DescribeQueueAutoScalingOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeQueueAutoScalingOverviewRequest&;
+    using Resp = DescribeQueueAutoScalingOverviewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeQueueAutoScalingOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ThpcClient::DescribeQueueAutoScalingOverviewOutcomeCallable ThpcClient::DescribeQueueAutoScalingOverviewCallable(const DescribeQueueAutoScalingOverviewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeQueueAutoScalingOverviewOutcome>>();
+    DescribeQueueAutoScalingOverviewAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DescribeQueueAutoScalingOverviewRequest&,
+        DescribeQueueAutoScalingOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ThpcClient::DescribeQueuesOutcome ThpcClient::DescribeQueues(const DescribeQueuesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeQueues");
@@ -1082,6 +1332,56 @@ ThpcClient::DescribeQueuesOutcomeCallable ThpcClient::DescribeQueuesCallable(con
         const ThpcClient*,
         const DescribeQueuesRequest&,
         DescribeQueuesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ThpcClient::DescribeScheduledActionsOutcome ThpcClient::DescribeScheduledActions(const DescribeScheduledActionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScheduledActions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScheduledActionsResponse rsp = DescribeScheduledActionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScheduledActionsOutcome(rsp);
+        else
+            return DescribeScheduledActionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScheduledActionsOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DescribeScheduledActionsAsync(const DescribeScheduledActionsRequest& request, const DescribeScheduledActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeScheduledActionsRequest&;
+    using Resp = DescribeScheduledActionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeScheduledActions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ThpcClient::DescribeScheduledActionsOutcomeCallable ThpcClient::DescribeScheduledActionsCallable(const DescribeScheduledActionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeScheduledActionsOutcome>>();
+    DescribeScheduledActionsAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DescribeScheduledActionsRequest&,
+        DescribeScheduledActionsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1182,6 +1482,56 @@ ThpcClient::DetachNodesOutcomeCallable ThpcClient::DetachNodesCallable(const Det
         const ThpcClient*,
         const DetachNodesRequest&,
         DetachNodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ThpcClient::InquirePriceCreateWorkspacesOutcome ThpcClient::InquirePriceCreateWorkspaces(const InquirePriceCreateWorkspacesRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePriceCreateWorkspaces");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePriceCreateWorkspacesResponse rsp = InquirePriceCreateWorkspacesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePriceCreateWorkspacesOutcome(rsp);
+        else
+            return InquirePriceCreateWorkspacesOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePriceCreateWorkspacesOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::InquirePriceCreateWorkspacesAsync(const InquirePriceCreateWorkspacesRequest& request, const InquirePriceCreateWorkspacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const InquirePriceCreateWorkspacesRequest&;
+    using Resp = InquirePriceCreateWorkspacesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "InquirePriceCreateWorkspaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ThpcClient::InquirePriceCreateWorkspacesOutcomeCallable ThpcClient::InquirePriceCreateWorkspacesCallable(const InquirePriceCreateWorkspacesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<InquirePriceCreateWorkspacesOutcome>>();
+    InquirePriceCreateWorkspacesAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const InquirePriceCreateWorkspacesRequest&,
+        InquirePriceCreateWorkspacesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1390,6 +1740,56 @@ ThpcClient::ModifyNodeAttributeOutcomeCallable ThpcClient::ModifyNodeAttributeCa
     return prom->get_future();
 }
 
+ThpcClient::ModifyScheduledActionOutcome ThpcClient::ModifyScheduledAction(const ModifyScheduledActionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyScheduledAction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyScheduledActionResponse rsp = ModifyScheduledActionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyScheduledActionOutcome(rsp);
+        else
+            return ModifyScheduledActionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyScheduledActionOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::ModifyScheduledActionAsync(const ModifyScheduledActionRequest& request, const ModifyScheduledActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyScheduledActionRequest&;
+    using Resp = ModifyScheduledActionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyScheduledAction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ThpcClient::ModifyScheduledActionOutcomeCallable ThpcClient::ModifyScheduledActionCallable(const ModifyScheduledActionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyScheduledActionOutcome>>();
+    ModifyScheduledActionAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const ModifyScheduledActionRequest&,
+        ModifyScheduledActionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ThpcClient::ModifyWorkspacesAttributeOutcome ThpcClient::ModifyWorkspacesAttribute(const ModifyWorkspacesAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyWorkspacesAttribute");
@@ -1582,6 +1982,56 @@ ThpcClient::SetAutoScalingConfigurationOutcomeCallable ThpcClient::SetAutoScalin
         const ThpcClient*,
         const SetAutoScalingConfigurationRequest&,
         SetAutoScalingConfigurationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ThpcClient::SetQueueAutoScalingOutcome ThpcClient::SetQueueAutoScaling(const SetQueueAutoScalingRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetQueueAutoScaling");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetQueueAutoScalingResponse rsp = SetQueueAutoScalingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetQueueAutoScalingOutcome(rsp);
+        else
+            return SetQueueAutoScalingOutcome(o.GetError());
+    }
+    else
+    {
+        return SetQueueAutoScalingOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::SetQueueAutoScalingAsync(const SetQueueAutoScalingRequest& request, const SetQueueAutoScalingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SetQueueAutoScalingRequest&;
+    using Resp = SetQueueAutoScalingResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SetQueueAutoScaling", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ThpcClient::SetQueueAutoScalingOutcomeCallable ThpcClient::SetQueueAutoScalingCallable(const SetQueueAutoScalingRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SetQueueAutoScalingOutcome>>();
+    SetQueueAutoScalingAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const SetQueueAutoScalingRequest&,
+        SetQueueAutoScalingOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

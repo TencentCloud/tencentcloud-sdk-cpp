@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/smh/v20210712/model/LibraryExtension.h>
+#include <tencentcloud/smh/v20210712/model/ResourceTag.h>
 
 
 namespace TencentCloud
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体库 ID
-                     * @return LibraryId 媒体库 ID
+                     * 获取<p>媒体库 ID</p>
+                     * @return LibraryId <p>媒体库 ID</p>
                      * 
                      */
                     std::string GetLibraryId() const;
 
                     /**
-                     * 设置媒体库 ID
-                     * @param _libraryId 媒体库 ID
+                     * 设置<p>媒体库 ID</p>
+                     * @param _libraryId <p>媒体库 ID</p>
                      * 
                      */
                     void SetLibraryId(const std::string& _libraryId);
@@ -69,15 +70,15 @@ namespace TencentCloud
                     bool LibraryIdHasBeenSet() const;
 
                     /**
-                     * 获取媒体库友好名称
-                     * @return Name 媒体库友好名称
+                     * 获取<p>媒体库友好名称</p>
+                     * @return Name <p>媒体库友好名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置媒体库友好名称
-                     * @param _name 媒体库友好名称
+                     * 设置<p>媒体库友好名称</p>
+                     * @param _name <p>媒体库友好名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,15 +91,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Remark 备注
+                     * 获取<p>备注</p>
+                     * @return Remark <p>备注</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注
-                     * @param _remark 备注
+                     * 设置<p>备注</p>
+                     * @param _remark <p>备注</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -111,15 +112,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取媒体库绑定的 COS 存储桶
-                     * @return BucketName 媒体库绑定的 COS 存储桶
+                     * 获取<p>媒体库绑定的 COS 存储桶</p>
+                     * @return BucketName <p>媒体库绑定的 COS 存储桶</p>
                      * 
                      */
                     std::string GetBucketName() const;
 
                     /**
-                     * 设置媒体库绑定的 COS 存储桶
-                     * @param _bucketName 媒体库绑定的 COS 存储桶
+                     * 设置<p>媒体库绑定的 COS 存储桶</p>
+                     * @param _bucketName <p>媒体库绑定的 COS 存储桶</p>
                      * 
                      */
                     void SetBucketName(const std::string& _bucketName);
@@ -132,15 +133,15 @@ namespace TencentCloud
                     bool BucketNameHasBeenSet() const;
 
                     /**
-                     * 获取媒体库绑定的 COS 存储桶所在的地域
-                     * @return BucketRegion 媒体库绑定的 COS 存储桶所在的地域
+                     * 获取<p>媒体库绑定的 COS 存储桶所在的地域</p>
+                     * @return BucketRegion <p>媒体库绑定的 COS 存储桶所在的地域</p>
                      * 
                      */
                     std::string GetBucketRegion() const;
 
                     /**
-                     * 设置媒体库绑定的 COS 存储桶所在的地域
-                     * @param _bucketRegion 媒体库绑定的 COS 存储桶所在的地域
+                     * 设置<p>媒体库绑定的 COS 存储桶所在的地域</p>
+                     * @param _bucketRegion <p>媒体库绑定的 COS 存储桶所在的地域</p>
                      * 
                      */
                     void SetBucketRegion(const std::string& _bucketRegion);
@@ -153,15 +154,15 @@ namespace TencentCloud
                     bool BucketRegionHasBeenSet() const;
 
                     /**
-                     * 获取该媒体库的业务 API 访问域名
-                     * @return AccessDomain 该媒体库的业务 API 访问域名
+                     * 获取<p>该媒体库的业务 API 访问域名</p>
+                     * @return AccessDomain <p>该媒体库的业务 API 访问域名</p>
                      * 
                      */
                     std::string GetAccessDomain() const;
 
                     /**
-                     * 设置该媒体库的业务 API 访问域名
-                     * @param _accessDomain 该媒体库的业务 API 访问域名
+                     * 设置<p>该媒体库的业务 API 访问域名</p>
+                     * @param _accessDomain <p>该媒体库的业务 API 访问域名</p>
                      * 
                      */
                     void SetAccessDomain(const std::string& _accessDomain);
@@ -174,15 +175,15 @@ namespace TencentCloud
                     bool AccessDomainHasBeenSet() const;
 
                     /**
-                     * 获取媒体库创建时间
-                     * @return CreationTime 媒体库创建时间
+                     * 获取<p>媒体库创建时间</p>
+                     * @return CreationTime <p>媒体库创建时间</p>
                      * 
                      */
                     std::string GetCreationTime() const;
 
                     /**
-                     * 设置媒体库创建时间
-                     * @param _creationTime 媒体库创建时间
+                     * 设置<p>媒体库创建时间</p>
+                     * @param _creationTime <p>媒体库创建时间</p>
                      * 
                      */
                     void SetCreationTime(const std::string& _creationTime);
@@ -195,15 +196,15 @@ namespace TencentCloud
                     bool CreationTimeHasBeenSet() const;
 
                     /**
-                     * 获取媒体库配置项
-                     * @return LibraryExtension 媒体库配置项
+                     * 获取<p>媒体库配置项</p>
+                     * @return LibraryExtension <p>媒体库配置项</p>
                      * 
                      */
                     LibraryExtension GetLibraryExtension() const;
 
                     /**
-                     * 设置媒体库配置项
-                     * @param _libraryExtension 媒体库配置项
+                     * 设置<p>媒体库配置项</p>
+                     * @param _libraryExtension <p>媒体库配置项</p>
                      * 
                      */
                     void SetLibraryExtension(const LibraryExtension& _libraryExtension);
@@ -216,15 +217,15 @@ namespace TencentCloud
                     bool LibraryExtensionHasBeenSet() const;
 
                     /**
-                     * 获取媒体库用量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。
-                     * @return Size 媒体库用量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。
+                     * 获取<p>媒体库用量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。</p>
+                     * @return Size <p>媒体库用量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。</p>
                      * 
                      */
                     std::string GetSize() const;
 
                     /**
-                     * 设置媒体库用量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。
-                     * @param _size 媒体库用量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。
+                     * 设置<p>媒体库用量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。</p>
+                     * @param _size <p>媒体库用量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。</p>
                      * 
                      */
                     void SetSize(const std::string& _size);
@@ -237,15 +238,15 @@ namespace TencentCloud
                     bool SizeHasBeenSet() const;
 
                     /**
-                     * 获取媒体库目录数，由于数字类型精度限制，该字段为 String 类型。
-                     * @return DirNum 媒体库目录数，由于数字类型精度限制，该字段为 String 类型。
+                     * 获取<p>媒体库目录数，由于数字类型精度限制，该字段为 String 类型。</p>
+                     * @return DirNum <p>媒体库目录数，由于数字类型精度限制，该字段为 String 类型。</p>
                      * 
                      */
                     std::string GetDirNum() const;
 
                     /**
-                     * 设置媒体库目录数，由于数字类型精度限制，该字段为 String 类型。
-                     * @param _dirNum 媒体库目录数，由于数字类型精度限制，该字段为 String 类型。
+                     * 设置<p>媒体库目录数，由于数字类型精度限制，该字段为 String 类型。</p>
+                     * @param _dirNum <p>媒体库目录数，由于数字类型精度限制，该字段为 String 类型。</p>
                      * 
                      */
                     void SetDirNum(const std::string& _dirNum);
@@ -258,15 +259,15 @@ namespace TencentCloud
                     bool DirNumHasBeenSet() const;
 
                     /**
-                     * 获取媒体库文件数，由于数字类型精度限制，该字段为 String 类型。
-                     * @return FileNum 媒体库文件数，由于数字类型精度限制，该字段为 String 类型。
+                     * 获取<p>媒体库文件数，由于数字类型精度限制，该字段为 String 类型。</p>
+                     * @return FileNum <p>媒体库文件数，由于数字类型精度限制，该字段为 String 类型。</p>
                      * 
                      */
                     std::string GetFileNum() const;
 
                     /**
-                     * 设置媒体库文件数，由于数字类型精度限制，该字段为 String 类型。
-                     * @param _fileNum 媒体库文件数，由于数字类型精度限制，该字段为 String 类型。
+                     * 设置<p>媒体库文件数，由于数字类型精度限制，该字段为 String 类型。</p>
+                     * @param _fileNum <p>媒体库文件数，由于数字类型精度限制，该字段为 String 类型。</p>
                      * 
                      */
                     void SetFileNum(const std::string& _fileNum);
@@ -278,73 +279,100 @@ namespace TencentCloud
                      */
                     bool FileNumHasBeenSet() const;
 
+                    /**
+                     * 获取<p>媒体库关联的标签列表。</p>
+                     * @return Tags <p>媒体库关联的标签列表。</p>
+                     * 
+                     */
+                    std::vector<ResourceTag> GetTags() const;
+
+                    /**
+                     * 设置<p>媒体库关联的标签列表。</p>
+                     * @param _tags <p>媒体库关联的标签列表。</p>
+                     * 
+                     */
+                    void SetTags(const std::vector<ResourceTag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 媒体库 ID
+                     * <p>媒体库 ID</p>
                      */
                     std::string m_libraryId;
                     bool m_libraryIdHasBeenSet;
 
                     /**
-                     * 媒体库友好名称
+                     * <p>媒体库友好名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 媒体库绑定的 COS 存储桶
+                     * <p>媒体库绑定的 COS 存储桶</p>
                      */
                     std::string m_bucketName;
                     bool m_bucketNameHasBeenSet;
 
                     /**
-                     * 媒体库绑定的 COS 存储桶所在的地域
+                     * <p>媒体库绑定的 COS 存储桶所在的地域</p>
                      */
                     std::string m_bucketRegion;
                     bool m_bucketRegionHasBeenSet;
 
                     /**
-                     * 该媒体库的业务 API 访问域名
+                     * <p>该媒体库的业务 API 访问域名</p>
                      */
                     std::string m_accessDomain;
                     bool m_accessDomainHasBeenSet;
 
                     /**
-                     * 媒体库创建时间
+                     * <p>媒体库创建时间</p>
                      */
                     std::string m_creationTime;
                     bool m_creationTimeHasBeenSet;
 
                     /**
-                     * 媒体库配置项
+                     * <p>媒体库配置项</p>
                      */
                     LibraryExtension m_libraryExtension;
                     bool m_libraryExtensionHasBeenSet;
 
                     /**
-                     * 媒体库用量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。
+                     * <p>媒体库用量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。</p>
                      */
                     std::string m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
-                     * 媒体库目录数，由于数字类型精度限制，该字段为 String 类型。
+                     * <p>媒体库目录数，由于数字类型精度限制，该字段为 String 类型。</p>
                      */
                     std::string m_dirNum;
                     bool m_dirNumHasBeenSet;
 
                     /**
-                     * 媒体库文件数，由于数字类型精度限制，该字段为 String 类型。
+                     * <p>媒体库文件数，由于数字类型精度限制，该字段为 String 类型。</p>
                      */
                     std::string m_fileNum;
                     bool m_fileNumHasBeenSet;
+
+                    /**
+                     * <p>媒体库关联的标签列表。</p>
+                     */
+                    std::vector<ResourceTag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

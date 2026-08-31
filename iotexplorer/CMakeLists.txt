@@ -347,6 +347,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/GetLoRaGatewayListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteTWeSeeFaceResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageAIServiceResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/SeeSummarizeConfig.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteTWeSeeCallbackRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeRecognitionTaskRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/UpdateOtaTaskStatusRequest.h
@@ -546,6 +547,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/CloudStorageAIServiceTask.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeLicenseOverviewResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ListTopicPolicyRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/SeeSummarizeResult.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteLoRaFrequencyRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ActivateDeviceInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/InvokeVideosKeywordsAnalyzerRequest.h
@@ -990,6 +992,7 @@ set(iotexplorer_src
   src/v20190423/model/GetLoRaGatewayListRequest.cpp
   src/v20190423/model/DeleteTWeSeeFaceResponse.cpp
   src/v20190423/model/ResetCloudStorageAIServiceResponse.cpp
+  src/v20190423/model/SeeSummarizeConfig.cpp
   src/v20190423/model/DeleteTWeSeeCallbackRequest.cpp
   src/v20190423/model/CreateTWeSeeRecognitionTaskRequest.cpp
   src/v20190423/model/UpdateOtaTaskStatusRequest.cpp
@@ -1189,6 +1192,7 @@ set(iotexplorer_src
   src/v20190423/model/CloudStorageAIServiceTask.cpp
   src/v20190423/model/DescribeLicenseOverviewResponse.cpp
   src/v20190423/model/ListTopicPolicyRequest.cpp
+  src/v20190423/model/SeeSummarizeResult.cpp
   src/v20190423/model/DeleteLoRaFrequencyRequest.cpp
   src/v20190423/model/ActivateDeviceInfo.cpp
   src/v20190423/model/InvokeVideosKeywordsAnalyzerRequest.cpp

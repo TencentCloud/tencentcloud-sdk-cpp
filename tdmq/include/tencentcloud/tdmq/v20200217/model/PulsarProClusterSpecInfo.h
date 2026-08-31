@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Pulsar专业版集群规格信息
+                * Pulsar标准版或专业版集群规格信息
                 */
                 class PulsarProClusterSpecInfo : public AbstractModel
                 {

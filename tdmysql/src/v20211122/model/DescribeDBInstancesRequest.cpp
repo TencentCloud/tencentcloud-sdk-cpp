@@ -26,7 +26,9 @@ DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
     m_filtersHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_engineTypeHasBeenSet(false)
+    m_engineTypeHasBeenSet(false),
+    m_orderByHasBeenSet(false),
+    m_orderDirectionHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,22 @@ string DescribeDBInstancesRequest::ToJsonString() const
         string key = "EngineType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_engineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderBy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderDirectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderDirection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderDirection.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -146,6 +164,38 @@ void DescribeDBInstancesRequest::SetEngineType(const string& _engineType)
 bool DescribeDBInstancesRequest::EngineTypeHasBeenSet() const
 {
     return m_engineTypeHasBeenSet;
+}
+
+string DescribeDBInstancesRequest::GetOrderBy() const
+{
+    return m_orderBy;
+}
+
+void DescribeDBInstancesRequest::SetOrderBy(const string& _orderBy)
+{
+    m_orderBy = _orderBy;
+    m_orderByHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::OrderByHasBeenSet() const
+{
+    return m_orderByHasBeenSet;
+}
+
+string DescribeDBInstancesRequest::GetOrderDirection() const
+{
+    return m_orderDirection;
+}
+
+void DescribeDBInstancesRequest::SetOrderDirection(const string& _orderDirection)
+{
+    m_orderDirection = _orderDirection;
+    m_orderDirectionHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::OrderDirectionHasBeenSet() const
+{
+    return m_orderDirectionHasBeenSet;
 }
 
 

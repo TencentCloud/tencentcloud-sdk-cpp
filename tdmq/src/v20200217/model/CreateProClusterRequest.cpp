@@ -32,7 +32,9 @@ CreateProClusterRequest::CreateProClusterRequest() :
     m_storageSizeHasBeenSet(false),
     m_vpcHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_instanceVersionHasBeenSet(false)
+    m_instanceVersionHasBeenSet(false),
+    m_userTenantHasBeenSet(false),
+    m_elasticTpsEnabledHasBeenSet(false)
 {
 }
 
@@ -134,6 +136,22 @@ string CreateProClusterRequest::ToJsonString() const
         string key = "InstanceVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userTenantHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserTenant";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userTenant.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_elasticTpsEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticTpsEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_elasticTpsEnabled, allocator);
     }
 
 
@@ -302,6 +320,38 @@ void CreateProClusterRequest::SetInstanceVersion(const string& _instanceVersion)
 bool CreateProClusterRequest::InstanceVersionHasBeenSet() const
 {
     return m_instanceVersionHasBeenSet;
+}
+
+string CreateProClusterRequest::GetUserTenant() const
+{
+    return m_userTenant;
+}
+
+void CreateProClusterRequest::SetUserTenant(const string& _userTenant)
+{
+    m_userTenant = _userTenant;
+    m_userTenantHasBeenSet = true;
+}
+
+bool CreateProClusterRequest::UserTenantHasBeenSet() const
+{
+    return m_userTenantHasBeenSet;
+}
+
+int64_t CreateProClusterRequest::GetElasticTpsEnabled() const
+{
+    return m_elasticTpsEnabled;
+}
+
+void CreateProClusterRequest::SetElasticTpsEnabled(const int64_t& _elasticTpsEnabled)
+{
+    m_elasticTpsEnabled = _elasticTpsEnabled;
+    m_elasticTpsEnabledHasBeenSet = true;
+}
+
+bool CreateProClusterRequest::ElasticTpsEnabledHasBeenSet() const
+{
+    return m_elasticTpsEnabledHasBeenSet;
 }
 
 

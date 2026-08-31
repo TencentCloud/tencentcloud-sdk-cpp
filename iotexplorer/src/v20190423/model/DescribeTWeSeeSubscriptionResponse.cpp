@@ -32,6 +32,7 @@ DescribeTWeSeeSubscriptionResponse::DescribeTWeSeeSubscriptionResponse() :
     m_comprehensionConfigHasBeenSet(false),
     m_compHighlightConfigHasBeenSet(false),
     m_eventIdFilterConfigHasBeenSet(false),
+    m_summarizeConfigHasBeenSet(false),
     m_quotaBasicHasBeenSet(false),
     m_quotaUsedBasicHasBeenSet(false),
     m_quotaAdvancedHasBeenSet(false),
@@ -175,6 +176,23 @@ CoreInternalOutcome DescribeTWeSeeSubscriptionResponse::Deserialize(const string
         m_eventIdFilterConfigHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SummarizeConfig") && !rsp["SummarizeConfig"].IsNull())
+    {
+        if (!rsp["SummarizeConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SummarizeConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_summarizeConfig.Deserialize(rsp["SummarizeConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_summarizeConfigHasBeenSet = true;
+    }
+
     if (rsp.HasMember("QuotaBasic") && !rsp["QuotaBasic"].IsNull())
     {
         if (!rsp["QuotaBasic"].IsInt64())
@@ -300,6 +318,15 @@ string DescribeTWeSeeSubscriptionResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_eventIdFilterConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_summarizeConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SummarizeConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_summarizeConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_quotaBasicHasBeenSet)
@@ -432,6 +459,16 @@ SeeEventIdFilterConfig DescribeTWeSeeSubscriptionResponse::GetEventIdFilterConfi
 bool DescribeTWeSeeSubscriptionResponse::EventIdFilterConfigHasBeenSet() const
 {
     return m_eventIdFilterConfigHasBeenSet;
+}
+
+SeeSummarizeConfig DescribeTWeSeeSubscriptionResponse::GetSummarizeConfig() const
+{
+    return m_summarizeConfig;
+}
+
+bool DescribeTWeSeeSubscriptionResponse::SummarizeConfigHasBeenSet() const
+{
+    return m_summarizeConfigHasBeenSet;
 }
 
 int64_t DescribeTWeSeeSubscriptionResponse::GetQuotaBasic() const

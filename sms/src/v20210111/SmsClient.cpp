@@ -340,6 +340,56 @@ SmsClient::DescribePhoneNumberInfoOutcomeCallable SmsClient::DescribePhoneNumber
     return prom->get_future();
 }
 
+SmsClient::DescribeSendRecordListOutcome SmsClient::DescribeSendRecordList(const DescribeSendRecordListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSendRecordList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSendRecordListResponse rsp = DescribeSendRecordListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSendRecordListOutcome(rsp);
+        else
+            return DescribeSendRecordListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSendRecordListOutcome(outcome.GetError());
+    }
+}
+
+void SmsClient::DescribeSendRecordListAsync(const DescribeSendRecordListRequest& request, const DescribeSendRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSendRecordListRequest&;
+    using Resp = DescribeSendRecordListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSendRecordList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+SmsClient::DescribeSendRecordListOutcomeCallable SmsClient::DescribeSendRecordListCallable(const DescribeSendRecordListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSendRecordListOutcome>>();
+    DescribeSendRecordListAsync(
+    request,
+    [prom](
+        const SmsClient*,
+        const DescribeSendRecordListRequest&,
+        DescribeSendRecordListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 SmsClient::DescribeSmsSignListOutcome SmsClient::DescribeSmsSignList(const DescribeSmsSignListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSmsSignList");

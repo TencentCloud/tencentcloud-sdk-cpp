@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>输出图片的元信息。当 StorageMode 为 Permanent 时有效。</p>
-                     * @return MetaData <p>输出图片的元信息。当 StorageMode 为 Permanent 时有效。</p>
+                     * 获取<p>输出图片的元信息。</p>
+                     * @return MetaData <p>输出图片的元信息。</p>
                      * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
-                     * 设置<p>输出图片的元信息。当 StorageMode 为 Permanent 时有效。</p>
-                     * @param _metaData <p>输出图片的元信息。当 StorageMode 为 Permanent 时有效。</p>
+                     * 设置<p>输出图片的元信息。</p>
+                     * @param _metaData <p>输出图片的元信息。</p>
                      * 
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
@@ -260,7 +260,7 @@ namespace TencentCloud
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * <p>输出图片的元信息。当 StorageMode 为 Permanent 时有效。</p>
+                     * <p>输出图片的元信息。</p>
                      */
                     MediaMetaData m_metaData;
                     bool m_metaDataHasBeenSet;

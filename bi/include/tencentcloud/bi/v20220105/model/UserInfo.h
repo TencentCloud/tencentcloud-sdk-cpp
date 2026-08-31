@@ -238,6 +238,31 @@ namespace TencentCloud
                      */
                     bool LarkOpenIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IdentityType <p>用户类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIdentityType() const;
+
+                    /**
+                     * 设置<p>用户类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _identityType <p>用户类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIdentityType(const std::string& _identityType);
+
+                    /**
+                     * 判断参数 IdentityType 是否已赋值
+                     * @return IdentityType 是否已赋值
+                     * 
+                     */
+                    bool IdentityTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -293,6 +318,13 @@ namespace TencentCloud
                      */
                     std::string m_larkOpenId;
                     bool m_larkOpenIdHasBeenSet;
+
+                    /**
+                     * <p>用户类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_identityType;
+                    bool m_identityTypeHasBeenSet;
 
                 };
             }

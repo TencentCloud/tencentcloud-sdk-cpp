@@ -51,14 +51,14 @@ namespace TencentCloud
                      * @return MinCcu <p>ccu最小值</p>
                      * 
                      */
-                    int64_t GetMinCcu() const;
+                    double GetMinCcu() const;
 
                     /**
                      * 设置<p>ccu最小值</p>
                      * @param _minCcu <p>ccu最小值</p>
                      * 
                      */
-                    void SetMinCcu(const int64_t& _minCcu);
+                    void SetMinCcu(const double& _minCcu);
 
                     /**
                      * 判断参数 MinCcu 是否已赋值
@@ -72,14 +72,14 @@ namespace TencentCloud
                      * @return MaxCcu <p>ccu最大值范围</p>
                      * 
                      */
-                    std::vector<int64_t> GetMaxCcu() const;
+                    std::vector<double> GetMaxCcu() const;
 
                     /**
                      * 设置<p>ccu最大值范围</p>
                      * @param _maxCcu <p>ccu最大值范围</p>
                      * 
                      */
-                    void SetMaxCcu(const std::vector<int64_t>& _maxCcu);
+                    void SetMaxCcu(const std::vector<double>& _maxCcu);
 
                     /**
                      * 判断参数 MaxCcu 是否已赋值
@@ -93,13 +93,13 @@ namespace TencentCloud
                     /**
                      * <p>ccu最小值</p>
                      */
-                    int64_t m_minCcu;
+                    double m_minCcu;
                     bool m_minCcuHasBeenSet;
 
                     /**
                      * <p>ccu最大值范围</p>
                      */
-                    std::vector<int64_t> m_maxCcu;
+                    std::vector<double> m_maxCcu;
                     bool m_maxCcuHasBeenSet;
 
                 };

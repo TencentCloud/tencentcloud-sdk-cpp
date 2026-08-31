@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流Id。
-                     * @return FlowId 流Id。
+                     * 获取<p>流Id。</p>
+                     * @return FlowId <p>流Id。</p>
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置流Id。
-                     * @param _flowId 流Id。
+                     * 设置<p>流Id。</p>
+                     * @param _flowId <p>流Id。</p>
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取流名称。
-                     * @return FlowName 流名称。
+                     * 获取<p>流名称。</p>
+                     * @return FlowName <p>流名称。</p>
                      * 
                      */
                     std::string GetFlowName() const;
 
                     /**
-                     * 设置流名称。
-                     * @param _flowName 流名称。
+                     * 设置<p>流名称。</p>
+                     * @param _flowName <p>流名称。</p>
                      * 
                      */
                     void SetFlowName(const std::string& _flowName);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool FlowNameHasBeenSet() const;
 
                     /**
-                     * 获取流状态，目前有IDLE/RUNNING。
-                     * @return State 流状态，目前有IDLE/RUNNING。
+                     * 获取<p>流状态，目前有IDLE/RUNNING。</p>
+                     * @return State <p>流状态，目前有IDLE/RUNNING。</p>
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置流状态，目前有IDLE/RUNNING。
-                     * @param _state 流状态，目前有IDLE/RUNNING。
+                     * 设置<p>流状态，目前有IDLE/RUNNING。</p>
+                     * @param _state <p>流状态，目前有IDLE/RUNNING。</p>
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取最大带宽值。
-                     * @return MaxBandwidth 最大带宽值。
+                     * 获取<p>最大带宽值。</p>
+                     * @return MaxBandwidth <p>最大带宽值。</p>
                      * 
                      */
                     int64_t GetMaxBandwidth() const;
 
                     /**
-                     * 设置最大带宽值。
-                     * @param _maxBandwidth 最大带宽值。
+                     * 设置<p>最大带宽值。</p>
+                     * @param _maxBandwidth <p>最大带宽值。</p>
                      * 
                      */
                     void SetMaxBandwidth(const int64_t& _maxBandwidth);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool MaxBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取输入组。
-                     * @return InputGroup 输入组。
+                     * 获取<p>输入组。</p>
+                     * @return InputGroup <p>输入组。</p>
                      * 
                      */
                     std::vector<DescribeInput> GetInputGroup() const;
 
                     /**
-                     * 设置输入组。
-                     * @param _inputGroup 输入组。
+                     * 设置<p>输入组。</p>
+                     * @param _inputGroup <p>输入组。</p>
                      * 
                      */
                     void SetInputGroup(const std::vector<DescribeInput>& _inputGroup);
@@ -154,18 +154,18 @@ namespace TencentCloud
                     bool InputGroupHasBeenSet() const;
 
                     /**
-                     * 获取输出组。
+                     * 获取<p>输出组。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OutputGroup 输出组。
+                     * @return OutputGroup <p>输出组。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DescribeOutput> GetOutputGroup() const;
 
                     /**
-                     * 设置输出组。
+                     * 设置<p>输出组。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _outputGroup 输出组。
+                     * @param _outputGroup <p>输出组。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -179,15 +179,15 @@ namespace TencentCloud
                     bool OutputGroupHasBeenSet() const;
 
                     /**
-                     * 获取该Flow关联的媒体传输事件EventId。
-                     * @return EventId 该Flow关联的媒体传输事件EventId。
+                     * 获取<p>该Flow关联的媒体传输事件EventId。</p>
+                     * @return EventId <p>该Flow关联的媒体传输事件EventId。</p>
                      * 
                      */
                     std::string GetEventId() const;
 
                     /**
-                     * 设置该Flow关联的媒体传输事件EventId。
-                     * @param _eventId 该Flow关联的媒体传输事件EventId。
+                     * 设置<p>该Flow关联的媒体传输事件EventId。</p>
+                     * @param _eventId <p>该Flow关联的媒体传输事件EventId。</p>
                      * 
                      */
                     void SetEventId(const std::string& _eventId);
@@ -200,15 +200,15 @@ namespace TencentCloud
                     bool EventIdHasBeenSet() const;
 
                     /**
-                     * 获取媒体传输输入流所属的区域，取值和InputRegion相同。
-                     * @return Region 媒体传输输入流所属的区域，取值和InputRegion相同。
+                     * 获取<p>媒体传输输入流所属的区域，取值和InputRegion相同。</p>
+                     * @return Region <p>媒体传输输入流所属的区域，取值和InputRegion相同。</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置媒体传输输入流所属的区域，取值和InputRegion相同。
-                     * @param _region 媒体传输输入流所属的区域，取值和InputRegion相同。
+                     * 设置<p>媒体传输输入流所属的区域，取值和InputRegion相同。</p>
+                     * @param _region <p>媒体传输输入流所属的区域，取值和InputRegion相同。</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -221,15 +221,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取该Flow允许创建的输入协议
-                     * @return AllowedInputProtocols 该Flow允许创建的输入协议
+                     * 获取<p>该Flow允许创建的输入协议</p>
+                     * @return AllowedInputProtocols <p>该Flow允许创建的输入协议</p>
                      * 
                      */
                     std::vector<std::string> GetAllowedInputProtocols() const;
 
                     /**
-                     * 设置该Flow允许创建的输入协议
-                     * @param _allowedInputProtocols 该Flow允许创建的输入协议
+                     * 设置<p>该Flow允许创建的输入协议</p>
+                     * @param _allowedInputProtocols <p>该Flow允许创建的输入协议</p>
                      * 
                      */
                     void SetAllowedInputProtocols(const std::vector<std::string>& _allowedInputProtocols);
@@ -242,15 +242,15 @@ namespace TencentCloud
                     bool AllowedInputProtocolsHasBeenSet() const;
 
                     /**
-                     * 获取该Flow允许创建的输出协议
-                     * @return AllowedOutputProtocols 该Flow允许创建的输出协议
+                     * 获取<p>该Flow允许创建的输出协议</p>
+                     * @return AllowedOutputProtocols <p>该Flow允许创建的输出协议</p>
                      * 
                      */
                     std::vector<std::string> GetAllowedOutputProtocols() const;
 
                     /**
-                     * 设置该Flow允许创建的输出协议
-                     * @param _allowedOutputProtocols 该Flow允许创建的输出协议
+                     * 设置<p>该Flow允许创建的输出协议</p>
+                     * @param _allowedOutputProtocols <p>该Flow允许创建的输出协议</p>
                      * 
                      */
                     void SetAllowedOutputProtocols(const std::vector<std::string>& _allowedOutputProtocols);
@@ -265,62 +265,62 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流Id。
+                     * <p>流Id。</p>
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 流名称。
+                     * <p>流名称。</p>
                      */
                     std::string m_flowName;
                     bool m_flowNameHasBeenSet;
 
                     /**
-                     * 流状态，目前有IDLE/RUNNING。
+                     * <p>流状态，目前有IDLE/RUNNING。</p>
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 最大带宽值。
+                     * <p>最大带宽值。</p>
                      */
                     int64_t m_maxBandwidth;
                     bool m_maxBandwidthHasBeenSet;
 
                     /**
-                     * 输入组。
+                     * <p>输入组。</p>
                      */
                     std::vector<DescribeInput> m_inputGroup;
                     bool m_inputGroupHasBeenSet;
 
                     /**
-                     * 输出组。
+                     * <p>输出组。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DescribeOutput> m_outputGroup;
                     bool m_outputGroupHasBeenSet;
 
                     /**
-                     * 该Flow关联的媒体传输事件EventId。
+                     * <p>该Flow关联的媒体传输事件EventId。</p>
                      */
                     std::string m_eventId;
                     bool m_eventIdHasBeenSet;
 
                     /**
-                     * 媒体传输输入流所属的区域，取值和InputRegion相同。
+                     * <p>媒体传输输入流所属的区域，取值和InputRegion相同。</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 该Flow允许创建的输入协议
+                     * <p>该Flow允许创建的输入协议</p>
                      */
                     std::vector<std::string> m_allowedInputProtocols;
                     bool m_allowedInputProtocolsHasBeenSet;
 
                     /**
-                     * 该Flow允许创建的输出协议
+                     * <p>该Flow允许创建的输出协议</p>
                      */
                     std::vector<std::string> m_allowedOutputProtocols;
                     bool m_allowedOutputProtocolsHasBeenSet;

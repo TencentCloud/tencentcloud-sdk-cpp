@@ -24,10 +24,12 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/clb/v20180317/model/ApiBaseItem.h>
 #include <tencentcloud/clb/v20180317/model/KeyDetailItem.h>
 #include <tencentcloud/clb/v20180317/model/ServiceProviderModelItem.h>
 #include <tencentcloud/clb/v20180317/model/TagInfo.h>
 #include <tencentcloud/clb/v20180317/model/ServiceProviderHealthCheckConfigOutput.h>
+#include <tencentcloud/clb/v20180317/model/ServiceProviderHealthCheckConfigItemOutput.h>
 
 
 namespace TencentCloud
@@ -95,6 +97,31 @@ namespace TencentCloud
                      * 
                      */
                     bool ApiBaseHasBeenSet() const;
+
+                    /**
+                     * 获取<p>多协议 API Base URL</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApiBases <p>多协议 API Base URL</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ApiBaseItem> GetApiBases() const;
+
+                    /**
+                     * 设置<p>多协议 API Base URL</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _apiBases <p>多协议 API Base URL</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApiBases(const std::vector<ApiBaseItem>& _apiBases);
+
+                    /**
+                     * 判断参数 ApiBases 是否已赋值
+                     * @return ApiBases 是否已赋值
+                     * 
+                     */
+                    bool ApiBasesHasBeenSet() const;
 
                     /**
                      * 获取<p>模型创建时间（ISO 8601）</p>
@@ -452,6 +479,77 @@ namespace TencentCloud
                      */
                     bool HealthCheckConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>私网管道 ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CMRPrivateNetworkTunnelId <p>私网管道 ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCMRPrivateNetworkTunnelId() const;
+
+                    /**
+                     * 设置<p>私网管道 ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cMRPrivateNetworkTunnelId <p>私网管道 ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCMRPrivateNetworkTunnelId(const std::string& _cMRPrivateNetworkTunnelId);
+
+                    /**
+                     * 判断参数 CMRPrivateNetworkTunnelId 是否已赋值
+                     * @return CMRPrivateNetworkTunnelId 是否已赋值
+                     * 
+                     */
+                    bool CMRPrivateNetworkTunnelIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>私网管道名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CMRPrivateNetworkTunnelName <p>私网管道名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCMRPrivateNetworkTunnelName() const;
+
+                    /**
+                     * 设置<p>私网管道名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cMRPrivateNetworkTunnelName <p>私网管道名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCMRPrivateNetworkTunnelName(const std::string& _cMRPrivateNetworkTunnelName);
+
+                    /**
+                     * 判断参数 CMRPrivateNetworkTunnelName 是否已赋值
+                     * @return CMRPrivateNetworkTunnelName 是否已赋值
+                     * 
+                     */
+                    bool CMRPrivateNetworkTunnelNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>健康检查配置</p>
+                     * @return HealthCheckConfigs <p>健康检查配置</p>
+                     * 
+                     */
+                    std::vector<ServiceProviderHealthCheckConfigItemOutput> GetHealthCheckConfigs() const;
+
+                    /**
+                     * 设置<p>健康检查配置</p>
+                     * @param _healthCheckConfigs <p>健康检查配置</p>
+                     * 
+                     */
+                    void SetHealthCheckConfigs(const std::vector<ServiceProviderHealthCheckConfigItemOutput>& _healthCheckConfigs);
+
+                    /**
+                     * 判断参数 HealthCheckConfigs 是否已赋值
+                     * @return HealthCheckConfigs 是否已赋值
+                     * 
+                     */
+                    bool HealthCheckConfigsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -466,6 +564,13 @@ namespace TencentCloud
                      */
                     std::string m_apiBase;
                     bool m_apiBaseHasBeenSet;
+
+                    /**
+                     * <p>多协议 API Base URL</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ApiBaseItem> m_apiBases;
+                    bool m_apiBasesHasBeenSet;
 
                     /**
                      * <p>模型创建时间（ISO 8601）</p>
@@ -567,6 +672,26 @@ namespace TencentCloud
                      */
                     ServiceProviderHealthCheckConfigOutput m_healthCheckConfig;
                     bool m_healthCheckConfigHasBeenSet;
+
+                    /**
+                     * <p>私网管道 ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cMRPrivateNetworkTunnelId;
+                    bool m_cMRPrivateNetworkTunnelIdHasBeenSet;
+
+                    /**
+                     * <p>私网管道名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cMRPrivateNetworkTunnelName;
+                    bool m_cMRPrivateNetworkTunnelNameHasBeenSet;
+
+                    /**
+                     * <p>健康检查配置</p>
+                     */
+                    std::vector<ServiceProviderHealthCheckConfigItemOutput> m_healthCheckConfigs;
+                    bool m_healthCheckConfigsHasBeenSet;
 
                 };
             }

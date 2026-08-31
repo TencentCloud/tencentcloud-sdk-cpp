@@ -34,7 +34,9 @@ CcnAttachedInstance::CcnAttachedInstance() :
     m_instanceAreaHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_routeTableIdHasBeenSet(false),
-    m_routeTableNameHasBeenSet(false)
+    m_routeTableNameHasBeenSet(false),
+    m_aliasTypeHasBeenSet(false),
+    m_aliasInstanceIdHasBeenSet(false)
 {
 }
 
@@ -186,6 +188,26 @@ CoreInternalOutcome CcnAttachedInstance::Deserialize(const rapidjson::Value &val
         m_routeTableNameHasBeenSet = true;
     }
 
+    if (value.HasMember("AliasType") && !value["AliasType"].IsNull())
+    {
+        if (!value["AliasType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CcnAttachedInstance.AliasType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aliasType = string(value["AliasType"].GetString());
+        m_aliasTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AliasInstanceId") && !value["AliasInstanceId"].IsNull())
+    {
+        if (!value["AliasInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CcnAttachedInstance.AliasInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aliasInstanceId = string(value["AliasInstanceId"].GetString());
+        m_aliasInstanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -308,6 +330,22 @@ void CcnAttachedInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "RouteTableName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_routeTableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aliasTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AliasType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aliasType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aliasInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AliasInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aliasInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -535,5 +573,37 @@ void CcnAttachedInstance::SetRouteTableName(const string& _routeTableName)
 bool CcnAttachedInstance::RouteTableNameHasBeenSet() const
 {
     return m_routeTableNameHasBeenSet;
+}
+
+string CcnAttachedInstance::GetAliasType() const
+{
+    return m_aliasType;
+}
+
+void CcnAttachedInstance::SetAliasType(const string& _aliasType)
+{
+    m_aliasType = _aliasType;
+    m_aliasTypeHasBeenSet = true;
+}
+
+bool CcnAttachedInstance::AliasTypeHasBeenSet() const
+{
+    return m_aliasTypeHasBeenSet;
+}
+
+string CcnAttachedInstance::GetAliasInstanceId() const
+{
+    return m_aliasInstanceId;
+}
+
+void CcnAttachedInstance::SetAliasInstanceId(const string& _aliasInstanceId)
+{
+    m_aliasInstanceId = _aliasInstanceId;
+    m_aliasInstanceIdHasBeenSet = true;
+}
+
+bool CcnAttachedInstance::AliasInstanceIdHasBeenSet() const
+{
+    return m_aliasInstanceIdHasBeenSet;
 }
 

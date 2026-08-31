@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ioa/v20220601/model/DeviceNetworkCardBrief.h>
+#include <tencentcloud/ioa/v20220601/model/DeviceVideoCardBrief.h>
 
 
 namespace TencentCloud
@@ -424,6 +426,132 @@ namespace TencentCloud
                      */
                     bool BiosUuidHasBeenSet() const;
 
+                    /**
+                     * 获取<p>多网卡数据</p>
+                     * @return NetworkCards <p>多网卡数据</p>
+                     * 
+                     */
+                    std::vector<DeviceNetworkCardBrief> GetNetworkCards() const;
+
+                    /**
+                     * 设置<p>多网卡数据</p>
+                     * @param _networkCards <p>多网卡数据</p>
+                     * 
+                     */
+                    void SetNetworkCards(const std::vector<DeviceNetworkCardBrief>& _networkCards);
+
+                    /**
+                     * 判断参数 NetworkCards 是否已赋值
+                     * @return NetworkCards 是否已赋值
+                     * 
+                     */
+                    bool NetworkCardsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>多显卡数据</p>
+                     * @return VideoCards <p>多显卡数据</p>
+                     * 
+                     */
+                    std::vector<DeviceVideoCardBrief> GetVideoCards() const;
+
+                    /**
+                     * 设置<p>多显卡数据</p>
+                     * @param _videoCards <p>多显卡数据</p>
+                     * 
+                     */
+                    void SetVideoCards(const std::vector<DeviceVideoCardBrief>& _videoCards);
+
+                    /**
+                     * 判断参数 VideoCards 是否已赋值
+                     * @return VideoCards 是否已赋值
+                     * 
+                     */
+                    bool VideoCardsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>主板型号</p>
+                     * @return MainBoard <p>主板型号</p>
+                     * 
+                     */
+                    std::string GetMainBoard() const;
+
+                    /**
+                     * 设置<p>主板型号</p>
+                     * @param _mainBoard <p>主板型号</p>
+                     * 
+                     */
+                    void SetMainBoard(const std::string& _mainBoard);
+
+                    /**
+                     * 判断参数 MainBoard 是否已赋值
+                     * @return MainBoard 是否已赋值
+                     * 
+                     */
+                    bool MainBoardHasBeenSet() const;
+
+                    /**
+                     * 获取<p>主板序列号</p>
+                     * @return BaseBoardSn <p>主板序列号</p>
+                     * 
+                     */
+                    std::string GetBaseBoardSn() const;
+
+                    /**
+                     * 设置<p>主板序列号</p>
+                     * @param _baseBoardSn <p>主板序列号</p>
+                     * 
+                     */
+                    void SetBaseBoardSn(const std::string& _baseBoardSn);
+
+                    /**
+                     * 判断参数 BaseBoardSn 是否已赋值
+                     * @return BaseBoardSn 是否已赋值
+                     * 
+                     */
+                    bool BaseBoardSnHasBeenSet() const;
+
+                    /**
+                     * 获取<p>主板制造商</p>
+                     * @return BaseBoardManufacturer <p>主板制造商</p>
+                     * 
+                     */
+                    std::string GetBaseBoardManufacturer() const;
+
+                    /**
+                     * 设置<p>主板制造商</p>
+                     * @param _baseBoardManufacturer <p>主板制造商</p>
+                     * 
+                     */
+                    void SetBaseBoardManufacturer(const std::string& _baseBoardManufacturer);
+
+                    /**
+                     * 判断参数 BaseBoardManufacturer 是否已赋值
+                     * @return BaseBoardManufacturer 是否已赋值
+                     * 
+                     */
+                    bool BaseBoardManufacturerHasBeenSet() const;
+
+                    /**
+                     * 获取<p>声卡</p>
+                     * @return AudioCard <p>声卡</p>
+                     * 
+                     */
+                    std::string GetAudioCard() const;
+
+                    /**
+                     * 设置<p>声卡</p>
+                     * @param _audioCard <p>声卡</p>
+                     * 
+                     */
+                    void SetAudioCard(const std::string& _audioCard);
+
+                    /**
+                     * 判断参数 AudioCard 是否已赋值
+                     * @return AudioCard 是否已赋值
+                     * 
+                     */
+                    bool AudioCardHasBeenSet() const;
+
                 private:
 
                     /**
@@ -533,6 +661,42 @@ namespace TencentCloud
                      */
                     std::string m_biosUuid;
                     bool m_biosUuidHasBeenSet;
+
+                    /**
+                     * <p>多网卡数据</p>
+                     */
+                    std::vector<DeviceNetworkCardBrief> m_networkCards;
+                    bool m_networkCardsHasBeenSet;
+
+                    /**
+                     * <p>多显卡数据</p>
+                     */
+                    std::vector<DeviceVideoCardBrief> m_videoCards;
+                    bool m_videoCardsHasBeenSet;
+
+                    /**
+                     * <p>主板型号</p>
+                     */
+                    std::string m_mainBoard;
+                    bool m_mainBoardHasBeenSet;
+
+                    /**
+                     * <p>主板序列号</p>
+                     */
+                    std::string m_baseBoardSn;
+                    bool m_baseBoardSnHasBeenSet;
+
+                    /**
+                     * <p>主板制造商</p>
+                     */
+                    std::string m_baseBoardManufacturer;
+                    bool m_baseBoardManufacturerHasBeenSet;
+
+                    /**
+                     * <p>声卡</p>
+                     */
+                    std::string m_audioCard;
+                    bool m_audioCardHasBeenSet;
 
                 };
             }

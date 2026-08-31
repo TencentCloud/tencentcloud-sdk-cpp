@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时间戳，单位为秒。
-                     * @return Timestamp 时间戳，单位为秒。
+                     * 获取<p>时间戳，单位为秒。</p>
+                     * @return Timestamp <p>时间戳，单位为秒。</p>
                      * 
                      */
                     int64_t GetTimestamp() const;
 
                     /**
-                     * 设置时间戳，单位为秒。
-                     * @param _timestamp 时间戳，单位为秒。
+                     * 设置<p>时间戳，单位为秒。</p>
+                     * @param _timestamp <p>时间戳，单位为秒。</p>
                      * 
                      */
                     void SetTimestamp(const int64_t& _timestamp);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TimestampHasBeenSet() const;
 
                     /**
-                     * 获取输入输出类型（input/output）。
-                     * @return Type 输入输出类型（input/output）。
+                     * 获取<p>输入输出类型（input/output）。</p>
+                     * @return Type <p>输入输出类型（input/output）。</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置输入输出类型（input/output）。
-                     * @param _type 输入输出类型（input/output）。
+                     * 设置<p>输入输出类型（input/output）。</p>
+                     * @param _type <p>输入输出类型（input/output）。</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取输入或输出Id。
-                     * @return InputOutputId 输入或输出Id。
+                     * 获取<p>输入或输出Id。</p>
+                     * @return InputOutputId <p>输入或输出Id。</p>
                      * 
                      */
                     std::string GetInputOutputId() const;
 
                     /**
-                     * 设置输入或输出Id。
-                     * @param _inputOutputId 输入或输出Id。
+                     * 设置<p>输入或输出Id。</p>
+                     * @param _inputOutputId <p>输入或输出Id。</p>
                      * 
                      */
                     void SetInputOutputId(const std::string& _inputOutputId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool InputOutputIdHasBeenSet() const;
 
                     /**
-                     * 获取协议。
-                     * @return Protocol 协议。
+                     * 获取<p>协议。</p>
+                     * @return Protocol <p>协议。</p>
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议。
-                     * @param _protocol 协议。
+                     * 设置<p>协议。</p>
+                     * @param _protocol <p>协议。</p>
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取事件代码。
-                     * @return EventCode 事件代码。
+                     * 获取<p>事件代码。</p>
+                     * @return EventCode <p>事件代码。</p>
                      * 
                      */
                     std::string GetEventCode() const;
 
                     /**
-                     * 设置事件代码。
-                     * @param _eventCode 事件代码。
+                     * 设置<p>事件代码。</p>
+                     * @param _eventCode <p>事件代码。</p>
                      * 
                      */
                     void SetEventCode(const std::string& _eventCode);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool EventCodeHasBeenSet() const;
 
                     /**
-                     * 获取事件信息。
-                     * @return EventMessage 事件信息。
+                     * 获取<p>事件信息。</p>
+                     * @return EventMessage <p>事件信息。</p>
                      * 
                      */
                     std::string GetEventMessage() const;
 
                     /**
-                     * 设置事件信息。
-                     * @param _eventMessage 事件信息。
+                     * 设置<p>事件信息。</p>
+                     * @param _eventMessage <p>事件信息。</p>
                      * 
                      */
                     void SetEventMessage(const std::string& _eventMessage);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool EventMessageHasBeenSet() const;
 
                     /**
-                     * 获取对端IP。
-                     * @return RemoteIp 对端IP。
+                     * 获取<p>对端IP。</p>
+                     * @return RemoteIp <p>对端IP。</p>
                      * 
                      */
                     std::string GetRemoteIp() const;
 
                     /**
-                     * 设置对端IP。
-                     * @param _remoteIp 对端IP。
+                     * 设置<p>对端IP。</p>
+                     * @param _remoteIp <p>对端IP。</p>
                      * 
                      */
                     void SetRemoteIp(const std::string& _remoteIp);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool RemoteIpHasBeenSet() const;
 
                     /**
-                     * 获取对端端口。
-                     * @return RemotePort 对端端口。
+                     * 获取<p>对端端口。</p>
+                     * @return RemotePort <p>对端端口。</p>
                      * 
                      */
                     std::string GetRemotePort() const;
 
                     /**
-                     * 设置对端端口。
-                     * @param _remotePort 对端端口。
+                     * 设置<p>对端端口。</p>
+                     * @param _remotePort <p>对端端口。</p>
                      * 
                      */
                     void SetRemotePort(const std::string& _remotePort);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool RemotePortHasBeenSet() const;
 
                     /**
-                     * 获取主备通道，0为主通道，1为备通道。
-                     * @return Pipeline 主备通道，0为主通道，1为备通道。
+                     * 获取<p>主备通道，0为主通道，1为备通道。</p>
+                     * @return Pipeline <p>主备通道，0为主通道，1为备通道。</p>
                      * 
                      */
                     std::string GetPipeline() const;
 
                     /**
-                     * 设置主备通道，0为主通道，1为备通道。
-                     * @param _pipeline 主备通道，0为主通道，1为备通道。
+                     * 设置<p>主备通道，0为主通道，1为备通道。</p>
+                     * @param _pipeline <p>主备通道，0为主通道，1为备通道。</p>
                      * 
                      */
                     void SetPipeline(const std::string& _pipeline);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool PipelineHasBeenSet() const;
 
                     /**
-                     * 获取输入或输出的名称。
-                     * @return InputOutputName 输入或输出的名称。
+                     * 获取<p>输入或输出的名称。</p>
+                     * @return InputOutputName <p>输入或输出的名称。</p>
                      * 
                      */
                     std::string GetInputOutputName() const;
 
                     /**
-                     * 设置输入或输出的名称。
-                     * @param _inputOutputName 输入或输出的名称。
+                     * 设置<p>输入或输出的名称。</p>
+                     * @param _inputOutputName <p>输入或输出的名称。</p>
                      * 
                      */
                     void SetInputOutputName(const std::string& _inputOutputName);
@@ -259,61 +259,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 时间戳，单位为秒。
+                     * <p>时间戳，单位为秒。</p>
                      */
                     int64_t m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
-                     * 输入输出类型（input/output）。
+                     * <p>输入输出类型（input/output）。</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 输入或输出Id。
+                     * <p>输入或输出Id。</p>
                      */
                     std::string m_inputOutputId;
                     bool m_inputOutputIdHasBeenSet;
 
                     /**
-                     * 协议。
+                     * <p>协议。</p>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 事件代码。
+                     * <p>事件代码。</p>
                      */
                     std::string m_eventCode;
                     bool m_eventCodeHasBeenSet;
 
                     /**
-                     * 事件信息。
+                     * <p>事件信息。</p>
                      */
                     std::string m_eventMessage;
                     bool m_eventMessageHasBeenSet;
 
                     /**
-                     * 对端IP。
+                     * <p>对端IP。</p>
                      */
                     std::string m_remoteIp;
                     bool m_remoteIpHasBeenSet;
 
                     /**
-                     * 对端端口。
+                     * <p>对端端口。</p>
                      */
                     std::string m_remotePort;
                     bool m_remotePortHasBeenSet;
 
                     /**
-                     * 主备通道，0为主通道，1为备通道。
+                     * <p>主备通道，0为主通道，1为备通道。</p>
                      */
                     std::string m_pipeline;
                     bool m_pipelineHasBeenSet;
 
                     /**
-                     * 输入或输出的名称。
+                     * <p>输入或输出的名称。</p>
                      */
                     std::string m_inputOutputName;
                     bool m_inputOutputNameHasBeenSet;

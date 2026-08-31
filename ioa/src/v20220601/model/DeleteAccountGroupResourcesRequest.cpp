@@ -1,0 +1,101 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/ioa/v20220601/model/DeleteAccountGroupResourcesRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Ioa::V20220601::Model;
+using namespace std;
+
+DeleteAccountGroupResourcesRequest::DeleteAccountGroupResourcesRequest() :
+    m_resourceListHasBeenSet(false),
+    m_accountGroupIdHasBeenSet(false)
+{
+}
+
+string DeleteAccountGroupResourcesRequest::ToJsonString() const
+{
+    rapidjson::Document d;
+    d.SetObject();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_resourceListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceList.begin(); itr != m_resourceList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_accountGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_accountGroupId, allocator);
+    }
+
+
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+vector<DeleteResourceData> DeleteAccountGroupResourcesRequest::GetResourceList() const
+{
+    return m_resourceList;
+}
+
+void DeleteAccountGroupResourcesRequest::SetResourceList(const vector<DeleteResourceData>& _resourceList)
+{
+    m_resourceList = _resourceList;
+    m_resourceListHasBeenSet = true;
+}
+
+bool DeleteAccountGroupResourcesRequest::ResourceListHasBeenSet() const
+{
+    return m_resourceListHasBeenSet;
+}
+
+uint64_t DeleteAccountGroupResourcesRequest::GetAccountGroupId() const
+{
+    return m_accountGroupId;
+}
+
+void DeleteAccountGroupResourcesRequest::SetAccountGroupId(const uint64_t& _accountGroupId)
+{
+    m_accountGroupId = _accountGroupId;
+    m_accountGroupIdHasBeenSet = true;
+}
+
+bool DeleteAccountGroupResourcesRequest::AccountGroupIdHasBeenSet() const
+{
+    return m_accountGroupIdHasBeenSet;
+}
+
+

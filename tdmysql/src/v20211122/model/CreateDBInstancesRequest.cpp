@@ -56,7 +56,8 @@ CreateDBInstancesRequest::CreateDBInstancesRequest() :
     m_securityGroupIdsHasBeenSet(false),
     m_userNameHasBeenSet(false),
     m_passwordHasBeenSet(false),
-    m_encryptionEnableHasBeenSet(false)
+    m_encryptionEnableHasBeenSet(false),
+    m_autoScaleConfigsHasBeenSet(false)
 {
 }
 
@@ -367,6 +368,21 @@ string CreateDBInstancesRequest::ToJsonString() const
         string key = "EncryptionEnable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_encryptionEnable, allocator);
+    }
+
+    if (m_autoScaleConfigsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoScaleConfigs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_autoScaleConfigs.begin(); itr != m_autoScaleConfigs.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -919,6 +935,22 @@ void CreateDBInstancesRequest::SetEncryptionEnable(const int64_t& _encryptionEna
 bool CreateDBInstancesRequest::EncryptionEnableHasBeenSet() const
 {
     return m_encryptionEnableHasBeenSet;
+}
+
+vector<AutoScalingConfig> CreateDBInstancesRequest::GetAutoScaleConfigs() const
+{
+    return m_autoScaleConfigs;
+}
+
+void CreateDBInstancesRequest::SetAutoScaleConfigs(const vector<AutoScalingConfig>& _autoScaleConfigs)
+{
+    m_autoScaleConfigs = _autoScaleConfigs;
+    m_autoScaleConfigsHasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::AutoScaleConfigsHasBeenSet() const
+{
+    return m_autoScaleConfigsHasBeenSet;
 }
 
 

@@ -4190,6 +4190,56 @@ TcbClient::ModifyEnvOutcomeCallable TcbClient::ModifyEnvCallable(const ModifyEnv
     return prom->get_future();
 }
 
+TcbClient::ModifyEnvExtraOutcome TcbClient::ModifyEnvExtra(const ModifyEnvExtraRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyEnvExtra");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyEnvExtraResponse rsp = ModifyEnvExtraResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyEnvExtraOutcome(rsp);
+        else
+            return ModifyEnvExtraOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyEnvExtraOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::ModifyEnvExtraAsync(const ModifyEnvExtraRequest& request, const ModifyEnvExtraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyEnvExtraRequest&;
+    using Resp = ModifyEnvExtraResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyEnvExtra", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::ModifyEnvExtraOutcomeCallable TcbClient::ModifyEnvExtraCallable(const ModifyEnvExtraRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyEnvExtraOutcome>>();
+    ModifyEnvExtraAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ModifyEnvExtraRequest&,
+        ModifyEnvExtraOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::ModifyEnvPlanOutcome TcbClient::ModifyEnvPlan(const ModifyEnvPlanRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyEnvPlan");

@@ -155,6 +155,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/StickyConfig.h
   include/tencentcloud/clb/v20180317/model/DescribeExclusiveClustersResponse.h
   include/tencentcloud/clb/v20180317/model/BatchModifyTargetTagRequest.h
+  include/tencentcloud/clb/v20180317/model/ApiBaseItem.h
   include/tencentcloud/clb/v20180317/model/LoadBalancerHealth.h
   include/tencentcloud/clb/v20180317/model/ModifyRuleResponse.h
   include/tencentcloud/clb/v20180317/model/DeregisterFunctionTargetsResponse.h
@@ -169,6 +170,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/DescribeClsLogSetRequest.h
   include/tencentcloud/clb/v20180317/model/ModifyLoadBalancerAttributesResponse.h
   include/tencentcloud/clb/v20180317/model/CreditUsage.h
+  include/tencentcloud/clb/v20180317/model/ServiceProviderHealthCheckConfigItemOutput.h
   include/tencentcloud/clb/v20180317/model/DescribeModelAliasesRequest.h
   include/tencentcloud/clb/v20180317/model/AssociateModelRouterGuardrailsRequest.h
   include/tencentcloud/clb/v20180317/model/DescribeBudgetAssociationsResponse.h
@@ -472,6 +474,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/ModelAssociation.h
   include/tencentcloud/clb/v20180317/model/Quota.h
   include/tencentcloud/clb/v20180317/model/ListenerBackend.h
+  include/tencentcloud/clb/v20180317/model/ServiceProviderHealthCheckConfigItemInput.h
   include/tencentcloud/clb/v20180317/model/SnatIp.h
   include/tencentcloud/clb/v20180317/model/DescribeBlockIPTaskResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeServiceProviderHealthStatusRequest.h
@@ -621,6 +624,7 @@ set(clb_src
   src/v20180317/model/StickyConfig.cpp
   src/v20180317/model/DescribeExclusiveClustersResponse.cpp
   src/v20180317/model/BatchModifyTargetTagRequest.cpp
+  src/v20180317/model/ApiBaseItem.cpp
   src/v20180317/model/LoadBalancerHealth.cpp
   src/v20180317/model/ModifyRuleResponse.cpp
   src/v20180317/model/DeregisterFunctionTargetsResponse.cpp
@@ -635,6 +639,7 @@ set(clb_src
   src/v20180317/model/DescribeClsLogSetRequest.cpp
   src/v20180317/model/ModifyLoadBalancerAttributesResponse.cpp
   src/v20180317/model/CreditUsage.cpp
+  src/v20180317/model/ServiceProviderHealthCheckConfigItemOutput.cpp
   src/v20180317/model/DescribeModelAliasesRequest.cpp
   src/v20180317/model/AssociateModelRouterGuardrailsRequest.cpp
   src/v20180317/model/DescribeBudgetAssociationsResponse.cpp
@@ -938,6 +943,7 @@ set(clb_src
   src/v20180317/model/ModelAssociation.cpp
   src/v20180317/model/Quota.cpp
   src/v20180317/model/ListenerBackend.cpp
+  src/v20180317/model/ServiceProviderHealthCheckConfigItemInput.cpp
   src/v20180317/model/SnatIp.cpp
   src/v20180317/model/DescribeBlockIPTaskResponse.cpp
   src/v20180317/model/DescribeServiceProviderHealthStatusRequest.cpp

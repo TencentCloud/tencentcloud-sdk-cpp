@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云联网ID。
-                     * @return CcnId 云联网ID。
+                     * 获取<p>云联网ID。</p>
+                     * @return CcnId <p>云联网ID。</p>
                      * 
                      */
                     std::string GetCcnId() const;
 
                     /**
-                     * 设置云联网ID。
-                     * @param _ccnId 云联网ID。
+                     * 设置<p>云联网ID。</p>
+                     * @param _ccnId <p>云联网ID。</p>
                      * 
                      */
                     void SetCcnId(const std::string& _ccnId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CcnIdHasBeenSet() const;
 
                     /**
-                     * 获取实例类型：VPC，DIRECTCONNECT，BMVPC，EDGE，EDGE_TUNNEL，EDGE_VPNGW，VPNGW。
-                     * @return InstanceType 实例类型：VPC，DIRECTCONNECT，BMVPC，EDGE，EDGE_TUNNEL，EDGE_VPNGW，VPNGW。
+                     * 获取<p>实例类型：VPC，DIRECTCONNECT，BMVPC，EDGE，EDGE_TUNNEL，EDGE_VPNGW，VPNGW。</p>
+                     * @return InstanceType <p>实例类型：VPC，DIRECTCONNECT，BMVPC，EDGE，EDGE_TUNNEL，EDGE_VPNGW，VPNGW。</p>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置实例类型：VPC，DIRECTCONNECT，BMVPC，EDGE，EDGE_TUNNEL，EDGE_VPNGW，VPNGW。
-                     * @param _instanceType 实例类型：VPC，DIRECTCONNECT，BMVPC，EDGE，EDGE_TUNNEL，EDGE_VPNGW，VPNGW。
+                     * 设置<p>实例类型：VPC，DIRECTCONNECT，BMVPC，EDGE，EDGE_TUNNEL，EDGE_VPNGW，VPNGW。</p>
+                     * @param _instanceType <p>实例类型：VPC，DIRECTCONNECT，BMVPC，EDGE，EDGE_TUNNEL，EDGE_VPNGW，VPNGW。</p>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例ID。
-                     * @return InstanceId 实例ID。
+                     * 获取<p>实例ID。</p>
+                     * @return InstanceId <p>实例ID。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _instanceId 实例ID。
+                     * 设置<p>实例ID。</p>
+                     * @param _instanceId <p>实例ID。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例绑定路由表的时间。
-                     * @return InstanceBindTime 实例绑定路由表的时间。
+                     * 获取<p>实例绑定路由表的时间。</p>
+                     * @return InstanceBindTime <p>实例绑定路由表的时间。</p>
                      * 
                      */
                     std::string GetInstanceBindTime() const;
 
                     /**
-                     * 设置实例绑定路由表的时间。
-                     * @param _instanceBindTime 实例绑定路由表的时间。
+                     * 设置<p>实例绑定路由表的时间。</p>
+                     * @param _instanceBindTime <p>实例绑定路由表的时间。</p>
                      * 
                      */
                     void SetInstanceBindTime(const std::string& _instanceBindTime);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool InstanceBindTimeHasBeenSet() const;
 
                     /**
-                     * 获取路由表ID。
-                     * @return RouteTableId 路由表ID。
+                     * 获取<p>路由表ID。</p>
+                     * @return RouteTableId <p>路由表ID。</p>
                      * 
                      */
                     std::string GetRouteTableId() const;
 
                     /**
-                     * 设置路由表ID。
-                     * @param _routeTableId 路由表ID。
+                     * 设置<p>路由表ID。</p>
+                     * @param _routeTableId <p>路由表ID。</p>
                      * 
                      */
                     void SetRouteTableId(const std::string& _routeTableId);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool RouteTableIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称。
-                     * @return InstanceName 实例名称。
+                     * 获取<p>实例名称。</p>
+                     * @return InstanceName <p>实例名称。</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称。
-                     * @param _instanceName 实例名称。
+                     * 设置<p>实例名称。</p>
+                     * @param _instanceName <p>实例名称。</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例所在地域。
-                     * @return InstanceRegion 实例所在地域。
+                     * 获取<p>实例所在地域。</p>
+                     * @return InstanceRegion <p>实例所在地域。</p>
                      * 
                      */
                     std::string GetInstanceRegion() const;
 
                     /**
-                     * 设置实例所在地域。
-                     * @param _instanceRegion 实例所在地域。
+                     * 设置<p>实例所在地域。</p>
+                     * @param _instanceRegion <p>实例所在地域。</p>
                      * 
                      */
                     void SetInstanceRegion(const std::string& _instanceRegion);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool InstanceRegionHasBeenSet() const;
 
                     /**
-                     * 获取实例所属的账户uin。
-                     * @return InstanceUin 实例所属的账户uin。
+                     * 获取<p>实例所属的账户uin。</p>
+                     * @return InstanceUin <p>实例所属的账户uin。</p>
                      * 
                      */
                     std::string GetInstanceUin() const;
 
                     /**
-                     * 设置实例所属的账户uin。
-                     * @param _instanceUin 实例所属的账户uin。
+                     * 设置<p>实例所属的账户uin。</p>
+                     * @param _instanceUin <p>实例所属的账户uin。</p>
                      * 
                      */
                     void SetInstanceUin(const std::string& _instanceUin);
@@ -215,51 +215,15 @@ namespace TencentCloud
                     bool InstanceUinHasBeenSet() const;
 
                     /**
-                     * 获取关联实例状态：
-<li>`PENDING`：申请中</li>
-<li>`ACTIVE`：已连接</li>
-<li>`EXPIRED`：已过期</li>
-<li>`REJECTED`：已拒绝</li>
-<li>`DELETED`：已删除</li>
-<li>`FAILED`：失败的（2小时后将异步强制解关联）</li>
-<li>`ATTACHING`：关联中</li>
-<li>`DETACHING`：解关联中</li>
-<li>`DETACHFAILED`：解关联失败（2小时后将异步强制解关联）</li>
-                     * @return State 关联实例状态：
-<li>`PENDING`：申请中</li>
-<li>`ACTIVE`：已连接</li>
-<li>`EXPIRED`：已过期</li>
-<li>`REJECTED`：已拒绝</li>
-<li>`DELETED`：已删除</li>
-<li>`FAILED`：失败的（2小时后将异步强制解关联）</li>
-<li>`ATTACHING`：关联中</li>
-<li>`DETACHING`：解关联中</li>
-<li>`DETACHFAILED`：解关联失败（2小时后将异步强制解关联）</li>
+                     * 获取<p>关联实例状态：</p><li><code>PENDING</code>：申请中</li><li><code>ACTIVE</code>：已连接</li><li><code>EXPIRED</code>：已过期</li><li><code>REJECTED</code>：已拒绝</li><li><code>DELETED</code>：已删除</li><li><code>FAILED</code>：失败的（2小时后将异步强制解关联）</li><li><code>ATTACHING</code>：关联中</li><li><code>DETACHING</code>：解关联中</li><li><code>DETACHFAILED</code>：解关联失败（2小时后将异步强制解关联）</li>
+                     * @return State <p>关联实例状态：</p><li><code>PENDING</code>：申请中</li><li><code>ACTIVE</code>：已连接</li><li><code>EXPIRED</code>：已过期</li><li><code>REJECTED</code>：已拒绝</li><li><code>DELETED</code>：已删除</li><li><code>FAILED</code>：失败的（2小时后将异步强制解关联）</li><li><code>ATTACHING</code>：关联中</li><li><code>DETACHING</code>：解关联中</li><li><code>DETACHFAILED</code>：解关联失败（2小时后将异步强制解关联）</li>
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置关联实例状态：
-<li>`PENDING`：申请中</li>
-<li>`ACTIVE`：已连接</li>
-<li>`EXPIRED`：已过期</li>
-<li>`REJECTED`：已拒绝</li>
-<li>`DELETED`：已删除</li>
-<li>`FAILED`：失败的（2小时后将异步强制解关联）</li>
-<li>`ATTACHING`：关联中</li>
-<li>`DETACHING`：解关联中</li>
-<li>`DETACHFAILED`：解关联失败（2小时后将异步强制解关联）</li>
-                     * @param _state 关联实例状态：
-<li>`PENDING`：申请中</li>
-<li>`ACTIVE`：已连接</li>
-<li>`EXPIRED`：已过期</li>
-<li>`REJECTED`：已拒绝</li>
-<li>`DELETED`：已删除</li>
-<li>`FAILED`：失败的（2小时后将异步强制解关联）</li>
-<li>`ATTACHING`：关联中</li>
-<li>`DETACHING`：解关联中</li>
-<li>`DETACHFAILED`：解关联失败（2小时后将异步强制解关联）</li>
+                     * 设置<p>关联实例状态：</p><li><code>PENDING</code>：申请中</li><li><code>ACTIVE</code>：已连接</li><li><code>EXPIRED</code>：已过期</li><li><code>REJECTED</code>：已拒绝</li><li><code>DELETED</code>：已删除</li><li><code>FAILED</code>：失败的（2小时后将异步强制解关联）</li><li><code>ATTACHING</code>：关联中</li><li><code>DETACHING</code>：解关联中</li><li><code>DETACHFAILED</code>：解关联失败（2小时后将异步强制解关联）</li>
+                     * @param _state <p>关联实例状态：</p><li><code>PENDING</code>：申请中</li><li><code>ACTIVE</code>：已连接</li><li><code>EXPIRED</code>：已过期</li><li><code>REJECTED</code>：已拒绝</li><li><code>DELETED</code>：已删除</li><li><code>FAILED</code>：失败的（2小时后将异步强制解关联）</li><li><code>ATTACHING</code>：关联中</li><li><code>DETACHING</code>：解关联中</li><li><code>DETACHFAILED</code>：解关联失败（2小时后将异步强制解关联）</li>
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -271,70 +235,115 @@ namespace TencentCloud
                      */
                     bool StateHasBeenSet() const;
 
+                    /**
+                     * 获取<p>别名类型</p>
+                     * @return AliasType <p>别名类型</p>
+                     * 
+                     */
+                    std::string GetAliasType() const;
+
+                    /**
+                     * 设置<p>别名类型</p>
+                     * @param _aliasType <p>别名类型</p>
+                     * 
+                     */
+                    void SetAliasType(const std::string& _aliasType);
+
+                    /**
+                     * 判断参数 AliasType 是否已赋值
+                     * @return AliasType 是否已赋值
+                     * 
+                     */
+                    bool AliasTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>别名实例ID</p>
+                     * @return AliasInstanceId <p>别名实例ID</p>
+                     * 
+                     */
+                    std::string GetAliasInstanceId() const;
+
+                    /**
+                     * 设置<p>别名实例ID</p>
+                     * @param _aliasInstanceId <p>别名实例ID</p>
+                     * 
+                     */
+                    void SetAliasInstanceId(const std::string& _aliasInstanceId);
+
+                    /**
+                     * 判断参数 AliasInstanceId 是否已赋值
+                     * @return AliasInstanceId 是否已赋值
+                     * 
+                     */
+                    bool AliasInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 云联网ID。
+                     * <p>云联网ID。</p>
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;
 
                     /**
-                     * 实例类型：VPC，DIRECTCONNECT，BMVPC，EDGE，EDGE_TUNNEL，EDGE_VPNGW，VPNGW。
+                     * <p>实例类型：VPC，DIRECTCONNECT，BMVPC，EDGE，EDGE_TUNNEL，EDGE_VPNGW，VPNGW。</p>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 实例ID。
+                     * <p>实例ID。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例绑定路由表的时间。
+                     * <p>实例绑定路由表的时间。</p>
                      */
                     std::string m_instanceBindTime;
                     bool m_instanceBindTimeHasBeenSet;
 
                     /**
-                     * 路由表ID。
+                     * <p>路由表ID。</p>
                      */
                     std::string m_routeTableId;
                     bool m_routeTableIdHasBeenSet;
 
                     /**
-                     * 实例名称。
+                     * <p>实例名称。</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 实例所在地域。
+                     * <p>实例所在地域。</p>
                      */
                     std::string m_instanceRegion;
                     bool m_instanceRegionHasBeenSet;
 
                     /**
-                     * 实例所属的账户uin。
+                     * <p>实例所属的账户uin。</p>
                      */
                     std::string m_instanceUin;
                     bool m_instanceUinHasBeenSet;
 
                     /**
-                     * 关联实例状态：
-<li>`PENDING`：申请中</li>
-<li>`ACTIVE`：已连接</li>
-<li>`EXPIRED`：已过期</li>
-<li>`REJECTED`：已拒绝</li>
-<li>`DELETED`：已删除</li>
-<li>`FAILED`：失败的（2小时后将异步强制解关联）</li>
-<li>`ATTACHING`：关联中</li>
-<li>`DETACHING`：解关联中</li>
-<li>`DETACHFAILED`：解关联失败（2小时后将异步强制解关联）</li>
+                     * <p>关联实例状态：</p><li><code>PENDING</code>：申请中</li><li><code>ACTIVE</code>：已连接</li><li><code>EXPIRED</code>：已过期</li><li><code>REJECTED</code>：已拒绝</li><li><code>DELETED</code>：已删除</li><li><code>FAILED</code>：失败的（2小时后将异步强制解关联）</li><li><code>ATTACHING</code>：关联中</li><li><code>DETACHING</code>：解关联中</li><li><code>DETACHFAILED</code>：解关联失败（2小时后将异步强制解关联）</li>
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
+
+                    /**
+                     * <p>别名类型</p>
+                     */
+                    std::string m_aliasType;
+                    bool m_aliasTypeHasBeenSet;
+
+                    /**
+                     * <p>别名实例ID</p>
+                     */
+                    std::string m_aliasInstanceId;
+                    bool m_aliasInstanceIdHasBeenSet;
 
                 };
             }

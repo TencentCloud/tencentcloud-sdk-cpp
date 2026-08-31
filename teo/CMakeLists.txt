@@ -33,6 +33,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/CreateLogAnalysisDownloadTaskResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeSecurityIPGroupInfoResponse.h
   include/tencentcloud/teo/v20220901/model/AdaptiveFrequencyControl.h
+  include/tencentcloud/teo/v20220901/model/DescribeAvailableCustomActionsForRuleEngineRequest.h
   include/tencentcloud/teo/v20220901/model/RenewFlag.h
   include/tencentcloud/teo/v20220901/model/DescribeWebSecurityTemplatesRequest.h
   include/tencentcloud/teo/v20220901/model/SecurityAction.h
@@ -601,6 +602,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeCustomErrorPagesRequest.h
   include/tencentcloud/teo/v20220901/model/GatewayRegion.h
   include/tencentcloud/teo/v20220901/model/CachePrefreshParameters.h
+  include/tencentcloud/teo/v20220901/model/RuleEngineCustomAction.h
   include/tencentcloud/teo/v20220901/model/Action.h
   include/tencentcloud/teo/v20220901/model/JSInjectionRule.h
   include/tencentcloud/teo/v20220901/model/UpstreamFollowRedirectParameters.h
@@ -637,6 +639,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/L4OfflineLog.h
   include/tencentcloud/teo/v20220901/model/ModifyAliasDomainResponse.h
   include/tencentcloud/teo/v20220901/model/DeleteDnsRecordsRequest.h
+  include/tencentcloud/teo/v20220901/model/DescribeAvailableCustomActionsForRuleEngineResponse.h
   include/tencentcloud/teo/v20220901/model/OfflineCacheParameters.h
   include/tencentcloud/teo/v20220901/model/CustomActionParameters.h
   include/tencentcloud/teo/v20220901/model/DeleteAliasDomainRequest.h
@@ -768,6 +771,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DnsRecord.h
   include/tencentcloud/teo/v20220901/model/InferenceContainerConfig.h
   include/tencentcloud/teo/v20220901/model/OriginPrivateParameters.h
+  include/tencentcloud/teo/v20220901/model/RuleEngineCustomActionParameterSchema.h
   include/tencentcloud/teo/v20220901/model/ModifyZoneWorkModeResponse.h
   include/tencentcloud/teo/v20220901/model/HSTSParameters.h
   include/tencentcloud/teo/v20220901/model/Tag.h
@@ -915,6 +919,7 @@ set(teo_src
   src/v20220901/model/CreateLogAnalysisDownloadTaskResponse.cpp
   src/v20220901/model/DescribeSecurityIPGroupInfoResponse.cpp
   src/v20220901/model/AdaptiveFrequencyControl.cpp
+  src/v20220901/model/DescribeAvailableCustomActionsForRuleEngineRequest.cpp
   src/v20220901/model/RenewFlag.cpp
   src/v20220901/model/DescribeWebSecurityTemplatesRequest.cpp
   src/v20220901/model/SecurityAction.cpp
@@ -1483,6 +1488,7 @@ set(teo_src
   src/v20220901/model/DescribeCustomErrorPagesRequest.cpp
   src/v20220901/model/GatewayRegion.cpp
   src/v20220901/model/CachePrefreshParameters.cpp
+  src/v20220901/model/RuleEngineCustomAction.cpp
   src/v20220901/model/Action.cpp
   src/v20220901/model/JSInjectionRule.cpp
   src/v20220901/model/UpstreamFollowRedirectParameters.cpp
@@ -1519,6 +1525,7 @@ set(teo_src
   src/v20220901/model/L4OfflineLog.cpp
   src/v20220901/model/ModifyAliasDomainResponse.cpp
   src/v20220901/model/DeleteDnsRecordsRequest.cpp
+  src/v20220901/model/DescribeAvailableCustomActionsForRuleEngineResponse.cpp
   src/v20220901/model/OfflineCacheParameters.cpp
   src/v20220901/model/CustomActionParameters.cpp
   src/v20220901/model/DeleteAliasDomainRequest.cpp
@@ -1650,6 +1657,7 @@ set(teo_src
   src/v20220901/model/DnsRecord.cpp
   src/v20220901/model/InferenceContainerConfig.cpp
   src/v20220901/model/OriginPrivateParameters.cpp
+  src/v20220901/model/RuleEngineCustomActionParameterSchema.cpp
   src/v20220901/model/ModifyZoneWorkModeResponse.cpp
   src/v20220901/model/HSTSParameters.cpp
   src/v20220901/model/Tag.cpp

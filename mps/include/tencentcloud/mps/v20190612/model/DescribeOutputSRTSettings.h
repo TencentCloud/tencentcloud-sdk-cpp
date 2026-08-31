@@ -50,18 +50,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取转推的目标的地址信息列表，SRT模式为CALLER时使用。
+                     * 获取<p>转推的目标的地址信息列表，SRT模式为CALLER时使用。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Destinations 转推的目标的地址信息列表，SRT模式为CALLER时使用。
+                     * @return Destinations <p>转推的目标的地址信息列表，SRT模式为CALLER时使用。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SRTAddressDestination> GetDestinations() const;
 
                     /**
-                     * 设置转推的目标的地址信息列表，SRT模式为CALLER时使用。
+                     * 设置<p>转推的目标的地址信息列表，SRT模式为CALLER时使用。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _destinations 转推的目标的地址信息列表，SRT模式为CALLER时使用。
+                     * @param _destinations <p>转推的目标的地址信息列表，SRT模式为CALLER时使用。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -75,18 +75,18 @@ namespace TencentCloud
                     bool DestinationsHasBeenSet() const;
 
                     /**
-                     * 获取流Id。
+                     * 获取<p>流Id。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StreamId 流Id。
+                     * @return StreamId <p>流Id。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStreamId() const;
 
                     /**
-                     * 设置流Id。
+                     * 设置<p>流Id。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _streamId 流Id。
+                     * @param _streamId <p>流Id。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -100,18 +100,18 @@ namespace TencentCloud
                     bool StreamIdHasBeenSet() const;
 
                     /**
-                     * 获取延迟。
+                     * 获取<p>延迟。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Latency 延迟。
+                     * @return Latency <p>延迟。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLatency() const;
 
                     /**
-                     * 设置延迟。
+                     * 设置<p>延迟。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _latency 延迟。
+                     * @param _latency <p>延迟。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -125,18 +125,18 @@ namespace TencentCloud
                     bool LatencyHasBeenSet() const;
 
                     /**
-                     * 获取接收延迟。
+                     * 获取<p>接收延迟。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RecvLatency 接收延迟。
+                     * @return RecvLatency <p>接收延迟。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRecvLatency() const;
 
                     /**
-                     * 设置接收延迟。
+                     * 设置<p>接收延迟。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _recvLatency 接收延迟。
+                     * @param _recvLatency <p>接收延迟。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -150,18 +150,18 @@ namespace TencentCloud
                     bool RecvLatencyHasBeenSet() const;
 
                     /**
-                     * 获取对端延迟。
+                     * 获取<p>对端延迟。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PeerLatency 对端延迟。
+                     * @return PeerLatency <p>对端延迟。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPeerLatency() const;
 
                     /**
-                     * 设置对端延迟。
+                     * 设置<p>对端延迟。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _peerLatency 对端延迟。
+                     * @param _peerLatency <p>对端延迟。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -175,18 +175,18 @@ namespace TencentCloud
                     bool PeerLatencyHasBeenSet() const;
 
                     /**
-                     * 获取对端空闲超时时间。
+                     * 获取<p>对端空闲超时时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PeerIdleTimeout 对端空闲超时时间。
+                     * @return PeerIdleTimeout <p>对端空闲超时时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPeerIdleTimeout() const;
 
                     /**
-                     * 设置对端空闲超时时间。
+                     * 设置<p>对端空闲超时时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _peerIdleTimeout 对端空闲超时时间。
+                     * @param _peerIdleTimeout <p>对端空闲超时时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -200,18 +200,18 @@ namespace TencentCloud
                     bool PeerIdleTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取加密密钥。
+                     * 获取<p>加密密钥。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Passphrase 加密密钥。
+                     * @return Passphrase <p>加密密钥。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPassphrase() const;
 
                     /**
-                     * 设置加密密钥。
+                     * 设置<p>加密密钥。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _passphrase 加密密钥。
+                     * @param _passphrase <p>加密密钥。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -225,18 +225,18 @@ namespace TencentCloud
                     bool PassphraseHasBeenSet() const;
 
                     /**
-                     * 获取加密密钥长度。
+                     * 获取<p>加密密钥长度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PbKeyLen 加密密钥长度。
+                     * @return PbKeyLen <p>加密密钥长度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPbKeyLen() const;
 
                     /**
-                     * 设置加密密钥长度。
+                     * 设置<p>加密密钥长度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pbKeyLen 加密密钥长度。
+                     * @param _pbKeyLen <p>加密密钥长度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -250,18 +250,18 @@ namespace TencentCloud
                     bool PbKeyLenHasBeenSet() const;
 
                     /**
-                     * 获取SRT模式。
+                     * 获取<p>SRT模式。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Mode SRT模式。
+                     * @return Mode <p>SRT模式。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMode() const;
 
                     /**
-                     * 设置SRT模式。
+                     * 设置<p>SRT模式。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mode SRT模式。
+                     * @param _mode <p>SRT模式。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -275,18 +275,18 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取服务器监听地址，SRT模式为LISTENER时使用。
+                     * 获取<p>服务器监听地址，SRT模式为LISTENER时使用。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SourceAddresses 服务器监听地址，SRT模式为LISTENER时使用。
+                     * @return SourceAddresses <p>服务器监听地址，SRT模式为LISTENER时使用。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<OutputSRTSourceAddressResp> GetSourceAddresses() const;
 
                     /**
-                     * 设置服务器监听地址，SRT模式为LISTENER时使用。
+                     * 设置<p>服务器监听地址，SRT模式为LISTENER时使用。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sourceAddresses 服务器监听地址，SRT模式为LISTENER时使用。
+                     * @param _sourceAddresses <p>服务器监听地址，SRT模式为LISTENER时使用。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool SourceAddressesHasBeenSet() const;
 
                     /**
-                     * 获取FEC 配置
-                     * @return FEC FEC 配置
+                     * 获取<p>FEC 配置</p>
+                     * @return FEC <p>FEC 配置</p>
                      * 
                      */
                     SRTFECFullOptions GetFEC() const;
 
                     /**
-                     * 设置FEC 配置
-                     * @param _fEC FEC 配置
+                     * 设置<p>FEC 配置</p>
+                     * @param _fEC <p>FEC 配置</p>
                      * 
                      */
                     void SetFEC(const SRTFECFullOptions& _fEC);
@@ -323,77 +323,77 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 转推的目标的地址信息列表，SRT模式为CALLER时使用。
+                     * <p>转推的目标的地址信息列表，SRT模式为CALLER时使用。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SRTAddressDestination> m_destinations;
                     bool m_destinationsHasBeenSet;
 
                     /**
-                     * 流Id。
+                     * <p>流Id。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_streamId;
                     bool m_streamIdHasBeenSet;
 
                     /**
-                     * 延迟。
+                     * <p>延迟。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_latency;
                     bool m_latencyHasBeenSet;
 
                     /**
-                     * 接收延迟。
+                     * <p>接收延迟。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_recvLatency;
                     bool m_recvLatencyHasBeenSet;
 
                     /**
-                     * 对端延迟。
+                     * <p>对端延迟。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_peerLatency;
                     bool m_peerLatencyHasBeenSet;
 
                     /**
-                     * 对端空闲超时时间。
+                     * <p>对端空闲超时时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_peerIdleTimeout;
                     bool m_peerIdleTimeoutHasBeenSet;
 
                     /**
-                     * 加密密钥。
+                     * <p>加密密钥。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_passphrase;
                     bool m_passphraseHasBeenSet;
 
                     /**
-                     * 加密密钥长度。
+                     * <p>加密密钥长度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pbKeyLen;
                     bool m_pbKeyLenHasBeenSet;
 
                     /**
-                     * SRT模式。
+                     * <p>SRT模式。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 服务器监听地址，SRT模式为LISTENER时使用。
+                     * <p>服务器监听地址，SRT模式为LISTENER时使用。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<OutputSRTSourceAddressResp> m_sourceAddresses;
                     bool m_sourceAddressesHasBeenSet;
 
                     /**
-                     * FEC 配置
+                     * <p>FEC 配置</p>
                      */
                     SRTFECFullOptions m_fEC;
                     bool m_fECHasBeenSet;

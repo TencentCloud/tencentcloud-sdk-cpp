@@ -28,6 +28,7 @@ ClusterActivity::ClusterActivity() :
     m_activityStatusCodeHasBeenSet(false),
     m_resultDetailHasBeenSet(false),
     m_causeHasBeenSet(false),
+    m_queueNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_relatedNodeActivitySetHasBeenSet(false),
     m_startTimeHasBeenSet(false),
@@ -108,6 +109,16 @@ CoreInternalOutcome ClusterActivity::Deserialize(const rapidjson::Value &value)
         }
         m_cause = string(value["Cause"].GetString());
         m_causeHasBeenSet = true;
+    }
+
+    if (value.HasMember("QueueName") && !value["QueueName"].IsNull())
+    {
+        if (!value["QueueName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterActivity.QueueName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_queueName = string(value["QueueName"].GetString());
+        m_queueNameHasBeenSet = true;
     }
 
     if (value.HasMember("Description") && !value["Description"].IsNull())
@@ -221,6 +232,14 @@ void ClusterActivity::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Cause";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cause.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queueNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
@@ -375,6 +394,22 @@ void ClusterActivity::SetCause(const string& _cause)
 bool ClusterActivity::CauseHasBeenSet() const
 {
     return m_causeHasBeenSet;
+}
+
+string ClusterActivity::GetQueueName() const
+{
+    return m_queueName;
+}
+
+void ClusterActivity::SetQueueName(const string& _queueName)
+{
+    m_queueName = _queueName;
+    m_queueNameHasBeenSet = true;
+}
+
+bool ClusterActivity::QueueNameHasBeenSet() const
+{
+    return m_queueNameHasBeenSet;
 }
 
 string ClusterActivity::GetDescription() const

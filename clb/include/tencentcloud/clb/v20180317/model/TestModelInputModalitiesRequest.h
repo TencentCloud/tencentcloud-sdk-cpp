@@ -252,6 +252,48 @@ namespace TencentCloud
                      */
                     bool VerifySSLHasBeenSet() const;
 
+                    /**
+                     * 获取<p>健康检查协议</p><p>枚举值：</p><ul><li>chat： 表示/chat/completion协议</li><li>messages： 表示/v1/messages协议</li><li>responses： 表示/responses协议</li></ul>
+                     * @return HealthCheckProtocol <p>健康检查协议</p><p>枚举值：</p><ul><li>chat： 表示/chat/completion协议</li><li>messages： 表示/v1/messages协议</li><li>responses： 表示/responses协议</li></ul>
+                     * 
+                     */
+                    std::string GetHealthCheckProtocol() const;
+
+                    /**
+                     * 设置<p>健康检查协议</p><p>枚举值：</p><ul><li>chat： 表示/chat/completion协议</li><li>messages： 表示/v1/messages协议</li><li>responses： 表示/responses协议</li></ul>
+                     * @param _healthCheckProtocol <p>健康检查协议</p><p>枚举值：</p><ul><li>chat： 表示/chat/completion协议</li><li>messages： 表示/v1/messages协议</li><li>responses： 表示/responses协议</li></ul>
+                     * 
+                     */
+                    void SetHealthCheckProtocol(const std::string& _healthCheckProtocol);
+
+                    /**
+                     * 判断参数 HealthCheckProtocol 是否已赋值
+                     * @return HealthCheckProtocol 是否已赋值
+                     * 
+                     */
+                    bool HealthCheckProtocolHasBeenSet() const;
+
+                    /**
+                     * 获取<p>CMR私网管道ID</p>
+                     * @return CMRPrivateNetworkTunnelId <p>CMR私网管道ID</p>
+                     * 
+                     */
+                    std::string GetCMRPrivateNetworkTunnelId() const;
+
+                    /**
+                     * 设置<p>CMR私网管道ID</p>
+                     * @param _cMRPrivateNetworkTunnelId <p>CMR私网管道ID</p>
+                     * 
+                     */
+                    void SetCMRPrivateNetworkTunnelId(const std::string& _cMRPrivateNetworkTunnelId);
+
+                    /**
+                     * 判断参数 CMRPrivateNetworkTunnelId 是否已赋值
+                     * @return CMRPrivateNetworkTunnelId 是否已赋值
+                     * 
+                     */
+                    bool CMRPrivateNetworkTunnelIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +355,18 @@ namespace TencentCloud
                      */
                     bool m_verifySSL;
                     bool m_verifySSLHasBeenSet;
+
+                    /**
+                     * <p>健康检查协议</p><p>枚举值：</p><ul><li>chat： 表示/chat/completion协议</li><li>messages： 表示/v1/messages协议</li><li>responses： 表示/responses协议</li></ul>
+                     */
+                    std::string m_healthCheckProtocol;
+                    bool m_healthCheckProtocolHasBeenSet;
+
+                    /**
+                     * <p>CMR私网管道ID</p>
+                     */
+                    std::string m_cMRPrivateNetworkTunnelId;
+                    bool m_cMRPrivateNetworkTunnelIdHasBeenSet;
 
                 };
             }

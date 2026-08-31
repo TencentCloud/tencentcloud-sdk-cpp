@@ -39,6 +39,8 @@
 #include <tencentcloud/ioa/v20220601/model/CreateDeviceVirtualGroupResponse.h>
 #include <tencentcloud/ioa/v20220601/model/CreatePrivilegeCodeRequest.h>
 #include <tencentcloud/ioa/v20220601/model/CreatePrivilegeCodeResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DeleteAccountGroupResourcesRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DeleteAccountGroupResourcesResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DeleteDeviceVirtualGroupRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DeleteDeviceVirtualGroupResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeAccountGroupsRequest.h>
@@ -147,6 +149,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePrivilegeCodeResponse> CreatePrivilegeCodeOutcome;
                 typedef std::future<CreatePrivilegeCodeOutcome> CreatePrivilegeCodeOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::CreatePrivilegeCodeRequest&, CreatePrivilegeCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrivilegeCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAccountGroupResourcesResponse> DeleteAccountGroupResourcesOutcome;
+                typedef std::future<DeleteAccountGroupResourcesOutcome> DeleteAccountGroupResourcesOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DeleteAccountGroupResourcesRequest&, DeleteAccountGroupResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountGroupResourcesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDeviceVirtualGroupResponse> DeleteDeviceVirtualGroupOutcome;
                 typedef std::future<DeleteDeviceVirtualGroupOutcome> DeleteDeviceVirtualGroupOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DeleteDeviceVirtualGroupRequest&, DeleteDeviceVirtualGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceVirtualGroupAsyncHandler;
@@ -326,6 +331,15 @@ namespace TencentCloud
                 CreatePrivilegeCodeOutcome CreatePrivilegeCode(const Model::CreatePrivilegeCodeRequest &request);
                 void CreatePrivilegeCodeAsync(const Model::CreatePrivilegeCodeRequest& request, const CreatePrivilegeCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePrivilegeCodeOutcomeCallable CreatePrivilegeCodeCallable(const Model::CreatePrivilegeCodeRequest& request);
+
+                /**
+                 *删除账户组资源授权，私有化调用path为：capi/NGN/DeleteAccountGroupResources
+                 * @param req DeleteAccountGroupResourcesRequest
+                 * @return DeleteAccountGroupResourcesOutcome
+                 */
+                DeleteAccountGroupResourcesOutcome DeleteAccountGroupResources(const Model::DeleteAccountGroupResourcesRequest &request);
+                void DeleteAccountGroupResourcesAsync(const Model::DeleteAccountGroupResourcesRequest& request, const DeleteAccountGroupResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAccountGroupResourcesOutcomeCallable DeleteAccountGroupResourcesCallable(const Model::DeleteAccountGroupResourcesRequest& request);
 
                 /**
                  *删除终端自定义分组，私有化调用path为：/capi/Assets/Device/DeleteDeviceVirtualGroup

@@ -83,7 +83,8 @@ InstanceInfo::InstanceInfo() :
     m_autoScaleConfigHasBeenSet(false),
     m_analysisModeHasBeenSet(false),
     m_analysisRelationInfosHasBeenSet(false),
-    m_analysisInstanceInfoHasBeenSet(false)
+    m_analysisInstanceInfoHasBeenSet(false),
+    m_autoScaleConfigsHasBeenSet(false)
 {
 }
 
@@ -779,6 +780,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_analysisInstanceInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoScaleConfigs") && !value["AutoScaleConfigs"].IsNull())
+    {
+        if (!value["AutoScaleConfigs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.AutoScaleConfigs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AutoScaleConfigs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AutoScalingConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_autoScaleConfigs.push_back(item);
+        }
+        m_autoScaleConfigsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1323,6 +1344,21 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_analysisInstanceInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_autoScaleConfigsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoScaleConfigs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_autoScaleConfigs.begin(); itr != m_autoScaleConfigs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -2334,5 +2370,21 @@ void InstanceInfo::SetAnalysisInstanceInfo(const AnalysisInstanceInfo& _analysis
 bool InstanceInfo::AnalysisInstanceInfoHasBeenSet() const
 {
     return m_analysisInstanceInfoHasBeenSet;
+}
+
+vector<AutoScalingConfig> InstanceInfo::GetAutoScaleConfigs() const
+{
+    return m_autoScaleConfigs;
+}
+
+void InstanceInfo::SetAutoScaleConfigs(const vector<AutoScalingConfig>& _autoScaleConfigs)
+{
+    m_autoScaleConfigs = _autoScaleConfigs;
+    m_autoScaleConfigsHasBeenSet = true;
+}
+
+bool InstanceInfo::AutoScaleConfigsHasBeenSet() const
+{
+    return m_autoScaleConfigsHasBeenSet;
 }
 

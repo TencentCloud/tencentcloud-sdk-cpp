@@ -24,6 +24,7 @@
 #include <tencentcloud/iotexplorer/v20190423/model/SeeComprehensionConfig.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SeeCompHighlightConfig.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SeeEventIdFilterConfig.h>
+#include <tencentcloud/iotexplorer/v20190423/model/SeeSummarizeConfig.h>
 
 
 namespace TencentCloud
@@ -47,8 +48,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源 ID
-                     * @return ResourceId 资源 ID
+                     * 获取<p>资源 ID</p>
+                     * @return ResourceId <p>资源 ID</p>
                      * 
                      */
                     std::string GetResourceId() const;
@@ -61,12 +62,8 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取套餐规格。可能取值：
-
-- `BASIC`：包年包月基础版（适用于视频理解）
-                     * @return ServiceTier 套餐规格。可能取值：
-
-- `BASIC`：包年包月基础版（适用于视频理解）
+                     * 获取<p>套餐规格。可能取值：</p><ul><li><code>BASIC</code>：包年包月基础版（适用于视频理解）</li></ul>
+                     * @return ServiceTier <p>套餐规格。可能取值：</p><ul><li><code>BASIC</code>：包年包月基础版（适用于视频理解）</li></ul>
                      * 
                      */
                     std::string GetServiceTier() const;
@@ -79,8 +76,8 @@ namespace TencentCloud
                     bool ServiceTierHasBeenSet() const;
 
                     /**
-                     * 获取到期时间，秒级时间戳
-                     * @return ExpireTime 到期时间，秒级时间戳
+                     * 获取<p>到期时间，秒级时间戳</p>
+                     * @return ExpireTime <p>到期时间，秒级时间戳</p>
                      * 
                      */
                     int64_t GetExpireTime() const;
@@ -93,8 +90,8 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取启用状态，`true` 为开启，`false` 为关闭
-                     * @return Enabled 启用状态，`true` 为开启，`false` 为关闭
+                     * 获取<p>启用状态，<code>true</code> 为开启，<code>false</code> 为关闭</p>
+                     * @return Enabled <p>启用状态，<code>true</code> 为开启，<code>false</code> 为关闭</p>
                      * 
                      */
                     bool GetEnabled() const;
@@ -107,14 +104,8 @@ namespace TencentCloud
                     bool EnabledHasBeenSet() const;
 
                     /**
-                     * 获取订阅状态。可能取值：
-
-- `NORMAL`：正常
-- `ISOLATED`：隔离
-                     * @return Status 订阅状态。可能取值：
-
-- `NORMAL`：正常
-- `ISOLATED`：隔离
+                     * 获取<p>订阅状态。可能取值：</p><ul><li><code>NORMAL</code>：正常</li><li><code>ISOLATED</code>：隔离</li></ul>
+                     * @return Status <p>订阅状态。可能取值：</p><ul><li><code>NORMAL</code>：正常</li><li><code>ISOLATED</code>：隔离</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
@@ -127,8 +118,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取视觉理解配置（适用于视频理解、图片理解）
-                     * @return ComprehensionConfig 视觉理解配置（适用于视频理解、图片理解）
+                     * 获取<p>视觉理解配置（适用于视频理解、图片理解）</p>
+                     * @return ComprehensionConfig <p>视觉理解配置（适用于视频理解、图片理解）</p>
                      * 
                      */
                     SeeComprehensionConfig GetComprehensionConfig() const;
@@ -141,8 +132,8 @@ namespace TencentCloud
                     bool ComprehensionConfigHasBeenSet() const;
 
                     /**
-                     * 获取视频语义浓缩配置（适用于视频语义浓缩）
-                     * @return CompHighlightConfig 视频语义浓缩配置（适用于视频语义浓缩）
+                     * 获取<p>视频语义浓缩配置（适用于视频语义浓缩）</p>
+                     * @return CompHighlightConfig <p>视频语义浓缩配置（适用于视频语义浓缩）</p>
                      * 
                      */
                     SeeCompHighlightConfig GetCompHighlightConfig() const;
@@ -155,8 +146,8 @@ namespace TencentCloud
                     bool CompHighlightConfigHasBeenSet() const;
 
                     /**
-                     * 获取云存事件 ID 过滤规则配置项
-                     * @return EventIdFilterConfig 云存事件 ID 过滤规则配置项
+                     * 获取<p>云存事件 ID 过滤规则配置项</p>
+                     * @return EventIdFilterConfig <p>云存事件 ID 过滤规则配置项</p>
                      * 
                      */
                     SeeEventIdFilterConfig GetEventIdFilterConfig() const;
@@ -169,8 +160,22 @@ namespace TencentCloud
                     bool EventIdFilterConfigHasBeenSet() const;
 
                     /**
-                     * 获取当前周期基础能力总额度
-                     * @return QuotaBasic 当前周期基础能力总额度
+                     * 获取<p>每日与每周总结配置</p>
+                     * @return SummarizeConfig <p>每日与每周总结配置</p>
+                     * 
+                     */
+                    SeeSummarizeConfig GetSummarizeConfig() const;
+
+                    /**
+                     * 判断参数 SummarizeConfig 是否已赋值
+                     * @return SummarizeConfig 是否已赋值
+                     * 
+                     */
+                    bool SummarizeConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>当前周期基础能力总额度</p>
+                     * @return QuotaBasic <p>当前周期基础能力总额度</p>
                      * 
                      */
                     int64_t GetQuotaBasic() const;
@@ -183,8 +188,8 @@ namespace TencentCloud
                     bool QuotaBasicHasBeenSet() const;
 
                     /**
-                     * 获取当前周期基础能力已用额度
-                     * @return QuotaUsedBasic 当前周期基础能力已用额度
+                     * 获取<p>当前周期基础能力已用额度</p>
+                     * @return QuotaUsedBasic <p>当前周期基础能力已用额度</p>
                      * 
                      */
                     int64_t GetQuotaUsedBasic() const;
@@ -197,8 +202,8 @@ namespace TencentCloud
                     bool QuotaUsedBasicHasBeenSet() const;
 
                     /**
-                     * 获取当前周期高级能力总额度
-                     * @return QuotaAdvanced 当前周期高级能力总额度
+                     * 获取<p>当前周期高级能力总额度</p>
+                     * @return QuotaAdvanced <p>当前周期高级能力总额度</p>
                      * 
                      */
                     int64_t GetQuotaAdvanced() const;
@@ -211,8 +216,8 @@ namespace TencentCloud
                     bool QuotaAdvancedHasBeenSet() const;
 
                     /**
-                     * 获取当前周期高级能力已用额度
-                     * @return QuotaUsedAdvanced 当前周期高级能力已用额度
+                     * 获取<p>当前周期高级能力已用额度</p>
+                     * @return QuotaUsedAdvanced <p>当前周期高级能力已用额度</p>
                      * 
                      */
                     int64_t GetQuotaUsedAdvanced() const;
@@ -225,8 +230,8 @@ namespace TencentCloud
                     bool QuotaUsedAdvancedHasBeenSet() const;
 
                     /**
-                     * 获取额度刷新时间
-                     * @return QuotaRefreshTime 额度刷新时间
+                     * 获取<p>额度刷新时间</p>
+                     * @return QuotaRefreshTime <p>额度刷新时间</p>
                      * 
                      */
                     int64_t GetQuotaRefreshTime() const;
@@ -241,84 +246,85 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源 ID
+                     * <p>资源 ID</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 套餐规格。可能取值：
-
-- `BASIC`：包年包月基础版（适用于视频理解）
+                     * <p>套餐规格。可能取值：</p><ul><li><code>BASIC</code>：包年包月基础版（适用于视频理解）</li></ul>
                      */
                     std::string m_serviceTier;
                     bool m_serviceTierHasBeenSet;
 
                     /**
-                     * 到期时间，秒级时间戳
+                     * <p>到期时间，秒级时间戳</p>
                      */
                     int64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 启用状态，`true` 为开启，`false` 为关闭
+                     * <p>启用状态，<code>true</code> 为开启，<code>false</code> 为关闭</p>
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
-                     * 订阅状态。可能取值：
-
-- `NORMAL`：正常
-- `ISOLATED`：隔离
+                     * <p>订阅状态。可能取值：</p><ul><li><code>NORMAL</code>：正常</li><li><code>ISOLATED</code>：隔离</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 视觉理解配置（适用于视频理解、图片理解）
+                     * <p>视觉理解配置（适用于视频理解、图片理解）</p>
                      */
                     SeeComprehensionConfig m_comprehensionConfig;
                     bool m_comprehensionConfigHasBeenSet;
 
                     /**
-                     * 视频语义浓缩配置（适用于视频语义浓缩）
+                     * <p>视频语义浓缩配置（适用于视频语义浓缩）</p>
                      */
                     SeeCompHighlightConfig m_compHighlightConfig;
                     bool m_compHighlightConfigHasBeenSet;
 
                     /**
-                     * 云存事件 ID 过滤规则配置项
+                     * <p>云存事件 ID 过滤规则配置项</p>
                      */
                     SeeEventIdFilterConfig m_eventIdFilterConfig;
                     bool m_eventIdFilterConfigHasBeenSet;
 
                     /**
-                     * 当前周期基础能力总额度
+                     * <p>每日与每周总结配置</p>
+                     */
+                    SeeSummarizeConfig m_summarizeConfig;
+                    bool m_summarizeConfigHasBeenSet;
+
+                    /**
+                     * <p>当前周期基础能力总额度</p>
                      */
                     int64_t m_quotaBasic;
                     bool m_quotaBasicHasBeenSet;
 
                     /**
-                     * 当前周期基础能力已用额度
+                     * <p>当前周期基础能力已用额度</p>
                      */
                     int64_t m_quotaUsedBasic;
                     bool m_quotaUsedBasicHasBeenSet;
 
                     /**
-                     * 当前周期高级能力总额度
+                     * <p>当前周期高级能力总额度</p>
                      */
                     int64_t m_quotaAdvanced;
                     bool m_quotaAdvancedHasBeenSet;
 
                     /**
-                     * 当前周期高级能力已用额度
+                     * <p>当前周期高级能力已用额度</p>
                      */
                     int64_t m_quotaUsedAdvanced;
                     bool m_quotaUsedAdvancedHasBeenSet;
 
                     /**
-                     * 额度刷新时间
+                     * <p>额度刷新时间</p>
                      */
                     int64_t m_quotaRefreshTime;
                     bool m_quotaRefreshTimeHasBeenSet;

@@ -21,9 +21,10 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/iotexplorer/v20190423/model/SeeComprehensionConfig.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SeeCompHighlightConfig.h>
+#include <tencentcloud/iotexplorer/v20190423/model/SeeComprehensionConfig.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SeeEventIdFilterConfig.h>
+#include <tencentcloud/iotexplorer/v20190423/model/SeeSummarizeConfig.h>
 
 
 namespace TencentCloud
@@ -46,27 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品 ID
-                     * @return ProductId 产品 ID
-                     * 
-                     */
-                    std::string GetProductId() const;
-
-                    /**
-                     * 设置产品 ID
-                     * @param _productId 产品 ID
-                     * 
-                     */
-                    void SetProductId(const std::string& _productId);
-
-                    /**
-                     * 判断参数 ProductId 是否已赋值
-                     * @return ProductId 是否已赋值
-                     * 
-                     */
-                    bool ProductIdHasBeenSet() const;
-
-                    /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
                      * 
@@ -86,6 +66,27 @@ namespace TencentCloud
                      * 
                      */
                     bool DeviceNameHasBeenSet() const;
+
+                    /**
+                     * 获取产品 ID
+                     * @return ProductId 产品 ID
+                     * 
+                     */
+                    std::string GetProductId() const;
+
+                    /**
+                     * 设置产品 ID
+                     * @param _productId 产品 ID
+                     * 
+                     */
+                    void SetProductId(const std::string& _productId);
+
+                    /**
+                     * 判断参数 ProductId 是否已赋值
+                     * @return ProductId 是否已赋值
+                     * 
+                     */
+                    bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取算法类型。可选值：
@@ -138,25 +139,25 @@ namespace TencentCloud
                     bool ChannelIdHasBeenSet() const;
 
                     /**
-                     * 获取功能开关。`true` 为开启，`false` 为关闭；不传表示不修改
-                     * @return Enabled 功能开关。`true` 为开启，`false` 为关闭；不传表示不修改
+                     * 获取视频语义浓缩配置（适用于视频语义浓缩），不传则不修改
+                     * @return CompHighlightConfig 视频语义浓缩配置（适用于视频语义浓缩），不传则不修改
                      * 
                      */
-                    bool GetEnabled() const;
+                    SeeCompHighlightConfig GetCompHighlightConfig() const;
 
                     /**
-                     * 设置功能开关。`true` 为开启，`false` 为关闭；不传表示不修改
-                     * @param _enabled 功能开关。`true` 为开启，`false` 为关闭；不传表示不修改
+                     * 设置视频语义浓缩配置（适用于视频语义浓缩），不传则不修改
+                     * @param _compHighlightConfig 视频语义浓缩配置（适用于视频语义浓缩），不传则不修改
                      * 
                      */
-                    void SetEnabled(const bool& _enabled);
+                    void SetCompHighlightConfig(const SeeCompHighlightConfig& _compHighlightConfig);
 
                     /**
-                     * 判断参数 Enabled 是否已赋值
-                     * @return Enabled 是否已赋值
+                     * 判断参数 CompHighlightConfig 是否已赋值
+                     * @return CompHighlightConfig 是否已赋值
                      * 
                      */
-                    bool EnabledHasBeenSet() const;
+                    bool CompHighlightConfigHasBeenSet() const;
 
                     /**
                      * 获取视觉理解配置（适用于视频理解、图片理解），不传则不修改
@@ -180,25 +181,25 @@ namespace TencentCloud
                     bool ComprehensionConfigHasBeenSet() const;
 
                     /**
-                     * 获取视频语义浓缩配置（适用于视频语义浓缩），不传则不修改
-                     * @return CompHighlightConfig 视频语义浓缩配置（适用于视频语义浓缩），不传则不修改
+                     * 获取功能开关。`true` 为开启，`false` 为关闭；不传表示不修改
+                     * @return Enabled 功能开关。`true` 为开启，`false` 为关闭；不传表示不修改
                      * 
                      */
-                    SeeCompHighlightConfig GetCompHighlightConfig() const;
+                    bool GetEnabled() const;
 
                     /**
-                     * 设置视频语义浓缩配置（适用于视频语义浓缩），不传则不修改
-                     * @param _compHighlightConfig 视频语义浓缩配置（适用于视频语义浓缩），不传则不修改
+                     * 设置功能开关。`true` 为开启，`false` 为关闭；不传表示不修改
+                     * @param _enabled 功能开关。`true` 为开启，`false` 为关闭；不传表示不修改
                      * 
                      */
-                    void SetCompHighlightConfig(const SeeCompHighlightConfig& _compHighlightConfig);
+                    void SetEnabled(const bool& _enabled);
 
                     /**
-                     * 判断参数 CompHighlightConfig 是否已赋值
-                     * @return CompHighlightConfig 是否已赋值
+                     * 判断参数 Enabled 是否已赋值
+                     * @return Enabled 是否已赋值
                      * 
                      */
-                    bool CompHighlightConfigHasBeenSet() const;
+                    bool EnabledHasBeenSet() const;
 
                     /**
                      * 获取云存事件 ID 过滤规则配置，不传则不修改
@@ -221,19 +222,40 @@ namespace TencentCloud
                      */
                     bool EventIdFilterConfigHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取每日与每周总结配置，不传则不修改
+                     * @return SummarizeConfig 每日与每周总结配置，不传则不修改
+                     * 
+                     */
+                    SeeSummarizeConfig GetSummarizeConfig() const;
 
                     /**
-                     * 产品 ID
+                     * 设置每日与每周总结配置，不传则不修改
+                     * @param _summarizeConfig 每日与每周总结配置，不传则不修改
+                     * 
                      */
-                    std::string m_productId;
-                    bool m_productIdHasBeenSet;
+                    void SetSummarizeConfig(const SeeSummarizeConfig& _summarizeConfig);
+
+                    /**
+                     * 判断参数 SummarizeConfig 是否已赋值
+                     * @return SummarizeConfig 是否已赋值
+                     * 
+                     */
+                    bool SummarizeConfigHasBeenSet() const;
+
+                private:
 
                     /**
                      * 设备名称
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
+
+                    /**
+                     * 产品 ID
+                     */
+                    std::string m_productId;
+                    bool m_productIdHasBeenSet;
 
                     /**
                      * 算法类型。可选值：
@@ -250,10 +272,10 @@ namespace TencentCloud
                     bool m_channelIdHasBeenSet;
 
                     /**
-                     * 功能开关。`true` 为开启，`false` 为关闭；不传表示不修改
+                     * 视频语义浓缩配置（适用于视频语义浓缩），不传则不修改
                      */
-                    bool m_enabled;
-                    bool m_enabledHasBeenSet;
+                    SeeCompHighlightConfig m_compHighlightConfig;
+                    bool m_compHighlightConfigHasBeenSet;
 
                     /**
                      * 视觉理解配置（适用于视频理解、图片理解），不传则不修改
@@ -262,16 +284,22 @@ namespace TencentCloud
                     bool m_comprehensionConfigHasBeenSet;
 
                     /**
-                     * 视频语义浓缩配置（适用于视频语义浓缩），不传则不修改
+                     * 功能开关。`true` 为开启，`false` 为关闭；不传表示不修改
                      */
-                    SeeCompHighlightConfig m_compHighlightConfig;
-                    bool m_compHighlightConfigHasBeenSet;
+                    bool m_enabled;
+                    bool m_enabledHasBeenSet;
 
                     /**
                      * 云存事件 ID 过滤规则配置，不传则不修改
                      */
                     SeeEventIdFilterConfig m_eventIdFilterConfig;
                     bool m_eventIdFilterConfigHasBeenSet;
+
+                    /**
+                     * 每日与每周总结配置，不传则不修改
+                     */
+                    SeeSummarizeConfig m_summarizeConfig;
+                    bool m_summarizeConfigHasBeenSet;
 
                 };
             }

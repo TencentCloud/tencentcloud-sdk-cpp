@@ -44,27 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>产品 ID</p>
-                     * @return ProductId <p>产品 ID</p>
-                     * 
-                     */
-                    std::string GetProductId() const;
-
-                    /**
-                     * 设置<p>产品 ID</p>
-                     * @param _productId <p>产品 ID</p>
-                     * 
-                     */
-                    void SetProductId(const std::string& _productId);
-
-                    /**
-                     * 判断参数 ProductId 是否已赋值
-                     * @return ProductId 是否已赋值
-                     * 
-                     */
-                    bool ProductIdHasBeenSet() const;
-
-                    /**
                      * 获取<p>设备名称</p>
                      * @return DeviceName <p>设备名称</p>
                      * 
@@ -84,27 +63,6 @@ namespace TencentCloud
                      * 
                      */
                     bool DeviceNameHasBeenSet() const;
-
-                    /**
-                     * 获取<p>算法类目。可选值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li></ul>
-                     * @return ServiceCategory <p>算法类目。可选值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li></ul>
-                     * 
-                     */
-                    std::string GetServiceCategory() const;
-
-                    /**
-                     * 设置<p>算法类目。可选值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li></ul>
-                     * @param _serviceCategory <p>算法类目。可选值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li></ul>
-                     * 
-                     */
-                    void SetServiceCategory(const std::string& _serviceCategory);
-
-                    /**
-                     * 判断参数 ServiceCategory 是否已赋值
-                     * @return ServiceCategory 是否已赋值
-                     * 
-                     */
-                    bool ServiceCategoryHasBeenSet() const;
 
                     /**
                      * 获取<p>分页拉取数量</p>
@@ -128,46 +86,46 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取<p>分页拉取偏移</p>
-                     * @return Offset <p>分页拉取偏移</p>
+                     * 获取<p>产品 ID</p>
+                     * @return ProductId <p>产品 ID</p>
                      * 
                      */
-                    uint64_t GetOffset() const;
+                    std::string GetProductId() const;
 
                     /**
-                     * 设置<p>分页拉取偏移</p>
-                     * @param _offset <p>分页拉取偏移</p>
+                     * 设置<p>产品 ID</p>
+                     * @param _productId <p>产品 ID</p>
                      * 
                      */
-                    void SetOffset(const uint64_t& _offset);
+                    void SetProductId(const std::string& _productId);
 
                     /**
-                     * 判断参数 Offset 是否已赋值
-                     * @return Offset 是否已赋值
+                     * 判断参数 ProductId 是否已赋值
+                     * @return ProductId 是否已赋值
                      * 
                      */
-                    bool OffsetHasBeenSet() const;
+                    bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>算法类型。</p><p>当 ServiceCategory 为 <code>COMPREHENSION</code> 时，可选值包括：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>CONT_PERSON_MOTIONLESS</code>：静姿检测</li></ul><p>当 ServiceCategory 为 <code>HIGHLIGHT</code> 时，可选值包括：</p><ul><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul>
-                     * @return ServiceTypes <p>算法类型。</p><p>当 ServiceCategory 为 <code>COMPREHENSION</code> 时，可选值包括：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>CONT_PERSON_MOTIONLESS</code>：静姿检测</li></ul><p>当 ServiceCategory 为 <code>HIGHLIGHT</code> 时，可选值包括：</p><ul><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul>
+                     * 获取<p>算法类目。可选值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li><li><code>SUMMARIZATION</code>：每日/每周总结</li></ul>
+                     * @return ServiceCategory <p>算法类目。可选值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li><li><code>SUMMARIZATION</code>：每日/每周总结</li></ul>
                      * 
                      */
-                    std::vector<std::string> GetServiceTypes() const;
+                    std::string GetServiceCategory() const;
 
                     /**
-                     * 设置<p>算法类型。</p><p>当 ServiceCategory 为 <code>COMPREHENSION</code> 时，可选值包括：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>CONT_PERSON_MOTIONLESS</code>：静姿检测</li></ul><p>当 ServiceCategory 为 <code>HIGHLIGHT</code> 时，可选值包括：</p><ul><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul>
-                     * @param _serviceTypes <p>算法类型。</p><p>当 ServiceCategory 为 <code>COMPREHENSION</code> 时，可选值包括：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>CONT_PERSON_MOTIONLESS</code>：静姿检测</li></ul><p>当 ServiceCategory 为 <code>HIGHLIGHT</code> 时，可选值包括：</p><ul><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul>
+                     * 设置<p>算法类目。可选值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li><li><code>SUMMARIZATION</code>：每日/每周总结</li></ul>
+                     * @param _serviceCategory <p>算法类目。可选值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li><li><code>SUMMARIZATION</code>：每日/每周总结</li></ul>
                      * 
                      */
-                    void SetServiceTypes(const std::vector<std::string>& _serviceTypes);
+                    void SetServiceCategory(const std::string& _serviceCategory);
 
                     /**
-                     * 判断参数 ServiceTypes 是否已赋值
-                     * @return ServiceTypes 是否已赋值
+                     * 判断参数 ServiceCategory 是否已赋值
+                     * @return ServiceCategory 是否已赋值
                      * 
                      */
-                    bool ServiceTypesHasBeenSet() const;
+                    bool ServiceCategoryHasBeenSet() const;
 
                     /**
                      * 获取<p>通道 ID</p>
@@ -191,27 +149,6 @@ namespace TencentCloud
                     bool ChannelIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>查询任务时间范围的起始时间（毫秒级 UNIX 时间戳）。不传则不生效时间范围条件。</p>
-                     * @return StartTimeMs <p>查询任务时间范围的起始时间（毫秒级 UNIX 时间戳）。不传则不生效时间范围条件。</p>
-                     * 
-                     */
-                    int64_t GetStartTimeMs() const;
-
-                    /**
-                     * 设置<p>查询任务时间范围的起始时间（毫秒级 UNIX 时间戳）。不传则不生效时间范围条件。</p>
-                     * @param _startTimeMs <p>查询任务时间范围的起始时间（毫秒级 UNIX 时间戳）。不传则不生效时间范围条件。</p>
-                     * 
-                     */
-                    void SetStartTimeMs(const int64_t& _startTimeMs);
-
-                    /**
-                     * 判断参数 StartTimeMs 是否已赋值
-                     * @return StartTimeMs 是否已赋值
-                     * 
-                     */
-                    bool StartTimeMsHasBeenSet() const;
-
-                    /**
                      * 获取<p>查询任务时间范围的结束时间（毫秒级 UNIX 时间戳）。不传则不生效时间范围条件。</p>
                      * @return EndTimeMs <p>查询任务时间范围的结束时间（毫秒级 UNIX 时间戳）。不传则不生效时间范围条件。</p>
                      * 
@@ -231,27 +168,6 @@ namespace TencentCloud
                      * 
                      */
                     bool EndTimeMsHasBeenSet() const;
-
-                    /**
-                     * 获取<p>要查询的任务的状态条件。不传则不按照状态过滤，可选值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li></ul>
-                     * @return Status <p>要查询的任务的状态条件。不传则不按照状态过滤，可选值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li></ul>
-                     * 
-                     */
-                    int64_t GetStatus() const;
-
-                    /**
-                     * 设置<p>要查询的任务的状态条件。不传则不按照状态过滤，可选值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li></ul>
-                     * @param _status <p>要查询的任务的状态条件。不传则不按照状态过滤，可选值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li></ul>
-                     * 
-                     */
-                    void SetStatus(const int64_t& _status);
-
-                    /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
-                     * 
-                     */
-                    bool StatusHasBeenSet() const;
 
                     /**
                      * 获取<p>下载 URL 的过期时间（秒级 UNIX 时间戳）。若传入该参数，则响应中将包含所有文件的下载 URL</p>
@@ -295,13 +211,91 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取<p>分页拉取偏移</p>
+                     * @return Offset <p>分页拉取偏移</p>
+                     * 
+                     */
+                    uint64_t GetOffset() const;
 
                     /**
-                     * <p>产品 ID</p>
+                     * 设置<p>分页拉取偏移</p>
+                     * @param _offset <p>分页拉取偏移</p>
+                     * 
                      */
-                    std::string m_productId;
-                    bool m_productIdHasBeenSet;
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取<p>算法类型。</p><p>当 ServiceCategory 为 <code>COMPREHENSION</code> 时，可选值包括：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>CONT_PERSON_MOTIONLESS</code>：静姿检测</li></ul><p>当 ServiceCategory 为 <code>HIGHLIGHT</code> 时，可选值包括：</p><ul><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul><p>当 ServiceCategory 为 <code>SUMMARIZATION</code> 时，可选值包括：</p><ul><li><code>DAILY_SUM</code>：每日总结</li><li><code>WEEKLY_SUM</code>：每周总结</li></ul>
+                     * @return ServiceTypes <p>算法类型。</p><p>当 ServiceCategory 为 <code>COMPREHENSION</code> 时，可选值包括：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>CONT_PERSON_MOTIONLESS</code>：静姿检测</li></ul><p>当 ServiceCategory 为 <code>HIGHLIGHT</code> 时，可选值包括：</p><ul><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul><p>当 ServiceCategory 为 <code>SUMMARIZATION</code> 时，可选值包括：</p><ul><li><code>DAILY_SUM</code>：每日总结</li><li><code>WEEKLY_SUM</code>：每周总结</li></ul>
+                     * 
+                     */
+                    std::vector<std::string> GetServiceTypes() const;
+
+                    /**
+                     * 设置<p>算法类型。</p><p>当 ServiceCategory 为 <code>COMPREHENSION</code> 时，可选值包括：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>CONT_PERSON_MOTIONLESS</code>：静姿检测</li></ul><p>当 ServiceCategory 为 <code>HIGHLIGHT</code> 时，可选值包括：</p><ul><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul><p>当 ServiceCategory 为 <code>SUMMARIZATION</code> 时，可选值包括：</p><ul><li><code>DAILY_SUM</code>：每日总结</li><li><code>WEEKLY_SUM</code>：每周总结</li></ul>
+                     * @param _serviceTypes <p>算法类型。</p><p>当 ServiceCategory 为 <code>COMPREHENSION</code> 时，可选值包括：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>CONT_PERSON_MOTIONLESS</code>：静姿检测</li></ul><p>当 ServiceCategory 为 <code>HIGHLIGHT</code> 时，可选值包括：</p><ul><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul><p>当 ServiceCategory 为 <code>SUMMARIZATION</code> 时，可选值包括：</p><ul><li><code>DAILY_SUM</code>：每日总结</li><li><code>WEEKLY_SUM</code>：每周总结</li></ul>
+                     * 
+                     */
+                    void SetServiceTypes(const std::vector<std::string>& _serviceTypes);
+
+                    /**
+                     * 判断参数 ServiceTypes 是否已赋值
+                     * @return ServiceTypes 是否已赋值
+                     * 
+                     */
+                    bool ServiceTypesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>查询任务时间范围的起始时间（毫秒级 UNIX 时间戳）。不传则不生效时间范围条件。</p>
+                     * @return StartTimeMs <p>查询任务时间范围的起始时间（毫秒级 UNIX 时间戳）。不传则不生效时间范围条件。</p>
+                     * 
+                     */
+                    int64_t GetStartTimeMs() const;
+
+                    /**
+                     * 设置<p>查询任务时间范围的起始时间（毫秒级 UNIX 时间戳）。不传则不生效时间范围条件。</p>
+                     * @param _startTimeMs <p>查询任务时间范围的起始时间（毫秒级 UNIX 时间戳）。不传则不生效时间范围条件。</p>
+                     * 
+                     */
+                    void SetStartTimeMs(const int64_t& _startTimeMs);
+
+                    /**
+                     * 判断参数 StartTimeMs 是否已赋值
+                     * @return StartTimeMs 是否已赋值
+                     * 
+                     */
+                    bool StartTimeMsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>要查询的任务的状态条件。不传则不按照状态过滤，可选值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li></ul>
+                     * @return Status <p>要查询的任务的状态条件。不传则不按照状态过滤，可选值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li></ul>
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置<p>要查询的任务的状态条件。不传则不按照状态过滤，可选值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li></ul>
+                     * @param _status <p>要查询的任务的状态条件。不传则不按照状态过滤，可选值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li></ul>
+                     * 
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                private:
 
                     /**
                      * <p>设备名称</p>
@@ -310,28 +304,22 @@ namespace TencentCloud
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * <p>算法类目。可选值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li></ul>
-                     */
-                    std::string m_serviceCategory;
-                    bool m_serviceCategoryHasBeenSet;
-
-                    /**
                      * <p>分页拉取数量</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * <p>分页拉取偏移</p>
+                     * <p>产品 ID</p>
                      */
-                    uint64_t m_offset;
-                    bool m_offsetHasBeenSet;
+                    std::string m_productId;
+                    bool m_productIdHasBeenSet;
 
                     /**
-                     * <p>算法类型。</p><p>当 ServiceCategory 为 <code>COMPREHENSION</code> 时，可选值包括：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>CONT_PERSON_MOTIONLESS</code>：静姿检测</li></ul><p>当 ServiceCategory 为 <code>HIGHLIGHT</code> 时，可选值包括：</p><ul><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul>
+                     * <p>算法类目。可选值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li><li><code>SUMMARIZATION</code>：每日/每周总结</li></ul>
                      */
-                    std::vector<std::string> m_serviceTypes;
-                    bool m_serviceTypesHasBeenSet;
+                    std::string m_serviceCategory;
+                    bool m_serviceCategoryHasBeenSet;
 
                     /**
                      * <p>通道 ID</p>
@@ -340,22 +328,10 @@ namespace TencentCloud
                     bool m_channelIdHasBeenSet;
 
                     /**
-                     * <p>查询任务时间范围的起始时间（毫秒级 UNIX 时间戳）。不传则不生效时间范围条件。</p>
-                     */
-                    int64_t m_startTimeMs;
-                    bool m_startTimeMsHasBeenSet;
-
-                    /**
                      * <p>查询任务时间范围的结束时间（毫秒级 UNIX 时间戳）。不传则不生效时间范围条件。</p>
                      */
                     int64_t m_endTimeMs;
                     bool m_endTimeMsHasBeenSet;
-
-                    /**
-                     * <p>要查询的任务的状态条件。不传则不按照状态过滤，可选值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li></ul>
-                     */
-                    int64_t m_status;
-                    bool m_statusHasBeenSet;
 
                     /**
                      * <p>下载 URL 的过期时间（秒级 UNIX 时间戳）。若传入该参数，则响应中将包含所有文件的下载 URL</p>
@@ -368,6 +344,30 @@ namespace TencentCloud
                      */
                     std::vector<VisionRecognitionTaskFilter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * <p>分页拉取偏移</p>
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * <p>算法类型。</p><p>当 ServiceCategory 为 <code>COMPREHENSION</code> 时，可选值包括：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>CONT_PERSON_MOTIONLESS</code>：静姿检测</li></ul><p>当 ServiceCategory 为 <code>HIGHLIGHT</code> 时，可选值包括：</p><ul><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul><p>当 ServiceCategory 为 <code>SUMMARIZATION</code> 时，可选值包括：</p><ul><li><code>DAILY_SUM</code>：每日总结</li><li><code>WEEKLY_SUM</code>：每周总结</li></ul>
+                     */
+                    std::vector<std::string> m_serviceTypes;
+                    bool m_serviceTypesHasBeenSet;
+
+                    /**
+                     * <p>查询任务时间范围的起始时间（毫秒级 UNIX 时间戳）。不传则不生效时间范围条件。</p>
+                     */
+                    int64_t m_startTimeMs;
+                    bool m_startTimeMsHasBeenSet;
+
+                    /**
+                     * <p>要查询的任务的状态条件。不传则不按照状态过滤，可选值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li></ul>
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

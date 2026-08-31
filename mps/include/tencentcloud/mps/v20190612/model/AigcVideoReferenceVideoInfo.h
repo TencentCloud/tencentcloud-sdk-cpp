@@ -47,27 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取参考视频url。需要外网可访问。
-可作为特征参考视频，也可作为待编辑视频，默认为待编辑视频；可选择性保留视频原声
-通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频
-参考视频为待编辑视频时，不能定义视频首尾帧。
-                     * @return VideoUrl 参考视频url。需要外网可访问。
-可作为特征参考视频，也可作为待编辑视频，默认为待编辑视频；可选择性保留视频原声
-通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频
-参考视频为待编辑视频时，不能定义视频首尾帧。
+                     * 获取<p>参考视频url。需要外网可访问。<br>可作为特征参考视频，也可作为待编辑视频，默认为待编辑视频；可选择性保留视频原声<br>通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频<br>参考视频为待编辑视频时，不能定义视频首尾帧。</p>
+                     * @return VideoUrl <p>参考视频url。需要外网可访问。<br>可作为特征参考视频，也可作为待编辑视频，默认为待编辑视频；可选择性保留视频原声<br>通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频<br>参考视频为待编辑视频时，不能定义视频首尾帧。</p>
                      * 
                      */
                     std::string GetVideoUrl() const;
 
                     /**
-                     * 设置参考视频url。需要外网可访问。
-可作为特征参考视频，也可作为待编辑视频，默认为待编辑视频；可选择性保留视频原声
-通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频
-参考视频为待编辑视频时，不能定义视频首尾帧。
-                     * @param _videoUrl 参考视频url。需要外网可访问。
-可作为特征参考视频，也可作为待编辑视频，默认为待编辑视频；可选择性保留视频原声
-通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频
-参考视频为待编辑视频时，不能定义视频首尾帧。
+                     * 设置<p>参考视频url。需要外网可访问。<br>可作为特征参考视频，也可作为待编辑视频，默认为待编辑视频；可选择性保留视频原声<br>通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频<br>参考视频为待编辑视频时，不能定义视频首尾帧。</p>
+                     * @param _videoUrl <p>参考视频url。需要外网可访问。<br>可作为特征参考视频，也可作为待编辑视频，默认为待编辑视频；可选择性保留视频原声<br>通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频<br>参考视频为待编辑视频时，不能定义视频首尾帧。</p>
                      * 
                      */
                     void SetVideoUrl(const std::string& _videoUrl);
@@ -80,15 +68,15 @@ namespace TencentCloud
                     bool VideoUrlHasBeenSet() const;
 
                     /**
-                     * 获取通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频。
-                     * @return ReferType 通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频。
+                     * 获取<p>通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频。</p>
+                     * @return ReferType <p>通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频。</p>
                      * 
                      */
                     std::string GetReferType() const;
 
                     /**
-                     * 设置通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频。
-                     * @param _referType 通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频。
+                     * 设置<p>通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频。</p>
+                     * @param _referType <p>通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频。</p>
                      * 
                      */
                     void SetReferType(const std::string& _referType);
@@ -101,15 +89,15 @@ namespace TencentCloud
                     bool ReferTypeHasBeenSet() const;
 
                     /**
-                     * 获取通过KeepOriginalSound参数选择是否保留视频原声，yes为保留，no为不保留；当前参数对特征参考视频（feature）也生效。
-                     * @return KeepOriginalSound 通过KeepOriginalSound参数选择是否保留视频原声，yes为保留，no为不保留；当前参数对特征参考视频（feature）也生效。
+                     * 获取<p>通过KeepOriginalSound参数选择是否保留视频原声，yes为保留，no为不保留；当前参数对特征参考视频（feature）也生效。</p>
+                     * @return KeepOriginalSound <p>通过KeepOriginalSound参数选择是否保留视频原声，yes为保留，no为不保留；当前参数对特征参考视频（feature）也生效。</p>
                      * 
                      */
                     std::string GetKeepOriginalSound() const;
 
                     /**
-                     * 设置通过KeepOriginalSound参数选择是否保留视频原声，yes为保留，no为不保留；当前参数对特征参考视频（feature）也生效。
-                     * @param _keepOriginalSound 通过KeepOriginalSound参数选择是否保留视频原声，yes为保留，no为不保留；当前参数对特征参考视频（feature）也生效。
+                     * 设置<p>通过KeepOriginalSound参数选择是否保留视频原声，yes为保留，no为不保留；当前参数对特征参考视频（feature）也生效。</p>
+                     * @param _keepOriginalSound <p>通过KeepOriginalSound参数选择是否保留视频原声，yes为保留，no为不保留；当前参数对特征参考视频（feature）也生效。</p>
                      * 
                      */
                     void SetKeepOriginalSound(const std::string& _keepOriginalSound);
@@ -124,22 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 参考视频url。需要外网可访问。
-可作为特征参考视频，也可作为待编辑视频，默认为待编辑视频；可选择性保留视频原声
-通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频
-参考视频为待编辑视频时，不能定义视频首尾帧。
+                     * <p>参考视频url。需要外网可访问。<br>可作为特征参考视频，也可作为待编辑视频，默认为待编辑视频；可选择性保留视频原声<br>通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频<br>参考视频为待编辑视频时，不能定义视频首尾帧。</p>
                      */
                     std::string m_videoUrl;
                     bool m_videoUrlHasBeenSet;
 
                     /**
-                     * 通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频。
+                     * <p>通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频。</p>
                      */
                     std::string m_referType;
                     bool m_referTypeHasBeenSet;
 
                     /**
-                     * 通过KeepOriginalSound参数选择是否保留视频原声，yes为保留，no为不保留；当前参数对特征参考视频（feature）也生效。
+                     * <p>通过KeepOriginalSound参数选择是否保留视频原声，yes为保留，no为不保留；当前参数对特征参考视频（feature）也生效。</p>
                      */
                     std::string m_keepOriginalSound;
                     bool m_keepOriginalSoundHasBeenSet;

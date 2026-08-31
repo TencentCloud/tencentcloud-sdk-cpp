@@ -23,8 +23,10 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/clb/v20180317/model/ModelItem.h>
 #include <tencentcloud/clb/v20180317/model/KeyItem.h>
+#include <tencentcloud/clb/v20180317/model/ApiBaseItem.h>
 #include <tencentcloud/clb/v20180317/model/TagInfo.h>
 #include <tencentcloud/clb/v20180317/model/ServiceProviderHealthCheckConfigInput.h>
+#include <tencentcloud/clb/v20180317/model/ServiceProviderHealthCheckConfigItemInput.h>
 
 
 namespace TencentCloud
@@ -215,6 +217,27 @@ namespace TencentCloud
                     bool ApiBaseHasBeenSet() const;
 
                     /**
+                     * 获取<p>多协议 Api Base URL</p>
+                     * @return ApiBases <p>多协议 Api Base URL</p>
+                     * 
+                     */
+                    std::vector<ApiBaseItem> GetApiBases() const;
+
+                    /**
+                     * 设置<p>多协议 Api Base URL</p>
+                     * @param _apiBases <p>多协议 Api Base URL</p>
+                     * 
+                     */
+                    void SetApiBases(const std::vector<ApiBaseItem>& _apiBases);
+
+                    /**
+                     * 判断参数 ApiBases 是否已赋值
+                     * @return ApiBases 是否已赋值
+                     * 
+                     */
+                    bool ApiBasesHasBeenSet() const;
+
+                    /**
                      * 获取<p>VPC ID</p>
                      * @return VpcId <p>VPC ID</p>
                      * 
@@ -340,6 +363,48 @@ namespace TencentCloud
                      */
                     bool HealthCheckConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>私网管道 ID</p>
+                     * @return CMRPrivateNetworkTunnelId <p>私网管道 ID</p>
+                     * 
+                     */
+                    std::string GetCMRPrivateNetworkTunnelId() const;
+
+                    /**
+                     * 设置<p>私网管道 ID</p>
+                     * @param _cMRPrivateNetworkTunnelId <p>私网管道 ID</p>
+                     * 
+                     */
+                    void SetCMRPrivateNetworkTunnelId(const std::string& _cMRPrivateNetworkTunnelId);
+
+                    /**
+                     * 判断参数 CMRPrivateNetworkTunnelId 是否已赋值
+                     * @return CMRPrivateNetworkTunnelId 是否已赋值
+                     * 
+                     */
+                    bool CMRPrivateNetworkTunnelIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>健康检查配置</p>
+                     * @return HealthCheckConfigs <p>健康检查配置</p>
+                     * 
+                     */
+                    std::vector<ServiceProviderHealthCheckConfigItemInput> GetHealthCheckConfigs() const;
+
+                    /**
+                     * 设置<p>健康检查配置</p>
+                     * @param _healthCheckConfigs <p>健康检查配置</p>
+                     * 
+                     */
+                    void SetHealthCheckConfigs(const std::vector<ServiceProviderHealthCheckConfigItemInput>& _healthCheckConfigs);
+
+                    /**
+                     * 判断参数 HealthCheckConfigs 是否已赋值
+                     * @return HealthCheckConfigs 是否已赋值
+                     * 
+                     */
+                    bool HealthCheckConfigsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -391,6 +456,12 @@ namespace TencentCloud
                     bool m_apiBaseHasBeenSet;
 
                     /**
+                     * <p>多协议 Api Base URL</p>
+                     */
+                    std::vector<ApiBaseItem> m_apiBases;
+                    bool m_apiBasesHasBeenSet;
+
+                    /**
                      * <p>VPC ID</p>
                      */
                     std::string m_vpcId;
@@ -425,6 +496,18 @@ namespace TencentCloud
                      */
                     ServiceProviderHealthCheckConfigInput m_healthCheckConfig;
                     bool m_healthCheckConfigHasBeenSet;
+
+                    /**
+                     * <p>私网管道 ID</p>
+                     */
+                    std::string m_cMRPrivateNetworkTunnelId;
+                    bool m_cMRPrivateNetworkTunnelIdHasBeenSet;
+
+                    /**
+                     * <p>健康检查配置</p>
+                     */
+                    std::vector<ServiceProviderHealthCheckConfigItemInput> m_healthCheckConfigs;
+                    bool m_healthCheckConfigsHasBeenSet;
 
                 };
             }

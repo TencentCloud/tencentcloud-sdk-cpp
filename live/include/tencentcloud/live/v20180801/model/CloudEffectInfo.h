@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云端特效 ID。
-                     * @return Id 云端特效 ID。
+                     * 获取<p>云端特效 ID。</p>
+                     * @return Id <p>云端特效 ID。</p>
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置云端特效 ID。
-                     * @param _id 云端特效 ID。
+                     * 设置<p>云端特效 ID。</p>
+                     * @param _id <p>云端特效 ID。</p>
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取云端特效描述词。
-                     * @return Prompt 云端特效描述词。
+                     * 获取<p>云端特效描述词。</p>
+                     * @return Prompt <p>云端特效描述词。</p>
                      * 
                      */
                     std::string GetPrompt() const;
 
                     /**
-                     * 设置云端特效描述词。
-                     * @param _prompt 云端特效描述词。
+                     * 设置<p>云端特效描述词。</p>
+                     * @param _prompt <p>云端特效描述词。</p>
                      * 
                      */
                     void SetPrompt(const std::string& _prompt);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool PromptHasBeenSet() const;
 
                     /**
-                     * 获取云端特效标签。
-                     * @return Flag 云端特效标签。
+                     * 获取<p>云端特效标签。</p>
+                     * @return Flag <p>云端特效标签。</p>
                      * 
                      */
                     std::string GetFlag() const;
 
                     /**
-                     * 设置云端特效标签。
-                     * @param _flag 云端特效标签。
+                     * 设置<p>云端特效标签。</p>
+                     * @param _flag <p>云端特效标签。</p>
                      * 
                      */
                     void SetFlag(const std::string& _flag);
@@ -110,35 +110,15 @@ namespace TencentCloud
                     bool FlagHasBeenSet() const;
 
                     /**
-                     * 获取云端特效生成状态。
-生成中 - GENERATING。
-处理中 - PROCESSING。
-生成失败 - FAILED。
-已完成 - FINISH。
-
-                     * @return Status 云端特效生成状态。
-生成中 - GENERATING。
-处理中 - PROCESSING。
-生成失败 - FAILED。
-已完成 - FINISH。
-
+                     * 获取<p>云端特效生成状态。<br>生成中 - GENERATING。<br>处理中 - PROCESSING。<br>生成失败 - FAILED。<br>已完成 - FINISH。</p>
+                     * @return Status <p>云端特效生成状态。<br>生成中 - GENERATING。<br>处理中 - PROCESSING。<br>生成失败 - FAILED。<br>已完成 - FINISH。</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置云端特效生成状态。
-生成中 - GENERATING。
-处理中 - PROCESSING。
-生成失败 - FAILED。
-已完成 - FINISH。
-
-                     * @param _status 云端特效生成状态。
-生成中 - GENERATING。
-处理中 - PROCESSING。
-生成失败 - FAILED。
-已完成 - FINISH。
-
+                     * 设置<p>云端特效生成状态。<br>生成中 - GENERATING。<br>处理中 - PROCESSING。<br>生成失败 - FAILED。<br>已完成 - FINISH。</p>
+                     * @param _status <p>云端特效生成状态。<br>生成中 - GENERATING。<br>处理中 - PROCESSING。<br>生成失败 - FAILED。<br>已完成 - FINISH。</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -151,15 +131,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取特效信息，生成失败时，此处返回失败原因。
-                     * @return Message 特效信息，生成失败时，此处返回失败原因。
+                     * 获取<p>特效信息，生成失败时，此处返回失败原因。</p>
+                     * @return Message <p>特效信息，生成失败时，此处返回失败原因。</p>
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置特效信息，生成失败时，此处返回失败原因。
-                     * @param _message 特效信息，生成失败时，此处返回失败原因。
+                     * 设置<p>特效信息，生成失败时，此处返回失败原因。</p>
+                     * @param _message <p>特效信息，生成失败时，此处返回失败原因。</p>
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -172,15 +152,15 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取云端特效预览图片。
-                     * @return PreviewImageUrl 云端特效预览图片。
+                     * 获取<p>云端特效预览图片。</p>
+                     * @return PreviewImageUrl <p>云端特效预览图片。</p>
                      * 
                      */
                     std::string GetPreviewImageUrl() const;
 
                     /**
-                     * 设置云端特效预览图片。
-                     * @param _previewImageUrl 云端特效预览图片。
+                     * 设置<p>云端特效预览图片。</p>
+                     * @param _previewImageUrl <p>云端特效预览图片。</p>
                      * 
                      */
                     void SetPreviewImageUrl(const std::string& _previewImageUrl);
@@ -193,27 +173,15 @@ namespace TencentCloud
                     bool PreviewImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取云端特效类型。
-PGC : 官方精品特效。
-AIGC : AI生成的特效。
-UGC : 用户上传特效。
-                     * @return Type 云端特效类型。
-PGC : 官方精品特效。
-AIGC : AI生成的特效。
-UGC : 用户上传特效。
+                     * 获取<p>云端特效类型。<br>PGC : 官方精品特效。<br>AIGC : AI生成的特效。<br>UGC : 用户上传特效。</p>
+                     * @return Type <p>云端特效类型。<br>PGC : 官方精品特效。<br>AIGC : AI生成的特效。<br>UGC : 用户上传特效。</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置云端特效类型。
-PGC : 官方精品特效。
-AIGC : AI生成的特效。
-UGC : 用户上传特效。
-                     * @param _type 云端特效类型。
-PGC : 官方精品特效。
-AIGC : AI生成的特效。
-UGC : 用户上传特效。
+                     * 设置<p>云端特效类型。<br>PGC : 官方精品特效。<br>AIGC : AI生成的特效。<br>UGC : 用户上传特效。</p>
+                     * @param _type <p>云端特效类型。<br>PGC : 官方精品特效。<br>AIGC : AI生成的特效。<br>UGC : 用户上传特效。</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -226,15 +194,15 @@ UGC : 用户上传特效。
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取云端特效创建时间。
-                     * @return CreateTime 云端特效创建时间。
+                     * 获取<p>云端特效创建时间。</p>
+                     * @return CreateTime <p>云端特效创建时间。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置云端特效创建时间。
-                     * @param _createTime 云端特效创建时间。
+                     * 设置<p>云端特效创建时间。</p>
+                     * @param _createTime <p>云端特效创建时间。</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -247,15 +215,15 @@ UGC : 用户上传特效。
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取云端特效更新时间。
-                     * @return UpdateTime 云端特效更新时间。
+                     * 获取<p>云端特效更新时间。</p>
+                     * @return UpdateTime <p>云端特效更新时间。</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置云端特效更新时间。
-                     * @param _updateTime 云端特效更新时间。
+                     * 设置<p>云端特效更新时间。</p>
+                     * @param _updateTime <p>云端特效更新时间。</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -270,63 +238,55 @@ UGC : 用户上传特效。
                 private:
 
                     /**
-                     * 云端特效 ID。
+                     * <p>云端特效 ID。</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 云端特效描述词。
+                     * <p>云端特效描述词。</p>
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
 
                     /**
-                     * 云端特效标签。
+                     * <p>云端特效标签。</p>
                      */
                     std::string m_flag;
                     bool m_flagHasBeenSet;
 
                     /**
-                     * 云端特效生成状态。
-生成中 - GENERATING。
-处理中 - PROCESSING。
-生成失败 - FAILED。
-已完成 - FINISH。
-
+                     * <p>云端特效生成状态。<br>生成中 - GENERATING。<br>处理中 - PROCESSING。<br>生成失败 - FAILED。<br>已完成 - FINISH。</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 特效信息，生成失败时，此处返回失败原因。
+                     * <p>特效信息，生成失败时，此处返回失败原因。</p>
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 云端特效预览图片。
+                     * <p>云端特效预览图片。</p>
                      */
                     std::string m_previewImageUrl;
                     bool m_previewImageUrlHasBeenSet;
 
                     /**
-                     * 云端特效类型。
-PGC : 官方精品特效。
-AIGC : AI生成的特效。
-UGC : 用户上传特效。
+                     * <p>云端特效类型。<br>PGC : 官方精品特效。<br>AIGC : AI生成的特效。<br>UGC : 用户上传特效。</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 云端特效创建时间。
+                     * <p>云端特效创建时间。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 云端特效更新时间。
+                     * <p>云端特效更新时间。</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

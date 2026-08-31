@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取固定值，为"monitor"
-                     * @return Module 固定值，为"monitor"
+                     * 获取<p>固定值，为&quot;monitor&quot;</p>
+                     * @return Module <p>固定值，为&quot;monitor&quot;</p>
                      * 
                      */
                     std::string GetModule() const;
 
                     /**
-                     * 设置固定值，为"monitor"
-                     * @param _module 固定值，为"monitor"
+                     * 设置<p>固定值，为&quot;monitor&quot;</p>
+                     * @param _module <p>固定值，为&quot;monitor&quot;</p>
                      * 
                      */
                     void SetModule(const std::string& _module);
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取策略名称，不超过60字符
-                     * @return PolicyName 策略名称，不超过60字符
+                     * 获取<p>策略名称，不超过60字符</p>
+                     * @return PolicyName <p>策略名称，不超过60字符</p>
                      * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
-                     * 设置策略名称，不超过60字符
-                     * @param _policyName 策略名称，不超过60字符
+                     * 设置<p>策略名称，不超过60字符</p>
+                     * @param _policyName <p>策略名称，不超过60字符</p>
                      * 
                      */
                     void SetPolicyName(const std::string& _policyName);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool PolicyNameHasBeenSet() const;
 
                     /**
-                     * 获取监控类型 MT_QCE=云产品监控
-                     * @return MonitorType 监控类型 MT_QCE=云产品监控
+                     * 获取<p>监控类型 MT_QCE=云产品监控</p>
+                     * @return MonitorType <p>监控类型 MT_QCE=云产品监控</p>
                      * 
                      */
                     std::string GetMonitorType() const;
 
                     /**
-                     * 设置监控类型 MT_QCE=云产品监控
-                     * @param _monitorType 监控类型 MT_QCE=云产品监控
+                     * 设置<p>监控类型 MT_QCE=云产品监控</p>
+                     * @param _monitorType <p>监控类型 MT_QCE=云产品监控</p>
                      * 
                      */
                     void SetMonitorType(const std::string& _monitorType);
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool MonitorTypeHasBeenSet() const;
 
                     /**
-                     * 获取告警策略类型，由 [DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device
-                     * @return Namespace 告警策略类型，由 [DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device
+                     * 获取<p>告警策略类型，由 <a href="https://cloud.tencent.com/document/product/248/48683">DescribeAllNamespaces</a> 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device</p>
+                     * @return Namespace <p>告警策略类型，由 <a href="https://cloud.tencent.com/document/product/248/48683">DescribeAllNamespaces</a> 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device</p>
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置告警策略类型，由 [DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device
-                     * @param _namespace 告警策略类型，由 [DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device
+                     * 设置<p>告警策略类型，由 <a href="https://cloud.tencent.com/document/product/248/48683">DescribeAllNamespaces</a> 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device</p>
+                     * @param _namespace <p>告警策略类型，由 <a href="https://cloud.tencent.com/document/product/248/48683">DescribeAllNamespaces</a> 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device</p>
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取备注，不超过100字符，仅支持中英文、数字、下划线、-
-                     * @return Remark 备注，不超过100字符，仅支持中英文、数字、下划线、-
+                     * 获取<p>备注，不超过100字符，仅支持中英文、数字、下划线、-</p>
+                     * @return Remark <p>备注，不超过100字符，仅支持中英文、数字、下划线、-</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注，不超过100字符，仅支持中英文、数字、下划线、-
-                     * @param _remark 备注，不超过100字符，仅支持中英文、数字、下划线、-
+                     * 设置<p>备注，不超过100字符，仅支持中英文、数字、下划线、-</p>
+                     * @param _remark <p>备注，不超过100字符，仅支持中英文、数字、下划线、-</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -156,15 +156,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取是否启用 0=停用 1=启用，可不传 默认为1
-                     * @return Enable 是否启用 0=停用 1=启用，可不传 默认为1
+                     * 获取<p>是否启用 0=停用 1=启用，可不传 默认为1</p>
+                     * @return Enable <p>是否启用 0=停用 1=启用，可不传 默认为1</p>
                      * 
                      */
                     int64_t GetEnable() const;
 
                     /**
-                     * 设置是否启用 0=停用 1=启用，可不传 默认为1
-                     * @param _enable 是否启用 0=停用 1=启用，可不传 默认为1
+                     * 设置<p>是否启用 0=停用 1=启用，可不传 默认为1</p>
+                     * @param _enable <p>是否启用 0=停用 1=启用，可不传 默认为1</p>
                      * 
                      */
                     void SetEnable(const int64_t& _enable);
@@ -177,15 +177,15 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取项目 Id，对于区分项目的产品必须传入非 -1 的值。 -1=无项目 0=默认项目，如不传 默认为 -1。支持的项目 Id 可以在控制台 [账号中心-项目管理](https://console.cloud.tencent.com/project) 中查看。
-                     * @return ProjectId 项目 Id，对于区分项目的产品必须传入非 -1 的值。 -1=无项目 0=默认项目，如不传 默认为 -1。支持的项目 Id 可以在控制台 [账号中心-项目管理](https://console.cloud.tencent.com/project) 中查看。
+                     * 获取<p>项目 Id，对于区分项目的产品必须传入非 -1 的值。 -1=无项目 0=默认项目，如不传 默认为 -1。支持的项目 Id 可以在控制台 <a href="https://console.cloud.tencent.com/project">账号中心-项目管理</a> 中查看。</p>
+                     * @return ProjectId <p>项目 Id，对于区分项目的产品必须传入非 -1 的值。 -1=无项目 0=默认项目，如不传 默认为 -1。支持的项目 Id 可以在控制台 <a href="https://console.cloud.tencent.com/project">账号中心-项目管理</a> 中查看。</p>
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目 Id，对于区分项目的产品必须传入非 -1 的值。 -1=无项目 0=默认项目，如不传 默认为 -1。支持的项目 Id 可以在控制台 [账号中心-项目管理](https://console.cloud.tencent.com/project) 中查看。
-                     * @param _projectId 项目 Id，对于区分项目的产品必须传入非 -1 的值。 -1=无项目 0=默认项目，如不传 默认为 -1。支持的项目 Id 可以在控制台 [账号中心-项目管理](https://console.cloud.tencent.com/project) 中查看。
+                     * 设置<p>项目 Id，对于区分项目的产品必须传入非 -1 的值。 -1=无项目 0=默认项目，如不传 默认为 -1。支持的项目 Id 可以在控制台 <a href="https://console.cloud.tencent.com/project">账号中心-项目管理</a> 中查看。</p>
+                     * @param _projectId <p>项目 Id，对于区分项目的产品必须传入非 -1 的值。 -1=无项目 0=默认项目，如不传 默认为 -1。支持的项目 Id 可以在控制台 <a href="https://console.cloud.tencent.com/project">账号中心-项目管理</a> 中查看。</p>
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -198,15 +198,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取触发条件模板 Id，该参数与 Condition 参数二选一。如果策略绑定触发条件模板，则传该参数；否则不传该参数，而是传 Condition 参数。触发条件模板 Id 可以从 [DescribeConditionsTemplateList](https://cloud.tencent.com/document/api/248/70250) 接口获取。
-                     * @return ConditionTemplateId 触发条件模板 Id，该参数与 Condition 参数二选一。如果策略绑定触发条件模板，则传该参数；否则不传该参数，而是传 Condition 参数。触发条件模板 Id 可以从 [DescribeConditionsTemplateList](https://cloud.tencent.com/document/api/248/70250) 接口获取。
+                     * 获取<p>触发条件模板 Id，该参数与 Condition 参数二选一。如果策略绑定触发条件模板，则传该参数；否则不传该参数，而是传 Condition 参数。触发条件模板 Id 可以从 <a href="https://cloud.tencent.com/document/api/248/70250">DescribeConditionsTemplateList</a> 接口获取。</p>
+                     * @return ConditionTemplateId <p>触发条件模板 Id，该参数与 Condition 参数二选一。如果策略绑定触发条件模板，则传该参数；否则不传该参数，而是传 Condition 参数。触发条件模板 Id 可以从 <a href="https://cloud.tencent.com/document/api/248/70250">DescribeConditionsTemplateList</a> 接口获取。</p>
                      * 
                      */
                     int64_t GetConditionTemplateId() const;
 
                     /**
-                     * 设置触发条件模板 Id，该参数与 Condition 参数二选一。如果策略绑定触发条件模板，则传该参数；否则不传该参数，而是传 Condition 参数。触发条件模板 Id 可以从 [DescribeConditionsTemplateList](https://cloud.tencent.com/document/api/248/70250) 接口获取。
-                     * @param _conditionTemplateId 触发条件模板 Id，该参数与 Condition 参数二选一。如果策略绑定触发条件模板，则传该参数；否则不传该参数，而是传 Condition 参数。触发条件模板 Id 可以从 [DescribeConditionsTemplateList](https://cloud.tencent.com/document/api/248/70250) 接口获取。
+                     * 设置<p>触发条件模板 Id，该参数与 Condition 参数二选一。如果策略绑定触发条件模板，则传该参数；否则不传该参数，而是传 Condition 参数。触发条件模板 Id 可以从 <a href="https://cloud.tencent.com/document/api/248/70250">DescribeConditionsTemplateList</a> 接口获取。</p>
+                     * @param _conditionTemplateId <p>触发条件模板 Id，该参数与 Condition 参数二选一。如果策略绑定触发条件模板，则传该参数；否则不传该参数，而是传 Condition 参数。触发条件模板 Id 可以从 <a href="https://cloud.tencent.com/document/api/248/70250">DescribeConditionsTemplateList</a> 接口获取。</p>
                      * 
                      */
                     void SetConditionTemplateId(const int64_t& _conditionTemplateId);
@@ -219,15 +219,15 @@ namespace TencentCloud
                     bool ConditionTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取指标触发条件，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
-                     * @return Condition 指标触发条件，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
+                     * 获取<p>指标触发条件，支持的指标可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询。</p>
+                     * @return Condition <p>指标触发条件，支持的指标可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询。</p>
                      * 
                      */
                     AlarmPolicyCondition GetCondition() const;
 
                     /**
-                     * 设置指标触发条件，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
-                     * @param _condition 指标触发条件，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
+                     * 设置<p>指标触发条件，支持的指标可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询。</p>
+                     * @param _condition <p>指标触发条件，支持的指标可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询。</p>
                      * 
                      */
                     void SetCondition(const AlarmPolicyCondition& _condition);
@@ -240,15 +240,15 @@ namespace TencentCloud
                     bool ConditionHasBeenSet() const;
 
                     /**
-                     * 获取事件触发条件，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询。
-                     * @return EventCondition 事件触发条件，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询。
+                     * 获取<p>事件触发条件，支持的事件可以从 <a href="https://cloud.tencent.com/document/product/248/51284">DescribeAlarmEvents</a> 查询。</p>
+                     * @return EventCondition <p>事件触发条件，支持的事件可以从 <a href="https://cloud.tencent.com/document/product/248/51284">DescribeAlarmEvents</a> 查询。</p>
                      * 
                      */
                     AlarmPolicyEventCondition GetEventCondition() const;
 
                     /**
-                     * 设置事件触发条件，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询。
-                     * @param _eventCondition 事件触发条件，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询。
+                     * 设置<p>事件触发条件，支持的事件可以从 <a href="https://cloud.tencent.com/document/product/248/51284">DescribeAlarmEvents</a> 查询。</p>
+                     * @param _eventCondition <p>事件触发条件，支持的事件可以从 <a href="https://cloud.tencent.com/document/product/248/51284">DescribeAlarmEvents</a> 查询。</p>
                      * 
                      */
                     void SetEventCondition(const AlarmPolicyEventCondition& _eventCondition);
@@ -261,15 +261,15 @@ namespace TencentCloud
                     bool EventConditionHasBeenSet() const;
 
                     /**
-                     * 获取通知规则 Id 列表，由 [DescribeAlarmNotices](https://cloud.tencent.com/document/product/248/51280) 获得
-                     * @return NoticeIds 通知规则 Id 列表，由 [DescribeAlarmNotices](https://cloud.tencent.com/document/product/248/51280) 获得
+                     * 获取<p>通知规则 Id 列表，由 <a href="https://cloud.tencent.com/document/product/248/51280">DescribeAlarmNotices</a> 获得</p>
+                     * @return NoticeIds <p>通知规则 Id 列表，由 <a href="https://cloud.tencent.com/document/product/248/51280">DescribeAlarmNotices</a> 获得</p>
                      * 
                      */
                     std::vector<std::string> GetNoticeIds() const;
 
                     /**
-                     * 设置通知规则 Id 列表，由 [DescribeAlarmNotices](https://cloud.tencent.com/document/product/248/51280) 获得
-                     * @param _noticeIds 通知规则 Id 列表，由 [DescribeAlarmNotices](https://cloud.tencent.com/document/product/248/51280) 获得
+                     * 设置<p>通知规则 Id 列表，由 <a href="https://cloud.tencent.com/document/product/248/51280">DescribeAlarmNotices</a> 获得</p>
+                     * @param _noticeIds <p>通知规则 Id 列表，由 <a href="https://cloud.tencent.com/document/product/248/51280">DescribeAlarmNotices</a> 获得</p>
                      * 
                      */
                     void SetNoticeIds(const std::vector<std::string>& _noticeIds);
@@ -282,15 +282,15 @@ namespace TencentCloud
                     bool NoticeIdsHasBeenSet() const;
 
                     /**
-                     * 获取触发任务列表
-                     * @return TriggerTasks 触发任务列表
+                     * 获取<p>触发任务列表</p>
+                     * @return TriggerTasks <p>触发任务列表</p>
                      * 
                      */
                     std::vector<AlarmPolicyTriggerTask> GetTriggerTasks() const;
 
                     /**
-                     * 设置触发任务列表
-                     * @param _triggerTasks 触发任务列表
+                     * 设置<p>触发任务列表</p>
+                     * @param _triggerTasks <p>触发任务列表</p>
                      * 
                      */
                     void SetTriggerTasks(const std::vector<AlarmPolicyTriggerTask>& _triggerTasks);
@@ -303,15 +303,15 @@ namespace TencentCloud
                     bool TriggerTasksHasBeenSet() const;
 
                     /**
-                     * 获取全局过滤条件
-                     * @return Filter 全局过滤条件
+                     * 获取<p>全局过滤条件</p>
+                     * @return Filter <p>全局过滤条件</p>
                      * 
                      */
                     AlarmPolicyFilter GetFilter() const;
 
                     /**
-                     * 设置全局过滤条件
-                     * @param _filter 全局过滤条件
+                     * 设置<p>全局过滤条件</p>
+                     * @param _filter <p>全局过滤条件</p>
                      * 
                      */
                     void SetFilter(const AlarmPolicyFilter& _filter);
@@ -324,15 +324,15 @@ namespace TencentCloud
                     bool FilterHasBeenSet() const;
 
                     /**
-                     * 获取聚合维度列表，指定按哪些维度 key 来做 group by
-                     * @return GroupBy 聚合维度列表，指定按哪些维度 key 来做 group by
+                     * 获取<p>聚合维度列表，指定按哪些维度 key 来做 group by</p>
+                     * @return GroupBy <p>聚合维度列表，指定按哪些维度 key 来做 group by</p>
                      * 
                      */
                     std::vector<std::string> GetGroupBy() const;
 
                     /**
-                     * 设置聚合维度列表，指定按哪些维度 key 来做 group by
-                     * @param _groupBy 聚合维度列表，指定按哪些维度 key 来做 group by
+                     * 设置<p>聚合维度列表，指定按哪些维度 key 来做 group by</p>
+                     * @param _groupBy <p>聚合维度列表，指定按哪些维度 key 来做 group by</p>
                      * 
                      */
                     void SetGroupBy(const std::vector<std::string>& _groupBy);
@@ -345,15 +345,36 @@ namespace TencentCloud
                     bool GroupByHasBeenSet() const;
 
                     /**
-                     * 获取模板绑定的标签
-                     * @return Tags 模板绑定的标签
+                     * 获取<p>是否绑定全部对象。如果是的话，不需要再传filter或者调用BindPolicyObject，0=否，1=是，默认为否</p><p>取值范围：[0, 1]</p><p>默认值：0</p><p>不是所有策略类型都支持绑定全部对象</p>
+                     * @return IsBindAll <p>是否绑定全部对象。如果是的话，不需要再传filter或者调用BindPolicyObject，0=否，1=是，默认为否</p><p>取值范围：[0, 1]</p><p>默认值：0</p><p>不是所有策略类型都支持绑定全部对象</p>
+                     * 
+                     */
+                    int64_t GetIsBindAll() const;
+
+                    /**
+                     * 设置<p>是否绑定全部对象。如果是的话，不需要再传filter或者调用BindPolicyObject，0=否，1=是，默认为否</p><p>取值范围：[0, 1]</p><p>默认值：0</p><p>不是所有策略类型都支持绑定全部对象</p>
+                     * @param _isBindAll <p>是否绑定全部对象。如果是的话，不需要再传filter或者调用BindPolicyObject，0=否，1=是，默认为否</p><p>取值范围：[0, 1]</p><p>默认值：0</p><p>不是所有策略类型都支持绑定全部对象</p>
+                     * 
+                     */
+                    void SetIsBindAll(const int64_t& _isBindAll);
+
+                    /**
+                     * 判断参数 IsBindAll 是否已赋值
+                     * @return IsBindAll 是否已赋值
+                     * 
+                     */
+                    bool IsBindAllHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模板绑定的标签</p>
+                     * @return Tags <p>模板绑定的标签</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置模板绑定的标签
-                     * @param _tags 模板绑定的标签
+                     * 设置<p>模板绑定的标签</p>
+                     * @param _tags <p>模板绑定的标签</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -366,15 +387,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取日志告警信息
-                     * @return LogAlarmReqInfo 日志告警信息
+                     * 获取<p>日志告警信息</p>
+                     * @return LogAlarmReqInfo <p>日志告警信息</p>
                      * 
                      */
                     LogAlarmReq GetLogAlarmReqInfo() const;
 
                     /**
-                     * 设置日志告警信息
-                     * @param _logAlarmReqInfo 日志告警信息
+                     * 设置<p>日志告警信息</p>
+                     * @param _logAlarmReqInfo <p>日志告警信息</p>
                      * 
                      */
                     void SetLogAlarmReqInfo(const LogAlarmReq& _logAlarmReqInfo);
@@ -387,15 +408,15 @@ namespace TencentCloud
                     bool LogAlarmReqInfoHasBeenSet() const;
 
                     /**
-                     * 获取告警分级通知规则配置
-                     * @return HierarchicalNotices 告警分级通知规则配置
+                     * 获取<p>告警分级通知规则配置</p>
+                     * @return HierarchicalNotices <p>告警分级通知规则配置</p>
                      * 
                      */
                     std::vector<AlarmHierarchicalNotice> GetHierarchicalNotices() const;
 
                     /**
-                     * 设置告警分级通知规则配置
-                     * @param _hierarchicalNotices 告警分级通知规则配置
+                     * 设置<p>告警分级通知规则配置</p>
+                     * @param _hierarchicalNotices <p>告警分级通知规则配置</p>
                      * 
                      */
                     void SetHierarchicalNotices(const std::vector<AlarmHierarchicalNotice>& _hierarchicalNotices);
@@ -408,15 +429,15 @@ namespace TencentCloud
                     bool HierarchicalNoticesHasBeenSet() const;
 
                     /**
-                     * 获取迁移策略专用字段，0-走鉴权逻辑，1-跳过鉴权逻辑
-                     * @return MigrateFlag 迁移策略专用字段，0-走鉴权逻辑，1-跳过鉴权逻辑
+                     * 获取<p>迁移策略专用字段，0-走鉴权逻辑，1-跳过鉴权逻辑</p>
+                     * @return MigrateFlag <p>迁移策略专用字段，0-走鉴权逻辑，1-跳过鉴权逻辑</p>
                      * 
                      */
                     int64_t GetMigrateFlag() const;
 
                     /**
-                     * 设置迁移策略专用字段，0-走鉴权逻辑，1-跳过鉴权逻辑
-                     * @param _migrateFlag 迁移策略专用字段，0-走鉴权逻辑，1-跳过鉴权逻辑
+                     * 设置<p>迁移策略专用字段，0-走鉴权逻辑，1-跳过鉴权逻辑</p>
+                     * @param _migrateFlag <p>迁移策略专用字段，0-走鉴权逻辑，1-跳过鉴权逻辑</p>
                      * 
                      */
                     void SetMigrateFlag(const int64_t& _migrateFlag);
@@ -429,15 +450,15 @@ namespace TencentCloud
                     bool MigrateFlagHasBeenSet() const;
 
                     /**
-                     * 获取事件配置的告警
-                     * @return EbSubject 事件配置的告警
+                     * 获取<p>事件配置的告警</p>
+                     * @return EbSubject <p>事件配置的告警</p>
                      * 
                      */
                     std::string GetEbSubject() const;
 
                     /**
-                     * 设置事件配置的告警
-                     * @param _ebSubject 事件配置的告警
+                     * 设置<p>事件配置的告警</p>
+                     * @param _ebSubject <p>事件配置的告警</p>
                      * 
                      */
                     void SetEbSubject(const std::string& _ebSubject);
@@ -450,15 +471,15 @@ namespace TencentCloud
                     bool EbSubjectHasBeenSet() const;
 
                     /**
-                     * 获取附加告警内容
-                     * @return AdditionalAlarmContent 附加告警内容
+                     * 获取<p>附加告警内容</p>
+                     * @return AdditionalAlarmContent <p>附加告警内容</p>
                      * 
                      */
                     std::string GetAdditionalAlarmContent() const;
 
                     /**
-                     * 设置附加告警内容
-                     * @param _additionalAlarmContent 附加告警内容
+                     * 设置<p>附加告警内容</p>
+                     * @param _additionalAlarmContent <p>附加告警内容</p>
                      * 
                      */
                     void SetAdditionalAlarmContent(const std::string& _additionalAlarmContent);
@@ -471,15 +492,15 @@ namespace TencentCloud
                     bool AdditionalAlarmContentHasBeenSet() const;
 
                     /**
-                     * 获取通知模板绑定信息
-                     * @return NoticeContentTmplBindInfos 通知模板绑定信息
+                     * 获取<p>通知模板绑定信息</p>
+                     * @return NoticeContentTmplBindInfos <p>通知模板绑定信息</p>
                      * 
                      */
                     std::vector<NoticeContentTmplBindInfo> GetNoticeContentTmplBindInfos() const;
 
                     /**
-                     * 设置通知模板绑定信息
-                     * @param _noticeContentTmplBindInfos 通知模板绑定信息
+                     * 设置<p>通知模板绑定信息</p>
+                     * @param _noticeContentTmplBindInfos <p>通知模板绑定信息</p>
                      * 
                      */
                     void SetNoticeContentTmplBindInfos(const std::vector<NoticeContentTmplBindInfo>& _noticeContentTmplBindInfos);
@@ -494,127 +515,133 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 固定值，为"monitor"
+                     * <p>固定值，为&quot;monitor&quot;</p>
                      */
                     std::string m_module;
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 策略名称，不超过60字符
+                     * <p>策略名称，不超过60字符</p>
                      */
                     std::string m_policyName;
                     bool m_policyNameHasBeenSet;
 
                     /**
-                     * 监控类型 MT_QCE=云产品监控
+                     * <p>监控类型 MT_QCE=云产品监控</p>
                      */
                     std::string m_monitorType;
                     bool m_monitorTypeHasBeenSet;
 
                     /**
-                     * 告警策略类型，由 [DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device
+                     * <p>告警策略类型，由 <a href="https://cloud.tencent.com/document/product/248/48683">DescribeAllNamespaces</a> 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device</p>
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * 备注，不超过100字符，仅支持中英文、数字、下划线、-
+                     * <p>备注，不超过100字符，仅支持中英文、数字、下划线、-</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 是否启用 0=停用 1=启用，可不传 默认为1
+                     * <p>是否启用 0=停用 1=启用，可不传 默认为1</p>
                      */
                     int64_t m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 项目 Id，对于区分项目的产品必须传入非 -1 的值。 -1=无项目 0=默认项目，如不传 默认为 -1。支持的项目 Id 可以在控制台 [账号中心-项目管理](https://console.cloud.tencent.com/project) 中查看。
+                     * <p>项目 Id，对于区分项目的产品必须传入非 -1 的值。 -1=无项目 0=默认项目，如不传 默认为 -1。支持的项目 Id 可以在控制台 <a href="https://console.cloud.tencent.com/project">账号中心-项目管理</a> 中查看。</p>
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 触发条件模板 Id，该参数与 Condition 参数二选一。如果策略绑定触发条件模板，则传该参数；否则不传该参数，而是传 Condition 参数。触发条件模板 Id 可以从 [DescribeConditionsTemplateList](https://cloud.tencent.com/document/api/248/70250) 接口获取。
+                     * <p>触发条件模板 Id，该参数与 Condition 参数二选一。如果策略绑定触发条件模板，则传该参数；否则不传该参数，而是传 Condition 参数。触发条件模板 Id 可以从 <a href="https://cloud.tencent.com/document/api/248/70250">DescribeConditionsTemplateList</a> 接口获取。</p>
                      */
                     int64_t m_conditionTemplateId;
                     bool m_conditionTemplateIdHasBeenSet;
 
                     /**
-                     * 指标触发条件，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。
+                     * <p>指标触发条件，支持的指标可以从 <a href="https://cloud.tencent.com/document/product/248/51283">DescribeAlarmMetrics</a> 查询。</p>
                      */
                     AlarmPolicyCondition m_condition;
                     bool m_conditionHasBeenSet;
 
                     /**
-                     * 事件触发条件，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询。
+                     * <p>事件触发条件，支持的事件可以从 <a href="https://cloud.tencent.com/document/product/248/51284">DescribeAlarmEvents</a> 查询。</p>
                      */
                     AlarmPolicyEventCondition m_eventCondition;
                     bool m_eventConditionHasBeenSet;
 
                     /**
-                     * 通知规则 Id 列表，由 [DescribeAlarmNotices](https://cloud.tencent.com/document/product/248/51280) 获得
+                     * <p>通知规则 Id 列表，由 <a href="https://cloud.tencent.com/document/product/248/51280">DescribeAlarmNotices</a> 获得</p>
                      */
                     std::vector<std::string> m_noticeIds;
                     bool m_noticeIdsHasBeenSet;
 
                     /**
-                     * 触发任务列表
+                     * <p>触发任务列表</p>
                      */
                     std::vector<AlarmPolicyTriggerTask> m_triggerTasks;
                     bool m_triggerTasksHasBeenSet;
 
                     /**
-                     * 全局过滤条件
+                     * <p>全局过滤条件</p>
                      */
                     AlarmPolicyFilter m_filter;
                     bool m_filterHasBeenSet;
 
                     /**
-                     * 聚合维度列表，指定按哪些维度 key 来做 group by
+                     * <p>聚合维度列表，指定按哪些维度 key 来做 group by</p>
                      */
                     std::vector<std::string> m_groupBy;
                     bool m_groupByHasBeenSet;
 
                     /**
-                     * 模板绑定的标签
+                     * <p>是否绑定全部对象。如果是的话，不需要再传filter或者调用BindPolicyObject，0=否，1=是，默认为否</p><p>取值范围：[0, 1]</p><p>默认值：0</p><p>不是所有策略类型都支持绑定全部对象</p>
+                     */
+                    int64_t m_isBindAll;
+                    bool m_isBindAllHasBeenSet;
+
+                    /**
+                     * <p>模板绑定的标签</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 日志告警信息
+                     * <p>日志告警信息</p>
                      */
                     LogAlarmReq m_logAlarmReqInfo;
                     bool m_logAlarmReqInfoHasBeenSet;
 
                     /**
-                     * 告警分级通知规则配置
+                     * <p>告警分级通知规则配置</p>
                      */
                     std::vector<AlarmHierarchicalNotice> m_hierarchicalNotices;
                     bool m_hierarchicalNoticesHasBeenSet;
 
                     /**
-                     * 迁移策略专用字段，0-走鉴权逻辑，1-跳过鉴权逻辑
+                     * <p>迁移策略专用字段，0-走鉴权逻辑，1-跳过鉴权逻辑</p>
                      */
                     int64_t m_migrateFlag;
                     bool m_migrateFlagHasBeenSet;
 
                     /**
-                     * 事件配置的告警
+                     * <p>事件配置的告警</p>
                      */
                     std::string m_ebSubject;
                     bool m_ebSubjectHasBeenSet;
 
                     /**
-                     * 附加告警内容
+                     * <p>附加告警内容</p>
                      */
                     std::string m_additionalAlarmContent;
                     bool m_additionalAlarmContentHasBeenSet;
 
                     /**
-                     * 通知模板绑定信息
+                     * <p>通知模板绑定信息</p>
                      */
                     std::vector<NoticeContentTmplBindInfo> m_noticeContentTmplBindInfos;
                     bool m_noticeContentTmplBindInfosHasBeenSet;

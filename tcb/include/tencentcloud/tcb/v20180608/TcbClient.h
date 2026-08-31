@@ -189,6 +189,8 @@
 #include <tencentcloud/tcb/v20180608/model/ModifyDatabaseACLResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyEnvResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyEnvExtraRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyEnvExtraResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyEnvPlanRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyEnvPlanResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyHTTPServiceRouteRequest.h>
@@ -492,6 +494,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyEnvResponse> ModifyEnvOutcome;
                 typedef std::future<ModifyEnvOutcome> ModifyEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyEnvRequest&, ModifyEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyEnvExtraResponse> ModifyEnvExtraOutcome;
+                typedef std::future<ModifyEnvExtraOutcome> ModifyEnvExtraOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ModifyEnvExtraRequest&, ModifyEnvExtraOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvExtraAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyEnvPlanResponse> ModifyEnvPlanOutcome;
                 typedef std::future<ModifyEnvPlanOutcome> ModifyEnvPlanOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyEnvPlanRequest&, ModifyEnvPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvPlanAsyncHandler;
@@ -1416,6 +1421,15 @@ Id、Secret、CreatedAt、Meta 等字段在该接口中不可修改，当客户�
                 ModifyEnvOutcome ModifyEnv(const Model::ModifyEnvRequest &request);
                 void ModifyEnvAsync(const Model::ModifyEnvRequest& request, const ModifyEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyEnvOutcomeCallable ModifyEnvCallable(const Model::ModifyEnvRequest& request);
+
+                /**
+                 *修改环境额外配置
+                 * @param req ModifyEnvExtraRequest
+                 * @return ModifyEnvExtraOutcome
+                 */
+                ModifyEnvExtraOutcome ModifyEnvExtra(const Model::ModifyEnvExtraRequest &request);
+                void ModifyEnvExtraAsync(const Model::ModifyEnvExtraRequest& request, const ModifyEnvExtraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyEnvExtraOutcomeCallable ModifyEnvExtraCallable(const Model::ModifyEnvExtraRequest& request);
 
                 /**
                  *本接口用于变更云开发环境套餐。

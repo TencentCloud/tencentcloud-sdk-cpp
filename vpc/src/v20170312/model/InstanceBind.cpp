@@ -29,7 +29,9 @@ InstanceBind::InstanceBind() :
     m_instanceNameHasBeenSet(false),
     m_instanceRegionHasBeenSet(false),
     m_instanceUinHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_aliasTypeHasBeenSet(false),
+    m_aliasInstanceIdHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,26 @@ CoreInternalOutcome InstanceBind::Deserialize(const rapidjson::Value &value)
         m_stateHasBeenSet = true;
     }
 
+    if (value.HasMember("AliasType") && !value["AliasType"].IsNull())
+    {
+        if (!value["AliasType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceBind.AliasType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aliasType = string(value["AliasType"].GetString());
+        m_aliasTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AliasInstanceId") && !value["AliasInstanceId"].IsNull())
+    {
+        if (!value["AliasInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceBind.AliasInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aliasInstanceId = string(value["AliasInstanceId"].GetString());
+        m_aliasInstanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +227,22 @@ void InstanceBind::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aliasTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AliasType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aliasType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aliasInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AliasInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aliasInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +390,37 @@ void InstanceBind::SetState(const string& _state)
 bool InstanceBind::StateHasBeenSet() const
 {
     return m_stateHasBeenSet;
+}
+
+string InstanceBind::GetAliasType() const
+{
+    return m_aliasType;
+}
+
+void InstanceBind::SetAliasType(const string& _aliasType)
+{
+    m_aliasType = _aliasType;
+    m_aliasTypeHasBeenSet = true;
+}
+
+bool InstanceBind::AliasTypeHasBeenSet() const
+{
+    return m_aliasTypeHasBeenSet;
+}
+
+string InstanceBind::GetAliasInstanceId() const
+{
+    return m_aliasInstanceId;
+}
+
+void InstanceBind::SetAliasInstanceId(const string& _aliasInstanceId)
+{
+    m_aliasInstanceId = _aliasInstanceId;
+    m_aliasInstanceIdHasBeenSet = true;
+}
+
+bool InstanceBind::AliasInstanceIdHasBeenSet() const
+{
+    return m_aliasInstanceIdHasBeenSet;
 }
 

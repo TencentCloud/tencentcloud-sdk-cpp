@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务信息
-                     * @return TaskInfo 任务信息
+                     * 获取<p>任务信息</p>
+                     * @return TaskInfo <p>任务信息</p>
                      * 
                      */
                     SeeTaskInfo GetTaskInfo() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务信息
+                     * <p>任务信息</p>
                      */
                     SeeTaskInfo m_taskInfo;
                     bool m_taskInfoHasBeenSet;

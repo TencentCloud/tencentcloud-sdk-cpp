@@ -33,11 +33,11 @@ CoreInternalOutcome ServerlessCcu::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("MinCcu") && !value["MinCcu"].IsNull())
     {
-        if (!value["MinCcu"].IsInt64())
+        if (!value["MinCcu"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `ServerlessCcu.MinCcu` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServerlessCcu.MinCcu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_minCcu = value["MinCcu"].GetInt64();
+        m_minCcu = value["MinCcu"].GetDouble();
         m_minCcuHasBeenSet = true;
     }
 
@@ -49,7 +49,7 @@ CoreInternalOutcome ServerlessCcu::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["MaxCcu"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            m_maxCcu.push_back((*itr).GetInt64());
+            m_maxCcu.push_back((*itr).GetDouble());
         }
         m_maxCcuHasBeenSet = true;
     }
@@ -78,19 +78,19 @@ void ServerlessCcu::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
 
         for (auto itr = m_maxCcu.begin(); itr != m_maxCcu.end(); ++itr)
         {
-            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
         }
     }
 
 }
 
 
-int64_t ServerlessCcu::GetMinCcu() const
+double ServerlessCcu::GetMinCcu() const
 {
     return m_minCcu;
 }
 
-void ServerlessCcu::SetMinCcu(const int64_t& _minCcu)
+void ServerlessCcu::SetMinCcu(const double& _minCcu)
 {
     m_minCcu = _minCcu;
     m_minCcuHasBeenSet = true;
@@ -101,12 +101,12 @@ bool ServerlessCcu::MinCcuHasBeenSet() const
     return m_minCcuHasBeenSet;
 }
 
-vector<int64_t> ServerlessCcu::GetMaxCcu() const
+vector<double> ServerlessCcu::GetMaxCcu() const
 {
     return m_maxCcu;
 }
 
-void ServerlessCcu::SetMaxCcu(const vector<int64_t>& _maxCcu)
+void ServerlessCcu::SetMaxCcu(const vector<double>& _maxCcu)
 {
     m_maxCcu = _maxCcu;
     m_maxCcuHasBeenSet = true;

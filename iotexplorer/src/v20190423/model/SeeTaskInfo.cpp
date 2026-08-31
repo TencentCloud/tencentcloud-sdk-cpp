@@ -31,6 +31,7 @@ SeeTaskInfo::SeeTaskInfo() :
     m_compHighlightResultHasBeenSet(false),
     m_detectContinuousResultHasBeenSet(false),
     m_faceRecognitionResultHasBeenSet(false),
+    m_summarizeResultHasBeenSet(false),
     m_costBasicHasBeenSet(false),
     m_costAdvancedHasBeenSet(false),
     m_filesHasBeenSet(false),
@@ -179,6 +180,23 @@ CoreInternalOutcome SeeTaskInfo::Deserialize(const rapidjson::Value &value)
         }
 
         m_faceRecognitionResultHasBeenSet = true;
+    }
+
+    if (value.HasMember("SummarizeResult") && !value["SummarizeResult"].IsNull())
+    {
+        if (!value["SummarizeResult"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SeeTaskInfo.SummarizeResult` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_summarizeResult.Deserialize(value["SummarizeResult"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_summarizeResultHasBeenSet = true;
     }
 
     if (value.HasMember("CostBasic") && !value["CostBasic"].IsNull())
@@ -354,6 +372,15 @@ void SeeTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_faceRecognitionResult.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_summarizeResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SummarizeResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_summarizeResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_costBasicHasBeenSet)
@@ -585,6 +612,22 @@ void SeeTaskInfo::SetFaceRecognitionResult(const SeeFaceRecognitionResult& _face
 bool SeeTaskInfo::FaceRecognitionResultHasBeenSet() const
 {
     return m_faceRecognitionResultHasBeenSet;
+}
+
+SeeSummarizeResult SeeTaskInfo::GetSummarizeResult() const
+{
+    return m_summarizeResult;
+}
+
+void SeeTaskInfo::SetSummarizeResult(const SeeSummarizeResult& _summarizeResult)
+{
+    m_summarizeResult = _summarizeResult;
+    m_summarizeResultHasBeenSet = true;
+}
+
+bool SeeTaskInfo::SummarizeResultHasBeenSet() const
+{
+    return m_summarizeResultHasBeenSet;
 }
 
 int64_t SeeTaskInfo::GetCostBasic() const

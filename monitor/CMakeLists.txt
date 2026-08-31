@@ -653,6 +653,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20230616/model/PageByNumResult.h
   include/tencentcloud/monitor/v20230616/model/CreateAIWorkbenchAgentRequest.h
   include/tencentcloud/monitor/v20230616/model/EnvEntry.h
+  include/tencentcloud/monitor/v20230616/model/RobotNoticeTitleColorRules.h
   include/tencentcloud/monitor/v20230616/model/KafkaConnectivity.h
   include/tencentcloud/monitor/v20230616/model/QCloudYeheNoticeTmplMatcher.h
   include/tencentcloud/monitor/v20230616/model/ListAIWorkbenchMessagesRequest.h
@@ -670,6 +671,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20230616/model/MessageInfo.h
   include/tencentcloud/monitor/v20230616/model/QCloudYeheNoticeTmpl.h
   include/tencentcloud/monitor/v20230616/model/MCPInfo.h
+  include/tencentcloud/monitor/v20230616/model/RobotNoticeTitleColor.h
   include/tencentcloud/monitor/v20230616/model/CreateDispenseExternalRuleResponse.h
   include/tencentcloud/monitor/v20230616/model/CreateNoticeContentTmplRequest.h
   include/tencentcloud/monitor/v20230616/model/QCloudYeheWeChatNoticeTmplItem.h
@@ -1343,6 +1345,7 @@ set(monitor_src
   src/v20230616/model/PageByNumResult.cpp
   src/v20230616/model/CreateAIWorkbenchAgentRequest.cpp
   src/v20230616/model/EnvEntry.cpp
+  src/v20230616/model/RobotNoticeTitleColorRules.cpp
   src/v20230616/model/KafkaConnectivity.cpp
   src/v20230616/model/QCloudYeheNoticeTmplMatcher.cpp
   src/v20230616/model/ListAIWorkbenchMessagesRequest.cpp
@@ -1360,6 +1363,7 @@ set(monitor_src
   src/v20230616/model/MessageInfo.cpp
   src/v20230616/model/QCloudYeheNoticeTmpl.cpp
   src/v20230616/model/MCPInfo.cpp
+  src/v20230616/model/RobotNoticeTitleColor.cpp
   src/v20230616/model/CreateDispenseExternalRuleResponse.cpp
   src/v20230616/model/CreateNoticeContentTmplRequest.cpp
   src/v20230616/model/QCloudYeheWeChatNoticeTmplItem.cpp

@@ -640,6 +640,56 @@ MpsClient::CreateAdaptiveDynamicStreamingTemplateOutcomeCallable MpsClient::Crea
     return prom->get_future();
 }
 
+MpsClient::CreateAgentRecordTaskOutcome MpsClient::CreateAgentRecordTask(const CreateAgentRecordTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAgentRecordTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAgentRecordTaskResponse rsp = CreateAgentRecordTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAgentRecordTaskOutcome(rsp);
+        else
+            return CreateAgentRecordTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAgentRecordTaskOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateAgentRecordTaskAsync(const CreateAgentRecordTaskRequest& request, const CreateAgentRecordTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAgentRecordTaskRequest&;
+    using Resp = CreateAgentRecordTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAgentRecordTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::CreateAgentRecordTaskOutcomeCallable MpsClient::CreateAgentRecordTaskCallable(const CreateAgentRecordTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAgentRecordTaskOutcome>>();
+    CreateAgentRecordTaskAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const CreateAgentRecordTaskRequest&,
+        CreateAgentRecordTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::CreateAiDramaTaskOutcome MpsClient::CreateAiDramaTask(const CreateAiDramaTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAiDramaTask");
@@ -4582,6 +4632,56 @@ MpsClient::DescribeAdaptiveDynamicStreamingTemplatesOutcomeCallable MpsClient::D
         const MpsClient*,
         const DescribeAdaptiveDynamicStreamingTemplatesRequest&,
         DescribeAdaptiveDynamicStreamingTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MpsClient::DescribeAgentRecordTaskOutcome MpsClient::DescribeAgentRecordTask(const DescribeAgentRecordTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAgentRecordTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAgentRecordTaskResponse rsp = DescribeAgentRecordTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAgentRecordTaskOutcome(rsp);
+        else
+            return DescribeAgentRecordTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAgentRecordTaskOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeAgentRecordTaskAsync(const DescribeAgentRecordTaskRequest& request, const DescribeAgentRecordTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAgentRecordTaskRequest&;
+    using Resp = DescribeAgentRecordTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAgentRecordTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::DescribeAgentRecordTaskOutcomeCallable MpsClient::DescribeAgentRecordTaskCallable(const DescribeAgentRecordTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAgentRecordTaskOutcome>>();
+    DescribeAgentRecordTaskAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const DescribeAgentRecordTaskRequest&,
+        DescribeAgentRecordTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -10540,6 +10640,56 @@ MpsClient::ProcessMediaOutcomeCallable MpsClient::ProcessMediaCallable(const Pro
     return prom->get_future();
 }
 
+MpsClient::QueryHunyuan3DTaskOutcome MpsClient::QueryHunyuan3DTask(const QueryHunyuan3DTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryHunyuan3DTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryHunyuan3DTaskResponse rsp = QueryHunyuan3DTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryHunyuan3DTaskOutcome(rsp);
+        else
+            return QueryHunyuan3DTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryHunyuan3DTaskOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::QueryHunyuan3DTaskAsync(const QueryHunyuan3DTaskRequest& request, const QueryHunyuan3DTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const QueryHunyuan3DTaskRequest&;
+    using Resp = QueryHunyuan3DTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "QueryHunyuan3DTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::QueryHunyuan3DTaskOutcomeCallable MpsClient::QueryHunyuan3DTaskCallable(const QueryHunyuan3DTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<QueryHunyuan3DTaskOutcome>>();
+    QueryHunyuan3DTaskAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const QueryHunyuan3DTaskRequest&,
+        QueryHunyuan3DTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::QueryProjectOutcome MpsClient::QueryProject(const QueryProjectRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryProject");
@@ -10932,6 +11082,56 @@ MpsClient::StopStreamPackageLinearAssemblyChannelOutcomeCallable MpsClient::Stop
         const MpsClient*,
         const StopStreamPackageLinearAssemblyChannelRequest&,
         StopStreamPackageLinearAssemblyChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MpsClient::SubmitHunyuan3DTaskOutcome MpsClient::SubmitHunyuan3DTask(const SubmitHunyuan3DTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitHunyuan3DTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitHunyuan3DTaskResponse rsp = SubmitHunyuan3DTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitHunyuan3DTaskOutcome(rsp);
+        else
+            return SubmitHunyuan3DTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitHunyuan3DTaskOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::SubmitHunyuan3DTaskAsync(const SubmitHunyuan3DTaskRequest& request, const SubmitHunyuan3DTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SubmitHunyuan3DTaskRequest&;
+    using Resp = SubmitHunyuan3DTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SubmitHunyuan3DTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::SubmitHunyuan3DTaskOutcomeCallable MpsClient::SubmitHunyuan3DTaskCallable(const SubmitHunyuan3DTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SubmitHunyuan3DTaskOutcome>>();
+    SubmitHunyuan3DTaskAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const SubmitHunyuan3DTaskRequest&,
+        SubmitHunyuan3DTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

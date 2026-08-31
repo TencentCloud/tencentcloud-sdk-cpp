@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询条件过滤器
-                     * @return Filters 查询条件过滤器
+                     * 获取<p>查询条件过滤器</p>
+                     * @return Filters <p>查询条件过滤器</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置查询条件过滤器
-                     * @param _filters 查询条件过滤器
+                     * 设置<p>查询条件过滤器</p>
+                     * @param _filters <p>查询条件过滤器</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取查询数目上限，默认20
-                     * @return Limit 查询数目上限，默认20
+                     * 获取<p>查询数目上限，默认20</p>
+                     * @return Limit <p>查询数目上限，默认20</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置查询数目上限，默认20
-                     * @param _limit 查询数目上限，默认20
+                     * 设置<p>查询数目上限，默认20</p>
+                     * @param _limit <p>查询数目上限，默认20</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取查询起始位置
-                     * @return Offset 查询起始位置
+                     * 获取<p>查询起始位置</p>
+                     * @return Offset <p>查询起始位置</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置查询起始位置
-                     * @param _offset 查询起始位置
+                     * 设置<p>查询起始位置</p>
+                     * @param _offset <p>查询起始位置</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -109,19 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询条件过滤器
+                     * <p>查询条件过滤器</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 查询数目上限，默认20
+                     * <p>查询数目上限，默认20</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 查询起始位置
+                     * <p>查询起始位置</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

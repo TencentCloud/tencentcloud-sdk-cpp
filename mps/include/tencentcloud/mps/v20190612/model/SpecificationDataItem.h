@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务规格。
-                     * @return Specification 任务规格。
+                     * 获取<p>任务规格。</p>
+                     * @return Specification <p>任务规格。</p>
                      * 
                      */
                     std::string GetSpecification() const;
 
                     /**
-                     * 设置任务规格。
-                     * @param _specification 任务规格。
+                     * 设置<p>任务规格。</p>
+                     * @param _specification <p>任务规格。</p>
                      * 
                      */
                     void SetSpecification(const std::string& _specification);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool SpecificationHasBeenSet() const;
 
                     /**
-                     * 获取统计数据。
-                     * @return Data 统计数据。
+                     * 获取<p>统计数据。</p>
+                     * @return Data <p>统计数据。</p>
                      * 
                      */
                     std::vector<TaskStatDataItem> GetData() const;
 
                     /**
-                     * 设置统计数据。
-                     * @param _data 统计数据。
+                     * 设置<p>统计数据。</p>
+                     * @param _data <p>统计数据。</p>
                      * 
                      */
                     void SetData(const std::vector<TaskStatDataItem>& _data);
@@ -92,13 +92,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务规格。
+                     * <p>任务规格。</p>
                      */
                     std::string m_specification;
                     bool m_specificationHasBeenSet;
 
                     /**
-                     * 统计数据。
+                     * <p>统计数据。</p>
                      */
                     std::vector<TaskStatDataItem> m_data;
                     bool m_dataHasBeenSet;

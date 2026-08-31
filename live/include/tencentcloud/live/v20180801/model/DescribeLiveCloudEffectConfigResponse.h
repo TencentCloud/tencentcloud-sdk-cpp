@@ -58,6 +58,20 @@ namespace TencentCloud
                      */
                     bool EffectTemplateListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>惩罚特效模板信息列表。</p>
+                     * @return PunishmentEffectTemplateList <p>惩罚特效模板信息列表。</p>
+                     * 
+                     */
+                    std::vector<CloudEffectTemplateInfo> GetPunishmentEffectTemplateList() const;
+
+                    /**
+                     * 判断参数 PunishmentEffectTemplateList 是否已赋值
+                     * @return PunishmentEffectTemplateList 是否已赋值
+                     * 
+                     */
+                    bool PunishmentEffectTemplateListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +79,12 @@ namespace TencentCloud
                      */
                     std::vector<CloudEffectTemplateInfo> m_effectTemplateList;
                     bool m_effectTemplateListHasBeenSet;
+
+                    /**
+                     * <p>惩罚特效模板信息列表。</p>
+                     */
+                    std::vector<CloudEffectTemplateInfo> m_punishmentEffectTemplateList;
+                    bool m_punishmentEffectTemplateListHasBeenSet;
 
                 };
             }

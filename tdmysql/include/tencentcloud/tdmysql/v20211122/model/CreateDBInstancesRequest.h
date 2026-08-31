@@ -655,15 +655,15 @@ namespace TencentCloud
                     bool SQLModeHasBeenSet() const;
 
                     /**
-                     * 获取<p>svls实例的ccu变配配置</p>
-                     * @return AutoScaleConfig <p>svls实例的ccu变配配置</p>
+                     * 获取<p>SVLS 实例的ccu变配配置</p><p>入参限制：同时传入 AutoScaleConfigs 时此参数不再生效</p>
+                     * @return AutoScaleConfig <p>SVLS 实例的ccu变配配置</p><p>入参限制：同时传入 AutoScaleConfigs 时此参数不再生效</p>
                      * 
                      */
                     AutoScalingConfig GetAutoScaleConfig() const;
 
                     /**
-                     * 设置<p>svls实例的ccu变配配置</p>
-                     * @param _autoScaleConfig <p>svls实例的ccu变配配置</p>
+                     * 设置<p>SVLS 实例的ccu变配配置</p><p>入参限制：同时传入 AutoScaleConfigs 时此参数不再生效</p>
+                     * @param _autoScaleConfig <p>SVLS 实例的ccu变配配置</p><p>入参限制：同时传入 AutoScaleConfigs 时此参数不再生效</p>
                      * 
                      */
                     void SetAutoScaleConfig(const AutoScalingConfig& _autoScaleConfig);
@@ -758,6 +758,27 @@ namespace TencentCloud
                      * 
                      */
                     bool EncryptionEnableHasBeenSet() const;
+
+                    /**
+                     * 获取<p>SVLS 实例的自动变配相关限制</p><p>入参限制：传入时 AutoScaleConfig 参数不再生效</p>
+                     * @return AutoScaleConfigs <p>SVLS 实例的自动变配相关限制</p><p>入参限制：传入时 AutoScaleConfig 参数不再生效</p>
+                     * 
+                     */
+                    std::vector<AutoScalingConfig> GetAutoScaleConfigs() const;
+
+                    /**
+                     * 设置<p>SVLS 实例的自动变配相关限制</p><p>入参限制：传入时 AutoScaleConfig 参数不再生效</p>
+                     * @param _autoScaleConfigs <p>SVLS 实例的自动变配相关限制</p><p>入参限制：传入时 AutoScaleConfig 参数不再生效</p>
+                     * 
+                     */
+                    void SetAutoScaleConfigs(const std::vector<AutoScalingConfig>& _autoScaleConfigs);
+
+                    /**
+                     * 判断参数 AutoScaleConfigs 是否已赋值
+                     * @return AutoScaleConfigs 是否已赋值
+                     * 
+                     */
+                    bool AutoScaleConfigsHasBeenSet() const;
 
                 private:
 
@@ -936,7 +957,7 @@ namespace TencentCloud
                     bool m_sQLModeHasBeenSet;
 
                     /**
-                     * <p>svls实例的ccu变配配置</p>
+                     * <p>SVLS 实例的ccu变配配置</p><p>入参限制：同时传入 AutoScaleConfigs 时此参数不再生效</p>
                      */
                     AutoScalingConfig m_autoScaleConfig;
                     bool m_autoScaleConfigHasBeenSet;
@@ -964,6 +985,12 @@ namespace TencentCloud
                      */
                     int64_t m_encryptionEnable;
                     bool m_encryptionEnableHasBeenSet;
+
+                    /**
+                     * <p>SVLS 实例的自动变配相关限制</p><p>入参限制：传入时 AutoScaleConfig 参数不再生效</p>
+                     */
+                    std::vector<AutoScalingConfig> m_autoScaleConfigs;
+                    bool m_autoScaleConfigsHasBeenSet;
 
                 };
             }

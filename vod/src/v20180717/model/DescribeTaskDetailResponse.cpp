@@ -65,7 +65,12 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_aigcVideoRedrawTaskHasBeenSet(false),
     m_aigcAudioTaskHasBeenSet(false),
     m_createAigcAudioCloneTaskHasBeenSet(false),
-    m_describeAigcFaceInfoAsyncTaskHasBeenSet(false)
+    m_describeAigcFaceInfoAsyncTaskHasBeenSet(false),
+    m_aigcHunyuan3DTaskHasBeenSet(false),
+    m_designVoiceAsyncTaskHasBeenSet(false),
+    m_cloneVoiceAsyncTaskHasBeenSet(false),
+    m_textToSpeechAsyncTaskHasBeenSet(false),
+    m_videoDubbingAsyncTaskHasBeenSet(false)
 {
 }
 
@@ -782,6 +787,91 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_describeAigcFaceInfoAsyncTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AigcHunyuan3DTask") && !rsp["AigcHunyuan3DTask"].IsNull())
+    {
+        if (!rsp["AigcHunyuan3DTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcHunyuan3DTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aigcHunyuan3DTask.Deserialize(rsp["AigcHunyuan3DTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aigcHunyuan3DTaskHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DesignVoiceAsyncTask") && !rsp["DesignVoiceAsyncTask"].IsNull())
+    {
+        if (!rsp["DesignVoiceAsyncTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DesignVoiceAsyncTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_designVoiceAsyncTask.Deserialize(rsp["DesignVoiceAsyncTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_designVoiceAsyncTaskHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CloneVoiceAsyncTask") && !rsp["CloneVoiceAsyncTask"].IsNull())
+    {
+        if (!rsp["CloneVoiceAsyncTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloneVoiceAsyncTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cloneVoiceAsyncTask.Deserialize(rsp["CloneVoiceAsyncTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cloneVoiceAsyncTaskHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TextToSpeechAsyncTask") && !rsp["TextToSpeechAsyncTask"].IsNull())
+    {
+        if (!rsp["TextToSpeechAsyncTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TextToSpeechAsyncTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_textToSpeechAsyncTask.Deserialize(rsp["TextToSpeechAsyncTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_textToSpeechAsyncTaskHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("VideoDubbingAsyncTask") && !rsp["VideoDubbingAsyncTask"].IsNull())
+    {
+        if (!rsp["VideoDubbingAsyncTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoDubbingAsyncTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_videoDubbingAsyncTask.Deserialize(rsp["VideoDubbingAsyncTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_videoDubbingAsyncTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1163,6 +1253,51 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_describeAigcFaceInfoAsyncTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aigcHunyuan3DTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AigcHunyuan3DTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aigcHunyuan3DTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_designVoiceAsyncTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DesignVoiceAsyncTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_designVoiceAsyncTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cloneVoiceAsyncTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloneVoiceAsyncTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cloneVoiceAsyncTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_textToSpeechAsyncTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TextToSpeechAsyncTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_textToSpeechAsyncTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_videoDubbingAsyncTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoDubbingAsyncTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_videoDubbingAsyncTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1595,6 +1730,56 @@ DescribeAigcFaceInfoAsyncTask DescribeTaskDetailResponse::GetDescribeAigcFaceInf
 bool DescribeTaskDetailResponse::DescribeAigcFaceInfoAsyncTaskHasBeenSet() const
 {
     return m_describeAigcFaceInfoAsyncTaskHasBeenSet;
+}
+
+AigcHunyuan3DTask DescribeTaskDetailResponse::GetAigcHunyuan3DTask() const
+{
+    return m_aigcHunyuan3DTask;
+}
+
+bool DescribeTaskDetailResponse::AigcHunyuan3DTaskHasBeenSet() const
+{
+    return m_aigcHunyuan3DTaskHasBeenSet;
+}
+
+DesignVoiceAsyncTask DescribeTaskDetailResponse::GetDesignVoiceAsyncTask() const
+{
+    return m_designVoiceAsyncTask;
+}
+
+bool DescribeTaskDetailResponse::DesignVoiceAsyncTaskHasBeenSet() const
+{
+    return m_designVoiceAsyncTaskHasBeenSet;
+}
+
+CloneVoiceAsyncTask DescribeTaskDetailResponse::GetCloneVoiceAsyncTask() const
+{
+    return m_cloneVoiceAsyncTask;
+}
+
+bool DescribeTaskDetailResponse::CloneVoiceAsyncTaskHasBeenSet() const
+{
+    return m_cloneVoiceAsyncTaskHasBeenSet;
+}
+
+TextToSpeechAsyncTask DescribeTaskDetailResponse::GetTextToSpeechAsyncTask() const
+{
+    return m_textToSpeechAsyncTask;
+}
+
+bool DescribeTaskDetailResponse::TextToSpeechAsyncTaskHasBeenSet() const
+{
+    return m_textToSpeechAsyncTaskHasBeenSet;
+}
+
+VideoDubbingAsyncTask DescribeTaskDetailResponse::GetVideoDubbingAsyncTask() const
+{
+    return m_videoDubbingAsyncTask;
+}
+
+bool DescribeTaskDetailResponse::VideoDubbingAsyncTaskHasBeenSet() const
+{
+    return m_videoDubbingAsyncTaskHasBeenSet;
 }
 
 

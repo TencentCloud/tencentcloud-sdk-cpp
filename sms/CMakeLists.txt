@@ -79,8 +79,10 @@ set(sms_public_header_model
   include/tencentcloud/sms/v20210111/model/PullSmsSendStatusByPhoneNumberRequest.h
   include/tencentcloud/sms/v20210111/model/ReportConversionResponse.h
   include/tencentcloud/sms/v20210111/model/AddSmsTemplateRequest.h
+  include/tencentcloud/sms/v20210111/model/DescribeSendRecordListResponse.h
   include/tencentcloud/sms/v20210111/model/ModifySmsTemplateRequest.h
   include/tencentcloud/sms/v20210111/model/PullSmsReplyStatus.h
+  include/tencentcloud/sms/v20210111/model/DescribeSendRecordListRequest.h
   include/tencentcloud/sms/v20210111/model/CallbackStatusStatisticsResponse.h
   include/tencentcloud/sms/v20210111/model/PullSmsSendStatusRequest.h
   include/tencentcloud/sms/v20210111/model/SmsPackagesStatistics.h
@@ -117,6 +119,7 @@ set(sms_public_header_model
   include/tencentcloud/sms/v20210111/model/ReportConversionRequest.h
   include/tencentcloud/sms/v20210111/model/AddSignStatus.h
   include/tencentcloud/sms/v20210111/model/ModifyTemplateStatus.h
+  include/tencentcloud/sms/v20210111/model/SendRecord.h
   include/tencentcloud/sms/v20210111/model/PullSmsSendStatusResponse.h
   include/tencentcloud/sms/v20210111/model/SmsPackagesStatisticsResponse.h
   include/tencentcloud/sms/v20210111/model/DeleteSignStatus.h
@@ -186,8 +189,10 @@ set(sms_src
   src/v20210111/model/PullSmsSendStatusByPhoneNumberRequest.cpp
   src/v20210111/model/ReportConversionResponse.cpp
   src/v20210111/model/AddSmsTemplateRequest.cpp
+  src/v20210111/model/DescribeSendRecordListResponse.cpp
   src/v20210111/model/ModifySmsTemplateRequest.cpp
   src/v20210111/model/PullSmsReplyStatus.cpp
+  src/v20210111/model/DescribeSendRecordListRequest.cpp
   src/v20210111/model/CallbackStatusStatisticsResponse.cpp
   src/v20210111/model/PullSmsSendStatusRequest.cpp
   src/v20210111/model/SmsPackagesStatistics.cpp
@@ -224,6 +229,7 @@ set(sms_src
   src/v20210111/model/ReportConversionRequest.cpp
   src/v20210111/model/AddSignStatus.cpp
   src/v20210111/model/ModifyTemplateStatus.cpp
+  src/v20210111/model/SendRecord.cpp
   src/v20210111/model/PullSmsSendStatusResponse.cpp
   src/v20210111/model/SmsPackagesStatisticsResponse.cpp
   src/v20210111/model/DeleteSignStatus.cpp

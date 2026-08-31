@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取未分页的总数目
-                     * @return TotalCount 未分页的总数目
+                     * 获取<p>未分页的总数目</p>
+                     * @return TotalCount <p>未分页的总数目</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取实例信息列表
-                     * @return Instances 实例信息列表
+                     * 获取<p>实例信息列表</p>
+                     * @return Instances <p>实例信息列表</p>
                      * 
                      */
                     std::vector<PulsarProInstance> GetInstances() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 未分页的总数目
+                     * <p>未分页的总数目</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 实例信息列表
+                     * <p>实例信息列表</p>
                      */
                     std::vector<PulsarProInstance> m_instances;
                     bool m_instancesHasBeenSet;

@@ -1487,6 +1487,27 @@ namespace TencentCloud
                      */
                     bool AnalysisInstanceInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>有关该实例的多个自动变配相关配置，ccu、nodecount 值</p>
+                     * @return AutoScaleConfigs <p>有关该实例的多个自动变配相关配置，ccu、nodecount 值</p>
+                     * 
+                     */
+                    std::vector<AutoScalingConfig> GetAutoScaleConfigs() const;
+
+                    /**
+                     * 设置<p>有关该实例的多个自动变配相关配置，ccu、nodecount 值</p>
+                     * @param _autoScaleConfigs <p>有关该实例的多个自动变配相关配置，ccu、nodecount 值</p>
+                     * 
+                     */
+                    void SetAutoScaleConfigs(const std::vector<AutoScalingConfig>& _autoScaleConfigs);
+
+                    /**
+                     * 判断参数 AutoScaleConfigs 是否已赋值
+                     * @return AutoScaleConfigs 是否已赋值
+                     * 
+                     */
+                    bool AutoScaleConfigsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1894,6 +1915,12 @@ namespace TencentCloud
                      */
                     AnalysisInstanceInfo m_analysisInstanceInfo;
                     bool m_analysisInstanceInfoHasBeenSet;
+
+                    /**
+                     * <p>有关该实例的多个自动变配相关配置，ccu、nodecount 值</p>
+                     */
+                    std::vector<AutoScalingConfig> m_autoScaleConfigs;
+                    bool m_autoScaleConfigsHasBeenSet;
 
                 };
             }

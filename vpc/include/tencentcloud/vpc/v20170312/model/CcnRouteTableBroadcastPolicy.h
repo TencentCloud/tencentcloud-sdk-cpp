@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取路由条件
-                     * @return RouteConditions 路由条件
+                     * 获取<p>路由条件</p>
+                     * @return RouteConditions <p>路由条件</p>
                      * 
                      */
                     std::vector<CcnRouteBroadcastPolicyRouteCondition> GetRouteConditions() const;
 
                     /**
-                     * 设置路由条件
-                     * @param _routeConditions 路由条件
+                     * 设置<p>路由条件</p>
+                     * @param _routeConditions <p>路由条件</p>
                      * 
                      */
                     void SetRouteConditions(const std::vector<CcnRouteBroadcastPolicyRouteCondition>& _routeConditions);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool RouteConditionsHasBeenSet() const;
 
                     /**
-                     * 获取传播条件
-                     * @return BroadcastConditions 传播条件
+                     * 获取<p>传播条件</p>
+                     * @return BroadcastConditions <p>传播条件</p>
                      * 
                      */
                     std::vector<CcnRouteBroadcastPolicyRouteCondition> GetBroadcastConditions() const;
 
                     /**
-                     * 设置传播条件
-                     * @param _broadcastConditions 传播条件
+                     * 设置<p>传播条件</p>
+                     * @param _broadcastConditions <p>传播条件</p>
                      * 
                      */
                     void SetBroadcastConditions(const std::vector<CcnRouteBroadcastPolicyRouteCondition>& _broadcastConditions);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool BroadcastConditionsHasBeenSet() const;
 
                     /**
-                     * 获取路由行为，`accept` 允许，`drop` 拒绝
-                     * @return Action 路由行为，`accept` 允许，`drop` 拒绝
+                     * 获取<p>路由行为，<code>accept</code> 允许，<code>drop</code> 拒绝</p>
+                     * @return Action <p>路由行为，<code>accept</code> 允许，<code>drop</code> 拒绝</p>
                      * 
                      */
                     std::string GetAction() const;
 
                     /**
-                     * 设置路由行为，`accept` 允许，`drop` 拒绝
-                     * @param _action 路由行为，`accept` 允许，`drop` 拒绝
+                     * 设置<p>路由行为，<code>accept</code> 允许，<code>drop</code> 拒绝</p>
+                     * @param _action <p>路由行为，<code>accept</code> 允许，<code>drop</code> 拒绝</p>
                      * 
                      */
                     void SetAction(const std::string& _action);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool ActionHasBeenSet() const;
 
                     /**
-                     * 获取策略描述
-                     * @return Description 策略描述
+                     * 获取<p>策略描述</p>
+                     * @return Description <p>策略描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置策略描述
-                     * @param _description 策略描述
+                     * 设置<p>策略描述</p>
+                     * @param _description <p>策略描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取as-path操作
-                     * @return OperateAsPath as-path操作
+                     * 获取<p>as-path操作</p>
+                     * @return OperateAsPath <p>as-path操作</p>
                      * 
                      */
                     std::string GetOperateAsPath() const;
 
                     /**
-                     * 设置as-path操作
-                     * @param _operateAsPath as-path操作
+                     * 设置<p>as-path操作</p>
+                     * @param _operateAsPath <p>as-path操作</p>
                      * 
                      */
                     void SetOperateAsPath(const std::string& _operateAsPath);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool OperateAsPathHasBeenSet() const;
 
                     /**
-                     * 获取as-path操作模式
-                     * @return AsPathOperateMode as-path操作模式
+                     * 获取<p>as-path操作模式</p>
+                     * @return AsPathOperateMode <p>as-path操作模式</p>
                      * 
                      */
                     std::string GetAsPathOperateMode() const;
 
                     /**
-                     * 设置as-path操作模式
-                     * @param _asPathOperateMode as-path操作模式
+                     * 设置<p>as-path操作模式</p>
+                     * @param _asPathOperateMode <p>as-path操作模式</p>
                      * 
                      */
                     void SetAsPathOperateMode(const std::string& _asPathOperateMode);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool AsPathOperateModeHasBeenSet() const;
 
                     /**
-                     * 获取community操作
-                     * @return OperateCommunitySet community操作
+                     * 获取<p>community操作</p>
+                     * @return OperateCommunitySet <p>community操作</p>
                      * 
                      */
                     std::vector<std::string> GetOperateCommunitySet() const;
 
                     /**
-                     * 设置community操作
-                     * @param _operateCommunitySet community操作
+                     * 设置<p>community操作</p>
+                     * @param _operateCommunitySet <p>community操作</p>
                      * 
                      */
                     void SetOperateCommunitySet(const std::vector<std::string>& _operateCommunitySet);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool OperateCommunitySetHasBeenSet() const;
 
                     /**
-                     * 获取community操作模式
-                     * @return CommunityOperateMode community操作模式
+                     * 获取<p>community操作模式</p>
+                     * @return CommunityOperateMode <p>community操作模式</p>
                      * 
                      */
                     std::string GetCommunityOperateMode() const;
 
                     /**
-                     * 设置community操作模式
-                     * @param _communityOperateMode community操作模式
+                     * 设置<p>community操作模式</p>
+                     * @param _communityOperateMode <p>community操作模式</p>
                      * 
                      */
                     void SetCommunityOperateMode(const std::string& _communityOperateMode);
@@ -218,49 +218,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 路由条件
+                     * <p>路由条件</p>
                      */
                     std::vector<CcnRouteBroadcastPolicyRouteCondition> m_routeConditions;
                     bool m_routeConditionsHasBeenSet;
 
                     /**
-                     * 传播条件
+                     * <p>传播条件</p>
                      */
                     std::vector<CcnRouteBroadcastPolicyRouteCondition> m_broadcastConditions;
                     bool m_broadcastConditionsHasBeenSet;
 
                     /**
-                     * 路由行为，`accept` 允许，`drop` 拒绝
+                     * <p>路由行为，<code>accept</code> 允许，<code>drop</code> 拒绝</p>
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
 
                     /**
-                     * 策略描述
+                     * <p>策略描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * as-path操作
+                     * <p>as-path操作</p>
                      */
                     std::string m_operateAsPath;
                     bool m_operateAsPathHasBeenSet;
 
                     /**
-                     * as-path操作模式
+                     * <p>as-path操作模式</p>
                      */
                     std::string m_asPathOperateMode;
                     bool m_asPathOperateModeHasBeenSet;
 
                     /**
-                     * community操作
+                     * <p>community操作</p>
                      */
                     std::vector<std::string> m_operateCommunitySet;
                     bool m_operateCommunitySetHasBeenSet;
 
                     /**
-                     * community操作模式
+                     * <p>community操作模式</p>
                      */
                     std::string m_communityOperateMode;
                     bool m_communityOperateModeHasBeenSet;

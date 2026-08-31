@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云联网唯一ID
-                     * @return CcnId 云联网唯一ID
+                     * 获取<p>云联网唯一ID</p>
+                     * @return CcnId <p>云联网唯一ID</p>
                      * 
                      */
                     std::string GetCcnId() const;
 
                     /**
-                     * 设置云联网唯一ID
-                     * @param _ccnId 云联网唯一ID
+                     * 设置<p>云联网唯一ID</p>
+                     * @param _ccnId <p>云联网唯一ID</p>
                      * 
                      */
                     void SetCcnId(const std::string& _ccnId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool CcnIdHasBeenSet() const;
 
                     /**
-                     * 获取云联网名称
-                     * @return CcnName 云联网名称
+                     * 获取<p>云联网名称</p>
+                     * @return CcnName <p>云联网名称</p>
                      * 
                      */
                     std::string GetCcnName() const;
 
                     /**
-                     * 设置云联网名称
-                     * @param _ccnName 云联网名称
+                     * 设置<p>云联网名称</p>
+                     * @param _ccnName <p>云联网名称</p>
                      * 
                      */
                     void SetCcnName(const std::string& _ccnName);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool CcnNameHasBeenSet() const;
 
                     /**
-                     * 获取云联网描述信息
-                     * @return CcnDescription 云联网描述信息
+                     * 获取<p>云联网描述信息</p>
+                     * @return CcnDescription <p>云联网描述信息</p>
                      * 
                      */
                     std::string GetCcnDescription() const;
 
                     /**
-                     * 设置云联网描述信息
-                     * @param _ccnDescription 云联网描述信息
+                     * 设置<p>云联网描述信息</p>
+                     * @param _ccnDescription <p>云联网描述信息</p>
                      * 
                      */
                     void SetCcnDescription(const std::string& _ccnDescription);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool CcnDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取关联实例数量
-                     * @return InstanceCount 关联实例数量
+                     * 获取<p>关联实例数量</p>
+                     * @return InstanceCount <p>关联实例数量</p>
                      * 
                      */
                     uint64_t GetInstanceCount() const;
 
                     /**
-                     * 设置关联实例数量
-                     * @param _instanceCount 关联实例数量
+                     * 设置<p>关联实例数量</p>
+                     * @param _instanceCount <p>关联实例数量</p>
                      * 
                      */
                     void SetInstanceCount(const uint64_t& _instanceCount);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool InstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例状态， 'ISOLATED': 隔离中（欠费停服），'AVAILABLE'：运行中。
-                     * @return State 实例状态， 'ISOLATED': 隔离中（欠费停服），'AVAILABLE'：运行中。
+                     * 获取<p>实例状态， &#39;ISOLATED&#39;: 隔离中（欠费停服），&#39;AVAILABLE&#39;：运行中。</p>
+                     * @return State <p>实例状态， &#39;ISOLATED&#39;: 隔离中（欠费停服），&#39;AVAILABLE&#39;：运行中。</p>
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置实例状态， 'ISOLATED': 隔离中（欠费停服），'AVAILABLE'：运行中。
-                     * @param _state 实例状态， 'ISOLATED': 隔离中（欠费停服），'AVAILABLE'：运行中。
+                     * 设置<p>实例状态， &#39;ISOLATED&#39;: 隔离中（欠费停服），&#39;AVAILABLE&#39;：运行中。</p>
+                     * @param _state <p>实例状态， &#39;ISOLATED&#39;: 隔离中（欠费停服），&#39;AVAILABLE&#39;：运行中。</p>
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取实例服务质量，’PT’：白金，'AU'：金，'AG'：银。
-                     * @return QosLevel 实例服务质量，’PT’：白金，'AU'：金，'AG'：银。
+                     * 获取<p>实例服务质量，’PT’：白金，&#39;AU&#39;：金，&#39;AG&#39;：银。</p>
+                     * @return QosLevel <p>实例服务质量，’PT’：白金，&#39;AU&#39;：金，&#39;AG&#39;：银。</p>
                      * 
                      */
                     std::string GetQosLevel() const;
 
                     /**
-                     * 设置实例服务质量，’PT’：白金，'AU'：金，'AG'：银。
-                     * @param _qosLevel 实例服务质量，’PT’：白金，'AU'：金，'AG'：银。
+                     * 设置<p>实例服务质量，’PT’：白金，&#39;AU&#39;：金，&#39;AG&#39;：银。</p>
+                     * @param _qosLevel <p>实例服务质量，’PT’：白金，&#39;AU&#39;：金，&#39;AG&#39;：银。</p>
                      * 
                      */
                     void SetQosLevel(const std::string& _qosLevel);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool QosLevelHasBeenSet() const;
 
                     /**
-                     * 获取付费类型，PREPAID为预付费，POSTPAID为后付费。
-                     * @return InstanceChargeType 付费类型，PREPAID为预付费，POSTPAID为后付费。
+                     * 获取<p>付费类型，PREPAID为预付费，POSTPAID为后付费。</p>
+                     * @return InstanceChargeType <p>付费类型，PREPAID为预付费，POSTPAID为后付费。</p>
                      * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置付费类型，PREPAID为预付费，POSTPAID为后付费。
-                     * @param _instanceChargeType 付费类型，PREPAID为预付费，POSTPAID为后付费。
+                     * 设置<p>付费类型，PREPAID为预付费，POSTPAID为后付费。</p>
+                     * @param _instanceChargeType <p>付费类型，PREPAID为预付费，POSTPAID为后付费。</p>
                      * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取计量类型
-                     * @return InstanceMeteringType 计量类型
+                     * 获取<p>计量类型</p>
+                     * @return InstanceMeteringType <p>计量类型</p>
                      * 
                      */
                     std::string GetInstanceMeteringType() const;
 
                     /**
-                     * 设置计量类型
-                     * @param _instanceMeteringType 计量类型
+                     * 设置<p>计量类型</p>
+                     * @param _instanceMeteringType <p>计量类型</p>
                      * 
                      */
                     void SetInstanceMeteringType(const std::string& _instanceMeteringType);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool InstanceMeteringTypeHasBeenSet() const;
 
                     /**
-                     * 获取限速类型，`INTER_REGION_LIMIT` 为地域间限速；`OUTER_REGION_LIMIT` 为地域出口限速。
-                     * @return BandwidthLimitType 限速类型，`INTER_REGION_LIMIT` 为地域间限速；`OUTER_REGION_LIMIT` 为地域出口限速。
+                     * 获取<p>限速类型，<code>INTER_REGION_LIMIT</code> 为地域间限速；<code>OUTER_REGION_LIMIT</code> 为地域出口限速。</p>
+                     * @return BandwidthLimitType <p>限速类型，<code>INTER_REGION_LIMIT</code> 为地域间限速；<code>OUTER_REGION_LIMIT</code> 为地域出口限速。</p>
                      * 
                      */
                     std::string GetBandwidthLimitType() const;
 
                     /**
-                     * 设置限速类型，`INTER_REGION_LIMIT` 为地域间限速；`OUTER_REGION_LIMIT` 为地域出口限速。
-                     * @param _bandwidthLimitType 限速类型，`INTER_REGION_LIMIT` 为地域间限速；`OUTER_REGION_LIMIT` 为地域出口限速。
+                     * 设置<p>限速类型，<code>INTER_REGION_LIMIT</code> 为地域间限速；<code>OUTER_REGION_LIMIT</code> 为地域出口限速。</p>
+                     * @param _bandwidthLimitType <p>限速类型，<code>INTER_REGION_LIMIT</code> 为地域间限速；<code>OUTER_REGION_LIMIT</code> 为地域出口限速。</p>
                      * 
                      */
                     void SetBandwidthLimitType(const std::string& _bandwidthLimitType);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool BandwidthLimitTypeHasBeenSet() const;
 
                     /**
-                     * 获取标签键值对。
-                     * @return TagSet 标签键值对。
+                     * 获取<p>标签键值对。</p>
+                     * @return TagSet <p>标签键值对。</p>
                      * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
-                     * 设置标签键值对。
-                     * @param _tagSet 标签键值对。
+                     * 设置<p>标签键值对。</p>
+                     * @param _tagSet <p>标签键值对。</p>
                      * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool TagSetHasBeenSet() const;
 
                     /**
-                     * 获取是否支持云联网路由优先级的功能。`False`：不支持，`True`：支持。
-                     * @return RoutePriorityFlag 是否支持云联网路由优先级的功能。`False`：不支持，`True`：支持。
+                     * 获取<p>是否支持云联网路由优先级的功能。<code>False</code>：不支持，<code>True</code>：支持。</p>
+                     * @return RoutePriorityFlag <p>是否支持云联网路由优先级的功能。<code>False</code>：不支持，<code>True</code>：支持。</p>
                      * 
                      */
                     bool GetRoutePriorityFlag() const;
 
                     /**
-                     * 设置是否支持云联网路由优先级的功能。`False`：不支持，`True`：支持。
-                     * @param _routePriorityFlag 是否支持云联网路由优先级的功能。`False`：不支持，`True`：支持。
+                     * 设置<p>是否支持云联网路由优先级的功能。<code>False</code>：不支持，<code>True</code>：支持。</p>
+                     * @param _routePriorityFlag <p>是否支持云联网路由优先级的功能。<code>False</code>：不支持，<code>True</code>：支持。</p>
                      * 
                      */
                     void SetRoutePriorityFlag(const bool& _routePriorityFlag);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool RoutePriorityFlagHasBeenSet() const;
 
                     /**
-                     * 获取实例关联的路由表个数。
-                     * @return RouteTableCount 实例关联的路由表个数。
+                     * 获取<p>实例关联的路由表个数。</p>
+                     * @return RouteTableCount <p>实例关联的路由表个数。</p>
                      * 
                      */
                     uint64_t GetRouteTableCount() const;
 
                     /**
-                     * 设置实例关联的路由表个数。
-                     * @param _routeTableCount 实例关联的路由表个数。
+                     * 设置<p>实例关联的路由表个数。</p>
+                     * @param _routeTableCount <p>实例关联的路由表个数。</p>
                      * 
                      */
                     void SetRouteTableCount(const uint64_t& _routeTableCount);
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool RouteTableCountHasBeenSet() const;
 
                     /**
-                     * 获取是否开启云联网多路由表特性。`False`：未开启，`True`：开启。
-                     * @return RouteTableFlag 是否开启云联网多路由表特性。`False`：未开启，`True`：开启。
+                     * 获取<p>是否开启云联网多路由表特性。<code>False</code>：未开启，<code>True</code>：开启。</p>
+                     * @return RouteTableFlag <p>是否开启云联网多路由表特性。<code>False</code>：未开启，<code>True</code>：开启。</p>
                      * 
                      */
                     bool GetRouteTableFlag() const;
 
                     /**
-                     * 设置是否开启云联网多路由表特性。`False`：未开启，`True`：开启。
-                     * @param _routeTableFlag 是否开启云联网多路由表特性。`False`：未开启，`True`：开启。
+                     * 设置<p>是否开启云联网多路由表特性。<code>False</code>：未开启，<code>True</code>：开启。</p>
+                     * @param _routeTableFlag <p>是否开启云联网多路由表特性。<code>False</code>：未开启，<code>True</code>：开启。</p>
                      * 
                      */
                     void SetRouteTableFlag(const bool& _routeTableFlag);
@@ -342,15 +342,15 @@ namespace TencentCloud
                     bool RouteTableFlagHasBeenSet() const;
 
                     /**
-                     * 获取`true`：实例已被封禁，流量不通，`false`:解封禁。
-                     * @return IsSecurityLock `true`：实例已被封禁，流量不通，`false`:解封禁。
+                     * 获取<p><code>true</code>：实例已被封禁，流量不通，<code>false</code>:解封禁。</p>
+                     * @return IsSecurityLock <p><code>true</code>：实例已被封禁，流量不通，<code>false</code>:解封禁。</p>
                      * 
                      */
                     bool GetIsSecurityLock() const;
 
                     /**
-                     * 设置`true`：实例已被封禁，流量不通，`false`:解封禁。
-                     * @param _isSecurityLock `true`：实例已被封禁，流量不通，`false`:解封禁。
+                     * 设置<p><code>true</code>：实例已被封禁，流量不通，<code>false</code>:解封禁。</p>
+                     * @param _isSecurityLock <p><code>true</code>：实例已被封禁，流量不通，<code>false</code>:解封禁。</p>
                      * 
                      */
                     void SetIsSecurityLock(const bool& _isSecurityLock);
@@ -363,15 +363,15 @@ namespace TencentCloud
                     bool IsSecurityLockHasBeenSet() const;
 
                     /**
-                     * 获取是否开启云联网路由传播策略。`False` 未开启，`True` 开启。
-                     * @return RouteBroadcastPolicyFlag 是否开启云联网路由传播策略。`False` 未开启，`True` 开启。
+                     * 获取<p>是否开启云联网路由传播策略。<code>False</code> 未开启，<code>True</code> 开启。</p>
+                     * @return RouteBroadcastPolicyFlag <p>是否开启云联网路由传播策略。<code>False</code> 未开启，<code>True</code> 开启。</p>
                      * 
                      */
                     bool GetRouteBroadcastPolicyFlag() const;
 
                     /**
-                     * 设置是否开启云联网路由传播策略。`False` 未开启，`True` 开启。
-                     * @param _routeBroadcastPolicyFlag 是否开启云联网路由传播策略。`False` 未开启，`True` 开启。
+                     * 设置<p>是否开启云联网路由传播策略。<code>False</code> 未开启，<code>True</code> 开启。</p>
+                     * @param _routeBroadcastPolicyFlag <p>是否开启云联网路由传播策略。<code>False</code> 未开启，<code>True</code> 开启。</p>
                      * 
                      */
                     void SetRouteBroadcastPolicyFlag(const bool& _routeBroadcastPolicyFlag);
@@ -384,15 +384,15 @@ namespace TencentCloud
                     bool RouteBroadcastPolicyFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否开启等价路由功能。`False` 未开启，`True` 开启。
-                     * @return RouteECMPFlag 是否开启等价路由功能。`False` 未开启，`True` 开启。
+                     * 获取<p>是否开启等价路由功能。<code>False</code> 未开启，<code>True</code> 开启。</p>
+                     * @return RouteECMPFlag <p>是否开启等价路由功能。<code>False</code> 未开启，<code>True</code> 开启。</p>
                      * 
                      */
                     bool GetRouteECMPFlag() const;
 
                     /**
-                     * 设置是否开启等价路由功能。`False` 未开启，`True` 开启。
-                     * @param _routeECMPFlag 是否开启等价路由功能。`False` 未开启，`True` 开启。
+                     * 设置<p>是否开启等价路由功能。<code>False</code> 未开启，<code>True</code> 开启。</p>
+                     * @param _routeECMPFlag <p>是否开启等价路由功能。<code>False</code> 未开启，<code>True</code> 开启。</p>
                      * 
                      */
                     void SetRouteECMPFlag(const bool& _routeECMPFlag);
@@ -405,15 +405,15 @@ namespace TencentCloud
                     bool RouteECMPFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否开启路由重叠功能。`False` 未开启，`True` 开启。
-                     * @return RouteOverlapFlag 是否开启路由重叠功能。`False` 未开启，`True` 开启。
+                     * 获取<p>是否开启路由重叠功能。<code>False</code> 未开启，<code>True</code> 开启。</p>
+                     * @return RouteOverlapFlag <p>是否开启路由重叠功能。<code>False</code> 未开启，<code>True</code> 开启。</p>
                      * 
                      */
                     bool GetRouteOverlapFlag() const;
 
                     /**
-                     * 设置是否开启路由重叠功能。`False` 未开启，`True` 开启。
-                     * @param _routeOverlapFlag 是否开启路由重叠功能。`False` 未开启，`True` 开启。
+                     * 设置<p>是否开启路由重叠功能。<code>False</code> 未开启，<code>True</code> 开启。</p>
+                     * @param _routeOverlapFlag <p>是否开启路由重叠功能。<code>False</code> 未开启，<code>True</code> 开启。</p>
                      * 
                      */
                     void SetRouteOverlapFlag(const bool& _routeOverlapFlag);
@@ -426,15 +426,15 @@ namespace TencentCloud
                     bool RouteOverlapFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否开启QOS。
-                     * @return TrafficMarkingPolicyFlag 是否开启QOS。
+                     * 获取<p>是否开启QOS。</p>
+                     * @return TrafficMarkingPolicyFlag <p>是否开启QOS。</p>
                      * 
                      */
                     bool GetTrafficMarkingPolicyFlag() const;
 
                     /**
-                     * 设置是否开启QOS。
-                     * @param _trafficMarkingPolicyFlag 是否开启QOS。
+                     * 设置<p>是否开启QOS。</p>
+                     * @param _trafficMarkingPolicyFlag <p>是否开启QOS。</p>
                      * 
                      */
                     void SetTrafficMarkingPolicyFlag(const bool& _trafficMarkingPolicyFlag);
@@ -447,15 +447,15 @@ namespace TencentCloud
                     bool TrafficMarkingPolicyFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否开启路由表选择策略。
-                     * @return RouteSelectPolicyFlag 是否开启路由表选择策略。
+                     * 获取<p>是否开启路由表选择策略。</p>
+                     * @return RouteSelectPolicyFlag <p>是否开启路由表选择策略。</p>
                      * 
                      */
                     bool GetRouteSelectPolicyFlag() const;
 
                     /**
-                     * 设置是否开启路由表选择策略。
-                     * @param _routeSelectPolicyFlag 是否开启路由表选择策略。
+                     * 设置<p>是否开启路由表选择策略。</p>
+                     * @param _routeSelectPolicyFlag <p>是否开启路由表选择策略。</p>
                      * 
                      */
                     void SetRouteSelectPolicyFlag(const bool& _routeSelectPolicyFlag);
@@ -468,15 +468,15 @@ namespace TencentCloud
                     bool RouteSelectPolicyFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否开启二层云联网通道。
-                     * @return DirectConnectAccelerateChannelFlag 是否开启二层云联网通道。
+                     * 获取<p>是否开启二层云联网通道。</p>
+                     * @return DirectConnectAccelerateChannelFlag <p>是否开启二层云联网通道。</p>
                      * 
                      */
                     bool GetDirectConnectAccelerateChannelFlag() const;
 
                     /**
-                     * 设置是否开启二层云联网通道。
-                     * @param _directConnectAccelerateChannelFlag 是否开启二层云联网通道。
+                     * 设置<p>是否开启二层云联网通道。</p>
+                     * @param _directConnectAccelerateChannelFlag <p>是否开启二层云联网通道。</p>
                      * 
                      */
                     void SetDirectConnectAccelerateChannelFlag(const bool& _directConnectAccelerateChannelFlag);
@@ -489,15 +489,15 @@ namespace TencentCloud
                     bool DirectConnectAccelerateChannelFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否支持ipv6路由表
-                     * @return Ipv6Flag 是否支持ipv6路由表
+                     * 获取<p>是否支持ipv6路由表</p>
+                     * @return Ipv6Flag <p>是否支持ipv6路由表</p>
                      * 
                      */
                     bool GetIpv6Flag() const;
 
                     /**
-                     * 设置是否支持ipv6路由表
-                     * @param _ipv6Flag 是否支持ipv6路由表
+                     * 设置<p>是否支持ipv6路由表</p>
+                     * @param _ipv6Flag <p>是否支持ipv6路由表</p>
                      * 
                      */
                     void SetIpv6Flag(const bool& _ipv6Flag);
@@ -510,15 +510,15 @@ namespace TencentCloud
                     bool Ipv6FlagHasBeenSet() const;
 
                     /**
-                     * 获取是否支持路由表聚合策略
-                     * @return MrtbAggregatePolicyFlag 是否支持路由表聚合策略
+                     * 获取<p>是否支持路由表聚合策略</p>
+                     * @return MrtbAggregatePolicyFlag <p>是否支持路由表聚合策略</p>
                      * 
                      */
                     bool GetMrtbAggregatePolicyFlag() const;
 
                     /**
-                     * 设置是否支持路由表聚合策略
-                     * @param _mrtbAggregatePolicyFlag 是否支持路由表聚合策略
+                     * 设置<p>是否支持路由表聚合策略</p>
+                     * @param _mrtbAggregatePolicyFlag <p>是否支持路由表聚合策略</p>
                      * 
                      */
                     void SetMrtbAggregatePolicyFlag(const bool& _mrtbAggregatePolicyFlag);
@@ -531,15 +531,15 @@ namespace TencentCloud
                     bool MrtbAggregatePolicyFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否支持AsPath策略值
-                     * @return MrtbPolicyValueFlag 是否支持AsPath策略值
+                     * 获取<p>是否支持AsPath策略值</p>
+                     * @return MrtbPolicyValueFlag <p>是否支持AsPath策略值</p>
                      * 
                      */
                     bool GetMrtbPolicyValueFlag() const;
 
                     /**
-                     * 设置是否支持AsPath策略值
-                     * @param _mrtbPolicyValueFlag 是否支持AsPath策略值
+                     * 设置<p>是否支持AsPath策略值</p>
+                     * @param _mrtbPolicyValueFlag <p>是否支持AsPath策略值</p>
                      * 
                      */
                     void SetMrtbPolicyValueFlag(const bool& _mrtbPolicyValueFlag);
@@ -552,15 +552,15 @@ namespace TencentCloud
                     bool MrtbPolicyValueFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否支持Community策略值
-                     * @return RouteTablePolicyValueCommunityFlag 是否支持Community策略值
+                     * 获取<p>是否支持Community策略值</p>
+                     * @return RouteTablePolicyValueCommunityFlag <p>是否支持Community策略值</p>
                      * 
                      */
                     bool GetRouteTablePolicyValueCommunityFlag() const;
 
                     /**
-                     * 设置是否支持Community策略值
-                     * @param _routeTablePolicyValueCommunityFlag 是否支持Community策略值
+                     * 设置<p>是否支持Community策略值</p>
+                     * @param _routeTablePolicyValueCommunityFlag <p>是否支持Community策略值</p>
                      * 
                      */
                     void SetRouteTablePolicyValueCommunityFlag(const bool& _routeTablePolicyValueCommunityFlag);
@@ -573,15 +573,15 @@ namespace TencentCloud
                     bool RouteTablePolicyValueCommunityFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否支持策略路由
-                     * @return PolicyBasedRoutingFlag 是否支持策略路由
+                     * 获取<p>是否支持策略路由</p>
+                     * @return PolicyBasedRoutingFlag <p>是否支持策略路由</p>
                      * 
                      */
                     bool GetPolicyBasedRoutingFlag() const;
 
                     /**
-                     * 设置是否支持策略路由
-                     * @param _policyBasedRoutingFlag 是否支持策略路由
+                     * 设置<p>是否支持策略路由</p>
+                     * @param _policyBasedRoutingFlag <p>是否支持策略路由</p>
                      * 
                      */
                     void SetPolicyBasedRoutingFlag(const bool& _policyBasedRoutingFlag);
@@ -593,163 +593,190 @@ namespace TencentCloud
                      */
                     bool PolicyBasedRoutingFlagHasBeenSet() const;
 
+                    /**
+                     * 获取<p>服务等级模式</p><p>枚举值：</p><ul><li>0： 云联网模式</li><li>1： 地域间模式</li></ul>
+                     * @return ServiceLevelMode <p>服务等级模式</p><p>枚举值：</p><ul><li>0： 云联网模式</li><li>1： 地域间模式</li></ul>
+                     * 
+                     */
+                    uint64_t GetServiceLevelMode() const;
+
+                    /**
+                     * 设置<p>服务等级模式</p><p>枚举值：</p><ul><li>0： 云联网模式</li><li>1： 地域间模式</li></ul>
+                     * @param _serviceLevelMode <p>服务等级模式</p><p>枚举值：</p><ul><li>0： 云联网模式</li><li>1： 地域间模式</li></ul>
+                     * 
+                     */
+                    void SetServiceLevelMode(const uint64_t& _serviceLevelMode);
+
+                    /**
+                     * 判断参数 ServiceLevelMode 是否已赋值
+                     * @return ServiceLevelMode 是否已赋值
+                     * 
+                     */
+                    bool ServiceLevelModeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 云联网唯一ID
+                     * <p>云联网唯一ID</p>
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;
 
                     /**
-                     * 云联网名称
+                     * <p>云联网名称</p>
                      */
                     std::string m_ccnName;
                     bool m_ccnNameHasBeenSet;
 
                     /**
-                     * 云联网描述信息
+                     * <p>云联网描述信息</p>
                      */
                     std::string m_ccnDescription;
                     bool m_ccnDescriptionHasBeenSet;
 
                     /**
-                     * 关联实例数量
+                     * <p>关联实例数量</p>
                      */
                     uint64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 实例状态， 'ISOLATED': 隔离中（欠费停服），'AVAILABLE'：运行中。
+                     * <p>实例状态， &#39;ISOLATED&#39;: 隔离中（欠费停服），&#39;AVAILABLE&#39;：运行中。</p>
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 实例服务质量，’PT’：白金，'AU'：金，'AG'：银。
+                     * <p>实例服务质量，’PT’：白金，&#39;AU&#39;：金，&#39;AG&#39;：银。</p>
                      */
                     std::string m_qosLevel;
                     bool m_qosLevelHasBeenSet;
 
                     /**
-                     * 付费类型，PREPAID为预付费，POSTPAID为后付费。
+                     * <p>付费类型，PREPAID为预付费，POSTPAID为后付费。</p>
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
 
                     /**
-                     * 计量类型
+                     * <p>计量类型</p>
                      */
                     std::string m_instanceMeteringType;
                     bool m_instanceMeteringTypeHasBeenSet;
 
                     /**
-                     * 限速类型，`INTER_REGION_LIMIT` 为地域间限速；`OUTER_REGION_LIMIT` 为地域出口限速。
+                     * <p>限速类型，<code>INTER_REGION_LIMIT</code> 为地域间限速；<code>OUTER_REGION_LIMIT</code> 为地域出口限速。</p>
                      */
                     std::string m_bandwidthLimitType;
                     bool m_bandwidthLimitTypeHasBeenSet;
 
                     /**
-                     * 标签键值对。
+                     * <p>标签键值对。</p>
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;
 
                     /**
-                     * 是否支持云联网路由优先级的功能。`False`：不支持，`True`：支持。
+                     * <p>是否支持云联网路由优先级的功能。<code>False</code>：不支持，<code>True</code>：支持。</p>
                      */
                     bool m_routePriorityFlag;
                     bool m_routePriorityFlagHasBeenSet;
 
                     /**
-                     * 实例关联的路由表个数。
+                     * <p>实例关联的路由表个数。</p>
                      */
                     uint64_t m_routeTableCount;
                     bool m_routeTableCountHasBeenSet;
 
                     /**
-                     * 是否开启云联网多路由表特性。`False`：未开启，`True`：开启。
+                     * <p>是否开启云联网多路由表特性。<code>False</code>：未开启，<code>True</code>：开启。</p>
                      */
                     bool m_routeTableFlag;
                     bool m_routeTableFlagHasBeenSet;
 
                     /**
-                     * `true`：实例已被封禁，流量不通，`false`:解封禁。
+                     * <p><code>true</code>：实例已被封禁，流量不通，<code>false</code>:解封禁。</p>
                      */
                     bool m_isSecurityLock;
                     bool m_isSecurityLockHasBeenSet;
 
                     /**
-                     * 是否开启云联网路由传播策略。`False` 未开启，`True` 开启。
+                     * <p>是否开启云联网路由传播策略。<code>False</code> 未开启，<code>True</code> 开启。</p>
                      */
                     bool m_routeBroadcastPolicyFlag;
                     bool m_routeBroadcastPolicyFlagHasBeenSet;
 
                     /**
-                     * 是否开启等价路由功能。`False` 未开启，`True` 开启。
+                     * <p>是否开启等价路由功能。<code>False</code> 未开启，<code>True</code> 开启。</p>
                      */
                     bool m_routeECMPFlag;
                     bool m_routeECMPFlagHasBeenSet;
 
                     /**
-                     * 是否开启路由重叠功能。`False` 未开启，`True` 开启。
+                     * <p>是否开启路由重叠功能。<code>False</code> 未开启，<code>True</code> 开启。</p>
                      */
                     bool m_routeOverlapFlag;
                     bool m_routeOverlapFlagHasBeenSet;
 
                     /**
-                     * 是否开启QOS。
+                     * <p>是否开启QOS。</p>
                      */
                     bool m_trafficMarkingPolicyFlag;
                     bool m_trafficMarkingPolicyFlagHasBeenSet;
 
                     /**
-                     * 是否开启路由表选择策略。
+                     * <p>是否开启路由表选择策略。</p>
                      */
                     bool m_routeSelectPolicyFlag;
                     bool m_routeSelectPolicyFlagHasBeenSet;
 
                     /**
-                     * 是否开启二层云联网通道。
+                     * <p>是否开启二层云联网通道。</p>
                      */
                     bool m_directConnectAccelerateChannelFlag;
                     bool m_directConnectAccelerateChannelFlagHasBeenSet;
 
                     /**
-                     * 是否支持ipv6路由表
+                     * <p>是否支持ipv6路由表</p>
                      */
                     bool m_ipv6Flag;
                     bool m_ipv6FlagHasBeenSet;
 
                     /**
-                     * 是否支持路由表聚合策略
+                     * <p>是否支持路由表聚合策略</p>
                      */
                     bool m_mrtbAggregatePolicyFlag;
                     bool m_mrtbAggregatePolicyFlagHasBeenSet;
 
                     /**
-                     * 是否支持AsPath策略值
+                     * <p>是否支持AsPath策略值</p>
                      */
                     bool m_mrtbPolicyValueFlag;
                     bool m_mrtbPolicyValueFlagHasBeenSet;
 
                     /**
-                     * 是否支持Community策略值
+                     * <p>是否支持Community策略值</p>
                      */
                     bool m_routeTablePolicyValueCommunityFlag;
                     bool m_routeTablePolicyValueCommunityFlagHasBeenSet;
 
                     /**
-                     * 是否支持策略路由
+                     * <p>是否支持策略路由</p>
                      */
                     bool m_policyBasedRoutingFlag;
                     bool m_policyBasedRoutingFlagHasBeenSet;
+
+                    /**
+                     * <p>服务等级模式</p><p>枚举值：</p><ul><li>0： 云联网模式</li><li>1： 地域间模式</li></ul>
+                     */
+                    uint64_t m_serviceLevelMode;
+                    bool m_serviceLevelModeHasBeenSet;
 
                 };
             }

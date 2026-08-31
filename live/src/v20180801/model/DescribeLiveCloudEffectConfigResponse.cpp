@@ -24,7 +24,8 @@ using namespace TencentCloud::Live::V20180801::Model;
 using namespace std;
 
 DescribeLiveCloudEffectConfigResponse::DescribeLiveCloudEffectConfigResponse() :
-    m_effectTemplateListHasBeenSet(false)
+    m_effectTemplateListHasBeenSet(false),
+    m_punishmentEffectTemplateListHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,26 @@ CoreInternalOutcome DescribeLiveCloudEffectConfigResponse::Deserialize(const str
         m_effectTemplateListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PunishmentEffectTemplateList") && !rsp["PunishmentEffectTemplateList"].IsNull())
+    {
+        if (!rsp["PunishmentEffectTemplateList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PunishmentEffectTemplateList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["PunishmentEffectTemplateList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CloudEffectTemplateInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_punishmentEffectTemplateList.push_back(item);
+        }
+        m_punishmentEffectTemplateListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -101,6 +122,21 @@ string DescribeLiveCloudEffectConfigResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_effectTemplateList.begin(); itr != m_effectTemplateList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_punishmentEffectTemplateListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PunishmentEffectTemplateList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_punishmentEffectTemplateList.begin(); itr != m_punishmentEffectTemplateList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -127,6 +163,16 @@ vector<CloudEffectTemplateInfo> DescribeLiveCloudEffectConfigResponse::GetEffect
 bool DescribeLiveCloudEffectConfigResponse::EffectTemplateListHasBeenSet() const
 {
     return m_effectTemplateListHasBeenSet;
+}
+
+vector<CloudEffectTemplateInfo> DescribeLiveCloudEffectConfigResponse::GetPunishmentEffectTemplateList() const
+{
+    return m_punishmentEffectTemplateList;
+}
+
+bool DescribeLiveCloudEffectConfigResponse::PunishmentEffectTemplateListHasBeenSet() const
+{
+    return m_punishmentEffectTemplateListHasBeenSet;
 }
 
 

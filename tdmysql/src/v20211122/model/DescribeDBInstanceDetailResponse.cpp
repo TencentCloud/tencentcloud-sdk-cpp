@@ -84,7 +84,8 @@ DescribeDBInstanceDetailResponse::DescribeDBInstanceDetailResponse() :
     m_analysisInstanceInfoHasBeenSet(false),
     m_maintenanceWindowHasBeenSet(false),
     m_encryptionEnableHasBeenSet(false),
-    m_encryptionKmsRegionHasBeenSet(false)
+    m_encryptionKmsRegionHasBeenSet(false),
+    m_autoScaleConfigsHasBeenSet(false)
 {
 }
 
@@ -796,6 +797,26 @@ CoreInternalOutcome DescribeDBInstanceDetailResponse::Deserialize(const string &
         m_encryptionKmsRegionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AutoScaleConfigs") && !rsp["AutoScaleConfigs"].IsNull())
+    {
+        if (!rsp["AutoScaleConfigs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AutoScaleConfigs` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["AutoScaleConfigs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AutoScalingConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_autoScaleConfigs.push_back(item);
+        }
+        m_autoScaleConfigsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1328,6 +1349,21 @@ string DescribeDBInstanceDetailResponse::ToJsonString() const
         string key = "EncryptionKmsRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_encryptionKmsRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoScaleConfigsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoScaleConfigs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_autoScaleConfigs.begin(); itr != m_autoScaleConfigs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1950,6 +1986,16 @@ string DescribeDBInstanceDetailResponse::GetEncryptionKmsRegion() const
 bool DescribeDBInstanceDetailResponse::EncryptionKmsRegionHasBeenSet() const
 {
     return m_encryptionKmsRegionHasBeenSet;
+}
+
+vector<AutoScalingConfig> DescribeDBInstanceDetailResponse::GetAutoScaleConfigs() const
+{
+    return m_autoScaleConfigs;
+}
+
+bool DescribeDBInstanceDetailResponse::AutoScaleConfigsHasBeenSet() const
+{
+    return m_autoScaleConfigsHasBeenSet;
 }
 
 

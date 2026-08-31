@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启实时监控
-                     * @return EnableScan 是否开启实时监控
+                     * 获取<p>是否开启实时监控</p>
+                     * @return EnableScan <p>是否开启实时监控</p>
                      * 
                      */
                     bool GetEnableScan() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool EnableScanHasBeenSet() const;
 
                     /**
-                     * 获取true:包含路径 false:排除路径
-                     * @return IsIncludePath true:包含路径 false:排除路径
+                     * 获取<p>true:包含路径 false:排除路径</p>
+                     * @return IsIncludePath <p>true:包含路径 false:排除路径</p>
                      * 
                      */
                     bool GetIsIncludePath() const;
@@ -72,9 +72,9 @@ namespace TencentCloud
                     bool IsIncludePathHasBeenSet() const;
 
                     /**
-                     * 获取自选排除或扫描的地址
+                     * 获取<p>自选排除或扫描的地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScanPath 自选排除或扫描的地址
+                     * @return ScanPath <p>自选排除或扫描的地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -88,16 +88,8 @@ namespace TencentCloud
                     bool ScanPathHasBeenSet() const;
 
                     /**
-                     * 获取扫描路径模式：
-SCAN_PATH_ALL：全部路径
-SCAN_PATH_DEFAULT：默认路径
-SCAN_PATH_USER_DEFINE：用户自定义路径
-
-                     * @return ScanPathMode 扫描路径模式：
-SCAN_PATH_ALL：全部路径
-SCAN_PATH_DEFAULT：默认路径
-SCAN_PATH_USER_DEFINE：用户自定义路径
-
+                     * 获取<p>扫描路径模式：<br>SCAN_PATH_ALL：全部路径<br>SCAN_PATH_DEFAULT：默认路径<br>SCAN_PATH_USER_DEFINE：用户自定义路径</p>
+                     * @return ScanPathMode <p>扫描路径模式：<br>SCAN_PATH_ALL：全部路径<br>SCAN_PATH_DEFAULT：默认路径<br>SCAN_PATH_USER_DEFINE：用户自定义路径</p>
                      * 
                      */
                     std::string GetScanPathMode() const;
@@ -112,30 +104,26 @@ SCAN_PATH_USER_DEFINE：用户自定义路径
                 private:
 
                     /**
-                     * 是否开启实时监控
+                     * <p>是否开启实时监控</p>
                      */
                     bool m_enableScan;
                     bool m_enableScanHasBeenSet;
 
                     /**
-                     * true:包含路径 false:排除路径
+                     * <p>true:包含路径 false:排除路径</p>
                      */
                     bool m_isIncludePath;
                     bool m_isIncludePathHasBeenSet;
 
                     /**
-                     * 自选排除或扫描的地址
+                     * <p>自选排除或扫描的地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_scanPath;
                     bool m_scanPathHasBeenSet;
 
                     /**
-                     * 扫描路径模式：
-SCAN_PATH_ALL：全部路径
-SCAN_PATH_DEFAULT：默认路径
-SCAN_PATH_USER_DEFINE：用户自定义路径
-
+                     * <p>扫描路径模式：<br>SCAN_PATH_ALL：全部路径<br>SCAN_PATH_DEFAULT：默认路径<br>SCAN_PATH_USER_DEFINE：用户自定义路径</p>
                      */
                     std::string m_scanPathMode;
                     bool m_scanPathModeHasBeenSet;

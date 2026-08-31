@@ -58,6 +58,11 @@
 #include <tencentcloud/vod/v20180717/model/AigcAudioTask.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcAudioCloneTask.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAigcFaceInfoAsyncTask.h>
+#include <tencentcloud/vod/v20180717/model/AigcHunyuan3DTask.h>
+#include <tencentcloud/vod/v20180717/model/DesignVoiceAsyncTask.h>
+#include <tencentcloud/vod/v20180717/model/CloneVoiceAsyncTask.h>
+#include <tencentcloud/vod/v20180717/model/TextToSpeechAsyncTask.h>
+#include <tencentcloud/vod/v20180717/model/VideoDubbingAsyncTask.h>
 
 
 namespace TencentCloud
@@ -81,8 +86,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>任务类型，取值：<li>Procedure：视频处理任务；</li><li>EditMedia：视频编辑任务；</li><li>SplitMedia：视频拆条任务；</li><li>ComposeMedia：制作媒体文件任务；</li><li>WechatPublish：微信发布任务；</li><li>WechatMiniProgramPublish：微信小程序视频发布任务；</li><li>PullUpload：拉取上传媒体文件任务；</li><li>FastClipMedia：快速剪辑任务；</li><li>RemoveWatermarkTask：智能去除水印任务；</li><li>DescribeFileAttributesTask：获取文件属性任务；</li><li>RebuildMedia：音画质重生任务（不推荐使用）；</li><li>ReviewAudioVideo：音视频审核任务；</li><li>ExtractTraceWatermark：提取溯源水印任务；</li><li>ExtractCopyRightWatermark：提取版权水印任务；</li><li>QualityInspect：音画质检测任务；</li><li>QualityEnhance：音画质重生任务；</li><li>ComplexAdaptiveDynamicStreaming：复杂自适应码流任务；</li><li>ProcessMediaByMPS：MPS 视频处理任务；</li><li>AigcImageTask：AIGC 生图任务；</li><li>SceneAigcImageTask：场景化 AIGC 生图任务；</li><li>AigcVideoTask：AIGC 生视频任务；</li><li>ImportMediaKnowledge：导入媒体知识任务。</li><li>SceneAigcVideoTask：场景化 AIGC 生视频任务；</li><li> ExtractBlindWatermark：提取数字水印任务。</li><li> ExtractBlindWatermark：提取数字水印任务。</li><li> CreateAigcAdvancedCustomElement：创建自定义主体任务</li><li>CreateAigcCustomVoice：创建自定义音色任务</li><li>CreateAigcSubject：创建主体任务</li><li>AigcVideoRedrawTask：AIGC 视频转绘任务</li><li>CreateAigcAudioClone：AIGC 声音复刻任务</li><li>DescribeAigcFaceInfoAsync：异步获取 AIGC 人脸信息任务</li><li>WandAsrTask：WAND 语音识别</li></p>
-                     * @return TaskType <p>任务类型，取值：<li>Procedure：视频处理任务；</li><li>EditMedia：视频编辑任务；</li><li>SplitMedia：视频拆条任务；</li><li>ComposeMedia：制作媒体文件任务；</li><li>WechatPublish：微信发布任务；</li><li>WechatMiniProgramPublish：微信小程序视频发布任务；</li><li>PullUpload：拉取上传媒体文件任务；</li><li>FastClipMedia：快速剪辑任务；</li><li>RemoveWatermarkTask：智能去除水印任务；</li><li>DescribeFileAttributesTask：获取文件属性任务；</li><li>RebuildMedia：音画质重生任务（不推荐使用）；</li><li>ReviewAudioVideo：音视频审核任务；</li><li>ExtractTraceWatermark：提取溯源水印任务；</li><li>ExtractCopyRightWatermark：提取版权水印任务；</li><li>QualityInspect：音画质检测任务；</li><li>QualityEnhance：音画质重生任务；</li><li>ComplexAdaptiveDynamicStreaming：复杂自适应码流任务；</li><li>ProcessMediaByMPS：MPS 视频处理任务；</li><li>AigcImageTask：AIGC 生图任务；</li><li>SceneAigcImageTask：场景化 AIGC 生图任务；</li><li>AigcVideoTask：AIGC 生视频任务；</li><li>ImportMediaKnowledge：导入媒体知识任务。</li><li>SceneAigcVideoTask：场景化 AIGC 生视频任务；</li><li> ExtractBlindWatermark：提取数字水印任务。</li><li> ExtractBlindWatermark：提取数字水印任务。</li><li> CreateAigcAdvancedCustomElement：创建自定义主体任务</li><li>CreateAigcCustomVoice：创建自定义音色任务</li><li>CreateAigcSubject：创建主体任务</li><li>AigcVideoRedrawTask：AIGC 视频转绘任务</li><li>CreateAigcAudioClone：AIGC 声音复刻任务</li><li>DescribeAigcFaceInfoAsync：异步获取 AIGC 人脸信息任务</li><li>WandAsrTask：WAND 语音识别</li></p>
+                     * 获取<p>任务类型，取值：<li>Procedure：视频处理任务；</li><li>EditMedia：视频编辑任务；</li><li>SplitMedia：视频拆条任务；</li><li>ComposeMedia：制作媒体文件任务；</li><li>WechatPublish：微信发布任务；</li><li>WechatMiniProgramPublish：微信小程序视频发布任务；</li><li>PullUpload：拉取上传媒体文件任务；</li><li>FastClipMedia：快速剪辑任务；</li><li>RemoveWatermarkTask：智能去除水印任务；</li><li>DescribeFileAttributesTask：获取文件属性任务；</li><li>RebuildMedia：音画质重生任务（不推荐使用）；</li><li>ReviewAudioVideo：音视频审核任务；</li><li>ExtractTraceWatermark：提取溯源水印任务；</li><li>ExtractCopyRightWatermark：提取版权水印任务；</li><li>QualityInspect：音画质检测任务；</li><li>QualityEnhance：音画质重生任务；</li><li>ComplexAdaptiveDynamicStreaming：复杂自适应码流任务；</li><li>ProcessMediaByMPS：MPS 视频处理任务；</li><li>AigcImageTask：AIGC 生图任务；</li><li>SceneAigcImageTask：场景化 AIGC 生图任务；</li><li>AigcVideoTask：AIGC 生视频任务；</li><li>ImportMediaKnowledge：导入媒体知识任务。</li><li>SceneAigcVideoTask：场景化 AIGC 生视频任务；</li><li> ExtractBlindWatermark：提取数字水印任务。</li><li> ExtractBlindWatermark：提取数字水印任务。</li><li> CreateAigcAdvancedCustomElement：创建自定义主体任务</li><li>CreateAigcCustomVoice：创建自定义音色任务</li><li>CreateAigcSubject：创建主体任务</li><li>AigcVideoRedrawTask：AIGC 视频转绘任务</li><li>CreateAigcAudioClone：AIGC 声音复刻任务</li><li>DescribeAigcFaceInfoAsync：异步获取 AIGC 人脸信息任务</li><li>WandAsrTask：WAND 语音识别</li><li>AigcHunyuan3DTask：AIGC 混元 3D 任务</li><li>DesignVoiceAsync：音色设计</li><li>CloneVoiceAsync：音色克隆</li><li>TextToSpeechAsync：语音生成</li><li>VideoDubbingAsync：视频翻译配音</li></p>
+                     * @return TaskType <p>任务类型，取值：<li>Procedure：视频处理任务；</li><li>EditMedia：视频编辑任务；</li><li>SplitMedia：视频拆条任务；</li><li>ComposeMedia：制作媒体文件任务；</li><li>WechatPublish：微信发布任务；</li><li>WechatMiniProgramPublish：微信小程序视频发布任务；</li><li>PullUpload：拉取上传媒体文件任务；</li><li>FastClipMedia：快速剪辑任务；</li><li>RemoveWatermarkTask：智能去除水印任务；</li><li>DescribeFileAttributesTask：获取文件属性任务；</li><li>RebuildMedia：音画质重生任务（不推荐使用）；</li><li>ReviewAudioVideo：音视频审核任务；</li><li>ExtractTraceWatermark：提取溯源水印任务；</li><li>ExtractCopyRightWatermark：提取版权水印任务；</li><li>QualityInspect：音画质检测任务；</li><li>QualityEnhance：音画质重生任务；</li><li>ComplexAdaptiveDynamicStreaming：复杂自适应码流任务；</li><li>ProcessMediaByMPS：MPS 视频处理任务；</li><li>AigcImageTask：AIGC 生图任务；</li><li>SceneAigcImageTask：场景化 AIGC 生图任务；</li><li>AigcVideoTask：AIGC 生视频任务；</li><li>ImportMediaKnowledge：导入媒体知识任务。</li><li>SceneAigcVideoTask：场景化 AIGC 生视频任务；</li><li> ExtractBlindWatermark：提取数字水印任务。</li><li> ExtractBlindWatermark：提取数字水印任务。</li><li> CreateAigcAdvancedCustomElement：创建自定义主体任务</li><li>CreateAigcCustomVoice：创建自定义音色任务</li><li>CreateAigcSubject：创建主体任务</li><li>AigcVideoRedrawTask：AIGC 视频转绘任务</li><li>CreateAigcAudioClone：AIGC 声音复刻任务</li><li>DescribeAigcFaceInfoAsync：异步获取 AIGC 人脸信息任务</li><li>WandAsrTask：WAND 语音识别</li><li>AigcHunyuan3DTask：AIGC 混元 3D 任务</li><li>DesignVoiceAsync：音色设计</li><li>CloneVoiceAsync：音色克隆</li><li>TextToSpeechAsync：语音生成</li><li>VideoDubbingAsync：视频翻译配音</li></p>
                      * 
                      */
                     std::string GetTaskType() const;
@@ -712,10 +717,80 @@ namespace TencentCloud
                      */
                     bool DescribeAigcFaceInfoAsyncTaskHasBeenSet() const;
 
+                    /**
+                     * 获取<p>混元 3D 任务，仅当 TaskType 为 AigcHunyuan3DTask，该字段有值。</p>
+                     * @return AigcHunyuan3DTask <p>混元 3D 任务，仅当 TaskType 为 AigcHunyuan3DTask，该字段有值。</p>
+                     * 
+                     */
+                    AigcHunyuan3DTask GetAigcHunyuan3DTask() const;
+
+                    /**
+                     * 判断参数 AigcHunyuan3DTask 是否已赋值
+                     * @return AigcHunyuan3DTask 是否已赋值
+                     * 
+                     */
+                    bool AigcHunyuan3DTaskHasBeenSet() const;
+
+                    /**
+                     * 获取<p>音色设计，仅当 TaskType 为 DesignVoiceAsync，该字段有值。</p>
+                     * @return DesignVoiceAsyncTask <p>音色设计，仅当 TaskType 为 DesignVoiceAsync，该字段有值。</p>
+                     * 
+                     */
+                    DesignVoiceAsyncTask GetDesignVoiceAsyncTask() const;
+
+                    /**
+                     * 判断参数 DesignVoiceAsyncTask 是否已赋值
+                     * @return DesignVoiceAsyncTask 是否已赋值
+                     * 
+                     */
+                    bool DesignVoiceAsyncTaskHasBeenSet() const;
+
+                    /**
+                     * 获取<p>音色克隆，仅当 TaskType 为 CloneVoiceAsync，该字段有值。</p>
+                     * @return CloneVoiceAsyncTask <p>音色克隆，仅当 TaskType 为 CloneVoiceAsync，该字段有值。</p>
+                     * 
+                     */
+                    CloneVoiceAsyncTask GetCloneVoiceAsyncTask() const;
+
+                    /**
+                     * 判断参数 CloneVoiceAsyncTask 是否已赋值
+                     * @return CloneVoiceAsyncTask 是否已赋值
+                     * 
+                     */
+                    bool CloneVoiceAsyncTaskHasBeenSet() const;
+
+                    /**
+                     * 获取<p>语音合成，仅当 TaskType 为 TextToSpeechAsync，该字段有值。</p>
+                     * @return TextToSpeechAsyncTask <p>语音合成，仅当 TaskType 为 TextToSpeechAsync，该字段有值。</p>
+                     * 
+                     */
+                    TextToSpeechAsyncTask GetTextToSpeechAsyncTask() const;
+
+                    /**
+                     * 判断参数 TextToSpeechAsyncTask 是否已赋值
+                     * @return TextToSpeechAsyncTask 是否已赋值
+                     * 
+                     */
+                    bool TextToSpeechAsyncTaskHasBeenSet() const;
+
+                    /**
+                     * 获取<p>视频翻译配音，仅当 TaskType 为VideoDubbingAsync，该字段有值。</p>
+                     * @return VideoDubbingAsyncTask <p>视频翻译配音，仅当 TaskType 为VideoDubbingAsync，该字段有值。</p>
+                     * 
+                     */
+                    VideoDubbingAsyncTask GetVideoDubbingAsyncTask() const;
+
+                    /**
+                     * 判断参数 VideoDubbingAsyncTask 是否已赋值
+                     * @return VideoDubbingAsyncTask 是否已赋值
+                     * 
+                     */
+                    bool VideoDubbingAsyncTaskHasBeenSet() const;
+
                 private:
 
                     /**
-                     * <p>任务类型，取值：<li>Procedure：视频处理任务；</li><li>EditMedia：视频编辑任务；</li><li>SplitMedia：视频拆条任务；</li><li>ComposeMedia：制作媒体文件任务；</li><li>WechatPublish：微信发布任务；</li><li>WechatMiniProgramPublish：微信小程序视频发布任务；</li><li>PullUpload：拉取上传媒体文件任务；</li><li>FastClipMedia：快速剪辑任务；</li><li>RemoveWatermarkTask：智能去除水印任务；</li><li>DescribeFileAttributesTask：获取文件属性任务；</li><li>RebuildMedia：音画质重生任务（不推荐使用）；</li><li>ReviewAudioVideo：音视频审核任务；</li><li>ExtractTraceWatermark：提取溯源水印任务；</li><li>ExtractCopyRightWatermark：提取版权水印任务；</li><li>QualityInspect：音画质检测任务；</li><li>QualityEnhance：音画质重生任务；</li><li>ComplexAdaptiveDynamicStreaming：复杂自适应码流任务；</li><li>ProcessMediaByMPS：MPS 视频处理任务；</li><li>AigcImageTask：AIGC 生图任务；</li><li>SceneAigcImageTask：场景化 AIGC 生图任务；</li><li>AigcVideoTask：AIGC 生视频任务；</li><li>ImportMediaKnowledge：导入媒体知识任务。</li><li>SceneAigcVideoTask：场景化 AIGC 生视频任务；</li><li> ExtractBlindWatermark：提取数字水印任务。</li><li> ExtractBlindWatermark：提取数字水印任务。</li><li> CreateAigcAdvancedCustomElement：创建自定义主体任务</li><li>CreateAigcCustomVoice：创建自定义音色任务</li><li>CreateAigcSubject：创建主体任务</li><li>AigcVideoRedrawTask：AIGC 视频转绘任务</li><li>CreateAigcAudioClone：AIGC 声音复刻任务</li><li>DescribeAigcFaceInfoAsync：异步获取 AIGC 人脸信息任务</li><li>WandAsrTask：WAND 语音识别</li></p>
+                     * <p>任务类型，取值：<li>Procedure：视频处理任务；</li><li>EditMedia：视频编辑任务；</li><li>SplitMedia：视频拆条任务；</li><li>ComposeMedia：制作媒体文件任务；</li><li>WechatPublish：微信发布任务；</li><li>WechatMiniProgramPublish：微信小程序视频发布任务；</li><li>PullUpload：拉取上传媒体文件任务；</li><li>FastClipMedia：快速剪辑任务；</li><li>RemoveWatermarkTask：智能去除水印任务；</li><li>DescribeFileAttributesTask：获取文件属性任务；</li><li>RebuildMedia：音画质重生任务（不推荐使用）；</li><li>ReviewAudioVideo：音视频审核任务；</li><li>ExtractTraceWatermark：提取溯源水印任务；</li><li>ExtractCopyRightWatermark：提取版权水印任务；</li><li>QualityInspect：音画质检测任务；</li><li>QualityEnhance：音画质重生任务；</li><li>ComplexAdaptiveDynamicStreaming：复杂自适应码流任务；</li><li>ProcessMediaByMPS：MPS 视频处理任务；</li><li>AigcImageTask：AIGC 生图任务；</li><li>SceneAigcImageTask：场景化 AIGC 生图任务；</li><li>AigcVideoTask：AIGC 生视频任务；</li><li>ImportMediaKnowledge：导入媒体知识任务。</li><li>SceneAigcVideoTask：场景化 AIGC 生视频任务；</li><li> ExtractBlindWatermark：提取数字水印任务。</li><li> ExtractBlindWatermark：提取数字水印任务。</li><li> CreateAigcAdvancedCustomElement：创建自定义主体任务</li><li>CreateAigcCustomVoice：创建自定义音色任务</li><li>CreateAigcSubject：创建主体任务</li><li>AigcVideoRedrawTask：AIGC 视频转绘任务</li><li>CreateAigcAudioClone：AIGC 声音复刻任务</li><li>DescribeAigcFaceInfoAsync：异步获取 AIGC 人脸信息任务</li><li>WandAsrTask：WAND 语音识别</li><li>AigcHunyuan3DTask：AIGC 混元 3D 任务</li><li>DesignVoiceAsync：音色设计</li><li>CloneVoiceAsync：音色克隆</li><li>TextToSpeechAsync：语音生成</li><li>VideoDubbingAsync：视频翻译配音</li></p>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
@@ -987,6 +1062,36 @@ namespace TencentCloud
                      */
                     DescribeAigcFaceInfoAsyncTask m_describeAigcFaceInfoAsyncTask;
                     bool m_describeAigcFaceInfoAsyncTaskHasBeenSet;
+
+                    /**
+                     * <p>混元 3D 任务，仅当 TaskType 为 AigcHunyuan3DTask，该字段有值。</p>
+                     */
+                    AigcHunyuan3DTask m_aigcHunyuan3DTask;
+                    bool m_aigcHunyuan3DTaskHasBeenSet;
+
+                    /**
+                     * <p>音色设计，仅当 TaskType 为 DesignVoiceAsync，该字段有值。</p>
+                     */
+                    DesignVoiceAsyncTask m_designVoiceAsyncTask;
+                    bool m_designVoiceAsyncTaskHasBeenSet;
+
+                    /**
+                     * <p>音色克隆，仅当 TaskType 为 CloneVoiceAsync，该字段有值。</p>
+                     */
+                    CloneVoiceAsyncTask m_cloneVoiceAsyncTask;
+                    bool m_cloneVoiceAsyncTaskHasBeenSet;
+
+                    /**
+                     * <p>语音合成，仅当 TaskType 为 TextToSpeechAsync，该字段有值。</p>
+                     */
+                    TextToSpeechAsyncTask m_textToSpeechAsyncTask;
+                    bool m_textToSpeechAsyncTaskHasBeenSet;
+
+                    /**
+                     * <p>视频翻译配音，仅当 TaskType 为VideoDubbingAsync，该字段有值。</p>
+                     */
+                    VideoDubbingAsyncTask m_videoDubbingAsyncTask;
+                    bool m_videoDubbingAsyncTaskHasBeenSet;
 
                 };
             }

@@ -529,14 +529,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>带宽</p><p>单位：Mbps</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bandwidth <p>带宽</p><p>单位：Mbps</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBandwidth() const;
 
                     /**
                      * 设置<p>带宽</p><p>单位：Mbps</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bandwidth <p>带宽</p><p>单位：Mbps</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBandwidth(const uint64_t& _bandwidth);
@@ -729,6 +733,7 @@ namespace TencentCloud
 
                     /**
                      * <p>带宽</p><p>单位：Mbps</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;

@@ -46,7 +46,8 @@ CCN::CCN() :
     m_mrtbAggregatePolicyFlagHasBeenSet(false),
     m_mrtbPolicyValueFlagHasBeenSet(false),
     m_routeTablePolicyValueCommunityFlagHasBeenSet(false),
-    m_policyBasedRoutingFlagHasBeenSet(false)
+    m_policyBasedRoutingFlagHasBeenSet(false),
+    m_serviceLevelModeHasBeenSet(false)
 {
 }
 
@@ -325,6 +326,16 @@ CoreInternalOutcome CCN::Deserialize(const rapidjson::Value &value)
         m_policyBasedRoutingFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceLevelMode") && !value["ServiceLevelMode"].IsNull())
+    {
+        if (!value["ServiceLevelMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCN.ServiceLevelMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceLevelMode = value["ServiceLevelMode"].GetUint64();
+        m_serviceLevelModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -545,6 +556,14 @@ void CCN::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "PolicyBasedRoutingFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_policyBasedRoutingFlag, allocator);
+    }
+
+    if (m_serviceLevelModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceLevelMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_serviceLevelMode, allocator);
     }
 
 }
@@ -964,5 +983,21 @@ void CCN::SetPolicyBasedRoutingFlag(const bool& _policyBasedRoutingFlag)
 bool CCN::PolicyBasedRoutingFlagHasBeenSet() const
 {
     return m_policyBasedRoutingFlagHasBeenSet;
+}
+
+uint64_t CCN::GetServiceLevelMode() const
+{
+    return m_serviceLevelMode;
+}
+
+void CCN::SetServiceLevelMode(const uint64_t& _serviceLevelMode)
+{
+    m_serviceLevelMode = _serviceLevelMode;
+    m_serviceLevelModeHasBeenSet = true;
+}
+
+bool CCN::ServiceLevelModeHasBeenSet() const
+{
+    return m_serviceLevelModeHasBeenSet;
 }
 

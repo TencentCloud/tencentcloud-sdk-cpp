@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体处理任务 ID。
-                     * @return TaskId 媒体处理任务 ID。
+                     * 获取<p>媒体处理任务 ID。</p>
+                     * @return TaskId <p>媒体处理任务 ID。</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置媒体处理任务 ID。
-                     * @param _taskId 媒体处理任务 ID。
+                     * 设置<p>媒体处理任务 ID。</p>
+                     * @param _taskId <p>媒体处理任务 ID。</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -68,23 +68,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务流状态，取值：
-<li>PROCESSING：处理中；</li>
-<li>FINISH：已完成。</li>
-                     * @return Status 任务流状态，取值：
-<li>PROCESSING：处理中；</li>
-<li>FINISH：已完成。</li>
+                     * 获取<p>任务流状态，取值：</p><li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>
+                     * @return Status <p>任务流状态，取值：</p><li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置任务流状态，取值：
-<li>PROCESSING：处理中；</li>
-<li>FINISH：已完成。</li>
-                     * @param _status 任务流状态，取值：
-<li>PROCESSING：处理中；</li>
-<li>FINISH：已完成。</li>
+                     * 设置<p>任务流状态，取值：</p><li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>
+                     * @param _status <p>任务流状态，取值：</p><li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -97,15 +89,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取错误码，0 表示成功，其他值表示失败。
-                     * @return ErrCode 错误码，0 表示成功，其他值表示失败。
+                     * 获取<p>错误码，0 表示成功，其他值表示失败。</p>
+                     * @return ErrCode <p>错误码，0 表示成功，其他值表示失败。</p>
                      * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
-                     * 设置错误码，0 表示成功，其他值表示失败。
-                     * @param _errCode 错误码，0 表示成功，其他值表示失败。
+                     * 设置<p>错误码，0 表示成功，其他值表示失败。</p>
+                     * @param _errCode <p>错误码，0 表示成功，其他值表示失败。</p>
                      * 
                      */
                     void SetErrCode(const int64_t& _errCode);
@@ -118,15 +110,15 @@ namespace TencentCloud
                     bool ErrCodeHasBeenSet() const;
 
                     /**
-                     * 获取错误信息。
-                     * @return Message 错误信息。
+                     * 获取<p>错误信息。</p>
+                     * @return Message <p>错误信息。</p>
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置错误信息。
-                     * @param _message 错误信息。
+                     * 设置<p>错误信息。</p>
+                     * @param _message <p>错误信息。</p>
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -139,15 +131,15 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取直播流 URL。
-                     * @return Url 直播流 URL。
+                     * 获取<p>直播流 URL。</p>
+                     * @return Url <p>直播流 URL。</p>
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置直播流 URL。
-                     * @param _url 直播流 URL。
+                     * 设置<p>直播流 URL。</p>
+                     * @param _url <p>直播流 URL。</p>
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -162,33 +154,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒体处理任务 ID。
+                     * <p>媒体处理任务 ID。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务流状态，取值：
-<li>PROCESSING：处理中；</li>
-<li>FINISH：已完成。</li>
+                     * <p>任务流状态，取值：</p><li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 错误码，0 表示成功，其他值表示失败。
+                     * <p>错误码，0 表示成功，其他值表示失败。</p>
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
-                     * 错误信息。
+                     * <p>错误信息。</p>
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 直播流 URL。
+                     * <p>直播流 URL。</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

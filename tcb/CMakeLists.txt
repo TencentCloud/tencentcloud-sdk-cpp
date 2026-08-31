@@ -207,6 +207,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CustomLogConfig.h
   include/tencentcloud/tcb/v20180608/model/DescribeApiKeyListRequest.h
   include/tencentcloud/tcb/v20180608/model/Pager.h
+  include/tencentcloud/tcb/v20180608/model/ModifyEnvExtraResponse.h
   include/tencentcloud/tcb/v20180608/model/MgoIndexKeys.h
   include/tencentcloud/tcb/v20180608/model/DescribeStaticStoreRequest.h
   include/tencentcloud/tcb/v20180608/model/OwnershipVerificationInfo.h
@@ -288,6 +289,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeHostingDomainTaskResponse.h
   include/tencentcloud/tcb/v20180608/model/DeleteAuthDomainRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateHTTPServiceRouteResponse.h
+  include/tencentcloud/tcb/v20180608/model/ModifyEnvExtraRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateCustomLoginKeyResponse.h
   include/tencentcloud/tcb/v20180608/model/ListTablesResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyClientRequest.h
@@ -539,6 +541,7 @@ set(tcb_src
   src/v20180608/model/CustomLogConfig.cpp
   src/v20180608/model/DescribeApiKeyListRequest.cpp
   src/v20180608/model/Pager.cpp
+  src/v20180608/model/ModifyEnvExtraResponse.cpp
   src/v20180608/model/MgoIndexKeys.cpp
   src/v20180608/model/DescribeStaticStoreRequest.cpp
   src/v20180608/model/OwnershipVerificationInfo.cpp
@@ -620,6 +623,7 @@ set(tcb_src
   src/v20180608/model/DescribeHostingDomainTaskResponse.cpp
   src/v20180608/model/DeleteAuthDomainRequest.cpp
   src/v20180608/model/CreateHTTPServiceRouteResponse.cpp
+  src/v20180608/model/ModifyEnvExtraRequest.cpp
   src/v20180608/model/CreateCustomLoginKeyResponse.cpp
   src/v20180608/model/ListTablesResponse.cpp
   src/v20180608/model/ModifyClientRequest.cpp

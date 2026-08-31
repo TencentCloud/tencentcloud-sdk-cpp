@@ -22,7 +22,8 @@ using namespace std;
 
 FeiShuRobotNoticeTmpl::FeiShuRobotNoticeTmpl() :
     m_contentTmplHasBeenSet(false),
-    m_titleTmplHasBeenSet(false)
+    m_titleTmplHasBeenSet(false),
+    m_titleColorHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,23 @@ CoreInternalOutcome FeiShuRobotNoticeTmpl::Deserialize(const rapidjson::Value &v
         m_titleTmplHasBeenSet = true;
     }
 
+    if (value.HasMember("TitleColor") && !value["TitleColor"].IsNull())
+    {
+        if (!value["TitleColor"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `FeiShuRobotNoticeTmpl.TitleColor` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_titleColor.Deserialize(value["TitleColor"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_titleColorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +90,15 @@ void FeiShuRobotNoticeTmpl::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "TitleTmpl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_titleTmpl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_titleColorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TitleColor";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_titleColor.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -107,5 +134,21 @@ void FeiShuRobotNoticeTmpl::SetTitleTmpl(const string& _titleTmpl)
 bool FeiShuRobotNoticeTmpl::TitleTmplHasBeenSet() const
 {
     return m_titleTmplHasBeenSet;
+}
+
+RobotNoticeTitleColor FeiShuRobotNoticeTmpl::GetTitleColor() const
+{
+    return m_titleColor;
+}
+
+void FeiShuRobotNoticeTmpl::SetTitleColor(const RobotNoticeTitleColor& _titleColor)
+{
+    m_titleColor = _titleColor;
+    m_titleColorHasBeenSet = true;
+}
+
+bool FeiShuRobotNoticeTmpl::TitleColorHasBeenSet() const
+{
+    return m_titleColorHasBeenSet;
 }
 

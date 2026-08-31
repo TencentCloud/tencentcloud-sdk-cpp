@@ -26,7 +26,8 @@ ModifySLInstanceRequest::ModifySLInstanceRequest() :
     m_instanceIdHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_nodeNumHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_diskSizeHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string ModifySLInstanceRequest::ToJsonString() const
         string key = "ClientToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_diskSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_diskSize, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void ModifySLInstanceRequest::SetClientToken(const string& _clientToken)
 bool ModifySLInstanceRequest::ClientTokenHasBeenSet() const
 {
     return m_clientTokenHasBeenSet;
+}
+
+int64_t ModifySLInstanceRequest::GetDiskSize() const
+{
+    return m_diskSize;
+}
+
+void ModifySLInstanceRequest::SetDiskSize(const int64_t& _diskSize)
+{
+    m_diskSize = _diskSize;
+    m_diskSizeHasBeenSet = true;
+}
+
+bool ModifySLInstanceRequest::DiskSizeHasBeenSet() const
+{
+    return m_diskSizeHasBeenSet;
 }
 
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目Id
-                     * @return ProjectId 项目Id
+                     * 获取<p>项目Id</p>
+                     * @return ProjectId <p>项目Id</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目Id
-                     * @param _projectId 项目Id
+                     * 设置<p>项目Id</p>
+                     * @param _projectId <p>项目Id</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取分页页码
-                     * @return PageNumber 分页页码
+                     * 获取<p>分页页码</p>
+                     * @return PageNumber <p>分页页码</p>
                      * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
-                     * 设置分页页码
-                     * @param _pageNumber 分页页码
+                     * 设置<p>分页页码</p>
+                     * @param _pageNumber <p>分页页码</p>
                      * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取分页大小
-                     * @return PageSize 分页大小
+                     * 获取<p>分页大小</p>
+                     * @return PageSize <p>分页大小</p>
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置分页大小
-                     * @param _pageSize 分页大小
+                     * 设置<p>分页大小</p>
+                     * @param _pageSize <p>分页大小</p>
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取文件Id
-                     * @return FolderId 文件Id
+                     * 获取<p>文件Id</p>
+                     * @return FolderId <p>文件Id</p>
                      * 
                      */
                     std::string GetFolderId() const;
 
                     /**
-                     * 设置文件Id
-                     * @param _folderId 文件Id
+                     * 设置<p>文件Id</p>
+                     * @param _folderId <p>文件Id</p>
                      * 
                      */
                     void SetFolderId(const std::string& _folderId);
@@ -127,39 +127,15 @@ namespace TencentCloud
                     bool FolderIdHasBeenSet() const;
 
                     /**
-                     * 获取工作流状态筛选
-* ALL_RUNNING : 全部调度中
-* ALL_FREEZED : 全部已暂停
-* ALL_STOPPTED : 全部已下线
-* PART_RUNNING : 部分调度中
-* ALL_NO_RUNNING : 全部未调度
-* ALL_INVALID : 全部已失效
-                     * @return Status 工作流状态筛选
-* ALL_RUNNING : 全部调度中
-* ALL_FREEZED : 全部已暂停
-* ALL_STOPPTED : 全部已下线
-* PART_RUNNING : 部分调度中
-* ALL_NO_RUNNING : 全部未调度
-* ALL_INVALID : 全部已失效
+                     * 获取<p>工作流状态筛选</p><ul><li>ALL_RUNNING : 全部调度中</li><li>ALL_FREEZED : 全部已暂停</li><li>ALL_STOPPTED : 全部已下线</li><li>PART_RUNNING : 部分调度中</li><li>ALL_NO_RUNNING : 全部未调度</li><li>ALL_INVALID : 全部已失效</li></ul>
+                     * @return Status <p>工作流状态筛选</p><ul><li>ALL_RUNNING : 全部调度中</li><li>ALL_FREEZED : 全部已暂停</li><li>ALL_STOPPTED : 全部已下线</li><li>PART_RUNNING : 部分调度中</li><li>ALL_NO_RUNNING : 全部未调度</li><li>ALL_INVALID : 全部已失效</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置工作流状态筛选
-* ALL_RUNNING : 全部调度中
-* ALL_FREEZED : 全部已暂停
-* ALL_STOPPTED : 全部已下线
-* PART_RUNNING : 部分调度中
-* ALL_NO_RUNNING : 全部未调度
-* ALL_INVALID : 全部已失效
-                     * @param _status 工作流状态筛选
-* ALL_RUNNING : 全部调度中
-* ALL_FREEZED : 全部已暂停
-* ALL_STOPPTED : 全部已下线
-* PART_RUNNING : 部分调度中
-* ALL_NO_RUNNING : 全部未调度
-* ALL_INVALID : 全部已失效
+                     * 设置<p>工作流状态筛选</p><ul><li>ALL_RUNNING : 全部调度中</li><li>ALL_FREEZED : 全部已暂停</li><li>ALL_STOPPTED : 全部已下线</li><li>PART_RUNNING : 部分调度中</li><li>ALL_NO_RUNNING : 全部未调度</li><li>ALL_INVALID : 全部已失效</li></ul>
+                     * @param _status <p>工作流状态筛选</p><ul><li>ALL_RUNNING : 全部调度中</li><li>ALL_FREEZED : 全部已暂停</li><li>ALL_STOPPTED : 全部已下线</li><li>PART_RUNNING : 部分调度中</li><li>ALL_NO_RUNNING : 全部未调度</li><li>ALL_INVALID : 全部已失效</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -172,15 +148,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取负责人Id
-                     * @return OwnerUin 负责人Id
+                     * 获取<p>负责人Id</p>
+                     * @return OwnerUin <p>负责人Id</p>
                      * 
                      */
                     std::string GetOwnerUin() const;
 
                     /**
-                     * 设置负责人Id
-                     * @param _ownerUin 负责人Id
+                     * 设置<p>负责人Id</p>
+                     * @param _ownerUin <p>负责人Id</p>
                      * 
                      */
                     void SetOwnerUin(const std::string& _ownerUin);
@@ -193,15 +169,15 @@ namespace TencentCloud
                     bool OwnerUinHasBeenSet() const;
 
                     /**
-                     * 获取工作流类型筛选, 支持值 Cycle或Manual. 默认只查询 Cycle
-                     * @return WorkflowType 工作流类型筛选, 支持值 Cycle或Manual. 默认只查询 Cycle
+                     * 获取<p>工作流类型筛选, 支持值 Cycle或Manual. 默认只查询 Cycle</p>
+                     * @return WorkflowType <p>工作流类型筛选, 支持值 Cycle或Manual. 默认只查询 Cycle</p>
                      * 
                      */
                     std::string GetWorkflowType() const;
 
                     /**
-                     * 设置工作流类型筛选, 支持值 Cycle或Manual. 默认只查询 Cycle
-                     * @param _workflowType 工作流类型筛选, 支持值 Cycle或Manual. 默认只查询 Cycle
+                     * 设置<p>工作流类型筛选, 支持值 Cycle或Manual. 默认只查询 Cycle</p>
+                     * @param _workflowType <p>工作流类型筛选, 支持值 Cycle或Manual. 默认只查询 Cycle</p>
                      * 
                      */
                     void SetWorkflowType(const std::string& _workflowType);
@@ -214,15 +190,15 @@ namespace TencentCloud
                     bool WorkflowTypeHasBeenSet() const;
 
                     /**
-                     * 获取工作流关键词过滤，支持工作流 Id/name 模糊匹配
-                     * @return KeyWord 工作流关键词过滤，支持工作流 Id/name 模糊匹配
+                     * 获取<p>工作流关键词过滤，支持工作流 Id/name 模糊匹配</p>
+                     * @return KeyWord <p>工作流关键词过滤，支持工作流 Id/name 模糊匹配</p>
                      * 
                      */
                     std::string GetKeyWord() const;
 
                     /**
-                     * 设置工作流关键词过滤，支持工作流 Id/name 模糊匹配
-                     * @param _keyWord 工作流关键词过滤，支持工作流 Id/name 模糊匹配
+                     * 设置<p>工作流关键词过滤，支持工作流 Id/name 模糊匹配</p>
+                     * @param _keyWord <p>工作流关键词过滤，支持工作流 Id/name 模糊匹配</p>
                      * 
                      */
                     void SetKeyWord(const std::string& _keyWord);
@@ -235,15 +211,15 @@ namespace TencentCloud
                     bool KeyWordHasBeenSet() const;
 
                     /**
-                     * 获取排序项，可选CreateTime、TaskCount
-                     * @return SortItem 排序项，可选CreateTime、TaskCount
+                     * 获取<p>排序项，可选CreateTime、TaskCount</p>
+                     * @return SortItem <p>排序项，可选CreateTime、TaskCount</p>
                      * 
                      */
                     std::string GetSortItem() const;
 
                     /**
-                     * 设置排序项，可选CreateTime、TaskCount
-                     * @param _sortItem 排序项，可选CreateTime、TaskCount
+                     * 设置<p>排序项，可选CreateTime、TaskCount</p>
+                     * @param _sortItem <p>排序项，可选CreateTime、TaskCount</p>
                      * 
                      */
                     void SetSortItem(const std::string& _sortItem);
@@ -256,15 +232,15 @@ namespace TencentCloud
                     bool SortItemHasBeenSet() const;
 
                     /**
-                     * 获取排序方式，DESC或ASC, 大写
-                     * @return SortType 排序方式，DESC或ASC, 大写
+                     * 获取<p>排序方式，DESC或ASC, 大写</p>
+                     * @return SortType <p>排序方式，DESC或ASC, 大写</p>
                      * 
                      */
                     std::string GetSortType() const;
 
                     /**
-                     * 设置排序方式，DESC或ASC, 大写
-                     * @param _sortType 排序方式，DESC或ASC, 大写
+                     * 设置<p>排序方式，DESC或ASC, 大写</p>
+                     * @param _sortType <p>排序方式，DESC或ASC, 大写</p>
                      * 
                      */
                     void SetSortType(const std::string& _sortType);
@@ -277,15 +253,15 @@ namespace TencentCloud
                     bool SortTypeHasBeenSet() const;
 
                     /**
-                     * 获取创建人Id
-                     * @return CreateUserUin 创建人Id
+                     * 获取<p>创建人Id</p>
+                     * @return CreateUserUin <p>创建人Id</p>
                      * 
                      */
                     std::string GetCreateUserUin() const;
 
                     /**
-                     * 设置创建人Id
-                     * @param _createUserUin 创建人Id
+                     * 设置<p>创建人Id</p>
+                     * @param _createUserUin <p>创建人Id</p>
                      * 
                      */
                     void SetCreateUserUin(const std::string& _createUserUin);
@@ -298,15 +274,15 @@ namespace TencentCloud
                     bool CreateUserUinHasBeenSet() const;
 
                     /**
-                     * 获取更新时间，格式yyyy-MM-dd HH:mm:ss
-                     * @return ModifyTime 更新时间，格式yyyy-MM-dd HH:mm:ss
+                     * 获取<p>更新时间，格式yyyy-MM-dd HH:mm:ss</p>
+                     * @return ModifyTime <p>更新时间，格式yyyy-MM-dd HH:mm:ss</p>
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置更新时间，格式yyyy-MM-dd HH:mm:ss
-                     * @param _modifyTime 更新时间，格式yyyy-MM-dd HH:mm:ss
+                     * 设置<p>更新时间，格式yyyy-MM-dd HH:mm:ss</p>
+                     * @param _modifyTime <p>更新时间，格式yyyy-MM-dd HH:mm:ss</p>
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -319,15 +295,15 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，格式yyyy-MM-dd HH:mm:ss
-                     * @return CreateTime 创建时间，格式yyyy-MM-dd HH:mm:ss
+                     * 获取<p>创建时间，格式yyyy-MM-dd HH:mm:ss</p>
+                     * @return CreateTime <p>创建时间，格式yyyy-MM-dd HH:mm:ss</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间，格式yyyy-MM-dd HH:mm:ss
-                     * @param _createTime 创建时间，格式yyyy-MM-dd HH:mm:ss
+                     * 设置<p>创建时间，格式yyyy-MM-dd HH:mm:ss</p>
+                     * @param _createTime <p>创建时间，格式yyyy-MM-dd HH:mm:ss</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -342,85 +318,79 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目Id
+                     * <p>项目Id</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 分页页码
+                     * <p>分页页码</p>
                      */
                     uint64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 分页大小
+                     * <p>分页大小</p>
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 文件Id
+                     * <p>文件Id</p>
                      */
                     std::string m_folderId;
                     bool m_folderIdHasBeenSet;
 
                     /**
-                     * 工作流状态筛选
-* ALL_RUNNING : 全部调度中
-* ALL_FREEZED : 全部已暂停
-* ALL_STOPPTED : 全部已下线
-* PART_RUNNING : 部分调度中
-* ALL_NO_RUNNING : 全部未调度
-* ALL_INVALID : 全部已失效
+                     * <p>工作流状态筛选</p><ul><li>ALL_RUNNING : 全部调度中</li><li>ALL_FREEZED : 全部已暂停</li><li>ALL_STOPPTED : 全部已下线</li><li>PART_RUNNING : 部分调度中</li><li>ALL_NO_RUNNING : 全部未调度</li><li>ALL_INVALID : 全部已失效</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 负责人Id
+                     * <p>负责人Id</p>
                      */
                     std::string m_ownerUin;
                     bool m_ownerUinHasBeenSet;
 
                     /**
-                     * 工作流类型筛选, 支持值 Cycle或Manual. 默认只查询 Cycle
+                     * <p>工作流类型筛选, 支持值 Cycle或Manual. 默认只查询 Cycle</p>
                      */
                     std::string m_workflowType;
                     bool m_workflowTypeHasBeenSet;
 
                     /**
-                     * 工作流关键词过滤，支持工作流 Id/name 模糊匹配
+                     * <p>工作流关键词过滤，支持工作流 Id/name 模糊匹配</p>
                      */
                     std::string m_keyWord;
                     bool m_keyWordHasBeenSet;
 
                     /**
-                     * 排序项，可选CreateTime、TaskCount
+                     * <p>排序项，可选CreateTime、TaskCount</p>
                      */
                     std::string m_sortItem;
                     bool m_sortItemHasBeenSet;
 
                     /**
-                     * 排序方式，DESC或ASC, 大写
+                     * <p>排序方式，DESC或ASC, 大写</p>
                      */
                     std::string m_sortType;
                     bool m_sortTypeHasBeenSet;
 
                     /**
-                     * 创建人Id
+                     * <p>创建人Id</p>
                      */
                     std::string m_createUserUin;
                     bool m_createUserUinHasBeenSet;
 
                     /**
-                     * 更新时间，格式yyyy-MM-dd HH:mm:ss
+                     * <p>更新时间，格式yyyy-MM-dd HH:mm:ss</p>
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 创建时间，格式yyyy-MM-dd HH:mm:ss
+                     * <p>创建时间，格式yyyy-MM-dd HH:mm:ss</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;

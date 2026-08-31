@@ -23,6 +23,7 @@ using namespace std;
 ModelKeyInfoItem::ModelKeyInfoItem() :
     m_accessTypeHasBeenSet(false),
     m_apiBaseHasBeenSet(false),
+    m_apiBasesHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_hostHeaderHasBeenSet(false),
     m_keyCountHasBeenSet(false),
@@ -38,7 +39,10 @@ ModelKeyInfoItem::ModelKeyInfoItem() :
     m_tagsHasBeenSet(false),
     m_verifySSLHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_healthCheckConfigHasBeenSet(false)
+    m_healthCheckConfigHasBeenSet(false),
+    m_cMRPrivateNetworkTunnelIdHasBeenSet(false),
+    m_cMRPrivateNetworkTunnelNameHasBeenSet(false),
+    m_healthCheckConfigsHasBeenSet(false)
 {
 }
 
@@ -65,6 +69,26 @@ CoreInternalOutcome ModelKeyInfoItem::Deserialize(const rapidjson::Value &value)
         }
         m_apiBase = string(value["ApiBase"].GetString());
         m_apiBaseHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApiBases") && !value["ApiBases"].IsNull())
+    {
+        if (!value["ApiBases"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ModelKeyInfoItem.ApiBases` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ApiBases"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ApiBaseItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_apiBases.push_back(item);
+        }
+        m_apiBasesHasBeenSet = true;
     }
 
     if (value.HasMember("CreatedAt") && !value["CreatedAt"].IsNull())
@@ -267,6 +291,46 @@ CoreInternalOutcome ModelKeyInfoItem::Deserialize(const rapidjson::Value &value)
         m_healthCheckConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("CMRPrivateNetworkTunnelId") && !value["CMRPrivateNetworkTunnelId"].IsNull())
+    {
+        if (!value["CMRPrivateNetworkTunnelId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelKeyInfoItem.CMRPrivateNetworkTunnelId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cMRPrivateNetworkTunnelId = string(value["CMRPrivateNetworkTunnelId"].GetString());
+        m_cMRPrivateNetworkTunnelIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CMRPrivateNetworkTunnelName") && !value["CMRPrivateNetworkTunnelName"].IsNull())
+    {
+        if (!value["CMRPrivateNetworkTunnelName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelKeyInfoItem.CMRPrivateNetworkTunnelName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cMRPrivateNetworkTunnelName = string(value["CMRPrivateNetworkTunnelName"].GetString());
+        m_cMRPrivateNetworkTunnelNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthCheckConfigs") && !value["HealthCheckConfigs"].IsNull())
+    {
+        if (!value["HealthCheckConfigs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ModelKeyInfoItem.HealthCheckConfigs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["HealthCheckConfigs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ServiceProviderHealthCheckConfigItemOutput item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_healthCheckConfigs.push_back(item);
+        }
+        m_healthCheckConfigsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -288,6 +352,21 @@ void ModelKeyInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ApiBase";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_apiBase.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apiBasesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiBases";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_apiBases.begin(); itr != m_apiBases.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_createdAtHasBeenSet)
@@ -445,6 +524,37 @@ void ModelKeyInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         m_healthCheckConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_cMRPrivateNetworkTunnelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CMRPrivateNetworkTunnelId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cMRPrivateNetworkTunnelId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cMRPrivateNetworkTunnelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CMRPrivateNetworkTunnelName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cMRPrivateNetworkTunnelName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthCheckConfigsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheckConfigs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_healthCheckConfigs.begin(); itr != m_healthCheckConfigs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
 }
 
 
@@ -478,6 +588,22 @@ void ModelKeyInfoItem::SetApiBase(const string& _apiBase)
 bool ModelKeyInfoItem::ApiBaseHasBeenSet() const
 {
     return m_apiBaseHasBeenSet;
+}
+
+vector<ApiBaseItem> ModelKeyInfoItem::GetApiBases() const
+{
+    return m_apiBases;
+}
+
+void ModelKeyInfoItem::SetApiBases(const vector<ApiBaseItem>& _apiBases)
+{
+    m_apiBases = _apiBases;
+    m_apiBasesHasBeenSet = true;
+}
+
+bool ModelKeyInfoItem::ApiBasesHasBeenSet() const
+{
+    return m_apiBasesHasBeenSet;
 }
 
 string ModelKeyInfoItem::GetCreatedAt() const
@@ -734,5 +860,53 @@ void ModelKeyInfoItem::SetHealthCheckConfig(const ServiceProviderHealthCheckConf
 bool ModelKeyInfoItem::HealthCheckConfigHasBeenSet() const
 {
     return m_healthCheckConfigHasBeenSet;
+}
+
+string ModelKeyInfoItem::GetCMRPrivateNetworkTunnelId() const
+{
+    return m_cMRPrivateNetworkTunnelId;
+}
+
+void ModelKeyInfoItem::SetCMRPrivateNetworkTunnelId(const string& _cMRPrivateNetworkTunnelId)
+{
+    m_cMRPrivateNetworkTunnelId = _cMRPrivateNetworkTunnelId;
+    m_cMRPrivateNetworkTunnelIdHasBeenSet = true;
+}
+
+bool ModelKeyInfoItem::CMRPrivateNetworkTunnelIdHasBeenSet() const
+{
+    return m_cMRPrivateNetworkTunnelIdHasBeenSet;
+}
+
+string ModelKeyInfoItem::GetCMRPrivateNetworkTunnelName() const
+{
+    return m_cMRPrivateNetworkTunnelName;
+}
+
+void ModelKeyInfoItem::SetCMRPrivateNetworkTunnelName(const string& _cMRPrivateNetworkTunnelName)
+{
+    m_cMRPrivateNetworkTunnelName = _cMRPrivateNetworkTunnelName;
+    m_cMRPrivateNetworkTunnelNameHasBeenSet = true;
+}
+
+bool ModelKeyInfoItem::CMRPrivateNetworkTunnelNameHasBeenSet() const
+{
+    return m_cMRPrivateNetworkTunnelNameHasBeenSet;
+}
+
+vector<ServiceProviderHealthCheckConfigItemOutput> ModelKeyInfoItem::GetHealthCheckConfigs() const
+{
+    return m_healthCheckConfigs;
+}
+
+void ModelKeyInfoItem::SetHealthCheckConfigs(const vector<ServiceProviderHealthCheckConfigItemOutput>& _healthCheckConfigs)
+{
+    m_healthCheckConfigs = _healthCheckConfigs;
+    m_healthCheckConfigsHasBeenSet = true;
+}
+
+bool ModelKeyInfoItem::HealthCheckConfigsHasBeenSet() const
+{
+    return m_healthCheckConfigsHasBeenSet;
 }
 
