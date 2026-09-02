@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取发票名称
-                     * @return Title 发票名称
+                     * 获取<p>发票名称</p>
+                     * @return Title <p>发票名称</p>
                      * 
                      */
                     std::string GetTitle() const;
 
                     /**
-                     * 设置发票名称
-                     * @param _title 发票名称
+                     * 设置<p>发票名称</p>
+                     * @param _title <p>发票名称</p>
                      * 
                      */
                     void SetTitle(const std::string& _title);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool TitleHasBeenSet() const;
 
                     /**
-                     * 获取发票号码
-                     * @return Number 发票号码
+                     * 获取<p>发票号码</p>
+                     * @return Number <p>发票号码</p>
                      * 
                      */
                     std::string GetNumber() const;
 
                     /**
-                     * 设置发票号码
-                     * @param _number 发票号码
+                     * 设置<p>发票号码</p>
+                     * @param _number <p>发票号码</p>
                      * 
                      */
                     void SetNumber(const std::string& _number);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool NumberHasBeenSet() const;
 
                     /**
-                     * 获取发票代码
-                     * @return Code 发票代码
+                     * 获取<p>发票代码</p>
+                     * @return Code <p>发票代码</p>
                      * 
                      */
                     std::string GetCode() const;
 
                     /**
-                     * 设置发票代码
-                     * @param _code 发票代码
+                     * 设置<p>发票代码</p>
+                     * @param _code <p>发票代码</p>
                      * 
                      */
                     void SetCode(const std::string& _code);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取校验码
-                     * @return CheckCode 校验码
+                     * 获取<p>校验码</p>
+                     * @return CheckCode <p>校验码</p>
                      * 
                      */
                     std::string GetCheckCode() const;
 
                     /**
-                     * 设置校验码
-                     * @param _checkCode 校验码
+                     * 设置<p>校验码</p>
+                     * @param _checkCode <p>校验码</p>
                      * 
                      */
                     void SetCheckCode(const std::string& _checkCode);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool CheckCodeHasBeenSet() const;
 
                     /**
-                     * 获取开票日期
-                     * @return Date 开票日期
+                     * 获取<p>开票日期</p>
+                     * @return Date <p>开票日期</p>
                      * 
                      */
                     std::string GetDate() const;
 
                     /**
-                     * 设置开票日期
-                     * @param _date 开票日期
+                     * 设置<p>开票日期</p>
+                     * @param _date <p>开票日期</p>
                      * 
                      */
                     void SetDate(const std::string& _date);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool DateHasBeenSet() const;
 
                     /**
-                     * 获取价税合计（小写）
-                     * @return Total 价税合计（小写）
+                     * 获取<p>价税合计（小写）</p>
+                     * @return Total <p>价税合计（小写）</p>
                      * 
                      */
                     std::string GetTotal() const;
 
                     /**
-                     * 设置价税合计（小写）
-                     * @param _total 价税合计（小写）
+                     * 设置<p>价税合计（小写）</p>
+                     * @param _total <p>价税合计（小写）</p>
                      * 
                      */
                     void SetTotal(const std::string& _total);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取价税合计（大写）
-                     * @return TotalCn 价税合计（大写）
+                     * 获取<p>价税合计（大写）</p>
+                     * @return TotalCn <p>价税合计（大写）</p>
                      * 
                      */
                     std::string GetTotalCn() const;
 
                     /**
-                     * 设置价税合计（大写）
-                     * @param _totalCn 价税合计（大写）
+                     * 设置<p>价税合计（大写）</p>
+                     * @param _totalCn <p>价税合计（大写）</p>
                      * 
                      */
                     void SetTotalCn(const std::string& _totalCn);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool TotalCnHasBeenSet() const;
 
                     /**
-                     * 获取交款人名称
-                     * @return Buyer 交款人名称
+                     * 获取<p>交款人名称</p>
+                     * @return Buyer <p>交款人名称</p>
                      * 
                      */
                     std::string GetBuyer() const;
 
                     /**
-                     * 设置交款人名称
-                     * @param _buyer 交款人名称
+                     * 设置<p>交款人名称</p>
+                     * @param _buyer <p>交款人名称</p>
                      * 
                      */
                     void SetBuyer(const std::string& _buyer);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool BuyerHasBeenSet() const;
 
                     /**
-                     * 获取交款人纳税人识别号
-                     * @return BuyerTaxID 交款人纳税人识别号
+                     * 获取<p>交款人纳税人识别号</p>
+                     * @return BuyerTaxID <p>交款人纳税人识别号</p>
                      * 
                      */
                     std::string GetBuyerTaxID() const;
 
                     /**
-                     * 设置交款人纳税人识别号
-                     * @param _buyerTaxID 交款人纳税人识别号
+                     * 设置<p>交款人纳税人识别号</p>
+                     * @param _buyerTaxID <p>交款人纳税人识别号</p>
                      * 
                      */
                     void SetBuyerTaxID(const std::string& _buyerTaxID);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool BuyerTaxIDHasBeenSet() const;
 
                     /**
-                     * 获取收款人名称
-                     * @return Seller 收款人名称
+                     * 获取<p>收款人名称</p>
+                     * @return Seller <p>收款人名称</p>
                      * 
                      */
                     std::string GetSeller() const;
 
                     /**
-                     * 设置收款人名称
-                     * @param _seller 收款人名称
+                     * 设置<p>收款人名称</p>
+                     * @param _seller <p>收款人名称</p>
                      * 
                      */
                     void SetSeller(const std::string& _seller);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool SellerHasBeenSet() const;
 
                     /**
-                     * 获取收款单位名称
-                     * @return SellerCompany 收款单位名称
+                     * 获取<p>收款单位名称</p>
+                     * @return SellerCompany <p>收款单位名称</p>
                      * 
                      */
                     std::string GetSellerCompany() const;
 
                     /**
-                     * 设置收款单位名称
-                     * @param _sellerCompany 收款单位名称
+                     * 设置<p>收款单位名称</p>
+                     * @param _sellerCompany <p>收款单位名称</p>
                      * 
                      */
                     void SetSellerCompany(const std::string& _sellerCompany);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool SellerCompanyHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Remark 备注
+                     * 获取<p>备注</p>
+                     * @return Remark <p>备注</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注
-                     * @param _remark 备注
+                     * 设置<p>备注</p>
+                     * @param _remark <p>备注</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取币种
-                     * @return CurrencyCode 币种
+                     * 获取<p>币种</p>
+                     * @return CurrencyCode <p>币种</p>
                      * 
                      */
                     std::string GetCurrencyCode() const;
 
                     /**
-                     * 设置币种
-                     * @param _currencyCode 币种
+                     * 设置<p>币种</p>
+                     * @param _currencyCode <p>币种</p>
                      * 
                      */
                     void SetCurrencyCode(const std::string& _currencyCode);
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool CurrencyCodeHasBeenSet() const;
 
                     /**
-                     * 获取复核人
-                     * @return Reviewer 复核人
+                     * 获取<p>复核人</p>
+                     * @return Reviewer <p>复核人</p>
                      * 
                      */
                     std::string GetReviewer() const;
 
                     /**
-                     * 设置复核人
-                     * @param _reviewer 复核人
+                     * 设置<p>复核人</p>
+                     * @param _reviewer <p>复核人</p>
                      * 
                      */
                     void SetReviewer(const std::string& _reviewer);
@@ -342,15 +342,15 @@ namespace TencentCloud
                     bool ReviewerHasBeenSet() const;
 
                     /**
-                     * 获取是否存在二维码（1：有，0：无）
-                     * @return QRCodeMark 是否存在二维码（1：有，0：无）
+                     * 获取<p>是否存在二维码（1：有，0：无）</p>
+                     * @return QRCodeMark <p>是否存在二维码（1：有，0：无）</p>
                      * 
                      */
                     int64_t GetQRCodeMark() const;
 
                     /**
-                     * 设置是否存在二维码（1：有，0：无）
-                     * @param _qRCodeMark 是否存在二维码（1：有，0：无）
+                     * 设置<p>是否存在二维码（1：有，0：无）</p>
+                     * @param _qRCodeMark <p>是否存在二维码（1：有，0：无）</p>
                      * 
                      */
                     void SetQRCodeMark(const int64_t& _qRCodeMark);
@@ -363,15 +363,15 @@ namespace TencentCloud
                     bool QRCodeMarkHasBeenSet() const;
 
                     /**
-                     * 获取其他信息
-                     * @return OtherInfo 其他信息
+                     * 获取<p>其他信息</p>
+                     * @return OtherInfo <p>其他信息</p>
                      * 
                      */
                     std::string GetOtherInfo() const;
 
                     /**
-                     * 设置其他信息
-                     * @param _otherInfo 其他信息
+                     * 设置<p>其他信息</p>
+                     * @param _otherInfo <p>其他信息</p>
                      * 
                      */
                     void SetOtherInfo(const std::string& _otherInfo);
@@ -384,15 +384,15 @@ namespace TencentCloud
                     bool OtherInfoHasBeenSet() const;
 
                     /**
-                     * 获取缴款码
-                     * @return PaymentCode 缴款码
+                     * 获取<p>缴款码</p>
+                     * @return PaymentCode <p>缴款码</p>
                      * 
                      */
                     std::string GetPaymentCode() const;
 
                     /**
-                     * 设置缴款码
-                     * @param _paymentCode 缴款码
+                     * 设置<p>缴款码</p>
+                     * @param _paymentCode <p>缴款码</p>
                      * 
                      */
                     void SetPaymentCode(const std::string& _paymentCode);
@@ -405,15 +405,15 @@ namespace TencentCloud
                     bool PaymentCodeHasBeenSet() const;
 
                     /**
-                     * 获取执收单位编码
-                     * @return ReceiveUnitCode 执收单位编码
+                     * 获取<p>执收单位编码</p>
+                     * @return ReceiveUnitCode <p>执收单位编码</p>
                      * 
                      */
                     std::string GetReceiveUnitCode() const;
 
                     /**
-                     * 设置执收单位编码
-                     * @param _receiveUnitCode 执收单位编码
+                     * 设置<p>执收单位编码</p>
+                     * @param _receiveUnitCode <p>执收单位编码</p>
                      * 
                      */
                     void SetReceiveUnitCode(const std::string& _receiveUnitCode);
@@ -426,15 +426,15 @@ namespace TencentCloud
                     bool ReceiveUnitCodeHasBeenSet() const;
 
                     /**
-                     * 获取执收单位名称
-                     * @return Receiver 执收单位名称
+                     * 获取<p>执收单位名称</p>
+                     * @return Receiver <p>执收单位名称</p>
                      * 
                      */
                     std::string GetReceiver() const;
 
                     /**
-                     * 设置执收单位名称
-                     * @param _receiver 执收单位名称
+                     * 设置<p>执收单位名称</p>
+                     * @param _receiver <p>执收单位名称</p>
                      * 
                      */
                     void SetReceiver(const std::string& _receiver);
@@ -447,15 +447,15 @@ namespace TencentCloud
                     bool ReceiverHasBeenSet() const;
 
                     /**
-                     * 获取经办人
-                     * @return Operator 经办人
+                     * 获取<p>经办人</p>
+                     * @return Operator <p>经办人</p>
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置经办人
-                     * @param _operator 经办人
+                     * 设置<p>经办人</p>
+                     * @param _operator <p>经办人</p>
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -468,15 +468,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取付款人账号
-                     * @return PayerAccount 付款人账号
+                     * 获取<p>付款人账号</p>
+                     * @return PayerAccount <p>付款人账号</p>
                      * 
                      */
                     std::string GetPayerAccount() const;
 
                     /**
-                     * 设置付款人账号
-                     * @param _payerAccount 付款人账号
+                     * 设置<p>付款人账号</p>
+                     * @param _payerAccount <p>付款人账号</p>
                      * 
                      */
                     void SetPayerAccount(const std::string& _payerAccount);
@@ -489,15 +489,15 @@ namespace TencentCloud
                     bool PayerAccountHasBeenSet() const;
 
                     /**
-                     * 获取付款人开户银行
-                     * @return PayerBank 付款人开户银行
+                     * 获取<p>付款人开户银行</p>
+                     * @return PayerBank <p>付款人开户银行</p>
                      * 
                      */
                     std::string GetPayerBank() const;
 
                     /**
-                     * 设置付款人开户银行
-                     * @param _payerBank 付款人开户银行
+                     * 设置<p>付款人开户银行</p>
+                     * @param _payerBank <p>付款人开户银行</p>
                      * 
                      */
                     void SetPayerBank(const std::string& _payerBank);
@@ -510,15 +510,15 @@ namespace TencentCloud
                     bool PayerBankHasBeenSet() const;
 
                     /**
-                     * 获取收款人账号
-                     * @return ReceiverAccount 收款人账号
+                     * 获取<p>收款人账号</p>
+                     * @return ReceiverAccount <p>收款人账号</p>
                      * 
                      */
                     std::string GetReceiverAccount() const;
 
                     /**
-                     * 设置收款人账号
-                     * @param _receiverAccount 收款人账号
+                     * 设置<p>收款人账号</p>
+                     * @param _receiverAccount <p>收款人账号</p>
                      * 
                      */
                     void SetReceiverAccount(const std::string& _receiverAccount);
@@ -531,15 +531,15 @@ namespace TencentCloud
                     bool ReceiverAccountHasBeenSet() const;
 
                     /**
-                     * 获取收款人开户银行
-                     * @return ReceiverBank 收款人开户银行
+                     * 获取<p>收款人开户银行</p>
+                     * @return ReceiverBank <p>收款人开户银行</p>
                      * 
                      */
                     std::string GetReceiverBank() const;
 
                     /**
-                     * 设置收款人开户银行
-                     * @param _receiverBank 收款人开户银行
+                     * 设置<p>收款人开户银行</p>
+                     * @param _receiverBank <p>收款人开户银行</p>
                      * 
                      */
                     void SetReceiverBank(const std::string& _receiverBank);
@@ -552,15 +552,15 @@ namespace TencentCloud
                     bool ReceiverBankHasBeenSet() const;
 
                     /**
-                     * 获取条目
-                     * @return NonTaxItems 条目
+                     * 获取<p>条目</p>
+                     * @return NonTaxItems <p>条目</p>
                      * 
                      */
                     std::vector<NonTaxItem> GetNonTaxItems() const;
 
                     /**
-                     * 设置条目
-                     * @param _nonTaxItems 条目
+                     * 设置<p>条目</p>
+                     * @param _nonTaxItems <p>条目</p>
                      * 
                      */
                     void SetNonTaxItems(const std::vector<NonTaxItem>& _nonTaxItems);
@@ -572,157 +572,184 @@ namespace TencentCloud
                      */
                     bool NonTaxItemsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>票据名称</p>
+                     * @return BillName <p>票据名称</p>
+                     * 
+                     */
+                    std::string GetBillName() const;
+
+                    /**
+                     * 设置<p>票据名称</p>
+                     * @param _billName <p>票据名称</p>
+                     * 
+                     */
+                    void SetBillName(const std::string& _billName);
+
+                    /**
+                     * 判断参数 BillName 是否已赋值
+                     * @return BillName 是否已赋值
+                     * 
+                     */
+                    bool BillNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 发票名称
+                     * <p>发票名称</p>
                      */
                     std::string m_title;
                     bool m_titleHasBeenSet;
 
                     /**
-                     * 发票号码
+                     * <p>发票号码</p>
                      */
                     std::string m_number;
                     bool m_numberHasBeenSet;
 
                     /**
-                     * 发票代码
+                     * <p>发票代码</p>
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
 
                     /**
-                     * 校验码
+                     * <p>校验码</p>
                      */
                     std::string m_checkCode;
                     bool m_checkCodeHasBeenSet;
 
                     /**
-                     * 开票日期
+                     * <p>开票日期</p>
                      */
                     std::string m_date;
                     bool m_dateHasBeenSet;
 
                     /**
-                     * 价税合计（小写）
+                     * <p>价税合计（小写）</p>
                      */
                     std::string m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 价税合计（大写）
+                     * <p>价税合计（大写）</p>
                      */
                     std::string m_totalCn;
                     bool m_totalCnHasBeenSet;
 
                     /**
-                     * 交款人名称
+                     * <p>交款人名称</p>
                      */
                     std::string m_buyer;
                     bool m_buyerHasBeenSet;
 
                     /**
-                     * 交款人纳税人识别号
+                     * <p>交款人纳税人识别号</p>
                      */
                     std::string m_buyerTaxID;
                     bool m_buyerTaxIDHasBeenSet;
 
                     /**
-                     * 收款人名称
+                     * <p>收款人名称</p>
                      */
                     std::string m_seller;
                     bool m_sellerHasBeenSet;
 
                     /**
-                     * 收款单位名称
+                     * <p>收款单位名称</p>
                      */
                     std::string m_sellerCompany;
                     bool m_sellerCompanyHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 币种
+                     * <p>币种</p>
                      */
                     std::string m_currencyCode;
                     bool m_currencyCodeHasBeenSet;
 
                     /**
-                     * 复核人
+                     * <p>复核人</p>
                      */
                     std::string m_reviewer;
                     bool m_reviewerHasBeenSet;
 
                     /**
-                     * 是否存在二维码（1：有，0：无）
+                     * <p>是否存在二维码（1：有，0：无）</p>
                      */
                     int64_t m_qRCodeMark;
                     bool m_qRCodeMarkHasBeenSet;
 
                     /**
-                     * 其他信息
+                     * <p>其他信息</p>
                      */
                     std::string m_otherInfo;
                     bool m_otherInfoHasBeenSet;
 
                     /**
-                     * 缴款码
+                     * <p>缴款码</p>
                      */
                     std::string m_paymentCode;
                     bool m_paymentCodeHasBeenSet;
 
                     /**
-                     * 执收单位编码
+                     * <p>执收单位编码</p>
                      */
                     std::string m_receiveUnitCode;
                     bool m_receiveUnitCodeHasBeenSet;
 
                     /**
-                     * 执收单位名称
+                     * <p>执收单位名称</p>
                      */
                     std::string m_receiver;
                     bool m_receiverHasBeenSet;
 
                     /**
-                     * 经办人
+                     * <p>经办人</p>
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 付款人账号
+                     * <p>付款人账号</p>
                      */
                     std::string m_payerAccount;
                     bool m_payerAccountHasBeenSet;
 
                     /**
-                     * 付款人开户银行
+                     * <p>付款人开户银行</p>
                      */
                     std::string m_payerBank;
                     bool m_payerBankHasBeenSet;
 
                     /**
-                     * 收款人账号
+                     * <p>收款人账号</p>
                      */
                     std::string m_receiverAccount;
                     bool m_receiverAccountHasBeenSet;
 
                     /**
-                     * 收款人开户银行
+                     * <p>收款人开户银行</p>
                      */
                     std::string m_receiverBank;
                     bool m_receiverBankHasBeenSet;
 
                     /**
-                     * 条目
+                     * <p>条目</p>
                      */
                     std::vector<NonTaxItem> m_nonTaxItems;
                     bool m_nonTaxItemsHasBeenSet;
+
+                    /**
+                     * <p>票据名称</p>
+                     */
+                    std::string m_billName;
+                    bool m_billNameHasBeenSet;
 
                 };
             }

@@ -39,6 +39,8 @@
 #include <tencentcloud/trtc/v20190722/model/CreateLiveStreamModerationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/CreatePictureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/CreatePictureResponse.h>
+#include <tencentcloud/trtc/v20190722/model/CreateRecognizeVocabV3Request.h>
+#include <tencentcloud/trtc/v20190722/model/CreateRecognizeVocabV3Response.h>
 #include <tencentcloud/trtc/v20190722/model/DeleteCloudModerationRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DeleteCloudModerationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DeleteCloudRecordingRequest.h>
@@ -51,6 +53,8 @@
 #include <tencentcloud/trtc/v20190722/model/DeleteLiveStreamModerationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DeletePictureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DeletePictureResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DeleteRecognizeVocabV3Request.h>
+#include <tencentcloud/trtc/v20190722/model/DeleteRecognizeVocabV3Response.h>
 #include <tencentcloud/trtc/v20190722/model/DeleteVoicePrintRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DeleteVoicePrintResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeAIConversationRequest.h>
@@ -123,6 +127,12 @@
 #include <tencentcloud/trtc/v20190722/model/DismissRoomResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DismissRoomByStrRoomIdRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DismissRoomByStrRoomIdResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DownloadRecognizeVocabV3Request.h>
+#include <tencentcloud/trtc/v20190722/model/DownloadRecognizeVocabV3Response.h>
+#include <tencentcloud/trtc/v20190722/model/GetRecognizeVocabListV3Request.h>
+#include <tencentcloud/trtc/v20190722/model/GetRecognizeVocabListV3Response.h>
+#include <tencentcloud/trtc/v20190722/model/GetRecognizeVocabV3Request.h>
+#include <tencentcloud/trtc/v20190722/model/GetRecognizeVocabV3Response.h>
 #include <tencentcloud/trtc/v20190722/model/ModifyCloudModerationRequest.h>
 #include <tencentcloud/trtc/v20190722/model/ModifyCloudModerationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/ModifyCloudRecordingRequest.h>
@@ -137,6 +147,8 @@
 #include <tencentcloud/trtc/v20190722/model/RemoveUserResponse.h>
 #include <tencentcloud/trtc/v20190722/model/RemoveUserByStrRoomIdRequest.h>
 #include <tencentcloud/trtc/v20190722/model/RemoveUserByStrRoomIdResponse.h>
+#include <tencentcloud/trtc/v20190722/model/SetVocabStateV3Request.h>
+#include <tencentcloud/trtc/v20190722/model/SetVocabStateV3Response.h>
 #include <tencentcloud/trtc/v20190722/model/StartAIConversationRequest.h>
 #include <tencentcloud/trtc/v20190722/model/StartAIConversationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StartAITranscriptionRequest.h>
@@ -173,6 +185,8 @@
 #include <tencentcloud/trtc/v20190722/model/UpdateAIConversationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/UpdatePublishCdnStreamRequest.h>
 #include <tencentcloud/trtc/v20190722/model/UpdatePublishCdnStreamResponse.h>
+#include <tencentcloud/trtc/v20190722/model/UpdateRecognizeVocabV3Request.h>
+#include <tencentcloud/trtc/v20190722/model/UpdateRecognizeVocabV3Response.h>
 #include <tencentcloud/trtc/v20190722/model/UpdateStreamIngestRequest.h>
 #include <tencentcloud/trtc/v20190722/model/UpdateStreamIngestResponse.h>
 #include <tencentcloud/trtc/v20190722/model/UpdateVoicePrintRequest.h>
@@ -217,6 +231,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePictureResponse> CreatePictureOutcome;
                 typedef std::future<CreatePictureOutcome> CreatePictureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::CreatePictureRequest&, CreatePictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePictureAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRecognizeVocabV3Response> CreateRecognizeVocabV3Outcome;
+                typedef std::future<CreateRecognizeVocabV3Outcome> CreateRecognizeVocabV3OutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::CreateRecognizeVocabV3Request&, CreateRecognizeVocabV3Outcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecognizeVocabV3AsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCloudModerationResponse> DeleteCloudModerationOutcome;
                 typedef std::future<DeleteCloudModerationOutcome> DeleteCloudModerationOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DeleteCloudModerationRequest&, DeleteCloudModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudModerationAsyncHandler;
@@ -235,6 +252,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeletePictureResponse> DeletePictureOutcome;
                 typedef std::future<DeletePictureOutcome> DeletePictureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DeletePictureRequest&, DeletePictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePictureAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRecognizeVocabV3Response> DeleteRecognizeVocabV3Outcome;
+                typedef std::future<DeleteRecognizeVocabV3Outcome> DeleteRecognizeVocabV3OutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DeleteRecognizeVocabV3Request&, DeleteRecognizeVocabV3Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecognizeVocabV3AsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteVoicePrintResponse> DeleteVoicePrintOutcome;
                 typedef std::future<DeleteVoicePrintOutcome> DeleteVoicePrintOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DeleteVoicePrintRequest&, DeleteVoicePrintOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVoicePrintAsyncHandler;
@@ -343,6 +363,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DismissRoomByStrRoomIdResponse> DismissRoomByStrRoomIdOutcome;
                 typedef std::future<DismissRoomByStrRoomIdOutcome> DismissRoomByStrRoomIdOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DismissRoomByStrRoomIdRequest&, DismissRoomByStrRoomIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DismissRoomByStrRoomIdAsyncHandler;
+                typedef Outcome<Core::Error, Model::DownloadRecognizeVocabV3Response> DownloadRecognizeVocabV3Outcome;
+                typedef std::future<DownloadRecognizeVocabV3Outcome> DownloadRecognizeVocabV3OutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DownloadRecognizeVocabV3Request&, DownloadRecognizeVocabV3Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadRecognizeVocabV3AsyncHandler;
+                typedef Outcome<Core::Error, Model::GetRecognizeVocabListV3Response> GetRecognizeVocabListV3Outcome;
+                typedef std::future<GetRecognizeVocabListV3Outcome> GetRecognizeVocabListV3OutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::GetRecognizeVocabListV3Request&, GetRecognizeVocabListV3Outcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRecognizeVocabListV3AsyncHandler;
+                typedef Outcome<Core::Error, Model::GetRecognizeVocabV3Response> GetRecognizeVocabV3Outcome;
+                typedef std::future<GetRecognizeVocabV3Outcome> GetRecognizeVocabV3OutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::GetRecognizeVocabV3Request&, GetRecognizeVocabV3Outcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRecognizeVocabV3AsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCloudModerationResponse> ModifyCloudModerationOutcome;
                 typedef std::future<ModifyCloudModerationOutcome> ModifyCloudModerationOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::ModifyCloudModerationRequest&, ModifyCloudModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudModerationAsyncHandler;
@@ -364,6 +393,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RemoveUserByStrRoomIdResponse> RemoveUserByStrRoomIdOutcome;
                 typedef std::future<RemoveUserByStrRoomIdOutcome> RemoveUserByStrRoomIdOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::RemoveUserByStrRoomIdRequest&, RemoveUserByStrRoomIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveUserByStrRoomIdAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetVocabStateV3Response> SetVocabStateV3Outcome;
+                typedef std::future<SetVocabStateV3Outcome> SetVocabStateV3OutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::SetVocabStateV3Request&, SetVocabStateV3Outcome, const std::shared_ptr<const AsyncCallerContext>&)> SetVocabStateV3AsyncHandler;
                 typedef Outcome<Core::Error, Model::StartAIConversationResponse> StartAIConversationOutcome;
                 typedef std::future<StartAIConversationOutcome> StartAIConversationOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::StartAIConversationRequest&, StartAIConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartAIConversationAsyncHandler;
@@ -418,6 +450,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdatePublishCdnStreamResponse> UpdatePublishCdnStreamOutcome;
                 typedef std::future<UpdatePublishCdnStreamOutcome> UpdatePublishCdnStreamOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::UpdatePublishCdnStreamRequest&, UpdatePublishCdnStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePublishCdnStreamAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateRecognizeVocabV3Response> UpdateRecognizeVocabV3Outcome;
+                typedef std::future<UpdateRecognizeVocabV3Outcome> UpdateRecognizeVocabV3OutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::UpdateRecognizeVocabV3Request&, UpdateRecognizeVocabV3Outcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRecognizeVocabV3AsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateStreamIngestResponse> UpdateStreamIngestOutcome;
                 typedef std::future<UpdateStreamIngestOutcome> UpdateStreamIngestOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::UpdateStreamIngestRequest&, UpdateStreamIngestOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateStreamIngestAsyncHandler;
@@ -525,6 +560,23 @@ namespace TencentCloud
                 CreatePictureOutcomeCallable CreatePictureCallable(const Model::CreatePictureRequest& request);
 
                 /**
+                 *接口说明：
+用户通过本接口进行热词表的创建。
+
+• 默认最多可创建30个热词表。
+• 每个热词表最多可添加1000个词，每个词最长10个汉字或30个英文字符，不能超出限制。
+• 热词表可以通过数组或者本地文件形式上传。
+• 本地文件必须为UTF-8编码格式，每行仅添加一个热词且不能包含标点和特殊字符。
+• 热词权重取值范围为[1,11]之间的整数或者100，权重越大代表该词被识别出来的概率越大。
+• 注意: 热词权重设置为11时，当前热词将升级为超级热词，建议仅将重要且必须生效的热词设置到11，设置过多权重为11的热词将影响整体字准率。
+                 * @param req CreateRecognizeVocabV3Request
+                 * @return CreateRecognizeVocabV3Outcome
+                 */
+                CreateRecognizeVocabV3Outcome CreateRecognizeVocabV3(const Model::CreateRecognizeVocabV3Request &request);
+                void CreateRecognizeVocabV3Async(const Model::CreateRecognizeVocabV3Request& request, const CreateRecognizeVocabV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRecognizeVocabV3OutcomeCallable CreateRecognizeVocabV3Callable(const Model::CreateRecognizeVocabV3Request& request);
+
+                /**
                  *成功开启AI 内容理解任务后，可以使用此接口来停止进行内容识别。
                  * @param req DeleteCloudModerationRequest
                  * @return DeleteCloudModerationOutcome
@@ -577,6 +629,16 @@ namespace TencentCloud
                 DeletePictureOutcome DeletePicture(const Model::DeletePictureRequest &request);
                 void DeletePictureAsync(const Model::DeletePictureRequest& request, const DeletePictureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeletePictureOutcomeCallable DeletePictureCallable(const Model::DeletePictureRequest& request);
+
+                /**
+                 *接口说明：
+用户通过本接口进行热词表的删除。
+                 * @param req DeleteRecognizeVocabV3Request
+                 * @return DeleteRecognizeVocabV3Outcome
+                 */
+                DeleteRecognizeVocabV3Outcome DeleteRecognizeVocabV3(const Model::DeleteRecognizeVocabV3Request &request);
+                void DeleteRecognizeVocabV3Async(const Model::DeleteRecognizeVocabV3Request& request, const DeleteRecognizeVocabV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRecognizeVocabV3OutcomeCallable DeleteRecognizeVocabV3Callable(const Model::DeleteRecognizeVocabV3Request& request);
 
                 /**
                  *传入声纹ID，删除之前注册的声纹信息
@@ -996,6 +1058,36 @@ peakCurrentUsers：峰值同时在线人数。
                 DismissRoomByStrRoomIdOutcomeCallable DismissRoomByStrRoomIdCallable(const Model::DismissRoomByStrRoomIdRequest& request);
 
                 /**
+                 *接口说明：
+用户通过本接口进行热词表的下载，获得词表权重文件形式的 base64 值，文件形式为通过 “|” 分割的词和权重，即 word|weight 的形式。
+                 * @param req DownloadRecognizeVocabV3Request
+                 * @return DownloadRecognizeVocabV3Outcome
+                 */
+                DownloadRecognizeVocabV3Outcome DownloadRecognizeVocabV3(const Model::DownloadRecognizeVocabV3Request &request);
+                void DownloadRecognizeVocabV3Async(const Model::DownloadRecognizeVocabV3Request& request, const DownloadRecognizeVocabV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DownloadRecognizeVocabV3OutcomeCallable DownloadRecognizeVocabV3Callable(const Model::DownloadRecognizeVocabV3Request& request);
+
+                /**
+                 *接口说明：
+用户通过本接口分页列举所有的热词表。
+                 * @param req GetRecognizeVocabListV3Request
+                 * @return GetRecognizeVocabListV3Outcome
+                 */
+                GetRecognizeVocabListV3Outcome GetRecognizeVocabListV3(const Model::GetRecognizeVocabListV3Request &request);
+                void GetRecognizeVocabListV3Async(const Model::GetRecognizeVocabListV3Request& request, const GetRecognizeVocabListV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetRecognizeVocabListV3OutcomeCallable GetRecognizeVocabListV3Callable(const Model::GetRecognizeVocabListV3Request& request);
+
+                /**
+                 *接口说明：
+用户根据词表的ID可以获取对应的热词表信息
+                 * @param req GetRecognizeVocabV3Request
+                 * @return GetRecognizeVocabV3Outcome
+                 */
+                GetRecognizeVocabV3Outcome GetRecognizeVocabV3(const Model::GetRecognizeVocabV3Request &request);
+                void GetRecognizeVocabV3Async(const Model::GetRecognizeVocabV3Request& request, const GetRecognizeVocabV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetRecognizeVocabV3OutcomeCallable GetRecognizeVocabV3Callable(const Model::GetRecognizeVocabV3Request& request);
+
+                /**
                  *成功开启AI 内容理解任务后，可以使用此接口来更新订阅黑白名单。
                  * @param req ModifyCloudModerationRequest
                  * @return ModifyCloudModerationOutcome
@@ -1057,6 +1149,16 @@ peakCurrentUsers：峰值同时在线人数。
                 RemoveUserByStrRoomIdOutcome RemoveUserByStrRoomId(const Model::RemoveUserByStrRoomIdRequest &request);
                 void RemoveUserByStrRoomIdAsync(const Model::RemoveUserByStrRoomIdRequest& request, const RemoveUserByStrRoomIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RemoveUserByStrRoomIdOutcomeCallable RemoveUserByStrRoomIdCallable(const Model::RemoveUserByStrRoomIdRequest& request);
+
+                /**
+                 *接口说明：
+用户通过该接口可以设置热词表的默认状态。初始状态为0，用户可设置状态为1，即为默认状态。默认状态表示用户在请求识别时，如不设置热词表ID，则默认使用状态为1的热词表。
+                 * @param req SetVocabStateV3Request
+                 * @return SetVocabStateV3Outcome
+                 */
+                SetVocabStateV3Outcome SetVocabStateV3(const Model::SetVocabStateV3Request &request);
+                void SetVocabStateV3Async(const Model::SetVocabStateV3Request& request, const SetVocabStateV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetVocabStateV3OutcomeCallable SetVocabStateV3Callable(const Model::SetVocabStateV3Request& request);
 
                 /**
                  *启动AI对话任务，AI通道机器人进入TRTC房间，与房间内指定的成员进行AI对话，适用于智能客服，AI口语教师等场景
@@ -1283,6 +1385,16 @@ MCU 混流转码费用，请参考文档：[云端混流转码计费说明](http
                 UpdatePublishCdnStreamOutcome UpdatePublishCdnStream(const Model::UpdatePublishCdnStreamRequest &request);
                 void UpdatePublishCdnStreamAsync(const Model::UpdatePublishCdnStreamRequest& request, const UpdatePublishCdnStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdatePublishCdnStreamOutcomeCallable UpdatePublishCdnStreamCallable(const Model::UpdatePublishCdnStreamRequest& request);
+
+                /**
+                 *接口说明：
+用户通过本接口进行热词表的更新。
+                 * @param req UpdateRecognizeVocabV3Request
+                 * @return UpdateRecognizeVocabV3Outcome
+                 */
+                UpdateRecognizeVocabV3Outcome UpdateRecognizeVocabV3(const Model::UpdateRecognizeVocabV3Request &request);
+                void UpdateRecognizeVocabV3Async(const Model::UpdateRecognizeVocabV3Request& request, const UpdateRecognizeVocabV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateRecognizeVocabV3OutcomeCallable UpdateRecognizeVocabV3Callable(const Model::UpdateRecognizeVocabV3Request& request);
 
                 /**
                  *更新输入在线媒体流任务的StreamUrl

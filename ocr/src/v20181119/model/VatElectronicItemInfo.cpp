@@ -43,7 +43,8 @@ VatElectronicItemInfo::VatElectronicItemInfo() :
     m_travelDateHasBeenSet(false),
     m_travelLevelHasBeenSet(false),
     m_dateStartHasBeenSet(false),
-    m_dateEndHasBeenSet(false)
+    m_dateEndHasBeenSet(false),
+    m_vinNoHasBeenSet(false)
 {
 }
 
@@ -282,6 +283,16 @@ CoreInternalOutcome VatElectronicItemInfo::Deserialize(const rapidjson::Value &v
         m_dateEndHasBeenSet = true;
     }
 
+    if (value.HasMember("VinNo") && !value["VinNo"].IsNull())
+    {
+        if (!value["VinNo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatElectronicItemInfo.VinNo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vinNo = string(value["VinNo"].GetString());
+        m_vinNoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -471,6 +482,14 @@ void VatElectronicItemInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "DateEnd";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dateEnd.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vinNoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VinNo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vinNo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -842,5 +861,21 @@ void VatElectronicItemInfo::SetDateEnd(const string& _dateEnd)
 bool VatElectronicItemInfo::DateEndHasBeenSet() const
 {
     return m_dateEndHasBeenSet;
+}
+
+string VatElectronicItemInfo::GetVinNo() const
+{
+    return m_vinNo;
+}
+
+void VatElectronicItemInfo::SetVinNo(const string& _vinNo)
+{
+    m_vinNo = _vinNo;
+    m_vinNoHasBeenSet = true;
+}
+
+bool VatElectronicItemInfo::VinNoHasBeenSet() const
+{
+    return m_vinNoHasBeenSet;
 }
 

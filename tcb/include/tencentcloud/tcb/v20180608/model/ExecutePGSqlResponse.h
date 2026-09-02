@@ -74,6 +74,22 @@ namespace TencentCloud
                     bool ColumnsHasBeenSet() const;
 
                     /**
+                     * 获取<p>字段类型名</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ColumnTypes <p>字段类型名</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetColumnTypes() const;
+
+                    /**
+                     * 判断参数 ColumnTypes 是否已赋值
+                     * @return ColumnTypes 是否已赋值
+                     * 
+                     */
+                    bool ColumnTypesHasBeenSet() const;
+
+                    /**
                      * 获取<p>数据行。每一行数据都是一个JSON串，将JSON进行反序列化将得到了每列的值。值可能是 null 或者 字符串，如果是 null 说明该列的值为 &lt;null&gt;，如果是字符串则为该列的值的字符串表示形式。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rows <p>数据行。每一行数据都是一个JSON串，将JSON进行反序列化将得到了每列的值。值可能是 null 或者 字符串，如果是 null 说明该列的值为 &lt;null&gt;，如果是字符串则为该列的值的字符串表示形式。</p>
@@ -117,6 +133,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_columns;
                     bool m_columnsHasBeenSet;
+
+                    /**
+                     * <p>字段类型名</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_columnTypes;
+                    bool m_columnTypesHasBeenSet;
 
                     /**
                      * <p>数据行。每一行数据都是一个JSON串，将JSON进行反序列化将得到了每列的值。值可能是 null 或者 字符串，如果是 null 说明该列的值为 &lt;null&gt;，如果是字符串则为该列的值的字符串表示形式。</p>

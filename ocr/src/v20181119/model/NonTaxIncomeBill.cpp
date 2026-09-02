@@ -45,7 +45,8 @@ NonTaxIncomeBill::NonTaxIncomeBill() :
     m_payerBankHasBeenSet(false),
     m_receiverAccountHasBeenSet(false),
     m_receiverBankHasBeenSet(false),
-    m_nonTaxItemsHasBeenSet(false)
+    m_nonTaxItemsHasBeenSet(false),
+    m_billNameHasBeenSet(false)
 {
 }
 
@@ -314,6 +315,16 @@ CoreInternalOutcome NonTaxIncomeBill::Deserialize(const rapidjson::Value &value)
         m_nonTaxItemsHasBeenSet = true;
     }
 
+    if (value.HasMember("BillName") && !value["BillName"].IsNull())
+    {
+        if (!value["BillName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NonTaxIncomeBill.BillName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billName = string(value["BillName"].GetString());
+        m_billNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -526,6 +537,14 @@ void NonTaxIncomeBill::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_billNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -929,5 +948,21 @@ void NonTaxIncomeBill::SetNonTaxItems(const vector<NonTaxItem>& _nonTaxItems)
 bool NonTaxIncomeBill::NonTaxItemsHasBeenSet() const
 {
     return m_nonTaxItemsHasBeenSet;
+}
+
+string NonTaxIncomeBill::GetBillName() const
+{
+    return m_billName;
+}
+
+void NonTaxIncomeBill::SetBillName(const string& _billName)
+{
+    m_billName = _billName;
+    m_billNameHasBeenSet = true;
+}
+
+bool NonTaxIncomeBill::BillNameHasBeenSet() const
+{
+    return m_billNameHasBeenSet;
 }
 

@@ -440,6 +440,56 @@ TrtcClient::CreatePictureOutcomeCallable TrtcClient::CreatePictureCallable(const
     return prom->get_future();
 }
 
+TrtcClient::CreateRecognizeVocabV3Outcome TrtcClient::CreateRecognizeVocabV3(const CreateRecognizeVocabV3Request &request)
+{
+    auto outcome = MakeRequest(request, "CreateRecognizeVocabV3");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRecognizeVocabV3Response rsp = CreateRecognizeVocabV3Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRecognizeVocabV3Outcome(rsp);
+        else
+            return CreateRecognizeVocabV3Outcome(o.GetError());
+    }
+    else
+    {
+        return CreateRecognizeVocabV3Outcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::CreateRecognizeVocabV3Async(const CreateRecognizeVocabV3Request& request, const CreateRecognizeVocabV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateRecognizeVocabV3Request&;
+    using Resp = CreateRecognizeVocabV3Response;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateRecognizeVocabV3", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::CreateRecognizeVocabV3OutcomeCallable TrtcClient::CreateRecognizeVocabV3Callable(const CreateRecognizeVocabV3Request &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateRecognizeVocabV3Outcome>>();
+    CreateRecognizeVocabV3Async(
+    request,
+    [prom](
+        const TrtcClient*,
+        const CreateRecognizeVocabV3Request&,
+        CreateRecognizeVocabV3Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TrtcClient::DeleteCloudModerationOutcome TrtcClient::DeleteCloudModeration(const DeleteCloudModerationRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCloudModeration");
@@ -732,6 +782,56 @@ TrtcClient::DeletePictureOutcomeCallable TrtcClient::DeletePictureCallable(const
         const TrtcClient*,
         const DeletePictureRequest&,
         DeletePictureOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::DeleteRecognizeVocabV3Outcome TrtcClient::DeleteRecognizeVocabV3(const DeleteRecognizeVocabV3Request &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRecognizeVocabV3");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRecognizeVocabV3Response rsp = DeleteRecognizeVocabV3Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRecognizeVocabV3Outcome(rsp);
+        else
+            return DeleteRecognizeVocabV3Outcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRecognizeVocabV3Outcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DeleteRecognizeVocabV3Async(const DeleteRecognizeVocabV3Request& request, const DeleteRecognizeVocabV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteRecognizeVocabV3Request&;
+    using Resp = DeleteRecognizeVocabV3Response;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteRecognizeVocabV3", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DeleteRecognizeVocabV3OutcomeCallable TrtcClient::DeleteRecognizeVocabV3Callable(const DeleteRecognizeVocabV3Request &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteRecognizeVocabV3Outcome>>();
+    DeleteRecognizeVocabV3Async(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DeleteRecognizeVocabV3Request&,
+        DeleteRecognizeVocabV3Outcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2540,6 +2640,156 @@ TrtcClient::DismissRoomByStrRoomIdOutcomeCallable TrtcClient::DismissRoomByStrRo
     return prom->get_future();
 }
 
+TrtcClient::DownloadRecognizeVocabV3Outcome TrtcClient::DownloadRecognizeVocabV3(const DownloadRecognizeVocabV3Request &request)
+{
+    auto outcome = MakeRequest(request, "DownloadRecognizeVocabV3");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DownloadRecognizeVocabV3Response rsp = DownloadRecognizeVocabV3Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DownloadRecognizeVocabV3Outcome(rsp);
+        else
+            return DownloadRecognizeVocabV3Outcome(o.GetError());
+    }
+    else
+    {
+        return DownloadRecognizeVocabV3Outcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DownloadRecognizeVocabV3Async(const DownloadRecognizeVocabV3Request& request, const DownloadRecognizeVocabV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DownloadRecognizeVocabV3Request&;
+    using Resp = DownloadRecognizeVocabV3Response;
+
+    DoRequestAsync<Req, Resp>(
+        "DownloadRecognizeVocabV3", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DownloadRecognizeVocabV3OutcomeCallable TrtcClient::DownloadRecognizeVocabV3Callable(const DownloadRecognizeVocabV3Request &request)
+{
+    const auto prom = std::make_shared<std::promise<DownloadRecognizeVocabV3Outcome>>();
+    DownloadRecognizeVocabV3Async(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DownloadRecognizeVocabV3Request&,
+        DownloadRecognizeVocabV3Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::GetRecognizeVocabListV3Outcome TrtcClient::GetRecognizeVocabListV3(const GetRecognizeVocabListV3Request &request)
+{
+    auto outcome = MakeRequest(request, "GetRecognizeVocabListV3");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetRecognizeVocabListV3Response rsp = GetRecognizeVocabListV3Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetRecognizeVocabListV3Outcome(rsp);
+        else
+            return GetRecognizeVocabListV3Outcome(o.GetError());
+    }
+    else
+    {
+        return GetRecognizeVocabListV3Outcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::GetRecognizeVocabListV3Async(const GetRecognizeVocabListV3Request& request, const GetRecognizeVocabListV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetRecognizeVocabListV3Request&;
+    using Resp = GetRecognizeVocabListV3Response;
+
+    DoRequestAsync<Req, Resp>(
+        "GetRecognizeVocabListV3", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::GetRecognizeVocabListV3OutcomeCallable TrtcClient::GetRecognizeVocabListV3Callable(const GetRecognizeVocabListV3Request &request)
+{
+    const auto prom = std::make_shared<std::promise<GetRecognizeVocabListV3Outcome>>();
+    GetRecognizeVocabListV3Async(
+    request,
+    [prom](
+        const TrtcClient*,
+        const GetRecognizeVocabListV3Request&,
+        GetRecognizeVocabListV3Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::GetRecognizeVocabV3Outcome TrtcClient::GetRecognizeVocabV3(const GetRecognizeVocabV3Request &request)
+{
+    auto outcome = MakeRequest(request, "GetRecognizeVocabV3");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetRecognizeVocabV3Response rsp = GetRecognizeVocabV3Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetRecognizeVocabV3Outcome(rsp);
+        else
+            return GetRecognizeVocabV3Outcome(o.GetError());
+    }
+    else
+    {
+        return GetRecognizeVocabV3Outcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::GetRecognizeVocabV3Async(const GetRecognizeVocabV3Request& request, const GetRecognizeVocabV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetRecognizeVocabV3Request&;
+    using Resp = GetRecognizeVocabV3Response;
+
+    DoRequestAsync<Req, Resp>(
+        "GetRecognizeVocabV3", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::GetRecognizeVocabV3OutcomeCallable TrtcClient::GetRecognizeVocabV3Callable(const GetRecognizeVocabV3Request &request)
+{
+    const auto prom = std::make_shared<std::promise<GetRecognizeVocabV3Outcome>>();
+    GetRecognizeVocabV3Async(
+    request,
+    [prom](
+        const TrtcClient*,
+        const GetRecognizeVocabV3Request&,
+        GetRecognizeVocabV3Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TrtcClient::ModifyCloudModerationOutcome TrtcClient::ModifyCloudModeration(const ModifyCloudModerationRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCloudModeration");
@@ -2882,6 +3132,56 @@ TrtcClient::RemoveUserByStrRoomIdOutcomeCallable TrtcClient::RemoveUserByStrRoom
         const TrtcClient*,
         const RemoveUserByStrRoomIdRequest&,
         RemoveUserByStrRoomIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::SetVocabStateV3Outcome TrtcClient::SetVocabStateV3(const SetVocabStateV3Request &request)
+{
+    auto outcome = MakeRequest(request, "SetVocabStateV3");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetVocabStateV3Response rsp = SetVocabStateV3Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetVocabStateV3Outcome(rsp);
+        else
+            return SetVocabStateV3Outcome(o.GetError());
+    }
+    else
+    {
+        return SetVocabStateV3Outcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::SetVocabStateV3Async(const SetVocabStateV3Request& request, const SetVocabStateV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SetVocabStateV3Request&;
+    using Resp = SetVocabStateV3Response;
+
+    DoRequestAsync<Req, Resp>(
+        "SetVocabStateV3", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::SetVocabStateV3OutcomeCallable TrtcClient::SetVocabStateV3Callable(const SetVocabStateV3Request &request)
+{
+    const auto prom = std::make_shared<std::promise<SetVocabStateV3Outcome>>();
+    SetVocabStateV3Async(
+    request,
+    [prom](
+        const TrtcClient*,
+        const SetVocabStateV3Request&,
+        SetVocabStateV3Outcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3782,6 +4082,56 @@ TrtcClient::UpdatePublishCdnStreamOutcomeCallable TrtcClient::UpdatePublishCdnSt
         const TrtcClient*,
         const UpdatePublishCdnStreamRequest&,
         UpdatePublishCdnStreamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::UpdateRecognizeVocabV3Outcome TrtcClient::UpdateRecognizeVocabV3(const UpdateRecognizeVocabV3Request &request)
+{
+    auto outcome = MakeRequest(request, "UpdateRecognizeVocabV3");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateRecognizeVocabV3Response rsp = UpdateRecognizeVocabV3Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateRecognizeVocabV3Outcome(rsp);
+        else
+            return UpdateRecognizeVocabV3Outcome(o.GetError());
+    }
+    else
+    {
+        return UpdateRecognizeVocabV3Outcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::UpdateRecognizeVocabV3Async(const UpdateRecognizeVocabV3Request& request, const UpdateRecognizeVocabV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateRecognizeVocabV3Request&;
+    using Resp = UpdateRecognizeVocabV3Response;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateRecognizeVocabV3", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::UpdateRecognizeVocabV3OutcomeCallable TrtcClient::UpdateRecognizeVocabV3Callable(const UpdateRecognizeVocabV3Request &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateRecognizeVocabV3Outcome>>();
+    UpdateRecognizeVocabV3Async(
+    request,
+    [prom](
+        const TrtcClient*,
+        const UpdateRecognizeVocabV3Request&,
+        UpdateRecognizeVocabV3Outcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool CapacityHardLimitHasBeenSet() const;
 
                     /**
-                     * 获取<p>文件硬限制，单位个。设置范围1000-100000000</p>
-                     * @return FileHardLimit <p>文件硬限制，单位个。设置范围1000-100000000</p>
+                     * 获取<p>文件硬限制</p><p>取值范围：[1000, 1000000000]</p><p>单位：个</p><p>默认值：无默认值</p>
+                     * @return FileHardLimit <p>文件硬限制</p><p>取值范围：[1000, 1000000000]</p><p>单位：个</p><p>默认值：无默认值</p>
                      * 
                      */
                     uint64_t GetFileHardLimit() const;
 
                     /**
-                     * 设置<p>文件硬限制，单位个。设置范围1000-100000000</p>
-                     * @param _fileHardLimit <p>文件硬限制，单位个。设置范围1000-100000000</p>
+                     * 设置<p>文件硬限制</p><p>取值范围：[1000, 1000000000]</p><p>单位：个</p><p>默认值：无默认值</p>
+                     * @param _fileHardLimit <p>文件硬限制</p><p>取值范围：[1000, 1000000000]</p><p>单位：个</p><p>默认值：无默认值</p>
                      * 
                      */
                     void SetFileHardLimit(const uint64_t& _fileHardLimit);
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_capacityHardLimitHasBeenSet;
 
                     /**
-                     * <p>文件硬限制，单位个。设置范围1000-100000000</p>
+                     * <p>文件硬限制</p><p>取值范围：[1000, 1000000000]</p><p>单位：个</p><p>默认值：无默认值</p>
                      */
                     uint64_t m_fileHardLimit;
                     bool m_fileHardLimitHasBeenSet;

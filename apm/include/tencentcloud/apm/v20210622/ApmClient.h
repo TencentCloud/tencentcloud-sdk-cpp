@@ -67,6 +67,8 @@
 #include <tencentcloud/apm/v20210622/model/DescribeMetricRecordsResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeOPRAllVulCountRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeOPRAllVulCountResponse.h>
+#include <tencentcloud/apm/v20210622/model/DescribeRelatedServicesOnTraceRequest.h>
+#include <tencentcloud/apm/v20210622/model/DescribeRelatedServicesOnTraceResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeServiceOverviewRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeServiceOverviewResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeTagValuesRequest.h>
@@ -169,6 +171,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOPRAllVulCountResponse> DescribeOPRAllVulCountOutcome;
                 typedef std::future<DescribeOPRAllVulCountOutcome> DescribeOPRAllVulCountOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeOPRAllVulCountRequest&, DescribeOPRAllVulCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOPRAllVulCountAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRelatedServicesOnTraceResponse> DescribeRelatedServicesOnTraceOutcome;
+                typedef std::future<DescribeRelatedServicesOnTraceOutcome> DescribeRelatedServicesOnTraceOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::DescribeRelatedServicesOnTraceRequest&, DescribeRelatedServicesOnTraceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRelatedServicesOnTraceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeServiceOverviewResponse> DescribeServiceOverviewOutcome;
                 typedef std::future<DescribeServiceOverviewOutcome> DescribeServiceOverviewOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeServiceOverviewRequest&, DescribeServiceOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceOverviewAsyncHandler;
@@ -423,6 +428,15 @@ namespace TencentCloud
                 DescribeOPRAllVulCountOutcome DescribeOPRAllVulCount(const Model::DescribeOPRAllVulCountRequest &request);
                 void DescribeOPRAllVulCountAsync(const Model::DescribeOPRAllVulCountRequest& request, const DescribeOPRAllVulCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeOPRAllVulCountOutcomeCallable DescribeOPRAllVulCountCallable(const Model::DescribeOPRAllVulCountRequest& request);
+
+                /**
+                 *根据链路查询目标服务的上下游相关服务
+                 * @param req DescribeRelatedServicesOnTraceRequest
+                 * @return DescribeRelatedServicesOnTraceOutcome
+                 */
+                DescribeRelatedServicesOnTraceOutcome DescribeRelatedServicesOnTrace(const Model::DescribeRelatedServicesOnTraceRequest &request);
+                void DescribeRelatedServicesOnTraceAsync(const Model::DescribeRelatedServicesOnTraceRequest& request, const DescribeRelatedServicesOnTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRelatedServicesOnTraceOutcomeCallable DescribeRelatedServicesOnTraceCallable(const Model::DescribeRelatedServicesOnTraceRequest& request);
 
                 /**
                  *应用概览数据拉取

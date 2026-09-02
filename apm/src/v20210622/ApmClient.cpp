@@ -1140,6 +1140,56 @@ ApmClient::DescribeOPRAllVulCountOutcomeCallable ApmClient::DescribeOPRAllVulCou
     return prom->get_future();
 }
 
+ApmClient::DescribeRelatedServicesOnTraceOutcome ApmClient::DescribeRelatedServicesOnTrace(const DescribeRelatedServicesOnTraceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRelatedServicesOnTrace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRelatedServicesOnTraceResponse rsp = DescribeRelatedServicesOnTraceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRelatedServicesOnTraceOutcome(rsp);
+        else
+            return DescribeRelatedServicesOnTraceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRelatedServicesOnTraceOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::DescribeRelatedServicesOnTraceAsync(const DescribeRelatedServicesOnTraceRequest& request, const DescribeRelatedServicesOnTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRelatedServicesOnTraceRequest&;
+    using Resp = DescribeRelatedServicesOnTraceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRelatedServicesOnTrace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ApmClient::DescribeRelatedServicesOnTraceOutcomeCallable ApmClient::DescribeRelatedServicesOnTraceCallable(const DescribeRelatedServicesOnTraceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRelatedServicesOnTraceOutcome>>();
+    DescribeRelatedServicesOnTraceAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const DescribeRelatedServicesOnTraceRequest&,
+        DescribeRelatedServicesOnTraceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ApmClient::DescribeServiceOverviewOutcome ApmClient::DescribeServiceOverview(const DescribeServiceOverviewRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeServiceOverview");

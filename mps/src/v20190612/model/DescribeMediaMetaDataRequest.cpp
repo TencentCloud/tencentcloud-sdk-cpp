@@ -23,7 +23,8 @@ using namespace TencentCloud::Mps::V20190612::Model;
 using namespace std;
 
 DescribeMediaMetaDataRequest::DescribeMediaMetaDataRequest() :
-    m_inputInfoHasBeenSet(false)
+    m_inputInfoHasBeenSet(false),
+    m_modeHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,14 @@ string DescribeMediaMetaDataRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_inputInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_modeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_mode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -65,6 +74,22 @@ void DescribeMediaMetaDataRequest::SetInputInfo(const MediaInputInfo& _inputInfo
 bool DescribeMediaMetaDataRequest::InputInfoHasBeenSet() const
 {
     return m_inputInfoHasBeenSet;
+}
+
+string DescribeMediaMetaDataRequest::GetMode() const
+{
+    return m_mode;
+}
+
+void DescribeMediaMetaDataRequest::SetMode(const string& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool DescribeMediaMetaDataRequest::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
 }
 
 

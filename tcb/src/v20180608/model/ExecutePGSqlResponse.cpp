@@ -26,6 +26,7 @@ using namespace std;
 ExecutePGSqlResponse::ExecutePGSqlResponse() :
     m_affectedRowsHasBeenSet(false),
     m_columnsHasBeenSet(false),
+    m_columnTypesHasBeenSet(false),
     m_rowsHasBeenSet(false),
     m_executionTimeMsHasBeenSet(false)
 {
@@ -88,6 +89,19 @@ CoreInternalOutcome ExecutePGSqlResponse::Deserialize(const string &payload)
         m_columnsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ColumnTypes") && !rsp["ColumnTypes"].IsNull())
+    {
+        if (!rsp["ColumnTypes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ColumnTypes` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ColumnTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_columnTypes.push_back((*itr).GetString());
+        }
+        m_columnTypesHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Rows") && !rsp["Rows"].IsNull())
     {
         if (!rsp["Rows"].IsArray())
@@ -137,6 +151,19 @@ string ExecutePGSqlResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_columns.begin(); itr != m_columns.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_columnTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ColumnTypes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_columnTypes.begin(); itr != m_columnTypes.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -193,6 +220,16 @@ vector<string> ExecutePGSqlResponse::GetColumns() const
 bool ExecutePGSqlResponse::ColumnsHasBeenSet() const
 {
     return m_columnsHasBeenSet;
+}
+
+vector<string> ExecutePGSqlResponse::GetColumnTypes() const
+{
+    return m_columnTypes;
+}
+
+bool ExecutePGSqlResponse::ColumnTypesHasBeenSet() const
+{
+    return m_columnTypesHasBeenSet;
 }
 
 vector<string> ExecutePGSqlResponse::GetRows() const

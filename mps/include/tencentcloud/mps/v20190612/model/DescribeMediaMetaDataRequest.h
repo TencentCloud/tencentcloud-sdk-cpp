@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要获取元信息的文件输入信息。
-                     * @return InputInfo 需要获取元信息的文件输入信息。
+                     * 获取<p>需要获取元信息的文件输入信息。</p>
+                     * @return InputInfo <p>需要获取元信息的文件输入信息。</p>
                      * 
                      */
                     MediaInputInfo GetInputInfo() const;
 
                     /**
-                     * 设置需要获取元信息的文件输入信息。
-                     * @param _inputInfo 需要获取元信息的文件输入信息。
+                     * 设置<p>需要获取元信息的文件输入信息。</p>
+                     * @param _inputInfo <p>需要获取元信息的文件输入信息。</p>
                      * 
                      */
                     void SetInputInfo(const MediaInputInfo& _inputInfo);
@@ -64,13 +64,40 @@ namespace TencentCloud
                      */
                     bool InputInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>指定为slow时，增加接口超时时间</p><p>枚举值：</p><ul><li>slow： 增加接口超时时间</li></ul>
+                     * @return Mode <p>指定为slow时，增加接口超时时间</p><p>枚举值：</p><ul><li>slow： 增加接口超时时间</li></ul>
+                     * 
+                     */
+                    std::string GetMode() const;
+
+                    /**
+                     * 设置<p>指定为slow时，增加接口超时时间</p><p>枚举值：</p><ul><li>slow： 增加接口超时时间</li></ul>
+                     * @param _mode <p>指定为slow时，增加接口超时时间</p><p>枚举值：</p><ul><li>slow： 增加接口超时时间</li></ul>
+                     * 
+                     */
+                    void SetMode(const std::string& _mode);
+
+                    /**
+                     * 判断参数 Mode 是否已赋值
+                     * @return Mode 是否已赋值
+                     * 
+                     */
+                    bool ModeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 需要获取元信息的文件输入信息。
+                     * <p>需要获取元信息的文件输入信息。</p>
                      */
                     MediaInputInfo m_inputInfo;
                     bool m_inputInfoHasBeenSet;
+
+                    /**
+                     * <p>指定为slow时，增加接口超时时间</p><p>枚举值：</p><ul><li>slow： 增加接口超时时间</li></ul>
+                     */
+                    std::string m_mode;
+                    bool m_modeHasBeenSet;
 
                 };
             }

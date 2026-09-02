@@ -529,6 +529,27 @@ namespace TencentCloud
                      */
                     bool DateEndHasBeenSet() const;
 
+                    /**
+                     * 获取<p>车架号</p>
+                     * @return VinNo <p>车架号</p>
+                     * 
+                     */
+                    std::string GetVinNo() const;
+
+                    /**
+                     * 设置<p>车架号</p>
+                     * @param _vinNo <p>车架号</p>
+                     * 
+                     */
+                    void SetVinNo(const std::string& _vinNo);
+
+                    /**
+                     * 判断参数 VinNo 是否已赋值
+                     * @return VinNo 是否已赋值
+                     * 
+                     */
+                    bool VinNoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -668,6 +689,12 @@ namespace TencentCloud
                      */
                     std::string m_dateEnd;
                     bool m_dateEndHasBeenSet;
+
+                    /**
+                     * <p>车架号</p>
+                     */
+                    std::string m_vinNo;
+                    bool m_vinNoHasBeenSet;
 
                 };
             }

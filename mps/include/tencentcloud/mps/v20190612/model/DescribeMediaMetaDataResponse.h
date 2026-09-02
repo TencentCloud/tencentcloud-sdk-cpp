@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体元信息。
-                     * @return MetaData 媒体元信息。
+                     * 获取<p>媒体元信息。</p>
+                     * @return MetaData <p>媒体元信息。</p>
                      * 
                      */
                     MediaMetaData GetMetaData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒体元信息。
+                     * <p>媒体元信息。</p>
                      */
                     MediaMetaData m_metaData;
                     bool m_metaDataHasBeenSet;

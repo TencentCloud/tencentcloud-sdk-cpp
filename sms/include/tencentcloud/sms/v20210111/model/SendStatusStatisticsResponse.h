@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取发送数据统计响应包体。
-                     * @return SendStatusStatistics 发送数据统计响应包体。
+                     * 获取<p>发送数据统计响应包体。</p>
+                     * @return SendStatusStatistics <p>发送数据统计响应包体。</p>
                      * 
                      */
                     SendStatusStatistics GetSendStatusStatistics() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 发送数据统计响应包体。
+                     * <p>发送数据统计响应包体。</p>
                      */
                     SendStatusStatistics m_sendStatusStatistics;
                     bool m_sendStatusStatisticsHasBeenSet;
