@@ -30,6 +30,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/BudgetWarn.h
   include/tencentcloud/billing/v20180709/model/ModifyAllocationRuleRequest.h
   include/tencentcloud/billing/v20180709/model/DeleteAllocationRuleRequest.h
+  include/tencentcloud/billing/v20180709/model/DescribeAccountWarningResponse.h
   include/tencentcloud/billing/v20180709/model/CreateAllocationRuleResponse.h
   include/tencentcloud/billing/v20180709/model/BillTagInfo.h
   include/tencentcloud/billing/v20180709/model/AllocationOverviewTotal.h
@@ -189,6 +190,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/DescribeBillResourceSummaryRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeRenewInstancesResponse.h
   include/tencentcloud/billing/v20180709/model/BillDetailComponent.h
+  include/tencentcloud/billing/v20180709/model/ModifyAccountWarningRequest.h
   include/tencentcloud/billing/v20180709/model/ConditionRegion.h
   include/tencentcloud/billing/v20180709/model/AllocationAverageData.h
   include/tencentcloud/billing/v20180709/model/ConsumptionResourceSummaryConditionValue.h
@@ -197,6 +199,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/BudgetSendInfoDto.h
   include/tencentcloud/billing/v20180709/model/RenewInstanceRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeBillSummaryForOrganizationResponse.h
+  include/tencentcloud/billing/v20180709/model/ModifyAccountWarningResponse.h
   include/tencentcloud/billing/v20180709/model/BillOperateUin.h
   include/tencentcloud/billing/v20180709/model/DescribeTagListRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeBillResourceSummaryForOrganizationResponse.h
@@ -250,6 +253,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/DeleteBudgetRequest.h
   include/tencentcloud/billing/v20180709/model/BillActionType.h
   include/tencentcloud/billing/v20180709/model/GatherResourceSummary.h
+  include/tencentcloud/billing/v20180709/model/DescribeAccountWarningRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeSavingPlanResourceInfoResponse.h
   include/tencentcloud/billing/v20180709/model/DescribeDealsByCondRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeAllocationSummaryByResourceResponse.h
@@ -289,6 +293,7 @@ set(billing_src
   src/v20180709/model/BudgetWarn.cpp
   src/v20180709/model/ModifyAllocationRuleRequest.cpp
   src/v20180709/model/DeleteAllocationRuleRequest.cpp
+  src/v20180709/model/DescribeAccountWarningResponse.cpp
   src/v20180709/model/CreateAllocationRuleResponse.cpp
   src/v20180709/model/BillTagInfo.cpp
   src/v20180709/model/AllocationOverviewTotal.cpp
@@ -448,6 +453,7 @@ set(billing_src
   src/v20180709/model/DescribeBillResourceSummaryRequest.cpp
   src/v20180709/model/DescribeRenewInstancesResponse.cpp
   src/v20180709/model/BillDetailComponent.cpp
+  src/v20180709/model/ModifyAccountWarningRequest.cpp
   src/v20180709/model/ConditionRegion.cpp
   src/v20180709/model/AllocationAverageData.cpp
   src/v20180709/model/ConsumptionResourceSummaryConditionValue.cpp
@@ -456,6 +462,7 @@ set(billing_src
   src/v20180709/model/BudgetSendInfoDto.cpp
   src/v20180709/model/RenewInstanceRequest.cpp
   src/v20180709/model/DescribeBillSummaryForOrganizationResponse.cpp
+  src/v20180709/model/ModifyAccountWarningResponse.cpp
   src/v20180709/model/BillOperateUin.cpp
   src/v20180709/model/DescribeTagListRequest.cpp
   src/v20180709/model/DescribeBillResourceSummaryForOrganizationResponse.cpp
@@ -509,6 +516,7 @@ set(billing_src
   src/v20180709/model/DeleteBudgetRequest.cpp
   src/v20180709/model/BillActionType.cpp
   src/v20180709/model/GatherResourceSummary.cpp
+  src/v20180709/model/DescribeAccountWarningRequest.cpp
   src/v20180709/model/DescribeSavingPlanResourceInfoResponse.cpp
   src/v20180709/model/DescribeDealsByCondRequest.cpp
   src/v20180709/model/DescribeAllocationSummaryByResourceResponse.cpp

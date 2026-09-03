@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/thpc/v20230321/model/Filter.h>
 
 
 namespace TencentCloud
@@ -105,6 +106,27 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取<li><strong>queue-name</strong></li> <p style="padding-left: 30px;">按照【<strong>队列名称</strong>】进行过滤。队列名称形如：compute。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p><p style="padding-left: 30px;">每次请求的<code>Filters</code>的上限为10，<code>Filter.Values</code>的上限为5。</p>
+                     * @return Filters <li><strong>queue-name</strong></li> <p style="padding-left: 30px;">按照【<strong>队列名称</strong>】进行过滤。队列名称形如：compute。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p><p style="padding-left: 30px;">每次请求的<code>Filters</code>的上限为10，<code>Filter.Values</code>的上限为5。</p>
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置<li><strong>queue-name</strong></li> <p style="padding-left: 30px;">按照【<strong>队列名称</strong>】进行过滤。队列名称形如：compute。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p><p style="padding-left: 30px;">每次请求的<code>Filters</code>的上限为10，<code>Filter.Values</code>的上限为5。</p>
+                     * @param _filters <li><strong>queue-name</strong></li> <p style="padding-left: 30px;">按照【<strong>队列名称</strong>】进行过滤。队列名称形如：compute。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p><p style="padding-left: 30px;">每次请求的<code>Filters</code>的上限为10，<code>Filter.Values</code>的上限为5。</p>
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +146,12 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * <li><strong>queue-name</strong></li> <p style="padding-left: 30px;">按照【<strong>队列名称</strong>】进行过滤。队列名称形如：compute。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p><p style="padding-left: 30px;">每次请求的<code>Filters</code>的上限为10，<code>Filter.Values</code>的上限为5。</p>
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

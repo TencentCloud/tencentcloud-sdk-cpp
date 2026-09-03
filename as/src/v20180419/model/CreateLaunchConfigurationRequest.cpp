@@ -50,7 +50,8 @@ CreateLaunchConfigurationRequest::CreateLaunchConfigurationRequest() :
     m_disasterRecoverGroupIdsHasBeenSet(false),
     m_imageFamilyHasBeenSet(false),
     m_dedicatedClusterIdHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+    m_metadataHasBeenSet(false),
+    m_networkInterfacesHasBeenSet(false)
 {
 }
 
@@ -329,6 +330,21 @@ string CreateLaunchConfigurationRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_metadata.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_networkInterfacesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkInterfaces";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_networkInterfaces.begin(); itr != m_networkInterfaces.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -785,6 +801,22 @@ void CreateLaunchConfigurationRequest::SetMetadata(const Metadata& _metadata)
 bool CreateLaunchConfigurationRequest::MetadataHasBeenSet() const
 {
     return m_metadataHasBeenSet;
+}
+
+vector<NetworkInterface> CreateLaunchConfigurationRequest::GetNetworkInterfaces() const
+{
+    return m_networkInterfaces;
+}
+
+void CreateLaunchConfigurationRequest::SetNetworkInterfaces(const vector<NetworkInterface>& _networkInterfaces)
+{
+    m_networkInterfaces = _networkInterfaces;
+    m_networkInterfacesHasBeenSet = true;
+}
+
+bool CreateLaunchConfigurationRequest::NetworkInterfacesHasBeenSet() const
+{
+    return m_networkInterfacesHasBeenSet;
 }
 
 

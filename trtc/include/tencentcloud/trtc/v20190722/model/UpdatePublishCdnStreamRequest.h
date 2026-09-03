@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。
-                     * @return SdkAppId TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。
+                     * 获取<p>TRTC的<a href="https://cloud.tencent.com/document/product/647/46351#sdkappid">SdkAppId</a>，和转推的房间所对应的SdkAppId相同。</p>
+                     * @return SdkAppId <p>TRTC的<a href="https://cloud.tencent.com/document/product/647/46351#sdkappid">SdkAppId</a>，和转推的房间所对应的SdkAppId相同。</p>
                      * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
-                     * 设置TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。
-                     * @param _sdkAppId TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。
+                     * 设置<p>TRTC的<a href="https://cloud.tencent.com/document/product/647/46351#sdkappid">SdkAppId</a>，和转推的房间所对应的SdkAppId相同。</p>
+                     * @param _sdkAppId <p>TRTC的<a href="https://cloud.tencent.com/document/product/647/46351#sdkappid">SdkAppId</a>，和转推的房间所对应的SdkAppId相同。</p>
                      * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取唯一标识转推任务。
-                     * @return TaskId 唯一标识转推任务。
+                     * 获取<p>唯一标识转推任务。</p>
+                     * @return TaskId <p>唯一标识转推任务。</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置唯一标识转推任务。
-                     * @param _taskId 唯一标识转推任务。
+                     * 设置<p>唯一标识转推任务。</p>
+                     * @param _taskId <p>唯一标识转推任务。</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取客户保证同一个任务，每次更新请求中的SequenceNumber递增，防止请求乱序。
-                     * @return SequenceNumber 客户保证同一个任务，每次更新请求中的SequenceNumber递增，防止请求乱序。
+                     * 获取<p>客户保证同一个任务，每次更新请求中的SequenceNumber递增，防止请求乱序。</p>
+                     * @return SequenceNumber <p>客户保证同一个任务，每次更新请求中的SequenceNumber递增，防止请求乱序。</p>
                      * 
                      */
                     uint64_t GetSequenceNumber() const;
 
                     /**
-                     * 设置客户保证同一个任务，每次更新请求中的SequenceNumber递增，防止请求乱序。
-                     * @param _sequenceNumber 客户保证同一个任务，每次更新请求中的SequenceNumber递增，防止请求乱序。
+                     * 设置<p>客户保证同一个任务，每次更新请求中的SequenceNumber递增，防止请求乱序。</p>
+                     * @param _sequenceNumber <p>客户保证同一个任务，每次更新请求中的SequenceNumber递增，防止请求乱序。</p>
                      * 
                      */
                     void SetSequenceNumber(const uint64_t& _sequenceNumber);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool SequenceNumberHasBeenSet() const;
 
                     /**
-                     * 获取是否转码，0表示无需转码，1表示需要转码。 WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。 注： 1，混流是必须转码的，这个参数需设置为1。 2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。
-                     * @return WithTranscoding 是否转码，0表示无需转码，1表示需要转码。 WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。 注： 1，混流是必须转码的，这个参数需设置为1。 2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。
+                     * 获取<p>是否转码，0表示无需转码，1表示需要转码。 WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。 注： 1，混流是必须转码的，这个参数需设置为1。 2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。</p>
+                     * @return WithTranscoding <p>是否转码，0表示无需转码，1表示需要转码。 WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。 注： 1，混流是必须转码的，这个参数需设置为1。 2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。</p>
                      * 
                      */
                     uint64_t GetWithTranscoding() const;
 
                     /**
-                     * 设置是否转码，0表示无需转码，1表示需要转码。 WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。 注： 1，混流是必须转码的，这个参数需设置为1。 2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。
-                     * @param _withTranscoding 是否转码，0表示无需转码，1表示需要转码。 WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。 注： 1，混流是必须转码的，这个参数需设置为1。 2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。
+                     * 设置<p>是否转码，0表示无需转码，1表示需要转码。 WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。 注： 1，混流是必须转码的，这个参数需设置为1。 2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。</p>
+                     * @param _withTranscoding <p>是否转码，0表示无需转码，1表示需要转码。 WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。 注： 1，混流是必须转码的，这个参数需设置为1。 2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。</p>
                      * 
                      */
                     void SetWithTranscoding(const uint64_t& _withTranscoding);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool WithTranscodingHasBeenSet() const;
 
                     /**
-                     * 获取更新相关参数，只支持更新参与混音的主播列表参数，不支持更新Codec、采样率、码率和声道数。不填表示不更新此参数。
-                     * @return AudioParams 更新相关参数，只支持更新参与混音的主播列表参数，不支持更新Codec、采样率、码率和声道数。不填表示不更新此参数。
+                     * 获取<p>更新相关参数，只支持更新参与混音的主播列表参数，不支持更新Codec、采样率、码率和声道数。不填表示不更新此参数。</p>
+                     * @return AudioParams <p>更新相关参数，只支持更新参与混音的主播列表参数，不支持更新Codec、采样率、码率和声道数。不填表示不更新此参数。</p>
                      * 
                      */
                     McuAudioParams GetAudioParams() const;
 
                     /**
-                     * 设置更新相关参数，只支持更新参与混音的主播列表参数，不支持更新Codec、采样率、码率和声道数。不填表示不更新此参数。
-                     * @param _audioParams 更新相关参数，只支持更新参与混音的主播列表参数，不支持更新Codec、采样率、码率和声道数。不填表示不更新此参数。
+                     * 设置<p>更新相关参数，只支持更新参与混音的主播列表参数，不支持更新Codec、采样率、码率和声道数。不填表示不更新此参数。</p>
+                     * @param _audioParams <p>更新相关参数，只支持更新参与混音的主播列表参数，不支持更新Codec、采样率、码率和声道数。不填表示不更新此参数。</p>
                      * 
                      */
                     void SetAudioParams(const McuAudioParams& _audioParams);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool AudioParamsHasBeenSet() const;
 
                     /**
-                     * 获取更新视频相关参数，转码时支持更新除编码类型之外的编码参数，视频布局参数，背景图片和背景颜色参数，水印参数。不填表示不更新此参数。
-                     * @return VideoParams 更新视频相关参数，转码时支持更新除编码类型之外的编码参数，视频布局参数，背景图片和背景颜色参数，水印参数。不填表示不更新此参数。
+                     * 获取<p>更新视频相关参数，转码时支持更新除编码类型之外的编码参数，视频布局参数，背景图片和背景颜色参数，水印参数。不填表示不更新此参数。</p>
+                     * @return VideoParams <p>更新视频相关参数，转码时支持更新除编码类型之外的编码参数，视频布局参数，背景图片和背景颜色参数，水印参数。不填表示不更新此参数。</p>
                      * 
                      */
                     McuVideoParams GetVideoParams() const;
 
                     /**
-                     * 设置更新视频相关参数，转码时支持更新除编码类型之外的编码参数，视频布局参数，背景图片和背景颜色参数，水印参数。不填表示不更新此参数。
-                     * @param _videoParams 更新视频相关参数，转码时支持更新除编码类型之外的编码参数，视频布局参数，背景图片和背景颜色参数，水印参数。不填表示不更新此参数。
+                     * 设置<p>更新视频相关参数，转码时支持更新除编码类型之外的编码参数，视频布局参数，背景图片和背景颜色参数，水印参数。不填表示不更新此参数。</p>
+                     * @param _videoParams <p>更新视频相关参数，转码时支持更新除编码类型之外的编码参数，视频布局参数，背景图片和背景颜色参数，水印参数。不填表示不更新此参数。</p>
                      * 
                      */
                     void SetVideoParams(const McuVideoParams& _videoParams);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool VideoParamsHasBeenSet() const;
 
                     /**
-                     * 获取更新单流转推的用户上行参数，仅在非转码时有效。不填表示不更新此参数。
-                     * @return SingleSubscribeParams 更新单流转推的用户上行参数，仅在非转码时有效。不填表示不更新此参数。
+                     * 获取<p>更新单流转推的用户上行参数，仅在非转码时有效。不填表示不更新此参数。</p>
+                     * @return SingleSubscribeParams <p>更新单流转推的用户上行参数，仅在非转码时有效。不填表示不更新此参数。</p>
                      * 
                      */
                     SingleSubscribeParams GetSingleSubscribeParams() const;
 
                     /**
-                     * 设置更新单流转推的用户上行参数，仅在非转码时有效。不填表示不更新此参数。
-                     * @param _singleSubscribeParams 更新单流转推的用户上行参数，仅在非转码时有效。不填表示不更新此参数。
+                     * 设置<p>更新单流转推的用户上行参数，仅在非转码时有效。不填表示不更新此参数。</p>
+                     * @param _singleSubscribeParams <p>更新单流转推的用户上行参数，仅在非转码时有效。不填表示不更新此参数。</p>
                      * 
                      */
                     void SetSingleSubscribeParams(const SingleSubscribeParams& _singleSubscribeParams);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool SingleSubscribeParamsHasBeenSet() const;
 
                     /**
-                     * 获取更新转推的CDN参数。不填表示不更新此参数。
-                     * @return PublishCdnParams 更新转推的CDN参数。不填表示不更新此参数。
+                     * 获取<p>更新转推的CDN参数。不填表示不更新此参数。</p>
+                     * @return PublishCdnParams <p>更新转推的CDN参数。不填表示不更新此参数。</p>
                      * 
                      */
                     std::vector<McuPublishCdnParam> GetPublishCdnParams() const;
 
                     /**
-                     * 设置更新转推的CDN参数。不填表示不更新此参数。
-                     * @param _publishCdnParams 更新转推的CDN参数。不填表示不更新此参数。
+                     * 设置<p>更新转推的CDN参数。不填表示不更新此参数。</p>
+                     * @param _publishCdnParams <p>更新转推的CDN参数。不填表示不更新此参数。</p>
                      * 
                      */
                     void SetPublishCdnParams(const std::vector<McuPublishCdnParam>& _publishCdnParams);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool PublishCdnParamsHasBeenSet() const;
 
                     /**
-                     * 获取混流SEI参数
-                     * @return SeiParams 混流SEI参数
+                     * 获取<p>混流SEI参数</p>
+                     * @return SeiParams <p>混流SEI参数</p>
                      * 
                      */
                     McuSeiParams GetSeiParams() const;
 
                     /**
-                     * 设置混流SEI参数
-                     * @param _seiParams 混流SEI参数
+                     * 设置<p>混流SEI参数</p>
+                     * @param _seiParams <p>混流SEI参数</p>
                      * 
                      */
                     void SetSeiParams(const McuSeiParams& _seiParams);
@@ -238,15 +238,15 @@ namespace TencentCloud
                     bool SeiParamsHasBeenSet() const;
 
                     /**
-                     * 获取回推房间信息
-                     * @return FeedBackRoomParams 回推房间信息
+                     * 获取<p>回推房间信息</p>
+                     * @return FeedBackRoomParams <p>回推房间信息</p>
                      * 
                      */
                     std::vector<McuFeedBackRoomParams> GetFeedBackRoomParams() const;
 
                     /**
-                     * 设置回推房间信息
-                     * @param _feedBackRoomParams 回推房间信息
+                     * 设置<p>回推房间信息</p>
+                     * @param _feedBackRoomParams <p>回推房间信息</p>
                      * 
                      */
                     void SetFeedBackRoomParams(const std::vector<McuFeedBackRoomParams>& _feedBackRoomParams);
@@ -261,61 +261,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。
+                     * <p>TRTC的<a href="https://cloud.tencent.com/document/product/647/46351#sdkappid">SdkAppId</a>，和转推的房间所对应的SdkAppId相同。</p>
                      */
                     uint64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 唯一标识转推任务。
+                     * <p>唯一标识转推任务。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 客户保证同一个任务，每次更新请求中的SequenceNumber递增，防止请求乱序。
+                     * <p>客户保证同一个任务，每次更新请求中的SequenceNumber递增，防止请求乱序。</p>
                      */
                     uint64_t m_sequenceNumber;
                     bool m_sequenceNumberHasBeenSet;
 
                     /**
-                     * 是否转码，0表示无需转码，1表示需要转码。 WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。 注： 1，混流是必须转码的，这个参数需设置为1。 2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。
+                     * <p>是否转码，0表示无需转码，1表示需要转码。 WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。 注： 1，混流是必须转码的，这个参数需设置为1。 2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。</p>
                      */
                     uint64_t m_withTranscoding;
                     bool m_withTranscodingHasBeenSet;
 
                     /**
-                     * 更新相关参数，只支持更新参与混音的主播列表参数，不支持更新Codec、采样率、码率和声道数。不填表示不更新此参数。
+                     * <p>更新相关参数，只支持更新参与混音的主播列表参数，不支持更新Codec、采样率、码率和声道数。不填表示不更新此参数。</p>
                      */
                     McuAudioParams m_audioParams;
                     bool m_audioParamsHasBeenSet;
 
                     /**
-                     * 更新视频相关参数，转码时支持更新除编码类型之外的编码参数，视频布局参数，背景图片和背景颜色参数，水印参数。不填表示不更新此参数。
+                     * <p>更新视频相关参数，转码时支持更新除编码类型之外的编码参数，视频布局参数，背景图片和背景颜色参数，水印参数。不填表示不更新此参数。</p>
                      */
                     McuVideoParams m_videoParams;
                     bool m_videoParamsHasBeenSet;
 
                     /**
-                     * 更新单流转推的用户上行参数，仅在非转码时有效。不填表示不更新此参数。
+                     * <p>更新单流转推的用户上行参数，仅在非转码时有效。不填表示不更新此参数。</p>
                      */
                     SingleSubscribeParams m_singleSubscribeParams;
                     bool m_singleSubscribeParamsHasBeenSet;
 
                     /**
-                     * 更新转推的CDN参数。不填表示不更新此参数。
+                     * <p>更新转推的CDN参数。不填表示不更新此参数。</p>
                      */
                     std::vector<McuPublishCdnParam> m_publishCdnParams;
                     bool m_publishCdnParamsHasBeenSet;
 
                     /**
-                     * 混流SEI参数
+                     * <p>混流SEI参数</p>
                      */
                     McuSeiParams m_seiParams;
                     bool m_seiParamsHasBeenSet;
 
                     /**
-                     * 回推房间信息
+                     * <p>回推房间信息</p>
                      */
                     std::vector<McuFeedBackRoomParams> m_feedBackRoomParams;
                     bool m_feedBackRoomParamsHasBeenSet;

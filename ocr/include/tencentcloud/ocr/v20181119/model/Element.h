@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取元素内容，当type为figure时该字段内容为图片的位置
-                     * @return Text 元素内容，当type为figure时该字段内容为图片的位置
+                     * 获取<p>元素内容，当type为figure时该字段内容为图片的位置</p>
+                     * @return Text <p>元素内容，当type为figure时该字段内容为图片的位置</p>
                      * 
                      */
                     std::string GetText() const;
 
                     /**
-                     * 设置元素内容，当type为figure时该字段内容为图片的位置
-                     * @param _text 元素内容，当type为figure时该字段内容为图片的位置
+                     * 设置<p>元素内容，当type为figure时该字段内容为图片的位置</p>
+                     * @param _text <p>元素内容，当type为figure时该字段内容为图片的位置</p>
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool TextHasBeenSet() const;
 
                     /**
-                     * 获取元素坐标
-                     * @return Coord 元素坐标
+                     * 获取<p>元素坐标</p>
+                     * @return Coord <p>元素坐标</p>
                      * 
                      */
                     Polygon GetCoord() const;
 
                     /**
-                     * 设置元素坐标
-                     * @param _coord 元素坐标
+                     * 设置<p>元素坐标</p>
+                     * @param _coord <p>元素坐标</p>
                      * 
                      */
                     void SetCoord(const Polygon& _coord);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool CoordHasBeenSet() const;
 
                     /**
-                     * 获取元素group类型，包括multiple-choice(选择题)、fill-in-the-blank(填空题)、problem-solving(解答题)、arithmetic(算术题)
-                     * @return GroupType 元素group类型，包括multiple-choice(选择题)、fill-in-the-blank(填空题)、problem-solving(解答题)、arithmetic(算术题)
+                     * 获取<p>元素group类型，包括multiple-choice(选择题)、fill-in-the-blank(填空题)、problem-solving(解答题)、arithmetic(算术题)</p>
+                     * @return GroupType <p>元素group类型，包括multiple-choice(选择题)、fill-in-the-blank(填空题)、problem-solving(解答题)、arithmetic(算术题)</p>
                      * 
                      */
                     std::string GetGroupType() const;
 
                     /**
-                     * 设置元素group类型，包括multiple-choice(选择题)、fill-in-the-blank(填空题)、problem-solving(解答题)、arithmetic(算术题)
-                     * @param _groupType 元素group类型，包括multiple-choice(选择题)、fill-in-the-blank(填空题)、problem-solving(解答题)、arithmetic(算术题)
+                     * 设置<p>元素group类型，包括multiple-choice(选择题)、fill-in-the-blank(填空题)、problem-solving(解答题)、arithmetic(算术题)</p>
+                     * @param _groupType <p>元素group类型，包括multiple-choice(选择题)、fill-in-the-blank(填空题)、problem-solving(解答题)、arithmetic(算术题)</p>
                      * 
                      */
                     void SetGroupType(const std::string& _groupType);
@@ -112,18 +112,18 @@ namespace TencentCloud
                     bool GroupTypeHasBeenSet() const;
 
                     /**
-                     * 获取结果列表
+                     * 获取<p>结果列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResultList 结果列表
+                     * @return ResultList <p>结果列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ResultList> GetResultList() const;
 
                     /**
-                     * 设置结果列表
+                     * 设置<p>结果列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resultList 结果列表
+                     * @param _resultList <p>结果列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -137,15 +137,15 @@ namespace TencentCloud
                     bool ResultListHasBeenSet() const;
 
                     /**
-                     * 获取元素索引
-                     * @return Index 元素索引
+                     * 获取<p>元素索引</p>
+                     * @return Index <p>元素索引</p>
                      * 
                      */
                     int64_t GetIndex() const;
 
                     /**
-                     * 设置元素索引
-                     * @param _index 元素索引
+                     * 设置<p>元素索引</p>
+                     * @param _index <p>元素索引</p>
                      * 
                      */
                     void SetIndex(const int64_t& _index);
@@ -157,38 +157,65 @@ namespace TencentCloud
                      */
                     bool IndexHasBeenSet() const;
 
+                    /**
+                     * 获取<p>元素所在页</p><p>单位：页</p><p>默认值：1</p>
+                     * @return PageIndex <p>元素所在页</p><p>单位：页</p><p>默认值：1</p>
+                     * 
+                     */
+                    int64_t GetPageIndex() const;
+
+                    /**
+                     * 设置<p>元素所在页</p><p>单位：页</p><p>默认值：1</p>
+                     * @param _pageIndex <p>元素所在页</p><p>单位：页</p><p>默认值：1</p>
+                     * 
+                     */
+                    void SetPageIndex(const int64_t& _pageIndex);
+
+                    /**
+                     * 判断参数 PageIndex 是否已赋值
+                     * @return PageIndex 是否已赋值
+                     * 
+                     */
+                    bool PageIndexHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 元素内容，当type为figure时该字段内容为图片的位置
+                     * <p>元素内容，当type为figure时该字段内容为图片的位置</p>
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
-                     * 元素坐标
+                     * <p>元素坐标</p>
                      */
                     Polygon m_coord;
                     bool m_coordHasBeenSet;
 
                     /**
-                     * 元素group类型，包括multiple-choice(选择题)、fill-in-the-blank(填空题)、problem-solving(解答题)、arithmetic(算术题)
+                     * <p>元素group类型，包括multiple-choice(选择题)、fill-in-the-blank(填空题)、problem-solving(解答题)、arithmetic(算术题)</p>
                      */
                     std::string m_groupType;
                     bool m_groupTypeHasBeenSet;
 
                     /**
-                     * 结果列表
+                     * <p>结果列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ResultList> m_resultList;
                     bool m_resultListHasBeenSet;
 
                     /**
-                     * 元素索引
+                     * <p>元素索引</p>
                      */
                     int64_t m_index;
                     bool m_indexHasBeenSet;
+
+                    /**
+                     * <p>元素所在页</p><p>单位：页</p><p>默认值：1</p>
+                     */
+                    int64_t m_pageIndex;
+                    bool m_pageIndexHasBeenSet;
 
                 };
             }

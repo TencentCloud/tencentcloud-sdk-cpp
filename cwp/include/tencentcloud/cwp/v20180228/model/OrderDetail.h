@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源ID
-                     * @return ResourceID 资源ID
+                     * 获取<p>资源ID</p>
+                     * @return ResourceID <p>资源ID</p>
                      * 
                      */
                     std::string GetResourceID() const;
 
                     /**
-                     * 设置资源ID
-                     * @param _resourceID 资源ID
+                     * 设置<p>资源ID</p>
+                     * @param _resourceID <p>资源ID</p>
                      * 
                      */
                     void SetResourceID(const std::string& _resourceID);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ResourceIDHasBeenSet() const;
 
                     /**
-                     * 获取计费项
-                     * @return InquireKey 计费项
+                     * 获取<p>计费项</p>
+                     * @return InquireKey <p>计费项</p>
                      * 
                      */
                     std::string GetInquireKey() const;
 
                     /**
-                     * 设置计费项
-                     * @param _inquireKey 计费项
+                     * 设置<p>计费项</p>
+                     * @param _inquireKey <p>计费项</p>
                      * 
                      */
                     void SetInquireKey(const std::string& _inquireKey);
@@ -89,27 +89,15 @@ namespace TencentCloud
                     bool InquireKeyHasBeenSet() const;
 
                     /**
-                     * 获取订单状态
-- 1 正常
-- 2 隔离期
-- 3 已销毁
-                     * @return Status 订单状态
-- 1 正常
-- 2 隔离期
-- 3 已销毁
+                     * 获取<p>订单状态</p><ul><li>1 正常</li><li>2 隔离期</li><li>3 已销毁</li></ul>
+                     * @return Status <p>订单状态</p><ul><li>1 正常</li><li>2 隔离期</li><li>3 已销毁</li></ul>
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置订单状态
-- 1 正常
-- 2 隔离期
-- 3 已销毁
-                     * @param _status 订单状态
-- 1 正常
-- 2 隔离期
-- 3 已销毁
+                     * 设置<p>订单状态</p><ul><li>1 正常</li><li>2 隔离期</li><li>3 已销毁</li></ul>
+                     * @param _status <p>订单状态</p><ul><li>1 正常</li><li>2 隔离期</li><li>3 已销毁</li></ul>
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -121,28 +109,52 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>源类型</p>
+                     * @return SourceType <p>源类型</p>
+                     * 
+                     */
+                    uint64_t GetSourceType() const;
+
+                    /**
+                     * 设置<p>源类型</p>
+                     * @param _sourceType <p>源类型</p>
+                     * 
+                     */
+                    void SetSourceType(const uint64_t& _sourceType);
+
+                    /**
+                     * 判断参数 SourceType 是否已赋值
+                     * @return SourceType 是否已赋值
+                     * 
+                     */
+                    bool SourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 资源ID
+                     * <p>资源ID</p>
                      */
                     std::string m_resourceID;
                     bool m_resourceIDHasBeenSet;
 
                     /**
-                     * 计费项
+                     * <p>计费项</p>
                      */
                     std::string m_inquireKey;
                     bool m_inquireKeyHasBeenSet;
 
                     /**
-                     * 订单状态
-- 1 正常
-- 2 隔离期
-- 3 已销毁
+                     * <p>订单状态</p><ul><li>1 正常</li><li>2 隔离期</li><li>3 已销毁</li></ul>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>源类型</p>
+                     */
+                    uint64_t m_sourceType;
+                    bool m_sourceTypeHasBeenSet;
 
                 };
             }

@@ -168,6 +168,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/ModifyCloudSliceTaskRequest.h
   include/tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeResponse.h
   include/tencentcloud/trtc/v20190722/model/VoicePrint.h
+  include/tencentcloud/trtc/v20190722/model/HotWord.h
   include/tencentcloud/trtc/v20190722/model/DescribeMixTranscodingUsageResponse.h
   include/tencentcloud/trtc/v20190722/model/AsrParam.h
   include/tencentcloud/trtc/v20190722/model/McuFeedBackRoomParams.h
@@ -238,6 +239,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/StopPublishCdnStreamRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeUnusualEventResponse.h
   include/tencentcloud/trtc/v20190722/model/ModifyCloudRecordingResponse.h
+  include/tencentcloud/trtc/v20190722/model/Vocab.h
   include/tencentcloud/trtc/v20190722/model/SingleSubscribeParams.h
   include/tencentcloud/trtc/v20190722/model/CreateCloudTranscriptionRequest.h
   include/tencentcloud/trtc/v20190722/model/AsyncTextToSpeechResponse.h
@@ -455,6 +457,7 @@ set(trtc_src
   src/v20190722/model/ModifyCloudSliceTaskRequest.cpp
   src/v20190722/model/StopMCUMixTranscodeResponse.cpp
   src/v20190722/model/VoicePrint.cpp
+  src/v20190722/model/HotWord.cpp
   src/v20190722/model/DescribeMixTranscodingUsageResponse.cpp
   src/v20190722/model/AsrParam.cpp
   src/v20190722/model/McuFeedBackRoomParams.cpp
@@ -525,6 +528,7 @@ set(trtc_src
   src/v20190722/model/StopPublishCdnStreamRequest.cpp
   src/v20190722/model/DescribeUnusualEventResponse.cpp
   src/v20190722/model/ModifyCloudRecordingResponse.cpp
+  src/v20190722/model/Vocab.cpp
   src/v20190722/model/SingleSubscribeParams.cpp
   src/v20190722/model/CreateCloudTranscriptionRequest.cpp
   src/v20190722/model/AsyncTextToSpeechResponse.cpp

@@ -35,7 +35,9 @@ RemoteWriteInfo::RemoteWriteInfo() :
     m_authInfoHasBeenSet(false),
     m_logsetIdHasBeenSet(false),
     m_enableHasBeenSet(false),
-    m_virtualGatewayTypeHasBeenSet(false)
+    m_virtualGatewayTypeHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_hasServicesLogHasBeenSet(false)
 {
 }
 
@@ -201,6 +203,26 @@ CoreInternalOutcome RemoteWriteInfo::Deserialize(const rapidjson::Value &value)
         m_virtualGatewayTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RemoteWriteInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("HasServicesLog") && !value["HasServicesLog"].IsNull())
+    {
+        if (!value["HasServicesLog"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RemoteWriteInfo.HasServicesLog` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasServicesLog = value["HasServicesLog"].GetUint64();
+        m_hasServicesLogHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -327,6 +349,22 @@ void RemoteWriteInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "VirtualGatewayType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_virtualGatewayType, allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hasServicesLogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasServicesLog";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasServicesLog, allocator);
     }
 
 }
@@ -570,5 +608,37 @@ void RemoteWriteInfo::SetVirtualGatewayType(const int64_t& _virtualGatewayType)
 bool RemoteWriteInfo::VirtualGatewayTypeHasBeenSet() const
 {
     return m_virtualGatewayTypeHasBeenSet;
+}
+
+string RemoteWriteInfo::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void RemoteWriteInfo::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool RemoteWriteInfo::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+uint64_t RemoteWriteInfo::GetHasServicesLog() const
+{
+    return m_hasServicesLog;
+}
+
+void RemoteWriteInfo::SetHasServicesLog(const uint64_t& _hasServicesLog)
+{
+    m_hasServicesLog = _hasServicesLog;
+    m_hasServicesLogHasBeenSet = true;
+}
+
+bool RemoteWriteInfo::HasServicesLogHasBeenSet() const
+{
+    return m_hasServicesLogHasBeenSet;
 }
 

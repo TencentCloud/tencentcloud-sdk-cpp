@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyModelAttributesRequest::ModifyModelAttributesRequest() :
     m_serviceProviderIdHasBeenSet(false),
-    m_serviceProviderNameHasBeenSet(false)
+    m_serviceProviderNameHasBeenSet(false),
+    m_apiBasesHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,21 @@ string ModifyModelAttributesRequest::ToJsonString() const
         string key = "ServiceProviderName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serviceProviderName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apiBasesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiBases";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_apiBases.begin(); itr != m_apiBases.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -89,6 +105,22 @@ void ModifyModelAttributesRequest::SetServiceProviderName(const string& _service
 bool ModifyModelAttributesRequest::ServiceProviderNameHasBeenSet() const
 {
     return m_serviceProviderNameHasBeenSet;
+}
+
+vector<ApiBaseItem> ModifyModelAttributesRequest::GetApiBases() const
+{
+    return m_apiBases;
+}
+
+void ModifyModelAttributesRequest::SetApiBases(const vector<ApiBaseItem>& _apiBases)
+{
+    m_apiBases = _apiBases;
+    m_apiBasesHasBeenSet = true;
+}
+
+bool ModifyModelAttributesRequest::ApiBasesHasBeenSet() const
+{
+    return m_apiBasesHasBeenSet;
 }
 
 

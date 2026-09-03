@@ -22,7 +22,9 @@
 using namespace TencentCloud::Trtc::V20190722::Model;
 using namespace std;
 
-DownloadRecognizeVocabV3Request::DownloadRecognizeVocabV3Request()
+DownloadRecognizeVocabV3Request::DownloadRecognizeVocabV3Request() :
+    m_vocabIdHasBeenSet(false),
+    m_sdkAppIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,22 @@ string DownloadRecognizeVocabV3Request::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_vocabIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VocabId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vocabId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sdkAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SdkAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sdkAppId, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +58,37 @@ string DownloadRecognizeVocabV3Request::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DownloadRecognizeVocabV3Request::GetVocabId() const
+{
+    return m_vocabId;
+}
+
+void DownloadRecognizeVocabV3Request::SetVocabId(const string& _vocabId)
+{
+    m_vocabId = _vocabId;
+    m_vocabIdHasBeenSet = true;
+}
+
+bool DownloadRecognizeVocabV3Request::VocabIdHasBeenSet() const
+{
+    return m_vocabIdHasBeenSet;
+}
+
+uint64_t DownloadRecognizeVocabV3Request::GetSdkAppId() const
+{
+    return m_sdkAppId;
+}
+
+void DownloadRecognizeVocabV3Request::SetSdkAppId(const uint64_t& _sdkAppId)
+{
+    m_sdkAppId = _sdkAppId;
+    m_sdkAppIdHasBeenSet = true;
+}
+
+bool DownloadRecognizeVocabV3Request::SdkAppIdHasBeenSet() const
+{
+    return m_sdkAppIdHasBeenSet;
+}
 
 

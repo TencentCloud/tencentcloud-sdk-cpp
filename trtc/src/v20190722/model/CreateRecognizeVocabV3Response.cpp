@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Trtc::V20190722::Model;
 using namespace std;
 
-CreateRecognizeVocabV3Response::CreateRecognizeVocabV3Response()
+CreateRecognizeVocabV3Response::CreateRecognizeVocabV3Response() :
+    m_vocabIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateRecognizeVocabV3Response::Deserialize(const string &pa
     }
 
 
+    if (rsp.HasMember("VocabId") && !rsp["VocabId"].IsNull())
+    {
+        if (!rsp["VocabId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VocabId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vocabId = string(rsp["VocabId"].GetString());
+        m_vocabIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateRecognizeVocabV3Response::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_vocabIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VocabId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vocabId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateRecognizeVocabV3Response::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateRecognizeVocabV3Response::GetVocabId() const
+{
+    return m_vocabId;
+}
+
+bool CreateRecognizeVocabV3Response::VocabIdHasBeenSet() const
+{
+    return m_vocabIdHasBeenSet;
+}
 
 

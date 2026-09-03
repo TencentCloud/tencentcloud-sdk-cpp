@@ -61,7 +61,9 @@ DescribeModelServiceResponseVO::DescribeModelServiceResponseVO() :
     m_rawCustomModelProtocolConfigHasBeenSet(false),
     m_routeStrategyHasBeenSet(false),
     m_tokenLengthRouteHasBeenSet(false),
-    m_taskComplexityRouteHasBeenSet(false)
+    m_taskComplexityRouteHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_requestProtocolTypeHasBeenSet(false)
 {
 }
 
@@ -571,6 +573,26 @@ CoreInternalOutcome DescribeModelServiceResponseVO::Deserialize(const rapidjson:
         m_taskComplexityRouteHasBeenSet = true;
     }
 
+    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    {
+        if (!value["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeModelServiceResponseVO.Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(value["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
+    if (value.HasMember("RequestProtocolType") && !value["RequestProtocolType"].IsNull())
+    {
+        if (!value["RequestProtocolType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeModelServiceResponseVO.RequestProtocolType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestProtocolType = string(value["RequestProtocolType"].GetString());
+        m_requestProtocolTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -953,6 +975,22 @@ void DescribeModelServiceResponseVO::ToJsonObject(rapidjson::Value &value, rapid
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_taskComplexityRoute.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requestProtocolTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestProtocolType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_requestProtocolType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1612,5 +1650,37 @@ void DescribeModelServiceResponseVO::SetTaskComplexityRoute(const TaskComplexity
 bool DescribeModelServiceResponseVO::TaskComplexityRouteHasBeenSet() const
 {
     return m_taskComplexityRouteHasBeenSet;
+}
+
+string DescribeModelServiceResponseVO::GetDomain() const
+{
+    return m_domain;
+}
+
+void DescribeModelServiceResponseVO::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool DescribeModelServiceResponseVO::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
+}
+
+string DescribeModelServiceResponseVO::GetRequestProtocolType() const
+{
+    return m_requestProtocolType;
+}
+
+void DescribeModelServiceResponseVO::SetRequestProtocolType(const string& _requestProtocolType)
+{
+    m_requestProtocolType = _requestProtocolType;
+    m_requestProtocolTypeHasBeenSet = true;
+}
+
+bool DescribeModelServiceResponseVO::RequestProtocolTypeHasBeenSet() const
+{
+    return m_requestProtocolTypeHasBeenSet;
 }
 

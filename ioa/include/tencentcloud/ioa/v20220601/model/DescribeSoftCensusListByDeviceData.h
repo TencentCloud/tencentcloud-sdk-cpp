@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取终端用户名
+                     * 获取<p>终端用户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserName 终端用户名
+                     * @return UserName <p>终端用户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置终端用户名
+                     * 设置<p>终端用户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _userName 终端用户名
+                     * @param _userName <p>终端用户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取mac地址
+                     * 获取<p>mac地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MacAddr mac地址
+                     * @return MacAddr <p>mac地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMacAddr() const;
 
                     /**
-                     * 设置mac地址
+                     * 设置<p>mac地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _macAddr mac地址
+                     * @param _macAddr <p>mac地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool MacAddrHasBeenSet() const;
 
                     /**
-                     * 获取终端计算机名称
+                     * 获取<p>终端计算机名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 终端计算机名称
+                     * @return Name <p>终端计算机名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置终端计算机名称
+                     * 设置<p>终端计算机名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 终端计算机名称
+                     * @param _name <p>终端计算机名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取终端组路径名
+                     * 获取<p>终端组路径名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupNamePath 终端组路径名
+                     * @return GroupNamePath <p>终端组路径名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupNamePath() const;
 
                     /**
-                     * 设置终端组路径名
+                     * 设置<p>终端组路径名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _groupNamePath 终端组路径名
+                     * @param _groupNamePath <p>终端组路径名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool GroupNamePathHasBeenSet() const;
 
                     /**
-                     * 获取IP地址
+                     * 获取<p>IP地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Ip IP地址
+                     * @return Ip <p>IP地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置IP地址
+                     * 设置<p>IP地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ip IP地址
+                     * @param _ip <p>IP地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取唯一标识Mid
+                     * 获取<p>唯一标识Mid</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Mid 唯一标识Mid
+                     * @return Mid <p>唯一标识Mid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMid() const;
 
                     /**
-                     * 设置唯一标识Mid
+                     * 设置<p>唯一标识Mid</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mid 唯一标识Mid
+                     * @param _mid <p>唯一标识Mid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool MidHasBeenSet() const;
 
                     /**
-                     * 获取企业账户名
+                     * 获取<p>企业账户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IoaUserName 企业账户名
+                     * @return IoaUserName <p>企业账户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIoaUserName() const;
 
                     /**
-                     * 设置企业账户名
+                     * 设置<p>企业账户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ioaUserName 企业账户名
+                     * @param _ioaUserName <p>企业账户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool IoaUserNameHasBeenSet() const;
 
                     /**
-                     * 获取终端分组Id(只支持32位)
+                     * 获取<p>终端分组Id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupId 终端分组Id(只支持32位)
+                     * @return GroupId <p>终端分组Id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置终端分组Id(只支持32位)
+                     * 设置<p>终端分组Id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _groupId 终端分组Id(只支持32位)
+                     * @param _groupId <p>终端分组Id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取终端组名
+                     * 获取<p>终端组名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupName 终端组名
+                     * @return GroupName <p>终端组名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置终端组名
+                     * 设置<p>终端组名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _groupName 终端组名
+                     * @param _groupName <p>终端组名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -272,18 +272,18 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取终端列表Id(只支持32位)
+                     * 获取<p>终端列表Id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id 终端列表Id(只支持32位)
+                     * @return Id <p>终端列表Id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置终端列表Id(只支持32位)
+                     * 设置<p>终端列表Id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _id 终端列表Id(只支持32位)
+                     * @param _id <p>终端列表Id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -297,18 +297,18 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取软件数量(只支持32位)
+                     * 获取<p>软件数量(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SoftNum 软件数量(只支持32位)
+                     * @return SoftNum <p>软件数量(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSoftNum() const;
 
                     /**
-                     * 设置软件数量(只支持32位)
+                     * 设置<p>软件数量(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _softNum 软件数量(只支持32位)
+                     * @param _softNum <p>软件数量(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -322,18 +322,18 @@ namespace TencentCloud
                     bool SoftNumHasBeenSet() const;
 
                     /**
-                     * 获取盗版风险（1=风险;2=未知）
+                     * 获取<p>盗版风险（1=风险;2=未知）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PiracyRisk 盗版风险（1=风险;2=未知）
+                     * @return PiracyRisk <p>盗版风险（1=风险;2=未知）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPiracyRisk() const;
 
                     /**
-                     * 设置盗版风险（1=风险;2=未知）
+                     * 设置<p>盗版风险（1=风险;2=未知）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _piracyRisk 盗版风险（1=风险;2=未知）
+                     * @param _piracyRisk <p>盗版风险（1=风险;2=未知）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -347,15 +347,15 @@ namespace TencentCloud
                     bool PiracyRiskHasBeenSet() const;
 
                     /**
-                     * 获取终端备注名
-                     * @return RemarkName 终端备注名
+                     * 获取<p>终端备注名</p>
+                     * @return RemarkName <p>终端备注名</p>
                      * 
                      */
                     std::string GetRemarkName() const;
 
                     /**
-                     * 设置终端备注名
-                     * @param _remarkName 终端备注名
+                     * 设置<p>终端备注名</p>
+                     * @param _remarkName <p>终端备注名</p>
                      * 
                      */
                     void SetRemarkName(const std::string& _remarkName);
@@ -370,91 +370,91 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 终端用户名
+                     * <p>终端用户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * mac地址
+                     * <p>mac地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_macAddr;
                     bool m_macAddrHasBeenSet;
 
                     /**
-                     * 终端计算机名称
+                     * <p>终端计算机名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 终端组路径名
+                     * <p>终端组路径名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupNamePath;
                     bool m_groupNamePathHasBeenSet;
 
                     /**
-                     * IP地址
+                     * <p>IP地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 唯一标识Mid
+                     * <p>唯一标识Mid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mid;
                     bool m_midHasBeenSet;
 
                     /**
-                     * 企业账户名
+                     * <p>企业账户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ioaUserName;
                     bool m_ioaUserNameHasBeenSet;
 
                     /**
-                     * 终端分组Id(只支持32位)
+                     * <p>终端分组Id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 终端组名
+                     * <p>终端组名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 终端列表Id(只支持32位)
+                     * <p>终端列表Id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 软件数量(只支持32位)
+                     * <p>软件数量(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_softNum;
                     bool m_softNumHasBeenSet;
 
                     /**
-                     * 盗版风险（1=风险;2=未知）
+                     * <p>盗版风险（1=风险;2=未知）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_piracyRisk;
                     bool m_piracyRiskHasBeenSet;
 
                     /**
-                     * 终端备注名
+                     * <p>终端备注名</p>
                      */
                     std::string m_remarkName;
                     bool m_remarkNameHasBeenSet;

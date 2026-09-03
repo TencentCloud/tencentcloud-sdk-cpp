@@ -440,6 +440,56 @@ IoaClient::CreatePrivilegeCodeOutcomeCallable IoaClient::CreatePrivilegeCodeCall
     return prom->get_future();
 }
 
+IoaClient::DeleteAccountGroupOutcome IoaClient::DeleteAccountGroup(const DeleteAccountGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAccountGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAccountGroupResponse rsp = DeleteAccountGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAccountGroupOutcome(rsp);
+        else
+            return DeleteAccountGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAccountGroupOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DeleteAccountGroupAsync(const DeleteAccountGroupRequest& request, const DeleteAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAccountGroupRequest&;
+    using Resp = DeleteAccountGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAccountGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::DeleteAccountGroupOutcomeCallable IoaClient::DeleteAccountGroupCallable(const DeleteAccountGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAccountGroupOutcome>>();
+    DeleteAccountGroupAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DeleteAccountGroupRequest&,
+        DeleteAccountGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IoaClient::DeleteAccountGroupResourcesOutcome IoaClient::DeleteAccountGroupResources(const DeleteAccountGroupResourcesRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAccountGroupResources");

@@ -29,7 +29,8 @@ ClearLaunchConfigurationAttributesRequest::ClearLaunchConfigurationAttributesReq
     m_clearInstanceNameSettingsHasBeenSet(false),
     m_clearDisasterRecoverGroupIdsHasBeenSet(false),
     m_clearInstanceTagsHasBeenSet(false),
-    m_clearMetadataHasBeenSet(false)
+    m_clearMetadataHasBeenSet(false),
+    m_clearNetworkInterfacesHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string ClearLaunchConfigurationAttributesRequest::ToJsonString() const
         string key = "ClearMetadata";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_clearMetadata, allocator);
+    }
+
+    if (m_clearNetworkInterfacesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClearNetworkInterfaces";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_clearNetworkInterfaces, allocator);
     }
 
 
@@ -214,6 +223,22 @@ void ClearLaunchConfigurationAttributesRequest::SetClearMetadata(const bool& _cl
 bool ClearLaunchConfigurationAttributesRequest::ClearMetadataHasBeenSet() const
 {
     return m_clearMetadataHasBeenSet;
+}
+
+bool ClearLaunchConfigurationAttributesRequest::GetClearNetworkInterfaces() const
+{
+    return m_clearNetworkInterfaces;
+}
+
+void ClearLaunchConfigurationAttributesRequest::SetClearNetworkInterfaces(const bool& _clearNetworkInterfaces)
+{
+    m_clearNetworkInterfaces = _clearNetworkInterfaces;
+    m_clearNetworkInterfacesHasBeenSet = true;
+}
+
+bool ClearLaunchConfigurationAttributesRequest::ClearNetworkInterfacesHasBeenSet() const
+{
+    return m_clearNetworkInterfacesHasBeenSet;
 }
 
 

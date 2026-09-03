@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * GrantedAccountItem
+                * 账号分组授权信息
                 */
                 class GrantedAccountGroupItem : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取账户组Id
-                     * @return AccountGroupId 账户组Id
+                     * 获取<p>账户组Id</p>
+                     * @return AccountGroupId <p>账户组Id</p>
                      * 
                      */
                     uint64_t GetAccountGroupId() const;
 
                     /**
-                     * 设置账户组Id
-                     * @param _accountGroupId 账户组Id
+                     * 设置<p>账户组Id</p>
+                     * @param _accountGroupId <p>账户组Id</p>
                      * 
                      */
                     void SetAccountGroupId(const uint64_t& _accountGroupId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AccountGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取分组名称
-                     * @return Name 分组名称
+                     * 获取<p>分组名称</p>
+                     * @return Name <p>分组名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置分组名称
-                     * @param _name 分组名称
+                     * 设置<p>分组名称</p>
+                     * @param _name <p>分组名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取所属分组Id
-                     * @return IdPathArray 所属分组Id
+                     * 获取<p>所属分组Id</p>
+                     * @return IdPathArray <p>所属分组Id</p>
                      * 
                      */
                     std::vector<uint64_t> GetIdPathArray() const;
 
                     /**
-                     * 设置所属分组Id
-                     * @param _idPathArray 所属分组Id
+                     * 设置<p>所属分组Id</p>
+                     * @param _idPathArray <p>所属分组Id</p>
                      * 
                      */
                     void SetIdPathArray(const std::vector<uint64_t>& _idPathArray);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool IdPathArrayHasBeenSet() const;
 
                     /**
-                     * 获取所属分组NamePathArray
-                     * @return NamePathArray 所属分组NamePathArray
+                     * 获取<p>所属分组NamePathArray</p>
+                     * @return NamePathArray <p>所属分组NamePathArray</p>
                      * 
                      */
                     std::vector<std::string> GetNamePathArray() const;
 
                     /**
-                     * 设置所属分组NamePathArray
-                     * @param _namePathArray 所属分组NamePathArray
+                     * 设置<p>所属分组NamePathArray</p>
+                     * @param _namePathArray <p>所属分组NamePathArray</p>
                      * 
                      */
                     void SetNamePathArray(const std::vector<std::string>& _namePathArray);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool NamePathArrayHasBeenSet() const;
 
                     /**
-                     * 获取目录id
-                     * @return AccountCount 目录id
+                     * 获取<p>目录id</p>
+                     * @return AccountCount <p>目录id</p>
                      * 
                      */
                     uint64_t GetAccountCount() const;
 
                     /**
-                     * 设置目录id
-                     * @param _accountCount 目录id
+                     * 设置<p>目录id</p>
+                     * @param _accountCount <p>目录id</p>
                      * 
                      */
                     void SetAccountCount(const uint64_t& _accountCount);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool AccountCountHasBeenSet() const;
 
                     /**
-                     * 获取过期时间
-                     * @return ExpireTime 过期时间
+                     * 获取<p>过期时间</p>
+                     * @return ExpireTime <p>过期时间</p>
                      * 
                      */
                     uint64_t GetExpireTime() const;
 
                     /**
-                     * 设置过期时间
-                     * @param _expireTime 过期时间
+                     * 设置<p>过期时间</p>
+                     * @param _expireTime <p>过期时间</p>
                      * 
                      */
                     void SetExpireTime(const uint64_t& _expireTime);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取关联id
-                     * @return RelationId 关联id
+                     * 获取<p>关联id</p>
+                     * @return RelationId <p>关联id</p>
                      * 
                      */
                     uint64_t GetRelationId() const;
 
                     /**
-                     * 设置关联id
-                     * @param _relationId 关联id
+                     * 设置<p>关联id</p>
+                     * @param _relationId <p>关联id</p>
                      * 
                      */
                     void SetRelationId(const uint64_t& _relationId);
@@ -196,43 +196,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 账户组Id
+                     * <p>账户组Id</p>
                      */
                     uint64_t m_accountGroupId;
                     bool m_accountGroupIdHasBeenSet;
 
                     /**
-                     * 分组名称
+                     * <p>分组名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 所属分组Id
+                     * <p>所属分组Id</p>
                      */
                     std::vector<uint64_t> m_idPathArray;
                     bool m_idPathArrayHasBeenSet;
 
                     /**
-                     * 所属分组NamePathArray
+                     * <p>所属分组NamePathArray</p>
                      */
                     std::vector<std::string> m_namePathArray;
                     bool m_namePathArrayHasBeenSet;
 
                     /**
-                     * 目录id
+                     * <p>目录id</p>
                      */
                     uint64_t m_accountCount;
                     bool m_accountCountHasBeenSet;
 
                     /**
-                     * 过期时间
+                     * <p>过期时间</p>
                      */
                     uint64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 关联id
+                     * <p>关联id</p>
                      */
                     uint64_t m_relationId;
                     bool m_relationIdHasBeenSet;

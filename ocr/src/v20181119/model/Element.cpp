@@ -25,7 +25,8 @@ Element::Element() :
     m_coordHasBeenSet(false),
     m_groupTypeHasBeenSet(false),
     m_resultListHasBeenSet(false),
-    m_indexHasBeenSet(false)
+    m_indexHasBeenSet(false),
+    m_pageIndexHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,16 @@ CoreInternalOutcome Element::Deserialize(const rapidjson::Value &value)
         m_indexHasBeenSet = true;
     }
 
+    if (value.HasMember("PageIndex") && !value["PageIndex"].IsNull())
+    {
+        if (!value["PageIndex"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Element.PageIndex` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pageIndex = value["PageIndex"].GetInt64();
+        m_pageIndexHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -154,6 +165,14 @@ void Element::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Index";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_index, allocator);
+    }
+
+    if (m_pageIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageIndex";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pageIndex, allocator);
     }
 
 }
@@ -237,5 +256,21 @@ void Element::SetIndex(const int64_t& _index)
 bool Element::IndexHasBeenSet() const
 {
     return m_indexHasBeenSet;
+}
+
+int64_t Element::GetPageIndex() const
+{
+    return m_pageIndex;
+}
+
+void Element::SetPageIndex(const int64_t& _pageIndex)
+{
+    m_pageIndex = _pageIndex;
+    m_pageIndexHasBeenSet = true;
+}
+
+bool Element::PageIndexHasBeenSet() const
+{
+    return m_pageIndexHasBeenSet;
 }
 

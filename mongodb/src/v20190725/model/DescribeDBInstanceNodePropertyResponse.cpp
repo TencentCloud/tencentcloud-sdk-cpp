@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeDBInstanceNodePropertyResponse::DescribeDBInstanceNodePropertyResponse() :
     m_mongosHasBeenSet(false),
-    m_replicateSetsHasBeenSet(false)
+    m_replicateSetsHasBeenSet(false),
+    m_dynamoProxiesHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,26 @@ CoreInternalOutcome DescribeDBInstanceNodePropertyResponse::Deserialize(const st
         m_replicateSetsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DynamoProxies") && !rsp["DynamoProxies"].IsNull())
+    {
+        if (!rsp["DynamoProxies"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DynamoProxies` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["DynamoProxies"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            NodeProperty item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dynamoProxies.push_back(item);
+        }
+        m_dynamoProxiesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +164,21 @@ string DescribeDBInstanceNodePropertyResponse::ToJsonString() const
         }
     }
 
+    if (m_dynamoProxiesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DynamoProxies";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dynamoProxies.begin(); itr != m_dynamoProxies.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -173,6 +209,16 @@ vector<ReplicateSetInfo> DescribeDBInstanceNodePropertyResponse::GetReplicateSet
 bool DescribeDBInstanceNodePropertyResponse::ReplicateSetsHasBeenSet() const
 {
     return m_replicateSetsHasBeenSet;
+}
+
+vector<NodeProperty> DescribeDBInstanceNodePropertyResponse::GetDynamoProxies() const
+{
+    return m_dynamoProxies;
+}
+
+bool DescribeDBInstanceNodePropertyResponse::DynamoProxiesHasBeenSet() const
+{
+    return m_dynamoProxiesHasBeenSet;
 }
 
 

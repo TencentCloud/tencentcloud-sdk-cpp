@@ -47,51 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取系统盘类型。系统盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围
-<li>LOCAL_BASIC：本地硬盘</li>
-<li>LOCAL_SSD：本地SSD硬盘</li>
-<li>CLOUD_BASIC：普通云硬盘</li>
-<li>CLOUD_PREMIUM：高性能云硬盘</li>
-<li>CLOUD_SSD：SSD云硬盘</li>
-<li>CLOUD_BSSD：通用型SSD云硬盘</li>
-<li>CLOUD_HSSD：增强型SSD云硬盘</li>
-<li>CLOUD_TSSD：极速型SSD云硬盘</li>
-<li>默认取值：CLOUD_PREMIUM。</li>
-                     * @return DiskType 系统盘类型。系统盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围
-<li>LOCAL_BASIC：本地硬盘</li>
-<li>LOCAL_SSD：本地SSD硬盘</li>
-<li>CLOUD_BASIC：普通云硬盘</li>
-<li>CLOUD_PREMIUM：高性能云硬盘</li>
-<li>CLOUD_SSD：SSD云硬盘</li>
-<li>CLOUD_BSSD：通用型SSD云硬盘</li>
-<li>CLOUD_HSSD：增强型SSD云硬盘</li>
-<li>CLOUD_TSSD：极速型SSD云硬盘</li>
-<li>默认取值：CLOUD_PREMIUM。</li>
+                     * 获取<p>系统盘类型。系统盘类型限制详见<a href="https://cloud.tencent.com/document/product/362/2353">云硬盘类型</a>。取值范围</p><li>LOCAL_BASIC：本地硬盘</li><li>LOCAL_SSD：本地SSD硬盘</li><li>CLOUD_BASIC：普通云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_BSSD：通用型SSD云硬盘</li><li>CLOUD_HSSD：增强型SSD云硬盘</li><li>CLOUD_TSSD：极速型SSD云硬盘</li><li>默认取值：CLOUD_PREMIUM。</li>
+                     * @return DiskType <p>系统盘类型。系统盘类型限制详见<a href="https://cloud.tencent.com/document/product/362/2353">云硬盘类型</a>。取值范围</p><li>LOCAL_BASIC：本地硬盘</li><li>LOCAL_SSD：本地SSD硬盘</li><li>CLOUD_BASIC：普通云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_BSSD：通用型SSD云硬盘</li><li>CLOUD_HSSD：增强型SSD云硬盘</li><li>CLOUD_TSSD：极速型SSD云硬盘</li><li>默认取值：CLOUD_PREMIUM。</li>
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置系统盘类型。系统盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围
-<li>LOCAL_BASIC：本地硬盘</li>
-<li>LOCAL_SSD：本地SSD硬盘</li>
-<li>CLOUD_BASIC：普通云硬盘</li>
-<li>CLOUD_PREMIUM：高性能云硬盘</li>
-<li>CLOUD_SSD：SSD云硬盘</li>
-<li>CLOUD_BSSD：通用型SSD云硬盘</li>
-<li>CLOUD_HSSD：增强型SSD云硬盘</li>
-<li>CLOUD_TSSD：极速型SSD云硬盘</li>
-<li>默认取值：CLOUD_PREMIUM。</li>
-                     * @param _diskType 系统盘类型。系统盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围
-<li>LOCAL_BASIC：本地硬盘</li>
-<li>LOCAL_SSD：本地SSD硬盘</li>
-<li>CLOUD_BASIC：普通云硬盘</li>
-<li>CLOUD_PREMIUM：高性能云硬盘</li>
-<li>CLOUD_SSD：SSD云硬盘</li>
-<li>CLOUD_BSSD：通用型SSD云硬盘</li>
-<li>CLOUD_HSSD：增强型SSD云硬盘</li>
-<li>CLOUD_TSSD：极速型SSD云硬盘</li>
-<li>默认取值：CLOUD_PREMIUM。</li>
+                     * 设置<p>系统盘类型。系统盘类型限制详见<a href="https://cloud.tencent.com/document/product/362/2353">云硬盘类型</a>。取值范围</p><li>LOCAL_BASIC：本地硬盘</li><li>LOCAL_SSD：本地SSD硬盘</li><li>CLOUD_BASIC：普通云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_BSSD：通用型SSD云硬盘</li><li>CLOUD_HSSD：增强型SSD云硬盘</li><li>CLOUD_TSSD：极速型SSD云硬盘</li><li>默认取值：CLOUD_PREMIUM。</li>
+                     * @param _diskType <p>系统盘类型。系统盘类型限制详见<a href="https://cloud.tencent.com/document/product/362/2353">云硬盘类型</a>。取值范围</p><li>LOCAL_BASIC：本地硬盘</li><li>LOCAL_SSD：本地SSD硬盘</li><li>CLOUD_BASIC：普通云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_BSSD：通用型SSD云硬盘</li><li>CLOUD_HSSD：增强型SSD云硬盘</li><li>CLOUD_TSSD：极速型SSD云硬盘</li><li>默认取值：CLOUD_PREMIUM。</li>
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -104,15 +68,15 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取系统盘大小，单位：GB。默认值为 50
-                     * @return DiskSize 系统盘大小，单位：GB。默认值为 50
+                     * 获取<p>系统盘大小，单位：GB。默认值为 50</p>
+                     * @return DiskSize <p>系统盘大小，单位：GB。默认值为 50</p>
                      * 
                      */
                     uint64_t GetDiskSize() const;
 
                     /**
-                     * 设置系统盘大小，单位：GB。默认值为 50
-                     * @param _diskSize 系统盘大小，单位：GB。默认值为 50
+                     * 设置<p>系统盘大小，单位：GB。默认值为 50</p>
+                     * @param _diskSize <p>系统盘大小，单位：GB。默认值为 50</p>
                      * 
                      */
                     void SetDiskSize(const uint64_t& _diskSize);
@@ -124,28 +88,73 @@ namespace TencentCloud
                      */
                     bool DiskSizeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否加密系统盘。TRUE 表示加密，FALSE 表示不加密；具体盘型、地域及 KMS 规则由 CVM 校验。</p>
+                     * @return Encrypt <p>是否加密系统盘。TRUE 表示加密，FALSE 表示不加密；具体盘型、地域及 KMS 规则由 CVM 校验。</p>
+                     * 
+                     */
+                    bool GetEncrypt() const;
+
+                    /**
+                     * 设置<p>是否加密系统盘。TRUE 表示加密，FALSE 表示不加密；具体盘型、地域及 KMS 规则由 CVM 校验。</p>
+                     * @param _encrypt <p>是否加密系统盘。TRUE 表示加密，FALSE 表示不加密；具体盘型、地域及 KMS 规则由 CVM 校验。</p>
+                     * 
+                     */
+                    void SetEncrypt(const bool& _encrypt);
+
+                    /**
+                     * 判断参数 Encrypt 是否已赋值
+                     * @return Encrypt 是否已赋值
+                     * 
+                     */
+                    bool EncryptHasBeenSet() const;
+
+                    /**
+                     * 获取<p>系统盘加密使用的 KMS 密钥 ID。密钥有效性、权限以及与盘型和地域的适配性由 CVM 校验。</p>
+                     * @return KmsKeyId <p>系统盘加密使用的 KMS 密钥 ID。密钥有效性、权限以及与盘型和地域的适配性由 CVM 校验。</p>
+                     * 
+                     */
+                    std::string GetKmsKeyId() const;
+
+                    /**
+                     * 设置<p>系统盘加密使用的 KMS 密钥 ID。密钥有效性、权限以及与盘型和地域的适配性由 CVM 校验。</p>
+                     * @param _kmsKeyId <p>系统盘加密使用的 KMS 密钥 ID。密钥有效性、权限以及与盘型和地域的适配性由 CVM 校验。</p>
+                     * 
+                     */
+                    void SetKmsKeyId(const std::string& _kmsKeyId);
+
+                    /**
+                     * 判断参数 KmsKeyId 是否已赋值
+                     * @return KmsKeyId 是否已赋值
+                     * 
+                     */
+                    bool KmsKeyIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 系统盘类型。系统盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围
-<li>LOCAL_BASIC：本地硬盘</li>
-<li>LOCAL_SSD：本地SSD硬盘</li>
-<li>CLOUD_BASIC：普通云硬盘</li>
-<li>CLOUD_PREMIUM：高性能云硬盘</li>
-<li>CLOUD_SSD：SSD云硬盘</li>
-<li>CLOUD_BSSD：通用型SSD云硬盘</li>
-<li>CLOUD_HSSD：增强型SSD云硬盘</li>
-<li>CLOUD_TSSD：极速型SSD云硬盘</li>
-<li>默认取值：CLOUD_PREMIUM。</li>
+                     * <p>系统盘类型。系统盘类型限制详见<a href="https://cloud.tencent.com/document/product/362/2353">云硬盘类型</a>。取值范围</p><li>LOCAL_BASIC：本地硬盘</li><li>LOCAL_SSD：本地SSD硬盘</li><li>CLOUD_BASIC：普通云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_BSSD：通用型SSD云硬盘</li><li>CLOUD_HSSD：增强型SSD云硬盘</li><li>CLOUD_TSSD：极速型SSD云硬盘</li><li>默认取值：CLOUD_PREMIUM。</li>
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 系统盘大小，单位：GB。默认值为 50
+                     * <p>系统盘大小，单位：GB。默认值为 50</p>
                      */
                     uint64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
+
+                    /**
+                     * <p>是否加密系统盘。TRUE 表示加密，FALSE 表示不加密；具体盘型、地域及 KMS 规则由 CVM 校验。</p>
+                     */
+                    bool m_encrypt;
+                    bool m_encryptHasBeenSet;
+
+                    /**
+                     * <p>系统盘加密使用的 KMS 密钥 ID。密钥有效性、权限以及与盘型和地域的适配性由 CVM 校验。</p>
+                     */
+                    std::string m_kmsKeyId;
+                    bool m_kmsKeyIdHasBeenSet;
 
                 };
             }

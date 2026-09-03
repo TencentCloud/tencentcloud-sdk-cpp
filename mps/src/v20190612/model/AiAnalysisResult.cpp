@@ -36,7 +36,8 @@ AiAnalysisResult::AiAnalysisResult() :
     m_videoRemakeTaskHasBeenSet(false),
     m_videoComprehensionTaskHasBeenSet(false),
     m_cutoutTaskHasBeenSet(false),
-    m_reelTaskHasBeenSet(false)
+    m_reelTaskHasBeenSet(false),
+    m_genericTaskHasBeenSet(false)
 {
 }
 
@@ -310,6 +311,23 @@ CoreInternalOutcome AiAnalysisResult::Deserialize(const rapidjson::Value &value)
         m_reelTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("GenericTask") && !value["GenericTask"].IsNull())
+    {
+        if (!value["GenericTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResult.GenericTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_genericTask.Deserialize(value["GenericTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_genericTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -458,6 +476,15 @@ void AiAnalysisResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_reelTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_genericTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GenericTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_genericTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -717,5 +744,21 @@ void AiAnalysisResult::SetReelTask(const AiAnalysisTaskReelResult& _reelTask)
 bool AiAnalysisResult::ReelTaskHasBeenSet() const
 {
     return m_reelTaskHasBeenSet;
+}
+
+AiAnalysisTaskGenericResult AiAnalysisResult::GetGenericTask() const
+{
+    return m_genericTask;
+}
+
+void AiAnalysisResult::SetGenericTask(const AiAnalysisTaskGenericResult& _genericTask)
+{
+    m_genericTask = _genericTask;
+    m_genericTaskHasBeenSet = true;
+}
+
+bool AiAnalysisResult::GenericTaskHasBeenSet() const
+{
+    return m_genericTaskHasBeenSet;
 }
 

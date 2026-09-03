@@ -33,7 +33,9 @@ SparkSessionInfo::SparkSessionInfo() :
     m_executorNumMaxHasBeenSet(false),
     m_totalSpecMinHasBeenSet(false),
     m_totalSpecMaxHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_applicationIdHasBeenSet(false),
+    m_applicationStartTimeHasBeenSet(false)
 {
 }
 
@@ -172,6 +174,26 @@ CoreInternalOutcome SparkSessionInfo::Deserialize(const rapidjson::Value &value)
         m_stateHasBeenSet = true;
     }
 
+    if (value.HasMember("ApplicationId") && !value["ApplicationId"].IsNull())
+    {
+        if (!value["ApplicationId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SparkSessionInfo.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationId = string(value["ApplicationId"].GetString());
+        m_applicationIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApplicationStartTime") && !value["ApplicationStartTime"].IsNull())
+    {
+        if (!value["ApplicationStartTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SparkSessionInfo.ApplicationStartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationStartTime = value["ApplicationStartTime"].GetInt64();
+        m_applicationStartTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +303,22 @@ void SparkSessionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_applicationStartTime, allocator);
     }
 
 }
@@ -492,5 +530,37 @@ void SparkSessionInfo::SetState(const string& _state)
 bool SparkSessionInfo::StateHasBeenSet() const
 {
     return m_stateHasBeenSet;
+}
+
+string SparkSessionInfo::GetApplicationId() const
+{
+    return m_applicationId;
+}
+
+void SparkSessionInfo::SetApplicationId(const string& _applicationId)
+{
+    m_applicationId = _applicationId;
+    m_applicationIdHasBeenSet = true;
+}
+
+bool SparkSessionInfo::ApplicationIdHasBeenSet() const
+{
+    return m_applicationIdHasBeenSet;
+}
+
+int64_t SparkSessionInfo::GetApplicationStartTime() const
+{
+    return m_applicationStartTime;
+}
+
+void SparkSessionInfo::SetApplicationStartTime(const int64_t& _applicationStartTime)
+{
+    m_applicationStartTime = _applicationStartTime;
+    m_applicationStartTimeHasBeenSet = true;
+}
+
+bool SparkSessionInfo::ApplicationStartTimeHasBeenSet() const
+{
+    return m_applicationStartTimeHasBeenSet;
 }
 

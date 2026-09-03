@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Trtc::V20190722::Model;
 using namespace std;
 
-DownloadRecognizeVocabV3Response::DownloadRecognizeVocabV3Response()
+DownloadRecognizeVocabV3Response::DownloadRecognizeVocabV3Response() :
+    m_vocabIdHasBeenSet(false),
+    m_wordWeightStrHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,26 @@ CoreInternalOutcome DownloadRecognizeVocabV3Response::Deserialize(const string &
     }
 
 
+    if (rsp.HasMember("VocabId") && !rsp["VocabId"].IsNull())
+    {
+        if (!rsp["VocabId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VocabId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vocabId = string(rsp["VocabId"].GetString());
+        m_vocabIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("WordWeightStr") && !rsp["WordWeightStr"].IsNull())
+    {
+        if (!rsp["WordWeightStr"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WordWeightStr` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_wordWeightStr = string(rsp["WordWeightStr"].GetString());
+        m_wordWeightStrHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +92,22 @@ string DownloadRecognizeVocabV3Response::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_vocabIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VocabId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vocabId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wordWeightStrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WordWeightStr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_wordWeightStr.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +120,25 @@ string DownloadRecognizeVocabV3Response::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DownloadRecognizeVocabV3Response::GetVocabId() const
+{
+    return m_vocabId;
+}
+
+bool DownloadRecognizeVocabV3Response::VocabIdHasBeenSet() const
+{
+    return m_vocabIdHasBeenSet;
+}
+
+string DownloadRecognizeVocabV3Response::GetWordWeightStr() const
+{
+    return m_wordWeightStr;
+}
+
+bool DownloadRecognizeVocabV3Response::WordWeightStrHasBeenSet() const
+{
+    return m_wordWeightStrHasBeenSet;
+}
 
 

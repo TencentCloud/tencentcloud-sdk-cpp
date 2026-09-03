@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点属性
-                     * @return Nodes 节点属性
+                     * 获取<p>节点属性</p>
+                     * @return Nodes <p>节点属性</p>
                      * 
                      */
                     std::vector<NodeProperty> GetNodes() const;
 
                     /**
-                     * 设置节点属性
-                     * @param _nodes 节点属性
+                     * 设置<p>节点属性</p>
+                     * @param _nodes <p>节点属性</p>
                      * 
                      */
                     void SetNodes(const std::vector<NodeProperty>& _nodes);
@@ -71,7 +71,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 节点属性
+                     * <p>节点属性</p>
                      */
                     std::vector<NodeProperty> m_nodes;
                     bool m_nodesHasBeenSet;

@@ -46,9 +46,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取客户端详情
+                     * 获取<p>客户端详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Client 客户端详情
+                     * @return Client <p>客户端详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -62,9 +62,9 @@ namespace TencentCloud
                     bool ClientHasBeenSet() const;
 
                     /**
-                     * 获取主题消费信息
+                     * 获取<p>主题消费信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TopicList 主题消费信息
+                     * @return TopicList <p>主题消费信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,21 +77,41 @@ namespace TencentCloud
                      */
                     bool TopicListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>订阅主题总数</p>
+                     * @return TopicTotalCount <p>订阅主题总数</p>
+                     * 
+                     */
+                    int64_t GetTopicTotalCount() const;
+
+                    /**
+                     * 判断参数 TopicTotalCount 是否已赋值
+                     * @return TopicTotalCount 是否已赋值
+                     * 
+                     */
+                    bool TopicTotalCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 客户端详情
+                     * <p>客户端详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ConsumerClient m_client;
                     bool m_clientHasBeenSet;
 
                     /**
-                     * 主题消费信息
+                     * <p>主题消费信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TopicConsumeStats> m_topicList;
                     bool m_topicListHasBeenSet;
+
+                    /**
+                     * <p>订阅主题总数</p>
+                     */
+                    int64_t m_topicTotalCount;
+                    bool m_topicTotalCountHasBeenSet;
 
                 };
             }

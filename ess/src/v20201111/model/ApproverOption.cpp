@@ -28,7 +28,8 @@ ApproverOption::ApproverOption() :
     m_flowReadLimitHasBeenSet(false),
     m_forbidAddSignDateHasBeenSet(false),
     m_approverMobileModeHasBeenSet(false),
-    m_forbidModifySealInfosHasBeenSet(false)
+    m_forbidModifySealInfosHasBeenSet(false),
+    m_addSignComponentUseSealSizeHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome ApproverOption::Deserialize(const rapidjson::Value &value)
         m_forbidModifySealInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("AddSignComponentUseSealSize") && !value["AddSignComponentUseSealSize"].IsNull())
+    {
+        if (!value["AddSignComponentUseSealSize"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproverOption.AddSignComponentUseSealSize` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_addSignComponentUseSealSize = value["AddSignComponentUseSealSize"].GetUint64();
+        m_addSignComponentUseSealSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void ApproverOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ForbidModifySealInfos";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_forbidModifySealInfos, allocator);
+    }
+
+    if (m_addSignComponentUseSealSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddSignComponentUseSealSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_addSignComponentUseSealSize, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void ApproverOption::SetForbidModifySealInfos(const bool& _forbidModifySealInfos
 bool ApproverOption::ForbidModifySealInfosHasBeenSet() const
 {
     return m_forbidModifySealInfosHasBeenSet;
+}
+
+uint64_t ApproverOption::GetAddSignComponentUseSealSize() const
+{
+    return m_addSignComponentUseSealSize;
+}
+
+void ApproverOption::SetAddSignComponentUseSealSize(const uint64_t& _addSignComponentUseSealSize)
+{
+    m_addSignComponentUseSealSize = _addSignComponentUseSealSize;
+    m_addSignComponentUseSealSizeHasBeenSet = true;
+}
+
+bool ApproverOption::AddSignComponentUseSealSizeHasBeenSet() const
+{
+    return m_addSignComponentUseSealSizeHasBeenSet;
 }
 

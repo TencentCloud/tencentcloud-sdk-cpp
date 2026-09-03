@@ -28,7 +28,8 @@ MCPPluginConfig::MCPPluginConfig() :
     m_pluginQueryHasBeenSet(false),
     m_sSEReadTimeoutHasBeenSet(false),
     m_timeoutHasBeenSet(false),
-    m_authConfigHasBeenSet(false)
+    m_authConfigHasBeenSet(false),
+    m_supportsAppsHasBeenSet(false)
 {
 }
 
@@ -144,6 +145,16 @@ CoreInternalOutcome MCPPluginConfig::Deserialize(const rapidjson::Value &value)
         m_authConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("SupportsApps") && !value["SupportsApps"].IsNull())
+    {
+        if (!value["SupportsApps"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `MCPPluginConfig.SupportsApps` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportsApps = value["SupportsApps"].GetBool();
+        m_supportsAppsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -228,6 +239,14 @@ void MCPPluginConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_authConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_supportsAppsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportsApps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportsApps, allocator);
     }
 
 }
@@ -359,5 +378,21 @@ void MCPPluginConfig::SetAuthConfig(const AuthConfig& _authConfig)
 bool MCPPluginConfig::AuthConfigHasBeenSet() const
 {
     return m_authConfigHasBeenSet;
+}
+
+bool MCPPluginConfig::GetSupportsApps() const
+{
+    return m_supportsApps;
+}
+
+void MCPPluginConfig::SetSupportsApps(const bool& _supportsApps)
+{
+    m_supportsApps = _supportsApps;
+    m_supportsAppsHasBeenSet = true;
+}
+
+bool MCPPluginConfig::SupportsAppsHasBeenSet() const
+{
+    return m_supportsAppsHasBeenSet;
 }
 

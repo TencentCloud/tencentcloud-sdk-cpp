@@ -36,7 +36,9 @@ ChildTemplateInfo::ChildTemplateInfo() :
     m_fpsToOrigHasBeenSet(false),
     m_shortEdgeAsHeightHasBeenSet(false),
     m_hlsContainerFormatHasBeenSet(false),
-    m_hlsMp4VideoCodecTagHasBeenSet(false)
+    m_hlsMp4VideoCodecTagHasBeenSet(false),
+    m_acodecHasBeenSet(false),
+    m_audioBitrateHasBeenSet(false)
 {
 }
 
@@ -205,6 +207,26 @@ CoreInternalOutcome ChildTemplateInfo::Deserialize(const rapidjson::Value &value
         m_hlsMp4VideoCodecTagHasBeenSet = true;
     }
 
+    if (value.HasMember("Acodec") && !value["Acodec"].IsNull())
+    {
+        if (!value["Acodec"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChildTemplateInfo.Acodec` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_acodec = string(value["Acodec"].GetString());
+        m_acodecHasBeenSet = true;
+    }
+
+    if (value.HasMember("AudioBitrate") && !value["AudioBitrate"].IsNull())
+    {
+        if (!value["AudioBitrate"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChildTemplateInfo.AudioBitrate` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_audioBitrate = value["AudioBitrate"].GetInt64();
+        m_audioBitrateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +360,22 @@ void ChildTemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "HlsMp4VideoCodecTag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hlsMp4VideoCodecTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_acodecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Acodec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_acodec.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_audioBitrateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioBitrate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_audioBitrate, allocator);
     }
 
 }
@@ -597,5 +635,37 @@ void ChildTemplateInfo::SetHlsMp4VideoCodecTag(const string& _hlsMp4VideoCodecTa
 bool ChildTemplateInfo::HlsMp4VideoCodecTagHasBeenSet() const
 {
     return m_hlsMp4VideoCodecTagHasBeenSet;
+}
+
+string ChildTemplateInfo::GetAcodec() const
+{
+    return m_acodec;
+}
+
+void ChildTemplateInfo::SetAcodec(const string& _acodec)
+{
+    m_acodec = _acodec;
+    m_acodecHasBeenSet = true;
+}
+
+bool ChildTemplateInfo::AcodecHasBeenSet() const
+{
+    return m_acodecHasBeenSet;
+}
+
+int64_t ChildTemplateInfo::GetAudioBitrate() const
+{
+    return m_audioBitrate;
+}
+
+void ChildTemplateInfo::SetAudioBitrate(const int64_t& _audioBitrate)
+{
+    m_audioBitrate = _audioBitrate;
+    m_audioBitrateHasBeenSet = true;
+}
+
+bool ChildTemplateInfo::AudioBitrateHasBeenSet() const
+{
+    return m_audioBitrateHasBeenSet;
 }
 

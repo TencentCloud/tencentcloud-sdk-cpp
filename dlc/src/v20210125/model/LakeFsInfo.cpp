@@ -29,7 +29,9 @@ LakeFsInfo::LakeFsInfo() :
     m_shortNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_multiAZHasBeenSet(false),
+    m_configurationHasBeenSet(false)
 {
 }
 
@@ -138,6 +140,36 @@ CoreInternalOutcome LakeFsInfo::Deserialize(const rapidjson::Value &value)
         m_tagListHasBeenSet = true;
     }
 
+    if (value.HasMember("MultiAZ") && !value["MultiAZ"].IsNull())
+    {
+        if (!value["MultiAZ"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `LakeFsInfo.MultiAZ` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_multiAZ = value["MultiAZ"].GetBool();
+        m_multiAZHasBeenSet = true;
+    }
+
+    if (value.HasMember("Configuration") && !value["Configuration"].IsNull())
+    {
+        if (!value["Configuration"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LakeFsInfo.Configuration` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Configuration"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KVPair item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_configuration.push_back(item);
+        }
+        m_configurationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -218,6 +250,29 @@ void LakeFsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
 
         int i=0;
         for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_multiAZHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiAZ";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_multiAZ, allocator);
+    }
+
+    if (m_configurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Configuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_configuration.begin(); itr != m_configuration.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -369,5 +424,37 @@ void LakeFsInfo::SetTagList(const vector<TagInfo>& _tagList)
 bool LakeFsInfo::TagListHasBeenSet() const
 {
     return m_tagListHasBeenSet;
+}
+
+bool LakeFsInfo::GetMultiAZ() const
+{
+    return m_multiAZ;
+}
+
+void LakeFsInfo::SetMultiAZ(const bool& _multiAZ)
+{
+    m_multiAZ = _multiAZ;
+    m_multiAZHasBeenSet = true;
+}
+
+bool LakeFsInfo::MultiAZHasBeenSet() const
+{
+    return m_multiAZHasBeenSet;
+}
+
+vector<KVPair> LakeFsInfo::GetConfiguration() const
+{
+    return m_configuration;
+}
+
+void LakeFsInfo::SetConfiguration(const vector<KVPair>& _configuration)
+{
+    m_configuration = _configuration;
+    m_configurationHasBeenSet = true;
+}
+
+bool LakeFsInfo::ConfigurationHasBeenSet() const
+{
+    return m_configurationHasBeenSet;
 }
 

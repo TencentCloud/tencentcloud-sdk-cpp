@@ -58,15 +58,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取输出Id。
-                     * @return OutputId 输出Id。
+                     * 获取<p>输出Id。</p>
+                     * @return OutputId <p>输出Id。</p>
                      * 
                      */
                     std::string GetOutputId() const;
 
                     /**
-                     * 设置输出Id。
-                     * @param _outputId 输出Id。
+                     * 设置<p>输出Id。</p>
+                     * @param _outputId <p>输出Id。</p>
                      * 
                      */
                     void SetOutputId(const std::string& _outputId);
@@ -79,15 +79,15 @@ namespace TencentCloud
                     bool OutputIdHasBeenSet() const;
 
                     /**
-                     * 获取输出名称。
-                     * @return OutputName 输出名称。
+                     * 获取<p>输出名称。</p>
+                     * @return OutputName <p>输出名称。</p>
                      * 
                      */
                     std::string GetOutputName() const;
 
                     /**
-                     * 设置输出名称。
-                     * @param _outputName 输出名称。
+                     * 设置<p>输出名称。</p>
+                     * @param _outputName <p>输出名称。</p>
                      * 
                      */
                     void SetOutputName(const std::string& _outputName);
@@ -100,15 +100,15 @@ namespace TencentCloud
                     bool OutputNameHasBeenSet() const;
 
                     /**
-                     * 获取输出类型。
-                     * @return OutputType 输出类型。
+                     * 获取<p>输出类型。</p>
+                     * @return OutputType <p>输出类型。</p>
                      * 
                      */
                     std::string GetOutputType() const;
 
                     /**
-                     * 设置输出类型。
-                     * @param _outputType 输出类型。
+                     * 设置<p>输出类型。</p>
+                     * @param _outputType <p>输出类型。</p>
                      * 
                      */
                     void SetOutputType(const std::string& _outputType);
@@ -121,15 +121,15 @@ namespace TencentCloud
                     bool OutputTypeHasBeenSet() const;
 
                     /**
-                     * 获取输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。
-                     * @return OutputKind 输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。
+                     * 获取<p>输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。</p>
+                     * @return OutputKind <p>输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。</p>
                      * 
                      */
                     std::string GetOutputKind() const;
 
                     /**
-                     * 设置输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。
-                     * @param _outputKind 输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。
+                     * 设置<p>输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。</p>
+                     * @param _outputKind <p>输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。</p>
                      * 
                      */
                     void SetOutputKind(const std::string& _outputKind);
@@ -142,18 +142,18 @@ namespace TencentCloud
                     bool OutputKindHasBeenSet() const;
 
                     /**
-                     * 获取输出描述。
+                     * 获取<p>输出描述。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 输出描述。
+                     * @return Description <p>输出描述。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置输出描述。
+                     * 设置<p>输出描述。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 输出描述。
+                     * @param _description <p>输出描述。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -167,15 +167,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取输出协议。
-                     * @return Protocol 输出协议。
+                     * 获取<p>输出协议。</p>
+                     * @return Protocol <p>输出协议。</p>
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置输出协议。
-                     * @param _protocol 输出协议。
+                     * 设置<p>输出协议。</p>
+                     * @param _protocol <p>输出协议。</p>
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -188,15 +188,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取输出的出口地址信息列表。
-                     * @return OutputAddressList 输出的出口地址信息列表。
+                     * 获取<p>输出的出口地址信息列表。</p>
+                     * @return OutputAddressList <p>输出的出口地址信息列表。</p>
                      * 
                      */
                     std::vector<OutputAddress> GetOutputAddressList() const;
 
                     /**
-                     * 设置输出的出口地址信息列表。
-                     * @param _outputAddressList 输出的出口地址信息列表。
+                     * 设置<p>输出的出口地址信息列表。</p>
+                     * @param _outputAddressList <p>输出的出口地址信息列表。</p>
                      * 
                      */
                     void SetOutputAddressList(const std::vector<OutputAddress>& _outputAddressList);
@@ -209,18 +209,18 @@ namespace TencentCloud
                     bool OutputAddressListHasBeenSet() const;
 
                     /**
-                     * 获取输出的地区。
+                     * 获取<p>输出的地区。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OutputRegion 输出的地区。
+                     * @return OutputRegion <p>输出的地区。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutputRegion() const;
 
                     /**
-                     * 设置输出的地区。
+                     * 设置<p>输出的地区。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _outputRegion 输出的地区。
+                     * @param _outputRegion <p>输出的地区。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -234,18 +234,18 @@ namespace TencentCloud
                     bool OutputRegionHasBeenSet() const;
 
                     /**
-                     * 获取输出的SRT配置信息。
+                     * 获取<p>输出的SRT配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SRTSettings 输出的SRT配置信息。
+                     * @return SRTSettings <p>输出的SRT配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribeOutputSRTSettings GetSRTSettings() const;
 
                     /**
-                     * 设置输出的SRT配置信息。
+                     * 设置<p>输出的SRT配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sRTSettings 输出的SRT配置信息。
+                     * @param _sRTSettings <p>输出的SRT配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -259,18 +259,18 @@ namespace TencentCloud
                     bool SRTSettingsHasBeenSet() const;
 
                     /**
-                     * 获取输出的RTP配置信息。
+                     * 获取<p>输出的RTP配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RTPSettings 输出的RTP配置信息。
+                     * @return RTPSettings <p>输出的RTP配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribeOutputRTPSettings GetRTPSettings() const;
 
                     /**
-                     * 设置输出的RTP配置信息。
+                     * 设置<p>输出的RTP配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rTPSettings 输出的RTP配置信息。
+                     * @param _rTPSettings <p>输出的RTP配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -284,18 +284,18 @@ namespace TencentCloud
                     bool RTPSettingsHasBeenSet() const;
 
                     /**
-                     * 获取输出的RTMP配置信息。
+                     * 获取<p>输出的RTMP配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RTMPSettings 输出的RTMP配置信息。
+                     * @return RTMPSettings <p>输出的RTMP配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribeOutputRTMPSettings GetRTMPSettings() const;
 
                     /**
-                     * 设置输出的RTMP配置信息。
+                     * 设置<p>输出的RTMP配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rTMPSettings 输出的RTMP配置信息。
+                     * @param _rTMPSettings <p>输出的RTMP配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -309,18 +309,18 @@ namespace TencentCloud
                     bool RTMPSettingsHasBeenSet() const;
 
                     /**
-                     * 获取输出的RTMP拉流配置信息。
+                     * 获取<p>输出的RTMP拉流配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RTMPPullSettings 输出的RTMP拉流配置信息。
+                     * @return RTMPPullSettings <p>输出的RTMP拉流配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribeOutputRTMPPullSettings GetRTMPPullSettings() const;
 
                     /**
-                     * 设置输出的RTMP拉流配置信息。
+                     * 设置<p>输出的RTMP拉流配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rTMPPullSettings 输出的RTMP拉流配置信息。
+                     * @param _rTMPPullSettings <p>输出的RTMP拉流配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -334,22 +334,18 @@ namespace TencentCloud
                     bool RTMPPullSettingsHasBeenSet() const;
 
                     /**
-                     * 获取CIDR白名单列表。
-当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。
+                     * 获取<p>CIDR白名单列表。<br>当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AllowIpList CIDR白名单列表。
-当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。
+                     * @return AllowIpList <p>CIDR白名单列表。<br>当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAllowIpList() const;
 
                     /**
-                     * 设置CIDR白名单列表。
-当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。
+                     * 设置<p>CIDR白名单列表。<br>当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _allowIpList CIDR白名单列表。
-当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。
+                     * @param _allowIpList <p>CIDR白名单列表。<br>当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -363,18 +359,18 @@ namespace TencentCloud
                     bool AllowIpListHasBeenSet() const;
 
                     /**
-                     * 获取输出的RTSP拉流配置信息。
+                     * 获取<p>输出的RTSP拉流配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RTSPPullSettings 输出的RTSP拉流配置信息。
+                     * @return RTSPPullSettings <p>输出的RTSP拉流配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribeOutputRTSPPullSettings GetRTSPPullSettings() const;
 
                     /**
-                     * 设置输出的RTSP拉流配置信息。
+                     * 设置<p>输出的RTSP拉流配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rTSPPullSettings 输出的RTSP拉流配置信息。
+                     * @param _rTSPPullSettings <p>输出的RTSP拉流配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -388,18 +384,18 @@ namespace TencentCloud
                     bool RTSPPullSettingsHasBeenSet() const;
 
                     /**
-                     * 获取输出的HLS拉流配置信息。
+                     * 获取<p>输出的HLS拉流配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HLSPullSettings 输出的HLS拉流配置信息。
+                     * @return HLSPullSettings <p>输出的HLS拉流配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribeOutputHLSPullSettings GetHLSPullSettings() const;
 
                     /**
-                     * 设置输出的HLS拉流配置信息。
+                     * 设置<p>输出的HLS拉流配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hLSPullSettings 输出的HLS拉流配置信息。
+                     * @param _hLSPullSettings <p>输出的HLS拉流配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -413,15 +409,15 @@ namespace TencentCloud
                     bool HLSPullSettingsHasBeenSet() const;
 
                     /**
-                     * 获取最大拉流并发数，最大为4，默认4。
-                     * @return MaxConcurrent 最大拉流并发数，最大为4，默认4。
+                     * 获取<p>最大拉流并发数，最大为4，默认4。</p>
+                     * @return MaxConcurrent <p>最大拉流并发数，最大为4，默认4。</p>
                      * 
                      */
                     uint64_t GetMaxConcurrent() const;
 
                     /**
-                     * 设置最大拉流并发数，最大为4，默认4。
-                     * @param _maxConcurrent 最大拉流并发数，最大为4，默认4。
+                     * 设置<p>最大拉流并发数，最大为4，默认4。</p>
+                     * @param _maxConcurrent <p>最大拉流并发数，最大为4，默认4。</p>
                      * 
                      */
                     void SetMaxConcurrent(const uint64_t& _maxConcurrent);
@@ -434,18 +430,18 @@ namespace TencentCloud
                     bool MaxConcurrentHasBeenSet() const;
 
                     /**
-                     * 获取绑定的安全组 ID。
+                     * 获取<p>绑定的安全组 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SecurityGroupIds 绑定的安全组 ID。
+                     * @return SecurityGroupIds <p>绑定的安全组 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置绑定的安全组 ID。
+                     * 设置<p>绑定的安全组 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _securityGroupIds 绑定的安全组 ID。
+                     * @param _securityGroupIds <p>绑定的安全组 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -459,15 +455,15 @@ namespace TencentCloud
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取可用区，output目前最多只支持一个。	
-                     * @return Zones 可用区，output目前最多只支持一个。	
+                     * 获取<p>可用区，output目前最多只支持一个。</p>
+                     * @return Zones <p>可用区，output目前最多只支持一个。</p>
                      * 
                      */
                     std::vector<std::string> GetZones() const;
 
                     /**
-                     * 设置可用区，output目前最多只支持一个。	
-                     * @param _zones 可用区，output目前最多只支持一个。	
+                     * 设置<p>可用区，output目前最多只支持一个。</p>
+                     * @param _zones <p>可用区，output目前最多只支持一个。</p>
                      * 
                      */
                     void SetZones(const std::vector<std::string>& _zones);
@@ -480,18 +476,18 @@ namespace TencentCloud
                     bool ZonesHasBeenSet() const;
 
                     /**
-                     * 获取输出的RIST配置信息。
+                     * 获取<p>输出的RIST配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RISTSettings 输出的RIST配置信息。
+                     * @return RISTSettings <p>输出的RIST配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribeOutputRISTSettings GetRISTSettings() const;
 
                     /**
-                     * 设置输出的RIST配置信息。
+                     * 设置<p>输出的RIST配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rISTSettings 输出的RIST配置信息。
+                     * @param _rISTSettings <p>输出的RIST配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -505,15 +501,15 @@ namespace TencentCloud
                     bool RISTSettingsHasBeenSet() const;
 
                     /**
-                     * 获取对于含有多个音/视频轨的流，可以指定需要使用的轨道
-                     * @return PidSelector 对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * 获取<p>对于含有多个音/视频轨的流，可以指定需要使用的轨道</p>
+                     * @return PidSelector <p>对于含有多个音/视频轨的流，可以指定需要使用的轨道</p>
                      * @deprecated
                      */
                     PidSelector GetPidSelector() const;
 
                     /**
-                     * 设置对于含有多个音/视频轨的流，可以指定需要使用的轨道
-                     * @param _pidSelector 对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * 设置<p>对于含有多个音/视频轨的流，可以指定需要使用的轨道</p>
+                     * @param _pidSelector <p>对于含有多个音/视频轨的流，可以指定需要使用的轨道</p>
                      * @deprecated
                      */
                     void SetPidSelector(const PidSelector& _pidSelector);
@@ -526,15 +522,15 @@ namespace TencentCloud
                     bool PidSelectorHasBeenSet() const;
 
                     /**
-                     * 获取输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址
-                     * @return StreamUrls 输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址
+                     * 获取<p>输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址</p>
+                     * @return StreamUrls <p>输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址</p>
                      * 
                      */
                     std::vector<StreamUrlDetail> GetStreamUrls() const;
 
                     /**
-                     * 设置输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址
-                     * @param _streamUrls 输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址
+                     * 设置<p>输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址</p>
+                     * @param _streamUrls <p>输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址</p>
                      * 
                      */
                     void SetStreamUrls(const std::vector<StreamUrlDetail>& _streamUrls);
@@ -547,15 +543,15 @@ namespace TencentCloud
                     bool StreamUrlsHasBeenSet() const;
 
                     /**
-                     * 获取对于含有多个音/视频轨的流，可以指定需要使用的轨道
-                     * @return StreamSelector 对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * 获取<p>对于含有多个音/视频轨的流，可以指定需要使用的轨道</p>
+                     * @return StreamSelector <p>对于含有多个音/视频轨的流，可以指定需要使用的轨道</p>
                      * 
                      */
                     StreamSelector GetStreamSelector() const;
 
                     /**
-                     * 设置对于含有多个音/视频轨的流，可以指定需要使用的轨道
-                     * @param _streamSelector 对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * 设置<p>对于含有多个音/视频轨的流，可以指定需要使用的轨道</p>
+                     * @param _streamSelector <p>对于含有多个音/视频轨的流，可以指定需要使用的轨道</p>
                      * 
                      */
                     void SetStreamSelector(const StreamSelector& _streamSelector);
@@ -567,151 +563,177 @@ namespace TencentCloud
                      */
                     bool StreamSelectorHasBeenSet() const;
 
+                    /**
+                     * 获取<p>启用或者禁用输出</p><p>枚举值：</p><ul><li>DISABLED： 禁用</li><li>ENABLED： 启用</li></ul>
+                     * @return State <p>启用或者禁用输出</p><p>枚举值：</p><ul><li>DISABLED： 禁用</li><li>ENABLED： 启用</li></ul>
+                     * 
+                     */
+                    std::string GetState() const;
+
+                    /**
+                     * 设置<p>启用或者禁用输出</p><p>枚举值：</p><ul><li>DISABLED： 禁用</li><li>ENABLED： 启用</li></ul>
+                     * @param _state <p>启用或者禁用输出</p><p>枚举值：</p><ul><li>DISABLED： 禁用</li><li>ENABLED： 启用</li></ul>
+                     * 
+                     */
+                    void SetState(const std::string& _state);
+
+                    /**
+                     * 判断参数 State 是否已赋值
+                     * @return State 是否已赋值
+                     * 
+                     */
+                    bool StateHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 输出Id。
+                     * <p>输出Id。</p>
                      */
                     std::string m_outputId;
                     bool m_outputIdHasBeenSet;
 
                     /**
-                     * 输出名称。
+                     * <p>输出名称。</p>
                      */
                     std::string m_outputName;
                     bool m_outputNameHasBeenSet;
 
                     /**
-                     * 输出类型。
+                     * <p>输出类型。</p>
                      */
                     std::string m_outputType;
                     bool m_outputTypeHasBeenSet;
 
                     /**
-                     * 输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。
+                     * <p>输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。</p>
                      */
                     std::string m_outputKind;
                     bool m_outputKindHasBeenSet;
 
                     /**
-                     * 输出描述。
+                     * <p>输出描述。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 输出协议。
+                     * <p>输出协议。</p>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 输出的出口地址信息列表。
+                     * <p>输出的出口地址信息列表。</p>
                      */
                     std::vector<OutputAddress> m_outputAddressList;
                     bool m_outputAddressListHasBeenSet;
 
                     /**
-                     * 输出的地区。
+                     * <p>输出的地区。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outputRegion;
                     bool m_outputRegionHasBeenSet;
 
                     /**
-                     * 输出的SRT配置信息。
+                     * <p>输出的SRT配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeOutputSRTSettings m_sRTSettings;
                     bool m_sRTSettingsHasBeenSet;
 
                     /**
-                     * 输出的RTP配置信息。
+                     * <p>输出的RTP配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeOutputRTPSettings m_rTPSettings;
                     bool m_rTPSettingsHasBeenSet;
 
                     /**
-                     * 输出的RTMP配置信息。
+                     * <p>输出的RTMP配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeOutputRTMPSettings m_rTMPSettings;
                     bool m_rTMPSettingsHasBeenSet;
 
                     /**
-                     * 输出的RTMP拉流配置信息。
+                     * <p>输出的RTMP拉流配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeOutputRTMPPullSettings m_rTMPPullSettings;
                     bool m_rTMPPullSettingsHasBeenSet;
 
                     /**
-                     * CIDR白名单列表。
-当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。
+                     * <p>CIDR白名单列表。<br>当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_allowIpList;
                     bool m_allowIpListHasBeenSet;
 
                     /**
-                     * 输出的RTSP拉流配置信息。
+                     * <p>输出的RTSP拉流配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeOutputRTSPPullSettings m_rTSPPullSettings;
                     bool m_rTSPPullSettingsHasBeenSet;
 
                     /**
-                     * 输出的HLS拉流配置信息。
+                     * <p>输出的HLS拉流配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeOutputHLSPullSettings m_hLSPullSettings;
                     bool m_hLSPullSettingsHasBeenSet;
 
                     /**
-                     * 最大拉流并发数，最大为4，默认4。
+                     * <p>最大拉流并发数，最大为4，默认4。</p>
                      */
                     uint64_t m_maxConcurrent;
                     bool m_maxConcurrentHasBeenSet;
 
                     /**
-                     * 绑定的安全组 ID。
+                     * <p>绑定的安全组 ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
 
                     /**
-                     * 可用区，output目前最多只支持一个。	
+                     * <p>可用区，output目前最多只支持一个。</p>
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
 
                     /**
-                     * 输出的RIST配置信息。
+                     * <p>输出的RIST配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeOutputRISTSettings m_rISTSettings;
                     bool m_rISTSettingsHasBeenSet;
 
                     /**
-                     * 对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * <p>对于含有多个音/视频轨的流，可以指定需要使用的轨道</p>
                      */
                     PidSelector m_pidSelector;
                     bool m_pidSelectorHasBeenSet;
 
                     /**
-                     * 输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址
+                     * <p>输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址</p>
                      */
                     std::vector<StreamUrlDetail> m_streamUrls;
                     bool m_streamUrlsHasBeenSet;
 
                     /**
-                     * 对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * <p>对于含有多个音/视频轨的流，可以指定需要使用的轨道</p>
                      */
                     StreamSelector m_streamSelector;
                     bool m_streamSelectorHasBeenSet;
+
+                    /**
+                     * <p>启用或者禁用输出</p><p>枚举值：</p><ul><li>DISABLED： 禁用</li><li>ENABLED： 启用</li></ul>
+                     */
+                    std::string m_state;
+                    bool m_stateHasBeenSet;
 
                 };
             }

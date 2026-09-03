@@ -32,7 +32,8 @@ ModifyCompanyDirectoryConfigRequest::ModifyCompanyDirectoryConfigRequest() :
     m_createAuthConfigHasBeenSet(false),
     m_displayOnLoginPageHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_nameI18nHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,21 @@ string ModifyCompanyDirectoryConfigRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameI18nHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NameI18n";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_nameI18n.begin(); itr != m_nameI18n.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -289,6 +305,22 @@ void ModifyCompanyDirectoryConfigRequest::SetDescription(const string& _descript
 bool ModifyCompanyDirectoryConfigRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+vector<I18nString> ModifyCompanyDirectoryConfigRequest::GetNameI18n() const
+{
+    return m_nameI18n;
+}
+
+void ModifyCompanyDirectoryConfigRequest::SetNameI18n(const vector<I18nString>& _nameI18n)
+{
+    m_nameI18n = _nameI18n;
+    m_nameI18nHasBeenSet = true;
+}
+
+bool ModifyCompanyDirectoryConfigRequest::NameI18nHasBeenSet() const
+{
+    return m_nameI18nHasBeenSet;
 }
 
 

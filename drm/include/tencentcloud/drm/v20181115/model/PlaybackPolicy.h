@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool PlaybackDurationSecondsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否允许下发离线license</p><p>默认值：false</p><p>widevine方案，<br>当CanPersistent为true时，根据license request中请求的是online还是offline license自动匹配下发。<br>当CanPersistent为false时，只下发online license。</p><p>fairplay方案。<br>当CanPersistent为true时，只下发offline license。<br>当CanPersistent为false时，只下发online license。</p>
+                     * @return CanPersistent <p>是否允许下发离线license</p><p>默认值：false</p><p>widevine方案，<br>当CanPersistent为true时，根据license request中请求的是online还是offline license自动匹配下发。<br>当CanPersistent为false时，只下发online license。</p><p>fairplay方案。<br>当CanPersistent为true时，只下发offline license。<br>当CanPersistent为false时，只下发online license。</p>
+                     * 
+                     */
+                    bool GetCanPersistent() const;
+
+                    /**
+                     * 设置<p>是否允许下发离线license</p><p>默认值：false</p><p>widevine方案，<br>当CanPersistent为true时，根据license request中请求的是online还是offline license自动匹配下发。<br>当CanPersistent为false时，只下发online license。</p><p>fairplay方案。<br>当CanPersistent为true时，只下发offline license。<br>当CanPersistent为false时，只下发online license。</p>
+                     * @param _canPersistent <p>是否允许下发离线license</p><p>默认值：false</p><p>widevine方案，<br>当CanPersistent为true时，根据license request中请求的是online还是offline license自动匹配下发。<br>当CanPersistent为false时，只下发online license。</p><p>fairplay方案。<br>当CanPersistent为true时，只下发offline license。<br>当CanPersistent为false时，只下发online license。</p>
+                     * 
+                     */
+                    void SetCanPersistent(const bool& _canPersistent);
+
+                    /**
+                     * 判断参数 CanPersistent 是否已赋值
+                     * @return CanPersistent 是否已赋值
+                     * 
+                     */
+                    bool CanPersistentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     uint64_t m_playbackDurationSeconds;
                     bool m_playbackDurationSecondsHasBeenSet;
+
+                    /**
+                     * <p>是否允许下发离线license</p><p>默认值：false</p><p>widevine方案，<br>当CanPersistent为true时，根据license request中请求的是online还是offline license自动匹配下发。<br>当CanPersistent为false时，只下发online license。</p><p>fairplay方案。<br>当CanPersistent为true时，只下发offline license。<br>当CanPersistent为false时，只下发online license。</p>
+                     */
+                    bool m_canPersistent;
+                    bool m_canPersistentHasBeenSet;
 
                 };
             }

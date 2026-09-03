@@ -23,7 +23,8 @@ using namespace std;
 OrderDetail::OrderDetail() :
     m_resourceIDHasBeenSet(false),
     m_inquireKeyHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_sourceTypeHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome OrderDetail::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("SourceType") && !value["SourceType"].IsNull())
+    {
+        if (!value["SourceType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrderDetail.SourceType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceType = value["SourceType"].GetUint64();
+        m_sourceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void OrderDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_sourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sourceType, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void OrderDetail::SetStatus(const uint64_t& _status)
 bool OrderDetail::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+uint64_t OrderDetail::GetSourceType() const
+{
+    return m_sourceType;
+}
+
+void OrderDetail::SetSourceType(const uint64_t& _sourceType)
+{
+    m_sourceType = _sourceType;
+    m_sourceTypeHasBeenSet = true;
+}
+
+bool OrderDetail::SourceTypeHasBeenSet() const
+{
+    return m_sourceTypeHasBeenSet;
 }
 

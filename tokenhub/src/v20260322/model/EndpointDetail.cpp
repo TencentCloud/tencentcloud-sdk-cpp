@@ -33,7 +33,8 @@ EndpointDetail::EndpointDetail() :
     m_stopReasonHasBeenSet(false),
     m_tPMHasBeenSet(false),
     m_autoAdjustQuotaHasBeenSet(false),
-    m_rPMHasBeenSet(false)
+    m_rPMHasBeenSet(false),
+    m_modelStatusHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome EndpointDetail::Deserialize(const rapidjson::Value &value)
         m_rPMHasBeenSet = true;
     }
 
+    if (value.HasMember("ModelStatus") && !value["ModelStatus"].IsNull())
+    {
+        if (!value["ModelStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EndpointDetail.ModelStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modelStatus = string(value["ModelStatus"].GetString());
+        m_modelStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void EndpointDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "RPM";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rPM, allocator);
+    }
+
+    if (m_modelStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void EndpointDetail::SetRPM(const int64_t& _rPM)
 bool EndpointDetail::RPMHasBeenSet() const
 {
     return m_rPMHasBeenSet;
+}
+
+string EndpointDetail::GetModelStatus() const
+{
+    return m_modelStatus;
+}
+
+void EndpointDetail::SetModelStatus(const string& _modelStatus)
+{
+    m_modelStatus = _modelStatus;
+    m_modelStatusHasBeenSet = true;
+}
+
+bool EndpointDetail::ModelStatusHasBeenSet() const
+{
+    return m_modelStatusHasBeenSet;
 }
 

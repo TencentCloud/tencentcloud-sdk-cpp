@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool VideoBitrateHasBeenSet() const;
 
                     /**
-                     * 获取<p>音频编码：aac，默认aac。<br>注意：当前该参数未生效，待后续支持！</p>
-                     * @return Acodec <p>音频编码：aac，默认aac。<br>注意：当前该参数未生效，待后续支持！</p>
+                     * 获取<p>音频编码。默认为自动适配</p>
+                     * @return Acodec <p>音频编码。默认为自动适配</p>
                      * 
                      */
                     std::string GetAcodec() const;
 
                     /**
-                     * 设置<p>音频编码：aac，默认aac。<br>注意：当前该参数未生效，待后续支持！</p>
-                     * @param _acodec <p>音频编码：aac，默认aac。<br>注意：当前该参数未生效，待后续支持！</p>
+                     * 设置<p>音频编码。默认为自动适配</p>
+                     * @param _acodec <p>音频编码。默认为自动适配</p>
                      * 
                      */
                     void SetAcodec(const std::string& _acodec);
@@ -649,7 +649,7 @@ namespace TencentCloud
                     bool m_videoBitrateHasBeenSet;
 
                     /**
-                     * <p>音频编码：aac，默认aac。<br>注意：当前该参数未生效，待后续支持！</p>
+                     * <p>音频编码。默认为自动适配</p>
                      */
                     std::string m_acodec;
                     bool m_acodecHasBeenSet;

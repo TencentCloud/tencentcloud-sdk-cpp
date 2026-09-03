@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目ID，0表示默认项目，-1表示所有项目，如果需要查找具体项目下的应用列表，请填入具体项目ID，项目ID在项目管理中查看 https://console.cloud.tencent.com/project
-                     * @return ProjectId 项目ID，0表示默认项目，-1表示所有项目，如果需要查找具体项目下的应用列表，请填入具体项目ID，项目ID在项目管理中查看 https://console.cloud.tencent.com/project
+                     * 获取<p>项目ID，0表示默认项目，-1表示所有项目，如果需要查找具体项目下的应用列表，请填入具体项目ID，项目ID在项目管理中查看 https://console.cloud.tencent.com/project</p>
+                     * @return ProjectId <p>项目ID，0表示默认项目，-1表示所有项目，如果需要查找具体项目下的应用列表，请填入具体项目ID，项目ID在项目管理中查看 https://console.cloud.tencent.com/project</p>
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID，0表示默认项目，-1表示所有项目，如果需要查找具体项目下的应用列表，请填入具体项目ID，项目ID在项目管理中查看 https://console.cloud.tencent.com/project
-                     * @param _projectId 项目ID，0表示默认项目，-1表示所有项目，如果需要查找具体项目下的应用列表，请填入具体项目ID，项目ID在项目管理中查看 https://console.cloud.tencent.com/project
+                     * 设置<p>项目ID，0表示默认项目，-1表示所有项目，如果需要查找具体项目下的应用列表，请填入具体项目ID，项目ID在项目管理中查看 https://console.cloud.tencent.com/project</p>
+                     * @param _projectId <p>项目ID，0表示默认项目，-1表示所有项目，如果需要查找具体项目下的应用列表，请填入具体项目ID，项目ID在项目管理中查看 https://console.cloud.tencent.com/project</p>
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取页码ID，0表示第一页，以此后推。默认填0
-                     * @return PageNo 页码ID，0表示第一页，以此后推。默认填0
+                     * 获取<p>页码ID，0表示第一页，以此后推。默认填0</p>
+                     * @return PageNo <p>页码ID，0表示第一页，以此后推。默认填0</p>
                      * 
                      */
                     uint64_t GetPageNo() const;
 
                     /**
-                     * 设置页码ID，0表示第一页，以此后推。默认填0
-                     * @param _pageNo 页码ID，0表示第一页，以此后推。默认填0
+                     * 设置<p>页码ID，0表示第一页，以此后推。默认填0</p>
+                     * @param _pageNo <p>页码ID，0表示第一页，以此后推。默认填0</p>
                      * 
                      */
                     void SetPageNo(const uint64_t& _pageNo);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool PageNoHasBeenSet() const;
 
                     /**
-                     * 获取每页展示应用数量。默认填200
-                     * @return PageSize 每页展示应用数量。默认填200
+                     * 获取<p>每页展示应用数量。默认填200</p>
+                     * @return PageSize <p>每页展示应用数量。默认填200</p>
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置每页展示应用数量。默认填200
-                     * @param _pageSize 每页展示应用数量。默认填200
+                     * 设置<p>每页展示应用数量。默认填200</p>
+                     * @param _pageSize <p>每页展示应用数量。默认填200</p>
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取所查找应用名称的关键字，支持模糊匹配查找。空串表示查询所有应用
-                     * @return SearchText 所查找应用名称的关键字，支持模糊匹配查找。空串表示查询所有应用
+                     * 获取<p>所查找应用名称的关键字，支持模糊匹配查找。空串表示查询所有应用</p>
+                     * @return SearchText <p>所查找应用名称的关键字，支持模糊匹配查找。空串表示查询所有应用</p>
                      * 
                      */
                     std::string GetSearchText() const;
 
                     /**
-                     * 设置所查找应用名称的关键字，支持模糊匹配查找。空串表示查询所有应用
-                     * @param _searchText 所查找应用名称的关键字，支持模糊匹配查找。空串表示查询所有应用
+                     * 设置<p>所查找应用名称的关键字，支持模糊匹配查找。空串表示查询所有应用</p>
+                     * @param _searchText <p>所查找应用名称的关键字，支持模糊匹配查找。空串表示查询所有应用</p>
                      * 
                      */
                     void SetSearchText(const std::string& _searchText);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool SearchTextHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return TagSet 标签列表
+                     * 获取<p>标签列表</p>
+                     * @return TagSet <p>标签列表</p>
                      * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
-                     * 设置标签列表
-                     * @param _tagSet 标签列表
+                     * 设置<p>标签列表</p>
+                     * @param _tagSet <p>标签列表</p>
                      * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool TagSetHasBeenSet() const;
 
                     /**
-                     * 获取查找过滤关键字列表
-                     * @return Filters 查找过滤关键字列表
+                     * 获取<p>查找过滤关键字列表</p>
+                     * @return Filters <p>查找过滤关键字列表</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置查找过滤关键字列表
-                     * @param _filters 查找过滤关键字列表
+                     * 设置<p>查找过滤关键字列表</p>
+                     * @param _filters <p>查找过滤关键字列表</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -170,43 +170,70 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否查询GME3.0应用</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * @return NewVersion <p>是否查询GME3.0应用</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * 
+                     */
+                    uint64_t GetNewVersion() const;
+
+                    /**
+                     * 设置<p>是否查询GME3.0应用</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * @param _newVersion <p>是否查询GME3.0应用</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * 
+                     */
+                    void SetNewVersion(const uint64_t& _newVersion);
+
+                    /**
+                     * 判断参数 NewVersion 是否已赋值
+                     * @return NewVersion 是否已赋值
+                     * 
+                     */
+                    bool NewVersionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 项目ID，0表示默认项目，-1表示所有项目，如果需要查找具体项目下的应用列表，请填入具体项目ID，项目ID在项目管理中查看 https://console.cloud.tencent.com/project
+                     * <p>项目ID，0表示默认项目，-1表示所有项目，如果需要查找具体项目下的应用列表，请填入具体项目ID，项目ID在项目管理中查看 https://console.cloud.tencent.com/project</p>
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 页码ID，0表示第一页，以此后推。默认填0
+                     * <p>页码ID，0表示第一页，以此后推。默认填0</p>
                      */
                     uint64_t m_pageNo;
                     bool m_pageNoHasBeenSet;
 
                     /**
-                     * 每页展示应用数量。默认填200
+                     * <p>每页展示应用数量。默认填200</p>
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 所查找应用名称的关键字，支持模糊匹配查找。空串表示查询所有应用
+                     * <p>所查找应用名称的关键字，支持模糊匹配查找。空串表示查询所有应用</p>
                      */
                     std::string m_searchText;
                     bool m_searchTextHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * <p>标签列表</p>
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;
 
                     /**
-                     * 查找过滤关键字列表
+                     * <p>查找过滤关键字列表</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * <p>是否查询GME3.0应用</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     */
+                    uint64_t m_newVersion;
+                    bool m_newVersionHasBeenSet;
 
                 };
             }

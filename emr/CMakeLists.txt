@@ -233,6 +233,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/DescribeDynamicInstanceListRequest.h
   include/tencentcloud/emr/v20190103/model/ModifyInstanceBasicResponse.h
   include/tencentcloud/emr/v20190103/model/Filter.h
+  include/tencentcloud/emr/v20190103/model/ArchitectureInfo.h
   include/tencentcloud/emr/v20190103/model/DescribeTrinoQueryInfoRequest.h
   include/tencentcloud/emr/v20190103/model/ModifyResourcePoolsRequest.h
   include/tencentcloud/emr/v20190103/model/TerminateInstanceResponse.h
@@ -660,6 +661,7 @@ set(emr_src
   src/v20190103/model/DescribeDynamicInstanceListRequest.cpp
   src/v20190103/model/ModifyInstanceBasicResponse.cpp
   src/v20190103/model/Filter.cpp
+  src/v20190103/model/ArchitectureInfo.cpp
   src/v20190103/model/DescribeTrinoQueryInfoRequest.cpp
   src/v20190103/model/ModifyResourcePoolsRequest.cpp
   src/v20190103/model/TerminateInstanceResponse.cpp

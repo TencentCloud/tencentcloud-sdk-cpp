@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/apis/v20240801/model/TimeRange.h>
 
 
 namespace TencentCloud
@@ -47,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时间窗口，分钟
+                     * 获取<p>时间窗口，分钟</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Interval 时间窗口，分钟
+                     * @return Interval <p>时间窗口，分钟</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetInterval() const;
 
                     /**
-                     * 设置时间窗口，分钟
+                     * 设置<p>时间窗口，分钟</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _interval 时间窗口，分钟
+                     * @param _interval <p>时间窗口，分钟</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +73,18 @@ namespace TencentCloud
                     bool IntervalHasBeenSet() const;
 
                     /**
-                     * 获取累计上限，k
+                     * 获取<p>累计上限，k</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Limit 累计上限，k
+                     * @return Limit <p>累计上限，k</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置累计上限，k
+                     * 设置<p>累计上限，k</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _limit 累计上限，k
+                     * @param _limit <p>累计上限，k</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -96,21 +97,85 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取<p>限流类型</p><p>枚举值：</p><ul><li>minute： 时间窗口</li><li>day： 自然日</li><li>month： 自然月</li><li>timeRange： 时间范围</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Type <p>限流类型</p><p>枚举值：</p><ul><li>minute： 时间窗口</li><li>day： 自然日</li><li>month： 自然月</li><li>timeRange： 时间范围</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置<p>限流类型</p><p>枚举值：</p><ul><li>minute： 时间窗口</li><li>day： 自然日</li><li>month： 自然月</li><li>timeRange： 时间范围</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _type <p>限流类型</p><p>枚举值：</p><ul><li>minute： 时间窗口</li><li>day： 自然日</li><li>month： 自然月</li><li>timeRange： 时间范围</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>时间区间配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TimeRange <p>时间区间配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    TimeRange GetTimeRange() const;
+
+                    /**
+                     * 设置<p>时间区间配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _timeRange <p>时间区间配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTimeRange(const TimeRange& _timeRange);
+
+                    /**
+                     * 判断参数 TimeRange 是否已赋值
+                     * @return TimeRange 是否已赋值
+                     * 
+                     */
+                    bool TimeRangeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 时间窗口，分钟
+                     * <p>时间窗口，分钟</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_interval;
                     bool m_intervalHasBeenSet;
 
                     /**
-                     * 累计上限，k
+                     * <p>累计上限，k</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * <p>限流类型</p><p>枚举值：</p><ul><li>minute： 时间窗口</li><li>day： 自然日</li><li>month： 自然月</li><li>timeRange： 时间范围</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * <p>时间区间配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TimeRange m_timeRange;
+                    bool m_timeRangeHasBeenSet;
 
                 };
             }

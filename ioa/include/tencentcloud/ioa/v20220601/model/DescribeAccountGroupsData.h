@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取账号分组名全路径，点分格式
-                     * @return NamePath 账号分组名全路径，点分格式
+                     * 获取<p>账号分组名全路径，点分格式</p>
+                     * @return NamePath <p>账号分组名全路径，点分格式</p>
                      * 
                      */
                     std::string GetNamePath() const;
 
                     /**
-                     * 设置账号分组名全路径，点分格式
-                     * @param _namePath 账号分组名全路径，点分格式
+                     * 设置<p>账号分组名全路径，点分格式</p>
+                     * @param _namePath <p>账号分组名全路径，点分格式</p>
                      * 
                      */
                     void SetNamePath(const std::string& _namePath);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NamePathHasBeenSet() const;
 
                     /**
-                     * 获取账号分组ID全路径，数组格式
-                     * @return IdPathArr 账号分组ID全路径，数组格式
+                     * 获取<p>账号分组ID全路径，数组格式</p>
+                     * @return IdPathArr <p>账号分组ID全路径，数组格式</p>
                      * 
                      */
                     std::vector<int64_t> GetIdPathArr() const;
 
                     /**
-                     * 设置账号分组ID全路径，数组格式
-                     * @param _idPathArr 账号分组ID全路径，数组格式
+                     * 设置<p>账号分组ID全路径，数组格式</p>
+                     * @param _idPathArr <p>账号分组ID全路径，数组格式</p>
                      * 
                      */
                     void SetIdPathArr(const std::vector<int64_t>& _idPathArr);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool IdPathArrHasBeenSet() const;
 
                     /**
-                     * 获取扩展信息
-                     * @return ExtraInfo 扩展信息
+                     * 获取<p>扩展信息</p>
+                     * @return ExtraInfo <p>扩展信息</p>
                      * 
                      */
                     std::string GetExtraInfo() const;
 
                     /**
-                     * 设置扩展信息
-                     * @param _extraInfo 扩展信息
+                     * 设置<p>扩展信息</p>
+                     * @param _extraInfo <p>扩展信息</p>
                      * 
                      */
                     void SetExtraInfo(const std::string& _extraInfo);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ExtraInfoHasBeenSet() const;
 
                     /**
-                     * 获取最后更新时间
-                     * @return Utime 最后更新时间
+                     * 获取<p>最后更新时间</p>
+                     * @return Utime <p>最后更新时间</p>
                      * 
                      */
                     std::string GetUtime() const;
 
                     /**
-                     * 设置最后更新时间
-                     * @param _utime 最后更新时间
+                     * 设置<p>最后更新时间</p>
+                     * @param _utime <p>最后更新时间</p>
                      * 
                      */
                     void SetUtime(const std::string& _utime);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool UtimeHasBeenSet() const;
 
                     /**
-                     * 获取父分组ID
-                     * @return ParentId 父分组ID
+                     * 获取<p>父分组ID</p>
+                     * @return ParentId <p>父分组ID</p>
                      * 
                      */
                     int64_t GetParentId() const;
 
                     /**
-                     * 设置父分组ID
-                     * @param _parentId 父分组ID
+                     * 设置<p>父分组ID</p>
+                     * @param _parentId <p>父分组ID</p>
                      * 
                      */
                     void SetParentId(const int64_t& _parentId);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ParentIdHasBeenSet() const;
 
                     /**
-                     * 获取源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID
-                     * @return OrgId 源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID
+                     * 获取<p>源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID</p>
+                     * @return OrgId <p>源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID</p>
                      * 
                      */
                     std::string GetOrgId() const;
 
                     /**
-                     * 设置源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID
-                     * @param _orgId 源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID
+                     * 设置<p>源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID</p>
+                     * @param _orgId <p>源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID</p>
                      * 
                      */
                     void SetOrgId(const std::string& _orgId);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool OrgIdHasBeenSet() const;
 
                     /**
-                     * 获取分组名称
-                     * @return Name 分组名称
+                     * 获取<p>分组名称</p>
+                     * @return Name <p>分组名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置分组名称
-                     * @param _name 分组名称
+                     * 设置<p>分组名称</p>
+                     * @param _name <p>分组名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取分组ID
-                     * @return Id 分组ID
+                     * 获取<p>分组ID</p>
+                     * @return Id <p>分组ID</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置分组ID
-                     * @param _id 分组ID
+                     * 设置<p>分组ID</p>
+                     * @param _id <p>分组ID</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取分组描述
-                     * @return Description 分组描述
+                     * 获取<p>分组描述</p>
+                     * @return Description <p>分组描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置分组描述
-                     * @param _description 分组描述
+                     * 设置<p>分组描述</p>
+                     * @param _description <p>分组描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取同步数据源
-                     * @return Source 同步数据源
+                     * 获取<p>同步数据源</p>
+                     * @return Source <p>同步数据源</p>
                      * 
                      */
                     int64_t GetSource() const;
 
                     /**
-                     * 设置同步数据源
-                     * @param _source 同步数据源
+                     * 设置<p>同步数据源</p>
+                     * @param _source <p>同步数据源</p>
                      * 
                      */
                     void SetSource(const int64_t& _source);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取账号分组ID全路径，点分格式
-                     * @return IdPath 账号分组ID全路径，点分格式
+                     * 获取<p>账号分组ID全路径，点分格式</p>
+                     * @return IdPath <p>账号分组ID全路径，点分格式</p>
                      * 
                      */
                     std::string GetIdPath() const;
 
                     /**
-                     * 设置账号分组ID全路径，点分格式
-                     * @param _idPath 账号分组ID全路径，点分格式
+                     * 设置<p>账号分组ID全路径，点分格式</p>
+                     * @param _idPath <p>账号分组ID全路径，点分格式</p>
                      * 
                      */
                     void SetIdPath(const std::string& _idPath);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool IdPathHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return Itime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return Itime <p>创建时间</p>
                      * 
                      */
                     std::string GetItime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _itime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _itime <p>创建时间</p>
                      * 
                      */
                     void SetItime(const std::string& _itime);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool ItimeHasBeenSet() const;
 
                     /**
-                     * 获取父源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID
-                     * @return ParentOrgId 父源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID
+                     * 获取<p>父源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID</p>
+                     * @return ParentOrgId <p>父源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID</p>
                      * 
                      */
                     std::string GetParentOrgId() const;
 
                     /**
-                     * 设置父源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID
-                     * @param _parentOrgId 父源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID
+                     * 设置<p>父源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID</p>
+                     * @param _parentOrgId <p>父源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID</p>
                      * 
                      */
                     void SetParentOrgId(const std::string& _parentOrgId);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool ParentOrgIdHasBeenSet() const;
 
                     /**
-                     * 获取导入类型
-                     * @return ImportType 导入类型
+                     * 获取<p>导入类型</p>
+                     * @return ImportType <p>导入类型</p>
                      * 
                      */
                     std::string GetImportType() const;
 
                     /**
-                     * 设置导入类型
-                     * @param _importType 导入类型
+                     * 设置<p>导入类型</p>
+                     * @param _importType <p>导入类型</p>
                      * 
                      */
                     void SetImportType(const std::string& _importType);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool ImportTypeHasBeenSet() const;
 
                     /**
-                     * 获取miniIAM id
-                     * @return MiniIamId miniIAM id
+                     * 获取<p>miniIAM id</p>
+                     * @return MiniIamId <p>miniIAM id</p>
                      * 
                      */
                     std::string GetMiniIamId() const;
 
                     /**
-                     * 设置miniIAM id
-                     * @param _miniIamId miniIAM id
+                     * 设置<p>miniIAM id</p>
+                     * @param _miniIamId <p>miniIAM id</p>
                      * 
                      */
                     void SetMiniIamId(const std::string& _miniIamId);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool MiniIamIdHasBeenSet() const;
 
                     /**
-                     * 获取该分组下含子组的所有用户总数
-                     * @return UserTotal 该分组下含子组的所有用户总数
+                     * 获取<p>该分组下含子组的所有用户总数</p>
+                     * @return UserTotal <p>该分组下含子组的所有用户总数</p>
                      * 
                      */
                     int64_t GetUserTotal() const;
 
                     /**
-                     * 设置该分组下含子组的所有用户总数
-                     * @param _userTotal 该分组下含子组的所有用户总数
+                     * 设置<p>该分组下含子组的所有用户总数</p>
+                     * @param _userTotal <p>该分组下含子组的所有用户总数</p>
                      * 
                      */
                     void SetUserTotal(const int64_t& _userTotal);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool UserTotalHasBeenSet() const;
 
                     /**
-                     * 获取是否叶子节点
-                     * @return IsLeaf 是否叶子节点
+                     * 获取<p>是否叶子节点</p>
+                     * @return IsLeaf <p>是否叶子节点</p>
                      * 
                      */
                     bool GetIsLeaf() const;
 
                     /**
-                     * 设置是否叶子节点
-                     * @param _isLeaf 是否叶子节点
+                     * 设置<p>是否叶子节点</p>
+                     * @param _isLeaf <p>是否叶子节点</p>
                      * 
                      */
                     void SetIsLeaf(const bool& _isLeaf);
@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool IsLeafHasBeenSet() const;
 
                     /**
-                     * 获取是否该账户的直接权限
-                     * @return ReadOnly 是否该账户的直接权限
+                     * 获取<p>是否该账户的直接权限</p>
+                     * @return ReadOnly <p>是否该账户的直接权限</p>
                      * 
                      */
                     bool GetReadOnly() const;
 
                     /**
-                     * 设置是否该账户的直接权限
-                     * @param _readOnly 是否该账户的直接权限
+                     * 设置<p>是否该账户的直接权限</p>
+                     * @param _readOnly <p>是否该账户的直接权限</p>
                      * 
                      */
                     void SetReadOnly(const bool& _readOnly);
@@ -425,15 +425,15 @@ namespace TencentCloud
                     bool ReadOnlyHasBeenSet() const;
 
                     /**
-                     * 获取最新一次同步任务的结果
-                     * @return LatestSyncResult 最新一次同步任务的结果
+                     * 获取<p>最新一次同步任务的结果</p>
+                     * @return LatestSyncResult <p>最新一次同步任务的结果</p>
                      * 
                      */
                     std::string GetLatestSyncResult() const;
 
                     /**
-                     * 设置最新一次同步任务的结果
-                     * @param _latestSyncResult 最新一次同步任务的结果
+                     * 设置<p>最新一次同步任务的结果</p>
+                     * @param _latestSyncResult <p>最新一次同步任务的结果</p>
                      * 
                      */
                     void SetLatestSyncResult(const std::string& _latestSyncResult);
@@ -446,15 +446,15 @@ namespace TencentCloud
                     bool LatestSyncResultHasBeenSet() const;
 
                     /**
-                     * 获取最新一次同步任务的结束时间
-                     * @return LatestSyncTime 最新一次同步任务的结束时间
+                     * 获取<p>最新一次同步任务的结束时间</p>
+                     * @return LatestSyncTime <p>最新一次同步任务的结束时间</p>
                      * 
                      */
                     std::string GetLatestSyncTime() const;
 
                     /**
-                     * 设置最新一次同步任务的结束时间
-                     * @param _latestSyncTime 最新一次同步任务的结束时间
+                     * 设置<p>最新一次同步任务的结束时间</p>
+                     * @param _latestSyncTime <p>最新一次同步任务的结束时间</p>
                      * 
                      */
                     void SetLatestSyncTime(const std::string& _latestSyncTime);
@@ -467,15 +467,15 @@ namespace TencentCloud
                     bool LatestSyncTimeHasBeenSet() const;
 
                     /**
-                     * 获取分组名称数组
-                     * @return NamePathArr 分组名称数组
+                     * 获取<p>分组名称数组</p>
+                     * @return NamePathArr <p>分组名称数组</p>
                      * 
                      */
                     std::vector<std::string> GetNamePathArr() const;
 
                     /**
-                     * 设置分组名称数组
-                     * @param _namePathArr 分组名称数组
+                     * 设置<p>分组名称数组</p>
+                     * @param _namePathArr <p>分组名称数组</p>
                      * 
                      */
                     void SetNamePathArr(const std::vector<std::string>& _namePathArr);
@@ -490,127 +490,127 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 账号分组名全路径，点分格式
+                     * <p>账号分组名全路径，点分格式</p>
                      */
                     std::string m_namePath;
                     bool m_namePathHasBeenSet;
 
                     /**
-                     * 账号分组ID全路径，数组格式
+                     * <p>账号分组ID全路径，数组格式</p>
                      */
                     std::vector<int64_t> m_idPathArr;
                     bool m_idPathArrHasBeenSet;
 
                     /**
-                     * 扩展信息
+                     * <p>扩展信息</p>
                      */
                     std::string m_extraInfo;
                     bool m_extraInfoHasBeenSet;
 
                     /**
-                     * 最后更新时间
+                     * <p>最后更新时间</p>
                      */
                     std::string m_utime;
                     bool m_utimeHasBeenSet;
 
                     /**
-                     * 父分组ID
+                     * <p>父分组ID</p>
                      */
                     int64_t m_parentId;
                     bool m_parentIdHasBeenSet;
 
                     /**
-                     * 源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID
+                     * <p>源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID</p>
                      */
                     std::string m_orgId;
                     bool m_orgIdHasBeenSet;
 
                     /**
-                     * 分组名称
+                     * <p>分组名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 分组ID
+                     * <p>分组ID</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 分组描述
+                     * <p>分组描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 同步数据源
+                     * <p>同步数据源</p>
                      */
                     int64_t m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 账号分组ID全路径，点分格式
+                     * <p>账号分组ID全路径，点分格式</p>
                      */
                     std::string m_idPath;
                     bool m_idPathHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_itime;
                     bool m_itimeHasBeenSet;
 
                     /**
-                     * 父源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID
+                     * <p>父源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID</p>
                      */
                     std::string m_parentOrgId;
                     bool m_parentOrgIdHasBeenSet;
 
                     /**
-                     * 导入类型
+                     * <p>导入类型</p>
                      */
                     std::string m_importType;
                     bool m_importTypeHasBeenSet;
 
                     /**
-                     * miniIAM id
+                     * <p>miniIAM id</p>
                      */
                     std::string m_miniIamId;
                     bool m_miniIamIdHasBeenSet;
 
                     /**
-                     * 该分组下含子组的所有用户总数
+                     * <p>该分组下含子组的所有用户总数</p>
                      */
                     int64_t m_userTotal;
                     bool m_userTotalHasBeenSet;
 
                     /**
-                     * 是否叶子节点
+                     * <p>是否叶子节点</p>
                      */
                     bool m_isLeaf;
                     bool m_isLeafHasBeenSet;
 
                     /**
-                     * 是否该账户的直接权限
+                     * <p>是否该账户的直接权限</p>
                      */
                     bool m_readOnly;
                     bool m_readOnlyHasBeenSet;
 
                     /**
-                     * 最新一次同步任务的结果
+                     * <p>最新一次同步任务的结果</p>
                      */
                     std::string m_latestSyncResult;
                     bool m_latestSyncResultHasBeenSet;
 
                     /**
-                     * 最新一次同步任务的结束时间
+                     * <p>最新一次同步任务的结束时间</p>
                      */
                     std::string m_latestSyncTime;
                     bool m_latestSyncTimeHasBeenSet;
 
                     /**
-                     * 分组名称数组
+                     * <p>分组名称数组</p>
                      */
                     std::vector<std::string> m_namePathArr;
                     bool m_namePathArrHasBeenSet;

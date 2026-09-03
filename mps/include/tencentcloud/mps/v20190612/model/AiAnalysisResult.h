@@ -39,6 +39,7 @@
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskVideoComprehensionResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskCutoutResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskReelResult.h>
+#include <tencentcloud/mps/v20190612/model/AiAnalysisTaskGenericResult.h>
 
 
 namespace TencentCloud
@@ -62,63 +63,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务的类型，可以取的值有：
-<li>Classification：智能分类</li>
-<li>Cover：智能封面</li>
-<li>Tag：智能标签</li>
-<li>FrameTag：智能按帧标签</li>
-<li>Highlight：智能精彩集锦</li>
-<li>DeLogo：智能擦除</li>
-<li>Description：大模型摘要</li>
-<li>Dubbing：智能译制</li>
-<li>VideoRemake: 视频去重</li>
-<li>VideoComprehension: 视频（音频）理解</li>
-<li>Cutout：视频抠图</li>
-<li>Reel：智能成片</li>
-                     * @return Type 任务的类型，可以取的值有：
-<li>Classification：智能分类</li>
-<li>Cover：智能封面</li>
-<li>Tag：智能标签</li>
-<li>FrameTag：智能按帧标签</li>
-<li>Highlight：智能精彩集锦</li>
-<li>DeLogo：智能擦除</li>
-<li>Description：大模型摘要</li>
-<li>Dubbing：智能译制</li>
-<li>VideoRemake: 视频去重</li>
-<li>VideoComprehension: 视频（音频）理解</li>
-<li>Cutout：视频抠图</li>
-<li>Reel：智能成片</li>
+                     * 获取<p>任务的类型，可以取的值有：</p><li>Classification：智能分类</li><li>Cover：智能封面</li><li>Tag：智能标签</li><li>FrameTag：智能按帧标签</li><li>Highlight：智能精彩集锦</li><li>DeLogo：智能擦除</li><li>Description：大模型摘要</li><li>Dubbing：智能译制</li><li>VideoRemake: 视频去重</li><li>VideoComprehension: 视频（音频）理解</li><li>Cutout：视频抠图</li><li>Reel：智能成片</li>
+                     * @return Type <p>任务的类型，可以取的值有：</p><li>Classification：智能分类</li><li>Cover：智能封面</li><li>Tag：智能标签</li><li>FrameTag：智能按帧标签</li><li>Highlight：智能精彩集锦</li><li>DeLogo：智能擦除</li><li>Description：大模型摘要</li><li>Dubbing：智能译制</li><li>VideoRemake: 视频去重</li><li>VideoComprehension: 视频（音频）理解</li><li>Cutout：视频抠图</li><li>Reel：智能成片</li>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置任务的类型，可以取的值有：
-<li>Classification：智能分类</li>
-<li>Cover：智能封面</li>
-<li>Tag：智能标签</li>
-<li>FrameTag：智能按帧标签</li>
-<li>Highlight：智能精彩集锦</li>
-<li>DeLogo：智能擦除</li>
-<li>Description：大模型摘要</li>
-<li>Dubbing：智能译制</li>
-<li>VideoRemake: 视频去重</li>
-<li>VideoComprehension: 视频（音频）理解</li>
-<li>Cutout：视频抠图</li>
-<li>Reel：智能成片</li>
-                     * @param _type 任务的类型，可以取的值有：
-<li>Classification：智能分类</li>
-<li>Cover：智能封面</li>
-<li>Tag：智能标签</li>
-<li>FrameTag：智能按帧标签</li>
-<li>Highlight：智能精彩集锦</li>
-<li>DeLogo：智能擦除</li>
-<li>Description：大模型摘要</li>
-<li>Dubbing：智能译制</li>
-<li>VideoRemake: 视频去重</li>
-<li>VideoComprehension: 视频（音频）理解</li>
-<li>Cutout：视频抠图</li>
-<li>Reel：智能成片</li>
+                     * 设置<p>任务的类型，可以取的值有：</p><li>Classification：智能分类</li><li>Cover：智能封面</li><li>Tag：智能标签</li><li>FrameTag：智能按帧标签</li><li>Highlight：智能精彩集锦</li><li>DeLogo：智能擦除</li><li>Description：大模型摘要</li><li>Dubbing：智能译制</li><li>VideoRemake: 视频去重</li><li>VideoComprehension: 视频（音频）理解</li><li>Cutout：视频抠图</li><li>Reel：智能成片</li>
+                     * @param _type <p>任务的类型，可以取的值有：</p><li>Classification：智能分类</li><li>Cover：智能封面</li><li>Tag：智能标签</li><li>FrameTag：智能按帧标签</li><li>Highlight：智能精彩集锦</li><li>DeLogo：智能擦除</li><li>Description：大模型摘要</li><li>Dubbing：智能译制</li><li>VideoRemake: 视频去重</li><li>VideoComprehension: 视频（音频）理解</li><li>Cutout：视频抠图</li><li>Reel：智能成片</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -131,18 +84,18 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析智能分类任务的查询结果，当任务类型为 Classification 时有效。
+                     * 获取<p>视频内容分析智能分类任务的查询结果，当任务类型为 Classification 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClassificationTask 视频内容分析智能分类任务的查询结果，当任务类型为 Classification 时有效。
+                     * @return ClassificationTask <p>视频内容分析智能分类任务的查询结果，当任务类型为 Classification 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskClassificationResult GetClassificationTask() const;
 
                     /**
-                     * 设置视频内容分析智能分类任务的查询结果，当任务类型为 Classification 时有效。
+                     * 设置<p>视频内容分析智能分类任务的查询结果，当任务类型为 Classification 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _classificationTask 视频内容分析智能分类任务的查询结果，当任务类型为 Classification 时有效。
+                     * @param _classificationTask <p>视频内容分析智能分类任务的查询结果，当任务类型为 Classification 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -156,18 +109,18 @@ namespace TencentCloud
                     bool ClassificationTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析智能封面任务的查询结果，当任务类型为 Cover 时有效。
+                     * 获取<p>视频内容分析智能封面任务的查询结果，当任务类型为 Cover 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CoverTask 视频内容分析智能封面任务的查询结果，当任务类型为 Cover 时有效。
+                     * @return CoverTask <p>视频内容分析智能封面任务的查询结果，当任务类型为 Cover 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskCoverResult GetCoverTask() const;
 
                     /**
-                     * 设置视频内容分析智能封面任务的查询结果，当任务类型为 Cover 时有效。
+                     * 设置<p>视频内容分析智能封面任务的查询结果，当任务类型为 Cover 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _coverTask 视频内容分析智能封面任务的查询结果，当任务类型为 Cover 时有效。
+                     * @param _coverTask <p>视频内容分析智能封面任务的查询结果，当任务类型为 Cover 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -181,18 +134,18 @@ namespace TencentCloud
                     bool CoverTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析智能标签任务的查询结果，当任务类型为 Tag 时有效。
+                     * 获取<p>视频内容分析智能标签任务的查询结果，当任务类型为 Tag 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TagTask 视频内容分析智能标签任务的查询结果，当任务类型为 Tag 时有效。
+                     * @return TagTask <p>视频内容分析智能标签任务的查询结果，当任务类型为 Tag 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskTagResult GetTagTask() const;
 
                     /**
-                     * 设置视频内容分析智能标签任务的查询结果，当任务类型为 Tag 时有效。
+                     * 设置<p>视频内容分析智能标签任务的查询结果，当任务类型为 Tag 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tagTask 视频内容分析智能标签任务的查询结果，当任务类型为 Tag 时有效。
+                     * @param _tagTask <p>视频内容分析智能标签任务的查询结果，当任务类型为 Tag 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -206,18 +159,18 @@ namespace TencentCloud
                     bool TagTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析智能按帧标签任务的查询结果，当任务类型为 FrameTag 时有效。
+                     * 获取<p>视频内容分析智能按帧标签任务的查询结果，当任务类型为 FrameTag 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FrameTagTask 视频内容分析智能按帧标签任务的查询结果，当任务类型为 FrameTag 时有效。
+                     * @return FrameTagTask <p>视频内容分析智能按帧标签任务的查询结果，当任务类型为 FrameTag 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskFrameTagResult GetFrameTagTask() const;
 
                     /**
-                     * 设置视频内容分析智能按帧标签任务的查询结果，当任务类型为 FrameTag 时有效。
+                     * 设置<p>视频内容分析智能按帧标签任务的查询结果，当任务类型为 FrameTag 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _frameTagTask 视频内容分析智能按帧标签任务的查询结果，当任务类型为 FrameTag 时有效。
+                     * @param _frameTagTask <p>视频内容分析智能按帧标签任务的查询结果，当任务类型为 FrameTag 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -231,18 +184,18 @@ namespace TencentCloud
                     bool FrameTagTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析集锦任务的查询结果，当任务类型为 Highlight时有效。
+                     * 获取<p>视频内容分析集锦任务的查询结果，当任务类型为 Highlight时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HighlightTask 视频内容分析集锦任务的查询结果，当任务类型为 Highlight时有效。
+                     * @return HighlightTask <p>视频内容分析集锦任务的查询结果，当任务类型为 Highlight时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskHighlightResult GetHighlightTask() const;
 
                     /**
-                     * 设置视频内容分析集锦任务的查询结果，当任务类型为 Highlight时有效。
+                     * 设置<p>视频内容分析集锦任务的查询结果，当任务类型为 Highlight时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _highlightTask 视频内容分析集锦任务的查询结果，当任务类型为 Highlight时有效。
+                     * @param _highlightTask <p>视频内容分析集锦任务的查询结果，当任务类型为 Highlight时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -256,18 +209,18 @@ namespace TencentCloud
                     bool HighlightTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析智能擦除任务的查询结果，当任务类型为 DeLogo 时有效。
+                     * 获取<p>视频内容分析智能擦除任务的查询结果，当任务类型为 DeLogo 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeLogoTask 视频内容分析智能擦除任务的查询结果，当任务类型为 DeLogo 时有效。
+                     * @return DeLogoTask <p>视频内容分析智能擦除任务的查询结果，当任务类型为 DeLogo 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskDelLogoResult GetDeLogoTask() const;
 
                     /**
-                     * 设置视频内容分析智能擦除任务的查询结果，当任务类型为 DeLogo 时有效。
+                     * 设置<p>视频内容分析智能擦除任务的查询结果，当任务类型为 DeLogo 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deLogoTask 视频内容分析智能擦除任务的查询结果，当任务类型为 DeLogo 时有效。
+                     * @param _deLogoTask <p>视频内容分析智能擦除任务的查询结果，当任务类型为 DeLogo 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -281,18 +234,18 @@ namespace TencentCloud
                     bool DeLogoTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析拆条任务的查询结果，当任务类型为 SegmentRecognition 时有效。
+                     * 获取<p>视频内容分析拆条任务的查询结果，当任务类型为 SegmentRecognition 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SegmentTask 视频内容分析拆条任务的查询结果，当任务类型为 SegmentRecognition 时有效。
+                     * @return SegmentTask <p>视频内容分析拆条任务的查询结果，当任务类型为 SegmentRecognition 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskSegmentResult GetSegmentTask() const;
 
                     /**
-                     * 设置视频内容分析拆条任务的查询结果，当任务类型为 SegmentRecognition 时有效。
+                     * 设置<p>视频内容分析拆条任务的查询结果，当任务类型为 SegmentRecognition 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _segmentTask 视频内容分析拆条任务的查询结果，当任务类型为 SegmentRecognition 时有效。
+                     * @param _segmentTask <p>视频内容分析拆条任务的查询结果，当任务类型为 SegmentRecognition 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -306,18 +259,18 @@ namespace TencentCloud
                     bool SegmentTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析片头片尾任务的查询结果，当任务类型为 HeadTailRecognition 时有效。
+                     * 获取<p>视频内容分析片头片尾任务的查询结果，当任务类型为 HeadTailRecognition 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HeadTailTask 视频内容分析片头片尾任务的查询结果，当任务类型为 HeadTailRecognition 时有效。
+                     * @return HeadTailTask <p>视频内容分析片头片尾任务的查询结果，当任务类型为 HeadTailRecognition 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskHeadTailResult GetHeadTailTask() const;
 
                     /**
-                     * 设置视频内容分析片头片尾任务的查询结果，当任务类型为 HeadTailRecognition 时有效。
+                     * 设置<p>视频内容分析片头片尾任务的查询结果，当任务类型为 HeadTailRecognition 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _headTailTask 视频内容分析片头片尾任务的查询结果，当任务类型为 HeadTailRecognition 时有效。
+                     * @param _headTailTask <p>视频内容分析片头片尾任务的查询结果，当任务类型为 HeadTailRecognition 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -331,18 +284,18 @@ namespace TencentCloud
                     bool HeadTailTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析摘要任务的查询结果，当任务类型为 Description 时有效。
+                     * 获取<p>视频内容分析摘要任务的查询结果，当任务类型为 Description 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DescriptionTask 视频内容分析摘要任务的查询结果，当任务类型为 Description 时有效。
+                     * @return DescriptionTask <p>视频内容分析摘要任务的查询结果，当任务类型为 Description 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskDescriptionResult GetDescriptionTask() const;
 
                     /**
-                     * 设置视频内容分析摘要任务的查询结果，当任务类型为 Description 时有效。
+                     * 设置<p>视频内容分析摘要任务的查询结果，当任务类型为 Description 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _descriptionTask 视频内容分析摘要任务的查询结果，当任务类型为 Description 时有效。
+                     * @param _descriptionTask <p>视频内容分析摘要任务的查询结果，当任务类型为 Description 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -356,18 +309,18 @@ namespace TencentCloud
                     bool DescriptionTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析横转竖任务的查询结果，当任务类型为 HorizontalToVertical 时有效。
+                     * 获取<p>视频内容分析横转竖任务的查询结果，当任务类型为 HorizontalToVertical 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HorizontalToVerticalTask 视频内容分析横转竖任务的查询结果，当任务类型为 HorizontalToVertical 时有效。
+                     * @return HorizontalToVerticalTask <p>视频内容分析横转竖任务的查询结果，当任务类型为 HorizontalToVertical 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskHorizontalToVerticalResult GetHorizontalToVerticalTask() const;
 
                     /**
-                     * 设置视频内容分析横转竖任务的查询结果，当任务类型为 HorizontalToVertical 时有效。
+                     * 设置<p>视频内容分析横转竖任务的查询结果，当任务类型为 HorizontalToVertical 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _horizontalToVerticalTask 视频内容分析横转竖任务的查询结果，当任务类型为 HorizontalToVertical 时有效。
+                     * @param _horizontalToVerticalTask <p>视频内容分析横转竖任务的查询结果，当任务类型为 HorizontalToVertical 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -381,18 +334,18 @@ namespace TencentCloud
                     bool HorizontalToVerticalTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析译制任务的查询结果，当任务类型为 Dubbing 时有效。
+                     * 获取<p>视频内容分析译制任务的查询结果，当任务类型为 Dubbing 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DubbingTask 视频内容分析译制任务的查询结果，当任务类型为 Dubbing 时有效。
+                     * @return DubbingTask <p>视频内容分析译制任务的查询结果，当任务类型为 Dubbing 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskDubbingResult GetDubbingTask() const;
 
                     /**
-                     * 设置视频内容分析译制任务的查询结果，当任务类型为 Dubbing 时有效。
+                     * 设置<p>视频内容分析译制任务的查询结果，当任务类型为 Dubbing 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dubbingTask 视频内容分析译制任务的查询结果，当任务类型为 Dubbing 时有效。
+                     * @param _dubbingTask <p>视频内容分析译制任务的查询结果，当任务类型为 Dubbing 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -406,18 +359,18 @@ namespace TencentCloud
                     bool DubbingTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析去重任务的查询结果，当任务类型为 VideoRemake 时有效。
+                     * 获取<p>视频内容分析去重任务的查询结果，当任务类型为 VideoRemake 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VideoRemakeTask 视频内容分析去重任务的查询结果，当任务类型为 VideoRemake 时有效。
+                     * @return VideoRemakeTask <p>视频内容分析去重任务的查询结果，当任务类型为 VideoRemake 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskVideoRemakeResult GetVideoRemakeTask() const;
 
                     /**
-                     * 设置视频内容分析去重任务的查询结果，当任务类型为 VideoRemake 时有效。
+                     * 设置<p>视频内容分析去重任务的查询结果，当任务类型为 VideoRemake 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _videoRemakeTask 视频内容分析去重任务的查询结果，当任务类型为 VideoRemake 时有效。
+                     * @param _videoRemakeTask <p>视频内容分析去重任务的查询结果，当任务类型为 VideoRemake 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -431,18 +384,18 @@ namespace TencentCloud
                     bool VideoRemakeTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频（音频）理解任务的查询结果，当任务类型为 VideoComprehension 时有效。
+                     * 获取<p>视频（音频）理解任务的查询结果，当任务类型为 VideoComprehension 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VideoComprehensionTask 视频（音频）理解任务的查询结果，当任务类型为 VideoComprehension 时有效。
+                     * @return VideoComprehensionTask <p>视频（音频）理解任务的查询结果，当任务类型为 VideoComprehension 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskVideoComprehensionResult GetVideoComprehensionTask() const;
 
                     /**
-                     * 设置视频（音频）理解任务的查询结果，当任务类型为 VideoComprehension 时有效。
+                     * 设置<p>视频（音频）理解任务的查询结果，当任务类型为 VideoComprehension 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _videoComprehensionTask 视频（音频）理解任务的查询结果，当任务类型为 VideoComprehension 时有效。
+                     * @param _videoComprehensionTask <p>视频（音频）理解任务的查询结果，当任务类型为 VideoComprehension 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -456,18 +409,18 @@ namespace TencentCloud
                     bool VideoComprehensionTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析智能抠图任务的查询结果，当任务类型为Cutout时有效。
+                     * 获取<p>视频内容分析智能抠图任务的查询结果，当任务类型为Cutout时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CutoutTask 视频内容分析智能抠图任务的查询结果，当任务类型为Cutout时有效。
+                     * @return CutoutTask <p>视频内容分析智能抠图任务的查询结果，当任务类型为Cutout时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskCutoutResult GetCutoutTask() const;
 
                     /**
-                     * 设置视频内容分析智能抠图任务的查询结果，当任务类型为Cutout时有效。
+                     * 设置<p>视频内容分析智能抠图任务的查询结果，当任务类型为Cutout时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cutoutTask 视频内容分析智能抠图任务的查询结果，当任务类型为Cutout时有效。
+                     * @param _cutoutTask <p>视频内容分析智能抠图任务的查询结果，当任务类型为Cutout时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -481,18 +434,18 @@ namespace TencentCloud
                     bool CutoutTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析AI解说二创任务的查询结果，当任务类型为Reel时有效。
+                     * 获取<p>视频内容分析AI解说二创任务的查询结果，当任务类型为Reel时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReelTask 视频内容分析AI解说二创任务的查询结果，当任务类型为Reel时有效。
+                     * @return ReelTask <p>视频内容分析AI解说二创任务的查询结果，当任务类型为Reel时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskReelResult GetReelTask() const;
 
                     /**
-                     * 设置视频内容分析AI解说二创任务的查询结果，当任务类型为Reel时有效。
+                     * 设置<p>视频内容分析AI解说二创任务的查询结果，当任务类型为Reel时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _reelTask 视频内容分析AI解说二创任务的查询结果，当任务类型为Reel时有效。
+                     * @param _reelTask <p>视频内容分析AI解说二创任务的查询结果，当任务类型为Reel时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -505,130 +458,150 @@ namespace TencentCloud
                      */
                     bool ReelTaskHasBeenSet() const;
 
+                    /**
+                     * 获取<p>智能分析通用任务的查询结果，当任务类型为Generic时有效。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GenericTask <p>智能分析通用任务的查询结果，当任务类型为Generic时有效。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AiAnalysisTaskGenericResult GetGenericTask() const;
+
+                    /**
+                     * 设置<p>智能分析通用任务的查询结果，当任务类型为Generic时有效。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _genericTask <p>智能分析通用任务的查询结果，当任务类型为Generic时有效。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGenericTask(const AiAnalysisTaskGenericResult& _genericTask);
+
+                    /**
+                     * 判断参数 GenericTask 是否已赋值
+                     * @return GenericTask 是否已赋值
+                     * 
+                     */
+                    bool GenericTaskHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务的类型，可以取的值有：
-<li>Classification：智能分类</li>
-<li>Cover：智能封面</li>
-<li>Tag：智能标签</li>
-<li>FrameTag：智能按帧标签</li>
-<li>Highlight：智能精彩集锦</li>
-<li>DeLogo：智能擦除</li>
-<li>Description：大模型摘要</li>
-<li>Dubbing：智能译制</li>
-<li>VideoRemake: 视频去重</li>
-<li>VideoComprehension: 视频（音频）理解</li>
-<li>Cutout：视频抠图</li>
-<li>Reel：智能成片</li>
+                     * <p>任务的类型，可以取的值有：</p><li>Classification：智能分类</li><li>Cover：智能封面</li><li>Tag：智能标签</li><li>FrameTag：智能按帧标签</li><li>Highlight：智能精彩集锦</li><li>DeLogo：智能擦除</li><li>Description：大模型摘要</li><li>Dubbing：智能译制</li><li>VideoRemake: 视频去重</li><li>VideoComprehension: 视频（音频）理解</li><li>Cutout：视频抠图</li><li>Reel：智能成片</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 视频内容分析智能分类任务的查询结果，当任务类型为 Classification 时有效。
+                     * <p>视频内容分析智能分类任务的查询结果，当任务类型为 Classification 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskClassificationResult m_classificationTask;
                     bool m_classificationTaskHasBeenSet;
 
                     /**
-                     * 视频内容分析智能封面任务的查询结果，当任务类型为 Cover 时有效。
+                     * <p>视频内容分析智能封面任务的查询结果，当任务类型为 Cover 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskCoverResult m_coverTask;
                     bool m_coverTaskHasBeenSet;
 
                     /**
-                     * 视频内容分析智能标签任务的查询结果，当任务类型为 Tag 时有效。
+                     * <p>视频内容分析智能标签任务的查询结果，当任务类型为 Tag 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskTagResult m_tagTask;
                     bool m_tagTaskHasBeenSet;
 
                     /**
-                     * 视频内容分析智能按帧标签任务的查询结果，当任务类型为 FrameTag 时有效。
+                     * <p>视频内容分析智能按帧标签任务的查询结果，当任务类型为 FrameTag 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskFrameTagResult m_frameTagTask;
                     bool m_frameTagTaskHasBeenSet;
 
                     /**
-                     * 视频内容分析集锦任务的查询结果，当任务类型为 Highlight时有效。
+                     * <p>视频内容分析集锦任务的查询结果，当任务类型为 Highlight时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskHighlightResult m_highlightTask;
                     bool m_highlightTaskHasBeenSet;
 
                     /**
-                     * 视频内容分析智能擦除任务的查询结果，当任务类型为 DeLogo 时有效。
+                     * <p>视频内容分析智能擦除任务的查询结果，当任务类型为 DeLogo 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskDelLogoResult m_deLogoTask;
                     bool m_deLogoTaskHasBeenSet;
 
                     /**
-                     * 视频内容分析拆条任务的查询结果，当任务类型为 SegmentRecognition 时有效。
+                     * <p>视频内容分析拆条任务的查询结果，当任务类型为 SegmentRecognition 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskSegmentResult m_segmentTask;
                     bool m_segmentTaskHasBeenSet;
 
                     /**
-                     * 视频内容分析片头片尾任务的查询结果，当任务类型为 HeadTailRecognition 时有效。
+                     * <p>视频内容分析片头片尾任务的查询结果，当任务类型为 HeadTailRecognition 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskHeadTailResult m_headTailTask;
                     bool m_headTailTaskHasBeenSet;
 
                     /**
-                     * 视频内容分析摘要任务的查询结果，当任务类型为 Description 时有效。
+                     * <p>视频内容分析摘要任务的查询结果，当任务类型为 Description 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskDescriptionResult m_descriptionTask;
                     bool m_descriptionTaskHasBeenSet;
 
                     /**
-                     * 视频内容分析横转竖任务的查询结果，当任务类型为 HorizontalToVertical 时有效。
+                     * <p>视频内容分析横转竖任务的查询结果，当任务类型为 HorizontalToVertical 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskHorizontalToVerticalResult m_horizontalToVerticalTask;
                     bool m_horizontalToVerticalTaskHasBeenSet;
 
                     /**
-                     * 视频内容分析译制任务的查询结果，当任务类型为 Dubbing 时有效。
+                     * <p>视频内容分析译制任务的查询结果，当任务类型为 Dubbing 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskDubbingResult m_dubbingTask;
                     bool m_dubbingTaskHasBeenSet;
 
                     /**
-                     * 视频内容分析去重任务的查询结果，当任务类型为 VideoRemake 时有效。
+                     * <p>视频内容分析去重任务的查询结果，当任务类型为 VideoRemake 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskVideoRemakeResult m_videoRemakeTask;
                     bool m_videoRemakeTaskHasBeenSet;
 
                     /**
-                     * 视频（音频）理解任务的查询结果，当任务类型为 VideoComprehension 时有效。
+                     * <p>视频（音频）理解任务的查询结果，当任务类型为 VideoComprehension 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskVideoComprehensionResult m_videoComprehensionTask;
                     bool m_videoComprehensionTaskHasBeenSet;
 
                     /**
-                     * 视频内容分析智能抠图任务的查询结果，当任务类型为Cutout时有效。
+                     * <p>视频内容分析智能抠图任务的查询结果，当任务类型为Cutout时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskCutoutResult m_cutoutTask;
                     bool m_cutoutTaskHasBeenSet;
 
                     /**
-                     * 视频内容分析AI解说二创任务的查询结果，当任务类型为Reel时有效。
+                     * <p>视频内容分析AI解说二创任务的查询结果，当任务类型为Reel时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskReelResult m_reelTask;
                     bool m_reelTaskHasBeenSet;
+
+                    /**
+                     * <p>智能分析通用任务的查询结果，当任务类型为Generic时有效。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiAnalysisTaskGenericResult m_genericTask;
+                    bool m_genericTaskHasBeenSet;
 
                 };
             }

@@ -90,6 +90,56 @@ DlcClient::AddDMSPartitionsOutcomeCallable DlcClient::AddDMSPartitionsCallable(c
     return prom->get_future();
 }
 
+DlcClient::AddDeploymentOutcome DlcClient::AddDeployment(const AddDeploymentRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddDeployment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddDeploymentResponse rsp = AddDeploymentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddDeploymentOutcome(rsp);
+        else
+            return AddDeploymentOutcome(o.GetError());
+    }
+    else
+    {
+        return AddDeploymentOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::AddDeploymentAsync(const AddDeploymentRequest& request, const AddDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddDeploymentRequest&;
+    using Resp = AddDeploymentResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddDeployment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::AddDeploymentOutcomeCallable DlcClient::AddDeploymentCallable(const AddDeploymentRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddDeploymentOutcome>>();
+    AddDeploymentAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const AddDeploymentRequest&,
+        AddDeploymentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::AddOptimizerEnginesOutcome DlcClient::AddOptimizerEngines(const AddOptimizerEnginesRequest &request)
 {
     auto outcome = MakeRequest(request, "AddOptimizerEngines");
@@ -640,6 +690,56 @@ DlcClient::AttachWorkGroupPolicyOutcomeCallable DlcClient::AttachWorkGroupPolicy
     return prom->get_future();
 }
 
+DlcClient::BindApiKeyOutcome DlcClient::BindApiKey(const BindApiKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindApiKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindApiKeyResponse rsp = BindApiKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindApiKeyOutcome(rsp);
+        else
+            return BindApiKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return BindApiKeyOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::BindApiKeyAsync(const BindApiKeyRequest& request, const BindApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const BindApiKeyRequest&;
+    using Resp = BindApiKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "BindApiKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::BindApiKeyOutcomeCallable DlcClient::BindApiKeyCallable(const BindApiKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<BindApiKeyOutcome>>();
+    BindApiKeyAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const BindApiKeyRequest&,
+        BindApiKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::BindWorkGroupsToUserOutcome DlcClient::BindWorkGroupsToUser(const BindWorkGroupsToUserRequest &request)
 {
     auto outcome = MakeRequest(request, "BindWorkGroupsToUser");
@@ -990,6 +1090,106 @@ DlcClient::CancelTasksOutcomeCallable DlcClient::CancelTasksCallable(const Cance
     return prom->get_future();
 }
 
+DlcClient::CancelTrainingJobInstanceOutcome DlcClient::CancelTrainingJobInstance(const CancelTrainingJobInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelTrainingJobInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelTrainingJobInstanceResponse rsp = CancelTrainingJobInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelTrainingJobInstanceOutcome(rsp);
+        else
+            return CancelTrainingJobInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelTrainingJobInstanceOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CancelTrainingJobInstanceAsync(const CancelTrainingJobInstanceRequest& request, const CancelTrainingJobInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CancelTrainingJobInstanceRequest&;
+    using Resp = CancelTrainingJobInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CancelTrainingJobInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CancelTrainingJobInstanceOutcomeCallable DlcClient::CancelTrainingJobInstanceCallable(const CancelTrainingJobInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CancelTrainingJobInstanceOutcome>>();
+    CancelTrainingJobInstanceAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CancelTrainingJobInstanceRequest&,
+        CancelTrainingJobInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::CheckApiKeyNameOutcome DlcClient::CheckApiKeyName(const CheckApiKeyNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckApiKeyName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckApiKeyNameResponse rsp = CheckApiKeyNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckApiKeyNameOutcome(rsp);
+        else
+            return CheckApiKeyNameOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckApiKeyNameOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CheckApiKeyNameAsync(const CheckApiKeyNameRequest& request, const CheckApiKeyNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CheckApiKeyNameRequest&;
+    using Resp = CheckApiKeyNameResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CheckApiKeyName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CheckApiKeyNameOutcomeCallable DlcClient::CheckApiKeyNameCallable(const CheckApiKeyNameRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CheckApiKeyNameOutcome>>();
+    CheckApiKeyNameAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CheckApiKeyNameRequest&,
+        CheckApiKeyNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::CheckDataEngineConfigPairsValidityOutcome DlcClient::CheckDataEngineConfigPairsValidity(const CheckDataEngineConfigPairsValidityRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckDataEngineConfigPairsValidity");
@@ -1140,6 +1340,56 @@ DlcClient::CheckDataEngineImageCanBeUpgradeOutcomeCallable DlcClient::CheckDataE
     return prom->get_future();
 }
 
+DlcClient::CheckJobSpecNameOutcome DlcClient::CheckJobSpecName(const CheckJobSpecNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckJobSpecName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckJobSpecNameResponse rsp = CheckJobSpecNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckJobSpecNameOutcome(rsp);
+        else
+            return CheckJobSpecNameOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckJobSpecNameOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CheckJobSpecNameAsync(const CheckJobSpecNameRequest& request, const CheckJobSpecNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CheckJobSpecNameRequest&;
+    using Resp = CheckJobSpecNameResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CheckJobSpecName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CheckJobSpecNameOutcomeCallable DlcClient::CheckJobSpecNameCallable(const CheckJobSpecNameRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CheckJobSpecNameOutcome>>();
+    CheckJobSpecNameAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CheckJobSpecNameRequest&,
+        CheckJobSpecNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::CheckLockMetaDataOutcome DlcClient::CheckLockMetaData(const CheckLockMetaDataRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckLockMetaData");
@@ -1182,6 +1432,56 @@ DlcClient::CheckLockMetaDataOutcomeCallable DlcClient::CheckLockMetaDataCallable
         const DlcClient*,
         const CheckLockMetaDataRequest&,
         CheckLockMetaDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::CheckModelIdentifierOutcome DlcClient::CheckModelIdentifier(const CheckModelIdentifierRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckModelIdentifier");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckModelIdentifierResponse rsp = CheckModelIdentifierResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckModelIdentifierOutcome(rsp);
+        else
+            return CheckModelIdentifierOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckModelIdentifierOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CheckModelIdentifierAsync(const CheckModelIdentifierRequest& request, const CheckModelIdentifierAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CheckModelIdentifierRequest&;
+    using Resp = CheckModelIdentifierResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CheckModelIdentifier", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CheckModelIdentifierOutcomeCallable DlcClient::CheckModelIdentifierCallable(const CheckModelIdentifierRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CheckModelIdentifierOutcome>>();
+    CheckModelIdentifierAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CheckModelIdentifierRequest&,
+        CheckModelIdentifierOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1340,6 +1640,56 @@ DlcClient::CheckResourceNameOutcomeCallable DlcClient::CheckResourceNameCallable
     return prom->get_future();
 }
 
+DlcClient::CheckServiceNameOutcome DlcClient::CheckServiceName(const CheckServiceNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckServiceName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckServiceNameResponse rsp = CheckServiceNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckServiceNameOutcome(rsp);
+        else
+            return CheckServiceNameOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckServiceNameOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CheckServiceNameAsync(const CheckServiceNameRequest& request, const CheckServiceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CheckServiceNameRequest&;
+    using Resp = CheckServiceNameResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CheckServiceName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CheckServiceNameOutcomeCallable DlcClient::CheckServiceNameCallable(const CheckServiceNameRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CheckServiceNameOutcome>>();
+    CheckServiceNameAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CheckServiceNameRequest&,
+        CheckServiceNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::CopyJobSpecOutcome DlcClient::CopyJobSpec(const CopyJobSpecRequest &request)
 {
     auto outcome = MakeRequest(request, "CopyJobSpec");
@@ -1382,6 +1732,106 @@ DlcClient::CopyJobSpecOutcomeCallable DlcClient::CopyJobSpecCallable(const CopyJ
         const DlcClient*,
         const CopyJobSpecRequest&,
         CopyJobSpecOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::CreateApiKeyOutcome DlcClient::CreateApiKey(const CreateApiKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateApiKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateApiKeyResponse rsp = CreateApiKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateApiKeyOutcome(rsp);
+        else
+            return CreateApiKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateApiKeyOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateApiKeyAsync(const CreateApiKeyRequest& request, const CreateApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateApiKeyRequest&;
+    using Resp = CreateApiKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateApiKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CreateApiKeyOutcomeCallable DlcClient::CreateApiKeyCallable(const CreateApiKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateApiKeyOutcome>>();
+    CreateApiKeyAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CreateApiKeyRequest&,
+        CreateApiKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::CreateBenchmarkTaskOutcome DlcClient::CreateBenchmarkTask(const CreateBenchmarkTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBenchmarkTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBenchmarkTaskResponse rsp = CreateBenchmarkTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBenchmarkTaskOutcome(rsp);
+        else
+            return CreateBenchmarkTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBenchmarkTaskOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateBenchmarkTaskAsync(const CreateBenchmarkTaskRequest& request, const CreateBenchmarkTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateBenchmarkTaskRequest&;
+    using Resp = CreateBenchmarkTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateBenchmarkTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CreateBenchmarkTaskOutcomeCallable DlcClient::CreateBenchmarkTaskCallable(const CreateBenchmarkTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateBenchmarkTaskOutcome>>();
+    CreateBenchmarkTaskAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CreateBenchmarkTaskRequest&,
+        CreateBenchmarkTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2182,6 +2632,56 @@ DlcClient::CreateMetaDatabaseOutcomeCallable DlcClient::CreateMetaDatabaseCallab
         const DlcClient*,
         const CreateMetaDatabaseRequest&,
         CreateMetaDatabaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::CreateMlflowServerOutcome DlcClient::CreateMlflowServer(const CreateMlflowServerRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMlflowServer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMlflowServerResponse rsp = CreateMlflowServerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMlflowServerOutcome(rsp);
+        else
+            return CreateMlflowServerOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMlflowServerOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateMlflowServerAsync(const CreateMlflowServerRequest& request, const CreateMlflowServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMlflowServerRequest&;
+    using Resp = CreateMlflowServerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMlflowServer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CreateMlflowServerOutcomeCallable DlcClient::CreateMlflowServerCallable(const CreateMlflowServerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMlflowServerOutcome>>();
+    CreateMlflowServerAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CreateMlflowServerRequest&,
+        CreateMlflowServerOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3290,6 +3790,56 @@ DlcClient::CreateTcIcebergTableOutcomeCallable DlcClient::CreateTcIcebergTableCa
     return prom->get_future();
 }
 
+DlcClient::CreateTrainingJobInstanceOutcome DlcClient::CreateTrainingJobInstance(const CreateTrainingJobInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTrainingJobInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTrainingJobInstanceResponse rsp = CreateTrainingJobInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTrainingJobInstanceOutcome(rsp);
+        else
+            return CreateTrainingJobInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTrainingJobInstanceOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateTrainingJobInstanceAsync(const CreateTrainingJobInstanceRequest& request, const CreateTrainingJobInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateTrainingJobInstanceRequest&;
+    using Resp = CreateTrainingJobInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateTrainingJobInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CreateTrainingJobInstanceOutcomeCallable DlcClient::CreateTrainingJobInstanceCallable(const CreateTrainingJobInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateTrainingJobInstanceOutcome>>();
+    CreateTrainingJobInstanceAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CreateTrainingJobInstanceRequest&,
+        CreateTrainingJobInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::CreateUserOutcome DlcClient::CreateUser(const CreateUserRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateUser");
@@ -3482,6 +4032,106 @@ DlcClient::CreateWorkGroupOutcomeCallable DlcClient::CreateWorkGroupCallable(con
         const DlcClient*,
         const CreateWorkGroupRequest&,
         CreateWorkGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DeleteApiKeyOutcome DlcClient::DeleteApiKey(const DeleteApiKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteApiKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteApiKeyResponse rsp = DeleteApiKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteApiKeyOutcome(rsp);
+        else
+            return DeleteApiKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteApiKeyOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DeleteApiKeyAsync(const DeleteApiKeyRequest& request, const DeleteApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteApiKeyRequest&;
+    using Resp = DeleteApiKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteApiKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DeleteApiKeyOutcomeCallable DlcClient::DeleteApiKeyCallable(const DeleteApiKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteApiKeyOutcome>>();
+    DeleteApiKeyAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DeleteApiKeyRequest&,
+        DeleteApiKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DeleteBenchmarkTaskOutcome DlcClient::DeleteBenchmarkTask(const DeleteBenchmarkTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBenchmarkTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBenchmarkTaskResponse rsp = DeleteBenchmarkTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBenchmarkTaskOutcome(rsp);
+        else
+            return DeleteBenchmarkTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBenchmarkTaskOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DeleteBenchmarkTaskAsync(const DeleteBenchmarkTaskRequest& request, const DeleteBenchmarkTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteBenchmarkTaskRequest&;
+    using Resp = DeleteBenchmarkTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteBenchmarkTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DeleteBenchmarkTaskOutcomeCallable DlcClient::DeleteBenchmarkTaskCallable(const DeleteBenchmarkTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteBenchmarkTaskOutcome>>();
+    DeleteBenchmarkTaskAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DeleteBenchmarkTaskRequest&,
+        DeleteBenchmarkTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3690,6 +4340,106 @@ DlcClient::DeleteDataMaskStrategyOutcomeCallable DlcClient::DeleteDataMaskStrate
     return prom->get_future();
 }
 
+DlcClient::DeleteDeploymentOutcome DlcClient::DeleteDeployment(const DeleteDeploymentRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDeployment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDeploymentResponse rsp = DeleteDeploymentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDeploymentOutcome(rsp);
+        else
+            return DeleteDeploymentOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDeploymentOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DeleteDeploymentAsync(const DeleteDeploymentRequest& request, const DeleteDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDeploymentRequest&;
+    using Resp = DeleteDeploymentResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDeployment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DeleteDeploymentOutcomeCallable DlcClient::DeleteDeploymentCallable(const DeleteDeploymentRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDeploymentOutcome>>();
+    DeleteDeploymentAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DeleteDeploymentRequest&,
+        DeleteDeploymentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DeleteInferenceServiceOutcome DlcClient::DeleteInferenceService(const DeleteInferenceServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteInferenceService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteInferenceServiceResponse rsp = DeleteInferenceServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteInferenceServiceOutcome(rsp);
+        else
+            return DeleteInferenceServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteInferenceServiceOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DeleteInferenceServiceAsync(const DeleteInferenceServiceRequest& request, const DeleteInferenceServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteInferenceServiceRequest&;
+    using Resp = DeleteInferenceServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteInferenceService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DeleteInferenceServiceOutcomeCallable DlcClient::DeleteInferenceServiceCallable(const DeleteInferenceServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteInferenceServiceOutcome>>();
+    DeleteInferenceServiceAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DeleteInferenceServiceRequest&,
+        DeleteInferenceServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::DeleteJobSpecOutcome DlcClient::DeleteJobSpec(const DeleteJobSpecRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteJobSpec");
@@ -3832,6 +4582,156 @@ DlcClient::DeleteMetaDatabaseOutcomeCallable DlcClient::DeleteMetaDatabaseCallab
         const DlcClient*,
         const DeleteMetaDatabaseRequest&,
         DeleteMetaDatabaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DeleteMlflowServerOutcome DlcClient::DeleteMlflowServer(const DeleteMlflowServerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteMlflowServer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteMlflowServerResponse rsp = DeleteMlflowServerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteMlflowServerOutcome(rsp);
+        else
+            return DeleteMlflowServerOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteMlflowServerOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DeleteMlflowServerAsync(const DeleteMlflowServerRequest& request, const DeleteMlflowServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteMlflowServerRequest&;
+    using Resp = DeleteMlflowServerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteMlflowServer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DeleteMlflowServerOutcomeCallable DlcClient::DeleteMlflowServerCallable(const DeleteMlflowServerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteMlflowServerOutcome>>();
+    DeleteMlflowServerAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DeleteMlflowServerRequest&,
+        DeleteMlflowServerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DeleteModelOutcome DlcClient::DeleteModel(const DeleteModelRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteModel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteModelResponse rsp = DeleteModelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteModelOutcome(rsp);
+        else
+            return DeleteModelOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteModelOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DeleteModelAsync(const DeleteModelRequest& request, const DeleteModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteModelRequest&;
+    using Resp = DeleteModelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteModel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DeleteModelOutcomeCallable DlcClient::DeleteModelCallable(const DeleteModelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteModelOutcome>>();
+    DeleteModelAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DeleteModelRequest&,
+        DeleteModelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DeleteModelVersionOutcome DlcClient::DeleteModelVersion(const DeleteModelVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteModelVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteModelVersionResponse rsp = DeleteModelVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteModelVersionOutcome(rsp);
+        else
+            return DeleteModelVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteModelVersionOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DeleteModelVersionAsync(const DeleteModelVersionRequest& request, const DeleteModelVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteModelVersionRequest&;
+    using Resp = DeleteModelVersionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteModelVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DeleteModelVersionOutcomeCallable DlcClient::DeleteModelVersionCallable(const DeleteModelVersionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteModelVersionOutcome>>();
+    DeleteModelVersionAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DeleteModelVersionRequest&,
+        DeleteModelVersionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4390,6 +5290,106 @@ DlcClient::DeleteThirdPartyAccessUserOutcomeCallable DlcClient::DeleteThirdParty
     return prom->get_future();
 }
 
+DlcClient::DeleteTrainingJobInstanceOutcome DlcClient::DeleteTrainingJobInstance(const DeleteTrainingJobInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTrainingJobInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTrainingJobInstanceResponse rsp = DeleteTrainingJobInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTrainingJobInstanceOutcome(rsp);
+        else
+            return DeleteTrainingJobInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTrainingJobInstanceOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DeleteTrainingJobInstanceAsync(const DeleteTrainingJobInstanceRequest& request, const DeleteTrainingJobInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteTrainingJobInstanceRequest&;
+    using Resp = DeleteTrainingJobInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteTrainingJobInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DeleteTrainingJobInstanceOutcomeCallable DlcClient::DeleteTrainingJobInstanceCallable(const DeleteTrainingJobInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteTrainingJobInstanceOutcome>>();
+    DeleteTrainingJobInstanceAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DeleteTrainingJobInstanceRequest&,
+        DeleteTrainingJobInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DeleteTrainingJobSpecOutcome DlcClient::DeleteTrainingJobSpec(const DeleteTrainingJobSpecRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTrainingJobSpec");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTrainingJobSpecResponse rsp = DeleteTrainingJobSpecResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTrainingJobSpecOutcome(rsp);
+        else
+            return DeleteTrainingJobSpecOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTrainingJobSpecOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DeleteTrainingJobSpecAsync(const DeleteTrainingJobSpecRequest& request, const DeleteTrainingJobSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteTrainingJobSpecRequest&;
+    using Resp = DeleteTrainingJobSpecResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteTrainingJobSpec", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DeleteTrainingJobSpecOutcomeCallable DlcClient::DeleteTrainingJobSpecCallable(const DeleteTrainingJobSpecRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteTrainingJobSpecOutcome>>();
+    DeleteTrainingJobSpecAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DeleteTrainingJobSpecRequest&,
+        DeleteTrainingJobSpecOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::DeleteUserOutcome DlcClient::DeleteUser(const DeleteUserRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteUser");
@@ -4632,6 +5632,156 @@ DlcClient::DescribeAdvancedStoreLocationOutcomeCallable DlcClient::DescribeAdvan
         const DlcClient*,
         const DescribeAdvancedStoreLocationRequest&,
         DescribeAdvancedStoreLocationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeBindablePrometheusOutcome DlcClient::DescribeBindablePrometheus(const DescribeBindablePrometheusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBindablePrometheus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBindablePrometheusResponse rsp = DescribeBindablePrometheusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBindablePrometheusOutcome(rsp);
+        else
+            return DescribeBindablePrometheusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBindablePrometheusOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeBindablePrometheusAsync(const DescribeBindablePrometheusRequest& request, const DescribeBindablePrometheusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBindablePrometheusRequest&;
+    using Resp = DescribeBindablePrometheusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBindablePrometheus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeBindablePrometheusOutcomeCallable DlcClient::DescribeBindablePrometheusCallable(const DescribeBindablePrometheusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBindablePrometheusOutcome>>();
+    DescribeBindablePrometheusAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeBindablePrometheusRequest&,
+        DescribeBindablePrometheusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeClsTopicsOutcome DlcClient::DescribeClsTopics(const DescribeClsTopicsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClsTopics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClsTopicsResponse rsp = DescribeClsTopicsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClsTopicsOutcome(rsp);
+        else
+            return DescribeClsTopicsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClsTopicsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeClsTopicsAsync(const DescribeClsTopicsRequest& request, const DescribeClsTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeClsTopicsRequest&;
+    using Resp = DescribeClsTopicsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeClsTopics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeClsTopicsOutcomeCallable DlcClient::DescribeClsTopicsCallable(const DescribeClsTopicsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeClsTopicsOutcome>>();
+    DescribeClsTopicsAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeClsTopicsRequest&,
+        DescribeClsTopicsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeClusterEventLogSwitchOutcome DlcClient::DescribeClusterEventLogSwitch(const DescribeClusterEventLogSwitchRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterEventLogSwitch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterEventLogSwitchResponse rsp = DescribeClusterEventLogSwitchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterEventLogSwitchOutcome(rsp);
+        else
+            return DescribeClusterEventLogSwitchOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterEventLogSwitchOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeClusterEventLogSwitchAsync(const DescribeClusterEventLogSwitchRequest& request, const DescribeClusterEventLogSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeClusterEventLogSwitchRequest&;
+    using Resp = DescribeClusterEventLogSwitchResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterEventLogSwitch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeClusterEventLogSwitchOutcomeCallable DlcClient::DescribeClusterEventLogSwitchCallable(const DescribeClusterEventLogSwitchRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeClusterEventLogSwitchOutcome>>();
+    DescribeClusterEventLogSwitchAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeClusterEventLogSwitchRequest&,
+        DescribeClusterEventLogSwitchOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5590,6 +6740,56 @@ DlcClient::DescribeDatasourceConnectionOutcomeCallable DlcClient::DescribeDataso
     return prom->get_future();
 }
 
+DlcClient::DescribeEmrClusterInfoOutcome DlcClient::DescribeEmrClusterInfo(const DescribeEmrClusterInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEmrClusterInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEmrClusterInfoResponse rsp = DescribeEmrClusterInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEmrClusterInfoOutcome(rsp);
+        else
+            return DescribeEmrClusterInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEmrClusterInfoOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeEmrClusterInfoAsync(const DescribeEmrClusterInfoRequest& request, const DescribeEmrClusterInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeEmrClusterInfoRequest&;
+    using Resp = DescribeEmrClusterInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeEmrClusterInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeEmrClusterInfoOutcomeCallable DlcClient::DescribeEmrClusterInfoCallable(const DescribeEmrClusterInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeEmrClusterInfoOutcome>>();
+    DescribeEmrClusterInfoAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeEmrClusterInfoRequest&,
+        DescribeEmrClusterInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::DescribeEngineNetworksOutcome DlcClient::DescribeEngineNetworks(const DescribeEngineNetworksRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEngineNetworks");
@@ -6190,6 +7390,306 @@ DlcClient::DescribeMCPTaskResultOutcomeCallable DlcClient::DescribeMCPTaskResult
     return prom->get_future();
 }
 
+DlcClient::DescribeMlFlowConfigOutcome DlcClient::DescribeMlFlowConfig(const DescribeMlFlowConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMlFlowConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMlFlowConfigResponse rsp = DescribeMlFlowConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMlFlowConfigOutcome(rsp);
+        else
+            return DescribeMlFlowConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMlFlowConfigOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeMlFlowConfigAsync(const DescribeMlFlowConfigRequest& request, const DescribeMlFlowConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMlFlowConfigRequest&;
+    using Resp = DescribeMlFlowConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMlFlowConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeMlFlowConfigOutcomeCallable DlcClient::DescribeMlFlowConfigCallable(const DescribeMlFlowConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMlFlowConfigOutcome>>();
+    DescribeMlFlowConfigAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeMlFlowConfigRequest&,
+        DescribeMlFlowConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeMlflowServerOutcome DlcClient::DescribeMlflowServer(const DescribeMlflowServerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMlflowServer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMlflowServerResponse rsp = DescribeMlflowServerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMlflowServerOutcome(rsp);
+        else
+            return DescribeMlflowServerOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMlflowServerOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeMlflowServerAsync(const DescribeMlflowServerRequest& request, const DescribeMlflowServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMlflowServerRequest&;
+    using Resp = DescribeMlflowServerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMlflowServer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeMlflowServerOutcomeCallable DlcClient::DescribeMlflowServerCallable(const DescribeMlflowServerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMlflowServerOutcome>>();
+    DescribeMlflowServerAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeMlflowServerRequest&,
+        DescribeMlflowServerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeMlflowServerEventsOutcome DlcClient::DescribeMlflowServerEvents(const DescribeMlflowServerEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMlflowServerEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMlflowServerEventsResponse rsp = DescribeMlflowServerEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMlflowServerEventsOutcome(rsp);
+        else
+            return DescribeMlflowServerEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMlflowServerEventsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeMlflowServerEventsAsync(const DescribeMlflowServerEventsRequest& request, const DescribeMlflowServerEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMlflowServerEventsRequest&;
+    using Resp = DescribeMlflowServerEventsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMlflowServerEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeMlflowServerEventsOutcomeCallable DlcClient::DescribeMlflowServerEventsCallable(const DescribeMlflowServerEventsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMlflowServerEventsOutcome>>();
+    DescribeMlflowServerEventsAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeMlflowServerEventsRequest&,
+        DescribeMlflowServerEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeMlflowServerPodsOutcome DlcClient::DescribeMlflowServerPods(const DescribeMlflowServerPodsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMlflowServerPods");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMlflowServerPodsResponse rsp = DescribeMlflowServerPodsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMlflowServerPodsOutcome(rsp);
+        else
+            return DescribeMlflowServerPodsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMlflowServerPodsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeMlflowServerPodsAsync(const DescribeMlflowServerPodsRequest& request, const DescribeMlflowServerPodsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMlflowServerPodsRequest&;
+    using Resp = DescribeMlflowServerPodsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMlflowServerPods", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeMlflowServerPodsOutcomeCallable DlcClient::DescribeMlflowServerPodsCallable(const DescribeMlflowServerPodsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMlflowServerPodsOutcome>>();
+    DescribeMlflowServerPodsAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeMlflowServerPodsRequest&,
+        DescribeMlflowServerPodsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeModelEnginesOutcome DlcClient::DescribeModelEngines(const DescribeModelEnginesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelEngines");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelEnginesResponse rsp = DescribeModelEnginesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelEnginesOutcome(rsp);
+        else
+            return DescribeModelEnginesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelEnginesOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeModelEnginesAsync(const DescribeModelEnginesRequest& request, const DescribeModelEnginesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeModelEnginesRequest&;
+    using Resp = DescribeModelEnginesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeModelEngines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeModelEnginesOutcomeCallable DlcClient::DescribeModelEnginesCallable(const DescribeModelEnginesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeModelEnginesOutcome>>();
+    DescribeModelEnginesAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeModelEnginesRequest&,
+        DescribeModelEnginesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeModelTaskOptionsOutcome DlcClient::DescribeModelTaskOptions(const DescribeModelTaskOptionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelTaskOptions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelTaskOptionsResponse rsp = DescribeModelTaskOptionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelTaskOptionsOutcome(rsp);
+        else
+            return DescribeModelTaskOptionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelTaskOptionsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeModelTaskOptionsAsync(const DescribeModelTaskOptionsRequest& request, const DescribeModelTaskOptionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeModelTaskOptionsRequest&;
+    using Resp = DescribeModelTaskOptionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeModelTaskOptions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeModelTaskOptionsOutcomeCallable DlcClient::DescribeModelTaskOptionsCallable(const DescribeModelTaskOptionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeModelTaskOptionsOutcome>>();
+    DescribeModelTaskOptionsAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeModelTaskOptionsRequest&,
+        DescribeModelTaskOptionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::DescribeNativeSparkSessionsOutcome DlcClient::DescribeNativeSparkSessions(const DescribeNativeSparkSessionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNativeSparkSessions");
@@ -6782,6 +8282,106 @@ DlcClient::DescribePartitionsOutcomeCallable DlcClient::DescribePartitionsCallab
         const DlcClient*,
         const DescribePartitionsRequest&,
         DescribePartitionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribePostTrainingPresetOutcome DlcClient::DescribePostTrainingPreset(const DescribePostTrainingPresetRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePostTrainingPreset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePostTrainingPresetResponse rsp = DescribePostTrainingPresetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePostTrainingPresetOutcome(rsp);
+        else
+            return DescribePostTrainingPresetOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePostTrainingPresetOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribePostTrainingPresetAsync(const DescribePostTrainingPresetRequest& request, const DescribePostTrainingPresetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePostTrainingPresetRequest&;
+    using Resp = DescribePostTrainingPresetResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePostTrainingPreset", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribePostTrainingPresetOutcomeCallable DlcClient::DescribePostTrainingPresetCallable(const DescribePostTrainingPresetRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePostTrainingPresetOutcome>>();
+    DescribePostTrainingPresetAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribePostTrainingPresetRequest&,
+        DescribePostTrainingPresetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeRecommendedParamsOutcome DlcClient::DescribeRecommendedParams(const DescribeRecommendedParamsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRecommendedParams");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRecommendedParamsResponse rsp = DescribeRecommendedParamsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRecommendedParamsOutcome(rsp);
+        else
+            return DescribeRecommendedParamsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRecommendedParamsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeRecommendedParamsAsync(const DescribeRecommendedParamsRequest& request, const DescribeRecommendedParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRecommendedParamsRequest&;
+    using Resp = DescribeRecommendedParamsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRecommendedParams", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeRecommendedParamsOutcomeCallable DlcClient::DescribeRecommendedParamsCallable(const DescribeRecommendedParamsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRecommendedParamsOutcome>>();
+    DescribeRecommendedParamsAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeRecommendedParamsRequest&,
+        DescribeRecommendedParamsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -8382,6 +9982,206 @@ DlcClient::DescribeThirdPartyAccessUserOutcomeCallable DlcClient::DescribeThirdP
         const DlcClient*,
         const DescribeThirdPartyAccessUserRequest&,
         DescribeThirdPartyAccessUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeTkeClusterImportInfoOutcome DlcClient::DescribeTkeClusterImportInfo(const DescribeTkeClusterImportInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTkeClusterImportInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTkeClusterImportInfoResponse rsp = DescribeTkeClusterImportInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTkeClusterImportInfoOutcome(rsp);
+        else
+            return DescribeTkeClusterImportInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTkeClusterImportInfoOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeTkeClusterImportInfoAsync(const DescribeTkeClusterImportInfoRequest& request, const DescribeTkeClusterImportInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTkeClusterImportInfoRequest&;
+    using Resp = DescribeTkeClusterImportInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTkeClusterImportInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeTkeClusterImportInfoOutcomeCallable DlcClient::DescribeTkeClusterImportInfoCallable(const DescribeTkeClusterImportInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTkeClusterImportInfoOutcome>>();
+    DescribeTkeClusterImportInfoAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeTkeClusterImportInfoRequest&,
+        DescribeTkeClusterImportInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeTrainingCheckpointsOutcome DlcClient::DescribeTrainingCheckpoints(const DescribeTrainingCheckpointsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTrainingCheckpoints");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTrainingCheckpointsResponse rsp = DescribeTrainingCheckpointsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTrainingCheckpointsOutcome(rsp);
+        else
+            return DescribeTrainingCheckpointsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTrainingCheckpointsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeTrainingCheckpointsAsync(const DescribeTrainingCheckpointsRequest& request, const DescribeTrainingCheckpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTrainingCheckpointsRequest&;
+    using Resp = DescribeTrainingCheckpointsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTrainingCheckpoints", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeTrainingCheckpointsOutcomeCallable DlcClient::DescribeTrainingCheckpointsCallable(const DescribeTrainingCheckpointsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTrainingCheckpointsOutcome>>();
+    DescribeTrainingCheckpointsAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeTrainingCheckpointsRequest&,
+        DescribeTrainingCheckpointsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeTrainingJobInstanceOutcome DlcClient::DescribeTrainingJobInstance(const DescribeTrainingJobInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTrainingJobInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTrainingJobInstanceResponse rsp = DescribeTrainingJobInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTrainingJobInstanceOutcome(rsp);
+        else
+            return DescribeTrainingJobInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTrainingJobInstanceOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeTrainingJobInstanceAsync(const DescribeTrainingJobInstanceRequest& request, const DescribeTrainingJobInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTrainingJobInstanceRequest&;
+    using Resp = DescribeTrainingJobInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTrainingJobInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeTrainingJobInstanceOutcomeCallable DlcClient::DescribeTrainingJobInstanceCallable(const DescribeTrainingJobInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTrainingJobInstanceOutcome>>();
+    DescribeTrainingJobInstanceAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeTrainingJobInstanceRequest&,
+        DescribeTrainingJobInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeTrainingJobSpecOutcome DlcClient::DescribeTrainingJobSpec(const DescribeTrainingJobSpecRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTrainingJobSpec");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTrainingJobSpecResponse rsp = DescribeTrainingJobSpecResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTrainingJobSpecOutcome(rsp);
+        else
+            return DescribeTrainingJobSpecOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTrainingJobSpecOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeTrainingJobSpecAsync(const DescribeTrainingJobSpecRequest& request, const DescribeTrainingJobSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTrainingJobSpecRequest&;
+    using Resp = DescribeTrainingJobSpecResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTrainingJobSpec", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeTrainingJobSpecOutcomeCallable DlcClient::DescribeTrainingJobSpecCallable(const DescribeTrainingJobSpecRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTrainingJobSpecOutcome>>();
+    DescribeTrainingJobSpecAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeTrainingJobSpecRequest&,
+        DescribeTrainingJobSpecOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -10840,6 +12640,106 @@ DlcClient::GrantDLCCatalogAccessOutcomeCallable DlcClient::GrantDLCCatalogAccess
     return prom->get_future();
 }
 
+DlcClient::ImportExternalClusterOutcome DlcClient::ImportExternalCluster(const ImportExternalClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImportExternalCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImportExternalClusterResponse rsp = ImportExternalClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImportExternalClusterOutcome(rsp);
+        else
+            return ImportExternalClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return ImportExternalClusterOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ImportExternalClusterAsync(const ImportExternalClusterRequest& request, const ImportExternalClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ImportExternalClusterRequest&;
+    using Resp = ImportExternalClusterResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ImportExternalCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ImportExternalClusterOutcomeCallable DlcClient::ImportExternalClusterCallable(const ImportExternalClusterRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ImportExternalClusterOutcome>>();
+    ImportExternalClusterAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ImportExternalClusterRequest&,
+        ImportExternalClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::ImportTkeClusterOutcome DlcClient::ImportTkeCluster(const ImportTkeClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImportTkeCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImportTkeClusterResponse rsp = ImportTkeClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImportTkeClusterOutcome(rsp);
+        else
+            return ImportTkeClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return ImportTkeClusterOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ImportTkeClusterAsync(const ImportTkeClusterRequest& request, const ImportTkeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ImportTkeClusterRequest&;
+    using Resp = ImportTkeClusterResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ImportTkeCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ImportTkeClusterOutcomeCallable DlcClient::ImportTkeClusterCallable(const ImportTkeClusterRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ImportTkeClusterOutcome>>();
+    ImportTkeClusterAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ImportTkeClusterRequest&,
+        ImportTkeClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::InitializeTCLakeOutcome DlcClient::InitializeTCLake(const InitializeTCLakeRequest &request)
 {
     auto outcome = MakeRequest(request, "InitializeTCLake");
@@ -10940,6 +12840,206 @@ DlcClient::LaunchStandardEngineResourceGroupsOutcomeCallable DlcClient::LaunchSt
     return prom->get_future();
 }
 
+DlcClient::ListApiKeysOutcome DlcClient::ListApiKeys(const ListApiKeysRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListApiKeys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListApiKeysResponse rsp = ListApiKeysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListApiKeysOutcome(rsp);
+        else
+            return ListApiKeysOutcome(o.GetError());
+    }
+    else
+    {
+        return ListApiKeysOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ListApiKeysAsync(const ListApiKeysRequest& request, const ListApiKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListApiKeysRequest&;
+    using Resp = ListApiKeysResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListApiKeys", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ListApiKeysOutcomeCallable DlcClient::ListApiKeysCallable(const ListApiKeysRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListApiKeysOutcome>>();
+    ListApiKeysAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ListApiKeysRequest&,
+        ListApiKeysOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::ListAvailableApiKeysOutcome DlcClient::ListAvailableApiKeys(const ListAvailableApiKeysRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAvailableApiKeys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAvailableApiKeysResponse rsp = ListAvailableApiKeysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAvailableApiKeysOutcome(rsp);
+        else
+            return ListAvailableApiKeysOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAvailableApiKeysOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ListAvailableApiKeysAsync(const ListAvailableApiKeysRequest& request, const ListAvailableApiKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListAvailableApiKeysRequest&;
+    using Resp = ListAvailableApiKeysResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListAvailableApiKeys", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ListAvailableApiKeysOutcomeCallable DlcClient::ListAvailableApiKeysCallable(const ListAvailableApiKeysRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListAvailableApiKeysOutcome>>();
+    ListAvailableApiKeysAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ListAvailableApiKeysRequest&,
+        ListAvailableApiKeysOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::ListBenchmarkSummaryOutcome DlcClient::ListBenchmarkSummary(const ListBenchmarkSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListBenchmarkSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListBenchmarkSummaryResponse rsp = ListBenchmarkSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListBenchmarkSummaryOutcome(rsp);
+        else
+            return ListBenchmarkSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return ListBenchmarkSummaryOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ListBenchmarkSummaryAsync(const ListBenchmarkSummaryRequest& request, const ListBenchmarkSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListBenchmarkSummaryRequest&;
+    using Resp = ListBenchmarkSummaryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListBenchmarkSummary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ListBenchmarkSummaryOutcomeCallable DlcClient::ListBenchmarkSummaryCallable(const ListBenchmarkSummaryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListBenchmarkSummaryOutcome>>();
+    ListBenchmarkSummaryAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ListBenchmarkSummaryRequest&,
+        ListBenchmarkSummaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::ListBenchmarkTasksOutcome DlcClient::ListBenchmarkTasks(const ListBenchmarkTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListBenchmarkTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListBenchmarkTasksResponse rsp = ListBenchmarkTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListBenchmarkTasksOutcome(rsp);
+        else
+            return ListBenchmarkTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return ListBenchmarkTasksOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ListBenchmarkTasksAsync(const ListBenchmarkTasksRequest& request, const ListBenchmarkTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListBenchmarkTasksRequest&;
+    using Resp = ListBenchmarkTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListBenchmarkTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ListBenchmarkTasksOutcomeCallable DlcClient::ListBenchmarkTasksCallable(const ListBenchmarkTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListBenchmarkTasksOutcome>>();
+    ListBenchmarkTasksAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ListBenchmarkTasksRequest&,
+        ListBenchmarkTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::ListClusterGroupsOutcome DlcClient::ListClusterGroups(const ListClusterGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "ListClusterGroups");
@@ -10982,6 +13082,106 @@ DlcClient::ListClusterGroupsOutcomeCallable DlcClient::ListClusterGroupsCallable
         const DlcClient*,
         const ListClusterGroupsRequest&,
         ListClusterGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::ListDeploymentReplicasOutcome DlcClient::ListDeploymentReplicas(const ListDeploymentReplicasRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListDeploymentReplicas");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListDeploymentReplicasResponse rsp = ListDeploymentReplicasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListDeploymentReplicasOutcome(rsp);
+        else
+            return ListDeploymentReplicasOutcome(o.GetError());
+    }
+    else
+    {
+        return ListDeploymentReplicasOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ListDeploymentReplicasAsync(const ListDeploymentReplicasRequest& request, const ListDeploymentReplicasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListDeploymentReplicasRequest&;
+    using Resp = ListDeploymentReplicasResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListDeploymentReplicas", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ListDeploymentReplicasOutcomeCallable DlcClient::ListDeploymentReplicasCallable(const ListDeploymentReplicasRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListDeploymentReplicasOutcome>>();
+    ListDeploymentReplicasAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ListDeploymentReplicasRequest&,
+        ListDeploymentReplicasOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::ListDeploymentsOutcome DlcClient::ListDeployments(const ListDeploymentsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListDeployments");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListDeploymentsResponse rsp = ListDeploymentsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListDeploymentsOutcome(rsp);
+        else
+            return ListDeploymentsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListDeploymentsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ListDeploymentsAsync(const ListDeploymentsRequest& request, const ListDeploymentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListDeploymentsRequest&;
+    using Resp = ListDeploymentsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListDeployments", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ListDeploymentsOutcomeCallable DlcClient::ListDeploymentsCallable(const ListDeploymentsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListDeploymentsOutcome>>();
+    ListDeploymentsAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ListDeploymentsRequest&,
+        ListDeploymentsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -11540,6 +13740,106 @@ DlcClient::ListLabsOutcomeCallable DlcClient::ListLabsCallable(const ListLabsReq
     return prom->get_future();
 }
 
+DlcClient::ListMlflowServerTrainingInstancesOutcome DlcClient::ListMlflowServerTrainingInstances(const ListMlflowServerTrainingInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListMlflowServerTrainingInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListMlflowServerTrainingInstancesResponse rsp = ListMlflowServerTrainingInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListMlflowServerTrainingInstancesOutcome(rsp);
+        else
+            return ListMlflowServerTrainingInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListMlflowServerTrainingInstancesOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ListMlflowServerTrainingInstancesAsync(const ListMlflowServerTrainingInstancesRequest& request, const ListMlflowServerTrainingInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListMlflowServerTrainingInstancesRequest&;
+    using Resp = ListMlflowServerTrainingInstancesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListMlflowServerTrainingInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ListMlflowServerTrainingInstancesOutcomeCallable DlcClient::ListMlflowServerTrainingInstancesCallable(const ListMlflowServerTrainingInstancesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListMlflowServerTrainingInstancesOutcome>>();
+    ListMlflowServerTrainingInstancesAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ListMlflowServerTrainingInstancesRequest&,
+        ListMlflowServerTrainingInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::ListMlflowServersOutcome DlcClient::ListMlflowServers(const ListMlflowServersRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListMlflowServers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListMlflowServersResponse rsp = ListMlflowServersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListMlflowServersOutcome(rsp);
+        else
+            return ListMlflowServersOutcome(o.GetError());
+    }
+    else
+    {
+        return ListMlflowServersOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ListMlflowServersAsync(const ListMlflowServersRequest& request, const ListMlflowServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListMlflowServersRequest&;
+    using Resp = ListMlflowServersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListMlflowServers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ListMlflowServersOutcomeCallable DlcClient::ListMlflowServersCallable(const ListMlflowServersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListMlflowServersOutcome>>();
+    ListMlflowServersAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ListMlflowServersRequest&,
+        ListMlflowServersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::ListModelVersionsOutcome DlcClient::ListModelVersions(const ListModelVersionsRequest &request)
 {
     auto outcome = MakeRequest(request, "ListModelVersions");
@@ -11740,6 +14040,56 @@ DlcClient::ListRayJobsOutcomeCallable DlcClient::ListRayJobsCallable(const ListR
     return prom->get_future();
 }
 
+DlcClient::ListRegionLbsOutcome DlcClient::ListRegionLbs(const ListRegionLbsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListRegionLbs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListRegionLbsResponse rsp = ListRegionLbsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListRegionLbsOutcome(rsp);
+        else
+            return ListRegionLbsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListRegionLbsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ListRegionLbsAsync(const ListRegionLbsRequest& request, const ListRegionLbsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListRegionLbsRequest&;
+    using Resp = ListRegionLbsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListRegionLbs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ListRegionLbsOutcomeCallable DlcClient::ListRegionLbsCallable(const ListRegionLbsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListRegionLbsOutcome>>();
+    ListRegionLbsAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ListRegionLbsRequest&,
+        ListRegionLbsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::ListResourceConfigsOutcome DlcClient::ListResourceConfigs(const ListResourceConfigsRequest &request)
 {
     auto outcome = MakeRequest(request, "ListResourceConfigs");
@@ -11782,6 +14132,56 @@ DlcClient::ListResourceConfigsOutcomeCallable DlcClient::ListResourceConfigsCall
         const DlcClient*,
         const ListResourceConfigsRequest&,
         ListResourceConfigsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::ListServiceApiKeysOutcome DlcClient::ListServiceApiKeys(const ListServiceApiKeysRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListServiceApiKeys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListServiceApiKeysResponse rsp = ListServiceApiKeysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListServiceApiKeysOutcome(rsp);
+        else
+            return ListServiceApiKeysOutcome(o.GetError());
+    }
+    else
+    {
+        return ListServiceApiKeysOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ListServiceApiKeysAsync(const ListServiceApiKeysRequest& request, const ListServiceApiKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListServiceApiKeysRequest&;
+    using Resp = ListServiceApiKeysResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListServiceApiKeys", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ListServiceApiKeysOutcomeCallable DlcClient::ListServiceApiKeysCallable(const ListServiceApiKeysRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListServiceApiKeysOutcome>>();
+    ListServiceApiKeysAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ListServiceApiKeysRequest&,
+        ListServiceApiKeysOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -11882,6 +14282,156 @@ DlcClient::ListTaskJobLogNameOutcomeCallable DlcClient::ListTaskJobLogNameCallab
         const DlcClient*,
         const ListTaskJobLogNameRequest&,
         ListTaskJobLogNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::ListTkeCosBucketsOutcome DlcClient::ListTkeCosBuckets(const ListTkeCosBucketsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTkeCosBuckets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTkeCosBucketsResponse rsp = ListTkeCosBucketsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTkeCosBucketsOutcome(rsp);
+        else
+            return ListTkeCosBucketsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTkeCosBucketsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ListTkeCosBucketsAsync(const ListTkeCosBucketsRequest& request, const ListTkeCosBucketsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListTkeCosBucketsRequest&;
+    using Resp = ListTkeCosBucketsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListTkeCosBuckets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ListTkeCosBucketsOutcomeCallable DlcClient::ListTkeCosBucketsCallable(const ListTkeCosBucketsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListTkeCosBucketsOutcome>>();
+    ListTkeCosBucketsAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ListTkeCosBucketsRequest&,
+        ListTkeCosBucketsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::ListTrainingJobInstanceOutcome DlcClient::ListTrainingJobInstance(const ListTrainingJobInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTrainingJobInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTrainingJobInstanceResponse rsp = ListTrainingJobInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTrainingJobInstanceOutcome(rsp);
+        else
+            return ListTrainingJobInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTrainingJobInstanceOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ListTrainingJobInstanceAsync(const ListTrainingJobInstanceRequest& request, const ListTrainingJobInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListTrainingJobInstanceRequest&;
+    using Resp = ListTrainingJobInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListTrainingJobInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ListTrainingJobInstanceOutcomeCallable DlcClient::ListTrainingJobInstanceCallable(const ListTrainingJobInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListTrainingJobInstanceOutcome>>();
+    ListTrainingJobInstanceAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ListTrainingJobInstanceRequest&,
+        ListTrainingJobInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::ListTrainingJobSpecOutcome DlcClient::ListTrainingJobSpec(const ListTrainingJobSpecRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTrainingJobSpec");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTrainingJobSpecResponse rsp = ListTrainingJobSpecResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTrainingJobSpecOutcome(rsp);
+        else
+            return ListTrainingJobSpecOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTrainingJobSpecOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ListTrainingJobSpecAsync(const ListTrainingJobSpecRequest& request, const ListTrainingJobSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListTrainingJobSpecRequest&;
+    using Resp = ListTrainingJobSpecResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListTrainingJobSpec", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ListTrainingJobSpecOutcomeCallable DlcClient::ListTrainingJobSpecCallable(const ListTrainingJobSpecRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListTrainingJobSpecOutcome>>();
+    ListTrainingJobSpecAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ListTrainingJobSpecRequest&,
+        ListTrainingJobSpecOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -12432,6 +14982,56 @@ DlcClient::ModifySparkAppForTDLCOutcomeCallable DlcClient::ModifySparkAppForTDLC
         const DlcClient*,
         const ModifySparkAppForTDLCRequest&,
         ModifySparkAppForTDLCOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::ModifyTrainingJobSpecOutcome DlcClient::ModifyTrainingJobSpec(const ModifyTrainingJobSpecRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTrainingJobSpec");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTrainingJobSpecResponse rsp = ModifyTrainingJobSpecResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTrainingJobSpecOutcome(rsp);
+        else
+            return ModifyTrainingJobSpecOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTrainingJobSpecOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ModifyTrainingJobSpecAsync(const ModifyTrainingJobSpecRequest& request, const ModifyTrainingJobSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyTrainingJobSpecRequest&;
+    using Resp = ModifyTrainingJobSpecResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyTrainingJobSpec", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ModifyTrainingJobSpecOutcomeCallable DlcClient::ModifyTrainingJobSpecCallable(const ModifyTrainingJobSpecRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyTrainingJobSpecOutcome>>();
+    ModifyTrainingJobSpecAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ModifyTrainingJobSpecRequest&,
+        ModifyTrainingJobSpecOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -13090,6 +15690,56 @@ DlcClient::ReportHeartbeatMetaDataOutcomeCallable DlcClient::ReportHeartbeatMeta
     return prom->get_future();
 }
 
+DlcClient::RerunBenchmarkTaskOutcome DlcClient::RerunBenchmarkTask(const RerunBenchmarkTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "RerunBenchmarkTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RerunBenchmarkTaskResponse rsp = RerunBenchmarkTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RerunBenchmarkTaskOutcome(rsp);
+        else
+            return RerunBenchmarkTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return RerunBenchmarkTaskOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::RerunBenchmarkTaskAsync(const RerunBenchmarkTaskRequest& request, const RerunBenchmarkTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RerunBenchmarkTaskRequest&;
+    using Resp = RerunBenchmarkTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RerunBenchmarkTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::RerunBenchmarkTaskOutcomeCallable DlcClient::RerunBenchmarkTaskCallable(const RerunBenchmarkTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RerunBenchmarkTaskOutcome>>();
+    RerunBenchmarkTaskAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const RerunBenchmarkTaskRequest&,
+        RerunBenchmarkTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::RestartDataEngineOutcome DlcClient::RestartDataEngine(const RestartDataEngineRequest &request)
 {
     auto outcome = MakeRequest(request, "RestartDataEngine");
@@ -13140,6 +15790,56 @@ DlcClient::RestartDataEngineOutcomeCallable DlcClient::RestartDataEngineCallable
     return prom->get_future();
 }
 
+DlcClient::RestartDeploymentOutcome DlcClient::RestartDeployment(const RestartDeploymentRequest &request)
+{
+    auto outcome = MakeRequest(request, "RestartDeployment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RestartDeploymentResponse rsp = RestartDeploymentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RestartDeploymentOutcome(rsp);
+        else
+            return RestartDeploymentOutcome(o.GetError());
+    }
+    else
+    {
+        return RestartDeploymentOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::RestartDeploymentAsync(const RestartDeploymentRequest& request, const RestartDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RestartDeploymentRequest&;
+    using Resp = RestartDeploymentResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RestartDeployment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::RestartDeploymentOutcomeCallable DlcClient::RestartDeploymentCallable(const RestartDeploymentRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RestartDeploymentOutcome>>();
+    RestartDeploymentAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const RestartDeploymentRequest&,
+        RestartDeploymentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::RestartInferenceServiceOutcome DlcClient::RestartInferenceService(const RestartInferenceServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "RestartInferenceService");
@@ -13182,6 +15882,56 @@ DlcClient::RestartInferenceServiceOutcomeCallable DlcClient::RestartInferenceSer
         const DlcClient*,
         const RestartInferenceServiceRequest&,
         RestartInferenceServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::ResumeTrainingJobInstanceOutcome DlcClient::ResumeTrainingJobInstance(const ResumeTrainingJobInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResumeTrainingJobInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResumeTrainingJobInstanceResponse rsp = ResumeTrainingJobInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResumeTrainingJobInstanceOutcome(rsp);
+        else
+            return ResumeTrainingJobInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ResumeTrainingJobInstanceOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ResumeTrainingJobInstanceAsync(const ResumeTrainingJobInstanceRequest& request, const ResumeTrainingJobInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ResumeTrainingJobInstanceRequest&;
+    using Resp = ResumeTrainingJobInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ResumeTrainingJobInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ResumeTrainingJobInstanceOutcomeCallable DlcClient::ResumeTrainingJobInstanceCallable(const ResumeTrainingJobInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ResumeTrainingJobInstanceOutcome>>();
+    ResumeTrainingJobInstanceAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ResumeTrainingJobInstanceRequest&,
+        ResumeTrainingJobInstanceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -13440,6 +16190,56 @@ DlcClient::StartLabOutcomeCallable DlcClient::StartLabCallable(const StartLabReq
     return prom->get_future();
 }
 
+DlcClient::StartMlflowServerOutcome DlcClient::StartMlflowServer(const StartMlflowServerRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartMlflowServer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartMlflowServerResponse rsp = StartMlflowServerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartMlflowServerOutcome(rsp);
+        else
+            return StartMlflowServerOutcome(o.GetError());
+    }
+    else
+    {
+        return StartMlflowServerOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::StartMlflowServerAsync(const StartMlflowServerRequest& request, const StartMlflowServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StartMlflowServerRequest&;
+    using Resp = StartMlflowServerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StartMlflowServer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::StartMlflowServerOutcomeCallable DlcClient::StartMlflowServerCallable(const StartMlflowServerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StartMlflowServerOutcome>>();
+    StartMlflowServerAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const StartMlflowServerRequest&,
+        StartMlflowServerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::StartRayClusterOutcome DlcClient::StartRayCluster(const StartRayClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "StartRayCluster");
@@ -13482,6 +16282,106 @@ DlcClient::StartRayClusterOutcomeCallable DlcClient::StartRayClusterCallable(con
         const DlcClient*,
         const StartRayClusterRequest&,
         StartRayClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::StopBenchmarkTaskOutcome DlcClient::StopBenchmarkTask(const StopBenchmarkTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopBenchmarkTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopBenchmarkTaskResponse rsp = StopBenchmarkTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopBenchmarkTaskOutcome(rsp);
+        else
+            return StopBenchmarkTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return StopBenchmarkTaskOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::StopBenchmarkTaskAsync(const StopBenchmarkTaskRequest& request, const StopBenchmarkTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StopBenchmarkTaskRequest&;
+    using Resp = StopBenchmarkTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StopBenchmarkTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::StopBenchmarkTaskOutcomeCallable DlcClient::StopBenchmarkTaskCallable(const StopBenchmarkTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StopBenchmarkTaskOutcome>>();
+    StopBenchmarkTaskAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const StopBenchmarkTaskRequest&,
+        StopBenchmarkTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::StopDeploymentOutcome DlcClient::StopDeployment(const StopDeploymentRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopDeployment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopDeploymentResponse rsp = StopDeploymentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopDeploymentOutcome(rsp);
+        else
+            return StopDeploymentOutcome(o.GetError());
+    }
+    else
+    {
+        return StopDeploymentOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::StopDeploymentAsync(const StopDeploymentRequest& request, const StopDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StopDeploymentRequest&;
+    using Resp = StopDeploymentResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StopDeployment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::StopDeploymentOutcomeCallable DlcClient::StopDeploymentCallable(const StopDeploymentRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StopDeploymentOutcome>>();
+    StopDeploymentAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const StopDeploymentRequest&,
+        StopDeploymentOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -13590,6 +16490,56 @@ DlcClient::StopLabOutcomeCallable DlcClient::StopLabCallable(const StopLabReques
     return prom->get_future();
 }
 
+DlcClient::StopMlflowServerOutcome DlcClient::StopMlflowServer(const StopMlflowServerRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopMlflowServer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopMlflowServerResponse rsp = StopMlflowServerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopMlflowServerOutcome(rsp);
+        else
+            return StopMlflowServerOutcome(o.GetError());
+    }
+    else
+    {
+        return StopMlflowServerOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::StopMlflowServerAsync(const StopMlflowServerRequest& request, const StopMlflowServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StopMlflowServerRequest&;
+    using Resp = StopMlflowServerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StopMlflowServer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::StopMlflowServerOutcomeCallable DlcClient::StopMlflowServerCallable(const StopMlflowServerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StopMlflowServerOutcome>>();
+    StopMlflowServerAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const StopMlflowServerRequest&,
+        StopMlflowServerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::StopRayClusterOutcome DlcClient::StopRayCluster(const StopRayClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "StopRayCluster");
@@ -13632,6 +16582,56 @@ DlcClient::StopRayClusterOutcomeCallable DlcClient::StopRayClusterCallable(const
         const DlcClient*,
         const StopRayClusterRequest&,
         StopRayClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::SubmitTrainingJobOutcome DlcClient::SubmitTrainingJob(const SubmitTrainingJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitTrainingJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitTrainingJobResponse rsp = SubmitTrainingJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitTrainingJobOutcome(rsp);
+        else
+            return SubmitTrainingJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitTrainingJobOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::SubmitTrainingJobAsync(const SubmitTrainingJobRequest& request, const SubmitTrainingJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SubmitTrainingJobRequest&;
+    using Resp = SubmitTrainingJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SubmitTrainingJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::SubmitTrainingJobOutcomeCallable DlcClient::SubmitTrainingJobCallable(const SubmitTrainingJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SubmitTrainingJobOutcome>>();
+    SubmitTrainingJobAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const SubmitTrainingJobRequest&,
+        SubmitTrainingJobOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -13940,6 +16940,56 @@ DlcClient::UnlockMetaDataOutcomeCallable DlcClient::UnlockMetaDataCallable(const
     return prom->get_future();
 }
 
+DlcClient::UpdateApiKeyStatusOutcome DlcClient::UpdateApiKeyStatus(const UpdateApiKeyStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateApiKeyStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateApiKeyStatusResponse rsp = UpdateApiKeyStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateApiKeyStatusOutcome(rsp);
+        else
+            return UpdateApiKeyStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateApiKeyStatusOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::UpdateApiKeyStatusAsync(const UpdateApiKeyStatusRequest& request, const UpdateApiKeyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateApiKeyStatusRequest&;
+    using Resp = UpdateApiKeyStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateApiKeyStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::UpdateApiKeyStatusOutcomeCallable DlcClient::UpdateApiKeyStatusCallable(const UpdateApiKeyStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateApiKeyStatusOutcome>>();
+    UpdateApiKeyStatusAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const UpdateApiKeyStatusRequest&,
+        UpdateApiKeyStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::UpdateClusterGroupOutcome DlcClient::UpdateClusterGroup(const UpdateClusterGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateClusterGroup");
@@ -14132,6 +17182,56 @@ DlcClient::UpdateDataMaskStrategyOutcomeCallable DlcClient::UpdateDataMaskStrate
         const DlcClient*,
         const UpdateDataMaskStrategyRequest&,
         UpdateDataMaskStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::UpdateDeploymentOutcome DlcClient::UpdateDeployment(const UpdateDeploymentRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateDeployment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateDeploymentResponse rsp = UpdateDeploymentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateDeploymentOutcome(rsp);
+        else
+            return UpdateDeploymentOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateDeploymentOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::UpdateDeploymentAsync(const UpdateDeploymentRequest& request, const UpdateDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateDeploymentRequest&;
+    using Resp = UpdateDeploymentResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateDeployment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::UpdateDeploymentOutcomeCallable DlcClient::UpdateDeploymentCallable(const UpdateDeploymentRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateDeploymentOutcome>>();
+    UpdateDeploymentAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const UpdateDeploymentRequest&,
+        UpdateDeploymentOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -14632,6 +17732,56 @@ DlcClient::UpdateRowFilterOutcomeCallable DlcClient::UpdateRowFilterCallable(con
         const DlcClient*,
         const UpdateRowFilterRequest&,
         UpdateRowFilterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::UpdateServiceAuthConfigOutcome DlcClient::UpdateServiceAuthConfig(const UpdateServiceAuthConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateServiceAuthConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateServiceAuthConfigResponse rsp = UpdateServiceAuthConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateServiceAuthConfigOutcome(rsp);
+        else
+            return UpdateServiceAuthConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateServiceAuthConfigOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::UpdateServiceAuthConfigAsync(const UpdateServiceAuthConfigRequest& request, const UpdateServiceAuthConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateServiceAuthConfigRequest&;
+    using Resp = UpdateServiceAuthConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateServiceAuthConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::UpdateServiceAuthConfigOutcomeCallable DlcClient::UpdateServiceAuthConfigCallable(const UpdateServiceAuthConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateServiceAuthConfigOutcome>>();
+    UpdateServiceAuthConfigAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const UpdateServiceAuthConfigRequest&,
+        UpdateServiceAuthConfigOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

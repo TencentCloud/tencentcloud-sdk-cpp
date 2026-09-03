@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。
-                     * @return InstanceId 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。
+                     * 获取<p>实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用<a href="https://cloud.tencent.com/document/api/236/15872">查询实例列表</a> 接口获取，其值为输出参数中字段 InstanceId 的值。此接口不支持设置云盘版实例为只读。</p>
+                     * @return InstanceId <p>实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用<a href="https://cloud.tencent.com/document/api/236/15872">查询实例列表</a> 接口获取，其值为输出参数中字段 InstanceId 的值。此接口不支持设置云盘版实例为只读。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。
-                     * @param _instanceId 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。
+                     * 设置<p>实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用<a href="https://cloud.tencent.com/document/api/236/15872">查询实例列表</a> 接口获取，其值为输出参数中字段 InstanceId 的值。此接口不支持设置云盘版实例为只读。</p>
+                     * @param _instanceId <p>实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用<a href="https://cloud.tencent.com/document/api/236/15872">查询实例列表</a> 接口获取，其值为输出参数中字段 InstanceId 的值。此接口不支持设置云盘版实例为只读。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取是否设置为只读。其中：1表示设置实例为只读，0表示解除只读状态
-                     * @return ReadOnly 是否设置为只读。其中：1表示设置实例为只读，0表示解除只读状态
+                     * 获取<p>是否设置为只读。其中：1表示设置实例为只读，0表示解除只读状态</p>
+                     * @return ReadOnly <p>是否设置为只读。其中：1表示设置实例为只读，0表示解除只读状态</p>
                      * 
                      */
                     int64_t GetReadOnly() const;
 
                     /**
-                     * 设置是否设置为只读。其中：1表示设置实例为只读，0表示解除只读状态
-                     * @param _readOnly 是否设置为只读。其中：1表示设置实例为只读，0表示解除只读状态
+                     * 设置<p>是否设置为只读。其中：1表示设置实例为只读，0表示解除只读状态</p>
+                     * @param _readOnly <p>是否设置为只读。其中：1表示设置实例为只读，0表示解除只读状态</p>
                      * 
                      */
                     void SetReadOnly(const int64_t& _readOnly);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。
+                     * <p>实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用<a href="https://cloud.tencent.com/document/api/236/15872">查询实例列表</a> 接口获取，其值为输出参数中字段 InstanceId 的值。此接口不支持设置云盘版实例为只读。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 是否设置为只读。其中：1表示设置实例为只读，0表示解除只读状态
+                     * <p>是否设置为只读。其中：1表示设置实例为只读，0表示解除只读状态</p>
                      */
                     int64_t m_readOnly;
                     bool m_readOnlyHasBeenSet;

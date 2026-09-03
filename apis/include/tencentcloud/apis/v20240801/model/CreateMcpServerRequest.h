@@ -573,6 +573,69 @@ namespace TencentCloud
                      */
                     bool IgnoreHealthCheckHasBeenSet() const;
 
+                    /**
+                     * 获取<p>凭据ID</p>
+                     * @return CredentialID <p>凭据ID</p>
+                     * 
+                     */
+                    std::string GetCredentialID() const;
+
+                    /**
+                     * 设置<p>凭据ID</p>
+                     * @param _credentialID <p>凭据ID</p>
+                     * 
+                     */
+                    void SetCredentialID(const std::string& _credentialID);
+
+                    /**
+                     * 判断参数 CredentialID 是否已赋值
+                     * @return CredentialID 是否已赋值
+                     * 
+                     */
+                    bool CredentialIDHasBeenSet() const;
+
+                    /**
+                     * 获取<p>访问域名</p>
+                     * @return Domain <p>访问域名</p>
+                     * 
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置<p>访问域名</p>
+                     * @param _domain <p>访问域名</p>
+                     * 
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     * 
+                     */
+                    bool DomainHasBeenSet() const;
+
+                    /**
+                     * 获取<p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>
+                     * @return RequestProtocolType <p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>
+                     * 
+                     */
+                    std::string GetRequestProtocolType() const;
+
+                    /**
+                     * 设置<p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>
+                     * @param _requestProtocolType <p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>
+                     * 
+                     */
+                    void SetRequestProtocolType(const std::string& _requestProtocolType);
+
+                    /**
+                     * 判断参数 RequestProtocolType 是否已赋值
+                     * @return RequestProtocolType 是否已赋值
+                     * 
+                     */
+                    bool RequestProtocolTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -724,6 +787,24 @@ namespace TencentCloud
                      */
                     bool m_ignoreHealthCheck;
                     bool m_ignoreHealthCheckHasBeenSet;
+
+                    /**
+                     * <p>凭据ID</p>
+                     */
+                    std::string m_credentialID;
+                    bool m_credentialIDHasBeenSet;
+
+                    /**
+                     * <p>访问域名</p>
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
+
+                    /**
+                     * <p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>
+                     */
+                    std::string m_requestProtocolType;
+                    bool m_requestProtocolTypeHasBeenSet;
 
                 };
             }

@@ -60,6 +60,7 @@ set(apis_public_header_model
   include/tencentcloud/apis/v20240801/model/CreateAgentAppResp.h
   include/tencentcloud/apis/v20240801/model/CreateMcpServerResponse.h
   include/tencentcloud/apis/v20240801/model/SimpleCondition.h
+  include/tencentcloud/apis/v20240801/model/TimeRange.h
   include/tencentcloud/apis/v20240801/model/DescribeAgentAppsRequest.h
   include/tencentcloud/apis/v20240801/model/ToolConfigVO.h
   include/tencentcloud/apis/v20240801/model/DescribeAgentAppResponse.h
@@ -210,6 +211,7 @@ set(apis_src
   src/v20240801/model/CreateAgentAppResp.cpp
   src/v20240801/model/CreateMcpServerResponse.cpp
   src/v20240801/model/SimpleCondition.cpp
+  src/v20240801/model/TimeRange.cpp
   src/v20240801/model/DescribeAgentAppsRequest.cpp
   src/v20240801/model/ToolConfigVO.cpp
   src/v20240801/model/DescribeAgentAppResponse.cpp

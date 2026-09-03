@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取uid，数据库中唯一
-                     * @return Id uid，数据库中唯一
+                     * 获取<p>uid，数据库中唯一</p>
+                     * @return Id <p>uid，数据库中唯一</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置uid，数据库中唯一
-                     * @param _id uid，数据库中唯一
+                     * 设置<p>uid，数据库中唯一</p>
+                     * @param _id <p>uid，数据库中唯一</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取账号，登录账号
-                     * @return UserId 账号，登录账号
+                     * 获取<p>账号，登录账号</p>
+                     * @return UserId <p>账号，登录账号</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置账号，登录账号
-                     * @param _userId 账号，登录账号
+                     * 设置<p>账号，登录账号</p>
+                     * @param _userId <p>账号，登录账号</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取用户名
-                     * @return UserName 用户名
+                     * 获取<p>用户名</p>
+                     * @return UserName <p>用户名</p>
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置用户名
-                     * @param _userName 用户名
+                     * 设置<p>用户名</p>
+                     * @param _userName <p>用户名</p>
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取账号id，同Id字段
-                     * @return AccountId 账号id，同Id字段
+                     * 获取<p>账号id，同Id字段</p>
+                     * @return AccountId <p>账号id，同Id字段</p>
                      * 
                      */
                     int64_t GetAccountId() const;
 
                     /**
-                     * 设置账号id，同Id字段
-                     * @param _accountId 账号id，同Id字段
+                     * 设置<p>账号id，同Id字段</p>
+                     * @param _accountId <p>账号id，同Id字段</p>
                      * 
                      */
                     void SetAccountId(const int64_t& _accountId);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool AccountIdHasBeenSet() const;
 
                     /**
-                     * 获取账号所在的分组id
-                     * @return GroupId 账号所在的分组id
+                     * 获取<p>账号所在的分组id</p>
+                     * @return GroupId <p>账号所在的分组id</p>
                      * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置账号所在的分组id
-                     * @param _groupId 账号所在的分组id
+                     * 设置<p>账号所在的分组id</p>
+                     * @param _groupId <p>账号所在的分组id</p>
                      * 
                      */
                     void SetGroupId(const int64_t& _groupId);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取账号所在的分组名称
-                     * @return GroupName 账号所在的分组名称
+                     * 获取<p>账号所在的分组名称</p>
+                     * @return GroupName <p>账号所在的分组名称</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置账号所在的分组名称
-                     * @param _groupName 账号所在的分组名称
+                     * 设置<p>账号所在的分组名称</p>
+                     * @param _groupName <p>账号所在的分组名称</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取账号所在的分组名称路径，用英文.分割
-                     * @return NamePath 账号所在的分组名称路径，用英文.分割
+                     * 获取<p>账号所在的分组名称路径，用英文.分割</p>
+                     * @return NamePath <p>账号所在的分组名称路径，用英文.分割</p>
                      * 
                      */
                     std::string GetNamePath() const;
 
                     /**
-                     * 设置账号所在的分组名称路径，用英文.分割
-                     * @param _namePath 账号所在的分组名称路径，用英文.分割
+                     * 设置<p>账号所在的分组名称路径，用英文.分割</p>
+                     * @param _namePath <p>账号所在的分组名称路径，用英文.分割</p>
                      * 
                      */
                     void SetNamePath(const std::string& _namePath);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool NamePathHasBeenSet() const;
 
                     /**
-                     * 获取账号来源,0表示本地账号(只支持32位)
-                     * @return Source 账号来源,0表示本地账号(只支持32位)
+                     * 获取<p>账号来源,0表示本地账号(只支持32位)</p>
+                     * @return Source <p>账号来源,0表示本地账号(只支持32位)</p>
                      * 
                      */
                     int64_t GetSource() const;
 
                     /**
-                     * 设置账号来源,0表示本地账号(只支持32位)
-                     * @param _source 账号来源,0表示本地账号(只支持32位)
+                     * 设置<p>账号来源,0表示本地账号(只支持32位)</p>
+                     * @param _source <p>账号来源,0表示本地账号(只支持32位)</p>
                      * 
                      */
                     void SetSource(const int64_t& _source);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取账号状态,0禁用，1启用(只支持32位)
-                     * @return Status 账号状态,0禁用，1启用(只支持32位)
+                     * 获取<p>账号状态,0禁用，1启用(只支持32位)</p>
+                     * @return Status <p>账号状态,0禁用，1启用(只支持32位)</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置账号状态,0禁用，1启用(只支持32位)
-                     * @param _status 账号状态,0禁用，1启用(只支持32位)
+                     * 设置<p>账号状态,0禁用，1启用(只支持32位)</p>
+                     * @param _status <p>账号状态,0禁用，1启用(只支持32位)</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取账号的创建时间
-                     * @return Itime 账号的创建时间
+                     * 获取<p>账号的创建时间</p>
+                     * @return Itime <p>账号的创建时间</p>
                      * 
                      */
                     std::string GetItime() const;
 
                     /**
-                     * 设置账号的创建时间
-                     * @param _itime 账号的创建时间
+                     * 设置<p>账号的创建时间</p>
+                     * @param _itime <p>账号的创建时间</p>
                      * 
                      */
                     void SetItime(const std::string& _itime);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool ItimeHasBeenSet() const;
 
                     /**
-                     * 获取账号的最后更新时间
-                     * @return Utime 账号的最后更新时间
+                     * 获取<p>账号的最后更新时间</p>
+                     * @return Utime <p>账号的最后更新时间</p>
                      * 
                      */
                     std::string GetUtime() const;
 
                     /**
-                     * 设置账号的最后更新时间
-                     * @param _utime 账号的最后更新时间
+                     * 设置<p>账号的最后更新时间</p>
+                     * @param _utime <p>账号的最后更新时间</p>
                      * 
                      */
                     void SetUtime(const std::string& _utime);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool UtimeHasBeenSet() const;
 
                     /**
-                     * 获取账号的扩展信息，包含邮箱、手机号、身份证、职位等信息
-                     * @return ExtraInfo 账号的扩展信息，包含邮箱、手机号、身份证、职位等信息
+                     * 获取<p>账号的扩展信息，包含邮箱、手机号、身份证、职位等信息</p>
+                     * @return ExtraInfo <p>账号的扩展信息，包含邮箱、手机号、身份证、职位等信息</p>
                      * 
                      */
                     std::string GetExtraInfo() const;
 
                     /**
-                     * 设置账号的扩展信息，包含邮箱、手机号、身份证、职位等信息
-                     * @param _extraInfo 账号的扩展信息，包含邮箱、手机号、身份证、职位等信息
+                     * 设置<p>账号的扩展信息，包含邮箱、手机号、身份证、职位等信息</p>
+                     * @param _extraInfo <p>账号的扩展信息，包含邮箱、手机号、身份证、职位等信息</p>
                      * 
                      */
                     void SetExtraInfo(const std::string& _extraInfo);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool ExtraInfoHasBeenSet() const;
 
                     /**
-                     * 获取用户风险等级，枚举：none, low, middle, high
-                     * @return RiskLevel 用户风险等级，枚举：none, low, middle, high
+                     * 获取<p>用户风险等级，枚举：none, low, middle, high</p>
+                     * @return RiskLevel <p>用户风险等级，枚举：none, low, middle, high</p>
                      * 
                      */
                     std::string GetRiskLevel() const;
 
                     /**
-                     * 设置用户风险等级，枚举：none, low, middle, high
-                     * @param _riskLevel 用户风险等级，枚举：none, low, middle, high
+                     * 设置<p>用户风险等级，枚举：none, low, middle, high</p>
+                     * @param _riskLevel <p>用户风险等级，枚举：none, low, middle, high</p>
                      * 
                      */
                     void SetRiskLevel(const std::string& _riskLevel);
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool RiskLevelHasBeenSet() const;
 
                     /**
-                     * 获取所属组
-                     * @return AccountGroups 所属组
+                     * 获取<p>所属组</p>
+                     * @return AccountGroups <p>所属组</p>
                      * 
                      */
                     std::vector<DescribeLocalAccountAccountGroupsData> GetAccountGroups() const;
 
                     /**
-                     * 设置所属组
-                     * @param _accountGroups 所属组
+                     * 设置<p>所属组</p>
+                     * @param _accountGroups <p>所属组</p>
                      * 
                      */
                     void SetAccountGroups(const std::vector<DescribeLocalAccountAccountGroupsData>& _accountGroups);
@@ -342,15 +342,15 @@ namespace TencentCloud
                     bool AccountGroupsHasBeenSet() const;
 
                     /**
-                     * 获取绑定手机端设备数
-                     * @return MobileBindNum 绑定手机端设备数
+                     * 获取<p>绑定手机端设备数</p>
+                     * @return MobileBindNum <p>绑定手机端设备数</p>
                      * 
                      */
                     int64_t GetMobileBindNum() const;
 
                     /**
-                     * 设置绑定手机端设备数
-                     * @param _mobileBindNum 绑定手机端设备数
+                     * 设置<p>绑定手机端设备数</p>
+                     * @param _mobileBindNum <p>绑定手机端设备数</p>
                      * 
                      */
                     void SetMobileBindNum(const int64_t& _mobileBindNum);
@@ -363,15 +363,15 @@ namespace TencentCloud
                     bool MobileBindNumHasBeenSet() const;
 
                     /**
-                     * 获取绑定Pc端设备数
-                     * @return PcBindNum 绑定Pc端设备数
+                     * 获取<p>绑定Pc端设备数</p>
+                     * @return PcBindNum <p>绑定Pc端设备数</p>
                      * 
                      */
                     int64_t GetPcBindNum() const;
 
                     /**
-                     * 设置绑定Pc端设备数
-                     * @param _pcBindNum 绑定Pc端设备数
+                     * 设置<p>绑定Pc端设备数</p>
+                     * @param _pcBindNum <p>绑定Pc端设备数</p>
                      * 
                      */
                     void SetPcBindNum(const int64_t& _pcBindNum);
@@ -384,15 +384,15 @@ namespace TencentCloud
                     bool PcBindNumHasBeenSet() const;
 
                     /**
-                     * 获取账号在线状态 1：在线 2：离线
-                     * @return OnlineStatus 账号在线状态 1：在线 2：离线
+                     * 获取<p>账号在线状态 1：在线 2：离线</p>
+                     * @return OnlineStatus <p>账号在线状态 1：在线 2：离线</p>
                      * 
                      */
                     int64_t GetOnlineStatus() const;
 
                     /**
-                     * 设置账号在线状态 1：在线 2：离线
-                     * @param _onlineStatus 账号在线状态 1：在线 2：离线
+                     * 设置<p>账号在线状态 1：在线 2：离线</p>
+                     * @param _onlineStatus <p>账号在线状态 1：在线 2：离线</p>
                      * 
                      */
                     void SetOnlineStatus(const int64_t& _onlineStatus);
@@ -405,15 +405,15 @@ namespace TencentCloud
                     bool OnlineStatusHasBeenSet() const;
 
                     /**
-                     * 获取账号活跃状态 1：活跃 2：非活跃
-                     * @return ActiveStatus 账号活跃状态 1：活跃 2：非活跃
+                     * 获取<p>账号活跃状态 1：活跃 2：非活跃</p>
+                     * @return ActiveStatus <p>账号活跃状态 1：活跃 2：非活跃</p>
                      * 
                      */
                     int64_t GetActiveStatus() const;
 
                     /**
-                     * 设置账号活跃状态 1：活跃 2：非活跃
-                     * @param _activeStatus 账号活跃状态 1：活跃 2：非活跃
+                     * 设置<p>账号活跃状态 1：活跃 2：非活跃</p>
+                     * @param _activeStatus <p>账号活跃状态 1：活跃 2：非活跃</p>
                      * 
                      */
                     void SetActiveStatus(const int64_t& _activeStatus);
@@ -426,15 +426,15 @@ namespace TencentCloud
                     bool ActiveStatusHasBeenSet() const;
 
                     /**
-                     * 获取账号登录时间
-                     * @return LoginTime 账号登录时间
+                     * 获取<p>账号登录时间</p>
+                     * @return LoginTime <p>账号登录时间</p>
                      * 
                      */
                     std::string GetLoginTime() const;
 
                     /**
-                     * 设置账号登录时间
-                     * @param _loginTime 账号登录时间
+                     * 设置<p>账号登录时间</p>
+                     * @param _loginTime <p>账号登录时间</p>
                      * 
                      */
                     void SetLoginTime(const std::string& _loginTime);
@@ -447,15 +447,15 @@ namespace TencentCloud
                     bool LoginTimeHasBeenSet() const;
 
                     /**
-                     * 获取账号登出时间
-                     * @return LogoutTime 账号登出时间
+                     * 获取<p>账号登出时间</p>
+                     * @return LogoutTime <p>账号登出时间</p>
                      * 
                      */
                     std::string GetLogoutTime() const;
 
                     /**
-                     * 设置账号登出时间
-                     * @param _logoutTime 账号登出时间
+                     * 设置<p>账号登出时间</p>
+                     * @param _logoutTime <p>账号登出时间</p>
                      * 
                      */
                     void SetLogoutTime(const std::string& _logoutTime);
@@ -470,121 +470,121 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * uid，数据库中唯一
+                     * <p>uid，数据库中唯一</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 账号，登录账号
+                     * <p>账号，登录账号</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 用户名
+                     * <p>用户名</p>
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 账号id，同Id字段
+                     * <p>账号id，同Id字段</p>
                      */
                     int64_t m_accountId;
                     bool m_accountIdHasBeenSet;
 
                     /**
-                     * 账号所在的分组id
+                     * <p>账号所在的分组id</p>
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 账号所在的分组名称
+                     * <p>账号所在的分组名称</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 账号所在的分组名称路径，用英文.分割
+                     * <p>账号所在的分组名称路径，用英文.分割</p>
                      */
                     std::string m_namePath;
                     bool m_namePathHasBeenSet;
 
                     /**
-                     * 账号来源,0表示本地账号(只支持32位)
+                     * <p>账号来源,0表示本地账号(只支持32位)</p>
                      */
                     int64_t m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 账号状态,0禁用，1启用(只支持32位)
+                     * <p>账号状态,0禁用，1启用(只支持32位)</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 账号的创建时间
+                     * <p>账号的创建时间</p>
                      */
                     std::string m_itime;
                     bool m_itimeHasBeenSet;
 
                     /**
-                     * 账号的最后更新时间
+                     * <p>账号的最后更新时间</p>
                      */
                     std::string m_utime;
                     bool m_utimeHasBeenSet;
 
                     /**
-                     * 账号的扩展信息，包含邮箱、手机号、身份证、职位等信息
+                     * <p>账号的扩展信息，包含邮箱、手机号、身份证、职位等信息</p>
                      */
                     std::string m_extraInfo;
                     bool m_extraInfoHasBeenSet;
 
                     /**
-                     * 用户风险等级，枚举：none, low, middle, high
+                     * <p>用户风险等级，枚举：none, low, middle, high</p>
                      */
                     std::string m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
-                     * 所属组
+                     * <p>所属组</p>
                      */
                     std::vector<DescribeLocalAccountAccountGroupsData> m_accountGroups;
                     bool m_accountGroupsHasBeenSet;
 
                     /**
-                     * 绑定手机端设备数
+                     * <p>绑定手机端设备数</p>
                      */
                     int64_t m_mobileBindNum;
                     bool m_mobileBindNumHasBeenSet;
 
                     /**
-                     * 绑定Pc端设备数
+                     * <p>绑定Pc端设备数</p>
                      */
                     int64_t m_pcBindNum;
                     bool m_pcBindNumHasBeenSet;
 
                     /**
-                     * 账号在线状态 1：在线 2：离线
+                     * <p>账号在线状态 1：在线 2：离线</p>
                      */
                     int64_t m_onlineStatus;
                     bool m_onlineStatusHasBeenSet;
 
                     /**
-                     * 账号活跃状态 1：活跃 2：非活跃
+                     * <p>账号活跃状态 1：活跃 2：非活跃</p>
                      */
                     int64_t m_activeStatus;
                     bool m_activeStatusHasBeenSet;
 
                     /**
-                     * 账号登录时间
+                     * <p>账号登录时间</p>
                      */
                     std::string m_loginTime;
                     bool m_loginTimeHasBeenSet;
 
                     /**
-                     * 账号登出时间
+                     * <p>账号登出时间</p>
                      */
                     std::string m_logoutTime;
                     bool m_logoutTimeHasBeenSet;

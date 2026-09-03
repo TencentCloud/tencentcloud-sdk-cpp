@@ -29,7 +29,8 @@ DirectoryConfigResultData::DirectoryConfigResultData() :
     m_authConfigIdHasBeenSet(false),
     m_authPolicyIdHasBeenSet(false),
     m_authSupportPlatformsHasBeenSet(false),
-    m_authMethodsHasBeenSet(false)
+    m_authMethodsHasBeenSet(false),
+    m_nameI18nHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,26 @@ CoreInternalOutcome DirectoryConfigResultData::Deserialize(const rapidjson::Valu
         m_authMethodsHasBeenSet = true;
     }
 
+    if (value.HasMember("NameI18n") && !value["NameI18n"].IsNull())
+    {
+        if (!value["NameI18n"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DirectoryConfigResultData.NameI18n` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NameI18n"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            I18nString item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_nameI18n.push_back(item);
+        }
+        m_nameI18nHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -220,6 +241,21 @@ void DirectoryConfigResultData::ToJsonObject(rapidjson::Value &value, rapidjson:
         for (auto itr = m_authMethods.begin(); itr != m_authMethods.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_nameI18nHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NameI18n";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_nameI18n.begin(); itr != m_nameI18n.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -368,5 +404,21 @@ void DirectoryConfigResultData::SetAuthMethods(const vector<string>& _authMethod
 bool DirectoryConfigResultData::AuthMethodsHasBeenSet() const
 {
     return m_authMethodsHasBeenSet;
+}
+
+vector<I18nString> DirectoryConfigResultData::GetNameI18n() const
+{
+    return m_nameI18n;
+}
+
+void DirectoryConfigResultData::SetNameI18n(const vector<I18nString>& _nameI18n)
+{
+    m_nameI18n = _nameI18n;
+    m_nameI18nHasBeenSet = true;
+}
+
+bool DirectoryConfigResultData::NameI18nHasBeenSet() const
+{
+    return m_nameI18nHasBeenSet;
 }
 

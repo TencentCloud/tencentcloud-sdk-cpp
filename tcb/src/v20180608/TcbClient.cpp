@@ -4390,6 +4390,56 @@ TcbClient::ModifyLoginConfigOutcomeCallable TcbClient::ModifyLoginConfigCallable
     return prom->get_future();
 }
 
+TcbClient::ModifyPGInstanceSpecOutcome TcbClient::ModifyPGInstanceSpec(const ModifyPGInstanceSpecRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPGInstanceSpec");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPGInstanceSpecResponse rsp = ModifyPGInstanceSpecResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPGInstanceSpecOutcome(rsp);
+        else
+            return ModifyPGInstanceSpecOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPGInstanceSpecOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::ModifyPGInstanceSpecAsync(const ModifyPGInstanceSpecRequest& request, const ModifyPGInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyPGInstanceSpecRequest&;
+    using Resp = ModifyPGInstanceSpecResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyPGInstanceSpec", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::ModifyPGInstanceSpecOutcomeCallable TcbClient::ModifyPGInstanceSpecCallable(const ModifyPGInstanceSpecRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyPGInstanceSpecOutcome>>();
+    ModifyPGInstanceSpecAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ModifyPGInstanceSpecRequest&,
+        ModifyPGInstanceSpecOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::ModifyProviderOutcome TcbClient::ModifyProvider(const ModifyProviderRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyProvider");

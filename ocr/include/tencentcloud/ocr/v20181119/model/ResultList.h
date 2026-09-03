@@ -49,18 +49,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取题干
+                     * 获取<p>题干</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Question 题干
+                     * @return Question <p>题干</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Element> GetQuestion() const;
 
                     /**
-                     * 设置题干
+                     * 设置<p>题干</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _question 题干
+                     * @param _question <p>题干</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,18 +74,18 @@ namespace TencentCloud
                     bool QuestionHasBeenSet() const;
 
                     /**
-                     * 获取选项
+                     * 获取<p>选项</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Option 选项
+                     * @return Option <p>选项</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Element> GetOption() const;
 
                     /**
-                     * 设置选项
+                     * 设置<p>选项</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _option 选项
+                     * @param _option <p>选项</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,18 +99,18 @@ namespace TencentCloud
                     bool OptionHasBeenSet() const;
 
                     /**
-                     * 获取插图
+                     * 获取<p>插图</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Figure 插图
+                     * @return Figure <p>插图</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Element> GetFigure() const;
 
                     /**
-                     * 设置插图
+                     * 设置<p>插图</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _figure 插图
+                     * @param _figure <p>插图</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,18 +124,18 @@ namespace TencentCloud
                     bool FigureHasBeenSet() const;
 
                     /**
-                     * 获取表格
+                     * 获取<p>表格</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Table 表格
+                     * @return Table <p>表格</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Element> GetTable() const;
 
                     /**
-                     * 设置表格
+                     * 设置<p>表格</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _table 表格
+                     * @param _table <p>表格</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -149,18 +149,18 @@ namespace TencentCloud
                     bool TableHasBeenSet() const;
 
                     /**
-                     * 获取答案
+                     * 获取<p>答案</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Answer 答案
+                     * @return Answer <p>答案</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Element> GetAnswer() const;
 
                     /**
-                     * 设置答案
+                     * 设置<p>答案</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _answer 答案
+                     * @param _answer <p>答案</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool AnswerHasBeenSet() const;
 
                     /**
-                     * 获取解析
-                     * @return Parse 解析
+                     * 获取<p>解析</p>
+                     * @return Parse <p>解析</p>
                      * 
                      */
                     std::vector<Element> GetParse() const;
 
                     /**
-                     * 设置解析
-                     * @param _parse 解析
+                     * 设置<p>解析</p>
+                     * @param _parse <p>解析</p>
                      * 
                      */
                     void SetParse(const std::vector<Element>& _parse);
@@ -195,18 +195,18 @@ namespace TencentCloud
                     bool ParseHasBeenSet() const;
 
                     /**
-                     * 获取整题的坐标
+                     * 获取<p>整题的坐标，多页单题跨页/单页单题跨栏场景下，存在一道题有多个坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Coord 整题的坐标
+                     * @return Coord <p>整题的坐标，多页单题跨页/单页单题跨栏场景下，存在一道题有多个坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Polygon> GetCoord() const;
 
                     /**
-                     * 设置整题的坐标
+                     * 设置<p>整题的坐标，多页单题跨页/单页单题跨栏场景下，存在一道题有多个坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _coord 整题的坐标
+                     * @param _coord <p>整题的坐标，多页单题跨页/单页单题跨栏场景下，存在一道题有多个坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -219,55 +219,82 @@ namespace TencentCloud
                      */
                     bool CoordHasBeenSet() const;
 
+                    /**
+                     * 获取<p>多坐标返回，显示坐标所在页</p><p>默认值：[]</p>
+                     * @return CoordPageIndex <p>多坐标返回，显示坐标所在页</p><p>默认值：[]</p>
+                     * 
+                     */
+                    std::vector<int64_t> GetCoordPageIndex() const;
+
+                    /**
+                     * 设置<p>多坐标返回，显示坐标所在页</p><p>默认值：[]</p>
+                     * @param _coordPageIndex <p>多坐标返回，显示坐标所在页</p><p>默认值：[]</p>
+                     * 
+                     */
+                    void SetCoordPageIndex(const std::vector<int64_t>& _coordPageIndex);
+
+                    /**
+                     * 判断参数 CoordPageIndex 是否已赋值
+                     * @return CoordPageIndex 是否已赋值
+                     * 
+                     */
+                    bool CoordPageIndexHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 题干
+                     * <p>题干</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Element> m_question;
                     bool m_questionHasBeenSet;
 
                     /**
-                     * 选项
+                     * <p>选项</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Element> m_option;
                     bool m_optionHasBeenSet;
 
                     /**
-                     * 插图
+                     * <p>插图</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Element> m_figure;
                     bool m_figureHasBeenSet;
 
                     /**
-                     * 表格
+                     * <p>表格</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Element> m_table;
                     bool m_tableHasBeenSet;
 
                     /**
-                     * 答案
+                     * <p>答案</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Element> m_answer;
                     bool m_answerHasBeenSet;
 
                     /**
-                     * 解析
+                     * <p>解析</p>
                      */
                     std::vector<Element> m_parse;
                     bool m_parseHasBeenSet;
 
                     /**
-                     * 整题的坐标
+                     * <p>整题的坐标，多页单题跨页/单页单题跨栏场景下，存在一道题有多个坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Polygon> m_coord;
                     bool m_coordHasBeenSet;
+
+                    /**
+                     * <p>多坐标返回，显示坐标所在页</p><p>默认值：[]</p>
+                     */
+                    std::vector<int64_t> m_coordPageIndex;
+                    bool m_coordPageIndexHasBeenSet;
 
                 };
             }

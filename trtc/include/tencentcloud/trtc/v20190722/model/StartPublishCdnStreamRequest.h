@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。
-                     * @return SdkAppId TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。
+                     * 获取<p>TRTC的<a href="https://cloud.tencent.com/document/product/647/46351#sdkappid">SdkAppId</a>，和转推的房间所对应的SdkAppId相同。</p>
+                     * @return SdkAppId <p>TRTC的<a href="https://cloud.tencent.com/document/product/647/46351#sdkappid">SdkAppId</a>，和转推的房间所对应的SdkAppId相同。</p>
                      * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
-                     * 设置TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。
-                     * @param _sdkAppId TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。
+                     * 设置<p>TRTC的<a href="https://cloud.tencent.com/document/product/647/46351#sdkappid">SdkAppId</a>，和转推的房间所对应的SdkAppId相同。</p>
+                     * @param _sdkAppId <p>TRTC的<a href="https://cloud.tencent.com/document/product/647/46351#sdkappid">SdkAppId</a>，和转推的房间所对应的SdkAppId相同。</p>
                      * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取主房间信息RoomId，转推的TRTC房间所对应的RoomId。
-                     * @return RoomId 主房间信息RoomId，转推的TRTC房间所对应的RoomId。
+                     * 获取<p>主房间信息RoomId，转推的TRTC房间所对应的RoomId。</p>
+                     * @return RoomId <p>主房间信息RoomId，转推的TRTC房间所对应的RoomId。</p>
                      * 
                      */
                     std::string GetRoomId() const;
 
                     /**
-                     * 设置主房间信息RoomId，转推的TRTC房间所对应的RoomId。
-                     * @param _roomId 主房间信息RoomId，转推的TRTC房间所对应的RoomId。
+                     * 设置<p>主房间信息RoomId，转推的TRTC房间所对应的RoomId。</p>
+                     * @param _roomId <p>主房间信息RoomId，转推的TRTC房间所对应的RoomId。</p>
                      * 
                      */
                     void SetRoomId(const std::string& _roomId);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool RoomIdHasBeenSet() const;
 
                     /**
-                     * 获取主房间信息RoomType，必须和转推的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。
-                     * @return RoomIdType 主房间信息RoomType，必须和转推的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。
+                     * 获取<p>主房间信息RoomType，必须和转推的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。</p>
+                     * @return RoomIdType <p>主房间信息RoomType，必须和转推的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。</p>
                      * 
                      */
                     uint64_t GetRoomIdType() const;
 
                     /**
-                     * 设置主房间信息RoomType，必须和转推的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。
-                     * @param _roomIdType 主房间信息RoomType，必须和转推的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。
+                     * 设置<p>主房间信息RoomType，必须和转推的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。</p>
+                     * @param _roomIdType <p>主房间信息RoomType，必须和转推的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。</p>
                      * 
                      */
                     void SetRoomIdType(const uint64_t& _roomIdType);
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool RoomIdTypeHasBeenSet() const;
 
                     /**
-                     * 获取转推服务加入TRTC房间的机器人参数。
-                     * @return AgentParams 转推服务加入TRTC房间的机器人参数。
+                     * 获取<p>转推服务加入TRTC房间的机器人参数。</p>
+                     * @return AgentParams <p>转推服务加入TRTC房间的机器人参数。</p>
                      * 
                      */
                     AgentParams GetAgentParams() const;
 
                     /**
-                     * 设置转推服务加入TRTC房间的机器人参数。
-                     * @param _agentParams 转推服务加入TRTC房间的机器人参数。
+                     * 设置<p>转推服务加入TRTC房间的机器人参数。</p>
+                     * @param _agentParams <p>转推服务加入TRTC房间的机器人参数。</p>
                      * 
                      */
                     void SetAgentParams(const AgentParams& _agentParams);
@@ -135,31 +135,15 @@ namespace TencentCloud
                     bool AgentParamsHasBeenSet() const;
 
                     /**
-                     * 获取是否转码，0表示无需转码，1表示需要转码。
-WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。
-注：
-1，混流是必须转码的，这个参数需设置为1。
-2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。
-                     * @return WithTranscoding 是否转码，0表示无需转码，1表示需要转码。
-WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。
-注：
-1，混流是必须转码的，这个参数需设置为1。
-2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。
+                     * 获取<p>是否转码，0表示无需转码，1表示需要转码。<br>WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。<br>注：<br>1，混流是必须转码的，这个参数需设置为1。<br>2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。</p>
+                     * @return WithTranscoding <p>是否转码，0表示无需转码，1表示需要转码。<br>WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。<br>注：<br>1，混流是必须转码的，这个参数需设置为1。<br>2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。</p>
                      * 
                      */
                     uint64_t GetWithTranscoding() const;
 
                     /**
-                     * 设置是否转码，0表示无需转码，1表示需要转码。
-WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。
-注：
-1，混流是必须转码的，这个参数需设置为1。
-2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。
-                     * @param _withTranscoding 是否转码，0表示无需转码，1表示需要转码。
-WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。
-注：
-1，混流是必须转码的，这个参数需设置为1。
-2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。
+                     * 设置<p>是否转码，0表示无需转码，1表示需要转码。<br>WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。<br>注：<br>1，混流是必须转码的，这个参数需设置为1。<br>2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。</p>
+                     * @param _withTranscoding <p>是否转码，0表示无需转码，1表示需要转码。<br>WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。<br>注：<br>1，混流是必须转码的，这个参数需设置为1。<br>2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。</p>
                      * 
                      */
                     void SetWithTranscoding(const uint64_t& _withTranscoding);
@@ -172,15 +156,15 @@ WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1
                     bool WithTranscodingHasBeenSet() const;
 
                     /**
-                     * 获取转推流的音频编码参数。由于音频是必转码的（不会收取转码费用），所以启动任务的时候，必须填写。
-                     * @return AudioParams 转推流的音频编码参数。由于音频是必转码的（不会收取转码费用），所以启动任务的时候，必须填写。
+                     * 获取<p>转推流的音频编码参数。由于音频是必转码的（不会收取转码费用），所以启动任务的时候，必须填写。</p>
+                     * @return AudioParams <p>转推流的音频编码参数。由于音频是必转码的（不会收取转码费用），所以启动任务的时候，必须填写。</p>
                      * 
                      */
                     McuAudioParams GetAudioParams() const;
 
                     /**
-                     * 设置转推流的音频编码参数。由于音频是必转码的（不会收取转码费用），所以启动任务的时候，必须填写。
-                     * @param _audioParams 转推流的音频编码参数。由于音频是必转码的（不会收取转码费用），所以启动任务的时候，必须填写。
+                     * 设置<p>转推流的音频编码参数。由于音频是必转码的（不会收取转码费用），所以启动任务的时候，必须填写。</p>
+                     * @param _audioParams <p>转推流的音频编码参数。由于音频是必转码的（不会收取转码费用），所以启动任务的时候，必须填写。</p>
                      * 
                      */
                     void SetAudioParams(const McuAudioParams& _audioParams);
@@ -193,15 +177,15 @@ WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1
                     bool AudioParamsHasBeenSet() const;
 
                     /**
-                     * 获取转推流的视频编码参数，不填表示纯音频转推。
-                     * @return VideoParams 转推流的视频编码参数，不填表示纯音频转推。
+                     * 获取<p>转推流的视频编码参数，不填表示纯音频转推。</p>
+                     * @return VideoParams <p>转推流的视频编码参数，不填表示纯音频转推。</p>
                      * 
                      */
                     McuVideoParams GetVideoParams() const;
 
                     /**
-                     * 设置转推流的视频编码参数，不填表示纯音频转推。
-                     * @param _videoParams 转推流的视频编码参数，不填表示纯音频转推。
+                     * 设置<p>转推流的视频编码参数，不填表示纯音频转推。</p>
+                     * @param _videoParams <p>转推流的视频编码参数，不填表示纯音频转推。</p>
                      * 
                      */
                     void SetVideoParams(const McuVideoParams& _videoParams);
@@ -214,15 +198,15 @@ WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1
                     bool VideoParamsHasBeenSet() const;
 
                     /**
-                     * 获取需要单流旁路转推的用户上行参数，单流旁路转推时，WithTranscoding需要设置为0。
-                     * @return SingleSubscribeParams 需要单流旁路转推的用户上行参数，单流旁路转推时，WithTranscoding需要设置为0。
+                     * 获取<p>需要单流旁路转推的用户上行参数，单流旁路转推时，WithTranscoding需要设置为0。</p>
+                     * @return SingleSubscribeParams <p>需要单流旁路转推的用户上行参数，单流旁路转推时，WithTranscoding需要设置为0。</p>
                      * 
                      */
                     SingleSubscribeParams GetSingleSubscribeParams() const;
 
                     /**
-                     * 设置需要单流旁路转推的用户上行参数，单流旁路转推时，WithTranscoding需要设置为0。
-                     * @param _singleSubscribeParams 需要单流旁路转推的用户上行参数，单流旁路转推时，WithTranscoding需要设置为0。
+                     * 设置<p>需要单流旁路转推的用户上行参数，单流旁路转推时，WithTranscoding需要设置为0。</p>
+                     * @param _singleSubscribeParams <p>需要单流旁路转推的用户上行参数，单流旁路转推时，WithTranscoding需要设置为0。</p>
                      * 
                      */
                     void SetSingleSubscribeParams(const SingleSubscribeParams& _singleSubscribeParams);
@@ -235,15 +219,15 @@ WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1
                     bool SingleSubscribeParamsHasBeenSet() const;
 
                     /**
-                     * 获取转推的CDN参数，一个任务最多支持10个推流URL。和回推房间参数必须要有一个。
-                     * @return PublishCdnParams 转推的CDN参数，一个任务最多支持10个推流URL。和回推房间参数必须要有一个。
+                     * 获取<p>转推的CDN参数，一个任务最多支持10个推流URL。和回推房间参数必须要有一个。</p>
+                     * @return PublishCdnParams <p>转推的CDN参数，一个任务最多支持10个推流URL。和回推房间参数必须要有一个。</p>
                      * 
                      */
                     std::vector<McuPublishCdnParam> GetPublishCdnParams() const;
 
                     /**
-                     * 设置转推的CDN参数，一个任务最多支持10个推流URL。和回推房间参数必须要有一个。
-                     * @param _publishCdnParams 转推的CDN参数，一个任务最多支持10个推流URL。和回推房间参数必须要有一个。
+                     * 设置<p>转推的CDN参数，一个任务最多支持10个推流URL。和回推房间参数必须要有一个。</p>
+                     * @param _publishCdnParams <p>转推的CDN参数，一个任务最多支持10个推流URL。和回推房间参数必须要有一个。</p>
                      * 
                      */
                     void SetPublishCdnParams(const std::vector<McuPublishCdnParam>& _publishCdnParams);
@@ -256,15 +240,15 @@ WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1
                     bool PublishCdnParamsHasBeenSet() const;
 
                     /**
-                     * 获取混流SEI参数
-                     * @return SeiParams 混流SEI参数
+                     * 获取<p>混流SEI参数</p>
+                     * @return SeiParams <p>混流SEI参数</p>
                      * 
                      */
                     McuSeiParams GetSeiParams() const;
 
                     /**
-                     * 设置混流SEI参数
-                     * @param _seiParams 混流SEI参数
+                     * 设置<p>混流SEI参数</p>
+                     * @param _seiParams <p>混流SEI参数</p>
                      * 
                      */
                     void SetSeiParams(const McuSeiParams& _seiParams);
@@ -277,15 +261,15 @@ WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1
                     bool SeiParamsHasBeenSet() const;
 
                     /**
-                     * 获取回推房间信息，一个任务最多支持回推10个房间，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。
-                     * @return FeedBackRoomParams 回推房间信息，一个任务最多支持回推10个房间，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。
+                     * 获取<p>回推房间信息，一个任务最多支持回推10个房间，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。</p>
+                     * @return FeedBackRoomParams <p>回推房间信息，一个任务最多支持回推10个房间，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。</p>
                      * 
                      */
                     std::vector<McuFeedBackRoomParams> GetFeedBackRoomParams() const;
 
                     /**
-                     * 设置回推房间信息，一个任务最多支持回推10个房间，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。
-                     * @param _feedBackRoomParams 回推房间信息，一个任务最多支持回推10个房间，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。
+                     * 设置<p>回推房间信息，一个任务最多支持回推10个房间，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。</p>
+                     * @param _feedBackRoomParams <p>回推房间信息，一个任务最多支持回推10个房间，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。</p>
                      * 
                      */
                     void SetFeedBackRoomParams(const std::vector<McuFeedBackRoomParams>& _feedBackRoomParams);
@@ -298,15 +282,15 @@ WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1
                     bool FeedBackRoomParamsHasBeenSet() const;
 
                     /**
-                     * 获取转推录制参数，[参考文档](https://cloud.tencent.com/document/product/647/111748)。
-                     * @return RecordParams 转推录制参数，[参考文档](https://cloud.tencent.com/document/product/647/111748)。
+                     * 获取<p>转推录制参数，<a href="https://cloud.tencent.com/document/product/647/111748">参考文档</a>。</p>
+                     * @return RecordParams <p>转推录制参数，<a href="https://cloud.tencent.com/document/product/647/111748">参考文档</a>。</p>
                      * 
                      */
                     McuRecordParams GetRecordParams() const;
 
                     /**
-                     * 设置转推录制参数，[参考文档](https://cloud.tencent.com/document/product/647/111748)。
-                     * @param _recordParams 转推录制参数，[参考文档](https://cloud.tencent.com/document/product/647/111748)。
+                     * 设置<p>转推录制参数，<a href="https://cloud.tencent.com/document/product/647/111748">参考文档</a>。</p>
+                     * @param _recordParams <p>转推录制参数，<a href="https://cloud.tencent.com/document/product/647/111748">参考文档</a>。</p>
                      * 
                      */
                     void SetRecordParams(const McuRecordParams& _recordParams);
@@ -321,77 +305,73 @@ WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1
                 private:
 
                     /**
-                     * TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。
+                     * <p>TRTC的<a href="https://cloud.tencent.com/document/product/647/46351#sdkappid">SdkAppId</a>，和转推的房间所对应的SdkAppId相同。</p>
                      */
                     uint64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 主房间信息RoomId，转推的TRTC房间所对应的RoomId。
+                     * <p>主房间信息RoomId，转推的TRTC房间所对应的RoomId。</p>
                      */
                     std::string m_roomId;
                     bool m_roomIdHasBeenSet;
 
                     /**
-                     * 主房间信息RoomType，必须和转推的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。
+                     * <p>主房间信息RoomType，必须和转推的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。</p>
                      */
                     uint64_t m_roomIdType;
                     bool m_roomIdTypeHasBeenSet;
 
                     /**
-                     * 转推服务加入TRTC房间的机器人参数。
+                     * <p>转推服务加入TRTC房间的机器人参数。</p>
                      */
                     AgentParams m_agentParams;
                     bool m_agentParamsHasBeenSet;
 
                     /**
-                     * 是否转码，0表示无需转码，1表示需要转码。
-WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。
-注：
-1，混流是必须转码的，这个参数需设置为1。
-2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。
+                     * <p>是否转码，0表示无需转码，1表示需要转码。<br>WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。<br>注：<br>1，混流是必须转码的，这个参数需设置为1。<br>2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。</p>
                      */
                     uint64_t m_withTranscoding;
                     bool m_withTranscodingHasBeenSet;
 
                     /**
-                     * 转推流的音频编码参数。由于音频是必转码的（不会收取转码费用），所以启动任务的时候，必须填写。
+                     * <p>转推流的音频编码参数。由于音频是必转码的（不会收取转码费用），所以启动任务的时候，必须填写。</p>
                      */
                     McuAudioParams m_audioParams;
                     bool m_audioParamsHasBeenSet;
 
                     /**
-                     * 转推流的视频编码参数，不填表示纯音频转推。
+                     * <p>转推流的视频编码参数，不填表示纯音频转推。</p>
                      */
                     McuVideoParams m_videoParams;
                     bool m_videoParamsHasBeenSet;
 
                     /**
-                     * 需要单流旁路转推的用户上行参数，单流旁路转推时，WithTranscoding需要设置为0。
+                     * <p>需要单流旁路转推的用户上行参数，单流旁路转推时，WithTranscoding需要设置为0。</p>
                      */
                     SingleSubscribeParams m_singleSubscribeParams;
                     bool m_singleSubscribeParamsHasBeenSet;
 
                     /**
-                     * 转推的CDN参数，一个任务最多支持10个推流URL。和回推房间参数必须要有一个。
+                     * <p>转推的CDN参数，一个任务最多支持10个推流URL。和回推房间参数必须要有一个。</p>
                      */
                     std::vector<McuPublishCdnParam> m_publishCdnParams;
                     bool m_publishCdnParamsHasBeenSet;
 
                     /**
-                     * 混流SEI参数
+                     * <p>混流SEI参数</p>
                      */
                     McuSeiParams m_seiParams;
                     bool m_seiParamsHasBeenSet;
 
                     /**
-                     * 回推房间信息，一个任务最多支持回推10个房间，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。
+                     * <p>回推房间信息，一个任务最多支持回推10个房间，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。</p>
                      */
                     std::vector<McuFeedBackRoomParams> m_feedBackRoomParams;
                     bool m_feedBackRoomParamsHasBeenSet;
 
                     /**
-                     * 转推录制参数，[参考文档](https://cloud.tencent.com/document/product/647/111748)。
+                     * <p>转推录制参数，<a href="https://cloud.tencent.com/document/product/647/111748">参考文档</a>。</p>
                      */
                     McuRecordParams m_recordParams;
                     bool m_recordParamsHasBeenSet;

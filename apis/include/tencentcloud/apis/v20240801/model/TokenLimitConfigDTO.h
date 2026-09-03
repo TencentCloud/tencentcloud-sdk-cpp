@@ -52,7 +52,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type <p>限流类型</p><p>枚举值：</p><ul><li>minute： 时间窗口</li><li>day： 自然日</li><li>month： 自然月</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetType() const;
 
@@ -61,14 +61,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type <p>限流类型</p><p>枚举值：</p><ul><li>minute： 时间窗口</li><li>day： 自然日</li><li>month： 自然月</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TypeHasBeenSet() const;
 

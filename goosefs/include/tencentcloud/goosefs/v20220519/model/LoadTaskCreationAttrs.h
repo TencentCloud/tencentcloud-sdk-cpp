@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/goosefs/v20220519/model/MetadataLoadAttrs.h>
 #include <tencentcloud/goosefs/v20220519/model/DistributedLoadAttrs.h>
+#include <tencentcloud/goosefs/v20220519/model/LoadDataAttrs.h>
 
 
 namespace TencentCloud
@@ -49,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取预热任务类型，枚举值，MetadataLoad｜DistributedLoad。
-                     * @return TaskType 预热任务类型，枚举值，MetadataLoad｜DistributedLoad。
+                     * 获取<p>预热任务类型，枚举值，MetadataLoad｜DistributedLoad。</p>
+                     * @return TaskType <p>预热任务类型，枚举值，MetadataLoad｜DistributedLoad。</p>
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置预热任务类型，枚举值，MetadataLoad｜DistributedLoad。
-                     * @param _taskType 预热任务类型，枚举值，MetadataLoad｜DistributedLoad。
+                     * 设置<p>预热任务类型，枚举值，MetadataLoad｜DistributedLoad。</p>
+                     * @param _taskType <p>预热任务类型，枚举值，MetadataLoad｜DistributedLoad。</p>
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -70,15 +71,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1
-                     * @return Priority 任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1
+                     * 获取<p>任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1</p>
+                     * @return Priority <p>任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1</p>
                      * 
                      */
                     uint64_t GetPriority() const;
 
                     /**
-                     * 设置任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1
-                     * @param _priority 任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1
+                     * 设置<p>任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1</p>
+                     * @param _priority <p>任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1</p>
                      * 
                      */
                     void SetPriority(const uint64_t& _priority);
@@ -91,15 +92,15 @@ namespace TencentCloud
                     bool PriorityHasBeenSet() const;
 
                     /**
-                     * 获取任务描述，支持中文
-                     * @return Description 任务描述，支持中文
+                     * 获取<p>任务描述，支持中文</p>
+                     * @return Description <p>任务描述，支持中文</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置任务描述，支持中文
-                     * @param _description 任务描述，支持中文
+                     * 设置<p>任务描述，支持中文</p>
+                     * @param _description <p>任务描述，支持中文</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -112,15 +113,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。
-                     * @return MetadataLoadAttrs 元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。
+                     * 获取<p>元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。</p>
+                     * @return MetadataLoadAttrs <p>元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。</p>
                      * 
                      */
                     MetadataLoadAttrs GetMetadataLoadAttrs() const;
 
                     /**
-                     * 设置元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。
-                     * @param _metadataLoadAttrs 元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。
+                     * 设置<p>元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。</p>
+                     * @param _metadataLoadAttrs <p>元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。</p>
                      * 
                      */
                     void SetMetadataLoadAttrs(const MetadataLoadAttrs& _metadataLoadAttrs);
@@ -133,15 +134,15 @@ namespace TencentCloud
                     bool MetadataLoadAttrsHasBeenSet() const;
 
                     /**
-                     * 获取数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。
-                     * @return DistributedLoadAttrs 数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。
+                     * 获取<p>数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。</p>
+                     * @return DistributedLoadAttrs <p>数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。</p>
                      * 
                      */
                     DistributedLoadAttrs GetDistributedLoadAttrs() const;
 
                     /**
-                     * 设置数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。
-                     * @param _distributedLoadAttrs 数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。
+                     * 设置<p>数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。</p>
+                     * @param _distributedLoadAttrs <p>数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。</p>
                      * 
                      */
                     void SetDistributedLoadAttrs(const DistributedLoadAttrs& _distributedLoadAttrs);
@@ -154,15 +155,15 @@ namespace TencentCloud
                     bool DistributedLoadAttrsHasBeenSet() const;
 
                     /**
-                     * 获取将任务执行报告写入 COS 的路径，如果不需要报告则入参空
-                     * @return ReportPath 将任务执行报告写入 COS 的路径，如果不需要报告则入参空
+                     * 获取<p>将任务执行报告写入 COS 的路径，如果不需要报告则入参空</p>
+                     * @return ReportPath <p>将任务执行报告写入 COS 的路径，如果不需要报告则入参空</p>
                      * 
                      */
                     std::string GetReportPath() const;
 
                     /**
-                     * 设置将任务执行报告写入 COS 的路径，如果不需要报告则入参空
-                     * @param _reportPath 将任务执行报告写入 COS 的路径，如果不需要报告则入参空
+                     * 设置<p>将任务执行报告写入 COS 的路径，如果不需要报告则入参空</p>
+                     * @param _reportPath <p>将任务执行报告写入 COS 的路径，如果不需要报告则入参空</p>
                      * 
                      */
                     void SetReportPath(const std::string& _reportPath);
@@ -174,43 +175,70 @@ namespace TencentCloud
                      */
                     bool ReportPathHasBeenSet() const;
 
+                    /**
+                     * 获取<p>仅预热数据任务参数。入参数TaskType为LoadData时，该参数不应为空。</p>
+                     * @return LoadDataAttrs <p>仅预热数据任务参数。入参数TaskType为LoadData时，该参数不应为空。</p>
+                     * 
+                     */
+                    LoadDataAttrs GetLoadDataAttrs() const;
+
+                    /**
+                     * 设置<p>仅预热数据任务参数。入参数TaskType为LoadData时，该参数不应为空。</p>
+                     * @param _loadDataAttrs <p>仅预热数据任务参数。入参数TaskType为LoadData时，该参数不应为空。</p>
+                     * 
+                     */
+                    void SetLoadDataAttrs(const LoadDataAttrs& _loadDataAttrs);
+
+                    /**
+                     * 判断参数 LoadDataAttrs 是否已赋值
+                     * @return LoadDataAttrs 是否已赋值
+                     * 
+                     */
+                    bool LoadDataAttrsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 预热任务类型，枚举值，MetadataLoad｜DistributedLoad。
+                     * <p>预热任务类型，枚举值，MetadataLoad｜DistributedLoad。</p>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1
+                     * <p>任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1</p>
                      */
                     uint64_t m_priority;
                     bool m_priorityHasBeenSet;
 
                     /**
-                     * 任务描述，支持中文
+                     * <p>任务描述，支持中文</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。
+                     * <p>元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。</p>
                      */
                     MetadataLoadAttrs m_metadataLoadAttrs;
                     bool m_metadataLoadAttrsHasBeenSet;
 
                     /**
-                     * 数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。
+                     * <p>数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。</p>
                      */
                     DistributedLoadAttrs m_distributedLoadAttrs;
                     bool m_distributedLoadAttrsHasBeenSet;
 
                     /**
-                     * 将任务执行报告写入 COS 的路径，如果不需要报告则入参空
+                     * <p>将任务执行报告写入 COS 的路径，如果不需要报告则入参空</p>
                      */
                     std::string m_reportPath;
                     bool m_reportPathHasBeenSet;
+
+                    /**
+                     * <p>仅预热数据任务参数。入参数TaskType为LoadData时，该参数不应为空。</p>
+                     */
+                    LoadDataAttrs m_loadDataAttrs;
+                    bool m_loadDataAttrsHasBeenSet;
 
                 };
             }

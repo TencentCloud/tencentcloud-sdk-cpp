@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点所在的可用区。
-                     * @return Zone 节点所在的可用区。
+                     * 获取<p>节点所在的可用区。</p>
+                     * @return Zone <p>节点所在的可用区。</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置节点所在的可用区。
-                     * @param _zone 节点所在的可用区。
+                     * 设置<p>节点所在的可用区。</p>
+                     * @param _zone <p>节点所在的可用区。</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取节点名称。
-                     * @return NodeName 节点名称。
+                     * 获取<p>节点名称。</p>
+                     * @return NodeName <p>节点名称。</p>
                      * 
                      */
                     std::string GetNodeName() const;
 
                     /**
-                     * 设置节点名称。
-                     * @param _nodeName 节点名称。
+                     * 设置<p>节点名称。</p>
+                     * @param _nodeName <p>节点名称。</p>
                      * 
                      */
                     void SetNodeName(const std::string& _nodeName);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool NodeNameHasBeenSet() const;
 
                     /**
-                     * 获取节点访问地址。
-                     * @return Address 节点访问地址。
+                     * 获取<p>节点访问地址。</p>
+                     * @return Address <p>节点访问地址。</p>
                      * 
                      */
                     std::string GetAddress() const;
 
                     /**
-                     * 设置节点访问地址。
-                     * @param _address 节点访问地址。
+                     * 设置<p>节点访问地址。</p>
+                     * @param _address <p>节点访问地址。</p>
                      * 
                      */
                     void SetAddress(const std::string& _address);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool AddressHasBeenSet() const;
 
                     /**
-                     * 获取节点公网访问外网地址(IP或域名，示例为IP方式)。
-                     * @return WanServiceAddress 节点公网访问外网地址(IP或域名，示例为IP方式)。
+                     * 获取<p>节点公网访问外网地址(IP或域名，示例为IP方式)。</p>
+                     * @return WanServiceAddress <p>节点公网访问外网地址(IP或域名，示例为IP方式)。</p>
                      * 
                      */
                     std::string GetWanServiceAddress() const;
 
                     /**
-                     * 设置节点公网访问外网地址(IP或域名，示例为IP方式)。
-                     * @param _wanServiceAddress 节点公网访问外网地址(IP或域名，示例为IP方式)。
+                     * 设置<p>节点公网访问外网地址(IP或域名，示例为IP方式)。</p>
+                     * @param _wanServiceAddress <p>节点公网访问外网地址(IP或域名，示例为IP方式)。</p>
                      * 
                      */
                     void SetWanServiceAddress(const std::string& _wanServiceAddress);
@@ -132,31 +132,15 @@ namespace TencentCloud
                     bool WanServiceAddressHasBeenSet() const;
 
                     /**
-                     * 获取节点角色。
-- PRIMARY：主节点。
-- SECONDARY：从节点。
-- READONLY：只读节点。
-- ARBITER：仲裁节点。
-                     * @return Role 节点角色。
-- PRIMARY：主节点。
-- SECONDARY：从节点。
-- READONLY：只读节点。
-- ARBITER：仲裁节点。
+                     * 获取<p>节点角色。</p><ul><li>PRIMARY：主节点。</li><li>SECONDARY：从节点。</li><li>READONLY：只读节点。</li><li>ARBITER：仲裁节点。</li></ul>
+                     * @return Role <p>节点角色。</p><ul><li>PRIMARY：主节点。</li><li>SECONDARY：从节点。</li><li>READONLY：只读节点。</li><li>ARBITER：仲裁节点。</li></ul>
                      * 
                      */
                     std::string GetRole() const;
 
                     /**
-                     * 设置节点角色。
-- PRIMARY：主节点。
-- SECONDARY：从节点。
-- READONLY：只读节点。
-- ARBITER：仲裁节点。
-                     * @param _role 节点角色。
-- PRIMARY：主节点。
-- SECONDARY：从节点。
-- READONLY：只读节点。
-- ARBITER：仲裁节点。
+                     * 设置<p>节点角色。</p><ul><li>PRIMARY：主节点。</li><li>SECONDARY：从节点。</li><li>READONLY：只读节点。</li><li>ARBITER：仲裁节点。</li></ul>
+                     * @param _role <p>节点角色。</p><ul><li>PRIMARY：主节点。</li><li>SECONDARY：从节点。</li><li>READONLY：只读节点。</li><li>ARBITER：仲裁节点。</li></ul>
                      * 
                      */
                     void SetRole(const std::string& _role);
@@ -169,23 +153,15 @@ namespace TencentCloud
                     bool RoleHasBeenSet() const;
 
                     /**
-                     * 获取节点是否为 Hidden 节点。
-- true：Hidden 节点。
-- false：非 Hidden 节点。
-                     * @return Hidden 节点是否为 Hidden 节点。
-- true：Hidden 节点。
-- false：非 Hidden 节点。
+                     * 获取<p>节点是否为 Hidden 节点。</p><ul><li>true：Hidden 节点。</li><li>false：非 Hidden 节点。</li></ul>
+                     * @return Hidden <p>节点是否为 Hidden 节点。</p><ul><li>true：Hidden 节点。</li><li>false：非 Hidden 节点。</li></ul>
                      * 
                      */
                     bool GetHidden() const;
 
                     /**
-                     * 设置节点是否为 Hidden 节点。
-- true：Hidden 节点。
-- false：非 Hidden 节点。
-                     * @param _hidden 节点是否为 Hidden 节点。
-- true：Hidden 节点。
-- false：非 Hidden 节点。
+                     * 设置<p>节点是否为 Hidden 节点。</p><ul><li>true：Hidden 节点。</li><li>false：非 Hidden 节点。</li></ul>
+                     * @param _hidden <p>节点是否为 Hidden 节点。</p><ul><li>true：Hidden 节点。</li><li>false：非 Hidden 节点。</li></ul>
                      * 
                      */
                     void SetHidden(const bool& _hidden);
@@ -198,47 +174,15 @@ namespace TencentCloud
                     bool HiddenHasBeenSet() const;
 
                     /**
-                     * 获取节点状态。
-- NORMAL：正常运行中。
-- STARTUP：正在启动。
-- STARTUP2：正在启动，处理中间数据。
-- RECOVERING：恢复中，暂不可用。
-- DOWN：已掉线。
-- UNKNOWN：未知状态。
-- ROLLBACK：回滚中。
-- REMOVED：已移除。
-                     * @return Status 节点状态。
-- NORMAL：正常运行中。
-- STARTUP：正在启动。
-- STARTUP2：正在启动，处理中间数据。
-- RECOVERING：恢复中，暂不可用。
-- DOWN：已掉线。
-- UNKNOWN：未知状态。
-- ROLLBACK：回滚中。
-- REMOVED：已移除。
+                     * 获取<p>节点状态。</p><ul><li>NORMAL：正常运行中。</li><li>STARTUP：正在启动。</li><li>STARTUP2：正在启动，处理中间数据。</li><li>RECOVERING：恢复中，暂不可用。</li><li>DOWN：已掉线。</li><li>UNKNOWN：未知状态。</li><li>ROLLBACK：回滚中。</li><li>REMOVED：已移除。</li></ul>
+                     * @return Status <p>节点状态。</p><ul><li>NORMAL：正常运行中。</li><li>STARTUP：正在启动。</li><li>STARTUP2：正在启动，处理中间数据。</li><li>RECOVERING：恢复中，暂不可用。</li><li>DOWN：已掉线。</li><li>UNKNOWN：未知状态。</li><li>ROLLBACK：回滚中。</li><li>REMOVED：已移除。</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置节点状态。
-- NORMAL：正常运行中。
-- STARTUP：正在启动。
-- STARTUP2：正在启动，处理中间数据。
-- RECOVERING：恢复中，暂不可用。
-- DOWN：已掉线。
-- UNKNOWN：未知状态。
-- ROLLBACK：回滚中。
-- REMOVED：已移除。
-                     * @param _status 节点状态。
-- NORMAL：正常运行中。
-- STARTUP：正在启动。
-- STARTUP2：正在启动，处理中间数据。
-- RECOVERING：恢复中，暂不可用。
-- DOWN：已掉线。
-- UNKNOWN：未知状态。
-- ROLLBACK：回滚中。
-- REMOVED：已移除。
+                     * 设置<p>节点状态。</p><ul><li>NORMAL：正常运行中。</li><li>STARTUP：正在启动。</li><li>STARTUP2：正在启动，处理中间数据。</li><li>RECOVERING：恢复中，暂不可用。</li><li>DOWN：已掉线。</li><li>UNKNOWN：未知状态。</li><li>ROLLBACK：回滚中。</li><li>REMOVED：已移除。</li></ul>
+                     * @param _status <p>节点状态。</p><ul><li>NORMAL：正常运行中。</li><li>STARTUP：正在启动。</li><li>STARTUP2：正在启动，处理中间数据。</li><li>RECOVERING：恢复中，暂不可用。</li><li>DOWN：已掉线。</li><li>UNKNOWN：未知状态。</li><li>ROLLBACK：回滚中。</li><li>REMOVED：已移除。</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -251,15 +195,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取主从同步延迟时间，单位：秒。
-                     * @return SlaveDelay 主从同步延迟时间，单位：秒。
+                     * 获取<p>主从同步延迟时间，单位：秒。</p>
+                     * @return SlaveDelay <p>主从同步延迟时间，单位：秒。</p>
                      * 
                      */
                     int64_t GetSlaveDelay() const;
 
                     /**
-                     * 设置主从同步延迟时间，单位：秒。
-                     * @param _slaveDelay 主从同步延迟时间，单位：秒。
+                     * 设置<p>主从同步延迟时间，单位：秒。</p>
+                     * @param _slaveDelay <p>主从同步延迟时间，单位：秒。</p>
                      * 
                      */
                     void SetSlaveDelay(const int64_t& _slaveDelay);
@@ -272,15 +216,15 @@ namespace TencentCloud
                     bool SlaveDelayHasBeenSet() const;
 
                     /**
-                     * 获取节点优先级。其取值范围为[0,100]，数值越高，优先级越高。
-                     * @return Priority 节点优先级。其取值范围为[0,100]，数值越高，优先级越高。
+                     * 获取<p>节点优先级。其取值范围为[0,100]，数值越高，优先级越高。</p>
+                     * @return Priority <p>节点优先级。其取值范围为[0,100]，数值越高，优先级越高。</p>
                      * 
                      */
                     int64_t GetPriority() const;
 
                     /**
-                     * 设置节点优先级。其取值范围为[0,100]，数值越高，优先级越高。
-                     * @param _priority 节点优先级。其取值范围为[0,100]，数值越高，优先级越高。
+                     * 设置<p>节点优先级。其取值范围为[0,100]，数值越高，优先级越高。</p>
+                     * @param _priority <p>节点优先级。其取值范围为[0,100]，数值越高，优先级越高。</p>
                      * 
                      */
                     void SetPriority(const int64_t& _priority);
@@ -293,23 +237,15 @@ namespace TencentCloud
                     bool PriorityHasBeenSet() const;
 
                     /**
-                     * 获取节点投票权。
-- 1：具有投票权。
-- 0：无投票权。
-                     * @return Votes 节点投票权。
-- 1：具有投票权。
-- 0：无投票权。
+                     * 获取<p>节点投票权。</p><ul><li>1：具有投票权。</li><li>0：无投票权。</li></ul>
+                     * @return Votes <p>节点投票权。</p><ul><li>1：具有投票权。</li><li>0：无投票权。</li></ul>
                      * 
                      */
                     int64_t GetVotes() const;
 
                     /**
-                     * 设置节点投票权。
-- 1：具有投票权。
-- 0：无投票权。
-                     * @param _votes 节点投票权。
-- 1：具有投票权。
-- 0：无投票权。
+                     * 设置<p>节点投票权。</p><ul><li>1：具有投票权。</li><li>0：无投票权。</li></ul>
+                     * @param _votes <p>节点投票权。</p><ul><li>1：具有投票权。</li><li>0：无投票权。</li></ul>
                      * 
                      */
                     void SetVotes(const int64_t& _votes);
@@ -322,18 +258,18 @@ namespace TencentCloud
                     bool VotesHasBeenSet() const;
 
                     /**
-                     * 获取节点标签。
+                     * 获取<p>节点标签。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 节点标签。
+                     * @return Tags <p>节点标签。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NodeTag> GetTags() const;
 
                     /**
-                     * 设置节点标签。
+                     * 设置<p>节点标签。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tags 节点标签。
+                     * @param _tags <p>节点标签。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -347,15 +283,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取副本集 ID。
-                     * @return ReplicateSetId 副本集 ID。
+                     * 获取<p>副本集 ID。</p>
+                     * @return ReplicateSetId <p>副本集 ID。</p>
                      * 
                      */
                     std::string GetReplicateSetId() const;
 
                     /**
-                     * 设置副本集 ID。
-                     * @param _replicateSetId 副本集 ID。
+                     * 设置<p>副本集 ID。</p>
+                     * @param _replicateSetId <p>副本集 ID。</p>
                      * 
                      */
                     void SetReplicateSetId(const std::string& _replicateSetId);
@@ -370,90 +306,74 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 节点所在的可用区。
+                     * <p>节点所在的可用区。</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 节点名称。
+                     * <p>节点名称。</p>
                      */
                     std::string m_nodeName;
                     bool m_nodeNameHasBeenSet;
 
                     /**
-                     * 节点访问地址。
+                     * <p>节点访问地址。</p>
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;
 
                     /**
-                     * 节点公网访问外网地址(IP或域名，示例为IP方式)。
+                     * <p>节点公网访问外网地址(IP或域名，示例为IP方式)。</p>
                      */
                     std::string m_wanServiceAddress;
                     bool m_wanServiceAddressHasBeenSet;
 
                     /**
-                     * 节点角色。
-- PRIMARY：主节点。
-- SECONDARY：从节点。
-- READONLY：只读节点。
-- ARBITER：仲裁节点。
+                     * <p>节点角色。</p><ul><li>PRIMARY：主节点。</li><li>SECONDARY：从节点。</li><li>READONLY：只读节点。</li><li>ARBITER：仲裁节点。</li></ul>
                      */
                     std::string m_role;
                     bool m_roleHasBeenSet;
 
                     /**
-                     * 节点是否为 Hidden 节点。
-- true：Hidden 节点。
-- false：非 Hidden 节点。
+                     * <p>节点是否为 Hidden 节点。</p><ul><li>true：Hidden 节点。</li><li>false：非 Hidden 节点。</li></ul>
                      */
                     bool m_hidden;
                     bool m_hiddenHasBeenSet;
 
                     /**
-                     * 节点状态。
-- NORMAL：正常运行中。
-- STARTUP：正在启动。
-- STARTUP2：正在启动，处理中间数据。
-- RECOVERING：恢复中，暂不可用。
-- DOWN：已掉线。
-- UNKNOWN：未知状态。
-- ROLLBACK：回滚中。
-- REMOVED：已移除。
+                     * <p>节点状态。</p><ul><li>NORMAL：正常运行中。</li><li>STARTUP：正在启动。</li><li>STARTUP2：正在启动，处理中间数据。</li><li>RECOVERING：恢复中，暂不可用。</li><li>DOWN：已掉线。</li><li>UNKNOWN：未知状态。</li><li>ROLLBACK：回滚中。</li><li>REMOVED：已移除。</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 主从同步延迟时间，单位：秒。
+                     * <p>主从同步延迟时间，单位：秒。</p>
                      */
                     int64_t m_slaveDelay;
                     bool m_slaveDelayHasBeenSet;
 
                     /**
-                     * 节点优先级。其取值范围为[0,100]，数值越高，优先级越高。
+                     * <p>节点优先级。其取值范围为[0,100]，数值越高，优先级越高。</p>
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;
 
                     /**
-                     * 节点投票权。
-- 1：具有投票权。
-- 0：无投票权。
+                     * <p>节点投票权。</p><ul><li>1：具有投票权。</li><li>0：无投票权。</li></ul>
                      */
                     int64_t m_votes;
                     bool m_votesHasBeenSet;
 
                     /**
-                     * 节点标签。
+                     * <p>节点标签。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NodeTag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 副本集 ID。
+                     * <p>副本集 ID。</p>
                      */
                     std::string m_replicateSetId;
                     bool m_replicateSetIdHasBeenSet;

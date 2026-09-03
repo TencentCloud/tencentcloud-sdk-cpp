@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/clb/v20180317/model/ApiBaseItem.h>
 
 
 namespace TencentCloud
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool ServiceProviderIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>BYOK的自定义名字</p><p>入参限制：1～256个字符</p>
-                     * @return ServiceProviderName <p>BYOK的自定义名字</p><p>入参限制：1～256个字符</p>
+                     * 获取<p>BYOK的自定义名字</p><p>入参限制：1～255个字符</p>
+                     * @return ServiceProviderName <p>BYOK的自定义名字</p><p>入参限制：1～255个字符</p>
                      * 
                      */
                     std::string GetServiceProviderName() const;
 
                     /**
-                     * 设置<p>BYOK的自定义名字</p><p>入参限制：1～256个字符</p>
-                     * @param _serviceProviderName <p>BYOK的自定义名字</p><p>入参限制：1～256个字符</p>
+                     * 设置<p>BYOK的自定义名字</p><p>入参限制：1～255个字符</p>
+                     * @param _serviceProviderName <p>BYOK的自定义名字</p><p>入参限制：1～255个字符</p>
                      * 
                      */
                     void SetServiceProviderName(const std::string& _serviceProviderName);
@@ -84,6 +85,27 @@ namespace TencentCloud
                      */
                     bool ServiceProviderNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>多协议 Api Base URL</p>
+                     * @return ApiBases <p>多协议 Api Base URL</p>
+                     * 
+                     */
+                    std::vector<ApiBaseItem> GetApiBases() const;
+
+                    /**
+                     * 设置<p>多协议 Api Base URL</p>
+                     * @param _apiBases <p>多协议 Api Base URL</p>
+                     * 
+                     */
+                    void SetApiBases(const std::vector<ApiBaseItem>& _apiBases);
+
+                    /**
+                     * 判断参数 ApiBases 是否已赋值
+                     * @return ApiBases 是否已赋值
+                     * 
+                     */
+                    bool ApiBasesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -93,10 +115,16 @@ namespace TencentCloud
                     bool m_serviceProviderIdHasBeenSet;
 
                     /**
-                     * <p>BYOK的自定义名字</p><p>入参限制：1～256个字符</p>
+                     * <p>BYOK的自定义名字</p><p>入参限制：1～255个字符</p>
                      */
                     std::string m_serviceProviderName;
                     bool m_serviceProviderNameHasBeenSet;
+
+                    /**
+                     * <p>多协议 Api Base URL</p>
+                     */
+                    std::vector<ApiBaseItem> m_apiBases;
+                    bool m_apiBasesHasBeenSet;
 
                 };
             }

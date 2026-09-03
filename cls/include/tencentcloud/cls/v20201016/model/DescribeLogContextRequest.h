@@ -43,23 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要查询的日志主题Id。
-- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
-- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
-                     * @return TopicId 要查询的日志主题Id。
-- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
-- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
+                     * 获取<p>要查询的日志主题Id。</p><ul><li>通过 <a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href="https://cloud.tencent.com/document/product/614/56456">创建日志主题</a> 获取日志主题Id。</li></ul>
+                     * @return TopicId <p>要查询的日志主题Id。</p><ul><li>通过 <a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href="https://cloud.tencent.com/document/product/614/56456">创建日志主题</a> 获取日志主题Id。</li></ul>
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置要查询的日志主题Id。
-- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
-- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
-                     * @param _topicId 要查询的日志主题Id。
-- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
-- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
+                     * 设置<p>要查询的日志主题Id。</p><ul><li>通过 <a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href="https://cloud.tencent.com/document/product/614/56456">创建日志主题</a> 获取日志主题Id。</li></ul>
+                     * @param _topicId <p>要查询的日志主题Id。</p><ul><li>通过 <a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href="https://cloud.tencent.com/document/product/614/56456">创建日志主题</a> 获取日志主题Id。</li></ul>
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -72,15 +64,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取日志时间,  即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
-                     * @return BTime 日志时间,  即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
+                     * 获取<p>日志时间,  即 <a href="https://cloud.tencent.com/document/product/614/56447">检索分析日志</a> 接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。</p>
+                     * @return BTime <p>日志时间,  即 <a href="https://cloud.tencent.com/document/product/614/56447">检索分析日志</a> 接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。</p>
                      * 
                      */
                     std::string GetBTime() const;
 
                     /**
-                     * 设置日志时间,  即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
-                     * @param _bTime 日志时间,  即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
+                     * 设置<p>日志时间,  即 <a href="https://cloud.tencent.com/document/product/614/56447">检索分析日志</a> 接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。</p>
+                     * @param _bTime <p>日志时间,  即 <a href="https://cloud.tencent.com/document/product/614/56447">检索分析日志</a> 接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。</p>
                      * 
                      */
                     void SetBTime(const std::string& _bTime);
@@ -93,15 +85,15 @@ namespace TencentCloud
                     bool BTimeHasBeenSet() const;
 
                     /**
-                     * 获取日志包序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的PkgId。
-                     * @return PkgId 日志包序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的PkgId。
+                     * 获取<p>日志包序号，即 <a href="https://cloud.tencent.com/document/product/614/56447">检索分析日志</a> 接口返回信息中Results结构体中的PkgId。</p>
+                     * @return PkgId <p>日志包序号，即 <a href="https://cloud.tencent.com/document/product/614/56447">检索分析日志</a> 接口返回信息中Results结构体中的PkgId。</p>
                      * 
                      */
                     std::string GetPkgId() const;
 
                     /**
-                     * 设置日志包序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的PkgId。
-                     * @param _pkgId 日志包序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的PkgId。
+                     * 设置<p>日志包序号，即 <a href="https://cloud.tencent.com/document/product/614/56447">检索分析日志</a> 接口返回信息中Results结构体中的PkgId。</p>
+                     * @param _pkgId <p>日志包序号，即 <a href="https://cloud.tencent.com/document/product/614/56447">检索分析日志</a> 接口返回信息中Results结构体中的PkgId。</p>
                      * 
                      */
                     void SetPkgId(const std::string& _pkgId);
@@ -114,15 +106,15 @@ namespace TencentCloud
                     bool PkgIdHasBeenSet() const;
 
                     /**
-                     * 获取日志包内一条日志的序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构中的PkgLogId。
-                     * @return PkgLogId 日志包内一条日志的序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构中的PkgLogId。
+                     * 获取<p>日志包内一条日志的序号，即 <a href="https://cloud.tencent.com/document/product/614/56447">检索分析日志</a> 接口返回信息中Results结构中的PkgLogId。</p>
+                     * @return PkgLogId <p>日志包内一条日志的序号，即 <a href="https://cloud.tencent.com/document/product/614/56447">检索分析日志</a> 接口返回信息中Results结构中的PkgLogId。</p>
                      * 
                      */
                     int64_t GetPkgLogId() const;
 
                     /**
-                     * 设置日志包内一条日志的序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构中的PkgLogId。
-                     * @param _pkgLogId 日志包内一条日志的序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构中的PkgLogId。
+                     * 设置<p>日志包内一条日志的序号，即 <a href="https://cloud.tencent.com/document/product/614/56447">检索分析日志</a> 接口返回信息中Results结构中的PkgLogId。</p>
+                     * @param _pkgLogId <p>日志包内一条日志的序号，即 <a href="https://cloud.tencent.com/document/product/614/56447">检索分析日志</a> 接口返回信息中Results结构中的PkgLogId。</p>
                      * 
                      */
                     void SetPkgLogId(const int64_t& _pkgLogId);
@@ -135,15 +127,15 @@ namespace TencentCloud
                     bool PkgLogIdHasBeenSet() const;
 
                     /**
-                     * 获取前${PrevLogs}条日志，默认值10。
-                     * @return PrevLogs 前${PrevLogs}条日志，默认值10。
+                     * 获取<p>前${PrevLogs}条日志，默认值10，最大100。</p>
+                     * @return PrevLogs <p>前${PrevLogs}条日志，默认值10，最大100。</p>
                      * 
                      */
                     int64_t GetPrevLogs() const;
 
                     /**
-                     * 设置前${PrevLogs}条日志，默认值10。
-                     * @param _prevLogs 前${PrevLogs}条日志，默认值10。
+                     * 设置<p>前${PrevLogs}条日志，默认值10，最大100。</p>
+                     * @param _prevLogs <p>前${PrevLogs}条日志，默认值10，最大100。</p>
                      * 
                      */
                     void SetPrevLogs(const int64_t& _prevLogs);
@@ -156,15 +148,15 @@ namespace TencentCloud
                     bool PrevLogsHasBeenSet() const;
 
                     /**
-                     * 获取后${NextLogs}条日志，默认值10。
-                     * @return NextLogs 后${NextLogs}条日志，默认值10。
+                     * 获取<p>后${NextLogs}条日志，默认值10，最大100。</p>
+                     * @return NextLogs <p>后${NextLogs}条日志，默认值10，最大100。</p>
                      * 
                      */
                     int64_t GetNextLogs() const;
 
                     /**
-                     * 设置后${NextLogs}条日志，默认值10。
-                     * @param _nextLogs 后${NextLogs}条日志，默认值10。
+                     * 设置<p>后${NextLogs}条日志，默认值10，最大100。</p>
+                     * @param _nextLogs <p>后${NextLogs}条日志，默认值10，最大100。</p>
                      * 
                      */
                     void SetNextLogs(const int64_t& _nextLogs);
@@ -177,19 +169,15 @@ namespace TencentCloud
                     bool NextLogsHasBeenSet() const;
 
                     /**
-                     * 获取检索语句，对日志上下文进行过滤，最大长度为12KB
-语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a>构成，不支持SQL语句
-                     * @return Query 检索语句，对日志上下文进行过滤，最大长度为12KB
-语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a>构成，不支持SQL语句
+                     * 获取<p>检索语句，对日志上下文进行过滤，最大长度为12KB<br>语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a>构成，不支持SQL语句</p>
+                     * @return Query <p>检索语句，对日志上下文进行过滤，最大长度为12KB<br>语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a>构成，不支持SQL语句</p>
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
-                     * 设置检索语句，对日志上下文进行过滤，最大长度为12KB
-语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a>构成，不支持SQL语句
-                     * @param _query 检索语句，对日志上下文进行过滤，最大长度为12KB
-语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a>构成，不支持SQL语句
+                     * 设置<p>检索语句，对日志上下文进行过滤，最大长度为12KB<br>语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a>构成，不支持SQL语句</p>
+                     * @param _query <p>检索语句，对日志上下文进行过滤，最大长度为12KB<br>语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a>构成，不支持SQL语句</p>
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -202,31 +190,15 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取上下文检索的开始时间，单位：毫秒级时间戳
-注意：
-- From为空时，表示上下文检索的开始时间不做限制
-- From和To非空时，From < To
-- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域
-                     * @return From 上下文检索的开始时间，单位：毫秒级时间戳
-注意：
-- From为空时，表示上下文检索的开始时间不做限制
-- From和To非空时，From < To
-- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域
+                     * 获取<p>上下文检索的开始时间，单位：毫秒级时间戳<br>注意：</p><ul><li>From为空时，表示上下文检索的开始时间不做限制</li><li>From和To非空时，From &lt; To</li></ul>
+                     * @return From <p>上下文检索的开始时间，单位：毫秒级时间戳<br>注意：</p><ul><li>From为空时，表示上下文检索的开始时间不做限制</li><li>From和To非空时，From &lt; To</li></ul>
                      * 
                      */
                     uint64_t GetFrom() const;
 
                     /**
-                     * 设置上下文检索的开始时间，单位：毫秒级时间戳
-注意：
-- From为空时，表示上下文检索的开始时间不做限制
-- From和To非空时，From < To
-- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域
-                     * @param _from 上下文检索的开始时间，单位：毫秒级时间戳
-注意：
-- From为空时，表示上下文检索的开始时间不做限制
-- From和To非空时，From < To
-- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域
+                     * 设置<p>上下文检索的开始时间，单位：毫秒级时间戳<br>注意：</p><ul><li>From为空时，表示上下文检索的开始时间不做限制</li><li>From和To非空时，From &lt; To</li></ul>
+                     * @param _from <p>上下文检索的开始时间，单位：毫秒级时间戳<br>注意：</p><ul><li>From为空时，表示上下文检索的开始时间不做限制</li><li>From和To非空时，From &lt; To</li></ul>
                      * 
                      */
                     void SetFrom(const uint64_t& _from);
@@ -239,31 +211,15 @@ namespace TencentCloud
                     bool FromHasBeenSet() const;
 
                     /**
-                     * 获取上下文检索的结束时间，单位：毫秒级时间戳。
-注意：
-- To为空时，表示上下文检索的结束时间不做限制
-- From和To非空时，From < To
-- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域
-                     * @return To 上下文检索的结束时间，单位：毫秒级时间戳。
-注意：
-- To为空时，表示上下文检索的结束时间不做限制
-- From和To非空时，From < To
-- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域
+                     * 获取<p>上下文检索的结束时间，单位：毫秒级时间戳。<br>注意：</p><ul><li>To为空时，表示上下文检索的结束时间不做限制</li><li>From和To非空时，From &lt; To</li></ul>
+                     * @return To <p>上下文检索的结束时间，单位：毫秒级时间戳。<br>注意：</p><ul><li>To为空时，表示上下文检索的结束时间不做限制</li><li>From和To非空时，From &lt; To</li></ul>
                      * 
                      */
                     uint64_t GetTo() const;
 
                     /**
-                     * 设置上下文检索的结束时间，单位：毫秒级时间戳。
-注意：
-- To为空时，表示上下文检索的结束时间不做限制
-- From和To非空时，From < To
-- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域
-                     * @param _to 上下文检索的结束时间，单位：毫秒级时间戳。
-注意：
-- To为空时，表示上下文检索的结束时间不做限制
-- From和To非空时，From < To
-- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域
+                     * 设置<p>上下文检索的结束时间，单位：毫秒级时间戳。<br>注意：</p><ul><li>To为空时，表示上下文检索的结束时间不做限制</li><li>From和To非空时，From &lt; To</li></ul>
+                     * @param _to <p>上下文检索的结束时间，单位：毫秒级时间戳。<br>注意：</p><ul><li>To为空时，表示上下文检索的结束时间不做限制</li><li>From和To非空时，From &lt; To</li></ul>
                      * 
                      */
                     void SetTo(const uint64_t& _to);
@@ -278,66 +234,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要查询的日志主题Id。
-- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
-- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
+                     * <p>要查询的日志主题Id。</p><ul><li>通过 <a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href="https://cloud.tencent.com/document/product/614/56456">创建日志主题</a> 获取日志主题Id。</li></ul>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 日志时间,  即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
+                     * <p>日志时间,  即 <a href="https://cloud.tencent.com/document/product/614/56447">检索分析日志</a> 接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。</p>
                      */
                     std::string m_bTime;
                     bool m_bTimeHasBeenSet;
 
                     /**
-                     * 日志包序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的PkgId。
+                     * <p>日志包序号，即 <a href="https://cloud.tencent.com/document/product/614/56447">检索分析日志</a> 接口返回信息中Results结构体中的PkgId。</p>
                      */
                     std::string m_pkgId;
                     bool m_pkgIdHasBeenSet;
 
                     /**
-                     * 日志包内一条日志的序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构中的PkgLogId。
+                     * <p>日志包内一条日志的序号，即 <a href="https://cloud.tencent.com/document/product/614/56447">检索分析日志</a> 接口返回信息中Results结构中的PkgLogId。</p>
                      */
                     int64_t m_pkgLogId;
                     bool m_pkgLogIdHasBeenSet;
 
                     /**
-                     * 前${PrevLogs}条日志，默认值10。
+                     * <p>前${PrevLogs}条日志，默认值10，最大100。</p>
                      */
                     int64_t m_prevLogs;
                     bool m_prevLogsHasBeenSet;
 
                     /**
-                     * 后${NextLogs}条日志，默认值10。
+                     * <p>后${NextLogs}条日志，默认值10，最大100。</p>
                      */
                     int64_t m_nextLogs;
                     bool m_nextLogsHasBeenSet;
 
                     /**
-                     * 检索语句，对日志上下文进行过滤，最大长度为12KB
-语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a>构成，不支持SQL语句
+                     * <p>检索语句，对日志上下文进行过滤，最大长度为12KB<br>语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a>构成，不支持SQL语句</p>
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 上下文检索的开始时间，单位：毫秒级时间戳
-注意：
-- From为空时，表示上下文检索的开始时间不做限制
-- From和To非空时，From < To
-- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域
+                     * <p>上下文检索的开始时间，单位：毫秒级时间戳<br>注意：</p><ul><li>From为空时，表示上下文检索的开始时间不做限制</li><li>From和To非空时，From &lt; To</li></ul>
                      */
                     uint64_t m_from;
                     bool m_fromHasBeenSet;
 
                     /**
-                     * 上下文检索的结束时间，单位：毫秒级时间戳。
-注意：
-- To为空时，表示上下文检索的结束时间不做限制
-- From和To非空时，From < To
-- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域
+                     * <p>上下文检索的结束时间，单位：毫秒级时间戳。<br>注意：</p><ul><li>To为空时，表示上下文检索的结束时间不做限制</li><li>From和To非空时，From &lt; To</li></ul>
                      */
                     uint64_t m_to;
                     bool m_toHasBeenSet;

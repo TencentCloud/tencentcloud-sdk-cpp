@@ -46,7 +46,9 @@ DescribeDynamicInstanceDetailResponse::DescribeDynamicInstanceDetailResponse() :
     m_highAvailabilityHasBeenSet(false),
     m_persistentVolumeHasBeenSet(false),
     m_rayClusterYamlHasBeenSet(false),
-    m_imageInfoV2HasBeenSet(false)
+    m_imageInfoV2HasBeenSet(false),
+    m_enableHistoryServerHasBeenSet(false),
+    m_tensorBoardUrlHasBeenSet(false)
 {
 }
 
@@ -389,6 +391,26 @@ CoreInternalOutcome DescribeDynamicInstanceDetailResponse::Deserialize(const str
         m_imageInfoV2HasBeenSet = true;
     }
 
+    if (rsp.HasMember("EnableHistoryServer") && !rsp["EnableHistoryServer"].IsNull())
+    {
+        if (!rsp["EnableHistoryServer"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnableHistoryServer` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableHistoryServer = rsp["EnableHistoryServer"].GetBool();
+        m_enableHistoryServerHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TensorBoardUrl") && !rsp["TensorBoardUrl"].IsNull())
+    {
+        if (!rsp["TensorBoardUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TensorBoardUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tensorBoardUrl = string(rsp["TensorBoardUrl"].GetString());
+        m_tensorBoardUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -614,6 +636,22 @@ string DescribeDynamicInstanceDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_imageInfoV2.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_enableHistoryServerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableHistoryServer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableHistoryServer, allocator);
+    }
+
+    if (m_tensorBoardUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TensorBoardUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tensorBoardUrl.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -856,6 +894,26 @@ ImageInfoV2 DescribeDynamicInstanceDetailResponse::GetImageInfoV2() const
 bool DescribeDynamicInstanceDetailResponse::ImageInfoV2HasBeenSet() const
 {
     return m_imageInfoV2HasBeenSet;
+}
+
+bool DescribeDynamicInstanceDetailResponse::GetEnableHistoryServer() const
+{
+    return m_enableHistoryServer;
+}
+
+bool DescribeDynamicInstanceDetailResponse::EnableHistoryServerHasBeenSet() const
+{
+    return m_enableHistoryServerHasBeenSet;
+}
+
+string DescribeDynamicInstanceDetailResponse::GetTensorBoardUrl() const
+{
+    return m_tensorBoardUrl;
+}
+
+bool DescribeDynamicInstanceDetailResponse::TensorBoardUrlHasBeenSet() const
+{
+    return m_tensorBoardUrlHasBeenSet;
 }
 
 

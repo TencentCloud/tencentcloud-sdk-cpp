@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务id
+                     * 获取<p>任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskId 任务id
+                     * @return TaskId <p>任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务id
+                     * 设置<p>任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskId 任务id
+                     * @param _taskId <p>任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取日志主题ID
+                     * 获取<p>日志主题ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TopicId 日志主题ID
+                     * @return TopicId <p>日志主题ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题ID
+                     * 设置<p>日志主题ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _topicId 日志主题ID
+                     * @param _topicId <p>日志主题ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取Remote Write任务名称
+                     * 获取<p>Remote Write任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name Remote Write任务名称
+                     * @return Name <p>Remote Write任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置Remote Write任务名称
+                     * 设置<p>Remote Write任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name Remote Write任务名称
+                     * @param _name <p>Remote Write任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,26 +123,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取网络类型
-1: 内网
-2:外网
+                     * 获取<p>网络类型<br>1: 内网<br>2:外网</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NetType 网络类型
-1: 内网
-2:外网
+                     * @return NetType <p>网络类型<br>1: 内网<br>2:外网</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNetType() const;
 
                     /**
-                     * 设置网络类型
-1: 内网
-2:外网
+                     * 设置<p>网络类型<br>1: 内网<br>2:外网</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _netType 网络类型
-1: 内网
-2:外网
+                     * @param _netType <p>网络类型<br>1: 内网<br>2:外网</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -156,18 +148,18 @@ namespace TencentCloud
                     bool NetTypeHasBeenSet() const;
 
                     /**
-                     * 获取私有网络id
+                     * 获取<p>私有网络id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VpcId 私有网络id
+                     * @return VpcId <p>私有网络id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络id
+                     * 设置<p>私有网络id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vpcId 私有网络id
+                     * @param _vpcId <p>私有网络id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -181,30 +173,18 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取任务运行状态
-1: 运行中
-2:暂停
-3: 失败
+                     * 获取<p>任务运行状态<br>1: 运行中<br>2:暂停<br>3: 失败</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 任务运行状态
-1: 运行中
-2:暂停
-3: 失败
+                     * @return Status <p>任务运行状态<br>1: 运行中<br>2:暂停<br>3: 失败</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置任务运行状态
-1: 运行中
-2:暂停
-3: 失败
+                     * 设置<p>任务运行状态<br>1: 运行中<br>2:暂停<br>3: 失败</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 任务运行状态
-1: 运行中
-2:暂停
-3: 失败
+                     * @param _status <p>任务运行状态<br>1: 运行中<br>2:暂停<br>3: 失败</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -218,18 +198,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间
+                     * @return CreateTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
+                     * 设置<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 创建时间
+                     * @param _createTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -243,18 +223,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
+                     * 获取<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间
+                     * @return UpdateTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
+                     * 设置<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 更新时间
+                     * @param _updateTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -268,18 +248,18 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取目标服务名称
+                     * 获取<p>目标服务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Target 目标服务名称
+                     * @return Target <p>目标服务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTarget() const;
 
                     /**
-                     * 设置目标服务名称
+                     * 设置<p>目标服务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _target 目标服务名称
+                     * @param _target <p>目标服务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -293,18 +273,18 @@ namespace TencentCloud
                     bool TargetHasBeenSet() const;
 
                     /**
-                     * 获取目标地址
+                     * 获取<p>目标地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RemoteWriteURL 目标地址
+                     * @return RemoteWriteURL <p>目标地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemoteWriteURL() const;
 
                     /**
-                     * 设置目标地址
+                     * 设置<p>目标地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _remoteWriteURL 目标地址
+                     * @param _remoteWriteURL <p>目标地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -318,22 +298,18 @@ namespace TencentCloud
                     bool RemoteWriteURLHasBeenSet() const;
 
                     /**
-                     * 获取鉴权类型
-0: 无鉴权 1: basic_auth 2: token
+                     * 获取<p>鉴权类型<br>0: 无鉴权 1: basic_auth 2: token</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AuthType 鉴权类型
-0: 无鉴权 1: basic_auth 2: token
+                     * @return AuthType <p>鉴权类型<br>0: 无鉴权 1: basic_auth 2: token</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAuthType() const;
 
                     /**
-                     * 设置鉴权类型
-0: 无鉴权 1: basic_auth 2: token
+                     * 设置<p>鉴权类型<br>0: 无鉴权 1: basic_auth 2: token</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _authType 鉴权类型
-0: 无鉴权 1: basic_auth 2: token
+                     * @param _authType <p>鉴权类型<br>0: 无鉴权 1: basic_auth 2: token</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -347,18 +323,18 @@ namespace TencentCloud
                     bool AuthTypeHasBeenSet() const;
 
                     /**
-                     * 获取鉴权信息
+                     * 获取<p>鉴权信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AuthInfo 鉴权信息
+                     * @return AuthInfo <p>鉴权信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RemoteWriteAuthInfo GetAuthInfo() const;
 
                     /**
-                     * 设置鉴权信息
+                     * 设置<p>鉴权信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _authInfo 鉴权信息
+                     * @param _authInfo <p>鉴权信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -372,18 +348,18 @@ namespace TencentCloud
                     bool AuthInfoHasBeenSet() const;
 
                     /**
-                     * 获取日志集
+                     * 获取<p>日志集</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LogsetId 日志集
+                     * @return LogsetId <p>日志集</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
-                     * 设置日志集
+                     * 设置<p>日志集</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _logsetId 日志集
+                     * @param _logsetId <p>日志集</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -397,18 +373,18 @@ namespace TencentCloud
                     bool LogsetIdHasBeenSet() const;
 
                     /**
-                     * 获取任务状态
+                     * 获取<p>任务状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Enable 任务状态
+                     * @return Enable <p>任务状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEnable() const;
 
                     /**
-                     * 设置任务状态
+                     * 设置<p>任务状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _enable 任务状态
+                     * @param _enable <p>任务状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -422,18 +398,18 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取后端服务类型
+                     * 获取<p>后端服务类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VirtualGatewayType 后端服务类型
+                     * @return VirtualGatewayType <p>后端服务类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVirtualGatewayType() const;
 
                     /**
-                     * 设置后端服务类型
+                     * 设置<p>后端服务类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _virtualGatewayType 后端服务类型
+                     * @param _virtualGatewayType <p>后端服务类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -446,118 +422,176 @@ namespace TencentCloud
                      */
                     bool VirtualGatewayTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>云时序数据库实例ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceId <p>云时序数据库实例ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置<p>云时序数据库实例ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceId <p>云时序数据库实例ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启投递服务日志。1：关闭，2：开启。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HasServicesLog <p>是否开启投递服务日志。1：关闭，2：开启。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetHasServicesLog() const;
+
+                    /**
+                     * 设置<p>是否开启投递服务日志。1：关闭，2：开启。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hasServicesLog <p>是否开启投递服务日志。1：关闭，2：开启。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHasServicesLog(const uint64_t& _hasServicesLog);
+
+                    /**
+                     * 判断参数 HasServicesLog 是否已赋值
+                     * @return HasServicesLog 是否已赋值
+                     * 
+                     */
+                    bool HasServicesLogHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务id
+                     * <p>任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 日志主题ID
+                     * <p>日志主题ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * Remote Write任务名称
+                     * <p>Remote Write任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 网络类型
-1: 内网
-2:外网
+                     * <p>网络类型<br>1: 内网<br>2:外网</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_netType;
                     bool m_netTypeHasBeenSet;
 
                     /**
-                     * 私有网络id
+                     * <p>私有网络id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 任务运行状态
-1: 运行中
-2:暂停
-3: 失败
+                     * <p>任务运行状态<br>1: 运行中<br>2:暂停<br>3: 失败</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 目标服务名称
+                     * <p>目标服务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_target;
                     bool m_targetHasBeenSet;
 
                     /**
-                     * 目标地址
+                     * <p>目标地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remoteWriteURL;
                     bool m_remoteWriteURLHasBeenSet;
 
                     /**
-                     * 鉴权类型
-0: 无鉴权 1: basic_auth 2: token
+                     * <p>鉴权类型<br>0: 无鉴权 1: basic_auth 2: token</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_authType;
                     bool m_authTypeHasBeenSet;
 
                     /**
-                     * 鉴权信息
+                     * <p>鉴权信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RemoteWriteAuthInfo m_authInfo;
                     bool m_authInfoHasBeenSet;
 
                     /**
-                     * 日志集
+                     * <p>日志集</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;
 
                     /**
-                     * 任务状态
+                     * <p>任务状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 后端服务类型
+                     * <p>后端服务类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_virtualGatewayType;
                     bool m_virtualGatewayTypeHasBeenSet;
+
+                    /**
+                     * <p>云时序数据库实例ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * <p>是否开启投递服务日志。1：关闭，2：开启。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_hasServicesLog;
+                    bool m_hasServicesLogHasBeenSet;
 
                 };
             }

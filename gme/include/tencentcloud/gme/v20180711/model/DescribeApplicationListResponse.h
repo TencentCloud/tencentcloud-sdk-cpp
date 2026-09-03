@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取获取应用列表返回
-                     * @return ApplicationList 获取应用列表返回
+                     * 获取<p>获取应用列表返回</p>
+                     * @return ApplicationList <p>获取应用列表返回</p>
                      * 
                      */
                     std::vector<ApplicationList> GetApplicationList() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ApplicationListHasBeenSet() const;
 
                     /**
-                     * 获取应用总数
-                     * @return Total 应用总数
+                     * 获取<p>应用总数</p>
+                     * @return Total <p>应用总数</p>
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 获取应用列表返回
+                     * <p>获取应用列表返回</p>
                      */
                     std::vector<ApplicationList> m_applicationList;
                     bool m_applicationListHasBeenSet;
 
                     /**
-                     * 应用总数
+                     * <p>应用总数</p>
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;

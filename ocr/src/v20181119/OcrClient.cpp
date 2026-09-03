@@ -690,6 +690,56 @@ OcrClient::DescribeQuestionMarkAgentJobOutcomeCallable OcrClient::DescribeQuesti
     return prom->get_future();
 }
 
+OcrClient::DescribeQuestionSplitJobOutcome OcrClient::DescribeQuestionSplitJob(const DescribeQuestionSplitJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeQuestionSplitJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeQuestionSplitJobResponse rsp = DescribeQuestionSplitJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeQuestionSplitJobOutcome(rsp);
+        else
+            return DescribeQuestionSplitJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeQuestionSplitJobOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::DescribeQuestionSplitJobAsync(const DescribeQuestionSplitJobRequest& request, const DescribeQuestionSplitJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeQuestionSplitJobRequest&;
+    using Resp = DescribeQuestionSplitJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeQuestionSplitJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OcrClient::DescribeQuestionSplitJobOutcomeCallable OcrClient::DescribeQuestionSplitJobCallable(const DescribeQuestionSplitJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeQuestionSplitJobOutcome>>();
+    DescribeQuestionSplitJobAsync(
+    request,
+    [prom](
+        const OcrClient*,
+        const DescribeQuestionSplitJobRequest&,
+        DescribeQuestionSplitJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OcrClient::DriverLicenseOCROutcome OcrClient::DriverLicenseOCR(const DriverLicenseOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "DriverLicenseOCR");
@@ -3232,6 +3282,56 @@ OcrClient::SubmitQuestionMarkAgentJobOutcomeCallable OcrClient::SubmitQuestionMa
         const OcrClient*,
         const SubmitQuestionMarkAgentJobRequest&,
         SubmitQuestionMarkAgentJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+OcrClient::SubmitQuestionSplitJobOutcome OcrClient::SubmitQuestionSplitJob(const SubmitQuestionSplitJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitQuestionSplitJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitQuestionSplitJobResponse rsp = SubmitQuestionSplitJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitQuestionSplitJobOutcome(rsp);
+        else
+            return SubmitQuestionSplitJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitQuestionSplitJobOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::SubmitQuestionSplitJobAsync(const SubmitQuestionSplitJobRequest& request, const SubmitQuestionSplitJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SubmitQuestionSplitJobRequest&;
+    using Resp = SubmitQuestionSplitJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SubmitQuestionSplitJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OcrClient::SubmitQuestionSplitJobOutcomeCallable OcrClient::SubmitQuestionSplitJobCallable(const SubmitQuestionSplitJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SubmitQuestionSplitJobOutcome>>();
+    SubmitQuestionSplitJobAsync(
+    request,
+    [prom](
+        const OcrClient*,
+        const SubmitQuestionSplitJobRequest&,
+        SubmitQuestionSplitJobOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

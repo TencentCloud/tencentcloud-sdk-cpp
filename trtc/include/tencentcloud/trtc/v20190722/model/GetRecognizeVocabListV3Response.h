@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trtc/v20190722/model/Vocab.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>词表列表</p>
+                     * @return VocabList <p>词表列表</p>
+                     * 
+                     */
+                    std::vector<Vocab> GetVocabList() const;
+
+                    /**
+                     * 判断参数 VocabList 是否已赋值
+                     * @return VocabList 是否已赋值
+                     * 
+                     */
+                    bool VocabListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>词表个数</p><p>单位：个</p>
+                     * @return TotalCount <p>词表个数</p><p>单位：个</p>
+                     * 
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>词表列表</p>
+                     */
+                    std::vector<Vocab> m_vocabList;
+                    bool m_vocabListHasBeenSet;
+
+                    /**
+                     * <p>词表个数</p><p>单位：个</p>
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

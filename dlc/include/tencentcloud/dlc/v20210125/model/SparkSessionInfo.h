@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取spark session id
-                     * @return SparkSessionId spark session id
+                     * 获取<p>spark session id</p>
+                     * @return SparkSessionId <p>spark session id</p>
                      * 
                      */
                     std::string GetSparkSessionId() const;
 
                     /**
-                     * 设置spark session id
-                     * @param _sparkSessionId spark session id
+                     * 设置<p>spark session id</p>
+                     * @param _sparkSessionId <p>spark session id</p>
                      * 
                      */
                     void SetSparkSessionId(const std::string& _sparkSessionId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool SparkSessionIdHasBeenSet() const;
 
                     /**
-                     * 获取spark session名称
-                     * @return SparkSessionName spark session名称
+                     * 获取<p>spark session名称</p>
+                     * @return SparkSessionName <p>spark session名称</p>
                      * 
                      */
                     std::string GetSparkSessionName() const;
 
                     /**
-                     * 设置spark session名称
-                     * @param _sparkSessionName spark session名称
+                     * 设置<p>spark session名称</p>
+                     * @param _sparkSessionName <p>spark session名称</p>
                      * 
                      */
                     void SetSparkSessionName(const std::string& _sparkSessionName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool SparkSessionNameHasBeenSet() const;
 
                     /**
-                     * 获取资源组id
-                     * @return ResourceGroupId 资源组id
+                     * 获取<p>资源组id</p>
+                     * @return ResourceGroupId <p>资源组id</p>
                      * 
                      */
                     std::string GetResourceGroupId() const;
 
                     /**
-                     * 设置资源组id
-                     * @param _resourceGroupId 资源组id
+                     * 设置<p>资源组id</p>
+                     * @param _resourceGroupId <p>资源组id</p>
                      * 
                      */
                     void SetResourceGroupId(const std::string& _resourceGroupId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ResourceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取engine session id
-                     * @return EngineSessionId engine session id
+                     * 获取<p>engine session id</p>
+                     * @return EngineSessionId <p>engine session id</p>
                      * 
                      */
                     std::string GetEngineSessionId() const;
 
                     /**
-                     * 设置engine session id
-                     * @param _engineSessionId engine session id
+                     * 设置<p>engine session id</p>
+                     * @param _engineSessionId <p>engine session id</p>
                      * 
                      */
                     void SetEngineSessionId(const std::string& _engineSessionId);
@@ -131,19 +131,15 @@ namespace TencentCloud
                     bool EngineSessionIdHasBeenSet() const;
 
                     /**
-                     * 获取engine session   
-name
-                     * @return EngineSessionName engine session   
-name
+                     * 获取<p>engine session<br>name</p>
+                     * @return EngineSessionName <p>engine session<br>name</p>
                      * 
                      */
                     std::string GetEngineSessionName() const;
 
                     /**
-                     * 设置engine session   
-name
-                     * @param _engineSessionName engine session   
-name
+                     * 设置<p>engine session<br>name</p>
+                     * @param _engineSessionName <p>engine session<br>name</p>
                      * 
                      */
                     void SetEngineSessionName(const std::string& _engineSessionName);
@@ -156,15 +152,15 @@ name
                     bool EngineSessionNameHasBeenSet() const;
 
                     /**
-                     * 获取自动销毁时间
-                     * @return IdleTimeoutMin 自动销毁时间
+                     * 获取<p>自动销毁时间</p>
+                     * @return IdleTimeoutMin <p>自动销毁时间</p>
                      * 
                      */
                     int64_t GetIdleTimeoutMin() const;
 
                     /**
-                     * 设置自动销毁时间
-                     * @param _idleTimeoutMin 自动销毁时间
+                     * 设置<p>自动销毁时间</p>
+                     * @param _idleTimeoutMin <p>自动销毁时间</p>
                      * 
                      */
                     void SetIdleTimeoutMin(const int64_t& _idleTimeoutMin);
@@ -177,15 +173,15 @@ name
                     bool IdleTimeoutMinHasBeenSet() const;
 
                     /**
-                     * 获取driver规格
-                     * @return DriverSpec driver规格
+                     * 获取<p>driver规格</p>
+                     * @return DriverSpec <p>driver规格</p>
                      * 
                      */
                     std::string GetDriverSpec() const;
 
                     /**
-                     * 设置driver规格
-                     * @param _driverSpec driver规格
+                     * 设置<p>driver规格</p>
+                     * @param _driverSpec <p>driver规格</p>
                      * 
                      */
                     void SetDriverSpec(const std::string& _driverSpec);
@@ -198,15 +194,15 @@ name
                     bool DriverSpecHasBeenSet() const;
 
                     /**
-                     * 获取executor规格
-                     * @return ExecutorSpec executor规格
+                     * 获取<p>executor规格</p>
+                     * @return ExecutorSpec <p>executor规格</p>
                      * 
                      */
                     std::string GetExecutorSpec() const;
 
                     /**
-                     * 设置executor规格
-                     * @param _executorSpec executor规格
+                     * 设置<p>executor规格</p>
+                     * @param _executorSpec <p>executor规格</p>
                      * 
                      */
                     void SetExecutorSpec(const std::string& _executorSpec);
@@ -219,15 +215,15 @@ name
                     bool ExecutorSpecHasBeenSet() const;
 
                     /**
-                     * 获取executor最小数量
-                     * @return ExecutorNumMin executor最小数量
+                     * 获取<p>executor最小数量</p>
+                     * @return ExecutorNumMin <p>executor最小数量</p>
                      * 
                      */
                     int64_t GetExecutorNumMin() const;
 
                     /**
-                     * 设置executor最小数量
-                     * @param _executorNumMin executor最小数量
+                     * 设置<p>executor最小数量</p>
+                     * @param _executorNumMin <p>executor最小数量</p>
                      * 
                      */
                     void SetExecutorNumMin(const int64_t& _executorNumMin);
@@ -240,15 +236,15 @@ name
                     bool ExecutorNumMinHasBeenSet() const;
 
                     /**
-                     * 获取executor最大数量
-                     * @return ExecutorNumMax executor最大数量
+                     * 获取<p>executor最大数量</p>
+                     * @return ExecutorNumMax <p>executor最大数量</p>
                      * 
                      */
                     int64_t GetExecutorNumMax() const;
 
                     /**
-                     * 设置executor最大数量
-                     * @param _executorNumMax executor最大数量
+                     * 设置<p>executor最大数量</p>
+                     * @param _executorNumMax <p>executor最大数量</p>
                      * 
                      */
                     void SetExecutorNumMax(const int64_t& _executorNumMax);
@@ -261,15 +257,15 @@ name
                     bool ExecutorNumMaxHasBeenSet() const;
 
                     /**
-                     * 获取总规格最小
-                     * @return TotalSpecMin 总规格最小
+                     * 获取<p>总规格最小</p>
+                     * @return TotalSpecMin <p>总规格最小</p>
                      * 
                      */
                     int64_t GetTotalSpecMin() const;
 
                     /**
-                     * 设置总规格最小
-                     * @param _totalSpecMin 总规格最小
+                     * 设置<p>总规格最小</p>
+                     * @param _totalSpecMin <p>总规格最小</p>
                      * 
                      */
                     void SetTotalSpecMin(const int64_t& _totalSpecMin);
@@ -282,15 +278,15 @@ name
                     bool TotalSpecMinHasBeenSet() const;
 
                     /**
-                     * 获取总规格最大
-                     * @return TotalSpecMax 总规格最大
+                     * 获取<p>总规格最大</p>
+                     * @return TotalSpecMax <p>总规格最大</p>
                      * 
                      */
                     int64_t GetTotalSpecMax() const;
 
                     /**
-                     * 设置总规格最大
-                     * @param _totalSpecMax 总规格最大
+                     * 设置<p>总规格最大</p>
+                     * @param _totalSpecMax <p>总规格最大</p>
                      * 
                      */
                     void SetTotalSpecMax(const int64_t& _totalSpecMax);
@@ -303,15 +299,15 @@ name
                     bool TotalSpecMaxHasBeenSet() const;
 
                     /**
-                     * 获取状态，STARTING、RUNNING、TERMINATED
-                     * @return State 状态，STARTING、RUNNING、TERMINATED
+                     * 获取<p>状态，STARTING、RUNNING、TERMINATED</p>
+                     * @return State <p>状态，STARTING、RUNNING、TERMINATED</p>
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置状态，STARTING、RUNNING、TERMINATED
-                     * @param _state 状态，STARTING、RUNNING、TERMINATED
+                     * 设置<p>状态，STARTING、RUNNING、TERMINATED</p>
+                     * @param _state <p>状态，STARTING、RUNNING、TERMINATED</p>
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -323,86 +319,139 @@ name
                      */
                     bool StateHasBeenSet() const;
 
+                    /**
+                     * 获取<p>应用 ID</p>
+                     * @return ApplicationId <p>应用 ID</p>
+                     * 
+                     */
+                    std::string GetApplicationId() const;
+
+                    /**
+                     * 设置<p>应用 ID</p>
+                     * @param _applicationId <p>应用 ID</p>
+                     * 
+                     */
+                    void SetApplicationId(const std::string& _applicationId);
+
+                    /**
+                     * 判断参数 ApplicationId 是否已赋值
+                     * @return ApplicationId 是否已赋值
+                     * 
+                     */
+                    bool ApplicationIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>应用启动时间</p>
+                     * @return ApplicationStartTime <p>应用启动时间</p>
+                     * 
+                     */
+                    int64_t GetApplicationStartTime() const;
+
+                    /**
+                     * 设置<p>应用启动时间</p>
+                     * @param _applicationStartTime <p>应用启动时间</p>
+                     * 
+                     */
+                    void SetApplicationStartTime(const int64_t& _applicationStartTime);
+
+                    /**
+                     * 判断参数 ApplicationStartTime 是否已赋值
+                     * @return ApplicationStartTime 是否已赋值
+                     * 
+                     */
+                    bool ApplicationStartTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * spark session id
+                     * <p>spark session id</p>
                      */
                     std::string m_sparkSessionId;
                     bool m_sparkSessionIdHasBeenSet;
 
                     /**
-                     * spark session名称
+                     * <p>spark session名称</p>
                      */
                     std::string m_sparkSessionName;
                     bool m_sparkSessionNameHasBeenSet;
 
                     /**
-                     * 资源组id
+                     * <p>资源组id</p>
                      */
                     std::string m_resourceGroupId;
                     bool m_resourceGroupIdHasBeenSet;
 
                     /**
-                     * engine session id
+                     * <p>engine session id</p>
                      */
                     std::string m_engineSessionId;
                     bool m_engineSessionIdHasBeenSet;
 
                     /**
-                     * engine session   
-name
+                     * <p>engine session<br>name</p>
                      */
                     std::string m_engineSessionName;
                     bool m_engineSessionNameHasBeenSet;
 
                     /**
-                     * 自动销毁时间
+                     * <p>自动销毁时间</p>
                      */
                     int64_t m_idleTimeoutMin;
                     bool m_idleTimeoutMinHasBeenSet;
 
                     /**
-                     * driver规格
+                     * <p>driver规格</p>
                      */
                     std::string m_driverSpec;
                     bool m_driverSpecHasBeenSet;
 
                     /**
-                     * executor规格
+                     * <p>executor规格</p>
                      */
                     std::string m_executorSpec;
                     bool m_executorSpecHasBeenSet;
 
                     /**
-                     * executor最小数量
+                     * <p>executor最小数量</p>
                      */
                     int64_t m_executorNumMin;
                     bool m_executorNumMinHasBeenSet;
 
                     /**
-                     * executor最大数量
+                     * <p>executor最大数量</p>
                      */
                     int64_t m_executorNumMax;
                     bool m_executorNumMaxHasBeenSet;
 
                     /**
-                     * 总规格最小
+                     * <p>总规格最小</p>
                      */
                     int64_t m_totalSpecMin;
                     bool m_totalSpecMinHasBeenSet;
 
                     /**
-                     * 总规格最大
+                     * <p>总规格最大</p>
                      */
                     int64_t m_totalSpecMax;
                     bool m_totalSpecMaxHasBeenSet;
 
                     /**
-                     * 状态，STARTING、RUNNING、TERMINATED
+                     * <p>状态，STARTING、RUNNING、TERMINATED</p>
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
+
+                    /**
+                     * <p>应用 ID</p>
+                     */
+                    std::string m_applicationId;
+                    bool m_applicationIdHasBeenSet;
+
+                    /**
+                     * <p>应用启动时间</p>
+                     */
+                    int64_t m_applicationStartTime;
+                    bool m_applicationStartTimeHasBeenSet;
 
                 };
             }

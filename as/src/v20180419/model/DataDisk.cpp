@@ -27,7 +27,8 @@ DataDisk::DataDisk() :
     m_deleteWithInstanceHasBeenSet(false),
     m_encryptHasBeenSet(false),
     m_throughputPerformanceHasBeenSet(false),
-    m_burstPerformanceHasBeenSet(false)
+    m_burstPerformanceHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome DataDisk::Deserialize(const rapidjson::Value &value)
         m_burstPerformanceHasBeenSet = true;
     }
 
+    if (value.HasMember("KmsKeyId") && !value["KmsKeyId"].IsNull())
+    {
+        if (!value["KmsKeyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataDisk.KmsKeyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kmsKeyId = string(value["KmsKeyId"].GetString());
+        m_kmsKeyIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void DataDisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "BurstPerformance";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_burstPerformance, allocator);
+    }
+
+    if (m_kmsKeyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KmsKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kmsKeyId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void DataDisk::SetBurstPerformance(const bool& _burstPerformance)
 bool DataDisk::BurstPerformanceHasBeenSet() const
 {
     return m_burstPerformanceHasBeenSet;
+}
+
+string DataDisk::GetKmsKeyId() const
+{
+    return m_kmsKeyId;
+}
+
+void DataDisk::SetKmsKeyId(const string& _kmsKeyId)
+{
+    m_kmsKeyId = _kmsKeyId;
+    m_kmsKeyIdHasBeenSet = true;
+}
+
+bool DataDisk::KmsKeyIdHasBeenSet() const
+{
+    return m_kmsKeyIdHasBeenSet;
 }
 

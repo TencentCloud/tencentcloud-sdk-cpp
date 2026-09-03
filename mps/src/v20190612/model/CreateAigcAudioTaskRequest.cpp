@@ -29,7 +29,6 @@ CreateAigcAudioTaskRequest::CreateAigcAudioTaskRequest() :
     m_promptHasBeenSet(false),
     m_videoInfosHasBeenSet(false),
     m_audioInfosHasBeenSet(false),
-    m_outputAudioFormatHasBeenSet(false),
     m_storeCosParamHasBeenSet(false),
     m_extraParametersHasBeenSet(false),
     m_additionalParametersHasBeenSet(false),
@@ -104,14 +103,6 @@ string CreateAigcAudioTaskRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_outputAudioFormatHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OutputAudioFormat";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_outputAudioFormat.c_str(), allocator).Move(), allocator);
     }
 
     if (m_storeCosParamHasBeenSet)
@@ -250,22 +241,6 @@ void CreateAigcAudioTaskRequest::SetAudioInfos(const vector<AigcAudioReferenceAu
 bool CreateAigcAudioTaskRequest::AudioInfosHasBeenSet() const
 {
     return m_audioInfosHasBeenSet;
-}
-
-string CreateAigcAudioTaskRequest::GetOutputAudioFormat() const
-{
-    return m_outputAudioFormat;
-}
-
-void CreateAigcAudioTaskRequest::SetOutputAudioFormat(const string& _outputAudioFormat)
-{
-    m_outputAudioFormat = _outputAudioFormat;
-    m_outputAudioFormatHasBeenSet = true;
-}
-
-bool CreateAigcAudioTaskRequest::OutputAudioFormatHasBeenSet() const
-{
-    return m_outputAudioFormatHasBeenSet;
 }
 
 AigcStoreCosParam CreateAigcAudioTaskRequest::GetStoreCosParam() const

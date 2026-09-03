@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志主题 ID
-                     * @return TopicId 日志主题 ID
+                     * 获取<p>日志主题 ID</p>
+                     * @return TopicId <p>日志主题 ID</p>
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题 ID
-                     * @param _topicId 日志主题 ID
+                     * 设置<p>日志主题 ID</p>
+                     * @param _topicId <p>日志主题 ID</p>
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取任务名称
-                     * @return Name 任务名称
+                     * 获取<p>任务名称</p>
+                     * @return Name <p>任务名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置任务名称
-                     * @param _name 任务名称
+                     * 设置<p>任务名称</p>
+                     * @param _name <p>任务名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取目标服务名称
-                     * @return Target 目标服务名称
+                     * 获取<p>目标服务名称</p>
+                     * @return Target <p>目标服务名称</p>
                      * 
                      */
                     std::string GetTarget() const;
 
                     /**
-                     * 设置目标服务名称
-                     * @param _target 目标服务名称
+                     * 设置<p>目标服务名称</p>
+                     * @param _target <p>目标服务名称</p>
                      * 
                      */
                     void SetTarget(const std::string& _target);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool TargetHasBeenSet() const;
 
                     /**
-                     * 获取目标地址
-                     * @return RemoteWriteURL 目标地址
+                     * 获取<p>目标地址</p>
+                     * @return RemoteWriteURL <p>目标地址</p>
                      * 
                      */
                     std::string GetRemoteWriteURL() const;
 
                     /**
-                     * 设置目标地址
-                     * @param _remoteWriteURL 目标地址
+                     * 设置<p>目标地址</p>
+                     * @param _remoteWriteURL <p>目标地址</p>
                      * 
                      */
                     void SetRemoteWriteURL(const std::string& _remoteWriteURL);
@@ -128,27 +128,15 @@ namespace TencentCloud
                     bool RemoteWriteURLHasBeenSet() const;
 
                     /**
-                     * 获取鉴权类型
-0: 无鉴权
-1: basic_auth 
-2: token
-                     * @return AuthType 鉴权类型
-0: 无鉴权
-1: basic_auth 
-2: token
+                     * 获取<p>鉴权类型<br>0: 无鉴权<br>1: basic_auth<br>2: token</p>
+                     * @return AuthType <p>鉴权类型<br>0: 无鉴权<br>1: basic_auth<br>2: token</p>
                      * 
                      */
                     uint64_t GetAuthType() const;
 
                     /**
-                     * 设置鉴权类型
-0: 无鉴权
-1: basic_auth 
-2: token
-                     * @param _authType 鉴权类型
-0: 无鉴权
-1: basic_auth 
-2: token
+                     * 设置<p>鉴权类型<br>0: 无鉴权<br>1: basic_auth<br>2: token</p>
+                     * @param _authType <p>鉴权类型<br>0: 无鉴权<br>1: basic_auth<br>2: token</p>
                      * 
                      */
                     void SetAuthType(const uint64_t& _authType);
@@ -161,15 +149,15 @@ namespace TencentCloud
                     bool AuthTypeHasBeenSet() const;
 
                     /**
-                     * 获取网络类型： 1 内网 2外网
-                     * @return NetType 网络类型： 1 内网 2外网
+                     * 获取<p>网络类型： 1 内网 2外网</p>
+                     * @return NetType <p>网络类型： 1 内网 2外网</p>
                      * 
                      */
                     uint64_t GetNetType() const;
 
                     /**
-                     * 设置网络类型： 1 内网 2外网
-                     * @param _netType 网络类型： 1 内网 2外网
+                     * 设置<p>网络类型： 1 内网 2外网</p>
+                     * @param _netType <p>网络类型： 1 内网 2外网</p>
                      * 
                      */
                     void SetNetType(const uint64_t& _netType);
@@ -182,15 +170,15 @@ namespace TencentCloud
                     bool NetTypeHasBeenSet() const;
 
                     /**
-                     * 获取私有网络id
-                     * @return VpcId 私有网络id
+                     * 获取<p>私有网络id</p>
+                     * @return VpcId <p>私有网络id</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络id
-                     * @param _vpcId 私有网络id
+                     * 设置<p>私有网络id</p>
+                     * @param _vpcId <p>私有网络id</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -203,15 +191,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取鉴权信息
-                     * @return AuthInfo 鉴权信息
+                     * 获取<p>鉴权信息</p>
+                     * @return AuthInfo <p>鉴权信息</p>
                      * 
                      */
                     RemoteWriteAuthInfo GetAuthInfo() const;
 
                     /**
-                     * 设置鉴权信息
-                     * @param _authInfo 鉴权信息
+                     * 设置<p>鉴权信息</p>
+                     * @param _authInfo <p>鉴权信息</p>
                      * 
                      */
                     void SetAuthInfo(const RemoteWriteAuthInfo& _authInfo);
@@ -224,23 +212,15 @@ namespace TencentCloud
                     bool AuthInfoHasBeenSet() const;
 
                     /**
-                     * 获取后端服务类型
-0 CVM
-1025 CLB
-                     * @return VirtualGatewayType 后端服务类型
-0 CVM
-1025 CLB
+                     * 获取<p>后端服务类型<br>0 CVM<br>1025 CLB</p>
+                     * @return VirtualGatewayType <p>后端服务类型<br>0 CVM<br>1025 CLB</p>
                      * 
                      */
                     int64_t GetVirtualGatewayType() const;
 
                     /**
-                     * 设置后端服务类型
-0 CVM
-1025 CLB
-                     * @param _virtualGatewayType 后端服务类型
-0 CVM
-1025 CLB
+                     * 设置<p>后端服务类型<br>0 CVM<br>1025 CLB</p>
+                     * @param _virtualGatewayType <p>后端服务类型<br>0 CVM<br>1025 CLB</p>
                      * 
                      */
                     void SetVirtualGatewayType(const int64_t& _virtualGatewayType);
@@ -252,66 +232,115 @@ namespace TencentCloud
                      */
                     bool VirtualGatewayTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>云时序数据库实例ID</p>
+                     * @return InstanceId <p>云时序数据库实例ID</p>
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置<p>云时序数据库实例ID</p>
+                     * @param _instanceId <p>云时序数据库实例ID</p>
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启投递服务日志。1：关闭，2：开启。 默认值：2</p>
+                     * @return HasServicesLog <p>是否开启投递服务日志。1：关闭，2：开启。 默认值：2</p>
+                     * 
+                     */
+                    uint64_t GetHasServicesLog() const;
+
+                    /**
+                     * 设置<p>是否开启投递服务日志。1：关闭，2：开启。 默认值：2</p>
+                     * @param _hasServicesLog <p>是否开启投递服务日志。1：关闭，2：开启。 默认值：2</p>
+                     * 
+                     */
+                    void SetHasServicesLog(const uint64_t& _hasServicesLog);
+
+                    /**
+                     * 判断参数 HasServicesLog 是否已赋值
+                     * @return HasServicesLog 是否已赋值
+                     * 
+                     */
+                    bool HasServicesLogHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 日志主题 ID
+                     * <p>日志主题 ID</p>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 任务名称
+                     * <p>任务名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 目标服务名称
+                     * <p>目标服务名称</p>
                      */
                     std::string m_target;
                     bool m_targetHasBeenSet;
 
                     /**
-                     * 目标地址
+                     * <p>目标地址</p>
                      */
                     std::string m_remoteWriteURL;
                     bool m_remoteWriteURLHasBeenSet;
 
                     /**
-                     * 鉴权类型
-0: 无鉴权
-1: basic_auth 
-2: token
+                     * <p>鉴权类型<br>0: 无鉴权<br>1: basic_auth<br>2: token</p>
                      */
                     uint64_t m_authType;
                     bool m_authTypeHasBeenSet;
 
                     /**
-                     * 网络类型： 1 内网 2外网
+                     * <p>网络类型： 1 内网 2外网</p>
                      */
                     uint64_t m_netType;
                     bool m_netTypeHasBeenSet;
 
                     /**
-                     * 私有网络id
+                     * <p>私有网络id</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 鉴权信息
+                     * <p>鉴权信息</p>
                      */
                     RemoteWriteAuthInfo m_authInfo;
                     bool m_authInfoHasBeenSet;
 
                     /**
-                     * 后端服务类型
-0 CVM
-1025 CLB
+                     * <p>后端服务类型<br>0 CVM<br>1025 CLB</p>
                      */
                     int64_t m_virtualGatewayType;
                     bool m_virtualGatewayTypeHasBeenSet;
+
+                    /**
+                     * <p>云时序数据库实例ID</p>
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * <p>是否开启投递服务日志。1：关闭，2：开启。 默认值：2</p>
+                     */
+                    uint64_t m_hasServicesLog;
+                    bool m_hasServicesLogHasBeenSet;
 
                 };
             }

@@ -416,6 +416,27 @@ namespace TencentCloud
                      */
                     bool GooseFSVolumesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启日志收集</p>
+                     * @return EnableHistoryServer <p>是否开启日志收集</p>
+                     * 
+                     */
+                    bool GetEnableHistoryServer() const;
+
+                    /**
+                     * 设置<p>是否开启日志收集</p>
+                     * @param _enableHistoryServer <p>是否开启日志收集</p>
+                     * 
+                     */
+                    void SetEnableHistoryServer(const bool& _enableHistoryServer);
+
+                    /**
+                     * 判断参数 EnableHistoryServer 是否已赋值
+                     * @return EnableHistoryServer 是否已赋值
+                     * 
+                     */
+                    bool EnableHistoryServerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -519,6 +540,12 @@ namespace TencentCloud
                      */
                     std::vector<GooseFSVolume> m_gooseFSVolumes;
                     bool m_gooseFSVolumesHasBeenSet;
+
+                    /**
+                     * <p>是否开启日志收集</p>
+                     */
+                    bool m_enableHistoryServer;
+                    bool m_enableHistoryServerHasBeenSet;
 
                 };
             }

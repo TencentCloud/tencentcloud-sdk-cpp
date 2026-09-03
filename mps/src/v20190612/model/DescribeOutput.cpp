@@ -42,7 +42,8 @@ DescribeOutput::DescribeOutput() :
     m_rISTSettingsHasBeenSet(false),
     m_pidSelectorHasBeenSet(false),
     m_streamUrlsHasBeenSet(false),
-    m_streamSelectorHasBeenSet(false)
+    m_streamSelectorHasBeenSet(false),
+    m_stateHasBeenSet(false)
 {
 }
 
@@ -363,6 +364,16 @@ CoreInternalOutcome DescribeOutput::Deserialize(const rapidjson::Value &value)
         m_streamSelectorHasBeenSet = true;
     }
 
+    if (value.HasMember("State") && !value["State"].IsNull())
+    {
+        if (!value["State"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeOutput.State` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_state = string(value["State"].GetString());
+        m_stateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -582,6 +593,14 @@ void DescribeOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_streamSelector.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_stateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "State";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -937,5 +956,21 @@ void DescribeOutput::SetStreamSelector(const StreamSelector& _streamSelector)
 bool DescribeOutput::StreamSelectorHasBeenSet() const
 {
     return m_streamSelectorHasBeenSet;
+}
+
+string DescribeOutput::GetState() const
+{
+    return m_state;
+}
+
+void DescribeOutput::SetState(const string& _state)
+{
+    m_state = _state;
+    m_stateHasBeenSet = true;
+}
+
+bool DescribeOutput::StateHasBeenSet() const
+{
+    return m_stateHasBeenSet;
 }
 

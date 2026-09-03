@@ -26,7 +26,8 @@ CreateRedisBigKeyAnalysisTaskRequest::CreateRedisBigKeyAnalysisTaskRequest() :
     m_instanceIdHasBeenSet(false),
     m_productHasBeenSet(false),
     m_shardIdsHasBeenSet(false),
-    m_keyDelimiterListHasBeenSet(false)
+    m_keyDelimiterListHasBeenSet(false),
+    m_backupIdHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string CreateRedisBigKeyAnalysisTaskRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_backupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -149,6 +158,22 @@ void CreateRedisBigKeyAnalysisTaskRequest::SetKeyDelimiterList(const vector<stri
 bool CreateRedisBigKeyAnalysisTaskRequest::KeyDelimiterListHasBeenSet() const
 {
     return m_keyDelimiterListHasBeenSet;
+}
+
+string CreateRedisBigKeyAnalysisTaskRequest::GetBackupId() const
+{
+    return m_backupId;
+}
+
+void CreateRedisBigKeyAnalysisTaskRequest::SetBackupId(const string& _backupId)
+{
+    m_backupId = _backupId;
+    m_backupIdHasBeenSet = true;
+}
+
+bool CreateRedisBigKeyAnalysisTaskRequest::BackupIdHasBeenSet() const
+{
+    return m_backupIdHasBeenSet;
 }
 
 

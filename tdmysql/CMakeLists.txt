@@ -22,6 +22,7 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/CreateDBInstancesRequest.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyDBInstanceVPortRequest.h
   include/tencentcloud/tdmysql/v20211122/model/ExpandInstanceResponse.h
+  include/tencentcloud/tdmysql/v20211122/model/DescribeStandbyDBInstanceRelationDetailResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeSaleZonesInfo.h
   include/tencentcloud/tdmysql/v20211122/model/BackupMethodStatisticsOutPut.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDatabasesRequest.h
@@ -49,6 +50,7 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/DeleteDBSBackupSetsResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeFlowResponse.h
   include/tencentcloud/tdmysql/v20211122/model/MaintenanceWindowInfo.h
+  include/tencentcloud/tdmysql/v20211122/model/DescribeStandbyDBInstanceRelationDetailRequest.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBSBackupStatisticsDetailResponse.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyDBSBackupSetCommentRequest.h
   include/tencentcloud/tdmysql/v20211122/model/ParamConstraint.h
@@ -80,13 +82,14 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/DescribeDatabaseObjectsRequest.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyMaintenanceWindowRequest.h
   include/tencentcloud/tdmysql/v20211122/model/DestroyInstancesResponse.h
+  include/tencentcloud/tdmysql/v20211122/model/UserInfo.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeSaleInfoResponse.h
   include/tencentcloud/tdmysql/v20211122/model/ResetUserPasswordInfo.h
   include/tencentcloud/tdmysql/v20211122/model/DeleteUsersResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DatabaseTable.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBInstanceDetailRequest.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyAutoRenewFlagResponse.h
-  include/tencentcloud/tdmysql/v20211122/model/DescribeUsersRequest.h
+  include/tencentcloud/tdmysql/v20211122/model/CancelIsolateDBInstancesResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DatabaseView.h
   include/tencentcloud/tdmysql/v20211122/model/DataBackupStatisticsModel.h
   include/tencentcloud/tdmysql/v20211122/model/LogFilter.h
@@ -119,7 +122,7 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBSBackupStatisticsRequest.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeUsersResponse.h
   include/tencentcloud/tdmysql/v20211122/model/LogBackupStatisticsModel.h
-  include/tencentcloud/tdmysql/v20211122/model/CancelIsolateDBInstancesResponse.h
+  include/tencentcloud/tdmysql/v20211122/model/DescribeUsersRequest.h
   include/tencentcloud/tdmysql/v20211122/model/BackupMethodStatisticsModel.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBSBackupPolicyRequest.h
   include/tencentcloud/tdmysql/v20211122/model/UpgradeInstanceResponse.h
@@ -145,17 +148,21 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/DescribeMaintenanceWindowRequest.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeSpecsRequest.h
   include/tencentcloud/tdmysql/v20211122/model/ParamDesc.h
+  include/tencentcloud/tdmysql/v20211122/model/CreateStandbyDBInstanceResponse.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyInstanceNetworkRequest.h
   include/tencentcloud/tdmysql/v20211122/model/BackupPolicyModelInput.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBInstancesResponse.h
   include/tencentcloud/tdmysql/v20211122/model/ConstraintRange.h
-  include/tencentcloud/tdmysql/v20211122/model/UserInfo.h
+  include/tencentcloud/tdmysql/v20211122/model/BreakStandbyDBInstanceRelationRequest.h
+  include/tencentcloud/tdmysql/v20211122/model/CreateStandbyDBInstanceRequest.h
   include/tencentcloud/tdmysql/v20211122/model/RestartDBInstancesRequest.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBSAvailableRecoveryTimeResponse.h
   include/tencentcloud/tdmysql/v20211122/model/TablePrivileges.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeUserPrivilegesRequest.h
+  include/tencentcloud/tdmysql/v20211122/model/StandbyDBInstanceRelation.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBSAvailableRecoveryTimeRequest.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyDBInstanceVPortResponse.h
+  include/tencentcloud/tdmysql/v20211122/model/BreakStandbyDBInstanceRelationResponse.h
   include/tencentcloud/tdmysql/v20211122/model/UpgradeInstanceRequest.h
   include/tencentcloud/tdmysql/v20211122/model/BackupSetModel.h
   include/tencentcloud/tdmysql/v20211122/model/InstanceParam.h
@@ -168,6 +175,7 @@ set(tdmysql_src
   src/v20211122/model/CreateDBInstancesRequest.cpp
   src/v20211122/model/ModifyDBInstanceVPortRequest.cpp
   src/v20211122/model/ExpandInstanceResponse.cpp
+  src/v20211122/model/DescribeStandbyDBInstanceRelationDetailResponse.cpp
   src/v20211122/model/DescribeSaleZonesInfo.cpp
   src/v20211122/model/BackupMethodStatisticsOutPut.cpp
   src/v20211122/model/DescribeDatabasesRequest.cpp
@@ -195,6 +203,7 @@ set(tdmysql_src
   src/v20211122/model/DeleteDBSBackupSetsResponse.cpp
   src/v20211122/model/DescribeFlowResponse.cpp
   src/v20211122/model/MaintenanceWindowInfo.cpp
+  src/v20211122/model/DescribeStandbyDBInstanceRelationDetailRequest.cpp
   src/v20211122/model/DescribeDBSBackupStatisticsDetailResponse.cpp
   src/v20211122/model/ModifyDBSBackupSetCommentRequest.cpp
   src/v20211122/model/ParamConstraint.cpp
@@ -226,13 +235,14 @@ set(tdmysql_src
   src/v20211122/model/DescribeDatabaseObjectsRequest.cpp
   src/v20211122/model/ModifyMaintenanceWindowRequest.cpp
   src/v20211122/model/DestroyInstancesResponse.cpp
+  src/v20211122/model/UserInfo.cpp
   src/v20211122/model/DescribeSaleInfoResponse.cpp
   src/v20211122/model/ResetUserPasswordInfo.cpp
   src/v20211122/model/DeleteUsersResponse.cpp
   src/v20211122/model/DatabaseTable.cpp
   src/v20211122/model/DescribeDBInstanceDetailRequest.cpp
   src/v20211122/model/ModifyAutoRenewFlagResponse.cpp
-  src/v20211122/model/DescribeUsersRequest.cpp
+  src/v20211122/model/CancelIsolateDBInstancesResponse.cpp
   src/v20211122/model/DatabaseView.cpp
   src/v20211122/model/DataBackupStatisticsModel.cpp
   src/v20211122/model/LogFilter.cpp
@@ -265,7 +275,7 @@ set(tdmysql_src
   src/v20211122/model/DescribeDBSBackupStatisticsRequest.cpp
   src/v20211122/model/DescribeUsersResponse.cpp
   src/v20211122/model/LogBackupStatisticsModel.cpp
-  src/v20211122/model/CancelIsolateDBInstancesResponse.cpp
+  src/v20211122/model/DescribeUsersRequest.cpp
   src/v20211122/model/BackupMethodStatisticsModel.cpp
   src/v20211122/model/DescribeDBSBackupPolicyRequest.cpp
   src/v20211122/model/UpgradeInstanceResponse.cpp
@@ -291,17 +301,21 @@ set(tdmysql_src
   src/v20211122/model/DescribeMaintenanceWindowRequest.cpp
   src/v20211122/model/DescribeSpecsRequest.cpp
   src/v20211122/model/ParamDesc.cpp
+  src/v20211122/model/CreateStandbyDBInstanceResponse.cpp
   src/v20211122/model/ModifyInstanceNetworkRequest.cpp
   src/v20211122/model/BackupPolicyModelInput.cpp
   src/v20211122/model/DescribeDBInstancesResponse.cpp
   src/v20211122/model/ConstraintRange.cpp
-  src/v20211122/model/UserInfo.cpp
+  src/v20211122/model/BreakStandbyDBInstanceRelationRequest.cpp
+  src/v20211122/model/CreateStandbyDBInstanceRequest.cpp
   src/v20211122/model/RestartDBInstancesRequest.cpp
   src/v20211122/model/DescribeDBSAvailableRecoveryTimeResponse.cpp
   src/v20211122/model/TablePrivileges.cpp
   src/v20211122/model/DescribeUserPrivilegesRequest.cpp
+  src/v20211122/model/StandbyDBInstanceRelation.cpp
   src/v20211122/model/DescribeDBSAvailableRecoveryTimeRequest.cpp
   src/v20211122/model/ModifyDBInstanceVPortResponse.cpp
+  src/v20211122/model/BreakStandbyDBInstanceRelationResponse.cpp
   src/v20211122/model/UpgradeInstanceRequest.cpp
   src/v20211122/model/BackupSetModel.cpp
   src/v20211122/model/InstanceParam.cpp

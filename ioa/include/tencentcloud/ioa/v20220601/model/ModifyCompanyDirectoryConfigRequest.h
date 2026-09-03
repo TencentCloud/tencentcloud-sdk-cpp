@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ioa/v20220601/model/I18nString.h>
 
 
 namespace TencentCloud
@@ -252,6 +253,27 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>名称多语言</p>
+                     * @return NameI18n <p>名称多语言</p>
+                     * 
+                     */
+                    std::vector<I18nString> GetNameI18n() const;
+
+                    /**
+                     * 设置<p>名称多语言</p>
+                     * @param _nameI18n <p>名称多语言</p>
+                     * 
+                     */
+                    void SetNameI18n(const std::vector<I18nString>& _nameI18n);
+
+                    /**
+                     * 判断参数 NameI18n 是否已赋值
+                     * @return NameI18n 是否已赋值
+                     * 
+                     */
+                    bool NameI18nHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +335,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * <p>名称多语言</p>
+                     */
+                    std::vector<I18nString> m_nameI18n;
+                    bool m_nameI18nHasBeenSet;
 
                 };
             }

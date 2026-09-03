@@ -56,6 +56,7 @@ namespace TencentCloud
 - NodeName 容器节点名称
 - ClusterID 容器集群ID
 - ClusterName 容器集群名称
+- CWPTags 主机标签(值为标签ID,多个取并集,仅AssetType=CWP/TCSS_HOST生效)
                      * @return Filters 过滤条件
 - AssetType 资产类型(CWP 主机安全资产, TCSS_HOST 容器主机节点,TCSS_EKS 容器超级节点)
 - PluginStatus 插件状态(Normal 使用正常,Abnormal 存在异常,Unused 未使用)
@@ -68,6 +69,7 @@ namespace TencentCloud
 - NodeName 容器节点名称
 - ClusterID 容器集群ID
 - ClusterName 容器集群名称
+- CWPTags 主机标签(值为标签ID,多个取并集,仅AssetType=CWP/TCSS_HOST生效)
                      * 
                      */
                     std::vector<Filters> GetFilters() const;
@@ -85,6 +87,7 @@ namespace TencentCloud
 - NodeName 容器节点名称
 - ClusterID 容器集群ID
 - ClusterName 容器集群名称
+- CWPTags 主机标签(值为标签ID,多个取并集,仅AssetType=CWP/TCSS_HOST生效)
                      * @param _filters 过滤条件
 - AssetType 资产类型(CWP 主机安全资产, TCSS_HOST 容器主机节点,TCSS_EKS 容器超级节点)
 - PluginStatus 插件状态(Normal 使用正常,Abnormal 存在异常,Unused 未使用)
@@ -97,6 +100,7 @@ namespace TencentCloud
 - NodeName 容器节点名称
 - ClusterID 容器集群ID
 - ClusterName 容器集群名称
+- CWPTags 主机标签(值为标签ID,多个取并集,仅AssetType=CWP/TCSS_HOST生效)
                      * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
@@ -211,6 +215,7 @@ namespace TencentCloud
 - NodeName 容器节点名称
 - ClusterID 容器集群ID
 - ClusterName 容器集群名称
+- CWPTags 主机标签(值为标签ID,多个取并集,仅AssetType=CWP/TCSS_HOST生效)
                      */
                     std::vector<Filters> m_filters;
                     bool m_filtersHasBeenSet;

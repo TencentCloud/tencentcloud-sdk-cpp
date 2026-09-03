@@ -47,7 +47,10 @@ CreateMcpServerRequest::CreateMcpServerRequest() :
     m_toolConfigsHasBeenSet(false),
     m_wrapPaasIDHasBeenSet(false),
     m_pluginConfigsHasBeenSet(false),
-    m_ignoreHealthCheckHasBeenSet(false)
+    m_ignoreHealthCheckHasBeenSet(false),
+    m_credentialIDHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_requestProtocolTypeHasBeenSet(false)
 {
 }
 
@@ -292,6 +295,30 @@ string CreateMcpServerRequest::ToJsonString() const
         string key = "IgnoreHealthCheck";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ignoreHealthCheck, allocator);
+    }
+
+    if (m_credentialIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CredentialID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_credentialID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requestProtocolTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestProtocolType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_requestProtocolType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -700,6 +727,54 @@ void CreateMcpServerRequest::SetIgnoreHealthCheck(const bool& _ignoreHealthCheck
 bool CreateMcpServerRequest::IgnoreHealthCheckHasBeenSet() const
 {
     return m_ignoreHealthCheckHasBeenSet;
+}
+
+string CreateMcpServerRequest::GetCredentialID() const
+{
+    return m_credentialID;
+}
+
+void CreateMcpServerRequest::SetCredentialID(const string& _credentialID)
+{
+    m_credentialID = _credentialID;
+    m_credentialIDHasBeenSet = true;
+}
+
+bool CreateMcpServerRequest::CredentialIDHasBeenSet() const
+{
+    return m_credentialIDHasBeenSet;
+}
+
+string CreateMcpServerRequest::GetDomain() const
+{
+    return m_domain;
+}
+
+void CreateMcpServerRequest::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool CreateMcpServerRequest::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
+}
+
+string CreateMcpServerRequest::GetRequestProtocolType() const
+{
+    return m_requestProtocolType;
+}
+
+void CreateMcpServerRequest::SetRequestProtocolType(const string& _requestProtocolType)
+{
+    m_requestProtocolType = _requestProtocolType;
+    m_requestProtocolTypeHasBeenSet = true;
+}
+
+bool CreateMcpServerRequest::RequestProtocolTypeHasBeenSet() const
+{
+    return m_requestProtocolTypeHasBeenSet;
 }
 
 

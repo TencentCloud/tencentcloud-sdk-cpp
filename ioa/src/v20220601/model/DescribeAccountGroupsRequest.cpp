@@ -23,6 +23,7 @@ using namespace TencentCloud::Ioa::V20220601::Model;
 using namespace std;
 
 DescribeAccountGroupsRequest::DescribeAccountGroupsRequest() :
+    m_domainInstanceIdHasBeenSet(false),
     m_deepinHasBeenSet(false),
     m_conditionHasBeenSet(false),
     m_parentIdHasBeenSet(false)
@@ -35,6 +36,14 @@ string DescribeAccountGroupsRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_domainInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domainInstanceId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_deepinHasBeenSet)
     {
@@ -68,6 +77,22 @@ string DescribeAccountGroupsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeAccountGroupsRequest::GetDomainInstanceId() const
+{
+    return m_domainInstanceId;
+}
+
+void DescribeAccountGroupsRequest::SetDomainInstanceId(const string& _domainInstanceId)
+{
+    m_domainInstanceId = _domainInstanceId;
+    m_domainInstanceIdHasBeenSet = true;
+}
+
+bool DescribeAccountGroupsRequest::DomainInstanceIdHasBeenSet() const
+{
+    return m_domainInstanceIdHasBeenSet;
+}
 
 int64_t DescribeAccountGroupsRequest::GetDeepin() const
 {

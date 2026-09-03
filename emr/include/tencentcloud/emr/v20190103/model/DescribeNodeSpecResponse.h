@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/DescribeNodeSpec.h>
+#include <tencentcloud/emr/v20190103/model/ArchitectureInfo.h>
 
 
 namespace TencentCloud
@@ -45,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点规格类型
-                     * @return NodeSpecs 节点规格类型
+                     * 获取<p>节点规格类型</p>
+                     * @return NodeSpecs <p>节点规格类型</p>
                      * 
                      */
                     std::vector<DescribeNodeSpec> GetNodeSpecs() const;
@@ -58,13 +59,33 @@ namespace TencentCloud
                      */
                     bool NodeSpecsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>机型架构信息</p>
+                     * @return Architectures <p>机型架构信息</p>
+                     * 
+                     */
+                    std::vector<ArchitectureInfo> GetArchitectures() const;
+
+                    /**
+                     * 判断参数 Architectures 是否已赋值
+                     * @return Architectures 是否已赋值
+                     * 
+                     */
+                    bool ArchitecturesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 节点规格类型
+                     * <p>节点规格类型</p>
                      */
                     std::vector<DescribeNodeSpec> m_nodeSpecs;
                     bool m_nodeSpecsHasBeenSet;
+
+                    /**
+                     * <p>机型架构信息</p>
+                     */
+                    std::vector<ArchitectureInfo> m_architectures;
+                    bool m_architecturesHasBeenSet;
 
                 };
             }

@@ -26,7 +26,8 @@ LoadTaskCreationAttrs::LoadTaskCreationAttrs() :
     m_descriptionHasBeenSet(false),
     m_metadataLoadAttrsHasBeenSet(false),
     m_distributedLoadAttrsHasBeenSet(false),
-    m_reportPathHasBeenSet(false)
+    m_reportPathHasBeenSet(false),
+    m_loadDataAttrsHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,23 @@ CoreInternalOutcome LoadTaskCreationAttrs::Deserialize(const rapidjson::Value &v
         m_reportPathHasBeenSet = true;
     }
 
+    if (value.HasMember("LoadDataAttrs") && !value["LoadDataAttrs"].IsNull())
+    {
+        if (!value["LoadDataAttrs"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadTaskCreationAttrs.LoadDataAttrs` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_loadDataAttrs.Deserialize(value["LoadDataAttrs"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_loadDataAttrsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +182,15 @@ void LoadTaskCreationAttrs::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "ReportPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_reportPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loadDataAttrsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadDataAttrs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_loadDataAttrs.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -263,5 +290,21 @@ void LoadTaskCreationAttrs::SetReportPath(const string& _reportPath)
 bool LoadTaskCreationAttrs::ReportPathHasBeenSet() const
 {
     return m_reportPathHasBeenSet;
+}
+
+LoadDataAttrs LoadTaskCreationAttrs::GetLoadDataAttrs() const
+{
+    return m_loadDataAttrs;
+}
+
+void LoadTaskCreationAttrs::SetLoadDataAttrs(const LoadDataAttrs& _loadDataAttrs)
+{
+    m_loadDataAttrs = _loadDataAttrs;
+    m_loadDataAttrsHasBeenSet = true;
+}
+
+bool LoadTaskCreationAttrs::LoadDataAttrsHasBeenSet() const
+{
+    return m_loadDataAttrsHasBeenSet;
 }
 

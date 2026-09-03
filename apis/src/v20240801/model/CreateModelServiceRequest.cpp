@@ -53,7 +53,9 @@ CreateModelServiceRequest::CreateModelServiceRequest() :
     m_rawCustomModelProtocolConfigHasBeenSet(false),
     m_routeStrategyHasBeenSet(false),
     m_tokenLengthRouteHasBeenSet(false),
-    m_taskComplexityRouteHasBeenSet(false)
+    m_taskComplexityRouteHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_requestProtocolTypeHasBeenSet(false)
 {
 }
 
@@ -354,6 +356,22 @@ string CreateModelServiceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_taskComplexityRoute.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requestProtocolTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestProtocolType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_requestProtocolType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -858,6 +876,38 @@ void CreateModelServiceRequest::SetTaskComplexityRoute(const TaskComplexityRoute
 bool CreateModelServiceRequest::TaskComplexityRouteHasBeenSet() const
 {
     return m_taskComplexityRouteHasBeenSet;
+}
+
+string CreateModelServiceRequest::GetDomain() const
+{
+    return m_domain;
+}
+
+void CreateModelServiceRequest::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
+}
+
+string CreateModelServiceRequest::GetRequestProtocolType() const
+{
+    return m_requestProtocolType;
+}
+
+void CreateModelServiceRequest::SetRequestProtocolType(const string& _requestProtocolType)
+{
+    m_requestProtocolType = _requestProtocolType;
+    m_requestProtocolTypeHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::RequestProtocolTypeHasBeenSet() const
+{
+    return m_requestProtocolTypeHasBeenSet;
 }
 
 

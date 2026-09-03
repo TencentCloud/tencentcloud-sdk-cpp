@@ -29,16 +29,30 @@
 #include <tencentcloud/trro/v20220325/model/BatchDeletePolicyResponse.h>
 #include <tencentcloud/trro/v20220325/model/BoundLicensesRequest.h>
 #include <tencentcloud/trro/v20220325/model/BoundLicensesResponse.h>
+#include <tencentcloud/trro/v20220325/model/CreateBatchVideoAnnotationJobRequest.h>
+#include <tencentcloud/trro/v20220325/model/CreateBatchVideoAnnotationJobResponse.h>
 #include <tencentcloud/trro/v20220325/model/CreateCloudRecordingRequest.h>
 #include <tencentcloud/trro/v20220325/model/CreateCloudRecordingResponse.h>
 #include <tencentcloud/trro/v20220325/model/CreateDeviceRequest.h>
 #include <tencentcloud/trro/v20220325/model/CreateDeviceResponse.h>
 #include <tencentcloud/trro/v20220325/model/CreateProjectRequest.h>
 #include <tencentcloud/trro/v20220325/model/CreateProjectResponse.h>
+#include <tencentcloud/trro/v20220325/model/CreateVideoAnnotationJobRequest.h>
+#include <tencentcloud/trro/v20220325/model/CreateVideoAnnotationJobResponse.h>
+#include <tencentcloud/trro/v20220325/model/DeleteAnnotationJobRequest.h>
+#include <tencentcloud/trro/v20220325/model/DeleteAnnotationJobResponse.h>
+#include <tencentcloud/trro/v20220325/model/DeleteAnnotationTaskRequest.h>
+#include <tencentcloud/trro/v20220325/model/DeleteAnnotationTaskResponse.h>
 #include <tencentcloud/trro/v20220325/model/DeleteCloudRecordingRequest.h>
 #include <tencentcloud/trro/v20220325/model/DeleteCloudRecordingResponse.h>
 #include <tencentcloud/trro/v20220325/model/DeleteProjectRequest.h>
 #include <tencentcloud/trro/v20220325/model/DeleteProjectResponse.h>
+#include <tencentcloud/trro/v20220325/model/DescribeAnnotationJobsRequest.h>
+#include <tencentcloud/trro/v20220325/model/DescribeAnnotationJobsResponse.h>
+#include <tencentcloud/trro/v20220325/model/DescribeAnnotationResultsRequest.h>
+#include <tencentcloud/trro/v20220325/model/DescribeAnnotationResultsResponse.h>
+#include <tencentcloud/trro/v20220325/model/DescribeAnnotationTasksRequest.h>
+#include <tencentcloud/trro/v20220325/model/DescribeAnnotationTasksResponse.h>
 #include <tencentcloud/trro/v20220325/model/DescribeDeviceInfoRequest.h>
 #include <tencentcloud/trro/v20220325/model/DescribeDeviceInfoResponse.h>
 #include <tencentcloud/trro/v20220325/model/DescribeDeviceListRequest.h>
@@ -81,6 +95,8 @@
 #include <tencentcloud/trro/v20220325/model/ModifyProjectResponse.h>
 #include <tencentcloud/trro/v20220325/model/ModifyProjectSecModeRequest.h>
 #include <tencentcloud/trro/v20220325/model/ModifyProjectSecModeResponse.h>
+#include <tencentcloud/trro/v20220325/model/RetryAnnotationTaskRequest.h>
+#include <tencentcloud/trro/v20220325/model/RetryAnnotationTaskResponse.h>
 #include <tencentcloud/trro/v20220325/model/StartPublishLiveStreamRequest.h>
 #include <tencentcloud/trro/v20220325/model/StartPublishLiveStreamResponse.h>
 #include <tencentcloud/trro/v20220325/model/StopPublishLiveStreamRequest.h>
@@ -108,6 +124,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BoundLicensesResponse> BoundLicensesOutcome;
                 typedef std::future<BoundLicensesOutcome> BoundLicensesOutcomeCallable;
                 typedef std::function<void(const TrroClient*, const Model::BoundLicensesRequest&, BoundLicensesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BoundLicensesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBatchVideoAnnotationJobResponse> CreateBatchVideoAnnotationJobOutcome;
+                typedef std::future<CreateBatchVideoAnnotationJobOutcome> CreateBatchVideoAnnotationJobOutcomeCallable;
+                typedef std::function<void(const TrroClient*, const Model::CreateBatchVideoAnnotationJobRequest&, CreateBatchVideoAnnotationJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchVideoAnnotationJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCloudRecordingResponse> CreateCloudRecordingOutcome;
                 typedef std::future<CreateCloudRecordingOutcome> CreateCloudRecordingOutcomeCallable;
                 typedef std::function<void(const TrroClient*, const Model::CreateCloudRecordingRequest&, CreateCloudRecordingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudRecordingAsyncHandler;
@@ -117,12 +136,30 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateProjectResponse> CreateProjectOutcome;
                 typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
                 typedef std::function<void(const TrroClient*, const Model::CreateProjectRequest&, CreateProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVideoAnnotationJobResponse> CreateVideoAnnotationJobOutcome;
+                typedef std::future<CreateVideoAnnotationJobOutcome> CreateVideoAnnotationJobOutcomeCallable;
+                typedef std::function<void(const TrroClient*, const Model::CreateVideoAnnotationJobRequest&, CreateVideoAnnotationJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoAnnotationJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAnnotationJobResponse> DeleteAnnotationJobOutcome;
+                typedef std::future<DeleteAnnotationJobOutcome> DeleteAnnotationJobOutcomeCallable;
+                typedef std::function<void(const TrroClient*, const Model::DeleteAnnotationJobRequest&, DeleteAnnotationJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAnnotationJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAnnotationTaskResponse> DeleteAnnotationTaskOutcome;
+                typedef std::future<DeleteAnnotationTaskOutcome> DeleteAnnotationTaskOutcomeCallable;
+                typedef std::function<void(const TrroClient*, const Model::DeleteAnnotationTaskRequest&, DeleteAnnotationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAnnotationTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCloudRecordingResponse> DeleteCloudRecordingOutcome;
                 typedef std::future<DeleteCloudRecordingOutcome> DeleteCloudRecordingOutcomeCallable;
                 typedef std::function<void(const TrroClient*, const Model::DeleteCloudRecordingRequest&, DeleteCloudRecordingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudRecordingAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteProjectResponse> DeleteProjectOutcome;
                 typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
                 typedef std::function<void(const TrroClient*, const Model::DeleteProjectRequest&, DeleteProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAnnotationJobsResponse> DescribeAnnotationJobsOutcome;
+                typedef std::future<DescribeAnnotationJobsOutcome> DescribeAnnotationJobsOutcomeCallable;
+                typedef std::function<void(const TrroClient*, const Model::DescribeAnnotationJobsRequest&, DescribeAnnotationJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAnnotationJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAnnotationResultsResponse> DescribeAnnotationResultsOutcome;
+                typedef std::future<DescribeAnnotationResultsOutcome> DescribeAnnotationResultsOutcomeCallable;
+                typedef std::function<void(const TrroClient*, const Model::DescribeAnnotationResultsRequest&, DescribeAnnotationResultsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAnnotationResultsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAnnotationTasksResponse> DescribeAnnotationTasksOutcome;
+                typedef std::future<DescribeAnnotationTasksOutcome> DescribeAnnotationTasksOutcomeCallable;
+                typedef std::function<void(const TrroClient*, const Model::DescribeAnnotationTasksRequest&, DescribeAnnotationTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAnnotationTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceInfoResponse> DescribeDeviceInfoOutcome;
                 typedef std::future<DescribeDeviceInfoOutcome> DescribeDeviceInfoOutcomeCallable;
                 typedef std::function<void(const TrroClient*, const Model::DescribeDeviceInfoRequest&, DescribeDeviceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceInfoAsyncHandler;
@@ -186,6 +223,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyProjectSecModeResponse> ModifyProjectSecModeOutcome;
                 typedef std::future<ModifyProjectSecModeOutcome> ModifyProjectSecModeOutcomeCallable;
                 typedef std::function<void(const TrroClient*, const Model::ModifyProjectSecModeRequest&, ModifyProjectSecModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProjectSecModeAsyncHandler;
+                typedef Outcome<Core::Error, Model::RetryAnnotationTaskResponse> RetryAnnotationTaskOutcome;
+                typedef std::future<RetryAnnotationTaskOutcome> RetryAnnotationTaskOutcomeCallable;
+                typedef std::function<void(const TrroClient*, const Model::RetryAnnotationTaskRequest&, RetryAnnotationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetryAnnotationTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartPublishLiveStreamResponse> StartPublishLiveStreamOutcome;
                 typedef std::future<StartPublishLiveStreamOutcome> StartPublishLiveStreamOutcomeCallable;
                 typedef std::function<void(const TrroClient*, const Model::StartPublishLiveStreamRequest&, StartPublishLiveStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartPublishLiveStreamAsyncHandler;
@@ -223,6 +263,15 @@ namespace TencentCloud
                 BoundLicensesOutcomeCallable BoundLicensesCallable(const Model::BoundLicensesRequest& request);
 
                 /**
+                 *提交S3兼容存储桶数据源的目录前缀创建批量标注任务。创建后，服务端异步列举前缀下全部视频逐个建立处理项（受配额上限控制，超限截断）。
+                 * @param req CreateBatchVideoAnnotationJobRequest
+                 * @return CreateBatchVideoAnnotationJobOutcome
+                 */
+                CreateBatchVideoAnnotationJobOutcome CreateBatchVideoAnnotationJob(const Model::CreateBatchVideoAnnotationJobRequest &request);
+                void CreateBatchVideoAnnotationJobAsync(const Model::CreateBatchVideoAnnotationJobRequest& request, const CreateBatchVideoAnnotationJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBatchVideoAnnotationJobOutcomeCallable CreateBatchVideoAnnotationJobCallable(const Model::CreateBatchVideoAnnotationJobRequest& request);
+
+                /**
                  *启动云端录制功能，完成房间内的音视频录制，并上传到指定的云存储。
                  * @param req CreateCloudRecordingRequest
                  * @return CreateCloudRecordingOutcome
@@ -250,6 +299,33 @@ namespace TencentCloud
                 CreateProjectOutcomeCallable CreateProjectCallable(const Model::CreateProjectRequest& request);
 
                 /**
+                 *提交单个视频创建标注任务。支持 S3兼容 存储与 HTTP URL 两种输入源；通过后任务异步执行。
+                 * @param req CreateVideoAnnotationJobRequest
+                 * @return CreateVideoAnnotationJobOutcome
+                 */
+                CreateVideoAnnotationJobOutcome CreateVideoAnnotationJob(const Model::CreateVideoAnnotationJobRequest &request);
+                void CreateVideoAnnotationJobAsync(const Model::CreateVideoAnnotationJobRequest& request, const CreateVideoAnnotationJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVideoAnnotationJobOutcomeCallable CreateVideoAnnotationJobCallable(const Model::CreateVideoAnnotationJobRequest& request);
+
+                /**
+                 *删除整个任务并级联删除其全部处理项。
+                 * @param req DeleteAnnotationJobRequest
+                 * @return DeleteAnnotationJobOutcome
+                 */
+                DeleteAnnotationJobOutcome DeleteAnnotationJob(const Model::DeleteAnnotationJobRequest &request);
+                void DeleteAnnotationJobAsync(const Model::DeleteAnnotationJobRequest& request, const DeleteAnnotationJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAnnotationJobOutcomeCallable DeleteAnnotationJobCallable(const Model::DeleteAnnotationJobRequest& request);
+
+                /**
+                 *删除任务下的单个处理项。
+                 * @param req DeleteAnnotationTaskRequest
+                 * @return DeleteAnnotationTaskOutcome
+                 */
+                DeleteAnnotationTaskOutcome DeleteAnnotationTask(const Model::DeleteAnnotationTaskRequest &request);
+                void DeleteAnnotationTaskAsync(const Model::DeleteAnnotationTaskRequest& request, const DeleteAnnotationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAnnotationTaskOutcomeCallable DeleteAnnotationTaskCallable(const Model::DeleteAnnotationTaskRequest& request);
+
+                /**
                  *成功开启录制后，可以使用此接口来停止录制任务。停止录制成功后不代表文件全部传输完成，如果未完成后台将会继续上传文件，成功后通过事件回调通知客户文件全部传输完成状态。
                  * @param req DeleteCloudRecordingRequest
                  * @return DeleteCloudRecordingOutcome
@@ -266,6 +342,33 @@ namespace TencentCloud
                 DeleteProjectOutcome DeleteProject(const Model::DeleteProjectRequest &request);
                 void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteProjectOutcomeCallable DeleteProjectCallable(const Model::DeleteProjectRequest& request);
+
+                /**
+                 *分页查询当前用户的任务列表，支持按状态、输入路径前缀过滤。注意任务的聚合状态由后台周期刷新，处理项全部完成后任务状态有短暂延迟。
+                 * @param req DescribeAnnotationJobsRequest
+                 * @return DescribeAnnotationJobsOutcome
+                 */
+                DescribeAnnotationJobsOutcome DescribeAnnotationJobs(const Model::DescribeAnnotationJobsRequest &request);
+                void DescribeAnnotationJobsAsync(const Model::DescribeAnnotationJobsRequest& request, const DescribeAnnotationJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAnnotationJobsOutcomeCallable DescribeAnnotationJobsCallable(const Model::DescribeAnnotationJobsRequest& request);
+
+                /**
+                 *查询单个处理项的标注结果详情，返回结果的完整 JSON 原文。仅处理成功（或需确认场景）返回内容。
+                 * @param req DescribeAnnotationResultsRequest
+                 * @return DescribeAnnotationResultsOutcome
+                 */
+                DescribeAnnotationResultsOutcome DescribeAnnotationResults(const Model::DescribeAnnotationResultsRequest &request);
+                void DescribeAnnotationResultsAsync(const Model::DescribeAnnotationResultsRequest& request, const DescribeAnnotationResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAnnotationResultsOutcomeCallable DescribeAnnotationResultsCallable(const Model::DescribeAnnotationResultsRequest& request);
+
+                /**
+                 *分页查询某任务下的处理项列表（每个视频一项），支持按文件名前缀、状态过滤。
+                 * @param req DescribeAnnotationTasksRequest
+                 * @return DescribeAnnotationTasksOutcome
+                 */
+                DescribeAnnotationTasksOutcome DescribeAnnotationTasks(const Model::DescribeAnnotationTasksRequest &request);
+                void DescribeAnnotationTasksAsync(const Model::DescribeAnnotationTasksRequest& request, const DescribeAnnotationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAnnotationTasksOutcomeCallable DescribeAnnotationTasksCallable(const Model::DescribeAnnotationTasksRequest& request);
 
                 /**
                  *用于获取指定设备信息
@@ -459,6 +562,15 @@ namespace TencentCloud
                 ModifyProjectSecModeOutcome ModifyProjectSecMode(const Model::ModifyProjectSecModeRequest &request);
                 void ModifyProjectSecModeAsync(const Model::ModifyProjectSecModeRequest& request, const ModifyProjectSecModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyProjectSecModeOutcomeCallable ModifyProjectSecModeCallable(const Model::ModifyProjectSecModeRequest& request);
+
+                /**
+                 *重跑超时或异常的处理项：重置回未处理状态重新等待执行，所属任务若为异常态自动恢复为处理中。其余状态不可重试。
+                 * @param req RetryAnnotationTaskRequest
+                 * @return RetryAnnotationTaskOutcome
+                 */
+                RetryAnnotationTaskOutcome RetryAnnotationTask(const Model::RetryAnnotationTaskRequest &request);
+                void RetryAnnotationTaskAsync(const Model::RetryAnnotationTaskRequest& request, const RetryAnnotationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RetryAnnotationTaskOutcomeCallable RetryAnnotationTaskCallable(const Model::RetryAnnotationTaskRequest& request);
 
                 /**
                  *启动一个混流转推任务，将 TRTC 房间的多路音视频流混成一路音视频流，编码后推到直播 CDN 或者回推到 TRTC 房间。也支持不转码直接转推 TRTC 房间的单路流。启动成功后，会返回一个 SdkAppid 维度唯一的任务 Id（TaskId）。您需要保存该 TaskId，后续需要依赖此 TaskId 更新和结束任务。

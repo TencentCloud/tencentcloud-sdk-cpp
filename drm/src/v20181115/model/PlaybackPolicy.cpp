@@ -22,7 +22,8 @@ using namespace std;
 
 PlaybackPolicy::PlaybackPolicy() :
     m_licenseDurationSecondsHasBeenSet(false),
-    m_playbackDurationSecondsHasBeenSet(false)
+    m_playbackDurationSecondsHasBeenSet(false),
+    m_canPersistentHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome PlaybackPolicy::Deserialize(const rapidjson::Value &value)
         m_playbackDurationSecondsHasBeenSet = true;
     }
 
+    if (value.HasMember("CanPersistent") && !value["CanPersistent"].IsNull())
+    {
+        if (!value["CanPersistent"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `PlaybackPolicy.CanPersistent` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_canPersistent = value["CanPersistent"].GetBool();
+        m_canPersistentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void PlaybackPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "PlaybackDurationSeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_playbackDurationSeconds, allocator);
+    }
+
+    if (m_canPersistentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanPersistent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_canPersistent, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void PlaybackPolicy::SetPlaybackDurationSeconds(const uint64_t& _playbackDuratio
 bool PlaybackPolicy::PlaybackDurationSecondsHasBeenSet() const
 {
     return m_playbackDurationSecondsHasBeenSet;
+}
+
+bool PlaybackPolicy::GetCanPersistent() const
+{
+    return m_canPersistent;
+}
+
+void PlaybackPolicy::SetCanPersistent(const bool& _canPersistent)
+{
+    m_canPersistent = _canPersistent;
+    m_canPersistentHasBeenSet = true;
+}
+
+bool PlaybackPolicy::CanPersistentHasBeenSet() const
+{
+    return m_canPersistentHasBeenSet;
 }
 

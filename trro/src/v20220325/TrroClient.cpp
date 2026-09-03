@@ -190,6 +190,56 @@ TrroClient::BoundLicensesOutcomeCallable TrroClient::BoundLicensesCallable(const
     return prom->get_future();
 }
 
+TrroClient::CreateBatchVideoAnnotationJobOutcome TrroClient::CreateBatchVideoAnnotationJob(const CreateBatchVideoAnnotationJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBatchVideoAnnotationJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBatchVideoAnnotationJobResponse rsp = CreateBatchVideoAnnotationJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBatchVideoAnnotationJobOutcome(rsp);
+        else
+            return CreateBatchVideoAnnotationJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBatchVideoAnnotationJobOutcome(outcome.GetError());
+    }
+}
+
+void TrroClient::CreateBatchVideoAnnotationJobAsync(const CreateBatchVideoAnnotationJobRequest& request, const CreateBatchVideoAnnotationJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateBatchVideoAnnotationJobRequest&;
+    using Resp = CreateBatchVideoAnnotationJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateBatchVideoAnnotationJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrroClient::CreateBatchVideoAnnotationJobOutcomeCallable TrroClient::CreateBatchVideoAnnotationJobCallable(const CreateBatchVideoAnnotationJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateBatchVideoAnnotationJobOutcome>>();
+    CreateBatchVideoAnnotationJobAsync(
+    request,
+    [prom](
+        const TrroClient*,
+        const CreateBatchVideoAnnotationJobRequest&,
+        CreateBatchVideoAnnotationJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TrroClient::CreateCloudRecordingOutcome TrroClient::CreateCloudRecording(const CreateCloudRecordingRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCloudRecording");
@@ -340,6 +390,156 @@ TrroClient::CreateProjectOutcomeCallable TrroClient::CreateProjectCallable(const
     return prom->get_future();
 }
 
+TrroClient::CreateVideoAnnotationJobOutcome TrroClient::CreateVideoAnnotationJob(const CreateVideoAnnotationJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVideoAnnotationJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVideoAnnotationJobResponse rsp = CreateVideoAnnotationJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVideoAnnotationJobOutcome(rsp);
+        else
+            return CreateVideoAnnotationJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVideoAnnotationJobOutcome(outcome.GetError());
+    }
+}
+
+void TrroClient::CreateVideoAnnotationJobAsync(const CreateVideoAnnotationJobRequest& request, const CreateVideoAnnotationJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateVideoAnnotationJobRequest&;
+    using Resp = CreateVideoAnnotationJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateVideoAnnotationJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrroClient::CreateVideoAnnotationJobOutcomeCallable TrroClient::CreateVideoAnnotationJobCallable(const CreateVideoAnnotationJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateVideoAnnotationJobOutcome>>();
+    CreateVideoAnnotationJobAsync(
+    request,
+    [prom](
+        const TrroClient*,
+        const CreateVideoAnnotationJobRequest&,
+        CreateVideoAnnotationJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrroClient::DeleteAnnotationJobOutcome TrroClient::DeleteAnnotationJob(const DeleteAnnotationJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAnnotationJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAnnotationJobResponse rsp = DeleteAnnotationJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAnnotationJobOutcome(rsp);
+        else
+            return DeleteAnnotationJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAnnotationJobOutcome(outcome.GetError());
+    }
+}
+
+void TrroClient::DeleteAnnotationJobAsync(const DeleteAnnotationJobRequest& request, const DeleteAnnotationJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAnnotationJobRequest&;
+    using Resp = DeleteAnnotationJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAnnotationJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrroClient::DeleteAnnotationJobOutcomeCallable TrroClient::DeleteAnnotationJobCallable(const DeleteAnnotationJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAnnotationJobOutcome>>();
+    DeleteAnnotationJobAsync(
+    request,
+    [prom](
+        const TrroClient*,
+        const DeleteAnnotationJobRequest&,
+        DeleteAnnotationJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrroClient::DeleteAnnotationTaskOutcome TrroClient::DeleteAnnotationTask(const DeleteAnnotationTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAnnotationTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAnnotationTaskResponse rsp = DeleteAnnotationTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAnnotationTaskOutcome(rsp);
+        else
+            return DeleteAnnotationTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAnnotationTaskOutcome(outcome.GetError());
+    }
+}
+
+void TrroClient::DeleteAnnotationTaskAsync(const DeleteAnnotationTaskRequest& request, const DeleteAnnotationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAnnotationTaskRequest&;
+    using Resp = DeleteAnnotationTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAnnotationTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrroClient::DeleteAnnotationTaskOutcomeCallable TrroClient::DeleteAnnotationTaskCallable(const DeleteAnnotationTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAnnotationTaskOutcome>>();
+    DeleteAnnotationTaskAsync(
+    request,
+    [prom](
+        const TrroClient*,
+        const DeleteAnnotationTaskRequest&,
+        DeleteAnnotationTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TrroClient::DeleteCloudRecordingOutcome TrroClient::DeleteCloudRecording(const DeleteCloudRecordingRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCloudRecording");
@@ -432,6 +632,156 @@ TrroClient::DeleteProjectOutcomeCallable TrroClient::DeleteProjectCallable(const
         const TrroClient*,
         const DeleteProjectRequest&,
         DeleteProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrroClient::DescribeAnnotationJobsOutcome TrroClient::DescribeAnnotationJobs(const DescribeAnnotationJobsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAnnotationJobs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAnnotationJobsResponse rsp = DescribeAnnotationJobsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAnnotationJobsOutcome(rsp);
+        else
+            return DescribeAnnotationJobsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAnnotationJobsOutcome(outcome.GetError());
+    }
+}
+
+void TrroClient::DescribeAnnotationJobsAsync(const DescribeAnnotationJobsRequest& request, const DescribeAnnotationJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAnnotationJobsRequest&;
+    using Resp = DescribeAnnotationJobsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAnnotationJobs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrroClient::DescribeAnnotationJobsOutcomeCallable TrroClient::DescribeAnnotationJobsCallable(const DescribeAnnotationJobsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAnnotationJobsOutcome>>();
+    DescribeAnnotationJobsAsync(
+    request,
+    [prom](
+        const TrroClient*,
+        const DescribeAnnotationJobsRequest&,
+        DescribeAnnotationJobsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrroClient::DescribeAnnotationResultsOutcome TrroClient::DescribeAnnotationResults(const DescribeAnnotationResultsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAnnotationResults");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAnnotationResultsResponse rsp = DescribeAnnotationResultsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAnnotationResultsOutcome(rsp);
+        else
+            return DescribeAnnotationResultsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAnnotationResultsOutcome(outcome.GetError());
+    }
+}
+
+void TrroClient::DescribeAnnotationResultsAsync(const DescribeAnnotationResultsRequest& request, const DescribeAnnotationResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAnnotationResultsRequest&;
+    using Resp = DescribeAnnotationResultsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAnnotationResults", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrroClient::DescribeAnnotationResultsOutcomeCallable TrroClient::DescribeAnnotationResultsCallable(const DescribeAnnotationResultsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAnnotationResultsOutcome>>();
+    DescribeAnnotationResultsAsync(
+    request,
+    [prom](
+        const TrroClient*,
+        const DescribeAnnotationResultsRequest&,
+        DescribeAnnotationResultsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrroClient::DescribeAnnotationTasksOutcome TrroClient::DescribeAnnotationTasks(const DescribeAnnotationTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAnnotationTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAnnotationTasksResponse rsp = DescribeAnnotationTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAnnotationTasksOutcome(rsp);
+        else
+            return DescribeAnnotationTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAnnotationTasksOutcome(outcome.GetError());
+    }
+}
+
+void TrroClient::DescribeAnnotationTasksAsync(const DescribeAnnotationTasksRequest& request, const DescribeAnnotationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAnnotationTasksRequest&;
+    using Resp = DescribeAnnotationTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAnnotationTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrroClient::DescribeAnnotationTasksOutcomeCallable TrroClient::DescribeAnnotationTasksCallable(const DescribeAnnotationTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAnnotationTasksOutcome>>();
+    DescribeAnnotationTasksAsync(
+    request,
+    [prom](
+        const TrroClient*,
+        const DescribeAnnotationTasksRequest&,
+        DescribeAnnotationTasksOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1482,6 +1832,56 @@ TrroClient::ModifyProjectSecModeOutcomeCallable TrroClient::ModifyProjectSecMode
         const TrroClient*,
         const ModifyProjectSecModeRequest&,
         ModifyProjectSecModeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrroClient::RetryAnnotationTaskOutcome TrroClient::RetryAnnotationTask(const RetryAnnotationTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "RetryAnnotationTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RetryAnnotationTaskResponse rsp = RetryAnnotationTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RetryAnnotationTaskOutcome(rsp);
+        else
+            return RetryAnnotationTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return RetryAnnotationTaskOutcome(outcome.GetError());
+    }
+}
+
+void TrroClient::RetryAnnotationTaskAsync(const RetryAnnotationTaskRequest& request, const RetryAnnotationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RetryAnnotationTaskRequest&;
+    using Resp = RetryAnnotationTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RetryAnnotationTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrroClient::RetryAnnotationTaskOutcomeCallable TrroClient::RetryAnnotationTaskCallable(const RetryAnnotationTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RetryAnnotationTaskOutcome>>();
+    RetryAnnotationTaskAsync(
+    request,
+    [prom](
+        const TrroClient*,
+        const RetryAnnotationTaskRequest&,
+        RetryAnnotationTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

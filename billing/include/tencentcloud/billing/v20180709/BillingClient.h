@@ -47,6 +47,8 @@
 #include <tencentcloud/billing/v20180709/model/DeleteGatherRuleResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAccountBalanceRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAccountBalanceResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAccountWarningRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAccountWarningResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAllocateConditionsRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAllocateConditionsResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAllocationBillConditionsRequest.h>
@@ -145,6 +147,8 @@
 #include <tencentcloud/billing/v20180709/model/DescribeVoucherInfoResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeVoucherUsageDetailsRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeVoucherUsageDetailsResponse.h>
+#include <tencentcloud/billing/v20180709/model/ModifyAccountWarningRequest.h>
+#include <tencentcloud/billing/v20180709/model/ModifyAccountWarningResponse.h>
 #include <tencentcloud/billing/v20180709/model/ModifyAllocationRuleRequest.h>
 #include <tencentcloud/billing/v20180709/model/ModifyAllocationRuleResponse.h>
 #include <tencentcloud/billing/v20180709/model/ModifyAllocationUnitRequest.h>
@@ -211,6 +215,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccountBalanceResponse> DescribeAccountBalanceOutcome;
                 typedef std::future<DescribeAccountBalanceOutcome> DescribeAccountBalanceOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeAccountBalanceRequest&, DescribeAccountBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountBalanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAccountWarningResponse> DescribeAccountWarningOutcome;
+                typedef std::future<DescribeAccountWarningOutcome> DescribeAccountWarningOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeAccountWarningRequest&, DescribeAccountWarningOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountWarningAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAllocateConditionsResponse> DescribeAllocateConditionsOutcome;
                 typedef std::future<DescribeAllocateConditionsOutcome> DescribeAllocateConditionsOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeAllocateConditionsRequest&, DescribeAllocateConditionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllocateConditionsAsyncHandler;
@@ -358,6 +365,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVoucherUsageDetailsResponse> DescribeVoucherUsageDetailsOutcome;
                 typedef std::future<DescribeVoucherUsageDetailsOutcome> DescribeVoucherUsageDetailsOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeVoucherUsageDetailsRequest&, DescribeVoucherUsageDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVoucherUsageDetailsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAccountWarningResponse> ModifyAccountWarningOutcome;
+                typedef std::future<ModifyAccountWarningOutcome> ModifyAccountWarningOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::ModifyAccountWarningRequest&, ModifyAccountWarningOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountWarningAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAllocationRuleResponse> ModifyAllocationRuleOutcome;
                 typedef std::future<ModifyAllocationRuleOutcome> ModifyAllocationRuleOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::ModifyAllocationRuleRequest&, ModifyAllocationRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAllocationRuleAsyncHandler;
@@ -492,6 +502,15 @@ namespace TencentCloud
                 DescribeAccountBalanceOutcome DescribeAccountBalance(const Model::DescribeAccountBalanceRequest &request);
                 void DescribeAccountBalanceAsync(const Model::DescribeAccountBalanceRequest& request, const DescribeAccountBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAccountBalanceOutcomeCallable DescribeAccountBalanceCallable(const Model::DescribeAccountBalanceRequest& request);
+
+                /**
+                 *云api查余额告警阈值接口，支持传入uin
+                 * @param req DescribeAccountWarningRequest
+                 * @return DescribeAccountWarningOutcome
+                 */
+                DescribeAccountWarningOutcome DescribeAccountWarning(const Model::DescribeAccountWarningRequest &request);
+                void DescribeAccountWarningAsync(const Model::DescribeAccountWarningRequest& request, const DescribeAccountWarningAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccountWarningOutcomeCallable DescribeAccountWarningCallable(const Model::DescribeAccountWarningRequest& request);
 
                 /**
                  *查询资源目录筛选条件
@@ -942,6 +961,15 @@ namespace TencentCloud
                 DescribeVoucherUsageDetailsOutcome DescribeVoucherUsageDetails(const Model::DescribeVoucherUsageDetailsRequest &request);
                 void DescribeVoucherUsageDetailsAsync(const Model::DescribeVoucherUsageDetailsRequest& request, const DescribeVoucherUsageDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVoucherUsageDetailsOutcomeCallable DescribeVoucherUsageDetailsCallable(const Model::DescribeVoucherUsageDetailsRequest& request);
+
+                /**
+                 *云api设置余额告警阈值接口
+                 * @param req ModifyAccountWarningRequest
+                 * @return ModifyAccountWarningOutcome
+                 */
+                ModifyAccountWarningOutcome ModifyAccountWarning(const Model::ModifyAccountWarningRequest &request);
+                void ModifyAccountWarningAsync(const Model::ModifyAccountWarningRequest& request, const ModifyAccountWarningAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAccountWarningOutcomeCallable ModifyAccountWarningCallable(const Model::ModifyAccountWarningRequest& request);
 
                 /**
                  *编辑公摊规则

@@ -588,6 +588,48 @@ namespace TencentCloud
                      */
                     bool IsGpuInstanceHasBeenSet() const;
 
+                    /**
+                     * 获取<p>K8S场景GPU资源定义</p>
+                     * @return GpuResourceKey <p>K8S场景GPU资源定义</p>
+                     * 
+                     */
+                    std::string GetGpuResourceKey() const;
+
+                    /**
+                     * 设置<p>K8S场景GPU资源定义</p>
+                     * @param _gpuResourceKey <p>K8S场景GPU资源定义</p>
+                     * 
+                     */
+                    void SetGpuResourceKey(const std::string& _gpuResourceKey);
+
+                    /**
+                     * 判断参数 GpuResourceKey 是否已赋值
+                     * @return GpuResourceKey 是否已赋值
+                     * 
+                     */
+                    bool GpuResourceKeyHasBeenSet() const;
+
+                    /**
+                     * 获取<p>GPU卡数</p>
+                     * @return GpuNum <p>GPU卡数</p>
+                     * 
+                     */
+                    int64_t GetGpuNum() const;
+
+                    /**
+                     * 设置<p>GPU卡数</p>
+                     * @param _gpuNum <p>GPU卡数</p>
+                     * 
+                     */
+                    void SetGpuNum(const int64_t& _gpuNum);
+
+                    /**
+                     * 判断参数 GpuNum 是否已赋值
+                     * @return GpuNum 是否已赋值
+                     * 
+                     */
+                    bool GpuNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -743,6 +785,18 @@ namespace TencentCloud
                      */
                     bool m_isGpuInstance;
                     bool m_isGpuInstanceHasBeenSet;
+
+                    /**
+                     * <p>K8S场景GPU资源定义</p>
+                     */
+                    std::string m_gpuResourceKey;
+                    bool m_gpuResourceKeyHasBeenSet;
+
+                    /**
+                     * <p>GPU卡数</p>
+                     */
+                    int64_t m_gpuNum;
+                    bool m_gpuNumHasBeenSet;
 
                 };
             }

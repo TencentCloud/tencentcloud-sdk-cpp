@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志上下文信息集合
-                     * @return LogContextInfos 日志上下文信息集合
+                     * 获取<p>日志上下文信息集合</p>
+                     * @return LogContextInfos <p>日志上下文信息集合</p>
                      * 
                      */
                     std::vector<LogContextInfo> GetLogContextInfos() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool LogContextInfosHasBeenSet() const;
 
                     /**
-                     * 获取上文日志是否已经返回完成（当PrevOver为false，表示有上文日志还未全部返回）。
-                     * @return PrevOver 上文日志是否已经返回完成（当PrevOver为false，表示有上文日志还未全部返回）。
+                     * 获取<p>上文日志是否已经返回完成（当PrevOver为false，表示有上文日志还未全部返回）。</p>
+                     * @return PrevOver <p>上文日志是否已经返回完成（当PrevOver为false，表示有上文日志还未全部返回）。</p>
                      * 
                      */
                     bool GetPrevOver() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool PrevOverHasBeenSet() const;
 
                     /**
-                     * 获取下文日志是否已经返回完成（当NextOver为false，表示有下文日志还未全部返回）。
-                     * @return NextOver 下文日志是否已经返回完成（当NextOver为false，表示有下文日志还未全部返回）。
+                     * 获取<p>下文日志是否已经返回完成（当NextOver为false，表示有下文日志还未全部返回）。</p>
+                     * @return NextOver <p>下文日志是否已经返回完成（当NextOver为false，表示有下文日志还未全部返回）。</p>
                      * 
                      */
                     bool GetNextOver() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志上下文信息集合
+                     * <p>日志上下文信息集合</p>
                      */
                     std::vector<LogContextInfo> m_logContextInfos;
                     bool m_logContextInfosHasBeenSet;
 
                     /**
-                     * 上文日志是否已经返回完成（当PrevOver为false，表示有上文日志还未全部返回）。
+                     * <p>上文日志是否已经返回完成（当PrevOver为false，表示有上文日志还未全部返回）。</p>
                      */
                     bool m_prevOver;
                     bool m_prevOverHasBeenSet;
 
                     /**
-                     * 下文日志是否已经返回完成（当NextOver为false，表示有下文日志还未全部返回）。
+                     * <p>下文日志是否已经返回完成（当NextOver为false，表示有下文日志还未全部返回）。</p>
                      */
                     bool m_nextOver;
                     bool m_nextOverHasBeenSet;

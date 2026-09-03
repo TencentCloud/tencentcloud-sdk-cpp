@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ioa/v20220601/model/I18nString.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自增id，数据库中唯一
-                     * @return Id 自增id，数据库中唯一
+                     * 获取<p>自增id，数据库中唯一</p>
+                     * @return Id <p>自增id，数据库中唯一</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置自增id，数据库中唯一
-                     * @param _id 自增id，数据库中唯一
+                     * 设置<p>自增id，数据库中唯一</p>
+                     * @param _id <p>自增id，数据库中唯一</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -68,15 +69,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取节点分组名称
-                     * @return GroupName 节点分组名称
+                     * 获取<p>节点分组名称</p>
+                     * @return GroupName <p>节点分组名称</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置节点分组名称
-                     * @param _groupName 节点分组名称
+                     * 设置<p>节点分组名称</p>
+                     * @param _groupName <p>节点分组名称</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -89,15 +90,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取节点分组id
-                     * @return GroupId 节点分组id
+                     * 获取<p>节点分组id</p>
+                     * @return GroupId <p>节点分组id</p>
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置节点分组id
-                     * @param _groupId 节点分组id
+                     * 设置<p>节点分组id</p>
+                     * @param _groupId <p>节点分组id</p>
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -110,15 +111,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取包含边缘节点数量
-                     * @return EdgeCount 包含边缘节点数量
+                     * 获取<p>包含边缘节点数量</p>
+                     * @return EdgeCount <p>包含边缘节点数量</p>
                      * 
                      */
                     int64_t GetEdgeCount() const;
 
                     /**
-                     * 设置包含边缘节点数量
-                     * @param _edgeCount 包含边缘节点数量
+                     * 设置<p>包含边缘节点数量</p>
+                     * @param _edgeCount <p>包含边缘节点数量</p>
                      * 
                      */
                     void SetEdgeCount(const int64_t& _edgeCount);
@@ -130,31 +131,58 @@ namespace TencentCloud
                      */
                     bool EdgeCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>分组中英文</p>
+                     * @return GroupNameI18n <p>分组中英文</p>
+                     * 
+                     */
+                    std::vector<I18nString> GetGroupNameI18n() const;
+
+                    /**
+                     * 设置<p>分组中英文</p>
+                     * @param _groupNameI18n <p>分组中英文</p>
+                     * 
+                     */
+                    void SetGroupNameI18n(const std::vector<I18nString>& _groupNameI18n);
+
+                    /**
+                     * 判断参数 GroupNameI18n 是否已赋值
+                     * @return GroupNameI18n 是否已赋值
+                     * 
+                     */
+                    bool GroupNameI18nHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 自增id，数据库中唯一
+                     * <p>自增id，数据库中唯一</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 节点分组名称
+                     * <p>节点分组名称</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 节点分组id
+                     * <p>节点分组id</p>
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 包含边缘节点数量
+                     * <p>包含边缘节点数量</p>
                      */
                     int64_t m_edgeCount;
                     bool m_edgeCountHasBeenSet;
+
+                    /**
+                     * <p>分组中英文</p>
+                     */
+                    std::vector<I18nString> m_groupNameI18n;
+                    bool m_groupNameI18nHasBeenSet;
 
                 };
             }

@@ -93,7 +93,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/CopyAppResponse.h
   include/tencentcloud/adp/v20260520/model/ComplexBillingItem.h
   include/tencentcloud/adp/v20260520/model/BackgroundImage.h
-  include/tencentcloud/adp/v20260520/model/DescribeSkillCategoryListRequest.h
+  include/tencentcloud/adp/v20260520/model/TimerScheduleConfig.h
   include/tencentcloud/adp/v20260520/model/Model.h
   include/tencentcloud/adp/v20260520/model/ModifySkillResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeSpaceListRequest.h
@@ -137,7 +137,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/DescribeAppTriggerRunLogListResponse.h
   include/tencentcloud/adp/v20260520/model/FileParseModel.h
   include/tencentcloud/adp/v20260520/model/AppAppeal.h
-  include/tencentcloud/adp/v20260520/model/TimerScheduleConfig.h
+  include/tencentcloud/adp/v20260520/model/DescribeSkillCategoryListRequest.h
   include/tencentcloud/adp/v20260520/model/DigitalHumanConfig.h
   include/tencentcloud/adp/v20260520/model/DescribeLatestReleaseResponse.h
   include/tencentcloud/adp/v20260520/model/SkillNotice.h
@@ -146,6 +146,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/AgentPluginConfig.h
   include/tencentcloud/adp/v20260520/model/PluginSummary.h
   include/tencentcloud/adp/v20260520/model/CreateWorkspaceCredentialResponse.h
+  include/tencentcloud/adp/v20260520/model/ConversationMcpApp.h
   include/tencentcloud/adp/v20260520/model/ModifyPluginRequest.h
   include/tencentcloud/adp/v20260520/model/DescribeAccountListResponse.h
   include/tencentcloud/adp/v20260520/model/AgentUserInputValue.h
@@ -215,6 +216,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/CreateAppResponse.h
   include/tencentcloud/adp/v20260520/model/AuditLogMetaField.h
   include/tencentcloud/adp/v20260520/model/ModelDeveloperBasic.h
+  include/tencentcloud/adp/v20260520/model/MCPToolMeta.h
   include/tencentcloud/adp/v20260520/model/AppExperienceConfig.h
   include/tencentcloud/adp/v20260520/model/ResumeAppTriggerRequest.h
   include/tencentcloud/adp/v20260520/model/PluginParam.h
@@ -295,6 +297,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/UnfavoriteSkillResponse.h
   include/tencentcloud/adp/v20260520/model/AppTriggerParamSchema.h
   include/tencentcloud/adp/v20260520/model/CreateSpaceRequest.h
+  include/tencentcloud/adp/v20260520/model/MCPToolUIMeta.h
   include/tencentcloud/adp/v20260520/model/SearchResourceStatusInfo.h
   include/tencentcloud/adp/v20260520/model/FieldMask.h
   include/tencentcloud/adp/v20260520/model/AppTriggerWebhookParamSchemaConfig.h
@@ -455,7 +458,7 @@ set(adp_src
   src/v20260520/model/CopyAppResponse.cpp
   src/v20260520/model/ComplexBillingItem.cpp
   src/v20260520/model/BackgroundImage.cpp
-  src/v20260520/model/DescribeSkillCategoryListRequest.cpp
+  src/v20260520/model/TimerScheduleConfig.cpp
   src/v20260520/model/Model.cpp
   src/v20260520/model/ModifySkillResponse.cpp
   src/v20260520/model/DescribeSpaceListRequest.cpp
@@ -499,7 +502,7 @@ set(adp_src
   src/v20260520/model/DescribeAppTriggerRunLogListResponse.cpp
   src/v20260520/model/FileParseModel.cpp
   src/v20260520/model/AppAppeal.cpp
-  src/v20260520/model/TimerScheduleConfig.cpp
+  src/v20260520/model/DescribeSkillCategoryListRequest.cpp
   src/v20260520/model/DigitalHumanConfig.cpp
   src/v20260520/model/DescribeLatestReleaseResponse.cpp
   src/v20260520/model/SkillNotice.cpp
@@ -508,6 +511,7 @@ set(adp_src
   src/v20260520/model/AgentPluginConfig.cpp
   src/v20260520/model/PluginSummary.cpp
   src/v20260520/model/CreateWorkspaceCredentialResponse.cpp
+  src/v20260520/model/ConversationMcpApp.cpp
   src/v20260520/model/ModifyPluginRequest.cpp
   src/v20260520/model/DescribeAccountListResponse.cpp
   src/v20260520/model/AgentUserInputValue.cpp
@@ -577,6 +581,7 @@ set(adp_src
   src/v20260520/model/CreateAppResponse.cpp
   src/v20260520/model/AuditLogMetaField.cpp
   src/v20260520/model/ModelDeveloperBasic.cpp
+  src/v20260520/model/MCPToolMeta.cpp
   src/v20260520/model/AppExperienceConfig.cpp
   src/v20260520/model/ResumeAppTriggerRequest.cpp
   src/v20260520/model/PluginParam.cpp
@@ -657,6 +662,7 @@ set(adp_src
   src/v20260520/model/UnfavoriteSkillResponse.cpp
   src/v20260520/model/AppTriggerParamSchema.cpp
   src/v20260520/model/CreateSpaceRequest.cpp
+  src/v20260520/model/MCPToolUIMeta.cpp
   src/v20260520/model/SearchResourceStatusInfo.cpp
   src/v20260520/model/FieldMask.cpp
   src/v20260520/model/AppTriggerWebhookParamSchemaConfig.cpp

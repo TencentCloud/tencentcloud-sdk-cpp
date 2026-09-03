@@ -176,6 +176,22 @@ namespace TencentCloud
                      */
                     bool MessageTracksCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>5.x 时间轮定时消息状态，仅在查询定时消息（命中 RMQ_SYS_WHEEL_TIMER）时返回。枚举值：PENDING（未到期）、DELIVERED（已到期投递）、RECALLED（已撤回）、NOT_FOUND（消息不存在）、UNSUPPORTED（该消息类型不支持状态查询，如 4.x DelayLevel 延迟消息）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DelayMessageStatus <p>5.x 时间轮定时消息状态，仅在查询定时消息（命中 RMQ_SYS_WHEEL_TIMER）时返回。枚举值：PENDING（未到期）、DELIVERED（已到期投递）、RECALLED（已撤回）、NOT_FOUND（消息不存在）、UNSUPPORTED（该消息类型不支持状态查询，如 4.x DelayLevel 延迟消息）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDelayMessageStatus() const;
+
+                    /**
+                     * 判断参数 DelayMessageStatus 是否已赋值
+                     * @return DelayMessageStatus 是否已赋值
+                     * 
+                     */
+                    bool DelayMessageStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -234,6 +250,13 @@ namespace TencentCloud
                      */
                     int64_t m_messageTracksCount;
                     bool m_messageTracksCountHasBeenSet;
+
+                    /**
+                     * <p>5.x 时间轮定时消息状态，仅在查询定时消息（命中 RMQ_SYS_WHEEL_TIMER）时返回。枚举值：PENDING（未到期）、DELIVERED（已到期投递）、RECALLED（已撤回）、NOT_FOUND（消息不存在）、UNSUPPORTED（该消息类型不支持状态查询，如 4.x DelayLevel 延迟消息）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_delayMessageStatus;
+                    bool m_delayMessageStatusHasBeenSet;
 
                 };
             }

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/goosefs/v20220519/model/MetadataLoadAttrs.h>
 #include <tencentcloud/goosefs/v20220519/model/DistributedLoadAttrs.h>
+#include <tencentcloud/goosefs/v20220519/model/LoadDataAttrs.h>
 
 
 namespace TencentCloud
@@ -49,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取预热任务 ID
-                     * @return TaskId 预热任务 ID
+                     * 获取<p>预热任务 ID</p>
+                     * @return TaskId <p>预热任务 ID</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置预热任务 ID
-                     * @param _taskId 预热任务 ID
+                     * 设置<p>预热任务 ID</p>
+                     * @param _taskId <p>预热任务 ID</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -70,15 +71,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取预热任务类型，枚举值，MetadataLoad｜DistributedLoad
-                     * @return TaskType 预热任务类型，枚举值，MetadataLoad｜DistributedLoad
+                     * 获取<p>预热任务类型，枚举值，MetadataLoad｜DistributedLoad</p>
+                     * @return TaskType <p>预热任务类型，枚举值，MetadataLoad｜DistributedLoad</p>
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置预热任务类型，枚举值，MetadataLoad｜DistributedLoad
-                     * @param _taskType 预热任务类型，枚举值，MetadataLoad｜DistributedLoad
+                     * 设置<p>预热任务类型，枚举值，MetadataLoad｜DistributedLoad</p>
+                     * @param _taskType <p>预热任务类型，枚举值，MetadataLoad｜DistributedLoad</p>
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -91,15 +92,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务描述，支持中文
-                     * @return Description 任务描述，支持中文
+                     * 获取<p>任务描述，支持中文</p>
+                     * @return Description <p>任务描述，支持中文</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置任务描述，支持中文
-                     * @param _description 任务描述，支持中文
+                     * 设置<p>任务描述，支持中文</p>
+                     * @param _description <p>任务描述，支持中文</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -112,15 +113,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1
-                     * @return Priority 任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1
+                     * 获取<p>任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1</p>
+                     * @return Priority <p>任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1</p>
                      * 
                      */
                     uint64_t GetPriority() const;
 
                     /**
-                     * 设置任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1
-                     * @param _priority 任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1
+                     * 设置<p>任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1</p>
+                     * @param _priority <p>任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1</p>
                      * 
                      */
                     void SetPriority(const uint64_t& _priority);
@@ -133,15 +134,15 @@ namespace TencentCloud
                     bool PriorityHasBeenSet() const;
 
                     /**
-                     * 获取元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。
-                     * @return MetadataLoadAttrs 元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。
+                     * 获取<p>元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。</p>
+                     * @return MetadataLoadAttrs <p>元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。</p>
                      * 
                      */
                     MetadataLoadAttrs GetMetadataLoadAttrs() const;
 
                     /**
-                     * 设置元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。
-                     * @param _metadataLoadAttrs 元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。
+                     * 设置<p>元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。</p>
+                     * @param _metadataLoadAttrs <p>元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。</p>
                      * 
                      */
                     void SetMetadataLoadAttrs(const MetadataLoadAttrs& _metadataLoadAttrs);
@@ -154,15 +155,15 @@ namespace TencentCloud
                     bool MetadataLoadAttrsHasBeenSet() const;
 
                     /**
-                     * 获取数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。
-                     * @return DistributedLoadAttrs 数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。
+                     * 获取<p>数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。</p>
+                     * @return DistributedLoadAttrs <p>数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。</p>
                      * 
                      */
                     DistributedLoadAttrs GetDistributedLoadAttrs() const;
 
                     /**
-                     * 设置数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。
-                     * @param _distributedLoadAttrs 数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。
+                     * 设置<p>数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。</p>
+                     * @param _distributedLoadAttrs <p>数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。</p>
                      * 
                      */
                     void SetDistributedLoadAttrs(const DistributedLoadAttrs& _distributedLoadAttrs);
@@ -175,15 +176,36 @@ namespace TencentCloud
                     bool DistributedLoadAttrsHasBeenSet() const;
 
                     /**
-                     * 获取将任务执行报告写入 COS 的路径，如果不需要报告则入参空
-                     * @return ReportPath 将任务执行报告写入 COS 的路径，如果不需要报告则入参空
+                     * 获取<p>仅预热数据参数。入参数TaskType为LoadData时，该参数不应为空。</p>
+                     * @return LoadDataAttrs <p>仅预热数据参数。入参数TaskType为LoadData时，该参数不应为空。</p>
+                     * 
+                     */
+                    LoadDataAttrs GetLoadDataAttrs() const;
+
+                    /**
+                     * 设置<p>仅预热数据参数。入参数TaskType为LoadData时，该参数不应为空。</p>
+                     * @param _loadDataAttrs <p>仅预热数据参数。入参数TaskType为LoadData时，该参数不应为空。</p>
+                     * 
+                     */
+                    void SetLoadDataAttrs(const LoadDataAttrs& _loadDataAttrs);
+
+                    /**
+                     * 判断参数 LoadDataAttrs 是否已赋值
+                     * @return LoadDataAttrs 是否已赋值
+                     * 
+                     */
+                    bool LoadDataAttrsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>将任务执行报告写入 COS 的路径，如果不需要报告则入参空</p>
+                     * @return ReportPath <p>将任务执行报告写入 COS 的路径，如果不需要报告则入参空</p>
                      * 
                      */
                     std::string GetReportPath() const;
 
                     /**
-                     * 设置将任务执行报告写入 COS 的路径，如果不需要报告则入参空
-                     * @param _reportPath 将任务执行报告写入 COS 的路径，如果不需要报告则入参空
+                     * 设置<p>将任务执行报告写入 COS 的路径，如果不需要报告则入参空</p>
+                     * @param _reportPath <p>将任务执行报告写入 COS 的路径，如果不需要报告则入参空</p>
                      * 
                      */
                     void SetReportPath(const std::string& _reportPath);
@@ -196,15 +218,15 @@ namespace TencentCloud
                     bool ReportPathHasBeenSet() const;
 
                     /**
-                     * 获取枚举，Completed，Running，Waiting，Cancelled
-                     * @return State 枚举，Completed，Running，Waiting，Cancelled
+                     * 获取<p>枚举，Completed，Running，Waiting，Cancelled</p>
+                     * @return State <p>枚举，Completed，Running，Waiting，Cancelled</p>
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置枚举，Completed，Running，Waiting，Cancelled
-                     * @param _state 枚举，Completed，Running，Waiting，Cancelled
+                     * 设置<p>枚举，Completed，Running，Waiting，Cancelled</p>
+                     * @param _state <p>枚举，Completed，Running，Waiting，Cancelled</p>
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -217,15 +239,15 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取任务执行信息，打印预热文件成功个数，失败个数，预热耗时信息 
-                     * @return TaskMessage 任务执行信息，打印预热文件成功个数，失败个数，预热耗时信息 
+                     * 获取<p>任务执行信息，打印预热文件成功个数，失败个数，预热耗时信息</p>
+                     * @return TaskMessage <p>任务执行信息，打印预热文件成功个数，失败个数，预热耗时信息</p>
                      * 
                      */
                     std::string GetTaskMessage() const;
 
                     /**
-                     * 设置任务执行信息，打印预热文件成功个数，失败个数，预热耗时信息 
-                     * @param _taskMessage 任务执行信息，打印预热文件成功个数，失败个数，预热耗时信息 
+                     * 设置<p>任务执行信息，打印预热文件成功个数，失败个数，预热耗时信息</p>
+                     * @param _taskMessage <p>任务执行信息，打印预热文件成功个数，失败个数，预热耗时信息</p>
                      * 
                      */
                     void SetTaskMessage(const std::string& _taskMessage);
@@ -238,15 +260,15 @@ namespace TencentCloud
                     bool TaskMessageHasBeenSet() const;
 
                     /**
-                     * 获取预热任务创建时间
-                     * @return CreateTime 预热任务创建时间
+                     * 获取<p>预热任务创建时间</p>
+                     * @return CreateTime <p>预热任务创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置预热任务创建时间
-                     * @param _createTime 预热任务创建时间
+                     * 设置<p>预热任务创建时间</p>
+                     * @param _createTime <p>预热任务创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -259,15 +281,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取预热任务变更时间
-                     * @return ModifyTime 预热任务变更时间
+                     * 获取<p>预热任务变更时间</p>
+                     * @return ModifyTime <p>预热任务变更时间</p>
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置预热任务变更时间
-                     * @param _modifyTime 预热任务变更时间
+                     * 设置<p>预热任务变更时间</p>
+                     * @param _modifyTime <p>预热任务变更时间</p>
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -280,15 +302,15 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务提交账号，子账号或服务角色 ID
-                     * @return Requester 任务提交账号，子账号或服务角色 ID
+                     * 获取<p>任务提交账号，子账号或服务角色 ID</p>
+                     * @return Requester <p>任务提交账号，子账号或服务角色 ID</p>
                      * 
                      */
                     std::string GetRequester() const;
 
                     /**
-                     * 设置任务提交账号，子账号或服务角色 ID
-                     * @param _requester 任务提交账号，子账号或服务角色 ID
+                     * 设置<p>任务提交账号，子账号或服务角色 ID</p>
+                     * @param _requester <p>任务提交账号，子账号或服务角色 ID</p>
                      * 
                      */
                     void SetRequester(const std::string& _requester);
@@ -303,73 +325,79 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 预热任务 ID
+                     * <p>预热任务 ID</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 预热任务类型，枚举值，MetadataLoad｜DistributedLoad
+                     * <p>预热任务类型，枚举值，MetadataLoad｜DistributedLoad</p>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 任务描述，支持中文
+                     * <p>任务描述，支持中文</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1
+                     * <p>任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1</p>
                      */
                     uint64_t m_priority;
                     bool m_priorityHasBeenSet;
 
                     /**
-                     * 元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。
+                     * <p>元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。</p>
                      */
                     MetadataLoadAttrs m_metadataLoadAttrs;
                     bool m_metadataLoadAttrsHasBeenSet;
 
                     /**
-                     * 数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。
+                     * <p>数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。</p>
                      */
                     DistributedLoadAttrs m_distributedLoadAttrs;
                     bool m_distributedLoadAttrsHasBeenSet;
 
                     /**
-                     * 将任务执行报告写入 COS 的路径，如果不需要报告则入参空
+                     * <p>仅预热数据参数。入参数TaskType为LoadData时，该参数不应为空。</p>
+                     */
+                    LoadDataAttrs m_loadDataAttrs;
+                    bool m_loadDataAttrsHasBeenSet;
+
+                    /**
+                     * <p>将任务执行报告写入 COS 的路径，如果不需要报告则入参空</p>
                      */
                     std::string m_reportPath;
                     bool m_reportPathHasBeenSet;
 
                     /**
-                     * 枚举，Completed，Running，Waiting，Cancelled
+                     * <p>枚举，Completed，Running，Waiting，Cancelled</p>
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 任务执行信息，打印预热文件成功个数，失败个数，预热耗时信息 
+                     * <p>任务执行信息，打印预热文件成功个数，失败个数，预热耗时信息</p>
                      */
                     std::string m_taskMessage;
                     bool m_taskMessageHasBeenSet;
 
                     /**
-                     * 预热任务创建时间
+                     * <p>预热任务创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 预热任务变更时间
+                     * <p>预热任务变更时间</p>
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 任务提交账号，子账号或服务角色 ID
+                     * <p>任务提交账号，子账号或服务角色 ID</p>
                      */
                     std::string m_requester;
                     bool m_requesterHasBeenSet;

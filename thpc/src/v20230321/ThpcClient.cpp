@@ -240,6 +240,56 @@ ThpcClient::AttachNodesOutcomeCallable ThpcClient::AttachNodesCallable(const Att
     return prom->get_future();
 }
 
+ThpcClient::BindClusterVpcOutcome ThpcClient::BindClusterVpc(const BindClusterVpcRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindClusterVpc");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindClusterVpcResponse rsp = BindClusterVpcResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindClusterVpcOutcome(rsp);
+        else
+            return BindClusterVpcOutcome(o.GetError());
+    }
+    else
+    {
+        return BindClusterVpcOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::BindClusterVpcAsync(const BindClusterVpcRequest& request, const BindClusterVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const BindClusterVpcRequest&;
+    using Resp = BindClusterVpcResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "BindClusterVpc", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ThpcClient::BindClusterVpcOutcomeCallable ThpcClient::BindClusterVpcCallable(const BindClusterVpcRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<BindClusterVpcOutcome>>();
+    BindClusterVpcAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const BindClusterVpcRequest&,
+        BindClusterVpcOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ThpcClient::CreateClusterOutcome ThpcClient::CreateCluster(const CreateClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCluster");
@@ -782,6 +832,56 @@ ThpcClient::DescribeClusterActivitiesOutcomeCallable ThpcClient::DescribeCluster
         const ThpcClient*,
         const DescribeClusterActivitiesRequest&,
         DescribeClusterActivitiesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ThpcClient::DescribeClusterDedicatedProxyOutcome ThpcClient::DescribeClusterDedicatedProxy(const DescribeClusterDedicatedProxyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterDedicatedProxy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterDedicatedProxyResponse rsp = DescribeClusterDedicatedProxyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterDedicatedProxyOutcome(rsp);
+        else
+            return DescribeClusterDedicatedProxyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterDedicatedProxyOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DescribeClusterDedicatedProxyAsync(const DescribeClusterDedicatedProxyRequest& request, const DescribeClusterDedicatedProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeClusterDedicatedProxyRequest&;
+    using Resp = DescribeClusterDedicatedProxyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterDedicatedProxy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ThpcClient::DescribeClusterDedicatedProxyOutcomeCallable ThpcClient::DescribeClusterDedicatedProxyCallable(const DescribeClusterDedicatedProxyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeClusterDedicatedProxyOutcome>>();
+    DescribeClusterDedicatedProxyAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DescribeClusterDedicatedProxyRequest&,
+        DescribeClusterDedicatedProxyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1482,6 +1582,206 @@ ThpcClient::DetachNodesOutcomeCallable ThpcClient::DetachNodesCallable(const Det
         const ThpcClient*,
         const DetachNodesRequest&,
         DetachNodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ThpcClient::DisableClusterDedicatedProxyOutcome ThpcClient::DisableClusterDedicatedProxy(const DisableClusterDedicatedProxyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableClusterDedicatedProxy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableClusterDedicatedProxyResponse rsp = DisableClusterDedicatedProxyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableClusterDedicatedProxyOutcome(rsp);
+        else
+            return DisableClusterDedicatedProxyOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableClusterDedicatedProxyOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DisableClusterDedicatedProxyAsync(const DisableClusterDedicatedProxyRequest& request, const DisableClusterDedicatedProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DisableClusterDedicatedProxyRequest&;
+    using Resp = DisableClusterDedicatedProxyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DisableClusterDedicatedProxy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ThpcClient::DisableClusterDedicatedProxyOutcomeCallable ThpcClient::DisableClusterDedicatedProxyCallable(const DisableClusterDedicatedProxyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DisableClusterDedicatedProxyOutcome>>();
+    DisableClusterDedicatedProxyAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DisableClusterDedicatedProxyRequest&,
+        DisableClusterDedicatedProxyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ThpcClient::EnableClusterDedicatedProxyOutcome ThpcClient::EnableClusterDedicatedProxy(const EnableClusterDedicatedProxyRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableClusterDedicatedProxy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableClusterDedicatedProxyResponse rsp = EnableClusterDedicatedProxyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableClusterDedicatedProxyOutcome(rsp);
+        else
+            return EnableClusterDedicatedProxyOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableClusterDedicatedProxyOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::EnableClusterDedicatedProxyAsync(const EnableClusterDedicatedProxyRequest& request, const EnableClusterDedicatedProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EnableClusterDedicatedProxyRequest&;
+    using Resp = EnableClusterDedicatedProxyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EnableClusterDedicatedProxy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ThpcClient::EnableClusterDedicatedProxyOutcomeCallable ThpcClient::EnableClusterDedicatedProxyCallable(const EnableClusterDedicatedProxyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EnableClusterDedicatedProxyOutcome>>();
+    EnableClusterDedicatedProxyAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const EnableClusterDedicatedProxyRequest&,
+        EnableClusterDedicatedProxyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ThpcClient::GenerateRegisterCodeOutcome ThpcClient::GenerateRegisterCode(const GenerateRegisterCodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "GenerateRegisterCode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GenerateRegisterCodeResponse rsp = GenerateRegisterCodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GenerateRegisterCodeOutcome(rsp);
+        else
+            return GenerateRegisterCodeOutcome(o.GetError());
+    }
+    else
+    {
+        return GenerateRegisterCodeOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::GenerateRegisterCodeAsync(const GenerateRegisterCodeRequest& request, const GenerateRegisterCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GenerateRegisterCodeRequest&;
+    using Resp = GenerateRegisterCodeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GenerateRegisterCode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ThpcClient::GenerateRegisterCodeOutcomeCallable ThpcClient::GenerateRegisterCodeCallable(const GenerateRegisterCodeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GenerateRegisterCodeOutcome>>();
+    GenerateRegisterCodeAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const GenerateRegisterCodeRequest&,
+        GenerateRegisterCodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ThpcClient::GenerateRegisterCommandOutcome ThpcClient::GenerateRegisterCommand(const GenerateRegisterCommandRequest &request)
+{
+    auto outcome = MakeRequest(request, "GenerateRegisterCommand");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GenerateRegisterCommandResponse rsp = GenerateRegisterCommandResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GenerateRegisterCommandOutcome(rsp);
+        else
+            return GenerateRegisterCommandOutcome(o.GetError());
+    }
+    else
+    {
+        return GenerateRegisterCommandOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::GenerateRegisterCommandAsync(const GenerateRegisterCommandRequest& request, const GenerateRegisterCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GenerateRegisterCommandRequest&;
+    using Resp = GenerateRegisterCommandResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GenerateRegisterCommand", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ThpcClient::GenerateRegisterCommandOutcomeCallable ThpcClient::GenerateRegisterCommandCallable(const GenerateRegisterCommandRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GenerateRegisterCommandOutcome>>();
+    GenerateRegisterCommandAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const GenerateRegisterCommandRequest&,
+        GenerateRegisterCommandOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

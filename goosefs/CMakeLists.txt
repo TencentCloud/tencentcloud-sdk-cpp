@@ -99,6 +99,7 @@ set(goosefs_public_header_model
   include/tencentcloud/goosefs/v20220519/model/MetadataLoadAttrs.h
   include/tencentcloud/goosefs/v20220519/model/DescribeFileSystemsResponse.h
   include/tencentcloud/goosefs/v20220519/model/BatchDeleteClientNodesResponse.h
+  include/tencentcloud/goosefs/v20220519/model/LoadDataAttrs.h
   include/tencentcloud/goosefs/v20220519/model/QueryCrossVpcSubnetSupportForClientNodeRequest.h
   include/tencentcloud/goosefs/v20220519/model/DeleteCrossVpcSubnetSupportForClientNodeRequest.h
   include/tencentcloud/goosefs/v20220519/model/AttachFileSystemBucketResponse.h
@@ -197,6 +198,7 @@ set(goosefs_src
   src/v20220519/model/MetadataLoadAttrs.cpp
   src/v20220519/model/DescribeFileSystemsResponse.cpp
   src/v20220519/model/BatchDeleteClientNodesResponse.cpp
+  src/v20220519/model/LoadDataAttrs.cpp
   src/v20220519/model/QueryCrossVpcSubnetSupportForClientNodeRequest.cpp
   src/v20220519/model/DeleteCrossVpcSubnetSupportForClientNodeRequest.cpp
   src/v20220519/model/AttachFileSystemBucketResponse.cpp

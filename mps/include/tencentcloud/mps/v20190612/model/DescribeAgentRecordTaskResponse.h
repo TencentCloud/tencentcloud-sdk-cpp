@@ -85,6 +85,20 @@ namespace TencentCloud
                      */
                     bool RecordUrlsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>直播状态</p><p>枚举值：</p><ul><li>LIVE： 直播中</li><li>PAUSED： 直播暂停</li><li>ENDED： 直播结束</li></ul>
+                     * @return LiveStatus <p>直播状态</p><p>枚举值：</p><ul><li>LIVE： 直播中</li><li>PAUSED： 直播暂停</li><li>ENDED： 直播结束</li></ul>
+                     * 
+                     */
+                    std::string GetLiveStatus() const;
+
+                    /**
+                     * 判断参数 LiveStatus 是否已赋值
+                     * @return LiveStatus 是否已赋值
+                     * 
+                     */
+                    bool LiveStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -104,6 +118,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_recordUrls;
                     bool m_recordUrlsHasBeenSet;
+
+                    /**
+                     * <p>直播状态</p><p>枚举值：</p><ul><li>LIVE： 直播中</li><li>PAUSED： 直播暂停</li><li>ENDED： 直播结束</li></ul>
+                     */
+                    std::string m_liveStatus;
+                    bool m_liveStatusHasBeenSet;
 
                 };
             }

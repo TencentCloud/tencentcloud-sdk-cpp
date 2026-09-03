@@ -29,6 +29,8 @@
 #include <tencentcloud/vod/v20180717/model/AttachMediaSubtitlesResponse.h>
 #include <tencentcloud/vod/v20180717/model/CloneVoiceAsyncRequest.h>
 #include <tencentcloud/vod/v20180717/model/CloneVoiceAsyncResponse.h>
+#include <tencentcloud/vod/v20180717/model/CloneVoiceSyncRequest.h>
+#include <tencentcloud/vod/v20180717/model/CloneVoiceSyncResponse.h>
 #include <tencentcloud/vod/v20180717/model/CommitUploadRequest.h>
 #include <tencentcloud/vod/v20180717/model/CommitUploadResponse.h>
 #include <tencentcloud/vod/v20180717/model/ComposeMediaRequest.h>
@@ -489,6 +491,8 @@
 #include <tencentcloud/vod/v20180717/model/SplitMediaResponse.h>
 #include <tencentcloud/vod/v20180717/model/TextToSpeechAsyncRequest.h>
 #include <tencentcloud/vod/v20180717/model/TextToSpeechAsyncResponse.h>
+#include <tencentcloud/vod/v20180717/model/TextToSpeechSyncRequest.h>
+#include <tencentcloud/vod/v20180717/model/TextToSpeechSyncResponse.h>
 #include <tencentcloud/vod/v20180717/model/UpdateAigcApiTokenRequest.h>
 #include <tencentcloud/vod/v20180717/model/UpdateAigcApiTokenResponse.h>
 #include <tencentcloud/vod/v20180717/model/UpdateVoiceRequest.h>
@@ -520,6 +524,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CloneVoiceAsyncResponse> CloneVoiceAsyncOutcome;
                 typedef std::future<CloneVoiceAsyncOutcome> CloneVoiceAsyncOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CloneVoiceAsyncRequest&, CloneVoiceAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneVoiceAsyncAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloneVoiceSyncResponse> CloneVoiceSyncOutcome;
+                typedef std::future<CloneVoiceSyncOutcome> CloneVoiceSyncOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CloneVoiceSyncRequest&, CloneVoiceSyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneVoiceSyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::CommitUploadResponse> CommitUploadOutcome;
                 typedef std::future<CommitUploadOutcome> CommitUploadOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CommitUploadRequest&, CommitUploadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CommitUploadAsyncHandler;
@@ -1210,6 +1217,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::TextToSpeechAsyncResponse> TextToSpeechAsyncOutcome;
                 typedef std::future<TextToSpeechAsyncOutcome> TextToSpeechAsyncOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::TextToSpeechAsyncRequest&, TextToSpeechAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToSpeechAsyncAsyncHandler;
+                typedef Outcome<Core::Error, Model::TextToSpeechSyncResponse> TextToSpeechSyncOutcome;
+                typedef std::future<TextToSpeechSyncOutcome> TextToSpeechSyncOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::TextToSpeechSyncRequest&, TextToSpeechSyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToSpeechSyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateAigcApiTokenResponse> UpdateAigcApiTokenOutcome;
                 typedef std::future<UpdateAigcApiTokenOutcome> UpdateAigcApiTokenOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::UpdateAigcApiTokenRequest&, UpdateAigcApiTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAigcApiTokenAsyncHandler;
@@ -1253,6 +1263,15 @@ namespace TencentCloud
                 CloneVoiceAsyncOutcome CloneVoiceAsync(const Model::CloneVoiceAsyncRequest &request);
                 void CloneVoiceAsyncAsync(const Model::CloneVoiceAsyncRequest& request, const CloneVoiceAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CloneVoiceAsyncOutcomeCallable CloneVoiceAsyncCallable(const Model::CloneVoiceAsyncRequest& request);
+
+                /**
+                 *发起音色克隆任务，基于参考音频克隆生成专属音色，生成的音色可供后续语音合成使用。
+                 * @param req CloneVoiceSyncRequest
+                 * @return CloneVoiceSyncOutcome
+                 */
+                CloneVoiceSyncOutcome CloneVoiceSync(const Model::CloneVoiceSyncRequest &request);
+                void CloneVoiceSyncAsync(const Model::CloneVoiceSyncRequest& request, const CloneVoiceSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloneVoiceSyncOutcomeCallable CloneVoiceSyncCallable(const Model::CloneVoiceSyncRequest& request);
 
                 /**
                  *该接口用于确认媒体文件（和封面文件）上传到腾讯云点播的结果，并存储媒体信息，返回文件的播放地址和文件 ID。
@@ -3685,6 +3704,15 @@ namespace TencentCloud
                 TextToSpeechAsyncOutcome TextToSpeechAsync(const Model::TextToSpeechAsyncRequest &request);
                 void TextToSpeechAsyncAsync(const Model::TextToSpeechAsyncRequest& request, const TextToSpeechAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TextToSpeechAsyncOutcomeCallable TextToSpeechAsyncCallable(const Model::TextToSpeechAsyncRequest& request);
+
+                /**
+                 *发起语音合成任务，将文本合成为语音。
+                 * @param req TextToSpeechSyncRequest
+                 * @return TextToSpeechSyncOutcome
+                 */
+                TextToSpeechSyncOutcome TextToSpeechSync(const Model::TextToSpeechSyncRequest &request);
+                void TextToSpeechSyncAsync(const Model::TextToSpeechSyncRequest& request, const TextToSpeechSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TextToSpeechSyncOutcomeCallable TextToSpeechSyncCallable(const Model::TextToSpeechSyncRequest& request);
 
                 /**
                  *创建AIGC调用API的Token。创建后数据同步有延时，约30秒后可查询或删除。

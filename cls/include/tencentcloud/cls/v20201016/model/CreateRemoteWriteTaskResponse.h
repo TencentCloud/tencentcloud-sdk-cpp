@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取remoteWrite任务id
+                     * 获取<p>remoteWrite任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskId remoteWrite任务id
+                     * @return TaskId <p>remoteWrite任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -62,7 +62,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * remoteWrite任务id
+                     * <p>remoteWrite任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;

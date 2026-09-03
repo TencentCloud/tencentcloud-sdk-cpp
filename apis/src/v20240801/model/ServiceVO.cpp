@@ -87,7 +87,10 @@ ServiceVO::ServiceVO() :
     m_pathMatchTypeHasBeenSet(false),
     m_customMatchHasBeenSet(false),
     m_timeoutHasBeenSet(false),
-    m_mcpServerNumHasBeenSet(false)
+    m_mcpServerNumHasBeenSet(false),
+    m_credentialIDHasBeenSet(false),
+    m_credentialNameHasBeenSet(false),
+    m_requestProtocolTypeHasBeenSet(false)
 {
 }
 
@@ -914,6 +917,36 @@ CoreInternalOutcome ServiceVO::Deserialize(const rapidjson::Value &value)
         m_mcpServerNumHasBeenSet = true;
     }
 
+    if (value.HasMember("CredentialID") && !value["CredentialID"].IsNull())
+    {
+        if (!value["CredentialID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceVO.CredentialID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_credentialID = string(value["CredentialID"].GetString());
+        m_credentialIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("CredentialName") && !value["CredentialName"].IsNull())
+    {
+        if (!value["CredentialName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceVO.CredentialName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_credentialName = string(value["CredentialName"].GetString());
+        m_credentialNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("RequestProtocolType") && !value["RequestProtocolType"].IsNull())
+    {
+        if (!value["RequestProtocolType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceVO.RequestProtocolType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestProtocolType = string(value["RequestProtocolType"].GetString());
+        m_requestProtocolTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1538,6 +1571,30 @@ void ServiceVO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "McpServerNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mcpServerNum, allocator);
+    }
+
+    if (m_credentialIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CredentialID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_credentialID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_credentialNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CredentialName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_credentialName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requestProtocolTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestProtocolType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_requestProtocolType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2613,5 +2670,53 @@ void ServiceVO::SetMcpServerNum(const int64_t& _mcpServerNum)
 bool ServiceVO::McpServerNumHasBeenSet() const
 {
     return m_mcpServerNumHasBeenSet;
+}
+
+string ServiceVO::GetCredentialID() const
+{
+    return m_credentialID;
+}
+
+void ServiceVO::SetCredentialID(const string& _credentialID)
+{
+    m_credentialID = _credentialID;
+    m_credentialIDHasBeenSet = true;
+}
+
+bool ServiceVO::CredentialIDHasBeenSet() const
+{
+    return m_credentialIDHasBeenSet;
+}
+
+string ServiceVO::GetCredentialName() const
+{
+    return m_credentialName;
+}
+
+void ServiceVO::SetCredentialName(const string& _credentialName)
+{
+    m_credentialName = _credentialName;
+    m_credentialNameHasBeenSet = true;
+}
+
+bool ServiceVO::CredentialNameHasBeenSet() const
+{
+    return m_credentialNameHasBeenSet;
+}
+
+string ServiceVO::GetRequestProtocolType() const
+{
+    return m_requestProtocolType;
+}
+
+void ServiceVO::SetRequestProtocolType(const string& _requestProtocolType)
+{
+    m_requestProtocolType = _requestProtocolType;
+    m_requestProtocolTypeHasBeenSet = true;
+}
+
+bool ServiceVO::RequestProtocolTypeHasBeenSet() const
+{
+    return m_requestProtocolTypeHasBeenSet;
 }
 

@@ -28,7 +28,8 @@ DescribeApplicationListRequest::DescribeApplicationListRequest() :
     m_pageSizeHasBeenSet(false),
     m_searchTextHasBeenSet(false),
     m_tagSetHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_newVersionHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,14 @@ string DescribeApplicationListRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_newVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_newVersion, allocator);
     }
 
 
@@ -203,6 +212,22 @@ void DescribeApplicationListRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeApplicationListRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+uint64_t DescribeApplicationListRequest::GetNewVersion() const
+{
+    return m_newVersion;
+}
+
+void DescribeApplicationListRequest::SetNewVersion(const uint64_t& _newVersion)
+{
+    m_newVersion = _newVersion;
+    m_newVersionHasBeenSet = true;
+}
+
+bool DescribeApplicationListRequest::NewVersionHasBeenSet() const
+{
+    return m_newVersionHasBeenSet;
 }
 
 

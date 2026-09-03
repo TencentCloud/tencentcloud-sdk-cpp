@@ -27,7 +27,8 @@ ResultList::ResultList() :
     m_tableHasBeenSet(false),
     m_answerHasBeenSet(false),
     m_parseHasBeenSet(false),
-    m_coordHasBeenSet(false)
+    m_coordHasBeenSet(false),
+    m_coordPageIndexHasBeenSet(false)
 {
 }
 
@@ -176,6 +177,19 @@ CoreInternalOutcome ResultList::Deserialize(const rapidjson::Value &value)
         m_coordHasBeenSet = true;
     }
 
+    if (value.HasMember("CoordPageIndex") && !value["CoordPageIndex"].IsNull())
+    {
+        if (!value["CoordPageIndex"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ResultList.CoordPageIndex` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CoordPageIndex"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_coordPageIndex.push_back((*itr).GetInt64());
+        }
+        m_coordPageIndexHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -285,6 +299,19 @@ void ResultList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_coordPageIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CoordPageIndex";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_coordPageIndex.begin(); itr != m_coordPageIndex.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
@@ -401,5 +428,21 @@ void ResultList::SetCoord(const vector<Polygon>& _coord)
 bool ResultList::CoordHasBeenSet() const
 {
     return m_coordHasBeenSet;
+}
+
+vector<int64_t> ResultList::GetCoordPageIndex() const
+{
+    return m_coordPageIndex;
+}
+
+void ResultList::SetCoordPageIndex(const vector<int64_t>& _coordPageIndex)
+{
+    m_coordPageIndex = _coordPageIndex;
+    m_coordPageIndexHasBeenSet = true;
+}
+
+bool ResultList::CoordPageIndexHasBeenSet() const
+{
+    return m_coordPageIndexHasBeenSet;
 }
 

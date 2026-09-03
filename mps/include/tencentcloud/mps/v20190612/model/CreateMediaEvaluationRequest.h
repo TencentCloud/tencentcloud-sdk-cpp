@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取评测的原文件输入信息。目前输入对象的类型有 COS 和 URL。
-                     * @return InputInfo 评测的原文件输入信息。目前输入对象的类型有 COS 和 URL。
+                     * 获取<p>评测的原文件输入信息。目前输入对象的类型有 COS 和 URL。</p>
+                     * @return InputInfo <p>评测的原文件输入信息。目前输入对象的类型有 COS 和 URL。</p>
                      * 
                      */
                     MediaInputInfo GetInputInfo() const;
 
                     /**
-                     * 设置评测的原文件输入信息。目前输入对象的类型有 COS 和 URL。
-                     * @param _inputInfo 评测的原文件输入信息。目前输入对象的类型有 COS 和 URL。
+                     * 设置<p>评测的原文件输入信息。目前输入对象的类型有 COS 和 URL。</p>
+                     * @param _inputInfo <p>评测的原文件输入信息。目前输入对象的类型有 COS 和 URL。</p>
                      * 
                      */
                     void SetInputInfo(const MediaInputInfo& _inputInfo);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InputInfoHasBeenSet() const;
 
                     /**
-                     * 获取评测任务参数。
-                     * @return EvaluationTask 评测任务参数。
+                     * 获取<p>评测任务参数。</p>
+                     * @return EvaluationTask <p>评测任务参数。</p>
                      * 
                      */
                     EvaluationTaskInput GetEvaluationTask() const;
 
                     /**
-                     * 设置评测任务参数。
-                     * @param _evaluationTask 评测任务参数。
+                     * 设置<p>评测任务参数。</p>
+                     * @param _evaluationTask <p>评测任务参数。</p>
                      * 
                      */
                     void SetEvaluationTask(const EvaluationTaskInput& _evaluationTask);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool EvaluationTaskHasBeenSet() const;
 
                     /**
-                     * 获取评测的输出文件的目标存储。不填则继承 InputInfo 中的存储位置。目前输出对象存储位置的类型有COS。
-                     * @return OutputStorage 评测的输出文件的目标存储。不填则继承 InputInfo 中的存储位置。目前输出对象存储位置的类型有COS。
+                     * 获取<p>评测的输出文件的目标存储。不填则继承 InputInfo 中的存储位置。目前输出对象存储位置的类型有COS。</p>
+                     * @return OutputStorage <p>评测的输出文件的目标存储。不填则继承 InputInfo 中的存储位置。目前输出对象存储位置的类型有COS。</p>
                      * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
-                     * 设置评测的输出文件的目标存储。不填则继承 InputInfo 中的存储位置。目前输出对象存储位置的类型有COS。
-                     * @param _outputStorage 评测的输出文件的目标存储。不填则继承 InputInfo 中的存储位置。目前输出对象存储位置的类型有COS。
+                     * 设置<p>评测的输出文件的目标存储。不填则继承 InputInfo 中的存储位置。目前输出对象存储位置的类型有COS。</p>
+                     * @param _outputStorage <p>评测的输出文件的目标存储。不填则继承 InputInfo 中的存储位置。目前输出对象存储位置的类型有COS。</p>
                      * 
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool OutputStorageHasBeenSet() const;
 
                     /**
-                     * 获取评测生成文件的输出目录，必选以 / 开头和结尾，如/movie/201907/。 如果不填，表示与 InputInfo 中文件所在的目录一致。
-                     * @return OutputDir 评测生成文件的输出目录，必选以 / 开头和结尾，如/movie/201907/。 如果不填，表示与 InputInfo 中文件所在的目录一致。
+                     * 获取<p>评测生成文件的输出目录，必选以 / 开头和结尾，如/movie/201907/。 如果不填，表示与 InputInfo 中文件所在的目录一致。</p>
+                     * @return OutputDir <p>评测生成文件的输出目录，必选以 / 开头和结尾，如/movie/201907/。 如果不填，表示与 InputInfo 中文件所在的目录一致。</p>
                      * 
                      */
                     std::string GetOutputDir() const;
 
                     /**
-                     * 设置评测生成文件的输出目录，必选以 / 开头和结尾，如/movie/201907/。 如果不填，表示与 InputInfo 中文件所在的目录一致。
-                     * @param _outputDir 评测生成文件的输出目录，必选以 / 开头和结尾，如/movie/201907/。 如果不填，表示与 InputInfo 中文件所在的目录一致。
+                     * 设置<p>评测生成文件的输出目录，必选以 / 开头和结尾，如/movie/201907/。 如果不填，表示与 InputInfo 中文件所在的目录一致。</p>
+                     * @param _outputDir <p>评测生成文件的输出目录，必选以 / 开头和结尾，如/movie/201907/。 如果不填，表示与 InputInfo 中文件所在的目录一致。</p>
                      * 
                      */
                     void SetOutputDir(const std::string& _outputDir);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool OutputDirHasBeenSet() const;
 
                     /**
-                     * 获取任务的事件通知信息，不填代表不获取事件通知。
-                     * @return TaskNotifyConfig 任务的事件通知信息，不填代表不获取事件通知。
+                     * 获取<p>任务的事件通知信息，不填代表不获取事件通知。</p>
+                     * @return TaskNotifyConfig <p>任务的事件通知信息，不填代表不获取事件通知。</p>
                      * 
                      */
                     TaskNotifyConfig GetTaskNotifyConfig() const;
 
                     /**
-                     * 设置任务的事件通知信息，不填代表不获取事件通知。
-                     * @param _taskNotifyConfig 任务的事件通知信息，不填代表不获取事件通知。
+                     * 设置<p>任务的事件通知信息，不填代表不获取事件通知。</p>
+                     * @param _taskNotifyConfig <p>任务的事件通知信息，不填代表不获取事件通知。</p>
                      * 
                      */
                     void SetTaskNotifyConfig(const TaskNotifyConfig& _taskNotifyConfig);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool TaskNotifyConfigHasBeenSet() const;
 
                     /**
-                     * 获取任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
-                     * @return TasksPriority 任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
+                     * 获取<p>任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>
+                     * @return TasksPriority <p>任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>
                      * 
                      */
                     int64_t GetTasksPriority() const;
 
                     /**
-                     * 设置任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
-                     * @param _tasksPriority 任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
+                     * 设置<p>任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>
+                     * @param _tasksPriority <p>任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>
                      * 
                      */
                     void SetTasksPriority(const int64_t& _tasksPriority);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool TasksPriorityHasBeenSet() const;
 
                     /**
-                     * 获取用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-                     * @return SessionId 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 获取<p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
+                     * @return SessionId <p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-                     * @param _sessionId 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 设置<p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
+                     * @param _sessionId <p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @return SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 获取<p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
+                     * @return SessionContext <p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @param _sessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 设置<p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
+                     * @param _sessionContext <p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -217,49 +217,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 评测的原文件输入信息。目前输入对象的类型有 COS 和 URL。
+                     * <p>评测的原文件输入信息。目前输入对象的类型有 COS 和 URL。</p>
                      */
                     MediaInputInfo m_inputInfo;
                     bool m_inputInfoHasBeenSet;
 
                     /**
-                     * 评测任务参数。
+                     * <p>评测任务参数。</p>
                      */
                     EvaluationTaskInput m_evaluationTask;
                     bool m_evaluationTaskHasBeenSet;
 
                     /**
-                     * 评测的输出文件的目标存储。不填则继承 InputInfo 中的存储位置。目前输出对象存储位置的类型有COS。
+                     * <p>评测的输出文件的目标存储。不填则继承 InputInfo 中的存储位置。目前输出对象存储位置的类型有COS。</p>
                      */
                     TaskOutputStorage m_outputStorage;
                     bool m_outputStorageHasBeenSet;
 
                     /**
-                     * 评测生成文件的输出目录，必选以 / 开头和结尾，如/movie/201907/。 如果不填，表示与 InputInfo 中文件所在的目录一致。
+                     * <p>评测生成文件的输出目录，必选以 / 开头和结尾，如/movie/201907/。 如果不填，表示与 InputInfo 中文件所在的目录一致。</p>
                      */
                     std::string m_outputDir;
                     bool m_outputDirHasBeenSet;
 
                     /**
-                     * 任务的事件通知信息，不填代表不获取事件通知。
+                     * <p>任务的事件通知信息，不填代表不获取事件通知。</p>
                      */
                     TaskNotifyConfig m_taskNotifyConfig;
                     bool m_taskNotifyConfigHasBeenSet;
 
                     /**
-                     * 任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
+                     * <p>任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>
                      */
                     int64_t m_tasksPriority;
                     bool m_tasksPriorityHasBeenSet;
 
                     /**
-                     * 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * <p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * <p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;

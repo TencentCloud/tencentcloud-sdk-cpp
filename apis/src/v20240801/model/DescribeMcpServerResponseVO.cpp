@@ -62,7 +62,11 @@ DescribeMcpServerResponseVO::DescribeMcpServerResponseVO() :
     m_wrapPaasIDHasBeenSet(false),
     m_relateAgentAppNumHasBeenSet(false),
     m_pluginConfigsHasBeenSet(false),
-    m_ignoreHealthCheckHasBeenSet(false)
+    m_ignoreHealthCheckHasBeenSet(false),
+    m_credentialIDHasBeenSet(false),
+    m_credentialNameHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_requestProtocolTypeHasBeenSet(false)
 {
 }
 
@@ -605,6 +609,46 @@ CoreInternalOutcome DescribeMcpServerResponseVO::Deserialize(const rapidjson::Va
         m_ignoreHealthCheckHasBeenSet = true;
     }
 
+    if (value.HasMember("CredentialID") && !value["CredentialID"].IsNull())
+    {
+        if (!value["CredentialID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeMcpServerResponseVO.CredentialID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_credentialID = string(value["CredentialID"].GetString());
+        m_credentialIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("CredentialName") && !value["CredentialName"].IsNull())
+    {
+        if (!value["CredentialName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeMcpServerResponseVO.CredentialName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_credentialName = string(value["CredentialName"].GetString());
+        m_credentialNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    {
+        if (!value["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeMcpServerResponseVO.Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(value["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
+    if (value.HasMember("RequestProtocolType") && !value["RequestProtocolType"].IsNull())
+    {
+        if (!value["RequestProtocolType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeMcpServerResponseVO.RequestProtocolType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestProtocolType = string(value["RequestProtocolType"].GetString());
+        m_requestProtocolTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1015,6 +1059,38 @@ void DescribeMcpServerResponseVO::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "IgnoreHealthCheck";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ignoreHealthCheck, allocator);
+    }
+
+    if (m_credentialIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CredentialID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_credentialID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_credentialNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CredentialName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_credentialName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requestProtocolTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestProtocolType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_requestProtocolType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1690,5 +1766,69 @@ void DescribeMcpServerResponseVO::SetIgnoreHealthCheck(const bool& _ignoreHealth
 bool DescribeMcpServerResponseVO::IgnoreHealthCheckHasBeenSet() const
 {
     return m_ignoreHealthCheckHasBeenSet;
+}
+
+string DescribeMcpServerResponseVO::GetCredentialID() const
+{
+    return m_credentialID;
+}
+
+void DescribeMcpServerResponseVO::SetCredentialID(const string& _credentialID)
+{
+    m_credentialID = _credentialID;
+    m_credentialIDHasBeenSet = true;
+}
+
+bool DescribeMcpServerResponseVO::CredentialIDHasBeenSet() const
+{
+    return m_credentialIDHasBeenSet;
+}
+
+string DescribeMcpServerResponseVO::GetCredentialName() const
+{
+    return m_credentialName;
+}
+
+void DescribeMcpServerResponseVO::SetCredentialName(const string& _credentialName)
+{
+    m_credentialName = _credentialName;
+    m_credentialNameHasBeenSet = true;
+}
+
+bool DescribeMcpServerResponseVO::CredentialNameHasBeenSet() const
+{
+    return m_credentialNameHasBeenSet;
+}
+
+string DescribeMcpServerResponseVO::GetDomain() const
+{
+    return m_domain;
+}
+
+void DescribeMcpServerResponseVO::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool DescribeMcpServerResponseVO::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
+}
+
+string DescribeMcpServerResponseVO::GetRequestProtocolType() const
+{
+    return m_requestProtocolType;
+}
+
+void DescribeMcpServerResponseVO::SetRequestProtocolType(const string& _requestProtocolType)
+{
+    m_requestProtocolType = _requestProtocolType;
+    m_requestProtocolTypeHasBeenSet = true;
+}
+
+bool DescribeMcpServerResponseVO::RequestProtocolTypeHasBeenSet() const
+{
+    return m_requestProtocolTypeHasBeenSet;
 }
 

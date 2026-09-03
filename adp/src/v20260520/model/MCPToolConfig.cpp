@@ -22,7 +22,9 @@ using namespace std;
 
 MCPToolConfig::MCPToolConfig() :
     m_inputsHasBeenSet(false),
-    m_outputsHasBeenSet(false)
+    m_outputsHasBeenSet(false),
+    m_metaHasBeenSet(false),
+    m_supportsAppsHasBeenSet(false)
 {
 }
 
@@ -71,6 +73,33 @@ CoreInternalOutcome MCPToolConfig::Deserialize(const rapidjson::Value &value)
         m_outputsHasBeenSet = true;
     }
 
+    if (value.HasMember("Meta") && !value["Meta"].IsNull())
+    {
+        if (!value["Meta"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MCPToolConfig.Meta` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_meta.Deserialize(value["Meta"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_metaHasBeenSet = true;
+    }
+
+    if (value.HasMember("SupportsApps") && !value["SupportsApps"].IsNull())
+    {
+        if (!value["SupportsApps"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `MCPToolConfig.SupportsApps` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportsApps = value["SupportsApps"].GetBool();
+        m_supportsAppsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +137,23 @@ void MCPToolConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         }
     }
 
+    if (m_metaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Meta";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_meta.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_supportsAppsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportsApps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportsApps, allocator);
+    }
+
 }
 
 
@@ -141,5 +187,37 @@ void MCPToolConfig::SetOutputs(const vector<ResponseParam>& _outputs)
 bool MCPToolConfig::OutputsHasBeenSet() const
 {
     return m_outputsHasBeenSet;
+}
+
+MCPToolMeta MCPToolConfig::GetMeta() const
+{
+    return m_meta;
+}
+
+void MCPToolConfig::SetMeta(const MCPToolMeta& _meta)
+{
+    m_meta = _meta;
+    m_metaHasBeenSet = true;
+}
+
+bool MCPToolConfig::MetaHasBeenSet() const
+{
+    return m_metaHasBeenSet;
+}
+
+bool MCPToolConfig::GetSupportsApps() const
+{
+    return m_supportsApps;
+}
+
+void MCPToolConfig::SetSupportsApps(const bool& _supportsApps)
+{
+    m_supportsApps = _supportsApps;
+    m_supportsAppsHasBeenSet = true;
+}
+
+bool MCPToolConfig::SupportsAppsHasBeenSet() const
+{
+    return m_supportsAppsHasBeenSet;
 }
 

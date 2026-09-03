@@ -24,7 +24,8 @@ DescribeDLPEdgeNodeGroupsRspItem::DescribeDLPEdgeNodeGroupsRspItem() :
     m_idHasBeenSet(false),
     m_groupNameHasBeenSet(false),
     m_groupIdHasBeenSet(false),
-    m_edgeCountHasBeenSet(false)
+    m_edgeCountHasBeenSet(false),
+    m_groupNameI18nHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,26 @@ CoreInternalOutcome DescribeDLPEdgeNodeGroupsRspItem::Deserialize(const rapidjso
         m_edgeCountHasBeenSet = true;
     }
 
+    if (value.HasMember("GroupNameI18n") && !value["GroupNameI18n"].IsNull())
+    {
+        if (!value["GroupNameI18n"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeDLPEdgeNodeGroupsRspItem.GroupNameI18n` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["GroupNameI18n"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            I18nString item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_groupNameI18n.push_back(item);
+        }
+        m_groupNameI18nHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +131,21 @@ void DescribeDLPEdgeNodeGroupsRspItem::ToJsonObject(rapidjson::Value &value, rap
         string key = "EdgeCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_edgeCount, allocator);
+    }
+
+    if (m_groupNameI18nHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupNameI18n";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_groupNameI18n.begin(); itr != m_groupNameI18n.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -177,5 +213,21 @@ void DescribeDLPEdgeNodeGroupsRspItem::SetEdgeCount(const int64_t& _edgeCount)
 bool DescribeDLPEdgeNodeGroupsRspItem::EdgeCountHasBeenSet() const
 {
     return m_edgeCountHasBeenSet;
+}
+
+vector<I18nString> DescribeDLPEdgeNodeGroupsRspItem::GetGroupNameI18n() const
+{
+    return m_groupNameI18n;
+}
+
+void DescribeDLPEdgeNodeGroupsRspItem::SetGroupNameI18n(const vector<I18nString>& _groupNameI18n)
+{
+    m_groupNameI18n = _groupNameI18n;
+    m_groupNameI18nHasBeenSet = true;
+}
+
+bool DescribeDLPEdgeNodeGroupsRspItem::GroupNameI18nHasBeenSet() const
+{
+    return m_groupNameI18nHasBeenSet;
 }
 

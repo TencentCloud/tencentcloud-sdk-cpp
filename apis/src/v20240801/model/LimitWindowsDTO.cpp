@@ -22,7 +22,9 @@ using namespace std;
 
 LimitWindowsDTO::LimitWindowsDTO() :
     m_intervalHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_timeRangeHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,33 @@ CoreInternalOutcome LimitWindowsDTO::Deserialize(const rapidjson::Value &value)
         m_limitHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LimitWindowsDTO.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TimeRange") && !value["TimeRange"].IsNull())
+    {
+        if (!value["TimeRange"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LimitWindowsDTO.TimeRange` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_timeRange.Deserialize(value["TimeRange"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_timeRangeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +101,23 @@ void LimitWindowsDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeRange";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_timeRange.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -107,5 +153,37 @@ void LimitWindowsDTO::SetLimit(const uint64_t& _limit)
 bool LimitWindowsDTO::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string LimitWindowsDTO::GetType() const
+{
+    return m_type;
+}
+
+void LimitWindowsDTO::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool LimitWindowsDTO::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+TimeRange LimitWindowsDTO::GetTimeRange() const
+{
+    return m_timeRange;
+}
+
+void LimitWindowsDTO::SetTimeRange(const TimeRange& _timeRange)
+{
+    m_timeRange = _timeRange;
+    m_timeRangeHasBeenSet = true;
+}
+
+bool LimitWindowsDTO::TimeRangeHasBeenSet() const
+{
+    return m_timeRangeHasBeenSet;
 }
 

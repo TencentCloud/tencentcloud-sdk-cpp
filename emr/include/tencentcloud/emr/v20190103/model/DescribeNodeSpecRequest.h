@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用区Id，可以通过https://document.capi.woa.com/document/api/1605/76892查询相关信息
-                     * @return ZoneId 可用区Id，可以通过https://document.capi.woa.com/document/api/1605/76892查询相关信息
+                     * 获取<p>可用区Id，可以通过https://document.capi.woa.com/document/api/1605/76892查询相关信息</p>
+                     * @return ZoneId <p>可用区Id，可以通过https://document.capi.woa.com/document/api/1605/76892查询相关信息</p>
                      * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
-                     * 设置可用区Id，可以通过https://document.capi.woa.com/document/api/1605/76892查询相关信息
-                     * @param _zoneId 可用区Id，可以通过https://document.capi.woa.com/document/api/1605/76892查询相关信息
+                     * 设置<p>可用区Id，可以通过https://document.capi.woa.com/document/api/1605/76892查询相关信息</p>
+                     * @param _zoneId <p>可用区Id，可以通过https://document.capi.woa.com/document/api/1605/76892查询相关信息</p>
                      * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取0,按量，1包年包月，99按量+包年包月，错填将不会展示费用信息
-                     * @return CvmPayMode 0,按量，1包年包月，99按量+包年包月，错填将不会展示费用信息
+                     * 获取<p>0,按量，1包年包月，99按量+包年包月，错填将不会展示费用信息</p>
+                     * @return CvmPayMode <p>0,按量，1包年包月，99按量+包年包月，错填将不会展示费用信息</p>
                      * 
                      */
                     uint64_t GetCvmPayMode() const;
 
                     /**
-                     * 设置0,按量，1包年包月，99按量+包年包月，错填将不会展示费用信息
-                     * @param _cvmPayMode 0,按量，1包年包月，99按量+包年包月，错填将不会展示费用信息
+                     * 设置<p>0,按量，1包年包月，99按量+包年包月，错填将不会展示费用信息</p>
+                     * @param _cvmPayMode <p>0,按量，1包年包月，99按量+包年包月，错填将不会展示费用信息</p>
                      * 
                      */
                     void SetCvmPayMode(const uint64_t& _cvmPayMode);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool CvmPayModeHasBeenSet() const;
 
                     /**
-                     * 获取节点类型,Master,Core,Task,Router,All
-                     * @return NodeType 节点类型,Master,Core,Task,Router,All
+                     * 获取<p>节点类型,Master,Core,Task,Router,All</p>
+                     * @return NodeType <p>节点类型,Master,Core,Task,Router,All</p>
                      * 
                      */
                     std::string GetNodeType() const;
 
                     /**
-                     * 设置节点类型,Master,Core,Task,Router,All
-                     * @param _nodeType 节点类型,Master,Core,Task,Router,All
+                     * 设置<p>节点类型,Master,Core,Task,Router,All</p>
+                     * @param _nodeType <p>节点类型,Master,Core,Task,Router,All</p>
                      * 
                      */
                     void SetNodeType(const std::string& _nodeType);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取0:旧计费页面,1:新计费页面。 错填，默认为旧计费
-                     * @return TradeType 0:旧计费页面,1:新计费页面。 错填，默认为旧计费
+                     * 获取<p>0:旧计费页面,1:新计费页面。 错填，默认为旧计费</p>
+                     * @return TradeType <p>0:旧计费页面,1:新计费页面。 错填，默认为旧计费</p>
                      * 
                      */
                     uint64_t GetTradeType() const;
 
                     /**
-                     * 设置0:旧计费页面,1:新计费页面。 错填，默认为旧计费
-                     * @param _tradeType 0:旧计费页面,1:新计费页面。 错填，默认为旧计费
+                     * 设置<p>0:旧计费页面,1:新计费页面。 错填，默认为旧计费</p>
+                     * @param _tradeType <p>0:旧计费页面,1:新计费页面。 错填，默认为旧计费</p>
                      * 
                      */
                     void SetTradeType(const uint64_t& _tradeType);
@@ -127,239 +127,15 @@ namespace TencentCloud
                     bool TradeTypeHasBeenSet() const;
 
                     /**
-                     * 获取产品Id，不填为0，则表示所有productId，前台使用必填
-
-44	EMR	V3.5.0
-43	EMR	V3.4.0.tlinux
-42	EMR	V2.7.0.tlinux
-41	DRUID	V1.1.0
-67	STARROCKS	V2.2.0
-45	DRUID	V1.1.0.tlinux
-40	EMRCLOUD	v3.2.0
-47	EMR	V4.0.0
-48	STARROCKS	V1.2.0
-49	STARROCKS	V1.3.0
-50	KAFKA	V2.0.0
-51	STARROCKS	V1.4.0
-52	EMR-TKE	V1.0.0
-53	EMR	V3.6.0
-54	STARROCKS	V2.0.0
-55	EMR-TKE	V1.0.1
-56	EMR-TKE	DLCV1.0.0
-57	EMR	V2.8.0
-58	EMR	V3.6.1
-59	SERVERLESS	V1.0.0
-60	EMR-TKE	V1.1.0
-62	STARROCKS	V2.1.1
-63	STARROCKS	V2.1.1.tlinux
-64	EMR-TKE	TCCV1.0.0
-65	EMR-TKE-AI	V1.0.0
-66	RSS	V1.0.0
-24	EMR	TianQiong-V1.0.0
-3	EMR	V2.0.1.tlinux
-4	EMR	V2.1.0
-7	EMR	V3.0.0
-8	EMR	V3.0.0.tlinux
-9	EMR	V2.2.0
-11	CLICKHOUSE	V1.0.0
-12	CLICKHOUSE	V1.0.0.tlinux
-16	EMR	V2.3.0
-17	CLICKHOUSE	V1.1.0
-18	CLICKHOUSE	V1.1.0.tlinux
-19	EMR	V2.4.0
-20	EMR	V2.5.0
-21	USERCUSTOM	V1.0.0
-22	CLICKHOUSE	V1.2.0
-39	STARROCKS	V1.1.0
-25	EMR	V3.1.0
-26	DORIS	V1.0.0
-27	KAFKA	V1.0.0
-28	EMR	V3.2.0
-29	EMR	V2.5.1
-30	EMR	V2.6.0
-32	DORIS	V1.1.0
-33	EMR	V3.2.1
-34	EMR	V3.3.0
-35	DORIS	V1.2.0
-36	STARROCKS	V1.0.0
-37	EMR	V3.4.0
-38	EMR	V2.7.0
-                     * @return ProductId 产品Id，不填为0，则表示所有productId，前台使用必填
-
-44	EMR	V3.5.0
-43	EMR	V3.4.0.tlinux
-42	EMR	V2.7.0.tlinux
-41	DRUID	V1.1.0
-67	STARROCKS	V2.2.0
-45	DRUID	V1.1.0.tlinux
-40	EMRCLOUD	v3.2.0
-47	EMR	V4.0.0
-48	STARROCKS	V1.2.0
-49	STARROCKS	V1.3.0
-50	KAFKA	V2.0.0
-51	STARROCKS	V1.4.0
-52	EMR-TKE	V1.0.0
-53	EMR	V3.6.0
-54	STARROCKS	V2.0.0
-55	EMR-TKE	V1.0.1
-56	EMR-TKE	DLCV1.0.0
-57	EMR	V2.8.0
-58	EMR	V3.6.1
-59	SERVERLESS	V1.0.0
-60	EMR-TKE	V1.1.0
-62	STARROCKS	V2.1.1
-63	STARROCKS	V2.1.1.tlinux
-64	EMR-TKE	TCCV1.0.0
-65	EMR-TKE-AI	V1.0.0
-66	RSS	V1.0.0
-24	EMR	TianQiong-V1.0.0
-3	EMR	V2.0.1.tlinux
-4	EMR	V2.1.0
-7	EMR	V3.0.0
-8	EMR	V3.0.0.tlinux
-9	EMR	V2.2.0
-11	CLICKHOUSE	V1.0.0
-12	CLICKHOUSE	V1.0.0.tlinux
-16	EMR	V2.3.0
-17	CLICKHOUSE	V1.1.0
-18	CLICKHOUSE	V1.1.0.tlinux
-19	EMR	V2.4.0
-20	EMR	V2.5.0
-21	USERCUSTOM	V1.0.0
-22	CLICKHOUSE	V1.2.0
-39	STARROCKS	V1.1.0
-25	EMR	V3.1.0
-26	DORIS	V1.0.0
-27	KAFKA	V1.0.0
-28	EMR	V3.2.0
-29	EMR	V2.5.1
-30	EMR	V2.6.0
-32	DORIS	V1.1.0
-33	EMR	V3.2.1
-34	EMR	V3.3.0
-35	DORIS	V1.2.0
-36	STARROCKS	V1.0.0
-37	EMR	V3.4.0
-38	EMR	V2.7.0
+                     * 获取<p>产品Id，不填为0，则表示所有productId，前台使用必填</p><p>44    EMR    V3.5.0<br>43    EMR    V3.4.0.tlinux<br>42    EMR    V2.7.0.tlinux<br>41    DRUID    V1.1.0<br>67    STARROCKS    V2.2.0<br>45    DRUID    V1.1.0.tlinux<br>40    EMRCLOUD    v3.2.0<br>47    EMR    V4.0.0<br>48    STARROCKS    V1.2.0<br>49    STARROCKS    V1.3.0<br>50    KAFKA    V2.0.0<br>51    STARROCKS    V1.4.0<br>52    EMR-TKE    V1.0.0<br>53    EMR    V3.6.0<br>54    STARROCKS    V2.0.0<br>55    EMR-TKE    V1.0.1<br>56    EMR-TKE    DLCV1.0.0<br>57    EMR    V2.8.0<br>58    EMR    V3.6.1<br>59    SERVERLESS    V1.0.0<br>60    EMR-TKE    V1.1.0<br>62    STARROCKS    V2.1.1<br>63    STARROCKS    V2.1.1.tlinux<br>64    EMR-TKE    TCCV1.0.0<br>65    EMR-TKE-AI    V1.0.0<br>66    RSS    V1.0.0<br>24    EMR    TianQiong-V1.0.0<br>3    EMR    V2.0.1.tlinux<br>4    EMR    V2.1.0<br>7    EMR    V3.0.0<br>8    EMR    V3.0.0.tlinux<br>9    EMR    V2.2.0<br>11    CLICKHOUSE    V1.0.0<br>12    CLICKHOUSE    V1.0.0.tlinux<br>16    EMR    V2.3.0<br>17    CLICKHOUSE    V1.1.0<br>18    CLICKHOUSE    V1.1.0.tlinux<br>19    EMR    V2.4.0<br>20    EMR    V2.5.0<br>21    USERCUSTOM    V1.0.0<br>22    CLICKHOUSE    V1.2.0<br>39    STARROCKS    V1.1.0<br>25    EMR    V3.1.0<br>26    DORIS    V1.0.0<br>27    KAFKA    V1.0.0<br>28    EMR    V3.2.0<br>29    EMR    V2.5.1<br>30    EMR    V2.6.0<br>32    DORIS    V1.1.0<br>33    EMR    V3.2.1<br>34    EMR    V3.3.0<br>35    DORIS    V1.2.0<br>36    STARROCKS    V1.0.0<br>37    EMR    V3.4.0<br>38    EMR    V2.7.0</p>
+                     * @return ProductId <p>产品Id，不填为0，则表示所有productId，前台使用必填</p><p>44    EMR    V3.5.0<br>43    EMR    V3.4.0.tlinux<br>42    EMR    V2.7.0.tlinux<br>41    DRUID    V1.1.0<br>67    STARROCKS    V2.2.0<br>45    DRUID    V1.1.0.tlinux<br>40    EMRCLOUD    v3.2.0<br>47    EMR    V4.0.0<br>48    STARROCKS    V1.2.0<br>49    STARROCKS    V1.3.0<br>50    KAFKA    V2.0.0<br>51    STARROCKS    V1.4.0<br>52    EMR-TKE    V1.0.0<br>53    EMR    V3.6.0<br>54    STARROCKS    V2.0.0<br>55    EMR-TKE    V1.0.1<br>56    EMR-TKE    DLCV1.0.0<br>57    EMR    V2.8.0<br>58    EMR    V3.6.1<br>59    SERVERLESS    V1.0.0<br>60    EMR-TKE    V1.1.0<br>62    STARROCKS    V2.1.1<br>63    STARROCKS    V2.1.1.tlinux<br>64    EMR-TKE    TCCV1.0.0<br>65    EMR-TKE-AI    V1.0.0<br>66    RSS    V1.0.0<br>24    EMR    TianQiong-V1.0.0<br>3    EMR    V2.0.1.tlinux<br>4    EMR    V2.1.0<br>7    EMR    V3.0.0<br>8    EMR    V3.0.0.tlinux<br>9    EMR    V2.2.0<br>11    CLICKHOUSE    V1.0.0<br>12    CLICKHOUSE    V1.0.0.tlinux<br>16    EMR    V2.3.0<br>17    CLICKHOUSE    V1.1.0<br>18    CLICKHOUSE    V1.1.0.tlinux<br>19    EMR    V2.4.0<br>20    EMR    V2.5.0<br>21    USERCUSTOM    V1.0.0<br>22    CLICKHOUSE    V1.2.0<br>39    STARROCKS    V1.1.0<br>25    EMR    V3.1.0<br>26    DORIS    V1.0.0<br>27    KAFKA    V1.0.0<br>28    EMR    V3.2.0<br>29    EMR    V2.5.1<br>30    EMR    V2.6.0<br>32    DORIS    V1.1.0<br>33    EMR    V3.2.1<br>34    EMR    V3.3.0<br>35    DORIS    V1.2.0<br>36    STARROCKS    V1.0.0<br>37    EMR    V3.4.0<br>38    EMR    V2.7.0</p>
                      * 
                      */
                     uint64_t GetProductId() const;
 
                     /**
-                     * 设置产品Id，不填为0，则表示所有productId，前台使用必填
-
-44	EMR	V3.5.0
-43	EMR	V3.4.0.tlinux
-42	EMR	V2.7.0.tlinux
-41	DRUID	V1.1.0
-67	STARROCKS	V2.2.0
-45	DRUID	V1.1.0.tlinux
-40	EMRCLOUD	v3.2.0
-47	EMR	V4.0.0
-48	STARROCKS	V1.2.0
-49	STARROCKS	V1.3.0
-50	KAFKA	V2.0.0
-51	STARROCKS	V1.4.0
-52	EMR-TKE	V1.0.0
-53	EMR	V3.6.0
-54	STARROCKS	V2.0.0
-55	EMR-TKE	V1.0.1
-56	EMR-TKE	DLCV1.0.0
-57	EMR	V2.8.0
-58	EMR	V3.6.1
-59	SERVERLESS	V1.0.0
-60	EMR-TKE	V1.1.0
-62	STARROCKS	V2.1.1
-63	STARROCKS	V2.1.1.tlinux
-64	EMR-TKE	TCCV1.0.0
-65	EMR-TKE-AI	V1.0.0
-66	RSS	V1.0.0
-24	EMR	TianQiong-V1.0.0
-3	EMR	V2.0.1.tlinux
-4	EMR	V2.1.0
-7	EMR	V3.0.0
-8	EMR	V3.0.0.tlinux
-9	EMR	V2.2.0
-11	CLICKHOUSE	V1.0.0
-12	CLICKHOUSE	V1.0.0.tlinux
-16	EMR	V2.3.0
-17	CLICKHOUSE	V1.1.0
-18	CLICKHOUSE	V1.1.0.tlinux
-19	EMR	V2.4.0
-20	EMR	V2.5.0
-21	USERCUSTOM	V1.0.0
-22	CLICKHOUSE	V1.2.0
-39	STARROCKS	V1.1.0
-25	EMR	V3.1.0
-26	DORIS	V1.0.0
-27	KAFKA	V1.0.0
-28	EMR	V3.2.0
-29	EMR	V2.5.1
-30	EMR	V2.6.0
-32	DORIS	V1.1.0
-33	EMR	V3.2.1
-34	EMR	V3.3.0
-35	DORIS	V1.2.0
-36	STARROCKS	V1.0.0
-37	EMR	V3.4.0
-38	EMR	V2.7.0
-                     * @param _productId 产品Id，不填为0，则表示所有productId，前台使用必填
-
-44	EMR	V3.5.0
-43	EMR	V3.4.0.tlinux
-42	EMR	V2.7.0.tlinux
-41	DRUID	V1.1.0
-67	STARROCKS	V2.2.0
-45	DRUID	V1.1.0.tlinux
-40	EMRCLOUD	v3.2.0
-47	EMR	V4.0.0
-48	STARROCKS	V1.2.0
-49	STARROCKS	V1.3.0
-50	KAFKA	V2.0.0
-51	STARROCKS	V1.4.0
-52	EMR-TKE	V1.0.0
-53	EMR	V3.6.0
-54	STARROCKS	V2.0.0
-55	EMR-TKE	V1.0.1
-56	EMR-TKE	DLCV1.0.0
-57	EMR	V2.8.0
-58	EMR	V3.6.1
-59	SERVERLESS	V1.0.0
-60	EMR-TKE	V1.1.0
-62	STARROCKS	V2.1.1
-63	STARROCKS	V2.1.1.tlinux
-64	EMR-TKE	TCCV1.0.0
-65	EMR-TKE-AI	V1.0.0
-66	RSS	V1.0.0
-24	EMR	TianQiong-V1.0.0
-3	EMR	V2.0.1.tlinux
-4	EMR	V2.1.0
-7	EMR	V3.0.0
-8	EMR	V3.0.0.tlinux
-9	EMR	V2.2.0
-11	CLICKHOUSE	V1.0.0
-12	CLICKHOUSE	V1.0.0.tlinux
-16	EMR	V2.3.0
-17	CLICKHOUSE	V1.1.0
-18	CLICKHOUSE	V1.1.0.tlinux
-19	EMR	V2.4.0
-20	EMR	V2.5.0
-21	USERCUSTOM	V1.0.0
-22	CLICKHOUSE	V1.2.0
-39	STARROCKS	V1.1.0
-25	EMR	V3.1.0
-26	DORIS	V1.0.0
-27	KAFKA	V1.0.0
-28	EMR	V3.2.0
-29	EMR	V2.5.1
-30	EMR	V2.6.0
-32	DORIS	V1.1.0
-33	EMR	V3.2.1
-34	EMR	V3.3.0
-35	DORIS	V1.2.0
-36	STARROCKS	V1.0.0
-37	EMR	V3.4.0
-38	EMR	V2.7.0
+                     * 设置<p>产品Id，不填为0，则表示所有productId，前台使用必填</p><p>44    EMR    V3.5.0<br>43    EMR    V3.4.0.tlinux<br>42    EMR    V2.7.0.tlinux<br>41    DRUID    V1.1.0<br>67    STARROCKS    V2.2.0<br>45    DRUID    V1.1.0.tlinux<br>40    EMRCLOUD    v3.2.0<br>47    EMR    V4.0.0<br>48    STARROCKS    V1.2.0<br>49    STARROCKS    V1.3.0<br>50    KAFKA    V2.0.0<br>51    STARROCKS    V1.4.0<br>52    EMR-TKE    V1.0.0<br>53    EMR    V3.6.0<br>54    STARROCKS    V2.0.0<br>55    EMR-TKE    V1.0.1<br>56    EMR-TKE    DLCV1.0.0<br>57    EMR    V2.8.0<br>58    EMR    V3.6.1<br>59    SERVERLESS    V1.0.0<br>60    EMR-TKE    V1.1.0<br>62    STARROCKS    V2.1.1<br>63    STARROCKS    V2.1.1.tlinux<br>64    EMR-TKE    TCCV1.0.0<br>65    EMR-TKE-AI    V1.0.0<br>66    RSS    V1.0.0<br>24    EMR    TianQiong-V1.0.0<br>3    EMR    V2.0.1.tlinux<br>4    EMR    V2.1.0<br>7    EMR    V3.0.0<br>8    EMR    V3.0.0.tlinux<br>9    EMR    V2.2.0<br>11    CLICKHOUSE    V1.0.0<br>12    CLICKHOUSE    V1.0.0.tlinux<br>16    EMR    V2.3.0<br>17    CLICKHOUSE    V1.1.0<br>18    CLICKHOUSE    V1.1.0.tlinux<br>19    EMR    V2.4.0<br>20    EMR    V2.5.0<br>21    USERCUSTOM    V1.0.0<br>22    CLICKHOUSE    V1.2.0<br>39    STARROCKS    V1.1.0<br>25    EMR    V3.1.0<br>26    DORIS    V1.0.0<br>27    KAFKA    V1.0.0<br>28    EMR    V3.2.0<br>29    EMR    V2.5.1<br>30    EMR    V2.6.0<br>32    DORIS    V1.1.0<br>33    EMR    V3.2.1<br>34    EMR    V3.3.0<br>35    DORIS    V1.2.0<br>36    STARROCKS    V1.0.0<br>37    EMR    V3.4.0<br>38    EMR    V2.7.0</p>
+                     * @param _productId <p>产品Id，不填为0，则表示所有productId，前台使用必填</p><p>44    EMR    V3.5.0<br>43    EMR    V3.4.0.tlinux<br>42    EMR    V2.7.0.tlinux<br>41    DRUID    V1.1.0<br>67    STARROCKS    V2.2.0<br>45    DRUID    V1.1.0.tlinux<br>40    EMRCLOUD    v3.2.0<br>47    EMR    V4.0.0<br>48    STARROCKS    V1.2.0<br>49    STARROCKS    V1.3.0<br>50    KAFKA    V2.0.0<br>51    STARROCKS    V1.4.0<br>52    EMR-TKE    V1.0.0<br>53    EMR    V3.6.0<br>54    STARROCKS    V2.0.0<br>55    EMR-TKE    V1.0.1<br>56    EMR-TKE    DLCV1.0.0<br>57    EMR    V2.8.0<br>58    EMR    V3.6.1<br>59    SERVERLESS    V1.0.0<br>60    EMR-TKE    V1.1.0<br>62    STARROCKS    V2.1.1<br>63    STARROCKS    V2.1.1.tlinux<br>64    EMR-TKE    TCCV1.0.0<br>65    EMR-TKE-AI    V1.0.0<br>66    RSS    V1.0.0<br>24    EMR    TianQiong-V1.0.0<br>3    EMR    V2.0.1.tlinux<br>4    EMR    V2.1.0<br>7    EMR    V3.0.0<br>8    EMR    V3.0.0.tlinux<br>9    EMR    V2.2.0<br>11    CLICKHOUSE    V1.0.0<br>12    CLICKHOUSE    V1.0.0.tlinux<br>16    EMR    V2.3.0<br>17    CLICKHOUSE    V1.1.0<br>18    CLICKHOUSE    V1.1.0.tlinux<br>19    EMR    V2.4.0<br>20    EMR    V2.5.0<br>21    USERCUSTOM    V1.0.0<br>22    CLICKHOUSE    V1.2.0<br>39    STARROCKS    V1.1.0<br>25    EMR    V3.1.0<br>26    DORIS    V1.0.0<br>27    KAFKA    V1.0.0<br>28    EMR    V3.2.0<br>29    EMR    V2.5.1<br>30    EMR    V2.6.0<br>32    DORIS    V1.1.0<br>33    EMR    V3.2.1<br>34    EMR    V3.3.0<br>35    DORIS    V1.2.0<br>36    STARROCKS    V1.0.0<br>37    EMR    V3.4.0<br>38    EMR    V2.7.0</p>
                      * 
                      */
                     void SetProductId(const uint64_t& _productId);
@@ -372,15 +148,15 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取场景名
-                     * @return SceneName 场景名
+                     * 获取<p>场景名</p>
+                     * @return SceneName <p>场景名</p>
                      * 
                      */
                     std::string GetSceneName() const;
 
                     /**
-                     * 设置场景名
-                     * @param _sceneName 场景名
+                     * 设置<p>场景名</p>
+                     * @param _sceneName <p>场景名</p>
                      * 
                      */
                     void SetSceneName(const std::string& _sceneName);
@@ -393,15 +169,15 @@ namespace TencentCloud
                     bool SceneNameHasBeenSet() const;
 
                     /**
-                     * 获取类型为ComputeResource和EMR以及默认，默认为EMR
-                     * @return ResourceBaseType 类型为ComputeResource和EMR以及默认，默认为EMR
+                     * 获取<p>类型为ComputeResource和EMR以及默认，默认为EMR</p>
+                     * @return ResourceBaseType <p>类型为ComputeResource和EMR以及默认，默认为EMR</p>
                      * 
                      */
                     std::string GetResourceBaseType() const;
 
                     /**
-                     * 设置类型为ComputeResource和EMR以及默认，默认为EMR
-                     * @param _resourceBaseType 类型为ComputeResource和EMR以及默认，默认为EMR
+                     * 设置<p>类型为ComputeResource和EMR以及默认，默认为EMR</p>
+                     * @param _resourceBaseType <p>类型为ComputeResource和EMR以及默认，默认为EMR</p>
                      * 
                      */
                     void SetResourceBaseType(const std::string& _resourceBaseType);
@@ -414,15 +190,15 @@ namespace TencentCloud
                     bool ResourceBaseTypeHasBeenSet() const;
 
                     /**
-                     * 获取计算资源id
-                     * @return ComputeResourceId 计算资源id
+                     * 获取<p>计算资源id</p>
+                     * @return ComputeResourceId <p>计算资源id</p>
                      * 
                      */
                     std::string GetComputeResourceId() const;
 
                     /**
-                     * 设置计算资源id
-                     * @param _computeResourceId 计算资源id
+                     * 设置<p>计算资源id</p>
+                     * @param _computeResourceId <p>计算资源id</p>
                      * 
                      */
                     void SetComputeResourceId(const std::string& _computeResourceId);
@@ -437,105 +213,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 可用区Id，可以通过https://document.capi.woa.com/document/api/1605/76892查询相关信息
+                     * <p>可用区Id，可以通过https://document.capi.woa.com/document/api/1605/76892查询相关信息</p>
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 0,按量，1包年包月，99按量+包年包月，错填将不会展示费用信息
+                     * <p>0,按量，1包年包月，99按量+包年包月，错填将不会展示费用信息</p>
                      */
                     uint64_t m_cvmPayMode;
                     bool m_cvmPayModeHasBeenSet;
 
                     /**
-                     * 节点类型,Master,Core,Task,Router,All
+                     * <p>节点类型,Master,Core,Task,Router,All</p>
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;
 
                     /**
-                     * 0:旧计费页面,1:新计费页面。 错填，默认为旧计费
+                     * <p>0:旧计费页面,1:新计费页面。 错填，默认为旧计费</p>
                      */
                     uint64_t m_tradeType;
                     bool m_tradeTypeHasBeenSet;
 
                     /**
-                     * 产品Id，不填为0，则表示所有productId，前台使用必填
-
-44	EMR	V3.5.0
-43	EMR	V3.4.0.tlinux
-42	EMR	V2.7.0.tlinux
-41	DRUID	V1.1.0
-67	STARROCKS	V2.2.0
-45	DRUID	V1.1.0.tlinux
-40	EMRCLOUD	v3.2.0
-47	EMR	V4.0.0
-48	STARROCKS	V1.2.0
-49	STARROCKS	V1.3.0
-50	KAFKA	V2.0.0
-51	STARROCKS	V1.4.0
-52	EMR-TKE	V1.0.0
-53	EMR	V3.6.0
-54	STARROCKS	V2.0.0
-55	EMR-TKE	V1.0.1
-56	EMR-TKE	DLCV1.0.0
-57	EMR	V2.8.0
-58	EMR	V3.6.1
-59	SERVERLESS	V1.0.0
-60	EMR-TKE	V1.1.0
-62	STARROCKS	V2.1.1
-63	STARROCKS	V2.1.1.tlinux
-64	EMR-TKE	TCCV1.0.0
-65	EMR-TKE-AI	V1.0.0
-66	RSS	V1.0.0
-24	EMR	TianQiong-V1.0.0
-3	EMR	V2.0.1.tlinux
-4	EMR	V2.1.0
-7	EMR	V3.0.0
-8	EMR	V3.0.0.tlinux
-9	EMR	V2.2.0
-11	CLICKHOUSE	V1.0.0
-12	CLICKHOUSE	V1.0.0.tlinux
-16	EMR	V2.3.0
-17	CLICKHOUSE	V1.1.0
-18	CLICKHOUSE	V1.1.0.tlinux
-19	EMR	V2.4.0
-20	EMR	V2.5.0
-21	USERCUSTOM	V1.0.0
-22	CLICKHOUSE	V1.2.0
-39	STARROCKS	V1.1.0
-25	EMR	V3.1.0
-26	DORIS	V1.0.0
-27	KAFKA	V1.0.0
-28	EMR	V3.2.0
-29	EMR	V2.5.1
-30	EMR	V2.6.0
-32	DORIS	V1.1.0
-33	EMR	V3.2.1
-34	EMR	V3.3.0
-35	DORIS	V1.2.0
-36	STARROCKS	V1.0.0
-37	EMR	V3.4.0
-38	EMR	V2.7.0
+                     * <p>产品Id，不填为0，则表示所有productId，前台使用必填</p><p>44    EMR    V3.5.0<br>43    EMR    V3.4.0.tlinux<br>42    EMR    V2.7.0.tlinux<br>41    DRUID    V1.1.0<br>67    STARROCKS    V2.2.0<br>45    DRUID    V1.1.0.tlinux<br>40    EMRCLOUD    v3.2.0<br>47    EMR    V4.0.0<br>48    STARROCKS    V1.2.0<br>49    STARROCKS    V1.3.0<br>50    KAFKA    V2.0.0<br>51    STARROCKS    V1.4.0<br>52    EMR-TKE    V1.0.0<br>53    EMR    V3.6.0<br>54    STARROCKS    V2.0.0<br>55    EMR-TKE    V1.0.1<br>56    EMR-TKE    DLCV1.0.0<br>57    EMR    V2.8.0<br>58    EMR    V3.6.1<br>59    SERVERLESS    V1.0.0<br>60    EMR-TKE    V1.1.0<br>62    STARROCKS    V2.1.1<br>63    STARROCKS    V2.1.1.tlinux<br>64    EMR-TKE    TCCV1.0.0<br>65    EMR-TKE-AI    V1.0.0<br>66    RSS    V1.0.0<br>24    EMR    TianQiong-V1.0.0<br>3    EMR    V2.0.1.tlinux<br>4    EMR    V2.1.0<br>7    EMR    V3.0.0<br>8    EMR    V3.0.0.tlinux<br>9    EMR    V2.2.0<br>11    CLICKHOUSE    V1.0.0<br>12    CLICKHOUSE    V1.0.0.tlinux<br>16    EMR    V2.3.0<br>17    CLICKHOUSE    V1.1.0<br>18    CLICKHOUSE    V1.1.0.tlinux<br>19    EMR    V2.4.0<br>20    EMR    V2.5.0<br>21    USERCUSTOM    V1.0.0<br>22    CLICKHOUSE    V1.2.0<br>39    STARROCKS    V1.1.0<br>25    EMR    V3.1.0<br>26    DORIS    V1.0.0<br>27    KAFKA    V1.0.0<br>28    EMR    V3.2.0<br>29    EMR    V2.5.1<br>30    EMR    V2.6.0<br>32    DORIS    V1.1.0<br>33    EMR    V3.2.1<br>34    EMR    V3.3.0<br>35    DORIS    V1.2.0<br>36    STARROCKS    V1.0.0<br>37    EMR    V3.4.0<br>38    EMR    V2.7.0</p>
                      */
                     uint64_t m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 场景名
+                     * <p>场景名</p>
                      */
                     std::string m_sceneName;
                     bool m_sceneNameHasBeenSet;
 
                     /**
-                     * 类型为ComputeResource和EMR以及默认，默认为EMR
+                     * <p>类型为ComputeResource和EMR以及默认，默认为EMR</p>
                      */
                     std::string m_resourceBaseType;
                     bool m_resourceBaseTypeHasBeenSet;
 
                     /**
-                     * 计算资源id
+                     * <p>计算资源id</p>
                      */
                     std::string m_computeResourceId;
                     bool m_computeResourceIdHasBeenSet;

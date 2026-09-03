@@ -214,6 +214,27 @@ namespace TencentCloud
                      */
                     bool NamespaceHasBeenSet() const;
 
+                    /**
+                     * 获取<p>raycluster挂载的volume数量</p>
+                     * @return StorageCount <p>raycluster挂载的volume数量</p>
+                     * 
+                     */
+                    int64_t GetStorageCount() const;
+
+                    /**
+                     * 设置<p>raycluster挂载的volume数量</p>
+                     * @param _storageCount <p>raycluster挂载的volume数量</p>
+                     * 
+                     */
+                    void SetStorageCount(const int64_t& _storageCount);
+
+                    /**
+                     * 判断参数 StorageCount 是否已赋值
+                     * @return StorageCount 是否已赋值
+                     * 
+                     */
+                    bool StorageCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +284,12 @@ namespace TencentCloud
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
+
+                    /**
+                     * <p>raycluster挂载的volume数量</p>
+                     */
+                    int64_t m_storageCount;
+                    bool m_storageCountHasBeenSet;
 
                 };
             }

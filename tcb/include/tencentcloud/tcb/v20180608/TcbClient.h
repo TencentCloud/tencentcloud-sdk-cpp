@@ -197,6 +197,8 @@
 #include <tencentcloud/tcb/v20180608/model/ModifyHTTPServiceRouteResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyLoginConfigRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyLoginConfigResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyPGInstanceSpecRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyPGInstanceSpecResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyProviderRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyProviderResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyResourcePermissionRequest.h>
@@ -506,6 +508,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLoginConfigResponse> ModifyLoginConfigOutcome;
                 typedef std::future<ModifyLoginConfigOutcome> ModifyLoginConfigOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyLoginConfigRequest&, ModifyLoginConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoginConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPGInstanceSpecResponse> ModifyPGInstanceSpecOutcome;
+                typedef std::future<ModifyPGInstanceSpecOutcome> ModifyPGInstanceSpecOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ModifyPGInstanceSpecRequest&, ModifyPGInstanceSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPGInstanceSpecAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyProviderResponse> ModifyProviderOutcome;
                 typedef std::future<ModifyProviderOutcome> ModifyProviderOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyProviderRequest&, ModifyProviderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProviderAsyncHandler;
@@ -1460,6 +1465,15 @@ Id、Secret、CreatedAt、Meta 等字段在该接口中不可修改，当客户�
                 ModifyLoginConfigOutcome ModifyLoginConfig(const Model::ModifyLoginConfigRequest &request);
                 void ModifyLoginConfigAsync(const Model::ModifyLoginConfigRequest& request, const ModifyLoginConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLoginConfigOutcomeCallable ModifyLoginConfigCallable(const Model::ModifyLoginConfigRequest& request);
+
+                /**
+                 *对 PG 独享实例变配
+                 * @param req ModifyPGInstanceSpecRequest
+                 * @return ModifyPGInstanceSpecOutcome
+                 */
+                ModifyPGInstanceSpecOutcome ModifyPGInstanceSpec(const Model::ModifyPGInstanceSpecRequest &request);
+                void ModifyPGInstanceSpecAsync(const Model::ModifyPGInstanceSpecRequest& request, const ModifyPGInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPGInstanceSpecOutcomeCallable ModifyPGInstanceSpecCallable(const Model::ModifyPGInstanceSpecRequest& request);
 
                 /**
                  *修改身份认证源。更新指定云开发环境下已有身份认证源的配置信息，支持修改基本信息（名称、图标、描述）、协议连接配置（ClientId、ClientSecret、端点地址等）、登录行为控制（透传模式、自动注册、邮箱/手机号自动关联）以及启用状态。

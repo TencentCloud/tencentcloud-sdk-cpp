@@ -53,7 +53,8 @@ LaunchConfiguration::LaunchConfiguration() :
     m_iPv6InternetAccessibleHasBeenSet(false),
     m_disasterRecoverGroupIdsHasBeenSet(false),
     m_imageFamilyHasBeenSet(false),
-    m_dedicatedClusterIdHasBeenSet(false)
+    m_dedicatedClusterIdHasBeenSet(false),
+    m_networkInterfacesHasBeenSet(false)
 {
 }
 
@@ -504,6 +505,26 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
         m_dedicatedClusterIdHasBeenSet = true;
     }
 
+    if (value.HasMember("NetworkInterfaces") && !value["NetworkInterfaces"].IsNull())
+    {
+        if (!value["NetworkInterfaces"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.NetworkInterfaces` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NetworkInterfaces"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            NetworkInterface item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_networkInterfaces.push_back(item);
+        }
+        m_networkInterfacesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -825,6 +846,21 @@ void LaunchConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "DedicatedClusterId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dedicatedClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkInterfacesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkInterfaces";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_networkInterfaces.begin(); itr != m_networkInterfaces.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1356,5 +1392,21 @@ void LaunchConfiguration::SetDedicatedClusterId(const string& _dedicatedClusterI
 bool LaunchConfiguration::DedicatedClusterIdHasBeenSet() const
 {
     return m_dedicatedClusterIdHasBeenSet;
+}
+
+vector<NetworkInterface> LaunchConfiguration::GetNetworkInterfaces() const
+{
+    return m_networkInterfaces;
+}
+
+void LaunchConfiguration::SetNetworkInterfaces(const vector<NetworkInterface>& _networkInterfaces)
+{
+    m_networkInterfaces = _networkInterfaces;
+    m_networkInterfacesHasBeenSet = true;
+}
+
+bool LaunchConfiguration::NetworkInterfacesHasBeenSet() const
+{
+    return m_networkInterfacesHasBeenSet;
 }
 

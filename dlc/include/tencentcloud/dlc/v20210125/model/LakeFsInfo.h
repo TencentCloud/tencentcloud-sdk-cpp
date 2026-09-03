@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dlc/v20210125/model/TagInfo.h>
+#include <tencentcloud/dlc/v20210125/model/KVPair.h>
 
 
 namespace TencentCloud
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取托管存储名称
-                     * @return Name 托管存储名称
+                     * 获取<p>托管存储名称</p>
+                     * @return Name <p>托管存储名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置托管存储名称
-                     * @param _name 托管存储名称
+                     * 设置<p>托管存储名称</p>
+                     * @param _name <p>托管存储名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -69,15 +70,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取托管存储类型
-                     * @return Type 托管存储类型
+                     * 获取<p>托管存储类型</p>
+                     * @return Type <p>托管存储类型</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置托管存储类型
-                     * @param _type 托管存储类型
+                     * 设置<p>托管存储类型</p>
+                     * @param _type <p>托管存储类型</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -90,15 +91,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取存储用量
-                     * @return SpaceUsedSize 存储用量
+                     * 获取<p>存储用量</p>
+                     * @return SpaceUsedSize <p>存储用量</p>
                      * 
                      */
                     double GetSpaceUsedSize() const;
 
                     /**
-                     * 设置存储用量
-                     * @param _spaceUsedSize 存储用量
+                     * 设置<p>存储用量</p>
+                     * @param _spaceUsedSize <p>存储用量</p>
                      * 
                      */
                     void SetSpaceUsedSize(const double& _spaceUsedSize);
@@ -111,15 +112,15 @@ namespace TencentCloud
                     bool SpaceUsedSizeHasBeenSet() const;
 
                     /**
-                     * 获取创建时候的时间戳
-                     * @return CreateTimeStamp 创建时候的时间戳
+                     * 获取<p>创建时候的时间戳</p>
+                     * @return CreateTimeStamp <p>创建时候的时间戳</p>
                      * 
                      */
                     int64_t GetCreateTimeStamp() const;
 
                     /**
-                     * 设置创建时候的时间戳
-                     * @param _createTimeStamp 创建时候的时间戳
+                     * 设置<p>创建时候的时间戳</p>
+                     * @param _createTimeStamp <p>创建时候的时间戳</p>
                      * 
                      */
                     void SetCreateTimeStamp(const int64_t& _createTimeStamp);
@@ -132,15 +133,15 @@ namespace TencentCloud
                     bool CreateTimeStampHasBeenSet() const;
 
                     /**
-                     * 获取是否是用户默认桶，0：默认桶，1：非默认桶
-                     * @return DefaultBucket 是否是用户默认桶，0：默认桶，1：非默认桶
+                     * 获取<p>是否是用户默认桶，0：默认桶，1：非默认桶</p>
+                     * @return DefaultBucket <p>是否是用户默认桶，0：默认桶，1：非默认桶</p>
                      * 
                      */
                     int64_t GetDefaultBucket() const;
 
                     /**
-                     * 设置是否是用户默认桶，0：默认桶，1：非默认桶
-                     * @param _defaultBucket 是否是用户默认桶，0：默认桶，1：非默认桶
+                     * 设置<p>是否是用户默认桶，0：默认桶，1：非默认桶</p>
+                     * @param _defaultBucket <p>是否是用户默认桶，0：默认桶，1：非默认桶</p>
                      * 
                      */
                     void SetDefaultBucket(const int64_t& _defaultBucket);
@@ -153,15 +154,15 @@ namespace TencentCloud
                     bool DefaultBucketHasBeenSet() const;
 
                     /**
-                     * 获取托管存储short name
-                     * @return ShortName 托管存储short name
+                     * 获取<p>托管存储short name</p>
+                     * @return ShortName <p>托管存储short name</p>
                      * 
                      */
                     std::string GetShortName() const;
 
                     /**
-                     * 设置托管存储short name
-                     * @param _shortName 托管存储short name
+                     * 设置<p>托管存储short name</p>
+                     * @param _shortName <p>托管存储short name</p>
                      * 
                      */
                     void SetShortName(const std::string& _shortName);
@@ -174,15 +175,15 @@ namespace TencentCloud
                     bool ShortNameHasBeenSet() const;
 
                     /**
-                     * 获取桶描述信息
-                     * @return Description 桶描述信息
+                     * 获取<p>桶描述信息</p>
+                     * @return Description <p>桶描述信息</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置桶描述信息
-                     * @param _description 桶描述信息
+                     * 设置<p>桶描述信息</p>
+                     * @param _description <p>桶描述信息</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -195,15 +196,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取托管桶状态，当前取值为：creating、bind、readOnly、isolate
-                     * @return Status 托管桶状态，当前取值为：creating、bind、readOnly、isolate
+                     * 获取<p>托管桶状态，当前取值为：creating、bind、readOnly、isolate</p>
+                     * @return Status <p>托管桶状态，当前取值为：creating、bind、readOnly、isolate</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置托管桶状态，当前取值为：creating、bind、readOnly、isolate
-                     * @param _status 托管桶状态，当前取值为：creating、bind、readOnly、isolate
+                     * 设置<p>托管桶状态，当前取值为：creating、bind、readOnly、isolate</p>
+                     * @param _status <p>托管桶状态，当前取值为：creating、bind、readOnly、isolate</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -216,15 +217,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取托管存储桶标签列表
-                     * @return TagList 托管存储桶标签列表
+                     * 获取<p>托管存储桶标签列表</p>
+                     * @return TagList <p>托管存储桶标签列表</p>
                      * 
                      */
                     std::vector<TagInfo> GetTagList() const;
 
                     /**
-                     * 设置托管存储桶标签列表
-                     * @param _tagList 托管存储桶标签列表
+                     * 设置<p>托管存储桶标签列表</p>
+                     * @param _tagList <p>托管存储桶标签列表</p>
                      * 
                      */
                     void SetTagList(const std::vector<TagInfo>& _tagList);
@@ -236,61 +237,115 @@ namespace TencentCloud
                      */
                     bool TagListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否是多AZ存储桶</p>
+                     * @return MultiAZ <p>是否是多AZ存储桶</p>
+                     * 
+                     */
+                    bool GetMultiAZ() const;
+
+                    /**
+                     * 设置<p>是否是多AZ存储桶</p>
+                     * @param _multiAZ <p>是否是多AZ存储桶</p>
+                     * 
+                     */
+                    void SetMultiAZ(const bool& _multiAZ);
+
+                    /**
+                     * 判断参数 MultiAZ 是否已赋值
+                     * @return MultiAZ 是否已赋值
+                     * 
+                     */
+                    bool MultiAZHasBeenSet() const;
+
+                    /**
+                     * 获取<p>存储桶配置信息</p>
+                     * @return Configuration <p>存储桶配置信息</p>
+                     * 
+                     */
+                    std::vector<KVPair> GetConfiguration() const;
+
+                    /**
+                     * 设置<p>存储桶配置信息</p>
+                     * @param _configuration <p>存储桶配置信息</p>
+                     * 
+                     */
+                    void SetConfiguration(const std::vector<KVPair>& _configuration);
+
+                    /**
+                     * 判断参数 Configuration 是否已赋值
+                     * @return Configuration 是否已赋值
+                     * 
+                     */
+                    bool ConfigurationHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 托管存储名称
+                     * <p>托管存储名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 托管存储类型
+                     * <p>托管存储类型</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 存储用量
+                     * <p>存储用量</p>
                      */
                     double m_spaceUsedSize;
                     bool m_spaceUsedSizeHasBeenSet;
 
                     /**
-                     * 创建时候的时间戳
+                     * <p>创建时候的时间戳</p>
                      */
                     int64_t m_createTimeStamp;
                     bool m_createTimeStampHasBeenSet;
 
                     /**
-                     * 是否是用户默认桶，0：默认桶，1：非默认桶
+                     * <p>是否是用户默认桶，0：默认桶，1：非默认桶</p>
                      */
                     int64_t m_defaultBucket;
                     bool m_defaultBucketHasBeenSet;
 
                     /**
-                     * 托管存储short name
+                     * <p>托管存储short name</p>
                      */
                     std::string m_shortName;
                     bool m_shortNameHasBeenSet;
 
                     /**
-                     * 桶描述信息
+                     * <p>桶描述信息</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 托管桶状态，当前取值为：creating、bind、readOnly、isolate
+                     * <p>托管桶状态，当前取值为：creating、bind、readOnly、isolate</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 托管存储桶标签列表
+                     * <p>托管存储桶标签列表</p>
                      */
                     std::vector<TagInfo> m_tagList;
                     bool m_tagListHasBeenSet;
+
+                    /**
+                     * <p>是否是多AZ存储桶</p>
+                     */
+                    bool m_multiAZ;
+                    bool m_multiAZHasBeenSet;
+
+                    /**
+                     * <p>存储桶配置信息</p>
+                     */
+                    std::vector<KVPair> m_configuration;
+                    bool m_configurationHasBeenSet;
 
                 };
             }

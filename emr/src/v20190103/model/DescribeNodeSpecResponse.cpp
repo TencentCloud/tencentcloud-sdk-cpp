@@ -24,7 +24,8 @@ using namespace TencentCloud::Emr::V20190103::Model;
 using namespace std;
 
 DescribeNodeSpecResponse::DescribeNodeSpecResponse() :
-    m_nodeSpecsHasBeenSet(false)
+    m_nodeSpecsHasBeenSet(false),
+    m_architecturesHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,26 @@ CoreInternalOutcome DescribeNodeSpecResponse::Deserialize(const string &payload)
         m_nodeSpecsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Architectures") && !rsp["Architectures"].IsNull())
+    {
+        if (!rsp["Architectures"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Architectures` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Architectures"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ArchitectureInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_architectures.push_back(item);
+        }
+        m_architecturesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -101,6 +122,21 @@ string DescribeNodeSpecResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_nodeSpecs.begin(); itr != m_nodeSpecs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_architecturesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Architectures";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_architectures.begin(); itr != m_architectures.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -127,6 +163,16 @@ vector<DescribeNodeSpec> DescribeNodeSpecResponse::GetNodeSpecs() const
 bool DescribeNodeSpecResponse::NodeSpecsHasBeenSet() const
 {
     return m_nodeSpecsHasBeenSet;
+}
+
+vector<ArchitectureInfo> DescribeNodeSpecResponse::GetArchitectures() const
+{
+    return m_architectures;
+}
+
+bool DescribeNodeSpecResponse::ArchitecturesHasBeenSet() const
+{
+    return m_architecturesHasBeenSet;
 }
 
 

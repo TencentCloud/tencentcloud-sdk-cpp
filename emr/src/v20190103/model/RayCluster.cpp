@@ -28,7 +28,8 @@ RayCluster::RayCluster() :
     m_redisCountHasBeenSet(false),
     m_submitTypeHasBeenSet(false),
     m_dashboardUrlHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
+    m_namespaceHasBeenSet(false),
+    m_storageCountHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome RayCluster::Deserialize(const rapidjson::Value &value)
         m_namespaceHasBeenSet = true;
     }
 
+    if (value.HasMember("StorageCount") && !value["StorageCount"].IsNull())
+    {
+        if (!value["StorageCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RayCluster.StorageCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageCount = value["StorageCount"].GetInt64();
+        m_storageCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void RayCluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Namespace";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_storageCount, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void RayCluster::SetNamespace(const string& _namespace)
 bool RayCluster::NamespaceHasBeenSet() const
 {
     return m_namespaceHasBeenSet;
+}
+
+int64_t RayCluster::GetStorageCount() const
+{
+    return m_storageCount;
+}
+
+void RayCluster::SetStorageCount(const int64_t& _storageCount)
+{
+    m_storageCount = _storageCount;
+    m_storageCountHasBeenSet = true;
+}
+
+bool RayCluster::StorageCountHasBeenSet() const
+{
+    return m_storageCountHasBeenSet;
 }
 

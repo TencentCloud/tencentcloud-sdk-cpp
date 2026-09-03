@@ -111,44 +111,44 @@ namespace TencentCloud
                     bool InvokeLimitConfigHasBeenSet() const;
 
                     /**
-                     * 获取<p>是否要认证</p>
-                     * @return NeedAuth <p>是否要认证</p>
-                     * 
+                     * 获取<p>是否要认证（已废弃，请勿使用）</p>
+                     * @return NeedAuth <p>是否要认证（已废弃，请勿使用）</p>
+                     * @deprecated
                      */
                     bool GetNeedAuth() const;
 
                     /**
-                     * 设置<p>是否要认证</p>
-                     * @param _needAuth <p>是否要认证</p>
-                     * 
+                     * 设置<p>是否要认证（已废弃，请勿使用）</p>
+                     * @param _needAuth <p>是否要认证（已废弃，请勿使用）</p>
+                     * @deprecated
                      */
                     void SetNeedAuth(const bool& _needAuth);
 
                     /**
                      * 判断参数 NeedAuth 是否已赋值
                      * @return NeedAuth 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool NeedAuthHasBeenSet() const;
 
                     /**
-                     * 获取<p>凭据ID</p>
-                     * @return AgentCredentialID <p>凭据ID</p>
-                     * 
+                     * 获取<p>凭据ID（已废弃，请勿使用）</p>
+                     * @return AgentCredentialID <p>凭据ID（已废弃，请勿使用）</p>
+                     * @deprecated
                      */
                     std::string GetAgentCredentialID() const;
 
                     /**
-                     * 设置<p>凭据ID</p>
-                     * @param _agentCredentialID <p>凭据ID</p>
-                     * 
+                     * 设置<p>凭据ID（已废弃，请勿使用）</p>
+                     * @param _agentCredentialID <p>凭据ID（已废弃，请勿使用）</p>
+                     * @deprecated
                      */
                     void SetAgentCredentialID(const std::string& _agentCredentialID);
 
                     /**
                      * 判断参数 AgentCredentialID 是否已赋值
                      * @return AgentCredentialID 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AgentCredentialIDHasBeenSet() const;
 
@@ -173,13 +173,13 @@ namespace TencentCloud
                     bool m_invokeLimitConfigHasBeenSet;
 
                     /**
-                     * <p>是否要认证</p>
+                     * <p>是否要认证（已废弃，请勿使用）</p>
                      */
                     bool m_needAuth;
                     bool m_needAuthHasBeenSet;
 
                     /**
-                     * <p>凭据ID</p>
+                     * <p>凭据ID（已废弃，请勿使用）</p>
                      */
                     std::string m_agentCredentialID;
                     bool m_agentCredentialIDHasBeenSet;

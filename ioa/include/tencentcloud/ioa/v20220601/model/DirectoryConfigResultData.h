@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ioa/v20220601/model/I18nString.h>
 
 
 namespace TencentCloud
@@ -235,6 +236,27 @@ namespace TencentCloud
                      */
                     bool AuthMethodsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>名称多语言支持</p>
+                     * @return NameI18n <p>名称多语言支持</p>
+                     * 
+                     */
+                    std::vector<I18nString> GetNameI18n() const;
+
+                    /**
+                     * 设置<p>名称多语言支持</p>
+                     * @param _nameI18n <p>名称多语言支持</p>
+                     * 
+                     */
+                    void SetNameI18n(const std::vector<I18nString>& _nameI18n);
+
+                    /**
+                     * 判断参数 NameI18n 是否已赋值
+                     * @return NameI18n 是否已赋值
+                     * 
+                     */
+                    bool NameI18nHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +312,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_authMethods;
                     bool m_authMethodsHasBeenSet;
+
+                    /**
+                     * <p>名称多语言支持</p>
+                     */
+                    std::vector<I18nString> m_nameI18n;
+                    bool m_nameI18nHasBeenSet;
 
                 };
             }

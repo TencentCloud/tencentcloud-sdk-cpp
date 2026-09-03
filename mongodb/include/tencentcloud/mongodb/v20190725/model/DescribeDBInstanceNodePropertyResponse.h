@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Mongos节点属性。
-                     * @return Mongos Mongos节点属性。
+                     * 获取<p>Mongos节点属性。</p>
+                     * @return Mongos <p>Mongos节点属性。</p>
                      * 
                      */
                     std::vector<NodeProperty> GetMongos() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool MongosHasBeenSet() const;
 
                     /**
-                     * 获取副本集节点信息。
-                     * @return ReplicateSets 副本集节点信息。
+                     * 获取<p>副本集节点信息。</p>
+                     * @return ReplicateSets <p>副本集节点信息。</p>
                      * 
                      */
                     std::vector<ReplicateSetInfo> GetReplicateSets() const;
@@ -73,19 +73,39 @@ namespace TencentCloud
                      */
                     bool ReplicateSetsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Dynamo节点信息</p>
+                     * @return DynamoProxies <p>Dynamo节点信息</p>
+                     * 
+                     */
+                    std::vector<NodeProperty> GetDynamoProxies() const;
+
+                    /**
+                     * 判断参数 DynamoProxies 是否已赋值
+                     * @return DynamoProxies 是否已赋值
+                     * 
+                     */
+                    bool DynamoProxiesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Mongos节点属性。
+                     * <p>Mongos节点属性。</p>
                      */
                     std::vector<NodeProperty> m_mongos;
                     bool m_mongosHasBeenSet;
 
                     /**
-                     * 副本集节点信息。
+                     * <p>副本集节点信息。</p>
                      */
                     std::vector<ReplicateSetInfo> m_replicateSets;
                     bool m_replicateSetsHasBeenSet;
+
+                    /**
+                     * <p>Dynamo节点信息</p>
+                     */
+                    std::vector<NodeProperty> m_dynamoProxies;
+                    bool m_dynamoProxiesHasBeenSet;
 
                 };
             }

@@ -30,8 +30,8 @@ DescribeConversationMessageListResponse::DescribeConversationMessageListResponse
     m_lastRecordIdHasBeenSet(false),
     m_messageListHasBeenSet(false),
     m_messagesHasBeenSet(false),
-    m_resetInfoHasBeenSet(false),
-    m_recordSummaryListHasBeenSet(false)
+    m_recordSummaryListHasBeenSet(false),
+    m_resetInfoHasBeenSet(false)
 {
 }
 
@@ -149,23 +149,6 @@ CoreInternalOutcome DescribeConversationMessageListResponse::Deserialize(const s
         m_messagesHasBeenSet = true;
     }
 
-    if (rsp.HasMember("ResetInfo") && !rsp["ResetInfo"].IsNull())
-    {
-        if (!rsp["ResetInfo"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `ResetInfo` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_resetInfo.Deserialize(rsp["ResetInfo"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_resetInfoHasBeenSet = true;
-    }
-
     if (rsp.HasMember("RecordSummaryList") && !rsp["RecordSummaryList"].IsNull())
     {
         if (!rsp["RecordSummaryList"].IsArray())
@@ -184,6 +167,23 @@ CoreInternalOutcome DescribeConversationMessageListResponse::Deserialize(const s
             m_recordSummaryList.push_back(item);
         }
         m_recordSummaryListHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ResetInfo") && !rsp["ResetInfo"].IsNull())
+    {
+        if (!rsp["ResetInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResetInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_resetInfo.Deserialize(rsp["ResetInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_resetInfoHasBeenSet = true;
     }
 
 
@@ -258,15 +258,6 @@ string DescribeConversationMessageListResponse::ToJsonString() const
         }
     }
 
-    if (m_resetInfoHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResetInfo";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_resetInfo.ToJsonObject(value[key.c_str()], allocator);
-    }
-
     if (m_recordSummaryListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -280,6 +271,15 @@ string DescribeConversationMessageListResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_resetInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResetInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_resetInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -354,16 +354,6 @@ bool DescribeConversationMessageListResponse::MessagesHasBeenSet() const
     return m_messagesHasBeenSet;
 }
 
-ConversationResetInfo DescribeConversationMessageListResponse::GetResetInfo() const
-{
-    return m_resetInfo;
-}
-
-bool DescribeConversationMessageListResponse::ResetInfoHasBeenSet() const
-{
-    return m_resetInfoHasBeenSet;
-}
-
 vector<ConversationRecordSummary> DescribeConversationMessageListResponse::GetRecordSummaryList() const
 {
     return m_recordSummaryList;
@@ -372,6 +362,16 @@ vector<ConversationRecordSummary> DescribeConversationMessageListResponse::GetRe
 bool DescribeConversationMessageListResponse::RecordSummaryListHasBeenSet() const
 {
     return m_recordSummaryListHasBeenSet;
+}
+
+ConversationResetInfo DescribeConversationMessageListResponse::GetResetInfo() const
+{
+    return m_resetInfo;
+}
+
+bool DescribeConversationMessageListResponse::ResetInfoHasBeenSet() const
+{
+    return m_resetInfoHasBeenSet;
 }
 
 

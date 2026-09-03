@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool MetricHasBeenSet() const;
 
                     /**
-                     * 获取<p>指定省份查询，不填充表示查询所有省份（注：指定条件查询只支持映射表范围）<br>省份、国家/地区编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8">省份编码映射</a></p>
-                     * @return Districts <p>指定省份查询，不填充表示查询所有省份（注：指定条件查询只支持映射表范围）<br>省份、国家/地区编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8">省份编码映射</a></p>
+                     * 获取<p>指定省份/国家查询，最多支持指定10个省份/国家（注：指定条件查询只支持映射表范围）<br>省份/国家编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8">省份编码映射</a><br>指定中国境内查询：不填充表示查询所有省份</p>
+                     * @return Districts <p>指定省份/国家查询，最多支持指定10个省份/国家（注：指定条件查询只支持映射表范围）<br>省份/国家编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8">省份编码映射</a><br>指定中国境内查询：不填充表示查询所有省份</p>
                      * 
                      */
                     std::vector<int64_t> GetDistricts() const;
 
                     /**
-                     * 设置<p>指定省份查询，不填充表示查询所有省份（注：指定条件查询只支持映射表范围）<br>省份、国家/地区编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8">省份编码映射</a></p>
-                     * @param _districts <p>指定省份查询，不填充表示查询所有省份（注：指定条件查询只支持映射表范围）<br>省份、国家/地区编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8">省份编码映射</a></p>
+                     * 设置<p>指定省份/国家查询，最多支持指定10个省份/国家（注：指定条件查询只支持映射表范围）<br>省份/国家编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8">省份编码映射</a><br>指定中国境内查询：不填充表示查询所有省份</p>
+                     * @param _districts <p>指定省份/国家查询，最多支持指定10个省份/国家（注：指定条件查询只支持映射表范围）<br>省份/国家编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8">省份编码映射</a><br>指定中国境内查询：不填充表示查询所有省份</p>
                      * 
                      */
                     void SetDistricts(const std::vector<int64_t>& _districts);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool DistrictsHasBeenSet() const;
 
                     /**
-                     * 获取<p>指定运营商查询，不填充表示查询所有运营商（注：指定条件查询只支持映射表范围）<br>运营商编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8">运营商编码映射</a></p>
-                     * @return Isps <p>指定运营商查询，不填充表示查询所有运营商（注：指定条件查询只支持映射表范围）<br>运营商编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8">运营商编码映射</a></p>
+                     * 获取<p>指定运营商查询，只支持中国境内，不填充表示查询所有运营商（注：指定条件查询只支持映射表范围）<br>运营商编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8">运营商编码映射</a></p>
+                     * @return Isps <p>指定运营商查询，只支持中国境内，不填充表示查询所有运营商（注：指定条件查询只支持映射表范围）<br>运营商编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8">运营商编码映射</a></p>
                      * 
                      */
                     std::vector<int64_t> GetIsps() const;
 
                     /**
-                     * 设置<p>指定运营商查询，不填充表示查询所有运营商（注：指定条件查询只支持映射表范围）<br>运营商编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8">运营商编码映射</a></p>
-                     * @param _isps <p>指定运营商查询，不填充表示查询所有运营商（注：指定条件查询只支持映射表范围）<br>运营商编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8">运营商编码映射</a></p>
+                     * 设置<p>指定运营商查询，只支持中国境内，不填充表示查询所有运营商（注：指定条件查询只支持映射表范围）<br>运营商编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8">运营商编码映射</a></p>
+                     * @param _isps <p>指定运营商查询，只支持中国境内，不填充表示查询所有运营商（注：指定条件查询只支持映射表范围）<br>运营商编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8">运营商编码映射</a></p>
                      * 
                      */
                     void SetIsps(const std::vector<int64_t>& _isps);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取<p>指定IP协议查询，不填充表示查询所有协议<br>all：所有协议<br>ipv4：指定查询 ipv4 对应指标<br>ipv6：指定查询 ipv6 对应指标<br>指定IP协议查询时，不可同时指定省份、运营商查询</p>
-                     * @return IpProtocol <p>指定IP协议查询，不填充表示查询所有协议<br>all：所有协议<br>ipv4：指定查询 ipv4 对应指标<br>ipv6：指定查询 ipv6 对应指标<br>指定IP协议查询时，不可同时指定省份、运营商查询</p>
+                     * 获取<p>指定IP协议查询，不填充表示查询所有协议<br>all：所有协议<br>ipv4：指定查询 ipv4 对应指标<br>ipv6：指定查询 ipv6 对应指标</p>
+                     * @return IpProtocol <p>指定IP协议查询，不填充表示查询所有协议<br>all：所有协议<br>ipv4：指定查询 ipv4 对应指标<br>ipv6：指定查询 ipv6 对应指标</p>
                      * 
                      */
                     std::string GetIpProtocol() const;
 
                     /**
-                     * 设置<p>指定IP协议查询，不填充表示查询所有协议<br>all：所有协议<br>ipv4：指定查询 ipv4 对应指标<br>ipv6：指定查询 ipv6 对应指标<br>指定IP协议查询时，不可同时指定省份、运营商查询</p>
-                     * @param _ipProtocol <p>指定IP协议查询，不填充表示查询所有协议<br>all：所有协议<br>ipv4：指定查询 ipv4 对应指标<br>ipv6：指定查询 ipv6 对应指标<br>指定IP协议查询时，不可同时指定省份、运营商查询</p>
+                     * 设置<p>指定IP协议查询，不填充表示查询所有协议<br>all：所有协议<br>ipv4：指定查询 ipv4 对应指标<br>ipv6：指定查询 ipv6 对应指标</p>
+                     * @param _ipProtocol <p>指定IP协议查询，不填充表示查询所有协议<br>all：所有协议<br>ipv4：指定查询 ipv4 对应指标<br>ipv6：指定查询 ipv6 对应指标</p>
                      * 
                      */
                     void SetIpProtocol(const std::string& _ipProtocol);
@@ -258,13 +258,13 @@ namespace TencentCloud
                     bool m_metricHasBeenSet;
 
                     /**
-                     * <p>指定省份查询，不填充表示查询所有省份（注：指定条件查询只支持映射表范围）<br>省份、国家/地区编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8">省份编码映射</a></p>
+                     * <p>指定省份/国家查询，最多支持指定10个省份/国家（注：指定条件查询只支持映射表范围）<br>省份/国家编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8">省份编码映射</a><br>指定中国境内查询：不填充表示查询所有省份</p>
                      */
                     std::vector<int64_t> m_districts;
                     bool m_districtsHasBeenSet;
 
                     /**
-                     * <p>指定运营商查询，不填充表示查询所有运营商（注：指定条件查询只支持映射表范围）<br>运营商编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8">运营商编码映射</a></p>
+                     * <p>指定运营商查询，只支持中国境内，不填充表示查询所有运营商（注：指定条件查询只支持映射表范围）<br>运营商编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8">运营商编码映射</a></p>
                      */
                     std::vector<int64_t> m_isps;
                     bool m_ispsHasBeenSet;
@@ -276,7 +276,7 @@ namespace TencentCloud
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * <p>指定IP协议查询，不填充表示查询所有协议<br>all：所有协议<br>ipv4：指定查询 ipv4 对应指标<br>ipv6：指定查询 ipv6 对应指标<br>指定IP协议查询时，不可同时指定省份、运营商查询</p>
+                     * <p>指定IP协议查询，不填充表示查询所有协议<br>all：所有协议<br>ipv4：指定查询 ipv4 对应指标<br>ipv6：指定查询 ipv6 对应指标</p>
                      */
                     std::string m_ipProtocol;
                     bool m_ipProtocolHasBeenSet;

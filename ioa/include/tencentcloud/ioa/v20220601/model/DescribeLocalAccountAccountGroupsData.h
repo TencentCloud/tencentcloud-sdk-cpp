@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取组Id(只支持32位)
-                     * @return AccountGroupId 组Id(只支持32位)
+                     * 获取<p>组Id(只支持32位)</p>
+                     * @return AccountGroupId <p>组Id(只支持32位)</p>
                      * 
                      */
                     int64_t GetAccountGroupId() const;
 
                     /**
-                     * 设置组Id(只支持32位)
-                     * @param _accountGroupId 组Id(只支持32位)
+                     * 设置<p>组Id(只支持32位)</p>
+                     * @param _accountGroupId <p>组Id(只支持32位)</p>
                      * 
                      */
                     void SetAccountGroupId(const int64_t& _accountGroupId);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 组Id(只支持32位)
+                     * <p>组Id(只支持32位)</p>
                      */
                     int64_t m_accountGroupId;
                     bool m_accountGroupIdHasBeenSet;

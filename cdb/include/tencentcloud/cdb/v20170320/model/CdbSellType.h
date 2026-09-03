@@ -47,39 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取售卖实例名称。
-Z3：是高可用类型，对应规格中的 DeviceType，包含 UNIVERSAL，EXCLUSIVE。
-CVM：是基础版类型，对应规格中的 DeviceType 是 BASIC（已下线）。
-TKE：是基础版v2类型，对应规格中的 DeviceType 是 BASIC_V2。
-CLOUD_NATIVE_CLUSTER：表示云盘版标准型。
-CLOUD_NATIVE_CLUSTER_EXCLUSIVE：表示云盘版加强型。
-ECONOMICAL：表示经济型。
-                     * @return TypeName 售卖实例名称。
-Z3：是高可用类型，对应规格中的 DeviceType，包含 UNIVERSAL，EXCLUSIVE。
-CVM：是基础版类型，对应规格中的 DeviceType 是 BASIC（已下线）。
-TKE：是基础版v2类型，对应规格中的 DeviceType 是 BASIC_V2。
-CLOUD_NATIVE_CLUSTER：表示云盘版标准型。
-CLOUD_NATIVE_CLUSTER_EXCLUSIVE：表示云盘版加强型。
-ECONOMICAL：表示经济型。
+                     * 获取<p>售卖实例名称。<br>Z3：是高可用类型，对应规格中的 DeviceType，包含 UNIVERSAL，EXCLUSIVE。<br>CVM：是基础版类型，对应规格中的 DeviceType 是 BASIC（已下线）。<br>TKE：是基础版v2类型，对应规格中的 DeviceType 是 BASIC_V2。<br>CLOUD_NATIVE_CLUSTER：表示云盘版标准型。<br>CLOUD_NATIVE_CLUSTER_EXCLUSIVE：表示云盘版加强型。<br>CLOUD_NATIVE_CLUSTER_ULTRA：表示云盘版旗舰型。<br>CLOUD_NATIVE_SINGLE_NODE：表示云盘版单节点<br>ECONOMICAL：表示经济型。</p>
+                     * @return TypeName <p>售卖实例名称。<br>Z3：是高可用类型，对应规格中的 DeviceType，包含 UNIVERSAL，EXCLUSIVE。<br>CVM：是基础版类型，对应规格中的 DeviceType 是 BASIC（已下线）。<br>TKE：是基础版v2类型，对应规格中的 DeviceType 是 BASIC_V2。<br>CLOUD_NATIVE_CLUSTER：表示云盘版标准型。<br>CLOUD_NATIVE_CLUSTER_EXCLUSIVE：表示云盘版加强型。<br>CLOUD_NATIVE_CLUSTER_ULTRA：表示云盘版旗舰型。<br>CLOUD_NATIVE_SINGLE_NODE：表示云盘版单节点<br>ECONOMICAL：表示经济型。</p>
                      * 
                      */
                     std::string GetTypeName() const;
 
                     /**
-                     * 设置售卖实例名称。
-Z3：是高可用类型，对应规格中的 DeviceType，包含 UNIVERSAL，EXCLUSIVE。
-CVM：是基础版类型，对应规格中的 DeviceType 是 BASIC（已下线）。
-TKE：是基础版v2类型，对应规格中的 DeviceType 是 BASIC_V2。
-CLOUD_NATIVE_CLUSTER：表示云盘版标准型。
-CLOUD_NATIVE_CLUSTER_EXCLUSIVE：表示云盘版加强型。
-ECONOMICAL：表示经济型。
-                     * @param _typeName 售卖实例名称。
-Z3：是高可用类型，对应规格中的 DeviceType，包含 UNIVERSAL，EXCLUSIVE。
-CVM：是基础版类型，对应规格中的 DeviceType 是 BASIC（已下线）。
-TKE：是基础版v2类型，对应规格中的 DeviceType 是 BASIC_V2。
-CLOUD_NATIVE_CLUSTER：表示云盘版标准型。
-CLOUD_NATIVE_CLUSTER_EXCLUSIVE：表示云盘版加强型。
-ECONOMICAL：表示经济型。
+                     * 设置<p>售卖实例名称。<br>Z3：是高可用类型，对应规格中的 DeviceType，包含 UNIVERSAL，EXCLUSIVE。<br>CVM：是基础版类型，对应规格中的 DeviceType 是 BASIC（已下线）。<br>TKE：是基础版v2类型，对应规格中的 DeviceType 是 BASIC_V2。<br>CLOUD_NATIVE_CLUSTER：表示云盘版标准型。<br>CLOUD_NATIVE_CLUSTER_EXCLUSIVE：表示云盘版加强型。<br>CLOUD_NATIVE_CLUSTER_ULTRA：表示云盘版旗舰型。<br>CLOUD_NATIVE_SINGLE_NODE：表示云盘版单节点<br>ECONOMICAL：表示经济型。</p>
+                     * @param _typeName <p>售卖实例名称。<br>Z3：是高可用类型，对应规格中的 DeviceType，包含 UNIVERSAL，EXCLUSIVE。<br>CVM：是基础版类型，对应规格中的 DeviceType 是 BASIC（已下线）。<br>TKE：是基础版v2类型，对应规格中的 DeviceType 是 BASIC_V2。<br>CLOUD_NATIVE_CLUSTER：表示云盘版标准型。<br>CLOUD_NATIVE_CLUSTER_EXCLUSIVE：表示云盘版加强型。<br>CLOUD_NATIVE_CLUSTER_ULTRA：表示云盘版旗舰型。<br>CLOUD_NATIVE_SINGLE_NODE：表示云盘版单节点<br>ECONOMICAL：表示经济型。</p>
                      * 
                      */
                     void SetTypeName(const std::string& _typeName);
@@ -92,15 +68,15 @@ ECONOMICAL：表示经济型。
                     bool TypeNameHasBeenSet() const;
 
                     /**
-                     * 获取引擎版本号
-                     * @return EngineVersion 引擎版本号
+                     * 获取<p>引擎版本号</p>
+                     * @return EngineVersion <p>引擎版本号</p>
                      * 
                      */
                     std::vector<std::string> GetEngineVersion() const;
 
                     /**
-                     * 设置引擎版本号
-                     * @param _engineVersion 引擎版本号
+                     * 设置<p>引擎版本号</p>
+                     * @param _engineVersion <p>引擎版本号</p>
                      * 
                      */
                     void SetEngineVersion(const std::vector<std::string>& _engineVersion);
@@ -113,15 +89,15 @@ ECONOMICAL：表示经济型。
                     bool EngineVersionHasBeenSet() const;
 
                     /**
-                     * 获取售卖规格Id
-                     * @return ConfigIds 售卖规格Id
+                     * 获取<p>售卖规格Id</p>
+                     * @return ConfigIds <p>售卖规格Id</p>
                      * 
                      */
                     std::vector<int64_t> GetConfigIds() const;
 
                     /**
-                     * 设置售卖规格Id
-                     * @param _configIds 售卖规格Id
+                     * 设置<p>售卖规格Id</p>
+                     * @param _configIds <p>售卖规格Id</p>
                      * 
                      */
                     void SetConfigIds(const std::vector<int64_t>& _configIds);
@@ -136,25 +112,19 @@ ECONOMICAL：表示经济型。
                 private:
 
                     /**
-                     * 售卖实例名称。
-Z3：是高可用类型，对应规格中的 DeviceType，包含 UNIVERSAL，EXCLUSIVE。
-CVM：是基础版类型，对应规格中的 DeviceType 是 BASIC（已下线）。
-TKE：是基础版v2类型，对应规格中的 DeviceType 是 BASIC_V2。
-CLOUD_NATIVE_CLUSTER：表示云盘版标准型。
-CLOUD_NATIVE_CLUSTER_EXCLUSIVE：表示云盘版加强型。
-ECONOMICAL：表示经济型。
+                     * <p>售卖实例名称。<br>Z3：是高可用类型，对应规格中的 DeviceType，包含 UNIVERSAL，EXCLUSIVE。<br>CVM：是基础版类型，对应规格中的 DeviceType 是 BASIC（已下线）。<br>TKE：是基础版v2类型，对应规格中的 DeviceType 是 BASIC_V2。<br>CLOUD_NATIVE_CLUSTER：表示云盘版标准型。<br>CLOUD_NATIVE_CLUSTER_EXCLUSIVE：表示云盘版加强型。<br>CLOUD_NATIVE_CLUSTER_ULTRA：表示云盘版旗舰型。<br>CLOUD_NATIVE_SINGLE_NODE：表示云盘版单节点<br>ECONOMICAL：表示经济型。</p>
                      */
                     std::string m_typeName;
                     bool m_typeNameHasBeenSet;
 
                     /**
-                     * 引擎版本号
+                     * <p>引擎版本号</p>
                      */
                     std::vector<std::string> m_engineVersion;
                     bool m_engineVersionHasBeenSet;
 
                     /**
-                     * 售卖规格Id
+                     * <p>售卖规格Id</p>
                      */
                     std::vector<int64_t> m_configIds;
                     bool m_configIdsHasBeenSet;

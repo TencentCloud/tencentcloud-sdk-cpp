@@ -216,6 +216,27 @@ namespace TencentCloud
                      */
                     bool AuthConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否支持交互界面（MCP Apps），插件级标签，默认false</p>
+                     * @return SupportsApps <p>是否支持交互界面（MCP Apps），插件级标签，默认false</p>
+                     * 
+                     */
+                    bool GetSupportsApps() const;
+
+                    /**
+                     * 设置<p>是否支持交互界面（MCP Apps），插件级标签，默认false</p>
+                     * @param _supportsApps <p>是否支持交互界面（MCP Apps），插件级标签，默认false</p>
+                     * 
+                     */
+                    void SetSupportsApps(const bool& _supportsApps);
+
+                    /**
+                     * 判断参数 SupportsApps 是否已赋值
+                     * @return SupportsApps 是否已赋值
+                     * 
+                     */
+                    bool SupportsAppsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -265,6 +286,12 @@ namespace TencentCloud
                      */
                     AuthConfig m_authConfig;
                     bool m_authConfigHasBeenSet;
+
+                    /**
+                     * <p>是否支持交互界面（MCP Apps），插件级标签，默认false</p>
+                     */
+                    bool m_supportsApps;
+                    bool m_supportsAppsHasBeenSet;
 
                 };
             }

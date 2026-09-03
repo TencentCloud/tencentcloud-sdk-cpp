@@ -45,7 +45,9 @@ NodeSpecInstanceType::NodeSpecInstanceType() :
     m_quotaNumHasBeenSet(false),
     m_quotaUnitHasBeenSet(false),
     m_needHpcClusterIdHasBeenSet(false),
-    m_isGpuInstanceHasBeenSet(false)
+    m_isGpuInstanceHasBeenSet(false),
+    m_gpuResourceKeyHasBeenSet(false),
+    m_gpuNumHasBeenSet(false)
 {
 }
 
@@ -337,6 +339,26 @@ CoreInternalOutcome NodeSpecInstanceType::Deserialize(const rapidjson::Value &va
         m_isGpuInstanceHasBeenSet = true;
     }
 
+    if (value.HasMember("GpuResourceKey") && !value["GpuResourceKey"].IsNull())
+    {
+        if (!value["GpuResourceKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeSpecInstanceType.GpuResourceKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gpuResourceKey = string(value["GpuResourceKey"].GetString());
+        m_gpuResourceKeyHasBeenSet = true;
+    }
+
+    if (value.HasMember("GpuNum") && !value["GpuNum"].IsNull())
+    {
+        if (!value["GpuNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeSpecInstanceType.GpuNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gpuNum = value["GpuNum"].GetInt64();
+        m_gpuNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -568,6 +590,22 @@ void NodeSpecInstanceType::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "IsGpuInstance";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isGpuInstance, allocator);
+    }
+
+    if (m_gpuResourceKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GpuResourceKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gpuResourceKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gpuNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GpuNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gpuNum, allocator);
     }
 
 }
@@ -971,5 +1009,37 @@ void NodeSpecInstanceType::SetIsGpuInstance(const bool& _isGpuInstance)
 bool NodeSpecInstanceType::IsGpuInstanceHasBeenSet() const
 {
     return m_isGpuInstanceHasBeenSet;
+}
+
+string NodeSpecInstanceType::GetGpuResourceKey() const
+{
+    return m_gpuResourceKey;
+}
+
+void NodeSpecInstanceType::SetGpuResourceKey(const string& _gpuResourceKey)
+{
+    m_gpuResourceKey = _gpuResourceKey;
+    m_gpuResourceKeyHasBeenSet = true;
+}
+
+bool NodeSpecInstanceType::GpuResourceKeyHasBeenSet() const
+{
+    return m_gpuResourceKeyHasBeenSet;
+}
+
+int64_t NodeSpecInstanceType::GetGpuNum() const
+{
+    return m_gpuNum;
+}
+
+void NodeSpecInstanceType::SetGpuNum(const int64_t& _gpuNum)
+{
+    m_gpuNum = _gpuNum;
+    m_gpuNumHasBeenSet = true;
+}
+
+bool NodeSpecInstanceType::GpuNumHasBeenSet() const
+{
+    return m_gpuNumHasBeenSet;
 }
 

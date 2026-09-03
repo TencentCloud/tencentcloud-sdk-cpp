@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取终端名
+                     * 获取<p>终端名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeviceName 终端名
+                     * @return DeviceName <p>终端名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
-                     * 设置终端名
+                     * 设置<p>终端名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deviceName 终端名
+                     * @param _deviceName <p>终端名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取最近登录账号
+                     * 获取<p>最近登录账号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastLoginAccount 最近登录账号
+                     * @return LastLoginAccount <p>最近登录账号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastLoginAccount() const;
 
                     /**
-                     * 设置最近登录账号
+                     * 设置<p>最近登录账号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lastLoginAccount 最近登录账号
+                     * @param _lastLoginAccount <p>最近登录账号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool LastLoginAccountHasBeenSet() const;
 
                     /**
-                     * 获取终端用户名
+                     * 获取<p>终端用户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeviceUserName 终端用户名
+                     * @return DeviceUserName <p>终端用户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceUserName() const;
 
                     /**
-                     * 设置终端用户名
+                     * 设置<p>终端用户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deviceUserName 终端用户名
+                     * @param _deviceUserName <p>终端用户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool DeviceUserNameHasBeenSet() const;
 
                     /**
-                     * 获取软件版本
+                     * 获取<p>软件版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Version 软件版本
+                     * @return Version <p>软件版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
-                     * 设置软件版本
+                     * 设置<p>软件版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _version 软件版本
+                     * @param _version <p>软件版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取是否盗版
+                     * 获取<p>是否盗版</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PiracyRisk 是否盗版
+                     * @return PiracyRisk <p>是否盗版</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPiracyRisk() const;
 
                     /**
-                     * 设置是否盗版
+                     * 设置<p>是否盗版</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _piracyRisk 是否盗版
+                     * @param _piracyRisk <p>是否盗版</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool PiracyRiskHasBeenSet() const;
 
                     /**
-                     * 获取盗版原因
+                     * 获取<p>盗版原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PiracyReason 盗版原因
+                     * @return PiracyReason <p>盗版原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPiracyReason() const;
 
                     /**
-                     * 设置盗版原因
+                     * 设置<p>盗版原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _piracyReason 盗版原因
+                     * @param _piracyReason <p>盗版原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool PiracyReasonHasBeenSet() const;
 
                     /**
-                     * 获取安装时间
+                     * 获取<p>安装时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstallTime 安装时间
+                     * @return InstallTime <p>安装时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstallTime() const;
 
                     /**
-                     * 设置安装时间
+                     * 设置<p>安装时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _installTime 安装时间
+                     * @param _installTime <p>安装时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool InstallTimeHasBeenSet() const;
 
                     /**
-                     * 获取用户目录
+                     * 获取<p>用户目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserPath 用户目录
+                     * @return UserPath <p>用户目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserPath() const;
 
                     /**
-                     * 设置用户目录
+                     * 设置<p>用户目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _userPath 用户目录
+                     * @param _userPath <p>用户目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool UserPathHasBeenSet() const;
 
                     /**
-                     * 获取所在分组
+                     * 获取<p>所在分组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserGroup 所在分组
+                     * @return UserGroup <p>所在分组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserGroup() const;
 
                     /**
-                     * 设置所在分组
+                     * 设置<p>所在分组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _userGroup 所在分组
+                     * @param _userGroup <p>所在分组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -272,18 +272,18 @@ namespace TencentCloud
                     bool UserGroupHasBeenSet() const;
 
                     /**
-                     * 获取IP
+                     * 获取<p>IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IP IP
+                     * @return IP <p>IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIP() const;
 
                     /**
-                     * 设置IP
+                     * 设置<p>IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _iP IP
+                     * @param _iP <p>IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -297,18 +297,18 @@ namespace TencentCloud
                     bool IPHasBeenSet() const;
 
                     /**
-                     * 获取MAC
+                     * 获取<p>MAC</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MAC MAC
+                     * @return MAC <p>MAC</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMAC() const;
 
                     /**
-                     * 设置MAC
+                     * 设置<p>MAC</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mAC MAC
+                     * @param _mAC <p>MAC</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -322,18 +322,18 @@ namespace TencentCloud
                     bool MACHasBeenSet() const;
 
                     /**
-                     * 获取使用时长
+                     * 获取<p>使用时长</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UseTime 使用时长
+                     * @return UseTime <p>使用时长</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUseTime() const;
 
                     /**
-                     * 设置使用时长
+                     * 设置<p>使用时长</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _useTime 使用时长
+                     * @param _useTime <p>使用时长</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -347,18 +347,18 @@ namespace TencentCloud
                     bool UseTimeHasBeenSet() const;
 
                     /**
-                     * 获取设备ID
+                     * 获取<p>设备ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeviceId 设备ID
+                     * @return DeviceId <p>设备ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDeviceId() const;
 
                     /**
-                     * 设置设备ID
+                     * 设置<p>设备ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deviceId 设备ID
+                     * @param _deviceId <p>设备ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -372,18 +372,18 @@ namespace TencentCloud
                     bool DeviceIdHasBeenSet() const;
 
                     /**
-                     * 获取软件全名
+                     * 获取<p>软件全名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FullSoftName 软件全名
+                     * @return FullSoftName <p>软件全名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFullSoftName() const;
 
                     /**
-                     * 设置软件全名
+                     * 设置<p>软件全名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fullSoftName 软件全名
+                     * @param _fullSoftName <p>软件全名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -397,18 +397,18 @@ namespace TencentCloud
                     bool FullSoftNameHasBeenSet() const;
 
                     /**
-                     * 获取数据ID（唯一）
+                     * 获取<p>数据ID（唯一）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id 数据ID（唯一）
+                     * @return Id <p>数据ID（唯一）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置数据ID（唯一）
+                     * 设置<p>数据ID（唯一）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _id 数据ID（唯一）
+                     * @param _id <p>数据ID（唯一）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -422,15 +422,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取该终端此款软件可升级到的目标版本号
-                     * @return NewVersion 该终端此款软件可升级到的目标版本号
+                     * 获取<p>该终端此款软件可升级到的目标版本号</p>
+                     * @return NewVersion <p>该终端此款软件可升级到的目标版本号</p>
                      * 
                      */
                     std::string GetNewVersion() const;
 
                     /**
-                     * 设置该终端此款软件可升级到的目标版本号
-                     * @param _newVersion 该终端此款软件可升级到的目标版本号
+                     * 设置<p>该终端此款软件可升级到的目标版本号</p>
+                     * @param _newVersion <p>该终端此款软件可升级到的目标版本号</p>
                      * 
                      */
                     void SetNewVersion(const std::string& _newVersion);
@@ -443,15 +443,15 @@ namespace TencentCloud
                     bool NewVersionHasBeenSet() const;
 
                     /**
-                     * 获取该软件对应运营配置的可升级id
-                     * @return UpgradeSoftId 该软件对应运营配置的可升级id
+                     * 获取<p>该软件对应运营配置的可升级id</p>
+                     * @return UpgradeSoftId <p>该软件对应运营配置的可升级id</p>
                      * 
                      */
                     int64_t GetUpgradeSoftId() const;
 
                     /**
-                     * 设置该软件对应运营配置的可升级id
-                     * @param _upgradeSoftId 该软件对应运营配置的可升级id
+                     * 设置<p>该软件对应运营配置的可升级id</p>
+                     * @param _upgradeSoftId <p>该软件对应运营配置的可升级id</p>
                      * 
                      */
                     void SetUpgradeSoftId(const int64_t& _upgradeSoftId);
@@ -464,15 +464,15 @@ namespace TencentCloud
                     bool UpgradeSoftIdHasBeenSet() const;
 
                     /**
-                     * 获取终端备注名
-                     * @return RemarkName 终端备注名
+                     * 获取<p>终端备注名</p>
+                     * @return RemarkName <p>终端备注名</p>
                      * 
                      */
                     std::string GetRemarkName() const;
 
                     /**
-                     * 设置终端备注名
-                     * @param _remarkName 终端备注名
+                     * 设置<p>终端备注名</p>
+                     * @param _remarkName <p>终端备注名</p>
                      * 
                      */
                     void SetRemarkName(const std::string& _remarkName);
@@ -485,15 +485,15 @@ namespace TencentCloud
                     bool RemarkNameHasBeenSet() const;
 
                     /**
-                     * 获取软件id
-                     * @return SoftwareId 软件id
+                     * 获取<p>软件id</p>
+                     * @return SoftwareId <p>软件id</p>
                      * 
                      */
                     int64_t GetSoftwareId() const;
 
                     /**
-                     * 设置软件id
-                     * @param _softwareId 软件id
+                     * 设置<p>软件id</p>
+                     * @param _softwareId <p>软件id</p>
                      * 
                      */
                     void SetSoftwareId(const int64_t& _softwareId);
@@ -506,15 +506,15 @@ namespace TencentCloud
                     bool SoftwareIdHasBeenSet() const;
 
                     /**
-                     * 获取0:win 2:mac
-                     * @return OsType 0:win 2:mac
+                     * 获取<p>0:win 2:mac</p>
+                     * @return OsType <p>0:win 2:mac</p>
                      * 
                      */
                     int64_t GetOsType() const;
 
                     /**
-                     * 设置0:win 2:mac
-                     * @param _osType 0:win 2:mac
+                     * 设置<p>0:win 2:mac</p>
+                     * @param _osType <p>0:win 2:mac</p>
                      * 
                      */
                     void SetOsType(const int64_t& _osType);
@@ -527,15 +527,15 @@ namespace TencentCloud
                     bool OsTypeHasBeenSet() const;
 
                     /**
-                     * 获取所有权
-                     * @return AssetType 所有权
+                     * 获取<p>所有权</p>
+                     * @return AssetType <p>所有权</p>
                      * 
                      */
                     std::string GetAssetType() const;
 
                     /**
-                     * 设置所有权
-                     * @param _assetType 所有权
+                     * 设置<p>所有权</p>
+                     * @param _assetType <p>所有权</p>
                      * 
                      */
                     void SetAssetType(const std::string& _assetType);
@@ -550,142 +550,142 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 终端名
+                     * <p>终端名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 最近登录账号
+                     * <p>最近登录账号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastLoginAccount;
                     bool m_lastLoginAccountHasBeenSet;
 
                     /**
-                     * 终端用户名
+                     * <p>终端用户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceUserName;
                     bool m_deviceUserNameHasBeenSet;
 
                     /**
-                     * 软件版本
+                     * <p>软件版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 是否盗版
+                     * <p>是否盗版</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_piracyRisk;
                     bool m_piracyRiskHasBeenSet;
 
                     /**
-                     * 盗版原因
+                     * <p>盗版原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_piracyReason;
                     bool m_piracyReasonHasBeenSet;
 
                     /**
-                     * 安装时间
+                     * <p>安装时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_installTime;
                     bool m_installTimeHasBeenSet;
 
                     /**
-                     * 用户目录
+                     * <p>用户目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userPath;
                     bool m_userPathHasBeenSet;
 
                     /**
-                     * 所在分组
+                     * <p>所在分组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userGroup;
                     bool m_userGroupHasBeenSet;
 
                     /**
-                     * IP
+                     * <p>IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iP;
                     bool m_iPHasBeenSet;
 
                     /**
-                     * MAC
+                     * <p>MAC</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mAC;
                     bool m_mACHasBeenSet;
 
                     /**
-                     * 使用时长
+                     * <p>使用时长</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_useTime;
                     bool m_useTimeHasBeenSet;
 
                     /**
-                     * 设备ID
+                     * <p>设备ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
-                     * 软件全名
+                     * <p>软件全名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fullSoftName;
                     bool m_fullSoftNameHasBeenSet;
 
                     /**
-                     * 数据ID（唯一）
+                     * <p>数据ID（唯一）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 该终端此款软件可升级到的目标版本号
+                     * <p>该终端此款软件可升级到的目标版本号</p>
                      */
                     std::string m_newVersion;
                     bool m_newVersionHasBeenSet;
 
                     /**
-                     * 该软件对应运营配置的可升级id
+                     * <p>该软件对应运营配置的可升级id</p>
                      */
                     int64_t m_upgradeSoftId;
                     bool m_upgradeSoftIdHasBeenSet;
 
                     /**
-                     * 终端备注名
+                     * <p>终端备注名</p>
                      */
                     std::string m_remarkName;
                     bool m_remarkNameHasBeenSet;
 
                     /**
-                     * 软件id
+                     * <p>软件id</p>
                      */
                     int64_t m_softwareId;
                     bool m_softwareIdHasBeenSet;
 
                     /**
-                     * 0:win 2:mac
+                     * <p>0:win 2:mac</p>
                      */
                     int64_t m_osType;
                     bool m_osTypeHasBeenSet;
 
                     /**
-                     * 所有权
+                     * <p>所有权</p>
                      */
                     std::string m_assetType;
                     bool m_assetTypeHasBeenSet;

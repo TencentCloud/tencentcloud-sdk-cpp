@@ -35,7 +35,8 @@ InquiryPriceScaleOutInstanceRequest::InquiryPriceScaleOutInstanceRequest() :
     m_masterCountHasBeenSet(false),
     m_resourceBaseTypeHasBeenSet(false),
     m_computeResourceIdHasBeenSet(false),
-    m_hardwareResourceTypeHasBeenSet(false)
+    m_hardwareResourceTypeHasBeenSet(false),
+    m_nodeGroupIdHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,14 @@ string InquiryPriceScaleOutInstanceRequest::ToJsonString() const
         string key = "HardwareResourceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_hardwareResourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_nodeGroupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -364,6 +373,22 @@ void InquiryPriceScaleOutInstanceRequest::SetHardwareResourceType(const string& 
 bool InquiryPriceScaleOutInstanceRequest::HardwareResourceTypeHasBeenSet() const
 {
     return m_hardwareResourceTypeHasBeenSet;
+}
+
+string InquiryPriceScaleOutInstanceRequest::GetNodeGroupId() const
+{
+    return m_nodeGroupId;
+}
+
+void InquiryPriceScaleOutInstanceRequest::SetNodeGroupId(const string& _nodeGroupId)
+{
+    m_nodeGroupId = _nodeGroupId;
+    m_nodeGroupIdHasBeenSet = true;
+}
+
+bool InquiryPriceScaleOutInstanceRequest::NodeGroupIdHasBeenSet() const
+{
+    return m_nodeGroupIdHasBeenSet;
 }
 
 

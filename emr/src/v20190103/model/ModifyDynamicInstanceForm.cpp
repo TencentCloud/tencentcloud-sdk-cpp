@@ -37,7 +37,8 @@ ModifyDynamicInstanceForm::ModifyDynamicInstanceForm() :
     m_cFSTurboVolumesHasBeenSet(false),
     m_customImageHasBeenSet(false),
     m_imageInfoV2HasBeenSet(false),
-    m_gooseFSVolumesHasBeenSet(false)
+    m_gooseFSVolumesHasBeenSet(false),
+    m_enableHistoryServerHasBeenSet(false)
 {
 }
 
@@ -344,6 +345,16 @@ CoreInternalOutcome ModifyDynamicInstanceForm::Deserialize(const rapidjson::Valu
         m_gooseFSVolumesHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableHistoryServer") && !value["EnableHistoryServer"].IsNull())
+    {
+        if (!value["EnableHistoryServer"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyDynamicInstanceForm.EnableHistoryServer` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableHistoryServer = value["EnableHistoryServer"].GetBool();
+        m_enableHistoryServerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -559,6 +570,14 @@ void ModifyDynamicInstanceForm::ToJsonObject(rapidjson::Value &value, rapidjson:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_enableHistoryServerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableHistoryServer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableHistoryServer, allocator);
     }
 
 }
@@ -834,5 +853,21 @@ void ModifyDynamicInstanceForm::SetGooseFSVolumes(const vector<GooseFSVolume>& _
 bool ModifyDynamicInstanceForm::GooseFSVolumesHasBeenSet() const
 {
     return m_gooseFSVolumesHasBeenSet;
+}
+
+bool ModifyDynamicInstanceForm::GetEnableHistoryServer() const
+{
+    return m_enableHistoryServer;
+}
+
+void ModifyDynamicInstanceForm::SetEnableHistoryServer(const bool& _enableHistoryServer)
+{
+    m_enableHistoryServer = _enableHistoryServer;
+    m_enableHistoryServerHasBeenSet = true;
+}
+
+bool ModifyDynamicInstanceForm::EnableHistoryServerHasBeenSet() const
+{
+    return m_enableHistoryServerHasBeenSet;
 }
 

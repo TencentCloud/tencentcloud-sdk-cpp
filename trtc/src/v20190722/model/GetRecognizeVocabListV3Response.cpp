@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Trtc::V20190722::Model;
 using namespace std;
 
-GetRecognizeVocabListV3Response::GetRecognizeVocabListV3Response()
+GetRecognizeVocabListV3Response::GetRecognizeVocabListV3Response() :
+    m_vocabListHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome GetRecognizeVocabListV3Response::Deserialize(const string &p
     }
 
 
+    if (rsp.HasMember("VocabList") && !rsp["VocabList"].IsNull())
+    {
+        if (!rsp["VocabList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VocabList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["VocabList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Vocab item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_vocabList.push_back(item);
+        }
+        m_vocabListHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string GetRecognizeVocabListV3Response::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_vocabListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VocabList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_vocabList.begin(); itr != m_vocabList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string GetRecognizeVocabListV3Response::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<Vocab> GetRecognizeVocabListV3Response::GetVocabList() const
+{
+    return m_vocabList;
+}
+
+bool GetRecognizeVocabListV3Response::VocabListHasBeenSet() const
+{
+    return m_vocabListHasBeenSet;
+}
+
+int64_t GetRecognizeVocabListV3Response::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool GetRecognizeVocabListV3Response::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
 
 

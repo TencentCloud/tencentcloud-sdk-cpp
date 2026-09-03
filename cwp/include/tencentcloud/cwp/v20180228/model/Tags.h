@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标签键
-                     * @return TagKey 标签键
+                     * 获取<p>标签键</p>
+                     * @return TagKey <p>标签键</p>
                      * 
                      */
                     std::string GetTagKey() const;
 
                     /**
-                     * 设置标签键
-                     * @param _tagKey 标签键
+                     * 设置<p>标签键</p>
+                     * @param _tagKey <p>标签键</p>
                      * 
                      */
                     void SetTagKey(const std::string& _tagKey);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TagKeyHasBeenSet() const;
 
                     /**
-                     * 获取标签值
-                     * @return TagValue 标签值
+                     * 获取<p>标签值</p>
+                     * @return TagValue <p>标签值</p>
                      * 
                      */
                     std::string GetTagValue() const;
 
                     /**
-                     * 设置标签值
-                     * @param _tagValue 标签值
+                     * 设置<p>标签值</p>
+                     * @param _tagValue <p>标签值</p>
                      * 
                      */
                     void SetTagValue(const std::string& _tagValue);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标签键
+                     * <p>标签键</p>
                      */
                     std::string m_tagKey;
                     bool m_tagKeyHasBeenSet;
 
                     /**
-                     * 标签值
+                     * <p>标签值</p>
                      */
                     std::string m_tagValue;
                     bool m_tagValueHasBeenSet;

@@ -32,7 +32,8 @@ DescribeMessageResponse::DescribeMessageResponse() :
     m_messageTracksHasBeenSet(false),
     m_showTopicNameHasBeenSet(false),
     m_liteTopicHasBeenSet(false),
-    m_messageTracksCountHasBeenSet(false)
+    m_messageTracksCountHasBeenSet(false),
+    m_delayMessageStatusHasBeenSet(false)
 {
 }
 
@@ -170,6 +171,16 @@ CoreInternalOutcome DescribeMessageResponse::Deserialize(const string &payload)
         m_messageTracksCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DelayMessageStatus") && !rsp["DelayMessageStatus"].IsNull())
+    {
+        if (!rsp["DelayMessageStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DelayMessageStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_delayMessageStatus = string(rsp["DelayMessageStatus"].GetString());
+        m_delayMessageStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -257,6 +268,14 @@ string DescribeMessageResponse::ToJsonString() const
         string key = "MessageTracksCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_messageTracksCount, allocator);
+    }
+
+    if (m_delayMessageStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DelayMessageStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_delayMessageStatus.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -359,6 +378,16 @@ int64_t DescribeMessageResponse::GetMessageTracksCount() const
 bool DescribeMessageResponse::MessageTracksCountHasBeenSet() const
 {
     return m_messageTracksCountHasBeenSet;
+}
+
+string DescribeMessageResponse::GetDelayMessageStatus() const
+{
+    return m_delayMessageStatus;
+}
+
+bool DescribeMessageResponse::DelayMessageStatusHasBeenSet() const
+{
+    return m_delayMessageStatusHasBeenSet;
 }
 
 

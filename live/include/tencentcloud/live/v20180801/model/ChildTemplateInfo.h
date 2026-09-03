@@ -47,22 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自适应码率转码模板，子模板Id。
-入参时候，填写此字段，表示更新子模板，否则是新增子模板。
+                     * 获取<p>自适应码率转码模板，子模板Id。<br>入参时候，填写此字段，表示更新子模板，否则是新增子模板。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TemplateId 自适应码率转码模板，子模板Id。
-入参时候，填写此字段，表示更新子模板，否则是新增子模板。
+                     * @return TemplateId <p>自适应码率转码模板，子模板Id。<br>入参时候，填写此字段，表示更新子模板，否则是新增子模板。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置自适应码率转码模板，子模板Id。
-入参时候，填写此字段，表示更新子模板，否则是新增子模板。
+                     * 设置<p>自适应码率转码模板，子模板Id。<br>入参时候，填写此字段，表示更新子模板，否则是新增子模板。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _templateId 自适应码率转码模板，子模板Id。
-入参时候，填写此字段，表示更新子模板，否则是新增子模板。
+                     * @param _templateId <p>自适应码率转码模板，子模板Id。<br>入参时候，填写此字段，表示更新子模板，否则是新增子模板。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -76,18 +72,18 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取子模板名称。
+                     * 获取<p>子模板名称。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TemplateName 子模板名称。
+                     * @return TemplateName <p>子模板名称。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置子模板名称。
+                     * 设置<p>子模板名称。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _templateName 子模板名称。
+                     * @param _templateName <p>子模板名称。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -101,26 +97,18 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取视频编码：h264/h265/origin，默认origin。
-
-origin: 保持原始编码格式。
+                     * 获取<p>视频编码：h264/h265/origin，默认origin。</p><p>origin: 保持原始编码格式。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Vcodec 视频编码：h264/h265/origin，默认origin。
-
-origin: 保持原始编码格式。
+                     * @return Vcodec <p>视频编码：h264/h265/origin，默认origin。</p><p>origin: 保持原始编码格式。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVcodec() const;
 
                     /**
-                     * 设置视频编码：h264/h265/origin，默认origin。
-
-origin: 保持原始编码格式。
+                     * 设置<p>视频编码：h264/h265/origin，默认origin。</p><p>origin: 保持原始编码格式。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vcodec 视频编码：h264/h265/origin，默认origin。
-
-origin: 保持原始编码格式。
+                     * @param _vcodec <p>视频编码：h264/h265/origin，默认origin。</p><p>origin: 保持原始编码格式。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -134,26 +122,18 @@ origin: 保持原始编码格式。
                     bool VcodecHasBeenSet() const;
 
                     /**
-                     * 获取视频码率。范围：0kbps - 8000kbps。
-0为保持原始码率。
-注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。
+                     * 获取<p>视频码率。范围：0kbps - 8000kbps。<br>0为保持原始码率。<br>注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VideoBitrate 视频码率。范围：0kbps - 8000kbps。
-0为保持原始码率。
-注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。
+                     * @return VideoBitrate <p>视频码率。范围：0kbps - 8000kbps。<br>0为保持原始码率。<br>注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVideoBitrate() const;
 
                     /**
-                     * 设置视频码率。范围：0kbps - 8000kbps。
-0为保持原始码率。
-注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。
+                     * 设置<p>视频码率。范围：0kbps - 8000kbps。<br>0为保持原始码率。<br>注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _videoBitrate 视频码率。范围：0kbps - 8000kbps。
-0为保持原始码率。
-注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。
+                     * @param _videoBitrate <p>视频码率。范围：0kbps - 8000kbps。<br>0为保持原始码率。<br>注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -167,26 +147,18 @@ origin: 保持原始编码格式。
                     bool VideoBitrateHasBeenSet() const;
 
                     /**
-                     * 获取宽，默认0。
-范围[0-3000]。
-数值必须是2的倍数，0是原始宽度。
+                     * 获取<p>宽，默认0。<br>范围[0-3000]。<br>数值必须是2的倍数，0是原始宽度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Width 宽，默认0。
-范围[0-3000]。
-数值必须是2的倍数，0是原始宽度。
+                     * @return Width <p>宽，默认0。<br>范围[0-3000]。<br>数值必须是2的倍数，0是原始宽度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置宽，默认0。
-范围[0-3000]。
-数值必须是2的倍数，0是原始宽度。
+                     * 设置<p>宽，默认0。<br>范围[0-3000]。<br>数值必须是2的倍数，0是原始宽度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _width 宽，默认0。
-范围[0-3000]。
-数值必须是2的倍数，0是原始宽度。
+                     * @param _width <p>宽，默认0。<br>范围[0-3000]。<br>数值必须是2的倍数，0是原始宽度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -200,26 +172,18 @@ origin: 保持原始编码格式。
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取高，默认0。
-范围[0-3000]
-数值必须是2的倍数，0是原始高度。
+                     * 获取<p>高，默认0。<br>范围[0-3000]<br>数值必须是2的倍数，0是原始高度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Height 高，默认0。
-范围[0-3000]
-数值必须是2的倍数，0是原始高度。
+                     * @return Height <p>高，默认0。<br>范围[0-3000]<br>数值必须是2的倍数，0是原始高度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置高，默认0。
-范围[0-3000]
-数值必须是2的倍数，0是原始高度。
+                     * 设置<p>高，默认0。<br>范围[0-3000]<br>数值必须是2的倍数，0是原始高度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _height 高，默认0。
-范围[0-3000]
-数值必须是2的倍数，0是原始高度。
+                     * @param _height <p>高，默认0。<br>范围[0-3000]<br>数值必须是2的倍数，0是原始高度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -233,22 +197,18 @@ origin: 保持原始编码格式。
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取帧率，默认0。
-范围0-60fps。
+                     * 获取<p>帧率，默认0。<br>范围0-60fps。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Fps 帧率，默认0。
-范围0-60fps。
+                     * @return Fps <p>帧率，默认0。<br>范围0-60fps。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFps() const;
 
                     /**
-                     * 设置帧率，默认0。
-范围0-60fps。
+                     * 设置<p>帧率，默认0。<br>范围0-60fps。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fps 帧率，默认0。
-范围0-60fps。
+                     * @param _fps <p>帧率，默认0。<br>范围0-60fps。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -262,30 +222,18 @@ origin: 保持原始编码格式。
                     bool FpsHasBeenSet() const;
 
                     /**
-                     * 获取关键帧间隔，单位：秒。
-默认原始的间隔。
-范围2-6。
-同一个父模板下面的所有子模板，gop必须相等且存在。
+                     * 获取<p>关键帧间隔，单位：秒。<br>默认原始的间隔。<br>范围2-6。<br>同一个父模板下面的所有子模板，gop必须相等且存在。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Gop 关键帧间隔，单位：秒。
-默认原始的间隔。
-范围2-6。
-同一个父模板下面的所有子模板，gop必须相等且存在。
+                     * @return Gop <p>关键帧间隔，单位：秒。<br>默认原始的间隔。<br>范围2-6。<br>同一个父模板下面的所有子模板，gop必须相等且存在。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGop() const;
 
                     /**
-                     * 设置关键帧间隔，单位：秒。
-默认原始的间隔。
-范围2-6。
-同一个父模板下面的所有子模板，gop必须相等且存在。
+                     * 设置<p>关键帧间隔，单位：秒。<br>默认原始的间隔。<br>范围2-6。<br>同一个父模板下面的所有子模板，gop必须相等且存在。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _gop 关键帧间隔，单位：秒。
-默认原始的间隔。
-范围2-6。
-同一个父模板下面的所有子模板，gop必须相等且存在。
+                     * @param _gop <p>关键帧间隔，单位：秒。<br>默认原始的间隔。<br>范围2-6。<br>同一个父模板下面的所有子模板，gop必须相等且存在。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -299,18 +247,18 @@ origin: 保持原始编码格式。
                     bool GopHasBeenSet() const;
 
                     /**
-                     * 获取是否保留视频，0：否，1：是。默认1。
+                     * 获取<p>是否保留视频，0：否，1：是。默认1。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NeedVideo 是否保留视频，0：否，1：是。默认1。
+                     * @return NeedVideo <p>是否保留视频，0：否，1：是。默认1。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNeedVideo() const;
 
                     /**
-                     * 设置是否保留视频，0：否，1：是。默认1。
+                     * 设置<p>是否保留视频，0：否，1：是。默认1。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _needVideo 是否保留视频，0：否，1：是。默认1。
+                     * @param _needVideo <p>是否保留视频，0：否，1：是。默认1。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -324,18 +272,18 @@ origin: 保持原始编码格式。
                     bool NeedVideoHasBeenSet() const;
 
                     /**
-                     * 获取是否保留音频，0：否，1：是。默认1。
+                     * 获取<p>是否保留音频，0：否，1：是。默认1。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NeedAudio 是否保留音频，0：否，1：是。默认1。
+                     * @return NeedAudio <p>是否保留音频，0：否，1：是。默认1。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNeedAudio() const;
 
                     /**
-                     * 设置是否保留音频，0：否，1：是。默认1。
+                     * 设置<p>是否保留音频，0：否，1：是。默认1。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _needAudio 是否保留音频，0：否，1：是。默认1。
+                     * @param _needAudio <p>是否保留音频，0：否，1：是。默认1。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -349,26 +297,18 @@ origin: 保持原始编码格式。
                     bool NeedAudioHasBeenSet() const;
 
                     /**
-                     * 获取当设置的码率>原始码率时，是否以原始码率为准。
-0：否， 1：是
-默认 0。
+                     * 获取<p>当设置的码率&gt;原始码率时，是否以原始码率为准。<br>0：否， 1：是<br>默认 0。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BitrateToOrig 当设置的码率>原始码率时，是否以原始码率为准。
-0：否， 1：是
-默认 0。
+                     * @return BitrateToOrig <p>当设置的码率&gt;原始码率时，是否以原始码率为准。<br>0：否， 1：是<br>默认 0。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBitrateToOrig() const;
 
                     /**
-                     * 设置当设置的码率>原始码率时，是否以原始码率为准。
-0：否， 1：是
-默认 0。
+                     * 设置<p>当设置的码率&gt;原始码率时，是否以原始码率为准。<br>0：否， 1：是<br>默认 0。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _bitrateToOrig 当设置的码率>原始码率时，是否以原始码率为准。
-0：否， 1：是
-默认 0。
+                     * @param _bitrateToOrig <p>当设置的码率&gt;原始码率时，是否以原始码率为准。<br>0：否， 1：是<br>默认 0。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -382,26 +322,18 @@ origin: 保持原始编码格式。
                     bool BitrateToOrigHasBeenSet() const;
 
                     /**
-                     * 获取当设置的高度>原始高度时，是否以原始高度为准。
-0：否， 1：是
-默认 0。
+                     * 获取<p>当设置的高度&gt;原始高度时，是否以原始高度为准。<br>0：否， 1：是<br>默认 0。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HeightToOrig 当设置的高度>原始高度时，是否以原始高度为准。
-0：否， 1：是
-默认 0。
+                     * @return HeightToOrig <p>当设置的高度&gt;原始高度时，是否以原始高度为准。<br>0：否， 1：是<br>默认 0。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHeightToOrig() const;
 
                     /**
-                     * 设置当设置的高度>原始高度时，是否以原始高度为准。
-0：否， 1：是
-默认 0。
+                     * 设置<p>当设置的高度&gt;原始高度时，是否以原始高度为准。<br>0：否， 1：是<br>默认 0。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _heightToOrig 当设置的高度>原始高度时，是否以原始高度为准。
-0：否， 1：是
-默认 0。
+                     * @param _heightToOrig <p>当设置的高度&gt;原始高度时，是否以原始高度为准。<br>0：否， 1：是<br>默认 0。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -415,26 +347,18 @@ origin: 保持原始编码格式。
                     bool HeightToOrigHasBeenSet() const;
 
                     /**
-                     * 获取当设置的帧率>原始帧率时，是否以原始帧率为准。
-0：否， 1：是
-默认 0。
+                     * 获取<p>当设置的帧率&gt;原始帧率时，是否以原始帧率为准。<br>0：否， 1：是<br>默认 0。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FpsToOrig 当设置的帧率>原始帧率时，是否以原始帧率为准。
-0：否， 1：是
-默认 0。
+                     * @return FpsToOrig <p>当设置的帧率&gt;原始帧率时，是否以原始帧率为准。<br>0：否， 1：是<br>默认 0。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFpsToOrig() const;
 
                     /**
-                     * 设置当设置的帧率>原始帧率时，是否以原始帧率为准。
-0：否， 1：是
-默认 0。
+                     * 设置<p>当设置的帧率&gt;原始帧率时，是否以原始帧率为准。<br>0：否， 1：是<br>默认 0。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fpsToOrig 当设置的帧率>原始帧率时，是否以原始帧率为准。
-0：否， 1：是
-默认 0。
+                     * @param _fpsToOrig <p>当设置的帧率&gt;原始帧率时，是否以原始帧率为准。<br>0：否， 1：是<br>默认 0。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -448,18 +372,18 @@ origin: 保持原始编码格式。
                     bool FpsToOrigHasBeenSet() const;
 
                     /**
-                     * 获取是否以短边作为高度，0：否，1：是。默认0。
+                     * 获取<p>是否以短边作为高度，0：否，1：是。默认0。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ShortEdgeAsHeight 是否以短边作为高度，0：否，1：是。默认0。
+                     * @return ShortEdgeAsHeight <p>是否以短边作为高度，0：否，1：是。默认0。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetShortEdgeAsHeight() const;
 
                     /**
-                     * 设置是否以短边作为高度，0：否，1：是。默认0。
+                     * 设置<p>是否以短边作为高度，0：否，1：是。默认0。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _shortEdgeAsHeight 是否以短边作为高度，0：否，1：是。默认0。
+                     * @param _shortEdgeAsHeight <p>是否以短边作为高度，0：否，1：是。默认0。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -473,26 +397,18 @@ origin: 保持原始编码格式。
                     bool ShortEdgeAsHeightHasBeenSet() const;
 
                     /**
-                     * 获取HLS 分片类型。
-可选值：ts、fmp4。
-注：编码方式为 H.265 时生效。
+                     * 获取<p>HLS 分片类型。<br>可选值：ts、fmp4。<br>注：编码方式为 H.265 时生效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HlsContainerFormat HLS 分片类型。
-可选值：ts、fmp4。
-注：编码方式为 H.265 时生效。
+                     * @return HlsContainerFormat <p>HLS 分片类型。<br>可选值：ts、fmp4。<br>注：编码方式为 H.265 时生效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHlsContainerFormat() const;
 
                     /**
-                     * 设置HLS 分片类型。
-可选值：ts、fmp4。
-注：编码方式为 H.265 时生效。
+                     * 设置<p>HLS 分片类型。<br>可选值：ts、fmp4。<br>注：编码方式为 H.265 时生效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hlsContainerFormat HLS 分片类型。
-可选值：ts、fmp4。
-注：编码方式为 H.265 时生效。
+                     * @param _hlsContainerFormat <p>HLS 分片类型。<br>可选值：ts、fmp4。<br>注：编码方式为 H.265 时生效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -506,26 +422,18 @@ origin: 保持原始编码格式。
                     bool HlsContainerFormatHasBeenSet() const;
 
                     /**
-                     * 获取编码标签。
-可选值：hvc1、hev1。
-注：HLS 分片类型选择 fmp4 时生效。
+                     * 获取<p>编码标签。<br>可选值：hvc1、hev1。<br>注：HLS 分片类型选择 fmp4 时生效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HlsMp4VideoCodecTag 编码标签。
-可选值：hvc1、hev1。
-注：HLS 分片类型选择 fmp4 时生效。
+                     * @return HlsMp4VideoCodecTag <p>编码标签。<br>可选值：hvc1、hev1。<br>注：HLS 分片类型选择 fmp4 时生效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHlsMp4VideoCodecTag() const;
 
                     /**
-                     * 设置编码标签。
-可选值：hvc1、hev1。
-注：HLS 分片类型选择 fmp4 时生效。
+                     * 设置<p>编码标签。<br>可选值：hvc1、hev1。<br>注：HLS 分片类型选择 fmp4 时生效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hlsMp4VideoCodecTag 编码标签。
-可选值：hvc1、hev1。
-注：HLS 分片类型选择 fmp4 时生效。
+                     * @param _hlsMp4VideoCodecTag <p>编码标签。<br>可选值：hvc1、hev1。<br>注：HLS 分片类型选择 fmp4 时生效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -538,142 +446,173 @@ origin: 保持原始编码格式。
                      */
                     bool HlsMp4VideoCodecTagHasBeenSet() const;
 
+                    /**
+                     * 获取<p>子流音频编码类型。默认为&quot;自动适配&quot;</p>
+                     * @return Acodec <p>子流音频编码类型。默认为&quot;自动适配&quot;</p>
+                     * 
+                     */
+                    std::string GetAcodec() const;
+
+                    /**
+                     * 设置<p>子流音频编码类型。默认为&quot;自动适配&quot;</p>
+                     * @param _acodec <p>子流音频编码类型。默认为&quot;自动适配&quot;</p>
+                     * 
+                     */
+                    void SetAcodec(const std::string& _acodec);
+
+                    /**
+                     * 判断参数 Acodec 是否已赋值
+                     * @return Acodec 是否已赋值
+                     * 
+                     */
+                    bool AcodecHasBeenSet() const;
+
+                    /**
+                     * 获取<p>子流音频码率</p><p>单位：Kbps</p>
+                     * @return AudioBitrate <p>子流音频码率</p><p>单位：Kbps</p>
+                     * 
+                     */
+                    int64_t GetAudioBitrate() const;
+
+                    /**
+                     * 设置<p>子流音频码率</p><p>单位：Kbps</p>
+                     * @param _audioBitrate <p>子流音频码率</p><p>单位：Kbps</p>
+                     * 
+                     */
+                    void SetAudioBitrate(const int64_t& _audioBitrate);
+
+                    /**
+                     * 判断参数 AudioBitrate 是否已赋值
+                     * @return AudioBitrate 是否已赋值
+                     * 
+                     */
+                    bool AudioBitrateHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 自适应码率转码模板，子模板Id。
-入参时候，填写此字段，表示更新子模板，否则是新增子模板。
+                     * <p>自适应码率转码模板，子模板Id。<br>入参时候，填写此字段，表示更新子模板，否则是新增子模板。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 子模板名称。
+                     * <p>子模板名称。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * 视频编码：h264/h265/origin，默认origin。
-
-origin: 保持原始编码格式。
+                     * <p>视频编码：h264/h265/origin，默认origin。</p><p>origin: 保持原始编码格式。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vcodec;
                     bool m_vcodecHasBeenSet;
 
                     /**
-                     * 视频码率。范围：0kbps - 8000kbps。
-0为保持原始码率。
-注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。
+                     * <p>视频码率。范围：0kbps - 8000kbps。<br>0为保持原始码率。<br>注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_videoBitrate;
                     bool m_videoBitrateHasBeenSet;
 
                     /**
-                     * 宽，默认0。
-范围[0-3000]。
-数值必须是2的倍数，0是原始宽度。
+                     * <p>宽，默认0。<br>范围[0-3000]。<br>数值必须是2的倍数，0是原始宽度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 高，默认0。
-范围[0-3000]
-数值必须是2的倍数，0是原始高度。
+                     * <p>高，默认0。<br>范围[0-3000]<br>数值必须是2的倍数，0是原始高度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * 帧率，默认0。
-范围0-60fps。
+                     * <p>帧率，默认0。<br>范围0-60fps。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fps;
                     bool m_fpsHasBeenSet;
 
                     /**
-                     * 关键帧间隔，单位：秒。
-默认原始的间隔。
-范围2-6。
-同一个父模板下面的所有子模板，gop必须相等且存在。
+                     * <p>关键帧间隔，单位：秒。<br>默认原始的间隔。<br>范围2-6。<br>同一个父模板下面的所有子模板，gop必须相等且存在。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_gop;
                     bool m_gopHasBeenSet;
 
                     /**
-                     * 是否保留视频，0：否，1：是。默认1。
+                     * <p>是否保留视频，0：否，1：是。默认1。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_needVideo;
                     bool m_needVideoHasBeenSet;
 
                     /**
-                     * 是否保留音频，0：否，1：是。默认1。
+                     * <p>是否保留音频，0：否，1：是。默认1。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_needAudio;
                     bool m_needAudioHasBeenSet;
 
                     /**
-                     * 当设置的码率>原始码率时，是否以原始码率为准。
-0：否， 1：是
-默认 0。
+                     * <p>当设置的码率&gt;原始码率时，是否以原始码率为准。<br>0：否， 1：是<br>默认 0。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bitrateToOrig;
                     bool m_bitrateToOrigHasBeenSet;
 
                     /**
-                     * 当设置的高度>原始高度时，是否以原始高度为准。
-0：否， 1：是
-默认 0。
+                     * <p>当设置的高度&gt;原始高度时，是否以原始高度为准。<br>0：否， 1：是<br>默认 0。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_heightToOrig;
                     bool m_heightToOrigHasBeenSet;
 
                     /**
-                     * 当设置的帧率>原始帧率时，是否以原始帧率为准。
-0：否， 1：是
-默认 0。
+                     * <p>当设置的帧率&gt;原始帧率时，是否以原始帧率为准。<br>0：否， 1：是<br>默认 0。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fpsToOrig;
                     bool m_fpsToOrigHasBeenSet;
 
                     /**
-                     * 是否以短边作为高度，0：否，1：是。默认0。
+                     * <p>是否以短边作为高度，0：否，1：是。默认0。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_shortEdgeAsHeight;
                     bool m_shortEdgeAsHeightHasBeenSet;
 
                     /**
-                     * HLS 分片类型。
-可选值：ts、fmp4。
-注：编码方式为 H.265 时生效。
+                     * <p>HLS 分片类型。<br>可选值：ts、fmp4。<br>注：编码方式为 H.265 时生效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hlsContainerFormat;
                     bool m_hlsContainerFormatHasBeenSet;
 
                     /**
-                     * 编码标签。
-可选值：hvc1、hev1。
-注：HLS 分片类型选择 fmp4 时生效。
+                     * <p>编码标签。<br>可选值：hvc1、hev1。<br>注：HLS 分片类型选择 fmp4 时生效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hlsMp4VideoCodecTag;
                     bool m_hlsMp4VideoCodecTagHasBeenSet;
+
+                    /**
+                     * <p>子流音频编码类型。默认为&quot;自动适配&quot;</p>
+                     */
+                    std::string m_acodec;
+                    bool m_acodecHasBeenSet;
+
+                    /**
+                     * <p>子流音频码率</p><p>单位：Kbps</p>
+                     */
+                    int64_t m_audioBitrate;
+                    bool m_audioBitrateHasBeenSet;
 
                 };
             }

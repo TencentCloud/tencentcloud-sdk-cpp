@@ -372,6 +372,34 @@ namespace TencentCloud
                      */
                     bool ImageInfoV2HasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启日志收集</p>
+                     * @return EnableHistoryServer <p>是否开启日志收集</p>
+                     * 
+                     */
+                    bool GetEnableHistoryServer() const;
+
+                    /**
+                     * 判断参数 EnableHistoryServer 是否已赋值
+                     * @return EnableHistoryServer 是否已赋值
+                     * 
+                     */
+                    bool EnableHistoryServerHasBeenSet() const;
+
+                    /**
+                     * 获取<p>tensorboard 链接</p>
+                     * @return TensorBoardUrl <p>tensorboard 链接</p>
+                     * 
+                     */
+                    std::string GetTensorBoardUrl() const;
+
+                    /**
+                     * 判断参数 TensorBoardUrl 是否已赋值
+                     * @return TensorBoardUrl 是否已赋值
+                     * 
+                     */
+                    bool TensorBoardUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -511,6 +539,18 @@ namespace TencentCloud
                      */
                     ImageInfoV2 m_imageInfoV2;
                     bool m_imageInfoV2HasBeenSet;
+
+                    /**
+                     * <p>是否开启日志收集</p>
+                     */
+                    bool m_enableHistoryServer;
+                    bool m_enableHistoryServerHasBeenSet;
+
+                    /**
+                     * <p>tensorboard 链接</p>
+                     */
+                    std::string m_tensorBoardUrl;
+                    bool m_tensorBoardUrlHasBeenSet;
 
                 };
             }

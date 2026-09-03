@@ -37,7 +37,8 @@ ConversationContent::ConversationContent() :
     m_relatedRecordIdHasBeenSet(false),
     m_taskListHasBeenSet(false),
     m_tasksHasBeenSet(false),
-    m_workflowInputHasBeenSet(false)
+    m_workflowInputHasBeenSet(false),
+    m_mcpAppHasBeenSet(false)
 {
 }
 
@@ -288,6 +289,23 @@ CoreInternalOutcome ConversationContent::Deserialize(const rapidjson::Value &val
         m_workflowInputHasBeenSet = true;
     }
 
+    if (value.HasMember("McpApp") && !value["McpApp"].IsNull())
+    {
+        if (!value["McpApp"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConversationContent.McpApp` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mcpApp.Deserialize(value["McpApp"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mcpAppHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -491,6 +509,15 @@ void ConversationContent::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "WorkflowInput";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_workflowInput.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mcpAppHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "McpApp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mcpApp.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -766,5 +793,21 @@ void ConversationContent::SetWorkflowInput(const string& _workflowInput)
 bool ConversationContent::WorkflowInputHasBeenSet() const
 {
     return m_workflowInputHasBeenSet;
+}
+
+ConversationMcpApp ConversationContent::GetMcpApp() const
+{
+    return m_mcpApp;
+}
+
+void ConversationContent::SetMcpApp(const ConversationMcpApp& _mcpApp)
+{
+    m_mcpApp = _mcpApp;
+    m_mcpAppHasBeenSet = true;
+}
+
+bool ConversationContent::McpAppHasBeenSet() const
+{
+    return m_mcpAppHasBeenSet;
 }
 

@@ -31,7 +31,8 @@ ClusterActivity::ClusterActivity() :
     m_descriptionHasBeenSet(false),
     m_relatedNodeActivitySetHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_queueNameHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,16 @@ CoreInternalOutcome ClusterActivity::Deserialize(const rapidjson::Value &value)
         m_endTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("QueueName") && !value["QueueName"].IsNull())
+    {
+        if (!value["QueueName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterActivity.QueueName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_queueName = string(value["QueueName"].GetString());
+        m_queueNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -260,6 +271,14 @@ void ClusterActivity::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queueNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -439,5 +458,21 @@ void ClusterActivity::SetEndTime(const string& _endTime)
 bool ClusterActivity::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string ClusterActivity::GetQueueName() const
+{
+    return m_queueName;
+}
+
+void ClusterActivity::SetQueueName(const string& _queueName)
+{
+    m_queueName = _queueName;
+    m_queueNameHasBeenSet = true;
+}
+
+bool ClusterActivity::QueueNameHasBeenSet() const
+{
+    return m_queueNameHasBeenSet;
 }
 

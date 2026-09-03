@@ -282,6 +282,31 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取队列名称。集群级活动（如创建/删除集群）此字段为空，队列级活动（如扩容/缩容）为对应队列名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QueueName 队列名称。集群级活动（如创建/删除集群）此字段为空，队列级活动（如扩容/缩容）为对应队列名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetQueueName() const;
+
+                    /**
+                     * 设置队列名称。集群级活动（如创建/删除集群）此字段为空，队列级活动（如扩容/缩容）为对应队列名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _queueName 队列名称。集群级活动（如创建/删除集群）此字段为空，队列级活动（如扩容/缩容）为对应队列名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetQueueName(const std::string& _queueName);
+
+                    /**
+                     * 判断参数 QueueName 是否已赋值
+                     * @return QueueName 是否已赋值
+                     * 
+                     */
+                    bool QueueNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -350,6 +375,13 @@ namespace TencentCloud
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 队列名称。集群级活动（如创建/删除集群）此字段为空，队列级活动（如扩容/缩容）为对应队列名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_queueName;
+                    bool m_queueNameHasBeenSet;
 
                 };
             }

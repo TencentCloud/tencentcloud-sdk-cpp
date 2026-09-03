@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取账号名
+                     * 获取<p>账号名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserName 账号名
+                     * @return UserName <p>账号名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置账号名
+                     * 设置<p>账号名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _userName 账号名
+                     * @param _userName <p>账号名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取计算机名
+                     * 获取<p>计算机名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ComputerName 计算机名
+                     * @return ComputerName <p>计算机名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComputerName() const;
 
                     /**
-                     * 设置计算机名
+                     * 设置<p>计算机名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _computerName 计算机名
+                     * @param _computerName <p>计算机名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool ComputerNameHasBeenSet() const;
 
                     /**
-                     * 获取名称
+                     * 获取<p>名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 名称
+                     * @return Name <p>名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称
+                     * 设置<p>名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 名称
+                     * @param _name <p>名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取用户组IdPath
+                     * 获取<p>用户组IdPath</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AccountGroupIdPath 用户组IdPath
+                     * @return AccountGroupIdPath <p>用户组IdPath</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccountGroupIdPath() const;
 
                     /**
-                     * 设置用户组IdPath
+                     * 设置<p>用户组IdPath</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _accountGroupIdPath 用户组IdPath
+                     * @param _accountGroupIdPath <p>用户组IdPath</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool AccountGroupIdPathHasBeenSet() const;
 
                     /**
-                     * 获取用户组id(只支持32位)
+                     * 获取<p>用户组id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AccountGroupId 用户组id(只支持32位)
+                     * @return AccountGroupId <p>用户组id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAccountGroupId() const;
 
                     /**
-                     * 设置用户组id(只支持32位)
+                     * 设置<p>用户组id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _accountGroupId 用户组id(只支持32位)
+                     * @param _accountGroupId <p>用户组id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool AccountGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取终端组名path
+                     * 获取<p>终端组名path</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupNamePath 终端组名path
+                     * @return GroupNamePath <p>终端组名path</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupNamePath() const;
 
                     /**
-                     * 设置终端组名path
+                     * 设置<p>终端组名path</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _groupNamePath 终端组名path
+                     * @param _groupNamePath <p>终端组名path</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool GroupNamePathHasBeenSet() const;
 
                     /**
-                     * 获取Ip地址
+                     * 获取<p>Ip地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Ip Ip地址
+                     * @return Ip <p>Ip地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置Ip地址
+                     * 设置<p>Ip地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ip Ip地址
+                     * @param _ip <p>Ip地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取用户组名
+                     * 获取<p>用户组名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AccountGroupName 用户组名
+                     * @return AccountGroupName <p>用户组名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccountGroupName() const;
 
                     /**
-                     * 设置用户组名
+                     * 设置<p>用户组名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _accountGroupName 用户组名
+                     * @param _accountGroupName <p>用户组名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool AccountGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取终端组IdPath
+                     * 获取<p>终端组IdPath</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupIdPath 终端组IdPath
+                     * @return GroupIdPath <p>终端组IdPath</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupIdPath() const;
 
                     /**
-                     * 设置终端组IdPath
+                     * 设置<p>终端组IdPath</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _groupIdPath 终端组IdPath
+                     * @param _groupIdPath <p>终端组IdPath</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -272,18 +272,18 @@ namespace TencentCloud
                     bool GroupIdPathHasBeenSet() const;
 
                     /**
-                     * 获取唯一标识Mid
+                     * 获取<p>唯一标识Mid</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Mid 唯一标识Mid
+                     * @return Mid <p>唯一标识Mid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMid() const;
 
                     /**
-                     * 设置唯一标识Mid
+                     * 设置<p>唯一标识Mid</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mid 唯一标识Mid
+                     * @param _mid <p>唯一标识Mid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -297,18 +297,18 @@ namespace TencentCloud
                     bool MidHasBeenSet() const;
 
                     /**
-                     * 获取IOA账号名
+                     * 获取<p>IOA账号名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IoaUserName IOA账号名
+                     * @return IoaUserName <p>IOA账号名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIoaUserName() const;
 
                     /**
-                     * 设置IOA账号名
+                     * 设置<p>IOA账号名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ioaUserName IOA账号名
+                     * @param _ioaUserName <p>IOA账号名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -322,18 +322,18 @@ namespace TencentCloud
                     bool IoaUserNameHasBeenSet() const;
 
                     /**
-                     * 获取所在分组Id(只支持32位)
+                     * 获取<p>所在分组Id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupId 所在分组Id(只支持32位)
+                     * @return GroupId <p>所在分组Id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置所在分组Id(只支持32位)
+                     * 设置<p>所在分组Id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _groupId 所在分组Id(只支持32位)
+                     * @param _groupId <p>所在分组Id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -347,18 +347,18 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取所在分组Name
+                     * 获取<p>所在分组Name</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupName 所在分组Name
+                     * @return GroupName <p>所在分组Name</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置所在分组Name
+                     * 设置<p>所在分组Name</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _groupName 所在分组Name
+                     * @param _groupName <p>所在分组Name</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -372,18 +372,18 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取Mac地址
+                     * 获取<p>Mac地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Mac Mac地址
+                     * @return Mac <p>Mac地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMac() const;
 
                     /**
-                     * 设置Mac地址
+                     * 设置<p>Mac地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mac Mac地址
+                     * @param _mac <p>Mac地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -397,18 +397,18 @@ namespace TencentCloud
                     bool MacHasBeenSet() const;
 
                     /**
-                     * 获取软件版本
+                     * 获取<p>软件版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Version 软件版本
+                     * @return Version <p>软件版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
-                     * 设置软件版本
+                     * 设置<p>软件版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _version 软件版本
+                     * @param _version <p>软件版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -422,18 +422,18 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取用户组名Path
+                     * 获取<p>用户组名Path</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AccountGroupNamePath 用户组名Path
+                     * @return AccountGroupNamePath <p>用户组名Path</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccountGroupNamePath() const;
 
                     /**
-                     * 设置用户组名Path
+                     * 设置<p>用户组名Path</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _accountGroupNamePath 用户组名Path
+                     * @param _accountGroupNamePath <p>用户组名Path</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -447,18 +447,18 @@ namespace TencentCloud
                     bool AccountGroupNamePathHasBeenSet() const;
 
                     /**
-                     * 获取列表Id(只支持32位)
+                     * 获取<p>列表Id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id 列表Id(只支持32位)
+                     * @return Id <p>列表Id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置列表Id(只支持32位)
+                     * 设置<p>列表Id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _id 列表Id(只支持32位)
+                     * @param _id <p>列表Id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -474,119 +474,119 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 账号名
+                     * <p>账号名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 计算机名
+                     * <p>计算机名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_computerName;
                     bool m_computerNameHasBeenSet;
 
                     /**
-                     * 名称
+                     * <p>名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 用户组IdPath
+                     * <p>用户组IdPath</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accountGroupIdPath;
                     bool m_accountGroupIdPathHasBeenSet;
 
                     /**
-                     * 用户组id(只支持32位)
+                     * <p>用户组id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_accountGroupId;
                     bool m_accountGroupIdHasBeenSet;
 
                     /**
-                     * 终端组名path
+                     * <p>终端组名path</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupNamePath;
                     bool m_groupNamePathHasBeenSet;
 
                     /**
-                     * Ip地址
+                     * <p>Ip地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 用户组名
+                     * <p>用户组名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accountGroupName;
                     bool m_accountGroupNameHasBeenSet;
 
                     /**
-                     * 终端组IdPath
+                     * <p>终端组IdPath</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupIdPath;
                     bool m_groupIdPathHasBeenSet;
 
                     /**
-                     * 唯一标识Mid
+                     * <p>唯一标识Mid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mid;
                     bool m_midHasBeenSet;
 
                     /**
-                     * IOA账号名
+                     * <p>IOA账号名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ioaUserName;
                     bool m_ioaUserNameHasBeenSet;
 
                     /**
-                     * 所在分组Id(只支持32位)
+                     * <p>所在分组Id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 所在分组Name
+                     * <p>所在分组Name</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * Mac地址
+                     * <p>Mac地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mac;
                     bool m_macHasBeenSet;
 
                     /**
-                     * 软件版本
+                     * <p>软件版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 用户组名Path
+                     * <p>用户组名Path</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accountGroupNamePath;
                     bool m_accountGroupNamePathHasBeenSet;
 
                     /**
-                     * 列表Id(只支持32位)
+                     * <p>列表Id(只支持32位)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;

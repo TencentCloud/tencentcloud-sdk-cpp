@@ -22,8 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/adp/v20260520/model/ConversationMessage.h>
-#include <tencentcloud/adp/v20260520/model/ConversationResetInfo.h>
 #include <tencentcloud/adp/v20260520/model/ConversationRecordSummary.h>
+#include <tencentcloud/adp/v20260520/model/ConversationResetInfo.h>
 
 
 namespace TencentCloud
@@ -131,22 +131,6 @@ namespace TencentCloud
                     bool MessagesHasBeenSet() const;
 
                     /**
-                     * 获取<p>最近一次重置信息</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResetInfo <p>最近一次重置信息</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    ConversationResetInfo GetResetInfo() const;
-
-                    /**
-                     * 判断参数 ResetInfo 是否已赋值
-                     * @return ResetInfo 是否已赋值
-                     * 
-                     */
-                    bool ResetInfoHasBeenSet() const;
-
-                    /**
                      * 获取<p>单次对话记录统计列表，与 message_list 通过 record_id / related_record_id 关联</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordSummaryList <p>单次对话记录统计列表，与 message_list 通过 record_id / related_record_id 关联</p>
@@ -161,6 +145,22 @@ namespace TencentCloud
                      * 
                      */
                     bool RecordSummaryListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>最近一次重置信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResetInfo <p>最近一次重置信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ConversationResetInfo GetResetInfo() const;
+
+                    /**
+                     * 判断参数 ResetInfo 是否已赋值
+                     * @return ResetInfo 是否已赋值
+                     * 
+                     */
+                    bool ResetInfoHasBeenSet() const;
 
                 private:
 
@@ -201,18 +201,18 @@ namespace TencentCloud
                     bool m_messagesHasBeenSet;
 
                     /**
-                     * <p>最近一次重置信息</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    ConversationResetInfo m_resetInfo;
-                    bool m_resetInfoHasBeenSet;
-
-                    /**
                      * <p>单次对话记录统计列表，与 message_list 通过 record_id / related_record_id 关联</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ConversationRecordSummary> m_recordSummaryList;
                     bool m_recordSummaryListHasBeenSet;
+
+                    /**
+                     * <p>最近一次重置信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ConversationResetInfo m_resetInfo;
+                    bool m_resetInfoHasBeenSet;
 
                 };
             }

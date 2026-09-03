@@ -1734,6 +1734,73 @@ namespace TencentCloud
                      */
                     bool McpServerNumHasBeenSet() const;
 
+                    /**
+                     * 获取<p>凭据ID</p>
+                     * @return CredentialID <p>凭据ID</p>
+                     * 
+                     */
+                    std::string GetCredentialID() const;
+
+                    /**
+                     * 设置<p>凭据ID</p>
+                     * @param _credentialID <p>凭据ID</p>
+                     * 
+                     */
+                    void SetCredentialID(const std::string& _credentialID);
+
+                    /**
+                     * 判断参数 CredentialID 是否已赋值
+                     * @return CredentialID 是否已赋值
+                     * 
+                     */
+                    bool CredentialIDHasBeenSet() const;
+
+                    /**
+                     * 获取<p>凭据名称</p>
+                     * @return CredentialName <p>凭据名称</p>
+                     * 
+                     */
+                    std::string GetCredentialName() const;
+
+                    /**
+                     * 设置<p>凭据名称</p>
+                     * @param _credentialName <p>凭据名称</p>
+                     * 
+                     */
+                    void SetCredentialName(const std::string& _credentialName);
+
+                    /**
+                     * 判断参数 CredentialName 是否已赋值
+                     * @return CredentialName 是否已赋值
+                     * 
+                     */
+                    bool CredentialNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RequestProtocolType <p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRequestProtocolType() const;
+
+                    /**
+                     * 设置<p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _requestProtocolType <p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRequestProtocolType(const std::string& _requestProtocolType);
+
+                    /**
+                     * 判断参数 RequestProtocolType 是否已赋值
+                     * @return RequestProtocolType 是否已赋值
+                     * 
+                     */
+                    bool RequestProtocolTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2204,6 +2271,25 @@ namespace TencentCloud
                      */
                     int64_t m_mcpServerNum;
                     bool m_mcpServerNumHasBeenSet;
+
+                    /**
+                     * <p>凭据ID</p>
+                     */
+                    std::string m_credentialID;
+                    bool m_credentialIDHasBeenSet;
+
+                    /**
+                     * <p>凭据名称</p>
+                     */
+                    std::string m_credentialName;
+                    bool m_credentialNameHasBeenSet;
+
+                    /**
+                     * <p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_requestProtocolType;
+                    bool m_requestProtocolTypeHasBeenSet;
 
                 };
             }

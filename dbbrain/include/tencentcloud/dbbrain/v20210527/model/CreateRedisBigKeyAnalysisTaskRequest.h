@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
-                     * @return InstanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * 获取<p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
+                     * @return InstanceId <p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
-                     * @param _instanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * 设置<p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
+                     * @param _instanceId <p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取服务产品类型，支持值包括 "redis" - 云数据库 Redis。
-                     * @return Product 服务产品类型，支持值包括 "redis" - 云数据库 Redis。
+                     * 获取<p>服务产品类型，支持值包括 &quot;redis&quot; - 云数据库 Redis。</p>
+                     * @return Product <p>服务产品类型，支持值包括 &quot;redis&quot; - 云数据库 Redis。</p>
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置服务产品类型，支持值包括 "redis" - 云数据库 Redis。
-                     * @param _product 服务产品类型，支持值包括 "redis" - 云数据库 Redis。
+                     * 设置<p>服务产品类型，支持值包括 &quot;redis&quot; - 云数据库 Redis。</p>
+                     * @param _product <p>服务产品类型，支持值包括 &quot;redis&quot; - 云数据库 Redis。</p>
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取分片节点序号列表。当列表为空时，选择所有分片节点。
-                     * @return ShardIds 分片节点序号列表。当列表为空时，选择所有分片节点。
+                     * 获取<p>分片节点序号列表。当列表为空时，选择所有分片节点。</p>
+                     * @return ShardIds <p>分片节点序号列表。当列表为空时，选择所有分片节点。</p>
                      * 
                      */
                     std::vector<int64_t> GetShardIds() const;
 
                     /**
-                     * 设置分片节点序号列表。当列表为空时，选择所有分片节点。
-                     * @param _shardIds 分片节点序号列表。当列表为空时，选择所有分片节点。
+                     * 设置<p>分片节点序号列表。当列表为空时，选择所有分片节点。</p>
+                     * @param _shardIds <p>分片节点序号列表。当列表为空时，选择所有分片节点。</p>
                      * 
                      */
                     void SetShardIds(const std::vector<int64_t>& _shardIds);
@@ -106,19 +106,15 @@ namespace TencentCloud
                     bool ShardIdsHasBeenSet() const;
 
                     /**
-                     * 获取Top Key前缀的分隔符列表。
-目前仅支持以下分割符：[",", ";", ":", "_", "-", "+", "@", "=", "|", "#", "."]，当列表为空时，默认选择所有分隔符。
-                     * @return KeyDelimiterList Top Key前缀的分隔符列表。
-目前仅支持以下分割符：[",", ";", ":", "_", "-", "+", "@", "=", "|", "#", "."]，当列表为空时，默认选择所有分隔符。
+                     * 获取<p>Top Key前缀的分隔符列表。<br>目前仅支持以下分割符：[&quot;,&quot;, &quot;;&quot;, &quot;:&quot;, &quot;_&quot;, &quot;-&quot;, &quot;+&quot;, &quot;@&quot;, &quot;=&quot;, &quot;|&quot;, &quot;#&quot;, &quot;.&quot;]，当列表为空时，默认选择所有分隔符。</p>
+                     * @return KeyDelimiterList <p>Top Key前缀的分隔符列表。<br>目前仅支持以下分割符：[&quot;,&quot;, &quot;;&quot;, &quot;:&quot;, &quot;_&quot;, &quot;-&quot;, &quot;+&quot;, &quot;@&quot;, &quot;=&quot;, &quot;|&quot;, &quot;#&quot;, &quot;.&quot;]，当列表为空时，默认选择所有分隔符。</p>
                      * 
                      */
                     std::vector<std::string> GetKeyDelimiterList() const;
 
                     /**
-                     * 设置Top Key前缀的分隔符列表。
-目前仅支持以下分割符：[",", ";", ":", "_", "-", "+", "@", "=", "|", "#", "."]，当列表为空时，默认选择所有分隔符。
-                     * @param _keyDelimiterList Top Key前缀的分隔符列表。
-目前仅支持以下分割符：[",", ";", ":", "_", "-", "+", "@", "=", "|", "#", "."]，当列表为空时，默认选择所有分隔符。
+                     * 设置<p>Top Key前缀的分隔符列表。<br>目前仅支持以下分割符：[&quot;,&quot;, &quot;;&quot;, &quot;:&quot;, &quot;_&quot;, &quot;-&quot;, &quot;+&quot;, &quot;@&quot;, &quot;=&quot;, &quot;|&quot;, &quot;#&quot;, &quot;.&quot;]，当列表为空时，默认选择所有分隔符。</p>
+                     * @param _keyDelimiterList <p>Top Key前缀的分隔符列表。<br>目前仅支持以下分割符：[&quot;,&quot;, &quot;;&quot;, &quot;:&quot;, &quot;_&quot;, &quot;-&quot;, &quot;+&quot;, &quot;@&quot;, &quot;=&quot;, &quot;|&quot;, &quot;#&quot;, &quot;.&quot;]，当列表为空时，默认选择所有分隔符。</p>
                      * 
                      */
                     void SetKeyDelimiterList(const std::vector<std::string>& _keyDelimiterList);
@@ -130,32 +126,58 @@ namespace TencentCloud
                      */
                     bool KeyDelimiterListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>历史备份文件ID</p>
+                     * @return BackupId <p>历史备份文件ID</p>
+                     * 
+                     */
+                    std::string GetBackupId() const;
+
+                    /**
+                     * 设置<p>历史备份文件ID</p>
+                     * @param _backupId <p>历史备份文件ID</p>
+                     * 
+                     */
+                    void SetBackupId(const std::string& _backupId);
+
+                    /**
+                     * 判断参数 BackupId 是否已赋值
+                     * @return BackupId 是否已赋值
+                     * 
+                     */
+                    bool BackupIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * <p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 服务产品类型，支持值包括 "redis" - 云数据库 Redis。
+                     * <p>服务产品类型，支持值包括 &quot;redis&quot; - 云数据库 Redis。</p>
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
 
                     /**
-                     * 分片节点序号列表。当列表为空时，选择所有分片节点。
+                     * <p>分片节点序号列表。当列表为空时，选择所有分片节点。</p>
                      */
                     std::vector<int64_t> m_shardIds;
                     bool m_shardIdsHasBeenSet;
 
                     /**
-                     * Top Key前缀的分隔符列表。
-目前仅支持以下分割符：[",", ";", ":", "_", "-", "+", "@", "=", "|", "#", "."]，当列表为空时，默认选择所有分隔符。
+                     * <p>Top Key前缀的分隔符列表。<br>目前仅支持以下分割符：[&quot;,&quot;, &quot;;&quot;, &quot;:&quot;, &quot;_&quot;, &quot;-&quot;, &quot;+&quot;, &quot;@&quot;, &quot;=&quot;, &quot;|&quot;, &quot;#&quot;, &quot;.&quot;]，当列表为空时，默认选择所有分隔符。</p>
                      */
                     std::vector<std::string> m_keyDelimiterList;
                     bool m_keyDelimiterListHasBeenSet;
+
+                    /**
+                     * <p>历史备份文件ID</p>
+                     */
+                    std::string m_backupId;
+                    bool m_backupIdHasBeenSet;
 
                 };
             }

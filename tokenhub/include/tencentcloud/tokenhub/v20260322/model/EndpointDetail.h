@@ -319,6 +319,27 @@ namespace TencentCloud
                      */
                     bool RPMHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模型状态</p><p>枚举值：</p><ul><li>online： 在线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护</li><li>offline： 下线</li></ul>
+                     * @return ModelStatus <p>模型状态</p><p>枚举值：</p><ul><li>online： 在线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护</li><li>offline： 下线</li></ul>
+                     * 
+                     */
+                    std::string GetModelStatus() const;
+
+                    /**
+                     * 设置<p>模型状态</p><p>枚举值：</p><ul><li>online： 在线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护</li><li>offline： 下线</li></ul>
+                     * @param _modelStatus <p>模型状态</p><p>枚举值：</p><ul><li>online： 在线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护</li><li>offline： 下线</li></ul>
+                     * 
+                     */
+                    void SetModelStatus(const std::string& _modelStatus);
+
+                    /**
+                     * 判断参数 ModelStatus 是否已赋值
+                     * @return ModelStatus 是否已赋值
+                     * 
+                     */
+                    bool ModelStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -398,6 +419,12 @@ namespace TencentCloud
                      */
                     int64_t m_rPM;
                     bool m_rPMHasBeenSet;
+
+                    /**
+                     * <p>模型状态</p><p>枚举值：</p><ul><li>online： 在线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护</li><li>offline： 下线</li></ul>
+                     */
+                    std::string m_modelStatus;
+                    bool m_modelStatusHasBeenSet;
 
                 };
             }

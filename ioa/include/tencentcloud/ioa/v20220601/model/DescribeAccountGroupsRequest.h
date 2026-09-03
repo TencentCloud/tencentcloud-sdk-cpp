@@ -44,15 +44,36 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取搜索范围：0-仅当前分组的直接子组，1-当前分组的所有子组。默认为0。
-                     * @return Deepin 搜索范围：0-仅当前分组的直接子组，1-当前分组的所有子组。默认为0。
+                     * 获取管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     * @return DomainInstanceId 管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     * 
+                     */
+                    std::string GetDomainInstanceId() const;
+
+                    /**
+                     * 设置管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     * @param _domainInstanceId 管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     * 
+                     */
+                    void SetDomainInstanceId(const std::string& _domainInstanceId);
+
+                    /**
+                     * 判断参数 DomainInstanceId 是否已赋值
+                     * @return DomainInstanceId 是否已赋值
+                     * 
+                     */
+                    bool DomainInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取（仅SaaS版本适用）搜索范围：0-仅当前分组的直接子组，1-当前分组的所有子组。默认为0。
+                     * @return Deepin （仅SaaS版本适用）搜索范围：0-仅当前分组的直接子组，1-当前分组的所有子组。默认为0。
                      * 
                      */
                     int64_t GetDeepin() const;
 
                     /**
-                     * 设置搜索范围：0-仅当前分组的直接子组，1-当前分组的所有子组。默认为0。
-                     * @param _deepin 搜索范围：0-仅当前分组的直接子组，1-当前分组的所有子组。默认为0。
+                     * 设置（仅SaaS版本适用）搜索范围：0-仅当前分组的直接子组，1-当前分组的所有子组。默认为0。
+                     * @param _deepin （仅SaaS版本适用）搜索范围：0-仅当前分组的直接子组，1-当前分组的所有子组。默认为0。
                      * 
                      */
                     void SetDeepin(const int64_t& _deepin);
@@ -153,7 +174,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 搜索范围：0-仅当前分组的直接子组，1-当前分组的所有子组。默认为0。
+                     * 管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域"1"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。
+                     */
+                    std::string m_domainInstanceId;
+                    bool m_domainInstanceIdHasBeenSet;
+
+                    /**
+                     * （仅SaaS版本适用）搜索范围：0-仅当前分组的直接子组，1-当前分组的所有子组。默认为0。
                      */
                     int64_t m_deepin;
                     bool m_deepinHasBeenSet;

@@ -34,6 +34,7 @@
 #include <tencentcloud/as/v20180419/model/InstanceChargePrepaid.h>
 #include <tencentcloud/as/v20180419/model/IPv6InternetAccessible.h>
 #include <tencentcloud/as/v20180419/model/Metadata.h>
+#include <tencentcloud/as/v20180419/model/NetworkInterface.h>
 
 
 namespace TencentCloud
@@ -56,15 +57,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超60个字节。</p>
-                     * @return LaunchConfigurationName <p>启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超60个字节。</p>
+                     * 获取<p>启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符&quot;-&quot;、小数点，最大长度不能超60个字节。</p>
+                     * @return LaunchConfigurationName <p>启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符&quot;-&quot;、小数点，最大长度不能超60个字节。</p>
                      * 
                      */
                     std::string GetLaunchConfigurationName() const;
 
                     /**
-                     * 设置<p>启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超60个字节。</p>
-                     * @param _launchConfigurationName <p>启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超60个字节。</p>
+                     * 设置<p>启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符&quot;-&quot;、小数点，最大长度不能超60个字节。</p>
+                     * @param _launchConfigurationName <p>启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符&quot;-&quot;、小数点，最大长度不能超60个字节。</p>
                      * 
                      */
                     void SetLaunchConfigurationName(const std::string& _launchConfigurationName);
@@ -77,15 +78,15 @@ namespace TencentCloud
                     bool LaunchConfigurationNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>指定有效的<a href="https://cloud.tencent.com/document/product/213/4940">镜像</a>ID，格式形如<code>img-8toqc6s3</code>。镜像Id与镜像族名称，二者必填一个且只能填写一个。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li><code>公共镜像</code>、<code>自定义镜像</code>、<code>共享镜像</code>的镜像ID可通过登录<a href="https://console.cloud.tencent.com/cvm/image?rid=1&amp;imageType=PUBLIC_IMAGE">控制台</a>查询；<code>服务镜像市场</code>的镜像ID可通过<a href="https://market.cloud.tencent.com/list">云市场</a>查询。</li><li>通过调用接口 <a href="https://cloud.tencent.com/document/api/213/15715">DescribeImages</a> ，取返回信息中的<code>ImageId</code>字段。</li></p>
-                     * @return ImageId <p>指定有效的<a href="https://cloud.tencent.com/document/product/213/4940">镜像</a>ID，格式形如<code>img-8toqc6s3</code>。镜像Id与镜像族名称，二者必填一个且只能填写一个。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li><code>公共镜像</code>、<code>自定义镜像</code>、<code>共享镜像</code>的镜像ID可通过登录<a href="https://console.cloud.tencent.com/cvm/image?rid=1&amp;imageType=PUBLIC_IMAGE">控制台</a>查询；<code>服务镜像市场</code>的镜像ID可通过<a href="https://market.cloud.tencent.com/list">云市场</a>查询。</li><li>通过调用接口 <a href="https://cloud.tencent.com/document/api/213/15715">DescribeImages</a> ，取返回信息中的<code>ImageId</code>字段。</li></p>
+                     * 获取<p>指定有效的<a href="https://cloud.tencent.com/document/product/213/4940">镜像</a>ID，格式形如<code>img-8toqc6s3</code>。镜像Id与镜像族名称，二者必填一个且只能填写一个。镜像类型分为四种：<br><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br>可通过以下方式获取可用的镜像ID：<br><li><code>公共镜像</code>、<code>自定义镜像</code>、<code>共享镜像</code>的镜像ID可通过登录<a href="https://console.cloud.tencent.com/cvm/image?rid=1&amp;imageType=PUBLIC_IMAGE">控制台</a>查询；<code>服务镜像市场</code>的镜像ID可通过<a href="https://market.cloud.tencent.com/list">云市场</a>查询。</li><li>通过调用接口 <a href="https://cloud.tencent.com/document/api/213/15715">DescribeImages</a> ，取返回信息中的<code>ImageId</code>字段。</li></p>
+                     * @return ImageId <p>指定有效的<a href="https://cloud.tencent.com/document/product/213/4940">镜像</a>ID，格式形如<code>img-8toqc6s3</code>。镜像Id与镜像族名称，二者必填一个且只能填写一个。镜像类型分为四种：<br><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br>可通过以下方式获取可用的镜像ID：<br><li><code>公共镜像</code>、<code>自定义镜像</code>、<code>共享镜像</code>的镜像ID可通过登录<a href="https://console.cloud.tencent.com/cvm/image?rid=1&amp;imageType=PUBLIC_IMAGE">控制台</a>查询；<code>服务镜像市场</code>的镜像ID可通过<a href="https://market.cloud.tencent.com/list">云市场</a>查询。</li><li>通过调用接口 <a href="https://cloud.tencent.com/document/api/213/15715">DescribeImages</a> ，取返回信息中的<code>ImageId</code>字段。</li></p>
                      * 
                      */
                     std::string GetImageId() const;
 
                     /**
-                     * 设置<p>指定有效的<a href="https://cloud.tencent.com/document/product/213/4940">镜像</a>ID，格式形如<code>img-8toqc6s3</code>。镜像Id与镜像族名称，二者必填一个且只能填写一个。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li><code>公共镜像</code>、<code>自定义镜像</code>、<code>共享镜像</code>的镜像ID可通过登录<a href="https://console.cloud.tencent.com/cvm/image?rid=1&amp;imageType=PUBLIC_IMAGE">控制台</a>查询；<code>服务镜像市场</code>的镜像ID可通过<a href="https://market.cloud.tencent.com/list">云市场</a>查询。</li><li>通过调用接口 <a href="https://cloud.tencent.com/document/api/213/15715">DescribeImages</a> ，取返回信息中的<code>ImageId</code>字段。</li></p>
-                     * @param _imageId <p>指定有效的<a href="https://cloud.tencent.com/document/product/213/4940">镜像</a>ID，格式形如<code>img-8toqc6s3</code>。镜像Id与镜像族名称，二者必填一个且只能填写一个。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li><code>公共镜像</code>、<code>自定义镜像</code>、<code>共享镜像</code>的镜像ID可通过登录<a href="https://console.cloud.tencent.com/cvm/image?rid=1&amp;imageType=PUBLIC_IMAGE">控制台</a>查询；<code>服务镜像市场</code>的镜像ID可通过<a href="https://market.cloud.tencent.com/list">云市场</a>查询。</li><li>通过调用接口 <a href="https://cloud.tencent.com/document/api/213/15715">DescribeImages</a> ，取返回信息中的<code>ImageId</code>字段。</li></p>
+                     * 设置<p>指定有效的<a href="https://cloud.tencent.com/document/product/213/4940">镜像</a>ID，格式形如<code>img-8toqc6s3</code>。镜像Id与镜像族名称，二者必填一个且只能填写一个。镜像类型分为四种：<br><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br>可通过以下方式获取可用的镜像ID：<br><li><code>公共镜像</code>、<code>自定义镜像</code>、<code>共享镜像</code>的镜像ID可通过登录<a href="https://console.cloud.tencent.com/cvm/image?rid=1&amp;imageType=PUBLIC_IMAGE">控制台</a>查询；<code>服务镜像市场</code>的镜像ID可通过<a href="https://market.cloud.tencent.com/list">云市场</a>查询。</li><li>通过调用接口 <a href="https://cloud.tencent.com/document/api/213/15715">DescribeImages</a> ，取返回信息中的<code>ImageId</code>字段。</li></p>
+                     * @param _imageId <p>指定有效的<a href="https://cloud.tencent.com/document/product/213/4940">镜像</a>ID，格式形如<code>img-8toqc6s3</code>。镜像Id与镜像族名称，二者必填一个且只能填写一个。镜像类型分为四种：<br><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br>可通过以下方式获取可用的镜像ID：<br><li><code>公共镜像</code>、<code>自定义镜像</code>、<code>共享镜像</code>的镜像ID可通过登录<a href="https://console.cloud.tencent.com/cvm/image?rid=1&amp;imageType=PUBLIC_IMAGE">控制台</a>查询；<code>服务镜像市场</code>的镜像ID可通过<a href="https://market.cloud.tencent.com/list">云市场</a>查询。</li><li>通过调用接口 <a href="https://cloud.tencent.com/document/api/213/15715">DescribeImages</a> ，取返回信息中的<code>ImageId</code>字段。</li></p>
                      * 
                      */
                     void SetImageId(const std::string& _imageId);
@@ -98,15 +99,15 @@ namespace TencentCloud
                     bool ImageIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>启动配置所属项目ID。默认值为0，表示使用默认项目。该参数可以通过调用 <a href="https://cloud.tencent.com/document/api/651/78725">DescribeProject</a> 的返回值中的 projectId 字段来获取。注意：伸缩组内实例所属项目ID取伸缩组项目ID，与这里取值无关。</p>
-                     * @return ProjectId <p>启动配置所属项目ID。默认值为0，表示使用默认项目。该参数可以通过调用 <a href="https://cloud.tencent.com/document/api/651/78725">DescribeProject</a> 的返回值中的 projectId 字段来获取。注意：伸缩组内实例所属项目ID取伸缩组项目ID，与这里取值无关。</p>
+                     * 获取<p>启动配置所属项目ID。默认值为0，表示使用默认项目。该参数可以通过调用 <a href="https://cloud.tencent.com/document/api/651/78725">DescribeProject</a> 的返回值中的 projectId 字段来获取。<br>注意：伸缩组内实例所属项目ID取伸缩组项目ID，与这里取值无关。</p>
+                     * @return ProjectId <p>启动配置所属项目ID。默认值为0，表示使用默认项目。该参数可以通过调用 <a href="https://cloud.tencent.com/document/api/651/78725">DescribeProject</a> 的返回值中的 projectId 字段来获取。<br>注意：伸缩组内实例所属项目ID取伸缩组项目ID，与这里取值无关。</p>
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置<p>启动配置所属项目ID。默认值为0，表示使用默认项目。该参数可以通过调用 <a href="https://cloud.tencent.com/document/api/651/78725">DescribeProject</a> 的返回值中的 projectId 字段来获取。注意：伸缩组内实例所属项目ID取伸缩组项目ID，与这里取值无关。</p>
-                     * @param _projectId <p>启动配置所属项目ID。默认值为0，表示使用默认项目。该参数可以通过调用 <a href="https://cloud.tencent.com/document/api/651/78725">DescribeProject</a> 的返回值中的 projectId 字段来获取。注意：伸缩组内实例所属项目ID取伸缩组项目ID，与这里取值无关。</p>
+                     * 设置<p>启动配置所属项目ID。默认值为0，表示使用默认项目。该参数可以通过调用 <a href="https://cloud.tencent.com/document/api/651/78725">DescribeProject</a> 的返回值中的 projectId 字段来获取。<br>注意：伸缩组内实例所属项目ID取伸缩组项目ID，与这里取值无关。</p>
+                     * @param _projectId <p>启动配置所属项目ID。默认值为0，表示使用默认项目。该参数可以通过调用 <a href="https://cloud.tencent.com/document/api/651/78725">DescribeProject</a> 的返回值中的 projectId 字段来获取。<br>注意：伸缩组内实例所属项目ID取伸缩组项目ID，与这里取值无关。</p>
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -119,15 +120,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>实例机型。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 <a href="https://cloud.tencent.com/document/api/213/15749">DescribeInstanceTypeConfigs</a> 来获得最新的规格表或参见<a href="https://cloud.tencent.com/document/product/213/11518">实例类型</a>描述。<code>InstanceType</code>和<code>InstanceTypes</code>参数互斥，二者必填一个且只能填写一个。</p>
-                     * @return InstanceType <p>实例机型。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 <a href="https://cloud.tencent.com/document/api/213/15749">DescribeInstanceTypeConfigs</a> 来获得最新的规格表或参见<a href="https://cloud.tencent.com/document/product/213/11518">实例类型</a>描述。<code>InstanceType</code>和<code>InstanceTypes</code>参数互斥，二者必填一个且只能填写一个。</p>
+                     * 获取<p>实例机型。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 <a href="https://cloud.tencent.com/document/api/213/15749">DescribeInstanceTypeConfigs</a> 来获得最新的规格表或参见<a href="https://cloud.tencent.com/document/product/213/11518">实例类型</a>描述。<br><code>InstanceType</code>和<code>InstanceTypes</code>参数互斥，二者必填一个且只能填写一个。</p>
+                     * @return InstanceType <p>实例机型。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 <a href="https://cloud.tencent.com/document/api/213/15749">DescribeInstanceTypeConfigs</a> 来获得最新的规格表或参见<a href="https://cloud.tencent.com/document/product/213/11518">实例类型</a>描述。<br><code>InstanceType</code>和<code>InstanceTypes</code>参数互斥，二者必填一个且只能填写一个。</p>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置<p>实例机型。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 <a href="https://cloud.tencent.com/document/api/213/15749">DescribeInstanceTypeConfigs</a> 来获得最新的规格表或参见<a href="https://cloud.tencent.com/document/product/213/11518">实例类型</a>描述。<code>InstanceType</code>和<code>InstanceTypes</code>参数互斥，二者必填一个且只能填写一个。</p>
-                     * @param _instanceType <p>实例机型。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 <a href="https://cloud.tencent.com/document/api/213/15749">DescribeInstanceTypeConfigs</a> 来获得最新的规格表或参见<a href="https://cloud.tencent.com/document/product/213/11518">实例类型</a>描述。<code>InstanceType</code>和<code>InstanceTypes</code>参数互斥，二者必填一个且只能填写一个。</p>
+                     * 设置<p>实例机型。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 <a href="https://cloud.tencent.com/document/api/213/15749">DescribeInstanceTypeConfigs</a> 来获得最新的规格表或参见<a href="https://cloud.tencent.com/document/product/213/11518">实例类型</a>描述。<br><code>InstanceType</code>和<code>InstanceTypes</code>参数互斥，二者必填一个且只能填写一个。</p>
+                     * @param _instanceType <p>实例机型。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 <a href="https://cloud.tencent.com/document/api/213/15749">DescribeInstanceTypeConfigs</a> 来获得最新的规格表或参见<a href="https://cloud.tencent.com/document/product/213/11518">实例类型</a>描述。<br><code>InstanceType</code>和<code>InstanceTypes</code>参数互斥，二者必填一个且只能填写一个。</p>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -287,15 +288,15 @@ namespace TencentCloud
                     bool UserDataHasBeenSet() const;
 
                     /**
-                     * 获取<p>实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。<li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li><li>PREPAID：预付费，即包年包月</li><li>CDCPAID：专用集群付费</li></p>
-                     * @return InstanceChargeType <p>实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。<li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li><li>PREPAID：预付费，即包年包月</li><li>CDCPAID：专用集群付费</li></p>
+                     * 获取<p>实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。</p><li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li><li>PREPAID：预付费，即包年包月</li><li>CDCPAID：专用集群付费</li>
+                     * @return InstanceChargeType <p>实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。</p><li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li><li>PREPAID：预付费，即包年包月</li><li>CDCPAID：专用集群付费</li>
                      * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置<p>实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。<li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li><li>PREPAID：预付费，即包年包月</li><li>CDCPAID：专用集群付费</li></p>
-                     * @param _instanceChargeType <p>实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。<li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li><li>PREPAID：预付费，即包年包月</li><li>CDCPAID：专用集群付费</li></p>
+                     * 设置<p>实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。</p><li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li><li>PREPAID：预付费，即包年包月</li><li>CDCPAID：专用集群付费</li>
+                     * @param _instanceChargeType <p>实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。</p><li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li><li>PREPAID：预付费，即包年包月</li><li>CDCPAID：专用集群付费</li>
                      * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
@@ -329,15 +330,15 @@ namespace TencentCloud
                     bool InstanceMarketOptionsHasBeenSet() const;
 
                     /**
-                     * 获取<p>实例机型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。<code>InstanceType</code>和<code>InstanceTypes</code>参数互斥，二者必填一个且只能填写一个。具体取值可通过调用接口<a href="https://cloud.tencent.com/document/api/213/15749">DescribeInstanceTypeConfigs</a>来获得最新的规格表或参见<a href="https://cloud.tencent.com/document/product/213/11518">实例规格描述</a>。</p>
-                     * @return InstanceTypes <p>实例机型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。<code>InstanceType</code>和<code>InstanceTypes</code>参数互斥，二者必填一个且只能填写一个。具体取值可通过调用接口<a href="https://cloud.tencent.com/document/api/213/15749">DescribeInstanceTypeConfigs</a>来获得最新的规格表或参见<a href="https://cloud.tencent.com/document/product/213/11518">实例规格描述</a>。</p>
+                     * 获取<p>实例机型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。<br><code>InstanceType</code>和<code>InstanceTypes</code>参数互斥，二者必填一个且只能填写一个。具体取值可通过调用接口<a href="https://cloud.tencent.com/document/api/213/15749">DescribeInstanceTypeConfigs</a>来获得最新的规格表或参见<a href="https://cloud.tencent.com/document/product/213/11518">实例规格描述</a>。</p>
+                     * @return InstanceTypes <p>实例机型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。<br><code>InstanceType</code>和<code>InstanceTypes</code>参数互斥，二者必填一个且只能填写一个。具体取值可通过调用接口<a href="https://cloud.tencent.com/document/api/213/15749">DescribeInstanceTypeConfigs</a>来获得最新的规格表或参见<a href="https://cloud.tencent.com/document/product/213/11518">实例规格描述</a>。</p>
                      * 
                      */
                     std::vector<std::string> GetInstanceTypes() const;
 
                     /**
-                     * 设置<p>实例机型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。<code>InstanceType</code>和<code>InstanceTypes</code>参数互斥，二者必填一个且只能填写一个。具体取值可通过调用接口<a href="https://cloud.tencent.com/document/api/213/15749">DescribeInstanceTypeConfigs</a>来获得最新的规格表或参见<a href="https://cloud.tencent.com/document/product/213/11518">实例规格描述</a>。</p>
-                     * @param _instanceTypes <p>实例机型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。<code>InstanceType</code>和<code>InstanceTypes</code>参数互斥，二者必填一个且只能填写一个。具体取值可通过调用接口<a href="https://cloud.tencent.com/document/api/213/15749">DescribeInstanceTypeConfigs</a>来获得最新的规格表或参见<a href="https://cloud.tencent.com/document/product/213/11518">实例规格描述</a>。</p>
+                     * 设置<p>实例机型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。<br><code>InstanceType</code>和<code>InstanceTypes</code>参数互斥，二者必填一个且只能填写一个。具体取值可通过调用接口<a href="https://cloud.tencent.com/document/api/213/15749">DescribeInstanceTypeConfigs</a>来获得最新的规格表或参见<a href="https://cloud.tencent.com/document/product/213/11518">实例规格描述</a>。</p>
+                     * @param _instanceTypes <p>实例机型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。<br><code>InstanceType</code>和<code>InstanceTypes</code>参数互斥，二者必填一个且只能填写一个。具体取值可通过调用接口<a href="https://cloud.tencent.com/document/api/213/15749">DescribeInstanceTypeConfigs</a>来获得最新的规格表或参见<a href="https://cloud.tencent.com/document/product/213/11518">实例规格描述</a>。</p>
                      * 
                      */
                     void SetInstanceTypes(const std::vector<std::string>& _instanceTypes);
@@ -371,15 +372,15 @@ namespace TencentCloud
                     bool CamRoleNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。该参数仅在 InstanceTypes 入参包含多个机型时生效。<li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。</li><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。</li></p><p>实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。</p>
-                     * @return InstanceTypesCheckPolicy <p>实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。该参数仅在 InstanceTypes 入参包含多个机型时生效。<li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。</li><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。</li></p><p>实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。</p>
+                     * 获取<p>实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。该参数仅在 InstanceTypes 入参包含多个机型时生效。</p><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。</li><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。</li><p>实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。<br>如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。</p>
+                     * @return InstanceTypesCheckPolicy <p>实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。该参数仅在 InstanceTypes 入参包含多个机型时生效。</p><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。</li><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。</li><p>实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。<br>如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。</p>
                      * 
                      */
                     std::string GetInstanceTypesCheckPolicy() const;
 
                     /**
-                     * 设置<p>实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。该参数仅在 InstanceTypes 入参包含多个机型时生效。<li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。</li><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。</li></p><p>实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。</p>
-                     * @param _instanceTypesCheckPolicy <p>实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。该参数仅在 InstanceTypes 入参包含多个机型时生效。<li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。</li><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。</li></p><p>实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。</p>
+                     * 设置<p>实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。该参数仅在 InstanceTypes 入参包含多个机型时生效。</p><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。</li><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。</li><p>实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。<br>如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。</p>
+                     * @param _instanceTypesCheckPolicy <p>实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。该参数仅在 InstanceTypes 入参包含多个机型时生效。</p><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。</li><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。</li><p>实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。<br>如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。</p>
                      * 
                      */
                     void SetInstanceTypesCheckPolicy(const std::string& _instanceTypesCheckPolicy);
@@ -434,15 +435,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取<p>云服务器主机名（HostName）的相关设置。不支持windows实例设置主机名。 新增该属性时，必须传递云服务器的主机名，其它未传递字段会设置为默认值。会校验主机名(如果存在后缀则加上后缀)是否超过最大位数46。</p>
-                     * @return HostNameSettings <p>云服务器主机名（HostName）的相关设置。不支持windows实例设置主机名。 新增该属性时，必须传递云服务器的主机名，其它未传递字段会设置为默认值。会校验主机名(如果存在后缀则加上后缀)是否超过最大位数46。</p>
+                     * 获取<p>云服务器主机名（HostName）的相关设置。<br>不支持windows实例设置主机名。<br>新增该属性时，必须传递云服务器的主机名，其它未传递字段会设置为默认值。<br>会校验主机名(如果存在后缀则加上后缀)是否超过最大位数46。</p>
+                     * @return HostNameSettings <p>云服务器主机名（HostName）的相关设置。<br>不支持windows实例设置主机名。<br>新增该属性时，必须传递云服务器的主机名，其它未传递字段会设置为默认值。<br>会校验主机名(如果存在后缀则加上后缀)是否超过最大位数46。</p>
                      * 
                      */
                     HostNameSettings GetHostNameSettings() const;
 
                     /**
-                     * 设置<p>云服务器主机名（HostName）的相关设置。不支持windows实例设置主机名。 新增该属性时，必须传递云服务器的主机名，其它未传递字段会设置为默认值。会校验主机名(如果存在后缀则加上后缀)是否超过最大位数46。</p>
-                     * @param _hostNameSettings <p>云服务器主机名（HostName）的相关设置。不支持windows实例设置主机名。 新增该属性时，必须传递云服务器的主机名，其它未传递字段会设置为默认值。会校验主机名(如果存在后缀则加上后缀)是否超过最大位数46。</p>
+                     * 设置<p>云服务器主机名（HostName）的相关设置。<br>不支持windows实例设置主机名。<br>新增该属性时，必须传递云服务器的主机名，其它未传递字段会设置为默认值。<br>会校验主机名(如果存在后缀则加上后缀)是否超过最大位数46。</p>
+                     * @param _hostNameSettings <p>云服务器主机名（HostName）的相关设置。<br>不支持windows实例设置主机名。<br>新增该属性时，必须传递云服务器的主机名，其它未传递字段会设置为默认值。<br>会校验主机名(如果存在后缀则加上后缀)是否超过最大位数46。</p>
                      * 
                      */
                     void SetHostNameSettings(const HostNameSettings& _hostNameSettings);
@@ -455,15 +456,15 @@ namespace TencentCloud
                     bool HostNameSettingsHasBeenSet() const;
 
                     /**
-                     * 获取<p>云服务器实例名（InstanceName）的相关设置。如果用户在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 参照此字段进行设置，并传递给 CVM；如果用户未在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置，并传递给 CVM。新增该属性时，必须传递云服务器的实例名称，其它未传递字段会设置为默认值。会校验实例名称(如果存在后缀则加上后缀)是否超过最大位数108。</p>
-                     * @return InstanceNameSettings <p>云服务器实例名（InstanceName）的相关设置。如果用户在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 参照此字段进行设置，并传递给 CVM；如果用户未在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置，并传递给 CVM。新增该属性时，必须传递云服务器的实例名称，其它未传递字段会设置为默认值。会校验实例名称(如果存在后缀则加上后缀)是否超过最大位数108。</p>
+                     * 获取<p>云服务器实例名（InstanceName）的相关设置。<br>如果用户在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 参照此字段进行设置，并传递给 CVM；如果用户未在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置，并传递给 CVM。<br>新增该属性时，必须传递云服务器的实例名称，其它未传递字段会设置为默认值。<br>会校验实例名称(如果存在后缀则加上后缀)是否超过最大位数108。</p>
+                     * @return InstanceNameSettings <p>云服务器实例名（InstanceName）的相关设置。<br>如果用户在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 参照此字段进行设置，并传递给 CVM；如果用户未在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置，并传递给 CVM。<br>新增该属性时，必须传递云服务器的实例名称，其它未传递字段会设置为默认值。<br>会校验实例名称(如果存在后缀则加上后缀)是否超过最大位数108。</p>
                      * 
                      */
                     InstanceNameSettings GetInstanceNameSettings() const;
 
                     /**
-                     * 设置<p>云服务器实例名（InstanceName）的相关设置。如果用户在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 参照此字段进行设置，并传递给 CVM；如果用户未在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置，并传递给 CVM。新增该属性时，必须传递云服务器的实例名称，其它未传递字段会设置为默认值。会校验实例名称(如果存在后缀则加上后缀)是否超过最大位数108。</p>
-                     * @param _instanceNameSettings <p>云服务器实例名（InstanceName）的相关设置。如果用户在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 参照此字段进行设置，并传递给 CVM；如果用户未在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置，并传递给 CVM。新增该属性时，必须传递云服务器的实例名称，其它未传递字段会设置为默认值。会校验实例名称(如果存在后缀则加上后缀)是否超过最大位数108。</p>
+                     * 设置<p>云服务器实例名（InstanceName）的相关设置。<br>如果用户在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 参照此字段进行设置，并传递给 CVM；如果用户未在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置，并传递给 CVM。<br>新增该属性时，必须传递云服务器的实例名称，其它未传递字段会设置为默认值。<br>会校验实例名称(如果存在后缀则加上后缀)是否超过最大位数108。</p>
+                     * @param _instanceNameSettings <p>云服务器实例名（InstanceName）的相关设置。<br>如果用户在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 参照此字段进行设置，并传递给 CVM；如果用户未在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置，并传递给 CVM。<br>新增该属性时，必须传递云服务器的实例名称，其它未传递字段会设置为默认值。<br>会校验实例名称(如果存在后缀则加上后缀)是否超过最大位数108。</p>
                      * 
                      */
                     void SetInstanceNameSettings(const InstanceNameSettings& _instanceNameSettings);
@@ -497,15 +498,15 @@ namespace TencentCloud
                     bool InstanceChargePrepaidHasBeenSet() const;
 
                     /**
-                     * 获取<p>云盘类型选择策略，默认取值 ORIGINAL，取值范围：<li>ORIGINAL：使用设置的云盘类型</li><li>AUTOMATIC：自动选择当前可用的云盘类型</li></p>
-                     * @return DiskTypePolicy <p>云盘类型选择策略，默认取值 ORIGINAL，取值范围：<li>ORIGINAL：使用设置的云盘类型</li><li>AUTOMATIC：自动选择当前可用的云盘类型</li></p>
+                     * 获取<p>云盘类型选择策略，默认取值 ORIGINAL，取值范围：</p><li>ORIGINAL：使用设置的云盘类型</li><li>AUTOMATIC：自动选择当前可用的云盘类型</li>
+                     * @return DiskTypePolicy <p>云盘类型选择策略，默认取值 ORIGINAL，取值范围：</p><li>ORIGINAL：使用设置的云盘类型</li><li>AUTOMATIC：自动选择当前可用的云盘类型</li>
                      * 
                      */
                     std::string GetDiskTypePolicy() const;
 
                     /**
-                     * 设置<p>云盘类型选择策略，默认取值 ORIGINAL，取值范围：<li>ORIGINAL：使用设置的云盘类型</li><li>AUTOMATIC：自动选择当前可用的云盘类型</li></p>
-                     * @param _diskTypePolicy <p>云盘类型选择策略，默认取值 ORIGINAL，取值范围：<li>ORIGINAL：使用设置的云盘类型</li><li>AUTOMATIC：自动选择当前可用的云盘类型</li></p>
+                     * 设置<p>云盘类型选择策略，默认取值 ORIGINAL，取值范围：</p><li>ORIGINAL：使用设置的云盘类型</li><li>AUTOMATIC：自动选择当前可用的云盘类型</li>
+                     * @param _diskTypePolicy <p>云盘类型选择策略，默认取值 ORIGINAL，取值范围：</p><li>ORIGINAL：使用设置的云盘类型</li><li>AUTOMATIC：自动选择当前可用的云盘类型</li>
                      * 
                      */
                     void SetDiskTypePolicy(const std::string& _diskTypePolicy);
@@ -518,15 +519,15 @@ namespace TencentCloud
                     bool DiskTypePolicyHasBeenSet() const;
 
                     /**
-                     * 获取<p>高性能计算集群ID。可通过调用<a href="https://cloud.tencent.com/document/product/213/83220">DescribeHpcClusters</a>接口获取该参数。注意：此字段默认为空。</p>
-                     * @return HpcClusterId <p>高性能计算集群ID。可通过调用<a href="https://cloud.tencent.com/document/product/213/83220">DescribeHpcClusters</a>接口获取该参数。注意：此字段默认为空。</p>
+                     * 获取<p>高性能计算集群ID。可通过调用<a href="https://cloud.tencent.com/document/product/213/83220">DescribeHpcClusters</a>接口获取该参数。<br>注意：此字段默认为空。</p>
+                     * @return HpcClusterId <p>高性能计算集群ID。可通过调用<a href="https://cloud.tencent.com/document/product/213/83220">DescribeHpcClusters</a>接口获取该参数。<br>注意：此字段默认为空。</p>
                      * 
                      */
                     std::string GetHpcClusterId() const;
 
                     /**
-                     * 设置<p>高性能计算集群ID。可通过调用<a href="https://cloud.tencent.com/document/product/213/83220">DescribeHpcClusters</a>接口获取该参数。注意：此字段默认为空。</p>
-                     * @param _hpcClusterId <p>高性能计算集群ID。可通过调用<a href="https://cloud.tencent.com/document/product/213/83220">DescribeHpcClusters</a>接口获取该参数。注意：此字段默认为空。</p>
+                     * 设置<p>高性能计算集群ID。可通过调用<a href="https://cloud.tencent.com/document/product/213/83220">DescribeHpcClusters</a>接口获取该参数。<br>注意：此字段默认为空。</p>
+                     * @param _hpcClusterId <p>高性能计算集群ID。可通过调用<a href="https://cloud.tencent.com/document/product/213/83220">DescribeHpcClusters</a>接口获取该参数。<br>注意：此字段默认为空。</p>
                      * 
                      */
                     void SetHpcClusterId(const std::string& _hpcClusterId);
@@ -643,28 +644,49 @@ namespace TencentCloud
                      */
                     bool MetadataHasBeenSet() const;
 
+                    /**
+                     * 获取<p>扩容实例的弹性网卡配置。</p><p>入参限制：最多 17 项。配置该参数时必须显式包含且只能包含一个 PRIMARY，AS 不自动补齐主网卡；显式空数组非法；竞价实例不支持此参数。</p><p>VPC 和子网由伸缩组按当前候选子网自动注入；不配置时不传给 CVM。启动配置中的 SecurityGroupIds 参数仍保留。</p>
+                     * @return NetworkInterfaces <p>扩容实例的弹性网卡配置。</p><p>入参限制：最多 17 项。配置该参数时必须显式包含且只能包含一个 PRIMARY，AS 不自动补齐主网卡；显式空数组非法；竞价实例不支持此参数。</p><p>VPC 和子网由伸缩组按当前候选子网自动注入；不配置时不传给 CVM。启动配置中的 SecurityGroupIds 参数仍保留。</p>
+                     * 
+                     */
+                    std::vector<NetworkInterface> GetNetworkInterfaces() const;
+
+                    /**
+                     * 设置<p>扩容实例的弹性网卡配置。</p><p>入参限制：最多 17 项。配置该参数时必须显式包含且只能包含一个 PRIMARY，AS 不自动补齐主网卡；显式空数组非法；竞价实例不支持此参数。</p><p>VPC 和子网由伸缩组按当前候选子网自动注入；不配置时不传给 CVM。启动配置中的 SecurityGroupIds 参数仍保留。</p>
+                     * @param _networkInterfaces <p>扩容实例的弹性网卡配置。</p><p>入参限制：最多 17 项。配置该参数时必须显式包含且只能包含一个 PRIMARY，AS 不自动补齐主网卡；显式空数组非法；竞价实例不支持此参数。</p><p>VPC 和子网由伸缩组按当前候选子网自动注入；不配置时不传给 CVM。启动配置中的 SecurityGroupIds 参数仍保留。</p>
+                     * 
+                     */
+                    void SetNetworkInterfaces(const std::vector<NetworkInterface>& _networkInterfaces);
+
+                    /**
+                     * 判断参数 NetworkInterfaces 是否已赋值
+                     * @return NetworkInterfaces 是否已赋值
+                     * 
+                     */
+                    bool NetworkInterfacesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * <p>启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超60个字节。</p>
+                     * <p>启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符&quot;-&quot;、小数点，最大长度不能超60个字节。</p>
                      */
                     std::string m_launchConfigurationName;
                     bool m_launchConfigurationNameHasBeenSet;
 
                     /**
-                     * <p>指定有效的<a href="https://cloud.tencent.com/document/product/213/4940">镜像</a>ID，格式形如<code>img-8toqc6s3</code>。镜像Id与镜像族名称，二者必填一个且只能填写一个。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li><code>公共镜像</code>、<code>自定义镜像</code>、<code>共享镜像</code>的镜像ID可通过登录<a href="https://console.cloud.tencent.com/cvm/image?rid=1&amp;imageType=PUBLIC_IMAGE">控制台</a>查询；<code>服务镜像市场</code>的镜像ID可通过<a href="https://market.cloud.tencent.com/list">云市场</a>查询。</li><li>通过调用接口 <a href="https://cloud.tencent.com/document/api/213/15715">DescribeImages</a> ，取返回信息中的<code>ImageId</code>字段。</li></p>
+                     * <p>指定有效的<a href="https://cloud.tencent.com/document/product/213/4940">镜像</a>ID，格式形如<code>img-8toqc6s3</code>。镜像Id与镜像族名称，二者必填一个且只能填写一个。镜像类型分为四种：<br><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br>可通过以下方式获取可用的镜像ID：<br><li><code>公共镜像</code>、<code>自定义镜像</code>、<code>共享镜像</code>的镜像ID可通过登录<a href="https://console.cloud.tencent.com/cvm/image?rid=1&amp;imageType=PUBLIC_IMAGE">控制台</a>查询；<code>服务镜像市场</code>的镜像ID可通过<a href="https://market.cloud.tencent.com/list">云市场</a>查询。</li><li>通过调用接口 <a href="https://cloud.tencent.com/document/api/213/15715">DescribeImages</a> ，取返回信息中的<code>ImageId</code>字段。</li></p>
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;
 
                     /**
-                     * <p>启动配置所属项目ID。默认值为0，表示使用默认项目。该参数可以通过调用 <a href="https://cloud.tencent.com/document/api/651/78725">DescribeProject</a> 的返回值中的 projectId 字段来获取。注意：伸缩组内实例所属项目ID取伸缩组项目ID，与这里取值无关。</p>
+                     * <p>启动配置所属项目ID。默认值为0，表示使用默认项目。该参数可以通过调用 <a href="https://cloud.tencent.com/document/api/651/78725">DescribeProject</a> 的返回值中的 projectId 字段来获取。<br>注意：伸缩组内实例所属项目ID取伸缩组项目ID，与这里取值无关。</p>
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * <p>实例机型。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 <a href="https://cloud.tencent.com/document/api/213/15749">DescribeInstanceTypeConfigs</a> 来获得最新的规格表或参见<a href="https://cloud.tencent.com/document/product/213/11518">实例类型</a>描述。<code>InstanceType</code>和<code>InstanceTypes</code>参数互斥，二者必填一个且只能填写一个。</p>
+                     * <p>实例机型。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 <a href="https://cloud.tencent.com/document/api/213/15749">DescribeInstanceTypeConfigs</a> 来获得最新的规格表或参见<a href="https://cloud.tencent.com/document/product/213/11518">实例类型</a>描述。<br><code>InstanceType</code>和<code>InstanceTypes</code>参数互斥，二者必填一个且只能填写一个。</p>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
@@ -712,7 +734,7 @@ namespace TencentCloud
                     bool m_userDataHasBeenSet;
 
                     /**
-                     * <p>实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。<li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li><li>PREPAID：预付费，即包年包月</li><li>CDCPAID：专用集群付费</li></p>
+                     * <p>实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。</p><li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li><li>PREPAID：预付费，即包年包月</li><li>CDCPAID：专用集群付费</li>
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
@@ -724,7 +746,7 @@ namespace TencentCloud
                     bool m_instanceMarketOptionsHasBeenSet;
 
                     /**
-                     * <p>实例机型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。<code>InstanceType</code>和<code>InstanceTypes</code>参数互斥，二者必填一个且只能填写一个。具体取值可通过调用接口<a href="https://cloud.tencent.com/document/api/213/15749">DescribeInstanceTypeConfigs</a>来获得最新的规格表或参见<a href="https://cloud.tencent.com/document/product/213/11518">实例规格描述</a>。</p>
+                     * <p>实例机型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。<br><code>InstanceType</code>和<code>InstanceTypes</code>参数互斥，二者必填一个且只能填写一个。具体取值可通过调用接口<a href="https://cloud.tencent.com/document/api/213/15749">DescribeInstanceTypeConfigs</a>来获得最新的规格表或参见<a href="https://cloud.tencent.com/document/product/213/11518">实例规格描述</a>。</p>
                      */
                     std::vector<std::string> m_instanceTypes;
                     bool m_instanceTypesHasBeenSet;
@@ -736,7 +758,7 @@ namespace TencentCloud
                     bool m_camRoleNameHasBeenSet;
 
                     /**
-                     * <p>实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。该参数仅在 InstanceTypes 入参包含多个机型时生效。<li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。</li><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。</li></p><p>实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。</p>
+                     * <p>实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。该参数仅在 InstanceTypes 入参包含多个机型时生效。</p><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。</li><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。</li><p>实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。<br>如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。</p>
                      */
                     std::string m_instanceTypesCheckPolicy;
                     bool m_instanceTypesCheckPolicyHasBeenSet;
@@ -754,13 +776,13 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * <p>云服务器主机名（HostName）的相关设置。不支持windows实例设置主机名。 新增该属性时，必须传递云服务器的主机名，其它未传递字段会设置为默认值。会校验主机名(如果存在后缀则加上后缀)是否超过最大位数46。</p>
+                     * <p>云服务器主机名（HostName）的相关设置。<br>不支持windows实例设置主机名。<br>新增该属性时，必须传递云服务器的主机名，其它未传递字段会设置为默认值。<br>会校验主机名(如果存在后缀则加上后缀)是否超过最大位数46。</p>
                      */
                     HostNameSettings m_hostNameSettings;
                     bool m_hostNameSettingsHasBeenSet;
 
                     /**
-                     * <p>云服务器实例名（InstanceName）的相关设置。如果用户在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 参照此字段进行设置，并传递给 CVM；如果用户未在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置，并传递给 CVM。新增该属性时，必须传递云服务器的实例名称，其它未传递字段会设置为默认值。会校验实例名称(如果存在后缀则加上后缀)是否超过最大位数108。</p>
+                     * <p>云服务器实例名（InstanceName）的相关设置。<br>如果用户在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 参照此字段进行设置，并传递给 CVM；如果用户未在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置，并传递给 CVM。<br>新增该属性时，必须传递云服务器的实例名称，其它未传递字段会设置为默认值。<br>会校验实例名称(如果存在后缀则加上后缀)是否超过最大位数108。</p>
                      */
                     InstanceNameSettings m_instanceNameSettings;
                     bool m_instanceNameSettingsHasBeenSet;
@@ -772,13 +794,13 @@ namespace TencentCloud
                     bool m_instanceChargePrepaidHasBeenSet;
 
                     /**
-                     * <p>云盘类型选择策略，默认取值 ORIGINAL，取值范围：<li>ORIGINAL：使用设置的云盘类型</li><li>AUTOMATIC：自动选择当前可用的云盘类型</li></p>
+                     * <p>云盘类型选择策略，默认取值 ORIGINAL，取值范围：</p><li>ORIGINAL：使用设置的云盘类型</li><li>AUTOMATIC：自动选择当前可用的云盘类型</li>
                      */
                     std::string m_diskTypePolicy;
                     bool m_diskTypePolicyHasBeenSet;
 
                     /**
-                     * <p>高性能计算集群ID。可通过调用<a href="https://cloud.tencent.com/document/product/213/83220">DescribeHpcClusters</a>接口获取该参数。注意：此字段默认为空。</p>
+                     * <p>高性能计算集群ID。可通过调用<a href="https://cloud.tencent.com/document/product/213/83220">DescribeHpcClusters</a>接口获取该参数。<br>注意：此字段默认为空。</p>
                      */
                     std::string m_hpcClusterId;
                     bool m_hpcClusterIdHasBeenSet;
@@ -812,6 +834,12 @@ namespace TencentCloud
                      */
                     Metadata m_metadata;
                     bool m_metadataHasBeenSet;
+
+                    /**
+                     * <p>扩容实例的弹性网卡配置。</p><p>入参限制：最多 17 项。配置该参数时必须显式包含且只能包含一个 PRIMARY，AS 不自动补齐主网卡；显式空数组非法；竞价实例不支持此参数。</p><p>VPC 和子网由伸缩组按当前候选子网自动注入；不配置时不传给 CVM。启动配置中的 SecurityGroupIds 参数仍保留。</p>
+                     */
+                    std::vector<NetworkInterface> m_networkInterfaces;
+                    bool m_networkInterfacesHasBeenSet;
 
                 };
             }

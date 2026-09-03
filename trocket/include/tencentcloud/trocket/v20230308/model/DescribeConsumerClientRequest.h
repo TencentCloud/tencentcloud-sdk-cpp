@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取客户端ID，从 [DescribeConsumerClientList](https://cloud.tencent.com/document/api/1493/120140) 接口中的 [ConsumerClient](https://cloud.tencent.com/document/api/1493/96031#ConsumerClient) 出参中获得。
-                     * @return ClientId 客户端ID，从 [DescribeConsumerClientList](https://cloud.tencent.com/document/api/1493/120140) 接口中的 [ConsumerClient](https://cloud.tencent.com/document/api/1493/96031#ConsumerClient) 出参中获得。
+                     * 获取<p>客户端ID，从 <a href="https://cloud.tencent.com/document/api/1493/120140">DescribeConsumerClientList</a> 接口中的 <a href="https://cloud.tencent.com/document/api/1493/96031#ConsumerClient">ConsumerClient</a> 出参中获得。</p>
+                     * @return ClientId <p>客户端ID，从 <a href="https://cloud.tencent.com/document/api/1493/120140">DescribeConsumerClientList</a> 接口中的 <a href="https://cloud.tencent.com/document/api/1493/96031#ConsumerClient">ConsumerClient</a> 出参中获得。</p>
                      * 
                      */
                     std::string GetClientId() const;
 
                     /**
-                     * 设置客户端ID，从 [DescribeConsumerClientList](https://cloud.tencent.com/document/api/1493/120140) 接口中的 [ConsumerClient](https://cloud.tencent.com/document/api/1493/96031#ConsumerClient) 出参中获得。
-                     * @param _clientId 客户端ID，从 [DescribeConsumerClientList](https://cloud.tencent.com/document/api/1493/120140) 接口中的 [ConsumerClient](https://cloud.tencent.com/document/api/1493/96031#ConsumerClient) 出参中获得。
+                     * 设置<p>客户端ID，从 <a href="https://cloud.tencent.com/document/api/1493/120140">DescribeConsumerClientList</a> 接口中的 <a href="https://cloud.tencent.com/document/api/1493/96031#ConsumerClient">ConsumerClient</a> 出参中获得。</p>
+                     * @param _clientId <p>客户端ID，从 <a href="https://cloud.tencent.com/document/api/1493/120140">DescribeConsumerClientList</a> 接口中的 <a href="https://cloud.tencent.com/document/api/1493/96031#ConsumerClient">ConsumerClient</a> 出参中获得。</p>
                      * 
                      */
                     void SetClientId(const std::string& _clientId);
@@ -178,7 +178,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 客户端ID，从 [DescribeConsumerClientList](https://cloud.tencent.com/document/api/1493/120140) 接口中的 [ConsumerClient](https://cloud.tencent.com/document/api/1493/96031#ConsumerClient) 出参中获得。
+                     * <p>客户端ID，从 <a href="https://cloud.tencent.com/document/api/1493/120140">DescribeConsumerClientList</a> 接口中的 <a href="https://cloud.tencent.com/document/api/1493/96031#ConsumerClient">ConsumerClient</a> 出参中获得。</p>
                      */
                     std::string m_clientId;
                     bool m_clientIdHasBeenSet;

@@ -15,19 +15,11 @@
 #
 
 set(cii_public_header
-  include/tencentcloud/cii/v20201210/CiiClient.h
   include/tencentcloud/cii/v20210408/CiiClient.h
+  include/tencentcloud/cii/v20201210/CiiClient.h
   )
 
 set(cii_public_header_model
-  include/tencentcloud/cii/v20201210/model/DescribeStructCompareDataResponse.h
-  include/tencentcloud/cii/v20201210/model/DescribeStructureTaskResultRequest.h
-  include/tencentcloud/cii/v20201210/model/CreateStructureTaskRequest.h
-  include/tencentcloud/cii/v20201210/model/CompareMetricsData.h
-  include/tencentcloud/cii/v20201210/model/ResultObject.h
-  include/tencentcloud/cii/v20201210/model/DescribeStructCompareDataRequest.h
-  include/tencentcloud/cii/v20201210/model/CreateStructureTaskResponse.h
-  include/tencentcloud/cii/v20201210/model/DescribeStructureTaskResultResponse.h
   include/tencentcloud/cii/v20210408/model/ClassifyInfo.h
   include/tencentcloud/cii/v20210408/model/DescribeStructureTaskResultRequest.h
   include/tencentcloud/cii/v20210408/model/MachineUnderwriteOutput.h
@@ -74,19 +66,19 @@ set(cii_public_header_model
   include/tencentcloud/cii/v20210408/model/AddSubStructureTasksRequest.h
   include/tencentcloud/cii/v20210408/model/CreateAutoClassifyStructureTaskInfo.h
   include/tencentcloud/cii/v20210408/model/StructureModifyItem.h
+  include/tencentcloud/cii/v20201210/model/DescribeStructCompareDataResponse.h
+  include/tencentcloud/cii/v20201210/model/DescribeStructureTaskResultRequest.h
+  include/tencentcloud/cii/v20201210/model/CreateStructureTaskRequest.h
+  include/tencentcloud/cii/v20201210/model/CompareMetricsData.h
+  include/tencentcloud/cii/v20201210/model/ResultObject.h
+  include/tencentcloud/cii/v20201210/model/DescribeStructCompareDataRequest.h
+  include/tencentcloud/cii/v20201210/model/CreateStructureTaskResponse.h
+  include/tencentcloud/cii/v20201210/model/DescribeStructureTaskResultResponse.h
   )
 
 set(cii_src
-  src/v20201210/CiiClient.cpp
   src/v20210408/CiiClient.cpp
-  src/v20201210/model/DescribeStructCompareDataResponse.cpp
-  src/v20201210/model/DescribeStructureTaskResultRequest.cpp
-  src/v20201210/model/CreateStructureTaskRequest.cpp
-  src/v20201210/model/CompareMetricsData.cpp
-  src/v20201210/model/ResultObject.cpp
-  src/v20201210/model/DescribeStructCompareDataRequest.cpp
-  src/v20201210/model/CreateStructureTaskResponse.cpp
-  src/v20201210/model/DescribeStructureTaskResultResponse.cpp
+  src/v20201210/CiiClient.cpp
   src/v20210408/model/ClassifyInfo.cpp
   src/v20210408/model/DescribeStructureTaskResultRequest.cpp
   src/v20210408/model/MachineUnderwriteOutput.cpp
@@ -133,6 +125,14 @@ set(cii_src
   src/v20210408/model/AddSubStructureTasksRequest.cpp
   src/v20210408/model/CreateAutoClassifyStructureTaskInfo.cpp
   src/v20210408/model/StructureModifyItem.cpp
+  src/v20201210/model/DescribeStructCompareDataResponse.cpp
+  src/v20201210/model/DescribeStructureTaskResultRequest.cpp
+  src/v20201210/model/CreateStructureTaskRequest.cpp
+  src/v20201210/model/CompareMetricsData.cpp
+  src/v20201210/model/ResultObject.cpp
+  src/v20201210/model/DescribeStructCompareDataRequest.cpp
+  src/v20201210/model/CreateStructureTaskResponse.cpp
+  src/v20201210/model/DescribeStructureTaskResultResponse.cpp
   )
 
 set(cii_include
@@ -161,9 +161,9 @@ target_link_libraries(cii
   core)
 
 #install(FILES ${cii_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/cii/v20210408)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/cii/v20201210)
 #install(FILES ${cii_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/cii/v20210408/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/cii/v20201210/model)
 install(DIRECTORY ${cii_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 

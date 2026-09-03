@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>词表 id</p>
+                     * @return VocabId <p>词表 id</p>
+                     * 
+                     */
+                    std::string GetVocabId() const;
+
+                    /**
+                     * 判断参数 VocabId 是否已赋值
+                     * @return VocabId 是否已赋值
+                     * 
+                     */
+                    bool VocabIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>词表 id</p>
+                     */
+                    std::string m_vocabId;
+                    bool m_vocabIdHasBeenSet;
 
                 };
             }

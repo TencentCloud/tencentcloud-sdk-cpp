@@ -988,6 +988,56 @@ namespace TencentCloud
                      */
                     bool TaskComplexityRouteHasBeenSet() const;
 
+                    /**
+                     * 获取<p>访问域名</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Domain <p>访问域名</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置<p>访问域名</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _domain <p>访问域名</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     * 
+                     */
+                    bool DomainHasBeenSet() const;
+
+                    /**
+                     * 获取<p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RequestProtocolType <p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRequestProtocolType() const;
+
+                    /**
+                     * 设置<p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _requestProtocolType <p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRequestProtocolType(const std::string& _requestProtocolType);
+
+                    /**
+                     * 判断参数 RequestProtocolType 是否已赋值
+                     * @return RequestProtocolType 是否已赋值
+                     * 
+                     */
+                    bool RequestProtocolTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1253,6 +1303,20 @@ namespace TencentCloud
                      */
                     TaskComplexityRouteDTO m_taskComplexityRoute;
                     bool m_taskComplexityRouteHasBeenSet;
+
+                    /**
+                     * <p>访问域名</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
+
+                    /**
+                     * <p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_requestProtocolType;
+                    bool m_requestProtocolTypeHasBeenSet;
 
                 };
             }

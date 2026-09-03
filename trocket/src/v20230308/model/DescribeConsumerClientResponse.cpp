@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeConsumerClientResponse::DescribeConsumerClientResponse() :
     m_clientHasBeenSet(false),
-    m_topicListHasBeenSet(false)
+    m_topicListHasBeenSet(false),
+    m_topicTotalCountHasBeenSet(false)
 {
 }
 
@@ -100,6 +101,16 @@ CoreInternalOutcome DescribeConsumerClientResponse::Deserialize(const string &pa
         m_topicListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TopicTotalCount") && !rsp["TopicTotalCount"].IsNull())
+    {
+        if (!rsp["TopicTotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicTotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicTotalCount = rsp["TopicTotalCount"].GetInt64();
+        m_topicTotalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +145,14 @@ string DescribeConsumerClientResponse::ToJsonString() const
         }
     }
 
+    if (m_topicTotalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicTotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_topicTotalCount, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -164,6 +183,16 @@ vector<TopicConsumeStats> DescribeConsumerClientResponse::GetTopicList() const
 bool DescribeConsumerClientResponse::TopicListHasBeenSet() const
 {
     return m_topicListHasBeenSet;
+}
+
+int64_t DescribeConsumerClientResponse::GetTopicTotalCount() const
+{
+    return m_topicTotalCount;
+}
+
+bool DescribeConsumerClientResponse::TopicTotalCountHasBeenSet() const
+{
+    return m_topicTotalCountHasBeenSet;
 }
 
 

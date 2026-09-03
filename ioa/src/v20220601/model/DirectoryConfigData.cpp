@@ -31,7 +31,8 @@ DirectoryConfigData::DirectoryConfigData() :
     m_createAuthConfigHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_sourceIdHasBeenSet(false),
-    m_displayOnLoginPageHasBeenSet(false)
+    m_displayOnLoginPageHasBeenSet(false),
+    m_nameI18nHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,26 @@ CoreInternalOutcome DirectoryConfigData::Deserialize(const rapidjson::Value &val
         m_displayOnLoginPageHasBeenSet = true;
     }
 
+    if (value.HasMember("NameI18n") && !value["NameI18n"].IsNull())
+    {
+        if (!value["NameI18n"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DirectoryConfigData.NameI18n` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NameI18n"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            I18nString item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_nameI18n.push_back(item);
+        }
+        m_nameI18nHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +264,21 @@ void DirectoryConfigData::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "DisplayOnLoginPage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_displayOnLoginPage, allocator);
+    }
+
+    if (m_nameI18nHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NameI18n";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_nameI18n.begin(); itr != m_nameI18n.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -422,5 +458,21 @@ void DirectoryConfigData::SetDisplayOnLoginPage(const bool& _displayOnLoginPage)
 bool DirectoryConfigData::DisplayOnLoginPageHasBeenSet() const
 {
     return m_displayOnLoginPageHasBeenSet;
+}
+
+vector<I18nString> DirectoryConfigData::GetNameI18n() const
+{
+    return m_nameI18n;
+}
+
+void DirectoryConfigData::SetNameI18n(const vector<I18nString>& _nameI18n)
+{
+    m_nameI18n = _nameI18n;
+    m_nameI18nHasBeenSet = true;
+}
+
+bool DirectoryConfigData::NameI18nHasBeenSet() const
+{
+    return m_nameI18nHasBeenSet;
 }
 

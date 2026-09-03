@@ -42,7 +42,88 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>客户维度唯一标识</p>
+                     * @return SdkAppId <p>客户维度唯一标识</p>
+                     * 
+                     */
+                    uint64_t GetSdkAppId() const;
+
+                    /**
+                     * 设置<p>客户维度唯一标识</p>
+                     * @param _sdkAppId <p>客户维度唯一标识</p>
+                     * 
+                     */
+                    void SetSdkAppId(const uint64_t& _sdkAppId);
+
+                    /**
+                     * 判断参数 SdkAppId 是否已赋值
+                     * @return SdkAppId 是否已赋值
+                     * 
+                     */
+                    bool SdkAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>分页偏移</p>
+                     * @return Offset <p>分页偏移</p>
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置<p>分页偏移</p>
+                     * @param _offset <p>分页偏移</p>
+                     * 
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取<p>分页大小</p>
+                     * @return Limit <p>分页大小</p>
+                     * 
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置<p>分页大小</p>
+                     * @param _limit <p>分页大小</p>
+                     * 
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>客户维度唯一标识</p>
+                     */
+                    uint64_t m_sdkAppId;
+                    bool m_sdkAppIdHasBeenSet;
+
+                    /**
+                     * <p>分页偏移</p>
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * <p>分页大小</p>
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
 
                 };
             }

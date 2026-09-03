@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>沙箱元数据名</p>
-                     * @return Name <p>沙箱元数据名</p>
+                     * 获取<p>元数据名</p>
+                     * @return Name <p>元数据名</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置<p>沙箱元数据名</p>
-                     * @param _name <p>沙箱元数据名</p>
+                     * 设置<p>元数据名</p>
+                     * @param _name <p>元数据名</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取<p>沙箱元数据值</p>
-                     * @return Value <p>沙箱元数据值</p>
+                     * 获取<p>元数据值</p>
+                     * @return Value <p>元数据值</p>
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置<p>沙箱元数据值</p>
-                     * @param _value <p>沙箱元数据值</p>
+                     * 设置<p>元数据值</p>
+                     * @param _value <p>元数据值</p>
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>沙箱元数据名</p>
+                     * <p>元数据名</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * <p>沙箱元数据值</p>
+                     * <p>元数据值</p>
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

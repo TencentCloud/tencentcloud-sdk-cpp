@@ -27,6 +27,7 @@ LoadTaskAttrs::LoadTaskAttrs() :
     m_priorityHasBeenSet(false),
     m_metadataLoadAttrsHasBeenSet(false),
     m_distributedLoadAttrsHasBeenSet(false),
+    m_loadDataAttrsHasBeenSet(false),
     m_reportPathHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_taskMessageHasBeenSet(false),
@@ -113,6 +114,23 @@ CoreInternalOutcome LoadTaskAttrs::Deserialize(const rapidjson::Value &value)
         }
 
         m_distributedLoadAttrsHasBeenSet = true;
+    }
+
+    if (value.HasMember("LoadDataAttrs") && !value["LoadDataAttrs"].IsNull())
+    {
+        if (!value["LoadDataAttrs"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadTaskAttrs.LoadDataAttrs` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_loadDataAttrs.Deserialize(value["LoadDataAttrs"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_loadDataAttrsHasBeenSet = true;
     }
 
     if (value.HasMember("ReportPath") && !value["ReportPath"].IsNull())
@@ -230,6 +248,15 @@ void LoadTaskAttrs::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_distributedLoadAttrs.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_loadDataAttrsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadDataAttrs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_loadDataAttrs.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_reportPathHasBeenSet)
@@ -377,6 +404,22 @@ void LoadTaskAttrs::SetDistributedLoadAttrs(const DistributedLoadAttrs& _distrib
 bool LoadTaskAttrs::DistributedLoadAttrsHasBeenSet() const
 {
     return m_distributedLoadAttrsHasBeenSet;
+}
+
+LoadDataAttrs LoadTaskAttrs::GetLoadDataAttrs() const
+{
+    return m_loadDataAttrs;
+}
+
+void LoadTaskAttrs::SetLoadDataAttrs(const LoadDataAttrs& _loadDataAttrs)
+{
+    m_loadDataAttrs = _loadDataAttrs;
+    m_loadDataAttrsHasBeenSet = true;
+}
+
+bool LoadTaskAttrs::LoadDataAttrsHasBeenSet() const
+{
+    return m_loadDataAttrsHasBeenSet;
 }
 
 string LoadTaskAttrs::GetReportPath() const

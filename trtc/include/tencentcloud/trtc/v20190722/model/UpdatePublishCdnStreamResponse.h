@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取转推任务唯一的String Id
-                     * @return TaskId 转推任务唯一的String Id
+                     * 获取<p>转推任务唯一的String Id</p>
+                     * @return TaskId <p>转推任务唯一的String Id</p>
                      * 
                      */
                     std::string GetTaskId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 转推任务唯一的String Id
+                     * <p>转推任务唯一的String Id</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

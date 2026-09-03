@@ -27,6 +27,7 @@
 #include <tencentcloud/adp/v20260520/model/ConversationQuoteInfo.h>
 #include <tencentcloud/adp/v20260520/model/ConversationReference.h>
 #include <tencentcloud/adp/v20260520/model/ConversationAgentTask.h>
+#include <tencentcloud/adp/v20260520/model/ConversationMcpApp.h>
 
 
 namespace TencentCloud
@@ -426,6 +427,31 @@ namespace TencentCloud
                      */
                     bool WorkflowInputHasBeenSet() const;
 
+                    /**
+                     * 获取<p>MCP-APP调用信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return McpApp <p>MCP-APP调用信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ConversationMcpApp GetMcpApp() const;
+
+                    /**
+                     * 设置<p>MCP-APP调用信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _mcpApp <p>MCP-APP调用信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMcpApp(const ConversationMcpApp& _mcpApp);
+
+                    /**
+                     * 判断参数 McpApp 是否已赋值
+                     * @return McpApp 是否已赋值
+                     * 
+                     */
+                    bool McpAppHasBeenSet() const;
+
                 private:
 
                     /**
@@ -534,6 +560,13 @@ namespace TencentCloud
                      */
                     std::string m_workflowInput;
                     bool m_workflowInputHasBeenSet;
+
+                    /**
+                     * <p>MCP-APP调用信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ConversationMcpApp m_mcpApp;
+                    bool m_mcpAppHasBeenSet;
 
                 };
             }

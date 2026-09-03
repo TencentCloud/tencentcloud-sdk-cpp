@@ -26,7 +26,8 @@ using namespace std;
 DescribeAgentRecordTaskResponse::DescribeAgentRecordTaskResponse() :
     m_statusHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
-    m_recordUrlsHasBeenSet(false)
+    m_recordUrlsHasBeenSet(false),
+    m_liveStatusHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,16 @@ CoreInternalOutcome DescribeAgentRecordTaskResponse::Deserialize(const string &p
         m_recordUrlsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LiveStatus") && !rsp["LiveStatus"].IsNull())
+    {
+        if (!rsp["LiveStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiveStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_liveStatus = string(rsp["LiveStatus"].GetString());
+        m_liveStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +145,14 @@ string DescribeAgentRecordTaskResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_liveStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LiveStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_liveStatus.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -176,6 +195,16 @@ vector<string> DescribeAgentRecordTaskResponse::GetRecordUrls() const
 bool DescribeAgentRecordTaskResponse::RecordUrlsHasBeenSet() const
 {
     return m_recordUrlsHasBeenSet;
+}
+
+string DescribeAgentRecordTaskResponse::GetLiveStatus() const
+{
+    return m_liveStatus;
+}
+
+bool DescribeAgentRecordTaskResponse::LiveStatusHasBeenSet() const
+{
+    return m_liveStatusHasBeenSet;
 }
 
 

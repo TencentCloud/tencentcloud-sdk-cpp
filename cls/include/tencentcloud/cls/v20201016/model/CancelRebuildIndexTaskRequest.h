@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志主题ID
-                     * @return TopicId 日志主题ID
+                     * 获取<p>日志主题ID</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/614/56454">DescribeTopics</a></p>
+                     * @return TopicId <p>日志主题ID</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/614/56454">DescribeTopics</a></p>
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题ID
-                     * @param _topicId 日志主题ID
+                     * 设置<p>日志主题ID</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/614/56454">DescribeTopics</a></p>
+                     * @param _topicId <p>日志主题ID</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/614/56454">DescribeTopics</a></p>
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取索引重建任务ID
-                     * @return TaskId 索引重建任务ID
+                     * 获取<p>索引重建任务ID</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/614/127535">DescribeRebuildIndexTasks</a></p>
+                     * @return TaskId <p>索引重建任务ID</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/614/127535">DescribeRebuildIndexTasks</a></p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置索引重建任务ID
-                     * @param _taskId 索引重建任务ID
+                     * 设置<p>索引重建任务ID</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/614/127535">DescribeRebuildIndexTasks</a></p>
+                     * @param _taskId <p>索引重建任务ID</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/614/127535">DescribeRebuildIndexTasks</a></p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志主题ID
+                     * <p>日志主题ID</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/614/56454">DescribeTopics</a></p>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 索引重建任务ID
+                     * <p>索引重建任务ID</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/614/127535">DescribeRebuildIndexTasks</a></p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

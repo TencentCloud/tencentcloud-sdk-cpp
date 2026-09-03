@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取mcp server id
-                     * @return ID mcp server id
+                     * 获取<p>mcp server id</p>
+                     * @return ID <p>mcp server id</p>
                      * 
                      */
                     std::string GetID() const;
 
                     /**
-                     * 设置mcp server id
-                     * @param _iD mcp server id
+                     * 设置<p>mcp server id</p>
+                     * @param _iD <p>mcp server id</p>
                      * 
                      */
                     void SetID(const std::string& _iD);
@@ -68,68 +68,68 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取是否需要鉴权
+                     * 获取<p>是否需要鉴权（已废弃，请勿使用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NeedAuth 是否需要鉴权
+                     * @return NeedAuth <p>是否需要鉴权（已废弃，请勿使用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     bool GetNeedAuth() const;
 
                     /**
-                     * 设置是否需要鉴权
+                     * 设置<p>是否需要鉴权（已废弃，请勿使用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _needAuth 是否需要鉴权
+                     * @param _needAuth <p>是否需要鉴权（已废弃，请勿使用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetNeedAuth(const bool& _needAuth);
 
                     /**
                      * 判断参数 NeedAuth 是否已赋值
                      * @return NeedAuth 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool NeedAuthHasBeenSet() const;
 
                     /**
-                     * 获取凭据代填的ID
+                     * 获取<p>凭据代填的ID（已废弃，请勿使用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AgentCredentialID 凭据代填的ID
+                     * @return AgentCredentialID <p>凭据代填的ID（已废弃，请勿使用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetAgentCredentialID() const;
 
                     /**
-                     * 设置凭据代填的ID
+                     * 设置<p>凭据代填的ID（已废弃，请勿使用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _agentCredentialID 凭据代填的ID
+                     * @param _agentCredentialID <p>凭据代填的ID（已废弃，请勿使用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetAgentCredentialID(const std::string& _agentCredentialID);
 
                     /**
                      * 判断参数 AgentCredentialID 是否已赋值
                      * @return AgentCredentialID 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AgentCredentialIDHasBeenSet() const;
 
                     /**
-                     * 获取应用为OAuth2认证时，sse模式请求mcp时的资源标识
+                     * 获取<p>应用为OAuth2认证时，sse模式请求mcp时的资源标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SSEResourceIdentifier 应用为OAuth2认证时，sse模式请求mcp时的资源标识
+                     * @return SSEResourceIdentifier <p>应用为OAuth2认证时，sse模式请求mcp时的资源标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSSEResourceIdentifier() const;
 
                     /**
-                     * 设置应用为OAuth2认证时，sse模式请求mcp时的资源标识
+                     * 设置<p>应用为OAuth2认证时，sse模式请求mcp时的资源标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sSEResourceIdentifier 应用为OAuth2认证时，sse模式请求mcp时的资源标识
+                     * @param _sSEResourceIdentifier <p>应用为OAuth2认证时，sse模式请求mcp时的资源标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -143,18 +143,18 @@ namespace TencentCloud
                     bool SSEResourceIdentifierHasBeenSet() const;
 
                     /**
-                     * 获取应用为OAuth2认证时，streamable模式请求mcp时的资源标识
+                     * 获取<p>应用为OAuth2认证时，streamable模式请求mcp时的资源标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StreamableResourceIdentifier 应用为OAuth2认证时，streamable模式请求mcp时的资源标识
+                     * @return StreamableResourceIdentifier <p>应用为OAuth2认证时，streamable模式请求mcp时的资源标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStreamableResourceIdentifier() const;
 
                     /**
-                     * 设置应用为OAuth2认证时，streamable模式请求mcp时的资源标识
+                     * 设置<p>应用为OAuth2认证时，streamable模式请求mcp时的资源标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _streamableResourceIdentifier 应用为OAuth2认证时，streamable模式请求mcp时的资源标识
+                     * @param _streamableResourceIdentifier <p>应用为OAuth2认证时，streamable模式请求mcp时的资源标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -170,34 +170,34 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * mcp server id
+                     * <p>mcp server id</p>
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 是否需要鉴权
+                     * <p>是否需要鉴权（已废弃，请勿使用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_needAuth;
                     bool m_needAuthHasBeenSet;
 
                     /**
-                     * 凭据代填的ID
+                     * <p>凭据代填的ID（已废弃，请勿使用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_agentCredentialID;
                     bool m_agentCredentialIDHasBeenSet;
 
                     /**
-                     * 应用为OAuth2认证时，sse模式请求mcp时的资源标识
+                     * <p>应用为OAuth2认证时，sse模式请求mcp时的资源标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sSEResourceIdentifier;
                     bool m_sSEResourceIdentifierHasBeenSet;
 
                     /**
-                     * 应用为OAuth2认证时，streamable模式请求mcp时的资源标识
+                     * <p>应用为OAuth2认证时，streamable模式请求mcp时的资源标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_streamableResourceIdentifier;

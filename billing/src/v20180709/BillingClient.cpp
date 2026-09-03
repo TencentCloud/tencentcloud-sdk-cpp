@@ -640,6 +640,56 @@ BillingClient::DescribeAccountBalanceOutcomeCallable BillingClient::DescribeAcco
     return prom->get_future();
 }
 
+BillingClient::DescribeAccountWarningOutcome BillingClient::DescribeAccountWarning(const DescribeAccountWarningRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccountWarning");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccountWarningResponse rsp = DescribeAccountWarningResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccountWarningOutcome(rsp);
+        else
+            return DescribeAccountWarningOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccountWarningOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::DescribeAccountWarningAsync(const DescribeAccountWarningRequest& request, const DescribeAccountWarningAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAccountWarningRequest&;
+    using Resp = DescribeAccountWarningResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccountWarning", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BillingClient::DescribeAccountWarningOutcomeCallable BillingClient::DescribeAccountWarningCallable(const DescribeAccountWarningRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAccountWarningOutcome>>();
+    DescribeAccountWarningAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeAccountWarningRequest&,
+        DescribeAccountWarningOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 BillingClient::DescribeAllocateConditionsOutcome BillingClient::DescribeAllocateConditions(const DescribeAllocateConditionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAllocateConditions");
@@ -3082,6 +3132,56 @@ BillingClient::DescribeVoucherUsageDetailsOutcomeCallable BillingClient::Describ
         const BillingClient*,
         const DescribeVoucherUsageDetailsRequest&,
         DescribeVoucherUsageDetailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BillingClient::ModifyAccountWarningOutcome BillingClient::ModifyAccountWarning(const ModifyAccountWarningRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAccountWarning");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAccountWarningResponse rsp = ModifyAccountWarningResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAccountWarningOutcome(rsp);
+        else
+            return ModifyAccountWarningOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAccountWarningOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::ModifyAccountWarningAsync(const ModifyAccountWarningRequest& request, const ModifyAccountWarningAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyAccountWarningRequest&;
+    using Resp = ModifyAccountWarningResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyAccountWarning", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BillingClient::ModifyAccountWarningOutcomeCallable BillingClient::ModifyAccountWarningCallable(const ModifyAccountWarningRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyAccountWarningOutcome>>();
+    ModifyAccountWarningAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const ModifyAccountWarningRequest&,
+        ModifyAccountWarningOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

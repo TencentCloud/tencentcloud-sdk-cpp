@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取终端自定义分组id
-                     * @return Id 终端自定义分组id
+                     * 获取<p>终端自定义分组id</p>
+                     * @return Id <p>终端自定义分组id</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置终端自定义分组id
-                     * @param _id 终端自定义分组id
+                     * 设置<p>终端自定义分组id</p>
+                     * @param _id <p>终端自定义分组id</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取自定义分组名称
-                     * @return DeviceVirtualGroupName 自定义分组名称
+                     * 获取<p>自定义分组名称</p>
+                     * @return DeviceVirtualGroupName <p>自定义分组名称</p>
                      * 
                      */
                     std::string GetDeviceVirtualGroupName() const;
 
                     /**
-                     * 设置自定义分组名称
-                     * @param _deviceVirtualGroupName 自定义分组名称
+                     * 设置<p>自定义分组名称</p>
+                     * @param _deviceVirtualGroupName <p>自定义分组名称</p>
                      * 
                      */
                     void SetDeviceVirtualGroupName(const std::string& _deviceVirtualGroupName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DeviceVirtualGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取设备数
-                     * @return DeviceCount 设备数
+                     * 获取<p>设备数</p>
+                     * @return DeviceCount <p>设备数</p>
                      * 
                      */
                     int64_t GetDeviceCount() const;
 
                     /**
-                     * 设置设备数
-                     * @param _deviceCount 设备数
+                     * 设置<p>设备数</p>
+                     * @param _deviceCount <p>设备数</p>
                      * 
                      */
                     void SetDeviceCount(const int64_t& _deviceCount);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DeviceCountHasBeenSet() const;
 
                     /**
-                     * 获取系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）
-                     * @return OsType 系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）
+                     * 获取<p>系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）</p>
+                     * @return OsType <p>系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）</p>
                      * 
                      */
                     int64_t GetOsType() const;
 
                     /**
-                     * 设置系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）
-                     * @param _osType 系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）
+                     * 设置<p>系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）</p>
+                     * @param _osType <p>系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）</p>
                      * 
                      */
                     void SetOsType(const int64_t& _osType);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool OsTypeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return Itime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return Itime <p>创建时间</p>
                      * 
                      */
                     std::string GetItime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _itime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _itime <p>创建时间</p>
                      * 
                      */
                     void SetItime(const std::string& _itime);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ItimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return Utime 更新时间
+                     * 获取<p>更新时间</p>
+                     * @return Utime <p>更新时间</p>
                      * 
                      */
                     std::string GetUtime() const;
 
                     /**
-                     * 设置更新时间
-                     * @param _utime 更新时间
+                     * 设置<p>更新时间</p>
+                     * @param _utime <p>更新时间</p>
                      * 
                      */
                     void SetUtime(const std::string& _utime);
@@ -175,37 +175,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 终端自定义分组id
+                     * <p>终端自定义分组id</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 自定义分组名称
+                     * <p>自定义分组名称</p>
                      */
                     std::string m_deviceVirtualGroupName;
                     bool m_deviceVirtualGroupNameHasBeenSet;
 
                     /**
-                     * 设备数
+                     * <p>设备数</p>
                      */
                     int64_t m_deviceCount;
                     bool m_deviceCountHasBeenSet;
 
                     /**
-                     * 系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）
+                     * <p>系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）</p>
                      */
                     int64_t m_osType;
                     bool m_osTypeHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_itime;
                     bool m_itimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
                      */
                     std::string m_utime;
                     bool m_utimeHasBeenSet;

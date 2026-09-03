@@ -49,6 +49,8 @@
 #include <tencentcloud/ocr/v20181119/model/DescribeMarkEssayAgentJobResponse.h>
 #include <tencentcloud/ocr/v20181119/model/DescribeQuestionMarkAgentJobRequest.h>
 #include <tencentcloud/ocr/v20181119/model/DescribeQuestionMarkAgentJobResponse.h>
+#include <tencentcloud/ocr/v20181119/model/DescribeQuestionSplitJobRequest.h>
+#include <tencentcloud/ocr/v20181119/model/DescribeQuestionSplitJobResponse.h>
 #include <tencentcloud/ocr/v20181119/model/DriverLicenseOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/DriverLicenseOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/EnglishOCRRequest.h>
@@ -151,6 +153,8 @@
 #include <tencentcloud/ocr/v20181119/model/SubmitMarkEssayAgentJobResponse.h>
 #include <tencentcloud/ocr/v20181119/model/SubmitQuestionMarkAgentJobRequest.h>
 #include <tencentcloud/ocr/v20181119/model/SubmitQuestionMarkAgentJobResponse.h>
+#include <tencentcloud/ocr/v20181119/model/SubmitQuestionSplitJobRequest.h>
+#include <tencentcloud/ocr/v20181119/model/SubmitQuestionSplitJobResponse.h>
 #include <tencentcloud/ocr/v20181119/model/TableOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/TableOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/TextDetectRequest.h>
@@ -232,6 +236,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeQuestionMarkAgentJobResponse> DescribeQuestionMarkAgentJobOutcome;
                 typedef std::future<DescribeQuestionMarkAgentJobOutcome> DescribeQuestionMarkAgentJobOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::DescribeQuestionMarkAgentJobRequest&, DescribeQuestionMarkAgentJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQuestionMarkAgentJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeQuestionSplitJobResponse> DescribeQuestionSplitJobOutcome;
+                typedef std::future<DescribeQuestionSplitJobOutcome> DescribeQuestionSplitJobOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::DescribeQuestionSplitJobRequest&, DescribeQuestionSplitJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQuestionSplitJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::DriverLicenseOCRResponse> DriverLicenseOCROutcome;
                 typedef std::future<DriverLicenseOCROutcome> DriverLicenseOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::DriverLicenseOCRRequest&, DriverLicenseOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> DriverLicenseOCRAsyncHandler;
@@ -385,6 +392,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SubmitQuestionMarkAgentJobResponse> SubmitQuestionMarkAgentJobOutcome;
                 typedef std::future<SubmitQuestionMarkAgentJobOutcome> SubmitQuestionMarkAgentJobOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::SubmitQuestionMarkAgentJobRequest&, SubmitQuestionMarkAgentJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitQuestionMarkAgentJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitQuestionSplitJobResponse> SubmitQuestionSplitJobOutcome;
+                typedef std::future<SubmitQuestionSplitJobOutcome> SubmitQuestionSplitJobOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::SubmitQuestionSplitJobRequest&, SubmitQuestionSplitJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitQuestionSplitJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::TableOCRResponse> TableOCROutcome;
                 typedef std::future<TableOCROutcome> TableOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::TableOCRRequest&, TableOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> TableOCRAsyncHandler;
@@ -569,6 +579,15 @@ namespace TencentCloud
                 DescribeQuestionMarkAgentJobOutcome DescribeQuestionMarkAgentJob(const Model::DescribeQuestionMarkAgentJobRequest &request);
                 void DescribeQuestionMarkAgentJobAsync(const Model::DescribeQuestionMarkAgentJobRequest& request, const DescribeQuestionMarkAgentJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeQuestionMarkAgentJobOutcomeCallable DescribeQuestionMarkAgentJobCallable(const Model::DescribeQuestionMarkAgentJobRequest& request);
+
+                /**
+                 *异步试卷切题识别可将整页练习册、试卷或教辅中的题目进行自动切题，并识别出其中的文字内容和坐标位置，是试卷切题的接口补充。主要解决试卷录题这类多页场景、单题跨页场景。需要 SubmitQuestionSplitOCRJob（提交任务）、DescribeQuestionSplitOCRJob（查询任务）两个接口配套使用，计费发生在提交任务后。
+                 * @param req DescribeQuestionSplitJobRequest
+                 * @return DescribeQuestionSplitJobOutcome
+                 */
+                DescribeQuestionSplitJobOutcome DescribeQuestionSplitJob(const Model::DescribeQuestionSplitJobRequest &request);
+                void DescribeQuestionSplitJobAsync(const Model::DescribeQuestionSplitJobRequest& request, const DescribeQuestionSplitJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeQuestionSplitJobOutcomeCallable DescribeQuestionSplitJobCallable(const Model::DescribeQuestionSplitJobRequest& request);
 
                 /**
                  *本接口支持驾驶证主页和副页所有字段的自动定位与识别，重点字段的识别准确度达到99%以上。
@@ -1616,6 +1635,15 @@ namespace TencentCloud
                 SubmitQuestionMarkAgentJobOutcome SubmitQuestionMarkAgentJob(const Model::SubmitQuestionMarkAgentJobRequest &request);
                 void SubmitQuestionMarkAgentJobAsync(const Model::SubmitQuestionMarkAgentJobRequest& request, const SubmitQuestionMarkAgentJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SubmitQuestionMarkAgentJobOutcomeCallable SubmitQuestionMarkAgentJobCallable(const Model::SubmitQuestionMarkAgentJobRequest& request);
+
+                /**
+                 *异步试卷切题识别可将整页练习册、试卷或教辅中的题目进行自动切题，并识别出其中的文字内容和坐标位置，是试卷切题的接口补充。主要解决试卷录题这类多页场景、单题跨页场景。需要 SubmitQuestionSplitOCRJob（提交任务）、DescribeQuestionSplitOCRJob（查询任务）两个接口配套使用，计费发生在提交任务后。
+                 * @param req SubmitQuestionSplitJobRequest
+                 * @return SubmitQuestionSplitJobOutcome
+                 */
+                SubmitQuestionSplitJobOutcome SubmitQuestionSplitJob(const Model::SubmitQuestionSplitJobRequest &request);
+                void SubmitQuestionSplitJobAsync(const Model::SubmitQuestionSplitJobRequest& request, const SubmitQuestionSplitJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitQuestionSplitJobOutcomeCallable SubmitQuestionSplitJobCallable(const Model::SubmitQuestionSplitJobRequest& request);
 
                 /**
                  *<b>此接口为表格识别的旧版本服务，不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href="https://cloud.tencent.com/document/product/866/49525">新版表格识别</a>。</b>

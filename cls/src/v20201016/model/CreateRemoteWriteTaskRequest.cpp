@@ -31,7 +31,9 @@ CreateRemoteWriteTaskRequest::CreateRemoteWriteTaskRequest() :
     m_netTypeHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_authInfoHasBeenSet(false),
-    m_virtualGatewayTypeHasBeenSet(false)
+    m_virtualGatewayTypeHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_hasServicesLogHasBeenSet(false)
 {
 }
 
@@ -113,6 +115,22 @@ string CreateRemoteWriteTaskRequest::ToJsonString() const
         string key = "VirtualGatewayType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_virtualGatewayType, allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hasServicesLogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasServicesLog";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_hasServicesLog, allocator);
     }
 
 
@@ -265,6 +283,38 @@ void CreateRemoteWriteTaskRequest::SetVirtualGatewayType(const int64_t& _virtual
 bool CreateRemoteWriteTaskRequest::VirtualGatewayTypeHasBeenSet() const
 {
     return m_virtualGatewayTypeHasBeenSet;
+}
+
+string CreateRemoteWriteTaskRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void CreateRemoteWriteTaskRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool CreateRemoteWriteTaskRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+uint64_t CreateRemoteWriteTaskRequest::GetHasServicesLog() const
+{
+    return m_hasServicesLog;
+}
+
+void CreateRemoteWriteTaskRequest::SetHasServicesLog(const uint64_t& _hasServicesLog)
+{
+    m_hasServicesLog = _hasServicesLog;
+    m_hasServicesLogHasBeenSet = true;
+}
+
+bool CreateRemoteWriteTaskRequest::HasServicesLogHasBeenSet() const
+{
+    return m_hasServicesLogHasBeenSet;
 }
 
 

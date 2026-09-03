@@ -27,6 +27,7 @@ RaspLicenseList::RaspLicenseList() :
     m_publicIPHasBeenSet(false),
     m_privateIPHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_cWPTagsHasBeenSet(false),
     m_protectionVersionHasBeenSet(false),
     m_configurationSettingHasBeenSet(false),
     m_enableHasBeenSet(false),
@@ -123,6 +124,26 @@ CoreInternalOutcome RaspLicenseList::Deserialize(const rapidjson::Value &value)
             m_tags.push_back(item);
         }
         m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("CWPTags") && !value["CWPTags"].IsNull())
+    {
+        if (!value["CWPTags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RaspLicenseList.CWPTags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CWPTags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CWPTags item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cWPTags.push_back(item);
+        }
+        m_cWPTagsHasBeenSet = true;
     }
 
     if (value.HasMember("ProtectionVersion") && !value["ProtectionVersion"].IsNull())
@@ -397,6 +418,21 @@ void RaspLicenseList::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         }
     }
 
+    if (m_cWPTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CWPTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cWPTags.begin(); itr != m_cWPTags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_protectionVersionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -660,6 +696,22 @@ void RaspLicenseList::SetTags(const vector<Tags>& _tags)
 bool RaspLicenseList::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+vector<CWPTags> RaspLicenseList::GetCWPTags() const
+{
+    return m_cWPTags;
+}
+
+void RaspLicenseList::SetCWPTags(const vector<CWPTags>& _cWPTags)
+{
+    m_cWPTags = _cWPTags;
+    m_cWPTagsHasBeenSet = true;
+}
+
+bool RaspLicenseList::CWPTagsHasBeenSet() const
+{
+    return m_cWPTagsHasBeenSet;
 }
 
 vector<string> RaspLicenseList::GetProtectionVersion() const
