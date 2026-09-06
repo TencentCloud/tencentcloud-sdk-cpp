@@ -209,6 +209,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/DescribeBudgetAssociationsRequest.h
   include/tencentcloud/clb/v20180317/model/ModifyIntentRouterAttributeRequest.h
   include/tencentcloud/clb/v20180317/model/ModifyTargetGroupInstancesPortRequest.h
+  include/tencentcloud/clb/v20180317/model/EmbeddingConfig.h
   include/tencentcloud/clb/v20180317/model/CreateClsLogSetRequest.h
   include/tencentcloud/clb/v20180317/model/ModalityProbeDetail.h
   include/tencentcloud/clb/v20180317/model/ModifyDomainResponse.h
@@ -678,6 +679,7 @@ set(clb_src
   src/v20180317/model/DescribeBudgetAssociationsRequest.cpp
   src/v20180317/model/ModifyIntentRouterAttributeRequest.cpp
   src/v20180317/model/ModifyTargetGroupInstancesPortRequest.cpp
+  src/v20180317/model/EmbeddingConfig.cpp
   src/v20180317/model/CreateClsLogSetRequest.cpp
   src/v20180317/model/ModalityProbeDetail.cpp
   src/v20180317/model/ModifyDomainResponse.cpp

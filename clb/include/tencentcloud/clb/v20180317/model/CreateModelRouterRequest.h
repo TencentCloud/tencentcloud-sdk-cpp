@@ -26,6 +26,7 @@
 #include <tencentcloud/clb/v20180317/model/RouterSettingWithoutFallBack.h>
 #include <tencentcloud/clb/v20180317/model/TagInfo.h>
 #include <tencentcloud/clb/v20180317/model/ModelRouterBillingConfigInput.h>
+#include <tencentcloud/clb/v20180317/model/EmbeddingConfig.h>
 
 
 namespace TencentCloud
@@ -404,6 +405,27 @@ namespace TencentCloud
                      */
                     bool BandwidthHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Embedding 配置</p>
+                     * @return EmbeddingConfig <p>Embedding 配置</p>
+                     * 
+                     */
+                    EmbeddingConfig GetEmbeddingConfig() const;
+
+                    /**
+                     * 设置<p>Embedding 配置</p>
+                     * @param _embeddingConfig <p>Embedding 配置</p>
+                     * 
+                     */
+                    void SetEmbeddingConfig(const EmbeddingConfig& _embeddingConfig);
+
+                    /**
+                     * 判断参数 EmbeddingConfig 是否已赋值
+                     * @return EmbeddingConfig 是否已赋值
+                     * 
+                     */
+                    bool EmbeddingConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -507,6 +529,12 @@ namespace TencentCloud
                      */
                     uint64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
+
+                    /**
+                     * <p>Embedding 配置</p>
+                     */
+                    EmbeddingConfig m_embeddingConfig;
+                    bool m_embeddingConfigHasBeenSet;
 
                 };
             }

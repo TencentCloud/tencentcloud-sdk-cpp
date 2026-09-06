@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
-DescribeKnowledgeBasesResponse::DescribeKnowledgeBasesResponse()
+DescribeKnowledgeBasesResponse::DescribeKnowledgeBasesResponse() :
+    m_totalCountHasBeenSet(false),
+    m_knowledgeBaseSetHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome DescribeKnowledgeBasesResponse::Deserialize(const string &pa
     }
 
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("KnowledgeBaseSet") && !rsp["KnowledgeBaseSet"].IsNull())
+    {
+        if (!rsp["KnowledgeBaseSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KnowledgeBaseSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["KnowledgeBaseSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KnowledgeBaseInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_knowledgeBaseSet.push_back(item);
+        }
+        m_knowledgeBaseSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string DescribeKnowledgeBasesResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_knowledgeBaseSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeBaseSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_knowledgeBaseSet.begin(); itr != m_knowledgeBaseSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string DescribeKnowledgeBasesResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeKnowledgeBasesResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeKnowledgeBasesResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
+
+vector<KnowledgeBaseInfo> DescribeKnowledgeBasesResponse::GetKnowledgeBaseSet() const
+{
+    return m_knowledgeBaseSet;
+}
+
+bool DescribeKnowledgeBasesResponse::KnowledgeBaseSetHasBeenSet() const
+{
+    return m_knowledgeBaseSetHasBeenSet;
+}
 
 

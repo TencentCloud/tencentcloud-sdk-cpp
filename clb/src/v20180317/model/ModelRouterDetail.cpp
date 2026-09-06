@@ -45,7 +45,8 @@ ModelRouterDetail::ModelRouterDetail() :
     m_vpcIdHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
     m_eipAddressIdHasBeenSet(false),
-    m_billingConfigHasBeenSet(false)
+    m_billingConfigHasBeenSet(false),
+    m_embeddingConfigHasBeenSet(false)
 {
 }
 
@@ -365,6 +366,23 @@ CoreInternalOutcome ModelRouterDetail::Deserialize(const rapidjson::Value &value
         m_billingConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("EmbeddingConfig") && !value["EmbeddingConfig"].IsNull())
+    {
+        if (!value["EmbeddingConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelRouterDetail.EmbeddingConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_embeddingConfig.Deserialize(value["EmbeddingConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_embeddingConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -600,6 +618,15 @@ void ModelRouterDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_billingConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_embeddingConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmbeddingConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_embeddingConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1003,5 +1030,21 @@ void ModelRouterDetail::SetBillingConfig(const ModelRouterBillingConfigOutput& _
 bool ModelRouterDetail::BillingConfigHasBeenSet() const
 {
     return m_billingConfigHasBeenSet;
+}
+
+EmbeddingConfig ModelRouterDetail::GetEmbeddingConfig() const
+{
+    return m_embeddingConfig;
+}
+
+void ModelRouterDetail::SetEmbeddingConfig(const EmbeddingConfig& _embeddingConfig)
+{
+    m_embeddingConfig = _embeddingConfig;
+    m_embeddingConfigHasBeenSet = true;
+}
+
+bool ModelRouterDetail::EmbeddingConfigHasBeenSet() const
+{
+    return m_embeddingConfigHasBeenSet;
 }
 

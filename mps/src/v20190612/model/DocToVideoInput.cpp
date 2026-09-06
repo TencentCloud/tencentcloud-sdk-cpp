@@ -29,7 +29,12 @@ DocToVideoInput::DocToVideoInput() :
     m_languageHasBeenSet(false),
     m_referenceDurationHasBeenSet(false),
     m_enableTTSHasBeenSet(false),
-    m_voiceIdHasBeenSet(false)
+    m_voiceIdHasBeenSet(false),
+    m_pPTXFidelityHasBeenSet(false),
+    m_modeHasBeenSet(false),
+    m_backgroundHasBeenSet(false),
+    m_watermarkHasBeenSet(false),
+    m_enableCaptionHasBeenSet(false)
 {
 }
 
@@ -131,6 +136,70 @@ CoreInternalOutcome DocToVideoInput::Deserialize(const rapidjson::Value &value)
         m_voiceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("PPTXFidelity") && !value["PPTXFidelity"].IsNull())
+    {
+        if (!value["PPTXFidelity"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocToVideoInput.PPTXFidelity` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_pPTXFidelity = value["PPTXFidelity"].GetBool();
+        m_pPTXFidelityHasBeenSet = true;
+    }
+
+    if (value.HasMember("Mode") && !value["Mode"].IsNull())
+    {
+        if (!value["Mode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocToVideoInput.Mode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mode = string(value["Mode"].GetString());
+        m_modeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Background") && !value["Background"].IsNull())
+    {
+        if (!value["Background"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocToVideoInput.Background` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_background.Deserialize(value["Background"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_backgroundHasBeenSet = true;
+    }
+
+    if (value.HasMember("Watermark") && !value["Watermark"].IsNull())
+    {
+        if (!value["Watermark"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocToVideoInput.Watermark` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_watermark.Deserialize(value["Watermark"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_watermarkHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableCaption") && !value["EnableCaption"].IsNull())
+    {
+        if (!value["EnableCaption"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocToVideoInput.EnableCaption` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableCaption = value["EnableCaption"].GetBool();
+        m_enableCaptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +282,48 @@ void DocToVideoInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "VoiceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_voiceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pPTXFidelityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PPTXFidelity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pPTXFidelity, allocator);
+    }
+
+    if (m_modeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backgroundHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Background";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_background.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_watermarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Watermark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_watermark.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_enableCaptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableCaption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableCaption, allocator);
     }
 
 }
@@ -360,5 +471,85 @@ void DocToVideoInput::SetVoiceId(const string& _voiceId)
 bool DocToVideoInput::VoiceIdHasBeenSet() const
 {
     return m_voiceIdHasBeenSet;
+}
+
+bool DocToVideoInput::GetPPTXFidelity() const
+{
+    return m_pPTXFidelity;
+}
+
+void DocToVideoInput::SetPPTXFidelity(const bool& _pPTXFidelity)
+{
+    m_pPTXFidelity = _pPTXFidelity;
+    m_pPTXFidelityHasBeenSet = true;
+}
+
+bool DocToVideoInput::PPTXFidelityHasBeenSet() const
+{
+    return m_pPTXFidelityHasBeenSet;
+}
+
+string DocToVideoInput::GetMode() const
+{
+    return m_mode;
+}
+
+void DocToVideoInput::SetMode(const string& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool DocToVideoInput::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
+}
+
+DocToVideoBackgroundInfo DocToVideoInput::GetBackground() const
+{
+    return m_background;
+}
+
+void DocToVideoInput::SetBackground(const DocToVideoBackgroundInfo& _background)
+{
+    m_background = _background;
+    m_backgroundHasBeenSet = true;
+}
+
+bool DocToVideoInput::BackgroundHasBeenSet() const
+{
+    return m_backgroundHasBeenSet;
+}
+
+DocToVideoWatermarkInfo DocToVideoInput::GetWatermark() const
+{
+    return m_watermark;
+}
+
+void DocToVideoInput::SetWatermark(const DocToVideoWatermarkInfo& _watermark)
+{
+    m_watermark = _watermark;
+    m_watermarkHasBeenSet = true;
+}
+
+bool DocToVideoInput::WatermarkHasBeenSet() const
+{
+    return m_watermarkHasBeenSet;
+}
+
+bool DocToVideoInput::GetEnableCaption() const
+{
+    return m_enableCaption;
+}
+
+void DocToVideoInput::SetEnableCaption(const bool& _enableCaption)
+{
+    m_enableCaption = _enableCaption;
+    m_enableCaptionHasBeenSet = true;
+}
+
+bool DocToVideoInput::EnableCaptionHasBeenSet() const
+{
+    return m_enableCaptionHasBeenSet;
 }
 

@@ -25,7 +25,8 @@ using namespace std;
 ModifyGatewayFlowQosRequest::ModifyGatewayFlowQosRequest() :
     m_gatewayIdHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
-    m_ipAddressesHasBeenSet(false)
+    m_ipAddressesHasBeenSet(false),
+    m_directionHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string ModifyGatewayFlowQosRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_directionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Direction";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_direction.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void ModifyGatewayFlowQosRequest::SetIpAddresses(const vector<string>& _ipAddres
 bool ModifyGatewayFlowQosRequest::IpAddressesHasBeenSet() const
 {
     return m_ipAddressesHasBeenSet;
+}
+
+string ModifyGatewayFlowQosRequest::GetDirection() const
+{
+    return m_direction;
+}
+
+void ModifyGatewayFlowQosRequest::SetDirection(const string& _direction)
+{
+    m_direction = _direction;
+    m_directionHasBeenSet = true;
+}
+
+bool ModifyGatewayFlowQosRequest::DirectionHasBeenSet() const
+{
+    return m_directionHasBeenSet;
 }
 
 

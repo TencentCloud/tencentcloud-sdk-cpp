@@ -29,8 +29,14 @@
 #include <tencentcloud/dbdc/v20201029/model/CheckRoleAuthorizedResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/CreateDBCustomClusterRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/CreateDBCustomClusterResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/CreateDBCustomDisasterRecoverGroupRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/CreateDBCustomDisasterRecoverGroupResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/CreateDBCustomNodesRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/CreateDBCustomNodesResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/DeleteDBCustomDisasterRecoverGroupsRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/DeleteDBCustomDisasterRecoverGroupsResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/DeleteDBCustomNodesDisasterRecoverGroupRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/DeleteDBCustomNodesDisasterRecoverGroupResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterDetailRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterDetailResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterKubeconfigRequest.h>
@@ -45,6 +51,10 @@
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterResourcesResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomClustersRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomClustersResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomDisasterRecoverGroupQuotaRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomDisasterRecoverGroupQuotaResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomDisasterRecoverGroupsRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomDisasterRecoverGroupsResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomImagesRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomImagesResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBCustomNodeSecurityGroupsRequest.h>
@@ -81,12 +91,18 @@
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterNodeConfigResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterTagsRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterTagsResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomDisasterRecoverGroupAttributeRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomDisasterRecoverGroupAttributeResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomDisasterRecoverGroupTagsRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomDisasterRecoverGroupTagsResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeAttributesRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeAttributesResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeSecurityGroupsRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeSecurityGroupsResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeTagsRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeTagsResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodesDisasterRecoverGroupRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodesDisasterRecoverGroupResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyInstanceNameRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyInstanceNameResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/RemoveNodesFromDBCustomClusterRequest.h>
@@ -116,9 +132,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDBCustomClusterResponse> CreateDBCustomClusterOutcome;
                 typedef std::future<CreateDBCustomClusterOutcome> CreateDBCustomClusterOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::CreateDBCustomClusterRequest&, CreateDBCustomClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBCustomClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDBCustomDisasterRecoverGroupResponse> CreateDBCustomDisasterRecoverGroupOutcome;
+                typedef std::future<CreateDBCustomDisasterRecoverGroupOutcome> CreateDBCustomDisasterRecoverGroupOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::CreateDBCustomDisasterRecoverGroupRequest&, CreateDBCustomDisasterRecoverGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBCustomDisasterRecoverGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDBCustomNodesResponse> CreateDBCustomNodesOutcome;
                 typedef std::future<CreateDBCustomNodesOutcome> CreateDBCustomNodesOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::CreateDBCustomNodesRequest&, CreateDBCustomNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBCustomNodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDBCustomDisasterRecoverGroupsResponse> DeleteDBCustomDisasterRecoverGroupsOutcome;
+                typedef std::future<DeleteDBCustomDisasterRecoverGroupsOutcome> DeleteDBCustomDisasterRecoverGroupsOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::DeleteDBCustomDisasterRecoverGroupsRequest&, DeleteDBCustomDisasterRecoverGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDBCustomDisasterRecoverGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDBCustomNodesDisasterRecoverGroupResponse> DeleteDBCustomNodesDisasterRecoverGroupOutcome;
+                typedef std::future<DeleteDBCustomNodesDisasterRecoverGroupOutcome> DeleteDBCustomNodesDisasterRecoverGroupOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::DeleteDBCustomNodesDisasterRecoverGroupRequest&, DeleteDBCustomNodesDisasterRecoverGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDBCustomNodesDisasterRecoverGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBCustomClusterDetailResponse> DescribeDBCustomClusterDetailOutcome;
                 typedef std::future<DescribeDBCustomClusterDetailOutcome> DescribeDBCustomClusterDetailOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::DescribeDBCustomClusterDetailRequest&, DescribeDBCustomClusterDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBCustomClusterDetailAsyncHandler;
@@ -140,6 +165,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBCustomClustersResponse> DescribeDBCustomClustersOutcome;
                 typedef std::future<DescribeDBCustomClustersOutcome> DescribeDBCustomClustersOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::DescribeDBCustomClustersRequest&, DescribeDBCustomClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBCustomClustersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBCustomDisasterRecoverGroupQuotaResponse> DescribeDBCustomDisasterRecoverGroupQuotaOutcome;
+                typedef std::future<DescribeDBCustomDisasterRecoverGroupQuotaOutcome> DescribeDBCustomDisasterRecoverGroupQuotaOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::DescribeDBCustomDisasterRecoverGroupQuotaRequest&, DescribeDBCustomDisasterRecoverGroupQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBCustomDisasterRecoverGroupQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBCustomDisasterRecoverGroupsResponse> DescribeDBCustomDisasterRecoverGroupsOutcome;
+                typedef std::future<DescribeDBCustomDisasterRecoverGroupsOutcome> DescribeDBCustomDisasterRecoverGroupsOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::DescribeDBCustomDisasterRecoverGroupsRequest&, DescribeDBCustomDisasterRecoverGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBCustomDisasterRecoverGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBCustomImagesResponse> DescribeDBCustomImagesOutcome;
                 typedef std::future<DescribeDBCustomImagesOutcome> DescribeDBCustomImagesOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::DescribeDBCustomImagesRequest&, DescribeDBCustomImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBCustomImagesAsyncHandler;
@@ -194,6 +225,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBCustomClusterTagsResponse> ModifyDBCustomClusterTagsOutcome;
                 typedef std::future<ModifyDBCustomClusterTagsOutcome> ModifyDBCustomClusterTagsOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::ModifyDBCustomClusterTagsRequest&, ModifyDBCustomClusterTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBCustomClusterTagsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBCustomDisasterRecoverGroupAttributeResponse> ModifyDBCustomDisasterRecoverGroupAttributeOutcome;
+                typedef std::future<ModifyDBCustomDisasterRecoverGroupAttributeOutcome> ModifyDBCustomDisasterRecoverGroupAttributeOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::ModifyDBCustomDisasterRecoverGroupAttributeRequest&, ModifyDBCustomDisasterRecoverGroupAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBCustomDisasterRecoverGroupAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBCustomDisasterRecoverGroupTagsResponse> ModifyDBCustomDisasterRecoverGroupTagsOutcome;
+                typedef std::future<ModifyDBCustomDisasterRecoverGroupTagsOutcome> ModifyDBCustomDisasterRecoverGroupTagsOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::ModifyDBCustomDisasterRecoverGroupTagsRequest&, ModifyDBCustomDisasterRecoverGroupTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBCustomDisasterRecoverGroupTagsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBCustomNodeAttributesResponse> ModifyDBCustomNodeAttributesOutcome;
                 typedef std::future<ModifyDBCustomNodeAttributesOutcome> ModifyDBCustomNodeAttributesOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::ModifyDBCustomNodeAttributesRequest&, ModifyDBCustomNodeAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBCustomNodeAttributesAsyncHandler;
@@ -203,6 +240,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBCustomNodeTagsResponse> ModifyDBCustomNodeTagsOutcome;
                 typedef std::future<ModifyDBCustomNodeTagsOutcome> ModifyDBCustomNodeTagsOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::ModifyDBCustomNodeTagsRequest&, ModifyDBCustomNodeTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBCustomNodeTagsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBCustomNodesDisasterRecoverGroupResponse> ModifyDBCustomNodesDisasterRecoverGroupOutcome;
+                typedef std::future<ModifyDBCustomNodesDisasterRecoverGroupOutcome> ModifyDBCustomNodesDisasterRecoverGroupOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::ModifyDBCustomNodesDisasterRecoverGroupRequest&, ModifyDBCustomNodesDisasterRecoverGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBCustomNodesDisasterRecoverGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstanceNameResponse> ModifyInstanceNameOutcome;
                 typedef std::future<ModifyInstanceNameOutcome> ModifyInstanceNameOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::ModifyInstanceNameRequest&, ModifyInstanceNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceNameAsyncHandler;
@@ -243,6 +283,15 @@ namespace TencentCloud
                 CreateDBCustomClusterOutcomeCallable CreateDBCustomClusterCallable(const Model::CreateDBCustomClusterRequest& request);
 
                 /**
+                 *该接口（CreateDBCustomDisasterRecoverGroup）用于创建 DB Custom 置放群组。
+                 * @param req CreateDBCustomDisasterRecoverGroupRequest
+                 * @return CreateDBCustomDisasterRecoverGroupOutcome
+                 */
+                CreateDBCustomDisasterRecoverGroupOutcome CreateDBCustomDisasterRecoverGroup(const Model::CreateDBCustomDisasterRecoverGroupRequest &request);
+                void CreateDBCustomDisasterRecoverGroupAsync(const Model::CreateDBCustomDisasterRecoverGroupRequest& request, const CreateDBCustomDisasterRecoverGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDBCustomDisasterRecoverGroupOutcomeCallable CreateDBCustomDisasterRecoverGroupCallable(const Model::CreateDBCustomDisasterRecoverGroupRequest& request);
+
+                /**
                  *该接口（CreateDBCustomNodes）用于创建 DB Custom 节点(需支付)。
                  * @param req CreateDBCustomNodesRequest
                  * @return CreateDBCustomNodesOutcome
@@ -250,6 +299,24 @@ namespace TencentCloud
                 CreateDBCustomNodesOutcome CreateDBCustomNodes(const Model::CreateDBCustomNodesRequest &request);
                 void CreateDBCustomNodesAsync(const Model::CreateDBCustomNodesRequest& request, const CreateDBCustomNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDBCustomNodesOutcomeCallable CreateDBCustomNodesCallable(const Model::CreateDBCustomNodesRequest& request);
+
+                /**
+                 *该接口（DeleteDBCustomDisasterRecoverGroups）用于删除 DB Custom 置放群组。
+                 * @param req DeleteDBCustomDisasterRecoverGroupsRequest
+                 * @return DeleteDBCustomDisasterRecoverGroupsOutcome
+                 */
+                DeleteDBCustomDisasterRecoverGroupsOutcome DeleteDBCustomDisasterRecoverGroups(const Model::DeleteDBCustomDisasterRecoverGroupsRequest &request);
+                void DeleteDBCustomDisasterRecoverGroupsAsync(const Model::DeleteDBCustomDisasterRecoverGroupsRequest& request, const DeleteDBCustomDisasterRecoverGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDBCustomDisasterRecoverGroupsOutcomeCallable DeleteDBCustomDisasterRecoverGroupsCallable(const Model::DeleteDBCustomDisasterRecoverGroupsRequest& request);
+
+                /**
+                 *该接口（DeleteDBCustomNodesDisasterRecoverGroup）用于移除 DB Custom 节点的置放群组。
+                 * @param req DeleteDBCustomNodesDisasterRecoverGroupRequest
+                 * @return DeleteDBCustomNodesDisasterRecoverGroupOutcome
+                 */
+                DeleteDBCustomNodesDisasterRecoverGroupOutcome DeleteDBCustomNodesDisasterRecoverGroup(const Model::DeleteDBCustomNodesDisasterRecoverGroupRequest &request);
+                void DeleteDBCustomNodesDisasterRecoverGroupAsync(const Model::DeleteDBCustomNodesDisasterRecoverGroupRequest& request, const DeleteDBCustomNodesDisasterRecoverGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDBCustomNodesDisasterRecoverGroupOutcomeCallable DeleteDBCustomNodesDisasterRecoverGroupCallable(const Model::DeleteDBCustomNodesDisasterRecoverGroupRequest& request);
 
                 /**
                  *该接口(DescribeDBCustomClusterDetail) 用于查询 DB Custom 集群的详情信息。
@@ -313,6 +380,24 @@ namespace TencentCloud
                 DescribeDBCustomClustersOutcome DescribeDBCustomClusters(const Model::DescribeDBCustomClustersRequest &request);
                 void DescribeDBCustomClustersAsync(const Model::DescribeDBCustomClustersRequest& request, const DescribeDBCustomClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBCustomClustersOutcomeCallable DescribeDBCustomClustersCallable(const Model::DescribeDBCustomClustersRequest& request);
+
+                /**
+                 *该接口（DescribeDBCustomDisasterRecoverGroupQuota）用于查询 DB Custom 置放群组配额。
+                 * @param req DescribeDBCustomDisasterRecoverGroupQuotaRequest
+                 * @return DescribeDBCustomDisasterRecoverGroupQuotaOutcome
+                 */
+                DescribeDBCustomDisasterRecoverGroupQuotaOutcome DescribeDBCustomDisasterRecoverGroupQuota(const Model::DescribeDBCustomDisasterRecoverGroupQuotaRequest &request);
+                void DescribeDBCustomDisasterRecoverGroupQuotaAsync(const Model::DescribeDBCustomDisasterRecoverGroupQuotaRequest& request, const DescribeDBCustomDisasterRecoverGroupQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBCustomDisasterRecoverGroupQuotaOutcomeCallable DescribeDBCustomDisasterRecoverGroupQuotaCallable(const Model::DescribeDBCustomDisasterRecoverGroupQuotaRequest& request);
+
+                /**
+                 *该接口（DescribeDBCustomDisasterRecoverGroups）用于查询 DB Custom 置放群组列表。
+                 * @param req DescribeDBCustomDisasterRecoverGroupsRequest
+                 * @return DescribeDBCustomDisasterRecoverGroupsOutcome
+                 */
+                DescribeDBCustomDisasterRecoverGroupsOutcome DescribeDBCustomDisasterRecoverGroups(const Model::DescribeDBCustomDisasterRecoverGroupsRequest &request);
+                void DescribeDBCustomDisasterRecoverGroupsAsync(const Model::DescribeDBCustomDisasterRecoverGroupsRequest& request, const DescribeDBCustomDisasterRecoverGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBCustomDisasterRecoverGroupsOutcomeCallable DescribeDBCustomDisasterRecoverGroupsCallable(const Model::DescribeDBCustomDisasterRecoverGroupsRequest& request);
 
                 /**
                  *该接口（DescribeDBCustomImages）用于查询 DB Custom 可用的操作系统镜像列表。
@@ -477,6 +562,24 @@ namespace TencentCloud
                 ModifyDBCustomClusterTagsOutcomeCallable ModifyDBCustomClusterTagsCallable(const Model::ModifyDBCustomClusterTagsRequest& request);
 
                 /**
+                 *该接口（ModifyDBCustomDisasterRecoverGroupAttribute）用于修改 DB Custom 置放群组的属性。
+                 * @param req ModifyDBCustomDisasterRecoverGroupAttributeRequest
+                 * @return ModifyDBCustomDisasterRecoverGroupAttributeOutcome
+                 */
+                ModifyDBCustomDisasterRecoverGroupAttributeOutcome ModifyDBCustomDisasterRecoverGroupAttribute(const Model::ModifyDBCustomDisasterRecoverGroupAttributeRequest &request);
+                void ModifyDBCustomDisasterRecoverGroupAttributeAsync(const Model::ModifyDBCustomDisasterRecoverGroupAttributeRequest& request, const ModifyDBCustomDisasterRecoverGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBCustomDisasterRecoverGroupAttributeOutcomeCallable ModifyDBCustomDisasterRecoverGroupAttributeCallable(const Model::ModifyDBCustomDisasterRecoverGroupAttributeRequest& request);
+
+                /**
+                 *该接口（ModifyDBCustomDisasterRecoverGroupTags）用于修改 DB Custom 置放群组绑定的标签。
+                 * @param req ModifyDBCustomDisasterRecoverGroupTagsRequest
+                 * @return ModifyDBCustomDisasterRecoverGroupTagsOutcome
+                 */
+                ModifyDBCustomDisasterRecoverGroupTagsOutcome ModifyDBCustomDisasterRecoverGroupTags(const Model::ModifyDBCustomDisasterRecoverGroupTagsRequest &request);
+                void ModifyDBCustomDisasterRecoverGroupTagsAsync(const Model::ModifyDBCustomDisasterRecoverGroupTagsRequest& request, const ModifyDBCustomDisasterRecoverGroupTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBCustomDisasterRecoverGroupTagsOutcomeCallable ModifyDBCustomDisasterRecoverGroupTagsCallable(const Model::ModifyDBCustomDisasterRecoverGroupTagsRequest& request);
+
+                /**
                  *该接口（ModifyDBCustomNodeAttributes）用于修改 DB Custom 节点的属性。
                  * @param req ModifyDBCustomNodeAttributesRequest
                  * @return ModifyDBCustomNodeAttributesOutcome
@@ -502,6 +605,15 @@ namespace TencentCloud
                 ModifyDBCustomNodeTagsOutcome ModifyDBCustomNodeTags(const Model::ModifyDBCustomNodeTagsRequest &request);
                 void ModifyDBCustomNodeTagsAsync(const Model::ModifyDBCustomNodeTagsRequest& request, const ModifyDBCustomNodeTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDBCustomNodeTagsOutcomeCallable ModifyDBCustomNodeTagsCallable(const Model::ModifyDBCustomNodeTagsRequest& request);
+
+                /**
+                 *该接口（ModifyDBCustomNodesDisasterRecoverGroup）用于修改 DB Custom 节点的置放群组。
+                 * @param req ModifyDBCustomNodesDisasterRecoverGroupRequest
+                 * @return ModifyDBCustomNodesDisasterRecoverGroupOutcome
+                 */
+                ModifyDBCustomNodesDisasterRecoverGroupOutcome ModifyDBCustomNodesDisasterRecoverGroup(const Model::ModifyDBCustomNodesDisasterRecoverGroupRequest &request);
+                void ModifyDBCustomNodesDisasterRecoverGroupAsync(const Model::ModifyDBCustomNodesDisasterRecoverGroupRequest& request, const ModifyDBCustomNodesDisasterRecoverGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBCustomNodesDisasterRecoverGroupOutcomeCallable ModifyDBCustomNodesDisasterRecoverGroupCallable(const Model::ModifyDBCustomNodesDisasterRecoverGroupRequest& request);
 
                 /**
                  *本接口用于修改集群名称

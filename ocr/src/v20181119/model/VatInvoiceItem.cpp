@@ -37,7 +37,12 @@ VatInvoiceItem::VatInvoiceItem() :
     m_arrivalPlaceHasBeenSet(false),
     m_transportItemsNameHasBeenSet(false),
     m_constructionPlaceHasBeenSet(false),
-    m_constructionNameHasBeenSet(false)
+    m_constructionNameHasBeenSet(false),
+    m_originalTaxRateHasBeenSet(false),
+    m_originalTaxAmountHasBeenSet(false),
+    m_zeroTaxRateMarkHasBeenSet(false),
+    m_taxIncludedUnitPriceHasBeenSet(false),
+    m_taxIncludedAmountHasBeenSet(false)
 {
 }
 
@@ -216,6 +221,56 @@ CoreInternalOutcome VatInvoiceItem::Deserialize(const rapidjson::Value &value)
         m_constructionNameHasBeenSet = true;
     }
 
+    if (value.HasMember("OriginalTaxRate") && !value["OriginalTaxRate"].IsNull())
+    {
+        if (!value["OriginalTaxRate"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItem.OriginalTaxRate` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originalTaxRate = string(value["OriginalTaxRate"].GetString());
+        m_originalTaxRateHasBeenSet = true;
+    }
+
+    if (value.HasMember("OriginalTaxAmount") && !value["OriginalTaxAmount"].IsNull())
+    {
+        if (!value["OriginalTaxAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItem.OriginalTaxAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originalTaxAmount = string(value["OriginalTaxAmount"].GetString());
+        m_originalTaxAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("ZeroTaxRateMark") && !value["ZeroTaxRateMark"].IsNull())
+    {
+        if (!value["ZeroTaxRateMark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItem.ZeroTaxRateMark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zeroTaxRateMark = string(value["ZeroTaxRateMark"].GetString());
+        m_zeroTaxRateMarkHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaxIncludedUnitPrice") && !value["TaxIncludedUnitPrice"].IsNull())
+    {
+        if (!value["TaxIncludedUnitPrice"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItem.TaxIncludedUnitPrice` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taxIncludedUnitPrice = string(value["TaxIncludedUnitPrice"].GetString());
+        m_taxIncludedUnitPriceHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaxIncludedAmount") && !value["TaxIncludedAmount"].IsNull())
+    {
+        if (!value["TaxIncludedAmount"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItem.TaxIncludedAmount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_taxIncludedAmount = value["TaxIncludedAmount"].GetDouble();
+        m_taxIncludedAmountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +412,46 @@ void VatInvoiceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ConstructionName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_constructionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originalTaxRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginalTaxRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originalTaxRate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originalTaxAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginalTaxAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originalTaxAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zeroTaxRateMarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZeroTaxRateMark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zeroTaxRateMark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taxIncludedUnitPriceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaxIncludedUnitPrice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taxIncludedUnitPrice.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taxIncludedAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaxIncludedAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taxIncludedAmount, allocator);
     }
 
 }
@@ -632,5 +727,85 @@ void VatInvoiceItem::SetConstructionName(const string& _constructionName)
 bool VatInvoiceItem::ConstructionNameHasBeenSet() const
 {
     return m_constructionNameHasBeenSet;
+}
+
+string VatInvoiceItem::GetOriginalTaxRate() const
+{
+    return m_originalTaxRate;
+}
+
+void VatInvoiceItem::SetOriginalTaxRate(const string& _originalTaxRate)
+{
+    m_originalTaxRate = _originalTaxRate;
+    m_originalTaxRateHasBeenSet = true;
+}
+
+bool VatInvoiceItem::OriginalTaxRateHasBeenSet() const
+{
+    return m_originalTaxRateHasBeenSet;
+}
+
+string VatInvoiceItem::GetOriginalTaxAmount() const
+{
+    return m_originalTaxAmount;
+}
+
+void VatInvoiceItem::SetOriginalTaxAmount(const string& _originalTaxAmount)
+{
+    m_originalTaxAmount = _originalTaxAmount;
+    m_originalTaxAmountHasBeenSet = true;
+}
+
+bool VatInvoiceItem::OriginalTaxAmountHasBeenSet() const
+{
+    return m_originalTaxAmountHasBeenSet;
+}
+
+string VatInvoiceItem::GetZeroTaxRateMark() const
+{
+    return m_zeroTaxRateMark;
+}
+
+void VatInvoiceItem::SetZeroTaxRateMark(const string& _zeroTaxRateMark)
+{
+    m_zeroTaxRateMark = _zeroTaxRateMark;
+    m_zeroTaxRateMarkHasBeenSet = true;
+}
+
+bool VatInvoiceItem::ZeroTaxRateMarkHasBeenSet() const
+{
+    return m_zeroTaxRateMarkHasBeenSet;
+}
+
+string VatInvoiceItem::GetTaxIncludedUnitPrice() const
+{
+    return m_taxIncludedUnitPrice;
+}
+
+void VatInvoiceItem::SetTaxIncludedUnitPrice(const string& _taxIncludedUnitPrice)
+{
+    m_taxIncludedUnitPrice = _taxIncludedUnitPrice;
+    m_taxIncludedUnitPriceHasBeenSet = true;
+}
+
+bool VatInvoiceItem::TaxIncludedUnitPriceHasBeenSet() const
+{
+    return m_taxIncludedUnitPriceHasBeenSet;
+}
+
+double VatInvoiceItem::GetTaxIncludedAmount() const
+{
+    return m_taxIncludedAmount;
+}
+
+void VatInvoiceItem::SetTaxIncludedAmount(const double& _taxIncludedAmount)
+{
+    m_taxIncludedAmount = _taxIncludedAmount;
+    m_taxIncludedAmountHasBeenSet = true;
+}
+
+bool VatInvoiceItem::TaxIncludedAmountHasBeenSet() const
+{
+    return m_taxIncludedAmountHasBeenSet;
 }
 

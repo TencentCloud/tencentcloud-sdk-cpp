@@ -31,6 +31,7 @@
 #include <tencentcloud/clb/v20180317/model/ServiceEndPoints.h>
 #include <tencentcloud/clb/v20180317/model/TagInfo.h>
 #include <tencentcloud/clb/v20180317/model/ModelRouterBillingConfigOutput.h>
+#include <tencentcloud/clb/v20180317/model/EmbeddingConfig.h>
 
 
 namespace TencentCloud
@@ -594,6 +595,27 @@ namespace TencentCloud
                      */
                     bool BillingConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Embedding配置</p>
+                     * @return EmbeddingConfig <p>Embedding配置</p>
+                     * 
+                     */
+                    EmbeddingConfig GetEmbeddingConfig() const;
+
+                    /**
+                     * 设置<p>Embedding配置</p>
+                     * @param _embeddingConfig <p>Embedding配置</p>
+                     * 
+                     */
+                    void SetEmbeddingConfig(const EmbeddingConfig& _embeddingConfig);
+
+                    /**
+                     * 判断参数 EmbeddingConfig 是否已赋值
+                     * @return EmbeddingConfig 是否已赋值
+                     * 
+                     */
+                    bool EmbeddingConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -749,6 +771,12 @@ namespace TencentCloud
                      */
                     ModelRouterBillingConfigOutput m_billingConfig;
                     bool m_billingConfigHasBeenSet;
+
+                    /**
+                     * <p>Embedding配置</p>
+                     */
+                    EmbeddingConfig m_embeddingConfig;
+                    bool m_embeddingConfigHasBeenSet;
 
                 };
             }

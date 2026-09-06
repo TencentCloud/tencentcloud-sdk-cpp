@@ -25,6 +25,7 @@
 #include <tencentcloud/mps/v20190612/model/CloneViralAIGC.h>
 #include <tencentcloud/mps/v20190612/model/CloneViralContent.h>
 #include <tencentcloud/mps/v20190612/model/CloneViralPersona.h>
+#include <tencentcloud/mps/v20190612/model/CloneViralOutputOption.h>
 
 
 namespace TencentCloud
@@ -151,6 +152,27 @@ namespace TencentCloud
                      */
                     bool PersonaHasBeenSet() const;
 
+                    /**
+                     * 获取<p>输出相关参数</p>
+                     * @return Output <p>输出相关参数</p>
+                     * 
+                     */
+                    CloneViralOutputOption GetOutput() const;
+
+                    /**
+                     * 设置<p>输出相关参数</p>
+                     * @param _output <p>输出相关参数</p>
+                     * 
+                     */
+                    void SetOutput(const CloneViralOutputOption& _output);
+
+                    /**
+                     * 判断参数 Output 是否已赋值
+                     * @return Output 是否已赋值
+                     * 
+                     */
+                    bool OutputHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +204,12 @@ namespace TencentCloud
                      */
                     CloneViralPersona m_persona;
                     bool m_personaHasBeenSet;
+
+                    /**
+                     * <p>输出相关参数</p>
+                     */
+                    CloneViralOutputOption m_output;
+                    bool m_outputHasBeenSet;
 
                 };
             }

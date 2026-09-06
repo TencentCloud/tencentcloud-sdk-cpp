@@ -294,6 +294,27 @@ namespace TencentCloud
                      */
                     bool CMRPrivateNetworkTunnelIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>对应模型的能力</p><p>枚举值：</p><ul><li>chat： 生文能力</li><li>embedding： 向量能力</li></ul>
+                     * @return Capability <p>对应模型的能力</p><p>枚举值：</p><ul><li>chat： 生文能力</li><li>embedding： 向量能力</li></ul>
+                     * 
+                     */
+                    std::string GetCapability() const;
+
+                    /**
+                     * 设置<p>对应模型的能力</p><p>枚举值：</p><ul><li>chat： 生文能力</li><li>embedding： 向量能力</li></ul>
+                     * @param _capability <p>对应模型的能力</p><p>枚举值：</p><ul><li>chat： 生文能力</li><li>embedding： 向量能力</li></ul>
+                     * 
+                     */
+                    void SetCapability(const std::string& _capability);
+
+                    /**
+                     * 判断参数 Capability 是否已赋值
+                     * @return Capability 是否已赋值
+                     * 
+                     */
+                    bool CapabilityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +388,12 @@ namespace TencentCloud
                      */
                     std::string m_cMRPrivateNetworkTunnelId;
                     bool m_cMRPrivateNetworkTunnelIdHasBeenSet;
+
+                    /**
+                     * <p>对应模型的能力</p><p>枚举值：</p><ul><li>chat： 生文能力</li><li>embedding： 向量能力</li></ul>
+                     */
+                    std::string m_capability;
+                    bool m_capabilityHasBeenSet;
 
                 };
             }

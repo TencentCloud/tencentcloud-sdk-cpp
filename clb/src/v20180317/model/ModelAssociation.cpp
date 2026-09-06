@@ -24,7 +24,8 @@ ModelAssociation::ModelAssociation() :
     m_inputModalitiesUnionHasBeenSet(false),
     m_modelNameHasBeenSet(false),
     m_serviceProvidersHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_capabilityHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,16 @@ CoreInternalOutcome ModelAssociation::Deserialize(const rapidjson::Value &value)
         m_typeHasBeenSet = true;
     }
 
+    if (value.HasMember("Capability") && !value["Capability"].IsNull())
+    {
+        if (!value["Capability"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelAssociation.Capability` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_capability = string(value["Capability"].GetString());
+        m_capabilityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -135,6 +146,14 @@ void ModelAssociation::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_capabilityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Capability";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_capability.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -202,5 +221,21 @@ void ModelAssociation::SetType(const string& _type)
 bool ModelAssociation::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string ModelAssociation::GetCapability() const
+{
+    return m_capability;
+}
+
+void ModelAssociation::SetCapability(const string& _capability)
+{
+    m_capability = _capability;
+    m_capabilityHasBeenSet = true;
+}
+
+bool ModelAssociation::CapabilityHasBeenSet() const
+{
+    return m_capabilityHasBeenSet;
 }
 

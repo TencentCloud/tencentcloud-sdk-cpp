@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool LanguageBoostHasBeenSet() const;
 
                     /**
-                     * 获取<p>输出相关参数</p><p>可以指定输出形式等。默认输出音频base64。</p>
-                     * @return Output <p>输出相关参数</p><p>可以指定输出形式等。默认输出音频base64。</p>
+                     * 获取<p>输出相关参数</p><p>可以指定输出形式等。默认输出音频URL。</p>
+                     * @return Output <p>输出相关参数</p><p>可以指定输出形式等。默认输出音频URL。</p>
                      * 
                      */
                     TextToSpeechSyncOutputOption GetOutput() const;
 
                     /**
-                     * 设置<p>输出相关参数</p><p>可以指定输出形式等。默认输出音频base64。</p>
-                     * @param _output <p>输出相关参数</p><p>可以指定输出形式等。默认输出音频base64。</p>
+                     * 设置<p>输出相关参数</p><p>可以指定输出形式等。默认输出音频URL。</p>
+                     * @param _output <p>输出相关参数</p><p>可以指定输出形式等。默认输出音频URL。</p>
                      * 
                      */
                     void SetOutput(const TextToSpeechSyncOutputOption& _output);
@@ -196,7 +196,7 @@ namespace TencentCloud
                     bool m_languageBoostHasBeenSet;
 
                     /**
-                     * <p>输出相关参数</p><p>可以指定输出形式等。默认输出音频base64。</p>
+                     * <p>输出相关参数</p><p>可以指定输出形式等。默认输出音频URL。</p>
                      */
                     TextToSpeechSyncOutputOption m_output;
                     bool m_outputHasBeenSet;

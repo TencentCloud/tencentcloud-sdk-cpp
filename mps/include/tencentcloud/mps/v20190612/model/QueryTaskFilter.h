@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>任务类型</p>
-                     * @return TaskType <p>任务类型</p>
+                     * 获取<p>任务类型</p><p>枚举值：</p><ul><li>RedrawVideo： 视频重绘</li><li>AIDrama： AI漫剧</li><li>DocGenVideo： 文档生视频</li><li>FissionVideo： 视频裂变</li></ul>
+                     * @return TaskType <p>任务类型</p><p>枚举值：</p><ul><li>RedrawVideo： 视频重绘</li><li>AIDrama： AI漫剧</li><li>DocGenVideo： 文档生视频</li><li>FissionVideo： 视频裂变</li></ul>
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置<p>任务类型</p>
-                     * @param _taskType <p>任务类型</p>
+                     * 设置<p>任务类型</p><p>枚举值：</p><ul><li>RedrawVideo： 视频重绘</li><li>AIDrama： AI漫剧</li><li>DocGenVideo： 文档生视频</li><li>FissionVideo： 视频裂变</li></ul>
+                     * @param _taskType <p>任务类型</p><p>枚举值：</p><ul><li>RedrawVideo： 视频重绘</li><li>AIDrama： AI漫剧</li><li>DocGenVideo： 文档生视频</li><li>FissionVideo： 视频裂变</li></ul>
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -151,6 +151,69 @@ namespace TencentCloud
                      */
                     bool RatioHasBeenSet() const;
 
+                    /**
+                     * 获取<p>任务执行模式</p><p>枚举值：</p><ul><li>auto： 直接生成</li><li>phased： 确认后再生成</li></ul>
+                     * @return ExecuteMode <p>任务执行模式</p><p>枚举值：</p><ul><li>auto： 直接生成</li><li>phased： 确认后再生成</li></ul>
+                     * 
+                     */
+                    std::string GetExecuteMode() const;
+
+                    /**
+                     * 设置<p>任务执行模式</p><p>枚举值：</p><ul><li>auto： 直接生成</li><li>phased： 确认后再生成</li></ul>
+                     * @param _executeMode <p>任务执行模式</p><p>枚举值：</p><ul><li>auto： 直接生成</li><li>phased： 确认后再生成</li></ul>
+                     * 
+                     */
+                    void SetExecuteMode(const std::string& _executeMode);
+
+                    /**
+                     * 判断参数 ExecuteMode 是否已赋值
+                     * @return ExecuteMode 是否已赋值
+                     * 
+                     */
+                    bool ExecuteModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>裂变任务视频类型过滤: ugc、talk、display、unboxing、reaction</p><p>枚举值：</p><ul><li>ugc： UGC种草</li><li>talk： 产品口播</li><li>display： 产品展示</li><li>unboxing： 开箱分享</li><li>reaction： 反应展示</li></ul>
+                     * @return VideoType <p>裂变任务视频类型过滤: ugc、talk、display、unboxing、reaction</p><p>枚举值：</p><ul><li>ugc： UGC种草</li><li>talk： 产品口播</li><li>display： 产品展示</li><li>unboxing： 开箱分享</li><li>reaction： 反应展示</li></ul>
+                     * 
+                     */
+                    std::string GetVideoType() const;
+
+                    /**
+                     * 设置<p>裂变任务视频类型过滤: ugc、talk、display、unboxing、reaction</p><p>枚举值：</p><ul><li>ugc： UGC种草</li><li>talk： 产品口播</li><li>display： 产品展示</li><li>unboxing： 开箱分享</li><li>reaction： 反应展示</li></ul>
+                     * @param _videoType <p>裂变任务视频类型过滤: ugc、talk、display、unboxing、reaction</p><p>枚举值：</p><ul><li>ugc： UGC种草</li><li>talk： 产品口播</li><li>display： 产品展示</li><li>unboxing： 开箱分享</li><li>reaction： 反应展示</li></ul>
+                     * 
+                     */
+                    void SetVideoType(const std::string& _videoType);
+
+                    /**
+                     * 判断参数 VideoType 是否已赋值
+                     * @return VideoType 是否已赋值
+                     * 
+                     */
+                    bool VideoTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模型类型</p><p>枚举值：</p><ul><li>standard： 标准版</li><li>flagship： 高级版</li></ul>
+                     * @return ModelTier <p>模型类型</p><p>枚举值：</p><ul><li>standard： 标准版</li><li>flagship： 高级版</li></ul>
+                     * 
+                     */
+                    std::string GetModelTier() const;
+
+                    /**
+                     * 设置<p>模型类型</p><p>枚举值：</p><ul><li>standard： 标准版</li><li>flagship： 高级版</li></ul>
+                     * @param _modelTier <p>模型类型</p><p>枚举值：</p><ul><li>standard： 标准版</li><li>flagship： 高级版</li></ul>
+                     * 
+                     */
+                    void SetModelTier(const std::string& _modelTier);
+
+                    /**
+                     * 判断参数 ModelTier 是否已赋值
+                     * @return ModelTier 是否已赋值
+                     * 
+                     */
+                    bool ModelTierHasBeenSet() const;
+
                 private:
 
                     /**
@@ -160,7 +223,7 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * <p>任务类型</p>
+                     * <p>任务类型</p><p>枚举值：</p><ul><li>RedrawVideo： 视频重绘</li><li>AIDrama： AI漫剧</li><li>DocGenVideo： 文档生视频</li><li>FissionVideo： 视频裂变</li></ul>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
@@ -182,6 +245,24 @@ namespace TencentCloud
                      */
                     std::string m_ratio;
                     bool m_ratioHasBeenSet;
+
+                    /**
+                     * <p>任务执行模式</p><p>枚举值：</p><ul><li>auto： 直接生成</li><li>phased： 确认后再生成</li></ul>
+                     */
+                    std::string m_executeMode;
+                    bool m_executeModeHasBeenSet;
+
+                    /**
+                     * <p>裂变任务视频类型过滤: ugc、talk、display、unboxing、reaction</p><p>枚举值：</p><ul><li>ugc： UGC种草</li><li>talk： 产品口播</li><li>display： 产品展示</li><li>unboxing： 开箱分享</li><li>reaction： 反应展示</li></ul>
+                     */
+                    std::string m_videoType;
+                    bool m_videoTypeHasBeenSet;
+
+                    /**
+                     * <p>模型类型</p><p>枚举值：</p><ul><li>standard： 标准版</li><li>flagship： 高级版</li></ul>
+                     */
+                    std::string m_modelTier;
+                    bool m_modelTierHasBeenSet;
 
                 };
             }

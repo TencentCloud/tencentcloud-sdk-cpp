@@ -1348,6 +1348,48 @@ namespace TencentCloud
                      */
                     bool DiskHealthIssuesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>所在节点组ID</p>
+                     * @return NodeGroupId <p>所在节点组ID</p>
+                     * 
+                     */
+                    std::string GetNodeGroupId() const;
+
+                    /**
+                     * 设置<p>所在节点组ID</p>
+                     * @param _nodeGroupId <p>所在节点组ID</p>
+                     * 
+                     */
+                    void SetNodeGroupId(const std::string& _nodeGroupId);
+
+                    /**
+                     * 判断参数 NodeGroupId 是否已赋值
+                     * @return NodeGroupId 是否已赋值
+                     * 
+                     */
+                    bool NodeGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>所在节点组名称</p>
+                     * @return NodeGroupName <p>所在节点组名称</p>
+                     * 
+                     */
+                    std::string GetNodeGroupName() const;
+
+                    /**
+                     * 设置<p>所在节点组名称</p>
+                     * @param _nodeGroupName <p>所在节点组名称</p>
+                     * 
+                     */
+                    void SetNodeGroupName(const std::string& _nodeGroupName);
+
+                    /**
+                     * 判断参数 NodeGroupName 是否已赋值
+                     * @return NodeGroupName 是否已赋值
+                     * 
+                     */
+                    bool NodeGroupNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1719,6 +1761,18 @@ namespace TencentCloud
                      */
                     std::vector<DiskHealthIssue> m_diskHealthIssues;
                     bool m_diskHealthIssuesHasBeenSet;
+
+                    /**
+                     * <p>所在节点组ID</p>
+                     */
+                    std::string m_nodeGroupId;
+                    bool m_nodeGroupIdHasBeenSet;
+
+                    /**
+                     * <p>所在节点组名称</p>
+                     */
+                    std::string m_nodeGroupName;
+                    bool m_nodeGroupNameHasBeenSet;
 
                 };
             }

@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取航段序号
+                     * 获取<p>航段序号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FlightSegment 航段序号
+                     * @return FlightSegment <p>航段序号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlightSegment() const;
 
                     /**
-                     * 设置航段序号
+                     * 设置<p>航段序号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _flightSegment 航段序号
+                     * @param _flightSegment <p>航段序号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool FlightSegmentHasBeenSet() const;
 
                     /**
-                     * 获取始发站
+                     * 获取<p>始发站</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StationGetOn 始发站
+                     * @return StationGetOn <p>始发站</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStationGetOn() const;
 
                     /**
-                     * 设置始发站
+                     * 设置<p>始发站</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _stationGetOn 始发站
+                     * @param _stationGetOn <p>始发站</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool StationGetOnHasBeenSet() const;
 
                     /**
-                     * 获取目的站
+                     * 获取<p>目的站</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StationGetOff 目的站
+                     * @return StationGetOff <p>目的站</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStationGetOff() const;
 
                     /**
-                     * 设置目的站
+                     * 设置<p>目的站</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _stationGetOff 目的站
+                     * @param _stationGetOff <p>目的站</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool StationGetOffHasBeenSet() const;
 
                     /**
-                     * 获取承运人
+                     * 获取<p>承运人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Carrier 承运人
+                     * @return Carrier <p>承运人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCarrier() const;
 
                     /**
-                     * 设置承运人
+                     * 设置<p>承运人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _carrier 承运人
+                     * @param _carrier <p>承运人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool CarrierHasBeenSet() const;
 
                     /**
-                     * 获取航班号
+                     * 获取<p>航班号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FlightNumber 航班号
+                     * @return FlightNumber <p>航班号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlightNumber() const;
 
                     /**
-                     * 设置航班号
+                     * 设置<p>航班号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _flightNumber 航班号
+                     * @param _flightNumber <p>航班号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool FlightNumberHasBeenSet() const;
 
                     /**
-                     * 获取座位等级
+                     * 获取<p>座位等级</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SeatLevel 座位等级
+                     * @return SeatLevel <p>座位等级</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSeatLevel() const;
 
                     /**
-                     * 设置座位等级
+                     * 设置<p>座位等级</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _seatLevel 座位等级
+                     * @param _seatLevel <p>座位等级</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool SeatLevelHasBeenSet() const;
 
                     /**
-                     * 获取承运日期
+                     * 获取<p>承运日期</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FlightDate 承运日期
+                     * @return FlightDate <p>承运日期</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlightDate() const;
 
                     /**
-                     * 设置承运日期
+                     * 设置<p>承运日期</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _flightDate 承运日期
+                     * @param _flightDate <p>承运日期</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool FlightDateHasBeenSet() const;
 
                     /**
-                     * 获取起飞时间
+                     * 获取<p>起飞时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DepartureTime 起飞时间
+                     * @return DepartureTime <p>起飞时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDepartureTime() const;
 
                     /**
-                     * 设置起飞时间
+                     * 设置<p>起飞时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _departureTime 起飞时间
+                     * @param _departureTime <p>起飞时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool DepartureTimeHasBeenSet() const;
 
                     /**
-                     * 获取客票级别/客票类别
+                     * 获取<p>客票级别/客票类别</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FareBasis 客票级别/客票类别
+                     * @return FareBasis <p>客票级别/客票类别</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFareBasis() const;
 
                     /**
-                     * 设置客票级别/客票类别
+                     * 设置<p>客票级别/客票类别</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fareBasis 客票级别/客票类别
+                     * @param _fareBasis <p>客票级别/客票类别</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -274,63 +274,63 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 航段序号
+                     * <p>航段序号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flightSegment;
                     bool m_flightSegmentHasBeenSet;
 
                     /**
-                     * 始发站
+                     * <p>始发站</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stationGetOn;
                     bool m_stationGetOnHasBeenSet;
 
                     /**
-                     * 目的站
+                     * <p>目的站</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stationGetOff;
                     bool m_stationGetOffHasBeenSet;
 
                     /**
-                     * 承运人
+                     * <p>承运人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_carrier;
                     bool m_carrierHasBeenSet;
 
                     /**
-                     * 航班号
+                     * <p>航班号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flightNumber;
                     bool m_flightNumberHasBeenSet;
 
                     /**
-                     * 座位等级
+                     * <p>座位等级</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_seatLevel;
                     bool m_seatLevelHasBeenSet;
 
                     /**
-                     * 承运日期
+                     * <p>承运日期</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flightDate;
                     bool m_flightDateHasBeenSet;
 
                     /**
-                     * 起飞时间
+                     * <p>起飞时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_departureTime;
                     bool m_departureTimeHasBeenSet;
 
                     /**
-                     * 客票级别/客票类别
+                     * <p>客票级别/客票类别</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fareBasis;

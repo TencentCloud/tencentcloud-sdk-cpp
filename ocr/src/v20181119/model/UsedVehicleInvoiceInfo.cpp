@@ -44,7 +44,18 @@ UsedVehicleInvoiceInfo::UsedVehicleInvoiceInfo() :
     m_marketTaxpayerNumHasBeenSet(false),
     m_marketAddressHasBeenSet(false),
     m_marketBankAccountHasBeenSet(false),
-    m_marketTelHasBeenSet(false)
+    m_marketTelHasBeenSet(false),
+    m_vehicleTotalPriceCNHasBeenSet(false),
+    m_invoiceRiskLevelHasBeenSet(false),
+    m_carTypeHasBeenSet(false),
+    m_plateModelHasBeenSet(false),
+    m_abandonerNameHasBeenSet(false),
+    m_abandonDateHasBeenSet(false),
+    m_issuerTypeHasBeenSet(false),
+    m_issuerTaxCodeHasBeenSet(false),
+    m_customCodeHasBeenSet(false),
+    m_taxClassifyCodeHasBeenSet(false),
+    m_zeroTaxRateMarkHasBeenSet(false)
 {
 }
 
@@ -293,6 +304,116 @@ CoreInternalOutcome UsedVehicleInvoiceInfo::Deserialize(const rapidjson::Value &
         m_marketTelHasBeenSet = true;
     }
 
+    if (value.HasMember("VehicleTotalPriceCN") && !value["VehicleTotalPriceCN"].IsNull())
+    {
+        if (!value["VehicleTotalPriceCN"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.VehicleTotalPriceCN` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vehicleTotalPriceCN = string(value["VehicleTotalPriceCN"].GetString());
+        m_vehicleTotalPriceCNHasBeenSet = true;
+    }
+
+    if (value.HasMember("InvoiceRiskLevel") && !value["InvoiceRiskLevel"].IsNull())
+    {
+        if (!value["InvoiceRiskLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.InvoiceRiskLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_invoiceRiskLevel = string(value["InvoiceRiskLevel"].GetString());
+        m_invoiceRiskLevelHasBeenSet = true;
+    }
+
+    if (value.HasMember("CarType") && !value["CarType"].IsNull())
+    {
+        if (!value["CarType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.CarType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_carType = string(value["CarType"].GetString());
+        m_carTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PlateModel") && !value["PlateModel"].IsNull())
+    {
+        if (!value["PlateModel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.PlateModel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_plateModel = string(value["PlateModel"].GetString());
+        m_plateModelHasBeenSet = true;
+    }
+
+    if (value.HasMember("AbandonerName") && !value["AbandonerName"].IsNull())
+    {
+        if (!value["AbandonerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.AbandonerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_abandonerName = string(value["AbandonerName"].GetString());
+        m_abandonerNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AbandonDate") && !value["AbandonDate"].IsNull())
+    {
+        if (!value["AbandonDate"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.AbandonDate` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_abandonDate = string(value["AbandonDate"].GetString());
+        m_abandonDateHasBeenSet = true;
+    }
+
+    if (value.HasMember("IssuerType") && !value["IssuerType"].IsNull())
+    {
+        if (!value["IssuerType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.IssuerType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_issuerType = string(value["IssuerType"].GetString());
+        m_issuerTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IssuerTaxCode") && !value["IssuerTaxCode"].IsNull())
+    {
+        if (!value["IssuerTaxCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.IssuerTaxCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_issuerTaxCode = string(value["IssuerTaxCode"].GetString());
+        m_issuerTaxCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomCode") && !value["CustomCode"].IsNull())
+    {
+        if (!value["CustomCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.CustomCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customCode = string(value["CustomCode"].GetString());
+        m_customCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaxClassifyCode") && !value["TaxClassifyCode"].IsNull())
+    {
+        if (!value["TaxClassifyCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.TaxClassifyCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taxClassifyCode = string(value["TaxClassifyCode"].GetString());
+        m_taxClassifyCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ZeroTaxRateMark") && !value["ZeroTaxRateMark"].IsNull())
+    {
+        if (!value["ZeroTaxRateMark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedVehicleInvoiceInfo.ZeroTaxRateMark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zeroTaxRateMark = string(value["ZeroTaxRateMark"].GetString());
+        m_zeroTaxRateMarkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -490,6 +611,94 @@ void UsedVehicleInvoiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "MarketTel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_marketTel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vehicleTotalPriceCNHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VehicleTotalPriceCN";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vehicleTotalPriceCN.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_invoiceRiskLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvoiceRiskLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_invoiceRiskLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_carTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CarType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_carType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_plateModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlateModel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_plateModel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_abandonerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AbandonerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_abandonerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_abandonDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AbandonDate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_abandonDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_issuerTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IssuerType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_issuerType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_issuerTaxCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IssuerTaxCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_issuerTaxCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taxClassifyCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaxClassifyCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taxClassifyCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zeroTaxRateMarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZeroTaxRateMark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zeroTaxRateMark.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -877,5 +1086,181 @@ void UsedVehicleInvoiceInfo::SetMarketTel(const string& _marketTel)
 bool UsedVehicleInvoiceInfo::MarketTelHasBeenSet() const
 {
     return m_marketTelHasBeenSet;
+}
+
+string UsedVehicleInvoiceInfo::GetVehicleTotalPriceCN() const
+{
+    return m_vehicleTotalPriceCN;
+}
+
+void UsedVehicleInvoiceInfo::SetVehicleTotalPriceCN(const string& _vehicleTotalPriceCN)
+{
+    m_vehicleTotalPriceCN = _vehicleTotalPriceCN;
+    m_vehicleTotalPriceCNHasBeenSet = true;
+}
+
+bool UsedVehicleInvoiceInfo::VehicleTotalPriceCNHasBeenSet() const
+{
+    return m_vehicleTotalPriceCNHasBeenSet;
+}
+
+string UsedVehicleInvoiceInfo::GetInvoiceRiskLevel() const
+{
+    return m_invoiceRiskLevel;
+}
+
+void UsedVehicleInvoiceInfo::SetInvoiceRiskLevel(const string& _invoiceRiskLevel)
+{
+    m_invoiceRiskLevel = _invoiceRiskLevel;
+    m_invoiceRiskLevelHasBeenSet = true;
+}
+
+bool UsedVehicleInvoiceInfo::InvoiceRiskLevelHasBeenSet() const
+{
+    return m_invoiceRiskLevelHasBeenSet;
+}
+
+string UsedVehicleInvoiceInfo::GetCarType() const
+{
+    return m_carType;
+}
+
+void UsedVehicleInvoiceInfo::SetCarType(const string& _carType)
+{
+    m_carType = _carType;
+    m_carTypeHasBeenSet = true;
+}
+
+bool UsedVehicleInvoiceInfo::CarTypeHasBeenSet() const
+{
+    return m_carTypeHasBeenSet;
+}
+
+string UsedVehicleInvoiceInfo::GetPlateModel() const
+{
+    return m_plateModel;
+}
+
+void UsedVehicleInvoiceInfo::SetPlateModel(const string& _plateModel)
+{
+    m_plateModel = _plateModel;
+    m_plateModelHasBeenSet = true;
+}
+
+bool UsedVehicleInvoiceInfo::PlateModelHasBeenSet() const
+{
+    return m_plateModelHasBeenSet;
+}
+
+string UsedVehicleInvoiceInfo::GetAbandonerName() const
+{
+    return m_abandonerName;
+}
+
+void UsedVehicleInvoiceInfo::SetAbandonerName(const string& _abandonerName)
+{
+    m_abandonerName = _abandonerName;
+    m_abandonerNameHasBeenSet = true;
+}
+
+bool UsedVehicleInvoiceInfo::AbandonerNameHasBeenSet() const
+{
+    return m_abandonerNameHasBeenSet;
+}
+
+string UsedVehicleInvoiceInfo::GetAbandonDate() const
+{
+    return m_abandonDate;
+}
+
+void UsedVehicleInvoiceInfo::SetAbandonDate(const string& _abandonDate)
+{
+    m_abandonDate = _abandonDate;
+    m_abandonDateHasBeenSet = true;
+}
+
+bool UsedVehicleInvoiceInfo::AbandonDateHasBeenSet() const
+{
+    return m_abandonDateHasBeenSet;
+}
+
+string UsedVehicleInvoiceInfo::GetIssuerType() const
+{
+    return m_issuerType;
+}
+
+void UsedVehicleInvoiceInfo::SetIssuerType(const string& _issuerType)
+{
+    m_issuerType = _issuerType;
+    m_issuerTypeHasBeenSet = true;
+}
+
+bool UsedVehicleInvoiceInfo::IssuerTypeHasBeenSet() const
+{
+    return m_issuerTypeHasBeenSet;
+}
+
+string UsedVehicleInvoiceInfo::GetIssuerTaxCode() const
+{
+    return m_issuerTaxCode;
+}
+
+void UsedVehicleInvoiceInfo::SetIssuerTaxCode(const string& _issuerTaxCode)
+{
+    m_issuerTaxCode = _issuerTaxCode;
+    m_issuerTaxCodeHasBeenSet = true;
+}
+
+bool UsedVehicleInvoiceInfo::IssuerTaxCodeHasBeenSet() const
+{
+    return m_issuerTaxCodeHasBeenSet;
+}
+
+string UsedVehicleInvoiceInfo::GetCustomCode() const
+{
+    return m_customCode;
+}
+
+void UsedVehicleInvoiceInfo::SetCustomCode(const string& _customCode)
+{
+    m_customCode = _customCode;
+    m_customCodeHasBeenSet = true;
+}
+
+bool UsedVehicleInvoiceInfo::CustomCodeHasBeenSet() const
+{
+    return m_customCodeHasBeenSet;
+}
+
+string UsedVehicleInvoiceInfo::GetTaxClassifyCode() const
+{
+    return m_taxClassifyCode;
+}
+
+void UsedVehicleInvoiceInfo::SetTaxClassifyCode(const string& _taxClassifyCode)
+{
+    m_taxClassifyCode = _taxClassifyCode;
+    m_taxClassifyCodeHasBeenSet = true;
+}
+
+bool UsedVehicleInvoiceInfo::TaxClassifyCodeHasBeenSet() const
+{
+    return m_taxClassifyCodeHasBeenSet;
+}
+
+string UsedVehicleInvoiceInfo::GetZeroTaxRateMark() const
+{
+    return m_zeroTaxRateMark;
+}
+
+void UsedVehicleInvoiceInfo::SetZeroTaxRateMark(const string& _zeroTaxRateMark)
+{
+    m_zeroTaxRateMark = _zeroTaxRateMark;
+    m_zeroTaxRateMarkHasBeenSet = true;
+}
+
+bool UsedVehicleInvoiceInfo::ZeroTaxRateMarkHasBeenSet() const
+{
+    return m_zeroTaxRateMarkHasBeenSet;
 }
 

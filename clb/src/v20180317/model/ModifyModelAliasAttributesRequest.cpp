@@ -25,7 +25,8 @@ using namespace std;
 ModifyModelAliasAttributesRequest::ModifyModelAliasAttributesRequest() :
     m_coefficientHasBeenSet(false),
     m_modelAliasNamesHasBeenSet(false),
-    m_serviceProviderIdsHasBeenSet(false)
+    m_serviceProviderIdsHasBeenSet(false),
+    m_capabilityHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,14 @@ string ModifyModelAliasAttributesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_capabilityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Capability";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_capability.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -125,6 +134,22 @@ void ModifyModelAliasAttributesRequest::SetServiceProviderIds(const vector<strin
 bool ModifyModelAliasAttributesRequest::ServiceProviderIdsHasBeenSet() const
 {
     return m_serviceProviderIdsHasBeenSet;
+}
+
+string ModifyModelAliasAttributesRequest::GetCapability() const
+{
+    return m_capability;
+}
+
+void ModifyModelAliasAttributesRequest::SetCapability(const string& _capability)
+{
+    m_capability = _capability;
+    m_capabilityHasBeenSet = true;
+}
+
+bool ModifyModelAliasAttributesRequest::CapabilityHasBeenSet() const
+{
+    return m_capabilityHasBeenSet;
 }
 
 

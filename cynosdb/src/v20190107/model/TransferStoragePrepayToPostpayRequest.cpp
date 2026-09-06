@@ -22,7 +22,8 @@
 using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
-TransferStoragePrepayToPostpayRequest::TransferStoragePrepayToPostpayRequest()
+TransferStoragePrepayToPostpayRequest::TransferStoragePrepayToPostpayRequest() :
+    m_clusterIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string TransferStoragePrepayToPostpayRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string TransferStoragePrepayToPostpayRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string TransferStoragePrepayToPostpayRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void TransferStoragePrepayToPostpayRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool TransferStoragePrepayToPostpayRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
 
 

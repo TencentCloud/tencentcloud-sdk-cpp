@@ -653,6 +653,27 @@ namespace TencentCloud
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>置放群组ID</p>
+                     * @return DisasterRecoverGroupId <p>置放群组ID</p>
+                     * 
+                     */
+                    std::string GetDisasterRecoverGroupId() const;
+
+                    /**
+                     * 设置<p>置放群组ID</p>
+                     * @param _disasterRecoverGroupId <p>置放群组ID</p>
+                     * 
+                     */
+                    void SetDisasterRecoverGroupId(const std::string& _disasterRecoverGroupId);
+
+                    /**
+                     * 判断参数 DisasterRecoverGroupId 是否已赋值
+                     * @return DisasterRecoverGroupId 是否已赋值
+                     * 
+                     */
+                    bool DisasterRecoverGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -826,6 +847,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
+
+                    /**
+                     * <p>置放群组ID</p>
+                     */
+                    std::string m_disasterRecoverGroupId;
+                    bool m_disasterRecoverGroupIdHasBeenSet;
 
                 };
             }

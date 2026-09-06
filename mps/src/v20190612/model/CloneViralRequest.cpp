@@ -27,7 +27,8 @@ CloneViralRequest::CloneViralRequest() :
     m_productHasBeenSet(false),
     m_aIGCParamHasBeenSet(false),
     m_contentParamHasBeenSet(false),
-    m_personaHasBeenSet(false)
+    m_personaHasBeenSet(false),
+    m_outputHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,15 @@ string CloneViralRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_persona.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_outputHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Output";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_output.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -168,6 +178,22 @@ void CloneViralRequest::SetPersona(const CloneViralPersona& _persona)
 bool CloneViralRequest::PersonaHasBeenSet() const
 {
     return m_personaHasBeenSet;
+}
+
+CloneViralOutputOption CloneViralRequest::GetOutput() const
+{
+    return m_output;
+}
+
+void CloneViralRequest::SetOutput(const CloneViralOutputOption& _output)
+{
+    m_output = _output;
+    m_outputHasBeenSet = true;
+}
+
+bool CloneViralRequest::OutputHasBeenSet() const
+{
+    return m_outputHasBeenSet;
 }
 
 

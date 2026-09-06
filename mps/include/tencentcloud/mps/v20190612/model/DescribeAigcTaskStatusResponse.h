@@ -185,6 +185,38 @@ namespace TencentCloud
                      */
                     bool TaskTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>任务其他信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskInfo <p>任务其他信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTaskInfo() const;
+
+                    /**
+                     * 判断参数 TaskInfo 是否已赋值
+                     * @return TaskInfo 是否已赋值
+                     * 
+                     */
+                    bool TaskInfoHasBeenSet() const;
+
+                    /**
+                     * 获取<p>任务子状态</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Stage <p>任务子状态</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStage() const;
+
+                    /**
+                     * 判断参数 Stage 是否已赋值
+                     * @return Stage 是否已赋值
+                     * 
+                     */
+                    bool StageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -247,6 +279,20 @@ namespace TencentCloud
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
+
+                    /**
+                     * <p>任务其他信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taskInfo;
+                    bool m_taskInfoHasBeenSet;
+
+                    /**
+                     * <p>任务子状态</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_stage;
+                    bool m_stageHasBeenSet;
 
                 };
             }

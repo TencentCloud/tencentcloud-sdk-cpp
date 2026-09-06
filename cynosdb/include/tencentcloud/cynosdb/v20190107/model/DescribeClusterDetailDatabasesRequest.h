@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认0
-                     * @return Offset 偏移量，默认0
+                     * 获取<p>偏移量，默认0</p>
+                     * @return Offset <p>偏移量，默认0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认0
-                     * @param _offset 偏移量，默认0
+                     * 设置<p>偏移量，默认0</p>
+                     * @param _offset <p>偏移量，默认0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认20,最大100
-                     * @return Limit 返回数量，默认20,最大100
+                     * 获取<p>返回数量，默认20,最大100</p>
+                     * @return Limit <p>返回数量，默认20,最大100</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认20,最大100
-                     * @param _limit 返回数量，默认20,最大100
+                     * 设置<p>返回数量，默认20,最大100</p>
+                     * @param _limit <p>返回数量，默认20,最大100</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取数据库名称
-                     * @return DbName 数据库名称
+                     * 获取<p>数据库名称，通过该字段进行子串匹配</p>
+                     * @return DbName <p>数据库名称，通过该字段进行子串匹配</p>
                      * 
                      */
                     std::string GetDbName() const;
 
                     /**
-                     * 设置数据库名称
-                     * @param _dbName 数据库名称
+                     * 设置<p>数据库名称，通过该字段进行子串匹配</p>
+                     * @param _dbName <p>数据库名称，通过该字段进行子串匹配</p>
                      * 
                      */
                     void SetDbName(const std::string& _dbName);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 偏移量，默认0
+                     * <p>偏移量，默认0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，默认20,最大100
+                     * <p>返回数量，默认20,最大100</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 数据库名称
+                     * <p>数据库名称，通过该字段进行子串匹配</p>
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;

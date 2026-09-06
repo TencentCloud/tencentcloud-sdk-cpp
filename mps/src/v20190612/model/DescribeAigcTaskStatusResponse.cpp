@@ -33,7 +33,9 @@ DescribeAigcTaskStatusResponse::DescribeAigcTaskStatusResponse() :
     m_taskResultCodeHasBeenSet(false),
     m_taskResultMsgHasBeenSet(false),
     m_requestBodyHasBeenSet(false),
-    m_taskTypeHasBeenSet(false)
+    m_taskTypeHasBeenSet(false),
+    m_taskInfoHasBeenSet(false),
+    m_stageHasBeenSet(false)
 {
 }
 
@@ -171,6 +173,26 @@ CoreInternalOutcome DescribeAigcTaskStatusResponse::Deserialize(const string &pa
         m_taskTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TaskInfo") && !rsp["TaskInfo"].IsNull())
+    {
+        if (!rsp["TaskInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskInfo = string(rsp["TaskInfo"].GetString());
+        m_taskInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Stage") && !rsp["Stage"].IsNull())
+    {
+        if (!rsp["Stage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Stage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_stage = string(rsp["Stage"].GetString());
+        m_stageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +281,22 @@ string DescribeAigcTaskStatusResponse::ToJsonString() const
         string key = "TaskType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Stage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stage.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -371,6 +409,26 @@ string DescribeAigcTaskStatusResponse::GetTaskType() const
 bool DescribeAigcTaskStatusResponse::TaskTypeHasBeenSet() const
 {
     return m_taskTypeHasBeenSet;
+}
+
+string DescribeAigcTaskStatusResponse::GetTaskInfo() const
+{
+    return m_taskInfo;
+}
+
+bool DescribeAigcTaskStatusResponse::TaskInfoHasBeenSet() const
+{
+    return m_taskInfoHasBeenSet;
+}
+
+string DescribeAigcTaskStatusResponse::GetStage() const
+{
+    return m_stage;
+}
+
+bool DescribeAigcTaskStatusResponse::StageHasBeenSet() const
+{
+    return m_stageHasBeenSet;
 }
 
 

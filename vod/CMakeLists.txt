@@ -806,6 +806,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/DescribeStorageRegionsRequest.h
   include/tencentcloud/vod/v20180717/model/ProcessImageAsyncTemplateItem.h
   include/tencentcloud/vod/v20180717/model/DescribeAigcFaceInfoResponse.h
+  include/tencentcloud/vod/v20180717/model/KnowledgeBaseInfo.h
   include/tencentcloud/vod/v20180717/model/ImageQualityEnhanceInfo.h
   include/tencentcloud/vod/v20180717/model/CreateMPSTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/WechatPublishTask.h
@@ -1978,6 +1979,7 @@ set(vod_src
   src/v20180717/model/DescribeStorageRegionsRequest.cpp
   src/v20180717/model/ProcessImageAsyncTemplateItem.cpp
   src/v20180717/model/DescribeAigcFaceInfoResponse.cpp
+  src/v20180717/model/KnowledgeBaseInfo.cpp
   src/v20180717/model/ImageQualityEnhanceInfo.cpp
   src/v20180717/model/CreateMPSTemplateResponse.cpp
   src/v20180717/model/WechatPublishTask.cpp

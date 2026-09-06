@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模型输出模态</p>
+                     * @return Capability <p>模型输出模态</p>
+                     * 
+                     */
+                    std::string GetCapability() const;
+
+                    /**
+                     * 设置<p>模型输出模态</p>
+                     * @param _capability <p>模型输出模态</p>
+                     * 
+                     */
+                    void SetCapability(const std::string& _capability);
+
+                    /**
+                     * 判断参数 Capability 是否已赋值
+                     * @return Capability 是否已赋值
+                     * 
+                     */
+                    bool CapabilityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * <p>模型输出模态</p>
+                     */
+                    std::string m_capability;
+                    bool m_capabilityHasBeenSet;
 
                 };
             }

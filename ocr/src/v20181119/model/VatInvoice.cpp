@@ -50,7 +50,22 @@ VatInvoice::VatInvoice() :
     m_redLetterInvoiceMarkHasBeenSet(false),
     m_issuingTypeMarkHasBeenSet(false),
     m_sellerAgentNameHasBeenSet(false),
-    m_sellerAgentTaxIDHasBeenSet(false)
+    m_sellerAgentTaxIDHasBeenSet(false),
+    m_regionCodeHasBeenSet(false),
+    m_reviewerNameHasBeenSet(false),
+    m_issuerNameHasBeenSet(false),
+    m_payeeNameHasBeenSet(false),
+    m_machineCodeHasBeenSet(false),
+    m_taxControlCodeHasBeenSet(false),
+    m_amountWithTaxCNHasBeenSet(false),
+    m_taxRateHasBeenSet(false),
+    m_specialTicketCodeHasBeenSet(false),
+    m_redLetterInvoicesHasBeenSet(false),
+    m_fullElectronicTypeHasBeenSet(false),
+    m_ofdUrlHasBeenSet(false),
+    m_pdfUrlHasBeenSet(false),
+    m_originalCodeHasBeenSet(false),
+    m_originalNumberHasBeenSet(false)
 {
 }
 
@@ -369,6 +384,166 @@ CoreInternalOutcome VatInvoice::Deserialize(const rapidjson::Value &value)
         m_sellerAgentTaxIDHasBeenSet = true;
     }
 
+    if (value.HasMember("RegionCode") && !value["RegionCode"].IsNull())
+    {
+        if (!value["RegionCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoice.RegionCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionCode = string(value["RegionCode"].GetString());
+        m_regionCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReviewerName") && !value["ReviewerName"].IsNull())
+    {
+        if (!value["ReviewerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoice.ReviewerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reviewerName = string(value["ReviewerName"].GetString());
+        m_reviewerNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("IssuerName") && !value["IssuerName"].IsNull())
+    {
+        if (!value["IssuerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoice.IssuerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_issuerName = string(value["IssuerName"].GetString());
+        m_issuerNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("PayeeName") && !value["PayeeName"].IsNull())
+    {
+        if (!value["PayeeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoice.PayeeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payeeName = string(value["PayeeName"].GetString());
+        m_payeeNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("MachineCode") && !value["MachineCode"].IsNull())
+    {
+        if (!value["MachineCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoice.MachineCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineCode = string(value["MachineCode"].GetString());
+        m_machineCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaxControlCode") && !value["TaxControlCode"].IsNull())
+    {
+        if (!value["TaxControlCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoice.TaxControlCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taxControlCode = string(value["TaxControlCode"].GetString());
+        m_taxControlCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AmountWithTaxCN") && !value["AmountWithTaxCN"].IsNull())
+    {
+        if (!value["AmountWithTaxCN"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoice.AmountWithTaxCN` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_amountWithTaxCN = string(value["AmountWithTaxCN"].GetString());
+        m_amountWithTaxCNHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaxRate") && !value["TaxRate"].IsNull())
+    {
+        if (!value["TaxRate"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoice.TaxRate` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taxRate = string(value["TaxRate"].GetString());
+        m_taxRateHasBeenSet = true;
+    }
+
+    if (value.HasMember("SpecialTicketCode") && !value["SpecialTicketCode"].IsNull())
+    {
+        if (!value["SpecialTicketCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoice.SpecialTicketCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_specialTicketCode = string(value["SpecialTicketCode"].GetString());
+        m_specialTicketCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RedLetterInvoices") && !value["RedLetterInvoices"].IsNull())
+    {
+        if (!value["RedLetterInvoices"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VatInvoice.RedLetterInvoices` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RedLetterInvoices"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RedLetterInvoiceItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_redLetterInvoices.push_back(item);
+        }
+        m_redLetterInvoicesHasBeenSet = true;
+    }
+
+    if (value.HasMember("FullElectronicType") && !value["FullElectronicType"].IsNull())
+    {
+        if (!value["FullElectronicType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoice.FullElectronicType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fullElectronicType = string(value["FullElectronicType"].GetString());
+        m_fullElectronicTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("OfdUrl") && !value["OfdUrl"].IsNull())
+    {
+        if (!value["OfdUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoice.OfdUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ofdUrl = string(value["OfdUrl"].GetString());
+        m_ofdUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("PdfUrl") && !value["PdfUrl"].IsNull())
+    {
+        if (!value["PdfUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoice.PdfUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pdfUrl = string(value["PdfUrl"].GetString());
+        m_pdfUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("OriginalCode") && !value["OriginalCode"].IsNull())
+    {
+        if (!value["OriginalCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoice.OriginalCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originalCode = string(value["OriginalCode"].GetString());
+        m_originalCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("OriginalNumber") && !value["OriginalNumber"].IsNull())
+    {
+        if (!value["OriginalNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoice.OriginalNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originalNumber = string(value["OriginalNumber"].GetString());
+        m_originalNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -621,6 +796,133 @@ void VatInvoice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "SellerAgentTaxID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sellerAgentTaxID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reviewerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReviewerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reviewerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_issuerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IssuerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_issuerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payeeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayeeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payeeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taxControlCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaxControlCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taxControlCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_amountWithTaxCNHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AmountWithTaxCN";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_amountWithTaxCN.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taxRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaxRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taxRate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_specialTicketCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpecialTicketCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_specialTicketCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_redLetterInvoicesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RedLetterInvoices";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_redLetterInvoices.begin(); itr != m_redLetterInvoices.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_fullElectronicTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FullElectronicType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fullElectronicType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ofdUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OfdUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ofdUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pdfUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PdfUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pdfUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originalCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginalCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originalCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originalNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginalNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originalNumber.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1104,5 +1406,245 @@ void VatInvoice::SetSellerAgentTaxID(const string& _sellerAgentTaxID)
 bool VatInvoice::SellerAgentTaxIDHasBeenSet() const
 {
     return m_sellerAgentTaxIDHasBeenSet;
+}
+
+string VatInvoice::GetRegionCode() const
+{
+    return m_regionCode;
+}
+
+void VatInvoice::SetRegionCode(const string& _regionCode)
+{
+    m_regionCode = _regionCode;
+    m_regionCodeHasBeenSet = true;
+}
+
+bool VatInvoice::RegionCodeHasBeenSet() const
+{
+    return m_regionCodeHasBeenSet;
+}
+
+string VatInvoice::GetReviewerName() const
+{
+    return m_reviewerName;
+}
+
+void VatInvoice::SetReviewerName(const string& _reviewerName)
+{
+    m_reviewerName = _reviewerName;
+    m_reviewerNameHasBeenSet = true;
+}
+
+bool VatInvoice::ReviewerNameHasBeenSet() const
+{
+    return m_reviewerNameHasBeenSet;
+}
+
+string VatInvoice::GetIssuerName() const
+{
+    return m_issuerName;
+}
+
+void VatInvoice::SetIssuerName(const string& _issuerName)
+{
+    m_issuerName = _issuerName;
+    m_issuerNameHasBeenSet = true;
+}
+
+bool VatInvoice::IssuerNameHasBeenSet() const
+{
+    return m_issuerNameHasBeenSet;
+}
+
+string VatInvoice::GetPayeeName() const
+{
+    return m_payeeName;
+}
+
+void VatInvoice::SetPayeeName(const string& _payeeName)
+{
+    m_payeeName = _payeeName;
+    m_payeeNameHasBeenSet = true;
+}
+
+bool VatInvoice::PayeeNameHasBeenSet() const
+{
+    return m_payeeNameHasBeenSet;
+}
+
+string VatInvoice::GetMachineCode() const
+{
+    return m_machineCode;
+}
+
+void VatInvoice::SetMachineCode(const string& _machineCode)
+{
+    m_machineCode = _machineCode;
+    m_machineCodeHasBeenSet = true;
+}
+
+bool VatInvoice::MachineCodeHasBeenSet() const
+{
+    return m_machineCodeHasBeenSet;
+}
+
+string VatInvoice::GetTaxControlCode() const
+{
+    return m_taxControlCode;
+}
+
+void VatInvoice::SetTaxControlCode(const string& _taxControlCode)
+{
+    m_taxControlCode = _taxControlCode;
+    m_taxControlCodeHasBeenSet = true;
+}
+
+bool VatInvoice::TaxControlCodeHasBeenSet() const
+{
+    return m_taxControlCodeHasBeenSet;
+}
+
+string VatInvoice::GetAmountWithTaxCN() const
+{
+    return m_amountWithTaxCN;
+}
+
+void VatInvoice::SetAmountWithTaxCN(const string& _amountWithTaxCN)
+{
+    m_amountWithTaxCN = _amountWithTaxCN;
+    m_amountWithTaxCNHasBeenSet = true;
+}
+
+bool VatInvoice::AmountWithTaxCNHasBeenSet() const
+{
+    return m_amountWithTaxCNHasBeenSet;
+}
+
+string VatInvoice::GetTaxRate() const
+{
+    return m_taxRate;
+}
+
+void VatInvoice::SetTaxRate(const string& _taxRate)
+{
+    m_taxRate = _taxRate;
+    m_taxRateHasBeenSet = true;
+}
+
+bool VatInvoice::TaxRateHasBeenSet() const
+{
+    return m_taxRateHasBeenSet;
+}
+
+string VatInvoice::GetSpecialTicketCode() const
+{
+    return m_specialTicketCode;
+}
+
+void VatInvoice::SetSpecialTicketCode(const string& _specialTicketCode)
+{
+    m_specialTicketCode = _specialTicketCode;
+    m_specialTicketCodeHasBeenSet = true;
+}
+
+bool VatInvoice::SpecialTicketCodeHasBeenSet() const
+{
+    return m_specialTicketCodeHasBeenSet;
+}
+
+vector<RedLetterInvoiceItem> VatInvoice::GetRedLetterInvoices() const
+{
+    return m_redLetterInvoices;
+}
+
+void VatInvoice::SetRedLetterInvoices(const vector<RedLetterInvoiceItem>& _redLetterInvoices)
+{
+    m_redLetterInvoices = _redLetterInvoices;
+    m_redLetterInvoicesHasBeenSet = true;
+}
+
+bool VatInvoice::RedLetterInvoicesHasBeenSet() const
+{
+    return m_redLetterInvoicesHasBeenSet;
+}
+
+string VatInvoice::GetFullElectronicType() const
+{
+    return m_fullElectronicType;
+}
+
+void VatInvoice::SetFullElectronicType(const string& _fullElectronicType)
+{
+    m_fullElectronicType = _fullElectronicType;
+    m_fullElectronicTypeHasBeenSet = true;
+}
+
+bool VatInvoice::FullElectronicTypeHasBeenSet() const
+{
+    return m_fullElectronicTypeHasBeenSet;
+}
+
+string VatInvoice::GetOfdUrl() const
+{
+    return m_ofdUrl;
+}
+
+void VatInvoice::SetOfdUrl(const string& _ofdUrl)
+{
+    m_ofdUrl = _ofdUrl;
+    m_ofdUrlHasBeenSet = true;
+}
+
+bool VatInvoice::OfdUrlHasBeenSet() const
+{
+    return m_ofdUrlHasBeenSet;
+}
+
+string VatInvoice::GetPdfUrl() const
+{
+    return m_pdfUrl;
+}
+
+void VatInvoice::SetPdfUrl(const string& _pdfUrl)
+{
+    m_pdfUrl = _pdfUrl;
+    m_pdfUrlHasBeenSet = true;
+}
+
+bool VatInvoice::PdfUrlHasBeenSet() const
+{
+    return m_pdfUrlHasBeenSet;
+}
+
+string VatInvoice::GetOriginalCode() const
+{
+    return m_originalCode;
+}
+
+void VatInvoice::SetOriginalCode(const string& _originalCode)
+{
+    m_originalCode = _originalCode;
+    m_originalCodeHasBeenSet = true;
+}
+
+bool VatInvoice::OriginalCodeHasBeenSet() const
+{
+    return m_originalCodeHasBeenSet;
+}
+
+string VatInvoice::GetOriginalNumber() const
+{
+    return m_originalNumber;
+}
+
+void VatInvoice::SetOriginalNumber(const string& _originalNumber)
+{
+    m_originalNumber = _originalNumber;
+    m_originalNumberHasBeenSet = true;
+}
+
+bool VatInvoice::OriginalNumberHasBeenSet() const
+{
+    return m_originalNumberHasBeenSet;
 }
 

@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/clb/v20180317/model/RateLimitConfigForModelRouter.h>
 #include <tencentcloud/clb/v20180317/model/RouterSettingWithFallBack.h>
+#include <tencentcloud/clb/v20180317/model/EmbeddingConfig.h>
 
 
 namespace TencentCloud
@@ -170,6 +171,48 @@ namespace TencentCloud
                      */
                     bool BandwidthHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模型输出模态</p>
+                     * @return Capability <p>模型输出模态</p>
+                     * 
+                     */
+                    std::string GetCapability() const;
+
+                    /**
+                     * 设置<p>模型输出模态</p>
+                     * @param _capability <p>模型输出模态</p>
+                     * 
+                     */
+                    void SetCapability(const std::string& _capability);
+
+                    /**
+                     * 判断参数 Capability 是否已赋值
+                     * @return Capability 是否已赋值
+                     * 
+                     */
+                    bool CapabilityHasBeenSet() const;
+
+                    /**
+                     * 获取<p>embedding 模态配置</p>
+                     * @return EmbeddingConfig <p>embedding 模态配置</p>
+                     * 
+                     */
+                    EmbeddingConfig GetEmbeddingConfig() const;
+
+                    /**
+                     * 设置<p>embedding 模态配置</p>
+                     * @param _embeddingConfig <p>embedding 模态配置</p>
+                     * 
+                     */
+                    void SetEmbeddingConfig(const EmbeddingConfig& _embeddingConfig);
+
+                    /**
+                     * 判断参数 EmbeddingConfig 是否已赋值
+                     * @return EmbeddingConfig 是否已赋值
+                     * 
+                     */
+                    bool EmbeddingConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +250,18 @@ namespace TencentCloud
                      */
                     uint64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
+
+                    /**
+                     * <p>模型输出模态</p>
+                     */
+                    std::string m_capability;
+                    bool m_capabilityHasBeenSet;
+
+                    /**
+                     * <p>embedding 模态配置</p>
+                     */
+                    EmbeddingConfig m_embeddingConfig;
+                    bool m_embeddingConfigHasBeenSet;
 
                 };
             }

@@ -106,6 +106,48 @@ namespace TencentCloud
                      */
                     bool ApiBasesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>非chat输出模态的Api Base URL</p>
+                     * @return ApiBase <p>非chat输出模态的Api Base URL</p>
+                     * 
+                     */
+                    std::string GetApiBase() const;
+
+                    /**
+                     * 设置<p>非chat输出模态的Api Base URL</p>
+                     * @param _apiBase <p>非chat输出模态的Api Base URL</p>
+                     * 
+                     */
+                    void SetApiBase(const std::string& _apiBase);
+
+                    /**
+                     * 判断参数 ApiBase 是否已赋值
+                     * @return ApiBase 是否已赋值
+                     * 
+                     */
+                    bool ApiBaseHasBeenSet() const;
+
+                    /**
+                     * 获取<p>非chat输出模态的请求后缀</p>
+                     * @return EndpointPath <p>非chat输出模态的请求后缀</p>
+                     * 
+                     */
+                    std::string GetEndpointPath() const;
+
+                    /**
+                     * 设置<p>非chat输出模态的请求后缀</p>
+                     * @param _endpointPath <p>非chat输出模态的请求后缀</p>
+                     * 
+                     */
+                    void SetEndpointPath(const std::string& _endpointPath);
+
+                    /**
+                     * 判断参数 EndpointPath 是否已赋值
+                     * @return EndpointPath 是否已赋值
+                     * 
+                     */
+                    bool EndpointPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +167,18 @@ namespace TencentCloud
                      */
                     std::vector<ApiBaseItem> m_apiBases;
                     bool m_apiBasesHasBeenSet;
+
+                    /**
+                     * <p>非chat输出模态的Api Base URL</p>
+                     */
+                    std::string m_apiBase;
+                    bool m_apiBaseHasBeenSet;
+
+                    /**
+                     * <p>非chat输出模态的请求后缀</p>
+                     */
+                    std::string m_endpointPath;
+                    bool m_endpointPathHasBeenSet;
 
                 };
             }

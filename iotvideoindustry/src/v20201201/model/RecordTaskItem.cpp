@@ -30,7 +30,11 @@ RecordTaskItem::RecordTaskItem() :
     m_recordStatusHasBeenSet(false),
     m_sceneIdHasBeenSet(false),
     m_warnIdHasBeenSet(false),
-    m_recordIdHasBeenSet(false)
+    m_recordIdHasBeenSet(false),
+    m_initIDHasBeenSet(false),
+    m_expectDeleteTimeHasBeenSet(false),
+    m_recordTimeLenHasBeenSet(false),
+    m_fileSizeHasBeenSet(false)
 {
 }
 
@@ -139,6 +143,46 @@ CoreInternalOutcome RecordTaskItem::Deserialize(const rapidjson::Value &value)
         m_recordIdHasBeenSet = true;
     }
 
+    if (value.HasMember("InitID") && !value["InitID"].IsNull())
+    {
+        if (!value["InitID"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordTaskItem.InitID` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_initID = value["InitID"].GetInt64();
+        m_initIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpectDeleteTime") && !value["ExpectDeleteTime"].IsNull())
+    {
+        if (!value["ExpectDeleteTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordTaskItem.ExpectDeleteTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_expectDeleteTime = value["ExpectDeleteTime"].GetInt64();
+        m_expectDeleteTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RecordTimeLen") && !value["RecordTimeLen"].IsNull())
+    {
+        if (!value["RecordTimeLen"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordTaskItem.RecordTimeLen` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordTimeLen = value["RecordTimeLen"].GetInt64();
+        m_recordTimeLenHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileSize") && !value["FileSize"].IsNull())
+    {
+        if (!value["FileSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordTaskItem.FileSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileSize = value["FileSize"].GetInt64();
+        m_fileSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +268,38 @@ void RecordTaskItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "RecordId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_recordId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_initIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InitID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_initID, allocator);
+    }
+
+    if (m_expectDeleteTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpectDeleteTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expectDeleteTime, allocator);
+    }
+
+    if (m_recordTimeLenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordTimeLen";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recordTimeLen, allocator);
+    }
+
+    if (m_fileSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fileSize, allocator);
     }
 
 }
@@ -387,5 +463,69 @@ void RecordTaskItem::SetRecordId(const string& _recordId)
 bool RecordTaskItem::RecordIdHasBeenSet() const
 {
     return m_recordIdHasBeenSet;
+}
+
+int64_t RecordTaskItem::GetInitID() const
+{
+    return m_initID;
+}
+
+void RecordTaskItem::SetInitID(const int64_t& _initID)
+{
+    m_initID = _initID;
+    m_initIDHasBeenSet = true;
+}
+
+bool RecordTaskItem::InitIDHasBeenSet() const
+{
+    return m_initIDHasBeenSet;
+}
+
+int64_t RecordTaskItem::GetExpectDeleteTime() const
+{
+    return m_expectDeleteTime;
+}
+
+void RecordTaskItem::SetExpectDeleteTime(const int64_t& _expectDeleteTime)
+{
+    m_expectDeleteTime = _expectDeleteTime;
+    m_expectDeleteTimeHasBeenSet = true;
+}
+
+bool RecordTaskItem::ExpectDeleteTimeHasBeenSet() const
+{
+    return m_expectDeleteTimeHasBeenSet;
+}
+
+int64_t RecordTaskItem::GetRecordTimeLen() const
+{
+    return m_recordTimeLen;
+}
+
+void RecordTaskItem::SetRecordTimeLen(const int64_t& _recordTimeLen)
+{
+    m_recordTimeLen = _recordTimeLen;
+    m_recordTimeLenHasBeenSet = true;
+}
+
+bool RecordTaskItem::RecordTimeLenHasBeenSet() const
+{
+    return m_recordTimeLenHasBeenSet;
+}
+
+int64_t RecordTaskItem::GetFileSize() const
+{
+    return m_fileSize;
+}
+
+void RecordTaskItem::SetFileSize(const int64_t& _fileSize)
+{
+    m_fileSize = _fileSize;
+    m_fileSizeHasBeenSet = true;
+}
+
+bool RecordTaskItem::FileSizeHasBeenSet() const
+{
+    return m_fileSizeHasBeenSet;
 }
 

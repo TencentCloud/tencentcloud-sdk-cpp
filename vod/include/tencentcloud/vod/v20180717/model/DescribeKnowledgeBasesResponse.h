@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/KnowledgeBaseInfo.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>符合条件的知识库总数。包含隐式的默认知识库。</p>
+                     * @return TotalCount <p>符合条件的知识库总数。包含隐式的默认知识库。</p>
+                     * 
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>知识库信息列表。</p>
+                     * @return KnowledgeBaseSet <p>知识库信息列表。</p>
+                     * 
+                     */
+                    std::vector<KnowledgeBaseInfo> GetKnowledgeBaseSet() const;
+
+                    /**
+                     * 判断参数 KnowledgeBaseSet 是否已赋值
+                     * @return KnowledgeBaseSet 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeBaseSetHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>符合条件的知识库总数。包含隐式的默认知识库。</p>
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
+
+                    /**
+                     * <p>知识库信息列表。</p>
+                     */
+                    std::vector<KnowledgeBaseInfo> m_knowledgeBaseSet;
+                    bool m_knowledgeBaseSetHasBeenSet;
 
                 };
             }

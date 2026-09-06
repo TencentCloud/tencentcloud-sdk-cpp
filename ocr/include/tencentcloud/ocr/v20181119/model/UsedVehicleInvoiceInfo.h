@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取所属税局
-                     * @return TaxBureau 所属税局
+                     * 获取<p>所属税局</p>
+                     * @return TaxBureau <p>所属税局</p>
                      * 
                      */
                     std::string GetTaxBureau() const;
 
                     /**
-                     * 设置所属税局
-                     * @param _taxBureau 所属税局
+                     * 设置<p>所属税局</p>
+                     * @param _taxBureau <p>所属税局</p>
                      * 
                      */
                     void SetTaxBureau(const std::string& _taxBureau);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TaxBureauHasBeenSet() const;
 
                     /**
-                     * 获取买方单位/个人
-                     * @return Buyer 买方单位/个人
+                     * 获取<p>买方单位/个人</p>
+                     * @return Buyer <p>买方单位/个人</p>
                      * 
                      */
                     std::string GetBuyer() const;
 
                     /**
-                     * 设置买方单位/个人
-                     * @param _buyer 买方单位/个人
+                     * 设置<p>买方单位/个人</p>
+                     * @param _buyer <p>买方单位/个人</p>
                      * 
                      */
                     void SetBuyer(const std::string& _buyer);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool BuyerHasBeenSet() const;
 
                     /**
-                     * 获取买方单位代码/身份证号码
-                     * @return BuyerNo 买方单位代码/身份证号码
+                     * 获取<p>买方单位代码/身份证号码</p>
+                     * @return BuyerNo <p>买方单位代码/身份证号码</p>
                      * 
                      */
                     std::string GetBuyerNo() const;
 
                     /**
-                     * 设置买方单位代码/身份证号码
-                     * @param _buyerNo 买方单位代码/身份证号码
+                     * 设置<p>买方单位代码/身份证号码</p>
+                     * @param _buyerNo <p>买方单位代码/身份证号码</p>
                      * 
                      */
                     void SetBuyerNo(const std::string& _buyerNo);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool BuyerNoHasBeenSet() const;
 
                     /**
-                     * 获取买方单位/个人地址
-                     * @return BuyerAddress 买方单位/个人地址
+                     * 获取<p>买方单位/个人地址</p>
+                     * @return BuyerAddress <p>买方单位/个人地址</p>
                      * 
                      */
                     std::string GetBuyerAddress() const;
 
                     /**
-                     * 设置买方单位/个人地址
-                     * @param _buyerAddress 买方单位/个人地址
+                     * 设置<p>买方单位/个人地址</p>
+                     * @param _buyerAddress <p>买方单位/个人地址</p>
                      * 
                      */
                     void SetBuyerAddress(const std::string& _buyerAddress);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool BuyerAddressHasBeenSet() const;
 
                     /**
-                     * 获取买方单位电话
-                     * @return BuyerTel 买方单位电话
+                     * 获取<p>买方单位电话</p>
+                     * @return BuyerTel <p>买方单位电话</p>
                      * 
                      */
                     std::string GetBuyerTel() const;
 
                     /**
-                     * 设置买方单位电话
-                     * @param _buyerTel 买方单位电话
+                     * 设置<p>买方单位电话</p>
+                     * @param _buyerTel <p>买方单位电话</p>
                      * 
                      */
                     void SetBuyerTel(const std::string& _buyerTel);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool BuyerTelHasBeenSet() const;
 
                     /**
-                     * 获取卖方单位/个人
-                     * @return Seller 卖方单位/个人
+                     * 获取<p>卖方单位/个人</p>
+                     * @return Seller <p>卖方单位/个人</p>
                      * 
                      */
                     std::string GetSeller() const;
 
                     /**
-                     * 设置卖方单位/个人
-                     * @param _seller 卖方单位/个人
+                     * 设置<p>卖方单位/个人</p>
+                     * @param _seller <p>卖方单位/个人</p>
                      * 
                      */
                     void SetSeller(const std::string& _seller);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool SellerHasBeenSet() const;
 
                     /**
-                     * 获取卖方单位代码/身份证号码
-                     * @return SellerNo 卖方单位代码/身份证号码
+                     * 获取<p>卖方单位代码/身份证号码</p>
+                     * @return SellerNo <p>卖方单位代码/身份证号码</p>
                      * 
                      */
                     std::string GetSellerNo() const;
 
                     /**
-                     * 设置卖方单位代码/身份证号码
-                     * @param _sellerNo 卖方单位代码/身份证号码
+                     * 设置<p>卖方单位代码/身份证号码</p>
+                     * @param _sellerNo <p>卖方单位代码/身份证号码</p>
                      * 
                      */
                     void SetSellerNo(const std::string& _sellerNo);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool SellerNoHasBeenSet() const;
 
                     /**
-                     * 获取卖方单位/个人地址
-                     * @return SellerAddress 卖方单位/个人地址
+                     * 获取<p>卖方单位/个人地址</p>
+                     * @return SellerAddress <p>卖方单位/个人地址</p>
                      * 
                      */
                     std::string GetSellerAddress() const;
 
                     /**
-                     * 设置卖方单位/个人地址
-                     * @param _sellerAddress 卖方单位/个人地址
+                     * 设置<p>卖方单位/个人地址</p>
+                     * @param _sellerAddress <p>卖方单位/个人地址</p>
                      * 
                      */
                     void SetSellerAddress(const std::string& _sellerAddress);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool SellerAddressHasBeenSet() const;
 
                     /**
-                     * 获取卖方单位电话
-                     * @return SellerTel 卖方单位电话
+                     * 获取<p>卖方单位电话</p>
+                     * @return SellerTel <p>卖方单位电话</p>
                      * 
                      */
                     std::string GetSellerTel() const;
 
                     /**
-                     * 设置卖方单位电话
-                     * @param _sellerTel 卖方单位电话
+                     * 设置<p>卖方单位电话</p>
+                     * @param _sellerTel <p>卖方单位电话</p>
                      * 
                      */
                     void SetSellerTel(const std::string& _sellerTel);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool SellerTelHasBeenSet() const;
 
                     /**
-                     * 获取车牌照号
-                     * @return VehicleLicenseNo 车牌照号
+                     * 获取<p>车牌照号</p>
+                     * @return VehicleLicenseNo <p>车牌照号</p>
                      * 
                      */
                     std::string GetVehicleLicenseNo() const;
 
                     /**
-                     * 设置车牌照号
-                     * @param _vehicleLicenseNo 车牌照号
+                     * 设置<p>车牌照号</p>
+                     * @param _vehicleLicenseNo <p>车牌照号</p>
                      * 
                      */
                     void SetVehicleLicenseNo(const std::string& _vehicleLicenseNo);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool VehicleLicenseNoHasBeenSet() const;
 
                     /**
-                     * 获取登记证号
-                     * @return RegisterNo 登记证号
+                     * 获取<p>登记证号</p>
+                     * @return RegisterNo <p>登记证号</p>
                      * 
                      */
                     std::string GetRegisterNo() const;
 
                     /**
-                     * 设置登记证号
-                     * @param _registerNo 登记证号
+                     * 设置<p>登记证号</p>
+                     * @param _registerNo <p>登记证号</p>
                      * 
                      */
                     void SetRegisterNo(const std::string& _registerNo);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool RegisterNoHasBeenSet() const;
 
                     /**
-                     * 获取车架号/车辆识别代码
-                     * @return VehicleIdentifyNo 车架号/车辆识别代码
+                     * 获取<p>车架号/车辆识别代码</p>
+                     * @return VehicleIdentifyNo <p>车架号/车辆识别代码</p>
                      * 
                      */
                     std::string GetVehicleIdentifyNo() const;
 
                     /**
-                     * 设置车架号/车辆识别代码
-                     * @param _vehicleIdentifyNo 车架号/车辆识别代码
+                     * 设置<p>车架号/车辆识别代码</p>
+                     * @param _vehicleIdentifyNo <p>车架号/车辆识别代码</p>
                      * 
                      */
                     void SetVehicleIdentifyNo(const std::string& _vehicleIdentifyNo);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool VehicleIdentifyNoHasBeenSet() const;
 
                     /**
-                     * 获取转入地车辆管理所名称
-                     * @return ManagementOffice 转入地车辆管理所名称
+                     * 获取<p>转入地车辆管理所名称</p>
+                     * @return ManagementOffice <p>转入地车辆管理所名称</p>
                      * 
                      */
                     std::string GetManagementOffice() const;
 
                     /**
-                     * 设置转入地车辆管理所名称
-                     * @param _managementOffice 转入地车辆管理所名称
+                     * 设置<p>转入地车辆管理所名称</p>
+                     * @param _managementOffice <p>转入地车辆管理所名称</p>
                      * 
                      */
                     void SetManagementOffice(const std::string& _managementOffice);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool ManagementOfficeHasBeenSet() const;
 
                     /**
-                     * 获取车价合计
-                     * @return VehicleTotalPrice 车价合计
+                     * 获取<p>车价合计</p>
+                     * @return VehicleTotalPrice <p>车价合计</p>
                      * 
                      */
                     std::string GetVehicleTotalPrice() const;
 
                     /**
-                     * 设置车价合计
-                     * @param _vehicleTotalPrice 车价合计
+                     * 设置<p>车价合计</p>
+                     * @param _vehicleTotalPrice <p>车价合计</p>
                      * 
                      */
                     void SetVehicleTotalPrice(const std::string& _vehicleTotalPrice);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool VehicleTotalPriceHasBeenSet() const;
 
                     /**
-                     * 获取经营、拍卖单位
-                     * @return Auctioneer 经营、拍卖单位
+                     * 获取<p>经营、拍卖单位</p>
+                     * @return Auctioneer <p>经营、拍卖单位</p>
                      * 
                      */
                     std::string GetAuctioneer() const;
 
                     /**
-                     * 设置经营、拍卖单位
-                     * @param _auctioneer 经营、拍卖单位
+                     * 设置<p>经营、拍卖单位</p>
+                     * @param _auctioneer <p>经营、拍卖单位</p>
                      * 
                      */
                     void SetAuctioneer(const std::string& _auctioneer);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool AuctioneerHasBeenSet() const;
 
                     /**
-                     * 获取经营、拍卖单位地址
-                     * @return AuctioneerAddress 经营、拍卖单位地址
+                     * 获取<p>经营、拍卖单位地址</p>
+                     * @return AuctioneerAddress <p>经营、拍卖单位地址</p>
                      * 
                      */
                     std::string GetAuctioneerAddress() const;
 
                     /**
-                     * 设置经营、拍卖单位地址
-                     * @param _auctioneerAddress 经营、拍卖单位地址
+                     * 设置<p>经营、拍卖单位地址</p>
+                     * @param _auctioneerAddress <p>经营、拍卖单位地址</p>
                      * 
                      */
                     void SetAuctioneerAddress(const std::string& _auctioneerAddress);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool AuctioneerAddressHasBeenSet() const;
 
                     /**
-                     * 获取经营、拍卖单位纳税人识别号
-                     * @return AuctioneerTaxpayerNum 经营、拍卖单位纳税人识别号
+                     * 获取<p>经营、拍卖单位纳税人识别号</p>
+                     * @return AuctioneerTaxpayerNum <p>经营、拍卖单位纳税人识别号</p>
                      * 
                      */
                     std::string GetAuctioneerTaxpayerNum() const;
 
                     /**
-                     * 设置经营、拍卖单位纳税人识别号
-                     * @param _auctioneerTaxpayerNum 经营、拍卖单位纳税人识别号
+                     * 设置<p>经营、拍卖单位纳税人识别号</p>
+                     * @param _auctioneerTaxpayerNum <p>经营、拍卖单位纳税人识别号</p>
                      * 
                      */
                     void SetAuctioneerTaxpayerNum(const std::string& _auctioneerTaxpayerNum);
@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool AuctioneerTaxpayerNumHasBeenSet() const;
 
                     /**
-                     * 获取经营、拍卖单位开户银行、账号
-                     * @return AuctioneerBankAccount 经营、拍卖单位开户银行、账号
+                     * 获取<p>经营、拍卖单位开户银行、账号</p>
+                     * @return AuctioneerBankAccount <p>经营、拍卖单位开户银行、账号</p>
                      * 
                      */
                     std::string GetAuctioneerBankAccount() const;
 
                     /**
-                     * 设置经营、拍卖单位开户银行、账号
-                     * @param _auctioneerBankAccount 经营、拍卖单位开户银行、账号
+                     * 设置<p>经营、拍卖单位开户银行、账号</p>
+                     * @param _auctioneerBankAccount <p>经营、拍卖单位开户银行、账号</p>
                      * 
                      */
                     void SetAuctioneerBankAccount(const std::string& _auctioneerBankAccount);
@@ -425,15 +425,15 @@ namespace TencentCloud
                     bool AuctioneerBankAccountHasBeenSet() const;
 
                     /**
-                     * 获取经营、拍卖单位电话
-                     * @return AuctioneerTel 经营、拍卖单位电话
+                     * 获取<p>经营、拍卖单位电话</p>
+                     * @return AuctioneerTel <p>经营、拍卖单位电话</p>
                      * 
                      */
                     std::string GetAuctioneerTel() const;
 
                     /**
-                     * 设置经营、拍卖单位电话
-                     * @param _auctioneerTel 经营、拍卖单位电话
+                     * 设置<p>经营、拍卖单位电话</p>
+                     * @param _auctioneerTel <p>经营、拍卖单位电话</p>
                      * 
                      */
                     void SetAuctioneerTel(const std::string& _auctioneerTel);
@@ -446,15 +446,15 @@ namespace TencentCloud
                     bool AuctioneerTelHasBeenSet() const;
 
                     /**
-                     * 获取二手车市场
-                     * @return Market 二手车市场
+                     * 获取<p>二手车市场</p>
+                     * @return Market <p>二手车市场</p>
                      * 
                      */
                     std::string GetMarket() const;
 
                     /**
-                     * 设置二手车市场
-                     * @param _market 二手车市场
+                     * 设置<p>二手车市场</p>
+                     * @param _market <p>二手车市场</p>
                      * 
                      */
                     void SetMarket(const std::string& _market);
@@ -467,15 +467,15 @@ namespace TencentCloud
                     bool MarketHasBeenSet() const;
 
                     /**
-                     * 获取二手车市场纳税人识别号
-                     * @return MarketTaxpayerNum 二手车市场纳税人识别号
+                     * 获取<p>二手车市场纳税人识别号</p>
+                     * @return MarketTaxpayerNum <p>二手车市场纳税人识别号</p>
                      * 
                      */
                     std::string GetMarketTaxpayerNum() const;
 
                     /**
-                     * 设置二手车市场纳税人识别号
-                     * @param _marketTaxpayerNum 二手车市场纳税人识别号
+                     * 设置<p>二手车市场纳税人识别号</p>
+                     * @param _marketTaxpayerNum <p>二手车市场纳税人识别号</p>
                      * 
                      */
                     void SetMarketTaxpayerNum(const std::string& _marketTaxpayerNum);
@@ -488,15 +488,15 @@ namespace TencentCloud
                     bool MarketTaxpayerNumHasBeenSet() const;
 
                     /**
-                     * 获取二手车市场地址
-                     * @return MarketAddress 二手车市场地址
+                     * 获取<p>二手车市场地址</p>
+                     * @return MarketAddress <p>二手车市场地址</p>
                      * 
                      */
                     std::string GetMarketAddress() const;
 
                     /**
-                     * 设置二手车市场地址
-                     * @param _marketAddress 二手车市场地址
+                     * 设置<p>二手车市场地址</p>
+                     * @param _marketAddress <p>二手车市场地址</p>
                      * 
                      */
                     void SetMarketAddress(const std::string& _marketAddress);
@@ -509,15 +509,15 @@ namespace TencentCloud
                     bool MarketAddressHasBeenSet() const;
 
                     /**
-                     * 获取二手车市场开户银行账号
-                     * @return MarketBankAccount 二手车市场开户银行账号
+                     * 获取<p>二手车市场开户银行账号</p>
+                     * @return MarketBankAccount <p>二手车市场开户银行账号</p>
                      * 
                      */
                     std::string GetMarketBankAccount() const;
 
                     /**
-                     * 设置二手车市场开户银行账号
-                     * @param _marketBankAccount 二手车市场开户银行账号
+                     * 设置<p>二手车市场开户银行账号</p>
+                     * @param _marketBankAccount <p>二手车市场开户银行账号</p>
                      * 
                      */
                     void SetMarketBankAccount(const std::string& _marketBankAccount);
@@ -530,15 +530,15 @@ namespace TencentCloud
                     bool MarketBankAccountHasBeenSet() const;
 
                     /**
-                     * 获取二手车市场电话
-                     * @return MarketTel 二手车市场电话
+                     * 获取<p>二手车市场电话</p>
+                     * @return MarketTel <p>二手车市场电话</p>
                      * 
                      */
                     std::string GetMarketTel() const;
 
                     /**
-                     * 设置二手车市场电话
-                     * @param _marketTel 二手车市场电话
+                     * 设置<p>二手车市场电话</p>
+                     * @param _marketTel <p>二手车市场电话</p>
                      * 
                      */
                     void SetMarketTel(const std::string& _marketTel);
@@ -550,151 +550,493 @@ namespace TencentCloud
                      */
                     bool MarketTelHasBeenSet() const;
 
+                    /**
+                     * 获取<p>车价合计中文大写</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VehicleTotalPriceCN <p>车价合计中文大写</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVehicleTotalPriceCN() const;
+
+                    /**
+                     * 设置<p>车价合计中文大写</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _vehicleTotalPriceCN <p>车价合计中文大写</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVehicleTotalPriceCN(const std::string& _vehicleTotalPriceCN);
+
+                    /**
+                     * 判断参数 VehicleTotalPriceCN 是否已赋值
+                     * @return VehicleTotalPriceCN 是否已赋值
+                     * 
+                     */
+                    bool VehicleTotalPriceCNHasBeenSet() const;
+
+                    /**
+                     * 获取<p>发票风险等级</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InvoiceRiskLevel <p>发票风险等级</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInvoiceRiskLevel() const;
+
+                    /**
+                     * 设置<p>发票风险等级</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _invoiceRiskLevel <p>发票风险等级</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInvoiceRiskLevel(const std::string& _invoiceRiskLevel);
+
+                    /**
+                     * 判断参数 InvoiceRiskLevel 是否已赋值
+                     * @return InvoiceRiskLevel 是否已赋值
+                     * 
+                     */
+                    bool InvoiceRiskLevelHasBeenSet() const;
+
+                    /**
+                     * 获取<p>车辆类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CarType <p>车辆类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCarType() const;
+
+                    /**
+                     * 设置<p>车辆类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _carType <p>车辆类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCarType(const std::string& _carType);
+
+                    /**
+                     * 判断参数 CarType 是否已赋值
+                     * @return CarType 是否已赋值
+                     * 
+                     */
+                    bool CarTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>厂牌型号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PlateModel <p>厂牌型号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPlateModel() const;
+
+                    /**
+                     * 设置<p>厂牌型号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _plateModel <p>厂牌型号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPlateModel(const std::string& _plateModel);
+
+                    /**
+                     * 判断参数 PlateModel 是否已赋值
+                     * @return PlateModel 是否已赋值
+                     * 
+                     */
+                    bool PlateModelHasBeenSet() const;
+
+                    /**
+                     * 获取<p>作废人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AbandonerName <p>作废人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAbandonerName() const;
+
+                    /**
+                     * 设置<p>作废人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _abandonerName <p>作废人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAbandonerName(const std::string& _abandonerName);
+
+                    /**
+                     * 判断参数 AbandonerName 是否已赋值
+                     * @return AbandonerName 是否已赋值
+                     * 
+                     */
+                    bool AbandonerNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>作废日期</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AbandonDate <p>作废日期</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAbandonDate() const;
+
+                    /**
+                     * 设置<p>作废日期</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _abandonDate <p>作废日期</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAbandonDate(const std::string& _abandonDate);
+
+                    /**
+                     * 判断参数 AbandonDate 是否已赋值
+                     * @return AbandonDate 是否已赋值
+                     * 
+                     */
+                    bool AbandonDateHasBeenSet() const;
+
+                    /**
+                     * 获取<p>开票方类型：1 经营单位，2 拍卖单位，03 二手车市场。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IssuerType <p>开票方类型：1 经营单位，2 拍卖单位，03 二手车市场。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIssuerType() const;
+
+                    /**
+                     * 设置<p>开票方类型：1 经营单位，2 拍卖单位，03 二手车市场。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _issuerType <p>开票方类型：1 经营单位，2 拍卖单位，03 二手车市场。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIssuerType(const std::string& _issuerType);
+
+                    /**
+                     * 判断参数 IssuerType 是否已赋值
+                     * @return IssuerType 是否已赋值
+                     * 
+                     */
+                    bool IssuerTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>开票方纳税人识别号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IssuerTaxCode <p>开票方纳税人识别号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIssuerTaxCode() const;
+
+                    /**
+                     * 设置<p>开票方纳税人识别号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _issuerTaxCode <p>开票方纳税人识别号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIssuerTaxCode(const std::string& _issuerTaxCode);
+
+                    /**
+                     * 判断参数 IssuerTaxCode 是否已赋值
+                     * @return IssuerTaxCode 是否已赋值
+                     * 
+                     */
+                    bool IssuerTaxCodeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自行编码</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CustomCode <p>自行编码</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCustomCode() const;
+
+                    /**
+                     * 设置<p>自行编码</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _customCode <p>自行编码</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCustomCode(const std::string& _customCode);
+
+                    /**
+                     * 判断参数 CustomCode 是否已赋值
+                     * @return CustomCode 是否已赋值
+                     * 
+                     */
+                    bool CustomCodeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>商品编码</p>
+                     * @return TaxClassifyCode <p>商品编码</p>
+                     * 
+                     */
+                    std::string GetTaxClassifyCode() const;
+
+                    /**
+                     * 设置<p>商品编码</p>
+                     * @param _taxClassifyCode <p>商品编码</p>
+                     * 
+                     */
+                    void SetTaxClassifyCode(const std::string& _taxClassifyCode);
+
+                    /**
+                     * 判断参数 TaxClassifyCode 是否已赋值
+                     * @return TaxClassifyCode 是否已赋值
+                     * 
+                     */
+                    bool TaxClassifyCodeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>零税率标识：空：非零税率，0：出口零税，1：免税，2：不征税，3 普通零税率</p>
+                     * @return ZeroTaxRateMark <p>零税率标识：空：非零税率，0：出口零税，1：免税，2：不征税，3 普通零税率</p>
+                     * 
+                     */
+                    std::string GetZeroTaxRateMark() const;
+
+                    /**
+                     * 设置<p>零税率标识：空：非零税率，0：出口零税，1：免税，2：不征税，3 普通零税率</p>
+                     * @param _zeroTaxRateMark <p>零税率标识：空：非零税率，0：出口零税，1：免税，2：不征税，3 普通零税率</p>
+                     * 
+                     */
+                    void SetZeroTaxRateMark(const std::string& _zeroTaxRateMark);
+
+                    /**
+                     * 判断参数 ZeroTaxRateMark 是否已赋值
+                     * @return ZeroTaxRateMark 是否已赋值
+                     * 
+                     */
+                    bool ZeroTaxRateMarkHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 所属税局
+                     * <p>所属税局</p>
                      */
                     std::string m_taxBureau;
                     bool m_taxBureauHasBeenSet;
 
                     /**
-                     * 买方单位/个人
+                     * <p>买方单位/个人</p>
                      */
                     std::string m_buyer;
                     bool m_buyerHasBeenSet;
 
                     /**
-                     * 买方单位代码/身份证号码
+                     * <p>买方单位代码/身份证号码</p>
                      */
                     std::string m_buyerNo;
                     bool m_buyerNoHasBeenSet;
 
                     /**
-                     * 买方单位/个人地址
+                     * <p>买方单位/个人地址</p>
                      */
                     std::string m_buyerAddress;
                     bool m_buyerAddressHasBeenSet;
 
                     /**
-                     * 买方单位电话
+                     * <p>买方单位电话</p>
                      */
                     std::string m_buyerTel;
                     bool m_buyerTelHasBeenSet;
 
                     /**
-                     * 卖方单位/个人
+                     * <p>卖方单位/个人</p>
                      */
                     std::string m_seller;
                     bool m_sellerHasBeenSet;
 
                     /**
-                     * 卖方单位代码/身份证号码
+                     * <p>卖方单位代码/身份证号码</p>
                      */
                     std::string m_sellerNo;
                     bool m_sellerNoHasBeenSet;
 
                     /**
-                     * 卖方单位/个人地址
+                     * <p>卖方单位/个人地址</p>
                      */
                     std::string m_sellerAddress;
                     bool m_sellerAddressHasBeenSet;
 
                     /**
-                     * 卖方单位电话
+                     * <p>卖方单位电话</p>
                      */
                     std::string m_sellerTel;
                     bool m_sellerTelHasBeenSet;
 
                     /**
-                     * 车牌照号
+                     * <p>车牌照号</p>
                      */
                     std::string m_vehicleLicenseNo;
                     bool m_vehicleLicenseNoHasBeenSet;
 
                     /**
-                     * 登记证号
+                     * <p>登记证号</p>
                      */
                     std::string m_registerNo;
                     bool m_registerNoHasBeenSet;
 
                     /**
-                     * 车架号/车辆识别代码
+                     * <p>车架号/车辆识别代码</p>
                      */
                     std::string m_vehicleIdentifyNo;
                     bool m_vehicleIdentifyNoHasBeenSet;
 
                     /**
-                     * 转入地车辆管理所名称
+                     * <p>转入地车辆管理所名称</p>
                      */
                     std::string m_managementOffice;
                     bool m_managementOfficeHasBeenSet;
 
                     /**
-                     * 车价合计
+                     * <p>车价合计</p>
                      */
                     std::string m_vehicleTotalPrice;
                     bool m_vehicleTotalPriceHasBeenSet;
 
                     /**
-                     * 经营、拍卖单位
+                     * <p>经营、拍卖单位</p>
                      */
                     std::string m_auctioneer;
                     bool m_auctioneerHasBeenSet;
 
                     /**
-                     * 经营、拍卖单位地址
+                     * <p>经营、拍卖单位地址</p>
                      */
                     std::string m_auctioneerAddress;
                     bool m_auctioneerAddressHasBeenSet;
 
                     /**
-                     * 经营、拍卖单位纳税人识别号
+                     * <p>经营、拍卖单位纳税人识别号</p>
                      */
                     std::string m_auctioneerTaxpayerNum;
                     bool m_auctioneerTaxpayerNumHasBeenSet;
 
                     /**
-                     * 经营、拍卖单位开户银行、账号
+                     * <p>经营、拍卖单位开户银行、账号</p>
                      */
                     std::string m_auctioneerBankAccount;
                     bool m_auctioneerBankAccountHasBeenSet;
 
                     /**
-                     * 经营、拍卖单位电话
+                     * <p>经营、拍卖单位电话</p>
                      */
                     std::string m_auctioneerTel;
                     bool m_auctioneerTelHasBeenSet;
 
                     /**
-                     * 二手车市场
+                     * <p>二手车市场</p>
                      */
                     std::string m_market;
                     bool m_marketHasBeenSet;
 
                     /**
-                     * 二手车市场纳税人识别号
+                     * <p>二手车市场纳税人识别号</p>
                      */
                     std::string m_marketTaxpayerNum;
                     bool m_marketTaxpayerNumHasBeenSet;
 
                     /**
-                     * 二手车市场地址
+                     * <p>二手车市场地址</p>
                      */
                     std::string m_marketAddress;
                     bool m_marketAddressHasBeenSet;
 
                     /**
-                     * 二手车市场开户银行账号
+                     * <p>二手车市场开户银行账号</p>
                      */
                     std::string m_marketBankAccount;
                     bool m_marketBankAccountHasBeenSet;
 
                     /**
-                     * 二手车市场电话
+                     * <p>二手车市场电话</p>
                      */
                     std::string m_marketTel;
                     bool m_marketTelHasBeenSet;
+
+                    /**
+                     * <p>车价合计中文大写</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vehicleTotalPriceCN;
+                    bool m_vehicleTotalPriceCNHasBeenSet;
+
+                    /**
+                     * <p>发票风险等级</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_invoiceRiskLevel;
+                    bool m_invoiceRiskLevelHasBeenSet;
+
+                    /**
+                     * <p>车辆类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_carType;
+                    bool m_carTypeHasBeenSet;
+
+                    /**
+                     * <p>厂牌型号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_plateModel;
+                    bool m_plateModelHasBeenSet;
+
+                    /**
+                     * <p>作废人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_abandonerName;
+                    bool m_abandonerNameHasBeenSet;
+
+                    /**
+                     * <p>作废日期</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_abandonDate;
+                    bool m_abandonDateHasBeenSet;
+
+                    /**
+                     * <p>开票方类型：1 经营单位，2 拍卖单位，03 二手车市场。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_issuerType;
+                    bool m_issuerTypeHasBeenSet;
+
+                    /**
+                     * <p>开票方纳税人识别号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_issuerTaxCode;
+                    bool m_issuerTaxCodeHasBeenSet;
+
+                    /**
+                     * <p>自行编码</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_customCode;
+                    bool m_customCodeHasBeenSet;
+
+                    /**
+                     * <p>商品编码</p>
+                     */
+                    std::string m_taxClassifyCode;
+                    bool m_taxClassifyCodeHasBeenSet;
+
+                    /**
+                     * <p>零税率标识：空：非零税率，0：出口零税，1：免税，2：不征税，3 普通零税率</p>
+                     */
+                    std::string m_zeroTaxRateMark;
+                    bool m_zeroTaxRateMarkHasBeenSet;
 
                 };
             }

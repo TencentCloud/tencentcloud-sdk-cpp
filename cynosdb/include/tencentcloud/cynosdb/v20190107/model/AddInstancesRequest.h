@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool DeviceTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。</p>
-                     * @return InstanceGrpId <p>实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。</p>
+                     * 获取<p>当前字段已废弃。当前版本不再传输该值。</p>
+                     * @return InstanceGrpId <p>当前字段已废弃。当前版本不再传输该值。</p>
                      * @deprecated
                      */
                     std::string GetInstanceGrpId() const;
 
                     /**
-                     * 设置<p>实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。</p>
-                     * @param _instanceGrpId <p>实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。</p>
+                     * 设置<p>当前字段已废弃。当前版本不再传输该值。</p>
+                     * @param _instanceGrpId <p>当前字段已废弃。当前版本不再传输该值。</p>
                      * @deprecated
                      */
                     void SetInstanceGrpId(const std::string& _instanceGrpId);
@@ -455,7 +455,7 @@ namespace TencentCloud
                     bool m_deviceTypeHasBeenSet;
 
                     /**
-                     * <p>实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。</p>
+                     * <p>当前字段已废弃。当前版本不再传输该值。</p>
                      */
                     std::string m_instanceGrpId;
                     bool m_instanceGrpIdHasBeenSet;

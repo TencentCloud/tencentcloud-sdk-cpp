@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
-CreateKnowledgeBaseResponse::CreateKnowledgeBaseResponse()
+CreateKnowledgeBaseResponse::CreateKnowledgeBaseResponse() :
+    m_knowledgeBaseIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateKnowledgeBaseResponse::Deserialize(const string &paylo
     }
 
 
+    if (rsp.HasMember("KnowledgeBaseId") && !rsp["KnowledgeBaseId"].IsNull())
+    {
+        if (!rsp["KnowledgeBaseId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeBaseId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_knowledgeBaseId = string(rsp["KnowledgeBaseId"].GetString());
+        m_knowledgeBaseIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateKnowledgeBaseResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_knowledgeBaseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeBaseId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_knowledgeBaseId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateKnowledgeBaseResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateKnowledgeBaseResponse::GetKnowledgeBaseId() const
+{
+    return m_knowledgeBaseId;
+}
+
+bool CreateKnowledgeBaseResponse::KnowledgeBaseIdHasBeenSet() const
+{
+    return m_knowledgeBaseIdHasBeenSet;
+}
 
 

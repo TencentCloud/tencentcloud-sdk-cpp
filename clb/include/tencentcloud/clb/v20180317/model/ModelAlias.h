@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>模型积分系数配置，包含 <code>InputCoefficient</code>、<code>InputCachedCoefficient</code> 和 <code>OutputCoefficient</code>。</p><p>未配置时输入系数默认为 25，缓存命中输入系数默认为 3，输出系数默认为 100。</p>
-                     * @return Coefficient <p>模型积分系数配置，包含 <code>InputCoefficient</code>、<code>InputCachedCoefficient</code> 和 <code>OutputCoefficient</code>。</p><p>未配置时输入系数默认为 25，缓存命中输入系数默认为 3，输出系数默认为 100。</p>
+                     * 获取<p>模型积分系数配置，包含 <code>InputCoefficient</code> 和 <code>OutputCoefficient</code>。</p><p>未配置时输入系数和输出系数均返回 1。</p>
+                     * @return Coefficient <p>模型积分系数配置，包含 <code>InputCoefficient</code> 和 <code>OutputCoefficient</code>。</p><p>未配置时输入系数和输出系数均返回 1。</p>
                      * 
                      */
                     Coefficient GetCoefficient() const;
 
                     /**
-                     * 设置<p>模型积分系数配置，包含 <code>InputCoefficient</code>、<code>InputCachedCoefficient</code> 和 <code>OutputCoefficient</code>。</p><p>未配置时输入系数默认为 25，缓存命中输入系数默认为 3，输出系数默认为 100。</p>
-                     * @param _coefficient <p>模型积分系数配置，包含 <code>InputCoefficient</code>、<code>InputCachedCoefficient</code> 和 <code>OutputCoefficient</code>。</p><p>未配置时输入系数默认为 25，缓存命中输入系数默认为 3，输出系数默认为 100。</p>
+                     * 设置<p>模型积分系数配置，包含 <code>InputCoefficient</code> 和 <code>OutputCoefficient</code>。</p><p>未配置时输入系数和输出系数均返回 1。</p>
+                     * @param _coefficient <p>模型积分系数配置，包含 <code>InputCoefficient</code> 和 <code>OutputCoefficient</code>。</p><p>未配置时输入系数和输出系数均返回 1。</p>
                      * 
                      */
                     void SetCoefficient(const Coefficient& _coefficient);
@@ -153,10 +153,31 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模型能力</p>
+                     * @return Capability <p>模型能力</p>
+                     * 
+                     */
+                    std::string GetCapability() const;
+
+                    /**
+                     * 设置<p>模型能力</p>
+                     * @param _capability <p>模型能力</p>
+                     * 
+                     */
+                    void SetCapability(const std::string& _capability);
+
+                    /**
+                     * 判断参数 Capability 是否已赋值
+                     * @return Capability 是否已赋值
+                     * 
+                     */
+                    bool CapabilityHasBeenSet() const;
+
                 private:
 
                     /**
-                     * <p>模型积分系数配置，包含 <code>InputCoefficient</code>、<code>InputCachedCoefficient</code> 和 <code>OutputCoefficient</code>。</p><p>未配置时输入系数默认为 25，缓存命中输入系数默认为 3，输出系数默认为 100。</p>
+                     * <p>模型积分系数配置，包含 <code>InputCoefficient</code> 和 <code>OutputCoefficient</code>。</p><p>未配置时输入系数和输出系数均返回 1。</p>
                      */
                     Coefficient m_coefficient;
                     bool m_coefficientHasBeenSet;
@@ -184,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>模型能力</p>
+                     */
+                    std::string m_capability;
+                    bool m_capabilityHasBeenSet;
 
                 };
             }

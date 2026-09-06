@@ -39,7 +39,8 @@ CreateModelRouterRequest::CreateModelRouterRequest() :
     m_modelRouterBillingConfigHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_eipAddressIdHasBeenSet(false),
-    m_bandwidthHasBeenSet(false)
+    m_bandwidthHasBeenSet(false),
+    m_embeddingConfigHasBeenSet(false)
 {
 }
 
@@ -195,6 +196,15 @@ string CreateModelRouterRequest::ToJsonString() const
         string key = "Bandwidth";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_bandwidth, allocator);
+    }
+
+    if (m_embeddingConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmbeddingConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_embeddingConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -475,6 +485,22 @@ void CreateModelRouterRequest::SetBandwidth(const uint64_t& _bandwidth)
 bool CreateModelRouterRequest::BandwidthHasBeenSet() const
 {
     return m_bandwidthHasBeenSet;
+}
+
+EmbeddingConfig CreateModelRouterRequest::GetEmbeddingConfig() const
+{
+    return m_embeddingConfig;
+}
+
+void CreateModelRouterRequest::SetEmbeddingConfig(const EmbeddingConfig& _embeddingConfig)
+{
+    m_embeddingConfig = _embeddingConfig;
+    m_embeddingConfigHasBeenSet = true;
+}
+
+bool CreateModelRouterRequest::EmbeddingConfigHasBeenSet() const
+{
+    return m_embeddingConfigHasBeenSet;
 }
 
 

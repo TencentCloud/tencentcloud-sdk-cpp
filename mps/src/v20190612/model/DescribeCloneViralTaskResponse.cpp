@@ -26,7 +26,8 @@ using namespace std;
 DescribeCloneViralTaskResponse::DescribeCloneViralTaskResponse() :
     m_statusHasBeenSet(false),
     m_messageHasBeenSet(false),
-    m_videoUrlsHasBeenSet(false)
+    m_videoUrlsHasBeenSet(false),
+    m_requestBodyHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,16 @@ CoreInternalOutcome DescribeCloneViralTaskResponse::Deserialize(const string &pa
         m_videoUrlsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RequestBody") && !rsp["RequestBody"].IsNull())
+    {
+        if (!rsp["RequestBody"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RequestBody` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestBody = string(rsp["RequestBody"].GetString());
+        m_requestBodyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +145,14 @@ string DescribeCloneViralTaskResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_requestBodyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestBody";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_requestBody.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -176,6 +195,16 @@ vector<string> DescribeCloneViralTaskResponse::GetVideoUrls() const
 bool DescribeCloneViralTaskResponse::VideoUrlsHasBeenSet() const
 {
     return m_videoUrlsHasBeenSet;
+}
+
+string DescribeCloneViralTaskResponse::GetRequestBody() const
+{
+    return m_requestBody;
+}
+
+bool DescribeCloneViralTaskResponse::RequestBodyHasBeenSet() const
+{
+    return m_requestBodyHasBeenSet;
 }
 
 

@@ -81,7 +81,9 @@ NodeHardwareInfo::NodeHardwareInfo() :
     m_nodeMarkHasBeenSet(false),
     m_underwriteSetAutoRenewHasBeenSet(false),
     m_gpuDescHasBeenSet(false),
-    m_diskHealthIssuesHasBeenSet(false)
+    m_diskHealthIssuesHasBeenSet(false),
+    m_nodeGroupIdHasBeenSet(false),
+    m_nodeGroupNameHasBeenSet(false)
 {
 }
 
@@ -747,6 +749,26 @@ CoreInternalOutcome NodeHardwareInfo::Deserialize(const rapidjson::Value &value)
         m_diskHealthIssuesHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeGroupId") && !value["NodeGroupId"].IsNull())
+    {
+        if (!value["NodeGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.NodeGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeGroupId = string(value["NodeGroupId"].GetString());
+        m_nodeGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeGroupName") && !value["NodeGroupName"].IsNull())
+    {
+        if (!value["NodeGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.NodeGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeGroupName = string(value["NodeGroupName"].GetString());
+        m_nodeGroupNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1268,6 +1290,22 @@ void NodeHardwareInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_nodeGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeGroupName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2247,5 +2285,37 @@ void NodeHardwareInfo::SetDiskHealthIssues(const vector<DiskHealthIssue>& _diskH
 bool NodeHardwareInfo::DiskHealthIssuesHasBeenSet() const
 {
     return m_diskHealthIssuesHasBeenSet;
+}
+
+string NodeHardwareInfo::GetNodeGroupId() const
+{
+    return m_nodeGroupId;
+}
+
+void NodeHardwareInfo::SetNodeGroupId(const string& _nodeGroupId)
+{
+    m_nodeGroupId = _nodeGroupId;
+    m_nodeGroupIdHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::NodeGroupIdHasBeenSet() const
+{
+    return m_nodeGroupIdHasBeenSet;
+}
+
+string NodeHardwareInfo::GetNodeGroupName() const
+{
+    return m_nodeGroupName;
+}
+
+void NodeHardwareInfo::SetNodeGroupName(const string& _nodeGroupName)
+{
+    m_nodeGroupName = _nodeGroupName;
+    m_nodeGroupNameHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::NodeGroupNameHasBeenSet() const
+{
+    return m_nodeGroupNameHasBeenSet;
 }
 

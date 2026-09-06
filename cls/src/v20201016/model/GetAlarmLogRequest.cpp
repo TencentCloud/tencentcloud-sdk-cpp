@@ -26,6 +26,7 @@ GetAlarmLogRequest::GetAlarmLogRequest() :
     m_fromHasBeenSet(false),
     m_toHasBeenSet(false),
     m_queryHasBeenSet(false),
+    m_queryStringHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_contextHasBeenSet(false),
     m_sortHasBeenSet(false),
@@ -62,6 +63,14 @@ string GetAlarmLogRequest::ToJsonString() const
         string key = "Query";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_query.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queryStringHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryString";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queryString.c_str(), allocator).Move(), allocator);
     }
 
     if (m_limitHasBeenSet)
@@ -150,6 +159,22 @@ void GetAlarmLogRequest::SetQuery(const string& _query)
 bool GetAlarmLogRequest::QueryHasBeenSet() const
 {
     return m_queryHasBeenSet;
+}
+
+string GetAlarmLogRequest::GetQueryString() const
+{
+    return m_queryString;
+}
+
+void GetAlarmLogRequest::SetQueryString(const string& _queryString)
+{
+    m_queryString = _queryString;
+    m_queryStringHasBeenSet = true;
+}
+
+bool GetAlarmLogRequest::QueryStringHasBeenSet() const
+{
+    return m_queryStringHasBeenSet;
 }
 
 int64_t GetAlarmLogRequest::GetLimit() const

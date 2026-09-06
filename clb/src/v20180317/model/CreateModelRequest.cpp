@@ -39,7 +39,9 @@ CreateModelRequest::CreateModelRequest() :
     m_verifySSLHasBeenSet(false),
     m_healthCheckConfigHasBeenSet(false),
     m_cMRPrivateNetworkTunnelIdHasBeenSet(false),
-    m_healthCheckConfigsHasBeenSet(false)
+    m_healthCheckConfigsHasBeenSet(false),
+    m_capabilityHasBeenSet(false),
+    m_endpointPathHasBeenSet(false)
 {
 }
 
@@ -220,6 +222,22 @@ string CreateModelRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_capabilityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Capability";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_capability.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endpointPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndpointPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endpointPath.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -500,6 +518,38 @@ void CreateModelRequest::SetHealthCheckConfigs(const vector<ServiceProviderHealt
 bool CreateModelRequest::HealthCheckConfigsHasBeenSet() const
 {
     return m_healthCheckConfigsHasBeenSet;
+}
+
+string CreateModelRequest::GetCapability() const
+{
+    return m_capability;
+}
+
+void CreateModelRequest::SetCapability(const string& _capability)
+{
+    m_capability = _capability;
+    m_capabilityHasBeenSet = true;
+}
+
+bool CreateModelRequest::CapabilityHasBeenSet() const
+{
+    return m_capabilityHasBeenSet;
+}
+
+string CreateModelRequest::GetEndpointPath() const
+{
+    return m_endpointPath;
+}
+
+void CreateModelRequest::SetEndpointPath(const string& _endpointPath)
+{
+    m_endpointPath = _endpointPath;
+    m_endpointPathHasBeenSet = true;
+}
+
+bool CreateModelRequest::EndpointPathHasBeenSet() const
+{
+    return m_endpointPathHasBeenSet;
 }
 
 

@@ -190,6 +190,56 @@ DbdcClient::CreateDBCustomClusterOutcomeCallable DbdcClient::CreateDBCustomClust
     return prom->get_future();
 }
 
+DbdcClient::CreateDBCustomDisasterRecoverGroupOutcome DbdcClient::CreateDBCustomDisasterRecoverGroup(const CreateDBCustomDisasterRecoverGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDBCustomDisasterRecoverGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDBCustomDisasterRecoverGroupResponse rsp = CreateDBCustomDisasterRecoverGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDBCustomDisasterRecoverGroupOutcome(rsp);
+        else
+            return CreateDBCustomDisasterRecoverGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDBCustomDisasterRecoverGroupOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::CreateDBCustomDisasterRecoverGroupAsync(const CreateDBCustomDisasterRecoverGroupRequest& request, const CreateDBCustomDisasterRecoverGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateDBCustomDisasterRecoverGroupRequest&;
+    using Resp = CreateDBCustomDisasterRecoverGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateDBCustomDisasterRecoverGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::CreateDBCustomDisasterRecoverGroupOutcomeCallable DbdcClient::CreateDBCustomDisasterRecoverGroupCallable(const CreateDBCustomDisasterRecoverGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateDBCustomDisasterRecoverGroupOutcome>>();
+    CreateDBCustomDisasterRecoverGroupAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const CreateDBCustomDisasterRecoverGroupRequest&,
+        CreateDBCustomDisasterRecoverGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbdcClient::CreateDBCustomNodesOutcome DbdcClient::CreateDBCustomNodes(const CreateDBCustomNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDBCustomNodes");
@@ -232,6 +282,106 @@ DbdcClient::CreateDBCustomNodesOutcomeCallable DbdcClient::CreateDBCustomNodesCa
         const DbdcClient*,
         const CreateDBCustomNodesRequest&,
         CreateDBCustomNodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbdcClient::DeleteDBCustomDisasterRecoverGroupsOutcome DbdcClient::DeleteDBCustomDisasterRecoverGroups(const DeleteDBCustomDisasterRecoverGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDBCustomDisasterRecoverGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDBCustomDisasterRecoverGroupsResponse rsp = DeleteDBCustomDisasterRecoverGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDBCustomDisasterRecoverGroupsOutcome(rsp);
+        else
+            return DeleteDBCustomDisasterRecoverGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDBCustomDisasterRecoverGroupsOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::DeleteDBCustomDisasterRecoverGroupsAsync(const DeleteDBCustomDisasterRecoverGroupsRequest& request, const DeleteDBCustomDisasterRecoverGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDBCustomDisasterRecoverGroupsRequest&;
+    using Resp = DeleteDBCustomDisasterRecoverGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDBCustomDisasterRecoverGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::DeleteDBCustomDisasterRecoverGroupsOutcomeCallable DbdcClient::DeleteDBCustomDisasterRecoverGroupsCallable(const DeleteDBCustomDisasterRecoverGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDBCustomDisasterRecoverGroupsOutcome>>();
+    DeleteDBCustomDisasterRecoverGroupsAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const DeleteDBCustomDisasterRecoverGroupsRequest&,
+        DeleteDBCustomDisasterRecoverGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbdcClient::DeleteDBCustomNodesDisasterRecoverGroupOutcome DbdcClient::DeleteDBCustomNodesDisasterRecoverGroup(const DeleteDBCustomNodesDisasterRecoverGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDBCustomNodesDisasterRecoverGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDBCustomNodesDisasterRecoverGroupResponse rsp = DeleteDBCustomNodesDisasterRecoverGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDBCustomNodesDisasterRecoverGroupOutcome(rsp);
+        else
+            return DeleteDBCustomNodesDisasterRecoverGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDBCustomNodesDisasterRecoverGroupOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::DeleteDBCustomNodesDisasterRecoverGroupAsync(const DeleteDBCustomNodesDisasterRecoverGroupRequest& request, const DeleteDBCustomNodesDisasterRecoverGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDBCustomNodesDisasterRecoverGroupRequest&;
+    using Resp = DeleteDBCustomNodesDisasterRecoverGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDBCustomNodesDisasterRecoverGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::DeleteDBCustomNodesDisasterRecoverGroupOutcomeCallable DbdcClient::DeleteDBCustomNodesDisasterRecoverGroupCallable(const DeleteDBCustomNodesDisasterRecoverGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDBCustomNodesDisasterRecoverGroupOutcome>>();
+    DeleteDBCustomNodesDisasterRecoverGroupAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const DeleteDBCustomNodesDisasterRecoverGroupRequest&,
+        DeleteDBCustomNodesDisasterRecoverGroupOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -582,6 +732,106 @@ DbdcClient::DescribeDBCustomClustersOutcomeCallable DbdcClient::DescribeDBCustom
         const DbdcClient*,
         const DescribeDBCustomClustersRequest&,
         DescribeDBCustomClustersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbdcClient::DescribeDBCustomDisasterRecoverGroupQuotaOutcome DbdcClient::DescribeDBCustomDisasterRecoverGroupQuota(const DescribeDBCustomDisasterRecoverGroupQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBCustomDisasterRecoverGroupQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBCustomDisasterRecoverGroupQuotaResponse rsp = DescribeDBCustomDisasterRecoverGroupQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBCustomDisasterRecoverGroupQuotaOutcome(rsp);
+        else
+            return DescribeDBCustomDisasterRecoverGroupQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBCustomDisasterRecoverGroupQuotaOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::DescribeDBCustomDisasterRecoverGroupQuotaAsync(const DescribeDBCustomDisasterRecoverGroupQuotaRequest& request, const DescribeDBCustomDisasterRecoverGroupQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBCustomDisasterRecoverGroupQuotaRequest&;
+    using Resp = DescribeDBCustomDisasterRecoverGroupQuotaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBCustomDisasterRecoverGroupQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::DescribeDBCustomDisasterRecoverGroupQuotaOutcomeCallable DbdcClient::DescribeDBCustomDisasterRecoverGroupQuotaCallable(const DescribeDBCustomDisasterRecoverGroupQuotaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBCustomDisasterRecoverGroupQuotaOutcome>>();
+    DescribeDBCustomDisasterRecoverGroupQuotaAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const DescribeDBCustomDisasterRecoverGroupQuotaRequest&,
+        DescribeDBCustomDisasterRecoverGroupQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbdcClient::DescribeDBCustomDisasterRecoverGroupsOutcome DbdcClient::DescribeDBCustomDisasterRecoverGroups(const DescribeDBCustomDisasterRecoverGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBCustomDisasterRecoverGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBCustomDisasterRecoverGroupsResponse rsp = DescribeDBCustomDisasterRecoverGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBCustomDisasterRecoverGroupsOutcome(rsp);
+        else
+            return DescribeDBCustomDisasterRecoverGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBCustomDisasterRecoverGroupsOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::DescribeDBCustomDisasterRecoverGroupsAsync(const DescribeDBCustomDisasterRecoverGroupsRequest& request, const DescribeDBCustomDisasterRecoverGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBCustomDisasterRecoverGroupsRequest&;
+    using Resp = DescribeDBCustomDisasterRecoverGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBCustomDisasterRecoverGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::DescribeDBCustomDisasterRecoverGroupsOutcomeCallable DbdcClient::DescribeDBCustomDisasterRecoverGroupsCallable(const DescribeDBCustomDisasterRecoverGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBCustomDisasterRecoverGroupsOutcome>>();
+    DescribeDBCustomDisasterRecoverGroupsAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const DescribeDBCustomDisasterRecoverGroupsRequest&,
+        DescribeDBCustomDisasterRecoverGroupsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1490,6 +1740,106 @@ DbdcClient::ModifyDBCustomClusterTagsOutcomeCallable DbdcClient::ModifyDBCustomC
     return prom->get_future();
 }
 
+DbdcClient::ModifyDBCustomDisasterRecoverGroupAttributeOutcome DbdcClient::ModifyDBCustomDisasterRecoverGroupAttribute(const ModifyDBCustomDisasterRecoverGroupAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBCustomDisasterRecoverGroupAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBCustomDisasterRecoverGroupAttributeResponse rsp = ModifyDBCustomDisasterRecoverGroupAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBCustomDisasterRecoverGroupAttributeOutcome(rsp);
+        else
+            return ModifyDBCustomDisasterRecoverGroupAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBCustomDisasterRecoverGroupAttributeOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::ModifyDBCustomDisasterRecoverGroupAttributeAsync(const ModifyDBCustomDisasterRecoverGroupAttributeRequest& request, const ModifyDBCustomDisasterRecoverGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDBCustomDisasterRecoverGroupAttributeRequest&;
+    using Resp = ModifyDBCustomDisasterRecoverGroupAttributeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBCustomDisasterRecoverGroupAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::ModifyDBCustomDisasterRecoverGroupAttributeOutcomeCallable DbdcClient::ModifyDBCustomDisasterRecoverGroupAttributeCallable(const ModifyDBCustomDisasterRecoverGroupAttributeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDBCustomDisasterRecoverGroupAttributeOutcome>>();
+    ModifyDBCustomDisasterRecoverGroupAttributeAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const ModifyDBCustomDisasterRecoverGroupAttributeRequest&,
+        ModifyDBCustomDisasterRecoverGroupAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbdcClient::ModifyDBCustomDisasterRecoverGroupTagsOutcome DbdcClient::ModifyDBCustomDisasterRecoverGroupTags(const ModifyDBCustomDisasterRecoverGroupTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBCustomDisasterRecoverGroupTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBCustomDisasterRecoverGroupTagsResponse rsp = ModifyDBCustomDisasterRecoverGroupTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBCustomDisasterRecoverGroupTagsOutcome(rsp);
+        else
+            return ModifyDBCustomDisasterRecoverGroupTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBCustomDisasterRecoverGroupTagsOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::ModifyDBCustomDisasterRecoverGroupTagsAsync(const ModifyDBCustomDisasterRecoverGroupTagsRequest& request, const ModifyDBCustomDisasterRecoverGroupTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDBCustomDisasterRecoverGroupTagsRequest&;
+    using Resp = ModifyDBCustomDisasterRecoverGroupTagsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBCustomDisasterRecoverGroupTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::ModifyDBCustomDisasterRecoverGroupTagsOutcomeCallable DbdcClient::ModifyDBCustomDisasterRecoverGroupTagsCallable(const ModifyDBCustomDisasterRecoverGroupTagsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDBCustomDisasterRecoverGroupTagsOutcome>>();
+    ModifyDBCustomDisasterRecoverGroupTagsAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const ModifyDBCustomDisasterRecoverGroupTagsRequest&,
+        ModifyDBCustomDisasterRecoverGroupTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbdcClient::ModifyDBCustomNodeAttributesOutcome DbdcClient::ModifyDBCustomNodeAttributes(const ModifyDBCustomNodeAttributesRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBCustomNodeAttributes");
@@ -1632,6 +1982,56 @@ DbdcClient::ModifyDBCustomNodeTagsOutcomeCallable DbdcClient::ModifyDBCustomNode
         const DbdcClient*,
         const ModifyDBCustomNodeTagsRequest&,
         ModifyDBCustomNodeTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbdcClient::ModifyDBCustomNodesDisasterRecoverGroupOutcome DbdcClient::ModifyDBCustomNodesDisasterRecoverGroup(const ModifyDBCustomNodesDisasterRecoverGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBCustomNodesDisasterRecoverGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBCustomNodesDisasterRecoverGroupResponse rsp = ModifyDBCustomNodesDisasterRecoverGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBCustomNodesDisasterRecoverGroupOutcome(rsp);
+        else
+            return ModifyDBCustomNodesDisasterRecoverGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBCustomNodesDisasterRecoverGroupOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::ModifyDBCustomNodesDisasterRecoverGroupAsync(const ModifyDBCustomNodesDisasterRecoverGroupRequest& request, const ModifyDBCustomNodesDisasterRecoverGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDBCustomNodesDisasterRecoverGroupRequest&;
+    using Resp = ModifyDBCustomNodesDisasterRecoverGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBCustomNodesDisasterRecoverGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::ModifyDBCustomNodesDisasterRecoverGroupOutcomeCallable DbdcClient::ModifyDBCustomNodesDisasterRecoverGroupCallable(const ModifyDBCustomNodesDisasterRecoverGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDBCustomNodesDisasterRecoverGroupOutcome>>();
+    ModifyDBCustomNodesDisasterRecoverGroupAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const ModifyDBCustomNodesDisasterRecoverGroupRequest&,
+        ModifyDBCustomNodesDisasterRecoverGroupOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

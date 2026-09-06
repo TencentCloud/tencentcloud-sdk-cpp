@@ -25,7 +25,8 @@ ModelAlias::ModelAlias() :
     m_modelAliasNameHasBeenSet(false),
     m_serviceProviderCoefficientSetHasBeenSet(false),
     m_sourceHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_capabilityHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,16 @@ CoreInternalOutcome ModelAlias::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("Capability") && !value["Capability"].IsNull())
+    {
+        if (!value["Capability"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelAlias.Capability` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_capability = string(value["Capability"].GetString());
+        m_capabilityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -154,6 +165,14 @@ void ModelAlias::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_capabilityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Capability";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_capability.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -237,5 +256,21 @@ void ModelAlias::SetStatus(const string& _status)
 bool ModelAlias::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string ModelAlias::GetCapability() const
+{
+    return m_capability;
+}
+
+void ModelAlias::SetCapability(const string& _capability)
+{
+    m_capability = _capability;
+    m_capabilityHasBeenSet = true;
+}
+
+bool ModelAlias::CapabilityHasBeenSet() const
+{
+    return m_capabilityHasBeenSet;
 }
 

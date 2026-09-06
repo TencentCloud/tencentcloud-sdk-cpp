@@ -47,8 +47,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取加载后续详情的Context
-                     * @return Context 加载后续详情的Context
+                     * 获取<p>加载后续详情的Context</p>
+                     * @return Context <p>加载后续详情的Context</p>
                      * 
                      */
                     std::string GetContext() const;
@@ -61,8 +61,8 @@ namespace TencentCloud
                     bool ContextHasBeenSet() const;
 
                     /**
-                     * 获取指定时间范围内的告警执行详情是否完整返回
-                     * @return ListOver 指定时间范围内的告警执行详情是否完整返回
+                     * 获取<p>指定时间范围内的告警执行详情是否完整返回</p>
+                     * @return ListOver <p>指定时间范围内的告警执行详情是否完整返回</p>
                      * 
                      */
                     bool GetListOver() const;
@@ -75,8 +75,8 @@ namespace TencentCloud
                     bool ListOverHasBeenSet() const;
 
                     /**
-                     * 获取返回的结果是否为SQL分析结果
-                     * @return Analysis 返回的结果是否为SQL分析结果
+                     * 获取<p>返回的结果是否为SQL分析结果</p>
+                     * @return Analysis <p>返回的结果是否为SQL分析结果</p>
                      * 
                      */
                     bool GetAnalysis() const;
@@ -89,11 +89,9 @@ namespace TencentCloud
                     bool AnalysisHasBeenSet() const;
 
                     /**
-                     * 获取分析结果的列名，如果Query语句有SQL查询，则返回查询字段的列名；
-否则为空。
+                     * 获取<p>分析结果的列名，如果Query语句有SQL查询，则返回查询字段的列名；<br>否则为空。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ColNames 分析结果的列名，如果Query语句有SQL查询，则返回查询字段的列名；
-否则为空。
+                     * @return ColNames <p>分析结果的列名，如果Query语句有SQL查询，则返回查询字段的列名；<br>否则为空。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -107,13 +105,9 @@ namespace TencentCloud
                     bool ColNamesHasBeenSet() const;
 
                     /**
-                     * 获取执行详情查询结果。
-当Query字段无SQL语句时，返回查询结果。
-当Query字段有SQL语句时，可能返回null。
+                     * 获取<p>执行详情查询结果。<br>当Query字段无SQL语句时，返回查询结果。<br>当Query字段有SQL语句时，可能返回null。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Results 执行详情查询结果。
-当Query字段无SQL语句时，返回查询结果。
-当Query字段有SQL语句时，可能返回null。
+                     * @return Results <p>执行详情查询结果。<br>当Query字段无SQL语句时，返回查询结果。<br>当Query字段有SQL语句时，可能返回null。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -127,11 +121,9 @@ namespace TencentCloud
                     bool ResultsHasBeenSet() const;
 
                     /**
-                     * 获取执行详情统计分析结果。当Query字段有SQL语句时，返回SQL统计结果，否则可能返回null。
-
+                     * 获取<p>执行详情统计分析结果。当Query字段有SQL语句时，返回SQL统计结果，否则可能返回null。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AnalysisResults 执行详情统计分析结果。当Query字段有SQL语句时，返回SQL统计结果，否则可能返回null。
-
+                     * @return AnalysisResults <p>执行详情统计分析结果。当Query字段有SQL语句时，返回SQL统计结果，否则可能返回null。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -145,9 +137,9 @@ namespace TencentCloud
                     bool AnalysisResultsHasBeenSet() const;
 
                     /**
-                     * 获取执行详情统计分析结果；UseNewAnalysis为true有效。
+                     * 获取<p>执行详情统计分析结果；UseNewAnalysis为true有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AnalysisRecords 执行详情统计分析结果；UseNewAnalysis为true有效。
+                     * @return AnalysisRecords <p>执行详情统计分析结果；UseNewAnalysis为true有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -161,9 +153,9 @@ namespace TencentCloud
                     bool AnalysisRecordsHasBeenSet() const;
 
                     /**
-                     * 获取分析结果的列名， UseNewAnalysis为true有效
+                     * 获取<p>分析结果的列名， UseNewAnalysis为true有效</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Columns 分析结果的列名， UseNewAnalysis为true有效
+                     * @return Columns <p>分析结果的列名， UseNewAnalysis为true有效</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -179,57 +171,53 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 加载后续详情的Context
+                     * <p>加载后续详情的Context</p>
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;
 
                     /**
-                     * 指定时间范围内的告警执行详情是否完整返回
+                     * <p>指定时间范围内的告警执行详情是否完整返回</p>
                      */
                     bool m_listOver;
                     bool m_listOverHasBeenSet;
 
                     /**
-                     * 返回的结果是否为SQL分析结果
+                     * <p>返回的结果是否为SQL分析结果</p>
                      */
                     bool m_analysis;
                     bool m_analysisHasBeenSet;
 
                     /**
-                     * 分析结果的列名，如果Query语句有SQL查询，则返回查询字段的列名；
-否则为空。
+                     * <p>分析结果的列名，如果Query语句有SQL查询，则返回查询字段的列名；<br>否则为空。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_colNames;
                     bool m_colNamesHasBeenSet;
 
                     /**
-                     * 执行详情查询结果。
-当Query字段无SQL语句时，返回查询结果。
-当Query字段有SQL语句时，可能返回null。
+                     * <p>执行详情查询结果。<br>当Query字段无SQL语句时，返回查询结果。<br>当Query字段有SQL语句时，可能返回null。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LogInfo> m_results;
                     bool m_resultsHasBeenSet;
 
                     /**
-                     * 执行详情统计分析结果。当Query字段有SQL语句时，返回SQL统计结果，否则可能返回null。
-
+                     * <p>执行详情统计分析结果。当Query字段有SQL语句时，返回SQL统计结果，否则可能返回null。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LogItems> m_analysisResults;
                     bool m_analysisResultsHasBeenSet;
 
                     /**
-                     * 执行详情统计分析结果；UseNewAnalysis为true有效。
+                     * <p>执行详情统计分析结果；UseNewAnalysis为true有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_analysisRecords;
                     bool m_analysisRecordsHasBeenSet;
 
                     /**
-                     * 分析结果的列名， UseNewAnalysis为true有效
+                     * <p>分析结果的列名， UseNewAnalysis为true有效</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Column> m_columns;

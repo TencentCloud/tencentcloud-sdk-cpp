@@ -44,7 +44,12 @@ ElectronicTrainTicket::ElectronicTrainTicket() :
     m_seatHasBeenSet(false),
     m_totalHasBeenSet(false),
     m_checkCodeHasBeenSet(false),
-    m_stateCodeHasBeenSet(false)
+    m_stateCodeHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_airConditionerFeatureHasBeenSet(false),
+    m_ticketTypeHasBeenSet(false),
+    m_originalTaxRateHasBeenSet(false),
+    m_fullElectronicNumberHasBeenSet(false)
 {
 }
 
@@ -293,6 +298,56 @@ CoreInternalOutcome ElectronicTrainTicket::Deserialize(const rapidjson::Value &v
         m_stateCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ElectronicTrainTicket.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AirConditionerFeature") && !value["AirConditionerFeature"].IsNull())
+    {
+        if (!value["AirConditionerFeature"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ElectronicTrainTicket.AirConditionerFeature` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_airConditionerFeature = string(value["AirConditionerFeature"].GetString());
+        m_airConditionerFeatureHasBeenSet = true;
+    }
+
+    if (value.HasMember("TicketType") && !value["TicketType"].IsNull())
+    {
+        if (!value["TicketType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ElectronicTrainTicket.TicketType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ticketType = string(value["TicketType"].GetString());
+        m_ticketTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("OriginalTaxRate") && !value["OriginalTaxRate"].IsNull())
+    {
+        if (!value["OriginalTaxRate"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ElectronicTrainTicket.OriginalTaxRate` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originalTaxRate = string(value["OriginalTaxRate"].GetString());
+        m_originalTaxRateHasBeenSet = true;
+    }
+
+    if (value.HasMember("FullElectronicNumber") && !value["FullElectronicNumber"].IsNull())
+    {
+        if (!value["FullElectronicNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ElectronicTrainTicket.FullElectronicNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fullElectronicNumber = string(value["FullElectronicNumber"].GetString());
+        m_fullElectronicNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -490,6 +545,46 @@ void ElectronicTrainTicket::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "StateCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_stateCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_airConditionerFeatureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AirConditionerFeature";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_airConditionerFeature.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ticketTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TicketType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ticketType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originalTaxRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginalTaxRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originalTaxRate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fullElectronicNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FullElectronicNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fullElectronicNumber.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -877,5 +972,85 @@ void ElectronicTrainTicket::SetStateCode(const string& _stateCode)
 bool ElectronicTrainTicket::StateCodeHasBeenSet() const
 {
     return m_stateCodeHasBeenSet;
+}
+
+string ElectronicTrainTicket::GetType() const
+{
+    return m_type;
+}
+
+void ElectronicTrainTicket::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool ElectronicTrainTicket::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+string ElectronicTrainTicket::GetAirConditionerFeature() const
+{
+    return m_airConditionerFeature;
+}
+
+void ElectronicTrainTicket::SetAirConditionerFeature(const string& _airConditionerFeature)
+{
+    m_airConditionerFeature = _airConditionerFeature;
+    m_airConditionerFeatureHasBeenSet = true;
+}
+
+bool ElectronicTrainTicket::AirConditionerFeatureHasBeenSet() const
+{
+    return m_airConditionerFeatureHasBeenSet;
+}
+
+string ElectronicTrainTicket::GetTicketType() const
+{
+    return m_ticketType;
+}
+
+void ElectronicTrainTicket::SetTicketType(const string& _ticketType)
+{
+    m_ticketType = _ticketType;
+    m_ticketTypeHasBeenSet = true;
+}
+
+bool ElectronicTrainTicket::TicketTypeHasBeenSet() const
+{
+    return m_ticketTypeHasBeenSet;
+}
+
+string ElectronicTrainTicket::GetOriginalTaxRate() const
+{
+    return m_originalTaxRate;
+}
+
+void ElectronicTrainTicket::SetOriginalTaxRate(const string& _originalTaxRate)
+{
+    m_originalTaxRate = _originalTaxRate;
+    m_originalTaxRateHasBeenSet = true;
+}
+
+bool ElectronicTrainTicket::OriginalTaxRateHasBeenSet() const
+{
+    return m_originalTaxRateHasBeenSet;
+}
+
+string ElectronicTrainTicket::GetFullElectronicNumber() const
+{
+    return m_fullElectronicNumber;
+}
+
+void ElectronicTrainTicket::SetFullElectronicNumber(const string& _fullElectronicNumber)
+{
+    m_fullElectronicNumber = _fullElectronicNumber;
+    m_fullElectronicNumberHasBeenSet = true;
+}
+
+bool ElectronicTrainTicket::FullElectronicNumberHasBeenSet() const
+{
+    return m_fullElectronicNumberHasBeenSet;
 }
 

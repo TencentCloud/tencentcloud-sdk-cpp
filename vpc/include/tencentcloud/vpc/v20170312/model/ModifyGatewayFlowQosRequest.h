@@ -43,27 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网关实例ID，目前我们支持的网关实例类型有，
-专线网关实例ID，形如，`dcg-ltjahce6`；
-Nat网关实例ID，形如，`nat-ltjahce6`；
-VPN网关实例ID，形如，`vpn-ltjahce6`。
-                     * @return GatewayId 网关实例ID，目前我们支持的网关实例类型有，
-专线网关实例ID，形如，`dcg-ltjahce6`；
-Nat网关实例ID，形如，`nat-ltjahce6`；
-VPN网关实例ID，形如，`vpn-ltjahce6`。
+                     * 获取<p>网关实例ID，目前我们支持的网关实例类型有，<br>专线网关实例ID，形如，<code>dcg-ltjahce6</code>；<br>Nat网关实例ID，形如，<code>nat-ltjahce6</code>；<br>VPN网关实例ID，形如，<code>vpn-ltjahce6</code>。</p>
+                     * @return GatewayId <p>网关实例ID，目前我们支持的网关实例类型有，<br>专线网关实例ID，形如，<code>dcg-ltjahce6</code>；<br>Nat网关实例ID，形如，<code>nat-ltjahce6</code>；<br>VPN网关实例ID，形如，<code>vpn-ltjahce6</code>。</p>
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
-                     * 设置网关实例ID，目前我们支持的网关实例类型有，
-专线网关实例ID，形如，`dcg-ltjahce6`；
-Nat网关实例ID，形如，`nat-ltjahce6`；
-VPN网关实例ID，形如，`vpn-ltjahce6`。
-                     * @param _gatewayId 网关实例ID，目前我们支持的网关实例类型有，
-专线网关实例ID，形如，`dcg-ltjahce6`；
-Nat网关实例ID，形如，`nat-ltjahce6`；
-VPN网关实例ID，形如，`vpn-ltjahce6`。
+                     * 设置<p>网关实例ID，目前我们支持的网关实例类型有，<br>专线网关实例ID，形如，<code>dcg-ltjahce6</code>；<br>Nat网关实例ID，形如，<code>nat-ltjahce6</code>；<br>VPN网关实例ID，形如，<code>vpn-ltjahce6</code>。</p>
+                     * @param _gatewayId <p>网关实例ID，目前我们支持的网关实例类型有，<br>专线网关实例ID，形如，<code>dcg-ltjahce6</code>；<br>Nat网关实例ID，形如，<code>nat-ltjahce6</code>；<br>VPN网关实例ID，形如，<code>vpn-ltjahce6</code>。</p>
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -76,15 +64,15 @@ VPN网关实例ID，形如，`vpn-ltjahce6`。
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取流控带宽值。取值大于0，表示限流到指定的Mbps；取值等于0，表示完全限流；取值为-1，不限流。
-                     * @return Bandwidth 流控带宽值。取值大于0，表示限流到指定的Mbps；取值等于0，表示完全限流；取值为-1，不限流。
+                     * 获取<p>流控带宽值。取值大于0，表示限流到指定的Mbps；取值等于0，表示完全限流；取值为-1，不限流。</p>
+                     * @return Bandwidth <p>流控带宽值。取值大于0，表示限流到指定的Mbps；取值等于0，表示完全限流；取值为-1，不限流。</p>
                      * 
                      */
                     int64_t GetBandwidth() const;
 
                     /**
-                     * 设置流控带宽值。取值大于0，表示限流到指定的Mbps；取值等于0，表示完全限流；取值为-1，不限流。
-                     * @param _bandwidth 流控带宽值。取值大于0，表示限流到指定的Mbps；取值等于0，表示完全限流；取值为-1，不限流。
+                     * 设置<p>流控带宽值。取值大于0，表示限流到指定的Mbps；取值等于0，表示完全限流；取值为-1，不限流。</p>
+                     * @param _bandwidth <p>流控带宽值。取值大于0，表示限流到指定的Mbps；取值等于0，表示完全限流；取值为-1，不限流。</p>
                      * 
                      */
                     void SetBandwidth(const int64_t& _bandwidth);
@@ -97,15 +85,15 @@ VPN网关实例ID，形如，`vpn-ltjahce6`。
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取限流的云服务器内网IP。
-                     * @return IpAddresses 限流的云服务器内网IP。
+                     * 获取<p>限流的云服务器内网IP。</p><p>参数格式：10.0.0.2</p>
+                     * @return IpAddresses <p>限流的云服务器内网IP。</p><p>参数格式：10.0.0.2</p>
                      * 
                      */
                     std::vector<std::string> GetIpAddresses() const;
 
                     /**
-                     * 设置限流的云服务器内网IP。
-                     * @param _ipAddresses 限流的云服务器内网IP。
+                     * 设置<p>限流的云服务器内网IP。</p><p>参数格式：10.0.0.2</p>
+                     * @param _ipAddresses <p>限流的云服务器内网IP。</p><p>参数格式：10.0.0.2</p>
                      * 
                      */
                     void SetIpAddresses(const std::vector<std::string>& _ipAddresses);
@@ -117,28 +105,52 @@ VPN网关实例ID，形如，`vpn-ltjahce6`。
                      */
                     bool IpAddressesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>限流方向，取值为In代表入向，Out代表出向。当前仅标准型Nat实例网关流控带宽方向可设置入向限流。</p>
+                     * @return Direction <p>限流方向，取值为In代表入向，Out代表出向。当前仅标准型Nat实例网关流控带宽方向可设置入向限流。</p>
+                     * 
+                     */
+                    std::string GetDirection() const;
+
+                    /**
+                     * 设置<p>限流方向，取值为In代表入向，Out代表出向。当前仅标准型Nat实例网关流控带宽方向可设置入向限流。</p>
+                     * @param _direction <p>限流方向，取值为In代表入向，Out代表出向。当前仅标准型Nat实例网关流控带宽方向可设置入向限流。</p>
+                     * 
+                     */
+                    void SetDirection(const std::string& _direction);
+
+                    /**
+                     * 判断参数 Direction 是否已赋值
+                     * @return Direction 是否已赋值
+                     * 
+                     */
+                    bool DirectionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 网关实例ID，目前我们支持的网关实例类型有，
-专线网关实例ID，形如，`dcg-ltjahce6`；
-Nat网关实例ID，形如，`nat-ltjahce6`；
-VPN网关实例ID，形如，`vpn-ltjahce6`。
+                     * <p>网关实例ID，目前我们支持的网关实例类型有，<br>专线网关实例ID，形如，<code>dcg-ltjahce6</code>；<br>Nat网关实例ID，形如，<code>nat-ltjahce6</code>；<br>VPN网关实例ID，形如，<code>vpn-ltjahce6</code>。</p>
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 流控带宽值。取值大于0，表示限流到指定的Mbps；取值等于0，表示完全限流；取值为-1，不限流。
+                     * <p>流控带宽值。取值大于0，表示限流到指定的Mbps；取值等于0，表示完全限流；取值为-1，不限流。</p>
                      */
                     int64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * 限流的云服务器内网IP。
+                     * <p>限流的云服务器内网IP。</p><p>参数格式：10.0.0.2</p>
                      */
                     std::vector<std::string> m_ipAddresses;
                     bool m_ipAddressesHasBeenSet;
+
+                    /**
+                     * <p>限流方向，取值为In代表入向，Out代表出向。当前仅标准型Nat实例网关流控带宽方向可设置入向限流。</p>
+                     */
+                    std::string m_direction;
+                    bool m_directionHasBeenSet;
 
                 };
             }

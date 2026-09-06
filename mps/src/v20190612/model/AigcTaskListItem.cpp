@@ -32,7 +32,9 @@ AigcTaskListItem::AigcTaskListItem() :
     m_taskResultMsgHasBeenSet(false),
     m_resolutionHasBeenSet(false),
     m_ratioHasBeenSet(false),
-    m_requestBodyHasBeenSet(false)
+    m_requestBodyHasBeenSet(false),
+    m_taskInfoHasBeenSet(false),
+    m_stageHasBeenSet(false)
 {
 }
 
@@ -164,6 +166,26 @@ CoreInternalOutcome AigcTaskListItem::Deserialize(const rapidjson::Value &value)
         m_requestBodyHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskInfo") && !value["TaskInfo"].IsNull())
+    {
+        if (!value["TaskInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcTaskListItem.TaskInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskInfo = string(value["TaskInfo"].GetString());
+        m_taskInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("Stage") && !value["Stage"].IsNull())
+    {
+        if (!value["Stage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcTaskListItem.Stage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_stage = string(value["Stage"].GetString());
+        m_stageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +292,22 @@ void AigcTaskListItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "RequestBody";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_requestBody.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Stage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stage.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -465,5 +503,37 @@ void AigcTaskListItem::SetRequestBody(const string& _requestBody)
 bool AigcTaskListItem::RequestBodyHasBeenSet() const
 {
     return m_requestBodyHasBeenSet;
+}
+
+string AigcTaskListItem::GetTaskInfo() const
+{
+    return m_taskInfo;
+}
+
+void AigcTaskListItem::SetTaskInfo(const string& _taskInfo)
+{
+    m_taskInfo = _taskInfo;
+    m_taskInfoHasBeenSet = true;
+}
+
+bool AigcTaskListItem::TaskInfoHasBeenSet() const
+{
+    return m_taskInfoHasBeenSet;
+}
+
+string AigcTaskListItem::GetStage() const
+{
+    return m_stage;
+}
+
+void AigcTaskListItem::SetStage(const string& _stage)
+{
+    m_stage = _stage;
+    m_stageHasBeenSet = true;
+}
+
+bool AigcTaskListItem::StageHasBeenSet() const
+{
+    return m_stageHasBeenSet;
 }
 

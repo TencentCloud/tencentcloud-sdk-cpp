@@ -290,6 +290,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/WatermarkTemplate.h
   include/tencentcloud/mps/v20190612/model/ImageProcessTaskOutput.h
   include/tencentcloud/mps/v20190612/model/ComposeTargetInfo.h
+  include/tencentcloud/mps/v20190612/model/DocToVideoWatermarkInfo.h
   include/tencentcloud/mps/v20190612/model/TaskStatData.h
   include/tencentcloud/mps/v20190612/model/EvaluationTaskInput.h
   include/tencentcloud/mps/v20190612/model/DescribeInputRTMPPullSettings.h
@@ -376,7 +377,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/SmartSubtitleTaskResultInput.h
   include/tencentcloud/mps/v20190612/model/BatchStartStreamLinkFlowRequest.h
   include/tencentcloud/mps/v20190612/model/ImageWatermarkInput.h
-  include/tencentcloud/mps/v20190612/model/DescribeStreamPackageLinearAssemblyChannelRequest.h
+  include/tencentcloud/mps/v20190612/model/CloneViralOutputOption.h
   include/tencentcloud/mps/v20190612/model/SRTFECSimpleOptions.h
   include/tencentcloud/mps/v20190612/model/BatchProcessMediaResponse.h
   include/tencentcloud/mps/v20190612/model/LiveRecordResult.h
@@ -442,7 +443,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskDelLogoInput.h
   include/tencentcloud/mps/v20190612/model/DescribeAigcImageTaskResponse.h
   include/tencentcloud/mps/v20190612/model/MediaUsageItem.h
-  include/tencentcloud/mps/v20190612/model/SmartSubtitleTaskBatchOutput.h
+  include/tencentcloud/mps/v20190612/model/Activity.h
   include/tencentcloud/mps/v20190612/model/BatchStopStreamLinkFlowRequest.h
   include/tencentcloud/mps/v20190612/model/DeleteStreamPackageLinearAssemblyProgramsByChannelResponse.h
   include/tencentcloud/mps/v20190612/model/RTMPAddressDestination.h
@@ -690,6 +691,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/TranscodeTemplate.h
   include/tencentcloud/mps/v20190612/model/TranslateConfigureInfo.h
   include/tencentcloud/mps/v20190612/model/ProgramAlertCounts.h
+  include/tencentcloud/mps/v20190612/model/DescribeStreamPackageLinearAssemblyChannelRequest.h
   include/tencentcloud/mps/v20190612/model/DescribeCloneViralTaskResponse.h
   include/tencentcloud/mps/v20190612/model/TermBase.h
   include/tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowMediaStatisticsResponse.h
@@ -814,7 +816,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/WatermarkInput.h
   include/tencentcloud/mps/v20190612/model/EnableWorkflowResponse.h
   include/tencentcloud/mps/v20190612/model/UpdateVoiceResponse.h
-  include/tencentcloud/mps/v20190612/model/Activity.h
+  include/tencentcloud/mps/v20190612/model/CloneViralCosInfo.h
   include/tencentcloud/mps/v20190612/model/AiSampleWordInfo.h
   include/tencentcloud/mps/v20190612/model/AdaptiveDynamicStreamingInfoItem.h
   include/tencentcloud/mps/v20190612/model/CreateStreamLinkOutputInfoRequest.h
@@ -897,6 +899,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/MediaInputInfo.h
   include/tencentcloud/mps/v20190612/model/AsrHotWordsConfigure.h
   include/tencentcloud/mps/v20190612/model/ImageAreaBoxInfo.h
+  include/tencentcloud/mps/v20190612/model/DocToVideoBackgroundInfo.h
   include/tencentcloud/mps/v20190612/model/LiveStreamAiReviewResultItem.h
   include/tencentcloud/mps/v20190612/model/DescribeVideoSearchTaskDetailRequest.h
   include/tencentcloud/mps/v20190612/model/CreateInputRTPSettings.h
@@ -907,6 +910,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/VoiceInfo.h
   include/tencentcloud/mps/v20190612/model/DescribeSnapshotByTimeOffsetTemplatesResponse.h
   include/tencentcloud/mps/v20190612/model/MediaVideoStreamItem.h
+  include/tencentcloud/mps/v20190612/model/SmartSubtitleTaskBatchOutput.h
   include/tencentcloud/mps/v20190612/model/SnapshotByTimeOffsetTemplate.h
   include/tencentcloud/mps/v20190612/model/DeleteSnapshotByTimeOffsetTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/ProhibitedOcrReviewTemplateInfoForUpdate.h
@@ -1400,6 +1404,7 @@ set(mps_src
   src/v20190612/model/WatermarkTemplate.cpp
   src/v20190612/model/ImageProcessTaskOutput.cpp
   src/v20190612/model/ComposeTargetInfo.cpp
+  src/v20190612/model/DocToVideoWatermarkInfo.cpp
   src/v20190612/model/TaskStatData.cpp
   src/v20190612/model/EvaluationTaskInput.cpp
   src/v20190612/model/DescribeInputRTMPPullSettings.cpp
@@ -1486,7 +1491,7 @@ set(mps_src
   src/v20190612/model/SmartSubtitleTaskResultInput.cpp
   src/v20190612/model/BatchStartStreamLinkFlowRequest.cpp
   src/v20190612/model/ImageWatermarkInput.cpp
-  src/v20190612/model/DescribeStreamPackageLinearAssemblyChannelRequest.cpp
+  src/v20190612/model/CloneViralOutputOption.cpp
   src/v20190612/model/SRTFECSimpleOptions.cpp
   src/v20190612/model/BatchProcessMediaResponse.cpp
   src/v20190612/model/LiveRecordResult.cpp
@@ -1552,7 +1557,7 @@ set(mps_src
   src/v20190612/model/AiAnalysisTaskDelLogoInput.cpp
   src/v20190612/model/DescribeAigcImageTaskResponse.cpp
   src/v20190612/model/MediaUsageItem.cpp
-  src/v20190612/model/SmartSubtitleTaskBatchOutput.cpp
+  src/v20190612/model/Activity.cpp
   src/v20190612/model/BatchStopStreamLinkFlowRequest.cpp
   src/v20190612/model/DeleteStreamPackageLinearAssemblyProgramsByChannelResponse.cpp
   src/v20190612/model/RTMPAddressDestination.cpp
@@ -1800,6 +1805,7 @@ set(mps_src
   src/v20190612/model/TranscodeTemplate.cpp
   src/v20190612/model/TranslateConfigureInfo.cpp
   src/v20190612/model/ProgramAlertCounts.cpp
+  src/v20190612/model/DescribeStreamPackageLinearAssemblyChannelRequest.cpp
   src/v20190612/model/DescribeCloneViralTaskResponse.cpp
   src/v20190612/model/TermBase.cpp
   src/v20190612/model/DescribeStreamLinkFlowMediaStatisticsResponse.cpp
@@ -1924,7 +1930,7 @@ set(mps_src
   src/v20190612/model/WatermarkInput.cpp
   src/v20190612/model/EnableWorkflowResponse.cpp
   src/v20190612/model/UpdateVoiceResponse.cpp
-  src/v20190612/model/Activity.cpp
+  src/v20190612/model/CloneViralCosInfo.cpp
   src/v20190612/model/AiSampleWordInfo.cpp
   src/v20190612/model/AdaptiveDynamicStreamingInfoItem.cpp
   src/v20190612/model/CreateStreamLinkOutputInfoRequest.cpp
@@ -2007,6 +2013,7 @@ set(mps_src
   src/v20190612/model/MediaInputInfo.cpp
   src/v20190612/model/AsrHotWordsConfigure.cpp
   src/v20190612/model/ImageAreaBoxInfo.cpp
+  src/v20190612/model/DocToVideoBackgroundInfo.cpp
   src/v20190612/model/LiveStreamAiReviewResultItem.cpp
   src/v20190612/model/DescribeVideoSearchTaskDetailRequest.cpp
   src/v20190612/model/CreateInputRTPSettings.cpp
@@ -2017,6 +2024,7 @@ set(mps_src
   src/v20190612/model/VoiceInfo.cpp
   src/v20190612/model/DescribeSnapshotByTimeOffsetTemplatesResponse.cpp
   src/v20190612/model/MediaVideoStreamItem.cpp
+  src/v20190612/model/SmartSubtitleTaskBatchOutput.cpp
   src/v20190612/model/SnapshotByTimeOffsetTemplate.cpp
   src/v20190612/model/DeleteSnapshotByTimeOffsetTemplateResponse.cpp
   src/v20190612/model/ProhibitedOcrReviewTemplateInfoForUpdate.cpp

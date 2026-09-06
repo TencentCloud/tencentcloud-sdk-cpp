@@ -85,6 +85,20 @@ namespace TencentCloud
                      */
                     bool VideoUrlsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>任务请求体</p>
+                     * @return RequestBody <p>任务请求体</p>
+                     * 
+                     */
+                    std::string GetRequestBody() const;
+
+                    /**
+                     * 判断参数 RequestBody 是否已赋值
+                     * @return RequestBody 是否已赋值
+                     * 
+                     */
+                    bool RequestBodyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -104,6 +118,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_videoUrls;
                     bool m_videoUrlsHasBeenSet;
+
+                    /**
+                     * <p>任务请求体</p>
+                     */
+                    std::string m_requestBody;
+                    bool m_requestBodyHasBeenSet;
 
                 };
             }

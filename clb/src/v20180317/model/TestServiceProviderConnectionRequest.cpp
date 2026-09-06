@@ -34,7 +34,8 @@ TestServiceProviderConnectionRequest::TestServiceProviderConnectionRequest() :
     m_serviceProviderIdHasBeenSet(false),
     m_verifySSLHasBeenSet(false),
     m_healthCheckProtocolHasBeenSet(false),
-    m_cMRPrivateNetworkTunnelIdHasBeenSet(false)
+    m_cMRPrivateNetworkTunnelIdHasBeenSet(false),
+    m_capabilityHasBeenSet(false)
 {
 }
 
@@ -144,6 +145,14 @@ string TestServiceProviderConnectionRequest::ToJsonString() const
         string key = "CMRPrivateNetworkTunnelId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cMRPrivateNetworkTunnelId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_capabilityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Capability";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_capability.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -344,6 +353,22 @@ void TestServiceProviderConnectionRequest::SetCMRPrivateNetworkTunnelId(const st
 bool TestServiceProviderConnectionRequest::CMRPrivateNetworkTunnelIdHasBeenSet() const
 {
     return m_cMRPrivateNetworkTunnelIdHasBeenSet;
+}
+
+string TestServiceProviderConnectionRequest::GetCapability() const
+{
+    return m_capability;
+}
+
+void TestServiceProviderConnectionRequest::SetCapability(const string& _capability)
+{
+    m_capability = _capability;
+    m_capabilityHasBeenSet = true;
+}
+
+bool TestServiceProviderConnectionRequest::CapabilityHasBeenSet() const
+{
+    return m_capabilityHasBeenSet;
 }
 
 

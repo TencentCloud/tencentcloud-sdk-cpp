@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取车辆类型
-                     * @return CarType 车辆类型
+                     * 获取<p>车辆类型</p>
+                     * @return CarType <p>车辆类型</p>
                      * 
                      */
                     std::string GetCarType() const;
 
                     /**
-                     * 设置车辆类型
-                     * @param _carType 车辆类型
+                     * 设置<p>车辆类型</p>
+                     * @param _carType <p>车辆类型</p>
                      * 
                      */
                     void SetCarType(const std::string& _carType);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CarTypeHasBeenSet() const;
 
                     /**
-                     * 获取厂牌型号
-                     * @return PlateModel 厂牌型号
+                     * 获取<p>厂牌型号</p>
+                     * @return PlateModel <p>厂牌型号</p>
                      * 
                      */
                     std::string GetPlateModel() const;
 
                     /**
-                     * 设置厂牌型号
-                     * @param _plateModel 厂牌型号
+                     * 设置<p>厂牌型号</p>
+                     * @param _plateModel <p>厂牌型号</p>
                      * 
                      */
                     void SetPlateModel(const std::string& _plateModel);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool PlateModelHasBeenSet() const;
 
                     /**
-                     * 获取产地
-                     * @return ProduceAddress 产地
+                     * 获取<p>产地</p>
+                     * @return ProduceAddress <p>产地</p>
                      * 
                      */
                     std::string GetProduceAddress() const;
 
                     /**
-                     * 设置产地
-                     * @param _produceAddress 产地
+                     * 设置<p>产地</p>
+                     * @param _produceAddress <p>产地</p>
                      * 
                      */
                     void SetProduceAddress(const std::string& _produceAddress);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ProduceAddressHasBeenSet() const;
 
                     /**
-                     * 获取合格证号
-                     * @return CertificateNo 合格证号
+                     * 获取<p>合格证号</p>
+                     * @return CertificateNo <p>合格证号</p>
                      * 
                      */
                     std::string GetCertificateNo() const;
 
                     /**
-                     * 设置合格证号
-                     * @param _certificateNo 合格证号
+                     * 设置<p>合格证号</p>
+                     * @param _certificateNo <p>合格证号</p>
                      * 
                      */
                     void SetCertificateNo(const std::string& _certificateNo);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool CertificateNoHasBeenSet() const;
 
                     /**
-                     * 获取进口证明书号
-                     * @return ImportNo 进口证明书号
+                     * 获取<p>进口证明书号</p>
+                     * @return ImportNo <p>进口证明书号</p>
                      * 
                      */
                     std::string GetImportNo() const;
 
                     /**
-                     * 设置进口证明书号
-                     * @param _importNo 进口证明书号
+                     * 设置<p>进口证明书号</p>
+                     * @param _importNo <p>进口证明书号</p>
                      * 
                      */
                     void SetImportNo(const std::string& _importNo);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ImportNoHasBeenSet() const;
 
                     /**
-                     * 获取LSVCA2NP9HN0xxxxx
-                     * @return VinNo LSVCA2NP9HN0xxxxx
+                     * 获取<p>LSVCA2NP9HN0xxxxx</p>
+                     * @return VinNo <p>LSVCA2NP9HN0xxxxx</p>
                      * 
                      */
                     std::string GetVinNo() const;
 
                     /**
-                     * 设置LSVCA2NP9HN0xxxxx
-                     * @param _vinNo LSVCA2NP9HN0xxxxx
+                     * 设置<p>LSVCA2NP9HN0xxxxx</p>
+                     * @param _vinNo <p>LSVCA2NP9HN0xxxxx</p>
                      * 
                      */
                     void SetVinNo(const std::string& _vinNo);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool VinNoHasBeenSet() const;
 
                     /**
-                     * 获取完税证书号
-                     * @return PayTaxesNo 完税证书号
+                     * 获取<p>完税证书号</p>
+                     * @return PayTaxesNo <p>完税证书号</p>
                      * 
                      */
                     std::string GetPayTaxesNo() const;
 
                     /**
-                     * 设置完税证书号
-                     * @param _payTaxesNo 完税证书号
+                     * 设置<p>完税证书号</p>
+                     * @param _payTaxesNo <p>完税证书号</p>
                      * 
                      */
                     void SetPayTaxesNo(const std::string& _payTaxesNo);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool PayTaxesNoHasBeenSet() const;
 
                     /**
-                     * 获取吨位
-                     * @return Tonnage 吨位
+                     * 获取<p>吨位</p>
+                     * @return Tonnage <p>吨位</p>
                      * 
                      */
                     std::string GetTonnage() const;
 
                     /**
-                     * 设置吨位
-                     * @param _tonnage 吨位
+                     * 设置<p>吨位</p>
+                     * @param _tonnage <p>吨位</p>
                      * 
                      */
                     void SetTonnage(const std::string& _tonnage);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool TonnageHasBeenSet() const;
 
                     /**
-                     * 获取限乘人数
-                     * @return LimitCount 限乘人数
+                     * 获取<p>限乘人数</p>
+                     * @return LimitCount <p>限乘人数</p>
                      * 
                      */
                     std::string GetLimitCount() const;
 
                     /**
-                     * 设置限乘人数
-                     * @param _limitCount 限乘人数
+                     * 设置<p>限乘人数</p>
+                     * @param _limitCount <p>限乘人数</p>
                      * 
                      */
                     void SetLimitCount(const std::string& _limitCount);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool LimitCountHasBeenSet() const;
 
                     /**
-                     * 获取发动机号码
-                     * @return EngineNo 发动机号码
+                     * 获取<p>发动机号码</p>
+                     * @return EngineNo <p>发动机号码</p>
                      * 
                      */
                     std::string GetEngineNo() const;
 
                     /**
-                     * 设置发动机号码
-                     * @param _engineNo 发动机号码
+                     * 设置<p>发动机号码</p>
+                     * @param _engineNo <p>发动机号码</p>
                      * 
                      */
                     void SetEngineNo(const std::string& _engineNo);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool EngineNoHasBeenSet() const;
 
                     /**
-                     * 获取商检单号
-                     * @return BizCheckFormNo 商检单号
+                     * 获取<p>商检单号</p>
+                     * @return BizCheckFormNo <p>商检单号</p>
                      * 
                      */
                     std::string GetBizCheckFormNo() const;
 
                     /**
-                     * 设置商检单号
-                     * @param _bizCheckFormNo 商检单号
+                     * 设置<p>商检单号</p>
+                     * @param _bizCheckFormNo <p>商检单号</p>
                      * 
                      */
                     void SetBizCheckFormNo(const std::string& _bizCheckFormNo);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool BizCheckFormNoHasBeenSet() const;
 
                     /**
-                     * 获取主管税务机关代码
-                     * @return TaxtationOrgCode 主管税务机关代码
+                     * 获取<p>主管税务机关代码</p>
+                     * @return TaxtationOrgCode <p>主管税务机关代码</p>
                      * 
                      */
                     std::string GetTaxtationOrgCode() const;
 
                     /**
-                     * 设置主管税务机关代码
-                     * @param _taxtationOrgCode 主管税务机关代码
+                     * 设置<p>主管税务机关代码</p>
+                     * @param _taxtationOrgCode <p>主管税务机关代码</p>
                      * 
                      */
                     void SetTaxtationOrgCode(const std::string& _taxtationOrgCode);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool TaxtationOrgCodeHasBeenSet() const;
 
                     /**
-                     * 获取主管税务机关名称
-                     * @return TaxtationOrgName 主管税务机关名称
+                     * 获取<p>主管税务机关名称</p>
+                     * @return TaxtationOrgName <p>主管税务机关名称</p>
                      * 
                      */
                     std::string GetTaxtationOrgName() const;
 
                     /**
-                     * 设置主管税务机关名称
-                     * @param _taxtationOrgName 主管税务机关名称
+                     * 设置<p>主管税务机关名称</p>
+                     * @param _taxtationOrgName <p>主管税务机关名称</p>
                      * 
                      */
                     void SetTaxtationOrgName(const std::string& _taxtationOrgName);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool TaxtationOrgNameHasBeenSet() const;
 
                     /**
-                     * 获取税率
-                     * @return MotorTaxRate 税率
+                     * 获取<p>税率</p>
+                     * @return MotorTaxRate <p>税率</p>
                      * 
                      */
                     std::string GetMotorTaxRate() const;
 
                     /**
-                     * 设置税率
-                     * @param _motorTaxRate 税率
+                     * 设置<p>税率</p>
+                     * @param _motorTaxRate <p>税率</p>
                      * 
                      */
                     void SetMotorTaxRate(const std::string& _motorTaxRate);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool MotorTaxRateHasBeenSet() const;
 
                     /**
-                     * 获取银行账号
-                     * @return MotorBankName 银行账号
+                     * 获取<p>银行账号</p>
+                     * @return MotorBankName <p>银行账号</p>
                      * 
                      */
                     std::string GetMotorBankName() const;
 
                     /**
-                     * 设置银行账号
-                     * @param _motorBankName 银行账号
+                     * 设置<p>银行账号</p>
+                     * @param _motorBankName <p>银行账号</p>
                      * 
                      */
                     void SetMotorBankName(const std::string& _motorBankName);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool MotorBankNameHasBeenSet() const;
 
                     /**
-                     * 获取开户行
-                     * @return MotorBankAccount 开户行
+                     * 获取<p>开户行</p>
+                     * @return MotorBankAccount <p>开户行</p>
                      * 
                      */
                     std::string GetMotorBankAccount() const;
 
                     /**
-                     * 设置开户行
-                     * @param _motorBankAccount 开户行
+                     * 设置<p>开户行</p>
+                     * @param _motorBankAccount <p>开户行</p>
                      * 
                      */
                     void SetMotorBankAccount(const std::string& _motorBankAccount);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool MotorBankAccountHasBeenSet() const;
 
                     /**
-                     * 获取销售地址
-                     * @return SellerAddress 销售地址
+                     * 获取<p>销售地址</p>
+                     * @return SellerAddress <p>销售地址</p>
                      * 
                      */
                     std::string GetSellerAddress() const;
 
                     /**
-                     * 设置销售地址
-                     * @param _sellerAddress 销售地址
+                     * 设置<p>销售地址</p>
+                     * @param _sellerAddress <p>销售地址</p>
                      * 
                      */
                     void SetSellerAddress(const std::string& _sellerAddress);
@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool SellerAddressHasBeenSet() const;
 
                     /**
-                     * 获取销售电话
-                     * @return SellerTel 销售电话
+                     * 获取<p>销售电话</p>
+                     * @return SellerTel <p>销售电话</p>
                      * 
                      */
                     std::string GetSellerTel() const;
 
                     /**
-                     * 设置销售电话
-                     * @param _sellerTel 销售电话
+                     * 设置<p>销售电话</p>
+                     * @param _sellerTel <p>销售电话</p>
                      * 
                      */
                     void SetSellerTel(const std::string& _sellerTel);
@@ -425,15 +425,15 @@ namespace TencentCloud
                     bool SellerTelHasBeenSet() const;
 
                     /**
-                     * 获取购方身份证
-                     * @return BuyerNo 购方身份证
+                     * 获取<p>购方身份证</p>
+                     * @return BuyerNo <p>购方身份证</p>
                      * 
                      */
                     std::string GetBuyerNo() const;
 
                     /**
-                     * 设置购方身份证
-                     * @param _buyerNo 购方身份证
+                     * 设置<p>购方身份证</p>
+                     * @param _buyerNo <p>购方身份证</p>
                      * 
                      */
                     void SetBuyerNo(const std::string& _buyerNo);
@@ -448,115 +448,115 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 车辆类型
+                     * <p>车辆类型</p>
                      */
                     std::string m_carType;
                     bool m_carTypeHasBeenSet;
 
                     /**
-                     * 厂牌型号
+                     * <p>厂牌型号</p>
                      */
                     std::string m_plateModel;
                     bool m_plateModelHasBeenSet;
 
                     /**
-                     * 产地
+                     * <p>产地</p>
                      */
                     std::string m_produceAddress;
                     bool m_produceAddressHasBeenSet;
 
                     /**
-                     * 合格证号
+                     * <p>合格证号</p>
                      */
                     std::string m_certificateNo;
                     bool m_certificateNoHasBeenSet;
 
                     /**
-                     * 进口证明书号
+                     * <p>进口证明书号</p>
                      */
                     std::string m_importNo;
                     bool m_importNoHasBeenSet;
 
                     /**
-                     * LSVCA2NP9HN0xxxxx
+                     * <p>LSVCA2NP9HN0xxxxx</p>
                      */
                     std::string m_vinNo;
                     bool m_vinNoHasBeenSet;
 
                     /**
-                     * 完税证书号
+                     * <p>完税证书号</p>
                      */
                     std::string m_payTaxesNo;
                     bool m_payTaxesNoHasBeenSet;
 
                     /**
-                     * 吨位
+                     * <p>吨位</p>
                      */
                     std::string m_tonnage;
                     bool m_tonnageHasBeenSet;
 
                     /**
-                     * 限乘人数
+                     * <p>限乘人数</p>
                      */
                     std::string m_limitCount;
                     bool m_limitCountHasBeenSet;
 
                     /**
-                     * 发动机号码
+                     * <p>发动机号码</p>
                      */
                     std::string m_engineNo;
                     bool m_engineNoHasBeenSet;
 
                     /**
-                     * 商检单号
+                     * <p>商检单号</p>
                      */
                     std::string m_bizCheckFormNo;
                     bool m_bizCheckFormNoHasBeenSet;
 
                     /**
-                     * 主管税务机关代码
+                     * <p>主管税务机关代码</p>
                      */
                     std::string m_taxtationOrgCode;
                     bool m_taxtationOrgCodeHasBeenSet;
 
                     /**
-                     * 主管税务机关名称
+                     * <p>主管税务机关名称</p>
                      */
                     std::string m_taxtationOrgName;
                     bool m_taxtationOrgNameHasBeenSet;
 
                     /**
-                     * 税率
+                     * <p>税率</p>
                      */
                     std::string m_motorTaxRate;
                     bool m_motorTaxRateHasBeenSet;
 
                     /**
-                     * 银行账号
+                     * <p>银行账号</p>
                      */
                     std::string m_motorBankName;
                     bool m_motorBankNameHasBeenSet;
 
                     /**
-                     * 开户行
+                     * <p>开户行</p>
                      */
                     std::string m_motorBankAccount;
                     bool m_motorBankAccountHasBeenSet;
 
                     /**
-                     * 销售地址
+                     * <p>销售地址</p>
                      */
                     std::string m_sellerAddress;
                     bool m_sellerAddressHasBeenSet;
 
                     /**
-                     * 销售电话
+                     * <p>销售电话</p>
                      */
                     std::string m_sellerTel;
                     bool m_sellerTelHasBeenSet;
 
                     /**
-                     * 购方身份证
+                     * <p>购方身份证</p>
                      */
                     std::string m_buyerNo;
                     bool m_buyerNoHasBeenSet;

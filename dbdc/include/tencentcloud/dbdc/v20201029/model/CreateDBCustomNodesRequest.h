@@ -487,6 +487,27 @@ namespace TencentCloud
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>置放群组ID</p><p>入参限制：仅支持指定一个</p>
+                     * @return DisasterRecoverGroupIds <p>置放群组ID</p><p>入参限制：仅支持指定一个</p>
+                     * 
+                     */
+                    std::vector<std::string> GetDisasterRecoverGroupIds() const;
+
+                    /**
+                     * 设置<p>置放群组ID</p><p>入参限制：仅支持指定一个</p>
+                     * @param _disasterRecoverGroupIds <p>置放群组ID</p><p>入参限制：仅支持指定一个</p>
+                     * 
+                     */
+                    void SetDisasterRecoverGroupIds(const std::vector<std::string>& _disasterRecoverGroupIds);
+
+                    /**
+                     * 判断参数 DisasterRecoverGroupIds 是否已赋值
+                     * @return DisasterRecoverGroupIds 是否已赋值
+                     * 
+                     */
+                    bool DisasterRecoverGroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -614,6 +635,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
+
+                    /**
+                     * <p>置放群组ID</p><p>入参限制：仅支持指定一个</p>
+                     */
+                    std::vector<std::string> m_disasterRecoverGroupIds;
+                    bool m_disasterRecoverGroupIdsHasBeenSet;
 
                 };
             }

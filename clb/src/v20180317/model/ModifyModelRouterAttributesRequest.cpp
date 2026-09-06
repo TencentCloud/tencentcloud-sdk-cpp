@@ -28,7 +28,9 @@ ModifyModelRouterAttributesRequest::ModifyModelRouterAttributesRequest() :
     m_modelRouterNameHasBeenSet(false),
     m_rateLimitConfigHasBeenSet(false),
     m_routerSettingHasBeenSet(false),
-    m_bandwidthHasBeenSet(false)
+    m_bandwidthHasBeenSet(false),
+    m_capabilityHasBeenSet(false),
+    m_embeddingConfigHasBeenSet(false)
 {
 }
 
@@ -87,6 +89,23 @@ string ModifyModelRouterAttributesRequest::ToJsonString() const
         string key = "Bandwidth";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_bandwidth, allocator);
+    }
+
+    if (m_capabilityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Capability";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_capability.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_embeddingConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmbeddingConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_embeddingConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -191,6 +210,38 @@ void ModifyModelRouterAttributesRequest::SetBandwidth(const uint64_t& _bandwidth
 bool ModifyModelRouterAttributesRequest::BandwidthHasBeenSet() const
 {
     return m_bandwidthHasBeenSet;
+}
+
+string ModifyModelRouterAttributesRequest::GetCapability() const
+{
+    return m_capability;
+}
+
+void ModifyModelRouterAttributesRequest::SetCapability(const string& _capability)
+{
+    m_capability = _capability;
+    m_capabilityHasBeenSet = true;
+}
+
+bool ModifyModelRouterAttributesRequest::CapabilityHasBeenSet() const
+{
+    return m_capabilityHasBeenSet;
+}
+
+EmbeddingConfig ModifyModelRouterAttributesRequest::GetEmbeddingConfig() const
+{
+    return m_embeddingConfig;
+}
+
+void ModifyModelRouterAttributesRequest::SetEmbeddingConfig(const EmbeddingConfig& _embeddingConfig)
+{
+    m_embeddingConfig = _embeddingConfig;
+    m_embeddingConfigHasBeenSet = true;
+}
+
+bool ModifyModelRouterAttributesRequest::EmbeddingConfigHasBeenSet() const
+{
+    return m_embeddingConfigHasBeenSet;
 }
 
 

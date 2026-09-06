@@ -48,7 +48,8 @@ DBCustomNode::DBCustomNode() :
     m_hostIpHasBeenSet(false),
     m_networkModeHasBeenSet(false),
     m_eniIPHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_disasterRecoverGroupIdHasBeenSet(false)
 {
 }
 
@@ -367,6 +368,16 @@ CoreInternalOutcome DBCustomNode::Deserialize(const rapidjson::Value &value)
         m_securityGroupIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("DisasterRecoverGroupId") && !value["DisasterRecoverGroupId"].IsNull())
+    {
+        if (!value["DisasterRecoverGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBCustomNode.DisasterRecoverGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_disasterRecoverGroupId = string(value["DisasterRecoverGroupId"].GetString());
+        m_disasterRecoverGroupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -616,6 +627,14 @@ void DBCustomNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_disasterRecoverGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisasterRecoverGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_disasterRecoverGroupId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1067,5 +1086,21 @@ void DBCustomNode::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
 bool DBCustomNode::SecurityGroupIdsHasBeenSet() const
 {
     return m_securityGroupIdsHasBeenSet;
+}
+
+string DBCustomNode::GetDisasterRecoverGroupId() const
+{
+    return m_disasterRecoverGroupId;
+}
+
+void DBCustomNode::SetDisasterRecoverGroupId(const string& _disasterRecoverGroupId)
+{
+    m_disasterRecoverGroupId = _disasterRecoverGroupId;
+    m_disasterRecoverGroupIdHasBeenSet = true;
+}
+
+bool DBCustomNode::DisasterRecoverGroupIdHasBeenSet() const
+{
+    return m_disasterRecoverGroupIdHasBeenSet;
 }
 

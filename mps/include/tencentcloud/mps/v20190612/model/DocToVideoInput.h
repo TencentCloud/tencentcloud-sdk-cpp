@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mps/v20190612/model/DocToVideoBackgroundInfo.h>
+#include <tencentcloud/mps/v20190612/model/DocToVideoWatermarkInfo.h>
 
 
 namespace TencentCloud
@@ -235,6 +237,111 @@ namespace TencentCloud
                      */
                     bool VoiceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启 PPTX 保真复刻模式。</p><p>开启状态下，会尽可能复刻输入 PPTX 文档的内容，无法完美复刻。<br>暂时无法复刻动画效果，</p><p>开启状态下，需保证输入文档中至少有一个 PPTX 文档。<br>如果有多个 PPTX 文档，则只会对首个文档进行保真复刻。</p><p>默认值：false</p>
+                     * @return PPTXFidelity <p>是否开启 PPTX 保真复刻模式。</p><p>开启状态下，会尽可能复刻输入 PPTX 文档的内容，无法完美复刻。<br>暂时无法复刻动画效果，</p><p>开启状态下，需保证输入文档中至少有一个 PPTX 文档。<br>如果有多个 PPTX 文档，则只会对首个文档进行保真复刻。</p><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetPPTXFidelity() const;
+
+                    /**
+                     * 设置<p>是否开启 PPTX 保真复刻模式。</p><p>开启状态下，会尽可能复刻输入 PPTX 文档的内容，无法完美复刻。<br>暂时无法复刻动画效果，</p><p>开启状态下，需保证输入文档中至少有一个 PPTX 文档。<br>如果有多个 PPTX 文档，则只会对首个文档进行保真复刻。</p><p>默认值：false</p>
+                     * @param _pPTXFidelity <p>是否开启 PPTX 保真复刻模式。</p><p>开启状态下，会尽可能复刻输入 PPTX 文档的内容，无法完美复刻。<br>暂时无法复刻动画效果，</p><p>开启状态下，需保证输入文档中至少有一个 PPTX 文档。<br>如果有多个 PPTX 文档，则只会对首个文档进行保真复刻。</p><p>默认值：false</p>
+                     * 
+                     */
+                    void SetPPTXFidelity(const bool& _pPTXFidelity);
+
+                    /**
+                     * 判断参数 PPTXFidelity 是否已赋值
+                     * @return PPTXFidelity 是否已赋值
+                     * 
+                     */
+                    bool PPTXFidelityHasBeenSet() const;
+
+                    /**
+                     * 获取<p>生成视频的模式。</p><p>枚举值：</p><ul><li>stage： 确认后生成模式</li><li>auto： 端到端直接生成模式</li></ul>
+                     * @return Mode <p>生成视频的模式。</p><p>枚举值：</p><ul><li>stage： 确认后生成模式</li><li>auto： 端到端直接生成模式</li></ul>
+                     * 
+                     */
+                    std::string GetMode() const;
+
+                    /**
+                     * 设置<p>生成视频的模式。</p><p>枚举值：</p><ul><li>stage： 确认后生成模式</li><li>auto： 端到端直接生成模式</li></ul>
+                     * @param _mode <p>生成视频的模式。</p><p>枚举值：</p><ul><li>stage： 确认后生成模式</li><li>auto： 端到端直接生成模式</li></ul>
+                     * 
+                     */
+                    void SetMode(const std::string& _mode);
+
+                    /**
+                     * 判断参数 Mode 是否已赋值
+                     * @return Mode 是否已赋值
+                     * 
+                     */
+                    bool ModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>用于生成视频的背景图片信息。</p><p>仅在 PreserveLayout 为 false 时起作用。</p>
+                     * @return Background <p>用于生成视频的背景图片信息。</p><p>仅在 PreserveLayout 为 false 时起作用。</p>
+                     * 
+                     */
+                    DocToVideoBackgroundInfo GetBackground() const;
+
+                    /**
+                     * 设置<p>用于生成视频的背景图片信息。</p><p>仅在 PreserveLayout 为 false 时起作用。</p>
+                     * @param _background <p>用于生成视频的背景图片信息。</p><p>仅在 PreserveLayout 为 false 时起作用。</p>
+                     * 
+                     */
+                    void SetBackground(const DocToVideoBackgroundInfo& _background);
+
+                    /**
+                     * 判断参数 Background 是否已赋值
+                     * @return Background 是否已赋值
+                     * 
+                     */
+                    bool BackgroundHasBeenSet() const;
+
+                    /**
+                     * 获取<p>用于生成视频的水印图片信息。</p><p>仅在 PreserveLayout 为 false 时起作用。</p>
+                     * @return Watermark <p>用于生成视频的水印图片信息。</p><p>仅在 PreserveLayout 为 false 时起作用。</p>
+                     * 
+                     */
+                    DocToVideoWatermarkInfo GetWatermark() const;
+
+                    /**
+                     * 设置<p>用于生成视频的水印图片信息。</p><p>仅在 PreserveLayout 为 false 时起作用。</p>
+                     * @param _watermark <p>用于生成视频的水印图片信息。</p><p>仅在 PreserveLayout 为 false 时起作用。</p>
+                     * 
+                     */
+                    void SetWatermark(const DocToVideoWatermarkInfo& _watermark);
+
+                    /**
+                     * 判断参数 Watermark 是否已赋值
+                     * @return Watermark 是否已赋值
+                     * 
+                     */
+                    bool WatermarkHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启字幕生成。</p><p>默认值：false</p>
+                     * @return EnableCaption <p>是否开启字幕生成。</p><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetEnableCaption() const;
+
+                    /**
+                     * 设置<p>是否开启字幕生成。</p><p>默认值：false</p>
+                     * @param _enableCaption <p>是否开启字幕生成。</p><p>默认值：false</p>
+                     * 
+                     */
+                    void SetEnableCaption(const bool& _enableCaption);
+
+                    /**
+                     * 判断参数 EnableCaption 是否已赋值
+                     * @return EnableCaption 是否已赋值
+                     * 
+                     */
+                    bool EnableCaptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +397,36 @@ namespace TencentCloud
                      */
                     std::string m_voiceId;
                     bool m_voiceIdHasBeenSet;
+
+                    /**
+                     * <p>是否开启 PPTX 保真复刻模式。</p><p>开启状态下，会尽可能复刻输入 PPTX 文档的内容，无法完美复刻。<br>暂时无法复刻动画效果，</p><p>开启状态下，需保证输入文档中至少有一个 PPTX 文档。<br>如果有多个 PPTX 文档，则只会对首个文档进行保真复刻。</p><p>默认值：false</p>
+                     */
+                    bool m_pPTXFidelity;
+                    bool m_pPTXFidelityHasBeenSet;
+
+                    /**
+                     * <p>生成视频的模式。</p><p>枚举值：</p><ul><li>stage： 确认后生成模式</li><li>auto： 端到端直接生成模式</li></ul>
+                     */
+                    std::string m_mode;
+                    bool m_modeHasBeenSet;
+
+                    /**
+                     * <p>用于生成视频的背景图片信息。</p><p>仅在 PreserveLayout 为 false 时起作用。</p>
+                     */
+                    DocToVideoBackgroundInfo m_background;
+                    bool m_backgroundHasBeenSet;
+
+                    /**
+                     * <p>用于生成视频的水印图片信息。</p><p>仅在 PreserveLayout 为 false 时起作用。</p>
+                     */
+                    DocToVideoWatermarkInfo m_watermark;
+                    bool m_watermarkHasBeenSet;
+
+                    /**
+                     * <p>是否开启字幕生成。</p><p>默认值：false</p>
+                     */
+                    bool m_enableCaption;
+                    bool m_enableCaptionHasBeenSet;
 
                 };
             }

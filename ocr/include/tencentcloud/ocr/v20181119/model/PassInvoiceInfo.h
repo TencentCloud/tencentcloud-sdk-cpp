@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通行费车牌号
-                     * @return NumberPlate 通行费车牌号
+                     * 获取<p>通行费车牌号；数电通行费源字段 cph 写入该字段。</p>
+                     * @return NumberPlate <p>通行费车牌号；数电通行费源字段 cph 写入该字段。</p>
                      * 
                      */
                     std::string GetNumberPlate() const;
 
                     /**
-                     * 设置通行费车牌号
-                     * @param _numberPlate 通行费车牌号
+                     * 设置<p>通行费车牌号；数电通行费源字段 cph 写入该字段。</p>
+                     * @param _numberPlate <p>通行费车牌号；数电通行费源字段 cph 写入该字段。</p>
                      * 
                      */
                     void SetNumberPlate(const std::string& _numberPlate);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NumberPlateHasBeenSet() const;
 
                     /**
-                     * 获取通行费类型
-                     * @return Type 通行费类型
+                     * 获取<p>通行费类型；数电通行费源字段 cllx 写入该字</p>
+                     * @return Type <p>通行费类型；数电通行费源字段 cllx 写入该字</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置通行费类型
-                     * @param _type 通行费类型
+                     * 设置<p>通行费类型；数电通行费源字段 cllx 写入该字</p>
+                     * @param _type <p>通行费类型；数电通行费源字段 cllx 写入该字</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取通行日期起
-                     * @return PassDateBegin 通行日期起
+                     * 获取<p>通行日期起</p>
+                     * @return PassDateBegin <p>通行日期起</p>
                      * 
                      */
                     std::string GetPassDateBegin() const;
 
                     /**
-                     * 设置通行日期起
-                     * @param _passDateBegin 通行日期起
+                     * 设置<p>通行日期起</p>
+                     * @param _passDateBegin <p>通行日期起</p>
                      * 
                      */
                     void SetPassDateBegin(const std::string& _passDateBegin);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool PassDateBeginHasBeenSet() const;
 
                     /**
-                     * 获取通行日期止
-                     * @return PassDateEnd 通行日期止
+                     * 获取<p>通行日期止</p>
+                     * @return PassDateEnd <p>通行日期止</p>
                      * 
                      */
                     std::string GetPassDateEnd() const;
 
                     /**
-                     * 设置通行日期止
-                     * @param _passDateEnd 通行日期止
+                     * 设置<p>通行日期止</p>
+                     * @param _passDateEnd <p>通行日期止</p>
                      * 
                      */
                     void SetPassDateEnd(const std::string& _passDateEnd);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool PassDateEndHasBeenSet() const;
 
                     /**
-                     * 获取税收分类编码
-                     * @return TaxClassifyCode 税收分类编码
+                     * 获取<p>税收分类编码</p>
+                     * @return TaxClassifyCode <p>税收分类编码</p>
                      * 
                      */
                     std::string GetTaxClassifyCode() const;
 
                     /**
-                     * 设置税收分类编码
-                     * @param _taxClassifyCode 税收分类编码
+                     * 设置<p>税收分类编码</p>
+                     * @param _taxClassifyCode <p>税收分类编码</p>
                      * 
                      */
                     void SetTaxClassifyCode(const std::string& _taxClassifyCode);
@@ -151,37 +151,91 @@ namespace TencentCloud
                      */
                     bool TaxClassifyCodeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>通行费车牌号</p>
+                     * @return CarType <p>通行费车牌号</p>
+                     * 
+                     */
+                    std::string GetCarType() const;
+
+                    /**
+                     * 设置<p>通行费车牌号</p>
+                     * @param _carType <p>通行费车牌号</p>
+                     * 
+                     */
+                    void SetCarType(const std::string& _carType);
+
+                    /**
+                     * 判断参数 CarType 是否已赋值
+                     * @return CarType 是否已赋值
+                     * 
+                     */
+                    bool CarTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>通行费车辆类型</p>
+                     * @return PlateNumber <p>通行费车辆类型</p>
+                     * 
+                     */
+                    std::string GetPlateNumber() const;
+
+                    /**
+                     * 设置<p>通行费车辆类型</p>
+                     * @param _plateNumber <p>通行费车辆类型</p>
+                     * 
+                     */
+                    void SetPlateNumber(const std::string& _plateNumber);
+
+                    /**
+                     * 判断参数 PlateNumber 是否已赋值
+                     * @return PlateNumber 是否已赋值
+                     * 
+                     */
+                    bool PlateNumberHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 通行费车牌号
+                     * <p>通行费车牌号；数电通行费源字段 cph 写入该字段。</p>
                      */
                     std::string m_numberPlate;
                     bool m_numberPlateHasBeenSet;
 
                     /**
-                     * 通行费类型
+                     * <p>通行费类型；数电通行费源字段 cllx 写入该字</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 通行日期起
+                     * <p>通行日期起</p>
                      */
                     std::string m_passDateBegin;
                     bool m_passDateBeginHasBeenSet;
 
                     /**
-                     * 通行日期止
+                     * <p>通行日期止</p>
                      */
                     std::string m_passDateEnd;
                     bool m_passDateEndHasBeenSet;
 
                     /**
-                     * 税收分类编码
+                     * <p>税收分类编码</p>
                      */
                     std::string m_taxClassifyCode;
                     bool m_taxClassifyCodeHasBeenSet;
+
+                    /**
+                     * <p>通行费车牌号</p>
+                     */
+                    std::string m_carType;
+                    bool m_carTypeHasBeenSet;
+
+                    /**
+                     * <p>通行费车辆类型</p>
+                     */
+                    std::string m_plateNumber;
+                    bool m_plateNumberHasBeenSet;
 
                 };
             }

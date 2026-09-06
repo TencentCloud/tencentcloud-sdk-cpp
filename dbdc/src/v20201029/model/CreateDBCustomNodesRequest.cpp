@@ -43,7 +43,8 @@ CreateDBCustomNodesRequest::CreateDBCustomNodesRequest() :
     m_dataDisksHasBeenSet(false),
     m_hostNameHasBeenSet(false),
     m_dryRunHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_disasterRecoverGroupIdsHasBeenSet(false)
 {
 }
 
@@ -243,6 +244,19 @@ string CreateDBCustomNodesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_disasterRecoverGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisasterRecoverGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_disasterRecoverGroupIds.begin(); itr != m_disasterRecoverGroupIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -590,6 +604,22 @@ void CreateDBCustomNodesRequest::SetSecurityGroupIds(const vector<string>& _secu
 bool CreateDBCustomNodesRequest::SecurityGroupIdsHasBeenSet() const
 {
     return m_securityGroupIdsHasBeenSet;
+}
+
+vector<string> CreateDBCustomNodesRequest::GetDisasterRecoverGroupIds() const
+{
+    return m_disasterRecoverGroupIds;
+}
+
+void CreateDBCustomNodesRequest::SetDisasterRecoverGroupIds(const vector<string>& _disasterRecoverGroupIds)
+{
+    m_disasterRecoverGroupIds = _disasterRecoverGroupIds;
+    m_disasterRecoverGroupIdsHasBeenSet = true;
+}
+
+bool CreateDBCustomNodesRequest::DisasterRecoverGroupIdsHasBeenSet() const
+{
+    return m_disasterRecoverGroupIdsHasBeenSet;
 }
 
 

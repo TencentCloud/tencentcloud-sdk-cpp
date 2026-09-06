@@ -25,7 +25,9 @@ using namespace std;
 ModifyModelAttributesRequest::ModifyModelAttributesRequest() :
     m_serviceProviderIdHasBeenSet(false),
     m_serviceProviderNameHasBeenSet(false),
-    m_apiBasesHasBeenSet(false)
+    m_apiBasesHasBeenSet(false),
+    m_apiBaseHasBeenSet(false),
+    m_endpointPathHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,22 @@ string ModifyModelAttributesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_apiBaseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiBase";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_apiBase.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endpointPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndpointPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endpointPath.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -121,6 +139,38 @@ void ModifyModelAttributesRequest::SetApiBases(const vector<ApiBaseItem>& _apiBa
 bool ModifyModelAttributesRequest::ApiBasesHasBeenSet() const
 {
     return m_apiBasesHasBeenSet;
+}
+
+string ModifyModelAttributesRequest::GetApiBase() const
+{
+    return m_apiBase;
+}
+
+void ModifyModelAttributesRequest::SetApiBase(const string& _apiBase)
+{
+    m_apiBase = _apiBase;
+    m_apiBaseHasBeenSet = true;
+}
+
+bool ModifyModelAttributesRequest::ApiBaseHasBeenSet() const
+{
+    return m_apiBaseHasBeenSet;
+}
+
+string ModifyModelAttributesRequest::GetEndpointPath() const
+{
+    return m_endpointPath;
+}
+
+void ModifyModelAttributesRequest::SetEndpointPath(const string& _endpointPath)
+{
+    m_endpointPath = _endpointPath;
+    m_endpointPathHasBeenSet = true;
+}
+
+bool ModifyModelAttributesRequest::EndpointPathHasBeenSet() const
+{
+    return m_endpointPathHasBeenSet;
 }
 
 

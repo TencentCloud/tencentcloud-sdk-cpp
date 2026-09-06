@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool NodeIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>为节点绑定的标签信息</p><p>入参限制：参考标签侧的限制</p>
-                     * @return AddTags <p>为节点绑定的标签信息</p><p>入参限制：参考标签侧的限制</p>
+                     * 获取<p>为节点绑定的标签信息</p><p>入参限制：参考标签侧的限制</p><p>如果节点未关联输入的标签键，则增加关联；若已关联，则将该节点关联的键对应的标签值修改为输入值。本接口中 AddTags 和 DeleteTagKeys 二者必须存在其一，且二者不能包含相同的标签键。</p>
+                     * @return AddTags <p>为节点绑定的标签信息</p><p>入参限制：参考标签侧的限制</p><p>如果节点未关联输入的标签键，则增加关联；若已关联，则将该节点关联的键对应的标签值修改为输入值。本接口中 AddTags 和 DeleteTagKeys 二者必须存在其一，且二者不能包含相同的标签键。</p>
                      * 
                      */
                     std::vector<Tag> GetAddTags() const;
 
                     /**
-                     * 设置<p>为节点绑定的标签信息</p><p>入参限制：参考标签侧的限制</p>
-                     * @param _addTags <p>为节点绑定的标签信息</p><p>入参限制：参考标签侧的限制</p>
+                     * 设置<p>为节点绑定的标签信息</p><p>入参限制：参考标签侧的限制</p><p>如果节点未关联输入的标签键，则增加关联；若已关联，则将该节点关联的键对应的标签值修改为输入值。本接口中 AddTags 和 DeleteTagKeys 二者必须存在其一，且二者不能包含相同的标签键。</p>
+                     * @param _addTags <p>为节点绑定的标签信息</p><p>入参限制：参考标签侧的限制</p><p>如果节点未关联输入的标签键，则增加关联；若已关联，则将该节点关联的键对应的标签值修改为输入值。本接口中 AddTags 和 DeleteTagKeys 二者必须存在其一，且二者不能包含相同的标签键。</p>
                      * 
                      */
                     void SetAddTags(const std::vector<Tag>& _addTags);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool AddTagsHasBeenSet() const;
 
                     /**
-                     * 获取<p>需要删除的标签Key</p>
-                     * @return DeleteTagKeys <p>需要删除的标签Key</p>
+                     * 获取<p>需要解关联的标签Key</p><p>本接口中 AddTags 和 DeleteTagKeys 二者必须存在其一，且二者不能包含相同的标签键。</p>
+                     * @return DeleteTagKeys <p>需要解关联的标签Key</p><p>本接口中 AddTags 和 DeleteTagKeys 二者必须存在其一，且二者不能包含相同的标签键。</p>
                      * 
                      */
                     std::vector<std::string> GetDeleteTagKeys() const;
 
                     /**
-                     * 设置<p>需要删除的标签Key</p>
-                     * @param _deleteTagKeys <p>需要删除的标签Key</p>
+                     * 设置<p>需要解关联的标签Key</p><p>本接口中 AddTags 和 DeleteTagKeys 二者必须存在其一，且二者不能包含相同的标签键。</p>
+                     * @param _deleteTagKeys <p>需要解关联的标签Key</p><p>本接口中 AddTags 和 DeleteTagKeys 二者必须存在其一，且二者不能包含相同的标签键。</p>
                      * 
                      */
                     void SetDeleteTagKeys(const std::vector<std::string>& _deleteTagKeys);
@@ -115,13 +115,13 @@ namespace TencentCloud
                     bool m_nodeIdHasBeenSet;
 
                     /**
-                     * <p>为节点绑定的标签信息</p><p>入参限制：参考标签侧的限制</p>
+                     * <p>为节点绑定的标签信息</p><p>入参限制：参考标签侧的限制</p><p>如果节点未关联输入的标签键，则增加关联；若已关联，则将该节点关联的键对应的标签值修改为输入值。本接口中 AddTags 和 DeleteTagKeys 二者必须存在其一，且二者不能包含相同的标签键。</p>
                      */
                     std::vector<Tag> m_addTags;
                     bool m_addTagsHasBeenSet;
 
                     /**
-                     * <p>需要删除的标签Key</p>
+                     * <p>需要解关联的标签Key</p><p>本接口中 AddTags 和 DeleteTagKeys 二者必须存在其一，且二者不能包含相同的标签键。</p>
                      */
                     std::vector<std::string> m_deleteTagKeys;
                     bool m_deleteTagKeysHasBeenSet;

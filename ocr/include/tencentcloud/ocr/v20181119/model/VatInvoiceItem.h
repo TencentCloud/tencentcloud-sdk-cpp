@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取行号
-                     * @return LineNo 行号
+                     * 获取<p>行号</p>
+                     * @return LineNo <p>行号</p>
                      * 
                      */
                     std::string GetLineNo() const;
 
                     /**
-                     * 设置行号
-                     * @param _lineNo 行号
+                     * 设置<p>行号</p>
+                     * @param _lineNo <p>行号</p>
                      * 
                      */
                     void SetLineNo(const std::string& _lineNo);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool LineNoHasBeenSet() const;
 
                     /**
-                     * 获取名称
-                     * @return Name 名称
+                     * 获取<p>名称</p>
+                     * @return Name <p>名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称
-                     * @param _name 名称
+                     * 设置<p>名称</p>
+                     * @param _name <p>名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取规格
-                     * @return Spec 规格
+                     * 获取<p>规格</p>
+                     * @return Spec <p>规格</p>
                      * 
                      */
                     std::string GetSpec() const;
 
                     /**
-                     * 设置规格
-                     * @param _spec 规格
+                     * 设置<p>规格</p>
+                     * @param _spec <p>规格</p>
                      * 
                      */
                     void SetSpec(const std::string& _spec);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool SpecHasBeenSet() const;
 
                     /**
-                     * 获取单位
-                     * @return Unit 单位
+                     * 获取<p>单位</p>
+                     * @return Unit <p>单位</p>
                      * 
                      */
                     std::string GetUnit() const;
 
                     /**
-                     * 设置单位
-                     * @param _unit 单位
+                     * 设置<p>单位</p>
+                     * @param _unit <p>单位</p>
                      * 
                      */
                     void SetUnit(const std::string& _unit);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool UnitHasBeenSet() const;
 
                     /**
-                     * 获取数量
-                     * @return Quantity 数量
+                     * 获取<p>数量</p>
+                     * @return Quantity <p>数量</p>
                      * 
                      */
                     std::string GetQuantity() const;
 
                     /**
-                     * 设置数量
-                     * @param _quantity 数量
+                     * 设置<p>数量</p>
+                     * @param _quantity <p>数量</p>
                      * 
                      */
                     void SetQuantity(const std::string& _quantity);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool QuantityHasBeenSet() const;
 
                     /**
-                     * 获取单价
-                     * @return UnitPrice 单价
+                     * 获取<p>单价</p>
+                     * @return UnitPrice <p>单价</p>
                      * 
                      */
                     std::string GetUnitPrice() const;
 
                     /**
-                     * 设置单价
-                     * @param _unitPrice 单价
+                     * 设置<p>单价</p>
+                     * @param _unitPrice <p>单价</p>
                      * 
                      */
                     void SetUnitPrice(const std::string& _unitPrice);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool UnitPriceHasBeenSet() const;
 
                     /**
-                     * 获取不含税金额
-                     * @return AmountWithoutTax 不含税金额
+                     * 获取<p>不含税金额</p>
+                     * @return AmountWithoutTax <p>不含税金额</p>
                      * 
                      */
                     std::string GetAmountWithoutTax() const;
 
                     /**
-                     * 设置不含税金额
-                     * @param _amountWithoutTax 不含税金额
+                     * 设置<p>不含税金额</p>
+                     * @param _amountWithoutTax <p>不含税金额</p>
                      * 
                      */
                     void SetAmountWithoutTax(const std::string& _amountWithoutTax);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool AmountWithoutTaxHasBeenSet() const;
 
                     /**
-                     * 获取税率
-                     * @return TaxRate 税率
+                     * 获取<p>税率</p>
+                     * @return TaxRate <p>税率</p>
                      * 
                      */
                     std::string GetTaxRate() const;
 
                     /**
-                     * 设置税率
-                     * @param _taxRate 税率
+                     * 设置<p>税率</p>
+                     * @param _taxRate <p>税率</p>
                      * 
                      */
                     void SetTaxRate(const std::string& _taxRate);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool TaxRateHasBeenSet() const;
 
                     /**
-                     * 获取税额
-                     * @return TaxAmount 税额
+                     * 获取<p>税额</p>
+                     * @return TaxAmount <p>税额</p>
                      * 
                      */
                     std::string GetTaxAmount() const;
 
                     /**
-                     * 设置税额
-                     * @param _taxAmount 税额
+                     * 设置<p>税额</p>
+                     * @param _taxAmount <p>税额</p>
                      * 
                      */
                     void SetTaxAmount(const std::string& _taxAmount);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool TaxAmountHasBeenSet() const;
 
                     /**
-                     * 获取税收分类编码
-                     * @return TaxClassifyCode 税收分类编码
+                     * 获取<p>税收分类编码</p>
+                     * @return TaxClassifyCode <p>税收分类编码</p>
                      * 
                      */
                     std::string GetTaxClassifyCode() const;
 
                     /**
-                     * 设置税收分类编码
-                     * @param _taxClassifyCode 税收分类编码
+                     * 设置<p>税收分类编码</p>
+                     * @param _taxClassifyCode <p>税收分类编码</p>
                      * 
                      */
                     void SetTaxClassifyCode(const std::string& _taxClassifyCode);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool TaxClassifyCodeHasBeenSet() const;
 
                     /**
-                     * 获取运输工具类型
-                     * @return VehicleType 运输工具类型
+                     * 获取<p>运输工具类型</p>
+                     * @return VehicleType <p>运输工具类型</p>
                      * 
                      */
                     std::string GetVehicleType() const;
 
                     /**
-                     * 设置运输工具类型
-                     * @param _vehicleType 运输工具类型
+                     * 设置<p>运输工具类型</p>
+                     * @param _vehicleType <p>运输工具类型</p>
                      * 
                      */
                     void SetVehicleType(const std::string& _vehicleType);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool VehicleTypeHasBeenSet() const;
 
                     /**
-                     * 获取运输工具牌号
-                     * @return VehicleBrand 运输工具牌号
+                     * 获取<p>运输工具牌号</p>
+                     * @return VehicleBrand <p>运输工具牌号</p>
                      * 
                      */
                     std::string GetVehicleBrand() const;
 
                     /**
-                     * 设置运输工具牌号
-                     * @param _vehicleBrand 运输工具牌号
+                     * 设置<p>运输工具牌号</p>
+                     * @param _vehicleBrand <p>运输工具牌号</p>
                      * 
                      */
                     void SetVehicleBrand(const std::string& _vehicleBrand);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool VehicleBrandHasBeenSet() const;
 
                     /**
-                     * 获取起始地
-                     * @return DeparturePlace 起始地
+                     * 获取<p>起始地</p>
+                     * @return DeparturePlace <p>起始地</p>
                      * 
                      */
                     std::string GetDeparturePlace() const;
 
                     /**
-                     * 设置起始地
-                     * @param _departurePlace 起始地
+                     * 设置<p>起始地</p>
+                     * @param _departurePlace <p>起始地</p>
                      * 
                      */
                     void SetDeparturePlace(const std::string& _departurePlace);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool DeparturePlaceHasBeenSet() const;
 
                     /**
-                     * 获取到达地
-                     * @return ArrivalPlace 到达地
+                     * 获取<p>到达地</p>
+                     * @return ArrivalPlace <p>到达地</p>
                      * 
                      */
                     std::string GetArrivalPlace() const;
 
                     /**
-                     * 设置到达地
-                     * @param _arrivalPlace 到达地
+                     * 设置<p>到达地</p>
+                     * @param _arrivalPlace <p>到达地</p>
                      * 
                      */
                     void SetArrivalPlace(const std::string& _arrivalPlace);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool ArrivalPlaceHasBeenSet() const;
 
                     /**
-                     * 获取运输货物名称
-                     * @return TransportItemsName 运输货物名称
+                     * 获取<p>运输货物名称</p>
+                     * @return TransportItemsName <p>运输货物名称</p>
                      * 
                      */
                     std::string GetTransportItemsName() const;
 
                     /**
-                     * 设置运输货物名称
-                     * @param _transportItemsName 运输货物名称
+                     * 设置<p>运输货物名称</p>
+                     * @param _transportItemsName <p>运输货物名称</p>
                      * 
                      */
                     void SetTransportItemsName(const std::string& _transportItemsName);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool TransportItemsNameHasBeenSet() const;
 
                     /**
-                     * 获取建筑服务发生地
-                     * @return ConstructionPlace 建筑服务发生地
+                     * 获取<p>建筑服务发生地</p>
+                     * @return ConstructionPlace <p>建筑服务发生地</p>
                      * 
                      */
                     std::string GetConstructionPlace() const;
 
                     /**
-                     * 设置建筑服务发生地
-                     * @param _constructionPlace 建筑服务发生地
+                     * 设置<p>建筑服务发生地</p>
+                     * @param _constructionPlace <p>建筑服务发生地</p>
                      * 
                      */
                     void SetConstructionPlace(const std::string& _constructionPlace);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool ConstructionPlaceHasBeenSet() const;
 
                     /**
-                     * 获取建筑项目名称
-                     * @return ConstructionName 建筑项目名称
+                     * 获取<p>建筑项目名称</p>
+                     * @return ConstructionName <p>建筑项目名称</p>
                      * 
                      */
                     std::string GetConstructionName() const;
 
                     /**
-                     * 设置建筑项目名称
-                     * @param _constructionName 建筑项目名称
+                     * 设置<p>建筑项目名称</p>
+                     * @param _constructionName <p>建筑项目名称</p>
                      * 
                      */
                     void SetConstructionName(const std::string& _constructionName);
@@ -403,109 +403,269 @@ namespace TencentCloud
                      */
                     bool ConstructionNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>原始税率</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OriginalTaxRate <p>原始税率</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOriginalTaxRate() const;
+
+                    /**
+                     * 设置<p>原始税率</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _originalTaxRate <p>原始税率</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOriginalTaxRate(const std::string& _originalTaxRate);
+
+                    /**
+                     * 判断参数 OriginalTaxRate 是否已赋值
+                     * @return OriginalTaxRate 是否已赋值
+                     * 
+                     */
+                    bool OriginalTaxRateHasBeenSet() const;
+
+                    /**
+                     * 获取<p>原始税额</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OriginalTaxAmount <p>原始税额</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOriginalTaxAmount() const;
+
+                    /**
+                     * 设置<p>原始税额</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _originalTaxAmount <p>原始税额</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOriginalTaxAmount(const std::string& _originalTaxAmount);
+
+                    /**
+                     * 判断参数 OriginalTaxAmount 是否已赋值
+                     * @return OriginalTaxAmount 是否已赋值
+                     * 
+                     */
+                    bool OriginalTaxAmountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>零税率标识</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZeroTaxRateMark <p>零税率标识</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetZeroTaxRateMark() const;
+
+                    /**
+                     * 设置<p>零税率标识</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _zeroTaxRateMark <p>零税率标识</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetZeroTaxRateMark(const std::string& _zeroTaxRateMark);
+
+                    /**
+                     * 判断参数 ZeroTaxRateMark 是否已赋值
+                     * @return ZeroTaxRateMark 是否已赋值
+                     * 
+                     */
+                    bool ZeroTaxRateMarkHasBeenSet() const;
+
+                    /**
+                     * 获取<p>含税单价</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaxIncludedUnitPrice <p>含税单价</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTaxIncludedUnitPrice() const;
+
+                    /**
+                     * 设置<p>含税单价</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taxIncludedUnitPrice <p>含税单价</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaxIncludedUnitPrice(const std::string& _taxIncludedUnitPrice);
+
+                    /**
+                     * 判断参数 TaxIncludedUnitPrice 是否已赋值
+                     * @return TaxIncludedUnitPrice 是否已赋值
+                     * 
+                     */
+                    bool TaxIncludedUnitPriceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>含税金额</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaxIncludedAmount <p>含税金额</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetTaxIncludedAmount() const;
+
+                    /**
+                     * 设置<p>含税金额</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taxIncludedAmount <p>含税金额</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaxIncludedAmount(const double& _taxIncludedAmount);
+
+                    /**
+                     * 判断参数 TaxIncludedAmount 是否已赋值
+                     * @return TaxIncludedAmount 是否已赋值
+                     * 
+                     */
+                    bool TaxIncludedAmountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 行号
+                     * <p>行号</p>
                      */
                     std::string m_lineNo;
                     bool m_lineNoHasBeenSet;
 
                     /**
-                     * 名称
+                     * <p>名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 规格
+                     * <p>规格</p>
                      */
                     std::string m_spec;
                     bool m_specHasBeenSet;
 
                     /**
-                     * 单位
+                     * <p>单位</p>
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;
 
                     /**
-                     * 数量
+                     * <p>数量</p>
                      */
                     std::string m_quantity;
                     bool m_quantityHasBeenSet;
 
                     /**
-                     * 单价
+                     * <p>单价</p>
                      */
                     std::string m_unitPrice;
                     bool m_unitPriceHasBeenSet;
 
                     /**
-                     * 不含税金额
+                     * <p>不含税金额</p>
                      */
                     std::string m_amountWithoutTax;
                     bool m_amountWithoutTaxHasBeenSet;
 
                     /**
-                     * 税率
+                     * <p>税率</p>
                      */
                     std::string m_taxRate;
                     bool m_taxRateHasBeenSet;
 
                     /**
-                     * 税额
+                     * <p>税额</p>
                      */
                     std::string m_taxAmount;
                     bool m_taxAmountHasBeenSet;
 
                     /**
-                     * 税收分类编码
+                     * <p>税收分类编码</p>
                      */
                     std::string m_taxClassifyCode;
                     bool m_taxClassifyCodeHasBeenSet;
 
                     /**
-                     * 运输工具类型
+                     * <p>运输工具类型</p>
                      */
                     std::string m_vehicleType;
                     bool m_vehicleTypeHasBeenSet;
 
                     /**
-                     * 运输工具牌号
+                     * <p>运输工具牌号</p>
                      */
                     std::string m_vehicleBrand;
                     bool m_vehicleBrandHasBeenSet;
 
                     /**
-                     * 起始地
+                     * <p>起始地</p>
                      */
                     std::string m_departurePlace;
                     bool m_departurePlaceHasBeenSet;
 
                     /**
-                     * 到达地
+                     * <p>到达地</p>
                      */
                     std::string m_arrivalPlace;
                     bool m_arrivalPlaceHasBeenSet;
 
                     /**
-                     * 运输货物名称
+                     * <p>运输货物名称</p>
                      */
                     std::string m_transportItemsName;
                     bool m_transportItemsNameHasBeenSet;
 
                     /**
-                     * 建筑服务发生地
+                     * <p>建筑服务发生地</p>
                      */
                     std::string m_constructionPlace;
                     bool m_constructionPlaceHasBeenSet;
 
                     /**
-                     * 建筑项目名称
+                     * <p>建筑项目名称</p>
                      */
                     std::string m_constructionName;
                     bool m_constructionNameHasBeenSet;
+
+                    /**
+                     * <p>原始税率</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_originalTaxRate;
+                    bool m_originalTaxRateHasBeenSet;
+
+                    /**
+                     * <p>原始税额</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_originalTaxAmount;
+                    bool m_originalTaxAmountHasBeenSet;
+
+                    /**
+                     * <p>零税率标识</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zeroTaxRateMark;
+                    bool m_zeroTaxRateMarkHasBeenSet;
+
+                    /**
+                     * <p>含税单价</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taxIncludedUnitPrice;
+                    bool m_taxIncludedUnitPriceHasBeenSet;
+
+                    /**
+                     * <p>含税金额</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_taxIncludedAmount;
+                    bool m_taxIncludedAmountHasBeenSet;
 
                 };
             }

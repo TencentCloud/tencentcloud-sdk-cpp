@@ -42,7 +42,9 @@ ModelKeyInfoItem::ModelKeyInfoItem() :
     m_healthCheckConfigHasBeenSet(false),
     m_cMRPrivateNetworkTunnelIdHasBeenSet(false),
     m_cMRPrivateNetworkTunnelNameHasBeenSet(false),
-    m_healthCheckConfigsHasBeenSet(false)
+    m_healthCheckConfigsHasBeenSet(false),
+    m_capabilityHasBeenSet(false),
+    m_endpointPathHasBeenSet(false)
 {
 }
 
@@ -331,6 +333,26 @@ CoreInternalOutcome ModelKeyInfoItem::Deserialize(const rapidjson::Value &value)
         m_healthCheckConfigsHasBeenSet = true;
     }
 
+    if (value.HasMember("Capability") && !value["Capability"].IsNull())
+    {
+        if (!value["Capability"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelKeyInfoItem.Capability` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_capability = string(value["Capability"].GetString());
+        m_capabilityHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndpointPath") && !value["EndpointPath"].IsNull())
+    {
+        if (!value["EndpointPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelKeyInfoItem.EndpointPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_endpointPath = string(value["EndpointPath"].GetString());
+        m_endpointPathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -553,6 +575,22 @@ void ModelKeyInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_capabilityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Capability";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_capability.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endpointPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndpointPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endpointPath.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -908,5 +946,37 @@ void ModelKeyInfoItem::SetHealthCheckConfigs(const vector<ServiceProviderHealthC
 bool ModelKeyInfoItem::HealthCheckConfigsHasBeenSet() const
 {
     return m_healthCheckConfigsHasBeenSet;
+}
+
+string ModelKeyInfoItem::GetCapability() const
+{
+    return m_capability;
+}
+
+void ModelKeyInfoItem::SetCapability(const string& _capability)
+{
+    m_capability = _capability;
+    m_capabilityHasBeenSet = true;
+}
+
+bool ModelKeyInfoItem::CapabilityHasBeenSet() const
+{
+    return m_capabilityHasBeenSet;
+}
+
+string ModelKeyInfoItem::GetEndpointPath() const
+{
+    return m_endpointPath;
+}
+
+void ModelKeyInfoItem::SetEndpointPath(const string& _endpointPath)
+{
+    m_endpointPath = _endpointPath;
+    m_endpointPathHasBeenSet = true;
+}
+
+bool ModelKeyInfoItem::EndpointPathHasBeenSet() const
+{
+    return m_endpointPathHasBeenSet;
 }
 

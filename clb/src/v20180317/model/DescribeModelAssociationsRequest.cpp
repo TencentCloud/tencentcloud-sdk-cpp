@@ -25,7 +25,8 @@ using namespace std;
 DescribeModelAssociationsRequest::DescribeModelAssociationsRequest() :
     m_modelRouterIdHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_capabilityHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeModelAssociationsRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_capabilityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Capability";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_capability.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeModelAssociationsRequest::SetOffset(const uint64_t& _offset)
 bool DescribeModelAssociationsRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeModelAssociationsRequest::GetCapability() const
+{
+    return m_capability;
+}
+
+void DescribeModelAssociationsRequest::SetCapability(const string& _capability)
+{
+    m_capability = _capability;
+    m_capabilityHasBeenSet = true;
+}
+
+bool DescribeModelAssociationsRequest::CapabilityHasBeenSet() const
+{
+    return m_capabilityHasBeenSet;
 }
 
 

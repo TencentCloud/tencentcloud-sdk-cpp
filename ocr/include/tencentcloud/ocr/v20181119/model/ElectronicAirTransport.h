@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取发票代码
+                     * 获取<p>发票代码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Code 发票代码
+                     * @return Code <p>发票代码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCode() const;
 
                     /**
-                     * 设置发票代码
+                     * 设置<p>发票代码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _code 发票代码
+                     * @param _code <p>发票代码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取发票号码
+                     * 获取<p>发票号码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Number 发票号码
+                     * @return Number <p>发票号码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNumber() const;
 
                     /**
-                     * 设置发票号码
+                     * 设置<p>发票号码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _number 发票号码
+                     * @param _number <p>发票号码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool NumberHasBeenSet() const;
 
                     /**
-                     * 获取开票日期
+                     * 获取<p>开票日期</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Date 开票日期
+                     * @return Date <p>开票日期</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDate() const;
 
                     /**
-                     * 设置开票日期
+                     * 设置<p>开票日期</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _date 开票日期
+                     * @param _date <p>开票日期</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool DateHasBeenSet() const;
 
                     /**
-                     * 获取金额
+                     * 获取<p>金额</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Amount 金额
+                     * @return Amount <p>金额</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAmount() const;
 
                     /**
-                     * 设置金额
+                     * 设置<p>金额</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _amount 金额
+                     * @param _amount <p>金额</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -148,18 +148,18 @@ namespace TencentCloud
                     bool AmountHasBeenSet() const;
 
                     /**
-                     * 获取校验码
+                     * 获取<p>校验码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CheckCode 校验码
+                     * @return CheckCode <p>校验码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCheckCode() const;
 
                     /**
-                     * 设置校验码
+                     * 设置<p>校验码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _checkCode 校验码
+                     * @param _checkCode <p>校验码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -173,18 +173,18 @@ namespace TencentCloud
                     bool CheckCodeHasBeenSet() const;
 
                     /**
-                     * 获取价税合计
+                     * 获取<p>价税合计</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Total 价税合计
+                     * @return Total <p>价税合计</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTotal() const;
 
                     /**
-                     * 设置价税合计
+                     * 设置<p>价税合计</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _total 价税合计
+                     * @param _total <p>价税合计</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -198,18 +198,18 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取抵扣标志
+                     * 获取<p>抵扣标志</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeductionMark 抵扣标志
+                     * @return DeductionMark <p>抵扣标志</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeductionMark() const;
 
                     /**
-                     * 设置抵扣标志
+                     * 设置<p>抵扣标志</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deductionMark 抵扣标志
+                     * @param _deductionMark <p>抵扣标志</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -223,18 +223,18 @@ namespace TencentCloud
                     bool DeductionMarkHasBeenSet() const;
 
                     /**
-                     * 获取发票状态代码，0正常 1 未更新  2作废 3已红冲
+                     * 获取<p>发票状态代码，0正常 1 未更新  2作废 3已红冲</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StateCode 发票状态代码，0正常 1 未更新  2作废 3已红冲
+                     * @return StateCode <p>发票状态代码，0正常 1 未更新  2作废 3已红冲</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStateCode() const;
 
                     /**
-                     * 设置发票状态代码，0正常 1 未更新  2作废 3已红冲
+                     * 设置<p>发票状态代码，0正常 1 未更新  2作废 3已红冲</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _stateCode 发票状态代码，0正常 1 未更新  2作废 3已红冲
+                     * @param _stateCode <p>发票状态代码，0正常 1 未更新  2作废 3已红冲</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -248,18 +248,18 @@ namespace TencentCloud
                     bool StateCodeHasBeenSet() const;
 
                     /**
-                     * 获取购方识别号
+                     * 获取<p>购方识别号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BuyerTaxCode 购方识别号
+                     * @return BuyerTaxCode <p>购方识别号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBuyerTaxCode() const;
 
                     /**
-                     * 设置购方识别号
+                     * 设置<p>购方识别号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _buyerTaxCode 购方识别号
+                     * @param _buyerTaxCode <p>购方识别号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -273,18 +273,18 @@ namespace TencentCloud
                     bool BuyerTaxCodeHasBeenSet() const;
 
                     /**
-                     * 获取购方名称
+                     * 获取<p>购方名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BuyerName 购方名称
+                     * @return BuyerName <p>购方名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBuyerName() const;
 
                     /**
-                     * 设置购方名称
+                     * 设置<p>购方名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _buyerName 购方名称
+                     * @param _buyerName <p>购方名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -298,18 +298,18 @@ namespace TencentCloud
                     bool BuyerNameHasBeenSet() const;
 
                     /**
-                     * 获取合计税额
+                     * 获取<p>合计税额</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tax 合计税额
+                     * @return Tax <p>合计税额</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTax() const;
 
                     /**
-                     * 设置合计税额
+                     * 设置<p>合计税额</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tax 合计税额
+                     * @param _tax <p>合计税额</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -323,18 +323,18 @@ namespace TencentCloud
                     bool TaxHasBeenSet() const;
 
                     /**
-                     * 获取国内国际标识
+                     * 获取<p>国内国际标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DomesticInternationalMark 国内国际标识
+                     * @return DomesticInternationalMark <p>国内国际标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomesticInternationalMark() const;
 
                     /**
-                     * 设置国内国际标识
+                     * 设置<p>国内国际标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _domesticInternationalMark 国内国际标识
+                     * @param _domesticInternationalMark <p>国内国际标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -348,18 +348,18 @@ namespace TencentCloud
                     bool DomesticInternationalMarkHasBeenSet() const;
 
                     /**
-                     * 获取旅客姓名
+                     * 获取<p>旅客姓名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PassengerName 旅客姓名
+                     * @return PassengerName <p>旅客姓名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPassengerName() const;
 
                     /**
-                     * 设置旅客姓名
+                     * 设置<p>旅客姓名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _passengerName 旅客姓名
+                     * @param _passengerName <p>旅客姓名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -373,18 +373,18 @@ namespace TencentCloud
                     bool PassengerNameHasBeenSet() const;
 
                     /**
-                     * 获取有效身份证件号码
+                     * 获取<p>有效身份证件号码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PassengerNo 有效身份证件号码
+                     * @return PassengerNo <p>有效身份证件号码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPassengerNo() const;
 
                     /**
-                     * 设置有效身份证件号码
+                     * 设置<p>有效身份证件号码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _passengerNo 有效身份证件号码
+                     * @param _passengerNo <p>有效身份证件号码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -398,18 +398,18 @@ namespace TencentCloud
                     bool PassengerNoHasBeenSet() const;
 
                     /**
-                     * 获取电子客票号码
+                     * 获取<p>电子客票号码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ElectronicNumber 电子客票号码
+                     * @return ElectronicNumber <p>电子客票号码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetElectronicNumber() const;
 
                     /**
-                     * 设置电子客票号码
+                     * 设置<p>电子客票号码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _electronicNumber 电子客票号码
+                     * @param _electronicNumber <p>电子客票号码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -423,26 +423,18 @@ namespace TencentCloud
                     bool ElectronicNumberHasBeenSet() const;
 
                     /**
-                     * 获取全电发票（航空运输电子客票行程单）详细信息
-
-
+                     * 获取<p>全电发票（航空运输电子客票行程单）详细信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ElectronicAirTransportDetails 全电发票（航空运输电子客票行程单）详细信息
-
-
+                     * @return ElectronicAirTransportDetails <p>全电发票（航空运输电子客票行程单）详细信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ElectronicAirTransportDetail> GetElectronicAirTransportDetails() const;
 
                     /**
-                     * 设置全电发票（航空运输电子客票行程单）详细信息
-
-
+                     * 设置<p>全电发票（航空运输电子客票行程单）详细信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _electronicAirTransportDetails 全电发票（航空运输电子客票行程单）详细信息
-
-
+                     * @param _electronicAirTransportDetails <p>全电发票（航空运输电子客票行程单）详细信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -456,15 +448,15 @@ namespace TencentCloud
                     bool ElectronicAirTransportDetailsHasBeenSet() const;
 
                     /**
-                     * 获取票价
-                     * @return Fare 票价
+                     * 获取<p>票价</p>
+                     * @return Fare <p>票价</p>
                      * 
                      */
                     std::string GetFare() const;
 
                     /**
-                     * 设置票价
-                     * @param _fare 票价
+                     * 设置<p>票价</p>
+                     * @param _fare <p>票价</p>
                      * 
                      */
                     void SetFare(const std::string& _fare);
@@ -477,15 +469,15 @@ namespace TencentCloud
                     bool FareHasBeenSet() const;
 
                     /**
-                     * 获取燃油附加费
-                     * @return FuelSurcharge 燃油附加费
+                     * 获取<p>燃油附加费</p>
+                     * @return FuelSurcharge <p>燃油附加费</p>
                      * 
                      */
                     std::string GetFuelSurcharge() const;
 
                     /**
-                     * 设置燃油附加费
-                     * @param _fuelSurcharge 燃油附加费
+                     * 设置<p>燃油附加费</p>
+                     * @param _fuelSurcharge <p>燃油附加费</p>
                      * 
                      */
                     void SetFuelSurcharge(const std::string& _fuelSurcharge);
@@ -498,15 +490,15 @@ namespace TencentCloud
                     bool FuelSurchargeHasBeenSet() const;
 
                     /**
-                     * 获取增值税税额
-                     * @return TaxAmount 增值税税额
+                     * 获取<p>增值税税额</p>
+                     * @return TaxAmount <p>增值税税额</p>
                      * 
                      */
                     std::string GetTaxAmount() const;
 
                     /**
-                     * 设置增值税税额
-                     * @param _taxAmount 增值税税额
+                     * 设置<p>增值税税额</p>
+                     * @param _taxAmount <p>增值税税额</p>
                      * 
                      */
                     void SetTaxAmount(const std::string& _taxAmount);
@@ -519,15 +511,15 @@ namespace TencentCloud
                     bool TaxAmountHasBeenSet() const;
 
                     /**
-                     * 获取民航发展基金
-                     * @return DevelopmentFund 民航发展基金
+                     * 获取<p>民航发展基金</p>
+                     * @return DevelopmentFund <p>民航发展基金</p>
                      * 
                      */
                     std::string GetDevelopmentFund() const;
 
                     /**
-                     * 设置民航发展基金
-                     * @param _developmentFund 民航发展基金
+                     * 设置<p>民航发展基金</p>
+                     * @param _developmentFund <p>民航发展基金</p>
                      * 
                      */
                     void SetDevelopmentFund(const std::string& _developmentFund);
@@ -542,139 +534,137 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 发票代码
+                     * <p>发票代码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
 
                     /**
-                     * 发票号码
+                     * <p>发票号码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_number;
                     bool m_numberHasBeenSet;
 
                     /**
-                     * 开票日期
+                     * <p>开票日期</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_date;
                     bool m_dateHasBeenSet;
 
                     /**
-                     * 金额
+                     * <p>金额</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_amount;
                     bool m_amountHasBeenSet;
 
                     /**
-                     * 校验码
+                     * <p>校验码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_checkCode;
                     bool m_checkCodeHasBeenSet;
 
                     /**
-                     * 价税合计
+                     * <p>价税合计</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 抵扣标志
+                     * <p>抵扣标志</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deductionMark;
                     bool m_deductionMarkHasBeenSet;
 
                     /**
-                     * 发票状态代码，0正常 1 未更新  2作废 3已红冲
+                     * <p>发票状态代码，0正常 1 未更新  2作废 3已红冲</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stateCode;
                     bool m_stateCodeHasBeenSet;
 
                     /**
-                     * 购方识别号
+                     * <p>购方识别号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_buyerTaxCode;
                     bool m_buyerTaxCodeHasBeenSet;
 
                     /**
-                     * 购方名称
+                     * <p>购方名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_buyerName;
                     bool m_buyerNameHasBeenSet;
 
                     /**
-                     * 合计税额
+                     * <p>合计税额</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tax;
                     bool m_taxHasBeenSet;
 
                     /**
-                     * 国内国际标识
+                     * <p>国内国际标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domesticInternationalMark;
                     bool m_domesticInternationalMarkHasBeenSet;
 
                     /**
-                     * 旅客姓名
+                     * <p>旅客姓名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_passengerName;
                     bool m_passengerNameHasBeenSet;
 
                     /**
-                     * 有效身份证件号码
+                     * <p>有效身份证件号码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_passengerNo;
                     bool m_passengerNoHasBeenSet;
 
                     /**
-                     * 电子客票号码
+                     * <p>电子客票号码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_electronicNumber;
                     bool m_electronicNumberHasBeenSet;
 
                     /**
-                     * 全电发票（航空运输电子客票行程单）详细信息
-
-
+                     * <p>全电发票（航空运输电子客票行程单）详细信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ElectronicAirTransportDetail> m_electronicAirTransportDetails;
                     bool m_electronicAirTransportDetailsHasBeenSet;
 
                     /**
-                     * 票价
+                     * <p>票价</p>
                      */
                     std::string m_fare;
                     bool m_fareHasBeenSet;
 
                     /**
-                     * 燃油附加费
+                     * <p>燃油附加费</p>
                      */
                     std::string m_fuelSurcharge;
                     bool m_fuelSurchargeHasBeenSet;
 
                     /**
-                     * 增值税税额
+                     * <p>增值税税额</p>
                      */
                     std::string m_taxAmount;
                     bool m_taxAmountHasBeenSet;
 
                     /**
-                     * 民航发展基金
+                     * <p>民航发展基金</p>
                      */
                     std::string m_developmentFund;
                     bool m_developmentFundHasBeenSet;

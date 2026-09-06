@@ -25,7 +25,10 @@ QueryTaskFilter::QueryTaskFilter() :
     m_taskTypeHasBeenSet(false),
     m_taskStatusHasBeenSet(false),
     m_resolutionHasBeenSet(false),
-    m_ratioHasBeenSet(false)
+    m_ratioHasBeenSet(false),
+    m_executeModeHasBeenSet(false),
+    m_videoTypeHasBeenSet(false),
+    m_modelTierHasBeenSet(false)
 {
 }
 
@@ -84,6 +87,36 @@ CoreInternalOutcome QueryTaskFilter::Deserialize(const rapidjson::Value &value)
         m_ratioHasBeenSet = true;
     }
 
+    if (value.HasMember("ExecuteMode") && !value["ExecuteMode"].IsNull())
+    {
+        if (!value["ExecuteMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueryTaskFilter.ExecuteMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_executeMode = string(value["ExecuteMode"].GetString());
+        m_executeModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("VideoType") && !value["VideoType"].IsNull())
+    {
+        if (!value["VideoType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueryTaskFilter.VideoType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_videoType = string(value["VideoType"].GetString());
+        m_videoTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModelTier") && !value["ModelTier"].IsNull())
+    {
+        if (!value["ModelTier"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueryTaskFilter.ModelTier` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modelTier = string(value["ModelTier"].GetString());
+        m_modelTierHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +162,30 @@ void QueryTaskFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Ratio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ratio.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executeModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecuteMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_executeMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_videoTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_videoType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelTierHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelTier";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelTier.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +269,53 @@ void QueryTaskFilter::SetRatio(const string& _ratio)
 bool QueryTaskFilter::RatioHasBeenSet() const
 {
     return m_ratioHasBeenSet;
+}
+
+string QueryTaskFilter::GetExecuteMode() const
+{
+    return m_executeMode;
+}
+
+void QueryTaskFilter::SetExecuteMode(const string& _executeMode)
+{
+    m_executeMode = _executeMode;
+    m_executeModeHasBeenSet = true;
+}
+
+bool QueryTaskFilter::ExecuteModeHasBeenSet() const
+{
+    return m_executeModeHasBeenSet;
+}
+
+string QueryTaskFilter::GetVideoType() const
+{
+    return m_videoType;
+}
+
+void QueryTaskFilter::SetVideoType(const string& _videoType)
+{
+    m_videoType = _videoType;
+    m_videoTypeHasBeenSet = true;
+}
+
+bool QueryTaskFilter::VideoTypeHasBeenSet() const
+{
+    return m_videoTypeHasBeenSet;
+}
+
+string QueryTaskFilter::GetModelTier() const
+{
+    return m_modelTier;
+}
+
+void QueryTaskFilter::SetModelTier(const string& _modelTier)
+{
+    m_modelTier = _modelTier;
+    m_modelTierHasBeenSet = true;
+}
+
+bool QueryTaskFilter::ModelTierHasBeenSet() const
+{
+    return m_modelTierHasBeenSet;
 }
 

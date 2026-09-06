@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/VatInvoiceItem.h>
+#include <tencentcloud/ocr/v20181119/model/RedLetterInvoiceItem.h>
 
 
 namespace TencentCloud
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取发票代码
-                     * @return Code 发票代码
+                     * 获取<p>发票代码</p>
+                     * @return Code <p>发票代码</p>
                      * 
                      */
                     std::string GetCode() const;
 
                     /**
-                     * 设置发票代码
-                     * @param _code 发票代码
+                     * 设置<p>发票代码</p>
+                     * @param _code <p>发票代码</p>
                      * 
                      */
                     void SetCode(const std::string& _code);
@@ -69,15 +70,15 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取发票号码
-                     * @return Number 发票号码
+                     * 获取<p>发票号码</p>
+                     * @return Number <p>发票号码</p>
                      * 
                      */
                     std::string GetNumber() const;
 
                     /**
-                     * 设置发票号码
-                     * @param _number 发票号码
+                     * 设置<p>发票号码</p>
+                     * @param _number <p>发票号码</p>
                      * 
                      */
                     void SetNumber(const std::string& _number);
@@ -90,15 +91,15 @@ namespace TencentCloud
                     bool NumberHasBeenSet() const;
 
                     /**
-                     * 获取开票日期
-                     * @return Date 开票日期
+                     * 获取<p>开票日期</p>
+                     * @return Date <p>开票日期</p>
                      * 
                      */
                     std::string GetDate() const;
 
                     /**
-                     * 设置开票日期
-                     * @param _date 开票日期
+                     * 设置<p>开票日期</p>
+                     * @param _date <p>开票日期</p>
                      * 
                      */
                     void SetDate(const std::string& _date);
@@ -111,19 +112,15 @@ namespace TencentCloud
                     bool DateHasBeenSet() const;
 
                     /**
-                     * 获取购方抬头
-通用机打发票类型时不返回
-                     * @return BuyerName 购方抬头
-通用机打发票类型时不返回
+                     * 获取<p>购方抬头<br>通用机打发票类型时不返回</p>
+                     * @return BuyerName <p>购方抬头<br>通用机打发票类型时不返回</p>
                      * 
                      */
                     std::string GetBuyerName() const;
 
                     /**
-                     * 设置购方抬头
-通用机打发票类型时不返回
-                     * @param _buyerName 购方抬头
-通用机打发票类型时不返回
+                     * 设置<p>购方抬头<br>通用机打发票类型时不返回</p>
+                     * @param _buyerName <p>购方抬头<br>通用机打发票类型时不返回</p>
                      * 
                      */
                     void SetBuyerName(const std::string& _buyerName);
@@ -136,19 +133,15 @@ namespace TencentCloud
                     bool BuyerNameHasBeenSet() const;
 
                     /**
-                     * 获取购方税号
-通用机打发票类型时不返回
-                     * @return BuyerTaxCode 购方税号
-通用机打发票类型时不返回
+                     * 获取<p>购方税号<br>通用机打发票类型时不返回</p>
+                     * @return BuyerTaxCode <p>购方税号<br>通用机打发票类型时不返回</p>
                      * 
                      */
                     std::string GetBuyerTaxCode() const;
 
                     /**
-                     * 设置购方税号
-通用机打发票类型时不返回
-                     * @param _buyerTaxCode 购方税号
-通用机打发票类型时不返回
+                     * 设置<p>购方税号<br>通用机打发票类型时不返回</p>
+                     * @param _buyerTaxCode <p>购方税号<br>通用机打发票类型时不返回</p>
                      * 
                      */
                     void SetBuyerTaxCode(const std::string& _buyerTaxCode);
@@ -161,19 +154,15 @@ namespace TencentCloud
                     bool BuyerTaxCodeHasBeenSet() const;
 
                     /**
-                     * 获取购方地址电话
-通用机打发票类型做不返回
-                     * @return BuyerAddressPhone 购方地址电话
-通用机打发票类型做不返回
+                     * 获取<p>购方地址电话<br>通用机打发票类型做不返回</p>
+                     * @return BuyerAddressPhone <p>购方地址电话<br>通用机打发票类型做不返回</p>
                      * 
                      */
                     std::string GetBuyerAddressPhone() const;
 
                     /**
-                     * 设置购方地址电话
-通用机打发票类型做不返回
-                     * @param _buyerAddressPhone 购方地址电话
-通用机打发票类型做不返回
+                     * 设置<p>购方地址电话<br>通用机打发票类型做不返回</p>
+                     * @param _buyerAddressPhone <p>购方地址电话<br>通用机打发票类型做不返回</p>
                      * 
                      */
                     void SetBuyerAddressPhone(const std::string& _buyerAddressPhone);
@@ -186,19 +175,15 @@ namespace TencentCloud
                     bool BuyerAddressPhoneHasBeenSet() const;
 
                     /**
-                     * 获取购方银行账号
-通用机打发票类型时不返回
-                     * @return BuyerBankAccount 购方银行账号
-通用机打发票类型时不返回
+                     * 获取<p>购方银行账号<br>通用机打发票类型时不返回</p>
+                     * @return BuyerBankAccount <p>购方银行账号<br>通用机打发票类型时不返回</p>
                      * 
                      */
                     std::string GetBuyerBankAccount() const;
 
                     /**
-                     * 设置购方银行账号
-通用机打发票类型时不返回
-                     * @param _buyerBankAccount 购方银行账号
-通用机打发票类型时不返回
+                     * 设置<p>购方银行账号<br>通用机打发票类型时不返回</p>
+                     * @param _buyerBankAccount <p>购方银行账号<br>通用机打发票类型时不返回</p>
                      * 
                      */
                     void SetBuyerBankAccount(const std::string& _buyerBankAccount);
@@ -211,15 +196,15 @@ namespace TencentCloud
                     bool BuyerBankAccountHasBeenSet() const;
 
                     /**
-                     * 获取销方名称
-                     * @return SellerName 销方名称
+                     * 获取<p>销方名称</p>
+                     * @return SellerName <p>销方名称</p>
                      * 
                      */
                     std::string GetSellerName() const;
 
                     /**
-                     * 设置销方名称
-                     * @param _sellerName 销方名称
+                     * 设置<p>销方名称</p>
+                     * @param _sellerName <p>销方名称</p>
                      * 
                      */
                     void SetSellerName(const std::string& _sellerName);
@@ -232,15 +217,15 @@ namespace TencentCloud
                     bool SellerNameHasBeenSet() const;
 
                     /**
-                     * 获取销方税号
-                     * @return SellerTaxCode 销方税号
+                     * 获取<p>销方税号</p>
+                     * @return SellerTaxCode <p>销方税号</p>
                      * 
                      */
                     std::string GetSellerTaxCode() const;
 
                     /**
-                     * 设置销方税号
-                     * @param _sellerTaxCode 销方税号
+                     * 设置<p>销方税号</p>
+                     * @param _sellerTaxCode <p>销方税号</p>
                      * 
                      */
                     void SetSellerTaxCode(const std::string& _sellerTaxCode);
@@ -253,15 +238,15 @@ namespace TencentCloud
                     bool SellerTaxCodeHasBeenSet() const;
 
                     /**
-                     * 获取销方地址电话
-                     * @return SellerAddressPhone 销方地址电话
+                     * 获取<p>销方地址电话</p>
+                     * @return SellerAddressPhone <p>销方地址电话</p>
                      * 
                      */
                     std::string GetSellerAddressPhone() const;
 
                     /**
-                     * 设置销方地址电话
-                     * @param _sellerAddressPhone 销方地址电话
+                     * 设置<p>销方地址电话</p>
+                     * @param _sellerAddressPhone <p>销方地址电话</p>
                      * 
                      */
                     void SetSellerAddressPhone(const std::string& _sellerAddressPhone);
@@ -274,15 +259,15 @@ namespace TencentCloud
                     bool SellerAddressPhoneHasBeenSet() const;
 
                     /**
-                     * 获取销方银行账号
-                     * @return SellerBankAccount 销方银行账号
+                     * 获取<p>销方银行账号</p>
+                     * @return SellerBankAccount <p>销方银行账号</p>
                      * 
                      */
                     std::string GetSellerBankAccount() const;
 
                     /**
-                     * 设置销方银行账号
-                     * @param _sellerBankAccount 销方银行账号
+                     * 设置<p>销方银行账号</p>
+                     * @param _sellerBankAccount <p>销方银行账号</p>
                      * 
                      */
                     void SetSellerBankAccount(const std::string& _sellerBankAccount);
@@ -295,15 +280,15 @@ namespace TencentCloud
                     bool SellerBankAccountHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Remark 备注
+                     * 获取<p>备注</p>
+                     * @return Remark <p>备注</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注
-                     * @param _remark 备注
+                     * 设置<p>备注</p>
+                     * @param _remark <p>备注</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -316,15 +301,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取机器编码
-                     * @return MachineNo 机器编码
+                     * 获取<p>机器编码</p>
+                     * @return MachineNo <p>机器编码</p>
                      * 
                      */
                     std::string GetMachineNo() const;
 
                     /**
-                     * 设置机器编码
-                     * @param _machineNo 机器编码
+                     * 设置<p>机器编码</p>
+                     * @param _machineNo <p>机器编码</p>
                      * 
                      */
                     void SetMachineNo(const std::string& _machineNo);
@@ -337,135 +322,15 @@ namespace TencentCloud
                     bool MachineNoHasBeenSet() const;
 
                     /**
-                     * 获取票种类型
-01：增值税专用发票，
-02：货运运输业增值税专用发票，
-03：机动车销售统一发票，
-04：增值税普通发票，
-08：增值税电子专用发票（含全电，全电仅新版接口支持），
-09：全电发票，
-0901：全电纸质发票(增值税专用发票)，
-0903：全电纸质(机动车销售统一发票)，
-0904：全电纸质发票(增值税普通发票)，
-0910：电子发票(普通发票)，
-0915：全电纸质(二手车销售统一发票)，
-0920：电子发票(增值税专用发票)，
-0930：电子发票(机动车销售统一发票)，
-0940：电子发票(二手车销售统一发票)，
-10：增值税电子普通发票（含全电，全电仅新版接口支持），
-11：增值税普通发票（卷式），
-14：增值税电子（通行费）发票，
-15：二手车销售统一发票，
-32：深圳区块链发票，
-61：电子发票（航空运输电子客票行程单），
-8208：电子发票(通行费发票)，
-83：电子发票(铁路电子客票)，
-100：区块链发票，
-101：财政票据，
-102：通用电子发票，
-103：车辆通行费
-
-
-
-
-                     * @return Type 票种类型
-01：增值税专用发票，
-02：货运运输业增值税专用发票，
-03：机动车销售统一发票，
-04：增值税普通发票，
-08：增值税电子专用发票（含全电，全电仅新版接口支持），
-09：全电发票，
-0901：全电纸质发票(增值税专用发票)，
-0903：全电纸质(机动车销售统一发票)，
-0904：全电纸质发票(增值税普通发票)，
-0910：电子发票(普通发票)，
-0915：全电纸质(二手车销售统一发票)，
-0920：电子发票(增值税专用发票)，
-0930：电子发票(机动车销售统一发票)，
-0940：电子发票(二手车销售统一发票)，
-10：增值税电子普通发票（含全电，全电仅新版接口支持），
-11：增值税普通发票（卷式），
-14：增值税电子（通行费）发票，
-15：二手车销售统一发票，
-32：深圳区块链发票，
-61：电子发票（航空运输电子客票行程单），
-8208：电子发票(通行费发票)，
-83：电子发票(铁路电子客票)，
-100：区块链发票，
-101：财政票据，
-102：通用电子发票，
-103：车辆通行费
-
-
-
-
+                     * 获取<p>票种类型<br>01：增值税专用发票，<br>02：货运运输业增值税专用发票，<br>03：机动车销售统一发票，<br>04：增值税普通发票，<br>08：增值税电子专用发票（含全电，全电仅新版接口支持），<br>09：全电发票，<br>0901：全电纸质发票(增值税专用发票)，<br>0903：全电纸质(机动车销售统一发票)，<br>0904：全电纸质发票(增值税普通发票)，<br>0910：电子发票(普通发票)，<br>0915：全电纸质(二手车销售统一发票)，<br>0920：电子发票(增值税专用发票)，<br>0930：电子发票(机动车销售统一发票)，<br>0940：电子发票(二手车销售统一发票)，<br>10：增值税电子普通发票（含全电，全电仅新版接口支持），<br>11：增值税普通发票（卷式），<br>14：增值税电子（通行费）发票，<br>15：二手车销售统一发票，<br>32：深圳区块链发票，<br>61：电子发票（航空运输电子客票行程单），<br>8208：电子发票(通行费发票)，<br>83：电子发票(铁路电子客票)，<br>100：区块链发票，<br>101：财政票据，<br>102：通用电子发票，<br>103：车辆通行费</p>
+                     * @return Type <p>票种类型<br>01：增值税专用发票，<br>02：货运运输业增值税专用发票，<br>03：机动车销售统一发票，<br>04：增值税普通发票，<br>08：增值税电子专用发票（含全电，全电仅新版接口支持），<br>09：全电发票，<br>0901：全电纸质发票(增值税专用发票)，<br>0903：全电纸质(机动车销售统一发票)，<br>0904：全电纸质发票(增值税普通发票)，<br>0910：电子发票(普通发票)，<br>0915：全电纸质(二手车销售统一发票)，<br>0920：电子发票(增值税专用发票)，<br>0930：电子发票(机动车销售统一发票)，<br>0940：电子发票(二手车销售统一发票)，<br>10：增值税电子普通发票（含全电，全电仅新版接口支持），<br>11：增值税普通发票（卷式），<br>14：增值税电子（通行费）发票，<br>15：二手车销售统一发票，<br>32：深圳区块链发票，<br>61：电子发票（航空运输电子客票行程单），<br>8208：电子发票(通行费发票)，<br>83：电子发票(铁路电子客票)，<br>100：区块链发票，<br>101：财政票据，<br>102：通用电子发票，<br>103：车辆通行费</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置票种类型
-01：增值税专用发票，
-02：货运运输业增值税专用发票，
-03：机动车销售统一发票，
-04：增值税普通发票，
-08：增值税电子专用发票（含全电，全电仅新版接口支持），
-09：全电发票，
-0901：全电纸质发票(增值税专用发票)，
-0903：全电纸质(机动车销售统一发票)，
-0904：全电纸质发票(增值税普通发票)，
-0910：电子发票(普通发票)，
-0915：全电纸质(二手车销售统一发票)，
-0920：电子发票(增值税专用发票)，
-0930：电子发票(机动车销售统一发票)，
-0940：电子发票(二手车销售统一发票)，
-10：增值税电子普通发票（含全电，全电仅新版接口支持），
-11：增值税普通发票（卷式），
-14：增值税电子（通行费）发票，
-15：二手车销售统一发票，
-32：深圳区块链发票，
-61：电子发票（航空运输电子客票行程单），
-8208：电子发票(通行费发票)，
-83：电子发票(铁路电子客票)，
-100：区块链发票，
-101：财政票据，
-102：通用电子发票，
-103：车辆通行费
-
-
-
-
-                     * @param _type 票种类型
-01：增值税专用发票，
-02：货运运输业增值税专用发票，
-03：机动车销售统一发票，
-04：增值税普通发票，
-08：增值税电子专用发票（含全电，全电仅新版接口支持），
-09：全电发票，
-0901：全电纸质发票(增值税专用发票)，
-0903：全电纸质(机动车销售统一发票)，
-0904：全电纸质发票(增值税普通发票)，
-0910：电子发票(普通发票)，
-0915：全电纸质(二手车销售统一发票)，
-0920：电子发票(增值税专用发票)，
-0930：电子发票(机动车销售统一发票)，
-0940：电子发票(二手车销售统一发票)，
-10：增值税电子普通发票（含全电，全电仅新版接口支持），
-11：增值税普通发票（卷式），
-14：增值税电子（通行费）发票，
-15：二手车销售统一发票，
-32：深圳区块链发票，
-61：电子发票（航空运输电子客票行程单），
-8208：电子发票(通行费发票)，
-83：电子发票(铁路电子客票)，
-100：区块链发票，
-101：财政票据，
-102：通用电子发票，
-103：车辆通行费
-
-
-
-
+                     * 设置<p>票种类型<br>01：增值税专用发票，<br>02：货运运输业增值税专用发票，<br>03：机动车销售统一发票，<br>04：增值税普通发票，<br>08：增值税电子专用发票（含全电，全电仅新版接口支持），<br>09：全电发票，<br>0901：全电纸质发票(增值税专用发票)，<br>0903：全电纸质(机动车销售统一发票)，<br>0904：全电纸质发票(增值税普通发票)，<br>0910：电子发票(普通发票)，<br>0915：全电纸质(二手车销售统一发票)，<br>0920：电子发票(增值税专用发票)，<br>0930：电子发票(机动车销售统一发票)，<br>0940：电子发票(二手车销售统一发票)，<br>10：增值税电子普通发票（含全电，全电仅新版接口支持），<br>11：增值税普通发票（卷式），<br>14：增值税电子（通行费）发票，<br>15：二手车销售统一发票，<br>32：深圳区块链发票，<br>61：电子发票（航空运输电子客票行程单），<br>8208：电子发票(通行费发票)，<br>83：电子发票(铁路电子客票)，<br>100：区块链发票，<br>101：财政票据，<br>102：通用电子发票，<br>103：车辆通行费</p>
+                     * @param _type <p>票种类型<br>01：增值税专用发票，<br>02：货运运输业增值税专用发票，<br>03：机动车销售统一发票，<br>04：增值税普通发票，<br>08：增值税电子专用发票（含全电，全电仅新版接口支持），<br>09：全电发票，<br>0901：全电纸质发票(增值税专用发票)，<br>0903：全电纸质(机动车销售统一发票)，<br>0904：全电纸质发票(增值税普通发票)，<br>0910：电子发票(普通发票)，<br>0915：全电纸质(二手车销售统一发票)，<br>0920：电子发票(增值税专用发票)，<br>0930：电子发票(机动车销售统一发票)，<br>0940：电子发票(二手车销售统一发票)，<br>10：增值税电子普通发票（含全电，全电仅新版接口支持），<br>11：增值税普通发票（卷式），<br>14：增值税电子（通行费）发票，<br>15：二手车销售统一发票，<br>32：深圳区块链发票，<br>61：电子发票（航空运输电子客票行程单），<br>8208：电子发票(通行费发票)，<br>83：电子发票(铁路电子客票)，<br>100：区块链发票，<br>101：财政票据，<br>102：通用电子发票，<br>103：车辆通行费</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -478,15 +343,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取具体的全电发票类型：01: 全电专用发票；02：全电普通发票；03：全电火车票；04：全电机票行程单
-                     * @return ElectronicType 具体的全电发票类型：01: 全电专用发票；02：全电普通发票；03：全电火车票；04：全电机票行程单
+                     * 获取<p>具体的全电发票类型：01: 全电专用发票；02：全电普通发票；03：全电火车票；04：全电机票行程单</p>
+                     * @return ElectronicType <p>具体的全电发票类型：01: 全电专用发票；02：全电普通发票；03：全电火车票；04：全电机票行程单</p>
                      * 
                      */
                     std::string GetElectronicType() const;
 
                     /**
-                     * 设置具体的全电发票类型：01: 全电专用发票；02：全电普通发票；03：全电火车票；04：全电机票行程单
-                     * @param _electronicType 具体的全电发票类型：01: 全电专用发票；02：全电普通发票；03：全电火车票；04：全电机票行程单
+                     * 设置<p>具体的全电发票类型：01: 全电专用发票；02：全电普通发票；03：全电火车票；04：全电机票行程单</p>
+                     * @param _electronicType <p>具体的全电发票类型：01: 全电专用发票；02：全电普通发票；03：全电火车票；04：全电机票行程单</p>
                      * 
                      */
                     void SetElectronicType(const std::string& _electronicType);
@@ -499,15 +364,15 @@ namespace TencentCloud
                     bool ElectronicTypeHasBeenSet() const;
 
                     /**
-                     * 获取检验码
-                     * @return CheckCode 检验码
+                     * 获取<p>检验码</p>
+                     * @return CheckCode <p>检验码</p>
                      * 
                      */
                     std::string GetCheckCode() const;
 
                     /**
-                     * 设置检验码
-                     * @param _checkCode 检验码
+                     * 设置<p>检验码</p>
+                     * @param _checkCode <p>检验码</p>
                      * 
                      */
                     void SetCheckCode(const std::string& _checkCode);
@@ -520,19 +385,15 @@ namespace TencentCloud
                     bool CheckCodeHasBeenSet() const;
 
                     /**
-                     * 获取是否作废（红冲）是否作废（红冲）
-Y：已作废，N：未作废，H：红冲，HP：部分红冲，HF：全额红冲
-                     * @return IsAbandoned 是否作废（红冲）是否作废（红冲）
-Y：已作废，N：未作废，H：红冲，HP：部分红冲，HF：全额红冲
+                     * 获取<p>是否作废（红冲）是否作废（红冲）<br>Y：已作废，N：未作废，H：红冲，HP：部分红冲，HF：全额红冲</p>
+                     * @return IsAbandoned <p>是否作废（红冲）是否作废（红冲）<br>Y：已作废，N：未作废，H：红冲，HP：部分红冲，HF：全额红冲</p>
                      * 
                      */
                     std::string GetIsAbandoned() const;
 
                     /**
-                     * 设置是否作废（红冲）是否作废（红冲）
-Y：已作废，N：未作废，H：红冲，HP：部分红冲，HF：全额红冲
-                     * @param _isAbandoned 是否作废（红冲）是否作废（红冲）
-Y：已作废，N：未作废，H：红冲，HP：部分红冲，HF：全额红冲
+                     * 设置<p>是否作废（红冲）是否作废（红冲）<br>Y：已作废，N：未作废，H：红冲，HP：部分红冲，HF：全额红冲</p>
+                     * @param _isAbandoned <p>是否作废（红冲）是否作废（红冲）<br>Y：已作废，N：未作废，H：红冲，HP：部分红冲，HF：全额红冲</p>
                      * 
                      */
                     void SetIsAbandoned(const std::string& _isAbandoned);
@@ -545,23 +406,15 @@ Y：已作废，N：未作废，H：红冲，HP：部分红冲，HF：全额红�
                     bool IsAbandonedHasBeenSet() const;
 
                     /**
-                     * 获取是否有销货清单 
-Y: 有清单 N：无清单 
-卷票无
-                     * @return HasSellerList 是否有销货清单 
-Y: 有清单 N：无清单 
-卷票无
+                     * 获取<p>是否有销货清单<br>Y: 有清单 N：无清单<br>卷票无</p>
+                     * @return HasSellerList <p>是否有销货清单<br>Y: 有清单 N：无清单<br>卷票无</p>
                      * 
                      */
                     std::string GetHasSellerList() const;
 
                     /**
-                     * 设置是否有销货清单 
-Y: 有清单 N：无清单 
-卷票无
-                     * @param _hasSellerList 是否有销货清单 
-Y: 有清单 N：无清单 
-卷票无
+                     * 设置<p>是否有销货清单<br>Y: 有清单 N：无清单<br>卷票无</p>
+                     * @param _hasSellerList <p>是否有销货清单<br>Y: 有清单 N：无清单<br>卷票无</p>
                      * 
                      */
                     void SetHasSellerList(const std::string& _hasSellerList);
@@ -574,15 +427,15 @@ Y: 有清单 N：无清单
                     bool HasSellerListHasBeenSet() const;
 
                     /**
-                     * 获取销货清单标题
-                     * @return SellerListTitle 销货清单标题
+                     * 获取<p>销货清单标题</p>
+                     * @return SellerListTitle <p>销货清单标题</p>
                      * 
                      */
                     std::string GetSellerListTitle() const;
 
                     /**
-                     * 设置销货清单标题
-                     * @param _sellerListTitle 销货清单标题
+                     * 设置<p>销货清单标题</p>
+                     * @param _sellerListTitle <p>销货清单标题</p>
                      * 
                      */
                     void SetSellerListTitle(const std::string& _sellerListTitle);
@@ -595,15 +448,15 @@ Y: 有清单 N：无清单
                     bool SellerListTitleHasBeenSet() const;
 
                     /**
-                     * 获取销货清单税额
-                     * @return SellerListTax 销货清单税额
+                     * 获取<p>销货清单税额</p>
+                     * @return SellerListTax <p>销货清单税额</p>
                      * 
                      */
                     std::string GetSellerListTax() const;
 
                     /**
-                     * 设置销货清单税额
-                     * @param _sellerListTax 销货清单税额
+                     * 设置<p>销货清单税额</p>
+                     * @param _sellerListTax <p>销货清单税额</p>
                      * 
                      */
                     void SetSellerListTax(const std::string& _sellerListTax);
@@ -616,15 +469,15 @@ Y: 有清单 N：无清单
                     bool SellerListTaxHasBeenSet() const;
 
                     /**
-                     * 获取不含税金额
-                     * @return AmountWithoutTax 不含税金额
+                     * 获取<p>不含税金额</p>
+                     * @return AmountWithoutTax <p>不含税金额</p>
                      * 
                      */
                     std::string GetAmountWithoutTax() const;
 
                     /**
-                     * 设置不含税金额
-                     * @param _amountWithoutTax 不含税金额
+                     * 设置<p>不含税金额</p>
+                     * @param _amountWithoutTax <p>不含税金额</p>
                      * 
                      */
                     void SetAmountWithoutTax(const std::string& _amountWithoutTax);
@@ -637,15 +490,15 @@ Y: 有清单 N：无清单
                     bool AmountWithoutTaxHasBeenSet() const;
 
                     /**
-                     * 获取税额
-                     * @return TaxAmount 税额
+                     * 获取<p>税额</p>
+                     * @return TaxAmount <p>税额</p>
                      * 
                      */
                     std::string GetTaxAmount() const;
 
                     /**
-                     * 设置税额
-                     * @param _taxAmount 税额
+                     * 设置<p>税额</p>
+                     * @param _taxAmount <p>税额</p>
                      * 
                      */
                     void SetTaxAmount(const std::string& _taxAmount);
@@ -658,15 +511,15 @@ Y: 有清单 N：无清单
                     bool TaxAmountHasBeenSet() const;
 
                     /**
-                     * 获取含税金额
-                     * @return AmountWithTax 含税金额
+                     * 获取<p>含税金额</p>
+                     * @return AmountWithTax <p>含税金额</p>
                      * 
                      */
                     std::string GetAmountWithTax() const;
 
                     /**
-                     * 设置含税金额
-                     * @param _amountWithTax 含税金额
+                     * 设置<p>含税金额</p>
+                     * @param _amountWithTax <p>含税金额</p>
                      * 
                      */
                     void SetAmountWithTax(const std::string& _amountWithTax);
@@ -679,15 +532,15 @@ Y: 有清单 N：无清单
                     bool AmountWithTaxHasBeenSet() const;
 
                     /**
-                     * 获取项目明细
-                     * @return Items 项目明细
+                     * 获取<p>项目明细</p>
+                     * @return Items <p>项目明细</p>
                      * 
                      */
                     std::vector<VatInvoiceItem> GetItems() const;
 
                     /**
-                     * 设置项目明细
-                     * @param _items 项目明细
+                     * 设置<p>项目明细</p>
+                     * @param _items <p>项目明细</p>
                      * 
                      */
                     void SetItems(const std::vector<VatInvoiceItem>& _items);
@@ -700,15 +553,15 @@ Y: 有清单 N：无清单
                     bool ItemsHasBeenSet() const;
 
                     /**
-                     * 获取所属税局
-                     * @return TaxBureau 所属税局
+                     * 获取<p>所属税局</p>
+                     * @return TaxBureau <p>所属税局</p>
                      * 
                      */
                     std::string GetTaxBureau() const;
 
                     /**
-                     * 设置所属税局
-                     * @param _taxBureau 所属税局
+                     * 设置<p>所属税局</p>
+                     * @param _taxBureau <p>所属税局</p>
                      * 
                      */
                     void SetTaxBureau(const std::string& _taxBureau);
@@ -721,15 +574,15 @@ Y: 有清单 N：无清单
                     bool TaxBureauHasBeenSet() const;
 
                     /**
-                     * 获取通行费标志:Y、是;N、否
-                     * @return TrafficFreeFlag 通行费标志:Y、是;N、否
+                     * 获取<p>通行费标志:Y、是;N、否</p>
+                     * @return TrafficFreeFlag <p>通行费标志:Y、是;N、否</p>
                      * 
                      */
                     std::string GetTrafficFreeFlag() const;
 
                     /**
-                     * 设置通行费标志:Y、是;N、否
-                     * @param _trafficFreeFlag 通行费标志:Y、是;N、否
+                     * 设置<p>通行费标志:Y、是;N、否</p>
+                     * @param _trafficFreeFlag <p>通行费标志:Y、是;N、否</p>
                      * 
                      */
                     void SetTrafficFreeFlag(const std::string& _trafficFreeFlag);
@@ -742,18 +595,18 @@ Y: 有清单 N：无清单
                     bool TrafficFreeFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否为红票
+                     * 获取<p>是否为红票</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RedLetterInvoiceMark 是否为红票
+                     * @return RedLetterInvoiceMark <p>是否为红票</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetRedLetterInvoiceMark() const;
 
                     /**
-                     * 设置是否为红票
+                     * 设置<p>是否为红票</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _redLetterInvoiceMark 是否为红票
+                     * @param _redLetterInvoiceMark <p>是否为红票</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -767,18 +620,18 @@ Y: 有清单 N：无清单
                     bool RedLetterInvoiceMarkHasBeenSet() const;
 
                     /**
-                     * 获取开具类型标识（0: 委托代开，1：自开，2：代开，3：代办退税
+                     * 获取<p>开具类型标识（0: 委托代开，1：自开，2：代开，3：代办退税</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IssuingTypeMark 开具类型标识（0: 委托代开，1：自开，2：代开，3：代办退税
+                     * @return IssuingTypeMark <p>开具类型标识（0: 委托代开，1：自开，2：代开，3：代办退税</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIssuingTypeMark() const;
 
                     /**
-                     * 设置开具类型标识（0: 委托代开，1：自开，2：代开，3：代办退税
+                     * 设置<p>开具类型标识（0: 委托代开，1：自开，2：代开，3：代办退税</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _issuingTypeMark 开具类型标识（0: 委托代开，1：自开，2：代开，3：代办退税
+                     * @param _issuingTypeMark <p>开具类型标识（0: 委托代开，1：自开，2：代开，3：代办退税</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -792,15 +645,15 @@ Y: 有清单 N：无清单
                     bool IssuingTypeMarkHasBeenSet() const;
 
                     /**
-                     * 获取代开销售方名称
-                     * @return SellerAgentName 代开销售方名称
+                     * 获取<p>代开销售方名称</p>
+                     * @return SellerAgentName <p>代开销售方名称</p>
                      * 
                      */
                     std::string GetSellerAgentName() const;
 
                     /**
-                     * 设置代开销售方名称
-                     * @param _sellerAgentName 代开销售方名称
+                     * 设置<p>代开销售方名称</p>
+                     * @param _sellerAgentName <p>代开销售方名称</p>
                      * 
                      */
                     void SetSellerAgentName(const std::string& _sellerAgentName);
@@ -813,15 +666,15 @@ Y: 有清单 N：无清单
                     bool SellerAgentNameHasBeenSet() const;
 
                     /**
-                     * 获取代开销售方税号
-                     * @return SellerAgentTaxID 代开销售方税号
+                     * 获取<p>代开销售方税号</p>
+                     * @return SellerAgentTaxID <p>代开销售方税号</p>
                      * 
                      */
                     std::string GetSellerAgentTaxID() const;
 
                     /**
-                     * 设置代开销售方税号
-                     * @param _sellerAgentTaxID 代开销售方税号
+                     * 设置<p>代开销售方税号</p>
+                     * @param _sellerAgentTaxID <p>代开销售方税号</p>
                      * 
                      */
                     void SetSellerAgentTaxID(const std::string& _sellerAgentTaxID);
@@ -833,226 +686,659 @@ Y: 有清单 N：无清单
                      */
                     bool SellerAgentTaxIDHasBeenSet() const;
 
+                    /**
+                     * 获取<p>地区代码</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegionCode <p>地区代码</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRegionCode() const;
+
+                    /**
+                     * 设置<p>地区代码</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _regionCode <p>地区代码</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRegionCode(const std::string& _regionCode);
+
+                    /**
+                     * 判断参数 RegionCode 是否已赋值
+                     * @return RegionCode 是否已赋值
+                     * 
+                     */
+                    bool RegionCodeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>复核人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReviewerName <p>复核人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetReviewerName() const;
+
+                    /**
+                     * 设置<p>复核人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _reviewerName <p>复核人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReviewerName(const std::string& _reviewerName);
+
+                    /**
+                     * 判断参数 ReviewerName 是否已赋值
+                     * @return ReviewerName 是否已赋值
+                     * 
+                     */
+                    bool ReviewerNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>开票人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IssuerName <p>开票人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIssuerName() const;
+
+                    /**
+                     * 设置<p>开票人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _issuerName <p>开票人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIssuerName(const std::string& _issuerName);
+
+                    /**
+                     * 判断参数 IssuerName 是否已赋值
+                     * @return IssuerName 是否已赋值
+                     * 
+                     */
+                    bool IssuerNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>收款人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayeeName <p>收款人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPayeeName() const;
+
+                    /**
+                     * 设置<p>收款人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _payeeName <p>收款人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPayeeName(const std::string& _payeeName);
+
+                    /**
+                     * 判断参数 PayeeName 是否已赋值
+                     * @return PayeeName 是否已赋值
+                     * 
+                     */
+                    bool PayeeNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>开票机号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MachineCode <p>开票机号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMachineCode() const;
+
+                    /**
+                     * 设置<p>开票机号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _machineCode <p>开票机号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMachineCode(const std::string& _machineCode);
+
+                    /**
+                     * 判断参数 MachineCode 是否已赋值
+                     * @return MachineCode 是否已赋值
+                     * 
+                     */
+                    bool MachineCodeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>税控码/密码区</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaxControlCode <p>税控码/密码区</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTaxControlCode() const;
+
+                    /**
+                     * 设置<p>税控码/密码区</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taxControlCode <p>税控码/密码区</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaxControlCode(const std::string& _taxControlCode);
+
+                    /**
+                     * 判断参数 TaxControlCode 是否已赋值
+                     * @return TaxControlCode 是否已赋值
+                     * 
+                     */
+                    bool TaxControlCodeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>价税合计（中文大写）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AmountWithTaxCN <p>价税合计（中文大写）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAmountWithTaxCN() const;
+
+                    /**
+                     * 设置<p>价税合计（中文大写）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _amountWithTaxCN <p>价税合计（中文大写）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAmountWithTaxCN(const std::string& _amountWithTaxCN);
+
+                    /**
+                     * 判断参数 AmountWithTaxCN 是否已赋值
+                     * @return AmountWithTaxCN 是否已赋值
+                     * 
+                     */
+                    bool AmountWithTaxCNHasBeenSet() const;
+
+                    /**
+                     * 获取<p>税率</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaxRate <p>税率</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTaxRate() const;
+
+                    /**
+                     * 设置<p>税率</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taxRate <p>税率</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaxRate(const std::string& _taxRate);
+
+                    /**
+                     * 判断参数 TaxRate 是否已赋值
+                     * @return TaxRate 是否已赋值
+                     * 
+                     */
+                    bool TaxRateHasBeenSet() const;
+
+                    /**
+                     * 获取<p>特殊票种代码</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SpecialTicketCode <p>特殊票种代码</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSpecialTicketCode() const;
+
+                    /**
+                     * 设置<p>特殊票种代码</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _specialTicketCode <p>特殊票种代码</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSpecialTicketCode(const std::string& _specialTicketCode);
+
+                    /**
+                     * 判断参数 SpecialTicketCode 是否已赋值
+                     * @return SpecialTicketCode 是否已赋值
+                     * 
+                     */
+                    bool SpecialTicketCodeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>红字发票信息列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RedLetterInvoices <p>红字发票信息列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<RedLetterInvoiceItem> GetRedLetterInvoices() const;
+
+                    /**
+                     * 设置<p>红字发票信息列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _redLetterInvoices <p>红字发票信息列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRedLetterInvoices(const std::vector<RedLetterInvoiceItem>& _redLetterInvoices);
+
+                    /**
+                     * 判断参数 RedLetterInvoices 是否已赋值
+                     * @return RedLetterInvoices 是否已赋值
+                     * 
+                     */
+                    bool RedLetterInvoicesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>全电类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FullElectronicType <p>全电类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFullElectronicType() const;
+
+                    /**
+                     * 设置<p>全电类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fullElectronicType <p>全电类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFullElectronicType(const std::string& _fullElectronicType);
+
+                    /**
+                     * 判断参数 FullElectronicType 是否已赋值
+                     * @return FullElectronicType 是否已赋值
+                     * 
+                     */
+                    bool FullElectronicTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>OFD版式文件下载链接</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OfdUrl <p>OFD版式文件下载链接</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOfdUrl() const;
+
+                    /**
+                     * 设置<p>OFD版式文件下载链接</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ofdUrl <p>OFD版式文件下载链接</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOfdUrl(const std::string& _ofdUrl);
+
+                    /**
+                     * 判断参数 OfdUrl 是否已赋值
+                     * @return OfdUrl 是否已赋值
+                     * 
+                     */
+                    bool OfdUrlHasBeenSet() const;
+
+                    /**
+                     * 获取<p>PDF版式文件下载链接</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PdfUrl <p>PDF版式文件下载链接</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPdfUrl() const;
+
+                    /**
+                     * 设置<p>PDF版式文件下载链接</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _pdfUrl <p>PDF版式文件下载链接</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPdfUrl(const std::string& _pdfUrl);
+
+                    /**
+                     * 判断参数 PdfUrl 是否已赋值
+                     * @return PdfUrl 是否已赋值
+                     * 
+                     */
+                    bool PdfUrlHasBeenSet() const;
+
+                    /**
+                     * 获取<p>原发票代码，对应蓝字发票代码。</p>
+                     * @return OriginalCode <p>原发票代码，对应蓝字发票代码。</p>
+                     * 
+                     */
+                    std::string GetOriginalCode() const;
+
+                    /**
+                     * 设置<p>原发票代码，对应蓝字发票代码。</p>
+                     * @param _originalCode <p>原发票代码，对应蓝字发票代码。</p>
+                     * 
+                     */
+                    void SetOriginalCode(const std::string& _originalCode);
+
+                    /**
+                     * 判断参数 OriginalCode 是否已赋值
+                     * @return OriginalCode 是否已赋值
+                     * 
+                     */
+                    bool OriginalCodeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>原发票号码，对应蓝字发票号码。</p>
+                     * @return OriginalNumber <p>原发票号码，对应蓝字发票号码。</p>
+                     * 
+                     */
+                    std::string GetOriginalNumber() const;
+
+                    /**
+                     * 设置<p>原发票号码，对应蓝字发票号码。</p>
+                     * @param _originalNumber <p>原发票号码，对应蓝字发票号码。</p>
+                     * 
+                     */
+                    void SetOriginalNumber(const std::string& _originalNumber);
+
+                    /**
+                     * 判断参数 OriginalNumber 是否已赋值
+                     * @return OriginalNumber 是否已赋值
+                     * 
+                     */
+                    bool OriginalNumberHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 发票代码
+                     * <p>发票代码</p>
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
 
                     /**
-                     * 发票号码
+                     * <p>发票号码</p>
                      */
                     std::string m_number;
                     bool m_numberHasBeenSet;
 
                     /**
-                     * 开票日期
+                     * <p>开票日期</p>
                      */
                     std::string m_date;
                     bool m_dateHasBeenSet;
 
                     /**
-                     * 购方抬头
-通用机打发票类型时不返回
+                     * <p>购方抬头<br>通用机打发票类型时不返回</p>
                      */
                     std::string m_buyerName;
                     bool m_buyerNameHasBeenSet;
 
                     /**
-                     * 购方税号
-通用机打发票类型时不返回
+                     * <p>购方税号<br>通用机打发票类型时不返回</p>
                      */
                     std::string m_buyerTaxCode;
                     bool m_buyerTaxCodeHasBeenSet;
 
                     /**
-                     * 购方地址电话
-通用机打发票类型做不返回
+                     * <p>购方地址电话<br>通用机打发票类型做不返回</p>
                      */
                     std::string m_buyerAddressPhone;
                     bool m_buyerAddressPhoneHasBeenSet;
 
                     /**
-                     * 购方银行账号
-通用机打发票类型时不返回
+                     * <p>购方银行账号<br>通用机打发票类型时不返回</p>
                      */
                     std::string m_buyerBankAccount;
                     bool m_buyerBankAccountHasBeenSet;
 
                     /**
-                     * 销方名称
+                     * <p>销方名称</p>
                      */
                     std::string m_sellerName;
                     bool m_sellerNameHasBeenSet;
 
                     /**
-                     * 销方税号
+                     * <p>销方税号</p>
                      */
                     std::string m_sellerTaxCode;
                     bool m_sellerTaxCodeHasBeenSet;
 
                     /**
-                     * 销方地址电话
+                     * <p>销方地址电话</p>
                      */
                     std::string m_sellerAddressPhone;
                     bool m_sellerAddressPhoneHasBeenSet;
 
                     /**
-                     * 销方银行账号
+                     * <p>销方银行账号</p>
                      */
                     std::string m_sellerBankAccount;
                     bool m_sellerBankAccountHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 机器编码
+                     * <p>机器编码</p>
                      */
                     std::string m_machineNo;
                     bool m_machineNoHasBeenSet;
 
                     /**
-                     * 票种类型
-01：增值税专用发票，
-02：货运运输业增值税专用发票，
-03：机动车销售统一发票，
-04：增值税普通发票，
-08：增值税电子专用发票（含全电，全电仅新版接口支持），
-09：全电发票，
-0901：全电纸质发票(增值税专用发票)，
-0903：全电纸质(机动车销售统一发票)，
-0904：全电纸质发票(增值税普通发票)，
-0910：电子发票(普通发票)，
-0915：全电纸质(二手车销售统一发票)，
-0920：电子发票(增值税专用发票)，
-0930：电子发票(机动车销售统一发票)，
-0940：电子发票(二手车销售统一发票)，
-10：增值税电子普通发票（含全电，全电仅新版接口支持），
-11：增值税普通发票（卷式），
-14：增值税电子（通行费）发票，
-15：二手车销售统一发票，
-32：深圳区块链发票，
-61：电子发票（航空运输电子客票行程单），
-8208：电子发票(通行费发票)，
-83：电子发票(铁路电子客票)，
-100：区块链发票，
-101：财政票据，
-102：通用电子发票，
-103：车辆通行费
-
-
-
-
+                     * <p>票种类型<br>01：增值税专用发票，<br>02：货运运输业增值税专用发票，<br>03：机动车销售统一发票，<br>04：增值税普通发票，<br>08：增值税电子专用发票（含全电，全电仅新版接口支持），<br>09：全电发票，<br>0901：全电纸质发票(增值税专用发票)，<br>0903：全电纸质(机动车销售统一发票)，<br>0904：全电纸质发票(增值税普通发票)，<br>0910：电子发票(普通发票)，<br>0915：全电纸质(二手车销售统一发票)，<br>0920：电子发票(增值税专用发票)，<br>0930：电子发票(机动车销售统一发票)，<br>0940：电子发票(二手车销售统一发票)，<br>10：增值税电子普通发票（含全电，全电仅新版接口支持），<br>11：增值税普通发票（卷式），<br>14：增值税电子（通行费）发票，<br>15：二手车销售统一发票，<br>32：深圳区块链发票，<br>61：电子发票（航空运输电子客票行程单），<br>8208：电子发票(通行费发票)，<br>83：电子发票(铁路电子客票)，<br>100：区块链发票，<br>101：财政票据，<br>102：通用电子发票，<br>103：车辆通行费</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 具体的全电发票类型：01: 全电专用发票；02：全电普通发票；03：全电火车票；04：全电机票行程单
+                     * <p>具体的全电发票类型：01: 全电专用发票；02：全电普通发票；03：全电火车票；04：全电机票行程单</p>
                      */
                     std::string m_electronicType;
                     bool m_electronicTypeHasBeenSet;
 
                     /**
-                     * 检验码
+                     * <p>检验码</p>
                      */
                     std::string m_checkCode;
                     bool m_checkCodeHasBeenSet;
 
                     /**
-                     * 是否作废（红冲）是否作废（红冲）
-Y：已作废，N：未作废，H：红冲，HP：部分红冲，HF：全额红冲
+                     * <p>是否作废（红冲）是否作废（红冲）<br>Y：已作废，N：未作废，H：红冲，HP：部分红冲，HF：全额红冲</p>
                      */
                     std::string m_isAbandoned;
                     bool m_isAbandonedHasBeenSet;
 
                     /**
-                     * 是否有销货清单 
-Y: 有清单 N：无清单 
-卷票无
+                     * <p>是否有销货清单<br>Y: 有清单 N：无清单<br>卷票无</p>
                      */
                     std::string m_hasSellerList;
                     bool m_hasSellerListHasBeenSet;
 
                     /**
-                     * 销货清单标题
+                     * <p>销货清单标题</p>
                      */
                     std::string m_sellerListTitle;
                     bool m_sellerListTitleHasBeenSet;
 
                     /**
-                     * 销货清单税额
+                     * <p>销货清单税额</p>
                      */
                     std::string m_sellerListTax;
                     bool m_sellerListTaxHasBeenSet;
 
                     /**
-                     * 不含税金额
+                     * <p>不含税金额</p>
                      */
                     std::string m_amountWithoutTax;
                     bool m_amountWithoutTaxHasBeenSet;
 
                     /**
-                     * 税额
+                     * <p>税额</p>
                      */
                     std::string m_taxAmount;
                     bool m_taxAmountHasBeenSet;
 
                     /**
-                     * 含税金额
+                     * <p>含税金额</p>
                      */
                     std::string m_amountWithTax;
                     bool m_amountWithTaxHasBeenSet;
 
                     /**
-                     * 项目明细
+                     * <p>项目明细</p>
                      */
                     std::vector<VatInvoiceItem> m_items;
                     bool m_itemsHasBeenSet;
 
                     /**
-                     * 所属税局
+                     * <p>所属税局</p>
                      */
                     std::string m_taxBureau;
                     bool m_taxBureauHasBeenSet;
 
                     /**
-                     * 通行费标志:Y、是;N、否
+                     * <p>通行费标志:Y、是;N、否</p>
                      */
                     std::string m_trafficFreeFlag;
                     bool m_trafficFreeFlagHasBeenSet;
 
                     /**
-                     * 是否为红票
+                     * <p>是否为红票</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_redLetterInvoiceMark;
                     bool m_redLetterInvoiceMarkHasBeenSet;
 
                     /**
-                     * 开具类型标识（0: 委托代开，1：自开，2：代开，3：代办退税
+                     * <p>开具类型标识（0: 委托代开，1：自开，2：代开，3：代办退税</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_issuingTypeMark;
                     bool m_issuingTypeMarkHasBeenSet;
 
                     /**
-                     * 代开销售方名称
+                     * <p>代开销售方名称</p>
                      */
                     std::string m_sellerAgentName;
                     bool m_sellerAgentNameHasBeenSet;
 
                     /**
-                     * 代开销售方税号
+                     * <p>代开销售方税号</p>
                      */
                     std::string m_sellerAgentTaxID;
                     bool m_sellerAgentTaxIDHasBeenSet;
+
+                    /**
+                     * <p>地区代码</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_regionCode;
+                    bool m_regionCodeHasBeenSet;
+
+                    /**
+                     * <p>复核人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_reviewerName;
+                    bool m_reviewerNameHasBeenSet;
+
+                    /**
+                     * <p>开票人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_issuerName;
+                    bool m_issuerNameHasBeenSet;
+
+                    /**
+                     * <p>收款人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_payeeName;
+                    bool m_payeeNameHasBeenSet;
+
+                    /**
+                     * <p>开票机号</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_machineCode;
+                    bool m_machineCodeHasBeenSet;
+
+                    /**
+                     * <p>税控码/密码区</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taxControlCode;
+                    bool m_taxControlCodeHasBeenSet;
+
+                    /**
+                     * <p>价税合计（中文大写）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_amountWithTaxCN;
+                    bool m_amountWithTaxCNHasBeenSet;
+
+                    /**
+                     * <p>税率</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taxRate;
+                    bool m_taxRateHasBeenSet;
+
+                    /**
+                     * <p>特殊票种代码</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_specialTicketCode;
+                    bool m_specialTicketCodeHasBeenSet;
+
+                    /**
+                     * <p>红字发票信息列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RedLetterInvoiceItem> m_redLetterInvoices;
+                    bool m_redLetterInvoicesHasBeenSet;
+
+                    /**
+                     * <p>全电类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fullElectronicType;
+                    bool m_fullElectronicTypeHasBeenSet;
+
+                    /**
+                     * <p>OFD版式文件下载链接</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ofdUrl;
+                    bool m_ofdUrlHasBeenSet;
+
+                    /**
+                     * <p>PDF版式文件下载链接</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pdfUrl;
+                    bool m_pdfUrlHasBeenSet;
+
+                    /**
+                     * <p>原发票代码，对应蓝字发票代码。</p>
+                     */
+                    std::string m_originalCode;
+                    bool m_originalCodeHasBeenSet;
+
+                    /**
+                     * <p>原发票号码，对应蓝字发票号码。</p>
+                     */
+                    std::string m_originalNumber;
+                    bool m_originalNumberHasBeenSet;
 
                 };
             }

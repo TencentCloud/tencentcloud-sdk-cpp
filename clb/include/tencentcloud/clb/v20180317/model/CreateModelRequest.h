@@ -405,6 +405,48 @@ namespace TencentCloud
                      */
                     bool HealthCheckConfigsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模型输出模态</p>
+                     * @return Capability <p>模型输出模态</p>
+                     * 
+                     */
+                    std::string GetCapability() const;
+
+                    /**
+                     * 设置<p>模型输出模态</p>
+                     * @param _capability <p>模型输出模态</p>
+                     * 
+                     */
+                    void SetCapability(const std::string& _capability);
+
+                    /**
+                     * 判断参数 Capability 是否已赋值
+                     * @return Capability 是否已赋值
+                     * 
+                     */
+                    bool CapabilityHasBeenSet() const;
+
+                    /**
+                     * 获取<p>请求后缀</p>
+                     * @return EndpointPath <p>请求后缀</p>
+                     * 
+                     */
+                    std::string GetEndpointPath() const;
+
+                    /**
+                     * 设置<p>请求后缀</p>
+                     * @param _endpointPath <p>请求后缀</p>
+                     * 
+                     */
+                    void SetEndpointPath(const std::string& _endpointPath);
+
+                    /**
+                     * 判断参数 EndpointPath 是否已赋值
+                     * @return EndpointPath 是否已赋值
+                     * 
+                     */
+                    bool EndpointPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -508,6 +550,18 @@ namespace TencentCloud
                      */
                     std::vector<ServiceProviderHealthCheckConfigItemInput> m_healthCheckConfigs;
                     bool m_healthCheckConfigsHasBeenSet;
+
+                    /**
+                     * <p>模型输出模态</p>
+                     */
+                    std::string m_capability;
+                    bool m_capabilityHasBeenSet;
+
+                    /**
+                     * <p>请求后缀</p>
+                     */
+                    std::string m_endpointPath;
+                    bool m_endpointPathHasBeenSet;
 
                 };
             }

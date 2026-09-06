@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DeviceTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>集群级别，可空。例如 P0, P1</p>
-                     * @return ClusterLevel <p>集群级别，可空。例如 P0, P1</p>
+                     * 获取<p>集群级别。例如 P0, P1。若未指定可用区，针对于不支持亲和性的可用区将降级查询非亲和性资源。</p>
+                     * @return ClusterLevel <p>集群级别。例如 P0, P1。若未指定可用区，针对于不支持亲和性的可用区将降级查询非亲和性资源。</p>
                      * 
                      */
                     std::string GetClusterLevel() const;
 
                     /**
-                     * 设置<p>集群级别，可空。例如 P0, P1</p>
-                     * @param _clusterLevel <p>集群级别，可空。例如 P0, P1</p>
+                     * 设置<p>集群级别。例如 P0, P1。若未指定可用区，针对于不支持亲和性的可用区将降级查询非亲和性资源。</p>
+                     * @param _clusterLevel <p>集群级别。例如 P0, P1。若未指定可用区，针对于不支持亲和性的可用区将降级查询非亲和性资源。</p>
                      * 
                      */
                     void SetClusterLevel(const std::string& _clusterLevel);
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_deviceTypeHasBeenSet;
 
                     /**
-                     * <p>集群级别，可空。例如 P0, P1</p>
+                     * <p>集群级别。例如 P0, P1。若未指定可用区，针对于不支持亲和性的可用区将降级查询非亲和性资源。</p>
                      */
                     std::string m_clusterLevel;
                     bool m_clusterLevelHasBeenSet;

@@ -246,6 +246,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/DescribeExtractDocAgentJobResponse.h
   include/tencentcloud/ocr/v20181119/model/ResidenceBookletOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/VatInvoiceRoll.h
+  include/tencentcloud/ocr/v20181119/model/RedLetterInvoiceItem.h
   include/tencentcloud/ocr/v20181119/model/CarInvoiceOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/VehicleRegCertOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/GeneralFastOCRRequest.h
@@ -557,6 +558,7 @@ set(ocr_src
   src/v20181119/model/DescribeExtractDocAgentJobResponse.cpp
   src/v20181119/model/ResidenceBookletOCRResponse.cpp
   src/v20181119/model/VatInvoiceRoll.cpp
+  src/v20181119/model/RedLetterInvoiceItem.cpp
   src/v20181119/model/CarInvoiceOCRResponse.cpp
   src/v20181119/model/VehicleRegCertOCRResponse.cpp
   src/v20181119/model/GeneralFastOCRRequest.cpp
