@@ -540,56 +540,6 @@ EssbasicClient::ChannelCreateBoundFlowsOutcomeCallable EssbasicClient::ChannelCr
     return prom->get_future();
 }
 
-EssbasicClient::ChannelCreateConvertTaskApiOutcome EssbasicClient::ChannelCreateConvertTaskApi(const ChannelCreateConvertTaskApiRequest &request)
-{
-    auto outcome = MakeRequest(request, "ChannelCreateConvertTaskApi");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ChannelCreateConvertTaskApiResponse rsp = ChannelCreateConvertTaskApiResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ChannelCreateConvertTaskApiOutcome(rsp);
-        else
-            return ChannelCreateConvertTaskApiOutcome(o.GetError());
-    }
-    else
-    {
-        return ChannelCreateConvertTaskApiOutcome(outcome.GetError());
-    }
-}
-
-void EssbasicClient::ChannelCreateConvertTaskApiAsync(const ChannelCreateConvertTaskApiRequest& request, const ChannelCreateConvertTaskApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const ChannelCreateConvertTaskApiRequest&;
-    using Resp = ChannelCreateConvertTaskApiResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "ChannelCreateConvertTaskApi", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-EssbasicClient::ChannelCreateConvertTaskApiOutcomeCallable EssbasicClient::ChannelCreateConvertTaskApiCallable(const ChannelCreateConvertTaskApiRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<ChannelCreateConvertTaskApiOutcome>>();
-    ChannelCreateConvertTaskApiAsync(
-    request,
-    [prom](
-        const EssbasicClient*,
-        const ChannelCreateConvertTaskApiRequest&,
-        ChannelCreateConvertTaskApiOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 EssbasicClient::ChannelCreateDynamicFlowApproverOutcome EssbasicClient::ChannelCreateDynamicFlowApprover(const ChannelCreateDynamicFlowApproverRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCreateDynamicFlowApprover");
@@ -2282,56 +2232,6 @@ EssbasicClient::ChannelDisableUserAutoSignOutcomeCallable EssbasicClient::Channe
         const EssbasicClient*,
         const ChannelDisableUserAutoSignRequest&,
         ChannelDisableUserAutoSignOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-EssbasicClient::ChannelGetTaskResultApiOutcome EssbasicClient::ChannelGetTaskResultApi(const ChannelGetTaskResultApiRequest &request)
-{
-    auto outcome = MakeRequest(request, "ChannelGetTaskResultApi");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ChannelGetTaskResultApiResponse rsp = ChannelGetTaskResultApiResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ChannelGetTaskResultApiOutcome(rsp);
-        else
-            return ChannelGetTaskResultApiOutcome(o.GetError());
-    }
-    else
-    {
-        return ChannelGetTaskResultApiOutcome(outcome.GetError());
-    }
-}
-
-void EssbasicClient::ChannelGetTaskResultApiAsync(const ChannelGetTaskResultApiRequest& request, const ChannelGetTaskResultApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const ChannelGetTaskResultApiRequest&;
-    using Resp = ChannelGetTaskResultApiResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "ChannelGetTaskResultApi", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-EssbasicClient::ChannelGetTaskResultApiOutcomeCallable EssbasicClient::ChannelGetTaskResultApiCallable(const ChannelGetTaskResultApiRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<ChannelGetTaskResultApiOutcome>>();
-    ChannelGetTaskResultApiAsync(
-    request,
-    [prom](
-        const EssbasicClient*,
-        const ChannelGetTaskResultApiRequest&,
-        ChannelGetTaskResultApiOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

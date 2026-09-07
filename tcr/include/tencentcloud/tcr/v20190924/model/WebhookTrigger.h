@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取触发器名称
-                     * @return Name 触发器名称
+                     * 获取<p>触发器名称</p>
+                     * @return Name <p>触发器名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置触发器名称
-                     * @param _name 触发器名称
+                     * 设置<p>触发器名称</p>
+                     * @param _name <p>触发器名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取触发器目标
-                     * @return Targets 触发器目标
+                     * 获取<p>触发器目标</p>
+                     * @return Targets <p>触发器目标</p>
                      * 
                      */
                     std::vector<WebhookTarget> GetTargets() const;
 
                     /**
-                     * 设置触发器目标
-                     * @param _targets 触发器目标
+                     * 设置<p>触发器目标</p>
+                     * @param _targets <p>触发器目标</p>
                      * 
                      */
                     void SetTargets(const std::vector<WebhookTarget>& _targets);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool TargetsHasBeenSet() const;
 
                     /**
-                     * 获取触发动作
-                     * @return EventTypes 触发动作
+                     * 获取<p>触发动作</p>
+                     * @return EventTypes <p>触发动作</p>
                      * 
                      */
                     std::vector<std::string> GetEventTypes() const;
 
                     /**
-                     * 设置触发动作
-                     * @param _eventTypes 触发动作
+                     * 设置<p>触发动作</p>
+                     * @param _eventTypes <p>触发动作</p>
                      * 
                      */
                     void SetEventTypes(const std::vector<std::string>& _eventTypes);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool EventTypesHasBeenSet() const;
 
                     /**
-                     * 获取触发规则
-                     * @return Condition 触发规则
+                     * 获取<p>触发规则</p>
+                     * @return Condition <p>触发规则</p>
                      * 
                      */
                     std::string GetCondition() const;
 
                     /**
-                     * 设置触发规则
-                     * @param _condition 触发规则
+                     * 设置<p>触发规则</p>
+                     * @param _condition <p>触发规则</p>
                      * 
                      */
                     void SetCondition(const std::string& _condition);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool ConditionHasBeenSet() const;
 
                     /**
-                     * 获取启用触发器
-                     * @return Enabled 启用触发器
+                     * 获取<p>启用触发器</p>
+                     * @return Enabled <p>启用触发器</p>
                      * 
                      */
                     bool GetEnabled() const;
 
                     /**
-                     * 设置启用触发器
-                     * @param _enabled 启用触发器
+                     * 设置<p>启用触发器</p>
+                     * @param _enabled <p>启用触发器</p>
                      * 
                      */
                     void SetEnabled(const bool& _enabled);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool EnabledHasBeenSet() const;
 
                     /**
-                     * 获取触发器Id
-                     * @return Id 触发器Id
+                     * 获取<p>触发器Id</p>
+                     * @return Id <p>触发器Id</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置触发器Id
-                     * @param _id 触发器Id
+                     * 设置<p>触发器Id</p>
+                     * @param _id <p>触发器Id</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取触发器描述
-                     * @return Description 触发器描述
+                     * 获取<p>触发器描述</p>
+                     * @return Description <p>触发器描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置触发器描述
-                     * @param _description 触发器描述
+                     * 设置<p>触发器描述</p>
+                     * @param _description <p>触发器描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取触发器所属命名空间 Id
-                     * @return NamespaceId 触发器所属命名空间 Id
+                     * 获取<p>触发器所属命名空间 Id</p>
+                     * @return NamespaceId <p>触发器所属命名空间 Id</p>
                      * 
                      */
                     int64_t GetNamespaceId() const;
 
                     /**
-                     * 设置触发器所属命名空间 Id
-                     * @param _namespaceId 触发器所属命名空间 Id
+                     * 设置<p>触发器所属命名空间 Id</p>
+                     * @param _namespaceId <p>触发器所属命名空间 Id</p>
                      * 
                      */
                     void SetNamespaceId(const int64_t& _namespaceId);
@@ -216,15 +216,19 @@ namespace TencentCloud
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
-                     * 获取触发器所属命名空间名称
-                     * @return NamespaceName 触发器所属命名空间名称
+                     * 获取<p>触发器所属命名空间名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NamespaceName <p>触发器所属命名空间名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
-                     * 设置触发器所属命名空间名称
-                     * @param _namespaceName 触发器所属命名空间名称
+                     * 设置<p>触发器所属命名空间名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _namespaceName <p>触发器所属命名空间名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
@@ -239,55 +243,56 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 触发器名称
+                     * <p>触发器名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 触发器目标
+                     * <p>触发器目标</p>
                      */
                     std::vector<WebhookTarget> m_targets;
                     bool m_targetsHasBeenSet;
 
                     /**
-                     * 触发动作
+                     * <p>触发动作</p>
                      */
                     std::vector<std::string> m_eventTypes;
                     bool m_eventTypesHasBeenSet;
 
                     /**
-                     * 触发规则
+                     * <p>触发规则</p>
                      */
                     std::string m_condition;
                     bool m_conditionHasBeenSet;
 
                     /**
-                     * 启用触发器
+                     * <p>启用触发器</p>
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
-                     * 触发器Id
+                     * <p>触发器Id</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 触发器描述
+                     * <p>触发器描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 触发器所属命名空间 Id
+                     * <p>触发器所属命名空间 Id</p>
                      */
                     int64_t m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
 
                     /**
-                     * 触发器所属命名空间名称
+                     * <p>触发器所属命名空间名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespaceName;
                     bool m_namespaceNameHasBeenSet;

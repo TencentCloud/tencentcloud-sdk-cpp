@@ -27,6 +27,7 @@ Function::Function() :
     m_remarkHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_domainHasBeenSet(false),
+    m_domainComplianceRestrictionsHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
@@ -95,6 +96,26 @@ CoreInternalOutcome Function::Deserialize(const rapidjson::Value &value)
         }
         m_domain = string(value["Domain"].GetString());
         m_domainHasBeenSet = true;
+    }
+
+    if (value.HasMember("DomainComplianceRestrictions") && !value["DomainComplianceRestrictions"].IsNull())
+    {
+        if (!value["DomainComplianceRestrictions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Function.DomainComplianceRestrictions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DomainComplianceRestrictions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ComplianceRestriction item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_domainComplianceRestrictions.push_back(item);
+        }
+        m_domainComplianceRestrictionsHasBeenSet = true;
     }
 
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
@@ -170,6 +191,21 @@ void Function::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainComplianceRestrictionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainComplianceRestrictions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_domainComplianceRestrictions.begin(); itr != m_domainComplianceRestrictions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_createTimeHasBeenSet)
@@ -285,6 +321,22 @@ void Function::SetDomain(const string& _domain)
 bool Function::DomainHasBeenSet() const
 {
     return m_domainHasBeenSet;
+}
+
+vector<ComplianceRestriction> Function::GetDomainComplianceRestrictions() const
+{
+    return m_domainComplianceRestrictions;
+}
+
+void Function::SetDomainComplianceRestrictions(const vector<ComplianceRestriction>& _domainComplianceRestrictions)
+{
+    m_domainComplianceRestrictions = _domainComplianceRestrictions;
+    m_domainComplianceRestrictionsHasBeenSet = true;
+}
+
+bool Function::DomainComplianceRestrictionsHasBeenSet() const
+{
+    return m_domainComplianceRestrictionsHasBeenSet;
 }
 
 string Function::GetCreateTime() const

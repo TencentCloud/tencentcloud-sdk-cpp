@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/essbasic/v20210526/model/ChannelCreateConvertTaskApiResponse.h>
+#include <tencentcloud/mps/v20190612/model/ModifyDocToVideoTaskStatusResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Essbasic::V20210526::Model;
+using namespace TencentCloud::Mps::V20190612::Model;
 using namespace std;
 
-ChannelCreateConvertTaskApiResponse::ChannelCreateConvertTaskApiResponse() :
+ModifyDocToVideoTaskStatusResponse::ModifyDocToVideoTaskStatusResponse() :
     m_taskIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ChannelCreateConvertTaskApiResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyDocToVideoTaskStatusResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -76,7 +76,7 @@ CoreInternalOutcome ChannelCreateConvertTaskApiResponse::Deserialize(const strin
     return CoreInternalOutcome(true);
 }
 
-string ChannelCreateConvertTaskApiResponse::ToJsonString() const
+string ModifyDocToVideoTaskStatusResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
@@ -102,12 +102,12 @@ string ChannelCreateConvertTaskApiResponse::ToJsonString() const
 }
 
 
-string ChannelCreateConvertTaskApiResponse::GetTaskId() const
+string ModifyDocToVideoTaskStatusResponse::GetTaskId() const
 {
     return m_taskId;
 }
 
-bool ChannelCreateConvertTaskApiResponse::TaskIdHasBeenSet() const
+bool ModifyDocToVideoTaskStatusResponse::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
 }

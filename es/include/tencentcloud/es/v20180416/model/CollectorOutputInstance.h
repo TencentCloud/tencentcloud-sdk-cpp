@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取采集器输出的实例类型（支持elasticsearch、logstash）
-                     * @return Type 采集器输出的实例类型（支持elasticsearch、logstash）
+                     * 获取<p>采集器输出的实例类型（支持elasticsearch、logstash）</p>
+                     * @return Type <p>采集器输出的实例类型（支持elasticsearch、logstash）</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置采集器输出的实例类型（支持elasticsearch、logstash）
-                     * @param _type 采集器输出的实例类型（支持elasticsearch、logstash）
+                     * 设置<p>采集器输出的实例类型（支持elasticsearch、logstash）</p>
+                     * @param _type <p>采集器输出的实例类型（支持elasticsearch、logstash）</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取采集器输出的实例ID
-                     * @return InstanceId 采集器输出的实例ID
+                     * 获取<p>采集器输出的实例ID</p>
+                     * @return InstanceId <p>采集器输出的实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置采集器输出的实例ID
-                     * @param _instanceId 采集器输出的实例ID
+                     * 设置<p>采集器输出的实例ID</p>
+                     * @param _instanceId <p>采集器输出的实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取采集器输出到的ES实例的用户名
-                     * @return ESUserName 采集器输出到的ES实例的用户名
+                     * 获取<p>采集器输出到的ES实例的用户名</p>
+                     * @return ESUserName <p>采集器输出到的ES实例的用户名</p>
                      * 
                      */
                     std::string GetESUserName() const;
 
                     /**
-                     * 设置采集器输出到的ES实例的用户名
-                     * @param _eSUserName 采集器输出到的ES实例的用户名
+                     * 设置<p>采集器输出到的ES实例的用户名</p>
+                     * @param _eSUserName <p>采集器输出到的ES实例的用户名</p>
                      * 
                      */
                     void SetESUserName(const std::string& _eSUserName);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ESUserNameHasBeenSet() const;
 
                     /**
-                     * 获取采集器输出到的ES实例的密码
-                     * @return ESUserPasswd 采集器输出到的ES实例的密码
+                     * 获取<p>采集器输出到的ES实例的密码</p>
+                     * @return ESUserPasswd <p>采集器输出到的ES实例的密码</p>
                      * 
                      */
                     std::string GetESUserPasswd() const;
 
                     /**
-                     * 设置采集器输出到的ES实例的密码
-                     * @param _eSUserPasswd 采集器输出到的ES实例的密码
+                     * 设置<p>采集器输出到的ES实例的密码</p>
+                     * @param _eSUserPasswd <p>采集器输出到的ES实例的密码</p>
                      * 
                      */
                     void SetESUserPasswd(const std::string& _eSUserPasswd);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ESUserPasswdHasBeenSet() const;
 
                     /**
-                     * 获取采集器输出到ES实例时，是否开启监控（1为开启，0为不开启，默认为0）
-                     * @return EnableMonitoring 采集器输出到ES实例时，是否开启监控（1为开启，0为不开启，默认为0）
+                     * 获取<p>采集器输出到ES实例时，是否开启监控（1为开启，0为不开启，默认为0）</p>
+                     * @return EnableMonitoring <p>采集器输出到ES实例时，是否开启监控（1为开启，0为不开启，默认为0）</p>
                      * 
                      */
                     int64_t GetEnableMonitoring() const;
 
                     /**
-                     * 设置采集器输出到ES实例时，是否开启监控（1为开启，0为不开启，默认为0）
-                     * @param _enableMonitoring 采集器输出到ES实例时，是否开启监控（1为开启，0为不开启，默认为0）
+                     * 设置<p>采集器输出到ES实例时，是否开启监控（1为开启，0为不开启，默认为0）</p>
+                     * @param _enableMonitoring <p>采集器输出到ES实例时，是否开启监控（1为开启，0为不开启，默认为0）</p>
                      * 
                      */
                     void SetEnableMonitoring(const int64_t& _enableMonitoring);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool EnableMonitoringHasBeenSet() const;
 
                     /**
-                     * 获取采集器输出到ES实例时，是否开启自动在kibana中生成Dashboard（1为开启，0为不开启，默认为0）
-                     * @return EnableDashboard 采集器输出到ES实例时，是否开启自动在kibana中生成Dashboard（1为开启，0为不开启，默认为0）
+                     * 获取<p>采集器输出到ES实例时，是否开启自动在kibana中生成Dashboard（1为开启，0为不开启，默认为0）</p>
+                     * @return EnableDashboard <p>采集器输出到ES实例时，是否开启自动在kibana中生成Dashboard（1为开启，0为不开启，默认为0）</p>
                      * 
                      */
                     int64_t GetEnableDashboard() const;
 
                     /**
-                     * 设置采集器输出到ES实例时，是否开启自动在kibana中生成Dashboard（1为开启，0为不开启，默认为0）
-                     * @param _enableDashboard 采集器输出到ES实例时，是否开启自动在kibana中生成Dashboard（1为开启，0为不开启，默认为0）
+                     * 设置<p>采集器输出到ES实例时，是否开启自动在kibana中生成Dashboard（1为开启，0为不开启，默认为0）</p>
+                     * @param _enableDashboard <p>采集器输出到ES实例时，是否开启自动在kibana中生成Dashboard（1为开启，0为不开启，默认为0）</p>
                      * 
                      */
                     void SetEnableDashboard(const int64_t& _enableDashboard);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool EnableDashboardHasBeenSet() const;
 
                     /**
-                     * 获取Ckafka实例的vip
-                     * @return KafkaEndpoint Ckafka实例的vip
+                     * 获取<p>Ckafka实例的vip</p>
+                     * @return KafkaEndpoint <p>Ckafka实例的vip</p>
                      * 
                      */
                     std::string GetKafkaEndpoint() const;
 
                     /**
-                     * 设置Ckafka实例的vip
-                     * @param _kafkaEndpoint Ckafka实例的vip
+                     * 设置<p>Ckafka实例的vip</p>
+                     * @param _kafkaEndpoint <p>Ckafka实例的vip</p>
                      * 
                      */
                     void SetKafkaEndpoint(const std::string& _kafkaEndpoint);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool KafkaEndpointHasBeenSet() const;
 
                     /**
-                     * 获取Ckafka实例中的Topic
-                     * @return KafkaTopic Ckafka实例中的Topic
+                     * 获取<p>Ckafka实例中的Topic</p>
+                     * @return KafkaTopic <p>Ckafka实例中的Topic</p>
                      * 
                      */
                     std::string GetKafkaTopic() const;
 
                     /**
-                     * 设置Ckafka实例中的Topic
-                     * @param _kafkaTopic Ckafka实例中的Topic
+                     * 设置<p>Ckafka实例中的Topic</p>
+                     * @param _kafkaTopic <p>Ckafka实例中的Topic</p>
                      * 
                      */
                     void SetKafkaTopic(const std::string& _kafkaTopic);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool KafkaTopicHasBeenSet() const;
 
                     /**
-                     * 获取Ckafka实例的版本号
-                     * @return KafkaVersion Ckafka实例的版本号
+                     * 获取<p>Ckafka实例的版本号</p>
+                     * @return KafkaVersion <p>Ckafka实例的版本号</p>
                      * 
                      */
                     std::string GetKafkaVersion() const;
 
                     /**
-                     * 设置Ckafka实例的版本号
-                     * @param _kafkaVersion Ckafka实例的版本号
+                     * 设置<p>Ckafka实例的版本号</p>
+                     * @param _kafkaVersion <p>Ckafka实例的版本号</p>
                      * 
                      */
                     void SetKafkaVersion(const std::string& _kafkaVersion);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool KafkaVersionHasBeenSet() const;
 
                     /**
-                     * 获取topic id
-                     * @return SesTopicId topic id
+                     * 获取<p>topic id</p>
+                     * @return SesTopicId <p>topic id</p>
                      * 
                      */
                     std::string GetSesTopicId() const;
 
                     /**
-                     * 设置topic id
-                     * @param _sesTopicId topic id
+                     * 设置<p>topic id</p>
+                     * @param _sesTopicId <p>topic id</p>
                      * 
                      */
                     void SetSesTopicId(const std::string& _sesTopicId);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool SesTopicIdHasBeenSet() const;
 
                     /**
-                     * 获取topic name
-                     * @return SesTopicName topic name
+                     * 获取<p>topic name</p>
+                     * @return SesTopicName <p>topic name</p>
                      * 
                      */
                     std::string GetSesTopicName() const;
 
                     /**
-                     * 设置topic name
-                     * @param _sesTopicName topic name
+                     * 设置<p>topic name</p>
+                     * @param _sesTopicName <p>topic name</p>
                      * 
                      */
                     void SetSesTopicName(const std::string& _sesTopicName);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool SesTopicNameHasBeenSet() const;
 
                     /**
-                     * 获取topic address
-                     * @return SesTopicAddress topic address
+                     * 获取<p>topic address</p>
+                     * @return SesTopicAddress <p>topic address</p>
                      * 
                      */
                     std::string GetSesTopicAddress() const;
 
                     /**
-                     * 设置topic address
-                     * @param _sesTopicAddress topic address
+                     * 设置<p>topic address</p>
+                     * @param _sesTopicAddress <p>topic address</p>
                      * 
                      */
                     void SetSesTopicAddress(const std::string& _sesTopicAddress);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool SesTopicAddressHasBeenSet() const;
 
                     /**
-                     * 获取/
-                     * @return SesTopicUserName /
+                     * 获取<p>/</p>
+                     * @return SesTopicUserName <p>/</p>
                      * 
                      */
                     std::string GetSesTopicUserName() const;
 
                     /**
-                     * 设置/
-                     * @param _sesTopicUserName /
+                     * 设置<p>/</p>
+                     * @param _sesTopicUserName <p>/</p>
                      * 
                      */
                     void SetSesTopicUserName(const std::string& _sesTopicUserName);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool SesTopicUserNameHasBeenSet() const;
 
                     /**
-                     * 获取/
-                     * @return SesTopicPasswd /
+                     * 获取<p>/</p>
+                     * @return SesTopicPasswd <p>/</p>
                      * 
                      */
                     std::string GetSesTopicPasswd() const;
 
                     /**
-                     * 设置/
-                     * @param _sesTopicPasswd /
+                     * 设置<p>/</p>
+                     * @param _sesTopicPasswd <p>/</p>
                      * 
                      */
                     void SetSesTopicPasswd(const std::string& _sesTopicPasswd);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool SesTopicPasswdHasBeenSet() const;
 
                     /**
-                     * 获取/
-                     * @return LogstashListenPort /
+                     * 获取<p>/</p>
+                     * @return LogstashListenPort <p>/</p>
                      * 
                      */
                     uint64_t GetLogstashListenPort() const;
 
                     /**
-                     * 设置/
-                     * @param _logstashListenPort /
+                     * 设置<p>/</p>
+                     * @param _logstashListenPort <p>/</p>
                      * 
                      */
                     void SetLogstashListenPort(const uint64_t& _logstashListenPort);
@@ -361,97 +361,124 @@ namespace TencentCloud
                      */
                     bool LogstashListenPortHasBeenSet() const;
 
+                    /**
+                     * 获取<p>serverless 的 spaceid</p>
+                     * @return SesSpaceId <p>serverless 的 spaceid</p>
+                     * 
+                     */
+                    std::string GetSesSpaceId() const;
+
+                    /**
+                     * 设置<p>serverless 的 spaceid</p>
+                     * @param _sesSpaceId <p>serverless 的 spaceid</p>
+                     * 
+                     */
+                    void SetSesSpaceId(const std::string& _sesSpaceId);
+
+                    /**
+                     * 判断参数 SesSpaceId 是否已赋值
+                     * @return SesSpaceId 是否已赋值
+                     * 
+                     */
+                    bool SesSpaceIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 采集器输出的实例类型（支持elasticsearch、logstash）
+                     * <p>采集器输出的实例类型（支持elasticsearch、logstash）</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 采集器输出的实例ID
+                     * <p>采集器输出的实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 采集器输出到的ES实例的用户名
+                     * <p>采集器输出到的ES实例的用户名</p>
                      */
                     std::string m_eSUserName;
                     bool m_eSUserNameHasBeenSet;
 
                     /**
-                     * 采集器输出到的ES实例的密码
+                     * <p>采集器输出到的ES实例的密码</p>
                      */
                     std::string m_eSUserPasswd;
                     bool m_eSUserPasswdHasBeenSet;
 
                     /**
-                     * 采集器输出到ES实例时，是否开启监控（1为开启，0为不开启，默认为0）
+                     * <p>采集器输出到ES实例时，是否开启监控（1为开启，0为不开启，默认为0）</p>
                      */
                     int64_t m_enableMonitoring;
                     bool m_enableMonitoringHasBeenSet;
 
                     /**
-                     * 采集器输出到ES实例时，是否开启自动在kibana中生成Dashboard（1为开启，0为不开启，默认为0）
+                     * <p>采集器输出到ES实例时，是否开启自动在kibana中生成Dashboard（1为开启，0为不开启，默认为0）</p>
                      */
                     int64_t m_enableDashboard;
                     bool m_enableDashboardHasBeenSet;
 
                     /**
-                     * Ckafka实例的vip
+                     * <p>Ckafka实例的vip</p>
                      */
                     std::string m_kafkaEndpoint;
                     bool m_kafkaEndpointHasBeenSet;
 
                     /**
-                     * Ckafka实例中的Topic
+                     * <p>Ckafka实例中的Topic</p>
                      */
                     std::string m_kafkaTopic;
                     bool m_kafkaTopicHasBeenSet;
 
                     /**
-                     * Ckafka实例的版本号
+                     * <p>Ckafka实例的版本号</p>
                      */
                     std::string m_kafkaVersion;
                     bool m_kafkaVersionHasBeenSet;
 
                     /**
-                     * topic id
+                     * <p>topic id</p>
                      */
                     std::string m_sesTopicId;
                     bool m_sesTopicIdHasBeenSet;
 
                     /**
-                     * topic name
+                     * <p>topic name</p>
                      */
                     std::string m_sesTopicName;
                     bool m_sesTopicNameHasBeenSet;
 
                     /**
-                     * topic address
+                     * <p>topic address</p>
                      */
                     std::string m_sesTopicAddress;
                     bool m_sesTopicAddressHasBeenSet;
 
                     /**
-                     * /
+                     * <p>/</p>
                      */
                     std::string m_sesTopicUserName;
                     bool m_sesTopicUserNameHasBeenSet;
 
                     /**
-                     * /
+                     * <p>/</p>
                      */
                     std::string m_sesTopicPasswd;
                     bool m_sesTopicPasswdHasBeenSet;
 
                     /**
-                     * /
+                     * <p>/</p>
                      */
                     uint64_t m_logstashListenPort;
                     bool m_logstashListenPortHasBeenSet;
+
+                    /**
+                     * <p>serverless 的 spaceid</p>
+                     */
+                    std::string m_sesSpaceId;
+                    bool m_sesSpaceIdHasBeenSet;
 
                 };
             }

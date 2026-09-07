@@ -65,6 +65,8 @@
 #include <tencentcloud/live/v20180801/model/CreateCasterPvwResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateCommonMixStreamRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateCommonMixStreamResponse.h>
+#include <tencentcloud/live/v20180801/model/CreateLiveAvatarCloneFigureRequest.h>
+#include <tencentcloud/live/v20180801/model/CreateLiveAvatarCloneFigureResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateLiveAvatarRoomRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateLiveAvatarRoomResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateLiveAvatarScriptRequest.h>
@@ -127,6 +129,8 @@
 #include <tencentcloud/live/v20180801/model/DeleteCasterMarkWordInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteCasterOutputInfoRequest.h>
 #include <tencentcloud/live/v20180801/model/DeleteCasterOutputInfoResponse.h>
+#include <tencentcloud/live/v20180801/model/DeleteLiveAvatarCloneFigureRequest.h>
+#include <tencentcloud/live/v20180801/model/DeleteLiveAvatarCloneFigureResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveAvatarRoomRequest.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveAvatarRoomResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveAvatarScriptRequest.h>
@@ -223,6 +227,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeHttpStatusInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveAvatarBackgroundListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveAvatarBackgroundListResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveAvatarCloneFigureListRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveAvatarCloneFigureListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveAvatarImageListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveAvatarImageListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveAvatarRoomsRequest.h>
@@ -562,6 +568,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCommonMixStreamResponse> CreateCommonMixStreamOutcome;
                 typedef std::future<CreateCommonMixStreamOutcome> CreateCommonMixStreamOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateCommonMixStreamRequest&, CreateCommonMixStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCommonMixStreamAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLiveAvatarCloneFigureResponse> CreateLiveAvatarCloneFigureOutcome;
+                typedef std::future<CreateLiveAvatarCloneFigureOutcome> CreateLiveAvatarCloneFigureOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::CreateLiveAvatarCloneFigureRequest&, CreateLiveAvatarCloneFigureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveAvatarCloneFigureAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateLiveAvatarRoomResponse> CreateLiveAvatarRoomOutcome;
                 typedef std::future<CreateLiveAvatarRoomOutcome> CreateLiveAvatarRoomOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateLiveAvatarRoomRequest&, CreateLiveAvatarRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveAvatarRoomAsyncHandler;
@@ -655,6 +664,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCasterOutputInfoResponse> DeleteCasterOutputInfoOutcome;
                 typedef std::future<DeleteCasterOutputInfoOutcome> DeleteCasterOutputInfoOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DeleteCasterOutputInfoRequest&, DeleteCasterOutputInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterOutputInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLiveAvatarCloneFigureResponse> DeleteLiveAvatarCloneFigureOutcome;
+                typedef std::future<DeleteLiveAvatarCloneFigureOutcome> DeleteLiveAvatarCloneFigureOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DeleteLiveAvatarCloneFigureRequest&, DeleteLiveAvatarCloneFigureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveAvatarCloneFigureAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteLiveAvatarRoomResponse> DeleteLiveAvatarRoomOutcome;
                 typedef std::future<DeleteLiveAvatarRoomOutcome> DeleteLiveAvatarRoomOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DeleteLiveAvatarRoomRequest&, DeleteLiveAvatarRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveAvatarRoomAsyncHandler;
@@ -799,6 +811,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLiveAvatarBackgroundListResponse> DescribeLiveAvatarBackgroundListOutcome;
                 typedef std::future<DescribeLiveAvatarBackgroundListOutcome> DescribeLiveAvatarBackgroundListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveAvatarBackgroundListRequest&, DescribeLiveAvatarBackgroundListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveAvatarBackgroundListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLiveAvatarCloneFigureListResponse> DescribeLiveAvatarCloneFigureListOutcome;
+                typedef std::future<DescribeLiveAvatarCloneFigureListOutcome> DescribeLiveAvatarCloneFigureListOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeLiveAvatarCloneFigureListRequest&, DescribeLiveAvatarCloneFigureListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveAvatarCloneFigureListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLiveAvatarImageListResponse> DescribeLiveAvatarImageListOutcome;
                 typedef std::future<DescribeLiveAvatarImageListOutcome> DescribeLiveAvatarImageListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveAvatarImageListRequest&, DescribeLiveAvatarImageListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveAvatarImageListAsyncHandler;
@@ -1390,6 +1405,15 @@ namespace TencentCloud
                 CreateCommonMixStreamOutcomeCallable CreateCommonMixStreamCallable(const Model::CreateCommonMixStreamRequest& request);
 
                 /**
+                 *调用该接口，用于创建数字人直播间/AIGC直播间话术。
+                 * @param req CreateLiveAvatarCloneFigureRequest
+                 * @return CreateLiveAvatarCloneFigureOutcome
+                 */
+                CreateLiveAvatarCloneFigureOutcome CreateLiveAvatarCloneFigure(const Model::CreateLiveAvatarCloneFigureRequest &request);
+                void CreateLiveAvatarCloneFigureAsync(const Model::CreateLiveAvatarCloneFigureRequest& request, const CreateLiveAvatarCloneFigureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLiveAvatarCloneFigureOutcomeCallable CreateLiveAvatarCloneFigureCallable(const Model::CreateLiveAvatarCloneFigureRequest& request);
+
+                /**
                  *调用该接口，用于创建数字人直播间。
                  * @param req CreateLiveAvatarRoomRequest
                  * @return CreateLiveAvatarRoomOutcome
@@ -1724,6 +1748,15 @@ namespace TencentCloud
                 DeleteCasterOutputInfoOutcome DeleteCasterOutputInfo(const Model::DeleteCasterOutputInfoRequest &request);
                 void DeleteCasterOutputInfoAsync(const Model::DeleteCasterOutputInfoRequest& request, const DeleteCasterOutputInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteCasterOutputInfoOutcomeCallable DeleteCasterOutputInfoCallable(const Model::DeleteCasterOutputInfoRequest& request);
+
+                /**
+                 *调用该接口，用于删除已有的数字人直播间里面的话术。
+                 * @param req DeleteLiveAvatarCloneFigureRequest
+                 * @return DeleteLiveAvatarCloneFigureOutcome
+                 */
+                DeleteLiveAvatarCloneFigureOutcome DeleteLiveAvatarCloneFigure(const Model::DeleteLiveAvatarCloneFigureRequest &request);
+                void DeleteLiveAvatarCloneFigureAsync(const Model::DeleteLiveAvatarCloneFigureRequest& request, const DeleteLiveAvatarCloneFigureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLiveAvatarCloneFigureOutcomeCallable DeleteLiveAvatarCloneFigureCallable(const Model::DeleteLiveAvatarCloneFigureRequest& request);
 
                 /**
                  *调用该接口，用于删除已有的数字人直播间。
@@ -2169,6 +2202,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeLiveAvatarBackgroundListOutcome DescribeLiveAvatarBackgroundList(const Model::DescribeLiveAvatarBackgroundListRequest &request);
                 void DescribeLiveAvatarBackgroundListAsync(const Model::DescribeLiveAvatarBackgroundListRequest& request, const DescribeLiveAvatarBackgroundListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLiveAvatarBackgroundListOutcomeCallable DescribeLiveAvatarBackgroundListCallable(const Model::DescribeLiveAvatarBackgroundListRequest& request);
+
+                /**
+                 *调用该接口，查询数字人直播间信息列表。
+                 * @param req DescribeLiveAvatarCloneFigureListRequest
+                 * @return DescribeLiveAvatarCloneFigureListOutcome
+                 */
+                DescribeLiveAvatarCloneFigureListOutcome DescribeLiveAvatarCloneFigureList(const Model::DescribeLiveAvatarCloneFigureListRequest &request);
+                void DescribeLiveAvatarCloneFigureListAsync(const Model::DescribeLiveAvatarCloneFigureListRequest& request, const DescribeLiveAvatarCloneFigureListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLiveAvatarCloneFigureListOutcomeCallable DescribeLiveAvatarCloneFigureListCallable(const Model::DescribeLiveAvatarCloneFigureListRequest& request);
 
                 /**
                  *调用该接口，获取可用的数字人形象信息列表。包括官方预制形象，以及个人定制形象。

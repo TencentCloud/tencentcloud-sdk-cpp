@@ -34,7 +34,8 @@ AccelerationDomain::AccelerationDomain() :
     m_httpsOriginPortHasBeenSet(false),
     m_certificateHasBeenSet(false),
     m_createdOnHasBeenSet(false),
-    m_modifiedOnHasBeenSet(false)
+    m_modifiedOnHasBeenSet(false),
+    m_complianceRestrictionsHasBeenSet(false)
 {
 }
 
@@ -204,6 +205,26 @@ CoreInternalOutcome AccelerationDomain::Deserialize(const rapidjson::Value &valu
         m_modifiedOnHasBeenSet = true;
     }
 
+    if (value.HasMember("ComplianceRestrictions") && !value["ComplianceRestrictions"].IsNull())
+    {
+        if (!value["ComplianceRestrictions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.ComplianceRestrictions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ComplianceRestrictions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ComplianceRestriction item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_complianceRestrictions.push_back(item);
+        }
+        m_complianceRestrictionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -324,6 +345,21 @@ void AccelerationDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "ModifiedOn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modifiedOn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_complianceRestrictionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComplianceRestrictions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_complianceRestrictions.begin(); itr != m_complianceRestrictions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -551,5 +587,21 @@ void AccelerationDomain::SetModifiedOn(const string& _modifiedOn)
 bool AccelerationDomain::ModifiedOnHasBeenSet() const
 {
     return m_modifiedOnHasBeenSet;
+}
+
+vector<ComplianceRestriction> AccelerationDomain::GetComplianceRestrictions() const
+{
+    return m_complianceRestrictions;
+}
+
+void AccelerationDomain::SetComplianceRestrictions(const vector<ComplianceRestriction>& _complianceRestrictions)
+{
+    m_complianceRestrictions = _complianceRestrictions;
+    m_complianceRestrictionsHasBeenSet = true;
+}
+
+bool AccelerationDomain::ComplianceRestrictionsHasBeenSet() const
+{
+    return m_complianceRestrictionsHasBeenSet;
 }
 

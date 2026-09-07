@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>备份任务的状态：<br>1：备份在流程中。<br>2：备份正常。<br>3：备份转RDB文件处理中。<br>4：已完成RDB转换。<br>-1：备份已过期。<br>-2：备份已删除。</p>
-                     * @return Status <p>备份任务的状态：<br>1：备份在流程中。<br>2：备份正常。<br>3：备份转RDB文件处理中。<br>4：已完成RDB转换。<br>-1：备份已过期。<br>-2：备份已删除。</p>
+                     * 获取<p>备份的状态：</p><p>枚举值：</p><ul><li>1： 备份在流程中。</li><li>2： 备份正常。</li></ul><p>默认值：2</p>
+                     * @return Status <p>备份的状态：</p><p>枚举值：</p><ul><li>1： 备份在流程中。</li><li>2： 备份正常。</li></ul><p>默认值：2</p>
                      * 
                      */
                     std::vector<int64_t> GetStatus() const;
 
                     /**
-                     * 设置<p>备份任务的状态：<br>1：备份在流程中。<br>2：备份正常。<br>3：备份转RDB文件处理中。<br>4：已完成RDB转换。<br>-1：备份已过期。<br>-2：备份已删除。</p>
-                     * @param _status <p>备份任务的状态：<br>1：备份在流程中。<br>2：备份正常。<br>3：备份转RDB文件处理中。<br>4：已完成RDB转换。<br>-1：备份已过期。<br>-2：备份已删除。</p>
+                     * 设置<p>备份的状态：</p><p>枚举值：</p><ul><li>1： 备份在流程中。</li><li>2： 备份正常。</li></ul><p>默认值：2</p>
+                     * @param _status <p>备份的状态：</p><p>枚举值：</p><ul><li>1： 备份在流程中。</li><li>2： 备份正常。</li></ul><p>默认值：2</p>
                      * 
                      */
                     void SetStatus(const std::vector<int64_t>& _status);
@@ -222,7 +222,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * <p>备份任务的状态：<br>1：备份在流程中。<br>2：备份正常。<br>3：备份转RDB文件处理中。<br>4：已完成RDB转换。<br>-1：备份已过期。<br>-2：备份已删除。</p>
+                     * <p>备份的状态：</p><p>枚举值：</p><ul><li>1： 备份在流程中。</li><li>2： 备份正常。</li></ul><p>默认值：2</p>
                      */
                     std::vector<int64_t> m_status;
                     bool m_statusHasBeenSet;

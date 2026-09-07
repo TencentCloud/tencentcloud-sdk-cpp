@@ -3990,6 +3990,106 @@ MongodbClient::RestoreDBInstanceOutcomeCallable MongodbClient::RestoreDBInstance
     return prom->get_future();
 }
 
+MongodbClient::ScaleDownDBInstanceCpuOutcome MongodbClient::ScaleDownDBInstanceCpu(const ScaleDownDBInstanceCpuRequest &request)
+{
+    auto outcome = MakeRequest(request, "ScaleDownDBInstanceCpu");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ScaleDownDBInstanceCpuResponse rsp = ScaleDownDBInstanceCpuResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ScaleDownDBInstanceCpuOutcome(rsp);
+        else
+            return ScaleDownDBInstanceCpuOutcome(o.GetError());
+    }
+    else
+    {
+        return ScaleDownDBInstanceCpuOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::ScaleDownDBInstanceCpuAsync(const ScaleDownDBInstanceCpuRequest& request, const ScaleDownDBInstanceCpuAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ScaleDownDBInstanceCpuRequest&;
+    using Resp = ScaleDownDBInstanceCpuResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ScaleDownDBInstanceCpu", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::ScaleDownDBInstanceCpuOutcomeCallable MongodbClient::ScaleDownDBInstanceCpuCallable(const ScaleDownDBInstanceCpuRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ScaleDownDBInstanceCpuOutcome>>();
+    ScaleDownDBInstanceCpuAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const ScaleDownDBInstanceCpuRequest&,
+        ScaleDownDBInstanceCpuOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::ScaleUpDBInstanceCpuOutcome MongodbClient::ScaleUpDBInstanceCpu(const ScaleUpDBInstanceCpuRequest &request)
+{
+    auto outcome = MakeRequest(request, "ScaleUpDBInstanceCpu");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ScaleUpDBInstanceCpuResponse rsp = ScaleUpDBInstanceCpuResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ScaleUpDBInstanceCpuOutcome(rsp);
+        else
+            return ScaleUpDBInstanceCpuOutcome(o.GetError());
+    }
+    else
+    {
+        return ScaleUpDBInstanceCpuOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::ScaleUpDBInstanceCpuAsync(const ScaleUpDBInstanceCpuRequest& request, const ScaleUpDBInstanceCpuAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ScaleUpDBInstanceCpuRequest&;
+    using Resp = ScaleUpDBInstanceCpuResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ScaleUpDBInstanceCpu", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::ScaleUpDBInstanceCpuOutcomeCallable MongodbClient::ScaleUpDBInstanceCpuCallable(const ScaleUpDBInstanceCpuRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ScaleUpDBInstanceCpuOutcome>>();
+    ScaleUpDBInstanceCpuAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const ScaleUpDBInstanceCpuRequest&,
+        ScaleUpDBInstanceCpuOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MongodbClient::SetAccountUserPrivilegeOutcome MongodbClient::SetAccountUserPrivilege(const SetAccountUserPrivilegeRequest &request)
 {
     auto outcome = MakeRequest(request, "SetAccountUserPrivilege");

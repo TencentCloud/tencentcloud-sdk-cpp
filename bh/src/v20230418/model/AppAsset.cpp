@@ -29,6 +29,7 @@ AppAsset::AppAsset() :
     m_kindHasBeenSet(false),
     m_clientAppPathHasBeenSet(false),
     m_clientAppKindHasBeenSet(false),
+    m_clientAppArgsHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_bindStatusHasBeenSet(false),
     m_deviceInstanceIdHasBeenSet(false),
@@ -135,6 +136,19 @@ CoreInternalOutcome AppAsset::Deserialize(const rapidjson::Value &value)
         }
         m_clientAppKind = string(value["ClientAppKind"].GetString());
         m_clientAppKindHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClientAppArgs") && !value["ClientAppArgs"].IsNull())
+    {
+        if (!value["ClientAppArgs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AppAsset.ClientAppArgs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ClientAppArgs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_clientAppArgs.push_back((*itr).GetString());
+        }
+        m_clientAppArgsHasBeenSet = true;
     }
 
     if (value.HasMember("Url") && !value["Url"].IsNull())
@@ -430,6 +444,19 @@ void AppAsset::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ClientAppKind";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clientAppKind.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientAppArgsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientAppArgs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_clientAppArgs.begin(); itr != m_clientAppArgs.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_urlHasBeenSet)
@@ -730,6 +757,22 @@ void AppAsset::SetClientAppKind(const string& _clientAppKind)
 bool AppAsset::ClientAppKindHasBeenSet() const
 {
     return m_clientAppKindHasBeenSet;
+}
+
+vector<string> AppAsset::GetClientAppArgs() const
+{
+    return m_clientAppArgs;
+}
+
+void AppAsset::SetClientAppArgs(const vector<string>& _clientAppArgs)
+{
+    m_clientAppArgs = _clientAppArgs;
+    m_clientAppArgsHasBeenSet = true;
+}
+
+bool AppAsset::ClientAppArgsHasBeenSet() const
+{
+    return m_clientAppArgsHasBeenSet;
 }
 
 string AppAsset::GetUrl() const

@@ -21,7 +21,8 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 SignComponentConfig::SignComponentConfig() :
-    m_hideDateHasBeenSet(false)
+    m_hideDateHasBeenSet(false),
+    m_addSignComponentUseSealSizeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome SignComponentConfig::Deserialize(const rapidjson::Value &val
         m_hideDateHasBeenSet = true;
     }
 
+    if (value.HasMember("AddSignComponentUseSealSize") && !value["AddSignComponentUseSealSize"].IsNull())
+    {
+        if (!value["AddSignComponentUseSealSize"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SignComponentConfig.AddSignComponentUseSealSize` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_addSignComponentUseSealSize = value["AddSignComponentUseSealSize"].GetUint64();
+        m_addSignComponentUseSealSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void SignComponentConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "HideDate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hideDate, allocator);
+    }
+
+    if (m_addSignComponentUseSealSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddSignComponentUseSealSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_addSignComponentUseSealSize, allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void SignComponentConfig::SetHideDate(const bool& _hideDate)
 bool SignComponentConfig::HideDateHasBeenSet() const
 {
     return m_hideDateHasBeenSet;
+}
+
+uint64_t SignComponentConfig::GetAddSignComponentUseSealSize() const
+{
+    return m_addSignComponentUseSealSize;
+}
+
+void SignComponentConfig::SetAddSignComponentUseSealSize(const uint64_t& _addSignComponentUseSealSize)
+{
+    m_addSignComponentUseSealSize = _addSignComponentUseSealSize;
+    m_addSignComponentUseSealSizeHasBeenSet = true;
+}
+
+bool SignComponentConfig::AddSignComponentUseSealSizeHasBeenSet() const
+{
+    return m_addSignComponentUseSealSizeHasBeenSet;
 }
 

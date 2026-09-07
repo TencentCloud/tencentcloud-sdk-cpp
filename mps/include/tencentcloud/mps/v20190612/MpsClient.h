@@ -389,6 +389,8 @@
 #include <tencentcloud/mps/v20190612/model/ModifyBlindWatermarkTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyContentReviewTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/ModifyContentReviewTemplateResponse.h>
+#include <tencentcloud/mps/v20190612/model/ModifyDocToVideoTaskStatusRequest.h>
+#include <tencentcloud/mps/v20190612/model/ModifyDocToVideoTaskStatusResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyImageSpriteTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/ModifyImageSpriteTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyLiveRecordTemplateRequest.h>
@@ -1044,6 +1046,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyContentReviewTemplateResponse> ModifyContentReviewTemplateOutcome;
                 typedef std::future<ModifyContentReviewTemplateOutcome> ModifyContentReviewTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ModifyContentReviewTemplateRequest&, ModifyContentReviewTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyContentReviewTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDocToVideoTaskStatusResponse> ModifyDocToVideoTaskStatusOutcome;
+                typedef std::future<ModifyDocToVideoTaskStatusOutcome> ModifyDocToVideoTaskStatusOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ModifyDocToVideoTaskStatusRequest&, ModifyDocToVideoTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDocToVideoTaskStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyImageSpriteTemplateResponse> ModifyImageSpriteTemplateOutcome;
                 typedef std::future<ModifyImageSpriteTemplateOutcome> ModifyImageSpriteTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ModifyImageSpriteTemplateRequest&, ModifyImageSpriteTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImageSpriteTemplateAsyncHandler;
@@ -2882,6 +2887,17 @@ namespace TencentCloud
                 ModifyContentReviewTemplateOutcome ModifyContentReviewTemplate(const Model::ModifyContentReviewTemplateRequest &request);
                 void ModifyContentReviewTemplateAsync(const Model::ModifyContentReviewTemplateRequest& request, const ModifyContentReviewTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyContentReviewTemplateOutcomeCallable ModifyContentReviewTemplateCallable(const Model::ModifyContentReviewTemplateRequest& request);
+
+                /**
+                 *修改 AIGC 文档生视频任务状态。
+
+包含 confirm（确认当前阶段）和 regenerate（重新生成当前阶段）两种动作含义。
+                 * @param req ModifyDocToVideoTaskStatusRequest
+                 * @return ModifyDocToVideoTaskStatusOutcome
+                 */
+                ModifyDocToVideoTaskStatusOutcome ModifyDocToVideoTaskStatus(const Model::ModifyDocToVideoTaskStatusRequest &request);
+                void ModifyDocToVideoTaskStatusAsync(const Model::ModifyDocToVideoTaskStatusRequest& request, const ModifyDocToVideoTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDocToVideoTaskStatusOutcomeCallable ModifyDocToVideoTaskStatusCallable(const Model::ModifyDocToVideoTaskStatusRequest& request);
 
                 /**
                  *修改用户自定义雪碧图模板。

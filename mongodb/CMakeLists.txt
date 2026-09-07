@@ -63,6 +63,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/DescribeAuditLogsRequest.h
   include/tencentcloud/mongodb/v20190725/model/DBInstancePrice.h
   include/tencentcloud/mongodb/v20190725/model/DescribePasswordRotationResponse.h
+  include/tencentcloud/mongodb/v20190725/model/ScaleUpDBInstanceCpuRequest.h
   include/tencentcloud/mongodb/v20190725/model/KillOpsRequest.h
   include/tencentcloud/mongodb/v20190725/model/EnablePasswordRotationRequest.h
   include/tencentcloud/mongodb/v20190725/model/DropDBInstanceParamTplResponse.h
@@ -153,6 +154,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/DescribeBackupDownloadTaskRequest.h
   include/tencentcloud/mongodb/v20190725/model/ModifyDBInstanceLogToCLSRequest.h
   include/tencentcloud/mongodb/v20190725/model/ModifySRVConnectionUrlRequest.h
+  include/tencentcloud/mongodb/v20190725/model/ScaleUpDBInstanceCpuResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeClientConnectionsResponse.h
   include/tencentcloud/mongodb/v20190725/model/DeleteDBBackupsRequest.h
   include/tencentcloud/mongodb/v20190725/model/ModifyDBInstanceParamTplResponse.h
@@ -182,6 +184,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/CreateBackupDownloadTaskRequest.h
   include/tencentcloud/mongodb/v20190725/model/TerminateDBInstancesRequest.h
   include/tencentcloud/mongodb/v20190725/model/ParamTpl.h
+  include/tencentcloud/mongodb/v20190725/model/ScaleDownDBInstanceCpuResponse.h
   include/tencentcloud/mongodb/v20190725/model/InquirePriceModifyDBInstanceSpecResponse.h
   include/tencentcloud/mongodb/v20190725/model/CreateDBInstanceHourRequest.h
   include/tencentcloud/mongodb/v20190725/model/DeleteDBBackupsResponse.h
@@ -216,6 +219,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/DropDBInstanceParamTplRequest.h
   include/tencentcloud/mongodb/v20190725/model/DisableSRVConnectionUrlRequest.h
   include/tencentcloud/mongodb/v20190725/model/DescribeTransparentDataEncryptionStatusResponse.h
+  include/tencentcloud/mongodb/v20190725/model/ScaleDownDBInstanceCpuRequest.h
   include/tencentcloud/mongodb/v20190725/model/DescribeDBInstanceLogToCLSRequest.h
   include/tencentcloud/mongodb/v20190725/model/CreateBackupDBInstanceRequest.h
   include/tencentcloud/mongodb/v20190725/model/RestoreDatabases.h
@@ -328,6 +332,7 @@ set(mongodb_src
   src/v20190725/model/DescribeAuditLogsRequest.cpp
   src/v20190725/model/DBInstancePrice.cpp
   src/v20190725/model/DescribePasswordRotationResponse.cpp
+  src/v20190725/model/ScaleUpDBInstanceCpuRequest.cpp
   src/v20190725/model/KillOpsRequest.cpp
   src/v20190725/model/EnablePasswordRotationRequest.cpp
   src/v20190725/model/DropDBInstanceParamTplResponse.cpp
@@ -418,6 +423,7 @@ set(mongodb_src
   src/v20190725/model/DescribeBackupDownloadTaskRequest.cpp
   src/v20190725/model/ModifyDBInstanceLogToCLSRequest.cpp
   src/v20190725/model/ModifySRVConnectionUrlRequest.cpp
+  src/v20190725/model/ScaleUpDBInstanceCpuResponse.cpp
   src/v20190725/model/DescribeClientConnectionsResponse.cpp
   src/v20190725/model/DeleteDBBackupsRequest.cpp
   src/v20190725/model/ModifyDBInstanceParamTplResponse.cpp
@@ -447,6 +453,7 @@ set(mongodb_src
   src/v20190725/model/CreateBackupDownloadTaskRequest.cpp
   src/v20190725/model/TerminateDBInstancesRequest.cpp
   src/v20190725/model/ParamTpl.cpp
+  src/v20190725/model/ScaleDownDBInstanceCpuResponse.cpp
   src/v20190725/model/InquirePriceModifyDBInstanceSpecResponse.cpp
   src/v20190725/model/CreateDBInstanceHourRequest.cpp
   src/v20190725/model/DeleteDBBackupsResponse.cpp
@@ -481,6 +488,7 @@ set(mongodb_src
   src/v20190725/model/DropDBInstanceParamTplRequest.cpp
   src/v20190725/model/DisableSRVConnectionUrlRequest.cpp
   src/v20190725/model/DescribeTransparentDataEncryptionStatusResponse.cpp
+  src/v20190725/model/ScaleDownDBInstanceCpuRequest.cpp
   src/v20190725/model/DescribeDBInstanceLogToCLSRequest.cpp
   src/v20190725/model/CreateBackupDBInstanceRequest.cpp
   src/v20190725/model/RestoreDatabases.cpp

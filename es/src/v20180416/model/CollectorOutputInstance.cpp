@@ -35,7 +35,8 @@ CollectorOutputInstance::CollectorOutputInstance() :
     m_sesTopicAddressHasBeenSet(false),
     m_sesTopicUserNameHasBeenSet(false),
     m_sesTopicPasswdHasBeenSet(false),
-    m_logstashListenPortHasBeenSet(false)
+    m_logstashListenPortHasBeenSet(false),
+    m_sesSpaceIdHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome CollectorOutputInstance::Deserialize(const rapidjson::Value 
         m_logstashListenPortHasBeenSet = true;
     }
 
+    if (value.HasMember("SesSpaceId") && !value["SesSpaceId"].IsNull())
+    {
+        if (!value["SesSpaceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CollectorOutputInstance.SesSpaceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sesSpaceId = string(value["SesSpaceId"].GetString());
+        m_sesSpaceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void CollectorOutputInstance::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "LogstashListenPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_logstashListenPort, allocator);
+    }
+
+    if (m_sesSpaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SesSpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sesSpaceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void CollectorOutputInstance::SetLogstashListenPort(const uint64_t& _logstashLis
 bool CollectorOutputInstance::LogstashListenPortHasBeenSet() const
 {
     return m_logstashListenPortHasBeenSet;
+}
+
+string CollectorOutputInstance::GetSesSpaceId() const
+{
+    return m_sesSpaceId;
+}
+
+void CollectorOutputInstance::SetSesSpaceId(const string& _sesSpaceId)
+{
+    m_sesSpaceId = _sesSpaceId;
+    m_sesSpaceIdHasBeenSet = true;
+}
+
+bool CollectorOutputInstance::SesSpaceIdHasBeenSet() const
+{
+    return m_sesSpaceIdHasBeenSet;
 }
 

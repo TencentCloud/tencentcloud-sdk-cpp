@@ -27,7 +27,9 @@ GetFlowPackagesRequest::GetFlowPackagesRequest() :
     m_pageSizeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_deviceIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_activeTimeStartHasBeenSet(false),
+    m_activeTimeEndHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,22 @@ string GetFlowPackagesRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_activeTimeStartHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActiveTimeStart";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_activeTimeStart.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_activeTimeEndHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActiveTimeEnd";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_activeTimeEnd.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +182,38 @@ void GetFlowPackagesRequest::SetStatus(const int64_t& _status)
 bool GetFlowPackagesRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string GetFlowPackagesRequest::GetActiveTimeStart() const
+{
+    return m_activeTimeStart;
+}
+
+void GetFlowPackagesRequest::SetActiveTimeStart(const string& _activeTimeStart)
+{
+    m_activeTimeStart = _activeTimeStart;
+    m_activeTimeStartHasBeenSet = true;
+}
+
+bool GetFlowPackagesRequest::ActiveTimeStartHasBeenSet() const
+{
+    return m_activeTimeStartHasBeenSet;
+}
+
+string GetFlowPackagesRequest::GetActiveTimeEnd() const
+{
+    return m_activeTimeEnd;
+}
+
+void GetFlowPackagesRequest::SetActiveTimeEnd(const string& _activeTimeEnd)
+{
+    m_activeTimeEnd = _activeTimeEnd;
+    m_activeTimeEndHasBeenSet = true;
+}
+
+bool GetFlowPackagesRequest::ActiveTimeEndHasBeenSet() const
+{
+    return m_activeTimeEndHasBeenSet;
 }
 
 

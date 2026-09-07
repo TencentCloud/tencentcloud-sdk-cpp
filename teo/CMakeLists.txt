@@ -666,6 +666,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/UpstreamHttp2.h
   include/tencentcloud/teo/v20220901/model/EnableOriginACLResponse.h
   include/tencentcloud/teo/v20220901/model/DeleteAliasDomainResponse.h
+  include/tencentcloud/teo/v20220901/model/ComplianceRestriction.h
   include/tencentcloud/teo/v20220901/model/DeleteSecurityJSInjectionRuleRequest.h
   include/tencentcloud/teo/v20220901/model/BotConfig.h
   include/tencentcloud/teo/v20220901/model/ModifyFunctionComponentBindingsRequest.h
@@ -1552,6 +1553,7 @@ set(teo_src
   src/v20220901/model/UpstreamHttp2.cpp
   src/v20220901/model/EnableOriginACLResponse.cpp
   src/v20220901/model/DeleteAliasDomainResponse.cpp
+  src/v20220901/model/ComplianceRestriction.cpp
   src/v20220901/model/DeleteSecurityJSInjectionRuleRequest.cpp
   src/v20220901/model/BotConfig.cpp
   src/v20220901/model/ModifyFunctionComponentBindingsRequest.cpp

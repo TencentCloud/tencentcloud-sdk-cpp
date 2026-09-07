@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool BackupIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>备份类型。</p><ul><li>1：凌晨系统发起的自动备份。</li><li>0：用户发起的手动备份。</li></ul>
-                     * @return BackupType <p>备份类型。</p><ul><li>1：凌晨系统发起的自动备份。</li><li>0：用户发起的手动备份。</li></ul>
+                     * 获取<p>备份类型。</p><p>枚举值：</p><ul><li>0： 用户发起的手动备份</li><li>1： 凌晨系统发起的自动备份</li><li>2： 变配触发的备份</li></ul>
+                     * @return BackupType <p>备份类型。</p><p>枚举值：</p><ul><li>0： 用户发起的手动备份</li><li>1： 凌晨系统发起的自动备份</li><li>2： 变配触发的备份</li></ul>
                      * 
                      */
                     std::string GetBackupType() const;
 
                     /**
-                     * 设置<p>备份类型。</p><ul><li>1：凌晨系统发起的自动备份。</li><li>0：用户发起的手动备份。</li></ul>
-                     * @param _backupType <p>备份类型。</p><ul><li>1：凌晨系统发起的自动备份。</li><li>0：用户发起的手动备份。</li></ul>
+                     * 设置<p>备份类型。</p><p>枚举值：</p><ul><li>0： 用户发起的手动备份</li><li>1： 凌晨系统发起的自动备份</li><li>2： 变配触发的备份</li></ul>
+                     * @param _backupType <p>备份类型。</p><p>枚举值：</p><ul><li>0： 用户发起的手动备份</li><li>1： 凌晨系统发起的自动备份</li><li>2： 变配触发的备份</li></ul>
                      * 
                      */
                     void SetBackupType(const std::string& _backupType);
@@ -397,7 +397,7 @@ namespace TencentCloud
                     bool m_backupIdHasBeenSet;
 
                     /**
-                     * <p>备份类型。</p><ul><li>1：凌晨系统发起的自动备份。</li><li>0：用户发起的手动备份。</li></ul>
+                     * <p>备份类型。</p><p>枚举值：</p><ul><li>0： 用户发起的手动备份</li><li>1： 凌晨系统发起的自动备份</li><li>2： 变配触发的备份</li></ul>
                      */
                     std::string m_backupType;
                     bool m_backupTypeHasBeenSet;

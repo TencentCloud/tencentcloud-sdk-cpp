@@ -12290,56 +12290,6 @@ DlcClient::GetRayJobEventOutcomeCallable DlcClient::GetRayJobEventCallable(const
     return prom->get_future();
 }
 
-DlcClient::GetRayJobEventLogOutcome DlcClient::GetRayJobEventLog(const GetRayJobEventLogRequest &request)
-{
-    auto outcome = MakeRequest(request, "GetRayJobEventLog");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        GetRayJobEventLogResponse rsp = GetRayJobEventLogResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return GetRayJobEventLogOutcome(rsp);
-        else
-            return GetRayJobEventLogOutcome(o.GetError());
-    }
-    else
-    {
-        return GetRayJobEventLogOutcome(outcome.GetError());
-    }
-}
-
-void DlcClient::GetRayJobEventLogAsync(const GetRayJobEventLogRequest& request, const GetRayJobEventLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const GetRayJobEventLogRequest&;
-    using Resp = GetRayJobEventLogResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "GetRayJobEventLog", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-DlcClient::GetRayJobEventLogOutcomeCallable DlcClient::GetRayJobEventLogCallable(const GetRayJobEventLogRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<GetRayJobEventLogOutcome>>();
-    GetRayJobEventLogAsync(
-    request,
-    [prom](
-        const DlcClient*,
-        const GetRayJobEventLogRequest&,
-        GetRayJobEventLogOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 DlcClient::GetRayJobHistoryOutcome DlcClient::GetRayJobHistory(const GetRayJobHistoryRequest &request)
 {
     auto outcome = MakeRequest(request, "GetRayJobHistory");

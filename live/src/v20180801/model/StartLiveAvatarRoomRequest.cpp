@@ -27,7 +27,11 @@ StartLiveAvatarRoomRequest::StartLiveAvatarRoomRequest() :
     m_commentHasBeenSet(false),
     m_toUrlHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_roomTypeHasBeenSet(false)
+    m_roomTypeHasBeenSet(false),
+    m_sessionProtocolHasBeenSet(false),
+    m_trtcSdkAppIdHasBeenSet(false),
+    m_trtcUserSigHasBeenSet(false),
+    m_trtcRoomIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +80,38 @@ string StartLiveAvatarRoomRequest::ToJsonString() const
         string key = "RoomType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_roomType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionProtocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionProtocol";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sessionProtocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_trtcSdkAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrtcSdkAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_trtcSdkAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_trtcUserSigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrtcUserSig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_trtcUserSig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_trtcRoomIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrtcRoomId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_trtcRoomId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +200,70 @@ void StartLiveAvatarRoomRequest::SetRoomType(const string& _roomType)
 bool StartLiveAvatarRoomRequest::RoomTypeHasBeenSet() const
 {
     return m_roomTypeHasBeenSet;
+}
+
+string StartLiveAvatarRoomRequest::GetSessionProtocol() const
+{
+    return m_sessionProtocol;
+}
+
+void StartLiveAvatarRoomRequest::SetSessionProtocol(const string& _sessionProtocol)
+{
+    m_sessionProtocol = _sessionProtocol;
+    m_sessionProtocolHasBeenSet = true;
+}
+
+bool StartLiveAvatarRoomRequest::SessionProtocolHasBeenSet() const
+{
+    return m_sessionProtocolHasBeenSet;
+}
+
+string StartLiveAvatarRoomRequest::GetTrtcSdkAppId() const
+{
+    return m_trtcSdkAppId;
+}
+
+void StartLiveAvatarRoomRequest::SetTrtcSdkAppId(const string& _trtcSdkAppId)
+{
+    m_trtcSdkAppId = _trtcSdkAppId;
+    m_trtcSdkAppIdHasBeenSet = true;
+}
+
+bool StartLiveAvatarRoomRequest::TrtcSdkAppIdHasBeenSet() const
+{
+    return m_trtcSdkAppIdHasBeenSet;
+}
+
+string StartLiveAvatarRoomRequest::GetTrtcUserSig() const
+{
+    return m_trtcUserSig;
+}
+
+void StartLiveAvatarRoomRequest::SetTrtcUserSig(const string& _trtcUserSig)
+{
+    m_trtcUserSig = _trtcUserSig;
+    m_trtcUserSigHasBeenSet = true;
+}
+
+bool StartLiveAvatarRoomRequest::TrtcUserSigHasBeenSet() const
+{
+    return m_trtcUserSigHasBeenSet;
+}
+
+string StartLiveAvatarRoomRequest::GetTrtcRoomId() const
+{
+    return m_trtcRoomId;
+}
+
+void StartLiveAvatarRoomRequest::SetTrtcRoomId(const string& _trtcRoomId)
+{
+    m_trtcRoomId = _trtcRoomId;
+    m_trtcRoomIdHasBeenSet = true;
+}
+
+bool StartLiveAvatarRoomRequest::TrtcRoomIdHasBeenSet() const
+{
+    return m_trtcRoomIdHasBeenSet;
 }
 
 

@@ -49,31 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署控件默认属性配置，是否默认展示签署日期， 在页面中可以进行修改。
-
-- false 展示签署日期（默认）
-- true 不展示签署日期 
-![image](https://qcloudimg.tencent-cloud.cn/raw/448514412e2f69f6129425beda4ff568.png)。
-                     * @return HideDate 签署控件默认属性配置，是否默认展示签署日期， 在页面中可以进行修改。
-
-- false 展示签署日期（默认）
-- true 不展示签署日期 
-![image](https://qcloudimg.tencent-cloud.cn/raw/448514412e2f69f6129425beda4ff568.png)。
+                     * 获取<p>签署控件默认属性配置，是否默认展示签署日期， 在页面中可以进行修改。</p><ul><li>false 展示签署日期（默认）</li><li>true 不展示签署日期<br><img src="https://qcloudimg.tencent-cloud.cn/raw/448514412e2f69f6129425beda4ff568.png" alt="image">。</li></ul>
+                     * @return HideDate <p>签署控件默认属性配置，是否默认展示签署日期， 在页面中可以进行修改。</p><ul><li>false 展示签署日期（默认）</li><li>true 不展示签署日期<br><img src="https://qcloudimg.tencent-cloud.cn/raw/448514412e2f69f6129425beda4ff568.png" alt="image">。</li></ul>
                      * 
                      */
                     bool GetHideDate() const;
 
                     /**
-                     * 设置签署控件默认属性配置，是否默认展示签署日期， 在页面中可以进行修改。
-
-- false 展示签署日期（默认）
-- true 不展示签署日期 
-![image](https://qcloudimg.tencent-cloud.cn/raw/448514412e2f69f6129425beda4ff568.png)。
-                     * @param _hideDate 签署控件默认属性配置，是否默认展示签署日期， 在页面中可以进行修改。
-
-- false 展示签署日期（默认）
-- true 不展示签署日期 
-![image](https://qcloudimg.tencent-cloud.cn/raw/448514412e2f69f6129425beda4ff568.png)。
+                     * 设置<p>签署控件默认属性配置，是否默认展示签署日期， 在页面中可以进行修改。</p><ul><li>false 展示签署日期（默认）</li><li>true 不展示签署日期<br><img src="https://qcloudimg.tencent-cloud.cn/raw/448514412e2f69f6129425beda4ff568.png" alt="image">。</li></ul>
+                     * @param _hideDate <p>签署控件默认属性配置，是否默认展示签署日期， 在页面中可以进行修改。</p><ul><li>false 展示签署日期（默认）</li><li>true 不展示签署日期<br><img src="https://qcloudimg.tencent-cloud.cn/raw/448514412e2f69f6129425beda4ff568.png" alt="image">。</li></ul>
                      * 
                      */
                     void SetHideDate(const bool& _hideDate);
@@ -85,17 +69,40 @@ namespace TencentCloud
                      */
                     bool HideDateHasBeenSet() const;
 
+                    /**
+                     * 获取<p>【仅 SignBeanTag=1 时有效】 签署方自行添加签署印章类控件（SIGN_SEAL、SIGN_PAGING_SEAL、SIGN_LEGAL_PERSON_SEAL）时，「盖章区适配签署方印章尺寸」开关的控制策略</p><p>枚举值：</p><ul><li>0： 默认关闭，可开启。与现网一致</li><li>1： 关闭且置灰——按控件默认的4.2cm尺寸盖章，签署方无法开启开关</li><li>2： 默认开启且可修改——默认按印章实际尺寸盖章，签署方可手动关闭</li><li>3： 开启且置灰——强制按印章实际尺寸盖章，签署方不可修改</li></ul><p>默认值：0</p>
+                     * @return AddSignComponentUseSealSize <p>【仅 SignBeanTag=1 时有效】 签署方自行添加签署印章类控件（SIGN_SEAL、SIGN_PAGING_SEAL、SIGN_LEGAL_PERSON_SEAL）时，「盖章区适配签署方印章尺寸」开关的控制策略</p><p>枚举值：</p><ul><li>0： 默认关闭，可开启。与现网一致</li><li>1： 关闭且置灰——按控件默认的4.2cm尺寸盖章，签署方无法开启开关</li><li>2： 默认开启且可修改——默认按印章实际尺寸盖章，签署方可手动关闭</li><li>3： 开启且置灰——强制按印章实际尺寸盖章，签署方不可修改</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    uint64_t GetAddSignComponentUseSealSize() const;
+
+                    /**
+                     * 设置<p>【仅 SignBeanTag=1 时有效】 签署方自行添加签署印章类控件（SIGN_SEAL、SIGN_PAGING_SEAL、SIGN_LEGAL_PERSON_SEAL）时，「盖章区适配签署方印章尺寸」开关的控制策略</p><p>枚举值：</p><ul><li>0： 默认关闭，可开启。与现网一致</li><li>1： 关闭且置灰——按控件默认的4.2cm尺寸盖章，签署方无法开启开关</li><li>2： 默认开启且可修改——默认按印章实际尺寸盖章，签署方可手动关闭</li><li>3： 开启且置灰——强制按印章实际尺寸盖章，签署方不可修改</li></ul><p>默认值：0</p>
+                     * @param _addSignComponentUseSealSize <p>【仅 SignBeanTag=1 时有效】 签署方自行添加签署印章类控件（SIGN_SEAL、SIGN_PAGING_SEAL、SIGN_LEGAL_PERSON_SEAL）时，「盖章区适配签署方印章尺寸」开关的控制策略</p><p>枚举值：</p><ul><li>0： 默认关闭，可开启。与现网一致</li><li>1： 关闭且置灰——按控件默认的4.2cm尺寸盖章，签署方无法开启开关</li><li>2： 默认开启且可修改——默认按印章实际尺寸盖章，签署方可手动关闭</li><li>3： 开启且置灰——强制按印章实际尺寸盖章，签署方不可修改</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    void SetAddSignComponentUseSealSize(const uint64_t& _addSignComponentUseSealSize);
+
+                    /**
+                     * 判断参数 AddSignComponentUseSealSize 是否已赋值
+                     * @return AddSignComponentUseSealSize 是否已赋值
+                     * 
+                     */
+                    bool AddSignComponentUseSealSizeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 签署控件默认属性配置，是否默认展示签署日期， 在页面中可以进行修改。
-
-- false 展示签署日期（默认）
-- true 不展示签署日期 
-![image](https://qcloudimg.tencent-cloud.cn/raw/448514412e2f69f6129425beda4ff568.png)。
+                     * <p>签署控件默认属性配置，是否默认展示签署日期， 在页面中可以进行修改。</p><ul><li>false 展示签署日期（默认）</li><li>true 不展示签署日期<br><img src="https://qcloudimg.tencent-cloud.cn/raw/448514412e2f69f6129425beda4ff568.png" alt="image">。</li></ul>
                      */
                     bool m_hideDate;
                     bool m_hideDateHasBeenSet;
+
+                    /**
+                     * <p>【仅 SignBeanTag=1 时有效】 签署方自行添加签署印章类控件（SIGN_SEAL、SIGN_PAGING_SEAL、SIGN_LEGAL_PERSON_SEAL）时，「盖章区适配签署方印章尺寸」开关的控制策略</p><p>枚举值：</p><ul><li>0： 默认关闭，可开启。与现网一致</li><li>1： 关闭且置灰——按控件默认的4.2cm尺寸盖章，签署方无法开启开关</li><li>2： 默认开启且可修改——默认按印章实际尺寸盖章，签署方可手动关闭</li><li>3： 开启且置灰——强制按印章实际尺寸盖章，签署方不可修改</li></ul><p>默认值：0</p>
+                     */
+                    uint64_t m_addSignComponentUseSealSize;
+                    bool m_addSignComponentUseSealSizeHasBeenSet;
 
                 };
             }

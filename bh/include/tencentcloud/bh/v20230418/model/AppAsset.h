@@ -218,6 +218,27 @@ namespace TencentCloud
                     bool ClientAppKindHasBeenSet() const;
 
                     /**
+                     * 获取<p>客户端工具启动参数</p>
+                     * @return ClientAppArgs <p>客户端工具启动参数</p>
+                     * 
+                     */
+                    std::vector<std::string> GetClientAppArgs() const;
+
+                    /**
+                     * 设置<p>客户端工具启动参数</p>
+                     * @param _clientAppArgs <p>客户端工具启动参数</p>
+                     * 
+                     */
+                    void SetClientAppArgs(const std::vector<std::string>& _clientAppArgs);
+
+                    /**
+                     * 判断参数 ClientAppArgs 是否已赋值
+                     * @return ClientAppArgs 是否已赋值
+                     * 
+                     */
+                    bool ClientAppArgsHasBeenSet() const;
+
+                    /**
                      * 获取<p>应用资产url</p>
                      * @return Url <p>应用资产url</p>
                      * 
@@ -686,6 +707,12 @@ namespace TencentCloud
                      */
                     std::string m_clientAppKind;
                     bool m_clientAppKindHasBeenSet;
+
+                    /**
+                     * <p>客户端工具启动参数</p>
+                     */
+                    std::vector<std::string> m_clientAppArgs;
+                    bool m_clientAppArgsHasBeenSet;
 
                     /**
                      * <p>应用资产url</p>

@@ -24,6 +24,8 @@ LoginEvent::LoginEvent() :
     m_userInfoHasBeenSet(false),
     m_userLoginNameHasBeenSet(false),
     m_loginResultHasBeenSet(false),
+    m_registerTimeHasBeenSet(false),
+    m_isPaidUserHasBeenSet(false),
     m_custHasBeenSet(false)
 {
 }
@@ -77,6 +79,26 @@ CoreInternalOutcome LoginEvent::Deserialize(const rapidjson::Value &value)
         m_loginResultHasBeenSet = true;
     }
 
+    if (value.HasMember("RegisterTime") && !value["RegisterTime"].IsNull())
+    {
+        if (!value["RegisterTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoginEvent.RegisterTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_registerTime = string(value["RegisterTime"].GetString());
+        m_registerTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsPaidUser") && !value["IsPaidUser"].IsNull())
+    {
+        if (!value["IsPaidUser"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoginEvent.IsPaidUser` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isPaidUser = value["IsPaidUser"].GetBool();
+        m_isPaidUserHasBeenSet = true;
+    }
+
     if (value.HasMember("Cust") && !value["Cust"].IsNull())
     {
         if (!value["Cust"].IsArray())
@@ -128,6 +150,22 @@ void LoginEvent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_loginResult.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_registerTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegisterTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_registerTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isPaidUserHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPaidUser";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isPaidUser, allocator);
     }
 
     if (m_custHasBeenSet)
@@ -194,6 +232,38 @@ void LoginEvent::SetLoginResult(const Result& _loginResult)
 bool LoginEvent::LoginResultHasBeenSet() const
 {
     return m_loginResultHasBeenSet;
+}
+
+string LoginEvent::GetRegisterTime() const
+{
+    return m_registerTime;
+}
+
+void LoginEvent::SetRegisterTime(const string& _registerTime)
+{
+    m_registerTime = _registerTime;
+    m_registerTimeHasBeenSet = true;
+}
+
+bool LoginEvent::RegisterTimeHasBeenSet() const
+{
+    return m_registerTimeHasBeenSet;
+}
+
+bool LoginEvent::GetIsPaidUser() const
+{
+    return m_isPaidUser;
+}
+
+void LoginEvent::SetIsPaidUser(const bool& _isPaidUser)
+{
+    m_isPaidUser = _isPaidUser;
+    m_isPaidUserHasBeenSet = true;
+}
+
+bool LoginEvent::IsPaidUserHasBeenSet() const
+{
+    return m_isPaidUserHasBeenSet;
 }
 
 vector<Cust> LoginEvent::GetCust() const

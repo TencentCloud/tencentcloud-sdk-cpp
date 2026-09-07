@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户ID集合
-                     * @return IdSet 用户ID集合
+                     * 获取<p>用户ID集合</p>
+                     * @return IdSet <p>用户ID集合</p>
                      * 
                      */
                     std::vector<uint64_t> GetIdSet() const;
 
                     /**
-                     * 设置用户ID集合
-                     * @param _idSet 用户ID集合
+                     * 设置<p>用户ID集合</p>
+                     * @param _idSet <p>用户ID集合</p>
                      * 
                      */
                     void SetIdSet(const std::vector<uint64_t>& _idSet);
@@ -63,13 +63,40 @@ namespace TencentCloud
                      */
                     bool IdSetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>重置类型</p><p>枚举值：</p><ul><li>0： 同时重置本地认证密码、OTP验证码</li><li>1： 仅重置本地认证密码</li><li>2： 仅重置OTP验证码</li></ul><p>默认值：0</p>
+                     * @return ResetType <p>重置类型</p><p>枚举值：</p><ul><li>0： 同时重置本地认证密码、OTP验证码</li><li>1： 仅重置本地认证密码</li><li>2： 仅重置OTP验证码</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    uint64_t GetResetType() const;
+
+                    /**
+                     * 设置<p>重置类型</p><p>枚举值：</p><ul><li>0： 同时重置本地认证密码、OTP验证码</li><li>1： 仅重置本地认证密码</li><li>2： 仅重置OTP验证码</li></ul><p>默认值：0</p>
+                     * @param _resetType <p>重置类型</p><p>枚举值：</p><ul><li>0： 同时重置本地认证密码、OTP验证码</li><li>1： 仅重置本地认证密码</li><li>2： 仅重置OTP验证码</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    void SetResetType(const uint64_t& _resetType);
+
+                    /**
+                     * 判断参数 ResetType 是否已赋值
+                     * @return ResetType 是否已赋值
+                     * 
+                     */
+                    bool ResetTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 用户ID集合
+                     * <p>用户ID集合</p>
                      */
                     std::vector<uint64_t> m_idSet;
                     bool m_idSetHasBeenSet;
+
+                    /**
+                     * <p>重置类型</p><p>枚举值：</p><ul><li>0： 同时重置本地认证密码、OTP验证码</li><li>1： 仅重置本地认证密码</li><li>2： 仅重置OTP验证码</li></ul><p>默认值：0</p>
+                     */
+                    uint64_t m_resetType;
+                    bool m_resetTypeHasBeenSet;
 
                 };
             }

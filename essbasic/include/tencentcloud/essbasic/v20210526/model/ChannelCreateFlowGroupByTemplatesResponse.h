@@ -46,10 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同组ID，为32位字符串。
-建议开发者妥善保存此合同组ID，以便于顺利进行后续操作。
-                     * @return FlowGroupId 合同组ID，为32位字符串。
-建议开发者妥善保存此合同组ID，以便于顺利进行后续操作。
+                     * 获取<p>合同组ID，为32位字符串。<br>建议开发者妥善保存此合同组ID，以便于顺利进行后续操作。</p>
+                     * @return FlowGroupId <p>合同组ID，为32位字符串。<br>建议开发者妥善保存此合同组ID，以便于顺利进行后续操作。</p>
                      * 
                      */
                     std::string GetFlowGroupId() const;
@@ -62,14 +60,8 @@ namespace TencentCloud
                     bool FlowGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取合同组中每个合同流程ID，每个ID均为32位字符串。
-
-注:
-`此数组的顺序和入参中的FlowInfos顺序一致`
-                     * @return FlowIds 合同组中每个合同流程ID，每个ID均为32位字符串。
-
-注:
-`此数组的顺序和入参中的FlowInfos顺序一致`
+                     * 获取<p>合同组中每个合同流程ID，每个ID均为32位字符串。</p><p>注:<br><code>此数组的顺序和入参中的FlowInfos顺序一致</code></p>
+                     * @return FlowIds <p>合同组中每个合同流程ID，每个ID均为32位字符串。</p><p>注:<br><code>此数组的顺序和入参中的FlowInfos顺序一致</code></p>
                      * 
                      */
                     std::vector<std::string> GetFlowIds() const;
@@ -82,10 +74,8 @@ namespace TencentCloud
                     bool FlowIdsHasBeenSet() const;
 
                     /**
-                     * 获取复杂文档合成任务（如，包含动态表格的预览任务）的任务信息数组；
-如果文档需要异步合成，此字段会返回该异步任务的任务信息，后续可以通过ChannelGetTaskResultApi接口查询任务详情；
-                     * @return TaskInfos 复杂文档合成任务（如，包含动态表格的预览任务）的任务信息数组；
-如果文档需要异步合成，此字段会返回该异步任务的任务信息，后续可以通过ChannelGetTaskResultApi接口查询任务详情；
+                     * 获取<p>复杂文档合成任务（如，包含动态表格的预览任务）的任务信息数组；<br>如果文档需要异步合成，此字段会返回该异步任务的任务信息，后续可以通过<a href="https://qian.tencent.com/developers/partnerApis/files/DescribeFileConvertTask">查询转换任务状态</a>接口查询任务详情；</p>
+                     * @return TaskInfos <p>复杂文档合成任务（如，包含动态表格的预览任务）的任务信息数组；<br>如果文档需要异步合成，此字段会返回该异步任务的任务信息，后续可以通过<a href="https://qian.tencent.com/developers/partnerApis/files/DescribeFileConvertTask">查询转换任务状态</a>接口查询任务详情；</p>
                      * 
                      */
                     std::vector<TaskInfo> GetTaskInfos() const;
@@ -98,8 +88,8 @@ namespace TencentCloud
                     bool TaskInfosHasBeenSet() const;
 
                     /**
-                     * 获取合同组签署方信息
-                     * @return Approvers 合同组签署方信息
+                     * 获取<p>合同组签署方信息</p>
+                     * @return Approvers <p>合同组签署方信息</p>
                      * 
                      */
                     std::vector<FlowGroupApprovers> GetApprovers() const;
@@ -114,30 +104,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合同组ID，为32位字符串。
-建议开发者妥善保存此合同组ID，以便于顺利进行后续操作。
+                     * <p>合同组ID，为32位字符串。<br>建议开发者妥善保存此合同组ID，以便于顺利进行后续操作。</p>
                      */
                     std::string m_flowGroupId;
                     bool m_flowGroupIdHasBeenSet;
 
                     /**
-                     * 合同组中每个合同流程ID，每个ID均为32位字符串。
-
-注:
-`此数组的顺序和入参中的FlowInfos顺序一致`
+                     * <p>合同组中每个合同流程ID，每个ID均为32位字符串。</p><p>注:<br><code>此数组的顺序和入参中的FlowInfos顺序一致</code></p>
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;
 
                     /**
-                     * 复杂文档合成任务（如，包含动态表格的预览任务）的任务信息数组；
-如果文档需要异步合成，此字段会返回该异步任务的任务信息，后续可以通过ChannelGetTaskResultApi接口查询任务详情；
+                     * <p>复杂文档合成任务（如，包含动态表格的预览任务）的任务信息数组；<br>如果文档需要异步合成，此字段会返回该异步任务的任务信息，后续可以通过<a href="https://qian.tencent.com/developers/partnerApis/files/DescribeFileConvertTask">查询转换任务状态</a>接口查询任务详情；</p>
                      */
                     std::vector<TaskInfo> m_taskInfos;
                     bool m_taskInfosHasBeenSet;
 
                     /**
-                     * 合同组签署方信息
+                     * <p>合同组签署方信息</p>
                      */
                     std::vector<FlowGroupApprovers> m_approvers;
                     bool m_approversHasBeenSet;

@@ -181,6 +181,10 @@
 #include <tencentcloud/mongodb/v20190725/model/RestartNodesResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/RestoreDBInstanceRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/RestoreDBInstanceResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/ScaleDownDBInstanceCpuRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/ScaleDownDBInstanceCpuResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/ScaleUpDBInstanceCpuRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/ScaleUpDBInstanceCpuResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/SetAccountUserPrivilegeRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/SetAccountUserPrivilegeResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/SetBackupRulesRequest.h>
@@ -446,6 +450,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RestoreDBInstanceResponse> RestoreDBInstanceOutcome;
                 typedef std::future<RestoreDBInstanceOutcome> RestoreDBInstanceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::RestoreDBInstanceRequest&, RestoreDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestoreDBInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ScaleDownDBInstanceCpuResponse> ScaleDownDBInstanceCpuOutcome;
+                typedef std::future<ScaleDownDBInstanceCpuOutcome> ScaleDownDBInstanceCpuOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::ScaleDownDBInstanceCpuRequest&, ScaleDownDBInstanceCpuOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScaleDownDBInstanceCpuAsyncHandler;
+                typedef Outcome<Core::Error, Model::ScaleUpDBInstanceCpuResponse> ScaleUpDBInstanceCpuOutcome;
+                typedef std::future<ScaleUpDBInstanceCpuOutcome> ScaleUpDBInstanceCpuOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::ScaleUpDBInstanceCpuRequest&, ScaleUpDBInstanceCpuOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScaleUpDBInstanceCpuAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetAccountUserPrivilegeResponse> SetAccountUserPrivilegeOutcome;
                 typedef std::future<SetAccountUserPrivilegeOutcome> SetAccountUserPrivilegeOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::SetAccountUserPrivilegeRequest&, SetAccountUserPrivilegeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAccountUserPrivilegeAsyncHandler;
@@ -1186,6 +1196,24 @@ namespace TencentCloud
                 RestoreDBInstanceOutcome RestoreDBInstance(const Model::RestoreDBInstanceRequest &request);
                 void RestoreDBInstanceAsync(const Model::RestoreDBInstanceRequest& request, const RestoreDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RestoreDBInstanceOutcomeCallable RestoreDBInstanceCallable(const Model::RestoreDBInstanceRequest& request);
+
+                /**
+                 *ScaleDownDBInstanceCpu
+                 * @param req ScaleDownDBInstanceCpuRequest
+                 * @return ScaleDownDBInstanceCpuOutcome
+                 */
+                ScaleDownDBInstanceCpuOutcome ScaleDownDBInstanceCpu(const Model::ScaleDownDBInstanceCpuRequest &request);
+                void ScaleDownDBInstanceCpuAsync(const Model::ScaleDownDBInstanceCpuRequest& request, const ScaleDownDBInstanceCpuAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ScaleDownDBInstanceCpuOutcomeCallable ScaleDownDBInstanceCpuCallable(const Model::ScaleDownDBInstanceCpuRequest& request);
+
+                /**
+                 *手动开启cpu弹性扩容
+                 * @param req ScaleUpDBInstanceCpuRequest
+                 * @return ScaleUpDBInstanceCpuOutcome
+                 */
+                ScaleUpDBInstanceCpuOutcome ScaleUpDBInstanceCpu(const Model::ScaleUpDBInstanceCpuRequest &request);
+                void ScaleUpDBInstanceCpuAsync(const Model::ScaleUpDBInstanceCpuRequest& request, const ScaleUpDBInstanceCpuAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ScaleUpDBInstanceCpuOutcomeCallable ScaleUpDBInstanceCpuCallable(const Model::ScaleUpDBInstanceCpuRequest& request);
 
                 /**
                  *本接口（SetAccountUserPrivilege）用于设置实例的账号权限。

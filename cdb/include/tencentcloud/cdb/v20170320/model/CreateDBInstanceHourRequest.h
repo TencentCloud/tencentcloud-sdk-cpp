@@ -25,6 +25,7 @@
 #include <tencentcloud/cdb/v20170320/model/RoGroup.h>
 #include <tencentcloud/cdb/v20170320/model/TagInfo.h>
 #include <tencentcloud/cdb/v20170320/model/ClusterTopology.h>
+#include <tencentcloud/cdb/v20170320/model/AutoStrategy.h>
 
 
 namespace TencentCloud
@@ -991,6 +992,27 @@ namespace TencentCloud
                      */
                     bool FourthZoneHasBeenSet() const;
 
+                    /**
+                     * 获取<p>弹性扩容参数（如果不传，则不开启）</p>
+                     * @return AutoStrategy <p>弹性扩容参数（如果不传，则不开启）</p>
+                     * 
+                     */
+                    AutoStrategy GetAutoStrategy() const;
+
+                    /**
+                     * 设置<p>弹性扩容参数（如果不传，则不开启）</p>
+                     * @param _autoStrategy <p>弹性扩容参数（如果不传，则不开启）</p>
+                     * 
+                     */
+                    void SetAutoStrategy(const AutoStrategy& _autoStrategy);
+
+                    /**
+                     * 判断参数 AutoStrategy 是否已赋值
+                     * @return AutoStrategy 是否已赋值
+                     * 
+                     */
+                    bool AutoStrategyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1262,6 +1284,12 @@ namespace TencentCloud
                      */
                     std::string m_fourthZone;
                     bool m_fourthZoneHasBeenSet;
+
+                    /**
+                     * <p>弹性扩容参数（如果不传，则不开启）</p>
+                     */
+                    AutoStrategy m_autoStrategy;
+                    bool m_autoStrategyHasBeenSet;
 
                 };
             }

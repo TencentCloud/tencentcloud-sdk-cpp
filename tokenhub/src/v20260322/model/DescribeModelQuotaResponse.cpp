@@ -30,7 +30,9 @@ DescribeModelQuotaResponse::DescribeModelQuotaResponse() :
     m_tPMInputQuotaLimitHasBeenSet(false),
     m_tPMOutputQuotaLimitHasBeenSet(false),
     m_tPMInputReserveLimitHasBeenSet(false),
-    m_tPMOutputReserveLimitHasBeenSet(false)
+    m_tPMOutputReserveLimitHasBeenSet(false),
+    m_tPMInputReservePostPaidLimitHasBeenSet(false),
+    m_tPMOutputReservePostPaidLimitHasBeenSet(false)
 {
 }
 
@@ -138,6 +140,26 @@ CoreInternalOutcome DescribeModelQuotaResponse::Deserialize(const string &payloa
         m_tPMOutputReserveLimitHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TPMInputReservePostPaidLimit") && !rsp["TPMInputReservePostPaidLimit"].IsNull())
+    {
+        if (!rsp["TPMInputReservePostPaidLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TPMInputReservePostPaidLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tPMInputReservePostPaidLimit = rsp["TPMInputReservePostPaidLimit"].GetInt64();
+        m_tPMInputReservePostPaidLimitHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TPMOutputReservePostPaidLimit") && !rsp["TPMOutputReservePostPaidLimit"].IsNull())
+    {
+        if (!rsp["TPMOutputReservePostPaidLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TPMOutputReservePostPaidLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tPMOutputReservePostPaidLimit = rsp["TPMOutputReservePostPaidLimit"].GetInt64();
+        m_tPMOutputReservePostPaidLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +224,22 @@ string DescribeModelQuotaResponse::ToJsonString() const
         string key = "TPMOutputReserveLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tPMOutputReserveLimit, allocator);
+    }
+
+    if (m_tPMInputReservePostPaidLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TPMInputReservePostPaidLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tPMInputReservePostPaidLimit, allocator);
+    }
+
+    if (m_tPMOutputReservePostPaidLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TPMOutputReservePostPaidLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tPMOutputReservePostPaidLimit, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -284,6 +322,26 @@ int64_t DescribeModelQuotaResponse::GetTPMOutputReserveLimit() const
 bool DescribeModelQuotaResponse::TPMOutputReserveLimitHasBeenSet() const
 {
     return m_tPMOutputReserveLimitHasBeenSet;
+}
+
+int64_t DescribeModelQuotaResponse::GetTPMInputReservePostPaidLimit() const
+{
+    return m_tPMInputReservePostPaidLimit;
+}
+
+bool DescribeModelQuotaResponse::TPMInputReservePostPaidLimitHasBeenSet() const
+{
+    return m_tPMInputReservePostPaidLimitHasBeenSet;
+}
+
+int64_t DescribeModelQuotaResponse::GetTPMOutputReservePostPaidLimit() const
+{
+    return m_tPMOutputReservePostPaidLimit;
+}
+
+bool DescribeModelQuotaResponse::TPMOutputReservePostPaidLimitHasBeenSet() const
+{
+    return m_tPMOutputReservePostPaidLimitHasBeenSet;
 }
 
 

@@ -141,6 +141,34 @@ namespace TencentCloud
                      */
                     bool TPMOutputReserveLimitHasBeenSet() const;
 
+                    /**
+                     * 获取<p>TPM 预留后付费 input 配额</p>
+                     * @return TPMInputReservePostPaidLimit <p>TPM 预留后付费 input 配额</p>
+                     * 
+                     */
+                    int64_t GetTPMInputReservePostPaidLimit() const;
+
+                    /**
+                     * 判断参数 TPMInputReservePostPaidLimit 是否已赋值
+                     * @return TPMInputReservePostPaidLimit 是否已赋值
+                     * 
+                     */
+                    bool TPMInputReservePostPaidLimitHasBeenSet() const;
+
+                    /**
+                     * 获取<p>TPM 预留后付费 output 配额</p>
+                     * @return TPMOutputReservePostPaidLimit <p>TPM 预留后付费 output 配额</p>
+                     * 
+                     */
+                    int64_t GetTPMOutputReservePostPaidLimit() const;
+
+                    /**
+                     * 判断参数 TPMOutputReservePostPaidLimit 是否已赋值
+                     * @return TPMOutputReservePostPaidLimit 是否已赋值
+                     * 
+                     */
+                    bool TPMOutputReservePostPaidLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -184,6 +212,18 @@ namespace TencentCloud
                      */
                     int64_t m_tPMOutputReserveLimit;
                     bool m_tPMOutputReserveLimitHasBeenSet;
+
+                    /**
+                     * <p>TPM 预留后付费 input 配额</p>
+                     */
+                    int64_t m_tPMInputReservePostPaidLimit;
+                    bool m_tPMInputReservePostPaidLimitHasBeenSet;
+
+                    /**
+                     * <p>TPM 预留后付费 output 配额</p>
+                     */
+                    int64_t m_tPMOutputReservePostPaidLimit;
+                    bool m_tPMOutputReservePostPaidLimitHasBeenSet;
 
                 };
             }

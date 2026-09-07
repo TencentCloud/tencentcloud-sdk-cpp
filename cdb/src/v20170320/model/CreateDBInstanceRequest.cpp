@@ -66,7 +66,8 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_diskTypeHasBeenSet(false),
     m_diskEncryptionHasBeenSet(false),
     m_destroyProtectHasBeenSet(false),
-    m_fourthZoneHasBeenSet(false)
+    m_fourthZoneHasBeenSet(false),
+    m_autoStrategyHasBeenSet(false)
 {
 }
 
@@ -463,6 +464,15 @@ string CreateDBInstanceRequest::ToJsonString() const
         string key = "FourthZone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_fourthZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_autoStrategy.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -1175,6 +1185,22 @@ void CreateDBInstanceRequest::SetFourthZone(const string& _fourthZone)
 bool CreateDBInstanceRequest::FourthZoneHasBeenSet() const
 {
     return m_fourthZoneHasBeenSet;
+}
+
+AutoStrategy CreateDBInstanceRequest::GetAutoStrategy() const
+{
+    return m_autoStrategy;
+}
+
+void CreateDBInstanceRequest::SetAutoStrategy(const AutoStrategy& _autoStrategy)
+{
+    m_autoStrategy = _autoStrategy;
+    m_autoStrategyHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::AutoStrategyHasBeenSet() const
+{
+    return m_autoStrategyHasBeenSet;
 }
 
 

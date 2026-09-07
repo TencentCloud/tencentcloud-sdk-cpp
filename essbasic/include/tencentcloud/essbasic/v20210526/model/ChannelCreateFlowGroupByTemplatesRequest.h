@@ -45,51 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a>
-
-此接口下面信息必填。
-<ul>
-<li>渠道应用标识:  <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li>
-<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li>
-<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li>
-</ul>
-
-合同的发起企业和发起人必需已经完成实名，并加入企业
-                     * @return Agent 合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a>
-
-此接口下面信息必填。
-<ul>
-<li>渠道应用标识:  <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li>
-<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li>
-<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li>
-</ul>
-
-合同的发起企业和发起人必需已经完成实名，并加入企业
+                     * 获取<p>合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a></p><p>此接口下面信息必填。</p><ul><li>渠道应用标识:  <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li><li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li></ul><p>合同的发起企业和发起人必需已经完成实名，并加入企业</p>
+                     * @return Agent <p>合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a></p><p>此接口下面信息必填。</p><ul><li>渠道应用标识:  <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li><li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li></ul><p>合同的发起企业和发起人必需已经完成实名，并加入企业</p>
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a>
-
-此接口下面信息必填。
-<ul>
-<li>渠道应用标识:  <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li>
-<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li>
-<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li>
-</ul>
-
-合同的发起企业和发起人必需已经完成实名，并加入企业
-                     * @param _agent 合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a>
-
-此接口下面信息必填。
-<ul>
-<li>渠道应用标识:  <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li>
-<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li>
-<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li>
-</ul>
-
-合同的发起企业和发起人必需已经完成实名，并加入企业
+                     * 设置<p>合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a></p><p>此接口下面信息必填。</p><ul><li>渠道应用标识:  <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li><li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li></ul><p>合同的发起企业和发起人必需已经完成实名，并加入企业</p>
+                     * @param _agent <p>合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a></p><p>此接口下面信息必填。</p><ul><li>渠道应用标识:  <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li><li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li></ul><p>合同的发起企业和发起人必需已经完成实名，并加入企业</p>
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -102,15 +66,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。
-                     * @return FlowInfos 合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。
+                     * 获取<p>合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。</p>
+                     * @return FlowInfos <p>合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。</p>
                      * 
                      */
                     std::vector<FlowInfo> GetFlowInfos() const;
 
                     /**
-                     * 设置合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。
-                     * @param _flowInfos 合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。
+                     * 设置<p>合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。</p>
+                     * @param _flowInfos <p>合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。</p>
                      * 
                      */
                     void SetFlowInfos(const std::vector<FlowInfo>& _flowInfos);
@@ -123,15 +87,15 @@ namespace TencentCloud
                     bool FlowInfosHasBeenSet() const;
 
                     /**
-                     * 获取合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
-                     * @return FlowGroupName 合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+                     * 获取<p>合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。</p>
+                     * @return FlowGroupName <p>合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。</p>
                      * 
                      */
                     std::string GetFlowGroupName() const;
 
                     /**
-                     * 设置合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
-                     * @param _flowGroupName 合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+                     * 设置<p>合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。</p>
+                     * @param _flowGroupName <p>合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。</p>
                      * 
                      */
                     void SetFlowGroupName(const std::string& _flowGroupName);
@@ -146,28 +110,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a>
-
-此接口下面信息必填。
-<ul>
-<li>渠道应用标识:  <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li>
-<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li>
-<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li>
-</ul>
-
-合同的发起企业和发起人必需已经完成实名，并加入企业
+                     * <p>合同的发起企业和发起人信息，<a href="https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png" target="_blank">点击查看合同发起企业和人展示的位置</a></p><p>此接口下面信息必填。</p><ul><li>渠道应用标识:  <a href="https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png" target="_blank">Agent.AppId</a></li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li><li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li></ul><p>合同的发起企业和发起人必需已经完成实名，并加入企业</p>
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。
+                     * <p>合同组中每个合同签署流程的信息，合同组中最少包含2个合同，不能超过50个合同。</p>
                      */
                     std::vector<FlowInfo> m_flowInfos;
                     bool m_flowInfosHasBeenSet;
 
                     /**
-                     * 合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+                     * <p>合同组的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。</p>
                      */
                     std::string m_flowGroupName;
                     bool m_flowGroupNameHasBeenSet;

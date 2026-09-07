@@ -453,7 +453,6 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CheckModelIdentifierRequest.h
   include/tencentcloud/dlc/v20210125/model/MessageItem.h
   include/tencentcloud/dlc/v20210125/model/MetaDatabaseInfo.h
-  include/tencentcloud/dlc/v20210125/model/GetRayJobEventLogRequest.h
   include/tencentcloud/dlc/v20210125/model/GetRayJobEventRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribePartitionQueuesResponse.h
   include/tencentcloud/dlc/v20210125/model/AlterDMSDatabaseResponse.h
@@ -500,7 +499,6 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CosPermission.h
   include/tencentcloud/dlc/v20210125/model/GetResourceConfigResponse.h
   include/tencentcloud/dlc/v20210125/model/LockComponentInfo.h
-  include/tencentcloud/dlc/v20210125/model/StartMlflowServerResponse.h
   include/tencentcloud/dlc/v20210125/model/GetRayJobResponse.h
   include/tencentcloud/dlc/v20210125/model/QueryMonitorOverviewResponse.h
   include/tencentcloud/dlc/v20210125/model/RerunBenchmarkTaskResponse.h
@@ -883,7 +881,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/Execution.h
   include/tencentcloud/dlc/v20210125/model/CreateNotebookSessionStatementSupportBatchSQLResponse.h
   include/tencentcloud/dlc/v20210125/model/BindWorkGroupsToUserRequest.h
-  include/tencentcloud/dlc/v20210125/model/ModifyClusterPriorityRequest.h
+  include/tencentcloud/dlc/v20210125/model/StartMlflowServerResponse.h
   include/tencentcloud/dlc/v20210125/model/Column.h
   include/tencentcloud/dlc/v20210125/model/Users.h
   include/tencentcloud/dlc/v20210125/model/DescribeUDFPolicyRequest.h
@@ -892,7 +890,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeLakeFsDirSummaryResponse.h
   include/tencentcloud/dlc/v20210125/model/GetRayJobYamlRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeModelTaskOptionsRequest.h
-  include/tencentcloud/dlc/v20210125/model/GetRayJobEventLogResponse.h
+  include/tencentcloud/dlc/v20210125/model/ModifyClusterPriorityRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeUserVpcConnectionResponse.h
   include/tencentcloud/dlc/v20210125/model/GetModelFilesRequest.h
   include/tencentcloud/dlc/v20210125/model/FileNode.h
@@ -915,7 +913,6 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DatabaseInfo.h
   include/tencentcloud/dlc/v20210125/model/ListBenchmarkTasksResponse.h
   include/tencentcloud/dlc/v20210125/model/CancelTasksResponse.h
-  include/tencentcloud/dlc/v20210125/model/EventLogItem.h
   include/tencentcloud/dlc/v20210125/model/InitializeTCLakeResponse.h
   include/tencentcloud/dlc/v20210125/model/ListImagesRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeDataEnginesRequest.h
@@ -1417,7 +1414,6 @@ set(dlc_src
   src/v20210125/model/CheckModelIdentifierRequest.cpp
   src/v20210125/model/MessageItem.cpp
   src/v20210125/model/MetaDatabaseInfo.cpp
-  src/v20210125/model/GetRayJobEventLogRequest.cpp
   src/v20210125/model/GetRayJobEventRequest.cpp
   src/v20210125/model/DescribePartitionQueuesResponse.cpp
   src/v20210125/model/AlterDMSDatabaseResponse.cpp
@@ -1464,7 +1460,6 @@ set(dlc_src
   src/v20210125/model/CosPermission.cpp
   src/v20210125/model/GetResourceConfigResponse.cpp
   src/v20210125/model/LockComponentInfo.cpp
-  src/v20210125/model/StartMlflowServerResponse.cpp
   src/v20210125/model/GetRayJobResponse.cpp
   src/v20210125/model/QueryMonitorOverviewResponse.cpp
   src/v20210125/model/RerunBenchmarkTaskResponse.cpp
@@ -1847,7 +1842,7 @@ set(dlc_src
   src/v20210125/model/Execution.cpp
   src/v20210125/model/CreateNotebookSessionStatementSupportBatchSQLResponse.cpp
   src/v20210125/model/BindWorkGroupsToUserRequest.cpp
-  src/v20210125/model/ModifyClusterPriorityRequest.cpp
+  src/v20210125/model/StartMlflowServerResponse.cpp
   src/v20210125/model/Column.cpp
   src/v20210125/model/Users.cpp
   src/v20210125/model/DescribeUDFPolicyRequest.cpp
@@ -1856,7 +1851,7 @@ set(dlc_src
   src/v20210125/model/DescribeLakeFsDirSummaryResponse.cpp
   src/v20210125/model/GetRayJobYamlRequest.cpp
   src/v20210125/model/DescribeModelTaskOptionsRequest.cpp
-  src/v20210125/model/GetRayJobEventLogResponse.cpp
+  src/v20210125/model/ModifyClusterPriorityRequest.cpp
   src/v20210125/model/DescribeUserVpcConnectionResponse.cpp
   src/v20210125/model/GetModelFilesRequest.cpp
   src/v20210125/model/FileNode.cpp
@@ -1879,7 +1874,6 @@ set(dlc_src
   src/v20210125/model/DatabaseInfo.cpp
   src/v20210125/model/ListBenchmarkTasksResponse.cpp
   src/v20210125/model/CancelTasksResponse.cpp
-  src/v20210125/model/EventLogItem.cpp
   src/v20210125/model/InitializeTCLakeResponse.cpp
   src/v20210125/model/ListImagesRequest.cpp
   src/v20210125/model/DescribeDataEnginesRequest.cpp

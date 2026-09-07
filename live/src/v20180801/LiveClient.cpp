@@ -1090,6 +1090,56 @@ LiveClient::CreateCommonMixStreamOutcomeCallable LiveClient::CreateCommonMixStre
     return prom->get_future();
 }
 
+LiveClient::CreateLiveAvatarCloneFigureOutcome LiveClient::CreateLiveAvatarCloneFigure(const CreateLiveAvatarCloneFigureRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLiveAvatarCloneFigure");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLiveAvatarCloneFigureResponse rsp = CreateLiveAvatarCloneFigureResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLiveAvatarCloneFigureOutcome(rsp);
+        else
+            return CreateLiveAvatarCloneFigureOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLiveAvatarCloneFigureOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateLiveAvatarCloneFigureAsync(const CreateLiveAvatarCloneFigureRequest& request, const CreateLiveAvatarCloneFigureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateLiveAvatarCloneFigureRequest&;
+    using Resp = CreateLiveAvatarCloneFigureResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateLiveAvatarCloneFigure", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::CreateLiveAvatarCloneFigureOutcomeCallable LiveClient::CreateLiveAvatarCloneFigureCallable(const CreateLiveAvatarCloneFigureRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateLiveAvatarCloneFigureOutcome>>();
+    CreateLiveAvatarCloneFigureAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const CreateLiveAvatarCloneFigureRequest&,
+        CreateLiveAvatarCloneFigureOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LiveClient::CreateLiveAvatarRoomOutcome LiveClient::CreateLiveAvatarRoom(const CreateLiveAvatarRoomRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateLiveAvatarRoom");
@@ -2632,6 +2682,56 @@ LiveClient::DeleteCasterOutputInfoOutcomeCallable LiveClient::DeleteCasterOutput
         const LiveClient*,
         const DeleteCasterOutputInfoRequest&,
         DeleteCasterOutputInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::DeleteLiveAvatarCloneFigureOutcome LiveClient::DeleteLiveAvatarCloneFigure(const DeleteLiveAvatarCloneFigureRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLiveAvatarCloneFigure");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLiveAvatarCloneFigureResponse rsp = DeleteLiveAvatarCloneFigureResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLiveAvatarCloneFigureOutcome(rsp);
+        else
+            return DeleteLiveAvatarCloneFigureOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLiveAvatarCloneFigureOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DeleteLiveAvatarCloneFigureAsync(const DeleteLiveAvatarCloneFigureRequest& request, const DeleteLiveAvatarCloneFigureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteLiveAvatarCloneFigureRequest&;
+    using Resp = DeleteLiveAvatarCloneFigureResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteLiveAvatarCloneFigure", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DeleteLiveAvatarCloneFigureOutcomeCallable LiveClient::DeleteLiveAvatarCloneFigureCallable(const DeleteLiveAvatarCloneFigureRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteLiveAvatarCloneFigureOutcome>>();
+    DeleteLiveAvatarCloneFigureAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DeleteLiveAvatarCloneFigureRequest&,
+        DeleteLiveAvatarCloneFigureOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5032,6 +5132,56 @@ LiveClient::DescribeLiveAvatarBackgroundListOutcomeCallable LiveClient::Describe
         const LiveClient*,
         const DescribeLiveAvatarBackgroundListRequest&,
         DescribeLiveAvatarBackgroundListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::DescribeLiveAvatarCloneFigureListOutcome LiveClient::DescribeLiveAvatarCloneFigureList(const DescribeLiveAvatarCloneFigureListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLiveAvatarCloneFigureList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLiveAvatarCloneFigureListResponse rsp = DescribeLiveAvatarCloneFigureListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLiveAvatarCloneFigureListOutcome(rsp);
+        else
+            return DescribeLiveAvatarCloneFigureListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLiveAvatarCloneFigureListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLiveAvatarCloneFigureListAsync(const DescribeLiveAvatarCloneFigureListRequest& request, const DescribeLiveAvatarCloneFigureListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLiveAvatarCloneFigureListRequest&;
+    using Resp = DescribeLiveAvatarCloneFigureListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLiveAvatarCloneFigureList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DescribeLiveAvatarCloneFigureListOutcomeCallable LiveClient::DescribeLiveAvatarCloneFigureListCallable(const DescribeLiveAvatarCloneFigureListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLiveAvatarCloneFigureListOutcome>>();
+    DescribeLiveAvatarCloneFigureListAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DescribeLiveAvatarCloneFigureListRequest&,
+        DescribeLiveAvatarCloneFigureListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

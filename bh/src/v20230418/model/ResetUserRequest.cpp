@@ -23,7 +23,8 @@ using namespace TencentCloud::Bh::V20230418::Model;
 using namespace std;
 
 ResetUserRequest::ResetUserRequest() :
-    m_idSetHasBeenSet(false)
+    m_idSetHasBeenSet(false),
+    m_resetTypeHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,14 @@ string ResetUserRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_resetTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResetType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_resetType, allocator);
     }
 
 
@@ -69,6 +78,22 @@ void ResetUserRequest::SetIdSet(const vector<uint64_t>& _idSet)
 bool ResetUserRequest::IdSetHasBeenSet() const
 {
     return m_idSetHasBeenSet;
+}
+
+uint64_t ResetUserRequest::GetResetType() const
+{
+    return m_resetType;
+}
+
+void ResetUserRequest::SetResetType(const uint64_t& _resetType)
+{
+    m_resetType = _resetType;
+    m_resetTypeHasBeenSet = true;
+}
+
+bool ResetUserRequest::ResetTypeHasBeenSet() const
+{
+    return m_resetTypeHasBeenSet;
 }
 
 

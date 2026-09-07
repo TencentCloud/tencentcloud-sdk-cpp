@@ -513,8 +513,6 @@
 #include <tencentcloud/dlc/v20210125/model/GetRayJobResponse.h>
 #include <tencentcloud/dlc/v20210125/model/GetRayJobEventRequest.h>
 #include <tencentcloud/dlc/v20210125/model/GetRayJobEventResponse.h>
-#include <tencentcloud/dlc/v20210125/model/GetRayJobEventLogRequest.h>
-#include <tencentcloud/dlc/v20210125/model/GetRayJobEventLogResponse.h>
 #include <tencentcloud/dlc/v20210125/model/GetRayJobHistoryRequest.h>
 #include <tencentcloud/dlc/v20210125/model/GetRayJobHistoryResponse.h>
 #include <tencentcloud/dlc/v20210125/model/GetRayJobPodYamlRequest.h>
@@ -1494,9 +1492,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetRayJobEventResponse> GetRayJobEventOutcome;
                 typedef std::future<GetRayJobEventOutcome> GetRayJobEventOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::GetRayJobEventRequest&, GetRayJobEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRayJobEventAsyncHandler;
-                typedef Outcome<Core::Error, Model::GetRayJobEventLogResponse> GetRayJobEventLogOutcome;
-                typedef std::future<GetRayJobEventLogOutcome> GetRayJobEventLogOutcomeCallable;
-                typedef std::function<void(const DlcClient*, const Model::GetRayJobEventLogRequest&, GetRayJobEventLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRayJobEventLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetRayJobHistoryResponse> GetRayJobHistoryOutcome;
                 typedef std::future<GetRayJobHistoryOutcome> GetRayJobHistoryOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::GetRayJobHistoryRequest&, GetRayJobHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRayJobHistoryAsyncHandler;
@@ -4054,15 +4049,6 @@ RunID, ExperimentID 对应MLflow 实验追踪用的参数 RunID, ExperimentID
                 GetRayJobEventOutcome GetRayJobEvent(const Model::GetRayJobEventRequest &request);
                 void GetRayJobEventAsync(const Model::GetRayJobEventRequest& request, const GetRayJobEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetRayJobEventOutcomeCallable GetRayJobEventCallable(const Model::GetRayJobEventRequest& request);
-
-                /**
-                 *获取作业事件日志
-                 * @param req GetRayJobEventLogRequest
-                 * @return GetRayJobEventLogOutcome
-                 */
-                GetRayJobEventLogOutcome GetRayJobEventLog(const Model::GetRayJobEventLogRequest &request);
-                void GetRayJobEventLogAsync(const Model::GetRayJobEventLogRequest& request, const GetRayJobEventLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetRayJobEventLogOutcomeCallable GetRayJobEventLogCallable(const Model::GetRayJobEventLogRequest& request);
 
                 /**
                  *根据任务ID获取Ray任务的历史执行记录

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流量包列表
-                     * @return PackageList 流量包列表
+                     * 获取<p>流量包列表</p>
+                     * @return PackageList <p>流量包列表</p>
                      * 
                      */
                     std::vector<FlowPackageInfo> GetPackageList() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool PackageListHasBeenSet() const;
 
                     /**
-                     * 获取总数
-                     * @return Total 总数
+                     * 获取<p>总数</p>
+                     * @return Total <p>总数</p>
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流量包列表
+                     * <p>流量包列表</p>
                      */
                     std::vector<FlowPackageInfo> m_packageList;
                     bool m_packageListHasBeenSet;
 
                     /**
-                     * 总数
+                     * <p>总数</p>
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;

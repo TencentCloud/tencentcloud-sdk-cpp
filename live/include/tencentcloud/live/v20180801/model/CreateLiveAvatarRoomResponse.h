@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数字人直播间 ID。
-                     * @return RoomId 数字人直播间 ID。
+                     * 获取<p>数字人直播间 ID。</p>
+                     * @return RoomId <p>数字人直播间 ID。</p>
                      * 
                      */
                     std::string GetRoomId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数字人直播间 ID。
+                     * <p>数字人直播间 ID。</p>
                      */
                     std::string m_roomId;
                     bool m_roomIdHasBeenSet;

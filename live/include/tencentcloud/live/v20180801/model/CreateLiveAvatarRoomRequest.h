@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取直播间名称。
-                     * @return Name 直播间名称。
+                     * 获取<p>直播间名称。</p>
+                     * @return Name <p>直播间名称。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置直播间名称。
-                     * @param _name 直播间名称。
+                     * 设置<p>直播间名称。</p>
+                     * @param _name <p>直播间名称。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取操作者。
-                     * @return Operator 操作者。
+                     * 获取<p>操作者。</p>
+                     * @return Operator <p>操作者。</p>
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者。
-                     * @param _operator 操作者。
+                     * 设置<p>操作者。</p>
+                     * @param _operator <p>操作者。</p>
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -84,19 +84,100 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取<p>形象ID</p>
+                     * @return AvatarKey <p>形象ID</p>
+                     * 
+                     */
+                    std::string GetAvatarKey() const;
+
+                    /**
+                     * 设置<p>形象ID</p>
+                     * @param _avatarKey <p>形象ID</p>
+                     * 
+                     */
+                    void SetAvatarKey(const std::string& _avatarKey);
+
+                    /**
+                     * 判断参数 AvatarKey 是否已赋值
+                     * @return AvatarKey 是否已赋值
+                     * 
+                     */
+                    bool AvatarKeyHasBeenSet() const;
+
+                    /**
+                     * 获取<p>音色ID</p>
+                     * @return TimbreKey <p>音色ID</p>
+                     * 
+                     */
+                    std::string GetTimbreKey() const;
+
+                    /**
+                     * 设置<p>音色ID</p>
+                     * @param _timbreKey <p>音色ID</p>
+                     * 
+                     */
+                    void SetTimbreKey(const std::string& _timbreKey);
+
+                    /**
+                     * 判断参数 TimbreKey 是否已赋值
+                     * @return TimbreKey 是否已赋值
+                     * 
+                     */
+                    bool TimbreKeyHasBeenSet() const;
+
+                    /**
+                     * 获取<p>房间模式</p><p>枚举值：</p><ul><li>INTERACT： 交互模式</li><li>FREE： 自由模式</li><li>NORMAL： 普通模式</li></ul>
+                     * @return LiveMode <p>房间模式</p><p>枚举值：</p><ul><li>INTERACT： 交互模式</li><li>FREE： 自由模式</li><li>NORMAL： 普通模式</li></ul>
+                     * 
+                     */
+                    std::string GetLiveMode() const;
+
+                    /**
+                     * 设置<p>房间模式</p><p>枚举值：</p><ul><li>INTERACT： 交互模式</li><li>FREE： 自由模式</li><li>NORMAL： 普通模式</li></ul>
+                     * @param _liveMode <p>房间模式</p><p>枚举值：</p><ul><li>INTERACT： 交互模式</li><li>FREE： 自由模式</li><li>NORMAL： 普通模式</li></ul>
+                     * 
+                     */
+                    void SetLiveMode(const std::string& _liveMode);
+
+                    /**
+                     * 判断参数 LiveMode 是否已赋值
+                     * @return LiveMode 是否已赋值
+                     * 
+                     */
+                    bool LiveModeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 直播间名称。
+                     * <p>直播间名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 操作者。
+                     * <p>操作者。</p>
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * <p>形象ID</p>
+                     */
+                    std::string m_avatarKey;
+                    bool m_avatarKeyHasBeenSet;
+
+                    /**
+                     * <p>音色ID</p>
+                     */
+                    std::string m_timbreKey;
+                    bool m_timbreKeyHasBeenSet;
+
+                    /**
+                     * <p>房间模式</p><p>枚举值：</p><ul><li>INTERACT： 交互模式</li><li>FREE： 自由模式</li><li>NORMAL： 普通模式</li></ul>
+                     */
+                    std::string m_liveMode;
+                    bool m_liveModeHasBeenSet;
 
                 };
             }

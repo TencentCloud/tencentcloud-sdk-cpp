@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取页码，从1开始
-                     * @return PageNumber 页码，从1开始
+                     * 获取<p>页码，从1开始</p>
+                     * @return PageNumber <p>页码，从1开始</p>
                      * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
-                     * 设置页码，从1开始
-                     * @param _pageNumber 页码，从1开始
+                     * 设置<p>页码，从1开始</p>
+                     * @param _pageNumber <p>页码，从1开始</p>
                      * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取每页个数
-                     * @return PageSize 每页个数
+                     * 获取<p>每页个数</p>
+                     * @return PageSize <p>每页个数</p>
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置每页个数
-                     * @param _pageSize 每页个数
+                     * 设置<p>每页个数</p>
+                     * @param _pageSize <p>每页个数</p>
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取流量包的唯一资源ID
-                     * @return ResourceId 流量包的唯一资源ID
+                     * 获取<p>流量包的唯一资源ID</p>
+                     * @return ResourceId <p>流量包的唯一资源ID</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置流量包的唯一资源ID
-                     * @param _resourceId 流量包的唯一资源ID
+                     * 设置<p>流量包的唯一资源ID</p>
+                     * @param _resourceId <p>流量包的唯一资源ID</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取流量包绑定的设备ID
-                     * @return DeviceId 流量包绑定的设备ID
+                     * 获取<p>流量包绑定的设备ID</p>
+                     * @return DeviceId <p>流量包绑定的设备ID</p>
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置流量包绑定的设备ID
-                     * @param _deviceId 流量包绑定的设备ID
+                     * 设置<p>流量包绑定的设备ID</p>
+                     * @param _deviceId <p>流量包绑定的设备ID</p>
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -127,19 +127,15 @@ namespace TencentCloud
                     bool DeviceIdHasBeenSet() const;
 
                     /**
-                     * 获取流量包状态，0：未生效，1：有效期内，2：已过期
-
-                     * @return Status 流量包状态，0：未生效，1：有效期内，2：已过期
-
+                     * 获取<p>流量包状态，0：未生效，1：有效期内，2：已过期</p>
+                     * @return Status <p>流量包状态，0：未生效，1：有效期内，2：已过期</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置流量包状态，0：未生效，1：有效期内，2：已过期
-
-                     * @param _status 流量包状态，0：未生效，1：有效期内，2：已过期
-
+                     * 设置<p>流量包状态，0：未生效，1：有效期内，2：已过期</p>
+                     * @param _status <p>流量包状态，0：未生效，1：有效期内，2：已过期</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -151,38 +147,91 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>生效时间在此时间之后</p>
+                     * @return ActiveTimeStart <p>生效时间在此时间之后</p>
+                     * 
+                     */
+                    std::string GetActiveTimeStart() const;
+
+                    /**
+                     * 设置<p>生效时间在此时间之后</p>
+                     * @param _activeTimeStart <p>生效时间在此时间之后</p>
+                     * 
+                     */
+                    void SetActiveTimeStart(const std::string& _activeTimeStart);
+
+                    /**
+                     * 判断参数 ActiveTimeStart 是否已赋值
+                     * @return ActiveTimeStart 是否已赋值
+                     * 
+                     */
+                    bool ActiveTimeStartHasBeenSet() const;
+
+                    /**
+                     * 获取<p>生效时间在此时间之前</p>
+                     * @return ActiveTimeEnd <p>生效时间在此时间之前</p>
+                     * 
+                     */
+                    std::string GetActiveTimeEnd() const;
+
+                    /**
+                     * 设置<p>生效时间在此时间之前</p>
+                     * @param _activeTimeEnd <p>生效时间在此时间之前</p>
+                     * 
+                     */
+                    void SetActiveTimeEnd(const std::string& _activeTimeEnd);
+
+                    /**
+                     * 判断参数 ActiveTimeEnd 是否已赋值
+                     * @return ActiveTimeEnd 是否已赋值
+                     * 
+                     */
+                    bool ActiveTimeEndHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 页码，从1开始
+                     * <p>页码，从1开始</p>
                      */
                     uint64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 每页个数
+                     * <p>每页个数</p>
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 流量包的唯一资源ID
+                     * <p>流量包的唯一资源ID</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 流量包绑定的设备ID
+                     * <p>流量包绑定的设备ID</p>
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
-                     * 流量包状态，0：未生效，1：有效期内，2：已过期
-
+                     * <p>流量包状态，0：未生效，1：有效期内，2：已过期</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>生效时间在此时间之后</p>
+                     */
+                    std::string m_activeTimeStart;
+                    bool m_activeTimeStartHasBeenSet;
+
+                    /**
+                     * <p>生效时间在此时间之前</p>
+                     */
+                    std::string m_activeTimeEnd;
+                    bool m_activeTimeEndHasBeenSet;
 
                 };
             }

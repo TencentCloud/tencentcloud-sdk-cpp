@@ -27,6 +27,7 @@
 #include <tencentcloud/teo/v20220901/model/OwnershipVerification.h>
 #include <tencentcloud/teo/v20220901/model/OriginDetail.h>
 #include <tencentcloud/teo/v20220901/model/AccelerationDomainCertificate.h>
+#include <tencentcloud/teo/v20220901/model/ComplianceRestriction.h>
 
 
 namespace TencentCloud
@@ -375,6 +376,27 @@ namespace TencentCloud
                      */
                     bool ModifiedOnHasBeenSet() const;
 
+                    /**
+                     * 获取<p>域名因合规问题产生的地区访问限制列表。</p>
+                     * @return ComplianceRestrictions <p>域名因合规问题产生的地区访问限制列表。</p>
+                     * 
+                     */
+                    std::vector<ComplianceRestriction> GetComplianceRestrictions() const;
+
+                    /**
+                     * 设置<p>域名因合规问题产生的地区访问限制列表。</p>
+                     * @param _complianceRestrictions <p>域名因合规问题产生的地区访问限制列表。</p>
+                     * 
+                     */
+                    void SetComplianceRestrictions(const std::vector<ComplianceRestriction>& _complianceRestrictions);
+
+                    /**
+                     * 判断参数 ComplianceRestrictions 是否已赋值
+                     * @return ComplianceRestrictions 是否已赋值
+                     * 
+                     */
+                    bool ComplianceRestrictionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -468,6 +490,12 @@ namespace TencentCloud
                      */
                     std::string m_modifiedOn;
                     bool m_modifiedOnHasBeenSet;
+
+                    /**
+                     * <p>域名因合规问题产生的地区访问限制列表。</p>
+                     */
+                    std::vector<ComplianceRestriction> m_complianceRestrictions;
+                    bool m_complianceRestrictionsHasBeenSet;
 
                 };
             }

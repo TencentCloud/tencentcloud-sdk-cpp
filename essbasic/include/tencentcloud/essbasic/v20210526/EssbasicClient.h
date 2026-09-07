@@ -43,8 +43,6 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateBatchSignUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateBoundFlowsRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateBoundFlowsResponse.h>
-#include <tencentcloud/essbasic/v20210526/model/ChannelCreateConvertTaskApiRequest.h>
-#include <tencentcloud/essbasic/v20210526/model/ChannelCreateConvertTaskApiResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateDynamicFlowApproverRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateDynamicFlowApproverResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateEmbedWebUrlRequest.h>
@@ -113,8 +111,6 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelDescribeUserAutoSignStatusResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDisableUserAutoSignRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDisableUserAutoSignResponse.h>
-#include <tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiRequest.h>
-#include <tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelModifyRoleRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelModifyRoleResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelRenewAutoSignLicenseRequest.h>
@@ -269,9 +265,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelCreateBoundFlowsResponse> ChannelCreateBoundFlowsOutcome;
                 typedef std::future<ChannelCreateBoundFlowsOutcome> ChannelCreateBoundFlowsOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateBoundFlowsRequest&, ChannelCreateBoundFlowsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateBoundFlowsAsyncHandler;
-                typedef Outcome<Core::Error, Model::ChannelCreateConvertTaskApiResponse> ChannelCreateConvertTaskApiOutcome;
-                typedef std::future<ChannelCreateConvertTaskApiOutcome> ChannelCreateConvertTaskApiOutcomeCallable;
-                typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateConvertTaskApiRequest&, ChannelCreateConvertTaskApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateConvertTaskApiAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelCreateDynamicFlowApproverResponse> ChannelCreateDynamicFlowApproverOutcome;
                 typedef std::future<ChannelCreateDynamicFlowApproverOutcome> ChannelCreateDynamicFlowApproverOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateDynamicFlowApproverRequest&, ChannelCreateDynamicFlowApproverOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateDynamicFlowApproverAsyncHandler;
@@ -374,9 +367,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelDisableUserAutoSignResponse> ChannelDisableUserAutoSignOutcome;
                 typedef std::future<ChannelDisableUserAutoSignOutcome> ChannelDisableUserAutoSignOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelDisableUserAutoSignRequest&, ChannelDisableUserAutoSignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelDisableUserAutoSignAsyncHandler;
-                typedef Outcome<Core::Error, Model::ChannelGetTaskResultApiResponse> ChannelGetTaskResultApiOutcome;
-                typedef std::future<ChannelGetTaskResultApiOutcome> ChannelGetTaskResultApiOutcomeCallable;
-                typedef std::function<void(const EssbasicClient*, const Model::ChannelGetTaskResultApiRequest&, ChannelGetTaskResultApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelGetTaskResultApiAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelModifyRoleResponse> ChannelModifyRoleOutcome;
                 typedef std::future<ChannelModifyRoleOutcome> ChannelModifyRoleOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelModifyRoleRequest&, ChannelModifyRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelModifyRoleAsyncHandler;
@@ -745,23 +735,6 @@ namespace TencentCloud
                 ChannelCreateBoundFlowsOutcome ChannelCreateBoundFlows(const Model::ChannelCreateBoundFlowsRequest &request);
                 void ChannelCreateBoundFlowsAsync(const Model::ChannelCreateBoundFlowsRequest& request, const ChannelCreateBoundFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChannelCreateBoundFlowsOutcomeCallable ChannelCreateBoundFlowsCallable(const Model::ChannelCreateBoundFlowsRequest& request);
-
-                /**
-                 *此接口（ChannelCreateConvertTaskApi）用来将word、excel、html、图片、txt类型文件转换为PDF文件。<br />
-前提条件：源文件已经通过 <a href="https://qian.tencent.com/developers/partnerApis/files/UploadFiles" target="_blank">文件上传接口</a>完成上传，并得到了源文件的资源Id。<br />
-适用场景1：已经上传了一个word文件，希望将该word文件转换成pdf文件后发起合同
-适用场景2：已经上传了一个jpg图片文件，希望将该图片文件转换成pdf文件后发起合同<br />
-转换文件是一个耗时操作，若想查看转换任务是否完成，可以通过<a href="https://qian.tencent.com/developers/partnerApis/files/ChannelGetTaskResultApi" target="_blank">查询转换任务状态</a>接口获取任务状态。<br />
-<font color="red">此接口于 2026 年 12月 31 日下线</font>，请使用新接口: <a href="https://qian.tencent.com/developers/partnerApis/files/CreateFileConvertTask" target="_blank">新建文件转换任务（CreateFileConvertTask）</a><br />
-注: 
-1. `支持的文件类型有doc、docx、xls、xlsx、html、jpg、jpeg、png、bmp、txt`
-2. `可通过发起合同时设置预览来检查转换文件是否达到预期效果`
-                 * @param req ChannelCreateConvertTaskApiRequest
-                 * @return ChannelCreateConvertTaskApiOutcome
-                 */
-                ChannelCreateConvertTaskApiOutcome ChannelCreateConvertTaskApi(const Model::ChannelCreateConvertTaskApiRequest &request);
-                void ChannelCreateConvertTaskApiAsync(const Model::ChannelCreateConvertTaskApiRequest& request, const ChannelCreateConvertTaskApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ChannelCreateConvertTaskApiOutcomeCallable ChannelCreateConvertTaskApiCallable(const Model::ChannelCreateConvertTaskApiRequest& request);
 
                 /**
                  *接口（ChannelCreateDynamicFlowApprover）用来补充<a href="https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowByFiles" target="_blank">用PDF文件创建签署流程</a>发起的动态合同的签署人信息
@@ -1464,22 +1437,6 @@ namespace TencentCloud
                 ChannelDisableUserAutoSignOutcome ChannelDisableUserAutoSign(const Model::ChannelDisableUserAutoSignRequest &request);
                 void ChannelDisableUserAutoSignAsync(const Model::ChannelDisableUserAutoSignRequest& request, const ChannelDisableUserAutoSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChannelDisableUserAutoSignOutcomeCallable ChannelDisableUserAutoSignCallable(const Model::ChannelDisableUserAutoSignRequest& request);
-
-                /**
-                 *此接口（ChannelGetTaskResultApi）用来查询转换任务的状态。如需发起转换任务，请使用<a href="https://qian.tencent.com/developers/partnerApis/files/ChannelCreateConvertTaskApi" target="_blank">创建文件转换任务接口</a>进行资源文件的转换操作<br />
-前提条件：已调用 <a href="https://qian.tencent.com/developers/partnerApis/files/ChannelCreateConvertTaskApi" target="_blank">创建文件转换任务接口</a>进行文件转换，并得到了返回的转换任务Id。<br />
-
-适用场景：已创建一个文件转换任务，想查询该文件转换任务的状态，或获取转换后的文件资源ID。<br />
-<font color="red">此接口于 2026 年 12月 31 日下线</font>，请使用新接口: <a href="https://qian.tencent.com/developers/partnerApis/files/DescribeFileConvertTask" target="_blank">查询文件转换任务状态（DescribeFileConvertTask）</a><br />
-注：
-1. `大文件转换所需的时间可能会比较长。`
-2. `本接口返回的文件资源ID就是PDF资源ID，可以直接用于【用PDF文件创建签署流程】接口发起合同。`
-                 * @param req ChannelGetTaskResultApiRequest
-                 * @return ChannelGetTaskResultApiOutcome
-                 */
-                ChannelGetTaskResultApiOutcome ChannelGetTaskResultApi(const Model::ChannelGetTaskResultApiRequest &request);
-                void ChannelGetTaskResultApiAsync(const Model::ChannelGetTaskResultApiRequest& request, const ChannelGetTaskResultApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ChannelGetTaskResultApiOutcomeCallable ChannelGetTaskResultApiCallable(const Model::ChannelGetTaskResultApiRequest& request);
 
                 /**
                  *此接口（ChannelModifyRole）用来更新企业自定义角色。
@@ -2674,7 +2631,7 @@ Agent参数中的OpenId 必须为审批者的openId，且链接必须由审批�
 
 适用场景：用于合同，印章的文件上传。文件上传以后，
 如果是PDF格式文件可配合<a href="https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowByFiles" target="_blank">用PDF文件创建签署流程</a>接口进行合同流程的发起
-如果是其他类型可以配合<a href="https://qian.tencent.com/developers/partnerApis/files/ChannelCreateConvertTaskApi" target="_blank">创建文件转换任务</a>接口转换成PDF文件
+如果是其他类型可以配合<a href="https://qian.tencent.com/developers/partnerApis/files/CreateFileConvertTask" target="_blank">创建文件转换任务</a>接口转换成PDF文件
 
 注: 
 1. 图片类型(png/jpg/jpeg)限制大小为8M以下, PDF/word/excel等其他格式限制大小为60M以下

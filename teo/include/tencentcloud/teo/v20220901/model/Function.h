@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/teo/v20220901/model/ComplianceRestriction.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取函数 ID。
-                     * @return FunctionId 函数 ID。
+                     * 获取<p>函数 ID。</p>
+                     * @return FunctionId <p>函数 ID。</p>
                      * 
                      */
                     std::string GetFunctionId() const;
 
                     /**
-                     * 设置函数 ID。
-                     * @param _functionId 函数 ID。
+                     * 设置<p>函数 ID。</p>
+                     * @param _functionId <p>函数 ID。</p>
                      * 
                      */
                     void SetFunctionId(const std::string& _functionId);
@@ -68,15 +69,15 @@ namespace TencentCloud
                     bool FunctionIdHasBeenSet() const;
 
                     /**
-                     * 获取站点 ID。
-                     * @return ZoneId 站点 ID。
+                     * 获取<p>站点 ID。</p>
+                     * @return ZoneId <p>站点 ID。</p>
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置站点 ID。
-                     * @param _zoneId 站点 ID。
+                     * 设置<p>站点 ID。</p>
+                     * @param _zoneId <p>站点 ID。</p>
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -89,15 +90,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取函数名字。
-                     * @return Name 函数名字。
+                     * 获取<p>函数名字。</p>
+                     * @return Name <p>函数名字。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置函数名字。
-                     * @param _name 函数名字。
+                     * 设置<p>函数名字。</p>
+                     * @param _name <p>函数名字。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -110,15 +111,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取函数描述。
-                     * @return Remark 函数描述。
+                     * 获取<p>函数描述。</p>
+                     * @return Remark <p>函数描述。</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置函数描述。
-                     * @param _remark 函数描述。
+                     * 设置<p>函数描述。</p>
+                     * @param _remark <p>函数描述。</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -131,15 +132,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取函数内容。
-                     * @return Content 函数内容。
+                     * 获取<p>函数内容。</p>
+                     * @return Content <p>函数内容。</p>
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置函数内容。
-                     * @param _content 函数内容。
+                     * 设置<p>函数内容。</p>
+                     * @param _content <p>函数内容。</p>
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -152,15 +153,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取函数默认域名。
-                     * @return Domain 函数默认域名。
+                     * 获取<p>函数默认域名。</p>
+                     * @return Domain <p>函数默认域名。</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置函数默认域名。
-                     * @param _domain 函数默认域名。
+                     * 设置<p>函数默认域名。</p>
+                     * @param _domain <p>函数默认域名。</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -173,15 +174,36 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。
-                     * @return CreateTime 创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。
+                     * 获取<p>边缘函数默认域名因合规问题产生的地区访问限制列表。</p>
+                     * @return DomainComplianceRestrictions <p>边缘函数默认域名因合规问题产生的地区访问限制列表。</p>
+                     * 
+                     */
+                    std::vector<ComplianceRestriction> GetDomainComplianceRestrictions() const;
+
+                    /**
+                     * 设置<p>边缘函数默认域名因合规问题产生的地区访问限制列表。</p>
+                     * @param _domainComplianceRestrictions <p>边缘函数默认域名因合规问题产生的地区访问限制列表。</p>
+                     * 
+                     */
+                    void SetDomainComplianceRestrictions(const std::vector<ComplianceRestriction>& _domainComplianceRestrictions);
+
+                    /**
+                     * 判断参数 DomainComplianceRestrictions 是否已赋值
+                     * @return DomainComplianceRestrictions 是否已赋值
+                     * 
+                     */
+                    bool DomainComplianceRestrictionsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。</p>
+                     * @return CreateTime <p>创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。
-                     * @param _createTime 创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。
+                     * 设置<p>创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。</p>
+                     * @param _createTime <p>创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -194,15 +216,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取修改时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。
-                     * @return UpdateTime 修改时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。
+                     * 获取<p>修改时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。</p>
+                     * @return UpdateTime <p>修改时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置修改时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。
-                     * @param _updateTime 修改时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。
+                     * 设置<p>修改时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。</p>
+                     * @param _updateTime <p>修改时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -217,49 +239,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 函数 ID。
+                     * <p>函数 ID。</p>
                      */
                     std::string m_functionId;
                     bool m_functionIdHasBeenSet;
 
                     /**
-                     * 站点 ID。
+                     * <p>站点 ID。</p>
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 函数名字。
+                     * <p>函数名字。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 函数描述。
+                     * <p>函数描述。</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 函数内容。
+                     * <p>函数内容。</p>
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 函数默认域名。
+                     * <p>函数默认域名。</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。
+                     * <p>边缘函数默认域名因合规问题产生的地区访问限制列表。</p>
+                     */
+                    std::vector<ComplianceRestriction> m_domainComplianceRestrictions;
+                    bool m_domainComplianceRestrictionsHasBeenSet;
+
+                    /**
+                     * <p>创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 修改时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。
+                     * <p>修改时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

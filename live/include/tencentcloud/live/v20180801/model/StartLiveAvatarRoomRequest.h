@@ -147,6 +147,90 @@ namespace TencentCloud
                      */
                     bool RoomTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>交互模式下的协议，支持rtmp和trtc，默认是rtmp</p>
+                     * @return SessionProtocol <p>交互模式下的协议，支持rtmp和trtc，默认是rtmp</p>
+                     * 
+                     */
+                    std::string GetSessionProtocol() const;
+
+                    /**
+                     * 设置<p>交互模式下的协议，支持rtmp和trtc，默认是rtmp</p>
+                     * @param _sessionProtocol <p>交互模式下的协议，支持rtmp和trtc，默认是rtmp</p>
+                     * 
+                     */
+                    void SetSessionProtocol(const std::string& _sessionProtocol);
+
+                    /**
+                     * 判断参数 SessionProtocol 是否已赋值
+                     * @return SessionProtocol 是否已赋值
+                     * 
+                     */
+                    bool SessionProtocolHasBeenSet() const;
+
+                    /**
+                     * 获取<p>使用trtc协议时，在trtc的appid</p>
+                     * @return TrtcSdkAppId <p>使用trtc协议时，在trtc的appid</p>
+                     * 
+                     */
+                    std::string GetTrtcSdkAppId() const;
+
+                    /**
+                     * 设置<p>使用trtc协议时，在trtc的appid</p>
+                     * @param _trtcSdkAppId <p>使用trtc协议时，在trtc的appid</p>
+                     * 
+                     */
+                    void SetTrtcSdkAppId(const std::string& _trtcSdkAppId);
+
+                    /**
+                     * 判断参数 TrtcSdkAppId 是否已赋值
+                     * @return TrtcSdkAppId 是否已赋值
+                     * 
+                     */
+                    bool TrtcSdkAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>进入房间时需要用UserSign来校验权限</p>
+                     * @return TrtcUserSig <p>进入房间时需要用UserSign来校验权限</p>
+                     * 
+                     */
+                    std::string GetTrtcUserSig() const;
+
+                    /**
+                     * 设置<p>进入房间时需要用UserSign来校验权限</p>
+                     * @param _trtcUserSig <p>进入房间时需要用UserSign来校验权限</p>
+                     * 
+                     */
+                    void SetTrtcUserSig(const std::string& _trtcUserSig);
+
+                    /**
+                     * 判断参数 TrtcUserSig 是否已赋值
+                     * @return TrtcUserSig 是否已赋值
+                     * 
+                     */
+                    bool TrtcUserSigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>要进入的房间</p>
+                     * @return TrtcRoomId <p>要进入的房间</p>
+                     * 
+                     */
+                    std::string GetTrtcRoomId() const;
+
+                    /**
+                     * 设置<p>要进入的房间</p>
+                     * @param _trtcRoomId <p>要进入的房间</p>
+                     * 
+                     */
+                    void SetTrtcRoomId(const std::string& _trtcRoomId);
+
+                    /**
+                     * 判断参数 TrtcRoomId 是否已赋值
+                     * @return TrtcRoomId 是否已赋值
+                     * 
+                     */
+                    bool TrtcRoomIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +262,30 @@ namespace TencentCloud
                      */
                     std::string m_roomType;
                     bool m_roomTypeHasBeenSet;
+
+                    /**
+                     * <p>交互模式下的协议，支持rtmp和trtc，默认是rtmp</p>
+                     */
+                    std::string m_sessionProtocol;
+                    bool m_sessionProtocolHasBeenSet;
+
+                    /**
+                     * <p>使用trtc协议时，在trtc的appid</p>
+                     */
+                    std::string m_trtcSdkAppId;
+                    bool m_trtcSdkAppIdHasBeenSet;
+
+                    /**
+                     * <p>进入房间时需要用UserSign来校验权限</p>
+                     */
+                    std::string m_trtcUserSig;
+                    bool m_trtcUserSigHasBeenSet;
+
+                    /**
+                     * <p>要进入的房间</p>
+                     */
+                    std::string m_trtcRoomId;
+                    bool m_trtcRoomIdHasBeenSet;
 
                 };
             }

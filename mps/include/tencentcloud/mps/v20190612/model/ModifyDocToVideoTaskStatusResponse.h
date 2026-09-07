@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_ESSBASIC_V20210526_MODEL_CHANNELCREATECONVERTTASKAPIRESPONSE_H_
-#define TENCENTCLOUD_ESSBASIC_V20210526_MODEL_CHANNELCREATECONVERTTASKAPIRESPONSE_H_
+#ifndef TENCENTCLOUD_MPS_V20190612_MODEL_MODIFYDOCTOVIDEOTASKSTATUSRESPONSE_H_
+#define TENCENTCLOUD_MPS_V20190612_MODEL_MODIFYDOCTOVIDEOTASKSTATUSRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,27 +25,27 @@
 
 namespace TencentCloud
 {
-    namespace Essbasic
+    namespace Mps
     {
-        namespace V20210526
+        namespace V20190612
         {
             namespace Model
             {
                 /**
-                * ChannelCreateConvertTaskApi返回参数结构体
+                * ModifyDocToVideoTaskStatus返回参数结构体
                 */
-                class ChannelCreateConvertTaskApiResponse : public AbstractModel
+                class ModifyDocToVideoTaskStatusResponse : public AbstractModel
                 {
                 public:
-                    ChannelCreateConvertTaskApiResponse();
-                    ~ChannelCreateConvertTaskApiResponse() = default;
+                    ModifyDocToVideoTaskStatusResponse();
+                    ~ModifyDocToVideoTaskStatusResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取接口返回的文件转换任务Id，可以调用接口<a href="https://qian.tencent.com/developers/partnerApis/files/ChannelGetTaskResultApi" target="_blank">查询转换任务状态</a>获取转换任务的状态和转换后的文件资源Id。
-                     * @return TaskId 接口返回的文件转换任务Id，可以调用接口<a href="https://qian.tencent.com/developers/partnerApis/files/ChannelGetTaskResultApi" target="_blank">查询转换任务状态</a>获取转换任务的状态和转换后的文件资源Id。
+                     * 获取<p>任务ID</p>
+                     * @return TaskId <p>任务ID</p>
                      * 
                      */
                     std::string GetTaskId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 接口返回的文件转换任务Id，可以调用接口<a href="https://qian.tencent.com/developers/partnerApis/files/ChannelGetTaskResultApi" target="_blank">查询转换任务状态</a>获取转换任务的状态和转换后的文件资源Id。
+                     * <p>任务ID</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
@@ -71,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_ESSBASIC_V20210526_MODEL_CHANNELCREATECONVERTTASKAPIRESPONSE_H_
+#endif // !TENCENTCLOUD_MPS_V20190612_MODEL_MODIFYDOCTOVIDEOTASKSTATUSRESPONSE_H_
