@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
-                     * @return InstanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * 获取<p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
+                     * @return InstanceId <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
-                     * @param _instanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * 设置<p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
+                     * @param _instanceId <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,19 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取查询条件列表:
-支持TopicName模糊查询
-                     * @return Filters 查询条件列表:
-支持TopicName模糊查询
+                     * 获取<p>查询条件列表:<br>支持TopicName模糊查询</p>
+                     * @return Filters <p>查询条件列表:<br>支持TopicName模糊查询</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置查询条件列表:
-支持TopicName模糊查询
-                     * @param _filters 查询条件列表:
-支持TopicName模糊查询
+                     * 设置<p>查询条件列表:<br>支持TopicName模糊查询</p>
+                     * @param _filters <p>查询条件列表:<br>支持TopicName模糊查询</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -90,15 +86,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取查询起始位置，默认0。
-                     * @return Offset 查询起始位置，默认0。
+                     * 获取<p>查询起始位置，默认0。</p>
+                     * @return Offset <p>查询起始位置，默认0。</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置查询起始位置，默认0。
-                     * @param _offset 查询起始位置，默认0。
+                     * 设置<p>查询起始位置，默认0。</p>
+                     * @param _offset <p>查询起始位置，默认0。</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -111,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询结果限制数量，默认20，最大20
-                     * @return Limit 查询结果限制数量，默认20，最大20
+                     * 获取<p>查询结果限制数量，默认20，最大20</p>
+                     * @return Limit <p>查询结果限制数量，默认20，最大20</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置查询结果限制数量，默认20，最大20
-                     * @param _limit 查询结果限制数量，默认20，最大20
+                     * 设置<p>查询结果限制数量，默认20，最大20</p>
+                     * @param _limit <p>查询结果限制数量，默认20，最大20</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -134,26 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 查询条件列表:
-支持TopicName模糊查询
+                     * <p>查询条件列表:<br>支持TopicName模糊查询</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 查询起始位置，默认0。
+                     * <p>查询起始位置，默认0。</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询结果限制数量，默认20，最大20
+                     * <p>查询结果限制数量，默认20，最大20</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

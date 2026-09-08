@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool ClusterLevelHasBeenSet() const;
 
+                    /**
+                     * 获取<p>可用区</p>
+                     * @return Zone <p>可用区</p>
+                     * 
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置<p>可用区</p>
+                     * @param _zone <p>可用区</p>
+                     * 
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     * 
+                     */
+                    bool ZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_clusterLevel;
                     bool m_clusterLevelHasBeenSet;
+
+                    /**
+                     * <p>可用区</p>
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
 
                 };
             }

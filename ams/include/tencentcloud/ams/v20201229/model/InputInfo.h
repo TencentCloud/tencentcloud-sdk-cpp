@@ -156,6 +156,48 @@ namespace TencentCloud
                      */
                     bool TextContentHasBeenSet() const;
 
+                    /**
+                     * 获取<p>标题</p>
+                     * @return Title <p>标题</p>
+                     * 
+                     */
+                    std::string GetTitle() const;
+
+                    /**
+                     * 设置<p>标题</p>
+                     * @param _title <p>标题</p>
+                     * 
+                     */
+                    void SetTitle(const std::string& _title);
+
+                    /**
+                     * 判断参数 Title 是否已赋值
+                     * @return Title 是否已赋值
+                     * 
+                     */
+                    bool TitleHasBeenSet() const;
+
+                    /**
+                     * 获取<p>其他信息</p>
+                     * @return Extra <p>其他信息</p>
+                     * 
+                     */
+                    std::string GetExtra() const;
+
+                    /**
+                     * 设置<p>其他信息</p>
+                     * @param _extra <p>其他信息</p>
+                     * 
+                     */
+                    void SetExtra(const std::string& _extra);
+
+                    /**
+                     * 判断参数 Extra 是否已赋值
+                     * @return Extra 是否已赋值
+                     * 
+                     */
+                    bool ExtraHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +230,18 @@ namespace TencentCloud
                      */
                     std::string m_textContent;
                     bool m_textContentHasBeenSet;
+
+                    /**
+                     * <p>标题</p>
+                     */
+                    std::string m_title;
+                    bool m_titleHasBeenSet;
+
+                    /**
+                     * <p>其他信息</p>
+                     */
+                    std::string m_extra;
+                    bool m_extraHasBeenSet;
 
                 };
             }

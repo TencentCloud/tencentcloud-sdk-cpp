@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<b>点播[应用](/document/product/266/14574) ID。</b>
-                     * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。</b>
+                     * 获取<p><b>点播<a href="/document/product/266/14574">应用</a> ID。</b></p>
+                     * @return SubAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>点播[应用](/document/product/266/14574) ID。</b>
-                     * @param _subAppId <b>点播[应用](/document/product/266/14574) ID。</b>
+                     * 设置<p><b>点播<a href="/document/product/266/14574">应用</a> ID。</b></p>
+                     * @param _subAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取轮播播单唯一标识。
-                     * @return RoundPlayId 轮播播单唯一标识。
+                     * 获取<p>轮播播单唯一标识。</p>
+                     * @return RoundPlayId <p>轮播播单唯一标识。</p>
                      * 
                      */
                     std::string GetRoundPlayId() const;
 
                     /**
-                     * 设置轮播播单唯一标识。
-                     * @param _roundPlayId 轮播播单唯一标识。
+                     * 设置<p>轮播播单唯一标识。</p>
+                     * @param _roundPlayId <p>轮播播单唯一标识。</p>
                      * 
                      */
                     void SetRoundPlayId(const std::string& _roundPlayId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RoundPlayIdHasBeenSet() const;
 
                     /**
-                     * 获取返回的播放列表的长度。最大10，默认值为5。
-                     * @return Limit 返回的播放列表的长度。最大10，默认值为5。
+                     * 获取<p>返回的播放列表的长度。最大10，默认值为5。</p>
+                     * @return Limit <p>返回的播放列表的长度。最大10，默认值为5。</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回的播放列表的长度。最大10，默认值为5。
-                     * @param _limit 返回的播放列表的长度。最大10，默认值为5。
+                     * 设置<p>返回的播放列表的长度。最大10，默认值为5。</p>
+                     * @param _limit <p>返回的播放列表的长度。最大10，默认值为5。</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <b>点播[应用](/document/product/266/14574) ID。</b>
+                     * <p><b>点播<a href="/document/product/266/14574">应用</a> ID。</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 轮播播单唯一标识。
+                     * <p>轮播播单唯一标识。</p>
                      */
                     std::string m_roundPlayId;
                     bool m_roundPlayIdHasBeenSet;
 
                     /**
-                     * 返回的播放列表的长度。最大10，默认值为5。
+                     * <p>返回的播放列表的长度。最大10，默认值为5。</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

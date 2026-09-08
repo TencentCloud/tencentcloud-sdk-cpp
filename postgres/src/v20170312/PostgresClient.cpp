@@ -340,6 +340,106 @@ PostgresClient::CloseDBProxyAddressOutcomeCallable PostgresClient::CloseDBProxyA
     return prom->get_future();
 }
 
+PostgresClient::CloseMem0ServiceOutcome PostgresClient::CloseMem0Service(const CloseMem0ServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseMem0Service");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseMem0ServiceResponse rsp = CloseMem0ServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseMem0ServiceOutcome(rsp);
+        else
+            return CloseMem0ServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseMem0ServiceOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::CloseMem0ServiceAsync(const CloseMem0ServiceRequest& request, const CloseMem0ServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CloseMem0ServiceRequest&;
+    using Resp = CloseMem0ServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CloseMem0Service", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PostgresClient::CloseMem0ServiceOutcomeCallable PostgresClient::CloseMem0ServiceCallable(const CloseMem0ServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CloseMem0ServiceOutcome>>();
+    CloseMem0ServiceAsync(
+    request,
+    [prom](
+        const PostgresClient*,
+        const CloseMem0ServiceRequest&,
+        CloseMem0ServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+PostgresClient::ClosePostgRESTServiceOutcome PostgresClient::ClosePostgRESTService(const ClosePostgRESTServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ClosePostgRESTService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ClosePostgRESTServiceResponse rsp = ClosePostgRESTServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ClosePostgRESTServiceOutcome(rsp);
+        else
+            return ClosePostgRESTServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return ClosePostgRESTServiceOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::ClosePostgRESTServiceAsync(const ClosePostgRESTServiceRequest& request, const ClosePostgRESTServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ClosePostgRESTServiceRequest&;
+    using Resp = ClosePostgRESTServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ClosePostgRESTService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PostgresClient::ClosePostgRESTServiceOutcomeCallable PostgresClient::ClosePostgRESTServiceCallable(const ClosePostgRESTServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ClosePostgRESTServiceOutcome>>();
+    ClosePostgRESTServiceAsync(
+    request,
+    [prom](
+        const PostgresClient*,
+        const ClosePostgRESTServiceRequest&,
+        ClosePostgRESTServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 PostgresClient::CreateAccountOutcome PostgresClient::CreateAccount(const CreateAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAccount");
@@ -3190,6 +3290,56 @@ PostgresClient::DescribeMaintainTimeWindowOutcomeCallable PostgresClient::Descri
     return prom->get_future();
 }
 
+PostgresClient::DescribeMem0ServiceOutcome PostgresClient::DescribeMem0Service(const DescribeMem0ServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMem0Service");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMem0ServiceResponse rsp = DescribeMem0ServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMem0ServiceOutcome(rsp);
+        else
+            return DescribeMem0ServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMem0ServiceOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeMem0ServiceAsync(const DescribeMem0ServiceRequest& request, const DescribeMem0ServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMem0ServiceRequest&;
+    using Resp = DescribeMem0ServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMem0Service", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PostgresClient::DescribeMem0ServiceOutcomeCallable PostgresClient::DescribeMem0ServiceCallable(const DescribeMem0ServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMem0ServiceOutcome>>();
+    DescribeMem0ServiceAsync(
+    request,
+    [prom](
+        const PostgresClient*,
+        const DescribeMem0ServiceRequest&,
+        DescribeMem0ServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 PostgresClient::DescribeOrdersOutcome PostgresClient::DescribeOrders(const DescribeOrdersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOrders");
@@ -3382,6 +3532,56 @@ PostgresClient::DescribeParamsEventOutcomeCallable PostgresClient::DescribeParam
         const PostgresClient*,
         const DescribeParamsEventRequest&,
         DescribeParamsEventOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+PostgresClient::DescribePostgRESTServiceOutcome PostgresClient::DescribePostgRESTService(const DescribePostgRESTServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePostgRESTService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePostgRESTServiceResponse rsp = DescribePostgRESTServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePostgRESTServiceOutcome(rsp);
+        else
+            return DescribePostgRESTServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePostgRESTServiceOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribePostgRESTServiceAsync(const DescribePostgRESTServiceRequest& request, const DescribePostgRESTServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePostgRESTServiceRequest&;
+    using Resp = DescribePostgRESTServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePostgRESTService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PostgresClient::DescribePostgRESTServiceOutcomeCallable PostgresClient::DescribePostgRESTServiceCallable(const DescribePostgRESTServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePostgRESTServiceOutcome>>();
+    DescribePostgRESTServiceAsync(
+    request,
+    [prom](
+        const PostgresClient*,
+        const DescribePostgRESTServiceRequest&,
+        DescribePostgRESTServiceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5582,6 +5782,106 @@ PostgresClient::OpenDBExtranetAccessOutcomeCallable PostgresClient::OpenDBExtran
         const PostgresClient*,
         const OpenDBExtranetAccessRequest&,
         OpenDBExtranetAccessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+PostgresClient::OpenMem0ServiceOutcome PostgresClient::OpenMem0Service(const OpenMem0ServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenMem0Service");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenMem0ServiceResponse rsp = OpenMem0ServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenMem0ServiceOutcome(rsp);
+        else
+            return OpenMem0ServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenMem0ServiceOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::OpenMem0ServiceAsync(const OpenMem0ServiceRequest& request, const OpenMem0ServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const OpenMem0ServiceRequest&;
+    using Resp = OpenMem0ServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "OpenMem0Service", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PostgresClient::OpenMem0ServiceOutcomeCallable PostgresClient::OpenMem0ServiceCallable(const OpenMem0ServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<OpenMem0ServiceOutcome>>();
+    OpenMem0ServiceAsync(
+    request,
+    [prom](
+        const PostgresClient*,
+        const OpenMem0ServiceRequest&,
+        OpenMem0ServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+PostgresClient::OpenPostgRESTServiceOutcome PostgresClient::OpenPostgRESTService(const OpenPostgRESTServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenPostgRESTService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenPostgRESTServiceResponse rsp = OpenPostgRESTServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenPostgRESTServiceOutcome(rsp);
+        else
+            return OpenPostgRESTServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenPostgRESTServiceOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::OpenPostgRESTServiceAsync(const OpenPostgRESTServiceRequest& request, const OpenPostgRESTServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const OpenPostgRESTServiceRequest&;
+    using Resp = OpenPostgRESTServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "OpenPostgRESTService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PostgresClient::OpenPostgRESTServiceOutcomeCallable PostgresClient::OpenPostgRESTServiceCallable(const OpenPostgRESTServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<OpenPostgRESTServiceOutcome>>();
+    OpenPostgRESTServiceAsync(
+    request,
+    [prom](
+        const PostgresClient*,
+        const OpenPostgRESTServiceRequest&,
+        OpenPostgRESTServiceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

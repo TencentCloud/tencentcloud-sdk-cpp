@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
-                     * @return InstanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * 获取<p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
+                     * @return InstanceId <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
-                     * @param _instanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * 设置<p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
+                     * @param _instanceId <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取客户端ID
-                     * @return ClientId 客户端ID
+                     * 获取<p>客户端ID</p>
+                     * @return ClientId <p>客户端ID</p>
                      * 
                      */
                     std::string GetClientId() const;
 
                     /**
-                     * 设置客户端ID
-                     * @param _clientId 客户端ID
+                     * 设置<p>客户端ID</p>
+                     * @param _clientId <p>客户端ID</p>
                      * 
                      */
                     void SetClientId(const std::string& _clientId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ClientIdHasBeenSet() const;
 
                     /**
-                     * 获取客户端数量限制,最大1024，默认1024
-                     * @return Number 客户端数量限制,最大1024，默认1024
+                     * 获取<p>客户端数量限制,最大1024，默认1024</p>
+                     * @return Number <p>客户端数量限制,最大1024，默认1024</p>
                      * 
                      */
                     std::string GetNumber() const;
 
                     /**
-                     * 设置客户端数量限制,最大1024，默认1024
-                     * @param _number 客户端数量限制,最大1024，默认1024
+                     * 设置<p>客户端数量限制,最大1024，默认1024</p>
+                     * @param _number <p>客户端数量限制,最大1024，默认1024</p>
                      * 
                      */
                     void SetNumber(const std::string& _number);
@@ -106,23 +106,15 @@ namespace TencentCloud
                     bool NumberHasBeenSet() const;
 
                     /**
-                     * 获取0:查询在线和离线客户端（默认值）
-1:查询在线客户端
-2:查询离线客户端
-                     * @return OnlineStatus 0:查询在线和离线客户端（默认值）
-1:查询在线客户端
-2:查询离线客户端
+                     * 获取<p>0:查询在线和离线客户端（默认值）<br>1:查询在线客户端<br>2:查询离线客户端</p>
+                     * @return OnlineStatus <p>0:查询在线和离线客户端（默认值）<br>1:查询在线客户端<br>2:查询离线客户端</p>
                      * 
                      */
                     int64_t GetOnlineStatus() const;
 
                     /**
-                     * 设置0:查询在线和离线客户端（默认值）
-1:查询在线客户端
-2:查询离线客户端
-                     * @param _onlineStatus 0:查询在线和离线客户端（默认值）
-1:查询在线客户端
-2:查询离线客户端
+                     * 设置<p>0:查询在线和离线客户端（默认值）<br>1:查询在线客户端<br>2:查询离线客户端</p>
+                     * @param _onlineStatus <p>0:查询在线和离线客户端（默认值）<br>1:查询在线客户端<br>2:查询离线客户端</p>
                      * 
                      */
                     void SetOnlineStatus(const int64_t& _onlineStatus);
@@ -135,19 +127,15 @@ namespace TencentCloud
                     bool OnlineStatusHasBeenSet() const;
 
                     /**
-                     * 获取在线连接：表示最后的连接时间
-离线连接：表示最后的断开连接时间
-                     * @return MaxTimestamp 在线连接：表示最后的连接时间
-离线连接：表示最后的断开连接时间
+                     * 获取<p>在线连接：表示最后的连接时间<br>离线连接：表示最后的断开连接时间</p>
+                     * @return MaxTimestamp <p>在线连接：表示最后的连接时间<br>离线连接：表示最后的断开连接时间</p>
                      * 
                      */
                     int64_t GetMaxTimestamp() const;
 
                     /**
-                     * 设置在线连接：表示最后的连接时间
-离线连接：表示最后的断开连接时间
-                     * @param _maxTimestamp 在线连接：表示最后的连接时间
-离线连接：表示最后的断开连接时间
+                     * 设置<p>在线连接：表示最后的连接时间<br>离线连接：表示最后的断开连接时间</p>
+                     * @param _maxTimestamp <p>在线连接：表示最后的连接时间<br>离线连接：表示最后的断开连接时间</p>
                      * 
                      */
                     void SetMaxTimestamp(const int64_t& _maxTimestamp);
@@ -162,34 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 客户端ID
+                     * <p>客户端ID</p>
                      */
                     std::string m_clientId;
                     bool m_clientIdHasBeenSet;
 
                     /**
-                     * 客户端数量限制,最大1024，默认1024
+                     * <p>客户端数量限制,最大1024，默认1024</p>
                      */
                     std::string m_number;
                     bool m_numberHasBeenSet;
 
                     /**
-                     * 0:查询在线和离线客户端（默认值）
-1:查询在线客户端
-2:查询离线客户端
+                     * <p>0:查询在线和离线客户端（默认值）<br>1:查询在线客户端<br>2:查询离线客户端</p>
                      */
                     int64_t m_onlineStatus;
                     bool m_onlineStatusHasBeenSet;
 
                     /**
-                     * 在线连接：表示最后的连接时间
-离线连接：表示最后的断开连接时间
+                     * <p>在线连接：表示最后的连接时间<br>离线连接：表示最后的断开连接时间</p>
                      */
                     int64_t m_maxTimestamp;
                     bool m_maxTimestampHasBeenSet;

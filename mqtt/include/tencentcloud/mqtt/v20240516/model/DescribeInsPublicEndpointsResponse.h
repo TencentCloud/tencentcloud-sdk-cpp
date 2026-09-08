@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取接入点
-                     * @return Endpoints 接入点
+                     * 获取<p>接入点</p>
+                     * @return Endpoints <p>接入点</p>
                      * 
                      */
                     std::vector<MQTTEndpointItem> GetEndpoints() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool EndpointsHasBeenSet() const;
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取<p>实例id</p>
+                     * @return InstanceId <p>实例id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取带宽，单位Mbps
-                     * @return Bandwidth 带宽，单位Mbps
+                     * 获取<p>带宽，单位Mbps</p>
+                     * @return Bandwidth <p>带宽，单位Mbps</p>
                      * 
                      */
                     int64_t GetBandwidth() const;
@@ -88,8 +88,8 @@ namespace TencentCloud
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取公网访问规则
-                     * @return Rules 公网访问规则
+                     * 获取<p>公网访问规则</p>
+                     * @return Rules <p>公网访问规则</p>
                      * 
                      */
                     std::vector<PublicAccessRule> GetRules() const;
@@ -102,18 +102,8 @@ namespace TencentCloud
                     bool RulesHasBeenSet() const;
 
                     /**
-                     * 获取公网状态：
-    NORMAL-正常
-    CLOSING-关闭中
-    MODIFYING-修改中
-    CREATING-开启中
-    CLOSE-关闭
-                     * @return Status 公网状态：
-    NORMAL-正常
-    CLOSING-关闭中
-    MODIFYING-修改中
-    CREATING-开启中
-    CLOSE-关闭
+                     * 获取<p>公网状态：<br>    NORMAL-正常<br>    CLOSING-关闭中<br>    MODIFYING-修改中<br>    CREATING-开启中<br>    CLOSE-关闭</p>
+                     * @return Status <p>公网状态：<br>    NORMAL-正常<br>    CLOSING-关闭中<br>    MODIFYING-修改中<br>    CREATING-开启中<br>    CLOSE-关闭</p>
                      * 
                      */
                     std::string GetStatus() const;
@@ -128,36 +118,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 接入点
+                     * <p>接入点</p>
                      */
                     std::vector<MQTTEndpointItem> m_endpoints;
                     bool m_endpointsHasBeenSet;
 
                     /**
-                     * 实例id
+                     * <p>实例id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 带宽，单位Mbps
+                     * <p>带宽，单位Mbps</p>
                      */
                     int64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * 公网访问规则
+                     * <p>公网访问规则</p>
                      */
                     std::vector<PublicAccessRule> m_rules;
                     bool m_rulesHasBeenSet;
 
                     /**
-                     * 公网状态：
-    NORMAL-正常
-    CLOSING-关闭中
-    MODIFYING-修改中
-    CREATING-开启中
-    CLOSE-关闭
+                     * <p>公网状态：<br>    NORMAL-正常<br>    CLOSING-关闭中<br>    MODIFYING-修改中<br>    CREATING-开启中<br>    CLOSE-关闭</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

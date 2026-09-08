@@ -890,6 +890,56 @@ ThpcClient::DescribeClusterDedicatedProxyOutcomeCallable ThpcClient::DescribeClu
     return prom->get_future();
 }
 
+ThpcClient::DescribeClusterMonitorStatusOutcome ThpcClient::DescribeClusterMonitorStatus(const DescribeClusterMonitorStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterMonitorStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterMonitorStatusResponse rsp = DescribeClusterMonitorStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterMonitorStatusOutcome(rsp);
+        else
+            return DescribeClusterMonitorStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterMonitorStatusOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DescribeClusterMonitorStatusAsync(const DescribeClusterMonitorStatusRequest& request, const DescribeClusterMonitorStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeClusterMonitorStatusRequest&;
+    using Resp = DescribeClusterMonitorStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterMonitorStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ThpcClient::DescribeClusterMonitorStatusOutcomeCallable ThpcClient::DescribeClusterMonitorStatusCallable(const DescribeClusterMonitorStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeClusterMonitorStatusOutcome>>();
+    DescribeClusterMonitorStatusAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DescribeClusterMonitorStatusRequest&,
+        DescribeClusterMonitorStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ThpcClient::DescribeClusterStorageOptionOutcome ThpcClient::DescribeClusterStorageOption(const DescribeClusterStorageOptionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterStorageOption");
@@ -1640,6 +1690,56 @@ ThpcClient::DisableClusterDedicatedProxyOutcomeCallable ThpcClient::DisableClust
     return prom->get_future();
 }
 
+ThpcClient::DisableClusterMonitorOutcome ThpcClient::DisableClusterMonitor(const DisableClusterMonitorRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableClusterMonitor");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableClusterMonitorResponse rsp = DisableClusterMonitorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableClusterMonitorOutcome(rsp);
+        else
+            return DisableClusterMonitorOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableClusterMonitorOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DisableClusterMonitorAsync(const DisableClusterMonitorRequest& request, const DisableClusterMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DisableClusterMonitorRequest&;
+    using Resp = DisableClusterMonitorResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DisableClusterMonitor", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ThpcClient::DisableClusterMonitorOutcomeCallable ThpcClient::DisableClusterMonitorCallable(const DisableClusterMonitorRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DisableClusterMonitorOutcome>>();
+    DisableClusterMonitorAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DisableClusterMonitorRequest&,
+        DisableClusterMonitorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ThpcClient::EnableClusterDedicatedProxyOutcome ThpcClient::EnableClusterDedicatedProxy(const EnableClusterDedicatedProxyRequest &request)
 {
     auto outcome = MakeRequest(request, "EnableClusterDedicatedProxy");
@@ -1682,6 +1782,56 @@ ThpcClient::EnableClusterDedicatedProxyOutcomeCallable ThpcClient::EnableCluster
         const ThpcClient*,
         const EnableClusterDedicatedProxyRequest&,
         EnableClusterDedicatedProxyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ThpcClient::EnableClusterMonitorOutcome ThpcClient::EnableClusterMonitor(const EnableClusterMonitorRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableClusterMonitor");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableClusterMonitorResponse rsp = EnableClusterMonitorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableClusterMonitorOutcome(rsp);
+        else
+            return EnableClusterMonitorOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableClusterMonitorOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::EnableClusterMonitorAsync(const EnableClusterMonitorRequest& request, const EnableClusterMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EnableClusterMonitorRequest&;
+    using Resp = EnableClusterMonitorResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EnableClusterMonitor", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ThpcClient::EnableClusterMonitorOutcomeCallable ThpcClient::EnableClusterMonitorCallable(const EnableClusterMonitorRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EnableClusterMonitorOutcome>>();
+    EnableClusterMonitorAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const EnableClusterMonitorRequest&,
+        EnableClusterMonitorOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

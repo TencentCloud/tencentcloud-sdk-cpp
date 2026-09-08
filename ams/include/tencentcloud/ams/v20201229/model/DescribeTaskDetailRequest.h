@@ -43,19 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取该字段表示创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。
-<br>备注：查询接口单次最大查询量为**20条每次**。
-                     * @return TaskId 该字段表示创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。
-<br>备注：查询接口单次最大查询量为**20条每次**。
+                     * 获取<p>该字段表示创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。<br><br>备注：查询接口单次最大查询量为<strong>20条每次</strong>。</p>
+                     * @return TaskId <p>该字段表示创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。<br><br>备注：查询接口单次最大查询量为<strong>20条每次</strong>。</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置该字段表示创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。
-<br>备注：查询接口单次最大查询量为**20条每次**。
-                     * @param _taskId 该字段表示创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。
-<br>备注：查询接口单次最大查询量为**20条每次**。
+                     * 设置<p>该字段表示创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。<br><br>备注：查询接口单次最大查询量为<strong>20条每次</strong>。</p>
+                     * @param _taskId <p>该字段表示创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。<br><br>备注：查询接口单次最大查询量为<strong>20条每次</strong>。</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -68,15 +64,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取该布尔字段表示是否展示全部的音频片段，取值：True(展示全部的音频分片)、False(只展示命中审核规则的音频分片)；默认值为False。
-                     * @return ShowAllSegments 该布尔字段表示是否展示全部的音频片段，取值：True(展示全部的音频分片)、False(只展示命中审核规则的音频分片)；默认值为False。
+                     * 获取<p>该布尔字段表示是否展示全部的音频片段，取值：True(展示全部的音频分片)、False(只展示命中审核规则的音频分片)；默认值为False。</p>
+                     * @return ShowAllSegments <p>该布尔字段表示是否展示全部的音频片段，取值：True(展示全部的音频分片)、False(只展示命中审核规则的音频分片)；默认值为False。</p>
                      * 
                      */
                     bool GetShowAllSegments() const;
 
                     /**
-                     * 设置该布尔字段表示是否展示全部的音频片段，取值：True(展示全部的音频分片)、False(只展示命中审核规则的音频分片)；默认值为False。
-                     * @param _showAllSegments 该布尔字段表示是否展示全部的音频片段，取值：True(展示全部的音频分片)、False(只展示命中审核规则的音频分片)；默认值为False。
+                     * 设置<p>该布尔字段表示是否展示全部的音频片段，取值：True(展示全部的音频分片)、False(只展示命中审核规则的音频分片)；默认值为False。</p>
+                     * @param _showAllSegments <p>该布尔字段表示是否展示全部的音频片段，取值：True(展示全部的音频分片)、False(只展示命中审核规则的音频分片)；默认值为False。</p>
                      * 
                      */
                     void SetShowAllSegments(const bool& _showAllSegments);
@@ -91,14 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 该字段表示创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。
-<br>备注：查询接口单次最大查询量为**20条每次**。
+                     * <p>该字段表示创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。<br><br>备注：查询接口单次最大查询量为<strong>20条每次</strong>。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 该布尔字段表示是否展示全部的音频片段，取值：True(展示全部的音频分片)、False(只展示命中审核规则的音频分片)；默认值为False。
+                     * <p>该布尔字段表示是否展示全部的音频片段，取值：True(展示全部的音频分片)、False(只展示命中审核规则的音频分片)；默认值为False。</p>
                      */
                     bool m_showAllSegments;
                     bool m_showAllSegmentsHasBeenSet;

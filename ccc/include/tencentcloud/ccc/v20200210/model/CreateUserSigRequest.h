@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @return SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 获取<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
+                     * @return SdkAppId <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
-                     * 设置应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @param _sdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 设置<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
+                     * @param _sdkAppId <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取用户 ID，该值必须与 ClientData 字段中 Uid 的值一致
-                     * @return Uid 用户 ID，该值必须与 ClientData 字段中 Uid 的值一致
+                     * 获取<p>用户 ID</p>
+                     * @return Uid <p>用户 ID</p>
                      * 
                      */
                     std::string GetUid() const;
 
                     /**
-                     * 设置用户 ID，该值必须与 ClientData 字段中 Uid 的值一致
-                     * @param _uid 用户 ID，该值必须与 ClientData 字段中 Uid 的值一致
+                     * 设置<p>用户 ID</p>
+                     * @param _uid <p>用户 ID</p>
                      * 
                      */
                     void SetUid(const std::string& _uid);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool UidHasBeenSet() const;
 
                     /**
-                     * 获取用户签名数据，必填字段，为标准 JSON 格式
-                     * @return ClientData 用户签名数据，必填字段，为标准 JSON 格式
+                     * 获取<p>用户签名数据</p>
+                     * @return ClientData <p>用户签名数据</p>
                      * 
                      */
                     std::string GetClientData() const;
 
                     /**
-                     * 设置用户签名数据，必填字段，为标准 JSON 格式
-                     * @param _clientData 用户签名数据，必填字段，为标准 JSON 格式
+                     * 设置<p>用户签名数据</p>
+                     * @param _clientData <p>用户签名数据</p>
                      * 
                      */
                     void SetClientData(const std::string& _clientData);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ClientDataHasBeenSet() const;
 
                     /**
-                     * 获取有效期，单位秒，不超过 1 小时
-                     * @return ExpiredTime 有效期，单位秒，不超过 1 小时
+                     * 获取<p>有效期，单位秒，不超过 1 小时</p>
+                     * @return ExpiredTime <p>有效期，单位秒，不超过 1 小时</p>
                      * 
                      */
                     int64_t GetExpiredTime() const;
 
                     /**
-                     * 设置有效期，单位秒，不超过 1 小时
-                     * @param _expiredTime 有效期，单位秒，不超过 1 小时
+                     * 设置<p>有效期，单位秒，不超过 1 小时</p>
+                     * @param _expiredTime <p>有效期，单位秒，不超过 1 小时</p>
                      * 
                      */
                     void SetExpiredTime(const int64_t& _expiredTime);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      */
                     int64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 用户 ID，该值必须与 ClientData 字段中 Uid 的值一致
+                     * <p>用户 ID</p>
                      */
                     std::string m_uid;
                     bool m_uidHasBeenSet;
 
                     /**
-                     * 用户签名数据，必填字段，为标准 JSON 格式
+                     * <p>用户签名数据</p>
                      */
                     std::string m_clientData;
                     bool m_clientDataHasBeenSet;
 
                     /**
-                     * 有效期，单位秒，不超过 1 小时
+                     * <p>有效期，单位秒，不超过 1 小时</p>
                      */
                     int64_t m_expiredTime;
                     bool m_expiredTimeHasBeenSet;

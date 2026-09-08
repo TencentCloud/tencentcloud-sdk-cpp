@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取认证源总数
-                     * @return TotalCount 认证源总数
+                     * 获取<p>认证源总数</p>
+                     * @return TotalCount <p>认证源总数</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取认证源信息
-                     * @return SourceTypeSet 认证源信息
+                     * 获取<p>认证源信息</p>
+                     * @return SourceTypeSet <p>认证源信息</p>
                      * 
                      */
                     std::vector<SourceType> GetSourceTypeSet() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 认证源总数
+                     * <p>认证源总数</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 认证源信息
+                     * <p>认证源信息</p>
                      */
                     std::vector<SourceType> m_sourceTypeSet;
                     bool m_sourceTypeSetHasBeenSet;

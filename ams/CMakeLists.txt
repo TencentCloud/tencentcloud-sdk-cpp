@@ -26,6 +26,7 @@ set(ams_public_header_model
   include/tencentcloud/ams/v20201229/model/CreateAudioModerationSyncTaskRequest.h
   include/tencentcloud/ams/v20201229/model/HitInfo.h
   include/tencentcloud/ams/v20201229/model/CreateAudioModerationTaskResponse.h
+  include/tencentcloud/ams/v20201229/model/HitSnippetInfos.h
   include/tencentcloud/ams/v20201229/model/TaskResult.h
   include/tencentcloud/ams/v20201229/model/CancelTaskRequest.h
   include/tencentcloud/ams/v20201229/model/DescribeTaskDetailResponse.h
@@ -57,6 +58,7 @@ set(ams_public_header_model
   include/tencentcloud/ams/v20201229/model/MediaInfo.h
   include/tencentcloud/ams/v20201229/model/Tag.h
   include/tencentcloud/ams/v20201229/model/AudioSegments.h
+  include/tencentcloud/ams/v20201229/model/Duration.h
   include/tencentcloud/ams/v20200608/model/ImageSegments.h
   include/tencentcloud/ams/v20200608/model/ImageResultResult.h
   include/tencentcloud/ams/v20200608/model/InputInfo.h
@@ -107,6 +109,7 @@ set(ams_src
   src/v20201229/model/CreateAudioModerationSyncTaskRequest.cpp
   src/v20201229/model/HitInfo.cpp
   src/v20201229/model/CreateAudioModerationTaskResponse.cpp
+  src/v20201229/model/HitSnippetInfos.cpp
   src/v20201229/model/TaskResult.cpp
   src/v20201229/model/CancelTaskRequest.cpp
   src/v20201229/model/DescribeTaskDetailResponse.cpp
@@ -138,6 +141,7 @@ set(ams_src
   src/v20201229/model/MediaInfo.cpp
   src/v20201229/model/Tag.cpp
   src/v20201229/model/AudioSegments.cpp
+  src/v20201229/model/Duration.cpp
   src/v20200608/model/ImageSegments.cpp
   src/v20200608/model/ImageResultResult.cpp
   src/v20200608/model/InputInfo.cpp

@@ -2040,6 +2040,106 @@ ClsClient::CreateRemoteWriteTaskOutcomeCallable ClsClient::CreateRemoteWriteTask
     return prom->get_future();
 }
 
+ClsClient::CreateResourceGraphOutcome ClsClient::CreateResourceGraph(const CreateResourceGraphRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateResourceGraph");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateResourceGraphResponse rsp = CreateResourceGraphResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateResourceGraphOutcome(rsp);
+        else
+            return CreateResourceGraphOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateResourceGraphOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateResourceGraphAsync(const CreateResourceGraphRequest& request, const CreateResourceGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateResourceGraphRequest&;
+    using Resp = CreateResourceGraphResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateResourceGraph", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::CreateResourceGraphOutcomeCallable ClsClient::CreateResourceGraphCallable(const CreateResourceGraphRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateResourceGraphOutcome>>();
+    CreateResourceGraphAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const CreateResourceGraphRequest&,
+        CreateResourceGraphOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::CreateResourceGraphProductIngestTaskOutcome ClsClient::CreateResourceGraphProductIngestTask(const CreateResourceGraphProductIngestTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateResourceGraphProductIngestTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateResourceGraphProductIngestTaskResponse rsp = CreateResourceGraphProductIngestTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateResourceGraphProductIngestTaskOutcome(rsp);
+        else
+            return CreateResourceGraphProductIngestTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateResourceGraphProductIngestTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateResourceGraphProductIngestTaskAsync(const CreateResourceGraphProductIngestTaskRequest& request, const CreateResourceGraphProductIngestTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateResourceGraphProductIngestTaskRequest&;
+    using Resp = CreateResourceGraphProductIngestTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateResourceGraphProductIngestTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::CreateResourceGraphProductIngestTaskOutcomeCallable ClsClient::CreateResourceGraphProductIngestTaskCallable(const CreateResourceGraphProductIngestTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateResourceGraphProductIngestTaskOutcome>>();
+    CreateResourceGraphProductIngestTaskAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const CreateResourceGraphProductIngestTaskRequest&,
+        CreateResourceGraphProductIngestTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::CreateS3RechargeOutcome ClsClient::CreateS3Recharge(const CreateS3RechargeRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateS3Recharge");
@@ -4032,6 +4132,106 @@ ClsClient::DeleteRemoteWriteTaskOutcomeCallable ClsClient::DeleteRemoteWriteTask
         const ClsClient*,
         const DeleteRemoteWriteTaskRequest&,
         DeleteRemoteWriteTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DeleteResourceGraphOutcome ClsClient::DeleteResourceGraph(const DeleteResourceGraphRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteResourceGraph");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteResourceGraphResponse rsp = DeleteResourceGraphResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteResourceGraphOutcome(rsp);
+        else
+            return DeleteResourceGraphOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteResourceGraphOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteResourceGraphAsync(const DeleteResourceGraphRequest& request, const DeleteResourceGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteResourceGraphRequest&;
+    using Resp = DeleteResourceGraphResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteResourceGraph", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DeleteResourceGraphOutcomeCallable ClsClient::DeleteResourceGraphCallable(const DeleteResourceGraphRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteResourceGraphOutcome>>();
+    DeleteResourceGraphAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DeleteResourceGraphRequest&,
+        DeleteResourceGraphOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DeleteResourceGraphProductIngestTaskOutcome ClsClient::DeleteResourceGraphProductIngestTask(const DeleteResourceGraphProductIngestTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteResourceGraphProductIngestTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteResourceGraphProductIngestTaskResponse rsp = DeleteResourceGraphProductIngestTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteResourceGraphProductIngestTaskOutcome(rsp);
+        else
+            return DeleteResourceGraphProductIngestTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteResourceGraphProductIngestTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteResourceGraphProductIngestTaskAsync(const DeleteResourceGraphProductIngestTaskRequest& request, const DeleteResourceGraphProductIngestTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteResourceGraphProductIngestTaskRequest&;
+    using Resp = DeleteResourceGraphProductIngestTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteResourceGraphProductIngestTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DeleteResourceGraphProductIngestTaskOutcomeCallable ClsClient::DeleteResourceGraphProductIngestTaskCallable(const DeleteResourceGraphProductIngestTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteResourceGraphProductIngestTaskOutcome>>();
+    DeleteResourceGraphProductIngestTaskAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DeleteResourceGraphProductIngestTaskRequest&,
+        DeleteResourceGraphProductIngestTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -6990,6 +7190,506 @@ ClsClient::DescribeRemoteWriteTasksOutcomeCallable ClsClient::DescribeRemoteWrit
     return prom->get_future();
 }
 
+ClsClient::DescribeResourceGraphDetailOutcome ClsClient::DescribeResourceGraphDetail(const DescribeResourceGraphDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceGraphDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceGraphDetailResponse rsp = DescribeResourceGraphDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceGraphDetailOutcome(rsp);
+        else
+            return DescribeResourceGraphDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceGraphDetailOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeResourceGraphDetailAsync(const DescribeResourceGraphDetailRequest& request, const DescribeResourceGraphDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeResourceGraphDetailRequest&;
+    using Resp = DescribeResourceGraphDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceGraphDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeResourceGraphDetailOutcomeCallable ClsClient::DescribeResourceGraphDetailCallable(const DescribeResourceGraphDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeResourceGraphDetailOutcome>>();
+    DescribeResourceGraphDetailAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeResourceGraphDetailRequest&,
+        DescribeResourceGraphDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DescribeResourceGraphEntitiesOutcome ClsClient::DescribeResourceGraphEntities(const DescribeResourceGraphEntitiesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceGraphEntities");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceGraphEntitiesResponse rsp = DescribeResourceGraphEntitiesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceGraphEntitiesOutcome(rsp);
+        else
+            return DescribeResourceGraphEntitiesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceGraphEntitiesOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeResourceGraphEntitiesAsync(const DescribeResourceGraphEntitiesRequest& request, const DescribeResourceGraphEntitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeResourceGraphEntitiesRequest&;
+    using Resp = DescribeResourceGraphEntitiesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceGraphEntities", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeResourceGraphEntitiesOutcomeCallable ClsClient::DescribeResourceGraphEntitiesCallable(const DescribeResourceGraphEntitiesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeResourceGraphEntitiesOutcome>>();
+    DescribeResourceGraphEntitiesAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeResourceGraphEntitiesRequest&,
+        DescribeResourceGraphEntitiesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DescribeResourceGraphEntityDependencyOutcome ClsClient::DescribeResourceGraphEntityDependency(const DescribeResourceGraphEntityDependencyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceGraphEntityDependency");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceGraphEntityDependencyResponse rsp = DescribeResourceGraphEntityDependencyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceGraphEntityDependencyOutcome(rsp);
+        else
+            return DescribeResourceGraphEntityDependencyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceGraphEntityDependencyOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeResourceGraphEntityDependencyAsync(const DescribeResourceGraphEntityDependencyRequest& request, const DescribeResourceGraphEntityDependencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeResourceGraphEntityDependencyRequest&;
+    using Resp = DescribeResourceGraphEntityDependencyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceGraphEntityDependency", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeResourceGraphEntityDependencyOutcomeCallable ClsClient::DescribeResourceGraphEntityDependencyCallable(const DescribeResourceGraphEntityDependencyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeResourceGraphEntityDependencyOutcome>>();
+    DescribeResourceGraphEntityDependencyAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeResourceGraphEntityDependencyRequest&,
+        DescribeResourceGraphEntityDependencyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DescribeResourceGraphEntityDetailOutcome ClsClient::DescribeResourceGraphEntityDetail(const DescribeResourceGraphEntityDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceGraphEntityDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceGraphEntityDetailResponse rsp = DescribeResourceGraphEntityDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceGraphEntityDetailOutcome(rsp);
+        else
+            return DescribeResourceGraphEntityDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceGraphEntityDetailOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeResourceGraphEntityDetailAsync(const DescribeResourceGraphEntityDetailRequest& request, const DescribeResourceGraphEntityDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeResourceGraphEntityDetailRequest&;
+    using Resp = DescribeResourceGraphEntityDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceGraphEntityDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeResourceGraphEntityDetailOutcomeCallable ClsClient::DescribeResourceGraphEntityDetailCallable(const DescribeResourceGraphEntityDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeResourceGraphEntityDetailOutcome>>();
+    DescribeResourceGraphEntityDetailAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeResourceGraphEntityDetailRequest&,
+        DescribeResourceGraphEntityDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DescribeResourceGraphFailureDetailOutcome ClsClient::DescribeResourceGraphFailureDetail(const DescribeResourceGraphFailureDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceGraphFailureDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceGraphFailureDetailResponse rsp = DescribeResourceGraphFailureDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceGraphFailureDetailOutcome(rsp);
+        else
+            return DescribeResourceGraphFailureDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceGraphFailureDetailOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeResourceGraphFailureDetailAsync(const DescribeResourceGraphFailureDetailRequest& request, const DescribeResourceGraphFailureDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeResourceGraphFailureDetailRequest&;
+    using Resp = DescribeResourceGraphFailureDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceGraphFailureDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeResourceGraphFailureDetailOutcomeCallable ClsClient::DescribeResourceGraphFailureDetailCallable(const DescribeResourceGraphFailureDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeResourceGraphFailureDetailOutcome>>();
+    DescribeResourceGraphFailureDetailAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeResourceGraphFailureDetailRequest&,
+        DescribeResourceGraphFailureDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DescribeResourceGraphIngestTaskFailureDetailOutcome ClsClient::DescribeResourceGraphIngestTaskFailureDetail(const DescribeResourceGraphIngestTaskFailureDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceGraphIngestTaskFailureDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceGraphIngestTaskFailureDetailResponse rsp = DescribeResourceGraphIngestTaskFailureDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceGraphIngestTaskFailureDetailOutcome(rsp);
+        else
+            return DescribeResourceGraphIngestTaskFailureDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceGraphIngestTaskFailureDetailOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeResourceGraphIngestTaskFailureDetailAsync(const DescribeResourceGraphIngestTaskFailureDetailRequest& request, const DescribeResourceGraphIngestTaskFailureDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeResourceGraphIngestTaskFailureDetailRequest&;
+    using Resp = DescribeResourceGraphIngestTaskFailureDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceGraphIngestTaskFailureDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeResourceGraphIngestTaskFailureDetailOutcomeCallable ClsClient::DescribeResourceGraphIngestTaskFailureDetailCallable(const DescribeResourceGraphIngestTaskFailureDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeResourceGraphIngestTaskFailureDetailOutcome>>();
+    DescribeResourceGraphIngestTaskFailureDetailAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeResourceGraphIngestTaskFailureDetailRequest&,
+        DescribeResourceGraphIngestTaskFailureDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DescribeResourceGraphProductIngestTaskDetailOutcome ClsClient::DescribeResourceGraphProductIngestTaskDetail(const DescribeResourceGraphProductIngestTaskDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceGraphProductIngestTaskDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceGraphProductIngestTaskDetailResponse rsp = DescribeResourceGraphProductIngestTaskDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceGraphProductIngestTaskDetailOutcome(rsp);
+        else
+            return DescribeResourceGraphProductIngestTaskDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceGraphProductIngestTaskDetailOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeResourceGraphProductIngestTaskDetailAsync(const DescribeResourceGraphProductIngestTaskDetailRequest& request, const DescribeResourceGraphProductIngestTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeResourceGraphProductIngestTaskDetailRequest&;
+    using Resp = DescribeResourceGraphProductIngestTaskDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceGraphProductIngestTaskDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeResourceGraphProductIngestTaskDetailOutcomeCallable ClsClient::DescribeResourceGraphProductIngestTaskDetailCallable(const DescribeResourceGraphProductIngestTaskDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeResourceGraphProductIngestTaskDetailOutcome>>();
+    DescribeResourceGraphProductIngestTaskDetailAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeResourceGraphProductIngestTaskDetailRequest&,
+        DescribeResourceGraphProductIngestTaskDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DescribeResourceGraphProductIngestTaskListOutcome ClsClient::DescribeResourceGraphProductIngestTaskList(const DescribeResourceGraphProductIngestTaskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceGraphProductIngestTaskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceGraphProductIngestTaskListResponse rsp = DescribeResourceGraphProductIngestTaskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceGraphProductIngestTaskListOutcome(rsp);
+        else
+            return DescribeResourceGraphProductIngestTaskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceGraphProductIngestTaskListOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeResourceGraphProductIngestTaskListAsync(const DescribeResourceGraphProductIngestTaskListRequest& request, const DescribeResourceGraphProductIngestTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeResourceGraphProductIngestTaskListRequest&;
+    using Resp = DescribeResourceGraphProductIngestTaskListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceGraphProductIngestTaskList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeResourceGraphProductIngestTaskListOutcomeCallable ClsClient::DescribeResourceGraphProductIngestTaskListCallable(const DescribeResourceGraphProductIngestTaskListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeResourceGraphProductIngestTaskListOutcome>>();
+    DescribeResourceGraphProductIngestTaskListAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeResourceGraphProductIngestTaskListRequest&,
+        DescribeResourceGraphProductIngestTaskListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DescribeResourceGraphTkeClusterStatusOutcome ClsClient::DescribeResourceGraphTkeClusterStatus(const DescribeResourceGraphTkeClusterStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceGraphTkeClusterStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceGraphTkeClusterStatusResponse rsp = DescribeResourceGraphTkeClusterStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceGraphTkeClusterStatusOutcome(rsp);
+        else
+            return DescribeResourceGraphTkeClusterStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceGraphTkeClusterStatusOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeResourceGraphTkeClusterStatusAsync(const DescribeResourceGraphTkeClusterStatusRequest& request, const DescribeResourceGraphTkeClusterStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeResourceGraphTkeClusterStatusRequest&;
+    using Resp = DescribeResourceGraphTkeClusterStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceGraphTkeClusterStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeResourceGraphTkeClusterStatusOutcomeCallable ClsClient::DescribeResourceGraphTkeClusterStatusCallable(const DescribeResourceGraphTkeClusterStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeResourceGraphTkeClusterStatusOutcome>>();
+    DescribeResourceGraphTkeClusterStatusAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeResourceGraphTkeClusterStatusRequest&,
+        DescribeResourceGraphTkeClusterStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DescribeResourceGraphsOutcome ClsClient::DescribeResourceGraphs(const DescribeResourceGraphsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceGraphs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceGraphsResponse rsp = DescribeResourceGraphsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceGraphsOutcome(rsp);
+        else
+            return DescribeResourceGraphsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceGraphsOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeResourceGraphsAsync(const DescribeResourceGraphsRequest& request, const DescribeResourceGraphsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeResourceGraphsRequest&;
+    using Resp = DescribeResourceGraphsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceGraphs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeResourceGraphsOutcomeCallable ClsClient::DescribeResourceGraphsCallable(const DescribeResourceGraphsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeResourceGraphsOutcome>>();
+    DescribeResourceGraphsAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeResourceGraphsRequest&,
+        DescribeResourceGraphsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::DescribeS3RechargesOutcome ClsClient::DescribeS3Recharges(const DescribeS3RechargesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeS3Recharges");
@@ -9390,6 +10090,156 @@ ClsClient::ModifyRemoteWriteTaskOutcomeCallable ClsClient::ModifyRemoteWriteTask
     return prom->get_future();
 }
 
+ClsClient::ModifyResourceGraphOutcome ClsClient::ModifyResourceGraph(const ModifyResourceGraphRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyResourceGraph");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyResourceGraphResponse rsp = ModifyResourceGraphResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyResourceGraphOutcome(rsp);
+        else
+            return ModifyResourceGraphOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyResourceGraphOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyResourceGraphAsync(const ModifyResourceGraphRequest& request, const ModifyResourceGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyResourceGraphRequest&;
+    using Resp = ModifyResourceGraphResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyResourceGraph", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::ModifyResourceGraphOutcomeCallable ClsClient::ModifyResourceGraphCallable(const ModifyResourceGraphRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyResourceGraphOutcome>>();
+    ModifyResourceGraphAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const ModifyResourceGraphRequest&,
+        ModifyResourceGraphOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::ModifyResourceGraphEntityTopicsRelationOutcome ClsClient::ModifyResourceGraphEntityTopicsRelation(const ModifyResourceGraphEntityTopicsRelationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyResourceGraphEntityTopicsRelation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyResourceGraphEntityTopicsRelationResponse rsp = ModifyResourceGraphEntityTopicsRelationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyResourceGraphEntityTopicsRelationOutcome(rsp);
+        else
+            return ModifyResourceGraphEntityTopicsRelationOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyResourceGraphEntityTopicsRelationOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyResourceGraphEntityTopicsRelationAsync(const ModifyResourceGraphEntityTopicsRelationRequest& request, const ModifyResourceGraphEntityTopicsRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyResourceGraphEntityTopicsRelationRequest&;
+    using Resp = ModifyResourceGraphEntityTopicsRelationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyResourceGraphEntityTopicsRelation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::ModifyResourceGraphEntityTopicsRelationOutcomeCallable ClsClient::ModifyResourceGraphEntityTopicsRelationCallable(const ModifyResourceGraphEntityTopicsRelationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyResourceGraphEntityTopicsRelationOutcome>>();
+    ModifyResourceGraphEntityTopicsRelationAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const ModifyResourceGraphEntityTopicsRelationRequest&,
+        ModifyResourceGraphEntityTopicsRelationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::ModifyResourceGraphProductIngestTaskOutcome ClsClient::ModifyResourceGraphProductIngestTask(const ModifyResourceGraphProductIngestTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyResourceGraphProductIngestTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyResourceGraphProductIngestTaskResponse rsp = ModifyResourceGraphProductIngestTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyResourceGraphProductIngestTaskOutcome(rsp);
+        else
+            return ModifyResourceGraphProductIngestTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyResourceGraphProductIngestTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyResourceGraphProductIngestTaskAsync(const ModifyResourceGraphProductIngestTaskRequest& request, const ModifyResourceGraphProductIngestTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyResourceGraphProductIngestTaskRequest&;
+    using Resp = ModifyResourceGraphProductIngestTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyResourceGraphProductIngestTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::ModifyResourceGraphProductIngestTaskOutcomeCallable ClsClient::ModifyResourceGraphProductIngestTaskCallable(const ModifyResourceGraphProductIngestTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyResourceGraphProductIngestTaskOutcome>>();
+    ModifyResourceGraphProductIngestTaskAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const ModifyResourceGraphProductIngestTaskRequest&,
+        ModifyResourceGraphProductIngestTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::ModifyS3RechargeOutcome ClsClient::ModifyS3Recharge(const ModifyS3RechargeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyS3Recharge");
@@ -10032,6 +10882,106 @@ ClsClient::QueryRangeMetricOutcomeCallable ClsClient::QueryRangeMetricCallable(c
         const ClsClient*,
         const QueryRangeMetricRequest&,
         QueryRangeMetricOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::RetryResourceGraphOutcome ClsClient::RetryResourceGraph(const RetryResourceGraphRequest &request)
+{
+    auto outcome = MakeRequest(request, "RetryResourceGraph");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RetryResourceGraphResponse rsp = RetryResourceGraphResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RetryResourceGraphOutcome(rsp);
+        else
+            return RetryResourceGraphOutcome(o.GetError());
+    }
+    else
+    {
+        return RetryResourceGraphOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::RetryResourceGraphAsync(const RetryResourceGraphRequest& request, const RetryResourceGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RetryResourceGraphRequest&;
+    using Resp = RetryResourceGraphResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RetryResourceGraph", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::RetryResourceGraphOutcomeCallable ClsClient::RetryResourceGraphCallable(const RetryResourceGraphRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RetryResourceGraphOutcome>>();
+    RetryResourceGraphAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const RetryResourceGraphRequest&,
+        RetryResourceGraphOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::RetryResourceGraphProductIngestTaskOutcome ClsClient::RetryResourceGraphProductIngestTask(const RetryResourceGraphProductIngestTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "RetryResourceGraphProductIngestTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RetryResourceGraphProductIngestTaskResponse rsp = RetryResourceGraphProductIngestTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RetryResourceGraphProductIngestTaskOutcome(rsp);
+        else
+            return RetryResourceGraphProductIngestTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return RetryResourceGraphProductIngestTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::RetryResourceGraphProductIngestTaskAsync(const RetryResourceGraphProductIngestTaskRequest& request, const RetryResourceGraphProductIngestTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RetryResourceGraphProductIngestTaskRequest&;
+    using Resp = RetryResourceGraphProductIngestTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RetryResourceGraphProductIngestTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::RetryResourceGraphProductIngestTaskOutcomeCallable ClsClient::RetryResourceGraphProductIngestTaskCallable(const RetryResourceGraphProductIngestTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RetryResourceGraphProductIngestTaskOutcome>>();
+    RetryResourceGraphProductIngestTaskAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const RetryResourceGraphProductIngestTaskRequest&,
+        RetryResourceGraphProductIngestTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

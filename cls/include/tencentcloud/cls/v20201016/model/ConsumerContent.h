@@ -151,6 +151,27 @@ namespace TencentCloud
                      */
                     bool JsonTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>数值类型自动转换开关</p><p>枚举值：</p><ul><li>true： JSON 结构中第一层级的 value 中的数字字符串（如 &quot;123&quot; ）会被自动转换为数值类型（int / float）。</li><li>false： JSON 结构中第一层级的 value 中的数字字符串（如 &quot;123&quot; ）为字符串。</li></ul><p>默认值：false</p>
+                     * @return AutoConvertNumber <p>数值类型自动转换开关</p><p>枚举值：</p><ul><li>true： JSON 结构中第一层级的 value 中的数字字符串（如 &quot;123&quot; ）会被自动转换为数值类型（int / float）。</li><li>false： JSON 结构中第一层级的 value 中的数字字符串（如 &quot;123&quot; ）为字符串。</li></ul><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetAutoConvertNumber() const;
+
+                    /**
+                     * 设置<p>数值类型自动转换开关</p><p>枚举值：</p><ul><li>true： JSON 结构中第一层级的 value 中的数字字符串（如 &quot;123&quot; ）会被自动转换为数值类型（int / float）。</li><li>false： JSON 结构中第一层级的 value 中的数字字符串（如 &quot;123&quot; ）为字符串。</li></ul><p>默认值：false</p>
+                     * @param _autoConvertNumber <p>数值类型自动转换开关</p><p>枚举值：</p><ul><li>true： JSON 结构中第一层级的 value 中的数字字符串（如 &quot;123&quot; ）会被自动转换为数值类型（int / float）。</li><li>false： JSON 结构中第一层级的 value 中的数字字符串（如 &quot;123&quot; ）为字符串。</li></ul><p>默认值：false</p>
+                     * 
+                     */
+                    void SetAutoConvertNumber(const bool& _autoConvertNumber);
+
+                    /**
+                     * 判断参数 AutoConvertNumber 是否已赋值
+                     * @return AutoConvertNumber 是否已赋值
+                     * 
+                     */
+                    bool AutoConvertNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +203,12 @@ namespace TencentCloud
                      */
                     int64_t m_jsonType;
                     bool m_jsonTypeHasBeenSet;
+
+                    /**
+                     * <p>数值类型自动转换开关</p><p>枚举值：</p><ul><li>true： JSON 结构中第一层级的 value 中的数字字符串（如 &quot;123&quot; ）会被自动转换为数值类型（int / float）。</li><li>false： JSON 结构中第一层级的 value 中的数字字符串（如 &quot;123&quot; ）为字符串。</li></ul><p>默认值：false</p>
+                     */
+                    bool m_autoConvertNumber;
+                    bool m_autoConvertNumberHasBeenSet;
 
                 };
             }

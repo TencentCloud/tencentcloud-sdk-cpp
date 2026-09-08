@@ -315,6 +315,27 @@ namespace TencentCloud
                      */
                     bool CapabilityHasBeenSet() const;
 
+                    /**
+                     * 获取<p>端点路径</p>
+                     * @return EndpointPath <p>端点路径</p>
+                     * 
+                     */
+                    std::string GetEndpointPath() const;
+
+                    /**
+                     * 设置<p>端点路径</p>
+                     * @param _endpointPath <p>端点路径</p>
+                     * 
+                     */
+                    void SetEndpointPath(const std::string& _endpointPath);
+
+                    /**
+                     * 判断参数 EndpointPath 是否已赋值
+                     * @return EndpointPath 是否已赋值
+                     * 
+                     */
+                    bool EndpointPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -394,6 +415,12 @@ namespace TencentCloud
                      */
                     std::string m_capability;
                     bool m_capabilityHasBeenSet;
+
+                    /**
+                     * <p>端点路径</p>
+                     */
+                    std::string m_endpointPath;
+                    bool m_endpointPathHasBeenSet;
 
                 };
             }

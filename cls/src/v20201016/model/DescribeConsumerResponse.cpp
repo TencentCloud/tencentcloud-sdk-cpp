@@ -28,7 +28,13 @@ DescribeConsumerResponse::DescribeConsumerResponse() :
     m_needContentHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_ckafkaHasBeenSet(false),
-    m_compressionHasBeenSet(false)
+    m_compressionHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
+    m_externalIdHasBeenSet(false),
+    m_taskStatusHasBeenSet(false),
+    m_advancedConfigHasBeenSet(false),
+    m_dSLFilterHasBeenSet(false)
 {
 }
 
@@ -130,6 +136,73 @@ CoreInternalOutcome DescribeConsumerResponse::Deserialize(const string &payload)
         m_compressionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CreateTime") && !rsp["CreateTime"].IsNull())
+    {
+        if (!rsp["CreateTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = rsp["CreateTime"].GetUint64();
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RoleArn") && !rsp["RoleArn"].IsNull())
+    {
+        if (!rsp["RoleArn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoleArn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_roleArn = string(rsp["RoleArn"].GetString());
+        m_roleArnHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExternalId") && !rsp["ExternalId"].IsNull())
+    {
+        if (!rsp["ExternalId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExternalId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_externalId = string(rsp["ExternalId"].GetString());
+        m_externalIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TaskStatus") && !rsp["TaskStatus"].IsNull())
+    {
+        if (!rsp["TaskStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskStatus = rsp["TaskStatus"].GetUint64();
+        m_taskStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AdvancedConfig") && !rsp["AdvancedConfig"].IsNull())
+    {
+        if (!rsp["AdvancedConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdvancedConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_advancedConfig.Deserialize(rsp["AdvancedConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_advancedConfigHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DSLFilter") && !rsp["DSLFilter"].IsNull())
+    {
+        if (!rsp["DSLFilter"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DSLFilter` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dSLFilter = string(rsp["DSLFilter"].GetString());
+        m_dSLFilterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -180,6 +253,55 @@ string DescribeConsumerResponse::ToJsonString() const
         string key = "Compression";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_compression, allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTime, allocator);
+    }
+
+    if (m_roleArnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleArn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roleArn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskStatus, allocator);
+    }
+
+    if (m_advancedConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_advancedConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dSLFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DSLFilter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dSLFilter.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -242,6 +364,66 @@ int64_t DescribeConsumerResponse::GetCompression() const
 bool DescribeConsumerResponse::CompressionHasBeenSet() const
 {
     return m_compressionHasBeenSet;
+}
+
+uint64_t DescribeConsumerResponse::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+bool DescribeConsumerResponse::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string DescribeConsumerResponse::GetRoleArn() const
+{
+    return m_roleArn;
+}
+
+bool DescribeConsumerResponse::RoleArnHasBeenSet() const
+{
+    return m_roleArnHasBeenSet;
+}
+
+string DescribeConsumerResponse::GetExternalId() const
+{
+    return m_externalId;
+}
+
+bool DescribeConsumerResponse::ExternalIdHasBeenSet() const
+{
+    return m_externalIdHasBeenSet;
+}
+
+uint64_t DescribeConsumerResponse::GetTaskStatus() const
+{
+    return m_taskStatus;
+}
+
+bool DescribeConsumerResponse::TaskStatusHasBeenSet() const
+{
+    return m_taskStatusHasBeenSet;
+}
+
+AdvancedConsumerConfiguration DescribeConsumerResponse::GetAdvancedConfig() const
+{
+    return m_advancedConfig;
+}
+
+bool DescribeConsumerResponse::AdvancedConfigHasBeenSet() const
+{
+    return m_advancedConfigHasBeenSet;
+}
+
+string DescribeConsumerResponse::GetDSLFilter() const
+{
+    return m_dSLFilter;
+}
+
+bool DescribeConsumerResponse::DSLFilterHasBeenSet() const
+{
+    return m_dSLFilterHasBeenSet;
 }
 
 

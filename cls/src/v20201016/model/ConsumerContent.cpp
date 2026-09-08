@@ -25,7 +25,8 @@ ConsumerContent::ConsumerContent() :
     m_metaFieldsHasBeenSet(false),
     m_tagJsonNotTiledHasBeenSet(false),
     m_timestampAccuracyHasBeenSet(false),
-    m_jsonTypeHasBeenSet(false)
+    m_jsonTypeHasBeenSet(false),
+    m_autoConvertNumberHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,16 @@ CoreInternalOutcome ConsumerContent::Deserialize(const rapidjson::Value &value)
         m_jsonTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoConvertNumber") && !value["AutoConvertNumber"].IsNull())
+    {
+        if (!value["AutoConvertNumber"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumerContent.AutoConvertNumber` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoConvertNumber = value["AutoConvertNumber"].GetBool();
+        m_autoConvertNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +148,14 @@ void ConsumerContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "JsonType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_jsonType, allocator);
+    }
+
+    if (m_autoConvertNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoConvertNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoConvertNumber, allocator);
     }
 
 }
@@ -220,5 +239,21 @@ void ConsumerContent::SetJsonType(const int64_t& _jsonType)
 bool ConsumerContent::JsonTypeHasBeenSet() const
 {
     return m_jsonTypeHasBeenSet;
+}
+
+bool ConsumerContent::GetAutoConvertNumber() const
+{
+    return m_autoConvertNumber;
+}
+
+void ConsumerContent::SetAutoConvertNumber(const bool& _autoConvertNumber)
+{
+    m_autoConvertNumber = _autoConvertNumber;
+    m_autoConvertNumberHasBeenSet = true;
+}
+
+bool ConsumerContent::AutoConvertNumberHasBeenSet() const
+{
+    return m_autoConvertNumberHasBeenSet;
 }
 

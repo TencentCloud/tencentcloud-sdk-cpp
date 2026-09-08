@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool PartitionIdHasBeenSet() const;
 
+                    /**
+                     * 获取获取offset方式。 0 表示 fetch_offset，1 表示 list_offset
+                     * @return OffsetType 获取offset方式。 0 表示 fetch_offset，1 表示 list_offset
+                     * 
+                     */
+                    int64_t GetOffsetType() const;
+
+                    /**
+                     * 设置获取offset方式。 0 表示 fetch_offset，1 表示 list_offset
+                     * @param _offsetType 获取offset方式。 0 表示 fetch_offset，1 表示 list_offset
+                     * 
+                     */
+                    void SetOffsetType(const int64_t& _offsetType);
+
+                    /**
+                     * 判断参数 OffsetType 是否已赋值
+                     * @return OffsetType 是否已赋值
+                     * 
+                     */
+                    bool OffsetTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_partitionId;
                     bool m_partitionIdHasBeenSet;
+
+                    /**
+                     * 获取offset方式。 0 表示 fetch_offset，1 表示 list_offset
+                     */
+                    int64_t m_offsetType;
+                    bool m_offsetTypeHasBeenSet;
 
                 };
             }

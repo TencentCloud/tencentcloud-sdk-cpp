@@ -35,6 +35,10 @@
 #include <tencentcloud/postgres/v20170312/model/CloseDBExtranetAccessResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CloseDBProxyAddressRequest.h>
 #include <tencentcloud/postgres/v20170312/model/CloseDBProxyAddressResponse.h>
+#include <tencentcloud/postgres/v20170312/model/CloseMem0ServiceRequest.h>
+#include <tencentcloud/postgres/v20170312/model/CloseMem0ServiceResponse.h>
+#include <tencentcloud/postgres/v20170312/model/ClosePostgRESTServiceRequest.h>
+#include <tencentcloud/postgres/v20170312/model/ClosePostgRESTServiceResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateAccountRequest.h>
 #include <tencentcloud/postgres/v20170312/model/CreateAccountResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateAuditLogFileRequest.h>
@@ -149,6 +153,8 @@
 #include <tencentcloud/postgres/v20170312/model/DescribeLogBackupsResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeMaintainTimeWindowRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeMaintainTimeWindowResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeMem0ServiceRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeMem0ServiceResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeOrdersRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeOrdersResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeParameterTemplateAttributesRequest.h>
@@ -157,6 +163,8 @@
 #include <tencentcloud/postgres/v20170312/model/DescribeParameterTemplatesResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeParamsEventRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeParamsEventResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DescribePostgRESTServiceRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DescribePostgRESTServiceResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeProductConfigRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeProductConfigResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeReadOnlyGroupsRequest.h>
@@ -245,6 +253,10 @@
 #include <tencentcloud/postgres/v20170312/model/OpenAuditServiceResponse.h>
 #include <tencentcloud/postgres/v20170312/model/OpenDBExtranetAccessRequest.h>
 #include <tencentcloud/postgres/v20170312/model/OpenDBExtranetAccessResponse.h>
+#include <tencentcloud/postgres/v20170312/model/OpenMem0ServiceRequest.h>
+#include <tencentcloud/postgres/v20170312/model/OpenMem0ServiceResponse.h>
+#include <tencentcloud/postgres/v20170312/model/OpenPostgRESTServiceRequest.h>
+#include <tencentcloud/postgres/v20170312/model/OpenPostgRESTServiceResponse.h>
 #include <tencentcloud/postgres/v20170312/model/RebalanceReadOnlyGroupRequest.h>
 #include <tencentcloud/postgres/v20170312/model/RebalanceReadOnlyGroupResponse.h>
 #include <tencentcloud/postgres/v20170312/model/RefreshAccountPasswordRequest.h>
@@ -303,6 +315,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CloseDBProxyAddressResponse> CloseDBProxyAddressOutcome;
                 typedef std::future<CloseDBProxyAddressOutcome> CloseDBProxyAddressOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CloseDBProxyAddressRequest&, CloseDBProxyAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseDBProxyAddressAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloseMem0ServiceResponse> CloseMem0ServiceOutcome;
+                typedef std::future<CloseMem0ServiceOutcome> CloseMem0ServiceOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::CloseMem0ServiceRequest&, CloseMem0ServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseMem0ServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ClosePostgRESTServiceResponse> ClosePostgRESTServiceOutcome;
+                typedef std::future<ClosePostgRESTServiceOutcome> ClosePostgRESTServiceOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::ClosePostgRESTServiceRequest&, ClosePostgRESTServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClosePostgRESTServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAccountResponse> CreateAccountOutcome;
                 typedef std::future<CreateAccountOutcome> CreateAccountOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CreateAccountRequest&, CreateAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccountAsyncHandler;
@@ -474,6 +492,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMaintainTimeWindowResponse> DescribeMaintainTimeWindowOutcome;
                 typedef std::future<DescribeMaintainTimeWindowOutcome> DescribeMaintainTimeWindowOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeMaintainTimeWindowRequest&, DescribeMaintainTimeWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMaintainTimeWindowAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMem0ServiceResponse> DescribeMem0ServiceOutcome;
+                typedef std::future<DescribeMem0ServiceOutcome> DescribeMem0ServiceOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DescribeMem0ServiceRequest&, DescribeMem0ServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMem0ServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOrdersResponse> DescribeOrdersOutcome;
                 typedef std::future<DescribeOrdersOutcome> DescribeOrdersOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeOrdersRequest&, DescribeOrdersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrdersAsyncHandler;
@@ -486,6 +507,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeParamsEventResponse> DescribeParamsEventOutcome;
                 typedef std::future<DescribeParamsEventOutcome> DescribeParamsEventOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeParamsEventRequest&, DescribeParamsEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParamsEventAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePostgRESTServiceResponse> DescribePostgRESTServiceOutcome;
+                typedef std::future<DescribePostgRESTServiceOutcome> DescribePostgRESTServiceOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DescribePostgRESTServiceRequest&, DescribePostgRESTServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePostgRESTServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProductConfigResponse> DescribeProductConfigOutcome;
                 typedef std::future<DescribeProductConfigOutcome> DescribeProductConfigOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeProductConfigRequest&, DescribeProductConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductConfigAsyncHandler;
@@ -618,6 +642,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OpenDBExtranetAccessResponse> OpenDBExtranetAccessOutcome;
                 typedef std::future<OpenDBExtranetAccessOutcome> OpenDBExtranetAccessOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::OpenDBExtranetAccessRequest&, OpenDBExtranetAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenDBExtranetAccessAsyncHandler;
+                typedef Outcome<Core::Error, Model::OpenMem0ServiceResponse> OpenMem0ServiceOutcome;
+                typedef std::future<OpenMem0ServiceOutcome> OpenMem0ServiceOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::OpenMem0ServiceRequest&, OpenMem0ServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenMem0ServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::OpenPostgRESTServiceResponse> OpenPostgRESTServiceOutcome;
+                typedef std::future<OpenPostgRESTServiceOutcome> OpenPostgRESTServiceOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::OpenPostgRESTServiceRequest&, OpenPostgRESTServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenPostgRESTServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::RebalanceReadOnlyGroupResponse> RebalanceReadOnlyGroupOutcome;
                 typedef std::future<RebalanceReadOnlyGroupOutcome> RebalanceReadOnlyGroupOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::RebalanceReadOnlyGroupRequest&, RebalanceReadOnlyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebalanceReadOnlyGroupAsyncHandler;
@@ -713,6 +743,24 @@ namespace TencentCloud
                 CloseDBProxyAddressOutcome CloseDBProxyAddress(const Model::CloseDBProxyAddressRequest &request);
                 void CloseDBProxyAddressAsync(const Model::CloseDBProxyAddressRequest& request, const CloseDBProxyAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CloseDBProxyAddressOutcomeCallable CloseDBProxyAddressCallable(const Model::CloseDBProxyAddressRequest& request);
+
+                /**
+                 *本接口（CloseMem0Service）用于关闭实例的Mem0服务
+                 * @param req CloseMem0ServiceRequest
+                 * @return CloseMem0ServiceOutcome
+                 */
+                CloseMem0ServiceOutcome CloseMem0Service(const Model::CloseMem0ServiceRequest &request);
+                void CloseMem0ServiceAsync(const Model::CloseMem0ServiceRequest& request, const CloseMem0ServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseMem0ServiceOutcomeCallable CloseMem0ServiceCallable(const Model::CloseMem0ServiceRequest& request);
+
+                /**
+                 *本接口（ClosePostgRestService）用于关闭实例的PostgREST服务
+                 * @param req ClosePostgRESTServiceRequest
+                 * @return ClosePostgRESTServiceOutcome
+                 */
+                ClosePostgRESTServiceOutcome ClosePostgRESTService(const Model::ClosePostgRESTServiceRequest &request);
+                void ClosePostgRESTServiceAsync(const Model::ClosePostgRESTServiceRequest& request, const ClosePostgRESTServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ClosePostgRESTServiceOutcomeCallable ClosePostgRESTServiceCallable(const Model::ClosePostgRESTServiceRequest& request);
 
                 /**
                  *此接口用于创建数据账号，返回的Oid为账号唯一标识。与数据库系统表pg_roles中记录的oid一致。
@@ -1245,6 +1293,15 @@ namespace TencentCloud
                 DescribeMaintainTimeWindowOutcomeCallable DescribeMaintainTimeWindowCallable(const Model::DescribeMaintainTimeWindowRequest& request);
 
                 /**
+                 *本接口（DescribeMem0Service）用于查询某个实例的Mem0服务信息
+                 * @param req DescribeMem0ServiceRequest
+                 * @return DescribeMem0ServiceOutcome
+                 */
+                DescribeMem0ServiceOutcome DescribeMem0Service(const Model::DescribeMem0ServiceRequest &request);
+                void DescribeMem0ServiceAsync(const Model::DescribeMem0ServiceRequest& request, const DescribeMem0ServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMem0ServiceOutcomeCallable DescribeMem0ServiceCallable(const Model::DescribeMem0ServiceRequest& request);
+
+                /**
                  *本接口（DescribeOrders）用于查询订单信息。
                  * @param req DescribeOrdersRequest
                  * @return DescribeOrdersOutcome
@@ -1279,6 +1336,15 @@ namespace TencentCloud
                 DescribeParamsEventOutcome DescribeParamsEvent(const Model::DescribeParamsEventRequest &request);
                 void DescribeParamsEventAsync(const Model::DescribeParamsEventRequest& request, const DescribeParamsEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeParamsEventOutcomeCallable DescribeParamsEventCallable(const Model::DescribeParamsEventRequest& request);
+
+                /**
+                 *本接口（DescribePostgRestService）用于查询某个实例的PostgREST服务信息
+                 * @param req DescribePostgRESTServiceRequest
+                 * @return DescribePostgRESTServiceOutcome
+                 */
+                DescribePostgRESTServiceOutcome DescribePostgRESTService(const Model::DescribePostgRESTServiceRequest &request);
+                void DescribePostgRESTServiceAsync(const Model::DescribePostgRESTServiceRequest& request, const DescribePostgRESTServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePostgRESTServiceOutcomeCallable DescribePostgRESTServiceCallable(const Model::DescribePostgRESTServiceRequest& request);
 
                 /**
                  *本接口（DescribeProductConfig）用于查询售卖规格配置。**本接口属于早期接口，已停止功能迭代，推荐使用新接口**[DescribeClasses](https://cloud.tencent.com/document/api/409/89019)**替代**。
@@ -1678,6 +1744,24 @@ namespace TencentCloud
                 OpenDBExtranetAccessOutcome OpenDBExtranetAccess(const Model::OpenDBExtranetAccessRequest &request);
                 void OpenDBExtranetAccessAsync(const Model::OpenDBExtranetAccessRequest& request, const OpenDBExtranetAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OpenDBExtranetAccessOutcomeCallable OpenDBExtranetAccessCallable(const Model::OpenDBExtranetAccessRequest& request);
+
+                /**
+                 *本接口（OpenMem0Service）用于开启实例Mem0服务
+                 * @param req OpenMem0ServiceRequest
+                 * @return OpenMem0ServiceOutcome
+                 */
+                OpenMem0ServiceOutcome OpenMem0Service(const Model::OpenMem0ServiceRequest &request);
+                void OpenMem0ServiceAsync(const Model::OpenMem0ServiceRequest& request, const OpenMem0ServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenMem0ServiceOutcomeCallable OpenMem0ServiceCallable(const Model::OpenMem0ServiceRequest& request);
+
+                /**
+                 *本接口（OpenPostgRestService）用于开启实例PostgREST服务
+                 * @param req OpenPostgRESTServiceRequest
+                 * @return OpenPostgRESTServiceOutcome
+                 */
+                OpenPostgRESTServiceOutcome OpenPostgRESTService(const Model::OpenPostgRESTServiceRequest &request);
+                void OpenPostgRESTServiceAsync(const Model::OpenPostgRESTServiceRequest& request, const OpenPostgRESTServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenPostgRESTServiceOutcomeCallable OpenPostgRESTServiceCallable(const Model::OpenPostgRESTServiceRequest& request);
 
                 /**
                  *本接口(RebalanceReadOnlyGroup)用于重新均衡 RO 组内实例的负载。注意，RO 组内 RO 实例会有一次数据库连接瞬断，请确保应用程序能重连数据库，谨慎操作。

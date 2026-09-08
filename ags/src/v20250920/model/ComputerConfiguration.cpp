@@ -21,7 +21,8 @@ using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
 ComputerConfiguration::ComputerConfiguration() :
-    m_wAAConfigurationHasBeenSet(false)
+    m_wAAConfigurationHasBeenSet(false),
+    m_oSWorldConfigurationHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,23 @@ CoreInternalOutcome ComputerConfiguration::Deserialize(const rapidjson::Value &v
         m_wAAConfigurationHasBeenSet = true;
     }
 
+    if (value.HasMember("OSWorldConfiguration") && !value["OSWorldConfiguration"].IsNull())
+    {
+        if (!value["OSWorldConfiguration"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComputerConfiguration.OSWorldConfiguration` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_oSWorldConfiguration.Deserialize(value["OSWorldConfiguration"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_oSWorldConfigurationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -61,6 +79,15 @@ void ComputerConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_wAAConfiguration.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_oSWorldConfigurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OSWorldConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_oSWorldConfiguration.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -80,5 +107,21 @@ void ComputerConfiguration::SetWAAConfiguration(const WAAConfiguration& _wAAConf
 bool ComputerConfiguration::WAAConfigurationHasBeenSet() const
 {
     return m_wAAConfigurationHasBeenSet;
+}
+
+OSWorldConfiguration ComputerConfiguration::GetOSWorldConfiguration() const
+{
+    return m_oSWorldConfiguration;
+}
+
+void ComputerConfiguration::SetOSWorldConfiguration(const OSWorldConfiguration& _oSWorldConfiguration)
+{
+    m_oSWorldConfiguration = _oSWorldConfiguration;
+    m_oSWorldConfigurationHasBeenSet = true;
+}
+
+bool ComputerConfiguration::OSWorldConfigurationHasBeenSet() const
+{
+    return m_oSWorldConfigurationHasBeenSet;
 }
 

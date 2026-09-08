@@ -56,6 +56,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/AddNodesResponse.h
   include/tencentcloud/thpc/v20230321/model/ExpansionNodeConfig.h
   include/tencentcloud/thpc/v20230321/model/NodeActivity.h
+  include/tencentcloud/thpc/v20230321/model/EnableClusterMonitorResponse.h
   include/tencentcloud/thpc/v20230321/model/ModifyClusterDeletionProtectionResponse.h
   include/tencentcloud/thpc/v20230321/model/DescribeClusterDedicatedProxyResponse.h
   include/tencentcloud/thpc/v20230321/model/CreateWorkspacesResponse.h
@@ -72,7 +73,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/GenerateRegisterCodeRequest.h
   include/tencentcloud/thpc/v20230321/model/ModifyScheduledActionResponse.h
   include/tencentcloud/thpc/v20230321/model/ModifyInitNodeScriptsRequest.h
-  include/tencentcloud/thpc/v20230321/model/AttachNodesRequest.h
+  include/tencentcloud/thpc/v20230321/model/DisableClusterMonitorRequest.h
   include/tencentcloud/thpc/v20230321/model/SpaceChargePrepaid.h
   include/tencentcloud/thpc/v20230321/model/DescribeWorkspacesResponse.h
   include/tencentcloud/thpc/v20230321/model/Tag.h
@@ -90,12 +91,14 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/DescribeWorkspacesRequest.h
   include/tencentcloud/thpc/v20230321/model/ModifyNodeAttributeRequest.h
   include/tencentcloud/thpc/v20230321/model/AddQueueRequest.h
+  include/tencentcloud/thpc/v20230321/model/AttachNodesRequest.h
   include/tencentcloud/thpc/v20230321/model/ExpansionPolicy.h
   include/tencentcloud/thpc/v20230321/model/DeleteScheduledActionRequest.h
   include/tencentcloud/thpc/v20230321/model/QueueConfigOverview.h
   include/tencentcloud/thpc/v20230321/model/DescribeInstanceFamiliesResponse.h
   include/tencentcloud/thpc/v20230321/model/ScalingPolicy.h
   include/tencentcloud/thpc/v20230321/model/DescribeQueuesResponse.h
+  include/tencentcloud/thpc/v20230321/model/EnableClusterMonitorRequest.h
   include/tencentcloud/thpc/v20230321/model/SubmitJobRequest.h
   include/tencentcloud/thpc/v20230321/model/Job.h
   include/tencentcloud/thpc/v20230321/model/DescribeScheduledActionsResponse.h
@@ -156,6 +159,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/DeleteQueueRequest.h
   include/tencentcloud/thpc/v20230321/model/Filter.h
   include/tencentcloud/thpc/v20230321/model/ModifyInitNodeScriptsResponse.h
+  include/tencentcloud/thpc/v20230321/model/DescribeClusterMonitorStatusResponse.h
   include/tencentcloud/thpc/v20230321/model/Docker.h
   include/tencentcloud/thpc/v20230321/model/InquirePriceCreateWorkspacesResponse.h
   include/tencentcloud/thpc/v20230321/model/ModifyWorkspacesChargeTypeRequest.h
@@ -182,6 +186,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/CFSOption.h
   include/tencentcloud/thpc/v20230321/model/Price.h
   include/tencentcloud/thpc/v20230321/model/CreateWorkspacesRequest.h
+  include/tencentcloud/thpc/v20230321/model/DisableClusterMonitorResponse.h
   include/tencentcloud/thpc/v20230321/model/TemplateOverrides.h
   include/tencentcloud/thpc/v20230321/model/DescribeQueueAutoScalingOverviewResponse.h
   include/tencentcloud/thpc/v20230321/model/SpaceSystemDisk.h
@@ -192,7 +197,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/DescribeJobsResponse.h
   include/tencentcloud/thpc/v20230321/model/AddNodesRequest.h
   include/tencentcloud/thpc/v20230321/model/CFSOptionOverview.h
-  include/tencentcloud/thpc/v20230321/model/ModifyWorkspacesAttributeRequest.h
+  include/tencentcloud/thpc/v20230321/model/DescribeClusterMonitorStatusRequest.h
   include/tencentcloud/thpc/v20230321/model/AddClusterStorageOptionRequest.h
   include/tencentcloud/thpc/v20230321/model/GooseFSxOption.h
   include/tencentcloud/thpc/v20230321/model/ModifyWorkspacesChargeTypeResponse.h
@@ -203,6 +208,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/StorageMount.h
   include/tencentcloud/thpc/v20230321/model/InternetAccessible.h
   include/tencentcloud/thpc/v20230321/model/SetQueueAutoScalingRequest.h
+  include/tencentcloud/thpc/v20230321/model/ModifyWorkspacesAttributeRequest.h
   include/tencentcloud/thpc/v20230321/model/JobView.h
   include/tencentcloud/thpc/v20230321/model/InquirePriceModifyWorkspacesChargeTypeResponse.h
   include/tencentcloud/thpc/v20230321/model/EnvVar.h
@@ -311,6 +317,7 @@ set(thpc_src
   src/v20230321/model/AddNodesResponse.cpp
   src/v20230321/model/ExpansionNodeConfig.cpp
   src/v20230321/model/NodeActivity.cpp
+  src/v20230321/model/EnableClusterMonitorResponse.cpp
   src/v20230321/model/ModifyClusterDeletionProtectionResponse.cpp
   src/v20230321/model/DescribeClusterDedicatedProxyResponse.cpp
   src/v20230321/model/CreateWorkspacesResponse.cpp
@@ -327,7 +334,7 @@ set(thpc_src
   src/v20230321/model/GenerateRegisterCodeRequest.cpp
   src/v20230321/model/ModifyScheduledActionResponse.cpp
   src/v20230321/model/ModifyInitNodeScriptsRequest.cpp
-  src/v20230321/model/AttachNodesRequest.cpp
+  src/v20230321/model/DisableClusterMonitorRequest.cpp
   src/v20230321/model/SpaceChargePrepaid.cpp
   src/v20230321/model/DescribeWorkspacesResponse.cpp
   src/v20230321/model/Tag.cpp
@@ -345,12 +352,14 @@ set(thpc_src
   src/v20230321/model/DescribeWorkspacesRequest.cpp
   src/v20230321/model/ModifyNodeAttributeRequest.cpp
   src/v20230321/model/AddQueueRequest.cpp
+  src/v20230321/model/AttachNodesRequest.cpp
   src/v20230321/model/ExpansionPolicy.cpp
   src/v20230321/model/DeleteScheduledActionRequest.cpp
   src/v20230321/model/QueueConfigOverview.cpp
   src/v20230321/model/DescribeInstanceFamiliesResponse.cpp
   src/v20230321/model/ScalingPolicy.cpp
   src/v20230321/model/DescribeQueuesResponse.cpp
+  src/v20230321/model/EnableClusterMonitorRequest.cpp
   src/v20230321/model/SubmitJobRequest.cpp
   src/v20230321/model/Job.cpp
   src/v20230321/model/DescribeScheduledActionsResponse.cpp
@@ -411,6 +420,7 @@ set(thpc_src
   src/v20230321/model/DeleteQueueRequest.cpp
   src/v20230321/model/Filter.cpp
   src/v20230321/model/ModifyInitNodeScriptsResponse.cpp
+  src/v20230321/model/DescribeClusterMonitorStatusResponse.cpp
   src/v20230321/model/Docker.cpp
   src/v20230321/model/InquirePriceCreateWorkspacesResponse.cpp
   src/v20230321/model/ModifyWorkspacesChargeTypeRequest.cpp
@@ -437,6 +447,7 @@ set(thpc_src
   src/v20230321/model/CFSOption.cpp
   src/v20230321/model/Price.cpp
   src/v20230321/model/CreateWorkspacesRequest.cpp
+  src/v20230321/model/DisableClusterMonitorResponse.cpp
   src/v20230321/model/TemplateOverrides.cpp
   src/v20230321/model/DescribeQueueAutoScalingOverviewResponse.cpp
   src/v20230321/model/SpaceSystemDisk.cpp
@@ -447,7 +458,7 @@ set(thpc_src
   src/v20230321/model/DescribeJobsResponse.cpp
   src/v20230321/model/AddNodesRequest.cpp
   src/v20230321/model/CFSOptionOverview.cpp
-  src/v20230321/model/ModifyWorkspacesAttributeRequest.cpp
+  src/v20230321/model/DescribeClusterMonitorStatusRequest.cpp
   src/v20230321/model/AddClusterStorageOptionRequest.cpp
   src/v20230321/model/GooseFSxOption.cpp
   src/v20230321/model/ModifyWorkspacesChargeTypeResponse.cpp
@@ -458,6 +469,7 @@ set(thpc_src
   src/v20230321/model/StorageMount.cpp
   src/v20230321/model/InternetAccessible.cpp
   src/v20230321/model/SetQueueAutoScalingRequest.cpp
+  src/v20230321/model/ModifyWorkspacesAttributeRequest.cpp
   src/v20230321/model/JobView.cpp
   src/v20230321/model/InquirePriceModifyWorkspacesChargeTypeResponse.cpp
   src/v20230321/model/EnvVar.cpp

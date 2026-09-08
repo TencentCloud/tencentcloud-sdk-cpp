@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
-                     * @return InstanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * 获取<p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
+                     * @return InstanceId <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
-                     * @param _instanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * 设置<p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
+                     * @param _instanceId <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取带宽，单位：Mbps
-                     * @return Bandwidth 带宽，单位：Mbps
+                     * 获取<p>带宽，单位：Mbps</p>
+                     * @return Bandwidth <p>带宽，单位：Mbps</p>
                      * 
                      */
                     int64_t GetBandwidth() const;
 
                     /**
-                     * 设置带宽，单位：Mbps
-                     * @param _bandwidth 带宽，单位：Mbps
+                     * 设置<p>带宽，单位：Mbps</p>
+                     * @param _bandwidth <p>带宽，单位：Mbps</p>
                      * 
                      */
                     void SetBandwidth(const int64_t& _bandwidth);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取公网访问规则
-                     * @return Rules 公网访问规则
+                     * 获取<p>公网访问规则</p>
+                     * @return Rules <p>公网访问规则</p>
                      * 
                      */
                     std::vector<PublicAccessRule> GetRules() const;
 
                     /**
-                     * 设置公网访问规则
-                     * @param _rules 公网访问规则
+                     * 设置<p>公网访问规则</p>
+                     * @param _rules <p>公网访问规则</p>
                      * 
                      */
                     void SetRules(const std::vector<PublicAccessRule>& _rules);
@@ -109,19 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 带宽，单位：Mbps
+                     * <p>带宽，单位：Mbps</p>
                      */
                     int64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * 公网访问规则
+                     * <p>公网访问规则</p>
                      */
                     std::vector<PublicAccessRule> m_rules;
                     bool m_rulesHasBeenSet;

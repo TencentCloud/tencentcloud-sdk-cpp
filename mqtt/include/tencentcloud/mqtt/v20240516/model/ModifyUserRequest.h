@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
-                     * @return InstanceId 实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * 获取<p>实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
+                     * @return InstanceId <p>实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
-                     * @param _instanceId 实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * 设置<p>实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
+                     * @param _instanceId <p>实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取用户名
-                     * @return Username 用户名
+                     * 获取<p>用户名</p>
+                     * @return Username <p>用户名</p>
                      * 
                      */
                     std::string GetUsername() const;
 
                     /**
-                     * 设置用户名
-                     * @param _username 用户名
+                     * 设置<p>用户名</p>
+                     * @param _username <p>用户名</p>
                      * 
                      */
                     void SetUsername(const std::string& _username);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool UsernameHasBeenSet() const;
 
                     /**
-                     * 获取备注，长度不超过128个字符。
-                     * @return Remark 备注，长度不超过128个字符。
+                     * 获取<p>备注，长度不超过128个字符。</p>
+                     * @return Remark <p>备注，长度不超过128个字符。</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注，长度不超过128个字符。
-                     * @param _remark 备注，长度不超过128个字符。
+                     * 设置<p>备注，长度不超过128个字符。</p>
+                     * @param _remark <p>备注，长度不超过128个字符。</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * <p>实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 用户名
+                     * <p>用户名</p>
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
 
                     /**
-                     * 备注，长度不超过128个字符。
+                     * <p>备注，长度不超过128个字符。</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

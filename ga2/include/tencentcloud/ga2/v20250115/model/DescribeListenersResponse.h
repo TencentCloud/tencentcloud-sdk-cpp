@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合条件的监听器实例。
-                     * @return ListenerSet 符合条件的监听器实例。
+                     * 获取<p>符合条件的监听器实例。</p>
+                     * @return ListenerSet <p>符合条件的监听器实例。</p>
                      * 
                      */
                     std::vector<ListenerSet> GetListenerSet() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ListenerSetHasBeenSet() const;
 
                     /**
-                     * 获取符合条件的实例个数。
-                     * @return TotalCount 符合条件的实例个数。
+                     * 获取<p>符合条件的实例个数。</p>
+                     * @return TotalCount <p>符合条件的实例个数。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合条件的监听器实例。
+                     * <p>符合条件的监听器实例。</p>
                      */
                     std::vector<ListenerSet> m_listenerSet;
                     bool m_listenerSetHasBeenSet;
 
                     /**
-                     * 符合条件的实例个数。
+                     * <p>符合条件的实例个数。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

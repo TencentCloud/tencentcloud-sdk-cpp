@@ -32,7 +32,8 @@ ConsumerInfo::ConsumerInfo() :
     m_roleArnHasBeenSet(false),
     m_externalIdHasBeenSet(false),
     m_taskStatusHasBeenSet(false),
-    m_advancedConfigHasBeenSet(false)
+    m_advancedConfigHasBeenSet(false),
+    m_dSLFilterHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,16 @@ CoreInternalOutcome ConsumerInfo::Deserialize(const rapidjson::Value &value)
         m_advancedConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("DSLFilter") && !value["DSLFilter"].IsNull())
+    {
+        if (!value["DSLFilter"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumerInfo.DSLFilter` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dSLFilter = string(value["DSLFilter"].GetString());
+        m_dSLFilterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -286,6 +297,14 @@ void ConsumerInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_advancedConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dSLFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DSLFilter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dSLFilter.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -481,5 +500,21 @@ void ConsumerInfo::SetAdvancedConfig(const AdvancedConsumerConfiguration& _advan
 bool ConsumerInfo::AdvancedConfigHasBeenSet() const
 {
     return m_advancedConfigHasBeenSet;
+}
+
+string ConsumerInfo::GetDSLFilter() const
+{
+    return m_dSLFilter;
+}
+
+void ConsumerInfo::SetDSLFilter(const string& _dSLFilter)
+{
+    m_dSLFilter = _dSLFilter;
+    m_dSLFilterHasBeenSet = true;
+}
+
+bool ConsumerInfo::DSLFilterHasBeenSet() const
+{
+    return m_dSLFilterHasBeenSet;
 }
 

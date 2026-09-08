@@ -24,7 +24,8 @@ VideoLLMDetail::VideoLLMDetail() :
     m_labelNameHasBeenSet(false),
     m_reasonHasBeenSet(false),
     m_targetTextHasBeenSet(false),
-    m_suggestionHasBeenSet(false)
+    m_suggestionHasBeenSet(false),
+    m_extraHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,16 @@ CoreInternalOutcome VideoLLMDetail::Deserialize(const rapidjson::Value &value)
         m_suggestionHasBeenSet = true;
     }
 
+    if (value.HasMember("Extra") && !value["Extra"].IsNull())
+    {
+        if (!value["Extra"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoLLMDetail.Extra` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extra = string(value["Extra"].GetString());
+        m_extraHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +129,14 @@ void VideoLLMDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Suggestion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_suggestion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extraHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Extra";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -185,5 +204,21 @@ void VideoLLMDetail::SetSuggestion(const string& _suggestion)
 bool VideoLLMDetail::SuggestionHasBeenSet() const
 {
     return m_suggestionHasBeenSet;
+}
+
+string VideoLLMDetail::GetExtra() const
+{
+    return m_extra;
+}
+
+void VideoLLMDetail::SetExtra(const string& _extra)
+{
+    m_extra = _extra;
+    m_extraHasBeenSet = true;
+}
+
+bool VideoLLMDetail::ExtraHasBeenSet() const
+{
+    return m_extraHasBeenSet;
 }
 

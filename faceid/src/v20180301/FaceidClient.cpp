@@ -1340,56 +1340,6 @@ FaceidClient::IdCardVerificationOutcomeCallable FaceidClient::IdCardVerification
     return prom->get_future();
 }
 
-FaceidClient::ImageRecognitionOutcome FaceidClient::ImageRecognition(const ImageRecognitionRequest &request)
-{
-    auto outcome = MakeRequest(request, "ImageRecognition");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ImageRecognitionResponse rsp = ImageRecognitionResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ImageRecognitionOutcome(rsp);
-        else
-            return ImageRecognitionOutcome(o.GetError());
-    }
-    else
-    {
-        return ImageRecognitionOutcome(outcome.GetError());
-    }
-}
-
-void FaceidClient::ImageRecognitionAsync(const ImageRecognitionRequest& request, const ImageRecognitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const ImageRecognitionRequest&;
-    using Resp = ImageRecognitionResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "ImageRecognition", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-FaceidClient::ImageRecognitionOutcomeCallable FaceidClient::ImageRecognitionCallable(const ImageRecognitionRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<ImageRecognitionOutcome>>();
-    ImageRecognitionAsync(
-    request,
-    [prom](
-        const FaceidClient*,
-        const ImageRecognitionRequest&,
-        ImageRecognitionOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 FaceidClient::ImageRecognitionV2Outcome FaceidClient::ImageRecognitionV2(const ImageRecognitionV2Request &request)
 {
     auto outcome = MakeRequest(request, "ImageRecognitionV2");

@@ -65,11 +65,11 @@ CoreInternalOutcome SpeakerResults::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("EndTime") && !value["EndTime"].IsNull())
     {
-        if (!value["EndTime"].IsString())
+        if (!value["EndTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `SpeakerResults.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SpeakerResults.EndTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_endTime = string(value["EndTime"].GetString());
+        m_endTime = value["EndTime"].GetDouble();
         m_endTimeHasBeenSet = true;
     }
 
@@ -109,7 +109,7 @@ void SpeakerResults::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_endTime, allocator);
     }
 
 }
@@ -163,12 +163,12 @@ bool SpeakerResults::StartTimeHasBeenSet() const
     return m_startTimeHasBeenSet;
 }
 
-string SpeakerResults::GetEndTime() const
+double SpeakerResults::GetEndTime() const
 {
     return m_endTime;
 }
 
-void SpeakerResults::SetEndTime(const string& _endTime)
+void SpeakerResults::SetEndTime(const double& _endTime)
 {
     m_endTime = _endTime;
     m_endTimeHasBeenSet = true;

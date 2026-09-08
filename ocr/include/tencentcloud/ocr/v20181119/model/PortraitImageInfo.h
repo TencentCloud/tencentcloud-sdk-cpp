@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取头像
+                     * 获取<p>头像</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PortraitImage 头像
+                     * @return PortraitImage <p>头像</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPortraitImage() const;
 
                     /**
-                     * 设置头像
+                     * 设置<p>头像</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _portraitImage 头像
+                     * @param _portraitImage <p>头像</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool PortraitImageHasBeenSet() const;
 
                     /**
-                     * 获取头像坐标
+                     * 获取<p>头像坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ImageCoordinates 头像坐标
+                     * @return ImageCoordinates <p>头像坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ImageCoordinates GetImageCoordinates() const;
 
                     /**
-                     * 设置头像坐标
+                     * 设置<p>头像坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _imageCoordinates 头像坐标
+                     * @param _imageCoordinates <p>头像坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -100,14 +100,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 头像
+                     * <p>头像</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_portraitImage;
                     bool m_portraitImageHasBeenSet;
 
                     /**
-                     * 头像坐标
+                     * <p>头像坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ImageCoordinates m_imageCoordinates;

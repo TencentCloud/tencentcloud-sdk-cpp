@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
-                     * @return InstanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * 获取<p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
+                     * @return InstanceId <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
-                     * @param _instanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * 设置<p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
+                     * @param _instanceId <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取消息负载 Payload，是消息的实际内容，需要按 encoding 指定的编码方式进行编码
-                     * @return Payload 消息负载 Payload，是消息的实际内容，需要按 encoding 指定的编码方式进行编码
+                     * 获取<p>消息负载 Payload，是消息的实际内容，需要按 encoding 指定的编码方式进行编码</p>
+                     * @return Payload <p>消息负载 Payload，是消息的实际内容，需要按 encoding 指定的编码方式进行编码</p>
                      * 
                      */
                     std::string GetPayload() const;
 
                     /**
-                     * 设置消息负载 Payload，是消息的实际内容，需要按 encoding 指定的编码方式进行编码
-                     * @param _payload 消息负载 Payload，是消息的实际内容，需要按 encoding 指定的编码方式进行编码
+                     * 设置<p>消息负载 Payload，是消息的实际内容，需要按 encoding 指定的编码方式进行编码</p>
+                     * @param _payload <p>消息负载 Payload，是消息的实际内容，需要按 encoding 指定的编码方式进行编码</p>
                      * 
                      */
                     void SetPayload(const std::string& _payload);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PayloadHasBeenSet() const;
 
                     /**
-                     * 获取消息目的主题，该参数与 TargetClientId 二选一
-                     * @return TargetTopic 消息目的主题，该参数与 TargetClientId 二选一
+                     * 获取<p>消息目的主题，该参数与 TargetClientId 二选一</p>
+                     * @return TargetTopic <p>消息目的主题，该参数与 TargetClientId 二选一</p>
                      * 
                      */
                     std::string GetTargetTopic() const;
 
                     /**
-                     * 设置消息目的主题，该参数与 TargetClientId 二选一
-                     * @param _targetTopic 消息目的主题，该参数与 TargetClientId 二选一
+                     * 设置<p>消息目的主题，该参数与 TargetClientId 二选一</p>
+                     * @param _targetTopic <p>消息目的主题，该参数与 TargetClientId 二选一</p>
                      * 
                      */
                     void SetTargetTopic(const std::string& _targetTopic);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool TargetTopicHasBeenSet() const;
 
                     /**
-                     * 获取消息目的客户端 ID，该参数与 TargetTopic 二选一
-                     * @return TargetClientId 消息目的客户端 ID，该参数与 TargetTopic 二选一
+                     * 获取<p>消息目的客户端 ID，该参数与 TargetTopic 二选一</p>
+                     * @return TargetClientId <p>消息目的客户端 ID，该参数与 TargetTopic 二选一</p>
                      * 
                      */
                     std::string GetTargetClientId() const;
 
                     /**
-                     * 设置消息目的客户端 ID，该参数与 TargetTopic 二选一
-                     * @param _targetClientId 消息目的客户端 ID，该参数与 TargetTopic 二选一
+                     * 设置<p>消息目的客户端 ID，该参数与 TargetTopic 二选一</p>
+                     * @param _targetClientId <p>消息目的客户端 ID，该参数与 TargetTopic 二选一</p>
                      * 
                      */
                     void SetTargetClientId(const std::string& _targetClientId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool TargetClientIdHasBeenSet() const;
 
                     /**
-                     * 获取消息 payload 编码，可选 plain 或 base64，默认为 plain（即不编码）
-                     * @return Encoding 消息 payload 编码，可选 plain 或 base64，默认为 plain（即不编码）
+                     * 获取<p>消息 payload 编码，可选 plain 或 base64，默认为 plain（即不编码）</p>
+                     * @return Encoding <p>消息 payload 编码，可选 plain 或 base64，默认为 plain（即不编码）</p>
                      * 
                      */
                     std::string GetEncoding() const;
 
                     /**
-                     * 设置消息 payload 编码，可选 plain 或 base64，默认为 plain（即不编码）
-                     * @param _encoding 消息 payload 编码，可选 plain 或 base64，默认为 plain（即不编码）
+                     * 设置<p>消息 payload 编码，可选 plain 或 base64，默认为 plain（即不编码）</p>
+                     * @param _encoding <p>消息 payload 编码，可选 plain 或 base64，默认为 plain（即不编码）</p>
                      * 
                      */
                     void SetEncoding(const std::string& _encoding);
@@ -148,27 +148,15 @@ namespace TencentCloud
                     bool EncodingHasBeenSet() const;
 
                     /**
-                     * 获取消息的服务质量等级，默认为 1
-QoS 0（至多一次）消息发送后，不保证接收方一定收到，也不要求接收方确认。
-QoS 1（至少一次）消息至少被接收方成功接收一次，但可能重复。
-QoS 2（恰好一次）消息确保被接收方接收且仅接收一次，无重复。
-                     * @return Qos 消息的服务质量等级，默认为 1
-QoS 0（至多一次）消息发送后，不保证接收方一定收到，也不要求接收方确认。
-QoS 1（至少一次）消息至少被接收方成功接收一次，但可能重复。
-QoS 2（恰好一次）消息确保被接收方接收且仅接收一次，无重复。
+                     * 获取<p>消息的服务质量等级，默认为 1<br>QoS 0（至多一次）消息发送后，不保证接收方一定收到，也不要求接收方确认。<br>QoS 1（至少一次）消息至少被接收方成功接收一次，但可能重复。<br>QoS 2（恰好一次）消息确保被接收方接收且仅接收一次，无重复。</p>
+                     * @return Qos <p>消息的服务质量等级，默认为 1<br>QoS 0（至多一次）消息发送后，不保证接收方一定收到，也不要求接收方确认。<br>QoS 1（至少一次）消息至少被接收方成功接收一次，但可能重复。<br>QoS 2（恰好一次）消息确保被接收方接收且仅接收一次，无重复。</p>
                      * 
                      */
                     int64_t GetQos() const;
 
                     /**
-                     * 设置消息的服务质量等级，默认为 1
-QoS 0（至多一次）消息发送后，不保证接收方一定收到，也不要求接收方确认。
-QoS 1（至少一次）消息至少被接收方成功接收一次，但可能重复。
-QoS 2（恰好一次）消息确保被接收方接收且仅接收一次，无重复。
-                     * @param _qos 消息的服务质量等级，默认为 1
-QoS 0（至多一次）消息发送后，不保证接收方一定收到，也不要求接收方确认。
-QoS 1（至少一次）消息至少被接收方成功接收一次，但可能重复。
-QoS 2（恰好一次）消息确保被接收方接收且仅接收一次，无重复。
+                     * 设置<p>消息的服务质量等级，默认为 1<br>QoS 0（至多一次）消息发送后，不保证接收方一定收到，也不要求接收方确认。<br>QoS 1（至少一次）消息至少被接收方成功接收一次，但可能重复。<br>QoS 2（恰好一次）消息确保被接收方接收且仅接收一次，无重复。</p>
+                     * @param _qos <p>消息的服务质量等级，默认为 1<br>QoS 0（至多一次）消息发送后，不保证接收方一定收到，也不要求接收方确认。<br>QoS 1（至少一次）消息至少被接收方成功接收一次，但可能重复。<br>QoS 2（恰好一次）消息确保被接收方接收且仅接收一次，无重复。</p>
                      * 
                      */
                     void SetQos(const int64_t& _qos);
@@ -181,15 +169,15 @@ QoS 2（恰好一次）消息确保被接收方接收且仅接收一次，无重
                     bool QosHasBeenSet() const;
 
                     /**
-                     * 获取是否为保留消息，默认为 false，且仅支持发布到主题的消息设置为 true
-                     * @return Retain 是否为保留消息，默认为 false，且仅支持发布到主题的消息设置为 true
+                     * 获取<p>是否为保留消息，默认为 false，且仅支持发布到主题的消息设置为 true</p>
+                     * @return Retain <p>是否为保留消息，默认为 false，且仅支持发布到主题的消息设置为 true</p>
                      * 
                      */
                     bool GetRetain() const;
 
                     /**
-                     * 设置是否为保留消息，默认为 false，且仅支持发布到主题的消息设置为 true
-                     * @param _retain 是否为保留消息，默认为 false，且仅支持发布到主题的消息设置为 true
+                     * 设置<p>是否为保留消息，默认为 false，且仅支持发布到主题的消息设置为 true</p>
+                     * @param _retain <p>是否为保留消息，默认为 false，且仅支持发布到主题的消息设置为 true</p>
                      * 
                      */
                     void SetRetain(const bool& _retain);
@@ -204,46 +192,43 @@ QoS 2（恰好一次）消息确保被接收方接收且仅接收一次，无重
                 private:
 
                     /**
-                     * 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 消息负载 Payload，是消息的实际内容，需要按 encoding 指定的编码方式进行编码
+                     * <p>消息负载 Payload，是消息的实际内容，需要按 encoding 指定的编码方式进行编码</p>
                      */
                     std::string m_payload;
                     bool m_payloadHasBeenSet;
 
                     /**
-                     * 消息目的主题，该参数与 TargetClientId 二选一
+                     * <p>消息目的主题，该参数与 TargetClientId 二选一</p>
                      */
                     std::string m_targetTopic;
                     bool m_targetTopicHasBeenSet;
 
                     /**
-                     * 消息目的客户端 ID，该参数与 TargetTopic 二选一
+                     * <p>消息目的客户端 ID，该参数与 TargetTopic 二选一</p>
                      */
                     std::string m_targetClientId;
                     bool m_targetClientIdHasBeenSet;
 
                     /**
-                     * 消息 payload 编码，可选 plain 或 base64，默认为 plain（即不编码）
+                     * <p>消息 payload 编码，可选 plain 或 base64，默认为 plain（即不编码）</p>
                      */
                     std::string m_encoding;
                     bool m_encodingHasBeenSet;
 
                     /**
-                     * 消息的服务质量等级，默认为 1
-QoS 0（至多一次）消息发送后，不保证接收方一定收到，也不要求接收方确认。
-QoS 1（至少一次）消息至少被接收方成功接收一次，但可能重复。
-QoS 2（恰好一次）消息确保被接收方接收且仅接收一次，无重复。
+                     * <p>消息的服务质量等级，默认为 1<br>QoS 0（至多一次）消息发送后，不保证接收方一定收到，也不要求接收方确认。<br>QoS 1（至少一次）消息至少被接收方成功接收一次，但可能重复。<br>QoS 2（恰好一次）消息确保被接收方接收且仅接收一次，无重复。</p>
                      */
                     int64_t m_qos;
                     bool m_qosHasBeenSet;
 
                     /**
-                     * 是否为保留消息，默认为 false，且仅支持发布到主题的消息设置为 true
+                     * <p>是否为保留消息，默认为 false，且仅支持发布到主题的消息设置为 true</p>
                      */
                     bool m_retain;
                     bool m_retainHasBeenSet;

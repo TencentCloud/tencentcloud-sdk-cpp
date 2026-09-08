@@ -73,6 +73,8 @@
 #include <tencentcloud/oceanus/v20190422/model/DescribeFolderResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobConfigsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobConfigsResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeJobDetailRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeJobDetailResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobEventsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobEventsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobRuntimeInfoRequest.h>
@@ -218,6 +220,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeJobConfigsResponse> DescribeJobConfigsOutcome;
                 typedef std::future<DescribeJobConfigsOutcome> DescribeJobConfigsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeJobConfigsRequest&, DescribeJobConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobConfigsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeJobDetailResponse> DescribeJobDetailOutcome;
+                typedef std::future<DescribeJobDetailOutcome> DescribeJobDetailOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::DescribeJobDetailRequest&, DescribeJobDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeJobEventsResponse> DescribeJobEventsOutcome;
                 typedef std::future<DescribeJobEventsOutcome> DescribeJobEventsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeJobEventsRequest&, DescribeJobEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobEventsAsyncHandler;
@@ -529,6 +534,15 @@ namespace TencentCloud
                 DescribeJobConfigsOutcome DescribeJobConfigs(const Model::DescribeJobConfigsRequest &request);
                 void DescribeJobConfigsAsync(const Model::DescribeJobConfigsRequest& request, const DescribeJobConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeJobConfigsOutcomeCallable DescribeJobConfigsCallable(const Model::DescribeJobConfigsRequest& request);
+
+                /**
+                 *显示flink作业的Dag图，以及算子、subtask等信息
+                 * @param req DescribeJobDetailRequest
+                 * @return DescribeJobDetailOutcome
+                 */
+                DescribeJobDetailOutcome DescribeJobDetail(const Model::DescribeJobDetailRequest &request);
+                void DescribeJobDetailAsync(const Model::DescribeJobDetailRequest& request, const DescribeJobDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJobDetailOutcomeCallable DescribeJobDetailCallable(const Model::DescribeJobDetailRequest& request);
 
                 /**
                  *请求参数不包含 "RunningOrderIds"时，接口获取指定作业的事件，包括作业启动停止、运行失败、快照失败、作业异常等各种事件类型;请求参数不包含 "RunningOrderIds"时，接口为查询作业实例ID接口,获取作业实例

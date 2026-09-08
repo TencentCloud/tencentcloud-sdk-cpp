@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回查询记录总数
-                     * @return Total 返回查询记录总数
+                     * 获取<p>返回查询记录总数</p>
+                     * @return Total <p>返回查询记录总数</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取消耗记录详情
-                     * @return Details 消耗记录详情
+                     * 获取<p>消耗记录详情</p>
+                     * @return Details <p>消耗记录详情</p>
                      * 
                      */
                     std::vector<ChannelBillUsageDetail> GetDetails() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回查询记录总数
+                     * <p>返回查询记录总数</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 消耗记录详情
+                     * <p>消耗记录详情</p>
                      */
                     std::vector<ChannelBillUsageDetail> m_details;
                     bool m_detailsHasBeenSet;

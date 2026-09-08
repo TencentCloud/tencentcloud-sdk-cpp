@@ -103,6 +103,10 @@
 #include <tencentcloud/cls/v20201016/model/CreateRecordingRuleYamlTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateRemoteWriteTaskRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateRemoteWriteTaskResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateResourceGraphRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateResourceGraphResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateResourceGraphProductIngestTaskRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateResourceGraphProductIngestTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateS3RechargeRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateS3RechargeResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateScheduledSqlRequest.h>
@@ -183,6 +187,10 @@
 #include <tencentcloud/cls/v20201016/model/DeleteRecordingRuleYamlTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteRemoteWriteTaskRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteRemoteWriteTaskResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteResourceGraphRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteResourceGraphResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteResourceGraphProductIngestTaskRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteResourceGraphProductIngestTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteS3RechargeRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteS3RechargeResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteScheduledSqlRequest.h>
@@ -301,6 +309,26 @@
 #include <tencentcloud/cls/v20201016/model/DescribeRecordingRuleYamlTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeRemoteWriteTasksRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeRemoteWriteTasksResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeResourceGraphDetailRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeResourceGraphDetailResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeResourceGraphEntitiesRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeResourceGraphEntitiesResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeResourceGraphEntityDependencyRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeResourceGraphEntityDependencyResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeResourceGraphEntityDetailRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeResourceGraphEntityDetailResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeResourceGraphFailureDetailRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeResourceGraphFailureDetailResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeResourceGraphIngestTaskFailureDetailRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeResourceGraphIngestTaskFailureDetailResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeResourceGraphProductIngestTaskDetailRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeResourceGraphProductIngestTaskDetailResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeResourceGraphProductIngestTaskListRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeResourceGraphProductIngestTaskListResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeResourceGraphTkeClusterStatusRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeResourceGraphTkeClusterStatusResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeResourceGraphsRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeResourceGraphsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeS3RechargesRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeS3RechargesResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeScheduledSqlInfoRequest.h>
@@ -397,6 +425,12 @@
 #include <tencentcloud/cls/v20201016/model/ModifyRecordingRuleYamlTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyRemoteWriteTaskRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyRemoteWriteTaskResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyResourceGraphRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyResourceGraphResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyResourceGraphEntityTopicsRelationRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyResourceGraphEntityTopicsRelationResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyResourceGraphProductIngestTaskRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyResourceGraphProductIngestTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyS3RechargeRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyS3RechargeResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyScheduledSqlRequest.h>
@@ -423,6 +457,10 @@
 #include <tencentcloud/cls/v20201016/model/QueryMetricResponse.h>
 #include <tencentcloud/cls/v20201016/model/QueryRangeMetricRequest.h>
 #include <tencentcloud/cls/v20201016/model/QueryRangeMetricResponse.h>
+#include <tencentcloud/cls/v20201016/model/RetryResourceGraphRequest.h>
+#include <tencentcloud/cls/v20201016/model/RetryResourceGraphResponse.h>
+#include <tencentcloud/cls/v20201016/model/RetryResourceGraphProductIngestTaskRequest.h>
+#include <tencentcloud/cls/v20201016/model/RetryResourceGraphProductIngestTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/RetryShipperTaskRequest.h>
 #include <tencentcloud/cls/v20201016/model/RetryShipperTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/SearchCosRechargeInfoRequest.h>
@@ -573,6 +611,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRemoteWriteTaskResponse> CreateRemoteWriteTaskOutcome;
                 typedef std::future<CreateRemoteWriteTaskOutcome> CreateRemoteWriteTaskOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateRemoteWriteTaskRequest&, CreateRemoteWriteTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRemoteWriteTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateResourceGraphResponse> CreateResourceGraphOutcome;
+                typedef std::future<CreateResourceGraphOutcome> CreateResourceGraphOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateResourceGraphRequest&, CreateResourceGraphOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceGraphAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateResourceGraphProductIngestTaskResponse> CreateResourceGraphProductIngestTaskOutcome;
+                typedef std::future<CreateResourceGraphProductIngestTaskOutcome> CreateResourceGraphProductIngestTaskOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateResourceGraphProductIngestTaskRequest&, CreateResourceGraphProductIngestTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceGraphProductIngestTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateS3RechargeResponse> CreateS3RechargeOutcome;
                 typedef std::future<CreateS3RechargeOutcome> CreateS3RechargeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateS3RechargeRequest&, CreateS3RechargeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateS3RechargeAsyncHandler;
@@ -693,6 +737,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRemoteWriteTaskResponse> DeleteRemoteWriteTaskOutcome;
                 typedef std::future<DeleteRemoteWriteTaskOutcome> DeleteRemoteWriteTaskOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteRemoteWriteTaskRequest&, DeleteRemoteWriteTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRemoteWriteTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteResourceGraphResponse> DeleteResourceGraphOutcome;
+                typedef std::future<DeleteResourceGraphOutcome> DeleteResourceGraphOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteResourceGraphRequest&, DeleteResourceGraphOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourceGraphAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteResourceGraphProductIngestTaskResponse> DeleteResourceGraphProductIngestTaskOutcome;
+                typedef std::future<DeleteResourceGraphProductIngestTaskOutcome> DeleteResourceGraphProductIngestTaskOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteResourceGraphProductIngestTaskRequest&, DeleteResourceGraphProductIngestTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourceGraphProductIngestTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteS3RechargeResponse> DeleteS3RechargeOutcome;
                 typedef std::future<DeleteS3RechargeOutcome> DeleteS3RechargeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteS3RechargeRequest&, DeleteS3RechargeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteS3RechargeAsyncHandler;
@@ -870,6 +920,36 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRemoteWriteTasksResponse> DescribeRemoteWriteTasksOutcome;
                 typedef std::future<DescribeRemoteWriteTasksOutcome> DescribeRemoteWriteTasksOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeRemoteWriteTasksRequest&, DescribeRemoteWriteTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRemoteWriteTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceGraphDetailResponse> DescribeResourceGraphDetailOutcome;
+                typedef std::future<DescribeResourceGraphDetailOutcome> DescribeResourceGraphDetailOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeResourceGraphDetailRequest&, DescribeResourceGraphDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGraphDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceGraphEntitiesResponse> DescribeResourceGraphEntitiesOutcome;
+                typedef std::future<DescribeResourceGraphEntitiesOutcome> DescribeResourceGraphEntitiesOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeResourceGraphEntitiesRequest&, DescribeResourceGraphEntitiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGraphEntitiesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceGraphEntityDependencyResponse> DescribeResourceGraphEntityDependencyOutcome;
+                typedef std::future<DescribeResourceGraphEntityDependencyOutcome> DescribeResourceGraphEntityDependencyOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeResourceGraphEntityDependencyRequest&, DescribeResourceGraphEntityDependencyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGraphEntityDependencyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceGraphEntityDetailResponse> DescribeResourceGraphEntityDetailOutcome;
+                typedef std::future<DescribeResourceGraphEntityDetailOutcome> DescribeResourceGraphEntityDetailOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeResourceGraphEntityDetailRequest&, DescribeResourceGraphEntityDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGraphEntityDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceGraphFailureDetailResponse> DescribeResourceGraphFailureDetailOutcome;
+                typedef std::future<DescribeResourceGraphFailureDetailOutcome> DescribeResourceGraphFailureDetailOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeResourceGraphFailureDetailRequest&, DescribeResourceGraphFailureDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGraphFailureDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceGraphIngestTaskFailureDetailResponse> DescribeResourceGraphIngestTaskFailureDetailOutcome;
+                typedef std::future<DescribeResourceGraphIngestTaskFailureDetailOutcome> DescribeResourceGraphIngestTaskFailureDetailOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeResourceGraphIngestTaskFailureDetailRequest&, DescribeResourceGraphIngestTaskFailureDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGraphIngestTaskFailureDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceGraphProductIngestTaskDetailResponse> DescribeResourceGraphProductIngestTaskDetailOutcome;
+                typedef std::future<DescribeResourceGraphProductIngestTaskDetailOutcome> DescribeResourceGraphProductIngestTaskDetailOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeResourceGraphProductIngestTaskDetailRequest&, DescribeResourceGraphProductIngestTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGraphProductIngestTaskDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceGraphProductIngestTaskListResponse> DescribeResourceGraphProductIngestTaskListOutcome;
+                typedef std::future<DescribeResourceGraphProductIngestTaskListOutcome> DescribeResourceGraphProductIngestTaskListOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeResourceGraphProductIngestTaskListRequest&, DescribeResourceGraphProductIngestTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGraphProductIngestTaskListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceGraphTkeClusterStatusResponse> DescribeResourceGraphTkeClusterStatusOutcome;
+                typedef std::future<DescribeResourceGraphTkeClusterStatusOutcome> DescribeResourceGraphTkeClusterStatusOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeResourceGraphTkeClusterStatusRequest&, DescribeResourceGraphTkeClusterStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGraphTkeClusterStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceGraphsResponse> DescribeResourceGraphsOutcome;
+                typedef std::future<DescribeResourceGraphsOutcome> DescribeResourceGraphsOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeResourceGraphsRequest&, DescribeResourceGraphsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGraphsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeS3RechargesResponse> DescribeS3RechargesOutcome;
                 typedef std::future<DescribeS3RechargesOutcome> DescribeS3RechargesOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeS3RechargesRequest&, DescribeS3RechargesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeS3RechargesAsyncHandler;
@@ -1014,6 +1094,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRemoteWriteTaskResponse> ModifyRemoteWriteTaskOutcome;
                 typedef std::future<ModifyRemoteWriteTaskOutcome> ModifyRemoteWriteTaskOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyRemoteWriteTaskRequest&, ModifyRemoteWriteTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRemoteWriteTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyResourceGraphResponse> ModifyResourceGraphOutcome;
+                typedef std::future<ModifyResourceGraphOutcome> ModifyResourceGraphOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyResourceGraphRequest&, ModifyResourceGraphOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourceGraphAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyResourceGraphEntityTopicsRelationResponse> ModifyResourceGraphEntityTopicsRelationOutcome;
+                typedef std::future<ModifyResourceGraphEntityTopicsRelationOutcome> ModifyResourceGraphEntityTopicsRelationOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyResourceGraphEntityTopicsRelationRequest&, ModifyResourceGraphEntityTopicsRelationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourceGraphEntityTopicsRelationAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyResourceGraphProductIngestTaskResponse> ModifyResourceGraphProductIngestTaskOutcome;
+                typedef std::future<ModifyResourceGraphProductIngestTaskOutcome> ModifyResourceGraphProductIngestTaskOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyResourceGraphProductIngestTaskRequest&, ModifyResourceGraphProductIngestTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourceGraphProductIngestTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyS3RechargeResponse> ModifyS3RechargeOutcome;
                 typedef std::future<ModifyS3RechargeOutcome> ModifyS3RechargeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyS3RechargeRequest&, ModifyS3RechargeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyS3RechargeAsyncHandler;
@@ -1053,6 +1142,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryRangeMetricResponse> QueryRangeMetricOutcome;
                 typedef std::future<QueryRangeMetricOutcome> QueryRangeMetricOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::QueryRangeMetricRequest&, QueryRangeMetricOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryRangeMetricAsyncHandler;
+                typedef Outcome<Core::Error, Model::RetryResourceGraphResponse> RetryResourceGraphOutcome;
+                typedef std::future<RetryResourceGraphOutcome> RetryResourceGraphOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::RetryResourceGraphRequest&, RetryResourceGraphOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetryResourceGraphAsyncHandler;
+                typedef Outcome<Core::Error, Model::RetryResourceGraphProductIngestTaskResponse> RetryResourceGraphProductIngestTaskOutcome;
+                typedef std::future<RetryResourceGraphProductIngestTaskOutcome> RetryResourceGraphProductIngestTaskOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::RetryResourceGraphProductIngestTaskRequest&, RetryResourceGraphProductIngestTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetryResourceGraphProductIngestTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::RetryShipperTaskResponse> RetryShipperTaskOutcome;
                 typedef std::future<RetryShipperTaskOutcome> RetryShipperTaskOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::RetryShipperTaskRequest&, RetryShipperTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetryShipperTaskAsyncHandler;
@@ -1456,6 +1551,24 @@ namespace TencentCloud
                 CreateRemoteWriteTaskOutcomeCallable CreateRemoteWriteTaskCallable(const Model::CreateRemoteWriteTaskRequest& request);
 
                 /**
+                 *创建工作区。
+                 * @param req CreateResourceGraphRequest
+                 * @return CreateResourceGraphOutcome
+                 */
+                CreateResourceGraphOutcome CreateResourceGraph(const Model::CreateResourceGraphRequest &request);
+                void CreateResourceGraphAsync(const Model::CreateResourceGraphRequest& request, const CreateResourceGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateResourceGraphOutcomeCallable CreateResourceGraphCallable(const Model::CreateResourceGraphRequest& request);
+
+                /**
+                 *接入指定云产品。EBPF 类产品需提供 EBPFCollectRule，API 类产品仅需 Product。
+                 * @param req CreateResourceGraphProductIngestTaskRequest
+                 * @return CreateResourceGraphProductIngestTaskOutcome
+                 */
+                CreateResourceGraphProductIngestTaskOutcome CreateResourceGraphProductIngestTask(const Model::CreateResourceGraphProductIngestTaskRequest &request);
+                void CreateResourceGraphProductIngestTaskAsync(const Model::CreateResourceGraphProductIngestTaskRequest& request, const CreateResourceGraphProductIngestTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateResourceGraphProductIngestTaskOutcomeCallable CreateResourceGraphProductIngestTaskCallable(const Model::CreateResourceGraphProductIngestTaskRequest& request);
+
+                /**
                  *本接口用于创建aws导入任务
                  * @param req CreateS3RechargeRequest
                  * @return CreateS3RechargeOutcome
@@ -1814,6 +1927,24 @@ namespace TencentCloud
                 DeleteRemoteWriteTaskOutcome DeleteRemoteWriteTask(const Model::DeleteRemoteWriteTaskRequest &request);
                 void DeleteRemoteWriteTaskAsync(const Model::DeleteRemoteWriteTaskRequest& request, const DeleteRemoteWriteTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteRemoteWriteTaskOutcomeCallable DeleteRemoteWriteTaskCallable(const Model::DeleteRemoteWriteTaskRequest& request);
+
+                /**
+                 *删除工作区。删除前需确认是否级联清理已接入的云产品（待产品确认）。
+                 * @param req DeleteResourceGraphRequest
+                 * @return DeleteResourceGraphOutcome
+                 */
+                DeleteResourceGraphOutcome DeleteResourceGraph(const Model::DeleteResourceGraphRequest &request);
+                void DeleteResourceGraphAsync(const Model::DeleteResourceGraphRequest& request, const DeleteResourceGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteResourceGraphOutcomeCallable DeleteResourceGraphCallable(const Model::DeleteResourceGraphRequest& request);
+
+                /**
+                 *删除产品接入任务
+                 * @param req DeleteResourceGraphProductIngestTaskRequest
+                 * @return DeleteResourceGraphProductIngestTaskOutcome
+                 */
+                DeleteResourceGraphProductIngestTaskOutcome DeleteResourceGraphProductIngestTask(const Model::DeleteResourceGraphProductIngestTaskRequest &request);
+                void DeleteResourceGraphProductIngestTaskAsync(const Model::DeleteResourceGraphProductIngestTaskRequest& request, const DeleteResourceGraphProductIngestTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteResourceGraphProductIngestTaskOutcomeCallable DeleteResourceGraphProductIngestTaskCallable(const Model::DeleteResourceGraphProductIngestTaskRequest& request);
 
                 /**
                  *本接口用于删除aws导入任务
@@ -2348,6 +2479,96 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 DescribeRemoteWriteTasksOutcomeCallable DescribeRemoteWriteTasksCallable(const Model::DescribeRemoteWriteTasksRequest& request);
 
                 /**
+                 *查询单个云产品接入的详情，包含基本信息、实例选择、eBPF 采集规则和关联的日志主题。
+                 * @param req DescribeResourceGraphDetailRequest
+                 * @return DescribeResourceGraphDetailOutcome
+                 */
+                DescribeResourceGraphDetailOutcome DescribeResourceGraphDetail(const Model::DescribeResourceGraphDetailRequest &request);
+                void DescribeResourceGraphDetailAsync(const Model::DescribeResourceGraphDetailRequest& request, const DescribeResourceGraphDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceGraphDetailOutcomeCallable DescribeResourceGraphDetailCallable(const Model::DescribeResourceGraphDetailRequest& request);
+
+                /**
+                 *分页查询资源图谱实体列表。Filters 支持  Product / EntityClassName / Keyword 过滤；TagFilter 由于结构特殊（key 单选 + values 多选）独立成字段。
+                 * @param req DescribeResourceGraphEntitiesRequest
+                 * @return DescribeResourceGraphEntitiesOutcome
+                 */
+                DescribeResourceGraphEntitiesOutcome DescribeResourceGraphEntities(const Model::DescribeResourceGraphEntitiesRequest &request);
+                void DescribeResourceGraphEntitiesAsync(const Model::DescribeResourceGraphEntitiesRequest& request, const DescribeResourceGraphEntitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceGraphEntitiesOutcomeCallable DescribeResourceGraphEntitiesCallable(const Model::DescribeResourceGraphEntitiesRequest& request);
+
+                /**
+                 *以指定实体为中心，按 Direction（上/下游/全部）+ Hop（跳数）查询依赖拓扑，同时返回拓扑图（节点+边）、4 张卡片汇总、列表区数据、产品 tag 汇总。
+                 * @param req DescribeResourceGraphEntityDependencyRequest
+                 * @return DescribeResourceGraphEntityDependencyOutcome
+                 */
+                DescribeResourceGraphEntityDependencyOutcome DescribeResourceGraphEntityDependency(const Model::DescribeResourceGraphEntityDependencyRequest &request);
+                void DescribeResourceGraphEntityDependencyAsync(const Model::DescribeResourceGraphEntityDependencyRequest& request, const DescribeResourceGraphEntityDependencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceGraphEntityDependencyOutcomeCallable DescribeResourceGraphEntityDependencyCallable(const Model::DescribeResourceGraphEntityDependencyRequest& request);
+
+                /**
+                 *查询单个实体的完整详情，包含基本信息、动态属性、标签、关联主题。
+                 * @param req DescribeResourceGraphEntityDetailRequest
+                 * @return DescribeResourceGraphEntityDetailOutcome
+                 */
+                DescribeResourceGraphEntityDetailOutcome DescribeResourceGraphEntityDetail(const Model::DescribeResourceGraphEntityDetailRequest &request);
+                void DescribeResourceGraphEntityDetailAsync(const Model::DescribeResourceGraphEntityDetailRequest& request, const DescribeResourceGraphEntityDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceGraphEntityDetailOutcomeCallable DescribeResourceGraphEntityDetailCallable(const Model::DescribeResourceGraphEntityDetailRequest& request);
+
+                /**
+                 *查询资源图谱失败详情
+                 * @param req DescribeResourceGraphFailureDetailRequest
+                 * @return DescribeResourceGraphFailureDetailOutcome
+                 */
+                DescribeResourceGraphFailureDetailOutcome DescribeResourceGraphFailureDetail(const Model::DescribeResourceGraphFailureDetailRequest &request);
+                void DescribeResourceGraphFailureDetailAsync(const Model::DescribeResourceGraphFailureDetailRequest& request, const DescribeResourceGraphFailureDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceGraphFailureDetailOutcomeCallable DescribeResourceGraphFailureDetailCallable(const Model::DescribeResourceGraphFailureDetailRequest& request);
+
+                /**
+                 *查询资源图谱失败详情
+                 * @param req DescribeResourceGraphIngestTaskFailureDetailRequest
+                 * @return DescribeResourceGraphIngestTaskFailureDetailOutcome
+                 */
+                DescribeResourceGraphIngestTaskFailureDetailOutcome DescribeResourceGraphIngestTaskFailureDetail(const Model::DescribeResourceGraphIngestTaskFailureDetailRequest &request);
+                void DescribeResourceGraphIngestTaskFailureDetailAsync(const Model::DescribeResourceGraphIngestTaskFailureDetailRequest& request, const DescribeResourceGraphIngestTaskFailureDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceGraphIngestTaskFailureDetailOutcomeCallable DescribeResourceGraphIngestTaskFailureDetailCallable(const Model::DescribeResourceGraphIngestTaskFailureDetailRequest& request);
+
+                /**
+                 *查询单个云产品接入的详情，包含基本信息、实例选择、eBPF 采集规则和关联的日志主题。
+                 * @param req DescribeResourceGraphProductIngestTaskDetailRequest
+                 * @return DescribeResourceGraphProductIngestTaskDetailOutcome
+                 */
+                DescribeResourceGraphProductIngestTaskDetailOutcome DescribeResourceGraphProductIngestTaskDetail(const Model::DescribeResourceGraphProductIngestTaskDetailRequest &request);
+                void DescribeResourceGraphProductIngestTaskDetailAsync(const Model::DescribeResourceGraphProductIngestTaskDetailRequest& request, const DescribeResourceGraphProductIngestTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceGraphProductIngestTaskDetailOutcomeCallable DescribeResourceGraphProductIngestTaskDetailCallable(const Model::DescribeResourceGraphProductIngestTaskDetailRequest& request);
+
+                /**
+                 *分页查询云产品接入列表，返回顶部 4 张卡片汇总 + 列表行。支持按 Status / CollectMethod / Product / Name 过滤。
+                 * @param req DescribeResourceGraphProductIngestTaskListRequest
+                 * @return DescribeResourceGraphProductIngestTaskListOutcome
+                 */
+                DescribeResourceGraphProductIngestTaskListOutcome DescribeResourceGraphProductIngestTaskList(const Model::DescribeResourceGraphProductIngestTaskListRequest &request);
+                void DescribeResourceGraphProductIngestTaskListAsync(const Model::DescribeResourceGraphProductIngestTaskListRequest& request, const DescribeResourceGraphProductIngestTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceGraphProductIngestTaskListOutcomeCallable DescribeResourceGraphProductIngestTaskListCallable(const Model::DescribeResourceGraphProductIngestTaskListRequest& request);
+
+                /**
+                 *资源图谱tke集群接入状态
+                 * @param req DescribeResourceGraphTkeClusterStatusRequest
+                 * @return DescribeResourceGraphTkeClusterStatusOutcome
+                 */
+                DescribeResourceGraphTkeClusterStatusOutcome DescribeResourceGraphTkeClusterStatus(const Model::DescribeResourceGraphTkeClusterStatusRequest &request);
+                void DescribeResourceGraphTkeClusterStatusAsync(const Model::DescribeResourceGraphTkeClusterStatusRequest& request, const DescribeResourceGraphTkeClusterStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceGraphTkeClusterStatusOutcomeCallable DescribeResourceGraphTkeClusterStatusCallable(const Model::DescribeResourceGraphTkeClusterStatusRequest& request);
+
+                /**
+                 *分页查询工作区列表，支持按 WorkAreaId / Name / Region 过滤。
+                 * @param req DescribeResourceGraphsRequest
+                 * @return DescribeResourceGraphsOutcome
+                 */
+                DescribeResourceGraphsOutcome DescribeResourceGraphs(const Model::DescribeResourceGraphsRequest &request);
+                void DescribeResourceGraphsAsync(const Model::DescribeResourceGraphsRequest& request, const DescribeResourceGraphsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceGraphsOutcomeCallable DescribeResourceGraphsCallable(const Model::DescribeResourceGraphsRequest& request);
+
+                /**
                  *本接口用于获取cos导入配置
                  * @param req DescribeS3RechargesRequest
                  * @return DescribeS3RechargesOutcome
@@ -2782,6 +3003,33 @@ API 中 Region 填写任意一个地域均可，建议使用广州(ap-guangzhou)
                 ModifyRemoteWriteTaskOutcomeCallable ModifyRemoteWriteTaskCallable(const Model::ModifyRemoteWriteTaskRequest& request);
 
                 /**
+                 *编辑工作区基本信息。支持改名（仍需保持租户内唯一）和修改描述，主题地域 Region 不可修改。
+                 * @param req ModifyResourceGraphRequest
+                 * @return ModifyResourceGraphOutcome
+                 */
+                ModifyResourceGraphOutcome ModifyResourceGraph(const Model::ModifyResourceGraphRequest &request);
+                void ModifyResourceGraphAsync(const Model::ModifyResourceGraphRequest& request, const ModifyResourceGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyResourceGraphOutcomeCallable ModifyResourceGraphCallable(const Model::ModifyResourceGraphRequest& request);
+
+                /**
+                 *修改资源图谱实体与日志主题关系
+                 * @param req ModifyResourceGraphEntityTopicsRelationRequest
+                 * @return ModifyResourceGraphEntityTopicsRelationOutcome
+                 */
+                ModifyResourceGraphEntityTopicsRelationOutcome ModifyResourceGraphEntityTopicsRelation(const Model::ModifyResourceGraphEntityTopicsRelationRequest &request);
+                void ModifyResourceGraphEntityTopicsRelationAsync(const Model::ModifyResourceGraphEntityTopicsRelationRequest& request, const ModifyResourceGraphEntityTopicsRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyResourceGraphEntityTopicsRelationOutcomeCallable ModifyResourceGraphEntityTopicsRelationCallable(const Model::ModifyResourceGraphEntityTopicsRelationRequest& request);
+
+                /**
+                 *编辑已接入云产品的实例选择、eBPF 规则、日志主题配置。
+                 * @param req ModifyResourceGraphProductIngestTaskRequest
+                 * @return ModifyResourceGraphProductIngestTaskOutcome
+                 */
+                ModifyResourceGraphProductIngestTaskOutcome ModifyResourceGraphProductIngestTask(const Model::ModifyResourceGraphProductIngestTaskRequest &request);
+                void ModifyResourceGraphProductIngestTaskAsync(const Model::ModifyResourceGraphProductIngestTaskRequest& request, const ModifyResourceGraphProductIngestTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyResourceGraphProductIngestTaskOutcomeCallable ModifyResourceGraphProductIngestTaskCallable(const Model::ModifyResourceGraphProductIngestTaskRequest& request);
+
+                /**
                  *本接口用于修改aws导入任务
                  * @param req ModifyS3RechargeRequest
                  * @return ModifyS3RechargeOutcome
@@ -2899,6 +3147,24 @@ API 中 Region 填写任意一个地域均可开通所有地域的 CLS，建议�
                 QueryRangeMetricOutcome QueryRangeMetric(const Model::QueryRangeMetricRequest &request);
                 void QueryRangeMetricAsync(const Model::QueryRangeMetricRequest& request, const QueryRangeMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryRangeMetricOutcomeCallable QueryRangeMetricCallable(const Model::QueryRangeMetricRequest& request);
+
+                /**
+                 *重试资源图谱
+                 * @param req RetryResourceGraphRequest
+                 * @return RetryResourceGraphOutcome
+                 */
+                RetryResourceGraphOutcome RetryResourceGraph(const Model::RetryResourceGraphRequest &request);
+                void RetryResourceGraphAsync(const Model::RetryResourceGraphRequest& request, const RetryResourceGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RetryResourceGraphOutcomeCallable RetryResourceGraphCallable(const Model::RetryResourceGraphRequest& request);
+
+                /**
+                 *重试初始化资源图谱工作区
+                 * @param req RetryResourceGraphProductIngestTaskRequest
+                 * @return RetryResourceGraphProductIngestTaskOutcome
+                 */
+                RetryResourceGraphProductIngestTaskOutcome RetryResourceGraphProductIngestTask(const Model::RetryResourceGraphProductIngestTaskRequest &request);
+                void RetryResourceGraphProductIngestTaskAsync(const Model::RetryResourceGraphProductIngestTaskRequest& request, const RetryResourceGraphProductIngestTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RetryResourceGraphProductIngestTaskOutcomeCallable RetryResourceGraphProductIngestTaskCallable(const Model::RetryResourceGraphProductIngestTaskRequest& request);
 
                 /**
                  *重试失败的投递任务

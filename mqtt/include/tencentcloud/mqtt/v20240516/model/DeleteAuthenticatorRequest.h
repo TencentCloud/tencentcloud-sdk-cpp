@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
-                     * @return InstanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * 获取<p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
+                     * @return InstanceId <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
-                     * @param _instanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * 设置<p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
+                     * @param _instanceId <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,27 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取认证器类型:
-JWT：JWT认证器
-JWKS：JWKS认证器
-HTTP：HTTP认证器
-                     * @return Type 认证器类型:
-JWT：JWT认证器
-JWKS：JWKS认证器
-HTTP：HTTP认证器
+                     * 获取<p>认证器类型:<br>JWT：JWT认证器<br>JWKS：JWKS认证器<br>HTTP：HTTP认证器</p>
+                     * @return Type <p>认证器类型:<br>JWT：JWT认证器<br>JWKS：JWKS认证器<br>HTTP：HTTP认证器</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置认证器类型:
-JWT：JWT认证器
-JWKS：JWKS认证器
-HTTP：HTTP认证器
-                     * @param _type 认证器类型:
-JWT：JWT认证器
-JWKS：JWKS认证器
-HTTP：HTTP认证器
+                     * 设置<p>认证器类型:<br>JWT：JWT认证器<br>JWKS：JWKS认证器<br>HTTP：HTTP认证器</p>
+                     * @param _type <p>认证器类型:<br>JWT：JWT认证器<br>JWKS：JWKS认证器<br>HTTP：HTTP认证器</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -99,16 +87,13 @@ HTTP：HTTP认证器
                 private:
 
                     /**
-                     * 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 认证器类型:
-JWT：JWT认证器
-JWKS：JWKS认证器
-HTTP：HTTP认证器
+                     * <p>认证器类型:<br>JWT：JWT认证器<br>JWKS：JWKS认证器<br>HTTP：HTTP认证器</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

@@ -75,8 +75,6 @@
 #include <tencentcloud/faceid/v20180301/model/IdCardOCRVerificationResponse.h>
 #include <tencentcloud/faceid/v20180301/model/IdCardVerificationRequest.h>
 #include <tencentcloud/faceid/v20180301/model/IdCardVerificationResponse.h>
-#include <tencentcloud/faceid/v20180301/model/ImageRecognitionRequest.h>
-#include <tencentcloud/faceid/v20180301/model/ImageRecognitionResponse.h>
 #include <tencentcloud/faceid/v20180301/model/ImageRecognitionV2Request.h>
 #include <tencentcloud/faceid/v20180301/model/ImageRecognitionV2Response.h>
 #include <tencentcloud/faceid/v20180301/model/LivenessCompareRequest.h>
@@ -191,9 +189,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::IdCardVerificationResponse> IdCardVerificationOutcome;
                 typedef std::future<IdCardVerificationOutcome> IdCardVerificationOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::IdCardVerificationRequest&, IdCardVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IdCardVerificationAsyncHandler;
-                typedef Outcome<Core::Error, Model::ImageRecognitionResponse> ImageRecognitionOutcome;
-                typedef std::future<ImageRecognitionOutcome> ImageRecognitionOutcomeCallable;
-                typedef std::function<void(const FaceidClient*, const Model::ImageRecognitionRequest&, ImageRecognitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageRecognitionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ImageRecognitionV2Response> ImageRecognitionV2Outcome;
                 typedef std::future<ImageRecognitionV2Outcome> ImageRecognitionV2OutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::ImageRecognitionV2Request&, ImageRecognitionV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageRecognitionV2AsyncHandler;
@@ -463,15 +458,6 @@ namespace TencentCloud
                 IdCardVerificationOutcome IdCardVerification(const Model::IdCardVerificationRequest &request);
                 void IdCardVerificationAsync(const Model::IdCardVerificationRequest& request, const IdCardVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 IdCardVerificationOutcomeCallable IdCardVerificationCallable(const Model::IdCardVerificationRequest& request);
-
-                /**
-                 *传入照片和身份信息，判断该照片与权威库的证件照是否属于同一个人（该接口已停止接入，新客户请使用<a href="https://cloud.tencent.com/document/product/1007/102203">照片人脸核身（V2.0）</a>接口）。
-                 * @param req ImageRecognitionRequest
-                 * @return ImageRecognitionOutcome
-                 */
-                ImageRecognitionOutcome ImageRecognition(const Model::ImageRecognitionRequest &request);
-                void ImageRecognitionAsync(const Model::ImageRecognitionRequest& request, const ImageRecognitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ImageRecognitionOutcomeCallable ImageRecognitionCallable(const Model::ImageRecognitionRequest& request);
 
                 /**
                  *传入照片和身份信息，判断该照片与权威库的证件照是否属于同一个人。

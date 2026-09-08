@@ -29,6 +29,7 @@
 #include <tencentcloud/vm/v20210922/model/RcbAsr.h>
 #include <tencentcloud/vm/v20210922/model/SegmentCosUrlList.h>
 #include <tencentcloud/vm/v20210922/model/VideoSegment.h>
+#include <tencentcloud/vm/v20210922/model/HitSnippetInfo.h>
 
 
 namespace TencentCloud
@@ -359,6 +360,20 @@ namespace TencentCloud
                      */
                     bool VideoSegmentsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>命中信息</p>
+                     * @return HitSnippetInfos <p>命中信息</p>
+                     * 
+                     */
+                    std::vector<HitSnippetInfo> GetHitSnippetInfos() const;
+
+                    /**
+                     * 判断参数 HitSnippetInfos 是否已赋值
+                     * @return HitSnippetInfos 是否已赋值
+                     * 
+                     */
+                    bool HitSnippetInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -492,6 +507,12 @@ namespace TencentCloud
                      */
                     std::vector<VideoSegment> m_videoSegments;
                     bool m_videoSegmentsHasBeenSet;
+
+                    /**
+                     * <p>命中信息</p>
+                     */
+                    std::vector<HitSnippetInfo> m_hitSnippetInfos;
+                    bool m_hitSnippetInfosHasBeenSet;
 
                 };
             }

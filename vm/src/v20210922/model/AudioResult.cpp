@@ -41,7 +41,8 @@ AudioResult::AudioResult() :
     m_labelResultsHasBeenSet(false),
     m_hitTypeHasBeenSet(false),
     m_sentencesHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+    m_requestIdHasBeenSet(false),
+    m_hitSnippetInfosHasBeenSet(false)
 {
 }
 
@@ -340,6 +341,26 @@ CoreInternalOutcome AudioResult::Deserialize(const rapidjson::Value &value)
         m_requestIdHasBeenSet = true;
     }
 
+    if (value.HasMember("HitSnippetInfos") && !value["HitSnippetInfos"].IsNull())
+    {
+        if (!value["HitSnippetInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AudioResult.HitSnippetInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["HitSnippetInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            HitSnippetInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_hitSnippetInfos.push_back(item);
+        }
+        m_hitSnippetInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -569,6 +590,21 @@ void AudioResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "RequestId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_requestId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hitSnippetInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HitSnippetInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_hitSnippetInfos.begin(); itr != m_hitSnippetInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -908,5 +944,21 @@ void AudioResult::SetRequestId(const string& _requestId)
 bool AudioResult::RequestIdHasBeenSet() const
 {
     return m_requestIdHasBeenSet;
+}
+
+vector<HitSnippetInfo> AudioResult::GetHitSnippetInfos() const
+{
+    return m_hitSnippetInfos;
+}
+
+void AudioResult::SetHitSnippetInfos(const vector<HitSnippetInfo>& _hitSnippetInfos)
+{
+    m_hitSnippetInfos = _hitSnippetInfos;
+    m_hitSnippetInfosHasBeenSet = true;
+}
+
+bool AudioResult::HitSnippetInfosHasBeenSet() const
+{
+    return m_hitSnippetInfosHasBeenSet;
 }
 

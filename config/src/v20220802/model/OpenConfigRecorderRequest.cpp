@@ -22,7 +22,8 @@
 using namespace TencentCloud::Config::V20220802::Model;
 using namespace std;
 
-OpenConfigRecorderRequest::OpenConfigRecorderRequest()
+OpenConfigRecorderRequest::OpenConfigRecorderRequest() :
+    m_fromModeHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string OpenConfigRecorderRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_fromModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FromMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_fromMode, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string OpenConfigRecorderRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t OpenConfigRecorderRequest::GetFromMode() const
+{
+    return m_fromMode;
+}
+
+void OpenConfigRecorderRequest::SetFromMode(const uint64_t& _fromMode)
+{
+    m_fromMode = _fromMode;
+    m_fromModeHasBeenSet = true;
+}
+
+bool OpenConfigRecorderRequest::FromModeHasBeenSet() const
+{
+    return m_fromModeHasBeenSet;
+}
 
 

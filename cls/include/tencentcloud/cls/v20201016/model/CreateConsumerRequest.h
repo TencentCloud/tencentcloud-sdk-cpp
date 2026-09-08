@@ -46,23 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取投递任务绑定的日志主题Id。
-- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
-- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
-                     * @return TopicId 投递任务绑定的日志主题Id。
-- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
-- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
+                     * 获取<p>投递任务绑定的日志主题Id。</p><ul><li>通过 <a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href="https://cloud.tencent.com/document/product/614/56456">创建日志主题</a> 获取日志主题Id。</li></ul>
+                     * @return TopicId <p>投递任务绑定的日志主题Id。</p><ul><li>通过 <a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href="https://cloud.tencent.com/document/product/614/56456">创建日志主题</a> 获取日志主题Id。</li></ul>
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置投递任务绑定的日志主题Id。
-- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
-- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
-                     * @param _topicId 投递任务绑定的日志主题Id。
-- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
-- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
+                     * 设置<p>投递任务绑定的日志主题Id。</p><ul><li>通过 <a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href="https://cloud.tencent.com/document/product/614/56456">创建日志主题</a> 获取日志主题Id。</li></ul>
+                     * @param _topicId <p>投递任务绑定的日志主题Id。</p><ul><li>通过 <a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href="https://cloud.tencent.com/document/product/614/56456">创建日志主题</a> 获取日志主题Id。</li></ul>
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -75,23 +67,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取是否投递日志的元数据信息，默认为 true。
-当NeedContent为true时：字段Content有效。
-当NeedContent为false时：字段Content无效。
-                     * @return NeedContent 是否投递日志的元数据信息，默认为 true。
-当NeedContent为true时：字段Content有效。
-当NeedContent为false时：字段Content无效。
+                     * 获取<p>是否投递日志的元数据信息，默认为 true。<br>当NeedContent为true时：字段Content有效。<br>当NeedContent为false时：字段Content无效。</p>
+                     * @return NeedContent <p>是否投递日志的元数据信息，默认为 true。<br>当NeedContent为true时：字段Content有效。<br>当NeedContent为false时：字段Content无效。</p>
                      * 
                      */
                     bool GetNeedContent() const;
 
                     /**
-                     * 设置是否投递日志的元数据信息，默认为 true。
-当NeedContent为true时：字段Content有效。
-当NeedContent为false时：字段Content无效。
-                     * @param _needContent 是否投递日志的元数据信息，默认为 true。
-当NeedContent为true时：字段Content有效。
-当NeedContent为false时：字段Content无效。
+                     * 设置<p>是否投递日志的元数据信息，默认为 true。<br>当NeedContent为true时：字段Content有效。<br>当NeedContent为false时：字段Content无效。</p>
+                     * @param _needContent <p>是否投递日志的元数据信息，默认为 true。<br>当NeedContent为true时：字段Content有效。<br>当NeedContent为false时：字段Content无效。</p>
                      * 
                      */
                     void SetNeedContent(const bool& _needContent);
@@ -104,15 +88,15 @@ namespace TencentCloud
                     bool NeedContentHasBeenSet() const;
 
                     /**
-                     * 获取如果需要投递元数据信息，元数据信息的描述
-                     * @return Content 如果需要投递元数据信息，元数据信息的描述
+                     * 获取<p>如果需要投递元数据信息，元数据信息的描述</p>
+                     * @return Content <p>如果需要投递元数据信息，元数据信息的描述</p>
                      * 
                      */
                     ConsumerContent GetContent() const;
 
                     /**
-                     * 设置如果需要投递元数据信息，元数据信息的描述
-                     * @param _content 如果需要投递元数据信息，元数据信息的描述
+                     * 设置<p>如果需要投递元数据信息，元数据信息的描述</p>
+                     * @param _content <p>如果需要投递元数据信息，元数据信息的描述</p>
                      * 
                      */
                     void SetContent(const ConsumerContent& _content);
@@ -125,15 +109,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取CKafka的描述
-                     * @return Ckafka CKafka的描述
+                     * 获取<p>CKafka的描述</p>
+                     * @return Ckafka <p>CKafka的描述</p>
                      * 
                      */
                     Ckafka GetCkafka() const;
 
                     /**
-                     * 设置CKafka的描述
-                     * @param _ckafka CKafka的描述
+                     * 设置<p>CKafka的描述</p>
+                     * @param _ckafka <p>CKafka的描述</p>
                      * 
                      */
                     void SetCkafka(const Ckafka& _ckafka);
@@ -146,15 +130,15 @@ namespace TencentCloud
                     bool CkafkaHasBeenSet() const;
 
                     /**
-                     * 获取投递时压缩方式，取值0，2，3。[0：NONE；2：SNAPPY；3：LZ4]
-                     * @return Compression 投递时压缩方式，取值0，2，3。[0：NONE；2：SNAPPY；3：LZ4]
+                     * 获取<p>投递时压缩方式，取值0，2，3。[0：NONE；2：SNAPPY；3：LZ4]</p>
+                     * @return Compression <p>投递时压缩方式，取值0，2，3。[0：NONE；2：SNAPPY；3：LZ4]</p>
                      * 
                      */
                     int64_t GetCompression() const;
 
                     /**
-                     * 设置投递时压缩方式，取值0，2，3。[0：NONE；2：SNAPPY；3：LZ4]
-                     * @param _compression 投递时压缩方式，取值0，2，3。[0：NONE；2：SNAPPY；3：LZ4]
+                     * 设置<p>投递时压缩方式，取值0，2，3。[0：NONE；2：SNAPPY；3：LZ4]</p>
+                     * @param _compression <p>投递时压缩方式，取值0，2，3。[0：NONE；2：SNAPPY；3：LZ4]</p>
                      * 
                      */
                     void SetCompression(const int64_t& _compression);
@@ -167,15 +151,15 @@ namespace TencentCloud
                     bool CompressionHasBeenSet() const;
 
                     /**
-                     * 获取角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)
-                     * @return RoleArn 角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)
+                     * 获取<p>角色访问描述名 <a href="https://cloud.tencent.com/document/product/598/19381">创建角色</a></p>
+                     * @return RoleArn <p>角色访问描述名 <a href="https://cloud.tencent.com/document/product/598/19381">创建角色</a></p>
                      * 
                      */
                     std::string GetRoleArn() const;
 
                     /**
-                     * 设置角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)
-                     * @param _roleArn 角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)
+                     * 设置<p>角色访问描述名 <a href="https://cloud.tencent.com/document/product/598/19381">创建角色</a></p>
+                     * @param _roleArn <p>角色访问描述名 <a href="https://cloud.tencent.com/document/product/598/19381">创建角色</a></p>
                      * 
                      */
                     void SetRoleArn(const std::string& _roleArn);
@@ -188,15 +172,15 @@ namespace TencentCloud
                     bool RoleArnHasBeenSet() const;
 
                     /**
-                     * 获取外部ID
-                     * @return ExternalId 外部ID
+                     * 获取<p>外部ID</p>
+                     * @return ExternalId <p>外部ID</p>
                      * 
                      */
                     std::string GetExternalId() const;
 
                     /**
-                     * 设置外部ID
-                     * @param _externalId 外部ID
+                     * 设置<p>外部ID</p>
+                     * @param _externalId <p>外部ID</p>
                      * 
                      */
                     void SetExternalId(const std::string& _externalId);
@@ -209,15 +193,15 @@ namespace TencentCloud
                     bool ExternalIdHasBeenSet() const;
 
                     /**
-                     * 获取高级配置项
-                     * @return AdvancedConfig 高级配置项
+                     * 获取<p>高级配置项</p>
+                     * @return AdvancedConfig <p>高级配置项</p>
                      * 
                      */
                     AdvancedConsumerConfiguration GetAdvancedConfig() const;
 
                     /**
-                     * 设置高级配置项
-                     * @param _advancedConfig 高级配置项
+                     * 设置<p>高级配置项</p>
+                     * @param _advancedConfig <p>高级配置项</p>
                      * 
                      */
                     void SetAdvancedConfig(const AdvancedConsumerConfiguration& _advancedConfig);
@@ -229,59 +213,82 @@ namespace TencentCloud
                      */
                     bool AdvancedConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>日志预过滤-数据写入 ckafka 的原始数据进行预过滤处理</p>
+                     * @return DSLFilter <p>日志预过滤-数据写入 ckafka 的原始数据进行预过滤处理</p>
+                     * 
+                     */
+                    std::string GetDSLFilter() const;
+
+                    /**
+                     * 设置<p>日志预过滤-数据写入 ckafka 的原始数据进行预过滤处理</p>
+                     * @param _dSLFilter <p>日志预过滤-数据写入 ckafka 的原始数据进行预过滤处理</p>
+                     * 
+                     */
+                    void SetDSLFilter(const std::string& _dSLFilter);
+
+                    /**
+                     * 判断参数 DSLFilter 是否已赋值
+                     * @return DSLFilter 是否已赋值
+                     * 
+                     */
+                    bool DSLFilterHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 投递任务绑定的日志主题Id。
-- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
-- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
+                     * <p>投递任务绑定的日志主题Id。</p><ul><li>通过 <a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href="https://cloud.tencent.com/document/product/614/56456">创建日志主题</a> 获取日志主题Id。</li></ul>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 是否投递日志的元数据信息，默认为 true。
-当NeedContent为true时：字段Content有效。
-当NeedContent为false时：字段Content无效。
+                     * <p>是否投递日志的元数据信息，默认为 true。<br>当NeedContent为true时：字段Content有效。<br>当NeedContent为false时：字段Content无效。</p>
                      */
                     bool m_needContent;
                     bool m_needContentHasBeenSet;
 
                     /**
-                     * 如果需要投递元数据信息，元数据信息的描述
+                     * <p>如果需要投递元数据信息，元数据信息的描述</p>
                      */
                     ConsumerContent m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * CKafka的描述
+                     * <p>CKafka的描述</p>
                      */
                     Ckafka m_ckafka;
                     bool m_ckafkaHasBeenSet;
 
                     /**
-                     * 投递时压缩方式，取值0，2，3。[0：NONE；2：SNAPPY；3：LZ4]
+                     * <p>投递时压缩方式，取值0，2，3。[0：NONE；2：SNAPPY；3：LZ4]</p>
                      */
                     int64_t m_compression;
                     bool m_compressionHasBeenSet;
 
                     /**
-                     * 角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)
+                     * <p>角色访问描述名 <a href="https://cloud.tencent.com/document/product/598/19381">创建角色</a></p>
                      */
                     std::string m_roleArn;
                     bool m_roleArnHasBeenSet;
 
                     /**
-                     * 外部ID
+                     * <p>外部ID</p>
                      */
                     std::string m_externalId;
                     bool m_externalIdHasBeenSet;
 
                     /**
-                     * 高级配置项
+                     * <p>高级配置项</p>
                      */
                     AdvancedConsumerConfiguration m_advancedConfig;
                     bool m_advancedConfigHasBeenSet;
+
+                    /**
+                     * <p>日志预过滤-数据写入 ckafka 的原始数据进行预过滤处理</p>
+                     */
+                    std::string m_dSLFilter;
+                    bool m_dSLFilterHasBeenSet;
 
                 };
             }

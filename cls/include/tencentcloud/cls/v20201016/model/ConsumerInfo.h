@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取投递规则ID
-                     * @return ConsumerId 投递规则ID
+                     * 获取<p>投递规则ID</p>
+                     * @return ConsumerId <p>投递规则ID</p>
                      * 
                      */
                     std::string GetConsumerId() const;
 
                     /**
-                     * 设置投递规则ID
-                     * @param _consumerId 投递规则ID
+                     * 设置<p>投递规则ID</p>
+                     * @param _consumerId <p>投递规则ID</p>
                      * 
                      */
                     void SetConsumerId(const std::string& _consumerId);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool ConsumerIdHasBeenSet() const;
 
                     /**
-                     * 获取日志主题ID
-                     * @return TopicId 日志主题ID
+                     * 获取<p>日志主题ID</p>
+                     * @return TopicId <p>日志主题ID</p>
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题ID
-                     * @param _topicId 日志主题ID
+                     * 设置<p>日志主题ID</p>
+                     * @param _topicId <p>日志主题ID</p>
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取投递任务是否生效
-                     * @return Effective 投递任务是否生效
+                     * 获取<p>投递任务是否生效</p>
+                     * @return Effective <p>投递任务是否生效</p>
                      * 
                      */
                     bool GetEffective() const;
 
                     /**
-                     * 设置投递任务是否生效
-                     * @param _effective 投递任务是否生效
+                     * 设置<p>投递任务是否生效</p>
+                     * @param _effective <p>投递任务是否生效</p>
                      * 
                      */
                     void SetEffective(const bool& _effective);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool EffectiveHasBeenSet() const;
 
                     /**
-                     * 获取CKafka的描述
-                     * @return Ckafka CKafka的描述
+                     * 获取<p>CKafka的描述</p>
+                     * @return Ckafka <p>CKafka的描述</p>
                      * 
                      */
                     Ckafka GetCkafka() const;
 
                     /**
-                     * 设置CKafka的描述
-                     * @param _ckafka CKafka的描述
+                     * 设置<p>CKafka的描述</p>
+                     * @param _ckafka <p>CKafka的描述</p>
                      * 
                      */
                     void SetCkafka(const Ckafka& _ckafka);
@@ -134,15 +134,15 @@ namespace TencentCloud
                     bool CkafkaHasBeenSet() const;
 
                     /**
-                     * 获取是否投递日志的元数据信息
-                     * @return NeedContent 是否投递日志的元数据信息
+                     * 获取<p>是否投递日志的元数据信息</p>
+                     * @return NeedContent <p>是否投递日志的元数据信息</p>
                      * 
                      */
                     bool GetNeedContent() const;
 
                     /**
-                     * 设置是否投递日志的元数据信息
-                     * @param _needContent 是否投递日志的元数据信息
+                     * 设置<p>是否投递日志的元数据信息</p>
+                     * @param _needContent <p>是否投递日志的元数据信息</p>
                      * 
                      */
                     void SetNeedContent(const bool& _needContent);
@@ -155,18 +155,18 @@ namespace TencentCloud
                     bool NeedContentHasBeenSet() const;
 
                     /**
-                     * 获取如果需要投递元数据信息，元数据信息的描述
+                     * 获取<p>如果需要投递元数据信息，元数据信息的描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Content 如果需要投递元数据信息，元数据信息的描述
+                     * @return Content <p>如果需要投递元数据信息，元数据信息的描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ConsumerContent GetContent() const;
 
                     /**
-                     * 设置如果需要投递元数据信息，元数据信息的描述
+                     * 设置<p>如果需要投递元数据信息，元数据信息的描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _content 如果需要投递元数据信息，元数据信息的描述
+                     * @param _content <p>如果需要投递元数据信息，元数据信息的描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -180,18 +180,18 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取压缩方式[0:NONE；2:SNAPPY；3:LZ4]
+                     * 获取<p>压缩方式[0:NONE；2:SNAPPY；3:LZ4]</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Compression 压缩方式[0:NONE；2:SNAPPY；3:LZ4]
+                     * @return Compression <p>压缩方式[0:NONE；2:SNAPPY；3:LZ4]</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCompression() const;
 
                     /**
-                     * 设置压缩方式[0:NONE；2:SNAPPY；3:LZ4]
+                     * 设置<p>压缩方式[0:NONE；2:SNAPPY；3:LZ4]</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _compression 压缩方式[0:NONE；2:SNAPPY；3:LZ4]
+                     * @param _compression <p>压缩方式[0:NONE；2:SNAPPY；3:LZ4]</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -205,18 +205,18 @@ namespace TencentCloud
                     bool CompressionHasBeenSet() const;
 
                     /**
-                     * 获取投递任务创建毫秒时间戳
+                     * 获取<p>投递任务创建毫秒时间戳</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 投递任务创建毫秒时间戳
+                     * @return CreateTime <p>投递任务创建毫秒时间戳</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
-                     * 设置投递任务创建毫秒时间戳
+                     * 设置<p>投递任务创建毫秒时间戳</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 投递任务创建毫秒时间戳
+                     * @param _createTime <p>投递任务创建毫秒时间戳</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -230,18 +230,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)	
+                     * 获取<p>角色访问描述名 <a href="https://cloud.tencent.com/document/product/598/19381">创建角色</a></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RoleArn 角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)	
+                     * @return RoleArn <p>角色访问描述名 <a href="https://cloud.tencent.com/document/product/598/19381">创建角色</a></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoleArn() const;
 
                     /**
-                     * 设置角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)	
+                     * 设置<p>角色访问描述名 <a href="https://cloud.tencent.com/document/product/598/19381">创建角色</a></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _roleArn 角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)	
+                     * @param _roleArn <p>角色访问描述名 <a href="https://cloud.tencent.com/document/product/598/19381">创建角色</a></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -255,18 +255,18 @@ namespace TencentCloud
                     bool RoleArnHasBeenSet() const;
 
                     /**
-                     * 获取外部ID
+                     * 获取<p>外部ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExternalId 外部ID
+                     * @return ExternalId <p>外部ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExternalId() const;
 
                     /**
-                     * 设置外部ID
+                     * 设置<p>外部ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _externalId 外部ID
+                     * @param _externalId <p>外部ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -280,18 +280,18 @@ namespace TencentCloud
                     bool ExternalIdHasBeenSet() const;
 
                     /**
-                     * 获取任务运行状态。支持`0`,`1`,`2` - `0`: 停止 - `1`: 运行中 - `2`: 异常	
+                     * 获取<p>任务运行状态。支持<code>0</code>,<code>1</code>,<code>2</code> - <code>0</code>: 停止 - <code>1</code>: 运行中 - <code>2</code>: 异常</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskStatus 任务运行状态。支持`0`,`1`,`2` - `0`: 停止 - `1`: 运行中 - `2`: 异常	
+                     * @return TaskStatus <p>任务运行状态。支持<code>0</code>,<code>1</code>,<code>2</code> - <code>0</code>: 停止 - <code>1</code>: 运行中 - <code>2</code>: 异常</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTaskStatus() const;
 
                     /**
-                     * 设置任务运行状态。支持`0`,`1`,`2` - `0`: 停止 - `1`: 运行中 - `2`: 异常	
+                     * 设置<p>任务运行状态。支持<code>0</code>,<code>1</code>,<code>2</code> - <code>0</code>: 停止 - <code>1</code>: 运行中 - <code>2</code>: 异常</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskStatus 任务运行状态。支持`0`,`1`,`2` - `0`: 停止 - `1`: 运行中 - `2`: 异常	
+                     * @param _taskStatus <p>任务运行状态。支持<code>0</code>,<code>1</code>,<code>2</code> - <code>0</code>: 停止 - <code>1</code>: 运行中 - <code>2</code>: 异常</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -305,15 +305,15 @@ namespace TencentCloud
                     bool TaskStatusHasBeenSet() const;
 
                     /**
-                     * 获取高级配置
-                     * @return AdvancedConfig 高级配置
+                     * 获取<p>高级配置</p>
+                     * @return AdvancedConfig <p>高级配置</p>
                      * 
                      */
                     AdvancedConsumerConfiguration GetAdvancedConfig() const;
 
                     /**
-                     * 设置高级配置
-                     * @param _advancedConfig 高级配置
+                     * 设置<p>高级配置</p>
+                     * @param _advancedConfig <p>高级配置</p>
                      * 
                      */
                     void SetAdvancedConfig(const AdvancedConsumerConfiguration& _advancedConfig);
@@ -325,85 +325,112 @@ namespace TencentCloud
                      */
                     bool AdvancedConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>日志预过滤-数据写入 ckafka 的原始数据进行预过滤处理</p>
+                     * @return DSLFilter <p>日志预过滤-数据写入 ckafka 的原始数据进行预过滤处理</p>
+                     * 
+                     */
+                    std::string GetDSLFilter() const;
+
+                    /**
+                     * 设置<p>日志预过滤-数据写入 ckafka 的原始数据进行预过滤处理</p>
+                     * @param _dSLFilter <p>日志预过滤-数据写入 ckafka 的原始数据进行预过滤处理</p>
+                     * 
+                     */
+                    void SetDSLFilter(const std::string& _dSLFilter);
+
+                    /**
+                     * 判断参数 DSLFilter 是否已赋值
+                     * @return DSLFilter 是否已赋值
+                     * 
+                     */
+                    bool DSLFilterHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 投递规则ID
+                     * <p>投递规则ID</p>
                      */
                     std::string m_consumerId;
                     bool m_consumerIdHasBeenSet;
 
                     /**
-                     * 日志主题ID
+                     * <p>日志主题ID</p>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 投递任务是否生效
+                     * <p>投递任务是否生效</p>
                      */
                     bool m_effective;
                     bool m_effectiveHasBeenSet;
 
                     /**
-                     * CKafka的描述
+                     * <p>CKafka的描述</p>
                      */
                     Ckafka m_ckafka;
                     bool m_ckafkaHasBeenSet;
 
                     /**
-                     * 是否投递日志的元数据信息
+                     * <p>是否投递日志的元数据信息</p>
                      */
                     bool m_needContent;
                     bool m_needContentHasBeenSet;
 
                     /**
-                     * 如果需要投递元数据信息，元数据信息的描述
+                     * <p>如果需要投递元数据信息，元数据信息的描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ConsumerContent m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 压缩方式[0:NONE；2:SNAPPY；3:LZ4]
+                     * <p>压缩方式[0:NONE；2:SNAPPY；3:LZ4]</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_compression;
                     bool m_compressionHasBeenSet;
 
                     /**
-                     * 投递任务创建毫秒时间戳
+                     * <p>投递任务创建毫秒时间戳</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)	
+                     * <p>角色访问描述名 <a href="https://cloud.tencent.com/document/product/598/19381">创建角色</a></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_roleArn;
                     bool m_roleArnHasBeenSet;
 
                     /**
-                     * 外部ID
+                     * <p>外部ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_externalId;
                     bool m_externalIdHasBeenSet;
 
                     /**
-                     * 任务运行状态。支持`0`,`1`,`2` - `0`: 停止 - `1`: 运行中 - `2`: 异常	
+                     * <p>任务运行状态。支持<code>0</code>,<code>1</code>,<code>2</code> - <code>0</code>: 停止 - <code>1</code>: 运行中 - <code>2</code>: 异常</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_taskStatus;
                     bool m_taskStatusHasBeenSet;
 
                     /**
-                     * 高级配置
+                     * <p>高级配置</p>
                      */
                     AdvancedConsumerConfiguration m_advancedConfig;
                     bool m_advancedConfigHasBeenSet;
+
+                    /**
+                     * <p>日志预过滤-数据写入 ckafka 的原始数据进行预过滤处理</p>
+                     */
+                    std::string m_dSLFilter;
+                    bool m_dSLFilterHasBeenSet;
 
                 };
             }

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取当前播放列表信息。
-                     * @return CurrentPlaylist 当前播放列表信息。
+                     * 获取<p>当前播放列表信息。</p>
+                     * @return CurrentPlaylist <p>当前播放列表信息。</p>
                      * 
                      */
                     std::vector<RoundPlayFilePlayInfo> GetCurrentPlaylist() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 当前播放列表信息。
+                     * <p>当前播放列表信息。</p>
                      */
                     std::vector<RoundPlayFilePlayInfo> m_currentPlaylist;
                     bool m_currentPlaylistHasBeenSet;

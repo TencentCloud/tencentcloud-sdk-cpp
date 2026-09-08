@@ -130,6 +130,27 @@ namespace TencentCloud
                      */
                     bool SuggestionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>其他信息</p>
+                     * @return Extra <p>其他信息</p>
+                     * 
+                     */
+                    std::string GetExtra() const;
+
+                    /**
+                     * 设置<p>其他信息</p>
+                     * @param _extra <p>其他信息</p>
+                     * 
+                     */
+                    void SetExtra(const std::string& _extra);
+
+                    /**
+                     * 判断参数 Extra 是否已赋值
+                     * @return Extra 是否已赋值
+                     * 
+                     */
+                    bool ExtraHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +176,12 @@ namespace TencentCloud
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
+
+                    /**
+                     * <p>其他信息</p>
+                     */
+                    std::string m_extra;
+                    bool m_extraHasBeenSet;
 
                 };
             }

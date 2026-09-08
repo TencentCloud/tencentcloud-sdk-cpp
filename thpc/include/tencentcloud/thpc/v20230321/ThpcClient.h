@@ -57,6 +57,8 @@
 #include <tencentcloud/thpc/v20230321/model/DescribeClusterActivitiesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeClusterDedicatedProxyRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeClusterDedicatedProxyResponse.h>
+#include <tencentcloud/thpc/v20230321/model/DescribeClusterMonitorStatusRequest.h>
+#include <tencentcloud/thpc/v20230321/model/DescribeClusterMonitorStatusResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeClusterStorageOptionRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeClusterStorageOptionResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeClustersRequest.h>
@@ -87,8 +89,12 @@
 #include <tencentcloud/thpc/v20230321/model/DetachNodesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DisableClusterDedicatedProxyRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DisableClusterDedicatedProxyResponse.h>
+#include <tencentcloud/thpc/v20230321/model/DisableClusterMonitorRequest.h>
+#include <tencentcloud/thpc/v20230321/model/DisableClusterMonitorResponse.h>
 #include <tencentcloud/thpc/v20230321/model/EnableClusterDedicatedProxyRequest.h>
 #include <tencentcloud/thpc/v20230321/model/EnableClusterDedicatedProxyResponse.h>
+#include <tencentcloud/thpc/v20230321/model/EnableClusterMonitorRequest.h>
+#include <tencentcloud/thpc/v20230321/model/EnableClusterMonitorResponse.h>
 #include <tencentcloud/thpc/v20230321/model/GenerateRegisterCodeRequest.h>
 #include <tencentcloud/thpc/v20230321/model/GenerateRegisterCodeResponse.h>
 #include <tencentcloud/thpc/v20230321/model/GenerateRegisterCommandRequest.h>
@@ -186,6 +192,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterDedicatedProxyResponse> DescribeClusterDedicatedProxyOutcome;
                 typedef std::future<DescribeClusterDedicatedProxyOutcome> DescribeClusterDedicatedProxyOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DescribeClusterDedicatedProxyRequest&, DescribeClusterDedicatedProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterDedicatedProxyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterMonitorStatusResponse> DescribeClusterMonitorStatusOutcome;
+                typedef std::future<DescribeClusterMonitorStatusOutcome> DescribeClusterMonitorStatusOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::DescribeClusterMonitorStatusRequest&, DescribeClusterMonitorStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterMonitorStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterStorageOptionResponse> DescribeClusterStorageOptionOutcome;
                 typedef std::future<DescribeClusterStorageOptionOutcome> DescribeClusterStorageOptionOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DescribeClusterStorageOptionRequest&, DescribeClusterStorageOptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterStorageOptionAsyncHandler;
@@ -231,9 +240,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisableClusterDedicatedProxyResponse> DisableClusterDedicatedProxyOutcome;
                 typedef std::future<DisableClusterDedicatedProxyOutcome> DisableClusterDedicatedProxyOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DisableClusterDedicatedProxyRequest&, DisableClusterDedicatedProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableClusterDedicatedProxyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisableClusterMonitorResponse> DisableClusterMonitorOutcome;
+                typedef std::future<DisableClusterMonitorOutcome> DisableClusterMonitorOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::DisableClusterMonitorRequest&, DisableClusterMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableClusterMonitorAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableClusterDedicatedProxyResponse> EnableClusterDedicatedProxyOutcome;
                 typedef std::future<EnableClusterDedicatedProxyOutcome> EnableClusterDedicatedProxyOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::EnableClusterDedicatedProxyRequest&, EnableClusterDedicatedProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableClusterDedicatedProxyAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableClusterMonitorResponse> EnableClusterMonitorOutcome;
+                typedef std::future<EnableClusterMonitorOutcome> EnableClusterMonitorOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::EnableClusterMonitorRequest&, EnableClusterMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableClusterMonitorAsyncHandler;
                 typedef Outcome<Core::Error, Model::GenerateRegisterCodeResponse> GenerateRegisterCodeOutcome;
                 typedef std::future<GenerateRegisterCodeOutcome> GenerateRegisterCodeOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::GenerateRegisterCodeRequest&, GenerateRegisterCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateRegisterCodeAsyncHandler;
@@ -453,6 +468,15 @@ namespace TencentCloud
                 DescribeClusterDedicatedProxyOutcomeCallable DescribeClusterDedicatedProxyCallable(const Model::DescribeClusterDedicatedProxyRequest& request);
 
                 /**
+                 *本接口 (ModifyInitNodeScripts) 用于修改节点初始化脚本。
+                 * @param req DescribeClusterMonitorStatusRequest
+                 * @return DescribeClusterMonitorStatusOutcome
+                 */
+                DescribeClusterMonitorStatusOutcome DescribeClusterMonitorStatus(const Model::DescribeClusterMonitorStatusRequest &request);
+                void DescribeClusterMonitorStatusAsync(const Model::DescribeClusterMonitorStatusRequest& request, const DescribeClusterMonitorStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterMonitorStatusOutcomeCallable DescribeClusterMonitorStatusCallable(const Model::DescribeClusterMonitorStatusRequest& request);
+
+                /**
                  *本接口 (DescribeClusterStorageOption) 用于查询集群存储选项信息。
                  * @param req DescribeClusterStorageOptionRequest
                  * @return DescribeClusterStorageOptionOutcome
@@ -592,6 +616,15 @@ namespace TencentCloud
                 DisableClusterDedicatedProxyOutcomeCallable DisableClusterDedicatedProxyCallable(const Model::DisableClusterDedicatedProxyRequest& request);
 
                 /**
+                 *本接口 (ModifyInitNodeScripts) 用于修改节点初始化脚本。
+                 * @param req DisableClusterMonitorRequest
+                 * @return DisableClusterMonitorOutcome
+                 */
+                DisableClusterMonitorOutcome DisableClusterMonitor(const Model::DisableClusterMonitorRequest &request);
+                void DisableClusterMonitorAsync(const Model::DisableClusterMonitorRequest& request, const DisableClusterMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableClusterMonitorOutcomeCallable DisableClusterMonitorCallable(const Model::DisableClusterMonitorRequest& request);
+
+                /**
                  *本接口 (EnableClusterDedicatedProxy) 用于开启IDC集群的专线/VPN代理。
 
 * 开启后，系统将自动创建VPC终端节点（EndPoint），实现IDC集群与云上VPC的网络互通。
@@ -603,6 +636,15 @@ namespace TencentCloud
                 EnableClusterDedicatedProxyOutcome EnableClusterDedicatedProxy(const Model::EnableClusterDedicatedProxyRequest &request);
                 void EnableClusterDedicatedProxyAsync(const Model::EnableClusterDedicatedProxyRequest& request, const EnableClusterDedicatedProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableClusterDedicatedProxyOutcomeCallable EnableClusterDedicatedProxyCallable(const Model::EnableClusterDedicatedProxyRequest& request);
+
+                /**
+                 *本接口 (ModifyInitNodeScripts) 用于修改节点初始化脚本。
+                 * @param req EnableClusterMonitorRequest
+                 * @return EnableClusterMonitorOutcome
+                 */
+                EnableClusterMonitorOutcome EnableClusterMonitor(const Model::EnableClusterMonitorRequest &request);
+                void EnableClusterMonitorAsync(const Model::EnableClusterMonitorRequest& request, const EnableClusterMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableClusterMonitorOutcomeCallable EnableClusterMonitorCallable(const Model::EnableClusterMonitorRequest& request);
 
                 /**
                  *本接口(GenerateRegisterCode)用于为队列创建一个注册码，注册码用于IDC机器的注册纳管。

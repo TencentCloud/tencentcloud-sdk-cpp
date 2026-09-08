@@ -27,7 +27,8 @@ DescribeConsumerOffsetsRequest::DescribeConsumerOffsetsRequest() :
     m_fromHasBeenSet(false),
     m_logsetIdHasBeenSet(false),
     m_topicIdHasBeenSet(false),
-    m_partitionIdHasBeenSet(false)
+    m_partitionIdHasBeenSet(false),
+    m_offsetTypeHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribeConsumerOffsetsRequest::ToJsonString() const
         string key = "PartitionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_partitionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OffsetType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offsetType, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DescribeConsumerOffsetsRequest::SetPartitionId(const string& _partitionId)
 bool DescribeConsumerOffsetsRequest::PartitionIdHasBeenSet() const
 {
     return m_partitionIdHasBeenSet;
+}
+
+int64_t DescribeConsumerOffsetsRequest::GetOffsetType() const
+{
+    return m_offsetType;
+}
+
+void DescribeConsumerOffsetsRequest::SetOffsetType(const int64_t& _offsetType)
+{
+    m_offsetType = _offsetType;
+    m_offsetTypeHasBeenSet = true;
+}
+
+bool DescribeConsumerOffsetsRequest::OffsetTypeHasBeenSet() const
+{
+    return m_offsetTypeHasBeenSet;
 }
 
 

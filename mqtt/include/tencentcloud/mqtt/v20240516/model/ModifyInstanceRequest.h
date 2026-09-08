@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
-                     * @return InstanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * 获取<p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
+                     * @return InstanceId <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
-                     * @param _instanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * 设置<p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
+                     * @param _instanceId <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取要修改实例名称，不能为空, 3-64个字符，只能包含数字、字母、“-”和“_”。
-                     * @return Name 要修改实例名称，不能为空, 3-64个字符，只能包含数字、字母、“-”和“_”。
+                     * 获取<p>要修改实例名称，不能为空, 3-64个字符，只能包含数字、字母、“-”和“_”。</p>
+                     * @return Name <p>要修改实例名称，不能为空, 3-64个字符，只能包含数字、字母、“-”和“_”。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置要修改实例名称，不能为空, 3-64个字符，只能包含数字、字母、“-”和“_”。
-                     * @param _name 要修改实例名称，不能为空, 3-64个字符，只能包含数字、字母、“-”和“_”。
+                     * 设置<p>要修改实例名称，不能为空, 3-64个字符，只能包含数字、字母、“-”和“_”。</p>
+                     * @param _name <p>要修改实例名称，不能为空, 3-64个字符，只能包含数字、字母、“-”和“_”。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取要修改的备注信息，最多128个字符。
-                     * @return Remark 要修改的备注信息，最多128个字符。
+                     * 获取<p>要修改的备注信息，最多128个字符。</p>
+                     * @return Remark <p>要修改的备注信息，最多128个字符。</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置要修改的备注信息，最多128个字符。
-                     * @param _remark 要修改的备注信息，最多128个字符。
+                     * 设置<p>要修改的备注信息，最多128个字符。</p>
+                     * @param _remark <p>要修改的备注信息，最多128个字符。</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -106,19 +106,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取需要变更的配置规格
-基础版和专业版集群不能升配到铂金版规格，铂金版集群不能降配至基础版和增强版规格。
-                     * @return SkuCode 需要变更的配置规格
-基础版和专业版集群不能升配到铂金版规格，铂金版集群不能降配至基础版和增强版规格。
+                     * 获取<p>需要变更的配置规格<br>基础版和专业版集群不能升配到铂金版规格，铂金版集群不能降配至基础版和增强版规格。</p>
+                     * @return SkuCode <p>需要变更的配置规格<br>基础版和专业版集群不能升配到铂金版规格，铂金版集群不能降配至基础版和增强版规格。</p>
                      * 
                      */
                     std::string GetSkuCode() const;
 
                     /**
-                     * 设置需要变更的配置规格
-基础版和专业版集群不能升配到铂金版规格，铂金版集群不能降配至基础版和增强版规格。
-                     * @param _skuCode 需要变更的配置规格
-基础版和专业版集群不能升配到铂金版规格，铂金版集群不能降配至基础版和增强版规格。
+                     * 设置<p>需要变更的配置规格<br>基础版和专业版集群不能升配到铂金版规格，铂金版集群不能降配至基础版和增强版规格。</p>
+                     * @param _skuCode <p>需要变更的配置规格<br>基础版和专业版集群不能升配到铂金版规格，铂金版集群不能降配至基础版和增强版规格。</p>
                      * 
                      */
                     void SetSkuCode(const std::string& _skuCode);
@@ -131,23 +127,15 @@ namespace TencentCloud
                     bool SkuCodeHasBeenSet() const;
 
                     /**
-                     * 获取客户端证书注册方式：
-JITP：自动注册
-API：手动通过API注册
-                     * @return DeviceCertificateProvisionType 客户端证书注册方式：
-JITP：自动注册
-API：手动通过API注册
+                     * 获取<p>客户端证书注册方式：<br>JITP：自动注册<br>API：手动通过API注册</p>
+                     * @return DeviceCertificateProvisionType <p>客户端证书注册方式：<br>JITP：自动注册<br>API：手动通过API注册</p>
                      * 
                      */
                     std::string GetDeviceCertificateProvisionType() const;
 
                     /**
-                     * 设置客户端证书注册方式：
-JITP：自动注册
-API：手动通过API注册
-                     * @param _deviceCertificateProvisionType 客户端证书注册方式：
-JITP：自动注册
-API：手动通过API注册
+                     * 设置<p>客户端证书注册方式：<br>JITP：自动注册<br>API：手动通过API注册</p>
+                     * @param _deviceCertificateProvisionType <p>客户端证书注册方式：<br>JITP：自动注册<br>API：手动通过API注册</p>
                      * 
                      */
                     void SetDeviceCertificateProvisionType(const std::string& _deviceCertificateProvisionType);
@@ -160,15 +148,15 @@ API：手动通过API注册
                     bool DeviceCertificateProvisionTypeHasBeenSet() const;
 
                     /**
-                     * 获取自动注册证书是否自动激活
-                     * @return AutomaticActivation 自动注册证书是否自动激活
+                     * 获取<p>自动注册证书是否自动激活</p>
+                     * @return AutomaticActivation <p>自动注册证书是否自动激活</p>
                      * 
                      */
                     bool GetAutomaticActivation() const;
 
                     /**
-                     * 设置自动注册证书是否自动激活
-                     * @param _automaticActivation 自动注册证书是否自动激活
+                     * 设置<p>自动注册证书是否自动激活</p>
+                     * @param _automaticActivation <p>自动注册证书是否自动激活</p>
                      * 
                      */
                     void SetAutomaticActivation(const bool& _automaticActivation);
@@ -181,15 +169,15 @@ API：手动通过API注册
                     bool AutomaticActivationHasBeenSet() const;
 
                     /**
-                     * 获取授权策略开关
-                     * @return AuthorizationPolicy 授权策略开关
+                     * 获取<p>授权策略开关</p>
+                     * @return AuthorizationPolicy <p>授权策略开关</p>
                      * 
                      */
                     bool GetAuthorizationPolicy() const;
 
                     /**
-                     * 设置授权策略开关
-                     * @param _authorizationPolicy 授权策略开关
+                     * 设置<p>授权策略开关</p>
+                     * @param _authorizationPolicy <p>授权策略开关</p>
                      * 
                      */
                     void SetAuthorizationPolicy(const bool& _authorizationPolicy);
@@ -202,15 +190,15 @@ API：手动通过API注册
                     bool AuthorizationPolicyHasBeenSet() const;
 
                     /**
-                     * 获取是否使用默认的服务端证书
-                     * @return UseDefaultServerCert 是否使用默认的服务端证书
+                     * 获取<p>是否使用默认的服务端证书</p>
+                     * @return UseDefaultServerCert <p>是否使用默认的服务端证书</p>
                      * 
                      */
                     bool GetUseDefaultServerCert() const;
 
                     /**
-                     * 设置是否使用默认的服务端证书
-                     * @param _useDefaultServerCert 是否使用默认的服务端证书
+                     * 设置<p>是否使用默认的服务端证书</p>
+                     * @param _useDefaultServerCert <p>是否使用默认的服务端证书</p>
                      * 
                      */
                     void SetUseDefaultServerCert(const bool& _useDefaultServerCert);
@@ -223,23 +211,15 @@ API：手动通过API注册
                     bool UseDefaultServerCertHasBeenSet() const;
 
                     /**
-                     * 获取TLS：单向认证
-mTLS；双向认证
-BYOC：一机一证
-                     * @return X509Mode TLS：单向认证
-mTLS；双向认证
-BYOC：一机一证
+                     * 获取<p>TLS：单向认证<br>mTLS；双向认证<br>BYOC：一机一证</p>
+                     * @return X509Mode <p>TLS：单向认证<br>mTLS；双向认证<br>BYOC：一机一证</p>
                      * 
                      */
                     std::string GetX509Mode() const;
 
                     /**
-                     * 设置TLS：单向认证
-mTLS；双向认证
-BYOC：一机一证
-                     * @param _x509Mode TLS：单向认证
-mTLS；双向认证
-BYOC：一机一证
+                     * 设置<p>TLS：单向认证<br>mTLS；双向认证<br>BYOC：一机一证</p>
+                     * @param _x509Mode <p>TLS：单向认证<br>mTLS；双向认证<br>BYOC：一机一证</p>
                      * 
                      */
                     void SetX509Mode(const std::string& _x509Mode);
@@ -252,15 +232,15 @@ BYOC：一机一证
                     bool X509ModeHasBeenSet() const;
 
                     /**
-                     * 获取单客户端消息收发限速单位 条/秒
-                     * @return MessageRate 单客户端消息收发限速单位 条/秒
+                     * 获取<p>单客户端消息收发限速单位 条/秒</p>
+                     * @return MessageRate <p>单客户端消息收发限速单位 条/秒</p>
                      * 
                      */
                     int64_t GetMessageRate() const;
 
                     /**
-                     * 设置单客户端消息收发限速单位 条/秒
-                     * @param _messageRate 单客户端消息收发限速单位 条/秒
+                     * 设置<p>单客户端消息收发限速单位 条/秒</p>
+                     * @param _messageRate <p>单客户端消息收发限速单位 条/秒</p>
                      * 
                      */
                     void SetMessageRate(const int64_t& _messageRate);
@@ -275,66 +255,61 @@ BYOC：一机一证
                 private:
 
                     /**
-                     * 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 要修改实例名称，不能为空, 3-64个字符，只能包含数字、字母、“-”和“_”。
+                     * <p>要修改实例名称，不能为空, 3-64个字符，只能包含数字、字母、“-”和“_”。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 要修改的备注信息，最多128个字符。
+                     * <p>要修改的备注信息，最多128个字符。</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 需要变更的配置规格
-基础版和专业版集群不能升配到铂金版规格，铂金版集群不能降配至基础版和增强版规格。
+                     * <p>需要变更的配置规格<br>基础版和专业版集群不能升配到铂金版规格，铂金版集群不能降配至基础版和增强版规格。</p>
                      */
                     std::string m_skuCode;
                     bool m_skuCodeHasBeenSet;
 
                     /**
-                     * 客户端证书注册方式：
-JITP：自动注册
-API：手动通过API注册
+                     * <p>客户端证书注册方式：<br>JITP：自动注册<br>API：手动通过API注册</p>
                      */
                     std::string m_deviceCertificateProvisionType;
                     bool m_deviceCertificateProvisionTypeHasBeenSet;
 
                     /**
-                     * 自动注册证书是否自动激活
+                     * <p>自动注册证书是否自动激活</p>
                      */
                     bool m_automaticActivation;
                     bool m_automaticActivationHasBeenSet;
 
                     /**
-                     * 授权策略开关
+                     * <p>授权策略开关</p>
                      */
                     bool m_authorizationPolicy;
                     bool m_authorizationPolicyHasBeenSet;
 
                     /**
-                     * 是否使用默认的服务端证书
+                     * <p>是否使用默认的服务端证书</p>
                      */
                     bool m_useDefaultServerCert;
                     bool m_useDefaultServerCertHasBeenSet;
 
                     /**
-                     * TLS：单向认证
-mTLS；双向认证
-BYOC：一机一证
+                     * <p>TLS：单向认证<br>mTLS；双向认证<br>BYOC：一机一证</p>
                      */
                     std::string m_x509Mode;
                     bool m_x509ModeHasBeenSet;
 
                     /**
-                     * 单客户端消息收发限速单位 条/秒
+                     * <p>单客户端消息收发限速单位 条/秒</p>
                      */
                     int64_t m_messageRate;
                     bool m_messageRateHasBeenSet;

@@ -79,6 +79,7 @@ set(vm_public_header_model
   include/tencentcloud/vm/v20210922/model/LabelResult.h
   include/tencentcloud/vm/v20210922/model/ImageResultsResultDetail.h
   include/tencentcloud/vm/v20210922/model/VideoSegment.h
+  include/tencentcloud/vm/v20210922/model/Rect.h
   include/tencentcloud/vm/v20210922/model/InputInfo.h
   include/tencentcloud/vm/v20210922/model/OcrHitInfo.h
   include/tencentcloud/vm/v20210922/model/CreateVideoModerationTaskRequest.h
@@ -87,6 +88,7 @@ set(vm_public_header_model
   include/tencentcloud/vm/v20210922/model/TaskFilter.h
   include/tencentcloud/vm/v20210922/model/RecognitionResult.h
   include/tencentcloud/vm/v20210922/model/VideoLLMDetail.h
+  include/tencentcloud/vm/v20210922/model/Position.h
   include/tencentcloud/vm/v20210922/model/CancelTaskResponse.h
   include/tencentcloud/vm/v20210922/model/AudioResultDetailTextResult.h
   include/tencentcloud/vm/v20210922/model/SegmentCosUrlList.h
@@ -96,7 +98,9 @@ set(vm_public_header_model
   include/tencentcloud/vm/v20210922/model/TaskData.h
   include/tencentcloud/vm/v20210922/model/MediaInfo.h
   include/tencentcloud/vm/v20210922/model/Tag.h
+  include/tencentcloud/vm/v20210922/model/HitSnippetInfo.h
   include/tencentcloud/vm/v20210922/model/AudioSegments.h
+  include/tencentcloud/vm/v20210922/model/Duration.h
   include/tencentcloud/vm/v20210922/model/ImageResultsResultDetailLocation.h
   include/tencentcloud/vm/v20210922/model/ImageResult.h
   include/tencentcloud/vm/v20200709/model/ImageSegments.h
@@ -196,6 +200,7 @@ set(vm_src
   src/v20210922/model/LabelResult.cpp
   src/v20210922/model/ImageResultsResultDetail.cpp
   src/v20210922/model/VideoSegment.cpp
+  src/v20210922/model/Rect.cpp
   src/v20210922/model/InputInfo.cpp
   src/v20210922/model/OcrHitInfo.cpp
   src/v20210922/model/CreateVideoModerationTaskRequest.cpp
@@ -204,6 +209,7 @@ set(vm_src
   src/v20210922/model/TaskFilter.cpp
   src/v20210922/model/RecognitionResult.cpp
   src/v20210922/model/VideoLLMDetail.cpp
+  src/v20210922/model/Position.cpp
   src/v20210922/model/CancelTaskResponse.cpp
   src/v20210922/model/AudioResultDetailTextResult.cpp
   src/v20210922/model/SegmentCosUrlList.cpp
@@ -213,7 +219,9 @@ set(vm_src
   src/v20210922/model/TaskData.cpp
   src/v20210922/model/MediaInfo.cpp
   src/v20210922/model/Tag.cpp
+  src/v20210922/model/HitSnippetInfo.cpp
   src/v20210922/model/AudioSegments.cpp
+  src/v20210922/model/Duration.cpp
   src/v20210922/model/ImageResultsResultDetailLocation.cpp
   src/v20210922/model/ImageResult.cpp
   src/v20200709/model/ImageSegments.cpp

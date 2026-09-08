@@ -25,7 +25,8 @@ KafkaConsumerContent::KafkaConsumerContent() :
     m_enableTagHasBeenSet(false),
     m_metaFieldsHasBeenSet(false),
     m_tagTransactionHasBeenSet(false),
-    m_jsonTypeHasBeenSet(false)
+    m_jsonTypeHasBeenSet(false),
+    m_autoConvertNumberHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,16 @@ CoreInternalOutcome KafkaConsumerContent::Deserialize(const rapidjson::Value &va
         m_jsonTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoConvertNumber") && !value["AutoConvertNumber"].IsNull())
+    {
+        if (!value["AutoConvertNumber"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaConsumerContent.AutoConvertNumber` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoConvertNumber = value["AutoConvertNumber"].GetBool();
+        m_autoConvertNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +148,14 @@ void KafkaConsumerContent::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "JsonType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_jsonType, allocator);
+    }
+
+    if (m_autoConvertNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoConvertNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoConvertNumber, allocator);
     }
 
 }
@@ -220,5 +239,21 @@ void KafkaConsumerContent::SetJsonType(const int64_t& _jsonType)
 bool KafkaConsumerContent::JsonTypeHasBeenSet() const
 {
     return m_jsonTypeHasBeenSet;
+}
+
+bool KafkaConsumerContent::GetAutoConvertNumber() const
+{
+    return m_autoConvertNumber;
+}
+
+void KafkaConsumerContent::SetAutoConvertNumber(const bool& _autoConvertNumber)
+{
+    m_autoConvertNumber = _autoConvertNumber;
+    m_autoConvertNumberHasBeenSet = true;
+}
+
+bool KafkaConsumerContent::AutoConvertNumberHasBeenSet() const
+{
+    return m_autoConvertNumberHasBeenSet;
 }
 

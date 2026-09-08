@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标签
-                     * @return Label 标签
+                     * 获取<p>标签</p>
+                     * @return Label <p>标签</p>
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置标签
-                     * @param _label 标签
+                     * 设置<p>标签</p>
+                     * @param _label <p>标签</p>
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool LabelHasBeenSet() const;
 
                     /**
-                     * 获取得分
-                     * @return Score 得分
+                     * 获取<p>得分</p>
+                     * @return Score <p>得分</p>
                      * 
                      */
                     int64_t GetScore() const;
 
                     /**
-                     * 设置得分
-                     * @param _score 得分
+                     * 设置<p>得分</p>
+                     * @param _score <p>得分</p>
                      * 
                      */
                     void SetScore(const int64_t& _score);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ScoreHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取<p>开始时间</p>
+                     * @return StartTime <p>开始时间</p>
                      * 
                      */
                     double GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置<p>开始时间</p>
+                     * @param _startTime <p>开始时间</p>
                      * 
                      */
                     void SetStartTime(const double& _startTime);
@@ -110,18 +110,18 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取<p>结束时间</p>
+                     * @return EndTime <p>结束时间</p>
                      * 
                      */
-                    std::string GetEndTime() const;
+                    double GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置<p>结束时间</p>
+                     * @param _endTime <p>结束时间</p>
                      * 
                      */
-                    void SetEndTime(const std::string& _endTime);
+                    void SetEndTime(const double& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
@@ -133,27 +133,27 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标签
+                     * <p>标签</p>
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
-                     * 得分
+                     * <p>得分</p>
                      */
                     int64_t m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * <p>开始时间</p>
                      */
                     double m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * <p>结束时间</p>
                      */
-                    std::string m_endTime;
+                    double m_endTime;
                     bool m_endTimeHasBeenSet;
 
                 };

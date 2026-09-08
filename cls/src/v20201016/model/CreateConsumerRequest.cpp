@@ -30,7 +30,8 @@ CreateConsumerRequest::CreateConsumerRequest() :
     m_compressionHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_externalIdHasBeenSet(false),
-    m_advancedConfigHasBeenSet(false)
+    m_advancedConfigHasBeenSet(false),
+    m_dSLFilterHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,14 @@ string CreateConsumerRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_advancedConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_dSLFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DSLFilter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dSLFilter.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -242,6 +251,22 @@ void CreateConsumerRequest::SetAdvancedConfig(const AdvancedConsumerConfiguratio
 bool CreateConsumerRequest::AdvancedConfigHasBeenSet() const
 {
     return m_advancedConfigHasBeenSet;
+}
+
+string CreateConsumerRequest::GetDSLFilter() const
+{
+    return m_dSLFilter;
+}
+
+void CreateConsumerRequest::SetDSLFilter(const string& _dSLFilter)
+{
+    m_dSLFilter = _dSLFilter;
+    m_dSLFilterHasBeenSet = true;
+}
+
+bool CreateConsumerRequest::DSLFilterHasBeenSet() const
+{
+    return m_dSLFilterHasBeenSet;
 }
 
 

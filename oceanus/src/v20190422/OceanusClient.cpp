@@ -1290,6 +1290,56 @@ OceanusClient::DescribeJobConfigsOutcomeCallable OceanusClient::DescribeJobConfi
     return prom->get_future();
 }
 
+OceanusClient::DescribeJobDetailOutcome OceanusClient::DescribeJobDetail(const DescribeJobDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeJobDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeJobDetailResponse rsp = DescribeJobDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeJobDetailOutcome(rsp);
+        else
+            return DescribeJobDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeJobDetailOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::DescribeJobDetailAsync(const DescribeJobDetailRequest& request, const DescribeJobDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeJobDetailRequest&;
+    using Resp = DescribeJobDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeJobDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OceanusClient::DescribeJobDetailOutcomeCallable OceanusClient::DescribeJobDetailCallable(const DescribeJobDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeJobDetailOutcome>>();
+    DescribeJobDetailAsync(
+    request,
+    [prom](
+        const OceanusClient*,
+        const DescribeJobDetailRequest&,
+        DescribeJobDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OceanusClient::DescribeJobEventsOutcome OceanusClient::DescribeJobEvents(const DescribeJobEventsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeJobEvents");

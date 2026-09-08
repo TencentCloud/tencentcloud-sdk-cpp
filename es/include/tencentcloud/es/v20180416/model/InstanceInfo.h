@@ -2543,6 +2543,27 @@ namespace TencentCloud
                      */
                     bool OldEsPrivateTcpUrlHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否需要从VIP下线旧节点</p>
+                     * @return NeedOfflineOldNodesNotify <p>是否需要从VIP下线旧节点</p>
+                     * 
+                     */
+                    bool GetNeedOfflineOldNodesNotify() const;
+
+                    /**
+                     * 设置<p>是否需要从VIP下线旧节点</p>
+                     * @param _needOfflineOldNodesNotify <p>是否需要从VIP下线旧节点</p>
+                     * 
+                     */
+                    void SetNeedOfflineOldNodesNotify(const bool& _needOfflineOldNodesNotify);
+
+                    /**
+                     * 判断参数 NeedOfflineOldNodesNotify 是否已赋值
+                     * @return NeedOfflineOldNodesNotify 是否已赋值
+                     * 
+                     */
+                    bool NeedOfflineOldNodesNotifyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -3245,6 +3266,12 @@ namespace TencentCloud
                      */
                     std::string m_oldEsPrivateTcpUrl;
                     bool m_oldEsPrivateTcpUrlHasBeenSet;
+
+                    /**
+                     * <p>是否需要从VIP下线旧节点</p>
+                     */
+                    bool m_needOfflineOldNodesNotify;
+                    bool m_needOfflineOldNodesNotifyHasBeenSet;
 
                 };
             }

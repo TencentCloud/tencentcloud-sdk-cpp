@@ -359,15 +359,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取<p>专业版/高级版实例磁盘类型，标准版实例不需要填写。&quot;CLOUD_SSD&quot;：SSD云硬盘；&quot;CLOUD_BASIC&quot;：高性能云硬盘。不传默认为 &quot;CLOUD_BASIC&quot;</p>
-                     * @return DiskType <p>专业版/高级版实例磁盘类型，标准版实例不需要填写。&quot;CLOUD_SSD&quot;：SSD云硬盘；&quot;CLOUD_BASIC&quot;：高性能云硬盘。不传默认为 &quot;CLOUD_BASIC&quot;</p>
+                     * 获取<p>专业版/高级版实例磁盘类型，标准版实例不需要填写。</p><p>枚举值：</p><ul><li>CLOUD_SSD： SSD云硬盘</li><li>CLOUD_PREMIUM： 高性能云硬盘</li></ul><p>默认值：CLOUD_PREMIUM</p>
+                     * @return DiskType <p>专业版/高级版实例磁盘类型，标准版实例不需要填写。</p><p>枚举值：</p><ul><li>CLOUD_SSD： SSD云硬盘</li><li>CLOUD_PREMIUM： 高性能云硬盘</li></ul><p>默认值：CLOUD_PREMIUM</p>
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置<p>专业版/高级版实例磁盘类型，标准版实例不需要填写。&quot;CLOUD_SSD&quot;：SSD云硬盘；&quot;CLOUD_BASIC&quot;：高性能云硬盘。不传默认为 &quot;CLOUD_BASIC&quot;</p>
-                     * @param _diskType <p>专业版/高级版实例磁盘类型，标准版实例不需要填写。&quot;CLOUD_SSD&quot;：SSD云硬盘；&quot;CLOUD_BASIC&quot;：高性能云硬盘。不传默认为 &quot;CLOUD_BASIC&quot;</p>
+                     * 设置<p>专业版/高级版实例磁盘类型，标准版实例不需要填写。</p><p>枚举值：</p><ul><li>CLOUD_SSD： SSD云硬盘</li><li>CLOUD_PREMIUM： 高性能云硬盘</li></ul><p>默认值：CLOUD_PREMIUM</p>
+                     * @param _diskType <p>专业版/高级版实例磁盘类型，标准版实例不需要填写。</p><p>枚举值：</p><ul><li>CLOUD_SSD： SSD云硬盘</li><li>CLOUD_PREMIUM： 高性能云硬盘</li></ul><p>默认值：CLOUD_PREMIUM</p>
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -640,7 +640,7 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * <p>专业版/高级版实例磁盘类型，标准版实例不需要填写。&quot;CLOUD_SSD&quot;：SSD云硬盘；&quot;CLOUD_BASIC&quot;：高性能云硬盘。不传默认为 &quot;CLOUD_BASIC&quot;</p>
+                     * <p>专业版/高级版实例磁盘类型，标准版实例不需要填写。</p><p>枚举值：</p><ul><li>CLOUD_SSD： SSD云硬盘</li><li>CLOUD_PREMIUM： 高性能云硬盘</li></ul><p>默认值：CLOUD_PREMIUM</p>
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;

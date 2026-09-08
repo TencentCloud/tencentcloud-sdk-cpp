@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取客户端列表
-                     * @return Clients 客户端列表
+                     * 获取<p>客户端列表</p>
+                     * @return Clients <p>客户端列表</p>
                      * 
                      */
                     std::vector<MQTTClientInfo> GetClients() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 客户端列表
+                     * <p>客户端列表</p>
                      */
                     std::vector<MQTTClientInfo> m_clients;
                     bool m_clientsHasBeenSet;

@@ -35,7 +35,8 @@ TestServiceProviderConnectionRequest::TestServiceProviderConnectionRequest() :
     m_verifySSLHasBeenSet(false),
     m_healthCheckProtocolHasBeenSet(false),
     m_cMRPrivateNetworkTunnelIdHasBeenSet(false),
-    m_capabilityHasBeenSet(false)
+    m_capabilityHasBeenSet(false),
+    m_endpointPathHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,14 @@ string TestServiceProviderConnectionRequest::ToJsonString() const
         string key = "Capability";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_capability.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endpointPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndpointPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endpointPath.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -369,6 +378,22 @@ void TestServiceProviderConnectionRequest::SetCapability(const string& _capabili
 bool TestServiceProviderConnectionRequest::CapabilityHasBeenSet() const
 {
     return m_capabilityHasBeenSet;
+}
+
+string TestServiceProviderConnectionRequest::GetEndpointPath() const
+{
+    return m_endpointPath;
+}
+
+void TestServiceProviderConnectionRequest::SetEndpointPath(const string& _endpointPath)
+{
+    m_endpointPath = _endpointPath;
+    m_endpointPathHasBeenSet = true;
+}
+
+bool TestServiceProviderConnectionRequest::EndpointPathHasBeenSet() const
+{
+    return m_endpointPathHasBeenSet;
 }
 
 

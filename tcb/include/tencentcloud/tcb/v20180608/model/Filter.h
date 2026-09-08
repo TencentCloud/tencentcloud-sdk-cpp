@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要过滤的字段。过滤条件数量限制为10。
-                     * @return Name 需要过滤的字段。过滤条件数量限制为10。
+                     * 获取<p>需要过滤的字段。过滤条件数量限制为10。</p>
+                     * @return Name <p>需要过滤的字段。过滤条件数量限制为10。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置需要过滤的字段。过滤条件数量限制为10。
-                     * @param _name 需要过滤的字段。过滤条件数量限制为10。
+                     * 设置<p>需要过滤的字段。过滤条件数量限制为10。</p>
+                     * @param _name <p>需要过滤的字段。过滤条件数量限制为10。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取字段的过滤值。
-                     * @return Values 字段的过滤值。
+                     * 获取<p>字段的过滤值。</p>
+                     * @return Values <p>字段的过滤值。</p>
                      * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
-                     * 设置字段的过滤值。
-                     * @param _values 字段的过滤值。
+                     * 设置<p>字段的过滤值。</p>
+                     * @param _values <p>字段的过滤值。</p>
                      * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要过滤的字段。过滤条件数量限制为10。
+                     * <p>需要过滤的字段。过滤条件数量限制为10。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 字段的过滤值。
+                     * <p>字段的过滤值。</p>
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;

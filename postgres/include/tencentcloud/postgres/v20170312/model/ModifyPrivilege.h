@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要修改的数据库对象及权限列表
-                     * @return DatabasePrivilege 要修改的数据库对象及权限列表
+                     * 获取<p>要修改的数据库对象及权限列表</p>
+                     * @return DatabasePrivilege <p>要修改的数据库对象及权限列表</p>
                      * 
                      */
                     DatabasePrivilege GetDatabasePrivilege() const;
 
                     /**
-                     * 设置要修改的数据库对象及权限列表
-                     * @param _databasePrivilege 要修改的数据库对象及权限列表
+                     * 设置<p>要修改的数据库对象及权限列表</p>
+                     * @param _databasePrivilege <p>要修改的数据库对象及权限列表</p>
                      * 
                      */
                     void SetDatabasePrivilege(const DatabasePrivilege& _databasePrivilege);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool DatabasePrivilegeHasBeenSet() const;
 
                     /**
-                     * 获取修改的方式，当前仅支持grantObject、revokeObject、alterRole。grantObject代表授权、revokeObject代表收回权、alterRole代表修改账号类型。
-                     * @return ModifyType 修改的方式，当前仅支持grantObject、revokeObject、alterRole。grantObject代表授权、revokeObject代表收回权、alterRole代表修改账号类型。
+                     * 获取<p>修改的方式，当前仅支持grantObject、revokeObject、alterRole、grantRole、revoke，当前仅支持grantObject、revokeObject、alterRole、grantRole、revokeRole。gRole。grantObject代表授权、revokeObject代表收回权、alterRole代表修改账号类型、grantRole代表加入对应角色、revokeRole 代表移出对应角色。</p>
+                     * @return ModifyType <p>修改的方式，当前仅支持grantObject、revokeObject、alterRole、grantRole、revoke，当前仅支持grantObject、revokeObject、alterRole、grantRole、revokeRole。gRole。grantObject代表授权、revokeObject代表收回权、alterRole代表修改账号类型、grantRole代表加入对应角色、revokeRole 代表移出对应角色。</p>
                      * 
                      */
                     std::string GetModifyType() const;
 
                     /**
-                     * 设置修改的方式，当前仅支持grantObject、revokeObject、alterRole。grantObject代表授权、revokeObject代表收回权、alterRole代表修改账号类型。
-                     * @param _modifyType 修改的方式，当前仅支持grantObject、revokeObject、alterRole。grantObject代表授权、revokeObject代表收回权、alterRole代表修改账号类型。
+                     * 设置<p>修改的方式，当前仅支持grantObject、revokeObject、alterRole、grantRole、revoke，当前仅支持grantObject、revokeObject、alterRole、grantRole、revokeRole。gRole。grantObject代表授权、revokeObject代表收回权、alterRole代表修改账号类型、grantRole代表加入对应角色、revokeRole 代表移出对应角色。</p>
+                     * @param _modifyType <p>修改的方式，当前仅支持grantObject、revokeObject、alterRole、grantRole、revoke，当前仅支持grantObject、revokeObject、alterRole、grantRole、revokeRole。gRole。grantObject代表授权、revokeObject代表收回权、alterRole代表修改账号类型、grantRole代表加入对应角色、revokeRole 代表移出对应角色。</p>
                      * 
                      */
                     void SetModifyType(const std::string& _modifyType);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ModifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取当ModifyType为revokeObject才需要此参数，参数为true时，撤销权限会级联撤销。默认为false。
-                     * @return IsCascade 当ModifyType为revokeObject才需要此参数，参数为true时，撤销权限会级联撤销。默认为false。
+                     * 获取<p>当ModifyType为revokeObject才需要此参数，参数为true时，撤销权限会级联撤销。默认为false。</p>
+                     * @return IsCascade <p>当ModifyType为revokeObject才需要此参数，参数为true时，撤销权限会级联撤销。默认为false。</p>
                      * 
                      */
                     bool GetIsCascade() const;
 
                     /**
-                     * 设置当ModifyType为revokeObject才需要此参数，参数为true时，撤销权限会级联撤销。默认为false。
-                     * @param _isCascade 当ModifyType为revokeObject才需要此参数，参数为true时，撤销权限会级联撤销。默认为false。
+                     * 设置<p>当ModifyType为revokeObject才需要此参数，参数为true时，撤销权限会级联撤销。默认为false。</p>
+                     * @param _isCascade <p>当ModifyType为revokeObject才需要此参数，参数为true时，撤销权限会级联撤销。默认为false。</p>
                      * 
                      */
                     void SetIsCascade(const bool& _isCascade);
@@ -113,19 +113,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要修改的数据库对象及权限列表
+                     * <p>要修改的数据库对象及权限列表</p>
                      */
                     DatabasePrivilege m_databasePrivilege;
                     bool m_databasePrivilegeHasBeenSet;
 
                     /**
-                     * 修改的方式，当前仅支持grantObject、revokeObject、alterRole。grantObject代表授权、revokeObject代表收回权、alterRole代表修改账号类型。
+                     * <p>修改的方式，当前仅支持grantObject、revokeObject、alterRole、grantRole、revoke，当前仅支持grantObject、revokeObject、alterRole、grantRole、revokeRole。gRole。grantObject代表授权、revokeObject代表收回权、alterRole代表修改账号类型、grantRole代表加入对应角色、revokeRole 代表移出对应角色。</p>
                      */
                     std::string m_modifyType;
                     bool m_modifyTypeHasBeenSet;
 
                     /**
-                     * 当ModifyType为revokeObject才需要此参数，参数为true时，撤销权限会级联撤销。默认为false。
+                     * <p>当ModifyType为revokeObject才需要此参数，参数为true时，撤销权限会级联撤销。默认为false。</p>
                      */
                     bool m_isCascade;
                     bool m_isCascadeHasBeenSet;

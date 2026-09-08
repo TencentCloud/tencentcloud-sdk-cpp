@@ -40,7 +40,8 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_labelHasBeenSet(false),
-    m_mediaInfoHasBeenSet(false)
+    m_mediaInfoHasBeenSet(false),
+    m_hitSnippetInfosHasBeenSet(false)
 {
 }
 
@@ -282,6 +283,26 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_mediaInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HitSnippetInfos") && !rsp["HitSnippetInfos"].IsNull())
+    {
+        if (!rsp["HitSnippetInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `HitSnippetInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["HitSnippetInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            HitSnippetInfos item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_hitSnippetInfos.push_back(item);
+        }
+        m_hitSnippetInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -442,6 +463,21 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mediaInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_hitSnippetInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HitSnippetInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_hitSnippetInfos.begin(); itr != m_hitSnippetInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -624,6 +660,16 @@ MediaInfo DescribeTaskDetailResponse::GetMediaInfo() const
 bool DescribeTaskDetailResponse::MediaInfoHasBeenSet() const
 {
     return m_mediaInfoHasBeenSet;
+}
+
+vector<HitSnippetInfos> DescribeTaskDetailResponse::GetHitSnippetInfos() const
+{
+    return m_hitSnippetInfos;
+}
+
+bool DescribeTaskDetailResponse::HitSnippetInfosHasBeenSet() const
+{
+    return m_hitSnippetInfosHasBeenSet;
 }
 
 

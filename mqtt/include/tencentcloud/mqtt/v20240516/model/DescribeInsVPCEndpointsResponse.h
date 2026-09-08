@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取接入点
-                     * @return Endpoints 接入点
+                     * 获取<p>接入点</p>
+                     * @return Endpoints <p>接入点</p>
                      * 
                      */
                     std::vector<MQTTEndpointItem> GetEndpoints() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 接入点
+                     * <p>接入点</p>
                      */
                     std::vector<MQTTEndpointItem> m_endpoints;
                     bool m_endpointsHasBeenSet;

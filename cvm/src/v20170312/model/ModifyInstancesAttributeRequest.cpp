@@ -31,7 +31,8 @@ ModifyInstancesAttributeRequest::ModifyInstancesAttributeRequest() :
     m_hostNameHasBeenSet(false),
     m_disableApiTerminationHasBeenSet(false),
     m_camRoleTypeHasBeenSet(false),
-    m_autoRebootHasBeenSet(false)
+    m_autoRebootHasBeenSet(false),
+    m_enableJumboFrameHasBeenSet(false)
 {
 }
 
@@ -122,6 +123,14 @@ string ModifyInstancesAttributeRequest::ToJsonString() const
         string key = "AutoReboot";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoReboot, allocator);
+    }
+
+    if (m_enableJumboFrameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableJumboFrame";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableJumboFrame, allocator);
     }
 
 
@@ -274,6 +283,22 @@ void ModifyInstancesAttributeRequest::SetAutoReboot(const bool& _autoReboot)
 bool ModifyInstancesAttributeRequest::AutoRebootHasBeenSet() const
 {
     return m_autoRebootHasBeenSet;
+}
+
+bool ModifyInstancesAttributeRequest::GetEnableJumboFrame() const
+{
+    return m_enableJumboFrame;
+}
+
+void ModifyInstancesAttributeRequest::SetEnableJumboFrame(const bool& _enableJumboFrame)
+{
+    m_enableJumboFrame = _enableJumboFrame;
+    m_enableJumboFrameHasBeenSet = true;
+}
+
+bool ModifyInstancesAttributeRequest::EnableJumboFrameHasBeenSet() const
+{
+    return m_enableJumboFrameHasBeenSet;
 }
 
 

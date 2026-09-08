@@ -24,6 +24,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/StorageMount.h
   include/tencentcloud/ags/v20250920/model/CosStorageSource.h
   include/tencentcloud/ags/v20250920/model/StartSandboxInstanceRequest.h
+  include/tencentcloud/ags/v20250920/model/UpdateSandboxInstanceResponse.h
   include/tencentcloud/ags/v20250920/model/CreateDeploymentRequest.h
   include/tencentcloud/ags/v20250920/model/CfsStorageSource.h
   include/tencentcloud/ags/v20250920/model/AffinityConfiguration.h
@@ -43,7 +44,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/ResumeSandboxInstanceRequest.h
   include/tencentcloud/ags/v20250920/model/DeleteAPIKeyResponse.h
   include/tencentcloud/ags/v20250920/model/APIKeyInfo.h
-  include/tencentcloud/ags/v20250920/model/UpdateSandboxInstanceResponse.h
+  include/tencentcloud/ags/v20250920/model/OSWorldConfiguration.h
   include/tencentcloud/ags/v20250920/model/Deployment.h
   include/tencentcloud/ags/v20250920/model/DeleteDeploymentResponse.h
   include/tencentcloud/ags/v20250920/model/ResourceConfiguration.h
@@ -104,6 +105,7 @@ set(ags_src
   src/v20250920/model/StorageMount.cpp
   src/v20250920/model/CosStorageSource.cpp
   src/v20250920/model/StartSandboxInstanceRequest.cpp
+  src/v20250920/model/UpdateSandboxInstanceResponse.cpp
   src/v20250920/model/CreateDeploymentRequest.cpp
   src/v20250920/model/CfsStorageSource.cpp
   src/v20250920/model/AffinityConfiguration.cpp
@@ -123,7 +125,7 @@ set(ags_src
   src/v20250920/model/ResumeSandboxInstanceRequest.cpp
   src/v20250920/model/DeleteAPIKeyResponse.cpp
   src/v20250920/model/APIKeyInfo.cpp
-  src/v20250920/model/UpdateSandboxInstanceResponse.cpp
+  src/v20250920/model/OSWorldConfiguration.cpp
   src/v20250920/model/Deployment.cpp
   src/v20250920/model/DeleteDeploymentResponse.cpp
   src/v20250920/model/ResourceConfiguration.cpp

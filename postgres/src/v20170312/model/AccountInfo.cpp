@@ -29,7 +29,8 @@ AccountInfo::AccountInfo() :
     m_updateTimeHasBeenSet(false),
     m_passwordUpdateTimeHasBeenSet(false),
     m_userTypeHasBeenSet(false),
-    m_openCamHasBeenSet(false)
+    m_openCamHasBeenSet(false),
+    m_pGRolesHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,19 @@ CoreInternalOutcome AccountInfo::Deserialize(const rapidjson::Value &value)
         m_openCamHasBeenSet = true;
     }
 
+    if (value.HasMember("PGRoles") && !value["PGRoles"].IsNull())
+    {
+        if (!value["PGRoles"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AccountInfo.PGRoles` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PGRoles"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_pGRoles.push_back((*itr).GetString());
+        }
+        m_pGRolesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +219,19 @@ void AccountInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "OpenCam";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_openCam, allocator);
+    }
+
+    if (m_pGRolesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PGRoles";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_pGRoles.begin(); itr != m_pGRoles.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -352,5 +379,21 @@ void AccountInfo::SetOpenCam(const bool& _openCam)
 bool AccountInfo::OpenCamHasBeenSet() const
 {
     return m_openCamHasBeenSet;
+}
+
+vector<string> AccountInfo::GetPGRoles() const
+{
+    return m_pGRoles;
+}
+
+void AccountInfo::SetPGRoles(const vector<string>& _pGRoles)
+{
+    m_pGRoles = _pGRoles;
+    m_pGRolesHasBeenSet = true;
+}
+
+bool AccountInfo::PGRolesHasBeenSet() const
+{
+    return m_pGRolesHasBeenSet;
 }
 

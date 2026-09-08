@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
-                     * @return InstanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * 获取<p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
+                     * @return InstanceId <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
-                     * @param _instanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * 设置<p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
+                     * @param _instanceId <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取主题，不能为空，只能包含字母、数字、“-”及“_”，3-100 字符。
-                     * @return Topic 主题，不能为空，只能包含字母、数字、“-”及“_”，3-100 字符。
+                     * 获取<p>主题，不能为空，只能包含字母、数字、“-”及“_”，3-100 字符。</p>
+                     * @return Topic <p>主题，不能为空，只能包含字母、数字、“-”及“_”，3-100 字符。</p>
                      * 
                      */
                     std::string GetTopic() const;
 
                     /**
-                     * 设置主题，不能为空，只能包含字母、数字、“-”及“_”，3-100 字符。
-                     * @param _topic 主题，不能为空，只能包含字母、数字、“-”及“_”，3-100 字符。
+                     * 设置<p>主题，不能为空，只能包含字母、数字、“-”及“_”，3-100 字符。</p>
+                     * @param _topic <p>主题，不能为空，只能包含字母、数字、“-”及“_”，3-100 字符。</p>
                      * 
                      */
                     void SetTopic(const std::string& _topic);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TopicHasBeenSet() const;
 
                     /**
-                     * 获取备注信息，最长 128 字符
-                     * @return Remark 备注信息，最长 128 字符
+                     * 获取<p>备注信息，最长 128 字符</p>
+                     * @return Remark <p>备注信息，最长 128 字符</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注信息，最长 128 字符
-                     * @param _remark 备注信息，最长 128 字符
+                     * 设置<p>备注信息，最长 128 字符</p>
+                     * @param _remark <p>备注信息，最长 128 字符</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 主题，不能为空，只能包含字母、数字、“-”及“_”，3-100 字符。
+                     * <p>主题，不能为空，只能包含字母、数字、“-”及“_”，3-100 字符。</p>
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
 
                     /**
-                     * 备注信息，最长 128 字符
+                     * <p>备注信息，最长 128 字符</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

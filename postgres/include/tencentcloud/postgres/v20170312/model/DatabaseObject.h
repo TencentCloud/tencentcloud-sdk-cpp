@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取支持使用的数据库对象类型有：account,database,schema,sequence,procedure,type,function,table,view,matview,column。
-                     * @return ObjectType 支持使用的数据库对象类型有：account,database,schema,sequence,procedure,type,function,table,view,matview,column。
+                     * 获取<p>支持使用的数据库对象类型有：account,database,schema,sequence,procedure,type,function,table,view,matview,column。</p>
+                     * @return ObjectType <p>支持使用的数据库对象类型有：account,database,schema,sequence,procedure,type,function,table,view,matview,column。</p>
                      * 
                      */
                     std::string GetObjectType() const;
 
                     /**
-                     * 设置支持使用的数据库对象类型有：account,database,schema,sequence,procedure,type,function,table,view,matview,column。
-                     * @param _objectType 支持使用的数据库对象类型有：account,database,schema,sequence,procedure,type,function,table,view,matview,column。
+                     * 设置<p>支持使用的数据库对象类型有：account,database,schema,sequence,procedure,type,function,table,view,matview,column。</p>
+                     * @param _objectType <p>支持使用的数据库对象类型有：account,database,schema,sequence,procedure,type,function,table,view,matview,column。</p>
                      * 
                      */
                     void SetObjectType(const std::string& _objectType);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ObjectTypeHasBeenSet() const;
 
                     /**
-                     * 获取所描述的数据库对象名称
-                     * @return ObjectName 所描述的数据库对象名称
+                     * 获取<p>所描述的数据库对象名称，或者当ModifyType为grantRole / revokeRole时，必须等于顶层UserName</p>
+                     * @return ObjectName <p>所描述的数据库对象名称，或者当ModifyType为grantRole / revokeRole时，必须等于顶层UserName</p>
                      * 
                      */
                     std::string GetObjectName() const;
 
                     /**
-                     * 设置所描述的数据库对象名称
-                     * @param _objectName 所描述的数据库对象名称
+                     * 设置<p>所描述的数据库对象名称，或者当ModifyType为grantRole / revokeRole时，必须等于顶层UserName</p>
+                     * @param _objectName <p>所描述的数据库对象名称，或者当ModifyType为grantRole / revokeRole时，必须等于顶层UserName</p>
                      * 
                      */
                     void SetObjectName(const std::string& _objectName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ObjectNameHasBeenSet() const;
 
                     /**
-                     * 获取所要描述的数据库对象，所属的数据库名称。当描述对象类型不为database时，此参数必选。
-                     * @return DatabaseName 所要描述的数据库对象，所属的数据库名称。当描述对象类型不为database时，此参数必选。
+                     * 获取<p>所要描述的数据库对象，所属的数据库名称。当描述对象类型不为database时，此参数必选。</p>
+                     * @return DatabaseName <p>所要描述的数据库对象，所属的数据库名称。当描述对象类型不为database时，此参数必选。</p>
                      * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
-                     * 设置所要描述的数据库对象，所属的数据库名称。当描述对象类型不为database时，此参数必选。
-                     * @param _databaseName 所要描述的数据库对象，所属的数据库名称。当描述对象类型不为database时，此参数必选。
+                     * 设置<p>所要描述的数据库对象，所属的数据库名称。当描述对象类型不为database时，此参数必选。</p>
+                     * @param _databaseName <p>所要描述的数据库对象，所属的数据库名称。当描述对象类型不为database时，此参数必选。</p>
                      * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
-                     * 获取所要描述的数据库对象，所属的模式名称。当描述对象不为database、schema时，此参数必选。
-                     * @return SchemaName 所要描述的数据库对象，所属的模式名称。当描述对象不为database、schema时，此参数必选。
+                     * 获取<p>所要描述的数据库对象，所属的模式名称。当描述对象不为database、schema时，此参数必选。</p>
+                     * @return SchemaName <p>所要描述的数据库对象，所属的模式名称。当描述对象不为database、schema时，此参数必选。</p>
                      * 
                      */
                     std::string GetSchemaName() const;
 
                     /**
-                     * 设置所要描述的数据库对象，所属的模式名称。当描述对象不为database、schema时，此参数必选。
-                     * @param _schemaName 所要描述的数据库对象，所属的模式名称。当描述对象不为database、schema时，此参数必选。
+                     * 设置<p>所要描述的数据库对象，所属的模式名称。当描述对象不为database、schema时，此参数必选。</p>
+                     * @param _schemaName <p>所要描述的数据库对象，所属的模式名称。当描述对象不为database、schema时，此参数必选。</p>
                      * 
                      */
                     void SetSchemaName(const std::string& _schemaName);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool SchemaNameHasBeenSet() const;
 
                     /**
-                     * 获取所要描述的数据库对象，所属的表名称。当描述的对象类型为column时，此参数必填。
-                     * @return TableName 所要描述的数据库对象，所属的表名称。当描述的对象类型为column时，此参数必填。
+                     * 获取<p>所要描述的数据库对象，所属的表名称。当描述的对象类型为column时，此参数必填。</p>
+                     * @return TableName <p>所要描述的数据库对象，所属的表名称。当描述的对象类型为column时，此参数必填。</p>
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
-                     * 设置所要描述的数据库对象，所属的表名称。当描述的对象类型为column时，此参数必填。
-                     * @param _tableName 所要描述的数据库对象，所属的表名称。当描述的对象类型为column时，此参数必填。
+                     * 设置<p>所要描述的数据库对象，所属的表名称。当描述的对象类型为column时，此参数必填。</p>
+                     * @param _tableName <p>所要描述的数据库对象，所属的表名称。当描述的对象类型为column时，此参数必填。</p>
                      * 
                      */
                     void SetTableName(const std::string& _tableName);
@@ -154,31 +154,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 支持使用的数据库对象类型有：account,database,schema,sequence,procedure,type,function,table,view,matview,column。
+                     * <p>支持使用的数据库对象类型有：account,database,schema,sequence,procedure,type,function,table,view,matview,column。</p>
                      */
                     std::string m_objectType;
                     bool m_objectTypeHasBeenSet;
 
                     /**
-                     * 所描述的数据库对象名称
+                     * <p>所描述的数据库对象名称，或者当ModifyType为grantRole / revokeRole时，必须等于顶层UserName</p>
                      */
                     std::string m_objectName;
                     bool m_objectNameHasBeenSet;
 
                     /**
-                     * 所要描述的数据库对象，所属的数据库名称。当描述对象类型不为database时，此参数必选。
+                     * <p>所要描述的数据库对象，所属的数据库名称。当描述对象类型不为database时，此参数必选。</p>
                      */
                     std::string m_databaseName;
                     bool m_databaseNameHasBeenSet;
 
                     /**
-                     * 所要描述的数据库对象，所属的模式名称。当描述对象不为database、schema时，此参数必选。
+                     * <p>所要描述的数据库对象，所属的模式名称。当描述对象不为database、schema时，此参数必选。</p>
                      */
                     std::string m_schemaName;
                     bool m_schemaNameHasBeenSet;
 
                     /**
-                     * 所要描述的数据库对象，所属的表名称。当描述的对象类型为column时，此参数必填。
+                     * <p>所要描述的数据库对象，所属的表名称。当描述的对象类型为column时，此参数必填。</p>
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;

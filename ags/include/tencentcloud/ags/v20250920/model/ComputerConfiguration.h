@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ags/v20250920/model/WAAConfiguration.h>
+#include <tencentcloud/ags/v20250920/model/OSWorldConfiguration.h>
 
 
 namespace TencentCloud
@@ -68,6 +69,27 @@ namespace TencentCloud
                      */
                     bool WAAConfigurationHasBeenSet() const;
 
+                    /**
+                     * 获取<p>配置内置 OSWorld</p>
+                     * @return OSWorldConfiguration <p>配置内置 OSWorld</p>
+                     * 
+                     */
+                    OSWorldConfiguration GetOSWorldConfiguration() const;
+
+                    /**
+                     * 设置<p>配置内置 OSWorld</p>
+                     * @param _oSWorldConfiguration <p>配置内置 OSWorld</p>
+                     * 
+                     */
+                    void SetOSWorldConfiguration(const OSWorldConfiguration& _oSWorldConfiguration);
+
+                    /**
+                     * 判断参数 OSWorldConfiguration 是否已赋值
+                     * @return OSWorldConfiguration 是否已赋值
+                     * 
+                     */
+                    bool OSWorldConfigurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -75,6 +97,12 @@ namespace TencentCloud
                      */
                     WAAConfiguration m_wAAConfiguration;
                     bool m_wAAConfigurationHasBeenSet;
+
+                    /**
+                     * <p>配置内置 OSWorld</p>
+                     */
+                    OSWorldConfiguration m_oSWorldConfiguration;
+                    bool m_oSWorldConfigurationHasBeenSet;
 
                 };
             }

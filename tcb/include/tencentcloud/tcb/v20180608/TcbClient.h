@@ -63,8 +63,6 @@
 #include <tencentcloud/tcb/v20180608/model/CreateTableResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateUserRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateUserResponse.h>
-#include <tencentcloud/tcb/v20180608/model/CreateVmInstanceRequest.h>
-#include <tencentcloud/tcb/v20180608/model/CreateVmInstanceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteAIModelRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteAIModelResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteApiKeyRequest.h>
@@ -83,8 +81,6 @@
 #include <tencentcloud/tcb/v20180608/model/DeleteTableResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteUsersRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteUsersResponse.h>
-#include <tencentcloud/tcb/v20180608/model/DeleteVmInstanceRequest.h>
-#include <tencentcloud/tcb/v20180608/model/DeleteVmInstanceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeAIModelsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeAIModelsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeApiKeyListRequest.h>
@@ -133,6 +129,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeGatewayVersionsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeGatewayVersionsResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeHTTPServiceCachePurgeTaskRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeHTTPServiceCachePurgeTaskResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeHTTPServiceRouteRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeHTTPServiceRouteResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeHostingDomainTaskRequest.h>
@@ -161,10 +159,6 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeTablesResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeUserListRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeUserListResponse.h>
-#include <tencentcloud/tcb/v20180608/model/DescribeVmInstancesRequest.h>
-#include <tencentcloud/tcb/v20180608/model/DescribeVmInstancesResponse.h>
-#include <tencentcloud/tcb/v20180608/model/DescribeVmSpecRequest.h>
-#include <tencentcloud/tcb/v20180608/model/DescribeVmSpecResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyMySQLRequest.h>
@@ -175,8 +169,6 @@
 #include <tencentcloud/tcb/v20180608/model/ExecutePGSqlResponse.h>
 #include <tencentcloud/tcb/v20180608/model/GetProvidersRequest.h>
 #include <tencentcloud/tcb/v20180608/model/GetProvidersResponse.h>
-#include <tencentcloud/tcb/v20180608/model/InquireVmPriceRequest.h>
-#include <tencentcloud/tcb/v20180608/model/InquireVmPriceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ListPGUserMigrationsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ListPGUserMigrationsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ListTablesRequest.h>
@@ -211,6 +203,8 @@
 #include <tencentcloud/tcb/v20180608/model/ModifyUserResponse.h>
 #include <tencentcloud/tcb/v20180608/model/PreviewPGUserMigrationsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/PreviewPGUserMigrationsResponse.h>
+#include <tencentcloud/tcb/v20180608/model/PurgeHTTPServiceCacheRequest.h>
+#include <tencentcloud/tcb/v20180608/model/PurgeHTTPServiceCacheResponse.h>
 #include <tencentcloud/tcb/v20180608/model/PushPGUserMigrationsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/PushPGUserMigrationsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ReleaseEnvRequest.h>
@@ -307,9 +301,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateUserResponse> CreateUserOutcome;
                 typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateUserRequest&, CreateUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateVmInstanceResponse> CreateVmInstanceOutcome;
-                typedef std::future<CreateVmInstanceOutcome> CreateVmInstanceOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::CreateVmInstanceRequest&, CreateVmInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVmInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAIModelResponse> DeleteAIModelOutcome;
                 typedef std::future<DeleteAIModelOutcome> DeleteAIModelOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteAIModelRequest&, DeleteAIModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAIModelAsyncHandler;
@@ -337,9 +328,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteUsersResponse> DeleteUsersOutcome;
                 typedef std::future<DeleteUsersOutcome> DeleteUsersOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteUsersRequest&, DeleteUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUsersAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteVmInstanceResponse> DeleteVmInstanceOutcome;
-                typedef std::future<DeleteVmInstanceOutcome> DeleteVmInstanceOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::DeleteVmInstanceRequest&, DeleteVmInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVmInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAIModelsResponse> DescribeAIModelsOutcome;
                 typedef std::future<DescribeAIModelsOutcome> DescribeAIModelsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeAIModelsRequest&, DescribeAIModelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIModelsAsyncHandler;
@@ -412,6 +400,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGatewayVersionsResponse> DescribeGatewayVersionsOutcome;
                 typedef std::future<DescribeGatewayVersionsOutcome> DescribeGatewayVersionsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeGatewayVersionsRequest&, DescribeGatewayVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayVersionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHTTPServiceCachePurgeTaskResponse> DescribeHTTPServiceCachePurgeTaskOutcome;
+                typedef std::future<DescribeHTTPServiceCachePurgeTaskOutcome> DescribeHTTPServiceCachePurgeTaskOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeHTTPServiceCachePurgeTaskRequest&, DescribeHTTPServiceCachePurgeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHTTPServiceCachePurgeTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHTTPServiceRouteResponse> DescribeHTTPServiceRouteOutcome;
                 typedef std::future<DescribeHTTPServiceRouteOutcome> DescribeHTTPServiceRouteOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeHTTPServiceRouteRequest&, DescribeHTTPServiceRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHTTPServiceRouteAsyncHandler;
@@ -454,12 +445,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserListResponse> DescribeUserListOutcome;
                 typedef std::future<DescribeUserListOutcome> DescribeUserListOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeUserListRequest&, DescribeUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserListAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeVmInstancesResponse> DescribeVmInstancesOutcome;
-                typedef std::future<DescribeVmInstancesOutcome> DescribeVmInstancesOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::DescribeVmInstancesRequest&, DescribeVmInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVmInstancesAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeVmSpecResponse> DescribeVmSpecOutcome;
-                typedef std::future<DescribeVmSpecOutcome> DescribeVmSpecOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::DescribeVmSpecRequest&, DescribeVmSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVmSpecAsyncHandler;
                 typedef Outcome<Core::Error, Model::DestroyEnvResponse> DestroyEnvOutcome;
                 typedef std::future<DestroyEnvOutcome> DestroyEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DestroyEnvRequest&, DestroyEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyEnvAsyncHandler;
@@ -475,9 +460,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetProvidersResponse> GetProvidersOutcome;
                 typedef std::future<GetProvidersOutcome> GetProvidersOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::GetProvidersRequest&, GetProvidersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetProvidersAsyncHandler;
-                typedef Outcome<Core::Error, Model::InquireVmPriceResponse> InquireVmPriceOutcome;
-                typedef std::future<InquireVmPriceOutcome> InquireVmPriceOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::InquireVmPriceRequest&, InquireVmPriceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquireVmPriceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListPGUserMigrationsResponse> ListPGUserMigrationsOutcome;
                 typedef std::future<ListPGUserMigrationsOutcome> ListPGUserMigrationsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ListPGUserMigrationsRequest&, ListPGUserMigrationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListPGUserMigrationsAsyncHandler;
@@ -529,6 +511,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PreviewPGUserMigrationsResponse> PreviewPGUserMigrationsOutcome;
                 typedef std::future<PreviewPGUserMigrationsOutcome> PreviewPGUserMigrationsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::PreviewPGUserMigrationsRequest&, PreviewPGUserMigrationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PreviewPGUserMigrationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::PurgeHTTPServiceCacheResponse> PurgeHTTPServiceCacheOutcome;
+                typedef std::future<PurgeHTTPServiceCacheOutcome> PurgeHTTPServiceCacheOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::PurgeHTTPServiceCacheRequest&, PurgeHTTPServiceCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PurgeHTTPServiceCacheAsyncHandler;
                 typedef Outcome<Core::Error, Model::PushPGUserMigrationsResponse> PushPGUserMigrationsOutcome;
                 typedef std::future<PushPGUserMigrationsOutcome> PushPGUserMigrationsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::PushPGUserMigrationsRequest&, PushPGUserMigrationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PushPGUserMigrationsAsyncHandler;
@@ -797,16 +782,6 @@ namespace TencentCloud
                 CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request);
 
                 /**
-                 *创建虚拟服务器
-创建流程为先调用[DescribeVmSpec](https://cloud.tencent.com/document/product/876/129360)获取可购买的规格，同时调用[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)拉取镜像列表，选中一个规格和一个镜像后，调用[InquireVmPrice](https://cloud.tencent.com/document/product/876/129759)询价，如果价格可接受，调用此接口创建实例
-                 * @param req CreateVmInstanceRequest
-                 * @return CreateVmInstanceOutcome
-                 */
-                CreateVmInstanceOutcome CreateVmInstance(const Model::CreateVmInstanceRequest &request);
-                void CreateVmInstanceAsync(const Model::CreateVmInstanceRequest& request, const CreateVmInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateVmInstanceOutcomeCallable CreateVmInstanceCallable(const Model::CreateVmInstanceRequest& request);
-
-                /**
                  *删除 AI 模型配置分组，支持批量删除。内置分组无法删除。分组删除后，该分组下的所有模型配置将同步移除，针对该分组模型的请求将会失败，请在删除前确认业务侧已停止对该分组的调用。
 
 注意：
@@ -898,15 +873,6 @@ namespace TencentCloud
                 DeleteUsersOutcome DeleteUsers(const Model::DeleteUsersRequest &request);
                 void DeleteUsersAsync(const Model::DeleteUsersRequest& request, const DeleteUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteUsersOutcomeCallable DeleteUsersCallable(const Model::DeleteUsersRequest& request);
-
-                /**
-                 *销毁云服务器实例
-                 * @param req DeleteVmInstanceRequest
-                 * @return DeleteVmInstanceOutcome
-                 */
-                DeleteVmInstanceOutcome DeleteVmInstance(const Model::DeleteVmInstanceRequest &request);
-                void DeleteVmInstanceAsync(const Model::DeleteVmInstanceRequest& request, const DeleteVmInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteVmInstanceOutcomeCallable DeleteVmInstanceCallable(const Model::DeleteVmInstanceRequest& request);
 
                 /**
                  *查询指定云开发环境下已配置的 AI 模型分组列表。返回结果包含该环境下所有类型的模型分组（自定义类型 custom、内置类型 builtin），以及各分组下的模型列表、服务地址、启用状态等配置信息。
@@ -1149,6 +1115,15 @@ namespace TencentCloud
                 DescribeGatewayVersionsOutcomeCallable DescribeGatewayVersionsCallable(const Model::DescribeGatewayVersionsRequest& request);
 
                 /**
+                 *本接口DescribeHTTPServiceCachePurgeTask为只读查询，不修改任何缓存或环境资源，仅返回指定环境下域名缓存刷新任务的状态与时间等信息。通过PurgeHTTPServiceCache清除域名缓存后，可通过此接口传入任务id可查询清除任务状态、时间、缓存类型等信息。也可通过此接口查询历史任务记录。
+                 * @param req DescribeHTTPServiceCachePurgeTaskRequest
+                 * @return DescribeHTTPServiceCachePurgeTaskOutcome
+                 */
+                DescribeHTTPServiceCachePurgeTaskOutcome DescribeHTTPServiceCachePurgeTask(const Model::DescribeHTTPServiceCachePurgeTaskRequest &request);
+                void DescribeHTTPServiceCachePurgeTaskAsync(const Model::DescribeHTTPServiceCachePurgeTaskRequest& request, const DescribeHTTPServiceCachePurgeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHTTPServiceCachePurgeTaskOutcomeCallable DescribeHTTPServiceCachePurgeTaskCallable(const Model::DescribeHTTPServiceCachePurgeTaskRequest& request);
+
+                /**
                  *本接口DescribeHTTPServiceRoute用于查询环境下HTTP访问服务路由信息。可通过Filters过滤。如果不存在不会返回错误。HTTP访问服务提供了默认域名，通过本接口可直接获取默认域名。前置需已开通 HTTP 访问服务；调用CreateHTTPServiceRoute或者ModifyHTTPServiceRoute后可使用本接口查询创建或者修改结果
                  * @param req DescribeHTTPServiceRouteRequest
                  * @return DescribeHTTPServiceRouteOutcome
@@ -1288,24 +1263,6 @@ namespace TencentCloud
                 DescribeUserListOutcomeCallable DescribeUserListCallable(const Model::DescribeUserListRequest& request);
 
                 /**
-                 *查询环境下的云服务器列表
-                 * @param req DescribeVmInstancesRequest
-                 * @return DescribeVmInstancesOutcome
-                 */
-                DescribeVmInstancesOutcome DescribeVmInstances(const Model::DescribeVmInstancesRequest &request);
-                void DescribeVmInstancesAsync(const Model::DescribeVmInstancesRequest& request, const DescribeVmInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeVmInstancesOutcomeCallable DescribeVmInstancesCallable(const Model::DescribeVmInstancesRequest& request);
-
-                /**
-                 *云服务器规格list
-                 * @param req DescribeVmSpecRequest
-                 * @return DescribeVmSpecOutcome
-                 */
-                DescribeVmSpecOutcome DescribeVmSpec(const Model::DescribeVmSpecRequest &request);
-                void DescribeVmSpecAsync(const Model::DescribeVmSpecRequest& request, const DescribeVmSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeVmSpecOutcomeCallable DescribeVmSpecCallable(const Model::DescribeVmSpecRequest& request);
-
-                /**
                  *本接口用于销毁云开发环境。
 云开发环境遵循腾讯云包年包月预付费产品生命周期，因此环境销毁需要分两步：
 1. 资源退费。此时会根据当前环境剩余有效期，自动退还相关费用(代金券不退)。退款后，环境进入隔离期。
@@ -1360,15 +1317,6 @@ namespace TencentCloud
                 GetProvidersOutcome GetProviders(const Model::GetProvidersRequest &request);
                 void GetProvidersAsync(const Model::GetProvidersRequest& request, const GetProvidersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetProvidersOutcomeCallable GetProvidersCallable(const Model::GetProvidersRequest& request);
-
-                /**
-                 *查询服务器价格
-                 * @param req InquireVmPriceRequest
-                 * @return InquireVmPriceOutcome
-                 */
-                InquireVmPriceOutcome InquireVmPrice(const Model::InquireVmPriceRequest &request);
-                void InquireVmPriceAsync(const Model::InquireVmPriceRequest& request, const InquireVmPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                InquireVmPriceOutcomeCallable InquireVmPriceCallable(const Model::InquireVmPriceRequest& request);
 
                 /**
                  *本接口（ListPGUserMigrations）用于查询目标环境已应用的用户 migration 列表。
@@ -1537,6 +1485,15 @@ Id、Secret、CreatedAt、Meta 等字段在该接口中不可修改，当客户�
                 PreviewPGUserMigrationsOutcome PreviewPGUserMigrations(const Model::PreviewPGUserMigrationsRequest &request);
                 void PreviewPGUserMigrationsAsync(const Model::PreviewPGUserMigrationsRequest& request, const PreviewPGUserMigrationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PreviewPGUserMigrationsOutcomeCallable PreviewPGUserMigrationsCallable(const Model::PreviewPGUserMigrationsRequest& request);
+
+                /**
+                 *本接口PurgeHTTPServiceCache为异步操作，清除指定环境下 HTTPService 域名的缓存，操作不可逆，仅影响指定 Domain 的缓存命中，不影响源站数据。用于清除HTTP访问服务域名缓存。支持刷新CDN和EO两种类型。清除缓存后会生成任务id，通过DescribeHTTPServiceCachePurgeTask传入任务id可查询任务进度和详细信息。
+                 * @param req PurgeHTTPServiceCacheRequest
+                 * @return PurgeHTTPServiceCacheOutcome
+                 */
+                PurgeHTTPServiceCacheOutcome PurgeHTTPServiceCache(const Model::PurgeHTTPServiceCacheRequest &request);
+                void PurgeHTTPServiceCacheAsync(const Model::PurgeHTTPServiceCacheRequest& request, const PurgeHTTPServiceCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PurgeHTTPServiceCacheOutcomeCallable PurgeHTTPServiceCacheCallable(const Model::PurgeHTTPServiceCacheRequest& request);
 
                 /**
                  *本接口（PushPGUserMigrations）用于批量应用Migrations。

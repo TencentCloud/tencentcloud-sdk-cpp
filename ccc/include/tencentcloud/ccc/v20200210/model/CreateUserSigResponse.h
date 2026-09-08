@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签名结果
-                     * @return UserSig 签名结果
+                     * 获取<p>签名结果</p>
+                     * @return UserSig <p>签名结果</p>
                      * 
                      */
                     std::string GetUserSig() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 签名结果
+                     * <p>签名结果</p>
                      */
                     std::string m_userSig;
                     bool m_userSigHasBeenSet;

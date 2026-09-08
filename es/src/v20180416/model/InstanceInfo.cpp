@@ -127,7 +127,8 @@ InstanceInfo::InstanceInfo() :
     m_openMTLSHasBeenSet(false),
     m_serverCertSourceHasBeenSet(false),
     m_oldEsVipHasBeenSet(false),
-    m_oldEsPrivateTcpUrlHasBeenSet(false)
+    m_oldEsPrivateTcpUrlHasBeenSet(false),
+    m_needOfflineOldNodesNotifyHasBeenSet(false)
 {
 }
 
@@ -1332,6 +1333,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_oldEsPrivateTcpUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("NeedOfflineOldNodesNotify") && !value["NeedOfflineOldNodesNotify"].IsNull())
+    {
+        if (!value["NeedOfflineOldNodesNotify"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.NeedOfflineOldNodesNotify` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_needOfflineOldNodesNotify = value["NeedOfflineOldNodesNotify"].GetBool();
+        m_needOfflineOldNodesNotifyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -2249,6 +2260,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "OldEsPrivateTcpUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_oldEsPrivateTcpUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needOfflineOldNodesNotifyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedOfflineOldNodesNotify";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_needOfflineOldNodesNotify, allocator);
     }
 
 }
@@ -3964,5 +3983,21 @@ void InstanceInfo::SetOldEsPrivateTcpUrl(const string& _oldEsPrivateTcpUrl)
 bool InstanceInfo::OldEsPrivateTcpUrlHasBeenSet() const
 {
     return m_oldEsPrivateTcpUrlHasBeenSet;
+}
+
+bool InstanceInfo::GetNeedOfflineOldNodesNotify() const
+{
+    return m_needOfflineOldNodesNotify;
+}
+
+void InstanceInfo::SetNeedOfflineOldNodesNotify(const bool& _needOfflineOldNodesNotify)
+{
+    m_needOfflineOldNodesNotify = _needOfflineOldNodesNotify;
+    m_needOfflineOldNodesNotifyHasBeenSet = true;
+}
+
+bool InstanceInfo::NeedOfflineOldNodesNotifyHasBeenSet() const
+{
+    return m_needOfflineOldNodesNotifyHasBeenSet;
 }
 

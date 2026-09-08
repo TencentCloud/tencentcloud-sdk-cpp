@@ -44,23 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取源3D模型文件。其中参数 Type 和 Url 必填，参数 PreviewImageUrl 无意义，可忽略。
-Type可选值：OBJ，GLB
-
-                     * @return File3D 源3D模型文件。其中参数 Type 和 Url 必填，参数 PreviewImageUrl 无意义，可忽略。
-Type可选值：OBJ，GLB
-
+                     * 获取<p>源3D模型文件。其中参数 Type 和 Url 必填，参数 PreviewImageUrl 无意义，可忽略。Type可选值：OBJ，GLB，FBX</p>
+                     * @return File3D <p>源3D模型文件。其中参数 Type 和 Url 必填，参数 PreviewImageUrl 无意义，可忽略。Type可选值：OBJ，GLB，FBX</p>
                      * 
                      */
                     File3D GetFile3D() const;
 
                     /**
-                     * 设置源3D模型文件。其中参数 Type 和 Url 必填，参数 PreviewImageUrl 无意义，可忽略。
-Type可选值：OBJ，GLB
-
-                     * @param _file3D 源3D模型文件。其中参数 Type 和 Url 必填，参数 PreviewImageUrl 无意义，可忽略。
-Type可选值：OBJ，GLB
-
+                     * 设置<p>源3D模型文件。其中参数 Type 和 Url 必填，参数 PreviewImageUrl 无意义，可忽略。Type可选值：OBJ，GLB，FBX</p>
+                     * @param _file3D <p>源3D模型文件。其中参数 Type 和 Url 必填，参数 PreviewImageUrl 无意义，可忽略。Type可选值：OBJ，GLB，FBX</p>
                      * 
                      */
                     void SetFile3D(const File3D& _file3D);
@@ -73,23 +65,15 @@ Type可选值：OBJ，GLB
                     bool File3DHasBeenSet() const;
 
                     /**
-                     * 获取多边形类型，表示模型的表面由几边形网格构成，默认为triangle,参考值:
-triangle:三角形面。
-quadrilateral：四边形面。
-                     * @return PolygonType 多边形类型，表示模型的表面由几边形网格构成，默认为triangle,参考值:
-triangle:三角形面。
-quadrilateral：四边形面。
+                     * 获取<p>多边形类型，表示模型的表面由几边形网格构成，默认为triangle,参考值:<br>triangle:三角形面。<br>quadrilateral：四边形面。</p>
+                     * @return PolygonType <p>多边形类型，表示模型的表面由几边形网格构成，默认为triangle,参考值:<br>triangle:三角形面。<br>quadrilateral：四边形面。</p>
                      * 
                      */
                     std::string GetPolygonType() const;
 
                     /**
-                     * 设置多边形类型，表示模型的表面由几边形网格构成，默认为triangle,参考值:
-triangle:三角形面。
-quadrilateral：四边形面。
-                     * @param _polygonType 多边形类型，表示模型的表面由几边形网格构成，默认为triangle,参考值:
-triangle:三角形面。
-quadrilateral：四边形面。
+                     * 设置<p>多边形类型，表示模型的表面由几边形网格构成，默认为triangle,参考值:<br>triangle:三角形面。<br>quadrilateral：四边形面。</p>
+                     * @param _polygonType <p>多边形类型，表示模型的表面由几边形网格构成，默认为triangle,参考值:<br>triangle:三角形面。<br>quadrilateral：四边形面。</p>
                      * 
                      */
                     void SetPolygonType(const std::string& _polygonType);
@@ -102,15 +86,15 @@ quadrilateral：四边形面。
                     bool PolygonTypeHasBeenSet() const;
 
                     /**
-                     * 获取减面后面数档位类型，可选值：high，medium, low。
-                     * @return FaceLevel 减面后面数档位类型，可选值：high，medium, low。
+                     * 获取<p>减面后面数档位类型，可选值：high，medium, low。</p>
+                     * @return FaceLevel <p>减面后面数档位类型，可选值：high，medium, low。</p>
                      * 
                      */
                     std::string GetFaceLevel() const;
 
                     /**
-                     * 设置减面后面数档位类型，可选值：high，medium, low。
-                     * @param _faceLevel 减面后面数档位类型，可选值：high，medium, low。
+                     * 设置<p>减面后面数档位类型，可选值：high，medium, low。</p>
+                     * @param _faceLevel <p>减面后面数档位类型，可选值：high，medium, low。</p>
                      * 
                      */
                     void SetFaceLevel(const std::string& _faceLevel);
@@ -125,23 +109,19 @@ quadrilateral：四边形面。
                 private:
 
                     /**
-                     * 源3D模型文件。其中参数 Type 和 Url 必填，参数 PreviewImageUrl 无意义，可忽略。
-Type可选值：OBJ，GLB
-
+                     * <p>源3D模型文件。其中参数 Type 和 Url 必填，参数 PreviewImageUrl 无意义，可忽略。Type可选值：OBJ，GLB，FBX</p>
                      */
                     File3D m_file3D;
                     bool m_file3DHasBeenSet;
 
                     /**
-                     * 多边形类型，表示模型的表面由几边形网格构成，默认为triangle,参考值:
-triangle:三角形面。
-quadrilateral：四边形面。
+                     * <p>多边形类型，表示模型的表面由几边形网格构成，默认为triangle,参考值:<br>triangle:三角形面。<br>quadrilateral：四边形面。</p>
                      */
                     std::string m_polygonType;
                     bool m_polygonTypeHasBeenSet;
 
                     /**
-                     * 减面后面数档位类型，可选值：high，medium, low。
+                     * <p>减面后面数档位类型，可选值：high，medium, low。</p>
                      */
                     std::string m_faceLevel;
                     bool m_faceLevelHasBeenSet;

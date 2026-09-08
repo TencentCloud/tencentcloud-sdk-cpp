@@ -1040,56 +1040,6 @@ TcbClient::CreateUserOutcomeCallable TcbClient::CreateUserCallable(const CreateU
     return prom->get_future();
 }
 
-TcbClient::CreateVmInstanceOutcome TcbClient::CreateVmInstance(const CreateVmInstanceRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateVmInstance");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateVmInstanceResponse rsp = CreateVmInstanceResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateVmInstanceOutcome(rsp);
-        else
-            return CreateVmInstanceOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateVmInstanceOutcome(outcome.GetError());
-    }
-}
-
-void TcbClient::CreateVmInstanceAsync(const CreateVmInstanceRequest& request, const CreateVmInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const CreateVmInstanceRequest&;
-    using Resp = CreateVmInstanceResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "CreateVmInstance", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TcbClient::CreateVmInstanceOutcomeCallable TcbClient::CreateVmInstanceCallable(const CreateVmInstanceRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<CreateVmInstanceOutcome>>();
-    CreateVmInstanceAsync(
-    request,
-    [prom](
-        const TcbClient*,
-        const CreateVmInstanceRequest&,
-        CreateVmInstanceOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 TcbClient::DeleteAIModelOutcome TcbClient::DeleteAIModel(const DeleteAIModelRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAIModel");
@@ -1532,56 +1482,6 @@ TcbClient::DeleteUsersOutcomeCallable TcbClient::DeleteUsersCallable(const Delet
         const TcbClient*,
         const DeleteUsersRequest&,
         DeleteUsersOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-TcbClient::DeleteVmInstanceOutcome TcbClient::DeleteVmInstance(const DeleteVmInstanceRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteVmInstance");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteVmInstanceResponse rsp = DeleteVmInstanceResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteVmInstanceOutcome(rsp);
-        else
-            return DeleteVmInstanceOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteVmInstanceOutcome(outcome.GetError());
-    }
-}
-
-void TcbClient::DeleteVmInstanceAsync(const DeleteVmInstanceRequest& request, const DeleteVmInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DeleteVmInstanceRequest&;
-    using Resp = DeleteVmInstanceResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DeleteVmInstance", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TcbClient::DeleteVmInstanceOutcomeCallable TcbClient::DeleteVmInstanceCallable(const DeleteVmInstanceRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DeleteVmInstanceOutcome>>();
-    DeleteVmInstanceAsync(
-    request,
-    [prom](
-        const TcbClient*,
-        const DeleteVmInstanceRequest&,
-        DeleteVmInstanceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2790,6 +2690,56 @@ TcbClient::DescribeGatewayVersionsOutcomeCallable TcbClient::DescribeGatewayVers
     return prom->get_future();
 }
 
+TcbClient::DescribeHTTPServiceCachePurgeTaskOutcome TcbClient::DescribeHTTPServiceCachePurgeTask(const DescribeHTTPServiceCachePurgeTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHTTPServiceCachePurgeTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHTTPServiceCachePurgeTaskResponse rsp = DescribeHTTPServiceCachePurgeTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHTTPServiceCachePurgeTaskOutcome(rsp);
+        else
+            return DescribeHTTPServiceCachePurgeTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHTTPServiceCachePurgeTaskOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeHTTPServiceCachePurgeTaskAsync(const DescribeHTTPServiceCachePurgeTaskRequest& request, const DescribeHTTPServiceCachePurgeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeHTTPServiceCachePurgeTaskRequest&;
+    using Resp = DescribeHTTPServiceCachePurgeTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeHTTPServiceCachePurgeTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeHTTPServiceCachePurgeTaskOutcomeCallable TcbClient::DescribeHTTPServiceCachePurgeTaskCallable(const DescribeHTTPServiceCachePurgeTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeHTTPServiceCachePurgeTaskOutcome>>();
+    DescribeHTTPServiceCachePurgeTaskAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeHTTPServiceCachePurgeTaskRequest&,
+        DescribeHTTPServiceCachePurgeTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::DescribeHTTPServiceRouteOutcome TcbClient::DescribeHTTPServiceRoute(const DescribeHTTPServiceRouteRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeHTTPServiceRoute");
@@ -3490,106 +3440,6 @@ TcbClient::DescribeUserListOutcomeCallable TcbClient::DescribeUserListCallable(c
     return prom->get_future();
 }
 
-TcbClient::DescribeVmInstancesOutcome TcbClient::DescribeVmInstances(const DescribeVmInstancesRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeVmInstances");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeVmInstancesResponse rsp = DescribeVmInstancesResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeVmInstancesOutcome(rsp);
-        else
-            return DescribeVmInstancesOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeVmInstancesOutcome(outcome.GetError());
-    }
-}
-
-void TcbClient::DescribeVmInstancesAsync(const DescribeVmInstancesRequest& request, const DescribeVmInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeVmInstancesRequest&;
-    using Resp = DescribeVmInstancesResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeVmInstances", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TcbClient::DescribeVmInstancesOutcomeCallable TcbClient::DescribeVmInstancesCallable(const DescribeVmInstancesRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeVmInstancesOutcome>>();
-    DescribeVmInstancesAsync(
-    request,
-    [prom](
-        const TcbClient*,
-        const DescribeVmInstancesRequest&,
-        DescribeVmInstancesOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-TcbClient::DescribeVmSpecOutcome TcbClient::DescribeVmSpec(const DescribeVmSpecRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeVmSpec");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeVmSpecResponse rsp = DescribeVmSpecResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeVmSpecOutcome(rsp);
-        else
-            return DescribeVmSpecOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeVmSpecOutcome(outcome.GetError());
-    }
-}
-
-void TcbClient::DescribeVmSpecAsync(const DescribeVmSpecRequest& request, const DescribeVmSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeVmSpecRequest&;
-    using Resp = DescribeVmSpecResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeVmSpec", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TcbClient::DescribeVmSpecOutcomeCallable TcbClient::DescribeVmSpecCallable(const DescribeVmSpecRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeVmSpecOutcome>>();
-    DescribeVmSpecAsync(
-    request,
-    [prom](
-        const TcbClient*,
-        const DescribeVmSpecRequest&,
-        DescribeVmSpecOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 TcbClient::DestroyEnvOutcome TcbClient::DestroyEnv(const DestroyEnvRequest &request)
 {
     auto outcome = MakeRequest(request, "DestroyEnv");
@@ -3832,56 +3682,6 @@ TcbClient::GetProvidersOutcomeCallable TcbClient::GetProvidersCallable(const Get
         const TcbClient*,
         const GetProvidersRequest&,
         GetProvidersOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-TcbClient::InquireVmPriceOutcome TcbClient::InquireVmPrice(const InquireVmPriceRequest &request)
-{
-    auto outcome = MakeRequest(request, "InquireVmPrice");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        InquireVmPriceResponse rsp = InquireVmPriceResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return InquireVmPriceOutcome(rsp);
-        else
-            return InquireVmPriceOutcome(o.GetError());
-    }
-    else
-    {
-        return InquireVmPriceOutcome(outcome.GetError());
-    }
-}
-
-void TcbClient::InquireVmPriceAsync(const InquireVmPriceRequest& request, const InquireVmPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const InquireVmPriceRequest&;
-    using Resp = InquireVmPriceResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "InquireVmPrice", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TcbClient::InquireVmPriceOutcomeCallable TcbClient::InquireVmPriceCallable(const InquireVmPriceRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<InquireVmPriceOutcome>>();
-    InquireVmPriceAsync(
-    request,
-    [prom](
-        const TcbClient*,
-        const InquireVmPriceRequest&,
-        InquireVmPriceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4732,6 +4532,56 @@ TcbClient::PreviewPGUserMigrationsOutcomeCallable TcbClient::PreviewPGUserMigrat
         const TcbClient*,
         const PreviewPGUserMigrationsRequest&,
         PreviewPGUserMigrationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::PurgeHTTPServiceCacheOutcome TcbClient::PurgeHTTPServiceCache(const PurgeHTTPServiceCacheRequest &request)
+{
+    auto outcome = MakeRequest(request, "PurgeHTTPServiceCache");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PurgeHTTPServiceCacheResponse rsp = PurgeHTTPServiceCacheResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PurgeHTTPServiceCacheOutcome(rsp);
+        else
+            return PurgeHTTPServiceCacheOutcome(o.GetError());
+    }
+    else
+    {
+        return PurgeHTTPServiceCacheOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::PurgeHTTPServiceCacheAsync(const PurgeHTTPServiceCacheRequest& request, const PurgeHTTPServiceCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const PurgeHTTPServiceCacheRequest&;
+    using Resp = PurgeHTTPServiceCacheResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "PurgeHTTPServiceCache", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::PurgeHTTPServiceCacheOutcomeCallable TcbClient::PurgeHTTPServiceCacheCallable(const PurgeHTTPServiceCacheRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<PurgeHTTPServiceCacheOutcome>>();
+    PurgeHTTPServiceCacheAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const PurgeHTTPServiceCacheRequest&,
+        PurgeHTTPServiceCacheOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
