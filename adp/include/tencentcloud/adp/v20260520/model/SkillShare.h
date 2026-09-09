@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/adp/v20260520/model/SkillCorpShareConfig.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取审批ID
-                     * @return ApprovalId 审批ID
+                     * 获取<p>审批ID</p>
+                     * @return ApprovalId <p>审批ID</p>
                      * 
                      */
                     std::string GetApprovalId() const;
 
                     /**
-                     * 设置审批ID
-                     * @param _approvalId 审批ID
+                     * 设置<p>审批ID</p>
+                     * @param _approvalId <p>审批ID</p>
                      * 
                      */
                     void SetApprovalId(const std::string& _approvalId);
@@ -68,15 +69,15 @@ namespace TencentCloud
                     bool ApprovalIdHasBeenSet() const;
 
                     /**
-                     * 获取共享后关联的新 skill_id
-                     * @return ShareSkillId 共享后关联的新 skill_id
+                     * 获取<p>共享后关联的新 skill_id</p>
+                     * @return ShareSkillId <p>共享后关联的新 skill_id</p>
                      * 
                      */
                     std::string GetShareSkillId() const;
 
                     /**
-                     * 设置共享后关联的新 skill_id
-                     * @param _shareSkillId 共享后关联的新 skill_id
+                     * 设置<p>共享后关联的新 skill_id</p>
+                     * @param _shareSkillId <p>共享后关联的新 skill_id</p>
                      * 
                      */
                     void SetShareSkillId(const std::string& _shareSkillId);
@@ -89,15 +90,15 @@ namespace TencentCloud
                     bool ShareSkillIdHasBeenSet() const;
 
                     /**
-                     * 获取共享版本，如 1.0.0
-                     * @return ShareVersion 共享版本，如 1.0.0
+                     * 获取<p>共享版本，如 1.0.0</p>
+                     * @return ShareVersion <p>共享版本，如 1.0.0</p>
                      * 
                      */
                     std::string GetShareVersion() const;
 
                     /**
-                     * 设置共享版本，如 1.0.0
-                     * @param _shareVersion 共享版本，如 1.0.0
+                     * 设置<p>共享版本，如 1.0.0</p>
+                     * @param _shareVersion <p>共享版本，如 1.0.0</p>
                      * 
                      */
                     void SetShareVersion(const std::string& _shareVersion);
@@ -110,15 +111,15 @@ namespace TencentCloud
                     bool ShareVersionHasBeenSet() const;
 
                     /**
-                     * 获取共享版本ID
-                     * @return ShareVersionId 共享版本ID
+                     * 获取<p>共享版本ID</p>
+                     * @return ShareVersionId <p>共享版本ID</p>
                      * 
                      */
                     std::string GetShareVersionId() const;
 
                     /**
-                     * 设置共享版本ID
-                     * @param _shareVersionId 共享版本ID
+                     * 设置<p>共享版本ID</p>
+                     * @param _shareVersionId <p>共享版本ID</p>
                      * 
                      */
                     void SetShareVersionId(const std::string& _shareVersionId);
@@ -131,15 +132,15 @@ namespace TencentCloud
                     bool ShareVersionIdHasBeenSet() const;
 
                     /**
-                     * 获取原 skill_id
-                     * @return SkillId 原 skill_id
+                     * 获取<p>原 skill_id</p>
+                     * @return SkillId <p>原 skill_id</p>
                      * 
                      */
                     std::string GetSkillId() const;
 
                     /**
-                     * 设置原 skill_id
-                     * @param _skillId 原 skill_id
+                     * 设置<p>原 skill_id</p>
+                     * @param _skillId <p>原 skill_id</p>
                      * 
                      */
                     void SetSkillId(const std::string& _skillId);
@@ -152,43 +153,15 @@ namespace TencentCloud
                     bool SkillIdHasBeenSet() const;
 
                     /**
-                     * 获取共享状态
-
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 未共享 |
-| 1 | 已共享 |
-| 2 | 审批中 |
-                     * @return Status 共享状态
-
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 未共享 |
-| 1 | 已共享 |
-| 2 | 审批中 |
+                     * 获取<p>共享状态</p><p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 | 未共享 |<br>| 1 | 已共享 |<br>| 2 | 审批中 |</p>
+                     * @return Status <p>共享状态</p><p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 | 未共享 |<br>| 1 | 已共享 |<br>| 2 | 审批中 |</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置共享状态
-
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 未共享 |
-| 1 | 已共享 |
-| 2 | 审批中 |
-                     * @param _status 共享状态
-
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 未共享 |
-| 1 | 已共享 |
-| 2 | 审批中 |
+                     * 设置<p>共享状态</p><p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 | 未共享 |<br>| 1 | 已共享 |<br>| 2 | 审批中 |</p>
+                     * @param _status <p>共享状态</p><p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 | 未共享 |<br>| 1 | 已共享 |<br>| 2 | 审批中 |</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -200,50 +173,70 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>企业共享范围</p>
+                     * @return CorpShareConfig <p>企业共享范围</p>
+                     * 
+                     */
+                    SkillCorpShareConfig GetCorpShareConfig() const;
+
+                    /**
+                     * 设置<p>企业共享范围</p>
+                     * @param _corpShareConfig <p>企业共享范围</p>
+                     * 
+                     */
+                    void SetCorpShareConfig(const SkillCorpShareConfig& _corpShareConfig);
+
+                    /**
+                     * 判断参数 CorpShareConfig 是否已赋值
+                     * @return CorpShareConfig 是否已赋值
+                     * 
+                     */
+                    bool CorpShareConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 审批ID
+                     * <p>审批ID</p>
                      */
                     std::string m_approvalId;
                     bool m_approvalIdHasBeenSet;
 
                     /**
-                     * 共享后关联的新 skill_id
+                     * <p>共享后关联的新 skill_id</p>
                      */
                     std::string m_shareSkillId;
                     bool m_shareSkillIdHasBeenSet;
 
                     /**
-                     * 共享版本，如 1.0.0
+                     * <p>共享版本，如 1.0.0</p>
                      */
                     std::string m_shareVersion;
                     bool m_shareVersionHasBeenSet;
 
                     /**
-                     * 共享版本ID
+                     * <p>共享版本ID</p>
                      */
                     std::string m_shareVersionId;
                     bool m_shareVersionIdHasBeenSet;
 
                     /**
-                     * 原 skill_id
+                     * <p>原 skill_id</p>
                      */
                     std::string m_skillId;
                     bool m_skillIdHasBeenSet;
 
                     /**
-                     * 共享状态
-
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 未共享 |
-| 1 | 已共享 |
-| 2 | 审批中 |
+                     * <p>共享状态</p><p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 | 未共享 |<br>| 1 | 已共享 |<br>| 2 | 审批中 |</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>企业共享范围</p>
+                     */
+                    SkillCorpShareConfig m_corpShareConfig;
+                    bool m_corpShareConfigHasBeenSet;
 
                 };
             }

@@ -63,6 +63,7 @@ Instance::Instance() :
     m_defaultLoginUserHasBeenSet(false),
     m_defaultLoginPortHasBeenSet(false),
     m_latestOperationErrorMsgHasBeenSet(false),
+    m_enableJumboFrameHasBeenSet(false),
     m_metadataHasBeenSet(false),
     m_publicIPv6AddressesHasBeenSet(false),
     m_cpuTopologyHasBeenSet(false),
@@ -575,6 +576,16 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_latestOperationErrorMsgHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableJumboFrame") && !value["EnableJumboFrame"].IsNull())
+    {
+        if (!value["EnableJumboFrame"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.EnableJumboFrame` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableJumboFrame = value["EnableJumboFrame"].GetBool();
+        m_enableJumboFrameHasBeenSet = true;
+    }
+
     if (value.HasMember("Metadata") && !value["Metadata"].IsNull())
     {
         if (!value["Metadata"].IsObject())
@@ -1023,6 +1034,14 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "LatestOperationErrorMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_latestOperationErrorMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableJumboFrameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableJumboFrame";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableJumboFrame, allocator);
     }
 
     if (m_metadataHasBeenSet)
@@ -1737,6 +1756,22 @@ void Instance::SetLatestOperationErrorMsg(const string& _latestOperationErrorMsg
 bool Instance::LatestOperationErrorMsgHasBeenSet() const
 {
     return m_latestOperationErrorMsgHasBeenSet;
+}
+
+bool Instance::GetEnableJumboFrame() const
+{
+    return m_enableJumboFrame;
+}
+
+void Instance::SetEnableJumboFrame(const bool& _enableJumboFrame)
+{
+    m_enableJumboFrame = _enableJumboFrame;
+    m_enableJumboFrameHasBeenSet = true;
+}
+
+bool Instance::EnableJumboFrameHasBeenSet() const
+{
+    return m_enableJumboFrameHasBeenSet;
 }
 
 Metadata Instance::GetMetadata() const

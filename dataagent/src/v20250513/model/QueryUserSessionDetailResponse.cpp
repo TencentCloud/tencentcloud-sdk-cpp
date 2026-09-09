@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/dataagent/v20250513/model/GetSessionDetailsResponse.h>
+#include <tencentcloud/dataagent/v20250513/model/QueryUserSessionDetailResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -23,14 +23,16 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dataagent::V20250513::Model;
 using namespace std;
 
-GetSessionDetailsResponse::GetSessionDetailsResponse() :
+QueryUserSessionDetailResponse::QueryUserSessionDetailResponse() :
+    m_subAccountUinHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
     m_recordListHasBeenSet(false),
-    m_recordCountHasBeenSet(false),
+    m_totalCountHasBeenSet(false),
     m_runRecordHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome GetSessionDetailsResponse::Deserialize(const string &payload)
+CoreInternalOutcome QueryUserSessionDetailResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,6 +66,26 @@ CoreInternalOutcome GetSessionDetailsResponse::Deserialize(const string &payload
     }
 
 
+    if (rsp.HasMember("SubAccountUin") && !rsp["SubAccountUin"].IsNull())
+    {
+        if (!rsp["SubAccountUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubAccountUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAccountUin = string(rsp["SubAccountUin"].GetString());
+        m_subAccountUinHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SessionId") && !rsp["SessionId"].IsNull())
+    {
+        if (!rsp["SessionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionId = string(rsp["SessionId"].GetString());
+        m_sessionIdHasBeenSet = true;
+    }
+
     if (rsp.HasMember("RecordList") && !rsp["RecordList"].IsNull())
     {
         if (!rsp["RecordList"].IsArray())
@@ -72,7 +94,7 @@ CoreInternalOutcome GetSessionDetailsResponse::Deserialize(const string &payload
         const rapidjson::Value &tmpValue = rsp["RecordList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            Record item;
+            RecordList item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
@@ -84,14 +106,14 @@ CoreInternalOutcome GetSessionDetailsResponse::Deserialize(const string &payload
         m_recordListHasBeenSet = true;
     }
 
-    if (rsp.HasMember("RecordCount") && !rsp["RecordCount"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["RecordCount"].IsInt64())
+        if (!rsp["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `RecordCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_recordCount = rsp["RecordCount"].GetInt64();
-        m_recordCountHasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
     }
 
     if (rsp.HasMember("RunRecord") && !rsp["RunRecord"].IsNull())
@@ -108,11 +130,27 @@ CoreInternalOutcome GetSessionDetailsResponse::Deserialize(const string &payload
     return CoreInternalOutcome(true);
 }
 
-string GetSessionDetailsResponse::ToJsonString() const
+string QueryUserSessionDetailResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_subAccountUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAccountUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAccountUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_recordListHasBeenSet)
     {
@@ -129,12 +167,12 @@ string GetSessionDetailsResponse::ToJsonString() const
         }
     }
 
-    if (m_recordCountHasBeenSet)
+    if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RecordCount";
+        string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_recordCount, allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
     if (m_runRecordHasBeenSet)
@@ -157,32 +195,52 @@ string GetSessionDetailsResponse::ToJsonString() const
 }
 
 
-vector<Record> GetSessionDetailsResponse::GetRecordList() const
+string QueryUserSessionDetailResponse::GetSubAccountUin() const
+{
+    return m_subAccountUin;
+}
+
+bool QueryUserSessionDetailResponse::SubAccountUinHasBeenSet() const
+{
+    return m_subAccountUinHasBeenSet;
+}
+
+string QueryUserSessionDetailResponse::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+bool QueryUserSessionDetailResponse::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
+}
+
+vector<RecordList> QueryUserSessionDetailResponse::GetRecordList() const
 {
     return m_recordList;
 }
 
-bool GetSessionDetailsResponse::RecordListHasBeenSet() const
+bool QueryUserSessionDetailResponse::RecordListHasBeenSet() const
 {
     return m_recordListHasBeenSet;
 }
 
-int64_t GetSessionDetailsResponse::GetRecordCount() const
+int64_t QueryUserSessionDetailResponse::GetTotalCount() const
 {
-    return m_recordCount;
+    return m_totalCount;
 }
 
-bool GetSessionDetailsResponse::RecordCountHasBeenSet() const
+bool QueryUserSessionDetailResponse::TotalCountHasBeenSet() const
 {
-    return m_recordCountHasBeenSet;
+    return m_totalCountHasBeenSet;
 }
 
-string GetSessionDetailsResponse::GetRunRecord() const
+string QueryUserSessionDetailResponse::GetRunRecord() const
 {
     return m_runRecord;
 }
 
-bool GetSessionDetailsResponse::RunRecordHasBeenSet() const
+bool QueryUserSessionDetailResponse::RunRecordHasBeenSet() const
 {
     return m_runRecordHasBeenSet;
 }

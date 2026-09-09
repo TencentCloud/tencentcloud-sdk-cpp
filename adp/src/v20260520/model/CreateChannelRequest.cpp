@@ -14,41 +14,42 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/dataagent/v20250513/model/GetSessionDetailsRequest.h>
+#include <tencentcloud/adp/v20260520/model/CreateChannelRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Dataagent::V20250513::Model;
+using namespace TencentCloud::Adp::V20260520::Model;
 using namespace std;
 
-GetSessionDetailsRequest::GetSessionDetailsRequest() :
-    m_instanceIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
+CreateChannelRequest::CreateChannelRequest() :
+    m_appIdHasBeenSet(false),
+    m_specHasBeenSet(false)
 {
 }
 
-string GetSessionDetailsRequest::ToJsonString() const
+string CreateChannelRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_instanceIdHasBeenSet)
+    if (m_appIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceId";
+        string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_sessionIdHasBeenSet)
+    if (m_specHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SessionId";
+        string key = "Spec";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_spec.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -59,36 +60,36 @@ string GetSessionDetailsRequest::ToJsonString() const
 }
 
 
-string GetSessionDetailsRequest::GetInstanceId() const
+string CreateChannelRequest::GetAppId() const
 {
-    return m_instanceId;
+    return m_appId;
 }
 
-void GetSessionDetailsRequest::SetInstanceId(const string& _instanceId)
+void CreateChannelRequest::SetAppId(const string& _appId)
 {
-    m_instanceId = _instanceId;
-    m_instanceIdHasBeenSet = true;
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
 }
 
-bool GetSessionDetailsRequest::InstanceIdHasBeenSet() const
+bool CreateChannelRequest::AppIdHasBeenSet() const
 {
-    return m_instanceIdHasBeenSet;
+    return m_appIdHasBeenSet;
 }
 
-string GetSessionDetailsRequest::GetSessionId() const
+ChannelSpec CreateChannelRequest::GetSpec() const
 {
-    return m_sessionId;
+    return m_spec;
 }
 
-void GetSessionDetailsRequest::SetSessionId(const string& _sessionId)
+void CreateChannelRequest::SetSpec(const ChannelSpec& _spec)
 {
-    m_sessionId = _sessionId;
-    m_sessionIdHasBeenSet = true;
+    m_spec = _spec;
+    m_specHasBeenSet = true;
 }
 
-bool GetSessionDetailsRequest::SessionIdHasBeenSet() const
+bool CreateChannelRequest::SpecHasBeenSet() const
 {
-    return m_sessionIdHasBeenSet;
+    return m_specHasBeenSet;
 }
 
 

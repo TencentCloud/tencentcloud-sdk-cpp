@@ -277,6 +277,27 @@ namespace TencentCloud
                      */
                     bool WithPreviewUrlHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否在模板预览页面展示模板控件。<br><br><ul><li><strong>false</strong>：不展示（默认），返回嵌入式预览链接，预览页面仅显示模板文件内容<br><img src="https://qcloudimg.tencent-cloud.cn/raw/7524b0fba5ad2b83a53ee9d7d486d233.png" alt="ShowTemplateControls=false"></li><li><strong>true</strong>：展示，返回嵌入式预览链接，预览页面在文件上叠加展示模板中的填写控件与签署控件，并增加模拟签署的特性。<br><img src="https://qcloudimg.tencent-cloud.cn/raw/ff1b707408f9b3a7ef2e39b8ad659135.png" alt="ShowTemplateControls=true"></li></ul><br>注：仅在 <strong>WithPreviewUrl=true</strong> 时生效；当 <strong>WithPreviewUrl=false</strong> 时不生成预览链接，本参数被忽略。<br><br><strong>适用场景</strong>：当业务方需要在发起合同前预览模板中各角色的填写控件与签署控件的位置和布局，以便确认用户使用模板的控件配置是否正确时，可将此参数设置为 true。<br>示例值：false</p>
+                     * @return ShowPreviewComponents <p>是否在模板预览页面展示模板控件。<br><br><ul><li><strong>false</strong>：不展示（默认），返回嵌入式预览链接，预览页面仅显示模板文件内容<br><img src="https://qcloudimg.tencent-cloud.cn/raw/7524b0fba5ad2b83a53ee9d7d486d233.png" alt="ShowTemplateControls=false"></li><li><strong>true</strong>：展示，返回嵌入式预览链接，预览页面在文件上叠加展示模板中的填写控件与签署控件，并增加模拟签署的特性。<br><img src="https://qcloudimg.tencent-cloud.cn/raw/ff1b707408f9b3a7ef2e39b8ad659135.png" alt="ShowTemplateControls=true"></li></ul><br>注：仅在 <strong>WithPreviewUrl=true</strong> 时生效；当 <strong>WithPreviewUrl=false</strong> 时不生成预览链接，本参数被忽略。<br><br><strong>适用场景</strong>：当业务方需要在发起合同前预览模板中各角色的填写控件与签署控件的位置和布局，以便确认用户使用模板的控件配置是否正确时，可将此参数设置为 true。<br>示例值：false</p>
+                     * 
+                     */
+                    bool GetShowPreviewComponents() const;
+
+                    /**
+                     * 设置<p>是否在模板预览页面展示模板控件。<br><br><ul><li><strong>false</strong>：不展示（默认），返回嵌入式预览链接，预览页面仅显示模板文件内容<br><img src="https://qcloudimg.tencent-cloud.cn/raw/7524b0fba5ad2b83a53ee9d7d486d233.png" alt="ShowTemplateControls=false"></li><li><strong>true</strong>：展示，返回嵌入式预览链接，预览页面在文件上叠加展示模板中的填写控件与签署控件，并增加模拟签署的特性。<br><img src="https://qcloudimg.tencent-cloud.cn/raw/ff1b707408f9b3a7ef2e39b8ad659135.png" alt="ShowTemplateControls=true"></li></ul><br>注：仅在 <strong>WithPreviewUrl=true</strong> 时生效；当 <strong>WithPreviewUrl=false</strong> 时不生成预览链接，本参数被忽略。<br><br><strong>适用场景</strong>：当业务方需要在发起合同前预览模板中各角色的填写控件与签署控件的位置和布局，以便确认用户使用模板的控件配置是否正确时，可将此参数设置为 true。<br>示例值：false</p>
+                     * @param _showPreviewComponents <p>是否在模板预览页面展示模板控件。<br><br><ul><li><strong>false</strong>：不展示（默认），返回嵌入式预览链接，预览页面仅显示模板文件内容<br><img src="https://qcloudimg.tencent-cloud.cn/raw/7524b0fba5ad2b83a53ee9d7d486d233.png" alt="ShowTemplateControls=false"></li><li><strong>true</strong>：展示，返回嵌入式预览链接，预览页面在文件上叠加展示模板中的填写控件与签署控件，并增加模拟签署的特性。<br><img src="https://qcloudimg.tencent-cloud.cn/raw/ff1b707408f9b3a7ef2e39b8ad659135.png" alt="ShowTemplateControls=true"></li></ul><br>注：仅在 <strong>WithPreviewUrl=true</strong> 时生效；当 <strong>WithPreviewUrl=false</strong> 时不生成预览链接，本参数被忽略。<br><br><strong>适用场景</strong>：当业务方需要在发起合同前预览模板中各角色的填写控件与签署控件的位置和布局，以便确认用户使用模板的控件配置是否正确时，可将此参数设置为 true。<br>示例值：false</p>
+                     * 
+                     */
+                    void SetShowPreviewComponents(const bool& _showPreviewComponents);
+
+                    /**
+                     * 判断参数 ShowPreviewComponents 是否已赋值
+                     * @return ShowPreviewComponents 是否已赋值
+                     * 
+                     */
+                    bool ShowPreviewComponentsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -344,6 +365,12 @@ namespace TencentCloud
                      */
                     bool m_withPreviewUrl;
                     bool m_withPreviewUrlHasBeenSet;
+
+                    /**
+                     * <p>是否在模板预览页面展示模板控件。<br><br><ul><li><strong>false</strong>：不展示（默认），返回嵌入式预览链接，预览页面仅显示模板文件内容<br><img src="https://qcloudimg.tencent-cloud.cn/raw/7524b0fba5ad2b83a53ee9d7d486d233.png" alt="ShowTemplateControls=false"></li><li><strong>true</strong>：展示，返回嵌入式预览链接，预览页面在文件上叠加展示模板中的填写控件与签署控件，并增加模拟签署的特性。<br><img src="https://qcloudimg.tencent-cloud.cn/raw/ff1b707408f9b3a7ef2e39b8ad659135.png" alt="ShowTemplateControls=true"></li></ul><br>注：仅在 <strong>WithPreviewUrl=true</strong> 时生效；当 <strong>WithPreviewUrl=false</strong> 时不生成预览链接，本参数被忽略。<br><br><strong>适用场景</strong>：当业务方需要在发起合同前预览模板中各角色的填写控件与签署控件的位置和布局，以便确认用户使用模板的控件配置是否正确时，可将此参数设置为 true。<br>示例值：false</p>
+                     */
+                    bool m_showPreviewComponents;
+                    bool m_showPreviewComponentsHasBeenSet;
 
                 };
             }

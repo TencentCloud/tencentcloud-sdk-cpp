@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取检测信息
+                     * 获取<p>检测信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AnalysisInfo 检测信息
+                     * @return AnalysisInfo <p>检测信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SkillAnalysisInfo GetAnalysisInfo() const;
 
                     /**
-                     * 设置检测信息
+                     * 设置<p>检测信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _analysisInfo 检测信息
+                     * @param _analysisInfo <p>检测信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,15 +73,15 @@ namespace TencentCloud
                     bool AnalysisInfoHasBeenSet() const;
 
                     /**
-                     * 获取当前生效版本号
-                     * @return Version 当前生效版本号
+                     * 获取<p>当前生效版本号</p>
+                     * @return Version <p>当前生效版本号</p>
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
-                     * 设置当前生效版本号
-                     * @param _version 当前生效版本号
+                     * 设置<p>当前生效版本号</p>
+                     * @param _version <p>当前生效版本号</p>
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -94,15 +94,15 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取当前生效版本ID
-                     * @return VersionId 当前生效版本ID
+                     * 获取<p>当前生效版本ID</p>
+                     * @return VersionId <p>当前生效版本ID</p>
                      * 
                      */
                     std::string GetVersionId() const;
 
                     /**
-                     * 设置当前生效版本ID
-                     * @param _versionId 当前生效版本ID
+                     * 设置<p>当前生效版本ID</p>
+                     * @param _versionId <p>当前生效版本ID</p>
                      * 
                      */
                     void SetVersionId(const std::string& _versionId);
@@ -115,39 +115,15 @@ namespace TencentCloud
                     bool VersionIdHasBeenSet() const;
 
                     /**
-                     * 获取    Skill 版本发布流程状态：
-      - 0 INITIALIZED      初始化（版本初始态）
-      - 1 AUDITING         审核中（f_analysis_status ∈ {PENDING, RUNNING}）
-      - 2 PENDING_RELEASE  待发布（低/中风险，等用户确认上架）
-      - 3 RELEASED         已发布
-      - 4 UNRELEASED       未发布（HIGH / UNAVAILABLE / FAILED / 用户放弃，含历史"不通过"语义）
-    与 SkillAnalysisStatus 解耦：前者是用户视角发布生命周期，后者是安全检测阶段。
-                     * @return VersionStatus     Skill 版本发布流程状态：
-      - 0 INITIALIZED      初始化（版本初始态）
-      - 1 AUDITING         审核中（f_analysis_status ∈ {PENDING, RUNNING}）
-      - 2 PENDING_RELEASE  待发布（低/中风险，等用户确认上架）
-      - 3 RELEASED         已发布
-      - 4 UNRELEASED       未发布（HIGH / UNAVAILABLE / FAILED / 用户放弃，含历史"不通过"语义）
-    与 SkillAnalysisStatus 解耦：前者是用户视角发布生命周期，后者是安全检测阶段。
+                     * 获取<p>Skill 版本发布流程状态：</p><pre><code>  - 0 INITIALIZED      初始化（版本初始态）  - 1 AUDITING         审核中（f_analysis_status ∈ {PENDING, RUNNING}）  - 2 PENDING_RELEASE  待发布（低/中风险，等用户确认上架）  - 3 RELEASED         已发布  - 4 UNRELEASED       未发布（HIGH / UNAVAILABLE / FAILED / 用户放弃，含历史&quot;不通过&quot;语义）与 SkillAnalysisStatus 解耦：前者是用户视角发布生命周期，后者是安全检测阶段。</code></pre>
+                     * @return VersionStatus <p>Skill 版本发布流程状态：</p><pre><code>  - 0 INITIALIZED      初始化（版本初始态）  - 1 AUDITING         审核中（f_analysis_status ∈ {PENDING, RUNNING}）  - 2 PENDING_RELEASE  待发布（低/中风险，等用户确认上架）  - 3 RELEASED         已发布  - 4 UNRELEASED       未发布（HIGH / UNAVAILABLE / FAILED / 用户放弃，含历史&quot;不通过&quot;语义）与 SkillAnalysisStatus 解耦：前者是用户视角发布生命周期，后者是安全检测阶段。</code></pre>
                      * 
                      */
                     int64_t GetVersionStatus() const;
 
                     /**
-                     * 设置    Skill 版本发布流程状态：
-      - 0 INITIALIZED      初始化（版本初始态）
-      - 1 AUDITING         审核中（f_analysis_status ∈ {PENDING, RUNNING}）
-      - 2 PENDING_RELEASE  待发布（低/中风险，等用户确认上架）
-      - 3 RELEASED         已发布
-      - 4 UNRELEASED       未发布（HIGH / UNAVAILABLE / FAILED / 用户放弃，含历史"不通过"语义）
-    与 SkillAnalysisStatus 解耦：前者是用户视角发布生命周期，后者是安全检测阶段。
-                     * @param _versionStatus     Skill 版本发布流程状态：
-      - 0 INITIALIZED      初始化（版本初始态）
-      - 1 AUDITING         审核中（f_analysis_status ∈ {PENDING, RUNNING}）
-      - 2 PENDING_RELEASE  待发布（低/中风险，等用户确认上架）
-      - 3 RELEASED         已发布
-      - 4 UNRELEASED       未发布（HIGH / UNAVAILABLE / FAILED / 用户放弃，含历史"不通过"语义）
-    与 SkillAnalysisStatus 解耦：前者是用户视角发布生命周期，后者是安全检测阶段。
+                     * 设置<p>Skill 版本发布流程状态：</p><pre><code>  - 0 INITIALIZED      初始化（版本初始态）  - 1 AUDITING         审核中（f_analysis_status ∈ {PENDING, RUNNING}）  - 2 PENDING_RELEASE  待发布（低/中风险，等用户确认上架）  - 3 RELEASED         已发布  - 4 UNRELEASED       未发布（HIGH / UNAVAILABLE / FAILED / 用户放弃，含历史&quot;不通过&quot;语义）与 SkillAnalysisStatus 解耦：前者是用户视角发布生命周期，后者是安全检测阶段。</code></pre>
+                     * @param _versionStatus <p>Skill 版本发布流程状态：</p><pre><code>  - 0 INITIALIZED      初始化（版本初始态）  - 1 AUDITING         审核中（f_analysis_status ∈ {PENDING, RUNNING}）  - 2 PENDING_RELEASE  待发布（低/中风险，等用户确认上架）  - 3 RELEASED         已发布  - 4 UNRELEASED       未发布（HIGH / UNAVAILABLE / FAILED / 用户放弃，含历史&quot;不通过&quot;语义）与 SkillAnalysisStatus 解耦：前者是用户视角发布生命周期，后者是安全检测阶段。</code></pre>
                      * 
                      */
                     void SetVersionStatus(const int64_t& _versionStatus);
@@ -160,15 +136,15 @@ namespace TencentCloud
                     bool VersionStatusHasBeenSet() const;
 
                     /**
-                     * 获取Skill包的md5信息
-                     * @return SkillMd5 Skill包的md5信息
+                     * 获取<p>Skill包的md5信息</p>
+                     * @return SkillMd5 <p>Skill包的md5信息</p>
                      * 
                      */
                     std::string GetSkillMd5() const;
 
                     /**
-                     * 设置Skill包的md5信息
-                     * @param _skillMd5 Skill包的md5信息
+                     * 设置<p>Skill包的md5信息</p>
+                     * @param _skillMd5 <p>Skill包的md5信息</p>
                      * 
                      */
                     void SetSkillMd5(const std::string& _skillMd5);
@@ -181,15 +157,15 @@ namespace TencentCloud
                     bool SkillMd5HasBeenSet() const;
 
                     /**
-                     * 获取版本包地址
-                     * @return SkillUrl 版本包地址
+                     * 获取<p>版本包地址</p>
+                     * @return SkillUrl <p>版本包地址</p>
                      * 
                      */
                     std::string GetSkillUrl() const;
 
                     /**
-                     * 设置版本包地址
-                     * @param _skillUrl 版本包地址
+                     * 设置<p>版本包地址</p>
+                     * @param _skillUrl <p>版本包地址</p>
                      * 
                      */
                     void SetSkillUrl(const std::string& _skillUrl);
@@ -202,15 +178,15 @@ namespace TencentCloud
                     bool SkillUrlHasBeenSet() const;
 
                     /**
-                     * 获取版本创建时间（Unix秒）
-                     * @return CreateTime 版本创建时间（Unix秒）
+                     * 获取<p>版本创建时间（Unix秒）</p>
+                     * @return CreateTime <p>版本创建时间（Unix秒）</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置版本创建时间（Unix秒）
-                     * @param _createTime 版本创建时间（Unix秒）
+                     * 设置<p>版本创建时间（Unix秒）</p>
+                     * @param _createTime <p>版本创建时间（Unix秒）</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -223,15 +199,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取skill md文档
-                     * @return SkillMarkdownUrl skill md文档
+                     * 获取<p>skill md文档</p>
+                     * @return SkillMarkdownUrl <p>skill md文档</p>
                      * 
                      */
                     std::string GetSkillMarkdownUrl() const;
 
                     /**
-                     * 设置skill md文档
-                     * @param _skillMarkdownUrl skill md文档
+                     * 设置<p>skill md文档</p>
+                     * @param _skillMarkdownUrl <p>skill md文档</p>
                      * 
                      */
                     void SetSkillMarkdownUrl(const std::string& _skillMarkdownUrl);
@@ -244,15 +220,15 @@ namespace TencentCloud
                     bool SkillMarkdownUrlHasBeenSet() const;
 
                     /**
-                     * 获取版本变更说明
-                     * @return UpdateDesc 版本变更说明
+                     * 获取<p>版本变更说明</p>
+                     * @return UpdateDesc <p>版本变更说明</p>
                      * 
                      */
                     std::string GetUpdateDesc() const;
 
                     /**
-                     * 设置版本变更说明
-                     * @param _updateDesc 版本变更说明
+                     * 设置<p>版本变更说明</p>
+                     * @param _updateDesc <p>版本变更说明</p>
                      * 
                      */
                     void SetUpdateDesc(const std::string& _updateDesc);
@@ -264,68 +240,89 @@ namespace TencentCloud
                      */
                     bool UpdateDescHasBeenSet() const;
 
+                    /**
+                     * 获取<p>变更用户</p>
+                     * @return Updater <p>变更用户</p>
+                     * 
+                     */
+                    std::string GetUpdater() const;
+
+                    /**
+                     * 设置<p>变更用户</p>
+                     * @param _updater <p>变更用户</p>
+                     * 
+                     */
+                    void SetUpdater(const std::string& _updater);
+
+                    /**
+                     * 判断参数 Updater 是否已赋值
+                     * @return Updater 是否已赋值
+                     * 
+                     */
+                    bool UpdaterHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 检测信息
+                     * <p>检测信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SkillAnalysisInfo m_analysisInfo;
                     bool m_analysisInfoHasBeenSet;
 
                     /**
-                     * 当前生效版本号
+                     * <p>当前生效版本号</p>
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 当前生效版本ID
+                     * <p>当前生效版本ID</p>
                      */
                     std::string m_versionId;
                     bool m_versionIdHasBeenSet;
 
                     /**
-                     *     Skill 版本发布流程状态：
-      - 0 INITIALIZED      初始化（版本初始态）
-      - 1 AUDITING         审核中（f_analysis_status ∈ {PENDING, RUNNING}）
-      - 2 PENDING_RELEASE  待发布（低/中风险，等用户确认上架）
-      - 3 RELEASED         已发布
-      - 4 UNRELEASED       未发布（HIGH / UNAVAILABLE / FAILED / 用户放弃，含历史"不通过"语义）
-    与 SkillAnalysisStatus 解耦：前者是用户视角发布生命周期，后者是安全检测阶段。
+                     * <p>Skill 版本发布流程状态：</p><pre><code>  - 0 INITIALIZED      初始化（版本初始态）  - 1 AUDITING         审核中（f_analysis_status ∈ {PENDING, RUNNING}）  - 2 PENDING_RELEASE  待发布（低/中风险，等用户确认上架）  - 3 RELEASED         已发布  - 4 UNRELEASED       未发布（HIGH / UNAVAILABLE / FAILED / 用户放弃，含历史&quot;不通过&quot;语义）与 SkillAnalysisStatus 解耦：前者是用户视角发布生命周期，后者是安全检测阶段。</code></pre>
                      */
                     int64_t m_versionStatus;
                     bool m_versionStatusHasBeenSet;
 
                     /**
-                     * Skill包的md5信息
+                     * <p>Skill包的md5信息</p>
                      */
                     std::string m_skillMd5;
                     bool m_skillMd5HasBeenSet;
 
                     /**
-                     * 版本包地址
+                     * <p>版本包地址</p>
                      */
                     std::string m_skillUrl;
                     bool m_skillUrlHasBeenSet;
 
                     /**
-                     * 版本创建时间（Unix秒）
+                     * <p>版本创建时间（Unix秒）</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * skill md文档
+                     * <p>skill md文档</p>
                      */
                     std::string m_skillMarkdownUrl;
                     bool m_skillMarkdownUrlHasBeenSet;
 
                     /**
-                     * 版本变更说明
+                     * <p>版本变更说明</p>
                      */
                     std::string m_updateDesc;
                     bool m_updateDescHasBeenSet;
+
+                    /**
+                     * <p>变更用户</p>
+                     */
+                    std::string m_updater;
+                    bool m_updaterHasBeenSet;
 
                 };
             }

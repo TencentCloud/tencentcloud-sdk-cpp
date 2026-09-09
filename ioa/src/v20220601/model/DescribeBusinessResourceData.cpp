@@ -62,7 +62,25 @@ DescribeBusinessResourceData::DescribeBusinessResourceData() :
     m_dependentAddrHasBeenSet(false),
     m_webGwNoAuthHasBeenSet(false),
     m_connectorGroupTypeHasBeenSet(false),
-    m_domainSuffixHasBeenSet(false)
+    m_domainSuffixHasBeenSet(false),
+    m_connectivityCheckSwitchHasBeenSet(false),
+    m_connectivityCheckIntervalHasBeenSet(false),
+    m_connectivityCheckIntervalUnitHasBeenSet(false),
+    m_uRLAuditStateHasBeenSet(false),
+    m_uRLAuditIdHasBeenSet(false),
+    m_uRLPathHasBeenSet(false),
+    m_reachableTypeHasBeenSet(false),
+    m_aPISecretNameHasBeenSet(false),
+    m_aPISecretKeyHasBeenSet(false),
+    m_enableSensitiveResHasBeenSet(false),
+    m_enableIPPolicyHasBeenSet(false),
+    m_iPPolicyAttrHasBeenSet(false),
+    m_iPPolicyIdsHasBeenSet(false),
+    m_iPPolicyNamesHasBeenSet(false),
+    m_enableUserAgentHasBeenSet(false),
+    m_userAgentAttrHasBeenSet(false),
+    m_userAgentIdsHasBeenSet(false),
+    m_userAgentNamesHasBeenSet(false)
 {
 }
 
@@ -494,6 +512,192 @@ CoreInternalOutcome DescribeBusinessResourceData::Deserialize(const rapidjson::V
         m_domainSuffixHasBeenSet = true;
     }
 
+    if (value.HasMember("ConnectivityCheckSwitch") && !value["ConnectivityCheckSwitch"].IsNull())
+    {
+        if (!value["ConnectivityCheckSwitch"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBusinessResourceData.ConnectivityCheckSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_connectivityCheckSwitch = value["ConnectivityCheckSwitch"].GetInt64();
+        m_connectivityCheckSwitchHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConnectivityCheckInterval") && !value["ConnectivityCheckInterval"].IsNull())
+    {
+        if (!value["ConnectivityCheckInterval"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBusinessResourceData.ConnectivityCheckInterval` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_connectivityCheckInterval = value["ConnectivityCheckInterval"].GetInt64();
+        m_connectivityCheckIntervalHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConnectivityCheckIntervalUnit") && !value["ConnectivityCheckIntervalUnit"].IsNull())
+    {
+        if (!value["ConnectivityCheckIntervalUnit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBusinessResourceData.ConnectivityCheckIntervalUnit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_connectivityCheckIntervalUnit = string(value["ConnectivityCheckIntervalUnit"].GetString());
+        m_connectivityCheckIntervalUnitHasBeenSet = true;
+    }
+
+    if (value.HasMember("URLAuditState") && !value["URLAuditState"].IsNull())
+    {
+        if (!value["URLAuditState"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBusinessResourceData.URLAuditState` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_uRLAuditState = value["URLAuditState"].GetInt64();
+        m_uRLAuditStateHasBeenSet = true;
+    }
+
+    if (value.HasMember("URLAuditId") && !value["URLAuditId"].IsNull())
+    {
+        if (!value["URLAuditId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBusinessResourceData.URLAuditId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uRLAuditId = string(value["URLAuditId"].GetString());
+        m_uRLAuditIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("URLPath") && !value["URLPath"].IsNull())
+    {
+        if (!value["URLPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBusinessResourceData.URLPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uRLPath = string(value["URLPath"].GetString());
+        m_uRLPathHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReachableType") && !value["ReachableType"].IsNull())
+    {
+        if (!value["ReachableType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBusinessResourceData.ReachableType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_reachableType = value["ReachableType"].GetInt64();
+        m_reachableTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("APISecretName") && !value["APISecretName"].IsNull())
+    {
+        if (!value["APISecretName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBusinessResourceData.APISecretName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aPISecretName = string(value["APISecretName"].GetString());
+        m_aPISecretNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("APISecretKey") && !value["APISecretKey"].IsNull())
+    {
+        if (!value["APISecretKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBusinessResourceData.APISecretKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aPISecretKey = string(value["APISecretKey"].GetString());
+        m_aPISecretKeyHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableSensitiveRes") && !value["EnableSensitiveRes"].IsNull())
+    {
+        if (!value["EnableSensitiveRes"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBusinessResourceData.EnableSensitiveRes` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableSensitiveRes = value["EnableSensitiveRes"].GetInt64();
+        m_enableSensitiveResHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableIPPolicy") && !value["EnableIPPolicy"].IsNull())
+    {
+        if (!value["EnableIPPolicy"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBusinessResourceData.EnableIPPolicy` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableIPPolicy = value["EnableIPPolicy"].GetInt64();
+        m_enableIPPolicyHasBeenSet = true;
+    }
+
+    if (value.HasMember("IPPolicyAttr") && !value["IPPolicyAttr"].IsNull())
+    {
+        if (!value["IPPolicyAttr"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBusinessResourceData.IPPolicyAttr` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_iPPolicyAttr = value["IPPolicyAttr"].GetInt64();
+        m_iPPolicyAttrHasBeenSet = true;
+    }
+
+    if (value.HasMember("IPPolicyIds") && !value["IPPolicyIds"].IsNull())
+    {
+        if (!value["IPPolicyIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeBusinessResourceData.IPPolicyIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["IPPolicyIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_iPPolicyIds.push_back((*itr).GetInt64());
+        }
+        m_iPPolicyIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("IPPolicyNames") && !value["IPPolicyNames"].IsNull())
+    {
+        if (!value["IPPolicyNames"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBusinessResourceData.IPPolicyNames` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iPPolicyNames = string(value["IPPolicyNames"].GetString());
+        m_iPPolicyNamesHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableUserAgent") && !value["EnableUserAgent"].IsNull())
+    {
+        if (!value["EnableUserAgent"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBusinessResourceData.EnableUserAgent` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableUserAgent = value["EnableUserAgent"].GetInt64();
+        m_enableUserAgentHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserAgentAttr") && !value["UserAgentAttr"].IsNull())
+    {
+        if (!value["UserAgentAttr"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBusinessResourceData.UserAgentAttr` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_userAgentAttr = value["UserAgentAttr"].GetInt64();
+        m_userAgentAttrHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserAgentIds") && !value["UserAgentIds"].IsNull())
+    {
+        if (!value["UserAgentIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeBusinessResourceData.UserAgentIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["UserAgentIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_userAgentIds.push_back((*itr).GetString());
+        }
+        m_userAgentIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserAgentNames") && !value["UserAgentNames"].IsNull())
+    {
+        if (!value["UserAgentNames"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBusinessResourceData.UserAgentNames` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userAgentNames = string(value["UserAgentNames"].GetString());
+        m_userAgentNamesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -840,6 +1044,160 @@ void DescribeBusinessResourceData::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "DomainSuffix";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_domainSuffix.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_connectivityCheckSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectivityCheckSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_connectivityCheckSwitch, allocator);
+    }
+
+    if (m_connectivityCheckIntervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectivityCheckInterval";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_connectivityCheckInterval, allocator);
+    }
+
+    if (m_connectivityCheckIntervalUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectivityCheckIntervalUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_connectivityCheckIntervalUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uRLAuditStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "URLAuditState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_uRLAuditState, allocator);
+    }
+
+    if (m_uRLAuditIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "URLAuditId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uRLAuditId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uRLPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "URLPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uRLPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reachableTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReachableType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_reachableType, allocator);
+    }
+
+    if (m_aPISecretNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "APISecretName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aPISecretName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aPISecretKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "APISecretKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aPISecretKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableSensitiveResHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSensitiveRes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableSensitiveRes, allocator);
+    }
+
+    if (m_enableIPPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableIPPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableIPPolicy, allocator);
+    }
+
+    if (m_iPPolicyAttrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPPolicyAttr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_iPPolicyAttr, allocator);
+    }
+
+    if (m_iPPolicyIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPPolicyIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_iPPolicyIds.begin(); itr != m_iPPolicyIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_iPPolicyNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPPolicyNames";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iPPolicyNames.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableUserAgentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableUserAgent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableUserAgent, allocator);
+    }
+
+    if (m_userAgentAttrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserAgentAttr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_userAgentAttr, allocator);
+    }
+
+    if (m_userAgentIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserAgentIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_userAgentIds.begin(); itr != m_userAgentIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_userAgentNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserAgentNames";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userAgentNames.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1515,5 +1873,293 @@ void DescribeBusinessResourceData::SetDomainSuffix(const string& _domainSuffix)
 bool DescribeBusinessResourceData::DomainSuffixHasBeenSet() const
 {
     return m_domainSuffixHasBeenSet;
+}
+
+int64_t DescribeBusinessResourceData::GetConnectivityCheckSwitch() const
+{
+    return m_connectivityCheckSwitch;
+}
+
+void DescribeBusinessResourceData::SetConnectivityCheckSwitch(const int64_t& _connectivityCheckSwitch)
+{
+    m_connectivityCheckSwitch = _connectivityCheckSwitch;
+    m_connectivityCheckSwitchHasBeenSet = true;
+}
+
+bool DescribeBusinessResourceData::ConnectivityCheckSwitchHasBeenSet() const
+{
+    return m_connectivityCheckSwitchHasBeenSet;
+}
+
+int64_t DescribeBusinessResourceData::GetConnectivityCheckInterval() const
+{
+    return m_connectivityCheckInterval;
+}
+
+void DescribeBusinessResourceData::SetConnectivityCheckInterval(const int64_t& _connectivityCheckInterval)
+{
+    m_connectivityCheckInterval = _connectivityCheckInterval;
+    m_connectivityCheckIntervalHasBeenSet = true;
+}
+
+bool DescribeBusinessResourceData::ConnectivityCheckIntervalHasBeenSet() const
+{
+    return m_connectivityCheckIntervalHasBeenSet;
+}
+
+string DescribeBusinessResourceData::GetConnectivityCheckIntervalUnit() const
+{
+    return m_connectivityCheckIntervalUnit;
+}
+
+void DescribeBusinessResourceData::SetConnectivityCheckIntervalUnit(const string& _connectivityCheckIntervalUnit)
+{
+    m_connectivityCheckIntervalUnit = _connectivityCheckIntervalUnit;
+    m_connectivityCheckIntervalUnitHasBeenSet = true;
+}
+
+bool DescribeBusinessResourceData::ConnectivityCheckIntervalUnitHasBeenSet() const
+{
+    return m_connectivityCheckIntervalUnitHasBeenSet;
+}
+
+int64_t DescribeBusinessResourceData::GetURLAuditState() const
+{
+    return m_uRLAuditState;
+}
+
+void DescribeBusinessResourceData::SetURLAuditState(const int64_t& _uRLAuditState)
+{
+    m_uRLAuditState = _uRLAuditState;
+    m_uRLAuditStateHasBeenSet = true;
+}
+
+bool DescribeBusinessResourceData::URLAuditStateHasBeenSet() const
+{
+    return m_uRLAuditStateHasBeenSet;
+}
+
+string DescribeBusinessResourceData::GetURLAuditId() const
+{
+    return m_uRLAuditId;
+}
+
+void DescribeBusinessResourceData::SetURLAuditId(const string& _uRLAuditId)
+{
+    m_uRLAuditId = _uRLAuditId;
+    m_uRLAuditIdHasBeenSet = true;
+}
+
+bool DescribeBusinessResourceData::URLAuditIdHasBeenSet() const
+{
+    return m_uRLAuditIdHasBeenSet;
+}
+
+string DescribeBusinessResourceData::GetURLPath() const
+{
+    return m_uRLPath;
+}
+
+void DescribeBusinessResourceData::SetURLPath(const string& _uRLPath)
+{
+    m_uRLPath = _uRLPath;
+    m_uRLPathHasBeenSet = true;
+}
+
+bool DescribeBusinessResourceData::URLPathHasBeenSet() const
+{
+    return m_uRLPathHasBeenSet;
+}
+
+int64_t DescribeBusinessResourceData::GetReachableType() const
+{
+    return m_reachableType;
+}
+
+void DescribeBusinessResourceData::SetReachableType(const int64_t& _reachableType)
+{
+    m_reachableType = _reachableType;
+    m_reachableTypeHasBeenSet = true;
+}
+
+bool DescribeBusinessResourceData::ReachableTypeHasBeenSet() const
+{
+    return m_reachableTypeHasBeenSet;
+}
+
+string DescribeBusinessResourceData::GetAPISecretName() const
+{
+    return m_aPISecretName;
+}
+
+void DescribeBusinessResourceData::SetAPISecretName(const string& _aPISecretName)
+{
+    m_aPISecretName = _aPISecretName;
+    m_aPISecretNameHasBeenSet = true;
+}
+
+bool DescribeBusinessResourceData::APISecretNameHasBeenSet() const
+{
+    return m_aPISecretNameHasBeenSet;
+}
+
+string DescribeBusinessResourceData::GetAPISecretKey() const
+{
+    return m_aPISecretKey;
+}
+
+void DescribeBusinessResourceData::SetAPISecretKey(const string& _aPISecretKey)
+{
+    m_aPISecretKey = _aPISecretKey;
+    m_aPISecretKeyHasBeenSet = true;
+}
+
+bool DescribeBusinessResourceData::APISecretKeyHasBeenSet() const
+{
+    return m_aPISecretKeyHasBeenSet;
+}
+
+int64_t DescribeBusinessResourceData::GetEnableSensitiveRes() const
+{
+    return m_enableSensitiveRes;
+}
+
+void DescribeBusinessResourceData::SetEnableSensitiveRes(const int64_t& _enableSensitiveRes)
+{
+    m_enableSensitiveRes = _enableSensitiveRes;
+    m_enableSensitiveResHasBeenSet = true;
+}
+
+bool DescribeBusinessResourceData::EnableSensitiveResHasBeenSet() const
+{
+    return m_enableSensitiveResHasBeenSet;
+}
+
+int64_t DescribeBusinessResourceData::GetEnableIPPolicy() const
+{
+    return m_enableIPPolicy;
+}
+
+void DescribeBusinessResourceData::SetEnableIPPolicy(const int64_t& _enableIPPolicy)
+{
+    m_enableIPPolicy = _enableIPPolicy;
+    m_enableIPPolicyHasBeenSet = true;
+}
+
+bool DescribeBusinessResourceData::EnableIPPolicyHasBeenSet() const
+{
+    return m_enableIPPolicyHasBeenSet;
+}
+
+int64_t DescribeBusinessResourceData::GetIPPolicyAttr() const
+{
+    return m_iPPolicyAttr;
+}
+
+void DescribeBusinessResourceData::SetIPPolicyAttr(const int64_t& _iPPolicyAttr)
+{
+    m_iPPolicyAttr = _iPPolicyAttr;
+    m_iPPolicyAttrHasBeenSet = true;
+}
+
+bool DescribeBusinessResourceData::IPPolicyAttrHasBeenSet() const
+{
+    return m_iPPolicyAttrHasBeenSet;
+}
+
+vector<int64_t> DescribeBusinessResourceData::GetIPPolicyIds() const
+{
+    return m_iPPolicyIds;
+}
+
+void DescribeBusinessResourceData::SetIPPolicyIds(const vector<int64_t>& _iPPolicyIds)
+{
+    m_iPPolicyIds = _iPPolicyIds;
+    m_iPPolicyIdsHasBeenSet = true;
+}
+
+bool DescribeBusinessResourceData::IPPolicyIdsHasBeenSet() const
+{
+    return m_iPPolicyIdsHasBeenSet;
+}
+
+string DescribeBusinessResourceData::GetIPPolicyNames() const
+{
+    return m_iPPolicyNames;
+}
+
+void DescribeBusinessResourceData::SetIPPolicyNames(const string& _iPPolicyNames)
+{
+    m_iPPolicyNames = _iPPolicyNames;
+    m_iPPolicyNamesHasBeenSet = true;
+}
+
+bool DescribeBusinessResourceData::IPPolicyNamesHasBeenSet() const
+{
+    return m_iPPolicyNamesHasBeenSet;
+}
+
+int64_t DescribeBusinessResourceData::GetEnableUserAgent() const
+{
+    return m_enableUserAgent;
+}
+
+void DescribeBusinessResourceData::SetEnableUserAgent(const int64_t& _enableUserAgent)
+{
+    m_enableUserAgent = _enableUserAgent;
+    m_enableUserAgentHasBeenSet = true;
+}
+
+bool DescribeBusinessResourceData::EnableUserAgentHasBeenSet() const
+{
+    return m_enableUserAgentHasBeenSet;
+}
+
+int64_t DescribeBusinessResourceData::GetUserAgentAttr() const
+{
+    return m_userAgentAttr;
+}
+
+void DescribeBusinessResourceData::SetUserAgentAttr(const int64_t& _userAgentAttr)
+{
+    m_userAgentAttr = _userAgentAttr;
+    m_userAgentAttrHasBeenSet = true;
+}
+
+bool DescribeBusinessResourceData::UserAgentAttrHasBeenSet() const
+{
+    return m_userAgentAttrHasBeenSet;
+}
+
+vector<string> DescribeBusinessResourceData::GetUserAgentIds() const
+{
+    return m_userAgentIds;
+}
+
+void DescribeBusinessResourceData::SetUserAgentIds(const vector<string>& _userAgentIds)
+{
+    m_userAgentIds = _userAgentIds;
+    m_userAgentIdsHasBeenSet = true;
+}
+
+bool DescribeBusinessResourceData::UserAgentIdsHasBeenSet() const
+{
+    return m_userAgentIdsHasBeenSet;
+}
+
+string DescribeBusinessResourceData::GetUserAgentNames() const
+{
+    return m_userAgentNames;
+}
+
+void DescribeBusinessResourceData::SetUserAgentNames(const string& _userAgentNames)
+{
+    m_userAgentNames = _userAgentNames;
+    m_userAgentNamesHasBeenSet = true;
+}
+
+bool DescribeBusinessResourceData::UserAgentNamesHasBeenSet() const
+{
+    return m_userAgentNamesHasBeenSet;
 }
 

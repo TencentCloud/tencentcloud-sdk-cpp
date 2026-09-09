@@ -25,7 +25,9 @@ using namespace std;
 VerifyScenePhotoRequest::VerifyScenePhotoRequest() :
     m_sceneHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
-    m_imageBase64HasBeenSet(false)
+    m_imageBase64HasBeenSet(false),
+    m_reasoningPromptHasBeenSet(false),
+    m_reasoningConfigHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,23 @@ string VerifyScenePhotoRequest::ToJsonString() const
         string key = "ImageBase64";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageBase64.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reasoningPromptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReasoningPrompt";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_reasoningPrompt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reasoningConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReasoningConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_reasoningConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -114,6 +133,38 @@ void VerifyScenePhotoRequest::SetImageBase64(const string& _imageBase64)
 bool VerifyScenePhotoRequest::ImageBase64HasBeenSet() const
 {
     return m_imageBase64HasBeenSet;
+}
+
+string VerifyScenePhotoRequest::GetReasoningPrompt() const
+{
+    return m_reasoningPrompt;
+}
+
+void VerifyScenePhotoRequest::SetReasoningPrompt(const string& _reasoningPrompt)
+{
+    m_reasoningPrompt = _reasoningPrompt;
+    m_reasoningPromptHasBeenSet = true;
+}
+
+bool VerifyScenePhotoRequest::ReasoningPromptHasBeenSet() const
+{
+    return m_reasoningPromptHasBeenSet;
+}
+
+ReasoningConfig VerifyScenePhotoRequest::GetReasoningConfig() const
+{
+    return m_reasoningConfig;
+}
+
+void VerifyScenePhotoRequest::SetReasoningConfig(const ReasoningConfig& _reasoningConfig)
+{
+    m_reasoningConfig = _reasoningConfig;
+    m_reasoningConfigHasBeenSet = true;
+}
+
+bool VerifyScenePhotoRequest::ReasoningConfigHasBeenSet() const
+{
+    return m_reasoningConfigHasBeenSet;
 }
 
 

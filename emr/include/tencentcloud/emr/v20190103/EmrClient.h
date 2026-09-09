@@ -81,6 +81,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeEmrApplicationStaticsResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeEmrOverviewMetricsRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeEmrOverviewMetricsResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeExportConfsRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeExportConfsResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeGlobalConfigRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeGlobalConfigResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeGroupsSTDRequest.h>
@@ -191,6 +193,8 @@
 #include <tencentcloud/emr/v20190103/model/ModifySLInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifySLInstanceBasicRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifySLInstanceBasicResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifyServiceParamsByExportConfsRequest.h>
+#include <tencentcloud/emr/v20190103/model/ModifyServiceParamsByExportConfsResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyUserGroupRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyUserGroupResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyUserManagerPwdRequest.h>
@@ -328,6 +332,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEmrOverviewMetricsResponse> DescribeEmrOverviewMetricsOutcome;
                 typedef std::future<DescribeEmrOverviewMetricsOutcome> DescribeEmrOverviewMetricsOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeEmrOverviewMetricsRequest&, DescribeEmrOverviewMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEmrOverviewMetricsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExportConfsResponse> DescribeExportConfsOutcome;
+                typedef std::future<DescribeExportConfsOutcome> DescribeExportConfsOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeExportConfsRequest&, DescribeExportConfsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExportConfsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGlobalConfigResponse> DescribeGlobalConfigOutcome;
                 typedef std::future<DescribeGlobalConfigOutcome> DescribeGlobalConfigOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeGlobalConfigRequest&, DescribeGlobalConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGlobalConfigAsyncHandler;
@@ -493,6 +500,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySLInstanceBasicResponse> ModifySLInstanceBasicOutcome;
                 typedef std::future<ModifySLInstanceBasicOutcome> ModifySLInstanceBasicOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifySLInstanceBasicRequest&, ModifySLInstanceBasicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySLInstanceBasicAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyServiceParamsByExportConfsResponse> ModifyServiceParamsByExportConfsOutcome;
+                typedef std::future<ModifyServiceParamsByExportConfsOutcome> ModifyServiceParamsByExportConfsOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifyServiceParamsByExportConfsRequest&, ModifyServiceParamsByExportConfsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyServiceParamsByExportConfsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyUserGroupResponse> ModifyUserGroupOutcome;
                 typedef std::future<ModifyUserGroupOutcome> ModifyUserGroupOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyUserGroupRequest&, ModifyUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserGroupAsyncHandler;
@@ -813,6 +823,15 @@ namespace TencentCloud
                 DescribeEmrOverviewMetricsOutcome DescribeEmrOverviewMetrics(const Model::DescribeEmrOverviewMetricsRequest &request);
                 void DescribeEmrOverviewMetricsAsync(const Model::DescribeEmrOverviewMetricsRequest& request, const DescribeEmrOverviewMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEmrOverviewMetricsOutcomeCallable DescribeEmrOverviewMetricsCallable(const Model::DescribeEmrOverviewMetricsRequest& request);
+
+                /**
+                 *查询导出配置
+                 * @param req DescribeExportConfsRequest
+                 * @return DescribeExportConfsOutcome
+                 */
+                DescribeExportConfsOutcome DescribeExportConfs(const Model::DescribeExportConfsRequest &request);
+                void DescribeExportConfsAsync(const Model::DescribeExportConfsRequest& request, const DescribeExportConfsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExportConfsOutcomeCallable DescribeExportConfsCallable(const Model::DescribeExportConfsRequest& request);
 
                 /**
                  *查询YARN资源调度的全局配置
@@ -1316,6 +1335,15 @@ namespace TencentCloud
                 ModifySLInstanceBasicOutcome ModifySLInstanceBasic(const Model::ModifySLInstanceBasicRequest &request);
                 void ModifySLInstanceBasicAsync(const Model::ModifySLInstanceBasicRequest& request, const ModifySLInstanceBasicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySLInstanceBasicOutcomeCallable ModifySLInstanceBasicCallable(const Model::ModifySLInstanceBasicRequest& request);
+
+                /**
+                 *配置导入下发
+                 * @param req ModifyServiceParamsByExportConfsRequest
+                 * @return ModifyServiceParamsByExportConfsOutcome
+                 */
+                ModifyServiceParamsByExportConfsOutcome ModifyServiceParamsByExportConfs(const Model::ModifyServiceParamsByExportConfsRequest &request);
+                void ModifyServiceParamsByExportConfsAsync(const Model::ModifyServiceParamsByExportConfsRequest& request, const ModifyServiceParamsByExportConfsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyServiceParamsByExportConfsOutcomeCallable ModifyServiceParamsByExportConfsCallable(const Model::ModifyServiceParamsByExportConfsRequest& request);
 
                 /**
                  *用户管理-修改用户组

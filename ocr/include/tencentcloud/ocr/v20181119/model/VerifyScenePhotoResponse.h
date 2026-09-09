@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/SceneWarnInfo.h>
+#include <tencentcloud/ocr/v20181119/model/ReasoningResult.h>
 
 
 namespace TencentCloud
@@ -128,6 +129,34 @@ namespace TencentCloud
                      */
                     bool WatermarkContentHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模板图片提示</p>
+                     * @return Template <p>模板图片提示</p>
+                     * 
+                     */
+                    SceneWarnInfo GetTemplate() const;
+
+                    /**
+                     * 判断参数 Template 是否已赋值
+                     * @return Template 是否已赋值
+                     * 
+                     */
+                    bool TemplateHasBeenSet() const;
+
+                    /**
+                     * 获取<p>VLM 推理结果。仅当请求中传入 ReasoningPrompt 时返回，否则不返回此字段。</p>
+                     * @return ReasoningResult <p>VLM 推理结果。仅当请求中传入 ReasoningPrompt 时返回，否则不返回此字段。</p>
+                     * 
+                     */
+                    ReasoningResult GetReasoningResult() const;
+
+                    /**
+                     * 判断参数 ReasoningResult 是否已赋值
+                     * @return ReasoningResult 是否已赋值
+                     * 
+                     */
+                    bool ReasoningResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -165,6 +194,18 @@ namespace TencentCloud
                      */
                     std::string m_watermarkContent;
                     bool m_watermarkContentHasBeenSet;
+
+                    /**
+                     * <p>模板图片提示</p>
+                     */
+                    SceneWarnInfo m_template;
+                    bool m_templateHasBeenSet;
+
+                    /**
+                     * <p>VLM 推理结果。仅当请求中传入 ReasoningPrompt 时返回，否则不返回此字段。</p>
+                     */
+                    ReasoningResult m_reasoningResult;
+                    bool m_reasoningResultHasBeenSet;
 
                 };
             }

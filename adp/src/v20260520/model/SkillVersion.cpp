@@ -29,7 +29,8 @@ SkillVersion::SkillVersion() :
     m_skillUrlHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_skillMarkdownUrlHasBeenSet(false),
-    m_updateDescHasBeenSet(false)
+    m_updateDescHasBeenSet(false),
+    m_updaterHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,16 @@ CoreInternalOutcome SkillVersion::Deserialize(const rapidjson::Value &value)
         m_updateDescHasBeenSet = true;
     }
 
+    if (value.HasMember("Updater") && !value["Updater"].IsNull())
+    {
+        if (!value["Updater"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SkillVersion.Updater` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updater = string(value["Updater"].GetString());
+        m_updaterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +224,14 @@ void SkillVersion::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "UpdateDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updaterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Updater";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updater.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -360,5 +379,21 @@ void SkillVersion::SetUpdateDesc(const string& _updateDesc)
 bool SkillVersion::UpdateDescHasBeenSet() const
 {
     return m_updateDescHasBeenSet;
+}
+
+string SkillVersion::GetUpdater() const
+{
+    return m_updater;
+}
+
+void SkillVersion::SetUpdater(const string& _updater)
+{
+    m_updater = _updater;
+    m_updaterHasBeenSet = true;
+}
+
+bool SkillVersion::UpdaterHasBeenSet() const
+{
+    return m_updaterHasBeenSet;
 }
 

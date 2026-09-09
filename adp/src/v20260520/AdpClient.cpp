@@ -290,6 +290,56 @@ AdpClient::CreateAppTriggerOutcomeCallable AdpClient::CreateAppTriggerCallable(c
     return prom->get_future();
 }
 
+AdpClient::CreateChannelOutcome AdpClient::CreateChannel(const CreateChannelRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateChannel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateChannelResponse rsp = CreateChannelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateChannelOutcome(rsp);
+        else
+            return CreateChannelOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateChannelOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::CreateChannelAsync(const CreateChannelRequest& request, const CreateChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateChannelRequest&;
+    using Resp = CreateChannelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::CreateChannelOutcomeCallable AdpClient::CreateChannelCallable(const CreateChannelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateChannelOutcome>>();
+    CreateChannelAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const CreateChannelRequest&,
+        CreateChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::CreateConversationOutcome AdpClient::CreateConversation(const CreateConversationRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConversation");
@@ -932,6 +982,56 @@ AdpClient::DeleteAppTriggerOutcomeCallable AdpClient::DeleteAppTriggerCallable(c
         const AdpClient*,
         const DeleteAppTriggerRequest&,
         DeleteAppTriggerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DeleteChannelOutcome AdpClient::DeleteChannel(const DeleteChannelRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteChannel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteChannelResponse rsp = DeleteChannelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteChannelOutcome(rsp);
+        else
+            return DeleteChannelOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteChannelOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DeleteChannelAsync(const DeleteChannelRequest& request, const DeleteChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteChannelRequest&;
+    using Resp = DeleteChannelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DeleteChannelOutcomeCallable AdpClient::DeleteChannelCallable(const DeleteChannelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteChannelOutcome>>();
+    DeleteChannelAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DeleteChannelRequest&,
+        DeleteChannelOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1882,6 +1982,106 @@ AdpClient::DescribeAuditLogMetaOutcomeCallable AdpClient::DescribeAuditLogMetaCa
         const AdpClient*,
         const DescribeAuditLogMetaRequest&,
         DescribeAuditLogMetaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeChannelOutcome AdpClient::DescribeChannel(const DescribeChannelRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeChannel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeChannelResponse rsp = DescribeChannelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeChannelOutcome(rsp);
+        else
+            return DescribeChannelOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeChannelOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeChannelAsync(const DescribeChannelRequest& request, const DescribeChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeChannelRequest&;
+    using Resp = DescribeChannelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeChannelOutcomeCallable AdpClient::DescribeChannelCallable(const DescribeChannelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeChannelOutcome>>();
+    DescribeChannelAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeChannelRequest&,
+        DescribeChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeChannelListOutcome AdpClient::DescribeChannelList(const DescribeChannelListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeChannelList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeChannelListResponse rsp = DescribeChannelListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeChannelListOutcome(rsp);
+        else
+            return DescribeChannelListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeChannelListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeChannelListAsync(const DescribeChannelListRequest& request, const DescribeChannelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeChannelListRequest&;
+    using Resp = DescribeChannelListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeChannelList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeChannelListOutcomeCallable AdpClient::DescribeChannelListCallable(const DescribeChannelListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeChannelListOutcome>>();
+    DescribeChannelListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeChannelListRequest&,
+        DescribeChannelListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3332,6 +3532,56 @@ AdpClient::ModifyAppTriggerOutcomeCallable AdpClient::ModifyAppTriggerCallable(c
         const AdpClient*,
         const ModifyAppTriggerRequest&,
         ModifyAppTriggerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::ModifyChannelOutcome AdpClient::ModifyChannel(const ModifyChannelRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyChannel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyChannelResponse rsp = ModifyChannelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyChannelOutcome(rsp);
+        else
+            return ModifyChannelOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyChannelOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::ModifyChannelAsync(const ModifyChannelRequest& request, const ModifyChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyChannelRequest&;
+    using Resp = ModifyChannelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::ModifyChannelOutcomeCallable AdpClient::ModifyChannelCallable(const ModifyChannelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyChannelOutcome>>();
+    ModifyChannelAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const ModifyChannelRequest&,
+        ModifyChannelOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -26,7 +26,8 @@ SkillShare::SkillShare() :
     m_shareVersionHasBeenSet(false),
     m_shareVersionIdHasBeenSet(false),
     m_skillIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_corpShareConfigHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,23 @@ CoreInternalOutcome SkillShare::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("CorpShareConfig") && !value["CorpShareConfig"].IsNull())
+    {
+        if (!value["CorpShareConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SkillShare.CorpShareConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_corpShareConfig.Deserialize(value["CorpShareConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_corpShareConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +166,15 @@ void SkillShare::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_corpShareConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CorpShareConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_corpShareConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -247,5 +274,21 @@ void SkillShare::SetStatus(const int64_t& _status)
 bool SkillShare::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+SkillCorpShareConfig SkillShare::GetCorpShareConfig() const
+{
+    return m_corpShareConfig;
+}
+
+void SkillShare::SetCorpShareConfig(const SkillCorpShareConfig& _corpShareConfig)
+{
+    m_corpShareConfig = _corpShareConfig;
+    m_corpShareConfigHasBeenSet = true;
+}
+
+bool SkillShare::CorpShareConfigHasBeenSet() const
+{
+    return m_corpShareConfigHasBeenSet;
 }
 

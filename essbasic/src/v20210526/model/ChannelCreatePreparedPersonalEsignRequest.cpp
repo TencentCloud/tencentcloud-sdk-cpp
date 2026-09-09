@@ -27,15 +27,15 @@ ChannelCreatePreparedPersonalEsignRequest::ChannelCreatePreparedPersonalEsignReq
     m_userNameHasBeenSet(false),
     m_idCardNumberHasBeenSet(false),
     m_sealNameHasBeenSet(false),
-    m_sealImageHasBeenSet(false),
     m_operatorHasBeenSet(false),
     m_idCardTypeHasBeenSet(false),
-    m_sealImageCompressHasBeenSet(false),
     m_mobileHasBeenSet(false),
-    m_enableAutoSignHasBeenSet(false),
-    m_licenseTypeHasBeenSet(false),
+    m_fileIdHasBeenSet(false),
     m_sceneKeyHasBeenSet(false),
-    m_fileIdHasBeenSet(false)
+    m_licenseTypeHasBeenSet(false),
+    m_sealImageHasBeenSet(false),
+    m_enableAutoSignHasBeenSet(false),
+    m_sealImageCompressHasBeenSet(false)
 {
 }
 
@@ -79,14 +79,6 @@ string ChannelCreatePreparedPersonalEsignRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_sealName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_sealImageHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SealImage";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_sealImage.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_operatorHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -104,14 +96,6 @@ string ChannelCreatePreparedPersonalEsignRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_idCardType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_sealImageCompressHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SealImageCompress";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_sealImageCompress, allocator);
-    }
-
     if (m_mobileHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -120,20 +104,12 @@ string ChannelCreatePreparedPersonalEsignRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_mobile.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_enableAutoSignHasBeenSet)
+    if (m_fileIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EnableAutoSign";
+        string key = "FileId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_enableAutoSign, allocator);
-    }
-
-    if (m_licenseTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LicenseType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_licenseType, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sceneKeyHasBeenSet)
@@ -144,12 +120,36 @@ string ChannelCreatePreparedPersonalEsignRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_sceneKey.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_fileIdHasBeenSet)
+    if (m_licenseTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FileId";
+        string key = "LicenseType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_licenseType, allocator);
+    }
+
+    if (m_sealImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealImage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sealImage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableAutoSignHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableAutoSign";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableAutoSign, allocator);
+    }
+
+    if (m_sealImageCompressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealImageCompress";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sealImageCompress, allocator);
     }
 
 
@@ -224,22 +224,6 @@ bool ChannelCreatePreparedPersonalEsignRequest::SealNameHasBeenSet() const
     return m_sealNameHasBeenSet;
 }
 
-string ChannelCreatePreparedPersonalEsignRequest::GetSealImage() const
-{
-    return m_sealImage;
-}
-
-void ChannelCreatePreparedPersonalEsignRequest::SetSealImage(const string& _sealImage)
-{
-    m_sealImage = _sealImage;
-    m_sealImageHasBeenSet = true;
-}
-
-bool ChannelCreatePreparedPersonalEsignRequest::SealImageHasBeenSet() const
-{
-    return m_sealImageHasBeenSet;
-}
-
 UserInfo ChannelCreatePreparedPersonalEsignRequest::GetOperator() const
 {
     return m_operator;
@@ -272,22 +256,6 @@ bool ChannelCreatePreparedPersonalEsignRequest::IdCardTypeHasBeenSet() const
     return m_idCardTypeHasBeenSet;
 }
 
-bool ChannelCreatePreparedPersonalEsignRequest::GetSealImageCompress() const
-{
-    return m_sealImageCompress;
-}
-
-void ChannelCreatePreparedPersonalEsignRequest::SetSealImageCompress(const bool& _sealImageCompress)
-{
-    m_sealImageCompress = _sealImageCompress;
-    m_sealImageCompressHasBeenSet = true;
-}
-
-bool ChannelCreatePreparedPersonalEsignRequest::SealImageCompressHasBeenSet() const
-{
-    return m_sealImageCompressHasBeenSet;
-}
-
 string ChannelCreatePreparedPersonalEsignRequest::GetMobile() const
 {
     return m_mobile;
@@ -304,36 +272,20 @@ bool ChannelCreatePreparedPersonalEsignRequest::MobileHasBeenSet() const
     return m_mobileHasBeenSet;
 }
 
-bool ChannelCreatePreparedPersonalEsignRequest::GetEnableAutoSign() const
+string ChannelCreatePreparedPersonalEsignRequest::GetFileId() const
 {
-    return m_enableAutoSign;
+    return m_fileId;
 }
 
-void ChannelCreatePreparedPersonalEsignRequest::SetEnableAutoSign(const bool& _enableAutoSign)
+void ChannelCreatePreparedPersonalEsignRequest::SetFileId(const string& _fileId)
 {
-    m_enableAutoSign = _enableAutoSign;
-    m_enableAutoSignHasBeenSet = true;
+    m_fileId = _fileId;
+    m_fileIdHasBeenSet = true;
 }
 
-bool ChannelCreatePreparedPersonalEsignRequest::EnableAutoSignHasBeenSet() const
+bool ChannelCreatePreparedPersonalEsignRequest::FileIdHasBeenSet() const
 {
-    return m_enableAutoSignHasBeenSet;
-}
-
-int64_t ChannelCreatePreparedPersonalEsignRequest::GetLicenseType() const
-{
-    return m_licenseType;
-}
-
-void ChannelCreatePreparedPersonalEsignRequest::SetLicenseType(const int64_t& _licenseType)
-{
-    m_licenseType = _licenseType;
-    m_licenseTypeHasBeenSet = true;
-}
-
-bool ChannelCreatePreparedPersonalEsignRequest::LicenseTypeHasBeenSet() const
-{
-    return m_licenseTypeHasBeenSet;
+    return m_fileIdHasBeenSet;
 }
 
 string ChannelCreatePreparedPersonalEsignRequest::GetSceneKey() const
@@ -352,20 +304,68 @@ bool ChannelCreatePreparedPersonalEsignRequest::SceneKeyHasBeenSet() const
     return m_sceneKeyHasBeenSet;
 }
 
-string ChannelCreatePreparedPersonalEsignRequest::GetFileId() const
+int64_t ChannelCreatePreparedPersonalEsignRequest::GetLicenseType() const
 {
-    return m_fileId;
+    return m_licenseType;
 }
 
-void ChannelCreatePreparedPersonalEsignRequest::SetFileId(const string& _fileId)
+void ChannelCreatePreparedPersonalEsignRequest::SetLicenseType(const int64_t& _licenseType)
 {
-    m_fileId = _fileId;
-    m_fileIdHasBeenSet = true;
+    m_licenseType = _licenseType;
+    m_licenseTypeHasBeenSet = true;
 }
 
-bool ChannelCreatePreparedPersonalEsignRequest::FileIdHasBeenSet() const
+bool ChannelCreatePreparedPersonalEsignRequest::LicenseTypeHasBeenSet() const
 {
-    return m_fileIdHasBeenSet;
+    return m_licenseTypeHasBeenSet;
+}
+
+string ChannelCreatePreparedPersonalEsignRequest::GetSealImage() const
+{
+    return m_sealImage;
+}
+
+void ChannelCreatePreparedPersonalEsignRequest::SetSealImage(const string& _sealImage)
+{
+    m_sealImage = _sealImage;
+    m_sealImageHasBeenSet = true;
+}
+
+bool ChannelCreatePreparedPersonalEsignRequest::SealImageHasBeenSet() const
+{
+    return m_sealImageHasBeenSet;
+}
+
+bool ChannelCreatePreparedPersonalEsignRequest::GetEnableAutoSign() const
+{
+    return m_enableAutoSign;
+}
+
+void ChannelCreatePreparedPersonalEsignRequest::SetEnableAutoSign(const bool& _enableAutoSign)
+{
+    m_enableAutoSign = _enableAutoSign;
+    m_enableAutoSignHasBeenSet = true;
+}
+
+bool ChannelCreatePreparedPersonalEsignRequest::EnableAutoSignHasBeenSet() const
+{
+    return m_enableAutoSignHasBeenSet;
+}
+
+bool ChannelCreatePreparedPersonalEsignRequest::GetSealImageCompress() const
+{
+    return m_sealImageCompress;
+}
+
+void ChannelCreatePreparedPersonalEsignRequest::SetSealImageCompress(const bool& _sealImageCompress)
+{
+    m_sealImageCompress = _sealImageCompress;
+    m_sealImageCompressHasBeenSet = true;
+}
+
+bool ChannelCreatePreparedPersonalEsignRequest::SealImageCompressHasBeenSet() const
+{
+    return m_sealImageCompressHasBeenSet;
 }
 
 

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ocr/v20181119/model/ReasoningConfig.h>
 
 
 namespace TencentCloud
@@ -105,6 +106,48 @@ namespace TencentCloud
                      */
                     bool ImageBase64HasBeenSet() const;
 
+                    /**
+                     * 获取<p>推理 Prompt 模板，默认使用 VLM 对图片进行理解推理，同时支持使用 ${变量名} 进行推理。传入该参数即开启推理流程。</p><p>入参限制：长度限制：1–2000 字符</p>
+                     * @return ReasoningPrompt <p>推理 Prompt 模板，默认使用 VLM 对图片进行理解推理，同时支持使用 ${变量名} 进行推理。传入该参数即开启推理流程。</p><p>入参限制：长度限制：1–2000 字符</p>
+                     * 
+                     */
+                    std::string GetReasoningPrompt() const;
+
+                    /**
+                     * 设置<p>推理 Prompt 模板，默认使用 VLM 对图片进行理解推理，同时支持使用 ${变量名} 进行推理。传入该参数即开启推理流程。</p><p>入参限制：长度限制：1–2000 字符</p>
+                     * @param _reasoningPrompt <p>推理 Prompt 模板，默认使用 VLM 对图片进行理解推理，同时支持使用 ${变量名} 进行推理。传入该参数即开启推理流程。</p><p>入参限制：长度限制：1–2000 字符</p>
+                     * 
+                     */
+                    void SetReasoningPrompt(const std::string& _reasoningPrompt);
+
+                    /**
+                     * 判断参数 ReasoningPrompt 是否已赋值
+                     * @return ReasoningPrompt 是否已赋值
+                     * 
+                     */
+                    bool ReasoningPromptHasBeenSet() const;
+
+                    /**
+                     * 获取<p>推理输出配置。当 ReasoningPrompt 传入时建议同步传入，未传入时使用默认配置（OutputMode=enum, EnumValues=[&quot;true&quot;,&quot;false&quot;], EnableImageInput=true）。</p>
+                     * @return ReasoningConfig <p>推理输出配置。当 ReasoningPrompt 传入时建议同步传入，未传入时使用默认配置（OutputMode=enum, EnumValues=[&quot;true&quot;,&quot;false&quot;], EnableImageInput=true）。</p>
+                     * 
+                     */
+                    ReasoningConfig GetReasoningConfig() const;
+
+                    /**
+                     * 设置<p>推理输出配置。当 ReasoningPrompt 传入时建议同步传入，未传入时使用默认配置（OutputMode=enum, EnumValues=[&quot;true&quot;,&quot;false&quot;], EnableImageInput=true）。</p>
+                     * @param _reasoningConfig <p>推理输出配置。当 ReasoningPrompt 传入时建议同步传入，未传入时使用默认配置（OutputMode=enum, EnumValues=[&quot;true&quot;,&quot;false&quot;], EnableImageInput=true）。</p>
+                     * 
+                     */
+                    void SetReasoningConfig(const ReasoningConfig& _reasoningConfig);
+
+                    /**
+                     * 判断参数 ReasoningConfig 是否已赋值
+                     * @return ReasoningConfig 是否已赋值
+                     * 
+                     */
+                    bool ReasoningConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +167,18 @@ namespace TencentCloud
                      */
                     std::string m_imageBase64;
                     bool m_imageBase64HasBeenSet;
+
+                    /**
+                     * <p>推理 Prompt 模板，默认使用 VLM 对图片进行理解推理，同时支持使用 ${变量名} 进行推理。传入该参数即开启推理流程。</p><p>入参限制：长度限制：1–2000 字符</p>
+                     */
+                    std::string m_reasoningPrompt;
+                    bool m_reasoningPromptHasBeenSet;
+
+                    /**
+                     * <p>推理输出配置。当 ReasoningPrompt 传入时建议同步传入，未传入时使用默认配置（OutputMode=enum, EnumValues=[&quot;true&quot;,&quot;false&quot;], EnableImageInput=true）。</p>
+                     */
+                    ReasoningConfig m_reasoningConfig;
+                    bool m_reasoningConfigHasBeenSet;
 
                 };
             }

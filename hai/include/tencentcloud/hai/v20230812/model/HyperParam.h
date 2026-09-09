@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取HiCache缓存
-                     * @return HiCache HiCache缓存
+                     * 获取<p>HiCache缓存</p>
+                     * @return HiCache <p>HiCache缓存</p>
                      * 
                      */
                     HiCacheInfo GetHiCache() const;
 
                     /**
-                     * 设置HiCache缓存
-                     * @param _hiCache HiCache缓存
+                     * 设置<p>HiCache缓存</p>
+                     * @param _hiCache <p>HiCache缓存</p>
                      * 
                      */
                     void SetHiCache(const HiCacheInfo& _hiCache);
@@ -71,7 +71,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * HiCache缓存
+                     * <p>HiCache缓存</p>
                      */
                     HiCacheInfo m_hiCache;
                     bool m_hiCacheHasBeenSet;

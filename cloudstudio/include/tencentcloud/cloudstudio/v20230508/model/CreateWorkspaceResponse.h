@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作空间 SpaceKey
-                     * @return SpaceKey 工作空间 SpaceKey
+                     * 获取<p>工作空间 SpaceKey</p>
+                     * @return SpaceKey <p>工作空间 SpaceKey</p>
                      * 
                      */
                     std::string GetSpaceKey() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool SpaceKeyHasBeenSet() const;
 
                     /**
-                     * 获取工作空间名称
-                     * @return Name 工作空间名称
+                     * 获取<p>工作空间名称</p>
+                     * @return Name <p>工作空间名称</p>
                      * 
                      */
                     std::string GetName() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 工作空间 SpaceKey
+                     * <p>工作空间 SpaceKey</p>
                      */
                     std::string m_spaceKey;
                     bool m_spaceKeyHasBeenSet;
 
                     /**
-                     * 工作空间名称
+                     * <p>工作空间名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

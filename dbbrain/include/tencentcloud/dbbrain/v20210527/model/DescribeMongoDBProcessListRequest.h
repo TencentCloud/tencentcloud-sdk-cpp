@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
-                     * @return InstanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * 获取<p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
+                     * @return InstanceId <p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
-                     * @param _instanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * 设置<p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
+                     * @param _instanceId <p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取服务产品类型，支持值：mongodb
-                     * @return Product 服务产品类型，支持值：mongodb
+                     * 获取<p>服务产品类型，支持值：mongodb</p>
+                     * @return Product <p>服务产品类型，支持值：mongodb</p>
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置服务产品类型，支持值：mongodb
-                     * @param _product 服务产品类型，支持值：mongodb
+                     * 设置<p>服务产品类型，支持值：mongodb</p>
+                     * @param _product <p>服务产品类型，支持值：mongodb</p>
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取线程的ID，用于筛选线程列表。
-                     * @return ID 线程的ID，用于筛选线程列表。
+                     * 获取<p>线程的ID，用于筛选线程列表。</p>
+                     * @return ID <p>线程的ID，用于筛选线程列表。</p>
                      * 
                      */
                     uint64_t GetID() const;
 
                     /**
-                     * 设置线程的ID，用于筛选线程列表。
-                     * @param _iD 线程的ID，用于筛选线程列表。
+                     * 设置<p>线程的ID，用于筛选线程列表。</p>
+                     * @param _iD <p>线程的ID，用于筛选线程列表。</p>
                      * 
                      */
                     void SetID(const uint64_t& _iD);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取线程的操作主机地址，用于筛选线程列表。
-                     * @return Host 线程的操作主机地址，用于筛选线程列表。
+                     * 获取<p>线程的操作主机地址，用于筛选线程列表。</p>
+                     * @return Host <p>线程的操作主机地址，用于筛选线程列表。</p>
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置线程的操作主机地址，用于筛选线程列表。
-                     * @param _host 线程的操作主机地址，用于筛选线程列表。
+                     * 设置<p>线程的操作主机地址，用于筛选线程列表。</p>
+                     * @param _host <p>线程的操作主机地址，用于筛选线程列表。</p>
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取线程的操作数据库，用于筛选线程列表,如果是多个 使用 ','  分割
-                     * @return DB 线程的操作数据库，用于筛选线程列表,如果是多个 使用 ','  分割
+                     * 获取<p>线程的操作数据库，用于筛选线程列表,如果是多个 使用 &#39;,&#39;  分割</p>
+                     * @return DB <p>线程的操作数据库，用于筛选线程列表,如果是多个 使用 &#39;,&#39;  分割</p>
                      * 
                      */
                     std::string GetDB() const;
 
                     /**
-                     * 设置线程的操作数据库，用于筛选线程列表,如果是多个 使用 ','  分割
-                     * @param _dB 线程的操作数据库，用于筛选线程列表,如果是多个 使用 ','  分割
+                     * 设置<p>线程的操作数据库，用于筛选线程列表,如果是多个 使用 &#39;,&#39;  分割</p>
+                     * @param _dB <p>线程的操作数据库，用于筛选线程列表,如果是多个 使用 &#39;,&#39;  分割</p>
                      * 
                      */
                     void SetDB(const std::string& _dB);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool DBHasBeenSet() const;
 
                     /**
-                     * 获取命令类型 ,如果是多个 使用 ','  分割
-                     * @return Type 命令类型 ,如果是多个 使用 ','  分割
+                     * 获取<p>命令类型 ,如果是多个 使用 &#39;,&#39;  分割</p>
+                     * @return Type <p>命令类型 ,如果是多个 使用 &#39;,&#39;  分割</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置命令类型 ,如果是多个 使用 ','  分割
-                     * @param _type 命令类型 ,如果是多个 使用 ','  分割
+                     * 设置<p>命令类型 ,如果是多个 使用 &#39;,&#39;  分割</p>
+                     * @param _type <p>命令类型 ,如果是多个 使用 &#39;,&#39;  分割</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取线程的操作时长最小值，单位秒，用于筛选操作时长大于该值的线程列表。
-                     * @return Time 线程的操作时长最小值，单位秒，用于筛选操作时长大于该值的线程列表。
+                     * 获取<p>线程的操作时长最小值，单位秒，用于筛选操作时长大于该值的线程列表。</p>
+                     * @return Time <p>线程的操作时长最小值，单位秒，用于筛选操作时长大于该值的线程列表。</p>
                      * 
                      */
                     uint64_t GetTime() const;
 
                     /**
-                     * 设置线程的操作时长最小值，单位秒，用于筛选操作时长大于该值的线程列表。
-                     * @param _time 线程的操作时长最小值，单位秒，用于筛选操作时长大于该值的线程列表。
+                     * 设置<p>线程的操作时长最小值，单位秒，用于筛选操作时长大于该值的线程列表。</p>
+                     * @param _time <p>线程的操作时长最小值，单位秒，用于筛选操作时长大于该值的线程列表。</p>
                      * 
                      */
                     void SetTime(const uint64_t& _time);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool TimeHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认20。
-                     * @return Limit 返回数量，默认20。
+                     * 获取<p>返回数量，默认20。</p>
+                     * @return Limit <p>返回数量，默认20。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认20。
-                     * @param _limit 返回数量，默认20。
+                     * 设置<p>返回数量，默认20。</p>
+                     * @param _limit <p>返回数量，默认20。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -213,49 +213,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * <p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 服务产品类型，支持值：mongodb
+                     * <p>服务产品类型，支持值：mongodb</p>
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
 
                     /**
-                     * 线程的ID，用于筛选线程列表。
+                     * <p>线程的ID，用于筛选线程列表。</p>
                      */
                     uint64_t m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 线程的操作主机地址，用于筛选线程列表。
+                     * <p>线程的操作主机地址，用于筛选线程列表。</p>
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
-                     * 线程的操作数据库，用于筛选线程列表,如果是多个 使用 ','  分割
+                     * <p>线程的操作数据库，用于筛选线程列表,如果是多个 使用 &#39;,&#39;  分割</p>
                      */
                     std::string m_dB;
                     bool m_dBHasBeenSet;
 
                     /**
-                     * 命令类型 ,如果是多个 使用 ','  分割
+                     * <p>命令类型 ,如果是多个 使用 &#39;,&#39;  分割</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 线程的操作时长最小值，单位秒，用于筛选操作时长大于该值的线程列表。
+                     * <p>线程的操作时长最小值，单位秒，用于筛选操作时长大于该值的线程列表。</p>
                      */
                     uint64_t m_time;
                     bool m_timeHasBeenSet;
 
                     /**
-                     * 返回数量，默认20。
+                     * <p>返回数量，默认20。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

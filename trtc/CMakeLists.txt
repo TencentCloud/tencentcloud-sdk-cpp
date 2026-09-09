@@ -58,6 +58,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/ScaleInfomation.h
   include/tencentcloud/trtc/v20190722/model/AgentParams.h
   include/tencentcloud/trtc/v20190722/model/ControlAIConversationResponse.h
+  include/tencentcloud/trtc/v20190722/model/TransparentData.h
   include/tencentcloud/trtc/v20190722/model/StopAIConversationRequest.h
   include/tencentcloud/trtc/v20190722/model/VideoEncodeParams.h
   include/tencentcloud/trtc/v20190722/model/UpdateAIConversationResponse.h
@@ -347,6 +348,7 @@ set(trtc_src
   src/v20190722/model/ScaleInfomation.cpp
   src/v20190722/model/AgentParams.cpp
   src/v20190722/model/ControlAIConversationResponse.cpp
+  src/v20190722/model/TransparentData.cpp
   src/v20190722/model/StopAIConversationRequest.cpp
   src/v20190722/model/VideoEncodeParams.cpp
   src/v20190722/model/UpdateAIConversationResponse.cpp

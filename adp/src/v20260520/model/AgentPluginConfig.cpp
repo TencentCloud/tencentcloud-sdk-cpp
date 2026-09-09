@@ -26,7 +26,8 @@ AgentPluginConfig::AgentPluginConfig() :
     m_queryParameterListHasBeenSet(false),
     m_enableCamRoleAuthHasBeenSet(false),
     m_authTypeHasBeenSet(false),
-    m_oAuthConsentHasBeenSet(false)
+    m_oAuthConsentHasBeenSet(false),
+    m_credentialConfigHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,23 @@ CoreInternalOutcome AgentPluginConfig::Deserialize(const rapidjson::Value &value
         m_oAuthConsentHasBeenSet = true;
     }
 
+    if (value.HasMember("CredentialConfig") && !value["CredentialConfig"].IsNull())
+    {
+        if (!value["CredentialConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentPluginConfig.CredentialConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_credentialConfig.Deserialize(value["CredentialConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_credentialConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -182,6 +200,15 @@ void AgentPluginConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "OAuthConsent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_oAuthConsent, allocator);
+    }
+
+    if (m_credentialConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CredentialConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_credentialConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -281,5 +308,21 @@ void AgentPluginConfig::SetOAuthConsent(const int64_t& _oAuthConsent)
 bool AgentPluginConfig::OAuthConsentHasBeenSet() const
 {
     return m_oAuthConsentHasBeenSet;
+}
+
+AgentPluginCredentialConfig AgentPluginConfig::GetCredentialConfig() const
+{
+    return m_credentialConfig;
+}
+
+void AgentPluginConfig::SetCredentialConfig(const AgentPluginCredentialConfig& _credentialConfig)
+{
+    m_credentialConfig = _credentialConfig;
+    m_credentialConfigHasBeenSet = true;
+}
+
+bool AgentPluginConfig::CredentialConfigHasBeenSet() const
+{
+    return m_credentialConfigHasBeenSet;
 }
 

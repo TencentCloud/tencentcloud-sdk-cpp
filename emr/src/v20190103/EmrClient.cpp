@@ -1490,6 +1490,56 @@ EmrClient::DescribeEmrOverviewMetricsOutcomeCallable EmrClient::DescribeEmrOverv
     return prom->get_future();
 }
 
+EmrClient::DescribeExportConfsOutcome EmrClient::DescribeExportConfs(const DescribeExportConfsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExportConfs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExportConfsResponse rsp = DescribeExportConfsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExportConfsOutcome(rsp);
+        else
+            return DescribeExportConfsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExportConfsOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeExportConfsAsync(const DescribeExportConfsRequest& request, const DescribeExportConfsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeExportConfsRequest&;
+    using Resp = DescribeExportConfsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeExportConfs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EmrClient::DescribeExportConfsOutcomeCallable EmrClient::DescribeExportConfsCallable(const DescribeExportConfsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeExportConfsOutcome>>();
+    DescribeExportConfsAsync(
+    request,
+    [prom](
+        const EmrClient*,
+        const DescribeExportConfsRequest&,
+        DescribeExportConfsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EmrClient::DescribeGlobalConfigOutcome EmrClient::DescribeGlobalConfig(const DescribeGlobalConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGlobalConfig");
@@ -4232,6 +4282,56 @@ EmrClient::ModifySLInstanceBasicOutcomeCallable EmrClient::ModifySLInstanceBasic
         const EmrClient*,
         const ModifySLInstanceBasicRequest&,
         ModifySLInstanceBasicOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EmrClient::ModifyServiceParamsByExportConfsOutcome EmrClient::ModifyServiceParamsByExportConfs(const ModifyServiceParamsByExportConfsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyServiceParamsByExportConfs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyServiceParamsByExportConfsResponse rsp = ModifyServiceParamsByExportConfsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyServiceParamsByExportConfsOutcome(rsp);
+        else
+            return ModifyServiceParamsByExportConfsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyServiceParamsByExportConfsOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::ModifyServiceParamsByExportConfsAsync(const ModifyServiceParamsByExportConfsRequest& request, const ModifyServiceParamsByExportConfsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyServiceParamsByExportConfsRequest&;
+    using Resp = ModifyServiceParamsByExportConfsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyServiceParamsByExportConfs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EmrClient::ModifyServiceParamsByExportConfsOutcomeCallable EmrClient::ModifyServiceParamsByExportConfsCallable(const ModifyServiceParamsByExportConfsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyServiceParamsByExportConfsOutcome>>();
+    ModifyServiceParamsByExportConfsAsync(
+    request,
+    [prom](
+        const EmrClient*,
+        const ModifyServiceParamsByExportConfsRequest&,
+        ModifyServiceParamsByExportConfsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

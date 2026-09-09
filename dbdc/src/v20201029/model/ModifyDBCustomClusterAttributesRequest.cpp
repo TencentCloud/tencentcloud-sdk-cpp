@@ -24,7 +24,10 @@ using namespace std;
 
 ModifyDBCustomClusterAttributesRequest::ModifyDBCustomClusterAttributesRequest() :
     m_clusterIdHasBeenSet(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_clusterIdsHasBeenSet(false),
+    m_deletionProtectionHasBeenSet(false),
+    m_clusterNameHasBeenSet(false),
+    m_clusterDescriptionHasBeenSet(false)
 {
 }
 
@@ -43,12 +46,41 @@ string ModifyDBCustomClusterAttributesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_clusterIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_clusterIds.begin(); itr != m_clusterIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_deletionProtectionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeletionProtection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deletionProtection, allocator);
+    }
+
+    if (m_clusterNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterDescription";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterDescription.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -75,6 +107,22 @@ bool ModifyDBCustomClusterAttributesRequest::ClusterIdHasBeenSet() const
     return m_clusterIdHasBeenSet;
 }
 
+vector<string> ModifyDBCustomClusterAttributesRequest::GetClusterIds() const
+{
+    return m_clusterIds;
+}
+
+void ModifyDBCustomClusterAttributesRequest::SetClusterIds(const vector<string>& _clusterIds)
+{
+    m_clusterIds = _clusterIds;
+    m_clusterIdsHasBeenSet = true;
+}
+
+bool ModifyDBCustomClusterAttributesRequest::ClusterIdsHasBeenSet() const
+{
+    return m_clusterIdsHasBeenSet;
+}
+
 bool ModifyDBCustomClusterAttributesRequest::GetDeletionProtection() const
 {
     return m_deletionProtection;
@@ -89,6 +137,38 @@ void ModifyDBCustomClusterAttributesRequest::SetDeletionProtection(const bool& _
 bool ModifyDBCustomClusterAttributesRequest::DeletionProtectionHasBeenSet() const
 {
     return m_deletionProtectionHasBeenSet;
+}
+
+string ModifyDBCustomClusterAttributesRequest::GetClusterName() const
+{
+    return m_clusterName;
+}
+
+void ModifyDBCustomClusterAttributesRequest::SetClusterName(const string& _clusterName)
+{
+    m_clusterName = _clusterName;
+    m_clusterNameHasBeenSet = true;
+}
+
+bool ModifyDBCustomClusterAttributesRequest::ClusterNameHasBeenSet() const
+{
+    return m_clusterNameHasBeenSet;
+}
+
+string ModifyDBCustomClusterAttributesRequest::GetClusterDescription() const
+{
+    return m_clusterDescription;
+}
+
+void ModifyDBCustomClusterAttributesRequest::SetClusterDescription(const string& _clusterDescription)
+{
+    m_clusterDescription = _clusterDescription;
+    m_clusterDescriptionHasBeenSet = true;
+}
+
+bool ModifyDBCustomClusterAttributesRequest::ClusterDescriptionHasBeenSet() const
+{
+    return m_clusterDescriptionHasBeenSet;
 }
 
 

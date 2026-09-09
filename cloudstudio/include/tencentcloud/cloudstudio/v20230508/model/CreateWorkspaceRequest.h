@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作空间名称, 长度限制 2~64
-                     * @return Name 工作空间名称, 长度限制 2~64
+                     * 获取<p>工作空间名称, 长度限制 2~64</p>
+                     * @return Name <p>工作空间名称, 长度限制 2~64</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置工作空间名称, 长度限制 2~64
-                     * @param _name 工作空间名称, 长度限制 2~64
+                     * 设置<p>工作空间名称, 长度限制 2~64</p>
+                     * @param _name <p>工作空间名称, 长度限制 2~64</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取工作空间描述, 长度限制 0~255
-                     * @return Description 工作空间描述, 长度限制 0~255
+                     * 获取<p>工作空间描述, 长度限制 0~255</p>
+                     * @return Description <p>工作空间描述, 长度限制 0~255</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置工作空间描述, 长度限制 0~255
-                     * @param _description 工作空间描述, 长度限制 0~255
+                     * 设置<p>工作空间描述, 长度限制 0~255</p>
+                     * @param _description <p>工作空间描述, 长度限制 0~255</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取工作空间规格。Standard: 2C4G, Calculation: 4C8G, Profession: 8C16G. 默认是 Standard。
-                     * @return Specs 工作空间规格。Standard: 2C4G, Calculation: 4C8G, Profession: 8C16G. 默认是 Standard。
+                     * 获取<p>工作空间规格。Standard: 2C4G, Calculation: 4C8G, Profession: 8C16G. 默认是 Standard。</p>
+                     * @return Specs <p>工作空间规格。Standard: 2C4G, Calculation: 4C8G, Profession: 8C16G. 默认是 Standard。</p>
                      * 
                      */
                     std::string GetSpecs() const;
 
                     /**
-                     * 设置工作空间规格。Standard: 2C4G, Calculation: 4C8G, Profession: 8C16G. 默认是 Standard。
-                     * @param _specs 工作空间规格。Standard: 2C4G, Calculation: 4C8G, Profession: 8C16G. 默认是 Standard。
+                     * 设置<p>工作空间规格。Standard: 2C4G, Calculation: 4C8G, Profession: 8C16G. 默认是 Standard。</p>
+                     * @param _specs <p>工作空间规格。Standard: 2C4G, Calculation: 4C8G, Profession: 8C16G. 默认是 Standard。</p>
                      * 
                      */
                     void SetSpecs(const std::string& _specs);
@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool SpecsHasBeenSet() const;
 
                     /**
-                     * 获取工作空间基础镜像名称, 默认会使用 All In One 镜像, 长度限制 1~255
-                     * @return Image 工作空间基础镜像名称, 默认会使用 All In One 镜像, 长度限制 1~255
+                     * 获取<p>工作空间基础镜像名称, 默认会使用 All In One 镜像, 长度限制 1~255</p>
+                     * @return Image <p>工作空间基础镜像名称, 默认会使用 All In One 镜像, 长度限制 1~255</p>
                      * 
                      */
                     std::string GetImage() const;
 
                     /**
-                     * 设置工作空间基础镜像名称, 默认会使用 All In One 镜像, 长度限制 1~255
-                     * @param _image 工作空间基础镜像名称, 默认会使用 All In One 镜像, 长度限制 1~255
+                     * 设置<p>工作空间基础镜像名称, 默认会使用 All In One 镜像, 长度限制 1~255</p>
+                     * @param _image <p>工作空间基础镜像名称, 默认会使用 All In One 镜像, 长度限制 1~255</p>
                      * 
                      */
                     void SetImage(const std::string& _image);
@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool ImageHasBeenSet() const;
 
                     /**
-                     * 获取Git 仓库. 工作空间启动时会自动克隆该仓库
-                     * @return Repository Git 仓库. 工作空间启动时会自动克隆该仓库
+                     * 获取<p>Git 仓库. 工作空间启动时会自动克隆该仓库</p>
+                     * @return Repository <p>Git 仓库. 工作空间启动时会自动克隆该仓库</p>
                      * 
                      */
                     GitRepository GetRepository() const;
 
                     /**
-                     * 设置Git 仓库. 工作空间启动时会自动克隆该仓库
-                     * @param _repository Git 仓库. 工作空间启动时会自动克隆该仓库
+                     * 设置<p>Git 仓库. 工作空间启动时会自动克隆该仓库</p>
+                     * @param _repository <p>Git 仓库. 工作空间启动时会自动克隆该仓库</p>
                      * 
                      */
                     void SetRepository(const GitRepository& _repository);
@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool RepositoryHasBeenSet() const;
 
                     /**
-                     * 获取环境变量. 会被注入到工作空间中
-                     * @return Envs 环境变量. 会被注入到工作空间中
+                     * 获取<p>环境变量. 会被注入到工作空间中</p>
+                     * @return Envs <p>环境变量. 会被注入到工作空间中</p>
                      * 
                      */
                     std::vector<Env> GetEnvs() const;
 
                     /**
-                     * 设置环境变量. 会被注入到工作空间中
-                     * @param _envs 环境变量. 会被注入到工作空间中
+                     * 设置<p>环境变量. 会被注入到工作空间中</p>
+                     * @param _envs <p>环境变量. 会被注入到工作空间中</p>
                      * 
                      */
                     void SetEnvs(const std::vector<Env>& _envs);
@@ -172,15 +172,15 @@ namespace TencentCloud
                     bool EnvsHasBeenSet() const;
 
                     /**
-                     * 获取预装插件. 工作空间启动时, 会自动安装这些插件。长度限制: 0~10
-                     * @return Extensions 预装插件. 工作空间启动时, 会自动安装这些插件。长度限制: 0~10
+                     * 获取<p>预装插件. 工作空间启动时, 会自动安装这些插件。长度限制: 0~10</p>
+                     * @return Extensions <p>预装插件. 工作空间启动时, 会自动安装这些插件。长度限制: 0~10</p>
                      * 
                      */
                     std::vector<std::string> GetExtensions() const;
 
                     /**
-                     * 设置预装插件. 工作空间启动时, 会自动安装这些插件。长度限制: 0~10
-                     * @param _extensions 预装插件. 工作空间启动时, 会自动安装这些插件。长度限制: 0~10
+                     * 设置<p>预装插件. 工作空间启动时, 会自动安装这些插件。长度限制: 0~10</p>
+                     * @param _extensions <p>预装插件. 工作空间启动时, 会自动安装这些插件。长度限制: 0~10</p>
                      * 
                      */
                     void SetExtensions(const std::vector<std::string>& _extensions);
@@ -193,15 +193,15 @@ namespace TencentCloud
                     bool ExtensionsHasBeenSet() const;
 
                     /**
-                     * 获取工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令. 
-                     * @return Lifecycle 工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令. 
+                     * 获取<p>工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令.</p>
+                     * @return Lifecycle <p>工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令.</p>
                      * 
                      */
                     LifeCycle GetLifecycle() const;
 
                     /**
-                     * 设置工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令. 
-                     * @param _lifecycle 工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令. 
+                     * 设置<p>工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令.</p>
+                     * @param _lifecycle <p>工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令.</p>
                      * 
                      */
                     void SetLifecycle(const LifeCycle& _lifecycle);
@@ -214,15 +214,15 @@ namespace TencentCloud
                     bool LifecycleHasBeenSet() const;
 
                     /**
-                     * 获取应用名称
-                     * @return TenantAppId 应用名称
+                     * 获取<p>应用名称</p>
+                     * @return TenantAppId <p>应用名称</p>
                      * 
                      */
                     int64_t GetTenantAppId() const;
 
                     /**
-                     * 设置应用名称
-                     * @param _tenantAppId 应用名称
+                     * 设置<p>应用名称</p>
+                     * @param _tenantAppId <p>应用名称</p>
                      * 
                      */
                     void SetTenantAppId(const int64_t& _tenantAppId);
@@ -235,15 +235,15 @@ namespace TencentCloud
                     bool TenantAppIdHasBeenSet() const;
 
                     /**
-                     * 获取用户UIN
-                     * @return TenantUin 用户UIN
+                     * 获取<p>用户UIN</p>
+                     * @return TenantUin <p>用户UIN</p>
                      * 
                      */
                     std::string GetTenantUin() const;
 
                     /**
-                     * 设置用户UIN
-                     * @param _tenantUin 用户UIN
+                     * 设置<p>用户UIN</p>
+                     * @param _tenantUin <p>用户UIN</p>
                      * 
                      */
                     void SetTenantUin(const std::string& _tenantUin);
@@ -256,15 +256,15 @@ namespace TencentCloud
                     bool TenantUinHasBeenSet() const;
 
                     /**
-                     * 获取VPCID
-                     * @return TenantUniqVpcId VPCID
+                     * 获取<p>VPCID</p>
+                     * @return TenantUniqVpcId <p>VPCID</p>
                      * 
                      */
                     std::string GetTenantUniqVpcId() const;
 
                     /**
-                     * 设置VPCID
-                     * @param _tenantUniqVpcId VPCID
+                     * 设置<p>VPCID</p>
+                     * @param _tenantUniqVpcId <p>VPCID</p>
                      * 
                      */
                     void SetTenantUniqVpcId(const std::string& _tenantUniqVpcId);
@@ -277,15 +277,15 @@ namespace TencentCloud
                     bool TenantUniqVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网ID
-                     * @return TenantSubnetId 子网ID
+                     * 获取<p>子网ID</p>
+                     * @return TenantSubnetId <p>子网ID</p>
                      * 
                      */
                     std::string GetTenantSubnetId() const;
 
                     /**
-                     * 设置子网ID
-                     * @param _tenantSubnetId 子网ID
+                     * 设置<p>子网ID</p>
+                     * @param _tenantSubnetId <p>子网ID</p>
                      * 
                      */
                     void SetTenantSubnetId(const std::string& _tenantSubnetId);
@@ -297,106 +297,79 @@ namespace TencentCloud
                      */
                     bool TenantSubnetIdHasBeenSet() const;
 
-                    /**
-                     * 获取地域
-                     * @return Region 地域
-                     * 
-                     */
-                    std::string GetRegion() const;
-
-                    /**
-                     * 设置地域
-                     * @param _region 地域
-                     * 
-                     */
-                    void SetRegion(const std::string& _region);
-
-                    /**
-                     * 判断参数 Region 是否已赋值
-                     * @return Region 是否已赋值
-                     * 
-                     */
-                    bool RegionHasBeenSet() const;
-
                 private:
 
                     /**
-                     * 工作空间名称, 长度限制 2~64
+                     * <p>工作空间名称, 长度限制 2~64</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 工作空间描述, 长度限制 0~255
+                     * <p>工作空间描述, 长度限制 0~255</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 工作空间规格。Standard: 2C4G, Calculation: 4C8G, Profession: 8C16G. 默认是 Standard。
+                     * <p>工作空间规格。Standard: 2C4G, Calculation: 4C8G, Profession: 8C16G. 默认是 Standard。</p>
                      */
                     std::string m_specs;
                     bool m_specsHasBeenSet;
 
                     /**
-                     * 工作空间基础镜像名称, 默认会使用 All In One 镜像, 长度限制 1~255
+                     * <p>工作空间基础镜像名称, 默认会使用 All In One 镜像, 长度限制 1~255</p>
                      */
                     std::string m_image;
                     bool m_imageHasBeenSet;
 
                     /**
-                     * Git 仓库. 工作空间启动时会自动克隆该仓库
+                     * <p>Git 仓库. 工作空间启动时会自动克隆该仓库</p>
                      */
                     GitRepository m_repository;
                     bool m_repositoryHasBeenSet;
 
                     /**
-                     * 环境变量. 会被注入到工作空间中
+                     * <p>环境变量. 会被注入到工作空间中</p>
                      */
                     std::vector<Env> m_envs;
                     bool m_envsHasBeenSet;
 
                     /**
-                     * 预装插件. 工作空间启动时, 会自动安装这些插件。长度限制: 0~10
+                     * <p>预装插件. 工作空间启动时, 会自动安装这些插件。长度限制: 0~10</p>
                      */
                     std::vector<std::string> m_extensions;
                     bool m_extensionsHasBeenSet;
 
                     /**
-                     * 工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令. 
+                     * <p>工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令.</p>
                      */
                     LifeCycle m_lifecycle;
                     bool m_lifecycleHasBeenSet;
 
                     /**
-                     * 应用名称
+                     * <p>应用名称</p>
                      */
                     int64_t m_tenantAppId;
                     bool m_tenantAppIdHasBeenSet;
 
                     /**
-                     * 用户UIN
+                     * <p>用户UIN</p>
                      */
                     std::string m_tenantUin;
                     bool m_tenantUinHasBeenSet;
 
                     /**
-                     * VPCID
+                     * <p>VPCID</p>
                      */
                     std::string m_tenantUniqVpcId;
                     bool m_tenantUniqVpcIdHasBeenSet;
 
                     /**
-                     * 子网ID
+                     * <p>子网ID</p>
                      */
                     std::string m_tenantSubnetId;
                     bool m_tenantSubnetIdHasBeenSet;
-
-                    /**
-                     * 地域
-                     */
-                    std::string m_region;
-                    bool m_regionHasBeenSet;
 
                 };
             }

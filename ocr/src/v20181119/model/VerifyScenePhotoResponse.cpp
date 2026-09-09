@@ -29,7 +29,9 @@ VerifyScenePhotoResponse::VerifyScenePhotoResponse() :
     m_remakeScreenHasBeenSet(false),
     m_screenshotHasBeenSet(false),
     m_textWatermarkHasBeenSet(false),
-    m_watermarkContentHasBeenSet(false)
+    m_watermarkContentHasBeenSet(false),
+    m_templateHasBeenSet(false),
+    m_reasoningResultHasBeenSet(false)
 {
 }
 
@@ -162,6 +164,40 @@ CoreInternalOutcome VerifyScenePhotoResponse::Deserialize(const string &payload)
         m_watermarkContentHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Template") && !rsp["Template"].IsNull())
+    {
+        if (!rsp["Template"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Template` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_template.Deserialize(rsp["Template"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_templateHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ReasoningResult") && !rsp["ReasoningResult"].IsNull())
+    {
+        if (!rsp["ReasoningResult"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReasoningResult` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_reasoningResult.Deserialize(rsp["ReasoningResult"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_reasoningResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -223,6 +259,24 @@ string VerifyScenePhotoResponse::ToJsonString() const
         string key = "WatermarkContent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_watermarkContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_templateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Template";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_template.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_reasoningResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReasoningResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_reasoningResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -295,6 +349,26 @@ string VerifyScenePhotoResponse::GetWatermarkContent() const
 bool VerifyScenePhotoResponse::WatermarkContentHasBeenSet() const
 {
     return m_watermarkContentHasBeenSet;
+}
+
+SceneWarnInfo VerifyScenePhotoResponse::GetTemplate() const
+{
+    return m_template;
+}
+
+bool VerifyScenePhotoResponse::TemplateHasBeenSet() const
+{
+    return m_templateHasBeenSet;
+}
+
+ReasoningResult VerifyScenePhotoResponse::GetReasoningResult() const
+{
+    return m_reasoningResult;
+}
+
+bool VerifyScenePhotoResponse::ReasoningResultHasBeenSet() const
+{
+    return m_reasoningResultHasBeenSet;
 }
 
 

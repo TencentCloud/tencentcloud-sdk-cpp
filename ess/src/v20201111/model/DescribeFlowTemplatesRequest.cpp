@@ -33,7 +33,8 @@ DescribeFlowTemplatesRequest::DescribeFlowTemplatesRequest() :
     m_isChannelHasBeenSet(false),
     m_organizationHasBeenSet(false),
     m_generateSourceHasBeenSet(false),
-    m_withPreviewUrlHasBeenSet(false)
+    m_withPreviewUrlHasBeenSet(false),
+    m_showPreviewComponentsHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,14 @@ string DescribeFlowTemplatesRequest::ToJsonString() const
         string key = "WithPreviewUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_withPreviewUrl, allocator);
+    }
+
+    if (m_showPreviewComponentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShowPreviewComponents";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_showPreviewComponents, allocator);
     }
 
 
@@ -324,6 +333,22 @@ void DescribeFlowTemplatesRequest::SetWithPreviewUrl(const bool& _withPreviewUrl
 bool DescribeFlowTemplatesRequest::WithPreviewUrlHasBeenSet() const
 {
     return m_withPreviewUrlHasBeenSet;
+}
+
+bool DescribeFlowTemplatesRequest::GetShowPreviewComponents() const
+{
+    return m_showPreviewComponents;
+}
+
+void DescribeFlowTemplatesRequest::SetShowPreviewComponents(const bool& _showPreviewComponents)
+{
+    m_showPreviewComponents = _showPreviewComponents;
+    m_showPreviewComponentsHasBeenSet = true;
+}
+
+bool DescribeFlowTemplatesRequest::ShowPreviewComponentsHasBeenSet() const
+{
+    return m_showPreviewComponentsHasBeenSet;
 }
 
 

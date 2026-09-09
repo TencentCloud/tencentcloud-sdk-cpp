@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trtc/v20190722/model/ServerPushText.h>
 #include <tencentcloud/trtc/v20190722/model/InvokeLLM.h>
+#include <tencentcloud/trtc/v20190722/model/TransparentData.h>
 
 
 namespace TencentCloud
@@ -45,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务唯一标识
-                     * @return TaskId 任务唯一标识
+                     * 获取<p>任务唯一标识</p>
+                     * @return TaskId <p>任务唯一标识</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务唯一标识
-                     * @param _taskId 任务唯一标识
+                     * 设置<p>任务唯一标识</p>
+                     * @param _taskId <p>任务唯一标识</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -66,15 +67,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取控制命令，目前支持命令如下：- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本. - InvokeLLM，服务端发送文本给大模型，触发对话
-                     * @return Command 控制命令，目前支持命令如下：- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本. - InvokeLLM，服务端发送文本给大模型，触发对话
+                     * 获取<p>控制命令，目前支持命令如下：- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本. - InvokeLLM，服务端发送文本给大模型，触发对话。- TransparentData，透传信息给客户端。</p>
+                     * @return Command <p>控制命令，目前支持命令如下：- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本. - InvokeLLM，服务端发送文本给大模型，触发对话。- TransparentData，透传信息给客户端。</p>
                      * 
                      */
                     std::string GetCommand() const;
 
                     /**
-                     * 设置控制命令，目前支持命令如下：- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本. - InvokeLLM，服务端发送文本给大模型，触发对话
-                     * @param _command 控制命令，目前支持命令如下：- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本. - InvokeLLM，服务端发送文本给大模型，触发对话
+                     * 设置<p>控制命令，目前支持命令如下：- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本. - InvokeLLM，服务端发送文本给大模型，触发对话。- TransparentData，透传信息给客户端。</p>
+                     * @param _command <p>控制命令，目前支持命令如下：- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本. - InvokeLLM，服务端发送文本给大模型，触发对话。- TransparentData，透传信息给客户端。</p>
                      * 
                      */
                     void SetCommand(const std::string& _command);
@@ -87,15 +88,15 @@ namespace TencentCloud
                     bool CommandHasBeenSet() const;
 
                     /**
-                     * 获取服务端发送播报文本命令，当Command为ServerPushText时必填
-                     * @return ServerPushText 服务端发送播报文本命令，当Command为ServerPushText时必填
+                     * 获取<p>服务端发送播报文本命令，当Command为ServerPushText时必填</p>
+                     * @return ServerPushText <p>服务端发送播报文本命令，当Command为ServerPushText时必填</p>
                      * 
                      */
                     ServerPushText GetServerPushText() const;
 
                     /**
-                     * 设置服务端发送播报文本命令，当Command为ServerPushText时必填
-                     * @param _serverPushText 服务端发送播报文本命令，当Command为ServerPushText时必填
+                     * 设置<p>服务端发送播报文本命令，当Command为ServerPushText时必填</p>
+                     * @param _serverPushText <p>服务端发送播报文本命令，当Command为ServerPushText时必填</p>
                      * 
                      */
                     void SetServerPushText(const ServerPushText& _serverPushText);
@@ -108,15 +109,15 @@ namespace TencentCloud
                     bool ServerPushTextHasBeenSet() const;
 
                     /**
-                     * 获取服务端发送命令主动请求大模型,当Command为InvokeLLM时会把content请求到大模型,头部增加X-Invoke-LLM="1"
-                     * @return InvokeLLM 服务端发送命令主动请求大模型,当Command为InvokeLLM时会把content请求到大模型,头部增加X-Invoke-LLM="1"
+                     * 获取<p>服务端发送命令主动请求大模型,当Command为InvokeLLM时会把content请求到大模型,头部增加X-Invoke-LLM=&quot;1&quot;</p>
+                     * @return InvokeLLM <p>服务端发送命令主动请求大模型,当Command为InvokeLLM时会把content请求到大模型,头部增加X-Invoke-LLM=&quot;1&quot;</p>
                      * 
                      */
                     InvokeLLM GetInvokeLLM() const;
 
                     /**
-                     * 设置服务端发送命令主动请求大模型,当Command为InvokeLLM时会把content请求到大模型,头部增加X-Invoke-LLM="1"
-                     * @param _invokeLLM 服务端发送命令主动请求大模型,当Command为InvokeLLM时会把content请求到大模型,头部增加X-Invoke-LLM="1"
+                     * 设置<p>服务端发送命令主动请求大模型,当Command为InvokeLLM时会把content请求到大模型,头部增加X-Invoke-LLM=&quot;1&quot;</p>
+                     * @param _invokeLLM <p>服务端发送命令主动请求大模型,当Command为InvokeLLM时会把content请求到大模型,头部增加X-Invoke-LLM=&quot;1&quot;</p>
                      * 
                      */
                     void SetInvokeLLM(const InvokeLLM& _invokeLLM);
@@ -128,31 +129,58 @@ namespace TencentCloud
                      */
                     bool InvokeLLMHasBeenSet() const;
 
+                    /**
+                     * 获取<p>ai对话需要透传给客户端的信息</p>
+                     * @return TransparentData <p>ai对话需要透传给客户端的信息</p>
+                     * 
+                     */
+                    TransparentData GetTransparentData() const;
+
+                    /**
+                     * 设置<p>ai对话需要透传给客户端的信息</p>
+                     * @param _transparentData <p>ai对话需要透传给客户端的信息</p>
+                     * 
+                     */
+                    void SetTransparentData(const TransparentData& _transparentData);
+
+                    /**
+                     * 判断参数 TransparentData 是否已赋值
+                     * @return TransparentData 是否已赋值
+                     * 
+                     */
+                    bool TransparentDataHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务唯一标识
+                     * <p>任务唯一标识</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 控制命令，目前支持命令如下：- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本. - InvokeLLM，服务端发送文本给大模型，触发对话
+                     * <p>控制命令，目前支持命令如下：- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本. - InvokeLLM，服务端发送文本给大模型，触发对话。- TransparentData，透传信息给客户端。</p>
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
 
                     /**
-                     * 服务端发送播报文本命令，当Command为ServerPushText时必填
+                     * <p>服务端发送播报文本命令，当Command为ServerPushText时必填</p>
                      */
                     ServerPushText m_serverPushText;
                     bool m_serverPushTextHasBeenSet;
 
                     /**
-                     * 服务端发送命令主动请求大模型,当Command为InvokeLLM时会把content请求到大模型,头部增加X-Invoke-LLM="1"
+                     * <p>服务端发送命令主动请求大模型,当Command为InvokeLLM时会把content请求到大模型,头部增加X-Invoke-LLM=&quot;1&quot;</p>
                      */
                     InvokeLLM m_invokeLLM;
                     bool m_invokeLLMHasBeenSet;
+
+                    /**
+                     * <p>ai对话需要透传给客户端的信息</p>
+                     */
+                    TransparentData m_transparentData;
+                    bool m_transparentDataHasBeenSet;
 
                 };
             }

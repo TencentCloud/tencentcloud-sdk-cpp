@@ -971,6 +971,27 @@ namespace TencentCloud
                     bool LatestOperationErrorMsgHasBeenSet() const;
 
                     /**
+                     * 获取<p>实例是否开启巨型帧</p>
+                     * @return EnableJumboFrame <p>实例是否开启巨型帧</p>
+                     * 
+                     */
+                    bool GetEnableJumboFrame() const;
+
+                    /**
+                     * 设置<p>实例是否开启巨型帧</p>
+                     * @param _enableJumboFrame <p>实例是否开启巨型帧</p>
+                     * 
+                     */
+                    void SetEnableJumboFrame(const bool& _enableJumboFrame);
+
+                    /**
+                     * 判断参数 EnableJumboFrame 是否已赋值
+                     * @return EnableJumboFrame 是否已赋值
+                     * 
+                     */
+                    bool EnableJumboFrameHasBeenSet() const;
+
+                    /**
                      * 获取<p>自定义metadata，本参数对应创建 CVM时指定的Metadata 信息。<strong>注：内测中</strong>。</p>
                      * @return Metadata <p>自定义metadata，本参数对应创建 CVM时指定的Metadata 信息。<strong>注：内测中</strong>。</p>
                      * 
@@ -1315,6 +1336,12 @@ namespace TencentCloud
                      */
                     std::string m_latestOperationErrorMsg;
                     bool m_latestOperationErrorMsgHasBeenSet;
+
+                    /**
+                     * <p>实例是否开启巨型帧</p>
+                     */
+                    bool m_enableJumboFrame;
+                    bool m_enableJumboFrameHasBeenSet;
 
                     /**
                      * <p>自定义metadata，本参数对应创建 CVM时指定的Metadata 信息。<strong>注：内测中</strong>。</p>

@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>访问主机的网络模式</p><p>枚举值：</p><ul><li>privatelink： 四层网络联通，放通SSH 通路</li><li>cross_tenant_eni： 三层网络联通，双网卡模式</li></ul><p>默认值：默认值为：privatelink</p>
-                     * @return NetworkMode <p>访问主机的网络模式</p><p>枚举值：</p><ul><li>privatelink： 四层网络联通，放通SSH 通路</li><li>cross_tenant_eni： 三层网络联通，双网卡模式</li></ul><p>默认值：默认值为：privatelink</p>
+                     * 获取<p>访问主机的网络模式</p><p>枚举值：</p><ul><li>cross_tenant_eni： 三层网络联通，双网卡模式</li></ul><p>默认值：默认值为：cross_tenant_eni</p><p>原 privatelink 访问主机的网络模式已下线。</p>
+                     * @return NetworkMode <p>访问主机的网络模式</p><p>枚举值：</p><ul><li>cross_tenant_eni： 三层网络联通，双网卡模式</li></ul><p>默认值：默认值为：cross_tenant_eni</p><p>原 privatelink 访问主机的网络模式已下线。</p>
                      * 
                      */
                     std::string GetNetworkMode() const;
 
                     /**
-                     * 设置<p>访问主机的网络模式</p><p>枚举值：</p><ul><li>privatelink： 四层网络联通，放通SSH 通路</li><li>cross_tenant_eni： 三层网络联通，双网卡模式</li></ul><p>默认值：默认值为：privatelink</p>
-                     * @param _networkMode <p>访问主机的网络模式</p><p>枚举值：</p><ul><li>privatelink： 四层网络联通，放通SSH 通路</li><li>cross_tenant_eni： 三层网络联通，双网卡模式</li></ul><p>默认值：默认值为：privatelink</p>
+                     * 设置<p>访问主机的网络模式</p><p>枚举值：</p><ul><li>cross_tenant_eni： 三层网络联通，双网卡模式</li></ul><p>默认值：默认值为：cross_tenant_eni</p><p>原 privatelink 访问主机的网络模式已下线。</p>
+                     * @param _networkMode <p>访问主机的网络模式</p><p>枚举值：</p><ul><li>cross_tenant_eni： 三层网络联通，双网卡模式</li></ul><p>默认值：默认值为：cross_tenant_eni</p><p>原 privatelink 访问主机的网络模式已下线。</p>
                      * 
                      */
                     void SetNetworkMode(const std::string& _networkMode);
@@ -601,7 +601,7 @@ namespace TencentCloud
                     bool m_chargeTypeHasBeenSet;
 
                     /**
-                     * <p>访问主机的网络模式</p><p>枚举值：</p><ul><li>privatelink： 四层网络联通，放通SSH 通路</li><li>cross_tenant_eni： 三层网络联通，双网卡模式</li></ul><p>默认值：默认值为：privatelink</p>
+                     * <p>访问主机的网络模式</p><p>枚举值：</p><ul><li>cross_tenant_eni： 三层网络联通，双网卡模式</li></ul><p>默认值：默认值为：cross_tenant_eni</p><p>原 privatelink 访问主机的网络模式已下线。</p>
                      */
                     std::string m_networkMode;
                     bool m_networkModeHasBeenSet;

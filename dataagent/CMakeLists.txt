@@ -29,7 +29,6 @@ set(dataagent_public_header_model
   include/tencentcloud/dataagent/v20250513/model/ChatAIResponse.h
   include/tencentcloud/dataagent/v20250513/model/QueryModelsResponse.h
   include/tencentcloud/dataagent/v20250513/model/DeleteChunkRequest.h
-  include/tencentcloud/dataagent/v20250513/model/GetSessionDetailsResponse.h
   include/tencentcloud/dataagent/v20250513/model/ModelUserAuthority.h
   include/tencentcloud/dataagent/v20250513/model/AppendDocument.h
   include/tencentcloud/dataagent/v20250513/model/QueryChunkListResponse.h
@@ -38,8 +37,6 @@ set(dataagent_public_header_model
   include/tencentcloud/dataagent/v20250513/model/UploadJob.h
   include/tencentcloud/dataagent/v20250513/model/QueryChunkListRequest.h
   include/tencentcloud/dataagent/v20250513/model/StopChatAIRequest.h
-  include/tencentcloud/dataagent/v20250513/model/StepExpand.h
-  include/tencentcloud/dataagent/v20250513/model/GetSessionDetailsRequest.h
   include/tencentcloud/dataagent/v20250513/model/QueryModelsRequest.h
   include/tencentcloud/dataagent/v20250513/model/ModifyKnowledgeBaseRequest.h
   include/tencentcloud/dataagent/v20250513/model/DeleteChunkResponse.h
@@ -54,10 +51,9 @@ set(dataagent_public_header_model
   include/tencentcloud/dataagent/v20250513/model/ExecuteAgentApiRequest.h
   include/tencentcloud/dataagent/v20250513/model/ModifyChunkResponse.h
   include/tencentcloud/dataagent/v20250513/model/DeleteDataAgentSessionResponse.h
+  include/tencentcloud/dataagent/v20250513/model/QueryUserSessionDetailResponse.h
   include/tencentcloud/dataagent/v20250513/model/GetKnowledgeBaseFileListResponse.h
-  include/tencentcloud/dataagent/v20250513/model/Record.h
   include/tencentcloud/dataagent/v20250513/model/ChatAIRequest.h
-  include/tencentcloud/dataagent/v20250513/model/StepInfo.h
   include/tencentcloud/dataagent/v20250513/model/QueryUserAuthorityRequest.h
   include/tencentcloud/dataagent/v20250513/model/FileInfo.h
   include/tencentcloud/dataagent/v20250513/model/GetKnowledgeBaseFileListRequest.h
@@ -69,13 +65,14 @@ set(dataagent_public_header_model
   include/tencentcloud/dataagent/v20250513/model/ModifyUserAuthorityResponse.h
   include/tencentcloud/dataagent/v20250513/model/AddChunkResponse.h
   include/tencentcloud/dataagent/v20250513/model/ExecuteAgentApiV1Request.h
+  include/tencentcloud/dataagent/v20250513/model/RecordList.h
   include/tencentcloud/dataagent/v20250513/model/Chunk.h
   include/tencentcloud/dataagent/v20250513/model/UploadAndCommitFileResponse.h
   include/tencentcloud/dataagent/v20250513/model/AppendKnowledgeTaskRequest.h
   include/tencentcloud/dataagent/v20250513/model/KnowledgeTaskConfig.h
   include/tencentcloud/dataagent/v20250513/model/CreateDataAgentSessionRequest.h
+  include/tencentcloud/dataagent/v20250513/model/QueryUserSessionDetailRequest.h
   include/tencentcloud/dataagent/v20250513/model/ModifyKnowledgeBaseResponse.h
-  include/tencentcloud/dataagent/v20250513/model/Task.h
   include/tencentcloud/dataagent/v20250513/model/DeleteDataAgentSessionRequest.h
   include/tencentcloud/dataagent/v20250513/model/ExecuteAgentApiV1Response.h
   include/tencentcloud/dataagent/v20250513/model/ColumnInfo.h
@@ -94,7 +91,6 @@ set(dataagent_src
   src/v20250513/model/ChatAIResponse.cpp
   src/v20250513/model/QueryModelsResponse.cpp
   src/v20250513/model/DeleteChunkRequest.cpp
-  src/v20250513/model/GetSessionDetailsResponse.cpp
   src/v20250513/model/ModelUserAuthority.cpp
   src/v20250513/model/AppendDocument.cpp
   src/v20250513/model/QueryChunkListResponse.cpp
@@ -103,8 +99,6 @@ set(dataagent_src
   src/v20250513/model/UploadJob.cpp
   src/v20250513/model/QueryChunkListRequest.cpp
   src/v20250513/model/StopChatAIRequest.cpp
-  src/v20250513/model/StepExpand.cpp
-  src/v20250513/model/GetSessionDetailsRequest.cpp
   src/v20250513/model/QueryModelsRequest.cpp
   src/v20250513/model/ModifyKnowledgeBaseRequest.cpp
   src/v20250513/model/DeleteChunkResponse.cpp
@@ -119,10 +113,9 @@ set(dataagent_src
   src/v20250513/model/ExecuteAgentApiRequest.cpp
   src/v20250513/model/ModifyChunkResponse.cpp
   src/v20250513/model/DeleteDataAgentSessionResponse.cpp
+  src/v20250513/model/QueryUserSessionDetailResponse.cpp
   src/v20250513/model/GetKnowledgeBaseFileListResponse.cpp
-  src/v20250513/model/Record.cpp
   src/v20250513/model/ChatAIRequest.cpp
-  src/v20250513/model/StepInfo.cpp
   src/v20250513/model/QueryUserAuthorityRequest.cpp
   src/v20250513/model/FileInfo.cpp
   src/v20250513/model/GetKnowledgeBaseFileListRequest.cpp
@@ -134,13 +127,14 @@ set(dataagent_src
   src/v20250513/model/ModifyUserAuthorityResponse.cpp
   src/v20250513/model/AddChunkResponse.cpp
   src/v20250513/model/ExecuteAgentApiV1Request.cpp
+  src/v20250513/model/RecordList.cpp
   src/v20250513/model/Chunk.cpp
   src/v20250513/model/UploadAndCommitFileResponse.cpp
   src/v20250513/model/AppendKnowledgeTaskRequest.cpp
   src/v20250513/model/KnowledgeTaskConfig.cpp
   src/v20250513/model/CreateDataAgentSessionRequest.cpp
+  src/v20250513/model/QueryUserSessionDetailRequest.cpp
   src/v20250513/model/ModifyKnowledgeBaseResponse.cpp
-  src/v20250513/model/Task.cpp
   src/v20250513/model/DeleteDataAgentSessionRequest.cpp
   src/v20250513/model/ExecuteAgentApiV1Response.cpp
   src/v20250513/model/ColumnInfo.cpp

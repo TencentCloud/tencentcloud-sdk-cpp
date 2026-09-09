@@ -64,6 +64,27 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
+                     * 获取<p>集群 ID 列表</p><p>入参限制：最多支持 100 个</p><p>ClusterId 和 ClusterIds 必须传一个且不能同时传</p>
+                     * @return ClusterIds <p>集群 ID 列表</p><p>入参限制：最多支持 100 个</p><p>ClusterId 和 ClusterIds 必须传一个且不能同时传</p>
+                     * 
+                     */
+                    std::vector<std::string> GetClusterIds() const;
+
+                    /**
+                     * 设置<p>集群 ID 列表</p><p>入参限制：最多支持 100 个</p><p>ClusterId 和 ClusterIds 必须传一个且不能同时传</p>
+                     * @param _clusterIds <p>集群 ID 列表</p><p>入参限制：最多支持 100 个</p><p>ClusterId 和 ClusterIds 必须传一个且不能同时传</p>
+                     * 
+                     */
+                    void SetClusterIds(const std::vector<std::string>& _clusterIds);
+
+                    /**
+                     * 判断参数 ClusterIds 是否已赋值
+                     * @return ClusterIds 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdsHasBeenSet() const;
+
+                    /**
                      * 获取<p>是否启用集群删除保护</p><p>枚举值：</p><ul><li>true： 启用</li><li>false： 不启用</li></ul>
                      * @return DeletionProtection <p>是否启用集群删除保护</p><p>枚举值：</p><ul><li>true： 启用</li><li>false： 不启用</li></ul>
                      * 
@@ -84,6 +105,48 @@ namespace TencentCloud
                      */
                     bool DeletionProtectionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>集群名称</p><p>入参限制：最长128个字符</p>
+                     * @return ClusterName <p>集群名称</p><p>入参限制：最长128个字符</p>
+                     * 
+                     */
+                    std::string GetClusterName() const;
+
+                    /**
+                     * 设置<p>集群名称</p><p>入参限制：最长128个字符</p>
+                     * @param _clusterName <p>集群名称</p><p>入参限制：最长128个字符</p>
+                     * 
+                     */
+                    void SetClusterName(const std::string& _clusterName);
+
+                    /**
+                     * 判断参数 ClusterName 是否已赋值
+                     * @return ClusterName 是否已赋值
+                     * 
+                     */
+                    bool ClusterNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群描述</p><p>入参限制：最长200个字符</p>
+                     * @return ClusterDescription <p>集群描述</p><p>入参限制：最长200个字符</p>
+                     * 
+                     */
+                    std::string GetClusterDescription() const;
+
+                    /**
+                     * 设置<p>集群描述</p><p>入参限制：最长200个字符</p>
+                     * @param _clusterDescription <p>集群描述</p><p>入参限制：最长200个字符</p>
+                     * 
+                     */
+                    void SetClusterDescription(const std::string& _clusterDescription);
+
+                    /**
+                     * 判断参数 ClusterDescription 是否已赋值
+                     * @return ClusterDescription 是否已赋值
+                     * 
+                     */
+                    bool ClusterDescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -93,10 +156,28 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
+                     * <p>集群 ID 列表</p><p>入参限制：最多支持 100 个</p><p>ClusterId 和 ClusterIds 必须传一个且不能同时传</p>
+                     */
+                    std::vector<std::string> m_clusterIds;
+                    bool m_clusterIdsHasBeenSet;
+
+                    /**
                      * <p>是否启用集群删除保护</p><p>枚举值：</p><ul><li>true： 启用</li><li>false： 不启用</li></ul>
                      */
                     bool m_deletionProtection;
                     bool m_deletionProtectionHasBeenSet;
+
+                    /**
+                     * <p>集群名称</p><p>入参限制：最长128个字符</p>
+                     */
+                    std::string m_clusterName;
+                    bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * <p>集群描述</p><p>入参限制：最长200个字符</p>
+                     */
+                    std::string m_clusterDescription;
+                    bool m_clusterDescriptionHasBeenSet;
 
                 };
             }

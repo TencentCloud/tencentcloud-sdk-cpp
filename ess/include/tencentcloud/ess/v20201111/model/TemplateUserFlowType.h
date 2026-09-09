@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同类型id
-                     * @return UserFlowTypeId 合同类型id
+                     * 获取<p>合同类型id</p>
+                     * @return UserFlowTypeId <p>合同类型id</p>
                      * 
                      */
                     std::string GetUserFlowTypeId() const;
 
                     /**
-                     * 设置合同类型id
-                     * @param _userFlowTypeId 合同类型id
+                     * 设置<p>合同类型id</p>
+                     * @param _userFlowTypeId <p>合同类型id</p>
                      * 
                      */
                     void SetUserFlowTypeId(const std::string& _userFlowTypeId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool UserFlowTypeIdHasBeenSet() const;
 
                     /**
-                     * 获取合同类型名称
-                     * @return Name 合同类型名称
+                     * 获取<p>合同类型名称</p>
+                     * @return Name <p>合同类型名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置合同类型名称
-                     * @param _name 合同类型名称
+                     * 设置<p>合同类型名称</p>
+                     * @param _name <p>合同类型名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取合同类型的具体描述
-                     * @return Description 合同类型的具体描述
+                     * 获取<p>合同类型的具体描述</p>
+                     * @return Description <p>合同类型的具体描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置合同类型的具体描述
-                     * @param _description 合同类型的具体描述
+                     * 设置<p>合同类型的具体描述</p>
+                     * @param _description <p>合同类型的具体描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取每个合同类型绑定的模板数量
-                     * @return TemplateNum 每个合同类型绑定的模板数量
+                     * 获取<p>每个合同类型绑定的模板数量</p>
+                     * @return TemplateNum <p>每个合同类型绑定的模板数量</p>
                      * 
                      */
                     int64_t GetTemplateNum() const;
 
                     /**
-                     * 设置每个合同类型绑定的模板数量
-                     * @param _templateNum 每个合同类型绑定的模板数量
+                     * 设置<p>每个合同类型绑定的模板数量</p>
+                     * @param _templateNum <p>每个合同类型绑定的模板数量</p>
                      * 
                      */
                     void SetTemplateNum(const int64_t& _templateNum);
@@ -130,31 +130,58 @@ namespace TencentCloud
                      */
                     bool TemplateNumHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义合同类型状态</p><p>枚举值：</p><ul><li>0： 未启用</li><li>1： 启用</li></ul>
+                     * @return Status <p>自定义合同类型状态</p><p>枚举值：</p><ul><li>0： 未启用</li><li>1： 启用</li></ul>
+                     * 
+                     */
+                    uint64_t GetStatus() const;
+
+                    /**
+                     * 设置<p>自定义合同类型状态</p><p>枚举值：</p><ul><li>0： 未启用</li><li>1： 启用</li></ul>
+                     * @param _status <p>自定义合同类型状态</p><p>枚举值：</p><ul><li>0： 未启用</li><li>1： 启用</li></ul>
+                     * 
+                     */
+                    void SetStatus(const uint64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 合同类型id
+                     * <p>合同类型id</p>
                      */
                     std::string m_userFlowTypeId;
                     bool m_userFlowTypeIdHasBeenSet;
 
                     /**
-                     * 合同类型名称
+                     * <p>合同类型名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 合同类型的具体描述
+                     * <p>合同类型的具体描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 每个合同类型绑定的模板数量
+                     * <p>每个合同类型绑定的模板数量</p>
                      */
                     int64_t m_templateNum;
                     bool m_templateNumHasBeenSet;
+
+                    /**
+                     * <p>自定义合同类型状态</p><p>枚举值：</p><ul><li>0： 未启用</li><li>1： 启用</li></ul>
+                     */
+                    uint64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

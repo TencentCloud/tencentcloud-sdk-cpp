@@ -28,7 +28,8 @@ SkillProfile::SkillProfile() :
     m_displayNameHasBeenSet(false),
     m_iconUrlHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_spaceIdHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome SkillProfile::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("SpaceId") && !value["SpaceId"].IsNull())
+    {
+        if (!value["SpaceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SkillProfile.SpaceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_spaceId = string(value["SpaceId"].GetString());
+        m_spaceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void SkillProfile::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_spaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_spaceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void SkillProfile::SetUpdateTime(const string& _updateTime)
 bool SkillProfile::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string SkillProfile::GetSpaceId() const
+{
+    return m_spaceId;
+}
+
+void SkillProfile::SetSpaceId(const string& _spaceId)
+{
+    m_spaceId = _spaceId;
+    m_spaceIdHasBeenSet = true;
+}
+
+bool SkillProfile::SpaceIdHasBeenSet() const
+{
+    return m_spaceIdHasBeenSet;
 }
 

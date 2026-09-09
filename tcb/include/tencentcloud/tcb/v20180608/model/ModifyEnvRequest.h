@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>环境备注名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符</p>
-                     * @return Alias <p>环境备注名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符</p>
+                     * 获取<p>环境备注名</p><p>入参限制：最大长度为32</p>
+                     * @return Alias <p>环境备注名</p><p>入参限制：最大长度为32</p>
                      * 
                      */
                     std::string GetAlias() const;
 
                     /**
-                     * 设置<p>环境备注名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符</p>
-                     * @param _alias <p>环境备注名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符</p>
+                     * 设置<p>环境备注名</p><p>入参限制：最大长度为32</p>
+                     * @param _alias <p>环境备注名</p><p>入参限制：最大长度为32</p>
                      * 
                      */
                     void SetAlias(const std::string& _alias);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_envIdHasBeenSet;
 
                     /**
-                     * <p>环境备注名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符</p>
+                     * <p>环境备注名</p><p>入参限制：最大长度为32</p>
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;

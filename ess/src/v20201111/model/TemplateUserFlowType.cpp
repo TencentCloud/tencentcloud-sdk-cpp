@@ -24,7 +24,8 @@ TemplateUserFlowType::TemplateUserFlowType() :
     m_userFlowTypeIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_templateNumHasBeenSet(false)
+    m_templateNumHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome TemplateUserFlowType::Deserialize(const rapidjson::Value &va
         m_templateNumHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateUserFlowType.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetUint64();
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void TemplateUserFlowType::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "TemplateNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_templateNum, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void TemplateUserFlowType::SetTemplateNum(const int64_t& _templateNum)
 bool TemplateUserFlowType::TemplateNumHasBeenSet() const
 {
     return m_templateNumHasBeenSet;
+}
+
+uint64_t TemplateUserFlowType::GetStatus() const
+{
+    return m_status;
+}
+
+void TemplateUserFlowType::SetStatus(const uint64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool TemplateUserFlowType::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

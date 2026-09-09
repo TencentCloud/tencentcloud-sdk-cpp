@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建时间（Unix秒）
-                     * @return CreateTime 创建时间（Unix秒）
+                     * 获取<p>创建时间（Unix秒）</p>
+                     * @return CreateTime <p>创建时间（Unix秒）</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间（Unix秒）
-                     * @param _createTime 创建时间（Unix秒）
+                     * 设置<p>创建时间（Unix秒）</p>
+                     * @param _createTime <p>创建时间（Unix秒）</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取创建者
-                     * @return Creator 创建者
+                     * 获取<p>创建者</p>
+                     * @return Creator <p>创建者</p>
                      * 
                      */
                     std::string GetCreator() const;
 
                     /**
-                     * 设置创建者
-                     * @param _creator 创建者
+                     * 设置<p>创建者</p>
+                     * @param _creator <p>创建者</p>
                      * 
                      */
                     void SetCreator(const std::string& _creator);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool CreatorHasBeenSet() const;
 
                     /**
-                     * 获取Skill 描述
-                     * @return Description Skill 描述
+                     * 获取<p>Skill 描述</p>
+                     * @return Description <p>Skill 描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置Skill 描述
-                     * @param _description Skill 描述
+                     * 设置<p>Skill 描述</p>
+                     * @param _description <p>Skill 描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取Skill 展示描述
-                     * @return DisplayDescription Skill 展示描述
+                     * 获取<p>Skill 展示描述</p>
+                     * @return DisplayDescription <p>Skill 展示描述</p>
                      * 
                      */
                     std::string GetDisplayDescription() const;
 
                     /**
-                     * 设置Skill 展示描述
-                     * @param _displayDescription Skill 展示描述
+                     * 设置<p>Skill 展示描述</p>
+                     * @param _displayDescription <p>Skill 展示描述</p>
                      * 
                      */
                     void SetDisplayDescription(const std::string& _displayDescription);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool DisplayDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取Skill 展示名称
-                     * @return DisplayName Skill 展示名称
+                     * 获取<p>Skill 展示名称</p>
+                     * @return DisplayName <p>Skill 展示名称</p>
                      * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
-                     * 设置Skill 展示名称
-                     * @param _displayName Skill 展示名称
+                     * 设置<p>Skill 展示名称</p>
+                     * @param _displayName <p>Skill 展示名称</p>
                      * 
                      */
                     void SetDisplayName(const std::string& _displayName);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool DisplayNameHasBeenSet() const;
 
                     /**
-                     * 获取Skill 图标
-                     * @return IconUrl Skill 图标
+                     * 获取<p>Skill 图标</p>
+                     * @return IconUrl <p>Skill 图标</p>
                      * 
                      */
                     std::string GetIconUrl() const;
 
                     /**
-                     * 设置Skill 图标
-                     * @param _iconUrl Skill 图标
+                     * 设置<p>Skill 图标</p>
+                     * @param _iconUrl <p>Skill 图标</p>
                      * 
                      */
                     void SetIconUrl(const std::string& _iconUrl);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool IconUrlHasBeenSet() const;
 
                     /**
-                     * 获取Skill 名称
-                     * @return Name Skill 名称
+                     * 获取<p>Skill 名称</p>
+                     * @return Name <p>Skill 名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置Skill 名称
-                     * @param _name Skill 名称
+                     * 设置<p>Skill 名称</p>
+                     * @param _name <p>Skill 名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取更新时间（Unix秒）
-                     * @return UpdateTime 更新时间（Unix秒）
+                     * 获取<p>更新时间（Unix秒）</p>
+                     * @return UpdateTime <p>更新时间（Unix秒）</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间（Unix秒）
-                     * @param _updateTime 更新时间（Unix秒）
+                     * 设置<p>更新时间（Unix秒）</p>
+                     * @param _updateTime <p>更新时间（Unix秒）</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -214,55 +214,82 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>空间</p>
+                     * @return SpaceId <p>空间</p>
+                     * 
+                     */
+                    std::string GetSpaceId() const;
+
+                    /**
+                     * 设置<p>空间</p>
+                     * @param _spaceId <p>空间</p>
+                     * 
+                     */
+                    void SetSpaceId(const std::string& _spaceId);
+
+                    /**
+                     * 判断参数 SpaceId 是否已赋值
+                     * @return SpaceId 是否已赋值
+                     * 
+                     */
+                    bool SpaceIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 创建时间（Unix秒）
+                     * <p>创建时间（Unix秒）</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 创建者
+                     * <p>创建者</p>
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
 
                     /**
-                     * Skill 描述
+                     * <p>Skill 描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * Skill 展示描述
+                     * <p>Skill 展示描述</p>
                      */
                     std::string m_displayDescription;
                     bool m_displayDescriptionHasBeenSet;
 
                     /**
-                     * Skill 展示名称
+                     * <p>Skill 展示名称</p>
                      */
                     std::string m_displayName;
                     bool m_displayNameHasBeenSet;
 
                     /**
-                     * Skill 图标
+                     * <p>Skill 图标</p>
                      */
                     std::string m_iconUrl;
                     bool m_iconUrlHasBeenSet;
 
                     /**
-                     * Skill 名称
+                     * <p>Skill 名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 更新时间（Unix秒）
+                     * <p>更新时间（Unix秒）</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * <p>空间</p>
+                     */
+                    std::string m_spaceId;
+                    bool m_spaceIdHasBeenSet;
 
                 };
             }

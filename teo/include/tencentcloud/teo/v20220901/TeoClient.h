@@ -1347,7 +1347,7 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 CreateContentIdentifierOutcomeCallable CreateContentIdentifierCallable(const Model::CreateContentIdentifierRequest& request);
 
                 /**
-                 *创建自定义错误页面。
+                 *创建自定义响应页面。
                  * @param req CreateCustomizeErrorPageRequest
                  * @return CreateCustomizeErrorPageOutcome
                  */
@@ -2923,7 +2923,7 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 ModifyContentIdentifierOutcomeCallable ModifyContentIdentifierCallable(const Model::ModifyContentIdentifierRequest& request);
 
                 /**
-                 *修改自定义错误页面。
+                 *修改自定义响应页面。
                  * @param req ModifyCustomErrorPageRequest
                  * @return ModifyCustomErrorPageOutcome
                  */

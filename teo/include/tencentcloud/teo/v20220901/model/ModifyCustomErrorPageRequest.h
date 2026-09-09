@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自定义错误页面 ID。
-                     * @return PageId 自定义错误页面 ID。
+                     * 获取<p>自定义响应页面 ID。</p>
+                     * @return PageId <p>自定义响应页面 ID。</p>
                      * 
                      */
                     std::string GetPageId() const;
 
                     /**
-                     * 设置自定义错误页面 ID。
-                     * @param _pageId 自定义错误页面 ID。
+                     * 设置<p>自定义响应页面 ID。</p>
+                     * @param _pageId <p>自定义响应页面 ID。</p>
                      * 
                      */
                     void SetPageId(const std::string& _pageId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PageIdHasBeenSet() const;
 
                     /**
-                     * 获取站点 ID。
-                     * @return ZoneId 站点 ID。
+                     * 获取<p>站点 ID。</p>
+                     * @return ZoneId <p>站点 ID。</p>
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置站点 ID。
-                     * @param _zoneId 站点 ID。
+                     * 设置<p>站点 ID。</p>
+                     * @param _zoneId <p>站点 ID。</p>
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取自定义错误页名称，名称为2 - 60个字符。
-                     * @return Name 自定义错误页名称，名称为2 - 60个字符。
+                     * 获取<p>自定义响应页面名称，名称为 2 - 60 个字符。</p>
+                     * @return Name <p>自定义响应页面名称，名称为 2 - 60 个字符。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置自定义错误页名称，名称为2 - 60个字符。
-                     * @param _name 自定义错误页名称，名称为2 - 60个字符。
+                     * 设置<p>自定义响应页面名称，名称为 2 - 60 个字符。</p>
+                     * @param _name <p>自定义响应页面名称，名称为 2 - 60 个字符。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取自定义错误页描述，描述内容不超过60个字符。
-                     * @return Description 自定义错误页描述，描述内容不超过60个字符。
+                     * 获取<p>自定义响应页面描述，描述内容不超过 60 个字符。</p>
+                     * @return Description <p>自定义响应页面描述，描述内容不超过 60 个字符。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置自定义错误页描述，描述内容不超过60个字符。
-                     * @param _description 自定义错误页描述，描述内容不超过60个字符。
+                     * 设置<p>自定义响应页面描述，描述内容不超过 60 个字符。</p>
+                     * @param _description <p>自定义响应页面描述，描述内容不超过 60 个字符。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取自定义错误页面类型，取值有：<li>text/html。 </li><li>application/json。</li><li>plain/text。</li><li>text/xml。</li>
-                     * @return ContentType 自定义错误页面类型，取值有：<li>text/html。 </li><li>application/json。</li><li>plain/text。</li><li>text/xml。</li>
+                     * 获取<p>自定义响应页面类型，取值有：</p><ul><li>text/html</li><li>application/json</li><li>plain/text</li><li>text/xml</li><li>text/css</li><li>text/javascript</li><li>application/javascript</li><li>text/markdown</li></ul>
+                     * @return ContentType <p>自定义响应页面类型，取值有：</p><ul><li>text/html</li><li>application/json</li><li>plain/text</li><li>text/xml</li><li>text/css</li><li>text/javascript</li><li>application/javascript</li><li>text/markdown</li></ul>
                      * 
                      */
                     std::string GetContentType() const;
 
                     /**
-                     * 设置自定义错误页面类型，取值有：<li>text/html。 </li><li>application/json。</li><li>plain/text。</li><li>text/xml。</li>
-                     * @param _contentType 自定义错误页面类型，取值有：<li>text/html。 </li><li>application/json。</li><li>plain/text。</li><li>text/xml。</li>
+                     * 设置<p>自定义响应页面类型，取值有：</p><ul><li>text/html</li><li>application/json</li><li>plain/text</li><li>text/xml</li><li>text/css</li><li>text/javascript</li><li>application/javascript</li><li>text/markdown</li></ul>
+                     * @param _contentType <p>自定义响应页面类型，取值有：</p><ul><li>text/html</li><li>application/json</li><li>plain/text</li><li>text/xml</li><li>text/css</li><li>text/javascript</li><li>application/javascript</li><li>text/markdown</li></ul>
                      * 
                      */
                     void SetContentType(const std::string& _contentType);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ContentTypeHasBeenSet() const;
 
                     /**
-                     * 获取自定义错误页面内容。内容不超过 2KB。
-                     * @return Content 自定义错误页面内容。内容不超过 2KB。
+                     * 获取<p>自定义响应页面内容。内容不超过 16KB。</p>
+                     * @return Content <p>自定义响应页面内容。内容不超过 16KB。</p>
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置自定义错误页面内容。内容不超过 2KB。
-                     * @param _content 自定义错误页面内容。内容不超过 2KB。
+                     * 设置<p>自定义响应页面内容。内容不超过 16KB。</p>
+                     * @param _content <p>自定义响应页面内容。内容不超过 16KB。</p>
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -171,37 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 自定义错误页面 ID。
+                     * <p>自定义响应页面 ID。</p>
                      */
                     std::string m_pageId;
                     bool m_pageIdHasBeenSet;
 
                     /**
-                     * 站点 ID。
+                     * <p>站点 ID。</p>
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 自定义错误页名称，名称为2 - 60个字符。
+                     * <p>自定义响应页面名称，名称为 2 - 60 个字符。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 自定义错误页描述，描述内容不超过60个字符。
+                     * <p>自定义响应页面描述，描述内容不超过 60 个字符。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 自定义错误页面类型，取值有：<li>text/html。 </li><li>application/json。</li><li>plain/text。</li><li>text/xml。</li>
+                     * <p>自定义响应页面类型，取值有：</p><ul><li>text/html</li><li>application/json</li><li>plain/text</li><li>text/xml</li><li>text/css</li><li>text/javascript</li><li>application/javascript</li><li>text/markdown</li></ul>
                      */
                     std::string m_contentType;
                     bool m_contentTypeHasBeenSet;
 
                     /**
-                     * 自定义错误页面内容。内容不超过 2KB。
+                     * <p>自定义响应页面内容。内容不超过 16KB。</p>
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;

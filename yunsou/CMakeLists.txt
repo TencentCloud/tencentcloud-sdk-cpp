@@ -15,11 +15,15 @@
 #
 
 set(yunsou_public_header
-  include/tencentcloud/yunsou/v20191115/YunsouClient.h
   include/tencentcloud/yunsou/v20180504/YunsouClient.h
+  include/tencentcloud/yunsou/v20191115/YunsouClient.h
   )
 
 set(yunsou_public_header_model
+  include/tencentcloud/yunsou/v20180504/model/DataSearchResponse.h
+  include/tencentcloud/yunsou/v20180504/model/DataSearchRequest.h
+  include/tencentcloud/yunsou/v20180504/model/DataManipulationRequest.h
+  include/tencentcloud/yunsou/v20180504/model/DataManipulationResponse.h
   include/tencentcloud/yunsou/v20191115/model/SearchResult.h
   include/tencentcloud/yunsou/v20191115/model/SearchResultSeg.h
   include/tencentcloud/yunsou/v20191115/model/DataManipulationResult.h
@@ -29,15 +33,15 @@ set(yunsou_public_header_model
   include/tencentcloud/yunsou/v20191115/model/DataManipulationResultItem.h
   include/tencentcloud/yunsou/v20191115/model/DataManipulationRequest.h
   include/tencentcloud/yunsou/v20191115/model/DataManipulationResponse.h
-  include/tencentcloud/yunsou/v20180504/model/DataSearchResponse.h
-  include/tencentcloud/yunsou/v20180504/model/DataSearchRequest.h
-  include/tencentcloud/yunsou/v20180504/model/DataManipulationRequest.h
-  include/tencentcloud/yunsou/v20180504/model/DataManipulationResponse.h
   )
 
 set(yunsou_src
-  src/v20191115/YunsouClient.cpp
   src/v20180504/YunsouClient.cpp
+  src/v20191115/YunsouClient.cpp
+  src/v20180504/model/DataSearchResponse.cpp
+  src/v20180504/model/DataSearchRequest.cpp
+  src/v20180504/model/DataManipulationRequest.cpp
+  src/v20180504/model/DataManipulationResponse.cpp
   src/v20191115/model/SearchResult.cpp
   src/v20191115/model/SearchResultSeg.cpp
   src/v20191115/model/DataManipulationResult.cpp
@@ -47,10 +51,6 @@ set(yunsou_src
   src/v20191115/model/DataManipulationResultItem.cpp
   src/v20191115/model/DataManipulationRequest.cpp
   src/v20191115/model/DataManipulationResponse.cpp
-  src/v20180504/model/DataSearchResponse.cpp
-  src/v20180504/model/DataSearchRequest.cpp
-  src/v20180504/model/DataManipulationRequest.cpp
-  src/v20180504/model/DataManipulationResponse.cpp
   )
 
 set(yunsou_include
@@ -79,9 +79,9 @@ target_link_libraries(yunsou
   core)
 
 #install(FILES ${yunsou_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/yunsou/v20180504)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/yunsou/v20191115)
 #install(FILES ${yunsou_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/yunsou/v20180504/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/yunsou/v20191115/model)
 install(DIRECTORY ${yunsou_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 

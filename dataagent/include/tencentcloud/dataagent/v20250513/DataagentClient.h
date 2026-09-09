@@ -45,8 +45,6 @@
 #include <tencentcloud/dataagent/v20250513/model/GetKnowledgeBaseFileListResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/GetKnowledgeBaseListRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/GetKnowledgeBaseListResponse.h>
-#include <tencentcloud/dataagent/v20250513/model/GetSessionDetailsRequest.h>
-#include <tencentcloud/dataagent/v20250513/model/GetSessionDetailsResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/GetUploadJobDetailsRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/GetUploadJobDetailsResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/GetUserInstanceListRequest.h>
@@ -65,6 +63,8 @@
 #include <tencentcloud/dataagent/v20250513/model/QueryModelsResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/QueryUserAuthorityRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/QueryUserAuthorityResponse.h>
+#include <tencentcloud/dataagent/v20250513/model/QueryUserSessionDetailRequest.h>
+#include <tencentcloud/dataagent/v20250513/model/QueryUserSessionDetailResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/StopChatAIRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/StopChatAIResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/UploadAndCommitFileRequest.h>
@@ -116,9 +116,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetKnowledgeBaseListResponse> GetKnowledgeBaseListOutcome;
                 typedef std::future<GetKnowledgeBaseListOutcome> GetKnowledgeBaseListOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::GetKnowledgeBaseListRequest&, GetKnowledgeBaseListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetKnowledgeBaseListAsyncHandler;
-                typedef Outcome<Core::Error, Model::GetSessionDetailsResponse> GetSessionDetailsOutcome;
-                typedef std::future<GetSessionDetailsOutcome> GetSessionDetailsOutcomeCallable;
-                typedef std::function<void(const DataagentClient*, const Model::GetSessionDetailsRequest&, GetSessionDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSessionDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetUploadJobDetailsResponse> GetUploadJobDetailsOutcome;
                 typedef std::future<GetUploadJobDetailsOutcome> GetUploadJobDetailsOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::GetUploadJobDetailsRequest&, GetUploadJobDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUploadJobDetailsAsyncHandler;
@@ -146,6 +143,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryUserAuthorityResponse> QueryUserAuthorityOutcome;
                 typedef std::future<QueryUserAuthorityOutcome> QueryUserAuthorityOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::QueryUserAuthorityRequest&, QueryUserAuthorityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryUserAuthorityAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryUserSessionDetailResponse> QueryUserSessionDetailOutcome;
+                typedef std::future<QueryUserSessionDetailOutcome> QueryUserSessionDetailOutcomeCallable;
+                typedef std::function<void(const DataagentClient*, const Model::QueryUserSessionDetailRequest&, QueryUserSessionDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryUserSessionDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopChatAIResponse> StopChatAIOutcome;
                 typedef std::future<StopChatAIOutcome> StopChatAIOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::StopChatAIRequest&, StopChatAIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopChatAIAsyncHandler;
@@ -255,15 +255,6 @@ namespace TencentCloud
                 GetKnowledgeBaseListOutcomeCallable GetKnowledgeBaseListCallable(const Model::GetKnowledgeBaseListRequest& request);
 
                 /**
-                 *获取用户会话记录详情列表
-                 * @param req GetSessionDetailsRequest
-                 * @return GetSessionDetailsOutcome
-                 */
-                GetSessionDetailsOutcome GetSessionDetails(const Model::GetSessionDetailsRequest &request);
-                void GetSessionDetailsAsync(const Model::GetSessionDetailsRequest& request, const GetSessionDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetSessionDetailsOutcomeCallable GetSessionDetailsCallable(const Model::GetSessionDetailsRequest& request);
-
-                /**
                  *查询上传任务
                  * @param req GetUploadJobDetailsRequest
                  * @return GetUploadJobDetailsOutcome
@@ -343,6 +334,15 @@ namespace TencentCloud
                 QueryUserAuthorityOutcome QueryUserAuthority(const Model::QueryUserAuthorityRequest &request);
                 void QueryUserAuthorityAsync(const Model::QueryUserAuthorityRequest& request, const QueryUserAuthorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryUserAuthorityOutcomeCallable QueryUserAuthorityCallable(const Model::QueryUserAuthorityRequest& request);
+
+                /**
+                 *查询用户会话详情
+                 * @param req QueryUserSessionDetailRequest
+                 * @return QueryUserSessionDetailOutcome
+                 */
+                QueryUserSessionDetailOutcome QueryUserSessionDetail(const Model::QueryUserSessionDetailRequest &request);
+                void QueryUserSessionDetailAsync(const Model::QueryUserSessionDetailRequest& request, const QueryUserSessionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryUserSessionDetailOutcomeCallable QueryUserSessionDetailCallable(const Model::QueryUserSessionDetailRequest& request);
 
                 /**
                  *中断DataAgent的回答输出

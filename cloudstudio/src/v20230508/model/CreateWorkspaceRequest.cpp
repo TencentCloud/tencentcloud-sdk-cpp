@@ -34,8 +34,7 @@ CreateWorkspaceRequest::CreateWorkspaceRequest() :
     m_tenantAppIdHasBeenSet(false),
     m_tenantUinHasBeenSet(false),
     m_tenantUniqVpcIdHasBeenSet(false),
-    m_tenantSubnetIdHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_tenantSubnetIdHasBeenSet(false)
 {
 }
 
@@ -154,14 +153,6 @@ string CreateWorkspaceRequest::ToJsonString() const
         string key = "TenantSubnetId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_tenantSubnetId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_regionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Region";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -362,22 +353,6 @@ void CreateWorkspaceRequest::SetTenantSubnetId(const string& _tenantSubnetId)
 bool CreateWorkspaceRequest::TenantSubnetIdHasBeenSet() const
 {
     return m_tenantSubnetIdHasBeenSet;
-}
-
-string CreateWorkspaceRequest::GetRegion() const
-{
-    return m_region;
-}
-
-void CreateWorkspaceRequest::SetRegion(const string& _region)
-{
-    m_region = _region;
-    m_regionHasBeenSet = true;
-}
-
-bool CreateWorkspaceRequest::RegionHasBeenSet() const
-{
-    return m_regionHasBeenSet;
 }
 
 

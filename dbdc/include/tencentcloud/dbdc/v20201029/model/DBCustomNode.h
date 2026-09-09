@@ -674,6 +674,27 @@ namespace TencentCloud
                      */
                     bool DisasterRecoverGroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>节点最新进行中的任务类型</p><p>枚举值：</p><ul><li>add-nodes-to-cluster： 添加节点到集群</li><li>remove-nodes-from-cluster： 从集群中移除节点</li><li>modify-nodes-attributes： 修改节点属性</li><li>modify-nodes-drg： 修改节点置放群组</li></ul>
+                     * @return LatestRunningTaskType <p>节点最新进行中的任务类型</p><p>枚举值：</p><ul><li>add-nodes-to-cluster： 添加节点到集群</li><li>remove-nodes-from-cluster： 从集群中移除节点</li><li>modify-nodes-attributes： 修改节点属性</li><li>modify-nodes-drg： 修改节点置放群组</li></ul>
+                     * 
+                     */
+                    std::string GetLatestRunningTaskType() const;
+
+                    /**
+                     * 设置<p>节点最新进行中的任务类型</p><p>枚举值：</p><ul><li>add-nodes-to-cluster： 添加节点到集群</li><li>remove-nodes-from-cluster： 从集群中移除节点</li><li>modify-nodes-attributes： 修改节点属性</li><li>modify-nodes-drg： 修改节点置放群组</li></ul>
+                     * @param _latestRunningTaskType <p>节点最新进行中的任务类型</p><p>枚举值：</p><ul><li>add-nodes-to-cluster： 添加节点到集群</li><li>remove-nodes-from-cluster： 从集群中移除节点</li><li>modify-nodes-attributes： 修改节点属性</li><li>modify-nodes-drg： 修改节点置放群组</li></ul>
+                     * 
+                     */
+                    void SetLatestRunningTaskType(const std::string& _latestRunningTaskType);
+
+                    /**
+                     * 判断参数 LatestRunningTaskType 是否已赋值
+                     * @return LatestRunningTaskType 是否已赋值
+                     * 
+                     */
+                    bool LatestRunningTaskTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -853,6 +874,12 @@ namespace TencentCloud
                      */
                     std::string m_disasterRecoverGroupId;
                     bool m_disasterRecoverGroupIdHasBeenSet;
+
+                    /**
+                     * <p>节点最新进行中的任务类型</p><p>枚举值：</p><ul><li>add-nodes-to-cluster： 添加节点到集群</li><li>remove-nodes-from-cluster： 从集群中移除节点</li><li>modify-nodes-attributes： 修改节点属性</li><li>modify-nodes-drg： 修改节点置放群组</li></ul>
+                     */
+                    std::string m_latestRunningTaskType;
+                    bool m_latestRunningTaskTypeHasBeenSet;
 
                 };
             }

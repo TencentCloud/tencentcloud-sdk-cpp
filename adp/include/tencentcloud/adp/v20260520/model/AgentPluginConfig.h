@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/adp/v20260520/model/AgentPluginParameter.h>
+#include <tencentcloud/adp/v20260520/model/AgentPluginCredentialConfig.h>
 
 
 namespace TencentCloud
@@ -173,6 +174,27 @@ namespace TencentCloud
                      */
                     bool OAuthConsentHasBeenSet() const;
 
+                    /**
+                     * 获取<p>凭证配置</p>
+                     * @return CredentialConfig <p>凭证配置</p>
+                     * 
+                     */
+                    AgentPluginCredentialConfig GetCredentialConfig() const;
+
+                    /**
+                     * 设置<p>凭证配置</p>
+                     * @param _credentialConfig <p>凭证配置</p>
+                     * 
+                     */
+                    void SetCredentialConfig(const AgentPluginCredentialConfig& _credentialConfig);
+
+                    /**
+                     * 判断参数 CredentialConfig 是否已赋值
+                     * @return CredentialConfig 是否已赋值
+                     * 
+                     */
+                    bool CredentialConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -210,6 +232,12 @@ namespace TencentCloud
                      */
                     int64_t m_oAuthConsent;
                     bool m_oAuthConsentHasBeenSet;
+
+                    /**
+                     * <p>凭证配置</p>
+                     */
+                    AgentPluginCredentialConfig m_credentialConfig;
+                    bool m_credentialConfigHasBeenSet;
 
                 };
             }

@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool BusinessLicenseHasBeenSet() const;
 
                     /**
-                     * 获取<p>组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。</p>
-                     * @return ProxyAddress <p>组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。</p>
+                     * 获取<p>组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。    </p><p>入参限制：最大长度500个字符</p>
+                     * @return ProxyAddress <p>组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。    </p><p>入参限制：最大长度500个字符</p>
                      * 
                      */
                     std::string GetProxyAddress() const;
 
                     /**
-                     * 设置<p>组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。</p>
-                     * @param _proxyAddress <p>组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。</p>
+                     * 设置<p>组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。    </p><p>入参限制：最大长度500个字符</p>
+                     * @param _proxyAddress <p>组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。    </p><p>入参限制：最大长度500个字符</p>
                      * 
                      */
                     void SetProxyAddress(const std::string& _proxyAddress);
@@ -670,7 +670,7 @@ namespace TencentCloud
                     bool m_businessLicenseHasBeenSet;
 
                     /**
-                     * <p>组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。</p>
+                     * <p>组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。    </p><p>入参限制：最大长度500个字符</p>
                      */
                     std::string m_proxyAddress;
                     bool m_proxyAddressHasBeenSet;

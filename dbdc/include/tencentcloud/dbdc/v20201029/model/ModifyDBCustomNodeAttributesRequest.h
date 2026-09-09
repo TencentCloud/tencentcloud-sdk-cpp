@@ -64,6 +64,27 @@ namespace TencentCloud
                     bool NodeIdHasBeenSet() const;
 
                     /**
+                     * 获取<p>节点 ID 列表</p><p>入参限制：最多支持 100 个</p><p>NodeId 和 NodeIds 必须传一个且不能同时传</p>
+                     * @return NodeIds <p>节点 ID 列表</p><p>入参限制：最多支持 100 个</p><p>NodeId 和 NodeIds 必须传一个且不能同时传</p>
+                     * 
+                     */
+                    std::vector<std::string> GetNodeIds() const;
+
+                    /**
+                     * 设置<p>节点 ID 列表</p><p>入参限制：最多支持 100 个</p><p>NodeId 和 NodeIds 必须传一个且不能同时传</p>
+                     * @param _nodeIds <p>节点 ID 列表</p><p>入参限制：最多支持 100 个</p><p>NodeId 和 NodeIds 必须传一个且不能同时传</p>
+                     * 
+                     */
+                    void SetNodeIds(const std::vector<std::string>& _nodeIds);
+
+                    /**
+                     * 判断参数 NodeIds 是否已赋值
+                     * @return NodeIds 是否已赋值
+                     * 
+                     */
+                    bool NodeIdsHasBeenSet() const;
+
+                    /**
                      * 获取<p>主机 HostName</p><p>入参限制：参数设置规则参见：<a href="https://cloud.tencent.com/document/api/1322/132929">创建 DB Custom 节点接口</a>的 HostName 参数说明。</p><p>注意：节点在没有加入到集群之前才支持修改主机 HostName。</p>
                      * @return HostName <p>主机 HostName</p><p>入参限制：参数设置规则参见：<a href="https://cloud.tencent.com/document/api/1322/132929">创建 DB Custom 节点接口</a>的 HostName 参数说明。</p><p>注意：节点在没有加入到集群之前才支持修改主机 HostName。</p>
                      * 
@@ -133,6 +154,12 @@ namespace TencentCloud
                      */
                     std::string m_nodeId;
                     bool m_nodeIdHasBeenSet;
+
+                    /**
+                     * <p>节点 ID 列表</p><p>入参限制：最多支持 100 个</p><p>NodeId 和 NodeIds 必须传一个且不能同时传</p>
+                     */
+                    std::vector<std::string> m_nodeIds;
+                    bool m_nodeIdsHasBeenSet;
 
                     /**
                      * <p>主机 HostName</p><p>入参限制：参数设置规则参见：<a href="https://cloud.tencent.com/document/api/1322/132929">创建 DB Custom 节点接口</a>的 HostName 参数说明。</p><p>注意：节点在没有加入到集群之前才支持修改主机 HostName。</p>

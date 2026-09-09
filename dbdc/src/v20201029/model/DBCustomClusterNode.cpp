@@ -30,7 +30,8 @@ DBCustomClusterNode::DBCustomClusterNode() :
     m_nodeTypeHasBeenSet(false),
     m_networkModeHasBeenSet(false),
     m_eniIPHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_latestRunningTaskTypeHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,16 @@ CoreInternalOutcome DBCustomClusterNode::Deserialize(const rapidjson::Value &val
         m_securityGroupIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("LatestRunningTaskType") && !value["LatestRunningTaskType"].IsNull())
+    {
+        if (!value["LatestRunningTaskType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBCustomClusterNode.LatestRunningTaskType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestRunningTaskType = string(value["LatestRunningTaskType"].GetString());
+        m_latestRunningTaskTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +243,14 @@ void DBCustomClusterNode::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_latestRunningTaskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestRunningTaskType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestRunningTaskType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -395,5 +414,21 @@ void DBCustomClusterNode::SetSecurityGroupIds(const vector<string>& _securityGro
 bool DBCustomClusterNode::SecurityGroupIdsHasBeenSet() const
 {
     return m_securityGroupIdsHasBeenSet;
+}
+
+string DBCustomClusterNode::GetLatestRunningTaskType() const
+{
+    return m_latestRunningTaskType;
+}
+
+void DBCustomClusterNode::SetLatestRunningTaskType(const string& _latestRunningTaskType)
+{
+    m_latestRunningTaskType = _latestRunningTaskType;
+    m_latestRunningTaskTypeHasBeenSet = true;
+}
+
+bool DBCustomClusterNode::LatestRunningTaskTypeHasBeenSet() const
+{
+    return m_latestRunningTaskTypeHasBeenSet;
 }
 

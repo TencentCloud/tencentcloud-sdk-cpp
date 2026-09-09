@@ -590,56 +590,6 @@ DataagentClient::GetKnowledgeBaseListOutcomeCallable DataagentClient::GetKnowled
     return prom->get_future();
 }
 
-DataagentClient::GetSessionDetailsOutcome DataagentClient::GetSessionDetails(const GetSessionDetailsRequest &request)
-{
-    auto outcome = MakeRequest(request, "GetSessionDetails");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        GetSessionDetailsResponse rsp = GetSessionDetailsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return GetSessionDetailsOutcome(rsp);
-        else
-            return GetSessionDetailsOutcome(o.GetError());
-    }
-    else
-    {
-        return GetSessionDetailsOutcome(outcome.GetError());
-    }
-}
-
-void DataagentClient::GetSessionDetailsAsync(const GetSessionDetailsRequest& request, const GetSessionDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const GetSessionDetailsRequest&;
-    using Resp = GetSessionDetailsResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "GetSessionDetails", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-DataagentClient::GetSessionDetailsOutcomeCallable DataagentClient::GetSessionDetailsCallable(const GetSessionDetailsRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<GetSessionDetailsOutcome>>();
-    GetSessionDetailsAsync(
-    request,
-    [prom](
-        const DataagentClient*,
-        const GetSessionDetailsRequest&,
-        GetSessionDetailsOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 DataagentClient::GetUploadJobDetailsOutcome DataagentClient::GetUploadJobDetails(const GetUploadJobDetailsRequest &request)
 {
     auto outcome = MakeRequest(request, "GetUploadJobDetails");
@@ -1082,6 +1032,56 @@ DataagentClient::QueryUserAuthorityOutcomeCallable DataagentClient::QueryUserAut
         const DataagentClient*,
         const QueryUserAuthorityRequest&,
         QueryUserAuthorityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DataagentClient::QueryUserSessionDetailOutcome DataagentClient::QueryUserSessionDetail(const QueryUserSessionDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryUserSessionDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryUserSessionDetailResponse rsp = QueryUserSessionDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryUserSessionDetailOutcome(rsp);
+        else
+            return QueryUserSessionDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryUserSessionDetailOutcome(outcome.GetError());
+    }
+}
+
+void DataagentClient::QueryUserSessionDetailAsync(const QueryUserSessionDetailRequest& request, const QueryUserSessionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const QueryUserSessionDetailRequest&;
+    using Resp = QueryUserSessionDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "QueryUserSessionDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DataagentClient::QueryUserSessionDetailOutcomeCallable DataagentClient::QueryUserSessionDetailCallable(const QueryUserSessionDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<QueryUserSessionDetailOutcome>>();
+    QueryUserSessionDetailAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const QueryUserSessionDetailRequest&,
+        QueryUserSessionDetailOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

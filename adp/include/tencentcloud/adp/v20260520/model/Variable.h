@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取<p>模块类型。枚举值: 1:环境参数, 2:应用参数, 3:系统参数, -1:所有参数</p>
-                     * @return ModuleType <p>模块类型。枚举值: 1:环境参数, 2:应用参数, 3:系统参数, -1:所有参数</p>
+                     * 获取<p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul>
+                     * @return ModuleType <p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul>
                      * 
                      */
                     int64_t GetModuleType() const;
 
                     /**
-                     * 设置<p>模块类型。枚举值: 1:环境参数, 2:应用参数, 3:系统参数, -1:所有参数</p>
-                     * @param _moduleType <p>模块类型。枚举值: 1:环境参数, 2:应用参数, 3:系统参数, -1:所有参数</p>
+                     * 设置<p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul>
+                     * @param _moduleType <p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul>
                      * 
                      */
                     void SetModuleType(const int64_t& _moduleType);
@@ -235,6 +235,48 @@ namespace TencentCloud
                      */
                     bool EndpointListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否内置变量</p>
+                     * @return IsBuiltin <p>是否内置变量</p>
+                     * 
+                     */
+                    bool GetIsBuiltin() const;
+
+                    /**
+                     * 设置<p>是否内置变量</p>
+                     * @param _isBuiltin <p>是否内置变量</p>
+                     * 
+                     */
+                    void SetIsBuiltin(const bool& _isBuiltin);
+
+                    /**
+                     * 判断参数 IsBuiltin 是否已赋值
+                     * @return IsBuiltin 是否已赋值
+                     * 
+                     */
+                    bool IsBuiltinHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否可注入到沙箱环境</p>
+                     * @return EnableSandbox <p>是否可注入到沙箱环境</p>
+                     * 
+                     */
+                    bool GetEnableSandbox() const;
+
+                    /**
+                     * 设置<p>是否可注入到沙箱环境</p>
+                     * @param _enableSandbox <p>是否可注入到沙箱环境</p>
+                     * 
+                     */
+                    void SetEnableSandbox(const bool& _enableSandbox);
+
+                    /**
+                     * 判断参数 EnableSandbox 是否已赋值
+                     * @return EnableSandbox 是否已赋值
+                     * 
+                     */
+                    bool EnableSandboxHasBeenSet() const;
+
                 private:
 
                     /**
@@ -256,7 +298,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * <p>模块类型。枚举值: 1:环境参数, 2:应用参数, 3:系统参数, -1:所有参数</p>
+                     * <p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul>
                      */
                     int64_t m_moduleType;
                     bool m_moduleTypeHasBeenSet;
@@ -290,6 +332,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_endpointList;
                     bool m_endpointListHasBeenSet;
+
+                    /**
+                     * <p>是否内置变量</p>
+                     */
+                    bool m_isBuiltin;
+                    bool m_isBuiltinHasBeenSet;
+
+                    /**
+                     * <p>是否可注入到沙箱环境</p>
+                     */
+                    bool m_enableSandbox;
+                    bool m_enableSandboxHasBeenSet;
 
                 };
             }

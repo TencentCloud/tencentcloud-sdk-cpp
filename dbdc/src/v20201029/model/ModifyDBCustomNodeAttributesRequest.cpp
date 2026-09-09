@@ -24,6 +24,7 @@ using namespace std;
 
 ModifyDBCustomNodeAttributesRequest::ModifyDBCustomNodeAttributesRequest() :
     m_nodeIdHasBeenSet(false),
+    m_nodeIdsHasBeenSet(false),
     m_hostNameHasBeenSet(false),
     m_nodeNameHasBeenSet(false),
     m_autoRebootHasBeenSet(false)
@@ -43,6 +44,19 @@ string ModifyDBCustomNodeAttributesRequest::ToJsonString() const
         string key = "NodeId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_nodeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_nodeIds.begin(); itr != m_nodeIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_hostNameHasBeenSet)
@@ -91,6 +105,22 @@ void ModifyDBCustomNodeAttributesRequest::SetNodeId(const string& _nodeId)
 bool ModifyDBCustomNodeAttributesRequest::NodeIdHasBeenSet() const
 {
     return m_nodeIdHasBeenSet;
+}
+
+vector<string> ModifyDBCustomNodeAttributesRequest::GetNodeIds() const
+{
+    return m_nodeIds;
+}
+
+void ModifyDBCustomNodeAttributesRequest::SetNodeIds(const vector<string>& _nodeIds)
+{
+    m_nodeIds = _nodeIds;
+    m_nodeIdsHasBeenSet = true;
+}
+
+bool ModifyDBCustomNodeAttributesRequest::NodeIdsHasBeenSet() const
+{
+    return m_nodeIdsHasBeenSet;
 }
 
 string ModifyDBCustomNodeAttributesRequest::GetHostName() const

@@ -532,15 +532,15 @@ namespace TencentCloud
                     bool SignAfterStartHasBeenSet() const;
 
                     /**
-                     * 获取<p>发起过程中是否保存草稿</p>
-                     * @return NeedFlowDraft <p>发起过程中是否保存草稿</p>
+                     * 获取<p>发起过程中是否展示“保存草稿”按钮<br><img src="https://qcloudimg.tencent-cloud.cn/raw/9e863549f7f53c8bab2fa3c4b43c1715.png" alt="image"></p><ol><li>点击保存后，可以通过CreatePrepareFlow返回的DraftId保存草稿id</li><li>可以用于二次发起合同： <a href="https://qian.tencent.com/developers/companyApis/embedPages/CreatePrepareFlow/">CreatePrepareFlow</a>，ResourceType    =3 //草稿</li></ol>
+                     * @return NeedFlowDraft <p>发起过程中是否展示“保存草稿”按钮<br><img src="https://qcloudimg.tencent-cloud.cn/raw/9e863549f7f53c8bab2fa3c4b43c1715.png" alt="image"></p><ol><li>点击保存后，可以通过CreatePrepareFlow返回的DraftId保存草稿id</li><li>可以用于二次发起合同： <a href="https://qian.tencent.com/developers/companyApis/embedPages/CreatePrepareFlow/">CreatePrepareFlow</a>，ResourceType    =3 //草稿</li></ol>
                      * 
                      */
                     bool GetNeedFlowDraft() const;
 
                     /**
-                     * 设置<p>发起过程中是否保存草稿</p>
-                     * @param _needFlowDraft <p>发起过程中是否保存草稿</p>
+                     * 设置<p>发起过程中是否展示“保存草稿”按钮<br><img src="https://qcloudimg.tencent-cloud.cn/raw/9e863549f7f53c8bab2fa3c4b43c1715.png" alt="image"></p><ol><li>点击保存后，可以通过CreatePrepareFlow返回的DraftId保存草稿id</li><li>可以用于二次发起合同： <a href="https://qian.tencent.com/developers/companyApis/embedPages/CreatePrepareFlow/">CreatePrepareFlow</a>，ResourceType    =3 //草稿</li></ol>
+                     * @param _needFlowDraft <p>发起过程中是否展示“保存草稿”按钮<br><img src="https://qcloudimg.tencent-cloud.cn/raw/9e863549f7f53c8bab2fa3c4b43c1715.png" alt="image"></p><ol><li>点击保存后，可以通过CreatePrepareFlow返回的DraftId保存草稿id</li><li>可以用于二次发起合同： <a href="https://qian.tencent.com/developers/companyApis/embedPages/CreatePrepareFlow/">CreatePrepareFlow</a>，ResourceType    =3 //草稿</li></ol>
                      * 
                      */
                     void SetNeedFlowDraft(const bool& _needFlowDraft);
@@ -714,7 +714,7 @@ namespace TencentCloud
                     bool m_signAfterStartHasBeenSet;
 
                     /**
-                     * <p>发起过程中是否保存草稿</p>
+                     * <p>发起过程中是否展示“保存草稿”按钮<br><img src="https://qcloudimg.tencent-cloud.cn/raw/9e863549f7f53c8bab2fa3c4b43c1715.png" alt="image"></p><ol><li>点击保存后，可以通过CreatePrepareFlow返回的DraftId保存草稿id</li><li>可以用于二次发起合同： <a href="https://qian.tencent.com/developers/companyApis/embedPages/CreatePrepareFlow/">CreatePrepareFlow</a>，ResourceType    =3 //草稿</li></ol>
                      */
                     bool m_needFlowDraft;
                     bool m_needFlowDraftHasBeenSet;

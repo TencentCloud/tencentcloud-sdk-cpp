@@ -29,7 +29,9 @@ Variable::Variable() :
     m_typeHasBeenSet(false),
     m_variableIdHasBeenSet(false),
     m_enableEndpointsHasBeenSet(false),
-    m_endpointListHasBeenSet(false)
+    m_endpointListHasBeenSet(false),
+    m_isBuiltinHasBeenSet(false),
+    m_enableSandboxHasBeenSet(false)
 {
 }
 
@@ -131,6 +133,26 @@ CoreInternalOutcome Variable::Deserialize(const rapidjson::Value &value)
         m_endpointListHasBeenSet = true;
     }
 
+    if (value.HasMember("IsBuiltin") && !value["IsBuiltin"].IsNull())
+    {
+        if (!value["IsBuiltin"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Variable.IsBuiltin` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isBuiltin = value["IsBuiltin"].GetBool();
+        m_isBuiltinHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableSandbox") && !value["EnableSandbox"].IsNull())
+    {
+        if (!value["EnableSandbox"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Variable.EnableSandbox` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableSandbox = value["EnableSandbox"].GetBool();
+        m_enableSandboxHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +235,22 @@ void Variable::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_isBuiltinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsBuiltin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isBuiltin, allocator);
+    }
+
+    if (m_enableSandboxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSandbox";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableSandbox, allocator);
     }
 
 }
@@ -360,5 +398,37 @@ void Variable::SetEndpointList(const vector<string>& _endpointList)
 bool Variable::EndpointListHasBeenSet() const
 {
     return m_endpointListHasBeenSet;
+}
+
+bool Variable::GetIsBuiltin() const
+{
+    return m_isBuiltin;
+}
+
+void Variable::SetIsBuiltin(const bool& _isBuiltin)
+{
+    m_isBuiltin = _isBuiltin;
+    m_isBuiltinHasBeenSet = true;
+}
+
+bool Variable::IsBuiltinHasBeenSet() const
+{
+    return m_isBuiltinHasBeenSet;
+}
+
+bool Variable::GetEnableSandbox() const
+{
+    return m_enableSandbox;
+}
+
+void Variable::SetEnableSandbox(const bool& _enableSandbox)
+{
+    m_enableSandbox = _enableSandbox;
+    m_enableSandboxHasBeenSet = true;
+}
+
+bool Variable::EnableSandboxHasBeenSet() const
+{
+    return m_enableSandboxHasBeenSet;
 }
 

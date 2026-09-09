@@ -1084,6 +1084,384 @@ namespace TencentCloud
                      */
                     bool DomainSuffixHasBeenSet() const;
 
+                    /**
+                     * 获取<p>连通性检查开关，0-关闭 1-开启，默认1(只支持32位)</p>
+                     * @return ConnectivityCheckSwitch <p>连通性检查开关，0-关闭 1-开启，默认1(只支持32位)</p>
+                     * 
+                     */
+                    int64_t GetConnectivityCheckSwitch() const;
+
+                    /**
+                     * 设置<p>连通性检查开关，0-关闭 1-开启，默认1(只支持32位)</p>
+                     * @param _connectivityCheckSwitch <p>连通性检查开关，0-关闭 1-开启，默认1(只支持32位)</p>
+                     * 
+                     */
+                    void SetConnectivityCheckSwitch(const int64_t& _connectivityCheckSwitch);
+
+                    /**
+                     * 判断参数 ConnectivityCheckSwitch 是否已赋值
+                     * @return ConnectivityCheckSwitch 是否已赋值
+                     * 
+                     */
+                    bool ConnectivityCheckSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取<p>连通性检查测试间隔数值，最小为1，默认1(只支持32位)</p>
+                     * @return ConnectivityCheckInterval <p>连通性检查测试间隔数值，最小为1，默认1(只支持32位)</p>
+                     * 
+                     */
+                    int64_t GetConnectivityCheckInterval() const;
+
+                    /**
+                     * 设置<p>连通性检查测试间隔数值，最小为1，默认1(只支持32位)</p>
+                     * @param _connectivityCheckInterval <p>连通性检查测试间隔数值，最小为1，默认1(只支持32位)</p>
+                     * 
+                     */
+                    void SetConnectivityCheckInterval(const int64_t& _connectivityCheckInterval);
+
+                    /**
+                     * 判断参数 ConnectivityCheckInterval 是否已赋值
+                     * @return ConnectivityCheckInterval 是否已赋值
+                     * 
+                     */
+                    bool ConnectivityCheckIntervalHasBeenSet() const;
+
+                    /**
+                     * 获取<p>连通性检查测试间隔单位 minutes/hours/days，默认hours</p>
+                     * @return ConnectivityCheckIntervalUnit <p>连通性检查测试间隔单位 minutes/hours/days，默认hours</p>
+                     * 
+                     */
+                    std::string GetConnectivityCheckIntervalUnit() const;
+
+                    /**
+                     * 设置<p>连通性检查测试间隔单位 minutes/hours/days，默认hours</p>
+                     * @param _connectivityCheckIntervalUnit <p>连通性检查测试间隔单位 minutes/hours/days，默认hours</p>
+                     * 
+                     */
+                    void SetConnectivityCheckIntervalUnit(const std::string& _connectivityCheckIntervalUnit);
+
+                    /**
+                     * 判断参数 ConnectivityCheckIntervalUnit 是否已赋值
+                     * @return ConnectivityCheckIntervalUnit 是否已赋值
+                     * 
+                     */
+                    bool ConnectivityCheckIntervalUnitHasBeenSet() const;
+
+                    /**
+                     * 获取<p>URL审计开关：0-关闭 1-开启，默认0</p>
+                     * @return URLAuditState <p>URL审计开关：0-关闭 1-开启，默认0</p>
+                     * 
+                     */
+                    int64_t GetURLAuditState() const;
+
+                    /**
+                     * 设置<p>URL审计开关：0-关闭 1-开启，默认0</p>
+                     * @param _uRLAuditState <p>URL审计开关：0-关闭 1-开启，默认0</p>
+                     * 
+                     */
+                    void SetURLAuditState(const int64_t& _uRLAuditState);
+
+                    /**
+                     * 判断参数 URLAuditState 是否已赋值
+                     * @return URLAuditState 是否已赋值
+                     * 
+                     */
+                    bool URLAuditStateHasBeenSet() const;
+
+                    /**
+                     * 获取<p>URL审计证书ID列表，多个用分号分隔</p>
+                     * @return URLAuditId <p>URL审计证书ID列表，多个用分号分隔</p>
+                     * 
+                     */
+                    std::string GetURLAuditId() const;
+
+                    /**
+                     * 设置<p>URL审计证书ID列表，多个用分号分隔</p>
+                     * @param _uRLAuditId <p>URL审计证书ID列表，多个用分号分隔</p>
+                     * 
+                     */
+                    void SetURLAuditId(const std::string& _uRLAuditId);
+
+                    /**
+                     * 判断参数 URLAuditId 是否已赋值
+                     * @return URLAuditId 是否已赋值
+                     * 
+                     */
+                    bool URLAuditIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>URL审计路径，多个用分号分隔</p>
+                     * @return URLPath <p>URL审计路径，多个用分号分隔</p>
+                     * 
+                     */
+                    std::string GetURLPath() const;
+
+                    /**
+                     * 设置<p>URL审计路径，多个用分号分隔</p>
+                     * @param _uRLPath <p>URL审计路径，多个用分号分隔</p>
+                     * 
+                     */
+                    void SetURLPath(const std::string& _uRLPath);
+
+                    /**
+                     * 判断参数 URLPath 是否已赋值
+                     * @return URLPath 是否已赋值
+                     * 
+                     */
+                    bool URLPathHasBeenSet() const;
+
+                    /**
+                     * 获取<p>检测方式：0-未检测 1-主动 2-流量</p>
+                     * @return ReachableType <p>检测方式：0-未检测 1-主动 2-流量</p>
+                     * 
+                     */
+                    int64_t GetReachableType() const;
+
+                    /**
+                     * 设置<p>检测方式：0-未检测 1-主动 2-流量</p>
+                     * @param _reachableType <p>检测方式：0-未检测 1-主动 2-流量</p>
+                     * 
+                     */
+                    void SetReachableType(const int64_t& _reachableType);
+
+                    /**
+                     * 判断参数 ReachableType 是否已赋值
+                     * @return ReachableType 是否已赋值
+                     * 
+                     */
+                    bool ReachableTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>API密钥名称</p>
+                     * @return APISecretName <p>API密钥名称</p>
+                     * 
+                     */
+                    std::string GetAPISecretName() const;
+
+                    /**
+                     * 设置<p>API密钥名称</p>
+                     * @param _aPISecretName <p>API密钥名称</p>
+                     * 
+                     */
+                    void SetAPISecretName(const std::string& _aPISecretName);
+
+                    /**
+                     * 判断参数 APISecretName 是否已赋值
+                     * @return APISecretName 是否已赋值
+                     * 
+                     */
+                    bool APISecretNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>API密钥Key</p>
+                     * @return APISecretKey <p>API密钥Key</p>
+                     * 
+                     */
+                    std::string GetAPISecretKey() const;
+
+                    /**
+                     * 设置<p>API密钥Key</p>
+                     * @param _aPISecretKey <p>API密钥Key</p>
+                     * 
+                     */
+                    void SetAPISecretKey(const std::string& _aPISecretKey);
+
+                    /**
+                     * 判断参数 APISecretKey 是否已赋值
+                     * @return APISecretKey 是否已赋值
+                     * 
+                     */
+                    bool APISecretKeyHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否为敏感资源：0-否 1-是</p>
+                     * @return EnableSensitiveRes <p>是否为敏感资源：0-否 1-是</p>
+                     * 
+                     */
+                    int64_t GetEnableSensitiveRes() const;
+
+                    /**
+                     * 设置<p>是否为敏感资源：0-否 1-是</p>
+                     * @param _enableSensitiveRes <p>是否为敏感资源：0-否 1-是</p>
+                     * 
+                     */
+                    void SetEnableSensitiveRes(const int64_t& _enableSensitiveRes);
+
+                    /**
+                     * 判断参数 EnableSensitiveRes 是否已赋值
+                     * @return EnableSensitiveRes 是否已赋值
+                     * 
+                     */
+                    bool EnableSensitiveResHasBeenSet() const;
+
+                    /**
+                     * 获取<p>用户接入IP限制开关：0-不启用 1-启用</p>
+                     * @return EnableIPPolicy <p>用户接入IP限制开关：0-不启用 1-启用</p>
+                     * 
+                     */
+                    int64_t GetEnableIPPolicy() const;
+
+                    /**
+                     * 设置<p>用户接入IP限制开关：0-不启用 1-启用</p>
+                     * @param _enableIPPolicy <p>用户接入IP限制开关：0-不启用 1-启用</p>
+                     * 
+                     */
+                    void SetEnableIPPolicy(const int64_t& _enableIPPolicy);
+
+                    /**
+                     * 判断参数 EnableIPPolicy 是否已赋值
+                     * @return EnableIPPolicy 是否已赋值
+                     * 
+                     */
+                    bool EnableIPPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取<p>IP分组属性：0-白名单 1-黑名单</p>
+                     * @return IPPolicyAttr <p>IP分组属性：0-白名单 1-黑名单</p>
+                     * 
+                     */
+                    int64_t GetIPPolicyAttr() const;
+
+                    /**
+                     * 设置<p>IP分组属性：0-白名单 1-黑名单</p>
+                     * @param _iPPolicyAttr <p>IP分组属性：0-白名单 1-黑名单</p>
+                     * 
+                     */
+                    void SetIPPolicyAttr(const int64_t& _iPPolicyAttr);
+
+                    /**
+                     * 判断参数 IPPolicyAttr 是否已赋值
+                     * @return IPPolicyAttr 是否已赋值
+                     * 
+                     */
+                    bool IPPolicyAttrHasBeenSet() const;
+
+                    /**
+                     * 获取<p>IP分组ID列表</p>
+                     * @return IPPolicyIds <p>IP分组ID列表</p>
+                     * 
+                     */
+                    std::vector<int64_t> GetIPPolicyIds() const;
+
+                    /**
+                     * 设置<p>IP分组ID列表</p>
+                     * @param _iPPolicyIds <p>IP分组ID列表</p>
+                     * 
+                     */
+                    void SetIPPolicyIds(const std::vector<int64_t>& _iPPolicyIds);
+
+                    /**
+                     * 判断参数 IPPolicyIds 是否已赋值
+                     * @return IPPolicyIds 是否已赋值
+                     * 
+                     */
+                    bool IPPolicyIdsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>IP分组名称（分号分隔）</p>
+                     * @return IPPolicyNames <p>IP分组名称（分号分隔）</p>
+                     * 
+                     */
+                    std::string GetIPPolicyNames() const;
+
+                    /**
+                     * 设置<p>IP分组名称（分号分隔）</p>
+                     * @param _iPPolicyNames <p>IP分组名称（分号分隔）</p>
+                     * 
+                     */
+                    void SetIPPolicyNames(const std::string& _iPPolicyNames);
+
+                    /**
+                     * 判断参数 IPPolicyNames 是否已赋值
+                     * @return IPPolicyNames 是否已赋值
+                     * 
+                     */
+                    bool IPPolicyNamesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>访问浏览器规则开关：0-不启用 1-启用</p>
+                     * @return EnableUserAgent <p>访问浏览器规则开关：0-不启用 1-启用</p>
+                     * 
+                     */
+                    int64_t GetEnableUserAgent() const;
+
+                    /**
+                     * 设置<p>访问浏览器规则开关：0-不启用 1-启用</p>
+                     * @param _enableUserAgent <p>访问浏览器规则开关：0-不启用 1-启用</p>
+                     * 
+                     */
+                    void SetEnableUserAgent(const int64_t& _enableUserAgent);
+
+                    /**
+                     * 判断参数 EnableUserAgent 是否已赋值
+                     * @return EnableUserAgent 是否已赋值
+                     * 
+                     */
+                    bool EnableUserAgentHasBeenSet() const;
+
+                    /**
+                     * 获取<p>浏览器规则属性：0-白名单 1-黑名单</p>
+                     * @return UserAgentAttr <p>浏览器规则属性：0-白名单 1-黑名单</p>
+                     * 
+                     */
+                    int64_t GetUserAgentAttr() const;
+
+                    /**
+                     * 设置<p>浏览器规则属性：0-白名单 1-黑名单</p>
+                     * @param _userAgentAttr <p>浏览器规则属性：0-白名单 1-黑名单</p>
+                     * 
+                     */
+                    void SetUserAgentAttr(const int64_t& _userAgentAttr);
+
+                    /**
+                     * 判断参数 UserAgentAttr 是否已赋值
+                     * @return UserAgentAttr 是否已赋值
+                     * 
+                     */
+                    bool UserAgentAttrHasBeenSet() const;
+
+                    /**
+                     * 获取<p>浏览器规则ID列表</p>
+                     * @return UserAgentIds <p>浏览器规则ID列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetUserAgentIds() const;
+
+                    /**
+                     * 设置<p>浏览器规则ID列表</p>
+                     * @param _userAgentIds <p>浏览器规则ID列表</p>
+                     * 
+                     */
+                    void SetUserAgentIds(const std::vector<std::string>& _userAgentIds);
+
+                    /**
+                     * 判断参数 UserAgentIds 是否已赋值
+                     * @return UserAgentIds 是否已赋值
+                     * 
+                     */
+                    bool UserAgentIdsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>浏览器规则名称（分号分隔）</p>
+                     * @return UserAgentNames <p>浏览器规则名称（分号分隔）</p>
+                     * 
+                     */
+                    std::string GetUserAgentNames() const;
+
+                    /**
+                     * 设置<p>浏览器规则名称（分号分隔）</p>
+                     * @param _userAgentNames <p>浏览器规则名称（分号分隔）</p>
+                     * 
+                     */
+                    void SetUserAgentNames(const std::string& _userAgentNames);
+
+                    /**
+                     * 判断参数 UserAgentNames 是否已赋值
+                     * @return UserAgentNames 是否已赋值
+                     * 
+                     */
+                    bool UserAgentNamesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1376,6 +1754,114 @@ namespace TencentCloud
                      */
                     std::string m_domainSuffix;
                     bool m_domainSuffixHasBeenSet;
+
+                    /**
+                     * <p>连通性检查开关，0-关闭 1-开启，默认1(只支持32位)</p>
+                     */
+                    int64_t m_connectivityCheckSwitch;
+                    bool m_connectivityCheckSwitchHasBeenSet;
+
+                    /**
+                     * <p>连通性检查测试间隔数值，最小为1，默认1(只支持32位)</p>
+                     */
+                    int64_t m_connectivityCheckInterval;
+                    bool m_connectivityCheckIntervalHasBeenSet;
+
+                    /**
+                     * <p>连通性检查测试间隔单位 minutes/hours/days，默认hours</p>
+                     */
+                    std::string m_connectivityCheckIntervalUnit;
+                    bool m_connectivityCheckIntervalUnitHasBeenSet;
+
+                    /**
+                     * <p>URL审计开关：0-关闭 1-开启，默认0</p>
+                     */
+                    int64_t m_uRLAuditState;
+                    bool m_uRLAuditStateHasBeenSet;
+
+                    /**
+                     * <p>URL审计证书ID列表，多个用分号分隔</p>
+                     */
+                    std::string m_uRLAuditId;
+                    bool m_uRLAuditIdHasBeenSet;
+
+                    /**
+                     * <p>URL审计路径，多个用分号分隔</p>
+                     */
+                    std::string m_uRLPath;
+                    bool m_uRLPathHasBeenSet;
+
+                    /**
+                     * <p>检测方式：0-未检测 1-主动 2-流量</p>
+                     */
+                    int64_t m_reachableType;
+                    bool m_reachableTypeHasBeenSet;
+
+                    /**
+                     * <p>API密钥名称</p>
+                     */
+                    std::string m_aPISecretName;
+                    bool m_aPISecretNameHasBeenSet;
+
+                    /**
+                     * <p>API密钥Key</p>
+                     */
+                    std::string m_aPISecretKey;
+                    bool m_aPISecretKeyHasBeenSet;
+
+                    /**
+                     * <p>是否为敏感资源：0-否 1-是</p>
+                     */
+                    int64_t m_enableSensitiveRes;
+                    bool m_enableSensitiveResHasBeenSet;
+
+                    /**
+                     * <p>用户接入IP限制开关：0-不启用 1-启用</p>
+                     */
+                    int64_t m_enableIPPolicy;
+                    bool m_enableIPPolicyHasBeenSet;
+
+                    /**
+                     * <p>IP分组属性：0-白名单 1-黑名单</p>
+                     */
+                    int64_t m_iPPolicyAttr;
+                    bool m_iPPolicyAttrHasBeenSet;
+
+                    /**
+                     * <p>IP分组ID列表</p>
+                     */
+                    std::vector<int64_t> m_iPPolicyIds;
+                    bool m_iPPolicyIdsHasBeenSet;
+
+                    /**
+                     * <p>IP分组名称（分号分隔）</p>
+                     */
+                    std::string m_iPPolicyNames;
+                    bool m_iPPolicyNamesHasBeenSet;
+
+                    /**
+                     * <p>访问浏览器规则开关：0-不启用 1-启用</p>
+                     */
+                    int64_t m_enableUserAgent;
+                    bool m_enableUserAgentHasBeenSet;
+
+                    /**
+                     * <p>浏览器规则属性：0-白名单 1-黑名单</p>
+                     */
+                    int64_t m_userAgentAttr;
+                    bool m_userAgentAttrHasBeenSet;
+
+                    /**
+                     * <p>浏览器规则ID列表</p>
+                     */
+                    std::vector<std::string> m_userAgentIds;
+                    bool m_userAgentIdsHasBeenSet;
+
+                    /**
+                     * <p>浏览器规则名称（分号分隔）</p>
+                     */
+                    std::string m_userAgentNames;
+                    bool m_userAgentNamesHasBeenSet;
 
                 };
             }

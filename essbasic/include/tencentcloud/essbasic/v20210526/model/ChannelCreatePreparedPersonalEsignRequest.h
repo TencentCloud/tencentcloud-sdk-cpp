@@ -129,27 +129,6 @@ namespace TencentCloud
                     bool SealNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>电子印章图片base64编码，大小不超过10M（原始图片不超过5M），只支持PNG或JPG图片格式。</p>
-                     * @return SealImage <p>电子印章图片base64编码，大小不超过10M（原始图片不超过5M），只支持PNG或JPG图片格式。</p>
-                     * 
-                     */
-                    std::string GetSealImage() const;
-
-                    /**
-                     * 设置<p>电子印章图片base64编码，大小不超过10M（原始图片不超过5M），只支持PNG或JPG图片格式。</p>
-                     * @param _sealImage <p>电子印章图片base64编码，大小不超过10M（原始图片不超过5M），只支持PNG或JPG图片格式。</p>
-                     * 
-                     */
-                    void SetSealImage(const std::string& _sealImage);
-
-                    /**
-                     * 判断参数 SealImage 是否已赋值
-                     * @return SealImage 是否已赋值
-                     * 
-                     */
-                    bool SealImageHasBeenSet() const;
-
-                    /**
                      * 获取<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      * @return Operator <p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      * 
@@ -192,27 +171,6 @@ namespace TencentCloud
                     bool IdCardTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>是否开启印章图片压缩处理，默认不开启，如需开启请设置为 true。当印章超过 2M 时建议开启，开启后图片的 hash 将发生变化。</p>
-                     * @return SealImageCompress <p>是否开启印章图片压缩处理，默认不开启，如需开启请设置为 true。当印章超过 2M 时建议开启，开启后图片的 hash 将发生变化。</p>
-                     * 
-                     */
-                    bool GetSealImageCompress() const;
-
-                    /**
-                     * 设置<p>是否开启印章图片压缩处理，默认不开启，如需开启请设置为 true。当印章超过 2M 时建议开启，开启后图片的 hash 将发生变化。</p>
-                     * @param _sealImageCompress <p>是否开启印章图片压缩处理，默认不开启，如需开启请设置为 true。当印章超过 2M 时建议开启，开启后图片的 hash 将发生变化。</p>
-                     * 
-                     */
-                    void SetSealImageCompress(const bool& _sealImageCompress);
-
-                    /**
-                     * 判断参数 SealImageCompress 是否已赋值
-                     * @return SealImageCompress 是否已赋值
-                     * 
-                     */
-                    bool SealImageCompressHasBeenSet() const;
-
-                    /**
                      * 获取<p>手机号码；当需要开通自动签时，该参数必传</p>
                      * @return Mobile <p>手机号码；当需要开通自动签时，该参数必传</p>
                      * 
@@ -234,46 +192,25 @@ namespace TencentCloud
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取<p>该字段已不再使用</p>
-                     * @return EnableAutoSign <p>该字段已不再使用</p>
-                     * @deprecated
-                     */
-                    bool GetEnableAutoSign() const;
-
-                    /**
-                     * 设置<p>该字段已不再使用</p>
-                     * @param _enableAutoSign <p>该字段已不再使用</p>
-                     * @deprecated
-                     */
-                    void SetEnableAutoSign(const bool& _enableAutoSign);
-
-                    /**
-                     * 判断参数 EnableAutoSign 是否已赋值
-                     * @return EnableAutoSign 是否已赋值
-                     * @deprecated
-                     */
-                    bool EnableAutoSignHasBeenSet() const;
-
-                    /**
-                     * 获取<p>设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。 0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次 1-不绑定，发起合同时将按标准合同套餐进行扣减</p>
-                     * @return LicenseType <p>设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。 0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次 1-不绑定，发起合同时将按标准合同套餐进行扣减</p>
+                     * 获取<p>印章图片文件 id取值：填写的FileId通过UploadFiles接口上传文件获取。</p>
+                     * @return FileId <p>印章图片文件 id取值：填写的FileId通过UploadFiles接口上传文件获取。</p>
                      * 
                      */
-                    int64_t GetLicenseType() const;
+                    std::string GetFileId() const;
 
                     /**
-                     * 设置<p>设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。 0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次 1-不绑定，发起合同时将按标准合同套餐进行扣减</p>
-                     * @param _licenseType <p>设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。 0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次 1-不绑定，发起合同时将按标准合同套餐进行扣减</p>
+                     * 设置<p>印章图片文件 id取值：填写的FileId通过UploadFiles接口上传文件获取。</p>
+                     * @param _fileId <p>印章图片文件 id取值：填写的FileId通过UploadFiles接口上传文件获取。</p>
                      * 
                      */
-                    void SetLicenseType(const int64_t& _licenseType);
+                    void SetFileId(const std::string& _fileId);
 
                     /**
-                     * 判断参数 LicenseType 是否已赋值
-                     * @return LicenseType 是否已赋值
+                     * 判断参数 FileId 是否已赋值
+                     * @return FileId 是否已赋值
                      * 
                      */
-                    bool LicenseTypeHasBeenSet() const;
+                    bool FileIdHasBeenSet() const;
 
                     /**
                      * 获取<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
@@ -297,25 +234,88 @@ namespace TencentCloud
                     bool SceneKeyHasBeenSet() const;
 
                     /**
-                     * 获取<p>印章图片文件 id取值：填写的FileId通过UploadFiles接口上传文件获取。</p>
-                     * @return FileId <p>印章图片文件 id取值：填写的FileId通过UploadFiles接口上传文件获取。</p>
-                     * 
+                     * 获取<p>该字段已不再使用，设置不生效。</p>
+                     * @return LicenseType <p>该字段已不再使用，设置不生效。</p>
+                     * @deprecated
                      */
-                    std::string GetFileId() const;
+                    int64_t GetLicenseType() const;
 
                     /**
-                     * 设置<p>印章图片文件 id取值：填写的FileId通过UploadFiles接口上传文件获取。</p>
-                     * @param _fileId <p>印章图片文件 id取值：填写的FileId通过UploadFiles接口上传文件获取。</p>
-                     * 
+                     * 设置<p>该字段已不再使用，设置不生效。</p>
+                     * @param _licenseType <p>该字段已不再使用，设置不生效。</p>
+                     * @deprecated
                      */
-                    void SetFileId(const std::string& _fileId);
+                    void SetLicenseType(const int64_t& _licenseType);
 
                     /**
-                     * 判断参数 FileId 是否已赋值
-                     * @return FileId 是否已赋值
-                     * 
+                     * 判断参数 LicenseType 是否已赋值
+                     * @return LicenseType 是否已赋值
+                     * @deprecated
                      */
-                    bool FileIdHasBeenSet() const;
+                    bool LicenseTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>该字段已不再使用，请使用 FileId 参数代替。</p>
+                     * @return SealImage <p>该字段已不再使用，请使用 FileId 参数代替。</p>
+                     * @deprecated
+                     */
+                    std::string GetSealImage() const;
+
+                    /**
+                     * 设置<p>该字段已不再使用，请使用 FileId 参数代替。</p>
+                     * @param _sealImage <p>该字段已不再使用，请使用 FileId 参数代替。</p>
+                     * @deprecated
+                     */
+                    void SetSealImage(const std::string& _sealImage);
+
+                    /**
+                     * 判断参数 SealImage 是否已赋值
+                     * @return SealImage 是否已赋值
+                     * @deprecated
+                     */
+                    bool SealImageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>该字段已不再使用，设置不生效。</p>
+                     * @return EnableAutoSign <p>该字段已不再使用，设置不生效。</p>
+                     * @deprecated
+                     */
+                    bool GetEnableAutoSign() const;
+
+                    /**
+                     * 设置<p>该字段已不再使用，设置不生效。</p>
+                     * @param _enableAutoSign <p>该字段已不再使用，设置不生效。</p>
+                     * @deprecated
+                     */
+                    void SetEnableAutoSign(const bool& _enableAutoSign);
+
+                    /**
+                     * 判断参数 EnableAutoSign 是否已赋值
+                     * @return EnableAutoSign 是否已赋值
+                     * @deprecated
+                     */
+                    bool EnableAutoSignHasBeenSet() const;
+
+                    /**
+                     * 获取<p>该字段已不再使用，设置不生效。</p>
+                     * @return SealImageCompress <p>该字段已不再使用，设置不生效。</p>
+                     * @deprecated
+                     */
+                    bool GetSealImageCompress() const;
+
+                    /**
+                     * 设置<p>该字段已不再使用，设置不生效。</p>
+                     * @param _sealImageCompress <p>该字段已不再使用，设置不生效。</p>
+                     * @deprecated
+                     */
+                    void SetSealImageCompress(const bool& _sealImageCompress);
+
+                    /**
+                     * 判断参数 SealImageCompress 是否已赋值
+                     * @return SealImageCompress 是否已赋值
+                     * @deprecated
+                     */
+                    bool SealImageCompressHasBeenSet() const;
 
                 private:
 
@@ -344,12 +344,6 @@ namespace TencentCloud
                     bool m_sealNameHasBeenSet;
 
                     /**
-                     * <p>电子印章图片base64编码，大小不超过10M（原始图片不超过5M），只支持PNG或JPG图片格式。</p>
-                     */
-                    std::string m_sealImage;
-                    bool m_sealImageHasBeenSet;
-
-                    /**
                      * <p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      */
                     UserInfo m_operator;
@@ -362,28 +356,16 @@ namespace TencentCloud
                     bool m_idCardTypeHasBeenSet;
 
                     /**
-                     * <p>是否开启印章图片压缩处理，默认不开启，如需开启请设置为 true。当印章超过 2M 时建议开启，开启后图片的 hash 将发生变化。</p>
-                     */
-                    bool m_sealImageCompress;
-                    bool m_sealImageCompressHasBeenSet;
-
-                    /**
                      * <p>手机号码；当需要开通自动签时，该参数必传</p>
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * <p>该字段已不再使用</p>
+                     * <p>印章图片文件 id取值：填写的FileId通过UploadFiles接口上传文件获取。</p>
                      */
-                    bool m_enableAutoSign;
-                    bool m_enableAutoSignHasBeenSet;
-
-                    /**
-                     * <p>设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。 0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次 1-不绑定，发起合同时将按标准合同套餐进行扣减</p>
-                     */
-                    int64_t m_licenseType;
-                    bool m_licenseTypeHasBeenSet;
+                    std::string m_fileId;
+                    bool m_fileIdHasBeenSet;
 
                     /**
                      * <ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
@@ -392,10 +374,28 @@ namespace TencentCloud
                     bool m_sceneKeyHasBeenSet;
 
                     /**
-                     * <p>印章图片文件 id取值：填写的FileId通过UploadFiles接口上传文件获取。</p>
+                     * <p>该字段已不再使用，设置不生效。</p>
                      */
-                    std::string m_fileId;
-                    bool m_fileIdHasBeenSet;
+                    int64_t m_licenseType;
+                    bool m_licenseTypeHasBeenSet;
+
+                    /**
+                     * <p>该字段已不再使用，请使用 FileId 参数代替。</p>
+                     */
+                    std::string m_sealImage;
+                    bool m_sealImageHasBeenSet;
+
+                    /**
+                     * <p>该字段已不再使用，设置不生效。</p>
+                     */
+                    bool m_enableAutoSign;
+                    bool m_enableAutoSignHasBeenSet;
+
+                    /**
+                     * <p>该字段已不再使用，设置不生效。</p>
+                     */
+                    bool m_sealImageCompress;
+                    bool m_sealImageCompressHasBeenSet;
 
                 };
             }

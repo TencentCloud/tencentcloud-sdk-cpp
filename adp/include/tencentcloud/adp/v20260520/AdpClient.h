@@ -33,6 +33,8 @@
 #include <tencentcloud/adp/v20260520/model/CreateAppResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateAppTriggerRequest.h>
 #include <tencentcloud/adp/v20260520/model/CreateAppTriggerResponse.h>
+#include <tencentcloud/adp/v20260520/model/CreateChannelRequest.h>
+#include <tencentcloud/adp/v20260520/model/CreateChannelResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateConversationRequest.h>
 #include <tencentcloud/adp/v20260520/model/CreateConversationResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateMsgRecordCategoryRequest.h>
@@ -59,6 +61,8 @@
 #include <tencentcloud/adp/v20260520/model/DeleteAppResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeleteAppTriggerRequest.h>
 #include <tencentcloud/adp/v20260520/model/DeleteAppTriggerResponse.h>
+#include <tencentcloud/adp/v20260520/model/DeleteChannelRequest.h>
+#include <tencentcloud/adp/v20260520/model/DeleteChannelResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeleteConversationRequest.h>
 #include <tencentcloud/adp/v20260520/model/DeleteConversationResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeleteMsgRecordCategoryRequest.h>
@@ -97,6 +101,10 @@
 #include <tencentcloud/adp/v20260520/model/DescribeAuditLogListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeAuditLogMetaRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeAuditLogMetaResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeChannelRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeChannelResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeChannelListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeChannelListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeConcurrencyLimitDetailListRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeConcurrencyLimitDetailListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeConsumptionDetailListRequest.h>
@@ -155,6 +163,8 @@
 #include <tencentcloud/adp/v20260520/model/ModifyAppResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyAppTriggerRequest.h>
 #include <tencentcloud/adp/v20260520/model/ModifyAppTriggerResponse.h>
+#include <tencentcloud/adp/v20260520/model/ModifyChannelRequest.h>
+#include <tencentcloud/adp/v20260520/model/ModifyChannelResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyConversationRequest.h>
 #include <tencentcloud/adp/v20260520/model/ModifyConversationResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyMsgRecordCategoryRequest.h>
@@ -214,6 +224,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAppTriggerResponse> CreateAppTriggerOutcome;
                 typedef std::future<CreateAppTriggerOutcome> CreateAppTriggerOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CreateAppTriggerRequest&, CreateAppTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppTriggerAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateChannelResponse> CreateChannelOutcome;
+                typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::CreateChannelRequest&, CreateChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateChannelAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateConversationResponse> CreateConversationOutcome;
                 typedef std::future<CreateConversationOutcome> CreateConversationOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CreateConversationRequest&, CreateConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConversationAsyncHandler;
@@ -253,6 +266,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAppTriggerResponse> DeleteAppTriggerOutcome;
                 typedef std::future<DeleteAppTriggerOutcome> DeleteAppTriggerOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DeleteAppTriggerRequest&, DeleteAppTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAppTriggerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteChannelResponse> DeleteChannelOutcome;
+                typedef std::future<DeleteChannelOutcome> DeleteChannelOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DeleteChannelRequest&, DeleteChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteChannelAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteConversationResponse> DeleteConversationOutcome;
                 typedef std::future<DeleteConversationOutcome> DeleteConversationOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DeleteConversationRequest&, DeleteConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConversationAsyncHandler;
@@ -310,6 +326,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAuditLogMetaResponse> DescribeAuditLogMetaOutcome;
                 typedef std::future<DescribeAuditLogMetaOutcome> DescribeAuditLogMetaOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeAuditLogMetaRequest&, DescribeAuditLogMetaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogMetaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeChannelResponse> DescribeChannelOutcome;
+                typedef std::future<DescribeChannelOutcome> DescribeChannelOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeChannelRequest&, DescribeChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeChannelListResponse> DescribeChannelListOutcome;
+                typedef std::future<DescribeChannelListOutcome> DescribeChannelListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeChannelListRequest&, DescribeChannelListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChannelListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeConcurrencyLimitDetailListResponse> DescribeConcurrencyLimitDetailListOutcome;
                 typedef std::future<DescribeConcurrencyLimitDetailListOutcome> DescribeConcurrencyLimitDetailListOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeConcurrencyLimitDetailListRequest&, DescribeConcurrencyLimitDetailListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConcurrencyLimitDetailListAsyncHandler;
@@ -397,6 +419,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAppTriggerResponse> ModifyAppTriggerOutcome;
                 typedef std::future<ModifyAppTriggerOutcome> ModifyAppTriggerOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ModifyAppTriggerRequest&, ModifyAppTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAppTriggerAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyChannelResponse> ModifyChannelOutcome;
+                typedef std::future<ModifyChannelOutcome> ModifyChannelOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::ModifyChannelRequest&, ModifyChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyChannelAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyConversationResponse> ModifyConversationOutcome;
                 typedef std::future<ModifyConversationOutcome> ModifyConversationOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ModifyConversationRequest&, ModifyConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConversationAsyncHandler;
@@ -446,7 +471,7 @@ namespace TencentCloud
 
 
                 /**
-                 *创建Agent
+                 *复制 Agent（目前仅支持claw模式））
                  * @param req CopyAgentFromAppRequest
                  * @return CopyAgentFromAppOutcome
                  */
@@ -489,6 +514,15 @@ namespace TencentCloud
                 CreateAppTriggerOutcome CreateAppTrigger(const Model::CreateAppTriggerRequest &request);
                 void CreateAppTriggerAsync(const Model::CreateAppTriggerRequest& request, const CreateAppTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAppTriggerOutcomeCallable CreateAppTriggerCallable(const Model::CreateAppTriggerRequest& request);
+
+                /**
+                 *创建渠道（通过scene区分B端应用发布渠道与C端IM渠道）
+                 * @param req CreateChannelRequest
+                 * @return CreateChannelOutcome
+                 */
+                CreateChannelOutcome CreateChannel(const Model::CreateChannelRequest &request);
+                void CreateChannelAsync(const Model::CreateChannelRequest& request, const CreateChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateChannelOutcomeCallable CreateChannelCallable(const Model::CreateChannelRequest& request);
 
                 /**
                  *新建会话
@@ -606,6 +640,15 @@ namespace TencentCloud
                 DeleteAppTriggerOutcome DeleteAppTrigger(const Model::DeleteAppTriggerRequest &request);
                 void DeleteAppTriggerAsync(const Model::DeleteAppTriggerRequest& request, const DeleteAppTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAppTriggerOutcomeCallable DeleteAppTriggerCallable(const Model::DeleteAppTriggerRequest& request);
+
+                /**
+                 *删除渠道（通过scene区分场景）
+                 * @param req DeleteChannelRequest
+                 * @return DeleteChannelOutcome
+                 */
+                DeleteChannelOutcome DeleteChannel(const Model::DeleteChannelRequest &request);
+                void DeleteChannelAsync(const Model::DeleteChannelRequest& request, const DeleteChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteChannelOutcomeCallable DeleteChannelCallable(const Model::DeleteChannelRequest& request);
 
                 /**
                  *删除会话
@@ -777,6 +820,24 @@ namespace TencentCloud
                 DescribeAuditLogMetaOutcome DescribeAuditLogMeta(const Model::DescribeAuditLogMetaRequest &request);
                 void DescribeAuditLogMetaAsync(const Model::DescribeAuditLogMetaRequest& request, const DescribeAuditLogMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAuditLogMetaOutcomeCallable DescribeAuditLogMetaCallable(const Model::DescribeAuditLogMetaRequest& request);
+
+                /**
+                 *获取渠道详情（scene区分场景）
+                 * @param req DescribeChannelRequest
+                 * @return DescribeChannelOutcome
+                 */
+                DescribeChannelOutcome DescribeChannel(const Model::DescribeChannelRequest &request);
+                void DescribeChannelAsync(const Model::DescribeChannelRequest& request, const DescribeChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeChannelOutcomeCallable DescribeChannelCallable(const Model::DescribeChannelRequest& request);
+
+                /**
+                 *获取渠道列表（scene区分场景）
+                 * @param req DescribeChannelListRequest
+                 * @return DescribeChannelListOutcome
+                 */
+                DescribeChannelListOutcome DescribeChannelList(const Model::DescribeChannelListRequest &request);
+                void DescribeChannelListAsync(const Model::DescribeChannelListRequest& request, const DescribeChannelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeChannelListOutcomeCallable DescribeChannelListCallable(const Model::DescribeChannelListRequest& request);
 
                 /**
                  *查询并发超限明细，包含QPM/TPM超限与专属并发超限记录，返回超限发生时间、空间、应用、模型及请求内容
@@ -1038,6 +1099,15 @@ namespace TencentCloud
                 ModifyAppTriggerOutcome ModifyAppTrigger(const Model::ModifyAppTriggerRequest &request);
                 void ModifyAppTriggerAsync(const Model::ModifyAppTriggerRequest& request, const ModifyAppTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAppTriggerOutcomeCallable ModifyAppTriggerCallable(const Model::ModifyAppTriggerRequest& request);
+
+                /**
+                 *修改渠道（支持修改备注与企微机器人渠道回调机器人ID）
+                 * @param req ModifyChannelRequest
+                 * @return ModifyChannelOutcome
+                 */
+                ModifyChannelOutcome ModifyChannel(const Model::ModifyChannelRequest &request);
+                void ModifyChannelAsync(const Model::ModifyChannelRequest& request, const ModifyChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyChannelOutcomeCallable ModifyChannelCallable(const Model::ModifyChannelRequest& request);
 
                 /**
                  *修改会话信息

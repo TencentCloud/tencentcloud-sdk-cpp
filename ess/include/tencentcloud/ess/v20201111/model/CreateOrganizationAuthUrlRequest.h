@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool AutoJumpUrlHasBeenSet() const;
 
                     /**
-                     * 获取<p>营业执照企业地址</p>
-                     * @return OrganizationAddress <p>营业执照企业地址</p>
+                     * 获取<p>营业执照企业地址</p><p>入参限制：最大长度500个字符</p>
+                     * @return OrganizationAddress <p>营业执照企业地址</p><p>入参限制：最大长度500个字符</p>
                      * 
                      */
                     std::string GetOrganizationAddress() const;
 
                     /**
-                     * 设置<p>营业执照企业地址</p>
-                     * @param _organizationAddress <p>营业执照企业地址</p>
+                     * 设置<p>营业执照企业地址</p><p>入参限制：最大长度500个字符</p>
+                     * @param _organizationAddress <p>营业执照企业地址</p><p>入参限制：最大长度500个字符</p>
                      * 
                      */
                     void SetOrganizationAddress(const std::string& _organizationAddress);
@@ -734,7 +734,7 @@ namespace TencentCloud
                     bool m_autoJumpUrlHasBeenSet;
 
                     /**
-                     * <p>营业执照企业地址</p>
+                     * <p>营业执照企业地址</p><p>入参限制：最大长度500个字符</p>
                      */
                     std::string m_organizationAddress;
                     bool m_organizationAddressHasBeenSet;
