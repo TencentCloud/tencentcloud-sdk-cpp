@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/adp/v20260520/model/AccessKeyParamConfig.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取角色名称
-                     * @return RoleName 角色名称
+                     * 获取<p>角色名称</p>
+                     * @return RoleName <p>角色名称</p>
                      * 
                      */
                     std::string GetRoleName() const;
 
                     /**
-                     * 设置角色名称
-                     * @param _roleName 角色名称
+                     * 设置<p>角色名称</p>
+                     * @param _roleName <p>角色名称</p>
                      * 
                      */
                     void SetRoleName(const std::string& _roleName);
@@ -68,39 +69,15 @@ namespace TencentCloud
                     bool RoleNameHasBeenSet() const;
 
                     /**
-                     * 获取密钥位置 HEADER/QUERY
-
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 头鉴权 |
-| 1 | 请求信息鉴权 |
-                     * @return KeyLocation 密钥位置 HEADER/QUERY
-
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 头鉴权 |
-| 1 | 请求信息鉴权 |
+                     * 获取<p>密钥位置 HEADER/QUERY</p><p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 | 头鉴权 |<br>| 1 | 请求信息鉴权 |</p>
+                     * @return KeyLocation <p>密钥位置 HEADER/QUERY</p><p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 | 头鉴权 |<br>| 1 | 请求信息鉴权 |</p>
                      * 
                      */
                     int64_t GetKeyLocation() const;
 
                     /**
-                     * 设置密钥位置 HEADER/QUERY
-
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 头鉴权 |
-| 1 | 请求信息鉴权 |
-                     * @param _keyLocation 密钥位置 HEADER/QUERY
-
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 头鉴权 |
-| 1 | 请求信息鉴权 |
+                     * 设置<p>密钥位置 HEADER/QUERY</p><p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 | 头鉴权 |<br>| 1 | 请求信息鉴权 |</p>
+                     * @param _keyLocation <p>密钥位置 HEADER/QUERY</p><p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 | 头鉴权 |<br>| 1 | 请求信息鉴权 |</p>
                      * 
                      */
                     void SetKeyLocation(const int64_t& _keyLocation);
@@ -113,15 +90,15 @@ namespace TencentCloud
                     bool KeyLocationHasBeenSet() const;
 
                     /**
-                     * 获取SecretId字段名称
-                     * @return SecretIdName SecretId字段名称
+                     * 获取<p>SecretId字段名称</p>
+                     * @return SecretIdName <p>SecretId字段名称</p>
                      * 
                      */
                     std::string GetSecretIdName() const;
 
                     /**
-                     * 设置SecretId字段名称
-                     * @param _secretIdName SecretId字段名称
+                     * 设置<p>SecretId字段名称</p>
+                     * @param _secretIdName <p>SecretId字段名称</p>
                      * 
                      */
                     void SetSecretIdName(const std::string& _secretIdName);
@@ -134,15 +111,15 @@ namespace TencentCloud
                     bool SecretIdNameHasBeenSet() const;
 
                     /**
-                     * 获取SecretKey字段名称
-                     * @return SecretKeyName SecretKey字段名称
+                     * 获取<p>SecretKey字段名称</p>
+                     * @return SecretKeyName <p>SecretKey字段名称</p>
                      * 
                      */
                     std::string GetSecretKeyName() const;
 
                     /**
-                     * 设置SecretKey字段名称
-                     * @param _secretKeyName SecretKey字段名称
+                     * 设置<p>SecretKey字段名称</p>
+                     * @param _secretKeyName <p>SecretKey字段名称</p>
                      * 
                      */
                     void SetSecretKeyName(const std::string& _secretKeyName);
@@ -154,37 +131,85 @@ namespace TencentCloud
                      */
                     bool SecretKeyNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>CAM Access Key 字段配置</p>
+                     * @return ParamList <p>CAM Access Key 字段配置</p>
+                     * 
+                     */
+                    std::vector<AccessKeyParamConfig> GetParamList() const;
+
+                    /**
+                     * 设置<p>CAM Access Key 字段配置</p>
+                     * @param _paramList <p>CAM Access Key 字段配置</p>
+                     * 
+                     */
+                    void SetParamList(const std::vector<AccessKeyParamConfig>& _paramList);
+
+                    /**
+                     * 判断参数 ParamList 是否已赋值
+                     * @return ParamList 是否已赋值
+                     * 
+                     */
+                    bool ParamListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否支持CAM角色授权</p>
+                     * @return SupportRoleAuth <p>是否支持CAM角色授权</p>
+                     * 
+                     */
+                    bool GetSupportRoleAuth() const;
+
+                    /**
+                     * 设置<p>是否支持CAM角色授权</p>
+                     * @param _supportRoleAuth <p>是否支持CAM角色授权</p>
+                     * 
+                     */
+                    void SetSupportRoleAuth(const bool& _supportRoleAuth);
+
+                    /**
+                     * 判断参数 SupportRoleAuth 是否已赋值
+                     * @return SupportRoleAuth 是否已赋值
+                     * 
+                     */
+                    bool SupportRoleAuthHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 角色名称
+                     * <p>角色名称</p>
                      */
                     std::string m_roleName;
                     bool m_roleNameHasBeenSet;
 
                     /**
-                     * 密钥位置 HEADER/QUERY
-
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | 头鉴权 |
-| 1 | 请求信息鉴权 |
+                     * <p>密钥位置 HEADER/QUERY</p><p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 | 头鉴权 |<br>| 1 | 请求信息鉴权 |</p>
                      */
                     int64_t m_keyLocation;
                     bool m_keyLocationHasBeenSet;
 
                     /**
-                     * SecretId字段名称
+                     * <p>SecretId字段名称</p>
                      */
                     std::string m_secretIdName;
                     bool m_secretIdNameHasBeenSet;
 
                     /**
-                     * SecretKey字段名称
+                     * <p>SecretKey字段名称</p>
                      */
                     std::string m_secretKeyName;
                     bool m_secretKeyNameHasBeenSet;
+
+                    /**
+                     * <p>CAM Access Key 字段配置</p>
+                     */
+                    std::vector<AccessKeyParamConfig> m_paramList;
+                    bool m_paramListHasBeenSet;
+
+                    /**
+                     * <p>是否支持CAM角色授权</p>
+                     */
+                    bool m_supportRoleAuth;
+                    bool m_supportRoleAuthHasBeenSet;
 
                 };
             }

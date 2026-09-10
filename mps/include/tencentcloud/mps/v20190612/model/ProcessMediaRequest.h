@@ -30,6 +30,7 @@
 #include <tencentcloud/mps/v20190612/model/AiQualityControlTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/SmartSubtitlesTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/SmartEraseTaskInput.h>
+#include <tencentcloud/mps/v20190612/model/AIDubbingTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/TaskNotifyConfig.h>
 #include <tencentcloud/mps/v20190612/model/Activity.h>
 
@@ -285,6 +286,27 @@ namespace TencentCloud
                     bool SmartEraseTaskHasBeenSet() const;
 
                     /**
+                     * 获取<p>AI配音类型任务参数</p>
+                     * @return AIDubbingTask <p>AI配音类型任务参数</p>
+                     * 
+                     */
+                    AIDubbingTaskInput GetAIDubbingTask() const;
+
+                    /**
+                     * 设置<p>AI配音类型任务参数</p>
+                     * @param _aIDubbingTask <p>AI配音类型任务参数</p>
+                     * 
+                     */
+                    void SetAIDubbingTask(const AIDubbingTaskInput& _aIDubbingTask);
+
+                    /**
+                     * 判断参数 AIDubbingTask 是否已赋值
+                     * @return AIDubbingTask 是否已赋值
+                     * 
+                     */
+                    bool AIDubbingTaskHasBeenSet() const;
+
+                    /**
                      * 获取<p>任务的事件通知信息，不填代表不获取事件通知。</p>
                      * @return TaskNotifyConfig <p>任务的事件通知信息，不填代表不获取事件通知。</p>
                      * 
@@ -519,6 +541,12 @@ namespace TencentCloud
                      */
                     SmartEraseTaskInput m_smartEraseTask;
                     bool m_smartEraseTaskHasBeenSet;
+
+                    /**
+                     * <p>AI配音类型任务参数</p>
+                     */
+                    AIDubbingTaskInput m_aIDubbingTask;
+                    bool m_aIDubbingTaskHasBeenSet;
 
                     /**
                      * <p>任务的事件通知信息，不填代表不获取事件通知。</p>

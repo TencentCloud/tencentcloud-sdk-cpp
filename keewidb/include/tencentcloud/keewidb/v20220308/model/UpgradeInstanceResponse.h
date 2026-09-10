@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取交易ID。
-                     * @return DealId 交易ID。
+                     * 获取<p>交易ID。</p>
+                     * @return DealId <p>交易ID。</p>
                      * @deprecated
                      */
                     std::string GetDealId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool DealIdHasBeenSet() const;
 
                     /**
-                     * 获取订单号。
-                     * @return DealName 订单号。
+                     * 获取<p>订单号。</p>
+                     * @return DealName <p>订单号。</p>
                      * 
                      */
                     std::string GetDealName() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 交易ID。
+                     * <p>交易ID。</p>
                      */
                     std::string m_dealId;
                     bool m_dealIdHasBeenSet;
 
                     /**
-                     * 订单号。
+                     * <p>订单号。</p>
                      */
                     std::string m_dealName;
                     bool m_dealNameHasBeenSet;

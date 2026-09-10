@@ -24,12 +24,12 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/adp/v20260520/model/PluginConfig.h>
 #include <tencentcloud/adp/v20260520/model/PluginOperation.h>
 #include <tencentcloud/adp/v20260520/model/PluginProfile.h>
 #include <tencentcloud/adp/v20260520/model/PluginStatistics.h>
-#include <tencentcloud/adp/v20260520/model/PluginUserState.h>
-#include <tencentcloud/adp/v20260520/model/PluginConfig.h>
 #include <tencentcloud/adp/v20260520/model/ToolSummary.h>
+#include <tencentcloud/adp/v20260520/model/PluginUserState.h>
 
 
 namespace TencentCloud
@@ -51,6 +51,48 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
+
+                    /**
+                     * 获取<p>插件配置信息</p>
+                     * @return Config <p>插件配置信息</p>
+                     * 
+                     */
+                    PluginConfig GetConfig() const;
+
+                    /**
+                     * 设置<p>插件配置信息</p>
+                     * @param _config <p>插件配置信息</p>
+                     * 
+                     */
+                    void SetConfig(const PluginConfig& _config);
+
+                    /**
+                     * 判断参数 Config 是否已赋值
+                     * @return Config 是否已赋值
+                     * 
+                     */
+                    bool ConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否已配置共享</p>
+                     * @return IsShared <p>是否已配置共享</p>
+                     * 
+                     */
+                    bool GetIsShared() const;
+
+                    /**
+                     * 设置<p>是否已配置共享</p>
+                     * @param _isShared <p>是否已配置共享</p>
+                     * 
+                     */
+                    void SetIsShared(const bool& _isShared);
+
+                    /**
+                     * 判断参数 IsShared 是否已赋值
+                     * @return IsShared 是否已赋值
+                     * 
+                     */
+                    bool IsSharedHasBeenSet() const;
 
                     /**
                      * 获取<p>插件运营管理信息</p>
@@ -116,6 +158,27 @@ namespace TencentCloud
                     bool ProfileHasBeenSet() const;
 
                     /**
+                     * 获取<p>插件所属空间 ID；内置插件为空</p>
+                     * @return SpaceId <p>插件所属空间 ID；内置插件为空</p>
+                     * 
+                     */
+                    std::string GetSpaceId() const;
+
+                    /**
+                     * 设置<p>插件所属空间 ID；内置插件为空</p>
+                     * @param _spaceId <p>插件所属空间 ID；内置插件为空</p>
+                     * 
+                     */
+                    void SetSpaceId(const std::string& _spaceId);
+
+                    /**
+                     * 判断参数 SpaceId 是否已赋值
+                     * @return SpaceId 是否已赋值
+                     * 
+                     */
+                    bool SpaceIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>插件统计信息</p>
                      * @return Statistics <p>插件统计信息</p>
                      * 
@@ -158,6 +221,27 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
+                     * 获取<p>工具信息</p>
+                     * @return ToolList <p>工具信息</p>
+                     * 
+                     */
+                    std::vector<ToolSummary> GetToolList() const;
+
+                    /**
+                     * 设置<p>工具信息</p>
+                     * @param _toolList <p>工具信息</p>
+                     * 
+                     */
+                    void SetToolList(const std::vector<ToolSummary>& _toolList);
+
+                    /**
+                     * 判断参数 ToolList 是否已赋值
+                     * @return ToolList 是否已赋值
+                     * 
+                     */
+                    bool ToolListHasBeenSet() const;
+
+                    /**
                      * 获取<p>用户维度的插件状态信息</p>
                      * @return UserState <p>用户维度的插件状态信息</p>
                      * 
@@ -179,48 +263,39 @@ namespace TencentCloud
                     bool UserStateHasBeenSet() const;
 
                     /**
-                     * 获取<p>插件配置信息</p>
-                     * @return Config <p>插件配置信息</p>
+                     * 获取<p>更新时间，Unix时间戳</p><p>单位：秒</p>
+                     * @return UpdateTime <p>更新时间，Unix时间戳</p><p>单位：秒</p>
                      * 
                      */
-                    PluginConfig GetConfig() const;
+                    std::string GetUpdateTime() const;
 
                     /**
-                     * 设置<p>插件配置信息</p>
-                     * @param _config <p>插件配置信息</p>
+                     * 设置<p>更新时间，Unix时间戳</p><p>单位：秒</p>
+                     * @param _updateTime <p>更新时间，Unix时间戳</p><p>单位：秒</p>
                      * 
                      */
-                    void SetConfig(const PluginConfig& _config);
+                    void SetUpdateTime(const std::string& _updateTime);
 
                     /**
-                     * 判断参数 Config 是否已赋值
-                     * @return Config 是否已赋值
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
                      * 
                      */
-                    bool ConfigHasBeenSet() const;
-
-                    /**
-                     * 获取<p>工具信息</p>
-                     * @return ToolList <p>工具信息</p>
-                     * 
-                     */
-                    std::vector<ToolSummary> GetToolList() const;
-
-                    /**
-                     * 设置<p>工具信息</p>
-                     * @param _toolList <p>工具信息</p>
-                     * 
-                     */
-                    void SetToolList(const std::vector<ToolSummary>& _toolList);
-
-                    /**
-                     * 判断参数 ToolList 是否已赋值
-                     * @return ToolList 是否已赋值
-                     * 
-                     */
-                    bool ToolListHasBeenSet() const;
+                    bool UpdateTimeHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * <p>插件配置信息</p>
+                     */
+                    PluginConfig m_config;
+                    bool m_configHasBeenSet;
+
+                    /**
+                     * <p>是否已配置共享</p>
+                     */
+                    bool m_isShared;
+                    bool m_isSharedHasBeenSet;
 
                     /**
                      * <p>插件运营管理信息</p>
@@ -241,6 +316,12 @@ namespace TencentCloud
                     bool m_profileHasBeenSet;
 
                     /**
+                     * <p>插件所属空间 ID；内置插件为空</p>
+                     */
+                    std::string m_spaceId;
+                    bool m_spaceIdHasBeenSet;
+
+                    /**
                      * <p>插件统计信息</p>
                      */
                     PluginStatistics m_statistics;
@@ -253,22 +334,22 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
+                     * <p>工具信息</p>
+                     */
+                    std::vector<ToolSummary> m_toolList;
+                    bool m_toolListHasBeenSet;
+
+                    /**
                      * <p>用户维度的插件状态信息</p>
                      */
                     PluginUserState m_userState;
                     bool m_userStateHasBeenSet;
 
                     /**
-                     * <p>插件配置信息</p>
+                     * <p>更新时间，Unix时间戳</p><p>单位：秒</p>
                      */
-                    PluginConfig m_config;
-                    bool m_configHasBeenSet;
-
-                    /**
-                     * <p>工具信息</p>
-                     */
-                    std::vector<ToolSummary> m_toolList;
-                    bool m_toolListHasBeenSet;
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
 
                 };
             }

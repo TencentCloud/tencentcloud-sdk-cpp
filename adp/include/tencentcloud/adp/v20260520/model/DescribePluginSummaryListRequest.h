@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取空间ID，查询空间内的插件列表时使用
-                     * @return SpaceId 空间ID，查询空间内的插件列表时使用
+                     * 获取<p>空间ID，查询空间内的插件列表时使用</p>
+                     * @return SpaceId <p>空间ID，查询空间内的插件列表时使用</p>
                      * 
                      */
                     std::string GetSpaceId() const;
 
                     /**
-                     * 设置空间ID，查询空间内的插件列表时使用
-                     * @param _spaceId 空间ID，查询空间内的插件列表时使用
+                     * 设置<p>空间ID，查询空间内的插件列表时使用</p>
+                     * @param _spaceId <p>空间ID，查询空间内的插件列表时使用</p>
                      * 
                      */
                     void SetSpaceId(const std::string& _spaceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool SpaceIdHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件列表 支持：PluginKind、CategoryKey、PluginSource、PluginId、PluginClass、BillingType
-                     * @return FilterList 过滤条件列表 支持：PluginKind、CategoryKey、PluginSource、PluginId、PluginClass、BillingType
+                     * 获取<p>过滤条件列表，支持 PluginKind、CategoryKey、PluginSource、PluginId、PluginClass、BillingType、AuthType、IsShared、IsCreatedByMe</p>
+                     * @return FilterList <p>过滤条件列表，支持 PluginKind、CategoryKey、PluginSource、PluginId、PluginClass、BillingType、AuthType、IsShared、IsCreatedByMe</p>
                      * 
                      */
                     std::vector<Filter> GetFilterList() const;
 
                     /**
-                     * 设置过滤条件列表 支持：PluginKind、CategoryKey、PluginSource、PluginId、PluginClass、BillingType
-                     * @param _filterList 过滤条件列表 支持：PluginKind、CategoryKey、PluginSource、PluginId、PluginClass、BillingType
+                     * 设置<p>过滤条件列表，支持 PluginKind、CategoryKey、PluginSource、PluginId、PluginClass、BillingType、AuthType、IsShared、IsCreatedByMe</p>
+                     * @param _filterList <p>过滤条件列表，支持 PluginKind、CategoryKey、PluginSource、PluginId、PluginClass、BillingType、AuthType、IsShared、IsCreatedByMe</p>
                      * 
                      */
                     void SetFilterList(const std::vector<Filter>& _filterList);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取页码 从0开始
-                     * @return PageNumber 页码 从0开始
+                     * 获取<p>页码 从0开始</p>
+                     * @return PageNumber <p>页码 从0开始</p>
                      * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
-                     * 设置页码 从0开始
-                     * @param _pageNumber 页码 从0开始
+                     * 设置<p>页码 从0开始</p>
+                     * @param _pageNumber <p>页码 从0开始</p>
                      * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取每页大小
-                     * @return PageSize 每页大小
+                     * 获取<p>每页大小</p>
+                     * @return PageSize <p>每页大小</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置每页大小
-                     * @param _pageSize 每页大小
+                     * 设置<p>每页大小</p>
+                     * @param _pageSize <p>每页大小</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取查询内容 模糊匹配：插件名称/插件描述/工具名称/工具描述
-                     * @return Query 查询内容 模糊匹配：插件名称/插件描述/工具名称/工具描述
+                     * 获取<p>查询内容 模糊匹配：插件名称/插件描述/工具名称/工具描述</p>
+                     * @return Query <p>查询内容 模糊匹配：插件名称/插件描述/工具名称/工具描述</p>
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
-                     * 设置查询内容 模糊匹配：插件名称/插件描述/工具名称/工具描述
-                     * @param _query 查询内容 模糊匹配：插件名称/插件描述/工具名称/工具描述
+                     * 设置<p>查询内容 模糊匹配：插件名称/插件描述/工具名称/工具描述</p>
+                     * @param _query <p>查询内容 模糊匹配：插件名称/插件描述/工具名称/工具描述</p>
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -211,16 +211,37 @@ namespace TencentCloud
                      */
                     bool SortTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>筛选当前空间/企业共享插件</p><p>取值范围：[0, 2]</p>
+                     * @return PluginSpaceRelation <p>筛选当前空间/企业共享插件</p><p>取值范围：[0, 2]</p>
+                     * 
+                     */
+                    int64_t GetPluginSpaceRelation() const;
+
+                    /**
+                     * 设置<p>筛选当前空间/企业共享插件</p><p>取值范围：[0, 2]</p>
+                     * @param _pluginSpaceRelation <p>筛选当前空间/企业共享插件</p><p>取值范围：[0, 2]</p>
+                     * 
+                     */
+                    void SetPluginSpaceRelation(const int64_t& _pluginSpaceRelation);
+
+                    /**
+                     * 判断参数 PluginSpaceRelation 是否已赋值
+                     * @return PluginSpaceRelation 是否已赋值
+                     * 
+                     */
+                    bool PluginSpaceRelationHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 空间ID，查询空间内的插件列表时使用
+                     * <p>空间ID，查询空间内的插件列表时使用</p>
                      */
                     std::string m_spaceId;
                     bool m_spaceIdHasBeenSet;
 
                     /**
-                     * 过滤条件列表 支持：PluginKind、CategoryKey、PluginSource、PluginId、PluginClass、BillingType
+                     * <p>过滤条件列表，支持 PluginKind、CategoryKey、PluginSource、PluginId、PluginClass、BillingType、AuthType、IsShared、IsCreatedByMe</p>
                      */
                     std::vector<Filter> m_filterList;
                     bool m_filterListHasBeenSet;
@@ -238,19 +259,19 @@ namespace TencentCloud
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 页码 从0开始
+                     * <p>页码 从0开始</p>
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 每页大小
+                     * <p>每页大小</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 查询内容 模糊匹配：插件名称/插件描述/工具名称/工具描述
+                     * <p>查询内容 模糊匹配：插件名称/插件描述/工具名称/工具描述</p>
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
@@ -260,6 +281,12 @@ namespace TencentCloud
                      */
                     int64_t m_sortType;
                     bool m_sortTypeHasBeenSet;
+
+                    /**
+                     * <p>筛选当前空间/企业共享插件</p><p>取值范围：[0, 2]</p>
+                     */
+                    int64_t m_pluginSpaceRelation;
+                    bool m_pluginSpaceRelationHasBeenSet;
 
                 };
             }

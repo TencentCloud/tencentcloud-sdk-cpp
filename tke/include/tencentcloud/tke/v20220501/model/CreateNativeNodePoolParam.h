@@ -580,6 +580,27 @@ namespace TencentCloud
                      */
                     bool PasswordHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义镜像 ID</p>
+                     * @return CustomImage <p>自定义镜像 ID</p>
+                     * 
+                     */
+                    std::string GetCustomImage() const;
+
+                    /**
+                     * 设置<p>自定义镜像 ID</p>
+                     * @param _customImage <p>自定义镜像 ID</p>
+                     * 
+                     */
+                    void SetCustomImage(const std::string& _customImage);
+
+                    /**
+                     * 判断参数 CustomImage 是否已赋值
+                     * @return CustomImage 是否已赋值
+                     * 
+                     */
+                    bool CustomImageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -731,6 +752,12 @@ namespace TencentCloud
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
+
+                    /**
+                     * <p>自定义镜像 ID</p>
+                     */
+                    std::string m_customImage;
+                    bool m_customImageHasBeenSet;
 
                 };
             }

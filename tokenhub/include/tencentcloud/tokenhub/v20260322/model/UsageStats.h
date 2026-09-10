@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 时间周期内的统计聚合值（按 metric key 索引）。声明 tokens / search 两族字段都在本 schema 中，按 MetricKeys 实际返回取值，参见响应顶层 `MetricKeys` 字段。
+                * 时间周期内的统计聚合值，按 MetricKeys 实际返回取值，参见响应顶层 `MetricKeys` 字段。
                 */
                 class UsageStats : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>[tokens 族] 时间周期内的累计总 token 数。</p>
-                     * @return TotalToken <p>[tokens 族] 时间周期内的累计总 token 数。</p>
+                     * 获取<p>[tokens / apikey_usage 族] 时间周期内的累计总 token 数。</p>
+                     * @return TotalToken <p>[tokens / apikey_usage 族] 时间周期内的累计总 token 数。</p>
                      * 
                      */
                     int64_t GetTotalToken() const;
 
                     /**
-                     * 设置<p>[tokens 族] 时间周期内的累计总 token 数。</p>
-                     * @param _totalToken <p>[tokens 族] 时间周期内的累计总 token 数。</p>
+                     * 设置<p>[tokens / apikey_usage 族] 时间周期内的累计总 token 数。</p>
+                     * @param _totalToken <p>[tokens / apikey_usage 族] 时间周期内的累计总 token 数。</p>
                      * 
                      */
                     void SetTotalToken(const int64_t& _totalToken);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TotalTokenHasBeenSet() const;
 
                     /**
-                     * 获取<p>[tokens 族] 时间周期内的累计输入 token 数。</p>
-                     * @return InputTotalToken <p>[tokens 族] 时间周期内的累计输入 token 数。</p>
+                     * 获取<p>[tokens / apikey_usage 族] 时间周期内的累计输入 token 数。</p>
+                     * @return InputTotalToken <p>[tokens / apikey_usage 族] 时间周期内的累计输入 token 数。</p>
                      * 
                      */
                     int64_t GetInputTotalToken() const;
 
                     /**
-                     * 设置<p>[tokens 族] 时间周期内的累计输入 token 数。</p>
-                     * @param _inputTotalToken <p>[tokens 族] 时间周期内的累计输入 token 数。</p>
+                     * 设置<p>[tokens / apikey_usage 族] 时间周期内的累计输入 token 数。</p>
+                     * @param _inputTotalToken <p>[tokens / apikey_usage 族] 时间周期内的累计输入 token 数。</p>
                      * 
                      */
                     void SetInputTotalToken(const int64_t& _inputTotalToken);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool InputTotalTokenHasBeenSet() const;
 
                     /**
-                     * 获取<p>[tokens 族] 时间周期内的累计输出 token 数。</p>
-                     * @return OutputTotalToken <p>[tokens 族] 时间周期内的累计输出 token 数。</p>
+                     * 获取<p>[tokens / apikey_usage 族] 时间周期内的累计输出 token 数。</p>
+                     * @return OutputTotalToken <p>[tokens / apikey_usage 族] 时间周期内的累计输出 token 数。</p>
                      * 
                      */
                     int64_t GetOutputTotalToken() const;
 
                     /**
-                     * 设置<p>[tokens 族] 时间周期内的累计输出 token 数。</p>
-                     * @param _outputTotalToken <p>[tokens 族] 时间周期内的累计输出 token 数。</p>
+                     * 设置<p>[tokens / apikey_usage 族] 时间周期内的累计输出 token 数。</p>
+                     * @param _outputTotalToken <p>[tokens / apikey_usage 族] 时间周期内的累计输出 token 数。</p>
                      * 
                      */
                     void SetOutputTotalToken(const int64_t& _outputTotalToken);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool OutputTotalTokenHasBeenSet() const;
 
                     /**
-                     * 获取<p>[tokens 族] 时间周期内的累计读缓存 token 数（命中缓存部分）</p>
-                     * @return CacheTotalToken <p>[tokens 族] 时间周期内的累计读缓存 token 数（命中缓存部分）</p>
+                     * 获取<p>[tokens / apikey_usage 族] 时间周期内的累计读缓存 token 数（命中缓存部分）注意：CacheTotalToken 是 InputTotalToken 的子集（已包含在内）。</p>
+                     * @return CacheTotalToken <p>[tokens / apikey_usage 族] 时间周期内的累计读缓存 token 数（命中缓存部分）注意：CacheTotalToken 是 InputTotalToken 的子集（已包含在内）。</p>
                      * 
                      */
                     int64_t GetCacheTotalToken() const;
 
                     /**
-                     * 设置<p>[tokens 族] 时间周期内的累计读缓存 token 数（命中缓存部分）</p>
-                     * @param _cacheTotalToken <p>[tokens 族] 时间周期内的累计读缓存 token 数（命中缓存部分）</p>
+                     * 设置<p>[tokens / apikey_usage 族] 时间周期内的累计读缓存 token 数（命中缓存部分）注意：CacheTotalToken 是 InputTotalToken 的子集（已包含在内）。</p>
+                     * @param _cacheTotalToken <p>[tokens / apikey_usage 族] 时间周期内的累计读缓存 token 数（命中缓存部分）注意：CacheTotalToken 是 InputTotalToken 的子集（已包含在内）。</p>
                      * 
                      */
                     void SetCacheTotalToken(const int64_t& _cacheTotalToken);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool CacheTotalTokenHasBeenSet() const;
 
                     /**
-                     * 获取<p>[search 族] 整段累计联网搜索请求数</p>
-                     * @return SearchRequestCount <p>[search 族] 整段累计联网搜索请求数</p>
+                     * 获取<p>[search 族] 时间周期内的累计联网搜索请求数</p>
+                     * @return SearchRequestCount <p>[search 族] 时间周期内的累计联网搜索请求数</p>
                      * 
                      */
                     int64_t GetSearchRequestCount() const;
 
                     /**
-                     * 设置<p>[search 族] 整段累计联网搜索请求数</p>
-                     * @param _searchRequestCount <p>[search 族] 整段累计联网搜索请求数</p>
+                     * 设置<p>[search 族] 时间周期内的累计联网搜索请求数</p>
+                     * @param _searchRequestCount <p>[search 族] 时间周期内的累计联网搜索请求数</p>
                      * 
                      */
                     void SetSearchRequestCount(const int64_t& _searchRequestCount);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool SearchRequestCountHasBeenSet() const;
 
                     /**
-                     * 获取<p>[search 族] 整段累计搜索引擎调用次数</p>
-                     * @return SearchCount <p>[search 族] 整段累计搜索引擎调用次数</p>
+                     * 获取<p>[search 族] 时间周期内的累计搜索引擎调用次数</p>
+                     * @return SearchCount <p>[search 族] 时间周期内的累计搜索引擎调用次数</p>
                      * 
                      */
                     int64_t GetSearchCount() const;
 
                     /**
-                     * 设置<p>[search 族] 整段累计搜索引擎调用次数</p>
-                     * @param _searchCount <p>[search 族] 整段累计搜索引擎调用次数</p>
+                     * 设置<p>[search 族] 时间周期内的累计搜索引擎调用次数</p>
+                     * @param _searchCount <p>[search 族] 时间周期内的累计搜索引擎调用次数</p>
                      * 
                      */
                     void SetSearchCount(const int64_t& _searchCount);
@@ -172,43 +172,97 @@ namespace TencentCloud
                      */
                     bool SearchCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>[apikey_usage 族] 时间周期内的累计请求次数</p>
+                     * @return RequestCount <p>[apikey_usage 族] 时间周期内的累计请求次数</p>
+                     * 
+                     */
+                    int64_t GetRequestCount() const;
+
+                    /**
+                     * 设置<p>[apikey_usage 族] 时间周期内的累计请求次数</p>
+                     * @param _requestCount <p>[apikey_usage 族] 时间周期内的累计请求次数</p>
+                     * 
+                     */
+                    void SetRequestCount(const int64_t& _requestCount);
+
+                    /**
+                     * 判断参数 RequestCount 是否已赋值
+                     * @return RequestCount 是否已赋值
+                     * 
+                     */
+                    bool RequestCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>[apikey_usage 族] 时间周期内的累计请求失败次数</p>
+                     * @return RequestFailCount <p>[apikey_usage 族] 时间周期内的累计请求失败次数</p>
+                     * 
+                     */
+                    int64_t GetRequestFailCount() const;
+
+                    /**
+                     * 设置<p>[apikey_usage 族] 时间周期内的累计请求失败次数</p>
+                     * @param _requestFailCount <p>[apikey_usage 族] 时间周期内的累计请求失败次数</p>
+                     * 
+                     */
+                    void SetRequestFailCount(const int64_t& _requestFailCount);
+
+                    /**
+                     * 判断参数 RequestFailCount 是否已赋值
+                     * @return RequestFailCount 是否已赋值
+                     * 
+                     */
+                    bool RequestFailCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * <p>[tokens 族] 时间周期内的累计总 token 数。</p>
+                     * <p>[tokens / apikey_usage 族] 时间周期内的累计总 token 数。</p>
                      */
                     int64_t m_totalToken;
                     bool m_totalTokenHasBeenSet;
 
                     /**
-                     * <p>[tokens 族] 时间周期内的累计输入 token 数。</p>
+                     * <p>[tokens / apikey_usage 族] 时间周期内的累计输入 token 数。</p>
                      */
                     int64_t m_inputTotalToken;
                     bool m_inputTotalTokenHasBeenSet;
 
                     /**
-                     * <p>[tokens 族] 时间周期内的累计输出 token 数。</p>
+                     * <p>[tokens / apikey_usage 族] 时间周期内的累计输出 token 数。</p>
                      */
                     int64_t m_outputTotalToken;
                     bool m_outputTotalTokenHasBeenSet;
 
                     /**
-                     * <p>[tokens 族] 时间周期内的累计读缓存 token 数（命中缓存部分）</p>
+                     * <p>[tokens / apikey_usage 族] 时间周期内的累计读缓存 token 数（命中缓存部分）注意：CacheTotalToken 是 InputTotalToken 的子集（已包含在内）。</p>
                      */
                     int64_t m_cacheTotalToken;
                     bool m_cacheTotalTokenHasBeenSet;
 
                     /**
-                     * <p>[search 族] 整段累计联网搜索请求数</p>
+                     * <p>[search 族] 时间周期内的累计联网搜索请求数</p>
                      */
                     int64_t m_searchRequestCount;
                     bool m_searchRequestCountHasBeenSet;
 
                     /**
-                     * <p>[search 族] 整段累计搜索引擎调用次数</p>
+                     * <p>[search 族] 时间周期内的累计搜索引擎调用次数</p>
                      */
                     int64_t m_searchCount;
                     bool m_searchCountHasBeenSet;
+
+                    /**
+                     * <p>[apikey_usage 族] 时间周期内的累计请求次数</p>
+                     */
+                    int64_t m_requestCount;
+                    bool m_requestCountHasBeenSet;
+
+                    /**
+                     * <p>[apikey_usage 族] 时间周期内的累计请求失败次数</p>
+                     */
+                    int64_t m_requestFailCount;
+                    bool m_requestFailCountHasBeenSet;
 
                 };
             }

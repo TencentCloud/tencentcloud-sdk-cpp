@@ -147,18 +147,14 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体处理的文件输出存储位置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputStorage 媒体处理的文件输出存储位置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
                      * 设置媒体处理的文件输出存储位置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outputStorage 媒体处理的文件输出存储位置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
@@ -172,18 +168,14 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体处理类型任务参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaProcessTask 媒体处理类型任务参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaProcessTaskInput GetMediaProcessTask() const;
 
                     /**
                      * 设置媒体处理类型任务参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mediaProcessTask 媒体处理类型任务参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMediaProcessTask(const MediaProcessTaskInput& _mediaProcessTask);
@@ -272,18 +264,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务的事件通知信息，不填代表不获取事件通知。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskNotifyConfig 任务的事件通知信息，不填代表不获取事件通知。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TaskNotifyConfig GetTaskNotifyConfig() const;
 
                     /**
                      * 设置任务的事件通知信息，不填代表不获取事件通知。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskNotifyConfig 任务的事件通知信息，不填代表不获取事件通知。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskNotifyConfig(const TaskNotifyConfig& _taskNotifyConfig);
@@ -409,14 +397,12 @@ namespace TencentCloud
 
                     /**
                      * 媒体处理的文件输出存储位置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskOutputStorage m_outputStorage;
                     bool m_outputStorageHasBeenSet;
 
                     /**
                      * 媒体处理类型任务参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaProcessTaskInput m_mediaProcessTask;
                     bool m_mediaProcessTaskHasBeenSet;
@@ -444,7 +430,6 @@ namespace TencentCloud
 
                     /**
                      * 任务的事件通知信息，不填代表不获取事件通知。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskNotifyConfig m_taskNotifyConfig;
                     bool m_taskNotifyConfigHasBeenSet;

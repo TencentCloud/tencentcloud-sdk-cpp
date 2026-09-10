@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取访问工作空间临时凭证
-                     * @return Token 访问工作空间临时凭证
+                     * 获取<p>访问工作空间临时凭证</p>
+                     * @return Token <p>访问工作空间临时凭证</p>
                      * 
                      */
                     std::string GetToken() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool TokenHasBeenSet() const;
 
                     /**
-                     * 获取token 过期时间
-                     * @return ExpiredTime token 过期时间
+                     * 获取<p>token 过期时间</p>
+                     * @return ExpiredTime <p>token 过期时间</p>
                      * 
                      */
                     std::string GetExpiredTime() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 访问工作空间临时凭证
+                     * <p>访问工作空间临时凭证</p>
                      */
                     std::string m_token;
                     bool m_tokenHasBeenSet;
 
                     /**
-                     * token 过期时间
+                     * <p>token 过期时间</p>
                      */
                     std::string m_expiredTime;
                     bool m_expiredTimeHasBeenSet;

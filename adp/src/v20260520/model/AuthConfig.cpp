@@ -24,7 +24,8 @@ AuthConfig::AuthConfig() :
     m_authTypeHasBeenSet(false),
     m_apiKeyAuthConfigHasBeenSet(false),
     m_camAuthConfigHasBeenSet(false),
-    m_oAuthConfigHasBeenSet(false)
+    m_oAuthConfigHasBeenSet(false),
+    m_accessKeyAuthConfigHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,23 @@ CoreInternalOutcome AuthConfig::Deserialize(const rapidjson::Value &value)
         m_oAuthConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("AccessKeyAuthConfig") && !value["AccessKeyAuthConfig"].IsNull())
+    {
+        if (!value["AccessKeyAuthConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuthConfig.AccessKeyAuthConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_accessKeyAuthConfig.Deserialize(value["AccessKeyAuthConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_accessKeyAuthConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +152,15 @@ void AuthConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_oAuthConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_accessKeyAuthConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessKeyAuthConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_accessKeyAuthConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -201,5 +228,21 @@ void AuthConfig::SetOAuthConfig(const OAuthConfig& _oAuthConfig)
 bool AuthConfig::OAuthConfigHasBeenSet() const
 {
     return m_oAuthConfigHasBeenSet;
+}
+
+AccessKeyAuthConfig AuthConfig::GetAccessKeyAuthConfig() const
+{
+    return m_accessKeyAuthConfig;
+}
+
+void AuthConfig::SetAccessKeyAuthConfig(const AccessKeyAuthConfig& _accessKeyAuthConfig)
+{
+    m_accessKeyAuthConfig = _accessKeyAuthConfig;
+    m_accessKeyAuthConfigHasBeenSet = true;
+}
+
+bool AuthConfig::AccessKeyAuthConfigHasBeenSet() const
+{
+    return m_accessKeyAuthConfigHasBeenSet;
 }
 

@@ -29,6 +29,14 @@
 #include <tencentcloud/cngw/v20230418/model/AddCloudNativeAPIGatewayConsumerInGroupResponse.h>
 #include <tencentcloud/cngw/v20230418/model/BindCloudNativeAPIGatewaySecretKeyRequest.h>
 #include <tencentcloud/cngw/v20230418/model/BindCloudNativeAPIGatewaySecretKeyResponse.h>
+#include <tencentcloud/cngw/v20230418/model/CheckCloudNativeAPIGatewayMCPRouteMatchRequest.h>
+#include <tencentcloud/cngw/v20230418/model/CheckCloudNativeAPIGatewayMCPRouteMatchResponse.h>
+#include <tencentcloud/cngw/v20230418/model/CheckCloudNativeAPIGatewayMCPToolVersionExistRequest.h>
+#include <tencentcloud/cngw/v20230418/model/CheckCloudNativeAPIGatewayMCPToolVersionExistResponse.h>
+#include <tencentcloud/cngw/v20230418/model/CompareCloudNativeAPIGatewayMCPToolVersionRequest.h>
+#include <tencentcloud/cngw/v20230418/model/CompareCloudNativeAPIGatewayMCPToolVersionResponse.h>
+#include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayAIServiceSourceRequest.h>
+#include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayAIServiceSourceResponse.h>
 #include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayConsumerRequest.h>
 #include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayConsumerResponse.h>
 #include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayConsumerGroupRequest.h>
@@ -37,12 +45,16 @@
 #include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayLLMModelAPIResponse.h>
 #include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayLLMModelServiceRequest.h>
 #include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayLLMModelServiceResponse.h>
+#include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayMCPRouteRequest.h>
+#include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayMCPRouteResponse.h>
 #include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayMCPServerRequest.h>
 #include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayMCPServerResponse.h>
 #include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayMCPToolRequest.h>
 #include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayMCPToolResponse.h>
 #include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewaySecretKeyRequest.h>
 #include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewaySecretKeyResponse.h>
+#include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayAIServiceSourceRequest.h>
+#include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayAIServiceSourceResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayConsumerRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayConsumerResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayConsumerGroupRequest.h>
@@ -51,14 +63,24 @@
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayLLMModelAPIResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayLLMModelServiceRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayLLMModelServiceResponse.h>
+#include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayMCPRouteRequest.h>
+#include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayMCPRouteResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayMCPServerRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayMCPServerResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayMCPToolRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayMCPToolResponse.h>
+#include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayMCPToolVersionRequest.h>
+#include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayMCPToolVersionResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewaySecretKeyRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewaySecretKeyResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCNGWServicesWithRoutesRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCNGWServicesWithRoutesResponse.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayAIQuotaRequest.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayAIQuotaResponse.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayAIQuotaListRequest.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayAIQuotaListResponse.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayAIServiceSourceListRequest.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayAIServiceSourceListResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayConsumerRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayConsumerResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayConsumerGroupRequest.h>
@@ -75,6 +97,8 @@
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayLLMTokenUsageListResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsResponse.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPRouteListRequest.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPRouteListResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPServerRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPServerResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPServerACLRequest.h>
@@ -87,14 +111,24 @@
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolACLListRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolACLListResponse.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolImportTaskRequest.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolImportTaskResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolListRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolListResponse.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolVersionRequest.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolVersionResponse.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolVersionListRequest.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolVersionListResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolsFromFileRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolsFromFileResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewaySecretKeyRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewaySecretKeyResponse.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewaySecretKeyListRequest.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewaySecretKeyListResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewaySecretKeyValueRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewaySecretKeyValueResponse.h>
+#include <tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayAIServiceSourceRequest.h>
+#include <tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayAIServiceSourceResponse.h>
 #include <tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayConsumerRequest.h>
 #include <tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayConsumerResponse.h>
 #include <tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayConsumerGroupRequest.h>
@@ -103,6 +137,10 @@
 #include <tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayLLMModelAPIResponse.h>
 #include <tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayLLMModelServiceRequest.h>
 #include <tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayLLMModelServiceResponse.h>
+#include <tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayMCPRouteRequest.h>
+#include <tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayMCPRouteResponse.h>
+#include <tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayMCPRouteStatusRequest.h>
+#include <tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayMCPRouteStatusResponse.h>
 #include <tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayMCPServerRequest.h>
 #include <tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayMCPServerResponse.h>
 #include <tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayMCPServerACLRequest.h>
@@ -123,6 +161,8 @@
 #include <tencentcloud/cngw/v20230418/model/RemoveCloudNativeAPIGatewayConsumerGroupAuthResponse.h>
 #include <tencentcloud/cngw/v20230418/model/RemoveCloudNativeAPIGatewayConsumerInGroupRequest.h>
 #include <tencentcloud/cngw/v20230418/model/RemoveCloudNativeAPIGatewayConsumerInGroupResponse.h>
+#include <tencentcloud/cngw/v20230418/model/RollbackCloudNativeAPIGatewayMCPToolVersionRequest.h>
+#include <tencentcloud/cngw/v20230418/model/RollbackCloudNativeAPIGatewayMCPToolVersionResponse.h>
 #include <tencentcloud/cngw/v20230418/model/UnbindCloudNativeAPIGatewaySecretKeyRequest.h>
 #include <tencentcloud/cngw/v20230418/model/UnbindCloudNativeAPIGatewaySecretKeyResponse.h>
 #include <tencentcloud/cngw/v20230418/model/UpdateCloudNativeAPIGatewayMCPToolsRequest.h>
@@ -150,6 +190,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindCloudNativeAPIGatewaySecretKeyResponse> BindCloudNativeAPIGatewaySecretKeyOutcome;
                 typedef std::future<BindCloudNativeAPIGatewaySecretKeyOutcome> BindCloudNativeAPIGatewaySecretKeyOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::BindCloudNativeAPIGatewaySecretKeyRequest&, BindCloudNativeAPIGatewaySecretKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindCloudNativeAPIGatewaySecretKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckCloudNativeAPIGatewayMCPRouteMatchResponse> CheckCloudNativeAPIGatewayMCPRouteMatchOutcome;
+                typedef std::future<CheckCloudNativeAPIGatewayMCPRouteMatchOutcome> CheckCloudNativeAPIGatewayMCPRouteMatchOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::CheckCloudNativeAPIGatewayMCPRouteMatchRequest&, CheckCloudNativeAPIGatewayMCPRouteMatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckCloudNativeAPIGatewayMCPRouteMatchAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckCloudNativeAPIGatewayMCPToolVersionExistResponse> CheckCloudNativeAPIGatewayMCPToolVersionExistOutcome;
+                typedef std::future<CheckCloudNativeAPIGatewayMCPToolVersionExistOutcome> CheckCloudNativeAPIGatewayMCPToolVersionExistOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::CheckCloudNativeAPIGatewayMCPToolVersionExistRequest&, CheckCloudNativeAPIGatewayMCPToolVersionExistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckCloudNativeAPIGatewayMCPToolVersionExistAsyncHandler;
+                typedef Outcome<Core::Error, Model::CompareCloudNativeAPIGatewayMCPToolVersionResponse> CompareCloudNativeAPIGatewayMCPToolVersionOutcome;
+                typedef std::future<CompareCloudNativeAPIGatewayMCPToolVersionOutcome> CompareCloudNativeAPIGatewayMCPToolVersionOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::CompareCloudNativeAPIGatewayMCPToolVersionRequest&, CompareCloudNativeAPIGatewayMCPToolVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CompareCloudNativeAPIGatewayMCPToolVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCloudNativeAPIGatewayAIServiceSourceResponse> CreateCloudNativeAPIGatewayAIServiceSourceOutcome;
+                typedef std::future<CreateCloudNativeAPIGatewayAIServiceSourceOutcome> CreateCloudNativeAPIGatewayAIServiceSourceOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::CreateCloudNativeAPIGatewayAIServiceSourceRequest&, CreateCloudNativeAPIGatewayAIServiceSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudNativeAPIGatewayAIServiceSourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCloudNativeAPIGatewayConsumerResponse> CreateCloudNativeAPIGatewayConsumerOutcome;
                 typedef std::future<CreateCloudNativeAPIGatewayConsumerOutcome> CreateCloudNativeAPIGatewayConsumerOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::CreateCloudNativeAPIGatewayConsumerRequest&, CreateCloudNativeAPIGatewayConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudNativeAPIGatewayConsumerAsyncHandler;
@@ -162,6 +214,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCloudNativeAPIGatewayLLMModelServiceResponse> CreateCloudNativeAPIGatewayLLMModelServiceOutcome;
                 typedef std::future<CreateCloudNativeAPIGatewayLLMModelServiceOutcome> CreateCloudNativeAPIGatewayLLMModelServiceOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::CreateCloudNativeAPIGatewayLLMModelServiceRequest&, CreateCloudNativeAPIGatewayLLMModelServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudNativeAPIGatewayLLMModelServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCloudNativeAPIGatewayMCPRouteResponse> CreateCloudNativeAPIGatewayMCPRouteOutcome;
+                typedef std::future<CreateCloudNativeAPIGatewayMCPRouteOutcome> CreateCloudNativeAPIGatewayMCPRouteOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::CreateCloudNativeAPIGatewayMCPRouteRequest&, CreateCloudNativeAPIGatewayMCPRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudNativeAPIGatewayMCPRouteAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCloudNativeAPIGatewayMCPServerResponse> CreateCloudNativeAPIGatewayMCPServerOutcome;
                 typedef std::future<CreateCloudNativeAPIGatewayMCPServerOutcome> CreateCloudNativeAPIGatewayMCPServerOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::CreateCloudNativeAPIGatewayMCPServerRequest&, CreateCloudNativeAPIGatewayMCPServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudNativeAPIGatewayMCPServerAsyncHandler;
@@ -171,6 +226,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCloudNativeAPIGatewaySecretKeyResponse> CreateCloudNativeAPIGatewaySecretKeyOutcome;
                 typedef std::future<CreateCloudNativeAPIGatewaySecretKeyOutcome> CreateCloudNativeAPIGatewaySecretKeyOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::CreateCloudNativeAPIGatewaySecretKeyRequest&, CreateCloudNativeAPIGatewaySecretKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudNativeAPIGatewaySecretKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCloudNativeAPIGatewayAIServiceSourceResponse> DeleteCloudNativeAPIGatewayAIServiceSourceOutcome;
+                typedef std::future<DeleteCloudNativeAPIGatewayAIServiceSourceOutcome> DeleteCloudNativeAPIGatewayAIServiceSourceOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::DeleteCloudNativeAPIGatewayAIServiceSourceRequest&, DeleteCloudNativeAPIGatewayAIServiceSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudNativeAPIGatewayAIServiceSourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCloudNativeAPIGatewayConsumerResponse> DeleteCloudNativeAPIGatewayConsumerOutcome;
                 typedef std::future<DeleteCloudNativeAPIGatewayConsumerOutcome> DeleteCloudNativeAPIGatewayConsumerOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DeleteCloudNativeAPIGatewayConsumerRequest&, DeleteCloudNativeAPIGatewayConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudNativeAPIGatewayConsumerAsyncHandler;
@@ -183,18 +241,33 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCloudNativeAPIGatewayLLMModelServiceResponse> DeleteCloudNativeAPIGatewayLLMModelServiceOutcome;
                 typedef std::future<DeleteCloudNativeAPIGatewayLLMModelServiceOutcome> DeleteCloudNativeAPIGatewayLLMModelServiceOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DeleteCloudNativeAPIGatewayLLMModelServiceRequest&, DeleteCloudNativeAPIGatewayLLMModelServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudNativeAPIGatewayLLMModelServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCloudNativeAPIGatewayMCPRouteResponse> DeleteCloudNativeAPIGatewayMCPRouteOutcome;
+                typedef std::future<DeleteCloudNativeAPIGatewayMCPRouteOutcome> DeleteCloudNativeAPIGatewayMCPRouteOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::DeleteCloudNativeAPIGatewayMCPRouteRequest&, DeleteCloudNativeAPIGatewayMCPRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudNativeAPIGatewayMCPRouteAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCloudNativeAPIGatewayMCPServerResponse> DeleteCloudNativeAPIGatewayMCPServerOutcome;
                 typedef std::future<DeleteCloudNativeAPIGatewayMCPServerOutcome> DeleteCloudNativeAPIGatewayMCPServerOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DeleteCloudNativeAPIGatewayMCPServerRequest&, DeleteCloudNativeAPIGatewayMCPServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudNativeAPIGatewayMCPServerAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCloudNativeAPIGatewayMCPToolResponse> DeleteCloudNativeAPIGatewayMCPToolOutcome;
                 typedef std::future<DeleteCloudNativeAPIGatewayMCPToolOutcome> DeleteCloudNativeAPIGatewayMCPToolOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DeleteCloudNativeAPIGatewayMCPToolRequest&, DeleteCloudNativeAPIGatewayMCPToolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudNativeAPIGatewayMCPToolAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCloudNativeAPIGatewayMCPToolVersionResponse> DeleteCloudNativeAPIGatewayMCPToolVersionOutcome;
+                typedef std::future<DeleteCloudNativeAPIGatewayMCPToolVersionOutcome> DeleteCloudNativeAPIGatewayMCPToolVersionOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::DeleteCloudNativeAPIGatewayMCPToolVersionRequest&, DeleteCloudNativeAPIGatewayMCPToolVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudNativeAPIGatewayMCPToolVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCloudNativeAPIGatewaySecretKeyResponse> DeleteCloudNativeAPIGatewaySecretKeyOutcome;
                 typedef std::future<DeleteCloudNativeAPIGatewaySecretKeyOutcome> DeleteCloudNativeAPIGatewaySecretKeyOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DeleteCloudNativeAPIGatewaySecretKeyRequest&, DeleteCloudNativeAPIGatewaySecretKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudNativeAPIGatewaySecretKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCNGWServicesWithRoutesResponse> DescribeCNGWServicesWithRoutesOutcome;
                 typedef std::future<DescribeCNGWServicesWithRoutesOutcome> DescribeCNGWServicesWithRoutesOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DescribeCNGWServicesWithRoutesRequest&, DescribeCNGWServicesWithRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCNGWServicesWithRoutesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayAIQuotaResponse> DescribeCloudNativeAPIGatewayAIQuotaOutcome;
+                typedef std::future<DescribeCloudNativeAPIGatewayAIQuotaOutcome> DescribeCloudNativeAPIGatewayAIQuotaOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::DescribeCloudNativeAPIGatewayAIQuotaRequest&, DescribeCloudNativeAPIGatewayAIQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayAIQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayAIQuotaListResponse> DescribeCloudNativeAPIGatewayAIQuotaListOutcome;
+                typedef std::future<DescribeCloudNativeAPIGatewayAIQuotaListOutcome> DescribeCloudNativeAPIGatewayAIQuotaListOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::DescribeCloudNativeAPIGatewayAIQuotaListRequest&, DescribeCloudNativeAPIGatewayAIQuotaListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayAIQuotaListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayAIServiceSourceListResponse> DescribeCloudNativeAPIGatewayAIServiceSourceListOutcome;
+                typedef std::future<DescribeCloudNativeAPIGatewayAIServiceSourceListOutcome> DescribeCloudNativeAPIGatewayAIServiceSourceListOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::DescribeCloudNativeAPIGatewayAIServiceSourceListRequest&, DescribeCloudNativeAPIGatewayAIServiceSourceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayAIServiceSourceListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayConsumerResponse> DescribeCloudNativeAPIGatewayConsumerOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewayConsumerOutcome> DescribeCloudNativeAPIGatewayConsumerOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DescribeCloudNativeAPIGatewayConsumerRequest&, DescribeCloudNativeAPIGatewayConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayConsumerAsyncHandler;
@@ -219,6 +292,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsResponse> DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsOutcome> DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsRequest&, DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayMCPRouteListResponse> DescribeCloudNativeAPIGatewayMCPRouteListOutcome;
+                typedef std::future<DescribeCloudNativeAPIGatewayMCPRouteListOutcome> DescribeCloudNativeAPIGatewayMCPRouteListOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::DescribeCloudNativeAPIGatewayMCPRouteListRequest&, DescribeCloudNativeAPIGatewayMCPRouteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayMCPRouteListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayMCPServerResponse> DescribeCloudNativeAPIGatewayMCPServerOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewayMCPServerOutcome> DescribeCloudNativeAPIGatewayMCPServerOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DescribeCloudNativeAPIGatewayMCPServerRequest&, DescribeCloudNativeAPIGatewayMCPServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayMCPServerAsyncHandler;
@@ -237,18 +313,33 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayMCPToolACLListResponse> DescribeCloudNativeAPIGatewayMCPToolACLListOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewayMCPToolACLListOutcome> DescribeCloudNativeAPIGatewayMCPToolACLListOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DescribeCloudNativeAPIGatewayMCPToolACLListRequest&, DescribeCloudNativeAPIGatewayMCPToolACLListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayMCPToolACLListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayMCPToolImportTaskResponse> DescribeCloudNativeAPIGatewayMCPToolImportTaskOutcome;
+                typedef std::future<DescribeCloudNativeAPIGatewayMCPToolImportTaskOutcome> DescribeCloudNativeAPIGatewayMCPToolImportTaskOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::DescribeCloudNativeAPIGatewayMCPToolImportTaskRequest&, DescribeCloudNativeAPIGatewayMCPToolImportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayMCPToolImportTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayMCPToolListResponse> DescribeCloudNativeAPIGatewayMCPToolListOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewayMCPToolListOutcome> DescribeCloudNativeAPIGatewayMCPToolListOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DescribeCloudNativeAPIGatewayMCPToolListRequest&, DescribeCloudNativeAPIGatewayMCPToolListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayMCPToolListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayMCPToolVersionResponse> DescribeCloudNativeAPIGatewayMCPToolVersionOutcome;
+                typedef std::future<DescribeCloudNativeAPIGatewayMCPToolVersionOutcome> DescribeCloudNativeAPIGatewayMCPToolVersionOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::DescribeCloudNativeAPIGatewayMCPToolVersionRequest&, DescribeCloudNativeAPIGatewayMCPToolVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayMCPToolVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayMCPToolVersionListResponse> DescribeCloudNativeAPIGatewayMCPToolVersionListOutcome;
+                typedef std::future<DescribeCloudNativeAPIGatewayMCPToolVersionListOutcome> DescribeCloudNativeAPIGatewayMCPToolVersionListOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::DescribeCloudNativeAPIGatewayMCPToolVersionListRequest&, DescribeCloudNativeAPIGatewayMCPToolVersionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayMCPToolVersionListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayMCPToolsFromFileResponse> DescribeCloudNativeAPIGatewayMCPToolsFromFileOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewayMCPToolsFromFileOutcome> DescribeCloudNativeAPIGatewayMCPToolsFromFileOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DescribeCloudNativeAPIGatewayMCPToolsFromFileRequest&, DescribeCloudNativeAPIGatewayMCPToolsFromFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayMCPToolsFromFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewaySecretKeyResponse> DescribeCloudNativeAPIGatewaySecretKeyOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewaySecretKeyOutcome> DescribeCloudNativeAPIGatewaySecretKeyOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DescribeCloudNativeAPIGatewaySecretKeyRequest&, DescribeCloudNativeAPIGatewaySecretKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewaySecretKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewaySecretKeyListResponse> DescribeCloudNativeAPIGatewaySecretKeyListOutcome;
+                typedef std::future<DescribeCloudNativeAPIGatewaySecretKeyListOutcome> DescribeCloudNativeAPIGatewaySecretKeyListOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::DescribeCloudNativeAPIGatewaySecretKeyListRequest&, DescribeCloudNativeAPIGatewaySecretKeyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewaySecretKeyListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewaySecretKeyValueResponse> DescribeCloudNativeAPIGatewaySecretKeyValueOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewaySecretKeyValueOutcome> DescribeCloudNativeAPIGatewaySecretKeyValueOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DescribeCloudNativeAPIGatewaySecretKeyValueRequest&, DescribeCloudNativeAPIGatewaySecretKeyValueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewaySecretKeyValueAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCloudNativeAPIGatewayAIServiceSourceResponse> ModifyCloudNativeAPIGatewayAIServiceSourceOutcome;
+                typedef std::future<ModifyCloudNativeAPIGatewayAIServiceSourceOutcome> ModifyCloudNativeAPIGatewayAIServiceSourceOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::ModifyCloudNativeAPIGatewayAIServiceSourceRequest&, ModifyCloudNativeAPIGatewayAIServiceSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudNativeAPIGatewayAIServiceSourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCloudNativeAPIGatewayConsumerResponse> ModifyCloudNativeAPIGatewayConsumerOutcome;
                 typedef std::future<ModifyCloudNativeAPIGatewayConsumerOutcome> ModifyCloudNativeAPIGatewayConsumerOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::ModifyCloudNativeAPIGatewayConsumerRequest&, ModifyCloudNativeAPIGatewayConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudNativeAPIGatewayConsumerAsyncHandler;
@@ -261,6 +352,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCloudNativeAPIGatewayLLMModelServiceResponse> ModifyCloudNativeAPIGatewayLLMModelServiceOutcome;
                 typedef std::future<ModifyCloudNativeAPIGatewayLLMModelServiceOutcome> ModifyCloudNativeAPIGatewayLLMModelServiceOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::ModifyCloudNativeAPIGatewayLLMModelServiceRequest&, ModifyCloudNativeAPIGatewayLLMModelServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudNativeAPIGatewayLLMModelServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCloudNativeAPIGatewayMCPRouteResponse> ModifyCloudNativeAPIGatewayMCPRouteOutcome;
+                typedef std::future<ModifyCloudNativeAPIGatewayMCPRouteOutcome> ModifyCloudNativeAPIGatewayMCPRouteOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::ModifyCloudNativeAPIGatewayMCPRouteRequest&, ModifyCloudNativeAPIGatewayMCPRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudNativeAPIGatewayMCPRouteAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCloudNativeAPIGatewayMCPRouteStatusResponse> ModifyCloudNativeAPIGatewayMCPRouteStatusOutcome;
+                typedef std::future<ModifyCloudNativeAPIGatewayMCPRouteStatusOutcome> ModifyCloudNativeAPIGatewayMCPRouteStatusOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::ModifyCloudNativeAPIGatewayMCPRouteStatusRequest&, ModifyCloudNativeAPIGatewayMCPRouteStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudNativeAPIGatewayMCPRouteStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCloudNativeAPIGatewayMCPServerResponse> ModifyCloudNativeAPIGatewayMCPServerOutcome;
                 typedef std::future<ModifyCloudNativeAPIGatewayMCPServerOutcome> ModifyCloudNativeAPIGatewayMCPServerOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::ModifyCloudNativeAPIGatewayMCPServerRequest&, ModifyCloudNativeAPIGatewayMCPServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudNativeAPIGatewayMCPServerAsyncHandler;
@@ -291,6 +388,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RemoveCloudNativeAPIGatewayConsumerInGroupResponse> RemoveCloudNativeAPIGatewayConsumerInGroupOutcome;
                 typedef std::future<RemoveCloudNativeAPIGatewayConsumerInGroupOutcome> RemoveCloudNativeAPIGatewayConsumerInGroupOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::RemoveCloudNativeAPIGatewayConsumerInGroupRequest&, RemoveCloudNativeAPIGatewayConsumerInGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveCloudNativeAPIGatewayConsumerInGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::RollbackCloudNativeAPIGatewayMCPToolVersionResponse> RollbackCloudNativeAPIGatewayMCPToolVersionOutcome;
+                typedef std::future<RollbackCloudNativeAPIGatewayMCPToolVersionOutcome> RollbackCloudNativeAPIGatewayMCPToolVersionOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::RollbackCloudNativeAPIGatewayMCPToolVersionRequest&, RollbackCloudNativeAPIGatewayMCPToolVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollbackCloudNativeAPIGatewayMCPToolVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnbindCloudNativeAPIGatewaySecretKeyResponse> UnbindCloudNativeAPIGatewaySecretKeyOutcome;
                 typedef std::future<UnbindCloudNativeAPIGatewaySecretKeyOutcome> UnbindCloudNativeAPIGatewaySecretKeyOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::UnbindCloudNativeAPIGatewaySecretKeyRequest&, UnbindCloudNativeAPIGatewaySecretKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindCloudNativeAPIGatewaySecretKeyAsyncHandler;
@@ -326,6 +426,42 @@ namespace TencentCloud
                 BindCloudNativeAPIGatewaySecretKeyOutcome BindCloudNativeAPIGatewaySecretKey(const Model::BindCloudNativeAPIGatewaySecretKeyRequest &request);
                 void BindCloudNativeAPIGatewaySecretKeyAsync(const Model::BindCloudNativeAPIGatewaySecretKeyRequest& request, const BindCloudNativeAPIGatewaySecretKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BindCloudNativeAPIGatewaySecretKeyOutcomeCallable BindCloudNativeAPIGatewaySecretKeyCallable(const Model::BindCloudNativeAPIGatewaySecretKeyRequest& request);
+
+                /**
+                 *上传插件前置操作，获取COS相关信息
+                 * @param req CheckCloudNativeAPIGatewayMCPRouteMatchRequest
+                 * @return CheckCloudNativeAPIGatewayMCPRouteMatchOutcome
+                 */
+                CheckCloudNativeAPIGatewayMCPRouteMatchOutcome CheckCloudNativeAPIGatewayMCPRouteMatch(const Model::CheckCloudNativeAPIGatewayMCPRouteMatchRequest &request);
+                void CheckCloudNativeAPIGatewayMCPRouteMatchAsync(const Model::CheckCloudNativeAPIGatewayMCPRouteMatchRequest& request, const CheckCloudNativeAPIGatewayMCPRouteMatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckCloudNativeAPIGatewayMCPRouteMatchOutcomeCallable CheckCloudNativeAPIGatewayMCPRouteMatchCallable(const Model::CheckCloudNativeAPIGatewayMCPRouteMatchRequest& request);
+
+                /**
+                 *修改云原生智能网关MCP Tool
+                 * @param req CheckCloudNativeAPIGatewayMCPToolVersionExistRequest
+                 * @return CheckCloudNativeAPIGatewayMCPToolVersionExistOutcome
+                 */
+                CheckCloudNativeAPIGatewayMCPToolVersionExistOutcome CheckCloudNativeAPIGatewayMCPToolVersionExist(const Model::CheckCloudNativeAPIGatewayMCPToolVersionExistRequest &request);
+                void CheckCloudNativeAPIGatewayMCPToolVersionExistAsync(const Model::CheckCloudNativeAPIGatewayMCPToolVersionExistRequest& request, const CheckCloudNativeAPIGatewayMCPToolVersionExistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckCloudNativeAPIGatewayMCPToolVersionExistOutcomeCallable CheckCloudNativeAPIGatewayMCPToolVersionExistCallable(const Model::CheckCloudNativeAPIGatewayMCPToolVersionExistRequest& request);
+
+                /**
+                 *修改云原生智能网关MCP Tool
+                 * @param req CompareCloudNativeAPIGatewayMCPToolVersionRequest
+                 * @return CompareCloudNativeAPIGatewayMCPToolVersionOutcome
+                 */
+                CompareCloudNativeAPIGatewayMCPToolVersionOutcome CompareCloudNativeAPIGatewayMCPToolVersion(const Model::CompareCloudNativeAPIGatewayMCPToolVersionRequest &request);
+                void CompareCloudNativeAPIGatewayMCPToolVersionAsync(const Model::CompareCloudNativeAPIGatewayMCPToolVersionRequest& request, const CompareCloudNativeAPIGatewayMCPToolVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CompareCloudNativeAPIGatewayMCPToolVersionOutcomeCallable CompareCloudNativeAPIGatewayMCPToolVersionCallable(const Model::CompareCloudNativeAPIGatewayMCPToolVersionRequest& request);
+
+                /**
+                 *创建云原生网关AI服务来源
+                 * @param req CreateCloudNativeAPIGatewayAIServiceSourceRequest
+                 * @return CreateCloudNativeAPIGatewayAIServiceSourceOutcome
+                 */
+                CreateCloudNativeAPIGatewayAIServiceSourceOutcome CreateCloudNativeAPIGatewayAIServiceSource(const Model::CreateCloudNativeAPIGatewayAIServiceSourceRequest &request);
+                void CreateCloudNativeAPIGatewayAIServiceSourceAsync(const Model::CreateCloudNativeAPIGatewayAIServiceSourceRequest& request, const CreateCloudNativeAPIGatewayAIServiceSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCloudNativeAPIGatewayAIServiceSourceOutcomeCallable CreateCloudNativeAPIGatewayAIServiceSourceCallable(const Model::CreateCloudNativeAPIGatewayAIServiceSourceRequest& request);
 
                 /**
                  *创建AI网关消费者。
@@ -364,6 +500,15 @@ namespace TencentCloud
                 CreateCloudNativeAPIGatewayLLMModelServiceOutcomeCallable CreateCloudNativeAPIGatewayLLMModelServiceCallable(const Model::CreateCloudNativeAPIGatewayLLMModelServiceRequest& request);
 
                 /**
+                 *上传插件前置操作，获取COS相关信息
+                 * @param req CreateCloudNativeAPIGatewayMCPRouteRequest
+                 * @return CreateCloudNativeAPIGatewayMCPRouteOutcome
+                 */
+                CreateCloudNativeAPIGatewayMCPRouteOutcome CreateCloudNativeAPIGatewayMCPRoute(const Model::CreateCloudNativeAPIGatewayMCPRouteRequest &request);
+                void CreateCloudNativeAPIGatewayMCPRouteAsync(const Model::CreateCloudNativeAPIGatewayMCPRouteRequest& request, const CreateCloudNativeAPIGatewayMCPRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCloudNativeAPIGatewayMCPRouteOutcomeCallable CreateCloudNativeAPIGatewayMCPRouteCallable(const Model::CreateCloudNativeAPIGatewayMCPRouteRequest& request);
+
+                /**
                  *创建AI网关MCP Server
                  * @param req CreateCloudNativeAPIGatewayMCPServerRequest
                  * @return CreateCloudNativeAPIGatewayMCPServerOutcome
@@ -389,6 +534,15 @@ namespace TencentCloud
                 CreateCloudNativeAPIGatewaySecretKeyOutcome CreateCloudNativeAPIGatewaySecretKey(const Model::CreateCloudNativeAPIGatewaySecretKeyRequest &request);
                 void CreateCloudNativeAPIGatewaySecretKeyAsync(const Model::CreateCloudNativeAPIGatewaySecretKeyRequest& request, const CreateCloudNativeAPIGatewaySecretKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCloudNativeAPIGatewaySecretKeyOutcomeCallable CreateCloudNativeAPIGatewaySecretKeyCallable(const Model::CreateCloudNativeAPIGatewaySecretKeyRequest& request);
+
+                /**
+                 *删除云原生网关AI服务来源
+                 * @param req DeleteCloudNativeAPIGatewayAIServiceSourceRequest
+                 * @return DeleteCloudNativeAPIGatewayAIServiceSourceOutcome
+                 */
+                DeleteCloudNativeAPIGatewayAIServiceSourceOutcome DeleteCloudNativeAPIGatewayAIServiceSource(const Model::DeleteCloudNativeAPIGatewayAIServiceSourceRequest &request);
+                void DeleteCloudNativeAPIGatewayAIServiceSourceAsync(const Model::DeleteCloudNativeAPIGatewayAIServiceSourceRequest& request, const DeleteCloudNativeAPIGatewayAIServiceSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCloudNativeAPIGatewayAIServiceSourceOutcomeCallable DeleteCloudNativeAPIGatewayAIServiceSourceCallable(const Model::DeleteCloudNativeAPIGatewayAIServiceSourceRequest& request);
 
                 /**
                  *删除AI 网关消费者（被绑定到消费者组/密钥时需先解绑）。
@@ -427,6 +581,15 @@ namespace TencentCloud
                 DeleteCloudNativeAPIGatewayLLMModelServiceOutcomeCallable DeleteCloudNativeAPIGatewayLLMModelServiceCallable(const Model::DeleteCloudNativeAPIGatewayLLMModelServiceRequest& request);
 
                 /**
+                 *上传插件前置操作，获取COS相关信息
+                 * @param req DeleteCloudNativeAPIGatewayMCPRouteRequest
+                 * @return DeleteCloudNativeAPIGatewayMCPRouteOutcome
+                 */
+                DeleteCloudNativeAPIGatewayMCPRouteOutcome DeleteCloudNativeAPIGatewayMCPRoute(const Model::DeleteCloudNativeAPIGatewayMCPRouteRequest &request);
+                void DeleteCloudNativeAPIGatewayMCPRouteAsync(const Model::DeleteCloudNativeAPIGatewayMCPRouteRequest& request, const DeleteCloudNativeAPIGatewayMCPRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCloudNativeAPIGatewayMCPRouteOutcomeCallable DeleteCloudNativeAPIGatewayMCPRouteCallable(const Model::DeleteCloudNativeAPIGatewayMCPRouteRequest& request);
+
+                /**
                  *删除AI网关MCP服务
                  * @param req DeleteCloudNativeAPIGatewayMCPServerRequest
                  * @return DeleteCloudNativeAPIGatewayMCPServerOutcome
@@ -445,6 +608,15 @@ namespace TencentCloud
                 DeleteCloudNativeAPIGatewayMCPToolOutcomeCallable DeleteCloudNativeAPIGatewayMCPToolCallable(const Model::DeleteCloudNativeAPIGatewayMCPToolRequest& request);
 
                 /**
+                 *修改云原生智能网关MCP Tool
+                 * @param req DeleteCloudNativeAPIGatewayMCPToolVersionRequest
+                 * @return DeleteCloudNativeAPIGatewayMCPToolVersionOutcome
+                 */
+                DeleteCloudNativeAPIGatewayMCPToolVersionOutcome DeleteCloudNativeAPIGatewayMCPToolVersion(const Model::DeleteCloudNativeAPIGatewayMCPToolVersionRequest &request);
+                void DeleteCloudNativeAPIGatewayMCPToolVersionAsync(const Model::DeleteCloudNativeAPIGatewayMCPToolVersionRequest& request, const DeleteCloudNativeAPIGatewayMCPToolVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCloudNativeAPIGatewayMCPToolVersionOutcomeCallable DeleteCloudNativeAPIGatewayMCPToolVersionCallable(const Model::DeleteCloudNativeAPIGatewayMCPToolVersionRequest& request);
+
+                /**
                  *删除消费者密钥（被绑定时需先解绑）。
                  * @param req DeleteCloudNativeAPIGatewaySecretKeyRequest
                  * @return DeleteCloudNativeAPIGatewaySecretKeyOutcome
@@ -461,6 +633,33 @@ namespace TencentCloud
                 DescribeCNGWServicesWithRoutesOutcome DescribeCNGWServicesWithRoutes(const Model::DescribeCNGWServicesWithRoutesRequest &request);
                 void DescribeCNGWServicesWithRoutesAsync(const Model::DescribeCNGWServicesWithRoutesRequest& request, const DescribeCNGWServicesWithRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCNGWServicesWithRoutesOutcomeCallable DescribeCNGWServicesWithRoutesCallable(const Model::DescribeCNGWServicesWithRoutesRequest& request);
+
+                /**
+                 *查询AI网关配额
+                 * @param req DescribeCloudNativeAPIGatewayAIQuotaRequest
+                 * @return DescribeCloudNativeAPIGatewayAIQuotaOutcome
+                 */
+                DescribeCloudNativeAPIGatewayAIQuotaOutcome DescribeCloudNativeAPIGatewayAIQuota(const Model::DescribeCloudNativeAPIGatewayAIQuotaRequest &request);
+                void DescribeCloudNativeAPIGatewayAIQuotaAsync(const Model::DescribeCloudNativeAPIGatewayAIQuotaRequest& request, const DescribeCloudNativeAPIGatewayAIQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudNativeAPIGatewayAIQuotaOutcomeCallable DescribeCloudNativeAPIGatewayAIQuotaCallable(const Model::DescribeCloudNativeAPIGatewayAIQuotaRequest& request);
+
+                /**
+                 *查询AI配额配置列表
+                 * @param req DescribeCloudNativeAPIGatewayAIQuotaListRequest
+                 * @return DescribeCloudNativeAPIGatewayAIQuotaListOutcome
+                 */
+                DescribeCloudNativeAPIGatewayAIQuotaListOutcome DescribeCloudNativeAPIGatewayAIQuotaList(const Model::DescribeCloudNativeAPIGatewayAIQuotaListRequest &request);
+                void DescribeCloudNativeAPIGatewayAIQuotaListAsync(const Model::DescribeCloudNativeAPIGatewayAIQuotaListRequest& request, const DescribeCloudNativeAPIGatewayAIQuotaListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudNativeAPIGatewayAIQuotaListOutcomeCallable DescribeCloudNativeAPIGatewayAIQuotaListCallable(const Model::DescribeCloudNativeAPIGatewayAIQuotaListRequest& request);
+
+                /**
+                 *查询云原生网关AI服务来源
+                 * @param req DescribeCloudNativeAPIGatewayAIServiceSourceListRequest
+                 * @return DescribeCloudNativeAPIGatewayAIServiceSourceListOutcome
+                 */
+                DescribeCloudNativeAPIGatewayAIServiceSourceListOutcome DescribeCloudNativeAPIGatewayAIServiceSourceList(const Model::DescribeCloudNativeAPIGatewayAIServiceSourceListRequest &request);
+                void DescribeCloudNativeAPIGatewayAIServiceSourceListAsync(const Model::DescribeCloudNativeAPIGatewayAIServiceSourceListRequest& request, const DescribeCloudNativeAPIGatewayAIServiceSourceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudNativeAPIGatewayAIServiceSourceListOutcomeCallable DescribeCloudNativeAPIGatewayAIServiceSourceListCallable(const Model::DescribeCloudNativeAPIGatewayAIServiceSourceListRequest& request);
 
                 /**
                  *查询云原生消费者详情
@@ -535,6 +734,15 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsOutcomeCallable DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsCallable(const Model::DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsRequest& request);
 
                 /**
+                 *上传插件前置操作，获取COS相关信息
+                 * @param req DescribeCloudNativeAPIGatewayMCPRouteListRequest
+                 * @return DescribeCloudNativeAPIGatewayMCPRouteListOutcome
+                 */
+                DescribeCloudNativeAPIGatewayMCPRouteListOutcome DescribeCloudNativeAPIGatewayMCPRouteList(const Model::DescribeCloudNativeAPIGatewayMCPRouteListRequest &request);
+                void DescribeCloudNativeAPIGatewayMCPRouteListAsync(const Model::DescribeCloudNativeAPIGatewayMCPRouteListRequest& request, const DescribeCloudNativeAPIGatewayMCPRouteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudNativeAPIGatewayMCPRouteListOutcomeCallable DescribeCloudNativeAPIGatewayMCPRouteListCallable(const Model::DescribeCloudNativeAPIGatewayMCPRouteListRequest& request);
+
+                /**
                  *查询AI 网关MCP服务信息
                  * @param req DescribeCloudNativeAPIGatewayMCPServerRequest
                  * @return DescribeCloudNativeAPIGatewayMCPServerOutcome
@@ -589,6 +797,15 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewayMCPToolACLListOutcomeCallable DescribeCloudNativeAPIGatewayMCPToolACLListCallable(const Model::DescribeCloudNativeAPIGatewayMCPToolACLListRequest& request);
 
                 /**
+                 *查询批量导入MCP Tools的任务进度
+                 * @param req DescribeCloudNativeAPIGatewayMCPToolImportTaskRequest
+                 * @return DescribeCloudNativeAPIGatewayMCPToolImportTaskOutcome
+                 */
+                DescribeCloudNativeAPIGatewayMCPToolImportTaskOutcome DescribeCloudNativeAPIGatewayMCPToolImportTask(const Model::DescribeCloudNativeAPIGatewayMCPToolImportTaskRequest &request);
+                void DescribeCloudNativeAPIGatewayMCPToolImportTaskAsync(const Model::DescribeCloudNativeAPIGatewayMCPToolImportTaskRequest& request, const DescribeCloudNativeAPIGatewayMCPToolImportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudNativeAPIGatewayMCPToolImportTaskOutcomeCallable DescribeCloudNativeAPIGatewayMCPToolImportTaskCallable(const Model::DescribeCloudNativeAPIGatewayMCPToolImportTaskRequest& request);
+
+                /**
                  *查询 AI 网关MCP Tool 列表
                  * @param req DescribeCloudNativeAPIGatewayMCPToolListRequest
                  * @return DescribeCloudNativeAPIGatewayMCPToolListOutcome
@@ -596,6 +813,24 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewayMCPToolListOutcome DescribeCloudNativeAPIGatewayMCPToolList(const Model::DescribeCloudNativeAPIGatewayMCPToolListRequest &request);
                 void DescribeCloudNativeAPIGatewayMCPToolListAsync(const Model::DescribeCloudNativeAPIGatewayMCPToolListRequest& request, const DescribeCloudNativeAPIGatewayMCPToolListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudNativeAPIGatewayMCPToolListOutcomeCallable DescribeCloudNativeAPIGatewayMCPToolListCallable(const Model::DescribeCloudNativeAPIGatewayMCPToolListRequest& request);
+
+                /**
+                 *修改云原生智能网关MCP Tool
+                 * @param req DescribeCloudNativeAPIGatewayMCPToolVersionRequest
+                 * @return DescribeCloudNativeAPIGatewayMCPToolVersionOutcome
+                 */
+                DescribeCloudNativeAPIGatewayMCPToolVersionOutcome DescribeCloudNativeAPIGatewayMCPToolVersion(const Model::DescribeCloudNativeAPIGatewayMCPToolVersionRequest &request);
+                void DescribeCloudNativeAPIGatewayMCPToolVersionAsync(const Model::DescribeCloudNativeAPIGatewayMCPToolVersionRequest& request, const DescribeCloudNativeAPIGatewayMCPToolVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudNativeAPIGatewayMCPToolVersionOutcomeCallable DescribeCloudNativeAPIGatewayMCPToolVersionCallable(const Model::DescribeCloudNativeAPIGatewayMCPToolVersionRequest& request);
+
+                /**
+                 *修改云原生智能网关MCP Tool
+                 * @param req DescribeCloudNativeAPIGatewayMCPToolVersionListRequest
+                 * @return DescribeCloudNativeAPIGatewayMCPToolVersionListOutcome
+                 */
+                DescribeCloudNativeAPIGatewayMCPToolVersionListOutcome DescribeCloudNativeAPIGatewayMCPToolVersionList(const Model::DescribeCloudNativeAPIGatewayMCPToolVersionListRequest &request);
+                void DescribeCloudNativeAPIGatewayMCPToolVersionListAsync(const Model::DescribeCloudNativeAPIGatewayMCPToolVersionListRequest& request, const DescribeCloudNativeAPIGatewayMCPToolVersionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudNativeAPIGatewayMCPToolVersionListOutcomeCallable DescribeCloudNativeAPIGatewayMCPToolVersionListCallable(const Model::DescribeCloudNativeAPIGatewayMCPToolVersionListRequest& request);
 
                 /**
                  *从OpenAPI文件中解析出可导入的MCP tools
@@ -616,6 +851,15 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewaySecretKeyOutcomeCallable DescribeCloudNativeAPIGatewaySecretKeyCallable(const Model::DescribeCloudNativeAPIGatewaySecretKeyRequest& request);
 
                 /**
+                 *查询密钥列表。
+                 * @param req DescribeCloudNativeAPIGatewaySecretKeyListRequest
+                 * @return DescribeCloudNativeAPIGatewaySecretKeyListOutcome
+                 */
+                DescribeCloudNativeAPIGatewaySecretKeyListOutcome DescribeCloudNativeAPIGatewaySecretKeyList(const Model::DescribeCloudNativeAPIGatewaySecretKeyListRequest &request);
+                void DescribeCloudNativeAPIGatewaySecretKeyListAsync(const Model::DescribeCloudNativeAPIGatewaySecretKeyListRequest& request, const DescribeCloudNativeAPIGatewaySecretKeyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudNativeAPIGatewaySecretKeyListOutcomeCallable DescribeCloudNativeAPIGatewaySecretKeyListCallable(const Model::DescribeCloudNativeAPIGatewaySecretKeyListRequest& request);
+
+                /**
                  *查询密钥明文值（KMS 类型密钥不可获取）。
                  * @param req DescribeCloudNativeAPIGatewaySecretKeyValueRequest
                  * @return DescribeCloudNativeAPIGatewaySecretKeyValueOutcome
@@ -623,6 +867,15 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewaySecretKeyValueOutcome DescribeCloudNativeAPIGatewaySecretKeyValue(const Model::DescribeCloudNativeAPIGatewaySecretKeyValueRequest &request);
                 void DescribeCloudNativeAPIGatewaySecretKeyValueAsync(const Model::DescribeCloudNativeAPIGatewaySecretKeyValueRequest& request, const DescribeCloudNativeAPIGatewaySecretKeyValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudNativeAPIGatewaySecretKeyValueOutcomeCallable DescribeCloudNativeAPIGatewaySecretKeyValueCallable(const Model::DescribeCloudNativeAPIGatewaySecretKeyValueRequest& request);
+
+                /**
+                 *修改云原生网关AI服务来源
+                 * @param req ModifyCloudNativeAPIGatewayAIServiceSourceRequest
+                 * @return ModifyCloudNativeAPIGatewayAIServiceSourceOutcome
+                 */
+                ModifyCloudNativeAPIGatewayAIServiceSourceOutcome ModifyCloudNativeAPIGatewayAIServiceSource(const Model::ModifyCloudNativeAPIGatewayAIServiceSourceRequest &request);
+                void ModifyCloudNativeAPIGatewayAIServiceSourceAsync(const Model::ModifyCloudNativeAPIGatewayAIServiceSourceRequest& request, const ModifyCloudNativeAPIGatewayAIServiceSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCloudNativeAPIGatewayAIServiceSourceOutcomeCallable ModifyCloudNativeAPIGatewayAIServiceSourceCallable(const Model::ModifyCloudNativeAPIGatewayAIServiceSourceRequest& request);
 
                 /**
                  *修改AI网关消费者
@@ -659,6 +912,24 @@ namespace TencentCloud
                 ModifyCloudNativeAPIGatewayLLMModelServiceOutcome ModifyCloudNativeAPIGatewayLLMModelService(const Model::ModifyCloudNativeAPIGatewayLLMModelServiceRequest &request);
                 void ModifyCloudNativeAPIGatewayLLMModelServiceAsync(const Model::ModifyCloudNativeAPIGatewayLLMModelServiceRequest& request, const ModifyCloudNativeAPIGatewayLLMModelServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCloudNativeAPIGatewayLLMModelServiceOutcomeCallable ModifyCloudNativeAPIGatewayLLMModelServiceCallable(const Model::ModifyCloudNativeAPIGatewayLLMModelServiceRequest& request);
+
+                /**
+                 *上传插件前置操作，获取COS相关信息
+                 * @param req ModifyCloudNativeAPIGatewayMCPRouteRequest
+                 * @return ModifyCloudNativeAPIGatewayMCPRouteOutcome
+                 */
+                ModifyCloudNativeAPIGatewayMCPRouteOutcome ModifyCloudNativeAPIGatewayMCPRoute(const Model::ModifyCloudNativeAPIGatewayMCPRouteRequest &request);
+                void ModifyCloudNativeAPIGatewayMCPRouteAsync(const Model::ModifyCloudNativeAPIGatewayMCPRouteRequest& request, const ModifyCloudNativeAPIGatewayMCPRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCloudNativeAPIGatewayMCPRouteOutcomeCallable ModifyCloudNativeAPIGatewayMCPRouteCallable(const Model::ModifyCloudNativeAPIGatewayMCPRouteRequest& request);
+
+                /**
+                 *上传插件前置操作，获取COS相关信息
+                 * @param req ModifyCloudNativeAPIGatewayMCPRouteStatusRequest
+                 * @return ModifyCloudNativeAPIGatewayMCPRouteStatusOutcome
+                 */
+                ModifyCloudNativeAPIGatewayMCPRouteStatusOutcome ModifyCloudNativeAPIGatewayMCPRouteStatus(const Model::ModifyCloudNativeAPIGatewayMCPRouteStatusRequest &request);
+                void ModifyCloudNativeAPIGatewayMCPRouteStatusAsync(const Model::ModifyCloudNativeAPIGatewayMCPRouteStatusRequest& request, const ModifyCloudNativeAPIGatewayMCPRouteStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCloudNativeAPIGatewayMCPRouteStatusOutcomeCallable ModifyCloudNativeAPIGatewayMCPRouteStatusCallable(const Model::ModifyCloudNativeAPIGatewayMCPRouteStatusRequest& request);
 
                 /**
                  *修改MCP服务配置
@@ -749,6 +1020,15 @@ namespace TencentCloud
                 RemoveCloudNativeAPIGatewayConsumerInGroupOutcome RemoveCloudNativeAPIGatewayConsumerInGroup(const Model::RemoveCloudNativeAPIGatewayConsumerInGroupRequest &request);
                 void RemoveCloudNativeAPIGatewayConsumerInGroupAsync(const Model::RemoveCloudNativeAPIGatewayConsumerInGroupRequest& request, const RemoveCloudNativeAPIGatewayConsumerInGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RemoveCloudNativeAPIGatewayConsumerInGroupOutcomeCallable RemoveCloudNativeAPIGatewayConsumerInGroupCallable(const Model::RemoveCloudNativeAPIGatewayConsumerInGroupRequest& request);
+
+                /**
+                 *修改云原生智能网关MCP Tool
+                 * @param req RollbackCloudNativeAPIGatewayMCPToolVersionRequest
+                 * @return RollbackCloudNativeAPIGatewayMCPToolVersionOutcome
+                 */
+                RollbackCloudNativeAPIGatewayMCPToolVersionOutcome RollbackCloudNativeAPIGatewayMCPToolVersion(const Model::RollbackCloudNativeAPIGatewayMCPToolVersionRequest &request);
+                void RollbackCloudNativeAPIGatewayMCPToolVersionAsync(const Model::RollbackCloudNativeAPIGatewayMCPToolVersionRequest& request, const RollbackCloudNativeAPIGatewayMCPToolVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RollbackCloudNativeAPIGatewayMCPToolVersionOutcomeCallable RollbackCloudNativeAPIGatewayMCPToolVersionCallable(const Model::RollbackCloudNativeAPIGatewayMCPToolVersionRequest& request);
 
                 /**
                  *解绑密钥

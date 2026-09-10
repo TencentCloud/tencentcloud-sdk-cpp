@@ -27,6 +27,7 @@
 #include <tencentcloud/vod/v20180717/model/ImageEncodeConfig.h>
 #include <tencentcloud/vod/v20180717/model/ImageEnhanceConfig.h>
 #include <tencentcloud/vod/v20180717/model/ImageBeautyConfig.h>
+#include <tencentcloud/vod/v20180717/model/AiCutOutConfig.h>
 
 
 namespace TencentCloud
@@ -124,6 +125,27 @@ namespace TencentCloud
                      */
                     bool BeautyConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Ai抠图配置</p>
+                     * @return AiCutOutConfig <p>Ai抠图配置</p>
+                     * 
+                     */
+                    AiCutOutConfig GetAiCutOutConfig() const;
+
+                    /**
+                     * 设置<p>Ai抠图配置</p>
+                     * @param _aiCutOutConfig <p>Ai抠图配置</p>
+                     * 
+                     */
+                    void SetAiCutOutConfig(const AiCutOutConfig& _aiCutOutConfig);
+
+                    /**
+                     * 判断参数 AiCutOutConfig 是否已赋值
+                     * @return AiCutOutConfig 是否已赋值
+                     * 
+                     */
+                    bool AiCutOutConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -146,6 +168,12 @@ namespace TencentCloud
                      */
                     ImageBeautyConfig m_beautyConfig;
                     bool m_beautyConfigHasBeenSet;
+
+                    /**
+                     * <p>Ai抠图配置</p>
+                     */
+                    AiCutOutConfig m_aiCutOutConfig;
+                    bool m_aiCutOutConfigHasBeenSet;
 
                 };
             }

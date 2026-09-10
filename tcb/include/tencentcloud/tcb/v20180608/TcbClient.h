@@ -51,6 +51,8 @@
 #include <tencentcloud/tcb/v20180608/model/CreateEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateEnvResourceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateEnvResourceResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreateFunctionRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreateFunctionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateHTTPServiceRouteRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateHTTPServiceRouteResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateHostingDomainRequest.h>
@@ -73,6 +75,8 @@
 #include <tencentcloud/tcb/v20180608/model/DeleteCloudAppResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteCloudAppVersionRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteCloudAppVersionResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteFunctionRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteFunctionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteHTTPServiceRouteRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteHTTPServiceRouteResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteProviderRequest.h>
@@ -165,10 +169,16 @@
 #include <tencentcloud/tcb/v20180608/model/DestroyMySQLResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DownloadFunctionRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DownloadFunctionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ExecutePGSqlRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ExecutePGSqlResponse.h>
+#include <tencentcloud/tcb/v20180608/model/GetFunctionRequest.h>
+#include <tencentcloud/tcb/v20180608/model/GetFunctionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/GetProvidersRequest.h>
 #include <tencentcloud/tcb/v20180608/model/GetProvidersResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ListFunctionsRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ListFunctionsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ListPGUserMigrationsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ListPGUserMigrationsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ListTablesRequest.h>
@@ -223,6 +233,10 @@
 #include <tencentcloud/tcb/v20180608/model/UnbindStorageSourceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/UpdateAIModelRequest.h>
 #include <tencentcloud/tcb/v20180608/model/UpdateAIModelResponse.h>
+#include <tencentcloud/tcb/v20180608/model/UpdateFunctionCodeRequest.h>
+#include <tencentcloud/tcb/v20180608/model/UpdateFunctionCodeResponse.h>
+#include <tencentcloud/tcb/v20180608/model/UpdateFunctionConfigurationRequest.h>
+#include <tencentcloud/tcb/v20180608/model/UpdateFunctionConfigurationResponse.h>
 #include <tencentcloud/tcb/v20180608/model/UpdateTableRequest.h>
 #include <tencentcloud/tcb/v20180608/model/UpdateTableResponse.h>
 #include <tencentcloud/tcb/v20180608/model/VerifyHTTPServiceRouteRequest.h>
@@ -283,6 +297,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEnvResourceResponse> CreateEnvResourceOutcome;
                 typedef std::future<CreateEnvResourceOutcome> CreateEnvResourceOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateEnvResourceRequest&, CreateEnvResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEnvResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFunctionResponse> CreateFunctionOutcome;
+                typedef std::future<CreateFunctionOutcome> CreateFunctionOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreateFunctionRequest&, CreateFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFunctionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateHTTPServiceRouteResponse> CreateHTTPServiceRouteOutcome;
                 typedef std::future<CreateHTTPServiceRouteOutcome> CreateHTTPServiceRouteOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateHTTPServiceRouteRequest&, CreateHTTPServiceRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHTTPServiceRouteAsyncHandler;
@@ -316,6 +333,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCloudAppVersionResponse> DeleteCloudAppVersionOutcome;
                 typedef std::future<DeleteCloudAppVersionOutcome> DeleteCloudAppVersionOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteCloudAppVersionRequest&, DeleteCloudAppVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudAppVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteFunctionResponse> DeleteFunctionOutcome;
+                typedef std::future<DeleteFunctionOutcome> DeleteFunctionOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DeleteFunctionRequest&, DeleteFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFunctionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteHTTPServiceRouteResponse> DeleteHTTPServiceRouteOutcome;
                 typedef std::future<DeleteHTTPServiceRouteOutcome> DeleteHTTPServiceRouteOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteHTTPServiceRouteRequest&, DeleteHTTPServiceRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHTTPServiceRouteAsyncHandler;
@@ -454,12 +474,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DestroyStaticStoreResponse> DestroyStaticStoreOutcome;
                 typedef std::future<DestroyStaticStoreOutcome> DestroyStaticStoreOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DestroyStaticStoreRequest&, DestroyStaticStoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyStaticStoreAsyncHandler;
+                typedef Outcome<Core::Error, Model::DownloadFunctionResponse> DownloadFunctionOutcome;
+                typedef std::future<DownloadFunctionOutcome> DownloadFunctionOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DownloadFunctionRequest&, DownloadFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadFunctionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExecutePGSqlResponse> ExecutePGSqlOutcome;
                 typedef std::future<ExecutePGSqlOutcome> ExecutePGSqlOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ExecutePGSqlRequest&, ExecutePGSqlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecutePGSqlAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetFunctionResponse> GetFunctionOutcome;
+                typedef std::future<GetFunctionOutcome> GetFunctionOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::GetFunctionRequest&, GetFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFunctionAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetProvidersResponse> GetProvidersOutcome;
                 typedef std::future<GetProvidersOutcome> GetProvidersOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::GetProvidersRequest&, GetProvidersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetProvidersAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListFunctionsResponse> ListFunctionsOutcome;
+                typedef std::future<ListFunctionsOutcome> ListFunctionsOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ListFunctionsRequest&, ListFunctionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListFunctionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListPGUserMigrationsResponse> ListPGUserMigrationsOutcome;
                 typedef std::future<ListPGUserMigrationsOutcome> ListPGUserMigrationsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ListPGUserMigrationsRequest&, ListPGUserMigrationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListPGUserMigrationsAsyncHandler;
@@ -541,6 +570,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateAIModelResponse> UpdateAIModelOutcome;
                 typedef std::future<UpdateAIModelOutcome> UpdateAIModelOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::UpdateAIModelRequest&, UpdateAIModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAIModelAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateFunctionCodeResponse> UpdateFunctionCodeOutcome;
+                typedef std::future<UpdateFunctionCodeOutcome> UpdateFunctionCodeOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::UpdateFunctionCodeRequest&, UpdateFunctionCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFunctionCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateFunctionConfigurationResponse> UpdateFunctionConfigurationOutcome;
+                typedef std::future<UpdateFunctionConfigurationOutcome> UpdateFunctionConfigurationOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::UpdateFunctionConfigurationRequest&, UpdateFunctionConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFunctionConfigurationAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateTableResponse> UpdateTableOutcome;
                 typedef std::future<UpdateTableOutcome> UpdateTableOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::UpdateTableRequest&, UpdateTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTableAsyncHandler;
@@ -726,6 +761,15 @@ namespace TencentCloud
                 CreateEnvResourceOutcomeCallable CreateEnvResourceCallable(const Model::CreateEnvResourceRequest& request);
 
                 /**
+                 *创建云函数
+                 * @param req CreateFunctionRequest
+                 * @return CreateFunctionOutcome
+                 */
+                CreateFunctionOutcome CreateFunction(const Model::CreateFunctionRequest &request);
+                void CreateFunctionAsync(const Model::CreateFunctionRequest& request, const CreateFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFunctionOutcomeCallable CreateFunctionCallable(const Model::CreateFunctionRequest& request);
+
+                /**
                  *本接口CreateHTTPServiceRoute用于创建HTTP访问服务路由。如果不传Domain.Routes，仅创建域名信息。首次创建域名后需要调用DescribeHTTPServiceRoute查询域名状态，如果状态是PROCESSING，需要轮询查询域名状态直到SUCCESS或者FAIL。如果状态是FAIL，可以删除后重新创建。创建成功后域名可能无法访问，原因是异步下发的路由，可通过http或者https探测路由是否下发，如果http访问返回404或者https访问握手失败，可等待一会再试，直到访问正常。此外HTTP访问服务提供了默认域名，通过DescribeHTTPServiceRoute接口可直接获取默认域名。
                  * @param req CreateHTTPServiceRouteRequest
                  * @return CreateHTTPServiceRouteOutcome
@@ -835,6 +879,17 @@ namespace TencentCloud
                 DeleteCloudAppVersionOutcome DeleteCloudAppVersion(const Model::DeleteCloudAppVersionRequest &request);
                 void DeleteCloudAppVersionAsync(const Model::DeleteCloudAppVersionRequest& request, const DeleteCloudAppVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteCloudAppVersionOutcomeCallable DeleteCloudAppVersionCallable(const Model::DeleteCloudAppVersionRequest& request);
+
+                /**
+                 *删除云函数。
+
+删除指定环境下的云函数。调用接口后，若通过 GetFunction 接口查询不到该函数，则表示删除成功。
+                 * @param req DeleteFunctionRequest
+                 * @return DeleteFunctionOutcome
+                 */
+                DeleteFunctionOutcome DeleteFunction(const Model::DeleteFunctionRequest &request);
+                void DeleteFunctionAsync(const Model::DeleteFunctionRequest& request, const DeleteFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteFunctionOutcomeCallable DeleteFunctionCallable(const Model::DeleteFunctionRequest& request);
 
                 /**
                  *本接口DeleteHTTPServiceRoute用于删除HTTP访问服务域名或者路由。可批量删除多条path路由、删除域名及所有path路由，如果Paths字段为空则删除域名及所有path路由，如果Paths不为空则仅删除path路由。
@@ -1301,6 +1356,15 @@ namespace TencentCloud
                 DestroyStaticStoreOutcomeCallable DestroyStaticStoreCallable(const Model::DestroyStaticStoreRequest& request);
 
                 /**
+                 *获取云函数地址并下载zip包
+                 * @param req DownloadFunctionRequest
+                 * @return DownloadFunctionOutcome
+                 */
+                DownloadFunctionOutcome DownloadFunction(const Model::DownloadFunctionRequest &request);
+                void DownloadFunctionAsync(const Model::DownloadFunctionRequest& request, const DownloadFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DownloadFunctionOutcomeCallable DownloadFunctionCallable(const Model::DownloadFunctionRequest& request);
+
+                /**
                  *在Postgres数据库上执行SQL
                  * @param req ExecutePGSqlRequest
                  * @return ExecutePGSqlOutcome
@@ -1310,6 +1374,15 @@ namespace TencentCloud
                 ExecutePGSqlOutcomeCallable ExecutePGSqlCallable(const Model::ExecutePGSqlRequest& request);
 
                 /**
+                 *获取云函数详情
+                 * @param req GetFunctionRequest
+                 * @return GetFunctionOutcome
+                 */
+                GetFunctionOutcome GetFunction(const Model::GetFunctionRequest &request);
+                void GetFunctionAsync(const Model::GetFunctionRequest& request, const GetFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetFunctionOutcomeCallable GetFunctionCallable(const Model::GetFunctionRequest& request);
+
+                /**
                  *查询指定云开发环境下的身份认证源列表。返回该环境已配置的所有身份认证源信息，包括第三方登录（OAuth、OIDC、SAML）、微信小程序登录、自定义登录和邮箱登录等。返回结果包含认证源基本信息、关联应用、配置状态及启用情况。若自定义登录或邮箱登录的身份源尚未创建，接口会自动追加一个默认关闭状态的身份源记录。
                  * @param req GetProvidersRequest
                  * @return GetProvidersOutcome
@@ -1317,6 +1390,15 @@ namespace TencentCloud
                 GetProvidersOutcome GetProviders(const Model::GetProvidersRequest &request);
                 void GetProvidersAsync(const Model::GetProvidersRequest& request, const GetProvidersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetProvidersOutcomeCallable GetProvidersCallable(const Model::GetProvidersRequest& request);
+
+                /**
+                 *该接口根据传入的查询参数返回相关函数信息。
+                 * @param req ListFunctionsRequest
+                 * @return ListFunctionsOutcome
+                 */
+                ListFunctionsOutcome ListFunctions(const Model::ListFunctionsRequest &request);
+                void ListFunctionsAsync(const Model::ListFunctionsRequest& request, const ListFunctionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListFunctionsOutcomeCallable ListFunctionsCallable(const Model::ListFunctionsRequest& request);
 
                 /**
                  *本接口（ListPGUserMigrations）用于查询目标环境已应用的用户 migration 列表。
@@ -1600,6 +1682,24 @@ Id、Secret、CreatedAt、Meta 等字段在该接口中不可修改，当客户�
                 UpdateAIModelOutcome UpdateAIModel(const Model::UpdateAIModelRequest &request);
                 void UpdateAIModelAsync(const Model::UpdateAIModelRequest& request, const UpdateAIModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateAIModelOutcomeCallable UpdateAIModelCallable(const Model::UpdateAIModelRequest& request);
+
+                /**
+                 *更新云函数代码
+                 * @param req UpdateFunctionCodeRequest
+                 * @return UpdateFunctionCodeOutcome
+                 */
+                UpdateFunctionCodeOutcome UpdateFunctionCode(const Model::UpdateFunctionCodeRequest &request);
+                void UpdateFunctionCodeAsync(const Model::UpdateFunctionCodeRequest& request, const UpdateFunctionCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateFunctionCodeOutcomeCallable UpdateFunctionCodeCallable(const Model::UpdateFunctionCodeRequest& request);
+
+                /**
+                 *该接口根据传入参数更新函数配置。
+                 * @param req UpdateFunctionConfigurationRequest
+                 * @return UpdateFunctionConfigurationOutcome
+                 */
+                UpdateFunctionConfigurationOutcome UpdateFunctionConfiguration(const Model::UpdateFunctionConfigurationRequest &request);
+                void UpdateFunctionConfigurationAsync(const Model::UpdateFunctionConfigurationRequest& request, const UpdateFunctionConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateFunctionConfigurationOutcomeCallable UpdateFunctionConfigurationCallable(const Model::UpdateFunctionConfigurationRequest& request);
 
                 /**
                  *本接口(UpdateTable)用于修改文档型数据库表信息，当前可以支持创建和删除索引。

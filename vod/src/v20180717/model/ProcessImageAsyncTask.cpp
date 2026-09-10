@@ -23,7 +23,8 @@ using namespace std;
 ProcessImageAsyncTask::ProcessImageAsyncTask() :
     m_encodeConfigHasBeenSet(false),
     m_enhanceConfigHasBeenSet(false),
-    m_beautyConfigHasBeenSet(false)
+    m_beautyConfigHasBeenSet(false),
+    m_aiCutOutConfigHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,23 @@ CoreInternalOutcome ProcessImageAsyncTask::Deserialize(const rapidjson::Value &v
         m_beautyConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("AiCutOutConfig") && !value["AiCutOutConfig"].IsNull())
+    {
+        if (!value["AiCutOutConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessImageAsyncTask.AiCutOutConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aiCutOutConfig.Deserialize(value["AiCutOutConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aiCutOutConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +133,15 @@ void ProcessImageAsyncTask::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_beautyConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aiCutOutConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiCutOutConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aiCutOutConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -166,5 +193,21 @@ void ProcessImageAsyncTask::SetBeautyConfig(const ImageBeautyConfig& _beautyConf
 bool ProcessImageAsyncTask::BeautyConfigHasBeenSet() const
 {
     return m_beautyConfigHasBeenSet;
+}
+
+AiCutOutConfig ProcessImageAsyncTask::GetAiCutOutConfig() const
+{
+    return m_aiCutOutConfig;
+}
+
+void ProcessImageAsyncTask::SetAiCutOutConfig(const AiCutOutConfig& _aiCutOutConfig)
+{
+    m_aiCutOutConfig = _aiCutOutConfig;
+    m_aiCutOutConfigHasBeenSet = true;
+}
+
+bool ProcessImageAsyncTask::AiCutOutConfigHasBeenSet() const
+{
+    return m_aiCutOutConfigHasBeenSet;
 }
 

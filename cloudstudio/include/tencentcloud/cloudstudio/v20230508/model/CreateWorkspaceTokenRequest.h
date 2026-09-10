@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作空间 SpaceKey
-                     * @return SpaceKey 工作空间 SpaceKey
+                     * 获取<p>工作空间 SpaceKey</p>
+                     * @return SpaceKey <p>工作空间 SpaceKey</p>
                      * 
                      */
                     std::string GetSpaceKey() const;
 
                     /**
-                     * 设置工作空间 SpaceKey
-                     * @param _spaceKey 工作空间 SpaceKey
+                     * 设置<p>工作空间 SpaceKey</p>
+                     * @param _spaceKey <p>工作空间 SpaceKey</p>
                      * 
                      */
                     void SetSpaceKey(const std::string& _spaceKey);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SpaceKeyHasBeenSet() const;
 
                     /**
-                     * 获取token过期时间，单位是秒，默认 3600
-                     * @return TokenExpiredLimitSec token过期时间，单位是秒，默认 3600
+                     * 获取<p>token过期时间，单位是秒，默认 3600</p>
+                     * @return TokenExpiredLimitSec <p>token过期时间，单位是秒，默认 3600</p>
                      * 
                      */
                     uint64_t GetTokenExpiredLimitSec() const;
 
                     /**
-                     * 设置token过期时间，单位是秒，默认 3600
-                     * @param _tokenExpiredLimitSec token过期时间，单位是秒，默认 3600
+                     * 设置<p>token过期时间，单位是秒，默认 3600</p>
+                     * @param _tokenExpiredLimitSec <p>token过期时间，单位是秒，默认 3600</p>
                      * 
                      */
                     void SetTokenExpiredLimitSec(const uint64_t& _tokenExpiredLimitSec);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TokenExpiredLimitSecHasBeenSet() const;
 
                     /**
-                     * 获取token 授权策略，可选值为 workspace-run-only, all。默认为 workspace-run-only
-                     * @return Policies token 授权策略，可选值为 workspace-run-only, all。默认为 workspace-run-only
+                     * 获取<p>token 授权策略，可选值为 workspace-run-only, all。默认为 workspace-run-only</p>
+                     * @return Policies <p>token 授权策略，可选值为 workspace-run-only, all。默认为 workspace-run-only</p>
                      * 
                      */
                     std::vector<std::string> GetPolicies() const;
 
                     /**
-                     * 设置token 授权策略，可选值为 workspace-run-only, all。默认为 workspace-run-only
-                     * @param _policies token 授权策略，可选值为 workspace-run-only, all。默认为 workspace-run-only
+                     * 设置<p>token 授权策略，可选值为 workspace-run-only, all。默认为 workspace-run-only</p>
+                     * @param _policies <p>token 授权策略，可选值为 workspace-run-only, all。默认为 workspace-run-only</p>
                      * 
                      */
                     void SetPolicies(const std::vector<std::string>& _policies);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 工作空间 SpaceKey
+                     * <p>工作空间 SpaceKey</p>
                      */
                     std::string m_spaceKey;
                     bool m_spaceKeyHasBeenSet;
 
                     /**
-                     * token过期时间，单位是秒，默认 3600
+                     * <p>token过期时间，单位是秒，默认 3600</p>
                      */
                     uint64_t m_tokenExpiredLimitSec;
                     bool m_tokenExpiredLimitSecHasBeenSet;
 
                     /**
-                     * token 授权策略，可选值为 workspace-run-only, all。默认为 workspace-run-only
+                     * <p>token 授权策略，可选值为 workspace-run-only, all。默认为 workspace-run-only</p>
                      */
                     std::vector<std::string> m_policies;
                     bool m_policiesHasBeenSet;

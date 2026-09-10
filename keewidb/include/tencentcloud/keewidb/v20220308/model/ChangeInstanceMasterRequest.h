@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID，如：kee-6ubh****。
-                     * @return InstanceId 实例 ID，如：kee-6ubh****。
+                     * 获取<p>实例 ID，如：kee-6ubh****。</p>
+                     * @return InstanceId <p>实例 ID，如：kee-6ubh****。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID，如：kee-6ubh****。
-                     * @param _instanceId 实例 ID，如：kee-6ubh****。
+                     * 设置<p>实例 ID，如：kee-6ubh****。</p>
+                     * @param _instanceId <p>实例 ID，如：kee-6ubh****。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,36 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取副本节点 ID。
-                     * @return NodeId 副本节点 ID。
+                     * 获取<p>副本节点组 ID，请通过接口DescribeInstanceReplicas获取多 AZ备节点组的 ID 信息。</p>
+                     * @return GroupId <p>副本节点组 ID，请通过接口DescribeInstanceReplicas获取多 AZ备节点组的 ID 信息。</p>
+                     * 
+                     */
+                    int64_t GetGroupId() const;
+
+                    /**
+                     * 设置<p>副本节点组 ID，请通过接口DescribeInstanceReplicas获取多 AZ备节点组的 ID 信息。</p>
+                     * @param _groupId <p>副本节点组 ID，请通过接口DescribeInstanceReplicas获取多 AZ备节点组的 ID 信息。</p>
+                     * 
+                     */
+                    void SetGroupId(const int64_t& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     * 
+                     */
+                    bool GroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>副本节点 ID。</p>
+                     * @return NodeId <p>副本节点 ID。</p>
                      * 
                      */
                     std::string GetNodeId() const;
 
                     /**
-                     * 设置副本节点 ID。
-                     * @param _nodeId 副本节点 ID。
+                     * 设置<p>副本节点 ID。</p>
+                     * @param _nodeId <p>副本节点 ID。</p>
                      * 
                      */
                     void SetNodeId(const std::string& _nodeId);
@@ -87,13 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID，如：kee-6ubh****。
+                     * <p>实例 ID，如：kee-6ubh****。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 副本节点 ID。
+                     * <p>副本节点组 ID，请通过接口DescribeInstanceReplicas获取多 AZ备节点组的 ID 信息。</p>
+                     */
+                    int64_t m_groupId;
+                    bool m_groupIdHasBeenSet;
+
+                    /**
+                     * <p>副本节点 ID。</p>
                      */
                     std::string m_nodeId;
                     bool m_nodeIdHasBeenSet;

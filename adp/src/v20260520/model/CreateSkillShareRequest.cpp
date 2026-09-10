@@ -26,7 +26,8 @@ CreateSkillShareRequest::CreateSkillShareRequest() :
     m_applyRemarkHasBeenSet(false),
     m_skillIdHasBeenSet(false),
     m_spaceIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
+    m_versionIdHasBeenSet(false),
+    m_corpShareConfigHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,15 @@ string CreateSkillShareRequest::ToJsonString() const
         string key = "VersionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_versionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_corpShareConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CorpShareConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_corpShareConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -139,6 +149,22 @@ void CreateSkillShareRequest::SetVersionId(const string& _versionId)
 bool CreateSkillShareRequest::VersionIdHasBeenSet() const
 {
     return m_versionIdHasBeenSet;
+}
+
+SkillCorpShareConfig CreateSkillShareRequest::GetCorpShareConfig() const
+{
+    return m_corpShareConfig;
+}
+
+void CreateSkillShareRequest::SetCorpShareConfig(const SkillCorpShareConfig& _corpShareConfig)
+{
+    m_corpShareConfig = _corpShareConfig;
+    m_corpShareConfigHasBeenSet = true;
+}
+
+bool CreateSkillShareRequest::CorpShareConfigHasBeenSet() const
+{
+    return m_corpShareConfigHasBeenSet;
 }
 
 

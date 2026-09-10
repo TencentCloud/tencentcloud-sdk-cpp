@@ -45,7 +45,8 @@ CreateNativeNodePoolParam::CreateNativeNodePoolParam() :
     m_keyIdsHasBeenSet(false),
     m_machineTypeHasBeenSet(false),
     m_automationServiceHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+    m_passwordHasBeenSet(false),
+    m_customImageHasBeenSet(false)
 {
 }
 
@@ -388,6 +389,16 @@ CoreInternalOutcome CreateNativeNodePoolParam::Deserialize(const rapidjson::Valu
         m_passwordHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomImage") && !value["CustomImage"].IsNull())
+    {
+        if (!value["CustomImage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateNativeNodePoolParam.CustomImage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customImage = string(value["CustomImage"].GetString());
+        m_customImageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -639,6 +650,14 @@ void CreateNativeNodePoolParam::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "Password";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomImage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customImage.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1042,5 +1061,21 @@ void CreateNativeNodePoolParam::SetPassword(const string& _password)
 bool CreateNativeNodePoolParam::PasswordHasBeenSet() const
 {
     return m_passwordHasBeenSet;
+}
+
+string CreateNativeNodePoolParam::GetCustomImage() const
+{
+    return m_customImage;
+}
+
+void CreateNativeNodePoolParam::SetCustomImage(const string& _customImage)
+{
+    m_customImage = _customImage;
+    m_customImageHasBeenSet = true;
+}
+
+bool CreateNativeNodePoolParam::CustomImageHasBeenSet() const
+{
+    return m_customImageHasBeenSet;
 }
 

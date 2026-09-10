@@ -1291,6 +1291,69 @@ namespace TencentCloud
                      */
                     bool ManagerUinHasBeenSet() const;
 
+                    /**
+                     * 获取<p>启动位点</p>
+                     * @return StartupPoint <p>启动位点</p>
+                     * 
+                     */
+                    std::string GetStartupPoint() const;
+
+                    /**
+                     * 设置<p>启动位点</p>
+                     * @param _startupPoint <p>启动位点</p>
+                     * 
+                     */
+                    void SetStartupPoint(const std::string& _startupPoint);
+
+                    /**
+                     * 判断参数 StartupPoint 是否已赋值
+                     * @return StartupPoint 是否已赋值
+                     * 
+                     */
+                    bool StartupPointHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否有事件</p>
+                     * @return IsEvent <p>是否有事件</p>
+                     * 
+                     */
+                    bool GetIsEvent() const;
+
+                    /**
+                     * 设置<p>是否有事件</p>
+                     * @param _isEvent <p>是否有事件</p>
+                     * 
+                     */
+                    void SetIsEvent(const bool& _isEvent);
+
+                    /**
+                     * 判断参数 IsEvent 是否已赋值
+                     * @return IsEvent 是否已赋值
+                     * 
+                     */
+                    bool IsEventHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否告警</p>
+                     * @return IsAlarm <p>是否告警</p>
+                     * 
+                     */
+                    bool GetIsAlarm() const;
+
+                    /**
+                     * 设置<p>是否告警</p>
+                     * @param _isAlarm <p>是否告警</p>
+                     * 
+                     */
+                    void SetIsAlarm(const bool& _isAlarm);
+
+                    /**
+                     * 判断参数 IsAlarm 是否已赋值
+                     * @return IsAlarm 是否已赋值
+                     * 
+                     */
+                    bool IsAlarmHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1641,6 +1704,24 @@ namespace TencentCloud
                      */
                     std::string m_managerUin;
                     bool m_managerUinHasBeenSet;
+
+                    /**
+                     * <p>启动位点</p>
+                     */
+                    std::string m_startupPoint;
+                    bool m_startupPointHasBeenSet;
+
+                    /**
+                     * <p>是否有事件</p>
+                     */
+                    bool m_isEvent;
+                    bool m_isEventHasBeenSet;
+
+                    /**
+                     * <p>是否告警</p>
+                     */
+                    bool m_isAlarm;
+                    bool m_isAlarmHasBeenSet;
 
                 };
             }

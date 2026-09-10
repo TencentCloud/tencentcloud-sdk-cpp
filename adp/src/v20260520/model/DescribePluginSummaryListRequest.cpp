@@ -30,7 +30,8 @@ DescribePluginSummaryListRequest::DescribePluginSummaryListRequest() :
     m_pageNumberHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_queryHasBeenSet(false),
-    m_sortTypeHasBeenSet(false)
+    m_sortTypeHasBeenSet(false),
+    m_pluginSpaceRelationHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,14 @@ string DescribePluginSummaryListRequest::ToJsonString() const
         string key = "SortType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sortType, allocator);
+    }
+
+    if (m_pluginSpaceRelationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PluginSpaceRelation";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pluginSpaceRelation, allocator);
     }
 
 
@@ -246,6 +255,22 @@ void DescribePluginSummaryListRequest::SetSortType(const int64_t& _sortType)
 bool DescribePluginSummaryListRequest::SortTypeHasBeenSet() const
 {
     return m_sortTypeHasBeenSet;
+}
+
+int64_t DescribePluginSummaryListRequest::GetPluginSpaceRelation() const
+{
+    return m_pluginSpaceRelation;
+}
+
+void DescribePluginSummaryListRequest::SetPluginSpaceRelation(const int64_t& _pluginSpaceRelation)
+{
+    m_pluginSpaceRelation = _pluginSpaceRelation;
+    m_pluginSpaceRelationHasBeenSet = true;
+}
+
+bool DescribePluginSummaryListRequest::PluginSpaceRelationHasBeenSet() const
+{
+    return m_pluginSpaceRelationHasBeenSet;
 }
 
 

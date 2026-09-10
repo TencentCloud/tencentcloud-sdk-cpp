@@ -277,6 +277,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/AgentToolOutputParameter.h
   include/tencentcloud/adp/v20260520/model/CreateChannelRequest.h
   include/tencentcloud/adp/v20260520/model/Identity.h
+  include/tencentcloud/adp/v20260520/model/AccessKeyAuthConfig.h
   include/tencentcloud/adp/v20260520/model/DescribeAgentDetailResponse.h
   include/tencentcloud/adp/v20260520/model/CreateAppTriggerResponse.h
   include/tencentcloud/adp/v20260520/model/SystemVariable.h
@@ -357,6 +358,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/CreateAppTriggerRequest.h
   include/tencentcloud/adp/v20260520/model/AppTriggerWebhookStatus.h
   include/tencentcloud/adp/v20260520/model/ResumeAppTriggerResponse.h
+  include/tencentcloud/adp/v20260520/model/AccessKeyParamConfig.h
   include/tencentcloud/adp/v20260520/model/CategoryPermission.h
   include/tencentcloud/adp/v20260520/model/ResetConversationRequest.h
   include/tencentcloud/adp/v20260520/model/ToolBilling.h
@@ -376,6 +378,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/Filter.h
   include/tencentcloud/adp/v20260520/model/ToolSummary.h
   include/tencentcloud/adp/v20260520/model/MsgRecordCategory.h
+  include/tencentcloud/adp/v20260520/model/AccessKeyPassThroughConfig.h
   include/tencentcloud/adp/v20260520/model/DescribeSkillReferenceListRequest.h
   include/tencentcloud/adp/v20260520/model/AppTriggerParamBindingConfig.h
   include/tencentcloud/adp/v20260520/model/CreateSkillResponse.h
@@ -670,6 +673,7 @@ set(adp_src
   src/v20260520/model/AgentToolOutputParameter.cpp
   src/v20260520/model/CreateChannelRequest.cpp
   src/v20260520/model/Identity.cpp
+  src/v20260520/model/AccessKeyAuthConfig.cpp
   src/v20260520/model/DescribeAgentDetailResponse.cpp
   src/v20260520/model/CreateAppTriggerResponse.cpp
   src/v20260520/model/SystemVariable.cpp
@@ -750,6 +754,7 @@ set(adp_src
   src/v20260520/model/CreateAppTriggerRequest.cpp
   src/v20260520/model/AppTriggerWebhookStatus.cpp
   src/v20260520/model/ResumeAppTriggerResponse.cpp
+  src/v20260520/model/AccessKeyParamConfig.cpp
   src/v20260520/model/CategoryPermission.cpp
   src/v20260520/model/ResetConversationRequest.cpp
   src/v20260520/model/ToolBilling.cpp
@@ -769,6 +774,7 @@ set(adp_src
   src/v20260520/model/Filter.cpp
   src/v20260520/model/ToolSummary.cpp
   src/v20260520/model/MsgRecordCategory.cpp
+  src/v20260520/model/AccessKeyPassThroughConfig.cpp
   src/v20260520/model/DescribeSkillReferenceListRequest.cpp
   src/v20260520/model/AppTriggerParamBindingConfig.cpp
   src/v20260520/model/CreateSkillResponse.cpp

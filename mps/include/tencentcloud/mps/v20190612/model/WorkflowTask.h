@@ -33,6 +33,7 @@
 #include <tencentcloud/mps/v20190612/model/ScheduleQualityControlTaskResult.h>
 #include <tencentcloud/mps/v20190612/model/SmartSubtitlesResult.h>
 #include <tencentcloud/mps/v20190612/model/SmartEraseTaskResult.h>
+#include <tencentcloud/mps/v20190612/model/AIDubbingTaskResult.h>
 
 
 namespace TencentCloud
@@ -56,15 +57,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体处理任务 ID。
-                     * @return TaskId 媒体处理任务 ID。
+                     * 获取<p>媒体处理任务 ID。</p>
+                     * @return TaskId <p>媒体处理任务 ID。</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置媒体处理任务 ID。
-                     * @param _taskId 媒体处理任务 ID。
+                     * 设置<p>媒体处理任务 ID。</p>
+                     * @param _taskId <p>媒体处理任务 ID。</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -77,23 +78,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务流状态，取值：
-<li>PROCESSING：处理中；</li>
-<li>FINISH：已完成。</li>
-                     * @return Status 任务流状态，取值：
-<li>PROCESSING：处理中；</li>
-<li>FINISH：已完成。</li>
+                     * 获取<p>任务流状态，取值：</p><li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>
+                     * @return Status <p>任务流状态，取值：</p><li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置任务流状态，取值：
-<li>PROCESSING：处理中；</li>
-<li>FINISH：已完成。</li>
-                     * @param _status 任务流状态，取值：
-<li>PROCESSING：处理中；</li>
-<li>FINISH：已完成。</li>
+                     * 设置<p>任务流状态，取值：</p><li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>
+                     * @param _status <p>任务流状态，取值：</p><li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -106,15 +99,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
-                     * @return ErrCode 源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
+                     * 获取<p>源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。</p>
+                     * @return ErrCode <p>源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。</p>
                      * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
-                     * 设置源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
-                     * @param _errCode 源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
+                     * 设置<p>源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。</p>
+                     * @param _errCode <p>源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。</p>
                      * 
                      */
                     void SetErrCode(const int64_t& _errCode);
@@ -127,15 +120,15 @@ namespace TencentCloud
                     bool ErrCodeHasBeenSet() const;
 
                     /**
-                     * 获取源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
-                     * @return Message 源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
+                     * 获取<p>源异常时返回对应异常Message，否则请使用各个具体任务的 Message。</p>
+                     * @return Message <p>源异常时返回对应异常Message，否则请使用各个具体任务的 Message。</p>
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
-                     * @param _message 源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
+                     * 设置<p>源异常时返回对应异常Message，否则请使用各个具体任务的 Message。</p>
+                     * @param _message <p>源异常时返回对应异常Message，否则请使用各个具体任务的 Message。</p>
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -148,18 +141,18 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取媒体处理的目标文件信息。
+                     * 获取<p>媒体处理的目标文件信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InputInfo 媒体处理的目标文件信息。
+                     * @return InputInfo <p>媒体处理的目标文件信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaInputInfo GetInputInfo() const;
 
                     /**
-                     * 设置媒体处理的目标文件信息。
+                     * 设置<p>媒体处理的目标文件信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _inputInfo 媒体处理的目标文件信息。
+                     * @param _inputInfo <p>媒体处理的目标文件信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -173,18 +166,18 @@ namespace TencentCloud
                     bool InputInfoHasBeenSet() const;
 
                     /**
-                     * 获取原始视频的元信息。
+                     * 获取<p>原始视频的元信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MetaData 原始视频的元信息。
+                     * @return MetaData <p>原始视频的元信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
-                     * 设置原始视频的元信息。
+                     * 设置<p>原始视频的元信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _metaData 原始视频的元信息。
+                     * @param _metaData <p>原始视频的元信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -198,15 +191,15 @@ namespace TencentCloud
                     bool MetaDataHasBeenSet() const;
 
                     /**
-                     * 获取媒体处理任务的执行状态与结果。
-                     * @return MediaProcessResultSet 媒体处理任务的执行状态与结果。
+                     * 获取<p>媒体处理任务的执行状态与结果。</p>
+                     * @return MediaProcessResultSet <p>媒体处理任务的执行状态与结果。</p>
                      * 
                      */
                     std::vector<MediaProcessTaskResult> GetMediaProcessResultSet() const;
 
                     /**
-                     * 设置媒体处理任务的执行状态与结果。
-                     * @param _mediaProcessResultSet 媒体处理任务的执行状态与结果。
+                     * 设置<p>媒体处理任务的执行状态与结果。</p>
+                     * @param _mediaProcessResultSet <p>媒体处理任务的执行状态与结果。</p>
                      * 
                      */
                     void SetMediaProcessResultSet(const std::vector<MediaProcessTaskResult>& _mediaProcessResultSet);
@@ -219,15 +212,15 @@ namespace TencentCloud
                     bool MediaProcessResultSetHasBeenSet() const;
 
                     /**
-                     * 获取视频内容审核任务的执行状态与结果。
-                     * @return AiContentReviewResultSet 视频内容审核任务的执行状态与结果。
+                     * 获取<p>视频内容审核任务的执行状态与结果。</p>
+                     * @return AiContentReviewResultSet <p>视频内容审核任务的执行状态与结果。</p>
                      * 
                      */
                     std::vector<AiContentReviewResult> GetAiContentReviewResultSet() const;
 
                     /**
-                     * 设置视频内容审核任务的执行状态与结果。
-                     * @param _aiContentReviewResultSet 视频内容审核任务的执行状态与结果。
+                     * 设置<p>视频内容审核任务的执行状态与结果。</p>
+                     * @param _aiContentReviewResultSet <p>视频内容审核任务的执行状态与结果。</p>
                      * 
                      */
                     void SetAiContentReviewResultSet(const std::vector<AiContentReviewResult>& _aiContentReviewResultSet);
@@ -240,15 +233,15 @@ namespace TencentCloud
                     bool AiContentReviewResultSetHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析任务的执行状态与结果。
-                     * @return AiAnalysisResultSet 视频内容分析任务的执行状态与结果。
+                     * 获取<p>视频内容分析任务的执行状态与结果。</p>
+                     * @return AiAnalysisResultSet <p>视频内容分析任务的执行状态与结果。</p>
                      * 
                      */
                     std::vector<AiAnalysisResult> GetAiAnalysisResultSet() const;
 
                     /**
-                     * 设置视频内容分析任务的执行状态与结果。
-                     * @param _aiAnalysisResultSet 视频内容分析任务的执行状态与结果。
+                     * 设置<p>视频内容分析任务的执行状态与结果。</p>
+                     * @param _aiAnalysisResultSet <p>视频内容分析任务的执行状态与结果。</p>
                      * 
                      */
                     void SetAiAnalysisResultSet(const std::vector<AiAnalysisResult>& _aiAnalysisResultSet);
@@ -261,15 +254,15 @@ namespace TencentCloud
                     bool AiAnalysisResultSetHasBeenSet() const;
 
                     /**
-                     * 获取视频内容识别任务的执行状态与结果。
-                     * @return AiRecognitionResultSet 视频内容识别任务的执行状态与结果。
+                     * 获取<p>视频内容识别任务的执行状态与结果。</p>
+                     * @return AiRecognitionResultSet <p>视频内容识别任务的执行状态与结果。</p>
                      * 
                      */
                     std::vector<AiRecognitionResult> GetAiRecognitionResultSet() const;
 
                     /**
-                     * 设置视频内容识别任务的执行状态与结果。
-                     * @param _aiRecognitionResultSet 视频内容识别任务的执行状态与结果。
+                     * 设置<p>视频内容识别任务的执行状态与结果。</p>
+                     * @param _aiRecognitionResultSet <p>视频内容识别任务的执行状态与结果。</p>
                      * 
                      */
                     void SetAiRecognitionResultSet(const std::vector<AiRecognitionResult>& _aiRecognitionResultSet);
@@ -282,18 +275,18 @@ namespace TencentCloud
                     bool AiRecognitionResultSetHasBeenSet() const;
 
                     /**
-                     * 获取媒体质检任务的执行状态与结果。
+                     * 获取<p>媒体质检任务的执行状态与结果。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AiQualityControlTaskResult 媒体质检任务的执行状态与结果。
+                     * @return AiQualityControlTaskResult <p>媒体质检任务的执行状态与结果。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ScheduleQualityControlTaskResult GetAiQualityControlTaskResult() const;
 
                     /**
-                     * 设置媒体质检任务的执行状态与结果。
+                     * 设置<p>媒体质检任务的执行状态与结果。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _aiQualityControlTaskResult 媒体质检任务的执行状态与结果。
+                     * @param _aiQualityControlTaskResult <p>媒体质检任务的执行状态与结果。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -307,18 +300,18 @@ namespace TencentCloud
                     bool AiQualityControlTaskResultHasBeenSet() const;
 
                     /**
-                     * 获取智能字幕任务的执行结果
+                     * 获取<p>智能字幕任务的执行结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SmartSubtitlesTaskResult 智能字幕任务的执行结果
+                     * @return SmartSubtitlesTaskResult <p>智能字幕任务的执行结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SmartSubtitlesResult> GetSmartSubtitlesTaskResult() const;
 
                     /**
-                     * 设置智能字幕任务的执行结果
+                     * 设置<p>智能字幕任务的执行结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _smartSubtitlesTaskResult 智能字幕任务的执行结果
+                     * @param _smartSubtitlesTaskResult <p>智能字幕任务的执行结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -332,18 +325,18 @@ namespace TencentCloud
                     bool SmartSubtitlesTaskResultHasBeenSet() const;
 
                     /**
-                     * 获取智能擦除任务的执行结果
+                     * 获取<p>智能擦除任务的执行结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SmartEraseTaskResult 智能擦除任务的执行结果
+                     * @return SmartEraseTaskResult <p>智能擦除任务的执行结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SmartEraseTaskResult GetSmartEraseTaskResult() const;
 
                     /**
-                     * 设置智能擦除任务的执行结果
+                     * 设置<p>智能擦除任务的执行结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _smartEraseTaskResult 智能擦除任务的执行结果
+                     * @param _smartEraseTaskResult <p>智能擦除任务的执行结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -356,92 +349,117 @@ namespace TencentCloud
                      */
                     bool SmartEraseTaskResultHasBeenSet() const;
 
+                    /**
+                     * 获取<p>AI配音任务的执行结果。</p>
+                     * @return AiDubbingTaskResult <p>AI配音任务的执行结果。</p>
+                     * 
+                     */
+                    AIDubbingTaskResult GetAiDubbingTaskResult() const;
+
+                    /**
+                     * 设置<p>AI配音任务的执行结果。</p>
+                     * @param _aiDubbingTaskResult <p>AI配音任务的执行结果。</p>
+                     * 
+                     */
+                    void SetAiDubbingTaskResult(const AIDubbingTaskResult& _aiDubbingTaskResult);
+
+                    /**
+                     * 判断参数 AiDubbingTaskResult 是否已赋值
+                     * @return AiDubbingTaskResult 是否已赋值
+                     * 
+                     */
+                    bool AiDubbingTaskResultHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 媒体处理任务 ID。
+                     * <p>媒体处理任务 ID。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务流状态，取值：
-<li>PROCESSING：处理中；</li>
-<li>FINISH：已完成。</li>
+                     * <p>任务流状态，取值：</p><li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
+                     * <p>源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。</p>
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
-                     * 源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
+                     * <p>源异常时返回对应异常Message，否则请使用各个具体任务的 Message。</p>
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 媒体处理的目标文件信息。
+                     * <p>媒体处理的目标文件信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaInputInfo m_inputInfo;
                     bool m_inputInfoHasBeenSet;
 
                     /**
-                     * 原始视频的元信息。
+                     * <p>原始视频的元信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaMetaData m_metaData;
                     bool m_metaDataHasBeenSet;
 
                     /**
-                     * 媒体处理任务的执行状态与结果。
+                     * <p>媒体处理任务的执行状态与结果。</p>
                      */
                     std::vector<MediaProcessTaskResult> m_mediaProcessResultSet;
                     bool m_mediaProcessResultSetHasBeenSet;
 
                     /**
-                     * 视频内容审核任务的执行状态与结果。
+                     * <p>视频内容审核任务的执行状态与结果。</p>
                      */
                     std::vector<AiContentReviewResult> m_aiContentReviewResultSet;
                     bool m_aiContentReviewResultSetHasBeenSet;
 
                     /**
-                     * 视频内容分析任务的执行状态与结果。
+                     * <p>视频内容分析任务的执行状态与结果。</p>
                      */
                     std::vector<AiAnalysisResult> m_aiAnalysisResultSet;
                     bool m_aiAnalysisResultSetHasBeenSet;
 
                     /**
-                     * 视频内容识别任务的执行状态与结果。
+                     * <p>视频内容识别任务的执行状态与结果。</p>
                      */
                     std::vector<AiRecognitionResult> m_aiRecognitionResultSet;
                     bool m_aiRecognitionResultSetHasBeenSet;
 
                     /**
-                     * 媒体质检任务的执行状态与结果。
+                     * <p>媒体质检任务的执行状态与结果。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScheduleQualityControlTaskResult m_aiQualityControlTaskResult;
                     bool m_aiQualityControlTaskResultHasBeenSet;
 
                     /**
-                     * 智能字幕任务的执行结果
+                     * <p>智能字幕任务的执行结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SmartSubtitlesResult> m_smartSubtitlesTaskResult;
                     bool m_smartSubtitlesTaskResultHasBeenSet;
 
                     /**
-                     * 智能擦除任务的执行结果
+                     * <p>智能擦除任务的执行结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SmartEraseTaskResult m_smartEraseTaskResult;
                     bool m_smartEraseTaskResultHasBeenSet;
+
+                    /**
+                     * <p>AI配音任务的执行结果。</p>
+                     */
+                    AIDubbingTaskResult m_aiDubbingTaskResult;
+                    bool m_aiDubbingTaskResultHasBeenSet;
 
                 };
             }

@@ -26,7 +26,9 @@ UsageStats::UsageStats() :
     m_outputTotalTokenHasBeenSet(false),
     m_cacheTotalTokenHasBeenSet(false),
     m_searchRequestCountHasBeenSet(false),
-    m_searchCountHasBeenSet(false)
+    m_searchCountHasBeenSet(false),
+    m_requestCountHasBeenSet(false),
+    m_requestFailCountHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome UsageStats::Deserialize(const rapidjson::Value &value)
         m_searchCountHasBeenSet = true;
     }
 
+    if (value.HasMember("RequestCount") && !value["RequestCount"].IsNull())
+    {
+        if (!value["RequestCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsageStats.RequestCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestCount = value["RequestCount"].GetInt64();
+        m_requestCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("RequestFailCount") && !value["RequestFailCount"].IsNull())
+    {
+        if (!value["RequestFailCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsageStats.RequestFailCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestFailCount = value["RequestFailCount"].GetInt64();
+        m_requestFailCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void UsageStats::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "SearchCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_searchCount, allocator);
+    }
+
+    if (m_requestCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_requestCount, allocator);
+    }
+
+    if (m_requestFailCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestFailCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_requestFailCount, allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void UsageStats::SetSearchCount(const int64_t& _searchCount)
 bool UsageStats::SearchCountHasBeenSet() const
 {
     return m_searchCountHasBeenSet;
+}
+
+int64_t UsageStats::GetRequestCount() const
+{
+    return m_requestCount;
+}
+
+void UsageStats::SetRequestCount(const int64_t& _requestCount)
+{
+    m_requestCount = _requestCount;
+    m_requestCountHasBeenSet = true;
+}
+
+bool UsageStats::RequestCountHasBeenSet() const
+{
+    return m_requestCountHasBeenSet;
+}
+
+int64_t UsageStats::GetRequestFailCount() const
+{
+    return m_requestFailCount;
+}
+
+void UsageStats::SetRequestFailCount(const int64_t& _requestFailCount)
+{
+    m_requestFailCount = _requestFailCount;
+    m_requestFailCountHasBeenSet = true;
+}
+
+bool UsageStats::RequestFailCountHasBeenSet() const
+{
+    return m_requestFailCountHasBeenSet;
 }
 

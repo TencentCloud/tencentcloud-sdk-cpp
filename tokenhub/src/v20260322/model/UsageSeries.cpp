@@ -26,7 +26,9 @@ UsageSeries::UsageSeries() :
     m_outputTotalTokenHasBeenSet(false),
     m_cacheTotalTokenHasBeenSet(false),
     m_searchRequestCountHasBeenSet(false),
-    m_searchCountHasBeenSet(false)
+    m_searchCountHasBeenSet(false),
+    m_requestCountHasBeenSet(false),
+    m_requestFailCountHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome UsageSeries::Deserialize(const rapidjson::Value &value)
         m_searchCountHasBeenSet = true;
     }
 
+    if (value.HasMember("RequestCount") && !value["RequestCount"].IsNull())
+    {
+        if (!value["RequestCount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsageSeries.RequestCount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestCount = string(value["RequestCount"].GetString());
+        m_requestCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("RequestFailCount") && !value["RequestFailCount"].IsNull())
+    {
+        if (!value["RequestFailCount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsageSeries.RequestFailCount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestFailCount = string(value["RequestFailCount"].GetString());
+        m_requestFailCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void UsageSeries::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "SearchCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_searchCount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requestCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_requestCount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requestFailCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestFailCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_requestFailCount.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void UsageSeries::SetSearchCount(const string& _searchCount)
 bool UsageSeries::SearchCountHasBeenSet() const
 {
     return m_searchCountHasBeenSet;
+}
+
+string UsageSeries::GetRequestCount() const
+{
+    return m_requestCount;
+}
+
+void UsageSeries::SetRequestCount(const string& _requestCount)
+{
+    m_requestCount = _requestCount;
+    m_requestCountHasBeenSet = true;
+}
+
+bool UsageSeries::RequestCountHasBeenSet() const
+{
+    return m_requestCountHasBeenSet;
+}
+
+string UsageSeries::GetRequestFailCount() const
+{
+    return m_requestFailCount;
+}
+
+void UsageSeries::SetRequestFailCount(const string& _requestFailCount)
+{
+    m_requestFailCount = _requestFailCount;
+    m_requestFailCountHasBeenSet = true;
+}
+
+bool UsageSeries::RequestFailCountHasBeenSet() const
+{
+    return m_requestFailCountHasBeenSet;
 }
 

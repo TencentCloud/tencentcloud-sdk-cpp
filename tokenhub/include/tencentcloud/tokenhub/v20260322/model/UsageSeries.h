@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>[tokens 族]总 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>
-                     * @return TotalToken <p>[tokens 族]总 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>
+                     * 获取<p>[tokens / apikey_usage 族]总 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>
+                     * @return TotalToken <p>[tokens / apikey_usage 族]总 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>
                      * 
                      */
                     std::string GetTotalToken() const;
 
                     /**
-                     * 设置<p>[tokens 族]总 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>
-                     * @param _totalToken <p>[tokens 族]总 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>
+                     * 设置<p>[tokens / apikey_usage 族]总 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>
+                     * @param _totalToken <p>[tokens / apikey_usage 族]总 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>
                      * 
                      */
                     void SetTotalToken(const std::string& _totalToken);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TotalTokenHasBeenSet() const;
 
                     /**
-                     * 获取<p>[tokens 族]输入 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[7,null,9]&quot;</code>。</p>
-                     * @return InputTotalToken <p>[tokens 族]输入 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[7,null,9]&quot;</code>。</p>
+                     * 获取<p>[tokens / apikey_usage 族]输入 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[7,null,9]&quot;</code>。</p>
+                     * @return InputTotalToken <p>[tokens / apikey_usage 族]输入 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[7,null,9]&quot;</code>。</p>
                      * 
                      */
                     std::string GetInputTotalToken() const;
 
                     /**
-                     * 设置<p>[tokens 族]输入 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[7,null,9]&quot;</code>。</p>
-                     * @param _inputTotalToken <p>[tokens 族]输入 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[7,null,9]&quot;</code>。</p>
+                     * 设置<p>[tokens / apikey_usage 族]输入 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[7,null,9]&quot;</code>。</p>
+                     * @param _inputTotalToken <p>[tokens / apikey_usage 族]输入 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[7,null,9]&quot;</code>。</p>
                      * 
                      */
                     void SetInputTotalToken(const std::string& _inputTotalToken);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool InputTotalTokenHasBeenSet() const;
 
                     /**
-                     * 获取<p>[tokens 族]输出 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[5,null,6]&quot;</code>。</p>
-                     * @return OutputTotalToken <p>[tokens 族]输出 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[5,null,6]&quot;</code>。</p>
+                     * 获取<p>[tokens / apikey_usage 族]输出 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[5,null,6]&quot;</code>。</p>
+                     * @return OutputTotalToken <p>[tokens / apikey_usage 族]输出 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[5,null,6]&quot;</code>。</p>
                      * 
                      */
                     std::string GetOutputTotalToken() const;
 
                     /**
-                     * 设置<p>[tokens 族]输出 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[5,null,6]&quot;</code>。</p>
-                     * @param _outputTotalToken <p>[tokens 族]输出 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[5,null,6]&quot;</code>。</p>
+                     * 设置<p>[tokens / apikey_usage 族]输出 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[5,null,6]&quot;</code>。</p>
+                     * @param _outputTotalToken <p>[tokens / apikey_usage 族]输出 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[5,null,6]&quot;</code>。</p>
                      * 
                      */
                     void SetOutputTotalToken(const std::string& _outputTotalToken);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool OutputTotalTokenHasBeenSet() const;
 
                     /**
-                     * 获取<p>[tokens 族]读缓存 token 数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
-                     * @return CacheTotalToken <p>[tokens 族]读缓存 token 数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
+                     * 获取<p>[tokens / apikey_usage 族]读缓存 token 数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
+                     * @return CacheTotalToken <p>[tokens / apikey_usage 族]读缓存 token 数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
                      * 
                      */
                     std::string GetCacheTotalToken() const;
 
                     /**
-                     * 设置<p>[tokens 族]读缓存 token 数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
-                     * @param _cacheTotalToken <p>[tokens 族]读缓存 token 数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
+                     * 设置<p>[tokens / apikey_usage 族]读缓存 token 数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
+                     * @param _cacheTotalToken <p>[tokens / apikey_usage 族]读缓存 token 数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
                      * 
                      */
                     void SetCacheTotalToken(const std::string& _cacheTotalToken);
@@ -172,28 +172,70 @@ namespace TencentCloud
                      */
                     bool SearchCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>[apikey_usage 族] 请求次数在时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>
+                     * @return RequestCount <p>[apikey_usage 族] 请求次数在时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>
+                     * 
+                     */
+                    std::string GetRequestCount() const;
+
+                    /**
+                     * 设置<p>[apikey_usage 族] 请求次数在时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>
+                     * @param _requestCount <p>[apikey_usage 族] 请求次数在时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>
+                     * 
+                     */
+                    void SetRequestCount(const std::string& _requestCount);
+
+                    /**
+                     * 判断参数 RequestCount 是否已赋值
+                     * @return RequestCount 是否已赋值
+                     * 
+                     */
+                    bool RequestCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>[apikey_usage 族] 请求失败次数在时间周期内的 JSON 字符串形式，如 &quot;[12,null,15]&quot;。</p>
+                     * @return RequestFailCount <p>[apikey_usage 族] 请求失败次数在时间周期内的 JSON 字符串形式，如 &quot;[12,null,15]&quot;。</p>
+                     * 
+                     */
+                    std::string GetRequestFailCount() const;
+
+                    /**
+                     * 设置<p>[apikey_usage 族] 请求失败次数在时间周期内的 JSON 字符串形式，如 &quot;[12,null,15]&quot;。</p>
+                     * @param _requestFailCount <p>[apikey_usage 族] 请求失败次数在时间周期内的 JSON 字符串形式，如 &quot;[12,null,15]&quot;。</p>
+                     * 
+                     */
+                    void SetRequestFailCount(const std::string& _requestFailCount);
+
+                    /**
+                     * 判断参数 RequestFailCount 是否已赋值
+                     * @return RequestFailCount 是否已赋值
+                     * 
+                     */
+                    bool RequestFailCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * <p>[tokens 族]总 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>
+                     * <p>[tokens / apikey_usage 族]总 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>
                      */
                     std::string m_totalToken;
                     bool m_totalTokenHasBeenSet;
 
                     /**
-                     * <p>[tokens 族]输入 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[7,null,9]&quot;</code>。</p>
+                     * <p>[tokens / apikey_usage 族]输入 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[7,null,9]&quot;</code>。</p>
                      */
                     std::string m_inputTotalToken;
                     bool m_inputTotalTokenHasBeenSet;
 
                     /**
-                     * <p>[tokens 族]输出 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[5,null,6]&quot;</code>。</p>
+                     * <p>[tokens / apikey_usage 族]输出 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[5,null,6]&quot;</code>。</p>
                      */
                     std::string m_outputTotalToken;
                     bool m_outputTotalTokenHasBeenSet;
 
                     /**
-                     * <p>[tokens 族]读缓存 token 数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
+                     * <p>[tokens / apikey_usage 族]读缓存 token 数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>
                      */
                     std::string m_cacheTotalToken;
                     bool m_cacheTotalTokenHasBeenSet;
@@ -209,6 +251,18 @@ namespace TencentCloud
                      */
                     std::string m_searchCount;
                     bool m_searchCountHasBeenSet;
+
+                    /**
+                     * <p>[apikey_usage 族] 请求次数在时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>
+                     */
+                    std::string m_requestCount;
+                    bool m_requestCountHasBeenSet;
+
+                    /**
+                     * <p>[apikey_usage 族] 请求失败次数在时间周期内的 JSON 字符串形式，如 &quot;[12,null,15]&quot;。</p>
+                     */
+                    std::string m_requestFailCount;
+                    bool m_requestFailCountHasBeenSet;
 
                 };
             }

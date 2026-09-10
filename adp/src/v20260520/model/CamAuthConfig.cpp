@@ -24,7 +24,9 @@ CamAuthConfig::CamAuthConfig() :
     m_roleNameHasBeenSet(false),
     m_keyLocationHasBeenSet(false),
     m_secretIdNameHasBeenSet(false),
-    m_secretKeyNameHasBeenSet(false)
+    m_secretKeyNameHasBeenSet(false),
+    m_paramListHasBeenSet(false),
+    m_supportRoleAuthHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,36 @@ CoreInternalOutcome CamAuthConfig::Deserialize(const rapidjson::Value &value)
         m_secretKeyNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ParamList") && !value["ParamList"].IsNull())
+    {
+        if (!value["ParamList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CamAuthConfig.ParamList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ParamList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AccessKeyParamConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_paramList.push_back(item);
+        }
+        m_paramListHasBeenSet = true;
+    }
+
+    if (value.HasMember("SupportRoleAuth") && !value["SupportRoleAuth"].IsNull())
+    {
+        if (!value["SupportRoleAuth"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CamAuthConfig.SupportRoleAuth` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportRoleAuth = value["SupportRoleAuth"].GetBool();
+        m_supportRoleAuthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +142,29 @@ void CamAuthConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "SecretKeyName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_secretKeyName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paramListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParamList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_paramList.begin(); itr != m_paramList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_supportRoleAuthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportRoleAuth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportRoleAuth, allocator);
     }
 
 }
@@ -177,5 +232,37 @@ void CamAuthConfig::SetSecretKeyName(const string& _secretKeyName)
 bool CamAuthConfig::SecretKeyNameHasBeenSet() const
 {
     return m_secretKeyNameHasBeenSet;
+}
+
+vector<AccessKeyParamConfig> CamAuthConfig::GetParamList() const
+{
+    return m_paramList;
+}
+
+void CamAuthConfig::SetParamList(const vector<AccessKeyParamConfig>& _paramList)
+{
+    m_paramList = _paramList;
+    m_paramListHasBeenSet = true;
+}
+
+bool CamAuthConfig::ParamListHasBeenSet() const
+{
+    return m_paramListHasBeenSet;
+}
+
+bool CamAuthConfig::GetSupportRoleAuth() const
+{
+    return m_supportRoleAuth;
+}
+
+void CamAuthConfig::SetSupportRoleAuth(const bool& _supportRoleAuth)
+{
+    m_supportRoleAuth = _supportRoleAuth;
+    m_supportRoleAuthHasBeenSet = true;
+}
+
+bool CamAuthConfig::SupportRoleAuthHasBeenSet() const
+{
+    return m_supportRoleAuthHasBeenSet;
 }
 

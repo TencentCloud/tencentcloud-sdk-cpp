@@ -58,6 +58,20 @@ namespace TencentCloud
                      */
                     bool ReferenceListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>当前用户是否允许强制删除有引用的Skill</p>
+                     * @return AllowForceModify <p>当前用户是否允许强制删除有引用的Skill</p>
+                     * 
+                     */
+                    bool GetAllowForceModify() const;
+
+                    /**
+                     * 判断参数 AllowForceModify 是否已赋值
+                     * @return AllowForceModify 是否已赋值
+                     * 
+                     */
+                    bool AllowForceModifyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +79,12 @@ namespace TencentCloud
                      */
                     std::vector<SkillReferenceGroup> m_referenceList;
                     bool m_referenceListHasBeenSet;
+
+                    /**
+                     * <p>当前用户是否允许强制删除有引用的Skill</p>
+                     */
+                    bool m_allowForceModify;
+                    bool m_allowForceModifyHasBeenSet;
 
                 };
             }

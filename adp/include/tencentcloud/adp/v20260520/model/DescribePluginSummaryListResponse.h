@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取plugin_list
-                     * @return PluginList plugin_list
+                     * 获取<p>plugin_list</p>
+                     * @return PluginList <p>plugin_list</p>
                      * 
                      */
                     std::vector<PluginSummary> GetPluginList() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool PluginListHasBeenSet() const;
 
                     /**
-                     * 获取total_count
-                     * @return TotalCount total_count
+                     * 获取<p>total_count</p>
+                     * @return TotalCount <p>total_count</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * plugin_list
+                     * <p>plugin_list</p>
                      */
                     std::vector<PluginSummary> m_pluginList;
                     bool m_pluginListHasBeenSet;
 
                     /**
-                     * total_count
+                     * <p>total_count</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

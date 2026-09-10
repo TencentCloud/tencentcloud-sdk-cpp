@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作空间 SpaceKey. 更新该工作空间的属性
-                     * @return SpaceKey 工作空间 SpaceKey. 更新该工作空间的属性
+                     * 获取<p>工作空间 SpaceKey. 更新该工作空间的属性</p>
+                     * @return SpaceKey <p>工作空间 SpaceKey. 更新该工作空间的属性</p>
                      * 
                      */
                     std::string GetSpaceKey() const;
 
                     /**
-                     * 设置工作空间 SpaceKey. 更新该工作空间的属性
-                     * @param _spaceKey 工作空间 SpaceKey. 更新该工作空间的属性
+                     * 设置<p>工作空间 SpaceKey. 更新该工作空间的属性</p>
+                     * @param _spaceKey <p>工作空间 SpaceKey. 更新该工作空间的属性</p>
                      * 
                      */
                     void SetSpaceKey(const std::string& _spaceKey);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool SpaceKeyHasBeenSet() const;
 
                     /**
-                     * 获取工作空间名称
-                     * @return Name 工作空间名称
+                     * 获取<p>工作空间名称</p>
+                     * @return Name <p>工作空间名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置工作空间名称
-                     * @param _name 工作空间名称
+                     * 设置<p>工作空间名称</p>
+                     * @param _name <p>工作空间名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取工作空间描述
-                     * @return Description 工作空间描述
+                     * 获取<p>工作空间描述</p>
+                     * @return Description <p>工作空间描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置工作空间描述
-                     * @param _description 工作空间描述
+                     * 设置<p>工作空间描述</p>
+                     * @param _description <p>工作空间描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取工作空间规格。STANDARD: 2C4G, CALCULATION: 4C8G, PROFESSION: 8C16G. 默认是 STANDARD。
-                     * @return Specs 工作空间规格。STANDARD: 2C4G, CALCULATION: 4C8G, PROFESSION: 8C16G. 默认是 STANDARD。
+                     * 获取<p>工作空间规格。STANDARD: 2C4G, CALCULATION: 4C8G, PROFESSION: 8C16G. 默认是 STANDARD。</p>
+                     * @return Specs <p>工作空间规格。STANDARD: 2C4G, CALCULATION: 4C8G, PROFESSION: 8C16G. 默认是 STANDARD。</p>
                      * 
                      */
                     std::string GetSpecs() const;
 
                     /**
-                     * 设置工作空间规格。STANDARD: 2C4G, CALCULATION: 4C8G, PROFESSION: 8C16G. 默认是 STANDARD。
-                     * @param _specs 工作空间规格。STANDARD: 2C4G, CALCULATION: 4C8G, PROFESSION: 8C16G. 默认是 STANDARD。
+                     * 设置<p>工作空间规格。STANDARD: 2C4G, CALCULATION: 4C8G, PROFESSION: 8C16G. 默认是 STANDARD。</p>
+                     * @param _specs <p>工作空间规格。STANDARD: 2C4G, CALCULATION: 4C8G, PROFESSION: 8C16G. 默认是 STANDARD。</p>
                      * 
                      */
                     void SetSpecs(const std::string& _specs);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool SpecsHasBeenSet() const;
 
                     /**
-                     * 获取环境变量. 会被注入到工作空间中
-                     * @return Envs 环境变量. 会被注入到工作空间中
+                     * 获取<p>环境变量. 会被注入到工作空间中</p>
+                     * @return Envs <p>环境变量. 会被注入到工作空间中</p>
                      * 
                      */
                     std::vector<Env> GetEnvs() const;
 
                     /**
-                     * 设置环境变量. 会被注入到工作空间中
-                     * @param _envs 环境变量. 会被注入到工作空间中
+                     * 设置<p>环境变量. 会被注入到工作空间中</p>
+                     * @param _envs <p>环境变量. 会被注入到工作空间中</p>
                      * 
                      */
                     void SetEnvs(const std::vector<Env>& _envs);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool EnvsHasBeenSet() const;
 
                     /**
-                     * 获取预装插件. 工作空间启动时, 会自动安装这些插件 
-                     * @return Extensions 预装插件. 工作空间启动时, 会自动安装这些插件 
+                     * 获取<p>预装插件. 工作空间启动时, 会自动安装这些插件</p>
+                     * @return Extensions <p>预装插件. 工作空间启动时, 会自动安装这些插件</p>
                      * 
                      */
                     std::vector<std::string> GetExtensions() const;
 
                     /**
-                     * 设置预装插件. 工作空间启动时, 会自动安装这些插件 
-                     * @param _extensions 预装插件. 工作空间启动时, 会自动安装这些插件 
+                     * 设置<p>预装插件. 工作空间启动时, 会自动安装这些插件</p>
+                     * @param _extensions <p>预装插件. 工作空间启动时, 会自动安装这些插件</p>
                      * 
                      */
                     void SetExtensions(const std::vector<std::string>& _extensions);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool ExtensionsHasBeenSet() const;
 
                     /**
-                     * 获取工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令. 
-                     * @return Lifecycle 工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令. 
+                     * 获取<p>工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令.</p>
+                     * @return Lifecycle <p>工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令.</p>
                      * 
                      */
                     LifeCycle GetLifecycle() const;
 
                     /**
-                     * 设置工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令. 
-                     * @param _lifecycle 工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令. 
+                     * 设置<p>工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令.</p>
+                     * @param _lifecycle <p>工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令.</p>
                      * 
                      */
                     void SetLifecycle(const LifeCycle& _lifecycle);
@@ -194,43 +194,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 工作空间 SpaceKey. 更新该工作空间的属性
+                     * <p>工作空间 SpaceKey. 更新该工作空间的属性</p>
                      */
                     std::string m_spaceKey;
                     bool m_spaceKeyHasBeenSet;
 
                     /**
-                     * 工作空间名称
+                     * <p>工作空间名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 工作空间描述
+                     * <p>工作空间描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 工作空间规格。STANDARD: 2C4G, CALCULATION: 4C8G, PROFESSION: 8C16G. 默认是 STANDARD。
+                     * <p>工作空间规格。STANDARD: 2C4G, CALCULATION: 4C8G, PROFESSION: 8C16G. 默认是 STANDARD。</p>
                      */
                     std::string m_specs;
                     bool m_specsHasBeenSet;
 
                     /**
-                     * 环境变量. 会被注入到工作空间中
+                     * <p>环境变量. 会被注入到工作空间中</p>
                      */
                     std::vector<Env> m_envs;
                     bool m_envsHasBeenSet;
 
                     /**
-                     * 预装插件. 工作空间启动时, 会自动安装这些插件 
+                     * <p>预装插件. 工作空间启动时, 会自动安装这些插件</p>
                      */
                     std::vector<std::string> m_extensions;
                     bool m_extensionsHasBeenSet;
 
                     /**
-                     * 工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令. 
+                     * <p>工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令.</p>
                      */
                     LifeCycle m_lifecycle;
                     bool m_lifecycleHasBeenSet;

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取翻译片段列表。
-                     * @return SegmentSet 翻译片段列表。
+                     * 获取<p>翻译片段列表。</p>
+                     * @return SegmentSet <p>翻译片段列表。</p>
                      * 
                      */
                     std::vector<AiRecognitionTaskTransTextSegmentItem> GetSegmentSet() const;
 
                     /**
-                     * 设置翻译片段列表。
-                     * @param _segmentSet 翻译片段列表。
+                     * 设置<p>翻译片段列表。</p>
+                     * @param _segmentSet <p>翻译片段列表。</p>
                      * 
                      */
                     void SetSegmentSet(const std::vector<AiRecognitionTaskTransTextSegmentItem>& _segmentSet);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool SegmentSetHasBeenSet() const;
 
                     /**
-                     * 获取字幕文件地址。
-                     * @return SubtitlePath 字幕文件地址。
+                     * 获取<p>字幕文件地址。</p>
+                     * @return SubtitlePath <p>字幕文件地址。</p>
                      * 
                      */
                     std::string GetSubtitlePath() const;
 
                     /**
-                     * 设置字幕文件地址。
-                     * @param _subtitlePath 字幕文件地址。
+                     * 设置<p>字幕文件地址。</p>
+                     * @param _subtitlePath <p>字幕文件地址。</p>
                      * 
                      */
                     void SetSubtitlePath(const std::string& _subtitlePath);
@@ -92,13 +92,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 翻译片段列表。
+                     * <p>翻译片段列表。</p>
                      */
                     std::vector<AiRecognitionTaskTransTextSegmentItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;
 
                     /**
-                     * 字幕文件地址。
+                     * <p>字幕文件地址。</p>
                      */
                     std::string m_subtitlePath;
                     bool m_subtitlePathHasBeenSet;

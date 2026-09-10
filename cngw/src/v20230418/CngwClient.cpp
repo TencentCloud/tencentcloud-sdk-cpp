@@ -190,6 +190,206 @@ CngwClient::BindCloudNativeAPIGatewaySecretKeyOutcomeCallable CngwClient::BindCl
     return prom->get_future();
 }
 
+CngwClient::CheckCloudNativeAPIGatewayMCPRouteMatchOutcome CngwClient::CheckCloudNativeAPIGatewayMCPRouteMatch(const CheckCloudNativeAPIGatewayMCPRouteMatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckCloudNativeAPIGatewayMCPRouteMatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckCloudNativeAPIGatewayMCPRouteMatchResponse rsp = CheckCloudNativeAPIGatewayMCPRouteMatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckCloudNativeAPIGatewayMCPRouteMatchOutcome(rsp);
+        else
+            return CheckCloudNativeAPIGatewayMCPRouteMatchOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckCloudNativeAPIGatewayMCPRouteMatchOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::CheckCloudNativeAPIGatewayMCPRouteMatchAsync(const CheckCloudNativeAPIGatewayMCPRouteMatchRequest& request, const CheckCloudNativeAPIGatewayMCPRouteMatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CheckCloudNativeAPIGatewayMCPRouteMatchRequest&;
+    using Resp = CheckCloudNativeAPIGatewayMCPRouteMatchResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CheckCloudNativeAPIGatewayMCPRouteMatch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::CheckCloudNativeAPIGatewayMCPRouteMatchOutcomeCallable CngwClient::CheckCloudNativeAPIGatewayMCPRouteMatchCallable(const CheckCloudNativeAPIGatewayMCPRouteMatchRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CheckCloudNativeAPIGatewayMCPRouteMatchOutcome>>();
+    CheckCloudNativeAPIGatewayMCPRouteMatchAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const CheckCloudNativeAPIGatewayMCPRouteMatchRequest&,
+        CheckCloudNativeAPIGatewayMCPRouteMatchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::CheckCloudNativeAPIGatewayMCPToolVersionExistOutcome CngwClient::CheckCloudNativeAPIGatewayMCPToolVersionExist(const CheckCloudNativeAPIGatewayMCPToolVersionExistRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckCloudNativeAPIGatewayMCPToolVersionExist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckCloudNativeAPIGatewayMCPToolVersionExistResponse rsp = CheckCloudNativeAPIGatewayMCPToolVersionExistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckCloudNativeAPIGatewayMCPToolVersionExistOutcome(rsp);
+        else
+            return CheckCloudNativeAPIGatewayMCPToolVersionExistOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckCloudNativeAPIGatewayMCPToolVersionExistOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::CheckCloudNativeAPIGatewayMCPToolVersionExistAsync(const CheckCloudNativeAPIGatewayMCPToolVersionExistRequest& request, const CheckCloudNativeAPIGatewayMCPToolVersionExistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CheckCloudNativeAPIGatewayMCPToolVersionExistRequest&;
+    using Resp = CheckCloudNativeAPIGatewayMCPToolVersionExistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CheckCloudNativeAPIGatewayMCPToolVersionExist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::CheckCloudNativeAPIGatewayMCPToolVersionExistOutcomeCallable CngwClient::CheckCloudNativeAPIGatewayMCPToolVersionExistCallable(const CheckCloudNativeAPIGatewayMCPToolVersionExistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CheckCloudNativeAPIGatewayMCPToolVersionExistOutcome>>();
+    CheckCloudNativeAPIGatewayMCPToolVersionExistAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const CheckCloudNativeAPIGatewayMCPToolVersionExistRequest&,
+        CheckCloudNativeAPIGatewayMCPToolVersionExistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::CompareCloudNativeAPIGatewayMCPToolVersionOutcome CngwClient::CompareCloudNativeAPIGatewayMCPToolVersion(const CompareCloudNativeAPIGatewayMCPToolVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CompareCloudNativeAPIGatewayMCPToolVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CompareCloudNativeAPIGatewayMCPToolVersionResponse rsp = CompareCloudNativeAPIGatewayMCPToolVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CompareCloudNativeAPIGatewayMCPToolVersionOutcome(rsp);
+        else
+            return CompareCloudNativeAPIGatewayMCPToolVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return CompareCloudNativeAPIGatewayMCPToolVersionOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::CompareCloudNativeAPIGatewayMCPToolVersionAsync(const CompareCloudNativeAPIGatewayMCPToolVersionRequest& request, const CompareCloudNativeAPIGatewayMCPToolVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CompareCloudNativeAPIGatewayMCPToolVersionRequest&;
+    using Resp = CompareCloudNativeAPIGatewayMCPToolVersionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CompareCloudNativeAPIGatewayMCPToolVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::CompareCloudNativeAPIGatewayMCPToolVersionOutcomeCallable CngwClient::CompareCloudNativeAPIGatewayMCPToolVersionCallable(const CompareCloudNativeAPIGatewayMCPToolVersionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CompareCloudNativeAPIGatewayMCPToolVersionOutcome>>();
+    CompareCloudNativeAPIGatewayMCPToolVersionAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const CompareCloudNativeAPIGatewayMCPToolVersionRequest&,
+        CompareCloudNativeAPIGatewayMCPToolVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::CreateCloudNativeAPIGatewayAIServiceSourceOutcome CngwClient::CreateCloudNativeAPIGatewayAIServiceSource(const CreateCloudNativeAPIGatewayAIServiceSourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudNativeAPIGatewayAIServiceSource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudNativeAPIGatewayAIServiceSourceResponse rsp = CreateCloudNativeAPIGatewayAIServiceSourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudNativeAPIGatewayAIServiceSourceOutcome(rsp);
+        else
+            return CreateCloudNativeAPIGatewayAIServiceSourceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudNativeAPIGatewayAIServiceSourceOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::CreateCloudNativeAPIGatewayAIServiceSourceAsync(const CreateCloudNativeAPIGatewayAIServiceSourceRequest& request, const CreateCloudNativeAPIGatewayAIServiceSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCloudNativeAPIGatewayAIServiceSourceRequest&;
+    using Resp = CreateCloudNativeAPIGatewayAIServiceSourceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCloudNativeAPIGatewayAIServiceSource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::CreateCloudNativeAPIGatewayAIServiceSourceOutcomeCallable CngwClient::CreateCloudNativeAPIGatewayAIServiceSourceCallable(const CreateCloudNativeAPIGatewayAIServiceSourceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCloudNativeAPIGatewayAIServiceSourceOutcome>>();
+    CreateCloudNativeAPIGatewayAIServiceSourceAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const CreateCloudNativeAPIGatewayAIServiceSourceRequest&,
+        CreateCloudNativeAPIGatewayAIServiceSourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CngwClient::CreateCloudNativeAPIGatewayConsumerOutcome CngwClient::CreateCloudNativeAPIGatewayConsumer(const CreateCloudNativeAPIGatewayConsumerRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCloudNativeAPIGatewayConsumer");
@@ -390,6 +590,56 @@ CngwClient::CreateCloudNativeAPIGatewayLLMModelServiceOutcomeCallable CngwClient
     return prom->get_future();
 }
 
+CngwClient::CreateCloudNativeAPIGatewayMCPRouteOutcome CngwClient::CreateCloudNativeAPIGatewayMCPRoute(const CreateCloudNativeAPIGatewayMCPRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudNativeAPIGatewayMCPRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudNativeAPIGatewayMCPRouteResponse rsp = CreateCloudNativeAPIGatewayMCPRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudNativeAPIGatewayMCPRouteOutcome(rsp);
+        else
+            return CreateCloudNativeAPIGatewayMCPRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudNativeAPIGatewayMCPRouteOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::CreateCloudNativeAPIGatewayMCPRouteAsync(const CreateCloudNativeAPIGatewayMCPRouteRequest& request, const CreateCloudNativeAPIGatewayMCPRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCloudNativeAPIGatewayMCPRouteRequest&;
+    using Resp = CreateCloudNativeAPIGatewayMCPRouteResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCloudNativeAPIGatewayMCPRoute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::CreateCloudNativeAPIGatewayMCPRouteOutcomeCallable CngwClient::CreateCloudNativeAPIGatewayMCPRouteCallable(const CreateCloudNativeAPIGatewayMCPRouteRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCloudNativeAPIGatewayMCPRouteOutcome>>();
+    CreateCloudNativeAPIGatewayMCPRouteAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const CreateCloudNativeAPIGatewayMCPRouteRequest&,
+        CreateCloudNativeAPIGatewayMCPRouteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CngwClient::CreateCloudNativeAPIGatewayMCPServerOutcome CngwClient::CreateCloudNativeAPIGatewayMCPServer(const CreateCloudNativeAPIGatewayMCPServerRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCloudNativeAPIGatewayMCPServer");
@@ -532,6 +782,56 @@ CngwClient::CreateCloudNativeAPIGatewaySecretKeyOutcomeCallable CngwClient::Crea
         const CngwClient*,
         const CreateCloudNativeAPIGatewaySecretKeyRequest&,
         CreateCloudNativeAPIGatewaySecretKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::DeleteCloudNativeAPIGatewayAIServiceSourceOutcome CngwClient::DeleteCloudNativeAPIGatewayAIServiceSource(const DeleteCloudNativeAPIGatewayAIServiceSourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewayAIServiceSource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudNativeAPIGatewayAIServiceSourceResponse rsp = DeleteCloudNativeAPIGatewayAIServiceSourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudNativeAPIGatewayAIServiceSourceOutcome(rsp);
+        else
+            return DeleteCloudNativeAPIGatewayAIServiceSourceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudNativeAPIGatewayAIServiceSourceOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::DeleteCloudNativeAPIGatewayAIServiceSourceAsync(const DeleteCloudNativeAPIGatewayAIServiceSourceRequest& request, const DeleteCloudNativeAPIGatewayAIServiceSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCloudNativeAPIGatewayAIServiceSourceRequest&;
+    using Resp = DeleteCloudNativeAPIGatewayAIServiceSourceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCloudNativeAPIGatewayAIServiceSource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::DeleteCloudNativeAPIGatewayAIServiceSourceOutcomeCallable CngwClient::DeleteCloudNativeAPIGatewayAIServiceSourceCallable(const DeleteCloudNativeAPIGatewayAIServiceSourceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCloudNativeAPIGatewayAIServiceSourceOutcome>>();
+    DeleteCloudNativeAPIGatewayAIServiceSourceAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const DeleteCloudNativeAPIGatewayAIServiceSourceRequest&,
+        DeleteCloudNativeAPIGatewayAIServiceSourceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -740,6 +1040,56 @@ CngwClient::DeleteCloudNativeAPIGatewayLLMModelServiceOutcomeCallable CngwClient
     return prom->get_future();
 }
 
+CngwClient::DeleteCloudNativeAPIGatewayMCPRouteOutcome CngwClient::DeleteCloudNativeAPIGatewayMCPRoute(const DeleteCloudNativeAPIGatewayMCPRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewayMCPRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudNativeAPIGatewayMCPRouteResponse rsp = DeleteCloudNativeAPIGatewayMCPRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudNativeAPIGatewayMCPRouteOutcome(rsp);
+        else
+            return DeleteCloudNativeAPIGatewayMCPRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudNativeAPIGatewayMCPRouteOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::DeleteCloudNativeAPIGatewayMCPRouteAsync(const DeleteCloudNativeAPIGatewayMCPRouteRequest& request, const DeleteCloudNativeAPIGatewayMCPRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCloudNativeAPIGatewayMCPRouteRequest&;
+    using Resp = DeleteCloudNativeAPIGatewayMCPRouteResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCloudNativeAPIGatewayMCPRoute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::DeleteCloudNativeAPIGatewayMCPRouteOutcomeCallable CngwClient::DeleteCloudNativeAPIGatewayMCPRouteCallable(const DeleteCloudNativeAPIGatewayMCPRouteRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCloudNativeAPIGatewayMCPRouteOutcome>>();
+    DeleteCloudNativeAPIGatewayMCPRouteAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const DeleteCloudNativeAPIGatewayMCPRouteRequest&,
+        DeleteCloudNativeAPIGatewayMCPRouteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CngwClient::DeleteCloudNativeAPIGatewayMCPServerOutcome CngwClient::DeleteCloudNativeAPIGatewayMCPServer(const DeleteCloudNativeAPIGatewayMCPServerRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewayMCPServer");
@@ -840,6 +1190,56 @@ CngwClient::DeleteCloudNativeAPIGatewayMCPToolOutcomeCallable CngwClient::Delete
     return prom->get_future();
 }
 
+CngwClient::DeleteCloudNativeAPIGatewayMCPToolVersionOutcome CngwClient::DeleteCloudNativeAPIGatewayMCPToolVersion(const DeleteCloudNativeAPIGatewayMCPToolVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewayMCPToolVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudNativeAPIGatewayMCPToolVersionResponse rsp = DeleteCloudNativeAPIGatewayMCPToolVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudNativeAPIGatewayMCPToolVersionOutcome(rsp);
+        else
+            return DeleteCloudNativeAPIGatewayMCPToolVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudNativeAPIGatewayMCPToolVersionOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::DeleteCloudNativeAPIGatewayMCPToolVersionAsync(const DeleteCloudNativeAPIGatewayMCPToolVersionRequest& request, const DeleteCloudNativeAPIGatewayMCPToolVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCloudNativeAPIGatewayMCPToolVersionRequest&;
+    using Resp = DeleteCloudNativeAPIGatewayMCPToolVersionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCloudNativeAPIGatewayMCPToolVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::DeleteCloudNativeAPIGatewayMCPToolVersionOutcomeCallable CngwClient::DeleteCloudNativeAPIGatewayMCPToolVersionCallable(const DeleteCloudNativeAPIGatewayMCPToolVersionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCloudNativeAPIGatewayMCPToolVersionOutcome>>();
+    DeleteCloudNativeAPIGatewayMCPToolVersionAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const DeleteCloudNativeAPIGatewayMCPToolVersionRequest&,
+        DeleteCloudNativeAPIGatewayMCPToolVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CngwClient::DeleteCloudNativeAPIGatewaySecretKeyOutcome CngwClient::DeleteCloudNativeAPIGatewaySecretKey(const DeleteCloudNativeAPIGatewaySecretKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewaySecretKey");
@@ -932,6 +1332,156 @@ CngwClient::DescribeCNGWServicesWithRoutesOutcomeCallable CngwClient::DescribeCN
         const CngwClient*,
         const DescribeCNGWServicesWithRoutesRequest&,
         DescribeCNGWServicesWithRoutesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::DescribeCloudNativeAPIGatewayAIQuotaOutcome CngwClient::DescribeCloudNativeAPIGatewayAIQuota(const DescribeCloudNativeAPIGatewayAIQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayAIQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayAIQuotaResponse rsp = DescribeCloudNativeAPIGatewayAIQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayAIQuotaOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayAIQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayAIQuotaOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::DescribeCloudNativeAPIGatewayAIQuotaAsync(const DescribeCloudNativeAPIGatewayAIQuotaRequest& request, const DescribeCloudNativeAPIGatewayAIQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudNativeAPIGatewayAIQuotaRequest&;
+    using Resp = DescribeCloudNativeAPIGatewayAIQuotaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudNativeAPIGatewayAIQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::DescribeCloudNativeAPIGatewayAIQuotaOutcomeCallable CngwClient::DescribeCloudNativeAPIGatewayAIQuotaCallable(const DescribeCloudNativeAPIGatewayAIQuotaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudNativeAPIGatewayAIQuotaOutcome>>();
+    DescribeCloudNativeAPIGatewayAIQuotaAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const DescribeCloudNativeAPIGatewayAIQuotaRequest&,
+        DescribeCloudNativeAPIGatewayAIQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::DescribeCloudNativeAPIGatewayAIQuotaListOutcome CngwClient::DescribeCloudNativeAPIGatewayAIQuotaList(const DescribeCloudNativeAPIGatewayAIQuotaListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayAIQuotaList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayAIQuotaListResponse rsp = DescribeCloudNativeAPIGatewayAIQuotaListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayAIQuotaListOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayAIQuotaListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayAIQuotaListOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::DescribeCloudNativeAPIGatewayAIQuotaListAsync(const DescribeCloudNativeAPIGatewayAIQuotaListRequest& request, const DescribeCloudNativeAPIGatewayAIQuotaListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudNativeAPIGatewayAIQuotaListRequest&;
+    using Resp = DescribeCloudNativeAPIGatewayAIQuotaListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudNativeAPIGatewayAIQuotaList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::DescribeCloudNativeAPIGatewayAIQuotaListOutcomeCallable CngwClient::DescribeCloudNativeAPIGatewayAIQuotaListCallable(const DescribeCloudNativeAPIGatewayAIQuotaListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudNativeAPIGatewayAIQuotaListOutcome>>();
+    DescribeCloudNativeAPIGatewayAIQuotaListAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const DescribeCloudNativeAPIGatewayAIQuotaListRequest&,
+        DescribeCloudNativeAPIGatewayAIQuotaListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::DescribeCloudNativeAPIGatewayAIServiceSourceListOutcome CngwClient::DescribeCloudNativeAPIGatewayAIServiceSourceList(const DescribeCloudNativeAPIGatewayAIServiceSourceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayAIServiceSourceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayAIServiceSourceListResponse rsp = DescribeCloudNativeAPIGatewayAIServiceSourceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayAIServiceSourceListOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayAIServiceSourceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayAIServiceSourceListOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::DescribeCloudNativeAPIGatewayAIServiceSourceListAsync(const DescribeCloudNativeAPIGatewayAIServiceSourceListRequest& request, const DescribeCloudNativeAPIGatewayAIServiceSourceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudNativeAPIGatewayAIServiceSourceListRequest&;
+    using Resp = DescribeCloudNativeAPIGatewayAIServiceSourceListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudNativeAPIGatewayAIServiceSourceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::DescribeCloudNativeAPIGatewayAIServiceSourceListOutcomeCallable CngwClient::DescribeCloudNativeAPIGatewayAIServiceSourceListCallable(const DescribeCloudNativeAPIGatewayAIServiceSourceListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudNativeAPIGatewayAIServiceSourceListOutcome>>();
+    DescribeCloudNativeAPIGatewayAIServiceSourceListAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const DescribeCloudNativeAPIGatewayAIServiceSourceListRequest&,
+        DescribeCloudNativeAPIGatewayAIServiceSourceListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1340,6 +1890,56 @@ CngwClient::DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsOutcomeCallable 
     return prom->get_future();
 }
 
+CngwClient::DescribeCloudNativeAPIGatewayMCPRouteListOutcome CngwClient::DescribeCloudNativeAPIGatewayMCPRouteList(const DescribeCloudNativeAPIGatewayMCPRouteListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayMCPRouteList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayMCPRouteListResponse rsp = DescribeCloudNativeAPIGatewayMCPRouteListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayMCPRouteListOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayMCPRouteListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayMCPRouteListOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::DescribeCloudNativeAPIGatewayMCPRouteListAsync(const DescribeCloudNativeAPIGatewayMCPRouteListRequest& request, const DescribeCloudNativeAPIGatewayMCPRouteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudNativeAPIGatewayMCPRouteListRequest&;
+    using Resp = DescribeCloudNativeAPIGatewayMCPRouteListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudNativeAPIGatewayMCPRouteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::DescribeCloudNativeAPIGatewayMCPRouteListOutcomeCallable CngwClient::DescribeCloudNativeAPIGatewayMCPRouteListCallable(const DescribeCloudNativeAPIGatewayMCPRouteListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudNativeAPIGatewayMCPRouteListOutcome>>();
+    DescribeCloudNativeAPIGatewayMCPRouteListAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const DescribeCloudNativeAPIGatewayMCPRouteListRequest&,
+        DescribeCloudNativeAPIGatewayMCPRouteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CngwClient::DescribeCloudNativeAPIGatewayMCPServerOutcome CngwClient::DescribeCloudNativeAPIGatewayMCPServer(const DescribeCloudNativeAPIGatewayMCPServerRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayMCPServer");
@@ -1640,6 +2240,56 @@ CngwClient::DescribeCloudNativeAPIGatewayMCPToolACLListOutcomeCallable CngwClien
     return prom->get_future();
 }
 
+CngwClient::DescribeCloudNativeAPIGatewayMCPToolImportTaskOutcome CngwClient::DescribeCloudNativeAPIGatewayMCPToolImportTask(const DescribeCloudNativeAPIGatewayMCPToolImportTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayMCPToolImportTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayMCPToolImportTaskResponse rsp = DescribeCloudNativeAPIGatewayMCPToolImportTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayMCPToolImportTaskOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayMCPToolImportTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayMCPToolImportTaskOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::DescribeCloudNativeAPIGatewayMCPToolImportTaskAsync(const DescribeCloudNativeAPIGatewayMCPToolImportTaskRequest& request, const DescribeCloudNativeAPIGatewayMCPToolImportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudNativeAPIGatewayMCPToolImportTaskRequest&;
+    using Resp = DescribeCloudNativeAPIGatewayMCPToolImportTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudNativeAPIGatewayMCPToolImportTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::DescribeCloudNativeAPIGatewayMCPToolImportTaskOutcomeCallable CngwClient::DescribeCloudNativeAPIGatewayMCPToolImportTaskCallable(const DescribeCloudNativeAPIGatewayMCPToolImportTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudNativeAPIGatewayMCPToolImportTaskOutcome>>();
+    DescribeCloudNativeAPIGatewayMCPToolImportTaskAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const DescribeCloudNativeAPIGatewayMCPToolImportTaskRequest&,
+        DescribeCloudNativeAPIGatewayMCPToolImportTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CngwClient::DescribeCloudNativeAPIGatewayMCPToolListOutcome CngwClient::DescribeCloudNativeAPIGatewayMCPToolList(const DescribeCloudNativeAPIGatewayMCPToolListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayMCPToolList");
@@ -1682,6 +2332,106 @@ CngwClient::DescribeCloudNativeAPIGatewayMCPToolListOutcomeCallable CngwClient::
         const CngwClient*,
         const DescribeCloudNativeAPIGatewayMCPToolListRequest&,
         DescribeCloudNativeAPIGatewayMCPToolListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::DescribeCloudNativeAPIGatewayMCPToolVersionOutcome CngwClient::DescribeCloudNativeAPIGatewayMCPToolVersion(const DescribeCloudNativeAPIGatewayMCPToolVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayMCPToolVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayMCPToolVersionResponse rsp = DescribeCloudNativeAPIGatewayMCPToolVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayMCPToolVersionOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayMCPToolVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayMCPToolVersionOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::DescribeCloudNativeAPIGatewayMCPToolVersionAsync(const DescribeCloudNativeAPIGatewayMCPToolVersionRequest& request, const DescribeCloudNativeAPIGatewayMCPToolVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudNativeAPIGatewayMCPToolVersionRequest&;
+    using Resp = DescribeCloudNativeAPIGatewayMCPToolVersionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudNativeAPIGatewayMCPToolVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::DescribeCloudNativeAPIGatewayMCPToolVersionOutcomeCallable CngwClient::DescribeCloudNativeAPIGatewayMCPToolVersionCallable(const DescribeCloudNativeAPIGatewayMCPToolVersionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudNativeAPIGatewayMCPToolVersionOutcome>>();
+    DescribeCloudNativeAPIGatewayMCPToolVersionAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const DescribeCloudNativeAPIGatewayMCPToolVersionRequest&,
+        DescribeCloudNativeAPIGatewayMCPToolVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::DescribeCloudNativeAPIGatewayMCPToolVersionListOutcome CngwClient::DescribeCloudNativeAPIGatewayMCPToolVersionList(const DescribeCloudNativeAPIGatewayMCPToolVersionListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayMCPToolVersionList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayMCPToolVersionListResponse rsp = DescribeCloudNativeAPIGatewayMCPToolVersionListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayMCPToolVersionListOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayMCPToolVersionListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayMCPToolVersionListOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::DescribeCloudNativeAPIGatewayMCPToolVersionListAsync(const DescribeCloudNativeAPIGatewayMCPToolVersionListRequest& request, const DescribeCloudNativeAPIGatewayMCPToolVersionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudNativeAPIGatewayMCPToolVersionListRequest&;
+    using Resp = DescribeCloudNativeAPIGatewayMCPToolVersionListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudNativeAPIGatewayMCPToolVersionList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::DescribeCloudNativeAPIGatewayMCPToolVersionListOutcomeCallable CngwClient::DescribeCloudNativeAPIGatewayMCPToolVersionListCallable(const DescribeCloudNativeAPIGatewayMCPToolVersionListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudNativeAPIGatewayMCPToolVersionListOutcome>>();
+    DescribeCloudNativeAPIGatewayMCPToolVersionListAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const DescribeCloudNativeAPIGatewayMCPToolVersionListRequest&,
+        DescribeCloudNativeAPIGatewayMCPToolVersionListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1790,6 +2540,56 @@ CngwClient::DescribeCloudNativeAPIGatewaySecretKeyOutcomeCallable CngwClient::De
     return prom->get_future();
 }
 
+CngwClient::DescribeCloudNativeAPIGatewaySecretKeyListOutcome CngwClient::DescribeCloudNativeAPIGatewaySecretKeyList(const DescribeCloudNativeAPIGatewaySecretKeyListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewaySecretKeyList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewaySecretKeyListResponse rsp = DescribeCloudNativeAPIGatewaySecretKeyListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewaySecretKeyListOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewaySecretKeyListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewaySecretKeyListOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::DescribeCloudNativeAPIGatewaySecretKeyListAsync(const DescribeCloudNativeAPIGatewaySecretKeyListRequest& request, const DescribeCloudNativeAPIGatewaySecretKeyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudNativeAPIGatewaySecretKeyListRequest&;
+    using Resp = DescribeCloudNativeAPIGatewaySecretKeyListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudNativeAPIGatewaySecretKeyList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::DescribeCloudNativeAPIGatewaySecretKeyListOutcomeCallable CngwClient::DescribeCloudNativeAPIGatewaySecretKeyListCallable(const DescribeCloudNativeAPIGatewaySecretKeyListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudNativeAPIGatewaySecretKeyListOutcome>>();
+    DescribeCloudNativeAPIGatewaySecretKeyListAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const DescribeCloudNativeAPIGatewaySecretKeyListRequest&,
+        DescribeCloudNativeAPIGatewaySecretKeyListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CngwClient::DescribeCloudNativeAPIGatewaySecretKeyValueOutcome CngwClient::DescribeCloudNativeAPIGatewaySecretKeyValue(const DescribeCloudNativeAPIGatewaySecretKeyValueRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewaySecretKeyValue");
@@ -1832,6 +2632,56 @@ CngwClient::DescribeCloudNativeAPIGatewaySecretKeyValueOutcomeCallable CngwClien
         const CngwClient*,
         const DescribeCloudNativeAPIGatewaySecretKeyValueRequest&,
         DescribeCloudNativeAPIGatewaySecretKeyValueOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::ModifyCloudNativeAPIGatewayAIServiceSourceOutcome CngwClient::ModifyCloudNativeAPIGatewayAIServiceSource(const ModifyCloudNativeAPIGatewayAIServiceSourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCloudNativeAPIGatewayAIServiceSource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCloudNativeAPIGatewayAIServiceSourceResponse rsp = ModifyCloudNativeAPIGatewayAIServiceSourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCloudNativeAPIGatewayAIServiceSourceOutcome(rsp);
+        else
+            return ModifyCloudNativeAPIGatewayAIServiceSourceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCloudNativeAPIGatewayAIServiceSourceOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::ModifyCloudNativeAPIGatewayAIServiceSourceAsync(const ModifyCloudNativeAPIGatewayAIServiceSourceRequest& request, const ModifyCloudNativeAPIGatewayAIServiceSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyCloudNativeAPIGatewayAIServiceSourceRequest&;
+    using Resp = ModifyCloudNativeAPIGatewayAIServiceSourceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyCloudNativeAPIGatewayAIServiceSource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::ModifyCloudNativeAPIGatewayAIServiceSourceOutcomeCallable CngwClient::ModifyCloudNativeAPIGatewayAIServiceSourceCallable(const ModifyCloudNativeAPIGatewayAIServiceSourceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyCloudNativeAPIGatewayAIServiceSourceOutcome>>();
+    ModifyCloudNativeAPIGatewayAIServiceSourceAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const ModifyCloudNativeAPIGatewayAIServiceSourceRequest&,
+        ModifyCloudNativeAPIGatewayAIServiceSourceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2032,6 +2882,106 @@ CngwClient::ModifyCloudNativeAPIGatewayLLMModelServiceOutcomeCallable CngwClient
         const CngwClient*,
         const ModifyCloudNativeAPIGatewayLLMModelServiceRequest&,
         ModifyCloudNativeAPIGatewayLLMModelServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::ModifyCloudNativeAPIGatewayMCPRouteOutcome CngwClient::ModifyCloudNativeAPIGatewayMCPRoute(const ModifyCloudNativeAPIGatewayMCPRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCloudNativeAPIGatewayMCPRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCloudNativeAPIGatewayMCPRouteResponse rsp = ModifyCloudNativeAPIGatewayMCPRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCloudNativeAPIGatewayMCPRouteOutcome(rsp);
+        else
+            return ModifyCloudNativeAPIGatewayMCPRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCloudNativeAPIGatewayMCPRouteOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::ModifyCloudNativeAPIGatewayMCPRouteAsync(const ModifyCloudNativeAPIGatewayMCPRouteRequest& request, const ModifyCloudNativeAPIGatewayMCPRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyCloudNativeAPIGatewayMCPRouteRequest&;
+    using Resp = ModifyCloudNativeAPIGatewayMCPRouteResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyCloudNativeAPIGatewayMCPRoute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::ModifyCloudNativeAPIGatewayMCPRouteOutcomeCallable CngwClient::ModifyCloudNativeAPIGatewayMCPRouteCallable(const ModifyCloudNativeAPIGatewayMCPRouteRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyCloudNativeAPIGatewayMCPRouteOutcome>>();
+    ModifyCloudNativeAPIGatewayMCPRouteAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const ModifyCloudNativeAPIGatewayMCPRouteRequest&,
+        ModifyCloudNativeAPIGatewayMCPRouteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::ModifyCloudNativeAPIGatewayMCPRouteStatusOutcome CngwClient::ModifyCloudNativeAPIGatewayMCPRouteStatus(const ModifyCloudNativeAPIGatewayMCPRouteStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCloudNativeAPIGatewayMCPRouteStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCloudNativeAPIGatewayMCPRouteStatusResponse rsp = ModifyCloudNativeAPIGatewayMCPRouteStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCloudNativeAPIGatewayMCPRouteStatusOutcome(rsp);
+        else
+            return ModifyCloudNativeAPIGatewayMCPRouteStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCloudNativeAPIGatewayMCPRouteStatusOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::ModifyCloudNativeAPIGatewayMCPRouteStatusAsync(const ModifyCloudNativeAPIGatewayMCPRouteStatusRequest& request, const ModifyCloudNativeAPIGatewayMCPRouteStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyCloudNativeAPIGatewayMCPRouteStatusRequest&;
+    using Resp = ModifyCloudNativeAPIGatewayMCPRouteStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyCloudNativeAPIGatewayMCPRouteStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::ModifyCloudNativeAPIGatewayMCPRouteStatusOutcomeCallable CngwClient::ModifyCloudNativeAPIGatewayMCPRouteStatusCallable(const ModifyCloudNativeAPIGatewayMCPRouteStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyCloudNativeAPIGatewayMCPRouteStatusOutcome>>();
+    ModifyCloudNativeAPIGatewayMCPRouteStatusAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const ModifyCloudNativeAPIGatewayMCPRouteStatusRequest&,
+        ModifyCloudNativeAPIGatewayMCPRouteStatusOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2532,6 +3482,56 @@ CngwClient::RemoveCloudNativeAPIGatewayConsumerInGroupOutcomeCallable CngwClient
         const CngwClient*,
         const RemoveCloudNativeAPIGatewayConsumerInGroupRequest&,
         RemoveCloudNativeAPIGatewayConsumerInGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::RollbackCloudNativeAPIGatewayMCPToolVersionOutcome CngwClient::RollbackCloudNativeAPIGatewayMCPToolVersion(const RollbackCloudNativeAPIGatewayMCPToolVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "RollbackCloudNativeAPIGatewayMCPToolVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RollbackCloudNativeAPIGatewayMCPToolVersionResponse rsp = RollbackCloudNativeAPIGatewayMCPToolVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RollbackCloudNativeAPIGatewayMCPToolVersionOutcome(rsp);
+        else
+            return RollbackCloudNativeAPIGatewayMCPToolVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return RollbackCloudNativeAPIGatewayMCPToolVersionOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::RollbackCloudNativeAPIGatewayMCPToolVersionAsync(const RollbackCloudNativeAPIGatewayMCPToolVersionRequest& request, const RollbackCloudNativeAPIGatewayMCPToolVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RollbackCloudNativeAPIGatewayMCPToolVersionRequest&;
+    using Resp = RollbackCloudNativeAPIGatewayMCPToolVersionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RollbackCloudNativeAPIGatewayMCPToolVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::RollbackCloudNativeAPIGatewayMCPToolVersionOutcomeCallable CngwClient::RollbackCloudNativeAPIGatewayMCPToolVersionCallable(const RollbackCloudNativeAPIGatewayMCPToolVersionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RollbackCloudNativeAPIGatewayMCPToolVersionOutcome>>();
+    RollbackCloudNativeAPIGatewayMCPToolVersionAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const RollbackCloudNativeAPIGatewayMCPToolVersionRequest&,
+        RollbackCloudNativeAPIGatewayMCPToolVersionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

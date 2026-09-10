@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户在平台的编号
-                     * @return UserId 用户在平台的编号
+                     * 获取<p>用户在平台中的编号（UserId）</p><p>UserId 获取方式：<a href="https://qcloudimg.tencent-cloud.cn/raw/6b054d6161b04c24855de15cb243f6bf.png" target="_blank">点击查看</a></p>
+                     * @return UserId <p>用户在平台中的编号（UserId）</p><p>UserId 获取方式：<a href="https://qcloudimg.tencent-cloud.cn/raw/6b054d6161b04c24855de15cb243f6bf.png" target="_blank">点击查看</a></p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户在平台的编号
-                     * @param _userId 用户在平台的编号
+                     * 设置<p>用户在平台中的编号（UserId）</p><p>UserId 获取方式：<a href="https://qcloudimg.tencent-cloud.cn/raw/6b054d6161b04c24855de15cb243f6bf.png" target="_blank">点击查看</a></p>
+                     * @param _userId <p>用户在平台中的编号（UserId）</p><p>UserId 获取方式：<a href="https://qcloudimg.tencent-cloud.cn/raw/6b054d6161b04c24855de15cb243f6bf.png" target="_blank">点击查看</a></p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取用户的来源渠道，一般不用传，特定场景根据接口说明传值
-                     * @return Channel 用户的来源渠道，一般不用传，特定场景根据接口说明传值
+                     * 获取<p>用户的来源渠道，一般不用传，特定场景根据接口说明传值</p>
+                     * @return Channel <p>用户的来源渠道，一般不用传，特定场景根据接口说明传值</p>
                      * @deprecated
                      */
                     std::string GetChannel() const;
 
                     /**
-                     * 设置用户的来源渠道，一般不用传，特定场景根据接口说明传值
-                     * @param _channel 用户的来源渠道，一般不用传，特定场景根据接口说明传值
+                     * 设置<p>用户的来源渠道，一般不用传，特定场景根据接口说明传值</p>
+                     * @param _channel <p>用户的来源渠道，一般不用传，特定场景根据接口说明传值</p>
                      * @deprecated
                      */
                     void SetChannel(const std::string& _channel);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ChannelHasBeenSet() const;
 
                     /**
-                     * 获取用户在渠道的编号，一般不用传，特定场景根据接口说明传值
-                     * @return OpenId 用户在渠道的编号，一般不用传，特定场景根据接口说明传值
+                     * 获取<p>用户在渠道的编号，一般不用传，特定场景根据接口说明传值</p>
+                     * @return OpenId <p>用户在渠道的编号，一般不用传，特定场景根据接口说明传值</p>
                      * @deprecated
                      */
                     std::string GetOpenId() const;
 
                     /**
-                     * 设置用户在渠道的编号，一般不用传，特定场景根据接口说明传值
-                     * @param _openId 用户在渠道的编号，一般不用传，特定场景根据接口说明传值
+                     * 设置<p>用户在渠道的编号，一般不用传，特定场景根据接口说明传值</p>
+                     * @param _openId <p>用户在渠道的编号，一般不用传，特定场景根据接口说明传值</p>
                      * @deprecated
                      */
                     void SetOpenId(const std::string& _openId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool OpenIdHasBeenSet() const;
 
                     /**
-                     * 获取用户真实IP，内部字段，暂未开放
-                     * @return ClientIp 用户真实IP，内部字段，暂未开放
+                     * 获取<p>用户真实IP，内部字段，暂未开放</p>
+                     * @return ClientIp <p>用户真实IP，内部字段，暂未开放</p>
                      * @deprecated
                      */
                     std::string GetClientIp() const;
 
                     /**
-                     * 设置用户真实IP，内部字段，暂未开放
-                     * @param _clientIp 用户真实IP，内部字段，暂未开放
+                     * 设置<p>用户真实IP，内部字段，暂未开放</p>
+                     * @param _clientIp <p>用户真实IP，内部字段，暂未开放</p>
                      * @deprecated
                      */
                     void SetClientIp(const std::string& _clientIp);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ClientIpHasBeenSet() const;
 
                     /**
-                     * 获取用户代理IP，内部字段，暂未开放
-                     * @return ProxyIp 用户代理IP，内部字段，暂未开放
+                     * 获取<p>用户代理IP，内部字段，暂未开放</p>
+                     * @return ProxyIp <p>用户代理IP，内部字段，暂未开放</p>
                      * @deprecated
                      */
                     std::string GetProxyIp() const;
 
                     /**
-                     * 设置用户代理IP，内部字段，暂未开放
-                     * @param _proxyIp 用户代理IP，内部字段，暂未开放
+                     * 设置<p>用户代理IP，内部字段，暂未开放</p>
+                     * @param _proxyIp <p>用户代理IP，内部字段，暂未开放</p>
                      * @deprecated
                      */
                     void SetProxyIp(const std::string& _proxyIp);
@@ -154,31 +154,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户在平台的编号
+                     * <p>用户在平台中的编号（UserId）</p><p>UserId 获取方式：<a href="https://qcloudimg.tencent-cloud.cn/raw/6b054d6161b04c24855de15cb243f6bf.png" target="_blank">点击查看</a></p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 用户的来源渠道，一般不用传，特定场景根据接口说明传值
+                     * <p>用户的来源渠道，一般不用传，特定场景根据接口说明传值</p>
                      */
                     std::string m_channel;
                     bool m_channelHasBeenSet;
 
                     /**
-                     * 用户在渠道的编号，一般不用传，特定场景根据接口说明传值
+                     * <p>用户在渠道的编号，一般不用传，特定场景根据接口说明传值</p>
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;
 
                     /**
-                     * 用户真实IP，内部字段，暂未开放
+                     * <p>用户真实IP，内部字段，暂未开放</p>
                      */
                     std::string m_clientIp;
                     bool m_clientIpHasBeenSet;
 
                     /**
-                     * 用户代理IP，内部字段，暂未开放
+                     * <p>用户代理IP，内部字段，暂未开放</p>
                      */
                     std::string m_proxyIp;
                     bool m_proxyIpHasBeenSet;

@@ -740,6 +740,56 @@ TcbClient::CreateEnvResourceOutcomeCallable TcbClient::CreateEnvResourceCallable
     return prom->get_future();
 }
 
+TcbClient::CreateFunctionOutcome TcbClient::CreateFunction(const CreateFunctionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFunction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFunctionResponse rsp = CreateFunctionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFunctionOutcome(rsp);
+        else
+            return CreateFunctionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFunctionOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CreateFunctionAsync(const CreateFunctionRequest& request, const CreateFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateFunctionRequest&;
+    using Resp = CreateFunctionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateFunction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::CreateFunctionOutcomeCallable TcbClient::CreateFunctionCallable(const CreateFunctionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateFunctionOutcome>>();
+    CreateFunctionAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CreateFunctionRequest&,
+        CreateFunctionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::CreateHTTPServiceRouteOutcome TcbClient::CreateHTTPServiceRoute(const CreateHTTPServiceRouteRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateHTTPServiceRoute");
@@ -1282,6 +1332,56 @@ TcbClient::DeleteCloudAppVersionOutcomeCallable TcbClient::DeleteCloudAppVersion
         const TcbClient*,
         const DeleteCloudAppVersionRequest&,
         DeleteCloudAppVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DeleteFunctionOutcome TcbClient::DeleteFunction(const DeleteFunctionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteFunction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteFunctionResponse rsp = DeleteFunctionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteFunctionOutcome(rsp);
+        else
+            return DeleteFunctionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteFunctionOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DeleteFunctionAsync(const DeleteFunctionRequest& request, const DeleteFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteFunctionRequest&;
+    using Resp = DeleteFunctionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteFunction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DeleteFunctionOutcomeCallable TcbClient::DeleteFunctionCallable(const DeleteFunctionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteFunctionOutcome>>();
+    DeleteFunctionAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DeleteFunctionRequest&,
+        DeleteFunctionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3590,6 +3690,56 @@ TcbClient::DestroyStaticStoreOutcomeCallable TcbClient::DestroyStaticStoreCallab
     return prom->get_future();
 }
 
+TcbClient::DownloadFunctionOutcome TcbClient::DownloadFunction(const DownloadFunctionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DownloadFunction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DownloadFunctionResponse rsp = DownloadFunctionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DownloadFunctionOutcome(rsp);
+        else
+            return DownloadFunctionOutcome(o.GetError());
+    }
+    else
+    {
+        return DownloadFunctionOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DownloadFunctionAsync(const DownloadFunctionRequest& request, const DownloadFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DownloadFunctionRequest&;
+    using Resp = DownloadFunctionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DownloadFunction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DownloadFunctionOutcomeCallable TcbClient::DownloadFunctionCallable(const DownloadFunctionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DownloadFunctionOutcome>>();
+    DownloadFunctionAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DownloadFunctionRequest&,
+        DownloadFunctionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::ExecutePGSqlOutcome TcbClient::ExecutePGSql(const ExecutePGSqlRequest &request)
 {
     auto outcome = MakeRequest(request, "ExecutePGSql");
@@ -3640,6 +3790,56 @@ TcbClient::ExecutePGSqlOutcomeCallable TcbClient::ExecutePGSqlCallable(const Exe
     return prom->get_future();
 }
 
+TcbClient::GetFunctionOutcome TcbClient::GetFunction(const GetFunctionRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetFunction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetFunctionResponse rsp = GetFunctionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetFunctionOutcome(rsp);
+        else
+            return GetFunctionOutcome(o.GetError());
+    }
+    else
+    {
+        return GetFunctionOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::GetFunctionAsync(const GetFunctionRequest& request, const GetFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetFunctionRequest&;
+    using Resp = GetFunctionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetFunction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::GetFunctionOutcomeCallable TcbClient::GetFunctionCallable(const GetFunctionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetFunctionOutcome>>();
+    GetFunctionAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const GetFunctionRequest&,
+        GetFunctionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::GetProvidersOutcome TcbClient::GetProviders(const GetProvidersRequest &request)
 {
     auto outcome = MakeRequest(request, "GetProviders");
@@ -3682,6 +3882,56 @@ TcbClient::GetProvidersOutcomeCallable TcbClient::GetProvidersCallable(const Get
         const TcbClient*,
         const GetProvidersRequest&,
         GetProvidersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::ListFunctionsOutcome TcbClient::ListFunctions(const ListFunctionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListFunctions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListFunctionsResponse rsp = ListFunctionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListFunctionsOutcome(rsp);
+        else
+            return ListFunctionsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListFunctionsOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::ListFunctionsAsync(const ListFunctionsRequest& request, const ListFunctionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListFunctionsRequest&;
+    using Resp = ListFunctionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListFunctions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::ListFunctionsOutcomeCallable TcbClient::ListFunctionsCallable(const ListFunctionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListFunctionsOutcome>>();
+    ListFunctionsAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ListFunctionsRequest&,
+        ListFunctionsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5032,6 +5282,106 @@ TcbClient::UpdateAIModelOutcomeCallable TcbClient::UpdateAIModelCallable(const U
         const TcbClient*,
         const UpdateAIModelRequest&,
         UpdateAIModelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::UpdateFunctionCodeOutcome TcbClient::UpdateFunctionCode(const UpdateFunctionCodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateFunctionCode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateFunctionCodeResponse rsp = UpdateFunctionCodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateFunctionCodeOutcome(rsp);
+        else
+            return UpdateFunctionCodeOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateFunctionCodeOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::UpdateFunctionCodeAsync(const UpdateFunctionCodeRequest& request, const UpdateFunctionCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateFunctionCodeRequest&;
+    using Resp = UpdateFunctionCodeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateFunctionCode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::UpdateFunctionCodeOutcomeCallable TcbClient::UpdateFunctionCodeCallable(const UpdateFunctionCodeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateFunctionCodeOutcome>>();
+    UpdateFunctionCodeAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const UpdateFunctionCodeRequest&,
+        UpdateFunctionCodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::UpdateFunctionConfigurationOutcome TcbClient::UpdateFunctionConfiguration(const UpdateFunctionConfigurationRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateFunctionConfiguration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateFunctionConfigurationResponse rsp = UpdateFunctionConfigurationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateFunctionConfigurationOutcome(rsp);
+        else
+            return UpdateFunctionConfigurationOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateFunctionConfigurationOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::UpdateFunctionConfigurationAsync(const UpdateFunctionConfigurationRequest& request, const UpdateFunctionConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateFunctionConfigurationRequest&;
+    using Resp = UpdateFunctionConfigurationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateFunctionConfiguration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::UpdateFunctionConfigurationOutcomeCallable TcbClient::UpdateFunctionConfigurationCallable(const UpdateFunctionConfigurationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateFunctionConfigurationOutcome>>();
+    UpdateFunctionConfigurationAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const UpdateFunctionConfigurationRequest&,
+        UpdateFunctionConfigurationOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

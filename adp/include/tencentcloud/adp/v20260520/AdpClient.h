@@ -489,7 +489,7 @@ namespace TencentCloud
                 CopyAppOutcomeCallable CopyAppCallable(const Model::CopyAppRequest& request);
 
                 /**
-                 *创建Agent
+                 *创建Agent（目前仅支持claw模式）
                  * @param req CreateAgentRequest
                  * @return CreateAgentOutcome
                  */

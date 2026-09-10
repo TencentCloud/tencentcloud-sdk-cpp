@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/adp/v20260520/model/SkillCorpShareConfig.h>
 
 
 namespace TencentCloud
@@ -126,6 +127,27 @@ namespace TencentCloud
                      */
                     bool VersionIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>共享配置</p>
+                     * @return CorpShareConfig <p>共享配置</p>
+                     * 
+                     */
+                    SkillCorpShareConfig GetCorpShareConfig() const;
+
+                    /**
+                     * 设置<p>共享配置</p>
+                     * @param _corpShareConfig <p>共享配置</p>
+                     * 
+                     */
+                    void SetCorpShareConfig(const SkillCorpShareConfig& _corpShareConfig);
+
+                    /**
+                     * 判断参数 CorpShareConfig 是否已赋值
+                     * @return CorpShareConfig 是否已赋值
+                     * 
+                     */
+                    bool CorpShareConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +173,12 @@ namespace TencentCloud
                      */
                     std::string m_versionId;
                     bool m_versionIdHasBeenSet;
+
+                    /**
+                     * <p>共享配置</p>
+                     */
+                    SkillCorpShareConfig m_corpShareConfig;
+                    bool m_corpShareConfigHasBeenSet;
 
                 };
             }

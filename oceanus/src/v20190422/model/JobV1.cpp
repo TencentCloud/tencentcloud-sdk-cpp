@@ -71,7 +71,10 @@ JobV1::JobV1() :
     m_newStateCOSBucketTypeHasBeenSet(false),
     m_healthScoreHasBeenSet(false),
     m_lastDiagnoseTimeHasBeenSet(false),
-    m_managerUinHasBeenSet(false)
+    m_managerUinHasBeenSet(false),
+    m_startupPointHasBeenSet(false),
+    m_isEventHasBeenSet(false),
+    m_isAlarmHasBeenSet(false)
 {
 }
 
@@ -607,6 +610,36 @@ CoreInternalOutcome JobV1::Deserialize(const rapidjson::Value &value)
         m_managerUinHasBeenSet = true;
     }
 
+    if (value.HasMember("StartupPoint") && !value["StartupPoint"].IsNull())
+    {
+        if (!value["StartupPoint"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobV1.StartupPoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startupPoint = string(value["StartupPoint"].GetString());
+        m_startupPointHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsEvent") && !value["IsEvent"].IsNull())
+    {
+        if (!value["IsEvent"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobV1.IsEvent` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isEvent = value["IsEvent"].GetBool();
+        m_isEventHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsAlarm") && !value["IsAlarm"].IsNull())
+    {
+        if (!value["IsAlarm"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobV1.IsAlarm` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAlarm = value["IsAlarm"].GetBool();
+        m_isAlarmHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1028,6 +1061,30 @@ void JobV1::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "ManagerUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_managerUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startupPointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartupPoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startupPoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isEvent, allocator);
+    }
+
+    if (m_isAlarmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAlarm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAlarm, allocator);
     }
 
 }
@@ -1847,5 +1904,53 @@ void JobV1::SetManagerUin(const string& _managerUin)
 bool JobV1::ManagerUinHasBeenSet() const
 {
     return m_managerUinHasBeenSet;
+}
+
+string JobV1::GetStartupPoint() const
+{
+    return m_startupPoint;
+}
+
+void JobV1::SetStartupPoint(const string& _startupPoint)
+{
+    m_startupPoint = _startupPoint;
+    m_startupPointHasBeenSet = true;
+}
+
+bool JobV1::StartupPointHasBeenSet() const
+{
+    return m_startupPointHasBeenSet;
+}
+
+bool JobV1::GetIsEvent() const
+{
+    return m_isEvent;
+}
+
+void JobV1::SetIsEvent(const bool& _isEvent)
+{
+    m_isEvent = _isEvent;
+    m_isEventHasBeenSet = true;
+}
+
+bool JobV1::IsEventHasBeenSet() const
+{
+    return m_isEventHasBeenSet;
+}
+
+bool JobV1::GetIsAlarm() const
+{
+    return m_isAlarm;
+}
+
+void JobV1::SetIsAlarm(const bool& _isAlarm)
+{
+    m_isAlarm = _isAlarm;
+    m_isAlarmHasBeenSet = true;
+}
+
+bool JobV1::IsAlarmHasBeenSet() const
+{
+    return m_isAlarmHasBeenSet;
 }
 

@@ -34,6 +34,7 @@ ProcessMediaRequest::ProcessMediaRequest() :
     m_aiQualityControlTaskHasBeenSet(false),
     m_smartSubtitlesTaskHasBeenSet(false),
     m_smartEraseTaskHasBeenSet(false),
+    m_aIDubbingTaskHasBeenSet(false),
     m_taskNotifyConfigHasBeenSet(false),
     m_tasksPriorityHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
@@ -147,6 +148,15 @@ string ProcessMediaRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_smartEraseTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_aIDubbingTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AIDubbingTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aIDubbingTask.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_taskNotifyConfigHasBeenSet)
@@ -403,6 +413,22 @@ void ProcessMediaRequest::SetSmartEraseTask(const SmartEraseTaskInput& _smartEra
 bool ProcessMediaRequest::SmartEraseTaskHasBeenSet() const
 {
     return m_smartEraseTaskHasBeenSet;
+}
+
+AIDubbingTaskInput ProcessMediaRequest::GetAIDubbingTask() const
+{
+    return m_aIDubbingTask;
+}
+
+void ProcessMediaRequest::SetAIDubbingTask(const AIDubbingTaskInput& _aIDubbingTask)
+{
+    m_aIDubbingTask = _aIDubbingTask;
+    m_aIDubbingTaskHasBeenSet = true;
+}
+
+bool ProcessMediaRequest::AIDubbingTaskHasBeenSet() const
+{
+    return m_aIDubbingTaskHasBeenSet;
 }
 
 TaskNotifyConfig ProcessMediaRequest::GetTaskNotifyConfig() const

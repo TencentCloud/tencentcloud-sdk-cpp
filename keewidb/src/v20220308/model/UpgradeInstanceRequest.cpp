@@ -28,7 +28,9 @@ UpgradeInstanceRequest::UpgradeInstanceRequest() :
     m_machineCpuHasBeenSet(false),
     m_machineMemoryHasBeenSet(false),
     m_shardNumHasBeenSet(false),
-    m_diskSizeHasBeenSet(false)
+    m_diskSizeHasBeenSet(false),
+    m_replicasNumHasBeenSet(false),
+    m_nodeSetHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,29 @@ string UpgradeInstanceRequest::ToJsonString() const
         string key = "DiskSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_diskSize, allocator);
+    }
+
+    if (m_replicasNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplicasNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_replicasNum, allocator);
+    }
+
+    if (m_nodeSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_nodeSet.begin(); itr != m_nodeSet.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -189,6 +214,38 @@ void UpgradeInstanceRequest::SetDiskSize(const int64_t& _diskSize)
 bool UpgradeInstanceRequest::DiskSizeHasBeenSet() const
 {
     return m_diskSizeHasBeenSet;
+}
+
+int64_t UpgradeInstanceRequest::GetReplicasNum() const
+{
+    return m_replicasNum;
+}
+
+void UpgradeInstanceRequest::SetReplicasNum(const int64_t& _replicasNum)
+{
+    m_replicasNum = _replicasNum;
+    m_replicasNumHasBeenSet = true;
+}
+
+bool UpgradeInstanceRequest::ReplicasNumHasBeenSet() const
+{
+    return m_replicasNumHasBeenSet;
+}
+
+vector<NodeInfo> UpgradeInstanceRequest::GetNodeSet() const
+{
+    return m_nodeSet;
+}
+
+void UpgradeInstanceRequest::SetNodeSet(const vector<NodeInfo>& _nodeSet)
+{
+    m_nodeSet = _nodeSet;
+    m_nodeSetHasBeenSet = true;
+}
+
+bool UpgradeInstanceRequest::NodeSetHasBeenSet() const
+{
+    return m_nodeSetHasBeenSet;
 }
 
 

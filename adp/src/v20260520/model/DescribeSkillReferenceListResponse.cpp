@@ -24,7 +24,8 @@ using namespace TencentCloud::Adp::V20260520::Model;
 using namespace std;
 
 DescribeSkillReferenceListResponse::DescribeSkillReferenceListResponse() :
-    m_referenceListHasBeenSet(false)
+    m_referenceListHasBeenSet(false),
+    m_allowForceModifyHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,16 @@ CoreInternalOutcome DescribeSkillReferenceListResponse::Deserialize(const string
         m_referenceListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AllowForceModify") && !rsp["AllowForceModify"].IsNull())
+    {
+        if (!rsp["AllowForceModify"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AllowForceModify` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_allowForceModify = rsp["AllowForceModify"].GetBool();
+        m_allowForceModifyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string DescribeSkillReferenceListResponse::ToJsonString() const
         }
     }
 
+    if (m_allowForceModifyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowForceModify";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_allowForceModify, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +146,16 @@ vector<SkillReferenceGroup> DescribeSkillReferenceListResponse::GetReferenceList
 bool DescribeSkillReferenceListResponse::ReferenceListHasBeenSet() const
 {
     return m_referenceListHasBeenSet;
+}
+
+bool DescribeSkillReferenceListResponse::GetAllowForceModify() const
+{
+    return m_allowForceModify;
+}
+
+bool DescribeSkillReferenceListResponse::AllowForceModifyHasBeenSet() const
+{
+    return m_allowForceModifyHasBeenSet;
 }
 
 

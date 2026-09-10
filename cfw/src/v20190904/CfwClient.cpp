@@ -3940,6 +3940,56 @@ CfwClient::DescribeNDRAssetIdentificationListOutcomeCallable CfwClient::Describe
     return prom->get_future();
 }
 
+CfwClient::DescribeNDRDataLeakOutAlertListOutcome CfwClient::DescribeNDRDataLeakOutAlertList(const DescribeNDRDataLeakOutAlertListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNDRDataLeakOutAlertList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNDRDataLeakOutAlertListResponse rsp = DescribeNDRDataLeakOutAlertListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNDRDataLeakOutAlertListOutcome(rsp);
+        else
+            return DescribeNDRDataLeakOutAlertListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNDRDataLeakOutAlertListOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeNDRDataLeakOutAlertListAsync(const DescribeNDRDataLeakOutAlertListRequest& request, const DescribeNDRDataLeakOutAlertListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeNDRDataLeakOutAlertListRequest&;
+    using Resp = DescribeNDRDataLeakOutAlertListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeNDRDataLeakOutAlertList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeNDRDataLeakOutAlertListOutcomeCallable CfwClient::DescribeNDRDataLeakOutAlertListCallable(const DescribeNDRDataLeakOutAlertListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeNDRDataLeakOutAlertListOutcome>>();
+    DescribeNDRDataLeakOutAlertListAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeNDRDataLeakOutAlertListRequest&,
+        DescribeNDRDataLeakOutAlertListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::DescribeNatAcRuleOutcome CfwClient::DescribeNatAcRule(const DescribeNatAcRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNatAcRule");

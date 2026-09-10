@@ -33,7 +33,8 @@ ActivityPara::ActivityPara() :
     m_qualityControlTaskHasBeenSet(false),
     m_execRulesTaskHasBeenSet(false),
     m_smartSubtitlesTaskHasBeenSet(false),
-    m_smartEraseTaskHasBeenSet(false)
+    m_smartEraseTaskHasBeenSet(false),
+    m_aIDubbingTaskHasBeenSet(false)
 {
 }
 
@@ -263,6 +264,23 @@ CoreInternalOutcome ActivityPara::Deserialize(const rapidjson::Value &value)
         m_smartEraseTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("AIDubbingTask") && !value["AIDubbingTask"].IsNull())
+    {
+        if (!value["AIDubbingTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActivityPara.AIDubbingTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aIDubbingTask.Deserialize(value["AIDubbingTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aIDubbingTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -385,6 +403,15 @@ void ActivityPara::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_smartEraseTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aIDubbingTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AIDubbingTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aIDubbingTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -596,5 +623,21 @@ void ActivityPara::SetSmartEraseTask(const SmartEraseTaskInput& _smartEraseTask)
 bool ActivityPara::SmartEraseTaskHasBeenSet() const
 {
     return m_smartEraseTaskHasBeenSet;
+}
+
+AIDubbingTaskInput ActivityPara::GetAIDubbingTask() const
+{
+    return m_aIDubbingTask;
+}
+
+void ActivityPara::SetAIDubbingTask(const AIDubbingTaskInput& _aIDubbingTask)
+{
+    m_aIDubbingTask = _aIDubbingTask;
+    m_aIDubbingTaskHasBeenSet = true;
+}
+
+bool ActivityPara::AIDubbingTaskHasBeenSet() const
+{
+    return m_aIDubbingTaskHasBeenSet;
 }
 

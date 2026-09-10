@@ -24,6 +24,7 @@ using namespace std;
 
 ChangeInstanceMasterRequest::ChangeInstanceMasterRequest() :
     m_instanceIdHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
     m_nodeIdHasBeenSet(false)
 {
 }
@@ -41,6 +42,14 @@ string ChangeInstanceMasterRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_groupId, allocator);
     }
 
     if (m_nodeIdHasBeenSet)
@@ -73,6 +82,22 @@ void ChangeInstanceMasterRequest::SetInstanceId(const string& _instanceId)
 bool ChangeInstanceMasterRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+int64_t ChangeInstanceMasterRequest::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void ChangeInstanceMasterRequest::SetGroupId(const int64_t& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool ChangeInstanceMasterRequest::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
 }
 
 string ChangeInstanceMasterRequest::GetNodeId() const

@@ -48,63 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取原子任务类型。
-<li>Transcode：转码。</li>
-<li>SampleSnapshot：采样截图。</li>
-<li>AnimatedGraphics：转动图。</li>
-<li>SnapshotByTimeOffset：时间点截图。</li>
-<li>ImageSprites：雪碧图。</li>
-<li>AdaptiveDynamicStreaming：自适应码流。</li>
-<li>AiContentReview：内容审核。</li>
-<li>AIRecognition：智能识别。</li>
-<li>AIAnalysis：智能分析。</li>
-<li>AiQualityControl：媒体质检。</li>
-<li>SmartSubtitles：智能字幕。</li>
-<li>SmartErase：智能擦除。</li>
-                     * @return ActivityType 原子任务类型。
-<li>Transcode：转码。</li>
-<li>SampleSnapshot：采样截图。</li>
-<li>AnimatedGraphics：转动图。</li>
-<li>SnapshotByTimeOffset：时间点截图。</li>
-<li>ImageSprites：雪碧图。</li>
-<li>AdaptiveDynamicStreaming：自适应码流。</li>
-<li>AiContentReview：内容审核。</li>
-<li>AIRecognition：智能识别。</li>
-<li>AIAnalysis：智能分析。</li>
-<li>AiQualityControl：媒体质检。</li>
-<li>SmartSubtitles：智能字幕。</li>
-<li>SmartErase：智能擦除。</li>
+                     * 获取<p>原子任务类型。</p><li>Transcode：转码。</li><li>SampleSnapshot：采样截图。</li><li>AnimatedGraphics：转动图。</li><li>SnapshotByTimeOffset：时间点截图。</li><li>ImageSprites：雪碧图。</li><li>AdaptiveDynamicStreaming：自适应码流。</li><li>AiContentReview：内容审核。</li><li>AIRecognition：智能识别。</li><li>AIAnalysis：智能分析。</li><li>AiQualityControl：媒体质检。</li><li>SmartSubtitles：智能字幕。</li><li>SmartErase：智能擦除。</li><li>Dubbing: AI配音</li>
+                     * @return ActivityType <p>原子任务类型。</p><li>Transcode：转码。</li><li>SampleSnapshot：采样截图。</li><li>AnimatedGraphics：转动图。</li><li>SnapshotByTimeOffset：时间点截图。</li><li>ImageSprites：雪碧图。</li><li>AdaptiveDynamicStreaming：自适应码流。</li><li>AiContentReview：内容审核。</li><li>AIRecognition：智能识别。</li><li>AIAnalysis：智能分析。</li><li>AiQualityControl：媒体质检。</li><li>SmartSubtitles：智能字幕。</li><li>SmartErase：智能擦除。</li><li>Dubbing: AI配音</li>
                      * 
                      */
                     std::string GetActivityType() const;
 
                     /**
-                     * 设置原子任务类型。
-<li>Transcode：转码。</li>
-<li>SampleSnapshot：采样截图。</li>
-<li>AnimatedGraphics：转动图。</li>
-<li>SnapshotByTimeOffset：时间点截图。</li>
-<li>ImageSprites：雪碧图。</li>
-<li>AdaptiveDynamicStreaming：自适应码流。</li>
-<li>AiContentReview：内容审核。</li>
-<li>AIRecognition：智能识别。</li>
-<li>AIAnalysis：智能分析。</li>
-<li>AiQualityControl：媒体质检。</li>
-<li>SmartSubtitles：智能字幕。</li>
-<li>SmartErase：智能擦除。</li>
-                     * @param _activityType 原子任务类型。
-<li>Transcode：转码。</li>
-<li>SampleSnapshot：采样截图。</li>
-<li>AnimatedGraphics：转动图。</li>
-<li>SnapshotByTimeOffset：时间点截图。</li>
-<li>ImageSprites：雪碧图。</li>
-<li>AdaptiveDynamicStreaming：自适应码流。</li>
-<li>AiContentReview：内容审核。</li>
-<li>AIRecognition：智能识别。</li>
-<li>AIAnalysis：智能分析。</li>
-<li>AiQualityControl：媒体质检。</li>
-<li>SmartSubtitles：智能字幕。</li>
-<li>SmartErase：智能擦除。</li>
+                     * 设置<p>原子任务类型。</p><li>Transcode：转码。</li><li>SampleSnapshot：采样截图。</li><li>AnimatedGraphics：转动图。</li><li>SnapshotByTimeOffset：时间点截图。</li><li>ImageSprites：雪碧图。</li><li>AdaptiveDynamicStreaming：自适应码流。</li><li>AiContentReview：内容审核。</li><li>AIRecognition：智能识别。</li><li>AIAnalysis：智能分析。</li><li>AiQualityControl：媒体质检。</li><li>SmartSubtitles：智能字幕。</li><li>SmartErase：智能擦除。</li><li>Dubbing: AI配音</li>
+                     * @param _activityType <p>原子任务类型。</p><li>Transcode：转码。</li><li>SampleSnapshot：采样截图。</li><li>AnimatedGraphics：转动图。</li><li>SnapshotByTimeOffset：时间点截图。</li><li>ImageSprites：雪碧图。</li><li>AdaptiveDynamicStreaming：自适应码流。</li><li>AiContentReview：内容审核。</li><li>AIRecognition：智能识别。</li><li>AIAnalysis：智能分析。</li><li>AiQualityControl：媒体质检。</li><li>SmartSubtitles：智能字幕。</li><li>SmartErase：智能擦除。</li><li>Dubbing: AI配音</li>
                      * 
                      */
                     void SetActivityType(const std::string& _activityType);
@@ -117,15 +69,15 @@ namespace TencentCloud
                     bool ActivityTypeHasBeenSet() const;
 
                     /**
-                     * 获取原子任务输出。
-                     * @return ActivityResItem 原子任务输出。
+                     * 获取<p>原子任务输出。</p>
+                     * @return ActivityResItem <p>原子任务输出。</p>
                      * 
                      */
                     ActivityResItem GetActivityResItem() const;
 
                     /**
-                     * 设置原子任务输出。
-                     * @param _activityResItem 原子任务输出。
+                     * 设置<p>原子任务输出。</p>
+                     * @param _activityResItem <p>原子任务输出。</p>
                      * 
                      */
                     void SetActivityResItem(const ActivityResItem& _activityResItem);
@@ -140,25 +92,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 原子任务类型。
-<li>Transcode：转码。</li>
-<li>SampleSnapshot：采样截图。</li>
-<li>AnimatedGraphics：转动图。</li>
-<li>SnapshotByTimeOffset：时间点截图。</li>
-<li>ImageSprites：雪碧图。</li>
-<li>AdaptiveDynamicStreaming：自适应码流。</li>
-<li>AiContentReview：内容审核。</li>
-<li>AIRecognition：智能识别。</li>
-<li>AIAnalysis：智能分析。</li>
-<li>AiQualityControl：媒体质检。</li>
-<li>SmartSubtitles：智能字幕。</li>
-<li>SmartErase：智能擦除。</li>
+                     * <p>原子任务类型。</p><li>Transcode：转码。</li><li>SampleSnapshot：采样截图。</li><li>AnimatedGraphics：转动图。</li><li>SnapshotByTimeOffset：时间点截图。</li><li>ImageSprites：雪碧图。</li><li>AdaptiveDynamicStreaming：自适应码流。</li><li>AiContentReview：内容审核。</li><li>AIRecognition：智能识别。</li><li>AIAnalysis：智能分析。</li><li>AiQualityControl：媒体质检。</li><li>SmartSubtitles：智能字幕。</li><li>SmartErase：智能擦除。</li><li>Dubbing: AI配音</li>
                      */
                     std::string m_activityType;
                     bool m_activityTypeHasBeenSet;
 
                     /**
-                     * 原子任务输出。
+                     * <p>原子任务输出。</p>
                      */
                     ActivityResItem m_activityResItem;
                     bool m_activityResItemHasBeenSet;

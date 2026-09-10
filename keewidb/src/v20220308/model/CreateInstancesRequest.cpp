@@ -40,6 +40,7 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_vPortHasBeenSet(false),
     m_autoRenewHasBeenSet(false),
     m_securityGroupIdListHasBeenSet(false),
+    m_nodeSetHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
     m_memSizeHasBeenSet(false),
     m_diskSizeHasBeenSet(false),
@@ -194,6 +195,21 @@ string CreateInstancesRequest::ToJsonString() const
         for (auto itr = m_securityGroupIdList.begin(); itr != m_securityGroupIdList.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_nodeSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_nodeSet.begin(); itr != m_nodeSet.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -530,6 +546,22 @@ void CreateInstancesRequest::SetSecurityGroupIdList(const vector<string>& _secur
 bool CreateInstancesRequest::SecurityGroupIdListHasBeenSet() const
 {
     return m_securityGroupIdListHasBeenSet;
+}
+
+vector<NodeInfo> CreateInstancesRequest::GetNodeSet() const
+{
+    return m_nodeSet;
+}
+
+void CreateInstancesRequest::SetNodeSet(const vector<NodeInfo>& _nodeSet)
+{
+    m_nodeSet = _nodeSet;
+    m_nodeSetHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::NodeSetHasBeenSet() const
+{
+    return m_nodeSetHasBeenSet;
 }
 
 vector<ResourceTag> CreateInstancesRequest::GetResourceTags() const

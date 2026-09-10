@@ -37,6 +37,7 @@
 #include <tencentcloud/mps/v20190612/model/ScheduleExecRuleTaskResult.h>
 #include <tencentcloud/mps/v20190612/model/ScheduleSmartSubtitleTaskResult.h>
 #include <tencentcloud/mps/v20190612/model/SmartEraseTaskResult.h>
+#include <tencentcloud/mps/v20190612/model/AIDubbingTaskResult.h>
 
 
 namespace TencentCloud
@@ -60,18 +61,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取转码任务输出
+                     * 获取<p>转码任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TranscodeTask 转码任务输出
+                     * @return TranscodeTask <p>转码任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaProcessTaskTranscodeResult GetTranscodeTask() const;
 
                     /**
-                     * 设置转码任务输出
+                     * 设置<p>转码任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _transcodeTask 转码任务输出
+                     * @param _transcodeTask <p>转码任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -85,18 +86,18 @@ namespace TencentCloud
                     bool TranscodeTaskHasBeenSet() const;
 
                     /**
-                     * 获取转动图任务输出
+                     * 获取<p>转动图任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AnimatedGraphicTask 转动图任务输出
+                     * @return AnimatedGraphicTask <p>转动图任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaProcessTaskAnimatedGraphicResult GetAnimatedGraphicTask() const;
 
                     /**
-                     * 设置转动图任务输出
+                     * 设置<p>转动图任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _animatedGraphicTask 转动图任务输出
+                     * @param _animatedGraphicTask <p>转动图任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -110,18 +111,18 @@ namespace TencentCloud
                     bool AnimatedGraphicTaskHasBeenSet() const;
 
                     /**
-                     * 获取时间点截图任务输出
+                     * 获取<p>时间点截图任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SnapshotByTimeOffsetTask 时间点截图任务输出
+                     * @return SnapshotByTimeOffsetTask <p>时间点截图任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaProcessTaskSnapshotByTimeOffsetResult GetSnapshotByTimeOffsetTask() const;
 
                     /**
-                     * 设置时间点截图任务输出
+                     * 设置<p>时间点截图任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _snapshotByTimeOffsetTask 时间点截图任务输出
+                     * @param _snapshotByTimeOffsetTask <p>时间点截图任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -135,18 +136,18 @@ namespace TencentCloud
                     bool SnapshotByTimeOffsetTaskHasBeenSet() const;
 
                     /**
-                     * 获取采样截图任务输出
+                     * 获取<p>采样截图任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SampleSnapshotTask 采样截图任务输出
+                     * @return SampleSnapshotTask <p>采样截图任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaProcessTaskSampleSnapshotResult GetSampleSnapshotTask() const;
 
                     /**
-                     * 设置采样截图任务输出
+                     * 设置<p>采样截图任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sampleSnapshotTask 采样截图任务输出
+                     * @param _sampleSnapshotTask <p>采样截图任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -160,18 +161,18 @@ namespace TencentCloud
                     bool SampleSnapshotTaskHasBeenSet() const;
 
                     /**
-                     * 获取雪碧图任务输出
+                     * 获取<p>雪碧图任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ImageSpriteTask 雪碧图任务输出
+                     * @return ImageSpriteTask <p>雪碧图任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaProcessTaskImageSpriteResult GetImageSpriteTask() const;
 
                     /**
-                     * 设置雪碧图任务输出
+                     * 设置<p>雪碧图任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _imageSpriteTask 雪碧图任务输出
+                     * @param _imageSpriteTask <p>雪碧图任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -185,18 +186,18 @@ namespace TencentCloud
                     bool ImageSpriteTaskHasBeenSet() const;
 
                     /**
-                     * 获取自适应码流任务输出
+                     * 获取<p>自适应码流任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AdaptiveDynamicStreamingTask 自适应码流任务输出
+                     * @return AdaptiveDynamicStreamingTask <p>自适应码流任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaProcessTaskAdaptiveDynamicStreamingResult GetAdaptiveDynamicStreamingTask() const;
 
                     /**
-                     * 设置自适应码流任务输出
+                     * 设置<p>自适应码流任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _adaptiveDynamicStreamingTask 自适应码流任务输出
+                     * @param _adaptiveDynamicStreamingTask <p>自适应码流任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -210,18 +211,18 @@ namespace TencentCloud
                     bool AdaptiveDynamicStreamingTaskHasBeenSet() const;
 
                     /**
-                     * 获取识别任务输出
+                     * 获取<p>识别任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RecognitionTask 识别任务输出
+                     * @return RecognitionTask <p>识别任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ScheduleRecognitionTaskResult GetRecognitionTask() const;
 
                     /**
-                     * 设置识别任务输出
+                     * 设置<p>识别任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _recognitionTask 识别任务输出
+                     * @param _recognitionTask <p>识别任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -235,18 +236,18 @@ namespace TencentCloud
                     bool RecognitionTaskHasBeenSet() const;
 
                     /**
-                     * 获取审核任务输出
+                     * 获取<p>审核任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReviewTask 审核任务输出
+                     * @return ReviewTask <p>审核任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ScheduleReviewTaskResult GetReviewTask() const;
 
                     /**
-                     * 设置审核任务输出
+                     * 设置<p>审核任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _reviewTask 审核任务输出
+                     * @param _reviewTask <p>审核任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -260,18 +261,18 @@ namespace TencentCloud
                     bool ReviewTaskHasBeenSet() const;
 
                     /**
-                     * 获取分析任务输出
+                     * 获取<p>分析任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AnalysisTask 分析任务输出
+                     * @return AnalysisTask <p>分析任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ScheduleAnalysisTaskResult GetAnalysisTask() const;
 
                     /**
-                     * 设置分析任务输出
+                     * 设置<p>分析任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _analysisTask 分析任务输出
+                     * @param _analysisTask <p>分析任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -285,18 +286,18 @@ namespace TencentCloud
                     bool AnalysisTaskHasBeenSet() const;
 
                     /**
-                     * 获取媒体质检任务输出
+                     * 获取<p>媒体质检任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QualityControlTask 媒体质检任务输出
+                     * @return QualityControlTask <p>媒体质检任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ScheduleQualityControlTaskResult GetQualityControlTask() const;
 
                     /**
-                     * 设置媒体质检任务输出
+                     * 设置<p>媒体质检任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _qualityControlTask 媒体质检任务输出
+                     * @param _qualityControlTask <p>媒体质检任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -310,18 +311,18 @@ namespace TencentCloud
                     bool QualityControlTaskHasBeenSet() const;
 
                     /**
-                     * 获取条件判断任务输出
+                     * 获取<p>条件判断任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExecRuleTask 条件判断任务输出
+                     * @return ExecRuleTask <p>条件判断任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ScheduleExecRuleTaskResult GetExecRuleTask() const;
 
                     /**
-                     * 设置条件判断任务输出
+                     * 设置<p>条件判断任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _execRuleTask 条件判断任务输出
+                     * @param _execRuleTask <p>条件判断任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -335,18 +336,18 @@ namespace TencentCloud
                     bool ExecRuleTaskHasBeenSet() const;
 
                     /**
-                     * 获取智能字幕任务输出
+                     * 获取<p>智能字幕任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SmartSubtitlesTask 智能字幕任务输出
+                     * @return SmartSubtitlesTask <p>智能字幕任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ScheduleSmartSubtitleTaskResult GetSmartSubtitlesTask() const;
 
                     /**
-                     * 设置智能字幕任务输出
+                     * 设置<p>智能字幕任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _smartSubtitlesTask 智能字幕任务输出
+                     * @param _smartSubtitlesTask <p>智能字幕任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -360,18 +361,18 @@ namespace TencentCloud
                     bool SmartSubtitlesTaskHasBeenSet() const;
 
                     /**
-                     * 获取智能擦除任务输出
+                     * 获取<p>智能擦除任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SmartEraseTask 智能擦除任务输出
+                     * @return SmartEraseTask <p>智能擦除任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SmartEraseTaskResult GetSmartEraseTask() const;
 
                     /**
-                     * 设置智能擦除任务输出
+                     * 设置<p>智能擦除任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _smartEraseTask 智能擦除任务输出
+                     * @param _smartEraseTask <p>智能擦除任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -384,98 +385,125 @@ namespace TencentCloud
                      */
                     bool SmartEraseTaskHasBeenSet() const;
 
+                    /**
+                     * 获取<p>AI配音任务输出。</p>
+                     * @return AIDubbingTask <p>AI配音任务输出。</p>
+                     * 
+                     */
+                    AIDubbingTaskResult GetAIDubbingTask() const;
+
+                    /**
+                     * 设置<p>AI配音任务输出。</p>
+                     * @param _aIDubbingTask <p>AI配音任务输出。</p>
+                     * 
+                     */
+                    void SetAIDubbingTask(const AIDubbingTaskResult& _aIDubbingTask);
+
+                    /**
+                     * 判断参数 AIDubbingTask 是否已赋值
+                     * @return AIDubbingTask 是否已赋值
+                     * 
+                     */
+                    bool AIDubbingTaskHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 转码任务输出
+                     * <p>转码任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaProcessTaskTranscodeResult m_transcodeTask;
                     bool m_transcodeTaskHasBeenSet;
 
                     /**
-                     * 转动图任务输出
+                     * <p>转动图任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaProcessTaskAnimatedGraphicResult m_animatedGraphicTask;
                     bool m_animatedGraphicTaskHasBeenSet;
 
                     /**
-                     * 时间点截图任务输出
+                     * <p>时间点截图任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaProcessTaskSnapshotByTimeOffsetResult m_snapshotByTimeOffsetTask;
                     bool m_snapshotByTimeOffsetTaskHasBeenSet;
 
                     /**
-                     * 采样截图任务输出
+                     * <p>采样截图任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaProcessTaskSampleSnapshotResult m_sampleSnapshotTask;
                     bool m_sampleSnapshotTaskHasBeenSet;
 
                     /**
-                     * 雪碧图任务输出
+                     * <p>雪碧图任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaProcessTaskImageSpriteResult m_imageSpriteTask;
                     bool m_imageSpriteTaskHasBeenSet;
 
                     /**
-                     * 自适应码流任务输出
+                     * <p>自适应码流任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaProcessTaskAdaptiveDynamicStreamingResult m_adaptiveDynamicStreamingTask;
                     bool m_adaptiveDynamicStreamingTaskHasBeenSet;
 
                     /**
-                     * 识别任务输出
+                     * <p>识别任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScheduleRecognitionTaskResult m_recognitionTask;
                     bool m_recognitionTaskHasBeenSet;
 
                     /**
-                     * 审核任务输出
+                     * <p>审核任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScheduleReviewTaskResult m_reviewTask;
                     bool m_reviewTaskHasBeenSet;
 
                     /**
-                     * 分析任务输出
+                     * <p>分析任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScheduleAnalysisTaskResult m_analysisTask;
                     bool m_analysisTaskHasBeenSet;
 
                     /**
-                     * 媒体质检任务输出
+                     * <p>媒体质检任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScheduleQualityControlTaskResult m_qualityControlTask;
                     bool m_qualityControlTaskHasBeenSet;
 
                     /**
-                     * 条件判断任务输出
+                     * <p>条件判断任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScheduleExecRuleTaskResult m_execRuleTask;
                     bool m_execRuleTaskHasBeenSet;
 
                     /**
-                     * 智能字幕任务输出
+                     * <p>智能字幕任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScheduleSmartSubtitleTaskResult m_smartSubtitlesTask;
                     bool m_smartSubtitlesTaskHasBeenSet;
 
                     /**
-                     * 智能擦除任务输出
+                     * <p>智能擦除任务输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SmartEraseTaskResult m_smartEraseTask;
                     bool m_smartEraseTaskHasBeenSet;
+
+                    /**
+                     * <p>AI配音任务输出。</p>
+                     */
+                    AIDubbingTaskResult m_aIDubbingTask;
+                    bool m_aIDubbingTaskHasBeenSet;
 
                 };
             }

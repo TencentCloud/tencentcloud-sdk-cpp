@@ -42,7 +42,8 @@ NativeNodePoolInfo::NativeNodePoolInfo() :
     m_readyReplicasHasBeenSet(false),
     m_internetAccessibleHasBeenSet(false),
     m_dataDisksHasBeenSet(false),
-    m_machineTypeHasBeenSet(false)
+    m_machineTypeHasBeenSet(false),
+    m_customImageHasBeenSet(false)
 {
 }
 
@@ -345,6 +346,16 @@ CoreInternalOutcome NativeNodePoolInfo::Deserialize(const rapidjson::Value &valu
         m_machineTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomImage") && !value["CustomImage"].IsNull())
+    {
+        if (!value["CustomImage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NativeNodePoolInfo.CustomImage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customImage = string(value["CustomImage"].GetString());
+        m_customImageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -565,6 +576,14 @@ void NativeNodePoolInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "MachineType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomImage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customImage.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -920,5 +939,21 @@ void NativeNodePoolInfo::SetMachineType(const string& _machineType)
 bool NativeNodePoolInfo::MachineTypeHasBeenSet() const
 {
     return m_machineTypeHasBeenSet;
+}
+
+string NativeNodePoolInfo::GetCustomImage() const
+{
+    return m_customImage;
+}
+
+void NativeNodePoolInfo::SetCustomImage(const string& _customImage)
+{
+    m_customImage = _customImage;
+    m_customImageHasBeenSet = true;
+}
+
+bool NativeNodePoolInfo::CustomImageHasBeenSet() const
+{
+    return m_customImageHasBeenSet;
 }
 
