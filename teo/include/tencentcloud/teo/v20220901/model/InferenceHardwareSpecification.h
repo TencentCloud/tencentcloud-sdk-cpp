@@ -47,36 +47,57 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规格标识。
-                     * @return Spec 规格标识。
-                     * 
+                     * 获取<p>规格标识。已废弃，参考使用字段 <code>HardwareSpecId</code>。</p>
+                     * @return Spec <p>规格标识。已废弃，参考使用字段 <code>HardwareSpecId</code>。</p>
+                     * @deprecated
                      */
                     std::string GetSpec() const;
 
                     /**
-                     * 设置规格标识。
-                     * @param _spec 规格标识。
-                     * 
+                     * 设置<p>规格标识。已废弃，参考使用字段 <code>HardwareSpecId</code>。</p>
+                     * @param _spec <p>规格标识。已废弃，参考使用字段 <code>HardwareSpecId</code>。</p>
+                     * @deprecated
                      */
                     void SetSpec(const std::string& _spec);
 
                     /**
                      * 判断参数 Spec 是否已赋值
                      * @return Spec 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SpecHasBeenSet() const;
 
                     /**
-                     * 获取规格名称。
-                     * @return Name 规格名称。
+                     * 获取<p>规格唯一标识 ID。</p>
+                     * @return HardwareSpecId <p>规格唯一标识 ID。</p>
+                     * 
+                     */
+                    std::string GetHardwareSpecId() const;
+
+                    /**
+                     * 设置<p>规格唯一标识 ID。</p>
+                     * @param _hardwareSpecId <p>规格唯一标识 ID。</p>
+                     * 
+                     */
+                    void SetHardwareSpecId(const std::string& _hardwareSpecId);
+
+                    /**
+                     * 判断参数 HardwareSpecId 是否已赋值
+                     * @return HardwareSpecId 是否已赋值
+                     * 
+                     */
+                    bool HardwareSpecIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>规格名称。</p>
+                     * @return Name <p>规格名称。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置规格名称。
-                     * @param _name 规格名称。
+                     * 设置<p>规格名称。</p>
+                     * @param _name <p>规格名称。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -89,57 +110,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取CPU 核数。
-                     * @return CPUNum CPU 核数。
-                     * 
-                     */
-                    double GetCPUNum() const;
-
-                    /**
-                     * 设置CPU 核数。
-                     * @param _cPUNum CPU 核数。
-                     * 
-                     */
-                    void SetCPUNum(const double& _cPUNum);
-
-                    /**
-                     * 判断参数 CPUNum 是否已赋值
-                     * @return CPUNum 是否已赋值
-                     * 
-                     */
-                    bool CPUNumHasBeenSet() const;
-
-                    /**
-                     * 获取内存大小。单位为 MB。
-                     * @return MemSize 内存大小。单位为 MB。
-                     * 
-                     */
-                    int64_t GetMemSize() const;
-
-                    /**
-                     * 设置内存大小。单位为 MB。
-                     * @param _memSize 内存大小。单位为 MB。
-                     * 
-                     */
-                    void SetMemSize(const int64_t& _memSize);
-
-                    /**
-                     * 判断参数 MemSize 是否已赋值
-                     * @return MemSize 是否已赋值
-                     * 
-                     */
-                    bool MemSizeHasBeenSet() const;
-
-                    /**
-                     * 获取GPU 卡数。
-                     * @return GPUNum GPU 卡数。
+                     * 获取<p>规格默认分配的 GPU 卡数。</p>
+                     * @return GPUNum <p>规格默认分配的 GPU 卡数。</p>
                      * 
                      */
                     double GetGPUNum() const;
 
                     /**
-                     * 设置GPU 卡数。
-                     * @param _gPUNum GPU 卡数。
+                     * 设置<p>规格默认分配的 GPU 卡数。</p>
+                     * @param _gPUNum <p>规格默认分配的 GPU 卡数。</p>
                      * 
                      */
                     void SetGPUNum(const double& _gPUNum);
@@ -152,15 +131,57 @@ namespace TencentCloud
                     bool GPUNumHasBeenSet() const;
 
                     /**
-                     * 获取显存大小。单位为 MB。
-                     * @return GPUMemSize 显存大小。单位为 MB。
+                     * 获取<p>规格默认分配的 CPU 核数。</p>
+                     * @return CPUNum <p>规格默认分配的 CPU 核数。</p>
+                     * 
+                     */
+                    double GetCPUNum() const;
+
+                    /**
+                     * 设置<p>规格默认分配的 CPU 核数。</p>
+                     * @param _cPUNum <p>规格默认分配的 CPU 核数。</p>
+                     * 
+                     */
+                    void SetCPUNum(const double& _cPUNum);
+
+                    /**
+                     * 判断参数 CPUNum 是否已赋值
+                     * @return CPUNum 是否已赋值
+                     * 
+                     */
+                    bool CPUNumHasBeenSet() const;
+
+                    /**
+                     * 获取<p>规格默认分配的内存大小。</p><p>单位：MB</p>
+                     * @return MemSize <p>规格默认分配的内存大小。</p><p>单位：MB</p>
+                     * 
+                     */
+                    int64_t GetMemSize() const;
+
+                    /**
+                     * 设置<p>规格默认分配的内存大小。</p><p>单位：MB</p>
+                     * @param _memSize <p>规格默认分配的内存大小。</p><p>单位：MB</p>
+                     * 
+                     */
+                    void SetMemSize(const int64_t& _memSize);
+
+                    /**
+                     * 判断参数 MemSize 是否已赋值
+                     * @return MemSize 是否已赋值
+                     * 
+                     */
+                    bool MemSizeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>规格默认分配的显存大小。</p><p>单位：MB</p>
+                     * @return GPUMemSize <p>规格默认分配的显存大小。</p><p>单位：MB</p>
                      * 
                      */
                     int64_t GetGPUMemSize() const;
 
                     /**
-                     * 设置显存大小。单位为 MB。
-                     * @param _gPUMemSize 显存大小。单位为 MB。
+                     * 设置<p>规格默认分配的显存大小。</p><p>单位：MB</p>
+                     * @param _gPUMemSize <p>规格默认分配的显存大小。</p><p>单位：MB</p>
                      * 
                      */
                     void SetGPUMemSize(const int64_t& _gPUMemSize);
@@ -172,43 +193,103 @@ namespace TencentCloud
                      */
                     bool GPUMemSizeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>规格默认分配的磁盘大小。</p><p>单位：MB</p>
+                     * @return DiskSize <p>规格默认分配的磁盘大小。</p><p>单位：MB</p>
+                     * 
+                     */
+                    int64_t GetDiskSize() const;
+
+                    /**
+                     * 设置<p>规格默认分配的磁盘大小。</p><p>单位：MB</p>
+                     * @param _diskSize <p>规格默认分配的磁盘大小。</p><p>单位：MB</p>
+                     * 
+                     */
+                    void SetDiskSize(const int64_t& _diskSize);
+
+                    /**
+                     * 判断参数 DiskSize 是否已赋值
+                     * @return DiskSize 是否已赋值
+                     * 
+                     */
+                    bool DiskSizeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>规格当前支持的 GPU 卡数列表。</p><p>若不填充或填充空数组，则仅支持规格默认分配的 GPU 卡数。</p>
+                     * @return AllowedGPUNums <p>规格当前支持的 GPU 卡数列表。</p><p>若不填充或填充空数组，则仅支持规格默认分配的 GPU 卡数。</p>
+                     * 
+                     */
+                    std::vector<double> GetAllowedGPUNums() const;
+
+                    /**
+                     * 设置<p>规格当前支持的 GPU 卡数列表。</p><p>若不填充或填充空数组，则仅支持规格默认分配的 GPU 卡数。</p>
+                     * @param _allowedGPUNums <p>规格当前支持的 GPU 卡数列表。</p><p>若不填充或填充空数组，则仅支持规格默认分配的 GPU 卡数。</p>
+                     * 
+                     */
+                    void SetAllowedGPUNums(const std::vector<double>& _allowedGPUNums);
+
+                    /**
+                     * 判断参数 AllowedGPUNums 是否已赋值
+                     * @return AllowedGPUNums 是否已赋值
+                     * 
+                     */
+                    bool AllowedGPUNumsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 规格标识。
+                     * <p>规格标识。已废弃，参考使用字段 <code>HardwareSpecId</code>。</p>
                      */
                     std::string m_spec;
                     bool m_specHasBeenSet;
 
                     /**
-                     * 规格名称。
+                     * <p>规格唯一标识 ID。</p>
+                     */
+                    std::string m_hardwareSpecId;
+                    bool m_hardwareSpecIdHasBeenSet;
+
+                    /**
+                     * <p>规格名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * CPU 核数。
-                     */
-                    double m_cPUNum;
-                    bool m_cPUNumHasBeenSet;
-
-                    /**
-                     * 内存大小。单位为 MB。
-                     */
-                    int64_t m_memSize;
-                    bool m_memSizeHasBeenSet;
-
-                    /**
-                     * GPU 卡数。
+                     * <p>规格默认分配的 GPU 卡数。</p>
                      */
                     double m_gPUNum;
                     bool m_gPUNumHasBeenSet;
 
                     /**
-                     * 显存大小。单位为 MB。
+                     * <p>规格默认分配的 CPU 核数。</p>
+                     */
+                    double m_cPUNum;
+                    bool m_cPUNumHasBeenSet;
+
+                    /**
+                     * <p>规格默认分配的内存大小。</p><p>单位：MB</p>
+                     */
+                    int64_t m_memSize;
+                    bool m_memSizeHasBeenSet;
+
+                    /**
+                     * <p>规格默认分配的显存大小。</p><p>单位：MB</p>
                      */
                     int64_t m_gPUMemSize;
                     bool m_gPUMemSizeHasBeenSet;
+
+                    /**
+                     * <p>规格默认分配的磁盘大小。</p><p>单位：MB</p>
+                     */
+                    int64_t m_diskSize;
+                    bool m_diskSizeHasBeenSet;
+
+                    /**
+                     * <p>规格当前支持的 GPU 卡数列表。</p><p>若不填充或填充空数组，则仅支持规格默认分配的 GPU 卡数。</p>
+                     */
+                    std::vector<double> m_allowedGPUNums;
+                    bool m_allowedGPUNumsHasBeenSet;
 
                 };
             }

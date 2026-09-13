@@ -71,6 +71,20 @@ namespace TencentCloud
                      */
                     bool TokenHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户ID，在后续DescribeUserDialogConfig接口中会使用</p>
+                     * @return UserId <p>用户ID，在后续DescribeUserDialogConfig接口中会使用</p>
+                     * 
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     * 
+                     */
+                    bool UserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -84,6 +98,12 @@ namespace TencentCloud
                      */
                     std::string m_token;
                     bool m_tokenHasBeenSet;
+
+                    /**
+                     * <p>用户ID，在后续DescribeUserDialogConfig接口中会使用</p>
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
 
                 };
             }

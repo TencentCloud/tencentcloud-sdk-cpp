@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取证书的Base64
-                     * @return Cert 证书的Base64
+                     * 获取<p>证书的Base64</p>
+                     * @return Cert <p>证书的Base64</p>
                      * 
                      */
                     std::string GetCert() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 证书的Base64
+                     * <p>证书的Base64</p>
                      */
                     std::string m_cert;
                     bool m_certHasBeenSet;

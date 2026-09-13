@@ -258,6 +258,27 @@ namespace TencentCloud
                      */
                     bool SceneTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>透传参数。</p>
+                     * @return ExtInfo <p>透传参数。</p>
+                     * 
+                     */
+                    std::string GetExtInfo() const;
+
+                    /**
+                     * 设置<p>透传参数。</p>
+                     * @param _extInfo <p>透传参数。</p>
+                     * 
+                     */
+                    void SetExtInfo(const std::string& _extInfo);
+
+                    /**
+                     * 判断参数 ExtInfo 是否已赋值
+                     * @return ExtInfo 是否已赋值
+                     * 
+                     */
+                    bool ExtInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -319,6 +340,12 @@ namespace TencentCloud
                      */
                     std::string m_sceneType;
                     bool m_sceneTypeHasBeenSet;
+
+                    /**
+                     * <p>透传参数。</p>
+                     */
+                    std::string m_extInfo;
+                    bool m_extInfoHasBeenSet;
 
                 };
             }

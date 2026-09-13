@@ -25,7 +25,8 @@ using namespace std;
 
 CreateWebSocketTokenResponse::CreateWebSocketTokenResponse() :
     m_appIdHasBeenSet(false),
-    m_tokenHasBeenSet(false)
+    m_tokenHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome CreateWebSocketTokenResponse::Deserialize(const string &payl
         m_tokenHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UserId") && !rsp["UserId"].IsNull())
+    {
+        if (!rsp["UserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userId = string(rsp["UserId"].GetString());
+        m_userIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string CreateWebSocketTokenResponse::ToJsonString() const
         string key = "Token";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_token.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +158,16 @@ string CreateWebSocketTokenResponse::GetToken() const
 bool CreateWebSocketTokenResponse::TokenHasBeenSet() const
 {
     return m_tokenHasBeenSet;
+}
+
+string CreateWebSocketTokenResponse::GetUserId() const
+{
+    return m_userId;
+}
+
+bool CreateWebSocketTokenResponse::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 
 

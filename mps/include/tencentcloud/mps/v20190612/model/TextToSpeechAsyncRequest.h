@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool VoiceIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>文本语言，默认中文</p>
-                     * @return TextLang <p>文本语言，默认中文</p>
+                     * 获取<p>文本语言，不填时默认自动探测</p>
+                     * @return TextLang <p>文本语言，不填时默认自动探测</p>
                      * 
                      */
                     std::string GetTextLang() const;
 
                     /**
-                     * 设置<p>文本语言，默认中文</p>
-                     * @param _textLang <p>文本语言，默认中文</p>
+                     * 设置<p>文本语言，不填时默认自动探测</p>
+                     * @param _textLang <p>文本语言，不填时默认自动探测</p>
                      * 
                      */
                     void SetTextLang(const std::string& _textLang);
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_voiceIdHasBeenSet;
 
                     /**
-                     * <p>文本语言，默认中文</p>
+                     * <p>文本语言，不填时默认自动探测</p>
                      */
                     std::string m_textLang;
                     bool m_textLangHasBeenSet;

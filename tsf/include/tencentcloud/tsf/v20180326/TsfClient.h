@@ -373,8 +373,6 @@
 #include <tencentcloud/tsf/v20180326/model/ModifyUploadInfoResponse.h>
 #include <tencentcloud/tsf/v20180326/model/OperateApplicationTcrBindingRequest.h>
 #include <tencentcloud/tsf/v20180326/model/OperateApplicationTcrBindingResponse.h>
-#include <tencentcloud/tsf/v20180326/model/ReassociateBusinessLogConfigRequest.h>
-#include <tencentcloud/tsf/v20180326/model/ReassociateBusinessLogConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ReleaseApiGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ReleaseApiGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ReleaseConfigRequest.h>
@@ -970,9 +968,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OperateApplicationTcrBindingResponse> OperateApplicationTcrBindingOutcome;
                 typedef std::future<OperateApplicationTcrBindingOutcome> OperateApplicationTcrBindingOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::OperateApplicationTcrBindingRequest&, OperateApplicationTcrBindingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OperateApplicationTcrBindingAsyncHandler;
-                typedef Outcome<Core::Error, Model::ReassociateBusinessLogConfigResponse> ReassociateBusinessLogConfigOutcome;
-                typedef std::future<ReassociateBusinessLogConfigOutcome> ReassociateBusinessLogConfigOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::ReassociateBusinessLogConfigRequest&, ReassociateBusinessLogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReassociateBusinessLogConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReleaseApiGroupResponse> ReleaseApiGroupOutcome;
                 typedef std::future<ReleaseApiGroupOutcome> ReleaseApiGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ReleaseApiGroupRequest&, ReleaseApiGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseApiGroupAsyncHandler;
@@ -2641,17 +2636,6 @@ namespace TencentCloud
                 OperateApplicationTcrBindingOutcome OperateApplicationTcrBinding(const Model::OperateApplicationTcrBindingRequest &request);
                 void OperateApplicationTcrBindingAsync(const Model::OperateApplicationTcrBindingRequest& request, const OperateApplicationTcrBindingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OperateApplicationTcrBindingOutcomeCallable OperateApplicationTcrBindingCallable(const Model::OperateApplicationTcrBindingRequest& request);
-
-                /**
-                 *后端服务已经删除这个接口,  API 接口下线处理
-
-重关联业务日志配置
-                 * @param req ReassociateBusinessLogConfigRequest
-                 * @return ReassociateBusinessLogConfigOutcome
-                 */
-                ReassociateBusinessLogConfigOutcome ReassociateBusinessLogConfig(const Model::ReassociateBusinessLogConfigRequest &request);
-                void ReassociateBusinessLogConfigAsync(const Model::ReassociateBusinessLogConfigRequest& request, const ReassociateBusinessLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ReassociateBusinessLogConfigOutcomeCallable ReassociateBusinessLogConfigCallable(const Model::ReassociateBusinessLogConfigRequest& request);
 
                 /**
                  *发布Api分组

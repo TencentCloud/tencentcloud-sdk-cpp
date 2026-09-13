@@ -30,7 +30,8 @@ AigcImageTaskInput::AigcImageTaskInput() :
     m_generationModeHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
     m_seedHasBeenSet(false),
-    m_sceneTypeHasBeenSet(false)
+    m_sceneTypeHasBeenSet(false),
+    m_extInfoHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,16 @@ CoreInternalOutcome AigcImageTaskInput::Deserialize(const rapidjson::Value &valu
         m_sceneTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtInfo") && !value["ExtInfo"].IsNull())
+    {
+        if (!value["ExtInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcImageTaskInput.ExtInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extInfo = string(value["ExtInfo"].GetString());
+        m_extInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -249,6 +260,14 @@ void AigcImageTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "SceneType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sceneType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -412,5 +431,21 @@ void AigcImageTaskInput::SetSceneType(const string& _sceneType)
 bool AigcImageTaskInput::SceneTypeHasBeenSet() const
 {
     return m_sceneTypeHasBeenSet;
+}
+
+string AigcImageTaskInput::GetExtInfo() const
+{
+    return m_extInfo;
+}
+
+void AigcImageTaskInput::SetExtInfo(const string& _extInfo)
+{
+    m_extInfo = _extInfo;
+    m_extInfoHasBeenSet = true;
+}
+
+bool AigcImageTaskInput::ExtInfoHasBeenSet() const
+{
+    return m_extInfoHasBeenSet;
 }
 

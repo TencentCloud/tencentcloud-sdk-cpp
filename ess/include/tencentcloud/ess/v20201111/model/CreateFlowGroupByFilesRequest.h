@@ -48,19 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
-                     * @return Operator 执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * 获取<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
+                     * @return Operator <p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
-                     * @param _operator 执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * 设置<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
+                     * @param _operator <p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -73,15 +69,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
-                     * @return FlowGroupName 合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+                     * 获取<p>合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。</p>
+                     * @return FlowGroupName <p>合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。</p>
                      * 
                      */
                     std::string GetFlowGroupName() const;
 
                     /**
-                     * 设置合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
-                     * @param _flowGroupName 合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+                     * 设置<p>合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。</p>
+                     * @param _flowGroupName <p>合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。</p>
                      * 
                      */
                     void SetFlowGroupName(const std::string& _flowGroupName);
@@ -94,15 +90,15 @@ namespace TencentCloud
                     bool FlowGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取合同（流程）组的子合同信息，支持2-50个子合同
-                     * @return FlowGroupInfos 合同（流程）组的子合同信息，支持2-50个子合同
+                     * 获取<p>合同（流程）组的子合同信息，支持2-50个子合同</p>
+                     * @return FlowGroupInfos <p>合同（流程）组的子合同信息，支持2-50个子合同</p>
                      * 
                      */
                     std::vector<FlowGroupInfo> GetFlowGroupInfos() const;
 
                     /**
-                     * 设置合同（流程）组的子合同信息，支持2-50个子合同
-                     * @param _flowGroupInfos 合同（流程）组的子合同信息，支持2-50个子合同
+                     * 设置<p>合同（流程）组的子合同信息，支持2-50个子合同</p>
+                     * @param _flowGroupInfos <p>合同（流程）组的子合同信息，支持2-50个子合同</p>
                      * 
                      */
                     void SetFlowGroupInfos(const std::vector<FlowGroupInfo>& _flowGroupInfos);
@@ -115,19 +111,15 @@ namespace TencentCloud
                     bool FlowGroupInfosHasBeenSet() const;
 
                     /**
-                     * 获取代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
-                     * @return Agent 代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 获取<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
+                     * @return Agent <p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
-                     * @param _agent 代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 设置<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
+                     * @param _agent <p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -140,35 +132,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取合同（流程）组的配置项信息。
-其中包括：
-<ul>
-<li>是否通知本企业签署方</li>
-<li>是否通知其他签署方</li>
-</ul>
-                     * @return FlowGroupOptions 合同（流程）组的配置项信息。
-其中包括：
-<ul>
-<li>是否通知本企业签署方</li>
-<li>是否通知其他签署方</li>
-</ul>
+                     * 获取<p>合同（流程）组的配置项信息。<br>其中包括：</p><ul><li>是否通知本企业签署方</li><li>是否通知其他签署方</li></ul>
+                     * @return FlowGroupOptions <p>合同（流程）组的配置项信息。<br>其中包括：</p><ul><li>是否通知本企业签署方</li><li>是否通知其他签署方</li></ul>
                      * 
                      */
                     FlowGroupOptions GetFlowGroupOptions() const;
 
                     /**
-                     * 设置合同（流程）组的配置项信息。
-其中包括：
-<ul>
-<li>是否通知本企业签署方</li>
-<li>是否通知其他签署方</li>
-</ul>
-                     * @param _flowGroupOptions 合同（流程）组的配置项信息。
-其中包括：
-<ul>
-<li>是否通知本企业签署方</li>
-<li>是否通知其他签署方</li>
-</ul>
+                     * 设置<p>合同（流程）组的配置项信息。<br>其中包括：</p><ul><li>是否通知本企业签署方</li><li>是否通知其他签署方</li></ul>
+                     * @param _flowGroupOptions <p>合同（流程）组的配置项信息。<br>其中包括：</p><ul><li>是否通知本企业签署方</li><li>是否通知其他签署方</li></ul>
                      * 
                      */
                     void SetFlowGroupOptions(const FlowGroupOptions& _flowGroupOptions);
@@ -181,75 +153,15 @@ namespace TencentCloud
                     bool FlowGroupOptionsHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义合同类型。
-
-自定义合同类型配置的地方如链接图所示。[点击查看自定义合同类型管理的位置](https://qcloudimg.tencent-cloud.cn/raw/36582cea03ae6a2559894844942b5d5c.png)
-
-注意：
-如果传递了自定义合同类型，则每一个子合同设置的自定义合同类型将会失效，已最外层定义的为准。
-例如：
-这份合同组有三个子合同，设置合同类型为<font color="blue">人事/劳务</font>
-第一份子合同设置的合同自定义合同类型是<font color="blue">采购</font>
-第二份和第三份子合同设置的合同自定义合同类型是<font color="blue">人事/劳务</font>
-但最终这个合同组的合同类型是<font color="blue">人事/劳务</font>
-
-
-
-
-
-                     * @return UserFlowType 用户自定义合同类型。
-
-自定义合同类型配置的地方如链接图所示。[点击查看自定义合同类型管理的位置](https://qcloudimg.tencent-cloud.cn/raw/36582cea03ae6a2559894844942b5d5c.png)
-
-注意：
-如果传递了自定义合同类型，则每一个子合同设置的自定义合同类型将会失效，已最外层定义的为准。
-例如：
-这份合同组有三个子合同，设置合同类型为<font color="blue">人事/劳务</font>
-第一份子合同设置的合同自定义合同类型是<font color="blue">采购</font>
-第二份和第三份子合同设置的合同自定义合同类型是<font color="blue">人事/劳务</font>
-但最终这个合同组的合同类型是<font color="blue">人事/劳务</font>
-
-
-
-
-
+                     * 获取<p>用户自定义合同类型。</p><p>自定义合同类型配置的地方如链接图所示。<a href="https://qcloudimg.tencent-cloud.cn/raw/36582cea03ae6a2559894844942b5d5c.png">点击查看自定义合同类型管理的位置</a></p><p>注意：<br>如果传递了自定义合同类型，则每一个子合同设置的自定义合同类型将会失效，已最外层定义的为准。<br>例如：<br>这份合同组有三个子合同，设置合同类型为<font color="blue">人事/劳务</font><br>第一份子合同设置的合同自定义合同类型是<font color="blue">采购</font><br>第二份和第三份子合同设置的合同自定义合同类型是<font color="blue">人事/劳务</font><br>但最终这个合同组的合同类型是<font color="blue">人事/劳务</font></p>
+                     * @return UserFlowType <p>用户自定义合同类型。</p><p>自定义合同类型配置的地方如链接图所示。<a href="https://qcloudimg.tencent-cloud.cn/raw/36582cea03ae6a2559894844942b5d5c.png">点击查看自定义合同类型管理的位置</a></p><p>注意：<br>如果传递了自定义合同类型，则每一个子合同设置的自定义合同类型将会失效，已最外层定义的为准。<br>例如：<br>这份合同组有三个子合同，设置合同类型为<font color="blue">人事/劳务</font><br>第一份子合同设置的合同自定义合同类型是<font color="blue">采购</font><br>第二份和第三份子合同设置的合同自定义合同类型是<font color="blue">人事/劳务</font><br>但最终这个合同组的合同类型是<font color="blue">人事/劳务</font></p>
                      * 
                      */
                     UserFlowType GetUserFlowType() const;
 
                     /**
-                     * 设置用户自定义合同类型。
-
-自定义合同类型配置的地方如链接图所示。[点击查看自定义合同类型管理的位置](https://qcloudimg.tencent-cloud.cn/raw/36582cea03ae6a2559894844942b5d5c.png)
-
-注意：
-如果传递了自定义合同类型，则每一个子合同设置的自定义合同类型将会失效，已最外层定义的为准。
-例如：
-这份合同组有三个子合同，设置合同类型为<font color="blue">人事/劳务</font>
-第一份子合同设置的合同自定义合同类型是<font color="blue">采购</font>
-第二份和第三份子合同设置的合同自定义合同类型是<font color="blue">人事/劳务</font>
-但最终这个合同组的合同类型是<font color="blue">人事/劳务</font>
-
-
-
-
-
-                     * @param _userFlowType 用户自定义合同类型。
-
-自定义合同类型配置的地方如链接图所示。[点击查看自定义合同类型管理的位置](https://qcloudimg.tencent-cloud.cn/raw/36582cea03ae6a2559894844942b5d5c.png)
-
-注意：
-如果传递了自定义合同类型，则每一个子合同设置的自定义合同类型将会失效，已最外层定义的为准。
-例如：
-这份合同组有三个子合同，设置合同类型为<font color="blue">人事/劳务</font>
-第一份子合同设置的合同自定义合同类型是<font color="blue">采购</font>
-第二份和第三份子合同设置的合同自定义合同类型是<font color="blue">人事/劳务</font>
-但最终这个合同组的合同类型是<font color="blue">人事/劳务</font>
-
-
-
-
-
+                     * 设置<p>用户自定义合同类型。</p><p>自定义合同类型配置的地方如链接图所示。<a href="https://qcloudimg.tencent-cloud.cn/raw/36582cea03ae6a2559894844942b5d5c.png">点击查看自定义合同类型管理的位置</a></p><p>注意：<br>如果传递了自定义合同类型，则每一个子合同设置的自定义合同类型将会失效，已最外层定义的为准。<br>例如：<br>这份合同组有三个子合同，设置合同类型为<font color="blue">人事/劳务</font><br>第一份子合同设置的合同自定义合同类型是<font color="blue">采购</font><br>第二份和第三份子合同设置的合同自定义合同类型是<font color="blue">人事/劳务</font><br>但最终这个合同组的合同类型是<font color="blue">人事/劳务</font></p>
+                     * @param _userFlowType <p>用户自定义合同类型。</p><p>自定义合同类型配置的地方如链接图所示。<a href="https://qcloudimg.tencent-cloud.cn/raw/36582cea03ae6a2559894844942b5d5c.png">点击查看自定义合同类型管理的位置</a></p><p>注意：<br>如果传递了自定义合同类型，则每一个子合同设置的自定义合同类型将会失效，已最外层定义的为准。<br>例如：<br>这份合同组有三个子合同，设置合同类型为<font color="blue">人事/劳务</font><br>第一份子合同设置的合同自定义合同类型是<font color="blue">采购</font><br>第二份和第三份子合同设置的合同自定义合同类型是<font color="blue">人事/劳务</font><br>但最终这个合同组的合同类型是<font color="blue">人事/劳务</font></p>
                      * 
                      */
                     void SetUserFlowType(const UserFlowType& _userFlowType);
@@ -264,59 +176,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * <p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。
+                     * <p>合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。</p>
                      */
                     std::string m_flowGroupName;
                     bool m_flowGroupNameHasBeenSet;
 
                     /**
-                     * 合同（流程）组的子合同信息，支持2-50个子合同
+                     * <p>合同（流程）组的子合同信息，支持2-50个子合同</p>
                      */
                     std::vector<FlowGroupInfo> m_flowGroupInfos;
                     bool m_flowGroupInfosHasBeenSet;
 
                     /**
-                     * 代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * <p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 合同（流程）组的配置项信息。
-其中包括：
-<ul>
-<li>是否通知本企业签署方</li>
-<li>是否通知其他签署方</li>
-</ul>
+                     * <p>合同（流程）组的配置项信息。<br>其中包括：</p><ul><li>是否通知本企业签署方</li><li>是否通知其他签署方</li></ul>
                      */
                     FlowGroupOptions m_flowGroupOptions;
                     bool m_flowGroupOptionsHasBeenSet;
 
                     /**
-                     * 用户自定义合同类型。
-
-自定义合同类型配置的地方如链接图所示。[点击查看自定义合同类型管理的位置](https://qcloudimg.tencent-cloud.cn/raw/36582cea03ae6a2559894844942b5d5c.png)
-
-注意：
-如果传递了自定义合同类型，则每一个子合同设置的自定义合同类型将会失效，已最外层定义的为准。
-例如：
-这份合同组有三个子合同，设置合同类型为<font color="blue">人事/劳务</font>
-第一份子合同设置的合同自定义合同类型是<font color="blue">采购</font>
-第二份和第三份子合同设置的合同自定义合同类型是<font color="blue">人事/劳务</font>
-但最终这个合同组的合同类型是<font color="blue">人事/劳务</font>
-
-
-
-
-
+                     * <p>用户自定义合同类型。</p><p>自定义合同类型配置的地方如链接图所示。<a href="https://qcloudimg.tencent-cloud.cn/raw/36582cea03ae6a2559894844942b5d5c.png">点击查看自定义合同类型管理的位置</a></p><p>注意：<br>如果传递了自定义合同类型，则每一个子合同设置的自定义合同类型将会失效，已最外层定义的为准。<br>例如：<br>这份合同组有三个子合同，设置合同类型为<font color="blue">人事/劳务</font><br>第一份子合同设置的合同自定义合同类型是<font color="blue">采购</font><br>第二份和第三份子合同设置的合同自定义合同类型是<font color="blue">人事/劳务</font><br>但最终这个合同组的合同类型是<font color="blue">人事/劳务</font></p>
                      */
                     UserFlowType m_userFlowType;
                     bool m_userFlowTypeHasBeenSet;

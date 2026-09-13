@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取新创建的快照ID。
+                     * 获取<p>新创建的快照ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SnapshotId 新创建的快照ID。
+                     * @return SnapshotId <p>新创建的快照ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -62,7 +62,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 新创建的快照ID。
+                     * <p>新创建的快照ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_snapshotId;

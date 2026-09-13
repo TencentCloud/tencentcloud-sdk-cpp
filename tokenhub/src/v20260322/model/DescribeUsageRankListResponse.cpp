@@ -37,7 +37,8 @@ DescribeUsageRankListResponse::DescribeUsageRankListResponse() :
     m_timestampsHasBeenSet(false),
     m_topListHasBeenSet(false),
     m_pageStatsHasBeenSet(false),
-    m_totalStatsHasBeenSet(false)
+    m_totalStatsHasBeenSet(false),
+    m_sortKeyHasBeenSet(false)
 {
 }
 
@@ -245,6 +246,16 @@ CoreInternalOutcome DescribeUsageRankListResponse::Deserialize(const string &pay
         m_totalStatsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SortKey") && !rsp["SortKey"].IsNull())
+    {
+        if (!rsp["SortKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SortKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sortKey = string(rsp["SortKey"].GetString());
+        m_sortKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -384,6 +395,14 @@ string DescribeUsageRankListResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_totalStats.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_sortKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sortKey.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -536,6 +555,16 @@ UsageStats DescribeUsageRankListResponse::GetTotalStats() const
 bool DescribeUsageRankListResponse::TotalStatsHasBeenSet() const
 {
     return m_totalStatsHasBeenSet;
+}
+
+string DescribeUsageRankListResponse::GetSortKey() const
+{
+    return m_sortKey;
+}
+
+bool DescribeUsageRankListResponse::SortKeyHasBeenSet() const
+{
+    return m_sortKeyHasBeenSet;
 }
 
 

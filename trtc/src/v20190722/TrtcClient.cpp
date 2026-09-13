@@ -140,6 +140,56 @@ TrtcClient::ControlAIConversationOutcomeCallable TrtcClient::ControlAIConversati
     return prom->get_future();
 }
 
+TrtcClient::CreateAudioModerationSyncOutcome TrtcClient::CreateAudioModerationSync(const CreateAudioModerationSyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAudioModerationSync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAudioModerationSyncResponse rsp = CreateAudioModerationSyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAudioModerationSyncOutcome(rsp);
+        else
+            return CreateAudioModerationSyncOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAudioModerationSyncOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::CreateAudioModerationSyncAsync(const CreateAudioModerationSyncRequest& request, const CreateAudioModerationSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAudioModerationSyncRequest&;
+    using Resp = CreateAudioModerationSyncResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAudioModerationSync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::CreateAudioModerationSyncOutcomeCallable TrtcClient::CreateAudioModerationSyncCallable(const CreateAudioModerationSyncRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAudioModerationSyncOutcome>>();
+    CreateAudioModerationSyncAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const CreateAudioModerationSyncRequest&,
+        CreateAudioModerationSyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TrtcClient::CreateCloudModerationOutcome TrtcClient::CreateCloudModeration(const CreateCloudModerationRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCloudModeration");

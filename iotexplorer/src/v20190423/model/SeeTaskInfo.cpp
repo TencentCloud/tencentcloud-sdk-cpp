@@ -38,7 +38,8 @@ SeeTaskInfo::SeeTaskInfo() :
     m_filesInfoHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_cOSURIHasBeenSet(false)
+    m_cOSURIHasBeenSet(false),
+    m_inputURLHasBeenSet(false)
 {
 }
 
@@ -282,6 +283,16 @@ CoreInternalOutcome SeeTaskInfo::Deserialize(const rapidjson::Value &value)
         m_cOSURIHasBeenSet = true;
     }
 
+    if (value.HasMember("InputURL") && !value["InputURL"].IsNull())
+    {
+        if (!value["InputURL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SeeTaskInfo.InputURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputURL = string(value["InputURL"].GetString());
+        m_inputURLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -449,6 +460,14 @@ void SeeTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "COSURI";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cOSURI.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inputURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputURL.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -740,5 +759,21 @@ void SeeTaskInfo::SetCOSURI(const string& _cOSURI)
 bool SeeTaskInfo::COSURIHasBeenSet() const
 {
     return m_cOSURIHasBeenSet;
+}
+
+string SeeTaskInfo::GetInputURL() const
+{
+    return m_inputURL;
+}
+
+void SeeTaskInfo::SetInputURL(const string& _inputURL)
+{
+    m_inputURL = _inputURL;
+    m_inputURLHasBeenSet = true;
+}
+
+bool SeeTaskInfo::InputURLHasBeenSet() const
+{
+    return m_inputURLHasBeenSet;
 }
 

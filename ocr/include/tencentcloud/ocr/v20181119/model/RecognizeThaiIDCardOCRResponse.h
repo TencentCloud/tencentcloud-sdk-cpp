@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取身份证号码
-                     * @return ID 身份证号码
+                     * 获取<p>身份证号码</p>
+                     * @return ID <p>身份证号码</p>
                      * 
                      */
                     std::string GetID() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取泰文姓名
-                     * @return ThaiName 泰文姓名
+                     * 获取<p>泰文姓名</p>
+                     * @return ThaiName <p>泰文姓名</p>
                      * 
                      */
                     std::string GetThaiName() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool ThaiNameHasBeenSet() const;
 
                     /**
-                     * 获取英文姓名
-                     * @return EnFirstName 英文姓名
+                     * 获取<p>英文姓名</p>
+                     * @return EnFirstName <p>英文姓名</p>
                      * 
                      */
                     std::string GetEnFirstName() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool EnFirstNameHasBeenSet() const;
 
                     /**
-                     * 获取英文姓名
-                     * @return EnLastName 英文姓名
+                     * 获取<p>英文姓名</p>
+                     * @return EnLastName <p>英文姓名</p>
                      * 
                      */
                     std::string GetEnLastName() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool EnLastNameHasBeenSet() const;
 
                     /**
-                     * 获取泰文签发日期
-                     * @return IssueDate 泰文签发日期
+                     * 获取<p>泰文签发日期</p>
+                     * @return IssueDate <p>泰文签发日期</p>
                      * 
                      */
                     std::string GetIssueDate() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool IssueDateHasBeenSet() const;
 
                     /**
-                     * 获取泰文到期日期
-                     * @return ExpirationDate 泰文到期日期
+                     * 获取<p>泰文到期日期</p>
+                     * @return ExpirationDate <p>泰文到期日期</p>
                      * 
                      */
                     std::string GetExpirationDate() const;
@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool ExpirationDateHasBeenSet() const;
 
                     /**
-                     * 获取英文签发日期
-                     * @return EnIssueDate 英文签发日期
+                     * 获取<p>英文签发日期</p>
+                     * @return EnIssueDate <p>英文签发日期</p>
                      * 
                      */
                     std::string GetEnIssueDate() const;
@@ -142,8 +142,8 @@ namespace TencentCloud
                     bool EnIssueDateHasBeenSet() const;
 
                     /**
-                     * 获取英文到期日期
-                     * @return EnExpirationDate 英文到期日期
+                     * 获取<p>英文到期日期</p>
+                     * @return EnExpirationDate <p>英文到期日期</p>
                      * 
                      */
                     std::string GetEnExpirationDate() const;
@@ -156,8 +156,8 @@ namespace TencentCloud
                     bool EnExpirationDateHasBeenSet() const;
 
                     /**
-                     * 获取泰文出生日期
-                     * @return Birthday 泰文出生日期
+                     * 获取<p>泰文出生日期</p>
+                     * @return Birthday <p>泰文出生日期</p>
                      * 
                      */
                     std::string GetBirthday() const;
@@ -170,8 +170,8 @@ namespace TencentCloud
                     bool BirthdayHasBeenSet() const;
 
                     /**
-                     * 获取英文出生日期
-                     * @return EnBirthday 英文出生日期
+                     * 获取<p>英文出生日期</p>
+                     * @return EnBirthday <p>英文出生日期</p>
                      * 
                      */
                     std::string GetEnBirthday() const;
@@ -184,8 +184,8 @@ namespace TencentCloud
                     bool EnBirthdayHasBeenSet() const;
 
                     /**
-                     * 获取宗教信仰
-                     * @return Religion 宗教信仰
+                     * 获取<p>宗教信仰</p>
+                     * @return Religion <p>宗教信仰</p>
                      * 
                      */
                     std::string GetReligion() const;
@@ -198,8 +198,8 @@ namespace TencentCloud
                     bool ReligionHasBeenSet() const;
 
                     /**
-                     * 获取序列号
-                     * @return SerialNumber 序列号
+                     * 获取<p>序列号</p>
+                     * @return SerialNumber <p>序列号</p>
                      * 
                      */
                     std::string GetSerialNumber() const;
@@ -212,8 +212,8 @@ namespace TencentCloud
                     bool SerialNumberHasBeenSet() const;
 
                     /**
-                     * 获取地址
-                     * @return Address 地址
+                     * 获取<p>地址</p>
+                     * @return Address <p>地址</p>
                      * 
                      */
                     std::string GetAddress() const;
@@ -226,8 +226,8 @@ namespace TencentCloud
                     bool AddressHasBeenSet() const;
 
                     /**
-                     * 获取背面号码
-                     * @return LaserID 背面号码
+                     * 获取<p>背面号码</p>
+                     * @return LaserID <p>背面号码</p>
                      * 
                      */
                     std::string GetLaserID() const;
@@ -240,8 +240,8 @@ namespace TencentCloud
                     bool LaserIDHasBeenSet() const;
 
                     /**
-                     * 获取证件人像照片抠取
-                     * @return PortraitImage 证件人像照片抠取
+                     * 获取<p>证件人像照片抠取</p>
+                     * @return PortraitImage <p>证件人像照片抠取</p>
                      * 
                      */
                     std::string GetPortraitImage() const;
@@ -254,20 +254,8 @@ namespace TencentCloud
                     bool PortraitImageHasBeenSet() const;
 
                     /**
-                     * 获取告警码
--9101 证件边框不完整告警
--9102 证件复印件告警
--9103 证件翻拍告警
--9107 证件反光告警
--9108 证件模糊告警
--9109 告警能力未开通
-                     * @return WarnCardInfos 告警码
--9101 证件边框不完整告警
--9102 证件复印件告警
--9103 证件翻拍告警
--9107 证件反光告警
--9108 证件模糊告警
--9109 告警能力未开通
+                     * 获取<p>告警码<br>-9101 证件边框不完整告警<br>-9102 证件复印件告警<br>-9103 证件翻拍告警<br>-9104 证件PS告警<br>-9107 证件反光告警<br>-9108 证件模糊告警<br>-9109 告警能力未开通</p>
+                     * @return WarnCardInfos <p>告警码<br>-9101 证件边框不完整告警<br>-9102 证件复印件告警<br>-9103 证件翻拍告警<br>-9104 证件PS告警<br>-9107 证件反光告警<br>-9108 证件模糊告警<br>-9109 告警能力未开通</p>
                      * 
                      */
                     std::vector<int64_t> GetWarnCardInfos() const;
@@ -280,8 +268,8 @@ namespace TencentCloud
                     bool WarnCardInfosHasBeenSet() const;
 
                     /**
-                     * 获取该字段已废弃， 将固定返回"1"，不建议使用。 
-                     * @return AdvancedInfo 该字段已废弃， 将固定返回"1"，不建议使用。 
+                     * 获取<p>该字段已废弃， 将固定返回&quot;1&quot;，不建议使用。</p>
+                     * @return AdvancedInfo <p>该字段已废弃， 将固定返回&quot;1&quot;，不建议使用。</p>
                      * @deprecated
                      */
                     std::string GetAdvancedInfo() const;
@@ -294,8 +282,8 @@ namespace TencentCloud
                     bool AdvancedInfoHasBeenSet() const;
 
                     /**
-                     * 获取卡证正面图片中，证件主体的数量（仅请求曼谷地域[ap-bangkok]返回）
-                     * @return CardCount 卡证正面图片中，证件主体的数量（仅请求曼谷地域[ap-bangkok]返回）
+                     * 获取<p>卡证正面图片中，证件主体的数量（仅请求曼谷地域[ap-bangkok]返回）</p>
+                     * @return CardCount <p>卡证正面图片中，证件主体的数量（仅请求曼谷地域[ap-bangkok]返回）</p>
                      * 
                      */
                     int64_t GetCardCount() const;
@@ -310,115 +298,109 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 身份证号码
+                     * <p>身份证号码</p>
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 泰文姓名
+                     * <p>泰文姓名</p>
                      */
                     std::string m_thaiName;
                     bool m_thaiNameHasBeenSet;
 
                     /**
-                     * 英文姓名
+                     * <p>英文姓名</p>
                      */
                     std::string m_enFirstName;
                     bool m_enFirstNameHasBeenSet;
 
                     /**
-                     * 英文姓名
+                     * <p>英文姓名</p>
                      */
                     std::string m_enLastName;
                     bool m_enLastNameHasBeenSet;
 
                     /**
-                     * 泰文签发日期
+                     * <p>泰文签发日期</p>
                      */
                     std::string m_issueDate;
                     bool m_issueDateHasBeenSet;
 
                     /**
-                     * 泰文到期日期
+                     * <p>泰文到期日期</p>
                      */
                     std::string m_expirationDate;
                     bool m_expirationDateHasBeenSet;
 
                     /**
-                     * 英文签发日期
+                     * <p>英文签发日期</p>
                      */
                     std::string m_enIssueDate;
                     bool m_enIssueDateHasBeenSet;
 
                     /**
-                     * 英文到期日期
+                     * <p>英文到期日期</p>
                      */
                     std::string m_enExpirationDate;
                     bool m_enExpirationDateHasBeenSet;
 
                     /**
-                     * 泰文出生日期
+                     * <p>泰文出生日期</p>
                      */
                     std::string m_birthday;
                     bool m_birthdayHasBeenSet;
 
                     /**
-                     * 英文出生日期
+                     * <p>英文出生日期</p>
                      */
                     std::string m_enBirthday;
                     bool m_enBirthdayHasBeenSet;
 
                     /**
-                     * 宗教信仰
+                     * <p>宗教信仰</p>
                      */
                     std::string m_religion;
                     bool m_religionHasBeenSet;
 
                     /**
-                     * 序列号
+                     * <p>序列号</p>
                      */
                     std::string m_serialNumber;
                     bool m_serialNumberHasBeenSet;
 
                     /**
-                     * 地址
+                     * <p>地址</p>
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;
 
                     /**
-                     * 背面号码
+                     * <p>背面号码</p>
                      */
                     std::string m_laserID;
                     bool m_laserIDHasBeenSet;
 
                     /**
-                     * 证件人像照片抠取
+                     * <p>证件人像照片抠取</p>
                      */
                     std::string m_portraitImage;
                     bool m_portraitImageHasBeenSet;
 
                     /**
-                     * 告警码
--9101 证件边框不完整告警
--9102 证件复印件告警
--9103 证件翻拍告警
--9107 证件反光告警
--9108 证件模糊告警
--9109 告警能力未开通
+                     * <p>告警码<br>-9101 证件边框不完整告警<br>-9102 证件复印件告警<br>-9103 证件翻拍告警<br>-9104 证件PS告警<br>-9107 证件反光告警<br>-9108 证件模糊告警<br>-9109 告警能力未开通</p>
                      */
                     std::vector<int64_t> m_warnCardInfos;
                     bool m_warnCardInfosHasBeenSet;
 
                     /**
-                     * 该字段已废弃， 将固定返回"1"，不建议使用。 
+                     * <p>该字段已废弃， 将固定返回&quot;1&quot;，不建议使用。</p>
                      */
                     std::string m_advancedInfo;
                     bool m_advancedInfoHasBeenSet;
 
                     /**
-                     * 卡证正面图片中，证件主体的数量（仅请求曼谷地域[ap-bangkok]返回）
+                     * <p>卡证正面图片中，证件主体的数量（仅请求曼谷地域[ap-bangkok]返回）</p>
                      */
                     int64_t m_cardCount;
                     bool m_cardCountHasBeenSet;

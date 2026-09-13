@@ -45,19 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
-                     * @return Operator 执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * 获取<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
+                     * @return Operator <p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
-                     * @param _operator 执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * 设置<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
+                     * @param _operator <p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -70,91 +66,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取要查询的扩展服务类型。
-默认为空，即查询当前支持的所有扩展服务信息。
-若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：
-<ul><li>OPEN_SERVER_SIGN：企业自动签署</li>
-<li>AUTO_SIGN_CAN_FILL_IN：本企业自动签合同支持签前内容补充</li>
-<li>BATCH_SIGN：批量签署</li>
-<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
-<li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li>
-<li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li>
-<li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li>
-<li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>
-<li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>
-<li>ORGANIZATION_FLOW_EMAIL_NOTIFY：邮件通知签署方</li>
-<li>FLOW_APPROVAL：合同审批强制开启</li>
-<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li>
-<li>HIDE_ONE_KEY_SIGN：个人签署方手写签名时需逐个手写</li>
-<li>SIGN_SIGNATURE_DEFAULT_SET_HANDWRITE：个人签署方手动签名</li>
-<li>APP_LOGIN：限制企业员工小程序端登录</li>
-<li>PC_LOGIN：限制企业员工网页端登录</li>
-</ul>
-                     * @return ExtendServiceType 要查询的扩展服务类型。
-默认为空，即查询当前支持的所有扩展服务信息。
-若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：
-<ul><li>OPEN_SERVER_SIGN：企业自动签署</li>
-<li>AUTO_SIGN_CAN_FILL_IN：本企业自动签合同支持签前内容补充</li>
-<li>BATCH_SIGN：批量签署</li>
-<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
-<li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li>
-<li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li>
-<li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li>
-<li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>
-<li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>
-<li>ORGANIZATION_FLOW_EMAIL_NOTIFY：邮件通知签署方</li>
-<li>FLOW_APPROVAL：合同审批强制开启</li>
-<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li>
-<li>HIDE_ONE_KEY_SIGN：个人签署方手写签名时需逐个手写</li>
-<li>SIGN_SIGNATURE_DEFAULT_SET_HANDWRITE：个人签署方手动签名</li>
-<li>APP_LOGIN：限制企业员工小程序端登录</li>
-<li>PC_LOGIN：限制企业员工网页端登录</li>
-</ul>
+                     * 获取<p>要查询的扩展服务类型。默认为空，即查询当前支持的所有扩展服务信息。若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：<ul><li>OPEN_SERVER_SIGN：企业“授权签”</li><li>AUTO_SIGN_CAN_FILL_IN：本企业“授权签”合同支持签前内容补充</li><li>BATCH_SIGN：批量签署</li><li>OVERSEA_SIGN：企业与港澳台居民签署合同</li><li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li><li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li><li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li><li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li><li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li><li>ORGANIZATION_FLOW_EMAIL_NOTIFY：邮件通知签署方</li><li>FLOW_APPROVAL：合同审批强制开启</li><li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li><li>HIDE_ONE_KEY_SIGN：个人签署方手写签名时需逐个手写</li><li>SIGN_SIGNATURE_DEFAULT_SET_HANDWRITE：个人签署方手动签名</li><li>APP_LOGIN：限制企业员工小程序端登录</li><li>PC_LOGIN：限制企业员工网页端登录</li></ul></p>
+                     * @return ExtendServiceType <p>要查询的扩展服务类型。默认为空，即查询当前支持的所有扩展服务信息。若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：<ul><li>OPEN_SERVER_SIGN：企业“授权签”</li><li>AUTO_SIGN_CAN_FILL_IN：本企业“授权签”合同支持签前内容补充</li><li>BATCH_SIGN：批量签署</li><li>OVERSEA_SIGN：企业与港澳台居民签署合同</li><li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li><li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li><li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li><li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li><li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li><li>ORGANIZATION_FLOW_EMAIL_NOTIFY：邮件通知签署方</li><li>FLOW_APPROVAL：合同审批强制开启</li><li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li><li>HIDE_ONE_KEY_SIGN：个人签署方手写签名时需逐个手写</li><li>SIGN_SIGNATURE_DEFAULT_SET_HANDWRITE：个人签署方手动签名</li><li>APP_LOGIN：限制企业员工小程序端登录</li><li>PC_LOGIN：限制企业员工网页端登录</li></ul></p>
                      * 
                      */
                     std::string GetExtendServiceType() const;
 
                     /**
-                     * 设置要查询的扩展服务类型。
-默认为空，即查询当前支持的所有扩展服务信息。
-若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：
-<ul><li>OPEN_SERVER_SIGN：企业自动签署</li>
-<li>AUTO_SIGN_CAN_FILL_IN：本企业自动签合同支持签前内容补充</li>
-<li>BATCH_SIGN：批量签署</li>
-<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
-<li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li>
-<li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li>
-<li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li>
-<li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>
-<li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>
-<li>ORGANIZATION_FLOW_EMAIL_NOTIFY：邮件通知签署方</li>
-<li>FLOW_APPROVAL：合同审批强制开启</li>
-<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li>
-<li>HIDE_ONE_KEY_SIGN：个人签署方手写签名时需逐个手写</li>
-<li>SIGN_SIGNATURE_DEFAULT_SET_HANDWRITE：个人签署方手动签名</li>
-<li>APP_LOGIN：限制企业员工小程序端登录</li>
-<li>PC_LOGIN：限制企业员工网页端登录</li>
-</ul>
-                     * @param _extendServiceType 要查询的扩展服务类型。
-默认为空，即查询当前支持的所有扩展服务信息。
-若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：
-<ul><li>OPEN_SERVER_SIGN：企业自动签署</li>
-<li>AUTO_SIGN_CAN_FILL_IN：本企业自动签合同支持签前内容补充</li>
-<li>BATCH_SIGN：批量签署</li>
-<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
-<li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li>
-<li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li>
-<li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li>
-<li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>
-<li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>
-<li>ORGANIZATION_FLOW_EMAIL_NOTIFY：邮件通知签署方</li>
-<li>FLOW_APPROVAL：合同审批强制开启</li>
-<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li>
-<li>HIDE_ONE_KEY_SIGN：个人签署方手写签名时需逐个手写</li>
-<li>SIGN_SIGNATURE_DEFAULT_SET_HANDWRITE：个人签署方手动签名</li>
-<li>APP_LOGIN：限制企业员工小程序端登录</li>
-<li>PC_LOGIN：限制企业员工网页端登录</li>
-</ul>
+                     * 设置<p>要查询的扩展服务类型。默认为空，即查询当前支持的所有扩展服务信息。若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：<ul><li>OPEN_SERVER_SIGN：企业“授权签”</li><li>AUTO_SIGN_CAN_FILL_IN：本企业“授权签”合同支持签前内容补充</li><li>BATCH_SIGN：批量签署</li><li>OVERSEA_SIGN：企业与港澳台居民签署合同</li><li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li><li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li><li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li><li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li><li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li><li>ORGANIZATION_FLOW_EMAIL_NOTIFY：邮件通知签署方</li><li>FLOW_APPROVAL：合同审批强制开启</li><li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li><li>HIDE_ONE_KEY_SIGN：个人签署方手写签名时需逐个手写</li><li>SIGN_SIGNATURE_DEFAULT_SET_HANDWRITE：个人签署方手动签名</li><li>APP_LOGIN：限制企业员工小程序端登录</li><li>PC_LOGIN：限制企业员工网页端登录</li></ul></p>
+                     * @param _extendServiceType <p>要查询的扩展服务类型。默认为空，即查询当前支持的所有扩展服务信息。若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：<ul><li>OPEN_SERVER_SIGN：企业“授权签”</li><li>AUTO_SIGN_CAN_FILL_IN：本企业“授权签”合同支持签前内容补充</li><li>BATCH_SIGN：批量签署</li><li>OVERSEA_SIGN：企业与港澳台居民签署合同</li><li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li><li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li><li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li><li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li><li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li><li>ORGANIZATION_FLOW_EMAIL_NOTIFY：邮件通知签署方</li><li>FLOW_APPROVAL：合同审批强制开启</li><li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li><li>HIDE_ONE_KEY_SIGN：个人签署方手写签名时需逐个手写</li><li>SIGN_SIGNATURE_DEFAULT_SET_HANDWRITE：个人签署方手动签名</li><li>APP_LOGIN：限制企业员工小程序端登录</li><li>PC_LOGIN：限制企业员工网页端登录</li></ul></p>
                      * 
                      */
                     void SetExtendServiceType(const std::string& _extendServiceType);
@@ -167,19 +87,15 @@ namespace TencentCloud
                     bool ExtendServiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
-                     * @return Agent 代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 获取<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
+                     * @return Agent <p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
-                     * @param _agent 代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 设置<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
+                     * @param _agent <p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -194,40 +110,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * <p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 要查询的扩展服务类型。
-默认为空，即查询当前支持的所有扩展服务信息。
-若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：
-<ul><li>OPEN_SERVER_SIGN：企业自动签署</li>
-<li>AUTO_SIGN_CAN_FILL_IN：本企业自动签合同支持签前内容补充</li>
-<li>BATCH_SIGN：批量签署</li>
-<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
-<li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li>
-<li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li>
-<li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li>
-<li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>
-<li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>
-<li>ORGANIZATION_FLOW_EMAIL_NOTIFY：邮件通知签署方</li>
-<li>FLOW_APPROVAL：合同审批强制开启</li>
-<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li>
-<li>HIDE_ONE_KEY_SIGN：个人签署方手写签名时需逐个手写</li>
-<li>SIGN_SIGNATURE_DEFAULT_SET_HANDWRITE：个人签署方手动签名</li>
-<li>APP_LOGIN：限制企业员工小程序端登录</li>
-<li>PC_LOGIN：限制企业员工网页端登录</li>
-</ul>
+                     * <p>要查询的扩展服务类型。默认为空，即查询当前支持的所有扩展服务信息。若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：<ul><li>OPEN_SERVER_SIGN：企业“授权签”</li><li>AUTO_SIGN_CAN_FILL_IN：本企业“授权签”合同支持签前内容补充</li><li>BATCH_SIGN：批量签署</li><li>OVERSEA_SIGN：企业与港澳台居民签署合同</li><li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li><li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li><li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li><li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li><li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li><li>ORGANIZATION_FLOW_EMAIL_NOTIFY：邮件通知签署方</li><li>FLOW_APPROVAL：合同审批强制开启</li><li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li><li>HIDE_ONE_KEY_SIGN：个人签署方手写签名时需逐个手写</li><li>SIGN_SIGNATURE_DEFAULT_SET_HANDWRITE：个人签署方手动签名</li><li>APP_LOGIN：限制企业员工小程序端登录</li><li>PC_LOGIN：限制企业员工网页端登录</li></ul></p>
                      */
                     std::string m_extendServiceType;
                     bool m_extendServiceTypeHasBeenSet;
 
                     /**
-                     * 代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * <p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

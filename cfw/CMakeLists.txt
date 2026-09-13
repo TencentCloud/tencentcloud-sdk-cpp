@@ -177,6 +177,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DeleteSecurityGroupRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/SequenceData.h
   include/tencentcloud/cfw/v20190904/model/DescribeSwitchErrorRequest.h
+  include/tencentcloud/cfw/v20190904/model/DescribeNDRDataLeakOutAlertDetailResponse.h
   include/tencentcloud/cfw/v20190904/model/CommonFilter.h
   include/tencentcloud/cfw/v20190904/model/AddVpcAcRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/EdgeIpInfoSimple.h
@@ -369,6 +370,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/NatFwInstance.h
   include/tencentcloud/cfw/v20190904/model/CfwNatDnatRule.h
   include/tencentcloud/cfw/v20190904/model/UpdateClusterVpcFwRequest.h
+  include/tencentcloud/cfw/v20190904/model/DescribeNDRDataLeakOutAlertDetailRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeBlockListResponse.h
   include/tencentcloud/cfw/v20190904/model/CheckClusterNatFwPreAccessResponse.h
   include/tencentcloud/cfw/v20190904/model/DeleteNatFwDnatRuleRequest.h
@@ -463,6 +465,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwInstancesInfoResponse.h
   include/tencentcloud/cfw/v20190904/model/AddNatAcRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/EdgeRange.h
+  include/tencentcloud/cfw/v20190904/model/DisposalSuggestionItem.h
   include/tencentcloud/cfw/v20190904/model/DescribeResourceGroupRequest.h
   include/tencentcloud/cfw/v20190904/model/CreateAcRulesRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeAssociatedInstanceListRequest.h
@@ -631,6 +634,7 @@ set(cfw_src
   src/v20190904/model/DeleteSecurityGroupRuleResponse.cpp
   src/v20190904/model/SequenceData.cpp
   src/v20190904/model/DescribeSwitchErrorRequest.cpp
+  src/v20190904/model/DescribeNDRDataLeakOutAlertDetailResponse.cpp
   src/v20190904/model/CommonFilter.cpp
   src/v20190904/model/AddVpcAcRuleRequest.cpp
   src/v20190904/model/EdgeIpInfoSimple.cpp
@@ -823,6 +827,7 @@ set(cfw_src
   src/v20190904/model/NatFwInstance.cpp
   src/v20190904/model/CfwNatDnatRule.cpp
   src/v20190904/model/UpdateClusterVpcFwRequest.cpp
+  src/v20190904/model/DescribeNDRDataLeakOutAlertDetailRequest.cpp
   src/v20190904/model/DescribeBlockListResponse.cpp
   src/v20190904/model/CheckClusterNatFwPreAccessResponse.cpp
   src/v20190904/model/DeleteNatFwDnatRuleRequest.cpp
@@ -917,6 +922,7 @@ set(cfw_src
   src/v20190904/model/DescribeNatFwInstancesInfoResponse.cpp
   src/v20190904/model/AddNatAcRuleResponse.cpp
   src/v20190904/model/EdgeRange.cpp
+  src/v20190904/model/DisposalSuggestionItem.cpp
   src/v20190904/model/DescribeResourceGroupRequest.cpp
   src/v20190904/model/CreateAcRulesRequest.cpp
   src/v20190904/model/DescribeAssociatedInstanceListRequest.cpp

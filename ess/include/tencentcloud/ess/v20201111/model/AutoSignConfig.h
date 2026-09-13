@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 自动签开启、签署相关配置
+                * “授权签”开启、签署相关配置
                 */
                 class AutoSignConfig : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>自动签开通个人用户信息, 包括名字,身份证等</p>
-                     * @return UserInfo <p>自动签开通个人用户信息, 包括名字,身份证等</p>
+                     * 获取<p>“授权签”开通个人用户信息, 包括名字,身份证等</p>
+                     * @return UserInfo <p>“授权签”开通个人用户信息, 包括名字,身份证等</p>
                      * 
                      */
                     UserThreeFactor GetUserInfo() const;
 
                     /**
-                     * 设置<p>自动签开通个人用户信息, 包括名字,身份证等</p>
-                     * @param _userInfo <p>自动签开通个人用户信息, 包括名字,身份证等</p>
+                     * 设置<p>“授权签”开通个人用户信息, 包括名字,身份证等</p>
+                     * @param _userInfo <p>“授权签”开通个人用户信息, 包括名字,身份证等</p>
                      * 
                      */
                     void SetUserInfo(const UserThreeFactor& _userInfo);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool UserDefineSealHasBeenSet() const;
 
                     /**
-                     * 获取<p>回调中是否需要自动签将要使用的印章(签名) 图片的 base64:</p><ul><li>**false**: 不需要(默认)</li><li>**true**: 需要</li></ul>
-                     * @return SealImgCallback <p>回调中是否需要自动签将要使用的印章(签名) 图片的 base64:</p><ul><li>**false**: 不需要(默认)</li><li>**true**: 需要</li></ul>
+                     * 获取<p>回调中是否需要“授权签”将要使用的印章(签名) 图片的 base64:<ul><li><strong>false</strong>: 不需要(默认)</li><li><strong>true</strong>: 需要</li></ul></p>
+                     * @return SealImgCallback <p>回调中是否需要“授权签”将要使用的印章(签名) 图片的 base64:<ul><li><strong>false</strong>: 不需要(默认)</li><li><strong>true</strong>: 需要</li></ul></p>
                      * 
                      */
                     bool GetSealImgCallback() const;
 
                     /**
-                     * 设置<p>回调中是否需要自动签将要使用的印章(签名) 图片的 base64:</p><ul><li>**false**: 不需要(默认)</li><li>**true**: 需要</li></ul>
-                     * @param _sealImgCallback <p>回调中是否需要自动签将要使用的印章(签名) 图片的 base64:</p><ul><li>**false**: 不需要(默认)</li><li>**true**: 需要</li></ul>
+                     * 设置<p>回调中是否需要“授权签”将要使用的印章(签名) 图片的 base64:<ul><li><strong>false</strong>: 不需要(默认)</li><li><strong>true</strong>: 需要</li></ul></p>
+                     * @param _sealImgCallback <p>回调中是否需要“授权签”将要使用的印章(签名) 图片的 base64:<ul><li><strong>false</strong>: 不需要(默认)</li><li><strong>true</strong>: 需要</li></ul></p>
                      * 
                      */
                     void SetSealImgCallback(const bool& _sealImgCallback);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool VerifyChannelsHasBeenSet() const;
 
                     /**
-                     * 获取<p>设置用户自动签合同的扣费方式。</p><ul><li><b>1</b>: (默认)使用合同份额进行扣减</li></ul><p>注：<code>该字段已经失效，请勿设置此参数。</code></p>
-                     * @return LicenseType <p>设置用户自动签合同的扣费方式。</p><ul><li><b>1</b>: (默认)使用合同份额进行扣减</li></ul><p>注：<code>该字段已经失效，请勿设置此参数。</code></p>
+                     * 获取<p>设置用户“授权签”合同的扣费方式。<ul><li><b>1</b>: (默认)使用合同份额进行扣减</li></ul>注：<code>该字段已经失效，请勿设置此参数。</code></p>
+                     * @return LicenseType <p>设置用户“授权签”合同的扣费方式。<ul><li><b>1</b>: (默认)使用合同份额进行扣减</li></ul>注：<code>该字段已经失效，请勿设置此参数。</code></p>
                      * 
                      */
                     int64_t GetLicenseType() const;
 
                     /**
-                     * 设置<p>设置用户自动签合同的扣费方式。</p><ul><li><b>1</b>: (默认)使用合同份额进行扣减</li></ul><p>注：<code>该字段已经失效，请勿设置此参数。</code></p>
-                     * @param _licenseType <p>设置用户自动签合同的扣费方式。</p><ul><li><b>1</b>: (默认)使用合同份额进行扣减</li></ul><p>注：<code>该字段已经失效，请勿设置此参数。</code></p>
+                     * 设置<p>设置用户“授权签”合同的扣费方式。<ul><li><b>1</b>: (默认)使用合同份额进行扣减</li></ul>注：<code>该字段已经失效，请勿设置此参数。</code></p>
+                     * @param _licenseType <p>设置用户“授权签”合同的扣费方式。<ul><li><b>1</b>: (默认)使用合同份额进行扣减</li></ul>注：<code>该字段已经失效，请勿设置此参数。</code></p>
                      * 
                      */
                     void SetLicenseType(const int64_t& _licenseType);
@@ -218,7 +218,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>自动签开通个人用户信息, 包括名字,身份证等</p>
+                     * <p>“授权签”开通个人用户信息, 包括名字,身份证等</p>
                      */
                     UserThreeFactor m_userInfo;
                     bool m_userInfoHasBeenSet;
@@ -236,7 +236,7 @@ namespace TencentCloud
                     bool m_userDefineSealHasBeenSet;
 
                     /**
-                     * <p>回调中是否需要自动签将要使用的印章(签名) 图片的 base64:</p><ul><li>**false**: 不需要(默认)</li><li>**true**: 需要</li></ul>
+                     * <p>回调中是否需要“授权签”将要使用的印章(签名) 图片的 base64:<ul><li><strong>false</strong>: 不需要(默认)</li><li><strong>true</strong>: 需要</li></ul></p>
                      */
                     bool m_sealImgCallback;
                     bool m_sealImgCallbackHasBeenSet;
@@ -254,7 +254,7 @@ namespace TencentCloud
                     bool m_verifyChannelsHasBeenSet;
 
                     /**
-                     * <p>设置用户自动签合同的扣费方式。</p><ul><li><b>1</b>: (默认)使用合同份额进行扣减</li></ul><p>注：<code>该字段已经失效，请勿设置此参数。</code></p>
+                     * <p>设置用户“授权签”合同的扣费方式。<ul><li><b>1</b>: (默认)使用合同份额进行扣减</li></ul>注：<code>该字段已经失效，请勿设置此参数。</code></p>
                      */
                     int64_t m_licenseType;
                     bool m_licenseTypeHasBeenSet;

@@ -23,6 +23,8 @@ using namespace std;
 InferenceResourceConfig::InferenceResourceConfig() :
     m_scalingModeHasBeenSet(false),
     m_hardwareSpecHasBeenSet(false),
+    m_hardwareSpecIdHasBeenSet(false),
+    m_hardwareConfigHasBeenSet(false),
     m_autoScalingConfigHasBeenSet(false),
     m_manualInstanceConfigHasBeenSet(false),
     m_concurrencyHasBeenSet(false)
@@ -52,6 +54,33 @@ CoreInternalOutcome InferenceResourceConfig::Deserialize(const rapidjson::Value 
         }
         m_hardwareSpec = string(value["HardwareSpec"].GetString());
         m_hardwareSpecHasBeenSet = true;
+    }
+
+    if (value.HasMember("HardwareSpecId") && !value["HardwareSpecId"].IsNull())
+    {
+        if (!value["HardwareSpecId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InferenceResourceConfig.HardwareSpecId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hardwareSpecId = string(value["HardwareSpecId"].GetString());
+        m_hardwareSpecIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("HardwareConfig") && !value["HardwareConfig"].IsNull())
+    {
+        if (!value["HardwareConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InferenceResourceConfig.HardwareConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_hardwareConfig.Deserialize(value["HardwareConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_hardwareConfigHasBeenSet = true;
     }
 
     if (value.HasMember("AutoScalingConfig") && !value["AutoScalingConfig"].IsNull())
@@ -121,6 +150,23 @@ void InferenceResourceConfig::ToJsonObject(rapidjson::Value &value, rapidjson::D
         value.AddMember(iKey, rapidjson::Value(m_hardwareSpec.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_hardwareSpecIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HardwareSpecId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hardwareSpecId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hardwareConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HardwareConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_hardwareConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_autoScalingConfigHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -180,6 +226,38 @@ void InferenceResourceConfig::SetHardwareSpec(const string& _hardwareSpec)
 bool InferenceResourceConfig::HardwareSpecHasBeenSet() const
 {
     return m_hardwareSpecHasBeenSet;
+}
+
+string InferenceResourceConfig::GetHardwareSpecId() const
+{
+    return m_hardwareSpecId;
+}
+
+void InferenceResourceConfig::SetHardwareSpecId(const string& _hardwareSpecId)
+{
+    m_hardwareSpecId = _hardwareSpecId;
+    m_hardwareSpecIdHasBeenSet = true;
+}
+
+bool InferenceResourceConfig::HardwareSpecIdHasBeenSet() const
+{
+    return m_hardwareSpecIdHasBeenSet;
+}
+
+InferenceHardwareConfig InferenceResourceConfig::GetHardwareConfig() const
+{
+    return m_hardwareConfig;
+}
+
+void InferenceResourceConfig::SetHardwareConfig(const InferenceHardwareConfig& _hardwareConfig)
+{
+    m_hardwareConfig = _hardwareConfig;
+    m_hardwareConfigHasBeenSet = true;
+}
+
+bool InferenceResourceConfig::HardwareConfigHasBeenSet() const
+{
+    return m_hardwareConfigHasBeenSet;
 }
 
 InferenceAutoScalingConfig InferenceResourceConfig::GetAutoScalingConfig() const

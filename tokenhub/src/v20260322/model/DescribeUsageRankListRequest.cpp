@@ -27,10 +27,12 @@ DescribeUsageRankListRequest::DescribeUsageRankListRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_metricTypeHasBeenSet(false),
+    m_anchorHasBeenSet(false),
     m_targetHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_showAllHasBeenSet(false)
+    m_showAllHasBeenSet(false),
+    m_sortKeyHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,14 @@ string DescribeUsageRankListRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_metricType.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_anchorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Anchor";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_anchor.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_targetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -103,6 +113,14 @@ string DescribeUsageRankListRequest::ToJsonString() const
         string key = "ShowAll";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_showAll, allocator);
+    }
+
+    if (m_sortKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sortKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -177,6 +195,22 @@ bool DescribeUsageRankListRequest::MetricTypeHasBeenSet() const
     return m_metricTypeHasBeenSet;
 }
 
+string DescribeUsageRankListRequest::GetAnchor() const
+{
+    return m_anchor;
+}
+
+void DescribeUsageRankListRequest::SetAnchor(const string& _anchor)
+{
+    m_anchor = _anchor;
+    m_anchorHasBeenSet = true;
+}
+
+bool DescribeUsageRankListRequest::AnchorHasBeenSet() const
+{
+    return m_anchorHasBeenSet;
+}
+
 string DescribeUsageRankListRequest::GetTarget() const
 {
     return m_target;
@@ -239,6 +273,22 @@ void DescribeUsageRankListRequest::SetShowAll(const bool& _showAll)
 bool DescribeUsageRankListRequest::ShowAllHasBeenSet() const
 {
     return m_showAllHasBeenSet;
+}
+
+string DescribeUsageRankListRequest::GetSortKey() const
+{
+    return m_sortKey;
+}
+
+void DescribeUsageRankListRequest::SetSortKey(const string& _sortKey)
+{
+    m_sortKey = _sortKey;
+    m_sortKeyHasBeenSet = true;
+}
+
+bool DescribeUsageRankListRequest::SortKeyHasBeenSet() const
+{
+    return m_sortKeyHasBeenSet;
 }
 
 

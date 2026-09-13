@@ -22,11 +22,14 @@ using namespace std;
 
 InferenceHardwareSpecification::InferenceHardwareSpecification() :
     m_specHasBeenSet(false),
+    m_hardwareSpecIdHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_gPUNumHasBeenSet(false),
     m_cPUNumHasBeenSet(false),
     m_memSizeHasBeenSet(false),
-    m_gPUNumHasBeenSet(false),
-    m_gPUMemSizeHasBeenSet(false)
+    m_gPUMemSizeHasBeenSet(false),
+    m_diskSizeHasBeenSet(false),
+    m_allowedGPUNumsHasBeenSet(false)
 {
 }
 
@@ -45,6 +48,16 @@ CoreInternalOutcome InferenceHardwareSpecification::Deserialize(const rapidjson:
         m_specHasBeenSet = true;
     }
 
+    if (value.HasMember("HardwareSpecId") && !value["HardwareSpecId"].IsNull())
+    {
+        if (!value["HardwareSpecId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InferenceHardwareSpecification.HardwareSpecId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hardwareSpecId = string(value["HardwareSpecId"].GetString());
+        m_hardwareSpecIdHasBeenSet = true;
+    }
+
     if (value.HasMember("Name") && !value["Name"].IsNull())
     {
         if (!value["Name"].IsString())
@@ -53,6 +66,16 @@ CoreInternalOutcome InferenceHardwareSpecification::Deserialize(const rapidjson:
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("GPUNum") && !value["GPUNum"].IsNull())
+    {
+        if (!value["GPUNum"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `InferenceHardwareSpecification.GPUNum` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_gPUNum = value["GPUNum"].GetDouble();
+        m_gPUNumHasBeenSet = true;
     }
 
     if (value.HasMember("CPUNum") && !value["CPUNum"].IsNull())
@@ -75,16 +98,6 @@ CoreInternalOutcome InferenceHardwareSpecification::Deserialize(const rapidjson:
         m_memSizeHasBeenSet = true;
     }
 
-    if (value.HasMember("GPUNum") && !value["GPUNum"].IsNull())
-    {
-        if (!value["GPUNum"].IsLosslessDouble())
-        {
-            return CoreInternalOutcome(Core::Error("response `InferenceHardwareSpecification.GPUNum` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
-        }
-        m_gPUNum = value["GPUNum"].GetDouble();
-        m_gPUNumHasBeenSet = true;
-    }
-
     if (value.HasMember("GPUMemSize") && !value["GPUMemSize"].IsNull())
     {
         if (!value["GPUMemSize"].IsInt64())
@@ -93,6 +106,29 @@ CoreInternalOutcome InferenceHardwareSpecification::Deserialize(const rapidjson:
         }
         m_gPUMemSize = value["GPUMemSize"].GetInt64();
         m_gPUMemSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiskSize") && !value["DiskSize"].IsNull())
+    {
+        if (!value["DiskSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InferenceHardwareSpecification.DiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskSize = value["DiskSize"].GetInt64();
+        m_diskSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AllowedGPUNums") && !value["AllowedGPUNums"].IsNull())
+    {
+        if (!value["AllowedGPUNums"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InferenceHardwareSpecification.AllowedGPUNums` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AllowedGPUNums"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_allowedGPUNums.push_back((*itr).GetDouble());
+        }
+        m_allowedGPUNumsHasBeenSet = true;
     }
 
 
@@ -110,12 +146,28 @@ void InferenceHardwareSpecification::ToJsonObject(rapidjson::Value &value, rapid
         value.AddMember(iKey, rapidjson::Value(m_spec.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_hardwareSpecIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HardwareSpecId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hardwareSpecId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_nameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gPUNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GPUNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gPUNum, allocator);
     }
 
     if (m_cPUNumHasBeenSet)
@@ -134,20 +186,33 @@ void InferenceHardwareSpecification::ToJsonObject(rapidjson::Value &value, rapid
         value.AddMember(iKey, m_memSize, allocator);
     }
 
-    if (m_gPUNumHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "GPUNum";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_gPUNum, allocator);
-    }
-
     if (m_gPUMemSizeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GPUMemSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gPUMemSize, allocator);
+    }
+
+    if (m_diskSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_diskSize, allocator);
+    }
+
+    if (m_allowedGPUNumsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowedGPUNums";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_allowedGPUNums.begin(); itr != m_allowedGPUNums.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
+        }
     }
 
 }
@@ -169,6 +234,22 @@ bool InferenceHardwareSpecification::SpecHasBeenSet() const
     return m_specHasBeenSet;
 }
 
+string InferenceHardwareSpecification::GetHardwareSpecId() const
+{
+    return m_hardwareSpecId;
+}
+
+void InferenceHardwareSpecification::SetHardwareSpecId(const string& _hardwareSpecId)
+{
+    m_hardwareSpecId = _hardwareSpecId;
+    m_hardwareSpecIdHasBeenSet = true;
+}
+
+bool InferenceHardwareSpecification::HardwareSpecIdHasBeenSet() const
+{
+    return m_hardwareSpecIdHasBeenSet;
+}
+
 string InferenceHardwareSpecification::GetName() const
 {
     return m_name;
@@ -183,6 +264,22 @@ void InferenceHardwareSpecification::SetName(const string& _name)
 bool InferenceHardwareSpecification::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+double InferenceHardwareSpecification::GetGPUNum() const
+{
+    return m_gPUNum;
+}
+
+void InferenceHardwareSpecification::SetGPUNum(const double& _gPUNum)
+{
+    m_gPUNum = _gPUNum;
+    m_gPUNumHasBeenSet = true;
+}
+
+bool InferenceHardwareSpecification::GPUNumHasBeenSet() const
+{
+    return m_gPUNumHasBeenSet;
 }
 
 double InferenceHardwareSpecification::GetCPUNum() const
@@ -217,22 +314,6 @@ bool InferenceHardwareSpecification::MemSizeHasBeenSet() const
     return m_memSizeHasBeenSet;
 }
 
-double InferenceHardwareSpecification::GetGPUNum() const
-{
-    return m_gPUNum;
-}
-
-void InferenceHardwareSpecification::SetGPUNum(const double& _gPUNum)
-{
-    m_gPUNum = _gPUNum;
-    m_gPUNumHasBeenSet = true;
-}
-
-bool InferenceHardwareSpecification::GPUNumHasBeenSet() const
-{
-    return m_gPUNumHasBeenSet;
-}
-
 int64_t InferenceHardwareSpecification::GetGPUMemSize() const
 {
     return m_gPUMemSize;
@@ -247,5 +328,37 @@ void InferenceHardwareSpecification::SetGPUMemSize(const int64_t& _gPUMemSize)
 bool InferenceHardwareSpecification::GPUMemSizeHasBeenSet() const
 {
     return m_gPUMemSizeHasBeenSet;
+}
+
+int64_t InferenceHardwareSpecification::GetDiskSize() const
+{
+    return m_diskSize;
+}
+
+void InferenceHardwareSpecification::SetDiskSize(const int64_t& _diskSize)
+{
+    m_diskSize = _diskSize;
+    m_diskSizeHasBeenSet = true;
+}
+
+bool InferenceHardwareSpecification::DiskSizeHasBeenSet() const
+{
+    return m_diskSizeHasBeenSet;
+}
+
+vector<double> InferenceHardwareSpecification::GetAllowedGPUNums() const
+{
+    return m_allowedGPUNums;
+}
+
+void InferenceHardwareSpecification::SetAllowedGPUNums(const vector<double>& _allowedGPUNums)
+{
+    m_allowedGPUNums = _allowedGPUNums;
+    m_allowedGPUNumsHasBeenSet = true;
+}
+
+bool InferenceHardwareSpecification::AllowedGPUNumsHasBeenSet() const
+{
+    return m_allowedGPUNumsHasBeenSet;
 }
 

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同流程ID，为32位字符串
-                     * @return FlowId 合同流程ID，为32位字符串
+                     * 获取<p>合同流程ID，为32位字符串</p>
+                     * @return FlowId <p>合同流程ID，为32位字符串</p>
                      * 
                      */
                     std::string GetFlowId() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取补充动态合同签署人的结果数组
-                     * @return DynamicFlowApproverList 补充动态合同签署人的结果数组
+                     * 获取<p>补充动态合同签署人的结果数组</p>
+                     * @return DynamicFlowApproverList <p>补充动态合同签署人的结果数组</p>
                      * 
                      */
                     std::vector<DynamicFlowApproverResult> GetDynamicFlowApproverList() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合同流程ID，为32位字符串
+                     * <p>合同流程ID，为32位字符串</p>
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 补充动态合同签署人的结果数组
+                     * <p>补充动态合同签署人的结果数组</p>
                      */
                     std::vector<DynamicFlowApproverResult> m_dynamicFlowApproverList;
                     bool m_dynamicFlowApproverListHasBeenSet;

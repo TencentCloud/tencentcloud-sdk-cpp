@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取动态合同补充结果列表
-                     * @return DynamicFlowResultList 动态合同补充结果列表
+                     * 获取<p>动态合同补充结果列表</p>
+                     * @return DynamicFlowResultList <p>动态合同补充结果列表</p>
                      * 
                      */
                     std::vector<DynamicFlowResult> GetDynamicFlowResultList() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 动态合同补充结果列表
+                     * <p>动态合同补充结果列表</p>
                      */
                     std::vector<DynamicFlowResult> m_dynamicFlowResultList;
                     bool m_dynamicFlowResultListHasBeenSet;

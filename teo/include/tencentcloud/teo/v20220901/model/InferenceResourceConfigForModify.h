@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/InferenceAutoScalingConfig.h>
 #include <tencentcloud/teo/v20220901/model/InferenceManualInstanceConfig.h>
+#include <tencentcloud/teo/v20220901/model/InferenceHardwareConfigForModify.h>
 
 
 namespace TencentCloud
@@ -49,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取扩容缩容的方式。取值有：<li>Auto：根据请求量自动调整实例数量；</li><li>Manual：人工设置固定的实例数量。</li>
-                     * @return ScalingMode 扩容缩容的方式。取值有：<li>Auto：根据请求量自动调整实例数量；</li><li>Manual：人工设置固定的实例数量。</li>
+                     * 获取<p>扩容缩容的方式。取值有：<li>Auto：根据请求量自动调整实例数量；</li><li>Manual：人工设置固定的实例数量。</li></p>
+                     * @return ScalingMode <p>扩容缩容的方式。取值有：<li>Auto：根据请求量自动调整实例数量；</li><li>Manual：人工设置固定的实例数量。</li></p>
                      * 
                      */
                     std::string GetScalingMode() const;
 
                     /**
-                     * 设置扩容缩容的方式。取值有：<li>Auto：根据请求量自动调整实例数量；</li><li>Manual：人工设置固定的实例数量。</li>
-                     * @param _scalingMode 扩容缩容的方式。取值有：<li>Auto：根据请求量自动调整实例数量；</li><li>Manual：人工设置固定的实例数量。</li>
+                     * 设置<p>扩容缩容的方式。取值有：<li>Auto：根据请求量自动调整实例数量；</li><li>Manual：人工设置固定的实例数量。</li></p>
+                     * @param _scalingMode <p>扩容缩容的方式。取值有：<li>Auto：根据请求量自动调整实例数量；</li><li>Manual：人工设置固定的实例数量。</li></p>
                      * 
                      */
                     void SetScalingMode(const std::string& _scalingMode);
@@ -70,15 +71,15 @@ namespace TencentCloud
                     bool ScalingModeHasBeenSet() const;
 
                     /**
-                     * 获取推理服务自动伸缩配置。当 ScalingMode 为 Auto 时必填。
-                     * @return AutoScalingConfig 推理服务自动伸缩配置。当 ScalingMode 为 Auto 时必填。
+                     * 获取<p>推理服务自动伸缩配置。当 ScalingMode 为 Auto 时必填。</p>
+                     * @return AutoScalingConfig <p>推理服务自动伸缩配置。当 ScalingMode 为 Auto 时必填。</p>
                      * 
                      */
                     InferenceAutoScalingConfig GetAutoScalingConfig() const;
 
                     /**
-                     * 设置推理服务自动伸缩配置。当 ScalingMode 为 Auto 时必填。
-                     * @param _autoScalingConfig 推理服务自动伸缩配置。当 ScalingMode 为 Auto 时必填。
+                     * 设置<p>推理服务自动伸缩配置。当 ScalingMode 为 Auto 时必填。</p>
+                     * @param _autoScalingConfig <p>推理服务自动伸缩配置。当 ScalingMode 为 Auto 时必填。</p>
                      * 
                      */
                     void SetAutoScalingConfig(const InferenceAutoScalingConfig& _autoScalingConfig);
@@ -91,15 +92,15 @@ namespace TencentCloud
                     bool AutoScalingConfigHasBeenSet() const;
 
                     /**
-                     * 获取推理服务人工设置实例配置。当 ScalingMode 为 Manual 时必填。
-                     * @return ManualInstanceConfig 推理服务人工设置实例配置。当 ScalingMode 为 Manual 时必填。
+                     * 获取<p>推理服务人工设置实例配置。当 ScalingMode 为 Manual 时必填。</p>
+                     * @return ManualInstanceConfig <p>推理服务人工设置实例配置。当 ScalingMode 为 Manual 时必填。</p>
                      * 
                      */
                     InferenceManualInstanceConfig GetManualInstanceConfig() const;
 
                     /**
-                     * 设置推理服务人工设置实例配置。当 ScalingMode 为 Manual 时必填。
-                     * @param _manualInstanceConfig 推理服务人工设置实例配置。当 ScalingMode 为 Manual 时必填。
+                     * 设置<p>推理服务人工设置实例配置。当 ScalingMode 为 Manual 时必填。</p>
+                     * @param _manualInstanceConfig <p>推理服务人工设置实例配置。当 ScalingMode 为 Manual 时必填。</p>
                      * 
                      */
                     void SetManualInstanceConfig(const InferenceManualInstanceConfig& _manualInstanceConfig);
@@ -112,15 +113,15 @@ namespace TencentCloud
                     bool ManualInstanceConfigHasBeenSet() const;
 
                     /**
-                     * 获取单实例的并发数。默认值为 1。
-                     * @return Concurrency 单实例的并发数。默认值为 1。
+                     * 获取<p>单实例的并发数。默认值为 1。</p>
+                     * @return Concurrency <p>单实例的并发数。默认值为 1。</p>
                      * 
                      */
                     int64_t GetConcurrency() const;
 
                     /**
-                     * 设置单实例的并发数。默认值为 1。
-                     * @param _concurrency 单实例的并发数。默认值为 1。
+                     * 设置<p>单实例的并发数。默认值为 1。</p>
+                     * @param _concurrency <p>单实例的并发数。默认值为 1。</p>
                      * 
                      */
                     void SetConcurrency(const int64_t& _concurrency);
@@ -132,31 +133,58 @@ namespace TencentCloud
                      */
                     bool ConcurrencyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>推理服务的硬件资源配置。</p>
+                     * @return HardwareConfig <p>推理服务的硬件资源配置。</p>
+                     * 
+                     */
+                    InferenceHardwareConfigForModify GetHardwareConfig() const;
+
+                    /**
+                     * 设置<p>推理服务的硬件资源配置。</p>
+                     * @param _hardwareConfig <p>推理服务的硬件资源配置。</p>
+                     * 
+                     */
+                    void SetHardwareConfig(const InferenceHardwareConfigForModify& _hardwareConfig);
+
+                    /**
+                     * 判断参数 HardwareConfig 是否已赋值
+                     * @return HardwareConfig 是否已赋值
+                     * 
+                     */
+                    bool HardwareConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 扩容缩容的方式。取值有：<li>Auto：根据请求量自动调整实例数量；</li><li>Manual：人工设置固定的实例数量。</li>
+                     * <p>扩容缩容的方式。取值有：<li>Auto：根据请求量自动调整实例数量；</li><li>Manual：人工设置固定的实例数量。</li></p>
                      */
                     std::string m_scalingMode;
                     bool m_scalingModeHasBeenSet;
 
                     /**
-                     * 推理服务自动伸缩配置。当 ScalingMode 为 Auto 时必填。
+                     * <p>推理服务自动伸缩配置。当 ScalingMode 为 Auto 时必填。</p>
                      */
                     InferenceAutoScalingConfig m_autoScalingConfig;
                     bool m_autoScalingConfigHasBeenSet;
 
                     /**
-                     * 推理服务人工设置实例配置。当 ScalingMode 为 Manual 时必填。
+                     * <p>推理服务人工设置实例配置。当 ScalingMode 为 Manual 时必填。</p>
                      */
                     InferenceManualInstanceConfig m_manualInstanceConfig;
                     bool m_manualInstanceConfigHasBeenSet;
 
                     /**
-                     * 单实例的并发数。默认值为 1。
+                     * <p>单实例的并发数。默认值为 1。</p>
                      */
                     int64_t m_concurrency;
                     bool m_concurrencyHasBeenSet;
+
+                    /**
+                     * <p>推理服务的硬件资源配置。</p>
+                     */
+                    InferenceHardwareConfigForModify m_hardwareConfig;
+                    bool m_hardwareConfigHasBeenSet;
 
                 };
             }

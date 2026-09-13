@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同(流程)组的合同组Id
-                     * @return FlowGroupId 合同(流程)组的合同组Id
+                     * 获取<p>合同(流程)组的合同组Id</p>
+                     * @return FlowGroupId <p>合同(流程)组的合同组Id</p>
                      * 
                      */
                     std::string GetFlowGroupId() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool FlowGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取合同(流程)组中子合同列表.
-                     * @return FlowIds 合同(流程)组中子合同列表.
+                     * 获取<p>合同(流程)组中子合同列表.</p>
+                     * @return FlowIds <p>合同(流程)组中子合同列表.</p>
                      * 
                      */
                     std::vector<std::string> GetFlowIds() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool FlowIdsHasBeenSet() const;
 
                     /**
-                     * 获取合同组签署方信息。
-                     * @return Approvers 合同组签署方信息。
+                     * 获取<p>合同组签署方信息。</p>
+                     * @return Approvers <p>合同组签署方信息。</p>
                      * 
                      */
                     std::vector<FlowGroupApprovers> GetApprovers() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool ApproversHasBeenSet() const;
 
                     /**
-                     * 获取发起审批流id，仅在发起时指定FlowGroupOptions.FlowGroupNeedWorkflow=true时返回
-                     * @return WorkflowInstanceId 发起审批流id，仅在发起时指定FlowGroupOptions.FlowGroupNeedWorkflow=true时返回
+                     * 获取<p>发起审批流id，仅在发起时指定FlowGroupOptions.FlowGroupNeedWorkflow=true时返回</p>
+                     * @return WorkflowInstanceId <p>发起审批流id，仅在发起时指定FlowGroupOptions.FlowGroupNeedWorkflow=true时返回</p>
                      * 
                      */
                     std::string GetWorkflowInstanceId() const;
@@ -103,25 +103,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合同(流程)组的合同组Id
+                     * <p>合同(流程)组的合同组Id</p>
                      */
                     std::string m_flowGroupId;
                     bool m_flowGroupIdHasBeenSet;
 
                     /**
-                     * 合同(流程)组中子合同列表.
+                     * <p>合同(流程)组中子合同列表.</p>
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;
 
                     /**
-                     * 合同组签署方信息。
+                     * <p>合同组签署方信息。</p>
                      */
                     std::vector<FlowGroupApprovers> m_approvers;
                     bool m_approversHasBeenSet;
 
                     /**
-                     * 发起审批流id，仅在发起时指定FlowGroupOptions.FlowGroupNeedWorkflow=true时返回
+                     * <p>发起审批流id，仅在发起时指定FlowGroupOptions.FlowGroupNeedWorkflow=true时返回</p>
                      */
                     std::string m_workflowInstanceId;
                     bool m_workflowInstanceIdHasBeenSet;

@@ -29,7 +29,9 @@ TargetInfo::TargetInfo() :
     m_eventIdHasBeenSet(false),
     m_summaryHasBeenSet(false),
     m_channelIdHasBeenSet(false),
-    m_thumbnailHasBeenSet(false)
+    m_thumbnailHasBeenSet(false),
+    m_confidenceHasBeenSet(false),
+    m_taskInfoHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,33 @@ CoreInternalOutcome TargetInfo::Deserialize(const rapidjson::Value &value)
         m_thumbnailHasBeenSet = true;
     }
 
+    if (value.HasMember("Confidence") && !value["Confidence"].IsNull())
+    {
+        if (!value["Confidence"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetInfo.Confidence` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_confidence = string(value["Confidence"].GetString());
+        m_confidenceHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskInfo") && !value["TaskInfo"].IsNull())
+    {
+        if (!value["TaskInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetInfo.TaskInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_taskInfo.Deserialize(value["TaskInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_taskInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +234,23 @@ void TargetInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Thumbnail";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_thumbnail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_confidenceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Confidence";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_confidence.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_taskInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -352,5 +398,37 @@ void TargetInfo::SetThumbnail(const string& _thumbnail)
 bool TargetInfo::ThumbnailHasBeenSet() const
 {
     return m_thumbnailHasBeenSet;
+}
+
+string TargetInfo::GetConfidence() const
+{
+    return m_confidence;
+}
+
+void TargetInfo::SetConfidence(const string& _confidence)
+{
+    m_confidence = _confidence;
+    m_confidenceHasBeenSet = true;
+}
+
+bool TargetInfo::ConfidenceHasBeenSet() const
+{
+    return m_confidenceHasBeenSet;
+}
+
+SeeTaskInfo TargetInfo::GetTaskInfo() const
+{
+    return m_taskInfo;
+}
+
+void TargetInfo::SetTaskInfo(const SeeTaskInfo& _taskInfo)
+{
+    m_taskInfo = _taskInfo;
+    m_taskInfoHasBeenSet = true;
+}
+
+bool TargetInfo::TaskInfoHasBeenSet() const
+{
+    return m_taskInfoHasBeenSet;
 }
 

@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取<p>自动签使用的场景值, 可以选择的场景值如下:</p><ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
-                     * @return SceneKey <p>自动签使用的场景值, 可以选择的场景值如下:</p><ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+                     * 获取<p>“授权签”使用的场景值, 可以选择的场景值如下:<ul><li> <strong>E_PRESCRIPTION_AUTO_SIGN</strong> :  电子处方场景</li><li> <strong>OTHER</strong> :  通用场景</li></ul></p>
+                     * @return SceneKey <p>“授权签”使用的场景值, 可以选择的场景值如下:<ul><li> <strong>E_PRESCRIPTION_AUTO_SIGN</strong> :  电子处方场景</li><li> <strong>OTHER</strong> :  通用场景</li></ul></p>
                      * 
                      */
                     std::string GetSceneKey() const;
 
                     /**
-                     * 设置<p>自动签使用的场景值, 可以选择的场景值如下:</p><ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
-                     * @param _sceneKey <p>自动签使用的场景值, 可以选择的场景值如下:</p><ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+                     * 设置<p>“授权签”使用的场景值, 可以选择的场景值如下:<ul><li> <strong>E_PRESCRIPTION_AUTO_SIGN</strong> :  电子处方场景</li><li> <strong>OTHER</strong> :  通用场景</li></ul></p>
+                     * @param _sceneKey <p>“授权签”使用的场景值, 可以选择的场景值如下:<ul><li> <strong>E_PRESCRIPTION_AUTO_SIGN</strong> :  电子处方场景</li><li> <strong>OTHER</strong> :  通用场景</li></ul></p>
                      * 
                      */
                     void SetSceneKey(const std::string& _sceneKey);
@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool SceneKeyHasBeenSet() const;
 
                     /**
-                     * 获取<p>自动签开通个人用户信息，包括名字，身份证等。</p>
-                     * @return UserInfo <p>自动签开通个人用户信息，包括名字，身份证等。</p>
+                     * 获取<p>“授权签”开通个人用户信息，包括名字，身份证等。</p>
+                     * @return UserInfo <p>“授权签”开通个人用户信息，包括名字，身份证等。</p>
                      * 
                      */
                     UserThreeFactor GetUserInfo() const;
 
                     /**
-                     * 设置<p>自动签开通个人用户信息，包括名字，身份证等。</p>
-                     * @param _userInfo <p>自动签开通个人用户信息，包括名字，身份证等。</p>
+                     * 设置<p>“授权签”开通个人用户信息，包括名字，身份证等。</p>
+                     * @param _userInfo <p>“授权签”开通个人用户信息，包括名字，身份证等。</p>
                      * 
                      */
                     void SetUserInfo(const UserThreeFactor& _userInfo);
@@ -180,13 +180,13 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * <p>自动签使用的场景值, 可以选择的场景值如下:</p><ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+                     * <p>“授权签”使用的场景值, 可以选择的场景值如下:<ul><li> <strong>E_PRESCRIPTION_AUTO_SIGN</strong> :  电子处方场景</li><li> <strong>OTHER</strong> :  通用场景</li></ul></p>
                      */
                     std::string m_sceneKey;
                     bool m_sceneKeyHasBeenSet;
 
                     /**
-                     * <p>自动签开通个人用户信息，包括名字，身份证等。</p>
+                     * <p>“授权签”开通个人用户信息，包括名字，身份证等。</p>
                      */
                     UserThreeFactor m_userInfo;
                     bool m_userInfoHasBeenSet;

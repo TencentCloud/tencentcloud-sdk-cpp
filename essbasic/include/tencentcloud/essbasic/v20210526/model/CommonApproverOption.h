@@ -36,7 +36,7 @@ namespace TencentCloud
             {
                 /**
                 * 签署人配置信息。
-此参数对子客和自动签无效，不允许进行修改。
+此参数对子客和“授权签”无效，不允许进行修改。
                 */
                 class CommonApproverOption : public AbstractModel
                 {

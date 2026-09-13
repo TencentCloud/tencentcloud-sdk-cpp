@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool DimensionHasBeenSet() const;
 
                     /**
-                     * 获取<p>回填请求的指标族：tokens / search 。</p>
-                     * @return MetricType <p>回填请求的指标族：tokens / search 。</p>
+                     * 获取<p>回填请求的指标族：取值同入参 MetricType（tokens / search / apikey_usage）</p><p>枚举值：</p><ul><li>tokens： tokens</li></ul>
+                     * @return MetricType <p>回填请求的指标族：取值同入参 MetricType（tokens / search / apikey_usage）</p><p>枚举值：</p><ul><li>tokens： tokens</li></ul>
                      * 
                      */
                     std::string GetMetricType() const;
@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool MetricTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>本次响应中 Stats / Series / PageStats / TotalStats 实际包含的 metric key 列表，按MetricType 区分：tokens=[Total,Input,Output,Cache]、search=[SearchRequestCount,SearchCount]</p>
-                     * @return MetricKeys <p>本次响应中 Stats / Series / PageStats / TotalStats 实际包含的 metric key 列表，按MetricType 区分：tokens=[Total,Input,Output,Cache]、search=[SearchRequestCount,SearchCount]</p>
+                     * 获取<p>本次响应中 Stats / Series / PageStats / TotalStats 实际包含的 metric key 列表，按MetricType 区分：<br>tokens=[TotalToken, InputTotalToken, OutputTotalToken, CacheTotalToken]<br>search=[SearchRequestCount,SearchCount]<br>apikey_usage=[TotalToken, InputTotalToken, OutputTotalToken, CacheTotalToken, RequestCount, RequestFailCount]</p>
+                     * @return MetricKeys <p>本次响应中 Stats / Series / PageStats / TotalStats 实际包含的 metric key 列表，按MetricType 区分：<br>tokens=[TotalToken, InputTotalToken, OutputTotalToken, CacheTotalToken]<br>search=[SearchRequestCount,SearchCount]<br>apikey_usage=[TotalToken, InputTotalToken, OutputTotalToken, CacheTotalToken, RequestCount, RequestFailCount]</p>
                      * 
                      */
                     std::vector<std::string> GetMetricKeys() const;
@@ -200,8 +200,8 @@ namespace TencentCloud
                     bool TimestampsHasBeenSet() const;
 
                     /**
-                     * 获取<p>对象排行列表，按<code>MetricKeys[0]</code>降序排序。ShowAll=false 时为当前页 10 个对象（含 Series）；ShowAll=true 时为全量对象（不含 Series，用于 CSV 导出）。</p>
-                     * @return TopList <p>对象排行列表，按<code>MetricKeys[0]</code>降序排序。ShowAll=false 时为当前页 10 个对象（含 Series）；ShowAll=true 时为全量对象（不含 Series，用于 CSV 导出）。</p>
+                     * 获取<p>对象排行列表，按 SortKey 降序排序。ShowAll=false 时为当前页 10 个对象（含 Series）；ShowAll=true 时为全量对象（不含 Series，用于 CSV 导出）。</p>
+                     * @return TopList <p>对象排行列表，按 SortKey 降序排序。ShowAll=false 时为当前页 10 个对象（含 Series）；ShowAll=true 时为全量对象（不含 Series，用于 CSV 导出）。</p>
                      * 
                      */
                     std::vector<UsageRankItem> GetTopList() const;
@@ -241,6 +241,20 @@ namespace TencentCloud
                      */
                     bool TotalStatsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>排序指标键</p>
+                     * @return SortKey <p>排序指标键</p>
+                     * 
+                     */
+                    std::string GetSortKey() const;
+
+                    /**
+                     * 判断参数 SortKey 是否已赋值
+                     * @return SortKey 是否已赋值
+                     * 
+                     */
+                    bool SortKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -250,13 +264,13 @@ namespace TencentCloud
                     bool m_dimensionHasBeenSet;
 
                     /**
-                     * <p>回填请求的指标族：tokens / search 。</p>
+                     * <p>回填请求的指标族：取值同入参 MetricType（tokens / search / apikey_usage）</p><p>枚举值：</p><ul><li>tokens： tokens</li></ul>
                      */
                     std::string m_metricType;
                     bool m_metricTypeHasBeenSet;
 
                     /**
-                     * <p>本次响应中 Stats / Series / PageStats / TotalStats 实际包含的 metric key 列表，按MetricType 区分：tokens=[Total,Input,Output,Cache]、search=[SearchRequestCount,SearchCount]</p>
+                     * <p>本次响应中 Stats / Series / PageStats / TotalStats 实际包含的 metric key 列表，按MetricType 区分：<br>tokens=[TotalToken, InputTotalToken, OutputTotalToken, CacheTotalToken]<br>search=[SearchRequestCount,SearchCount]<br>apikey_usage=[TotalToken, InputTotalToken, OutputTotalToken, CacheTotalToken, RequestCount, RequestFailCount]</p>
                      */
                     std::vector<std::string> m_metricKeys;
                     bool m_metricKeysHasBeenSet;
@@ -310,7 +324,7 @@ namespace TencentCloud
                     bool m_timestampsHasBeenSet;
 
                     /**
-                     * <p>对象排行列表，按<code>MetricKeys[0]</code>降序排序。ShowAll=false 时为当前页 10 个对象（含 Series）；ShowAll=true 时为全量对象（不含 Series，用于 CSV 导出）。</p>
+                     * <p>对象排行列表，按 SortKey 降序排序。ShowAll=false 时为当前页 10 个对象（含 Series）；ShowAll=true 时为全量对象（不含 Series，用于 CSV 导出）。</p>
                      */
                     std::vector<UsageRankItem> m_topList;
                     bool m_topListHasBeenSet;
@@ -326,6 +340,12 @@ namespace TencentCloud
                      */
                     UsageStats m_totalStats;
                     bool m_totalStatsHasBeenSet;
+
+                    /**
+                     * <p>排序指标键</p>
+                     */
+                    std::string m_sortKey;
+                    bool m_sortKeyHasBeenSet;
 
                 };
             }

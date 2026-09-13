@@ -33,7 +33,6 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/ModifyApplicationResponse.h
   include/tencentcloud/tsf/v20180326/model/TsfPageLicenseTag.h
   include/tencentcloud/tsf/v20180326/model/DescribeApiVersionsResponse.h
-  include/tencentcloud/tsf/v20180326/model/ReassociateBusinessLogConfigRequest.h
   include/tencentcloud/tsf/v20180326/model/StopContainerGroupResponse.h
   include/tencentcloud/tsf/v20180326/model/CreateConfigTemplateWithDetailRespResponse.h
   include/tencentcloud/tsf/v20180326/model/DeletePathRewritesRequest.h
@@ -439,7 +438,6 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/UpdateGatewayApiRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeInstancesRequest.h
   include/tencentcloud/tsf/v20180326/model/GroupRelease.h
-  include/tencentcloud/tsf/v20180326/model/ReassociateBusinessLogConfigResponse.h
   include/tencentcloud/tsf/v20180326/model/PathRewriteCreateObject.h
   include/tencentcloud/tsf/v20180326/model/PackageConfig.h
   include/tencentcloud/tsf/v20180326/model/DescribeApiGroupsRequest.h
@@ -655,7 +653,6 @@ set(tsf_src
   src/v20180326/model/ModifyApplicationResponse.cpp
   src/v20180326/model/TsfPageLicenseTag.cpp
   src/v20180326/model/DescribeApiVersionsResponse.cpp
-  src/v20180326/model/ReassociateBusinessLogConfigRequest.cpp
   src/v20180326/model/StopContainerGroupResponse.cpp
   src/v20180326/model/CreateConfigTemplateWithDetailRespResponse.cpp
   src/v20180326/model/DeletePathRewritesRequest.cpp
@@ -1061,7 +1058,6 @@ set(tsf_src
   src/v20180326/model/UpdateGatewayApiRequest.cpp
   src/v20180326/model/DescribeInstancesRequest.cpp
   src/v20180326/model/GroupRelease.cpp
-  src/v20180326/model/ReassociateBusinessLogConfigResponse.cpp
   src/v20180326/model/PathRewriteCreateObject.cpp
   src/v20180326/model/PackageConfig.cpp
   src/v20180326/model/DescribeApiGroupsRequest.cpp

@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool ApproveTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签</p>
-                     * @return ApproveType <p>签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签</p>
+                     * 获取<p>签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业“授权签”</p>
+                     * @return ApproveType <p>签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业“授权签”</p>
                      * 
                      */
                     std::string GetApproveType() const;
 
                     /**
-                     * 设置<p>签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签</p>
-                     * @param _approveType <p>签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签</p>
+                     * 设置<p>签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业“授权签”</p>
+                     * @param _approveType <p>签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业“授权签”</p>
                      * 
                      */
                     void SetApproveType(const std::string& _approveType);
@@ -455,7 +455,7 @@ namespace TencentCloud
                     bool m_approveTimeHasBeenSet;
 
                     /**
-                     * <p>签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签</p>
+                     * <p>签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业“授权签”</p>
                      */
                     std::string m_approveType;
                     bool m_approveTypeHasBeenSet;

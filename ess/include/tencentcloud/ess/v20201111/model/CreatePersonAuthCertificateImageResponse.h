@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取个人用户认证证书图片下载URL，`有效期为5分钟`，超过有效期后将无法再下载。
-                     * @return AuthCertUrl 个人用户认证证书图片下载URL，`有效期为5分钟`，超过有效期后将无法再下载。
+                     * 获取<p>个人用户认证证书图片下载URL，<code>有效期为5分钟</code>，超过有效期后将无法再下载。</p>
+                     * @return AuthCertUrl <p>个人用户认证证书图片下载URL，<code>有效期为5分钟</code>，超过有效期后将无法再下载。</p>
                      * 
                      */
                     std::string GetAuthCertUrl() const;
@@ -58,14 +58,8 @@ namespace TencentCloud
                     bool AuthCertUrlHasBeenSet() const;
 
                     /**
-                     * 获取个人用户认证证书的编号, 为20位数字组成的字符串,  由腾讯电子签下发此编号 。
-该编号会合成到个人用户证书证明图片。
-
-注: `个人用户认证证书的编号和证明图片绑定, 获取新的证明图片编号会变动`
-                     * @return ImageCertId 个人用户认证证书的编号, 为20位数字组成的字符串,  由腾讯电子签下发此编号 。
-该编号会合成到个人用户证书证明图片。
-
-注: `个人用户认证证书的编号和证明图片绑定, 获取新的证明图片编号会变动`
+                     * 获取<p>个人用户认证证书的编号, 为20位数字组成的字符串,  由腾讯电子签下发此编号 。<br>该编号会合成到个人用户证书证明图片。</p><p>注: <code>个人用户认证证书的编号和证明图片绑定, 获取新的证明图片编号会变动</code></p>
+                     * @return ImageCertId <p>个人用户认证证书的编号, 为20位数字组成的字符串,  由腾讯电子签下发此编号 。<br>该编号会合成到个人用户证书证明图片。</p><p>注: <code>个人用户认证证书的编号和证明图片绑定, 获取新的证明图片编号会变动</code></p>
                      * 
                      */
                     std::string GetImageCertId() const;
@@ -78,8 +72,8 @@ namespace TencentCloud
                     bool ImageCertIdHasBeenSet() const;
 
                     /**
-                     * 获取在数字证书申请过程中，系统会自动生成一个独一无二的序列号。请注意，当证书到期并自动续期时，该序列号将会发生变化。值得注意的是，此序列号不会被合成至个人用户证书的证明图片中。
-                     * @return SerialNumber 在数字证书申请过程中，系统会自动生成一个独一无二的序列号。请注意，当证书到期并自动续期时，该序列号将会发生变化。值得注意的是，此序列号不会被合成至个人用户证书的证明图片中。
+                     * 获取<p>在数字证书申请过程中，系统会自动生成一个独一无二的序列号。请注意，当证书到期并自动续期时，该序列号将会发生变化。值得注意的是，此序列号不会被合成至个人用户证书的证明图片中。</p>
+                     * @return SerialNumber <p>在数字证书申请过程中，系统会自动生成一个独一无二的序列号。请注意，当证书到期并自动续期时，该序列号将会发生变化。值得注意的是，此序列号不会被合成至个人用户证书的证明图片中。</p>
                      * 
                      */
                     std::string GetSerialNumber() const;
@@ -92,10 +86,8 @@ namespace TencentCloud
                     bool SerialNumberHasBeenSet() const;
 
                     /**
-                     * 获取CA证书颁发时间，格式为Unix标准时间戳（秒）   
-该时间格式化后会合成到个人用户证书证明图片
-                     * @return ValidFrom CA证书颁发时间，格式为Unix标准时间戳（秒）   
-该时间格式化后会合成到个人用户证书证明图片
+                     * 获取<p>CA证书颁发时间，格式为Unix标准时间戳（秒）<br>该时间格式化后会合成到个人用户证书证明图片</p>
+                     * @return ValidFrom <p>CA证书颁发时间，格式为Unix标准时间戳（秒）<br>该时间格式化后会合成到个人用户证书证明图片</p>
                      * 
                      */
                     uint64_t GetValidFrom() const;
@@ -108,10 +100,8 @@ namespace TencentCloud
                     bool ValidFromHasBeenSet() const;
 
                     /**
-                     * 获取CA证书有效截止时间，格式为Unix标准时间戳（秒）
-该时间格式化后会合成到个人用户证书证明图片
-                     * @return ValidTo CA证书有效截止时间，格式为Unix标准时间戳（秒）
-该时间格式化后会合成到个人用户证书证明图片
+                     * 获取<p>CA证书有效截止时间，格式为Unix标准时间戳（秒）<br>该时间格式化后会合成到个人用户证书证明图片</p>
+                     * @return ValidTo <p>CA证书有效截止时间，格式为Unix标准时间戳（秒）<br>该时间格式化后会合成到个人用户证书证明图片</p>
                      * 
                      */
                     uint64_t GetValidTo() const;
@@ -126,36 +116,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 个人用户认证证书图片下载URL，`有效期为5分钟`，超过有效期后将无法再下载。
+                     * <p>个人用户认证证书图片下载URL，<code>有效期为5分钟</code>，超过有效期后将无法再下载。</p>
                      */
                     std::string m_authCertUrl;
                     bool m_authCertUrlHasBeenSet;
 
                     /**
-                     * 个人用户认证证书的编号, 为20位数字组成的字符串,  由腾讯电子签下发此编号 。
-该编号会合成到个人用户证书证明图片。
-
-注: `个人用户认证证书的编号和证明图片绑定, 获取新的证明图片编号会变动`
+                     * <p>个人用户认证证书的编号, 为20位数字组成的字符串,  由腾讯电子签下发此编号 。<br>该编号会合成到个人用户证书证明图片。</p><p>注: <code>个人用户认证证书的编号和证明图片绑定, 获取新的证明图片编号会变动</code></p>
                      */
                     std::string m_imageCertId;
                     bool m_imageCertIdHasBeenSet;
 
                     /**
-                     * 在数字证书申请过程中，系统会自动生成一个独一无二的序列号。请注意，当证书到期并自动续期时，该序列号将会发生变化。值得注意的是，此序列号不会被合成至个人用户证书的证明图片中。
+                     * <p>在数字证书申请过程中，系统会自动生成一个独一无二的序列号。请注意，当证书到期并自动续期时，该序列号将会发生变化。值得注意的是，此序列号不会被合成至个人用户证书的证明图片中。</p>
                      */
                     std::string m_serialNumber;
                     bool m_serialNumberHasBeenSet;
 
                     /**
-                     * CA证书颁发时间，格式为Unix标准时间戳（秒）   
-该时间格式化后会合成到个人用户证书证明图片
+                     * <p>CA证书颁发时间，格式为Unix标准时间戳（秒）<br>该时间格式化后会合成到个人用户证书证明图片</p>
                      */
                     uint64_t m_validFrom;
                     bool m_validFromHasBeenSet;
 
                     /**
-                     * CA证书有效截止时间，格式为Unix标准时间戳（秒）
-该时间格式化后会合成到个人用户证书证明图片
+                     * <p>CA证书有效截止时间，格式为Unix标准时间戳（秒）<br>该时间格式化后会合成到个人用户证书证明图片</p>
                      */
                     uint64_t m_validTo;
                     bool m_validToHasBeenSet;

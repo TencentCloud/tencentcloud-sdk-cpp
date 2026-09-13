@@ -431,6 +431,27 @@ namespace TencentCloud
                      */
                     bool COSURIHasBeenSet() const;
 
+                    /**
+                     * 获取<p>任务的输入 URL</p>
+                     * @return InputURL <p>任务的输入 URL</p>
+                     * 
+                     */
+                    std::string GetInputURL() const;
+
+                    /**
+                     * 设置<p>任务的输入 URL</p>
+                     * @param _inputURL <p>任务的输入 URL</p>
+                     * 
+                     */
+                    void SetInputURL(const std::string& _inputURL);
+
+                    /**
+                     * 判断参数 InputURL 是否已赋值
+                     * @return InputURL 是否已赋值
+                     * 
+                     */
+                    bool InputURLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -540,6 +561,12 @@ namespace TencentCloud
                      */
                     std::string m_cOSURI;
                     bool m_cOSURIHasBeenSet;
+
+                    /**
+                     * <p>任务的输入 URL</p>
+                     */
+                    std::string m_inputURL;
+                    bool m_inputURLHasBeenSet;
 
                 };
             }

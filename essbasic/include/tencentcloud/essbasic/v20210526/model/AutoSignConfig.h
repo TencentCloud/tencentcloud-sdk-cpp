@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 自动签开启、签署相关配置
+                * “授权签”开启、签署相关配置
                 */
                 class AutoSignConfig : public AbstractModel
                 {

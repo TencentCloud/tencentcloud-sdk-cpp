@@ -24,7 +24,8 @@ InferenceResourceConfigForModify::InferenceResourceConfigForModify() :
     m_scalingModeHasBeenSet(false),
     m_autoScalingConfigHasBeenSet(false),
     m_manualInstanceConfigHasBeenSet(false),
-    m_concurrencyHasBeenSet(false)
+    m_concurrencyHasBeenSet(false),
+    m_hardwareConfigHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,23 @@ CoreInternalOutcome InferenceResourceConfigForModify::Deserialize(const rapidjso
         m_concurrencyHasBeenSet = true;
     }
 
+    if (value.HasMember("HardwareConfig") && !value["HardwareConfig"].IsNull())
+    {
+        if (!value["HardwareConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InferenceResourceConfigForModify.HardwareConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_hardwareConfig.Deserialize(value["HardwareConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_hardwareConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +144,15 @@ void InferenceResourceConfigForModify::ToJsonObject(rapidjson::Value &value, rap
         string key = "Concurrency";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_concurrency, allocator);
+    }
+
+    if (m_hardwareConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HardwareConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_hardwareConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -193,5 +220,21 @@ void InferenceResourceConfigForModify::SetConcurrency(const int64_t& _concurrenc
 bool InferenceResourceConfigForModify::ConcurrencyHasBeenSet() const
 {
     return m_concurrencyHasBeenSet;
+}
+
+InferenceHardwareConfigForModify InferenceResourceConfigForModify::GetHardwareConfig() const
+{
+    return m_hardwareConfig;
+}
+
+void InferenceResourceConfigForModify::SetHardwareConfig(const InferenceHardwareConfigForModify& _hardwareConfig)
+{
+    m_hardwareConfig = _hardwareConfig;
+    m_hardwareConfigHasBeenSet = true;
+}
+
+bool InferenceResourceConfigForModify::HardwareConfigHasBeenSet() const
+{
+    return m_hardwareConfigHasBeenSet;
 }
 

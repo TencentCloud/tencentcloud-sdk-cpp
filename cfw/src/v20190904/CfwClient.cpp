@@ -3940,6 +3940,56 @@ CfwClient::DescribeNDRAssetIdentificationListOutcomeCallable CfwClient::Describe
     return prom->get_future();
 }
 
+CfwClient::DescribeNDRDataLeakOutAlertDetailOutcome CfwClient::DescribeNDRDataLeakOutAlertDetail(const DescribeNDRDataLeakOutAlertDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNDRDataLeakOutAlertDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNDRDataLeakOutAlertDetailResponse rsp = DescribeNDRDataLeakOutAlertDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNDRDataLeakOutAlertDetailOutcome(rsp);
+        else
+            return DescribeNDRDataLeakOutAlertDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNDRDataLeakOutAlertDetailOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeNDRDataLeakOutAlertDetailAsync(const DescribeNDRDataLeakOutAlertDetailRequest& request, const DescribeNDRDataLeakOutAlertDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeNDRDataLeakOutAlertDetailRequest&;
+    using Resp = DescribeNDRDataLeakOutAlertDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeNDRDataLeakOutAlertDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeNDRDataLeakOutAlertDetailOutcomeCallable CfwClient::DescribeNDRDataLeakOutAlertDetailCallable(const DescribeNDRDataLeakOutAlertDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeNDRDataLeakOutAlertDetailOutcome>>();
+    DescribeNDRDataLeakOutAlertDetailAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeNDRDataLeakOutAlertDetailRequest&,
+        DescribeNDRDataLeakOutAlertDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::DescribeNDRDataLeakOutAlertListOutcome CfwClient::DescribeNDRDataLeakOutAlertList(const DescribeNDRDataLeakOutAlertListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNDRDataLeakOutAlertList");

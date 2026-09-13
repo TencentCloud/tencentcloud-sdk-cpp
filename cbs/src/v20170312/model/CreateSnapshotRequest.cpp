@@ -28,6 +28,7 @@ CreateSnapshotRequest::CreateSnapshotRequest() :
     m_deadlineHasBeenSet(false),
     m_diskBackupIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_localSnapHasBeenSet(false),
     m_diskUsageHasBeenSet(false)
 {
 }
@@ -84,6 +85,14 @@ string CreateSnapshotRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_localSnapHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LocalSnap";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_localSnap, allocator);
     }
 
     if (m_diskUsageHasBeenSet)
@@ -180,6 +189,22 @@ void CreateSnapshotRequest::SetTags(const vector<Tag>& _tags)
 bool CreateSnapshotRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+bool CreateSnapshotRequest::GetLocalSnap() const
+{
+    return m_localSnap;
+}
+
+void CreateSnapshotRequest::SetLocalSnap(const bool& _localSnap)
+{
+    m_localSnap = _localSnap;
+    m_localSnapHasBeenSet = true;
+}
+
+bool CreateSnapshotRequest::LocalSnapHasBeenSet() const
+{
+    return m_localSnapHasBeenSet;
 }
 
 string CreateSnapshotRequest::GetDiskUsage() const

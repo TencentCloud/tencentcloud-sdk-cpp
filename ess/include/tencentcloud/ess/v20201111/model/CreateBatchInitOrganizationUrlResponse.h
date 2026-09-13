@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取小程序路径
-                     * @return MiniAppPath 小程序路径
+                     * 获取<p>小程序路径</p>
+                     * @return MiniAppPath <p>小程序路径</p>
                      * 
                      */
                     std::string GetMiniAppPath() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool MiniAppPathHasBeenSet() const;
 
                     /**
-                     * 获取操作长链
-                     * @return OperateLongUrl 操作长链
+                     * 获取<p>操作长链</p>
+                     * @return OperateLongUrl <p>操作长链</p>
                      * 
                      */
                     std::string GetOperateLongUrl() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool OperateLongUrlHasBeenSet() const;
 
                     /**
-                     * 获取操作短链
-                     * @return OperateShortUrl 操作短链
+                     * 获取<p>操作短链</p>
+                     * @return OperateShortUrl <p>操作短链</p>
                      * 
                      */
                     std::string GetOperateShortUrl() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool OperateShortUrlHasBeenSet() const;
 
                     /**
-                     * 获取操作二维码
-                     * @return QRCodeUrl 操作二维码
+                     * 获取<p>操作二维码</p>
+                     * @return QRCodeUrl <p>操作二维码</p>
                      * 
                      */
                     std::string GetQRCodeUrl() const;
@@ -102,25 +102,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 小程序路径
+                     * <p>小程序路径</p>
                      */
                     std::string m_miniAppPath;
                     bool m_miniAppPathHasBeenSet;
 
                     /**
-                     * 操作长链
+                     * <p>操作长链</p>
                      */
                     std::string m_operateLongUrl;
                     bool m_operateLongUrlHasBeenSet;
 
                     /**
-                     * 操作短链
+                     * <p>操作短链</p>
                      */
                     std::string m_operateShortUrl;
                     bool m_operateShortUrlHasBeenSet;
 
                     /**
-                     * 操作二维码
+                     * <p>操作二维码</p>
                      */
                     std::string m_qRCodeUrl;
                     bool m_qRCodeUrlHasBeenSet;

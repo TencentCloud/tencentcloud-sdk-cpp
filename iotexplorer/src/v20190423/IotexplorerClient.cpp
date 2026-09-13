@@ -190,6 +190,56 @@ IotexplorerClient::BatchCreateTWeSeeRecognitionTaskOutcomeCallable IotexplorerCl
     return prom->get_future();
 }
 
+IotexplorerClient::BatchCreateTWeSeeSubscriptionOutcome IotexplorerClient::BatchCreateTWeSeeSubscription(const BatchCreateTWeSeeSubscriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchCreateTWeSeeSubscription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchCreateTWeSeeSubscriptionResponse rsp = BatchCreateTWeSeeSubscriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchCreateTWeSeeSubscriptionOutcome(rsp);
+        else
+            return BatchCreateTWeSeeSubscriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchCreateTWeSeeSubscriptionOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::BatchCreateTWeSeeSubscriptionAsync(const BatchCreateTWeSeeSubscriptionRequest& request, const BatchCreateTWeSeeSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const BatchCreateTWeSeeSubscriptionRequest&;
+    using Resp = BatchCreateTWeSeeSubscriptionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "BatchCreateTWeSeeSubscription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::BatchCreateTWeSeeSubscriptionOutcomeCallable IotexplorerClient::BatchCreateTWeSeeSubscriptionCallable(const BatchCreateTWeSeeSubscriptionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<BatchCreateTWeSeeSubscriptionOutcome>>();
+    BatchCreateTWeSeeSubscriptionAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const BatchCreateTWeSeeSubscriptionRequest&,
+        BatchCreateTWeSeeSubscriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::BatchInvokeTWeSeeRecognitionTaskOutcome IotexplorerClient::BatchInvokeTWeSeeRecognitionTask(const BatchInvokeTWeSeeRecognitionTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "BatchInvokeTWeSeeRecognitionTask");
@@ -232,6 +282,56 @@ IotexplorerClient::BatchInvokeTWeSeeRecognitionTaskOutcomeCallable IotexplorerCl
         const IotexplorerClient*,
         const BatchInvokeTWeSeeRecognitionTaskRequest&,
         BatchInvokeTWeSeeRecognitionTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::BatchRenewTWeSeeSubscriptionOutcome IotexplorerClient::BatchRenewTWeSeeSubscription(const BatchRenewTWeSeeSubscriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchRenewTWeSeeSubscription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchRenewTWeSeeSubscriptionResponse rsp = BatchRenewTWeSeeSubscriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchRenewTWeSeeSubscriptionOutcome(rsp);
+        else
+            return BatchRenewTWeSeeSubscriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchRenewTWeSeeSubscriptionOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::BatchRenewTWeSeeSubscriptionAsync(const BatchRenewTWeSeeSubscriptionRequest& request, const BatchRenewTWeSeeSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const BatchRenewTWeSeeSubscriptionRequest&;
+    using Resp = BatchRenewTWeSeeSubscriptionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "BatchRenewTWeSeeSubscription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::BatchRenewTWeSeeSubscriptionOutcomeCallable IotexplorerClient::BatchRenewTWeSeeSubscriptionCallable(const BatchRenewTWeSeeSubscriptionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<BatchRenewTWeSeeSubscriptionOutcome>>();
+    BatchRenewTWeSeeSubscriptionAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const BatchRenewTWeSeeSubscriptionRequest&,
+        BatchRenewTWeSeeSubscriptionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

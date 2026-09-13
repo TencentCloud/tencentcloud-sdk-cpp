@@ -27,7 +27,10 @@ DescribeSandboxInstanceListRequest::DescribeSandboxInstanceListRequest() :
     m_toolIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_maxResultsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
+    m_needTotalCountHasBeenSet(false)
 {
 }
 
@@ -88,6 +91,30 @@ string DescribeSandboxInstanceListRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_maxResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxResults";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxResults, allocator);
+    }
+
+    if (m_nextTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NextToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_nextToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needTotalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedTotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needTotalCount, allocator);
     }
 
 
@@ -176,6 +203,54 @@ void DescribeSandboxInstanceListRequest::SetFilters(const vector<Filter>& _filte
 bool DescribeSandboxInstanceListRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+int64_t DescribeSandboxInstanceListRequest::GetMaxResults() const
+{
+    return m_maxResults;
+}
+
+void DescribeSandboxInstanceListRequest::SetMaxResults(const int64_t& _maxResults)
+{
+    m_maxResults = _maxResults;
+    m_maxResultsHasBeenSet = true;
+}
+
+bool DescribeSandboxInstanceListRequest::MaxResultsHasBeenSet() const
+{
+    return m_maxResultsHasBeenSet;
+}
+
+string DescribeSandboxInstanceListRequest::GetNextToken() const
+{
+    return m_nextToken;
+}
+
+void DescribeSandboxInstanceListRequest::SetNextToken(const string& _nextToken)
+{
+    m_nextToken = _nextToken;
+    m_nextTokenHasBeenSet = true;
+}
+
+bool DescribeSandboxInstanceListRequest::NextTokenHasBeenSet() const
+{
+    return m_nextTokenHasBeenSet;
+}
+
+bool DescribeSandboxInstanceListRequest::GetNeedTotalCount() const
+{
+    return m_needTotalCount;
+}
+
+void DescribeSandboxInstanceListRequest::SetNeedTotalCount(const bool& _needTotalCount)
+{
+    m_needTotalCount = _needTotalCount;
+    m_needTotalCountHasBeenSet = true;
+}
+
+bool DescribeSandboxInstanceListRequest::NeedTotalCountHasBeenSet() const
+{
+    return m_needTotalCountHasBeenSet;
 }
 
 

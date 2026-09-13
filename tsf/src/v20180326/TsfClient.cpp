@@ -8790,56 +8790,6 @@ TsfClient::OperateApplicationTcrBindingOutcomeCallable TsfClient::OperateApplica
     return prom->get_future();
 }
 
-TsfClient::ReassociateBusinessLogConfigOutcome TsfClient::ReassociateBusinessLogConfig(const ReassociateBusinessLogConfigRequest &request)
-{
-    auto outcome = MakeRequest(request, "ReassociateBusinessLogConfig");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ReassociateBusinessLogConfigResponse rsp = ReassociateBusinessLogConfigResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ReassociateBusinessLogConfigOutcome(rsp);
-        else
-            return ReassociateBusinessLogConfigOutcome(o.GetError());
-    }
-    else
-    {
-        return ReassociateBusinessLogConfigOutcome(outcome.GetError());
-    }
-}
-
-void TsfClient::ReassociateBusinessLogConfigAsync(const ReassociateBusinessLogConfigRequest& request, const ReassociateBusinessLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const ReassociateBusinessLogConfigRequest&;
-    using Resp = ReassociateBusinessLogConfigResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "ReassociateBusinessLogConfig", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TsfClient::ReassociateBusinessLogConfigOutcomeCallable TsfClient::ReassociateBusinessLogConfigCallable(const ReassociateBusinessLogConfigRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<ReassociateBusinessLogConfigOutcome>>();
-    ReassociateBusinessLogConfigAsync(
-    request,
-    [prom](
-        const TsfClient*,
-        const ReassociateBusinessLogConfigRequest&,
-        ReassociateBusinessLogConfigOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 TsfClient::ReleaseApiGroupOutcome TsfClient::ReleaseApiGroup(const ReleaseApiGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "ReleaseApiGroup");

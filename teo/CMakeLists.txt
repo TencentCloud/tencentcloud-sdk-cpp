@@ -456,6 +456,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeEdgeKVNamespacesResponse.h
   include/tencentcloud/teo/v20220901/model/UpgradePlanResponse.h
   include/tencentcloud/teo/v20220901/model/AclConfig.h
+  include/tencentcloud/teo/v20220901/model/IntelligenceRuleItem.h
   include/tencentcloud/teo/v20220901/model/JITVideoProcess.h
   include/tencentcloud/teo/v20220901/model/OfflineCache.h
   include/tencentcloud/teo/v20220901/model/IntelligenceRule.h
@@ -521,6 +522,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DeleteZoneResponse.h
   include/tencentcloud/teo/v20220901/model/CreateRuleResponse.h
   include/tencentcloud/teo/v20220901/model/ModifyL7AccSettingResponse.h
+  include/tencentcloud/teo/v20220901/model/InferenceScheduledScalingEffectiveRange.h
   include/tencentcloud/teo/v20220901/model/DeleteSecurityJSInjectionRuleResponse.h
   include/tencentcloud/teo/v20220901/model/ReturnCustomPageActionParameters.h
   include/tencentcloud/teo/v20220901/model/DescribeSecurityIPGroupContentRequest.h
@@ -697,7 +699,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ClientFiltering.h
   include/tencentcloud/teo/v20220901/model/DescribePrefetchOriginLimitRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeTopL7CacheDataRequest.h
-  include/tencentcloud/teo/v20220901/model/InferenceScheduledScalingEffectiveRange.h
+  include/tencentcloud/teo/v20220901/model/InferenceHardwareConfig.h
   include/tencentcloud/teo/v20220901/model/SessionRateControl.h
   include/tencentcloud/teo/v20220901/model/CreateLoadBalancerRequest.h
   include/tencentcloud/teo/v20220901/model/Https.h
@@ -825,7 +827,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/AuthenticationParameters.h
   include/tencentcloud/teo/v20220901/model/BindSecurityTemplateToEntityRequest.h
   include/tencentcloud/teo/v20220901/model/RuleEngineSubRule.h
-  include/tencentcloud/teo/v20220901/model/IntelligenceRuleItem.h
+  include/tencentcloud/teo/v20220901/model/InferenceHardwareConfigForModify.h
   include/tencentcloud/teo/v20220901/model/ExportZoneConfigResponse.h
   include/tencentcloud/teo/v20220901/model/PostMaxSize.h
   include/tencentcloud/teo/v20220901/model/DescribeBillingDataResponse.h
@@ -1343,6 +1345,7 @@ set(teo_src
   src/v20220901/model/DescribeEdgeKVNamespacesResponse.cpp
   src/v20220901/model/UpgradePlanResponse.cpp
   src/v20220901/model/AclConfig.cpp
+  src/v20220901/model/IntelligenceRuleItem.cpp
   src/v20220901/model/JITVideoProcess.cpp
   src/v20220901/model/OfflineCache.cpp
   src/v20220901/model/IntelligenceRule.cpp
@@ -1408,6 +1411,7 @@ set(teo_src
   src/v20220901/model/DeleteZoneResponse.cpp
   src/v20220901/model/CreateRuleResponse.cpp
   src/v20220901/model/ModifyL7AccSettingResponse.cpp
+  src/v20220901/model/InferenceScheduledScalingEffectiveRange.cpp
   src/v20220901/model/DeleteSecurityJSInjectionRuleResponse.cpp
   src/v20220901/model/ReturnCustomPageActionParameters.cpp
   src/v20220901/model/DescribeSecurityIPGroupContentRequest.cpp
@@ -1584,7 +1588,7 @@ set(teo_src
   src/v20220901/model/ClientFiltering.cpp
   src/v20220901/model/DescribePrefetchOriginLimitRequest.cpp
   src/v20220901/model/DescribeTopL7CacheDataRequest.cpp
-  src/v20220901/model/InferenceScheduledScalingEffectiveRange.cpp
+  src/v20220901/model/InferenceHardwareConfig.cpp
   src/v20220901/model/SessionRateControl.cpp
   src/v20220901/model/CreateLoadBalancerRequest.cpp
   src/v20220901/model/Https.cpp
@@ -1712,7 +1716,7 @@ set(teo_src
   src/v20220901/model/AuthenticationParameters.cpp
   src/v20220901/model/BindSecurityTemplateToEntityRequest.cpp
   src/v20220901/model/RuleEngineSubRule.cpp
-  src/v20220901/model/IntelligenceRuleItem.cpp
+  src/v20220901/model/InferenceHardwareConfigForModify.cpp
   src/v20220901/model/ExportZoneConfigResponse.cpp
   src/v20220901/model/PostMaxSize.cpp
   src/v20220901/model/DescribeBillingDataResponse.cpp

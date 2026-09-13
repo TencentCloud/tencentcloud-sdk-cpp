@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool IdCardTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>手机号码；当需要开通自动签时，该参数必传</p>
-                     * @return Mobile <p>手机号码；当需要开通自动签时，该参数必传</p>
+                     * 获取<p>手机号码；当需要开通“授权签”时，该参数必传</p>
+                     * @return Mobile <p>手机号码；当需要开通“授权签”时，该参数必传</p>
                      * 
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置<p>手机号码；当需要开通自动签时，该参数必传</p>
-                     * @param _mobile <p>手机号码；当需要开通自动签时，该参数必传</p>
+                     * 设置<p>手机号码；当需要开通“授权签”时，该参数必传</p>
+                     * @param _mobile <p>手机号码；当需要开通“授权签”时，该参数必传</p>
                      * 
                      */
                     void SetMobile(const std::string& _mobile);
@@ -255,15 +255,15 @@ namespace TencentCloud
                     bool ProcessSealHasBeenSet() const;
 
                     /**
-                     * 获取<p>自动签使用的场景值, 可以选择的场景值如下:</p><ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul><p>注: <code>不传默认为处方单场景，即E_PRESCRIPTION_AUTO_SIGN</code></p>
-                     * @return SceneKey <p>自动签使用的场景值, 可以选择的场景值如下:</p><ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul><p>注: <code>不传默认为处方单场景，即E_PRESCRIPTION_AUTO_SIGN</code></p>
+                     * 获取<p>“授权签”使用的场景值, 可以选择的场景值如下:<ul><li> <strong>E_PRESCRIPTION_AUTO_SIGN</strong> :  电子处方场景</li><li> <strong>OTHER</strong> :  通用场景</li></ul>注: <code>不传默认为处方单场景，即E_PRESCRIPTION_AUTO_SIGN</code></p>
+                     * @return SceneKey <p>“授权签”使用的场景值, 可以选择的场景值如下:<ul><li> <strong>E_PRESCRIPTION_AUTO_SIGN</strong> :  电子处方场景</li><li> <strong>OTHER</strong> :  通用场景</li></ul>注: <code>不传默认为处方单场景，即E_PRESCRIPTION_AUTO_SIGN</code></p>
                      * 
                      */
                     std::string GetSceneKey() const;
 
                     /**
-                     * 设置<p>自动签使用的场景值, 可以选择的场景值如下:</p><ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul><p>注: <code>不传默认为处方单场景，即E_PRESCRIPTION_AUTO_SIGN</code></p>
-                     * @param _sceneKey <p>自动签使用的场景值, 可以选择的场景值如下:</p><ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul><p>注: <code>不传默认为处方单场景，即E_PRESCRIPTION_AUTO_SIGN</code></p>
+                     * 设置<p>“授权签”使用的场景值, 可以选择的场景值如下:<ul><li> <strong>E_PRESCRIPTION_AUTO_SIGN</strong> :  电子处方场景</li><li> <strong>OTHER</strong> :  通用场景</li></ul>注: <code>不传默认为处方单场景，即E_PRESCRIPTION_AUTO_SIGN</code></p>
+                     * @param _sceneKey <p>“授权签”使用的场景值, 可以选择的场景值如下:<ul><li> <strong>E_PRESCRIPTION_AUTO_SIGN</strong> :  电子处方场景</li><li> <strong>OTHER</strong> :  通用场景</li></ul>注: <code>不传默认为处方单场景，即E_PRESCRIPTION_AUTO_SIGN</code></p>
                      * 
                      */
                     void SetSceneKey(const std::string& _sceneKey);
@@ -398,7 +398,7 @@ namespace TencentCloud
                     bool m_idCardTypeHasBeenSet;
 
                     /**
-                     * <p>手机号码；当需要开通自动签时，该参数必传</p>
+                     * <p>手机号码；当需要开通“授权签”时，该参数必传</p>
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
@@ -422,7 +422,7 @@ namespace TencentCloud
                     bool m_processSealHasBeenSet;
 
                     /**
-                     * <p>自动签使用的场景值, 可以选择的场景值如下:</p><ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul><p>注: <code>不传默认为处方单场景，即E_PRESCRIPTION_AUTO_SIGN</code></p>
+                     * <p>“授权签”使用的场景值, 可以选择的场景值如下:<ul><li> <strong>E_PRESCRIPTION_AUTO_SIGN</strong> :  电子处方场景</li><li> <strong>OTHER</strong> :  通用场景</li></ul>注: <code>不传默认为处方单场景，即E_PRESCRIPTION_AUTO_SIGN</code></p>
                      */
                     std::string m_sceneKey;
                     bool m_sceneKeyHasBeenSet;

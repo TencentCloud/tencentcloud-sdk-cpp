@@ -355,15 +355,15 @@ namespace TencentCloud
                     bool PromoterHasBeenSet() const;
 
                     /**
-                     * 获取<p>模板类型可以分为以下两种：</p><p><b>1</b>：带有本企业自动签署的模板，即签署过程无需签署人手动操作，系统自动完成签署。<br><b>3</b>：普通模板，即签署人需要手动进行签署操作。</p>
-                     * @return TemplateType <p>模板类型可以分为以下两种：</p><p><b>1</b>：带有本企业自动签署的模板，即签署过程无需签署人手动操作，系统自动完成签署。<br><b>3</b>：普通模板，即签署人需要手动进行签署操作。</p>
+                     * 获取<p>模板类型可以分为以下两种：<b>1</b>：带有本企业“授权签”的模板，即签署过程无需签署人手动操作，系统自动完成签署。<b>3</b>：普通模板，即签署人需要手动进行签署操作。</p>
+                     * @return TemplateType <p>模板类型可以分为以下两种：<b>1</b>：带有本企业“授权签”的模板，即签署过程无需签署人手动操作，系统自动完成签署。<b>3</b>：普通模板，即签署人需要手动进行签署操作。</p>
                      * 
                      */
                     int64_t GetTemplateType() const;
 
                     /**
-                     * 设置<p>模板类型可以分为以下两种：</p><p><b>1</b>：带有本企业自动签署的模板，即签署过程无需签署人手动操作，系统自动完成签署。<br><b>3</b>：普通模板，即签署人需要手动进行签署操作。</p>
-                     * @param _templateType <p>模板类型可以分为以下两种：</p><p><b>1</b>：带有本企业自动签署的模板，即签署过程无需签署人手动操作，系统自动完成签署。<br><b>3</b>：普通模板，即签署人需要手动进行签署操作。</p>
+                     * 设置<p>模板类型可以分为以下两种：<b>1</b>：带有本企业“授权签”的模板，即签署过程无需签署人手动操作，系统自动完成签署。<b>3</b>：普通模板，即签署人需要手动进行签署操作。</p>
+                     * @param _templateType <p>模板类型可以分为以下两种：<b>1</b>：带有本企业“授权签”的模板，即签署过程无需签署人手动操作，系统自动完成签署。<b>3</b>：普通模板，即签署人需要手动进行签署操作。</p>
                      * 
                      */
                     void SetTemplateType(const int64_t& _templateType);
@@ -544,15 +544,15 @@ namespace TencentCloud
                     bool ShareTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>此模板配置的预填印章列表（包括自动签署指定的印章）</p>
-                     * @return TemplateSeals <p>此模板配置的预填印章列表（包括自动签署指定的印章）</p>
+                     * 获取<p>此模板配置的预填印章列表（包括“授权签”指定的印章）</p>
+                     * @return TemplateSeals <p>此模板配置的预填印章列表（包括“授权签”指定的印章）</p>
                      * 
                      */
                     std::vector<SealInfo> GetTemplateSeals() const;
 
                     /**
-                     * 设置<p>此模板配置的预填印章列表（包括自动签署指定的印章）</p>
-                     * @param _templateSeals <p>此模板配置的预填印章列表（包括自动签署指定的印章）</p>
+                     * 设置<p>此模板配置的预填印章列表（包括“授权签”指定的印章）</p>
+                     * @param _templateSeals <p>此模板配置的预填印章列表（包括“授权签”指定的印章）</p>
                      * 
                      */
                     void SetTemplateSeals(const std::vector<SealInfo>& _templateSeals);
@@ -676,7 +676,7 @@ namespace TencentCloud
                     bool m_promoterHasBeenSet;
 
                     /**
-                     * <p>模板类型可以分为以下两种：</p><p><b>1</b>：带有本企业自动签署的模板，即签署过程无需签署人手动操作，系统自动完成签署。<br><b>3</b>：普通模板，即签署人需要手动进行签署操作。</p>
+                     * <p>模板类型可以分为以下两种：<b>1</b>：带有本企业“授权签”的模板，即签署过程无需签署人手动操作，系统自动完成签署。<b>3</b>：普通模板，即签署人需要手动进行签署操作。</p>
                      */
                     int64_t m_templateType;
                     bool m_templateTypeHasBeenSet;
@@ -730,7 +730,7 @@ namespace TencentCloud
                     bool m_shareTemplateIdHasBeenSet;
 
                     /**
-                     * <p>此模板配置的预填印章列表（包括自动签署指定的印章）</p>
+                     * <p>此模板配置的预填印章列表（包括“授权签”指定的印章）</p>
                      */
                     std::vector<SealInfo> m_templateSeals;
                     bool m_templateSealsHasBeenSet;

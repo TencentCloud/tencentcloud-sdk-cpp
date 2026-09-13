@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool HasAuthUserListHasBeenSet() const;
 
                     /**
-                     * 获取<p>授权企业列表（企业自动签时，该字段有值）</p>
-                     * @return HasAuthOrganizationList <p>授权企业列表（企业自动签时，该字段有值）</p>
+                     * 获取<p>授权企业列表（企业“授权签”时，该字段有值）</p>
+                     * @return HasAuthOrganizationList <p>授权企业列表（企业“授权签”时，该字段有值）</p>
                      * 
                      */
                     std::vector<HasAuthOrganization> GetHasAuthOrganizationList() const;
 
                     /**
-                     * 设置<p>授权企业列表（企业自动签时，该字段有值）</p>
-                     * @param _hasAuthOrganizationList <p>授权企业列表（企业自动签时，该字段有值）</p>
+                     * 设置<p>授权企业列表（企业“授权签”时，该字段有值）</p>
+                     * @param _hasAuthOrganizationList <p>授权企业列表（企业“授权签”时，该字段有值）</p>
                      * 
                      */
                     void SetHasAuthOrganizationList(const std::vector<HasAuthOrganization>& _hasAuthOrganizationList);
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_hasAuthUserListHasBeenSet;
 
                     /**
-                     * <p>授权企业列表（企业自动签时，该字段有值）</p>
+                     * <p>授权企业列表（企业“授权签”时，该字段有值）</p>
                      */
                     std::vector<HasAuthOrganization> m_hasAuthOrganizationList;
                     bool m_hasAuthOrganizationListHasBeenSet;

@@ -179,6 +179,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeNDRAssetIdentificationCursorListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNDRAssetIdentificationListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNDRAssetIdentificationListResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNDRDataLeakOutAlertDetailRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNDRDataLeakOutAlertDetailResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNDRDataLeakOutAlertListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNDRDataLeakOutAlertListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatAcRuleRequest.h>
@@ -601,6 +603,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNDRAssetIdentificationListResponse> DescribeNDRAssetIdentificationListOutcome;
                 typedef std::future<DescribeNDRAssetIdentificationListOutcome> DescribeNDRAssetIdentificationListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeNDRAssetIdentificationListRequest&, DescribeNDRAssetIdentificationListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNDRAssetIdentificationListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNDRDataLeakOutAlertDetailResponse> DescribeNDRDataLeakOutAlertDetailOutcome;
+                typedef std::future<DescribeNDRDataLeakOutAlertDetailOutcome> DescribeNDRDataLeakOutAlertDetailOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeNDRDataLeakOutAlertDetailRequest&, DescribeNDRDataLeakOutAlertDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNDRDataLeakOutAlertDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNDRDataLeakOutAlertListResponse> DescribeNDRDataLeakOutAlertListOutcome;
                 typedef std::future<DescribeNDRDataLeakOutAlertListOutcome> DescribeNDRDataLeakOutAlertListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeNDRDataLeakOutAlertListRequest&, DescribeNDRDataLeakOutAlertListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNDRDataLeakOutAlertListAsyncHandler;
@@ -1568,6 +1573,15 @@ namespace TencentCloud
                 DescribeNDRAssetIdentificationListOutcome DescribeNDRAssetIdentificationList(const Model::DescribeNDRAssetIdentificationListRequest &request);
                 void DescribeNDRAssetIdentificationListAsync(const Model::DescribeNDRAssetIdentificationListRequest& request, const DescribeNDRAssetIdentificationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNDRAssetIdentificationListOutcomeCallable DescribeNDRAssetIdentificationListCallable(const Model::DescribeNDRAssetIdentificationListRequest& request);
+
+                /**
+                 *DescribeNDRDataLeakOutAlertDetail -- 查询出站数据泄露风险详情
+                 * @param req DescribeNDRDataLeakOutAlertDetailRequest
+                 * @return DescribeNDRDataLeakOutAlertDetailOutcome
+                 */
+                DescribeNDRDataLeakOutAlertDetailOutcome DescribeNDRDataLeakOutAlertDetail(const Model::DescribeNDRDataLeakOutAlertDetailRequest &request);
+                void DescribeNDRDataLeakOutAlertDetailAsync(const Model::DescribeNDRDataLeakOutAlertDetailRequest& request, const DescribeNDRDataLeakOutAlertDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNDRDataLeakOutAlertDetailOutcomeCallable DescribeNDRDataLeakOutAlertDetailCallable(const Model::DescribeNDRDataLeakOutAlertDetailRequest& request);
 
                 /**
                  *DescribeNDRDataLeakOutAlertList -- 查询NDR数据泄露出站告警列表

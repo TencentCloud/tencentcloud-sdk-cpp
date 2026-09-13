@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool AppOriginalIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>个人用户自动签的开通链接, 短链或者长链接形式。过期时间受 <code>ExpiredTime</code> 参数控制。</p>
-                     * @return Url <p>个人用户自动签的开通链接, 短链或者长链接形式。过期时间受 <code>ExpiredTime</code> 参数控制。</p>
+                     * 获取<p>个人用户“授权签”的开通链接, 短链或者长链接形式。过期时间受 <code>ExpiredTime</code> 参数控制。</p>
+                     * @return Url <p>个人用户“授权签”的开通链接, 短链或者长链接形式。过期时间受 <code>ExpiredTime</code> 参数控制。</p>
                      * 
                      */
                     std::string GetUrl() const;
@@ -128,7 +128,7 @@ namespace TencentCloud
                     bool m_appOriginalIdHasBeenSet;
 
                     /**
-                     * <p>个人用户自动签的开通链接, 短链或者长链接形式。过期时间受 <code>ExpiredTime</code> 参数控制。</p>
+                     * <p>个人用户“授权签”的开通链接, 短链或者长链接形式。过期时间受 <code>ExpiredTime</code> 参数控制。</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

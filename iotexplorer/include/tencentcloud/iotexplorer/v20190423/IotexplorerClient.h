@@ -29,8 +29,12 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ActivateTWeTalkResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BatchCreateTWeSeeRecognitionTaskRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BatchCreateTWeSeeRecognitionTaskResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/BatchCreateTWeSeeSubscriptionRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/BatchCreateTWeSeeSubscriptionResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BatchInvokeTWeSeeRecognitionTaskRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BatchInvokeTWeSeeRecognitionTaskResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/BatchRenewTWeSeeSubscriptionRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/BatchRenewTWeSeeSubscriptionResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BatchUpdateFirmwareRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BatchUpdateFirmwareResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BindCloudStorageUserRequest.h>
@@ -550,9 +554,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchCreateTWeSeeRecognitionTaskResponse> BatchCreateTWeSeeRecognitionTaskOutcome;
                 typedef std::future<BatchCreateTWeSeeRecognitionTaskOutcome> BatchCreateTWeSeeRecognitionTaskOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::BatchCreateTWeSeeRecognitionTaskRequest&, BatchCreateTWeSeeRecognitionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchCreateTWeSeeRecognitionTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchCreateTWeSeeSubscriptionResponse> BatchCreateTWeSeeSubscriptionOutcome;
+                typedef std::future<BatchCreateTWeSeeSubscriptionOutcome> BatchCreateTWeSeeSubscriptionOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::BatchCreateTWeSeeSubscriptionRequest&, BatchCreateTWeSeeSubscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchCreateTWeSeeSubscriptionAsyncHandler;
                 typedef Outcome<Core::Error, Model::BatchInvokeTWeSeeRecognitionTaskResponse> BatchInvokeTWeSeeRecognitionTaskOutcome;
                 typedef std::future<BatchInvokeTWeSeeRecognitionTaskOutcome> BatchInvokeTWeSeeRecognitionTaskOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::BatchInvokeTWeSeeRecognitionTaskRequest&, BatchInvokeTWeSeeRecognitionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchInvokeTWeSeeRecognitionTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchRenewTWeSeeSubscriptionResponse> BatchRenewTWeSeeSubscriptionOutcome;
+                typedef std::future<BatchRenewTWeSeeSubscriptionOutcome> BatchRenewTWeSeeSubscriptionOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::BatchRenewTWeSeeSubscriptionRequest&, BatchRenewTWeSeeSubscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchRenewTWeSeeSubscriptionAsyncHandler;
                 typedef Outcome<Core::Error, Model::BatchUpdateFirmwareResponse> BatchUpdateFirmwareOutcome;
                 typedef std::future<BatchUpdateFirmwareOutcome> BatchUpdateFirmwareOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::BatchUpdateFirmwareRequest&, BatchUpdateFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchUpdateFirmwareAsyncHandler;
@@ -1328,6 +1338,15 @@ namespace TencentCloud
                 BatchCreateTWeSeeRecognitionTaskOutcomeCallable BatchCreateTWeSeeRecognitionTaskCallable(const Model::BatchCreateTWeSeeRecognitionTaskRequest& request);
 
                 /**
+                 *批量开通 TWeSee 预付费订阅
+                 * @param req BatchCreateTWeSeeSubscriptionRequest
+                 * @return BatchCreateTWeSeeSubscriptionOutcome
+                 */
+                BatchCreateTWeSeeSubscriptionOutcome BatchCreateTWeSeeSubscription(const Model::BatchCreateTWeSeeSubscriptionRequest &request);
+                void BatchCreateTWeSeeSubscriptionAsync(const Model::BatchCreateTWeSeeSubscriptionRequest& request, const BatchCreateTWeSeeSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchCreateTWeSeeSubscriptionOutcomeCallable BatchCreateTWeSeeSubscriptionCallable(const Model::BatchCreateTWeSeeSubscriptionRequest& request);
+
+                /**
                  *批量同步执行 TWeSee 语义理解任务
                  * @param req BatchInvokeTWeSeeRecognitionTaskRequest
                  * @return BatchInvokeTWeSeeRecognitionTaskOutcome
@@ -1335,6 +1354,15 @@ namespace TencentCloud
                 BatchInvokeTWeSeeRecognitionTaskOutcome BatchInvokeTWeSeeRecognitionTask(const Model::BatchInvokeTWeSeeRecognitionTaskRequest &request);
                 void BatchInvokeTWeSeeRecognitionTaskAsync(const Model::BatchInvokeTWeSeeRecognitionTaskRequest& request, const BatchInvokeTWeSeeRecognitionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchInvokeTWeSeeRecognitionTaskOutcomeCallable BatchInvokeTWeSeeRecognitionTaskCallable(const Model::BatchInvokeTWeSeeRecognitionTaskRequest& request);
+
+                /**
+                 *批量续费 TWeSee 预付费订阅
+                 * @param req BatchRenewTWeSeeSubscriptionRequest
+                 * @return BatchRenewTWeSeeSubscriptionOutcome
+                 */
+                BatchRenewTWeSeeSubscriptionOutcome BatchRenewTWeSeeSubscription(const Model::BatchRenewTWeSeeSubscriptionRequest &request);
+                void BatchRenewTWeSeeSubscriptionAsync(const Model::BatchRenewTWeSeeSubscriptionRequest& request, const BatchRenewTWeSeeSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchRenewTWeSeeSubscriptionOutcomeCallable BatchRenewTWeSeeSubscriptionCallable(const Model::BatchRenewTWeSeeSubscriptionRequest& request);
 
                 /**
                  *本接口（BatchUpdateFirmware）用于批量更新设备固件

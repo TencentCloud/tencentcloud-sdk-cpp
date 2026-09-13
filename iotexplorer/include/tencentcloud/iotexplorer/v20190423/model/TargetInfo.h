@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iotexplorer/v20190423/model/SeeTaskInfo.h>
 
 
 namespace TencentCloud
@@ -235,6 +236,48 @@ namespace TencentCloud
                      */
                     bool ThumbnailHasBeenSet() const;
 
+                    /**
+                     * 获取<p>搜索结果置信度</p><p>枚举值：</p><ul><li>high： 高（精准匹配，或包括性的匹配）</li><li>medium： 中（近义匹配）</li><li>low： 低（模糊匹配，部分要素与用户 Query 可能不符合）</li></ul>
+                     * @return Confidence <p>搜索结果置信度</p><p>枚举值：</p><ul><li>high： 高（精准匹配，或包括性的匹配）</li><li>medium： 中（近义匹配）</li><li>low： 低（模糊匹配，部分要素与用户 Query 可能不符合）</li></ul>
+                     * 
+                     */
+                    std::string GetConfidence() const;
+
+                    /**
+                     * 设置<p>搜索结果置信度</p><p>枚举值：</p><ul><li>high： 高（精准匹配，或包括性的匹配）</li><li>medium： 中（近义匹配）</li><li>low： 低（模糊匹配，部分要素与用户 Query 可能不符合）</li></ul>
+                     * @param _confidence <p>搜索结果置信度</p><p>枚举值：</p><ul><li>high： 高（精准匹配，或包括性的匹配）</li><li>medium： 中（近义匹配）</li><li>low： 低（模糊匹配，部分要素与用户 Query 可能不符合）</li></ul>
+                     * 
+                     */
+                    void SetConfidence(const std::string& _confidence);
+
+                    /**
+                     * 判断参数 Confidence 是否已赋值
+                     * @return Confidence 是否已赋值
+                     * 
+                     */
+                    bool ConfidenceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>任务信息</p><p>当入参 WithTaskInfo = true 时，出参中会返回任务信息</p>
+                     * @return TaskInfo <p>任务信息</p><p>当入参 WithTaskInfo = true 时，出参中会返回任务信息</p>
+                     * 
+                     */
+                    SeeTaskInfo GetTaskInfo() const;
+
+                    /**
+                     * 设置<p>任务信息</p><p>当入参 WithTaskInfo = true 时，出参中会返回任务信息</p>
+                     * @param _taskInfo <p>任务信息</p><p>当入参 WithTaskInfo = true 时，出参中会返回任务信息</p>
+                     * 
+                     */
+                    void SetTaskInfo(const SeeTaskInfo& _taskInfo);
+
+                    /**
+                     * 判断参数 TaskInfo 是否已赋值
+                     * @return TaskInfo 是否已赋值
+                     * 
+                     */
+                    bool TaskInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +333,18 @@ namespace TencentCloud
                      */
                     std::string m_thumbnail;
                     bool m_thumbnailHasBeenSet;
+
+                    /**
+                     * <p>搜索结果置信度</p><p>枚举值：</p><ul><li>high： 高（精准匹配，或包括性的匹配）</li><li>medium： 中（近义匹配）</li><li>low： 低（模糊匹配，部分要素与用户 Query 可能不符合）</li></ul>
+                     */
+                    std::string m_confidence;
+                    bool m_confidenceHasBeenSet;
+
+                    /**
+                     * <p>任务信息</p><p>当入参 WithTaskInfo = true 时，出参中会返回任务信息</p>
+                     */
+                    SeeTaskInfo m_taskInfo;
+                    bool m_taskInfoHasBeenSet;
 
                 };
             }

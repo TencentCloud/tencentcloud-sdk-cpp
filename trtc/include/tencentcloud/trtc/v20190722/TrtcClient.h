@@ -27,6 +27,8 @@
 #include <tencentcloud/trtc/v20190722/model/AsyncTextToSpeechResponse.h>
 #include <tencentcloud/trtc/v20190722/model/ControlAIConversationRequest.h>
 #include <tencentcloud/trtc/v20190722/model/ControlAIConversationResponse.h>
+#include <tencentcloud/trtc/v20190722/model/CreateAudioModerationSyncRequest.h>
+#include <tencentcloud/trtc/v20190722/model/CreateAudioModerationSyncResponse.h>
 #include <tencentcloud/trtc/v20190722/model/CreateCloudModerationRequest.h>
 #include <tencentcloud/trtc/v20190722/model/CreateCloudModerationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/CreateCloudRecordingRequest.h>
@@ -213,6 +215,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ControlAIConversationResponse> ControlAIConversationOutcome;
                 typedef std::future<ControlAIConversationOutcome> ControlAIConversationOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::ControlAIConversationRequest&, ControlAIConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlAIConversationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAudioModerationSyncResponse> CreateAudioModerationSyncOutcome;
+                typedef std::future<CreateAudioModerationSyncOutcome> CreateAudioModerationSyncOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::CreateAudioModerationSyncRequest&, CreateAudioModerationSyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAudioModerationSyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCloudModerationResponse> CreateCloudModerationOutcome;
                 typedef std::future<CreateCloudModerationOutcome> CreateCloudModerationOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::CreateCloudModerationRequest&, CreateCloudModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudModerationAsyncHandler;
@@ -482,6 +487,15 @@ namespace TencentCloud
                 ControlAIConversationOutcome ControlAIConversation(const Model::ControlAIConversationRequest &request);
                 void ControlAIConversationAsync(const Model::ControlAIConversationRequest& request, const ControlAIConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ControlAIConversationOutcomeCallable ControlAIConversationCallable(const Model::ControlAIConversationRequest& request);
+
+                /**
+                 *短音频同步内容理解接口
+                 * @param req CreateAudioModerationSyncRequest
+                 * @return CreateAudioModerationSyncOutcome
+                 */
+                CreateAudioModerationSyncOutcome CreateAudioModerationSync(const Model::CreateAudioModerationSyncRequest &request);
+                void CreateAudioModerationSyncAsync(const Model::CreateAudioModerationSyncRequest& request, const CreateAudioModerationSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAudioModerationSyncOutcomeCallable CreateAudioModerationSyncCallable(const Model::CreateAudioModerationSyncRequest& request);
 
                 /**
                  *启动AI 内容理解功能，完成房间内的音视频切片，视频截帧，或者录制音频流，投递到AI内容理解，完成内容识别。您可以通过此接口实现如下目标：

@@ -48,59 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取扩展服务的类型，可能是以下值：
-<ul><li>OPEN_SERVER_SIGN：企业自动签署</li>
-<li>BATCH_SIGN：批量签署</li>
-<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
-<li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li>
-<li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li>
-<li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li>
-<li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>
-<li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>
-<li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li>
-<li>PAGING_SEAL：骑缝章</li>
-<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul>
-                     * @return Type 扩展服务的类型，可能是以下值：
-<ul><li>OPEN_SERVER_SIGN：企业自动签署</li>
-<li>BATCH_SIGN：批量签署</li>
-<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
-<li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li>
-<li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li>
-<li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li>
-<li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>
-<li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>
-<li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li>
-<li>PAGING_SEAL：骑缝章</li>
-<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul>
+                     * 获取<p>扩展服务的类型，可能是以下值：<ul><li>OPEN_SERVER_SIGN：企业“授权签”</li><li>BATCH_SIGN：批量签署</li><li>OVERSEA_SIGN：企业与港澳台居民签署合同</li><li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li><li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li><li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li><li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li><li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li><li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li><li>PAGING_SEAL：骑缝章</li><li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul></p>
+                     * @return Type <p>扩展服务的类型，可能是以下值：<ul><li>OPEN_SERVER_SIGN：企业“授权签”</li><li>BATCH_SIGN：批量签署</li><li>OVERSEA_SIGN：企业与港澳台居民签署合同</li><li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li><li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li><li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li><li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li><li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li><li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li><li>PAGING_SEAL：骑缝章</li><li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul></p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置扩展服务的类型，可能是以下值：
-<ul><li>OPEN_SERVER_SIGN：企业自动签署</li>
-<li>BATCH_SIGN：批量签署</li>
-<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
-<li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li>
-<li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li>
-<li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li>
-<li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>
-<li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>
-<li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li>
-<li>PAGING_SEAL：骑缝章</li>
-<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul>
-                     * @param _type 扩展服务的类型，可能是以下值：
-<ul><li>OPEN_SERVER_SIGN：企业自动签署</li>
-<li>BATCH_SIGN：批量签署</li>
-<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
-<li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li>
-<li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li>
-<li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li>
-<li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>
-<li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>
-<li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li>
-<li>PAGING_SEAL：骑缝章</li>
-<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul>
+                     * 设置<p>扩展服务的类型，可能是以下值：<ul><li>OPEN_SERVER_SIGN：企业“授权签”</li><li>BATCH_SIGN：批量签署</li><li>OVERSEA_SIGN：企业与港澳台居民签署合同</li><li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li><li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li><li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li><li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li><li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li><li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li><li>PAGING_SEAL：骑缝章</li><li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul></p>
+                     * @param _type <p>扩展服务的类型，可能是以下值：<ul><li>OPEN_SERVER_SIGN：企业“授权签”</li><li>BATCH_SIGN：批量签署</li><li>OVERSEA_SIGN：企业与港澳台居民签署合同</li><li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li><li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li><li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li><li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li><li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li><li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li><li>PAGING_SEAL：骑缝章</li><li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul></p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -113,15 +69,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取扩展服务的名称
-                     * @return Name 扩展服务的名称
+                     * 获取<p>扩展服务的名称</p>
+                     * @return Name <p>扩展服务的名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置扩展服务的名称
-                     * @param _name 扩展服务的名称
+                     * 设置<p>扩展服务的名称</p>
+                     * @param _name <p>扩展服务的名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -134,31 +90,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取扩展服务的开通状态：
-<ul>
-<li>ENABLE : 已开通</li>
-<li>DISABLE : 未开通</li>
-</ul>
-                     * @return Status 扩展服务的开通状态：
-<ul>
-<li>ENABLE : 已开通</li>
-<li>DISABLE : 未开通</li>
-</ul>
+                     * 获取<p>扩展服务的开通状态：</p><ul><li>ENABLE : 已开通</li><li>DISABLE : 未开通</li></ul>
+                     * @return Status <p>扩展服务的开通状态：</p><ul><li>ENABLE : 已开通</li><li>DISABLE : 未开通</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置扩展服务的开通状态：
-<ul>
-<li>ENABLE : 已开通</li>
-<li>DISABLE : 未开通</li>
-</ul>
-                     * @param _status 扩展服务的开通状态：
-<ul>
-<li>ENABLE : 已开通</li>
-<li>DISABLE : 未开通</li>
-</ul>
+                     * 设置<p>扩展服务的开通状态：</p><ul><li>ENABLE : 已开通</li><li>DISABLE : 未开通</li></ul>
+                     * @param _status <p>扩展服务的开通状态：</p><ul><li>ENABLE : 已开通</li><li>DISABLE : 未开通</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -171,15 +111,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取操作扩展服务的操作人UserId，员工在腾讯电子签平台的唯一身份标识，为32位字符串。
-                     * @return OperatorUserId 操作扩展服务的操作人UserId，员工在腾讯电子签平台的唯一身份标识，为32位字符串。
+                     * 获取<p>操作扩展服务的操作人UserId，员工在腾讯电子签平台的唯一身份标识，为32位字符串。</p>
+                     * @return OperatorUserId <p>操作扩展服务的操作人UserId，员工在腾讯电子签平台的唯一身份标识，为32位字符串。</p>
                      * 
                      */
                     std::string GetOperatorUserId() const;
 
                     /**
-                     * 设置操作扩展服务的操作人UserId，员工在腾讯电子签平台的唯一身份标识，为32位字符串。
-                     * @param _operatorUserId 操作扩展服务的操作人UserId，员工在腾讯电子签平台的唯一身份标识，为32位字符串。
+                     * 设置<p>操作扩展服务的操作人UserId，员工在腾讯电子签平台的唯一身份标识，为32位字符串。</p>
+                     * @param _operatorUserId <p>操作扩展服务的操作人UserId，员工在腾讯电子签平台的唯一身份标识，为32位字符串。</p>
                      * 
                      */
                     void SetOperatorUserId(const std::string& _operatorUserId);
@@ -192,15 +132,15 @@ namespace TencentCloud
                     bool OperatorUserIdHasBeenSet() const;
 
                     /**
-                     * 获取扩展服务的操作时间，格式为Unix标准时间戳（秒）。
-                     * @return OperateOn 扩展服务的操作时间，格式为Unix标准时间戳（秒）。
+                     * 获取<p>扩展服务的操作时间，格式为Unix标准时间戳（秒）。</p>
+                     * @return OperateOn <p>扩展服务的操作时间，格式为Unix标准时间戳（秒）。</p>
                      * 
                      */
                     int64_t GetOperateOn() const;
 
                     /**
-                     * 设置扩展服务的操作时间，格式为Unix标准时间戳（秒）。
-                     * @param _operateOn 扩展服务的操作时间，格式为Unix标准时间戳（秒）。
+                     * 设置<p>扩展服务的操作时间，格式为Unix标准时间戳（秒）。</p>
+                     * @param _operateOn <p>扩展服务的操作时间，格式为Unix标准时间戳（秒）。</p>
                      * 
                      */
                     void SetOperateOn(const int64_t& _operateOn);
@@ -213,15 +153,15 @@ namespace TencentCloud
                     bool OperateOnHasBeenSet() const;
 
                     /**
-                     * 获取该扩展服务若可以授权，此参数对应授权人员的列表
-                     * @return HasAuthUserList 该扩展服务若可以授权，此参数对应授权人员的列表
+                     * 获取<p>该扩展服务若可以授权，此参数对应授权人员的列表</p>
+                     * @return HasAuthUserList <p>该扩展服务若可以授权，此参数对应授权人员的列表</p>
                      * 
                      */
                     std::vector<HasAuthUser> GetHasAuthUserList() const;
 
                     /**
-                     * 设置该扩展服务若可以授权，此参数对应授权人员的列表
-                     * @param _hasAuthUserList 该扩展服务若可以授权，此参数对应授权人员的列表
+                     * 设置<p>该扩展服务若可以授权，此参数对应授权人员的列表</p>
+                     * @param _hasAuthUserList <p>该扩展服务若可以授权，此参数对应授权人员的列表</p>
                      * 
                      */
                     void SetHasAuthUserList(const std::vector<HasAuthUser>& _hasAuthUserList);
@@ -236,52 +176,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 扩展服务的类型，可能是以下值：
-<ul><li>OPEN_SERVER_SIGN：企业自动签署</li>
-<li>BATCH_SIGN：批量签署</li>
-<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
-<li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li>
-<li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li>
-<li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li>
-<li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>
-<li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>
-<li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li>
-<li>PAGING_SEAL：骑缝章</li>
-<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul>
+                     * <p>扩展服务的类型，可能是以下值：<ul><li>OPEN_SERVER_SIGN：企业“授权签”</li><li>BATCH_SIGN：批量签署</li><li>OVERSEA_SIGN：企业与港澳台居民签署合同</li><li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li><li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li><li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li><li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li><li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li><li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li><li>PAGING_SEAL：骑缝章</li><li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul></p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 扩展服务的名称
+                     * <p>扩展服务的名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 扩展服务的开通状态：
-<ul>
-<li>ENABLE : 已开通</li>
-<li>DISABLE : 未开通</li>
-</ul>
+                     * <p>扩展服务的开通状态：</p><ul><li>ENABLE : 已开通</li><li>DISABLE : 未开通</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 操作扩展服务的操作人UserId，员工在腾讯电子签平台的唯一身份标识，为32位字符串。
+                     * <p>操作扩展服务的操作人UserId，员工在腾讯电子签平台的唯一身份标识，为32位字符串。</p>
                      */
                     std::string m_operatorUserId;
                     bool m_operatorUserIdHasBeenSet;
 
                     /**
-                     * 扩展服务的操作时间，格式为Unix标准时间戳（秒）。
+                     * <p>扩展服务的操作时间，格式为Unix标准时间戳（秒）。</p>
                      */
                     int64_t m_operateOn;
                     bool m_operateOnHasBeenSet;
 
                     /**
-                     * 该扩展服务若可以授权，此参数对应授权人员的列表
+                     * <p>该扩展服务若可以授权，此参数对应授权人员的列表</p>
                      */
                     std::vector<HasAuthUser> m_hasAuthUserList;
                     bool m_hasAuthUserListHasBeenSet;

@@ -50,19 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署人姓名，最大长度50个字。
-
-                     * @return Name 签署人姓名，最大长度50个字。
-
+                     * 获取<p>签署人姓名，最大长度50个字。</p>
+                     * @return Name <p>签署人姓名，最大长度50个字。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置签署人姓名，最大长度50个字。
-
-                     * @param _name 签署人姓名，最大长度50个字。
-
+                     * 设置<p>签署人姓名，最大长度50个字。</p>
+                     * @param _name <p>签署人姓名，最大长度50个字。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -75,15 +71,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取签署人手机号。
-                     * @return Mobile 签署人手机号。
+                     * 获取<p>签署人手机号。</p>
+                     * @return Mobile <p>签署人手机号。</p>
                      * 
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置签署人手机号。
-                     * @param _mobile 签署人手机号。
+                     * 设置<p>签署人手机号。</p>
+                     * @param _mobile <p>签署人手机号。</p>
                      * 
                      */
                     void SetMobile(const std::string& _mobile);
@@ -96,15 +92,15 @@ namespace TencentCloud
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
-                     * @return RelievedApproverReceiptId 要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
+                     * 获取<p>要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br></p>
+                     * @return RelievedApproverReceiptId <p>要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br></p>
                      * @deprecated
                      */
                     std::string GetRelievedApproverReceiptId() const;
 
                     /**
-                     * 设置要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
-                     * @param _relievedApproverReceiptId 要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
+                     * 设置<p>要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br></p>
+                     * @param _relievedApproverReceiptId <p>要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br></p>
                      * @deprecated
                      */
                     void SetRelievedApproverReceiptId(const std::string& _relievedApproverReceiptId);
@@ -117,23 +113,15 @@ namespace TencentCloud
                     bool RelievedApproverReceiptIdHasBeenSet() const;
 
                     /**
-                     * 获取指定签署人类型，目前仅支持
-<ul><li> **ORGANIZATION**：企业（默认值）</li>
-<li> **ENTERPRISESERVER**：企业静默签</li></ul>
-                     * @return ApproverType 指定签署人类型，目前仅支持
-<ul><li> **ORGANIZATION**：企业（默认值）</li>
-<li> **ENTERPRISESERVER**：企业静默签</li></ul>
+                     * 获取<p>指定签署人类型，目前仅支持<ul><li> <strong>ORGANIZATION</strong>：企业（默认值）</li><li> <strong>ENTERPRISESERVER</strong>：企业“授权签”</li></ul></p>
+                     * @return ApproverType <p>指定签署人类型，目前仅支持<ul><li> <strong>ORGANIZATION</strong>：企业（默认值）</li><li> <strong>ENTERPRISESERVER</strong>：企业“授权签”</li></ul></p>
                      * 
                      */
                     std::string GetApproverType() const;
 
                     /**
-                     * 设置指定签署人类型，目前仅支持
-<ul><li> **ORGANIZATION**：企业（默认值）</li>
-<li> **ENTERPRISESERVER**：企业静默签</li></ul>
-                     * @param _approverType 指定签署人类型，目前仅支持
-<ul><li> **ORGANIZATION**：企业（默认值）</li>
-<li> **ENTERPRISESERVER**：企业静默签</li></ul>
+                     * 设置<p>指定签署人类型，目前仅支持<ul><li> <strong>ORGANIZATION</strong>：企业（默认值）</li><li> <strong>ENTERPRISESERVER</strong>：企业“授权签”</li></ul></p>
+                     * @param _approverType <p>指定签署人类型，目前仅支持<ul><li> <strong>ORGANIZATION</strong>：企业（默认值）</li><li> <strong>ENTERPRISESERVER</strong>：企业“授权签”</li></ul></p>
                      * 
                      */
                     void SetApproverType(const std::string& _approverType);
@@ -146,23 +134,15 @@ namespace TencentCloud
                     bool ApproverTypeHasBeenSet() const;
 
                     /**
-                     * 获取签署控件类型，支持自定义企业签署方的签署控件类型
-<ul><li> **SIGN_SEAL**：默认为印章控件类型（默认值）</li>
-<li> **SIGN_SIGNATURE**：手写签名控件类型</li></ul>
-                     * @return ApproverSignComponentType 签署控件类型，支持自定义企业签署方的签署控件类型
-<ul><li> **SIGN_SEAL**：默认为印章控件类型（默认值）</li>
-<li> **SIGN_SIGNATURE**：手写签名控件类型</li></ul>
+                     * 获取<p>签署控件类型，支持自定义企业签署方的签署控件类型</p><ul><li> **SIGN_SEAL**：默认为印章控件类型（默认值）</li><li> **SIGN_SIGNATURE**：手写签名控件类型</li></ul>
+                     * @return ApproverSignComponentType <p>签署控件类型，支持自定义企业签署方的签署控件类型</p><ul><li> **SIGN_SEAL**：默认为印章控件类型（默认值）</li><li> **SIGN_SIGNATURE**：手写签名控件类型</li></ul>
                      * 
                      */
                     std::string GetApproverSignComponentType() const;
 
                     /**
-                     * 设置签署控件类型，支持自定义企业签署方的签署控件类型
-<ul><li> **SIGN_SEAL**：默认为印章控件类型（默认值）</li>
-<li> **SIGN_SIGNATURE**：手写签名控件类型</li></ul>
-                     * @param _approverSignComponentType 签署控件类型，支持自定义企业签署方的签署控件类型
-<ul><li> **SIGN_SEAL**：默认为印章控件类型（默认值）</li>
-<li> **SIGN_SIGNATURE**：手写签名控件类型</li></ul>
+                     * 设置<p>签署控件类型，支持自定义企业签署方的签署控件类型</p><ul><li> **SIGN_SEAL**：默认为印章控件类型（默认值）</li><li> **SIGN_SIGNATURE**：手写签名控件类型</li></ul>
+                     * @param _approverSignComponentType <p>签署控件类型，支持自定义企业签署方的签署控件类型</p><ul><li> **SIGN_SEAL**：默认为印章控件类型（默认值）</li><li> **SIGN_SIGNATURE**：手写签名控件类型</li></ul>
                      * 
                      */
                     void SetApproverSignComponentType(const std::string& _approverSignComponentType);
@@ -175,35 +155,15 @@ namespace TencentCloud
                     bool ApproverSignComponentTypeHasBeenSet() const;
 
                     /**
-                     * 获取参与方在合同中的角色是按照创建合同的时候来排序的，解除协议默认会将第一个参与人叫`甲方`,第二个叫`乙方`,  第三个叫`丙方`，以此类推。
-
-如果需改动此参与人的角色名字，可用此字段指定，由汉字,英文字符,数字组成，最大20个字。
-
-![image](https://qcloudimg.tencent-cloud.cn/raw/973a820ab66d1ce57082c160c2b2d44a.png)
-
-                     * @return ApproverSignRole 参与方在合同中的角色是按照创建合同的时候来排序的，解除协议默认会将第一个参与人叫`甲方`,第二个叫`乙方`,  第三个叫`丙方`，以此类推。
-
-如果需改动此参与人的角色名字，可用此字段指定，由汉字,英文字符,数字组成，最大20个字。
-
-![image](https://qcloudimg.tencent-cloud.cn/raw/973a820ab66d1ce57082c160c2b2d44a.png)
-
+                     * 获取<p>参与方在合同中的角色是按照创建合同的时候来排序的，解除协议默认会将第一个参与人叫<code>甲方</code>,第二个叫<code>乙方</code>,  第三个叫<code>丙方</code>，以此类推。</p><p>如果需改动此参与人的角色名字，可用此字段指定，由汉字,英文字符,数字组成，最大20个字。</p><p><img src="https://qcloudimg.tencent-cloud.cn/raw/973a820ab66d1ce57082c160c2b2d44a.png" alt="image"></p>
+                     * @return ApproverSignRole <p>参与方在合同中的角色是按照创建合同的时候来排序的，解除协议默认会将第一个参与人叫<code>甲方</code>,第二个叫<code>乙方</code>,  第三个叫<code>丙方</code>，以此类推。</p><p>如果需改动此参与人的角色名字，可用此字段指定，由汉字,英文字符,数字组成，最大20个字。</p><p><img src="https://qcloudimg.tencent-cloud.cn/raw/973a820ab66d1ce57082c160c2b2d44a.png" alt="image"></p>
                      * 
                      */
                     std::string GetApproverSignRole() const;
 
                     /**
-                     * 设置参与方在合同中的角色是按照创建合同的时候来排序的，解除协议默认会将第一个参与人叫`甲方`,第二个叫`乙方`,  第三个叫`丙方`，以此类推。
-
-如果需改动此参与人的角色名字，可用此字段指定，由汉字,英文字符,数字组成，最大20个字。
-
-![image](https://qcloudimg.tencent-cloud.cn/raw/973a820ab66d1ce57082c160c2b2d44a.png)
-
-                     * @param _approverSignRole 参与方在合同中的角色是按照创建合同的时候来排序的，解除协议默认会将第一个参与人叫`甲方`,第二个叫`乙方`,  第三个叫`丙方`，以此类推。
-
-如果需改动此参与人的角色名字，可用此字段指定，由汉字,英文字符,数字组成，最大20个字。
-
-![image](https://qcloudimg.tencent-cloud.cn/raw/973a820ab66d1ce57082c160c2b2d44a.png)
-
+                     * 设置<p>参与方在合同中的角色是按照创建合同的时候来排序的，解除协议默认会将第一个参与人叫<code>甲方</code>,第二个叫<code>乙方</code>,  第三个叫<code>丙方</code>，以此类推。</p><p>如果需改动此参与人的角色名字，可用此字段指定，由汉字,英文字符,数字组成，最大20个字。</p><p><img src="https://qcloudimg.tencent-cloud.cn/raw/973a820ab66d1ce57082c160c2b2d44a.png" alt="image"></p>
+                     * @param _approverSignRole <p>参与方在合同中的角色是按照创建合同的时候来排序的，解除协议默认会将第一个参与人叫<code>甲方</code>,第二个叫<code>乙方</code>,  第三个叫<code>丙方</code>，以此类推。</p><p>如果需改动此参与人的角色名字，可用此字段指定，由汉字,英文字符,数字组成，最大20个字。</p><p><img src="https://qcloudimg.tencent-cloud.cn/raw/973a820ab66d1ce57082c160c2b2d44a.png" alt="image"></p>
                      * 
                      */
                     void SetApproverSignRole(const std::string& _approverSignRole);
@@ -216,15 +176,15 @@ namespace TencentCloud
                     bool ApproverSignRoleHasBeenSet() const;
 
                     /**
-                     * 获取印章Id，签署控件类型为印章时，用于指定本企业签署方在解除协议中使用那个印章进行签署
-                     * @return ApproverSignSealId 印章Id，签署控件类型为印章时，用于指定本企业签署方在解除协议中使用那个印章进行签署
+                     * 获取<p>印章Id，签署控件类型为印章时，用于指定本企业签署方在解除协议中使用那个印章进行签署</p>
+                     * @return ApproverSignSealId <p>印章Id，签署控件类型为印章时，用于指定本企业签署方在解除协议中使用那个印章进行签署</p>
                      * 
                      */
                     std::string GetApproverSignSealId() const;
 
                     /**
-                     * 设置印章Id，签署控件类型为印章时，用于指定本企业签署方在解除协议中使用那个印章进行签署
-                     * @param _approverSignSealId 印章Id，签署控件类型为印章时，用于指定本企业签署方在解除协议中使用那个印章进行签署
+                     * 设置<p>印章Id，签署控件类型为印章时，用于指定本企业签署方在解除协议中使用那个印章进行签署</p>
+                     * @param _approverSignSealId <p>印章Id，签署控件类型为印章时，用于指定本企业签署方在解除协议中使用那个印章进行签署</p>
                      * 
                      */
                     void SetApproverSignSealId(const std::string& _approverSignSealId);
@@ -237,15 +197,15 @@ namespace TencentCloud
                     bool ApproverSignSealIdHasBeenSet() const;
 
                     /**
-                     * 获取要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
-                     * @return RelievedApproverRecipientId 要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
+                     * 获取<p>要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br></p>
+                     * @return RelievedApproverRecipientId <p>要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br></p>
                      * 
                      */
                     std::string GetRelievedApproverRecipientId() const;
 
                     /**
-                     * 设置要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
-                     * @param _relievedApproverRecipientId 要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
+                     * 设置<p>要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br></p>
+                     * @param _relievedApproverRecipientId <p>要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br></p>
                      * 
                      */
                     void SetRelievedApproverRecipientId(const std::string& _relievedApproverRecipientId);
@@ -260,59 +220,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 签署人姓名，最大长度50个字。
-
+                     * <p>签署人姓名，最大长度50个字。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 签署人手机号。
+                     * <p>签署人手机号。</p>
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
+                     * <p>要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br></p>
                      */
                     std::string m_relievedApproverReceiptId;
                     bool m_relievedApproverReceiptIdHasBeenSet;
 
                     /**
-                     * 指定签署人类型，目前仅支持
-<ul><li> **ORGANIZATION**：企业（默认值）</li>
-<li> **ENTERPRISESERVER**：企业静默签</li></ul>
+                     * <p>指定签署人类型，目前仅支持<ul><li> <strong>ORGANIZATION</strong>：企业（默认值）</li><li> <strong>ENTERPRISESERVER</strong>：企业“授权签”</li></ul></p>
                      */
                     std::string m_approverType;
                     bool m_approverTypeHasBeenSet;
 
                     /**
-                     * 签署控件类型，支持自定义企业签署方的签署控件类型
-<ul><li> **SIGN_SEAL**：默认为印章控件类型（默认值）</li>
-<li> **SIGN_SIGNATURE**：手写签名控件类型</li></ul>
+                     * <p>签署控件类型，支持自定义企业签署方的签署控件类型</p><ul><li> **SIGN_SEAL**：默认为印章控件类型（默认值）</li><li> **SIGN_SIGNATURE**：手写签名控件类型</li></ul>
                      */
                     std::string m_approverSignComponentType;
                     bool m_approverSignComponentTypeHasBeenSet;
 
                     /**
-                     * 参与方在合同中的角色是按照创建合同的时候来排序的，解除协议默认会将第一个参与人叫`甲方`,第二个叫`乙方`,  第三个叫`丙方`，以此类推。
-
-如果需改动此参与人的角色名字，可用此字段指定，由汉字,英文字符,数字组成，最大20个字。
-
-![image](https://qcloudimg.tencent-cloud.cn/raw/973a820ab66d1ce57082c160c2b2d44a.png)
-
+                     * <p>参与方在合同中的角色是按照创建合同的时候来排序的，解除协议默认会将第一个参与人叫<code>甲方</code>,第二个叫<code>乙方</code>,  第三个叫<code>丙方</code>，以此类推。</p><p>如果需改动此参与人的角色名字，可用此字段指定，由汉字,英文字符,数字组成，最大20个字。</p><p><img src="https://qcloudimg.tencent-cloud.cn/raw/973a820ab66d1ce57082c160c2b2d44a.png" alt="image"></p>
                      */
                     std::string m_approverSignRole;
                     bool m_approverSignRoleHasBeenSet;
 
                     /**
-                     * 印章Id，签署控件类型为印章时，用于指定本企业签署方在解除协议中使用那个印章进行签署
+                     * <p>印章Id，签署控件类型为印章时，用于指定本企业签署方在解除协议中使用那个印章进行签署</p>
                      */
                     std::string m_approverSignSealId;
                     bool m_approverSignSealIdHasBeenSet;
 
                     /**
-                     * 要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
+                     * <p>要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br></p>
                      */
                     std::string m_relievedApproverRecipientId;
                     bool m_relievedApproverRecipientIdHasBeenSet;

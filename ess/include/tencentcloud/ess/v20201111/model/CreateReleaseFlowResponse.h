@@ -44,12 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取解除协议流程编号
-`注意：这里的流程编号对应的合同是本次发起的解除协议。`
-
-                     * @return FlowId 解除协议流程编号
-`注意：这里的流程编号对应的合同是本次发起的解除协议。`
-
+                     * 获取<p>解除协议流程编号<br><code>注意：这里的流程编号对应的合同是本次发起的解除协议。</code></p>
+                     * @return FlowId <p>解除协议流程编号<br><code>注意：这里的流程编号对应的合同是本次发起的解除协议。</code></p>
                      * 
                      */
                     std::string GetFlowId() const;
@@ -64,9 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 解除协议流程编号
-`注意：这里的流程编号对应的合同是本次发起的解除协议。`
-
+                     * <p>解除协议流程编号<br><code>注意：这里的流程编号对应的合同是本次发起的解除协议。</code></p>
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
