@@ -25,6 +25,7 @@ AISpeakEvent::AISpeakEvent() :
     m_spokenTextHasBeenSet(false),
     m_spokenTypeHasBeenSet(false),
     m_latencyMetricsHasBeenSet(false),
+    m_knowledgeNameHasBeenSet(false),
     m_traverseReasonHasBeenSet(false)
 {
 }
@@ -81,6 +82,16 @@ CoreInternalOutcome AISpeakEvent::Deserialize(const rapidjson::Value &value)
         m_latencyMetricsHasBeenSet = true;
     }
 
+    if (value.HasMember("KnowledgeName") && !value["KnowledgeName"].IsNull())
+    {
+        if (!value["KnowledgeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AISpeakEvent.KnowledgeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_knowledgeName = string(value["KnowledgeName"].GetString());
+        m_knowledgeNameHasBeenSet = true;
+    }
+
     if (value.HasMember("TraverseReason") && !value["TraverseReason"].IsNull())
     {
         if (!value["TraverseReason"].IsString())
@@ -129,6 +140,14 @@ void AISpeakEvent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_latencyMetrics.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_knowledgeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_knowledgeName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_traverseReasonHasBeenSet)
@@ -204,6 +223,22 @@ void AISpeakEvent::SetLatencyMetrics(const AICallLatencyMetrics& _latencyMetrics
 bool AISpeakEvent::LatencyMetricsHasBeenSet() const
 {
     return m_latencyMetricsHasBeenSet;
+}
+
+string AISpeakEvent::GetKnowledgeName() const
+{
+    return m_knowledgeName;
+}
+
+void AISpeakEvent::SetKnowledgeName(const string& _knowledgeName)
+{
+    m_knowledgeName = _knowledgeName;
+    m_knowledgeNameHasBeenSet = true;
+}
+
+bool AISpeakEvent::KnowledgeNameHasBeenSet() const
+{
+    return m_knowledgeNameHasBeenSet;
 }
 
 string AISpeakEvent::GetTraverseReason() const

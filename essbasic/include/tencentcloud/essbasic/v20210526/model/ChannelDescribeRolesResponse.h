@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询结果分页返回，指定从第几页返回数据，和Limit参数配合使用，最大2000条。
-                     * @return Offset 查询结果分页返回，指定从第几页返回数据，和Limit参数配合使用，最大2000条。
+                     * 获取<p>查询结果分页返回，指定从第几页返回数据，和Limit参数配合使用，最大2000条。</p>
+                     * @return Offset <p>查询结果分页返回，指定从第几页返回数据，和Limit参数配合使用，最大2000条。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取指定每页返回的数据条数，和Offset参数配合使用，单页最大200。
-                     * @return Limit 指定每页返回的数据条数，和Offset参数配合使用，单页最大200。
+                     * 获取<p>指定每页返回的数据条数，和Offset参数配合使用，单页最大200。</p>
+                     * @return Limit <p>指定每页返回的数据条数，和Offset参数配合使用，单页最大200。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取查询角色的总数量
-                     * @return TotalCount 查询角色的总数量
+                     * 获取<p>查询角色的总数量</p>
+                     * @return TotalCount <p>查询角色的总数量</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取查询的角色信息列表
-                     * @return ChannelRoles 查询的角色信息列表
+                     * 获取<p>查询的角色信息列表</p>
+                     * @return ChannelRoles <p>查询的角色信息列表</p>
                      * 
                      */
                     std::vector<ChannelRole> GetChannelRoles() const;
@@ -103,25 +103,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询结果分页返回，指定从第几页返回数据，和Limit参数配合使用，最大2000条。
+                     * <p>查询结果分页返回，指定从第几页返回数据，和Limit参数配合使用，最大2000条。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 指定每页返回的数据条数，和Offset参数配合使用，单页最大200。
+                     * <p>指定每页返回的数据条数，和Offset参数配合使用，单页最大200。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 查询角色的总数量
+                     * <p>查询角色的总数量</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 查询的角色信息列表
+                     * <p>查询的角色信息列表</p>
                      */
                     std::vector<ChannelRole> m_channelRoles;
                     bool m_channelRolesHasBeenSet;

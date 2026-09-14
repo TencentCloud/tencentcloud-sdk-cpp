@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志采集topicid
-                     * @return TopicId 日志采集topicid
+                     * 获取<p>日志采集topicid</p>
+                     * @return TopicId <p>日志采集topicid</p>
                      * 
                      */
                     std::string GetTopicId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志采集topicid
+                     * <p>日志采集topicid</p>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;

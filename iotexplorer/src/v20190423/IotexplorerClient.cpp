@@ -240,6 +240,56 @@ IotexplorerClient::BatchCreateTWeSeeSubscriptionOutcomeCallable IotexplorerClien
     return prom->get_future();
 }
 
+IotexplorerClient::BatchDescribeTWeSeeOrdersOutcome IotexplorerClient::BatchDescribeTWeSeeOrders(const BatchDescribeTWeSeeOrdersRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchDescribeTWeSeeOrders");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchDescribeTWeSeeOrdersResponse rsp = BatchDescribeTWeSeeOrdersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchDescribeTWeSeeOrdersOutcome(rsp);
+        else
+            return BatchDescribeTWeSeeOrdersOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchDescribeTWeSeeOrdersOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::BatchDescribeTWeSeeOrdersAsync(const BatchDescribeTWeSeeOrdersRequest& request, const BatchDescribeTWeSeeOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const BatchDescribeTWeSeeOrdersRequest&;
+    using Resp = BatchDescribeTWeSeeOrdersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "BatchDescribeTWeSeeOrders", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::BatchDescribeTWeSeeOrdersOutcomeCallable IotexplorerClient::BatchDescribeTWeSeeOrdersCallable(const BatchDescribeTWeSeeOrdersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<BatchDescribeTWeSeeOrdersOutcome>>();
+    BatchDescribeTWeSeeOrdersAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const BatchDescribeTWeSeeOrdersRequest&,
+        BatchDescribeTWeSeeOrdersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::BatchInvokeTWeSeeRecognitionTaskOutcome IotexplorerClient::BatchInvokeTWeSeeRecognitionTask(const BatchInvokeTWeSeeRecognitionTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "BatchInvokeTWeSeeRecognitionTask");
@@ -11132,6 +11182,56 @@ IotexplorerClient::ModifyTopicRuleOutcomeCallable IotexplorerClient::ModifyTopic
         const IotexplorerClient*,
         const ModifyTopicRuleRequest&,
         ModifyTopicRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::OperateTWeSeeDirectUploadObjectOutcome IotexplorerClient::OperateTWeSeeDirectUploadObject(const OperateTWeSeeDirectUploadObjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "OperateTWeSeeDirectUploadObject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OperateTWeSeeDirectUploadObjectResponse rsp = OperateTWeSeeDirectUploadObjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OperateTWeSeeDirectUploadObjectOutcome(rsp);
+        else
+            return OperateTWeSeeDirectUploadObjectOutcome(o.GetError());
+    }
+    else
+    {
+        return OperateTWeSeeDirectUploadObjectOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::OperateTWeSeeDirectUploadObjectAsync(const OperateTWeSeeDirectUploadObjectRequest& request, const OperateTWeSeeDirectUploadObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const OperateTWeSeeDirectUploadObjectRequest&;
+    using Resp = OperateTWeSeeDirectUploadObjectResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "OperateTWeSeeDirectUploadObject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::OperateTWeSeeDirectUploadObjectOutcomeCallable IotexplorerClient::OperateTWeSeeDirectUploadObjectCallable(const OperateTWeSeeDirectUploadObjectRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<OperateTWeSeeDirectUploadObjectOutcome>>();
+    OperateTWeSeeDirectUploadObjectAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const OperateTWeSeeDirectUploadObjectRequest&,
+        OperateTWeSeeDirectUploadObjectOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

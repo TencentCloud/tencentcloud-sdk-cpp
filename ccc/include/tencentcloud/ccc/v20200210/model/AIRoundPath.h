@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ccc/v20200210/model/AICallAPICallDetail.h>
 
 
 namespace TencentCloud
@@ -68,15 +69,15 @@ namespace TencentCloud
                     bool NodeNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>画布中的节点类型</p><p>枚举值：</p><ul><li>DIALOGUE： 对话节点</li><li>API_CALL： 接口调用节点</li><li>TRANSFER： 转接节点</li><li>KEY_PRESS： 按键节点</li><li>END_CALL： 挂断节点</li></ul>
-                     * @return NodeType <p>画布中的节点类型</p><p>枚举值：</p><ul><li>DIALOGUE： 对话节点</li><li>API_CALL： 接口调用节点</li><li>TRANSFER： 转接节点</li><li>KEY_PRESS： 按键节点</li><li>END_CALL： 挂断节点</li></ul>
+                     * 获取<p>画布中的节点类型</p><p>枚举值：</p><ul><li>DIALOGUE： 对话节点</li><li>API_CALL： 接口调用节点</li><li>TRANSFER： 转接节点</li><li>KEY_PRESS： 按键节点</li><li>END_CALL： 挂断节点</li><li>TRANSFER_AGENT： 转接智能体节点</li><li>WORK_TIME： 工作时间节点</li></ul>
+                     * @return NodeType <p>画布中的节点类型</p><p>枚举值：</p><ul><li>DIALOGUE： 对话节点</li><li>API_CALL： 接口调用节点</li><li>TRANSFER： 转接节点</li><li>KEY_PRESS： 按键节点</li><li>END_CALL： 挂断节点</li><li>TRANSFER_AGENT： 转接智能体节点</li><li>WORK_TIME： 工作时间节点</li></ul>
                      * 
                      */
                     std::string GetNodeType() const;
 
                     /**
-                     * 设置<p>画布中的节点类型</p><p>枚举值：</p><ul><li>DIALOGUE： 对话节点</li><li>API_CALL： 接口调用节点</li><li>TRANSFER： 转接节点</li><li>KEY_PRESS： 按键节点</li><li>END_CALL： 挂断节点</li></ul>
-                     * @param _nodeType <p>画布中的节点类型</p><p>枚举值：</p><ul><li>DIALOGUE： 对话节点</li><li>API_CALL： 接口调用节点</li><li>TRANSFER： 转接节点</li><li>KEY_PRESS： 按键节点</li><li>END_CALL： 挂断节点</li></ul>
+                     * 设置<p>画布中的节点类型</p><p>枚举值：</p><ul><li>DIALOGUE： 对话节点</li><li>API_CALL： 接口调用节点</li><li>TRANSFER： 转接节点</li><li>KEY_PRESS： 按键节点</li><li>END_CALL： 挂断节点</li><li>TRANSFER_AGENT： 转接智能体节点</li><li>WORK_TIME： 工作时间节点</li></ul>
+                     * @param _nodeType <p>画布中的节点类型</p><p>枚举值：</p><ul><li>DIALOGUE： 对话节点</li><li>API_CALL： 接口调用节点</li><li>TRANSFER： 转接节点</li><li>KEY_PRESS： 按键节点</li><li>END_CALL： 挂断节点</li><li>TRANSFER_AGENT： 转接智能体节点</li><li>WORK_TIME： 工作时间节点</li></ul>
                      * 
                      */
                     void SetNodeType(const std::string& _nodeType);
@@ -109,6 +110,31 @@ namespace TencentCloud
                      */
                     bool TimestampHasBeenSet() const;
 
+                    /**
+                     * 获取<p>接口调用节点的调用详情，包含请求、响应、耗时以及每次重试的明细。仅 NodeType 为 API_CALL 时有值，其余节点类型不返回该字段。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return APICall <p>接口调用节点的调用详情，包含请求、响应、耗时以及每次重试的明细。仅 NodeType 为 API_CALL 时有值，其余节点类型不返回该字段。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AICallAPICallDetail GetAPICall() const;
+
+                    /**
+                     * 设置<p>接口调用节点的调用详情，包含请求、响应、耗时以及每次重试的明细。仅 NodeType 为 API_CALL 时有值，其余节点类型不返回该字段。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _aPICall <p>接口调用节点的调用详情，包含请求、响应、耗时以及每次重试的明细。仅 NodeType 为 API_CALL 时有值，其余节点类型不返回该字段。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAPICall(const AICallAPICallDetail& _aPICall);
+
+                    /**
+                     * 判断参数 APICall 是否已赋值
+                     * @return APICall 是否已赋值
+                     * 
+                     */
+                    bool APICallHasBeenSet() const;
+
                 private:
 
                     /**
@@ -118,7 +144,7 @@ namespace TencentCloud
                     bool m_nodeNameHasBeenSet;
 
                     /**
-                     * <p>画布中的节点类型</p><p>枚举值：</p><ul><li>DIALOGUE： 对话节点</li><li>API_CALL： 接口调用节点</li><li>TRANSFER： 转接节点</li><li>KEY_PRESS： 按键节点</li><li>END_CALL： 挂断节点</li></ul>
+                     * <p>画布中的节点类型</p><p>枚举值：</p><ul><li>DIALOGUE： 对话节点</li><li>API_CALL： 接口调用节点</li><li>TRANSFER： 转接节点</li><li>KEY_PRESS： 按键节点</li><li>END_CALL： 挂断节点</li><li>TRANSFER_AGENT： 转接智能体节点</li><li>WORK_TIME： 工作时间节点</li></ul>
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;
@@ -128,6 +154,13 @@ namespace TencentCloud
                      */
                     int64_t m_timestamp;
                     bool m_timestampHasBeenSet;
+
+                    /**
+                     * <p>接口调用节点的调用详情，包含请求、响应、耗时以及每次重试的明细。仅 NodeType 为 API_CALL 时有值，其余节点类型不返回该字段。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AICallAPICallDetail m_aPICall;
+                    bool m_aPICallHasBeenSet;
 
                 };
             }

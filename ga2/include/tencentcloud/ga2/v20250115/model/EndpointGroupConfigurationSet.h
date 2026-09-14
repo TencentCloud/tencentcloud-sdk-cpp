@@ -657,6 +657,48 @@ namespace TencentCloud
                      */
                     bool HttpVersionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>出终端节点组内网IP</p>
+                     * @return OriginPrivateIps <p>出终端节点组内网IP</p>
+                     * 
+                     */
+                    std::vector<std::string> GetOriginPrivateIps() const;
+
+                    /**
+                     * 设置<p>出终端节点组内网IP</p>
+                     * @param _originPrivateIps <p>出终端节点组内网IP</p>
+                     * 
+                     */
+                    void SetOriginPrivateIps(const std::vector<std::string>& _originPrivateIps);
+
+                    /**
+                     * 判断参数 OriginPrivateIps 是否已赋值
+                     * @return OriginPrivateIps 是否已赋值
+                     * 
+                     */
+                    bool OriginPrivateIpsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>出终端节点组公网CIDR</p>
+                     * @return OriginPublicCidrs <p>出终端节点组公网CIDR</p>
+                     * 
+                     */
+                    std::vector<std::string> GetOriginPublicCidrs() const;
+
+                    /**
+                     * 设置<p>出终端节点组公网CIDR</p>
+                     * @param _originPublicCidrs <p>出终端节点组公网CIDR</p>
+                     * 
+                     */
+                    void SetOriginPublicCidrs(const std::vector<std::string>& _originPublicCidrs);
+
+                    /**
+                     * 判断参数 OriginPublicCidrs 是否已赋值
+                     * @return OriginPublicCidrs 是否已赋值
+                     * 
+                     */
+                    bool OriginPublicCidrsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -832,6 +874,18 @@ namespace TencentCloud
                      */
                     std::string m_httpVersion;
                     bool m_httpVersionHasBeenSet;
+
+                    /**
+                     * <p>出终端节点组内网IP</p>
+                     */
+                    std::vector<std::string> m_originPrivateIps;
+                    bool m_originPrivateIpsHasBeenSet;
+
+                    /**
+                     * <p>出终端节点组公网CIDR</p>
+                     */
+                    std::vector<std::string> m_originPublicCidrs;
+                    bool m_originPublicCidrsHasBeenSet;
 
                 };
             }

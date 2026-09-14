@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务状态。
-                     * @return Status 任务状态。
+                     * 获取<p>任务状态。</p><p>枚举值：</p><ul><li>SUCCESS： 任务成功。</li><li>FAILURE： 任务失败。</li><li>RUNNING： 任务运行。</li></ul>
+                     * @return Status <p>任务状态。</p><p>枚举值：</p><ul><li>SUCCESS： 任务成功。</li><li>FAILURE： 任务失败。</li><li>RUNNING： 任务运行。</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务状态。
+                     * <p>任务状态。</p><p>枚举值：</p><ul><li>SUCCESS： 任务成功。</li><li>FAILURE： 任务失败。</li><li>RUNNING： 任务运行。</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

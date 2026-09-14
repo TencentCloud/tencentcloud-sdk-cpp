@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>地域中文名称。</p>
-                     * @return Name <p>地域中文名称。</p>
+                     * 获取<p>地域名称。</p>
+                     * @return Name <p>地域名称。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置<p>地域中文名称。</p>
-                     * @param _name <p>地域中文名称。</p>
+                     * 设置<p>地域名称。</p>
+                     * @param _name <p>地域名称。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool IsAvailableHasBeenSet() const;
 
                     /**
-                     * 获取<p>地域信息。</p>
-                     * @return Region <p>地域信息。</p>
+                     * 获取<p>地域。</p>
+                     * @return Region <p>地域。</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置<p>地域信息。</p>
-                     * @param _region <p>地域信息。</p>
+                     * 设置<p>地域。</p>
+                     * @param _region <p>地域。</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool AreaNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>是否中国地域。</p>
-                     * @return IsChinaMainland <p>是否中国地域。</p>
+                     * 获取<p>是否中国地域。1 代表是中国地域，0代表不是中国地域。</p>
+                     * @return IsChinaMainland <p>是否中国地域。1 代表是中国地域，0代表不是中国地域。</p>
                      * 
                      */
                     uint64_t GetIsChinaMainland() const;
 
                     /**
-                     * 设置<p>是否中国地域。</p>
-                     * @param _isChinaMainland <p>是否中国地域。</p>
+                     * 设置<p>是否中国地域。1 代表是中国地域，0代表不是中国地域。</p>
+                     * @param _isChinaMainland <p>是否中国地域。1 代表是中国地域，0代表不是中国地域。</p>
                      * 
                      */
                     void SetIsChinaMainland(const uint64_t& _isChinaMainland);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool SupportIspTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>是否腾讯地域。</p>
-                     * @return IsTencentRegion <p>是否腾讯地域。</p>
+                     * 获取<p>是否腾讯云地域。1代表是腾讯云地域，0代表不是。</p>
+                     * @return IsTencentRegion <p>是否腾讯云地域。1代表是腾讯云地域，0代表不是。</p>
                      * 
                      */
                     uint64_t GetIsTencentRegion() const;
 
                     /**
-                     * 设置<p>是否腾讯地域。</p>
-                     * @param _isTencentRegion <p>是否腾讯地域。</p>
+                     * 设置<p>是否腾讯云地域。1代表是腾讯云地域，0代表不是。</p>
+                     * @param _isTencentRegion <p>是否腾讯云地域。1代表是腾讯云地域，0代表不是。</p>
                      * 
                      */
                     void SetIsTencentRegion(const uint64_t& _isTencentRegion);
@@ -196,7 +196,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>地域中文名称。</p>
+                     * <p>地域名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -208,7 +208,7 @@ namespace TencentCloud
                     bool m_isAvailableHasBeenSet;
 
                     /**
-                     * <p>地域信息。</p>
+                     * <p>地域。</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
@@ -220,7 +220,7 @@ namespace TencentCloud
                     bool m_areaNameHasBeenSet;
 
                     /**
-                     * <p>是否中国地域。</p>
+                     * <p>是否中国地域。1 代表是中国地域，0代表不是中国地域。</p>
                      */
                     uint64_t m_isChinaMainland;
                     bool m_isChinaMainlandHasBeenSet;
@@ -232,7 +232,7 @@ namespace TencentCloud
                     bool m_supportIspTypeHasBeenSet;
 
                     /**
-                     * <p>是否腾讯地域。</p>
+                     * <p>是否腾讯云地域。1代表是腾讯云地域，0代表不是。</p>
                      */
                     uint64_t m_isTencentRegion;
                     bool m_isTencentRegionHasBeenSet;

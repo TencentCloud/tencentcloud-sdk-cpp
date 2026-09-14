@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合条件的规则信息。
-                     * @return ForwardingRuleSet 符合条件的规则信息。
+                     * 获取<p>符合条件的规则信息。</p>
+                     * @return ForwardingRuleSet <p>符合条件的规则信息。</p>
                      * 
                      */
                     std::vector<ForwardingRuleSet> GetForwardingRuleSet() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ForwardingRuleSetHasBeenSet() const;
 
                     /**
-                     * 获取符合条件的实例个数。
-                     * @return TotalCount 符合条件的实例个数。
+                     * 获取<p>符合条件的实例个数。</p>
+                     * @return TotalCount <p>符合条件的实例个数。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合条件的规则信息。
+                     * <p>符合条件的规则信息。</p>
                      */
                     std::vector<ForwardingRuleSet> m_forwardingRuleSet;
                     bool m_forwardingRuleSetHasBeenSet;
 
                     /**
-                     * 符合条件的实例个数。
+                     * <p>符合条件的实例个数。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

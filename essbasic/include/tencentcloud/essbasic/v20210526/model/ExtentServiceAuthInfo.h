@@ -47,47 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取扩展服务类型
-<ul>
-<li>AUTO_SIGN             企业自动签（自动签署）</li>
-<li>  OVERSEA_SIGN          企业与港澳台居民签署合同</li>
-<li>  MOBILE_CHECK_APPROVER 使用手机号验证签署方身份</li>
-<li> DOWNLOAD_FLOW         授权渠道下载合同 </li>
-<li>AGE_LIMIT_EXPANSION 拓宽签署方年龄限制</li>
-<li>HIDE_OPERATOR_DISPLAY 隐藏合同经办人姓名</li>
-</ul>
-                     * @return Type 扩展服务类型
-<ul>
-<li>AUTO_SIGN             企业自动签（自动签署）</li>
-<li>  OVERSEA_SIGN          企业与港澳台居民签署合同</li>
-<li>  MOBILE_CHECK_APPROVER 使用手机号验证签署方身份</li>
-<li> DOWNLOAD_FLOW         授权渠道下载合同 </li>
-<li>AGE_LIMIT_EXPANSION 拓宽签署方年龄限制</li>
-<li>HIDE_OPERATOR_DISPLAY 隐藏合同经办人姓名</li>
-</ul>
+                     * 获取<p>扩展服务类型<ul><li>AUTO_SIGN             企业“授权签”（“授权签”）</li><li>  OVERSEA_SIGN          企业与港澳台居民签署合同</li><li>  MOBILE_CHECK_APPROVER 使用手机号验证签署方身份</li><li> DOWNLOAD_FLOW         授权渠道下载合同 </li><li>AGE_LIMIT_EXPANSION 拓宽签署方年龄限制</li><li>HIDE_OPERATOR_DISPLAY 隐藏合同经办人姓名</li></ul></p>
+                     * @return Type <p>扩展服务类型<ul><li>AUTO_SIGN             企业“授权签”（“授权签”）</li><li>  OVERSEA_SIGN          企业与港澳台居民签署合同</li><li>  MOBILE_CHECK_APPROVER 使用手机号验证签署方身份</li><li> DOWNLOAD_FLOW         授权渠道下载合同 </li><li>AGE_LIMIT_EXPANSION 拓宽签署方年龄限制</li><li>HIDE_OPERATOR_DISPLAY 隐藏合同经办人姓名</li></ul></p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置扩展服务类型
-<ul>
-<li>AUTO_SIGN             企业自动签（自动签署）</li>
-<li>  OVERSEA_SIGN          企业与港澳台居民签署合同</li>
-<li>  MOBILE_CHECK_APPROVER 使用手机号验证签署方身份</li>
-<li> DOWNLOAD_FLOW         授权渠道下载合同 </li>
-<li>AGE_LIMIT_EXPANSION 拓宽签署方年龄限制</li>
-<li>HIDE_OPERATOR_DISPLAY 隐藏合同经办人姓名</li>
-</ul>
-                     * @param _type 扩展服务类型
-<ul>
-<li>AUTO_SIGN             企业自动签（自动签署）</li>
-<li>  OVERSEA_SIGN          企业与港澳台居民签署合同</li>
-<li>  MOBILE_CHECK_APPROVER 使用手机号验证签署方身份</li>
-<li> DOWNLOAD_FLOW         授权渠道下载合同 </li>
-<li>AGE_LIMIT_EXPANSION 拓宽签署方年龄限制</li>
-<li>HIDE_OPERATOR_DISPLAY 隐藏合同经办人姓名</li>
-</ul>
+                     * 设置<p>扩展服务类型<ul><li>AUTO_SIGN             企业“授权签”（“授权签”）</li><li>  OVERSEA_SIGN          企业与港澳台居民签署合同</li><li>  MOBILE_CHECK_APPROVER 使用手机号验证签署方身份</li><li> DOWNLOAD_FLOW         授权渠道下载合同 </li><li>AGE_LIMIT_EXPANSION 拓宽签署方年龄限制</li><li>HIDE_OPERATOR_DISPLAY 隐藏合同经办人姓名</li></ul></p>
+                     * @param _type <p>扩展服务类型<ul><li>AUTO_SIGN             企业“授权签”（“授权签”）</li><li>  OVERSEA_SIGN          企业与港澳台居民签署合同</li><li>  MOBILE_CHECK_APPROVER 使用手机号验证签署方身份</li><li> DOWNLOAD_FLOW         授权渠道下载合同 </li><li>AGE_LIMIT_EXPANSION 拓宽签署方年龄限制</li><li>HIDE_OPERATOR_DISPLAY 隐藏合同经办人姓名</li></ul></p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -100,15 +68,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取扩展服务名称 
-                     * @return Name 扩展服务名称 
+                     * 获取<p>扩展服务名称</p>
+                     * @return Name <p>扩展服务名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置扩展服务名称 
-                     * @param _name 扩展服务名称 
+                     * 设置<p>扩展服务名称</p>
+                     * @param _name <p>扩展服务名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -121,23 +89,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取扩展服务的开通状态
-**ENABLE**：开通 
-**DISABLE**：未开通	
-                     * @return Status 扩展服务的开通状态
-**ENABLE**：开通 
-**DISABLE**：未开通	
+                     * 获取<p>扩展服务的开通状态<br><strong>ENABLE</strong>：开通<br><strong>DISABLE</strong>：未开通</p>
+                     * @return Status <p>扩展服务的开通状态<br><strong>ENABLE</strong>：开通<br><strong>DISABLE</strong>：未开通</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置扩展服务的开通状态
-**ENABLE**：开通 
-**DISABLE**：未开通	
-                     * @param _status 扩展服务的开通状态
-**ENABLE**：开通 
-**DISABLE**：未开通	
+                     * 设置<p>扩展服务的开通状态<br><strong>ENABLE</strong>：开通<br><strong>DISABLE</strong>：未开通</p>
+                     * @param _status <p>扩展服务的开通状态<br><strong>ENABLE</strong>：开通<br><strong>DISABLE</strong>：未开通</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -150,15 +110,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取操作扩展服务的操作人第三方应用平台的用户openid
-                     * @return OperatorOpenId 操作扩展服务的操作人第三方应用平台的用户openid
+                     * 获取<p>操作扩展服务的操作人第三方应用平台的用户openid</p>
+                     * @return OperatorOpenId <p>操作扩展服务的操作人第三方应用平台的用户openid</p>
                      * 
                      */
                     std::string GetOperatorOpenId() const;
 
                     /**
-                     * 设置操作扩展服务的操作人第三方应用平台的用户openid
-                     * @param _operatorOpenId 操作扩展服务的操作人第三方应用平台的用户openid
+                     * 设置<p>操作扩展服务的操作人第三方应用平台的用户openid</p>
+                     * @param _operatorOpenId <p>操作扩展服务的操作人第三方应用平台的用户openid</p>
                      * 
                      */
                     void SetOperatorOpenId(const std::string& _operatorOpenId);
@@ -171,15 +131,15 @@ namespace TencentCloud
                     bool OperatorOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取扩展服务的操作时间，格式为Unix标准时间戳（秒）。	
-                     * @return OperateOn 扩展服务的操作时间，格式为Unix标准时间戳（秒）。	
+                     * 获取<p>扩展服务的操作时间，格式为Unix标准时间戳（秒）。</p>
+                     * @return OperateOn <p>扩展服务的操作时间，格式为Unix标准时间戳（秒）。</p>
                      * 
                      */
                     int64_t GetOperateOn() const;
 
                     /**
-                     * 设置扩展服务的操作时间，格式为Unix标准时间戳（秒）。	
-                     * @param _operateOn 扩展服务的操作时间，格式为Unix标准时间戳（秒）。	
+                     * 设置<p>扩展服务的操作时间，格式为Unix标准时间戳（秒）。</p>
+                     * @param _operateOn <p>扩展服务的操作时间，格式为Unix标准时间戳（秒）。</p>
                      * 
                      */
                     void SetOperateOn(const int64_t& _operateOn);
@@ -194,41 +154,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 扩展服务类型
-<ul>
-<li>AUTO_SIGN             企业自动签（自动签署）</li>
-<li>  OVERSEA_SIGN          企业与港澳台居民签署合同</li>
-<li>  MOBILE_CHECK_APPROVER 使用手机号验证签署方身份</li>
-<li> DOWNLOAD_FLOW         授权渠道下载合同 </li>
-<li>AGE_LIMIT_EXPANSION 拓宽签署方年龄限制</li>
-<li>HIDE_OPERATOR_DISPLAY 隐藏合同经办人姓名</li>
-</ul>
+                     * <p>扩展服务类型<ul><li>AUTO_SIGN             企业“授权签”（“授权签”）</li><li>  OVERSEA_SIGN          企业与港澳台居民签署合同</li><li>  MOBILE_CHECK_APPROVER 使用手机号验证签署方身份</li><li> DOWNLOAD_FLOW         授权渠道下载合同 </li><li>AGE_LIMIT_EXPANSION 拓宽签署方年龄限制</li><li>HIDE_OPERATOR_DISPLAY 隐藏合同经办人姓名</li></ul></p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 扩展服务名称 
+                     * <p>扩展服务名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 扩展服务的开通状态
-**ENABLE**：开通 
-**DISABLE**：未开通	
+                     * <p>扩展服务的开通状态<br><strong>ENABLE</strong>：开通<br><strong>DISABLE</strong>：未开通</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 操作扩展服务的操作人第三方应用平台的用户openid
+                     * <p>操作扩展服务的操作人第三方应用平台的用户openid</p>
                      */
                     std::string m_operatorOpenId;
                     bool m_operatorOpenIdHasBeenSet;
 
                     /**
-                     * 扩展服务的操作时间，格式为Unix标准时间戳（秒）。	
+                     * <p>扩展服务的操作时间，格式为Unix标准时间戳（秒）。</p>
                      */
                     int64_t m_operateOn;
                     bool m_operateOnHasBeenSet;

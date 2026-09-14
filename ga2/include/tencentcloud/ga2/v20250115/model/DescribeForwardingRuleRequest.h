@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ga2/v20250115/model/Filter.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取全球加速实例ID。
-                     * @return GlobalAcceleratorId 全球加速实例ID。
+                     * 获取<p>全球加速实例ID。</p>
+                     * @return GlobalAcceleratorId <p>全球加速实例ID。</p>
                      * 
                      */
                     std::string GetGlobalAcceleratorId() const;
 
                     /**
-                     * 设置全球加速实例ID。
-                     * @param _globalAcceleratorId 全球加速实例ID。
+                     * 设置<p>全球加速实例ID。</p>
+                     * @param _globalAcceleratorId <p>全球加速实例ID。</p>
                      * 
                      */
                     void SetGlobalAcceleratorId(const std::string& _globalAcceleratorId);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool GlobalAcceleratorIdHasBeenSet() const;
 
                     /**
-                     * 获取监听器ID。
-                     * @return ListenerId 监听器ID。
+                     * 获取<p>监听器ID。</p>
+                     * @return ListenerId <p>监听器ID。</p>
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置监听器ID。
-                     * @param _listenerId 监听器ID。
+                     * 设置<p>监听器ID。</p>
+                     * @param _listenerId <p>监听器ID。</p>
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -85,15 +86,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取七层转发规则ID。
-                     * @return ForwardingPolicyId 七层转发规则ID。
+                     * 获取<p>七层转发规则ID。</p>
+                     * @return ForwardingPolicyId <p>七层转发规则ID。</p>
                      * 
                      */
                     std::string GetForwardingPolicyId() const;
 
                     /**
-                     * 设置七层转发规则ID。
-                     * @param _forwardingPolicyId 七层转发规则ID。
+                     * 设置<p>七层转发规则ID。</p>
+                     * @param _forwardingPolicyId <p>七层转发规则ID。</p>
                      * 
                      */
                     void SetForwardingPolicyId(const std::string& _forwardingPolicyId);
@@ -106,15 +107,15 @@ namespace TencentCloud
                     bool ForwardingPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0。
-                     * @return Offset 偏移量，默认为0。
+                     * 获取<p>偏移量，默认为0。</p>
+                     * @return Offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0。
-                     * @param _offset 偏移量，默认为0。
+                     * 设置<p>偏移量，默认为0。</p>
+                     * @param _offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -127,15 +128,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为20，最大值为100。
-                     * @return Limit 返回数量，默认为20，最大值为100。
+                     * 获取<p>返回数量，默认为20，最大值为100。</p>
+                     * @return Limit <p>返回数量，默认为20，最大值为100。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为20，最大值为100。
-                     * @param _limit 返回数量，默认为20，最大值为100。
+                     * 设置<p>返回数量，默认为20，最大值为100。</p>
+                     * @param _limit <p>返回数量，默认为20，最大值为100。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -147,37 +148,64 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取<p>过滤条件。<li>forwarding-rule-id - String -（过滤条件）规则ID。</li></p>
+                     * @return Filters <p>过滤条件。<li>forwarding-rule-id - String -（过滤条件）规则ID。</li></p>
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置<p>过滤条件。<li>forwarding-rule-id - String -（过滤条件）规则ID。</li></p>
+                     * @param _filters <p>过滤条件。<li>forwarding-rule-id - String -（过滤条件）规则ID。</li></p>
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 全球加速实例ID。
+                     * <p>全球加速实例ID。</p>
                      */
                     std::string m_globalAcceleratorId;
                     bool m_globalAcceleratorIdHasBeenSet;
 
                     /**
-                     * 监听器ID。
+                     * <p>监听器ID。</p>
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 七层转发规则ID。
+                     * <p>七层转发规则ID。</p>
                      */
                     std::string m_forwardingPolicyId;
                     bool m_forwardingPolicyIdHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0。
+                     * <p>偏移量，默认为0。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，默认为20，最大值为100。
+                     * <p>返回数量，默认为20，最大值为100。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * <p>过滤条件。<li>forwarding-rule-id - String -（过滤条件）规则ID。</li></p>
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

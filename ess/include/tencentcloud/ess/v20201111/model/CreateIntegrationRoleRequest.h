@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取角色名称，最大长度为20个字符，仅限中文、字母、数字和下划线组成。
-                     * @return Name 角色名称，最大长度为20个字符，仅限中文、字母、数字和下划线组成。
+                     * 获取<p>角色名称，最大长度为20个字符，仅限中文、字母、数字和下划线组成。</p>
+                     * @return Name <p>角色名称，最大长度为20个字符，仅限中文、字母、数字和下划线组成。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置角色名称，最大长度为20个字符，仅限中文、字母、数字和下划线组成。
-                     * @param _name 角色名称，最大长度为20个字符，仅限中文、字母、数字和下划线组成。
+                     * 设置<p>角色名称，最大长度为20个字符，仅限中文、字母、数字和下划线组成。</p>
+                     * @param _name <p>角色名称，最大长度为20个字符，仅限中文、字母、数字和下划线组成。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -67,27 +67,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取执行本接口操作的员工信息。使用此接口时，必须填写userId。
-支持填入集团子公司经办人 userId 代发合同。
-
-注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
-                     * @return Operator 执行本接口操作的员工信息。使用此接口时，必须填写userId。
-支持填入集团子公司经办人 userId 代发合同。
-
-注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
+                     * 获取<p>执行本接口操作的员工信息。使用此接口时，必须填写userId。<br>支持填入集团子公司经办人 userId 代发合同。</p><p>注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</p>
+                     * @return Operator <p>执行本接口操作的员工信息。使用此接口时，必须填写userId。<br>支持填入集团子公司经办人 userId 代发合同。</p><p>注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</p>
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置执行本接口操作的员工信息。使用此接口时，必须填写userId。
-支持填入集团子公司经办人 userId 代发合同。
-
-注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
-                     * @param _operator 执行本接口操作的员工信息。使用此接口时，必须填写userId。
-支持填入集团子公司经办人 userId 代发合同。
-
-注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
+                     * 设置<p>执行本接口操作的员工信息。使用此接口时，必须填写userId。<br>支持填入集团子公司经办人 userId 代发合同。</p><p>注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</p>
+                     * @param _operator <p>执行本接口操作的员工信息。使用此接口时，必须填写userId。<br>支持填入集团子公司经办人 userId 代发合同。</p><p>注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</p>
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -100,15 +88,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取角色描述，最大长度为50个字符
-                     * @return Description 角色描述，最大长度为50个字符
+                     * 获取<p>角色描述，最大长度为50个字符</p>
+                     * @return Description <p>角色描述，最大长度为50个字符</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置角色描述，最大长度为50个字符
-                     * @param _description 角色描述，最大长度为50个字符
+                     * 设置<p>角色描述，最大长度为50个字符</p>
+                     * @param _description <p>角色描述，最大长度为50个字符</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -121,19 +109,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取角色类型，0:saas角色，1:集团角色
-默认0，saas角色
-                     * @return IsGroupRole 角色类型，0:saas角色，1:集团角色
-默认0，saas角色
+                     * 获取<p>角色类型，0:saas角色，1:集团角色<br>默认0，saas角色</p>
+                     * @return IsGroupRole <p>角色类型，0:saas角色，1:集团角色<br>默认0，saas角色</p>
                      * 
                      */
                     int64_t GetIsGroupRole() const;
 
                     /**
-                     * 设置角色类型，0:saas角色，1:集团角色
-默认0，saas角色
-                     * @param _isGroupRole 角色类型，0:saas角色，1:集团角色
-默认0，saas角色
+                     * 设置<p>角色类型，0:saas角色，1:集团角色<br>默认0，saas角色</p>
+                     * @param _isGroupRole <p>角色类型，0:saas角色，1:集团角色<br>默认0，saas角色</p>
                      * 
                      */
                     void SetIsGroupRole(const int64_t& _isGroupRole);
@@ -146,15 +130,15 @@ namespace TencentCloud
                     bool IsGroupRoleHasBeenSet() const;
 
                     /**
-                     * 获取权限树
-                     * @return PermissionGroups 权限树
+                     * 获取<p>权限树</p>
+                     * @return PermissionGroups <p>权限树</p>
                      * 
                      */
                     std::vector<PermissionGroup> GetPermissionGroups() const;
 
                     /**
-                     * 设置权限树
-                     * @param _permissionGroups 权限树
+                     * 设置<p>权限树</p>
+                     * @param _permissionGroups <p>权限树</p>
                      * 
                      */
                     void SetPermissionGroups(const std::vector<PermissionGroup>& _permissionGroups);
@@ -167,15 +151,15 @@ namespace TencentCloud
                     bool PermissionGroupsHasBeenSet() const;
 
                     /**
-                     * 获取集团角色的话，需要传递集团子企业列表，如果是全选，则传1
-                     * @return SubOrganizationIds 集团角色的话，需要传递集团子企业列表，如果是全选，则传1
+                     * 获取<p>集团角色的话，需要传递集团子企业列表，如果是全选，则传1</p>
+                     * @return SubOrganizationIds <p>集团角色的话，需要传递集团子企业列表，如果是全选，则传1</p>
                      * 
                      */
                     std::vector<std::string> GetSubOrganizationIds() const;
 
                     /**
-                     * 设置集团角色的话，需要传递集团子企业列表，如果是全选，则传1
-                     * @param _subOrganizationIds 集团角色的话，需要传递集团子企业列表，如果是全选，则传1
+                     * 设置<p>集团角色的话，需要传递集团子企业列表，如果是全选，则传1</p>
+                     * @param _subOrganizationIds <p>集团角色的话，需要传递集团子企业列表，如果是全选，则传1</p>
                      * 
                      */
                     void SetSubOrganizationIds(const std::vector<std::string>& _subOrganizationIds);
@@ -188,19 +172,15 @@ namespace TencentCloud
                     bool SubOrganizationIdsHasBeenSet() const;
 
                     /**
-                     * 获取代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
-                     * @return Agent 代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 获取<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
+                     * @return Agent <p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
-                     * @param _agent 代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 设置<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
+                     * @param _agent <p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -215,48 +195,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 角色名称，最大长度为20个字符，仅限中文、字母、数字和下划线组成。
+                     * <p>角色名称，最大长度为20个字符，仅限中文、字母、数字和下划线组成。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 执行本接口操作的员工信息。使用此接口时，必须填写userId。
-支持填入集团子公司经办人 userId 代发合同。
-
-注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
+                     * <p>执行本接口操作的员工信息。使用此接口时，必须填写userId。<br>支持填入集团子公司经办人 userId 代发合同。</p><p>注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</p>
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 角色描述，最大长度为50个字符
+                     * <p>角色描述，最大长度为50个字符</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 角色类型，0:saas角色，1:集团角色
-默认0，saas角色
+                     * <p>角色类型，0:saas角色，1:集团角色<br>默认0，saas角色</p>
                      */
                     int64_t m_isGroupRole;
                     bool m_isGroupRoleHasBeenSet;
 
                     /**
-                     * 权限树
+                     * <p>权限树</p>
                      */
                     std::vector<PermissionGroup> m_permissionGroups;
                     bool m_permissionGroupsHasBeenSet;
 
                     /**
-                     * 集团角色的话，需要传递集团子企业列表，如果是全选，则传1
+                     * <p>集团角色的话，需要传递集团子企业列表，如果是全选，则传1</p>
                      */
                     std::vector<std::string> m_subOrganizationIds;
                     bool m_subOrganizationIdsHasBeenSet;
 
                     /**
-                     * 代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * <p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

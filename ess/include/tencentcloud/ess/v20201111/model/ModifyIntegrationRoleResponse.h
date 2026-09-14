@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取角色id
-                     * @return RoleId 角色id
+                     * 获取<p>角色id</p>
+                     * @return RoleId <p>角色id</p>
                      * 
                      */
                     std::string GetRoleId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 角色id
+                     * <p>角色id</p>
                      */
                     std::string m_roleId;
                     bool m_roleIdHasBeenSet;

@@ -22,7 +22,8 @@
 using namespace TencentCloud::Ga2::V20250115::Model;
 using namespace std;
 
-DescribeAccessLogParamRequest::DescribeAccessLogParamRequest()
+DescribeAccessLogParamRequest::DescribeAccessLogParamRequest() :
+    m_globalAcceleratorIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeAccessLogParamRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_globalAcceleratorIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GlobalAcceleratorId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_globalAcceleratorId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeAccessLogParamRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeAccessLogParamRequest::GetGlobalAcceleratorId() const
+{
+    return m_globalAcceleratorId;
+}
+
+void DescribeAccessLogParamRequest::SetGlobalAcceleratorId(const string& _globalAcceleratorId)
+{
+    m_globalAcceleratorId = _globalAcceleratorId;
+    m_globalAcceleratorIdHasBeenSet = true;
+}
+
+bool DescribeAccessLogParamRequest::GlobalAcceleratorIdHasBeenSet() const
+{
+    return m_globalAcceleratorIdHasBeenSet;
+}
 
 

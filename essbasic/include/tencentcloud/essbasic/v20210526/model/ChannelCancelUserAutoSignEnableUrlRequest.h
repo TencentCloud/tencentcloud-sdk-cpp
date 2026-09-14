@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取渠道应用相关信息
-                     * @return Agent 渠道应用相关信息
+                     * 获取<p>渠道应用相关信息</p>
+                     * @return Agent <p>渠道应用相关信息</p>
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置渠道应用相关信息
-                     * @param _agent 渠道应用相关信息
+                     * 设置<p>渠道应用相关信息</p>
+                     * @param _agent <p>渠道应用相关信息</p>
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取操作人信息
-                     * @return Operator 操作人信息
+                     * 获取<p>操作人信息</p>
+                     * @return Operator <p>操作人信息</p>
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置操作人信息
-                     * @param _operator 操作人信息
+                     * 设置<p>操作人信息</p>
+                     * @param _operator <p>操作人信息</p>
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -88,19 +88,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取自动签使用的场景值, 可以选择的场景值如下:
-<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
-                     * @return SceneKey 自动签使用的场景值, 可以选择的场景值如下:
-<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+                     * 获取<p>授权签使用的场景值, 可以选择的场景值如下:</p><p>枚举值：</p><ul><li>E_PRESCRIPTION_AUTO_SIGN： 电子处方场景</li><li>OTHER： 通用场景</li></ul>
+                     * @return SceneKey <p>授权签使用的场景值, 可以选择的场景值如下:</p><p>枚举值：</p><ul><li>E_PRESCRIPTION_AUTO_SIGN： 电子处方场景</li><li>OTHER： 通用场景</li></ul>
                      * 
                      */
                     std::string GetSceneKey() const;
 
                     /**
-                     * 设置自动签使用的场景值, 可以选择的场景值如下:
-<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
-                     * @param _sceneKey 自动签使用的场景值, 可以选择的场景值如下:
-<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+                     * 设置<p>授权签使用的场景值, 可以选择的场景值如下:</p><p>枚举值：</p><ul><li>E_PRESCRIPTION_AUTO_SIGN： 电子处方场景</li><li>OTHER： 通用场景</li></ul>
+                     * @param _sceneKey <p>授权签使用的场景值, 可以选择的场景值如下:</p><p>枚举值：</p><ul><li>E_PRESCRIPTION_AUTO_SIGN： 电子处方场景</li><li>OTHER： 通用场景</li></ul>
                      * 
                      */
                     void SetSceneKey(const std::string& _sceneKey);
@@ -113,15 +109,15 @@ namespace TencentCloud
                     bool SceneKeyHasBeenSet() const;
 
                     /**
-                     * 获取指定撤销链接的用户信息，包含姓名、证件类型、证件号码。
-                     * @return UserInfo 指定撤销链接的用户信息，包含姓名、证件类型、证件号码。
+                     * 获取<p>指定撤销链接的用户信息，包含姓名、证件类型、证件号码。</p>
+                     * @return UserInfo <p>指定撤销链接的用户信息，包含姓名、证件类型、证件号码。</p>
                      * 
                      */
                     UserThreeFactor GetUserInfo() const;
 
                     /**
-                     * 设置指定撤销链接的用户信息，包含姓名、证件类型、证件号码。
-                     * @param _userInfo 指定撤销链接的用户信息，包含姓名、证件类型、证件号码。
+                     * 设置<p>指定撤销链接的用户信息，包含姓名、证件类型、证件号码。</p>
+                     * @param _userInfo <p>指定撤销链接的用户信息，包含姓名、证件类型、证件号码。</p>
                      * 
                      */
                     void SetUserInfo(const UserThreeFactor& _userInfo);
@@ -136,26 +132,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 渠道应用相关信息
+                     * <p>渠道应用相关信息</p>
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 操作人信息
+                     * <p>操作人信息</p>
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 自动签使用的场景值, 可以选择的场景值如下:
-<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+                     * <p>授权签使用的场景值, 可以选择的场景值如下:</p><p>枚举值：</p><ul><li>E_PRESCRIPTION_AUTO_SIGN： 电子处方场景</li><li>OTHER： 通用场景</li></ul>
                      */
                     std::string m_sceneKey;
                     bool m_sceneKeyHasBeenSet;
 
                     /**
-                     * 指定撤销链接的用户信息，包含姓名、证件类型、证件号码。
+                     * <p>指定撤销链接的用户信息，包含姓名、证件类型、证件号码。</p>
                      */
                     UserThreeFactor m_userInfo;
                     bool m_userInfoHasBeenSet;

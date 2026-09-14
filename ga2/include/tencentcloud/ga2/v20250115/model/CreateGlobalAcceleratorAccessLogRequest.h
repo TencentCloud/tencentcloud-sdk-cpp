@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>GA示例唯一Id</p>
-                     * @return GlobalAcceleratorId <p>GA示例唯一Id</p>
+                     * 获取<p>GA实例唯一Id</p>
+                     * @return GlobalAcceleratorId <p>GA实例唯一Id</p>
                      * 
                      */
                     std::string GetGlobalAcceleratorId() const;
 
                     /**
-                     * 设置<p>GA示例唯一Id</p>
-                     * @param _globalAcceleratorId <p>GA示例唯一Id</p>
+                     * 设置<p>GA实例唯一Id</p>
+                     * @param _globalAcceleratorId <p>GA实例唯一Id</p>
                      * 
                      */
                     void SetGlobalAcceleratorId(const std::string& _globalAcceleratorId);
@@ -213,7 +213,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>GA示例唯一Id</p>
+                     * <p>GA实例唯一Id</p>
                      */
                     std::string m_globalAcceleratorId;
                     bool m_globalAcceleratorIdHasBeenSet;

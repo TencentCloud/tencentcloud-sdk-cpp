@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 授权企业列表（目前仅用于“企业自动签 -> 合作企业授权”）
+                * 授权企业列表（目前仅用于“企业“授权签” -> 合作企业授权”）
                 */
                 class HasAuthOrganization : public AbstractModel
                 {

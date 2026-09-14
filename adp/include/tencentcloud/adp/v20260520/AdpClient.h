@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/adp/v20260520/model/CheckLabelRequest.h>
+#include <tencentcloud/adp/v20260520/model/CheckLabelResponse.h>
 #include <tencentcloud/adp/v20260520/model/CopyAgentFromAppRequest.h>
 #include <tencentcloud/adp/v20260520/model/CopyAgentFromAppResponse.h>
 #include <tencentcloud/adp/v20260520/model/CopyAppRequest.h>
@@ -33,16 +35,28 @@
 #include <tencentcloud/adp/v20260520/model/CreateAppResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateAppTriggerRequest.h>
 #include <tencentcloud/adp/v20260520/model/CreateAppTriggerResponse.h>
+#include <tencentcloud/adp/v20260520/model/CreateCategoryRequest.h>
+#include <tencentcloud/adp/v20260520/model/CreateCategoryResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateChannelRequest.h>
 #include <tencentcloud/adp/v20260520/model/CreateChannelResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateConversationRequest.h>
 #include <tencentcloud/adp/v20260520/model/CreateConversationResponse.h>
+#include <tencentcloud/adp/v20260520/model/CreateKBRequest.h>
+#include <tencentcloud/adp/v20260520/model/CreateKBResponse.h>
+#include <tencentcloud/adp/v20260520/model/CreateLabelRequest.h>
+#include <tencentcloud/adp/v20260520/model/CreateLabelResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateMsgRecordCategoryRequest.h>
 #include <tencentcloud/adp/v20260520/model/CreateMsgRecordCategoryResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreatePluginRequest.h>
 #include <tencentcloud/adp/v20260520/model/CreatePluginResponse.h>
+#include <tencentcloud/adp/v20260520/model/CreateQAGenerationTaskRequest.h>
+#include <tencentcloud/adp/v20260520/model/CreateQAGenerationTaskResponse.h>
+#include <tencentcloud/adp/v20260520/model/CreateQAListRequest.h>
+#include <tencentcloud/adp/v20260520/model/CreateQAListResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateReleaseRequest.h>
 #include <tencentcloud/adp/v20260520/model/CreateReleaseResponse.h>
+#include <tencentcloud/adp/v20260520/model/CreateSimilarQuestionRequest.h>
+#include <tencentcloud/adp/v20260520/model/CreateSimilarQuestionResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateSkillRequest.h>
 #include <tencentcloud/adp/v20260520/model/CreateSkillResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateSkillShareRequest.h>
@@ -61,14 +75,24 @@
 #include <tencentcloud/adp/v20260520/model/DeleteAppResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeleteAppTriggerRequest.h>
 #include <tencentcloud/adp/v20260520/model/DeleteAppTriggerResponse.h>
+#include <tencentcloud/adp/v20260520/model/DeleteCategoryRequest.h>
+#include <tencentcloud/adp/v20260520/model/DeleteCategoryResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeleteChannelRequest.h>
 #include <tencentcloud/adp/v20260520/model/DeleteChannelResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeleteConversationRequest.h>
 #include <tencentcloud/adp/v20260520/model/DeleteConversationResponse.h>
+#include <tencentcloud/adp/v20260520/model/DeleteDocListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DeleteDocListResponse.h>
+#include <tencentcloud/adp/v20260520/model/DeleteKBRequest.h>
+#include <tencentcloud/adp/v20260520/model/DeleteKBResponse.h>
+#include <tencentcloud/adp/v20260520/model/DeleteLabelListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DeleteLabelListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeleteMsgRecordCategoryRequest.h>
 #include <tencentcloud/adp/v20260520/model/DeleteMsgRecordCategoryResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeletePluginRequest.h>
 #include <tencentcloud/adp/v20260520/model/DeletePluginResponse.h>
+#include <tencentcloud/adp/v20260520/model/DeleteQAListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DeleteQAListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeleteSkillRequest.h>
 #include <tencentcloud/adp/v20260520/model/DeleteSkillResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeleteSkillShareRequest.h>
@@ -101,12 +125,18 @@
 #include <tencentcloud/adp/v20260520/model/DescribeAuditLogListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeAuditLogMetaRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeAuditLogMetaResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeCategoryListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeCategoryListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeChannelRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeChannelResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeChannelListRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeChannelListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeConcurrencyLimitDetailListRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeConcurrencyLimitDetailListResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeConflictQARequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeConflictQAResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeConflictQASummaryListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeConflictQASummaryListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeConsumptionDetailListRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeConsumptionDetailListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeConversationRequest.h>
@@ -115,6 +145,18 @@
 #include <tencentcloud/adp/v20260520/model/DescribeConversationListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeConversationMessageListRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeConversationMessageListResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeDocRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeDocResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeDocSummaryListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeDocSummaryListResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeKBRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeKBResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeKBSummaryListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeKBSummaryListResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeLabelRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeLabelResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeLabelSummaryListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeLabelSummaryListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeLatestReleaseRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeLatestReleaseResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeMetricOverviewListRequest.h>
@@ -129,6 +171,10 @@
 #include <tencentcloud/adp/v20260520/model/DescribePluginResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribePluginSummaryListRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribePluginSummaryListResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeQARequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeQAResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeQASummaryListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeQASummaryListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeReleaseListRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeReleaseListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeReleaseSummaryRequest.h>
@@ -153,24 +199,44 @@
 #include <tencentcloud/adp/v20260520/model/DescribeVariableResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeVariableListRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeVariableListResponse.h>
+#include <tencentcloud/adp/v20260520/model/ExportQARequest.h>
+#include <tencentcloud/adp/v20260520/model/ExportQAResponse.h>
 #include <tencentcloud/adp/v20260520/model/FavoritePluginRequest.h>
 #include <tencentcloud/adp/v20260520/model/FavoritePluginResponse.h>
 #include <tencentcloud/adp/v20260520/model/FavoriteSkillRequest.h>
 #include <tencentcloud/adp/v20260520/model/FavoriteSkillResponse.h>
+#include <tencentcloud/adp/v20260520/model/ImportDocListRequest.h>
+#include <tencentcloud/adp/v20260520/model/ImportDocListResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyAgentRequest.h>
 #include <tencentcloud/adp/v20260520/model/ModifyAgentResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyAppRequest.h>
 #include <tencentcloud/adp/v20260520/model/ModifyAppResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyAppTriggerRequest.h>
 #include <tencentcloud/adp/v20260520/model/ModifyAppTriggerResponse.h>
+#include <tencentcloud/adp/v20260520/model/ModifyCategoryRequest.h>
+#include <tencentcloud/adp/v20260520/model/ModifyCategoryResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyChannelRequest.h>
 #include <tencentcloud/adp/v20260520/model/ModifyChannelResponse.h>
+#include <tencentcloud/adp/v20260520/model/ModifyConflictQARequest.h>
+#include <tencentcloud/adp/v20260520/model/ModifyConflictQAResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyConversationRequest.h>
 #include <tencentcloud/adp/v20260520/model/ModifyConversationResponse.h>
+#include <tencentcloud/adp/v20260520/model/ModifyDocRequest.h>
+#include <tencentcloud/adp/v20260520/model/ModifyDocResponse.h>
+#include <tencentcloud/adp/v20260520/model/ModifyDocListRequest.h>
+#include <tencentcloud/adp/v20260520/model/ModifyDocListResponse.h>
+#include <tencentcloud/adp/v20260520/model/ModifyKBRequest.h>
+#include <tencentcloud/adp/v20260520/model/ModifyKBResponse.h>
+#include <tencentcloud/adp/v20260520/model/ModifyLabelRequest.h>
+#include <tencentcloud/adp/v20260520/model/ModifyLabelResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyMsgRecordCategoryRequest.h>
 #include <tencentcloud/adp/v20260520/model/ModifyMsgRecordCategoryResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyPluginRequest.h>
 #include <tencentcloud/adp/v20260520/model/ModifyPluginResponse.h>
+#include <tencentcloud/adp/v20260520/model/ModifyQARequest.h>
+#include <tencentcloud/adp/v20260520/model/ModifyQAResponse.h>
+#include <tencentcloud/adp/v20260520/model/ModifyQAListRequest.h>
+#include <tencentcloud/adp/v20260520/model/ModifyQAListResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifySkillRequest.h>
 #include <tencentcloud/adp/v20260520/model/ModifySkillResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifySpaceRequest.h>
@@ -191,6 +257,8 @@
 #include <tencentcloud/adp/v20260520/model/RollbackReleaseResponse.h>
 #include <tencentcloud/adp/v20260520/model/RunAppTriggerNowRequest.h>
 #include <tencentcloud/adp/v20260520/model/RunAppTriggerNowResponse.h>
+#include <tencentcloud/adp/v20260520/model/SearchKnowledgeRequest.h>
+#include <tencentcloud/adp/v20260520/model/SearchKnowledgeResponse.h>
 #include <tencentcloud/adp/v20260520/model/UnfavoritePluginRequest.h>
 #include <tencentcloud/adp/v20260520/model/UnfavoritePluginResponse.h>
 #include <tencentcloud/adp/v20260520/model/UnfavoriteSkillRequest.h>
@@ -209,6 +277,9 @@ namespace TencentCloud
                 AdpClient(const Credential &credential, const std::string &region);
                 AdpClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CheckLabelResponse> CheckLabelOutcome;
+                typedef std::future<CheckLabelOutcome> CheckLabelOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::CheckLabelRequest&, CheckLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckLabelAsyncHandler;
                 typedef Outcome<Core::Error, Model::CopyAgentFromAppResponse> CopyAgentFromAppOutcome;
                 typedef std::future<CopyAgentFromAppOutcome> CopyAgentFromAppOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CopyAgentFromAppRequest&, CopyAgentFromAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopyAgentFromAppAsyncHandler;
@@ -224,21 +295,39 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAppTriggerResponse> CreateAppTriggerOutcome;
                 typedef std::future<CreateAppTriggerOutcome> CreateAppTriggerOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CreateAppTriggerRequest&, CreateAppTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppTriggerAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCategoryResponse> CreateCategoryOutcome;
+                typedef std::future<CreateCategoryOutcome> CreateCategoryOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::CreateCategoryRequest&, CreateCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCategoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateChannelResponse> CreateChannelOutcome;
                 typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CreateChannelRequest&, CreateChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateChannelAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateConversationResponse> CreateConversationOutcome;
                 typedef std::future<CreateConversationOutcome> CreateConversationOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CreateConversationRequest&, CreateConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConversationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateKBResponse> CreateKBOutcome;
+                typedef std::future<CreateKBOutcome> CreateKBOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::CreateKBRequest&, CreateKBOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateKBAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLabelResponse> CreateLabelOutcome;
+                typedef std::future<CreateLabelOutcome> CreateLabelOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::CreateLabelRequest&, CreateLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLabelAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateMsgRecordCategoryResponse> CreateMsgRecordCategoryOutcome;
                 typedef std::future<CreateMsgRecordCategoryOutcome> CreateMsgRecordCategoryOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CreateMsgRecordCategoryRequest&, CreateMsgRecordCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMsgRecordCategoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePluginResponse> CreatePluginOutcome;
                 typedef std::future<CreatePluginOutcome> CreatePluginOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CreatePluginRequest&, CreatePluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePluginAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateQAGenerationTaskResponse> CreateQAGenerationTaskOutcome;
+                typedef std::future<CreateQAGenerationTaskOutcome> CreateQAGenerationTaskOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::CreateQAGenerationTaskRequest&, CreateQAGenerationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateQAGenerationTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateQAListResponse> CreateQAListOutcome;
+                typedef std::future<CreateQAListOutcome> CreateQAListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::CreateQAListRequest&, CreateQAListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateQAListAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateReleaseResponse> CreateReleaseOutcome;
                 typedef std::future<CreateReleaseOutcome> CreateReleaseOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CreateReleaseRequest&, CreateReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReleaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSimilarQuestionResponse> CreateSimilarQuestionOutcome;
+                typedef std::future<CreateSimilarQuestionOutcome> CreateSimilarQuestionOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::CreateSimilarQuestionRequest&, CreateSimilarQuestionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSimilarQuestionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSkillResponse> CreateSkillOutcome;
                 typedef std::future<CreateSkillOutcome> CreateSkillOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CreateSkillRequest&, CreateSkillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSkillAsyncHandler;
@@ -266,18 +355,33 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAppTriggerResponse> DeleteAppTriggerOutcome;
                 typedef std::future<DeleteAppTriggerOutcome> DeleteAppTriggerOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DeleteAppTriggerRequest&, DeleteAppTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAppTriggerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCategoryResponse> DeleteCategoryOutcome;
+                typedef std::future<DeleteCategoryOutcome> DeleteCategoryOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DeleteCategoryRequest&, DeleteCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCategoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteChannelResponse> DeleteChannelOutcome;
                 typedef std::future<DeleteChannelOutcome> DeleteChannelOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DeleteChannelRequest&, DeleteChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteChannelAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteConversationResponse> DeleteConversationOutcome;
                 typedef std::future<DeleteConversationOutcome> DeleteConversationOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DeleteConversationRequest&, DeleteConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConversationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDocListResponse> DeleteDocListOutcome;
+                typedef std::future<DeleteDocListOutcome> DeleteDocListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DeleteDocListRequest&, DeleteDocListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDocListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteKBResponse> DeleteKBOutcome;
+                typedef std::future<DeleteKBOutcome> DeleteKBOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DeleteKBRequest&, DeleteKBOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteKBAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLabelListResponse> DeleteLabelListOutcome;
+                typedef std::future<DeleteLabelListOutcome> DeleteLabelListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DeleteLabelListRequest&, DeleteLabelListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLabelListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteMsgRecordCategoryResponse> DeleteMsgRecordCategoryOutcome;
                 typedef std::future<DeleteMsgRecordCategoryOutcome> DeleteMsgRecordCategoryOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DeleteMsgRecordCategoryRequest&, DeleteMsgRecordCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMsgRecordCategoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeletePluginResponse> DeletePluginOutcome;
                 typedef std::future<DeletePluginOutcome> DeletePluginOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DeletePluginRequest&, DeletePluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePluginAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteQAListResponse> DeleteQAListOutcome;
+                typedef std::future<DeleteQAListOutcome> DeleteQAListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DeleteQAListRequest&, DeleteQAListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteQAListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSkillResponse> DeleteSkillOutcome;
                 typedef std::future<DeleteSkillOutcome> DeleteSkillOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DeleteSkillRequest&, DeleteSkillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSkillAsyncHandler;
@@ -326,6 +430,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAuditLogMetaResponse> DescribeAuditLogMetaOutcome;
                 typedef std::future<DescribeAuditLogMetaOutcome> DescribeAuditLogMetaOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeAuditLogMetaRequest&, DescribeAuditLogMetaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogMetaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCategoryListResponse> DescribeCategoryListOutcome;
+                typedef std::future<DescribeCategoryListOutcome> DescribeCategoryListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeCategoryListRequest&, DescribeCategoryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCategoryListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeChannelResponse> DescribeChannelOutcome;
                 typedef std::future<DescribeChannelOutcome> DescribeChannelOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeChannelRequest&, DescribeChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChannelAsyncHandler;
@@ -335,6 +442,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeConcurrencyLimitDetailListResponse> DescribeConcurrencyLimitDetailListOutcome;
                 typedef std::future<DescribeConcurrencyLimitDetailListOutcome> DescribeConcurrencyLimitDetailListOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeConcurrencyLimitDetailListRequest&, DescribeConcurrencyLimitDetailListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConcurrencyLimitDetailListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConflictQAResponse> DescribeConflictQAOutcome;
+                typedef std::future<DescribeConflictQAOutcome> DescribeConflictQAOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeConflictQARequest&, DescribeConflictQAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConflictQAAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConflictQASummaryListResponse> DescribeConflictQASummaryListOutcome;
+                typedef std::future<DescribeConflictQASummaryListOutcome> DescribeConflictQASummaryListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeConflictQASummaryListRequest&, DescribeConflictQASummaryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConflictQASummaryListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeConsumptionDetailListResponse> DescribeConsumptionDetailListOutcome;
                 typedef std::future<DescribeConsumptionDetailListOutcome> DescribeConsumptionDetailListOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeConsumptionDetailListRequest&, DescribeConsumptionDetailListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumptionDetailListAsyncHandler;
@@ -347,6 +460,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeConversationMessageListResponse> DescribeConversationMessageListOutcome;
                 typedef std::future<DescribeConversationMessageListOutcome> DescribeConversationMessageListOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeConversationMessageListRequest&, DescribeConversationMessageListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConversationMessageListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDocResponse> DescribeDocOutcome;
+                typedef std::future<DescribeDocOutcome> DescribeDocOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeDocRequest&, DescribeDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDocAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDocSummaryListResponse> DescribeDocSummaryListOutcome;
+                typedef std::future<DescribeDocSummaryListOutcome> DescribeDocSummaryListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeDocSummaryListRequest&, DescribeDocSummaryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDocSummaryListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKBResponse> DescribeKBOutcome;
+                typedef std::future<DescribeKBOutcome> DescribeKBOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeKBRequest&, DescribeKBOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKBAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKBSummaryListResponse> DescribeKBSummaryListOutcome;
+                typedef std::future<DescribeKBSummaryListOutcome> DescribeKBSummaryListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeKBSummaryListRequest&, DescribeKBSummaryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKBSummaryListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLabelResponse> DescribeLabelOutcome;
+                typedef std::future<DescribeLabelOutcome> DescribeLabelOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeLabelRequest&, DescribeLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLabelAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLabelSummaryListResponse> DescribeLabelSummaryListOutcome;
+                typedef std::future<DescribeLabelSummaryListOutcome> DescribeLabelSummaryListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeLabelSummaryListRequest&, DescribeLabelSummaryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLabelSummaryListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLatestReleaseResponse> DescribeLatestReleaseOutcome;
                 typedef std::future<DescribeLatestReleaseOutcome> DescribeLatestReleaseOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeLatestReleaseRequest&, DescribeLatestReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLatestReleaseAsyncHandler;
@@ -368,6 +499,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePluginSummaryListResponse> DescribePluginSummaryListOutcome;
                 typedef std::future<DescribePluginSummaryListOutcome> DescribePluginSummaryListOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribePluginSummaryListRequest&, DescribePluginSummaryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePluginSummaryListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeQAResponse> DescribeQAOutcome;
+                typedef std::future<DescribeQAOutcome> DescribeQAOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeQARequest&, DescribeQAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQAAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeQASummaryListResponse> DescribeQASummaryListOutcome;
+                typedef std::future<DescribeQASummaryListOutcome> DescribeQASummaryListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeQASummaryListRequest&, DescribeQASummaryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQASummaryListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeReleaseListResponse> DescribeReleaseListOutcome;
                 typedef std::future<DescribeReleaseListOutcome> DescribeReleaseListOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeReleaseListRequest&, DescribeReleaseListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReleaseListAsyncHandler;
@@ -404,12 +541,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVariableListResponse> DescribeVariableListOutcome;
                 typedef std::future<DescribeVariableListOutcome> DescribeVariableListOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeVariableListRequest&, DescribeVariableListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVariableListAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportQAResponse> ExportQAOutcome;
+                typedef std::future<ExportQAOutcome> ExportQAOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::ExportQARequest&, ExportQAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportQAAsyncHandler;
                 typedef Outcome<Core::Error, Model::FavoritePluginResponse> FavoritePluginOutcome;
                 typedef std::future<FavoritePluginOutcome> FavoritePluginOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::FavoritePluginRequest&, FavoritePluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FavoritePluginAsyncHandler;
                 typedef Outcome<Core::Error, Model::FavoriteSkillResponse> FavoriteSkillOutcome;
                 typedef std::future<FavoriteSkillOutcome> FavoriteSkillOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::FavoriteSkillRequest&, FavoriteSkillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FavoriteSkillAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImportDocListResponse> ImportDocListOutcome;
+                typedef std::future<ImportDocListOutcome> ImportDocListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::ImportDocListRequest&, ImportDocListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportDocListAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAgentResponse> ModifyAgentOutcome;
                 typedef std::future<ModifyAgentOutcome> ModifyAgentOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ModifyAgentRequest&, ModifyAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAgentAsyncHandler;
@@ -419,18 +562,42 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAppTriggerResponse> ModifyAppTriggerOutcome;
                 typedef std::future<ModifyAppTriggerOutcome> ModifyAppTriggerOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ModifyAppTriggerRequest&, ModifyAppTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAppTriggerAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCategoryResponse> ModifyCategoryOutcome;
+                typedef std::future<ModifyCategoryOutcome> ModifyCategoryOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::ModifyCategoryRequest&, ModifyCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCategoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyChannelResponse> ModifyChannelOutcome;
                 typedef std::future<ModifyChannelOutcome> ModifyChannelOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ModifyChannelRequest&, ModifyChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyConflictQAResponse> ModifyConflictQAOutcome;
+                typedef std::future<ModifyConflictQAOutcome> ModifyConflictQAOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::ModifyConflictQARequest&, ModifyConflictQAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConflictQAAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyConversationResponse> ModifyConversationOutcome;
                 typedef std::future<ModifyConversationOutcome> ModifyConversationOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ModifyConversationRequest&, ModifyConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConversationAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDocResponse> ModifyDocOutcome;
+                typedef std::future<ModifyDocOutcome> ModifyDocOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::ModifyDocRequest&, ModifyDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDocAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDocListResponse> ModifyDocListOutcome;
+                typedef std::future<ModifyDocListOutcome> ModifyDocListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::ModifyDocListRequest&, ModifyDocListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDocListAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyKBResponse> ModifyKBOutcome;
+                typedef std::future<ModifyKBOutcome> ModifyKBOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::ModifyKBRequest&, ModifyKBOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyKBAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLabelResponse> ModifyLabelOutcome;
+                typedef std::future<ModifyLabelOutcome> ModifyLabelOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::ModifyLabelRequest&, ModifyLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLabelAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyMsgRecordCategoryResponse> ModifyMsgRecordCategoryOutcome;
                 typedef std::future<ModifyMsgRecordCategoryOutcome> ModifyMsgRecordCategoryOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ModifyMsgRecordCategoryRequest&, ModifyMsgRecordCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMsgRecordCategoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyPluginResponse> ModifyPluginOutcome;
                 typedef std::future<ModifyPluginOutcome> ModifyPluginOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ModifyPluginRequest&, ModifyPluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPluginAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyQAResponse> ModifyQAOutcome;
+                typedef std::future<ModifyQAOutcome> ModifyQAOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::ModifyQARequest&, ModifyQAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyQAAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyQAListResponse> ModifyQAListOutcome;
+                typedef std::future<ModifyQAListOutcome> ModifyQAListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::ModifyQAListRequest&, ModifyQAListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyQAListAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySkillResponse> ModifySkillOutcome;
                 typedef std::future<ModifySkillOutcome> ModifySkillOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ModifySkillRequest&, ModifySkillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySkillAsyncHandler;
@@ -461,6 +628,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RunAppTriggerNowResponse> RunAppTriggerNowOutcome;
                 typedef std::future<RunAppTriggerNowOutcome> RunAppTriggerNowOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::RunAppTriggerNowRequest&, RunAppTriggerNowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunAppTriggerNowAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchKnowledgeResponse> SearchKnowledgeOutcome;
+                typedef std::future<SearchKnowledgeOutcome> SearchKnowledgeOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::SearchKnowledgeRequest&, SearchKnowledgeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchKnowledgeAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnfavoritePluginResponse> UnfavoritePluginOutcome;
                 typedef std::future<UnfavoritePluginOutcome> UnfavoritePluginOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::UnfavoritePluginRequest&, UnfavoritePluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnfavoritePluginAsyncHandler;
@@ -469,6 +639,15 @@ namespace TencentCloud
                 typedef std::function<void(const AdpClient*, const Model::UnfavoriteSkillRequest&, UnfavoriteSkillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnfavoriteSkillAsyncHandler;
 
 
+
+                /**
+                 *校验标签下的标准词是否已存在
+                 * @param req CheckLabelRequest
+                 * @return CheckLabelOutcome
+                 */
+                CheckLabelOutcome CheckLabel(const Model::CheckLabelRequest &request);
+                void CheckLabelAsync(const Model::CheckLabelRequest& request, const CheckLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckLabelOutcomeCallable CheckLabelCallable(const Model::CheckLabelRequest& request);
 
                 /**
                  *复制 Agent（目前仅支持claw模式））
@@ -516,6 +695,15 @@ namespace TencentCloud
                 CreateAppTriggerOutcomeCallable CreateAppTriggerCallable(const Model::CreateAppTriggerRequest& request);
 
                 /**
+                 *创建分类
+                 * @param req CreateCategoryRequest
+                 * @return CreateCategoryOutcome
+                 */
+                CreateCategoryOutcome CreateCategory(const Model::CreateCategoryRequest &request);
+                void CreateCategoryAsync(const Model::CreateCategoryRequest& request, const CreateCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCategoryOutcomeCallable CreateCategoryCallable(const Model::CreateCategoryRequest& request);
+
+                /**
                  *创建渠道（通过scene区分B端应用发布渠道与C端IM渠道）
                  * @param req CreateChannelRequest
                  * @return CreateChannelOutcome
@@ -532,6 +720,24 @@ namespace TencentCloud
                 CreateConversationOutcome CreateConversation(const Model::CreateConversationRequest &request);
                 void CreateConversationAsync(const Model::CreateConversationRequest& request, const CreateConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateConversationOutcomeCallable CreateConversationCallable(const Model::CreateConversationRequest& request);
+
+                /**
+                 *创建知识库
+                 * @param req CreateKBRequest
+                 * @return CreateKBOutcome
+                 */
+                CreateKBOutcome CreateKB(const Model::CreateKBRequest &request);
+                void CreateKBAsync(const Model::CreateKBRequest& request, const CreateKBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateKBOutcomeCallable CreateKBCallable(const Model::CreateKBRequest& request);
+
+                /**
+                 *创建标签
+                 * @param req CreateLabelRequest
+                 * @return CreateLabelOutcome
+                 */
+                CreateLabelOutcome CreateLabel(const Model::CreateLabelRequest &request);
+                void CreateLabelAsync(const Model::CreateLabelRequest& request, const CreateLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLabelOutcomeCallable CreateLabelCallable(const Model::CreateLabelRequest& request);
 
                 /**
                  *创建一条消息记录分类，支持指定分类名称与父分类（ParentId 为 0 时表示一级分类）
@@ -552,6 +758,24 @@ namespace TencentCloud
                 CreatePluginOutcomeCallable CreatePluginCallable(const Model::CreatePluginRequest& request);
 
                 /**
+                 *创建 QA 生成任务
+                 * @param req CreateQAGenerationTaskRequest
+                 * @return CreateQAGenerationTaskOutcome
+                 */
+                CreateQAGenerationTaskOutcome CreateQAGenerationTask(const Model::CreateQAGenerationTaskRequest &request);
+                void CreateQAGenerationTaskAsync(const Model::CreateQAGenerationTaskRequest& request, const CreateQAGenerationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateQAGenerationTaskOutcomeCallable CreateQAGenerationTaskCallable(const Model::CreateQAGenerationTaskRequest& request);
+
+                /**
+                 *批量创建 QA
+                 * @param req CreateQAListRequest
+                 * @return CreateQAListOutcome
+                 */
+                CreateQAListOutcome CreateQAList(const Model::CreateQAListRequest &request);
+                void CreateQAListAsync(const Model::CreateQAListRequest& request, const CreateQAListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateQAListOutcomeCallable CreateQAListCallable(const Model::CreateQAListRequest& request);
+
+                /**
                  *新增发布任务
                  * @param req CreateReleaseRequest
                  * @return CreateReleaseOutcome
@@ -559,6 +783,15 @@ namespace TencentCloud
                 CreateReleaseOutcome CreateRelease(const Model::CreateReleaseRequest &request);
                 void CreateReleaseAsync(const Model::CreateReleaseRequest& request, const CreateReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateReleaseOutcomeCallable CreateReleaseCallable(const Model::CreateReleaseRequest& request);
+
+                /**
+                 *创建相似问生成任务
+                 * @param req CreateSimilarQuestionRequest
+                 * @return CreateSimilarQuestionOutcome
+                 */
+                CreateSimilarQuestionOutcome CreateSimilarQuestion(const Model::CreateSimilarQuestionRequest &request);
+                void CreateSimilarQuestionAsync(const Model::CreateSimilarQuestionRequest& request, const CreateSimilarQuestionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSimilarQuestionOutcomeCallable CreateSimilarQuestionCallable(const Model::CreateSimilarQuestionRequest& request);
 
                 /**
                  *创建skill
@@ -642,6 +875,15 @@ namespace TencentCloud
                 DeleteAppTriggerOutcomeCallable DeleteAppTriggerCallable(const Model::DeleteAppTriggerRequest& request);
 
                 /**
+                 *删除分类
+                 * @param req DeleteCategoryRequest
+                 * @return DeleteCategoryOutcome
+                 */
+                DeleteCategoryOutcome DeleteCategory(const Model::DeleteCategoryRequest &request);
+                void DeleteCategoryAsync(const Model::DeleteCategoryRequest& request, const DeleteCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCategoryOutcomeCallable DeleteCategoryCallable(const Model::DeleteCategoryRequest& request);
+
+                /**
                  *删除渠道（通过scene区分场景）
                  * @param req DeleteChannelRequest
                  * @return DeleteChannelOutcome
@@ -660,6 +902,33 @@ namespace TencentCloud
                 DeleteConversationOutcomeCallable DeleteConversationCallable(const Model::DeleteConversationRequest& request);
 
                 /**
+                 *批量删除文档
+                 * @param req DeleteDocListRequest
+                 * @return DeleteDocListOutcome
+                 */
+                DeleteDocListOutcome DeleteDocList(const Model::DeleteDocListRequest &request);
+                void DeleteDocListAsync(const Model::DeleteDocListRequest& request, const DeleteDocListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDocListOutcomeCallable DeleteDocListCallable(const Model::DeleteDocListRequest& request);
+
+                /**
+                 *删除知识库
+                 * @param req DeleteKBRequest
+                 * @return DeleteKBOutcome
+                 */
+                DeleteKBOutcome DeleteKB(const Model::DeleteKBRequest &request);
+                void DeleteKBAsync(const Model::DeleteKBRequest& request, const DeleteKBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteKBOutcomeCallable DeleteKBCallable(const Model::DeleteKBRequest& request);
+
+                /**
+                 *批量删除标签
+                 * @param req DeleteLabelListRequest
+                 * @return DeleteLabelListOutcome
+                 */
+                DeleteLabelListOutcome DeleteLabelList(const Model::DeleteLabelListRequest &request);
+                void DeleteLabelListAsync(const Model::DeleteLabelListRequest& request, const DeleteLabelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLabelListOutcomeCallable DeleteLabelListCallable(const Model::DeleteLabelListRequest& request);
+
+                /**
                  *删除指定的消息记录分类
                  * @param req DeleteMsgRecordCategoryRequest
                  * @return DeleteMsgRecordCategoryOutcome
@@ -676,6 +945,15 @@ namespace TencentCloud
                 DeletePluginOutcome DeletePlugin(const Model::DeletePluginRequest &request);
                 void DeletePluginAsync(const Model::DeletePluginRequest& request, const DeletePluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeletePluginOutcomeCallable DeletePluginCallable(const Model::DeletePluginRequest& request);
+
+                /**
+                 *批量删除 QA
+                 * @param req DeleteQAListRequest
+                 * @return DeleteQAListOutcome
+                 */
+                DeleteQAListOutcome DeleteQAList(const Model::DeleteQAListRequest &request);
+                void DeleteQAListAsync(const Model::DeleteQAListRequest& request, const DeleteQAListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteQAListOutcomeCallable DeleteQAListCallable(const Model::DeleteQAListRequest& request);
 
                 /**
                  *删除自定义 Skill  鉴权：创建者 ∨ (编辑权限 ∧ 删除权限） 拒绝场景：非 Custom 类型 / 已共享 / 安全检测中 / 上架审批中 / 下架审批中
@@ -822,6 +1100,15 @@ namespace TencentCloud
                 DescribeAuditLogMetaOutcomeCallable DescribeAuditLogMetaCallable(const Model::DescribeAuditLogMetaRequest& request);
 
                 /**
+                 *查询分类列表
+                 * @param req DescribeCategoryListRequest
+                 * @return DescribeCategoryListOutcome
+                 */
+                DescribeCategoryListOutcome DescribeCategoryList(const Model::DescribeCategoryListRequest &request);
+                void DescribeCategoryListAsync(const Model::DescribeCategoryListRequest& request, const DescribeCategoryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCategoryListOutcomeCallable DescribeCategoryListCallable(const Model::DescribeCategoryListRequest& request);
+
+                /**
                  *获取渠道详情（scene区分场景）
                  * @param req DescribeChannelRequest
                  * @return DescribeChannelOutcome
@@ -847,6 +1134,24 @@ namespace TencentCloud
                 DescribeConcurrencyLimitDetailListOutcome DescribeConcurrencyLimitDetailList(const Model::DescribeConcurrencyLimitDetailListRequest &request);
                 void DescribeConcurrencyLimitDetailListAsync(const Model::DescribeConcurrencyLimitDetailListRequest& request, const DescribeConcurrencyLimitDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeConcurrencyLimitDetailListOutcomeCallable DescribeConcurrencyLimitDetailListCallable(const Model::DescribeConcurrencyLimitDetailListRequest& request);
+
+                /**
+                 *查询冲突问详情
+                 * @param req DescribeConflictQARequest
+                 * @return DescribeConflictQAOutcome
+                 */
+                DescribeConflictQAOutcome DescribeConflictQA(const Model::DescribeConflictQARequest &request);
+                void DescribeConflictQAAsync(const Model::DescribeConflictQARequest& request, const DescribeConflictQAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConflictQAOutcomeCallable DescribeConflictQACallable(const Model::DescribeConflictQARequest& request);
+
+                /**
+                 *查询冲突问列表
+                 * @param req DescribeConflictQASummaryListRequest
+                 * @return DescribeConflictQASummaryListOutcome
+                 */
+                DescribeConflictQASummaryListOutcome DescribeConflictQASummaryList(const Model::DescribeConflictQASummaryListRequest &request);
+                void DescribeConflictQASummaryListAsync(const Model::DescribeConflictQASummaryListRequest& request, const DescribeConflictQASummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConflictQASummaryListOutcomeCallable DescribeConflictQASummaryListCallable(const Model::DescribeConflictQASummaryListRequest& request);
 
                 /**
                  *查询资源消耗明细，包含计费相关字段（消耗类型、消耗目标、消耗场景、套餐包及PU消耗等）
@@ -883,6 +1188,60 @@ namespace TencentCloud
                 DescribeConversationMessageListOutcome DescribeConversationMessageList(const Model::DescribeConversationMessageListRequest &request);
                 void DescribeConversationMessageListAsync(const Model::DescribeConversationMessageListRequest& request, const DescribeConversationMessageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeConversationMessageListOutcomeCallable DescribeConversationMessageListCallable(const Model::DescribeConversationMessageListRequest& request);
+
+                /**
+                 *查询文档详情
+                 * @param req DescribeDocRequest
+                 * @return DescribeDocOutcome
+                 */
+                DescribeDocOutcome DescribeDoc(const Model::DescribeDocRequest &request);
+                void DescribeDocAsync(const Model::DescribeDocRequest& request, const DescribeDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDocOutcomeCallable DescribeDocCallable(const Model::DescribeDocRequest& request);
+
+                /**
+                 *查询文档摘要列表
+                 * @param req DescribeDocSummaryListRequest
+                 * @return DescribeDocSummaryListOutcome
+                 */
+                DescribeDocSummaryListOutcome DescribeDocSummaryList(const Model::DescribeDocSummaryListRequest &request);
+                void DescribeDocSummaryListAsync(const Model::DescribeDocSummaryListRequest& request, const DescribeDocSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDocSummaryListOutcomeCallable DescribeDocSummaryListCallable(const Model::DescribeDocSummaryListRequest& request);
+
+                /**
+                 *查询知识库详情
+                 * @param req DescribeKBRequest
+                 * @return DescribeKBOutcome
+                 */
+                DescribeKBOutcome DescribeKB(const Model::DescribeKBRequest &request);
+                void DescribeKBAsync(const Model::DescribeKBRequest& request, const DescribeKBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKBOutcomeCallable DescribeKBCallable(const Model::DescribeKBRequest& request);
+
+                /**
+                 *查询知识库列表
+                 * @param req DescribeKBSummaryListRequest
+                 * @return DescribeKBSummaryListOutcome
+                 */
+                DescribeKBSummaryListOutcome DescribeKBSummaryList(const Model::DescribeKBSummaryListRequest &request);
+                void DescribeKBSummaryListAsync(const Model::DescribeKBSummaryListRequest& request, const DescribeKBSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKBSummaryListOutcomeCallable DescribeKBSummaryListCallable(const Model::DescribeKBSummaryListRequest& request);
+
+                /**
+                 *查询标签详情
+                 * @param req DescribeLabelRequest
+                 * @return DescribeLabelOutcome
+                 */
+                DescribeLabelOutcome DescribeLabel(const Model::DescribeLabelRequest &request);
+                void DescribeLabelAsync(const Model::DescribeLabelRequest& request, const DescribeLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLabelOutcomeCallable DescribeLabelCallable(const Model::DescribeLabelRequest& request);
+
+                /**
+                 *查询标签列表
+                 * @param req DescribeLabelSummaryListRequest
+                 * @return DescribeLabelSummaryListOutcome
+                 */
+                DescribeLabelSummaryListOutcome DescribeLabelSummaryList(const Model::DescribeLabelSummaryListRequest &request);
+                void DescribeLabelSummaryListAsync(const Model::DescribeLabelSummaryListRequest& request, const DescribeLabelSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLabelSummaryListOutcomeCallable DescribeLabelSummaryListCallable(const Model::DescribeLabelSummaryListRequest& request);
 
                 /**
                  *拉取最新发布信息(包含发布时间、状态、渠道)
@@ -946,6 +1305,24 @@ namespace TencentCloud
                 DescribePluginSummaryListOutcome DescribePluginSummaryList(const Model::DescribePluginSummaryListRequest &request);
                 void DescribePluginSummaryListAsync(const Model::DescribePluginSummaryListRequest& request, const DescribePluginSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePluginSummaryListOutcomeCallable DescribePluginSummaryListCallable(const Model::DescribePluginSummaryListRequest& request);
+
+                /**
+                 *查询 QA 详情
+                 * @param req DescribeQARequest
+                 * @return DescribeQAOutcome
+                 */
+                DescribeQAOutcome DescribeQA(const Model::DescribeQARequest &request);
+                void DescribeQAAsync(const Model::DescribeQARequest& request, const DescribeQAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeQAOutcomeCallable DescribeQACallable(const Model::DescribeQARequest& request);
+
+                /**
+                 *查询 QA 列表
+                 * @param req DescribeQASummaryListRequest
+                 * @return DescribeQASummaryListOutcome
+                 */
+                DescribeQASummaryListOutcome DescribeQASummaryList(const Model::DescribeQASummaryListRequest &request);
+                void DescribeQASummaryListAsync(const Model::DescribeQASummaryListRequest& request, const DescribeQASummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeQASummaryListOutcomeCallable DescribeQASummaryListCallable(const Model::DescribeQASummaryListRequest& request);
 
                 /**
                  *发布记录列表
@@ -1056,6 +1433,15 @@ namespace TencentCloud
                 DescribeVariableListOutcomeCallable DescribeVariableListCallable(const Model::DescribeVariableListRequest& request);
 
                 /**
+                 *异步导出 QA
+                 * @param req ExportQARequest
+                 * @return ExportQAOutcome
+                 */
+                ExportQAOutcome ExportQA(const Model::ExportQARequest &request);
+                void ExportQAAsync(const Model::ExportQARequest& request, const ExportQAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportQAOutcomeCallable ExportQACallable(const Model::ExportQARequest& request);
+
+                /**
                  *收藏插件
                  * @param req FavoritePluginRequest
                  * @return FavoritePluginOutcome
@@ -1072,6 +1458,15 @@ namespace TencentCloud
                 FavoriteSkillOutcome FavoriteSkill(const Model::FavoriteSkillRequest &request);
                 void FavoriteSkillAsync(const Model::FavoriteSkillRequest& request, const FavoriteSkillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 FavoriteSkillOutcomeCallable FavoriteSkillCallable(const Model::FavoriteSkillRequest& request);
+
+                /**
+                 *批量导入文档
+                 * @param req ImportDocListRequest
+                 * @return ImportDocListOutcome
+                 */
+                ImportDocListOutcome ImportDocList(const Model::ImportDocListRequest &request);
+                void ImportDocListAsync(const Model::ImportDocListRequest& request, const ImportDocListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImportDocListOutcomeCallable ImportDocListCallable(const Model::ImportDocListRequest& request);
 
                 /**
                  *修改Agent配置信息
@@ -1101,6 +1496,15 @@ namespace TencentCloud
                 ModifyAppTriggerOutcomeCallable ModifyAppTriggerCallable(const Model::ModifyAppTriggerRequest& request);
 
                 /**
+                 *修改分类
+                 * @param req ModifyCategoryRequest
+                 * @return ModifyCategoryOutcome
+                 */
+                ModifyCategoryOutcome ModifyCategory(const Model::ModifyCategoryRequest &request);
+                void ModifyCategoryAsync(const Model::ModifyCategoryRequest& request, const ModifyCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCategoryOutcomeCallable ModifyCategoryCallable(const Model::ModifyCategoryRequest& request);
+
+                /**
                  *修改渠道（支持修改备注与企微机器人渠道回调机器人ID）
                  * @param req ModifyChannelRequest
                  * @return ModifyChannelOutcome
@@ -1110,6 +1514,15 @@ namespace TencentCloud
                 ModifyChannelOutcomeCallable ModifyChannelCallable(const Model::ModifyChannelRequest& request);
 
                 /**
+                 *修改冲突问
+                 * @param req ModifyConflictQARequest
+                 * @return ModifyConflictQAOutcome
+                 */
+                ModifyConflictQAOutcome ModifyConflictQA(const Model::ModifyConflictQARequest &request);
+                void ModifyConflictQAAsync(const Model::ModifyConflictQARequest& request, const ModifyConflictQAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyConflictQAOutcomeCallable ModifyConflictQACallable(const Model::ModifyConflictQARequest& request);
+
+                /**
                  *修改会话信息
                  * @param req ModifyConversationRequest
                  * @return ModifyConversationOutcome
@@ -1117,6 +1530,42 @@ namespace TencentCloud
                 ModifyConversationOutcome ModifyConversation(const Model::ModifyConversationRequest &request);
                 void ModifyConversationAsync(const Model::ModifyConversationRequest& request, const ModifyConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyConversationOutcomeCallable ModifyConversationCallable(const Model::ModifyConversationRequest& request);
+
+                /**
+                 *修改单个文档
+                 * @param req ModifyDocRequest
+                 * @return ModifyDocOutcome
+                 */
+                ModifyDocOutcome ModifyDoc(const Model::ModifyDocRequest &request);
+                void ModifyDocAsync(const Model::ModifyDocRequest& request, const ModifyDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDocOutcomeCallable ModifyDocCallable(const Model::ModifyDocRequest& request);
+
+                /**
+                 *批量修改文档
+                 * @param req ModifyDocListRequest
+                 * @return ModifyDocListOutcome
+                 */
+                ModifyDocListOutcome ModifyDocList(const Model::ModifyDocListRequest &request);
+                void ModifyDocListAsync(const Model::ModifyDocListRequest& request, const ModifyDocListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDocListOutcomeCallable ModifyDocListCallable(const Model::ModifyDocListRequest& request);
+
+                /**
+                 *修改知识库
+                 * @param req ModifyKBRequest
+                 * @return ModifyKBOutcome
+                 */
+                ModifyKBOutcome ModifyKB(const Model::ModifyKBRequest &request);
+                void ModifyKBAsync(const Model::ModifyKBRequest& request, const ModifyKBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyKBOutcomeCallable ModifyKBCallable(const Model::ModifyKBRequest& request);
+
+                /**
+                 *修改标签
+                 * @param req ModifyLabelRequest
+                 * @return ModifyLabelOutcome
+                 */
+                ModifyLabelOutcome ModifyLabel(const Model::ModifyLabelRequest &request);
+                void ModifyLabelAsync(const Model::ModifyLabelRequest& request, const ModifyLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLabelOutcomeCallable ModifyLabelCallable(const Model::ModifyLabelRequest& request);
 
                 /**
                  *修改指定消息记录分类的名称
@@ -1135,6 +1584,24 @@ namespace TencentCloud
                 ModifyPluginOutcome ModifyPlugin(const Model::ModifyPluginRequest &request);
                 void ModifyPluginAsync(const Model::ModifyPluginRequest& request, const ModifyPluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPluginOutcomeCallable ModifyPluginCallable(const Model::ModifyPluginRequest& request);
+
+                /**
+                 *修改单个 QA
+                 * @param req ModifyQARequest
+                 * @return ModifyQAOutcome
+                 */
+                ModifyQAOutcome ModifyQA(const Model::ModifyQARequest &request);
+                void ModifyQAAsync(const Model::ModifyQARequest& request, const ModifyQAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyQAOutcomeCallable ModifyQACallable(const Model::ModifyQARequest& request);
+
+                /**
+                 *批量修改 QA
+                 * @param req ModifyQAListRequest
+                 * @return ModifyQAListOutcome
+                 */
+                ModifyQAListOutcome ModifyQAList(const Model::ModifyQAListRequest &request);
+                void ModifyQAListAsync(const Model::ModifyQAListRequest& request, const ModifyQAListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyQAListOutcomeCallable ModifyQAListCallable(const Model::ModifyQAListRequest& request);
 
                 /**
                  *Skill修改
@@ -1226,6 +1693,15 @@ namespace TencentCloud
                 RunAppTriggerNowOutcome RunAppTriggerNow(const Model::RunAppTriggerNowRequest &request);
                 void RunAppTriggerNowAsync(const Model::RunAppTriggerNowRequest& request, const RunAppTriggerNowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RunAppTriggerNowOutcomeCallable RunAppTriggerNowCallable(const Model::RunAppTriggerNowRequest& request);
+
+                /**
+                 *知识检索
+                 * @param req SearchKnowledgeRequest
+                 * @return SearchKnowledgeOutcome
+                 */
+                SearchKnowledgeOutcome SearchKnowledge(const Model::SearchKnowledgeRequest &request);
+                void SearchKnowledgeAsync(const Model::SearchKnowledgeRequest& request, const SearchKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchKnowledgeOutcomeCallable SearchKnowledgeCallable(const Model::SearchKnowledgeRequest& request);
 
                 /**
                  *取消收藏插件

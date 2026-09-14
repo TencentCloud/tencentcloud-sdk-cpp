@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取加速地域信息。
-                     * @return AcceleratorRegionSet 加速地域信息。
+                     * 获取<p>加速地域信息。</p>
+                     * @return AcceleratorRegionSet <p>加速地域信息。</p>
                      * 
                      */
                     std::vector<AcceleratorRegionSet> GetAcceleratorRegionSet() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 加速地域信息。
+                     * <p>加速地域信息。</p>
                      */
                     std::vector<AcceleratorRegionSet> m_acceleratorRegionSet;
                     bool m_acceleratorRegionSetHasBeenSet;

@@ -25,6 +25,8 @@ RuleEngineItem::RuleEngineItem() :
     m_ruleIdHasBeenSet(false),
     m_ruleNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_customVariablesHasBeenSet(false),
+    m_customVariableOperationsHasBeenSet(false),
     m_branchesHasBeenSet(false),
     m_rulePriorityHasBeenSet(false)
 {
@@ -76,6 +78,46 @@ CoreInternalOutcome RuleEngineItem::Deserialize(const rapidjson::Value &value)
             m_description.push_back((*itr).GetString());
         }
         m_descriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomVariables") && !value["CustomVariables"].IsNull())
+    {
+        if (!value["CustomVariables"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RuleEngineItem.CustomVariables` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CustomVariables"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CustomVariable item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_customVariables.push_back(item);
+        }
+        m_customVariablesHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomVariableOperations") && !value["CustomVariableOperations"].IsNull())
+    {
+        if (!value["CustomVariableOperations"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RuleEngineItem.CustomVariableOperations` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CustomVariableOperations"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CustomVariableOperation item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_customVariableOperations.push_back(item);
+        }
+        m_customVariableOperationsHasBeenSet = true;
     }
 
     if (value.HasMember("Branches") && !value["Branches"].IsNull())
@@ -149,6 +191,36 @@ void RuleEngineItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         for (auto itr = m_description.begin(); itr != m_description.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_customVariablesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomVariables";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_customVariables.begin(); itr != m_customVariables.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_customVariableOperationsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomVariableOperations";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_customVariableOperations.begin(); itr != m_customVariableOperations.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -240,6 +312,38 @@ void RuleEngineItem::SetDescription(const vector<string>& _description)
 bool RuleEngineItem::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+vector<CustomVariable> RuleEngineItem::GetCustomVariables() const
+{
+    return m_customVariables;
+}
+
+void RuleEngineItem::SetCustomVariables(const vector<CustomVariable>& _customVariables)
+{
+    m_customVariables = _customVariables;
+    m_customVariablesHasBeenSet = true;
+}
+
+bool RuleEngineItem::CustomVariablesHasBeenSet() const
+{
+    return m_customVariablesHasBeenSet;
+}
+
+vector<CustomVariableOperation> RuleEngineItem::GetCustomVariableOperations() const
+{
+    return m_customVariableOperations;
+}
+
+void RuleEngineItem::SetCustomVariableOperations(const vector<CustomVariableOperation>& _customVariableOperations)
+{
+    m_customVariableOperations = _customVariableOperations;
+    m_customVariableOperationsHasBeenSet = true;
+}
+
+bool RuleEngineItem::CustomVariableOperationsHasBeenSet() const
+{
+    return m_customVariableOperationsHasBeenSet;
 }
 
 vector<RuleBranch> RuleEngineItem::GetBranches() const

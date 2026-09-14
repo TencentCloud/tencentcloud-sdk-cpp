@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取<p>自动签使用的场景值, 可以选择的场景值如下:</p><ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
-                     * @return SceneKey <p>自动签使用的场景值, 可以选择的场景值如下:</p><ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+                     * 获取<p>授权签使用的场景值, 可以选择的场景值如下:</p><p>枚举值：</p><ul><li>E_PRESCRIPTION_AUTO_SIGN： 电子处方场景</li><li>OTHER： 通用场景</li></ul>
+                     * @return SceneKey <p>授权签使用的场景值, 可以选择的场景值如下:</p><p>枚举值：</p><ul><li>E_PRESCRIPTION_AUTO_SIGN： 电子处方场景</li><li>OTHER： 通用场景</li></ul>
                      * 
                      */
                     std::string GetSceneKey() const;
 
                     /**
-                     * 设置<p>自动签使用的场景值, 可以选择的场景值如下:</p><ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
-                     * @param _sceneKey <p>自动签使用的场景值, 可以选择的场景值如下:</p><ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+                     * 设置<p>授权签使用的场景值, 可以选择的场景值如下:</p><p>枚举值：</p><ul><li>E_PRESCRIPTION_AUTO_SIGN： 电子处方场景</li><li>OTHER： 通用场景</li></ul>
+                     * @param _sceneKey <p>授权签使用的场景值, 可以选择的场景值如下:</p><p>枚举值：</p><ul><li>E_PRESCRIPTION_AUTO_SIGN： 电子处方场景</li><li>OTHER： 通用场景</li></ul>
                      * 
                      */
                     void SetSceneKey(const std::string& _sceneKey);
@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取<p>自动签开通配置信息, 包括开通的人员的信息等</p>
-                     * @return AutoSignConfig <p>自动签开通配置信息, 包括开通的人员的信息等</p>
+                     * 获取<p>授权签开通配置信息, 包括开通的人员的信息等</p>
+                     * @return AutoSignConfig <p>授权签开通配置信息, 包括开通的人员的信息等</p>
                      * 
                      */
                     AutoSignConfig GetAutoSignConfig() const;
 
                     /**
-                     * 设置<p>自动签开通配置信息, 包括开通的人员的信息等</p>
-                     * @param _autoSignConfig <p>自动签开通配置信息, 包括开通的人员的信息等</p>
+                     * 设置<p>授权签开通配置信息, 包括开通的人员的信息等</p>
+                     * @param _autoSignConfig <p>授权签开通配置信息, 包括开通的人员的信息等</p>
                      * 
                      */
                     void SetAutoSignConfig(const AutoSignConfig& _autoSignConfig);
@@ -214,15 +214,15 @@ namespace TencentCloud
                     bool ExpiredTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。 在个人自动签的开通、关闭等回调信息场景中，该字段的信息将原封不动地透传给贵方。</p>
-                     * @return UserData <p>调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。 在个人自动签的开通、关闭等回调信息场景中，该字段的信息将原封不动地透传给贵方。</p>
+                     * 获取<p>调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。 在个人授权签的开通、关闭等回调信息场景中，该字段的信息将原封不动地透传给贵方。</p>
+                     * @return UserData <p>调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。 在个人授权签的开通、关闭等回调信息场景中，该字段的信息将原封不动地透传给贵方。</p>
                      * 
                      */
                     std::string GetUserData() const;
 
                     /**
-                     * 设置<p>调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。 在个人自动签的开通、关闭等回调信息场景中，该字段的信息将原封不动地透传给贵方。</p>
-                     * @param _userData <p>调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。 在个人自动签的开通、关闭等回调信息场景中，该字段的信息将原封不动地透传给贵方。</p>
+                     * 设置<p>调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。 在个人授权签的开通、关闭等回调信息场景中，该字段的信息将原封不动地透传给贵方。</p>
+                     * @param _userData <p>调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。 在个人授权签的开通、关闭等回调信息场景中，该字段的信息将原封不动地透传给贵方。</p>
                      * 
                      */
                     void SetUserData(const std::string& _userData);
@@ -264,7 +264,7 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * <p>自动签使用的场景值, 可以选择的场景值如下:</p><ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>
+                     * <p>授权签使用的场景值, 可以选择的场景值如下:</p><p>枚举值：</p><ul><li>E_PRESCRIPTION_AUTO_SIGN： 电子处方场景</li><li>OTHER： 通用场景</li></ul>
                      */
                     std::string m_sceneKey;
                     bool m_sceneKeyHasBeenSet;
@@ -276,7 +276,7 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * <p>自动签开通配置信息, 包括开通的人员的信息等</p>
+                     * <p>授权签开通配置信息, 包括开通的人员的信息等</p>
                      */
                     AutoSignConfig m_autoSignConfig;
                     bool m_autoSignConfigHasBeenSet;
@@ -306,7 +306,7 @@ namespace TencentCloud
                     bool m_expiredTimeHasBeenSet;
 
                     /**
-                     * <p>调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。 在个人自动签的开通、关闭等回调信息场景中，该字段的信息将原封不动地透传给贵方。</p>
+                     * <p>调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。 在个人授权签的开通、关闭等回调信息场景中，该字段的信息将原封不动地透传给贵方。</p>
                      */
                     std::string m_userData;
                     bool m_userDataHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志采集配置的json表达
-                     * @return LogConfig 日志采集配置的json表达
+                     * 获取<p>日志采集配置的json表达</p>
+                     * @return LogConfig <p>日志采集配置的json表达</p>
                      * 
                      */
                     std::string GetLogConfig() const;
 
                     /**
-                     * 设置日志采集配置的json表达
-                     * @param _logConfig 日志采集配置的json表达
+                     * 设置<p>日志采集配置的json表达</p>
+                     * @param _logConfig <p>日志采集配置的json表达</p>
                      * 
                      */
                     void SetLogConfig(const std::string& _logConfig);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool LogConfigHasBeenSet() const;
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取CLS日志集ID
-                     * @return LogsetId CLS日志集ID
+                     * 获取<p>CLS日志集ID</p>
+                     * @return LogsetId <p>CLS日志集ID</p>
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
-                     * 设置CLS日志集ID
-                     * @param _logsetId CLS日志集ID
+                     * 设置<p>CLS日志集ID</p>
+                     * @param _logsetId <p>CLS日志集ID</p>
                      * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LogsetIdHasBeenSet() const;
 
                     /**
-                     * 获取当前集群类型支持tke（标准集群）、eks（serverless集群）
-                     * @return ClusterType 当前集群类型支持tke（标准集群）、eks（serverless集群）
+                     * 获取<p>当前集群类型支持tke（标准集群）、eks（serverless集群）</p>
+                     * @return ClusterType <p>当前集群类型支持tke（标准集群）、eks（serverless集群）</p>
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置当前集群类型支持tke（标准集群）、eks（serverless集群）
-                     * @param _clusterType 当前集群类型支持tke（标准集群）、eks（serverless集群）
+                     * 设置<p>当前集群类型支持tke（标准集群）、eks（serverless集群）</p>
+                     * @param _clusterType <p>当前集群类型支持tke（标准集群）、eks（serverless集群）</p>
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志采集配置的json表达
+                     * <p>日志采集配置的json表达</p>
                      */
                     std::string m_logConfig;
                     bool m_logConfigHasBeenSet;
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * CLS日志集ID
+                     * <p>CLS日志集ID</p>
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;
 
                     /**
-                     * 当前集群类型支持tke（标准集群）、eks（serverless集群）
+                     * <p>当前集群类型支持tke（标准集群）、eks（serverless集群）</p>
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;

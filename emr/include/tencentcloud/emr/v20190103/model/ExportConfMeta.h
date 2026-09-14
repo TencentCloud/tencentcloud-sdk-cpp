@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool ServiceVersionHasBeenSet() const;
 
                     /**
-                     * 获取<p>导出配置参数</p>
+                     * 获取<p>导出配置参数 base64格式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Properties <p>导出配置参数</p>
+                     * @return Properties <p>导出配置参数 base64格式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProperties() const;
 
                     /**
-                     * 设置<p>导出配置参数</p>
+                     * 设置<p>导出配置参数 base64格式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _properties <p>导出配置参数</p>
+                     * @param _properties <p>导出配置参数 base64格式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -170,7 +170,7 @@ namespace TencentCloud
                     bool m_serviceVersionHasBeenSet;
 
                     /**
-                     * <p>导出配置参数</p>
+                     * <p>导出配置参数 base64格式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_properties;

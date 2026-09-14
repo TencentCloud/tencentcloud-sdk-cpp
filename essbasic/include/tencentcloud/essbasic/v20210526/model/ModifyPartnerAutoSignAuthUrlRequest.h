@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool AuthorizedOrganizationNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>是否给平台应用授权</p><ul><li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationId</code>和<code>AuthorizedOrganizationName</code>。</li><li><strong>false</strong>: （默认）表示否，不是授权平台应用。</li></ul><p> 注：授权给平台应用需要开通【基于子客授权第三方应用可文件发起子客自动签署】白名单，请联系运营经理开通。</p>
-                     * @return PlatformAppAuthorization <p>是否给平台应用授权</p><ul><li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationId</code>和<code>AuthorizedOrganizationName</code>。</li><li><strong>false</strong>: （默认）表示否，不是授权平台应用。</li></ul><p> 注：授权给平台应用需要开通【基于子客授权第三方应用可文件发起子客自动签署】白名单，请联系运营经理开通。</p>
+                     * 获取<p>是否给平台应用授权<ul><li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationId</code>和<code>AuthorizedOrganizationName</code>。</li><li><strong>false</strong>: （默认）表示否，不是授权平台应用。</li></ul> 注：授权给平台应用需要开通【基于子客授权第三方应用可文件发起子客“授权签”】白名单，请联系运营经理开通。</p>
+                     * @return PlatformAppAuthorization <p>是否给平台应用授权<ul><li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationId</code>和<code>AuthorizedOrganizationName</code>。</li><li><strong>false</strong>: （默认）表示否，不是授权平台应用。</li></ul> 注：授权给平台应用需要开通【基于子客授权第三方应用可文件发起子客“授权签”】白名单，请联系运营经理开通。</p>
                      * 
                      */
                     bool GetPlatformAppAuthorization() const;
 
                     /**
-                     * 设置<p>是否给平台应用授权</p><ul><li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationId</code>和<code>AuthorizedOrganizationName</code>。</li><li><strong>false</strong>: （默认）表示否，不是授权平台应用。</li></ul><p> 注：授权给平台应用需要开通【基于子客授权第三方应用可文件发起子客自动签署】白名单，请联系运营经理开通。</p>
-                     * @param _platformAppAuthorization <p>是否给平台应用授权</p><ul><li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationId</code>和<code>AuthorizedOrganizationName</code>。</li><li><strong>false</strong>: （默认）表示否，不是授权平台应用。</li></ul><p> 注：授权给平台应用需要开通【基于子客授权第三方应用可文件发起子客自动签署】白名单，请联系运营经理开通。</p>
+                     * 设置<p>是否给平台应用授权<ul><li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationId</code>和<code>AuthorizedOrganizationName</code>。</li><li><strong>false</strong>: （默认）表示否，不是授权平台应用。</li></ul> 注：授权给平台应用需要开通【基于子客授权第三方应用可文件发起子客“授权签”】白名单，请联系运营经理开通。</p>
+                     * @param _platformAppAuthorization <p>是否给平台应用授权<ul><li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationId</code>和<code>AuthorizedOrganizationName</code>。</li><li><strong>false</strong>: （默认）表示否，不是授权平台应用。</li></ul> 注：授权给平台应用需要开通【基于子客授权第三方应用可文件发起子客“授权签”】白名单，请联系运营经理开通。</p>
                      * 
                      */
                     void SetPlatformAppAuthorization(const bool& _platformAppAuthorization);
@@ -211,7 +211,7 @@ namespace TencentCloud
                     bool m_authorizedOrganizationNameHasBeenSet;
 
                     /**
-                     * <p>是否给平台应用授权</p><ul><li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationId</code>和<code>AuthorizedOrganizationName</code>。</li><li><strong>false</strong>: （默认）表示否，不是授权平台应用。</li></ul><p> 注：授权给平台应用需要开通【基于子客授权第三方应用可文件发起子客自动签署】白名单，请联系运营经理开通。</p>
+                     * <p>是否给平台应用授权<ul><li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationId</code>和<code>AuthorizedOrganizationName</code>。</li><li><strong>false</strong>: （默认）表示否，不是授权平台应用。</li></ul> 注：授权给平台应用需要开通【基于子客授权第三方应用可文件发起子客“授权签”】白名单，请联系运营经理开通。</p>
                      */
                     bool m_platformAppAuthorization;
                     bool m_platformAppAuthorizationHasBeenSet;

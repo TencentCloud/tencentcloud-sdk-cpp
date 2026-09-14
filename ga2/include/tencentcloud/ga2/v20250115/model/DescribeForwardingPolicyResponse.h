@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合条件的策略信息。
-                     * @return ForwardingPolicySet 符合条件的策略信息。
+                     * 获取<p>符合条件的策略信息。</p>
+                     * @return ForwardingPolicySet <p>符合条件的策略信息。</p>
                      * 
                      */
                     std::vector<ForwardingPolicySet> GetForwardingPolicySet() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ForwardingPolicySetHasBeenSet() const;
 
                     /**
-                     * 获取符合条件的实例个数。
-                     * @return TotalCount 符合条件的实例个数。
+                     * 获取<p>符合条件的实例个数。</p>
+                     * @return TotalCount <p>符合条件的实例个数。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合条件的策略信息。
+                     * <p>符合条件的策略信息。</p>
                      */
                     std::vector<ForwardingPolicySet> m_forwardingPolicySet;
                     bool m_forwardingPolicySetHasBeenSet;
 
                     /**
-                     * 符合条件的实例个数。
+                     * <p>符合条件的实例个数。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

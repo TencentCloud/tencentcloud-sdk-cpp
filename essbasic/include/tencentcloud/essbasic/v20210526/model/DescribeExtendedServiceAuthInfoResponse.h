@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务开通和授权的信息列表，根据查询类型返回所有支持的扩展服务开通和授权状况，或者返回特定扩展服务的开通和授权状况。
-                     * @return AuthInfo 服务开通和授权的信息列表，根据查询类型返回所有支持的扩展服务开通和授权状况，或者返回特定扩展服务的开通和授权状况。
+                     * 获取<p>服务开通和授权的信息列表，根据查询类型返回所有支持的扩展服务开通和授权状况，或者返回特定扩展服务的开通和授权状况。</p>
+                     * @return AuthInfo <p>服务开通和授权的信息列表，根据查询类型返回所有支持的扩展服务开通和授权状况，或者返回特定扩展服务的开通和授权状况。</p>
                      * 
                      */
                     std::vector<ExtentServiceAuthInfo> GetAuthInfo() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务开通和授权的信息列表，根据查询类型返回所有支持的扩展服务开通和授权状况，或者返回特定扩展服务的开通和授权状况。
+                     * <p>服务开通和授权的信息列表，根据查询类型返回所有支持的扩展服务开通和授权状况，或者返回特定扩展服务的开通和授权状况。</p>
                      */
                     std::vector<ExtentServiceAuthInfo> m_authInfo;
                     bool m_authInfoHasBeenSet;

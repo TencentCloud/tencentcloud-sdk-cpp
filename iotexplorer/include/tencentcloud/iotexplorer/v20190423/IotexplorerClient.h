@@ -31,6 +31,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/BatchCreateTWeSeeRecognitionTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BatchCreateTWeSeeSubscriptionRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BatchCreateTWeSeeSubscriptionResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/BatchDescribeTWeSeeOrdersRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/BatchDescribeTWeSeeOrdersResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BatchInvokeTWeSeeRecognitionTaskRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BatchInvokeTWeSeeRecognitionTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BatchRenewTWeSeeSubscriptionRequest.h>
@@ -467,6 +469,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicRuleResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/OperateTWeSeeDirectUploadObjectRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/OperateTWeSeeDirectUploadObjectResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/PauseTWeCallDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/PauseTWeCallDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/PublishBroadcastMessageRequest.h>
@@ -557,6 +561,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchCreateTWeSeeSubscriptionResponse> BatchCreateTWeSeeSubscriptionOutcome;
                 typedef std::future<BatchCreateTWeSeeSubscriptionOutcome> BatchCreateTWeSeeSubscriptionOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::BatchCreateTWeSeeSubscriptionRequest&, BatchCreateTWeSeeSubscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchCreateTWeSeeSubscriptionAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchDescribeTWeSeeOrdersResponse> BatchDescribeTWeSeeOrdersOutcome;
+                typedef std::future<BatchDescribeTWeSeeOrdersOutcome> BatchDescribeTWeSeeOrdersOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::BatchDescribeTWeSeeOrdersRequest&, BatchDescribeTWeSeeOrdersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDescribeTWeSeeOrdersAsyncHandler;
                 typedef Outcome<Core::Error, Model::BatchInvokeTWeSeeRecognitionTaskResponse> BatchInvokeTWeSeeRecognitionTaskOutcome;
                 typedef std::future<BatchInvokeTWeSeeRecognitionTaskOutcome> BatchInvokeTWeSeeRecognitionTaskOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::BatchInvokeTWeSeeRecognitionTaskRequest&, BatchInvokeTWeSeeRecognitionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchInvokeTWeSeeRecognitionTaskAsyncHandler;
@@ -1211,6 +1218,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTopicRuleResponse> ModifyTopicRuleOutcome;
                 typedef std::future<ModifyTopicRuleOutcome> ModifyTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyTopicRuleRequest&, ModifyTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::OperateTWeSeeDirectUploadObjectResponse> OperateTWeSeeDirectUploadObjectOutcome;
+                typedef std::future<OperateTWeSeeDirectUploadObjectOutcome> OperateTWeSeeDirectUploadObjectOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::OperateTWeSeeDirectUploadObjectRequest&, OperateTWeSeeDirectUploadObjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OperateTWeSeeDirectUploadObjectAsyncHandler;
                 typedef Outcome<Core::Error, Model::PauseTWeCallDeviceResponse> PauseTWeCallDeviceOutcome;
                 typedef std::future<PauseTWeCallDeviceOutcome> PauseTWeCallDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::PauseTWeCallDeviceRequest&, PauseTWeCallDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PauseTWeCallDeviceAsyncHandler;
@@ -1345,6 +1355,15 @@ namespace TencentCloud
                 BatchCreateTWeSeeSubscriptionOutcome BatchCreateTWeSeeSubscription(const Model::BatchCreateTWeSeeSubscriptionRequest &request);
                 void BatchCreateTWeSeeSubscriptionAsync(const Model::BatchCreateTWeSeeSubscriptionRequest& request, const BatchCreateTWeSeeSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchCreateTWeSeeSubscriptionOutcomeCallable BatchCreateTWeSeeSubscriptionCallable(const Model::BatchCreateTWeSeeSubscriptionRequest& request);
+
+                /**
+                 *批量查询 TWeSee 订单状态
+                 * @param req BatchDescribeTWeSeeOrdersRequest
+                 * @return BatchDescribeTWeSeeOrdersOutcome
+                 */
+                BatchDescribeTWeSeeOrdersOutcome BatchDescribeTWeSeeOrders(const Model::BatchDescribeTWeSeeOrdersRequest &request);
+                void BatchDescribeTWeSeeOrdersAsync(const Model::BatchDescribeTWeSeeOrdersRequest& request, const BatchDescribeTWeSeeOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchDescribeTWeSeeOrdersOutcomeCallable BatchDescribeTWeSeeOrdersCallable(const Model::BatchDescribeTWeSeeOrdersRequest& request);
 
                 /**
                  *批量同步执行 TWeSee 语义理解任务
@@ -3347,6 +3366,15 @@ namespace TencentCloud
                 ModifyTopicRuleOutcome ModifyTopicRule(const Model::ModifyTopicRuleRequest &request);
                 void ModifyTopicRuleAsync(const Model::ModifyTopicRuleRequest& request, const ModifyTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTopicRuleOutcomeCallable ModifyTopicRuleCallable(const Model::ModifyTopicRuleRequest& request);
+
+                /**
+                 *查询、删除或列举 TWeSee 直传对象
+                 * @param req OperateTWeSeeDirectUploadObjectRequest
+                 * @return OperateTWeSeeDirectUploadObjectOutcome
+                 */
+                OperateTWeSeeDirectUploadObjectOutcome OperateTWeSeeDirectUploadObject(const Model::OperateTWeSeeDirectUploadObjectRequest &request);
+                void OperateTWeSeeDirectUploadObjectAsync(const Model::OperateTWeSeeDirectUploadObjectRequest& request, const OperateTWeSeeDirectUploadObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OperateTWeSeeDirectUploadObjectOutcomeCallable OperateTWeSeeDirectUploadObjectCallable(const Model::OperateTWeSeeDirectUploadObjectRequest& request);
 
                 /**
                  *暂停设备

@@ -490,6 +490,27 @@ namespace TencentCloud
                      */
                     bool ProtocolHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户选择数据订阅任务的数据（如DTS）时，源数据的格式</p><p>枚举值：</p><ul><li>Debezium： Debezium格式json</li><li>Canal： Canal格式json</li></ul>
+                     * @return SourceDataFormat <p>用户选择数据订阅任务的数据（如DTS）时，源数据的格式</p><p>枚举值：</p><ul><li>Debezium： Debezium格式json</li><li>Canal： Canal格式json</li></ul>
+                     * 
+                     */
+                    std::string GetSourceDataFormat() const;
+
+                    /**
+                     * 设置<p>用户选择数据订阅任务的数据（如DTS）时，源数据的格式</p><p>枚举值：</p><ul><li>Debezium： Debezium格式json</li><li>Canal： Canal格式json</li></ul>
+                     * @param _sourceDataFormat <p>用户选择数据订阅任务的数据（如DTS）时，源数据的格式</p><p>枚举值：</p><ul><li>Debezium： Debezium格式json</li><li>Canal： Canal格式json</li></ul>
+                     * 
+                     */
+                    void SetSourceDataFormat(const std::string& _sourceDataFormat);
+
+                    /**
+                     * 判断参数 SourceDataFormat 是否已赋值
+                     * @return SourceDataFormat 是否已赋值
+                     * 
+                     */
+                    bool SourceDataFormatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -617,6 +638,12 @@ namespace TencentCloud
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
+
+                    /**
+                     * <p>用户选择数据订阅任务的数据（如DTS）时，源数据的格式</p><p>枚举值：</p><ul><li>Debezium： Debezium格式json</li><li>Canal： Canal格式json</li></ul>
+                     */
+                    std::string m_sourceDataFormat;
+                    bool m_sourceDataFormatHasBeenSet;
 
                 };
             }

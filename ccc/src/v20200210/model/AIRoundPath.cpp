@@ -23,7 +23,8 @@ using namespace std;
 AIRoundPath::AIRoundPath() :
     m_nodeNameHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+    m_timestampHasBeenSet(false),
+    m_aPICallHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,23 @@ CoreInternalOutcome AIRoundPath::Deserialize(const rapidjson::Value &value)
         m_timestampHasBeenSet = true;
     }
 
+    if (value.HasMember("APICall") && !value["APICall"].IsNull())
+    {
+        if (!value["APICall"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIRoundPath.APICall` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aPICall.Deserialize(value["APICall"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aPICallHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +109,15 @@ void AIRoundPath::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Timestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timestamp, allocator);
+    }
+
+    if (m_aPICallHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "APICall";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aPICall.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -142,5 +169,21 @@ void AIRoundPath::SetTimestamp(const int64_t& _timestamp)
 bool AIRoundPath::TimestampHasBeenSet() const
 {
     return m_timestampHasBeenSet;
+}
+
+AICallAPICallDetail AIRoundPath::GetAPICall() const
+{
+    return m_aPICall;
+}
+
+void AIRoundPath::SetAPICall(const AICallAPICallDetail& _aPICall)
+{
+    m_aPICall = _aPICall;
+    m_aPICallHasBeenSet = true;
+}
+
+bool AIRoundPath::APICallHasBeenSet() const
+{
+    return m_aPICallHasBeenSet;
 }
 

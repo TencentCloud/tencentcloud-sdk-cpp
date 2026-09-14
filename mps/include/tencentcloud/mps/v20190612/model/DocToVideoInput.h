@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool ModelNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>文档生成视频模型版本号</p><p>默认值：1.0</p>
-                     * @return ModelVersion <p>文档生成视频模型版本号</p><p>默认值：1.0</p>
+                     * 获取<p>文档生成视频模型版本号</p><p>枚举值：</p><ul><li>1.0： 1.0</li><li>1.0-lite： 1.0-lite</li></ul><p>默认值：1.0</p>
+                     * @return ModelVersion <p>文档生成视频模型版本号</p><p>枚举值：</p><ul><li>1.0： 1.0</li><li>1.0-lite： 1.0-lite</li></ul><p>默认值：1.0</p>
                      * 
                      */
                     std::string GetModelVersion() const;
 
                     /**
-                     * 设置<p>文档生成视频模型版本号</p><p>默认值：1.0</p>
-                     * @param _modelVersion <p>文档生成视频模型版本号</p><p>默认值：1.0</p>
+                     * 设置<p>文档生成视频模型版本号</p><p>枚举值：</p><ul><li>1.0： 1.0</li><li>1.0-lite： 1.0-lite</li></ul><p>默认值：1.0</p>
+                     * @param _modelVersion <p>文档生成视频模型版本号</p><p>枚举值：</p><ul><li>1.0： 1.0</li><li>1.0-lite： 1.0-lite</li></ul><p>默认值：1.0</p>
                      * 
                      */
                     void SetModelVersion(const std::string& _modelVersion);
@@ -363,7 +363,7 @@ namespace TencentCloud
                     bool m_modelNameHasBeenSet;
 
                     /**
-                     * <p>文档生成视频模型版本号</p><p>默认值：1.0</p>
+                     * <p>文档生成视频模型版本号</p><p>枚举值：</p><ul><li>1.0： 1.0</li><li>1.0-lite： 1.0-lite</li></ul><p>默认值：1.0</p>
                      */
                     std::string m_modelVersion;
                     bool m_modelVersionHasBeenSet;

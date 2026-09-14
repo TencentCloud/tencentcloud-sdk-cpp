@@ -40,6 +40,56 @@ AdpClient::AdpClient(const Credential &credential, const string &region, const C
 }
 
 
+AdpClient::CheckLabelOutcome AdpClient::CheckLabel(const CheckLabelRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckLabel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckLabelResponse rsp = CheckLabelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckLabelOutcome(rsp);
+        else
+            return CheckLabelOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckLabelOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::CheckLabelAsync(const CheckLabelRequest& request, const CheckLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CheckLabelRequest&;
+    using Resp = CheckLabelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CheckLabel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::CheckLabelOutcomeCallable AdpClient::CheckLabelCallable(const CheckLabelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CheckLabelOutcome>>();
+    CheckLabelAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const CheckLabelRequest&,
+        CheckLabelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::CopyAgentFromAppOutcome AdpClient::CopyAgentFromApp(const CopyAgentFromAppRequest &request)
 {
     auto outcome = MakeRequest(request, "CopyAgentFromApp");
@@ -290,6 +340,56 @@ AdpClient::CreateAppTriggerOutcomeCallable AdpClient::CreateAppTriggerCallable(c
     return prom->get_future();
 }
 
+AdpClient::CreateCategoryOutcome AdpClient::CreateCategory(const CreateCategoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCategory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCategoryResponse rsp = CreateCategoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCategoryOutcome(rsp);
+        else
+            return CreateCategoryOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCategoryOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::CreateCategoryAsync(const CreateCategoryRequest& request, const CreateCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCategoryRequest&;
+    using Resp = CreateCategoryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCategory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::CreateCategoryOutcomeCallable AdpClient::CreateCategoryCallable(const CreateCategoryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCategoryOutcome>>();
+    CreateCategoryAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const CreateCategoryRequest&,
+        CreateCategoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::CreateChannelOutcome AdpClient::CreateChannel(const CreateChannelRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateChannel");
@@ -382,6 +482,106 @@ AdpClient::CreateConversationOutcomeCallable AdpClient::CreateConversationCallab
         const AdpClient*,
         const CreateConversationRequest&,
         CreateConversationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::CreateKBOutcome AdpClient::CreateKB(const CreateKBRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateKB");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateKBResponse rsp = CreateKBResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateKBOutcome(rsp);
+        else
+            return CreateKBOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateKBOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::CreateKBAsync(const CreateKBRequest& request, const CreateKBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateKBRequest&;
+    using Resp = CreateKBResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateKB", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::CreateKBOutcomeCallable AdpClient::CreateKBCallable(const CreateKBRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateKBOutcome>>();
+    CreateKBAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const CreateKBRequest&,
+        CreateKBOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::CreateLabelOutcome AdpClient::CreateLabel(const CreateLabelRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLabel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLabelResponse rsp = CreateLabelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLabelOutcome(rsp);
+        else
+            return CreateLabelOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLabelOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::CreateLabelAsync(const CreateLabelRequest& request, const CreateLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateLabelRequest&;
+    using Resp = CreateLabelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateLabel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::CreateLabelOutcomeCallable AdpClient::CreateLabelCallable(const CreateLabelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateLabelOutcome>>();
+    CreateLabelAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const CreateLabelRequest&,
+        CreateLabelOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -490,6 +690,106 @@ AdpClient::CreatePluginOutcomeCallable AdpClient::CreatePluginCallable(const Cre
     return prom->get_future();
 }
 
+AdpClient::CreateQAGenerationTaskOutcome AdpClient::CreateQAGenerationTask(const CreateQAGenerationTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateQAGenerationTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateQAGenerationTaskResponse rsp = CreateQAGenerationTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateQAGenerationTaskOutcome(rsp);
+        else
+            return CreateQAGenerationTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateQAGenerationTaskOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::CreateQAGenerationTaskAsync(const CreateQAGenerationTaskRequest& request, const CreateQAGenerationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateQAGenerationTaskRequest&;
+    using Resp = CreateQAGenerationTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateQAGenerationTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::CreateQAGenerationTaskOutcomeCallable AdpClient::CreateQAGenerationTaskCallable(const CreateQAGenerationTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateQAGenerationTaskOutcome>>();
+    CreateQAGenerationTaskAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const CreateQAGenerationTaskRequest&,
+        CreateQAGenerationTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::CreateQAListOutcome AdpClient::CreateQAList(const CreateQAListRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateQAList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateQAListResponse rsp = CreateQAListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateQAListOutcome(rsp);
+        else
+            return CreateQAListOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateQAListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::CreateQAListAsync(const CreateQAListRequest& request, const CreateQAListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateQAListRequest&;
+    using Resp = CreateQAListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateQAList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::CreateQAListOutcomeCallable AdpClient::CreateQAListCallable(const CreateQAListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateQAListOutcome>>();
+    CreateQAListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const CreateQAListRequest&,
+        CreateQAListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::CreateReleaseOutcome AdpClient::CreateRelease(const CreateReleaseRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRelease");
@@ -532,6 +832,56 @@ AdpClient::CreateReleaseOutcomeCallable AdpClient::CreateReleaseCallable(const C
         const AdpClient*,
         const CreateReleaseRequest&,
         CreateReleaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::CreateSimilarQuestionOutcome AdpClient::CreateSimilarQuestion(const CreateSimilarQuestionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSimilarQuestion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSimilarQuestionResponse rsp = CreateSimilarQuestionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSimilarQuestionOutcome(rsp);
+        else
+            return CreateSimilarQuestionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSimilarQuestionOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::CreateSimilarQuestionAsync(const CreateSimilarQuestionRequest& request, const CreateSimilarQuestionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateSimilarQuestionRequest&;
+    using Resp = CreateSimilarQuestionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateSimilarQuestion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::CreateSimilarQuestionOutcomeCallable AdpClient::CreateSimilarQuestionCallable(const CreateSimilarQuestionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateSimilarQuestionOutcome>>();
+    CreateSimilarQuestionAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const CreateSimilarQuestionRequest&,
+        CreateSimilarQuestionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -990,6 +1340,56 @@ AdpClient::DeleteAppTriggerOutcomeCallable AdpClient::DeleteAppTriggerCallable(c
     return prom->get_future();
 }
 
+AdpClient::DeleteCategoryOutcome AdpClient::DeleteCategory(const DeleteCategoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCategory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCategoryResponse rsp = DeleteCategoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCategoryOutcome(rsp);
+        else
+            return DeleteCategoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCategoryOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DeleteCategoryAsync(const DeleteCategoryRequest& request, const DeleteCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCategoryRequest&;
+    using Resp = DeleteCategoryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCategory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DeleteCategoryOutcomeCallable AdpClient::DeleteCategoryCallable(const DeleteCategoryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCategoryOutcome>>();
+    DeleteCategoryAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DeleteCategoryRequest&,
+        DeleteCategoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::DeleteChannelOutcome AdpClient::DeleteChannel(const DeleteChannelRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteChannel");
@@ -1090,6 +1490,156 @@ AdpClient::DeleteConversationOutcomeCallable AdpClient::DeleteConversationCallab
     return prom->get_future();
 }
 
+AdpClient::DeleteDocListOutcome AdpClient::DeleteDocList(const DeleteDocListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDocList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDocListResponse rsp = DeleteDocListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDocListOutcome(rsp);
+        else
+            return DeleteDocListOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDocListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DeleteDocListAsync(const DeleteDocListRequest& request, const DeleteDocListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDocListRequest&;
+    using Resp = DeleteDocListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDocList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DeleteDocListOutcomeCallable AdpClient::DeleteDocListCallable(const DeleteDocListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDocListOutcome>>();
+    DeleteDocListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DeleteDocListRequest&,
+        DeleteDocListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DeleteKBOutcome AdpClient::DeleteKB(const DeleteKBRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteKB");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteKBResponse rsp = DeleteKBResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteKBOutcome(rsp);
+        else
+            return DeleteKBOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteKBOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DeleteKBAsync(const DeleteKBRequest& request, const DeleteKBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteKBRequest&;
+    using Resp = DeleteKBResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteKB", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DeleteKBOutcomeCallable AdpClient::DeleteKBCallable(const DeleteKBRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteKBOutcome>>();
+    DeleteKBAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DeleteKBRequest&,
+        DeleteKBOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DeleteLabelListOutcome AdpClient::DeleteLabelList(const DeleteLabelListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLabelList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLabelListResponse rsp = DeleteLabelListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLabelListOutcome(rsp);
+        else
+            return DeleteLabelListOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLabelListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DeleteLabelListAsync(const DeleteLabelListRequest& request, const DeleteLabelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteLabelListRequest&;
+    using Resp = DeleteLabelListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteLabelList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DeleteLabelListOutcomeCallable AdpClient::DeleteLabelListCallable(const DeleteLabelListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteLabelListOutcome>>();
+    DeleteLabelListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DeleteLabelListRequest&,
+        DeleteLabelListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::DeleteMsgRecordCategoryOutcome AdpClient::DeleteMsgRecordCategory(const DeleteMsgRecordCategoryRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteMsgRecordCategory");
@@ -1182,6 +1732,56 @@ AdpClient::DeletePluginOutcomeCallable AdpClient::DeletePluginCallable(const Del
         const AdpClient*,
         const DeletePluginRequest&,
         DeletePluginOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DeleteQAListOutcome AdpClient::DeleteQAList(const DeleteQAListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteQAList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteQAListResponse rsp = DeleteQAListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteQAListOutcome(rsp);
+        else
+            return DeleteQAListOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteQAListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DeleteQAListAsync(const DeleteQAListRequest& request, const DeleteQAListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteQAListRequest&;
+    using Resp = DeleteQAListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteQAList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DeleteQAListOutcomeCallable AdpClient::DeleteQAListCallable(const DeleteQAListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteQAListOutcome>>();
+    DeleteQAListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DeleteQAListRequest&,
+        DeleteQAListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1990,6 +2590,56 @@ AdpClient::DescribeAuditLogMetaOutcomeCallable AdpClient::DescribeAuditLogMetaCa
     return prom->get_future();
 }
 
+AdpClient::DescribeCategoryListOutcome AdpClient::DescribeCategoryList(const DescribeCategoryListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCategoryList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCategoryListResponse rsp = DescribeCategoryListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCategoryListOutcome(rsp);
+        else
+            return DescribeCategoryListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCategoryListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeCategoryListAsync(const DescribeCategoryListRequest& request, const DescribeCategoryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCategoryListRequest&;
+    using Resp = DescribeCategoryListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCategoryList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeCategoryListOutcomeCallable AdpClient::DescribeCategoryListCallable(const DescribeCategoryListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCategoryListOutcome>>();
+    DescribeCategoryListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeCategoryListRequest&,
+        DescribeCategoryListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::DescribeChannelOutcome AdpClient::DescribeChannel(const DescribeChannelRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeChannel");
@@ -2132,6 +2782,106 @@ AdpClient::DescribeConcurrencyLimitDetailListOutcomeCallable AdpClient::Describe
         const AdpClient*,
         const DescribeConcurrencyLimitDetailListRequest&,
         DescribeConcurrencyLimitDetailListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeConflictQAOutcome AdpClient::DescribeConflictQA(const DescribeConflictQARequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConflictQA");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConflictQAResponse rsp = DescribeConflictQAResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConflictQAOutcome(rsp);
+        else
+            return DescribeConflictQAOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConflictQAOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeConflictQAAsync(const DescribeConflictQARequest& request, const DescribeConflictQAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeConflictQARequest&;
+    using Resp = DescribeConflictQAResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeConflictQA", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeConflictQAOutcomeCallable AdpClient::DescribeConflictQACallable(const DescribeConflictQARequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeConflictQAOutcome>>();
+    DescribeConflictQAAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeConflictQARequest&,
+        DescribeConflictQAOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeConflictQASummaryListOutcome AdpClient::DescribeConflictQASummaryList(const DescribeConflictQASummaryListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConflictQASummaryList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConflictQASummaryListResponse rsp = DescribeConflictQASummaryListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConflictQASummaryListOutcome(rsp);
+        else
+            return DescribeConflictQASummaryListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConflictQASummaryListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeConflictQASummaryListAsync(const DescribeConflictQASummaryListRequest& request, const DescribeConflictQASummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeConflictQASummaryListRequest&;
+    using Resp = DescribeConflictQASummaryListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeConflictQASummaryList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeConflictQASummaryListOutcomeCallable AdpClient::DescribeConflictQASummaryListCallable(const DescribeConflictQASummaryListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeConflictQASummaryListOutcome>>();
+    DescribeConflictQASummaryListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeConflictQASummaryListRequest&,
+        DescribeConflictQASummaryListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2332,6 +3082,306 @@ AdpClient::DescribeConversationMessageListOutcomeCallable AdpClient::DescribeCon
         const AdpClient*,
         const DescribeConversationMessageListRequest&,
         DescribeConversationMessageListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeDocOutcome AdpClient::DescribeDoc(const DescribeDocRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDoc");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDocResponse rsp = DescribeDocResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDocOutcome(rsp);
+        else
+            return DescribeDocOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDocOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeDocAsync(const DescribeDocRequest& request, const DescribeDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDocRequest&;
+    using Resp = DescribeDocResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDoc", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeDocOutcomeCallable AdpClient::DescribeDocCallable(const DescribeDocRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDocOutcome>>();
+    DescribeDocAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeDocRequest&,
+        DescribeDocOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeDocSummaryListOutcome AdpClient::DescribeDocSummaryList(const DescribeDocSummaryListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDocSummaryList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDocSummaryListResponse rsp = DescribeDocSummaryListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDocSummaryListOutcome(rsp);
+        else
+            return DescribeDocSummaryListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDocSummaryListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeDocSummaryListAsync(const DescribeDocSummaryListRequest& request, const DescribeDocSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDocSummaryListRequest&;
+    using Resp = DescribeDocSummaryListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDocSummaryList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeDocSummaryListOutcomeCallable AdpClient::DescribeDocSummaryListCallable(const DescribeDocSummaryListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDocSummaryListOutcome>>();
+    DescribeDocSummaryListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeDocSummaryListRequest&,
+        DescribeDocSummaryListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeKBOutcome AdpClient::DescribeKB(const DescribeKBRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKB");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKBResponse rsp = DescribeKBResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKBOutcome(rsp);
+        else
+            return DescribeKBOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKBOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeKBAsync(const DescribeKBRequest& request, const DescribeKBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeKBRequest&;
+    using Resp = DescribeKBResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeKB", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeKBOutcomeCallable AdpClient::DescribeKBCallable(const DescribeKBRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeKBOutcome>>();
+    DescribeKBAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeKBRequest&,
+        DescribeKBOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeKBSummaryListOutcome AdpClient::DescribeKBSummaryList(const DescribeKBSummaryListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKBSummaryList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKBSummaryListResponse rsp = DescribeKBSummaryListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKBSummaryListOutcome(rsp);
+        else
+            return DescribeKBSummaryListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKBSummaryListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeKBSummaryListAsync(const DescribeKBSummaryListRequest& request, const DescribeKBSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeKBSummaryListRequest&;
+    using Resp = DescribeKBSummaryListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeKBSummaryList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeKBSummaryListOutcomeCallable AdpClient::DescribeKBSummaryListCallable(const DescribeKBSummaryListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeKBSummaryListOutcome>>();
+    DescribeKBSummaryListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeKBSummaryListRequest&,
+        DescribeKBSummaryListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeLabelOutcome AdpClient::DescribeLabel(const DescribeLabelRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLabel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLabelResponse rsp = DescribeLabelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLabelOutcome(rsp);
+        else
+            return DescribeLabelOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLabelOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeLabelAsync(const DescribeLabelRequest& request, const DescribeLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLabelRequest&;
+    using Resp = DescribeLabelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLabel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeLabelOutcomeCallable AdpClient::DescribeLabelCallable(const DescribeLabelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLabelOutcome>>();
+    DescribeLabelAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeLabelRequest&,
+        DescribeLabelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeLabelSummaryListOutcome AdpClient::DescribeLabelSummaryList(const DescribeLabelSummaryListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLabelSummaryList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLabelSummaryListResponse rsp = DescribeLabelSummaryListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLabelSummaryListOutcome(rsp);
+        else
+            return DescribeLabelSummaryListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLabelSummaryListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeLabelSummaryListAsync(const DescribeLabelSummaryListRequest& request, const DescribeLabelSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLabelSummaryListRequest&;
+    using Resp = DescribeLabelSummaryListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLabelSummaryList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeLabelSummaryListOutcomeCallable AdpClient::DescribeLabelSummaryListCallable(const DescribeLabelSummaryListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLabelSummaryListOutcome>>();
+    DescribeLabelSummaryListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeLabelSummaryListRequest&,
+        DescribeLabelSummaryListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2682,6 +3732,106 @@ AdpClient::DescribePluginSummaryListOutcomeCallable AdpClient::DescribePluginSum
         const AdpClient*,
         const DescribePluginSummaryListRequest&,
         DescribePluginSummaryListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeQAOutcome AdpClient::DescribeQA(const DescribeQARequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeQA");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeQAResponse rsp = DescribeQAResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeQAOutcome(rsp);
+        else
+            return DescribeQAOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeQAOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeQAAsync(const DescribeQARequest& request, const DescribeQAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeQARequest&;
+    using Resp = DescribeQAResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeQA", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeQAOutcomeCallable AdpClient::DescribeQACallable(const DescribeQARequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeQAOutcome>>();
+    DescribeQAAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeQARequest&,
+        DescribeQAOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeQASummaryListOutcome AdpClient::DescribeQASummaryList(const DescribeQASummaryListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeQASummaryList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeQASummaryListResponse rsp = DescribeQASummaryListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeQASummaryListOutcome(rsp);
+        else
+            return DescribeQASummaryListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeQASummaryListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeQASummaryListAsync(const DescribeQASummaryListRequest& request, const DescribeQASummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeQASummaryListRequest&;
+    using Resp = DescribeQASummaryListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeQASummaryList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeQASummaryListOutcomeCallable AdpClient::DescribeQASummaryListCallable(const DescribeQASummaryListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeQASummaryListOutcome>>();
+    DescribeQASummaryListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeQASummaryListRequest&,
+        DescribeQASummaryListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3290,6 +4440,56 @@ AdpClient::DescribeVariableListOutcomeCallable AdpClient::DescribeVariableListCa
     return prom->get_future();
 }
 
+AdpClient::ExportQAOutcome AdpClient::ExportQA(const ExportQARequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportQA");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportQAResponse rsp = ExportQAResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportQAOutcome(rsp);
+        else
+            return ExportQAOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportQAOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::ExportQAAsync(const ExportQARequest& request, const ExportQAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ExportQARequest&;
+    using Resp = ExportQAResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ExportQA", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::ExportQAOutcomeCallable AdpClient::ExportQACallable(const ExportQARequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ExportQAOutcome>>();
+    ExportQAAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const ExportQARequest&,
+        ExportQAOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::FavoritePluginOutcome AdpClient::FavoritePlugin(const FavoritePluginRequest &request)
 {
     auto outcome = MakeRequest(request, "FavoritePlugin");
@@ -3382,6 +4582,56 @@ AdpClient::FavoriteSkillOutcomeCallable AdpClient::FavoriteSkillCallable(const F
         const AdpClient*,
         const FavoriteSkillRequest&,
         FavoriteSkillOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::ImportDocListOutcome AdpClient::ImportDocList(const ImportDocListRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImportDocList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImportDocListResponse rsp = ImportDocListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImportDocListOutcome(rsp);
+        else
+            return ImportDocListOutcome(o.GetError());
+    }
+    else
+    {
+        return ImportDocListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::ImportDocListAsync(const ImportDocListRequest& request, const ImportDocListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ImportDocListRequest&;
+    using Resp = ImportDocListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ImportDocList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::ImportDocListOutcomeCallable AdpClient::ImportDocListCallable(const ImportDocListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ImportDocListOutcome>>();
+    ImportDocListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const ImportDocListRequest&,
+        ImportDocListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3540,6 +4790,56 @@ AdpClient::ModifyAppTriggerOutcomeCallable AdpClient::ModifyAppTriggerCallable(c
     return prom->get_future();
 }
 
+AdpClient::ModifyCategoryOutcome AdpClient::ModifyCategory(const ModifyCategoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCategory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCategoryResponse rsp = ModifyCategoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCategoryOutcome(rsp);
+        else
+            return ModifyCategoryOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCategoryOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::ModifyCategoryAsync(const ModifyCategoryRequest& request, const ModifyCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyCategoryRequest&;
+    using Resp = ModifyCategoryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyCategory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::ModifyCategoryOutcomeCallable AdpClient::ModifyCategoryCallable(const ModifyCategoryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyCategoryOutcome>>();
+    ModifyCategoryAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const ModifyCategoryRequest&,
+        ModifyCategoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::ModifyChannelOutcome AdpClient::ModifyChannel(const ModifyChannelRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyChannel");
@@ -3590,6 +4890,56 @@ AdpClient::ModifyChannelOutcomeCallable AdpClient::ModifyChannelCallable(const M
     return prom->get_future();
 }
 
+AdpClient::ModifyConflictQAOutcome AdpClient::ModifyConflictQA(const ModifyConflictQARequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyConflictQA");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyConflictQAResponse rsp = ModifyConflictQAResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyConflictQAOutcome(rsp);
+        else
+            return ModifyConflictQAOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyConflictQAOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::ModifyConflictQAAsync(const ModifyConflictQARequest& request, const ModifyConflictQAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyConflictQARequest&;
+    using Resp = ModifyConflictQAResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyConflictQA", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::ModifyConflictQAOutcomeCallable AdpClient::ModifyConflictQACallable(const ModifyConflictQARequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyConflictQAOutcome>>();
+    ModifyConflictQAAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const ModifyConflictQARequest&,
+        ModifyConflictQAOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::ModifyConversationOutcome AdpClient::ModifyConversation(const ModifyConversationRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyConversation");
@@ -3632,6 +4982,206 @@ AdpClient::ModifyConversationOutcomeCallable AdpClient::ModifyConversationCallab
         const AdpClient*,
         const ModifyConversationRequest&,
         ModifyConversationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::ModifyDocOutcome AdpClient::ModifyDoc(const ModifyDocRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDoc");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDocResponse rsp = ModifyDocResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDocOutcome(rsp);
+        else
+            return ModifyDocOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDocOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::ModifyDocAsync(const ModifyDocRequest& request, const ModifyDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDocRequest&;
+    using Resp = ModifyDocResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDoc", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::ModifyDocOutcomeCallable AdpClient::ModifyDocCallable(const ModifyDocRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDocOutcome>>();
+    ModifyDocAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const ModifyDocRequest&,
+        ModifyDocOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::ModifyDocListOutcome AdpClient::ModifyDocList(const ModifyDocListRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDocList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDocListResponse rsp = ModifyDocListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDocListOutcome(rsp);
+        else
+            return ModifyDocListOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDocListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::ModifyDocListAsync(const ModifyDocListRequest& request, const ModifyDocListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDocListRequest&;
+    using Resp = ModifyDocListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDocList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::ModifyDocListOutcomeCallable AdpClient::ModifyDocListCallable(const ModifyDocListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDocListOutcome>>();
+    ModifyDocListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const ModifyDocListRequest&,
+        ModifyDocListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::ModifyKBOutcome AdpClient::ModifyKB(const ModifyKBRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyKB");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyKBResponse rsp = ModifyKBResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyKBOutcome(rsp);
+        else
+            return ModifyKBOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyKBOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::ModifyKBAsync(const ModifyKBRequest& request, const ModifyKBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyKBRequest&;
+    using Resp = ModifyKBResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyKB", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::ModifyKBOutcomeCallable AdpClient::ModifyKBCallable(const ModifyKBRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyKBOutcome>>();
+    ModifyKBAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const ModifyKBRequest&,
+        ModifyKBOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::ModifyLabelOutcome AdpClient::ModifyLabel(const ModifyLabelRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLabel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLabelResponse rsp = ModifyLabelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLabelOutcome(rsp);
+        else
+            return ModifyLabelOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLabelOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::ModifyLabelAsync(const ModifyLabelRequest& request, const ModifyLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyLabelRequest&;
+    using Resp = ModifyLabelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyLabel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::ModifyLabelOutcomeCallable AdpClient::ModifyLabelCallable(const ModifyLabelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyLabelOutcome>>();
+    ModifyLabelAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const ModifyLabelRequest&,
+        ModifyLabelOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3732,6 +5282,106 @@ AdpClient::ModifyPluginOutcomeCallable AdpClient::ModifyPluginCallable(const Mod
         const AdpClient*,
         const ModifyPluginRequest&,
         ModifyPluginOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::ModifyQAOutcome AdpClient::ModifyQA(const ModifyQARequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyQA");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyQAResponse rsp = ModifyQAResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyQAOutcome(rsp);
+        else
+            return ModifyQAOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyQAOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::ModifyQAAsync(const ModifyQARequest& request, const ModifyQAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyQARequest&;
+    using Resp = ModifyQAResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyQA", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::ModifyQAOutcomeCallable AdpClient::ModifyQACallable(const ModifyQARequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyQAOutcome>>();
+    ModifyQAAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const ModifyQARequest&,
+        ModifyQAOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::ModifyQAListOutcome AdpClient::ModifyQAList(const ModifyQAListRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyQAList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyQAListResponse rsp = ModifyQAListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyQAListOutcome(rsp);
+        else
+            return ModifyQAListOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyQAListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::ModifyQAListAsync(const ModifyQAListRequest& request, const ModifyQAListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyQAListRequest&;
+    using Resp = ModifyQAListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyQAList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::ModifyQAListOutcomeCallable AdpClient::ModifyQAListCallable(const ModifyQAListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyQAListOutcome>>();
+    ModifyQAListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const ModifyQAListRequest&,
+        ModifyQAListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4232,6 +5882,56 @@ AdpClient::RunAppTriggerNowOutcomeCallable AdpClient::RunAppTriggerNowCallable(c
         const AdpClient*,
         const RunAppTriggerNowRequest&,
         RunAppTriggerNowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::SearchKnowledgeOutcome AdpClient::SearchKnowledge(const SearchKnowledgeRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchKnowledge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchKnowledgeResponse rsp = SearchKnowledgeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchKnowledgeOutcome(rsp);
+        else
+            return SearchKnowledgeOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchKnowledgeOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::SearchKnowledgeAsync(const SearchKnowledgeRequest& request, const SearchKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SearchKnowledgeRequest&;
+    using Resp = SearchKnowledgeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SearchKnowledge", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::SearchKnowledgeOutcomeCallable AdpClient::SearchKnowledgeCallable(const SearchKnowledgeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SearchKnowledgeOutcome>>();
+    SearchKnowledgeAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const SearchKnowledgeRequest&,
+        SearchKnowledgeOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

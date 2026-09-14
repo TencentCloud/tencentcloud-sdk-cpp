@@ -1,0 +1,136 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/teo/v20220901/model/CustomVariableOperationSubRule.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Teo::V20220901::Model;
+using namespace std;
+
+CustomVariableOperationSubRule::CustomVariableOperationSubRule() :
+    m_branchesHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome CustomVariableOperationSubRule::Deserialize(const rapidjson::Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("Branches") && !value["Branches"].IsNull())
+    {
+        if (!value["Branches"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CustomVariableOperationSubRule.Branches` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Branches"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CustomVariableOperationRuleBranch item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_branches.push_back(item);
+        }
+        m_branchesHasBeenSet = true;
+    }
+
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CustomVariableOperationSubRule.Description` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Description"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_description.push_back((*itr).GetString());
+        }
+        m_descriptionHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void CustomVariableOperationSubRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+{
+
+    if (m_branchesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Branches";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_branches.begin(); itr != m_branches.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_description.begin(); itr != m_description.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+}
+
+
+vector<CustomVariableOperationRuleBranch> CustomVariableOperationSubRule::GetBranches() const
+{
+    return m_branches;
+}
+
+void CustomVariableOperationSubRule::SetBranches(const vector<CustomVariableOperationRuleBranch>& _branches)
+{
+    m_branches = _branches;
+    m_branchesHasBeenSet = true;
+}
+
+bool CustomVariableOperationSubRule::BranchesHasBeenSet() const
+{
+    return m_branchesHasBeenSet;
+}
+
+vector<string> CustomVariableOperationSubRule::GetDescription() const
+{
+    return m_description;
+}
+
+void CustomVariableOperationSubRule::SetDescription(const vector<string>& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool CustomVariableOperationSubRule::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
+

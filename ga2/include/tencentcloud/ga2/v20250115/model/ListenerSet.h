@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取全球加速实例ID。
-                     * @return GlobalAcceleratorId 全球加速实例ID。
+                     * 获取<p>全球加速实例ID。</p>
+                     * @return GlobalAcceleratorId <p>全球加速实例ID。</p>
                      * 
                      */
                     std::string GetGlobalAcceleratorId() const;
 
                     /**
-                     * 设置全球加速实例ID。
-                     * @param _globalAcceleratorId 全球加速实例ID。
+                     * 设置<p>全球加速实例ID。</p>
+                     * @param _globalAcceleratorId <p>全球加速实例ID。</p>
                      * 
                      */
                     void SetGlobalAcceleratorId(const std::string& _globalAcceleratorId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool GlobalAcceleratorIdHasBeenSet() const;
 
                     /**
-                     * 获取监听器ID。
-                     * @return ListenerId 监听器ID。
+                     * 获取<p>监听器ID。</p>
+                     * @return ListenerId <p>监听器ID。</p>
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置监听器ID。
-                     * @param _listenerId 监听器ID。
+                     * 设置<p>监听器ID。</p>
+                     * @param _listenerId <p>监听器ID。</p>
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取监听器名称。
-                     * @return Name 监听器名称。
+                     * 获取<p>监听器名称。</p>
+                     * @return Name <p>监听器名称。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置监听器名称。
-                     * @param _name 监听器名称。
+                     * 设置<p>监听器名称。</p>
+                     * @param _name <p>监听器名称。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取监听器描述。
-                     * @return Description 监听器描述。
+                     * 获取<p>监听器描述。</p>
+                     * @return Description <p>监听器描述。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置监听器描述。
-                     * @param _description 监听器描述。
+                     * 设置<p>监听器描述。</p>
+                     * @param _description <p>监听器描述。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取协议。
-                     * @return Protocol 协议。
+                     * 获取<p>协议。</p>
+                     * @return Protocol <p>协议。</p>
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议。
-                     * @param _protocol 协议。
+                     * 设置<p>协议。</p>
+                     * @param _protocol <p>协议。</p>
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取端口范围。
-                     * @return PortRanges 端口范围。
+                     * 获取<p>端口范围。</p>
+                     * @return PortRanges <p>端口范围。</p>
                      * 
                      */
                     PortRanges GetPortRanges() const;
 
                     /**
-                     * 设置端口范围。
-                     * @param _portRanges 端口范围。
+                     * 设置<p>端口范围。</p>
+                     * @param _portRanges <p>端口范围。</p>
                      * 
                      */
                     void SetPortRanges(const PortRanges& _portRanges);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool PortRangesHasBeenSet() const;
 
                     /**
-                     * 获取是否打开七层获取源IP方式。
-                     * @return XForwardedForRealIp 是否打开七层获取源IP方式。
+                     * 获取<p>是否打开七层获取源IP方式。</p>
+                     * @return XForwardedForRealIp <p>是否打开七层获取源IP方式。</p>
                      * 
                      */
                     bool GetXForwardedForRealIp() const;
 
                     /**
-                     * 设置是否打开七层获取源IP方式。
-                     * @param _xForwardedForRealIp 是否打开七层获取源IP方式。
+                     * 设置<p>是否打开七层获取源IP方式。</p>
+                     * @param _xForwardedForRealIp <p>是否打开七层获取源IP方式。</p>
                      * 
                      */
                     void SetXForwardedForRealIp(const bool& _xForwardedForRealIp);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool XForwardedForRealIpHasBeenSet() const;
 
                     /**
-                     * 获取开启会话保持。
-                     * @return ClientAffinity 开启会话保持。
+                     * 获取<p>开启会话保持。</p>
+                     * @return ClientAffinity <p>开启会话保持。</p>
                      * 
                      */
                     std::string GetClientAffinity() const;
 
                     /**
-                     * 设置开启会话保持。
-                     * @param _clientAffinity 开启会话保持。
+                     * 设置<p>开启会话保持。</p>
+                     * @param _clientAffinity <p>开启会话保持。</p>
                      * 
                      */
                     void SetClientAffinity(const std::string& _clientAffinity);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool ClientAffinityHasBeenSet() const;
 
                     /**
-                     * 获取会话保持时间。
-                     * @return ClientAffinityTime 会话保持时间。
+                     * 获取<p>会话保持时间。</p>
+                     * @return ClientAffinityTime <p>会话保持时间。</p>
                      * 
                      */
                     uint64_t GetClientAffinityTime() const;
 
                     /**
-                     * 设置会话保持时间。
-                     * @param _clientAffinityTime 会话保持时间。
+                     * 设置<p>会话保持时间。</p>
+                     * @param _clientAffinityTime <p>会话保持时间。</p>
                      * 
                      */
                     void SetClientAffinityTime(const uint64_t& _clientAffinityTime);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool ClientAffinityTimeHasBeenSet() const;
 
                     /**
-                     * 获取SSL解析方式。
-                     * @return CertificationType SSL解析方式。
+                     * 获取<p>SSL解析方式。</p>
+                     * @return CertificationType <p>SSL解析方式。</p>
                      * 
                      */
                     std::string GetCertificationType() const;
 
                     /**
-                     * 设置SSL解析方式。
-                     * @param _certificationType SSL解析方式。
+                     * 设置<p>SSL解析方式。</p>
+                     * @param _certificationType <p>SSL解析方式。</p>
                      * 
                      */
                     void SetCertificationType(const std::string& _certificationType);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool CertificationTypeHasBeenSet() const;
 
                     /**
-                     * 获取服务器证书。
-                     * @return ServerCertificates 服务器证书。
+                     * 获取<p>服务器证书。</p>
+                     * @return ServerCertificates <p>服务器证书。</p>
                      * 
                      */
                     std::vector<std::string> GetServerCertificates() const;
 
                     /**
-                     * 设置服务器证书。
-                     * @param _serverCertificates 服务器证书。
+                     * 设置<p>服务器证书。</p>
+                     * @param _serverCertificates <p>服务器证书。</p>
                      * 
                      */
                     void SetServerCertificates(const std::vector<std::string>& _serverCertificates);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool ServerCertificatesHasBeenSet() const;
 
                     /**
-                     * 获取客户端证书。
-                     * @return ClientCaCertificates 客户端证书。
+                     * 获取<p>客户端证书。</p>
+                     * @return ClientCaCertificates <p>客户端证书。</p>
                      * 
                      */
                     std::vector<std::string> GetClientCaCertificates() const;
 
                     /**
-                     * 设置客户端证书。
-                     * @param _clientCaCertificates 客户端证书。
+                     * 设置<p>客户端证书。</p>
+                     * @param _clientCaCertificates <p>客户端证书。</p>
                      * 
                      */
                     void SetClientCaCertificates(const std::vector<std::string>& _clientCaCertificates);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool ClientCaCertificatesHasBeenSet() const;
 
                     /**
-                     * 获取TLS密码套件包。
-                     * @return CipherPolicyId TLS密码套件包。
+                     * 获取<p>TLS密码套件包。</p>
+                     * @return CipherPolicyId <p>TLS密码套件包。</p>
                      * 
                      */
                     std::string GetCipherPolicyId() const;
 
                     /**
-                     * 设置TLS密码套件包。
-                     * @param _cipherPolicyId TLS密码套件包。
+                     * 设置<p>TLS密码套件包。</p>
+                     * @param _cipherPolicyId <p>TLS密码套件包。</p>
                      * 
                      */
                     void SetCipherPolicyId(const std::string& _cipherPolicyId);
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool CipherPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取HTTP版本。
-                     * @return HttpVersion HTTP版本。
+                     * 获取<p>HTTP版本。</p>
+                     * @return HttpVersion <p>HTTP版本。</p>
                      * 
                      */
                     std::string GetHttpVersion() const;
 
                     /**
-                     * 设置HTTP版本。
-                     * @param _httpVersion HTTP版本。
+                     * 设置<p>HTTP版本。</p>
+                     * @param _httpVersion <p>HTTP版本。</p>
                      * 
                      */
                     void SetHttpVersion(const std::string& _httpVersion);
@@ -342,15 +342,15 @@ namespace TencentCloud
                     bool HttpVersionHasBeenSet() const;
 
                     /**
-                     * 获取请求超时时间。
-                     * @return RequestTimeout 请求超时时间。
+                     * 获取<p>请求超时时间。</p>
+                     * @return RequestTimeout <p>请求超时时间。</p>
                      * 
                      */
                     uint64_t GetRequestTimeout() const;
 
                     /**
-                     * 设置请求超时时间。
-                     * @param _requestTimeout 请求超时时间。
+                     * 设置<p>请求超时时间。</p>
+                     * @param _requestTimeout <p>请求超时时间。</p>
                      * 
                      */
                     void SetRequestTimeout(const uint64_t& _requestTimeout);
@@ -363,15 +363,15 @@ namespace TencentCloud
                     bool RequestTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreateTime 创建时间。
+                     * 获取<p>创建时间。</p>
+                     * @return CreateTime <p>创建时间。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createTime 创建时间。
+                     * 设置<p>创建时间。</p>
+                     * @param _createTime <p>创建时间。</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -384,15 +384,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取监听路由类型。
-                     * @return ListenerType 监听路由类型。
+                     * 获取<p>监听路由类型。</p>
+                     * @return ListenerType <p>监听路由类型。</p>
                      * 
                      */
                     std::string GetListenerType() const;
 
                     /**
-                     * 设置监听路由类型。
-                     * @param _listenerType 监听路由类型。
+                     * 设置<p>监听路由类型。</p>
+                     * @param _listenerType <p>监听路由类型。</p>
                      * 
                      */
                     void SetListenerType(const std::string& _listenerType);
@@ -405,15 +405,15 @@ namespace TencentCloud
                     bool ListenerTypeHasBeenSet() const;
 
                     /**
-                     * 获取监听器状态。
-                     * @return Status 监听器状态。
+                     * 获取<p>监听器状态。</p><p>枚举值：</p><ul><li>ACTIVE： 可用。</li><li>CREATING： 创建中。</li><li>DELETING： 删除中。</li><li>CONFIGURING： 修改配置中。</li></ul>
+                     * @return Status <p>监听器状态。</p><p>枚举值：</p><ul><li>ACTIVE： 可用。</li><li>CREATING： 创建中。</li><li>DELETING： 删除中。</li><li>CONFIGURING： 修改配置中。</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置监听器状态。
-                     * @param _status 监听器状态。
+                     * 设置<p>监听器状态。</p><p>枚举值：</p><ul><li>ACTIVE： 可用。</li><li>CREATING： 创建中。</li><li>DELETING： 删除中。</li><li>CONFIGURING： 修改配置中。</li></ul>
+                     * @param _status <p>监听器状态。</p><p>枚举值：</p><ul><li>ACTIVE： 可用。</li><li>CREATING： 创建中。</li><li>DELETING： 删除中。</li><li>CONFIGURING： 修改配置中。</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -426,15 +426,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取所属监听器终端节点组个数。
-                     * @return EndpointGroupCounts 所属监听器终端节点组个数。
+                     * 获取<p>所属监听器终端节点组个数。</p>
+                     * @return EndpointGroupCounts <p>所属监听器终端节点组个数。</p>
                      * 
                      */
                     uint64_t GetEndpointGroupCounts() const;
 
                     /**
-                     * 设置所属监听器终端节点组个数。
-                     * @param _endpointGroupCounts 所属监听器终端节点组个数。
+                     * 设置<p>所属监听器终端节点组个数。</p>
+                     * @param _endpointGroupCounts <p>所属监听器终端节点组个数。</p>
                      * 
                      */
                     void SetEndpointGroupCounts(const uint64_t& _endpointGroupCounts);
@@ -447,15 +447,15 @@ namespace TencentCloud
                     bool EndpointGroupCountsHasBeenSet() const;
 
                     /**
-                     * 获取四层获取源IP方式。
-                     * @return GetRealIpType 四层获取源IP方式。
+                     * 获取<p>四层获取源IP方式。</p>
+                     * @return GetRealIpType <p>四层获取源IP方式。</p>
                      * 
                      */
                     std::string GetGetRealIpType() const;
 
                     /**
-                     * 设置四层获取源IP方式。
-                     * @param _getRealIpType 四层获取源IP方式。
+                     * 设置<p>四层获取源IP方式。</p>
+                     * @param _getRealIpType <p>四层获取源IP方式。</p>
                      * 
                      */
                     void SetGetRealIpType(const std::string& _getRealIpType);
@@ -468,15 +468,15 @@ namespace TencentCloud
                     bool GetRealIpTypeHasBeenSet() const;
 
                     /**
-                     * 获取连接超时时间。
-                     * @return IdleTimeout 连接超时时间。
+                     * 获取<p>连接超时时间。</p>
+                     * @return IdleTimeout <p>连接超时时间。</p>
                      * 
                      */
                     uint64_t GetIdleTimeout() const;
 
                     /**
-                     * 设置连接超时时间。
-                     * @param _idleTimeout 连接超时时间。
+                     * 设置<p>连接超时时间。</p>
+                     * @param _idleTimeout <p>连接超时时间。</p>
                      * 
                      */
                     void SetIdleTimeout(const uint64_t& _idleTimeout);
@@ -491,127 +491,127 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 全球加速实例ID。
+                     * <p>全球加速实例ID。</p>
                      */
                     std::string m_globalAcceleratorId;
                     bool m_globalAcceleratorIdHasBeenSet;
 
                     /**
-                     * 监听器ID。
+                     * <p>监听器ID。</p>
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 监听器名称。
+                     * <p>监听器名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 监听器描述。
+                     * <p>监听器描述。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 协议。
+                     * <p>协议。</p>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 端口范围。
+                     * <p>端口范围。</p>
                      */
                     PortRanges m_portRanges;
                     bool m_portRangesHasBeenSet;
 
                     /**
-                     * 是否打开七层获取源IP方式。
+                     * <p>是否打开七层获取源IP方式。</p>
                      */
                     bool m_xForwardedForRealIp;
                     bool m_xForwardedForRealIpHasBeenSet;
 
                     /**
-                     * 开启会话保持。
+                     * <p>开启会话保持。</p>
                      */
                     std::string m_clientAffinity;
                     bool m_clientAffinityHasBeenSet;
 
                     /**
-                     * 会话保持时间。
+                     * <p>会话保持时间。</p>
                      */
                     uint64_t m_clientAffinityTime;
                     bool m_clientAffinityTimeHasBeenSet;
 
                     /**
-                     * SSL解析方式。
+                     * <p>SSL解析方式。</p>
                      */
                     std::string m_certificationType;
                     bool m_certificationTypeHasBeenSet;
 
                     /**
-                     * 服务器证书。
+                     * <p>服务器证书。</p>
                      */
                     std::vector<std::string> m_serverCertificates;
                     bool m_serverCertificatesHasBeenSet;
 
                     /**
-                     * 客户端证书。
+                     * <p>客户端证书。</p>
                      */
                     std::vector<std::string> m_clientCaCertificates;
                     bool m_clientCaCertificatesHasBeenSet;
 
                     /**
-                     * TLS密码套件包。
+                     * <p>TLS密码套件包。</p>
                      */
                     std::string m_cipherPolicyId;
                     bool m_cipherPolicyIdHasBeenSet;
 
                     /**
-                     * HTTP版本。
+                     * <p>HTTP版本。</p>
                      */
                     std::string m_httpVersion;
                     bool m_httpVersionHasBeenSet;
 
                     /**
-                     * 请求超时时间。
+                     * <p>请求超时时间。</p>
                      */
                     uint64_t m_requestTimeout;
                     bool m_requestTimeoutHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * <p>创建时间。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 监听路由类型。
+                     * <p>监听路由类型。</p>
                      */
                     std::string m_listenerType;
                     bool m_listenerTypeHasBeenSet;
 
                     /**
-                     * 监听器状态。
+                     * <p>监听器状态。</p><p>枚举值：</p><ul><li>ACTIVE： 可用。</li><li>CREATING： 创建中。</li><li>DELETING： 删除中。</li><li>CONFIGURING： 修改配置中。</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 所属监听器终端节点组个数。
+                     * <p>所属监听器终端节点组个数。</p>
                      */
                     uint64_t m_endpointGroupCounts;
                     bool m_endpointGroupCountsHasBeenSet;
 
                     /**
-                     * 四层获取源IP方式。
+                     * <p>四层获取源IP方式。</p>
                      */
                     std::string m_getRealIpType;
                     bool m_getRealIpTypeHasBeenSet;
 
                     /**
-                     * 连接超时时间。
+                     * <p>连接超时时间。</p>
                      */
                     uint64_t m_idleTimeout;
                     bool m_idleTimeoutHasBeenSet;

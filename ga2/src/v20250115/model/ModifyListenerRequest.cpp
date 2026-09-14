@@ -36,7 +36,8 @@ ModifyListenerRequest::ModifyListenerRequest() :
     m_cipherPolicyIdHasBeenSet(false),
     m_serverCertificatesHasBeenSet(false),
     m_clientCaCertificatesHasBeenSet(false),
-    m_getRealIpTypeHasBeenSet(false)
+    m_getRealIpTypeHasBeenSet(false),
+    m_httpVersionHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,14 @@ string ModifyListenerRequest::ToJsonString() const
         string key = "GetRealIpType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_getRealIpType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_httpVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HttpVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_httpVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -399,6 +408,22 @@ void ModifyListenerRequest::SetGetRealIpType(const string& _getRealIpType)
 bool ModifyListenerRequest::GetRealIpTypeHasBeenSet() const
 {
     return m_getRealIpTypeHasBeenSet;
+}
+
+string ModifyListenerRequest::GetHttpVersion() const
+{
+    return m_httpVersion;
+}
+
+void ModifyListenerRequest::SetHttpVersion(const string& _httpVersion)
+{
+    m_httpVersion = _httpVersion;
+    m_httpVersionHasBeenSet = true;
+}
+
+bool ModifyListenerRequest::HttpVersionHasBeenSet() const
+{
+    return m_httpVersionHasBeenSet;
 }
 
 

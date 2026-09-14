@@ -58,15 +58,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板ID，模板的唯一标识
-                     * @return TemplateId 模板ID，模板的唯一标识
+                     * 获取<p>模板ID，模板的唯一标识</p>
+                     * @return TemplateId <p>模板ID，模板的唯一标识</p>
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置模板ID，模板的唯一标识
-                     * @param _templateId 模板ID，模板的唯一标识
+                     * 设置<p>模板ID，模板的唯一标识</p>
+                     * @param _templateId <p>模板ID，模板的唯一标识</p>
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -79,15 +79,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取模板名
-                     * @return TemplateName 模板名
+                     * 获取<p>模板名</p>
+                     * @return TemplateName <p>模板名</p>
                      * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置模板名
-                     * @param _templateName 模板名
+                     * 设置<p>模板名</p>
+                     * @param _templateName <p>模板名</p>
                      * 
                      */
                     void SetTemplateName(const std::string& _templateName);
@@ -100,15 +100,15 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取模板描述信息
-                     * @return Description 模板描述信息
+                     * 获取<p>模板描述信息</p>
+                     * @return Description <p>模板描述信息</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置模板描述信息
-                     * @param _description 模板描述信息
+                     * 设置<p>模板描述信息</p>
+                     * @param _description <p>模板描述信息</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -121,23 +121,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取模板的填充控件列表
-
-[点击查看在模板中配置的填充控件的样子](https://qcloudimg.tencent-cloud.cn/raw/cb2f58529fca8d909258f9d45a56f7f4.png)
-                     * @return Components 模板的填充控件列表
-
-[点击查看在模板中配置的填充控件的样子](https://qcloudimg.tencent-cloud.cn/raw/cb2f58529fca8d909258f9d45a56f7f4.png)
+                     * 获取<p>模板的填充控件列表</p><p><a href="https://qcloudimg.tencent-cloud.cn/raw/cb2f58529fca8d909258f9d45a56f7f4.png">点击查看在模板中配置的填充控件的样子</a></p>
+                     * @return Components <p>模板的填充控件列表</p><p><a href="https://qcloudimg.tencent-cloud.cn/raw/cb2f58529fca8d909258f9d45a56f7f4.png">点击查看在模板中配置的填充控件的样子</a></p>
                      * 
                      */
                     std::vector<Component> GetComponents() const;
 
                     /**
-                     * 设置模板的填充控件列表
-
-[点击查看在模板中配置的填充控件的样子](https://qcloudimg.tencent-cloud.cn/raw/cb2f58529fca8d909258f9d45a56f7f4.png)
-                     * @param _components 模板的填充控件列表
-
-[点击查看在模板中配置的填充控件的样子](https://qcloudimg.tencent-cloud.cn/raw/cb2f58529fca8d909258f9d45a56f7f4.png)
+                     * 设置<p>模板的填充控件列表</p><p><a href="https://qcloudimg.tencent-cloud.cn/raw/cb2f58529fca8d909258f9d45a56f7f4.png">点击查看在模板中配置的填充控件的样子</a></p>
+                     * @param _components <p>模板的填充控件列表</p><p><a href="https://qcloudimg.tencent-cloud.cn/raw/cb2f58529fca8d909258f9d45a56f7f4.png">点击查看在模板中配置的填充控件的样子</a></p>
                      * 
                      */
                     void SetComponents(const std::vector<Component>& _components);
@@ -150,31 +142,15 @@ namespace TencentCloud
                     bool ComponentsHasBeenSet() const;
 
                     /**
-                     * 获取此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。
-
-[点击查看在模板中配置的签署参与方角色列表的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)
-
-
-                     * @return Recipients 此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。
-
-[点击查看在模板中配置的签署参与方角色列表的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)
-
-
+                     * 获取<p>此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。</p><p><a href="https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png">点击查看在模板中配置的签署参与方角色列表的样子</a></p>
+                     * @return Recipients <p>此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。</p><p><a href="https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png">点击查看在模板中配置的签署参与方角色列表的样子</a></p>
                      * 
                      */
                     std::vector<Recipient> GetRecipients() const;
 
                     /**
-                     * 设置此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。
-
-[点击查看在模板中配置的签署参与方角色列表的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)
-
-
-                     * @param _recipients 此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。
-
-[点击查看在模板中配置的签署参与方角色列表的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)
-
-
+                     * 设置<p>此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。</p><p><a href="https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png">点击查看在模板中配置的签署参与方角色列表的样子</a></p>
+                     * @param _recipients <p>此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。</p><p><a href="https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png">点击查看在模板中配置的签署参与方角色列表的样子</a></p>
                      * 
                      */
                     void SetRecipients(const std::vector<Recipient>& _recipients);
@@ -187,23 +163,15 @@ namespace TencentCloud
                     bool RecipientsHasBeenSet() const;
 
                     /**
-                     * 获取此模板中的签署控件列表
-
-[点击查看在模板中配置的签署控件的样子](https://qcloudimg.tencent-cloud.cn/raw/29bc6ed753a5a0fce4a3ab02e2c0d955.png)
-                     * @return SignComponents 此模板中的签署控件列表
-
-[点击查看在模板中配置的签署控件的样子](https://qcloudimg.tencent-cloud.cn/raw/29bc6ed753a5a0fce4a3ab02e2c0d955.png)
+                     * 获取<p>此模板中的签署控件列表</p><p><a href="https://qcloudimg.tencent-cloud.cn/raw/29bc6ed753a5a0fce4a3ab02e2c0d955.png">点击查看在模板中配置的签署控件的样子</a></p>
+                     * @return SignComponents <p>此模板中的签署控件列表</p><p><a href="https://qcloudimg.tencent-cloud.cn/raw/29bc6ed753a5a0fce4a3ab02e2c0d955.png">点击查看在模板中配置的签署控件的样子</a></p>
                      * 
                      */
                     std::vector<Component> GetSignComponents() const;
 
                     /**
-                     * 设置此模板中的签署控件列表
-
-[点击查看在模板中配置的签署控件的样子](https://qcloudimg.tencent-cloud.cn/raw/29bc6ed753a5a0fce4a3ab02e2c0d955.png)
-                     * @param _signComponents 此模板中的签署控件列表
-
-[点击查看在模板中配置的签署控件的样子](https://qcloudimg.tencent-cloud.cn/raw/29bc6ed753a5a0fce4a3ab02e2c0d955.png)
+                     * 设置<p>此模板中的签署控件列表</p><p><a href="https://qcloudimg.tencent-cloud.cn/raw/29bc6ed753a5a0fce4a3ab02e2c0d955.png">点击查看在模板中配置的签署控件的样子</a></p>
+                     * @param _signComponents <p>此模板中的签署控件列表</p><p><a href="https://qcloudimg.tencent-cloud.cn/raw/29bc6ed753a5a0fce4a3ab02e2c0d955.png">点击查看在模板中配置的签署控件的样子</a></p>
                      * 
                      */
                     void SetSignComponents(const std::vector<Component>& _signComponents);
@@ -216,27 +184,15 @@ namespace TencentCloud
                     bool SignComponentsHasBeenSet() const;
 
                     /**
-                     * 获取模板类型可以分为以下两种：
-
-<b>1</b>：带有<b>本企业自动签署</b>的模板，即签署过程无需签署人手动操作，系统自动完成签署。
-<b>3</b>：普通模板，即签署人需要手动进行签署操作。
-                     * @return TemplateType 模板类型可以分为以下两种：
-
-<b>1</b>：带有<b>本企业自动签署</b>的模板，即签署过程无需签署人手动操作，系统自动完成签署。
-<b>3</b>：普通模板，即签署人需要手动进行签署操作。
+                     * 获取<p>模板类型可以分为以下两种：<b>1</b>：带有<b>本企业“授权签”</b>的模板，即签署过程无需签署人手动操作，系统自动完成签署。<b>3</b>：普通模板，即签署人需要手动进行签署操作。</p>
+                     * @return TemplateType <p>模板类型可以分为以下两种：<b>1</b>：带有<b>本企业“授权签”</b>的模板，即签署过程无需签署人手动操作，系统自动完成签署。<b>3</b>：普通模板，即签署人需要手动进行签署操作。</p>
                      * 
                      */
                     int64_t GetTemplateType() const;
 
                     /**
-                     * 设置模板类型可以分为以下两种：
-
-<b>1</b>：带有<b>本企业自动签署</b>的模板，即签署过程无需签署人手动操作，系统自动完成签署。
-<b>3</b>：普通模板，即签署人需要手动进行签署操作。
-                     * @param _templateType 模板类型可以分为以下两种：
-
-<b>1</b>：带有<b>本企业自动签署</b>的模板，即签署过程无需签署人手动操作，系统自动完成签署。
-<b>3</b>：普通模板，即签署人需要手动进行签署操作。
+                     * 设置<p>模板类型可以分为以下两种：<b>1</b>：带有<b>本企业“授权签”</b>的模板，即签署过程无需签署人手动操作，系统自动完成签署。<b>3</b>：普通模板，即签署人需要手动进行签署操作。</p>
+                     * @param _templateType <p>模板类型可以分为以下两种：<b>1</b>：带有<b>本企业“授权签”</b>的模板，即签署过程无需签署人手动操作，系统自动完成签署。<b>3</b>：普通模板，即签署人需要手动进行签署操作。</p>
                      * 
                      */
                     void SetTemplateType(const int64_t& _templateType);
@@ -249,15 +205,15 @@ namespace TencentCloud
                     bool TemplateTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否是发起人 ,已弃用
-                     * @return IsPromoter 是否是发起人 ,已弃用
+                     * 获取<p>是否是发起人 ,已弃用</p>
+                     * @return IsPromoter <p>是否是发起人 ,已弃用</p>
                      * @deprecated
                      */
                     bool GetIsPromoter() const;
 
                     /**
-                     * 设置是否是发起人 ,已弃用
-                     * @param _isPromoter 是否是发起人 ,已弃用
+                     * 设置<p>是否是发起人 ,已弃用</p>
+                     * @param _isPromoter <p>是否是发起人 ,已弃用</p>
                      * @deprecated
                      */
                     void SetIsPromoter(const bool& _isPromoter);
@@ -270,15 +226,15 @@ namespace TencentCloud
                     bool IsPromoterHasBeenSet() const;
 
                     /**
-                     * 获取模板的创建者名字
-                     * @return Creator 模板的创建者名字
+                     * 获取<p>模板的创建者名字</p>
+                     * @return Creator <p>模板的创建者名字</p>
                      * 
                      */
                     std::string GetCreator() const;
 
                     /**
-                     * 设置模板的创建者名字
-                     * @param _creator 模板的创建者名字
+                     * 设置<p>模板的创建者名字</p>
+                     * @param _creator <p>模板的创建者名字</p>
                      * 
                      */
                     void SetCreator(const std::string& _creator);
@@ -291,15 +247,15 @@ namespace TencentCloud
                     bool CreatorHasBeenSet() const;
 
                     /**
-                     * 获取模板创建的时间戳，格式为Unix标准时间戳（秒）
-                     * @return CreatedOn 模板创建的时间戳，格式为Unix标准时间戳（秒）
+                     * 获取<p>模板创建的时间戳，格式为Unix标准时间戳（秒）</p>
+                     * @return CreatedOn <p>模板创建的时间戳，格式为Unix标准时间戳（秒）</p>
                      * 
                      */
                     int64_t GetCreatedOn() const;
 
                     /**
-                     * 设置模板创建的时间戳，格式为Unix标准时间戳（秒）
-                     * @param _createdOn 模板创建的时间戳，格式为Unix标准时间戳（秒）
+                     * 设置<p>模板创建的时间戳，格式为Unix标准时间戳（秒）</p>
+                     * @param _createdOn <p>模板创建的时间戳，格式为Unix标准时间戳（秒）</p>
                      * 
                      */
                     void SetCreatedOn(const int64_t& _createdOn);
@@ -312,27 +268,15 @@ namespace TencentCloud
                     bool CreatedOnHasBeenSet() const;
 
                     /**
-                     * 获取模板的 H5 预览链接，有效期为 5 分钟。
-您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。
-
-注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。
-                     * @return PreviewUrl 模板的 H5 预览链接，有效期为 5 分钟。
-您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。
-
-注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。
+                     * 获取<p>模板的 H5 预览链接，有效期为 5 分钟。<br>您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。</p><p>注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。</p>
+                     * @return PreviewUrl <p>模板的 H5 预览链接，有效期为 5 分钟。<br>您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。</p><p>注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。</p>
                      * 
                      */
                     std::string GetPreviewUrl() const;
 
                     /**
-                     * 设置模板的 H5 预览链接，有效期为 5 分钟。
-您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。
-
-注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。
-                     * @param _previewUrl 模板的 H5 预览链接，有效期为 5 分钟。
-您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。
-
-注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。
+                     * 设置<p>模板的 H5 预览链接，有效期为 5 分钟。<br>您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。</p><p>注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。</p>
+                     * @param _previewUrl <p>模板的 H5 预览链接，有效期为 5 分钟。<br>您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。</p><p>注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。</p>
                      * 
                      */
                     void SetPreviewUrl(const std::string& _previewUrl);
@@ -345,23 +289,15 @@ namespace TencentCloud
                     bool PreviewUrlHasBeenSet() const;
 
                     /**
-                     * 获取第三方应用集成-模板PDF文件链接，有效期5分钟。
-请求参数WithPdfUrl=true时返回
-（此功能开放需要联系客户经理）。
-                     * @return PdfUrl 第三方应用集成-模板PDF文件链接，有效期5分钟。
-请求参数WithPdfUrl=true时返回
-（此功能开放需要联系客户经理）。
+                     * 获取<p>第三方应用集成-模板PDF文件链接，有效期5分钟。<br>请求参数WithPdfUrl=true时返回<br>（此功能开放需要联系客户经理）。</p>
+                     * @return PdfUrl <p>第三方应用集成-模板PDF文件链接，有效期5分钟。<br>请求参数WithPdfUrl=true时返回<br>（此功能开放需要联系客户经理）。</p>
                      * 
                      */
                     std::string GetPdfUrl() const;
 
                     /**
-                     * 设置第三方应用集成-模板PDF文件链接，有效期5分钟。
-请求参数WithPdfUrl=true时返回
-（此功能开放需要联系客户经理）。
-                     * @param _pdfUrl 第三方应用集成-模板PDF文件链接，有效期5分钟。
-请求参数WithPdfUrl=true时返回
-（此功能开放需要联系客户经理）。
+                     * 设置<p>第三方应用集成-模板PDF文件链接，有效期5分钟。<br>请求参数WithPdfUrl=true时返回<br>（此功能开放需要联系客户经理）。</p>
+                     * @param _pdfUrl <p>第三方应用集成-模板PDF文件链接，有效期5分钟。<br>请求参数WithPdfUrl=true时返回<br>（此功能开放需要联系客户经理）。</p>
                      * 
                      */
                     void SetPdfUrl(const std::string& _pdfUrl);
@@ -374,15 +310,15 @@ namespace TencentCloud
                     bool PdfUrlHasBeenSet() const;
 
                     /**
-                     * 获取本模板关联的第三方应用平台企业模板ID
-                     * @return ChannelTemplateId 本模板关联的第三方应用平台企业模板ID
+                     * 获取<p>本模板关联的第三方应用平台企业模板ID</p>
+                     * @return ChannelTemplateId <p>本模板关联的第三方应用平台企业模板ID</p>
                      * 
                      */
                     std::string GetChannelTemplateId() const;
 
                     /**
-                     * 设置本模板关联的第三方应用平台企业模板ID
-                     * @param _channelTemplateId 本模板关联的第三方应用平台企业模板ID
+                     * 设置<p>本模板关联的第三方应用平台企业模板ID</p>
+                     * @param _channelTemplateId <p>本模板关联的第三方应用平台企业模板ID</p>
                      * 
                      */
                     void SetChannelTemplateId(const std::string& _channelTemplateId);
@@ -395,15 +331,15 @@ namespace TencentCloud
                     bool ChannelTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取本模板关联的三方应用平台平台企业模板名称
-                     * @return ChannelTemplateName 本模板关联的三方应用平台平台企业模板名称
+                     * 获取<p>本模板关联的三方应用平台平台企业模板名称</p>
+                     * @return ChannelTemplateName <p>本模板关联的三方应用平台平台企业模板名称</p>
                      * 
                      */
                     std::string GetChannelTemplateName() const;
 
                     /**
-                     * 设置本模板关联的三方应用平台平台企业模板名称
-                     * @param _channelTemplateName 本模板关联的三方应用平台平台企业模板名称
+                     * 设置<p>本模板关联的三方应用平台平台企业模板名称</p>
+                     * @param _channelTemplateName <p>本模板关联的三方应用平台平台企业模板名称</p>
                      * 
                      */
                     void SetChannelTemplateName(const std::string& _channelTemplateName);
@@ -416,19 +352,15 @@ namespace TencentCloud
                     bool ChannelTemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取0-需要子客企业手动领取平台企业的模板(默认); 
-1-平台自动设置子客模板
-                     * @return ChannelAutoSave 0-需要子客企业手动领取平台企业的模板(默认); 
-1-平台自动设置子客模板
+                     * 获取<p>0-需要子客企业手动领取平台企业的模板(默认);<br>1-平台自动设置子客模板</p>
+                     * @return ChannelAutoSave <p>0-需要子客企业手动领取平台企业的模板(默认);<br>1-平台自动设置子客模板</p>
                      * 
                      */
                     int64_t GetChannelAutoSave() const;
 
                     /**
-                     * 设置0-需要子客企业手动领取平台企业的模板(默认); 
-1-平台自动设置子客模板
-                     * @param _channelAutoSave 0-需要子客企业手动领取平台企业的模板(默认); 
-1-平台自动设置子客模板
+                     * 设置<p>0-需要子客企业手动领取平台企业的模板(默认);<br>1-平台自动设置子客模板</p>
+                     * @param _channelAutoSave <p>0-需要子客企业手动领取平台企业的模板(默认);<br>1-平台自动设置子客模板</p>
                      * 
                      */
                     void SetChannelAutoSave(const int64_t& _channelAutoSave);
@@ -441,19 +373,15 @@ namespace TencentCloud
                     bool ChannelAutoSaveHasBeenSet() const;
 
                     /**
-                     * 获取模板版本，由全数字字符组成。
-默认为空，模板版本号由日期和序号组成，初始版本为yyyyMMdd001，yyyyMMdd002表示第二个版本，以此类推。
-                     * @return TemplateVersion 模板版本，由全数字字符组成。
-默认为空，模板版本号由日期和序号组成，初始版本为yyyyMMdd001，yyyyMMdd002表示第二个版本，以此类推。
+                     * 获取<p>模板版本，由全数字字符组成。<br>默认为空，模板版本号由日期和序号组成，初始版本为yyyyMMdd001，yyyyMMdd002表示第二个版本，以此类推。</p>
+                     * @return TemplateVersion <p>模板版本，由全数字字符组成。<br>默认为空，模板版本号由日期和序号组成，初始版本为yyyyMMdd001，yyyyMMdd002表示第二个版本，以此类推。</p>
                      * 
                      */
                     std::string GetTemplateVersion() const;
 
                     /**
-                     * 设置模板版本，由全数字字符组成。
-默认为空，模板版本号由日期和序号组成，初始版本为yyyyMMdd001，yyyyMMdd002表示第二个版本，以此类推。
-                     * @param _templateVersion 模板版本，由全数字字符组成。
-默认为空，模板版本号由日期和序号组成，初始版本为yyyyMMdd001，yyyyMMdd002表示第二个版本，以此类推。
+                     * 设置<p>模板版本，由全数字字符组成。<br>默认为空，模板版本号由日期和序号组成，初始版本为yyyyMMdd001，yyyyMMdd002表示第二个版本，以此类推。</p>
+                     * @param _templateVersion <p>模板版本，由全数字字符组成。<br>默认为空，模板版本号由日期和序号组成，初始版本为yyyyMMdd001，yyyyMMdd002表示第二个版本，以此类推。</p>
                      * 
                      */
                     void SetTemplateVersion(const std::string& _templateVersion);
@@ -466,27 +394,15 @@ namespace TencentCloud
                     bool TemplateVersionHasBeenSet() const;
 
                     /**
-                     * 获取模板可用状态的取值通常为以下两种：
-
-<ul><li>1：启用（默认），表示模板处于启用状态，可以被用户正常使用。</li>
-<li>2：停用，表示模板处于停用状态，禁止用户使用该模板。</li></ul>
-                     * @return Available 模板可用状态的取值通常为以下两种：
-
-<ul><li>1：启用（默认），表示模板处于启用状态，可以被用户正常使用。</li>
-<li>2：停用，表示模板处于停用状态，禁止用户使用该模板。</li></ul>
+                     * 获取<p>模板可用状态的取值通常为以下两种：</p><ul><li>1：启用（默认），表示模板处于启用状态，可以被用户正常使用。</li><li>2：停用，表示模板处于停用状态，禁止用户使用该模板。</li></ul>
+                     * @return Available <p>模板可用状态的取值通常为以下两种：</p><ul><li>1：启用（默认），表示模板处于启用状态，可以被用户正常使用。</li><li>2：停用，表示模板处于停用状态，禁止用户使用该模板。</li></ul>
                      * 
                      */
                     int64_t GetAvailable() const;
 
                     /**
-                     * 设置模板可用状态的取值通常为以下两种：
-
-<ul><li>1：启用（默认），表示模板处于启用状态，可以被用户正常使用。</li>
-<li>2：停用，表示模板处于停用状态，禁止用户使用该模板。</li></ul>
-                     * @param _available 模板可用状态的取值通常为以下两种：
-
-<ul><li>1：启用（默认），表示模板处于启用状态，可以被用户正常使用。</li>
-<li>2：停用，表示模板处于停用状态，禁止用户使用该模板。</li></ul>
+                     * 设置<p>模板可用状态的取值通常为以下两种：</p><ul><li>1：启用（默认），表示模板处于启用状态，可以被用户正常使用。</li><li>2：停用，表示模板处于停用状态，禁止用户使用该模板。</li></ul>
+                     * @param _available <p>模板可用状态的取值通常为以下两种：</p><ul><li>1：启用（默认），表示模板处于启用状态，可以被用户正常使用。</li><li>2：停用，表示模板处于停用状态，禁止用户使用该模板。</li></ul>
                      * 
                      */
                     void SetAvailable(const int64_t& _available);
@@ -499,15 +415,15 @@ namespace TencentCloud
                     bool AvailableHasBeenSet() const;
 
                     /**
-                     * 获取模板的用户合同类型
-                     * @return UserFlowType 模板的用户合同类型
+                     * 获取<p>模板的用户合同类型</p>
+                     * @return UserFlowType <p>模板的用户合同类型</p>
                      * 
                      */
                     UserFlowType GetUserFlowType() const;
 
                     /**
-                     * 设置模板的用户合同类型
-                     * @param _userFlowType 模板的用户合同类型
+                     * 设置<p>模板的用户合同类型</p>
+                     * @param _userFlowType <p>模板的用户合同类型</p>
                      * 
                      */
                     void SetUserFlowType(const UserFlowType& _userFlowType);
@@ -522,130 +438,109 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板ID，模板的唯一标识
+                     * <p>模板ID，模板的唯一标识</p>
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 模板名
+                     * <p>模板名</p>
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * 模板描述信息
+                     * <p>模板描述信息</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 模板的填充控件列表
-
-[点击查看在模板中配置的填充控件的样子](https://qcloudimg.tencent-cloud.cn/raw/cb2f58529fca8d909258f9d45a56f7f4.png)
+                     * <p>模板的填充控件列表</p><p><a href="https://qcloudimg.tencent-cloud.cn/raw/cb2f58529fca8d909258f9d45a56f7f4.png">点击查看在模板中配置的填充控件的样子</a></p>
                      */
                     std::vector<Component> m_components;
                     bool m_componentsHasBeenSet;
 
                     /**
-                     * 此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。
-
-[点击查看在模板中配置的签署参与方角色列表的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)
-
-
+                     * <p>此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。</p><p><a href="https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png">点击查看在模板中配置的签署参与方角色列表的样子</a></p>
                      */
                     std::vector<Recipient> m_recipients;
                     bool m_recipientsHasBeenSet;
 
                     /**
-                     * 此模板中的签署控件列表
-
-[点击查看在模板中配置的签署控件的样子](https://qcloudimg.tencent-cloud.cn/raw/29bc6ed753a5a0fce4a3ab02e2c0d955.png)
+                     * <p>此模板中的签署控件列表</p><p><a href="https://qcloudimg.tencent-cloud.cn/raw/29bc6ed753a5a0fce4a3ab02e2c0d955.png">点击查看在模板中配置的签署控件的样子</a></p>
                      */
                     std::vector<Component> m_signComponents;
                     bool m_signComponentsHasBeenSet;
 
                     /**
-                     * 模板类型可以分为以下两种：
-
-<b>1</b>：带有<b>本企业自动签署</b>的模板，即签署过程无需签署人手动操作，系统自动完成签署。
-<b>3</b>：普通模板，即签署人需要手动进行签署操作。
+                     * <p>模板类型可以分为以下两种：<b>1</b>：带有<b>本企业“授权签”</b>的模板，即签署过程无需签署人手动操作，系统自动完成签署。<b>3</b>：普通模板，即签署人需要手动进行签署操作。</p>
                      */
                     int64_t m_templateType;
                     bool m_templateTypeHasBeenSet;
 
                     /**
-                     * 是否是发起人 ,已弃用
+                     * <p>是否是发起人 ,已弃用</p>
                      */
                     bool m_isPromoter;
                     bool m_isPromoterHasBeenSet;
 
                     /**
-                     * 模板的创建者名字
+                     * <p>模板的创建者名字</p>
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
 
                     /**
-                     * 模板创建的时间戳，格式为Unix标准时间戳（秒）
+                     * <p>模板创建的时间戳，格式为Unix标准时间戳（秒）</p>
                      */
                     int64_t m_createdOn;
                     bool m_createdOnHasBeenSet;
 
                     /**
-                     * 模板的 H5 预览链接，有效期为 5 分钟。
-您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。
-
-注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。
+                     * <p>模板的 H5 预览链接，有效期为 5 分钟。<br>您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。</p><p>注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。</p>
                      */
                     std::string m_previewUrl;
                     bool m_previewUrlHasBeenSet;
 
                     /**
-                     * 第三方应用集成-模板PDF文件链接，有效期5分钟。
-请求参数WithPdfUrl=true时返回
-（此功能开放需要联系客户经理）。
+                     * <p>第三方应用集成-模板PDF文件链接，有效期5分钟。<br>请求参数WithPdfUrl=true时返回<br>（此功能开放需要联系客户经理）。</p>
                      */
                     std::string m_pdfUrl;
                     bool m_pdfUrlHasBeenSet;
 
                     /**
-                     * 本模板关联的第三方应用平台企业模板ID
+                     * <p>本模板关联的第三方应用平台企业模板ID</p>
                      */
                     std::string m_channelTemplateId;
                     bool m_channelTemplateIdHasBeenSet;
 
                     /**
-                     * 本模板关联的三方应用平台平台企业模板名称
+                     * <p>本模板关联的三方应用平台平台企业模板名称</p>
                      */
                     std::string m_channelTemplateName;
                     bool m_channelTemplateNameHasBeenSet;
 
                     /**
-                     * 0-需要子客企业手动领取平台企业的模板(默认); 
-1-平台自动设置子客模板
+                     * <p>0-需要子客企业手动领取平台企业的模板(默认);<br>1-平台自动设置子客模板</p>
                      */
                     int64_t m_channelAutoSave;
                     bool m_channelAutoSaveHasBeenSet;
 
                     /**
-                     * 模板版本，由全数字字符组成。
-默认为空，模板版本号由日期和序号组成，初始版本为yyyyMMdd001，yyyyMMdd002表示第二个版本，以此类推。
+                     * <p>模板版本，由全数字字符组成。<br>默认为空，模板版本号由日期和序号组成，初始版本为yyyyMMdd001，yyyyMMdd002表示第二个版本，以此类推。</p>
                      */
                     std::string m_templateVersion;
                     bool m_templateVersionHasBeenSet;
 
                     /**
-                     * 模板可用状态的取值通常为以下两种：
-
-<ul><li>1：启用（默认），表示模板处于启用状态，可以被用户正常使用。</li>
-<li>2：停用，表示模板处于停用状态，禁止用户使用该模板。</li></ul>
+                     * <p>模板可用状态的取值通常为以下两种：</p><ul><li>1：启用（默认），表示模板处于启用状态，可以被用户正常使用。</li><li>2：停用，表示模板处于停用状态，禁止用户使用该模板。</li></ul>
                      */
                     int64_t m_available;
                     bool m_availableHasBeenSet;
 
                     /**
-                     * 模板的用户合同类型
+                     * <p>模板的用户合同类型</p>
                      */
                     UserFlowType m_userFlowType;
                     bool m_userFlowTypeHasBeenSet;

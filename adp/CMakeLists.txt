@@ -22,7 +22,9 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/DeleteSkillShareRequest.h
   include/tencentcloud/adp/v20260520/model/ToolConfig.h
   include/tencentcloud/adp/v20260520/model/SkillClassification.h
+  include/tencentcloud/adp/v20260520/model/SearchInput.h
   include/tencentcloud/adp/v20260520/model/AgentAdvancedConfig.h
+  include/tencentcloud/adp/v20260520/model/FinalRerankConfig.h
   include/tencentcloud/adp/v20260520/model/PluginStatistics.h
   include/tencentcloud/adp/v20260520/model/IntentAchievementInfo.h
   include/tencentcloud/adp/v20260520/model/RollbackReleaseRequest.h
@@ -35,45 +37,59 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/Conversation.h
   include/tencentcloud/adp/v20260520/model/AuthConfig.h
   include/tencentcloud/adp/v20260520/model/AppShareAccessControl.h
+  include/tencentcloud/adp/v20260520/model/KBCategory.h
   include/tencentcloud/adp/v20260520/model/DialogCustomConfig.h
   include/tencentcloud/adp/v20260520/model/DescribeMetricOverviewListResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeAppSummaryListRequest.h
   include/tencentcloud/adp/v20260520/model/ExecuteConfig.h
+  include/tencentcloud/adp/v20260520/model/CreateLabelResponse.h
   include/tencentcloud/adp/v20260520/model/TriggerConfig.h
   include/tencentcloud/adp/v20260520/model/DescribeModelListRequest.h
   include/tencentcloud/adp/v20260520/model/DescribeMsgRecordCategoryListResponse.h
   include/tencentcloud/adp/v20260520/model/DeleteVariableResponse.h
+  include/tencentcloud/adp/v20260520/model/DescribeLabelSummaryListResponse.h
+  include/tencentcloud/adp/v20260520/model/DescribeDocResponse.h
   include/tencentcloud/adp/v20260520/model/ApiPluginConfig.h
   include/tencentcloud/adp/v20260520/model/AppealingStatus.h
   include/tencentcloud/adp/v20260520/model/DescribeVariableResponse.h
+  include/tencentcloud/adp/v20260520/model/CreateLabelRequest.h
   include/tencentcloud/adp/v20260520/model/CodeToolConfig.h
+  include/tencentcloud/adp/v20260520/model/ModelStatus.h
   include/tencentcloud/adp/v20260520/model/SkillCorpShareConfig.h
   include/tencentcloud/adp/v20260520/model/DescribeMsgRecordListRequest.h
   include/tencentcloud/adp/v20260520/model/WeeklyTime.h
   include/tencentcloud/adp/v20260520/model/UsageSummary.h
   include/tencentcloud/adp/v20260520/model/SkillReferenceSummary.h
-  include/tencentcloud/adp/v20260520/model/ModifyAppTriggerRequest.h
+  include/tencentcloud/adp/v20260520/model/BillingAttribute.h
   include/tencentcloud/adp/v20260520/model/DescribeConcurrencyLimitDetailListResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeChannelRequest.h
   include/tencentcloud/adp/v20260520/model/AgentSpec.h
   include/tencentcloud/adp/v20260520/model/ClawAgentConfig.h
+  include/tencentcloud/adp/v20260520/model/ModelLimit.h
   include/tencentcloud/adp/v20260520/model/CreatePluginRequest.h
   include/tencentcloud/adp/v20260520/model/ThinkModel.h
   include/tencentcloud/adp/v20260520/model/DeleteAgentResponse.h
+  include/tencentcloud/adp/v20260520/model/ModifyConversationResponse.h
   include/tencentcloud/adp/v20260520/model/RetryReleaseRequest.h
   include/tencentcloud/adp/v20260520/model/AppConfig.h
   include/tencentcloud/adp/v20260520/model/AppAuxiliaryInfo.h
+  include/tencentcloud/adp/v20260520/model/ModifyLabelResponse.h
   include/tencentcloud/adp/v20260520/model/ModifyConversationRequest.h
   include/tencentcloud/adp/v20260520/model/CreateChannelResponse.h
+  include/tencentcloud/adp/v20260520/model/TimerScheduleConfig.h
+  include/tencentcloud/adp/v20260520/model/DeleteCategoryResponse.h
+  include/tencentcloud/adp/v20260520/model/SearchResultPayload.h
   include/tencentcloud/adp/v20260520/model/DescribeUsageDetailListResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeAppTriggerResponse.h
   include/tencentcloud/adp/v20260520/model/ModifyVariableResponse.h
+  include/tencentcloud/adp/v20260520/model/DescribeKBSummaryListRequest.h
   include/tencentcloud/adp/v20260520/model/AgentSkillConfig.h
   include/tencentcloud/adp/v20260520/model/ModifyAgentRequest.h
   include/tencentcloud/adp/v20260520/model/PluginOperation.h
   include/tencentcloud/adp/v20260520/model/AppWebSearchConfig.h
   include/tencentcloud/adp/v20260520/model/AgentProfile.h
-  include/tencentcloud/adp/v20260520/model/ModelLimit.h
+  include/tencentcloud/adp/v20260520/model/SearchAdvancedConfig.h
+  include/tencentcloud/adp/v20260520/model/KnowledgeScope.h
   include/tencentcloud/adp/v20260520/model/WechatChannelConfig.h
   include/tencentcloud/adp/v20260520/model/RunAppTriggerNowRequest.h
   include/tencentcloud/adp/v20260520/model/AppTriggerWebhookConfig.h
@@ -81,26 +97,37 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/MsgRecordResult.h
   include/tencentcloud/adp/v20260520/model/CreateVariableResponse.h
   include/tencentcloud/adp/v20260520/model/AppShareURLInfo.h
+  include/tencentcloud/adp/v20260520/model/ReleaseSkillResponse.h
   include/tencentcloud/adp/v20260520/model/ModelProperty.h
+  include/tencentcloud/adp/v20260520/model/DocParseConfig.h
   include/tencentcloud/adp/v20260520/model/CreateReleaseResponse.h
+  include/tencentcloud/adp/v20260520/model/DescribeConflictQASummaryListResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeConversationListRequest.h
   include/tencentcloud/adp/v20260520/model/ModelDetailInfo.h
-  include/tencentcloud/adp/v20260520/model/CreateAppRequest.h
+  include/tencentcloud/adp/v20260520/model/ModifyVariableRequest.h
   include/tencentcloud/adp/v20260520/model/DescribeConcurrencyLimitDetailListRequest.h
   include/tencentcloud/adp/v20260520/model/MCPPluginConfig.h
   include/tencentcloud/adp/v20260520/model/CreateMsgRecordCategoryResponse.h
+  include/tencentcloud/adp/v20260520/model/CreateQAListRequest.h
   include/tencentcloud/adp/v20260520/model/DeleteVariableRequest.h
-  include/tencentcloud/adp/v20260520/model/ReleaseSkillResponse.h
+  include/tencentcloud/adp/v20260520/model/CreateAppTriggerRequest.h
   include/tencentcloud/adp/v20260520/model/AppTriggerInstance.h
+  include/tencentcloud/adp/v20260520/model/ModifyDocListRequest.h
   include/tencentcloud/adp/v20260520/model/DeleteConversationRequest.h
+  include/tencentcloud/adp/v20260520/model/ModifyConflictQARequest.h
+  include/tencentcloud/adp/v20260520/model/DescribeAppTriggerRunLogListResponse.h
+  include/tencentcloud/adp/v20260520/model/DescribeConflictQASummaryListRequest.h
   include/tencentcloud/adp/v20260520/model/DescribeSkillSummaryListRequest.h
+  include/tencentcloud/adp/v20260520/model/DocLink.h
   include/tencentcloud/adp/v20260520/model/CopyAppResponse.h
   include/tencentcloud/adp/v20260520/model/AgentPluginCredentialConfig.h
   include/tencentcloud/adp/v20260520/model/ComplexBillingItem.h
   include/tencentcloud/adp/v20260520/model/BackgroundImage.h
-  include/tencentcloud/adp/v20260520/model/TimerScheduleConfig.h
+  include/tencentcloud/adp/v20260520/model/ModifyConflictQAResponse.h
   include/tencentcloud/adp/v20260520/model/Model.h
-  include/tencentcloud/adp/v20260520/model/ModifySkillResponse.h
+  include/tencentcloud/adp/v20260520/model/LabelTermCheckResult.h
+  include/tencentcloud/adp/v20260520/model/SearchResourceStatusInfo.h
+  include/tencentcloud/adp/v20260520/model/CreateQAGenerationTaskRequest.h
   include/tencentcloud/adp/v20260520/model/DingTalkChannelConfig.h
   include/tencentcloud/adp/v20260520/model/DescribeSpaceListRequest.h
   include/tencentcloud/adp/v20260520/model/AppTriggerRunLog.h
@@ -108,62 +135,88 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/CamAuthConfig.h
   include/tencentcloud/adp/v20260520/model/DescribeSkillReferenceListResponse.h
   include/tencentcloud/adp/v20260520/model/UnfavoritePluginResponse.h
-  include/tencentcloud/adp/v20260520/model/ModifySpaceRequest.h
+  include/tencentcloud/adp/v20260520/model/CreateKBRequest.h
   include/tencentcloud/adp/v20260520/model/DeleteMsgRecordCategoryResponse.h
   include/tencentcloud/adp/v20260520/model/GenerateModel.h
   include/tencentcloud/adp/v20260520/model/FavoriteSkillResponse.h
   include/tencentcloud/adp/v20260520/model/SkillShare.h
   include/tencentcloud/adp/v20260520/model/AppShareWhitelistItem.h
+  include/tencentcloud/adp/v20260520/model/ModifyKBRequest.h
   include/tencentcloud/adp/v20260520/model/CreateWebSocketTokenRequest.h
   include/tencentcloud/adp/v20260520/model/DescribeChannelListRequest.h
-  include/tencentcloud/adp/v20260520/model/DeleteSkillResponse.h
+  include/tencentcloud/adp/v20260520/model/DescribeQARequest.h
+  include/tencentcloud/adp/v20260520/model/DocQuery.h
+  include/tencentcloud/adp/v20260520/model/SkillNotice.h
   include/tencentcloud/adp/v20260520/model/DescribeAgentReleasePreviewListRequest.h
+  include/tencentcloud/adp/v20260520/model/DocSwitch.h
   include/tencentcloud/adp/v20260520/model/PauseAppTriggerRequest.h
+  include/tencentcloud/adp/v20260520/model/MetaValue.h
+  include/tencentcloud/adp/v20260520/model/LabelTermModifyItem.h
   include/tencentcloud/adp/v20260520/model/CopyAgentFromAppRequest.h
+  include/tencentcloud/adp/v20260520/model/QACreateSpec.h
   include/tencentcloud/adp/v20260520/model/ModelParameter.h
   include/tencentcloud/adp/v20260520/model/ModifyAppResponse.h
+  include/tencentcloud/adp/v20260520/model/ExpirationPolicy.h
   include/tencentcloud/adp/v20260520/model/DescribeAccountListRequest.h
   include/tencentcloud/adp/v20260520/model/WechatCustomerServiceChannelConfig.h
   include/tencentcloud/adp/v20260520/model/DescribeConversationListResponse.h
   include/tencentcloud/adp/v20260520/model/MultiAgentConfig.h
   include/tencentcloud/adp/v20260520/model/CreateWebSocketTokenResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeChannelListResponse.h
+  include/tencentcloud/adp/v20260520/model/QASegmentHighlight.h
   include/tencentcloud/adp/v20260520/model/DescribeSkillCategoryListResponse.h
   include/tencentcloud/adp/v20260520/model/LarkChannelConfig.h
   include/tencentcloud/adp/v20260520/model/TimeRange.h
   include/tencentcloud/adp/v20260520/model/DescribeConsumptionDetailListResponse.h
-  include/tencentcloud/adp/v20260520/model/CreatePluginResponse.h
+  include/tencentcloud/adp/v20260520/model/ConflictQASummary.h
   include/tencentcloud/adp/v20260520/model/ModifyChannelResponse.h
+  include/tencentcloud/adp/v20260520/model/DeleteCategoryRequest.h
+  include/tencentcloud/adp/v20260520/model/AppOperation.h
   include/tencentcloud/adp/v20260520/model/ClawAgentAgentTeamConfig.h
   include/tencentcloud/adp/v20260520/model/DescribeSystemVariableListResponse.h
+  include/tencentcloud/adp/v20260520/model/UserAccessConfig.h
   include/tencentcloud/adp/v20260520/model/TelegramChannelConfig.h
   include/tencentcloud/adp/v20260520/model/AgentPlugin.h
+  include/tencentcloud/adp/v20260520/model/SimilarQuestionModifySpec.h
+  include/tencentcloud/adp/v20260520/model/SearchBilling.h
+  include/tencentcloud/adp/v20260520/model/DeleteQAListResponse.h
   include/tencentcloud/adp/v20260520/model/ConversationResetInfo.h
-  include/tencentcloud/adp/v20260520/model/ModifyConversationResponse.h
+  include/tencentcloud/adp/v20260520/model/QASourceInfo.h
+  include/tencentcloud/adp/v20260520/model/CheckResult.h
   include/tencentcloud/adp/v20260520/model/ConversationQuoteInfo.h
+  include/tencentcloud/adp/v20260520/model/DeleteLabelListRequest.h
   include/tencentcloud/adp/v20260520/model/DescribeSpaceListResponse.h
   include/tencentcloud/adp/v20260520/model/LineChannelConfig.h
   include/tencentcloud/adp/v20260520/model/ConversationRecordSummary.h
   include/tencentcloud/adp/v20260520/model/ConversationRecordTimeUsage.h
   include/tencentcloud/adp/v20260520/model/App.h
-  include/tencentcloud/adp/v20260520/model/CronSchedule.h
-  include/tencentcloud/adp/v20260520/model/DescribeAppTriggerRunLogListResponse.h
+  include/tencentcloud/adp/v20260520/model/AppTriggerParamBindingValue.h
+  include/tencentcloud/adp/v20260520/model/DocMetadata.h
   include/tencentcloud/adp/v20260520/model/FileParseModel.h
   include/tencentcloud/adp/v20260520/model/AppAppeal.h
   include/tencentcloud/adp/v20260520/model/DescribeSkillCategoryListRequest.h
   include/tencentcloud/adp/v20260520/model/DigitalHumanConfig.h
   include/tencentcloud/adp/v20260520/model/DescribeLatestReleaseResponse.h
-  include/tencentcloud/adp/v20260520/model/SkillNotice.h
+  include/tencentcloud/adp/v20260520/model/SearchContext.h
   include/tencentcloud/adp/v20260520/model/ResponseParam.h
+  include/tencentcloud/adp/v20260520/model/ModifyQAListResponse.h
   include/tencentcloud/adp/v20260520/model/SingleWorkflowConfig.h
+  include/tencentcloud/adp/v20260520/model/CreatePluginResponse.h
+  include/tencentcloud/adp/v20260520/model/CreateSimilarQuestionResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeChannelResponse.h
+  include/tencentcloud/adp/v20260520/model/QAModifyFields.h
   include/tencentcloud/adp/v20260520/model/AgentPluginConfig.h
   include/tencentcloud/adp/v20260520/model/PluginSummary.h
+  include/tencentcloud/adp/v20260520/model/ModifyDocListResponse.h
+  include/tencentcloud/adp/v20260520/model/DescribeQASummaryListRequest.h
   include/tencentcloud/adp/v20260520/model/CreateWorkspaceCredentialResponse.h
   include/tencentcloud/adp/v20260520/model/ConversationMcpApp.h
   include/tencentcloud/adp/v20260520/model/ModifyPluginRequest.h
+  include/tencentcloud/adp/v20260520/model/DeDuplicateStrategy.h
   include/tencentcloud/adp/v20260520/model/DescribeAccountListResponse.h
   include/tencentcloud/adp/v20260520/model/DeleteChannelResponse.h
+  include/tencentcloud/adp/v20260520/model/PluginParam.h
+  include/tencentcloud/adp/v20260520/model/DocModifyFields.h
   include/tencentcloud/adp/v20260520/model/AgentUserInputValue.h
   include/tencentcloud/adp/v20260520/model/SkillProfile.h
   include/tencentcloud/adp/v20260520/model/DescribeMetricOverviewListRequest.h
@@ -172,18 +225,28 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/DescribeAppTriggerRunLogListRequest.h
   include/tencentcloud/adp/v20260520/model/ResourceConsumption.h
   include/tencentcloud/adp/v20260520/model/ModelBasic.h
+  include/tencentcloud/adp/v20260520/model/DescribeKBSummaryListResponse.h
   include/tencentcloud/adp/v20260520/model/ModifyAppRequest.h
-  include/tencentcloud/adp/v20260520/model/ModifySkillRequest.h
+  include/tencentcloud/adp/v20260520/model/DeleteQAListRequest.h
+  include/tencentcloud/adp/v20260520/model/MCPToolMeta.h
   include/tencentcloud/adp/v20260520/model/CreateSpaceResponse.h
+  include/tencentcloud/adp/v20260520/model/DocImportSpec.h
   include/tencentcloud/adp/v20260520/model/CreateVariableRequest.h
   include/tencentcloud/adp/v20260520/model/ConsumptionClassification.h
+  include/tencentcloud/adp/v20260520/model/ExportQARequest.h
   include/tencentcloud/adp/v20260520/model/DescribeSystemVariableListRequest.h
   include/tencentcloud/adp/v20260520/model/DescribeReleaseSummaryResponse.h
+  include/tencentcloud/adp/v20260520/model/QASummary.h
   include/tencentcloud/adp/v20260520/model/MCPToolConfig.h
+  include/tencentcloud/adp/v20260520/model/DescribeKBResponse.h
   include/tencentcloud/adp/v20260520/model/SkillSummary.h
+  include/tencentcloud/adp/v20260520/model/DescribeLabelRequest.h
   include/tencentcloud/adp/v20260520/model/WecomRobotWebsocketAccess.h
   include/tencentcloud/adp/v20260520/model/AgentCollaborationConfig.h
-  include/tencentcloud/adp/v20260520/model/ModifyAppTriggerResponse.h
+  include/tencentcloud/adp/v20260520/model/MsgRecordCategory.h
+  include/tencentcloud/adp/v20260520/model/SummaryListSwitch.h
+  include/tencentcloud/adp/v20260520/model/CheckLabelRequest.h
+  include/tencentcloud/adp/v20260520/model/ModifySkillResponse.h
   include/tencentcloud/adp/v20260520/model/RoleConfig.h
   include/tencentcloud/adp/v20260520/model/DescribeAuditLogListResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeUsageDetailListRequest.h
@@ -194,6 +257,9 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/DescribeAppSummaryListResponse.h
   include/tencentcloud/adp/v20260520/model/ClawAgentLongMemoryConfig.h
   include/tencentcloud/adp/v20260520/model/FavoritePluginRequest.h
+  include/tencentcloud/adp/v20260520/model/KnowledgeSnippetProfile.h
+  include/tencentcloud/adp/v20260520/model/ContentFilter.h
+  include/tencentcloud/adp/v20260520/model/ImportDocListResponse.h
   include/tencentcloud/adp/v20260520/model/SupportedFileType.h
   include/tencentcloud/adp/v20260520/model/SkillCategory.h
   include/tencentcloud/adp/v20260520/model/AgentTool.h
@@ -206,70 +272,101 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/InputBoxConfig.h
   include/tencentcloud/adp/v20260520/model/AppTrigger.h
   include/tencentcloud/adp/v20260520/model/DescribeAgentSummaryListResponse.h
+  include/tencentcloud/adp/v20260520/model/DeleteKBRequest.h
   include/tencentcloud/adp/v20260520/model/SkillVersion.h
-  include/tencentcloud/adp/v20260520/model/ModifyAgentResponse.h
+  include/tencentcloud/adp/v20260520/model/AppModeConfig.h
   include/tencentcloud/adp/v20260520/model/DescribeMsgRecordListResponse.h
+  include/tencentcloud/adp/v20260520/model/Tool.h
   include/tencentcloud/adp/v20260520/model/ModelUsageSummary.h
+  include/tencentcloud/adp/v20260520/model/DescribeQAResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeVariableListResponse.h
+  include/tencentcloud/adp/v20260520/model/LabelRef.h
+  include/tencentcloud/adp/v20260520/model/ModifyQARequest.h
+  include/tencentcloud/adp/v20260520/model/LabelSummary.h
   include/tencentcloud/adp/v20260520/model/DescribeReleaseListRequest.h
+  include/tencentcloud/adp/v20260520/model/ModifySpaceResponse.h
   include/tencentcloud/adp/v20260520/model/ConversationReference.h
   include/tencentcloud/adp/v20260520/model/MsgRecord.h
+  include/tencentcloud/adp/v20260520/model/LabelModifyFields.h
   include/tencentcloud/adp/v20260520/model/DeleteMsgRecordCategoryRequest.h
+  include/tencentcloud/adp/v20260520/model/DocOperator.h
+  include/tencentcloud/adp/v20260520/model/DescribeDocSummaryListRequest.h
   include/tencentcloud/adp/v20260520/model/ModifyMsgRecordCategoryResponse.h
   include/tencentcloud/adp/v20260520/model/UnfavoritePluginRequest.h
   include/tencentcloud/adp/v20260520/model/AgentModelConfig.h
   include/tencentcloud/adp/v20260520/model/ModelUsageDetail.h
+  include/tencentcloud/adp/v20260520/model/ModifyQAListRequest.h
   include/tencentcloud/adp/v20260520/model/CreateConversationResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeSkillDetailRequest.h
   include/tencentcloud/adp/v20260520/model/Variable.h
+  include/tencentcloud/adp/v20260520/model/ExpirationAwareness.h
   include/tencentcloud/adp/v20260520/model/FavoriteSkillRequest.h
   include/tencentcloud/adp/v20260520/model/AppSharedKbInfo.h
   include/tencentcloud/adp/v20260520/model/ModifyMsgRecordCategoryRequest.h
   include/tencentcloud/adp/v20260520/model/ResetConversationResponse.h
   include/tencentcloud/adp/v20260520/model/DailySchedule.h
-  include/tencentcloud/adp/v20260520/model/AppSubStatusInfo.h
+  include/tencentcloud/adp/v20260520/model/PromptRewriteModel.h
   include/tencentcloud/adp/v20260520/model/ManualOnlySchedule.h
+  include/tencentcloud/adp/v20260520/model/ModifySpaceRequest.h
   include/tencentcloud/adp/v20260520/model/DescribePluginSummaryListRequest.h
   include/tencentcloud/adp/v20260520/model/CreateAppResponse.h
+  include/tencentcloud/adp/v20260520/model/KBModifyExtendFields.h
+  include/tencentcloud/adp/v20260520/model/QARetrievalConfig.h
   include/tencentcloud/adp/v20260520/model/AuditLogMetaField.h
+  include/tencentcloud/adp/v20260520/model/CreateQAListResponse.h
   include/tencentcloud/adp/v20260520/model/ModelDeveloperBasic.h
-  include/tencentcloud/adp/v20260520/model/MCPToolMeta.h
+  include/tencentcloud/adp/v20260520/model/ModifySkillRequest.h
   include/tencentcloud/adp/v20260520/model/AppExperienceConfig.h
   include/tencentcloud/adp/v20260520/model/ResumeAppTriggerRequest.h
-  include/tencentcloud/adp/v20260520/model/PluginParam.h
+  include/tencentcloud/adp/v20260520/model/QAOperator.h
+  include/tencentcloud/adp/v20260520/model/LabelRefIdentityList.h
   include/tencentcloud/adp/v20260520/model/CreateReleaseRequest.h
   include/tencentcloud/adp/v20260520/model/CreateWorkspaceCredentialRequest.h
-  include/tencentcloud/adp/v20260520/model/BillingAttribute.h
+  include/tencentcloud/adp/v20260520/model/ModifyAppTriggerRequest.h
   include/tencentcloud/adp/v20260520/model/DescribeAppTriggerSummaryListResponse.h
+  include/tencentcloud/adp/v20260520/model/DescribeKBRequest.h
   include/tencentcloud/adp/v20260520/model/CreateAgentRequest.h
   include/tencentcloud/adp/v20260520/model/ConversationExperience.h
   include/tencentcloud/adp/v20260520/model/DeletePluginResponse.h
   include/tencentcloud/adp/v20260520/model/DeletePluginRequest.h
   include/tencentcloud/adp/v20260520/model/AIOptimizeModel.h
-  include/tencentcloud/adp/v20260520/model/Tool.h
-  include/tencentcloud/adp/v20260520/model/ModifySpaceResponse.h
+  include/tencentcloud/adp/v20260520/model/SearchFilterConfig.h
+  include/tencentcloud/adp/v20260520/model/CreateSimilarQuestionRequest.h
+  include/tencentcloud/adp/v20260520/model/KBRetrievalConfig.h
   include/tencentcloud/adp/v20260520/model/SkillDetail.h
   include/tencentcloud/adp/v20260520/model/DescribePluginSummaryListResponse.h
-  include/tencentcloud/adp/v20260520/model/PromptRewriteModel.h
+  include/tencentcloud/adp/v20260520/model/AppSubStatusInfo.h
   include/tencentcloud/adp/v20260520/model/ViewScope.h
   include/tencentcloud/adp/v20260520/model/CreateConversationRequest.h
-  include/tencentcloud/adp/v20260520/model/AgentExternalToolConfig.h
+  include/tencentcloud/adp/v20260520/model/CreateSkillResponse.h
+  include/tencentcloud/adp/v20260520/model/DescribeDocRequest.h
   include/tencentcloud/adp/v20260520/model/WecomAppChannelConfig.h
   include/tencentcloud/adp/v20260520/model/DescribeMsgRecordCategoryListRequest.h
   include/tencentcloud/adp/v20260520/model/CallSource.h
   include/tencentcloud/adp/v20260520/model/ConsumptionUsage.h
   include/tencentcloud/adp/v20260520/model/AppTriggerPromptExecuteConfig.h
   include/tencentcloud/adp/v20260520/model/DeleteSkillShareResponse.h
+  include/tencentcloud/adp/v20260520/model/ModifyCategoryResponse.h
+  include/tencentcloud/adp/v20260520/model/ReleaseSummary.h
+  include/tencentcloud/adp/v20260520/model/SimilarQuestion.h
   include/tencentcloud/adp/v20260520/model/AgentToolBasicConfig.h
+  include/tencentcloud/adp/v20260520/model/DescribeConflictQAResponse.h
   include/tencentcloud/adp/v20260520/model/AppStatusInfo.h
   include/tencentcloud/adp/v20260520/model/ComplexBilling.h
+  include/tencentcloud/adp/v20260520/model/DocRetrievalConfig.h
+  include/tencentcloud/adp/v20260520/model/DescribeLabelSummaryListRequest.h
+  include/tencentcloud/adp/v20260520/model/SearchKnowledgeResponse.h
   include/tencentcloud/adp/v20260520/model/DeleteConversationResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeAuditLogMetaResponse.h
-  include/tencentcloud/adp/v20260520/model/MultiModalQAModel.h
+  include/tencentcloud/adp/v20260520/model/DescribeCategoryListResponse.h
+  include/tencentcloud/adp/v20260520/model/AppTriggerParamSchema.h
   include/tencentcloud/adp/v20260520/model/TimerPushConfig.h
   include/tencentcloud/adp/v20260520/model/ChannelSpec.h
   include/tencentcloud/adp/v20260520/model/AgentToolConfig.h
-  include/tencentcloud/adp/v20260520/model/OAuthConfig.h
+  include/tencentcloud/adp/v20260520/model/DeleteSkillResponse.h
+  include/tencentcloud/adp/v20260520/model/KBCapacity.h
+  include/tencentcloud/adp/v20260520/model/SimilarQuestionExtra.h
+  include/tencentcloud/adp/v20260520/model/DeleteDocListRequest.h
   include/tencentcloud/adp/v20260520/model/WeeklySchedule.h
   include/tencentcloud/adp/v20260520/model/ModelParams.h
   include/tencentcloud/adp/v20260520/model/AgentInput.h
@@ -278,17 +375,27 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/CreateChannelRequest.h
   include/tencentcloud/adp/v20260520/model/Identity.h
   include/tencentcloud/adp/v20260520/model/AccessKeyAuthConfig.h
-  include/tencentcloud/adp/v20260520/model/DescribeAgentDetailResponse.h
+  include/tencentcloud/adp/v20260520/model/DescribeLabelResponse.h
   include/tencentcloud/adp/v20260520/model/CreateAppTriggerResponse.h
+  include/tencentcloud/adp/v20260520/model/DeleteKBResponse.h
+  include/tencentcloud/adp/v20260520/model/DocSummary.h
+  include/tencentcloud/adp/v20260520/model/KBSpec.h
   include/tencentcloud/adp/v20260520/model/SystemVariable.h
   include/tencentcloud/adp/v20260520/model/ModifyPluginResponse.h
+  include/tencentcloud/adp/v20260520/model/DescribeQASummaryListResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeAppTriggerInstanceResponse.h
   include/tencentcloud/adp/v20260520/model/UserAgentReference.h
   include/tencentcloud/adp/v20260520/model/CreateSkillShareRequest.h
+  include/tencentcloud/adp/v20260520/model/LabelTerm.h
   include/tencentcloud/adp/v20260520/model/ConsumptionDetail.h
+  include/tencentcloud/adp/v20260520/model/QALifecycle.h
+  include/tencentcloud/adp/v20260520/model/CategoryPath.h
+  include/tencentcloud/adp/v20260520/model/ModifyDocRequest.h
   include/tencentcloud/adp/v20260520/model/AppGreetingConfig.h
   include/tencentcloud/adp/v20260520/model/DescribeAppTriggerSummaryListRequest.h
   include/tencentcloud/adp/v20260520/model/AppTriggerScheduleConfig.h
+  include/tencentcloud/adp/v20260520/model/KnowledgeResult.h
+  include/tencentcloud/adp/v20260520/model/ModifyAppTriggerResponse.h
   include/tencentcloud/adp/v20260520/model/AccountInfo.h
   include/tencentcloud/adp/v20260520/model/CreateSkillRequest.h
   include/tencentcloud/adp/v20260520/model/Sort.h
@@ -296,15 +403,22 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/FavoritePluginResponse.h
   include/tencentcloud/adp/v20260520/model/MetricOverview.h
   include/tencentcloud/adp/v20260520/model/AgentSkill.h
+  include/tencentcloud/adp/v20260520/model/SearchKnowledgeRequest.h
+  include/tencentcloud/adp/v20260520/model/DBRetrievalConfig.h
   include/tencentcloud/adp/v20260520/model/ModelBadge.h
+  include/tencentcloud/adp/v20260520/model/TokenUsage.h
   include/tencentcloud/adp/v20260520/model/PlatformUsageSummary.h
+  include/tencentcloud/adp/v20260520/model/DeleteLabelListResponse.h
   include/tencentcloud/adp/v20260520/model/AgentSystemVariable.h
-  include/tencentcloud/adp/v20260520/model/AppOperation.h
+  include/tencentcloud/adp/v20260520/model/DocExternalLink.h
   include/tencentcloud/adp/v20260520/model/PluginProfile.h
   include/tencentcloud/adp/v20260520/model/DescribePluginResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeAgentReleasePreviewListResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeSkillSummaryListResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeConversationMessageListRequest.h
+  include/tencentcloud/adp/v20260520/model/EffectivePeriod.h
+  include/tencentcloud/adp/v20260520/model/DescribeDocSummaryListResponse.h
+  include/tencentcloud/adp/v20260520/model/DeleteDocListResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeReleaseListResponse.h
   include/tencentcloud/adp/v20260520/model/DeleteAgentRequest.h
   include/tencentcloud/adp/v20260520/model/RequestParam.h
@@ -314,34 +428,48 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/AgentToolInputParameter.h
   include/tencentcloud/adp/v20260520/model/WecomRobotCallbackAccess.h
   include/tencentcloud/adp/v20260520/model/RunAppTriggerNowResponse.h
+  include/tencentcloud/adp/v20260520/model/DescribeConflictQARequest.h
   include/tencentcloud/adp/v20260520/model/DescribeSkillDetailResponse.h
   include/tencentcloud/adp/v20260520/model/CallbackConfig.h
   include/tencentcloud/adp/v20260520/model/DeleteAppTriggerRequest.h
-  include/tencentcloud/adp/v20260520/model/ReleaseSummary.h
+  include/tencentcloud/adp/v20260520/model/QAPermission.h
+  include/tencentcloud/adp/v20260520/model/CreateQAGenerationTaskResponse.h
+  include/tencentcloud/adp/v20260520/model/CategoryModifyFields.h
+  include/tencentcloud/adp/v20260520/model/OperationResult.h
   include/tencentcloud/adp/v20260520/model/OnceSchedule.h
+  include/tencentcloud/adp/v20260520/model/QAQuery.h
   include/tencentcloud/adp/v20260520/model/UnfavoriteSkillResponse.h
-  include/tencentcloud/adp/v20260520/model/AppTriggerParamSchema.h
+  include/tencentcloud/adp/v20260520/model/MultiModalQAModel.h
   include/tencentcloud/adp/v20260520/model/CreateSpaceRequest.h
   include/tencentcloud/adp/v20260520/model/MCPToolUIMeta.h
-  include/tencentcloud/adp/v20260520/model/SearchResourceStatusInfo.h
+  include/tencentcloud/adp/v20260520/model/ModifyDocResponse.h
+  include/tencentcloud/adp/v20260520/model/SearchFilter.h
+  include/tencentcloud/adp/v20260520/model/DescribeCategoryListRequest.h
   include/tencentcloud/adp/v20260520/model/FieldMask.h
   include/tencentcloud/adp/v20260520/model/AppTriggerWebhookParamSchemaConfig.h
   include/tencentcloud/adp/v20260520/model/ConversationMessage.h
+  include/tencentcloud/adp/v20260520/model/CreateCategoryResponse.h
   include/tencentcloud/adp/v20260520/model/WecomRobotChannelConfig.h
+  include/tencentcloud/adp/v20260520/model/ImportDocListRequest.h
   include/tencentcloud/adp/v20260520/model/DescribeConsumptionDetailListRequest.h
   include/tencentcloud/adp/v20260520/model/DescribeVariableListRequest.h
+  include/tencentcloud/adp/v20260520/model/Operator.h
+  include/tencentcloud/adp/v20260520/model/ExportQAResponse.h
+  include/tencentcloud/adp/v20260520/model/QAMetadata.h
   include/tencentcloud/adp/v20260520/model/DescribeConversationMessageListResponse.h
   include/tencentcloud/adp/v20260520/model/AppToolConfig.h
   include/tencentcloud/adp/v20260520/model/RollbackReleaseResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeReleaseSummaryRequest.h
   include/tencentcloud/adp/v20260520/model/AppWorkflowConfig.h
   include/tencentcloud/adp/v20260520/model/ConversationAgentTask.h
+  include/tencentcloud/adp/v20260520/model/CheckLabelResponse.h
   include/tencentcloud/adp/v20260520/model/AppTriggerScheduleStatus.h
+  include/tencentcloud/adp/v20260520/model/KVPair.h
   include/tencentcloud/adp/v20260520/model/DeleteSkillRequest.h
   include/tencentcloud/adp/v20260520/model/DescribePluginRequest.h
   include/tencentcloud/adp/v20260520/model/Channel.h
   include/tencentcloud/adp/v20260520/model/PluginUserState.h
-  include/tencentcloud/adp/v20260520/model/DuplexBilling.h
+  include/tencentcloud/adp/v20260520/model/DocLifecycle.h
   include/tencentcloud/adp/v20260520/model/MultiModalUnderstandingModel.h
   include/tencentcloud/adp/v20260520/model/DescribeAppTriggerRequest.h
   include/tencentcloud/adp/v20260520/model/CorpShareConfig.h
@@ -353,63 +481,83 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/DescribeAppTriggerInstanceRequest.h
   include/tencentcloud/adp/v20260520/model/AppSecretInfo.h
   include/tencentcloud/adp/v20260520/model/AgentDetail.h
-  include/tencentcloud/adp/v20260520/model/ModifyVariableRequest.h
+  include/tencentcloud/adp/v20260520/model/GraphRAG.h
+  include/tencentcloud/adp/v20260520/model/ModifyQAResponse.h
+  include/tencentcloud/adp/v20260520/model/CreateAppRequest.h
   include/tencentcloud/adp/v20260520/model/DeleteAppResponse.h
-  include/tencentcloud/adp/v20260520/model/CreateAppTriggerRequest.h
+  include/tencentcloud/adp/v20260520/model/ESConfig.h
   include/tencentcloud/adp/v20260520/model/AppTriggerWebhookStatus.h
   include/tencentcloud/adp/v20260520/model/ResumeAppTriggerResponse.h
   include/tencentcloud/adp/v20260520/model/AccessKeyParamConfig.h
   include/tencentcloud/adp/v20260520/model/CategoryPermission.h
+  include/tencentcloud/adp/v20260520/model/DocTaskStatus.h
   include/tencentcloud/adp/v20260520/model/ResetConversationRequest.h
+  include/tencentcloud/adp/v20260520/model/OAuthConfig.h
   include/tencentcloud/adp/v20260520/model/ToolBilling.h
   include/tencentcloud/adp/v20260520/model/BasicBilling.h
   include/tencentcloud/adp/v20260520/model/DescribeAppRequest.h
   include/tencentcloud/adp/v20260520/model/IntervalSchedule.h
   include/tencentcloud/adp/v20260520/model/DescribeLatestReleaseRequest.h
   include/tencentcloud/adp/v20260520/model/DeleteChannelRequest.h
-  include/tencentcloud/adp/v20260520/model/AppTriggerParamBindingValue.h
+  include/tencentcloud/adp/v20260520/model/CronSchedule.h
   include/tencentcloud/adp/v20260520/model/CopyAgentFromAppResponse.h
+  include/tencentcloud/adp/v20260520/model/AgentExternalToolConfig.h
+  include/tencentcloud/adp/v20260520/model/ConflictQA.h
   include/tencentcloud/adp/v20260520/model/RetryReleaseResponse.h
   include/tencentcloud/adp/v20260520/model/AICallConfig.h
   include/tencentcloud/adp/v20260520/model/ModifyChannelRequest.h
   include/tencentcloud/adp/v20260520/model/CreateSkillShareResponse.h
+  include/tencentcloud/adp/v20260520/model/TableEnhancement.h
+  include/tencentcloud/adp/v20260520/model/KnowledgeSource.h
   include/tencentcloud/adp/v20260520/model/AgentSummary.h
   include/tencentcloud/adp/v20260520/model/DeleteAppTriggerResponse.h
   include/tencentcloud/adp/v20260520/model/Filter.h
   include/tencentcloud/adp/v20260520/model/ToolSummary.h
-  include/tencentcloud/adp/v20260520/model/MsgRecordCategory.h
+  include/tencentcloud/adp/v20260520/model/ModifyLabelRequest.h
+  include/tencentcloud/adp/v20260520/model/ModifyCategoryRequest.h
   include/tencentcloud/adp/v20260520/model/AccessKeyPassThroughConfig.h
   include/tencentcloud/adp/v20260520/model/DescribeSkillReferenceListRequest.h
   include/tencentcloud/adp/v20260520/model/AppTriggerParamBindingConfig.h
-  include/tencentcloud/adp/v20260520/model/CreateSkillResponse.h
+  include/tencentcloud/adp/v20260520/model/KBModelConfig.h
   include/tencentcloud/adp/v20260520/model/DescribeAuditLogListRequest.h
   include/tencentcloud/adp/v20260520/model/VoiceConfig.h
+  include/tencentcloud/adp/v20260520/model/DocUpdatePeriod.h
   include/tencentcloud/adp/v20260520/model/DescribeConversationResponse.h
   include/tencentcloud/adp/v20260520/model/Space.h
   include/tencentcloud/adp/v20260520/model/PluginUsageSummary.h
   include/tencentcloud/adp/v20260520/model/AppMetadata.h
+  include/tencentcloud/adp/v20260520/model/CreateKBResponse.h
   include/tencentcloud/adp/v20260520/model/AppPluginConfig.h
-  include/tencentcloud/adp/v20260520/model/ModelStatus.h
+  include/tencentcloud/adp/v20260520/model/DocPermission.h
   include/tencentcloud/adp/v20260520/model/AppMemoryConfig.h
   include/tencentcloud/adp/v20260520/model/TriggerStatus.h
   include/tencentcloud/adp/v20260520/model/DescribeAgentSummaryListRequest.h
   include/tencentcloud/adp/v20260520/model/AppTriggerParamBinding.h
   include/tencentcloud/adp/v20260520/model/PluginConfig.h
+  include/tencentcloud/adp/v20260520/model/RerankConfig.h
   include/tencentcloud/adp/v20260520/model/ConcurrencyLimitDetail.h
   include/tencentcloud/adp/v20260520/model/CreateMsgRecordCategoryRequest.h
   include/tencentcloud/adp/v20260520/model/DescribeAgentDetailRequest.h
   include/tencentcloud/adp/v20260520/model/AgentPluginParameter.h
   include/tencentcloud/adp/v20260520/model/PluginUsageDetail.h
   include/tencentcloud/adp/v20260520/model/CopyAppRequest.h
+  include/tencentcloud/adp/v20260520/model/CreateCategoryRequest.h
+  include/tencentcloud/adp/v20260520/model/DescribeAgentDetailResponse.h
+  include/tencentcloud/adp/v20260520/model/RetrievalOption.h
   include/tencentcloud/adp/v20260520/model/DeleteSpaceRequest.h
   include/tencentcloud/adp/v20260520/model/ReleaseRecord.h
   include/tencentcloud/adp/v20260520/model/ConversationRecordTokenUsage.h
   include/tencentcloud/adp/v20260520/model/SkillAnalysisInfo.h
   include/tencentcloud/adp/v20260520/model/AppTriggerWorkflowExecuteConfig.h
-  include/tencentcloud/adp/v20260520/model/AppModeConfig.h
+  include/tencentcloud/adp/v20260520/model/LabelRefIdentity.h
+  include/tencentcloud/adp/v20260520/model/ModifyAgentResponse.h
   include/tencentcloud/adp/v20260520/model/ModelProviderBasic.h
+  include/tencentcloud/adp/v20260520/model/SimilarQuestionStat.h
   include/tencentcloud/adp/v20260520/model/AppAdvancedConf.h
+  include/tencentcloud/adp/v20260520/model/KBSummary.h
   include/tencentcloud/adp/v20260520/model/PauseAppTriggerResponse.h
+  include/tencentcloud/adp/v20260520/model/ModifyKBResponse.h
+  include/tencentcloud/adp/v20260520/model/DuplexBilling.h
   include/tencentcloud/adp/v20260520/model/SpecialStatusInfo.h
   )
 
@@ -418,7 +566,9 @@ set(adp_src
   src/v20260520/model/DeleteSkillShareRequest.cpp
   src/v20260520/model/ToolConfig.cpp
   src/v20260520/model/SkillClassification.cpp
+  src/v20260520/model/SearchInput.cpp
   src/v20260520/model/AgentAdvancedConfig.cpp
+  src/v20260520/model/FinalRerankConfig.cpp
   src/v20260520/model/PluginStatistics.cpp
   src/v20260520/model/IntentAchievementInfo.cpp
   src/v20260520/model/RollbackReleaseRequest.cpp
@@ -431,45 +581,59 @@ set(adp_src
   src/v20260520/model/Conversation.cpp
   src/v20260520/model/AuthConfig.cpp
   src/v20260520/model/AppShareAccessControl.cpp
+  src/v20260520/model/KBCategory.cpp
   src/v20260520/model/DialogCustomConfig.cpp
   src/v20260520/model/DescribeMetricOverviewListResponse.cpp
   src/v20260520/model/DescribeAppSummaryListRequest.cpp
   src/v20260520/model/ExecuteConfig.cpp
+  src/v20260520/model/CreateLabelResponse.cpp
   src/v20260520/model/TriggerConfig.cpp
   src/v20260520/model/DescribeModelListRequest.cpp
   src/v20260520/model/DescribeMsgRecordCategoryListResponse.cpp
   src/v20260520/model/DeleteVariableResponse.cpp
+  src/v20260520/model/DescribeLabelSummaryListResponse.cpp
+  src/v20260520/model/DescribeDocResponse.cpp
   src/v20260520/model/ApiPluginConfig.cpp
   src/v20260520/model/AppealingStatus.cpp
   src/v20260520/model/DescribeVariableResponse.cpp
+  src/v20260520/model/CreateLabelRequest.cpp
   src/v20260520/model/CodeToolConfig.cpp
+  src/v20260520/model/ModelStatus.cpp
   src/v20260520/model/SkillCorpShareConfig.cpp
   src/v20260520/model/DescribeMsgRecordListRequest.cpp
   src/v20260520/model/WeeklyTime.cpp
   src/v20260520/model/UsageSummary.cpp
   src/v20260520/model/SkillReferenceSummary.cpp
-  src/v20260520/model/ModifyAppTriggerRequest.cpp
+  src/v20260520/model/BillingAttribute.cpp
   src/v20260520/model/DescribeConcurrencyLimitDetailListResponse.cpp
   src/v20260520/model/DescribeChannelRequest.cpp
   src/v20260520/model/AgentSpec.cpp
   src/v20260520/model/ClawAgentConfig.cpp
+  src/v20260520/model/ModelLimit.cpp
   src/v20260520/model/CreatePluginRequest.cpp
   src/v20260520/model/ThinkModel.cpp
   src/v20260520/model/DeleteAgentResponse.cpp
+  src/v20260520/model/ModifyConversationResponse.cpp
   src/v20260520/model/RetryReleaseRequest.cpp
   src/v20260520/model/AppConfig.cpp
   src/v20260520/model/AppAuxiliaryInfo.cpp
+  src/v20260520/model/ModifyLabelResponse.cpp
   src/v20260520/model/ModifyConversationRequest.cpp
   src/v20260520/model/CreateChannelResponse.cpp
+  src/v20260520/model/TimerScheduleConfig.cpp
+  src/v20260520/model/DeleteCategoryResponse.cpp
+  src/v20260520/model/SearchResultPayload.cpp
   src/v20260520/model/DescribeUsageDetailListResponse.cpp
   src/v20260520/model/DescribeAppTriggerResponse.cpp
   src/v20260520/model/ModifyVariableResponse.cpp
+  src/v20260520/model/DescribeKBSummaryListRequest.cpp
   src/v20260520/model/AgentSkillConfig.cpp
   src/v20260520/model/ModifyAgentRequest.cpp
   src/v20260520/model/PluginOperation.cpp
   src/v20260520/model/AppWebSearchConfig.cpp
   src/v20260520/model/AgentProfile.cpp
-  src/v20260520/model/ModelLimit.cpp
+  src/v20260520/model/SearchAdvancedConfig.cpp
+  src/v20260520/model/KnowledgeScope.cpp
   src/v20260520/model/WechatChannelConfig.cpp
   src/v20260520/model/RunAppTriggerNowRequest.cpp
   src/v20260520/model/AppTriggerWebhookConfig.cpp
@@ -477,26 +641,37 @@ set(adp_src
   src/v20260520/model/MsgRecordResult.cpp
   src/v20260520/model/CreateVariableResponse.cpp
   src/v20260520/model/AppShareURLInfo.cpp
+  src/v20260520/model/ReleaseSkillResponse.cpp
   src/v20260520/model/ModelProperty.cpp
+  src/v20260520/model/DocParseConfig.cpp
   src/v20260520/model/CreateReleaseResponse.cpp
+  src/v20260520/model/DescribeConflictQASummaryListResponse.cpp
   src/v20260520/model/DescribeConversationListRequest.cpp
   src/v20260520/model/ModelDetailInfo.cpp
-  src/v20260520/model/CreateAppRequest.cpp
+  src/v20260520/model/ModifyVariableRequest.cpp
   src/v20260520/model/DescribeConcurrencyLimitDetailListRequest.cpp
   src/v20260520/model/MCPPluginConfig.cpp
   src/v20260520/model/CreateMsgRecordCategoryResponse.cpp
+  src/v20260520/model/CreateQAListRequest.cpp
   src/v20260520/model/DeleteVariableRequest.cpp
-  src/v20260520/model/ReleaseSkillResponse.cpp
+  src/v20260520/model/CreateAppTriggerRequest.cpp
   src/v20260520/model/AppTriggerInstance.cpp
+  src/v20260520/model/ModifyDocListRequest.cpp
   src/v20260520/model/DeleteConversationRequest.cpp
+  src/v20260520/model/ModifyConflictQARequest.cpp
+  src/v20260520/model/DescribeAppTriggerRunLogListResponse.cpp
+  src/v20260520/model/DescribeConflictQASummaryListRequest.cpp
   src/v20260520/model/DescribeSkillSummaryListRequest.cpp
+  src/v20260520/model/DocLink.cpp
   src/v20260520/model/CopyAppResponse.cpp
   src/v20260520/model/AgentPluginCredentialConfig.cpp
   src/v20260520/model/ComplexBillingItem.cpp
   src/v20260520/model/BackgroundImage.cpp
-  src/v20260520/model/TimerScheduleConfig.cpp
+  src/v20260520/model/ModifyConflictQAResponse.cpp
   src/v20260520/model/Model.cpp
-  src/v20260520/model/ModifySkillResponse.cpp
+  src/v20260520/model/LabelTermCheckResult.cpp
+  src/v20260520/model/SearchResourceStatusInfo.cpp
+  src/v20260520/model/CreateQAGenerationTaskRequest.cpp
   src/v20260520/model/DingTalkChannelConfig.cpp
   src/v20260520/model/DescribeSpaceListRequest.cpp
   src/v20260520/model/AppTriggerRunLog.cpp
@@ -504,62 +679,88 @@ set(adp_src
   src/v20260520/model/CamAuthConfig.cpp
   src/v20260520/model/DescribeSkillReferenceListResponse.cpp
   src/v20260520/model/UnfavoritePluginResponse.cpp
-  src/v20260520/model/ModifySpaceRequest.cpp
+  src/v20260520/model/CreateKBRequest.cpp
   src/v20260520/model/DeleteMsgRecordCategoryResponse.cpp
   src/v20260520/model/GenerateModel.cpp
   src/v20260520/model/FavoriteSkillResponse.cpp
   src/v20260520/model/SkillShare.cpp
   src/v20260520/model/AppShareWhitelistItem.cpp
+  src/v20260520/model/ModifyKBRequest.cpp
   src/v20260520/model/CreateWebSocketTokenRequest.cpp
   src/v20260520/model/DescribeChannelListRequest.cpp
-  src/v20260520/model/DeleteSkillResponse.cpp
+  src/v20260520/model/DescribeQARequest.cpp
+  src/v20260520/model/DocQuery.cpp
+  src/v20260520/model/SkillNotice.cpp
   src/v20260520/model/DescribeAgentReleasePreviewListRequest.cpp
+  src/v20260520/model/DocSwitch.cpp
   src/v20260520/model/PauseAppTriggerRequest.cpp
+  src/v20260520/model/MetaValue.cpp
+  src/v20260520/model/LabelTermModifyItem.cpp
   src/v20260520/model/CopyAgentFromAppRequest.cpp
+  src/v20260520/model/QACreateSpec.cpp
   src/v20260520/model/ModelParameter.cpp
   src/v20260520/model/ModifyAppResponse.cpp
+  src/v20260520/model/ExpirationPolicy.cpp
   src/v20260520/model/DescribeAccountListRequest.cpp
   src/v20260520/model/WechatCustomerServiceChannelConfig.cpp
   src/v20260520/model/DescribeConversationListResponse.cpp
   src/v20260520/model/MultiAgentConfig.cpp
   src/v20260520/model/CreateWebSocketTokenResponse.cpp
   src/v20260520/model/DescribeChannelListResponse.cpp
+  src/v20260520/model/QASegmentHighlight.cpp
   src/v20260520/model/DescribeSkillCategoryListResponse.cpp
   src/v20260520/model/LarkChannelConfig.cpp
   src/v20260520/model/TimeRange.cpp
   src/v20260520/model/DescribeConsumptionDetailListResponse.cpp
-  src/v20260520/model/CreatePluginResponse.cpp
+  src/v20260520/model/ConflictQASummary.cpp
   src/v20260520/model/ModifyChannelResponse.cpp
+  src/v20260520/model/DeleteCategoryRequest.cpp
+  src/v20260520/model/AppOperation.cpp
   src/v20260520/model/ClawAgentAgentTeamConfig.cpp
   src/v20260520/model/DescribeSystemVariableListResponse.cpp
+  src/v20260520/model/UserAccessConfig.cpp
   src/v20260520/model/TelegramChannelConfig.cpp
   src/v20260520/model/AgentPlugin.cpp
+  src/v20260520/model/SimilarQuestionModifySpec.cpp
+  src/v20260520/model/SearchBilling.cpp
+  src/v20260520/model/DeleteQAListResponse.cpp
   src/v20260520/model/ConversationResetInfo.cpp
-  src/v20260520/model/ModifyConversationResponse.cpp
+  src/v20260520/model/QASourceInfo.cpp
+  src/v20260520/model/CheckResult.cpp
   src/v20260520/model/ConversationQuoteInfo.cpp
+  src/v20260520/model/DeleteLabelListRequest.cpp
   src/v20260520/model/DescribeSpaceListResponse.cpp
   src/v20260520/model/LineChannelConfig.cpp
   src/v20260520/model/ConversationRecordSummary.cpp
   src/v20260520/model/ConversationRecordTimeUsage.cpp
   src/v20260520/model/App.cpp
-  src/v20260520/model/CronSchedule.cpp
-  src/v20260520/model/DescribeAppTriggerRunLogListResponse.cpp
+  src/v20260520/model/AppTriggerParamBindingValue.cpp
+  src/v20260520/model/DocMetadata.cpp
   src/v20260520/model/FileParseModel.cpp
   src/v20260520/model/AppAppeal.cpp
   src/v20260520/model/DescribeSkillCategoryListRequest.cpp
   src/v20260520/model/DigitalHumanConfig.cpp
   src/v20260520/model/DescribeLatestReleaseResponse.cpp
-  src/v20260520/model/SkillNotice.cpp
+  src/v20260520/model/SearchContext.cpp
   src/v20260520/model/ResponseParam.cpp
+  src/v20260520/model/ModifyQAListResponse.cpp
   src/v20260520/model/SingleWorkflowConfig.cpp
+  src/v20260520/model/CreatePluginResponse.cpp
+  src/v20260520/model/CreateSimilarQuestionResponse.cpp
   src/v20260520/model/DescribeChannelResponse.cpp
+  src/v20260520/model/QAModifyFields.cpp
   src/v20260520/model/AgentPluginConfig.cpp
   src/v20260520/model/PluginSummary.cpp
+  src/v20260520/model/ModifyDocListResponse.cpp
+  src/v20260520/model/DescribeQASummaryListRequest.cpp
   src/v20260520/model/CreateWorkspaceCredentialResponse.cpp
   src/v20260520/model/ConversationMcpApp.cpp
   src/v20260520/model/ModifyPluginRequest.cpp
+  src/v20260520/model/DeDuplicateStrategy.cpp
   src/v20260520/model/DescribeAccountListResponse.cpp
   src/v20260520/model/DeleteChannelResponse.cpp
+  src/v20260520/model/PluginParam.cpp
+  src/v20260520/model/DocModifyFields.cpp
   src/v20260520/model/AgentUserInputValue.cpp
   src/v20260520/model/SkillProfile.cpp
   src/v20260520/model/DescribeMetricOverviewListRequest.cpp
@@ -568,18 +769,28 @@ set(adp_src
   src/v20260520/model/DescribeAppTriggerRunLogListRequest.cpp
   src/v20260520/model/ResourceConsumption.cpp
   src/v20260520/model/ModelBasic.cpp
+  src/v20260520/model/DescribeKBSummaryListResponse.cpp
   src/v20260520/model/ModifyAppRequest.cpp
-  src/v20260520/model/ModifySkillRequest.cpp
+  src/v20260520/model/DeleteQAListRequest.cpp
+  src/v20260520/model/MCPToolMeta.cpp
   src/v20260520/model/CreateSpaceResponse.cpp
+  src/v20260520/model/DocImportSpec.cpp
   src/v20260520/model/CreateVariableRequest.cpp
   src/v20260520/model/ConsumptionClassification.cpp
+  src/v20260520/model/ExportQARequest.cpp
   src/v20260520/model/DescribeSystemVariableListRequest.cpp
   src/v20260520/model/DescribeReleaseSummaryResponse.cpp
+  src/v20260520/model/QASummary.cpp
   src/v20260520/model/MCPToolConfig.cpp
+  src/v20260520/model/DescribeKBResponse.cpp
   src/v20260520/model/SkillSummary.cpp
+  src/v20260520/model/DescribeLabelRequest.cpp
   src/v20260520/model/WecomRobotWebsocketAccess.cpp
   src/v20260520/model/AgentCollaborationConfig.cpp
-  src/v20260520/model/ModifyAppTriggerResponse.cpp
+  src/v20260520/model/MsgRecordCategory.cpp
+  src/v20260520/model/SummaryListSwitch.cpp
+  src/v20260520/model/CheckLabelRequest.cpp
+  src/v20260520/model/ModifySkillResponse.cpp
   src/v20260520/model/RoleConfig.cpp
   src/v20260520/model/DescribeAuditLogListResponse.cpp
   src/v20260520/model/DescribeUsageDetailListRequest.cpp
@@ -590,6 +801,9 @@ set(adp_src
   src/v20260520/model/DescribeAppSummaryListResponse.cpp
   src/v20260520/model/ClawAgentLongMemoryConfig.cpp
   src/v20260520/model/FavoritePluginRequest.cpp
+  src/v20260520/model/KnowledgeSnippetProfile.cpp
+  src/v20260520/model/ContentFilter.cpp
+  src/v20260520/model/ImportDocListResponse.cpp
   src/v20260520/model/SupportedFileType.cpp
   src/v20260520/model/SkillCategory.cpp
   src/v20260520/model/AgentTool.cpp
@@ -602,70 +816,101 @@ set(adp_src
   src/v20260520/model/InputBoxConfig.cpp
   src/v20260520/model/AppTrigger.cpp
   src/v20260520/model/DescribeAgentSummaryListResponse.cpp
+  src/v20260520/model/DeleteKBRequest.cpp
   src/v20260520/model/SkillVersion.cpp
-  src/v20260520/model/ModifyAgentResponse.cpp
+  src/v20260520/model/AppModeConfig.cpp
   src/v20260520/model/DescribeMsgRecordListResponse.cpp
+  src/v20260520/model/Tool.cpp
   src/v20260520/model/ModelUsageSummary.cpp
+  src/v20260520/model/DescribeQAResponse.cpp
   src/v20260520/model/DescribeVariableListResponse.cpp
+  src/v20260520/model/LabelRef.cpp
+  src/v20260520/model/ModifyQARequest.cpp
+  src/v20260520/model/LabelSummary.cpp
   src/v20260520/model/DescribeReleaseListRequest.cpp
+  src/v20260520/model/ModifySpaceResponse.cpp
   src/v20260520/model/ConversationReference.cpp
   src/v20260520/model/MsgRecord.cpp
+  src/v20260520/model/LabelModifyFields.cpp
   src/v20260520/model/DeleteMsgRecordCategoryRequest.cpp
+  src/v20260520/model/DocOperator.cpp
+  src/v20260520/model/DescribeDocSummaryListRequest.cpp
   src/v20260520/model/ModifyMsgRecordCategoryResponse.cpp
   src/v20260520/model/UnfavoritePluginRequest.cpp
   src/v20260520/model/AgentModelConfig.cpp
   src/v20260520/model/ModelUsageDetail.cpp
+  src/v20260520/model/ModifyQAListRequest.cpp
   src/v20260520/model/CreateConversationResponse.cpp
   src/v20260520/model/DescribeSkillDetailRequest.cpp
   src/v20260520/model/Variable.cpp
+  src/v20260520/model/ExpirationAwareness.cpp
   src/v20260520/model/FavoriteSkillRequest.cpp
   src/v20260520/model/AppSharedKbInfo.cpp
   src/v20260520/model/ModifyMsgRecordCategoryRequest.cpp
   src/v20260520/model/ResetConversationResponse.cpp
   src/v20260520/model/DailySchedule.cpp
-  src/v20260520/model/AppSubStatusInfo.cpp
+  src/v20260520/model/PromptRewriteModel.cpp
   src/v20260520/model/ManualOnlySchedule.cpp
+  src/v20260520/model/ModifySpaceRequest.cpp
   src/v20260520/model/DescribePluginSummaryListRequest.cpp
   src/v20260520/model/CreateAppResponse.cpp
+  src/v20260520/model/KBModifyExtendFields.cpp
+  src/v20260520/model/QARetrievalConfig.cpp
   src/v20260520/model/AuditLogMetaField.cpp
+  src/v20260520/model/CreateQAListResponse.cpp
   src/v20260520/model/ModelDeveloperBasic.cpp
-  src/v20260520/model/MCPToolMeta.cpp
+  src/v20260520/model/ModifySkillRequest.cpp
   src/v20260520/model/AppExperienceConfig.cpp
   src/v20260520/model/ResumeAppTriggerRequest.cpp
-  src/v20260520/model/PluginParam.cpp
+  src/v20260520/model/QAOperator.cpp
+  src/v20260520/model/LabelRefIdentityList.cpp
   src/v20260520/model/CreateReleaseRequest.cpp
   src/v20260520/model/CreateWorkspaceCredentialRequest.cpp
-  src/v20260520/model/BillingAttribute.cpp
+  src/v20260520/model/ModifyAppTriggerRequest.cpp
   src/v20260520/model/DescribeAppTriggerSummaryListResponse.cpp
+  src/v20260520/model/DescribeKBRequest.cpp
   src/v20260520/model/CreateAgentRequest.cpp
   src/v20260520/model/ConversationExperience.cpp
   src/v20260520/model/DeletePluginResponse.cpp
   src/v20260520/model/DeletePluginRequest.cpp
   src/v20260520/model/AIOptimizeModel.cpp
-  src/v20260520/model/Tool.cpp
-  src/v20260520/model/ModifySpaceResponse.cpp
+  src/v20260520/model/SearchFilterConfig.cpp
+  src/v20260520/model/CreateSimilarQuestionRequest.cpp
+  src/v20260520/model/KBRetrievalConfig.cpp
   src/v20260520/model/SkillDetail.cpp
   src/v20260520/model/DescribePluginSummaryListResponse.cpp
-  src/v20260520/model/PromptRewriteModel.cpp
+  src/v20260520/model/AppSubStatusInfo.cpp
   src/v20260520/model/ViewScope.cpp
   src/v20260520/model/CreateConversationRequest.cpp
-  src/v20260520/model/AgentExternalToolConfig.cpp
+  src/v20260520/model/CreateSkillResponse.cpp
+  src/v20260520/model/DescribeDocRequest.cpp
   src/v20260520/model/WecomAppChannelConfig.cpp
   src/v20260520/model/DescribeMsgRecordCategoryListRequest.cpp
   src/v20260520/model/CallSource.cpp
   src/v20260520/model/ConsumptionUsage.cpp
   src/v20260520/model/AppTriggerPromptExecuteConfig.cpp
   src/v20260520/model/DeleteSkillShareResponse.cpp
+  src/v20260520/model/ModifyCategoryResponse.cpp
+  src/v20260520/model/ReleaseSummary.cpp
+  src/v20260520/model/SimilarQuestion.cpp
   src/v20260520/model/AgentToolBasicConfig.cpp
+  src/v20260520/model/DescribeConflictQAResponse.cpp
   src/v20260520/model/AppStatusInfo.cpp
   src/v20260520/model/ComplexBilling.cpp
+  src/v20260520/model/DocRetrievalConfig.cpp
+  src/v20260520/model/DescribeLabelSummaryListRequest.cpp
+  src/v20260520/model/SearchKnowledgeResponse.cpp
   src/v20260520/model/DeleteConversationResponse.cpp
   src/v20260520/model/DescribeAuditLogMetaResponse.cpp
-  src/v20260520/model/MultiModalQAModel.cpp
+  src/v20260520/model/DescribeCategoryListResponse.cpp
+  src/v20260520/model/AppTriggerParamSchema.cpp
   src/v20260520/model/TimerPushConfig.cpp
   src/v20260520/model/ChannelSpec.cpp
   src/v20260520/model/AgentToolConfig.cpp
-  src/v20260520/model/OAuthConfig.cpp
+  src/v20260520/model/DeleteSkillResponse.cpp
+  src/v20260520/model/KBCapacity.cpp
+  src/v20260520/model/SimilarQuestionExtra.cpp
+  src/v20260520/model/DeleteDocListRequest.cpp
   src/v20260520/model/WeeklySchedule.cpp
   src/v20260520/model/ModelParams.cpp
   src/v20260520/model/AgentInput.cpp
@@ -674,17 +919,27 @@ set(adp_src
   src/v20260520/model/CreateChannelRequest.cpp
   src/v20260520/model/Identity.cpp
   src/v20260520/model/AccessKeyAuthConfig.cpp
-  src/v20260520/model/DescribeAgentDetailResponse.cpp
+  src/v20260520/model/DescribeLabelResponse.cpp
   src/v20260520/model/CreateAppTriggerResponse.cpp
+  src/v20260520/model/DeleteKBResponse.cpp
+  src/v20260520/model/DocSummary.cpp
+  src/v20260520/model/KBSpec.cpp
   src/v20260520/model/SystemVariable.cpp
   src/v20260520/model/ModifyPluginResponse.cpp
+  src/v20260520/model/DescribeQASummaryListResponse.cpp
   src/v20260520/model/DescribeAppTriggerInstanceResponse.cpp
   src/v20260520/model/UserAgentReference.cpp
   src/v20260520/model/CreateSkillShareRequest.cpp
+  src/v20260520/model/LabelTerm.cpp
   src/v20260520/model/ConsumptionDetail.cpp
+  src/v20260520/model/QALifecycle.cpp
+  src/v20260520/model/CategoryPath.cpp
+  src/v20260520/model/ModifyDocRequest.cpp
   src/v20260520/model/AppGreetingConfig.cpp
   src/v20260520/model/DescribeAppTriggerSummaryListRequest.cpp
   src/v20260520/model/AppTriggerScheduleConfig.cpp
+  src/v20260520/model/KnowledgeResult.cpp
+  src/v20260520/model/ModifyAppTriggerResponse.cpp
   src/v20260520/model/AccountInfo.cpp
   src/v20260520/model/CreateSkillRequest.cpp
   src/v20260520/model/Sort.cpp
@@ -692,15 +947,22 @@ set(adp_src
   src/v20260520/model/FavoritePluginResponse.cpp
   src/v20260520/model/MetricOverview.cpp
   src/v20260520/model/AgentSkill.cpp
+  src/v20260520/model/SearchKnowledgeRequest.cpp
+  src/v20260520/model/DBRetrievalConfig.cpp
   src/v20260520/model/ModelBadge.cpp
+  src/v20260520/model/TokenUsage.cpp
   src/v20260520/model/PlatformUsageSummary.cpp
+  src/v20260520/model/DeleteLabelListResponse.cpp
   src/v20260520/model/AgentSystemVariable.cpp
-  src/v20260520/model/AppOperation.cpp
+  src/v20260520/model/DocExternalLink.cpp
   src/v20260520/model/PluginProfile.cpp
   src/v20260520/model/DescribePluginResponse.cpp
   src/v20260520/model/DescribeAgentReleasePreviewListResponse.cpp
   src/v20260520/model/DescribeSkillSummaryListResponse.cpp
   src/v20260520/model/DescribeConversationMessageListRequest.cpp
+  src/v20260520/model/EffectivePeriod.cpp
+  src/v20260520/model/DescribeDocSummaryListResponse.cpp
+  src/v20260520/model/DeleteDocListResponse.cpp
   src/v20260520/model/DescribeReleaseListResponse.cpp
   src/v20260520/model/DeleteAgentRequest.cpp
   src/v20260520/model/RequestParam.cpp
@@ -710,34 +972,48 @@ set(adp_src
   src/v20260520/model/AgentToolInputParameter.cpp
   src/v20260520/model/WecomRobotCallbackAccess.cpp
   src/v20260520/model/RunAppTriggerNowResponse.cpp
+  src/v20260520/model/DescribeConflictQARequest.cpp
   src/v20260520/model/DescribeSkillDetailResponse.cpp
   src/v20260520/model/CallbackConfig.cpp
   src/v20260520/model/DeleteAppTriggerRequest.cpp
-  src/v20260520/model/ReleaseSummary.cpp
+  src/v20260520/model/QAPermission.cpp
+  src/v20260520/model/CreateQAGenerationTaskResponse.cpp
+  src/v20260520/model/CategoryModifyFields.cpp
+  src/v20260520/model/OperationResult.cpp
   src/v20260520/model/OnceSchedule.cpp
+  src/v20260520/model/QAQuery.cpp
   src/v20260520/model/UnfavoriteSkillResponse.cpp
-  src/v20260520/model/AppTriggerParamSchema.cpp
+  src/v20260520/model/MultiModalQAModel.cpp
   src/v20260520/model/CreateSpaceRequest.cpp
   src/v20260520/model/MCPToolUIMeta.cpp
-  src/v20260520/model/SearchResourceStatusInfo.cpp
+  src/v20260520/model/ModifyDocResponse.cpp
+  src/v20260520/model/SearchFilter.cpp
+  src/v20260520/model/DescribeCategoryListRequest.cpp
   src/v20260520/model/FieldMask.cpp
   src/v20260520/model/AppTriggerWebhookParamSchemaConfig.cpp
   src/v20260520/model/ConversationMessage.cpp
+  src/v20260520/model/CreateCategoryResponse.cpp
   src/v20260520/model/WecomRobotChannelConfig.cpp
+  src/v20260520/model/ImportDocListRequest.cpp
   src/v20260520/model/DescribeConsumptionDetailListRequest.cpp
   src/v20260520/model/DescribeVariableListRequest.cpp
+  src/v20260520/model/Operator.cpp
+  src/v20260520/model/ExportQAResponse.cpp
+  src/v20260520/model/QAMetadata.cpp
   src/v20260520/model/DescribeConversationMessageListResponse.cpp
   src/v20260520/model/AppToolConfig.cpp
   src/v20260520/model/RollbackReleaseResponse.cpp
   src/v20260520/model/DescribeReleaseSummaryRequest.cpp
   src/v20260520/model/AppWorkflowConfig.cpp
   src/v20260520/model/ConversationAgentTask.cpp
+  src/v20260520/model/CheckLabelResponse.cpp
   src/v20260520/model/AppTriggerScheduleStatus.cpp
+  src/v20260520/model/KVPair.cpp
   src/v20260520/model/DeleteSkillRequest.cpp
   src/v20260520/model/DescribePluginRequest.cpp
   src/v20260520/model/Channel.cpp
   src/v20260520/model/PluginUserState.cpp
-  src/v20260520/model/DuplexBilling.cpp
+  src/v20260520/model/DocLifecycle.cpp
   src/v20260520/model/MultiModalUnderstandingModel.cpp
   src/v20260520/model/DescribeAppTriggerRequest.cpp
   src/v20260520/model/CorpShareConfig.cpp
@@ -749,63 +1025,83 @@ set(adp_src
   src/v20260520/model/DescribeAppTriggerInstanceRequest.cpp
   src/v20260520/model/AppSecretInfo.cpp
   src/v20260520/model/AgentDetail.cpp
-  src/v20260520/model/ModifyVariableRequest.cpp
+  src/v20260520/model/GraphRAG.cpp
+  src/v20260520/model/ModifyQAResponse.cpp
+  src/v20260520/model/CreateAppRequest.cpp
   src/v20260520/model/DeleteAppResponse.cpp
-  src/v20260520/model/CreateAppTriggerRequest.cpp
+  src/v20260520/model/ESConfig.cpp
   src/v20260520/model/AppTriggerWebhookStatus.cpp
   src/v20260520/model/ResumeAppTriggerResponse.cpp
   src/v20260520/model/AccessKeyParamConfig.cpp
   src/v20260520/model/CategoryPermission.cpp
+  src/v20260520/model/DocTaskStatus.cpp
   src/v20260520/model/ResetConversationRequest.cpp
+  src/v20260520/model/OAuthConfig.cpp
   src/v20260520/model/ToolBilling.cpp
   src/v20260520/model/BasicBilling.cpp
   src/v20260520/model/DescribeAppRequest.cpp
   src/v20260520/model/IntervalSchedule.cpp
   src/v20260520/model/DescribeLatestReleaseRequest.cpp
   src/v20260520/model/DeleteChannelRequest.cpp
-  src/v20260520/model/AppTriggerParamBindingValue.cpp
+  src/v20260520/model/CronSchedule.cpp
   src/v20260520/model/CopyAgentFromAppResponse.cpp
+  src/v20260520/model/AgentExternalToolConfig.cpp
+  src/v20260520/model/ConflictQA.cpp
   src/v20260520/model/RetryReleaseResponse.cpp
   src/v20260520/model/AICallConfig.cpp
   src/v20260520/model/ModifyChannelRequest.cpp
   src/v20260520/model/CreateSkillShareResponse.cpp
+  src/v20260520/model/TableEnhancement.cpp
+  src/v20260520/model/KnowledgeSource.cpp
   src/v20260520/model/AgentSummary.cpp
   src/v20260520/model/DeleteAppTriggerResponse.cpp
   src/v20260520/model/Filter.cpp
   src/v20260520/model/ToolSummary.cpp
-  src/v20260520/model/MsgRecordCategory.cpp
+  src/v20260520/model/ModifyLabelRequest.cpp
+  src/v20260520/model/ModifyCategoryRequest.cpp
   src/v20260520/model/AccessKeyPassThroughConfig.cpp
   src/v20260520/model/DescribeSkillReferenceListRequest.cpp
   src/v20260520/model/AppTriggerParamBindingConfig.cpp
-  src/v20260520/model/CreateSkillResponse.cpp
+  src/v20260520/model/KBModelConfig.cpp
   src/v20260520/model/DescribeAuditLogListRequest.cpp
   src/v20260520/model/VoiceConfig.cpp
+  src/v20260520/model/DocUpdatePeriod.cpp
   src/v20260520/model/DescribeConversationResponse.cpp
   src/v20260520/model/Space.cpp
   src/v20260520/model/PluginUsageSummary.cpp
   src/v20260520/model/AppMetadata.cpp
+  src/v20260520/model/CreateKBResponse.cpp
   src/v20260520/model/AppPluginConfig.cpp
-  src/v20260520/model/ModelStatus.cpp
+  src/v20260520/model/DocPermission.cpp
   src/v20260520/model/AppMemoryConfig.cpp
   src/v20260520/model/TriggerStatus.cpp
   src/v20260520/model/DescribeAgentSummaryListRequest.cpp
   src/v20260520/model/AppTriggerParamBinding.cpp
   src/v20260520/model/PluginConfig.cpp
+  src/v20260520/model/RerankConfig.cpp
   src/v20260520/model/ConcurrencyLimitDetail.cpp
   src/v20260520/model/CreateMsgRecordCategoryRequest.cpp
   src/v20260520/model/DescribeAgentDetailRequest.cpp
   src/v20260520/model/AgentPluginParameter.cpp
   src/v20260520/model/PluginUsageDetail.cpp
   src/v20260520/model/CopyAppRequest.cpp
+  src/v20260520/model/CreateCategoryRequest.cpp
+  src/v20260520/model/DescribeAgentDetailResponse.cpp
+  src/v20260520/model/RetrievalOption.cpp
   src/v20260520/model/DeleteSpaceRequest.cpp
   src/v20260520/model/ReleaseRecord.cpp
   src/v20260520/model/ConversationRecordTokenUsage.cpp
   src/v20260520/model/SkillAnalysisInfo.cpp
   src/v20260520/model/AppTriggerWorkflowExecuteConfig.cpp
-  src/v20260520/model/AppModeConfig.cpp
+  src/v20260520/model/LabelRefIdentity.cpp
+  src/v20260520/model/ModifyAgentResponse.cpp
   src/v20260520/model/ModelProviderBasic.cpp
+  src/v20260520/model/SimilarQuestionStat.cpp
   src/v20260520/model/AppAdvancedConf.cpp
+  src/v20260520/model/KBSummary.cpp
   src/v20260520/model/PauseAppTriggerResponse.cpp
+  src/v20260520/model/ModifyKBResponse.cpp
+  src/v20260520/model/DuplexBilling.cpp
   src/v20260520/model/SpecialStatusInfo.cpp
   )
 

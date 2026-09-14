@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取解除协议流程编号
-                     * @return FlowId 解除协议流程编号
+                     * 获取<p>解除协议流程编号</p>
+                     * @return FlowId <p>解除协议流程编号</p>
                      * 
                      */
                     std::string GetFlowId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 解除协议流程编号
+                     * <p>解除协议流程编号</p>
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;

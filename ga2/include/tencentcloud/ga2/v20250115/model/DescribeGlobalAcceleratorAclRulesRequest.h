@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ga2/v20250115/model/Filter.h>
 
 
 namespace TencentCloud
@@ -105,6 +106,27 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取<p>过滤条件。<li>global-accelerator-acl-rule-id - String -（过滤条件）ACL规则ID。</li></p>
+                     * @return Filters <p>过滤条件。<li>global-accelerator-acl-rule-id - String -（过滤条件）ACL规则ID。</li></p>
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置<p>过滤条件。<li>global-accelerator-acl-rule-id - String -（过滤条件）ACL规则ID。</li></p>
+                     * @param _filters <p>过滤条件。<li>global-accelerator-acl-rule-id - String -（过滤条件）ACL规则ID。</li></p>
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +146,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * <p>过滤条件。<li>global-accelerator-acl-rule-id - String -（过滤条件）ACL规则ID。</li></p>
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

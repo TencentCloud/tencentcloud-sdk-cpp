@@ -49,7 +49,9 @@ EndpointGroupConfigurationSet::EndpointGroupConfigurationSet() :
     m_originPublicIpsHasBeenSet(false),
     m_ispTypeHasBeenSet(false),
     m_cipherPolicyIdHasBeenSet(false),
-    m_httpVersionHasBeenSet(false)
+    m_httpVersionHasBeenSet(false),
+    m_originPrivateIpsHasBeenSet(false),
+    m_originPublicCidrsHasBeenSet(false)
 {
 }
 
@@ -374,6 +376,32 @@ CoreInternalOutcome EndpointGroupConfigurationSet::Deserialize(const rapidjson::
         m_httpVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("OriginPrivateIps") && !value["OriginPrivateIps"].IsNull())
+    {
+        if (!value["OriginPrivateIps"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EndpointGroupConfigurationSet.OriginPrivateIps` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OriginPrivateIps"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_originPrivateIps.push_back((*itr).GetString());
+        }
+        m_originPrivateIpsHasBeenSet = true;
+    }
+
+    if (value.HasMember("OriginPublicCidrs") && !value["OriginPublicCidrs"].IsNull())
+    {
+        if (!value["OriginPublicCidrs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EndpointGroupConfigurationSet.OriginPublicCidrs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OriginPublicCidrs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_originPublicCidrs.push_back((*itr).GetString());
+        }
+        m_originPublicCidrsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -635,6 +663,32 @@ void EndpointGroupConfigurationSet::ToJsonObject(rapidjson::Value &value, rapidj
         string key = "HttpVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_httpVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originPrivateIpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginPrivateIps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_originPrivateIps.begin(); itr != m_originPrivateIps.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_originPublicCidrsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginPublicCidrs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_originPublicCidrs.begin(); itr != m_originPublicCidrs.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1102,5 +1156,37 @@ void EndpointGroupConfigurationSet::SetHttpVersion(const string& _httpVersion)
 bool EndpointGroupConfigurationSet::HttpVersionHasBeenSet() const
 {
     return m_httpVersionHasBeenSet;
+}
+
+vector<string> EndpointGroupConfigurationSet::GetOriginPrivateIps() const
+{
+    return m_originPrivateIps;
+}
+
+void EndpointGroupConfigurationSet::SetOriginPrivateIps(const vector<string>& _originPrivateIps)
+{
+    m_originPrivateIps = _originPrivateIps;
+    m_originPrivateIpsHasBeenSet = true;
+}
+
+bool EndpointGroupConfigurationSet::OriginPrivateIpsHasBeenSet() const
+{
+    return m_originPrivateIpsHasBeenSet;
+}
+
+vector<string> EndpointGroupConfigurationSet::GetOriginPublicCidrs() const
+{
+    return m_originPublicCidrs;
+}
+
+void EndpointGroupConfigurationSet::SetOriginPublicCidrs(const vector<string>& _originPublicCidrs)
+{
+    m_originPublicCidrs = _originPublicCidrs;
+    m_originPublicCidrsHasBeenSet = true;
+}
+
+bool EndpointGroupConfigurationSet::OriginPublicCidrsHasBeenSet() const
+{
+    return m_originPublicCidrsHasBeenSet;
 }
 

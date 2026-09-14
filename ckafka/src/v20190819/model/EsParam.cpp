@@ -41,7 +41,8 @@ EsParam::EsParam() :
     m_recordMappingListHasBeenSet(false),
     m_dateFieldHasBeenSet(false),
     m_recordMappingModeHasBeenSet(false),
-    m_protocolHasBeenSet(false)
+    m_protocolHasBeenSet(false),
+    m_sourceDataFormatHasBeenSet(false)
 {
 }
 
@@ -284,6 +285,16 @@ CoreInternalOutcome EsParam::Deserialize(const rapidjson::Value &value)
         m_protocolHasBeenSet = true;
     }
 
+    if (value.HasMember("SourceDataFormat") && !value["SourceDataFormat"].IsNull())
+    {
+        if (!value["SourceDataFormat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EsParam.SourceDataFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceDataFormat = string(value["SourceDataFormat"].GetString());
+        m_sourceDataFormatHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -466,6 +477,14 @@ void EsParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceDataFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceDataFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceDataFormat.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -805,5 +824,21 @@ void EsParam::SetProtocol(const string& _protocol)
 bool EsParam::ProtocolHasBeenSet() const
 {
     return m_protocolHasBeenSet;
+}
+
+string EsParam::GetSourceDataFormat() const
+{
+    return m_sourceDataFormat;
+}
+
+void EsParam::SetSourceDataFormat(const string& _sourceDataFormat)
+{
+    m_sourceDataFormat = _sourceDataFormat;
+    m_sourceDataFormatHasBeenSet = true;
+}
+
+bool EsParam::SourceDataFormatHasBeenSet() const
+{
+    return m_sourceDataFormatHasBeenSet;
 }
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取日志采集配置的json表达
-                     * @return LogConfig 日志采集配置的json表达
+                     * 获取<p>日志采集配置的json表达</p>
+                     * @return LogConfig <p>日志采集配置的json表达</p>
                      * 
                      */
                     std::string GetLogConfig() const;
 
                     /**
-                     * 设置日志采集配置的json表达
-                     * @param _logConfig 日志采集配置的json表达
+                     * 设置<p>日志采集配置的json表达</p>
+                     * @param _logConfig <p>日志采集配置的json表达</p>
                      * 
                      */
                     void SetLogConfig(const std::string& _logConfig);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LogConfigHasBeenSet() const;
 
                     /**
-                     * 获取日志集ID
-                     * @return LogsetId 日志集ID
+                     * 获取<p>日志集ID</p>
+                     * @return LogsetId <p>日志集ID</p>
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
-                     * 设置日志集ID
-                     * @param _logsetId 日志集ID
+                     * 设置<p>日志集ID</p>
+                     * @param _logsetId <p>日志集ID</p>
                      * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 日志采集配置的json表达
+                     * <p>日志采集配置的json表达</p>
                      */
                     std::string m_logConfig;
                     bool m_logConfigHasBeenSet;
 
                     /**
-                     * 日志集ID
+                     * <p>日志集ID</p>
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;
