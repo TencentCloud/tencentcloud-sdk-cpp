@@ -30,7 +30,9 @@ ServiceGovernanceInfo::ServiceGovernanceInfo() :
     m_pgwVpcInfosHasBeenSet(false),
     m_limiterVpcInfosHasBeenSet(false),
     m_cLSTopicsHasBeenSet(false),
-    m_subPasswordHasBeenSet(false)
+    m_subPasswordHasBeenSet(false),
+    m_disableMutationHasBeenSet(false),
+    m_maxCapacityLimitEnabledHasBeenSet(false)
 {
 }
 
@@ -192,6 +194,26 @@ CoreInternalOutcome ServiceGovernanceInfo::Deserialize(const rapidjson::Value &v
         m_subPasswordHasBeenSet = true;
     }
 
+    if (value.HasMember("DisableMutation") && !value["DisableMutation"].IsNull())
+    {
+        if (!value["DisableMutation"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceGovernanceInfo.DisableMutation` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_disableMutation = value["DisableMutation"].GetBool();
+        m_disableMutationHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxCapacityLimitEnabled") && !value["MaxCapacityLimitEnabled"].IsNull())
+    {
+        if (!value["MaxCapacityLimitEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceGovernanceInfo.MaxCapacityLimitEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxCapacityLimitEnabled = value["MaxCapacityLimitEnabled"].GetBool();
+        m_maxCapacityLimitEnabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +339,22 @@ void ServiceGovernanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "SubPassword";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subPassword.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disableMutationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableMutation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_disableMutation, allocator);
+    }
+
+    if (m_maxCapacityLimitEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxCapacityLimitEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxCapacityLimitEnabled, allocator);
     }
 
 }
@@ -480,5 +518,37 @@ void ServiceGovernanceInfo::SetSubPassword(const string& _subPassword)
 bool ServiceGovernanceInfo::SubPasswordHasBeenSet() const
 {
     return m_subPasswordHasBeenSet;
+}
+
+bool ServiceGovernanceInfo::GetDisableMutation() const
+{
+    return m_disableMutation;
+}
+
+void ServiceGovernanceInfo::SetDisableMutation(const bool& _disableMutation)
+{
+    m_disableMutation = _disableMutation;
+    m_disableMutationHasBeenSet = true;
+}
+
+bool ServiceGovernanceInfo::DisableMutationHasBeenSet() const
+{
+    return m_disableMutationHasBeenSet;
+}
+
+bool ServiceGovernanceInfo::GetMaxCapacityLimitEnabled() const
+{
+    return m_maxCapacityLimitEnabled;
+}
+
+void ServiceGovernanceInfo::SetMaxCapacityLimitEnabled(const bool& _maxCapacityLimitEnabled)
+{
+    m_maxCapacityLimitEnabled = _maxCapacityLimitEnabled;
+    m_maxCapacityLimitEnabledHasBeenSet = true;
+}
+
+bool ServiceGovernanceInfo::MaxCapacityLimitEnabledHasBeenSet() const
+{
+    return m_maxCapacityLimitEnabledHasBeenSet;
 }
 

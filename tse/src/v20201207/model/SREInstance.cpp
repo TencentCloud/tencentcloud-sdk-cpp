@@ -60,7 +60,9 @@ SREInstance::SREInstance() :
     m_globalTypeHasBeenSet(false),
     m_groupTypeHasBeenSet(false),
     m_groupIdHasBeenSet(false),
-    m_isMainRegionHasBeenSet(false)
+    m_isMainRegionHasBeenSet(false),
+    m_mutationEnabledHasBeenSet(false),
+    m_maxCapacityLimitEnabledHasBeenSet(false)
 {
 }
 
@@ -542,6 +544,26 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
         m_isMainRegionHasBeenSet = true;
     }
 
+    if (value.HasMember("MutationEnabled") && !value["MutationEnabled"].IsNull())
+    {
+        if (!value["MutationEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SREInstance.MutationEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_mutationEnabled = value["MutationEnabled"].GetBool();
+        m_mutationEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxCapacityLimitEnabled") && !value["MaxCapacityLimitEnabled"].IsNull())
+    {
+        if (!value["MaxCapacityLimitEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SREInstance.MaxCapacityLimitEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxCapacityLimitEnabled = value["MaxCapacityLimitEnabled"].GetBool();
+        m_maxCapacityLimitEnabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -920,6 +942,22 @@ void SREInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "IsMainRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isMainRegion, allocator);
+    }
+
+    if (m_mutationEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MutationEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mutationEnabled, allocator);
+    }
+
+    if (m_maxCapacityLimitEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxCapacityLimitEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxCapacityLimitEnabled, allocator);
     }
 
 }
@@ -1563,5 +1601,37 @@ void SREInstance::SetIsMainRegion(const bool& _isMainRegion)
 bool SREInstance::IsMainRegionHasBeenSet() const
 {
     return m_isMainRegionHasBeenSet;
+}
+
+bool SREInstance::GetMutationEnabled() const
+{
+    return m_mutationEnabled;
+}
+
+void SREInstance::SetMutationEnabled(const bool& _mutationEnabled)
+{
+    m_mutationEnabled = _mutationEnabled;
+    m_mutationEnabledHasBeenSet = true;
+}
+
+bool SREInstance::MutationEnabledHasBeenSet() const
+{
+    return m_mutationEnabledHasBeenSet;
+}
+
+bool SREInstance::GetMaxCapacityLimitEnabled() const
+{
+    return m_maxCapacityLimitEnabled;
+}
+
+void SREInstance::SetMaxCapacityLimitEnabled(const bool& _maxCapacityLimitEnabled)
+{
+    m_maxCapacityLimitEnabled = _maxCapacityLimitEnabled;
+    m_maxCapacityLimitEnabledHasBeenSet = true;
+}
+
+bool SREInstance::MaxCapacityLimitEnabledHasBeenSet() const
+{
+    return m_maxCapacityLimitEnabledHasBeenSet;
 }
 

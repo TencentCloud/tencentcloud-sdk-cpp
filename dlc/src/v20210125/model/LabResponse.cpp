@@ -34,6 +34,7 @@ LabResponse::LabResponse() :
     m_resourcePartitionIdHasBeenSet(false),
     m_resourcePartitionNameHasBeenSet(false),
     m_queueHasBeenSet(false),
+    m_queueAliasHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_uinHasBeenSet(false),
     m_subAccountUinHasBeenSet(false),
@@ -206,6 +207,16 @@ CoreInternalOutcome LabResponse::Deserialize(const rapidjson::Value &value)
         }
         m_queue = string(value["Queue"].GetString());
         m_queueHasBeenSet = true;
+    }
+
+    if (value.HasMember("QueueAlias") && !value["QueueAlias"].IsNull())
+    {
+        if (!value["QueueAlias"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LabResponse.QueueAlias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_queueAlias = string(value["QueueAlias"].GetString());
+        m_queueAliasHasBeenSet = true;
     }
 
     if (value.HasMember("AppId") && !value["AppId"].IsNull())
@@ -601,6 +612,14 @@ void LabResponse::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Queue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_queue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queueAliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueAlias";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queueAlias.c_str(), allocator).Move(), allocator);
     }
 
     if (m_appIdHasBeenSet)
@@ -1028,6 +1047,22 @@ void LabResponse::SetQueue(const string& _queue)
 bool LabResponse::QueueHasBeenSet() const
 {
     return m_queueHasBeenSet;
+}
+
+string LabResponse::GetQueueAlias() const
+{
+    return m_queueAlias;
+}
+
+void LabResponse::SetQueueAlias(const string& _queueAlias)
+{
+    m_queueAlias = _queueAlias;
+    m_queueAliasHasBeenSet = true;
+}
+
+bool LabResponse::QueueAliasHasBeenSet() const
+{
+    return m_queueAliasHasBeenSet;
 }
 
 int64_t LabResponse::GetAppId() const

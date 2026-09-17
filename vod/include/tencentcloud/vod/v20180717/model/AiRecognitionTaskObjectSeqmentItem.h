@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取识别片段起始的偏移时间，单位：秒。
-                     * @return StartTimeOffset 识别片段起始的偏移时间，单位：秒。
+                     * 获取<p>识别片段起始的偏移时间，单位：秒。</p>
+                     * @return StartTimeOffset <p>识别片段起始的偏移时间，单位：秒。</p>
                      * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
-                     * 设置识别片段起始的偏移时间，单位：秒。
-                     * @param _startTimeOffset 识别片段起始的偏移时间，单位：秒。
+                     * 设置<p>识别片段起始的偏移时间，单位：秒。</p>
+                     * @param _startTimeOffset <p>识别片段起始的偏移时间，单位：秒。</p>
                      * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取识别片段终止的偏移时间，单位：秒。
-                     * @return EndTimeOffset 识别片段终止的偏移时间，单位：秒。
+                     * 获取<p>识别片段终止的偏移时间，单位：秒。</p>
+                     * @return EndTimeOffset <p>识别片段终止的偏移时间，单位：秒。</p>
                      * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
-                     * 设置识别片段终止的偏移时间，单位：秒。
-                     * @param _endTimeOffset 识别片段终止的偏移时间，单位：秒。
+                     * 设置<p>识别片段终止的偏移时间，单位：秒。</p>
+                     * @param _endTimeOffset <p>识别片段终止的偏移时间，单位：秒。</p>
                      * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool EndTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取识别片段置信度。取值：0~100。
-                     * @return Confidence 识别片段置信度。取值：0~100。
+                     * 获取<p>识别片段置信度。取值：0~100。</p>
+                     * @return Confidence <p>识别片段置信度。取值：0~100。</p>
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置识别片段置信度。取值：0~100。
-                     * @param _confidence 识别片段置信度。取值：0~100。
+                     * 设置<p>识别片段置信度。取值：0~100。</p>
+                     * @param _confidence <p>识别片段置信度。取值：0~100。</p>
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
-                     * @return AreaCoordSet 识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
+                     * 获取<p>识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。</p>
+                     * @return AreaCoordSet <p>识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。</p>
                      * 
                      */
                     std::vector<int64_t> GetAreaCoordSet() const;
 
                     /**
-                     * 设置识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
-                     * @param _areaCoordSet 识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
+                     * 设置<p>识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。</p>
+                     * @param _areaCoordSet <p>识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。</p>
                      * 
                      */
                     void SetAreaCoordSet(const std::vector<int64_t>& _areaCoordSet);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 识别片段起始的偏移时间，单位：秒。
+                     * <p>识别片段起始的偏移时间，单位：秒。</p>
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
-                     * 识别片段终止的偏移时间，单位：秒。
+                     * <p>识别片段终止的偏移时间，单位：秒。</p>
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;
 
                     /**
-                     * 识别片段置信度。取值：0~100。
+                     * <p>识别片段置信度。取值：0~100。</p>
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
+                     * <p>识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。</p>
                      */
                     std::vector<int64_t> m_areaCoordSet;
                     bool m_areaCoordSetHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分发配置的域名(已废弃）。
-                     * @return DomainName 分发配置的域名(已废弃）。
+                     * 获取<p>分发配置的域名(已废弃）。</p>
+                     * @return DomainName <p>分发配置的域名(已废弃）。</p>
                      * @deprecated
                      */
                     std::string GetDomainName() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取分发配置的域名。
-                     * @return Domain 分发配置的域名。
+                     * 获取<p>分发配置的域名。</p>
+                     * @return Domain <p>分发配置的域名。</p>
                      * 
                      */
                     std::string GetDomain() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取分发配置的协议，为 HTTP 或 HTTPS。
-                     * @return Scheme 分发配置的协议，为 HTTP 或 HTTPS。
+                     * 获取<p>分发配置的协议，为 HTTP 或 HTTPS。</p>
+                     * @return Scheme <p>分发配置的协议，为 HTTP 或 HTTPS。</p>
                      * 
                      */
                     std::string GetScheme() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool SchemeHasBeenSet() const;
 
                     /**
-                     * 获取播放密钥，由大小写字母（a - Z）或者数字（0 - 9）组成，长度在8 - 20个字符之间。
-                     * @return PlayKey 播放密钥，由大小写字母（a - Z）或者数字（0 - 9）组成，长度在8 - 20个字符之间。
+                     * 获取<p>播放密钥，由大小写字母（a - Z）或者数字（0 - 9）组成，长度在8 - 20个字符之间。</p>
+                     * @return PlayKey <p>播放密钥，由大小写字母（a - Z）或者数字（0 - 9）组成，长度在8 - 20个字符之间。</p>
                      * 
                      */
                     std::string GetPlayKey() const;
@@ -102,25 +102,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分发配置的域名(已废弃）。
+                     * <p>分发配置的域名(已废弃）。</p>
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 分发配置的域名。
+                     * <p>分发配置的域名。</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 分发配置的协议，为 HTTP 或 HTTPS。
+                     * <p>分发配置的协议，为 HTTP 或 HTTPS。</p>
                      */
                     std::string m_scheme;
                     bool m_schemeHasBeenSet;
 
                     /**
-                     * 播放密钥，由大小写字母（a - Z）或者数字（0 - 9）组成，长度在8 - 20个字符之间。
+                     * <p>播放密钥，由大小写字母（a - Z）或者数字（0 - 9）组成，长度在8 - 20个字符之间。</p>
                      */
                     std::string m_playKey;
                     bool m_playKeyHasBeenSet;

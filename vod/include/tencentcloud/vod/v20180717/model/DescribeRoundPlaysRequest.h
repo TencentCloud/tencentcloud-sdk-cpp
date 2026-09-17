@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 获取<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @return SubAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @param _subAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 设置<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @param _subAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件：轮播播单标识，数组长度限制：100。
-                     * @return RoundPlayIds 过滤条件：轮播播单标识，数组长度限制：100。
+                     * 获取<p>过滤条件：轮播播单标识，数组长度限制：100。</p>
+                     * @return RoundPlayIds <p>过滤条件：轮播播单标识，数组长度限制：100。</p>
                      * 
                      */
                     std::vector<std::string> GetRoundPlayIds() const;
 
                     /**
-                     * 设置过滤条件：轮播播单标识，数组长度限制：100。
-                     * @param _roundPlayIds 过滤条件：轮播播单标识，数组长度限制：100。
+                     * 设置<p>过滤条件：轮播播单标识，数组长度限制：100。</p>
+                     * @param _roundPlayIds <p>过滤条件：轮播播单标识，数组长度限制：100。</p>
                      * 
                      */
                     void SetRoundPlayIds(const std::vector<std::string>& _roundPlayIds);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool RoundPlayIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，轮播播单状态，可选值： <li>Enabled：启动状态；</li> <li>Disabled：停止状态。</li>
-                     * @return Status 过滤条件，轮播播单状态，可选值： <li>Enabled：启动状态；</li> <li>Disabled：停止状态。</li>
+                     * 获取<p>过滤条件，轮播播单状态，可选值： <li>Enabled：启动状态；</li> <li>Disabled：停止状态。</li></p>
+                     * @return Status <p>过滤条件，轮播播单状态，可选值： <li>Enabled：启动状态；</li> <li>Disabled：停止状态。</li></p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置过滤条件，轮播播单状态，可选值： <li>Enabled：启动状态；</li> <li>Disabled：停止状态。</li>
-                     * @param _status 过滤条件，轮播播单状态，可选值： <li>Enabled：启动状态；</li> <li>Disabled：停止状态。</li>
+                     * 设置<p>过滤条件，轮播播单状态，可选值： <li>Enabled：启动状态；</li> <li>Disabled：停止状态。</li></p>
+                     * @param _status <p>过滤条件，轮播播单状态，可选值： <li>Enabled：启动状态；</li> <li>Disabled：停止状态。</li></p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件：轮播播单创建时间。
-                     * @return CreateTime 过滤条件：轮播播单创建时间。
+                     * 获取<p>过滤条件：轮播播单创建时间。</p>
+                     * @return CreateTime <p>过滤条件：轮播播单创建时间。</p>
                      * 
                      */
                     TimeRange GetCreateTime() const;
 
                     /**
-                     * 设置过滤条件：轮播播单创建时间。
-                     * @param _createTime 过滤条件：轮播播单创建时间。
+                     * 设置<p>过滤条件：轮播播单创建时间。</p>
+                     * @param _createTime <p>过滤条件：轮播播单创建时间。</p>
                      * 
                      */
                     void SetCreateTime(const TimeRange& _createTime);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件：轮播播单更新时间。
-                     * @return UpdateTime 过滤条件：轮播播单更新时间。
+                     * 获取<p>过滤条件：轮播播单更新时间。</p>
+                     * @return UpdateTime <p>过滤条件：轮播播单更新时间。</p>
                      * 
                      */
                     TimeRange GetUpdateTime() const;
 
                     /**
-                     * 设置过滤条件：轮播播单更新时间。
-                     * @param _updateTime 过滤条件：轮播播单更新时间。
+                     * 设置<p>过滤条件：轮播播单更新时间。</p>
+                     * @param _updateTime <p>过滤条件：轮播播单更新时间。</p>
                      * 
                      */
                     void SetUpdateTime(const TimeRange& _updateTime);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。
-                     * @return ScrollToken 翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。
+                     * 获取<p>翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。</p>
+                     * @return ScrollToken <p>翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。</p>
                      * 
                      */
                     std::string GetScrollToken() const;
 
                     /**
-                     * 设置翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。
-                     * @param _scrollToken 翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。
+                     * 设置<p>翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。</p>
+                     * @param _scrollToken <p>翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。</p>
                      * 
                      */
                     void SetScrollToken(const std::string& _scrollToken);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool ScrollTokenHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。
-                     * @return Offset 分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。
+                     * 获取<p>分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。</p>
+                     * @return Offset <p>分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。</p>
                      * @deprecated
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。
-                     * @param _offset 分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。
+                     * 设置<p>分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。</p>
+                     * @param _offset <p>分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。</p>
                      * @deprecated
                      */
                     void SetOffset(const int64_t& _offset);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回记录条数，默认值：10，最大值：100。
-                     * @return Limit 返回记录条数，默认值：10，最大值：100。
+                     * 获取<p>返回记录条数，默认值：10，最大值：100。</p>
+                     * @return Limit <p>返回记录条数，默认值：10，最大值：100。</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回记录条数，默认值：10，最大值：100。
-                     * @param _limit 返回记录条数，默认值：10，最大值：100。
+                     * 设置<p>返回记录条数，默认值：10，最大值：100。</p>
+                     * @param _limit <p>返回记录条数，默认值：10，最大值：100。</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -214,49 +214,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 过滤条件：轮播播单标识，数组长度限制：100。
+                     * <p>过滤条件：轮播播单标识，数组长度限制：100。</p>
                      */
                     std::vector<std::string> m_roundPlayIds;
                     bool m_roundPlayIdsHasBeenSet;
 
                     /**
-                     * 过滤条件，轮播播单状态，可选值： <li>Enabled：启动状态；</li> <li>Disabled：停止状态。</li>
+                     * <p>过滤条件，轮播播单状态，可选值： <li>Enabled：启动状态；</li> <li>Disabled：停止状态。</li></p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 过滤条件：轮播播单创建时间。
+                     * <p>过滤条件：轮播播单创建时间。</p>
                      */
                     TimeRange m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 过滤条件：轮播播单更新时间。
+                     * <p>过滤条件：轮播播单更新时间。</p>
                      */
                     TimeRange m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。
+                     * <p>翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。</p>
                      */
                     std::string m_scrollToken;
                     bool m_scrollTokenHasBeenSet;
 
                     /**
-                     * 分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。
+                     * <p>分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回记录条数，默认值：10，最大值：100。
+                     * <p>返回记录条数，默认值：10，最大值：100。</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

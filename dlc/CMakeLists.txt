@@ -51,6 +51,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/GetRayClusterResponse.h
   include/tencentcloud/dlc/v20210125/model/DeleteNativeSparkSessionResponse.h
   include/tencentcloud/dlc/v20210125/model/AlterTableCommentResponse.h
+  include/tencentcloud/dlc/v20210125/model/CloudTag.h
   include/tencentcloud/dlc/v20210125/model/ImportTkeClusterRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeEngineUsageInfoRequest.h
   include/tencentcloud/dlc/v20210125/model/TrainingTuningParams.h
@@ -322,6 +323,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/FlowDetail.h
   include/tencentcloud/dlc/v20210125/model/DescribePartitionsResponse.h
   include/tencentcloud/dlc/v20210125/model/GetRayClusterYamlRequest.h
+  include/tencentcloud/dlc/v20210125/model/TextFile.h
   include/tencentcloud/dlc/v20210125/model/DescribeModelTaskOptionsResponse.h
   include/tencentcloud/dlc/v20210125/model/DeleteUserResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateUserRoleRequest.h
@@ -372,7 +374,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeTCLakeMetaInstanceRequest.h
   include/tencentcloud/dlc/v20210125/model/AttachUserPolicyRequest.h
   include/tencentcloud/dlc/v20210125/model/CancelTaskRequest.h
-  include/tencentcloud/dlc/v20210125/model/TextFile.h
+  include/tencentcloud/dlc/v20210125/model/SchedulableLimit.h
   include/tencentcloud/dlc/v20210125/model/EmrResourceUsage.h
   include/tencentcloud/dlc/v20210125/model/CreateNotebookSessionStatementResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeMlflowServerPodsResponse.h
@@ -594,6 +596,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/StandardEngineResourceGroupInfo.h
   include/tencentcloud/dlc/v20210125/model/CreateStandardEngineResourceGroupResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateDatasourceConnectionRequest.h
+  include/tencentcloud/dlc/v20210125/model/QueueResourceQuota.h
   include/tencentcloud/dlc/v20210125/model/GrantDLCCatalogAccessRequest.h
   include/tencentcloud/dlc/v20210125/model/ReportHeartbeatMetaDataRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeEngineNetworksResponse.h
@@ -1012,6 +1015,7 @@ set(dlc_src
   src/v20210125/model/GetRayClusterResponse.cpp
   src/v20210125/model/DeleteNativeSparkSessionResponse.cpp
   src/v20210125/model/AlterTableCommentResponse.cpp
+  src/v20210125/model/CloudTag.cpp
   src/v20210125/model/ImportTkeClusterRequest.cpp
   src/v20210125/model/DescribeEngineUsageInfoRequest.cpp
   src/v20210125/model/TrainingTuningParams.cpp
@@ -1283,6 +1287,7 @@ set(dlc_src
   src/v20210125/model/FlowDetail.cpp
   src/v20210125/model/DescribePartitionsResponse.cpp
   src/v20210125/model/GetRayClusterYamlRequest.cpp
+  src/v20210125/model/TextFile.cpp
   src/v20210125/model/DescribeModelTaskOptionsResponse.cpp
   src/v20210125/model/DeleteUserResponse.cpp
   src/v20210125/model/CreateUserRoleRequest.cpp
@@ -1333,7 +1338,7 @@ set(dlc_src
   src/v20210125/model/DescribeTCLakeMetaInstanceRequest.cpp
   src/v20210125/model/AttachUserPolicyRequest.cpp
   src/v20210125/model/CancelTaskRequest.cpp
-  src/v20210125/model/TextFile.cpp
+  src/v20210125/model/SchedulableLimit.cpp
   src/v20210125/model/EmrResourceUsage.cpp
   src/v20210125/model/CreateNotebookSessionStatementResponse.cpp
   src/v20210125/model/DescribeMlflowServerPodsResponse.cpp
@@ -1555,6 +1560,7 @@ set(dlc_src
   src/v20210125/model/StandardEngineResourceGroupInfo.cpp
   src/v20210125/model/CreateStandardEngineResourceGroupResponse.cpp
   src/v20210125/model/CreateDatasourceConnectionRequest.cpp
+  src/v20210125/model/QueueResourceQuota.cpp
   src/v20210125/model/GrantDLCCatalogAccessRequest.cpp
   src/v20210125/model/ReportHeartbeatMetaDataRequest.cpp
   src/v20210125/model/DescribeEngineNetworksResponse.cpp

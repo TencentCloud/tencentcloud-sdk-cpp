@@ -411,6 +411,27 @@ namespace TencentCloud
                     bool QueueHasBeenSet() const;
 
                     /**
+                     * 获取<p>所属队列别名</p>
+                     * @return QueueAlias <p>所属队列别名</p>
+                     * 
+                     */
+                    std::string GetQueueAlias() const;
+
+                    /**
+                     * 设置<p>所属队列别名</p>
+                     * @param _queueAlias <p>所属队列别名</p>
+                     * 
+                     */
+                    void SetQueueAlias(const std::string& _queueAlias);
+
+                    /**
+                     * 判断参数 QueueAlias 是否已赋值
+                     * @return QueueAlias 是否已赋值
+                     * 
+                     */
+                    bool QueueAliasHasBeenSet() const;
+
+                    /**
                      * 获取<p>Checkpoint 挂载摘要</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckpointMountInfo <p>Checkpoint 挂载摘要</p>
@@ -964,6 +985,12 @@ namespace TencentCloud
                      */
                     std::string m_queue;
                     bool m_queueHasBeenSet;
+
+                    /**
+                     * <p>所属队列别名</p>
+                     */
+                    std::string m_queueAlias;
+                    bool m_queueAliasHasBeenSet;
 
                     /**
                      * <p>Checkpoint 挂载摘要</p>

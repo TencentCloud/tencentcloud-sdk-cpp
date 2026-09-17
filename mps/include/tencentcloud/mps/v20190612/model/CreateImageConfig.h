@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>生图模型</p><p>枚举值：</p><ul><li>WAND-create-1.0-lite： 轻量生图模型</li><li>WAND-create-1.0-flash： 质量-速度平衡生图模型</li><li>WAND-create-1.0-pro： 高质量生图模型</li></ul>
-                     * @return Model <p>生图模型</p><p>枚举值：</p><ul><li>WAND-create-1.0-lite： 轻量生图模型</li><li>WAND-create-1.0-flash： 质量-速度平衡生图模型</li><li>WAND-create-1.0-pro： 高质量生图模型</li></ul>
+                     * 获取<p>生图模型</p><p>枚举值：</p><ul><li>scene-image-lite： 场景生图 lite 模型</li></ul>
+                     * @return Model <p>生图模型</p><p>枚举值：</p><ul><li>scene-image-lite： 场景生图 lite 模型</li></ul>
                      * 
                      */
                     std::string GetModel() const;
 
                     /**
-                     * 设置<p>生图模型</p><p>枚举值：</p><ul><li>WAND-create-1.0-lite： 轻量生图模型</li><li>WAND-create-1.0-flash： 质量-速度平衡生图模型</li><li>WAND-create-1.0-pro： 高质量生图模型</li></ul>
-                     * @param _model <p>生图模型</p><p>枚举值：</p><ul><li>WAND-create-1.0-lite： 轻量生图模型</li><li>WAND-create-1.0-flash： 质量-速度平衡生图模型</li><li>WAND-create-1.0-pro： 高质量生图模型</li></ul>
+                     * 设置<p>生图模型</p><p>枚举值：</p><ul><li>scene-image-lite： 场景生图 lite 模型</li></ul>
+                     * @param _model <p>生图模型</p><p>枚举值：</p><ul><li>scene-image-lite： 场景生图 lite 模型</li></ul>
                      * 
                      */
                     void SetModel(const std::string& _model);
@@ -154,7 +154,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>生图模型</p><p>枚举值：</p><ul><li>WAND-create-1.0-lite： 轻量生图模型</li><li>WAND-create-1.0-flash： 质量-速度平衡生图模型</li><li>WAND-create-1.0-pro： 高质量生图模型</li></ul>
+                     * <p>生图模型</p><p>枚举值：</p><ul><li>scene-image-lite： 场景生图 lite 模型</li></ul>
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;

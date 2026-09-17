@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>视角类型</p><p>枚举值：</p><ul><li>front： 正视图 （必填）</li><li>back： 背视图</li><li>left： 左视图</li><li>right： 右视图</li><li>top： 顶视图</li><li>bottom： 底视图</li><li>left_front： 左前 45°</li><li>right_front： 右前 45°</li></ul><p>MultiViewImages 数组长度 ≥ 2 ; 必须包含 front 视角;  同一 ViewType 不允许重复; 每项必须提供 ViewImageUrl</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ViewType <p>视角类型</p><p>枚举值：</p><ul><li>front： 正视图 （必填）</li><li>back： 背视图</li><li>left： 左视图</li><li>right： 右视图</li><li>top： 顶视图</li><li>bottom： 底视图</li><li>left_front： 左前 45°</li><li>right_front： 右前 45°</li></ul><p>MultiViewImages 数组长度 ≥ 2 ; 必须包含 front 视角;  同一 ViewType 不允许重复; 每项必须提供 ViewImageUrl</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetViewType() const;
 
                     /**
                      * 设置<p>视角类型</p><p>枚举值：</p><ul><li>front： 正视图 （必填）</li><li>back： 背视图</li><li>left： 左视图</li><li>right： 右视图</li><li>top： 顶视图</li><li>bottom： 底视图</li><li>left_front： 左前 45°</li><li>right_front： 右前 45°</li></ul><p>MultiViewImages 数组长度 ≥ 2 ; 必须包含 front 视角;  同一 ViewType 不允许重复; 每项必须提供 ViewImageUrl</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _viewType <p>视角类型</p><p>枚举值：</p><ul><li>front： 正视图 （必填）</li><li>back： 背视图</li><li>left： 左视图</li><li>right： 右视图</li><li>top： 顶视图</li><li>bottom： 底视图</li><li>left_front： 左前 45°</li><li>right_front： 右前 45°</li></ul><p>MultiViewImages 数组长度 ≥ 2 ; 必须包含 front 视角;  同一 ViewType 不允许重复; 每项必须提供 ViewImageUrl</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetViewType(const std::string& _viewType);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>图片 URL（http / https）</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ViewImageUrl <p>图片 URL（http / https）</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetViewImageUrl() const;
 
                     /**
                      * 设置<p>图片 URL（http / https）</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _viewImageUrl <p>图片 URL（http / https）</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetViewImageUrl(const std::string& _viewImageUrl);
@@ -92,12 +100,14 @@ namespace TencentCloud
 
                     /**
                      * <p>视角类型</p><p>枚举值：</p><ul><li>front： 正视图 （必填）</li><li>back： 背视图</li><li>left： 左视图</li><li>right： 右视图</li><li>top： 顶视图</li><li>bottom： 底视图</li><li>left_front： 左前 45°</li><li>right_front： 右前 45°</li></ul><p>MultiViewImages 数组长度 ≥ 2 ; 必须包含 front 视角;  同一 ViewType 不允许重复; 每项必须提供 ViewImageUrl</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_viewType;
                     bool m_viewTypeHasBeenSet;
 
                     /**
                      * <p>图片 URL（http / https）</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_viewImageUrl;
                     bool m_viewImageUrlHasBeenSet;

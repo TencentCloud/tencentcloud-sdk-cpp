@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户网关唯一ID
-                     * @return CustomerGatewayId 用户网关唯一ID
+                     * 获取<p>用户网关唯一ID</p>
+                     * @return CustomerGatewayId <p>用户网关唯一ID</p>
                      * 
                      */
                     std::string GetCustomerGatewayId() const;
 
                     /**
-                     * 设置用户网关唯一ID
-                     * @param _customerGatewayId 用户网关唯一ID
+                     * 设置<p>用户网关唯一ID</p>
+                     * @param _customerGatewayId <p>用户网关唯一ID</p>
                      * 
                      */
                     void SetCustomerGatewayId(const std::string& _customerGatewayId);
@@ -68,15 +69,15 @@ namespace TencentCloud
                     bool CustomerGatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取网关名称
-                     * @return CustomerGatewayName 网关名称
+                     * 获取<p>网关名称</p>
+                     * @return CustomerGatewayName <p>网关名称</p>
                      * 
                      */
                     std::string GetCustomerGatewayName() const;
 
                     /**
-                     * 设置网关名称
-                     * @param _customerGatewayName 网关名称
+                     * 设置<p>网关名称</p>
+                     * @param _customerGatewayName <p>网关名称</p>
                      * 
                      */
                     void SetCustomerGatewayName(const std::string& _customerGatewayName);
@@ -89,15 +90,15 @@ namespace TencentCloud
                     bool CustomerGatewayNameHasBeenSet() const;
 
                     /**
-                     * 获取公网地址
-                     * @return IpAddress 公网地址
+                     * 获取<p>公网地址</p>
+                     * @return IpAddress <p>公网地址</p>
                      * 
                      */
                     std::string GetIpAddress() const;
 
                     /**
-                     * 设置公网地址
-                     * @param _ipAddress 公网地址
+                     * 设置<p>公网地址</p>
+                     * @param _ipAddress <p>公网地址</p>
                      * 
                      */
                     void SetIpAddress(const std::string& _ipAddress);
@@ -110,15 +111,15 @@ namespace TencentCloud
                     bool IpAddressHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreatedTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreatedTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createdTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createdTime <p>创建时间</p>
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -131,15 +132,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取BGP ASN。
-                     * @return BgpAsn BGP ASN。
+                     * 获取<p>BGP ASN。</p>
+                     * @return BgpAsn <p>BGP ASN。</p>
                      * 
                      */
                     uint64_t GetBgpAsn() const;
 
                     /**
-                     * 设置BGP ASN。
-                     * @param _bgpAsn BGP ASN。
+                     * 设置<p>BGP ASN。</p>
+                     * @param _bgpAsn <p>BGP ASN。</p>
                      * 
                      */
                     void SetBgpAsn(const uint64_t& _bgpAsn);
@@ -151,37 +152,91 @@ namespace TencentCloud
                      */
                     bool BgpAsnHasBeenSet() const;
 
+                    /**
+                     * 获取<p>关联通道数</p>
+                     * @return VpnConnNum <p>关联通道数</p>
+                     * 
+                     */
+                    uint64_t GetVpnConnNum() const;
+
+                    /**
+                     * 设置<p>关联通道数</p>
+                     * @param _vpnConnNum <p>关联通道数</p>
+                     * 
+                     */
+                    void SetVpnConnNum(const uint64_t& _vpnConnNum);
+
+                    /**
+                     * 判断参数 VpnConnNum 是否已赋值
+                     * @return VpnConnNum 是否已赋值
+                     * 
+                     */
+                    bool VpnConnNumHasBeenSet() const;
+
+                    /**
+                     * 获取<p>标签信息</p>
+                     * @return TagSet <p>标签信息</p>
+                     * 
+                     */
+                    std::vector<Tag> GetTagSet() const;
+
+                    /**
+                     * 设置<p>标签信息</p>
+                     * @param _tagSet <p>标签信息</p>
+                     * 
+                     */
+                    void SetTagSet(const std::vector<Tag>& _tagSet);
+
+                    /**
+                     * 判断参数 TagSet 是否已赋值
+                     * @return TagSet 是否已赋值
+                     * 
+                     */
+                    bool TagSetHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 用户网关唯一ID
+                     * <p>用户网关唯一ID</p>
                      */
                     std::string m_customerGatewayId;
                     bool m_customerGatewayIdHasBeenSet;
 
                     /**
-                     * 网关名称
+                     * <p>网关名称</p>
                      */
                     std::string m_customerGatewayName;
                     bool m_customerGatewayNameHasBeenSet;
 
                     /**
-                     * 公网地址
+                     * <p>公网地址</p>
                      */
                     std::string m_ipAddress;
                     bool m_ipAddressHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * BGP ASN。
+                     * <p>BGP ASN。</p>
                      */
                     uint64_t m_bgpAsn;
                     bool m_bgpAsnHasBeenSet;
+
+                    /**
+                     * <p>关联通道数</p>
+                     */
+                    uint64_t m_vpnConnNum;
+                    bool m_vpnConnNumHasBeenSet;
+
+                    /**
+                     * <p>标签信息</p>
+                     */
+                    std::vector<Tag> m_tagSet;
+                    bool m_tagSetHasBeenSet;
 
                 };
             }

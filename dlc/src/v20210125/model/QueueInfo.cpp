@@ -23,7 +23,9 @@ using namespace std;
 QueueInfo::QueueInfo() :
     m_idHasBeenSet(false),
     m_queueNameHasBeenSet(false),
+    m_aliasHasBeenSet(false),
     m_resourceUsageHasBeenSet(false),
+    m_resourceQuotasHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_isDefaultHasBeenSet(false),
     m_queueTypeHasBeenSet(false)
@@ -55,6 +57,16 @@ CoreInternalOutcome QueueInfo::Deserialize(const rapidjson::Value &value)
         m_queueNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Alias") && !value["Alias"].IsNull())
+    {
+        if (!value["Alias"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueueInfo.Alias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alias = string(value["Alias"].GetString());
+        m_aliasHasBeenSet = true;
+    }
+
     if (value.HasMember("ResourceUsage") && !value["ResourceUsage"].IsNull())
     {
         if (!value["ResourceUsage"].IsArray())
@@ -73,6 +85,26 @@ CoreInternalOutcome QueueInfo::Deserialize(const rapidjson::Value &value)
             m_resourceUsage.push_back(item);
         }
         m_resourceUsageHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceQuotas") && !value["ResourceQuotas"].IsNull())
+    {
+        if (!value["ResourceQuotas"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `QueueInfo.ResourceQuotas` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ResourceQuotas"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            QueueResourceQuota item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_resourceQuotas.push_back(item);
+        }
+        m_resourceQuotasHasBeenSet = true;
     }
 
     if (value.HasMember("Description") && !value["Description"].IsNull())
@@ -128,6 +160,14 @@ void QueueInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_aliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Alias";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alias.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_resourceUsageHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -137,6 +177,21 @@ void QueueInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
 
         int i=0;
         for (auto itr = m_resourceUsage.begin(); itr != m_resourceUsage.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_resourceQuotasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceQuotas";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceQuotas.begin(); itr != m_resourceQuotas.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -202,6 +257,22 @@ bool QueueInfo::QueueNameHasBeenSet() const
     return m_queueNameHasBeenSet;
 }
 
+string QueueInfo::GetAlias() const
+{
+    return m_alias;
+}
+
+void QueueInfo::SetAlias(const string& _alias)
+{
+    m_alias = _alias;
+    m_aliasHasBeenSet = true;
+}
+
+bool QueueInfo::AliasHasBeenSet() const
+{
+    return m_aliasHasBeenSet;
+}
+
 vector<ResourceUsage> QueueInfo::GetResourceUsage() const
 {
     return m_resourceUsage;
@@ -216,6 +287,22 @@ void QueueInfo::SetResourceUsage(const vector<ResourceUsage>& _resourceUsage)
 bool QueueInfo::ResourceUsageHasBeenSet() const
 {
     return m_resourceUsageHasBeenSet;
+}
+
+vector<QueueResourceQuota> QueueInfo::GetResourceQuotas() const
+{
+    return m_resourceQuotas;
+}
+
+void QueueInfo::SetResourceQuotas(const vector<QueueResourceQuota>& _resourceQuotas)
+{
+    m_resourceQuotas = _resourceQuotas;
+    m_resourceQuotasHasBeenSet = true;
+}
+
+bool QueueInfo::ResourceQuotasHasBeenSet() const
+{
+    return m_resourceQuotasHasBeenSet;
 }
 
 string QueueInfo::GetDescription() const

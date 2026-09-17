@@ -149,6 +149,27 @@ namespace TencentCloud
                      */
                     bool PageSizeHasBeenSet() const;
 
+                    /**
+                     * 获取是否返回队列实时余量（ResourceQuotas），默认 false 不返回。余量需实时查询 Prometheus，仅在需要时透传 true。Used 为计费 spec 口径（队列内业务容器 Pod limits，经 kube_pod_labels 队列过滤），依赖 kube_pod_labels 指标采集
+                     * @return ShowResourceQuotas 是否返回队列实时余量（ResourceQuotas），默认 false 不返回。余量需实时查询 Prometheus，仅在需要时透传 true。Used 为计费 spec 口径（队列内业务容器 Pod limits，经 kube_pod_labels 队列过滤），依赖 kube_pod_labels 指标采集
+                     * 
+                     */
+                    bool GetShowResourceQuotas() const;
+
+                    /**
+                     * 设置是否返回队列实时余量（ResourceQuotas），默认 false 不返回。余量需实时查询 Prometheus，仅在需要时透传 true。Used 为计费 spec 口径（队列内业务容器 Pod limits，经 kube_pod_labels 队列过滤），依赖 kube_pod_labels 指标采集
+                     * @param _showResourceQuotas 是否返回队列实时余量（ResourceQuotas），默认 false 不返回。余量需实时查询 Prometheus，仅在需要时透传 true。Used 为计费 spec 口径（队列内业务容器 Pod limits，经 kube_pod_labels 队列过滤），依赖 kube_pod_labels 指标采集
+                     * 
+                     */
+                    void SetShowResourceQuotas(const bool& _showResourceQuotas);
+
+                    /**
+                     * 判断参数 ShowResourceQuotas 是否已赋值
+                     * @return ShowResourceQuotas 是否已赋值
+                     * 
+                     */
+                    bool ShowResourceQuotasHasBeenSet() const;
+
                 private:
 
                     /**
@@ -180,6 +201,12 @@ namespace TencentCloud
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * 是否返回队列实时余量（ResourceQuotas），默认 false 不返回。余量需实时查询 Prometheus，仅在需要时透传 true。Used 为计费 spec 口径（队列内业务容器 Pod limits，经 kube_pod_labels 队列过滤），依赖 kube_pod_labels 指标采集
+                     */
+                    bool m_showResourceQuotas;
+                    bool m_showResourceQuotasHasBeenSet;
 
                 };
             }

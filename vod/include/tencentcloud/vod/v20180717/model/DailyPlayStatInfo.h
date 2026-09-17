@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取播放媒体文件的日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @return Date 播放媒体文件的日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 获取<p>播放媒体文件的日期，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @return Date <p>播放媒体文件的日期，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     std::string GetDate() const;
 
                     /**
-                     * 设置播放媒体文件的日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param _date 播放媒体文件的日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 设置<p>播放媒体文件的日期，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @param _date <p>播放媒体文件的日期，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     void SetDate(const std::string& _date);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DateHasBeenSet() const;
 
                     /**
-                     * 获取媒体文件ID。
-                     * @return FileId 媒体文件ID。
+                     * 获取<p>媒体文件ID。</p>
+                     * @return FileId <p>媒体文件ID。</p>
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置媒体文件ID。
-                     * @param _fileId 媒体文件ID。
+                     * 设置<p>媒体文件ID。</p>
+                     * @param _fileId <p>媒体文件ID。</p>
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取播放次数。
-                     * @return PlayTimes 播放次数。
+                     * 获取<p>播放次数。</p>
+                     * @return PlayTimes <p>播放次数。</p>
                      * 
                      */
                     uint64_t GetPlayTimes() const;
 
                     /**
-                     * 设置播放次数。
-                     * @param _playTimes 播放次数。
+                     * 设置<p>播放次数。</p>
+                     * @param _playTimes <p>播放次数。</p>
                      * 
                      */
                     void SetPlayTimes(const uint64_t& _playTimes);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool PlayTimesHasBeenSet() const;
 
                     /**
-                     * 获取播放流量，单位：字节。
-                     * @return Traffic 播放流量，单位：字节。
+                     * 获取<p>播放流量，单位：字节。</p>
+                     * @return Traffic <p>播放流量，单位：字节。</p>
                      * 
                      */
                     uint64_t GetTraffic() const;
 
                     /**
-                     * 设置播放流量，单位：字节。
-                     * @param _traffic 播放流量，单位：字节。
+                     * 设置<p>播放流量，单位：字节。</p>
+                     * @param _traffic <p>播放流量，单位：字节。</p>
                      * 
                      */
                     void SetTraffic(const uint64_t& _traffic);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 播放媒体文件的日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * <p>播放媒体文件的日期，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      */
                     std::string m_date;
                     bool m_dateHasBeenSet;
 
                     /**
-                     * 媒体文件ID。
+                     * <p>媒体文件ID。</p>
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 播放次数。
+                     * <p>播放次数。</p>
                      */
                     uint64_t m_playTimes;
                     bool m_playTimesHasBeenSet;
 
                     /**
-                     * 播放流量，单位：字节。
+                     * <p>播放流量，单位：字节。</p>
                      */
                     uint64_t m_traffic;
                     bool m_trafficHasBeenSet;

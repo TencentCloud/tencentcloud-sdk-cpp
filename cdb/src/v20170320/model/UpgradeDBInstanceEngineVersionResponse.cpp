@@ -24,7 +24,8 @@ using namespace TencentCloud::Cdb::V20170320::Model;
 using namespace std;
 
 UpgradeDBInstanceEngineVersionResponse::UpgradeDBInstanceEngineVersionResponse() :
-    m_asyncRequestIdHasBeenSet(false)
+    m_asyncRequestIdHasBeenSet(false),
+    m_jobIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome UpgradeDBInstanceEngineVersionResponse::Deserialize(const st
         m_asyncRequestIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("JobId") && !rsp["JobId"].IsNull())
+    {
+        if (!rsp["JobId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobId = rsp["JobId"].GetInt64();
+        m_jobIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string UpgradeDBInstanceEngineVersionResponse::ToJsonString() const
         string key = "AsyncRequestId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_asyncRequestId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_jobId, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ string UpgradeDBInstanceEngineVersionResponse::GetAsyncRequestId() const
 bool UpgradeDBInstanceEngineVersionResponse::AsyncRequestIdHasBeenSet() const
 {
     return m_asyncRequestIdHasBeenSet;
+}
+
+int64_t UpgradeDBInstanceEngineVersionResponse::GetJobId() const
+{
+    return m_jobId;
+}
+
+bool UpgradeDBInstanceEngineVersionResponse::JobIdHasBeenSet() const
+{
+    return m_jobIdHasBeenSet;
 }
 
 

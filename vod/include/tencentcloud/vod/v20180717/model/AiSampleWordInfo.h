@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取关键词，长度限制：20 个字符。
-                     * @return Keyword 关键词，长度限制：20 个字符。
+                     * 获取<p>关键词，长度限制：20 个字符。</p>
+                     * @return Keyword <p>关键词，长度限制：20 个字符。</p>
                      * 
                      */
                     std::string GetKeyword() const;
 
                     /**
-                     * 设置关键词，长度限制：20 个字符。
-                     * @param _keyword 关键词，长度限制：20 个字符。
+                     * 设置<p>关键词，长度限制：20 个字符。</p>
+                     * @param _keyword <p>关键词，长度限制：20 个字符。</p>
                      * 
                      */
                     void SetKeyword(const std::string& _keyword);
@@ -68,23 +68,15 @@ namespace TencentCloud
                     bool KeywordHasBeenSet() const;
 
                     /**
-                     * 获取关键词标签
-<li>数组长度限制：20 个标签；</li>
-<li>单个标签长度限制：128 个字符。</li>
-                     * @return Tags 关键词标签
-<li>数组长度限制：20 个标签；</li>
-<li>单个标签长度限制：128 个字符。</li>
+                     * 获取<p>关键词标签</p><li>数组长度限制：20 个标签；</li><li>单个标签长度限制：128 个字符。</li>
+                     * @return Tags <p>关键词标签</p><li>数组长度限制：20 个标签；</li><li>单个标签长度限制：128 个字符。</li>
                      * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
-                     * 设置关键词标签
-<li>数组长度限制：20 个标签；</li>
-<li>单个标签长度限制：128 个字符。</li>
-                     * @param _tags 关键词标签
-<li>数组长度限制：20 个标签；</li>
-<li>单个标签长度限制：128 个字符。</li>
+                     * 设置<p>关键词标签</p><li>数组长度限制：20 个标签；</li><li>单个标签长度限制：128 个字符。</li>
+                     * @param _tags <p>关键词标签</p><li>数组长度限制：20 个标签；</li><li>单个标签长度限制：128 个字符。</li>
                      * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
@@ -99,15 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 关键词，长度限制：20 个字符。
+                     * <p>关键词，长度限制：20 个字符。</p>
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;
 
                     /**
-                     * 关键词标签
-<li>数组长度限制：20 个标签；</li>
-<li>单个标签长度限制：128 个字符。</li>
+                     * <p>关键词标签</p><li>数组长度限制：20 个标签；</li><li>单个标签长度限制：128 个字符。</li>
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;

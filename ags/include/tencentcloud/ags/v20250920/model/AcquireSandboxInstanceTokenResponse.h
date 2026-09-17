@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool ExpiresAtHasBeenSet() const;
 
                     /**
-                     * 获取<p>非管控面（envd）的访问Token</p>
-                     * @return TrafficToken <p>非管控面（envd）的访问Token</p>
+                     * 获取<p>除管控面envd端口(49983)以外端口的访问Token</p>
+                     * @return TrafficToken <p>除管控面envd端口(49983)以外端口的访问Token</p>
                      * 
                      */
                     std::string GetTrafficToken() const;
@@ -100,7 +100,7 @@ namespace TencentCloud
                     bool m_expiresAtHasBeenSet;
 
                     /**
-                     * <p>非管控面（envd）的访问Token</p>
+                     * <p>除管控面envd端口(49983)以外端口的访问Token</p>
                      */
                     std::string m_trafficToken;
                     bool m_trafficTokenHasBeenSet;

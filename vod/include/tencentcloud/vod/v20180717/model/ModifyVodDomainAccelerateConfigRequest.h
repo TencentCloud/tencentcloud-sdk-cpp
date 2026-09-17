@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要设置加速配置的域名。
-                     * @return Domain 需要设置加速配置的域名。
+                     * 获取<p>需要设置加速配置的域名。</p>
+                     * @return Domain <p>需要设置加速配置的域名。</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置需要设置加速配置的域名。
-                     * @param _domain 需要设置加速配置的域名。
+                     * 设置<p>需要设置加速配置的域名。</p>
+                     * @param _domain <p>需要设置加速配置的域名。</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -64,27 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取区域，可选值：
-<li>Chinese Mainland：中国境内（不包含港澳台）。</li>
-<li>Outside Chinese Mainland: 中国境外。</li>
-<li>Global: 全球范围。</li>
-                     * @return Area 区域，可选值：
-<li>Chinese Mainland：中国境内（不包含港澳台）。</li>
-<li>Outside Chinese Mainland: 中国境外。</li>
-<li>Global: 全球范围。</li>
+                     * 获取<p>区域，可选值：</p><li>Chinese Mainland：中国境内（不包含港澳台）。</li><li>Outside Chinese Mainland: 中国境外。</li><li>Global: 全球范围。</li>
+                     * @return Area <p>区域，可选值：</p><li>Chinese Mainland：中国境内（不包含港澳台）。</li><li>Outside Chinese Mainland: 中国境外。</li><li>Global: 全球范围。</li>
                      * 
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置区域，可选值：
-<li>Chinese Mainland：中国境内（不包含港澳台）。</li>
-<li>Outside Chinese Mainland: 中国境外。</li>
-<li>Global: 全球范围。</li>
-                     * @param _area 区域，可选值：
-<li>Chinese Mainland：中国境内（不包含港澳台）。</li>
-<li>Outside Chinese Mainland: 中国境外。</li>
-<li>Global: 全球范围。</li>
+                     * 设置<p>区域，可选值：</p><li>Chinese Mainland：中国境内（不包含港澳台）。</li><li>Outside Chinese Mainland: 中国境外。</li><li>Global: 全球范围。</li>
+                     * @param _area <p>区域，可选值：</p><li>Chinese Mainland：中国境内（不包含港澳台）。</li><li>Outside Chinese Mainland: 中国境外。</li><li>Global: 全球范围。</li>
                      * 
                      */
                     void SetArea(const std::string& _area);
@@ -97,27 +85,15 @@ namespace TencentCloud
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取开启或者关闭所选区域的域名加速，可选值：
-<li>Enabled: 开启。</li>
-<li>Disabled：关闭。</li>
-开启中国境内加速的域名，需要先[备案域名](/document/product/243/18905)。
-                     * @return Status 开启或者关闭所选区域的域名加速，可选值：
-<li>Enabled: 开启。</li>
-<li>Disabled：关闭。</li>
-开启中国境内加速的域名，需要先[备案域名](/document/product/243/18905)。
+                     * 获取<p>开启或者关闭所选区域的域名加速，可选值：</p><li>Enabled: 开启。</li><li>Disabled：关闭。</li>开启中国境内加速的域名，需要先[备案域名](/document/product/243/18905)。
+                     * @return Status <p>开启或者关闭所选区域的域名加速，可选值：</p><li>Enabled: 开启。</li><li>Disabled：关闭。</li>开启中国境内加速的域名，需要先[备案域名](/document/product/243/18905)。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置开启或者关闭所选区域的域名加速，可选值：
-<li>Enabled: 开启。</li>
-<li>Disabled：关闭。</li>
-开启中国境内加速的域名，需要先[备案域名](/document/product/243/18905)。
-                     * @param _status 开启或者关闭所选区域的域名加速，可选值：
-<li>Enabled: 开启。</li>
-<li>Disabled：关闭。</li>
-开启中国境内加速的域名，需要先[备案域名](/document/product/243/18905)。
+                     * 设置<p>开启或者关闭所选区域的域名加速，可选值：</p><li>Enabled: 开启。</li><li>Disabled：关闭。</li>开启中国境内加速的域名，需要先[备案域名](/document/product/243/18905)。
+                     * @param _status <p>开启或者关闭所选区域的域名加速，可选值：</p><li>Enabled: 开启。</li><li>Disabled：关闭。</li>开启中国境内加速的域名，需要先[备案域名](/document/product/243/18905)。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -130,15 +106,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 获取<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @return SubAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @param _subAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 设置<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @param _subAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -153,31 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要设置加速配置的域名。
+                     * <p>需要设置加速配置的域名。</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 区域，可选值：
-<li>Chinese Mainland：中国境内（不包含港澳台）。</li>
-<li>Outside Chinese Mainland: 中国境外。</li>
-<li>Global: 全球范围。</li>
+                     * <p>区域，可选值：</p><li>Chinese Mainland：中国境内（不包含港澳台）。</li><li>Outside Chinese Mainland: 中国境外。</li><li>Global: 全球范围。</li>
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
 
                     /**
-                     * 开启或者关闭所选区域的域名加速，可选值：
-<li>Enabled: 开启。</li>
-<li>Disabled：关闭。</li>
-开启中国境内加速的域名，需要先[备案域名](/document/product/243/18905)。
+                     * <p>开启或者关闭所选区域的域名加速，可选值：</p><li>Enabled: 开启。</li><li>Disabled：关闭。</li>开启中国境内加速的域名，需要先[备案域名](/document/product/243/18905)。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;

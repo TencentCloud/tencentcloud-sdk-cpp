@@ -25,7 +25,9 @@ CustomerGateway::CustomerGateway() :
     m_customerGatewayNameHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_bgpAsnHasBeenSet(false)
+    m_bgpAsnHasBeenSet(false),
+    m_vpnConnNumHasBeenSet(false),
+    m_tagSetHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,36 @@ CoreInternalOutcome CustomerGateway::Deserialize(const rapidjson::Value &value)
         m_bgpAsnHasBeenSet = true;
     }
 
+    if (value.HasMember("VpnConnNum") && !value["VpnConnNum"].IsNull())
+    {
+        if (!value["VpnConnNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomerGateway.VpnConnNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpnConnNum = value["VpnConnNum"].GetUint64();
+        m_vpnConnNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
+    {
+        if (!value["TagSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CustomerGateway.TagSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagSet.push_back(item);
+        }
+        m_tagSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +161,29 @@ void CustomerGateway::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "BgpAsn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bgpAsn, allocator);
+    }
+
+    if (m_vpnConnNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpnConnNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vpnConnNum, allocator);
+    }
+
+    if (m_tagSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -212,5 +267,37 @@ void CustomerGateway::SetBgpAsn(const uint64_t& _bgpAsn)
 bool CustomerGateway::BgpAsnHasBeenSet() const
 {
     return m_bgpAsnHasBeenSet;
+}
+
+uint64_t CustomerGateway::GetVpnConnNum() const
+{
+    return m_vpnConnNum;
+}
+
+void CustomerGateway::SetVpnConnNum(const uint64_t& _vpnConnNum)
+{
+    m_vpnConnNum = _vpnConnNum;
+    m_vpnConnNumHasBeenSet = true;
+}
+
+bool CustomerGateway::VpnConnNumHasBeenSet() const
+{
+    return m_vpnConnNumHasBeenSet;
+}
+
+vector<Tag> CustomerGateway::GetTagSet() const
+{
+    return m_tagSet;
+}
+
+void CustomerGateway::SetTagSet(const vector<Tag>& _tagSet)
+{
+    m_tagSet = _tagSet;
+    m_tagSetHasBeenSet = true;
+}
+
+bool CustomerGateway::TagSetHasBeenSet() const
+{
+    return m_tagSetHasBeenSet;
 }
 

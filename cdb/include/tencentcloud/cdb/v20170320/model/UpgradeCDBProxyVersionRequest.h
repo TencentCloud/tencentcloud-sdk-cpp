@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
-                     * @return InstanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * 获取<p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/product/236/15872">DescribeDBInstances</a> 接口获取。</p>
+                     * @return InstanceId <p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/product/236/15872">DescribeDBInstances</a> 接口获取。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
-                     * @param _instanceId 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * 设置<p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/product/236/15872">DescribeDBInstances</a> 接口获取。</p>
+                     * @param _instanceId <p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/product/236/15872">DescribeDBInstances</a> 接口获取。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库代理 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
-                     * @return ProxyGroupId 数据库代理 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
+                     * 获取<p>数据库代理 ID。可通过 <a href="https://cloud.tencent.com/document/api/236/90585">DescribeCdbProxyInfo</a> 接口获取。</p>
+                     * @return ProxyGroupId <p>数据库代理 ID。可通过 <a href="https://cloud.tencent.com/document/api/236/90585">DescribeCdbProxyInfo</a> 接口获取。</p>
                      * 
                      */
                     std::string GetProxyGroupId() const;
 
                     /**
-                     * 设置数据库代理 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
-                     * @param _proxyGroupId 数据库代理 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
+                     * 设置<p>数据库代理 ID。可通过 <a href="https://cloud.tencent.com/document/api/236/90585">DescribeCdbProxyInfo</a> 接口获取。</p>
+                     * @param _proxyGroupId <p>数据库代理 ID。可通过 <a href="https://cloud.tencent.com/document/api/236/90585">DescribeCdbProxyInfo</a> 接口获取。</p>
                      * 
                      */
                     void SetProxyGroupId(const std::string& _proxyGroupId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ProxyGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库代理当前版本
-                     * @return SrcProxyVersion 数据库代理当前版本
+                     * 获取<p>数据库代理当前版本</p>
+                     * @return SrcProxyVersion <p>数据库代理当前版本</p>
                      * 
                      */
                     std::string GetSrcProxyVersion() const;
 
                     /**
-                     * 设置数据库代理当前版本
-                     * @param _srcProxyVersion 数据库代理当前版本
+                     * 设置<p>数据库代理当前版本</p>
+                     * @param _srcProxyVersion <p>数据库代理当前版本</p>
                      * 
                      */
                     void SetSrcProxyVersion(const std::string& _srcProxyVersion);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool SrcProxyVersionHasBeenSet() const;
 
                     /**
-                     * 获取数据库代理升级版本
-                     * @return DstProxyVersion 数据库代理升级版本
+                     * 获取<p>数据库代理升级版本</p>
+                     * @return DstProxyVersion <p>数据库代理升级版本</p>
                      * 
                      */
                     std::string GetDstProxyVersion() const;
 
                     /**
-                     * 设置数据库代理升级版本
-                     * @param _dstProxyVersion 数据库代理升级版本
+                     * 设置<p>数据库代理升级版本</p>
+                     * @param _dstProxyVersion <p>数据库代理升级版本</p>
                      * 
                      */
                     void SetDstProxyVersion(const std::string& _dstProxyVersion);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DstProxyVersionHasBeenSet() const;
 
                     /**
-                     * 获取升级时间 ：nowTime（升级完成时）timeWindow（实例维护时间）
-                     * @return UpgradeTime 升级时间 ：nowTime（升级完成时）timeWindow（实例维护时间）
+                     * 获取<p>升级切换时间</p><p>枚举值：</p><ul><li>nowTime： 升级完成时</li><li>timeWindow： 实例维护时间</li><li>rollUpgrade： 滚动升级</li></ul>
+                     * @return UpgradeTime <p>升级切换时间</p><p>枚举值：</p><ul><li>nowTime： 升级完成时</li><li>timeWindow： 实例维护时间</li><li>rollUpgrade： 滚动升级</li></ul>
                      * 
                      */
                     std::string GetUpgradeTime() const;
 
                     /**
-                     * 设置升级时间 ：nowTime（升级完成时）timeWindow（实例维护时间）
-                     * @param _upgradeTime 升级时间 ：nowTime（升级完成时）timeWindow（实例维护时间）
+                     * 设置<p>升级切换时间</p><p>枚举值：</p><ul><li>nowTime： 升级完成时</li><li>timeWindow： 实例维护时间</li><li>rollUpgrade： 滚动升级</li></ul>
+                     * @param _upgradeTime <p>升级切换时间</p><p>枚举值：</p><ul><li>nowTime： 升级完成时</li><li>timeWindow： 实例维护时间</li><li>rollUpgrade： 滚动升级</li></ul>
                      * 
                      */
                     void SetUpgradeTime(const std::string& _upgradeTime);
@@ -147,37 +147,64 @@ namespace TencentCloud
                      */
                     bool UpgradeTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>滚动升级等待时间</p><p>取值范围：[10, 3600]</p><p>单位：秒</p>
+                     * @return RollUpgradeWaitingTime <p>滚动升级等待时间</p><p>取值范围：[10, 3600]</p><p>单位：秒</p>
+                     * 
+                     */
+                    int64_t GetRollUpgradeWaitingTime() const;
+
+                    /**
+                     * 设置<p>滚动升级等待时间</p><p>取值范围：[10, 3600]</p><p>单位：秒</p>
+                     * @param _rollUpgradeWaitingTime <p>滚动升级等待时间</p><p>取值范围：[10, 3600]</p><p>单位：秒</p>
+                     * 
+                     */
+                    void SetRollUpgradeWaitingTime(const int64_t& _rollUpgradeWaitingTime);
+
+                    /**
+                     * 判断参数 RollUpgradeWaitingTime 是否已赋值
+                     * @return RollUpgradeWaitingTime 是否已赋值
+                     * 
+                     */
+                    bool RollUpgradeWaitingTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * <p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/product/236/15872">DescribeDBInstances</a> 接口获取。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 数据库代理 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。
+                     * <p>数据库代理 ID。可通过 <a href="https://cloud.tencent.com/document/api/236/90585">DescribeCdbProxyInfo</a> 接口获取。</p>
                      */
                     std::string m_proxyGroupId;
                     bool m_proxyGroupIdHasBeenSet;
 
                     /**
-                     * 数据库代理当前版本
+                     * <p>数据库代理当前版本</p>
                      */
                     std::string m_srcProxyVersion;
                     bool m_srcProxyVersionHasBeenSet;
 
                     /**
-                     * 数据库代理升级版本
+                     * <p>数据库代理升级版本</p>
                      */
                     std::string m_dstProxyVersion;
                     bool m_dstProxyVersionHasBeenSet;
 
                     /**
-                     * 升级时间 ：nowTime（升级完成时）timeWindow（实例维护时间）
+                     * <p>升级切换时间</p><p>枚举值：</p><ul><li>nowTime： 升级完成时</li><li>timeWindow： 实例维护时间</li><li>rollUpgrade： 滚动升级</li></ul>
                      */
                     std::string m_upgradeTime;
                     bool m_upgradeTimeHasBeenSet;
+
+                    /**
+                     * <p>滚动升级等待时间</p><p>取值范围：[10, 3600]</p><p>单位：秒</p>
+                     */
+                    int64_t m_rollUpgradeWaitingTime;
+                    bool m_rollUpgradeWaitingTimeHasBeenSet;
 
                 };
             }

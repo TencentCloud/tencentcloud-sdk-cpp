@@ -840,6 +840,56 @@ VodClient::CreateAigcCustomVoiceOutcomeCallable VodClient::CreateAigcCustomVoice
     return prom->get_future();
 }
 
+VodClient::CreateAigcHunyuan3DTaskOutcome VodClient::CreateAigcHunyuan3DTask(const CreateAigcHunyuan3DTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcHunyuan3DTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcHunyuan3DTaskResponse rsp = CreateAigcHunyuan3DTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcHunyuan3DTaskOutcome(rsp);
+        else
+            return CreateAigcHunyuan3DTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcHunyuan3DTaskOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateAigcHunyuan3DTaskAsync(const CreateAigcHunyuan3DTaskRequest& request, const CreateAigcHunyuan3DTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcHunyuan3DTaskRequest&;
+    using Resp = CreateAigcHunyuan3DTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcHunyuan3DTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateAigcHunyuan3DTaskOutcomeCallable VodClient::CreateAigcHunyuan3DTaskCallable(const CreateAigcHunyuan3DTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcHunyuan3DTaskOutcome>>();
+    CreateAigcHunyuan3DTaskAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAigcHunyuan3DTaskRequest&,
+        CreateAigcHunyuan3DTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::CreateAigcImageTaskOutcome VodClient::CreateAigcImageTask(const CreateAigcImageTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAigcImageTask");

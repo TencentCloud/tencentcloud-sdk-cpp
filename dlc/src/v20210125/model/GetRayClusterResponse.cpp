@@ -31,6 +31,7 @@ GetRayClusterResponse::GetRayClusterResponse() :
     m_resourcePartitionIdHasBeenSet(false),
     m_resourcePartitionNameHasBeenSet(false),
     m_queueHasBeenSet(false),
+    m_queueAliasHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_uinHasBeenSet(false),
     m_subAccountUinHasBeenSet(false),
@@ -157,6 +158,16 @@ CoreInternalOutcome GetRayClusterResponse::Deserialize(const string &payload)
         }
         m_queue = string(rsp["Queue"].GetString());
         m_queueHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("QueueAlias") && !rsp["QueueAlias"].IsNull())
+    {
+        if (!rsp["QueueAlias"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueueAlias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_queueAlias = string(rsp["QueueAlias"].GetString());
+        m_queueAliasHasBeenSet = true;
     }
 
     if (rsp.HasMember("AppId") && !rsp["AppId"].IsNull())
@@ -445,6 +456,14 @@ string GetRayClusterResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_queue.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_queueAliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueAlias";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queueAlias.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_appIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -700,6 +719,16 @@ string GetRayClusterResponse::GetQueue() const
 bool GetRayClusterResponse::QueueHasBeenSet() const
 {
     return m_queueHasBeenSet;
+}
+
+string GetRayClusterResponse::GetQueueAlias() const
+{
+    return m_queueAlias;
+}
+
+bool GetRayClusterResponse::QueueAliasHasBeenSet() const
+{
+    return m_queueAliasHasBeenSet;
 }
 
 int64_t GetRayClusterResponse::GetAppId() const

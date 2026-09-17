@@ -904,6 +904,27 @@ namespace TencentCloud
                     bool DisableApiTerminationHasBeenSet() const;
 
                     /**
+                     * 获取<p>实例主机名。</p>
+                     * @return HostName <p>实例主机名。</p>
+                     * 
+                     */
+                    std::string GetHostName() const;
+
+                    /**
+                     * 设置<p>实例主机名。</p>
+                     * @param _hostName <p>实例主机名。</p>
+                     * 
+                     */
+                    void SetHostName(const std::string& _hostName);
+
+                    /**
+                     * 判断参数 HostName 是否已赋值
+                     * @return HostName 是否已赋值
+                     * 
+                     */
+                    bool HostNameHasBeenSet() const;
+
+                    /**
                      * 获取<p>默认登录用户。</p>
                      * @return DefaultLoginUser <p>默认登录用户。</p>
                      * 
@@ -1317,6 +1338,12 @@ namespace TencentCloud
                      */
                     bool m_disableApiTermination;
                     bool m_disableApiTerminationHasBeenSet;
+
+                    /**
+                     * <p>实例主机名。</p>
+                     */
+                    std::string m_hostName;
+                    bool m_hostNameHasBeenSet;
 
                     /**
                      * <p>默认登录用户。</p>

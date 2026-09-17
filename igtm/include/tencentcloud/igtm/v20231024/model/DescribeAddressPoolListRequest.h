@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警过滤条件：PoolName：地址池名称；MonitorId：监控器id
-                     * @return Filters 告警过滤条件：PoolName：地址池名称；MonitorId：监控器id
+                     * 获取<p>告警过滤条件：PoolName：地址池名称；MonitorId：监控器id</p>
+                     * @return Filters <p>告警过滤条件：PoolName：地址池名称；MonitorId：监控器id</p>
                      * 
                      */
                     std::vector<ResourceFilter> GetFilters() const;
 
                     /**
-                     * 设置告警过滤条件：PoolName：地址池名称；MonitorId：监控器id
-                     * @param _filters 告警过滤条件：PoolName：地址池名称；MonitorId：监控器id
+                     * 设置<p>告警过滤条件：PoolName：地址池名称；MonitorId：监控器id</p>
+                     * @param _filters <p>告警过滤条件：PoolName：地址池名称；MonitorId：监控器id</p>
                      * 
                      */
                     void SetFilters(const std::vector<ResourceFilter>& _filters);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取页数
-                     * @return Offset 页数
+                     * 获取<p>页数</p>
+                     * @return Offset <p>页数</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置页数
-                     * @param _offset 页数
+                     * 设置<p>页数</p>
+                     * @param _offset <p>页数</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页数
-                     * @return Limit 每页数
+                     * 获取<p>每页数</p>
+                     * @return Limit <p>每页数</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页数
-                     * @param _limit 每页数
+                     * 设置<p>每页数</p>
+                     * @param _limit <p>每页数</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -109,19 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警过滤条件：PoolName：地址池名称；MonitorId：监控器id
+                     * <p>告警过滤条件：PoolName：地址池名称；MonitorId：监控器id</p>
                      */
                     std::vector<ResourceFilter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 页数
+                     * <p>页数</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页数
+                     * <p>每页数</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

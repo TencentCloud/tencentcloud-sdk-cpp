@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要修改属性的复制对id
-                     * @return CopyPairId 要修改属性的复制对id
+                     * 获取<p>要修改属性的复制对id</p>
+                     * @return CopyPairId <p>要修改属性的复制对id</p>
                      * 
                      */
                     std::string GetCopyPairId() const;
 
                     /**
-                     * 设置要修改属性的复制对id
-                     * @param _copyPairId 要修改属性的复制对id
+                     * 设置<p>要修改属性的复制对id</p>
+                     * @param _copyPairId <p>要修改属性的复制对id</p>
                      * 
                      */
                     void SetCopyPairId(const std::string& _copyPairId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool CopyPairIdHasBeenSet() const;
 
                     /**
-                     * 获取要修改的复制对类型，可选值：DISK、INSTANCE、CFS，默认 INSTANCE
-                     * @return CopyPairType 要修改的复制对类型，可选值：DISK、INSTANCE、CFS，默认 INSTANCE
+                     * 获取<p>要修改的复制对类型，可选值：DISK、INSTANCE、CFS，默认 INSTANCE</p>
+                     * @return CopyPairType <p>要修改的复制对类型，可选值：DISK、INSTANCE、CFS，默认 INSTANCE</p>
                      * 
                      */
                     std::string GetCopyPairType() const;
 
                     /**
-                     * 设置要修改的复制对类型，可选值：DISK、INSTANCE、CFS，默认 INSTANCE
-                     * @param _copyPairType 要修改的复制对类型，可选值：DISK、INSTANCE、CFS，默认 INSTANCE
+                     * 设置<p>要修改的复制对类型，可选值：DISK、INSTANCE、CFS，默认 INSTANCE</p>
+                     * @param _copyPairType <p>要修改的复制对类型，可选值：DISK、INSTANCE、CFS，默认 INSTANCE</p>
                      * 
                      */
                     void SetCopyPairType(const std::string& _copyPairType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool CopyPairTypeHasBeenSet() const;
 
                     /**
-                     * 获取修改复制对名称（长度最大支持 64 个字符）
-                     * @return CopyPairName 修改复制对名称（长度最大支持 64 个字符）
+                     * 获取<p>修改复制对名称（长度最大支持 64 个字符）</p>
+                     * @return CopyPairName <p>修改复制对名称（长度最大支持 64 个字符）</p>
                      * 
                      */
                     std::string GetCopyPairName() const;
 
                     /**
-                     * 设置修改复制对名称（长度最大支持 64 个字符）
-                     * @param _copyPairName 修改复制对名称（长度最大支持 64 个字符）
+                     * 设置<p>修改复制对名称（长度最大支持 64 个字符）</p>
+                     * @param _copyPairName <p>修改复制对名称（长度最大支持 64 个字符）</p>
                      * 
                      */
                     void SetCopyPairName(const std::string& _copyPairName);
@@ -105,25 +105,52 @@ namespace TencentCloud
                      */
                     bool CopyPairNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>容灾端实例类型（仅容灾端CVM未创建时可修改）</p>
+                     * @return InstanceType <p>容灾端实例类型（仅容灾端CVM未创建时可修改）</p>
+                     * 
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置<p>容灾端实例类型（仅容灾端CVM未创建时可修改）</p>
+                     * @param _instanceType <p>容灾端实例类型（仅容灾端CVM未创建时可修改）</p>
+                     * 
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     * 
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 要修改属性的复制对id
+                     * <p>要修改属性的复制对id</p>
                      */
                     std::string m_copyPairId;
                     bool m_copyPairIdHasBeenSet;
 
                     /**
-                     * 要修改的复制对类型，可选值：DISK、INSTANCE、CFS，默认 INSTANCE
+                     * <p>要修改的复制对类型，可选值：DISK、INSTANCE、CFS，默认 INSTANCE</p>
                      */
                     std::string m_copyPairType;
                     bool m_copyPairTypeHasBeenSet;
 
                     /**
-                     * 修改复制对名称（长度最大支持 64 个字符）
+                     * <p>修改复制对名称（长度最大支持 64 个字符）</p>
                      */
                     std::string m_copyPairName;
                     bool m_copyPairNameHasBeenSet;
+
+                    /**
+                     * <p>容灾端实例类型（仅容灾端CVM未创建时可修改）</p>
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
 
                 };
             }

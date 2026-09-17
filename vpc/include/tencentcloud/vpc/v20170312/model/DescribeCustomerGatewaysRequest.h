@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取对端网关ID，例如：cgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。
-                     * @return CustomerGatewayIds 对端网关ID，例如：cgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。
+                     * 获取<p>对端网关ID，例如：cgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。</p>
+                     * @return CustomerGatewayIds <p>对端网关ID，例如：cgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。</p>
                      * 
                      */
                     std::vector<std::string> GetCustomerGatewayIds() const;
 
                     /**
-                     * 设置对端网关ID，例如：cgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。
-                     * @param _customerGatewayIds 对端网关ID，例如：cgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。
+                     * 设置<p>对端网关ID，例如：cgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。</p>
+                     * @param _customerGatewayIds <p>对端网关ID，例如：cgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。</p>
                      * 
                      */
                     void SetCustomerGatewayIds(const std::vector<std::string>& _customerGatewayIds);
@@ -65,27 +65,15 @@ namespace TencentCloud
                     bool CustomerGatewayIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定CustomerGatewayIds和Filters。
-<li>customer-gateway-id - String - （过滤条件）用户网关唯一ID形如：`cgw-mgp33pll`。</li>
-<li>customer-gateway-name - String - （过滤条件）用户网关名称形如：`test-cgw`。</li>
-<li>ip-address - String - （过滤条件）公网地址形如：`58.211.1.12`。</li>
-                     * @return Filters 过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定CustomerGatewayIds和Filters。
-<li>customer-gateway-id - String - （过滤条件）用户网关唯一ID形如：`cgw-mgp33pll`。</li>
-<li>customer-gateway-name - String - （过滤条件）用户网关名称形如：`test-cgw`。</li>
-<li>ip-address - String - （过滤条件）公网地址形如：`58.211.1.12`。</li>
+                     * 获取<p>过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定CustomerGatewayIds和Filters。<li>customer-gateway-id - String - （过滤条件）用户网关唯一ID形如：<code>cgw-mgp33pll</code>。</li><li>customer-gateway-name - String - （过滤条件）用户网关名称形如：<code>test-cgw</code>。</li><li>ip-address - String - （过滤条件）公网地址形如：<code>58.211.1.12</code>。</li><li>ip-version - String - （过滤条件）公网地址类型,可选值[&#39;IPv4&#39;,&#39;IPv6&#39;]。</li></p>
+                     * @return Filters <p>过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定CustomerGatewayIds和Filters。<li>customer-gateway-id - String - （过滤条件）用户网关唯一ID形如：<code>cgw-mgp33pll</code>。</li><li>customer-gateway-name - String - （过滤条件）用户网关名称形如：<code>test-cgw</code>。</li><li>ip-address - String - （过滤条件）公网地址形如：<code>58.211.1.12</code>。</li><li>ip-version - String - （过滤条件）公网地址类型,可选值[&#39;IPv4&#39;,&#39;IPv6&#39;]。</li></p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定CustomerGatewayIds和Filters。
-<li>customer-gateway-id - String - （过滤条件）用户网关唯一ID形如：`cgw-mgp33pll`。</li>
-<li>customer-gateway-name - String - （过滤条件）用户网关名称形如：`test-cgw`。</li>
-<li>ip-address - String - （过滤条件）公网地址形如：`58.211.1.12`。</li>
-                     * @param _filters 过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定CustomerGatewayIds和Filters。
-<li>customer-gateway-id - String - （过滤条件）用户网关唯一ID形如：`cgw-mgp33pll`。</li>
-<li>customer-gateway-name - String - （过滤条件）用户网关名称形如：`test-cgw`。</li>
-<li>ip-address - String - （过滤条件）公网地址形如：`58.211.1.12`。</li>
+                     * 设置<p>过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定CustomerGatewayIds和Filters。<li>customer-gateway-id - String - （过滤条件）用户网关唯一ID形如：<code>cgw-mgp33pll</code>。</li><li>customer-gateway-name - String - （过滤条件）用户网关名称形如：<code>test-cgw</code>。</li><li>ip-address - String - （过滤条件）公网地址形如：<code>58.211.1.12</code>。</li><li>ip-version - String - （过滤条件）公网地址类型,可选值[&#39;IPv4&#39;,&#39;IPv6&#39;]。</li></p>
+                     * @param _filters <p>过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定CustomerGatewayIds和Filters。<li>customer-gateway-id - String - （过滤条件）用户网关唯一ID形如：<code>cgw-mgp33pll</code>。</li><li>customer-gateway-name - String - （过滤条件）用户网关名称形如：<code>test-cgw</code>。</li><li>ip-address - String - （过滤条件）公网地址形如：<code>58.211.1.12</code>。</li><li>ip-version - String - （过滤条件）公网地址类型,可选值[&#39;IPv4&#39;,&#39;IPv6&#39;]。</li></p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -98,15 +86,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。
-                     * @return Offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。
+                     * 获取<p>偏移量，默认为0。关于Offset的更进一步介绍请参考 API <a href="https://cloud.tencent.com/document/api/213/11646">简介</a>中的相关小节。</p>
+                     * @return Offset <p>偏移量，默认为0。关于Offset的更进一步介绍请参考 API <a href="https://cloud.tencent.com/document/api/213/11646">简介</a>中的相关小节。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。
-                     * @param _offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。
+                     * 设置<p>偏移量，默认为0。关于Offset的更进一步介绍请参考 API <a href="https://cloud.tencent.com/document/api/213/11646">简介</a>中的相关小节。</p>
+                     * @param _offset <p>偏移量，默认为0。关于Offset的更进一步介绍请参考 API <a href="https://cloud.tencent.com/document/api/213/11646">简介</a>中的相关小节。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -119,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为20，最大值为100。
-                     * @return Limit 返回数量，默认为20，最大值为100。
+                     * 获取<p>返回数量，默认为20，最大值为100。</p>
+                     * @return Limit <p>返回数量，默认为20，最大值为100。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为20，最大值为100。
-                     * @param _limit 返回数量，默认为20，最大值为100。
+                     * 设置<p>返回数量，默认为20，最大值为100。</p>
+                     * @param _limit <p>返回数量，默认为20，最大值为100。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -142,28 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 对端网关ID，例如：cgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。
+                     * <p>对端网关ID，例如：cgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。</p>
                      */
                     std::vector<std::string> m_customerGatewayIds;
                     bool m_customerGatewayIdsHasBeenSet;
 
                     /**
-                     * 过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定CustomerGatewayIds和Filters。
-<li>customer-gateway-id - String - （过滤条件）用户网关唯一ID形如：`cgw-mgp33pll`。</li>
-<li>customer-gateway-name - String - （过滤条件）用户网关名称形如：`test-cgw`。</li>
-<li>ip-address - String - （过滤条件）公网地址形如：`58.211.1.12`。</li>
+                     * <p>过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定CustomerGatewayIds和Filters。<li>customer-gateway-id - String - （过滤条件）用户网关唯一ID形如：<code>cgw-mgp33pll</code>。</li><li>customer-gateway-name - String - （过滤条件）用户网关名称形如：<code>test-cgw</code>。</li><li>ip-address - String - （过滤条件）公网地址形如：<code>58.211.1.12</code>。</li><li>ip-version - String - （过滤条件）公网地址类型,可选值[&#39;IPv4&#39;,&#39;IPv6&#39;]。</li></p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。
+                     * <p>偏移量，默认为0。关于Offset的更进一步介绍请参考 API <a href="https://cloud.tencent.com/document/api/213/11646">简介</a>中的相关小节。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，默认为20，最大值为100。
+                     * <p>返回数量，默认为20，最大值为100。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

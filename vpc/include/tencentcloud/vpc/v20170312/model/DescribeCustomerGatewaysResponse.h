@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取对端网关对象列表。
-                     * @return CustomerGatewaySet 对端网关对象列表。
+                     * 获取<p>对端网关对象列表。</p>
+                     * @return CustomerGatewaySet <p>对端网关对象列表。</p>
                      * 
                      */
                     std::vector<CustomerGateway> GetCustomerGatewaySet() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool CustomerGatewaySetHasBeenSet() const;
 
                     /**
-                     * 获取符合条件的实例数量。
-                     * @return TotalCount 符合条件的实例数量。
+                     * 获取<p>符合条件的实例数量。</p>
+                     * @return TotalCount <p>符合条件的实例数量。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 对端网关对象列表。
+                     * <p>对端网关对象列表。</p>
                      */
                     std::vector<CustomerGateway> m_customerGatewaySet;
                     bool m_customerGatewaySetHasBeenSet;
 
                     /**
-                     * 符合条件的实例数量。
+                     * <p>符合条件的实例数量。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

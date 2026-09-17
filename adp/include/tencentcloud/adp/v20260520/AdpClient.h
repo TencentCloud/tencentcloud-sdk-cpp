@@ -179,6 +179,8 @@
 #include <tencentcloud/adp/v20260520/model/DescribeReleaseListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeReleaseSummaryRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeReleaseSummaryResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeResourceSummaryRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeResourceSummaryResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeSkillCategoryListRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeSkillCategoryListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeSkillDetailRequest.h>
@@ -511,6 +513,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeReleaseSummaryResponse> DescribeReleaseSummaryOutcome;
                 typedef std::future<DescribeReleaseSummaryOutcome> DescribeReleaseSummaryOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeReleaseSummaryRequest&, DescribeReleaseSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReleaseSummaryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceSummaryResponse> DescribeResourceSummaryOutcome;
+                typedef std::future<DescribeResourceSummaryOutcome> DescribeResourceSummaryOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeResourceSummaryRequest&, DescribeResourceSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceSummaryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSkillCategoryListResponse> DescribeSkillCategoryListOutcome;
                 typedef std::future<DescribeSkillCategoryListOutcome> DescribeSkillCategoryListOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeSkillCategoryListRequest&, DescribeSkillCategoryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSkillCategoryListAsyncHandler;
@@ -641,7 +646,7 @@ namespace TencentCloud
 
 
                 /**
-                 *校验标签下的标准词是否已存在
+                 *校验标签
                  * @param req CheckLabelRequest
                  * @return CheckLabelOutcome
                  */
@@ -1341,6 +1346,15 @@ namespace TencentCloud
                 DescribeReleaseSummaryOutcome DescribeReleaseSummary(const Model::DescribeReleaseSummaryRequest &request);
                 void DescribeReleaseSummaryAsync(const Model::DescribeReleaseSummaryRequest& request, const DescribeReleaseSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeReleaseSummaryOutcomeCallable DescribeReleaseSummaryCallable(const Model::DescribeReleaseSummaryRequest& request);
+
+                /**
+                 *获取用户资源套餐和增值包用量信息
+                 * @param req DescribeResourceSummaryRequest
+                 * @return DescribeResourceSummaryOutcome
+                 */
+                DescribeResourceSummaryOutcome DescribeResourceSummary(const Model::DescribeResourceSummaryRequest &request);
+                void DescribeResourceSummaryAsync(const Model::DescribeResourceSummaryRequest& request, const DescribeResourceSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceSummaryOutcomeCallable DescribeResourceSummaryCallable(const Model::DescribeResourceSummaryRequest& request);
 
                 /**
                  *查询 Skill 分类列表

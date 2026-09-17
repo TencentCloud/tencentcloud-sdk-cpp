@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取地址池列表
-                     * @return DnsLineSet 地址池列表
+                     * 获取<p>地址池列表</p>
+                     * @return DnsLineSet <p>地址池列表</p>
                      * 
                      */
                     std::vector<GroupLine> GetDnsLineSet() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 地址池列表
+                     * <p>地址池列表</p>
                      */
                     std::vector<GroupLine> m_dnsLineSet;
                     bool m_dnsLineSetHasBeenSet;

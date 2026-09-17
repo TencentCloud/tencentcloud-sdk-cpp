@@ -29,6 +29,8 @@
 #include <tencentcloud/gme/v20180711/model/CreateAgeDetectTaskResponse.h>
 #include <tencentcloud/gme/v20180711/model/CreateAppRequest.h>
 #include <tencentcloud/gme/v20180711/model/CreateAppResponse.h>
+#include <tencentcloud/gme/v20180711/model/CreateAudioModerationSyncRequest.h>
+#include <tencentcloud/gme/v20180711/model/CreateAudioModerationSyncResponse.h>
 #include <tencentcloud/gme/v20180711/model/CreateCustomizationRequest.h>
 #include <tencentcloud/gme/v20180711/model/CreateCustomizationResponse.h>
 #include <tencentcloud/gme/v20180711/model/CreateScanUserRequest.h>
@@ -122,6 +124,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAppResponse> CreateAppOutcome;
                 typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::CreateAppRequest&, CreateAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAudioModerationSyncResponse> CreateAudioModerationSyncOutcome;
+                typedef std::future<CreateAudioModerationSyncOutcome> CreateAudioModerationSyncOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::CreateAudioModerationSyncRequest&, CreateAudioModerationSyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAudioModerationSyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCustomizationResponse> CreateCustomizationOutcome;
                 typedef std::future<CreateCustomizationOutcome> CreateCustomizationOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::CreateCustomizationRequest&, CreateCustomizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomizationAsyncHandler;
@@ -268,6 +273,15 @@ namespace TencentCloud
                 CreateAppOutcome CreateApp(const Model::CreateAppRequest &request);
                 void CreateAppAsync(const Model::CreateAppRequest& request, const CreateAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAppOutcomeCallable CreateAppCallable(const Model::CreateAppRequest& request);
+
+                /**
+                 *短音频内容理解同步接口
+                 * @param req CreateAudioModerationSyncRequest
+                 * @return CreateAudioModerationSyncOutcome
+                 */
+                CreateAudioModerationSyncOutcome CreateAudioModerationSync(const Model::CreateAudioModerationSyncRequest &request);
+                void CreateAudioModerationSyncAsync(const Model::CreateAudioModerationSyncRequest& request, const CreateAudioModerationSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAudioModerationSyncOutcomeCallable CreateAudioModerationSyncCallable(const Model::CreateAudioModerationSyncRequest& request);
 
                 /**
                  *用户使用该接口可以创建语音消息转文本热句模型，以供识别调用

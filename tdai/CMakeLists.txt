@@ -76,9 +76,10 @@ set(tdai_public_header_model
   include/tencentcloud/tdai/v20250717/model/DescribeMemoryPlusSpacesResponse.h
   include/tencentcloud/tdai/v20250717/model/IsolateMemoryPlusSpaceRequest.h
   include/tencentcloud/tdai/v20250717/model/ModifyAgentInstanceParametersRequest.h
+  include/tencentcloud/tdai/v20250717/model/TerminateAgentInstanceRequest.h
   include/tencentcloud/tdai/v20250717/model/ContinueAgentWorkResponse.h
   include/tencentcloud/tdai/v20250717/model/DescribeServiceAccessKeyResponse.h
-  include/tencentcloud/tdai/v20250717/model/StartAgentTaskResponse.h
+  include/tencentcloud/tdai/v20250717/model/Attachments.h
   include/tencentcloud/tdai/v20250717/model/DescribeAgentInstancesResponse.h
   include/tencentcloud/tdai/v20250717/model/StartAgentTaskRequest.h
   include/tencentcloud/tdai/v20250717/model/CreateChatCompletionRes.h
@@ -97,7 +98,7 @@ set(tdai_public_header_model
   include/tencentcloud/tdai/v20250717/model/AgentInstance.h
   include/tencentcloud/tdai/v20250717/model/RemoveChatResponse.h
   include/tencentcloud/tdai/v20250717/model/PauseAgentWorkResponse.h
-  include/tencentcloud/tdai/v20250717/model/TerminateAgentInstanceRequest.h
+  include/tencentcloud/tdai/v20250717/model/StartAgentTaskResponse.h
   include/tencentcloud/tdai/v20250717/model/ResourceTag.h
   )
 
@@ -160,9 +161,10 @@ set(tdai_src
   src/v20250717/model/DescribeMemoryPlusSpacesResponse.cpp
   src/v20250717/model/IsolateMemoryPlusSpaceRequest.cpp
   src/v20250717/model/ModifyAgentInstanceParametersRequest.cpp
+  src/v20250717/model/TerminateAgentInstanceRequest.cpp
   src/v20250717/model/ContinueAgentWorkResponse.cpp
   src/v20250717/model/DescribeServiceAccessKeyResponse.cpp
-  src/v20250717/model/StartAgentTaskResponse.cpp
+  src/v20250717/model/Attachments.cpp
   src/v20250717/model/DescribeAgentInstancesResponse.cpp
   src/v20250717/model/StartAgentTaskRequest.cpp
   src/v20250717/model/CreateChatCompletionRes.cpp
@@ -181,7 +183,7 @@ set(tdai_src
   src/v20250717/model/AgentInstance.cpp
   src/v20250717/model/RemoveChatResponse.cpp
   src/v20250717/model/PauseAgentWorkResponse.cpp
-  src/v20250717/model/TerminateAgentInstanceRequest.cpp
+  src/v20250717/model/StartAgentTaskResponse.cpp
   src/v20250717/model/ResourceTag.cpp
   )
 

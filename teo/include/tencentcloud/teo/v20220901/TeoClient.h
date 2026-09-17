@@ -1701,7 +1701,7 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DeleteContentIdentifierOutcomeCallable DeleteContentIdentifierCallable(const Model::DeleteContentIdentifierRequest& request);
 
                 /**
-                 *删除自定义错误页面。
+                 *删除自定义响应页面。
                  * @param req DeleteCustomErrorPageRequest
                  * @return DeleteCustomErrorPageOutcome
                  */

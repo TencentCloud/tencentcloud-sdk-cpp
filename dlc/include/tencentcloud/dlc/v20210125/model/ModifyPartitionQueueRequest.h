@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool PartitionCodeHasBeenSet() const;
 
                     /**
-                     * 获取队列名称
-                     * @return QueueName 队列名称
+                     * 获取队列编码（不可变 code）：与 Id 定位记录的一致性校验键，传入值必须与队列当前 QueueName 一致，不参与更新
+                     * @return QueueName 队列编码（不可变 code）：与 Id 定位记录的一致性校验键，传入值必须与队列当前 QueueName 一致，不参与更新
                      * 
                      */
                     std::string GetQueueName() const;
 
                     /**
-                     * 设置队列名称
-                     * @param _queueName 队列名称
+                     * 设置队列编码（不可变 code）：与 Id 定位记录的一致性校验键，传入值必须与队列当前 QueueName 一致，不参与更新
+                     * @param _queueName 队列编码（不可变 code）：与 Id 定位记录的一致性校验键，传入值必须与队列当前 QueueName 一致，不参与更新
                      * 
                      */
                     void SetQueueName(const std::string& _queueName);
@@ -105,6 +105,27 @@ namespace TencentCloud
                      * 
                      */
                     bool QueueNameHasBeenSet() const;
+
+                    /**
+                     * 获取队列别名（显示名）：透传时更新，未透传时保持不变。可与其它队列重复
+                     * @return Alias 队列别名（显示名）：透传时更新，未透传时保持不变。可与其它队列重复
+                     * 
+                     */
+                    std::string GetAlias() const;
+
+                    /**
+                     * 设置队列别名（显示名）：透传时更新，未透传时保持不变。可与其它队列重复
+                     * @param _alias 队列别名（显示名）：透传时更新，未透传时保持不变。可与其它队列重复
+                     * 
+                     */
+                    void SetAlias(const std::string& _alias);
+
+                    /**
+                     * 判断参数 Alias 是否已赋值
+                     * @return Alias 是否已赋值
+                     * 
+                     */
+                    bool AliasHasBeenSet() const;
 
                     /**
                      * 获取队列描述
@@ -184,10 +205,16 @@ namespace TencentCloud
                     bool m_partitionCodeHasBeenSet;
 
                     /**
-                     * 队列名称
+                     * 队列编码（不可变 code）：与 Id 定位记录的一致性校验键，传入值必须与队列当前 QueueName 一致，不参与更新
                      */
                     std::string m_queueName;
                     bool m_queueNameHasBeenSet;
+
+                    /**
+                     * 队列别名（显示名）：透传时更新，未透传时保持不变。可与其它队列重复
+                     */
+                    std::string m_alias;
+                    bool m_aliasHasBeenSet;
 
                     /**
                      * 队列描述

@@ -640,6 +640,56 @@ ClsClient::CreateAlarmShieldOutcomeCallable ClsClient::CreateAlarmShieldCallable
     return prom->get_future();
 }
 
+ClsClient::CreateCLSDeliverTaskOutcome ClsClient::CreateCLSDeliverTask(const CreateCLSDeliverTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCLSDeliverTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCLSDeliverTaskResponse rsp = CreateCLSDeliverTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCLSDeliverTaskOutcome(rsp);
+        else
+            return CreateCLSDeliverTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCLSDeliverTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateCLSDeliverTaskAsync(const CreateCLSDeliverTaskRequest& request, const CreateCLSDeliverTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCLSDeliverTaskRequest&;
+    using Resp = CreateCLSDeliverTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCLSDeliverTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::CreateCLSDeliverTaskOutcomeCallable ClsClient::CreateCLSDeliverTaskCallable(const CreateCLSDeliverTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCLSDeliverTaskOutcome>>();
+    CreateCLSDeliverTaskAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const CreateCLSDeliverTaskRequest&,
+        CreateCLSDeliverTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::CreateCloudProductLogCollectionOutcome ClsClient::CreateCloudProductLogCollection(const CreateCloudProductLogCollectionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCloudProductLogCollection");
@@ -2682,6 +2732,56 @@ ClsClient::DeleteAlarmShieldOutcomeCallable ClsClient::DeleteAlarmShieldCallable
         const ClsClient*,
         const DeleteAlarmShieldRequest&,
         DeleteAlarmShieldOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DeleteCLSDeliverTaskOutcome ClsClient::DeleteCLSDeliverTask(const DeleteCLSDeliverTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCLSDeliverTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCLSDeliverTaskResponse rsp = DeleteCLSDeliverTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCLSDeliverTaskOutcome(rsp);
+        else
+            return DeleteCLSDeliverTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCLSDeliverTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteCLSDeliverTaskAsync(const DeleteCLSDeliverTaskRequest& request, const DeleteCLSDeliverTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCLSDeliverTaskRequest&;
+    using Resp = DeleteCLSDeliverTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCLSDeliverTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DeleteCLSDeliverTaskOutcomeCallable ClsClient::DeleteCLSDeliverTaskCallable(const DeleteCLSDeliverTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCLSDeliverTaskOutcome>>();
+    DeleteCLSDeliverTaskAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DeleteCLSDeliverTaskRequest&,
+        DeleteCLSDeliverTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4882,6 +4982,56 @@ ClsClient::DescribeAlertRecordHistoryOutcomeCallable ClsClient::DescribeAlertRec
         const ClsClient*,
         const DescribeAlertRecordHistoryRequest&,
         DescribeAlertRecordHistoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DescribeCLSDeliverTasksOutcome ClsClient::DescribeCLSDeliverTasks(const DescribeCLSDeliverTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCLSDeliverTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCLSDeliverTasksResponse rsp = DescribeCLSDeliverTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCLSDeliverTasksOutcome(rsp);
+        else
+            return DescribeCLSDeliverTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCLSDeliverTasksOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeCLSDeliverTasksAsync(const DescribeCLSDeliverTasksRequest& request, const DescribeCLSDeliverTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCLSDeliverTasksRequest&;
+    using Resp = DescribeCLSDeliverTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCLSDeliverTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeCLSDeliverTasksOutcomeCallable ClsClient::DescribeCLSDeliverTasksCallable(const DescribeCLSDeliverTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCLSDeliverTasksOutcome>>();
+    DescribeCLSDeliverTasksAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeCLSDeliverTasksRequest&,
+        DescribeCLSDeliverTasksOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -8682,6 +8832,56 @@ ClsClient::ModifyAlarmShieldOutcomeCallable ClsClient::ModifyAlarmShieldCallable
         const ClsClient*,
         const ModifyAlarmShieldRequest&,
         ModifyAlarmShieldOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::ModifyCLSDeliverTaskOutcome ClsClient::ModifyCLSDeliverTask(const ModifyCLSDeliverTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCLSDeliverTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCLSDeliverTaskResponse rsp = ModifyCLSDeliverTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCLSDeliverTaskOutcome(rsp);
+        else
+            return ModifyCLSDeliverTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCLSDeliverTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyCLSDeliverTaskAsync(const ModifyCLSDeliverTaskRequest& request, const ModifyCLSDeliverTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyCLSDeliverTaskRequest&;
+    using Resp = ModifyCLSDeliverTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyCLSDeliverTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::ModifyCLSDeliverTaskOutcomeCallable ClsClient::ModifyCLSDeliverTaskCallable(const ModifyCLSDeliverTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyCLSDeliverTaskOutcome>>();
+    ModifyCLSDeliverTaskAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const ModifyCLSDeliverTaskRequest&,
+        ModifyCLSDeliverTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

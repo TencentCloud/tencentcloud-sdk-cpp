@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取预热的 URL 列表，单次最多指定20个 URL。
-                     * @return Urls 预热的 URL 列表，单次最多指定20个 URL。
+                     * 获取<p>预热的 URL 列表，单次最多指定20个 URL。</p>
+                     * @return Urls <p>预热的 URL 列表，单次最多指定20个 URL。</p>
                      * 
                      */
                     std::vector<std::string> GetUrls() const;
 
                     /**
-                     * 设置预热的 URL 列表，单次最多指定20个 URL。
-                     * @param _urls 预热的 URL 列表，单次最多指定20个 URL。
+                     * 设置<p>预热的 URL 列表，单次最多指定20个 URL。</p>
+                     * @param _urls <p>预热的 URL 列表，单次最多指定20个 URL。</p>
                      * 
                      */
                     void SetUrls(const std::vector<std::string>& _urls);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool UrlsHasBeenSet() const;
 
                     /**
-                     * 获取<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 获取<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @return SubAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @param _subAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 设置<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @param _subAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 预热的 URL 列表，单次最多指定20个 URL。
+                     * <p>预热的 URL 列表，单次最多指定20个 URL。</p>
                      */
                     std::vector<std::string> m_urls;
                     bool m_urlsHasBeenSet;
 
                     /**
-                     * <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;

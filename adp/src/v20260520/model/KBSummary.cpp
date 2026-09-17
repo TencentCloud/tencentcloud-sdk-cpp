@@ -31,6 +31,7 @@ KBSummary::KBSummary() :
     m_kbTypeHasBeenSet(false),
     m_latestOperatorHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_permissionHasBeenSet(false),
     m_processingFlagListHasBeenSet(false),
     m_sharedSubTypeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
@@ -166,6 +167,23 @@ CoreInternalOutcome KBSummary::Deserialize(const rapidjson::Value &value)
         m_nameHasBeenSet = true;
     }
 
+    if (value.HasMember("Permission") && !value["Permission"].IsNull())
+    {
+        if (!value["Permission"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KBSummary.Permission` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_permission.Deserialize(value["Permission"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_permissionHasBeenSet = true;
+    }
+
     if (value.HasMember("ProcessingFlagList") && !value["ProcessingFlagList"].IsNull())
     {
         if (!value["ProcessingFlagList"].IsArray())
@@ -293,6 +311,15 @@ void KBSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_permissionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Permission";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_permission.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_processingFlagListHasBeenSet)
@@ -485,6 +512,22 @@ void KBSummary::SetName(const string& _name)
 bool KBSummary::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+KBPermission KBSummary::GetPermission() const
+{
+    return m_permission;
+}
+
+void KBSummary::SetPermission(const KBPermission& _permission)
+{
+    m_permission = _permission;
+    m_permissionHasBeenSet = true;
+}
+
+bool KBSummary::PermissionHasBeenSet() const
+{
+    return m_permissionHasBeenSet;
 }
 
 vector<int64_t> KBSummary::GetProcessingFlagList() const

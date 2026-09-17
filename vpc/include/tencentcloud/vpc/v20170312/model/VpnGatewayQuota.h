@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取带宽配额，单位：Mbps。
-                     * @return Bandwidth 带宽配额，单位：Mbps。
+                     * 获取<p>带宽配额，单位：Mbps。</p>
+                     * @return Bandwidth <p>带宽配额，单位：Mbps。</p>
                      * 
                      */
                     uint64_t GetBandwidth() const;
 
                     /**
-                     * 设置带宽配额，单位：Mbps。
-                     * @param _bandwidth 带宽配额，单位：Mbps。
+                     * 设置<p>带宽配额，单位：Mbps。</p>
+                     * @param _bandwidth <p>带宽配额，单位：Mbps。</p>
                      * 
                      */
                     void SetBandwidth(const uint64_t& _bandwidth);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取配额中文名称
-                     * @return Cname 配额中文名称
+                     * 获取<p>配额中文名称</p>
+                     * @return Cname <p>配额中文名称</p>
                      * 
                      */
                     std::string GetCname() const;
 
                     /**
-                     * 设置配额中文名称
-                     * @param _cname 配额中文名称
+                     * 设置<p>配额中文名称</p>
+                     * @param _cname <p>配额中文名称</p>
                      * 
                      */
                     void SetCname(const std::string& _cname);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool CnameHasBeenSet() const;
 
                     /**
-                     * 获取配额英文名称
-                     * @return Name 配额英文名称
+                     * 获取<p>配额英文名称</p>
+                     * @return Name <p>配额英文名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置配额英文名称
-                     * @param _name 配额英文名称
+                     * 设置<p>配额英文名称</p>
+                     * @param _name <p>配额英文名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -109,25 +109,52 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>SSL 连接数可选配额</p>
+                     * @return MaxConnection <p>SSL 连接数可选配额</p>
+                     * 
+                     */
+                    std::vector<uint64_t> GetMaxConnection() const;
+
+                    /**
+                     * 设置<p>SSL 连接数可选配额</p>
+                     * @param _maxConnection <p>SSL 连接数可选配额</p>
+                     * 
+                     */
+                    void SetMaxConnection(const std::vector<uint64_t>& _maxConnection);
+
+                    /**
+                     * 判断参数 MaxConnection 是否已赋值
+                     * @return MaxConnection 是否已赋值
+                     * 
+                     */
+                    bool MaxConnectionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 带宽配额，单位：Mbps。
+                     * <p>带宽配额，单位：Mbps。</p>
                      */
                     uint64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * 配额中文名称
+                     * <p>配额中文名称</p>
                      */
                     std::string m_cname;
                     bool m_cnameHasBeenSet;
 
                     /**
-                     * 配额英文名称
+                     * <p>配额英文名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * <p>SSL 连接数可选配额</p>
+                     */
+                    std::vector<uint64_t> m_maxConnection;
+                    bool m_maxConnectionHasBeenSet;
 
                 };
             }

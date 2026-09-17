@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Ocr 文字鉴别结果的评分，分值为0到100。
-                     * @return Confidence Ocr 文字鉴别结果的评分，分值为0到100。
+                     * 获取<p>Ocr 文字鉴别结果的评分，分值为0到100。</p>
+                     * @return Confidence <p>Ocr 文字鉴别结果的评分，分值为0到100。</p>
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置Ocr 文字鉴别结果的评分，分值为0到100。
-                     * @param _confidence Ocr 文字鉴别结果的评分，分值为0到100。
+                     * 设置<p>Ocr 文字鉴别结果的评分，分值为0到100。</p>
+                     * @param _confidence <p>Ocr 文字鉴别结果的评分，分值为0到100。</p>
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -68,27 +68,15 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取Ocr 文字鉴别的结果建议，取值范围：
-<li>pass；</li>
-<li>review；</li>
-<li>block。</li>
-                     * @return Suggestion Ocr 文字鉴别的结果建议，取值范围：
-<li>pass；</li>
-<li>review；</li>
-<li>block。</li>
+                     * 获取<p>Ocr 文字鉴别的结果建议，取值范围：</p><li>pass；</li><li>review；</li><li>block。</li>
+                     * @return Suggestion <p>Ocr 文字鉴别的结果建议，取值范围：</p><li>pass；</li><li>review；</li><li>block。</li>
                      * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置Ocr 文字鉴别的结果建议，取值范围：
-<li>pass；</li>
-<li>review；</li>
-<li>block。</li>
-                     * @param _suggestion Ocr 文字鉴别的结果建议，取值范围：
-<li>pass；</li>
-<li>review；</li>
-<li>block。</li>
+                     * 设置<p>Ocr 文字鉴别的结果建议，取值范围：</p><li>pass；</li><li>review；</li><li>block。</li>
+                     * @param _suggestion <p>Ocr 文字鉴别的结果建议，取值范围：</p><li>pass；</li><li>review；</li><li>block。</li>
                      * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
@@ -101,15 +89,15 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取Ocr 文字鉴别的嫌疑关键词列表。
-                     * @return KeywordSet Ocr 文字鉴别的嫌疑关键词列表。
+                     * 获取<p>Ocr 文字鉴别的嫌疑关键词列表。</p>
+                     * @return KeywordSet <p>Ocr 文字鉴别的嫌疑关键词列表。</p>
                      * 
                      */
                     std::vector<std::string> GetKeywordSet() const;
 
                     /**
-                     * 设置Ocr 文字鉴别的嫌疑关键词列表。
-                     * @param _keywordSet Ocr 文字鉴别的嫌疑关键词列表。
+                     * 设置<p>Ocr 文字鉴别的嫌疑关键词列表。</p>
+                     * @param _keywordSet <p>Ocr 文字鉴别的嫌疑关键词列表。</p>
                      * 
                      */
                     void SetKeywordSet(const std::vector<std::string>& _keywordSet);
@@ -122,15 +110,15 @@ namespace TencentCloud
                     bool KeywordSetHasBeenSet() const;
 
                     /**
-                     * 获取Ocr 文字鉴别的嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
-                     * @return AreaCoordSet Ocr 文字鉴别的嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
+                     * 获取<p>Ocr 文字鉴别的嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。</p>
+                     * @return AreaCoordSet <p>Ocr 文字鉴别的嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。</p>
                      * 
                      */
                     std::vector<int64_t> GetAreaCoordSet() const;
 
                     /**
-                     * 设置Ocr 文字鉴别的嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
-                     * @param _areaCoordSet Ocr 文字鉴别的嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
+                     * 设置<p>Ocr 文字鉴别的嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。</p>
+                     * @param _areaCoordSet <p>Ocr 文字鉴别的嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。</p>
                      * 
                      */
                     void SetAreaCoordSet(const std::vector<int64_t>& _areaCoordSet);
@@ -145,28 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Ocr 文字鉴别结果的评分，分值为0到100。
+                     * <p>Ocr 文字鉴别结果的评分，分值为0到100。</p>
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * Ocr 文字鉴别的结果建议，取值范围：
-<li>pass；</li>
-<li>review；</li>
-<li>block。</li>
+                     * <p>Ocr 文字鉴别的结果建议，取值范围：</p><li>pass；</li><li>review；</li><li>block。</li>
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * Ocr 文字鉴别的嫌疑关键词列表。
+                     * <p>Ocr 文字鉴别的嫌疑关键词列表。</p>
                      */
                     std::vector<std::string> m_keywordSet;
                     bool m_keywordSetHasBeenSet;
 
                     /**
-                     * Ocr 文字鉴别的嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
+                     * <p>Ocr 文字鉴别的嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。</p>
                      */
                     std::vector<int64_t> m_areaCoordSet;
                     bool m_areaCoordSetHasBeenSet;

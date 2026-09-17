@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tse/v20201207/model/Metadata.h>
+#include <tencentcloud/tse/v20201207/model/ExtendedMetadata.h>
 
 
 namespace TencentCloud
@@ -320,6 +321,27 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>拓展服务元数据</p>
+                     * @return ExtendedMetadata <p>拓展服务元数据</p>
+                     * 
+                     */
+                    std::vector<ExtendedMetadata> GetExtendedMetadata() const;
+
+                    /**
+                     * 设置<p>拓展服务元数据</p>
+                     * @param _extendedMetadata <p>拓展服务元数据</p>
+                     * 
+                     */
+                    void SetExtendedMetadata(const std::vector<ExtendedMetadata>& _extendedMetadata);
+
+                    /**
+                     * 判断参数 ExtendedMetadata 是否已赋值
+                     * @return ExtendedMetadata 是否已赋值
+                     * 
+                     */
+                    bool ExtendedMetadataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -399,6 +421,12 @@ namespace TencentCloud
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * <p>拓展服务元数据</p>
+                     */
+                    std::vector<ExtendedMetadata> m_extendedMetadata;
+                    bool m_extendedMetadataHasBeenSet;
 
                 };
             }

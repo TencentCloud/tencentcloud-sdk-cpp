@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取固定填值：9。
-                     * @return CaptchaType 固定填值：9。
+                     * 获取<p>固定填值：9。</p>
+                     * @return CaptchaType <p>固定填值：9。</p>
                      * 
                      */
                     uint64_t GetCaptchaType() const;
 
                     /**
-                     * 设置固定填值：9。
-                     * @param _captchaType 固定填值：9。
+                     * 设置<p>固定填值：9。</p>
+                     * @param _captchaType <p>固定填值：9。</p>
                      * 
                      */
                     void SetCaptchaType(const uint64_t& _captchaType);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool CaptchaTypeHasBeenSet() const;
 
                     /**
-                     * 获取前端回调函数返回的用户验证票据
-                     * @return Ticket 前端回调函数返回的用户验证票据
+                     * 获取<p>前端回调函数返回的用户验证票据</p>
+                     * @return Ticket <p>前端回调函数返回的用户验证票据</p>
                      * 
                      */
                     std::string GetTicket() const;
 
                     /**
-                     * 设置前端回调函数返回的用户验证票据
-                     * @param _ticket 前端回调函数返回的用户验证票据
+                     * 设置<p>前端回调函数返回的用户验证票据</p>
+                     * @param _ticket <p>前端回调函数返回的用户验证票据</p>
                      * 
                      */
                     void SetTicket(const std::string& _ticket);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TicketHasBeenSet() const;
 
                     /**
-                     * 获取业务侧获取到的验证码使用者的外网IP
-                     * @return UserIp 业务侧获取到的验证码使用者的外网IP
+                     * 获取<p>业务侧获取到的验证码使用者的外网IP</p>
+                     * @return UserIp <p>业务侧获取到的验证码使用者的外网IP</p>
                      * 
                      */
                     std::string GetUserIp() const;
 
                     /**
-                     * 设置业务侧获取到的验证码使用者的外网IP
-                     * @param _userIp 业务侧获取到的验证码使用者的外网IP
+                     * 设置<p>业务侧获取到的验证码使用者的外网IP</p>
+                     * @param _userIp <p>业务侧获取到的验证码使用者的外网IP</p>
                      * 
                      */
                     void SetUserIp(const std::string& _userIp);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool UserIpHasBeenSet() const;
 
                     /**
-                     * 获取前端回调函数返回的随机字符串
-                     * @return Randstr 前端回调函数返回的随机字符串
+                     * 获取<p>前端回调函数返回的随机字符串</p>
+                     * @return Randstr <p>前端回调函数返回的随机字符串</p>
                      * 
                      */
                     std::string GetRandstr() const;
 
                     /**
-                     * 设置前端回调函数返回的随机字符串
-                     * @param _randstr 前端回调函数返回的随机字符串
+                     * 设置<p>前端回调函数返回的随机字符串</p>
+                     * @param _randstr <p>前端回调函数返回的随机字符串</p>
                      * 
                      */
                     void SetRandstr(const std::string& _randstr);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool RandstrHasBeenSet() const;
 
                     /**
-                     * 获取验证码应用ID。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到CaptchaAppId。
-                     * @return CaptchaAppId 验证码应用ID。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到CaptchaAppId。
+                     * 获取<p>验证码应用ID。登录 <a href="https://console.cloud.tencent.com/captcha/graphical">验证码控制台</a>，在验证列表的【密钥】列，即可查看到CaptchaAppId。</p>
+                     * @return CaptchaAppId <p>验证码应用ID。登录 <a href="https://console.cloud.tencent.com/captcha/graphical">验证码控制台</a>，在验证列表的【密钥】列，即可查看到CaptchaAppId。</p>
                      * 
                      */
                     uint64_t GetCaptchaAppId() const;
 
                     /**
-                     * 设置验证码应用ID。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到CaptchaAppId。
-                     * @param _captchaAppId 验证码应用ID。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到CaptchaAppId。
+                     * 设置<p>验证码应用ID。登录 <a href="https://console.cloud.tencent.com/captcha/graphical">验证码控制台</a>，在验证列表的【密钥】列，即可查看到CaptchaAppId。</p>
+                     * @param _captchaAppId <p>验证码应用ID。登录 <a href="https://console.cloud.tencent.com/captcha/graphical">验证码控制台</a>，在验证列表的【密钥】列，即可查看到CaptchaAppId。</p>
                      * 
                      */
                     void SetCaptchaAppId(const uint64_t& _captchaAppId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool CaptchaAppIdHasBeenSet() const;
 
                     /**
-                     * 获取验证码应用密钥。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到AppSecretKey。AppSecretKey属于服务器端校验验证码票据的密钥，请妥善保密，请勿泄露给第三方。
-                     * @return AppSecretKey 验证码应用密钥。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到AppSecretKey。AppSecretKey属于服务器端校验验证码票据的密钥，请妥善保密，请勿泄露给第三方。
+                     * 获取<p>验证码应用密钥。登录 <a href="https://console.cloud.tencent.com/captcha/graphical">验证码控制台</a>，在验证列表的【密钥】列，即可查看到AppSecretKey。AppSecretKey属于服务器端校验验证码票据的密钥，请妥善保密，请勿泄露给第三方。</p>
+                     * @return AppSecretKey <p>验证码应用密钥。登录 <a href="https://console.cloud.tencent.com/captcha/graphical">验证码控制台</a>，在验证列表的【密钥】列，即可查看到AppSecretKey。AppSecretKey属于服务器端校验验证码票据的密钥，请妥善保密，请勿泄露给第三方。</p>
                      * 
                      */
                     std::string GetAppSecretKey() const;
 
                     /**
-                     * 设置验证码应用密钥。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到AppSecretKey。AppSecretKey属于服务器端校验验证码票据的密钥，请妥善保密，请勿泄露给第三方。
-                     * @param _appSecretKey 验证码应用密钥。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到AppSecretKey。AppSecretKey属于服务器端校验验证码票据的密钥，请妥善保密，请勿泄露给第三方。
+                     * 设置<p>验证码应用密钥。登录 <a href="https://console.cloud.tencent.com/captcha/graphical">验证码控制台</a>，在验证列表的【密钥】列，即可查看到AppSecretKey。AppSecretKey属于服务器端校验验证码票据的密钥，请妥善保密，请勿泄露给第三方。</p>
+                     * @param _appSecretKey <p>验证码应用密钥。登录 <a href="https://console.cloud.tencent.com/captcha/graphical">验证码控制台</a>，在验证列表的【密钥】列，即可查看到AppSecretKey。AppSecretKey属于服务器端校验验证码票据的密钥，请妥善保密，请勿泄露给第三方。</p>
                      * 
                      */
                     void SetAppSecretKey(const std::string& _appSecretKey);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool AppSecretKeyHasBeenSet() const;
 
                     /**
-                     * 获取预留字段
-                     * @return BusinessId 预留字段
+                     * 获取<p>预留字段</p>
+                     * @return BusinessId <p>预留字段</p>
                      * 
                      */
                     uint64_t GetBusinessId() const;
 
                     /**
-                     * 设置预留字段
-                     * @param _businessId 预留字段
+                     * 设置<p>预留字段</p>
+                     * @param _businessId <p>预留字段</p>
                      * 
                      */
                     void SetBusinessId(const uint64_t& _businessId);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool BusinessIdHasBeenSet() const;
 
                     /**
-                     * 获取预留字段
-                     * @return SceneId 预留字段
+                     * 获取<p>预留字段</p>
+                     * @return SceneId <p>预留字段</p>
                      * 
                      */
                     uint64_t GetSceneId() const;
 
                     /**
-                     * 设置预留字段
-                     * @param _sceneId 预留字段
+                     * 设置<p>预留字段</p>
+                     * @param _sceneId <p>预留字段</p>
                      * 
                      */
                     void SetSceneId(const uint64_t& _sceneId);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool SceneIdHasBeenSet() const;
 
                     /**
-                     * 获取mac 地址或设备唯一标识
-                     * @return MacAddress mac 地址或设备唯一标识
+                     * 获取<p>mac 地址或设备唯一标识</p>
+                     * @return MacAddress <p>mac 地址或设备唯一标识</p>
                      * 
                      */
                     std::string GetMacAddress() const;
 
                     /**
-                     * 设置mac 地址或设备唯一标识
-                     * @param _macAddress mac 地址或设备唯一标识
+                     * 设置<p>mac 地址或设备唯一标识</p>
+                     * @param _macAddress <p>mac 地址或设备唯一标识</p>
                      * 
                      */
                     void SetMacAddress(const std::string& _macAddress);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool MacAddressHasBeenSet() const;
 
                     /**
-                     * 获取手机设备号
-                     * @return Imei 手机设备号
+                     * 获取<p>手机设备号</p>
+                     * @return Imei <p>手机设备号</p>
                      * 
                      */
                     std::string GetImei() const;
 
                     /**
-                     * 设置手机设备号
-                     * @param _imei 手机设备号
+                     * 设置<p>手机设备号</p>
+                     * @param _imei <p>手机设备号</p>
                      * 
                      */
                     void SetImei(const std::string& _imei);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool ImeiHasBeenSet() const;
 
                     /**
-                     * 获取是否返回前端获取验证码时间，取值1：需要返回
-                     * @return NeedGetCaptchaTime 是否返回前端获取验证码时间，取值1：需要返回
+                     * 获取<p>是否返回前端获取验证码时间，取值1：需要返回</p>
+                     * @return NeedGetCaptchaTime <p>是否返回前端获取验证码时间，取值1：需要返回</p>
                      * 
                      */
                     int64_t GetNeedGetCaptchaTime() const;
 
                     /**
-                     * 设置是否返回前端获取验证码时间，取值1：需要返回
-                     * @param _needGetCaptchaTime 是否返回前端获取验证码时间，取值1：需要返回
+                     * 设置<p>是否返回前端获取验证码时间，取值1：需要返回</p>
+                     * @param _needGetCaptchaTime <p>是否返回前端获取验证码时间，取值1：需要返回</p>
                      * 
                      */
                     void SetNeedGetCaptchaTime(const int64_t& _needGetCaptchaTime);
@@ -276,67 +276,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 固定填值：9。
+                     * <p>固定填值：9。</p>
                      */
                     uint64_t m_captchaType;
                     bool m_captchaTypeHasBeenSet;
 
                     /**
-                     * 前端回调函数返回的用户验证票据
+                     * <p>前端回调函数返回的用户验证票据</p>
                      */
                     std::string m_ticket;
                     bool m_ticketHasBeenSet;
 
                     /**
-                     * 业务侧获取到的验证码使用者的外网IP
+                     * <p>业务侧获取到的验证码使用者的外网IP</p>
                      */
                     std::string m_userIp;
                     bool m_userIpHasBeenSet;
 
                     /**
-                     * 前端回调函数返回的随机字符串
+                     * <p>前端回调函数返回的随机字符串</p>
                      */
                     std::string m_randstr;
                     bool m_randstrHasBeenSet;
 
                     /**
-                     * 验证码应用ID。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到CaptchaAppId。
+                     * <p>验证码应用ID。登录 <a href="https://console.cloud.tencent.com/captcha/graphical">验证码控制台</a>，在验证列表的【密钥】列，即可查看到CaptchaAppId。</p>
                      */
                     uint64_t m_captchaAppId;
                     bool m_captchaAppIdHasBeenSet;
 
                     /**
-                     * 验证码应用密钥。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到AppSecretKey。AppSecretKey属于服务器端校验验证码票据的密钥，请妥善保密，请勿泄露给第三方。
+                     * <p>验证码应用密钥。登录 <a href="https://console.cloud.tencent.com/captcha/graphical">验证码控制台</a>，在验证列表的【密钥】列，即可查看到AppSecretKey。AppSecretKey属于服务器端校验验证码票据的密钥，请妥善保密，请勿泄露给第三方。</p>
                      */
                     std::string m_appSecretKey;
                     bool m_appSecretKeyHasBeenSet;
 
                     /**
-                     * 预留字段
+                     * <p>预留字段</p>
                      */
                     uint64_t m_businessId;
                     bool m_businessIdHasBeenSet;
 
                     /**
-                     * 预留字段
+                     * <p>预留字段</p>
                      */
                     uint64_t m_sceneId;
                     bool m_sceneIdHasBeenSet;
 
                     /**
-                     * mac 地址或设备唯一标识
+                     * <p>mac 地址或设备唯一标识</p>
                      */
                     std::string m_macAddress;
                     bool m_macAddressHasBeenSet;
 
                     /**
-                     * 手机设备号
+                     * <p>手机设备号</p>
                      */
                     std::string m_imei;
                     bool m_imeiHasBeenSet;
 
                     /**
-                     * 是否返回前端获取验证码时间，取值1：需要返回
+                     * <p>是否返回前端获取验证码时间，取值1：需要返回</p>
                      */
                     int64_t m_needGetCaptchaTime;
                     bool m_needGetCaptchaTimeHasBeenSet;

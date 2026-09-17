@@ -32,6 +32,7 @@ RecognizeValidIDCardOCRRequest::RecognizeValidIDCardOCRRequest() :
     m_enableOcclusionCheckHasBeenSet(false),
     m_enableCopyCheckHasBeenSet(false),
     m_enableReshootCheckHasBeenSet(false),
+    m_enableReflectCheckHasBeenSet(false),
     m_enablePSCheckHasBeenSet(false),
     m_enableWordCheckHasBeenSet(false),
     m_enableQualityCheckHasBeenSet(false),
@@ -116,6 +117,14 @@ string RecognizeValidIDCardOCRRequest::ToJsonString() const
         string key = "EnableReshootCheck";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableReshootCheck, allocator);
+    }
+
+    if (m_enableReflectCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableReflectCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableReflectCheck, allocator);
     }
 
     if (m_enablePSCheckHasBeenSet)
@@ -300,6 +309,22 @@ void RecognizeValidIDCardOCRRequest::SetEnableReshootCheck(const bool& _enableRe
 bool RecognizeValidIDCardOCRRequest::EnableReshootCheckHasBeenSet() const
 {
     return m_enableReshootCheckHasBeenSet;
+}
+
+bool RecognizeValidIDCardOCRRequest::GetEnableReflectCheck() const
+{
+    return m_enableReflectCheck;
+}
+
+void RecognizeValidIDCardOCRRequest::SetEnableReflectCheck(const bool& _enableReflectCheck)
+{
+    m_enableReflectCheck = _enableReflectCheck;
+    m_enableReflectCheckHasBeenSet = true;
+}
+
+bool RecognizeValidIDCardOCRRequest::EnableReflectCheckHasBeenSet() const
+{
+    return m_enableReflectCheckHasBeenSet;
 }
 
 bool RecognizeValidIDCardOCRRequest::GetEnablePSCheck() const

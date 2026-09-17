@@ -29,7 +29,8 @@ PrometheusAlertGroupSet::PrometheusAlertGroupSet() :
     m_templateIdHasBeenSet(false),
     m_rulesHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_lastModifySubAccountUinHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,16 @@ CoreInternalOutcome PrometheusAlertGroupSet::Deserialize(const rapidjson::Value 
         m_updatedAtHasBeenSet = true;
     }
 
+    if (value.HasMember("LastModifySubAccountUin") && !value["LastModifySubAccountUin"].IsNull())
+    {
+        if (!value["LastModifySubAccountUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusAlertGroupSet.LastModifySubAccountUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastModifySubAccountUin = string(value["LastModifySubAccountUin"].GetString());
+        m_lastModifySubAccountUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -238,6 +249,14 @@ void PrometheusAlertGroupSet::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "UpdatedAt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updatedAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lastModifySubAccountUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastModifySubAccountUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastModifySubAccountUin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -385,5 +404,21 @@ void PrometheusAlertGroupSet::SetUpdatedAt(const string& _updatedAt)
 bool PrometheusAlertGroupSet::UpdatedAtHasBeenSet() const
 {
     return m_updatedAtHasBeenSet;
+}
+
+string PrometheusAlertGroupSet::GetLastModifySubAccountUin() const
+{
+    return m_lastModifySubAccountUin;
+}
+
+void PrometheusAlertGroupSet::SetLastModifySubAccountUin(const string& _lastModifySubAccountUin)
+{
+    m_lastModifySubAccountUin = _lastModifySubAccountUin;
+    m_lastModifySubAccountUinHasBeenSet = true;
+}
+
+bool PrometheusAlertGroupSet::LastModifySubAccountUinHasBeenSet() const
+{
+    return m_lastModifySubAccountUinHasBeenSet;
 }
 

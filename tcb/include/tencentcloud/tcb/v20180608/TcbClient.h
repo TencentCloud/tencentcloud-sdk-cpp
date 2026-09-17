@@ -59,6 +59,8 @@
 #include <tencentcloud/tcb/v20180608/model/CreateHostingDomainResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateMySQLRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateMySQLResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreatePlatformEnvRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreatePlatformEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateStaticStoreRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateStaticStoreResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateTableRequest.h>
@@ -149,6 +151,16 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeMySQLTaskStatusResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribePGUserMigrationRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribePGUserMigrationResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribePlatformAccountCircleRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribePlatformAccountCircleResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribePlatformCreditsUsageRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribePlatformCreditsUsageResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribePlatformCreditsUsageDetailRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribePlatformCreditsUsageDetailResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribePlatformEnvUsageRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribePlatformEnvUsageResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribePlatformsRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribePlatformsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeQuotaDataRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeQuotaDataResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeResourcePermissionRequest.h>
@@ -167,6 +179,8 @@
 #include <tencentcloud/tcb/v20180608/model/DestroyEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyMySQLRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyMySQLResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DestroyPlatformEnvRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DestroyPlatformEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DownloadFunctionRequest.h>
@@ -201,6 +215,8 @@
 #include <tencentcloud/tcb/v20180608/model/ModifyLoginConfigResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyPGInstanceSpecRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyPGInstanceSpecResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyPlatformEnvRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyPlatformEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyProviderRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyProviderResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyResourcePermissionRequest.h>
@@ -309,6 +325,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateMySQLResponse> CreateMySQLOutcome;
                 typedef std::future<CreateMySQLOutcome> CreateMySQLOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateMySQLRequest&, CreateMySQLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMySQLAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePlatformEnvResponse> CreatePlatformEnvOutcome;
+                typedef std::future<CreatePlatformEnvOutcome> CreatePlatformEnvOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreatePlatformEnvRequest&, CreatePlatformEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePlatformEnvAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateStaticStoreResponse> CreateStaticStoreOutcome;
                 typedef std::future<CreateStaticStoreOutcome> CreateStaticStoreOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateStaticStoreRequest&, CreateStaticStoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStaticStoreAsyncHandler;
@@ -444,6 +463,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePGUserMigrationResponse> DescribePGUserMigrationOutcome;
                 typedef std::future<DescribePGUserMigrationOutcome> DescribePGUserMigrationOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribePGUserMigrationRequest&, DescribePGUserMigrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePGUserMigrationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePlatformAccountCircleResponse> DescribePlatformAccountCircleOutcome;
+                typedef std::future<DescribePlatformAccountCircleOutcome> DescribePlatformAccountCircleOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribePlatformAccountCircleRequest&, DescribePlatformAccountCircleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlatformAccountCircleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePlatformCreditsUsageResponse> DescribePlatformCreditsUsageOutcome;
+                typedef std::future<DescribePlatformCreditsUsageOutcome> DescribePlatformCreditsUsageOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribePlatformCreditsUsageRequest&, DescribePlatformCreditsUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlatformCreditsUsageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePlatformCreditsUsageDetailResponse> DescribePlatformCreditsUsageDetailOutcome;
+                typedef std::future<DescribePlatformCreditsUsageDetailOutcome> DescribePlatformCreditsUsageDetailOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribePlatformCreditsUsageDetailRequest&, DescribePlatformCreditsUsageDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlatformCreditsUsageDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePlatformEnvUsageResponse> DescribePlatformEnvUsageOutcome;
+                typedef std::future<DescribePlatformEnvUsageOutcome> DescribePlatformEnvUsageOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribePlatformEnvUsageRequest&, DescribePlatformEnvUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlatformEnvUsageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePlatformsResponse> DescribePlatformsOutcome;
+                typedef std::future<DescribePlatformsOutcome> DescribePlatformsOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribePlatformsRequest&, DescribePlatformsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlatformsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeQuotaDataResponse> DescribeQuotaDataOutcome;
                 typedef std::future<DescribeQuotaDataOutcome> DescribeQuotaDataOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeQuotaDataRequest&, DescribeQuotaDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQuotaDataAsyncHandler;
@@ -471,6 +505,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DestroyMySQLResponse> DestroyMySQLOutcome;
                 typedef std::future<DestroyMySQLOutcome> DestroyMySQLOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DestroyMySQLRequest&, DestroyMySQLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyMySQLAsyncHandler;
+                typedef Outcome<Core::Error, Model::DestroyPlatformEnvResponse> DestroyPlatformEnvOutcome;
+                typedef std::future<DestroyPlatformEnvOutcome> DestroyPlatformEnvOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DestroyPlatformEnvRequest&, DestroyPlatformEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyPlatformEnvAsyncHandler;
                 typedef Outcome<Core::Error, Model::DestroyStaticStoreResponse> DestroyStaticStoreOutcome;
                 typedef std::future<DestroyStaticStoreOutcome> DestroyStaticStoreOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DestroyStaticStoreRequest&, DestroyStaticStoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyStaticStoreAsyncHandler;
@@ -522,6 +559,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPGInstanceSpecResponse> ModifyPGInstanceSpecOutcome;
                 typedef std::future<ModifyPGInstanceSpecOutcome> ModifyPGInstanceSpecOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyPGInstanceSpecRequest&, ModifyPGInstanceSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPGInstanceSpecAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPlatformEnvResponse> ModifyPlatformEnvOutcome;
+                typedef std::future<ModifyPlatformEnvOutcome> ModifyPlatformEnvOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ModifyPlatformEnvRequest&, ModifyPlatformEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPlatformEnvAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyProviderResponse> ModifyProviderOutcome;
                 typedef std::future<ModifyProviderOutcome> ModifyProviderOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyProviderRequest&, ModifyProviderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProviderAsyncHandler;
@@ -797,6 +837,15 @@ namespace TencentCloud
                 CreateMySQLOutcome CreateMySQL(const Model::CreateMySQLRequest &request);
                 void CreateMySQLAsync(const Model::CreateMySQLRequest& request, const CreateMySQLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateMySQLOutcomeCallable CreateMySQLCallable(const Model::CreateMySQLRequest& request);
+
+                /**
+                 *用户在购买平台版套餐后，可调用此接口创建平台版套餐环境，将产生一个平台版套餐环境。
+                 * @param req CreatePlatformEnvRequest
+                 * @return CreatePlatformEnvOutcome
+                 */
+                CreatePlatformEnvOutcome CreatePlatformEnv(const Model::CreatePlatformEnvRequest &request);
+                void CreatePlatformEnvAsync(const Model::CreatePlatformEnvRequest& request, const CreatePlatformEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePlatformEnvOutcomeCallable CreatePlatformEnvCallable(const Model::CreatePlatformEnvRequest& request);
 
                 /**
                  *创建静态托管资源，包括COS和CDN，异步任务创建，查看创建结果需要根据DescribeStaticStore接口来查看
@@ -1250,6 +1299,78 @@ namespace TencentCloud
                 DescribePGUserMigrationOutcomeCallable DescribePGUserMigrationCallable(const Model::DescribePGUserMigrationRequest& request);
 
                 /**
+                 *查询平台版资源计费周期。
+云开发平台版资源点都是按月结算的，每个月都有一定的抵扣额度。
+
+例如：
+  某个平台版在 2026-01-05 购买了3个月(到期时间: 2026-04-05)，则他可以在以下3个周期内，分别享有40000资源点的额度：
+  1. 2026-01-05 ~ 2026-02-05 23:59:59
+  2. 2026-02-06 ~ 2026-03-05 23:59:59
+  3. 2026-03-06 ~ 2026-04-05 23:59:59
+
+本接口，用于获取平台版当前属于哪个计费周期内。
+
+影响范围：只读查询，不影响平台版资源
+使用场景：控制台资源用量页面/API 主动查询当前计费周期等
+                 * @param req DescribePlatformAccountCircleRequest
+                 * @return DescribePlatformAccountCircleOutcome
+                 */
+                DescribePlatformAccountCircleOutcome DescribePlatformAccountCircle(const Model::DescribePlatformAccountCircleRequest &request);
+                void DescribePlatformAccountCircleAsync(const Model::DescribePlatformAccountCircleRequest& request, const DescribePlatformAccountCircleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePlatformAccountCircleOutcomeCallable DescribePlatformAccountCircleCallable(const Model::DescribePlatformAccountCircleRequest& request);
+
+                /**
+                 *查询平台版本资源点模式下的资源点用量
+                 * @param req DescribePlatformCreditsUsageRequest
+                 * @return DescribePlatformCreditsUsageOutcome
+                 */
+                DescribePlatformCreditsUsageOutcome DescribePlatformCreditsUsage(const Model::DescribePlatformCreditsUsageRequest &request);
+                void DescribePlatformCreditsUsageAsync(const Model::DescribePlatformCreditsUsageRequest& request, const DescribePlatformCreditsUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePlatformCreditsUsageOutcomeCallable DescribePlatformCreditsUsageCallable(const Model::DescribePlatformCreditsUsageRequest& request);
+
+                /**
+                 *查询平台版资源点模式下的资源点用量及原始用量明细
+                 * @param req DescribePlatformCreditsUsageDetailRequest
+                 * @return DescribePlatformCreditsUsageDetailOutcome
+                 */
+                DescribePlatformCreditsUsageDetailOutcome DescribePlatformCreditsUsageDetail(const Model::DescribePlatformCreditsUsageDetailRequest &request);
+                void DescribePlatformCreditsUsageDetailAsync(const Model::DescribePlatformCreditsUsageDetailRequest& request, const DescribePlatformCreditsUsageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePlatformCreditsUsageDetailOutcomeCallable DescribePlatformCreditsUsageDetailCallable(const Model::DescribePlatformCreditsUsageDetailRequest& request);
+
+                /**
+                 *查询平台版环境资源用量
+
+指定查询范围，按资源类型返回各资源指标的用量及用量明细(按天)
+用量信息包含资源点用量，原始用量值（如流量、调用次数、容量等），原始用量单位等
+
+影响范围：只读查询、不改变资源
+使用场景：控制台用量页/API 查询平台版环境用量
+                 * @param req DescribePlatformEnvUsageRequest
+                 * @return DescribePlatformEnvUsageOutcome
+                 */
+                DescribePlatformEnvUsageOutcome DescribePlatformEnvUsage(const Model::DescribePlatformEnvUsageRequest &request);
+                void DescribePlatformEnvUsageAsync(const Model::DescribePlatformEnvUsageRequest& request, const DescribePlatformEnvUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePlatformEnvUsageOutcomeCallable DescribePlatformEnvUsageCallable(const Model::DescribePlatformEnvUsageRequest& request);
+
+                /**
+                 *查询平台版资源信息列表，返回信息包括
+
+1.平台版基础信息如资源id，所属地域等;
+2.计费相关信息如：购买/过期时间，资源规格，计费状态等; 
+3.底层资源信息如：存储，日志，静态托管等资源信息等;
+
+入参支持platformIds，可查询指定平台版套餐信息
+
+影响范围：查询接口，返回当前用户账号下平台版资源信息
+使用场景：控制台展示平台版套餐信息/查平台版资源详情/资源状态
+                 * @param req DescribePlatformsRequest
+                 * @return DescribePlatformsOutcome
+                 */
+                DescribePlatformsOutcome DescribePlatforms(const Model::DescribePlatformsRequest &request);
+                void DescribePlatformsAsync(const Model::DescribePlatformsRequest& request, const DescribePlatformsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePlatformsOutcomeCallable DescribePlatformsCallable(const Model::DescribePlatformsRequest& request);
+
+                /**
                  *查询指定指标的配额使用量
                  * @param req DescribeQuotaDataRequest
                  * @return DescribeQuotaDataOutcome
@@ -1345,6 +1466,15 @@ namespace TencentCloud
                 DestroyMySQLOutcome DestroyMySQL(const Model::DestroyMySQLRequest &request);
                 void DestroyMySQLAsync(const Model::DestroyMySQLRequest& request, const DestroyMySQLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DestroyMySQLOutcomeCallable DestroyMySQLCallable(const Model::DestroyMySQLRequest& request);
+
+                /**
+                 *用户可以调用本接口，删除平台版套餐下的指定平台版环境。
+                 * @param req DestroyPlatformEnvRequest
+                 * @return DestroyPlatformEnvOutcome
+                 */
+                DestroyPlatformEnvOutcome DestroyPlatformEnv(const Model::DestroyPlatformEnvRequest &request);
+                void DestroyPlatformEnvAsync(const Model::DestroyPlatformEnvRequest& request, const DestroyPlatformEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DestroyPlatformEnvOutcomeCallable DestroyPlatformEnvCallable(const Model::DestroyPlatformEnvRequest& request);
 
                 /**
                  *销毁静态托管资源，该接口创建异步销毁任务，资源最终状态可从DestroyStaticStore接口查看
@@ -1504,6 +1634,15 @@ Id、Secret、CreatedAt、Meta 等字段在该接口中不可修改，当客户�
                 ModifyPGInstanceSpecOutcome ModifyPGInstanceSpec(const Model::ModifyPGInstanceSpecRequest &request);
                 void ModifyPGInstanceSpecAsync(const Model::ModifyPGInstanceSpecRequest& request, const ModifyPGInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPGInstanceSpecOutcomeCallable ModifyPGInstanceSpecCallable(const Model::ModifyPGInstanceSpecRequest& request);
+
+                /**
+                 *修改平台版环境信息
+                 * @param req ModifyPlatformEnvRequest
+                 * @return ModifyPlatformEnvOutcome
+                 */
+                ModifyPlatformEnvOutcome ModifyPlatformEnv(const Model::ModifyPlatformEnvRequest &request);
+                void ModifyPlatformEnvAsync(const Model::ModifyPlatformEnvRequest& request, const ModifyPlatformEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPlatformEnvOutcomeCallable ModifyPlatformEnvCallable(const Model::ModifyPlatformEnvRequest& request);
 
                 /**
                  *修改身份认证源。更新指定云开发环境下已有身份认证源的配置信息，支持修改基本信息（名称、图标、描述）、协议连接配置（ClientId、ClientSecret、端点地址等）、登录行为控制（透传模式、自动注册、邮箱/手机号自动关联）以及启用状态。

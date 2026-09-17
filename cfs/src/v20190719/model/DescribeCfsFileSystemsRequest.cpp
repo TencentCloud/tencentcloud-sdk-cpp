@@ -28,7 +28,9 @@ DescribeCfsFileSystemsRequest::DescribeCfsFileSystemsRequest() :
     m_subnetIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_creationTokenHasBeenSet(false)
+    m_creationTokenHasBeenSet(false),
+    m_filtersHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,36 @@ string DescribeCfsFileSystemsRequest::ToJsonString() const
         string key = "CreationToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_creationToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -189,6 +221,38 @@ void DescribeCfsFileSystemsRequest::SetCreationToken(const string& _creationToke
 bool DescribeCfsFileSystemsRequest::CreationTokenHasBeenSet() const
 {
     return m_creationTokenHasBeenSet;
+}
+
+vector<Filter> DescribeCfsFileSystemsRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeCfsFileSystemsRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeCfsFileSystemsRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
+
+vector<TagInfo> DescribeCfsFileSystemsRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void DescribeCfsFileSystemsRequest::SetTags(const vector<TagInfo>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool DescribeCfsFileSystemsRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

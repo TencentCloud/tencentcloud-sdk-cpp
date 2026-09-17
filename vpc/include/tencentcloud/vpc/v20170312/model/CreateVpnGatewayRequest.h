@@ -152,21 +152,21 @@ namespace TencentCloud
                     /**
                      * 获取<p>可用区，如：ap-guangzhou-2。</p>
                      * @return Zone <p>可用区，如：ap-guangzhou-2。</p>
-                     * 
+                     * @deprecated
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置<p>可用区，如：ap-guangzhou-2。</p>
                      * @param _zone <p>可用区，如：ap-guangzhou-2。</p>
-                     * 
+                     * @deprecated
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -275,6 +275,111 @@ namespace TencentCloud
                      */
                     bool BgpAsnHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否是私网类型</p>
+                     * @return IsPrivate <p>是否是私网类型</p>
+                     * 
+                     */
+                    bool GetIsPrivate() const;
+
+                    /**
+                     * 设置<p>是否是私网类型</p>
+                     * @param _isPrivate <p>是否是私网类型</p>
+                     * 
+                     */
+                    void SetIsPrivate(const bool& _isPrivate);
+
+                    /**
+                     * 判断参数 IsPrivate 是否已赋值
+                     * @return IsPrivate 是否已赋值
+                     * 
+                     */
+                    bool IsPrivateHasBeenSet() const;
+
+                    /**
+                     * 获取<p>私网唯一ID</p>
+                     * @return SubnetId <p>私网唯一ID</p>
+                     * 
+                     */
+                    std::string GetSubnetId() const;
+
+                    /**
+                     * 设置<p>私网唯一ID</p>
+                     * @param _subnetId <p>私网唯一ID</p>
+                     * 
+                     */
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     * 
+                     */
+                    bool SubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>BGP 开关，开启时需指定BgpAsn。</p>
+                     * @return BgpEnable <p>BGP 开关，开启时需指定BgpAsn。</p>
+                     * 
+                     */
+                    bool GetBgpEnable() const;
+
+                    /**
+                     * 设置<p>BGP 开关，开启时需指定BgpAsn。</p>
+                     * @param _bgpEnable <p>BGP 开关，开启时需指定BgpAsn。</p>
+                     * 
+                     */
+                    void SetBgpEnable(const bool& _bgpEnable);
+
+                    /**
+                     * 判断参数 BgpEnable 是否已赋值
+                     * @return BgpEnable 是否已赋值
+                     * 
+                     */
+                    bool BgpEnableHasBeenSet() const;
+
+                    /**
+                     * 获取<p>内外层IP协议</p><p>枚举值：</p><ul><li>4in4： IPv4 over IPv4</li><li>6in4： IPv6 over IPv4</li><li>6in6： IPv6 over IPv6</li><li>4in6： IPv4 over IPv6</li></ul><p>默认值：4in4</p>
+                     * @return IpStack <p>内外层IP协议</p><p>枚举值：</p><ul><li>4in4： IPv4 over IPv4</li><li>6in4： IPv6 over IPv4</li><li>6in6： IPv6 over IPv6</li><li>4in6： IPv4 over IPv6</li></ul><p>默认值：4in4</p>
+                     * 
+                     */
+                    std::string GetIpStack() const;
+
+                    /**
+                     * 设置<p>内外层IP协议</p><p>枚举值：</p><ul><li>4in4： IPv4 over IPv4</li><li>6in4： IPv6 over IPv4</li><li>6in6： IPv6 over IPv6</li><li>4in6： IPv4 over IPv6</li></ul><p>默认值：4in4</p>
+                     * @param _ipStack <p>内外层IP协议</p><p>枚举值：</p><ul><li>4in4： IPv4 over IPv4</li><li>6in4： IPv6 over IPv4</li><li>6in6： IPv6 over IPv6</li><li>4in6： IPv4 over IPv6</li></ul><p>默认值：4in4</p>
+                     * 
+                     */
+                    void SetIpStack(const std::string& _ipStack);
+
+                    /**
+                     * 判断参数 IpStack 是否已赋值
+                     * @return IpStack 是否已赋值
+                     * 
+                     */
+                    bool IpStackHasBeenSet() const;
+
+                    /**
+                     * 获取<p>CCN类型私网VPN接入网段</p>
+                     * @return AccessSubnet <p>CCN类型私网VPN接入网段</p>
+                     * 
+                     */
+                    std::string GetAccessSubnet() const;
+
+                    /**
+                     * 设置<p>CCN类型私网VPN接入网段</p>
+                     * @param _accessSubnet <p>CCN类型私网VPN接入网段</p>
+                     * 
+                     */
+                    void SetAccessSubnet(const std::string& _accessSubnet);
+
+                    /**
+                     * 判断参数 AccessSubnet 是否已赋值
+                     * @return AccessSubnet 是否已赋值
+                     * 
+                     */
+                    bool AccessSubnetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -342,6 +447,36 @@ namespace TencentCloud
                      */
                     uint64_t m_bgpAsn;
                     bool m_bgpAsnHasBeenSet;
+
+                    /**
+                     * <p>是否是私网类型</p>
+                     */
+                    bool m_isPrivate;
+                    bool m_isPrivateHasBeenSet;
+
+                    /**
+                     * <p>私网唯一ID</p>
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * <p>BGP 开关，开启时需指定BgpAsn。</p>
+                     */
+                    bool m_bgpEnable;
+                    bool m_bgpEnableHasBeenSet;
+
+                    /**
+                     * <p>内外层IP协议</p><p>枚举值：</p><ul><li>4in4： IPv4 over IPv4</li><li>6in4： IPv6 over IPv4</li><li>6in6： IPv6 over IPv6</li><li>4in6： IPv4 over IPv6</li></ul><p>默认值：4in4</p>
+                     */
+                    std::string m_ipStack;
+                    bool m_ipStackHasBeenSet;
+
+                    /**
+                     * <p>CCN类型私网VPN接入网段</p>
+                     */
+                    std::string m_accessSubnet;
+                    bool m_accessSubnetHasBeenSet;
 
                 };
             }

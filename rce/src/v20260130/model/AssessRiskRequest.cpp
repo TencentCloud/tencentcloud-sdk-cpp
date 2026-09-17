@@ -38,7 +38,8 @@ AssessRiskRequest::AssessRiskRequest() :
     m_userPhoneEncryptHasBeenSet(false),
     m_weChatOpenIdHasBeenSet(false),
     m_qQOpenIdHasBeenSet(false),
-    m_qQAppIdHasBeenSet(false)
+    m_qQAppIdHasBeenSet(false),
+    m_businessIdHasBeenSet(false)
 {
 }
 
@@ -179,6 +180,14 @@ string AssessRiskRequest::ToJsonString() const
         string key = "QQAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_qQAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_businessIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_businessId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -443,6 +452,22 @@ void AssessRiskRequest::SetQQAppId(const string& _qQAppId)
 bool AssessRiskRequest::QQAppIdHasBeenSet() const
 {
     return m_qQAppIdHasBeenSet;
+}
+
+string AssessRiskRequest::GetBusinessId() const
+{
+    return m_businessId;
+}
+
+void AssessRiskRequest::SetBusinessId(const string& _businessId)
+{
+    m_businessId = _businessId;
+    m_businessIdHasBeenSet = true;
+}
+
+bool AssessRiskRequest::BusinessIdHasBeenSet() const
+{
+    return m_businessIdHasBeenSet;
 }
 
 

@@ -27,7 +27,8 @@ CreateChatCompletionRequest::CreateChatCompletionRequest() :
     m_instanceIdHasBeenSet(false),
     m_chatIdHasBeenSet(false),
     m_isHiddenHasBeenSet(false),
-    m_isChatHiddenHasBeenSet(false)
+    m_isChatHiddenHasBeenSet(false),
+    m_attachmentsHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,21 @@ string CreateChatCompletionRequest::ToJsonString() const
         string key = "IsChatHidden";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isChatHidden, allocator);
+    }
+
+    if (m_attachmentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Attachments";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_attachments.begin(); itr != m_attachments.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -164,6 +180,22 @@ void CreateChatCompletionRequest::SetIsChatHidden(const bool& _isChatHidden)
 bool CreateChatCompletionRequest::IsChatHiddenHasBeenSet() const
 {
     return m_isChatHiddenHasBeenSet;
+}
+
+vector<Attachments> CreateChatCompletionRequest::GetAttachments() const
+{
+    return m_attachments;
+}
+
+void CreateChatCompletionRequest::SetAttachments(const vector<Attachments>& _attachments)
+{
+    m_attachments = _attachments;
+    m_attachmentsHasBeenSet = true;
+}
+
+bool CreateChatCompletionRequest::AttachmentsHasBeenSet() const
+{
+    return m_attachmentsHasBeenSet;
 }
 
 

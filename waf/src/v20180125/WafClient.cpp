@@ -690,6 +690,56 @@ WafClient::CreateAccessExportOutcomeCallable WafClient::CreateAccessExportCallab
     return prom->get_future();
 }
 
+WafClient::CreateAndUpdateBatchCCRuleOutcome WafClient::CreateAndUpdateBatchCCRule(const CreateAndUpdateBatchCCRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAndUpdateBatchCCRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAndUpdateBatchCCRuleResponse rsp = CreateAndUpdateBatchCCRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAndUpdateBatchCCRuleOutcome(rsp);
+        else
+            return CreateAndUpdateBatchCCRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAndUpdateBatchCCRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::CreateAndUpdateBatchCCRuleAsync(const CreateAndUpdateBatchCCRuleRequest& request, const CreateAndUpdateBatchCCRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAndUpdateBatchCCRuleRequest&;
+    using Resp = CreateAndUpdateBatchCCRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAndUpdateBatchCCRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::CreateAndUpdateBatchCCRuleOutcomeCallable WafClient::CreateAndUpdateBatchCCRuleCallable(const CreateAndUpdateBatchCCRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAndUpdateBatchCCRuleOutcome>>();
+    CreateAndUpdateBatchCCRuleAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const CreateAndUpdateBatchCCRuleRequest&,
+        CreateAndUpdateBatchCCRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::CreateAreaBanRuleOutcome WafClient::CreateAreaBanRule(const CreateAreaBanRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAreaBanRule");

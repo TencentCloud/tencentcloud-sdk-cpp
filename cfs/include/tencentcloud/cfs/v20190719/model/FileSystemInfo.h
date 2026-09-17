@@ -664,6 +664,69 @@ namespace TencentCloud
                      */
                     bool ScenarioHasBeenSet() const;
 
+                    /**
+                     * 获取<p>过满删除容量占比，0.0 表示关闭</p><p>取值范围：[0.0, 1.0]</p>
+                     * @return FullDeleteCapacityUsage <p>过满删除容量占比，0.0 表示关闭</p><p>取值范围：[0.0, 1.0]</p>
+                     * 
+                     */
+                    double GetFullDeleteCapacityUsage() const;
+
+                    /**
+                     * 设置<p>过满删除容量占比，0.0 表示关闭</p><p>取值范围：[0.0, 1.0]</p>
+                     * @param _fullDeleteCapacityUsage <p>过满删除容量占比，0.0 表示关闭</p><p>取值范围：[0.0, 1.0]</p>
+                     * 
+                     */
+                    void SetFullDeleteCapacityUsage(const double& _fullDeleteCapacityUsage);
+
+                    /**
+                     * 判断参数 FullDeleteCapacityUsage 是否已赋值
+                     * @return FullDeleteCapacityUsage 是否已赋值
+                     * 
+                     */
+                    bool FullDeleteCapacityUsageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>过满删除最小存活时间，单位秒</p><p>单位：秒</p>
+                     * @return FullDeleteMinTtl <p>过满删除最小存活时间，单位秒</p><p>单位：秒</p>
+                     * 
+                     */
+                    uint64_t GetFullDeleteMinTtl() const;
+
+                    /**
+                     * 设置<p>过满删除最小存活时间，单位秒</p><p>单位：秒</p>
+                     * @param _fullDeleteMinTtl <p>过满删除最小存活时间，单位秒</p><p>单位：秒</p>
+                     * 
+                     */
+                    void SetFullDeleteMinTtl(const uint64_t& _fullDeleteMinTtl);
+
+                    /**
+                     * 判断参数 FullDeleteMinTtl 是否已赋值
+                     * @return FullDeleteMinTtl 是否已赋值
+                     * 
+                     */
+                    bool FullDeleteMinTtlHasBeenSet() const;
+
+                    /**
+                     * 获取<p>过期删除 TTL，单位秒，0 表示关闭</p><p>单位：秒</p>
+                     * @return ExpireDeleteTtl <p>过期删除 TTL，单位秒，0 表示关闭</p><p>单位：秒</p>
+                     * 
+                     */
+                    uint64_t GetExpireDeleteTtl() const;
+
+                    /**
+                     * 设置<p>过期删除 TTL，单位秒，0 表示关闭</p><p>单位：秒</p>
+                     * @param _expireDeleteTtl <p>过期删除 TTL，单位秒，0 表示关闭</p><p>单位：秒</p>
+                     * 
+                     */
+                    void SetExpireDeleteTtl(const uint64_t& _expireDeleteTtl);
+
+                    /**
+                     * 判断参数 ExpireDeleteTtl 是否已赋值
+                     * @return ExpireDeleteTtl 是否已赋值
+                     * 
+                     */
+                    bool ExpireDeleteTtlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -840,6 +903,24 @@ namespace TencentCloud
                      */
                     std::string m_scenario;
                     bool m_scenarioHasBeenSet;
+
+                    /**
+                     * <p>过满删除容量占比，0.0 表示关闭</p><p>取值范围：[0.0, 1.0]</p>
+                     */
+                    double m_fullDeleteCapacityUsage;
+                    bool m_fullDeleteCapacityUsageHasBeenSet;
+
+                    /**
+                     * <p>过满删除最小存活时间，单位秒</p><p>单位：秒</p>
+                     */
+                    uint64_t m_fullDeleteMinTtl;
+                    bool m_fullDeleteMinTtlHasBeenSet;
+
+                    /**
+                     * <p>过期删除 TTL，单位秒，0 表示关闭</p><p>单位：秒</p>
+                     */
+                    uint64_t m_expireDeleteTtl;
+                    bool m_expireDeleteTtlHasBeenSet;
 
                 };
             }

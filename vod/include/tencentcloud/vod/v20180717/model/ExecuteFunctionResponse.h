@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取处理结果打包后的字符串，具体与后台一同协调。
-                     * @return Result 处理结果打包后的字符串，具体与后台一同协调。
+                     * 获取<p>处理结果打包后的字符串，具体与后台一同协调。</p>
+                     * @return Result <p>处理结果打包后的字符串，具体与后台一同协调。</p>
                      * 
                      */
                     std::string GetResult() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 处理结果打包后的字符串，具体与后台一同协调。
+                     * <p>处理结果打包后的字符串，具体与后台一同协调。</p>
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

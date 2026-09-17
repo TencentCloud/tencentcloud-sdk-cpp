@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取限制数目
-                     * @return Limit 限制数目
+                     * 获取<p>限制数目</p>
+                     * @return Limit <p>限制数目</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置限制数目
-                     * @param _limit 限制数目
+                     * 设置<p>限制数目</p>
+                     * @param _limit <p>限制数目</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取<p>偏移量</p>
+                     * @return Offset <p>偏移量</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置<p>偏移量</p>
+                     * @param _offset <p>偏移量</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取报告名称
-                     * @return Name 报告名称
+                     * 获取<p>报告名称</p>
+                     * @return Name <p>报告名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置报告名称
-                     * @param _name 报告名称
+                     * 设置<p>报告名称</p>
+                     * @param _name <p>报告名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取<p>开始时间</p>
+                     * @return StartTime <p>开始时间</p>
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置<p>开始时间</p>
+                     * @param _startTime <p>开始时间</p>
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取<p>结束时间</p>
+                     * @return EndTime <p>结束时间</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置<p>结束时间</p>
+                     * @param _endTime <p>结束时间</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取报告类型
-                     * @return ReportType 报告类型
+                     * 获取<p>报告类型</p>
+                     * @return ReportType <p>报告类型</p>
                      * 
                      */
                     int64_t GetReportType() const;
 
                     /**
-                     * 设置报告类型
-                     * @param _reportType 报告类型
+                     * 设置<p>报告类型</p>
+                     * @param _reportType <p>报告类型</p>
                      * 
                      */
                     void SetReportType(const int64_t& _reportType);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool ReportTypeHasBeenSet() const;
 
                     /**
-                     * 获取报告状态
-                     * @return ReportStatus 报告状态
+                     * 获取<p>报告状态</p>
+                     * @return ReportStatus <p>报告状态</p>
                      * 
                      */
                     int64_t GetReportStatus() const;
 
                     /**
-                     * 设置报告状态
-                     * @param _reportStatus 报告状态
+                     * 设置<p>报告状态</p>
+                     * @param _reportStatus <p>报告状态</p>
                      * 
                      */
                     void SetReportStatus(const int64_t& _reportStatus);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool ReportStatusHasBeenSet() const;
 
                     /**
-                     * 获取报表模版id
-                     * @return TemplateId 报表模版id
+                     * 获取<p>报表模板id</p>
+                     * @return TemplateId <p>报表模板id</p>
                      * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置报表模版id
-                     * @param _templateId 报表模版id
+                     * 设置<p>报表模板id</p>
+                     * @param _templateId <p>报表模板id</p>
                      * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取需要排序的字段
-                     * @return Field 需要排序的字段
+                     * 获取<p>需要排序的字段</p>
+                     * @return Field <p>需要排序的字段</p>
                      * 
                      */
                     std::string GetField() const;
 
                     /**
-                     * 设置需要排序的字段
-                     * @param _field 需要排序的字段
+                     * 设置<p>需要排序的字段</p>
+                     * @param _field <p>需要排序的字段</p>
                      * 
                      */
                     void SetField(const std::string& _field);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool FieldHasBeenSet() const;
 
                     /**
-                     * 获取排序顺序 asc desc
-                     * @return Sort 排序顺序 asc desc
+                     * 获取<p>排序顺序 asc desc</p>
+                     * @return Sort <p>排序顺序 asc desc</p>
                      * 
                      */
                     std::string GetSort() const;
 
                     /**
-                     * 设置排序顺序 asc desc
-                     * @param _sort 排序顺序 asc desc
+                     * 设置<p>排序顺序 asc desc</p>
+                     * @param _sort <p>排序顺序 asc desc</p>
                      * 
                      */
                     void SetSort(const std::string& _sort);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0
-                     * @return CntDay 时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0
+                     * 获取<p>时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0</p>
+                     * @return CntDay <p>时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0</p>
                      * 
                      */
                     int64_t GetCntDay() const;
 
                     /**
-                     * 设置时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0
-                     * @param _cntDay 时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0
+                     * 设置<p>时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0</p>
+                     * @param _cntDay <p>时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0</p>
                      * 
                      */
                     void SetCntDay(const int64_t& _cntDay);
@@ -276,67 +276,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 限制数目
+                     * <p>限制数目</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * <p>偏移量</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 报告名称
+                     * <p>报告名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * <p>开始时间</p>
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * <p>结束时间</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 报告类型
+                     * <p>报告类型</p>
                      */
                     int64_t m_reportType;
                     bool m_reportTypeHasBeenSet;
 
                     /**
-                     * 报告状态
+                     * <p>报告状态</p>
                      */
                     int64_t m_reportStatus;
                     bool m_reportStatusHasBeenSet;
 
                     /**
-                     * 报表模版id
+                     * <p>报表模板id</p>
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 需要排序的字段
+                     * <p>需要排序的字段</p>
                      */
                     std::string m_field;
                     bool m_fieldHasBeenSet;
 
                     /**
-                     * 排序顺序 asc desc
+                     * <p>排序顺序 asc desc</p>
                      */
                     std::string m_sort;
                     bool m_sortHasBeenSet;
 
                     /**
-                     * 时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0
+                     * <p>时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0</p>
                      */
                     int64_t m_cntDay;
                     bool m_cntDayHasBeenSet;

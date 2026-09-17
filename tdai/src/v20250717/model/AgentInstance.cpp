@@ -43,7 +43,9 @@ AgentInstance::AgentInstance() :
     m_creatingProgressHasBeenSet(false),
     m_roleNameHasBeenSet(false),
     m_offlineTimeHasBeenSet(false),
-    m_productNameHasBeenSet(false)
+    m_productNameHasBeenSet(false),
+    m_capabilitiesHasBeenSet(false),
+    m_deploymentFreeHasBeenSet(false)
 {
 }
 
@@ -322,6 +324,29 @@ CoreInternalOutcome AgentInstance::Deserialize(const rapidjson::Value &value)
         m_productNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Capabilities") && !value["Capabilities"].IsNull())
+    {
+        if (!value["Capabilities"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AgentInstance.Capabilities` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Capabilities"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_capabilities.push_back((*itr).GetString());
+        }
+        m_capabilitiesHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeploymentFree") && !value["DeploymentFree"].IsNull())
+    {
+        if (!value["DeploymentFree"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentInstance.DeploymentFree` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_deploymentFree = value["DeploymentFree"].GetBool();
+        m_deploymentFreeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -537,6 +562,27 @@ void AgentInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "ProductName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_productName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_capabilitiesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Capabilities";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_capabilities.begin(); itr != m_capabilities.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_deploymentFreeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeploymentFree";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deploymentFree, allocator);
     }
 
 }
@@ -908,5 +954,37 @@ void AgentInstance::SetProductName(const string& _productName)
 bool AgentInstance::ProductNameHasBeenSet() const
 {
     return m_productNameHasBeenSet;
+}
+
+vector<string> AgentInstance::GetCapabilities() const
+{
+    return m_capabilities;
+}
+
+void AgentInstance::SetCapabilities(const vector<string>& _capabilities)
+{
+    m_capabilities = _capabilities;
+    m_capabilitiesHasBeenSet = true;
+}
+
+bool AgentInstance::CapabilitiesHasBeenSet() const
+{
+    return m_capabilitiesHasBeenSet;
+}
+
+bool AgentInstance::GetDeploymentFree() const
+{
+    return m_deploymentFree;
+}
+
+void AgentInstance::SetDeploymentFree(const bool& _deploymentFree)
+{
+    m_deploymentFree = _deploymentFree;
+    m_deploymentFreeHasBeenSet = true;
+}
+
+bool AgentInstance::DeploymentFreeHasBeenSet() const
+{
+    return m_deploymentFreeHasBeenSet;
 }
 

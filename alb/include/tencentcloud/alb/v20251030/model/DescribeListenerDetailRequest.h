@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取监听器 ID，格式为 lst- 后接 8 位字母数字。
-                     * @return ListenerId 监听器 ID，格式为 lst- 后接 8 位字母数字。
+                     * 获取<p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>
+                     * @return ListenerId <p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置监听器 ID，格式为 lst- 后接 8 位字母数字。
-                     * @param _listenerId 监听器 ID，格式为 lst- 后接 8 位字母数字。
+                     * 设置<p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>
+                     * @param _listenerId <p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。
-                     * @return LoadBalancerId 负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。
+                     * 获取<p>负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。</p>
+                     * @return LoadBalancerId <p>负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。</p>
                      * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。
-                     * @param _loadBalancerId 负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。
+                     * 设置<p>负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。</p>
+                     * @param _loadBalancerId <p>负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。</p>
                      * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 监听器 ID，格式为 lst- 后接 8 位字母数字。
+                     * <p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。
+                     * <p>负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。</p>
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;

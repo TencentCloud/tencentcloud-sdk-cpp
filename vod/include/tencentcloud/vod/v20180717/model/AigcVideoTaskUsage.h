@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>输入 Token 数目。</p>
-                     * @return InputTokens <p>输入 Token 数目。</p>
+                     * 获取<p>输入 Token 数目。</p><p>仅使用 GV 的 omni 版本时取值有效。</p>
+                     * @return InputTokens <p>输入 Token 数目。</p><p>仅使用 GV 的 omni 版本时取值有效。</p>
                      * 
                      */
                     int64_t GetInputTokens() const;
 
                     /**
-                     * 设置<p>输入 Token 数目。</p>
-                     * @param _inputTokens <p>输入 Token 数目。</p>
+                     * 设置<p>输入 Token 数目。</p><p>仅使用 GV 的 omni 版本时取值有效。</p>
+                     * @param _inputTokens <p>输入 Token 数目。</p><p>仅使用 GV 的 omni 版本时取值有效。</p>
                      * 
                      */
                     void SetInputTokens(const int64_t& _inputTokens);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InputTokensHasBeenSet() const;
 
                     /**
-                     * 获取<p>思考产生的 Token 数目。</p>
-                     * @return ThoughtTokens <p>思考产生的 Token 数目。</p>
+                     * 获取<p>思考产生的 Token 数目。</p><p>仅使用 GV 的 omni 版本时取值有效。</p>
+                     * @return ThoughtTokens <p>思考产生的 Token 数目。</p><p>仅使用 GV 的 omni 版本时取值有效。</p>
                      * 
                      */
                     int64_t GetThoughtTokens() const;
 
                     /**
-                     * 设置<p>思考产生的 Token 数目。</p>
-                     * @param _thoughtTokens <p>思考产生的 Token 数目。</p>
+                     * 设置<p>思考产生的 Token 数目。</p><p>仅使用 GV 的 omni 版本时取值有效。</p>
+                     * @param _thoughtTokens <p>思考产生的 Token 数目。</p><p>仅使用 GV 的 omni 版本时取值有效。</p>
                      * 
                      */
                     void SetThoughtTokens(const int64_t& _thoughtTokens);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ThoughtTokensHasBeenSet() const;
 
                     /**
-                     * 获取<p>输入图片数目。</p>
-                     * @return InputImageCount <p>输入图片数目。</p>
+                     * 获取<p>输入图片数目。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
+                     * @return InputImageCount <p>输入图片数目。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
                      * 
                      */
                     int64_t GetInputImageCount() const;
 
                     /**
-                     * 设置<p>输入图片数目。</p>
-                     * @param _inputImageCount <p>输入图片数目。</p>
+                     * 设置<p>输入图片数目。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
+                     * @param _inputImageCount <p>输入图片数目。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
                      * 
                      */
                     void SetInputImageCount(const int64_t& _inputImageCount);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool InputImageCountHasBeenSet() const;
 
                     /**
-                     * 获取<p>输入视频的时长。</p><p>单位：秒。</p>
-                     * @return InputSeconds <p>输入视频的时长。</p><p>单位：秒。</p>
+                     * 获取<p>输入视频的时长。</p><p>单位：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
+                     * @return InputSeconds <p>输入视频的时长。</p><p>单位：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
                      * 
                      */
                     int64_t GetInputSeconds() const;
 
                     /**
-                     * 设置<p>输入视频的时长。</p><p>单位：秒。</p>
-                     * @param _inputSeconds <p>输入视频的时长。</p><p>单位：秒。</p>
+                     * 设置<p>输入视频的时长。</p><p>单位：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
+                     * @param _inputSeconds <p>输入视频的时长。</p><p>单位：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
                      * 
                      */
                     void SetInputSeconds(const int64_t& _inputSeconds);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool InputSecondsHasBeenSet() const;
 
                     /**
-                     * 获取<p>输出视频时长。</p><p>单位：秒。</p>
-                     * @return OutputSeconds <p>输出视频时长。</p><p>单位：秒。</p>
+                     * 获取<p>输出视频时长。</p><p>单位：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
+                     * @return OutputSeconds <p>输出视频时长。</p><p>单位：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
                      * 
                      */
                     int64_t GetOutputSeconds() const;
 
                     /**
-                     * 设置<p>输出视频时长。</p><p>单位：秒。</p>
-                     * @param _outputSeconds <p>输出视频时长。</p><p>单位：秒。</p>
+                     * 设置<p>输出视频时长。</p><p>单位：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
+                     * @param _outputSeconds <p>输出视频时长。</p><p>单位：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
                      * 
                      */
                     void SetOutputSeconds(const int64_t& _outputSeconds);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool OutputSecondsHasBeenSet() const;
 
                     /**
-                     * 获取<p>输入输出总时长。</p><p>默认值：秒。</p>
-                     * @return TotalSeconds <p>输入输出总时长。</p><p>默认值：秒。</p>
+                     * 获取<p>输入输出总时长。</p><p>默认值：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
+                     * @return TotalSeconds <p>输入输出总时长。</p><p>默认值：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
                      * 
                      */
                     int64_t GetTotalSeconds() const;
 
                     /**
-                     * 设置<p>输入输出总时长。</p><p>默认值：秒。</p>
-                     * @param _totalSeconds <p>输入输出总时长。</p><p>默认值：秒。</p>
+                     * 设置<p>输入输出总时长。</p><p>默认值：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
+                     * @param _totalSeconds <p>输入输出总时长。</p><p>默认值：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
                      * 
                      */
                     void SetTotalSeconds(const int64_t& _totalSeconds);
@@ -175,37 +175,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>输入 Token 数目。</p>
+                     * <p>输入 Token 数目。</p><p>仅使用 GV 的 omni 版本时取值有效。</p>
                      */
                     int64_t m_inputTokens;
                     bool m_inputTokensHasBeenSet;
 
                     /**
-                     * <p>思考产生的 Token 数目。</p>
+                     * <p>思考产生的 Token 数目。</p><p>仅使用 GV 的 omni 版本时取值有效。</p>
                      */
                     int64_t m_thoughtTokens;
                     bool m_thoughtTokensHasBeenSet;
 
                     /**
-                     * <p>输入图片数目。</p>
+                     * <p>输入图片数目。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
                      */
                     int64_t m_inputImageCount;
                     bool m_inputImageCountHasBeenSet;
 
                     /**
-                     * <p>输入视频的时长。</p><p>单位：秒。</p>
+                     * <p>输入视频的时长。</p><p>单位：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
                      */
                     int64_t m_inputSeconds;
                     bool m_inputSecondsHasBeenSet;
 
                     /**
-                     * <p>输出视频时长。</p><p>单位：秒。</p>
+                     * <p>输出视频时长。</p><p>单位：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
                      */
                     int64_t m_outputSeconds;
                     bool m_outputSecondsHasBeenSet;
 
                     /**
-                     * <p>输入输出总时长。</p><p>默认值：秒。</p>
+                     * <p>输入输出总时长。</p><p>默认值：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
                      */
                     int64_t m_totalSeconds;
                     bool m_totalSecondsHasBeenSet;

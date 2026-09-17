@@ -297,6 +297,31 @@ namespace TencentCloud
                     bool ResultPreviewFilePathHasBeenSet() const;
 
                     /**
+                     * 获取结果集schema信息文件cos路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SchemaInfoFilePath 结果集schema信息文件cos路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSchemaInfoFilePath() const;
+
+                    /**
+                     * 设置结果集schema信息文件cos路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _schemaInfoFilePath 结果集schema信息文件cos路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSchemaInfoFilePath(const std::string& _schemaInfoFilePath);
+
+                    /**
+                     * 判断参数 SchemaInfoFilePath 是否已赋值
+                     * @return SchemaInfoFilePath 是否已赋值
+                     * 
+                     */
+                    bool SchemaInfoFilePathHasBeenSet() const;
+
+                    /**
                      * 获取任务执行的结果总行数
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultTotalCount 任务执行的结果总行数
@@ -521,6 +546,31 @@ namespace TencentCloud
                      */
                     bool ScriptContentTruncateHasBeenSet() const;
 
+                    /**
+                     * 获取预览结果集是否收集完成
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CollectedPreviewResult 预览结果集是否收集完成
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetCollectedPreviewResult() const;
+
+                    /**
+                     * 设置预览结果集是否收集完成
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _collectedPreviewResult 预览结果集是否收集完成
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCollectedPreviewResult(const bool& _collectedPreviewResult);
+
+                    /**
+                     * 判断参数 CollectedPreviewResult 是否已赋值
+                     * @return CollectedPreviewResult 是否已赋值
+                     * 
+                     */
+                    bool CollectedPreviewResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -594,6 +644,13 @@ namespace TencentCloud
                     bool m_resultPreviewFilePathHasBeenSet;
 
                     /**
+                     * 结果集schema信息文件cos路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_schemaInfoFilePath;
+                    bool m_schemaInfoFilePathHasBeenSet;
+
+                    /**
                      * 任务执行的结果总行数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -655,6 +712,13 @@ namespace TencentCloud
                      */
                     bool m_scriptContentTruncate;
                     bool m_scriptContentTruncateHasBeenSet;
+
+                    /**
+                     * 预览结果集是否收集完成
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_collectedPreviewResult;
+                    bool m_collectedPreviewResultHasBeenSet;
 
                 };
             }

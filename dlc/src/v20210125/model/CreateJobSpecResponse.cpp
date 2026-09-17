@@ -40,6 +40,7 @@ CreateJobSpecResponse::CreateJobSpecResponse() :
     m_resourcePartitionIdHasBeenSet(false),
     m_resourcePartitionNameHasBeenSet(false),
     m_queueHasBeenSet(false),
+    m_queueAliasHasBeenSet(false),
     m_jobPackageHasBeenSet(false),
     m_jobPackageNameHasBeenSet(false),
     m_jobPackageSourceHasBeenSet(false),
@@ -255,6 +256,16 @@ CoreInternalOutcome CreateJobSpecResponse::Deserialize(const string &payload)
         }
         m_queue = string(rsp["Queue"].GetString());
         m_queueHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("QueueAlias") && !rsp["QueueAlias"].IsNull())
+    {
+        if (!rsp["QueueAlias"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueueAlias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_queueAlias = string(rsp["QueueAlias"].GetString());
+        m_queueAliasHasBeenSet = true;
     }
 
     if (rsp.HasMember("JobPackage") && !rsp["JobPackage"].IsNull())
@@ -605,6 +616,14 @@ string CreateJobSpecResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_queue.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_queueAliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueAlias";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queueAlias.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_jobPackageHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -942,6 +961,16 @@ string CreateJobSpecResponse::GetQueue() const
 bool CreateJobSpecResponse::QueueHasBeenSet() const
 {
     return m_queueHasBeenSet;
+}
+
+string CreateJobSpecResponse::GetQueueAlias() const
+{
+    return m_queueAlias;
+}
+
+bool CreateJobSpecResponse::QueueAliasHasBeenSet() const
+{
+    return m_queueAliasHasBeenSet;
 }
 
 string CreateJobSpecResponse::GetJobPackage() const

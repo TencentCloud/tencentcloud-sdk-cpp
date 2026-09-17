@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取SSL-VPN-SERVER 实例ID。
-                     * @return SslVpnServerId SSL-VPN-SERVER 实例ID。
+                     * 获取<p>SSL-VPN-SERVER 实例ID。</p>
+                     * @return SslVpnServerId <p>SSL-VPN-SERVER 实例ID。</p>
                      * 
                      */
                     std::string GetSslVpnServerId() const;
 
                     /**
-                     * 设置SSL-VPN-SERVER 实例ID。
-                     * @param _sslVpnServerId SSL-VPN-SERVER 实例ID。
+                     * 设置<p>SSL-VPN-SERVER 实例ID。</p>
+                     * @param _sslVpnServerId <p>SSL-VPN-SERVER 实例ID。</p>
                      * 
                      */
                     void SetSslVpnServerId(const std::string& _sslVpnServerId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool SslVpnServerIdHasBeenSet() const;
 
                     /**
-                     * 获取SSL-VPN-CLIENT实例Name。不可和SslVpnClientNames同时使用。
-                     * @return SslVpnClientName SSL-VPN-CLIENT实例Name。不可和SslVpnClientNames同时使用。
+                     * 获取<p>SSL-VPN-CLIENT实例Name。不可和SslVpnClientNames同时使用。</p>
+                     * @return SslVpnClientName <p>SSL-VPN-CLIENT实例Name。不可和SslVpnClientNames同时使用。</p>
                      * 
                      */
                     std::string GetSslVpnClientName() const;
 
                     /**
-                     * 设置SSL-VPN-CLIENT实例Name。不可和SslVpnClientNames同时使用。
-                     * @param _sslVpnClientName SSL-VPN-CLIENT实例Name。不可和SslVpnClientNames同时使用。
+                     * 设置<p>SSL-VPN-CLIENT实例Name。不可和SslVpnClientNames同时使用。</p>
+                     * @param _sslVpnClientName <p>SSL-VPN-CLIENT实例Name。不可和SslVpnClientNames同时使用。</p>
                      * 
                      */
                     void SetSslVpnClientName(const std::string& _sslVpnClientName);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool SslVpnClientNameHasBeenSet() const;
 
                     /**
-                     * 获取SSL-VPN-CLIENT实例Name数字。批量创建时使用。不可和SslVpnClientName同时使用。
-                     * @return SslVpnClientNames SSL-VPN-CLIENT实例Name数字。批量创建时使用。不可和SslVpnClientName同时使用。
+                     * 获取<p>SSL-VPN-CLIENT实例Name数字。批量创建时使用。不可和SslVpnClientName同时使用。</p>
+                     * @return SslVpnClientNames <p>SSL-VPN-CLIENT实例Name数字。批量创建时使用。不可和SslVpnClientName同时使用。</p>
                      * 
                      */
                     std::vector<std::string> GetSslVpnClientNames() const;
 
                     /**
-                     * 设置SSL-VPN-CLIENT实例Name数字。批量创建时使用。不可和SslVpnClientName同时使用。
-                     * @param _sslVpnClientNames SSL-VPN-CLIENT实例Name数字。批量创建时使用。不可和SslVpnClientName同时使用。
+                     * 设置<p>SSL-VPN-CLIENT实例Name数字。批量创建时使用。不可和SslVpnClientName同时使用。</p>
+                     * @param _sslVpnClientNames <p>SSL-VPN-CLIENT实例Name数字。批量创建时使用。不可和SslVpnClientName同时使用。</p>
                      * 
                      */
                     void SetSslVpnClientNames(const std::vector<std::string>& _sslVpnClientNames);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool SslVpnClientNamesHasBeenSet() const;
 
                     /**
-                     * 获取指定绑定的标签列表
-                     * @return Tags 指定绑定的标签列表
+                     * 获取<p>指定绑定的标签列表</p>
+                     * @return Tags <p>指定绑定的标签列表</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置指定绑定的标签列表
-                     * @param _tags 指定绑定的标签列表
+                     * 设置<p>指定绑定的标签列表</p>
+                     * @param _tags <p>指定绑定的标签列表</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -130,25 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * SSL-VPN-SERVER 实例ID。
+                     * <p>SSL-VPN-SERVER 实例ID。</p>
                      */
                     std::string m_sslVpnServerId;
                     bool m_sslVpnServerIdHasBeenSet;
 
                     /**
-                     * SSL-VPN-CLIENT实例Name。不可和SslVpnClientNames同时使用。
+                     * <p>SSL-VPN-CLIENT实例Name。不可和SslVpnClientNames同时使用。</p>
                      */
                     std::string m_sslVpnClientName;
                     bool m_sslVpnClientNameHasBeenSet;
 
                     /**
-                     * SSL-VPN-CLIENT实例Name数字。批量创建时使用。不可和SslVpnClientName同时使用。
+                     * <p>SSL-VPN-CLIENT实例Name数字。批量创建时使用。不可和SslVpnClientName同时使用。</p>
                      */
                     std::vector<std::string> m_sslVpnClientNames;
                     bool m_sslVpnClientNamesHasBeenSet;
 
                     /**
-                     * 指定绑定的标签列表
+                     * <p>指定绑定的标签列表</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

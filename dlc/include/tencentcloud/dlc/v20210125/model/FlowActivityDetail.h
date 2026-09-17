@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>活动编码</p>
-                     * @return ActivityCode <p>活动编码</p>
+                     * 获取<p>活动编码；国际站返回英文编码，国内站返回中文描述</p>
+                     * @return ActivityCode <p>活动编码；国际站返回英文编码，国内站返回中文描述</p>
                      * 
                      */
                     std::string GetActivityCode() const;
 
                     /**
-                     * 设置<p>活动编码</p>
-                     * @param _activityCode <p>活动编码</p>
+                     * 设置<p>活动编码；国际站返回英文编码，国内站返回中文描述</p>
+                     * @param _activityCode <p>活动编码；国际站返回英文编码，国内站返回中文描述</p>
                      * 
                      */
                     void SetActivityCode(const std::string& _activityCode);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ActivityCodeHasBeenSet() const;
 
                     /**
-                     * 获取<p>活动状态</p>
-                     * @return Status <p>活动状态</p>
+                     * 获取<p>活动状态：1-运行中，2-已完成，-2-失败</p>
+                     * @return Status <p>活动状态：1-运行中，2-已完成，-2-失败</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置<p>活动状态</p>
-                     * @param _status <p>活动状态</p>
+                     * 设置<p>活动状态：1-运行中，2-已完成，-2-失败</p>
+                     * @param _status <p>活动状态：1-运行中，2-已完成，-2-失败</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -89,19 +89,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取<p>创建时间</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime <p>创建时间</p>
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取<p>活动创建时间</p>
+                     * @return CreateTime <p>活动创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置<p>创建时间</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime <p>创建时间</p>
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置<p>活动创建时间</p>
+                     * @param _createTime <p>活动创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -114,18 +110,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>耗时（秒）</p>
+                     * 获取<p>耗时（秒），活动未完成时省略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Duration <p>耗时（秒）</p>
+                     * @return Duration <p>耗时（秒），活动未完成时省略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDuration() const;
 
                     /**
-                     * 设置<p>耗时（秒）</p>
+                     * 设置<p>耗时（秒），活动未完成时省略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _duration <p>耗时（秒）</p>
+                     * @param _duration <p>耗时（秒），活动未完成时省略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -141,26 +137,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>活动编码</p>
+                     * <p>活动编码；国际站返回英文编码，国内站返回中文描述</p>
                      */
                     std::string m_activityCode;
                     bool m_activityCodeHasBeenSet;
 
                     /**
-                     * <p>活动状态</p>
+                     * <p>活动状态：1-运行中，2-已完成，-2-失败</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * <p>创建时间</p>
-注意：此字段可能返回 null，表示取不到有效值。
+                     * <p>活动创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * <p>耗时（秒）</p>
+                     * <p>耗时（秒），活动未完成时省略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_duration;

@@ -47,23 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取独占额度。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
-                     * @return ExclusiveQuota 独占额度。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * 获取<p>独占额度。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
+                     * @return ExclusiveQuota <p>独占额度。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      * 
                      */
                     std::string GetExclusiveQuota() const;
 
                     /**
-                     * 设置独占额度。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
-                     * @param _exclusiveQuota 独占额度。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * 设置<p>独占额度。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
+                     * @param _exclusiveQuota <p>独占额度。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      * 
                      */
                     void SetExclusiveQuota(const std::string& _exclusiveQuota);
@@ -76,23 +68,15 @@ namespace TencentCloud
                     bool ExclusiveQuotaHasBeenSet() const;
 
                     /**
-                     * 获取独占额度已用量。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
-                     * @return ExclusiveUsed 独占额度已用量。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * 获取<p>独占额度已用量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
+                     * @return ExclusiveUsed <p>独占额度已用量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      * 
                      */
                     std::string GetExclusiveUsed() const;
 
                     /**
-                     * 设置独占额度已用量。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
-                     * @param _exclusiveUsed 独占额度已用量。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * 设置<p>独占额度已用量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
+                     * @param _exclusiveUsed <p>独占额度已用量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      * 
                      */
                     void SetExclusiveUsed(const std::string& _exclusiveUsed);
@@ -105,23 +89,15 @@ namespace TencentCloud
                     bool ExclusiveUsedHasBeenSet() const;
 
                     /**
-                     * 获取独占额度剩余量。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
-                     * @return ExclusiveRemain 独占额度剩余量。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * 获取<p>独占额度剩余量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
+                     * @return ExclusiveRemain <p>独占额度剩余量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      * 
                      */
                     std::string GetExclusiveRemain() const;
 
                     /**
-                     * 设置独占额度剩余量。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
-                     * @param _exclusiveRemain 独占额度剩余量。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * 设置<p>独占额度剩余量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
+                     * @param _exclusiveRemain <p>独占额度剩余量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      * 
                      */
                     void SetExclusiveRemain(const std::string& _exclusiveRemain);
@@ -134,23 +110,15 @@ namespace TencentCloud
                     bool ExclusiveRemainHasBeenSet() const;
 
                     /**
-                     * 获取共享额度上限，-1 表示不限。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
-                     * @return SharedQuota 共享额度上限，-1 表示不限。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * 获取<p>共享额度上限，-1 表示不限。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
+                     * @return SharedQuota <p>共享额度上限，-1 表示不限。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      * 
                      */
                     std::string GetSharedQuota() const;
 
                     /**
-                     * 设置共享额度上限，-1 表示不限。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
-                     * @param _sharedQuota 共享额度上限，-1 表示不限。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * 设置<p>共享额度上限，-1 表示不限。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
+                     * @param _sharedQuota <p>共享额度上限，-1 表示不限。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      * 
                      */
                     void SetSharedQuota(const std::string& _sharedQuota);
@@ -163,23 +131,15 @@ namespace TencentCloud
                     bool SharedQuotaHasBeenSet() const;
 
                     /**
-                     * 获取共享额度已用量。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
-                     * @return SharedUsed 共享额度已用量。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * 获取<p>共享额度已用量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
+                     * @return SharedUsed <p>共享额度已用量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      * 
                      */
                     std::string GetSharedUsed() const;
 
                     /**
-                     * 设置共享额度已用量。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
-                     * @param _sharedUsed 共享额度已用量。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * 设置<p>共享额度已用量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
+                     * @param _sharedUsed <p>共享额度已用量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      * 
                      */
                     void SetSharedUsed(const std::string& _sharedUsed);
@@ -192,23 +152,15 @@ namespace TencentCloud
                     bool SharedUsedHasBeenSet() const;
 
                     /**
-                     * 获取共享额度剩余量。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
-                     * @return SharedRemain 共享额度剩余量。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * 获取<p>共享额度剩余量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
+                     * @return SharedRemain <p>共享额度剩余量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      * 
                      */
                     std::string GetSharedRemain() const;
 
                     /**
-                     * 设置共享额度剩余量。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
-                     * @param _sharedRemain 共享额度剩余量。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * 设置<p>共享额度剩余量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
+                     * @param _sharedRemain <p>共享额度剩余量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      * 
                      */
                     void SetSharedRemain(const std::string& _sharedRemain);
@@ -221,15 +173,36 @@ namespace TencentCloud
                     bool SharedRemainHasBeenSet() const;
 
                     /**
-                     * 获取API Key 额度包状态。取值：0（正常）、1（耗尽）。
-                     * @return Status API Key 额度包状态。取值：0（正常）、1（耗尽）。
+                     * 获取<p>当前周期已用总量 exclusive_used + shared_used + overflow_used</p>
+                     * @return TotalUsed <p>当前周期已用总量 exclusive_used + shared_used + overflow_used</p>
+                     * 
+                     */
+                    std::string GetTotalUsed() const;
+
+                    /**
+                     * 设置<p>当前周期已用总量 exclusive_used + shared_used + overflow_used</p>
+                     * @param _totalUsed <p>当前周期已用总量 exclusive_used + shared_used + overflow_used</p>
+                     * 
+                     */
+                    void SetTotalUsed(const std::string& _totalUsed);
+
+                    /**
+                     * 判断参数 TotalUsed 是否已赋值
+                     * @return TotalUsed 是否已赋值
+                     * 
+                     */
+                    bool TotalUsedHasBeenSet() const;
+
+                    /**
+                     * 获取<p>API Key 额度包状态。取值：0（正常）、1（耗尽）。</p>
+                     * @return Status <p>API Key 额度包状态。取值：0（正常）、1（耗尽）。</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置API Key 额度包状态。取值：0（正常）、1（耗尽）。
-                     * @param _status API Key 额度包状态。取值：0（正常）、1（耗尽）。
+                     * 设置<p>API Key 额度包状态。取值：0（正常）、1（耗尽）。</p>
+                     * @param _status <p>API Key 额度包状态。取值：0（正常）、1（耗尽）。</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -244,55 +217,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 独占额度。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * <p>独占额度。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      */
                     std::string m_exclusiveQuota;
                     bool m_exclusiveQuotaHasBeenSet;
 
                     /**
-                     * 独占额度已用量。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * <p>独占额度已用量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      */
                     std::string m_exclusiveUsed;
                     bool m_exclusiveUsedHasBeenSet;
 
                     /**
-                     * 独占额度剩余量。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * <p>独占额度剩余量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      */
                     std::string m_exclusiveRemain;
                     bool m_exclusiveRemainHasBeenSet;
 
                     /**
-                     * 共享额度上限，-1 表示不限。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * <p>共享额度上限，-1 表示不限。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      */
                     std::string m_sharedQuota;
                     bool m_sharedQuotaHasBeenSet;
 
                     /**
-                     * 共享额度已用量。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * <p>共享额度已用量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      */
                     std::string m_sharedUsed;
                     bool m_sharedUsedHasBeenSet;
 
                     /**
-                     * 共享额度剩余量。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * <p>共享额度剩余量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      */
                     std::string m_sharedRemain;
                     bool m_sharedRemainHasBeenSet;
 
                     /**
-                     * API Key 额度包状态。取值：0（正常）、1（耗尽）。
+                     * <p>当前周期已用总量 exclusive_used + shared_used + overflow_used</p>
+                     */
+                    std::string m_totalUsed;
+                    bool m_totalUsedHasBeenSet;
+
+                    /**
+                     * <p>API Key 额度包状态。取值：0（正常）、1（耗尽）。</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

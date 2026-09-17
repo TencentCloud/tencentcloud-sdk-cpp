@@ -31,6 +31,7 @@ JobExecutionDto::JobExecutionDto() :
     m_logFilePathHasBeenSet(false),
     m_resultFilePathHasBeenSet(false),
     m_resultPreviewFilePathHasBeenSet(false),
+    m_schemaInfoFilePathHasBeenSet(false),
     m_resultTotalCountHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
@@ -39,7 +40,8 @@ JobExecutionDto::JobExecutionDto() :
     m_resultPreviewCountHasBeenSet(false),
     m_resultEffectCountHasBeenSet(false),
     m_collectingTotalResultHasBeenSet(false),
-    m_scriptContentTruncateHasBeenSet(false)
+    m_scriptContentTruncateHasBeenSet(false),
+    m_collectedPreviewResultHasBeenSet(false)
 {
 }
 
@@ -148,6 +150,16 @@ CoreInternalOutcome JobExecutionDto::Deserialize(const rapidjson::Value &value)
         m_resultPreviewFilePathHasBeenSet = true;
     }
 
+    if (value.HasMember("SchemaInfoFilePath") && !value["SchemaInfoFilePath"].IsNull())
+    {
+        if (!value["SchemaInfoFilePath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobExecutionDto.SchemaInfoFilePath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schemaInfoFilePath = string(value["SchemaInfoFilePath"].GetString());
+        m_schemaInfoFilePathHasBeenSet = true;
+    }
+
     if (value.HasMember("ResultTotalCount") && !value["ResultTotalCount"].IsNull())
     {
         if (!value["ResultTotalCount"].IsInt64())
@@ -241,6 +253,16 @@ CoreInternalOutcome JobExecutionDto::Deserialize(const rapidjson::Value &value)
         m_scriptContentTruncateHasBeenSet = true;
     }
 
+    if (value.HasMember("CollectedPreviewResult") && !value["CollectedPreviewResult"].IsNull())
+    {
+        if (!value["CollectedPreviewResult"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobExecutionDto.CollectedPreviewResult` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_collectedPreviewResult = value["CollectedPreviewResult"].GetBool();
+        m_collectedPreviewResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -328,6 +350,14 @@ void JobExecutionDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_resultPreviewFilePath.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_schemaInfoFilePathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemaInfoFilePath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schemaInfoFilePath.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_resultTotalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -403,6 +433,14 @@ void JobExecutionDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ScriptContentTruncate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scriptContentTruncate, allocator);
+    }
+
+    if (m_collectedPreviewResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CollectedPreviewResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_collectedPreviewResult, allocator);
     }
 
 }
@@ -568,6 +606,22 @@ bool JobExecutionDto::ResultPreviewFilePathHasBeenSet() const
     return m_resultPreviewFilePathHasBeenSet;
 }
 
+string JobExecutionDto::GetSchemaInfoFilePath() const
+{
+    return m_schemaInfoFilePath;
+}
+
+void JobExecutionDto::SetSchemaInfoFilePath(const string& _schemaInfoFilePath)
+{
+    m_schemaInfoFilePath = _schemaInfoFilePath;
+    m_schemaInfoFilePathHasBeenSet = true;
+}
+
+bool JobExecutionDto::SchemaInfoFilePathHasBeenSet() const
+{
+    return m_schemaInfoFilePathHasBeenSet;
+}
+
 int64_t JobExecutionDto::GetResultTotalCount() const
 {
     return m_resultTotalCount;
@@ -710,5 +764,21 @@ void JobExecutionDto::SetScriptContentTruncate(const bool& _scriptContentTruncat
 bool JobExecutionDto::ScriptContentTruncateHasBeenSet() const
 {
     return m_scriptContentTruncateHasBeenSet;
+}
+
+bool JobExecutionDto::GetCollectedPreviewResult() const
+{
+    return m_collectedPreviewResult;
+}
+
+void JobExecutionDto::SetCollectedPreviewResult(const bool& _collectedPreviewResult)
+{
+    m_collectedPreviewResult = _collectedPreviewResult;
+    m_collectedPreviewResultHasBeenSet = true;
+}
+
+bool JobExecutionDto::CollectedPreviewResultHasBeenSet() const
+{
+    return m_collectedPreviewResultHasBeenSet;
 }
 

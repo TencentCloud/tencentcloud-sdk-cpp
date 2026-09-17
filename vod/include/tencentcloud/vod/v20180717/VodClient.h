@@ -55,6 +55,8 @@
 #include <tencentcloud/vod/v20180717/model/CreateAigcCustomElementResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcCustomVoiceRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcCustomVoiceResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcHunyuan3DTaskRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcHunyuan3DTaskResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcImageTaskRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcImageTaskResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcQuotaRequest.h>
@@ -563,6 +565,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAigcCustomVoiceResponse> CreateAigcCustomVoiceOutcome;
                 typedef std::future<CreateAigcCustomVoiceOutcome> CreateAigcCustomVoiceOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateAigcCustomVoiceRequest&, CreateAigcCustomVoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcCustomVoiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAigcHunyuan3DTaskResponse> CreateAigcHunyuan3DTaskOutcome;
+                typedef std::future<CreateAigcHunyuan3DTaskOutcome> CreateAigcHunyuan3DTaskOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateAigcHunyuan3DTaskRequest&, CreateAigcHunyuan3DTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcHunyuan3DTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAigcImageTaskResponse> CreateAigcImageTaskOutcome;
                 typedef std::future<CreateAigcImageTaskOutcome> CreateAigcImageTaskOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateAigcImageTaskRequest&, CreateAigcImageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcImageTaskAsyncHandler;
@@ -1393,6 +1398,15 @@ namespace TencentCloud
                 CreateAigcCustomVoiceOutcome CreateAigcCustomVoice(const Model::CreateAigcCustomVoiceRequest &request);
                 void CreateAigcCustomVoiceAsync(const Model::CreateAigcCustomVoiceRequest& request, const CreateAigcCustomVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAigcCustomVoiceOutcomeCallable CreateAigcCustomVoiceCallable(const Model::CreateAigcCustomVoiceRequest& request);
+
+                /**
+                 *该接口用于创建 AIGC 混元 3D 任务。
+                 * @param req CreateAigcHunyuan3DTaskRequest
+                 * @return CreateAigcHunyuan3DTaskOutcome
+                 */
+                CreateAigcHunyuan3DTaskOutcome CreateAigcHunyuan3DTask(const Model::CreateAigcHunyuan3DTaskRequest &request);
+                void CreateAigcHunyuan3DTaskAsync(const Model::CreateAigcHunyuan3DTaskRequest& request, const CreateAigcHunyuan3DTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAigcHunyuan3DTaskOutcomeCallable CreateAigcHunyuan3DTaskCallable(const Model::CreateAigcHunyuan3DTaskRequest& request);
 
                 /**
                  *该接口用于[生成 AIGC 图片](https://cloud.tencent.com/document/product/266/124473)。默认限制1个并发处理，接口调用会产生实际费用，请参考点播 [AIGC 生图片计费文档](https://cloud.tencent.com/document/product/266/95125#9c4dc6ff-4b3f-4b25-bf2d-393889dfb9ac)。该功能结算模式为[后付费](https://cloud.tencent.com/document/product/266/2838)，日结客户当天使用将在第二天出账，月结客户将在次月1日统一出上月使用费用。

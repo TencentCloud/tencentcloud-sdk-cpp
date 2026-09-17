@@ -45,7 +45,9 @@ CreateCloudInstanceRequest::CreateCloudInstanceRequest() :
     m_containerExtraConfHasBeenSet(false),
     m_enableSparkAppMonitorInfoHasBeenSet(false),
     m_computeResourceGroupIdsHasBeenSet(false),
-    m_terminateProtectionHasBeenSet(false)
+    m_terminateProtectionHasBeenSet(false),
+    m_enableEmrProxyHasBeenSet(false),
+    m_logStoreIDHasBeenSet(false)
 {
 }
 
@@ -274,6 +276,22 @@ string CreateCloudInstanceRequest::ToJsonString() const
         string key = "TerminateProtection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_terminateProtection, allocator);
+    }
+
+    if (m_enableEmrProxyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableEmrProxy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableEmrProxy, allocator);
+    }
+
+    if (m_logStoreIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogStoreID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logStoreID.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -650,6 +668,38 @@ void CreateCloudInstanceRequest::SetTerminateProtection(const bool& _terminatePr
 bool CreateCloudInstanceRequest::TerminateProtectionHasBeenSet() const
 {
     return m_terminateProtectionHasBeenSet;
+}
+
+bool CreateCloudInstanceRequest::GetEnableEmrProxy() const
+{
+    return m_enableEmrProxy;
+}
+
+void CreateCloudInstanceRequest::SetEnableEmrProxy(const bool& _enableEmrProxy)
+{
+    m_enableEmrProxy = _enableEmrProxy;
+    m_enableEmrProxyHasBeenSet = true;
+}
+
+bool CreateCloudInstanceRequest::EnableEmrProxyHasBeenSet() const
+{
+    return m_enableEmrProxyHasBeenSet;
+}
+
+string CreateCloudInstanceRequest::GetLogStoreID() const
+{
+    return m_logStoreID;
+}
+
+void CreateCloudInstanceRequest::SetLogStoreID(const string& _logStoreID)
+{
+    m_logStoreID = _logStoreID;
+    m_logStoreIDHasBeenSet = true;
+}
+
+bool CreateCloudInstanceRequest::LogStoreIDHasBeenSet() const
+{
+    return m_logStoreIDHasBeenSet;
 }
 
 

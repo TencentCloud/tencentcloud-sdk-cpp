@@ -27,7 +27,8 @@ UpgradeCDBProxyVersionRequest::UpgradeCDBProxyVersionRequest() :
     m_proxyGroupIdHasBeenSet(false),
     m_srcProxyVersionHasBeenSet(false),
     m_dstProxyVersionHasBeenSet(false),
-    m_upgradeTimeHasBeenSet(false)
+    m_upgradeTimeHasBeenSet(false),
+    m_rollUpgradeWaitingTimeHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string UpgradeCDBProxyVersionRequest::ToJsonString() const
         string key = "UpgradeTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_upgradeTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rollUpgradeWaitingTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RollUpgradeWaitingTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rollUpgradeWaitingTime, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void UpgradeCDBProxyVersionRequest::SetUpgradeTime(const string& _upgradeTime)
 bool UpgradeCDBProxyVersionRequest::UpgradeTimeHasBeenSet() const
 {
     return m_upgradeTimeHasBeenSet;
+}
+
+int64_t UpgradeCDBProxyVersionRequest::GetRollUpgradeWaitingTime() const
+{
+    return m_rollUpgradeWaitingTime;
+}
+
+void UpgradeCDBProxyVersionRequest::SetRollUpgradeWaitingTime(const int64_t& _rollUpgradeWaitingTime)
+{
+    m_rollUpgradeWaitingTime = _rollUpgradeWaitingTime;
+    m_rollUpgradeWaitingTimeHasBeenSet = true;
+}
+
+bool UpgradeCDBProxyVersionRequest::RollUpgradeWaitingTimeHasBeenSet() const
+{
+    return m_rollUpgradeWaitingTimeHasBeenSet;
 }
 
 

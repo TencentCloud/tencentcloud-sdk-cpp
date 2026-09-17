@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>校验结果</p>
+                     * 获取校验结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CheckResult <p>校验结果</p>
+                     * @return CheckResult 校验结果
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CheckResult GetCheckResult() const;
 
                     /**
-                     * 设置<p>校验结果</p>
+                     * 设置校验结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _checkResult <p>校验结果</p>
+                     * @param _checkResult 校验结果
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,15 +73,15 @@ namespace TencentCloud
                     bool CheckResultHasBeenSet() const;
 
                     /**
-                     * 获取<p>待校验的标准词</p>
-                     * @return Term <p>待校验的标准词</p>
+                     * 获取待校验的标准词
+                     * @return Term 待校验的标准词
                      * 
                      */
                     std::string GetTerm() const;
 
                     /**
-                     * 设置<p>待校验的标准词</p>
-                     * @param _term <p>待校验的标准词</p>
+                     * 设置待校验的标准词
+                     * @param _term 待校验的标准词
                      * 
                      */
                     void SetTerm(const std::string& _term);
@@ -94,15 +94,15 @@ namespace TencentCloud
                     bool TermHasBeenSet() const;
 
                     /**
-                     * 获取<p>已存在时返回对应标准词 ID</p>
-                     * @return TermId <p>已存在时返回对应标准词 ID</p>
+                     * 获取已存在时返回对应标准词 ID
+                     * @return TermId 已存在时返回对应标准词 ID
                      * 
                      */
                     std::string GetTermId() const;
 
                     /**
-                     * 设置<p>已存在时返回对应标准词 ID</p>
-                     * @param _termId <p>已存在时返回对应标准词 ID</p>
+                     * 设置已存在时返回对应标准词 ID
+                     * @param _termId 已存在时返回对应标准词 ID
                      * 
                      */
                     void SetTermId(const std::string& _termId);
@@ -117,20 +117,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>校验结果</p>
+                     * 校验结果
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CheckResult m_checkResult;
                     bool m_checkResultHasBeenSet;
 
                     /**
-                     * <p>待校验的标准词</p>
+                     * 待校验的标准词
                      */
                     std::string m_term;
                     bool m_termHasBeenSet;
 
                     /**
-                     * <p>已存在时返回对应标准词 ID</p>
+                     * 已存在时返回对应标准词 ID
                      */
                     std::string m_termId;
                     bool m_termIdHasBeenSet;

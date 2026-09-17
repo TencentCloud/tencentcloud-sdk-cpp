@@ -48,30 +48,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取卡证类型
-身份证人像面
-身份证国徽面
-
-临时身份证人像面
-临时身份证人像面
-
-港澳台居住证人像面
-港澳台居住证国徽面
-
-外国人永久居留证人像面
-外国人永久居留证国徽面
-                     * @return Type 卡证类型
-身份证人像面
-身份证国徽面
-
-临时身份证人像面
-临时身份证人像面
-
-港澳台居住证人像面
-港澳台居住证国徽面
-
-外国人永久居留证人像面
-外国人永久居留证国徽面
+                     * 获取<p>卡证类型<br>身份证人像面<br>身份证国徽面</p><p>临时身份证人像面<br>临时身份证人像面</p><p>港澳台居住证人像面<br>港澳台居住证国徽面</p><p>外国人永久居留证人像面<br>外国人永久居留证国徽面</p>
+                     * @return Type <p>卡证类型<br>身份证人像面<br>身份证国徽面</p><p>临时身份证人像面<br>临时身份证人像面</p><p>港澳台居住证人像面<br>港澳台居住证国徽面</p><p>外国人永久居留证人像面<br>外国人永久居留证国徽面</p>
                      * 
                      */
                     std::string GetType() const;
@@ -84,9 +62,9 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取身份证信息
+                     * 获取<p>身份证信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IDCardInfo 身份证信息
+                     * @return IDCardInfo <p>身份证信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -100,9 +78,9 @@ namespace TencentCloud
                     bool IDCardInfoHasBeenSet() const;
 
                     /**
-                     * 获取临时身份证信息
+                     * 获取<p>临时身份证信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TemporaryIDCardInfo 临时身份证信息
+                     * @return TemporaryIDCardInfo <p>临时身份证信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -116,9 +94,9 @@ namespace TencentCloud
                     bool TemporaryIDCardInfoHasBeenSet() const;
 
                     /**
-                     * 获取港澳台居住证信息
+                     * 获取<p>港澳台居住证信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResidencePermitInfo 港澳台居住证信息
+                     * @return ResidencePermitInfo <p>港澳台居住证信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -132,9 +110,9 @@ namespace TencentCloud
                     bool ResidencePermitInfoHasBeenSet() const;
 
                     /**
-                     * 获取外国人永久居留证信息
+                     * 获取<p>外国人永久居留证信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PermanentResidencePermitInfo 外国人永久居留证信息
+                     * @return PermanentResidencePermitInfo <p>外国人永久居留证信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -150,45 +128,34 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 卡证类型
-身份证人像面
-身份证国徽面
-
-临时身份证人像面
-临时身份证人像面
-
-港澳台居住证人像面
-港澳台居住证国徽面
-
-外国人永久居留证人像面
-外国人永久居留证国徽面
+                     * <p>卡证类型<br>身份证人像面<br>身份证国徽面</p><p>临时身份证人像面<br>临时身份证人像面</p><p>港澳台居住证人像面<br>港澳台居住证国徽面</p><p>外国人永久居留证人像面<br>外国人永久居留证国徽面</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 身份证信息
+                     * <p>身份证信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IDCardInfo m_iDCardInfo;
                     bool m_iDCardInfoHasBeenSet;
 
                     /**
-                     * 临时身份证信息
+                     * <p>临时身份证信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TemporaryIDCardInfo m_temporaryIDCardInfo;
                     bool m_temporaryIDCardInfoHasBeenSet;
 
                     /**
-                     * 港澳台居住证信息
+                     * <p>港澳台居住证信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ResidencePermitInfo m_residencePermitInfo;
                     bool m_residencePermitInfoHasBeenSet;
 
                     /**
-                     * 外国人永久居留证信息
+                     * <p>外国人永久居留证信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PermanentResidencePermitInfo m_permanentResidencePermitInfo;

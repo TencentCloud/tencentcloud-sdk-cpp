@@ -32,6 +32,8 @@ DescribeVoicesRequest::DescribeVoicesRequest() :
     m_languagesHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_scenesHasBeenSet(false),
+    m_pageNumHasBeenSet(false),
+    m_pageSizeHasBeenSet(false),
     m_extParamHasBeenSet(false)
 {
 }
@@ -128,6 +130,22 @@ string DescribeVoicesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_pageNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageNum, allocator);
+    }
+
+    if (m_pageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageSize, allocator);
     }
 
     if (m_extParamHasBeenSet)
@@ -288,6 +306,38 @@ void DescribeVoicesRequest::SetScenes(const vector<string>& _scenes)
 bool DescribeVoicesRequest::ScenesHasBeenSet() const
 {
     return m_scenesHasBeenSet;
+}
+
+int64_t DescribeVoicesRequest::GetPageNum() const
+{
+    return m_pageNum;
+}
+
+void DescribeVoicesRequest::SetPageNum(const int64_t& _pageNum)
+{
+    m_pageNum = _pageNum;
+    m_pageNumHasBeenSet = true;
+}
+
+bool DescribeVoicesRequest::PageNumHasBeenSet() const
+{
+    return m_pageNumHasBeenSet;
+}
+
+int64_t DescribeVoicesRequest::GetPageSize() const
+{
+    return m_pageSize;
+}
+
+void DescribeVoicesRequest::SetPageSize(const int64_t& _pageSize)
+{
+    m_pageSize = _pageSize;
+    m_pageSizeHasBeenSet = true;
+}
+
+bool DescribeVoicesRequest::PageSizeHasBeenSet() const
+{
+    return m_pageSizeHasBeenSet;
 }
 
 string DescribeVoicesRequest::GetExtParam() const

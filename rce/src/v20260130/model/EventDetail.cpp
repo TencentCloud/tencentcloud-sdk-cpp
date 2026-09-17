@@ -40,7 +40,11 @@ EventDetail::EventDetail() :
     m_taskHasBeenSet(false),
     m_invitationHasBeenSet(false),
     m_claimRedPacketHasBeenSet(false),
-    m_browseHasBeenSet(false)
+    m_browseHasBeenSet(false),
+    m_chatHasBeenSet(false),
+    m_modifyRoleHasBeenSet(false),
+    m_addFriendHasBeenSet(false),
+    m_modifyGuildHasBeenSet(false)
 {
 }
 
@@ -389,6 +393,74 @@ CoreInternalOutcome EventDetail::Deserialize(const rapidjson::Value &value)
         m_browseHasBeenSet = true;
     }
 
+    if (value.HasMember("Chat") && !value["Chat"].IsNull())
+    {
+        if (!value["Chat"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventDetail.Chat` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_chat.Deserialize(value["Chat"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_chatHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModifyRole") && !value["ModifyRole"].IsNull())
+    {
+        if (!value["ModifyRole"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventDetail.ModifyRole` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_modifyRole.Deserialize(value["ModifyRole"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_modifyRoleHasBeenSet = true;
+    }
+
+    if (value.HasMember("AddFriend") && !value["AddFriend"].IsNull())
+    {
+        if (!value["AddFriend"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventDetail.AddFriend` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_addFriend.Deserialize(value["AddFriend"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_addFriendHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModifyGuild") && !value["ModifyGuild"].IsNull())
+    {
+        if (!value["ModifyGuild"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventDetail.ModifyGuild` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_modifyGuild.Deserialize(value["ModifyGuild"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_modifyGuildHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -574,6 +646,42 @@ void EventDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_browse.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_chatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Chat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_chat.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_modifyRoleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyRole";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_modifyRole.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_addFriendHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddFriend";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_addFriend.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_modifyGuildHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyGuild";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_modifyGuild.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -897,5 +1005,69 @@ void EventDetail::SetBrowse(const BrowseEvent& _browse)
 bool EventDetail::BrowseHasBeenSet() const
 {
     return m_browseHasBeenSet;
+}
+
+ChatEvent EventDetail::GetChat() const
+{
+    return m_chat;
+}
+
+void EventDetail::SetChat(const ChatEvent& _chat)
+{
+    m_chat = _chat;
+    m_chatHasBeenSet = true;
+}
+
+bool EventDetail::ChatHasBeenSet() const
+{
+    return m_chatHasBeenSet;
+}
+
+ModifyRoleEvent EventDetail::GetModifyRole() const
+{
+    return m_modifyRole;
+}
+
+void EventDetail::SetModifyRole(const ModifyRoleEvent& _modifyRole)
+{
+    m_modifyRole = _modifyRole;
+    m_modifyRoleHasBeenSet = true;
+}
+
+bool EventDetail::ModifyRoleHasBeenSet() const
+{
+    return m_modifyRoleHasBeenSet;
+}
+
+AddFriendEvent EventDetail::GetAddFriend() const
+{
+    return m_addFriend;
+}
+
+void EventDetail::SetAddFriend(const AddFriendEvent& _addFriend)
+{
+    m_addFriend = _addFriend;
+    m_addFriendHasBeenSet = true;
+}
+
+bool EventDetail::AddFriendHasBeenSet() const
+{
+    return m_addFriendHasBeenSet;
+}
+
+ModifyGuildEvent EventDetail::GetModifyGuild() const
+{
+    return m_modifyGuild;
+}
+
+void EventDetail::SetModifyGuild(const ModifyGuildEvent& _modifyGuild)
+{
+    m_modifyGuild = _modifyGuild;
+    m_modifyGuildHasBeenSet = true;
+}
+
+bool EventDetail::ModifyGuildHasBeenSet() const
+{
+    return m_modifyGuildHasBeenSet;
 }
 

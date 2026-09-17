@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启双向认证。
-                     * @return CaEnable 是否开启双向认证。
+                     * 获取<p>是否开启双向认证。</p>
+                     * @return CaEnable <p>是否开启双向认证。</p>
                      * 
                      */
                     bool GetCaEnable() const;
 
                     /**
-                     * 设置是否开启双向认证。
-                     * @param _caEnable 是否开启双向认证。
+                     * 设置<p>是否开启双向认证。</p>
+                     * @param _caEnable <p>是否开启双向认证。</p>
                      * 
                      */
                     void SetCaEnable(const bool& _caEnable);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool CaEnableHasBeenSet() const;
 
                     /**
-                     * 获取监听器实例的创建时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）
-                     * @return CreateTime 监听器实例的创建时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）
+                     * 获取<p>监听器实例的创建时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）</p>
+                     * @return CreateTime <p>监听器实例的创建时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置监听器实例的创建时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）
-                     * @param _createTime 监听器实例的创建时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）
+                     * 设置<p>监听器实例的创建时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）</p>
+                     * @param _createTime <p>监听器实例的创建时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否启用 Gzip 压缩。
-                     * @return GzipEnabled 是否启用 Gzip 压缩。
+                     * 获取<p>是否启用 Gzip 压缩。</p>
+                     * @return GzipEnabled <p>是否启用 Gzip 压缩。</p>
                      * 
                      */
                     bool GetGzipEnabled() const;
 
                     /**
-                     * 设置是否启用 Gzip 压缩。
-                     * @param _gzipEnabled 是否启用 Gzip 压缩。
+                     * 设置<p>是否启用 Gzip 压缩。</p>
+                     * @param _gzipEnabled <p>是否启用 Gzip 压缩。</p>
                      * 
                      */
                     void SetGzipEnabled(const bool& _gzipEnabled);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool GzipEnabledHasBeenSet() const;
 
                     /**
-                     * 获取是否启用http2。
-                     * @return Http2Enable 是否启用http2。
+                     * 获取<p>是否启用http2。</p>
+                     * @return Http2Enable <p>是否启用http2。</p>
                      * 
                      */
                     bool GetHttp2Enable() const;
 
                     /**
-                     * 设置是否启用http2。
-                     * @param _http2Enable 是否启用http2。
+                     * 设置<p>是否启用http2。</p>
+                     * @param _http2Enable <p>是否启用http2。</p>
                      * 
                      */
                     void SetHttp2Enable(const bool& _http2Enable);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool Http2EnableHasBeenSet() const;
 
                     /**
-                     * 获取空闲超时时间。
-                     * @return IdleTimeout 空闲超时时间。
+                     * 获取<p>空闲超时时间。</p>
+                     * @return IdleTimeout <p>空闲超时时间。</p>
                      * 
                      */
                     uint64_t GetIdleTimeout() const;
 
                     /**
-                     * 设置空闲超时时间。
-                     * @param _idleTimeout 空闲超时时间。
+                     * 设置<p>空闲超时时间。</p>
+                     * @param _idleTimeout <p>空闲超时时间。</p>
                      * 
                      */
                     void SetIdleTimeout(const uint64_t& _idleTimeout);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool IdleTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取监听器 ID，格式为 lst- 后接 8 位字母数字。
-                     * @return ListenerId 监听器 ID，格式为 lst- 后接 8 位字母数字。
+                     * 获取<p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>
+                     * @return ListenerId <p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置监听器 ID，格式为 lst- 后接 8 位字母数字。
-                     * @param _listenerId 监听器 ID，格式为 lst- 后接 8 位字母数字。
+                     * 设置<p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>
+                     * @param _listenerId <p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取监听器名称。
-                     * @return ListenerName 监听器名称。
+                     * 获取<p>监听器名称。</p>
+                     * @return ListenerName <p>监听器名称。</p>
                      * 
                      */
                     std::string GetListenerName() const;
 
                     /**
-                     * 设置监听器名称。
-                     * @param _listenerName 监听器名称。
+                     * 设置<p>监听器名称。</p>
+                     * @param _listenerName <p>监听器名称。</p>
                      * 
                      */
                     void SetListenerName(const std::string& _listenerName);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool ListenerNameHasBeenSet() const;
 
                     /**
-                     * 获取监听器端口。
-                     * @return ListenerPort 监听器端口。
+                     * 获取<p>监听器端口。</p>
+                     * @return ListenerPort <p>监听器端口。</p>
                      * 
                      */
                     uint64_t GetListenerPort() const;
 
                     /**
-                     * 设置监听器端口。
-                     * @param _listenerPort 监听器端口。
+                     * 设置<p>监听器端口。</p>
+                     * @param _listenerPort <p>监听器端口。</p>
                      * 
                      */
                     void SetListenerPort(const uint64_t& _listenerPort);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool ListenerPortHasBeenSet() const;
 
                     /**
-                     * 获取监听器协议。
-                     * @return ListenerProtocol 监听器协议。
+                     * 获取<p>监听器协议。</p>
+                     * @return ListenerProtocol <p>监听器协议。</p>
                      * 
                      */
                     std::string GetListenerProtocol() const;
 
                     /**
-                     * 设置监听器协议。
-                     * @param _listenerProtocol 监听器协议。
+                     * 设置<p>监听器协议。</p>
+                     * @param _listenerProtocol <p>监听器协议。</p>
                      * 
                      */
                     void SetListenerProtocol(const std::string& _listenerProtocol);
@@ -238,35 +238,15 @@ namespace TencentCloud
                     bool ListenerProtocolHasBeenSet() const;
 
                     /**
-                     * 获取监听器状态。取值:=
-
-- **Active**: 运行中。
-- **Provisioning**：创建中。
-- **Configuring**：变配中。
-- **ProvisionFailed**：创建失败
-                     * @return ListenerStatus 监听器状态。取值:=
-
-- **Active**: 运行中。
-- **Provisioning**：创建中。
-- **Configuring**：变配中。
-- **ProvisionFailed**：创建失败
+                     * 获取<p>监听器状态。取值:=</p><ul><li><strong>Active</strong>: 运行中。</li><li><strong>Provisioning</strong>：创建中。</li><li><strong>Configuring</strong>：变配中。</li><li><strong>ProvisionFailed</strong>：创建失败</li></ul>
+                     * @return ListenerStatus <p>监听器状态。取值:=</p><ul><li><strong>Active</strong>: 运行中。</li><li><strong>Provisioning</strong>：创建中。</li><li><strong>Configuring</strong>：变配中。</li><li><strong>ProvisionFailed</strong>：创建失败</li></ul>
                      * 
                      */
                     std::string GetListenerStatus() const;
 
                     /**
-                     * 设置监听器状态。取值:=
-
-- **Active**: 运行中。
-- **Provisioning**：创建中。
-- **Configuring**：变配中。
-- **ProvisionFailed**：创建失败
-                     * @param _listenerStatus 监听器状态。取值:=
-
-- **Active**: 运行中。
-- **Provisioning**：创建中。
-- **Configuring**：变配中。
-- **ProvisionFailed**：创建失败
+                     * 设置<p>监听器状态。取值:=</p><ul><li><strong>Active</strong>: 运行中。</li><li><strong>Provisioning</strong>：创建中。</li><li><strong>Configuring</strong>：变配中。</li><li><strong>ProvisionFailed</strong>：创建失败</li></ul>
+                     * @param _listenerStatus <p>监听器状态。取值:=</p><ul><li><strong>Active</strong>: 运行中。</li><li><strong>Provisioning</strong>：创建中。</li><li><strong>Configuring</strong>：变配中。</li><li><strong>ProvisionFailed</strong>：创建失败</li></ul>
                      * 
                      */
                     void SetListenerStatus(const std::string& _listenerStatus);
@@ -279,15 +259,15 @@ namespace TencentCloud
                     bool ListenerStatusHasBeenSet() const;
 
                     /**
-                     * 获取监听器实例的最后变更时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）
-                     * @return ModifyTime 监听器实例的最后变更时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）
+                     * 获取<p>监听器实例的最后变更时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）</p>
+                     * @return ModifyTime <p>监听器实例的最后变更时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）</p>
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置监听器实例的最后变更时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）
-                     * @param _modifyTime 监听器实例的最后变更时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）
+                     * 设置<p>监听器实例的最后变更时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）</p>
+                     * @param _modifyTime <p>监听器实例的最后变更时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）</p>
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -300,15 +280,15 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取请求超时时间。
-                     * @return RequestTimeout 请求超时时间。
+                     * 获取<p>连接请求超时时间。</p>
+                     * @return RequestTimeout <p>连接请求超时时间。</p>
                      * 
                      */
                     uint64_t GetRequestTimeout() const;
 
                     /**
-                     * 设置请求超时时间。
-                     * @param _requestTimeout 请求超时时间。
+                     * 设置<p>连接请求超时时间。</p>
+                     * @param _requestTimeout <p>连接请求超时时间。</p>
                      * 
                      */
                     void SetRequestTimeout(const uint64_t& _requestTimeout);
@@ -321,15 +301,15 @@ namespace TencentCloud
                     bool RequestTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取标签。
-                     * @return Tags 标签。
+                     * 获取<p>标签。</p>
+                     * @return Tags <p>标签。</p>
                      * 
                      */
                     std::vector<TagInfo> GetTags() const;
 
                     /**
-                     * 设置标签。
-                     * @param _tags 标签。
+                     * 设置<p>标签。</p>
+                     * @param _tags <p>标签。</p>
                      * 
                      */
                     void SetTags(const std::vector<TagInfo>& _tags);
@@ -342,15 +322,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取安全策略 ID。
-                     * @return TlsSecurityPolicyId 安全策略 ID。
+                     * 获取<p>安全策略 ID。</p>
+                     * @return TlsSecurityPolicyId <p>安全策略 ID。</p>
                      * 
                      */
                     std::string GetTlsSecurityPolicyId() const;
 
                     /**
-                     * 设置安全策略 ID。
-                     * @param _tlsSecurityPolicyId 安全策略 ID。
+                     * 设置<p>安全策略 ID。</p>
+                     * @param _tlsSecurityPolicyId <p>安全策略 ID。</p>
                      * 
                      */
                     void SetTlsSecurityPolicyId(const std::string& _tlsSecurityPolicyId);
@@ -363,15 +343,15 @@ namespace TencentCloud
                     bool TlsSecurityPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取XForwardedFor配置。
-                     * @return XForwardedForConfig XForwardedFor配置。
+                     * 获取<p>XForwardedFor配置。</p>
+                     * @return XForwardedForConfig <p>XForwardedFor配置。</p>
                      * 
                      */
                     XForwardedForConfig GetXForwardedForConfig() const;
 
                     /**
-                     * 设置XForwardedFor配置。
-                     * @param _xForwardedForConfig XForwardedFor配置。
+                     * 设置<p>XForwardedFor配置。</p>
+                     * @param _xForwardedForConfig <p>XForwardedFor配置。</p>
                      * 
                      */
                     void SetXForwardedForConfig(const XForwardedForConfig& _xForwardedForConfig);
@@ -386,96 +366,91 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否开启双向认证。
+                     * <p>是否开启双向认证。</p>
                      */
                     bool m_caEnable;
                     bool m_caEnableHasBeenSet;
 
                     /**
-                     * 监听器实例的创建时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）
+                     * <p>监听器实例的创建时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 是否启用 Gzip 压缩。
+                     * <p>是否启用 Gzip 压缩。</p>
                      */
                     bool m_gzipEnabled;
                     bool m_gzipEnabledHasBeenSet;
 
                     /**
-                     * 是否启用http2。
+                     * <p>是否启用http2。</p>
                      */
                     bool m_http2Enable;
                     bool m_http2EnableHasBeenSet;
 
                     /**
-                     * 空闲超时时间。
+                     * <p>空闲超时时间。</p>
                      */
                     uint64_t m_idleTimeout;
                     bool m_idleTimeoutHasBeenSet;
 
                     /**
-                     * 监听器 ID，格式为 lst- 后接 8 位字母数字。
+                     * <p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 监听器名称。
+                     * <p>监听器名称。</p>
                      */
                     std::string m_listenerName;
                     bool m_listenerNameHasBeenSet;
 
                     /**
-                     * 监听器端口。
+                     * <p>监听器端口。</p>
                      */
                     uint64_t m_listenerPort;
                     bool m_listenerPortHasBeenSet;
 
                     /**
-                     * 监听器协议。
+                     * <p>监听器协议。</p>
                      */
                     std::string m_listenerProtocol;
                     bool m_listenerProtocolHasBeenSet;
 
                     /**
-                     * 监听器状态。取值:=
-
-- **Active**: 运行中。
-- **Provisioning**：创建中。
-- **Configuring**：变配中。
-- **ProvisionFailed**：创建失败
+                     * <p>监听器状态。取值:=</p><ul><li><strong>Active</strong>: 运行中。</li><li><strong>Provisioning</strong>：创建中。</li><li><strong>Configuring</strong>：变配中。</li><li><strong>ProvisionFailed</strong>：创建失败</li></ul>
                      */
                     std::string m_listenerStatus;
                     bool m_listenerStatusHasBeenSet;
 
                     /**
-                     * 监听器实例的最后变更时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）
+                     * <p>监听器实例的最后变更时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）</p>
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 请求超时时间。
+                     * <p>连接请求超时时间。</p>
                      */
                     uint64_t m_requestTimeout;
                     bool m_requestTimeoutHasBeenSet;
 
                     /**
-                     * 标签。
+                     * <p>标签。</p>
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 安全策略 ID。
+                     * <p>安全策略 ID。</p>
                      */
                     std::string m_tlsSecurityPolicyId;
                     bool m_tlsSecurityPolicyIdHasBeenSet;
 
                     /**
-                     * XForwardedFor配置。
+                     * <p>XForwardedFor配置。</p>
                      */
                     XForwardedForConfig m_xForwardedForConfig;
                     bool m_xForwardedForConfigHasBeenSet;

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取删除文件 ID 列表。
-                     * @return FileIdSet 删除文件 ID 列表。
+                     * 获取<p>删除文件 ID 列表。</p>
+                     * @return FileIdSet <p>删除文件 ID 列表。</p>
                      * 
                      */
                     std::vector<std::string> GetFileIdSet() const;
 
                     /**
-                     * 设置删除文件 ID 列表。
-                     * @param _fileIdSet 删除文件 ID 列表。
+                     * 设置<p>删除文件 ID 列表。</p>
+                     * @param _fileIdSet <p>删除文件 ID 列表。</p>
                      * 
                      */
                     void SetFileIdSet(const std::vector<std::string>& _fileIdSet);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool FileIdSetHasBeenSet() const;
 
                     /**
-                     * 获取删除文件结果信息列表。
-                     * @return FileDeleteResultInfo 删除文件结果信息列表。
+                     * 获取<p>删除文件结果信息列表。</p>
+                     * @return FileDeleteResultInfo <p>删除文件结果信息列表。</p>
                      * 
                      */
                     std::vector<FileDeleteResultItem> GetFileDeleteResultInfo() const;
 
                     /**
-                     * 设置删除文件结果信息列表。
-                     * @param _fileDeleteResultInfo 删除文件结果信息列表。
+                     * 设置<p>删除文件结果信息列表。</p>
+                     * @param _fileDeleteResultInfo <p>删除文件结果信息列表。</p>
                      * 
                      */
                     void SetFileDeleteResultInfo(const std::vector<FileDeleteResultItem>& _fileDeleteResultInfo);
@@ -92,13 +92,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 删除文件 ID 列表。
+                     * <p>删除文件 ID 列表。</p>
                      */
                     std::vector<std::string> m_fileIdSet;
                     bool m_fileIdSetHasBeenSet;
 
                     /**
-                     * 删除文件结果信息列表。
+                     * <p>删除文件结果信息列表。</p>
                      */
                     std::vector<FileDeleteResultItem> m_fileDeleteResultInfo;
                     bool m_fileDeleteResultInfoHasBeenSet;

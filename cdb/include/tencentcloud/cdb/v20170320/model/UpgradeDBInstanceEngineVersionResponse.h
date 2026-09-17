@@ -57,6 +57,20 @@ namespace TencentCloud
                      */
                     bool AsyncRequestIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>任务列表ID</p>
+                     * @return JobId <p>任务列表ID</p>
+                     * 
+                     */
+                    int64_t GetJobId() const;
+
+                    /**
+                     * 判断参数 JobId 是否已赋值
+                     * @return JobId 是否已赋值
+                     * 
+                     */
+                    bool JobIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +78,12 @@ namespace TencentCloud
                      */
                     std::string m_asyncRequestId;
                     bool m_asyncRequestIdHasBeenSet;
+
+                    /**
+                     * <p>任务列表ID</p>
+                     */
+                    int64_t m_jobId;
+                    bool m_jobIdHasBeenSet;
 
                 };
             }

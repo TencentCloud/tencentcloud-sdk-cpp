@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名。
-                     * @return Domain 域名。
+                     * 获取<p>域名。</p>
+                     * @return Domain <p>域名。</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置域名。
-                     * @param _domain 域名。
+                     * 设置<p>域名。</p>
+                     * @param _domain <p>域名。</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 获取<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @return SubAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @param _subAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 设置<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @param _subAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取[Referer 防盗链](/document/product/266/14046)规则。
-                     * @return RefererAuthPolicy [Referer 防盗链](/document/product/266/14046)规则。
+                     * 获取<p><a href="/document/product/266/14046">Referer 防盗链</a>规则。</p>
+                     * @return RefererAuthPolicy <p><a href="/document/product/266/14046">Referer 防盗链</a>规则。</p>
                      * 
                      */
                     RefererAuthPolicy GetRefererAuthPolicy() const;
 
                     /**
-                     * 设置[Referer 防盗链](/document/product/266/14046)规则。
-                     * @param _refererAuthPolicy [Referer 防盗链](/document/product/266/14046)规则。
+                     * 设置<p><a href="/document/product/266/14046">Referer 防盗链</a>规则。</p>
+                     * @param _refererAuthPolicy <p><a href="/document/product/266/14046">Referer 防盗链</a>规则。</p>
                      * 
                      */
                     void SetRefererAuthPolicy(const RefererAuthPolicy& _refererAuthPolicy);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool RefererAuthPolicyHasBeenSet() const;
 
                     /**
-                     * 获取[Key 防盗链](/document/product/266/14047)规则。
-                     * @return UrlSignatureAuthPolicy [Key 防盗链](/document/product/266/14047)规则。
+                     * 获取<p><a href="/document/product/266/14047">Key 防盗链</a>规则。</p>
+                     * @return UrlSignatureAuthPolicy <p><a href="/document/product/266/14047">Key 防盗链</a>规则。</p>
                      * 
                      */
                     UrlSignatureAuthPolicy GetUrlSignatureAuthPolicy() const;
 
                     /**
-                     * 设置[Key 防盗链](/document/product/266/14047)规则。
-                     * @param _urlSignatureAuthPolicy [Key 防盗链](/document/product/266/14047)规则。
+                     * 设置<p><a href="/document/product/266/14047">Key 防盗链</a>规则。</p>
+                     * @param _urlSignatureAuthPolicy <p><a href="/document/product/266/14047">Key 防盗链</a>规则。</p>
                      * 
                      */
                     void SetUrlSignatureAuthPolicy(const UrlSignatureAuthPolicy& _urlSignatureAuthPolicy);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool UrlSignatureAuthPolicyHasBeenSet() const;
 
                     /**
-                     * 获取QUIC 配置。
-                     * @return QUICConfig QUIC 配置。
+                     * 获取<p>QUIC 配置。</p>
+                     * @return QUICConfig <p>QUIC 配置。</p>
                      * 
                      */
                     DomainQUICConfig GetQUICConfig() const;
 
                     /**
-                     * 设置QUIC 配置。
-                     * @param _qUICConfig QUIC 配置。
+                     * 设置<p>QUIC 配置。</p>
+                     * @param _qUICConfig <p>QUIC 配置。</p>
                      * 
                      */
                     void SetQUICConfig(const DomainQUICConfig& _qUICConfig);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool QUICConfigHasBeenSet() const;
 
                     /**
-                     * 获取IP 访问限制规则。
-                     * @return IPFilterPolicy IP 访问限制规则。
+                     * 获取<p>IP 访问限制规则。</p>
+                     * @return IPFilterPolicy <p>IP 访问限制规则。</p>
                      * 
                      */
                     IPFilterPolicy GetIPFilterPolicy() const;
 
                     /**
-                     * 设置IP 访问限制规则。
-                     * @param _iPFilterPolicy IP 访问限制规则。
+                     * 设置<p>IP 访问限制规则。</p>
+                     * @param _iPFilterPolicy <p>IP 访问限制规则。</p>
                      * 
                      */
                     void SetIPFilterPolicy(const IPFilterPolicy& _iPFilterPolicy);
@@ -175,37 +175,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名。
+                     * <p>域名。</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * [Referer 防盗链](/document/product/266/14046)规则。
+                     * <p><a href="/document/product/266/14046">Referer 防盗链</a>规则。</p>
                      */
                     RefererAuthPolicy m_refererAuthPolicy;
                     bool m_refererAuthPolicyHasBeenSet;
 
                     /**
-                     * [Key 防盗链](/document/product/266/14047)规则。
+                     * <p><a href="/document/product/266/14047">Key 防盗链</a>规则。</p>
                      */
                     UrlSignatureAuthPolicy m_urlSignatureAuthPolicy;
                     bool m_urlSignatureAuthPolicyHasBeenSet;
 
                     /**
-                     * QUIC 配置。
+                     * <p>QUIC 配置。</p>
                      */
                     DomainQUICConfig m_qUICConfig;
                     bool m_qUICConfigHasBeenSet;
 
                     /**
-                     * IP 访问限制规则。
+                     * <p>IP 访问限制规则。</p>
                      */
                     IPFilterPolicy m_iPFilterPolicy;
                     bool m_iPFilterPolicyHasBeenSet;

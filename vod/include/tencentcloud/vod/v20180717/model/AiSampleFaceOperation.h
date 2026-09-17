@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作类型，可选值：add（添加）、delete（删除）、reset（重置）。重置操作将清空该人物已有人脸数据，并添加 FaceContents 指定人脸数据。
-                     * @return Type 操作类型，可选值：add（添加）、delete（删除）、reset（重置）。重置操作将清空该人物已有人脸数据，并添加 FaceContents 指定人脸数据。
+                     * 获取<p>操作类型，可选值：add（添加）、delete（删除）、reset（重置）。重置操作将清空该人物已有人脸数据，并添加 FaceContents 指定人脸数据。</p>
+                     * @return Type <p>操作类型，可选值：add（添加）、delete（删除）、reset（重置）。重置操作将清空该人物已有人脸数据，并添加 FaceContents 指定人脸数据。</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置操作类型，可选值：add（添加）、delete（删除）、reset（重置）。重置操作将清空该人物已有人脸数据，并添加 FaceContents 指定人脸数据。
-                     * @param _type 操作类型，可选值：add（添加）、delete（删除）、reset（重置）。重置操作将清空该人物已有人脸数据，并添加 FaceContents 指定人脸数据。
+                     * 设置<p>操作类型，可选值：add（添加）、delete（删除）、reset（重置）。重置操作将清空该人物已有人脸数据，并添加 FaceContents 指定人脸数据。</p>
+                     * @param _type <p>操作类型，可选值：add（添加）、delete（删除）、reset（重置）。重置操作将清空该人物已有人脸数据，并添加 FaceContents 指定人脸数据。</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取人脸 ID 集合，当 Type为delete 时，该字段必填。
-                     * @return FaceIds 人脸 ID 集合，当 Type为delete 时，该字段必填。
+                     * 获取<p>人脸 ID 集合，当 Type为delete 时，该字段必填。</p>
+                     * @return FaceIds <p>人脸 ID 集合，当 Type为delete 时，该字段必填。</p>
                      * 
                      */
                     std::vector<std::string> GetFaceIds() const;
 
                     /**
-                     * 设置人脸 ID 集合，当 Type为delete 时，该字段必填。
-                     * @param _faceIds 人脸 ID 集合，当 Type为delete 时，该字段必填。
+                     * 设置<p>人脸 ID 集合，当 Type为delete 时，该字段必填。</p>
+                     * @param _faceIds <p>人脸 ID 集合，当 Type为delete 时，该字段必填。</p>
                      * 
                      */
                     void SetFaceIds(const std::vector<std::string>& _faceIds);
@@ -89,27 +89,15 @@ namespace TencentCloud
                     bool FaceIdsHasBeenSet() const;
 
                     /**
-                     * 获取人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串集合，仅支持 jpeg、png 图片格式。
-<li>当 Type为add 或 reset 时，该字段必填；</li>
-<li>数组长度限制：5 张图片。</li>
-注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
-                     * @return FaceContents 人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串集合，仅支持 jpeg、png 图片格式。
-<li>当 Type为add 或 reset 时，该字段必填；</li>
-<li>数组长度限制：5 张图片。</li>
-注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
+                     * 获取<p>人脸图片 <a href="https://tools.ietf.org/html/rfc4648">Base64</a> 编码后的字符串集合，仅支持 jpeg、png 图片格式。</p><li>当 Type为add 或 reset 时，该字段必填；</li><li>数组长度限制：5 张图片。</li>注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
+                     * @return FaceContents <p>人脸图片 <a href="https://tools.ietf.org/html/rfc4648">Base64</a> 编码后的字符串集合，仅支持 jpeg、png 图片格式。</p><li>当 Type为add 或 reset 时，该字段必填；</li><li>数组长度限制：5 张图片。</li>注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
                      * 
                      */
                     std::vector<std::string> GetFaceContents() const;
 
                     /**
-                     * 设置人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串集合，仅支持 jpeg、png 图片格式。
-<li>当 Type为add 或 reset 时，该字段必填；</li>
-<li>数组长度限制：5 张图片。</li>
-注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
-                     * @param _faceContents 人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串集合，仅支持 jpeg、png 图片格式。
-<li>当 Type为add 或 reset 时，该字段必填；</li>
-<li>数组长度限制：5 张图片。</li>
-注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
+                     * 设置<p>人脸图片 <a href="https://tools.ietf.org/html/rfc4648">Base64</a> 编码后的字符串集合，仅支持 jpeg、png 图片格式。</p><li>当 Type为add 或 reset 时，该字段必填；</li><li>数组长度限制：5 张图片。</li>注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
+                     * @param _faceContents <p>人脸图片 <a href="https://tools.ietf.org/html/rfc4648">Base64</a> 编码后的字符串集合，仅支持 jpeg、png 图片格式。</p><li>当 Type为add 或 reset 时，该字段必填；</li><li>数组长度限制：5 张图片。</li>注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
                      * 
                      */
                     void SetFaceContents(const std::vector<std::string>& _faceContents);
@@ -124,22 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作类型，可选值：add（添加）、delete（删除）、reset（重置）。重置操作将清空该人物已有人脸数据，并添加 FaceContents 指定人脸数据。
+                     * <p>操作类型，可选值：add（添加）、delete（删除）、reset（重置）。重置操作将清空该人物已有人脸数据，并添加 FaceContents 指定人脸数据。</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 人脸 ID 集合，当 Type为delete 时，该字段必填。
+                     * <p>人脸 ID 集合，当 Type为delete 时，该字段必填。</p>
                      */
                     std::vector<std::string> m_faceIds;
                     bool m_faceIdsHasBeenSet;
 
                     /**
-                     * 人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串集合，仅支持 jpeg、png 图片格式。
-<li>当 Type为add 或 reset 时，该字段必填；</li>
-<li>数组长度限制：5 张图片。</li>
-注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
+                     * <p>人脸图片 <a href="https://tools.ietf.org/html/rfc4648">Base64</a> 编码后的字符串集合，仅支持 jpeg、png 图片格式。</p><li>当 Type为add 或 reset 时，该字段必填；</li><li>数组长度限制：5 张图片。</li>注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
                      */
                     std::vector<std::string> m_faceContents;
                     bool m_faceContentsHasBeenSet;

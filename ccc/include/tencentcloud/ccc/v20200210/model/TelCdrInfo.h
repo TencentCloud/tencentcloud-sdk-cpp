@@ -956,6 +956,27 @@ namespace TencentCloud
                      */
                     bool SysHangupReasonStringHasBeenSet() const;
 
+                    /**
+                     * 获取<p>通话结束状态V2（灰度中）</p>
+                     * @return EndStatusV2 <p>通话结束状态V2（灰度中）</p>
+                     * 
+                     */
+                    int64_t GetEndStatusV2() const;
+
+                    /**
+                     * 设置<p>通话结束状态V2（灰度中）</p>
+                     * @param _endStatusV2 <p>通话结束状态V2（灰度中）</p>
+                     * 
+                     */
+                    void SetEndStatusV2(const int64_t& _endStatusV2);
+
+                    /**
+                     * 判断参数 EndStatusV2 是否已赋值
+                     * @return EndStatusV2 是否已赋值
+                     * 
+                     */
+                    bool EndStatusV2HasBeenSet() const;
+
                 private:
 
                     /**
@@ -1216,6 +1237,12 @@ namespace TencentCloud
                      */
                     std::string m_sysHangupReasonString;
                     bool m_sysHangupReasonStringHasBeenSet;
+
+                    /**
+                     * <p>通话结束状态V2（灰度中）</p>
+                     */
+                    int64_t m_endStatusV2;
+                    bool m_endStatusV2HasBeenSet;
 
                 };
             }

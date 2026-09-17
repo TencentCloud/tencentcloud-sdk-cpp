@@ -26,6 +26,7 @@ ModifyPartitionQueueRequest::ModifyPartitionQueueRequest() :
     m_idHasBeenSet(false),
     m_partitionCodeHasBeenSet(false),
     m_queueNameHasBeenSet(false),
+    m_aliasHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_resourceUsagesHasBeenSet(false),
     m_queueTypeHasBeenSet(false)
@@ -61,6 +62,14 @@ string ModifyPartitionQueueRequest::ToJsonString() const
         string key = "QueueName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Alias";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_alias.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
@@ -148,6 +157,22 @@ void ModifyPartitionQueueRequest::SetQueueName(const string& _queueName)
 bool ModifyPartitionQueueRequest::QueueNameHasBeenSet() const
 {
     return m_queueNameHasBeenSet;
+}
+
+string ModifyPartitionQueueRequest::GetAlias() const
+{
+    return m_alias;
+}
+
+void ModifyPartitionQueueRequest::SetAlias(const string& _alias)
+{
+    m_alias = _alias;
+    m_aliasHasBeenSet = true;
+}
+
+bool ModifyPartitionQueueRequest::AliasHasBeenSet() const
+{
+    return m_aliasHasBeenSet;
 }
 
 string ModifyPartitionQueueRequest::GetDescription() const

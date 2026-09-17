@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源组列表
-                     * @return AddressPoolSet 资源组列表
+                     * 获取<p>资源组列表</p>
+                     * @return AddressPoolSet <p>资源组列表</p>
                      * 
                      */
                     std::vector<AddressPool> GetAddressPoolSet() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool AddressPoolSetHasBeenSet() const;
 
                     /**
-                     * 获取总数
-                     * @return TotalCount 总数
+                     * 获取<p>总数</p>
+                     * @return TotalCount <p>总数</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源组列表
+                     * <p>资源组列表</p>
                      */
                     std::vector<AddressPool> m_addressPoolSet;
                     bool m_addressPoolSetHasBeenSet;
 
                     /**
-                     * 总数
+                     * <p>总数</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

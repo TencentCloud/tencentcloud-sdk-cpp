@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 id
-                     * @return InstanceId 实例 id
+                     * 获取<p>实例 id</p>
+                     * @return InstanceId <p>实例 id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 id
-                     * @param _instanceId 实例 id
+                     * 设置<p>实例 id</p>
+                     * @param _instanceId <p>实例 id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取<p>偏移量</p>
+                     * @return Offset <p>偏移量</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置<p>偏移量</p>
+                     * @param _offset <p>偏移量</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页条数
-                     * @return Limit 每页条数
+                     * 获取<p>每页条数</p>
+                     * @return Limit <p>每页条数</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页条数
-                     * @param _limit 每页条数
+                     * 设置<p>每页条数</p>
+                     * @param _limit <p>每页条数</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取策略过滤条件：StrategyName：策略名称
-                     * @return Filters 策略过滤条件：StrategyName：策略名称
+                     * 获取<p>策略过滤条件：StrategyName：策略名称</p>
+                     * @return Filters <p>策略过滤条件：StrategyName：策略名称</p>
                      * 
                      */
                     std::vector<ResourceFilter> GetFilters() const;
 
                     /**
-                     * 设置策略过滤条件：StrategyName：策略名称
-                     * @param _filters 策略过滤条件：StrategyName：策略名称
+                     * 设置<p>策略过滤条件：StrategyName：策略名称</p>
+                     * @param _filters <p>策略过滤条件：StrategyName：策略名称</p>
                      * 
                      */
                     void SetFilters(const std::vector<ResourceFilter>& _filters);
@@ -130,25 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 id
+                     * <p>实例 id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * <p>偏移量</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页条数
+                     * <p>每页条数</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 策略过滤条件：StrategyName：策略名称
+                     * <p>策略过滤条件：StrategyName：策略名称</p>
                      */
                     std::vector<ResourceFilter> m_filters;
                     bool m_filtersHasBeenSet;

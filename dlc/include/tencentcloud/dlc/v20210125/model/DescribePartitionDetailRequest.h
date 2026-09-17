@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分区编码
-                     * @return PartitionCode 分区编码
+                     * 获取<p>分区编码</p>
+                     * @return PartitionCode <p>分区编码</p>
                      * 
                      */
                     std::string GetPartitionCode() const;
 
                     /**
-                     * 设置分区编码
-                     * @param _partitionCode 分区编码
+                     * 设置<p>分区编码</p>
+                     * @param _partitionCode <p>分区编码</p>
                      * 
                      */
                     void SetPartitionCode(const std::string& _partitionCode);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分区编码
+                     * <p>分区编码</p>
                      */
                     std::string m_partitionCode;
                     bool m_partitionCodeHasBeenSet;

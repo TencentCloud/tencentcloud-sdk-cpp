@@ -60,6 +60,7 @@ Instance::Instance() :
     m_gPUInfoHasBeenSet(false),
     m_licenseTypeHasBeenSet(false),
     m_disableApiTerminationHasBeenSet(false),
+    m_hostNameHasBeenSet(false),
     m_defaultLoginUserHasBeenSet(false),
     m_defaultLoginPortHasBeenSet(false),
     m_latestOperationErrorMsgHasBeenSet(false),
@@ -546,6 +547,16 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_disableApiTerminationHasBeenSet = true;
     }
 
+    if (value.HasMember("HostName") && !value["HostName"].IsNull())
+    {
+        if (!value["HostName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.HostName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostName = string(value["HostName"].GetString());
+        m_hostNameHasBeenSet = true;
+    }
+
     if (value.HasMember("DefaultLoginUser") && !value["DefaultLoginUser"].IsNull())
     {
         if (!value["DefaultLoginUser"].IsString())
@@ -1010,6 +1021,14 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "DisableApiTermination";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_disableApiTermination, allocator);
+    }
+
+    if (m_hostNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_defaultLoginUserHasBeenSet)
@@ -1708,6 +1727,22 @@ void Instance::SetDisableApiTermination(const bool& _disableApiTermination)
 bool Instance::DisableApiTerminationHasBeenSet() const
 {
     return m_disableApiTerminationHasBeenSet;
+}
+
+string Instance::GetHostName() const
+{
+    return m_hostName;
+}
+
+void Instance::SetHostName(const string& _hostName)
+{
+    m_hostName = _hostName;
+    m_hostNameHasBeenSet = true;
+}
+
+bool Instance::HostNameHasBeenSet() const
+{
+    return m_hostNameHasBeenSet;
 }
 
 string Instance::GetDefaultLoginUser() const

@@ -27,7 +27,8 @@ DescribeBundlesRequest::DescribeBundlesRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_zonesHasBeenSet(false)
+    m_zonesHasBeenSet(false),
+    m_blueprintIdHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,14 @@ string DescribeBundlesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_blueprintIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlueprintId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_blueprintId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -181,6 +190,22 @@ void DescribeBundlesRequest::SetZones(const vector<string>& _zones)
 bool DescribeBundlesRequest::ZonesHasBeenSet() const
 {
     return m_zonesHasBeenSet;
+}
+
+string DescribeBundlesRequest::GetBlueprintId() const
+{
+    return m_blueprintId;
+}
+
+void DescribeBundlesRequest::SetBlueprintId(const string& _blueprintId)
+{
+    m_blueprintId = _blueprintId;
+    m_blueprintIdHasBeenSet = true;
+}
+
+bool DescribeBundlesRequest::BlueprintIdHasBeenSet() const
+{
+    return m_blueprintIdHasBeenSet;
 }
 
 

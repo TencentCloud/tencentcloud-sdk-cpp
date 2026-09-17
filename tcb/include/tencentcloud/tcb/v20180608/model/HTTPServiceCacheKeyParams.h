@@ -38,6 +38,7 @@ namespace TencentCloud
                 * 自定义缓存键参数。约束：FullURLCache=on 与 QueryStringSwitch=on 互斥
 使用示例：
 - 整 URL 参与缓存键：{FullURLCache: "on", QueryStringSwitch: "off"}
+- 整 URL 不参与缓存键：{FullURLCache: "off", QueryStringSwitch: "off"}
 - URL 路径 + 仅保留 x/y：{FullURLCache: "off", QueryStringSwitch: "on", QueryStringAction: "includeCustom", QueryStringValues: ["x", "y"]}
 - URL 路径 + 忽略 debug：{FullURLCache: "off", QueryStringSwitch: "on", QueryStringAction: "excludeCustom", QueryStringValues: ["debug"]}
                 */
@@ -114,15 +115,15 @@ namespace TencentCloud
                     bool QueryStringActionHasBeenSet() const;
 
                     /**
-                     * 获取<p>参数名列表</p><p>入参限制：最多 100 项，单项 1~128 字节</p>
-                     * @return QueryStringValues <p>参数名列表</p><p>入参限制：最多 100 项，单项 1~128 字节</p>
+                     * 获取<p>参数名列表</p><p>入参限制：最多 30 项，单项 1~128 字节</p>
+                     * @return QueryStringValues <p>参数名列表</p><p>入参限制：最多 30 项，单项 1~128 字节</p>
                      * 
                      */
                     std::vector<std::string> GetQueryStringValues() const;
 
                     /**
-                     * 设置<p>参数名列表</p><p>入参限制：最多 100 项，单项 1~128 字节</p>
-                     * @param _queryStringValues <p>参数名列表</p><p>入参限制：最多 100 项，单项 1~128 字节</p>
+                     * 设置<p>参数名列表</p><p>入参限制：最多 30 项，单项 1~128 字节</p>
+                     * @param _queryStringValues <p>参数名列表</p><p>入参限制：最多 30 项，单项 1~128 字节</p>
                      * 
                      */
                     void SetQueryStringValues(const std::vector<std::string>& _queryStringValues);
@@ -155,7 +156,7 @@ namespace TencentCloud
                     bool m_queryStringActionHasBeenSet;
 
                     /**
-                     * <p>参数名列表</p><p>入参限制：最多 100 项，单项 1~128 字节</p>
+                     * <p>参数名列表</p><p>入参限制：最多 30 项，单项 1~128 字节</p>
                      */
                     std::vector<std::string> m_queryStringValues;
                     bool m_queryStringValuesHasBeenSet;

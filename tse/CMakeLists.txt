@@ -376,6 +376,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayNodesResult.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayLLMModelAPIRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeNacosServerInterfacesRequest.h
+  include/tencentcloud/tse/v20201207/model/AgentSkill.h
   include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayConsumerGroupRequest.h
   include/tencentcloud/tse/v20201207/model/AIGWQueryParamCredentialConfig.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayCORSResponse.h
@@ -419,6 +420,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayLLMModelServiceRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeGovernanceAliasesRequest.h
   include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayServiceResponse.h
+  include/tencentcloud/tse/v20201207/model/ExtendedMetadata.h
   include/tencentcloud/tse/v20201207/model/NacosServerInterface.h
   include/tencentcloud/tse/v20201207/model/DescribeInstanceTagInfosRequest.h
   include/tencentcloud/tse/v20201207/model/GovernanceNamespaceInput.h
@@ -900,6 +902,7 @@ set(tse_src
   src/v20201207/model/DescribeCloudNativeAPIGatewayNodesResult.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayLLMModelAPIRequest.cpp
   src/v20201207/model/DescribeNacosServerInterfacesRequest.cpp
+  src/v20201207/model/AgentSkill.cpp
   src/v20201207/model/ModifyCloudNativeAPIGatewayConsumerGroupRequest.cpp
   src/v20201207/model/AIGWQueryParamCredentialConfig.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayCORSResponse.cpp
@@ -943,6 +946,7 @@ set(tse_src
   src/v20201207/model/DescribeCloudNativeAPIGatewayLLMModelServiceRequest.cpp
   src/v20201207/model/DescribeGovernanceAliasesRequest.cpp
   src/v20201207/model/ModifyCloudNativeAPIGatewayServiceResponse.cpp
+  src/v20201207/model/ExtendedMetadata.cpp
   src/v20201207/model/NacosServerInterface.cpp
   src/v20201207/model/DescribeInstanceTagInfosRequest.cpp
   src/v20201207/model/GovernanceNamespaceInput.cpp

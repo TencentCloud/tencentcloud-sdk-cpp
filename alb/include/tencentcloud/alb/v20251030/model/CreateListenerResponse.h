@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取监听器 ID，格式为 lst- 后接 8 位字母数字。
-                     * @return ListenerId 监听器 ID，格式为 lst- 后接 8 位字母数字。
+                     * 获取<p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>
+                     * @return ListenerId <p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>
                      * 
                      */
                     std::string GetListenerId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 监听器 ID，格式为 lst- 后接 8 位字母数字。
+                     * <p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;

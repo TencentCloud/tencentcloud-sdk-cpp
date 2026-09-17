@@ -262,6 +262,27 @@ namespace TencentCloud
                     bool ProviderHasBeenSet() const;
 
                     /**
+                     * 获取<p>markdown 原生内容的模型提供方详情</p>
+                     * @return ProviderIntroduction <p>markdown 原生内容的模型提供方详情</p>
+                     * 
+                     */
+                    std::string GetProviderIntroduction() const;
+
+                    /**
+                     * 设置<p>markdown 原生内容的模型提供方详情</p>
+                     * @param _providerIntroduction <p>markdown 原生内容的模型提供方详情</p>
+                     * 
+                     */
+                    void SetProviderIntroduction(const std::string& _providerIntroduction);
+
+                    /**
+                     * 判断参数 ProviderIntroduction 是否已赋值
+                     * @return ProviderIntroduction 是否已赋值
+                     * 
+                     */
+                    bool ProviderIntroductionHasBeenSet() const;
+
+                    /**
                      * 获取<p>模型状态。取值：online（上线）、offline（下线）。</p><p>枚举值：</p><ul><li>online ： 上线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护中</li></ul>
                      * @return Status <p>模型状态。取值：online（上线）、offline（下线）。</p><p>枚举值：</p><ul><li>online ： 上线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护中</li></ul>
                      * 
@@ -532,6 +553,12 @@ namespace TencentCloud
                      */
                     std::string m_provider;
                     bool m_providerHasBeenSet;
+
+                    /**
+                     * <p>markdown 原生内容的模型提供方详情</p>
+                     */
+                    std::string m_providerIntroduction;
+                    bool m_providerIntroductionHasBeenSet;
 
                     /**
                      * <p>模型状态。取值：online（上线）、offline（下线）。</p><p>枚举值：</p><ul><li>online ： 上线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护中</li></ul>

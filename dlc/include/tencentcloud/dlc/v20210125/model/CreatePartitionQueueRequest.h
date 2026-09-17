@@ -65,27 +65,6 @@ namespace TencentCloud
                     bool PartitionCodeHasBeenSet() const;
 
                     /**
-                     * 获取<p>队列名称</p>
-                     * @return QueueName <p>队列名称</p>
-                     * 
-                     */
-                    std::string GetQueueName() const;
-
-                    /**
-                     * 设置<p>队列名称</p>
-                     * @param _queueName <p>队列名称</p>
-                     * 
-                     */
-                    void SetQueueName(const std::string& _queueName);
-
-                    /**
-                     * 判断参数 QueueName 是否已赋值
-                     * @return QueueName 是否已赋值
-                     * 
-                     */
-                    bool QueueNameHasBeenSet() const;
-
-                    /**
                      * 获取<p>资源规格列表，定义队列的资源类型及大小范围</p>
                      * @return ResourceUsages <p>资源规格列表，定义队列的资源类型及大小范围</p>
                      * 
@@ -128,6 +107,48 @@ namespace TencentCloud
                     bool QueueTypeHasBeenSet() const;
 
                     /**
+                     * 获取<p>队列编码（不可变 code）：透传时按 RFC1123 校验并作为队列的固定标识；未透传时系统自动生成（格式 dlc-rg-xxxxxxxx）。落库后不可修改</p>
+                     * @return QueueName <p>队列编码（不可变 code）：透传时按 RFC1123 校验并作为队列的固定标识；未透传时系统自动生成（格式 dlc-rg-xxxxxxxx）。落库后不可修改</p>
+                     * 
+                     */
+                    std::string GetQueueName() const;
+
+                    /**
+                     * 设置<p>队列编码（不可变 code）：透传时按 RFC1123 校验并作为队列的固定标识；未透传时系统自动生成（格式 dlc-rg-xxxxxxxx）。落库后不可修改</p>
+                     * @param _queueName <p>队列编码（不可变 code）：透传时按 RFC1123 校验并作为队列的固定标识；未透传时系统自动生成（格式 dlc-rg-xxxxxxxx）。落库后不可修改</p>
+                     * 
+                     */
+                    void SetQueueName(const std::string& _queueName);
+
+                    /**
+                     * 判断参数 QueueName 是否已赋值
+                     * @return QueueName 是否已赋值
+                     * 
+                     */
+                    bool QueueNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>队列别名（显示名）：用户可见、可修改；未提供时等于最终 QueueName。可与其它队列重复</p>
+                     * @return Alias <p>队列别名（显示名）：用户可见、可修改；未提供时等于最终 QueueName。可与其它队列重复</p>
+                     * 
+                     */
+                    std::string GetAlias() const;
+
+                    /**
+                     * 设置<p>队列别名（显示名）：用户可见、可修改；未提供时等于最终 QueueName。可与其它队列重复</p>
+                     * @param _alias <p>队列别名（显示名）：用户可见、可修改；未提供时等于最终 QueueName。可与其它队列重复</p>
+                     * 
+                     */
+                    void SetAlias(const std::string& _alias);
+
+                    /**
+                     * 判断参数 Alias 是否已赋值
+                     * @return Alias 是否已赋值
+                     * 
+                     */
+                    bool AliasHasBeenSet() const;
+
+                    /**
                      * 获取<p>队列描述</p>
                      * @return Description <p>队列描述</p>
                      * 
@@ -157,12 +178,6 @@ namespace TencentCloud
                     bool m_partitionCodeHasBeenSet;
 
                     /**
-                     * <p>队列名称</p>
-                     */
-                    std::string m_queueName;
-                    bool m_queueNameHasBeenSet;
-
-                    /**
                      * <p>资源规格列表，定义队列的资源类型及大小范围</p>
                      */
                     std::vector<ResourceUsage> m_resourceUsages;
@@ -173,6 +188,18 @@ namespace TencentCloud
                      */
                     int64_t m_queueType;
                     bool m_queueTypeHasBeenSet;
+
+                    /**
+                     * <p>队列编码（不可变 code）：透传时按 RFC1123 校验并作为队列的固定标识；未透传时系统自动生成（格式 dlc-rg-xxxxxxxx）。落库后不可修改</p>
+                     */
+                    std::string m_queueName;
+                    bool m_queueNameHasBeenSet;
+
+                    /**
+                     * <p>队列别名（显示名）：用户可见、可修改；未提供时等于最终 QueueName。可与其它队列重复</p>
+                     */
+                    std::string m_alias;
+                    bool m_aliasHasBeenSet;
 
                     /**
                      * <p>队列描述</p>

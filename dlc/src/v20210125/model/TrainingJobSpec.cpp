@@ -36,6 +36,7 @@ TrainingJobSpec::TrainingJobSpec() :
     m_resourcePartitionIdHasBeenSet(false),
     m_resourcePartitionNameHasBeenSet(false),
     m_queueHasBeenSet(false),
+    m_queueAliasHasBeenSet(false),
     m_checkpointMountInfoHasBeenSet(false),
     m_catalogHasBeenSet(false),
     m_creatorHasBeenSet(false),
@@ -212,6 +213,16 @@ CoreInternalOutcome TrainingJobSpec::Deserialize(const rapidjson::Value &value)
         }
         m_queue = string(value["Queue"].GetString());
         m_queueHasBeenSet = true;
+    }
+
+    if (value.HasMember("QueueAlias") && !value["QueueAlias"].IsNull())
+    {
+        if (!value["QueueAlias"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingJobSpec.QueueAlias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_queueAlias = string(value["QueueAlias"].GetString());
+        m_queueAliasHasBeenSet = true;
     }
 
     if (value.HasMember("CheckpointMountInfo") && !value["CheckpointMountInfo"].IsNull())
@@ -580,6 +591,14 @@ void TrainingJobSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Queue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_queue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queueAliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueAlias";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queueAlias.c_str(), allocator).Move(), allocator);
     }
 
     if (m_checkpointMountInfoHasBeenSet)
@@ -1000,6 +1019,22 @@ void TrainingJobSpec::SetQueue(const string& _queue)
 bool TrainingJobSpec::QueueHasBeenSet() const
 {
     return m_queueHasBeenSet;
+}
+
+string TrainingJobSpec::GetQueueAlias() const
+{
+    return m_queueAlias;
+}
+
+void TrainingJobSpec::SetQueueAlias(const string& _queueAlias)
+{
+    m_queueAlias = _queueAlias;
+    m_queueAliasHasBeenSet = true;
+}
+
+bool TrainingJobSpec::QueueAliasHasBeenSet() const
+{
+    return m_queueAliasHasBeenSet;
 }
 
 CheckpointMountInfo TrainingJobSpec::GetCheckpointMountInfo() const

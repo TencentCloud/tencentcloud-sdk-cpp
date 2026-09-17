@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dlc/v20210125/model/ResourceQuota.h>
+#include <tencentcloud/dlc/v20210125/model/SchedulableLimit.h>
+#include <tencentcloud/dlc/v20210125/model/CloudTag.h>
 
 
 namespace TencentCloud
@@ -182,6 +184,31 @@ namespace TencentCloud
                     bool ResourceQuotaHasBeenSet() const;
 
                     /**
+                     * 获取<p>各计费项的单 worker/executor 最大可调度资源量列表，用于约束提交作业时可申请的规格上限；仅包含分区已有的非 GPU 计费项，无可返回项时为空数组</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SchedulableLimitList <p>各计费项的单 worker/executor 最大可调度资源量列表，用于约束提交作业时可申请的规格上限；仅包含分区已有的非 GPU 计费项，无可返回项时为空数组</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<SchedulableLimit> GetSchedulableLimitList() const;
+
+                    /**
+                     * 设置<p>各计费项的单 worker/executor 最大可调度资源量列表，用于约束提交作业时可申请的规格上限；仅包含分区已有的非 GPU 计费项，无可返回项时为空数组</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _schedulableLimitList <p>各计费项的单 worker/executor 最大可调度资源量列表，用于约束提交作业时可申请的规格上限；仅包含分区已有的非 GPU 计费项，无可返回项时为空数组</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSchedulableLimitList(const std::vector<SchedulableLimit>& _schedulableLimitList);
+
+                    /**
+                     * 判断参数 SchedulableLimitList 是否已赋值
+                     * @return SchedulableLimitList 是否已赋值
+                     * 
+                     */
+                    bool SchedulableLimitListHasBeenSet() const;
+
+                    /**
                      * 获取<p>计费类型：1-包年包月，0-按量计费</p>
                      * @return PayMode <p>计费类型：1-包年包月，0-按量计费</p>
                      * 
@@ -201,6 +228,31 @@ namespace TencentCloud
                      * 
                      */
                     bool PayModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>续费标志：0-默认，1-自动续费，2-不自动续费（仅预付费有效）；按量计费分区无该字段</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RenewFlag <p>续费标志：0-默认，1-自动续费，2-不自动续费（仅预付费有效）；按量计费分区无该字段</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRenewFlag() const;
+
+                    /**
+                     * 设置<p>续费标志：0-默认，1-自动续费，2-不自动续费（仅预付费有效）；按量计费分区无该字段</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _renewFlag <p>续费标志：0-默认，1-自动续费，2-不自动续费（仅预付费有效）；按量计费分区无该字段</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRenewFlag(const int64_t& _renewFlag);
+
+                    /**
+                     * 判断参数 RenewFlag 是否已赋值
+                     * @return RenewFlag 是否已赋值
+                     * 
+                     */
+                    bool RenewFlagHasBeenSet() const;
 
                     /**
                      * 获取<p>创建时间</p>
@@ -277,6 +329,81 @@ namespace TencentCloud
                      */
                     bool ExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>资源池形态：SYSTEM（系统）/ USER（用户）/ EXTERNAL_TKE（纳管外部 TKE 集群）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourcePoolKind <p>资源池形态：SYSTEM（系统）/ USER（用户）/ EXTERNAL_TKE（纳管外部 TKE 集群）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResourcePoolKind() const;
+
+                    /**
+                     * 设置<p>资源池形态：SYSTEM（系统）/ USER（用户）/ EXTERNAL_TKE（纳管外部 TKE 集群）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourcePoolKind <p>资源池形态：SYSTEM（系统）/ USER（用户）/ EXTERNAL_TKE（纳管外部 TKE 集群）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourcePoolKind(const std::string& _resourcePoolKind);
+
+                    /**
+                     * 判断参数 ResourcePoolKind 是否已赋值
+                     * @return ResourcePoolKind 是否已赋值
+                     * 
+                     */
+                    bool ResourcePoolKindHasBeenSet() const;
+
+                    /**
+                     * 获取<p>纳管外部集群的原始 ID（例如 EMR 实例 ID emr-xxx），仅 EXTERNAL_TKE 等纳管场景有值</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExternalClusterId <p>纳管外部集群的原始 ID（例如 EMR 实例 ID emr-xxx），仅 EXTERNAL_TKE 等纳管场景有值</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExternalClusterId() const;
+
+                    /**
+                     * 设置<p>纳管外部集群的原始 ID（例如 EMR 实例 ID emr-xxx），仅 EXTERNAL_TKE 等纳管场景有值</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _externalClusterId <p>纳管外部集群的原始 ID（例如 EMR 实例 ID emr-xxx），仅 EXTERNAL_TKE 等纳管场景有值</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExternalClusterId(const std::string& _externalClusterId);
+
+                    /**
+                     * 判断参数 ExternalClusterId 是否已赋值
+                     * @return ExternalClusterId 是否已赋值
+                     * 
+                     */
+                    bool ExternalClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>资源已绑定的标签列表，由标签平台 GetResources 接口实时查询得到；列表场景下仅对当前页分区加载，单分区标签查询失败时降级留空</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags <p>资源已绑定的标签列表，由标签平台 GetResources 接口实时查询得到；列表场景下仅对当前页分区加载，单分区标签查询失败时降级留空</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<CloudTag> GetTags() const;
+
+                    /**
+                     * 设置<p>资源已绑定的标签列表，由标签平台 GetResources 接口实时查询得到；列表场景下仅对当前页分区加载，单分区标签查询失败时降级留空</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tags <p>资源已绑定的标签列表，由标签平台 GetResources 接口实时查询得到；列表场景下仅对当前页分区加载，单分区标签查询失败时降级留空</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTags(const std::vector<CloudTag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -318,10 +445,24 @@ namespace TencentCloud
                     bool m_resourceQuotaHasBeenSet;
 
                     /**
+                     * <p>各计费项的单 worker/executor 最大可调度资源量列表，用于约束提交作业时可申请的规格上限；仅包含分区已有的非 GPU 计费项，无可返回项时为空数组</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SchedulableLimit> m_schedulableLimitList;
+                    bool m_schedulableLimitListHasBeenSet;
+
+                    /**
                      * <p>计费类型：1-包年包月，0-按量计费</p>
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
+
+                    /**
+                     * <p>续费标志：0-默认，1-自动续费，2-不自动续费（仅预付费有效）；按量计费分区无该字段</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_renewFlag;
+                    bool m_renewFlagHasBeenSet;
 
                     /**
                      * <p>创建时间</p>
@@ -343,6 +484,27 @@ namespace TencentCloud
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * <p>资源池形态：SYSTEM（系统）/ USER（用户）/ EXTERNAL_TKE（纳管外部 TKE 集群）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourcePoolKind;
+                    bool m_resourcePoolKindHasBeenSet;
+
+                    /**
+                     * <p>纳管外部集群的原始 ID（例如 EMR 实例 ID emr-xxx），仅 EXTERNAL_TKE 等纳管场景有值</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_externalClusterId;
+                    bool m_externalClusterIdHasBeenSet;
+
+                    /**
+                     * <p>资源已绑定的标签列表，由标签平台 GetResources 接口实时查询得到；列表场景下仅对当前页分区加载，单分区标签查询失败时降级留空</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CloudTag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

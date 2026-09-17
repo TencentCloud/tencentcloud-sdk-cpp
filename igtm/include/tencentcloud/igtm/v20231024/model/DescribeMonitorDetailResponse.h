@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取探测规则
-                     * @return MonitorDetail 探测规则
+                     * 获取<p>探测规则</p>
+                     * @return MonitorDetail <p>探测规则</p>
                      * 
                      */
                     MonitorDetail GetMonitorDetail() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 探测规则
+                     * <p>探测规则</p>
                      */
                     MonitorDetail m_monitorDetail;
                     bool m_monitorDetailHasBeenSet;

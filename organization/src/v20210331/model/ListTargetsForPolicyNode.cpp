@@ -24,7 +24,9 @@ ListTargetsForPolicyNode::ListTargetsForPolicyNode() :
     m_uinHasBeenSet(false),
     m_relatedTypeHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_addTimeHasBeenSet(false)
+    m_addTimeHasBeenSet(false),
+    m_nodePathHasBeenSet(false),
+    m_nodePathIdsHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,32 @@ CoreInternalOutcome ListTargetsForPolicyNode::Deserialize(const rapidjson::Value
         m_addTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("NodePath") && !value["NodePath"].IsNull())
+    {
+        if (!value["NodePath"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ListTargetsForPolicyNode.NodePath` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NodePath"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_nodePath.push_back((*itr).GetString());
+        }
+        m_nodePathHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodePathIds") && !value["NodePathIds"].IsNull())
+    {
+        if (!value["NodePathIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ListTargetsForPolicyNode.NodePathIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NodePathIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_nodePathIds.push_back((*itr).GetInt64());
+        }
+        m_nodePathIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +138,32 @@ void ListTargetsForPolicyNode::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "AddTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_addTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodePathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodePath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_nodePath.begin(); itr != m_nodePath.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_nodePathIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodePathIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_nodePathIds.begin(); itr != m_nodePathIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -177,5 +231,37 @@ void ListTargetsForPolicyNode::SetAddTime(const string& _addTime)
 bool ListTargetsForPolicyNode::AddTimeHasBeenSet() const
 {
     return m_addTimeHasBeenSet;
+}
+
+vector<string> ListTargetsForPolicyNode::GetNodePath() const
+{
+    return m_nodePath;
+}
+
+void ListTargetsForPolicyNode::SetNodePath(const vector<string>& _nodePath)
+{
+    m_nodePath = _nodePath;
+    m_nodePathHasBeenSet = true;
+}
+
+bool ListTargetsForPolicyNode::NodePathHasBeenSet() const
+{
+    return m_nodePathHasBeenSet;
+}
+
+vector<int64_t> ListTargetsForPolicyNode::GetNodePathIds() const
+{
+    return m_nodePathIds;
+}
+
+void ListTargetsForPolicyNode::SetNodePathIds(const vector<int64_t>& _nodePathIds)
+{
+    m_nodePathIds = _nodePathIds;
+    m_nodePathIdsHasBeenSet = true;
+}
+
+bool ListTargetsForPolicyNode::NodePathIdsHasBeenSet() const
+{
+    return m_nodePathIdsHasBeenSet;
 }
 

@@ -3940,6 +3940,56 @@ AdpClient::DescribeReleaseSummaryOutcomeCallable AdpClient::DescribeReleaseSumma
     return prom->get_future();
 }
 
+AdpClient::DescribeResourceSummaryOutcome AdpClient::DescribeResourceSummary(const DescribeResourceSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceSummaryResponse rsp = DescribeResourceSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceSummaryOutcome(rsp);
+        else
+            return DescribeResourceSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceSummaryOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeResourceSummaryAsync(const DescribeResourceSummaryRequest& request, const DescribeResourceSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeResourceSummaryRequest&;
+    using Resp = DescribeResourceSummaryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceSummary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeResourceSummaryOutcomeCallable AdpClient::DescribeResourceSummaryCallable(const DescribeResourceSummaryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeResourceSummaryOutcome>>();
+    DescribeResourceSummaryAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeResourceSummaryRequest&,
+        DescribeResourceSummaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::DescribeSkillCategoryListOutcome AdpClient::DescribeSkillCategoryList(const DescribeSkillCategoryListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSkillCategoryList");

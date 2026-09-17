@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取站点 ID。
-                     * @return ZoneId 站点 ID。
+                     * 获取<p>站点 ID。</p>
+                     * @return ZoneId <p>站点 ID。</p>
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置站点 ID。
-                     * @param _zoneId 站点 ID。
+                     * 设置<p>站点 ID。</p>
+                     * @param _zoneId <p>站点 ID。</p>
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -65,31 +65,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，Filters.Values 的上限为20，详细的过滤条件Name值如下：
-<li>page-id： 按照页面 ID 进行过滤；</li>
-<li>name： 按照页面名称进行过滤；</li>
-<li>description：按照页面描述过滤；</li>
-<li>content-type：按照页面类型过滤。</li>
-                     * @return Filters 过滤条件，Filters.Values 的上限为20，详细的过滤条件Name值如下：
-<li>page-id： 按照页面 ID 进行过滤；</li>
-<li>name： 按照页面名称进行过滤；</li>
-<li>description：按照页面描述过滤；</li>
-<li>content-type：按照页面类型过滤。</li>
+                     * 获取<p>过滤条件，Filters.Values 的上限为 20，详细的过滤条件Name值如下：<li>page-id： 按照页面 ID 进行过滤；</li><li>name： 按照页面名称进行过滤；</li><li>description：按照页面描述过滤；</li><li>content-type：按照页面类型过滤。</li></p>
+                     * @return Filters <p>过滤条件，Filters.Values 的上限为 20，详细的过滤条件Name值如下：<li>page-id： 按照页面 ID 进行过滤；</li><li>name： 按照页面名称进行过滤；</li><li>description：按照页面描述过滤；</li><li>content-type：按照页面类型过滤。</li></p>
                      * 
                      */
                     std::vector<AdvancedFilter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，Filters.Values 的上限为20，详细的过滤条件Name值如下：
-<li>page-id： 按照页面 ID 进行过滤；</li>
-<li>name： 按照页面名称进行过滤；</li>
-<li>description：按照页面描述过滤；</li>
-<li>content-type：按照页面类型过滤。</li>
-                     * @param _filters 过滤条件，Filters.Values 的上限为20，详细的过滤条件Name值如下：
-<li>page-id： 按照页面 ID 进行过滤；</li>
-<li>name： 按照页面名称进行过滤；</li>
-<li>description：按照页面描述过滤；</li>
-<li>content-type：按照页面类型过滤。</li>
+                     * 设置<p>过滤条件，Filters.Values 的上限为 20，详细的过滤条件Name值如下：<li>page-id： 按照页面 ID 进行过滤；</li><li>name： 按照页面名称进行过滤；</li><li>description：按照页面描述过滤；</li><li>content-type：按照页面类型过滤。</li></p>
+                     * @param _filters <p>过滤条件，Filters.Values 的上限为 20，详细的过滤条件Name值如下：<li>page-id： 按照页面 ID 进行过滤；</li><li>name： 按照页面名称进行过滤；</li><li>description：按照页面描述过滤；</li><li>content-type：按照页面类型过滤。</li></p>
                      * 
                      */
                     void SetFilters(const std::vector<AdvancedFilter>& _filters);
@@ -102,15 +86,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取分页查询偏移量。默认值：0。
-                     * @return Offset 分页查询偏移量。默认值：0。
+                     * 获取<p>分页查询偏移量。默认值：0。</p>
+                     * @return Offset <p>分页查询偏移量。默认值：0。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页查询偏移量。默认值：0。
-                     * @param _offset 分页查询偏移量。默认值：0。
+                     * 设置<p>分页查询偏移量。默认值：0。</p>
+                     * @param _offset <p>分页查询偏移量。默认值：0。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -123,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页查询限制数目。默认值：20，最大值：1000。 
-                     * @return Limit 分页查询限制数目。默认值：20，最大值：1000。 
+                     * 获取<p>分页查询限制数目。默认值：20，最大值：1000。</p>
+                     * @return Limit <p>分页查询限制数目。默认值：20，最大值：1000。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页查询限制数目。默认值：20，最大值：1000。 
-                     * @param _limit 分页查询限制数目。默认值：20，最大值：1000。 
+                     * 设置<p>分页查询限制数目。默认值：20，最大值：1000。</p>
+                     * @param _limit <p>分页查询限制数目。默认值：20，最大值：1000。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -146,29 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 站点 ID。
+                     * <p>站点 ID。</p>
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 过滤条件，Filters.Values 的上限为20，详细的过滤条件Name值如下：
-<li>page-id： 按照页面 ID 进行过滤；</li>
-<li>name： 按照页面名称进行过滤；</li>
-<li>description：按照页面描述过滤；</li>
-<li>content-type：按照页面类型过滤。</li>
+                     * <p>过滤条件，Filters.Values 的上限为 20，详细的过滤条件Name值如下：<li>page-id： 按照页面 ID 进行过滤；</li><li>name： 按照页面名称进行过滤；</li><li>description：按照页面描述过滤；</li><li>content-type：按照页面类型过滤。</li></p>
                      */
                     std::vector<AdvancedFilter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 分页查询偏移量。默认值：0。
+                     * <p>分页查询偏移量。默认值：0。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页查询限制数目。默认值：20，最大值：1000。 
+                     * <p>分页查询限制数目。默认值：20，最大值：1000。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

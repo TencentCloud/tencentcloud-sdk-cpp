@@ -510,6 +510,27 @@ namespace TencentCloud
                      */
                     bool TagSetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>私网VPN标识</p>
+                     * @return IsPrivate <p>私网VPN标识</p>
+                     * 
+                     */
+                    bool GetIsPrivate() const;
+
+                    /**
+                     * 设置<p>私网VPN标识</p>
+                     * @param _isPrivate <p>私网VPN标识</p>
+                     * 
+                     */
+                    void SetIsPrivate(const bool& _isPrivate);
+
+                    /**
+                     * 判断参数 IsPrivate 是否已赋值
+                     * @return IsPrivate 是否已赋值
+                     * 
+                     */
+                    bool IsPrivateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -643,6 +664,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;
+
+                    /**
+                     * <p>私网VPN标识</p>
+                     */
+                    bool m_isPrivate;
+                    bool m_isPrivateHasBeenSet;
 
                 };
             }

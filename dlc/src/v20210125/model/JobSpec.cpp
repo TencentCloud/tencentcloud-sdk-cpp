@@ -37,15 +37,18 @@ JobSpec::JobSpec() :
     m_resourcePartitionIdHasBeenSet(false),
     m_resourcePartitionNameHasBeenSet(false),
     m_queueHasBeenSet(false),
+    m_queueAliasHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_clusterGroupHasBeenSet(false),
     m_jobPackageHasBeenSet(false),
     m_jobPackageNameHasBeenSet(false),
+    m_jobPackageSourceHasBeenSet(false),
     m_priorityHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_uinHasBeenSet(false),
     m_subAccountUinHasBeenSet(false),
+    m_subAccountNameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_jobInstanceCountHasBeenSet(false),
@@ -224,6 +227,16 @@ CoreInternalOutcome JobSpec::Deserialize(const rapidjson::Value &value)
         m_queueHasBeenSet = true;
     }
 
+    if (value.HasMember("QueueAlias") && !value["QueueAlias"].IsNull())
+    {
+        if (!value["QueueAlias"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobSpec.QueueAlias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_queueAlias = string(value["QueueAlias"].GetString());
+        m_queueAliasHasBeenSet = true;
+    }
+
     if (value.HasMember("GroupId") && !value["GroupId"].IsNull())
     {
         if (!value["GroupId"].IsString())
@@ -274,6 +287,16 @@ CoreInternalOutcome JobSpec::Deserialize(const rapidjson::Value &value)
         m_jobPackageNameHasBeenSet = true;
     }
 
+    if (value.HasMember("JobPackageSource") && !value["JobPackageSource"].IsNull())
+    {
+        if (!value["JobPackageSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobSpec.JobPackageSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobPackageSource = string(value["JobPackageSource"].GetString());
+        m_jobPackageSourceHasBeenSet = true;
+    }
+
     if (value.HasMember("Priority") && !value["Priority"].IsNull())
     {
         if (!value["Priority"].IsInt64())
@@ -312,6 +335,16 @@ CoreInternalOutcome JobSpec::Deserialize(const rapidjson::Value &value)
         }
         m_subAccountUin = string(value["SubAccountUin"].GetString());
         m_subAccountUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubAccountName") && !value["SubAccountName"].IsNull())
+    {
+        if (!value["SubAccountName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobSpec.SubAccountName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAccountName = string(value["SubAccountName"].GetString());
+        m_subAccountNameHasBeenSet = true;
     }
 
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
@@ -559,6 +592,14 @@ void JobSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         value.AddMember(iKey, rapidjson::Value(m_queue.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_queueAliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueAlias";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queueAlias.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_groupIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -599,6 +640,14 @@ void JobSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         value.AddMember(iKey, rapidjson::Value(m_jobPackageName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_jobPackageSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobPackageSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobPackageSource.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_priorityHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -629,6 +678,14 @@ void JobSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "SubAccountUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subAccountUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAccountNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAccountName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAccountName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -977,6 +1034,22 @@ bool JobSpec::QueueHasBeenSet() const
     return m_queueHasBeenSet;
 }
 
+string JobSpec::GetQueueAlias() const
+{
+    return m_queueAlias;
+}
+
+void JobSpec::SetQueueAlias(const string& _queueAlias)
+{
+    m_queueAlias = _queueAlias;
+    m_queueAliasHasBeenSet = true;
+}
+
+bool JobSpec::QueueAliasHasBeenSet() const
+{
+    return m_queueAliasHasBeenSet;
+}
+
 string JobSpec::GetGroupId() const
 {
     return m_groupId;
@@ -1057,6 +1130,22 @@ bool JobSpec::JobPackageNameHasBeenSet() const
     return m_jobPackageNameHasBeenSet;
 }
 
+string JobSpec::GetJobPackageSource() const
+{
+    return m_jobPackageSource;
+}
+
+void JobSpec::SetJobPackageSource(const string& _jobPackageSource)
+{
+    m_jobPackageSource = _jobPackageSource;
+    m_jobPackageSourceHasBeenSet = true;
+}
+
+bool JobSpec::JobPackageSourceHasBeenSet() const
+{
+    return m_jobPackageSourceHasBeenSet;
+}
+
 int64_t JobSpec::GetPriority() const
 {
     return m_priority;
@@ -1119,6 +1208,22 @@ void JobSpec::SetSubAccountUin(const string& _subAccountUin)
 bool JobSpec::SubAccountUinHasBeenSet() const
 {
     return m_subAccountUinHasBeenSet;
+}
+
+string JobSpec::GetSubAccountName() const
+{
+    return m_subAccountName;
+}
+
+void JobSpec::SetSubAccountName(const string& _subAccountName)
+{
+    m_subAccountName = _subAccountName;
+    m_subAccountNameHasBeenSet = true;
+}
+
+bool JobSpec::SubAccountNameHasBeenSet() const
+{
+    return m_subAccountNameHasBeenSet;
 }
 
 uint64_t JobSpec::GetCreateTime() const

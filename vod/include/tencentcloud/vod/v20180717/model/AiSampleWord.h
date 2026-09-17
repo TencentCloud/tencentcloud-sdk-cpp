@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取关键词。
-                     * @return Keyword 关键词。
+                     * 获取<p>关键词。</p>
+                     * @return Keyword <p>关键词。</p>
                      * 
                      */
                     std::string GetKeyword() const;
 
                     /**
-                     * 设置关键词。
-                     * @param _keyword 关键词。
+                     * 设置<p>关键词。</p>
+                     * @param _keyword <p>关键词。</p>
                      * 
                      */
                     void SetKeyword(const std::string& _keyword);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool KeywordHasBeenSet() const;
 
                     /**
-                     * 获取关键词标签。
-                     * @return TagSet 关键词标签。
+                     * 获取<p>关键词标签。</p>
+                     * @return TagSet <p>关键词标签。</p>
                      * 
                      */
                     std::vector<std::string> GetTagSet() const;
 
                     /**
-                     * 设置关键词标签。
-                     * @param _tagSet 关键词标签。
+                     * 设置<p>关键词标签。</p>
+                     * @param _tagSet <p>关键词标签。</p>
                      * 
                      */
                     void SetTagSet(const std::vector<std::string>& _tagSet);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TagSetHasBeenSet() const;
 
                     /**
-                     * 获取关键词应用场景。
-                     * @return UsageSet 关键词应用场景。
+                     * 获取<p>关键词应用场景。</p>
+                     * @return UsageSet <p>关键词应用场景。</p>
                      * 
                      */
                     std::vector<std::string> GetUsageSet() const;
 
                     /**
-                     * 设置关键词应用场景。
-                     * @param _usageSet 关键词应用场景。
+                     * 设置<p>关键词应用场景。</p>
+                     * @param _usageSet <p>关键词应用场景。</p>
                      * 
                      */
                     void SetUsageSet(const std::vector<std::string>& _usageSet);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool UsageSetHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @return CreateTime 创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 获取<p>创建时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @return CreateTime <p>创建时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param _createTime 创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 设置<p>创建时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @param _createTime <p>创建时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @return UpdateTime 最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 获取<p>最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @return UpdateTime <p>最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param _updateTime 最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 设置<p>最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @param _updateTime <p>最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -154,31 +154,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 关键词。
+                     * <p>关键词。</p>
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;
 
                     /**
-                     * 关键词标签。
+                     * <p>关键词标签。</p>
                      */
                     std::vector<std::string> m_tagSet;
                     bool m_tagSetHasBeenSet;
 
                     /**
-                     * 关键词应用场景。
+                     * <p>关键词应用场景。</p>
                      */
                     std::vector<std::string> m_usageSet;
                     bool m_usageSetHasBeenSet;
 
                     /**
-                     * 创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * <p>创建时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * <p>最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

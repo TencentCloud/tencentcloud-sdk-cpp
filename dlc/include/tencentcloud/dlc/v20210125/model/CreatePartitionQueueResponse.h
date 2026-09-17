@@ -57,6 +57,34 @@ namespace TencentCloud
                      */
                     bool IdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>最终生效的队列编码（含系统生成场景），与 DescribePartitionQueues 出参的 QueueName 语义一致</p>
+                     * @return QueueName <p>最终生效的队列编码（含系统生成场景），与 DescribePartitionQueues 出参的 QueueName 语义一致</p>
+                     * 
+                     */
+                    std::string GetQueueName() const;
+
+                    /**
+                     * 判断参数 QueueName 是否已赋值
+                     * @return QueueName 是否已赋值
+                     * 
+                     */
+                    bool QueueNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>队列别名（显示名）</p>
+                     * @return Alias <p>队列别名（显示名）</p>
+                     * 
+                     */
+                    std::string GetAlias() const;
+
+                    /**
+                     * 判断参数 Alias 是否已赋值
+                     * @return Alias 是否已赋值
+                     * 
+                     */
+                    bool AliasHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +92,18 @@ namespace TencentCloud
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * <p>最终生效的队列编码（含系统生成场景），与 DescribePartitionQueues 出参的 QueueName 语义一致</p>
+                     */
+                    std::string m_queueName;
+                    bool m_queueNameHasBeenSet;
+
+                    /**
+                     * <p>队列别名（显示名）</p>
+                     */
+                    std::string m_alias;
+                    bool m_aliasHasBeenSet;
 
                 };
             }

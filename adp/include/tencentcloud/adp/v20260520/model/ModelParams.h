@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启深度思考
-                     * @return DeepThinking 是否开启深度思考
+                     * 获取<p>是否开启深度思考</p>
+                     * @return DeepThinking <p>是否开启深度思考</p>
                      * 
                      */
                     std::string GetDeepThinking() const;
 
                     /**
-                     * 设置是否开启深度思考
-                     * @param _deepThinking 是否开启深度思考
+                     * 设置<p>是否开启深度思考</p>
+                     * @param _deepThinking <p>是否开启深度思考</p>
                      * 
                      */
                     void SetDeepThinking(const std::string& _deepThinking);
@@ -68,18 +68,18 @@ namespace TencentCloud
                     bool DeepThinkingHasBeenSet() const;
 
                     /**
-                     * 获取频率惩罚
+                     * 获取<p>频率惩罚</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FrequencyPenalty 频率惩罚
+                     * @return FrequencyPenalty <p>频率惩罚</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetFrequencyPenalty() const;
 
                     /**
-                     * 设置频率惩罚
+                     * 设置<p>频率惩罚</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _frequencyPenalty 频率惩罚
+                     * @param _frequencyPenalty <p>频率惩罚</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,18 +93,18 @@ namespace TencentCloud
                     bool FrequencyPenaltyHasBeenSet() const;
 
                     /**
-                     * 获取最大输出长度
+                     * 获取<p>最大输出长度</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxTokens 最大输出长度
+                     * @return MaxTokens <p>最大输出长度</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxTokens() const;
 
                     /**
-                     * 设置最大输出长度
+                     * 设置<p>最大输出长度</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxTokens 最大输出长度
+                     * @param _maxTokens <p>最大输出长度</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -118,18 +118,18 @@ namespace TencentCloud
                     bool MaxTokensHasBeenSet() const;
 
                     /**
-                     * 获取存在惩罚
+                     * 获取<p>存在惩罚</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PresencePenalty 存在惩罚
+                     * @return PresencePenalty <p>存在惩罚</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetPresencePenalty() const;
 
                     /**
-                     * 设置存在惩罚
+                     * 设置<p>存在惩罚</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _presencePenalty 存在惩罚
+                     * @param _presencePenalty <p>存在惩罚</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -143,15 +143,15 @@ namespace TencentCloud
                     bool PresencePenaltyHasBeenSet() const;
 
                     /**
-                     * 获取深度思考效果
-                     * @return ReasoningEffort 深度思考效果
+                     * 获取<p>深度思考效果</p>
+                     * @return ReasoningEffort <p>深度思考效果</p>
                      * 
                      */
                     std::string GetReasoningEffort() const;
 
                     /**
-                     * 设置深度思考效果
-                     * @param _reasoningEffort 深度思考效果
+                     * 设置<p>深度思考效果</p>
+                     * @param _reasoningEffort <p>深度思考效果</p>
                      * 
                      */
                     void SetReasoningEffort(const std::string& _reasoningEffort);
@@ -164,18 +164,18 @@ namespace TencentCloud
                     bool ReasoningEffortHasBeenSet() const;
 
                     /**
-                     * 获取重复惩罚
+                     * 获取<p>重复惩罚</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RepetitionPenalty 重复惩罚
+                     * @return RepetitionPenalty <p>重复惩罚</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetRepetitionPenalty() const;
 
                     /**
-                     * 设置重复惩罚
+                     * 设置<p>重复惩罚</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _repetitionPenalty 重复惩罚
+                     * @param _repetitionPenalty <p>重复惩罚</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -189,15 +189,15 @@ namespace TencentCloud
                     bool RepetitionPenaltyHasBeenSet() const;
 
                     /**
-                     * 获取输出格式（text、json_object）
-                     * @return ReplyFormat 输出格式（text、json_object）
+                     * 获取<p>输出格式（text、json_object）</p>
+                     * @return ReplyFormat <p>输出格式（text、json_object）</p>
                      * 
                      */
                     std::string GetReplyFormat() const;
 
                     /**
-                     * 设置输出格式（text、json_object）
-                     * @param _replyFormat 输出格式（text、json_object）
+                     * 设置<p>输出格式（text、json_object）</p>
+                     * @param _replyFormat <p>输出格式（text、json_object）</p>
                      * 
                      */
                     void SetReplyFormat(const std::string& _replyFormat);
@@ -210,18 +210,18 @@ namespace TencentCloud
                     bool ReplyFormatHasBeenSet() const;
 
                     /**
-                     * 获取seed 随机种子
+                     * 获取<p>seed 随机种子</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Seed seed 随机种子
+                     * @return Seed <p>seed 随机种子</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSeed() const;
 
                     /**
-                     * 设置seed 随机种子
+                     * 设置<p>seed 随机种子</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _seed seed 随机种子
+                     * @param _seed <p>seed 随机种子</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -235,15 +235,15 @@ namespace TencentCloud
                     bool SeedHasBeenSet() const;
 
                     /**
-                     * 获取停止序列
-                     * @return StopSequenceList 停止序列
+                     * 获取<p>停止序列</p>
+                     * @return StopSequenceList <p>停止序列</p>
                      * 
                      */
                     std::vector<std::string> GetStopSequenceList() const;
 
                     /**
-                     * 设置停止序列
-                     * @param _stopSequenceList 停止序列
+                     * 设置<p>停止序列</p>
+                     * @param _stopSequenceList <p>停止序列</p>
                      * 
                      */
                     void SetStopSequenceList(const std::vector<std::string>& _stopSequenceList);
@@ -256,18 +256,18 @@ namespace TencentCloud
                     bool StopSequenceListHasBeenSet() const;
 
                     /**
-                     * 获取温度
+                     * 获取<p>温度</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Temperature 温度
+                     * @return Temperature <p>温度</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetTemperature() const;
 
                     /**
-                     * 设置温度
+                     * 设置<p>温度</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _temperature 温度
+                     * @param _temperature <p>温度</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -281,18 +281,18 @@ namespace TencentCloud
                     bool TemperatureHasBeenSet() const;
 
                     /**
-                     * 获取top_p
+                     * 获取<p>top_p</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TopP top_p
+                     * @return TopP <p>top_p</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetTopP() const;
 
                     /**
-                     * 设置top_p
+                     * 设置<p>top_p</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _topP top_p
+                     * @param _topP <p>top_p</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -305,80 +305,107 @@ namespace TencentCloud
                      */
                     bool TopPHasBeenSet() const;
 
+                    /**
+                     * 获取<p>top_k</p>
+                     * @return TopK <p>top_k</p>
+                     * 
+                     */
+                    int64_t GetTopK() const;
+
+                    /**
+                     * 设置<p>top_k</p>
+                     * @param _topK <p>top_k</p>
+                     * 
+                     */
+                    void SetTopK(const int64_t& _topK);
+
+                    /**
+                     * 判断参数 TopK 是否已赋值
+                     * @return TopK 是否已赋值
+                     * 
+                     */
+                    bool TopKHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 是否开启深度思考
+                     * <p>是否开启深度思考</p>
                      */
                     std::string m_deepThinking;
                     bool m_deepThinkingHasBeenSet;
 
                     /**
-                     * 频率惩罚
+                     * <p>频率惩罚</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_frequencyPenalty;
                     bool m_frequencyPenaltyHasBeenSet;
 
                     /**
-                     * 最大输出长度
+                     * <p>最大输出长度</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxTokens;
                     bool m_maxTokensHasBeenSet;
 
                     /**
-                     * 存在惩罚
+                     * <p>存在惩罚</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_presencePenalty;
                     bool m_presencePenaltyHasBeenSet;
 
                     /**
-                     * 深度思考效果
+                     * <p>深度思考效果</p>
                      */
                     std::string m_reasoningEffort;
                     bool m_reasoningEffortHasBeenSet;
 
                     /**
-                     * 重复惩罚
+                     * <p>重复惩罚</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_repetitionPenalty;
                     bool m_repetitionPenaltyHasBeenSet;
 
                     /**
-                     * 输出格式（text、json_object）
+                     * <p>输出格式（text、json_object）</p>
                      */
                     std::string m_replyFormat;
                     bool m_replyFormatHasBeenSet;
 
                     /**
-                     * seed 随机种子
+                     * <p>seed 随机种子</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_seed;
                     bool m_seedHasBeenSet;
 
                     /**
-                     * 停止序列
+                     * <p>停止序列</p>
                      */
                     std::vector<std::string> m_stopSequenceList;
                     bool m_stopSequenceListHasBeenSet;
 
                     /**
-                     * 温度
+                     * <p>温度</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_temperature;
                     bool m_temperatureHasBeenSet;
 
                     /**
-                     * top_p
+                     * <p>top_p</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_topP;
                     bool m_topPHasBeenSet;
+
+                    /**
+                     * <p>top_k</p>
+                     */
+                    int64_t m_topK;
+                    bool m_topKHasBeenSet;
 
                 };
             }

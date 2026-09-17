@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分区详情
-                     * @return PartitionDetail 分区详情
+                     * 获取<p>分区详情</p>
+                     * @return PartitionDetail <p>分区详情</p>
                      * 
                      */
                     PartitionDetail GetPartitionDetail() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分区详情
+                     * <p>分区详情</p>
                      */
                     PartitionDetail m_partitionDetail;
                     bool m_partitionDetailHasBeenSet;

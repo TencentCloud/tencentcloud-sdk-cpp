@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取异步任务ID。
-                     * @return TaskId 异步任务ID。
+                     * 获取<p>异步任务ID。</p>
+                     * @return TaskId <p>异步任务ID。</p>
                      * 
                      */
                     uint64_t GetTaskId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取SSL-VPN client 唯一ID
-                     * @return SslVpnClientId SSL-VPN client 唯一ID
+                     * 获取<p>SSL VPN客户端唯一ID</p>
+                     * @return SslVpnClientId <p>SSL VPN客户端唯一ID</p>
                      * 
                      */
                     std::string GetSslVpnClientId() const;
@@ -71,19 +71,39 @@ namespace TencentCloud
                      */
                     bool SslVpnClientIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>SSL VPN客户端唯一ID</p><p>仅批量场景返回</p>
+                     * @return SslVpnClientIds <p>SSL VPN客户端唯一ID</p><p>仅批量场景返回</p>
+                     * 
+                     */
+                    std::vector<std::string> GetSslVpnClientIds() const;
+
+                    /**
+                     * 判断参数 SslVpnClientIds 是否已赋值
+                     * @return SslVpnClientIds 是否已赋值
+                     * 
+                     */
+                    bool SslVpnClientIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 异步任务ID。
+                     * <p>异步任务ID。</p>
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * SSL-VPN client 唯一ID
+                     * <p>SSL VPN客户端唯一ID</p>
                      */
                     std::string m_sslVpnClientId;
                     bool m_sslVpnClientIdHasBeenSet;
+
+                    /**
+                     * <p>SSL VPN客户端唯一ID</p><p>仅批量场景返回</p>
+                     */
+                    std::vector<std::string> m_sslVpnClientIds;
+                    bool m_sslVpnClientIdsHasBeenSet;
 
                 };
             }

@@ -49,6 +49,8 @@
 #include <tencentcloud/waf/v20180125/model/BatchOperateUserSignatureRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateAccessExportRequest.h>
 #include <tencentcloud/waf/v20180125/model/CreateAccessExportResponse.h>
+#include <tencentcloud/waf/v20180125/model/CreateAndUpdateBatchCCRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/CreateAndUpdateBatchCCRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateAreaBanRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/CreateAreaBanRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateBatchIpAccessControlRequest.h>
@@ -526,6 +528,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAccessExportResponse> CreateAccessExportOutcome;
                 typedef std::future<CreateAccessExportOutcome> CreateAccessExportOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::CreateAccessExportRequest&, CreateAccessExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessExportAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAndUpdateBatchCCRuleResponse> CreateAndUpdateBatchCCRuleOutcome;
+                typedef std::future<CreateAndUpdateBatchCCRuleOutcome> CreateAndUpdateBatchCCRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::CreateAndUpdateBatchCCRuleRequest&, CreateAndUpdateBatchCCRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndUpdateBatchCCRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAreaBanRuleResponse> CreateAreaBanRuleOutcome;
                 typedef std::future<CreateAreaBanRuleOutcome> CreateAreaBanRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::CreateAreaBanRuleRequest&, CreateAreaBanRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAreaBanRuleAsyncHandler;
@@ -1281,6 +1286,15 @@ namespace TencentCloud
                 CreateAccessExportOutcome CreateAccessExport(const Model::CreateAccessExportRequest &request);
                 void CreateAccessExportAsync(const Model::CreateAccessExportRequest& request, const CreateAccessExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAccessExportOutcomeCallable CreateAccessExportCallable(const Model::CreateAccessExportRequest& request);
+
+                /**
+                 *批量cc规则配置接口
+                 * @param req CreateAndUpdateBatchCCRuleRequest
+                 * @return CreateAndUpdateBatchCCRuleOutcome
+                 */
+                CreateAndUpdateBatchCCRuleOutcome CreateAndUpdateBatchCCRule(const Model::CreateAndUpdateBatchCCRuleRequest &request);
+                void CreateAndUpdateBatchCCRuleAsync(const Model::CreateAndUpdateBatchCCRuleRequest& request, const CreateAndUpdateBatchCCRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAndUpdateBatchCCRuleOutcomeCallable CreateAndUpdateBatchCCRuleCallable(const Model::CreateAndUpdateBatchCCRuleRequest& request);
 
                 /**
                  *添加（编辑）地域封禁中的地域信息

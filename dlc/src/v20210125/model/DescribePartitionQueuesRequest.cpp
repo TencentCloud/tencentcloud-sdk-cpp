@@ -27,7 +27,8 @@ DescribePartitionQueuesRequest::DescribePartitionQueuesRequest() :
     m_sortFieldsHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_pageHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_showResourceQuotasHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string DescribePartitionQueuesRequest::ToJsonString() const
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_showResourceQuotasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShowResourceQuotas";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_showResourceQuotas, allocator);
     }
 
 
@@ -178,6 +187,22 @@ void DescribePartitionQueuesRequest::SetPageSize(const int64_t& _pageSize)
 bool DescribePartitionQueuesRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+bool DescribePartitionQueuesRequest::GetShowResourceQuotas() const
+{
+    return m_showResourceQuotas;
+}
+
+void DescribePartitionQueuesRequest::SetShowResourceQuotas(const bool& _showResourceQuotas)
+{
+    m_showResourceQuotas = _showResourceQuotas;
+    m_showResourceQuotasHasBeenSet = true;
+}
+
+bool DescribePartitionQueuesRequest::ShowResourceQuotasHasBeenSet() const
+{
+    return m_showResourceQuotasHasBeenSet;
 }
 
 

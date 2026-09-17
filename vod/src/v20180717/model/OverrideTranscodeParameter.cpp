@@ -26,7 +26,8 @@ OverrideTranscodeParameter::OverrideTranscodeParameter() :
     m_removeAudioHasBeenSet(false),
     m_videoTemplateHasBeenSet(false),
     m_audioTemplateHasBeenSet(false),
-    m_tEHDConfigHasBeenSet(false)
+    m_tEHDConfigHasBeenSet(false),
+    m_stdExtInfoHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome OverrideTranscodeParameter::Deserialize(const rapidjson::Val
         m_tEHDConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("StdExtInfo") && !value["StdExtInfo"].IsNull())
+    {
+        if (!value["StdExtInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OverrideTranscodeParameter.StdExtInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_stdExtInfo = string(value["StdExtInfo"].GetString());
+        m_stdExtInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -172,6 +183,14 @@ void OverrideTranscodeParameter::ToJsonObject(rapidjson::Value &value, rapidjson
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tEHDConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_stdExtInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StdExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stdExtInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -271,5 +290,21 @@ void OverrideTranscodeParameter::SetTEHDConfig(const TEHDConfigForUpdate& _tEHDC
 bool OverrideTranscodeParameter::TEHDConfigHasBeenSet() const
 {
     return m_tEHDConfigHasBeenSet;
+}
+
+string OverrideTranscodeParameter::GetStdExtInfo() const
+{
+    return m_stdExtInfo;
+}
+
+void OverrideTranscodeParameter::SetStdExtInfo(const string& _stdExtInfo)
+{
+    m_stdExtInfo = _stdExtInfo;
+    m_stdExtInfoHasBeenSet = true;
+}
+
+bool OverrideTranscodeParameter::StdExtInfoHasBeenSet() const
+{
+    return m_stdExtInfoHasBeenSet;
 }
 

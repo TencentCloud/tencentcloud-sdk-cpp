@@ -23,7 +23,8 @@ using namespace std;
 VpnGatewayQuota::VpnGatewayQuota() :
     m_bandwidthHasBeenSet(false),
     m_cnameHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_maxConnectionHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,19 @@ CoreInternalOutcome VpnGatewayQuota::Deserialize(const rapidjson::Value &value)
         m_nameHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxConnection") && !value["MaxConnection"].IsNull())
+    {
+        if (!value["MaxConnection"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VpnGatewayQuota.MaxConnection` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MaxConnection"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_maxConnection.push_back((*itr).GetUint64());
+        }
+        m_maxConnectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +105,19 @@ void VpnGatewayQuota::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxConnectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxConnection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_maxConnection.begin(); itr != m_maxConnection.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
 }
@@ -142,5 +169,21 @@ void VpnGatewayQuota::SetName(const string& _name)
 bool VpnGatewayQuota::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+vector<uint64_t> VpnGatewayQuota::GetMaxConnection() const
+{
+    return m_maxConnection;
+}
+
+void VpnGatewayQuota::SetMaxConnection(const vector<uint64_t>& _maxConnection)
+{
+    m_maxConnection = _maxConnection;
+    m_maxConnectionHasBeenSet = true;
+}
+
+bool VpnGatewayQuota::MaxConnectionHasBeenSet() const
+{
+    return m_maxConnectionHasBeenSet;
 }
 

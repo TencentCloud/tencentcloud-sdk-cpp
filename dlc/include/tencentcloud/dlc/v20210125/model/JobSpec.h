@@ -384,6 +384,27 @@ namespace TencentCloud
                     bool QueueHasBeenSet() const;
 
                     /**
+                     * 获取<p>所属队列别名</p>
+                     * @return QueueAlias <p>所属队列别名</p>
+                     * 
+                     */
+                    std::string GetQueueAlias() const;
+
+                    /**
+                     * 设置<p>所属队列别名</p>
+                     * @param _queueAlias <p>所属队列别名</p>
+                     * 
+                     */
+                    void SetQueueAlias(const std::string& _queueAlias);
+
+                    /**
+                     * 判断参数 QueueAlias 是否已赋值
+                     * @return QueueAlias 是否已赋值
+                     * 
+                     */
+                    bool QueueAliasHasBeenSet() const;
+
+                    /**
                      * 获取<p>集群组Id</p>
                      * @return GroupId <p>集群组Id</p>
                      * 
@@ -489,6 +510,27 @@ namespace TencentCloud
                     bool JobPackageNameHasBeenSet() const;
 
                     /**
+                     * 获取<p>作业包来源类型（Local: 本地上传, Cos: 用户自有 COS 桶地址）；缺时按 Local 处理</p>
+                     * @return JobPackageSource <p>作业包来源类型（Local: 本地上传, Cos: 用户自有 COS 桶地址）；缺时按 Local 处理</p>
+                     * 
+                     */
+                    std::string GetJobPackageSource() const;
+
+                    /**
+                     * 设置<p>作业包来源类型（Local: 本地上传, Cos: 用户自有 COS 桶地址）；缺时按 Local 处理</p>
+                     * @param _jobPackageSource <p>作业包来源类型（Local: 本地上传, Cos: 用户自有 COS 桶地址）；缺时按 Local 处理</p>
+                     * 
+                     */
+                    void SetJobPackageSource(const std::string& _jobPackageSource);
+
+                    /**
+                     * 判断参数 JobPackageSource 是否已赋值
+                     * @return JobPackageSource 是否已赋值
+                     * 
+                     */
+                    bool JobPackageSourceHasBeenSet() const;
+
+                    /**
                      * 获取<p>优先级</p>
                      * @return Priority <p>优先级</p>
                      * 
@@ -571,6 +613,27 @@ namespace TencentCloud
                      * 
                      */
                     bool SubAccountUinHasBeenSet() const;
+
+                    /**
+                     * 获取<p>子用户名称（由聚合层通过 CAM 接口回填）</p>
+                     * @return SubAccountName <p>子用户名称（由聚合层通过 CAM 接口回填）</p>
+                     * 
+                     */
+                    std::string GetSubAccountName() const;
+
+                    /**
+                     * 设置<p>子用户名称（由聚合层通过 CAM 接口回填）</p>
+                     * @param _subAccountName <p>子用户名称（由聚合层通过 CAM 接口回填）</p>
+                     * 
+                     */
+                    void SetSubAccountName(const std::string& _subAccountName);
+
+                    /**
+                     * 判断参数 SubAccountName 是否已赋值
+                     * @return SubAccountName 是否已赋值
+                     * 
+                     */
+                    bool SubAccountNameHasBeenSet() const;
 
                     /**
                      * 获取<p>创建时间</p>
@@ -881,6 +944,12 @@ namespace TencentCloud
                     bool m_queueHasBeenSet;
 
                     /**
+                     * <p>所属队列别名</p>
+                     */
+                    std::string m_queueAlias;
+                    bool m_queueAliasHasBeenSet;
+
+                    /**
                      * <p>集群组Id</p>
                      */
                     std::string m_groupId;
@@ -911,6 +980,12 @@ namespace TencentCloud
                     bool m_jobPackageNameHasBeenSet;
 
                     /**
+                     * <p>作业包来源类型（Local: 本地上传, Cos: 用户自有 COS 桶地址）；缺时按 Local 处理</p>
+                     */
+                    std::string m_jobPackageSource;
+                    bool m_jobPackageSourceHasBeenSet;
+
+                    /**
                      * <p>优先级</p>
                      */
                     int64_t m_priority;
@@ -933,6 +1008,12 @@ namespace TencentCloud
                      */
                     std::string m_subAccountUin;
                     bool m_subAccountUinHasBeenSet;
+
+                    /**
+                     * <p>子用户名称（由聚合层通过 CAM 接口回填）</p>
+                     */
+                    std::string m_subAccountName;
+                    bool m_subAccountNameHasBeenSet;
 
                     /**
                      * <p>创建时间</p>

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>是否通过校验</p>
-                     * @return Passed <p>是否通过校验</p>
+                     * 获取是否通过校验
+                     * @return Passed 是否通过校验
                      * 
                      */
                     bool GetPassed() const;
 
                     /**
-                     * 设置<p>是否通过校验</p>
-                     * @param _passed <p>是否通过校验</p>
+                     * 设置是否通过校验
+                     * @param _passed 是否通过校验
                      * 
                      */
                     void SetPassed(const bool& _passed);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PassedHasBeenSet() const;
 
                     /**
-                     * 获取<p>失败原因（passed=false 时填充）</p>
-                     * @return Reason <p>失败原因（passed=false 时填充）</p>
+                     * 获取失败原因（passed=false 时填充）
+                     * @return Reason 失败原因（passed=false 时填充）
                      * 
                      */
                     std::string GetReason() const;
 
                     /**
-                     * 设置<p>失败原因（passed=false 时填充）</p>
-                     * @param _reason <p>失败原因（passed=false 时填充）</p>
+                     * 设置失败原因（passed=false 时填充）
+                     * @param _reason 失败原因（passed=false 时填充）
                      * 
                      */
                     void SetReason(const std::string& _reason);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>是否通过校验</p>
+                     * 是否通过校验
                      */
                     bool m_passed;
                     bool m_passedHasBeenSet;
 
                     /**
-                     * <p>失败原因（passed=false 时填充）</p>
+                     * 失败原因（passed=false 时填充）
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;

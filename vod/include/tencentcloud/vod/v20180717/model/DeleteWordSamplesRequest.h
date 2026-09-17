@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取关键词，数组长度限制：100 个词。
-                     * @return Keywords 关键词，数组长度限制：100 个词。
+                     * 获取<p>关键词，数组长度限制：100 个词。</p>
+                     * @return Keywords <p>关键词，数组长度限制：100 个词。</p>
                      * 
                      */
                     std::vector<std::string> GetKeywords() const;
 
                     /**
-                     * 设置关键词，数组长度限制：100 个词。
-                     * @param _keywords 关键词，数组长度限制：100 个词。
+                     * 设置<p>关键词，数组长度限制：100 个词。</p>
+                     * @param _keywords <p>关键词，数组长度限制：100 个词。</p>
                      * 
                      */
                     void SetKeywords(const std::vector<std::string>& _keywords);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool KeywordsHasBeenSet() const;
 
                     /**
-                     * 获取<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 获取<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @return SubAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @param _subAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 设置<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @param _subAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 关键词，数组长度限制：100 个词。
+                     * <p>关键词，数组长度限制：100 个词。</p>
                      */
                     std::vector<std::string> m_keywords;
                     bool m_keywordsHasBeenSet;
 
                     /**
-                     * <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;

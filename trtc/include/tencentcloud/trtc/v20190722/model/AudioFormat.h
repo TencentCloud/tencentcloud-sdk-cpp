@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool FormatHasBeenSet() const;
 
                     /**
-                     * 获取<p>生成的音频采样率，默认24000<br>可选</p><ul><li>16000</li><li>24000</li></ul>
-                     * @return SampleRate <p>生成的音频采样率，默认24000<br>可选</p><ul><li>16000</li><li>24000</li></ul>
+                     * 获取<p>生成的音频采样率，默认24000<br>支持如下采样率</p><ul><li>8000</li><li>16000</li><li>24000</li></ul>
+                     * @return SampleRate <p>生成的音频采样率，默认24000<br>支持如下采样率</p><ul><li>8000</li><li>16000</li><li>24000</li></ul>
                      * 
                      */
                     uint64_t GetSampleRate() const;
 
                     /**
-                     * 设置<p>生成的音频采样率，默认24000<br>可选</p><ul><li>16000</li><li>24000</li></ul>
-                     * @param _sampleRate <p>生成的音频采样率，默认24000<br>可选</p><ul><li>16000</li><li>24000</li></ul>
+                     * 设置<p>生成的音频采样率，默认24000<br>支持如下采样率</p><ul><li>8000</li><li>16000</li><li>24000</li></ul>
+                     * @param _sampleRate <p>生成的音频采样率，默认24000<br>支持如下采样率</p><ul><li>8000</li><li>16000</li><li>24000</li></ul>
                      * 
                      */
                     void SetSampleRate(const uint64_t& _sampleRate);
@@ -118,7 +118,7 @@ namespace TencentCloud
                     bool m_formatHasBeenSet;
 
                     /**
-                     * <p>生成的音频采样率，默认24000<br>可选</p><ul><li>16000</li><li>24000</li></ul>
+                     * <p>生成的音频采样率，默认24000<br>支持如下采样率</p><ul><li>8000</li><li>16000</li><li>24000</li></ul>
                      */
                     uint64_t m_sampleRate;
                     bool m_sampleRateHasBeenSet;

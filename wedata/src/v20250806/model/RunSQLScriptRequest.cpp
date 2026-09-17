@@ -23,8 +23,9 @@ using namespace TencentCloud::Wedata::V20250806::Model;
 using namespace std;
 
 RunSQLScriptRequest::RunSQLScriptRequest() :
-    m_scriptIdHasBeenSet(false),
     m_projectIdHasBeenSet(false),
+    m_scriptIdHasBeenSet(false),
+    m_scriptConfigHasBeenSet(false),
     m_scriptContentHasBeenSet(false),
     m_paramsHasBeenSet(false)
 {
@@ -37,6 +38,14 @@ string RunSQLScriptRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_scriptIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -45,12 +54,13 @@ string RunSQLScriptRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_scriptId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_projectIdHasBeenSet)
+    if (m_scriptConfigHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProjectId";
+        string key = "ScriptConfig";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_scriptConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_scriptContentHasBeenSet)
@@ -77,6 +87,22 @@ string RunSQLScriptRequest::ToJsonString() const
 }
 
 
+string RunSQLScriptRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void RunSQLScriptRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool RunSQLScriptRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
 string RunSQLScriptRequest::GetScriptId() const
 {
     return m_scriptId;
@@ -93,20 +119,20 @@ bool RunSQLScriptRequest::ScriptIdHasBeenSet() const
     return m_scriptIdHasBeenSet;
 }
 
-string RunSQLScriptRequest::GetProjectId() const
+SQLScriptConfig RunSQLScriptRequest::GetScriptConfig() const
 {
-    return m_projectId;
+    return m_scriptConfig;
 }
 
-void RunSQLScriptRequest::SetProjectId(const string& _projectId)
+void RunSQLScriptRequest::SetScriptConfig(const SQLScriptConfig& _scriptConfig)
 {
-    m_projectId = _projectId;
-    m_projectIdHasBeenSet = true;
+    m_scriptConfig = _scriptConfig;
+    m_scriptConfigHasBeenSet = true;
 }
 
-bool RunSQLScriptRequest::ProjectIdHasBeenSet() const
+bool RunSQLScriptRequest::ScriptConfigHasBeenSet() const
 {
-    return m_projectIdHasBeenSet;
+    return m_scriptConfigHasBeenSet;
 }
 
 string RunSQLScriptRequest::GetScriptContent() const

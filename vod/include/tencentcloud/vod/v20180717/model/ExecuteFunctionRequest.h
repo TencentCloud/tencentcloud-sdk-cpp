@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取调用后端接口名称。
-                     * @return FunctionName 调用后端接口名称。
+                     * 获取<p>调用后端接口名称。</p>
+                     * @return FunctionName <p>调用后端接口名称。</p>
                      * 
                      */
                     std::string GetFunctionName() const;
 
                     /**
-                     * 设置调用后端接口名称。
-                     * @param _functionName 调用后端接口名称。
+                     * 设置<p>调用后端接口名称。</p>
+                     * @param _functionName <p>调用后端接口名称。</p>
                      * 
                      */
                     void SetFunctionName(const std::string& _functionName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FunctionNameHasBeenSet() const;
 
                     /**
-                     * 获取接口参数，具体参数格式调用时与后端协调。
-                     * @return FunctionArg 接口参数，具体参数格式调用时与后端协调。
+                     * 获取<p>接口参数，具体参数格式调用时与后端协调。</p>
+                     * @return FunctionArg <p>接口参数，具体参数格式调用时与后端协调。</p>
                      * 
                      */
                     std::string GetFunctionArg() const;
 
                     /**
-                     * 设置接口参数，具体参数格式调用时与后端协调。
-                     * @param _functionArg 接口参数，具体参数格式调用时与后端协调。
+                     * 设置<p>接口参数，具体参数格式调用时与后端协调。</p>
+                     * @param _functionArg <p>接口参数，具体参数格式调用时与后端协调。</p>
                      * 
                      */
                     void SetFunctionArg(const std::string& _functionArg);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool FunctionArgHasBeenSet() const;
 
                     /**
-                     * 获取<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 获取<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @return SubAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @param _subAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 设置<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @param _subAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @return SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 获取<p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
+                     * @return SessionContext <p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @param _sessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 设置<p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
+                     * @param _sessionContext <p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool SessionContextHasBeenSet() const;
 
                     /**
-                     * 获取用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-                     * @return SessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 获取<p>用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
+                     * @return SessionId <p>用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-                     * @param _sessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 设置<p>用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
+                     * @param _sessionId <p>用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取保留字段，特殊用途时使用。
-                     * @return ExtInfo 保留字段，特殊用途时使用。
+                     * 获取<p>保留字段，特殊用途时使用。</p>
+                     * @return ExtInfo <p>保留字段，特殊用途时使用。</p>
                      * 
                      */
                     std::string GetExtInfo() const;
 
                     /**
-                     * 设置保留字段，特殊用途时使用。
-                     * @param _extInfo 保留字段，特殊用途时使用。
+                     * 设置<p>保留字段，特殊用途时使用。</p>
+                     * @param _extInfo <p>保留字段，特殊用途时使用。</p>
                      * 
                      */
                     void SetExtInfo(const std::string& _extInfo);
@@ -171,37 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 调用后端接口名称。
+                     * <p>调用后端接口名称。</p>
                      */
                     std::string m_functionName;
                     bool m_functionNameHasBeenSet;
 
                     /**
-                     * 接口参数，具体参数格式调用时与后端协调。
+                     * <p>接口参数，具体参数格式调用时与后端协调。</p>
                      */
                     std::string m_functionArg;
                     bool m_functionArgHasBeenSet;
 
                     /**
-                     * <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * <p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
 
                     /**
-                     * 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * <p>用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 保留字段，特殊用途时使用。
+                     * <p>保留字段，特殊用途时使用。</p>
                      */
                     std::string m_extInfo;
                     bool m_extInfoHasBeenSet;

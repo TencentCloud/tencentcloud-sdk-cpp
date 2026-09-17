@@ -940,6 +940,56 @@ TcbClient::CreateMySQLOutcomeCallable TcbClient::CreateMySQLCallable(const Creat
     return prom->get_future();
 }
 
+TcbClient::CreatePlatformEnvOutcome TcbClient::CreatePlatformEnv(const CreatePlatformEnvRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePlatformEnv");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePlatformEnvResponse rsp = CreatePlatformEnvResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePlatformEnvOutcome(rsp);
+        else
+            return CreatePlatformEnvOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePlatformEnvOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CreatePlatformEnvAsync(const CreatePlatformEnvRequest& request, const CreatePlatformEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreatePlatformEnvRequest&;
+    using Resp = CreatePlatformEnvResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreatePlatformEnv", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::CreatePlatformEnvOutcomeCallable TcbClient::CreatePlatformEnvCallable(const CreatePlatformEnvRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreatePlatformEnvOutcome>>();
+    CreatePlatformEnvAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CreatePlatformEnvRequest&,
+        CreatePlatformEnvOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::CreateStaticStoreOutcome TcbClient::CreateStaticStore(const CreateStaticStoreRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateStaticStore");
@@ -3190,6 +3240,256 @@ TcbClient::DescribePGUserMigrationOutcomeCallable TcbClient::DescribePGUserMigra
     return prom->get_future();
 }
 
+TcbClient::DescribePlatformAccountCircleOutcome TcbClient::DescribePlatformAccountCircle(const DescribePlatformAccountCircleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePlatformAccountCircle");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePlatformAccountCircleResponse rsp = DescribePlatformAccountCircleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePlatformAccountCircleOutcome(rsp);
+        else
+            return DescribePlatformAccountCircleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePlatformAccountCircleOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribePlatformAccountCircleAsync(const DescribePlatformAccountCircleRequest& request, const DescribePlatformAccountCircleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePlatformAccountCircleRequest&;
+    using Resp = DescribePlatformAccountCircleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePlatformAccountCircle", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribePlatformAccountCircleOutcomeCallable TcbClient::DescribePlatformAccountCircleCallable(const DescribePlatformAccountCircleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePlatformAccountCircleOutcome>>();
+    DescribePlatformAccountCircleAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribePlatformAccountCircleRequest&,
+        DescribePlatformAccountCircleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DescribePlatformCreditsUsageOutcome TcbClient::DescribePlatformCreditsUsage(const DescribePlatformCreditsUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePlatformCreditsUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePlatformCreditsUsageResponse rsp = DescribePlatformCreditsUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePlatformCreditsUsageOutcome(rsp);
+        else
+            return DescribePlatformCreditsUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePlatformCreditsUsageOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribePlatformCreditsUsageAsync(const DescribePlatformCreditsUsageRequest& request, const DescribePlatformCreditsUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePlatformCreditsUsageRequest&;
+    using Resp = DescribePlatformCreditsUsageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePlatformCreditsUsage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribePlatformCreditsUsageOutcomeCallable TcbClient::DescribePlatformCreditsUsageCallable(const DescribePlatformCreditsUsageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePlatformCreditsUsageOutcome>>();
+    DescribePlatformCreditsUsageAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribePlatformCreditsUsageRequest&,
+        DescribePlatformCreditsUsageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DescribePlatformCreditsUsageDetailOutcome TcbClient::DescribePlatformCreditsUsageDetail(const DescribePlatformCreditsUsageDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePlatformCreditsUsageDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePlatformCreditsUsageDetailResponse rsp = DescribePlatformCreditsUsageDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePlatformCreditsUsageDetailOutcome(rsp);
+        else
+            return DescribePlatformCreditsUsageDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePlatformCreditsUsageDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribePlatformCreditsUsageDetailAsync(const DescribePlatformCreditsUsageDetailRequest& request, const DescribePlatformCreditsUsageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePlatformCreditsUsageDetailRequest&;
+    using Resp = DescribePlatformCreditsUsageDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePlatformCreditsUsageDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribePlatformCreditsUsageDetailOutcomeCallable TcbClient::DescribePlatformCreditsUsageDetailCallable(const DescribePlatformCreditsUsageDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePlatformCreditsUsageDetailOutcome>>();
+    DescribePlatformCreditsUsageDetailAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribePlatformCreditsUsageDetailRequest&,
+        DescribePlatformCreditsUsageDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DescribePlatformEnvUsageOutcome TcbClient::DescribePlatformEnvUsage(const DescribePlatformEnvUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePlatformEnvUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePlatformEnvUsageResponse rsp = DescribePlatformEnvUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePlatformEnvUsageOutcome(rsp);
+        else
+            return DescribePlatformEnvUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePlatformEnvUsageOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribePlatformEnvUsageAsync(const DescribePlatformEnvUsageRequest& request, const DescribePlatformEnvUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePlatformEnvUsageRequest&;
+    using Resp = DescribePlatformEnvUsageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePlatformEnvUsage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribePlatformEnvUsageOutcomeCallable TcbClient::DescribePlatformEnvUsageCallable(const DescribePlatformEnvUsageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePlatformEnvUsageOutcome>>();
+    DescribePlatformEnvUsageAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribePlatformEnvUsageRequest&,
+        DescribePlatformEnvUsageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DescribePlatformsOutcome TcbClient::DescribePlatforms(const DescribePlatformsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePlatforms");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePlatformsResponse rsp = DescribePlatformsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePlatformsOutcome(rsp);
+        else
+            return DescribePlatformsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePlatformsOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribePlatformsAsync(const DescribePlatformsRequest& request, const DescribePlatformsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePlatformsRequest&;
+    using Resp = DescribePlatformsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePlatforms", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribePlatformsOutcomeCallable TcbClient::DescribePlatformsCallable(const DescribePlatformsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePlatformsOutcome>>();
+    DescribePlatformsAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribePlatformsRequest&,
+        DescribePlatformsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::DescribeQuotaDataOutcome TcbClient::DescribeQuotaData(const DescribeQuotaDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeQuotaData");
@@ -3632,6 +3932,56 @@ TcbClient::DestroyMySQLOutcomeCallable TcbClient::DestroyMySQLCallable(const Des
         const TcbClient*,
         const DestroyMySQLRequest&,
         DestroyMySQLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DestroyPlatformEnvOutcome TcbClient::DestroyPlatformEnv(const DestroyPlatformEnvRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyPlatformEnv");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyPlatformEnvResponse rsp = DestroyPlatformEnvResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyPlatformEnvOutcome(rsp);
+        else
+            return DestroyPlatformEnvOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyPlatformEnvOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DestroyPlatformEnvAsync(const DestroyPlatformEnvRequest& request, const DestroyPlatformEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DestroyPlatformEnvRequest&;
+    using Resp = DestroyPlatformEnvResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DestroyPlatformEnv", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DestroyPlatformEnvOutcomeCallable TcbClient::DestroyPlatformEnvCallable(const DestroyPlatformEnvRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DestroyPlatformEnvOutcome>>();
+    DestroyPlatformEnvAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DestroyPlatformEnvRequest&,
+        DestroyPlatformEnvOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4482,6 +4832,56 @@ TcbClient::ModifyPGInstanceSpecOutcomeCallable TcbClient::ModifyPGInstanceSpecCa
         const TcbClient*,
         const ModifyPGInstanceSpecRequest&,
         ModifyPGInstanceSpecOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::ModifyPlatformEnvOutcome TcbClient::ModifyPlatformEnv(const ModifyPlatformEnvRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPlatformEnv");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPlatformEnvResponse rsp = ModifyPlatformEnvResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPlatformEnvOutcome(rsp);
+        else
+            return ModifyPlatformEnvOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPlatformEnvOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::ModifyPlatformEnvAsync(const ModifyPlatformEnvRequest& request, const ModifyPlatformEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyPlatformEnvRequest&;
+    using Resp = ModifyPlatformEnvResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyPlatformEnv", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::ModifyPlatformEnvOutcomeCallable TcbClient::ModifyPlatformEnvCallable(const ModifyPlatformEnvRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyPlatformEnvOutcome>>();
+    ModifyPlatformEnvAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ModifyPlatformEnvRequest&,
+        ModifyPlatformEnvOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

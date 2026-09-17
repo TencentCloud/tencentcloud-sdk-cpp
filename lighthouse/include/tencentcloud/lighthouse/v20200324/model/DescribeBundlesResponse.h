@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取套餐详细信息列表。
-                     * @return BundleSet 套餐详细信息列表。
+                     * 获取<p>套餐详细信息列表。</p>
+                     * @return BundleSet <p>套餐详细信息列表。</p>
                      * 
                      */
                     std::vector<Bundle> GetBundleSet() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool BundleSetHasBeenSet() const;
 
                     /**
-                     * 获取符合要求的套餐总数，用于分页展示。
-                     * @return TotalCount 符合要求的套餐总数，用于分页展示。
+                     * 获取<p>符合要求的套餐总数，用于分页展示。</p>
+                     * @return TotalCount <p>符合要求的套餐总数，用于分页展示。</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 套餐详细信息列表。
+                     * <p>套餐详细信息列表。</p>
                      */
                     std::vector<Bundle> m_bundleSet;
                     bool m_bundleSetHasBeenSet;
 
                     /**
-                     * 符合要求的套餐总数，用于分页展示。
+                     * <p>符合要求的套餐总数，用于分页展示。</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

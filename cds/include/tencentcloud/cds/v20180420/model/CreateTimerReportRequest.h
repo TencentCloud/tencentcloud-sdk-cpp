@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务名称 不变更为""
-                     * @return TplName 任务名称 不变更为""
+                     * 获取<p>任务名称 不变更为&quot;&quot;</p>
+                     * @return TplName <p>任务名称 不变更为&quot;&quot;</p>
                      * 
                      */
                     std::string GetTplName() const;
 
                     /**
-                     * 设置任务名称 不变更为""
-                     * @param _tplName 任务名称 不变更为""
+                     * 设置<p>任务名称 不变更为&quot;&quot;</p>
+                     * @param _tplName <p>任务名称 不变更为&quot;&quot;</p>
                      * 
                      */
                     void SetTplName(const std::string& _tplName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TplNameHasBeenSet() const;
 
                     /**
-                     * 获取执行日期 重复周期为天：无意义周：星期几1-7月每月几号 1-31
-                     * @return CntTime 执行日期 重复周期为天：无意义周：星期几1-7月每月几号 1-31
+                     * 获取<p>执行日期 重复周期为天：无意义周：星期几1-7月每月几号 1-31</p>
+                     * @return CntTime <p>执行日期 重复周期为天：无意义周：星期几1-7月每月几号 1-31</p>
                      * 
                      */
                     int64_t GetCntTime() const;
 
                     /**
-                     * 设置执行日期 重复周期为天：无意义周：星期几1-7月每月几号 1-31
-                     * @param _cntTime 执行日期 重复周期为天：无意义周：星期几1-7月每月几号 1-31
+                     * 设置<p>执行日期 重复周期为天：无意义周：星期几1-7月每月几号 1-31</p>
+                     * @param _cntTime <p>执行日期 重复周期为天：无意义周：星期几1-7月每月几号 1-31</p>
                      * 
                      */
                     void SetCntTime(const int64_t& _cntTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool CntTimeHasBeenSet() const;
 
                     /**
-                     * 获取重复周期
-                     * @return CntCycle 重复周期
+                     * 获取<p>重复周期</p>
+                     * @return CntCycle <p>重复周期</p>
                      * 
                      */
                     int64_t GetCntCycle() const;
 
                     /**
-                     * 设置重复周期
-                     * @param _cntCycle 重复周期
+                     * 设置<p>重复周期</p>
+                     * @param _cntCycle <p>重复周期</p>
                      * 
                      */
                     void SetCntCycle(const int64_t& _cntCycle);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool CntCycleHasBeenSet() const;
 
                     /**
-                     * 获取发送目标
-                     * @return Receivers 发送目标
+                     * 获取<p>发送目标</p>
+                     * @return Receivers <p>发送目标</p>
                      * 
                      */
                     std::string GetReceivers() const;
 
                     /**
-                     * 设置发送目标
-                     * @param _receivers 发送目标
+                     * 设置<p>发送目标</p>
+                     * @param _receivers <p>发送目标</p>
                      * 
                      */
                     void SetReceivers(const std::string& _receivers);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ReceiversHasBeenSet() const;
 
                     /**
-                     * 获取时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0
-                     * @return CntDay 时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0
+                     * 获取<p>时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0</p>
+                     * @return CntDay <p>时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0</p>
                      * 
                      */
                     int64_t GetCntDay() const;
 
                     /**
-                     * 设置时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0
-                     * @param _cntDay 时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0
+                     * 设置<p>时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0</p>
+                     * @param _cntDay <p>时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0</p>
                      * 
                      */
                     void SetCntDay(const int64_t& _cntDay);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool CntDayHasBeenSet() const;
 
                     /**
-                     * 获取执行时间 格式15:04 到分钟
-                     * @return CntDate 执行时间 格式15:04 到分钟
+                     * 获取<p>执行时间 格式15:04 到分钟</p>
+                     * @return CntDate <p>执行时间 格式15:04 到分钟</p>
                      * 
                      */
                     std::string GetCntDate() const;
 
                     /**
-                     * 设置执行时间 格式15:04 到分钟
-                     * @param _cntDate 执行时间 格式15:04 到分钟
+                     * 设置<p>执行时间 格式15:04 到分钟</p>
+                     * @param _cntDate <p>执行时间 格式15:04 到分钟</p>
                      * 
                      */
                     void SetCntDate(const std::string& _cntDate);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool CntDateHasBeenSet() const;
 
                     /**
-                     * 获取报告说明
-                     * @return Remark 报告说明
+                     * 获取<p>报告说明</p>
+                     * @return Remark <p>报告说明</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置报告说明
-                     * @param _remark 报告说明
+                     * 设置<p>报告说明</p>
+                     * @param _remark <p>报告说明</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取模版Id
-                     * @return TemplateId 模版Id
+                     * 获取<p>模板Id</p>
+                     * @return TemplateId <p>模板Id</p>
                      * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置模版Id
-                     * @param _templateId 模版Id
+                     * 设置<p>模板Id</p>
+                     * @param _templateId <p>模板Id</p>
                      * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取报表类型
-                     * @return ReportType 报表类型
+                     * 获取<p>报表类型</p>
+                     * @return ReportType <p>报表类型</p>
                      * 
                      */
                     int64_t GetReportType() const;
 
                     /**
-                     * 设置报表类型
-                     * @param _reportType 报表类型
+                     * 设置<p>报表类型</p>
+                     * @param _reportType <p>报表类型</p>
                      * 
                      */
                     void SetReportType(const int64_t& _reportType);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool ReportTypeHasBeenSet() const;
 
                     /**
-                     * 获取关联的资产数组
-                     * @return AssetsId 关联的资产数组
+                     * 获取<p>关联的资产数组</p>
+                     * @return AssetsId <p>关联的资产数组</p>
                      * 
                      */
                     std::vector<int64_t> GetAssetsId() const;
 
                     /**
-                     * 设置关联的资产数组
-                     * @param _assetsId 关联的资产数组
+                     * 设置<p>关联的资产数组</p>
+                     * @param _assetsId <p>关联的资产数组</p>
                      * 
                      */
                     void SetAssetsId(const std::vector<int64_t>& _assetsId);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool AssetsIdHasBeenSet() const;
 
                     /**
-                     * 获取报表通知 1关闭 2开启 不变更为0
-                     * @return Notification 报表通知 1关闭 2开启 不变更为0
+                     * 获取<p>报表通知 1关闭 2开启 不变更为0</p>
+                     * @return Notification <p>报表通知 1关闭 2开启 不变更为0</p>
                      * 
                      */
                     int64_t GetNotification() const;
 
                     /**
-                     * 设置报表通知 1关闭 2开启 不变更为0
-                     * @param _notification 报表通知 1关闭 2开启 不变更为0
+                     * 设置<p>报表通知 1关闭 2开启 不变更为0</p>
+                     * @param _notification <p>报表通知 1关闭 2开启 不变更为0</p>
                      * 
                      */
                     void SetNotification(const int64_t& _notification);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool NotificationHasBeenSet() const;
 
                     /**
-                     * 获取任务起停 1:关闭 2:开启 单次报表默认为2
-                     * @return MissionStart 任务起停 1:关闭 2:开启 单次报表默认为2
+                     * 获取<p>任务起停 1:关闭 2:开启 单次报表默认为2</p>
+                     * @return MissionStart <p>任务起停 1:关闭 2:开启 单次报表默认为2</p>
                      * 
                      */
                     int64_t GetMissionStart() const;
 
                     /**
-                     * 设置任务起停 1:关闭 2:开启 单次报表默认为2
-                     * @param _missionStart 任务起停 1:关闭 2:开启 单次报表默认为2
+                     * 设置<p>任务起停 1:关闭 2:开启 单次报表默认为2</p>
+                     * @param _missionStart <p>任务起停 1:关闭 2:开启 单次报表默认为2</p>
                      * 
                      */
                     void SetMissionStart(const int64_t& _missionStart);
@@ -297,73 +297,73 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务名称 不变更为""
+                     * <p>任务名称 不变更为&quot;&quot;</p>
                      */
                     std::string m_tplName;
                     bool m_tplNameHasBeenSet;
 
                     /**
-                     * 执行日期 重复周期为天：无意义周：星期几1-7月每月几号 1-31
+                     * <p>执行日期 重复周期为天：无意义周：星期几1-7月每月几号 1-31</p>
                      */
                     int64_t m_cntTime;
                     bool m_cntTimeHasBeenSet;
 
                     /**
-                     * 重复周期
+                     * <p>重复周期</p>
                      */
                     int64_t m_cntCycle;
                     bool m_cntCycleHasBeenSet;
 
                     /**
-                     * 发送目标
+                     * <p>发送目标</p>
                      */
                     std::string m_receivers;
                     bool m_receiversHasBeenSet;
 
                     /**
-                     * 时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0
+                     * <p>时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0</p>
                      */
                     int64_t m_cntDay;
                     bool m_cntDayHasBeenSet;
 
                     /**
-                     * 执行时间 格式15:04 到分钟
+                     * <p>执行时间 格式15:04 到分钟</p>
                      */
                     std::string m_cntDate;
                     bool m_cntDateHasBeenSet;
 
                     /**
-                     * 报告说明
+                     * <p>报告说明</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 模版Id
+                     * <p>模板Id</p>
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 报表类型
+                     * <p>报表类型</p>
                      */
                     int64_t m_reportType;
                     bool m_reportTypeHasBeenSet;
 
                     /**
-                     * 关联的资产数组
+                     * <p>关联的资产数组</p>
                      */
                     std::vector<int64_t> m_assetsId;
                     bool m_assetsIdHasBeenSet;
 
                     /**
-                     * 报表通知 1关闭 2开启 不变更为0
+                     * <p>报表通知 1关闭 2开启 不变更为0</p>
                      */
                     int64_t m_notification;
                     bool m_notificationHasBeenSet;
 
                     /**
-                     * 任务起停 1:关闭 2:开启 单次报表默认为2
+                     * <p>任务起停 1:关闭 2:开启 单次报表默认为2</p>
                      */
                     int64_t m_missionStart;
                     bool m_missionStartHasBeenSet;

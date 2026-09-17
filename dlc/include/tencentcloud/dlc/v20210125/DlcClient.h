@@ -2354,7 +2354,7 @@ namespace TencentCloud
                 CreateNotebookSessionStatementSupportBatchSQLOutcomeCallable CreateNotebookSessionStatementSupportBatchSQLCallable(const Model::CreateNotebookSessionStatementSupportBatchSQLRequest& request);
 
                 /**
-                 *新增资源包
+                 *新增资源包（预付费 / 后付费）
                  * @param req CreatePartitionRequest
                  * @return CreatePartitionOutcome
                  */
@@ -2363,7 +2363,7 @@ namespace TencentCloud
                 CreatePartitionOutcomeCallable CreatePartitionCallable(const Model::CreatePartitionRequest& request);
 
                 /**
-                 *新增资源队列：在指定分区下创建一个新的资源队列，支持设置队列名称、描述、资源规格列表和队列类型。
+                 *新增资源队列：在指定分区下创建一个新的资源队列，支持设置队列编码、别名、描述、资源规格列表和队列类型。
                  * @param req CreatePartitionQueueRequest
                  * @return CreatePartitionQueueOutcome
                  */
@@ -4492,7 +4492,7 @@ RunID, ExperimentID 对应MLflow 实验追踪用的参数 RunID, ExperimentID
                 ModifyPartitionDescriptionOutcomeCallable ModifyPartitionDescriptionCallable(const Model::ModifyPartitionDescriptionRequest& request);
 
                 /**
-                 *编辑资源队列：根据队列ID修改指定资源队列的名称、描述、资源规格列表和队列类型等信息。
+                 *编辑资源队列：根据队列ID修改指定资源队列的别名（显示名）、描述、资源规格列表和队列类型等信息。队列编码（QueueName）不可变，仅作为一致性校验键。
                  * @param req ModifyPartitionQueueRequest
                  * @return ModifyPartitionQueueOutcome
                  */

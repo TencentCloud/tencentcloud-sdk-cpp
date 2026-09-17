@@ -23,7 +23,8 @@ using namespace std;
 User::User() :
     m_userLevelHasBeenSet(false),
     m_userPointHasBeenSet(false),
-    m_userTypeHasBeenSet(false)
+    m_userTypeHasBeenSet(false),
+    m_isPaidHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,16 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
         m_userTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsPaid") && !value["IsPaid"].IsNull())
+    {
+        if (!value["IsPaid"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `User.IsPaid` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isPaid = value["IsPaid"].GetBool();
+        m_isPaidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +110,14 @@ void User::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "UserType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isPaidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPaid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isPaid, allocator);
     }
 
 }
@@ -150,5 +169,21 @@ void User::SetUserType(const string& _userType)
 bool User::UserTypeHasBeenSet() const
 {
     return m_userTypeHasBeenSet;
+}
+
+bool User::GetIsPaid() const
+{
+    return m_isPaid;
+}
+
+void User::SetIsPaid(const bool& _isPaid)
+{
+    m_isPaid = _isPaid;
+    m_isPaidHasBeenSet = true;
+}
+
+bool User::IsPaidHasBeenSet() const
+{
+    return m_isPaidHasBeenSet;
 }
 

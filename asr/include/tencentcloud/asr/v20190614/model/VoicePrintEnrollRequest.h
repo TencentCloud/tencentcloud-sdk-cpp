@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool SpeakerNickHasBeenSet() const;
 
                     /**
-                     * 获取<p>分组id, 仅支持大小写字母和下划线的组合，不超过128个字符</p>
-                     * @return GroupId <p>分组id, 仅支持大小写字母和下划线的组合，不超过128个字符</p>
+                     * 获取<p>分组id, 仅支持大小写字母和下划线的组合，不超过128个字符</p><p><strong>注意：</strong></p><ul><li><p>一个group最多可容纳20个说话人ID</p></li><li><p>group主要用在声纹1：N比对场景</p></li></ul>
+                     * @return GroupId <p>分组id, 仅支持大小写字母和下划线的组合，不超过128个字符</p><p><strong>注意：</strong></p><ul><li><p>一个group最多可容纳20个说话人ID</p></li><li><p>group主要用在声纹1：N比对场景</p></li></ul>
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置<p>分组id, 仅支持大小写字母和下划线的组合，不超过128个字符</p>
-                     * @param _groupId <p>分组id, 仅支持大小写字母和下划线的组合，不超过128个字符</p>
+                     * 设置<p>分组id, 仅支持大小写字母和下划线的组合，不超过128个字符</p><p><strong>注意：</strong></p><ul><li><p>一个group最多可容纳20个说话人ID</p></li><li><p>group主要用在声纹1：N比对场景</p></li></ul>
+                     * @param _groupId <p>分组id, 仅支持大小写字母和下划线的组合，不超过128个字符</p><p><strong>注意：</strong></p><ul><li><p>一个group最多可容纳20个说话人ID</p></li><li><p>group主要用在声纹1：N比对场景</p></li></ul>
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_speakerNickHasBeenSet;
 
                     /**
-                     * <p>分组id, 仅支持大小写字母和下划线的组合，不超过128个字符</p>
+                     * <p>分组id, 仅支持大小写字母和下划线的组合，不超过128个字符</p><p><strong>注意：</strong></p><ul><li><p>一个group最多可容纳20个说话人ID</p></li><li><p>group主要用在声纹1：N比对场景</p></li></ul>
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

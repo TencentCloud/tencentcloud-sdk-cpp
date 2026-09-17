@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dlc/v20210125/model/ResourceUsage.h>
+#include <tencentcloud/dlc/v20210125/model/QueueResourceQuota.h>
 
 
 namespace TencentCloud
@@ -69,15 +70,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取<p>队列名称</p>
-                     * @return QueueName <p>队列名称</p>
+                     * 获取<p>不可变的Code</p>
+                     * @return QueueName <p>不可变的Code</p>
                      * 
                      */
                     std::string GetQueueName() const;
 
                     /**
-                     * 设置<p>队列名称</p>
-                     * @param _queueName <p>队列名称</p>
+                     * 设置<p>不可变的Code</p>
+                     * @param _queueName <p>不可变的Code</p>
                      * 
                      */
                     void SetQueueName(const std::string& _queueName);
@@ -88,6 +89,27 @@ namespace TencentCloud
                      * 
                      */
                     bool QueueNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>队列别名（用户可改显示名）；alias 为空时回落为 QueueName</p>
+                     * @return Alias <p>队列别名（用户可改显示名）；alias 为空时回落为 QueueName</p>
+                     * 
+                     */
+                    std::string GetAlias() const;
+
+                    /**
+                     * 设置<p>队列别名（用户可改显示名）；alias 为空时回落为 QueueName</p>
+                     * @param _alias <p>队列别名（用户可改显示名）；alias 为空时回落为 QueueName</p>
+                     * 
+                     */
+                    void SetAlias(const std::string& _alias);
+
+                    /**
+                     * 判断参数 Alias 是否已赋值
+                     * @return Alias 是否已赋值
+                     * 
+                     */
+                    bool AliasHasBeenSet() const;
 
                     /**
                      * 获取<p>资源用量列表</p>
@@ -113,6 +135,31 @@ namespace TencentCloud
                      * 
                      */
                     bool ResourceUsageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>队列各资源类型的实时余量（总量 / 已用量 / 可用量）。由 Kueue Prometheus 指标实时计算；监控关闭或查询失败时为 null，字段省略不返回</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceQuotas <p>队列各资源类型的实时余量（总量 / 已用量 / 可用量）。由 Kueue Prometheus 指标实时计算；监控关闭或查询失败时为 null，字段省略不返回</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<QueueResourceQuota> GetResourceQuotas() const;
+
+                    /**
+                     * 设置<p>队列各资源类型的实时余量（总量 / 已用量 / 可用量）。由 Kueue Prometheus 指标实时计算；监控关闭或查询失败时为 null，字段省略不返回</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceQuotas <p>队列各资源类型的实时余量（总量 / 已用量 / 可用量）。由 Kueue Prometheus 指标实时计算；监控关闭或查询失败时为 null，字段省略不返回</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceQuotas(const std::vector<QueueResourceQuota>& _resourceQuotas);
+
+                    /**
+                     * 判断参数 ResourceQuotas 是否已赋值
+                     * @return ResourceQuotas 是否已赋值
+                     * 
+                     */
+                    bool ResourceQuotasHasBeenSet() const;
 
                     /**
                      * 获取<p>队列描述</p>
@@ -190,10 +237,16 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * <p>队列名称</p>
+                     * <p>不可变的Code</p>
                      */
                     std::string m_queueName;
                     bool m_queueNameHasBeenSet;
+
+                    /**
+                     * <p>队列别名（用户可改显示名）；alias 为空时回落为 QueueName</p>
+                     */
+                    std::string m_alias;
+                    bool m_aliasHasBeenSet;
 
                     /**
                      * <p>资源用量列表</p>
@@ -201,6 +254,13 @@ namespace TencentCloud
                      */
                     std::vector<ResourceUsage> m_resourceUsage;
                     bool m_resourceUsageHasBeenSet;
+
+                    /**
+                     * <p>队列各资源类型的实时余量（总量 / 已用量 / 可用量）。由 Kueue Prometheus 指标实时计算；监控关闭或查询失败时为 null，字段省略不返回</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<QueueResourceQuota> m_resourceQuotas;
+                    bool m_resourceQuotasHasBeenSet;
 
                     /**
                      * <p>队列描述</p>

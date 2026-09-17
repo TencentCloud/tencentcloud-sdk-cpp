@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待解析的索引文件内容。
-                     * @return MediaManifestContent 待解析的索引文件内容。
+                     * 获取<p>待解析的索引文件内容。</p>
+                     * @return MediaManifestContent <p>待解析的索引文件内容。</p>
                      * 
                      */
                     std::string GetMediaManifestContent() const;
 
                     /**
-                     * 设置待解析的索引文件内容。
-                     * @param _mediaManifestContent 待解析的索引文件内容。
+                     * 设置<p>待解析的索引文件内容。</p>
+                     * @param _mediaManifestContent <p>待解析的索引文件内容。</p>
                      * 
                      */
                     void SetMediaManifestContent(const std::string& _mediaManifestContent);
@@ -64,23 +64,15 @@ namespace TencentCloud
                     bool MediaManifestContentHasBeenSet() const;
 
                     /**
-                     * 获取视频索引文件格式。默认 m3u8 格式。
-<li>m3u8</li>
-<li>mpd</li>
-                     * @return ManifestType 视频索引文件格式。默认 m3u8 格式。
-<li>m3u8</li>
-<li>mpd</li>
+                     * 获取<p>视频索引文件格式。默认 m3u8 格式。</p><li>m3u8</li><li>mpd</li>
+                     * @return ManifestType <p>视频索引文件格式。默认 m3u8 格式。</p><li>m3u8</li><li>mpd</li>
                      * 
                      */
                     std::string GetManifestType() const;
 
                     /**
-                     * 设置视频索引文件格式。默认 m3u8 格式。
-<li>m3u8</li>
-<li>mpd</li>
-                     * @param _manifestType 视频索引文件格式。默认 m3u8 格式。
-<li>m3u8</li>
-<li>mpd</li>
+                     * 设置<p>视频索引文件格式。默认 m3u8 格式。</p><li>m3u8</li><li>mpd</li>
+                     * @param _manifestType <p>视频索引文件格式。默认 m3u8 格式。</p><li>m3u8</li><li>mpd</li>
                      * 
                      */
                     void SetManifestType(const std::string& _manifestType);
@@ -95,15 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待解析的索引文件内容。
+                     * <p>待解析的索引文件内容。</p>
                      */
                     std::string m_mediaManifestContent;
                     bool m_mediaManifestContentHasBeenSet;
 
                     /**
-                     * 视频索引文件格式。默认 m3u8 格式。
-<li>m3u8</li>
-<li>mpd</li>
+                     * <p>视频索引文件格式。默认 m3u8 格式。</p><li>m3u8</li><li>mpd</li>
                      */
                     std::string m_manifestType;
                     bool m_manifestTypeHasBeenSet;

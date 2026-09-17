@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 获取<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @return SubAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @param _subAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 设置<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @param _subAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
-                     * @return Status 过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
+                     * 获取<p>过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。</p>
+                     * @return Status <p>过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
-                     * @param _status 过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
+                     * 设置<p>过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。</p>
+                     * @param _status <p>过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件：文件 ID。
-                     * @return FileId 过滤条件：文件 ID。
+                     * 获取<p>过滤条件：文件 ID。</p>
+                     * @return FileId <p>过滤条件：文件 ID。</p>
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置过滤条件：文件 ID。
-                     * @param _fileId 过滤条件：文件 ID。
+                     * 设置<p>过滤条件：文件 ID。</p>
+                     * @param _fileId <p>过滤条件：文件 ID。</p>
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件：任务创建时间。
-                     * @return CreateTime 过滤条件：任务创建时间。
+                     * 获取<p>过滤条件：任务创建时间。</p>
+                     * @return CreateTime <p>过滤条件：任务创建时间。</p>
                      * 
                      */
                     TimeRange GetCreateTime() const;
 
                     /**
-                     * 设置过滤条件：任务创建时间。
-                     * @param _createTime 过滤条件：任务创建时间。
+                     * 设置<p>过滤条件：任务创建时间。</p>
+                     * @param _createTime <p>过滤条件：任务创建时间。</p>
                      * 
                      */
                     void SetCreateTime(const TimeRange& _createTime);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件：任务结束时间。
-                     * @return FinishTime 过滤条件：任务结束时间。
+                     * 获取<p>过滤条件：任务结束时间。</p>
+                     * @return FinishTime <p>过滤条件：任务结束时间。</p>
                      * 
                      */
                     TimeRange GetFinishTime() const;
 
                     /**
-                     * 设置过滤条件：任务结束时间。
-                     * @param _finishTime 过滤条件：任务结束时间。
+                     * 设置<p>过滤条件：任务结束时间。</p>
+                     * @param _finishTime <p>过滤条件：任务结束时间。</p>
                      * 
                      */
                     void SetFinishTime(const TimeRange& _finishTime);
@@ -150,23 +150,15 @@ namespace TencentCloud
                     bool FinishTimeHasBeenSet() const;
 
                     /**
-                     * 获取排序方式。Sort.Field 可选：
-<li> CreateTime 任务创建时间。</li>
-<li>FinishTime 任务结束时间。</li>
-                     * @return Sort 排序方式。Sort.Field 可选：
-<li> CreateTime 任务创建时间。</li>
-<li>FinishTime 任务结束时间。</li>
+                     * 获取<p>排序方式。Sort.Field 可选：</p><li> CreateTime 任务创建时间。</li><li>FinishTime 任务结束时间。</li>
+                     * @return Sort <p>排序方式。Sort.Field 可选：</p><li> CreateTime 任务创建时间。</li><li>FinishTime 任务结束时间。</li>
                      * 
                      */
                     SortBy GetSort() const;
 
                     /**
-                     * 设置排序方式。Sort.Field 可选：
-<li> CreateTime 任务创建时间。</li>
-<li>FinishTime 任务结束时间。</li>
-                     * @param _sort 排序方式。Sort.Field 可选：
-<li> CreateTime 任务创建时间。</li>
-<li>FinishTime 任务结束时间。</li>
+                     * 设置<p>排序方式。Sort.Field 可选：</p><li> CreateTime 任务创建时间。</li><li>FinishTime 任务结束时间。</li>
+                     * @param _sort <p>排序方式。Sort.Field 可选：</p><li> CreateTime 任务创建时间。</li><li>FinishTime 任务结束时间。</li>
                      * 
                      */
                     void SetSort(const SortBy& _sort);
@@ -179,15 +171,15 @@ namespace TencentCloud
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取返回记录条数，默认值：10，最大值：100。
-                     * @return Limit 返回记录条数，默认值：10，最大值：100。
+                     * 获取<p>返回记录条数，默认值：10，最大值：100。</p>
+                     * @return Limit <p>返回记录条数，默认值：10，最大值：100。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回记录条数，默认值：10，最大值：100。
-                     * @param _limit 返回记录条数，默认值：10，最大值：100。
+                     * 设置<p>返回记录条数，默认值：10，最大值：100。</p>
+                     * @param _limit <p>返回记录条数，默认值：10，最大值：100。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -200,15 +192,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。
-                     * @return ScrollToken 翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。
+                     * 获取<p>翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。</p>
+                     * @return ScrollToken <p>翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。</p>
                      * 
                      */
                     std::string GetScrollToken() const;
 
                     /**
-                     * 设置翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。
-                     * @param _scrollToken 翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。
+                     * 设置<p>翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。</p>
+                     * @param _scrollToken <p>翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。</p>
                      * 
                      */
                     void SetScrollToken(const std::string& _scrollToken);
@@ -223,51 +215,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
+                     * <p>过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 过滤条件：文件 ID。
+                     * <p>过滤条件：文件 ID。</p>
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 过滤条件：任务创建时间。
+                     * <p>过滤条件：任务创建时间。</p>
                      */
                     TimeRange m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 过滤条件：任务结束时间。
+                     * <p>过滤条件：任务结束时间。</p>
                      */
                     TimeRange m_finishTime;
                     bool m_finishTimeHasBeenSet;
 
                     /**
-                     * 排序方式。Sort.Field 可选：
-<li> CreateTime 任务创建时间。</li>
-<li>FinishTime 任务结束时间。</li>
+                     * <p>排序方式。Sort.Field 可选：</p><li> CreateTime 任务创建时间。</li><li>FinishTime 任务结束时间。</li>
                      */
                     SortBy m_sort;
                     bool m_sortHasBeenSet;
 
                     /**
-                     * 返回记录条数，默认值：10，最大值：100。
+                     * <p>返回记录条数，默认值：10，最大值：100。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。
+                     * <p>翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。</p>
                      */
                     std::string m_scrollToken;
                     bool m_scrollTokenHasBeenSet;

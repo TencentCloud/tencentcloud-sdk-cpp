@@ -31,7 +31,8 @@ ModelParams::ModelParams() :
     m_seedHasBeenSet(false),
     m_stopSequenceListHasBeenSet(false),
     m_temperatureHasBeenSet(false),
-    m_topPHasBeenSet(false)
+    m_topPHasBeenSet(false),
+    m_topKHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,16 @@ CoreInternalOutcome ModelParams::Deserialize(const rapidjson::Value &value)
         m_topPHasBeenSet = true;
     }
 
+    if (value.HasMember("TopK") && !value["TopK"].IsNull())
+    {
+        if (!value["TopK"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelParams.TopK` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_topK = value["TopK"].GetInt64();
+        m_topKHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +262,14 @@ void ModelParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "TopP";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_topP, allocator);
+    }
+
+    if (m_topKHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopK";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_topK, allocator);
     }
 
 }
@@ -430,5 +449,21 @@ void ModelParams::SetTopP(const double& _topP)
 bool ModelParams::TopPHasBeenSet() const
 {
     return m_topPHasBeenSet;
+}
+
+int64_t ModelParams::GetTopK() const
+{
+    return m_topK;
+}
+
+void ModelParams::SetTopK(const int64_t& _topK)
+{
+    m_topK = _topK;
+    m_topKHasBeenSet = true;
+}
+
+bool ModelParams::TopKHasBeenSet() const
+{
+    return m_topKHasBeenSet;
 }
 

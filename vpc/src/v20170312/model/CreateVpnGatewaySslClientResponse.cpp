@@ -25,7 +25,8 @@ using namespace std;
 
 CreateVpnGatewaySslClientResponse::CreateVpnGatewaySslClientResponse() :
     m_taskIdHasBeenSet(false),
-    m_sslVpnClientIdHasBeenSet(false)
+    m_sslVpnClientIdHasBeenSet(false),
+    m_sslVpnClientIdsHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,19 @@ CoreInternalOutcome CreateVpnGatewaySslClientResponse::Deserialize(const string 
         m_sslVpnClientIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SslVpnClientIds") && !rsp["SslVpnClientIds"].IsNull())
+    {
+        if (!rsp["SslVpnClientIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SslVpnClientIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SslVpnClientIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_sslVpnClientIds.push_back((*itr).GetString());
+        }
+        m_sslVpnClientIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +121,19 @@ string CreateVpnGatewaySslClientResponse::ToJsonString() const
         string key = "SslVpnClientId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sslVpnClientId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sslVpnClientIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SslVpnClientIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sslVpnClientIds.begin(); itr != m_sslVpnClientIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +166,16 @@ string CreateVpnGatewaySslClientResponse::GetSslVpnClientId() const
 bool CreateVpnGatewaySslClientResponse::SslVpnClientIdHasBeenSet() const
 {
     return m_sslVpnClientIdHasBeenSet;
+}
+
+vector<string> CreateVpnGatewaySslClientResponse::GetSslVpnClientIds() const
+{
+    return m_sslVpnClientIds;
+}
+
+bool CreateVpnGatewaySslClientResponse::SslVpnClientIdsHasBeenSet() const
+{
+    return m_sslVpnClientIdsHasBeenSet;
 }
 
 

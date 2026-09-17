@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取引擎所在的地域
-                     * @return EngineRegion 引擎所在的地域
+                     * 获取<p>引擎所在的地域</p>
+                     * @return EngineRegion <p>引擎所在的地域</p>
                      * 
                      */
                     std::string GetEngineRegion() const;
 
                     /**
-                     * 设置引擎所在的地域
-                     * @param _engineRegion 引擎所在的地域
+                     * 设置<p>引擎所在的地域</p>
+                     * @param _engineRegion <p>引擎所在的地域</p>
                      * 
                      */
                     void SetEngineRegion(const std::string& _engineRegion);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool EngineRegionHasBeenSet() const;
 
                     /**
-                     * 获取服务治理引擎绑定的kubernetes集群信息
-                     * @return BoundK8SInfos 服务治理引擎绑定的kubernetes集群信息
+                     * 获取<p>服务治理引擎绑定的kubernetes集群信息</p>
+                     * @return BoundK8SInfos <p>服务治理引擎绑定的kubernetes集群信息</p>
                      * 
                      */
                     std::vector<BoundK8SInfo> GetBoundK8SInfos() const;
 
                     /**
-                     * 设置服务治理引擎绑定的kubernetes集群信息
-                     * @param _boundK8SInfos 服务治理引擎绑定的kubernetes集群信息
+                     * 设置<p>服务治理引擎绑定的kubernetes集群信息</p>
+                     * @param _boundK8SInfos <p>服务治理引擎绑定的kubernetes集群信息</p>
                      * 
                      */
                     void SetBoundK8SInfos(const std::vector<BoundK8SInfo>& _boundK8SInfos);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool BoundK8SInfosHasBeenSet() const;
 
                     /**
-                     * 获取服务治理引擎绑定的网络信息
-                     * @return VpcInfos 服务治理引擎绑定的网络信息
+                     * 获取<p>服务治理引擎绑定的网络信息</p>
+                     * @return VpcInfos <p>服务治理引擎绑定的网络信息</p>
                      * 
                      */
                     std::vector<VpcInfo> GetVpcInfos() const;
 
                     /**
-                     * 设置服务治理引擎绑定的网络信息
-                     * @param _vpcInfos 服务治理引擎绑定的网络信息
+                     * 设置<p>服务治理引擎绑定的网络信息</p>
+                     * @param _vpcInfos <p>服务治理引擎绑定的网络信息</p>
                      * 
                      */
                     void SetVpcInfos(const std::vector<VpcInfo>& _vpcInfos);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool VpcInfosHasBeenSet() const;
 
                     /**
-                     * 获取当前实例鉴权是否开启
-                     * @return AuthOpen 当前实例鉴权是否开启
+                     * 获取<p>当前实例鉴权是否开启</p>
+                     * @return AuthOpen <p>当前实例鉴权是否开启</p>
                      * 
                      */
                     bool GetAuthOpen() const;
 
                     /**
-                     * 设置当前实例鉴权是否开启
-                     * @param _authOpen 当前实例鉴权是否开启
+                     * 设置<p>当前实例鉴权是否开启</p>
+                     * @param _authOpen <p>当前实例鉴权是否开启</p>
                      * 
                      */
                     void SetAuthOpen(const bool& _authOpen);
@@ -134,15 +134,15 @@ namespace TencentCloud
                     bool AuthOpenHasBeenSet() const;
 
                     /**
-                     * 获取该实例支持的功能，鉴权就是 Auth
-                     * @return Features 该实例支持的功能，鉴权就是 Auth
+                     * 获取<p>该实例支持的功能，鉴权就是 Auth</p>
+                     * @return Features <p>该实例支持的功能，鉴权就是 Auth</p>
                      * 
                      */
                     std::vector<std::string> GetFeatures() const;
 
                     /**
-                     * 设置该实例支持的功能，鉴权就是 Auth
-                     * @param _features 该实例支持的功能，鉴权就是 Auth
+                     * 设置<p>该实例支持的功能，鉴权就是 Auth</p>
+                     * @param _features <p>该实例支持的功能，鉴权就是 Auth</p>
                      * 
                      */
                     void SetFeatures(const std::vector<std::string>& _features);
@@ -155,15 +155,15 @@ namespace TencentCloud
                     bool FeaturesHasBeenSet() const;
 
                     /**
-                     * 获取主账户名默认为 polaris，该值为主账户的默认密码
-                     * @return MainPassword 主账户名默认为 polaris，该值为主账户的默认密码
+                     * 获取<p>主账户名默认为 polaris，该值为主账户的默认密码</p>
+                     * @return MainPassword <p>主账户名默认为 polaris，该值为主账户的默认密码</p>
                      * 
                      */
                     std::string GetMainPassword() const;
 
                     /**
-                     * 设置主账户名默认为 polaris，该值为主账户的默认密码
-                     * @param _mainPassword 主账户名默认为 polaris，该值为主账户的默认密码
+                     * 设置<p>主账户名默认为 polaris，该值为主账户的默认密码</p>
+                     * @param _mainPassword <p>主账户名默认为 polaris，该值为主账户的默认密码</p>
                      * 
                      */
                     void SetMainPassword(const std::string& _mainPassword);
@@ -176,15 +176,15 @@ namespace TencentCloud
                     bool MainPasswordHasBeenSet() const;
 
                     /**
-                     * 获取服务治理pushgateway引擎绑定的网络信息
-                     * @return PgwVpcInfos 服务治理pushgateway引擎绑定的网络信息
+                     * 获取<p>服务治理pushgateway引擎绑定的网络信息</p>
+                     * @return PgwVpcInfos <p>服务治理pushgateway引擎绑定的网络信息</p>
                      * 
                      */
                     std::vector<VpcInfo> GetPgwVpcInfos() const;
 
                     /**
-                     * 设置服务治理pushgateway引擎绑定的网络信息
-                     * @param _pgwVpcInfos 服务治理pushgateway引擎绑定的网络信息
+                     * 设置<p>服务治理pushgateway引擎绑定的网络信息</p>
+                     * @param _pgwVpcInfos <p>服务治理pushgateway引擎绑定的网络信息</p>
                      * 
                      */
                     void SetPgwVpcInfos(const std::vector<VpcInfo>& _pgwVpcInfos);
@@ -197,15 +197,15 @@ namespace TencentCloud
                     bool PgwVpcInfosHasBeenSet() const;
 
                     /**
-                     * 获取服务治理限流server引擎绑定的网络信息
-                     * @return LimiterVpcInfos 服务治理限流server引擎绑定的网络信息
+                     * 获取<p>服务治理限流server引擎绑定的网络信息</p>
+                     * @return LimiterVpcInfos <p>服务治理限流server引擎绑定的网络信息</p>
                      * 
                      */
                     std::vector<VpcInfo> GetLimiterVpcInfos() const;
 
                     /**
-                     * 设置服务治理限流server引擎绑定的网络信息
-                     * @param _limiterVpcInfos 服务治理限流server引擎绑定的网络信息
+                     * 设置<p>服务治理限流server引擎绑定的网络信息</p>
+                     * @param _limiterVpcInfos <p>服务治理限流server引擎绑定的网络信息</p>
                      * 
                      */
                     void SetLimiterVpcInfos(const std::vector<VpcInfo>& _limiterVpcInfos);
@@ -218,15 +218,15 @@ namespace TencentCloud
                     bool LimiterVpcInfosHasBeenSet() const;
 
                     /**
-                     * 获取引擎关联CLS日志主题信息
-                     * @return CLSTopics 引擎关联CLS日志主题信息
+                     * 获取<p>引擎关联CLS日志主题信息</p>
+                     * @return CLSTopics <p>引擎关联CLS日志主题信息</p>
                      * 
                      */
                     std::vector<PolarisCLSTopicInfo> GetCLSTopics() const;
 
                     /**
-                     * 设置引擎关联CLS日志主题信息
-                     * @param _cLSTopics 引擎关联CLS日志主题信息
+                     * 设置<p>引擎关联CLS日志主题信息</p>
+                     * @param _cLSTopics <p>引擎关联CLS日志主题信息</p>
                      * 
                      */
                     void SetCLSTopics(const std::vector<PolarisCLSTopicInfo>& _cLSTopics);
@@ -239,15 +239,15 @@ namespace TencentCloud
                     bool CLSTopicsHasBeenSet() const;
 
                     /**
-                     * 获取子用户密码
-                     * @return SubPassword 子用户密码
+                     * 获取<p>子用户密码</p>
+                     * @return SubPassword <p>子用户密码</p>
                      * 
                      */
                     std::string GetSubPassword() const;
 
                     /**
-                     * 设置子用户密码
-                     * @param _subPassword 子用户密码
+                     * 设置<p>子用户密码</p>
+                     * @param _subPassword <p>子用户密码</p>
                      * 
                      */
                     void SetSubPassword(const std::string& _subPassword);
@@ -259,67 +259,121 @@ namespace TencentCloud
                      */
                     bool SubPasswordHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否允许变更</p>
+                     * @return DisableMutation <p>是否允许变更</p>
+                     * 
+                     */
+                    bool GetDisableMutation() const;
+
+                    /**
+                     * 设置<p>是否允许变更</p>
+                     * @param _disableMutation <p>是否允许变更</p>
+                     * 
+                     */
+                    void SetDisableMutation(const bool& _disableMutation);
+
+                    /**
+                     * 判断参数 DisableMutation 是否已赋值
+                     * @return DisableMutation 是否已赋值
+                     * 
+                     */
+                    bool DisableMutationHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启限流</p>
+                     * @return MaxCapacityLimitEnabled <p>是否开启限流</p>
+                     * 
+                     */
+                    bool GetMaxCapacityLimitEnabled() const;
+
+                    /**
+                     * 设置<p>是否开启限流</p>
+                     * @param _maxCapacityLimitEnabled <p>是否开启限流</p>
+                     * 
+                     */
+                    void SetMaxCapacityLimitEnabled(const bool& _maxCapacityLimitEnabled);
+
+                    /**
+                     * 判断参数 MaxCapacityLimitEnabled 是否已赋值
+                     * @return MaxCapacityLimitEnabled 是否已赋值
+                     * 
+                     */
+                    bool MaxCapacityLimitEnabledHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 引擎所在的地域
+                     * <p>引擎所在的地域</p>
                      */
                     std::string m_engineRegion;
                     bool m_engineRegionHasBeenSet;
 
                     /**
-                     * 服务治理引擎绑定的kubernetes集群信息
+                     * <p>服务治理引擎绑定的kubernetes集群信息</p>
                      */
                     std::vector<BoundK8SInfo> m_boundK8SInfos;
                     bool m_boundK8SInfosHasBeenSet;
 
                     /**
-                     * 服务治理引擎绑定的网络信息
+                     * <p>服务治理引擎绑定的网络信息</p>
                      */
                     std::vector<VpcInfo> m_vpcInfos;
                     bool m_vpcInfosHasBeenSet;
 
                     /**
-                     * 当前实例鉴权是否开启
+                     * <p>当前实例鉴权是否开启</p>
                      */
                     bool m_authOpen;
                     bool m_authOpenHasBeenSet;
 
                     /**
-                     * 该实例支持的功能，鉴权就是 Auth
+                     * <p>该实例支持的功能，鉴权就是 Auth</p>
                      */
                     std::vector<std::string> m_features;
                     bool m_featuresHasBeenSet;
 
                     /**
-                     * 主账户名默认为 polaris，该值为主账户的默认密码
+                     * <p>主账户名默认为 polaris，该值为主账户的默认密码</p>
                      */
                     std::string m_mainPassword;
                     bool m_mainPasswordHasBeenSet;
 
                     /**
-                     * 服务治理pushgateway引擎绑定的网络信息
+                     * <p>服务治理pushgateway引擎绑定的网络信息</p>
                      */
                     std::vector<VpcInfo> m_pgwVpcInfos;
                     bool m_pgwVpcInfosHasBeenSet;
 
                     /**
-                     * 服务治理限流server引擎绑定的网络信息
+                     * <p>服务治理限流server引擎绑定的网络信息</p>
                      */
                     std::vector<VpcInfo> m_limiterVpcInfos;
                     bool m_limiterVpcInfosHasBeenSet;
 
                     /**
-                     * 引擎关联CLS日志主题信息
+                     * <p>引擎关联CLS日志主题信息</p>
                      */
                     std::vector<PolarisCLSTopicInfo> m_cLSTopics;
                     bool m_cLSTopicsHasBeenSet;
 
                     /**
-                     * 子用户密码
+                     * <p>子用户密码</p>
                      */
                     std::string m_subPassword;
                     bool m_subPasswordHasBeenSet;
+
+                    /**
+                     * <p>是否允许变更</p>
+                     */
+                    bool m_disableMutation;
+                    bool m_disableMutationHasBeenSet;
+
+                    /**
+                     * <p>是否开启限流</p>
+                     */
+                    bool m_maxCapacityLimitEnabled;
+                    bool m_maxCapacityLimitEnabledHasBeenSet;
 
                 };
             }

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取从可用区
-                     * @return SlaveZone 从可用区
+                     * 获取<p>备可用区</p>
+                     * @return SlaveZone <p>备可用区</p>
                      * 
                      */
                     std::string GetSlaveZone() const;
 
                     /**
-                     * 设置从可用区
-                     * @param _slaveZone 从可用区
+                     * 设置<p>备可用区</p>
+                     * @param _slaveZone <p>备可用区</p>
                      * 
                      */
                     void SetSlaveZone(const std::string& _slaveZone);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 从可用区
+                     * <p>备可用区</p>
                      */
                     std::string m_slaveZone;
                     bool m_slaveZoneHasBeenSet;

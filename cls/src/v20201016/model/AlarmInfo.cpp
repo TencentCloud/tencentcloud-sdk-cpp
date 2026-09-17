@@ -42,7 +42,9 @@ AlarmInfo::AlarmInfo() :
     m_alarmLevelHasBeenSet(false),
     m_classificationsHasBeenSet(false),
     m_multiConditionsHasBeenSet(false),
-    m_monitorNoticeHasBeenSet(false)
+    m_monitorNoticeHasBeenSet(false),
+    m_aIAnalysisHasBeenSet(false),
+    m_subUinHasBeenSet(false)
 {
 }
 
@@ -348,6 +350,33 @@ CoreInternalOutcome AlarmInfo::Deserialize(const rapidjson::Value &value)
         m_monitorNoticeHasBeenSet = true;
     }
 
+    if (value.HasMember("AIAnalysis") && !value["AIAnalysis"].IsNull())
+    {
+        if (!value["AIAnalysis"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmInfo.AIAnalysis` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aIAnalysis.Deserialize(value["AIAnalysis"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aIAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubUin") && !value["SubUin"].IsNull())
+    {
+        if (!value["SubUin"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmInfo.SubUin` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subUin = value["SubUin"].GetUint64();
+        m_subUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -577,6 +606,23 @@ void AlarmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_monitorNotice.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aIAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AIAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aIAnalysis.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_subUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subUin, allocator);
     }
 
 }
@@ -932,5 +978,37 @@ void AlarmInfo::SetMonitorNotice(const MonitorNotice& _monitorNotice)
 bool AlarmInfo::MonitorNoticeHasBeenSet() const
 {
     return m_monitorNoticeHasBeenSet;
+}
+
+AIAnalysis AlarmInfo::GetAIAnalysis() const
+{
+    return m_aIAnalysis;
+}
+
+void AlarmInfo::SetAIAnalysis(const AIAnalysis& _aIAnalysis)
+{
+    m_aIAnalysis = _aIAnalysis;
+    m_aIAnalysisHasBeenSet = true;
+}
+
+bool AlarmInfo::AIAnalysisHasBeenSet() const
+{
+    return m_aIAnalysisHasBeenSet;
+}
+
+uint64_t AlarmInfo::GetSubUin() const
+{
+    return m_subUin;
+}
+
+void AlarmInfo::SetSubUin(const uint64_t& _subUin)
+{
+    m_subUin = _subUin;
+    m_subUinHasBeenSet = true;
+}
+
+bool AlarmInfo::SubUinHasBeenSet() const
+{
+    return m_subUinHasBeenSet;
 }
 

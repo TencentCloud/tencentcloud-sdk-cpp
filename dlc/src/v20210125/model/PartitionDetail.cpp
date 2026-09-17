@@ -28,10 +28,16 @@ PartitionDetail::PartitionDetail() :
     m_productInfoHasBeenSet(false),
     m_resourcePoolCodeHasBeenSet(false),
     m_resourceQuotaHasBeenSet(false),
+    m_schedulableLimitListHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
     m_schedulerHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
+    m_isolatedTimestampHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_resourcePoolKindHasBeenSet(false),
+    m_externalClusterIdHasBeenSet(false)
 {
 }
 
@@ -120,6 +126,26 @@ CoreInternalOutcome PartitionDetail::Deserialize(const rapidjson::Value &value)
         m_resourceQuotaHasBeenSet = true;
     }
 
+    if (value.HasMember("SchedulableLimitList") && !value["SchedulableLimitList"].IsNull())
+    {
+        if (!value["SchedulableLimitList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PartitionDetail.SchedulableLimitList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SchedulableLimitList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SchedulableLimit item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_schedulableLimitList.push_back(item);
+        }
+        m_schedulableLimitListHasBeenSet = true;
+    }
+
     if (value.HasMember("PayMode") && !value["PayMode"].IsNull())
     {
         if (!value["PayMode"].IsInt64())
@@ -158,6 +184,66 @@ CoreInternalOutcome PartitionDetail::Deserialize(const rapidjson::Value &value)
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpireTime") && !value["ExpireTime"].IsNull())
+    {
+        if (!value["ExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PartitionDetail.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = string(value["ExpireTime"].GetString());
+        m_expireTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsolatedTimestamp") && !value["IsolatedTimestamp"].IsNull())
+    {
+        if (!value["IsolatedTimestamp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PartitionDetail.IsolatedTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolatedTimestamp = string(value["IsolatedTimestamp"].GetString());
+        m_isolatedTimestampHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PartitionDetail.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CloudTag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourcePoolKind") && !value["ResourcePoolKind"].IsNull())
+    {
+        if (!value["ResourcePoolKind"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PartitionDetail.ResourcePoolKind` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourcePoolKind = string(value["ResourcePoolKind"].GetString());
+        m_resourcePoolKindHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExternalClusterId") && !value["ExternalClusterId"].IsNull())
+    {
+        if (!value["ExternalClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PartitionDetail.ExternalClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_externalClusterId = string(value["ExternalClusterId"].GetString());
+        m_externalClusterIdHasBeenSet = true;
     }
 
 
@@ -230,6 +316,21 @@ void PartitionDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         }
     }
 
+    if (m_schedulableLimitListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchedulableLimitList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_schedulableLimitList.begin(); itr != m_schedulableLimitList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_payModeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -260,6 +361,53 @@ void PartitionDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isolatedTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolatedTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isolatedTimestamp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_resourcePoolKindHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourcePoolKind";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourcePoolKind.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalClusterId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -377,6 +525,22 @@ bool PartitionDetail::ResourceQuotaHasBeenSet() const
     return m_resourceQuotaHasBeenSet;
 }
 
+vector<SchedulableLimit> PartitionDetail::GetSchedulableLimitList() const
+{
+    return m_schedulableLimitList;
+}
+
+void PartitionDetail::SetSchedulableLimitList(const vector<SchedulableLimit>& _schedulableLimitList)
+{
+    m_schedulableLimitList = _schedulableLimitList;
+    m_schedulableLimitListHasBeenSet = true;
+}
+
+bool PartitionDetail::SchedulableLimitListHasBeenSet() const
+{
+    return m_schedulableLimitListHasBeenSet;
+}
+
 int64_t PartitionDetail::GetPayMode() const
 {
     return m_payMode;
@@ -439,5 +603,85 @@ void PartitionDetail::SetStatus(const int64_t& _status)
 bool PartitionDetail::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string PartitionDetail::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void PartitionDetail::SetExpireTime(const string& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool PartitionDetail::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
+string PartitionDetail::GetIsolatedTimestamp() const
+{
+    return m_isolatedTimestamp;
+}
+
+void PartitionDetail::SetIsolatedTimestamp(const string& _isolatedTimestamp)
+{
+    m_isolatedTimestamp = _isolatedTimestamp;
+    m_isolatedTimestampHasBeenSet = true;
+}
+
+bool PartitionDetail::IsolatedTimestampHasBeenSet() const
+{
+    return m_isolatedTimestampHasBeenSet;
+}
+
+vector<CloudTag> PartitionDetail::GetTags() const
+{
+    return m_tags;
+}
+
+void PartitionDetail::SetTags(const vector<CloudTag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool PartitionDetail::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+string PartitionDetail::GetResourcePoolKind() const
+{
+    return m_resourcePoolKind;
+}
+
+void PartitionDetail::SetResourcePoolKind(const string& _resourcePoolKind)
+{
+    m_resourcePoolKind = _resourcePoolKind;
+    m_resourcePoolKindHasBeenSet = true;
+}
+
+bool PartitionDetail::ResourcePoolKindHasBeenSet() const
+{
+    return m_resourcePoolKindHasBeenSet;
+}
+
+string PartitionDetail::GetExternalClusterId() const
+{
+    return m_externalClusterId;
+}
+
+void PartitionDetail::SetExternalClusterId(const string& _externalClusterId)
+{
+    m_externalClusterId = _externalClusterId;
+    m_externalClusterIdHasBeenSet = true;
+}
+
+bool PartitionDetail::ExternalClusterIdHasBeenSet() const
+{
+    return m_externalClusterIdHasBeenSet;
 }
 

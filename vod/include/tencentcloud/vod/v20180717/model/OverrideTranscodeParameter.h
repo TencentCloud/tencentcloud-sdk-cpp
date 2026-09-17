@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。
-                     * @return Container 封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。
+                     * 获取<p>封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。</p>
+                     * @return Container <p>封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。</p>
                      * 
                      */
                     std::string GetContainer() const;
 
                     /**
-                     * 设置封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。
-                     * @param _container 封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。
+                     * 设置<p>封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。</p>
+                     * @param _container <p>封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。</p>
                      * 
                      */
                     void SetContainer(const std::string& _container);
@@ -71,23 +71,15 @@ namespace TencentCloud
                     bool ContainerHasBeenSet() const;
 
                     /**
-                     * 获取是否去除视频数据，取值：
-<li>0：保留；<\li>
-<li>1：去除。<\li>
-                     * @return RemoveVideo 是否去除视频数据，取值：
-<li>0：保留；<\li>
-<li>1：去除。<\li>
+                     * 获取<p>是否去除视频数据，取值：<br>&lt;li&gt;0：保留；&lt;\li&gt;<br>&lt;li&gt;1：去除。&lt;\li&gt;</p>
+                     * @return RemoveVideo <p>是否去除视频数据，取值：<br>&lt;li&gt;0：保留；&lt;\li&gt;<br>&lt;li&gt;1：去除。&lt;\li&gt;</p>
                      * 
                      */
                     uint64_t GetRemoveVideo() const;
 
                     /**
-                     * 设置是否去除视频数据，取值：
-<li>0：保留；<\li>
-<li>1：去除。<\li>
-                     * @param _removeVideo 是否去除视频数据，取值：
-<li>0：保留；<\li>
-<li>1：去除。<\li>
+                     * 设置<p>是否去除视频数据，取值：<br>&lt;li&gt;0：保留；&lt;\li&gt;<br>&lt;li&gt;1：去除。&lt;\li&gt;</p>
+                     * @param _removeVideo <p>是否去除视频数据，取值：<br>&lt;li&gt;0：保留；&lt;\li&gt;<br>&lt;li&gt;1：去除。&lt;\li&gt;</p>
                      * 
                      */
                     void SetRemoveVideo(const uint64_t& _removeVideo);
@@ -100,23 +92,15 @@ namespace TencentCloud
                     bool RemoveVideoHasBeenSet() const;
 
                     /**
-                     * 获取是否去除音频数据，取值：
-<li>0：保留；<\li>
-<li>1：去除。<\li>
-                     * @return RemoveAudio 是否去除音频数据，取值：
-<li>0：保留；<\li>
-<li>1：去除。<\li>
+                     * 获取<p>是否去除音频数据，取值：<br>&lt;li&gt;0：保留；&lt;\li&gt;<br>&lt;li&gt;1：去除。&lt;\li&gt;</p>
+                     * @return RemoveAudio <p>是否去除音频数据，取值：<br>&lt;li&gt;0：保留；&lt;\li&gt;<br>&lt;li&gt;1：去除。&lt;\li&gt;</p>
                      * 
                      */
                     uint64_t GetRemoveAudio() const;
 
                     /**
-                     * 设置是否去除音频数据，取值：
-<li>0：保留；<\li>
-<li>1：去除。<\li>
-                     * @param _removeAudio 是否去除音频数据，取值：
-<li>0：保留；<\li>
-<li>1：去除。<\li>
+                     * 设置<p>是否去除音频数据，取值：<br>&lt;li&gt;0：保留；&lt;\li&gt;<br>&lt;li&gt;1：去除。&lt;\li&gt;</p>
+                     * @param _removeAudio <p>是否去除音频数据，取值：<br>&lt;li&gt;0：保留；&lt;\li&gt;<br>&lt;li&gt;1：去除。&lt;\li&gt;</p>
                      * 
                      */
                     void SetRemoveAudio(const uint64_t& _removeAudio);
@@ -129,18 +113,18 @@ namespace TencentCloud
                     bool RemoveAudioHasBeenSet() const;
 
                     /**
-                     * 获取视频流配置参数。
+                     * 获取<p>视频流配置参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VideoTemplate 视频流配置参数。
+                     * @return VideoTemplate <p>视频流配置参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     VideoTemplateInfoForUpdate GetVideoTemplate() const;
 
                     /**
-                     * 设置视频流配置参数。
+                     * 设置<p>视频流配置参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _videoTemplate 视频流配置参数。
+                     * @param _videoTemplate <p>视频流配置参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -154,18 +138,18 @@ namespace TencentCloud
                     bool VideoTemplateHasBeenSet() const;
 
                     /**
-                     * 获取音频流配置参数。
+                     * 获取<p>音频流配置参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AudioTemplate 音频流配置参数。
+                     * @return AudioTemplate <p>音频流配置参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AudioTemplateInfoForUpdate GetAudioTemplate() const;
 
                     /**
-                     * 设置音频流配置参数。
+                     * 设置<p>音频流配置参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _audioTemplate 音频流配置参数。
+                     * @param _audioTemplate <p>音频流配置参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -179,18 +163,18 @@ namespace TencentCloud
                     bool AudioTemplateHasBeenSet() const;
 
                     /**
-                     * 获取极速高清转码配置参数。
+                     * 获取<p>极速高清转码配置参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TEHDConfig 极速高清转码配置参数。
+                     * @return TEHDConfig <p>极速高清转码配置参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TEHDConfigForUpdate GetTEHDConfig() const;
 
                     /**
-                     * 设置极速高清转码配置参数。
+                     * 设置<p>极速高清转码配置参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tEHDConfig 极速高清转码配置参数。
+                     * @param _tEHDConfig <p>极速高清转码配置参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -203,50 +187,73 @@ namespace TencentCloud
                      */
                     bool TEHDConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>标准扩展字段，特殊用途使用。</p>
+                     * @return StdExtInfo <p>标准扩展字段，特殊用途使用。</p>
+                     * 
+                     */
+                    std::string GetStdExtInfo() const;
+
+                    /**
+                     * 设置<p>标准扩展字段，特殊用途使用。</p>
+                     * @param _stdExtInfo <p>标准扩展字段，特殊用途使用。</p>
+                     * 
+                     */
+                    void SetStdExtInfo(const std::string& _stdExtInfo);
+
+                    /**
+                     * 判断参数 StdExtInfo 是否已赋值
+                     * @return StdExtInfo 是否已赋值
+                     * 
+                     */
+                    bool StdExtInfoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。
+                     * <p>封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。</p>
                      */
                     std::string m_container;
                     bool m_containerHasBeenSet;
 
                     /**
-                     * 是否去除视频数据，取值：
-<li>0：保留；<\li>
-<li>1：去除。<\li>
+                     * <p>是否去除视频数据，取值：<br>&lt;li&gt;0：保留；&lt;\li&gt;<br>&lt;li&gt;1：去除。&lt;\li&gt;</p>
                      */
                     uint64_t m_removeVideo;
                     bool m_removeVideoHasBeenSet;
 
                     /**
-                     * 是否去除音频数据，取值：
-<li>0：保留；<\li>
-<li>1：去除。<\li>
+                     * <p>是否去除音频数据，取值：<br>&lt;li&gt;0：保留；&lt;\li&gt;<br>&lt;li&gt;1：去除。&lt;\li&gt;</p>
                      */
                     uint64_t m_removeAudio;
                     bool m_removeAudioHasBeenSet;
 
                     /**
-                     * 视频流配置参数。
+                     * <p>视频流配置参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     VideoTemplateInfoForUpdate m_videoTemplate;
                     bool m_videoTemplateHasBeenSet;
 
                     /**
-                     * 音频流配置参数。
+                     * <p>音频流配置参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AudioTemplateInfoForUpdate m_audioTemplate;
                     bool m_audioTemplateHasBeenSet;
 
                     /**
-                     * 极速高清转码配置参数。
+                     * <p>极速高清转码配置参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TEHDConfigForUpdate m_tEHDConfig;
                     bool m_tEHDConfigHasBeenSet;
+
+                    /**
+                     * <p>标准扩展字段，特殊用途使用。</p>
+                     */
+                    std::string m_stdExtInfo;
+                    bool m_stdExtInfoHasBeenSet;
 
                 };
             }

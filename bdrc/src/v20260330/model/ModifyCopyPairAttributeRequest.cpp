@@ -25,7 +25,8 @@ using namespace std;
 ModifyCopyPairAttributeRequest::ModifyCopyPairAttributeRequest() :
     m_copyPairIdHasBeenSet(false),
     m_copyPairTypeHasBeenSet(false),
-    m_copyPairNameHasBeenSet(false)
+    m_copyPairNameHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string ModifyCopyPairAttributeRequest::ToJsonString() const
         string key = "CopyPairName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_copyPairName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void ModifyCopyPairAttributeRequest::SetCopyPairName(const string& _copyPairName
 bool ModifyCopyPairAttributeRequest::CopyPairNameHasBeenSet() const
 {
     return m_copyPairNameHasBeenSet;
+}
+
+string ModifyCopyPairAttributeRequest::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void ModifyCopyPairAttributeRequest::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool ModifyCopyPairAttributeRequest::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
 }
 
 

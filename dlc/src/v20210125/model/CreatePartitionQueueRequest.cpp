@@ -24,9 +24,10 @@ using namespace std;
 
 CreatePartitionQueueRequest::CreatePartitionQueueRequest() :
     m_partitionCodeHasBeenSet(false),
-    m_queueNameHasBeenSet(false),
     m_resourceUsagesHasBeenSet(false),
     m_queueTypeHasBeenSet(false),
+    m_queueNameHasBeenSet(false),
+    m_aliasHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
 }
@@ -44,14 +45,6 @@ string CreatePartitionQueueRequest::ToJsonString() const
         string key = "PartitionCode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_partitionCode.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_queueNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "QueueName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resourceUsagesHasBeenSet)
@@ -75,6 +68,22 @@ string CreatePartitionQueueRequest::ToJsonString() const
         string key = "QueueType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_queueType, allocator);
+    }
+
+    if (m_queueNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Alias";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_alias.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
@@ -109,22 +118,6 @@ bool CreatePartitionQueueRequest::PartitionCodeHasBeenSet() const
     return m_partitionCodeHasBeenSet;
 }
 
-string CreatePartitionQueueRequest::GetQueueName() const
-{
-    return m_queueName;
-}
-
-void CreatePartitionQueueRequest::SetQueueName(const string& _queueName)
-{
-    m_queueName = _queueName;
-    m_queueNameHasBeenSet = true;
-}
-
-bool CreatePartitionQueueRequest::QueueNameHasBeenSet() const
-{
-    return m_queueNameHasBeenSet;
-}
-
 vector<ResourceUsage> CreatePartitionQueueRequest::GetResourceUsages() const
 {
     return m_resourceUsages;
@@ -155,6 +148,38 @@ void CreatePartitionQueueRequest::SetQueueType(const int64_t& _queueType)
 bool CreatePartitionQueueRequest::QueueTypeHasBeenSet() const
 {
     return m_queueTypeHasBeenSet;
+}
+
+string CreatePartitionQueueRequest::GetQueueName() const
+{
+    return m_queueName;
+}
+
+void CreatePartitionQueueRequest::SetQueueName(const string& _queueName)
+{
+    m_queueName = _queueName;
+    m_queueNameHasBeenSet = true;
+}
+
+bool CreatePartitionQueueRequest::QueueNameHasBeenSet() const
+{
+    return m_queueNameHasBeenSet;
+}
+
+string CreatePartitionQueueRequest::GetAlias() const
+{
+    return m_alias;
+}
+
+void CreatePartitionQueueRequest::SetAlias(const string& _alias)
+{
+    m_alias = _alias;
+    m_aliasHasBeenSet = true;
+}
+
+bool CreatePartitionQueueRequest::AliasHasBeenSet() const
+{
+    return m_aliasHasBeenSet;
 }
 
 string CreatePartitionQueueRequest::GetDescription() const

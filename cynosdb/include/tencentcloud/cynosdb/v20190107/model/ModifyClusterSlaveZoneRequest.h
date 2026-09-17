@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群Id
-                     * @return ClusterId 集群Id
+                     * 获取<p>集群Id</p>
+                     * @return ClusterId <p>集群Id</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群Id
-                     * @param _clusterId 集群Id
+                     * 设置<p>集群Id</p>
+                     * @param _clusterId <p>集群Id</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取旧从可用区
-                     * @return OldSlaveZone 旧从可用区
+                     * 获取<p>旧备可用区</p>
+                     * @return OldSlaveZone <p>旧备可用区</p>
                      * 
                      */
                     std::string GetOldSlaveZone() const;
 
                     /**
-                     * 设置旧从可用区
-                     * @param _oldSlaveZone 旧从可用区
+                     * 设置<p>旧备可用区</p>
+                     * @param _oldSlaveZone <p>旧备可用区</p>
                      * 
                      */
                     void SetOldSlaveZone(const std::string& _oldSlaveZone);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OldSlaveZoneHasBeenSet() const;
 
                     /**
-                     * 获取新从可用区
-                     * @return NewSlaveZone 新从可用区
+                     * 获取<p>新备可用区</p>
+                     * @return NewSlaveZone <p>新备可用区</p>
                      * 
                      */
                     std::string GetNewSlaveZone() const;
 
                     /**
-                     * 设置新从可用区
-                     * @param _newSlaveZone 新从可用区
+                     * 设置<p>新备可用区</p>
+                     * @param _newSlaveZone <p>新备可用区</p>
                      * 
                      */
                     void SetNewSlaveZone(const std::string& _newSlaveZone);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NewSlaveZoneHasBeenSet() const;
 
                     /**
-                     * 获取binlog同步方式。默认值：async。可选值：sync、semisync、async
-                     * @return BinlogSyncWay binlog同步方式。默认值：async。可选值：sync、semisync、async
+                     * 获取<p>binlog同步方式。默认值：async。可选值：sync、semisync、async</p>
+                     * @return BinlogSyncWay <p>binlog同步方式。默认值：async。可选值：sync、semisync、async</p>
                      * 
                      */
                     std::string GetBinlogSyncWay() const;
 
                     /**
-                     * 设置binlog同步方式。默认值：async。可选值：sync、semisync、async
-                     * @param _binlogSyncWay binlog同步方式。默认值：async。可选值：sync、semisync、async
+                     * 设置<p>binlog同步方式。默认值：async。可选值：sync、semisync、async</p>
+                     * @param _binlogSyncWay <p>binlog同步方式。默认值：async。可选值：sync、semisync、async</p>
                      * 
                      */
                     void SetBinlogSyncWay(const std::string& _binlogSyncWay);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool BinlogSyncWayHasBeenSet() const;
 
                     /**
-                     * 获取半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。最低设置为1000ms，最高支持4294967295ms，默认10000ms。
-                     * @return SemiSyncTimeout 半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。最低设置为1000ms，最高支持4294967295ms，默认10000ms。
+                     * 获取<p>半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。最低设置为1000ms，最高支持4294967295ms，默认10000ms。</p>
+                     * @return SemiSyncTimeout <p>半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。最低设置为1000ms，最高支持4294967295ms，默认10000ms。</p>
                      * 
                      */
                     int64_t GetSemiSyncTimeout() const;
 
                     /**
-                     * 设置半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。最低设置为1000ms，最高支持4294967295ms，默认10000ms。
-                     * @param _semiSyncTimeout 半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。最低设置为1000ms，最高支持4294967295ms，默认10000ms。
+                     * 设置<p>半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。最低设置为1000ms，最高支持4294967295ms，默认10000ms。</p>
+                     * @param _semiSyncTimeout <p>半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。最低设置为1000ms，最高支持4294967295ms，默认10000ms。</p>
                      * 
                      */
                     void SetSemiSyncTimeout(const int64_t& _semiSyncTimeout);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群Id
+                     * <p>集群Id</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 旧从可用区
+                     * <p>旧备可用区</p>
                      */
                     std::string m_oldSlaveZone;
                     bool m_oldSlaveZoneHasBeenSet;
 
                     /**
-                     * 新从可用区
+                     * <p>新备可用区</p>
                      */
                     std::string m_newSlaveZone;
                     bool m_newSlaveZoneHasBeenSet;
 
                     /**
-                     * binlog同步方式。默认值：async。可选值：sync、semisync、async
+                     * <p>binlog同步方式。默认值：async。可选值：sync、semisync、async</p>
                      */
                     std::string m_binlogSyncWay;
                     bool m_binlogSyncWayHasBeenSet;
 
                     /**
-                     * 半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。最低设置为1000ms，最高支持4294967295ms，默认10000ms。
+                     * <p>半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。最低设置为1000ms，最高支持4294967295ms，默认10000ms。</p>
                      */
                     int64_t m_semiSyncTimeout;
                     bool m_semiSyncTimeoutHasBeenSet;

@@ -32,6 +32,7 @@
 #include <tencentcloud/cls/v20201016/model/AlarmClassification.h>
 #include <tencentcloud/cls/v20201016/model/MultiCondition.h>
 #include <tencentcloud/cls/v20201016/model/MonitorNotice.h>
+#include <tencentcloud/cls/v20201016/model/AIAnalysis.h>
 
 
 namespace TencentCloud
@@ -55,15 +56,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警策略名称。
-                     * @return Name 告警策略名称。
+                     * 获取<p>告警策略名称。</p>
+                     * @return Name <p>告警策略名称。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置告警策略名称。
-                     * @param _name 告警策略名称。
+                     * 设置<p>告警策略名称。</p>
+                     * @param _name <p>告警策略名称。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -76,15 +77,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取监控对象列表。
-                     * @return AlarmTargets 监控对象列表。
+                     * 获取<p>监控对象列表。</p>
+                     * @return AlarmTargets <p>监控对象列表。</p>
                      * 
                      */
                     std::vector<AlarmTargetInfo> GetAlarmTargets() const;
 
                     /**
-                     * 设置监控对象列表。
-                     * @param _alarmTargets 监控对象列表。
+                     * 设置<p>监控对象列表。</p>
+                     * @param _alarmTargets <p>监控对象列表。</p>
                      * 
                      */
                     void SetAlarmTargets(const std::vector<AlarmTargetInfo>& _alarmTargets);
@@ -97,15 +98,15 @@ namespace TencentCloud
                     bool AlarmTargetsHasBeenSet() const;
 
                     /**
-                     * 获取监控任务运行时间点。
-                     * @return MonitorTime 监控任务运行时间点。
+                     * 获取<p>监控任务运行时间点。</p>
+                     * @return MonitorTime <p>监控任务运行时间点。</p>
                      * 
                      */
                     MonitorTime GetMonitorTime() const;
 
                     /**
-                     * 设置监控任务运行时间点。
-                     * @param _monitorTime 监控任务运行时间点。
+                     * 设置<p>监控任务运行时间点。</p>
+                     * @param _monitorTime <p>监控任务运行时间点。</p>
                      * 
                      */
                     void SetMonitorTime(const MonitorTime& _monitorTime);
@@ -118,15 +119,15 @@ namespace TencentCloud
                     bool MonitorTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否触发告警的单触发条件。与MultiConditions参数互斥。
-                     * @return Condition 是否触发告警的单触发条件。与MultiConditions参数互斥。
+                     * 获取<p>是否触发告警的单触发条件。与MultiConditions参数互斥。</p>
+                     * @return Condition <p>是否触发告警的单触发条件。与MultiConditions参数互斥。</p>
                      * 
                      */
                     std::string GetCondition() const;
 
                     /**
-                     * 设置是否触发告警的单触发条件。与MultiConditions参数互斥。
-                     * @param _condition 是否触发告警的单触发条件。与MultiConditions参数互斥。
+                     * 设置<p>是否触发告警的单触发条件。与MultiConditions参数互斥。</p>
+                     * @param _condition <p>是否触发告警的单触发条件。与MultiConditions参数互斥。</p>
                      * 
                      */
                     void SetCondition(const std::string& _condition);
@@ -139,15 +140,15 @@ namespace TencentCloud
                     bool ConditionHasBeenSet() const;
 
                     /**
-                     * 获取持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。
-                     * @return TriggerCount 持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。
+                     * 获取<p>持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。</p>
+                     * @return TriggerCount <p>持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。</p>
                      * 
                      */
                     int64_t GetTriggerCount() const;
 
                     /**
-                     * 设置持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。
-                     * @param _triggerCount 持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。
+                     * 设置<p>持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。</p>
+                     * @param _triggerCount <p>持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。</p>
                      * 
                      */
                     void SetTriggerCount(const int64_t& _triggerCount);
@@ -160,15 +161,15 @@ namespace TencentCloud
                     bool TriggerCountHasBeenSet() const;
 
                     /**
-                     * 获取告警重复的周期。单位是min。取值范围是0~1440。
-                     * @return AlarmPeriod 告警重复的周期。单位是min。取值范围是0~1440。
+                     * 获取<p>告警重复的周期。单位是min。取值范围是0~1440。</p>
+                     * @return AlarmPeriod <p>告警重复的周期。单位是min。取值范围是0~1440。</p>
                      * 
                      */
                     int64_t GetAlarmPeriod() const;
 
                     /**
-                     * 设置告警重复的周期。单位是min。取值范围是0~1440。
-                     * @param _alarmPeriod 告警重复的周期。单位是min。取值范围是0~1440。
+                     * 设置<p>告警重复的周期。单位是min。取值范围是0~1440。</p>
+                     * @param _alarmPeriod <p>告警重复的周期。单位是min。取值范围是0~1440。</p>
                      * 
                      */
                     void SetAlarmPeriod(const int64_t& _alarmPeriod);
@@ -181,15 +182,15 @@ namespace TencentCloud
                     bool AlarmPeriodHasBeenSet() const;
 
                     /**
-                     * 获取关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
-                     * @return AlarmNoticeIds 关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
+                     * 获取<p>关联的告警通知渠道组列表。-通过<a href="https://cloud.tencent.com/document/product/614/56462">获取通知渠道组列表</a>获取关联的告警通知渠道组列表，和MonitorNotice互斥</p>
+                     * @return AlarmNoticeIds <p>关联的告警通知渠道组列表。-通过<a href="https://cloud.tencent.com/document/product/614/56462">获取通知渠道组列表</a>获取关联的告警通知渠道组列表，和MonitorNotice互斥</p>
                      * 
                      */
                     std::vector<std::string> GetAlarmNoticeIds() const;
 
                     /**
-                     * 设置关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
-                     * @param _alarmNoticeIds 关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
+                     * 设置<p>关联的告警通知渠道组列表。-通过<a href="https://cloud.tencent.com/document/product/614/56462">获取通知渠道组列表</a>获取关联的告警通知渠道组列表，和MonitorNotice互斥</p>
+                     * @param _alarmNoticeIds <p>关联的告警通知渠道组列表。-通过<a href="https://cloud.tencent.com/document/product/614/56462">获取通知渠道组列表</a>获取关联的告警通知渠道组列表，和MonitorNotice互斥</p>
                      * 
                      */
                     void SetAlarmNoticeIds(const std::vector<std::string>& _alarmNoticeIds);
@@ -202,15 +203,15 @@ namespace TencentCloud
                     bool AlarmNoticeIdsHasBeenSet() const;
 
                     /**
-                     * 获取开启状态。
-                     * @return Status 开启状态。
+                     * 获取<p>开启状态。</p>
+                     * @return Status <p>开启状态。</p>
                      * 
                      */
                     bool GetStatus() const;
 
                     /**
-                     * 设置开启状态。
-                     * @param _status 开启状态。
+                     * 设置<p>开启状态。</p>
+                     * @param _status <p>开启状态。</p>
                      * 
                      */
                     void SetStatus(const bool& _status);
@@ -223,15 +224,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取告警策略ID。
-                     * @return AlarmId 告警策略ID。
+                     * 获取<p>告警策略ID。</p>
+                     * @return AlarmId <p>告警策略ID。</p>
                      * 
                      */
                     std::string GetAlarmId() const;
 
                     /**
-                     * 设置告警策略ID。
-                     * @param _alarmId 告警策略ID。
+                     * 设置<p>告警策略ID。</p>
+                     * @param _alarmId <p>告警策略ID。</p>
                      * 
                      */
                     void SetAlarmId(const std::string& _alarmId);
@@ -244,15 +245,15 @@ namespace TencentCloud
                     bool AlarmIdHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。格式： YYYY-MM-DD HH:MM:SS
-                     * @return CreateTime 创建时间。格式： YYYY-MM-DD HH:MM:SS
+                     * 获取<p>创建时间。格式： YYYY-MM-DD HH:MM:SS</p>
+                     * @return CreateTime <p>创建时间。格式： YYYY-MM-DD HH:MM:SS</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间。格式： YYYY-MM-DD HH:MM:SS
-                     * @param _createTime 创建时间。格式： YYYY-MM-DD HH:MM:SS
+                     * 设置<p>创建时间。格式： YYYY-MM-DD HH:MM:SS</p>
+                     * @param _createTime <p>创建时间。格式： YYYY-MM-DD HH:MM:SS</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -265,15 +266,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取最近更新时间。格式： YYYY-MM-DD HH:MM:SS
-                     * @return UpdateTime 最近更新时间。格式： YYYY-MM-DD HH:MM:SS
+                     * 获取<p>最近更新时间。格式： YYYY-MM-DD HH:MM:SS</p>
+                     * @return UpdateTime <p>最近更新时间。格式： YYYY-MM-DD HH:MM:SS</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置最近更新时间。格式： YYYY-MM-DD HH:MM:SS
-                     * @param _updateTime 最近更新时间。格式： YYYY-MM-DD HH:MM:SS
+                     * 设置<p>最近更新时间。格式： YYYY-MM-DD HH:MM:SS</p>
+                     * @param _updateTime <p>最近更新时间。格式： YYYY-MM-DD HH:MM:SS</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -286,18 +287,18 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取自定义通知模板
+                     * 获取<p>自定义通知模板</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MessageTemplate 自定义通知模板
+                     * @return MessageTemplate <p>自定义通知模板</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessageTemplate() const;
 
                     /**
-                     * 设置自定义通知模板
+                     * 设置<p>自定义通知模板</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _messageTemplate 自定义通知模板
+                     * @param _messageTemplate <p>自定义通知模板</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -311,15 +312,15 @@ namespace TencentCloud
                     bool MessageTemplateHasBeenSet() const;
 
                     /**
-                     * 获取自定义回调模板
-                     * @return CallBack 自定义回调模板
+                     * 获取<p>自定义回调模板</p>
+                     * @return CallBack <p>自定义回调模板</p>
                      * 
                      */
                     CallBackInfo GetCallBack() const;
 
                     /**
-                     * 设置自定义回调模板
-                     * @param _callBack 自定义回调模板
+                     * 设置<p>自定义回调模板</p>
+                     * @param _callBack <p>自定义回调模板</p>
                      * 
                      */
                     void SetCallBack(const CallBackInfo& _callBack);
@@ -332,15 +333,15 @@ namespace TencentCloud
                     bool CallBackHasBeenSet() const;
 
                     /**
-                     * 获取多维分析设置
-                     * @return Analysis 多维分析设置
+                     * 获取<p>多维分析设置</p>
+                     * @return Analysis <p>多维分析设置</p>
                      * 
                      */
                     std::vector<AnalysisDimensional> GetAnalysis() const;
 
                     /**
-                     * 设置多维分析设置
-                     * @param _analysis 多维分析设置
+                     * 设置<p>多维分析设置</p>
+                     * @param _analysis <p>多维分析设置</p>
                      * 
                      */
                     void SetAnalysis(const std::vector<AnalysisDimensional>& _analysis);
@@ -353,15 +354,15 @@ namespace TencentCloud
                     bool AnalysisHasBeenSet() const;
 
                     /**
-                     * 获取分组触发状态。true：开启，false：关闭（默认）
-                     * @return GroupTriggerStatus 分组触发状态。true：开启，false：关闭（默认）
+                     * 获取<p>分组触发状态。true：开启，false：关闭（默认）</p>
+                     * @return GroupTriggerStatus <p>分组触发状态。true：开启，false：关闭（默认）</p>
                      * 
                      */
                     bool GetGroupTriggerStatus() const;
 
                     /**
-                     * 设置分组触发状态。true：开启，false：关闭（默认）
-                     * @param _groupTriggerStatus 分组触发状态。true：开启，false：关闭（默认）
+                     * 设置<p>分组触发状态。true：开启，false：关闭（默认）</p>
+                     * @param _groupTriggerStatus <p>分组触发状态。true：开启，false：关闭（默认）</p>
                      * 
                      */
                     void SetGroupTriggerStatus(const bool& _groupTriggerStatus);
@@ -374,15 +375,15 @@ namespace TencentCloud
                     bool GroupTriggerStatusHasBeenSet() const;
 
                     /**
-                     * 获取分组触发条件。
-                     * @return GroupTriggerCondition 分组触发条件。
+                     * 获取<p>分组触发条件。</p>
+                     * @return GroupTriggerCondition <p>分组触发条件。</p>
                      * 
                      */
                     std::vector<std::string> GetGroupTriggerCondition() const;
 
                     /**
-                     * 设置分组触发条件。
-                     * @param _groupTriggerCondition 分组触发条件。
+                     * 设置<p>分组触发条件。</p>
+                     * @param _groupTriggerCondition <p>分组触发条件。</p>
                      * 
                      */
                     void SetGroupTriggerCondition(const std::vector<std::string>& _groupTriggerCondition);
@@ -395,15 +396,15 @@ namespace TencentCloud
                     bool GroupTriggerConditionHasBeenSet() const;
 
                     /**
-                     * 获取告警策略绑定的标签信息。
-                     * @return Tags 告警策略绑定的标签信息。
+                     * 获取<p>告警策略绑定的标签信息。</p>
+                     * @return Tags <p>告警策略绑定的标签信息。</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置告警策略绑定的标签信息。
-                     * @param _tags 告警策略绑定的标签信息。
+                     * 设置<p>告警策略绑定的标签信息。</p>
+                     * @param _tags <p>告警策略绑定的标签信息。</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -416,15 +417,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取监控对象类型。0:执行语句共用监控对象;1:每个执行语句单独选择监控对象。 
-                     * @return MonitorObjectType 监控对象类型。0:执行语句共用监控对象;1:每个执行语句单独选择监控对象。 
+                     * 获取<p>监控对象类型。0:执行语句共用监控对象;1:每个执行语句单独选择监控对象。</p>
+                     * @return MonitorObjectType <p>监控对象类型。0:执行语句共用监控对象;1:每个执行语句单独选择监控对象。</p>
                      * 
                      */
                     uint64_t GetMonitorObjectType() const;
 
                     /**
-                     * 设置监控对象类型。0:执行语句共用监控对象;1:每个执行语句单独选择监控对象。 
-                     * @param _monitorObjectType 监控对象类型。0:执行语句共用监控对象;1:每个执行语句单独选择监控对象。 
+                     * 设置<p>监控对象类型。0:执行语句共用监控对象;1:每个执行语句单独选择监控对象。</p>
+                     * @param _monitorObjectType <p>监控对象类型。0:执行语句共用监控对象;1:每个执行语句单独选择监控对象。</p>
                      * 
                      */
                     void SetMonitorObjectType(const uint64_t& _monitorObjectType);
@@ -437,15 +438,15 @@ namespace TencentCloud
                     bool MonitorObjectTypeHasBeenSet() const;
 
                     /**
-                     * 获取告警级别。0:警告(Warn);1:提醒(Info);2:紧急 (Critical)。
-                     * @return AlarmLevel 告警级别。0:警告(Warn);1:提醒(Info);2:紧急 (Critical)。
+                     * 获取<p>告警级别。0:警告(Warn);1:提醒(Info);2:紧急 (Critical)。</p>
+                     * @return AlarmLevel <p>告警级别。0:警告(Warn);1:提醒(Info);2:紧急 (Critical)。</p>
                      * 
                      */
                     uint64_t GetAlarmLevel() const;
 
                     /**
-                     * 设置告警级别。0:警告(Warn);1:提醒(Info);2:紧急 (Critical)。
-                     * @param _alarmLevel 告警级别。0:警告(Warn);1:提醒(Info);2:紧急 (Critical)。
+                     * 设置<p>告警级别。0:警告(Warn);1:提醒(Info);2:紧急 (Critical)。</p>
+                     * @param _alarmLevel <p>告警级别。0:警告(Warn);1:提醒(Info);2:紧急 (Critical)。</p>
                      * 
                      */
                     void SetAlarmLevel(const uint64_t& _alarmLevel);
@@ -458,15 +459,15 @@ namespace TencentCloud
                     bool AlarmLevelHasBeenSet() const;
 
                     /**
-                     * 获取告警附加分类字段。
-                     * @return Classifications 告警附加分类字段。
+                     * 获取<p>告警附加分类字段。</p>
+                     * @return Classifications <p>告警附加分类字段。</p>
                      * 
                      */
                     std::vector<AlarmClassification> GetClassifications() const;
 
                     /**
-                     * 设置告警附加分类字段。
-                     * @param _classifications 告警附加分类字段。
+                     * 设置<p>告警附加分类字段。</p>
+                     * @param _classifications <p>告警附加分类字段。</p>
                      * 
                      */
                     void SetClassifications(const std::vector<AlarmClassification>& _classifications);
@@ -479,19 +480,15 @@ namespace TencentCloud
                     bool ClassificationsHasBeenSet() const;
 
                     /**
-                     * 获取多触发条件。与
-Condition互斥。
-                     * @return MultiConditions 多触发条件。与
-Condition互斥。
+                     * 获取<p>多触发条件。与<br>Condition互斥。</p>
+                     * @return MultiConditions <p>多触发条件。与<br>Condition互斥。</p>
                      * 
                      */
                     std::vector<MultiCondition> GetMultiConditions() const;
 
                     /**
-                     * 设置多触发条件。与
-Condition互斥。
-                     * @param _multiConditions 多触发条件。与
-Condition互斥。
+                     * 设置<p>多触发条件。与<br>Condition互斥。</p>
+                     * @param _multiConditions <p>多触发条件。与<br>Condition互斥。</p>
                      * 
                      */
                     void SetMultiConditions(const std::vector<MultiCondition>& _multiConditions);
@@ -504,15 +501,15 @@ Condition互斥。
                     bool MultiConditionsHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云可观测平台通知渠道相关信息，和AlarmNoticeIds互斥
-                     * @return MonitorNotice 腾讯云可观测平台通知渠道相关信息，和AlarmNoticeIds互斥
+                     * 获取<p>腾讯云可观测平台通知渠道相关信息，和AlarmNoticeIds互斥</p>
+                     * @return MonitorNotice <p>腾讯云可观测平台通知渠道相关信息，和AlarmNoticeIds互斥</p>
                      * 
                      */
                     MonitorNotice GetMonitorNotice() const;
 
                     /**
-                     * 设置腾讯云可观测平台通知渠道相关信息，和AlarmNoticeIds互斥
-                     * @param _monitorNotice 腾讯云可观测平台通知渠道相关信息，和AlarmNoticeIds互斥
+                     * 设置<p>腾讯云可观测平台通知渠道相关信息，和AlarmNoticeIds互斥</p>
+                     * @param _monitorNotice <p>腾讯云可观测平台通知渠道相关信息，和AlarmNoticeIds互斥</p>
                      * 
                      */
                     void SetMonitorNotice(const MonitorNotice& _monitorNotice);
@@ -524,141 +521,194 @@ Condition互斥。
                      */
                     bool MonitorNoticeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>AI分析内容</p>
+                     * @return AIAnalysis <p>AI分析内容</p>
+                     * 
+                     */
+                    AIAnalysis GetAIAnalysis() const;
+
+                    /**
+                     * 设置<p>AI分析内容</p>
+                     * @param _aIAnalysis <p>AI分析内容</p>
+                     * 
+                     */
+                    void SetAIAnalysis(const AIAnalysis& _aIAnalysis);
+
+                    /**
+                     * 判断参数 AIAnalysis 是否已赋值
+                     * @return AIAnalysis 是否已赋值
+                     * 
+                     */
+                    bool AIAnalysisHasBeenSet() const;
+
+                    /**
+                     * 获取<p>最后修改人的uin信息</p>
+                     * @return SubUin <p>最后修改人的uin信息</p>
+                     * 
+                     */
+                    uint64_t GetSubUin() const;
+
+                    /**
+                     * 设置<p>最后修改人的uin信息</p>
+                     * @param _subUin <p>最后修改人的uin信息</p>
+                     * 
+                     */
+                    void SetSubUin(const uint64_t& _subUin);
+
+                    /**
+                     * 判断参数 SubUin 是否已赋值
+                     * @return SubUin 是否已赋值
+                     * 
+                     */
+                    bool SubUinHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 告警策略名称。
+                     * <p>告警策略名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 监控对象列表。
+                     * <p>监控对象列表。</p>
                      */
                     std::vector<AlarmTargetInfo> m_alarmTargets;
                     bool m_alarmTargetsHasBeenSet;
 
                     /**
-                     * 监控任务运行时间点。
+                     * <p>监控任务运行时间点。</p>
                      */
                     MonitorTime m_monitorTime;
                     bool m_monitorTimeHasBeenSet;
 
                     /**
-                     * 是否触发告警的单触发条件。与MultiConditions参数互斥。
+                     * <p>是否触发告警的单触发条件。与MultiConditions参数互斥。</p>
                      */
                     std::string m_condition;
                     bool m_conditionHasBeenSet;
 
                     /**
-                     * 持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。
+                     * <p>持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。</p>
                      */
                     int64_t m_triggerCount;
                     bool m_triggerCountHasBeenSet;
 
                     /**
-                     * 告警重复的周期。单位是min。取值范围是0~1440。
+                     * <p>告警重复的周期。单位是min。取值范围是0~1440。</p>
                      */
                     int64_t m_alarmPeriod;
                     bool m_alarmPeriodHasBeenSet;
 
                     /**
-                     * 关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥
+                     * <p>关联的告警通知渠道组列表。-通过<a href="https://cloud.tencent.com/document/product/614/56462">获取通知渠道组列表</a>获取关联的告警通知渠道组列表，和MonitorNotice互斥</p>
                      */
                     std::vector<std::string> m_alarmNoticeIds;
                     bool m_alarmNoticeIdsHasBeenSet;
 
                     /**
-                     * 开启状态。
+                     * <p>开启状态。</p>
                      */
                     bool m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 告警策略ID。
+                     * <p>告警策略ID。</p>
                      */
                     std::string m_alarmId;
                     bool m_alarmIdHasBeenSet;
 
                     /**
-                     * 创建时间。格式： YYYY-MM-DD HH:MM:SS
+                     * <p>创建时间。格式： YYYY-MM-DD HH:MM:SS</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 最近更新时间。格式： YYYY-MM-DD HH:MM:SS
+                     * <p>最近更新时间。格式： YYYY-MM-DD HH:MM:SS</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 自定义通知模板
+                     * <p>自定义通知模板</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_messageTemplate;
                     bool m_messageTemplateHasBeenSet;
 
                     /**
-                     * 自定义回调模板
+                     * <p>自定义回调模板</p>
                      */
                     CallBackInfo m_callBack;
                     bool m_callBackHasBeenSet;
 
                     /**
-                     * 多维分析设置
+                     * <p>多维分析设置</p>
                      */
                     std::vector<AnalysisDimensional> m_analysis;
                     bool m_analysisHasBeenSet;
 
                     /**
-                     * 分组触发状态。true：开启，false：关闭（默认）
+                     * <p>分组触发状态。true：开启，false：关闭（默认）</p>
                      */
                     bool m_groupTriggerStatus;
                     bool m_groupTriggerStatusHasBeenSet;
 
                     /**
-                     * 分组触发条件。
+                     * <p>分组触发条件。</p>
                      */
                     std::vector<std::string> m_groupTriggerCondition;
                     bool m_groupTriggerConditionHasBeenSet;
 
                     /**
-                     * 告警策略绑定的标签信息。
+                     * <p>告警策略绑定的标签信息。</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 监控对象类型。0:执行语句共用监控对象;1:每个执行语句单独选择监控对象。 
+                     * <p>监控对象类型。0:执行语句共用监控对象;1:每个执行语句单独选择监控对象。</p>
                      */
                     uint64_t m_monitorObjectType;
                     bool m_monitorObjectTypeHasBeenSet;
 
                     /**
-                     * 告警级别。0:警告(Warn);1:提醒(Info);2:紧急 (Critical)。
+                     * <p>告警级别。0:警告(Warn);1:提醒(Info);2:紧急 (Critical)。</p>
                      */
                     uint64_t m_alarmLevel;
                     bool m_alarmLevelHasBeenSet;
 
                     /**
-                     * 告警附加分类字段。
+                     * <p>告警附加分类字段。</p>
                      */
                     std::vector<AlarmClassification> m_classifications;
                     bool m_classificationsHasBeenSet;
 
                     /**
-                     * 多触发条件。与
-Condition互斥。
+                     * <p>多触发条件。与<br>Condition互斥。</p>
                      */
                     std::vector<MultiCondition> m_multiConditions;
                     bool m_multiConditionsHasBeenSet;
 
                     /**
-                     * 腾讯云可观测平台通知渠道相关信息，和AlarmNoticeIds互斥
+                     * <p>腾讯云可观测平台通知渠道相关信息，和AlarmNoticeIds互斥</p>
                      */
                     MonitorNotice m_monitorNotice;
                     bool m_monitorNoticeHasBeenSet;
+
+                    /**
+                     * <p>AI分析内容</p>
+                     */
+                    AIAnalysis m_aIAnalysis;
+                    bool m_aIAnalysisHasBeenSet;
+
+                    /**
+                     * <p>最后修改人的uin信息</p>
+                     */
+                    uint64_t m_subUin;
+                    bool m_subUinHasBeenSet;
 
                 };
             }

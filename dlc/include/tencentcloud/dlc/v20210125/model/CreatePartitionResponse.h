@@ -59,7 +59,9 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>大订单号</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return BigDealId <p>大订单号</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBigDealId() const;
@@ -71,6 +73,22 @@ namespace TencentCloud
                      */
                     bool BigDealIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>冻结流水号（后付费返回；预付费为空）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BillId <p>冻结流水号（后付费返回；预付费为空）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBillId() const;
+
+                    /**
+                     * 判断参数 BillId 是否已赋值
+                     * @return BillId 是否已赋值
+                     * 
+                     */
+                    bool BillIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -81,9 +99,17 @@ namespace TencentCloud
 
                     /**
                      * <p>大订单号</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bigDealId;
                     bool m_bigDealIdHasBeenSet;
+
+                    /**
+                     * <p>冻结流水号（后付费返回；预付费为空）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_billId;
+                    bool m_billIdHasBeenSet;
 
                 };
             }

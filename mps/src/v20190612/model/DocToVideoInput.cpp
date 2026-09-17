@@ -23,8 +23,8 @@ using namespace std;
 DocToVideoInput::DocToVideoInput() :
     m_fileUrlHasBeenSet(false),
     m_promptHasBeenSet(false),
-    m_modelNameHasBeenSet(false),
     m_modelVersionHasBeenSet(false),
+    m_modelNameHasBeenSet(false),
     m_ratioHasBeenSet(false),
     m_languageHasBeenSet(false),
     m_referenceDurationHasBeenSet(false),
@@ -66,16 +66,6 @@ CoreInternalOutcome DocToVideoInput::Deserialize(const rapidjson::Value &value)
         m_promptHasBeenSet = true;
     }
 
-    if (value.HasMember("ModelName") && !value["ModelName"].IsNull())
-    {
-        if (!value["ModelName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `DocToVideoInput.ModelName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_modelName = string(value["ModelName"].GetString());
-        m_modelNameHasBeenSet = true;
-    }
-
     if (value.HasMember("ModelVersion") && !value["ModelVersion"].IsNull())
     {
         if (!value["ModelVersion"].IsString())
@@ -84,6 +74,16 @@ CoreInternalOutcome DocToVideoInput::Deserialize(const rapidjson::Value &value)
         }
         m_modelVersion = string(value["ModelVersion"].GetString());
         m_modelVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModelName") && !value["ModelName"].IsNull())
+    {
+        if (!value["ModelName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocToVideoInput.ModelName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modelName = string(value["ModelName"].GetString());
+        m_modelNameHasBeenSet = true;
     }
 
     if (value.HasMember("Ratio") && !value["Ratio"].IsNull())
@@ -228,20 +228,20 @@ void DocToVideoInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_prompt.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_modelNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ModelName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_modelName.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_modelVersionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModelVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modelVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ratioHasBeenSet)
@@ -361,22 +361,6 @@ bool DocToVideoInput::PromptHasBeenSet() const
     return m_promptHasBeenSet;
 }
 
-string DocToVideoInput::GetModelName() const
-{
-    return m_modelName;
-}
-
-void DocToVideoInput::SetModelName(const string& _modelName)
-{
-    m_modelName = _modelName;
-    m_modelNameHasBeenSet = true;
-}
-
-bool DocToVideoInput::ModelNameHasBeenSet() const
-{
-    return m_modelNameHasBeenSet;
-}
-
 string DocToVideoInput::GetModelVersion() const
 {
     return m_modelVersion;
@@ -391,6 +375,22 @@ void DocToVideoInput::SetModelVersion(const string& _modelVersion)
 bool DocToVideoInput::ModelVersionHasBeenSet() const
 {
     return m_modelVersionHasBeenSet;
+}
+
+string DocToVideoInput::GetModelName() const
+{
+    return m_modelName;
+}
+
+void DocToVideoInput::SetModelName(const string& _modelName)
+{
+    m_modelName = _modelName;
+    m_modelNameHasBeenSet = true;
+}
+
+bool DocToVideoInput::ModelNameHasBeenSet() const
+{
+    return m_modelNameHasBeenSet;
 }
 
 string DocToVideoInput::GetRatio() const

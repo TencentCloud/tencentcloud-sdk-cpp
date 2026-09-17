@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool MatchTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>Values 匹配值集合，Values 内任一命中即认为条件成立（OR 语义）</p><p>入参限制：单项 1~1024 字节，最多 100 条</p>
-                     * @return Values <p>Values 匹配值集合，Values 内任一命中即认为条件成立（OR 语义）</p><p>入参限制：单项 1~1024 字节，最多 100 条</p>
+                     * 获取<p>Values 匹配值集合，Values 内任一命中即认为条件成立（OR 语义）</p><p>入参限制：单项 1~1024 字节，最多 30 条</p>
+                     * @return Values <p>Values 匹配值集合，Values 内任一命中即认为条件成立（OR 语义）</p><p>入参限制：单项 1~1024 字节，最多 30 条</p>
                      * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
-                     * 设置<p>Values 匹配值集合，Values 内任一命中即认为条件成立（OR 语义）</p><p>入参限制：单项 1~1024 字节，最多 100 条</p>
-                     * @param _values <p>Values 匹配值集合，Values 内任一命中即认为条件成立（OR 语义）</p><p>入参限制：单项 1~1024 字节，最多 100 条</p>
+                     * 设置<p>Values 匹配值集合，Values 内任一命中即认为条件成立（OR 语义）</p><p>入参限制：单项 1~1024 字节，最多 30 条</p>
+                     * @param _values <p>Values 匹配值集合，Values 内任一命中即认为条件成立（OR 语义）</p><p>入参限制：单项 1~1024 字节，最多 30 条</p>
                      * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_matchTypeHasBeenSet;
 
                     /**
-                     * <p>Values 匹配值集合，Values 内任一命中即认为条件成立（OR 语义）</p><p>入参限制：单项 1~1024 字节，最多 100 条</p>
+                     * <p>Values 匹配值集合，Values 内任一命中即认为条件成立（OR 语义）</p><p>入参限制：单项 1~1024 字节，最多 30 条</p>
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;

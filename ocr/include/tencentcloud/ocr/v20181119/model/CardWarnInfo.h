@@ -47,23 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取证件边缘是否完整
-0：正常
-1：边缘不完整
-                     * @return BorderCheck 证件边缘是否完整
-0：正常
-1：边缘不完整
+                     * 获取<p>证件边缘是否完整<br>0：正常<br>1：边缘不完整</p>
+                     * @return BorderCheck <p>证件边缘是否完整<br>0：正常<br>1：边缘不完整</p>
                      * 
                      */
                     int64_t GetBorderCheck() const;
 
                     /**
-                     * 设置证件边缘是否完整
-0：正常
-1：边缘不完整
-                     * @param _borderCheck 证件边缘是否完整
-0：正常
-1：边缘不完整
+                     * 设置<p>证件边缘是否完整<br>0：正常<br>1：边缘不完整</p>
+                     * @param _borderCheck <p>证件边缘是否完整<br>0：正常<br>1：边缘不完整</p>
                      * 
                      */
                     void SetBorderCheck(const int64_t& _borderCheck);
@@ -76,23 +68,15 @@ namespace TencentCloud
                     bool BorderCheckHasBeenSet() const;
 
                     /**
-                     * 获取证件是否被遮挡
-0：正常
-1：有遮挡
-                     * @return OcclusionCheck 证件是否被遮挡
-0：正常
-1：有遮挡
+                     * 获取<p>证件是否被遮挡<br>0：正常<br>1：有遮挡</p>
+                     * @return OcclusionCheck <p>证件是否被遮挡<br>0：正常<br>1：有遮挡</p>
                      * 
                      */
                     int64_t GetOcclusionCheck() const;
 
                     /**
-                     * 设置证件是否被遮挡
-0：正常
-1：有遮挡
-                     * @param _occlusionCheck 证件是否被遮挡
-0：正常
-1：有遮挡
+                     * 设置<p>证件是否被遮挡<br>0：正常<br>1：有遮挡</p>
+                     * @param _occlusionCheck <p>证件是否被遮挡<br>0：正常<br>1：有遮挡</p>
                      * 
                      */
                     void SetOcclusionCheck(const int64_t& _occlusionCheck);
@@ -105,23 +89,15 @@ namespace TencentCloud
                     bool OcclusionCheckHasBeenSet() const;
 
                     /**
-                     * 获取是否复印
-0:正常
-1:复印件
-                     * @return CopyCheck 是否复印
-0:正常
-1:复印件
+                     * 获取<p>是否复印<br>0:正常<br>1:复印件</p>
+                     * @return CopyCheck <p>是否复印<br>0:正常<br>1:复印件</p>
                      * 
                      */
                     int64_t GetCopyCheck() const;
 
                     /**
-                     * 设置是否复印
-0:正常
-1:复印件
-                     * @param _copyCheck 是否复印
-0:正常
-1:复印件
+                     * 设置<p>是否复印<br>0:正常<br>1:复印件</p>
+                     * @param _copyCheck <p>是否复印<br>0:正常<br>1:复印件</p>
                      * 
                      */
                     void SetCopyCheck(const int64_t& _copyCheck);
@@ -134,23 +110,15 @@ namespace TencentCloud
                     bool CopyCheckHasBeenSet() const;
 
                     /**
-                     * 获取是否屏幕翻拍
-0:正常
-1:翻拍
-                     * @return ReshootCheck 是否屏幕翻拍
-0:正常
-1:翻拍
+                     * 获取<p>是否屏幕翻拍<br>0:正常<br>1:翻拍</p>
+                     * @return ReshootCheck <p>是否屏幕翻拍<br>0:正常<br>1:翻拍</p>
                      * 
                      */
                     int64_t GetReshootCheck() const;
 
                     /**
-                     * 设置是否屏幕翻拍
-0:正常
-1:翻拍
-                     * @param _reshootCheck 是否屏幕翻拍
-0:正常
-1:翻拍
+                     * 设置<p>是否屏幕翻拍<br>0:正常<br>1:翻拍</p>
+                     * @param _reshootCheck <p>是否屏幕翻拍<br>0:正常<br>1:翻拍</p>
                      * 
                      */
                     void SetReshootCheck(const int64_t& _reshootCheck);
@@ -163,23 +131,15 @@ namespace TencentCloud
                     bool ReshootCheckHasBeenSet() const;
 
                     /**
-                     * 获取证件是否有PS
-0：正常
-1：有PS
-                     * @return PSCheck 证件是否有PS
-0：正常
-1：有PS
+                     * 获取<p>证件是否有PS<br>0：正常<br>1：有PS</p>
+                     * @return PSCheck <p>证件是否有PS<br>0：正常<br>1：有PS</p>
                      * 
                      */
                     int64_t GetPSCheck() const;
 
                     /**
-                     * 设置证件是否有PS
-0：正常
-1：有PS
-                     * @param _pSCheck 证件是否有PS
-0：正常
-1：有PS
+                     * 设置<p>证件是否有PS<br>0：正常<br>1：有PS</p>
+                     * @param _pSCheck <p>证件是否有PS<br>0：正常<br>1：有PS</p>
                      * 
                      */
                     void SetPSCheck(const int64_t& _pSCheck);
@@ -192,23 +152,15 @@ namespace TencentCloud
                     bool PSCheckHasBeenSet() const;
 
                     /**
-                     * 获取是否模糊：
-0:正常
-1:模糊
-                     * @return BlurCheck 是否模糊：
-0:正常
-1:模糊
+                     * 获取<p>是否模糊：<br>0:正常<br>1:模糊</p>
+                     * @return BlurCheck <p>是否模糊：<br>0:正常<br>1:模糊</p>
                      * 
                      */
                     int64_t GetBlurCheck() const;
 
                     /**
-                     * 设置是否模糊：
-0:正常
-1:模糊
-                     * @param _blurCheck 是否模糊：
-0:正常
-1:模糊
+                     * 设置<p>是否模糊：<br>0:正常<br>1:模糊</p>
+                     * @param _blurCheck <p>是否模糊：<br>0:正常<br>1:模糊</p>
                      * 
                      */
                     void SetBlurCheck(const int64_t& _blurCheck);
@@ -221,15 +173,15 @@ namespace TencentCloud
                     bool BlurCheckHasBeenSet() const;
 
                     /**
-                     * 获取模糊分数， 范围：0.0-1.0，分数越高越模糊，建议阈值为0.5
-                     * @return BlurScore 模糊分数， 范围：0.0-1.0，分数越高越模糊，建议阈值为0.5
+                     * 获取<p>模糊分数， 范围：0.0-1.0，分数越高越模糊，建议阈值为0.5</p>
+                     * @return BlurScore <p>模糊分数， 范围：0.0-1.0，分数越高越模糊，建议阈值为0.5</p>
                      * 
                      */
                     double GetBlurScore() const;
 
                     /**
-                     * 设置模糊分数， 范围：0.0-1.0，分数越高越模糊，建议阈值为0.5
-                     * @param _blurScore 模糊分数， 范围：0.0-1.0，分数越高越模糊，建议阈值为0.5
+                     * 设置<p>模糊分数， 范围：0.0-1.0，分数越高越模糊，建议阈值为0.5</p>
+                     * @param _blurScore <p>模糊分数， 范围：0.0-1.0，分数越高越模糊，建议阈值为0.5</p>
                      * 
                      */
                     void SetBlurScore(const double& _blurScore);
@@ -242,23 +194,15 @@ namespace TencentCloud
                     bool BlurScoreHasBeenSet() const;
 
                     /**
-                     * 获取是否电子身份证
-0：否
-1：是电子身份证
-                     * @return ElectronCheck 是否电子身份证
-0：否
-1：是电子身份证
+                     * 获取<p>是否电子身份证<br>0：否<br>1：是电子身份证</p>
+                     * @return ElectronCheck <p>是否电子身份证<br>0：否<br>1：是电子身份证</p>
                      * 
                      */
                     int64_t GetElectronCheck() const;
 
                     /**
-                     * 设置是否电子身份证
-0：否
-1：是电子身份证
-                     * @param _electronCheck 是否电子身份证
-0：否
-1：是电子身份证
+                     * 设置<p>是否电子身份证<br>0：否<br>1：是电子身份证</p>
+                     * @param _electronCheck <p>是否电子身份证<br>0：否<br>1：是电子身份证</p>
                      * 
                      */
                     void SetElectronCheck(const int64_t& _electronCheck);
@@ -270,69 +214,82 @@ namespace TencentCloud
                      */
                     bool ElectronCheckHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否存在反光</p><p>枚举值：</p><ul><li>0： 正常</li><li>1： 反光</li></ul><p>默认值：0</p>
+                     * @return ReflectCheck <p>是否存在反光</p><p>枚举值：</p><ul><li>0： 正常</li><li>1： 反光</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetReflectCheck() const;
+
+                    /**
+                     * 设置<p>是否存在反光</p><p>枚举值：</p><ul><li>0： 正常</li><li>1： 反光</li></ul><p>默认值：0</p>
+                     * @param _reflectCheck <p>是否存在反光</p><p>枚举值：</p><ul><li>0： 正常</li><li>1： 反光</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    void SetReflectCheck(const int64_t& _reflectCheck);
+
+                    /**
+                     * 判断参数 ReflectCheck 是否已赋值
+                     * @return ReflectCheck 是否已赋值
+                     * 
+                     */
+                    bool ReflectCheckHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 证件边缘是否完整
-0：正常
-1：边缘不完整
+                     * <p>证件边缘是否完整<br>0：正常<br>1：边缘不完整</p>
                      */
                     int64_t m_borderCheck;
                     bool m_borderCheckHasBeenSet;
 
                     /**
-                     * 证件是否被遮挡
-0：正常
-1：有遮挡
+                     * <p>证件是否被遮挡<br>0：正常<br>1：有遮挡</p>
                      */
                     int64_t m_occlusionCheck;
                     bool m_occlusionCheckHasBeenSet;
 
                     /**
-                     * 是否复印
-0:正常
-1:复印件
+                     * <p>是否复印<br>0:正常<br>1:复印件</p>
                      */
                     int64_t m_copyCheck;
                     bool m_copyCheckHasBeenSet;
 
                     /**
-                     * 是否屏幕翻拍
-0:正常
-1:翻拍
+                     * <p>是否屏幕翻拍<br>0:正常<br>1:翻拍</p>
                      */
                     int64_t m_reshootCheck;
                     bool m_reshootCheckHasBeenSet;
 
                     /**
-                     * 证件是否有PS
-0：正常
-1：有PS
+                     * <p>证件是否有PS<br>0：正常<br>1：有PS</p>
                      */
                     int64_t m_pSCheck;
                     bool m_pSCheckHasBeenSet;
 
                     /**
-                     * 是否模糊：
-0:正常
-1:模糊
+                     * <p>是否模糊：<br>0:正常<br>1:模糊</p>
                      */
                     int64_t m_blurCheck;
                     bool m_blurCheckHasBeenSet;
 
                     /**
-                     * 模糊分数， 范围：0.0-1.0，分数越高越模糊，建议阈值为0.5
+                     * <p>模糊分数， 范围：0.0-1.0，分数越高越模糊，建议阈值为0.5</p>
                      */
                     double m_blurScore;
                     bool m_blurScoreHasBeenSet;
 
                     /**
-                     * 是否电子身份证
-0：否
-1：是电子身份证
+                     * <p>是否电子身份证<br>0：否<br>1：是电子身份证</p>
                      */
                     int64_t m_electronCheck;
                     bool m_electronCheckHasBeenSet;
+
+                    /**
+                     * <p>是否存在反光</p><p>枚举值：</p><ul><li>0： 正常</li><li>1： 反光</li></ul><p>默认值：0</p>
+                     */
+                    int64_t m_reflectCheck;
+                    bool m_reflectCheckHasBeenSet;
 
                 };
             }

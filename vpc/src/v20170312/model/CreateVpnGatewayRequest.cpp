@@ -33,7 +33,12 @@ CreateVpnGatewayRequest::CreateVpnGatewayRequest() :
     m_tagsHasBeenSet(false),
     m_cdcIdHasBeenSet(false),
     m_maxConnectionHasBeenSet(false),
-    m_bgpAsnHasBeenSet(false)
+    m_bgpAsnHasBeenSet(false),
+    m_isPrivateHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
+    m_bgpEnableHasBeenSet(false),
+    m_ipStackHasBeenSet(false),
+    m_accessSubnetHasBeenSet(false)
 {
 }
 
@@ -138,6 +143,46 @@ string CreateVpnGatewayRequest::ToJsonString() const
         string key = "BgpAsn";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_bgpAsn, allocator);
+    }
+
+    if (m_isPrivateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPrivate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isPrivate, allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bgpEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BgpEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bgpEnable, allocator);
+    }
+
+    if (m_ipStackHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpStack";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ipStack.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessSubnetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessSubnet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accessSubnet.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -322,6 +367,86 @@ void CreateVpnGatewayRequest::SetBgpAsn(const uint64_t& _bgpAsn)
 bool CreateVpnGatewayRequest::BgpAsnHasBeenSet() const
 {
     return m_bgpAsnHasBeenSet;
+}
+
+bool CreateVpnGatewayRequest::GetIsPrivate() const
+{
+    return m_isPrivate;
+}
+
+void CreateVpnGatewayRequest::SetIsPrivate(const bool& _isPrivate)
+{
+    m_isPrivate = _isPrivate;
+    m_isPrivateHasBeenSet = true;
+}
+
+bool CreateVpnGatewayRequest::IsPrivateHasBeenSet() const
+{
+    return m_isPrivateHasBeenSet;
+}
+
+string CreateVpnGatewayRequest::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void CreateVpnGatewayRequest::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool CreateVpnGatewayRequest::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
+}
+
+bool CreateVpnGatewayRequest::GetBgpEnable() const
+{
+    return m_bgpEnable;
+}
+
+void CreateVpnGatewayRequest::SetBgpEnable(const bool& _bgpEnable)
+{
+    m_bgpEnable = _bgpEnable;
+    m_bgpEnableHasBeenSet = true;
+}
+
+bool CreateVpnGatewayRequest::BgpEnableHasBeenSet() const
+{
+    return m_bgpEnableHasBeenSet;
+}
+
+string CreateVpnGatewayRequest::GetIpStack() const
+{
+    return m_ipStack;
+}
+
+void CreateVpnGatewayRequest::SetIpStack(const string& _ipStack)
+{
+    m_ipStack = _ipStack;
+    m_ipStackHasBeenSet = true;
+}
+
+bool CreateVpnGatewayRequest::IpStackHasBeenSet() const
+{
+    return m_ipStackHasBeenSet;
+}
+
+string CreateVpnGatewayRequest::GetAccessSubnet() const
+{
+    return m_accessSubnet;
+}
+
+void CreateVpnGatewayRequest::SetAccessSubnet(const string& _accessSubnet)
+{
+    m_accessSubnet = _accessSubnet;
+    m_accessSubnetHasBeenSet = true;
+}
+
+bool CreateVpnGatewayRequest::AccessSubnetHasBeenSet() const
+{
+    return m_accessSubnetHasBeenSet;
 }
 
 

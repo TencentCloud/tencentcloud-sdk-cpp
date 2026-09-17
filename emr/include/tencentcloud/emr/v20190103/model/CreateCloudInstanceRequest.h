@@ -533,6 +533,48 @@ namespace TencentCloud
                      */
                     bool TerminateProtectionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否启用emr-proxy</p><p>枚举值：</p><ul><li>true： 启用</li><li>false： 关闭</li></ul>
+                     * @return EnableEmrProxy <p>是否启用emr-proxy</p><p>枚举值：</p><ul><li>true： 启用</li><li>false： 关闭</li></ul>
+                     * 
+                     */
+                    bool GetEnableEmrProxy() const;
+
+                    /**
+                     * 设置<p>是否启用emr-proxy</p><p>枚举值：</p><ul><li>true： 启用</li><li>false： 关闭</li></ul>
+                     * @param _enableEmrProxy <p>是否启用emr-proxy</p><p>枚举值：</p><ul><li>true： 启用</li><li>false： 关闭</li></ul>
+                     * 
+                     */
+                    void SetEnableEmrProxy(const bool& _enableEmrProxy);
+
+                    /**
+                     * 判断参数 EnableEmrProxy 是否已赋值
+                     * @return EnableEmrProxy 是否已赋值
+                     * 
+                     */
+                    bool EnableEmrProxyHasBeenSet() const;
+
+                    /**
+                     * 获取<p>日志存储服务实例id</p>
+                     * @return LogStoreID <p>日志存储服务实例id</p>
+                     * 
+                     */
+                    std::string GetLogStoreID() const;
+
+                    /**
+                     * 设置<p>日志存储服务实例id</p>
+                     * @param _logStoreID <p>日志存储服务实例id</p>
+                     * 
+                     */
+                    void SetLogStoreID(const std::string& _logStoreID);
+
+                    /**
+                     * 判断参数 LogStoreID 是否已赋值
+                     * @return LogStoreID 是否已赋值
+                     * 
+                     */
+                    bool LogStoreIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -672,6 +714,18 @@ namespace TencentCloud
                      */
                     bool m_terminateProtection;
                     bool m_terminateProtectionHasBeenSet;
+
+                    /**
+                     * <p>是否启用emr-proxy</p><p>枚举值：</p><ul><li>true： 启用</li><li>false： 关闭</li></ul>
+                     */
+                    bool m_enableEmrProxy;
+                    bool m_enableEmrProxyHasBeenSet;
+
+                    /**
+                     * <p>日志存储服务实例id</p>
+                     */
+                    std::string m_logStoreID;
+                    bool m_logStoreIDHasBeenSet;
 
                 };
             }

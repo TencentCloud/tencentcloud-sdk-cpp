@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool HeadersHandlerHasBeenSet() const;
 
                     /**
-                     * 获取<p>HTTPService 缓存配置，包含Cache 节点缓存 / MaxAge 浏览器缓存 / CacheKey 自定义缓存键</p>
-                     * @return Cache <p>HTTPService 缓存配置，包含Cache 节点缓存 / MaxAge 浏览器缓存 / CacheKey 自定义缓存键</p>
+                     * 获取<p>HTTPService 缓存配置，仅限自定义域名配置。包含Cache 节点缓存 / MaxAge 浏览器缓存 / CacheKey 自定义缓存键</p>
+                     * @return Cache <p>HTTPService 缓存配置，仅限自定义域名配置。包含Cache 节点缓存 / MaxAge 浏览器缓存 / CacheKey 自定义缓存键</p>
                      * 
                      */
                     HTTPServiceCacheSet GetCache() const;
 
                     /**
-                     * 设置<p>HTTPService 缓存配置，包含Cache 节点缓存 / MaxAge 浏览器缓存 / CacheKey 自定义缓存键</p>
-                     * @param _cache <p>HTTPService 缓存配置，包含Cache 节点缓存 / MaxAge 浏览器缓存 / CacheKey 自定义缓存键</p>
+                     * 设置<p>HTTPService 缓存配置，仅限自定义域名配置。包含Cache 节点缓存 / MaxAge 浏览器缓存 / CacheKey 自定义缓存键</p>
+                     * @param _cache <p>HTTPService 缓存配置，仅限自定义域名配置。包含Cache 节点缓存 / MaxAge 浏览器缓存 / CacheKey 自定义缓存键</p>
                      * 
                      */
                     void SetCache(const HTTPServiceCacheSet& _cache);
@@ -99,7 +99,7 @@ namespace TencentCloud
                     bool m_headersHandlerHasBeenSet;
 
                     /**
-                     * <p>HTTPService 缓存配置，包含Cache 节点缓存 / MaxAge 浏览器缓存 / CacheKey 自定义缓存键</p>
+                     * <p>HTTPService 缓存配置，仅限自定义域名配置。包含Cache 节点缓存 / MaxAge 浏览器缓存 / CacheKey 自定义缓存键</p>
                      */
                     HTTPServiceCacheSet m_cache;
                     bool m_cacheHasBeenSet;

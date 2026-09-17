@@ -29,7 +29,7 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/ServerPushText.h
   include/tencentcloud/gme/v20180711/model/RoomUser.h
   include/tencentcloud/gme/v20180711/model/StartAIConversationResponse.h
-  include/tencentcloud/gme/v20180711/model/CreateScanUserRequest.h
+  include/tencentcloud/gme/v20180711/model/STTConfig.h
   include/tencentcloud/gme/v20180711/model/StartAIConversationRequest.h
   include/tencentcloud/gme/v20180711/model/DescribeScanResultListRequest.h
   include/tencentcloud/gme/v20180711/model/StartRecordRequest.h
@@ -92,9 +92,12 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/VoiceFilterConf.h
   include/tencentcloud/gme/v20180711/model/DescribeApplicationDataRequest.h
   include/tencentcloud/gme/v20180711/model/CreateScanUserResponse.h
+  include/tencentcloud/gme/v20180711/model/CreateAudioModerationSyncResponse.h
   include/tencentcloud/gme/v20180711/model/TurnDetection.h
+  include/tencentcloud/gme/v20180711/model/ModerationCheckDetail.h
   include/tencentcloud/gme/v20180711/model/VoicePrint.h
   include/tencentcloud/gme/v20180711/model/DeleteVoicePrintResponse.h
+  include/tencentcloud/gme/v20180711/model/CreateAudioModerationSyncRequest.h
   include/tencentcloud/gme/v20180711/model/ModifyUserMicStatusResponse.h
   include/tencentcloud/gme/v20180711/model/DescribeTaskInfoResponse.h
   include/tencentcloud/gme/v20180711/model/ApplicationDataStatistics.h
@@ -110,6 +113,7 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/DescribeAppStatisticsRequest.h
   include/tencentcloud/gme/v20180711/model/StopRecordRequest.h
   include/tencentcloud/gme/v20180711/model/CreateAppRequest.h
+  include/tencentcloud/gme/v20180711/model/AudioSegments.h
   include/tencentcloud/gme/v20180711/model/ControlAIConversationRequest.h
   include/tencentcloud/gme/v20180711/model/StatisticsItem.h
   include/tencentcloud/gme/v20180711/model/ScanVoiceResponse.h
@@ -118,11 +122,12 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/DescribeRealtimeScanConfigResponse.h
   include/tencentcloud/gme/v20180711/model/Task.h
   include/tencentcloud/gme/v20180711/model/DeleteRoomMemberRequest.h
+  include/tencentcloud/gme/v20180711/model/ImageLocation.h
   include/tencentcloud/gme/v20180711/model/CreateCustomizationRequest.h
   include/tencentcloud/gme/v20180711/model/UpdateScanRoomsRequest.h
   include/tencentcloud/gme/v20180711/model/DescribeRealtimeScanConfigRequest.h
   include/tencentcloud/gme/v20180711/model/InvokeLLM.h
-  include/tencentcloud/gme/v20180711/model/STTConfig.h
+  include/tencentcloud/gme/v20180711/model/CreateScanUserRequest.h
   include/tencentcloud/gme/v20180711/model/StreamTextStatisticsItem.h
   include/tencentcloud/gme/v20180711/model/DescribeAgeDetectTaskResponse.h
   include/tencentcloud/gme/v20180711/model/StopAIConversationRequest.h
@@ -155,7 +160,7 @@ set(gme_src
   src/v20180711/model/ServerPushText.cpp
   src/v20180711/model/RoomUser.cpp
   src/v20180711/model/StartAIConversationResponse.cpp
-  src/v20180711/model/CreateScanUserRequest.cpp
+  src/v20180711/model/STTConfig.cpp
   src/v20180711/model/StartAIConversationRequest.cpp
   src/v20180711/model/DescribeScanResultListRequest.cpp
   src/v20180711/model/StartRecordRequest.cpp
@@ -218,9 +223,12 @@ set(gme_src
   src/v20180711/model/VoiceFilterConf.cpp
   src/v20180711/model/DescribeApplicationDataRequest.cpp
   src/v20180711/model/CreateScanUserResponse.cpp
+  src/v20180711/model/CreateAudioModerationSyncResponse.cpp
   src/v20180711/model/TurnDetection.cpp
+  src/v20180711/model/ModerationCheckDetail.cpp
   src/v20180711/model/VoicePrint.cpp
   src/v20180711/model/DeleteVoicePrintResponse.cpp
+  src/v20180711/model/CreateAudioModerationSyncRequest.cpp
   src/v20180711/model/ModifyUserMicStatusResponse.cpp
   src/v20180711/model/DescribeTaskInfoResponse.cpp
   src/v20180711/model/ApplicationDataStatistics.cpp
@@ -236,6 +244,7 @@ set(gme_src
   src/v20180711/model/DescribeAppStatisticsRequest.cpp
   src/v20180711/model/StopRecordRequest.cpp
   src/v20180711/model/CreateAppRequest.cpp
+  src/v20180711/model/AudioSegments.cpp
   src/v20180711/model/ControlAIConversationRequest.cpp
   src/v20180711/model/StatisticsItem.cpp
   src/v20180711/model/ScanVoiceResponse.cpp
@@ -244,11 +253,12 @@ set(gme_src
   src/v20180711/model/DescribeRealtimeScanConfigResponse.cpp
   src/v20180711/model/Task.cpp
   src/v20180711/model/DeleteRoomMemberRequest.cpp
+  src/v20180711/model/ImageLocation.cpp
   src/v20180711/model/CreateCustomizationRequest.cpp
   src/v20180711/model/UpdateScanRoomsRequest.cpp
   src/v20180711/model/DescribeRealtimeScanConfigRequest.cpp
   src/v20180711/model/InvokeLLM.cpp
-  src/v20180711/model/STTConfig.cpp
+  src/v20180711/model/CreateScanUserRequest.cpp
   src/v20180711/model/StreamTextStatisticsItem.cpp
   src/v20180711/model/DescribeAgeDetectTaskResponse.cpp
   src/v20180711/model/StopAIConversationRequest.cpp

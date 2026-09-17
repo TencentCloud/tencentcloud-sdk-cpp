@@ -27,7 +27,8 @@ AdjustCdbProxyRequest::AdjustCdbProxyRequest() :
     m_proxyGroupIdHasBeenSet(false),
     m_proxyNodeCustomHasBeenSet(false),
     m_reloadBalanceHasBeenSet(false),
-    m_upgradeTimeHasBeenSet(false)
+    m_upgradeTimeHasBeenSet(false),
+    m_rollUpgradeWaitingTimeHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string AdjustCdbProxyRequest::ToJsonString() const
         string key = "UpgradeTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_upgradeTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rollUpgradeWaitingTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RollUpgradeWaitingTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rollUpgradeWaitingTime, allocator);
     }
 
 
@@ -171,6 +180,22 @@ void AdjustCdbProxyRequest::SetUpgradeTime(const string& _upgradeTime)
 bool AdjustCdbProxyRequest::UpgradeTimeHasBeenSet() const
 {
     return m_upgradeTimeHasBeenSet;
+}
+
+int64_t AdjustCdbProxyRequest::GetRollUpgradeWaitingTime() const
+{
+    return m_rollUpgradeWaitingTime;
+}
+
+void AdjustCdbProxyRequest::SetRollUpgradeWaitingTime(const int64_t& _rollUpgradeWaitingTime)
+{
+    m_rollUpgradeWaitingTime = _rollUpgradeWaitingTime;
+    m_rollUpgradeWaitingTimeHasBeenSet = true;
+}
+
+bool AdjustCdbProxyRequest::RollUpgradeWaitingTimeHasBeenSet() const
+{
+    return m_rollUpgradeWaitingTimeHasBeenSet;
 }
 
 

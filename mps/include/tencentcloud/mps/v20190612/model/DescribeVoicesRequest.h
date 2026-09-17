@@ -232,6 +232,48 @@ namespace TencentCloud
                     bool ScenesHasBeenSet() const;
 
                     /**
+                     * 获取<p>分页查询页码。从1开始，默认1</p>
+                     * @return PageNum <p>分页查询页码。从1开始，默认1</p>
+                     * 
+                     */
+                    int64_t GetPageNum() const;
+
+                    /**
+                     * 设置<p>分页查询页码。从1开始，默认1</p>
+                     * @param _pageNum <p>分页查询页码。从1开始，默认1</p>
+                     * 
+                     */
+                    void SetPageNum(const int64_t& _pageNum);
+
+                    /**
+                     * 判断参数 PageNum 是否已赋值
+                     * @return PageNum 是否已赋值
+                     * 
+                     */
+                    bool PageNumHasBeenSet() const;
+
+                    /**
+                     * 获取<p>页大小。不填默认返回所有符合条件数据</p>
+                     * @return PageSize <p>页大小。不填默认返回所有符合条件数据</p>
+                     * 
+                     */
+                    int64_t GetPageSize() const;
+
+                    /**
+                     * 设置<p>页大小。不填默认返回所有符合条件数据</p>
+                     * @param _pageSize <p>页大小。不填默认返回所有符合条件数据</p>
+                     * 
+                     */
+                    void SetPageSize(const int64_t& _pageSize);
+
+                    /**
+                     * 判断参数 PageSize 是否已赋值
+                     * @return PageSize 是否已赋值
+                     * 
+                     */
+                    bool PageSizeHasBeenSet() const;
+
+                    /**
                      * 获取<p>扩展参数，json字符串</p><p>其他筛选条件voiceName String 音色名，模糊匹配labels Array of String 标签，匹配包含这些标签的音色</p>
                      * @return ExtParam <p>扩展参数，json字符串</p><p>其他筛选条件voiceName String 音色名，模糊匹配labels Array of String 标签，匹配包含这些标签的音色</p>
                      * 
@@ -307,6 +349,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_scenes;
                     bool m_scenesHasBeenSet;
+
+                    /**
+                     * <p>分页查询页码。从1开始，默认1</p>
+                     */
+                    int64_t m_pageNum;
+                    bool m_pageNumHasBeenSet;
+
+                    /**
+                     * <p>页大小。不填默认返回所有符合条件数据</p>
+                     */
+                    int64_t m_pageSize;
+                    bool m_pageSizeHasBeenSet;
 
                     /**
                      * <p>扩展参数，json字符串</p><p>其他筛选条件voiceName String 音色名，模糊匹配labels Array of String 标签，匹配包含这些标签的音色</p>

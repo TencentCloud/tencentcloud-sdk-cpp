@@ -533,6 +533,48 @@ namespace TencentCloud
                      */
                     bool ProductNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>具备能力</p>
+                     * @return Capabilities <p>具备能力</p>
+                     * 
+                     */
+                    std::vector<std::string> GetCapabilities() const;
+
+                    /**
+                     * 设置<p>具备能力</p>
+                     * @param _capabilities <p>具备能力</p>
+                     * 
+                     */
+                    void SetCapabilities(const std::vector<std::string>& _capabilities);
+
+                    /**
+                     * 判断参数 Capabilities 是否已赋值
+                     * @return Capabilities 是否已赋值
+                     * 
+                     */
+                    bool CapabilitiesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否是免部署实例</p>
+                     * @return DeploymentFree <p>是否是免部署实例</p>
+                     * 
+                     */
+                    bool GetDeploymentFree() const;
+
+                    /**
+                     * 设置<p>是否是免部署实例</p>
+                     * @param _deploymentFree <p>是否是免部署实例</p>
+                     * 
+                     */
+                    void SetDeploymentFree(const bool& _deploymentFree);
+
+                    /**
+                     * 判断参数 DeploymentFree 是否已赋值
+                     * @return DeploymentFree 是否已赋值
+                     * 
+                     */
+                    bool DeploymentFreeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -672,6 +714,18 @@ namespace TencentCloud
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
+
+                    /**
+                     * <p>具备能力</p>
+                     */
+                    std::vector<std::string> m_capabilities;
+                    bool m_capabilitiesHasBeenSet;
+
+                    /**
+                     * <p>是否是免部署实例</p>
+                     */
+                    bool m_deploymentFree;
+                    bool m_deploymentFreeHasBeenSet;
 
                 };
             }

@@ -47,23 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人脸识别任务开关，可选值：
-<li>ON：开启智能人脸识别任务；</li>
-<li>OFF：关闭智能人脸识别任务。</li>
-                     * @return Switch 人脸识别任务开关，可选值：
-<li>ON：开启智能人脸识别任务；</li>
-<li>OFF：关闭智能人脸识别任务。</li>
+                     * 获取<p>人脸识别任务开关，可选值：</p><li>ON：开启智能人脸识别任务；</li><li>OFF：关闭智能人脸识别任务。</li>
+                     * @return Switch <p>人脸识别任务开关，可选值：</p><li>ON：开启智能人脸识别任务；</li><li>OFF：关闭智能人脸识别任务。</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置人脸识别任务开关，可选值：
-<li>ON：开启智能人脸识别任务；</li>
-<li>OFF：关闭智能人脸识别任务。</li>
-                     * @param _switch 人脸识别任务开关，可选值：
-<li>ON：开启智能人脸识别任务；</li>
-<li>OFF：关闭智能人脸识别任务。</li>
+                     * 设置<p>人脸识别任务开关，可选值：</p><li>ON：开启智能人脸识别任务；</li><li>OFF：关闭智能人脸识别任务。</li>
+                     * @param _switch <p>人脸识别任务开关，可选值：</p><li>ON：开启智能人脸识别任务；</li><li>OFF：关闭智能人脸识别任务。</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,15 +68,15 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取人脸识别过滤分数，当识别结果达到该分数以上，返回识别结果。取值范围：0-100。
-                     * @return Score 人脸识别过滤分数，当识别结果达到该分数以上，返回识别结果。取值范围：0-100。
+                     * 获取<p>人脸识别过滤分数，当识别结果达到该分数以上，返回识别结果。取值范围：0-100。</p>
+                     * @return Score <p>人脸识别过滤分数，当识别结果达到该分数以上，返回识别结果。取值范围：0-100。</p>
                      * 
                      */
                     double GetScore() const;
 
                     /**
-                     * 设置人脸识别过滤分数，当识别结果达到该分数以上，返回识别结果。取值范围：0-100。
-                     * @param _score 人脸识别过滤分数，当识别结果达到该分数以上，返回识别结果。取值范围：0-100。
+                     * 设置<p>人脸识别过滤分数，当识别结果达到该分数以上，返回识别结果。取值范围：0-100。</p>
+                     * @param _score <p>人脸识别过滤分数，当识别结果达到该分数以上，返回识别结果。取值范围：0-100。</p>
                      * 
                      */
                     void SetScore(const double& _score);
@@ -97,27 +89,15 @@ namespace TencentCloud
                     bool ScoreHasBeenSet() const;
 
                     /**
-                     * 获取默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：
-<li>entertainment：娱乐明星；</li>
-<li>sport：体育明星；</li>
-<li>politician：相关人物。</li>
-                     * @return DefaultLibraryLabelSet 默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：
-<li>entertainment：娱乐明星；</li>
-<li>sport：体育明星；</li>
-<li>politician：相关人物。</li>
+                     * 获取<p>默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：</p><li>entertainment：娱乐明星；</li><li>sport：体育明星；</li><li>politician：相关人物。</li>
+                     * @return DefaultLibraryLabelSet <p>默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：</p><li>entertainment：娱乐明星；</li><li>sport：体育明星；</li><li>politician：相关人物。</li>
                      * 
                      */
                     std::vector<std::string> GetDefaultLibraryLabelSet() const;
 
                     /**
-                     * 设置默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：
-<li>entertainment：娱乐明星；</li>
-<li>sport：体育明星；</li>
-<li>politician：相关人物。</li>
-                     * @param _defaultLibraryLabelSet 默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：
-<li>entertainment：娱乐明星；</li>
-<li>sport：体育明星；</li>
-<li>politician：相关人物。</li>
+                     * 设置<p>默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：</p><li>entertainment：娱乐明星；</li><li>sport：体育明星；</li><li>politician：相关人物。</li>
+                     * @param _defaultLibraryLabelSet <p>默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：</p><li>entertainment：娱乐明星；</li><li>sport：体育明星；</li><li>politician：相关人物。</li>
                      * 
                      */
                     void SetDefaultLibraryLabelSet(const std::vector<std::string>& _defaultLibraryLabelSet);
@@ -130,19 +110,15 @@ namespace TencentCloud
                     bool DefaultLibraryLabelSetHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义人物过滤标签，指定需要返回的用户自定义人物的标签。如果未填或者为空，则全部自定义人物结果都返回。
-标签个数最多 100 个，每个标签长度最多 16 个字符。
-                     * @return UserDefineLibraryLabelSet 用户自定义人物过滤标签，指定需要返回的用户自定义人物的标签。如果未填或者为空，则全部自定义人物结果都返回。
-标签个数最多 100 个，每个标签长度最多 16 个字符。
+                     * 获取<p>用户自定义人物过滤标签，指定需要返回的用户自定义人物的标签。如果未填或者为空，则全部自定义人物结果都返回。<br>标签个数最多 100 个，每个标签长度最多 16 个字符。</p>
+                     * @return UserDefineLibraryLabelSet <p>用户自定义人物过滤标签，指定需要返回的用户自定义人物的标签。如果未填或者为空，则全部自定义人物结果都返回。<br>标签个数最多 100 个，每个标签长度最多 16 个字符。</p>
                      * 
                      */
                     std::vector<std::string> GetUserDefineLibraryLabelSet() const;
 
                     /**
-                     * 设置用户自定义人物过滤标签，指定需要返回的用户自定义人物的标签。如果未填或者为空，则全部自定义人物结果都返回。
-标签个数最多 100 个，每个标签长度最多 16 个字符。
-                     * @param _userDefineLibraryLabelSet 用户自定义人物过滤标签，指定需要返回的用户自定义人物的标签。如果未填或者为空，则全部自定义人物结果都返回。
-标签个数最多 100 个，每个标签长度最多 16 个字符。
+                     * 设置<p>用户自定义人物过滤标签，指定需要返回的用户自定义人物的标签。如果未填或者为空，则全部自定义人物结果都返回。<br>标签个数最多 100 个，每个标签长度最多 16 个字符。</p>
+                     * @param _userDefineLibraryLabelSet <p>用户自定义人物过滤标签，指定需要返回的用户自定义人物的标签。如果未填或者为空，则全部自定义人物结果都返回。<br>标签个数最多 100 个，每个标签长度最多 16 个字符。</p>
                      * 
                      */
                     void SetUserDefineLibraryLabelSet(const std::vector<std::string>& _userDefineLibraryLabelSet);
@@ -155,27 +131,15 @@ namespace TencentCloud
                     bool UserDefineLibraryLabelSetHasBeenSet() const;
 
                     /**
-                     * 获取人物库选择，可选值：
-<li>Default：使用默认人物库；</li>
-<li>UserDefine：使用用户自定义人物库。</li>
-<li>All：同时使用默认人物库和用户自定义人物库。</li>
-                     * @return FaceLibrary 人物库选择，可选值：
-<li>Default：使用默认人物库；</li>
-<li>UserDefine：使用用户自定义人物库。</li>
-<li>All：同时使用默认人物库和用户自定义人物库。</li>
+                     * 获取<p>人物库选择，可选值：</p><li>Default：使用默认人物库；</li><li>UserDefine：使用用户自定义人物库。</li><li>All：同时使用默认人物库和用户自定义人物库。</li>
+                     * @return FaceLibrary <p>人物库选择，可选值：</p><li>Default：使用默认人物库；</li><li>UserDefine：使用用户自定义人物库。</li><li>All：同时使用默认人物库和用户自定义人物库。</li>
                      * 
                      */
                     std::string GetFaceLibrary() const;
 
                     /**
-                     * 设置人物库选择，可选值：
-<li>Default：使用默认人物库；</li>
-<li>UserDefine：使用用户自定义人物库。</li>
-<li>All：同时使用默认人物库和用户自定义人物库。</li>
-                     * @param _faceLibrary 人物库选择，可选值：
-<li>Default：使用默认人物库；</li>
-<li>UserDefine：使用用户自定义人物库。</li>
-<li>All：同时使用默认人物库和用户自定义人物库。</li>
+                     * 设置<p>人物库选择，可选值：</p><li>Default：使用默认人物库；</li><li>UserDefine：使用用户自定义人物库。</li><li>All：同时使用默认人物库和用户自定义人物库。</li>
+                     * @param _faceLibrary <p>人物库选择，可选值：</p><li>Default：使用默认人物库；</li><li>UserDefine：使用用户自定义人物库。</li><li>All：同时使用默认人物库和用户自定义人物库。</li>
                      * 
                      */
                     void SetFaceLibrary(const std::string& _faceLibrary);
@@ -190,40 +154,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 人脸识别任务开关，可选值：
-<li>ON：开启智能人脸识别任务；</li>
-<li>OFF：关闭智能人脸识别任务。</li>
+                     * <p>人脸识别任务开关，可选值：</p><li>ON：开启智能人脸识别任务；</li><li>OFF：关闭智能人脸识别任务。</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 人脸识别过滤分数，当识别结果达到该分数以上，返回识别结果。取值范围：0-100。
+                     * <p>人脸识别过滤分数，当识别结果达到该分数以上，返回识别结果。取值范围：0-100。</p>
                      */
                     double m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
-                     * 默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：
-<li>entertainment：娱乐明星；</li>
-<li>sport：体育明星；</li>
-<li>politician：相关人物。</li>
+                     * <p>默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：</p><li>entertainment：娱乐明星；</li><li>sport：体育明星；</li><li>politician：相关人物。</li>
                      */
                     std::vector<std::string> m_defaultLibraryLabelSet;
                     bool m_defaultLibraryLabelSetHasBeenSet;
 
                     /**
-                     * 用户自定义人物过滤标签，指定需要返回的用户自定义人物的标签。如果未填或者为空，则全部自定义人物结果都返回。
-标签个数最多 100 个，每个标签长度最多 16 个字符。
+                     * <p>用户自定义人物过滤标签，指定需要返回的用户自定义人物的标签。如果未填或者为空，则全部自定义人物结果都返回。<br>标签个数最多 100 个，每个标签长度最多 16 个字符。</p>
                      */
                     std::vector<std::string> m_userDefineLibraryLabelSet;
                     bool m_userDefineLibraryLabelSetHasBeenSet;
 
                     /**
-                     * 人物库选择，可选值：
-<li>Default：使用默认人物库；</li>
-<li>UserDefine：使用用户自定义人物库。</li>
-<li>All：同时使用默认人物库和用户自定义人物库。</li>
+                     * <p>人物库选择，可选值：</p><li>Default：使用默认人物库；</li><li>UserDefine：使用用户自定义人物库。</li><li>All：同时使用默认人物库和用户自定义人物库。</li>
                      */
                     std::string m_faceLibrary;
                     bool m_faceLibraryHasBeenSet;

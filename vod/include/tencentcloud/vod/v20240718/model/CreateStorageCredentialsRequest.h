@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<b>点播专业版[应用](/document/product/266/14574) ID。</b>
-                     * @return SubAppId <b>点播专业版[应用](/document/product/266/14574) ID。</b>
+                     * 获取<p><b>点播专业版<a href="/document/product/266/14574">应用</a> ID。</b></p>
+                     * @return SubAppId <p><b>点播专业版<a href="/document/product/266/14574">应用</a> ID。</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>点播专业版[应用](/document/product/266/14574) ID。</b>
-                     * @param _subAppId <b>点播专业版[应用](/document/product/266/14574) ID。</b>
+                     * 设置<p><b>点播专业版<a href="/document/product/266/14574">应用</a> ID。</b></p>
+                     * @param _subAppId <p><b>点播专业版<a href="/document/product/266/14574">应用</a> ID。</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -64,35 +64,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取按照下方语法组装好策略后，先序列化为字符串，再做 URL Encode，结果作为 Policy 字段入参。服务端会对该字段做 URL Decode，并按解析后的策略授予临时访问凭证权限，请按规范传入参数。
-注意： 
-1.策略语法参照[访问管理策略](/document/product/598/10603)。
-2.策略中不能包含 principal 元素。
-3.策略的 action 元素仅支持：<li>name/vod:PutObject;</li><li>name/vod:ListParts;</li><li>name/vod:PostObject;</li><li>name/vod:InitiateMultipartUpload;</li><li>name/vod:UploadPart;</li><li>name/vod:CompleteMultipartUpload;</li><li>name/vod:AbortMultipartUpload;</li><li>name/vod:ListMultipartUploads;</li>4.策略的 resource 元素填写格式为：`qcs::vod:[存储地域]:uid/[账号AppID]:prefix//[点播应用ID]/[存储桶ID]/[存储路径]`，其中存储地域、账号 AppID、点播应用 ID、存储桶 ID 和存储路径要按需填写，其他内容不允许改动，例：`qcs:ap-chongqing:vod::uid/1231456789:prefix//1234567890/2ceds3ew323w3mu/file_path`。
-
-                     * @return Policy 按照下方语法组装好策略后，先序列化为字符串，再做 URL Encode，结果作为 Policy 字段入参。服务端会对该字段做 URL Decode，并按解析后的策略授予临时访问凭证权限，请按规范传入参数。
-注意： 
-1.策略语法参照[访问管理策略](/document/product/598/10603)。
-2.策略中不能包含 principal 元素。
-3.策略的 action 元素仅支持：<li>name/vod:PutObject;</li><li>name/vod:ListParts;</li><li>name/vod:PostObject;</li><li>name/vod:InitiateMultipartUpload;</li><li>name/vod:UploadPart;</li><li>name/vod:CompleteMultipartUpload;</li><li>name/vod:AbortMultipartUpload;</li><li>name/vod:ListMultipartUploads;</li>4.策略的 resource 元素填写格式为：`qcs::vod:[存储地域]:uid/[账号AppID]:prefix//[点播应用ID]/[存储桶ID]/[存储路径]`，其中存储地域、账号 AppID、点播应用 ID、存储桶 ID 和存储路径要按需填写，其他内容不允许改动，例：`qcs:ap-chongqing:vod::uid/1231456789:prefix//1234567890/2ceds3ew323w3mu/file_path`。
-
+                     * 获取<p>按照下方语法组装好策略后，先序列化为字符串，再做 URL Encode，结果作为 Policy 字段入参。服务端会对该字段做 URL Decode，并按解析后的策略授予临时访问凭证权限，请按规范传入参数。<br>注意：<br>1.策略语法参照<a href="/document/product/598/10603">访问管理策略</a>。<br>2.策略中不能包含 principal 元素。<br>3.策略的 action 元素仅支持：<li>name/vod:PutObject;</li><li>name/vod:ListParts;</li><li>name/vod:PostObject;</li><li>name/vod:InitiateMultipartUpload;</li><li>name/vod:UploadPart;</li><li>name/vod:CompleteMultipartUpload;</li><li>name/vod:AbortMultipartUpload;</li><li>name/vod:ListMultipartUploads;</li>4.策略的 resource 元素填写格式为：<code>qcs::vod:[存储地域]:uid/[账号AppID]:prefix//[点播应用ID]/[存储桶ID]/[存储路径]</code>，其中存储地域、账号 AppID、点播应用 ID、存储桶 ID 和存储路径要按需填写，其他内容不允许改动，例：<code>qcs:ap-chongqing:vod::uid/1231456789:prefix//1234567890/2ceds3ew323w3mu/file_path</code>。</p>
+                     * @return Policy <p>按照下方语法组装好策略后，先序列化为字符串，再做 URL Encode，结果作为 Policy 字段入参。服务端会对该字段做 URL Decode，并按解析后的策略授予临时访问凭证权限，请按规范传入参数。<br>注意：<br>1.策略语法参照<a href="/document/product/598/10603">访问管理策略</a>。<br>2.策略中不能包含 principal 元素。<br>3.策略的 action 元素仅支持：<li>name/vod:PutObject;</li><li>name/vod:ListParts;</li><li>name/vod:PostObject;</li><li>name/vod:InitiateMultipartUpload;</li><li>name/vod:UploadPart;</li><li>name/vod:CompleteMultipartUpload;</li><li>name/vod:AbortMultipartUpload;</li><li>name/vod:ListMultipartUploads;</li>4.策略的 resource 元素填写格式为：<code>qcs::vod:[存储地域]:uid/[账号AppID]:prefix//[点播应用ID]/[存储桶ID]/[存储路径]</code>，其中存储地域、账号 AppID、点播应用 ID、存储桶 ID 和存储路径要按需填写，其他内容不允许改动，例：<code>qcs:ap-chongqing:vod::uid/1231456789:prefix//1234567890/2ceds3ew323w3mu/file_path</code>。</p>
                      * 
                      */
                     std::string GetPolicy() const;
 
                     /**
-                     * 设置按照下方语法组装好策略后，先序列化为字符串，再做 URL Encode，结果作为 Policy 字段入参。服务端会对该字段做 URL Decode，并按解析后的策略授予临时访问凭证权限，请按规范传入参数。
-注意： 
-1.策略语法参照[访问管理策略](/document/product/598/10603)。
-2.策略中不能包含 principal 元素。
-3.策略的 action 元素仅支持：<li>name/vod:PutObject;</li><li>name/vod:ListParts;</li><li>name/vod:PostObject;</li><li>name/vod:InitiateMultipartUpload;</li><li>name/vod:UploadPart;</li><li>name/vod:CompleteMultipartUpload;</li><li>name/vod:AbortMultipartUpload;</li><li>name/vod:ListMultipartUploads;</li>4.策略的 resource 元素填写格式为：`qcs::vod:[存储地域]:uid/[账号AppID]:prefix//[点播应用ID]/[存储桶ID]/[存储路径]`，其中存储地域、账号 AppID、点播应用 ID、存储桶 ID 和存储路径要按需填写，其他内容不允许改动，例：`qcs:ap-chongqing:vod::uid/1231456789:prefix//1234567890/2ceds3ew323w3mu/file_path`。
-
-                     * @param _policy 按照下方语法组装好策略后，先序列化为字符串，再做 URL Encode，结果作为 Policy 字段入参。服务端会对该字段做 URL Decode，并按解析后的策略授予临时访问凭证权限，请按规范传入参数。
-注意： 
-1.策略语法参照[访问管理策略](/document/product/598/10603)。
-2.策略中不能包含 principal 元素。
-3.策略的 action 元素仅支持：<li>name/vod:PutObject;</li><li>name/vod:ListParts;</li><li>name/vod:PostObject;</li><li>name/vod:InitiateMultipartUpload;</li><li>name/vod:UploadPart;</li><li>name/vod:CompleteMultipartUpload;</li><li>name/vod:AbortMultipartUpload;</li><li>name/vod:ListMultipartUploads;</li>4.策略的 resource 元素填写格式为：`qcs::vod:[存储地域]:uid/[账号AppID]:prefix//[点播应用ID]/[存储桶ID]/[存储路径]`，其中存储地域、账号 AppID、点播应用 ID、存储桶 ID 和存储路径要按需填写，其他内容不允许改动，例：`qcs:ap-chongqing:vod::uid/1231456789:prefix//1234567890/2ceds3ew323w3mu/file_path`。
-
+                     * 设置<p>按照下方语法组装好策略后，先序列化为字符串，再做 URL Encode，结果作为 Policy 字段入参。服务端会对该字段做 URL Decode，并按解析后的策略授予临时访问凭证权限，请按规范传入参数。<br>注意：<br>1.策略语法参照<a href="/document/product/598/10603">访问管理策略</a>。<br>2.策略中不能包含 principal 元素。<br>3.策略的 action 元素仅支持：<li>name/vod:PutObject;</li><li>name/vod:ListParts;</li><li>name/vod:PostObject;</li><li>name/vod:InitiateMultipartUpload;</li><li>name/vod:UploadPart;</li><li>name/vod:CompleteMultipartUpload;</li><li>name/vod:AbortMultipartUpload;</li><li>name/vod:ListMultipartUploads;</li>4.策略的 resource 元素填写格式为：<code>qcs::vod:[存储地域]:uid/[账号AppID]:prefix//[点播应用ID]/[存储桶ID]/[存储路径]</code>，其中存储地域、账号 AppID、点播应用 ID、存储桶 ID 和存储路径要按需填写，其他内容不允许改动，例：<code>qcs:ap-chongqing:vod::uid/1231456789:prefix//1234567890/2ceds3ew323w3mu/file_path</code>。</p>
+                     * @param _policy <p>按照下方语法组装好策略后，先序列化为字符串，再做 URL Encode，结果作为 Policy 字段入参。服务端会对该字段做 URL Decode，并按解析后的策略授予临时访问凭证权限，请按规范传入参数。<br>注意：<br>1.策略语法参照<a href="/document/product/598/10603">访问管理策略</a>。<br>2.策略中不能包含 principal 元素。<br>3.策略的 action 元素仅支持：<li>name/vod:PutObject;</li><li>name/vod:ListParts;</li><li>name/vod:PostObject;</li><li>name/vod:InitiateMultipartUpload;</li><li>name/vod:UploadPart;</li><li>name/vod:CompleteMultipartUpload;</li><li>name/vod:AbortMultipartUpload;</li><li>name/vod:ListMultipartUploads;</li>4.策略的 resource 元素填写格式为：<code>qcs::vod:[存储地域]:uid/[账号AppID]:prefix//[点播应用ID]/[存储桶ID]/[存储路径]</code>，其中存储地域、账号 AppID、点播应用 ID、存储桶 ID 和存储路径要按需填写，其他内容不允许改动，例：<code>qcs:ap-chongqing:vod::uid/1231456789:prefix//1234567890/2ceds3ew323w3mu/file_path</code>。</p>
                      * 
                      */
                     void SetPolicy(const std::string& _policy);
@@ -105,19 +85,15 @@ namespace TencentCloud
                     bool PolicyHasBeenSet() const;
 
                     /**
-                     * 获取指定临时证书的有效期，单位：秒。
-默认 1800 秒，最大 129600 秒。
-                     * @return DurationSeconds 指定临时证书的有效期，单位：秒。
-默认 1800 秒，最大 129600 秒。
+                     * 获取<p>指定临时证书的有效期，单位：秒。<br>默认 1800 秒，最大 129600 秒。</p>
+                     * @return DurationSeconds <p>指定临时证书的有效期，单位：秒。<br>默认 1800 秒，最大 129600 秒。</p>
                      * 
                      */
                     uint64_t GetDurationSeconds() const;
 
                     /**
-                     * 设置指定临时证书的有效期，单位：秒。
-默认 1800 秒，最大 129600 秒。
-                     * @param _durationSeconds 指定临时证书的有效期，单位：秒。
-默认 1800 秒，最大 129600 秒。
+                     * 设置<p>指定临时证书的有效期，单位：秒。<br>默认 1800 秒，最大 129600 秒。</p>
+                     * @param _durationSeconds <p>指定临时证书的有效期，单位：秒。<br>默认 1800 秒，最大 129600 秒。</p>
                      * 
                      */
                     void SetDurationSeconds(const uint64_t& _durationSeconds);
@@ -132,25 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <b>点播专业版[应用](/document/product/266/14574) ID。</b>
+                     * <p><b>点播专业版<a href="/document/product/266/14574">应用</a> ID。</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 按照下方语法组装好策略后，先序列化为字符串，再做 URL Encode，结果作为 Policy 字段入参。服务端会对该字段做 URL Decode，并按解析后的策略授予临时访问凭证权限，请按规范传入参数。
-注意： 
-1.策略语法参照[访问管理策略](/document/product/598/10603)。
-2.策略中不能包含 principal 元素。
-3.策略的 action 元素仅支持：<li>name/vod:PutObject;</li><li>name/vod:ListParts;</li><li>name/vod:PostObject;</li><li>name/vod:InitiateMultipartUpload;</li><li>name/vod:UploadPart;</li><li>name/vod:CompleteMultipartUpload;</li><li>name/vod:AbortMultipartUpload;</li><li>name/vod:ListMultipartUploads;</li>4.策略的 resource 元素填写格式为：`qcs::vod:[存储地域]:uid/[账号AppID]:prefix//[点播应用ID]/[存储桶ID]/[存储路径]`，其中存储地域、账号 AppID、点播应用 ID、存储桶 ID 和存储路径要按需填写，其他内容不允许改动，例：`qcs:ap-chongqing:vod::uid/1231456789:prefix//1234567890/2ceds3ew323w3mu/file_path`。
-
+                     * <p>按照下方语法组装好策略后，先序列化为字符串，再做 URL Encode，结果作为 Policy 字段入参。服务端会对该字段做 URL Decode，并按解析后的策略授予临时访问凭证权限，请按规范传入参数。<br>注意：<br>1.策略语法参照<a href="/document/product/598/10603">访问管理策略</a>。<br>2.策略中不能包含 principal 元素。<br>3.策略的 action 元素仅支持：<li>name/vod:PutObject;</li><li>name/vod:ListParts;</li><li>name/vod:PostObject;</li><li>name/vod:InitiateMultipartUpload;</li><li>name/vod:UploadPart;</li><li>name/vod:CompleteMultipartUpload;</li><li>name/vod:AbortMultipartUpload;</li><li>name/vod:ListMultipartUploads;</li>4.策略的 resource 元素填写格式为：<code>qcs::vod:[存储地域]:uid/[账号AppID]:prefix//[点播应用ID]/[存储桶ID]/[存储路径]</code>，其中存储地域、账号 AppID、点播应用 ID、存储桶 ID 和存储路径要按需填写，其他内容不允许改动，例：<code>qcs:ap-chongqing:vod::uid/1231456789:prefix//1234567890/2ceds3ew323w3mu/file_path</code>。</p>
                      */
                     std::string m_policy;
                     bool m_policyHasBeenSet;
 
                     /**
-                     * 指定临时证书的有效期，单位：秒。
-默认 1800 秒，最大 129600 秒。
+                     * <p>指定临时证书的有效期，单位：秒。<br>默认 1800 秒，最大 129600 秒。</p>
                      */
                     uint64_t m_durationSeconds;
                     bool m_durationSecondsHasBeenSet;

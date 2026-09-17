@@ -44,6 +44,10 @@
 #include <tencentcloud/rce/v20260130/model/InvitationEvent.h>
 #include <tencentcloud/rce/v20260130/model/ClaimRedPacketEvent.h>
 #include <tencentcloud/rce/v20260130/model/BrowseEvent.h>
+#include <tencentcloud/rce/v20260130/model/ChatEvent.h>
+#include <tencentcloud/rce/v20260130/model/ModifyRoleEvent.h>
+#include <tencentcloud/rce/v20260130/model/AddFriendEvent.h>
+#include <tencentcloud/rce/v20260130/model/ModifyGuildEvent.h>
 
 
 namespace TencentCloud
@@ -486,6 +490,90 @@ namespace TencentCloud
                      */
                     bool BrowseHasBeenSet() const;
 
+                    /**
+                     * 获取<p>聊天消息</p>
+                     * @return Chat <p>聊天消息</p>
+                     * 
+                     */
+                    ChatEvent GetChat() const;
+
+                    /**
+                     * 设置<p>聊天消息</p>
+                     * @param _chat <p>聊天消息</p>
+                     * 
+                     */
+                    void SetChat(const ChatEvent& _chat);
+
+                    /**
+                     * 判断参数 Chat 是否已赋值
+                     * @return Chat 是否已赋值
+                     * 
+                     */
+                    bool ChatHasBeenSet() const;
+
+                    /**
+                     * 获取<p>编辑角色资料</p>
+                     * @return ModifyRole <p>编辑角色资料</p>
+                     * 
+                     */
+                    ModifyRoleEvent GetModifyRole() const;
+
+                    /**
+                     * 设置<p>编辑角色资料</p>
+                     * @param _modifyRole <p>编辑角色资料</p>
+                     * 
+                     */
+                    void SetModifyRole(const ModifyRoleEvent& _modifyRole);
+
+                    /**
+                     * 判断参数 ModifyRole 是否已赋值
+                     * @return ModifyRole 是否已赋值
+                     * 
+                     */
+                    bool ModifyRoleHasBeenSet() const;
+
+                    /**
+                     * 获取<p>添加好友</p>
+                     * @return AddFriend <p>添加好友</p>
+                     * 
+                     */
+                    AddFriendEvent GetAddFriend() const;
+
+                    /**
+                     * 设置<p>添加好友</p>
+                     * @param _addFriend <p>添加好友</p>
+                     * 
+                     */
+                    void SetAddFriend(const AddFriendEvent& _addFriend);
+
+                    /**
+                     * 判断参数 AddFriend 是否已赋值
+                     * @return AddFriend 是否已赋值
+                     * 
+                     */
+                    bool AddFriendHasBeenSet() const;
+
+                    /**
+                     * 获取<p>编辑公会资料</p>
+                     * @return ModifyGuild <p>编辑公会资料</p>
+                     * 
+                     */
+                    ModifyGuildEvent GetModifyGuild() const;
+
+                    /**
+                     * 设置<p>编辑公会资料</p>
+                     * @param _modifyGuild <p>编辑公会资料</p>
+                     * 
+                     */
+                    void SetModifyGuild(const ModifyGuildEvent& _modifyGuild);
+
+                    /**
+                     * 判断参数 ModifyGuild 是否已赋值
+                     * @return ModifyGuild 是否已赋值
+                     * 
+                     */
+                    bool ModifyGuildHasBeenSet() const;
+
                 private:
 
                     /**
@@ -607,6 +695,30 @@ namespace TencentCloud
                      */
                     BrowseEvent m_browse;
                     bool m_browseHasBeenSet;
+
+                    /**
+                     * <p>聊天消息</p>
+                     */
+                    ChatEvent m_chat;
+                    bool m_chatHasBeenSet;
+
+                    /**
+                     * <p>编辑角色资料</p>
+                     */
+                    ModifyRoleEvent m_modifyRole;
+                    bool m_modifyRoleHasBeenSet;
+
+                    /**
+                     * <p>添加好友</p>
+                     */
+                    AddFriendEvent m_addFriend;
+                    bool m_addFriendHasBeenSet;
+
+                    /**
+                     * <p>编辑公会资料</p>
+                     */
+                    ModifyGuildEvent m_modifyGuild;
+                    bool m_modifyGuildHasBeenSet;
 
                 };
             }

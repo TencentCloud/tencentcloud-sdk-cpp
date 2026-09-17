@@ -35,6 +35,7 @@ TrainingJobInstance::TrainingJobInstance() :
     m_resourcePartitionIdHasBeenSet(false),
     m_resourcePartitionNameHasBeenSet(false),
     m_queueHasBeenSet(false),
+    m_queueAliasHasBeenSet(false),
     m_runtimeEnvHasBeenSet(false),
     m_entrypointHasBeenSet(false),
     m_imageHasBeenSet(false),
@@ -199,6 +200,16 @@ CoreInternalOutcome TrainingJobInstance::Deserialize(const rapidjson::Value &val
         }
         m_queue = string(value["Queue"].GetString());
         m_queueHasBeenSet = true;
+    }
+
+    if (value.HasMember("QueueAlias") && !value["QueueAlias"].IsNull())
+    {
+        if (!value["QueueAlias"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingJobInstance.QueueAlias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_queueAlias = string(value["QueueAlias"].GetString());
+        m_queueAliasHasBeenSet = true;
     }
 
     if (value.HasMember("RuntimeEnv") && !value["RuntimeEnv"].IsNull())
@@ -539,6 +550,14 @@ void TrainingJobInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Queue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_queue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queueAliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueAlias";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queueAlias.c_str(), allocator).Move(), allocator);
     }
 
     if (m_runtimeEnvHasBeenSet)
@@ -927,6 +946,22 @@ void TrainingJobInstance::SetQueue(const string& _queue)
 bool TrainingJobInstance::QueueHasBeenSet() const
 {
     return m_queueHasBeenSet;
+}
+
+string TrainingJobInstance::GetQueueAlias() const
+{
+    return m_queueAlias;
+}
+
+void TrainingJobInstance::SetQueueAlias(const string& _queueAlias)
+{
+    m_queueAlias = _queueAlias;
+    m_queueAliasHasBeenSet = true;
+}
+
+bool TrainingJobInstance::QueueAliasHasBeenSet() const
+{
+    return m_queueAliasHasBeenSet;
 }
 
 string TrainingJobInstance::GetRuntimeEnv() const

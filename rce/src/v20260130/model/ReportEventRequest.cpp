@@ -38,7 +38,8 @@ ReportEventRequest::ReportEventRequest() :
     m_userPhoneEncryptHasBeenSet(false),
     m_weChatOpenIdHasBeenSet(false),
     m_qQOpenIdHasBeenSet(false),
-    m_qQAppIdHasBeenSet(false)
+    m_qQAppIdHasBeenSet(false),
+    m_businessIdHasBeenSet(false)
 {
 }
 
@@ -179,6 +180,14 @@ string ReportEventRequest::ToJsonString() const
         string key = "QQAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_qQAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_businessIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_businessId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -443,6 +452,22 @@ void ReportEventRequest::SetQQAppId(const string& _qQAppId)
 bool ReportEventRequest::QQAppIdHasBeenSet() const
 {
     return m_qQAppIdHasBeenSet;
+}
+
+string ReportEventRequest::GetBusinessId() const
+{
+    return m_businessId;
+}
+
+void ReportEventRequest::SetBusinessId(const string& _businessId)
+{
+    m_businessId = _businessId;
+    m_businessIdHasBeenSet = true;
+}
+
+bool ReportEventRequest::BusinessIdHasBeenSet() const
+{
+    return m_businessIdHasBeenSet;
 }
 
 

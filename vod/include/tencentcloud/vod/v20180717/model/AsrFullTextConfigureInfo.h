@@ -48,23 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取语音全文识别任务开关，可选值：
-<li>ON：开启智能语音全文识别任务；</li>
-<li>OFF：关闭智能语音全文识别任务。</li>
-                     * @return Switch 语音全文识别任务开关，可选值：
-<li>ON：开启智能语音全文识别任务；</li>
-<li>OFF：关闭智能语音全文识别任务。</li>
+                     * 获取<p>语音全文识别任务开关，可选值：</p><li>ON：开启智能语音全文识别任务；</li><li>OFF：关闭智能语音全文识别任务。</li>
+                     * @return Switch <p>语音全文识别任务开关，可选值：</p><li>ON：开启智能语音全文识别任务；</li><li>OFF：关闭智能语音全文识别任务。</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置语音全文识别任务开关，可选值：
-<li>ON：开启智能语音全文识别任务；</li>
-<li>OFF：关闭智能语音全文识别任务。</li>
-                     * @param _switch 语音全文识别任务开关，可选值：
-<li>ON：开启智能语音全文识别任务；</li>
-<li>OFF：关闭智能语音全文识别任务。</li>
+                     * 设置<p>语音全文识别任务开关，可选值：</p><li>ON：开启智能语音全文识别任务；</li><li>OFF：关闭智能语音全文识别任务。</li>
+                     * @param _switch <p>语音全文识别任务开关，可选值：</p><li>ON：开启智能语音全文识别任务；</li><li>OFF：关闭智能语音全文识别任务。</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -77,23 +69,15 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取生成的字幕文件格式列表，不填或者填空数组表示不生成字幕文件，可选值：
-<li>vtt：生成 WebVTT 字幕文件；</li>
-<li>srt：生成 SRT 字幕文件。</li><font color=red>注意：</font>云点播媒资信息仅支持添加 vtt 字幕，因此当且仅当 SubtitleFormats 包含 vtt 时，云点播将生成的字幕添加到媒资。
-                     * @return SubtitleFormats 生成的字幕文件格式列表，不填或者填空数组表示不生成字幕文件，可选值：
-<li>vtt：生成 WebVTT 字幕文件；</li>
-<li>srt：生成 SRT 字幕文件。</li><font color=red>注意：</font>云点播媒资信息仅支持添加 vtt 字幕，因此当且仅当 SubtitleFormats 包含 vtt 时，云点播将生成的字幕添加到媒资。
+                     * 获取<p>生成的字幕文件格式列表，不填或者填空数组表示不生成字幕文件，可选值：</p><li>vtt：生成 WebVTT 字幕文件；</li><li>srt：生成 SRT 字幕文件。</li><font color="red">注意：</font>云点播媒资信息仅支持添加 vtt 字幕，因此当且仅当 SubtitleFormats 包含 vtt 时，云点播将生成的字幕添加到媒资。
+                     * @return SubtitleFormats <p>生成的字幕文件格式列表，不填或者填空数组表示不生成字幕文件，可选值：</p><li>vtt：生成 WebVTT 字幕文件；</li><li>srt：生成 SRT 字幕文件。</li><font color="red">注意：</font>云点播媒资信息仅支持添加 vtt 字幕，因此当且仅当 SubtitleFormats 包含 vtt 时，云点播将生成的字幕添加到媒资。
                      * 
                      */
                     std::vector<std::string> GetSubtitleFormats() const;
 
                     /**
-                     * 设置生成的字幕文件格式列表，不填或者填空数组表示不生成字幕文件，可选值：
-<li>vtt：生成 WebVTT 字幕文件；</li>
-<li>srt：生成 SRT 字幕文件。</li><font color=red>注意：</font>云点播媒资信息仅支持添加 vtt 字幕，因此当且仅当 SubtitleFormats 包含 vtt 时，云点播将生成的字幕添加到媒资。
-                     * @param _subtitleFormats 生成的字幕文件格式列表，不填或者填空数组表示不生成字幕文件，可选值：
-<li>vtt：生成 WebVTT 字幕文件；</li>
-<li>srt：生成 SRT 字幕文件。</li><font color=red>注意：</font>云点播媒资信息仅支持添加 vtt 字幕，因此当且仅当 SubtitleFormats 包含 vtt 时，云点播将生成的字幕添加到媒资。
+                     * 设置<p>生成的字幕文件格式列表，不填或者填空数组表示不生成字幕文件，可选值：</p><li>vtt：生成 WebVTT 字幕文件；</li><li>srt：生成 SRT 字幕文件。</li><font color="red">注意：</font>云点播媒资信息仅支持添加 vtt 字幕，因此当且仅当 SubtitleFormats 包含 vtt 时，云点播将生成的字幕添加到媒资。
+                     * @param _subtitleFormats <p>生成的字幕文件格式列表，不填或者填空数组表示不生成字幕文件，可选值：</p><li>vtt：生成 WebVTT 字幕文件；</li><li>srt：生成 SRT 字幕文件。</li><font color="red">注意：</font>云点播媒资信息仅支持添加 vtt 字幕，因此当且仅当 SubtitleFormats 包含 vtt 时，云点播将生成的字幕添加到媒资。
                      * 
                      */
                     void SetSubtitleFormats(const std::vector<std::string>& _subtitleFormats);
@@ -106,27 +90,15 @@ namespace TencentCloud
                     bool SubtitleFormatsHasBeenSet() const;
 
                     /**
-                     * 获取生成的字幕文件格式，不填或者填空字符串表示不生成字幕文件，可选值：
-<li>vtt：生成 WebVTT 字幕文件；</li>
-<li>srt：生成 SRT 字幕文件。</li>
-<font color='red'>注意：此字段已废弃，建议使用 SubtitleFormats。</font>
-                     * @return SubtitleFormat 生成的字幕文件格式，不填或者填空字符串表示不生成字幕文件，可选值：
-<li>vtt：生成 WebVTT 字幕文件；</li>
-<li>srt：生成 SRT 字幕文件。</li>
-<font color='red'>注意：此字段已废弃，建议使用 SubtitleFormats。</font>
+                     * 获取<p>生成的字幕文件格式，不填或者填空字符串表示不生成字幕文件，可选值：</p><li>vtt：生成 WebVTT 字幕文件；</li><li>srt：生成 SRT 字幕文件。</li><font color="red">注意：此字段已废弃，建议使用 SubtitleFormats。</font>
+                     * @return SubtitleFormat <p>生成的字幕文件格式，不填或者填空字符串表示不生成字幕文件，可选值：</p><li>vtt：生成 WebVTT 字幕文件；</li><li>srt：生成 SRT 字幕文件。</li><font color="red">注意：此字段已废弃，建议使用 SubtitleFormats。</font>
                      * @deprecated
                      */
                     std::string GetSubtitleFormat() const;
 
                     /**
-                     * 设置生成的字幕文件格式，不填或者填空字符串表示不生成字幕文件，可选值：
-<li>vtt：生成 WebVTT 字幕文件；</li>
-<li>srt：生成 SRT 字幕文件。</li>
-<font color='red'>注意：此字段已废弃，建议使用 SubtitleFormats。</font>
-                     * @param _subtitleFormat 生成的字幕文件格式，不填或者填空字符串表示不生成字幕文件，可选值：
-<li>vtt：生成 WebVTT 字幕文件；</li>
-<li>srt：生成 SRT 字幕文件。</li>
-<font color='red'>注意：此字段已废弃，建议使用 SubtitleFormats。</font>
+                     * 设置<p>生成的字幕文件格式，不填或者填空字符串表示不生成字幕文件，可选值：</p><li>vtt：生成 WebVTT 字幕文件；</li><li>srt：生成 SRT 字幕文件。</li><font color="red">注意：此字段已废弃，建议使用 SubtitleFormats。</font>
+                     * @param _subtitleFormat <p>生成的字幕文件格式，不填或者填空字符串表示不生成字幕文件，可选值：</p><li>vtt：生成 WebVTT 字幕文件；</li><li>srt：生成 SRT 字幕文件。</li><font color="red">注意：此字段已废弃，建议使用 SubtitleFormats。</font>
                      * @deprecated
                      */
                     void SetSubtitleFormat(const std::string& _subtitleFormat);
@@ -139,35 +111,15 @@ namespace TencentCloud
                     bool SubtitleFormatHasBeenSet() const;
 
                     /**
-                     * 获取媒体源语言，取值范围：
-<li>zh：中文普通话；</li>
-<li>en：英语；</li>
-<li>ja：日语；</li>
-<li>zh-ca：粤语。</li>
-<font color=red>注意：</font> 填空字符串，或者不填该参数，则自动识别（效果较难保证，推荐填写原始媒体对应的语言，以提高识别的准确率）。
-                     * @return SrcLanguage 媒体源语言，取值范围：
-<li>zh：中文普通话；</li>
-<li>en：英语；</li>
-<li>ja：日语；</li>
-<li>zh-ca：粤语。</li>
-<font color=red>注意：</font> 填空字符串，或者不填该参数，则自动识别（效果较难保证，推荐填写原始媒体对应的语言，以提高识别的准确率）。
+                     * 获取<p>媒体源语言，取值范围：</p><li>zh：中文普通话；</li><li>en：英语；</li><li>ja：日语；</li><li>zh-ca：粤语。</li><font color="red">注意：</font> 填空字符串，或者不填该参数，则自动识别（效果较难保证，推荐填写原始媒体对应的语言，以提高识别的准确率）。
+                     * @return SrcLanguage <p>媒体源语言，取值范围：</p><li>zh：中文普通话；</li><li>en：英语；</li><li>ja：日语；</li><li>zh-ca：粤语。</li><font color="red">注意：</font> 填空字符串，或者不填该参数，则自动识别（效果较难保证，推荐填写原始媒体对应的语言，以提高识别的准确率）。
                      * 
                      */
                     std::string GetSrcLanguage() const;
 
                     /**
-                     * 设置媒体源语言，取值范围：
-<li>zh：中文普通话；</li>
-<li>en：英语；</li>
-<li>ja：日语；</li>
-<li>zh-ca：粤语。</li>
-<font color=red>注意：</font> 填空字符串，或者不填该参数，则自动识别（效果较难保证，推荐填写原始媒体对应的语言，以提高识别的准确率）。
-                     * @param _srcLanguage 媒体源语言，取值范围：
-<li>zh：中文普通话；</li>
-<li>en：英语；</li>
-<li>ja：日语；</li>
-<li>zh-ca：粤语。</li>
-<font color=red>注意：</font> 填空字符串，或者不填该参数，则自动识别（效果较难保证，推荐填写原始媒体对应的语言，以提高识别的准确率）。
+                     * 设置<p>媒体源语言，取值范围：</p><li>zh：中文普通话；</li><li>en：英语；</li><li>ja：日语；</li><li>zh-ca：粤语。</li><font color="red">注意：</font> 填空字符串，或者不填该参数，则自动识别（效果较难保证，推荐填写原始媒体对应的语言，以提高识别的准确率）。
+                     * @param _srcLanguage <p>媒体源语言，取值范围：</p><li>zh：中文普通话；</li><li>en：英语；</li><li>ja：日语；</li><li>zh-ca：粤语。</li><font color="red">注意：</font> 填空字符串，或者不填该参数，则自动识别（效果较难保证，推荐填写原始媒体对应的语言，以提高识别的准确率）。
                      * 
                      */
                     void SetSrcLanguage(const std::string& _srcLanguage);
@@ -180,19 +132,15 @@ namespace TencentCloud
                     bool SrcLanguageHasBeenSet() const;
 
                     /**
-                     * 获取指定字幕名称，长度限制：64 个字符。该值将用于播放器展示，若不填则云点播自动生成。
-<font color=red>注意：</font>仅当 SubtitleFormats 包含 vtt 时，该字段有效。
-                     * @return SubtitleName 指定字幕名称，长度限制：64 个字符。该值将用于播放器展示，若不填则云点播自动生成。
-<font color=red>注意：</font>仅当 SubtitleFormats 包含 vtt 时，该字段有效。
+                     * 获取<p>指定字幕名称，长度限制：64 个字符。该值将用于播放器展示，若不填则云点播自动生成。<br><font color="red">注意：</font>仅当 SubtitleFormats 包含 vtt 时，该字段有效。</p>
+                     * @return SubtitleName <p>指定字幕名称，长度限制：64 个字符。该值将用于播放器展示，若不填则云点播自动生成。<br><font color="red">注意：</font>仅当 SubtitleFormats 包含 vtt 时，该字段有效。</p>
                      * 
                      */
                     std::string GetSubtitleName() const;
 
                     /**
-                     * 设置指定字幕名称，长度限制：64 个字符。该值将用于播放器展示，若不填则云点播自动生成。
-<font color=red>注意：</font>仅当 SubtitleFormats 包含 vtt 时，该字段有效。
-                     * @param _subtitleName 指定字幕名称，长度限制：64 个字符。该值将用于播放器展示，若不填则云点播自动生成。
-<font color=red>注意：</font>仅当 SubtitleFormats 包含 vtt 时，该字段有效。
+                     * 设置<p>指定字幕名称，长度限制：64 个字符。该值将用于播放器展示，若不填则云点播自动生成。<br><font color="red">注意：</font>仅当 SubtitleFormats 包含 vtt 时，该字段有效。</p>
+                     * @param _subtitleName <p>指定字幕名称，长度限制：64 个字符。该值将用于播放器展示，若不填则云点播自动生成。<br><font color="red">注意：</font>仅当 SubtitleFormats 包含 vtt 时，该字段有效。</p>
                      * 
                      */
                     void SetSubtitleName(const std::string& _subtitleName);
@@ -207,44 +155,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 语音全文识别任务开关，可选值：
-<li>ON：开启智能语音全文识别任务；</li>
-<li>OFF：关闭智能语音全文识别任务。</li>
+                     * <p>语音全文识别任务开关，可选值：</p><li>ON：开启智能语音全文识别任务；</li><li>OFF：关闭智能语音全文识别任务。</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 生成的字幕文件格式列表，不填或者填空数组表示不生成字幕文件，可选值：
-<li>vtt：生成 WebVTT 字幕文件；</li>
-<li>srt：生成 SRT 字幕文件。</li><font color=red>注意：</font>云点播媒资信息仅支持添加 vtt 字幕，因此当且仅当 SubtitleFormats 包含 vtt 时，云点播将生成的字幕添加到媒资。
+                     * <p>生成的字幕文件格式列表，不填或者填空数组表示不生成字幕文件，可选值：</p><li>vtt：生成 WebVTT 字幕文件；</li><li>srt：生成 SRT 字幕文件。</li><font color="red">注意：</font>云点播媒资信息仅支持添加 vtt 字幕，因此当且仅当 SubtitleFormats 包含 vtt 时，云点播将生成的字幕添加到媒资。
                      */
                     std::vector<std::string> m_subtitleFormats;
                     bool m_subtitleFormatsHasBeenSet;
 
                     /**
-                     * 生成的字幕文件格式，不填或者填空字符串表示不生成字幕文件，可选值：
-<li>vtt：生成 WebVTT 字幕文件；</li>
-<li>srt：生成 SRT 字幕文件。</li>
-<font color='red'>注意：此字段已废弃，建议使用 SubtitleFormats。</font>
+                     * <p>生成的字幕文件格式，不填或者填空字符串表示不生成字幕文件，可选值：</p><li>vtt：生成 WebVTT 字幕文件；</li><li>srt：生成 SRT 字幕文件。</li><font color="red">注意：此字段已废弃，建议使用 SubtitleFormats。</font>
                      */
                     std::string m_subtitleFormat;
                     bool m_subtitleFormatHasBeenSet;
 
                     /**
-                     * 媒体源语言，取值范围：
-<li>zh：中文普通话；</li>
-<li>en：英语；</li>
-<li>ja：日语；</li>
-<li>zh-ca：粤语。</li>
-<font color=red>注意：</font> 填空字符串，或者不填该参数，则自动识别（效果较难保证，推荐填写原始媒体对应的语言，以提高识别的准确率）。
+                     * <p>媒体源语言，取值范围：</p><li>zh：中文普通话；</li><li>en：英语；</li><li>ja：日语；</li><li>zh-ca：粤语。</li><font color="red">注意：</font> 填空字符串，或者不填该参数，则自动识别（效果较难保证，推荐填写原始媒体对应的语言，以提高识别的准确率）。
                      */
                     std::string m_srcLanguage;
                     bool m_srcLanguageHasBeenSet;
 
                     /**
-                     * 指定字幕名称，长度限制：64 个字符。该值将用于播放器展示，若不填则云点播自动生成。
-<font color=red>注意：</font>仅当 SubtitleFormats 包含 vtt 时，该字段有效。
+                     * <p>指定字幕名称，长度限制：64 个字符。该值将用于播放器展示，若不填则云点播自动生成。<br><font color="red">注意：</font>仅当 SubtitleFormats 包含 vtt 时，该字段有效。</p>
                      */
                     std::string m_subtitleName;
                     bool m_subtitleNameHasBeenSet;

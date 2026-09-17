@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略Id。
-                     * @return PolicyId 策略Id。
+                     * 获取<p>策略Id。</p>
+                     * @return PolicyId <p>策略Id。</p>
                      * 
                      */
                     uint64_t GetPolicyId() const;
 
                     /**
-                     * 设置策略Id。
-                     * @param _policyId 策略Id。
+                     * 设置<p>策略Id。</p>
+                     * @param _policyId <p>策略Id。</p>
                      * 
                      */
                     void SetPolicyId(const uint64_t& _policyId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取每页数量。默认值是 20，必须大于 0 且小于或等于 200
-                     * @return Rp 每页数量。默认值是 20，必须大于 0 且小于或等于 200
+                     * 获取<p>每页数量。默认值是 20，必须大于 0 且小于或等于 200</p>
+                     * @return Rp <p>每页数量。默认值是 20，必须大于 0 且小于或等于 200</p>
                      * 
                      */
                     uint64_t GetRp() const;
 
                     /**
-                     * 设置每页数量。默认值是 20，必须大于 0 且小于或等于 200
-                     * @param _rp 每页数量。默认值是 20，必须大于 0 且小于或等于 200
+                     * 设置<p>每页数量。默认值是 20，必须大于 0 且小于或等于 200</p>
+                     * @param _rp <p>每页数量。默认值是 20，必须大于 0 且小于或等于 200</p>
                      * 
                      */
                     void SetRp(const uint64_t& _rp);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RpHasBeenSet() const;
 
                     /**
-                     * 获取页码。默认值是 1，从 1开始，不能大于 200
-                     * @return Page 页码。默认值是 1，从 1开始，不能大于 200
+                     * 获取<p>页码。默认值是 1，从 1开始，不能大于 200</p>
+                     * @return Page <p>页码。默认值是 1，从 1开始，不能大于 200</p>
                      * 
                      */
                     uint64_t GetPage() const;
 
                     /**
-                     * 设置页码。默认值是 1，从 1开始，不能大于 200
-                     * @param _page 页码。默认值是 1，从 1开始，不能大于 200
+                     * 设置<p>页码。默认值是 1，从 1开始，不能大于 200</p>
+                     * @param _page <p>页码。默认值是 1，从 1开始，不能大于 200</p>
                      * 
                      */
                     void SetPage(const uint64_t& _page);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PageHasBeenSet() const;
 
                     /**
-                     * 获取策略类型。取值范围：All-全部、User-用户、Node-节点
-                     * @return TargetType 策略类型。取值范围：All-全部、User-用户、Node-节点
+                     * 获取<p>策略类型。取值范围：All-全部、User-用户、Node-节点</p>
+                     * @return TargetType <p>策略类型。取值范围：All-全部、User-用户、Node-节点</p>
                      * 
                      */
                     std::string GetTargetType() const;
 
                     /**
-                     * 设置策略类型。取值范围：All-全部、User-用户、Node-节点
-                     * @param _targetType 策略类型。取值范围：All-全部、User-用户、Node-节点
+                     * 设置<p>策略类型。取值范围：All-全部、User-用户、Node-节点</p>
+                     * @param _targetType <p>策略类型。取值范围：All-全部、User-用户、Node-节点</p>
                      * 
                      */
                     void SetTargetType(const std::string& _targetType);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool TargetTypeHasBeenSet() const;
 
                     /**
-                     * 获取策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略
-                     * @return PolicyType 策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略
+                     * 获取<p>策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略</p>
+                     * @return PolicyType <p>策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略</p>
                      * 
                      */
                     std::string GetPolicyType() const;
 
                     /**
-                     * 设置策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略
-                     * @param _policyType 策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略
+                     * 设置<p>策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略</p>
+                     * @param _policyType <p>策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略</p>
                      * 
                      */
                     void SetPolicyType(const std::string& _policyType);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool PolicyTypeHasBeenSet() const;
 
                     /**
-                     * 获取按照多个策略id搜索，空格隔开。
-                     * @return Keyword 按照多个策略id搜索，空格隔开。
+                     * 获取<p>按照多个策略id搜索，空格隔开。</p>
+                     * @return Keyword <p>按照多个策略id搜索，空格隔开。</p>
                      * 
                      */
                     std::string GetKeyword() const;
 
                     /**
-                     * 设置按照多个策略id搜索，空格隔开。
-                     * @param _keyword 按照多个策略id搜索，空格隔开。
+                     * 设置<p>按照多个策略id搜索，空格隔开。</p>
+                     * @param _keyword <p>按照多个策略id搜索，空格隔开。</p>
                      * 
                      */
                     void SetKeyword(const std::string& _keyword);
@@ -171,37 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略Id。
+                     * <p>策略Id。</p>
                      */
                     uint64_t m_policyId;
                     bool m_policyIdHasBeenSet;
 
                     /**
-                     * 每页数量。默认值是 20，必须大于 0 且小于或等于 200
+                     * <p>每页数量。默认值是 20，必须大于 0 且小于或等于 200</p>
                      */
                     uint64_t m_rp;
                     bool m_rpHasBeenSet;
 
                     /**
-                     * 页码。默认值是 1，从 1开始，不能大于 200
+                     * <p>页码。默认值是 1，从 1开始，不能大于 200</p>
                      */
                     uint64_t m_page;
                     bool m_pageHasBeenSet;
 
                     /**
-                     * 策略类型。取值范围：All-全部、User-用户、Node-节点
+                     * <p>策略类型。取值范围：All-全部、User-用户、Node-节点</p>
                      */
                     std::string m_targetType;
                     bool m_targetTypeHasBeenSet;
 
                     /**
-                     * 策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略
+                     * <p>策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略</p>
                      */
                     std::string m_policyType;
                     bool m_policyTypeHasBeenSet;
 
                     /**
-                     * 按照多个策略id搜索，空格隔开。
+                     * <p>按照多个策略id搜索，空格隔开。</p>
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;

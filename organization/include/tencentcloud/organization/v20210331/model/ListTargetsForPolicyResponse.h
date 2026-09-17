@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总数。
-                     * @return TotalNum 总数。
+                     * 获取<p>总数。</p>
+                     * @return TotalNum <p>总数。</p>
                      * 
                      */
                     uint64_t GetTotalNum() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalNumHasBeenSet() const;
 
                     /**
-                     * 获取指定SCP策略关联目标列表。
-                     * @return List 指定SCP策略关联目标列表。
+                     * 获取<p>指定SCP策略关联目标列表。</p>
+                     * @return List <p>指定SCP策略关联目标列表。</p>
                      * 
                      */
                     std::vector<ListTargetsForPolicyNode> GetList() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总数。
+                     * <p>总数。</p>
                      */
                     uint64_t m_totalNum;
                     bool m_totalNumHasBeenSet;
 
                     /**
-                     * 指定SCP策略关联目标列表。
+                     * <p>指定SCP策略关联目标列表。</p>
                      */
                     std::vector<ListTargetsForPolicyNode> m_list;
                     bool m_listHasBeenSet;

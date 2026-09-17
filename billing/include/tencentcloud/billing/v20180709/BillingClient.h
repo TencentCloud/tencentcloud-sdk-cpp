@@ -945,7 +945,7 @@ namespace TencentCloud
                 DescribeTagListOutcomeCallable DescribeTagListCallable(const Model::DescribeTagListRequest& request);
 
                 /**
-                 *获取代金券相关信息
+                 *获取近两年的代金券信息。
                  * @param req DescribeVoucherInfoRequest
                  * @return DescribeVoucherInfoOutcome
                  */
@@ -954,7 +954,7 @@ namespace TencentCloud
                 DescribeVoucherInfoOutcomeCallable DescribeVoucherInfoCallable(const Model::DescribeVoucherInfoRequest& request);
 
                 /**
-                 *获取代金券使用记录
+                 *获取代金券近两年的使用记录。
                  * @param req DescribeVoucherUsageDetailsRequest
                  * @return DescribeVoucherUsageDetailsOutcome
                  */

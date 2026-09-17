@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdai/v20250717/model/Attachments.h>
 
 
 namespace TencentCloud
@@ -147,6 +148,27 @@ namespace TencentCloud
                      */
                     bool IsChatHiddenHasBeenSet() const;
 
+                    /**
+                     * 获取<p>传递图片附件</p>
+                     * @return Attachments <p>传递图片附件</p>
+                     * 
+                     */
+                    std::vector<Attachments> GetAttachments() const;
+
+                    /**
+                     * 设置<p>传递图片附件</p>
+                     * @param _attachments <p>传递图片附件</p>
+                     * 
+                     */
+                    void SetAttachments(const std::vector<Attachments>& _attachments);
+
+                    /**
+                     * 判断参数 Attachments 是否已赋值
+                     * @return Attachments 是否已赋值
+                     * 
+                     */
+                    bool AttachmentsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +200,12 @@ namespace TencentCloud
                      */
                     bool m_isChatHidden;
                     bool m_isChatHiddenHasBeenSet;
+
+                    /**
+                     * <p>传递图片附件</p>
+                     */
+                    std::vector<Attachments> m_attachments;
+                    bool m_attachmentsHasBeenSet;
 
                 };
             }

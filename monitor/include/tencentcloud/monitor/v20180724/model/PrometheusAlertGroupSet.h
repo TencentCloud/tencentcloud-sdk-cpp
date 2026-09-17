@@ -49,18 +49,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警分组ID，满足正则表达式`alert-[a-z0-9]{8}`
+                     * 获取<p>告警分组ID，满足正则表达式<code>alert-[a-z0-9]{8}</code></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupId 告警分组ID，满足正则表达式`alert-[a-z0-9]{8}`
+                     * @return GroupId <p>告警分组ID，满足正则表达式<code>alert-[a-z0-9]{8}</code></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置告警分组ID，满足正则表达式`alert-[a-z0-9]{8}`
+                     * 设置<p>告警分组ID，满足正则表达式<code>alert-[a-z0-9]{8}</code></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _groupId 告警分组ID，满足正则表达式`alert-[a-z0-9]{8}`
+                     * @param _groupId <p>告警分组ID，满足正则表达式<code>alert-[a-z0-9]{8}</code></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,18 +74,18 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取告警分组名称
+                     * 获取<p>告警分组名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupName 告警分组名称
+                     * @return GroupName <p>告警分组名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置告警分组名称
+                     * 设置<p>告警分组名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _groupName 告警分组名称
+                     * @param _groupName <p>告警分组名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,18 +99,18 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云可观测平台告警模板ID ，返回告警模板转换后的notice ID。
+                     * 获取<p>腾讯云可观测平台告警模板ID ，返回告警模板转换后的notice ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AMPReceivers 腾讯云可观测平台告警模板ID ，返回告警模板转换后的notice ID。
+                     * @return AMPReceivers <p>腾讯云可观测平台告警模板ID ，返回告警模板转换后的notice ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAMPReceivers() const;
 
                     /**
-                     * 设置腾讯云可观测平台告警模板ID ，返回告警模板转换后的notice ID。
+                     * 设置<p>腾讯云可观测平台告警模板ID ，返回告警模板转换后的notice ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _aMPReceivers 腾讯云可观测平台告警模板ID ，返回告警模板转换后的notice ID。
+                     * @param _aMPReceivers <p>腾讯云可观测平台告警模板ID ，返回告警模板转换后的notice ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,18 +124,18 @@ namespace TencentCloud
                     bool AMPReceiversHasBeenSet() const;
 
                     /**
-                     * 获取自定义告警模板
+                     * 获取<p>自定义告警模板</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CustomReceiver 自定义告警模板
+                     * @return CustomReceiver <p>自定义告警模板</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PrometheusAlertCustomReceiver GetCustomReceiver() const;
 
                     /**
-                     * 设置自定义告警模板
+                     * 设置<p>自定义告警模板</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _customReceiver 自定义告警模板
+                     * @param _customReceiver <p>自定义告警模板</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -149,18 +149,18 @@ namespace TencentCloud
                     bool CustomReceiverHasBeenSet() const;
 
                     /**
-                     * 获取告警通知间隔
+                     * 获取<p>告警通知间隔</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RepeatInterval 告警通知间隔
+                     * @return RepeatInterval <p>告警通知间隔</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepeatInterval() const;
 
                     /**
-                     * 设置告警通知间隔
+                     * 设置<p>告警通知间隔</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _repeatInterval 告警通知间隔
+                     * @param _repeatInterval <p>告警通知间隔</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -174,18 +174,18 @@ namespace TencentCloud
                     bool RepeatIntervalHasBeenSet() const;
 
                     /**
-                     * 获取若告警分组通过模板创建，则返回模板ID
+                     * 获取<p>若告警分组通过模板创建，则返回模板ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TemplateId 若告警分组通过模板创建，则返回模板ID
+                     * @return TemplateId <p>若告警分组通过模板创建，则返回模板ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置若告警分组通过模板创建，则返回模板ID
+                     * 设置<p>若告警分组通过模板创建，则返回模板ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _templateId 若告警分组通过模板创建，则返回模板ID
+                     * @param _templateId <p>若告警分组通过模板创建，则返回模板ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -199,18 +199,18 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取分组内告警规则详情
+                     * 获取<p>分组内告警规则详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Rules 分组内告警规则详情
+                     * @return Rules <p>分组内告警规则详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PrometheusAlertGroupRuleSet> GetRules() const;
 
                     /**
-                     * 设置分组内告警规则详情
+                     * 设置<p>分组内告警规则详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rules 分组内告警规则详情
+                     * @param _rules <p>分组内告警规则详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -224,18 +224,18 @@ namespace TencentCloud
                     bool RulesHasBeenSet() const;
 
                     /**
-                     * 获取分组创建时间
+                     * 获取<p>分组创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatedAt 分组创建时间
+                     * @return CreatedAt <p>分组创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
-                     * 设置分组创建时间
+                     * 设置<p>分组创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createdAt 分组创建时间
+                     * @param _createdAt <p>分组创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -249,18 +249,18 @@ namespace TencentCloud
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取分组更新时间
+                     * 获取<p>分组更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdatedAt 分组更新时间
+                     * @return UpdatedAt <p>分组更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
-                     * 设置分组更新时间
+                     * 设置<p>分组更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updatedAt 分组更新时间
+                     * @param _updatedAt <p>分组更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -273,70 +273,97 @@ namespace TencentCloud
                      */
                     bool UpdatedAtHasBeenSet() const;
 
+                    /**
+                     * 获取<p>最后修改人子账号uin</p>
+                     * @return LastModifySubAccountUin <p>最后修改人子账号uin</p>
+                     * 
+                     */
+                    std::string GetLastModifySubAccountUin() const;
+
+                    /**
+                     * 设置<p>最后修改人子账号uin</p>
+                     * @param _lastModifySubAccountUin <p>最后修改人子账号uin</p>
+                     * 
+                     */
+                    void SetLastModifySubAccountUin(const std::string& _lastModifySubAccountUin);
+
+                    /**
+                     * 判断参数 LastModifySubAccountUin 是否已赋值
+                     * @return LastModifySubAccountUin 是否已赋值
+                     * 
+                     */
+                    bool LastModifySubAccountUinHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 告警分组ID，满足正则表达式`alert-[a-z0-9]{8}`
+                     * <p>告警分组ID，满足正则表达式<code>alert-[a-z0-9]{8}</code></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 告警分组名称
+                     * <p>告警分组名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 腾讯云可观测平台告警模板ID ，返回告警模板转换后的notice ID。
+                     * <p>腾讯云可观测平台告警模板ID ，返回告警模板转换后的notice ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_aMPReceivers;
                     bool m_aMPReceiversHasBeenSet;
 
                     /**
-                     * 自定义告警模板
+                     * <p>自定义告警模板</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PrometheusAlertCustomReceiver m_customReceiver;
                     bool m_customReceiverHasBeenSet;
 
                     /**
-                     * 告警通知间隔
+                     * <p>告警通知间隔</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repeatInterval;
                     bool m_repeatIntervalHasBeenSet;
 
                     /**
-                     * 若告警分组通过模板创建，则返回模板ID
+                     * <p>若告警分组通过模板创建，则返回模板ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 分组内告警规则详情
+                     * <p>分组内告警规则详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PrometheusAlertGroupRuleSet> m_rules;
                     bool m_rulesHasBeenSet;
 
                     /**
-                     * 分组创建时间
+                     * <p>分组创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * 分组更新时间
+                     * <p>分组更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
+
+                    /**
+                     * <p>最后修改人子账号uin</p>
+                     */
+                    std::string m_lastModifySubAccountUin;
+                    bool m_lastModifySubAccountUinHasBeenSet;
 
                 };
             }

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建SSL-VPN server 异步任务ID。
-                     * @return TaskId 创建SSL-VPN server 异步任务ID。
+                     * 获取<p>创建SSL-VPN server 异步任务ID。</p>
+                     * @return TaskId <p>创建SSL-VPN server 异步任务ID。</p>
                      * 
                      */
                     int64_t GetTaskId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取SSL-VPN-SERVER 唯一ID。
-                     * @return SslVpnServerId SSL-VPN-SERVER 唯一ID。
+                     * 获取<p>SSL-VPN-SERVER 唯一ID。</p>
+                     * @return SslVpnServerId <p>SSL-VPN-SERVER 唯一ID。</p>
                      * 
                      */
                     std::string GetSslVpnServerId() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建SSL-VPN server 异步任务ID。
+                     * <p>创建SSL-VPN server 异步任务ID。</p>
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * SSL-VPN-SERVER 唯一ID。
+                     * <p>SSL-VPN-SERVER 唯一ID。</p>
                      */
                     std::string m_sslVpnServerId;
                     bool m_sslVpnServerIdHasBeenSet;

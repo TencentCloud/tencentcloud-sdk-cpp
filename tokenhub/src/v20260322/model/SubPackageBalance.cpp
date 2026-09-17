@@ -27,6 +27,7 @@ SubPackageBalance::SubPackageBalance() :
     m_sharedQuotaHasBeenSet(false),
     m_sharedUsedHasBeenSet(false),
     m_sharedRemainHasBeenSet(false),
+    m_totalUsedHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
 }
@@ -96,6 +97,16 @@ CoreInternalOutcome SubPackageBalance::Deserialize(const rapidjson::Value &value
         m_sharedRemainHasBeenSet = true;
     }
 
+    if (value.HasMember("TotalUsed") && !value["TotalUsed"].IsNull())
+    {
+        if (!value["TotalUsed"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubPackageBalance.TotalUsed` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalUsed = string(value["TotalUsed"].GetString());
+        m_totalUsedHasBeenSet = true;
+    }
+
     if (value.HasMember("Status") && !value["Status"].IsNull())
     {
         if (!value["Status"].IsInt64())
@@ -159,6 +170,14 @@ void SubPackageBalance::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "SharedRemain";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sharedRemain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_totalUsedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalUsed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_totalUsed.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
@@ -266,6 +285,22 @@ void SubPackageBalance::SetSharedRemain(const string& _sharedRemain)
 bool SubPackageBalance::SharedRemainHasBeenSet() const
 {
     return m_sharedRemainHasBeenSet;
+}
+
+string SubPackageBalance::GetTotalUsed() const
+{
+    return m_totalUsed;
+}
+
+void SubPackageBalance::SetTotalUsed(const string& _totalUsed)
+{
+    m_totalUsed = _totalUsed;
+    m_totalUsedHasBeenSet = true;
+}
+
+bool SubPackageBalance::TotalUsedHasBeenSet() const
+{
+    return m_totalUsedHasBeenSet;
 }
 
 int64_t SubPackageBalance::GetStatus() const

@@ -91,27 +91,6 @@ namespace TencentCloud
                     bool PromptHasBeenSet() const;
 
                     /**
-                     * 获取<p>文档生成视频模型名称</p><p>默认值：Wand</p>
-                     * @return ModelName <p>文档生成视频模型名称</p><p>默认值：Wand</p>
-                     * 
-                     */
-                    std::string GetModelName() const;
-
-                    /**
-                     * 设置<p>文档生成视频模型名称</p><p>默认值：Wand</p>
-                     * @param _modelName <p>文档生成视频模型名称</p><p>默认值：Wand</p>
-                     * 
-                     */
-                    void SetModelName(const std::string& _modelName);
-
-                    /**
-                     * 判断参数 ModelName 是否已赋值
-                     * @return ModelName 是否已赋值
-                     * 
-                     */
-                    bool ModelNameHasBeenSet() const;
-
-                    /**
                      * 获取<p>文档生成视频模型版本号</p><p>枚举值：</p><ul><li>1.0： 1.0</li><li>1.0-lite： 1.0-lite</li></ul><p>默认值：1.0</p>
                      * @return ModelVersion <p>文档生成视频模型版本号</p><p>枚举值：</p><ul><li>1.0： 1.0</li><li>1.0-lite： 1.0-lite</li></ul><p>默认值：1.0</p>
                      * 
@@ -131,6 +110,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ModelVersionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>文档生成视频模型名称</p><p>枚举值：</p><ul><li>WAND： WAND</li></ul><p>默认值：WAND</p>
+                     * @return ModelName <p>文档生成视频模型名称</p><p>枚举值：</p><ul><li>WAND： WAND</li></ul><p>默认值：WAND</p>
+                     * 
+                     */
+                    std::string GetModelName() const;
+
+                    /**
+                     * 设置<p>文档生成视频模型名称</p><p>枚举值：</p><ul><li>WAND： WAND</li></ul><p>默认值：WAND</p>
+                     * @param _modelName <p>文档生成视频模型名称</p><p>枚举值：</p><ul><li>WAND： WAND</li></ul><p>默认值：WAND</p>
+                     * 
+                     */
+                    void SetModelName(const std::string& _modelName);
+
+                    /**
+                     * 判断参数 ModelName 是否已赋值
+                     * @return ModelName 是否已赋值
+                     * 
+                     */
+                    bool ModelNameHasBeenSet() const;
 
                     /**
                      * 获取<p>生成视频的宽高比。</p><p>枚举值：</p><ul><li>16:9： 16:9</li><li>9:16： 9:16</li><li>1:1： 1:1</li></ul><p>默认值：16:9</p>
@@ -357,16 +357,16 @@ namespace TencentCloud
                     bool m_promptHasBeenSet;
 
                     /**
-                     * <p>文档生成视频模型名称</p><p>默认值：Wand</p>
-                     */
-                    std::string m_modelName;
-                    bool m_modelNameHasBeenSet;
-
-                    /**
                      * <p>文档生成视频模型版本号</p><p>枚举值：</p><ul><li>1.0： 1.0</li><li>1.0-lite： 1.0-lite</li></ul><p>默认值：1.0</p>
                      */
                     std::string m_modelVersion;
                     bool m_modelVersionHasBeenSet;
+
+                    /**
+                     * <p>文档生成视频模型名称</p><p>枚举值：</p><ul><li>WAND： WAND</li></ul><p>默认值：WAND</p>
+                     */
+                    std::string m_modelName;
+                    bool m_modelNameHasBeenSet;
 
                     /**
                      * <p>生成视频的宽高比。</p><p>枚举值：</p><ul><li>16:9： 16:9</li><li>9:16： 9:16</li><li>1:1： 1:1</li></ul><p>默认值：16:9</p>

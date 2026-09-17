@@ -187,6 +187,20 @@ namespace TencentCloud
                     bool QueueHasBeenSet() const;
 
                     /**
+                     * 获取<p>所属队列别名</p>
+                     * @return QueueAlias <p>所属队列别名</p>
+                     * 
+                     */
+                    std::string GetQueueAlias() const;
+
+                    /**
+                     * 判断参数 QueueAlias 是否已赋值
+                     * @return QueueAlias 是否已赋值
+                     * 
+                     */
+                    bool QueueAliasHasBeenSet() const;
+
+                    /**
                      * 获取<p>应用ID</p>
                      * @return AppId <p>应用ID</p>
                      * 
@@ -555,6 +569,12 @@ namespace TencentCloud
                      */
                     std::string m_queue;
                     bool m_queueHasBeenSet;
+
+                    /**
+                     * <p>所属队列别名</p>
+                     */
+                    std::string m_queueAlias;
+                    bool m_queueAliasHasBeenSet;
 
                     /**
                      * <p>应用ID</p>

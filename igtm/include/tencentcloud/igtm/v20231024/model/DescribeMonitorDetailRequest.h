@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取监控器id
-                     * @return MonitorId 监控器id
+                     * 获取<p>监控器id</p>
+                     * @return MonitorId <p>监控器id</p>
                      * 
                      */
                     uint64_t GetMonitorId() const;
 
                     /**
-                     * 设置监控器id
-                     * @param _monitorId 监控器id
+                     * 设置<p>监控器id</p>
+                     * @param _monitorId <p>监控器id</p>
                      * 
                      */
                     void SetMonitorId(const uint64_t& _monitorId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 监控器id
+                     * <p>监控器id</p>
                      */
                     uint64_t m_monitorId;
                     bool m_monitorIdHasBeenSet;

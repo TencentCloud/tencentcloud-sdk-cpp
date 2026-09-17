@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>描述</p>
-                     * @return Description <p>描述</p>
+                     * 获取描述
+                     * @return Description 描述
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置<p>描述</p>
-                     * @param _description <p>描述</p>
+                     * 设置描述
+                     * @param _description 描述
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取<p>数字 ID</p>
-                     * @return Id <p>数字 ID</p>
+                     * 获取数字 ID
+                     * @return Id 数字 ID
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置<p>数字 ID</p>
-                     * @param _id <p>数字 ID</p>
+                     * 设置数字 ID
+                     * @param _id 数字 ID
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取<p>名称</p>
-                     * @return Name <p>名称</p>
+                     * 获取名称
+                     * @return Name 名称
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置<p>名称</p>
-                     * @param _name <p>名称</p>
+                     * 设置名称
+                     * @param _name 名称
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取<p>字符串 ID</p>
-                     * @return StrId <p>字符串 ID</p>
+                     * 获取字符串 ID
+                     * @return StrId 字符串 ID
                      * 
                      */
                     std::string GetStrId() const;
 
                     /**
-                     * 设置<p>字符串 ID</p>
-                     * @param _strId <p>字符串 ID</p>
+                     * 设置字符串 ID
+                     * @param _strId 字符串 ID
                      * 
                      */
                     void SetStrId(const std::string& _strId);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>描述</p>
+                     * 描述
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * <p>数字 ID</p>
+                     * 数字 ID
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * <p>名称</p>
+                     * 名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * <p>字符串 ID</p>
+                     * 字符串 ID
                      */
                     std::string m_strId;
                     bool m_strIdHasBeenSet;

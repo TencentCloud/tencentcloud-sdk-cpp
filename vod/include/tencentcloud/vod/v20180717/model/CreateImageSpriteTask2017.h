@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取截图雪碧图任务 ID。
-                     * @return TaskId 截图雪碧图任务 ID。
+                     * 获取<p>截图雪碧图任务 ID。</p>
+                     * @return TaskId <p>截图雪碧图任务 ID。</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置截图雪碧图任务 ID。
-                     * @param _taskId 截图雪碧图任务 ID。
+                     * 设置<p>截图雪碧图任务 ID。</p>
+                     * @param _taskId <p>截图雪碧图任务 ID。</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -68,23 +68,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取错误码
-<li>0：成功；</li>
-<li>其他值：失败。</li>
-                     * @return ErrCode 错误码
-<li>0：成功；</li>
-<li>其他值：失败。</li>
+                     * 获取<p>错误码</p><li>0：成功；</li><li>其他值：失败。</li>
+                     * @return ErrCode <p>错误码</p><li>0：成功；</li><li>其他值：失败。</li>
                      * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
-                     * 设置错误码
-<li>0：成功；</li>
-<li>其他值：失败。</li>
-                     * @param _errCode 错误码
-<li>0：成功；</li>
-<li>其他值：失败。</li>
+                     * 设置<p>错误码</p><li>0：成功；</li><li>其他值：失败。</li>
+                     * @param _errCode <p>错误码</p><li>0：成功；</li><li>其他值：失败。</li>
                      * 
                      */
                     void SetErrCode(const int64_t& _errCode);
@@ -97,15 +89,15 @@ namespace TencentCloud
                     bool ErrCodeHasBeenSet() const;
 
                     /**
-                     * 获取错误信息。
-                     * @return Message 错误信息。
+                     * 获取<p>错误信息。</p>
+                     * @return Message <p>错误信息。</p>
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置错误信息。
-                     * @param _message 错误信息。
+                     * 设置<p>错误信息。</p>
+                     * @param _message <p>错误信息。</p>
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -118,15 +110,15 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取截取雪碧图文件 ID。
-                     * @return FileId 截取雪碧图文件 ID。
+                     * 获取<p>截取雪碧图文件 ID。</p>
+                     * @return FileId <p>截取雪碧图文件 ID。</p>
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置截取雪碧图文件 ID。
-                     * @param _fileId 截取雪碧图文件 ID。
+                     * 设置<p>截取雪碧图文件 ID。</p>
+                     * @param _fileId <p>截取雪碧图文件 ID。</p>
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -139,15 +131,15 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取雪碧图规格，参见[雪碧图截图模板](https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-                     * @return Definition 雪碧图规格，参见[雪碧图截图模板](https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
+                     * 获取<p>雪碧图规格，参见<a href="https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF">雪碧图截图模板</a>。</p>
+                     * @return Definition <p>雪碧图规格，参见<a href="https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF">雪碧图截图模板</a>。</p>
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置雪碧图规格，参见[雪碧图截图模板](https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-                     * @param _definition 雪碧图规格，参见[雪碧图截图模板](https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
+                     * 设置<p>雪碧图规格，参见<a href="https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF">雪碧图截图模板</a>。</p>
+                     * @param _definition <p>雪碧图规格，参见<a href="https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF">雪碧图截图模板</a>。</p>
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -160,15 +152,15 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取雪碧图小图总数量。
-                     * @return TotalCount 雪碧图小图总数量。
+                     * 获取<p>雪碧图小图总数量。</p>
+                     * @return TotalCount <p>雪碧图小图总数量。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
-                     * 设置雪碧图小图总数量。
-                     * @param _totalCount 雪碧图小图总数量。
+                     * 设置<p>雪碧图小图总数量。</p>
+                     * @param _totalCount <p>雪碧图小图总数量。</p>
                      * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
@@ -181,15 +173,15 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取截取雪碧图输出的地址。
-                     * @return ImageSpriteUrlSet 截取雪碧图输出的地址。
+                     * 获取<p>截取雪碧图输出的地址。</p>
+                     * @return ImageSpriteUrlSet <p>截取雪碧图输出的地址。</p>
                      * 
                      */
                     std::vector<std::string> GetImageSpriteUrlSet() const;
 
                     /**
-                     * 设置截取雪碧图输出的地址。
-                     * @param _imageSpriteUrlSet 截取雪碧图输出的地址。
+                     * 设置<p>截取雪碧图输出的地址。</p>
+                     * @param _imageSpriteUrlSet <p>截取雪碧图输出的地址。</p>
                      * 
                      */
                     void SetImageSpriteUrlSet(const std::vector<std::string>& _imageSpriteUrlSet);
@@ -202,15 +194,15 @@ namespace TencentCloud
                     bool ImageSpriteUrlSetHasBeenSet() const;
 
                     /**
-                     * 获取雪碧图子图位置与时间关系 WebVtt 文件地址。
-                     * @return WebVttUrl 雪碧图子图位置与时间关系 WebVtt 文件地址。
+                     * 获取<p>雪碧图子图位置与时间关系 WebVtt 文件地址。</p>
+                     * @return WebVttUrl <p>雪碧图子图位置与时间关系 WebVtt 文件地址。</p>
                      * 
                      */
                     std::string GetWebVttUrl() const;
 
                     /**
-                     * 设置雪碧图子图位置与时间关系 WebVtt 文件地址。
-                     * @param _webVttUrl 雪碧图子图位置与时间关系 WebVtt 文件地址。
+                     * 设置<p>雪碧图子图位置与时间关系 WebVtt 文件地址。</p>
+                     * @param _webVttUrl <p>雪碧图子图位置与时间关系 WebVtt 文件地址。</p>
                      * 
                      */
                     void SetWebVttUrl(const std::string& _webVttUrl);
@@ -225,51 +217,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 截图雪碧图任务 ID。
+                     * <p>截图雪碧图任务 ID。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 错误码
-<li>0：成功；</li>
-<li>其他值：失败。</li>
+                     * <p>错误码</p><li>0：成功；</li><li>其他值：失败。</li>
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
-                     * 错误信息。
+                     * <p>错误信息。</p>
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 截取雪碧图文件 ID。
+                     * <p>截取雪碧图文件 ID。</p>
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 雪碧图规格，参见[雪碧图截图模板](https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
+                     * <p>雪碧图规格，参见<a href="https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF">雪碧图截图模板</a>。</p>
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * 雪碧图小图总数量。
+                     * <p>雪碧图小图总数量。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 截取雪碧图输出的地址。
+                     * <p>截取雪碧图输出的地址。</p>
                      */
                     std::vector<std::string> m_imageSpriteUrlSet;
                     bool m_imageSpriteUrlSetHasBeenSet;
 
                     /**
-                     * 雪碧图子图位置与时间关系 WebVtt 文件地址。
+                     * <p>雪碧图子图位置与时间关系 WebVtt 文件地址。</p>
                      */
                     std::string m_webVttUrl;
                     bool m_webVttUrlHasBeenSet;

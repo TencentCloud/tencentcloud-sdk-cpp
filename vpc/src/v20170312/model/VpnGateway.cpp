@@ -42,7 +42,8 @@ VpnGateway::VpnGateway() :
     m_cdcIdHasBeenSet(false),
     m_maxConnectionHasBeenSet(false),
     m_bgpAsnHasBeenSet(false),
-    m_tagSetHasBeenSet(false)
+    m_tagSetHasBeenSet(false),
+    m_isPrivateHasBeenSet(false)
 {
 }
 
@@ -291,6 +292,16 @@ CoreInternalOutcome VpnGateway::Deserialize(const rapidjson::Value &value)
         m_tagSetHasBeenSet = true;
     }
 
+    if (value.HasMember("IsPrivate") && !value["IsPrivate"].IsNull())
+    {
+        if (!value["IsPrivate"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpnGateway.IsPrivate` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isPrivate = value["IsPrivate"].GetBool();
+        m_isPrivateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -486,6 +497,14 @@ void VpnGateway::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isPrivateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPrivate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isPrivate, allocator);
     }
 
 }
@@ -841,5 +860,21 @@ void VpnGateway::SetTagSet(const vector<Tag>& _tagSet)
 bool VpnGateway::TagSetHasBeenSet() const
 {
     return m_tagSetHasBeenSet;
+}
+
+bool VpnGateway::GetIsPrivate() const
+{
+    return m_isPrivate;
+}
+
+void VpnGateway::SetIsPrivate(const bool& _isPrivate)
+{
+    m_isPrivate = _isPrivate;
+    m_isPrivateHasBeenSet = true;
+}
+
+bool VpnGateway::IsPrivateHasBeenSet() const
+{
+    return m_isPrivateHasBeenSet;
 }
 

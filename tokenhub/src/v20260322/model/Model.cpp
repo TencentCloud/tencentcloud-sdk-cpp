@@ -31,6 +31,7 @@ Model::Model() :
     m_brandHasBeenSet(false),
     m_modelImageHasBeenSet(false),
     m_providerHasBeenSet(false),
+    m_providerIntroductionHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_modelChargingInfoHasBeenSet(false),
@@ -157,6 +158,16 @@ CoreInternalOutcome Model::Deserialize(const rapidjson::Value &value)
         }
         m_provider = string(value["Provider"].GetString());
         m_providerHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProviderIntroduction") && !value["ProviderIntroduction"].IsNull())
+    {
+        if (!value["ProviderIntroduction"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Model.ProviderIntroduction` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_providerIntroduction = string(value["ProviderIntroduction"].GetString());
+        m_providerIntroductionHasBeenSet = true;
     }
 
     if (value.HasMember("Status") && !value["Status"].IsNull())
@@ -384,6 +395,14 @@ void Model::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "Provider";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_provider.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_providerIntroductionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProviderIntroduction";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_providerIntroduction.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
@@ -642,6 +661,22 @@ void Model::SetProvider(const string& _provider)
 bool Model::ProviderHasBeenSet() const
 {
     return m_providerHasBeenSet;
+}
+
+string Model::GetProviderIntroduction() const
+{
+    return m_providerIntroduction;
+}
+
+void Model::SetProviderIntroduction(const string& _providerIntroduction)
+{
+    m_providerIntroduction = _providerIntroduction;
+    m_providerIntroductionHasBeenSet = true;
+}
+
+bool Model::ProviderIntroductionHasBeenSet() const
+{
+    return m_providerIntroductionHasBeenSet;
 }
 
 string Model::GetStatus() const

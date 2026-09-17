@@ -42,7 +42,8 @@ GovernanceService::GovernanceService() :
     m_syncToGlobalRegistryHasBeenSet(false),
     m_isolateInstanceCountHasBeenSet(false),
     m_serviceStatusHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_extendedMetadataHasBeenSet(false)
 {
 }
 
@@ -296,6 +297,26 @@ CoreInternalOutcome GovernanceService::Deserialize(const rapidjson::Value &value
         m_typeHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtendedMetadata") && !value["ExtendedMetadata"].IsNull())
+    {
+        if (!value["ExtendedMetadata"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `GovernanceService.ExtendedMetadata` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExtendedMetadata"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ExtendedMetadata item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_extendedMetadata.push_back(item);
+        }
+        m_extendedMetadataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -509,6 +530,21 @@ void GovernanceService::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);
+    }
+
+    if (m_extendedMetadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtendedMetadata";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_extendedMetadata.begin(); itr != m_extendedMetadata.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -864,5 +900,21 @@ void GovernanceService::SetType(const uint64_t& _type)
 bool GovernanceService::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+vector<ExtendedMetadata> GovernanceService::GetExtendedMetadata() const
+{
+    return m_extendedMetadata;
+}
+
+void GovernanceService::SetExtendedMetadata(const vector<ExtendedMetadata>& _extendedMetadata)
+{
+    m_extendedMetadata = _extendedMetadata;
+    m_extendedMetadataHasBeenSet = true;
+}
+
+bool GovernanceService::ExtendedMetadataHasBeenSet() const
+{
+    return m_extendedMetadataHasBeenSet;
 }
 

@@ -47,23 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取画面鉴别涉及令人不安全的信息的任务开关，可选值：
-<li>ON：开启画面鉴别涉及令人不安全的信息的任务；</li>
-<li>OFF：关闭画面鉴别涉及令人不安全的信息的任务。</li>
-                     * @return Switch 画面鉴别涉及令人不安全的信息的任务开关，可选值：
-<li>ON：开启画面鉴别涉及令人不安全的信息的任务；</li>
-<li>OFF：关闭画面鉴别涉及令人不安全的信息的任务。</li>
+                     * 获取<p>画面鉴别涉及令人不安全的信息的任务开关，可选值：</p><li>ON：开启画面鉴别涉及令人不安全的信息的任务；</li><li>OFF：关闭画面鉴别涉及令人不安全的信息的任务。</li>
+                     * @return Switch <p>画面鉴别涉及令人不安全的信息的任务开关，可选值：</p><li>ON：开启画面鉴别涉及令人不安全的信息的任务；</li><li>OFF：关闭画面鉴别涉及令人不安全的信息的任务。</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置画面鉴别涉及令人不安全的信息的任务开关，可选值：
-<li>ON：开启画面鉴别涉及令人不安全的信息的任务；</li>
-<li>OFF：关闭画面鉴别涉及令人不安全的信息的任务。</li>
-                     * @param _switch 画面鉴别涉及令人不安全的信息的任务开关，可选值：
-<li>ON：开启画面鉴别涉及令人不安全的信息的任务；</li>
-<li>OFF：关闭画面鉴别涉及令人不安全的信息的任务。</li>
+                     * 设置<p>画面鉴别涉及令人不安全的信息的任务开关，可选值：</p><li>ON：开启画面鉴别涉及令人不安全的信息的任务；</li><li>OFF：关闭画面鉴别涉及令人不安全的信息的任务。</li>
+                     * @param _switch <p>画面鉴别涉及令人不安全的信息的任务开关，可选值：</p><li>ON：开启画面鉴别涉及令人不安全的信息的任务；</li><li>OFF：关闭画面鉴别涉及令人不安全的信息的任务。</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,51 +68,15 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取画面鉴别涉及令人不安全的信息的过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
-<li>guns：武器枪支；</li>
-<li>crowd：人群聚集；</li>
-<li>bloody：血腥画面；</li>
-<li>police：警察部队；</li>
-<li>banners：暴恐旗帜；</li>
-<li>militant：武装分子；</li>
-<li>explosion：爆炸火灾；</li>
-<li>terrorists：暴恐人物；</li>
-<li>scenario：暴恐画面。</li>
-                     * @return LabelSet 画面鉴别涉及令人不安全的信息的过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
-<li>guns：武器枪支；</li>
-<li>crowd：人群聚集；</li>
-<li>bloody：血腥画面；</li>
-<li>police：警察部队；</li>
-<li>banners：暴恐旗帜；</li>
-<li>militant：武装分子；</li>
-<li>explosion：爆炸火灾；</li>
-<li>terrorists：暴恐人物；</li>
-<li>scenario：暴恐画面。</li>
+                     * 获取<p>画面鉴别涉及令人不安全的信息的过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：</p><li>guns：武器枪支；</li><li>crowd：人群聚集；</li><li>bloody：血腥画面；</li><li>police：警察部队；</li><li>banners：暴恐旗帜；</li><li>militant：武装分子；</li><li>explosion：爆炸火灾；</li><li>terrorists：暴恐人物；</li><li>scenario：暴恐画面。</li>
+                     * @return LabelSet <p>画面鉴别涉及令人不安全的信息的过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：</p><li>guns：武器枪支；</li><li>crowd：人群聚集；</li><li>bloody：血腥画面；</li><li>police：警察部队；</li><li>banners：暴恐旗帜；</li><li>militant：武装分子；</li><li>explosion：爆炸火灾；</li><li>terrorists：暴恐人物；</li><li>scenario：暴恐画面。</li>
                      * 
                      */
                     std::vector<std::string> GetLabelSet() const;
 
                     /**
-                     * 设置画面鉴别涉及令人不安全的信息的过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
-<li>guns：武器枪支；</li>
-<li>crowd：人群聚集；</li>
-<li>bloody：血腥画面；</li>
-<li>police：警察部队；</li>
-<li>banners：暴恐旗帜；</li>
-<li>militant：武装分子；</li>
-<li>explosion：爆炸火灾；</li>
-<li>terrorists：暴恐人物；</li>
-<li>scenario：暴恐画面。</li>
-                     * @param _labelSet 画面鉴别涉及令人不安全的信息的过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
-<li>guns：武器枪支；</li>
-<li>crowd：人群聚集；</li>
-<li>bloody：血腥画面；</li>
-<li>police：警察部队；</li>
-<li>banners：暴恐旗帜；</li>
-<li>militant：武装分子；</li>
-<li>explosion：爆炸火灾；</li>
-<li>terrorists：暴恐人物；</li>
-<li>scenario：暴恐画面。</li>
+                     * 设置<p>画面鉴别涉及令人不安全的信息的过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：</p><li>guns：武器枪支；</li><li>crowd：人群聚集；</li><li>bloody：血腥画面；</li><li>police：警察部队；</li><li>banners：暴恐旗帜；</li><li>militant：武装分子；</li><li>explosion：爆炸火灾；</li><li>terrorists：暴恐人物；</li><li>scenario：暴恐画面。</li>
+                     * @param _labelSet <p>画面鉴别涉及令人不安全的信息的过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：</p><li>guns：武器枪支；</li><li>crowd：人群聚集；</li><li>bloody：血腥画面；</li><li>police：警察部队；</li><li>banners：暴恐旗帜；</li><li>militant：武装分子；</li><li>explosion：爆炸火灾；</li><li>terrorists：暴恐人物；</li><li>scenario：暴恐画面。</li>
                      * 
                      */
                     void SetLabelSet(const std::vector<std::string>& _labelSet);
@@ -133,15 +89,15 @@ namespace TencentCloud
                     bool LabelSetHasBeenSet() const;
 
                     /**
-                     * 获取判定涉嫌违规的分数阈值，当审核达到该分数以上，认为涉嫌违规。取值范围：0~100。
-                     * @return BlockConfidence 判定涉嫌违规的分数阈值，当审核达到该分数以上，认为涉嫌违规。取值范围：0~100。
+                     * 获取<p>判定涉嫌违规的分数阈值，当审核达到该分数以上，认为涉嫌违规。取值范围：0~100。</p>
+                     * @return BlockConfidence <p>判定涉嫌违规的分数阈值，当审核达到该分数以上，认为涉嫌违规。取值范围：0~100。</p>
                      * 
                      */
                     int64_t GetBlockConfidence() const;
 
                     /**
-                     * 设置判定涉嫌违规的分数阈值，当审核达到该分数以上，认为涉嫌违规。取值范围：0~100。
-                     * @param _blockConfidence 判定涉嫌违规的分数阈值，当审核达到该分数以上，认为涉嫌违规。取值范围：0~100。
+                     * 设置<p>判定涉嫌违规的分数阈值，当审核达到该分数以上，认为涉嫌违规。取值范围：0~100。</p>
+                     * @param _blockConfidence <p>判定涉嫌违规的分数阈值，当审核达到该分数以上，认为涉嫌违规。取值范围：0~100。</p>
                      * 
                      */
                     void SetBlockConfidence(const int64_t& _blockConfidence);
@@ -154,15 +110,15 @@ namespace TencentCloud
                     bool BlockConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取判定需人工复核是否违规的分数阈值，当审核达到该分数以上，认为需人工复核。取值范围：0~100。
-                     * @return ReviewConfidence 判定需人工复核是否违规的分数阈值，当审核达到该分数以上，认为需人工复核。取值范围：0~100。
+                     * 获取<p>判定需人工复核是否违规的分数阈值，当审核达到该分数以上，认为需人工复核。取值范围：0~100。</p>
+                     * @return ReviewConfidence <p>判定需人工复核是否违规的分数阈值，当审核达到该分数以上，认为需人工复核。取值范围：0~100。</p>
                      * 
                      */
                     int64_t GetReviewConfidence() const;
 
                     /**
-                     * 设置判定需人工复核是否违规的分数阈值，当审核达到该分数以上，认为需人工复核。取值范围：0~100。
-                     * @param _reviewConfidence 判定需人工复核是否违规的分数阈值，当审核达到该分数以上，认为需人工复核。取值范围：0~100。
+                     * 设置<p>判定需人工复核是否违规的分数阈值，当审核达到该分数以上，认为需人工复核。取值范围：0~100。</p>
+                     * @param _reviewConfidence <p>判定需人工复核是否违规的分数阈值，当审核达到该分数以上，认为需人工复核。取值范围：0~100。</p>
                      * 
                      */
                     void SetReviewConfidence(const int64_t& _reviewConfidence);
@@ -177,36 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 画面鉴别涉及令人不安全的信息的任务开关，可选值：
-<li>ON：开启画面鉴别涉及令人不安全的信息的任务；</li>
-<li>OFF：关闭画面鉴别涉及令人不安全的信息的任务。</li>
+                     * <p>画面鉴别涉及令人不安全的信息的任务开关，可选值：</p><li>ON：开启画面鉴别涉及令人不安全的信息的任务；</li><li>OFF：关闭画面鉴别涉及令人不安全的信息的任务。</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 画面鉴别涉及令人不安全的信息的过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
-<li>guns：武器枪支；</li>
-<li>crowd：人群聚集；</li>
-<li>bloody：血腥画面；</li>
-<li>police：警察部队；</li>
-<li>banners：暴恐旗帜；</li>
-<li>militant：武装分子；</li>
-<li>explosion：爆炸火灾；</li>
-<li>terrorists：暴恐人物；</li>
-<li>scenario：暴恐画面。</li>
+                     * <p>画面鉴别涉及令人不安全的信息的过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：</p><li>guns：武器枪支；</li><li>crowd：人群聚集；</li><li>bloody：血腥画面；</li><li>police：警察部队；</li><li>banners：暴恐旗帜；</li><li>militant：武装分子；</li><li>explosion：爆炸火灾；</li><li>terrorists：暴恐人物；</li><li>scenario：暴恐画面。</li>
                      */
                     std::vector<std::string> m_labelSet;
                     bool m_labelSetHasBeenSet;
 
                     /**
-                     * 判定涉嫌违规的分数阈值，当审核达到该分数以上，认为涉嫌违规。取值范围：0~100。
+                     * <p>判定涉嫌违规的分数阈值，当审核达到该分数以上，认为涉嫌违规。取值范围：0~100。</p>
                      */
                     int64_t m_blockConfidence;
                     bool m_blockConfidenceHasBeenSet;
 
                     /**
-                     * 判定需人工复核是否违规的分数阈值，当审核达到该分数以上，认为需人工复核。取值范围：0~100。
+                     * <p>判定需人工复核是否违规的分数阈值，当审核达到该分数以上，认为需人工复核。取值范围：0~100。</p>
                      */
                     int64_t m_reviewConfidence;
                     bool m_reviewConfidenceHasBeenSet;

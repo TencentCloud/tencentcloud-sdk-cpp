@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/adp/v20260520/model/Identity.h>
 #include <tencentcloud/adp/v20260520/model/Operator.h>
+#include <tencentcloud/adp/v20260520/model/KBPermission.h>
 
 
 namespace TencentCloud
@@ -267,6 +268,31 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
+                     * 获取<p>操作权限</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Permission <p>操作权限</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    KBPermission GetPermission() const;
+
+                    /**
+                     * 设置<p>操作权限</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _permission <p>操作权限</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPermission(const KBPermission& _permission);
+
+                    /**
+                     * 判断参数 Permission 是否已赋值
+                     * @return Permission 是否已赋值
+                     * 
+                     */
+                    bool PermissionHasBeenSet() const;
+
+                    /**
                      * 获取<p>处理中状态列表</p>
                      * @return ProcessingFlagList <p>处理中状态列表</p>
                      * 
@@ -392,6 +418,13 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * <p>操作权限</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KBPermission m_permission;
+                    bool m_permissionHasBeenSet;
 
                     /**
                      * <p>处理中状态列表</p>

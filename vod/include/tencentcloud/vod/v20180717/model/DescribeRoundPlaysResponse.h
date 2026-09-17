@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合过滤条件的轮播播单总数。已经废弃，分批次查询请请使用 ScrollToken 参数。
-                     * @return TotalCount 符合过滤条件的轮播播单总数。已经废弃，分批次查询请请使用 ScrollToken 参数。
+                     * 获取<p>符合过滤条件的轮播播单总数。已经废弃，分批次查询请请使用 ScrollToken 参数。</p>
+                     * @return TotalCount <p>符合过滤条件的轮播播单总数。已经废弃，分批次查询请请使用 ScrollToken 参数。</p>
                      * @deprecated
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取轮播播单详情列表。
-                     * @return RoundPlaySet 轮播播单详情列表。
+                     * 获取<p>轮播播单详情列表。</p>
+                     * @return RoundPlaySet <p>轮播播单详情列表。</p>
                      * 
                      */
                     std::vector<RoundPlayInfo> GetRoundPlaySet() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool RoundPlaySetHasBeenSet() const;
 
                     /**
-                     * 获取翻页标识，当请求未返回所有数据，该字段表示下一条记录的 ID。当该字段为空，说明已无更多数据。
-                     * @return ScrollToken 翻页标识，当请求未返回所有数据，该字段表示下一条记录的 ID。当该字段为空，说明已无更多数据。
+                     * 获取<p>翻页标识，当请求未返回所有数据，该字段表示下一条记录的 ID。当该字段为空，说明已无更多数据。</p>
+                     * @return ScrollToken <p>翻页标识，当请求未返回所有数据，该字段表示下一条记录的 ID。当该字段为空，说明已无更多数据。</p>
                      * 
                      */
                     std::string GetScrollToken() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合过滤条件的轮播播单总数。已经废弃，分批次查询请请使用 ScrollToken 参数。
+                     * <p>符合过滤条件的轮播播单总数。已经废弃，分批次查询请请使用 ScrollToken 参数。</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 轮播播单详情列表。
+                     * <p>轮播播单详情列表。</p>
                      */
                     std::vector<RoundPlayInfo> m_roundPlaySet;
                     bool m_roundPlaySetHasBeenSet;
 
                     /**
-                     * 翻页标识，当请求未返回所有数据，该字段表示下一条记录的 ID。当该字段为空，说明已无更多数据。
+                     * <p>翻页标识，当请求未返回所有数据，该字段表示下一条记录的 ID。当该字段为空，说明已无更多数据。</p>
                      */
                     std::string m_scrollToken;
                     bool m_scrollTokenHasBeenSet;

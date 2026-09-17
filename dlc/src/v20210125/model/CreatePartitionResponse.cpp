@@ -25,7 +25,8 @@ using namespace std;
 
 CreatePartitionResponse::CreatePartitionResponse() :
     m_dealNameHasBeenSet(false),
-    m_bigDealIdHasBeenSet(false)
+    m_bigDealIdHasBeenSet(false),
+    m_billIdHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome CreatePartitionResponse::Deserialize(const string &payload)
         m_bigDealIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BillId") && !rsp["BillId"].IsNull())
+    {
+        if (!rsp["BillId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BillId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billId = string(rsp["BillId"].GetString());
+        m_billIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string CreatePartitionResponse::ToJsonString() const
         string key = "BigDealId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_bigDealId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_billIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +158,16 @@ string CreatePartitionResponse::GetBigDealId() const
 bool CreatePartitionResponse::BigDealIdHasBeenSet() const
 {
     return m_bigDealIdHasBeenSet;
+}
+
+string CreatePartitionResponse::GetBillId() const
+{
+    return m_billId;
+}
+
+bool CreatePartitionResponse::BillIdHasBeenSet() const
+{
+    return m_billIdHasBeenSet;
 }
 
 

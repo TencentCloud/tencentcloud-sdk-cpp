@@ -24,7 +24,9 @@ using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
 CreatePartitionQueueResponse::CreatePartitionQueueResponse() :
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_queueNameHasBeenSet(false),
+    m_aliasHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,26 @@ CoreInternalOutcome CreatePartitionQueueResponse::Deserialize(const string &payl
         m_idHasBeenSet = true;
     }
 
+    if (rsp.HasMember("QueueName") && !rsp["QueueName"].IsNull())
+    {
+        if (!rsp["QueueName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueueName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_queueName = string(rsp["QueueName"].GetString());
+        m_queueNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Alias") && !rsp["Alias"].IsNull())
+    {
+        if (!rsp["Alias"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Alias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alias = string(rsp["Alias"].GetString());
+        m_aliasHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +110,22 @@ string CreatePartitionQueueResponse::ToJsonString() const
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
+    }
+
+    if (m_queueNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Alias";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alias.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +148,26 @@ int64_t CreatePartitionQueueResponse::GetId() const
 bool CreatePartitionQueueResponse::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+string CreatePartitionQueueResponse::GetQueueName() const
+{
+    return m_queueName;
+}
+
+bool CreatePartitionQueueResponse::QueueNameHasBeenSet() const
+{
+    return m_queueNameHasBeenSet;
+}
+
+string CreatePartitionQueueResponse::GetAlias() const
+{
+    return m_alias;
+}
+
+bool CreatePartitionQueueResponse::AliasHasBeenSet() const
+{
+    return m_aliasHasBeenSet;
 }
 
 

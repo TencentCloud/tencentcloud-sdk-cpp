@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取临时访问凭证。
-                     * @return Credentials 临时访问凭证。
+                     * 获取<p>临时访问凭证。</p>
+                     * @return Credentials <p>临时访问凭证。</p>
                      * 
                      */
                     Credentials GetCredentials() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 临时访问凭证。
+                     * <p>临时访问凭证。</p>
                      */
                     Credentials m_credentials;
                     bool m_credentialsHasBeenSet;

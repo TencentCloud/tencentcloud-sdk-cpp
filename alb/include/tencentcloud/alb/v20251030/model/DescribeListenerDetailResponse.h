@@ -47,8 +47,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取监听器绑定的CA证书ID列表。
-                     * @return CaCertificateIds 监听器绑定的CA证书ID列表。
+                     * 获取<p>监听器绑定的CA证书ID列表。</p>
+                     * @return CaCertificateIds <p>监听器绑定的CA证书ID列表。</p>
                      * 
                      */
                     std::vector<std::string> GetCaCertificateIds() const;
@@ -61,8 +61,8 @@ namespace TencentCloud
                     bool CaCertificateIdsHasBeenSet() const;
 
                     /**
-                     * 获取是否开启双向认证。
-                     * @return CaEnabled 是否开启双向认证。
+                     * 获取<p>是否开启双向认证。</p>
+                     * @return CaEnabled <p>是否开启双向认证。</p>
                      * 
                      */
                     bool GetCaEnabled() const;
@@ -75,8 +75,8 @@ namespace TencentCloud
                     bool CaEnabledHasBeenSet() const;
 
                     /**
-                     * 获取服务器证书 ID 列表。
-                     * @return CertificateIds 服务器证书 ID 列表。
+                     * 获取<p>服务器证书 ID 列表。</p>
+                     * @return CertificateIds <p>服务器证书 ID 列表。</p>
                      * 
                      */
                     std::vector<std::string> GetCertificateIds() const;
@@ -89,8 +89,8 @@ namespace TencentCloud
                     bool CertificateIdsHasBeenSet() const;
 
                     /**
-                     * 获取监听器实例的创建时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）
-                     * @return CreateTime 监听器实例的创建时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）
+                     * 获取<p>监听器实例的创建时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）</p>
+                     * @return CreateTime <p>监听器实例的创建时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）</p>
                      * 
                      */
                     std::string GetCreateTime() const;
@@ -103,8 +103,8 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取规则动作列表。
-                     * @return DefaultActions 规则动作列表。
+                     * 获取<p>规则动作列表。</p>
+                     * @return DefaultActions <p>规则动作列表。</p>
                      * 
                      */
                     std::vector<DefaultAction> GetDefaultActions() const;
@@ -117,8 +117,8 @@ namespace TencentCloud
                     bool DefaultActionsHasBeenSet() const;
 
                     /**
-                     * 获取是否启用 Gzip 压缩。
-                     * @return GzipEnabled 是否启用 Gzip 压缩。
+                     * 获取<p>是否启用 Gzip 压缩。</p>
+                     * @return GzipEnabled <p>是否启用 Gzip 压缩。</p>
                      * 
                      */
                     bool GetGzipEnabled() const;
@@ -131,8 +131,8 @@ namespace TencentCloud
                     bool GzipEnabledHasBeenSet() const;
 
                     /**
-                     * 获取是否开启HTTP/2特性。
-                     * @return Http2Enabled 是否开启HTTP/2特性。
+                     * 获取<p>是否开启HTTP/2特性。</p>
+                     * @return Http2Enabled <p>是否开启HTTP/2特性。</p>
                      * 
                      */
                     bool GetHttp2Enabled() const;
@@ -145,8 +145,8 @@ namespace TencentCloud
                     bool Http2EnabledHasBeenSet() const;
 
                     /**
-                     * 获取指定连接空闲超时时间。单位：秒。
-                     * @return IdleTimeout 指定连接空闲超时时间。单位：秒。
+                     * 获取<p>指定连接空闲超时时间。单位：秒。</p>
+                     * @return IdleTimeout <p>指定连接空闲超时时间。单位：秒。</p>
                      * 
                      */
                     uint64_t GetIdleTimeout() const;
@@ -159,8 +159,8 @@ namespace TencentCloud
                     bool IdleTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取监听器 ID，格式为 lst- 后接 8 位字母数字。
-                     * @return ListenerId 监听器 ID，格式为 lst- 后接 8 位字母数字。
+                     * 获取<p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>
+                     * @return ListenerId <p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>
                      * 
                      */
                     std::string GetListenerId() const;
@@ -173,8 +173,8 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取自定义监听名称。
-                     * @return ListenerName 自定义监听名称。
+                     * 获取<p>自定义监听名称。</p>
+                     * @return ListenerName <p>自定义监听名称。</p>
                      * 
                      */
                     std::string GetListenerName() const;
@@ -187,8 +187,8 @@ namespace TencentCloud
                     bool ListenerNameHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例前端使用的端口。
-                     * @return ListenerPort 负载均衡实例前端使用的端口。
+                     * 获取<p>负载均衡实例前端使用的端口。</p>
+                     * @return ListenerPort <p>负载均衡实例前端使用的端口。</p>
                      * 
                      */
                     uint64_t GetListenerPort() const;
@@ -201,8 +201,8 @@ namespace TencentCloud
                     bool ListenerPortHasBeenSet() const;
 
                     /**
-                     * 获取监听协议。
-                     * @return ListenerProtocol 监听协议。
+                     * 获取<p>监听协议。</p>
+                     * @return ListenerProtocol <p>监听协议。</p>
                      * 
                      */
                     std::string GetListenerProtocol() const;
@@ -215,18 +215,8 @@ namespace TencentCloud
                     bool ListenerProtocolHasBeenSet() const;
 
                     /**
-                     * 获取监听器状态。取值:=
-
-- **Active**: 运行中。
-- **Provisioning**：创建中。
-- **Configuring**：变配中。
-- **ProvisionFailed**：创建失败
-                     * @return ListenerStatus 监听器状态。取值:=
-
-- **Active**: 运行中。
-- **Provisioning**：创建中。
-- **Configuring**：变配中。
-- **ProvisionFailed**：创建失败
+                     * 获取<p>监听器状态。取值:=</p><ul><li><strong>Active</strong>: 运行中。</li><li><strong>Provisioning</strong>：创建中。</li><li><strong>Configuring</strong>：变配中。</li><li><strong>ProvisionFailed</strong>：创建失败</li></ul>
+                     * @return ListenerStatus <p>监听器状态。取值:=</p><ul><li><strong>Active</strong>: 运行中。</li><li><strong>Provisioning</strong>：创建中。</li><li><strong>Configuring</strong>：变配中。</li><li><strong>ProvisionFailed</strong>：创建失败</li></ul>
                      * 
                      */
                     std::string GetListenerStatus() const;
@@ -239,8 +229,8 @@ namespace TencentCloud
                     bool ListenerStatusHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。
-                     * @return LoadBalancerId 负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。
+                     * 获取<p>负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。</p>
+                     * @return LoadBalancerId <p>负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。</p>
                      * 
                      */
                     std::string GetLoadBalancerId() const;
@@ -253,8 +243,8 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取监听器实例的最后变更时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）
-                     * @return ModifyTime 监听器实例的最后变更时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）
+                     * 获取<p>监听器实例的最后变更时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）</p>
+                     * @return ModifyTime <p>监听器实例的最后变更时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）</p>
                      * 
                      */
                     std::string GetModifyTime() const;
@@ -267,8 +257,8 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取请求超时时间。单位：秒。
-                     * @return RequestTimeout 请求超时时间。单位：秒。
+                     * 获取<p>连接请求超时时间。单位：秒。</p>
+                     * @return RequestTimeout <p>连接请求超时时间。单位：秒。</p>
                      * 
                      */
                     uint64_t GetRequestTimeout() const;
@@ -281,8 +271,8 @@ namespace TencentCloud
                     bool RequestTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取安全策略 ID，格式为 tls- 后接 8 位字母数字。
-                     * @return SecurityPolicyId 安全策略 ID，格式为 tls- 后接 8 位字母数字。
+                     * 获取<p>安全策略 ID，格式为 tls- 后接 8 位字母数字。</p>
+                     * @return SecurityPolicyId <p>安全策略 ID，格式为 tls- 后接 8 位字母数字。</p>
                      * 
                      */
                     std::string GetSecurityPolicyId() const;
@@ -295,8 +285,8 @@ namespace TencentCloud
                     bool SecurityPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取标签。
-                     * @return Tags 标签。
+                     * 获取<p>标签。</p>
+                     * @return Tags <p>标签。</p>
                      * 
                      */
                     std::vector<TagInfo> GetTags() const;
@@ -309,8 +299,8 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取XForwardedFor配置。
-                     * @return XForwardedForConfig XForwardedFor配置。
+                     * 获取<p>XForwardedFor配置。</p>
+                     * @return XForwardedForConfig <p>XForwardedFor配置。</p>
                      * 
                      */
                     XForwardedForConfig GetXForwardedForConfig() const;
@@ -325,120 +315,115 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 监听器绑定的CA证书ID列表。
+                     * <p>监听器绑定的CA证书ID列表。</p>
                      */
                     std::vector<std::string> m_caCertificateIds;
                     bool m_caCertificateIdsHasBeenSet;
 
                     /**
-                     * 是否开启双向认证。
+                     * <p>是否开启双向认证。</p>
                      */
                     bool m_caEnabled;
                     bool m_caEnabledHasBeenSet;
 
                     /**
-                     * 服务器证书 ID 列表。
+                     * <p>服务器证书 ID 列表。</p>
                      */
                     std::vector<std::string> m_certificateIds;
                     bool m_certificateIdsHasBeenSet;
 
                     /**
-                     * 监听器实例的创建时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）
+                     * <p>监听器实例的创建时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 规则动作列表。
+                     * <p>规则动作列表。</p>
                      */
                     std::vector<DefaultAction> m_defaultActions;
                     bool m_defaultActionsHasBeenSet;
 
                     /**
-                     * 是否启用 Gzip 压缩。
+                     * <p>是否启用 Gzip 压缩。</p>
                      */
                     bool m_gzipEnabled;
                     bool m_gzipEnabledHasBeenSet;
 
                     /**
-                     * 是否开启HTTP/2特性。
+                     * <p>是否开启HTTP/2特性。</p>
                      */
                     bool m_http2Enabled;
                     bool m_http2EnabledHasBeenSet;
 
                     /**
-                     * 指定连接空闲超时时间。单位：秒。
+                     * <p>指定连接空闲超时时间。单位：秒。</p>
                      */
                     uint64_t m_idleTimeout;
                     bool m_idleTimeoutHasBeenSet;
 
                     /**
-                     * 监听器 ID，格式为 lst- 后接 8 位字母数字。
+                     * <p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 自定义监听名称。
+                     * <p>自定义监听名称。</p>
                      */
                     std::string m_listenerName;
                     bool m_listenerNameHasBeenSet;
 
                     /**
-                     * 负载均衡实例前端使用的端口。
+                     * <p>负载均衡实例前端使用的端口。</p>
                      */
                     uint64_t m_listenerPort;
                     bool m_listenerPortHasBeenSet;
 
                     /**
-                     * 监听协议。
+                     * <p>监听协议。</p>
                      */
                     std::string m_listenerProtocol;
                     bool m_listenerProtocolHasBeenSet;
 
                     /**
-                     * 监听器状态。取值:=
-
-- **Active**: 运行中。
-- **Provisioning**：创建中。
-- **Configuring**：变配中。
-- **ProvisionFailed**：创建失败
+                     * <p>监听器状态。取值:=</p><ul><li><strong>Active</strong>: 运行中。</li><li><strong>Provisioning</strong>：创建中。</li><li><strong>Configuring</strong>：变配中。</li><li><strong>ProvisionFailed</strong>：创建失败</li></ul>
                      */
                     std::string m_listenerStatus;
                     bool m_listenerStatusHasBeenSet;
 
                     /**
-                     * 负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。
+                     * <p>负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。</p>
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 监听器实例的最后变更时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）
+                     * <p>监听器实例的最后变更时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）</p>
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 请求超时时间。单位：秒。
+                     * <p>连接请求超时时间。单位：秒。</p>
                      */
                     uint64_t m_requestTimeout;
                     bool m_requestTimeoutHasBeenSet;
 
                     /**
-                     * 安全策略 ID，格式为 tls- 后接 8 位字母数字。
+                     * <p>安全策略 ID，格式为 tls- 后接 8 位字母数字。</p>
                      */
                     std::string m_securityPolicyId;
                     bool m_securityPolicyIdHasBeenSet;
 
                     /**
-                     * 标签。
+                     * <p>标签。</p>
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * XForwardedFor配置。
+                     * <p>XForwardedFor配置。</p>
                      */
                     XForwardedForConfig m_xForwardedForConfig;
                     bool m_xForwardedForConfigHasBeenSet;

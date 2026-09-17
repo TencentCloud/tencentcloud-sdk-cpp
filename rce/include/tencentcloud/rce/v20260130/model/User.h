@@ -110,6 +110,27 @@ namespace TencentCloud
                      */
                     bool UserTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否付费账号</p>
+                     * @return IsPaid <p>是否付费账号</p>
+                     * 
+                     */
+                    bool GetIsPaid() const;
+
+                    /**
+                     * 设置<p>是否付费账号</p>
+                     * @param _isPaid <p>是否付费账号</p>
+                     * 
+                     */
+                    void SetIsPaid(const bool& _isPaid);
+
+                    /**
+                     * 判断参数 IsPaid 是否已赋值
+                     * @return IsPaid 是否已赋值
+                     * 
+                     */
+                    bool IsPaidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -129,6 +150,12 @@ namespace TencentCloud
                      */
                     std::string m_userType;
                     bool m_userTypeHasBeenSet;
+
+                    /**
+                     * <p>是否付费账号</p>
+                     */
+                    bool m_isPaid;
+                    bool m_isPaidHasBeenSet;
 
                 };
             }
