@@ -32,7 +32,8 @@ LogInfo::LogInfo() :
     m_logJsonHasBeenSet(false),
     m_hostNameHasBeenSet(false),
     m_rawLogHasBeenSet(false),
-    m_indexStatusHasBeenSet(false)
+    m_indexStatusHasBeenSet(false),
+    m_timeNanosHasBeenSet(false)
 {
 }
 
@@ -171,6 +172,16 @@ CoreInternalOutcome LogInfo::Deserialize(const rapidjson::Value &value)
         m_indexStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("TimeNanos") && !value["TimeNanos"].IsNull())
+    {
+        if (!value["TimeNanos"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogInfo.TimeNanos` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeNanos = value["TimeNanos"].GetInt64();
+        m_timeNanosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -279,6 +290,14 @@ void LogInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "IndexStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_indexStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeNanosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeNanos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_timeNanos, allocator);
     }
 
 }
@@ -474,5 +493,21 @@ void LogInfo::SetIndexStatus(const string& _indexStatus)
 bool LogInfo::IndexStatusHasBeenSet() const
 {
     return m_indexStatusHasBeenSet;
+}
+
+int64_t LogInfo::GetTimeNanos() const
+{
+    return m_timeNanos;
+}
+
+void LogInfo::SetTimeNanos(const int64_t& _timeNanos)
+{
+    m_timeNanos = _timeNanos;
+    m_timeNanosHasBeenSet = true;
+}
+
+bool LogInfo::TimeNanosHasBeenSet() const
+{
+    return m_timeNanosHasBeenSet;
 }
 

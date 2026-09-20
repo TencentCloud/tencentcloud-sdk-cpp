@@ -26,9 +26,10 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/CreateDBInstanceParamTplResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeAccountUsersRequest.h
   include/tencentcloud/mongodb/v20190725/model/DescribeDBInstanceParamTplRequest.h
-  include/tencentcloud/mongodb/v20190725/model/CreateBackupDBInstanceResponse.h
+  include/tencentcloud/mongodb/v20190725/model/CheckDBInstanceElasticCpuScalableRequest.h
   include/tencentcloud/mongodb/v20190725/model/DescribeAuditLogsRequest.h
   include/tencentcloud/mongodb/v20190725/model/DBInstancePrice.h
+  include/tencentcloud/mongodb/v20190725/model/CheckDBInstanceElasticCpuScalableResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribePasswordRotationResponse.h
   include/tencentcloud/mongodb/v20190725/model/ScaleUpDBInstanceCpuRequest.h
   include/tencentcloud/mongodb/v20190725/model/KillOpsRequest.h
@@ -56,7 +57,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/AssignProjectResponse.h
   include/tencentcloud/mongodb/v20190725/model/AuditLogFilter.h
   include/tencentcloud/mongodb/v20190725/model/DescribeDBInstanceDealResponse.h
-  include/tencentcloud/mongodb/v20190725/model/DescribeAuditInstanceListResponse.h
+  include/tencentcloud/mongodb/v20190725/model/CreateBackupDBInstanceResponse.h
   include/tencentcloud/mongodb/v20190725/model/OfflineIsolatedDBInstanceResponse.h
   include/tencentcloud/mongodb/v20190725/model/IsolateDBInstanceResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeInstanceParamsRequest.h
@@ -222,6 +223,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/DeleteAccountUserResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeDBInstancesResponse.h
   include/tencentcloud/mongodb/v20190725/model/OfflineIsolatedDBInstanceRequest.h
+  include/tencentcloud/mongodb/v20190725/model/DescribeAuditInstanceListResponse.h
   include/tencentcloud/mongodb/v20190725/model/KMSInfoDetail.h
   include/tencentcloud/mongodb/v20190725/model/InquirePriceCreateDBInstancesRequest.h
   include/tencentcloud/mongodb/v20190725/model/Operation.h
@@ -295,9 +297,10 @@ set(mongodb_src
   src/v20190725/model/CreateDBInstanceParamTplResponse.cpp
   src/v20190725/model/DescribeAccountUsersRequest.cpp
   src/v20190725/model/DescribeDBInstanceParamTplRequest.cpp
-  src/v20190725/model/CreateBackupDBInstanceResponse.cpp
+  src/v20190725/model/CheckDBInstanceElasticCpuScalableRequest.cpp
   src/v20190725/model/DescribeAuditLogsRequest.cpp
   src/v20190725/model/DBInstancePrice.cpp
+  src/v20190725/model/CheckDBInstanceElasticCpuScalableResponse.cpp
   src/v20190725/model/DescribePasswordRotationResponse.cpp
   src/v20190725/model/ScaleUpDBInstanceCpuRequest.cpp
   src/v20190725/model/KillOpsRequest.cpp
@@ -325,7 +328,7 @@ set(mongodb_src
   src/v20190725/model/AssignProjectResponse.cpp
   src/v20190725/model/AuditLogFilter.cpp
   src/v20190725/model/DescribeDBInstanceDealResponse.cpp
-  src/v20190725/model/DescribeAuditInstanceListResponse.cpp
+  src/v20190725/model/CreateBackupDBInstanceResponse.cpp
   src/v20190725/model/OfflineIsolatedDBInstanceResponse.cpp
   src/v20190725/model/IsolateDBInstanceResponse.cpp
   src/v20190725/model/DescribeInstanceParamsRequest.cpp
@@ -491,6 +494,7 @@ set(mongodb_src
   src/v20190725/model/DeleteAccountUserResponse.cpp
   src/v20190725/model/DescribeDBInstancesResponse.cpp
   src/v20190725/model/OfflineIsolatedDBInstanceRequest.cpp
+  src/v20190725/model/DescribeAuditInstanceListResponse.cpp
   src/v20190725/model/KMSInfoDetail.cpp
   src/v20190725/model/InquirePriceCreateDBInstancesRequest.cpp
   src/v20190725/model/Operation.cpp

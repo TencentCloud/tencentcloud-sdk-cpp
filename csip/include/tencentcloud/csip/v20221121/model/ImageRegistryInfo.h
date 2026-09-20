@@ -468,6 +468,27 @@ namespace TencentCloud
                      */
                     bool UserNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>连接状态</p><p>枚举值：</p><ul><li>status_connected： 连接成功</li><li>status_connecting： 连接中</li><li>status_connect_failed： 连接失败</li><li>status_partial_failed： 部分连接失败</li></ul>
+                     * @return ConnStatus <p>连接状态</p><p>枚举值：</p><ul><li>status_connected： 连接成功</li><li>status_connecting： 连接中</li><li>status_connect_failed： 连接失败</li><li>status_partial_failed： 部分连接失败</li></ul>
+                     * 
+                     */
+                    std::string GetConnStatus() const;
+
+                    /**
+                     * 设置<p>连接状态</p><p>枚举值：</p><ul><li>status_connected： 连接成功</li><li>status_connecting： 连接中</li><li>status_connect_failed： 连接失败</li><li>status_partial_failed： 部分连接失败</li></ul>
+                     * @param _connStatus <p>连接状态</p><p>枚举值：</p><ul><li>status_connected： 连接成功</li><li>status_connecting： 连接中</li><li>status_connect_failed： 连接失败</li><li>status_partial_failed： 部分连接失败</li></ul>
+                     * 
+                     */
+                    void SetConnStatus(const std::string& _connStatus);
+
+                    /**
+                     * 判断参数 ConnStatus 是否已赋值
+                     * @return ConnStatus 是否已赋值
+                     * 
+                     */
+                    bool ConnStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -589,6 +610,12 @@ namespace TencentCloud
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
+
+                    /**
+                     * <p>连接状态</p><p>枚举值：</p><ul><li>status_connected： 连接成功</li><li>status_connecting： 连接中</li><li>status_connect_failed： 连接失败</li><li>status_partial_failed： 部分连接失败</li></ul>
+                     */
+                    std::string m_connStatus;
+                    bool m_connStatusHasBeenSet;
 
                 };
             }

@@ -28,7 +28,12 @@ AgentApplicationInfo::AgentApplicationInfo() :
     m_logTopicsHasBeenSet(false),
     m_metricsTopicsHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_logsetIdHasBeenSet(false),
+    m_assumerNameHasBeenSet(false),
+    m_subAssumerNameHasBeenSet(false),
+    m_assumerUinHasBeenSet(false),
+    m_roleNameHasBeenSet(false)
 {
 }
 
@@ -137,6 +142,56 @@ CoreInternalOutcome AgentApplicationInfo::Deserialize(const rapidjson::Value &va
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("LogsetId") && !value["LogsetId"].IsNull())
+    {
+        if (!value["LogsetId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentApplicationInfo.LogsetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logsetId = string(value["LogsetId"].GetString());
+        m_logsetIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssumerName") && !value["AssumerName"].IsNull())
+    {
+        if (!value["AssumerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentApplicationInfo.AssumerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_assumerName = string(value["AssumerName"].GetString());
+        m_assumerNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubAssumerName") && !value["SubAssumerName"].IsNull())
+    {
+        if (!value["SubAssumerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentApplicationInfo.SubAssumerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAssumerName = string(value["SubAssumerName"].GetString());
+        m_subAssumerNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssumerUin") && !value["AssumerUin"].IsNull())
+    {
+        if (!value["AssumerUin"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentApplicationInfo.AssumerUin` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_assumerUin = value["AssumerUin"].GetUint64();
+        m_assumerUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("RoleName") && !value["RoleName"].IsNull())
+    {
+        if (!value["RoleName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentApplicationInfo.RoleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_roleName = string(value["RoleName"].GetString());
+        m_roleNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -220,6 +275,46 @@ void AgentApplicationInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateTime, allocator);
+    }
+
+    if (m_logsetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogsetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logsetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assumerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssumerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_assumerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAssumerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAssumerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAssumerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assumerUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssumerUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_assumerUin, allocator);
+    }
+
+    if (m_roleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roleName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -351,5 +446,85 @@ void AgentApplicationInfo::SetUpdateTime(const uint64_t& _updateTime)
 bool AgentApplicationInfo::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string AgentApplicationInfo::GetLogsetId() const
+{
+    return m_logsetId;
+}
+
+void AgentApplicationInfo::SetLogsetId(const string& _logsetId)
+{
+    m_logsetId = _logsetId;
+    m_logsetIdHasBeenSet = true;
+}
+
+bool AgentApplicationInfo::LogsetIdHasBeenSet() const
+{
+    return m_logsetIdHasBeenSet;
+}
+
+string AgentApplicationInfo::GetAssumerName() const
+{
+    return m_assumerName;
+}
+
+void AgentApplicationInfo::SetAssumerName(const string& _assumerName)
+{
+    m_assumerName = _assumerName;
+    m_assumerNameHasBeenSet = true;
+}
+
+bool AgentApplicationInfo::AssumerNameHasBeenSet() const
+{
+    return m_assumerNameHasBeenSet;
+}
+
+string AgentApplicationInfo::GetSubAssumerName() const
+{
+    return m_subAssumerName;
+}
+
+void AgentApplicationInfo::SetSubAssumerName(const string& _subAssumerName)
+{
+    m_subAssumerName = _subAssumerName;
+    m_subAssumerNameHasBeenSet = true;
+}
+
+bool AgentApplicationInfo::SubAssumerNameHasBeenSet() const
+{
+    return m_subAssumerNameHasBeenSet;
+}
+
+uint64_t AgentApplicationInfo::GetAssumerUin() const
+{
+    return m_assumerUin;
+}
+
+void AgentApplicationInfo::SetAssumerUin(const uint64_t& _assumerUin)
+{
+    m_assumerUin = _assumerUin;
+    m_assumerUinHasBeenSet = true;
+}
+
+bool AgentApplicationInfo::AssumerUinHasBeenSet() const
+{
+    return m_assumerUinHasBeenSet;
+}
+
+string AgentApplicationInfo::GetRoleName() const
+{
+    return m_roleName;
+}
+
+void AgentApplicationInfo::SetRoleName(const string& _roleName)
+{
+    m_roleName = _roleName;
+    m_roleNameHasBeenSet = true;
+}
+
+bool AgentApplicationInfo::RoleNameHasBeenSet() const
+{
+    return m_roleNameHasBeenSet;
 }
 

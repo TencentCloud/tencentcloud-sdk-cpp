@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/mongodb/v20190725/model/AssignProjectRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/AssignProjectResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/CheckDBInstanceElasticCpuScalableRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/CheckDBInstanceElasticCpuScalableResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/CloseAuditServiceRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/CloseAuditServiceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateAccountUserRequest.h>
@@ -216,6 +218,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AssignProjectResponse> AssignProjectOutcome;
                 typedef std::future<AssignProjectOutcome> AssignProjectOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::AssignProjectRequest&, AssignProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssignProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckDBInstanceElasticCpuScalableResponse> CheckDBInstanceElasticCpuScalableOutcome;
+                typedef std::future<CheckDBInstanceElasticCpuScalableOutcome> CheckDBInstanceElasticCpuScalableOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::CheckDBInstanceElasticCpuScalableRequest&, CheckDBInstanceElasticCpuScalableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckDBInstanceElasticCpuScalableAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloseAuditServiceResponse> CloseAuditServiceOutcome;
                 typedef std::future<CloseAuditServiceOutcome> CloseAuditServiceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::CloseAuditServiceRequest&, CloseAuditServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseAuditServiceAsyncHandler;
@@ -488,6 +493,15 @@ namespace TencentCloud
                 AssignProjectOutcome AssignProject(const Model::AssignProjectRequest &request);
                 void AssignProjectAsync(const Model::AssignProjectRequest& request, const AssignProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AssignProjectOutcomeCallable AssignProjectCallable(const Model::AssignProjectRequest& request);
+
+                /**
+                 *查询cpu弹性扩容信息
+                 * @param req CheckDBInstanceElasticCpuScalableRequest
+                 * @return CheckDBInstanceElasticCpuScalableOutcome
+                 */
+                CheckDBInstanceElasticCpuScalableOutcome CheckDBInstanceElasticCpuScalable(const Model::CheckDBInstanceElasticCpuScalableRequest &request);
+                void CheckDBInstanceElasticCpuScalableAsync(const Model::CheckDBInstanceElasticCpuScalableRequest& request, const CheckDBInstanceElasticCpuScalableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckDBInstanceElasticCpuScalableOutcomeCallable CheckDBInstanceElasticCpuScalableCallable(const Model::CheckDBInstanceElasticCpuScalableRequest& request);
 
                 /**
                  *本接口（CloseAuditService）用于关闭审计服务

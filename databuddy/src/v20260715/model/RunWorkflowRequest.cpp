@@ -28,7 +28,8 @@ RunWorkflowRequest::RunWorkflowRequest() :
     m_runTypeHasBeenSet(false),
     m_advancedParamsHasBeenSet(false),
     m_taskIdsHasBeenSet(false),
-    m_idempotencyTokenHasBeenSet(false)
+    m_idempotencyTokenHasBeenSet(false),
+    m_scheduledTimeConfigHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,15 @@ string RunWorkflowRequest::ToJsonString() const
         string key = "IdempotencyToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_idempotencyToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduledTimeConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduledTimeConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_scheduledTimeConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -201,6 +211,22 @@ void RunWorkflowRequest::SetIdempotencyToken(const string& _idempotencyToken)
 bool RunWorkflowRequest::IdempotencyTokenHasBeenSet() const
 {
     return m_idempotencyTokenHasBeenSet;
+}
+
+ScheduledTimeConfig RunWorkflowRequest::GetScheduledTimeConfig() const
+{
+    return m_scheduledTimeConfig;
+}
+
+void RunWorkflowRequest::SetScheduledTimeConfig(const ScheduledTimeConfig& _scheduledTimeConfig)
+{
+    m_scheduledTimeConfig = _scheduledTimeConfig;
+    m_scheduledTimeConfigHasBeenSet = true;
+}
+
+bool RunWorkflowRequest::ScheduledTimeConfigHasBeenSet() const
+{
+    return m_scheduledTimeConfigHasBeenSet;
 }
 
 

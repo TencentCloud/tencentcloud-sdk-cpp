@@ -114,6 +114,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DashboardTopicInfo.h
   include/tencentcloud/cls/v20201016/model/DeleteResourceGraphProductIngestTaskRequest.h
   include/tencentcloud/cls/v20201016/model/CloudProductLogTaskInfo.h
+  include/tencentcloud/cls/v20201016/model/PrivateDomainNames.h
   include/tencentcloud/cls/v20201016/model/Instance.h
   include/tencentcloud/cls/v20201016/model/DescribeAlarmNoticesResponse.h
   include/tencentcloud/cls/v20201016/model/DeleteDataTransformRequest.h
@@ -388,7 +389,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/SplitPartitionResponse.h
   include/tencentcloud/cls/v20201016/model/AlarmClassification.h
   include/tencentcloud/cls/v20201016/model/WebCallbackInfo.h
-  include/tencentcloud/cls/v20201016/model/SplitPartitionRequest.h
+  include/tencentcloud/cls/v20201016/model/NetworkInfo.h
   include/tencentcloud/cls/v20201016/model/DescribeConsoleSharingListResponse.h
   include/tencentcloud/cls/v20201016/model/CreateLogsetResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyHostMetricConfigRequest.h
@@ -507,6 +508,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DescribeSearchViewsRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyWebCallbackRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteTopicResponse.h
+  include/tencentcloud/cls/v20201016/model/SplitPartitionRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyResourceGraphEntityTopicsRelationRequest.h
   include/tencentcloud/cls/v20201016/model/ResourceGraphEntityRelatedTopic.h
   include/tencentcloud/cls/v20201016/model/CreateExportResponse.h
@@ -780,6 +782,7 @@ set(cls_src
   src/v20201016/model/DashboardTopicInfo.cpp
   src/v20201016/model/DeleteResourceGraphProductIngestTaskRequest.cpp
   src/v20201016/model/CloudProductLogTaskInfo.cpp
+  src/v20201016/model/PrivateDomainNames.cpp
   src/v20201016/model/Instance.cpp
   src/v20201016/model/DescribeAlarmNoticesResponse.cpp
   src/v20201016/model/DeleteDataTransformRequest.cpp
@@ -1054,7 +1057,7 @@ set(cls_src
   src/v20201016/model/SplitPartitionResponse.cpp
   src/v20201016/model/AlarmClassification.cpp
   src/v20201016/model/WebCallbackInfo.cpp
-  src/v20201016/model/SplitPartitionRequest.cpp
+  src/v20201016/model/NetworkInfo.cpp
   src/v20201016/model/DescribeConsoleSharingListResponse.cpp
   src/v20201016/model/CreateLogsetResponse.cpp
   src/v20201016/model/ModifyHostMetricConfigRequest.cpp
@@ -1173,6 +1176,7 @@ set(cls_src
   src/v20201016/model/DescribeSearchViewsRequest.cpp
   src/v20201016/model/ModifyWebCallbackRequest.cpp
   src/v20201016/model/DeleteTopicResponse.cpp
+  src/v20201016/model/SplitPartitionRequest.cpp
   src/v20201016/model/ModifyResourceGraphEntityTopicsRelationRequest.cpp
   src/v20201016/model/ResourceGraphEntityRelatedTopic.cpp
   src/v20201016/model/CreateExportResponse.cpp

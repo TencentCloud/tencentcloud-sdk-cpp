@@ -4390,6 +4390,56 @@ IotexplorerClient::DescribeCloudStorageEventsOutcomeCallable IotexplorerClient::
     return prom->get_future();
 }
 
+IotexplorerClient::DescribeCloudStorageEventsByTWeSeePersonOutcome IotexplorerClient::DescribeCloudStorageEventsByTWeSeePerson(const DescribeCloudStorageEventsByTWeSeePersonRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorageEventsByTWeSeePerson");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageEventsByTWeSeePersonResponse rsp = DescribeCloudStorageEventsByTWeSeePersonResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageEventsByTWeSeePersonOutcome(rsp);
+        else
+            return DescribeCloudStorageEventsByTWeSeePersonOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageEventsByTWeSeePersonOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeCloudStorageEventsByTWeSeePersonAsync(const DescribeCloudStorageEventsByTWeSeePersonRequest& request, const DescribeCloudStorageEventsByTWeSeePersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudStorageEventsByTWeSeePersonRequest&;
+    using Resp = DescribeCloudStorageEventsByTWeSeePersonResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudStorageEventsByTWeSeePerson", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DescribeCloudStorageEventsByTWeSeePersonOutcomeCallable IotexplorerClient::DescribeCloudStorageEventsByTWeSeePersonCallable(const DescribeCloudStorageEventsByTWeSeePersonRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudStorageEventsByTWeSeePersonOutcome>>();
+    DescribeCloudStorageEventsByTWeSeePersonAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DescribeCloudStorageEventsByTWeSeePersonRequest&,
+        DescribeCloudStorageEventsByTWeSeePersonOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::DescribeCloudStorageEventsWithAITasksOutcome IotexplorerClient::DescribeCloudStorageEventsWithAITasks(const DescribeCloudStorageEventsWithAITasksRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudStorageEventsWithAITasks");
@@ -6690,6 +6740,56 @@ IotexplorerClient::DescribeTWeSeeConfigOutcomeCallable IotexplorerClient::Descri
     return prom->get_future();
 }
 
+IotexplorerClient::DescribeTWeSeeDirectUploadInfoOutcome IotexplorerClient::DescribeTWeSeeDirectUploadInfo(const DescribeTWeSeeDirectUploadInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTWeSeeDirectUploadInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTWeSeeDirectUploadInfoResponse rsp = DescribeTWeSeeDirectUploadInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTWeSeeDirectUploadInfoOutcome(rsp);
+        else
+            return DescribeTWeSeeDirectUploadInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTWeSeeDirectUploadInfoOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeTWeSeeDirectUploadInfoAsync(const DescribeTWeSeeDirectUploadInfoRequest& request, const DescribeTWeSeeDirectUploadInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTWeSeeDirectUploadInfoRequest&;
+    using Resp = DescribeTWeSeeDirectUploadInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTWeSeeDirectUploadInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DescribeTWeSeeDirectUploadInfoOutcomeCallable IotexplorerClient::DescribeTWeSeeDirectUploadInfoCallable(const DescribeTWeSeeDirectUploadInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTWeSeeDirectUploadInfoOutcome>>();
+    DescribeTWeSeeDirectUploadInfoAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DescribeTWeSeeDirectUploadInfoRequest&,
+        DescribeTWeSeeDirectUploadInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::DescribeTWeSeeFaceOutcome IotexplorerClient::DescribeTWeSeeFace(const DescribeTWeSeeFaceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTWeSeeFace");
@@ -7532,6 +7632,56 @@ IotexplorerClient::DescribeVideoLicenseOutcomeCallable IotexplorerClient::Descri
         const IotexplorerClient*,
         const DescribeVideoLicenseRequest&,
         DescribeVideoLicenseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::DescribeVodCloudStorageDateOutcome IotexplorerClient::DescribeVodCloudStorageDate(const DescribeVodCloudStorageDateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVodCloudStorageDate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVodCloudStorageDateResponse rsp = DescribeVodCloudStorageDateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVodCloudStorageDateOutcome(rsp);
+        else
+            return DescribeVodCloudStorageDateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVodCloudStorageDateOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeVodCloudStorageDateAsync(const DescribeVodCloudStorageDateRequest& request, const DescribeVodCloudStorageDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeVodCloudStorageDateRequest&;
+    using Resp = DescribeVodCloudStorageDateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeVodCloudStorageDate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DescribeVodCloudStorageDateOutcomeCallable IotexplorerClient::DescribeVodCloudStorageDateCallable(const DescribeVodCloudStorageDateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeVodCloudStorageDateOutcome>>();
+    DescribeVodCloudStorageDateAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DescribeVodCloudStorageDateRequest&,
+        DescribeVodCloudStorageDateOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -8882,6 +9032,106 @@ IotexplorerClient::GetTopicRuleListOutcomeCallable IotexplorerClient::GetTopicRu
         const IotexplorerClient*,
         const GetTopicRuleListRequest&,
         GetTopicRuleListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::GetVodCloudStorageEventListOutcome IotexplorerClient::GetVodCloudStorageEventList(const GetVodCloudStorageEventListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetVodCloudStorageEventList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetVodCloudStorageEventListResponse rsp = GetVodCloudStorageEventListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetVodCloudStorageEventListOutcome(rsp);
+        else
+            return GetVodCloudStorageEventListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetVodCloudStorageEventListOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::GetVodCloudStorageEventListAsync(const GetVodCloudStorageEventListRequest& request, const GetVodCloudStorageEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetVodCloudStorageEventListRequest&;
+    using Resp = GetVodCloudStorageEventListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetVodCloudStorageEventList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::GetVodCloudStorageEventListOutcomeCallable IotexplorerClient::GetVodCloudStorageEventListCallable(const GetVodCloudStorageEventListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetVodCloudStorageEventListOutcome>>();
+    GetVodCloudStorageEventListAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const GetVodCloudStorageEventListRequest&,
+        GetVodCloudStorageEventListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::GetVodCloudStorageVideoListOutcome IotexplorerClient::GetVodCloudStorageVideoList(const GetVodCloudStorageVideoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetVodCloudStorageVideoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetVodCloudStorageVideoListResponse rsp = GetVodCloudStorageVideoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetVodCloudStorageVideoListOutcome(rsp);
+        else
+            return GetVodCloudStorageVideoListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetVodCloudStorageVideoListOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::GetVodCloudStorageVideoListAsync(const GetVodCloudStorageVideoListRequest& request, const GetVodCloudStorageVideoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetVodCloudStorageVideoListRequest&;
+    using Resp = GetVodCloudStorageVideoListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetVodCloudStorageVideoList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::GetVodCloudStorageVideoListOutcomeCallable IotexplorerClient::GetVodCloudStorageVideoListCallable(const GetVodCloudStorageVideoListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetVodCloudStorageVideoListOutcome>>();
+    GetVodCloudStorageVideoListAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const GetVodCloudStorageVideoListRequest&,
+        GetVodCloudStorageVideoListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -149,6 +149,48 @@ namespace TencentCloud
                     bool TargetHostsHasBeenSet() const;
 
                     /**
+                     * 获取<p>模型提供商</p><p>枚举值：</p><ul><li>tencentTokenHub： 腾讯云TokenHub</li><li>tiONE： TI-ONE应用</li><li>default： 其他</li></ul>
+                     * @return Provider <p>模型提供商</p><p>枚举值：</p><ul><li>tencentTokenHub： 腾讯云TokenHub</li><li>tiONE： TI-ONE应用</li><li>default： 其他</li></ul>
+                     * 
+                     */
+                    std::string GetProvider() const;
+
+                    /**
+                     * 设置<p>模型提供商</p><p>枚举值：</p><ul><li>tencentTokenHub： 腾讯云TokenHub</li><li>tiONE： TI-ONE应用</li><li>default： 其他</li></ul>
+                     * @param _provider <p>模型提供商</p><p>枚举值：</p><ul><li>tencentTokenHub： 腾讯云TokenHub</li><li>tiONE： TI-ONE应用</li><li>default： 其他</li></ul>
+                     * 
+                     */
+                    void SetProvider(const std::string& _provider);
+
+                    /**
+                     * 判断参数 Provider 是否已赋值
+                     * @return Provider 是否已赋值
+                     * 
+                     */
+                    bool ProviderHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Provider=tencentTokenHub时对应的密钥</p>
+                     * @return ApiKeys <p>Provider=tencentTokenHub时对应的密钥</p>
+                     * 
+                     */
+                    std::vector<std::string> GetApiKeys() const;
+
+                    /**
+                     * 设置<p>Provider=tencentTokenHub时对应的密钥</p>
+                     * @param _apiKeys <p>Provider=tencentTokenHub时对应的密钥</p>
+                     * 
+                     */
+                    void SetApiKeys(const std::vector<std::string>& _apiKeys);
+
+                    /**
+                     * 判断参数 ApiKeys 是否已赋值
+                     * @return ApiKeys 是否已赋值
+                     * 
+                     */
+                    bool ApiKeysHasBeenSet() const;
+
+                    /**
                      * 获取<p>凭据ID</p>
                      * @return CredentialID <p>凭据ID</p>
                      * 
@@ -284,6 +326,18 @@ namespace TencentCloud
                      */
                     std::vector<TargetHostDTO> m_targetHosts;
                     bool m_targetHostsHasBeenSet;
+
+                    /**
+                     * <p>模型提供商</p><p>枚举值：</p><ul><li>tencentTokenHub： 腾讯云TokenHub</li><li>tiONE： TI-ONE应用</li><li>default： 其他</li></ul>
+                     */
+                    std::string m_provider;
+                    bool m_providerHasBeenSet;
+
+                    /**
+                     * <p>Provider=tencentTokenHub时对应的密钥</p>
+                     */
+                    std::vector<std::string> m_apiKeys;
+                    bool m_apiKeysHasBeenSet;
 
                     /**
                      * <p>凭据ID</p>

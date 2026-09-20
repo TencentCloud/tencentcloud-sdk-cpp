@@ -29,7 +29,8 @@ CreateCFGRiskPDFReportExportJobRequest::CreateCFGRiskPDFReportExportJobRequest()
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_orderHasBeenSet(false),
-    m_byHasBeenSet(false)
+    m_byHasBeenSet(false),
+    m_assetTagIDsHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,19 @@ string CreateCFGRiskPDFReportExportJobRequest::ToJsonString() const
         string key = "By";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_by.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assetTagIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetTagIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_assetTagIDs.begin(); itr != m_assetTagIDs.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
 
@@ -226,6 +240,22 @@ void CreateCFGRiskPDFReportExportJobRequest::SetBy(const string& _by)
 bool CreateCFGRiskPDFReportExportJobRequest::ByHasBeenSet() const
 {
     return m_byHasBeenSet;
+}
+
+vector<uint64_t> CreateCFGRiskPDFReportExportJobRequest::GetAssetTagIDs() const
+{
+    return m_assetTagIDs;
+}
+
+void CreateCFGRiskPDFReportExportJobRequest::SetAssetTagIDs(const vector<uint64_t>& _assetTagIDs)
+{
+    m_assetTagIDs = _assetTagIDs;
+    m_assetTagIDsHasBeenSet = true;
+}
+
+bool CreateCFGRiskPDFReportExportJobRequest::AssetTagIDsHasBeenSet() const
+{
+    return m_assetTagIDsHasBeenSet;
 }
 
 

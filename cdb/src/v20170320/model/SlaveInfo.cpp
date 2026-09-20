@@ -22,7 +22,8 @@ using namespace std;
 
 SlaveInfo::SlaveInfo() :
     m_firstHasBeenSet(false),
-    m_secondHasBeenSet(false)
+    m_secondHasBeenSet(false),
+    m_thirdHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,23 @@ CoreInternalOutcome SlaveInfo::Deserialize(const rapidjson::Value &value)
         m_secondHasBeenSet = true;
     }
 
+    if (value.HasMember("Third") && !value["Third"].IsNull())
+    {
+        if (!value["Third"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlaveInfo.Third` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_third.Deserialize(value["Third"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_thirdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +106,15 @@ void SlaveInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_second.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_thirdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Third";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_third.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -123,5 +150,21 @@ void SlaveInfo::SetSecond(const SlaveInstanceInfo& _second)
 bool SlaveInfo::SecondHasBeenSet() const
 {
     return m_secondHasBeenSet;
+}
+
+SlaveInstanceInfo SlaveInfo::GetThird() const
+{
+    return m_third;
+}
+
+void SlaveInfo::SetThird(const SlaveInstanceInfo& _third)
+{
+    m_third = _third;
+    m_thirdHasBeenSet = true;
+}
+
+bool SlaveInfo::ThirdHasBeenSet() const
+{
+    return m_thirdHasBeenSet;
 }
 

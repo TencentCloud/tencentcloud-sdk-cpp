@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境ID
-                     * @return EnvId 环境ID
+                     * 获取<p>环境ID</p>
+                     * @return EnvId <p>环境ID</p>
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
-                     * 设置环境ID
-                     * @param _envId 环境ID
+                     * 设置<p>环境ID</p>
+                     * @param _envId <p>环境ID</p>
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
-                     * 获取资源类型。代表本次开通哪些资源。 可取值以及含义： - log : 表示日志资源，当前仅支持 log（日志资源类型），后续版本可能扩展，该数组不能为空，且每个元素必须为合法的资源类型值
-                     * @return Resources 资源类型。代表本次开通哪些资源。 可取值以及含义： - log : 表示日志资源，当前仅支持 log（日志资源类型），后续版本可能扩展，该数组不能为空，且每个元素必须为合法的资源类型值
+                     * 获取<p>资源类型。代表本次开通哪些资源。<br>可取值以及含义：</p><ul><li>log : 表示日志资源。</li><li>function： 表示云函数资源。</li></ul><p>该数组不能为空，且每个元素必须为合法的资源类型值</p>
+                     * @return Resources <p>资源类型。代表本次开通哪些资源。<br>可取值以及含义：</p><ul><li>log : 表示日志资源。</li><li>function： 表示云函数资源。</li></ul><p>该数组不能为空，且每个元素必须为合法的资源类型值</p>
                      * 
                      */
                     std::vector<std::string> GetResources() const;
 
                     /**
-                     * 设置资源类型。代表本次开通哪些资源。 可取值以及含义： - log : 表示日志资源，当前仅支持 log（日志资源类型），后续版本可能扩展，该数组不能为空，且每个元素必须为合法的资源类型值
-                     * @param _resources 资源类型。代表本次开通哪些资源。 可取值以及含义： - log : 表示日志资源，当前仅支持 log（日志资源类型），后续版本可能扩展，该数组不能为空，且每个元素必须为合法的资源类型值
+                     * 设置<p>资源类型。代表本次开通哪些资源。<br>可取值以及含义：</p><ul><li>log : 表示日志资源。</li><li>function： 表示云函数资源。</li></ul><p>该数组不能为空，且每个元素必须为合法的资源类型值</p>
+                     * @param _resources <p>资源类型。代表本次开通哪些资源。<br>可取值以及含义：</p><ul><li>log : 表示日志资源。</li><li>function： 表示云函数资源。</li></ul><p>该数组不能为空，且每个元素必须为合法的资源类型值</p>
                      * 
                      */
                     void SetResources(const std::vector<std::string>& _resources);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 环境ID
+                     * <p>环境ID</p>
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
 
                     /**
-                     * 资源类型。代表本次开通哪些资源。 可取值以及含义： - log : 表示日志资源，当前仅支持 log（日志资源类型），后续版本可能扩展，该数组不能为空，且每个元素必须为合法的资源类型值
+                     * <p>资源类型。代表本次开通哪些资源。<br>可取值以及含义：</p><ul><li>log : 表示日志资源。</li><li>function： 表示云函数资源。</li></ul><p>该数组不能为空，且每个元素必须为合法的资源类型值</p>
                      */
                     std::vector<std::string> m_resources;
                     bool m_resourcesHasBeenSet;

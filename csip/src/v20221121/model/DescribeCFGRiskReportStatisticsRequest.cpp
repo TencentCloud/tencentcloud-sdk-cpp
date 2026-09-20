@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeCFGRiskReportStatisticsRequest::DescribeCFGRiskReportStatisticsRequest() :
     m_memberIdHasBeenSet(false),
-    m_standardIDsHasBeenSet(false)
+    m_standardIDsHasBeenSet(false),
+    m_assetTagIDsHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,19 @@ string DescribeCFGRiskReportStatisticsRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_standardIDs.begin(); itr != m_standardIDs.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_assetTagIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetTagIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_assetTagIDs.begin(); itr != m_assetTagIDs.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
@@ -99,6 +113,22 @@ void DescribeCFGRiskReportStatisticsRequest::SetStandardIDs(const vector<uint64_
 bool DescribeCFGRiskReportStatisticsRequest::StandardIDsHasBeenSet() const
 {
     return m_standardIDsHasBeenSet;
+}
+
+vector<uint64_t> DescribeCFGRiskReportStatisticsRequest::GetAssetTagIDs() const
+{
+    return m_assetTagIDs;
+}
+
+void DescribeCFGRiskReportStatisticsRequest::SetAssetTagIDs(const vector<uint64_t>& _assetTagIDs)
+{
+    m_assetTagIDs = _assetTagIDs;
+    m_assetTagIDsHasBeenSet = true;
+}
+
+bool DescribeCFGRiskReportStatisticsRequest::AssetTagIDsHasBeenSet() const
+{
+    return m_assetTagIDsHasBeenSet;
 }
 
 

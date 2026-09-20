@@ -25,7 +25,9 @@ using namespace std;
 DescribeCloudNativeAPIGatewayAIServiceSourceListRequest::DescribeCloudNativeAPIGatewayAIServiceSourceListRequest() :
     m_gatewayIdHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_keywordHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,29 @@ string DescribeCloudNativeAPIGatewayAIServiceSourceListRequest::ToJsonString() c
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_keywordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Keyword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keyword.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -114,6 +139,38 @@ void DescribeCloudNativeAPIGatewayAIServiceSourceListRequest::SetOffset(const ui
 bool DescribeCloudNativeAPIGatewayAIServiceSourceListRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewayAIServiceSourceListRequest::GetKeyword() const
+{
+    return m_keyword;
+}
+
+void DescribeCloudNativeAPIGatewayAIServiceSourceListRequest::SetKeyword(const string& _keyword)
+{
+    m_keyword = _keyword;
+    m_keywordHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayAIServiceSourceListRequest::KeywordHasBeenSet() const
+{
+    return m_keywordHasBeenSet;
+}
+
+vector<Filter> DescribeCloudNativeAPIGatewayAIServiceSourceListRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeCloudNativeAPIGatewayAIServiceSourceListRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayAIServiceSourceListRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

@@ -111,6 +111,8 @@
 #include <tencentcloud/adp/v20260520/model/DescribeAgentSummaryListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeAppRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeAppResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeAppStatisticsOverviewRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeAppStatisticsOverviewResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeAppSummaryListRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeAppSummaryListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeAppTriggerRequest.h>
@@ -411,6 +413,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAppResponse> DescribeAppOutcome;
                 typedef std::future<DescribeAppOutcome> DescribeAppOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeAppRequest&, DescribeAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAppStatisticsOverviewResponse> DescribeAppStatisticsOverviewOutcome;
+                typedef std::future<DescribeAppStatisticsOverviewOutcome> DescribeAppStatisticsOverviewOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeAppStatisticsOverviewRequest&, DescribeAppStatisticsOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppStatisticsOverviewAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAppSummaryListResponse> DescribeAppSummaryListOutcome;
                 typedef std::future<DescribeAppSummaryListOutcome> DescribeAppSummaryListOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeAppSummaryListRequest&, DescribeAppSummaryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppSummaryListAsyncHandler;
@@ -1040,6 +1045,15 @@ namespace TencentCloud
                 DescribeAppOutcome DescribeApp(const Model::DescribeAppRequest &request);
                 void DescribeAppAsync(const Model::DescribeAppRequest& request, const DescribeAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAppOutcomeCallable DescribeAppCallable(const Model::DescribeAppRequest& request);
+
+                /**
+                 *查询应用视图下的调用统计总览，包含总调用次数、调用成功率、总tokens平均耗时及首tokens平均耗时；RAG 应用额外返回各回复方式的调用次数及占比，用于绘制饼图
+                 * @param req DescribeAppStatisticsOverviewRequest
+                 * @return DescribeAppStatisticsOverviewOutcome
+                 */
+                DescribeAppStatisticsOverviewOutcome DescribeAppStatisticsOverview(const Model::DescribeAppStatisticsOverviewRequest &request);
+                void DescribeAppStatisticsOverviewAsync(const Model::DescribeAppStatisticsOverviewRequest& request, const DescribeAppStatisticsOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAppStatisticsOverviewOutcomeCallable DescribeAppStatisticsOverviewCallable(const Model::DescribeAppStatisticsOverviewRequest& request);
 
                 /**
                  *获取应用摘要列表

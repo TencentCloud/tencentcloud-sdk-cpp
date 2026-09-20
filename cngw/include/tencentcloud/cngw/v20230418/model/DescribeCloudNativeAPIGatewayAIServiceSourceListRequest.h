@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cngw/v20230418/model/Filter.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID
-                     * @return GatewayId 实例 ID
+                     * 获取<p>实例 ID</p>
+                     * @return GatewayId <p>实例 ID</p>
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param _gatewayId 实例 ID
+                     * 设置<p>实例 ID</p>
+                     * @param _gatewayId <p>实例 ID</p>
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取分页大小
-                     * @return Limit 分页大小
+                     * 获取<p>分页大小</p>
+                     * @return Limit <p>分页大小</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页大小
-                     * @param _limit 分页大小
+                     * 设置<p>分页大小</p>
+                     * @param _limit <p>分页大小</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -85,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移
-                     * @return Offset 分页偏移
+                     * 获取<p>分页偏移</p>
+                     * @return Offset <p>分页偏移</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移
-                     * @param _offset 分页偏移
+                     * 设置<p>分页偏移</p>
+                     * @param _offset <p>分页偏移</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -105,25 +106,79 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>搜索关键词</p>
+                     * @return Keyword <p>搜索关键词</p>
+                     * 
+                     */
+                    std::string GetKeyword() const;
+
+                    /**
+                     * 设置<p>搜索关键词</p>
+                     * @param _keyword <p>搜索关键词</p>
+                     * 
+                     */
+                    void SetKeyword(const std::string& _keyword);
+
+                    /**
+                     * 判断参数 Keyword 是否已赋值
+                     * @return Keyword 是否已赋值
+                     * 
+                     */
+                    bool KeywordHasBeenSet() const;
+
+                    /**
+                     * 获取<p>过滤条件</p>
+                     * @return Filters <p>过滤条件</p>
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置<p>过滤条件</p>
+                     * @param _filters <p>过滤条件</p>
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例 ID
+                     * <p>实例 ID</p>
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 分页大小
+                     * <p>分页大小</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页偏移
+                     * <p>分页偏移</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * <p>搜索关键词</p>
+                     */
+                    std::string m_keyword;
+                    bool m_keywordHasBeenSet;
+
+                    /**
+                     * <p>过滤条件</p>
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

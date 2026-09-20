@@ -47,231 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用区名称，例如，ap-guangzhou-3
-全网可用区名称如下：
-<li> ap-chongqing-1 </li>
-<li> ap-seoul-1 </li>
-<li> ap-seoul-2 </li>
-<li> ap-chengdu-1 </li>
-<li> ap-chengdu-2 </li>
-<li> ap-hongkong-1（售罄） </li>
-<li> ap-hongkong-2 </li>
-<li> ap-hongkong-3 </li>
-<li> ap-shenzhen-fsi-1 </li>
-<li> ap-shenzhen-fsi-2 </li>
-<li> ap-shenzhen-fsi-3（售罄） </li>
-<li> ap-guangzhou-1（售罄）</li>
-<li> ap-guangzhou-2（售罄）</li>
-<li> ap-guangzhou-3 </li>
-<li> ap-guangzhou-4 </li>
-<li> ap-guangzhou-6 </li>
-<li> ap-guangzhou-7 </li>
-<li> ap-tokyo-1 </li>
-<li> ap-tokyo-2 </li>
-<li> ap-singapore-1 </li>
-<li> ap-singapore-2 </li>
-<li> ap-singapore-3 </li>
-<li>ap-singapore-4 </li>
-<li> ap-shanghai-fsi-1 </li>
-<li> ap-shanghai-fsi-2 </li>
-<li> ap-shanghai-fsi-3 </li>
-<li> ap-bangkok-1 </li>
-<li> ap-bangkok-2 </li>
-<li> ap-shanghai-2 </li>
-<li> ap-shanghai-3 </li>
-<li> ap-shanghai-4 </li>
-<li> ap-shanghai-5 </li>
-<li> ap-shanghai-8 </li>
-<li> ap-mumbai-1 </li>
-<li> ap-mumbai-2 </li>
-<li> ap-beijing-1（售罄）</li>
-<li> ap-beijing-3 </li>
-<li> ap-beijing-4 </li>
-<li> ap-beijing-5 </li>
-<li> ap-beijing-6 </li>
-<li> ap-beijing-7 </li>
-<li> na-siliconvalley-1 </li>
-<li> na-siliconvalley-2 </li>
-<li> eu-frankfurt-1 </li>
-<li> eu-frankfurt-2 </li>
-<li> na-ashburn-1 </li>
-<li> na-ashburn-2 </li>
-<li> ap-nanjing-1 </li>
-<li> ap-nanjing-2 </li>
-<li> ap-nanjing-3 </li>
-<li> sa-saopaulo-1</li>
-<li> ap-jakarta-1 </li>
-<li> ap-jakarta-2 </li>
-                     * @return Zone 可用区名称，例如，ap-guangzhou-3
-全网可用区名称如下：
-<li> ap-chongqing-1 </li>
-<li> ap-seoul-1 </li>
-<li> ap-seoul-2 </li>
-<li> ap-chengdu-1 </li>
-<li> ap-chengdu-2 </li>
-<li> ap-hongkong-1（售罄） </li>
-<li> ap-hongkong-2 </li>
-<li> ap-hongkong-3 </li>
-<li> ap-shenzhen-fsi-1 </li>
-<li> ap-shenzhen-fsi-2 </li>
-<li> ap-shenzhen-fsi-3（售罄） </li>
-<li> ap-guangzhou-1（售罄）</li>
-<li> ap-guangzhou-2（售罄）</li>
-<li> ap-guangzhou-3 </li>
-<li> ap-guangzhou-4 </li>
-<li> ap-guangzhou-6 </li>
-<li> ap-guangzhou-7 </li>
-<li> ap-tokyo-1 </li>
-<li> ap-tokyo-2 </li>
-<li> ap-singapore-1 </li>
-<li> ap-singapore-2 </li>
-<li> ap-singapore-3 </li>
-<li>ap-singapore-4 </li>
-<li> ap-shanghai-fsi-1 </li>
-<li> ap-shanghai-fsi-2 </li>
-<li> ap-shanghai-fsi-3 </li>
-<li> ap-bangkok-1 </li>
-<li> ap-bangkok-2 </li>
-<li> ap-shanghai-2 </li>
-<li> ap-shanghai-3 </li>
-<li> ap-shanghai-4 </li>
-<li> ap-shanghai-5 </li>
-<li> ap-shanghai-8 </li>
-<li> ap-mumbai-1 </li>
-<li> ap-mumbai-2 </li>
-<li> ap-beijing-1（售罄）</li>
-<li> ap-beijing-3 </li>
-<li> ap-beijing-4 </li>
-<li> ap-beijing-5 </li>
-<li> ap-beijing-6 </li>
-<li> ap-beijing-7 </li>
-<li> na-siliconvalley-1 </li>
-<li> na-siliconvalley-2 </li>
-<li> eu-frankfurt-1 </li>
-<li> eu-frankfurt-2 </li>
-<li> na-ashburn-1 </li>
-<li> na-ashburn-2 </li>
-<li> ap-nanjing-1 </li>
-<li> ap-nanjing-2 </li>
-<li> ap-nanjing-3 </li>
-<li> sa-saopaulo-1</li>
-<li> ap-jakarta-1 </li>
-<li> ap-jakarta-2 </li>
+                     * 获取<p>可用区名称，例如，ap-guangzhou-3<br>全网可用区名称如下：</p><li> ap-chongqing-1 </li><li> ap-seoul-1 </li><li> ap-seoul-2 </li><li> ap-chengdu-1 </li><li> ap-chengdu-2 </li><li> ap-hongkong-1（售罄） </li><li> ap-hongkong-2 </li><li> ap-hongkong-3 </li><li> ap-shenzhen-fsi-1 </li><li> ap-shenzhen-fsi-2 </li><li> ap-shenzhen-fsi-3（售罄） </li><li> ap-guangzhou-1（售罄）</li><li> ap-guangzhou-2（售罄）</li><li> ap-guangzhou-3 </li><li> ap-guangzhou-4 </li><li> ap-guangzhou-6 </li><li> ap-guangzhou-7 </li><li> ap-tokyo-1 </li><li> ap-tokyo-2 </li><li> ap-singapore-1 </li><li> ap-singapore-2 </li><li> ap-singapore-3 </li><li>ap-singapore-4 </li><li> ap-shanghai-fsi-2 </li><li> ap-shanghai-fsi-3 </li><li> ap-shanghai-fsi-4 </li><li> ap-bangkok-1 </li><li> ap-bangkok-2 </li><li> ap-shanghai-2 </li><li> ap-shanghai-3 </li><li> ap-shanghai-4 </li><li> ap-shanghai-5 </li><li> ap-shanghai-8 </li><li> ap-mumbai-1 </li><li> ap-mumbai-2 </li><li> ap-beijing-1（售罄）</li><li> ap-beijing-3 </li><li> ap-beijing-4 </li><li> ap-beijing-5 </li><li> ap-beijing-6 </li><li> ap-beijing-7 </li><li> na-siliconvalley-1 </li><li> na-siliconvalley-2 </li><li> eu-frankfurt-1 </li><li> eu-frankfurt-2 </li><li> na-ashburn-1 </li><li> na-ashburn-2 </li><li> ap-nanjing-1 </li><li> ap-nanjing-2 </li><li> ap-nanjing-3 </li><li> sa-saopaulo-1</li><li> ap-jakarta-1 </li><li> ap-jakarta-2 </li>
+                     * @return Zone <p>可用区名称，例如，ap-guangzhou-3<br>全网可用区名称如下：</p><li> ap-chongqing-1 </li><li> ap-seoul-1 </li><li> ap-seoul-2 </li><li> ap-chengdu-1 </li><li> ap-chengdu-2 </li><li> ap-hongkong-1（售罄） </li><li> ap-hongkong-2 </li><li> ap-hongkong-3 </li><li> ap-shenzhen-fsi-1 </li><li> ap-shenzhen-fsi-2 </li><li> ap-shenzhen-fsi-3（售罄） </li><li> ap-guangzhou-1（售罄）</li><li> ap-guangzhou-2（售罄）</li><li> ap-guangzhou-3 </li><li> ap-guangzhou-4 </li><li> ap-guangzhou-6 </li><li> ap-guangzhou-7 </li><li> ap-tokyo-1 </li><li> ap-tokyo-2 </li><li> ap-singapore-1 </li><li> ap-singapore-2 </li><li> ap-singapore-3 </li><li>ap-singapore-4 </li><li> ap-shanghai-fsi-2 </li><li> ap-shanghai-fsi-3 </li><li> ap-shanghai-fsi-4 </li><li> ap-bangkok-1 </li><li> ap-bangkok-2 </li><li> ap-shanghai-2 </li><li> ap-shanghai-3 </li><li> ap-shanghai-4 </li><li> ap-shanghai-5 </li><li> ap-shanghai-8 </li><li> ap-mumbai-1 </li><li> ap-mumbai-2 </li><li> ap-beijing-1（售罄）</li><li> ap-beijing-3 </li><li> ap-beijing-4 </li><li> ap-beijing-5 </li><li> ap-beijing-6 </li><li> ap-beijing-7 </li><li> na-siliconvalley-1 </li><li> na-siliconvalley-2 </li><li> eu-frankfurt-1 </li><li> eu-frankfurt-2 </li><li> na-ashburn-1 </li><li> na-ashburn-2 </li><li> ap-nanjing-1 </li><li> ap-nanjing-2 </li><li> ap-nanjing-3 </li><li> sa-saopaulo-1</li><li> ap-jakarta-1 </li><li> ap-jakarta-2 </li>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区名称，例如，ap-guangzhou-3
-全网可用区名称如下：
-<li> ap-chongqing-1 </li>
-<li> ap-seoul-1 </li>
-<li> ap-seoul-2 </li>
-<li> ap-chengdu-1 </li>
-<li> ap-chengdu-2 </li>
-<li> ap-hongkong-1（售罄） </li>
-<li> ap-hongkong-2 </li>
-<li> ap-hongkong-3 </li>
-<li> ap-shenzhen-fsi-1 </li>
-<li> ap-shenzhen-fsi-2 </li>
-<li> ap-shenzhen-fsi-3（售罄） </li>
-<li> ap-guangzhou-1（售罄）</li>
-<li> ap-guangzhou-2（售罄）</li>
-<li> ap-guangzhou-3 </li>
-<li> ap-guangzhou-4 </li>
-<li> ap-guangzhou-6 </li>
-<li> ap-guangzhou-7 </li>
-<li> ap-tokyo-1 </li>
-<li> ap-tokyo-2 </li>
-<li> ap-singapore-1 </li>
-<li> ap-singapore-2 </li>
-<li> ap-singapore-3 </li>
-<li>ap-singapore-4 </li>
-<li> ap-shanghai-fsi-1 </li>
-<li> ap-shanghai-fsi-2 </li>
-<li> ap-shanghai-fsi-3 </li>
-<li> ap-bangkok-1 </li>
-<li> ap-bangkok-2 </li>
-<li> ap-shanghai-2 </li>
-<li> ap-shanghai-3 </li>
-<li> ap-shanghai-4 </li>
-<li> ap-shanghai-5 </li>
-<li> ap-shanghai-8 </li>
-<li> ap-mumbai-1 </li>
-<li> ap-mumbai-2 </li>
-<li> ap-beijing-1（售罄）</li>
-<li> ap-beijing-3 </li>
-<li> ap-beijing-4 </li>
-<li> ap-beijing-5 </li>
-<li> ap-beijing-6 </li>
-<li> ap-beijing-7 </li>
-<li> na-siliconvalley-1 </li>
-<li> na-siliconvalley-2 </li>
-<li> eu-frankfurt-1 </li>
-<li> eu-frankfurt-2 </li>
-<li> na-ashburn-1 </li>
-<li> na-ashburn-2 </li>
-<li> ap-nanjing-1 </li>
-<li> ap-nanjing-2 </li>
-<li> ap-nanjing-3 </li>
-<li> sa-saopaulo-1</li>
-<li> ap-jakarta-1 </li>
-<li> ap-jakarta-2 </li>
-                     * @param _zone 可用区名称，例如，ap-guangzhou-3
-全网可用区名称如下：
-<li> ap-chongqing-1 </li>
-<li> ap-seoul-1 </li>
-<li> ap-seoul-2 </li>
-<li> ap-chengdu-1 </li>
-<li> ap-chengdu-2 </li>
-<li> ap-hongkong-1（售罄） </li>
-<li> ap-hongkong-2 </li>
-<li> ap-hongkong-3 </li>
-<li> ap-shenzhen-fsi-1 </li>
-<li> ap-shenzhen-fsi-2 </li>
-<li> ap-shenzhen-fsi-3（售罄） </li>
-<li> ap-guangzhou-1（售罄）</li>
-<li> ap-guangzhou-2（售罄）</li>
-<li> ap-guangzhou-3 </li>
-<li> ap-guangzhou-4 </li>
-<li> ap-guangzhou-6 </li>
-<li> ap-guangzhou-7 </li>
-<li> ap-tokyo-1 </li>
-<li> ap-tokyo-2 </li>
-<li> ap-singapore-1 </li>
-<li> ap-singapore-2 </li>
-<li> ap-singapore-3 </li>
-<li>ap-singapore-4 </li>
-<li> ap-shanghai-fsi-1 </li>
-<li> ap-shanghai-fsi-2 </li>
-<li> ap-shanghai-fsi-3 </li>
-<li> ap-bangkok-1 </li>
-<li> ap-bangkok-2 </li>
-<li> ap-shanghai-2 </li>
-<li> ap-shanghai-3 </li>
-<li> ap-shanghai-4 </li>
-<li> ap-shanghai-5 </li>
-<li> ap-shanghai-8 </li>
-<li> ap-mumbai-1 </li>
-<li> ap-mumbai-2 </li>
-<li> ap-beijing-1（售罄）</li>
-<li> ap-beijing-3 </li>
-<li> ap-beijing-4 </li>
-<li> ap-beijing-5 </li>
-<li> ap-beijing-6 </li>
-<li> ap-beijing-7 </li>
-<li> na-siliconvalley-1 </li>
-<li> na-siliconvalley-2 </li>
-<li> eu-frankfurt-1 </li>
-<li> eu-frankfurt-2 </li>
-<li> na-ashburn-1 </li>
-<li> na-ashburn-2 </li>
-<li> ap-nanjing-1 </li>
-<li> ap-nanjing-2 </li>
-<li> ap-nanjing-3 </li>
-<li> sa-saopaulo-1</li>
-<li> ap-jakarta-1 </li>
-<li> ap-jakarta-2 </li>
+                     * 设置<p>可用区名称，例如，ap-guangzhou-3<br>全网可用区名称如下：</p><li> ap-chongqing-1 </li><li> ap-seoul-1 </li><li> ap-seoul-2 </li><li> ap-chengdu-1 </li><li> ap-chengdu-2 </li><li> ap-hongkong-1（售罄） </li><li> ap-hongkong-2 </li><li> ap-hongkong-3 </li><li> ap-shenzhen-fsi-1 </li><li> ap-shenzhen-fsi-2 </li><li> ap-shenzhen-fsi-3（售罄） </li><li> ap-guangzhou-1（售罄）</li><li> ap-guangzhou-2（售罄）</li><li> ap-guangzhou-3 </li><li> ap-guangzhou-4 </li><li> ap-guangzhou-6 </li><li> ap-guangzhou-7 </li><li> ap-tokyo-1 </li><li> ap-tokyo-2 </li><li> ap-singapore-1 </li><li> ap-singapore-2 </li><li> ap-singapore-3 </li><li>ap-singapore-4 </li><li> ap-shanghai-fsi-2 </li><li> ap-shanghai-fsi-3 </li><li> ap-shanghai-fsi-4 </li><li> ap-bangkok-1 </li><li> ap-bangkok-2 </li><li> ap-shanghai-2 </li><li> ap-shanghai-3 </li><li> ap-shanghai-4 </li><li> ap-shanghai-5 </li><li> ap-shanghai-8 </li><li> ap-mumbai-1 </li><li> ap-mumbai-2 </li><li> ap-beijing-1（售罄）</li><li> ap-beijing-3 </li><li> ap-beijing-4 </li><li> ap-beijing-5 </li><li> ap-beijing-6 </li><li> ap-beijing-7 </li><li> na-siliconvalley-1 </li><li> na-siliconvalley-2 </li><li> eu-frankfurt-1 </li><li> eu-frankfurt-2 </li><li> na-ashburn-1 </li><li> na-ashburn-2 </li><li> ap-nanjing-1 </li><li> ap-nanjing-2 </li><li> ap-nanjing-3 </li><li> sa-saopaulo-1</li><li> ap-jakarta-1 </li><li> ap-jakarta-2 </li>
+                     * @param _zone <p>可用区名称，例如，ap-guangzhou-3<br>全网可用区名称如下：</p><li> ap-chongqing-1 </li><li> ap-seoul-1 </li><li> ap-seoul-2 </li><li> ap-chengdu-1 </li><li> ap-chengdu-2 </li><li> ap-hongkong-1（售罄） </li><li> ap-hongkong-2 </li><li> ap-hongkong-3 </li><li> ap-shenzhen-fsi-1 </li><li> ap-shenzhen-fsi-2 </li><li> ap-shenzhen-fsi-3（售罄） </li><li> ap-guangzhou-1（售罄）</li><li> ap-guangzhou-2（售罄）</li><li> ap-guangzhou-3 </li><li> ap-guangzhou-4 </li><li> ap-guangzhou-6 </li><li> ap-guangzhou-7 </li><li> ap-tokyo-1 </li><li> ap-tokyo-2 </li><li> ap-singapore-1 </li><li> ap-singapore-2 </li><li> ap-singapore-3 </li><li>ap-singapore-4 </li><li> ap-shanghai-fsi-2 </li><li> ap-shanghai-fsi-3 </li><li> ap-shanghai-fsi-4 </li><li> ap-bangkok-1 </li><li> ap-bangkok-2 </li><li> ap-shanghai-2 </li><li> ap-shanghai-3 </li><li> ap-shanghai-4 </li><li> ap-shanghai-5 </li><li> ap-shanghai-8 </li><li> ap-mumbai-1 </li><li> ap-mumbai-2 </li><li> ap-beijing-1（售罄）</li><li> ap-beijing-3 </li><li> ap-beijing-4 </li><li> ap-beijing-5 </li><li> ap-beijing-6 </li><li> ap-beijing-7 </li><li> na-siliconvalley-1 </li><li> na-siliconvalley-2 </li><li> eu-frankfurt-1 </li><li> eu-frankfurt-2 </li><li> na-ashburn-1 </li><li> na-ashburn-2 </li><li> ap-nanjing-1 </li><li> ap-nanjing-2 </li><li> ap-nanjing-3 </li><li> sa-saopaulo-1</li><li> ap-jakarta-1 </li><li> ap-jakarta-2 </li>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -284,15 +68,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取可用区描述，例如，广州三区
-                     * @return ZoneName 可用区描述，例如，广州三区
+                     * 获取<p>可用区描述，例如，广州三区</p>
+                     * @return ZoneName <p>可用区描述，例如，广州三区</p>
                      * 
                      */
                     std::string GetZoneName() const;
 
                     /**
-                     * 设置可用区描述，例如，广州三区
-                     * @param _zoneName 可用区描述，例如，广州三区
+                     * 设置<p>可用区描述，例如，广州三区</p>
+                     * @param _zoneName <p>可用区描述，例如，广州三区</p>
                      * 
                      */
                     void SetZoneName(const std::string& _zoneName);
@@ -305,15 +89,15 @@ namespace TencentCloud
                     bool ZoneNameHasBeenSet() const;
 
                     /**
-                     * 获取可用区ID
-                     * @return ZoneId 可用区ID
+                     * 获取<p>可用区ID</p>
+                     * @return ZoneId <p>可用区ID</p>
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置可用区ID
-                     * @param _zoneId 可用区ID
+                     * 设置<p>可用区ID</p>
+                     * @param _zoneId <p>可用区ID</p>
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -326,15 +110,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
-                     * @return ZoneState 可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
+                     * 获取<p>可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。</p>
+                     * @return ZoneState <p>可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。</p>
                      * 
                      */
                     std::string GetZoneState() const;
 
                     /**
-                     * 设置可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
-                     * @param _zoneState 可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
+                     * 设置<p>可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。</p>
+                     * @param _zoneState <p>可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。</p>
                      * 
                      */
                     void SetZoneState(const std::string& _zoneState);
@@ -349,79 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 可用区名称，例如，ap-guangzhou-3
-全网可用区名称如下：
-<li> ap-chongqing-1 </li>
-<li> ap-seoul-1 </li>
-<li> ap-seoul-2 </li>
-<li> ap-chengdu-1 </li>
-<li> ap-chengdu-2 </li>
-<li> ap-hongkong-1（售罄） </li>
-<li> ap-hongkong-2 </li>
-<li> ap-hongkong-3 </li>
-<li> ap-shenzhen-fsi-1 </li>
-<li> ap-shenzhen-fsi-2 </li>
-<li> ap-shenzhen-fsi-3（售罄） </li>
-<li> ap-guangzhou-1（售罄）</li>
-<li> ap-guangzhou-2（售罄）</li>
-<li> ap-guangzhou-3 </li>
-<li> ap-guangzhou-4 </li>
-<li> ap-guangzhou-6 </li>
-<li> ap-guangzhou-7 </li>
-<li> ap-tokyo-1 </li>
-<li> ap-tokyo-2 </li>
-<li> ap-singapore-1 </li>
-<li> ap-singapore-2 </li>
-<li> ap-singapore-3 </li>
-<li>ap-singapore-4 </li>
-<li> ap-shanghai-fsi-1 </li>
-<li> ap-shanghai-fsi-2 </li>
-<li> ap-shanghai-fsi-3 </li>
-<li> ap-bangkok-1 </li>
-<li> ap-bangkok-2 </li>
-<li> ap-shanghai-2 </li>
-<li> ap-shanghai-3 </li>
-<li> ap-shanghai-4 </li>
-<li> ap-shanghai-5 </li>
-<li> ap-shanghai-8 </li>
-<li> ap-mumbai-1 </li>
-<li> ap-mumbai-2 </li>
-<li> ap-beijing-1（售罄）</li>
-<li> ap-beijing-3 </li>
-<li> ap-beijing-4 </li>
-<li> ap-beijing-5 </li>
-<li> ap-beijing-6 </li>
-<li> ap-beijing-7 </li>
-<li> na-siliconvalley-1 </li>
-<li> na-siliconvalley-2 </li>
-<li> eu-frankfurt-1 </li>
-<li> eu-frankfurt-2 </li>
-<li> na-ashburn-1 </li>
-<li> na-ashburn-2 </li>
-<li> ap-nanjing-1 </li>
-<li> ap-nanjing-2 </li>
-<li> ap-nanjing-3 </li>
-<li> sa-saopaulo-1</li>
-<li> ap-jakarta-1 </li>
-<li> ap-jakarta-2 </li>
+                     * <p>可用区名称，例如，ap-guangzhou-3<br>全网可用区名称如下：</p><li> ap-chongqing-1 </li><li> ap-seoul-1 </li><li> ap-seoul-2 </li><li> ap-chengdu-1 </li><li> ap-chengdu-2 </li><li> ap-hongkong-1（售罄） </li><li> ap-hongkong-2 </li><li> ap-hongkong-3 </li><li> ap-shenzhen-fsi-1 </li><li> ap-shenzhen-fsi-2 </li><li> ap-shenzhen-fsi-3（售罄） </li><li> ap-guangzhou-1（售罄）</li><li> ap-guangzhou-2（售罄）</li><li> ap-guangzhou-3 </li><li> ap-guangzhou-4 </li><li> ap-guangzhou-6 </li><li> ap-guangzhou-7 </li><li> ap-tokyo-1 </li><li> ap-tokyo-2 </li><li> ap-singapore-1 </li><li> ap-singapore-2 </li><li> ap-singapore-3 </li><li>ap-singapore-4 </li><li> ap-shanghai-fsi-2 </li><li> ap-shanghai-fsi-3 </li><li> ap-shanghai-fsi-4 </li><li> ap-bangkok-1 </li><li> ap-bangkok-2 </li><li> ap-shanghai-2 </li><li> ap-shanghai-3 </li><li> ap-shanghai-4 </li><li> ap-shanghai-5 </li><li> ap-shanghai-8 </li><li> ap-mumbai-1 </li><li> ap-mumbai-2 </li><li> ap-beijing-1（售罄）</li><li> ap-beijing-3 </li><li> ap-beijing-4 </li><li> ap-beijing-5 </li><li> ap-beijing-6 </li><li> ap-beijing-7 </li><li> na-siliconvalley-1 </li><li> na-siliconvalley-2 </li><li> eu-frankfurt-1 </li><li> eu-frankfurt-2 </li><li> na-ashburn-1 </li><li> na-ashburn-2 </li><li> ap-nanjing-1 </li><li> ap-nanjing-2 </li><li> ap-nanjing-3 </li><li> sa-saopaulo-1</li><li> ap-jakarta-1 </li><li> ap-jakarta-2 </li>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 可用区描述，例如，广州三区
+                     * <p>可用区描述，例如，广州三区</p>
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;
 
                     /**
-                     * 可用区ID
+                     * <p>可用区ID</p>
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
+                     * <p>可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。</p>
                      */
                     std::string m_zoneState;
                     bool m_zoneStateHasBeenSet;

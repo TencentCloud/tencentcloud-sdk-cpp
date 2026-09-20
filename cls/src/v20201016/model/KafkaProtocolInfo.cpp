@@ -24,7 +24,11 @@ KafkaProtocolInfo::KafkaProtocolInfo() :
     m_protocolHasBeenSet(false),
     m_mechanismHasBeenSet(false),
     m_userNameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+    m_passwordHasBeenSet(false),
+    m_enableClientCertificateHasBeenSet(false),
+    m_enableServerCertificateHasBeenSet(false),
+    m_cACertificateIdHasBeenSet(false),
+    m_sVRCertificateIdHasBeenSet(false)
 {
 }
 
@@ -73,6 +77,46 @@ CoreInternalOutcome KafkaProtocolInfo::Deserialize(const rapidjson::Value &value
         m_passwordHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableClientCertificate") && !value["EnableClientCertificate"].IsNull())
+    {
+        if (!value["EnableClientCertificate"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaProtocolInfo.EnableClientCertificate` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableClientCertificate = value["EnableClientCertificate"].GetUint64();
+        m_enableClientCertificateHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableServerCertificate") && !value["EnableServerCertificate"].IsNull())
+    {
+        if (!value["EnableServerCertificate"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaProtocolInfo.EnableServerCertificate` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableServerCertificate = value["EnableServerCertificate"].GetUint64();
+        m_enableServerCertificateHasBeenSet = true;
+    }
+
+    if (value.HasMember("CACertificateId") && !value["CACertificateId"].IsNull())
+    {
+        if (!value["CACertificateId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaProtocolInfo.CACertificateId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cACertificateId = string(value["CACertificateId"].GetString());
+        m_cACertificateIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SVRCertificateId") && !value["SVRCertificateId"].IsNull())
+    {
+        if (!value["SVRCertificateId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaProtocolInfo.SVRCertificateId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sVRCertificateId = string(value["SVRCertificateId"].GetString());
+        m_sVRCertificateIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +154,38 @@ void KafkaProtocolInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Password";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableClientCertificateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableClientCertificate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableClientCertificate, allocator);
+    }
+
+    if (m_enableServerCertificateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableServerCertificate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableServerCertificate, allocator);
+    }
+
+    if (m_cACertificateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CACertificateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cACertificateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sVRCertificateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SVRCertificateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sVRCertificateId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +253,69 @@ void KafkaProtocolInfo::SetPassword(const string& _password)
 bool KafkaProtocolInfo::PasswordHasBeenSet() const
 {
     return m_passwordHasBeenSet;
+}
+
+uint64_t KafkaProtocolInfo::GetEnableClientCertificate() const
+{
+    return m_enableClientCertificate;
+}
+
+void KafkaProtocolInfo::SetEnableClientCertificate(const uint64_t& _enableClientCertificate)
+{
+    m_enableClientCertificate = _enableClientCertificate;
+    m_enableClientCertificateHasBeenSet = true;
+}
+
+bool KafkaProtocolInfo::EnableClientCertificateHasBeenSet() const
+{
+    return m_enableClientCertificateHasBeenSet;
+}
+
+uint64_t KafkaProtocolInfo::GetEnableServerCertificate() const
+{
+    return m_enableServerCertificate;
+}
+
+void KafkaProtocolInfo::SetEnableServerCertificate(const uint64_t& _enableServerCertificate)
+{
+    m_enableServerCertificate = _enableServerCertificate;
+    m_enableServerCertificateHasBeenSet = true;
+}
+
+bool KafkaProtocolInfo::EnableServerCertificateHasBeenSet() const
+{
+    return m_enableServerCertificateHasBeenSet;
+}
+
+string KafkaProtocolInfo::GetCACertificateId() const
+{
+    return m_cACertificateId;
+}
+
+void KafkaProtocolInfo::SetCACertificateId(const string& _cACertificateId)
+{
+    m_cACertificateId = _cACertificateId;
+    m_cACertificateIdHasBeenSet = true;
+}
+
+bool KafkaProtocolInfo::CACertificateIdHasBeenSet() const
+{
+    return m_cACertificateIdHasBeenSet;
+}
+
+string KafkaProtocolInfo::GetSVRCertificateId() const
+{
+    return m_sVRCertificateId;
+}
+
+void KafkaProtocolInfo::SetSVRCertificateId(const string& _sVRCertificateId)
+{
+    m_sVRCertificateId = _sVRCertificateId;
+    m_sVRCertificateIdHasBeenSet = true;
+}
+
+bool KafkaProtocolInfo::SVRCertificateIdHasBeenSet() const
+{
+    return m_sVRCertificateIdHasBeenSet;
 }
 

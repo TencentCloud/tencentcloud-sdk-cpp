@@ -41,7 +41,8 @@ AIGWMCPServer::AIGWMCPServer() :
     m_toolCountLimitHasBeenSet(false),
     m_conflictStrategyHasBeenSet(false),
     m_marketStatusHasBeenSet(false),
-    m_preserveHostHasBeenSet(false)
+    m_preserveHostHasBeenSet(false),
+    m_logConfigHasBeenSet(false)
 {
 }
 
@@ -281,6 +282,23 @@ CoreInternalOutcome AIGWMCPServer::Deserialize(const rapidjson::Value &value)
         m_preserveHostHasBeenSet = true;
     }
 
+    if (value.HasMember("LogConfig") && !value["LogConfig"].IsNull())
+    {
+        if (!value["LogConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWMCPServer.LogConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_logConfig.Deserialize(value["LogConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_logConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -457,6 +475,15 @@ void AIGWMCPServer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "PreserveHost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_preserveHost, allocator);
+    }
+
+    if (m_logConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_logConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -796,5 +823,21 @@ void AIGWMCPServer::SetPreserveHost(const bool& _preserveHost)
 bool AIGWMCPServer::PreserveHostHasBeenSet() const
 {
     return m_preserveHostHasBeenSet;
+}
+
+AIGWLogConfig AIGWMCPServer::GetLogConfig() const
+{
+    return m_logConfig;
+}
+
+void AIGWMCPServer::SetLogConfig(const AIGWLogConfig& _logConfig)
+{
+    m_logConfig = _logConfig;
+    m_logConfigHasBeenSet = true;
+}
+
+bool AIGWMCPServer::LogConfigHasBeenSet() const
+{
+    return m_logConfigHasBeenSet;
 }
 

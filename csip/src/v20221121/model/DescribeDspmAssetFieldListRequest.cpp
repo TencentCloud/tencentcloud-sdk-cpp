@@ -27,7 +27,8 @@ DescribeDspmAssetFieldListRequest::DescribeDspmAssetFieldListRequest() :
     m_dbNameHasBeenSet(false),
     m_tableNameHasBeenSet(false),
     m_memberIdHasBeenSet(false),
-    m_filterHasBeenSet(false)
+    m_filterHasBeenSet(false),
+    m_schemaNameHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,14 @@ string DescribeDspmAssetFieldListRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_filter.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_schemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -170,6 +179,22 @@ void DescribeDspmAssetFieldListRequest::SetFilter(const Filter& _filter)
 bool DescribeDspmAssetFieldListRequest::FilterHasBeenSet() const
 {
     return m_filterHasBeenSet;
+}
+
+string DescribeDspmAssetFieldListRequest::GetSchemaName() const
+{
+    return m_schemaName;
+}
+
+void DescribeDspmAssetFieldListRequest::SetSchemaName(const string& _schemaName)
+{
+    m_schemaName = _schemaName;
+    m_schemaNameHasBeenSet = true;
+}
+
+bool DescribeDspmAssetFieldListRequest::SchemaNameHasBeenSet() const
+{
+    return m_schemaNameHasBeenSet;
 }
 
 

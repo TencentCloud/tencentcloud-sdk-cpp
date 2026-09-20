@@ -52,7 +52,8 @@ WorkflowRun::WorkflowRun() :
     m_parentWorkflowTaskRunIdHasBeenSet(false),
     m_parentWorkflowTaskRunNameHasBeenSet(false),
     m_permissionHasBeenSet(false),
-    m_advancedParametersHasBeenSet(false)
+    m_advancedParametersHasBeenSet(false),
+    m_scheduledTimeHasBeenSet(false)
 {
 }
 
@@ -417,6 +418,16 @@ CoreInternalOutcome WorkflowRun::Deserialize(const rapidjson::Value &value)
         m_advancedParametersHasBeenSet = true;
     }
 
+    if (value.HasMember("ScheduledTime") && !value["ScheduledTime"].IsNull())
+    {
+        if (!value["ScheduledTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowRun.ScheduledTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduledTime = string(value["ScheduledTime"].GetString());
+        m_scheduledTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -709,6 +720,14 @@ void WorkflowRun::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_scheduledTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduledTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduledTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1224,5 +1243,21 @@ void WorkflowRun::SetAdvancedParameters(const vector<AdvancedParameter>& _advanc
 bool WorkflowRun::AdvancedParametersHasBeenSet() const
 {
     return m_advancedParametersHasBeenSet;
+}
+
+string WorkflowRun::GetScheduledTime() const
+{
+    return m_scheduledTime;
+}
+
+void WorkflowRun::SetScheduledTime(const string& _scheduledTime)
+{
+    m_scheduledTime = _scheduledTime;
+    m_scheduledTimeHasBeenSet = true;
+}
+
+bool WorkflowRun::ScheduledTimeHasBeenSet() const
+{
+    return m_scheduledTimeHasBeenSet;
 }
 

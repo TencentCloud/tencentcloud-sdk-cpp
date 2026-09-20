@@ -36,7 +36,9 @@ TestServiceProviderConnectionRequest::TestServiceProviderConnectionRequest() :
     m_healthCheckProtocolHasBeenSet(false),
     m_cMRPrivateNetworkTunnelIdHasBeenSet(false),
     m_capabilityHasBeenSet(false),
-    m_endpointPathHasBeenSet(false)
+    m_endpointPathHasBeenSet(false),
+    m_healthCheckMethodHasBeenSet(false),
+    m_healthCheckPathHasBeenSet(false)
 {
 }
 
@@ -162,6 +164,22 @@ string TestServiceProviderConnectionRequest::ToJsonString() const
         string key = "EndpointPath";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endpointPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthCheckMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheckMethod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_healthCheckMethod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthCheckPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheckPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_healthCheckPath.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -394,6 +412,38 @@ void TestServiceProviderConnectionRequest::SetEndpointPath(const string& _endpoi
 bool TestServiceProviderConnectionRequest::EndpointPathHasBeenSet() const
 {
     return m_endpointPathHasBeenSet;
+}
+
+string TestServiceProviderConnectionRequest::GetHealthCheckMethod() const
+{
+    return m_healthCheckMethod;
+}
+
+void TestServiceProviderConnectionRequest::SetHealthCheckMethod(const string& _healthCheckMethod)
+{
+    m_healthCheckMethod = _healthCheckMethod;
+    m_healthCheckMethodHasBeenSet = true;
+}
+
+bool TestServiceProviderConnectionRequest::HealthCheckMethodHasBeenSet() const
+{
+    return m_healthCheckMethodHasBeenSet;
+}
+
+string TestServiceProviderConnectionRequest::GetHealthCheckPath() const
+{
+    return m_healthCheckPath;
+}
+
+void TestServiceProviderConnectionRequest::SetHealthCheckPath(const string& _healthCheckPath)
+{
+    m_healthCheckPath = _healthCheckPath;
+    m_healthCheckPathHasBeenSet = true;
+}
+
+bool TestServiceProviderConnectionRequest::HealthCheckPathHasBeenSet() const
+{
+    return m_healthCheckPathHasBeenSet;
 }
 
 

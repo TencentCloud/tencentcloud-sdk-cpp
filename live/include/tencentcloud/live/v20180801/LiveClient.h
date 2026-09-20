@@ -49,6 +49,8 @@
 #include <tencentcloud/live/v20180801/model/CopyCasterResponse.h>
 #include <tencentcloud/live/v20180801/model/CopyLiveAvatarRoomRequest.h>
 #include <tencentcloud/live/v20180801/model/CopyLiveAvatarRoomResponse.h>
+#include <tencentcloud/live/v20180801/model/CreateAuditImagesRequest.h>
+#include <tencentcloud/live/v20180801/model/CreateAuditImagesResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateAuditKeywordLibRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateAuditKeywordLibResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateAuditKeywordsRequest.h>
@@ -115,6 +117,10 @@
 #include <tencentcloud/live/v20180801/model/CreateScreenshotTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateVideoRedrawTaskRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateVideoRedrawTaskResponse.h>
+#include <tencentcloud/live/v20180801/model/DeleteAuditImagesRequest.h>
+#include <tencentcloud/live/v20180801/model/DeleteAuditImagesResponse.h>
+#include <tencentcloud/live/v20180801/model/DeleteAuditKeywordLibRequest.h>
+#include <tencentcloud/live/v20180801/model/DeleteAuditKeywordLibResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteAuditKeywordsRequest.h>
 #include <tencentcloud/live/v20180801/model/DeleteAuditKeywordsResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteCasterRequest.h>
@@ -183,6 +189,12 @@
 #include <tencentcloud/live/v20180801/model/DescribeAllStreamPlayInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeAreaBillBandwidthAndFluxListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeAreaBillBandwidthAndFluxListResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeAuditGroupTagRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeAuditGroupTagResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeAuditImagesRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeAuditImagesResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeAuditKeywordLibsRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeAuditKeywordLibsResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeAuditKeywordsRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeAuditKeywordsResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeBackupStreamListRequest.h>
@@ -401,6 +413,8 @@
 #include <tencentcloud/live/v20180801/model/GenerateLiveAvatarScriptBroadcastResponse.h>
 #include <tencentcloud/live/v20180801/model/InsertTaskTemporaryFilesRequest.h>
 #include <tencentcloud/live/v20180801/model/InsertTaskTemporaryFilesResponse.h>
+#include <tencentcloud/live/v20180801/model/ModifyAuditKeywordLibRequest.h>
+#include <tencentcloud/live/v20180801/model/ModifyAuditKeywordLibResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyCasterRequest.h>
 #include <tencentcloud/live/v20180801/model/ModifyCasterResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyCasterInputInfoRequest.h>
@@ -544,6 +558,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CopyLiveAvatarRoomResponse> CopyLiveAvatarRoomOutcome;
                 typedef std::future<CopyLiveAvatarRoomOutcome> CopyLiveAvatarRoomOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CopyLiveAvatarRoomRequest&, CopyLiveAvatarRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopyLiveAvatarRoomAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAuditImagesResponse> CreateAuditImagesOutcome;
+                typedef std::future<CreateAuditImagesOutcome> CreateAuditImagesOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::CreateAuditImagesRequest&, CreateAuditImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuditImagesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAuditKeywordLibResponse> CreateAuditKeywordLibOutcome;
                 typedef std::future<CreateAuditKeywordLibOutcome> CreateAuditKeywordLibOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateAuditKeywordLibRequest&, CreateAuditKeywordLibOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuditKeywordLibAsyncHandler;
@@ -643,6 +660,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateVideoRedrawTaskResponse> CreateVideoRedrawTaskOutcome;
                 typedef std::future<CreateVideoRedrawTaskOutcome> CreateVideoRedrawTaskOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateVideoRedrawTaskRequest&, CreateVideoRedrawTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoRedrawTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAuditImagesResponse> DeleteAuditImagesOutcome;
+                typedef std::future<DeleteAuditImagesOutcome> DeleteAuditImagesOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DeleteAuditImagesRequest&, DeleteAuditImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuditImagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAuditKeywordLibResponse> DeleteAuditKeywordLibOutcome;
+                typedef std::future<DeleteAuditKeywordLibOutcome> DeleteAuditKeywordLibOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DeleteAuditKeywordLibRequest&, DeleteAuditKeywordLibOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuditKeywordLibAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAuditKeywordsResponse> DeleteAuditKeywordsOutcome;
                 typedef std::future<DeleteAuditKeywordsOutcome> DeleteAuditKeywordsOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DeleteAuditKeywordsRequest&, DeleteAuditKeywordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuditKeywordsAsyncHandler;
@@ -745,6 +768,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAreaBillBandwidthAndFluxListResponse> DescribeAreaBillBandwidthAndFluxListOutcome;
                 typedef std::future<DescribeAreaBillBandwidthAndFluxListOutcome> DescribeAreaBillBandwidthAndFluxListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeAreaBillBandwidthAndFluxListRequest&, DescribeAreaBillBandwidthAndFluxListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAreaBillBandwidthAndFluxListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditGroupTagResponse> DescribeAuditGroupTagOutcome;
+                typedef std::future<DescribeAuditGroupTagOutcome> DescribeAuditGroupTagOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeAuditGroupTagRequest&, DescribeAuditGroupTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditGroupTagAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditImagesResponse> DescribeAuditImagesOutcome;
+                typedef std::future<DescribeAuditImagesOutcome> DescribeAuditImagesOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeAuditImagesRequest&, DescribeAuditImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditImagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditKeywordLibsResponse> DescribeAuditKeywordLibsOutcome;
+                typedef std::future<DescribeAuditKeywordLibsOutcome> DescribeAuditKeywordLibsOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeAuditKeywordLibsRequest&, DescribeAuditKeywordLibsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditKeywordLibsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAuditKeywordsResponse> DescribeAuditKeywordsOutcome;
                 typedef std::future<DescribeAuditKeywordsOutcome> DescribeAuditKeywordsOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeAuditKeywordsRequest&, DescribeAuditKeywordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditKeywordsAsyncHandler;
@@ -1072,6 +1104,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InsertTaskTemporaryFilesResponse> InsertTaskTemporaryFilesOutcome;
                 typedef std::future<InsertTaskTemporaryFilesOutcome> InsertTaskTemporaryFilesOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::InsertTaskTemporaryFilesRequest&, InsertTaskTemporaryFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InsertTaskTemporaryFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAuditKeywordLibResponse> ModifyAuditKeywordLibOutcome;
+                typedef std::future<ModifyAuditKeywordLibOutcome> ModifyAuditKeywordLibOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::ModifyAuditKeywordLibRequest&, ModifyAuditKeywordLibOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAuditKeywordLibAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCasterResponse> ModifyCasterOutcome;
                 typedef std::future<ModifyCasterOutcome> ModifyCasterOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ModifyCasterRequest&, ModifyCasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCasterAsyncHandler;
@@ -1328,6 +1363,15 @@ namespace TencentCloud
                 CopyLiveAvatarRoomOutcome CopyLiveAvatarRoom(const Model::CopyLiveAvatarRoomRequest &request);
                 void CopyLiveAvatarRoomAsync(const Model::CopyLiveAvatarRoomRequest& request, const CopyLiveAvatarRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CopyLiveAvatarRoomOutcomeCallable CopyLiveAvatarRoomCallable(const Model::CopyLiveAvatarRoomRequest& request);
+
+                /**
+                 *直播审核图库添加图片，添加到预设库，图库不需要创建。
+                 * @param req CreateAuditImagesRequest
+                 * @return CreateAuditImagesOutcome
+                 */
+                CreateAuditImagesOutcome CreateAuditImages(const Model::CreateAuditImagesRequest &request);
+                void CreateAuditImagesAsync(const Model::CreateAuditImagesRequest& request, const CreateAuditImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAuditImagesOutcomeCallable CreateAuditImagesCallable(const Model::CreateAuditImagesRequest& request);
 
                 /**
                  *创建关键词库，直播审核功能使用。
@@ -1685,6 +1729,24 @@ namespace TencentCloud
                 CreateVideoRedrawTaskOutcomeCallable CreateVideoRedrawTaskCallable(const Model::CreateVideoRedrawTaskRequest& request);
 
                 /**
+                 *直播审核图库删除图片。
+                 * @param req DeleteAuditImagesRequest
+                 * @return DeleteAuditImagesOutcome
+                 */
+                DeleteAuditImagesOutcome DeleteAuditImages(const Model::DeleteAuditImagesRequest &request);
+                void DeleteAuditImagesAsync(const Model::DeleteAuditImagesRequest& request, const DeleteAuditImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAuditImagesOutcomeCallable DeleteAuditImagesCallable(const Model::DeleteAuditImagesRequest& request);
+
+                /**
+                 *删除关键词库，直播审核功能使用。
+                 * @param req DeleteAuditKeywordLibRequest
+                 * @return DeleteAuditKeywordLibOutcome
+                 */
+                DeleteAuditKeywordLibOutcome DeleteAuditKeywordLib(const Model::DeleteAuditKeywordLibRequest &request);
+                void DeleteAuditKeywordLibAsync(const Model::DeleteAuditKeywordLibRequest& request, const DeleteAuditKeywordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAuditKeywordLibOutcomeCallable DeleteAuditKeywordLibCallable(const Model::DeleteAuditKeywordLibRequest& request);
+
+                /**
                  *删除关键词信息。
                  * @param req DeleteAuditKeywordsRequest
                  * @return DeleteAuditKeywordsOutcome
@@ -1996,6 +2058,33 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeAreaBillBandwidthAndFluxListOutcome DescribeAreaBillBandwidthAndFluxList(const Model::DescribeAreaBillBandwidthAndFluxListRequest &request);
                 void DescribeAreaBillBandwidthAndFluxListAsync(const Model::DescribeAreaBillBandwidthAndFluxListRequest& request, const DescribeAreaBillBandwidthAndFluxListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAreaBillBandwidthAndFluxListOutcomeCallable DescribeAreaBillBandwidthAndFluxListCallable(const Model::DescribeAreaBillBandwidthAndFluxListRequest& request);
+
+                /**
+                 *获取标签组分类数据，直播审核中。
+                 * @param req DescribeAuditGroupTagRequest
+                 * @return DescribeAuditGroupTagOutcome
+                 */
+                DescribeAuditGroupTagOutcome DescribeAuditGroupTag(const Model::DescribeAuditGroupTagRequest &request);
+                void DescribeAuditGroupTagAsync(const Model::DescribeAuditGroupTagRequest& request, const DescribeAuditGroupTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditGroupTagOutcomeCallable DescribeAuditGroupTagCallable(const Model::DescribeAuditGroupTagRequest& request);
+
+                /**
+                 *直播审核图库获取图片。
+                 * @param req DescribeAuditImagesRequest
+                 * @return DescribeAuditImagesOutcome
+                 */
+                DescribeAuditImagesOutcome DescribeAuditImages(const Model::DescribeAuditImagesRequest &request);
+                void DescribeAuditImagesAsync(const Model::DescribeAuditImagesRequest& request, const DescribeAuditImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditImagesOutcomeCallable DescribeAuditImagesCallable(const Model::DescribeAuditImagesRequest& request);
+
+                /**
+                 *获取关键词库列表，直播审核功能使用。
+                 * @param req DescribeAuditKeywordLibsRequest
+                 * @return DescribeAuditKeywordLibsOutcome
+                 */
+                DescribeAuditKeywordLibsOutcome DescribeAuditKeywordLibs(const Model::DescribeAuditKeywordLibsRequest &request);
+                void DescribeAuditKeywordLibsAsync(const Model::DescribeAuditKeywordLibsRequest& request, const DescribeAuditKeywordLibsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditKeywordLibsOutcomeCallable DescribeAuditKeywordLibsCallable(const Model::DescribeAuditKeywordLibsRequest& request);
 
                 /**
                  *获取关键词信息。
@@ -3037,6 +3126,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 InsertTaskTemporaryFilesOutcome InsertTaskTemporaryFiles(const Model::InsertTaskTemporaryFilesRequest &request);
                 void InsertTaskTemporaryFilesAsync(const Model::InsertTaskTemporaryFilesRequest& request, const InsertTaskTemporaryFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InsertTaskTemporaryFilesOutcomeCallable InsertTaskTemporaryFilesCallable(const Model::InsertTaskTemporaryFilesRequest& request);
+
+                /**
+                 *更新关键词库信息，直播审核功能使用。
+                 * @param req ModifyAuditKeywordLibRequest
+                 * @return ModifyAuditKeywordLibOutcome
+                 */
+                ModifyAuditKeywordLibOutcome ModifyAuditKeywordLib(const Model::ModifyAuditKeywordLibRequest &request);
+                void ModifyAuditKeywordLibAsync(const Model::ModifyAuditKeywordLibRequest& request, const ModifyAuditKeywordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAuditKeywordLibOutcomeCallable ModifyAuditKeywordLibCallable(const Model::ModifyAuditKeywordLibRequest& request);
 
                 /**
                  *该接口用来设置导播台的描述、名称、录制模板id等参数。

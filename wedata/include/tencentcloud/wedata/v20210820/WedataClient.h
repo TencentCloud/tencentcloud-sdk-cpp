@@ -621,6 +621,8 @@
 #include <tencentcloud/wedata/v20210820/model/TriggerEventResponse.h>
 #include <tencentcloud/wedata/v20210820/model/TriggerManualTasksRequest.h>
 #include <tencentcloud/wedata/v20210820/model/TriggerManualTasksResponse.h>
+#include <tencentcloud/wedata/v20210820/model/UnbindingResourceRequest.h>
+#include <tencentcloud/wedata/v20210820/model/UnbindingResourceResponse.h>
 #include <tencentcloud/wedata/v20210820/model/UnboundProjectExecutorResourceRequest.h>
 #include <tencentcloud/wedata/v20210820/model/UnboundProjectExecutorResourceResponse.h>
 #include <tencentcloud/wedata/v20210820/model/UnlockIntegrationTaskRequest.h>
@@ -1550,6 +1552,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::TriggerManualTasksResponse> TriggerManualTasksOutcome;
                 typedef std::future<TriggerManualTasksOutcome> TriggerManualTasksOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::TriggerManualTasksRequest&, TriggerManualTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TriggerManualTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnbindingResourceResponse> UnbindingResourceOutcome;
+                typedef std::future<UnbindingResourceOutcome> UnbindingResourceOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::UnbindingResourceRequest&, UnbindingResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindingResourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnboundProjectExecutorResourceResponse> UnboundProjectExecutorResourceOutcome;
                 typedef std::future<UnboundProjectExecutorResourceOutcome> UnboundProjectExecutorResourceOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::UnboundProjectExecutorResourceRequest&, UnboundProjectExecutorResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnboundProjectExecutorResourceAsyncHandler;
@@ -4283,6 +4288,15 @@ namespace TencentCloud
                 TriggerManualTasksOutcome TriggerManualTasks(const Model::TriggerManualTasksRequest &request);
                 void TriggerManualTasksAsync(const Model::TriggerManualTasksRequest& request, const TriggerManualTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TriggerManualTasksOutcomeCallable TriggerManualTasksCallable(const Model::TriggerManualTasksRequest& request);
+
+                /**
+                 *解绑bundle绑定的资源
+                 * @param req UnbindingResourceRequest
+                 * @return UnbindingResourceOutcome
+                 */
+                UnbindingResourceOutcome UnbindingResource(const Model::UnbindingResourceRequest &request);
+                void UnbindingResourceAsync(const Model::UnbindingResourceRequest& request, const UnbindingResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnbindingResourceOutcomeCallable UnbindingResourceCallable(const Model::UnbindingResourceRequest& request);
 
                 /**
                  *商业化版本：执行资源组/资源包解除绑定项目

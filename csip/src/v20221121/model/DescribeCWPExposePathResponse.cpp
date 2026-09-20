@@ -24,7 +24,8 @@ using namespace TencentCloud::Csip::V20221121::Model;
 using namespace std;
 
 DescribeCWPExposePathResponse::DescribeCWPExposePathResponse() :
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_pathCountHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome DescribeCWPExposePathResponse::Deserialize(const string &pay
         m_contentHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PathCount") && !rsp["PathCount"].IsNull())
+    {
+        if (!rsp["PathCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PathCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pathCount = rsp["PathCount"].GetUint64();
+        m_pathCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string DescribeCWPExposePathResponse::ToJsonString() const
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pathCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PathCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pathCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ string DescribeCWPExposePathResponse::GetContent() const
 bool DescribeCWPExposePathResponse::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+uint64_t DescribeCWPExposePathResponse::GetPathCount() const
+{
+    return m_pathCount;
+}
+
+bool DescribeCWPExposePathResponse::PathCountHasBeenSet() const
+{
+    return m_pathCountHasBeenSet;
 }
 
 

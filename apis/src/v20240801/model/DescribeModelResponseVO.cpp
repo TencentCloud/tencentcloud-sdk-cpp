@@ -25,6 +25,7 @@ DescribeModelResponseVO::DescribeModelResponseVO() :
     m_uinHasBeenSet(false),
     m_instanceIDHasBeenSet(false),
     m_iDHasBeenSet(false),
+    m_providerHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_credentialIDHasBeenSet(false),
     m_credentialNameHasBeenSet(false),
@@ -84,6 +85,16 @@ CoreInternalOutcome DescribeModelResponseVO::Deserialize(const rapidjson::Value 
         }
         m_iD = string(value["ID"].GetString());
         m_iDHasBeenSet = true;
+    }
+
+    if (value.HasMember("Provider") && !value["Provider"].IsNull())
+    {
+        if (!value["Provider"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeModelResponseVO.Provider` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_provider = string(value["Provider"].GetString());
+        m_providerHasBeenSet = true;
     }
 
     if (value.HasMember("Name") && !value["Name"].IsNull())
@@ -265,6 +276,14 @@ void DescribeModelResponseVO::ToJsonObject(rapidjson::Value &value, rapidjson::D
         value.AddMember(iKey, rapidjson::Value(m_iD.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_providerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Provider";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_provider.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_nameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -441,6 +460,22 @@ void DescribeModelResponseVO::SetID(const string& _iD)
 bool DescribeModelResponseVO::IDHasBeenSet() const
 {
     return m_iDHasBeenSet;
+}
+
+string DescribeModelResponseVO::GetProvider() const
+{
+    return m_provider;
+}
+
+void DescribeModelResponseVO::SetProvider(const string& _provider)
+{
+    m_provider = _provider;
+    m_providerHasBeenSet = true;
+}
+
+bool DescribeModelResponseVO::ProviderHasBeenSet() const
+{
+    return m_providerHasBeenSet;
 }
 
 string DescribeModelResponseVO::GetName() const

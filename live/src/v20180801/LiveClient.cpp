@@ -690,6 +690,56 @@ LiveClient::CopyLiveAvatarRoomOutcomeCallable LiveClient::CopyLiveAvatarRoomCall
     return prom->get_future();
 }
 
+LiveClient::CreateAuditImagesOutcome LiveClient::CreateAuditImages(const CreateAuditImagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAuditImages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAuditImagesResponse rsp = CreateAuditImagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAuditImagesOutcome(rsp);
+        else
+            return CreateAuditImagesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAuditImagesOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateAuditImagesAsync(const CreateAuditImagesRequest& request, const CreateAuditImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAuditImagesRequest&;
+    using Resp = CreateAuditImagesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAuditImages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::CreateAuditImagesOutcomeCallable LiveClient::CreateAuditImagesCallable(const CreateAuditImagesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAuditImagesOutcome>>();
+    CreateAuditImagesAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const CreateAuditImagesRequest&,
+        CreateAuditImagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LiveClient::CreateAuditKeywordLibOutcome LiveClient::CreateAuditKeywordLib(const CreateAuditKeywordLibRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAuditKeywordLib");
@@ -2332,6 +2382,106 @@ LiveClient::CreateVideoRedrawTaskOutcomeCallable LiveClient::CreateVideoRedrawTa
         const LiveClient*,
         const CreateVideoRedrawTaskRequest&,
         CreateVideoRedrawTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::DeleteAuditImagesOutcome LiveClient::DeleteAuditImages(const DeleteAuditImagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAuditImages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAuditImagesResponse rsp = DeleteAuditImagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAuditImagesOutcome(rsp);
+        else
+            return DeleteAuditImagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAuditImagesOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DeleteAuditImagesAsync(const DeleteAuditImagesRequest& request, const DeleteAuditImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAuditImagesRequest&;
+    using Resp = DeleteAuditImagesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAuditImages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DeleteAuditImagesOutcomeCallable LiveClient::DeleteAuditImagesCallable(const DeleteAuditImagesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAuditImagesOutcome>>();
+    DeleteAuditImagesAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DeleteAuditImagesRequest&,
+        DeleteAuditImagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::DeleteAuditKeywordLibOutcome LiveClient::DeleteAuditKeywordLib(const DeleteAuditKeywordLibRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAuditKeywordLib");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAuditKeywordLibResponse rsp = DeleteAuditKeywordLibResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAuditKeywordLibOutcome(rsp);
+        else
+            return DeleteAuditKeywordLibOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAuditKeywordLibOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DeleteAuditKeywordLibAsync(const DeleteAuditKeywordLibRequest& request, const DeleteAuditKeywordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAuditKeywordLibRequest&;
+    using Resp = DeleteAuditKeywordLibResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAuditKeywordLib", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DeleteAuditKeywordLibOutcomeCallable LiveClient::DeleteAuditKeywordLibCallable(const DeleteAuditKeywordLibRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAuditKeywordLibOutcome>>();
+    DeleteAuditKeywordLibAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DeleteAuditKeywordLibRequest&,
+        DeleteAuditKeywordLibOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4032,6 +4182,156 @@ LiveClient::DescribeAreaBillBandwidthAndFluxListOutcomeCallable LiveClient::Desc
         const LiveClient*,
         const DescribeAreaBillBandwidthAndFluxListRequest&,
         DescribeAreaBillBandwidthAndFluxListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::DescribeAuditGroupTagOutcome LiveClient::DescribeAuditGroupTag(const DescribeAuditGroupTagRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditGroupTag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditGroupTagResponse rsp = DescribeAuditGroupTagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditGroupTagOutcome(rsp);
+        else
+            return DescribeAuditGroupTagOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditGroupTagOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeAuditGroupTagAsync(const DescribeAuditGroupTagRequest& request, const DescribeAuditGroupTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAuditGroupTagRequest&;
+    using Resp = DescribeAuditGroupTagResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuditGroupTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DescribeAuditGroupTagOutcomeCallable LiveClient::DescribeAuditGroupTagCallable(const DescribeAuditGroupTagRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAuditGroupTagOutcome>>();
+    DescribeAuditGroupTagAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DescribeAuditGroupTagRequest&,
+        DescribeAuditGroupTagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::DescribeAuditImagesOutcome LiveClient::DescribeAuditImages(const DescribeAuditImagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditImages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditImagesResponse rsp = DescribeAuditImagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditImagesOutcome(rsp);
+        else
+            return DescribeAuditImagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditImagesOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeAuditImagesAsync(const DescribeAuditImagesRequest& request, const DescribeAuditImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAuditImagesRequest&;
+    using Resp = DescribeAuditImagesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuditImages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DescribeAuditImagesOutcomeCallable LiveClient::DescribeAuditImagesCallable(const DescribeAuditImagesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAuditImagesOutcome>>();
+    DescribeAuditImagesAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DescribeAuditImagesRequest&,
+        DescribeAuditImagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::DescribeAuditKeywordLibsOutcome LiveClient::DescribeAuditKeywordLibs(const DescribeAuditKeywordLibsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditKeywordLibs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditKeywordLibsResponse rsp = DescribeAuditKeywordLibsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditKeywordLibsOutcome(rsp);
+        else
+            return DescribeAuditKeywordLibsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditKeywordLibsOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeAuditKeywordLibsAsync(const DescribeAuditKeywordLibsRequest& request, const DescribeAuditKeywordLibsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAuditKeywordLibsRequest&;
+    using Resp = DescribeAuditKeywordLibsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuditKeywordLibs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DescribeAuditKeywordLibsOutcomeCallable LiveClient::DescribeAuditKeywordLibsCallable(const DescribeAuditKeywordLibsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAuditKeywordLibsOutcome>>();
+    DescribeAuditKeywordLibsAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DescribeAuditKeywordLibsRequest&,
+        DescribeAuditKeywordLibsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -9482,6 +9782,56 @@ LiveClient::InsertTaskTemporaryFilesOutcomeCallable LiveClient::InsertTaskTempor
         const LiveClient*,
         const InsertTaskTemporaryFilesRequest&,
         InsertTaskTemporaryFilesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::ModifyAuditKeywordLibOutcome LiveClient::ModifyAuditKeywordLib(const ModifyAuditKeywordLibRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAuditKeywordLib");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAuditKeywordLibResponse rsp = ModifyAuditKeywordLibResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAuditKeywordLibOutcome(rsp);
+        else
+            return ModifyAuditKeywordLibOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAuditKeywordLibOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::ModifyAuditKeywordLibAsync(const ModifyAuditKeywordLibRequest& request, const ModifyAuditKeywordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyAuditKeywordLibRequest&;
+    using Resp = ModifyAuditKeywordLibResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyAuditKeywordLib", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::ModifyAuditKeywordLibOutcomeCallable LiveClient::ModifyAuditKeywordLibCallable(const ModifyAuditKeywordLibRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyAuditKeywordLibOutcome>>();
+    ModifyAuditKeywordLibAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const ModifyAuditKeywordLibRequest&,
+        ModifyAuditKeywordLibOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

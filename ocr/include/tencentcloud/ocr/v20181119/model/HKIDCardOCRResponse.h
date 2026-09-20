@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取中文姓名
-                     * @return CnName 中文姓名
+                     * 获取<p>中文姓名</p>
+                     * @return CnName <p>中文姓名</p>
                      * 
                      */
                     std::string GetCnName() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool CnNameHasBeenSet() const;
 
                     /**
-                     * 获取英文姓名
-                     * @return EnName 英文姓名
+                     * 获取<p>英文姓名</p>
+                     * @return EnName <p>英文姓名</p>
                      * 
                      */
                     std::string GetEnName() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool EnNameHasBeenSet() const;
 
                     /**
-                     * 获取中文姓名对应电码
-                     * @return TelexCode 中文姓名对应电码
+                     * 获取<p>中文姓名对应电码</p>
+                     * @return TelexCode <p>中文姓名对应电码</p>
                      * 
                      */
                     std::string GetTelexCode() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool TelexCodeHasBeenSet() const;
 
                     /**
-                     * 获取性别 ：“男M”或“女F”
-                     * @return Sex 性别 ：“男M”或“女F”
+                     * 获取<p>性别 ：“男M”或“女F”</p>
+                     * @return Sex <p>性别 ：“男M”或“女F”</p>
                      * 
                      */
                     std::string GetSex() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool SexHasBeenSet() const;
 
                     /**
-                     * 获取出生日期
-                     * @return Birthday 出生日期
+                     * 获取<p>出生日期</p>
+                     * @return Birthday <p>出生日期</p>
                      * 
                      */
                     std::string GetBirthday() const;
@@ -114,14 +114,8 @@ namespace TencentCloud
                     bool BirthdayHasBeenSet() const;
 
                     /**
-                     * 获取永久性居民身份证。
-0：非永久；
-1：永久；
--1：未知。
-                     * @return Permanent 永久性居民身份证。
-0：非永久；
-1：永久；
--1：未知。
+                     * 获取<p>永久性居民身份证。<br>0：非永久；<br>1：永久；<br>-1：未知。</p>
+                     * @return Permanent <p>永久性居民身份证。<br>0：非永久；<br>1：永久；<br>-1：未知。</p>
                      * 
                      */
                     int64_t GetPermanent() const;
@@ -134,8 +128,8 @@ namespace TencentCloud
                     bool PermanentHasBeenSet() const;
 
                     /**
-                     * 获取身份证号码
-                     * @return IdNum 身份证号码
+                     * 获取<p>身份证号码</p>
+                     * @return IdNum <p>身份证号码</p>
                      * 
                      */
                     std::string GetIdNum() const;
@@ -148,8 +142,8 @@ namespace TencentCloud
                     bool IdNumHasBeenSet() const;
 
                     /**
-                     * 获取证件符号，出生日期下的符号，例如"***AZ"
-                     * @return Symbol 证件符号，出生日期下的符号，例如"***AZ"
+                     * 获取<p>证件符号，出生日期下的符号，例如&quot;***AZ&quot;</p>
+                     * @return Symbol <p>证件符号，出生日期下的符号，例如&quot;***AZ&quot;</p>
                      * 
                      */
                     std::string GetSymbol() const;
@@ -162,8 +156,8 @@ namespace TencentCloud
                     bool SymbolHasBeenSet() const;
 
                     /**
-                     * 获取首次签发日期
-                     * @return FirstIssueDate 首次签发日期
+                     * 获取<p>首次签发日期</p>
+                     * @return FirstIssueDate <p>首次签发日期</p>
                      * 
                      */
                     std::string GetFirstIssueDate() const;
@@ -176,8 +170,8 @@ namespace TencentCloud
                     bool FirstIssueDateHasBeenSet() const;
 
                     /**
-                     * 获取最近领用日期
-                     * @return CurrentIssueDate 最近领用日期
+                     * 获取<p>最近领用日期</p>
+                     * @return CurrentIssueDate <p>最近领用日期</p>
                      * 
                      */
                     std::string GetCurrentIssueDate() const;
@@ -190,15 +184,9 @@ namespace TencentCloud
                     bool CurrentIssueDateHasBeenSet() const;
 
                     /**
-                     * 获取真假判断。
-0：无法判断（图像模糊、不完整、反光、过暗等导致无法判断）；
-1：假；
-2：真。
+                     * 获取<p>真假判断。<br>0：无法判断（图像模糊、不完整、反光、过暗等导致无法判断）；<br>1：假；<br>2：真。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FakeDetectResult 真假判断。
-0：无法判断（图像模糊、不完整、反光、过暗等导致无法判断）；
-1：假；
-2：真。
+                     * @return FakeDetectResult <p>真假判断。<br>0：无法判断（图像模糊、不完整、反光、过暗等导致无法判断）；<br>1：假；<br>2：真。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
@@ -212,9 +200,9 @@ namespace TencentCloud
                     bool FakeDetectResultHasBeenSet() const;
 
                     /**
-                     * 获取Base64编码的证件左侧人像大图
+                     * 获取<p>Base64编码的证件左侧人像大图</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HeadImage Base64编码的证件左侧人像大图
+                     * @return HeadImage <p>Base64编码的证件左侧人像大图</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -228,9 +216,9 @@ namespace TencentCloud
                     bool HeadImageHasBeenSet() const;
 
                     /**
-                     * 获取Base64编码的证件右侧人像小图
+                     * 获取<p>Base64编码的证件右侧人像小图</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SmallHeadImage Base64编码的证件右侧人像小图
+                     * @return SmallHeadImage <p>Base64编码的证件右侧人像小图</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -244,10 +232,8 @@ namespace TencentCloud
                     bool SmallHeadImageHasBeenSet() const;
 
                     /**
-                     * 获取该字段已废弃， 将固定返回空数组，不建议使用。
-
-                     * @return WarningCode 该字段已废弃， 将固定返回空数组，不建议使用。
-
+                     * 获取<p>该字段已废弃， 将固定返回空数组，不建议使用。</p>
+                     * @return WarningCode <p>该字段已废弃， 将固定返回空数组，不建议使用。</p>
                      * @deprecated
                      */
                     std::vector<int64_t> GetWarningCode() const;
@@ -260,8 +246,8 @@ namespace TencentCloud
                     bool WarningCodeHasBeenSet() const;
 
                     /**
-                     * 获取该字段仅对国际站请求起作用，国内站该字段将固定返回空数组。国际站告警码如下：    告警码-9101 证件边框不完整告警-9102 证件复印件告警-9103 证件翻拍告警-9104 证件PS告警-9107 证件反光告警-9108 证件模糊告警-9109 告警能力未开通
-                     * @return WarnCardInfos 该字段仅对国际站请求起作用，国内站该字段将固定返回空数组。国际站告警码如下：    告警码-9101 证件边框不完整告警-9102 证件复印件告警-9103 证件翻拍告警-9104 证件PS告警-9107 证件反光告警-9108 证件模糊告警-9109 告警能力未开通
+                     * 获取<p>该字段仅对国际站请求起作用，国内站该字段将固定返回空数组。国际站告警码如下：    告警码-9101 证件边框不完整告警-9102 证件复印件告警-9103 证件翻拍告警-9104 证件PS告警-9107 证件反光告警-9108 证件模糊告警-9109 告警能力未开通</p>
+                     * @return WarnCardInfos <p>该字段仅对国际站请求起作用，国内站该字段将固定返回空数组。国际站告警码如下：    告警码-9101 证件边框不完整告警-9102 证件复印件告警-9103 证件翻拍告警-9104 证件PS告警-9107 证件反光告警-9108 证件模糊告警-9109 告警能力未开通</p>
                      * 
                      */
                     std::vector<int64_t> GetWarnCardInfos() const;
@@ -274,8 +260,8 @@ namespace TencentCloud
                     bool WarnCardInfosHasBeenSet() const;
 
                     /**
-                     * 获取证件透明视窗内的文本信息
-                     * @return WindowEmbeddedText 证件透明视窗内的文本信息
+                     * 获取<p>证件透明视窗内的文本信息</p>
+                     * @return WindowEmbeddedText <p>证件透明视窗内的文本信息</p>
                      * 
                      */
                     std::string GetWindowEmbeddedText() const;
@@ -290,107 +276,100 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 中文姓名
+                     * <p>中文姓名</p>
                      */
                     std::string m_cnName;
                     bool m_cnNameHasBeenSet;
 
                     /**
-                     * 英文姓名
+                     * <p>英文姓名</p>
                      */
                     std::string m_enName;
                     bool m_enNameHasBeenSet;
 
                     /**
-                     * 中文姓名对应电码
+                     * <p>中文姓名对应电码</p>
                      */
                     std::string m_telexCode;
                     bool m_telexCodeHasBeenSet;
 
                     /**
-                     * 性别 ：“男M”或“女F”
+                     * <p>性别 ：“男M”或“女F”</p>
                      */
                     std::string m_sex;
                     bool m_sexHasBeenSet;
 
                     /**
-                     * 出生日期
+                     * <p>出生日期</p>
                      */
                     std::string m_birthday;
                     bool m_birthdayHasBeenSet;
 
                     /**
-                     * 永久性居民身份证。
-0：非永久；
-1：永久；
--1：未知。
+                     * <p>永久性居民身份证。<br>0：非永久；<br>1：永久；<br>-1：未知。</p>
                      */
                     int64_t m_permanent;
                     bool m_permanentHasBeenSet;
 
                     /**
-                     * 身份证号码
+                     * <p>身份证号码</p>
                      */
                     std::string m_idNum;
                     bool m_idNumHasBeenSet;
 
                     /**
-                     * 证件符号，出生日期下的符号，例如"***AZ"
+                     * <p>证件符号，出生日期下的符号，例如&quot;***AZ&quot;</p>
                      */
                     std::string m_symbol;
                     bool m_symbolHasBeenSet;
 
                     /**
-                     * 首次签发日期
+                     * <p>首次签发日期</p>
                      */
                     std::string m_firstIssueDate;
                     bool m_firstIssueDateHasBeenSet;
 
                     /**
-                     * 最近领用日期
+                     * <p>最近领用日期</p>
                      */
                     std::string m_currentIssueDate;
                     bool m_currentIssueDateHasBeenSet;
 
                     /**
-                     * 真假判断。
-0：无法判断（图像模糊、不完整、反光、过暗等导致无法判断）；
-1：假；
-2：真。
+                     * <p>真假判断。<br>0：无法判断（图像模糊、不完整、反光、过暗等导致无法判断）；<br>1：假；<br>2：真。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fakeDetectResult;
                     bool m_fakeDetectResultHasBeenSet;
 
                     /**
-                     * Base64编码的证件左侧人像大图
+                     * <p>Base64编码的证件左侧人像大图</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_headImage;
                     bool m_headImageHasBeenSet;
 
                     /**
-                     * Base64编码的证件右侧人像小图
+                     * <p>Base64编码的证件右侧人像小图</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_smallHeadImage;
                     bool m_smallHeadImageHasBeenSet;
 
                     /**
-                     * 该字段已废弃， 将固定返回空数组，不建议使用。
-
+                     * <p>该字段已废弃， 将固定返回空数组，不建议使用。</p>
                      */
                     std::vector<int64_t> m_warningCode;
                     bool m_warningCodeHasBeenSet;
 
                     /**
-                     * 该字段仅对国际站请求起作用，国内站该字段将固定返回空数组。国际站告警码如下：    告警码-9101 证件边框不完整告警-9102 证件复印件告警-9103 证件翻拍告警-9104 证件PS告警-9107 证件反光告警-9108 证件模糊告警-9109 告警能力未开通
+                     * <p>该字段仅对国际站请求起作用，国内站该字段将固定返回空数组。国际站告警码如下：    告警码-9101 证件边框不完整告警-9102 证件复印件告警-9103 证件翻拍告警-9104 证件PS告警-9107 证件反光告警-9108 证件模糊告警-9109 告警能力未开通</p>
                      */
                     std::vector<int64_t> m_warnCardInfos;
                     bool m_warnCardInfosHasBeenSet;
 
                     /**
-                     * 证件透明视窗内的文本信息
+                     * <p>证件透明视窗内的文本信息</p>
                      */
                     std::string m_windowEmbeddedText;
                     bool m_windowEmbeddedTextHasBeenSet;

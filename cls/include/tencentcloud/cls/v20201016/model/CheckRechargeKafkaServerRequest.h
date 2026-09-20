@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/KafkaProtocolInfo.h>
+#include <tencentcloud/cls/v20201016/model/NetworkInfo.h>
 #include <tencentcloud/cls/v20201016/model/UserKafkaMeta.h>
 
 
@@ -45,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导入Kafka类型，0: 腾讯云CKafka；1: 用户自建Kafka。
-                     * @return KafkaType 导入Kafka类型，0: 腾讯云CKafka；1: 用户自建Kafka。
+                     * 获取<p>导入Kafka类型，0: 腾讯云CKafka；1: 用户自建Kafka。</p>
+                     * @return KafkaType <p>导入Kafka类型，0: 腾讯云CKafka；1: 用户自建Kafka。</p>
                      * 
                      */
                     uint64_t GetKafkaType() const;
 
                     /**
-                     * 设置导入Kafka类型，0: 腾讯云CKafka；1: 用户自建Kafka。
-                     * @param _kafkaType 导入Kafka类型，0: 腾讯云CKafka；1: 用户自建Kafka。
+                     * 设置<p>导入Kafka类型，0: 腾讯云CKafka；1: 用户自建Kafka。</p>
+                     * @param _kafkaType <p>导入Kafka类型，0: 腾讯云CKafka；1: 用户自建Kafka。</p>
                      * 
                      */
                     void SetKafkaType(const uint64_t& _kafkaType);
@@ -66,27 +67,15 @@ namespace TencentCloud
                     bool KafkaTypeHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云CKafka实例ID。
-KafkaType为0时，KafkaInstance必填
-
-- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
-                     * @return KafkaInstance 腾讯云CKafka实例ID。
-KafkaType为0时，KafkaInstance必填
-
-- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
+                     * 获取<p>腾讯云CKafka实例ID。<br>KafkaType为0时，KafkaInstance必填</p><ul><li>通过 <a href="https://cloud.tencent.com/document/product/597/40835">获取实例列表信息</a> 获取实例id。</li></ul>
+                     * @return KafkaInstance <p>腾讯云CKafka实例ID。<br>KafkaType为0时，KafkaInstance必填</p><ul><li>通过 <a href="https://cloud.tencent.com/document/product/597/40835">获取实例列表信息</a> 获取实例id。</li></ul>
                      * 
                      */
                     std::string GetKafkaInstance() const;
 
                     /**
-                     * 设置腾讯云CKafka实例ID。
-KafkaType为0时，KafkaInstance必填
-
-- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
-                     * @param _kafkaInstance 腾讯云CKafka实例ID。
-KafkaType为0时，KafkaInstance必填
-
-- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
+                     * 设置<p>腾讯云CKafka实例ID。<br>KafkaType为0时，KafkaInstance必填</p><ul><li>通过 <a href="https://cloud.tencent.com/document/product/597/40835">获取实例列表信息</a> 获取实例id。</li></ul>
+                     * @param _kafkaInstance <p>腾讯云CKafka实例ID。<br>KafkaType为0时，KafkaInstance必填</p><ul><li>通过 <a href="https://cloud.tencent.com/document/product/597/40835">获取实例列表信息</a> 获取实例id。</li></ul>
                      * 
                      */
                     void SetKafkaInstance(const std::string& _kafkaInstance);
@@ -99,19 +88,15 @@ KafkaType为0时，KafkaInstance必填
                     bool KafkaInstanceHasBeenSet() const;
 
                     /**
-                     * 获取服务地址。
-KafkaType为1时，ServerAddr必填
-                     * @return ServerAddr 服务地址。
-KafkaType为1时，ServerAddr必填
+                     * 获取<p>服务地址。<br>KafkaType为1时，ServerAddr必填</p>
+                     * @return ServerAddr <p>服务地址。<br>KafkaType为1时，ServerAddr必填</p>
                      * 
                      */
                     std::string GetServerAddr() const;
 
                     /**
-                     * 设置服务地址。
-KafkaType为1时，ServerAddr必填
-                     * @param _serverAddr 服务地址。
-KafkaType为1时，ServerAddr必填
+                     * 设置<p>服务地址。<br>KafkaType为1时，ServerAddr必填</p>
+                     * @param _serverAddr <p>服务地址。<br>KafkaType为1时，ServerAddr必填</p>
                      * 
                      */
                     void SetServerAddr(const std::string& _serverAddr);
@@ -124,15 +109,15 @@ KafkaType为1时，ServerAddr必填
                     bool ServerAddrHasBeenSet() const;
 
                     /**
-                     * 获取ServerAddr是否为加密连接，默认值false。当KafkaType为1用户自建kafka时生效。
-                     * @return IsEncryptionAddr ServerAddr是否为加密连接，默认值false。当KafkaType为1用户自建kafka时生效。
+                     * 获取<p>ServerAddr是否为加密连接，默认值false。当KafkaType为1用户自建kafka时生效。</p>
+                     * @return IsEncryptionAddr <p>ServerAddr是否为加密连接，默认值false。当KafkaType为1用户自建kafka时生效。</p>
                      * 
                      */
                     bool GetIsEncryptionAddr() const;
 
                     /**
-                     * 设置ServerAddr是否为加密连接，默认值false。当KafkaType为1用户自建kafka时生效。
-                     * @param _isEncryptionAddr ServerAddr是否为加密连接，默认值false。当KafkaType为1用户自建kafka时生效。
+                     * 设置<p>ServerAddr是否为加密连接，默认值false。当KafkaType为1用户自建kafka时生效。</p>
+                     * @param _isEncryptionAddr <p>ServerAddr是否为加密连接，默认值false。当KafkaType为1用户自建kafka时生效。</p>
                      * 
                      */
                     void SetIsEncryptionAddr(const bool& _isEncryptionAddr);
@@ -145,15 +130,15 @@ KafkaType为1时，ServerAddr必填
                     bool IsEncryptionAddrHasBeenSet() const;
 
                     /**
-                     * 获取加密访问协议。KafkaType参数为1并且IsEncryptionAddr参数为true时必填。
-                     * @return Protocol 加密访问协议。KafkaType参数为1并且IsEncryptionAddr参数为true时必填。
+                     * 获取<p>加密访问协议。KafkaType参数为1并且IsEncryptionAddr参数为true时必填。</p>
+                     * @return Protocol <p>加密访问协议。KafkaType参数为1并且IsEncryptionAddr参数为true时必填。</p>
                      * 
                      */
                     KafkaProtocolInfo GetProtocol() const;
 
                     /**
-                     * 设置加密访问协议。KafkaType参数为1并且IsEncryptionAddr参数为true时必填。
-                     * @param _protocol 加密访问协议。KafkaType参数为1并且IsEncryptionAddr参数为true时必填。
+                     * 设置<p>加密访问协议。KafkaType参数为1并且IsEncryptionAddr参数为true时必填。</p>
+                     * @param _protocol <p>加密访问协议。KafkaType参数为1并且IsEncryptionAddr参数为true时必填。</p>
                      * 
                      */
                     void SetProtocol(const KafkaProtocolInfo& _protocol);
@@ -166,15 +151,36 @@ KafkaType为1时，ServerAddr必填
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取用户kafka拓展信息
-                     * @return UserKafkaMeta 用户kafka拓展信息
+                     * 获取<p>网络信息参数</p>
+                     * @return NetworkInfo <p>网络信息参数</p>
+                     * 
+                     */
+                    NetworkInfo GetNetworkInfo() const;
+
+                    /**
+                     * 设置<p>网络信息参数</p>
+                     * @param _networkInfo <p>网络信息参数</p>
+                     * 
+                     */
+                    void SetNetworkInfo(const NetworkInfo& _networkInfo);
+
+                    /**
+                     * 判断参数 NetworkInfo 是否已赋值
+                     * @return NetworkInfo 是否已赋值
+                     * 
+                     */
+                    bool NetworkInfoHasBeenSet() const;
+
+                    /**
+                     * 获取<p>用户kafka拓展信息</p>
+                     * @return UserKafkaMeta <p>用户kafka拓展信息</p>
                      * 
                      */
                     UserKafkaMeta GetUserKafkaMeta() const;
 
                     /**
-                     * 设置用户kafka拓展信息
-                     * @param _userKafkaMeta 用户kafka拓展信息
+                     * 设置<p>用户kafka拓展信息</p>
+                     * @param _userKafkaMeta <p>用户kafka拓展信息</p>
                      * 
                      */
                     void SetUserKafkaMeta(const UserKafkaMeta& _userKafkaMeta);
@@ -189,41 +195,43 @@ KafkaType为1时，ServerAddr必填
                 private:
 
                     /**
-                     * 导入Kafka类型，0: 腾讯云CKafka；1: 用户自建Kafka。
+                     * <p>导入Kafka类型，0: 腾讯云CKafka；1: 用户自建Kafka。</p>
                      */
                     uint64_t m_kafkaType;
                     bool m_kafkaTypeHasBeenSet;
 
                     /**
-                     * 腾讯云CKafka实例ID。
-KafkaType为0时，KafkaInstance必填
-
-- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。
+                     * <p>腾讯云CKafka实例ID。<br>KafkaType为0时，KafkaInstance必填</p><ul><li>通过 <a href="https://cloud.tencent.com/document/product/597/40835">获取实例列表信息</a> 获取实例id。</li></ul>
                      */
                     std::string m_kafkaInstance;
                     bool m_kafkaInstanceHasBeenSet;
 
                     /**
-                     * 服务地址。
-KafkaType为1时，ServerAddr必填
+                     * <p>服务地址。<br>KafkaType为1时，ServerAddr必填</p>
                      */
                     std::string m_serverAddr;
                     bool m_serverAddrHasBeenSet;
 
                     /**
-                     * ServerAddr是否为加密连接，默认值false。当KafkaType为1用户自建kafka时生效。
+                     * <p>ServerAddr是否为加密连接，默认值false。当KafkaType为1用户自建kafka时生效。</p>
                      */
                     bool m_isEncryptionAddr;
                     bool m_isEncryptionAddrHasBeenSet;
 
                     /**
-                     * 加密访问协议。KafkaType参数为1并且IsEncryptionAddr参数为true时必填。
+                     * <p>加密访问协议。KafkaType参数为1并且IsEncryptionAddr参数为true时必填。</p>
                      */
                     KafkaProtocolInfo m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 用户kafka拓展信息
+                     * <p>网络信息参数</p>
+                     */
+                    NetworkInfo m_networkInfo;
+                    bool m_networkInfoHasBeenSet;
+
+                    /**
+                     * <p>用户kafka拓展信息</p>
                      */
                     UserKafkaMeta m_userKafkaMeta;
                     bool m_userKafkaMetaHasBeenSet;

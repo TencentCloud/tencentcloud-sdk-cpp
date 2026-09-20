@@ -190,6 +190,27 @@ namespace TencentCloud
                      */
                     bool StandardIDsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>资产标签ID</p>
+                     * @return AssetTagIDs <p>资产标签ID</p>
+                     * 
+                     */
+                    std::vector<uint64_t> GetAssetTagIDs() const;
+
+                    /**
+                     * 设置<p>资产标签ID</p>
+                     * @param _assetTagIDs <p>资产标签ID</p>
+                     * 
+                     */
+                    void SetAssetTagIDs(const std::vector<uint64_t>& _assetTagIDs);
+
+                    /**
+                     * 判断参数 AssetTagIDs 是否已赋值
+                     * @return AssetTagIDs 是否已赋值
+                     * 
+                     */
+                    bool AssetTagIDsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -233,6 +254,12 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_standardIDs;
                     bool m_standardIDsHasBeenSet;
+
+                    /**
+                     * <p>资产标签ID</p>
+                     */
+                    std::vector<uint64_t> m_assetTagIDs;
+                    bool m_assetTagIDsHasBeenSet;
 
                 };
             }

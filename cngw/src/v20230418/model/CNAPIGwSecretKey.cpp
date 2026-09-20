@@ -47,7 +47,9 @@ CNAPIGwSecretKey::CNAPIGwSecretKey() :
     m_bearerTokenCredentialConfigHasBeenSet(false),
     m_basicCredentialConfigHasBeenSet(false),
     m_customHeaderCredentialConfigHasBeenSet(false),
-    m_queryParamCredentialConfigHasBeenSet(false)
+    m_queryParamCredentialConfigHasBeenSet(false),
+    m_boundModelSecretKeysHasBeenSet(false),
+    m_boundConsumerSecretKeysHasBeenSet(false)
 {
 }
 
@@ -389,6 +391,46 @@ CoreInternalOutcome CNAPIGwSecretKey::Deserialize(const rapidjson::Value &value)
         m_queryParamCredentialConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("BoundModelSecretKeys") && !value["BoundModelSecretKeys"].IsNull())
+    {
+        if (!value["BoundModelSecretKeys"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.BoundModelSecretKeys` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BoundModelSecretKeys"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AIGWSimpleSecretKey item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_boundModelSecretKeys.push_back(item);
+        }
+        m_boundModelSecretKeysHasBeenSet = true;
+    }
+
+    if (value.HasMember("BoundConsumerSecretKeys") && !value["BoundConsumerSecretKeys"].IsNull())
+    {
+        if (!value["BoundConsumerSecretKeys"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.BoundConsumerSecretKeys` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BoundConsumerSecretKeys"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AIGWSimpleSecretKey item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_boundConsumerSecretKeys.push_back(item);
+        }
+        m_boundConsumerSecretKeysHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -619,6 +661,36 @@ void CNAPIGwSecretKey::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_queryParamCredentialConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_boundModelSecretKeysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BoundModelSecretKeys";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_boundModelSecretKeys.begin(); itr != m_boundModelSecretKeys.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_boundConsumerSecretKeysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BoundConsumerSecretKeys";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_boundConsumerSecretKeys.begin(); itr != m_boundConsumerSecretKeys.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1054,5 +1126,37 @@ void CNAPIGwSecretKey::SetQueryParamCredentialConfig(const AIGWQueryParamCredent
 bool CNAPIGwSecretKey::QueryParamCredentialConfigHasBeenSet() const
 {
     return m_queryParamCredentialConfigHasBeenSet;
+}
+
+vector<AIGWSimpleSecretKey> CNAPIGwSecretKey::GetBoundModelSecretKeys() const
+{
+    return m_boundModelSecretKeys;
+}
+
+void CNAPIGwSecretKey::SetBoundModelSecretKeys(const vector<AIGWSimpleSecretKey>& _boundModelSecretKeys)
+{
+    m_boundModelSecretKeys = _boundModelSecretKeys;
+    m_boundModelSecretKeysHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::BoundModelSecretKeysHasBeenSet() const
+{
+    return m_boundModelSecretKeysHasBeenSet;
+}
+
+vector<AIGWSimpleSecretKey> CNAPIGwSecretKey::GetBoundConsumerSecretKeys() const
+{
+    return m_boundConsumerSecretKeys;
+}
+
+void CNAPIGwSecretKey::SetBoundConsumerSecretKeys(const vector<AIGWSimpleSecretKey>& _boundConsumerSecretKeys)
+{
+    m_boundConsumerSecretKeys = _boundConsumerSecretKeys;
+    m_boundConsumerSecretKeysHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::BoundConsumerSecretKeysHasBeenSet() const
+{
+    return m_boundConsumerSecretKeysHasBeenSet;
 }
 

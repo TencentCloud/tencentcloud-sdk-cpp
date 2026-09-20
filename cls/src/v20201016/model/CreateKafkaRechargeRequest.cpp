@@ -34,6 +34,7 @@ CreateKafkaRechargeRequest::CreateKafkaRechargeRequest() :
     m_isEncryptionAddrHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_consumerGroupNameHasBeenSet(false),
+    m_networkInfoHasBeenSet(false),
     m_userKafkaMetaHasBeenSet(false)
 {
 }
@@ -133,6 +134,15 @@ string CreateKafkaRechargeRequest::ToJsonString() const
         string key = "ConsumerGroupName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_consumerGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_networkInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_userKafkaMetaHasBeenSet)
@@ -326,6 +336,22 @@ void CreateKafkaRechargeRequest::SetConsumerGroupName(const string& _consumerGro
 bool CreateKafkaRechargeRequest::ConsumerGroupNameHasBeenSet() const
 {
     return m_consumerGroupNameHasBeenSet;
+}
+
+NetworkInfo CreateKafkaRechargeRequest::GetNetworkInfo() const
+{
+    return m_networkInfo;
+}
+
+void CreateKafkaRechargeRequest::SetNetworkInfo(const NetworkInfo& _networkInfo)
+{
+    m_networkInfo = _networkInfo;
+    m_networkInfoHasBeenSet = true;
+}
+
+bool CreateKafkaRechargeRequest::NetworkInfoHasBeenSet() const
+{
+    return m_networkInfoHasBeenSet;
 }
 
 UserKafkaMeta CreateKafkaRechargeRequest::GetUserKafkaMeta() const

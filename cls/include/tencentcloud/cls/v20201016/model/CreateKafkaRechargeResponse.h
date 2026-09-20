@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Kafka导入配置ID
-                     * @return Id Kafka导入配置ID
+                     * 获取<p>Kafka导入配置ID</p>
+                     * @return Id <p>Kafka导入配置ID</p>
                      * 
                      */
                     std::string GetId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Kafka导入配置ID
+                     * <p>Kafka导入配置ID</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

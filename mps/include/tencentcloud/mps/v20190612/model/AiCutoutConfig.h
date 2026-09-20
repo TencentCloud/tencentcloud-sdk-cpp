@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool PatternConfigHasBeenSet() const;
 
                     /**
-                     * 获取<p>抠图模型选择，可不填。</p><p>枚举值：</p><ul><li>auto： 自动选择合适的模型</li><li>WAND-cutout-1.0-lite： 标准版，速度最快</li><li>WAND-cutout-2.0-lite： 增强版，速度最快</li><li>WAND-cutout-2.0-flash： 增强版，质量-速度平衡</li></ul>
-                     * @return Model <p>抠图模型选择，可不填。</p><p>枚举值：</p><ul><li>auto： 自动选择合适的模型</li><li>WAND-cutout-1.0-lite： 标准版，速度最快</li><li>WAND-cutout-2.0-lite： 增强版，速度最快</li><li>WAND-cutout-2.0-flash： 增强版，质量-速度平衡</li></ul>
+                     * 获取<p>抠图模型选择。</p><p>枚举值：</p><ul><li>cutout-1.0-lite： 基础版，速度最快</li><li>cutout-1.0-flash： 标准版，质量-速度平衡</li></ul>
+                     * @return Model <p>抠图模型选择。</p><p>枚举值：</p><ul><li>cutout-1.0-lite： 基础版，速度最快</li><li>cutout-1.0-flash： 标准版，质量-速度平衡</li></ul>
                      * 
                      */
                     std::string GetModel() const;
 
                     /**
-                     * 设置<p>抠图模型选择，可不填。</p><p>枚举值：</p><ul><li>auto： 自动选择合适的模型</li><li>WAND-cutout-1.0-lite： 标准版，速度最快</li><li>WAND-cutout-2.0-lite： 增强版，速度最快</li><li>WAND-cutout-2.0-flash： 增强版，质量-速度平衡</li></ul>
-                     * @param _model <p>抠图模型选择，可不填。</p><p>枚举值：</p><ul><li>auto： 自动选择合适的模型</li><li>WAND-cutout-1.0-lite： 标准版，速度最快</li><li>WAND-cutout-2.0-lite： 增强版，速度最快</li><li>WAND-cutout-2.0-flash： 增强版，质量-速度平衡</li></ul>
+                     * 设置<p>抠图模型选择。</p><p>枚举值：</p><ul><li>cutout-1.0-lite： 基础版，速度最快</li><li>cutout-1.0-flash： 标准版，质量-速度平衡</li></ul>
+                     * @param _model <p>抠图模型选择。</p><p>枚举值：</p><ul><li>cutout-1.0-lite： 基础版，速度最快</li><li>cutout-1.0-flash： 标准版，质量-速度平衡</li></ul>
                      * 
                      */
                     void SetModel(const std::string& _model);
@@ -152,7 +152,7 @@ namespace TencentCloud
                     bool m_patternConfigHasBeenSet;
 
                     /**
-                     * <p>抠图模型选择，可不填。</p><p>枚举值：</p><ul><li>auto： 自动选择合适的模型</li><li>WAND-cutout-1.0-lite： 标准版，速度最快</li><li>WAND-cutout-2.0-lite： 增强版，速度最快</li><li>WAND-cutout-2.0-flash： 增强版，质量-速度平衡</li></ul>
+                     * <p>抠图模型选择。</p><p>枚举值：</p><ul><li>cutout-1.0-lite： 基础版，速度最快</li><li>cutout-1.0-flash： 标准版，质量-速度平衡</li></ul>
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;

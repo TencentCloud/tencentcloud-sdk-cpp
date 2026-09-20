@@ -4140,6 +4140,56 @@ TeoClient::DescribeAvailableCustomActionsForRuleEngineOutcomeCallable TeoClient:
     return prom->get_future();
 }
 
+TeoClient::DescribeAvailableOriginACLFamilyOutcome TeoClient::DescribeAvailableOriginACLFamily(const DescribeAvailableOriginACLFamilyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAvailableOriginACLFamily");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAvailableOriginACLFamilyResponse rsp = DescribeAvailableOriginACLFamilyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAvailableOriginACLFamilyOutcome(rsp);
+        else
+            return DescribeAvailableOriginACLFamilyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAvailableOriginACLFamilyOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeAvailableOriginACLFamilyAsync(const DescribeAvailableOriginACLFamilyRequest& request, const DescribeAvailableOriginACLFamilyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAvailableOriginACLFamilyRequest&;
+    using Resp = DescribeAvailableOriginACLFamilyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAvailableOriginACLFamily", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeAvailableOriginACLFamilyOutcomeCallable TeoClient::DescribeAvailableOriginACLFamilyCallable(const DescribeAvailableOriginACLFamilyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAvailableOriginACLFamilyOutcome>>();
+    DescribeAvailableOriginACLFamilyAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeAvailableOriginACLFamilyRequest&,
+        DescribeAvailableOriginACLFamilyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TeoClient::DescribeAvailablePlansOutcome TeoClient::DescribeAvailablePlans(const DescribeAvailablePlansRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAvailablePlans");

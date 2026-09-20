@@ -28,6 +28,8 @@ CreateModelRequest::CreateModelRequest() :
     m_httpProtocolTypeHasBeenSet(false),
     m_targetPathHasBeenSet(false),
     m_targetHostsHasBeenSet(false),
+    m_providerHasBeenSet(false),
+    m_apiKeysHasBeenSet(false),
     m_credentialIDHasBeenSet(false),
     m_checkTargetCertsErrorHasBeenSet(false),
     m_httpProtocolVersionHasBeenSet(false),
@@ -87,6 +89,27 @@ string CreateModelRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_providerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Provider";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_provider.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apiKeysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiKeys";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_apiKeys.begin(); itr != m_apiKeys.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -216,6 +239,38 @@ void CreateModelRequest::SetTargetHosts(const vector<TargetHostDTO>& _targetHost
 bool CreateModelRequest::TargetHostsHasBeenSet() const
 {
     return m_targetHostsHasBeenSet;
+}
+
+string CreateModelRequest::GetProvider() const
+{
+    return m_provider;
+}
+
+void CreateModelRequest::SetProvider(const string& _provider)
+{
+    m_provider = _provider;
+    m_providerHasBeenSet = true;
+}
+
+bool CreateModelRequest::ProviderHasBeenSet() const
+{
+    return m_providerHasBeenSet;
+}
+
+vector<string> CreateModelRequest::GetApiKeys() const
+{
+    return m_apiKeys;
+}
+
+void CreateModelRequest::SetApiKeys(const vector<string>& _apiKeys)
+{
+    m_apiKeys = _apiKeys;
+    m_apiKeysHasBeenSet = true;
+}
+
+bool CreateModelRequest::ApiKeysHasBeenSet() const
+{
+    return m_apiKeysHasBeenSet;
 }
 
 string CreateModelRequest::GetCredentialID() const

@@ -28,6 +28,7 @@ CheckRechargeKafkaServerRequest::CheckRechargeKafkaServerRequest() :
     m_serverAddrHasBeenSet(false),
     m_isEncryptionAddrHasBeenSet(false),
     m_protocolHasBeenSet(false),
+    m_networkInfoHasBeenSet(false),
     m_userKafkaMetaHasBeenSet(false)
 {
 }
@@ -78,6 +79,15 @@ string CheckRechargeKafkaServerRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_protocol.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_networkInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_networkInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_userKafkaMetaHasBeenSet)
@@ -175,6 +185,22 @@ void CheckRechargeKafkaServerRequest::SetProtocol(const KafkaProtocolInfo& _prot
 bool CheckRechargeKafkaServerRequest::ProtocolHasBeenSet() const
 {
     return m_protocolHasBeenSet;
+}
+
+NetworkInfo CheckRechargeKafkaServerRequest::GetNetworkInfo() const
+{
+    return m_networkInfo;
+}
+
+void CheckRechargeKafkaServerRequest::SetNetworkInfo(const NetworkInfo& _networkInfo)
+{
+    m_networkInfo = _networkInfo;
+    m_networkInfoHasBeenSet = true;
+}
+
+bool CheckRechargeKafkaServerRequest::NetworkInfoHasBeenSet() const
+{
+    return m_networkInfoHasBeenSet;
 }
 
 UserKafkaMeta CheckRechargeKafkaServerRequest::GetUserKafkaMeta() const

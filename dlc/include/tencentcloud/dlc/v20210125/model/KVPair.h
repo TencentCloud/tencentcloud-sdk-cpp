@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 配置格式
+                * 通用键值对 POJO（替代各 DTO 中重复定义的 PropEntry / KVPair / PropertyEntry）。
                 */
                 class KVPair : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>配置的key值</p>
-                     * @return Key <p>配置的key值</p>
+                     * 获取配置的key值
+                     * @return Key 配置的key值
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置<p>配置的key值</p>
-                     * @param _key <p>配置的key值</p>
+                     * 设置配置的key值
+                     * @param _key 配置的key值
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取<p>配置的value值</p>
-                     * @return Value <p>配置的value值</p>
+                     * 获取配置的value值
+                     * @return Value 配置的value值
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置<p>配置的value值</p>
-                     * @param _value <p>配置的value值</p>
+                     * 设置配置的value值
+                     * @param _value 配置的value值
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>配置的key值</p>
+                     * 配置的key值
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * <p>配置的value值</p>
+                     * 配置的value值
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

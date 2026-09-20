@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群id
-                     * @return ClusterId 集群id
+                     * 获取<p>集群id</p>
+                     * @return ClusterId <p>集群id</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群id
-                     * @param _clusterId 集群id
+                     * 设置<p>集群id</p>
+                     * @param _clusterId <p>集群id</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取内核版本
-                     * @return CynosVersion 内核版本
+                     * 获取<p>内核版本</p>
+                     * @return CynosVersion <p>内核版本</p>
                      * 
                      */
                     std::string GetCynosVersion() const;
 
                     /**
-                     * 设置内核版本
-                     * @param _cynosVersion 内核版本
+                     * 设置<p>内核版本</p>
+                     * @param _cynosVersion <p>内核版本</p>
                      * 
                      */
                     void SetCynosVersion(const std::string& _cynosVersion);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool CynosVersionHasBeenSet() const;
 
                     /**
-                     * 获取升级时间类型，可选：upgradeImmediate,upgradeInMaintain
-                     * @return UpgradeType 升级时间类型，可选：upgradeImmediate,upgradeInMaintain
+                     * 获取<p>升级时间类型，可选：upgradeImmediate,upgradeInMaintain</p>
+                     * @return UpgradeType <p>升级时间类型，可选：upgradeImmediate,upgradeInMaintain</p>
                      * 
                      */
                     std::string GetUpgradeType() const;
 
                     /**
-                     * 设置升级时间类型，可选：upgradeImmediate,upgradeInMaintain
-                     * @param _upgradeType 升级时间类型，可选：upgradeImmediate,upgradeInMaintain
+                     * 设置<p>升级时间类型，可选：upgradeImmediate,upgradeInMaintain</p>
+                     * @param _upgradeType <p>升级时间类型，可选：upgradeImmediate,upgradeInMaintain</p>
                      * 
                      */
                     void SetUpgradeType(const std::string& _upgradeType);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群id
+                     * <p>集群id</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 内核版本
+                     * <p>内核版本</p>
                      */
                     std::string m_cynosVersion;
                     bool m_cynosVersionHasBeenSet;
 
                     /**
-                     * 升级时间类型，可选：upgradeImmediate,upgradeInMaintain
+                     * <p>升级时间类型，可选：upgradeImmediate,upgradeInMaintain</p>
                      */
                     std::string m_upgradeType;
                     bool m_upgradeTypeHasBeenSet;

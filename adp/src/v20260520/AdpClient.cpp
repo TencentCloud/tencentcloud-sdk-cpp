@@ -2240,6 +2240,56 @@ AdpClient::DescribeAppOutcomeCallable AdpClient::DescribeAppCallable(const Descr
     return prom->get_future();
 }
 
+AdpClient::DescribeAppStatisticsOverviewOutcome AdpClient::DescribeAppStatisticsOverview(const DescribeAppStatisticsOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAppStatisticsOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAppStatisticsOverviewResponse rsp = DescribeAppStatisticsOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAppStatisticsOverviewOutcome(rsp);
+        else
+            return DescribeAppStatisticsOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAppStatisticsOverviewOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeAppStatisticsOverviewAsync(const DescribeAppStatisticsOverviewRequest& request, const DescribeAppStatisticsOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAppStatisticsOverviewRequest&;
+    using Resp = DescribeAppStatisticsOverviewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAppStatisticsOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeAppStatisticsOverviewOutcomeCallable AdpClient::DescribeAppStatisticsOverviewCallable(const DescribeAppStatisticsOverviewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAppStatisticsOverviewOutcome>>();
+    DescribeAppStatisticsOverviewAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeAppStatisticsOverviewRequest&,
+        DescribeAppStatisticsOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::DescribeAppSummaryListOutcome AdpClient::DescribeAppSummaryList(const DescribeAppSummaryListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAppSummaryList");

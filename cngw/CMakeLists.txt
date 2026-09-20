@@ -182,7 +182,7 @@ set(cngw_public_header_model
   include/tencentcloud/cngw/v20230418/model/AIGWMCPRoute.h
   include/tencentcloud/cngw/v20230418/model/CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy.h
   include/tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayLLMModelAPIResponse.h
-  include/tencentcloud/cngw/v20230418/model/UnbindCloudNativeAPIGatewaySecretKeyResponse.h
+  include/tencentcloud/cngw/v20230418/model/AIGWSimpleSecretKey.h
   include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPServerListResponse.h
   include/tencentcloud/cngw/v20230418/model/AIGWLLMTokenUsageListResult.h
   include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPServerAuthResponse.h
@@ -222,6 +222,7 @@ set(cngw_public_header_model
   include/tencentcloud/cngw/v20230418/model/KongServiceRoute.h
   include/tencentcloud/cngw/v20230418/model/CNAPIGwMCPToolList.h
   include/tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayAIServiceSourceResponse.h
+  include/tencentcloud/cngw/v20230418/model/UnbindCloudNativeAPIGatewaySecretKeyResponse.h
   include/tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayAIServiceSourceRequest.h
   include/tencentcloud/cngw/v20230418/model/AIGWTokenLengthRouteRule.h
   include/tencentcloud/cngw/v20230418/model/AIGWOAuthCredentialConfig.h
@@ -435,7 +436,7 @@ set(cngw_src
   src/v20230418/model/AIGWMCPRoute.cpp
   src/v20230418/model/CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy.cpp
   src/v20230418/model/DeleteCloudNativeAPIGatewayLLMModelAPIResponse.cpp
-  src/v20230418/model/UnbindCloudNativeAPIGatewaySecretKeyResponse.cpp
+  src/v20230418/model/AIGWSimpleSecretKey.cpp
   src/v20230418/model/DescribeCloudNativeAPIGatewayMCPServerListResponse.cpp
   src/v20230418/model/AIGWLLMTokenUsageListResult.cpp
   src/v20230418/model/DescribeCloudNativeAPIGatewayMCPServerAuthResponse.cpp
@@ -475,6 +476,7 @@ set(cngw_src
   src/v20230418/model/KongServiceRoute.cpp
   src/v20230418/model/CNAPIGwMCPToolList.cpp
   src/v20230418/model/DeleteCloudNativeAPIGatewayAIServiceSourceResponse.cpp
+  src/v20230418/model/UnbindCloudNativeAPIGatewaySecretKeyResponse.cpp
   src/v20230418/model/CreateCloudNativeAPIGatewayAIServiceSourceRequest.cpp
   src/v20230418/model/AIGWTokenLengthRouteRule.cpp
   src/v20230418/model/AIGWOAuthCredentialConfig.cpp

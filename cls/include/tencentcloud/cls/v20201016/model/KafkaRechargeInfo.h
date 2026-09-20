@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/KafkaProtocolInfo.h>
 #include <tencentcloud/cls/v20201016/model/LogRechargeRuleInfo.h>
+#include <tencentcloud/cls/v20201016/model/NetworkInfo.h>
 #include <tencentcloud/cls/v20201016/model/UserKafkaMeta.h>
 
 
@@ -50,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Kafka数据订阅配置的ID。
-                     * @return Id Kafka数据订阅配置的ID。
+                     * 获取<p>Kafka数据订阅配置的ID。</p>
+                     * @return Id <p>Kafka数据订阅配置的ID。</p>
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置Kafka数据订阅配置的ID。
-                     * @param _id Kafka数据订阅配置的ID。
+                     * 设置<p>Kafka数据订阅配置的ID。</p>
+                     * @param _id <p>Kafka数据订阅配置的ID。</p>
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -71,15 +72,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取日志主题ID
-                     * @return TopicId 日志主题ID
+                     * 获取<p>日志主题ID</p>
+                     * @return TopicId <p>日志主题ID</p>
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题ID
-                     * @param _topicId 日志主题ID
+                     * 设置<p>日志主题ID</p>
+                     * @param _topicId <p>日志主题ID</p>
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -92,15 +93,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取Kafka导入任务名称
-                     * @return Name Kafka导入任务名称
+                     * 获取<p>Kafka导入任务名称</p>
+                     * @return Name <p>Kafka导入任务名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置Kafka导入任务名称
-                     * @param _name Kafka导入任务名称
+                     * 设置<p>Kafka导入任务名称</p>
+                     * @param _name <p>Kafka导入任务名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -113,15 +114,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
-                     * @return KafkaType 导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
+                     * 获取<p>导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka</p>
+                     * @return KafkaType <p>导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka</p>
                      * 
                      */
                     uint64_t GetKafkaType() const;
 
                     /**
-                     * 设置导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
-                     * @param _kafkaType 导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
+                     * 设置<p>导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka</p>
+                     * @param _kafkaType <p>导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka</p>
                      * 
                      */
                     void SetKafkaType(const uint64_t& _kafkaType);
@@ -134,15 +135,15 @@ namespace TencentCloud
                     bool KafkaTypeHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云CKafka实例ID，KafkaType为0时必填
-                     * @return KafkaInstance 腾讯云CKafka实例ID，KafkaType为0时必填
+                     * 获取<p>腾讯云CKafka实例ID，KafkaType为0时必填</p>
+                     * @return KafkaInstance <p>腾讯云CKafka实例ID，KafkaType为0时必填</p>
                      * 
                      */
                     std::string GetKafkaInstance() const;
 
                     /**
-                     * 设置腾讯云CKafka实例ID，KafkaType为0时必填
-                     * @param _kafkaInstance 腾讯云CKafka实例ID，KafkaType为0时必填
+                     * 设置<p>腾讯云CKafka实例ID，KafkaType为0时必填</p>
+                     * @param _kafkaInstance <p>腾讯云CKafka实例ID，KafkaType为0时必填</p>
                      * 
                      */
                     void SetKafkaInstance(const std::string& _kafkaInstance);
@@ -155,15 +156,15 @@ namespace TencentCloud
                     bool KafkaInstanceHasBeenSet() const;
 
                     /**
-                     * 获取服务地址
-                     * @return ServerAddr 服务地址
+                     * 获取<p>服务地址</p>
+                     * @return ServerAddr <p>服务地址</p>
                      * 
                      */
                     std::string GetServerAddr() const;
 
                     /**
-                     * 设置服务地址
-                     * @param _serverAddr 服务地址
+                     * 设置<p>服务地址</p>
+                     * @param _serverAddr <p>服务地址</p>
                      * 
                      */
                     void SetServerAddr(const std::string& _serverAddr);
@@ -176,15 +177,15 @@ namespace TencentCloud
                     bool ServerAddrHasBeenSet() const;
 
                     /**
-                     * 获取ServerAddr是否为加密连接	
-                     * @return IsEncryptionAddr ServerAddr是否为加密连接	
+                     * 获取<p>ServerAddr是否为加密连接</p>
+                     * @return IsEncryptionAddr <p>ServerAddr是否为加密连接</p>
                      * 
                      */
                     bool GetIsEncryptionAddr() const;
 
                     /**
-                     * 设置ServerAddr是否为加密连接	
-                     * @param _isEncryptionAddr ServerAddr是否为加密连接	
+                     * 设置<p>ServerAddr是否为加密连接</p>
+                     * @param _isEncryptionAddr <p>ServerAddr是否为加密连接</p>
                      * 
                      */
                     void SetIsEncryptionAddr(const bool& _isEncryptionAddr);
@@ -197,15 +198,15 @@ namespace TencentCloud
                     bool IsEncryptionAddrHasBeenSet() const;
 
                     /**
-                     * 获取加密访问协议，IsEncryptionAddr参数为true时必填
-                     * @return Protocol 加密访问协议，IsEncryptionAddr参数为true时必填
+                     * 获取<p>加密访问协议，IsEncryptionAddr参数为true时必填</p>
+                     * @return Protocol <p>加密访问协议，IsEncryptionAddr参数为true时必填</p>
                      * 
                      */
                     KafkaProtocolInfo GetProtocol() const;
 
                     /**
-                     * 设置加密访问协议，IsEncryptionAddr参数为true时必填
-                     * @param _protocol 加密访问协议，IsEncryptionAddr参数为true时必填
+                     * 设置<p>加密访问协议，IsEncryptionAddr参数为true时必填</p>
+                     * @param _protocol <p>加密访问协议，IsEncryptionAddr参数为true时必填</p>
                      * 
                      */
                     void SetProtocol(const KafkaProtocolInfo& _protocol);
@@ -218,15 +219,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开
-                     * @return UserKafkaTopics 用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开
+                     * 获取<p>用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开</p>
+                     * @return UserKafkaTopics <p>用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开</p>
                      * 
                      */
                     std::string GetUserKafkaTopics() const;
 
                     /**
-                     * 设置用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开
-                     * @param _userKafkaTopics 用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开
+                     * 设置<p>用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开</p>
+                     * @param _userKafkaTopics <p>用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开</p>
                      * 
                      */
                     void SetUserKafkaTopics(const std::string& _userKafkaTopics);
@@ -239,15 +240,15 @@ namespace TencentCloud
                     bool UserKafkaTopicsHasBeenSet() const;
 
                     /**
-                     * 获取用户Kafka消费组名称	
-                     * @return ConsumerGroupName 用户Kafka消费组名称	
+                     * 获取<p>用户Kafka消费组名称</p>
+                     * @return ConsumerGroupName <p>用户Kafka消费组名称</p>
                      * 
                      */
                     std::string GetConsumerGroupName() const;
 
                     /**
-                     * 设置用户Kafka消费组名称	
-                     * @param _consumerGroupName 用户Kafka消费组名称	
+                     * 设置<p>用户Kafka消费组名称</p>
+                     * @param _consumerGroupName <p>用户Kafka消费组名称</p>
                      * 
                      */
                     void SetConsumerGroupName(const std::string& _consumerGroupName);
@@ -260,15 +261,15 @@ namespace TencentCloud
                     bool ConsumerGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取状态 ，1：运行中；2：暂停。
-                     * @return Status 状态 ，1：运行中；2：暂停。
+                     * 获取<p>状态 ，1：运行中；2：暂停。</p>
+                     * @return Status <p>状态 ，1：运行中；2：暂停。</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态 ，1：运行中；2：暂停。
-                     * @param _status 状态 ，1：运行中；2：暂停。
+                     * 设置<p>状态 ，1：运行中；2：暂停。</p>
+                     * @param _status <p>状态 ，1：运行中；2：暂停。</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -281,15 +282,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取导入数据位置，-2:最早（默认），-1：最晚
-                     * @return Offset 导入数据位置，-2:最早（默认），-1：最晚
+                     * 获取<p>导入数据位置，-2:最早（默认），-1：最晚</p>
+                     * @return Offset <p>导入数据位置，-2:最早（默认），-1：最晚</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置导入数据位置，-2:最早（默认），-1：最晚
-                     * @param _offset 导入数据位置，-2:最早（默认），-1：最晚
+                     * 设置<p>导入数据位置，-2:最早（默认），-1：最晚</p>
+                     * @param _offset <p>导入数据位置，-2:最早（默认），-1：最晚</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -302,15 +303,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。格式`YYYY-MM-DD HH:MM:SS`
-                     * @return CreateTime 创建时间。格式`YYYY-MM-DD HH:MM:SS`
+                     * 获取<p>创建时间。格式<code>YYYY-MM-DD HH:MM:SS</code></p>
+                     * @return CreateTime <p>创建时间。格式<code>YYYY-MM-DD HH:MM:SS</code></p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间。格式`YYYY-MM-DD HH:MM:SS`
-                     * @param _createTime 创建时间。格式`YYYY-MM-DD HH:MM:SS`
+                     * 设置<p>创建时间。格式<code>YYYY-MM-DD HH:MM:SS</code></p>
+                     * @param _createTime <p>创建时间。格式<code>YYYY-MM-DD HH:MM:SS</code></p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -323,15 +324,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间。格式`YYYY-MM-DD HH:MM:SS`
-                     * @return UpdateTime 更新时间。格式`YYYY-MM-DD HH:MM:SS`
+                     * 获取<p>更新时间。格式<code>YYYY-MM-DD HH:MM:SS</code></p>
+                     * @return UpdateTime <p>更新时间。格式<code>YYYY-MM-DD HH:MM:SS</code></p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间。格式`YYYY-MM-DD HH:MM:SS`
-                     * @param _updateTime 更新时间。格式`YYYY-MM-DD HH:MM:SS`
+                     * 设置<p>更新时间。格式<code>YYYY-MM-DD HH:MM:SS</code></p>
+                     * @param _updateTime <p>更新时间。格式<code>YYYY-MM-DD HH:MM:SS</code></p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -344,15 +345,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取日志导入规则
-                     * @return LogRechargeRule 日志导入规则
+                     * 获取<p>日志导入规则</p>
+                     * @return LogRechargeRule <p>日志导入规则</p>
                      * 
                      */
                     LogRechargeRuleInfo GetLogRechargeRule() const;
 
                     /**
-                     * 设置日志导入规则
-                     * @param _logRechargeRule 日志导入规则
+                     * 设置<p>日志导入规则</p>
+                     * @param _logRechargeRule <p>日志导入规则</p>
                      * 
                      */
                     void SetLogRechargeRule(const LogRechargeRuleInfo& _logRechargeRule);
@@ -365,15 +366,36 @@ namespace TencentCloud
                     bool LogRechargeRuleHasBeenSet() const;
 
                     /**
-                     * 获取用户kafka拓展信息
-                     * @return UserKafkaMeta 用户kafka拓展信息
+                     * 获取<p>私有网络信息</p>
+                     * @return NetworkInfo <p>私有网络信息</p>
+                     * 
+                     */
+                    NetworkInfo GetNetworkInfo() const;
+
+                    /**
+                     * 设置<p>私有网络信息</p>
+                     * @param _networkInfo <p>私有网络信息</p>
+                     * 
+                     */
+                    void SetNetworkInfo(const NetworkInfo& _networkInfo);
+
+                    /**
+                     * 判断参数 NetworkInfo 是否已赋值
+                     * @return NetworkInfo 是否已赋值
+                     * 
+                     */
+                    bool NetworkInfoHasBeenSet() const;
+
+                    /**
+                     * 获取<p>用户kafka拓展信息</p>
+                     * @return UserKafkaMeta <p>用户kafka拓展信息</p>
                      * 
                      */
                     UserKafkaMeta GetUserKafkaMeta() const;
 
                     /**
-                     * 设置用户kafka拓展信息
-                     * @param _userKafkaMeta 用户kafka拓展信息
+                     * 设置<p>用户kafka拓展信息</p>
+                     * @param _userKafkaMeta <p>用户kafka拓展信息</p>
                      * 
                      */
                     void SetUserKafkaMeta(const UserKafkaMeta& _userKafkaMeta);
@@ -388,97 +410,103 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Kafka数据订阅配置的ID。
+                     * <p>Kafka数据订阅配置的ID。</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 日志主题ID
+                     * <p>日志主题ID</p>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * Kafka导入任务名称
+                     * <p>Kafka导入任务名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
+                     * <p>导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka</p>
                      */
                     uint64_t m_kafkaType;
                     bool m_kafkaTypeHasBeenSet;
 
                     /**
-                     * 腾讯云CKafka实例ID，KafkaType为0时必填
+                     * <p>腾讯云CKafka实例ID，KafkaType为0时必填</p>
                      */
                     std::string m_kafkaInstance;
                     bool m_kafkaInstanceHasBeenSet;
 
                     /**
-                     * 服务地址
+                     * <p>服务地址</p>
                      */
                     std::string m_serverAddr;
                     bool m_serverAddrHasBeenSet;
 
                     /**
-                     * ServerAddr是否为加密连接	
+                     * <p>ServerAddr是否为加密连接</p>
                      */
                     bool m_isEncryptionAddr;
                     bool m_isEncryptionAddrHasBeenSet;
 
                     /**
-                     * 加密访问协议，IsEncryptionAddr参数为true时必填
+                     * <p>加密访问协议，IsEncryptionAddr参数为true时必填</p>
                      */
                     KafkaProtocolInfo m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开
+                     * <p>用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开</p>
                      */
                     std::string m_userKafkaTopics;
                     bool m_userKafkaTopicsHasBeenSet;
 
                     /**
-                     * 用户Kafka消费组名称	
+                     * <p>用户Kafka消费组名称</p>
                      */
                     std::string m_consumerGroupName;
                     bool m_consumerGroupNameHasBeenSet;
 
                     /**
-                     * 状态 ，1：运行中；2：暂停。
+                     * <p>状态 ，1：运行中；2：暂停。</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 导入数据位置，-2:最早（默认），-1：最晚
+                     * <p>导入数据位置，-2:最早（默认），-1：最晚</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 创建时间。格式`YYYY-MM-DD HH:MM:SS`
+                     * <p>创建时间。格式<code>YYYY-MM-DD HH:MM:SS</code></p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间。格式`YYYY-MM-DD HH:MM:SS`
+                     * <p>更新时间。格式<code>YYYY-MM-DD HH:MM:SS</code></p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 日志导入规则
+                     * <p>日志导入规则</p>
                      */
                     LogRechargeRuleInfo m_logRechargeRule;
                     bool m_logRechargeRuleHasBeenSet;
 
                     /**
-                     * 用户kafka拓展信息
+                     * <p>私有网络信息</p>
+                     */
+                    NetworkInfo m_networkInfo;
+                    bool m_networkInfoHasBeenSet;
+
+                    /**
+                     * <p>用户kafka拓展信息</p>
                      */
                     UserKafkaMeta m_userKafkaMeta;
                     bool m_userKafkaMetaHasBeenSet;

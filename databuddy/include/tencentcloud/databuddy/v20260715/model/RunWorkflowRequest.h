@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/databuddy/v20260715/model/TaskSchedulingParameterBrief.h>
+#include <tencentcloud/databuddy/v20260715/model/ScheduledTimeConfig.h>
 
 
 namespace TencentCloud
@@ -169,6 +170,27 @@ namespace TencentCloud
                      */
                     bool IdempotencyTokenHasBeenSet() const;
 
+                    /**
+                     * 获取<p>计划调度时间列表配置</p>
+                     * @return ScheduledTimeConfig <p>计划调度时间列表配置</p>
+                     * 
+                     */
+                    ScheduledTimeConfig GetScheduledTimeConfig() const;
+
+                    /**
+                     * 设置<p>计划调度时间列表配置</p>
+                     * @param _scheduledTimeConfig <p>计划调度时间列表配置</p>
+                     * 
+                     */
+                    void SetScheduledTimeConfig(const ScheduledTimeConfig& _scheduledTimeConfig);
+
+                    /**
+                     * 判断参数 ScheduledTimeConfig 是否已赋值
+                     * @return ScheduledTimeConfig 是否已赋值
+                     * 
+                     */
+                    bool ScheduledTimeConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +228,12 @@ namespace TencentCloud
                      */
                     std::string m_idempotencyToken;
                     bool m_idempotencyTokenHasBeenSet;
+
+                    /**
+                     * <p>计划调度时间列表配置</p>
+                     */
+                    ScheduledTimeConfig m_scheduledTimeConfig;
+                    bool m_scheduledTimeConfigHasBeenSet;
 
                 };
             }

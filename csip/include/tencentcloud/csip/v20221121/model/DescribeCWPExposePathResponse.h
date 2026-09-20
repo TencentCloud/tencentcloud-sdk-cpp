@@ -57,6 +57,20 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取<p>互联网节点数量</p>
+                     * @return PathCount <p>互联网节点数量</p>
+                     * 
+                     */
+                    uint64_t GetPathCount() const;
+
+                    /**
+                     * 判断参数 PathCount 是否已赋值
+                     * @return PathCount 是否已赋值
+                     * 
+                     */
+                    bool PathCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +78,12 @@ namespace TencentCloud
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * <p>互联网节点数量</p>
+                     */
+                    uint64_t m_pathCount;
+                    bool m_pathCountHasBeenSet;
 
                 };
             }

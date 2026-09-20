@@ -90,6 +90,56 @@ MongodbClient::AssignProjectOutcomeCallable MongodbClient::AssignProjectCallable
     return prom->get_future();
 }
 
+MongodbClient::CheckDBInstanceElasticCpuScalableOutcome MongodbClient::CheckDBInstanceElasticCpuScalable(const CheckDBInstanceElasticCpuScalableRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckDBInstanceElasticCpuScalable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckDBInstanceElasticCpuScalableResponse rsp = CheckDBInstanceElasticCpuScalableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckDBInstanceElasticCpuScalableOutcome(rsp);
+        else
+            return CheckDBInstanceElasticCpuScalableOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckDBInstanceElasticCpuScalableOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::CheckDBInstanceElasticCpuScalableAsync(const CheckDBInstanceElasticCpuScalableRequest& request, const CheckDBInstanceElasticCpuScalableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CheckDBInstanceElasticCpuScalableRequest&;
+    using Resp = CheckDBInstanceElasticCpuScalableResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CheckDBInstanceElasticCpuScalable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::CheckDBInstanceElasticCpuScalableOutcomeCallable MongodbClient::CheckDBInstanceElasticCpuScalableCallable(const CheckDBInstanceElasticCpuScalableRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CheckDBInstanceElasticCpuScalableOutcome>>();
+    CheckDBInstanceElasticCpuScalableAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const CheckDBInstanceElasticCpuScalableRequest&,
+        CheckDBInstanceElasticCpuScalableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MongodbClient::CloseAuditServiceOutcome MongodbClient::CloseAuditService(const CloseAuditServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "CloseAuditService");

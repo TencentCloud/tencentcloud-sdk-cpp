@@ -35,6 +35,7 @@ ModifyKafkaRechargeRequest::ModifyKafkaRechargeRequest() :
     m_consumerGroupNameHasBeenSet(false),
     m_logRechargeRuleHasBeenSet(false),
     m_statusControlHasBeenSet(false),
+    m_networkInfoHasBeenSet(false),
     m_userKafkaMetaHasBeenSet(false)
 {
 }
@@ -142,6 +143,15 @@ string ModifyKafkaRechargeRequest::ToJsonString() const
         string key = "StatusControl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_statusControl, allocator);
+    }
+
+    if (m_networkInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_networkInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_userKafkaMetaHasBeenSet)
@@ -351,6 +361,22 @@ void ModifyKafkaRechargeRequest::SetStatusControl(const uint64_t& _statusControl
 bool ModifyKafkaRechargeRequest::StatusControlHasBeenSet() const
 {
     return m_statusControlHasBeenSet;
+}
+
+NetworkInfo ModifyKafkaRechargeRequest::GetNetworkInfo() const
+{
+    return m_networkInfo;
+}
+
+void ModifyKafkaRechargeRequest::SetNetworkInfo(const NetworkInfo& _networkInfo)
+{
+    m_networkInfo = _networkInfo;
+    m_networkInfoHasBeenSet = true;
+}
+
+bool ModifyKafkaRechargeRequest::NetworkInfoHasBeenSet() const
+{
+    return m_networkInfoHasBeenSet;
 }
 
 UserKafkaMeta ModifyKafkaRechargeRequest::GetUserKafkaMeta() const

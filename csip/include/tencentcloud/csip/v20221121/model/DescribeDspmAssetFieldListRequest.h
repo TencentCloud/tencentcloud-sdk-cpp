@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资产实例id
-                     * @return AssetId 资产实例id
+                     * 获取<p>资产实例id</p>
+                     * @return AssetId <p>资产实例id</p>
                      * 
                      */
                     std::string GetAssetId() const;
 
                     /**
-                     * 设置资产实例id
-                     * @param _assetId 资产实例id
+                     * 设置<p>资产实例id</p>
+                     * @param _assetId <p>资产实例id</p>
                      * 
                      */
                     void SetAssetId(const std::string& _assetId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool AssetIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库名称
-                     * @return DbName 数据库名称
+                     * 获取<p>数据库名称</p>
+                     * @return DbName <p>数据库名称</p>
                      * 
                      */
                     std::string GetDbName() const;
 
                     /**
-                     * 设置数据库名称
-                     * @param _dbName 数据库名称
+                     * 设置<p>数据库名称</p>
+                     * @param _dbName <p>数据库名称</p>
                      * 
                      */
                     void SetDbName(const std::string& _dbName);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool DbNameHasBeenSet() const;
 
                     /**
-                     * 获取表名
-                     * @return TableName 表名
+                     * 获取<p>表名</p>
+                     * @return TableName <p>表名</p>
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
-                     * 设置表名
-                     * @param _tableName 表名
+                     * 设置<p>表名</p>
+                     * @param _tableName <p>表名</p>
                      * 
                      */
                     void SetTableName(const std::string& _tableName);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool MemberIdHasBeenSet() const;
 
                     /**
-                     * 获取筛选项
-                     * @return Filter 筛选项
+                     * 获取<p>筛选项</p>
+                     * @return Filter <p>筛选项</p>
                      * 
                      */
                     Filter GetFilter() const;
 
                     /**
-                     * 设置筛选项
-                     * @param _filter 筛选项
+                     * 设置<p>筛选项</p>
+                     * @param _filter <p>筛选项</p>
                      * 
                      */
                     void SetFilter(const Filter& _filter);
@@ -148,22 +148,43 @@ namespace TencentCloud
                      */
                     bool FilterHasBeenSet() const;
 
+                    /**
+                     * 获取<p>SchemaName</p>
+                     * @return SchemaName <p>SchemaName</p>
+                     * 
+                     */
+                    std::string GetSchemaName() const;
+
+                    /**
+                     * 设置<p>SchemaName</p>
+                     * @param _schemaName <p>SchemaName</p>
+                     * 
+                     */
+                    void SetSchemaName(const std::string& _schemaName);
+
+                    /**
+                     * 判断参数 SchemaName 是否已赋值
+                     * @return SchemaName 是否已赋值
+                     * 
+                     */
+                    bool SchemaNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 资产实例id
+                     * <p>资产实例id</p>
                      */
                     std::string m_assetId;
                     bool m_assetIdHasBeenSet;
 
                     /**
-                     * 数据库名称
+                     * <p>数据库名称</p>
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;
 
                     /**
-                     * 表名
+                     * <p>表名</p>
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
@@ -175,10 +196,16 @@ namespace TencentCloud
                     bool m_memberIdHasBeenSet;
 
                     /**
-                     * 筛选项
+                     * <p>筛选项</p>
                      */
                     Filter m_filter;
                     bool m_filterHasBeenSet;
+
+                    /**
+                     * <p>SchemaName</p>
+                     */
+                    std::string m_schemaName;
+                    bool m_schemaNameHasBeenSet;
 
                 };
             }

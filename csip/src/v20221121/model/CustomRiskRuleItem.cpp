@@ -33,7 +33,8 @@ CustomRiskRuleItem::CustomRiskRuleItem() :
     m_isFreeHasBeenSet(false),
     m_checkTypeHasBeenSet(false),
     m_standardTermsHasBeenSet(false),
-    m_assetTypeIconURLHasBeenSet(false)
+    m_assetTypeIconURLHasBeenSet(false),
+    m_enableDefaultHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,16 @@ CoreInternalOutcome CustomRiskRuleItem::Deserialize(const rapidjson::Value &valu
         m_assetTypeIconURLHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableDefault") && !value["EnableDefault"].IsNull())
+    {
+        if (!value["EnableDefault"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomRiskRuleItem.EnableDefault` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableDefault = value["EnableDefault"].GetUint64();
+        m_enableDefaultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -298,6 +309,14 @@ void CustomRiskRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "AssetTypeIconURL";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_assetTypeIconURL.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableDefaultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDefault";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableDefault, allocator);
     }
 
 }
@@ -509,5 +528,21 @@ void CustomRiskRuleItem::SetAssetTypeIconURL(const string& _assetTypeIconURL)
 bool CustomRiskRuleItem::AssetTypeIconURLHasBeenSet() const
 {
     return m_assetTypeIconURLHasBeenSet;
+}
+
+uint64_t CustomRiskRuleItem::GetEnableDefault() const
+{
+    return m_enableDefault;
+}
+
+void CustomRiskRuleItem::SetEnableDefault(const uint64_t& _enableDefault)
+{
+    m_enableDefault = _enableDefault;
+    m_enableDefaultHasBeenSet = true;
+}
+
+bool CustomRiskRuleItem::EnableDefaultHasBeenSet() const
+{
+    return m_enableDefaultHasBeenSet;
 }
 

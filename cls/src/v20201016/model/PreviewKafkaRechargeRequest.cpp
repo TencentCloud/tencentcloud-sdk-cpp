@@ -33,6 +33,7 @@ PreviewKafkaRechargeRequest::PreviewKafkaRechargeRequest() :
     m_protocolHasBeenSet(false),
     m_consumerGroupNameHasBeenSet(false),
     m_logRechargeRuleHasBeenSet(false),
+    m_networkInfoHasBeenSet(false),
     m_userKafkaMetaHasBeenSet(false)
 {
 }
@@ -124,6 +125,15 @@ string PreviewKafkaRechargeRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_logRechargeRule.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_networkInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_networkInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_userKafkaMetaHasBeenSet)
@@ -301,6 +311,22 @@ void PreviewKafkaRechargeRequest::SetLogRechargeRule(const LogRechargeRuleInfo& 
 bool PreviewKafkaRechargeRequest::LogRechargeRuleHasBeenSet() const
 {
     return m_logRechargeRuleHasBeenSet;
+}
+
+NetworkInfo PreviewKafkaRechargeRequest::GetNetworkInfo() const
+{
+    return m_networkInfo;
+}
+
+void PreviewKafkaRechargeRequest::SetNetworkInfo(const NetworkInfo& _networkInfo)
+{
+    m_networkInfo = _networkInfo;
+    m_networkInfoHasBeenSet = true;
+}
+
+bool PreviewKafkaRechargeRequest::NetworkInfoHasBeenSet() const
+{
+    return m_networkInfoHasBeenSet;
 }
 
 UserKafkaMeta PreviewKafkaRechargeRequest::GetUserKafkaMeta() const

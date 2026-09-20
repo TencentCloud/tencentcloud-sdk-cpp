@@ -236,6 +236,27 @@ namespace TencentCloud
                      */
                     bool LogsetTagsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>应用id</p>
+                     * @return ApplicationId <p>应用id</p>
+                     * 
+                     */
+                    std::string GetApplicationId() const;
+
+                    /**
+                     * 设置<p>应用id</p>
+                     * @param _applicationId <p>应用id</p>
+                     * 
+                     */
+                    void SetApplicationId(const std::string& _applicationId);
+
+                    /**
+                     * 判断参数 ApplicationId 是否已赋值
+                     * @return ApplicationId 是否已赋值
+                     * 
+                     */
+                    bool ApplicationIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -291,6 +312,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_logsetTags;
                     bool m_logsetTagsHasBeenSet;
+
+                    /**
+                     * <p>应用id</p>
+                     */
+                    std::string m_applicationId;
+                    bool m_applicationIdHasBeenSet;
 
                 };
             }

@@ -14990,6 +14990,56 @@ WedataClient::TriggerManualTasksOutcomeCallable WedataClient::TriggerManualTasks
     return prom->get_future();
 }
 
+WedataClient::UnbindingResourceOutcome WedataClient::UnbindingResource(const UnbindingResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnbindingResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnbindingResourceResponse rsp = UnbindingResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnbindingResourceOutcome(rsp);
+        else
+            return UnbindingResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return UnbindingResourceOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::UnbindingResourceAsync(const UnbindingResourceRequest& request, const UnbindingResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UnbindingResourceRequest&;
+    using Resp = UnbindingResourceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UnbindingResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::UnbindingResourceOutcomeCallable WedataClient::UnbindingResourceCallable(const UnbindingResourceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UnbindingResourceOutcome>>();
+    UnbindingResourceAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const UnbindingResourceRequest&,
+        UnbindingResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::UnboundProjectExecutorResourceOutcome WedataClient::UnboundProjectExecutorResource(const UnboundProjectExecutorResourceRequest &request)
 {
     auto outcome = MakeRequest(request, "UnboundProjectExecutorResource");

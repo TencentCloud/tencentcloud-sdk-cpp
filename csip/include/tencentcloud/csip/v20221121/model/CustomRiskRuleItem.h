@@ -320,6 +320,27 @@ namespace TencentCloud
                      */
                     bool AssetTypeIconURLHasBeenSet() const;
 
+                    /**
+                     * 获取<p>规则默认开启状态</p>
+                     * @return EnableDefault <p>规则默认开启状态</p>
+                     * 
+                     */
+                    uint64_t GetEnableDefault() const;
+
+                    /**
+                     * 设置<p>规则默认开启状态</p>
+                     * @param _enableDefault <p>规则默认开启状态</p>
+                     * 
+                     */
+                    void SetEnableDefault(const uint64_t& _enableDefault);
+
+                    /**
+                     * 判断参数 EnableDefault 是否已赋值
+                     * @return EnableDefault 是否已赋值
+                     * 
+                     */
+                    bool EnableDefaultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -399,6 +420,12 @@ namespace TencentCloud
                      */
                     std::string m_assetTypeIconURL;
                     bool m_assetTypeIconURLHasBeenSet;
+
+                    /**
+                     * <p>规则默认开启状态</p>
+                     */
+                    uint64_t m_enableDefault;
+                    bool m_enableDefaultHasBeenSet;
 
                 };
             }

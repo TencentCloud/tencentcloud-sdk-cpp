@@ -40,7 +40,8 @@ ImageRegistryInfo::ImageRegistryInfo() :
     m_syncStatusHasBeenSet(false),
     m_syncFailReasonHasBeenSet(false),
     m_regionInfoHasBeenSet(false),
-    m_userNameHasBeenSet(false)
+    m_userNameHasBeenSet(false),
+    m_connStatusHasBeenSet(false)
 {
 }
 
@@ -266,6 +267,16 @@ CoreInternalOutcome ImageRegistryInfo::Deserialize(const rapidjson::Value &value
         m_userNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ConnStatus") && !value["ConnStatus"].IsNull())
+    {
+        if (!value["ConnStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageRegistryInfo.ConnStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_connStatus = string(value["ConnStatus"].GetString());
+        m_connStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -439,6 +450,14 @@ void ImageRegistryInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "UserName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_connStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_connStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -762,5 +781,21 @@ void ImageRegistryInfo::SetUserName(const string& _userName)
 bool ImageRegistryInfo::UserNameHasBeenSet() const
 {
     return m_userNameHasBeenSet;
+}
+
+string ImageRegistryInfo::GetConnStatus() const
+{
+    return m_connStatus;
+}
+
+void ImageRegistryInfo::SetConnStatus(const string& _connStatus)
+{
+    m_connStatus = _connStatus;
+    m_connStatusHasBeenSet = true;
+}
+
+bool ImageRegistryInfo::ConnStatusHasBeenSet() const
+{
+    return m_connStatusHasBeenSet;
 }
 

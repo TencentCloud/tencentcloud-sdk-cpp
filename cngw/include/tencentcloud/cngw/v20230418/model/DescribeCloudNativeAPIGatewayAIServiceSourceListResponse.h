@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取MCP Server 列表结果
-                     * @return Result MCP Server 列表结果
+                     * 获取<p>MCP Server 列表结果</p>
+                     * @return Result <p>MCP Server 列表结果</p>
                      * 
                      */
                     CNAPIGwAIServiceSourceList GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * MCP Server 列表结果
+                     * <p>MCP Server 列表结果</p>
                      */
                     CNAPIGwAIServiceSourceList m_result;
                     bool m_resultHasBeenSet;

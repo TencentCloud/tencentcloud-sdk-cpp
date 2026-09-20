@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例 ID。
-                     * @return InstanceId 负载均衡实例 ID。
+                     * 获取<p>负载均衡实例 ID。</p>
+                     * @return InstanceId <p>负载均衡实例 ID。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡实例 ID。
+                     * <p>负载均衡实例 ID。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

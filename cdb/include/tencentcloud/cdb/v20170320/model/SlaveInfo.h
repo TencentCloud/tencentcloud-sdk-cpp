@@ -89,6 +89,27 @@ namespace TencentCloud
                      */
                     bool SecondHasBeenSet() const;
 
+                    /**
+                     * 获取<p>第三备机信息</p>
+                     * @return Third <p>第三备机信息</p>
+                     * 
+                     */
+                    SlaveInstanceInfo GetThird() const;
+
+                    /**
+                     * 设置<p>第三备机信息</p>
+                     * @param _third <p>第三备机信息</p>
+                     * 
+                     */
+                    void SetThird(const SlaveInstanceInfo& _third);
+
+                    /**
+                     * 判断参数 Third 是否已赋值
+                     * @return Third 是否已赋值
+                     * 
+                     */
+                    bool ThirdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -102,6 +123,12 @@ namespace TencentCloud
                      */
                     SlaveInstanceInfo m_second;
                     bool m_secondHasBeenSet;
+
+                    /**
+                     * <p>第三备机信息</p>
+                     */
+                    SlaveInstanceInfo m_third;
+                    bool m_thirdHasBeenSet;
 
                 };
             }

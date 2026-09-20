@@ -33,7 +33,8 @@ HealthChecker::HealthChecker() :
     m_headersHasBeenSet(false),
     m_followRedirectHasBeenSet(false),
     m_sendContextHasBeenSet(false),
-    m_recvContextHasBeenSet(false)
+    m_recvContextHasBeenSet(false),
+    m_probeClusterHasBeenSet(false)
 {
 }
 
@@ -185,6 +186,16 @@ CoreInternalOutcome HealthChecker::Deserialize(const rapidjson::Value &value)
         m_recvContextHasBeenSet = true;
     }
 
+    if (value.HasMember("ProbeCluster") && !value["ProbeCluster"].IsNull())
+    {
+        if (!value["ProbeCluster"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HealthChecker.ProbeCluster` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_probeCluster = string(value["ProbeCluster"].GetString());
+        m_probeClusterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -306,6 +317,14 @@ void HealthChecker::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "RecvContext";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_recvContext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_probeClusterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProbeCluster";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_probeCluster.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -517,5 +536,21 @@ void HealthChecker::SetRecvContext(const string& _recvContext)
 bool HealthChecker::RecvContextHasBeenSet() const
 {
     return m_recvContextHasBeenSet;
+}
+
+string HealthChecker::GetProbeCluster() const
+{
+    return m_probeCluster;
+}
+
+void HealthChecker::SetProbeCluster(const string& _probeCluster)
+{
+    m_probeCluster = _probeCluster;
+    m_probeClusterHasBeenSet = true;
+}
+
+bool HealthChecker::ProbeClusterHasBeenSet() const
+{
+    return m_probeClusterHasBeenSet;
 }
 

@@ -253,6 +253,48 @@ namespace TencentCloud
                      */
                     bool NickNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>后付费资源状态<br>枚举值：<br>0：未开通<br>1：正常<br>2：隔离</p>
+                     * @return PostPayStatus <p>后付费资源状态<br>枚举值：<br>0：未开通<br>1：正常<br>2：隔离</p>
+                     * 
+                     */
+                    int64_t GetPostPayStatus() const;
+
+                    /**
+                     * 判断参数 PostPayStatus 是否已赋值
+                     * @return PostPayStatus 是否已赋值
+                     * 
+                     */
+                    bool PostPayStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>后付费资源ID，未开通后付费时为空</p>
+                     * @return PostPayResourceId <p>后付费资源ID，未开通后付费时为空</p>
+                     * 
+                     */
+                    std::string GetPostPayResourceId() const;
+
+                    /**
+                     * 判断参数 PostPayResourceId 是否已赋值
+                     * @return PostPayResourceId 是否已赋值
+                     * 
+                     */
+                    bool PostPayResourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>后付费资源开通时间，未开通后付费时为空。格式 YYYY-MM-DD HH:mm:ss</p>
+                     * @return PostPayBeginTime <p>后付费资源开通时间，未开通后付费时为空。格式 YYYY-MM-DD HH:mm:ss</p>
+                     * 
+                     */
+                    std::string GetPostPayBeginTime() const;
+
+                    /**
+                     * 判断参数 PostPayBeginTime 是否已赋值
+                     * @return PostPayBeginTime 是否已赋值
+                     * 
+                     */
+                    bool PostPayBeginTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -344,6 +386,24 @@ namespace TencentCloud
                      */
                     std::string m_nickName;
                     bool m_nickNameHasBeenSet;
+
+                    /**
+                     * <p>后付费资源状态<br>枚举值：<br>0：未开通<br>1：正常<br>2：隔离</p>
+                     */
+                    int64_t m_postPayStatus;
+                    bool m_postPayStatusHasBeenSet;
+
+                    /**
+                     * <p>后付费资源ID，未开通后付费时为空</p>
+                     */
+                    std::string m_postPayResourceId;
+                    bool m_postPayResourceIdHasBeenSet;
+
+                    /**
+                     * <p>后付费资源开通时间，未开通后付费时为空。格式 YYYY-MM-DD HH:mm:ss</p>
+                     */
+                    std::string m_postPayBeginTime;
+                    bool m_postPayBeginTimeHasBeenSet;
 
                 };
             }

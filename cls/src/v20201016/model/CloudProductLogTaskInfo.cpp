@@ -29,7 +29,8 @@ CloudProductLogTaskInfo::CloudProductLogTaskInfo() :
     m_logTypeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_topicTagsHasBeenSet(false),
-    m_logsetTagsHasBeenSet(false)
+    m_logsetTagsHasBeenSet(false),
+    m_applicationIdHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,16 @@ CoreInternalOutcome CloudProductLogTaskInfo::Deserialize(const rapidjson::Value 
         m_logsetTagsHasBeenSet = true;
     }
 
+    if (value.HasMember("ApplicationId") && !value["ApplicationId"].IsNull())
+    {
+        if (!value["ApplicationId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudProductLogTaskInfo.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationId = string(value["ApplicationId"].GetString());
+        m_applicationIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -239,6 +250,14 @@ void CloudProductLogTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::D
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_applicationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -386,5 +405,21 @@ void CloudProductLogTaskInfo::SetLogsetTags(const vector<Tag>& _logsetTags)
 bool CloudProductLogTaskInfo::LogsetTagsHasBeenSet() const
 {
     return m_logsetTagsHasBeenSet;
+}
+
+string CloudProductLogTaskInfo::GetApplicationId() const
+{
+    return m_applicationId;
+}
+
+void CloudProductLogTaskInfo::SetApplicationId(const string& _applicationId)
+{
+    m_applicationId = _applicationId;
+    m_applicationIdHasBeenSet = true;
+}
+
+bool CloudProductLogTaskInfo::ApplicationIdHasBeenSet() const
+{
+    return m_applicationIdHasBeenSet;
 }
 

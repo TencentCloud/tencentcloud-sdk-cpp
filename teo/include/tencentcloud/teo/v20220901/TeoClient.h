@@ -187,6 +187,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeApplicationProxiesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeAvailableCustomActionsForRuleEngineRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeAvailableCustomActionsForRuleEngineResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeAvailableOriginACLFamilyRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeAvailableOriginACLFamilyResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeAvailablePlansRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeAvailablePlansResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeBillingDataRequest.h>
@@ -745,6 +747,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAvailableCustomActionsForRuleEngineResponse> DescribeAvailableCustomActionsForRuleEngineOutcome;
                 typedef std::future<DescribeAvailableCustomActionsForRuleEngineOutcome> DescribeAvailableCustomActionsForRuleEngineOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeAvailableCustomActionsForRuleEngineRequest&, DescribeAvailableCustomActionsForRuleEngineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailableCustomActionsForRuleEngineAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAvailableOriginACLFamilyResponse> DescribeAvailableOriginACLFamilyOutcome;
+                typedef std::future<DescribeAvailableOriginACLFamilyOutcome> DescribeAvailableOriginACLFamilyOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeAvailableOriginACLFamilyRequest&, DescribeAvailableOriginACLFamilyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailableOriginACLFamilyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAvailablePlansResponse> DescribeAvailablePlansOutcome;
                 typedef std::future<DescribeAvailablePlansOutcome> DescribeAvailablePlansOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeAvailablePlansRequest&, DescribeAvailablePlansOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailablePlansAsyncHandler;
@@ -1971,6 +1976,31 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeAvailableCustomActionsForRuleEngineOutcome DescribeAvailableCustomActionsForRuleEngine(const Model::DescribeAvailableCustomActionsForRuleEngineRequest &request);
                 void DescribeAvailableCustomActionsForRuleEngineAsync(const Model::DescribeAvailableCustomActionsForRuleEngineRequest& request, const DescribeAvailableCustomActionsForRuleEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAvailableCustomActionsForRuleEngineOutcomeCallable DescribeAvailableCustomActionsForRuleEngineCallable(const Model::DescribeAvailableCustomActionsForRuleEngineRequest& request);
+
+                /**
+                 *查询源站防护 IP 段控制域详细信息，包含版本号和具体IP网段信息等。
+标准控制域和精简控制域主要区别在于提供的 IP 段数量差异，后者数量更少,但是使用上有些限制，具体限制请咨询产品。具体格式说明如下：
+标准控制域：
+<li>gaz：标准全球控制域；</li>
+<li>mlc：标准中国控制域；</li>
+<li>emc：标准海外(全球不含中国)控制域；</li>
+精简控制域控制域：
+<li>plat-gaz：精简全球控制域；</li>
+<li>plat-mlc：精简中国控制域；</li>
+<li>plat-emc：精简海外(全球不含中国)控制域；</li>
+<li>plat-specific-gaz：定制版控全球可用区制域；</li>
+<li>plat-specific-mlc：定制版控中国大陆可用区控制域；</li>
+<li>plat-specific-emc：定制版控全球（不含中国大陆）可用区控制域；</li>
+缩写说明：
+<li>gaz：Global AZ Availability Zone;</li>
+<li>mlc：mainlandChina;</li>
+<li>emc：Exclude mainlandChina.</li>
+                 * @param req DescribeAvailableOriginACLFamilyRequest
+                 * @return DescribeAvailableOriginACLFamilyOutcome
+                 */
+                DescribeAvailableOriginACLFamilyOutcome DescribeAvailableOriginACLFamily(const Model::DescribeAvailableOriginACLFamilyRequest &request);
+                void DescribeAvailableOriginACLFamilyAsync(const Model::DescribeAvailableOriginACLFamilyRequest& request, const DescribeAvailableOriginACLFamilyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAvailableOriginACLFamilyOutcomeCallable DescribeAvailableOriginACLFamilyCallable(const Model::DescribeAvailableOriginACLFamilyRequest& request);
 
                 /**
                  *查询当前账户可用套餐信息列表

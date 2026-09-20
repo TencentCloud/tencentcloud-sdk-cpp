@@ -1024,6 +1024,31 @@ namespace TencentCloud
                      */
                     bool InnerTaskHasBeenSet() const;
 
+                    /**
+                     * 获取<p>计划调度时间</p><p>参数格式：毫秒时间戳，UTC</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScheduledTime <p>计划调度时间</p><p>参数格式：毫秒时间戳，UTC</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetScheduledTime() const;
+
+                    /**
+                     * 设置<p>计划调度时间</p><p>参数格式：毫秒时间戳，UTC</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scheduledTime <p>计划调度时间</p><p>参数格式：毫秒时间戳，UTC</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScheduledTime(const std::string& _scheduledTime);
+
+                    /**
+                     * 判断参数 ScheduledTime 是否已赋值
+                     * @return ScheduledTime 是否已赋值
+                     * 
+                     */
+                    bool ScheduledTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1298,6 +1323,13 @@ namespace TencentCloud
                      */
                     InnerWorkflowTaskBrief m_innerTask;
                     bool m_innerTaskHasBeenSet;
+
+                    /**
+                     * <p>计划调度时间</p><p>参数格式：毫秒时间戳，UTC</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_scheduledTime;
+                    bool m_scheduledTimeHasBeenSet;
 
                 };
             }

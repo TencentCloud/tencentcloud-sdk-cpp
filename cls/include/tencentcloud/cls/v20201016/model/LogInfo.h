@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志时间，单位ms
-                     * @return Time 日志时间，单位ms
+                     * 获取<p>日志时间，单位ms</p>
+                     * @return Time <p>日志时间，单位ms</p>
                      * 
                      */
                     int64_t GetTime() const;
 
                     /**
-                     * 设置日志时间，单位ms
-                     * @param _time 日志时间，单位ms
+                     * 设置<p>日志时间，单位ms</p>
+                     * @param _time <p>日志时间，单位ms</p>
                      * 
                      */
                     void SetTime(const int64_t& _time);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool TimeHasBeenSet() const;
 
                     /**
-                     * 获取日志主题ID
-                     * @return TopicId 日志主题ID
+                     * 获取<p>日志主题ID</p>
+                     * @return TopicId <p>日志主题ID</p>
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题ID
-                     * @param _topicId 日志主题ID
+                     * 设置<p>日志主题ID</p>
+                     * @param _topicId <p>日志主题ID</p>
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取日志主题名称
-                     * @return TopicName 日志主题名称
+                     * 获取<p>日志主题名称</p>
+                     * @return TopicName <p>日志主题名称</p>
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置日志主题名称
-                     * @param _topicName 日志主题名称
+                     * 设置<p>日志主题名称</p>
+                     * @param _topicName <p>日志主题名称</p>
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取日志来源IP
-                     * @return Source 日志来源IP
+                     * 获取<p>日志来源IP</p>
+                     * @return Source <p>日志来源IP</p>
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
-                     * 设置日志来源IP
-                     * @param _source 日志来源IP
+                     * 设置<p>日志来源IP</p>
+                     * @param _source <p>日志来源IP</p>
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取日志文件名称
-                     * @return FileName 日志文件名称
+                     * 获取<p>日志文件名称</p>
+                     * @return FileName <p>日志文件名称</p>
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置日志文件名称
-                     * @param _fileName 日志文件名称
+                     * 设置<p>日志文件名称</p>
+                     * @param _fileName <p>日志文件名称</p>
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取日志上报请求包的ID
-                     * @return PkgId 日志上报请求包的ID
+                     * 获取<p>日志上报请求包的ID</p>
+                     * @return PkgId <p>日志上报请求包的ID</p>
                      * 
                      */
                     std::string GetPkgId() const;
 
                     /**
-                     * 设置日志上报请求包的ID
-                     * @param _pkgId 日志上报请求包的ID
+                     * 设置<p>日志上报请求包的ID</p>
+                     * @param _pkgId <p>日志上报请求包的ID</p>
                      * 
                      */
                     void SetPkgId(const std::string& _pkgId);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool PkgIdHasBeenSet() const;
 
                     /**
-                     * 获取请求包内日志的ID
-                     * @return PkgLogId 请求包内日志的ID
+                     * 获取<p>请求包内日志的ID</p>
+                     * @return PkgLogId <p>请求包内日志的ID</p>
                      * 
                      */
                     std::string GetPkgLogId() const;
 
                     /**
-                     * 设置请求包内日志的ID
-                     * @param _pkgLogId 请求包内日志的ID
+                     * 设置<p>请求包内日志的ID</p>
+                     * @param _pkgLogId <p>请求包内日志的ID</p>
                      * 
                      */
                     void SetPkgLogId(const std::string& _pkgLogId);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool PkgLogIdHasBeenSet() const;
 
                     /**
-                     * 获取符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索	
-                     * @return HighLights 符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索	
+                     * 获取<p>符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索</p>
+                     * @return HighLights <p>符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索</p>
                      * 
                      */
                     std::vector<HighLightItem> GetHighLights() const;
 
                     /**
-                     * 设置符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索	
-                     * @param _highLights 符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索	
+                     * 设置<p>符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索</p>
+                     * @param _highLights <p>符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索</p>
                      * 
                      */
                     void SetHighLights(const std::vector<HighLightItem>& _highLights);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool HighLightsHasBeenSet() const;
 
                     /**
-                     * 获取日志内容的Json序列化字符串
-                     * @return LogJson 日志内容的Json序列化字符串
+                     * 获取<p>日志内容的Json序列化字符串</p>
+                     * @return LogJson <p>日志内容的Json序列化字符串</p>
                      * 
                      */
                     std::string GetLogJson() const;
 
                     /**
-                     * 设置日志内容的Json序列化字符串
-                     * @param _logJson 日志内容的Json序列化字符串
+                     * 设置<p>日志内容的Json序列化字符串</p>
+                     * @param _logJson <p>日志内容的Json序列化字符串</p>
                      * 
                      */
                     void SetLogJson(const std::string& _logJson);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool LogJsonHasBeenSet() const;
 
                     /**
-                     * 获取日志来源主机名称
-                     * @return HostName 日志来源主机名称
+                     * 获取<p>日志来源主机名称</p>
+                     * @return HostName <p>日志来源主机名称</p>
                      * 
                      */
                     std::string GetHostName() const;
 
                     /**
-                     * 设置日志来源主机名称
-                     * @param _hostName 日志来源主机名称
+                     * 设置<p>日志来源主机名称</p>
+                     * @param _hostName <p>日志来源主机名称</p>
                      * 
                      */
                     void SetHostName(const std::string& _hostName);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool HostNameHasBeenSet() const;
 
                     /**
-                     * 获取原始日志(仅在日志创建索引异常时有值)
-                     * @return RawLog 原始日志(仅在日志创建索引异常时有值)
+                     * 获取<p>原始日志(仅在日志创建索引异常时有值)</p>
+                     * @return RawLog <p>原始日志(仅在日志创建索引异常时有值)</p>
                      * 
                      */
                     std::string GetRawLog() const;
 
                     /**
-                     * 设置原始日志(仅在日志创建索引异常时有值)
-                     * @param _rawLog 原始日志(仅在日志创建索引异常时有值)
+                     * 设置<p>原始日志(仅在日志创建索引异常时有值)</p>
+                     * @param _rawLog <p>原始日志(仅在日志创建索引异常时有值)</p>
                      * 
                      */
                     void SetRawLog(const std::string& _rawLog);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool RawLogHasBeenSet() const;
 
                     /**
-                     * 获取日志创建索引异常原因(仅在日志创建索引异常时有值)
-                     * @return IndexStatus 日志创建索引异常原因(仅在日志创建索引异常时有值)
+                     * 获取<p>日志创建索引异常原因(仅在日志创建索引异常时有值)</p>
+                     * @return IndexStatus <p>日志创建索引异常原因(仅在日志创建索引异常时有值)</p>
                      * 
                      */
                     std::string GetIndexStatus() const;
 
                     /**
-                     * 设置日志创建索引异常原因(仅在日志创建索引异常时有值)
-                     * @param _indexStatus 日志创建索引异常原因(仅在日志创建索引异常时有值)
+                     * 设置<p>日志创建索引异常原因(仅在日志创建索引异常时有值)</p>
+                     * @param _indexStatus <p>日志创建索引异常原因(仅在日志创建索引异常时有值)</p>
                      * 
                      */
                     void SetIndexStatus(const std::string& _indexStatus);
@@ -299,79 +299,106 @@ namespace TencentCloud
                      */
                     bool IndexStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>日志时间，单位ns</p><p>单位：纳秒</p>
+                     * @return TimeNanos <p>日志时间，单位ns</p><p>单位：纳秒</p>
+                     * 
+                     */
+                    int64_t GetTimeNanos() const;
+
+                    /**
+                     * 设置<p>日志时间，单位ns</p><p>单位：纳秒</p>
+                     * @param _timeNanos <p>日志时间，单位ns</p><p>单位：纳秒</p>
+                     * 
+                     */
+                    void SetTimeNanos(const int64_t& _timeNanos);
+
+                    /**
+                     * 判断参数 TimeNanos 是否已赋值
+                     * @return TimeNanos 是否已赋值
+                     * 
+                     */
+                    bool TimeNanosHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 日志时间，单位ms
+                     * <p>日志时间，单位ms</p>
                      */
                     int64_t m_time;
                     bool m_timeHasBeenSet;
 
                     /**
-                     * 日志主题ID
+                     * <p>日志主题ID</p>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 日志主题名称
+                     * <p>日志主题名称</p>
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 日志来源IP
+                     * <p>日志来源IP</p>
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 日志文件名称
+                     * <p>日志文件名称</p>
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 日志上报请求包的ID
+                     * <p>日志上报请求包的ID</p>
                      */
                     std::string m_pkgId;
                     bool m_pkgIdHasBeenSet;
 
                     /**
-                     * 请求包内日志的ID
+                     * <p>请求包内日志的ID</p>
                      */
                     std::string m_pkgLogId;
                     bool m_pkgLogIdHasBeenSet;
 
                     /**
-                     * 符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索	
+                     * <p>符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索</p>
                      */
                     std::vector<HighLightItem> m_highLights;
                     bool m_highLightsHasBeenSet;
 
                     /**
-                     * 日志内容的Json序列化字符串
+                     * <p>日志内容的Json序列化字符串</p>
                      */
                     std::string m_logJson;
                     bool m_logJsonHasBeenSet;
 
                     /**
-                     * 日志来源主机名称
+                     * <p>日志来源主机名称</p>
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;
 
                     /**
-                     * 原始日志(仅在日志创建索引异常时有值)
+                     * <p>原始日志(仅在日志创建索引异常时有值)</p>
                      */
                     std::string m_rawLog;
                     bool m_rawLogHasBeenSet;
 
                     /**
-                     * 日志创建索引异常原因(仅在日志创建索引异常时有值)
+                     * <p>日志创建索引异常原因(仅在日志创建索引异常时有值)</p>
                      */
                     std::string m_indexStatus;
                     bool m_indexStatusHasBeenSet;
+
+                    /**
+                     * <p>日志时间，单位ns</p><p>单位：纳秒</p>
+                     */
+                    int64_t m_timeNanos;
+                    bool m_timeNanosHasBeenSet;
 
                 };
             }

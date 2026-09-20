@@ -36,6 +36,7 @@ KafkaRechargeInfo::KafkaRechargeInfo() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_logRechargeRuleHasBeenSet(false),
+    m_networkInfoHasBeenSet(false),
     m_userKafkaMetaHasBeenSet(false)
 {
 }
@@ -209,6 +210,23 @@ CoreInternalOutcome KafkaRechargeInfo::Deserialize(const rapidjson::Value &value
         m_logRechargeRuleHasBeenSet = true;
     }
 
+    if (value.HasMember("NetworkInfo") && !value["NetworkInfo"].IsNull())
+    {
+        if (!value["NetworkInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaRechargeInfo.NetworkInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_networkInfo.Deserialize(value["NetworkInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_networkInfoHasBeenSet = true;
+    }
+
     if (value.HasMember("UserKafkaMeta") && !value["UserKafkaMeta"].IsNull())
     {
         if (!value["UserKafkaMeta"].IsObject())
@@ -353,6 +371,15 @@ void KafkaRechargeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_logRechargeRule.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_networkInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_networkInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_userKafkaMetaHasBeenSet)
@@ -605,6 +632,22 @@ void KafkaRechargeInfo::SetLogRechargeRule(const LogRechargeRuleInfo& _logRechar
 bool KafkaRechargeInfo::LogRechargeRuleHasBeenSet() const
 {
     return m_logRechargeRuleHasBeenSet;
+}
+
+NetworkInfo KafkaRechargeInfo::GetNetworkInfo() const
+{
+    return m_networkInfo;
+}
+
+void KafkaRechargeInfo::SetNetworkInfo(const NetworkInfo& _networkInfo)
+{
+    m_networkInfo = _networkInfo;
+    m_networkInfoHasBeenSet = true;
+}
+
+bool KafkaRechargeInfo::NetworkInfoHasBeenSet() const
+{
+    return m_networkInfoHasBeenSet;
 }
 
 UserKafkaMeta KafkaRechargeInfo::GetUserKafkaMeta() const

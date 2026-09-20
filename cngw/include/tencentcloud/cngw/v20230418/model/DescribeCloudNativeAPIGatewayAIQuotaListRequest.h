@@ -107,6 +107,27 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
+                     * 获取<p>关键字</p>
+                     * @return Keyword <p>关键字</p>
+                     * 
+                     */
+                    std::string GetKeyword() const;
+
+                    /**
+                     * 设置<p>关键字</p>
+                     * @param _keyword <p>关键字</p>
+                     * 
+                     */
+                    void SetKeyword(const std::string& _keyword);
+
+                    /**
+                     * 判断参数 Keyword 是否已赋值
+                     * @return Keyword 是否已赋值
+                     * 
+                     */
+                    bool KeywordHasBeenSet() const;
+
+                    /**
                      * 获取<p>过滤条件</p>
                      * @return Filters <p>过滤条件</p>
                      * 
@@ -167,6 +188,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * <p>关键字</p>
+                     */
+                    std::string m_keyword;
+                    bool m_keywordHasBeenSet;
 
                     /**
                      * <p>过滤条件</p>

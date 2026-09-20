@@ -36,7 +36,8 @@ CreateCloudNativeAPIGatewayMCPServerRequest::CreateCloudNativeAPIGatewayMCPServe
     m_descriptionHasBeenSet(false),
     m_enableHealthCheckHasBeenSet(false),
     m_healthCheckHasBeenSet(false),
-    m_preserveHostHasBeenSet(false)
+    m_preserveHostHasBeenSet(false),
+    m_logConfigHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,15 @@ string CreateCloudNativeAPIGatewayMCPServerRequest::ToJsonString() const
         string key = "PreserveHost";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_preserveHost, allocator);
+    }
+
+    if (m_logConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_logConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -392,6 +402,22 @@ void CreateCloudNativeAPIGatewayMCPServerRequest::SetPreserveHost(const bool& _p
 bool CreateCloudNativeAPIGatewayMCPServerRequest::PreserveHostHasBeenSet() const
 {
     return m_preserveHostHasBeenSet;
+}
+
+AIGWLogConfig CreateCloudNativeAPIGatewayMCPServerRequest::GetLogConfig() const
+{
+    return m_logConfig;
+}
+
+void CreateCloudNativeAPIGatewayMCPServerRequest::SetLogConfig(const AIGWLogConfig& _logConfig)
+{
+    m_logConfig = _logConfig;
+    m_logConfigHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayMCPServerRequest::LogConfigHasBeenSet() const
+{
+    return m_logConfigHasBeenSet;
 }
 
 

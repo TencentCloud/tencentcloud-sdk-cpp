@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ApplicationNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>接入类型</p><p>枚举值：</p><ul><li>Langfuse：  Langfuse​ 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li></ul>
-                     * @return AccessType <p>接入类型</p><p>枚举值：</p><ul><li>Langfuse：  Langfuse​ 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li></ul>
+                     * 获取<p>接入类型</p><p>枚举值：</p><ul><li>Langfuse：  Langfuse 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li></ul>
+                     * @return AccessType <p>接入类型</p><p>枚举值：</p><ul><li>Langfuse：  Langfuse 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li></ul>
                      * 
                      */
                     std::string GetAccessType() const;
 
                     /**
-                     * 设置<p>接入类型</p><p>枚举值：</p><ul><li>Langfuse：  Langfuse​ 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li></ul>
-                     * @param _accessType <p>接入类型</p><p>枚举值：</p><ul><li>Langfuse：  Langfuse​ 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li></ul>
+                     * 设置<p>接入类型</p><p>枚举值：</p><ul><li>Langfuse：  Langfuse 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li></ul>
+                     * @param _accessType <p>接入类型</p><p>枚举值：</p><ul><li>Langfuse：  Langfuse 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li></ul>
                      * 
                      */
                     void SetAccessType(const std::string& _accessType);
@@ -215,6 +215,111 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>日志集id</p>
+                     * @return LogsetId <p>日志集id</p>
+                     * 
+                     */
+                    std::string GetLogsetId() const;
+
+                    /**
+                     * 设置<p>日志集id</p>
+                     * @param _logsetId <p>日志集id</p>
+                     * 
+                     */
+                    void SetLogsetId(const std::string& _logsetId);
+
+                    /**
+                     * 判断参数 LogsetId 是否已赋值
+                     * @return LogsetId 是否已赋值
+                     * 
+                     */
+                    bool LogsetIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务方名称</p>
+                     * @return AssumerName <p>服务方名称</p>
+                     * 
+                     */
+                    std::string GetAssumerName() const;
+
+                    /**
+                     * 设置<p>服务方名称</p>
+                     * @param _assumerName <p>服务方名称</p>
+                     * 
+                     */
+                    void SetAssumerName(const std::string& _assumerName);
+
+                    /**
+                     * 判断参数 AssumerName 是否已赋值
+                     * @return AssumerName 是否已赋值
+                     * 
+                     */
+                    bool AssumerNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务方子名称</p>
+                     * @return SubAssumerName <p>服务方子名称</p>
+                     * 
+                     */
+                    std::string GetSubAssumerName() const;
+
+                    /**
+                     * 设置<p>服务方子名称</p>
+                     * @param _subAssumerName <p>服务方子名称</p>
+                     * 
+                     */
+                    void SetSubAssumerName(const std::string& _subAssumerName);
+
+                    /**
+                     * 判断参数 SubAssumerName 是否已赋值
+                     * @return SubAssumerName 是否已赋值
+                     * 
+                     */
+                    bool SubAssumerNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务方Uin</p>
+                     * @return AssumerUin <p>服务方Uin</p>
+                     * 
+                     */
+                    uint64_t GetAssumerUin() const;
+
+                    /**
+                     * 设置<p>服务方Uin</p>
+                     * @param _assumerUin <p>服务方Uin</p>
+                     * 
+                     */
+                    void SetAssumerUin(const uint64_t& _assumerUin);
+
+                    /**
+                     * 判断参数 AssumerUin 是否已赋值
+                     * @return AssumerUin 是否已赋值
+                     * 
+                     */
+                    bool AssumerUinHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务方使用的角色</p>
+                     * @return RoleName <p>服务方使用的角色</p>
+                     * 
+                     */
+                    std::string GetRoleName() const;
+
+                    /**
+                     * 设置<p>服务方使用的角色</p>
+                     * @param _roleName <p>服务方使用的角色</p>
+                     * 
+                     */
+                    void SetRoleName(const std::string& _roleName);
+
+                    /**
+                     * 判断参数 RoleName 是否已赋值
+                     * @return RoleName 是否已赋值
+                     * 
+                     */
+                    bool RoleNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -230,7 +335,7 @@ namespace TencentCloud
                     bool m_applicationNameHasBeenSet;
 
                     /**
-                     * <p>接入类型</p><p>枚举值：</p><ul><li>Langfuse：  Langfuse​ 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li></ul>
+                     * <p>接入类型</p><p>枚举值：</p><ul><li>Langfuse：  Langfuse 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li></ul>
                      */
                     std::string m_accessType;
                     bool m_accessTypeHasBeenSet;
@@ -264,6 +369,36 @@ namespace TencentCloud
                      */
                     uint64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * <p>日志集id</p>
+                     */
+                    std::string m_logsetId;
+                    bool m_logsetIdHasBeenSet;
+
+                    /**
+                     * <p>服务方名称</p>
+                     */
+                    std::string m_assumerName;
+                    bool m_assumerNameHasBeenSet;
+
+                    /**
+                     * <p>服务方子名称</p>
+                     */
+                    std::string m_subAssumerName;
+                    bool m_subAssumerNameHasBeenSet;
+
+                    /**
+                     * <p>服务方Uin</p>
+                     */
+                    uint64_t m_assumerUin;
+                    bool m_assumerUinHasBeenSet;
+
+                    /**
+                     * <p>服务方使用的角色</p>
+                     */
+                    std::string m_roleName;
+                    bool m_roleNameHasBeenSet;
 
                 };
             }

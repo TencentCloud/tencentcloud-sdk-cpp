@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/databuddy/v20260715/model/AddConsoleUsersRequest.h>
+#include <tencentcloud/databuddy/v20260715/model/AddConsoleUsersResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/CreateFileRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/CreateFileResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/CreateWorkflowRequest.h>
@@ -41,18 +43,24 @@
 #include <tencentcloud/databuddy/v20260715/model/GetWorkflowTaskRunResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/KillWorkflowRunRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/KillWorkflowRunResponse.h>
+#include <tencentcloud/databuddy/v20260715/model/ListConsoleUsersRequest.h>
+#include <tencentcloud/databuddy/v20260715/model/ListConsoleUsersResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/ListWorkflowRunsRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/ListWorkflowRunsResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/ListWorkflowTaskRunsRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/ListWorkflowTaskRunsResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/ListWorkflowsRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/ListWorkflowsResponse.h>
+#include <tencentcloud/databuddy/v20260715/model/RemoveConsoleUsersRequest.h>
+#include <tencentcloud/databuddy/v20260715/model/RemoveConsoleUsersResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/RerunWorkflowRunRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/RerunWorkflowRunResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/RunWorkflowRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/RunWorkflowResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/UnbindWorkflowBundleRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/UnbindWorkflowBundleResponse.h>
+#include <tencentcloud/databuddy/v20260715/model/UpdateConsoleUsersRequest.h>
+#include <tencentcloud/databuddy/v20260715/model/UpdateConsoleUsersResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/UpdateFileRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/UpdateFileResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/UpdateWorkflowRequest.h>
@@ -71,6 +79,9 @@ namespace TencentCloud
                 DatabuddyClient(const Credential &credential, const std::string &region);
                 DatabuddyClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AddConsoleUsersResponse> AddConsoleUsersOutcome;
+                typedef std::future<AddConsoleUsersOutcome> AddConsoleUsersOutcomeCallable;
+                typedef std::function<void(const DatabuddyClient*, const Model::AddConsoleUsersRequest&, AddConsoleUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddConsoleUsersAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFileResponse> CreateFileOutcome;
                 typedef std::future<CreateFileOutcome> CreateFileOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::CreateFileRequest&, CreateFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFileAsyncHandler;
@@ -98,6 +109,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::KillWorkflowRunResponse> KillWorkflowRunOutcome;
                 typedef std::future<KillWorkflowRunOutcome> KillWorkflowRunOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::KillWorkflowRunRequest&, KillWorkflowRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KillWorkflowRunAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListConsoleUsersResponse> ListConsoleUsersOutcome;
+                typedef std::future<ListConsoleUsersOutcome> ListConsoleUsersOutcomeCallable;
+                typedef std::function<void(const DatabuddyClient*, const Model::ListConsoleUsersRequest&, ListConsoleUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListConsoleUsersAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListWorkflowRunsResponse> ListWorkflowRunsOutcome;
                 typedef std::future<ListWorkflowRunsOutcome> ListWorkflowRunsOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::ListWorkflowRunsRequest&, ListWorkflowRunsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListWorkflowRunsAsyncHandler;
@@ -107,6 +121,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListWorkflowsResponse> ListWorkflowsOutcome;
                 typedef std::future<ListWorkflowsOutcome> ListWorkflowsOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::ListWorkflowsRequest&, ListWorkflowsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListWorkflowsAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveConsoleUsersResponse> RemoveConsoleUsersOutcome;
+                typedef std::future<RemoveConsoleUsersOutcome> RemoveConsoleUsersOutcomeCallable;
+                typedef std::function<void(const DatabuddyClient*, const Model::RemoveConsoleUsersRequest&, RemoveConsoleUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveConsoleUsersAsyncHandler;
                 typedef Outcome<Core::Error, Model::RerunWorkflowRunResponse> RerunWorkflowRunOutcome;
                 typedef std::future<RerunWorkflowRunOutcome> RerunWorkflowRunOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::RerunWorkflowRunRequest&, RerunWorkflowRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RerunWorkflowRunAsyncHandler;
@@ -116,6 +133,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UnbindWorkflowBundleResponse> UnbindWorkflowBundleOutcome;
                 typedef std::future<UnbindWorkflowBundleOutcome> UnbindWorkflowBundleOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::UnbindWorkflowBundleRequest&, UnbindWorkflowBundleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindWorkflowBundleAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateConsoleUsersResponse> UpdateConsoleUsersOutcome;
+                typedef std::future<UpdateConsoleUsersOutcome> UpdateConsoleUsersOutcomeCallable;
+                typedef std::function<void(const DatabuddyClient*, const Model::UpdateConsoleUsersRequest&, UpdateConsoleUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateConsoleUsersAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateFileResponse> UpdateFileOutcome;
                 typedef std::future<UpdateFileOutcome> UpdateFileOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::UpdateFileRequest&, UpdateFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFileAsyncHandler;
@@ -124,6 +144,15 @@ namespace TencentCloud
                 typedef std::function<void(const DatabuddyClient*, const Model::UpdateWorkflowRequest&, UpdateWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWorkflowAsyncHandler;
 
 
+
+                /**
+                 *添加控制台用户
+                 * @param req AddConsoleUsersRequest
+                 * @return AddConsoleUsersOutcome
+                 */
+                AddConsoleUsersOutcome AddConsoleUsers(const Model::AddConsoleUsersRequest &request);
+                void AddConsoleUsersAsync(const Model::AddConsoleUsersRequest& request, const AddConsoleUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddConsoleUsersOutcomeCallable AddConsoleUsersCallable(const Model::AddConsoleUsersRequest& request);
 
                 /**
                  *在Studio（统一开发 IDE）的工作空间文件树中新建一个文件（Notebook/SQL/Python等），创建成功后返回文件的完整元信息。
@@ -248,6 +277,15 @@ namespace TencentCloud
                 KillWorkflowRunOutcomeCallable KillWorkflowRunCallable(const Model::KillWorkflowRunRequest& request);
 
                 /**
+                 *查询控制台用户列表
+                 * @param req ListConsoleUsersRequest
+                 * @return ListConsoleUsersOutcome
+                 */
+                ListConsoleUsersOutcome ListConsoleUsers(const Model::ListConsoleUsersRequest &request);
+                void ListConsoleUsersAsync(const Model::ListConsoleUsersRequest& request, const ListConsoleUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListConsoleUsersOutcomeCallable ListConsoleUsersCallable(const Model::ListConsoleUsersRequest& request);
+
+                /**
                  *工作流运行列表
                  * @param req ListWorkflowRunsRequest
                  * @return ListWorkflowRunsOutcome
@@ -273,6 +311,15 @@ namespace TencentCloud
                 ListWorkflowsOutcome ListWorkflows(const Model::ListWorkflowsRequest &request);
                 void ListWorkflowsAsync(const Model::ListWorkflowsRequest& request, const ListWorkflowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListWorkflowsOutcomeCallable ListWorkflowsCallable(const Model::ListWorkflowsRequest& request);
+
+                /**
+                 *<p>批量移除控制台用户（单次最多10个；前置校验任一不满足整体拒绝；执行阶段单个失败不中断后续删除，成败以 SuccessUins/FailItems 为准）</p>
+                 * @param req RemoveConsoleUsersRequest
+                 * @return RemoveConsoleUsersOutcome
+                 */
+                RemoveConsoleUsersOutcome RemoveConsoleUsers(const Model::RemoveConsoleUsersRequest &request);
+                void RemoveConsoleUsersAsync(const Model::RemoveConsoleUsersRequest& request, const RemoveConsoleUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveConsoleUsersOutcomeCallable RemoveConsoleUsersCallable(const Model::RemoveConsoleUsersRequest& request);
 
                 /**
                  *重跑工作流
@@ -301,6 +348,15 @@ namespace TencentCloud
                 UnbindWorkflowBundleOutcome UnbindWorkflowBundle(const Model::UnbindWorkflowBundleRequest &request);
                 void UnbindWorkflowBundleAsync(const Model::UnbindWorkflowBundleRequest& request, const UnbindWorkflowBundleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnbindWorkflowBundleOutcomeCallable UnbindWorkflowBundleCallable(const Model::UnbindWorkflowBundleRequest& request);
+
+                /**
+                 *修改控制台用户角色
+                 * @param req UpdateConsoleUsersRequest
+                 * @return UpdateConsoleUsersOutcome
+                 */
+                UpdateConsoleUsersOutcome UpdateConsoleUsers(const Model::UpdateConsoleUsersRequest &request);
+                void UpdateConsoleUsersAsync(const Model::UpdateConsoleUsersRequest& request, const UpdateConsoleUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateConsoleUsersOutcomeCallable UpdateConsoleUsersCallable(const Model::UpdateConsoleUsersRequest& request);
 
                 /**
                  *更新文件内容与运行配置（计算资源、默认 catalog/schema、参数等），返回更新后的文件元信息。

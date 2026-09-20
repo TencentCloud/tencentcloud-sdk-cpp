@@ -26,7 +26,11 @@ DescribeCloudNativeAPIGatewaySecretKeyListRequest::DescribeCloudNativeAPIGateway
     m_gatewayIdHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_keywordHasBeenSet(false),
+    m_resourceIdHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false),
+    m_useToBindHasBeenSet(false)
 {
 }
 
@@ -61,12 +65,51 @@ string DescribeCloudNativeAPIGatewaySecretKeyListRequest::ToJsonString() const
         d.AddMember(iKey, m_offset, allocator);
     }
 
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_keywordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Keyword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keyword.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_resourceTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_useToBindHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseToBind";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useToBind, allocator);
     }
 
 
@@ -125,6 +168,54 @@ bool DescribeCloudNativeAPIGatewaySecretKeyListRequest::OffsetHasBeenSet() const
     return m_offsetHasBeenSet;
 }
 
+vector<Filter> DescribeCloudNativeAPIGatewaySecretKeyListRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeCloudNativeAPIGatewaySecretKeyListRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewaySecretKeyListRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewaySecretKeyListRequest::GetKeyword() const
+{
+    return m_keyword;
+}
+
+void DescribeCloudNativeAPIGatewaySecretKeyListRequest::SetKeyword(const string& _keyword)
+{
+    m_keyword = _keyword;
+    m_keywordHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewaySecretKeyListRequest::KeywordHasBeenSet() const
+{
+    return m_keywordHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewaySecretKeyListRequest::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void DescribeCloudNativeAPIGatewaySecretKeyListRequest::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewaySecretKeyListRequest::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
+}
+
 string DescribeCloudNativeAPIGatewaySecretKeyListRequest::GetResourceType() const
 {
     return m_resourceType;
@@ -139,6 +230,22 @@ void DescribeCloudNativeAPIGatewaySecretKeyListRequest::SetResourceType(const st
 bool DescribeCloudNativeAPIGatewaySecretKeyListRequest::ResourceTypeHasBeenSet() const
 {
     return m_resourceTypeHasBeenSet;
+}
+
+bool DescribeCloudNativeAPIGatewaySecretKeyListRequest::GetUseToBind() const
+{
+    return m_useToBind;
+}
+
+void DescribeCloudNativeAPIGatewaySecretKeyListRequest::SetUseToBind(const bool& _useToBind)
+{
+    m_useToBind = _useToBind;
+    m_useToBindHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewaySecretKeyListRequest::UseToBindHasBeenSet() const
+{
+    return m_useToBindHasBeenSet;
 }
 
 

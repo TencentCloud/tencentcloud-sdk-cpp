@@ -25,6 +25,7 @@ using namespace std;
 DescribeDspmAssetTableListRequest::DescribeDspmAssetTableListRequest() :
     m_assetIdHasBeenSet(false),
     m_dbNameHasBeenSet(false),
+    m_schemaNameHasBeenSet(false),
     m_memberIdHasBeenSet(false),
     m_filterHasBeenSet(false)
 {
@@ -51,6 +52,14 @@ string DescribeDspmAssetTableListRequest::ToJsonString() const
         string key = "DbName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dbName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_memberIdHasBeenSet)
@@ -113,6 +122,22 @@ void DescribeDspmAssetTableListRequest::SetDbName(const string& _dbName)
 bool DescribeDspmAssetTableListRequest::DbNameHasBeenSet() const
 {
     return m_dbNameHasBeenSet;
+}
+
+string DescribeDspmAssetTableListRequest::GetSchemaName() const
+{
+    return m_schemaName;
+}
+
+void DescribeDspmAssetTableListRequest::SetSchemaName(const string& _schemaName)
+{
+    m_schemaName = _schemaName;
+    m_schemaNameHasBeenSet = true;
+}
+
+bool DescribeDspmAssetTableListRequest::SchemaNameHasBeenSet() const
+{
+    return m_schemaNameHasBeenSet;
 }
 
 vector<string> DescribeDspmAssetTableListRequest::GetMemberId() const

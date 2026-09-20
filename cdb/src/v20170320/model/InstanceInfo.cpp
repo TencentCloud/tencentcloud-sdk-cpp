@@ -72,6 +72,7 @@ InstanceInfo::InstanceInfo() :
     m_analysisNodeInfosHasBeenSet(false),
     m_deviceBandwidthHasBeenSet(false),
     m_destroyProtectHasBeenSet(false),
+    m_diskEncryptionHasBeenSet(false),
     m_cpuModelHasBeenSet(false),
     m_analysisUpgradeVersionInfoHasBeenSet(false)
 {
@@ -663,6 +664,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_destroyProtectHasBeenSet = true;
     }
 
+    if (value.HasMember("DiskEncryption") && !value["DiskEncryption"].IsNull())
+    {
+        if (!value["DiskEncryption"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.DiskEncryption` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskEncryption = string(value["DiskEncryption"].GetString());
+        m_diskEncryptionHasBeenSet = true;
+    }
+
     if (value.HasMember("CpuModel") && !value["CpuModel"].IsNull())
     {
         if (!value["CpuModel"].IsString())
@@ -1141,6 +1152,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DestroyProtect";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_destroyProtect.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_diskEncryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskEncryption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diskEncryption.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cpuModelHasBeenSet)
@@ -1977,6 +1996,22 @@ void InstanceInfo::SetDestroyProtect(const string& _destroyProtect)
 bool InstanceInfo::DestroyProtectHasBeenSet() const
 {
     return m_destroyProtectHasBeenSet;
+}
+
+string InstanceInfo::GetDiskEncryption() const
+{
+    return m_diskEncryption;
+}
+
+void InstanceInfo::SetDiskEncryption(const string& _diskEncryption)
+{
+    m_diskEncryption = _diskEncryption;
+    m_diskEncryptionHasBeenSet = true;
+}
+
+bool InstanceInfo::DiskEncryptionHasBeenSet() const
+{
+    return m_diskEncryptionHasBeenSet;
 }
 
 string InstanceInfo::GetCpuModel() const

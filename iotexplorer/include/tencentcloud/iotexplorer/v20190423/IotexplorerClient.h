@@ -197,6 +197,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageDateResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageEventsRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageEventsResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageEventsByTWeSeePersonRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageEventsByTWeSeePersonResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageEventsWithAITasksRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageEventsWithAITasksResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageMultiThumbnailRequest.h>
@@ -289,6 +291,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeCallbackResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeConfigRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeConfigResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeDirectUploadInfoRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeDirectUploadInfoResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeFaceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeFaceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeePersonRequest.h>
@@ -323,6 +327,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeUnbindedDevicesResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeVideoLicenseRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeVideoLicenseResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeVodCloudStorageDateRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeVodCloudStorageDateResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DestroyTWeSeeSubscriptionRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DestroyTWeSeeSubscriptionResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DirectBindDeviceInFamilyRequest.h>
@@ -377,6 +383,10 @@
 #include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkProductConfigListV2Response.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetVodCloudStorageEventListRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetVodCloudStorageEventListResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetVodCloudStorageVideoListRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetVodCloudStorageVideoListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetWechatDeviceTicketRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetWechatDeviceTicketResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ImportTWeSeeFacesRequest.h>
@@ -810,6 +820,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudStorageEventsResponse> DescribeCloudStorageEventsOutcome;
                 typedef std::future<DescribeCloudStorageEventsOutcome> DescribeCloudStorageEventsOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageEventsRequest&, DescribeCloudStorageEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageEventsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudStorageEventsByTWeSeePersonResponse> DescribeCloudStorageEventsByTWeSeePersonOutcome;
+                typedef std::future<DescribeCloudStorageEventsByTWeSeePersonOutcome> DescribeCloudStorageEventsByTWeSeePersonOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageEventsByTWeSeePersonRequest&, DescribeCloudStorageEventsByTWeSeePersonOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageEventsByTWeSeePersonAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudStorageEventsWithAITasksResponse> DescribeCloudStorageEventsWithAITasksOutcome;
                 typedef std::future<DescribeCloudStorageEventsWithAITasksOutcome> DescribeCloudStorageEventsWithAITasksOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageEventsWithAITasksRequest&, DescribeCloudStorageEventsWithAITasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageEventsWithAITasksAsyncHandler;
@@ -948,6 +961,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTWeSeeConfigResponse> DescribeTWeSeeConfigOutcome;
                 typedef std::future<DescribeTWeSeeConfigOutcome> DescribeTWeSeeConfigOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeTWeSeeConfigRequest&, DescribeTWeSeeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTWeSeeConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTWeSeeDirectUploadInfoResponse> DescribeTWeSeeDirectUploadInfoOutcome;
+                typedef std::future<DescribeTWeSeeDirectUploadInfoOutcome> DescribeTWeSeeDirectUploadInfoOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeTWeSeeDirectUploadInfoRequest&, DescribeTWeSeeDirectUploadInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTWeSeeDirectUploadInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTWeSeeFaceResponse> DescribeTWeSeeFaceOutcome;
                 typedef std::future<DescribeTWeSeeFaceOutcome> DescribeTWeSeeFaceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeTWeSeeFaceRequest&, DescribeTWeSeeFaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTWeSeeFaceAsyncHandler;
@@ -999,6 +1015,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVideoLicenseResponse> DescribeVideoLicenseOutcome;
                 typedef std::future<DescribeVideoLicenseOutcome> DescribeVideoLicenseOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeVideoLicenseRequest&, DescribeVideoLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoLicenseAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVodCloudStorageDateResponse> DescribeVodCloudStorageDateOutcome;
+                typedef std::future<DescribeVodCloudStorageDateOutcome> DescribeVodCloudStorageDateOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeVodCloudStorageDateRequest&, DescribeVodCloudStorageDateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodCloudStorageDateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DestroyTWeSeeSubscriptionResponse> DestroyTWeSeeSubscriptionOutcome;
                 typedef std::future<DestroyTWeSeeSubscriptionOutcome> DestroyTWeSeeSubscriptionOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DestroyTWeSeeSubscriptionRequest&, DestroyTWeSeeSubscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyTWeSeeSubscriptionAsyncHandler;
@@ -1080,6 +1099,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetTopicRuleListResponse> GetTopicRuleListOutcome;
                 typedef std::future<GetTopicRuleListOutcome> GetTopicRuleListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetTopicRuleListRequest&, GetTopicRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTopicRuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetVodCloudStorageEventListResponse> GetVodCloudStorageEventListOutcome;
+                typedef std::future<GetVodCloudStorageEventListOutcome> GetVodCloudStorageEventListOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::GetVodCloudStorageEventListRequest&, GetVodCloudStorageEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetVodCloudStorageEventListAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetVodCloudStorageVideoListResponse> GetVodCloudStorageVideoListOutcome;
+                typedef std::future<GetVodCloudStorageVideoListOutcome> GetVodCloudStorageVideoListOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::GetVodCloudStorageVideoListRequest&, GetVodCloudStorageVideoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetVodCloudStorageVideoListAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetWechatDeviceTicketResponse> GetWechatDeviceTicketOutcome;
                 typedef std::future<GetWechatDeviceTicketOutcome> GetWechatDeviceTicketOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetWechatDeviceTicketRequest&, GetWechatDeviceTicketOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetWechatDeviceTicketAsyncHandler;
@@ -2142,6 +2167,15 @@ namespace TencentCloud
                 DescribeCloudStorageEventsOutcomeCallable DescribeCloudStorageEventsCallable(const Model::DescribeCloudStorageEventsRequest& request);
 
                 /**
+                 *查询 TWeSee 人员关联的云存事件及 AI 任务
+                 * @param req DescribeCloudStorageEventsByTWeSeePersonRequest
+                 * @return DescribeCloudStorageEventsByTWeSeePersonOutcome
+                 */
+                DescribeCloudStorageEventsByTWeSeePersonOutcome DescribeCloudStorageEventsByTWeSeePerson(const Model::DescribeCloudStorageEventsByTWeSeePersonRequest &request);
+                void DescribeCloudStorageEventsByTWeSeePersonAsync(const Model::DescribeCloudStorageEventsByTWeSeePersonRequest& request, const DescribeCloudStorageEventsByTWeSeePersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageEventsByTWeSeePersonOutcomeCallable DescribeCloudStorageEventsByTWeSeePersonCallable(const Model::DescribeCloudStorageEventsByTWeSeePersonRequest& request);
+
+                /**
                  *拉取云存事件列表
                  * @param req DescribeCloudStorageEventsWithAITasksRequest
                  * @return DescribeCloudStorageEventsWithAITasksOutcome
@@ -2556,6 +2590,15 @@ namespace TencentCloud
                 DescribeTWeSeeConfigOutcomeCallable DescribeTWeSeeConfigCallable(const Model::DescribeTWeSeeConfigRequest& request);
 
                 /**
+                 *查询 TWeSee 直传信息
+                 * @param req DescribeTWeSeeDirectUploadInfoRequest
+                 * @return DescribeTWeSeeDirectUploadInfoOutcome
+                 */
+                DescribeTWeSeeDirectUploadInfoOutcome DescribeTWeSeeDirectUploadInfo(const Model::DescribeTWeSeeDirectUploadInfoRequest &request);
+                void DescribeTWeSeeDirectUploadInfoAsync(const Model::DescribeTWeSeeDirectUploadInfoRequest& request, const DescribeTWeSeeDirectUploadInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTWeSeeDirectUploadInfoOutcomeCallable DescribeTWeSeeDirectUploadInfoCallable(const Model::DescribeTWeSeeDirectUploadInfoRequest& request);
+
+                /**
                  *查询指定 TWeSee 人脸详情。
                  * @param req DescribeTWeSeeFaceRequest
                  * @return DescribeTWeSeeFaceOutcome
@@ -2709,6 +2752,15 @@ namespace TencentCloud
                 DescribeVideoLicenseOutcome DescribeVideoLicense(const Model::DescribeVideoLicenseRequest &request);
                 void DescribeVideoLicenseAsync(const Model::DescribeVideoLicenseRequest& request, const DescribeVideoLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVideoLicenseOutcomeCallable DescribeVideoLicenseCallable(const Model::DescribeVideoLicenseRequest& request);
+
+                /**
+                 *拉取云存日期
+                 * @param req DescribeVodCloudStorageDateRequest
+                 * @return DescribeVodCloudStorageDateOutcome
+                 */
+                DescribeVodCloudStorageDateOutcome DescribeVodCloudStorageDate(const Model::DescribeVodCloudStorageDateRequest &request);
+                void DescribeVodCloudStorageDateAsync(const Model::DescribeVodCloudStorageDateRequest& request, const DescribeVodCloudStorageDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVodCloudStorageDateOutcomeCallable DescribeVodCloudStorageDateCallable(const Model::DescribeVodCloudStorageDateRequest& request);
 
                 /**
                  *销毁 TWeSee 预付费订阅
@@ -2952,6 +3004,24 @@ namespace TencentCloud
                 GetTopicRuleListOutcome GetTopicRuleList(const Model::GetTopicRuleListRequest &request);
                 void GetTopicRuleListAsync(const Model::GetTopicRuleListRequest& request, const GetTopicRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetTopicRuleListOutcomeCallable GetTopicRuleListCallable(const Model::GetTopicRuleListRequest& request);
+
+                /**
+                 *获取云存事件列表
+                 * @param req GetVodCloudStorageEventListRequest
+                 * @return GetVodCloudStorageEventListOutcome
+                 */
+                GetVodCloudStorageEventListOutcome GetVodCloudStorageEventList(const Model::GetVodCloudStorageEventListRequest &request);
+                void GetVodCloudStorageEventListAsync(const Model::GetVodCloudStorageEventListRequest& request, const GetVodCloudStorageEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetVodCloudStorageEventListOutcomeCallable GetVodCloudStorageEventListCallable(const Model::GetVodCloudStorageEventListRequest& request);
+
+                /**
+                 *获取云存时间轴视频列表
+                 * @param req GetVodCloudStorageVideoListRequest
+                 * @return GetVodCloudStorageVideoListOutcome
+                 */
+                GetVodCloudStorageVideoListOutcome GetVodCloudStorageVideoList(const Model::GetVodCloudStorageVideoListRequest &request);
+                void GetVodCloudStorageVideoListAsync(const Model::GetVodCloudStorageVideoListRequest& request, const GetVodCloudStorageVideoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetVodCloudStorageVideoListOutcomeCallable GetVodCloudStorageVideoListCallable(const Model::GetVodCloudStorageVideoListRequest& request);
 
                 /**
                  *查询微信设备授权票据

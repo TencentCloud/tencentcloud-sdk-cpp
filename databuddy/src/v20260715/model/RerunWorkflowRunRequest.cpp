@@ -28,7 +28,8 @@ RerunWorkflowRunRequest::RerunWorkflowRunRequest() :
     m_workflowRunIdHasBeenSet(false),
     m_runTypeHasBeenSet(false),
     m_advancedParamsHasBeenSet(false),
-    m_taskIdsHasBeenSet(false)
+    m_taskIdsHasBeenSet(false),
+    m_scheduledTimeConfigHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,15 @@ string RerunWorkflowRunRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_scheduledTimeConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduledTimeConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_scheduledTimeConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -201,6 +211,22 @@ void RerunWorkflowRunRequest::SetTaskIds(const vector<string>& _taskIds)
 bool RerunWorkflowRunRequest::TaskIdsHasBeenSet() const
 {
     return m_taskIdsHasBeenSet;
+}
+
+ScheduledTimeConfig RerunWorkflowRunRequest::GetScheduledTimeConfig() const
+{
+    return m_scheduledTimeConfig;
+}
+
+void RerunWorkflowRunRequest::SetScheduledTimeConfig(const ScheduledTimeConfig& _scheduledTimeConfig)
+{
+    m_scheduledTimeConfig = _scheduledTimeConfig;
+    m_scheduledTimeConfigHasBeenSet = true;
+}
+
+bool RerunWorkflowRunRequest::ScheduledTimeConfigHasBeenSet() const
+{
+    return m_scheduledTimeConfigHasBeenSet;
 }
 
 

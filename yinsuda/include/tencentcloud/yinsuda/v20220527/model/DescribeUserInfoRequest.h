@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用名称。
-                     * @return AppName 应用名称。
+                     * 获取<p>应用名称。</p>
+                     * @return AppName <p>应用名称。</p>
                      * 
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置应用名称。
-                     * @param _appName 应用名称。
+                     * 设置<p>应用名称。</p>
+                     * @param _appName <p>应用名称。</p>
                      * 
                      */
                     void SetAppName(const std::string& _appName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取用户标识。
-                     * @return UserId 用户标识。
+                     * 获取<p>用户标识。</p>
+                     * @return UserId <p>用户标识。</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户标识。
-                     * @param _userId 用户标识。
+                     * 设置<p>用户标识。</p>
+                     * @param _userId <p>用户标识。</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用名称。
+                     * <p>应用名称。</p>
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * 用户标识。
+                     * <p>用户标识。</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;

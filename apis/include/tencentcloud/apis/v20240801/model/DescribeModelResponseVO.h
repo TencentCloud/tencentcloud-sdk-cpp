@@ -132,6 +132,27 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
+                     * 获取<p>模型提供商</p>
+                     * @return Provider <p>模型提供商</p>
+                     * 
+                     */
+                    std::string GetProvider() const;
+
+                    /**
+                     * 设置<p>模型提供商</p>
+                     * @param _provider <p>模型提供商</p>
+                     * 
+                     */
+                    void SetProvider(const std::string& _provider);
+
+                    /**
+                     * 判断参数 Provider 是否已赋值
+                     * @return Provider 是否已赋值
+                     * 
+                     */
+                    bool ProviderHasBeenSet() const;
+
+                    /**
                      * 获取<p>模型名称</p>
                      * @return Name <p>模型名称</p>
                      * 
@@ -429,6 +450,12 @@ namespace TencentCloud
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
+
+                    /**
+                     * <p>模型提供商</p>
+                     */
+                    std::string m_provider;
+                    bool m_providerHasBeenSet;
 
                     /**
                      * <p>模型名称</p>

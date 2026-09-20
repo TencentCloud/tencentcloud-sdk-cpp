@@ -25,7 +25,8 @@ AssetProviderDistributeInfo::AssetProviderDistributeInfo() :
     m_aliAssetCountHasBeenSet(false),
     m_awsAssetCountHasBeenSet(false),
     m_otherAssetCountHasBeenSet(false),
-    m_azureAssetCountHasBeenSet(false)
+    m_azureAssetCountHasBeenSet(false),
+    m_tceAssetCountHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome AssetProviderDistributeInfo::Deserialize(const rapidjson::Va
         m_azureAssetCountHasBeenSet = true;
     }
 
+    if (value.HasMember("TceAssetCount") && !value["TceAssetCount"].IsNull())
+    {
+        if (!value["TceAssetCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetProviderDistributeInfo.TceAssetCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tceAssetCount = value["TceAssetCount"].GetUint64();
+        m_tceAssetCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void AssetProviderDistributeInfo::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "AzureAssetCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_azureAssetCount, allocator);
+    }
+
+    if (m_tceAssetCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TceAssetCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tceAssetCount, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void AssetProviderDistributeInfo::SetAzureAssetCount(const uint64_t& _azureAsset
 bool AssetProviderDistributeInfo::AzureAssetCountHasBeenSet() const
 {
     return m_azureAssetCountHasBeenSet;
+}
+
+uint64_t AssetProviderDistributeInfo::GetTceAssetCount() const
+{
+    return m_tceAssetCount;
+}
+
+void AssetProviderDistributeInfo::SetTceAssetCount(const uint64_t& _tceAssetCount)
+{
+    m_tceAssetCount = _tceAssetCount;
+    m_tceAssetCountHasBeenSet = true;
+}
+
+bool AssetProviderDistributeInfo::TceAssetCountHasBeenSet() const
+{
+    return m_tceAssetCountHasBeenSet;
 }
 

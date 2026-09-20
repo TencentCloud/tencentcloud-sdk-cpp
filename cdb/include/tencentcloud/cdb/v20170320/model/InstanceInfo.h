@@ -1127,6 +1127,27 @@ namespace TencentCloud
                     bool DestroyProtectHasBeenSet() const;
 
                     /**
+                     * 获取<p>云盘版实例才使用该值。 on表示磁盘加密，否则为不加密。</p>
+                     * @return DiskEncryption <p>云盘版实例才使用该值。 on表示磁盘加密，否则为不加密。</p>
+                     * 
+                     */
+                    std::string GetDiskEncryption() const;
+
+                    /**
+                     * 设置<p>云盘版实例才使用该值。 on表示磁盘加密，否则为不加密。</p>
+                     * @param _diskEncryption <p>云盘版实例才使用该值。 on表示磁盘加密，否则为不加密。</p>
+                     * 
+                     */
+                    void SetDiskEncryption(const std::string& _diskEncryption);
+
+                    /**
+                     * 判断参数 DiskEncryption 是否已赋值
+                     * @return DiskEncryption 是否已赋值
+                     * 
+                     */
+                    bool DiskEncryptionHasBeenSet() const;
+
+                    /**
                      * 获取<p>TDSQL引擎参数</p>
                      * @return CpuModel <p>TDSQL引擎参数</p>
                      * 
@@ -1479,6 +1500,12 @@ namespace TencentCloud
                      */
                     std::string m_destroyProtect;
                     bool m_destroyProtectHasBeenSet;
+
+                    /**
+                     * <p>云盘版实例才使用该值。 on表示磁盘加密，否则为不加密。</p>
+                     */
+                    std::string m_diskEncryption;
+                    bool m_diskEncryptionHasBeenSet;
 
                     /**
                      * <p>TDSQL引擎参数</p>

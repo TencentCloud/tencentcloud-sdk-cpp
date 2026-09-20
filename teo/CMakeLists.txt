@@ -262,6 +262,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/AlgDetectRule.h
   include/tencentcloud/teo/v20220901/model/SecEntryValue.h
   include/tencentcloud/teo/v20220901/model/DescribeSecurityAPIResourceRequest.h
+  include/tencentcloud/teo/v20220901/model/OriginACLFamilyInfo.h
   include/tencentcloud/teo/v20220901/model/DiffIPWhitelist.h
   include/tencentcloud/teo/v20220901/model/DeleteSecurityIPGroupResponse.h
   include/tencentcloud/teo/v20220901/model/ModifyRuleRequest.h
@@ -327,7 +328,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DummyParseZoneFullConfigRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeConfigGroupVersionDetailRequest.h
   include/tencentcloud/teo/v20220901/model/ModifyPlanResponse.h
-  include/tencentcloud/teo/v20220901/model/DropPageDetail.h
+  include/tencentcloud/teo/v20220901/model/DescribeAvailableOriginACLFamilyResponse.h
   include/tencentcloud/teo/v20220901/model/CnameStatus.h
   include/tencentcloud/teo/v20220901/model/DescribeLogAnalysisDownloadTasksResponse.h
   include/tencentcloud/teo/v20220901/model/WafConfig.h
@@ -771,6 +772,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DDoSBlockData.h
   include/tencentcloud/teo/v20220901/model/IPSSLSetting.h
   include/tencentcloud/teo/v20220901/model/DescribeContentQuotaRequest.h
+  include/tencentcloud/teo/v20220901/model/DescribeAvailableOriginACLFamilyRequest.h
   include/tencentcloud/teo/v20220901/model/ModifyFunctionReplicaRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeMultiPathGatewaysRequest.h
   include/tencentcloud/teo/v20220901/model/BotPortraitRule.h
@@ -852,6 +854,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeL4ProxyRulesRequest.h
   include/tencentcloud/teo/v20220901/model/AiRule.h
   include/tencentcloud/teo/v20220901/model/Function.h
+  include/tencentcloud/teo/v20220901/model/DropPageDetail.h
   include/tencentcloud/teo/v20220901/model/DescribeWebSecurityTemplatesResponse.h
   include/tencentcloud/teo/v20220901/model/KVNamespaceParameters.h
   include/tencentcloud/teo/v20220901/model/DescribePrefetchOriginLimitResponse.h
@@ -1157,6 +1160,7 @@ set(teo_src
   src/v20220901/model/AlgDetectRule.cpp
   src/v20220901/model/SecEntryValue.cpp
   src/v20220901/model/DescribeSecurityAPIResourceRequest.cpp
+  src/v20220901/model/OriginACLFamilyInfo.cpp
   src/v20220901/model/DiffIPWhitelist.cpp
   src/v20220901/model/DeleteSecurityIPGroupResponse.cpp
   src/v20220901/model/ModifyRuleRequest.cpp
@@ -1222,7 +1226,7 @@ set(teo_src
   src/v20220901/model/DummyParseZoneFullConfigRequest.cpp
   src/v20220901/model/DescribeConfigGroupVersionDetailRequest.cpp
   src/v20220901/model/ModifyPlanResponse.cpp
-  src/v20220901/model/DropPageDetail.cpp
+  src/v20220901/model/DescribeAvailableOriginACLFamilyResponse.cpp
   src/v20220901/model/CnameStatus.cpp
   src/v20220901/model/DescribeLogAnalysisDownloadTasksResponse.cpp
   src/v20220901/model/WafConfig.cpp
@@ -1666,6 +1670,7 @@ set(teo_src
   src/v20220901/model/DDoSBlockData.cpp
   src/v20220901/model/IPSSLSetting.cpp
   src/v20220901/model/DescribeContentQuotaRequest.cpp
+  src/v20220901/model/DescribeAvailableOriginACLFamilyRequest.cpp
   src/v20220901/model/ModifyFunctionReplicaRequest.cpp
   src/v20220901/model/DescribeMultiPathGatewaysRequest.cpp
   src/v20220901/model/BotPortraitRule.cpp
@@ -1747,6 +1752,7 @@ set(teo_src
   src/v20220901/model/DescribeL4ProxyRulesRequest.cpp
   src/v20220901/model/AiRule.cpp
   src/v20220901/model/Function.cpp
+  src/v20220901/model/DropPageDetail.cpp
   src/v20220901/model/DescribeWebSecurityTemplatesResponse.cpp
   src/v20220901/model/KVNamespaceParameters.cpp
   src/v20220901/model/DescribePrefetchOriginLimitResponse.cpp

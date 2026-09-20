@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool GroupHasBeenSet() const;
 
+                    /**
+                     * 获取<p>消费者标签</p><p>传入 Label 表示只删除该标签路由，不传表示删除完整路由</p>
+                     * @return Label <p>消费者标签</p><p>传入 Label 表示只删除该标签路由，不传表示删除完整路由</p>
+                     * 
+                     */
+                    std::string GetLabel() const;
+
+                    /**
+                     * 设置<p>消费者标签</p><p>传入 Label 表示只删除该标签路由，不传表示删除完整路由</p>
+                     * @param _label <p>消费者标签</p><p>传入 Label 表示只删除该标签路由，不传表示删除完整路由</p>
+                     * 
+                     */
+                    void SetLabel(const std::string& _label);
+
+                    /**
+                     * 判断参数 Label 是否已赋值
+                     * @return Label 是否已赋值
+                     * 
+                     */
+                    bool LabelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_group;
                     bool m_groupHasBeenSet;
+
+                    /**
+                     * <p>消费者标签</p><p>传入 Label 表示只删除该标签路由，不传表示删除完整路由</p>
+                     */
+                    std::string m_label;
+                    bool m_labelHasBeenSet;
 
                 };
             }

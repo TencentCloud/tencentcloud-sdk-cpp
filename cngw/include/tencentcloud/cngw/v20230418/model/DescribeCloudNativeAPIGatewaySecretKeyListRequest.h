@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cngw/v20230418/model/Filter.h>
 
 
 namespace TencentCloud
@@ -106,6 +107,69 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
+                     * 获取<p>过滤条件。支持的 Name：Status / GenerateType / SecretType。</p>
+                     * @return Filters <p>过滤条件。支持的 Name：Status / GenerateType / SecretType。</p>
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置<p>过滤条件。支持的 Name：Status / GenerateType / SecretType。</p>
+                     * @param _filters <p>过滤条件。支持的 Name：Status / GenerateType / SecretType。</p>
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模糊匹配密钥名称。</p>
+                     * @return Keyword <p>模糊匹配密钥名称。</p>
+                     * 
+                     */
+                    std::string GetKeyword() const;
+
+                    /**
+                     * 设置<p>模糊匹配密钥名称。</p>
+                     * @param _keyword <p>模糊匹配密钥名称。</p>
+                     * 
+                     */
+                    void SetKeyword(const std::string& _keyword);
+
+                    /**
+                     * 判断参数 Keyword 是否已赋值
+                     * @return Keyword 是否已赋值
+                     * 
+                     */
+                    bool KeywordHasBeenSet() const;
+
+                    /**
+                     * 获取<p>对应资源的 ID（消费者 ID 或模型服务 ID）。</p>
+                     * @return ResourceId <p>对应资源的 ID（消费者 ID 或模型服务 ID）。</p>
+                     * 
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置<p>对应资源的 ID（消费者 ID 或模型服务 ID）。</p>
+                     * @param _resourceId <p>对应资源的 ID（消费者 ID 或模型服务 ID）。</p>
+                     * 
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>密钥归属资源类型。UseToBind=true 时必填。</p><p>枚举值：</p><ul><li>Consumer：消费者</li><li>ModelService：模型服务</li></ul>
                      * @return ResourceType <p>密钥归属资源类型。UseToBind=true 时必填。</p><p>枚举值：</p><ul><li>Consumer：消费者</li><li>ModelService：模型服务</li></ul>
                      * 
@@ -125,6 +189,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否用于绑定场景。true 时返回可被绑定到指定资源的密钥。</p>
+                     * @return UseToBind <p>是否用于绑定场景。true 时返回可被绑定到指定资源的密钥。</p>
+                     * 
+                     */
+                    bool GetUseToBind() const;
+
+                    /**
+                     * 设置<p>是否用于绑定场景。true 时返回可被绑定到指定资源的密钥。</p>
+                     * @param _useToBind <p>是否用于绑定场景。true 时返回可被绑定到指定资源的密钥。</p>
+                     * 
+                     */
+                    void SetUseToBind(const bool& _useToBind);
+
+                    /**
+                     * 判断参数 UseToBind 是否已赋值
+                     * @return UseToBind 是否已赋值
+                     * 
+                     */
+                    bool UseToBindHasBeenSet() const;
 
                 private:
 
@@ -147,10 +232,34 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
+                     * <p>过滤条件。支持的 Name：Status / GenerateType / SecretType。</p>
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
+
+                    /**
+                     * <p>模糊匹配密钥名称。</p>
+                     */
+                    std::string m_keyword;
+                    bool m_keywordHasBeenSet;
+
+                    /**
+                     * <p>对应资源的 ID（消费者 ID 或模型服务 ID）。</p>
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
+
+                    /**
                      * <p>密钥归属资源类型。UseToBind=true 时必填。</p><p>枚举值：</p><ul><li>Consumer：消费者</li><li>ModelService：模型服务</li></ul>
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
+
+                    /**
+                     * <p>是否用于绑定场景。true 时返回可被绑定到指定资源的密钥。</p>
+                     */
+                    bool m_useToBind;
+                    bool m_useToBindHasBeenSet;
 
                 };
             }

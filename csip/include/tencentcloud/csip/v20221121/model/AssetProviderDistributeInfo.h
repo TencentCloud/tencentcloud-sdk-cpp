@@ -151,6 +151,27 @@ namespace TencentCloud
                      */
                     bool AzureAssetCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>腾讯TCE专有云资产数量</p>
+                     * @return TceAssetCount <p>腾讯TCE专有云资产数量</p>
+                     * 
+                     */
+                    uint64_t GetTceAssetCount() const;
+
+                    /**
+                     * 设置<p>腾讯TCE专有云资产数量</p>
+                     * @param _tceAssetCount <p>腾讯TCE专有云资产数量</p>
+                     * 
+                     */
+                    void SetTceAssetCount(const uint64_t& _tceAssetCount);
+
+                    /**
+                     * 判断参数 TceAssetCount 是否已赋值
+                     * @return TceAssetCount 是否已赋值
+                     * 
+                     */
+                    bool TceAssetCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +203,12 @@ namespace TencentCloud
                      */
                     uint64_t m_azureAssetCount;
                     bool m_azureAssetCountHasBeenSet;
+
+                    /**
+                     * <p>腾讯TCE专有云资产数量</p>
+                     */
+                    uint64_t m_tceAssetCount;
+                    bool m_tceAssetCountHasBeenSet;
 
                 };
             }

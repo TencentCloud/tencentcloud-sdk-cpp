@@ -27,6 +27,7 @@
 #include <tencentcloud/cngw/v20230418/model/AIGWMCPUpstreamInfoDetail.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWMCPSessionConfig.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWHealthCheckSetting.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWLogConfig.h>
 
 
 namespace TencentCloud
@@ -134,15 +135,15 @@ namespace TencentCloud
                     bool TransportHasBeenSet() const;
 
                     /**
-                     * 获取<p>服务类型：</p><ul><li>Registry  </li><li>HostIP</li></ul>
-                     * @return UpstreamType <p>服务类型：</p><ul><li>Registry  </li><li>HostIP</li></ul>
+                     * 获取<p>后端类型</p><p>枚举值：</p><ul><li>MCPRegistry： mcp 注册中心</li><li>Registry： 普通注册中心</li><li>HostIP： 域名或ip</li><li>VirtualMCPServer： 虚拟MCPServer</li><li>DNS： 私有域名</li><li>Kubernetes： Kubernetes服务</li></ul>
+                     * @return UpstreamType <p>后端类型</p><p>枚举值：</p><ul><li>MCPRegistry： mcp 注册中心</li><li>Registry： 普通注册中心</li><li>HostIP： 域名或ip</li><li>VirtualMCPServer： 虚拟MCPServer</li><li>DNS： 私有域名</li><li>Kubernetes： Kubernetes服务</li></ul>
                      * 
                      */
                     std::string GetUpstreamType() const;
 
                     /**
-                     * 设置<p>服务类型：</p><ul><li>Registry  </li><li>HostIP</li></ul>
-                     * @param _upstreamType <p>服务类型：</p><ul><li>Registry  </li><li>HostIP</li></ul>
+                     * 设置<p>后端类型</p><p>枚举值：</p><ul><li>MCPRegistry： mcp 注册中心</li><li>Registry： 普通注册中心</li><li>HostIP： 域名或ip</li><li>VirtualMCPServer： 虚拟MCPServer</li><li>DNS： 私有域名</li><li>Kubernetes： Kubernetes服务</li></ul>
+                     * @param _upstreamType <p>后端类型</p><p>枚举值：</p><ul><li>MCPRegistry： mcp 注册中心</li><li>Registry： 普通注册中心</li><li>HostIP： 域名或ip</li><li>VirtualMCPServer： 虚拟MCPServer</li><li>DNS： 私有域名</li><li>Kubernetes： Kubernetes服务</li></ul>
                      * 
                      */
                     void SetUpstreamType(const std::string& _upstreamType);
@@ -502,6 +503,27 @@ namespace TencentCloud
                      */
                     bool PreserveHostHasBeenSet() const;
 
+                    /**
+                     * 获取<p>日志采集配置</p>
+                     * @return LogConfig <p>日志采集配置</p>
+                     * 
+                     */
+                    AIGWLogConfig GetLogConfig() const;
+
+                    /**
+                     * 设置<p>日志采集配置</p>
+                     * @param _logConfig <p>日志采集配置</p>
+                     * 
+                     */
+                    void SetLogConfig(const AIGWLogConfig& _logConfig);
+
+                    /**
+                     * 判断参数 LogConfig 是否已赋值
+                     * @return LogConfig 是否已赋值
+                     * 
+                     */
+                    bool LogConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -529,7 +551,7 @@ namespace TencentCloud
                     bool m_transportHasBeenSet;
 
                     /**
-                     * <p>服务类型：</p><ul><li>Registry  </li><li>HostIP</li></ul>
+                     * <p>后端类型</p><p>枚举值：</p><ul><li>MCPRegistry： mcp 注册中心</li><li>Registry： 普通注册中心</li><li>HostIP： 域名或ip</li><li>VirtualMCPServer： 虚拟MCPServer</li><li>DNS： 私有域名</li><li>Kubernetes： Kubernetes服务</li></ul>
                      */
                     std::string m_upstreamType;
                     bool m_upstreamTypeHasBeenSet;
@@ -632,6 +654,12 @@ namespace TencentCloud
                      */
                     bool m_preserveHost;
                     bool m_preserveHostHasBeenSet;
+
+                    /**
+                     * <p>日志采集配置</p>
+                     */
+                    AIGWLogConfig m_logConfig;
+                    bool m_logConfigHasBeenSet;
 
                 };
             }

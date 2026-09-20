@@ -26,6 +26,7 @@ DescribeCloudNativeAPIGatewayAIQuotaListRequest::DescribeCloudNativeAPIGatewayAI
     m_gatewayIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
+    m_keywordHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_alarmLevelsHasBeenSet(false)
 {
@@ -60,6 +61,14 @@ string DescribeCloudNativeAPIGatewayAIQuotaListRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_keywordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Keyword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keyword.c_str(), allocator).Move(), allocator);
     }
 
     if (m_filtersHasBeenSet)
@@ -144,6 +153,22 @@ void DescribeCloudNativeAPIGatewayAIQuotaListRequest::SetLimit(const uint64_t& _
 bool DescribeCloudNativeAPIGatewayAIQuotaListRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewayAIQuotaListRequest::GetKeyword() const
+{
+    return m_keyword;
+}
+
+void DescribeCloudNativeAPIGatewayAIQuotaListRequest::SetKeyword(const string& _keyword)
+{
+    m_keyword = _keyword;
+    m_keywordHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayAIQuotaListRequest::KeywordHasBeenSet() const
+{
+    return m_keywordHasBeenSet;
 }
 
 vector<Filter> DescribeCloudNativeAPIGatewayAIQuotaListRequest::GetFilters() const

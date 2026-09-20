@@ -25,7 +25,8 @@ using namespace std;
 DeleteConsumerRouteConfigRequest::DeleteConsumerRouteConfigRequest() :
     m_topicHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_groupHasBeenSet(false)
+    m_groupHasBeenSet(false),
+    m_labelHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DeleteConsumerRouteConfigRequest::ToJsonString() const
         string key = "Group";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_group.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_labelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Label";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DeleteConsumerRouteConfigRequest::SetGroup(const string& _group)
 bool DeleteConsumerRouteConfigRequest::GroupHasBeenSet() const
 {
     return m_groupHasBeenSet;
+}
+
+string DeleteConsumerRouteConfigRequest::GetLabel() const
+{
+    return m_label;
+}
+
+void DeleteConsumerRouteConfigRequest::SetLabel(const string& _label)
+{
+    m_label = _label;
+    m_labelHasBeenSet = true;
+}
+
+bool DeleteConsumerRouteConfigRequest::LabelHasBeenSet() const
+{
+    return m_labelHasBeenSet;
 }
 
 

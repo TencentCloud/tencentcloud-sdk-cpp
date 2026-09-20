@@ -38,7 +38,10 @@ DescribeSkillScanPayInfoResponse::DescribeSkillScanPayInfoResponse() :
     m_betaEndTimeHasBeenSet(false),
     m_timeNowHasBeenSet(false),
     m_uinHasBeenSet(false),
-    m_nickNameHasBeenSet(false)
+    m_nickNameHasBeenSet(false),
+    m_postPayStatusHasBeenSet(false),
+    m_postPayResourceIdHasBeenSet(false),
+    m_postPayBeginTimeHasBeenSet(false)
 {
 }
 
@@ -226,6 +229,36 @@ CoreInternalOutcome DescribeSkillScanPayInfoResponse::Deserialize(const string &
         m_nickNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PostPayStatus") && !rsp["PostPayStatus"].IsNull())
+    {
+        if (!rsp["PostPayStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostPayStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_postPayStatus = rsp["PostPayStatus"].GetInt64();
+        m_postPayStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PostPayResourceId") && !rsp["PostPayResourceId"].IsNull())
+    {
+        if (!rsp["PostPayResourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostPayResourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_postPayResourceId = string(rsp["PostPayResourceId"].GetString());
+        m_postPayResourceIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PostPayBeginTime") && !rsp["PostPayBeginTime"].IsNull())
+    {
+        if (!rsp["PostPayBeginTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostPayBeginTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_postPayBeginTime = string(rsp["PostPayBeginTime"].GetString());
+        m_postPayBeginTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -354,6 +387,30 @@ string DescribeSkillScanPayInfoResponse::ToJsonString() const
         string key = "NickName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nickName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_postPayStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PostPayStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_postPayStatus, allocator);
+    }
+
+    if (m_postPayResourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PostPayResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_postPayResourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_postPayBeginTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PostPayBeginTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_postPayBeginTime.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -516,6 +573,36 @@ string DescribeSkillScanPayInfoResponse::GetNickName() const
 bool DescribeSkillScanPayInfoResponse::NickNameHasBeenSet() const
 {
     return m_nickNameHasBeenSet;
+}
+
+int64_t DescribeSkillScanPayInfoResponse::GetPostPayStatus() const
+{
+    return m_postPayStatus;
+}
+
+bool DescribeSkillScanPayInfoResponse::PostPayStatusHasBeenSet() const
+{
+    return m_postPayStatusHasBeenSet;
+}
+
+string DescribeSkillScanPayInfoResponse::GetPostPayResourceId() const
+{
+    return m_postPayResourceId;
+}
+
+bool DescribeSkillScanPayInfoResponse::PostPayResourceIdHasBeenSet() const
+{
+    return m_postPayResourceIdHasBeenSet;
+}
+
+string DescribeSkillScanPayInfoResponse::GetPostPayBeginTime() const
+{
+    return m_postPayBeginTime;
+}
+
+bool DescribeSkillScanPayInfoResponse::PostPayBeginTimeHasBeenSet() const
+{
+    return m_postPayBeginTimeHasBeenSet;
 }
 
 

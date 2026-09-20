@@ -77,7 +77,7 @@ namespace TencentCloud
                      * @return Keywords <p>新增成功关键词列表</p>
                      * 
                      */
-                    std::vector<AuditKeywordInfo> GetKeywords() const;
+                    AuditKeywordInfo GetKeywords() const;
 
                     /**
                      * 判断参数 Keywords 是否已赋值
@@ -103,7 +103,7 @@ namespace TencentCloud
                     /**
                      * <p>新增成功关键词列表</p>
                      */
-                    std::vector<AuditKeywordInfo> m_keywords;
+                    AuditKeywordInfo m_keywords;
                     bool m_keywordsHasBeenSet;
 
                 };

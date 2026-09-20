@@ -45,8 +45,6 @@
 #include <tencentcloud/csip/v20221121/model/BatchModifyImageVirusWhitelistResponse.h>
 #include <tencentcloud/csip/v20221121/model/BatchModifyImageVulWhitelistRequest.h>
 #include <tencentcloud/csip/v20221121/model/BatchModifyImageVulWhitelistResponse.h>
-#include <tencentcloud/csip/v20221121/model/BindClusterOwnerRequest.h>
-#include <tencentcloud/csip/v20221121/model/BindClusterOwnerResponse.h>
 #include <tencentcloud/csip/v20221121/model/CancelEdrAlertIgnoreRequest.h>
 #include <tencentcloud/csip/v20221121/model/CancelEdrAlertIgnoreResponse.h>
 #include <tencentcloud/csip/v20221121/model/CheckCWPExposePathPermissionRequest.h>
@@ -575,8 +573,6 @@
 #include <tencentcloud/csip/v20221121/model/DescribeClusterDetailResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeClusterInstallCommandRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeClusterInstallCommandResponse.h>
-#include <tencentcloud/csip/v20221121/model/DescribeClusterListV2Request.h>
-#include <tencentcloud/csip/v20221121/model/DescribeClusterListV2Response.h>
 #include <tencentcloud/csip/v20221121/model/DescribeClusterNamespaceListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeClusterNamespaceListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeClusterNodeListRequest.h>
@@ -1111,6 +1107,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeSkillScanPayInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSkillScanResultRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSkillScanResultResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSkillScanTaskListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSkillScanTaskListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSourceIPAssetRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSourceIPAssetResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSourceIPDetailRequest.h>
@@ -1574,9 +1572,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchModifyImageVulWhitelistResponse> BatchModifyImageVulWhitelistOutcome;
                 typedef std::future<BatchModifyImageVulWhitelistOutcome> BatchModifyImageVulWhitelistOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::BatchModifyImageVulWhitelistRequest&, BatchModifyImageVulWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchModifyImageVulWhitelistAsyncHandler;
-                typedef Outcome<Core::Error, Model::BindClusterOwnerResponse> BindClusterOwnerOutcome;
-                typedef std::future<BindClusterOwnerOutcome> BindClusterOwnerOutcomeCallable;
-                typedef std::function<void(const CsipClient*, const Model::BindClusterOwnerRequest&, BindClusterOwnerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindClusterOwnerAsyncHandler;
                 typedef Outcome<Core::Error, Model::CancelEdrAlertIgnoreResponse> CancelEdrAlertIgnoreOutcome;
                 typedef std::future<CancelEdrAlertIgnoreOutcome> CancelEdrAlertIgnoreOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CancelEdrAlertIgnoreRequest&, CancelEdrAlertIgnoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelEdrAlertIgnoreAsyncHandler;
@@ -2369,9 +2364,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterInstallCommandResponse> DescribeClusterInstallCommandOutcome;
                 typedef std::future<DescribeClusterInstallCommandOutcome> DescribeClusterInstallCommandOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeClusterInstallCommandRequest&, DescribeClusterInstallCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterInstallCommandAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeClusterListV2Response> DescribeClusterListV2Outcome;
-                typedef std::future<DescribeClusterListV2Outcome> DescribeClusterListV2OutcomeCallable;
-                typedef std::function<void(const CsipClient*, const Model::DescribeClusterListV2Request&, DescribeClusterListV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterListV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterNamespaceListResponse> DescribeClusterNamespaceListOutcome;
                 typedef std::future<DescribeClusterNamespaceListOutcome> DescribeClusterNamespaceListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeClusterNamespaceListRequest&, DescribeClusterNamespaceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterNamespaceListAsyncHandler;
@@ -3173,6 +3165,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSkillScanResultResponse> DescribeSkillScanResultOutcome;
                 typedef std::future<DescribeSkillScanResultOutcome> DescribeSkillScanResultOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeSkillScanResultRequest&, DescribeSkillScanResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSkillScanResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSkillScanTaskListResponse> DescribeSkillScanTaskListOutcome;
+                typedef std::future<DescribeSkillScanTaskListOutcome> DescribeSkillScanTaskListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeSkillScanTaskListRequest&, DescribeSkillScanTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSkillScanTaskListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSourceIPAssetResponse> DescribeSourceIPAssetOutcome;
                 typedef std::future<DescribeSourceIPAssetOutcome> DescribeSourceIPAssetOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeSourceIPAssetRequest&, DescribeSourceIPAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSourceIPAssetAsyncHandler;
@@ -3898,15 +3893,6 @@ namespace TencentCloud
                 BatchModifyImageVulWhitelistOutcome BatchModifyImageVulWhitelist(const Model::BatchModifyImageVulWhitelistRequest &request);
                 void BatchModifyImageVulWhitelistAsync(const Model::BatchModifyImageVulWhitelistRequest& request, const BatchModifyImageVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchModifyImageVulWhitelistOutcomeCallable BatchModifyImageVulWhitelistCallable(const Model::BatchModifyImageVulWhitelistRequest& request);
-
-                /**
-                 *绑定集群负责人
-                 * @param req BindClusterOwnerRequest
-                 * @return BindClusterOwnerOutcome
-                 */
-                BindClusterOwnerOutcome BindClusterOwner(const Model::BindClusterOwnerRequest &request);
-                void BindClusterOwnerAsync(const Model::BindClusterOwnerRequest& request, const BindClusterOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                BindClusterOwnerOutcomeCallable BindClusterOwnerCallable(const Model::BindClusterOwnerRequest& request);
 
                 /**
                  *取消已永久忽略的EDR多行为告警，从AI-Link永久忽略白名单移除对应主机+规则记录，并将告警状态恢复为待处理（PENDING）
@@ -6301,15 +6287,6 @@ namespace TencentCloud
                 DescribeClusterInstallCommandOutcomeCallable DescribeClusterInstallCommandCallable(const Model::DescribeClusterInstallCommandRequest& request);
 
                 /**
-                 *查询集群列表
-                 * @param req DescribeClusterListV2Request
-                 * @return DescribeClusterListV2Outcome
-                 */
-                DescribeClusterListV2Outcome DescribeClusterListV2(const Model::DescribeClusterListV2Request &request);
-                void DescribeClusterListV2Async(const Model::DescribeClusterListV2Request& request, const DescribeClusterListV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeClusterListV2OutcomeCallable DescribeClusterListV2Callable(const Model::DescribeClusterListV2Request& request);
-
-                /**
                  *查询集群命名空间列表
                  * @param req DescribeClusterNamespaceListRequest
                  * @return DescribeClusterNamespaceListOutcome
@@ -8695,7 +8672,7 @@ namespace TencentCloud
                 DescribeSkillScanAlertListOutcomeCallable DescribeSkillScanAlertListCallable(const Model::DescribeSkillScanAlertListRequest& request);
 
                 /**
-                 *查询 Skill 安全检测计费信息，包括订单状态、总配额、已消耗配额、到期时间、支付模式等。无订单时返回零值（仅含 TimeNow 和 BetaEndTime）。试用订单通过 ModifyTrialStatus(Module=9) 领取，正式订单通过计费系统创建。
+                 *查询 Skill 安全检测计费信息，包括订单状态、总配额、已消耗配额、到期时间、支付模式等。无订单时返回零值（仅含 TimeNow 和 BetaEndTime）。试用订单通过 ModifyTrialStatus(Module=9) 领取，正式订单通过计费系统创建。后付费资源信息通过 PostPayStatus、PostPayResourceId、PostPayBeginTime 返回，与预付费订单字段相互独立，二者可同时有效（预付额度耗尽后溢出用量进入后付费）。
                  * @param req DescribeSkillScanPayInfoRequest
                  * @return DescribeSkillScanPayInfoOutcome
                  */
@@ -8711,6 +8688,15 @@ namespace TencentCloud
                 DescribeSkillScanResultOutcome DescribeSkillScanResult(const Model::DescribeSkillScanResultRequest &request);
                 void DescribeSkillScanResultAsync(const Model::DescribeSkillScanResultRequest& request, const DescribeSkillScanResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSkillScanResultOutcomeCallable DescribeSkillScanResultCallable(const Model::DescribeSkillScanResultRequest& request);
+
+                /**
+                 *分页查询 Skill 扫描任务列表，返回每个任务的 Skill 名称、消耗次数与上传时间，按上传时间倒序排列。默认查询本月数据，可通过 StartTime / EndTime 指定时间范围。
+                 * @param req DescribeSkillScanTaskListRequest
+                 * @return DescribeSkillScanTaskListOutcome
+                 */
+                DescribeSkillScanTaskListOutcome DescribeSkillScanTaskList(const Model::DescribeSkillScanTaskListRequest &request);
+                void DescribeSkillScanTaskListAsync(const Model::DescribeSkillScanTaskListRequest& request, const DescribeSkillScanTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSkillScanTaskListOutcomeCallable DescribeSkillScanTaskListCallable(const Model::DescribeSkillScanTaskListRequest& request);
 
                 /**
                  *获取用户访问密钥资产列表（源IP视角）

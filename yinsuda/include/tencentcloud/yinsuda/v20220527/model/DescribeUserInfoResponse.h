@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户信息。
-                     * @return UserInfo 用户信息。
+                     * 获取<p>用户信息。</p>
+                     * @return UserInfo <p>用户信息。</p>
                      * 
                      */
                     UserInfo GetUserInfo() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户信息。
+                     * <p>用户信息。</p>
                      */
                     UserInfo m_userInfo;
                     bool m_userInfoHasBeenSet;

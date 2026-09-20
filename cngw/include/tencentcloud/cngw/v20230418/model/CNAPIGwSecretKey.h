@@ -33,6 +33,7 @@
 #include <tencentcloud/cngw/v20230418/model/AIGWBasicCredentialConfig.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWCustomHeaderCredentialConfig.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWQueryParamCredentialConfig.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWSimpleSecretKey.h>
 
 
 namespace TencentCloud
@@ -638,6 +639,48 @@ namespace TencentCloud
                      */
                     bool QueryParamCredentialConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>该消费者密钥绑定的模型密钥列表</p>
+                     * @return BoundModelSecretKeys <p>该消费者密钥绑定的模型密钥列表</p>
+                     * 
+                     */
+                    std::vector<AIGWSimpleSecretKey> GetBoundModelSecretKeys() const;
+
+                    /**
+                     * 设置<p>该消费者密钥绑定的模型密钥列表</p>
+                     * @param _boundModelSecretKeys <p>该消费者密钥绑定的模型密钥列表</p>
+                     * 
+                     */
+                    void SetBoundModelSecretKeys(const std::vector<AIGWSimpleSecretKey>& _boundModelSecretKeys);
+
+                    /**
+                     * 判断参数 BoundModelSecretKeys 是否已赋值
+                     * @return BoundModelSecretKeys 是否已赋值
+                     * 
+                     */
+                    bool BoundModelSecretKeysHasBeenSet() const;
+
+                    /**
+                     * 获取<p>绑定了该模型密钥的消费者密钥列表</p>
+                     * @return BoundConsumerSecretKeys <p>绑定了该模型密钥的消费者密钥列表</p>
+                     * 
+                     */
+                    std::vector<AIGWSimpleSecretKey> GetBoundConsumerSecretKeys() const;
+
+                    /**
+                     * 设置<p>绑定了该模型密钥的消费者密钥列表</p>
+                     * @param _boundConsumerSecretKeys <p>绑定了该模型密钥的消费者密钥列表</p>
+                     * 
+                     */
+                    void SetBoundConsumerSecretKeys(const std::vector<AIGWSimpleSecretKey>& _boundConsumerSecretKeys);
+
+                    /**
+                     * 判断参数 BoundConsumerSecretKeys 是否已赋值
+                     * @return BoundConsumerSecretKeys 是否已赋值
+                     * 
+                     */
+                    bool BoundConsumerSecretKeysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -805,6 +848,18 @@ namespace TencentCloud
                      */
                     AIGWQueryParamCredentialConfig m_queryParamCredentialConfig;
                     bool m_queryParamCredentialConfigHasBeenSet;
+
+                    /**
+                     * <p>该消费者密钥绑定的模型密钥列表</p>
+                     */
+                    std::vector<AIGWSimpleSecretKey> m_boundModelSecretKeys;
+                    bool m_boundModelSecretKeysHasBeenSet;
+
+                    /**
+                     * <p>绑定了该模型密钥的消费者密钥列表</p>
+                     */
+                    std::vector<AIGWSimpleSecretKey> m_boundConsumerSecretKeys;
+                    bool m_boundConsumerSecretKeysHasBeenSet;
 
                 };
             }

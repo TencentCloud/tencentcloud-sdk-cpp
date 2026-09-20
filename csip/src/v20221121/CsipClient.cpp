@@ -590,56 +590,6 @@ CsipClient::BatchModifyImageVulWhitelistOutcomeCallable CsipClient::BatchModifyI
     return prom->get_future();
 }
 
-CsipClient::BindClusterOwnerOutcome CsipClient::BindClusterOwner(const BindClusterOwnerRequest &request)
-{
-    auto outcome = MakeRequest(request, "BindClusterOwner");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        BindClusterOwnerResponse rsp = BindClusterOwnerResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return BindClusterOwnerOutcome(rsp);
-        else
-            return BindClusterOwnerOutcome(o.GetError());
-    }
-    else
-    {
-        return BindClusterOwnerOutcome(outcome.GetError());
-    }
-}
-
-void CsipClient::BindClusterOwnerAsync(const BindClusterOwnerRequest& request, const BindClusterOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const BindClusterOwnerRequest&;
-    using Resp = BindClusterOwnerResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "BindClusterOwner", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-CsipClient::BindClusterOwnerOutcomeCallable CsipClient::BindClusterOwnerCallable(const BindClusterOwnerRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<BindClusterOwnerOutcome>>();
-    BindClusterOwnerAsync(
-    request,
-    [prom](
-        const CsipClient*,
-        const BindClusterOwnerRequest&,
-        BindClusterOwnerOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 CsipClient::CancelEdrAlertIgnoreOutcome CsipClient::CancelEdrAlertIgnore(const CancelEdrAlertIgnoreRequest &request)
 {
     auto outcome = MakeRequest(request, "CancelEdrAlertIgnore");
@@ -13832,56 +13782,6 @@ CsipClient::DescribeClusterInstallCommandOutcomeCallable CsipClient::DescribeClu
         const CsipClient*,
         const DescribeClusterInstallCommandRequest&,
         DescribeClusterInstallCommandOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-CsipClient::DescribeClusterListV2Outcome CsipClient::DescribeClusterListV2(const DescribeClusterListV2Request &request)
-{
-    auto outcome = MakeRequest(request, "DescribeClusterListV2");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeClusterListV2Response rsp = DescribeClusterListV2Response();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeClusterListV2Outcome(rsp);
-        else
-            return DescribeClusterListV2Outcome(o.GetError());
-    }
-    else
-    {
-        return DescribeClusterListV2Outcome(outcome.GetError());
-    }
-}
-
-void CsipClient::DescribeClusterListV2Async(const DescribeClusterListV2Request& request, const DescribeClusterListV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeClusterListV2Request&;
-    using Resp = DescribeClusterListV2Response;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeClusterListV2", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-CsipClient::DescribeClusterListV2OutcomeCallable CsipClient::DescribeClusterListV2Callable(const DescribeClusterListV2Request &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeClusterListV2Outcome>>();
-    DescribeClusterListV2Async(
-    request,
-    [prom](
-        const CsipClient*,
-        const DescribeClusterListV2Request&,
-        DescribeClusterListV2Outcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -27232,6 +27132,56 @@ CsipClient::DescribeSkillScanResultOutcomeCallable CsipClient::DescribeSkillScan
         const CsipClient*,
         const DescribeSkillScanResultRequest&,
         DescribeSkillScanResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeSkillScanTaskListOutcome CsipClient::DescribeSkillScanTaskList(const DescribeSkillScanTaskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSkillScanTaskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSkillScanTaskListResponse rsp = DescribeSkillScanTaskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSkillScanTaskListOutcome(rsp);
+        else
+            return DescribeSkillScanTaskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSkillScanTaskListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeSkillScanTaskListAsync(const DescribeSkillScanTaskListRequest& request, const DescribeSkillScanTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSkillScanTaskListRequest&;
+    using Resp = DescribeSkillScanTaskListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSkillScanTaskList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeSkillScanTaskListOutcomeCallable CsipClient::DescribeSkillScanTaskListCallable(const DescribeSkillScanTaskListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSkillScanTaskListOutcome>>();
+    DescribeSkillScanTaskListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeSkillScanTaskListRequest&,
+        DescribeSkillScanTaskListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

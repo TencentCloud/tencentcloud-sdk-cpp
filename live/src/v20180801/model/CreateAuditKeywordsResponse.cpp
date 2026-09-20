@@ -99,21 +99,18 @@ CoreInternalOutcome CreateAuditKeywordsResponse::Deserialize(const string &paylo
 
     if (rsp.HasMember("Keywords") && !rsp["Keywords"].IsNull())
     {
-        if (!rsp["Keywords"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Keywords` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["Keywords"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["Keywords"].IsObject())
         {
-            AuditKeywordInfo item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_keywords.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `Keywords` is not object type").SetRequestId(requestId));
         }
+
+        CoreInternalOutcome outcome = m_keywords.Deserialize(rsp["Keywords"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
         m_keywordsHasBeenSet = true;
     }
 
@@ -160,14 +157,8 @@ string CreateAuditKeywordsResponse::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Keywords";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_keywords.begin(); itr != m_keywords.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_keywords.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -202,7 +193,7 @@ bool CreateAuditKeywordsResponse::DupInfosHasBeenSet() const
     return m_dupInfosHasBeenSet;
 }
 
-vector<AuditKeywordInfo> CreateAuditKeywordsResponse::GetKeywords() const
+AuditKeywordInfo CreateAuditKeywordsResponse::GetKeywords() const
 {
     return m_keywords;
 }

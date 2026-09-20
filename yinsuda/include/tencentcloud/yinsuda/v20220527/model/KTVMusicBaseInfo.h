@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取歌曲Id。
-                     * @return MusicId 歌曲Id。
+                     * 获取<p>歌曲Id。</p>
+                     * @return MusicId <p>歌曲Id。</p>
                      * 
                      */
                     std::string GetMusicId() const;
 
                     /**
-                     * 设置歌曲Id。
-                     * @param _musicId 歌曲Id。
+                     * 设置<p>歌曲Id。</p>
+                     * @param _musicId <p>歌曲Id。</p>
                      * 
                      */
                     void SetMusicId(const std::string& _musicId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool MusicIdHasBeenSet() const;
 
                     /**
-                     * 获取歌曲名称。
-                     * @return Name 歌曲名称。
+                     * 获取<p>歌曲名称。</p>
+                     * @return Name <p>歌曲名称。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置歌曲名称。
-                     * @param _name 歌曲名称。
+                     * 设置<p>歌曲名称。</p>
+                     * @param _name <p>歌曲名称。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取歌手名称。
-                     * @return SingerSet 歌手名称。
+                     * 获取<p>歌手名称。</p>
+                     * @return SingerSet <p>歌手名称。</p>
                      * 
                      */
                     std::vector<std::string> GetSingerSet() const;
 
                     /**
-                     * 设置歌手名称。
-                     * @param _singerSet 歌手名称。
+                     * 设置<p>歌手名称。</p>
+                     * @param _singerSet <p>歌手名称。</p>
                      * 
                      */
                     void SetSingerSet(const std::vector<std::string>& _singerSet);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool SingerSetHasBeenSet() const;
 
                     /**
-                     * 获取播放时长。
-                     * @return Duration 播放时长。
+                     * 获取<p>播放时长。</p><p>单位：秒</p>
+                     * @return Duration <p>播放时长。</p><p>单位：秒</p>
                      * 
                      */
                     int64_t GetDuration() const;
 
                     /**
-                     * 设置播放时长。
-                     * @param _duration 播放时长。
+                     * 设置<p>播放时长。</p><p>单位：秒</p>
+                     * @param _duration <p>播放时长。</p><p>单位：秒</p>
                      * 
                      */
                     void SetDuration(const int64_t& _duration);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取歌手图片链接。
-                     * @return SingerImageUrl 歌手图片链接。
+                     * 获取<p>歌手图片链接。</p>
+                     * @return SingerImageUrl <p>歌手图片链接。</p>
                      * 
                      */
                     std::string GetSingerImageUrl() const;
 
                     /**
-                     * 设置歌手图片链接。
-                     * @param _singerImageUrl 歌手图片链接。
+                     * 设置<p>歌手图片链接。</p>
+                     * @param _singerImageUrl <p>歌手图片链接。</p>
                      * 
                      */
                     void SetSingerImageUrl(const std::string& _singerImageUrl);
@@ -153,18 +153,18 @@ namespace TencentCloud
                     bool SingerImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取专辑信息。
+                     * 获取<p>专辑信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlbumInfo 专辑信息。
+                     * @return AlbumInfo <p>专辑信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MusicAlbumInfo GetAlbumInfo() const;
 
                     /**
-                     * 设置专辑信息。
+                     * 设置<p>专辑信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _albumInfo 专辑信息。
+                     * @param _albumInfo <p>专辑信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -178,23 +178,15 @@ namespace TencentCloud
                     bool AlbumInfoHasBeenSet() const;
 
                     /**
-                     * 获取权益列表，取值有：
-<li>Play：可播；</li>
-<li>Sing：可唱。</li>
-                     * @return RightSet 权益列表，取值有：
-<li>Play：可播；</li>
-<li>Sing：可唱。</li>
+                     * 获取<p>权益列表，取值有：</p><li>Play：可播；</li><li>Sing：可唱。</li>
+                     * @return RightSet <p>权益列表，取值有：</p><li>Play：可播；</li><li>Sing：可唱。</li>
                      * 
                      */
                     std::vector<std::string> GetRightSet() const;
 
                     /**
-                     * 设置权益列表，取值有：
-<li>Play：可播；</li>
-<li>Sing：可唱。</li>
-                     * @param _rightSet 权益列表，取值有：
-<li>Play：可播；</li>
-<li>Sing：可唱。</li>
+                     * 设置<p>权益列表，取值有：</p><li>Play：可播；</li><li>Sing：可唱。</li>
+                     * @param _rightSet <p>权益列表，取值有：</p><li>Play：可播；</li><li>Sing：可唱。</li>
                      * 
                      */
                     void SetRightSet(const std::vector<std::string>& _rightSet);
@@ -207,23 +199,15 @@ namespace TencentCloud
                     bool RightSetHasBeenSet() const;
 
                     /**
-                     * 获取推荐类型，取值有：
-<li>Featured：精选；</li>
-<li>Other：其他。</li>
-                     * @return RecommendType 推荐类型，取值有：
-<li>Featured：精选；</li>
-<li>Other：其他。</li>
+                     * 获取<p>推荐类型，取值有：</p><li>Featured：精选；</li><li>Other：其他。</li>
+                     * @return RecommendType <p>推荐类型，取值有：</p><li>Featured：精选；</li><li>Other：其他。</li>
                      * 
                      */
                     std::string GetRecommendType() const;
 
                     /**
-                     * 设置推荐类型，取值有：
-<li>Featured：精选；</li>
-<li>Other：其他。</li>
-                     * @param _recommendType 推荐类型，取值有：
-<li>Featured：精选；</li>
-<li>Other：其他。</li>
+                     * 设置<p>推荐类型，取值有：</p><li>Featured：精选；</li><li>Other：其他。</li>
+                     * @param _recommendType <p>推荐类型，取值有：</p><li>Featured：精选；</li><li>Other：其他。</li>
                      * 
                      */
                     void SetRecommendType(const std::string& _recommendType);
@@ -238,54 +222,50 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 歌曲Id。
+                     * <p>歌曲Id。</p>
                      */
                     std::string m_musicId;
                     bool m_musicIdHasBeenSet;
 
                     /**
-                     * 歌曲名称。
+                     * <p>歌曲名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 歌手名称。
+                     * <p>歌手名称。</p>
                      */
                     std::vector<std::string> m_singerSet;
                     bool m_singerSetHasBeenSet;
 
                     /**
-                     * 播放时长。
+                     * <p>播放时长。</p><p>单位：秒</p>
                      */
                     int64_t m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 歌手图片链接。
+                     * <p>歌手图片链接。</p>
                      */
                     std::string m_singerImageUrl;
                     bool m_singerImageUrlHasBeenSet;
 
                     /**
-                     * 专辑信息。
+                     * <p>专辑信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MusicAlbumInfo m_albumInfo;
                     bool m_albumInfoHasBeenSet;
 
                     /**
-                     * 权益列表，取值有：
-<li>Play：可播；</li>
-<li>Sing：可唱。</li>
+                     * <p>权益列表，取值有：</p><li>Play：可播；</li><li>Sing：可唱。</li>
                      */
                     std::vector<std::string> m_rightSet;
                     bool m_rightSetHasBeenSet;
 
                     /**
-                     * 推荐类型，取值有：
-<li>Featured：精选；</li>
-<li>Other：其他。</li>
+                     * <p>推荐类型，取值有：</p><li>Featured：精选；</li><li>Other：其他。</li>
                      */
                     std::string m_recommendType;
                     bool m_recommendTypeHasBeenSet;

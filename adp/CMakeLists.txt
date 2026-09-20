@@ -67,6 +67,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/AgentSpec.h
   include/tencentcloud/adp/v20260520/model/ClawAgentConfig.h
   include/tencentcloud/adp/v20260520/model/ModelLimit.h
+  include/tencentcloud/adp/v20260520/model/Distribution.h
   include/tencentcloud/adp/v20260520/model/CreatePluginRequest.h
   include/tencentcloud/adp/v20260520/model/ThinkModel.h
   include/tencentcloud/adp/v20260520/model/DeleteAgentResponse.h
@@ -108,6 +109,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/ModifyVariableRequest.h
   include/tencentcloud/adp/v20260520/model/DescribeConcurrencyLimitDetailListRequest.h
   include/tencentcloud/adp/v20260520/model/MCPPluginConfig.h
+  include/tencentcloud/adp/v20260520/model/DescribeAppStatisticsOverviewRequest.h
   include/tencentcloud/adp/v20260520/model/CreateMsgRecordCategoryResponse.h
   include/tencentcloud/adp/v20260520/model/CreateQAListRequest.h
   include/tencentcloud/adp/v20260520/model/DeleteVariableRequest.h
@@ -197,11 +199,11 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/AppAppeal.h
   include/tencentcloud/adp/v20260520/model/DescribeSkillCategoryListRequest.h
   include/tencentcloud/adp/v20260520/model/DigitalHumanConfig.h
+  include/tencentcloud/adp/v20260520/model/IntervalSchedule.h
   include/tencentcloud/adp/v20260520/model/DescribeLatestReleaseResponse.h
   include/tencentcloud/adp/v20260520/model/SearchContext.h
   include/tencentcloud/adp/v20260520/model/ResponseParam.h
   include/tencentcloud/adp/v20260520/model/SingleWorkflowConfig.h
-  include/tencentcloud/adp/v20260520/model/CreatePluginResponse.h
   include/tencentcloud/adp/v20260520/model/CreateSimilarQuestionResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeChannelResponse.h
   include/tencentcloud/adp/v20260520/model/QAModifyFields.h
@@ -269,7 +271,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/WechatClawBotChannelConfig.h
   include/tencentcloud/adp/v20260520/model/AuditLog.h
   include/tencentcloud/adp/v20260520/model/UnfavoriteSkillRequest.h
-  include/tencentcloud/adp/v20260520/model/InputBoxConfig.h
+  include/tencentcloud/adp/v20260520/model/DescribeConversationResponse.h
   include/tencentcloud/adp/v20260520/model/AppTrigger.h
   include/tencentcloud/adp/v20260520/model/DescribeAgentSummaryListResponse.h
   include/tencentcloud/adp/v20260520/model/DeleteKBRequest.h
@@ -500,7 +502,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/BasicBilling.h
   include/tencentcloud/adp/v20260520/model/DescribeAppRequest.h
   include/tencentcloud/adp/v20260520/model/DescribeResourceSummaryRequest.h
-  include/tencentcloud/adp/v20260520/model/IntervalSchedule.h
+  include/tencentcloud/adp/v20260520/model/CreatePluginResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeLatestReleaseRequest.h
   include/tencentcloud/adp/v20260520/model/DeleteChannelRequest.h
   include/tencentcloud/adp/v20260520/model/CronSchedule.h
@@ -527,7 +529,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/DescribeAuditLogListRequest.h
   include/tencentcloud/adp/v20260520/model/VoiceConfig.h
   include/tencentcloud/adp/v20260520/model/DocUpdatePeriod.h
-  include/tencentcloud/adp/v20260520/model/DescribeConversationResponse.h
+  include/tencentcloud/adp/v20260520/model/InputBoxConfig.h
   include/tencentcloud/adp/v20260520/model/Space.h
   include/tencentcloud/adp/v20260520/model/PluginUsageSummary.h
   include/tencentcloud/adp/v20260520/model/AppMetadata.h
@@ -542,6 +544,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/RerankConfig.h
   include/tencentcloud/adp/v20260520/model/ConcurrencyLimitDetail.h
   include/tencentcloud/adp/v20260520/model/CreateMsgRecordCategoryRequest.h
+  include/tencentcloud/adp/v20260520/model/DescribeAppStatisticsOverviewResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeAgentDetailRequest.h
   include/tencentcloud/adp/v20260520/model/AgentPluginParameter.h
   include/tencentcloud/adp/v20260520/model/PluginUsageDetail.h
@@ -616,6 +619,7 @@ set(adp_src
   src/v20260520/model/AgentSpec.cpp
   src/v20260520/model/ClawAgentConfig.cpp
   src/v20260520/model/ModelLimit.cpp
+  src/v20260520/model/Distribution.cpp
   src/v20260520/model/CreatePluginRequest.cpp
   src/v20260520/model/ThinkModel.cpp
   src/v20260520/model/DeleteAgentResponse.cpp
@@ -657,6 +661,7 @@ set(adp_src
   src/v20260520/model/ModifyVariableRequest.cpp
   src/v20260520/model/DescribeConcurrencyLimitDetailListRequest.cpp
   src/v20260520/model/MCPPluginConfig.cpp
+  src/v20260520/model/DescribeAppStatisticsOverviewRequest.cpp
   src/v20260520/model/CreateMsgRecordCategoryResponse.cpp
   src/v20260520/model/CreateQAListRequest.cpp
   src/v20260520/model/DeleteVariableRequest.cpp
@@ -746,11 +751,11 @@ set(adp_src
   src/v20260520/model/AppAppeal.cpp
   src/v20260520/model/DescribeSkillCategoryListRequest.cpp
   src/v20260520/model/DigitalHumanConfig.cpp
+  src/v20260520/model/IntervalSchedule.cpp
   src/v20260520/model/DescribeLatestReleaseResponse.cpp
   src/v20260520/model/SearchContext.cpp
   src/v20260520/model/ResponseParam.cpp
   src/v20260520/model/SingleWorkflowConfig.cpp
-  src/v20260520/model/CreatePluginResponse.cpp
   src/v20260520/model/CreateSimilarQuestionResponse.cpp
   src/v20260520/model/DescribeChannelResponse.cpp
   src/v20260520/model/QAModifyFields.cpp
@@ -818,7 +823,7 @@ set(adp_src
   src/v20260520/model/WechatClawBotChannelConfig.cpp
   src/v20260520/model/AuditLog.cpp
   src/v20260520/model/UnfavoriteSkillRequest.cpp
-  src/v20260520/model/InputBoxConfig.cpp
+  src/v20260520/model/DescribeConversationResponse.cpp
   src/v20260520/model/AppTrigger.cpp
   src/v20260520/model/DescribeAgentSummaryListResponse.cpp
   src/v20260520/model/DeleteKBRequest.cpp
@@ -1049,7 +1054,7 @@ set(adp_src
   src/v20260520/model/BasicBilling.cpp
   src/v20260520/model/DescribeAppRequest.cpp
   src/v20260520/model/DescribeResourceSummaryRequest.cpp
-  src/v20260520/model/IntervalSchedule.cpp
+  src/v20260520/model/CreatePluginResponse.cpp
   src/v20260520/model/DescribeLatestReleaseRequest.cpp
   src/v20260520/model/DeleteChannelRequest.cpp
   src/v20260520/model/CronSchedule.cpp
@@ -1076,7 +1081,7 @@ set(adp_src
   src/v20260520/model/DescribeAuditLogListRequest.cpp
   src/v20260520/model/VoiceConfig.cpp
   src/v20260520/model/DocUpdatePeriod.cpp
-  src/v20260520/model/DescribeConversationResponse.cpp
+  src/v20260520/model/InputBoxConfig.cpp
   src/v20260520/model/Space.cpp
   src/v20260520/model/PluginUsageSummary.cpp
   src/v20260520/model/AppMetadata.cpp
@@ -1091,6 +1096,7 @@ set(adp_src
   src/v20260520/model/RerankConfig.cpp
   src/v20260520/model/ConcurrencyLimitDetail.cpp
   src/v20260520/model/CreateMsgRecordCategoryRequest.cpp
+  src/v20260520/model/DescribeAppStatisticsOverviewResponse.cpp
   src/v20260520/model/DescribeAgentDetailRequest.cpp
   src/v20260520/model/AgentPluginParameter.cpp
   src/v20260520/model/PluginUsageDetail.cpp

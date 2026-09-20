@@ -58,7 +58,8 @@ GetWorkflowTaskRunRsp::GetWorkflowTaskRunRsp() :
     m_resourceGroupInfoListHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
     m_runResultHasBeenSet(false),
-    m_innerWorkflowTaskRunHasBeenSet(false)
+    m_innerWorkflowTaskRunHasBeenSet(false),
+    m_scheduledTimeHasBeenSet(false)
 {
 }
 
@@ -467,6 +468,16 @@ CoreInternalOutcome GetWorkflowTaskRunRsp::Deserialize(const rapidjson::Value &v
         m_innerWorkflowTaskRunHasBeenSet = true;
     }
 
+    if (value.HasMember("ScheduledTime") && !value["ScheduledTime"].IsNull())
+    {
+        if (!value["ScheduledTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GetWorkflowTaskRunRsp.ScheduledTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduledTime = string(value["ScheduledTime"].GetString());
+        m_scheduledTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -789,6 +800,14 @@ void GetWorkflowTaskRunRsp::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_innerWorkflowTaskRun.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_scheduledTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduledTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduledTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1400,5 +1419,21 @@ void GetWorkflowTaskRunRsp::SetInnerWorkflowTaskRun(const InnerWorkflowTaskRun& 
 bool GetWorkflowTaskRunRsp::InnerWorkflowTaskRunHasBeenSet() const
 {
     return m_innerWorkflowTaskRunHasBeenSet;
+}
+
+string GetWorkflowTaskRunRsp::GetScheduledTime() const
+{
+    return m_scheduledTime;
+}
+
+void GetWorkflowTaskRunRsp::SetScheduledTime(const string& _scheduledTime)
+{
+    m_scheduledTime = _scheduledTime;
+    m_scheduledTimeHasBeenSet = true;
+}
+
+bool GetWorkflowTaskRunRsp::ScheduledTimeHasBeenSet() const
+{
+    return m_scheduledTimeHasBeenSet;
 }
 

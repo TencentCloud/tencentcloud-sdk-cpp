@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志样例，PreviewType为2时返回
-                     * @return LogSample 日志样例，PreviewType为2时返回
+                     * 获取<p>日志样例，PreviewType为2时返回</p>
+                     * @return LogSample <p>日志样例，PreviewType为2时返回</p>
                      * 
                      */
                     std::string GetLogSample() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool LogSampleHasBeenSet() const;
 
                     /**
-                     * 获取日志预览结果
-                     * @return LogData 日志预览结果
+                     * 获取<p>日志预览结果</p>
+                     * @return LogData <p>日志预览结果</p>
                      * 
                      */
                     std::string GetLogData() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志样例，PreviewType为2时返回
+                     * <p>日志样例，PreviewType为2时返回</p>
                      */
                     std::string m_logSample;
                     bool m_logSampleHasBeenSet;
 
                     /**
-                     * 日志预览结果
+                     * <p>日志预览结果</p>
                      */
                     std::string m_logData;
                     bool m_logDataHasBeenSet;

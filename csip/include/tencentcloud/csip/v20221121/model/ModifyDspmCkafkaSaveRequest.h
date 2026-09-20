@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取接入类型，当前支持 1和7, 类型vip网络类型（1:外网TGW 2:基础网络 3:VPC网络 4:支撑网络(idc 环境) 5:SSL外网访问方式访问 6:黑石环境vpc 7:支撑网络(cvm 环境）
-                     * @return VipType 接入类型，当前支持 1和7, 类型vip网络类型（1:外网TGW 2:基础网络 3:VPC网络 4:支撑网络(idc 环境) 5:SSL外网访问方式访问 6:黑石环境vpc 7:支撑网络(cvm 环境）
+                     * 获取<p>接入类型，当前支持 1和7</p><p>枚举值：</p><ul><li>1： 外网TGW</li><li>2： 基础网络</li><li>3： VPC网络</li><li>4： idc环境-支撑网络</li><li>5： SSL外网访问方式访问</li><li>6： 黑石环境vpc</li><li>7： cvm环境-支撑网络</li></ul>
+                     * @return VipType <p>接入类型，当前支持 1和7</p><p>枚举值：</p><ul><li>1： 外网TGW</li><li>2： 基础网络</li><li>3： VPC网络</li><li>4： idc环境-支撑网络</li><li>5： SSL外网访问方式访问</li><li>6： 黑石环境vpc</li><li>7： cvm环境-支撑网络</li></ul>
                      * 
                      */
                     int64_t GetVipType() const;
 
                     /**
-                     * 设置接入类型，当前支持 1和7, 类型vip网络类型（1:外网TGW 2:基础网络 3:VPC网络 4:支撑网络(idc 环境) 5:SSL外网访问方式访问 6:黑石环境vpc 7:支撑网络(cvm 环境）
-                     * @param _vipType 接入类型，当前支持 1和7, 类型vip网络类型（1:外网TGW 2:基础网络 3:VPC网络 4:支撑网络(idc 环境) 5:SSL外网访问方式访问 6:黑石环境vpc 7:支撑网络(cvm 环境）
+                     * 设置<p>接入类型，当前支持 1和7</p><p>枚举值：</p><ul><li>1： 外网TGW</li><li>2： 基础网络</li><li>3： VPC网络</li><li>4： idc环境-支撑网络</li><li>5： SSL外网访问方式访问</li><li>6： 黑石环境vpc</li><li>7： cvm环境-支撑网络</li></ul>
+                     * @param _vipType <p>接入类型，当前支持 1和7</p><p>枚举值：</p><ul><li>1： 外网TGW</li><li>2： 基础网络</li><li>3： VPC网络</li><li>4： idc环境-支撑网络</li><li>5： SSL外网访问方式访问</li><li>6： 黑石环境vpc</li><li>7： cvm环境-支撑网络</li></ul>
                      * 
                      */
                     void SetVipType(const int64_t& _vipType);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool VipTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例的地域
-                     * @return RegionId 实例的地域
+                     * 获取<p>实例的地域</p>
+                     * @return RegionId <p>实例的地域</p>
                      * 
                      */
                     std::string GetRegionId() const;
 
                     /**
-                     * 设置实例的地域
-                     * @param _regionId 实例的地域
+                     * 设置<p>实例的地域</p>
+                     * @param _regionId <p>实例的地域</p>
                      * 
                      */
                     void SetRegionId(const std::string& _regionId);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取实例的id
-                     * @return InstanceId 实例的id
+                     * 获取<p>实例的id</p>
+                     * @return InstanceId <p>实例的id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例的id
-                     * @param _instanceId 实例的id
+                     * 设置<p>实例的id</p>
+                     * @param _instanceId <p>实例的id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取<p>实例名称</p>
+                     * @return InstanceName <p>实例名称</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _instanceName 实例名称
+                     * 设置<p>实例名称</p>
+                     * @param _instanceName <p>实例名称</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例的接入信息
-                     * @return RouteInfo 实例的接入信息
+                     * 获取<p>实例的接入信息</p>
+                     * @return RouteInfo <p>实例的接入信息</p>
                      * 
                      */
                     RouteInfo GetRouteInfo() const;
 
                     /**
-                     * 设置实例的接入信息
-                     * @param _routeInfo 实例的接入信息
+                     * 设置<p>实例的接入信息</p>
+                     * @param _routeInfo <p>实例的接入信息</p>
                      * 
                      */
                     void SetRouteInfo(const RouteInfo& _routeInfo);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool RouteInfoHasBeenSet() const;
 
                     /**
-                     * 获取接入为域名的时候，有效
-                     * @return Username 接入为域名的时候，有效
+                     * 获取<p>接入为域名的时候，有效</p>
+                     * @return Username <p>接入为域名的时候，有效</p>
                      * 
                      */
                     std::string GetUsername() const;
 
                     /**
-                     * 设置接入为域名的时候，有效
-                     * @param _username 接入为域名的时候，有效
+                     * 设置<p>接入为域名的时候，有效</p>
+                     * @param _username <p>接入为域名的时候，有效</p>
                      * 
                      */
                     void SetUsername(const std::string& _username);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool UsernameHasBeenSet() const;
 
                     /**
-                     * 获取接入为域名的时候，有效
-                     * @return Password 接入为域名的时候，有效
+                     * 获取<p>接入为域名的时候，有效</p>
+                     * @return Password <p>接入为域名的时候，有效</p>
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置接入为域名的时候，有效
-                     * @param _password 接入为域名的时候，有效
+                     * 设置<p>接入为域名的时候，有效</p>
+                     * @param _password <p>接入为域名的时候，有效</p>
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取日志投递的主题配置
-                     * @return LogDeliveryInfo 日志投递的主题配置
+                     * 获取<p>日志投递的主题配置</p>
+                     * @return LogDeliveryInfo <p>日志投递的主题配置</p>
                      * 
                      */
                     std::vector<LogDeliveryInfo> GetLogDeliveryInfo() const;
 
                     /**
-                     * 设置日志投递的主题配置
-                     * @param _logDeliveryInfo 日志投递的主题配置
+                     * 设置<p>日志投递的主题配置</p>
+                     * @param _logDeliveryInfo <p>日志投递的主题配置</p>
                      * 
                      */
                     void SetLogDeliveryInfo(const std::vector<LogDeliveryInfo>& _logDeliveryInfo);
@@ -213,15 +213,15 @@ namespace TencentCloud
                     bool LogDeliveryInfoHasBeenSet() const;
 
                     /**
-                     * 获取已存在配置时是否覆盖，默认 false（不覆盖，保持兼容）
-                     * @return IsOverwrite 已存在配置时是否覆盖，默认 false（不覆盖，保持兼容）
+                     * 获取<p>已存在配置时是否覆盖，默认 false（不覆盖，保持兼容）</p>
+                     * @return IsOverwrite <p>已存在配置时是否覆盖，默认 false（不覆盖，保持兼容）</p>
                      * 
                      */
                     bool GetIsOverwrite() const;
 
                     /**
-                     * 设置已存在配置时是否覆盖，默认 false（不覆盖，保持兼容）
-                     * @param _isOverwrite 已存在配置时是否覆盖，默认 false（不覆盖，保持兼容）
+                     * 设置<p>已存在配置时是否覆盖，默认 false（不覆盖，保持兼容）</p>
+                     * @param _isOverwrite <p>已存在配置时是否覆盖，默认 false（不覆盖，保持兼容）</p>
                      * 
                      */
                     void SetIsOverwrite(const bool& _isOverwrite);
@@ -257,55 +257,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 接入类型，当前支持 1和7, 类型vip网络类型（1:外网TGW 2:基础网络 3:VPC网络 4:支撑网络(idc 环境) 5:SSL外网访问方式访问 6:黑石环境vpc 7:支撑网络(cvm 环境）
+                     * <p>接入类型，当前支持 1和7</p><p>枚举值：</p><ul><li>1： 外网TGW</li><li>2： 基础网络</li><li>3： VPC网络</li><li>4： idc环境-支撑网络</li><li>5： SSL外网访问方式访问</li><li>6： 黑石环境vpc</li><li>7： cvm环境-支撑网络</li></ul>
                      */
                     int64_t m_vipType;
                     bool m_vipTypeHasBeenSet;
 
                     /**
-                     * 实例的地域
+                     * <p>实例的地域</p>
                      */
                     std::string m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 实例的id
+                     * <p>实例的id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * <p>实例名称</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 实例的接入信息
+                     * <p>实例的接入信息</p>
                      */
                     RouteInfo m_routeInfo;
                     bool m_routeInfoHasBeenSet;
 
                     /**
-                     * 接入为域名的时候，有效
+                     * <p>接入为域名的时候，有效</p>
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
 
                     /**
-                     * 接入为域名的时候，有效
+                     * <p>接入为域名的时候，有效</p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 日志投递的主题配置
+                     * <p>日志投递的主题配置</p>
                      */
                     std::vector<LogDeliveryInfo> m_logDeliveryInfo;
                     bool m_logDeliveryInfoHasBeenSet;
 
                     /**
-                     * 已存在配置时是否覆盖，默认 false（不覆盖，保持兼容）
+                     * <p>已存在配置时是否覆盖，默认 false（不覆盖，保持兼容）</p>
                      */
                     bool m_isOverwrite;
                     bool m_isOverwriteHasBeenSet;
