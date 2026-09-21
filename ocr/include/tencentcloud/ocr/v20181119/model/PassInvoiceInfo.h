@@ -151,48 +151,6 @@ namespace TencentCloud
                      */
                     bool TaxClassifyCodeHasBeenSet() const;
 
-                    /**
-                     * 获取<p>通行费车牌号</p>
-                     * @return CarType <p>通行费车牌号</p>
-                     * 
-                     */
-                    std::string GetCarType() const;
-
-                    /**
-                     * 设置<p>通行费车牌号</p>
-                     * @param _carType <p>通行费车牌号</p>
-                     * 
-                     */
-                    void SetCarType(const std::string& _carType);
-
-                    /**
-                     * 判断参数 CarType 是否已赋值
-                     * @return CarType 是否已赋值
-                     * 
-                     */
-                    bool CarTypeHasBeenSet() const;
-
-                    /**
-                     * 获取<p>通行费车辆类型</p>
-                     * @return PlateNumber <p>通行费车辆类型</p>
-                     * 
-                     */
-                    std::string GetPlateNumber() const;
-
-                    /**
-                     * 设置<p>通行费车辆类型</p>
-                     * @param _plateNumber <p>通行费车辆类型</p>
-                     * 
-                     */
-                    void SetPlateNumber(const std::string& _plateNumber);
-
-                    /**
-                     * 判断参数 PlateNumber 是否已赋值
-                     * @return PlateNumber 是否已赋值
-                     * 
-                     */
-                    bool PlateNumberHasBeenSet() const;
-
                 private:
 
                     /**
@@ -224,18 +182,6 @@ namespace TencentCloud
                      */
                     std::string m_taxClassifyCode;
                     bool m_taxClassifyCodeHasBeenSet;
-
-                    /**
-                     * <p>通行费车牌号</p>
-                     */
-                    std::string m_carType;
-                    bool m_carTypeHasBeenSet;
-
-                    /**
-                     * <p>通行费车辆类型</p>
-                     */
-                    std::string m_plateNumber;
-                    bool m_plateNumberHasBeenSet;
 
                 };
             }

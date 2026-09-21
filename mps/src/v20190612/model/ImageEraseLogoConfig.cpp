@@ -23,7 +23,9 @@ using namespace std;
 ImageEraseLogoConfig::ImageEraseLogoConfig() :
     m_switchHasBeenSet(false),
     m_imageAreaBoxesHasBeenSet(false),
-    m_detectTypesHasBeenSet(false)
+    m_detectTypesHasBeenSet(false),
+    m_eraseStrengthHasBeenSet(false),
+    m_watermarkTypeHasBeenSet(false)
 {
 }
 
@@ -75,6 +77,26 @@ CoreInternalOutcome ImageEraseLogoConfig::Deserialize(const rapidjson::Value &va
         m_detectTypesHasBeenSet = true;
     }
 
+    if (value.HasMember("EraseStrength") && !value["EraseStrength"].IsNull())
+    {
+        if (!value["EraseStrength"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageEraseLogoConfig.EraseStrength` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eraseStrength = string(value["EraseStrength"].GetString());
+        m_eraseStrengthHasBeenSet = true;
+    }
+
+    if (value.HasMember("WatermarkType") && !value["WatermarkType"].IsNull())
+    {
+        if (!value["WatermarkType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageEraseLogoConfig.WatermarkType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_watermarkType = string(value["WatermarkType"].GetString());
+        m_watermarkTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -116,6 +138,22 @@ void ImageEraseLogoConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_eraseStrengthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EraseStrength";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eraseStrength.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_watermarkTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WatermarkType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_watermarkType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -167,5 +205,37 @@ void ImageEraseLogoConfig::SetDetectTypes(const vector<string>& _detectTypes)
 bool ImageEraseLogoConfig::DetectTypesHasBeenSet() const
 {
     return m_detectTypesHasBeenSet;
+}
+
+string ImageEraseLogoConfig::GetEraseStrength() const
+{
+    return m_eraseStrength;
+}
+
+void ImageEraseLogoConfig::SetEraseStrength(const string& _eraseStrength)
+{
+    m_eraseStrength = _eraseStrength;
+    m_eraseStrengthHasBeenSet = true;
+}
+
+bool ImageEraseLogoConfig::EraseStrengthHasBeenSet() const
+{
+    return m_eraseStrengthHasBeenSet;
+}
+
+string ImageEraseLogoConfig::GetWatermarkType() const
+{
+    return m_watermarkType;
+}
+
+void ImageEraseLogoConfig::SetWatermarkType(const string& _watermarkType)
+{
+    m_watermarkType = _watermarkType;
+    m_watermarkTypeHasBeenSet = true;
+}
+
+bool ImageEraseLogoConfig::WatermarkTypeHasBeenSet() const
+{
+    return m_watermarkTypeHasBeenSet;
 }
 

@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启ssh
+                     * 获取<p>是否开启ssh</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Enable 是否开启ssh
+                     * @return Enable <p>是否开启ssh</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnable() const;
 
                     /**
-                     * 设置是否开启ssh
+                     * 设置<p>是否开启ssh</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _enable 是否开启ssh
+                     * @param _enable <p>是否开启ssh</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取公钥信息
+                     * 获取<p>公钥信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PublicKey 公钥信息
+                     * @return PublicKey <p>公钥信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicKey() const;
 
                     /**
-                     * 设置公钥信息
+                     * 设置<p>公钥信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _publicKey 公钥信息
+                     * @param _publicKey <p>公钥信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool PublicKeyHasBeenSet() const;
 
                     /**
-                     * 获取端口号
+                     * 获取<p>端口号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Port 端口号
+                     * @return Port <p>端口号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置端口号
+                     * 设置<p>端口号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _port 端口号
+                     * @param _port <p>端口号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取登录命令
+                     * 获取<p>登录命令</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LoginCommand 登录命令
+                     * @return LoginCommand <p>登录命令</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLoginCommand() const;
 
                     /**
-                     * 设置登录命令
+                     * 设置<p>登录命令</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _loginCommand 登录命令
+                     * @param _loginCommand <p>登录命令</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -148,18 +148,18 @@ namespace TencentCloud
                     bool LoginCommandHasBeenSet() const;
 
                     /**
-                     * 获取登录地址是否改变
+                     * 获取<p>登录地址是否改变</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsAddressChanged 登录地址是否改变
+                     * @return IsAddressChanged <p>登录地址是否改变</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsAddressChanged() const;
 
                     /**
-                     * 设置登录地址是否改变
+                     * 设置<p>登录地址是否改变</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isAddressChanged 登录地址是否改变
+                     * @param _isAddressChanged <p>登录地址是否改变</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -173,18 +173,18 @@ namespace TencentCloud
                     bool IsAddressChangedHasBeenSet() const;
 
                     /**
-                     * 获取POD访问信息
+                     * 获取<p>POD访问信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PodSSHInfo POD访问信息
+                     * @return PodSSHInfo <p>POD访问信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PodSSHInfo GetPodSSHInfo() const;
 
                     /**
-                     * 设置POD访问信息
+                     * 设置<p>POD访问信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _podSSHInfo POD访问信息
+                     * @param _podSSHInfo <p>POD访问信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -200,42 +200,42 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否开启ssh
+                     * <p>是否开启ssh</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 公钥信息
+                     * <p>公钥信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicKey;
                     bool m_publicKeyHasBeenSet;
 
                     /**
-                     * 端口号
+                     * <p>端口号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 登录命令
+                     * <p>登录命令</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_loginCommand;
                     bool m_loginCommandHasBeenSet;
 
                     /**
-                     * 登录地址是否改变
+                     * <p>登录地址是否改变</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isAddressChanged;
                     bool m_isAddressChangedHasBeenSet;
 
                     /**
-                     * POD访问信息
+                     * <p>POD访问信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PodSSHInfo m_podSSHInfo;

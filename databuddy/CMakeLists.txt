@@ -20,13 +20,16 @@ set(databuddy_public_header
 
 set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/DependOnBrief.h
-  include/tencentcloud/databuddy/v20260715/model/FileInfo.h
+  include/tencentcloud/databuddy/v20260715/model/ListConsoleGroupUsersRequest.h
+  include/tencentcloud/databuddy/v20260715/model/ListConsoleGroupsRequest.h
+  include/tencentcloud/databuddy/v20260715/model/ListConsoleGroupsRsp.h
   include/tencentcloud/databuddy/v20260715/model/UpdateConsoleUsersResponse.h
   include/tencentcloud/databuddy/v20260715/model/Workflow.h
   include/tencentcloud/databuddy/v20260715/model/TaskRetryStrategy.h
   include/tencentcloud/databuddy/v20260715/model/FileStorage.h
   include/tencentcloud/databuddy/v20260715/model/ScheduledTimeConfig.h
   include/tencentcloud/databuddy/v20260715/model/DeleteWorkflowResponse.h
+  include/tencentcloud/databuddy/v20260715/model/ListConsoleRolesRsp.h
   include/tencentcloud/databuddy/v20260715/model/ListConsoleUsersResponse.h
   include/tencentcloud/databuddy/v20260715/model/RemoveConsoleUsersResponse.h
   include/tencentcloud/databuddy/v20260715/model/InnerWorkflowTaskBrief.h
@@ -48,9 +51,12 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/TaskRunConditionRule.h
   include/tencentcloud/databuddy/v20260715/model/ResourceGroupInfo.h
   include/tencentcloud/databuddy/v20260715/model/UnbindWorkflowBundleResponse.h
+  include/tencentcloud/databuddy/v20260715/model/UpdateConsoleGroupRsp.h
+  include/tencentcloud/databuddy/v20260715/model/UnbindWorkflowBundleRsp.h
   include/tencentcloud/databuddy/v20260715/model/KillWorkflowRunResponse.h
   include/tencentcloud/databuddy/v20260715/model/AddConsoleUsersRsp.h
   include/tencentcloud/databuddy/v20260715/model/ListWorkflowsRequest.h
+  include/tencentcloud/databuddy/v20260715/model/DeleteConsoleGroupsRsp.h
   include/tencentcloud/databuddy/v20260715/model/ListWorkflowRunsRequest.h
   include/tencentcloud/databuddy/v20260715/model/WorkflowTriggerConfiguration.h
   include/tencentcloud/databuddy/v20260715/model/GetWorkflowTaskRunResponse.h
@@ -62,53 +68,69 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/CreateWorkflowRsp.h
   include/tencentcloud/databuddy/v20260715/model/GetFileResponse.h
   include/tencentcloud/databuddy/v20260715/model/AsyncOperation.h
+  include/tencentcloud/databuddy/v20260715/model/RoleMetaData.h
   include/tencentcloud/databuddy/v20260715/model/GetWorkflowRunRsp.h
+  include/tencentcloud/databuddy/v20260715/model/ListConsoleGroupUsersResponse.h
   include/tencentcloud/databuddy/v20260715/model/ListWorkflowTaskRunsRsp.h
   include/tencentcloud/databuddy/v20260715/model/ScheduleBizEnumBrief.h
+  include/tencentcloud/databuddy/v20260715/model/WorkflowTaskRun.h
   include/tencentcloud/databuddy/v20260715/model/InnerWorkflowTaskRunIterationBrief.h
+  include/tencentcloud/databuddy/v20260715/model/CreateConsoleGroupRequest.h
   include/tencentcloud/databuddy/v20260715/model/ListWorkflowsRsp.h
   include/tencentcloud/databuddy/v20260715/model/RerunWorkflowRunRequest.h
   include/tencentcloud/databuddy/v20260715/model/ListWorkflowsResponse.h
   include/tencentcloud/databuddy/v20260715/model/LabelBrief.h
   include/tencentcloud/databuddy/v20260715/model/AddConsoleUsersRequest.h
+  include/tencentcloud/databuddy/v20260715/model/CreateConsoleGroupRsp.h
   include/tencentcloud/databuddy/v20260715/model/WorkflowBaseInfoDetail.h
   include/tencentcloud/databuddy/v20260715/model/WorkflowBrief.h
   include/tencentcloud/databuddy/v20260715/model/KillWorkflowRunRequest.h
   include/tencentcloud/databuddy/v20260715/model/ListWorkflowTaskRunsResponse.h
   include/tencentcloud/databuddy/v20260715/model/AddConsoleUsersResponse.h
-  include/tencentcloud/databuddy/v20260715/model/UnbindWorkflowBundleRsp.h
+  include/tencentcloud/databuddy/v20260715/model/ListConsoleGroupsResponse.h
+  include/tencentcloud/databuddy/v20260715/model/ConsoleRoleInfo.h
+  include/tencentcloud/databuddy/v20260715/model/ConsoleGroupUserInfo.h
   include/tencentcloud/databuddy/v20260715/model/DeleteFileResult.h
   include/tencentcloud/databuddy/v20260715/model/RunActionBrief.h
   include/tencentcloud/databuddy/v20260715/model/FileOutputConf.h
   include/tencentcloud/databuddy/v20260715/model/RunWorkflowRequest.h
-  include/tencentcloud/databuddy/v20260715/model/WorkflowTaskRun.h
+  include/tencentcloud/databuddy/v20260715/model/UpdateConsoleGroupRequest.h
+  include/tencentcloud/databuddy/v20260715/model/ConsoleGroupInfo.h
+  include/tencentcloud/databuddy/v20260715/model/FileInfo.h
   include/tencentcloud/databuddy/v20260715/model/GetWorkflowResponse.h
   include/tencentcloud/databuddy/v20260715/model/GetWorkflowTaskRunRequest.h
   include/tencentcloud/databuddy/v20260715/model/DeleteFileResponse.h
-  include/tencentcloud/databuddy/v20260715/model/ListWorkflowRunsRsp.h
+  include/tencentcloud/databuddy/v20260715/model/CreateConsoleGroupResponse.h
   include/tencentcloud/databuddy/v20260715/model/WorkflowTask.h
   include/tencentcloud/databuddy/v20260715/model/AdvancedDependencyConfig.h
+  include/tencentcloud/databuddy/v20260715/model/DeleteConsoleGroupsRequest.h
   include/tencentcloud/databuddy/v20260715/model/UpdateWorkflowResponse.h
   include/tencentcloud/databuddy/v20260715/model/GetWorkflowRequest.h
   include/tencentcloud/databuddy/v20260715/model/InnerWorkflowTaskRunListOption.h
   include/tencentcloud/databuddy/v20260715/model/WorkflowRun.h
   include/tencentcloud/databuddy/v20260715/model/TaskTypeProperty.h
+  include/tencentcloud/databuddy/v20260715/model/ListWorkflowRunsRsp.h
   include/tencentcloud/databuddy/v20260715/model/CreateFileRequest.h
   include/tencentcloud/databuddy/v20260715/model/UpdateFileRequest.h
   include/tencentcloud/databuddy/v20260715/model/GetWorkflowRunRequest.h
   include/tencentcloud/databuddy/v20260715/model/RemoveConsoleUsersRequest.h
+  include/tencentcloud/databuddy/v20260715/model/RolePermission.h
   include/tencentcloud/databuddy/v20260715/model/FileConfig.h
   include/tencentcloud/databuddy/v20260715/model/RunWorkflowResponse.h
   include/tencentcloud/databuddy/v20260715/model/ListConsoleUsersRequest.h
   include/tencentcloud/databuddy/v20260715/model/ListWorkflowRunsResponse.h
   include/tencentcloud/databuddy/v20260715/model/AdvancedParameter.h
+  include/tencentcloud/databuddy/v20260715/model/UpdateConsoleGroupResponse.h
   include/tencentcloud/databuddy/v20260715/model/ConsoleUserInfo.h
   include/tencentcloud/databuddy/v20260715/model/UpdateWorkflowRsp.h
   include/tencentcloud/databuddy/v20260715/model/OrderBy.h
   include/tencentcloud/databuddy/v20260715/model/WorkflowAdvanceConfig.h
+  include/tencentcloud/databuddy/v20260715/model/DeleteConsoleGroupsResponse.h
   include/tencentcloud/databuddy/v20260715/model/InnerWorkflowTaskRun.h
   include/tencentcloud/databuddy/v20260715/model/MonitorMetricItem.h
   include/tencentcloud/databuddy/v20260715/model/CreateWorkflowResponse.h
+  include/tencentcloud/databuddy/v20260715/model/ListConsoleRolesRequest.h
+  include/tencentcloud/databuddy/v20260715/model/ListConsoleGroupUsersRsp.h
   include/tencentcloud/databuddy/v20260715/model/AlarmGroup.h
   include/tencentcloud/databuddy/v20260715/model/DeleteFileRequest.h
   include/tencentcloud/databuddy/v20260715/model/DeleteWorkflowRsp.h
@@ -119,6 +141,7 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/GetWorkflowRsp.h
   include/tencentcloud/databuddy/v20260715/model/UnbindWorkflowBundleRequest.h
   include/tencentcloud/databuddy/v20260715/model/RoleBasicInfo.h
+  include/tencentcloud/databuddy/v20260715/model/ListConsoleRolesResponse.h
   include/tencentcloud/databuddy/v20260715/model/UpdateFileResponse.h
   include/tencentcloud/databuddy/v20260715/model/UpdateConsoleUsersRequest.h
   include/tencentcloud/databuddy/v20260715/model/GetWorkflowTaskRunRsp.h
@@ -127,13 +150,16 @@ set(databuddy_public_header_model
 set(databuddy_src
   src/v20260715/DatabuddyClient.cpp
   src/v20260715/model/DependOnBrief.cpp
-  src/v20260715/model/FileInfo.cpp
+  src/v20260715/model/ListConsoleGroupUsersRequest.cpp
+  src/v20260715/model/ListConsoleGroupsRequest.cpp
+  src/v20260715/model/ListConsoleGroupsRsp.cpp
   src/v20260715/model/UpdateConsoleUsersResponse.cpp
   src/v20260715/model/Workflow.cpp
   src/v20260715/model/TaskRetryStrategy.cpp
   src/v20260715/model/FileStorage.cpp
   src/v20260715/model/ScheduledTimeConfig.cpp
   src/v20260715/model/DeleteWorkflowResponse.cpp
+  src/v20260715/model/ListConsoleRolesRsp.cpp
   src/v20260715/model/ListConsoleUsersResponse.cpp
   src/v20260715/model/RemoveConsoleUsersResponse.cpp
   src/v20260715/model/InnerWorkflowTaskBrief.cpp
@@ -155,9 +181,12 @@ set(databuddy_src
   src/v20260715/model/TaskRunConditionRule.cpp
   src/v20260715/model/ResourceGroupInfo.cpp
   src/v20260715/model/UnbindWorkflowBundleResponse.cpp
+  src/v20260715/model/UpdateConsoleGroupRsp.cpp
+  src/v20260715/model/UnbindWorkflowBundleRsp.cpp
   src/v20260715/model/KillWorkflowRunResponse.cpp
   src/v20260715/model/AddConsoleUsersRsp.cpp
   src/v20260715/model/ListWorkflowsRequest.cpp
+  src/v20260715/model/DeleteConsoleGroupsRsp.cpp
   src/v20260715/model/ListWorkflowRunsRequest.cpp
   src/v20260715/model/WorkflowTriggerConfiguration.cpp
   src/v20260715/model/GetWorkflowTaskRunResponse.cpp
@@ -169,53 +198,69 @@ set(databuddy_src
   src/v20260715/model/CreateWorkflowRsp.cpp
   src/v20260715/model/GetFileResponse.cpp
   src/v20260715/model/AsyncOperation.cpp
+  src/v20260715/model/RoleMetaData.cpp
   src/v20260715/model/GetWorkflowRunRsp.cpp
+  src/v20260715/model/ListConsoleGroupUsersResponse.cpp
   src/v20260715/model/ListWorkflowTaskRunsRsp.cpp
   src/v20260715/model/ScheduleBizEnumBrief.cpp
+  src/v20260715/model/WorkflowTaskRun.cpp
   src/v20260715/model/InnerWorkflowTaskRunIterationBrief.cpp
+  src/v20260715/model/CreateConsoleGroupRequest.cpp
   src/v20260715/model/ListWorkflowsRsp.cpp
   src/v20260715/model/RerunWorkflowRunRequest.cpp
   src/v20260715/model/ListWorkflowsResponse.cpp
   src/v20260715/model/LabelBrief.cpp
   src/v20260715/model/AddConsoleUsersRequest.cpp
+  src/v20260715/model/CreateConsoleGroupRsp.cpp
   src/v20260715/model/WorkflowBaseInfoDetail.cpp
   src/v20260715/model/WorkflowBrief.cpp
   src/v20260715/model/KillWorkflowRunRequest.cpp
   src/v20260715/model/ListWorkflowTaskRunsResponse.cpp
   src/v20260715/model/AddConsoleUsersResponse.cpp
-  src/v20260715/model/UnbindWorkflowBundleRsp.cpp
+  src/v20260715/model/ListConsoleGroupsResponse.cpp
+  src/v20260715/model/ConsoleRoleInfo.cpp
+  src/v20260715/model/ConsoleGroupUserInfo.cpp
   src/v20260715/model/DeleteFileResult.cpp
   src/v20260715/model/RunActionBrief.cpp
   src/v20260715/model/FileOutputConf.cpp
   src/v20260715/model/RunWorkflowRequest.cpp
-  src/v20260715/model/WorkflowTaskRun.cpp
+  src/v20260715/model/UpdateConsoleGroupRequest.cpp
+  src/v20260715/model/ConsoleGroupInfo.cpp
+  src/v20260715/model/FileInfo.cpp
   src/v20260715/model/GetWorkflowResponse.cpp
   src/v20260715/model/GetWorkflowTaskRunRequest.cpp
   src/v20260715/model/DeleteFileResponse.cpp
-  src/v20260715/model/ListWorkflowRunsRsp.cpp
+  src/v20260715/model/CreateConsoleGroupResponse.cpp
   src/v20260715/model/WorkflowTask.cpp
   src/v20260715/model/AdvancedDependencyConfig.cpp
+  src/v20260715/model/DeleteConsoleGroupsRequest.cpp
   src/v20260715/model/UpdateWorkflowResponse.cpp
   src/v20260715/model/GetWorkflowRequest.cpp
   src/v20260715/model/InnerWorkflowTaskRunListOption.cpp
   src/v20260715/model/WorkflowRun.cpp
   src/v20260715/model/TaskTypeProperty.cpp
+  src/v20260715/model/ListWorkflowRunsRsp.cpp
   src/v20260715/model/CreateFileRequest.cpp
   src/v20260715/model/UpdateFileRequest.cpp
   src/v20260715/model/GetWorkflowRunRequest.cpp
   src/v20260715/model/RemoveConsoleUsersRequest.cpp
+  src/v20260715/model/RolePermission.cpp
   src/v20260715/model/FileConfig.cpp
   src/v20260715/model/RunWorkflowResponse.cpp
   src/v20260715/model/ListConsoleUsersRequest.cpp
   src/v20260715/model/ListWorkflowRunsResponse.cpp
   src/v20260715/model/AdvancedParameter.cpp
+  src/v20260715/model/UpdateConsoleGroupResponse.cpp
   src/v20260715/model/ConsoleUserInfo.cpp
   src/v20260715/model/UpdateWorkflowRsp.cpp
   src/v20260715/model/OrderBy.cpp
   src/v20260715/model/WorkflowAdvanceConfig.cpp
+  src/v20260715/model/DeleteConsoleGroupsResponse.cpp
   src/v20260715/model/InnerWorkflowTaskRun.cpp
   src/v20260715/model/MonitorMetricItem.cpp
   src/v20260715/model/CreateWorkflowResponse.cpp
+  src/v20260715/model/ListConsoleRolesRequest.cpp
+  src/v20260715/model/ListConsoleGroupUsersRsp.cpp
   src/v20260715/model/AlarmGroup.cpp
   src/v20260715/model/DeleteFileRequest.cpp
   src/v20260715/model/DeleteWorkflowRsp.cpp
@@ -226,6 +271,7 @@ set(databuddy_src
   src/v20260715/model/GetWorkflowRsp.cpp
   src/v20260715/model/UnbindWorkflowBundleRequest.cpp
   src/v20260715/model/RoleBasicInfo.cpp
+  src/v20260715/model/ListConsoleRolesResponse.cpp
   src/v20260715/model/UpdateFileResponse.cpp
   src/v20260715/model/UpdateConsoleUsersRequest.cpp
   src/v20260715/model/GetWorkflowTaskRunRsp.cpp

@@ -385,6 +385,27 @@ namespace TencentCloud
                      */
                     bool EnableRouteVpcPublishIpv6HasBeenSet() const;
 
+                    /**
+                     * 获取<p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>
+                     * @return StackType <p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>
+                     * 
+                     */
+                    std::string GetStackType() const;
+
+                    /**
+                     * 设置<p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>
+                     * @param _stackType <p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>
+                     * 
+                     */
+                    void SetStackType(const std::string& _stackType);
+
+                    /**
+                     * 判断参数 StackType 是否已赋值
+                     * @return StackType 是否已赋值
+                     * 
+                     */
+                    bool StackTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -482,6 +503,12 @@ namespace TencentCloud
                      */
                     bool m_enableRouteVpcPublishIpv6;
                     bool m_enableRouteVpcPublishIpv6HasBeenSet;
+
+                    /**
+                     * <p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>
+                     */
+                    std::string m_stackType;
+                    bool m_stackTypeHasBeenSet;
 
                 };
             }

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回数据
-                     * @return Data 返回数据
+                     * 获取<p>返回数据</p>
+                     * @return Data <p>返回数据</p>
                      * 
                      */
                     UpdateDeviceData GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回数据
+                     * <p>返回数据</p>
                      */
                     UpdateDeviceData m_data;
                     bool m_dataHasBeenSet;

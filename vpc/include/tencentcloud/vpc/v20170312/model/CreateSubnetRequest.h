@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待操作的VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
-                     * @return VpcId 待操作的VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * 获取<p>待操作的VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。</p>
+                     * @return VpcId <p>待操作的VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置待操作的VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
-                     * @param _vpcId 待操作的VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * 设置<p>待操作的VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。</p>
+                     * @param _vpcId <p>待操作的VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网名称，最大长度不能超过60个字节。
-                     * @return SubnetName 子网名称，最大长度不能超过60个字节。
+                     * 获取<p>子网名称，最大长度不能超过60个字节。</p>
+                     * @return SubnetName <p>子网名称，最大长度不能超过60个字节。</p>
                      * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
-                     * 设置子网名称，最大长度不能超过60个字节。
-                     * @param _subnetName 子网名称，最大长度不能超过60个字节。
+                     * 设置<p>子网名称，最大长度不能超过60个字节。</p>
+                     * @param _subnetName <p>子网名称，最大长度不能超过60个字节。</p>
                      * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
@@ -86,36 +86,15 @@ namespace TencentCloud
                     bool SubnetNameHasBeenSet() const;
 
                     /**
-                     * 获取子网网段，子网网段必须在VPC网段内，相同VPC内子网网段不能重叠。
-                     * @return CidrBlock 子网网段，子网网段必须在VPC网段内，相同VPC内子网网段不能重叠。
-                     * 
-                     */
-                    std::string GetCidrBlock() const;
-
-                    /**
-                     * 设置子网网段，子网网段必须在VPC网段内，相同VPC内子网网段不能重叠。
-                     * @param _cidrBlock 子网网段，子网网段必须在VPC网段内，相同VPC内子网网段不能重叠。
-                     * 
-                     */
-                    void SetCidrBlock(const std::string& _cidrBlock);
-
-                    /**
-                     * 判断参数 CidrBlock 是否已赋值
-                     * @return CidrBlock 是否已赋值
-                     * 
-                     */
-                    bool CidrBlockHasBeenSet() const;
-
-                    /**
-                     * 获取子网所在的可用区ID，不同子网选择不同可用区可以做跨可用区灾备。
-                     * @return Zone 子网所在的可用区ID，不同子网选择不同可用区可以做跨可用区灾备。
+                     * 获取<p>子网所在的可用区ID，不同子网选择不同可用区可以做跨可用区灾备。</p>
+                     * @return Zone <p>子网所在的可用区ID，不同子网选择不同可用区可以做跨可用区灾备。</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置子网所在的可用区ID，不同子网选择不同可用区可以做跨可用区灾备。
-                     * @param _zone 子网所在的可用区ID，不同子网选择不同可用区可以做跨可用区灾备。
+                     * 设置<p>子网所在的可用区ID，不同子网选择不同可用区可以做跨可用区灾备。</p>
+                     * @param _zone <p>子网所在的可用区ID，不同子网选择不同可用区可以做跨可用区灾备。</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -128,15 +107,78 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
-                     * @return Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 获取<p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>
+                     * @return StackType <p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>
+                     * 
+                     */
+                    std::string GetStackType() const;
+
+                    /**
+                     * 设置<p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>
+                     * @param _stackType <p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>
+                     * 
+                     */
+                    void SetStackType(const std::string& _stackType);
+
+                    /**
+                     * 判断参数 StackType 是否已赋值
+                     * @return StackType 是否已赋值
+                     * 
+                     */
+                    bool StackTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>子网网段，子网网段必须在VPC网段内，相同VPC内子网网段不能重叠。</p>
+                     * @return CidrBlock <p>子网网段，子网网段必须在VPC网段内，相同VPC内子网网段不能重叠。</p>
+                     * 
+                     */
+                    std::string GetCidrBlock() const;
+
+                    /**
+                     * 设置<p>子网网段，子网网段必须在VPC网段内，相同VPC内子网网段不能重叠。</p>
+                     * @param _cidrBlock <p>子网网段，子网网段必须在VPC网段内，相同VPC内子网网段不能重叠。</p>
+                     * 
+                     */
+                    void SetCidrBlock(const std::string& _cidrBlock);
+
+                    /**
+                     * 判断参数 CidrBlock 是否已赋值
+                     * @return CidrBlock 是否已赋值
+                     * 
+                     */
+                    bool CidrBlockHasBeenSet() const;
+
+                    /**
+                     * 获取<p>IPv6网段</p>
+                     * @return Ipv6CidrBlock <p>IPv6网段</p>
+                     * 
+                     */
+                    std::string GetIpv6CidrBlock() const;
+
+                    /**
+                     * 设置<p>IPv6网段</p>
+                     * @param _ipv6CidrBlock <p>IPv6网段</p>
+                     * 
+                     */
+                    void SetIpv6CidrBlock(const std::string& _ipv6CidrBlock);
+
+                    /**
+                     * 判断参数 Ipv6CidrBlock 是否已赋值
+                     * @return Ipv6CidrBlock 是否已赋值
+                     * 
+                     */
+                    bool Ipv6CidrBlockHasBeenSet() const;
+
+                    /**
+                     * 获取<p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]</p>
+                     * @return Tags <p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
-                     * @param _tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 设置<p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]</p>
+                     * @param _tags <p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -149,15 +191,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取CDC实例ID。
-                     * @return CdcId CDC实例ID。
+                     * 获取<p>CDC实例ID。</p>
+                     * @return CdcId <p>CDC实例ID。</p>
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
-                     * 设置CDC实例ID。
-                     * @param _cdcId CDC实例ID。
+                     * 设置<p>CDC实例ID。</p>
+                     * @param _cdcId <p>CDC实例ID。</p>
                      * 
                      */
                     void SetCdcId(const std::string& _cdcId);
@@ -172,37 +214,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待操作的VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * <p>待操作的VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网名称，最大长度不能超过60个字节。
+                     * <p>子网名称，最大长度不能超过60个字节。</p>
                      */
                     std::string m_subnetName;
                     bool m_subnetNameHasBeenSet;
 
                     /**
-                     * 子网网段，子网网段必须在VPC网段内，相同VPC内子网网段不能重叠。
-                     */
-                    std::string m_cidrBlock;
-                    bool m_cidrBlockHasBeenSet;
-
-                    /**
-                     * 子网所在的可用区ID，不同子网选择不同可用区可以做跨可用区灾备。
+                     * <p>子网所在的可用区ID，不同子网选择不同可用区可以做跨可用区灾备。</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * <p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>
+                     */
+                    std::string m_stackType;
+                    bool m_stackTypeHasBeenSet;
+
+                    /**
+                     * <p>子网网段，子网网段必须在VPC网段内，相同VPC内子网网段不能重叠。</p>
+                     */
+                    std::string m_cidrBlock;
+                    bool m_cidrBlockHasBeenSet;
+
+                    /**
+                     * <p>IPv6网段</p>
+                     */
+                    std::string m_ipv6CidrBlock;
+                    bool m_ipv6CidrBlockHasBeenSet;
+
+                    /**
+                     * <p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * CDC实例ID。
+                     * <p>CDC实例ID。</p>
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;

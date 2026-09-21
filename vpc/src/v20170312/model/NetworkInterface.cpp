@@ -42,7 +42,9 @@ NetworkInterface::NetworkInterface() :
     m_cdcIdHasBeenSet(false),
     m_attachTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
-    m_qosLevelHasBeenSet(false)
+    m_qosLevelHasBeenSet(false),
+    m_ipv6AddressesHasBeenSet(false),
+    m_ipv6AddressCountHasBeenSet(false)
 {
 }
 
@@ -311,6 +313,36 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
         m_qosLevelHasBeenSet = true;
     }
 
+    if (value.HasMember("Ipv6Addresses") && !value["Ipv6Addresses"].IsNull())
+    {
+        if (!value["Ipv6Addresses"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.Ipv6Addresses` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Ipv6Addresses"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Ipv6Address item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ipv6Addresses.push_back(item);
+        }
+        m_ipv6AddressesHasBeenSet = true;
+    }
+
+    if (value.HasMember("Ipv6AddressCount") && !value["Ipv6AddressCount"].IsNull())
+    {
+        if (!value["Ipv6AddressCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.Ipv6AddressCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipv6AddressCount = value["Ipv6AddressCount"].GetUint64();
+        m_ipv6AddressCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -519,6 +551,29 @@ void NetworkInterface::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "QosLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_qosLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipv6AddressesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6Addresses";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ipv6Addresses.begin(); itr != m_ipv6Addresses.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_ipv6AddressCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6AddressCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ipv6AddressCount, allocator);
     }
 
 }
@@ -874,5 +929,37 @@ void NetworkInterface::SetQosLevel(const string& _qosLevel)
 bool NetworkInterface::QosLevelHasBeenSet() const
 {
     return m_qosLevelHasBeenSet;
+}
+
+vector<Ipv6Address> NetworkInterface::GetIpv6Addresses() const
+{
+    return m_ipv6Addresses;
+}
+
+void NetworkInterface::SetIpv6Addresses(const vector<Ipv6Address>& _ipv6Addresses)
+{
+    m_ipv6Addresses = _ipv6Addresses;
+    m_ipv6AddressesHasBeenSet = true;
+}
+
+bool NetworkInterface::Ipv6AddressesHasBeenSet() const
+{
+    return m_ipv6AddressesHasBeenSet;
+}
+
+uint64_t NetworkInterface::GetIpv6AddressCount() const
+{
+    return m_ipv6AddressCount;
+}
+
+void NetworkInterface::SetIpv6AddressCount(const uint64_t& _ipv6AddressCount)
+{
+    m_ipv6AddressCount = _ipv6AddressCount;
+    m_ipv6AddressCountHasBeenSet = true;
+}
+
+bool NetworkInterface::Ipv6AddressCountHasBeenSet() const
+{
+    return m_ipv6AddressCountHasBeenSet;
 }
 

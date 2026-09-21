@@ -22,7 +22,8 @@ using namespace std;
 
 BeautyConfig::BeautyConfig() :
     m_beautyEffectItemsHasBeenSet(false),
-    m_beautyFilterItemsHasBeenSet(false)
+    m_beautyFilterItemsHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,16 @@ CoreInternalOutcome BeautyConfig::Deserialize(const rapidjson::Value &value)
         m_beautyFilterItemsHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BeautyConfig.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +119,14 @@ void BeautyConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         }
     }
 
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -141,5 +160,21 @@ void BeautyConfig::SetBeautyFilterItems(const vector<BeautyFilterItemConfig>& _b
 bool BeautyConfig::BeautyFilterItemsHasBeenSet() const
 {
     return m_beautyFilterItemsHasBeenSet;
+}
+
+string BeautyConfig::GetType() const
+{
+    return m_type;
+}
+
+void BeautyConfig::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool BeautyConfig::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 

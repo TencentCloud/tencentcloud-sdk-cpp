@@ -29,6 +29,8 @@
 #include <tencentcloud/trocket/v20230308/model/CreateConsumerGroupResponse.h>
 #include <tencentcloud/trocket/v20230308/model/CreateConsumerLabelRequest.h>
 #include <tencentcloud/trocket/v20230308/model/CreateConsumerLabelResponse.h>
+#include <tencentcloud/trocket/v20230308/model/CreateConsumerLabelsRequest.h>
+#include <tencentcloud/trocket/v20230308/model/CreateConsumerLabelsResponse.h>
 #include <tencentcloud/trocket/v20230308/model/CreateInstanceRequest.h>
 #include <tencentcloud/trocket/v20230308/model/CreateInstanceResponse.h>
 #include <tencentcloud/trocket/v20230308/model/CreateMigrationTaskRequest.h>
@@ -41,8 +43,12 @@
 #include <tencentcloud/trocket/v20230308/model/DeleteConsumerGroupResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DeleteConsumerLabelRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DeleteConsumerLabelResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DeleteConsumerLabelsRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DeleteConsumerLabelsResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DeleteConsumerRouteConfigRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DeleteConsumerRouteConfigResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DeleteConsumerRouteConfigsRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DeleteConsumerRouteConfigsResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DeleteInstanceRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DeleteInstanceResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DeleteRoleRequest.h>
@@ -63,10 +69,16 @@
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerLabelResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerLabelListRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerLabelListResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeConsumerLabelListsRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeConsumerLabelListsResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeConsumerLabelRoutesRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeConsumerLabelRoutesResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerLagRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerLagResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerRouteConfigRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerRouteConfigResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeConsumerRouteConfigsRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeConsumerRouteConfigsResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerRouteVersionListRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerRouteVersionListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeFusionInstanceListRequest.h>
@@ -125,6 +137,8 @@
 #include <tencentcloud/trocket/v20230308/model/ModifyTopicResponse.h>
 #include <tencentcloud/trocket/v20230308/model/PutConsumerRouteConfigRequest.h>
 #include <tencentcloud/trocket/v20230308/model/PutConsumerRouteConfigResponse.h>
+#include <tencentcloud/trocket/v20230308/model/PutConsumerRouteConfigsRequest.h>
+#include <tencentcloud/trocket/v20230308/model/PutConsumerRouteConfigsResponse.h>
 #include <tencentcloud/trocket/v20230308/model/RemoveMigratingTopicRequest.h>
 #include <tencentcloud/trocket/v20230308/model/RemoveMigratingTopicResponse.h>
 #include <tencentcloud/trocket/v20230308/model/ResendDeadLetterMessageRequest.h>
@@ -160,6 +174,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateConsumerLabelResponse> CreateConsumerLabelOutcome;
                 typedef std::future<CreateConsumerLabelOutcome> CreateConsumerLabelOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::CreateConsumerLabelRequest&, CreateConsumerLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsumerLabelAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateConsumerLabelsResponse> CreateConsumerLabelsOutcome;
+                typedef std::future<CreateConsumerLabelsOutcome> CreateConsumerLabelsOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::CreateConsumerLabelsRequest&, CreateConsumerLabelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsumerLabelsAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInstanceResponse> CreateInstanceOutcome;
                 typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::CreateInstanceRequest&, CreateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
@@ -178,9 +195,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteConsumerLabelResponse> DeleteConsumerLabelOutcome;
                 typedef std::future<DeleteConsumerLabelOutcome> DeleteConsumerLabelOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DeleteConsumerLabelRequest&, DeleteConsumerLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConsumerLabelAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteConsumerLabelsResponse> DeleteConsumerLabelsOutcome;
+                typedef std::future<DeleteConsumerLabelsOutcome> DeleteConsumerLabelsOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DeleteConsumerLabelsRequest&, DeleteConsumerLabelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConsumerLabelsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteConsumerRouteConfigResponse> DeleteConsumerRouteConfigOutcome;
                 typedef std::future<DeleteConsumerRouteConfigOutcome> DeleteConsumerRouteConfigOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DeleteConsumerRouteConfigRequest&, DeleteConsumerRouteConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConsumerRouteConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteConsumerRouteConfigsResponse> DeleteConsumerRouteConfigsOutcome;
+                typedef std::future<DeleteConsumerRouteConfigsOutcome> DeleteConsumerRouteConfigsOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DeleteConsumerRouteConfigsRequest&, DeleteConsumerRouteConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConsumerRouteConfigsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteInstanceResponse> DeleteInstanceOutcome;
                 typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DeleteInstanceRequest&, DeleteInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
@@ -211,12 +234,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeConsumerLabelListResponse> DescribeConsumerLabelListOutcome;
                 typedef std::future<DescribeConsumerLabelListOutcome> DescribeConsumerLabelListOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeConsumerLabelListRequest&, DescribeConsumerLabelListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerLabelListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConsumerLabelListsResponse> DescribeConsumerLabelListsOutcome;
+                typedef std::future<DescribeConsumerLabelListsOutcome> DescribeConsumerLabelListsOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeConsumerLabelListsRequest&, DescribeConsumerLabelListsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerLabelListsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConsumerLabelRoutesResponse> DescribeConsumerLabelRoutesOutcome;
+                typedef std::future<DescribeConsumerLabelRoutesOutcome> DescribeConsumerLabelRoutesOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeConsumerLabelRoutesRequest&, DescribeConsumerLabelRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerLabelRoutesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeConsumerLagResponse> DescribeConsumerLagOutcome;
                 typedef std::future<DescribeConsumerLagOutcome> DescribeConsumerLagOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeConsumerLagRequest&, DescribeConsumerLagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerLagAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeConsumerRouteConfigResponse> DescribeConsumerRouteConfigOutcome;
                 typedef std::future<DescribeConsumerRouteConfigOutcome> DescribeConsumerRouteConfigOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeConsumerRouteConfigRequest&, DescribeConsumerRouteConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerRouteConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConsumerRouteConfigsResponse> DescribeConsumerRouteConfigsOutcome;
+                typedef std::future<DescribeConsumerRouteConfigsOutcome> DescribeConsumerRouteConfigsOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeConsumerRouteConfigsRequest&, DescribeConsumerRouteConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerRouteConfigsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeConsumerRouteVersionListResponse> DescribeConsumerRouteVersionListOutcome;
                 typedef std::future<DescribeConsumerRouteVersionListOutcome> DescribeConsumerRouteVersionListOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeConsumerRouteVersionListRequest&, DescribeConsumerRouteVersionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerRouteVersionListAsyncHandler;
@@ -304,6 +336,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PutConsumerRouteConfigResponse> PutConsumerRouteConfigOutcome;
                 typedef std::future<PutConsumerRouteConfigOutcome> PutConsumerRouteConfigOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::PutConsumerRouteConfigRequest&, PutConsumerRouteConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutConsumerRouteConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::PutConsumerRouteConfigsResponse> PutConsumerRouteConfigsOutcome;
+                typedef std::future<PutConsumerRouteConfigsOutcome> PutConsumerRouteConfigsOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::PutConsumerRouteConfigsRequest&, PutConsumerRouteConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutConsumerRouteConfigsAsyncHandler;
                 typedef Outcome<Core::Error, Model::RemoveMigratingTopicResponse> RemoveMigratingTopicOutcome;
                 typedef std::future<RemoveMigratingTopicOutcome> RemoveMigratingTopicOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::RemoveMigratingTopicRequest&, RemoveMigratingTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveMigratingTopicAsyncHandler;
@@ -352,6 +387,15 @@ namespace TencentCloud
                 CreateConsumerLabelOutcome CreateConsumerLabel(const Model::CreateConsumerLabelRequest &request);
                 void CreateConsumerLabelAsync(const Model::CreateConsumerLabelRequest& request, const CreateConsumerLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateConsumerLabelOutcomeCallable CreateConsumerLabelCallable(const Model::CreateConsumerLabelRequest& request);
+
+                /**
+                 *批量创建消费组灰度标签
+                 * @param req CreateConsumerLabelsRequest
+                 * @return CreateConsumerLabelsOutcome
+                 */
+                CreateConsumerLabelsOutcome CreateConsumerLabels(const Model::CreateConsumerLabelsRequest &request);
+                void CreateConsumerLabelsAsync(const Model::CreateConsumerLabelsRequest& request, const CreateConsumerLabelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateConsumerLabelsOutcomeCallable CreateConsumerLabelsCallable(const Model::CreateConsumerLabelsRequest& request);
 
                 /**
                  *创建 RocketMQ 5.x 集群。
@@ -412,6 +456,15 @@ namespace TencentCloud
                 DeleteConsumerLabelOutcomeCallable DeleteConsumerLabelCallable(const Model::DeleteConsumerLabelRequest& request);
 
                 /**
+                 *批量删除消费组灰度标签
+                 * @param req DeleteConsumerLabelsRequest
+                 * @return DeleteConsumerLabelsOutcome
+                 */
+                DeleteConsumerLabelsOutcome DeleteConsumerLabels(const Model::DeleteConsumerLabelsRequest &request);
+                void DeleteConsumerLabelsAsync(const Model::DeleteConsumerLabelsRequest& request, const DeleteConsumerLabelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteConsumerLabelsOutcomeCallable DeleteConsumerLabelsCallable(const Model::DeleteConsumerLabelsRequest& request);
+
+                /**
                  *删除消费组灰度路由配置
                  * @param req DeleteConsumerRouteConfigRequest
                  * @return DeleteConsumerRouteConfigOutcome
@@ -419,6 +472,15 @@ namespace TencentCloud
                 DeleteConsumerRouteConfigOutcome DeleteConsumerRouteConfig(const Model::DeleteConsumerRouteConfigRequest &request);
                 void DeleteConsumerRouteConfigAsync(const Model::DeleteConsumerRouteConfigRequest& request, const DeleteConsumerRouteConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteConsumerRouteConfigOutcomeCallable DeleteConsumerRouteConfigCallable(const Model::DeleteConsumerRouteConfigRequest& request);
+
+                /**
+                 *批量删除消费组灰度路由配置
+                 * @param req DeleteConsumerRouteConfigsRequest
+                 * @return DeleteConsumerRouteConfigsOutcome
+                 */
+                DeleteConsumerRouteConfigsOutcome DeleteConsumerRouteConfigs(const Model::DeleteConsumerRouteConfigsRequest &request);
+                void DeleteConsumerRouteConfigsAsync(const Model::DeleteConsumerRouteConfigsRequest& request, const DeleteConsumerRouteConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteConsumerRouteConfigsOutcomeCallable DeleteConsumerRouteConfigsCallable(const Model::DeleteConsumerRouteConfigsRequest& request);
 
                 /**
                  *删除 RocketMQ 5.x 集群，删除前请先删除正在使用的主题、消费组和角色信息。
@@ -529,6 +591,24 @@ Filters示例：
                 DescribeConsumerLabelListOutcomeCallable DescribeConsumerLabelListCallable(const Model::DescribeConsumerLabelListRequest& request);
 
                 /**
+                 *批量查询多个消费组的灰度标签列表
+                 * @param req DescribeConsumerLabelListsRequest
+                 * @return DescribeConsumerLabelListsOutcome
+                 */
+                DescribeConsumerLabelListsOutcome DescribeConsumerLabelLists(const Model::DescribeConsumerLabelListsRequest &request);
+                void DescribeConsumerLabelListsAsync(const Model::DescribeConsumerLabelListsRequest& request, const DescribeConsumerLabelListsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConsumerLabelListsOutcomeCallable DescribeConsumerLabelListsCallable(const Model::DescribeConsumerLabelListsRequest& request);
+
+                /**
+                 *批量查询消费组灰度标签命中的 Topic 路由
+                 * @param req DescribeConsumerLabelRoutesRequest
+                 * @return DescribeConsumerLabelRoutesOutcome
+                 */
+                DescribeConsumerLabelRoutesOutcome DescribeConsumerLabelRoutes(const Model::DescribeConsumerLabelRoutesRequest &request);
+                void DescribeConsumerLabelRoutesAsync(const Model::DescribeConsumerLabelRoutesRequest& request, const DescribeConsumerLabelRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConsumerLabelRoutesOutcomeCallable DescribeConsumerLabelRoutesCallable(const Model::DescribeConsumerLabelRoutesRequest& request);
+
+                /**
                  *查询指定消费组堆积数。
 当前 API 适用集群：4.x 集群和 5.x 集群。
                  * @param req DescribeConsumerLagRequest
@@ -546,6 +626,15 @@ Filters示例：
                 DescribeConsumerRouteConfigOutcome DescribeConsumerRouteConfig(const Model::DescribeConsumerRouteConfigRequest &request);
                 void DescribeConsumerRouteConfigAsync(const Model::DescribeConsumerRouteConfigRequest& request, const DescribeConsumerRouteConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeConsumerRouteConfigOutcomeCallable DescribeConsumerRouteConfigCallable(const Model::DescribeConsumerRouteConfigRequest& request);
+
+                /**
+                 *批量查询消费组灰度路由配置
+                 * @param req DescribeConsumerRouteConfigsRequest
+                 * @return DescribeConsumerRouteConfigsOutcome
+                 */
+                DescribeConsumerRouteConfigsOutcome DescribeConsumerRouteConfigs(const Model::DescribeConsumerRouteConfigsRequest &request);
+                void DescribeConsumerRouteConfigsAsync(const Model::DescribeConsumerRouteConfigsRequest& request, const DescribeConsumerRouteConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConsumerRouteConfigsOutcomeCallable DescribeConsumerRouteConfigsCallable(const Model::DescribeConsumerRouteConfigsRequest& request);
 
                 /**
                  *查询消费组灰度路由配置版本列表
@@ -914,6 +1003,15 @@ Filters示例：
                 PutConsumerRouteConfigOutcome PutConsumerRouteConfig(const Model::PutConsumerRouteConfigRequest &request);
                 void PutConsumerRouteConfigAsync(const Model::PutConsumerRouteConfigRequest& request, const PutConsumerRouteConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PutConsumerRouteConfigOutcomeCallable PutConsumerRouteConfigCallable(const Model::PutConsumerRouteConfigRequest& request);
+
+                /**
+                 *批量写入消费组灰度路由配置
+                 * @param req PutConsumerRouteConfigsRequest
+                 * @return PutConsumerRouteConfigsOutcome
+                 */
+                PutConsumerRouteConfigsOutcome PutConsumerRouteConfigs(const Model::PutConsumerRouteConfigsRequest &request);
+                void PutConsumerRouteConfigsAsync(const Model::PutConsumerRouteConfigsRequest& request, const PutConsumerRouteConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PutConsumerRouteConfigsOutcomeCallable PutConsumerRouteConfigsCallable(const Model::PutConsumerRouteConfigsRequest& request);
 
                 /**
                  *从迁移列表中移除主题，仅当主题处于初始状态时有效

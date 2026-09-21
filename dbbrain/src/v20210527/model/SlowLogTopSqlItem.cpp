@@ -45,7 +45,9 @@ SlowLogTopSqlItem::SlowLogTopSqlItem() :
     m_rowsSentAvgHasBeenSet(false),
     m_lockTimeAvgHasBeenSet(false),
     m_rowsExaminedAvgHasBeenSet(false),
-    m_md5HasBeenSet(false)
+    m_md5HasBeenSet(false),
+    m_sqlTypeHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -304,6 +306,26 @@ CoreInternalOutcome SlowLogTopSqlItem::Deserialize(const rapidjson::Value &value
         m_md5HasBeenSet = true;
     }
 
+    if (value.HasMember("SqlType") && !value["SqlType"].IsNull())
+    {
+        if (!value["SqlType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowLogTopSqlItem.SqlType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sqlType = string(value["SqlType"].GetString());
+        m_sqlTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowLogTopSqlItem.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -509,6 +531,22 @@ void SlowLogTopSqlItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Md5";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_md5.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sqlTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SqlType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sqlType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -912,5 +950,37 @@ void SlowLogTopSqlItem::SetMd5(const string& _md5)
 bool SlowLogTopSqlItem::Md5HasBeenSet() const
 {
     return m_md5HasBeenSet;
+}
+
+string SlowLogTopSqlItem::GetSqlType() const
+{
+    return m_sqlType;
+}
+
+void SlowLogTopSqlItem::SetSqlType(const string& _sqlType)
+{
+    m_sqlType = _sqlType;
+    m_sqlTypeHasBeenSet = true;
+}
+
+bool SlowLogTopSqlItem::SqlTypeHasBeenSet() const
+{
+    return m_sqlTypeHasBeenSet;
+}
+
+string SlowLogTopSqlItem::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void SlowLogTopSqlItem::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool SlowLogTopSqlItem::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 

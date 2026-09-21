@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取投递流的流ID
-                     * @return FlowId 投递流的流ID
+                     * 获取<p>投递流的流ID，可以通过DescribePostCKafkaFlows接口获取</p>
+                     * @return FlowId <p>投递流的流ID，可以通过DescribePostCKafkaFlows接口获取</p>
                      * 
                      */
                     int64_t GetFlowId() const;
 
                     /**
-                     * 设置投递流的流ID
-                     * @param _flowId 投递流的流ID
+                     * 设置<p>投递流的流ID，可以通过DescribePostCKafkaFlows接口获取</p>
+                     * @param _flowId <p>投递流的流ID，可以通过DescribePostCKafkaFlows接口获取</p>
                      * 
                      */
                     void SetFlowId(const int64_t& _flowId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取1-访问日志，2-攻击日志，默认为访问日志。
-                     * @return LogType 1-访问日志，2-攻击日志，默认为访问日志。
+                     * 获取<p>1-访问日志，2-攻击日志，默认为访问日志。</p>
+                     * @return LogType <p>1-访问日志，2-攻击日志，默认为访问日志。</p>
                      * 
                      */
                     int64_t GetLogType() const;
 
                     /**
-                     * 设置1-访问日志，2-攻击日志，默认为访问日志。
-                     * @param _logType 1-访问日志，2-攻击日志，默认为访问日志。
+                     * 设置<p>1-访问日志，2-攻击日志，默认为访问日志。</p>
+                     * @param _logType <p>1-访问日志，2-攻击日志，默认为访问日志。</p>
                      * 
                      */
                     void SetLogType(const int64_t& _logType);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 投递流的流ID
+                     * <p>投递流的流ID，可以通过DescribePostCKafkaFlows接口获取</p>
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 1-访问日志，2-攻击日志，默认为访问日志。
+                     * <p>1-访问日志，2-攻击日志，默认为访问日志。</p>
                      */
                     int64_t m_logType;
                     bool m_logTypeHasBeenSet;

@@ -106,6 +106,27 @@ namespace TencentCloud
                      */
                     bool SetDefaultLimitFlagHasBeenSet() const;
 
+                    /**
+                     * 获取是否设置默认QOS带宽；
+                     * @return SetQosDefaultLimitFlag 是否设置默认QOS带宽；
+                     * 
+                     */
+                    bool GetSetQosDefaultLimitFlag() const;
+
+                    /**
+                     * 设置是否设置默认QOS带宽；
+                     * @param _setQosDefaultLimitFlag 是否设置默认QOS带宽；
+                     * 
+                     */
+                    void SetSetQosDefaultLimitFlag(const bool& _setQosDefaultLimitFlag);
+
+                    /**
+                     * 判断参数 SetQosDefaultLimitFlag 是否已赋值
+                     * @return SetQosDefaultLimitFlag 是否已赋值
+                     * 
+                     */
+                    bool SetQosDefaultLimitFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +146,12 @@ namespace TencentCloud
                      */
                     bool m_setDefaultLimitFlag;
                     bool m_setDefaultLimitFlagHasBeenSet;
+
+                    /**
+                     * 是否设置默认QOS带宽；
+                     */
+                    bool m_setQosDefaultLimitFlag;
+                    bool m_setQosDefaultLimitFlagHasBeenSet;
 
                 };
             }

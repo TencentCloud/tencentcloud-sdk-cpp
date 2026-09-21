@@ -854,6 +854,27 @@ namespace TencentCloud
                      */
                     bool InferTemplateIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>服务的优先级</p><p>取值范围：[0, 9]</p>
+                     * @return Priority <p>服务的优先级</p><p>取值范围：[0, 9]</p>
+                     * 
+                     */
+                    int64_t GetPriority() const;
+
+                    /**
+                     * 设置<p>服务的优先级</p><p>取值范围：[0, 9]</p>
+                     * @param _priority <p>服务的优先级</p><p>取值范围：[0, 9]</p>
+                     * 
+                     */
+                    void SetPriority(const int64_t& _priority);
+
+                    /**
+                     * 判断参数 Priority 是否已赋值
+                     * @return Priority 是否已赋值
+                     * 
+                     */
+                    bool PriorityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1083,6 +1104,12 @@ namespace TencentCloud
                      */
                     std::string m_inferTemplateId;
                     bool m_inferTemplateIdHasBeenSet;
+
+                    /**
+                     * <p>服务的优先级</p><p>取值范围：[0, 9]</p>
+                     */
+                    int64_t m_priority;
+                    bool m_priorityHasBeenSet;
 
                 };
             }

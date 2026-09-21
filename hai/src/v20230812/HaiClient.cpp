@@ -840,6 +840,56 @@ HaiClient::DescribeServicesCallInfoOutcomeCallable HaiClient::DescribeServicesCa
     return prom->get_future();
 }
 
+HaiClient::GetServicePodLogsOutcome HaiClient::GetServicePodLogs(const GetServicePodLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetServicePodLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetServicePodLogsResponse rsp = GetServicePodLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetServicePodLogsOutcome(rsp);
+        else
+            return GetServicePodLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return GetServicePodLogsOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::GetServicePodLogsAsync(const GetServicePodLogsRequest& request, const GetServicePodLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetServicePodLogsRequest&;
+    using Resp = GetServicePodLogsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetServicePodLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+HaiClient::GetServicePodLogsOutcomeCallable HaiClient::GetServicePodLogsCallable(const GetServicePodLogsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetServicePodLogsOutcome>>();
+    GetServicePodLogsAsync(
+    request,
+    [prom](
+        const HaiClient*,
+        const GetServicePodLogsRequest&,
+        GetServicePodLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 HaiClient::InquirePriceRunInstancesOutcome HaiClient::InquirePriceRunInstances(const InquirePriceRunInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "InquirePriceRunInstances");

@@ -224,18 +224,18 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>任务类型名称</p>
+                     * 获取任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskTypeName <p>任务类型名称</p>
+                     * @return TaskTypeName 任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskTypeName() const;
 
                     /**
-                     * 设置<p>任务类型名称</p>
+                     * 设置任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskTypeName <p>任务类型名称</p>
+                     * @param _taskTypeName 任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -674,18 +674,18 @@ namespace TencentCloud
                     bool TimeZoneHasBeenSet() const;
 
                     /**
-                     * 获取<p>依赖上游任务ID列表</p>
+                     * 获取<p>依赖上游任务ID列表。保留字段，暂时返回为[]</p><p>保留字段，暂时返回为[]</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DependOnList <p>依赖上游任务ID列表</p>
+                     * @return DependOnList <p>依赖上游任务ID列表。保留字段，暂时返回为[]</p><p>保留字段，暂时返回为[]</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDependOnList() const;
 
                     /**
-                     * 设置<p>依赖上游任务ID列表</p>
+                     * 设置<p>依赖上游任务ID列表。保留字段，暂时返回为[]</p><p>保留字段，暂时返回为[]</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dependOnList <p>依赖上游任务ID列表</p>
+                     * @param _dependOnList <p>依赖上游任务ID列表。保留字段，暂时返回为[]</p><p>保留字段，暂时返回为[]</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1075,7 +1075,7 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * <p>任务类型名称</p>
+                     * 任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskTypeName;
@@ -1201,7 +1201,7 @@ namespace TencentCloud
                     bool m_timeZoneHasBeenSet;
 
                     /**
-                     * <p>依赖上游任务ID列表</p>
+                     * <p>依赖上游任务ID列表。保留字段，暂时返回为[]</p><p>保留字段，暂时返回为[]</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_dependOnList;

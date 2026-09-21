@@ -362,6 +362,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/LogAnalysisDownloadTask.h
   include/tencentcloud/teo/v20220901/model/DDoS.h
   include/tencentcloud/teo/v20220901/model/ModifyL7AccRulePriorityResponse.h
+  include/tencentcloud/teo/v20220901/model/DescribeZoneCustomVariablesResponse.h
   include/tencentcloud/teo/v20220901/model/APIService.h
   include/tencentcloud/teo/v20220901/model/CreateConfigGroupVersionResponse.h
   include/tencentcloud/teo/v20220901/model/ConfirmOriginACLUpdateRequest.h
@@ -401,6 +402,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/CreateJustInTimeTranscodeTemplateRequest.h
   include/tencentcloud/teo/v20220901/model/FunctionReplica.h
   include/tencentcloud/teo/v20220901/model/TimingDataItem.h
+  include/tencentcloud/teo/v20220901/model/DescribeZoneCustomVariablesRequest.h
   include/tencentcloud/teo/v20220901/model/ModifyCustomErrorPageRequest.h
   include/tencentcloud/teo/v20220901/model/ModifyFunctionRuleResponse.h
   include/tencentcloud/teo/v20220901/model/ModifyFunctionReplicaResponse.h
@@ -667,6 +669,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeFunctionReplicasRequest.h
   include/tencentcloud/teo/v20220901/model/ZoneFullConfig.h
   include/tencentcloud/teo/v20220901/model/IdentifyZoneRequest.h
+  include/tencentcloud/teo/v20220901/model/ModifyZoneCustomVariablesResponse.h
   include/tencentcloud/teo/v20220901/model/VaryParameters.h
   include/tencentcloud/teo/v20220901/model/L4Proxy.h
   include/tencentcloud/teo/v20220901/model/SkipCondition.h
@@ -771,6 +774,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeMultiPathGatewaySecretKeyRequest.h
   include/tencentcloud/teo/v20220901/model/DDoSBlockData.h
   include/tencentcloud/teo/v20220901/model/IPSSLSetting.h
+  include/tencentcloud/teo/v20220901/model/ModifyZoneCustomVariablesRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeContentQuotaRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeAvailableOriginACLFamilyRequest.h
   include/tencentcloud/teo/v20220901/model/ModifyFunctionReplicaRequest.h
@@ -1260,6 +1264,7 @@ set(teo_src
   src/v20220901/model/LogAnalysisDownloadTask.cpp
   src/v20220901/model/DDoS.cpp
   src/v20220901/model/ModifyL7AccRulePriorityResponse.cpp
+  src/v20220901/model/DescribeZoneCustomVariablesResponse.cpp
   src/v20220901/model/APIService.cpp
   src/v20220901/model/CreateConfigGroupVersionResponse.cpp
   src/v20220901/model/ConfirmOriginACLUpdateRequest.cpp
@@ -1299,6 +1304,7 @@ set(teo_src
   src/v20220901/model/CreateJustInTimeTranscodeTemplateRequest.cpp
   src/v20220901/model/FunctionReplica.cpp
   src/v20220901/model/TimingDataItem.cpp
+  src/v20220901/model/DescribeZoneCustomVariablesRequest.cpp
   src/v20220901/model/ModifyCustomErrorPageRequest.cpp
   src/v20220901/model/ModifyFunctionRuleResponse.cpp
   src/v20220901/model/ModifyFunctionReplicaResponse.cpp
@@ -1565,6 +1571,7 @@ set(teo_src
   src/v20220901/model/DescribeFunctionReplicasRequest.cpp
   src/v20220901/model/ZoneFullConfig.cpp
   src/v20220901/model/IdentifyZoneRequest.cpp
+  src/v20220901/model/ModifyZoneCustomVariablesResponse.cpp
   src/v20220901/model/VaryParameters.cpp
   src/v20220901/model/L4Proxy.cpp
   src/v20220901/model/SkipCondition.cpp
@@ -1669,6 +1676,7 @@ set(teo_src
   src/v20220901/model/DescribeMultiPathGatewaySecretKeyRequest.cpp
   src/v20220901/model/DDoSBlockData.cpp
   src/v20220901/model/IPSSLSetting.cpp
+  src/v20220901/model/ModifyZoneCustomVariablesRequest.cpp
   src/v20220901/model/DescribeContentQuotaRequest.cpp
   src/v20220901/model/DescribeAvailableOriginACLFamilyRequest.cpp
   src/v20220901/model/ModifyFunctionReplicaRequest.cpp

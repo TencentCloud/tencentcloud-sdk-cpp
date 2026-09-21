@@ -36,7 +36,8 @@ Vpc::Vpc() :
     m_assistantCidrSetHasBeenSet(false),
     m_enableRouteVpcPublishHasBeenSet(false),
     m_ipv6CidrBlockSetHasBeenSet(false),
-    m_enableRouteVpcPublishIpv6HasBeenSet(false)
+    m_enableRouteVpcPublishIpv6HasBeenSet(false),
+    m_stackTypeHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,16 @@ CoreInternalOutcome Vpc::Deserialize(const rapidjson::Value &value)
         m_enableRouteVpcPublishIpv6HasBeenSet = true;
     }
 
+    if (value.HasMember("StackType") && !value["StackType"].IsNull())
+    {
+        if (!value["StackType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Vpc.StackType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_stackType = string(value["StackType"].GetString());
+        m_stackTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -397,6 +408,14 @@ void Vpc::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "EnableRouteVpcPublishIpv6";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableRouteVpcPublishIpv6, allocator);
+    }
+
+    if (m_stackTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StackType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stackType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -656,5 +675,21 @@ void Vpc::SetEnableRouteVpcPublishIpv6(const bool& _enableRouteVpcPublishIpv6)
 bool Vpc::EnableRouteVpcPublishIpv6HasBeenSet() const
 {
     return m_enableRouteVpcPublishIpv6HasBeenSet;
+}
+
+string Vpc::GetStackType() const
+{
+    return m_stackType;
+}
+
+void Vpc::SetStackType(const string& _stackType)
+{
+    m_stackType = _stackType;
+    m_stackTypeHasBeenSet = true;
+}
+
+bool Vpc::StackTypeHasBeenSet() const
+{
+    return m_stackTypeHasBeenSet;
 }
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备名称，仅支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过128位；（设备名称无需全局唯一，可以重复）
-                     * @return Name 设备名称，仅支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过128位；（设备名称无需全局唯一，可以重复）
+                     * 获取<p>设备名称，仅支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过128位；（设备名称无需全局唯一，可以重复）</p>
+                     * @return Name <p>设备名称，仅支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过128位；（设备名称无需全局唯一，可以重复）</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置设备名称，仅支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过128位；（设备名称无需全局唯一，可以重复）
-                     * @param _name 设备名称，仅支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过128位；（设备名称无需全局唯一，可以重复）
+                     * 设置<p>设备名称，仅支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过128位；（设备名称无需全局唯一，可以重复）</p>
+                     * @param _name <p>设备名称，仅支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过128位；（设备名称无需全局唯一，可以重复）</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取设备接入协议（1:RTMP,2:GB,3:GW,6:ISUP）
-                     * @return AccessProtocol 设备接入协议（1:RTMP,2:GB,3:GW,6:ISUP）
+                     * 获取<p>设备接入协议（1:RTMP,2:GB,6:ISUP）</p><p>枚举值：</p><ul><li>1： RTMP</li><li>2： GB</li><li>6： ISUP</li></ul><p>默认值：2</p>
+                     * @return AccessProtocol <p>设备接入协议（1:RTMP,2:GB,6:ISUP）</p><p>枚举值：</p><ul><li>1： RTMP</li><li>2： GB</li><li>6： ISUP</li></ul><p>默认值：2</p>
                      * 
                      */
                     int64_t GetAccessProtocol() const;
 
                     /**
-                     * 设置设备接入协议（1:RTMP,2:GB,3:GW,6:ISUP）
-                     * @param _accessProtocol 设备接入协议（1:RTMP,2:GB,3:GW,6:ISUP）
+                     * 设置<p>设备接入协议（1:RTMP,2:GB,6:ISUP）</p><p>枚举值：</p><ul><li>1： RTMP</li><li>2： GB</li><li>6： ISUP</li></ul><p>默认值：2</p>
+                     * @param _accessProtocol <p>设备接入协议（1:RTMP,2:GB,6:ISUP）</p><p>枚举值：</p><ul><li>1： RTMP</li><li>2： GB</li><li>6： ISUP</li></ul><p>默认值：2</p>
                      * 
                      */
                     void SetAccessProtocol(const int64_t& _accessProtocol);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool AccessProtocolHasBeenSet() const;
 
                     /**
-                     * 获取设备类型，1:IPC,2:NVR；（若设备接入协议选择RTMP,IVCP，则设备类型只能选择IPC）
-                     * @return Type 设备类型，1:IPC,2:NVR；（若设备接入协议选择RTMP,IVCP，则设备类型只能选择IPC）
+                     * 获取<p>设备类型，1:IPC,2:NVR；（若设备接入协议选择RTMP，则设备类型只能选择IPC）</p><p>枚举值：</p><ul><li>1： IPC</li><li>2： NVR</li></ul>
+                     * @return Type <p>设备类型，1:IPC,2:NVR；（若设备接入协议选择RTMP，则设备类型只能选择IPC）</p><p>枚举值：</p><ul><li>1： IPC</li><li>2： NVR</li></ul>
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置设备类型，1:IPC,2:NVR；（若设备接入协议选择RTMP,IVCP，则设备类型只能选择IPC）
-                     * @param _type 设备类型，1:IPC,2:NVR；（若设备接入协议选择RTMP,IVCP，则设备类型只能选择IPC）
+                     * 设置<p>设备类型，1:IPC,2:NVR；（若设备接入协议选择RTMP，则设备类型只能选择IPC）</p><p>枚举值：</p><ul><li>1： IPC</li><li>2： NVR</li></ul>
+                     * @param _type <p>设备类型，1:IPC,2:NVR；（若设备接入协议选择RTMP，则设备类型只能选择IPC）</p><p>枚举值：</p><ul><li>1： IPC</li><li>2： NVR</li></ul>
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取设备所属组织ID，从查询组织接口DescribeOrganization中获取
-                     * @return OrganizationId 设备所属组织ID，从查询组织接口DescribeOrganization中获取
+                     * 获取<p>设备所属组织ID，从查询组织接口DescribeOrganization中获取</p>
+                     * @return OrganizationId <p>设备所属组织ID，从查询组织接口DescribeOrganization中获取</p>
                      * 
                      */
                     std::string GetOrganizationId() const;
 
                     /**
-                     * 设置设备所属组织ID，从查询组织接口DescribeOrganization中获取
-                     * @param _organizationId 设备所属组织ID，从查询组织接口DescribeOrganization中获取
+                     * 设置<p>设备所属组织ID，从查询组织接口DescribeOrganization中获取</p>
+                     * @param _organizationId <p>设备所属组织ID，从查询组织接口DescribeOrganization中获取</p>
                      * 
                      */
                     void SetOrganizationId(const std::string& _organizationId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OrganizationIdHasBeenSet() const;
 
                     /**
-                     * 获取设备接入服务节点ID（从查询设备可用服务节点接口DescribeDeviceRegion中获取的Value字段）
-                     * @return ClusterId 设备接入服务节点ID（从查询设备可用服务节点接口DescribeDeviceRegion中获取的Value字段）
+                     * 获取<p>设备接入服务节点ID（从查询设备可用服务节点接口DescribeRegionDomain中获取的Value字段）</p>
+                     * @return ClusterId <p>设备接入服务节点ID（从查询设备可用服务节点接口DescribeRegionDomain中获取的Value字段）</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置设备接入服务节点ID（从查询设备可用服务节点接口DescribeDeviceRegion中获取的Value字段）
-                     * @param _clusterId 设备接入服务节点ID（从查询设备可用服务节点接口DescribeDeviceRegion中获取的Value字段）
+                     * 设置<p>设备接入服务节点ID（从查询设备可用服务节点接口DescribeRegionDomain中获取的Value字段）</p>
+                     * @param _clusterId <p>设备接入服务节点ID（从查询设备可用服务节点接口DescribeRegionDomain中获取的Value字段）</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取设备流传输协议，1:UDP,2:TCP；(国标设备有效，不填写则默认UDP协议)
-                     * @return TransportProtocol 设备流传输协议，1:UDP,2:TCP；(国标设备有效，不填写则默认UDP协议)
+                     * 获取<p>设备流传输协议，1:UDP,2:TCP；(国标设备有效，不填写则默认UDP协议)</p>
+                     * @return TransportProtocol <p>设备流传输协议，1:UDP,2:TCP；(国标设备有效，不填写则默认UDP协议)</p>
                      * 
                      */
                     int64_t GetTransportProtocol() const;
 
                     /**
-                     * 设置设备流传输协议，1:UDP,2:TCP；(国标设备有效，不填写则默认UDP协议)
-                     * @param _transportProtocol 设备流传输协议，1:UDP,2:TCP；(国标设备有效，不填写则默认UDP协议)
+                     * 设置<p>设备流传输协议，1:UDP,2:TCP；(国标设备有效，不填写则默认UDP协议)</p>
+                     * @param _transportProtocol <p>设备流传输协议，1:UDP,2:TCP；(国标设备有效，不填写则默认UDP协议)</p>
                      * 
                      */
                     void SetTransportProtocol(const int64_t& _transportProtocol);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool TransportProtocolHasBeenSet() const;
 
                     /**
-                     * 获取设备密码（国标，网关设备必填，长度为1-64个字符）
-                     * @return Password 设备密码（国标，网关设备必填，长度为1-64个字符）
+                     * 获取<p>设备密码（国标设备必填，长度为1-64个字符）</p>
+                     * @return Password <p>设备密码（国标设备必填，长度为1-64个字符）</p>
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置设备密码（国标，网关设备必填，长度为1-64个字符）
-                     * @param _password 设备密码（国标，网关设备必填，长度为1-64个字符）
+                     * 设置<p>设备密码（国标设备必填，长度为1-64个字符）</p>
+                     * @param _password <p>设备密码（国标设备必填，长度为1-64个字符）</p>
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取设备描述，长度不超过128个字符
-                     * @return Description 设备描述，长度不超过128个字符
+                     * 获取<p>设备描述，长度不超过128个字符</p>
+                     * @return Description <p>设备描述，长度不超过128个字符</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置设备描述，长度不超过128个字符
-                     * @param _description 设备描述，长度不超过128个字符
+                     * 设置<p>设备描述，长度不超过128个字符</p>
+                     * @param _description <p>设备描述，长度不超过128个字符</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取设备接入网关ID，从查询网关列表接口中ListGateways获取（仅网关接入需要）
-                     * @return GatewayId 设备接入网关ID，从查询网关列表接口中ListGateways获取（仅网关接入需要）
+                     * 获取<p>设备接入网关ID（已不再使用，保留用于兼容，可忽略）</p>
+                     * @return GatewayId <p>设备接入网关ID（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
-                     * 设置设备接入网关ID，从查询网关列表接口中ListGateways获取（仅网关接入需要）
-                     * @param _gatewayId 设备接入网关ID，从查询网关列表接口中ListGateways获取（仅网关接入需要）
+                     * 设置<p>设备接入网关ID（已不再使用，保留用于兼容，可忽略）</p>
+                     * @param _gatewayId <p>设备接入网关ID（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取网关接入协议类型（从查询网关接入协议接口DescribeGatewayProtocol中获取）1.海康SDK，2.大华SDK，3.宇视SDK，4.Onvif（仅网关接入需要）
-                     * @return ProtocolType 网关接入协议类型（从查询网关接入协议接口DescribeGatewayProtocol中获取）1.海康SDK，2.大华SDK，3.宇视SDK，4.Onvif（仅网关接入需要）
+                     * 获取<p>网关接入协议类型（已不再使用，保留用于兼容，可忽略）</p>
+                     * @return ProtocolType <p>网关接入协议类型（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     int64_t GetProtocolType() const;
 
                     /**
-                     * 设置网关接入协议类型（从查询网关接入协议接口DescribeGatewayProtocol中获取）1.海康SDK，2.大华SDK，3.宇视SDK，4.Onvif（仅网关接入需要）
-                     * @param _protocolType 网关接入协议类型（从查询网关接入协议接口DescribeGatewayProtocol中获取）1.海康SDK，2.大华SDK，3.宇视SDK，4.Onvif（仅网关接入需要）
+                     * 设置<p>网关接入协议类型（已不再使用，保留用于兼容，可忽略）</p>
+                     * @param _protocolType <p>网关接入协议类型（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     void SetProtocolType(const int64_t& _protocolType);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool ProtocolTypeHasBeenSet() const;
 
                     /**
-                     * 获取设备接入IP（仅网关接入需要）
-                     * @return Ip 设备接入IP（仅网关接入需要）
+                     * 获取<p>设备接入IP（已不再使用，保留用于兼容，可忽略）</p>
+                     * @return Ip <p>设备接入IP（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置设备接入IP（仅网关接入需要）
-                     * @param _ip 设备接入IP（仅网关接入需要）
+                     * 设置<p>设备接入IP（已不再使用，保留用于兼容，可忽略）</p>
+                     * @param _ip <p>设备接入IP（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取设备端口（仅网关接入需要）
-                     * @return Port 设备端口（仅网关接入需要）
+                     * 获取<p>设备端口（已不再使用，保留用于兼容，可忽略）</p><p>取值范围：[1, 65535]</p><p>单位： 端口</p>
+                     * @return Port <p>设备端口（已不再使用，保留用于兼容，可忽略）</p><p>取值范围：[1, 65535]</p><p>单位： 端口</p>
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置设备端口（仅网关接入需要）
-                     * @param _port 设备端口（仅网关接入需要）
+                     * 设置<p>设备端口（已不再使用，保留用于兼容，可忽略）</p><p>取值范围：[1, 65535]</p><p>单位： 端口</p>
+                     * @param _port <p>设备端口（已不再使用，保留用于兼容，可忽略）</p><p>取值范围：[1, 65535]</p><p>单位： 端口</p>
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取设备用户名（仅网关接入需要）
-                     * @return Username 设备用户名（仅网关接入需要）
+                     * 获取<p>设备用户名（已不再使用，保留用于兼容，可忽略）</p>
+                     * @return Username <p>设备用户名（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     std::string GetUsername() const;
 
                     /**
-                     * 设置设备用户名（仅网关接入需要）
-                     * @param _username 设备用户名（仅网关接入需要）
+                     * 设置<p>设备用户名（已不再使用，保留用于兼容，可忽略）</p>
+                     * @param _username <p>设备用户名（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     void SetUsername(const std::string& _username);
@@ -316,15 +316,15 @@ namespace TencentCloud
                     bool UsernameHasBeenSet() const;
 
                     /**
-                     * 获取设备 SN，仅IVCP 协议设备需要
-                     * @return SNCode 设备 SN，仅IVCP 协议设备需要
+                     * 获取<p>设备 SN（已不再使用，保留用于兼容，可忽略）</p>
+                     * @return SNCode <p>设备 SN（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     std::string GetSNCode() const;
 
                     /**
-                     * 设置设备 SN，仅IVCP 协议设备需要
-                     * @param _sNCode 设备 SN，仅IVCP 协议设备需要
+                     * 设置<p>设备 SN（已不再使用，保留用于兼容，可忽略）</p>
+                     * @param _sNCode <p>设备 SN（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     void SetSNCode(const std::string& _sNCode);
@@ -337,15 +337,15 @@ namespace TencentCloud
                     bool SNCodeHasBeenSet() const;
 
                     /**
-                     * 获取RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）
-                     * @return AppName RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）
+                     * 获取<p>RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）</p>
+                     * @return AppName <p>RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）</p>
                      * 
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）
-                     * @param _appName RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）
+                     * 设置<p>RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）</p>
+                     * @param _appName <p>RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）</p>
                      * 
                      */
                     void SetAppName(const std::string& _appName);
@@ -358,15 +358,15 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）
-                     * @return StreamName RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）
+                     * 获取<p>RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）</p>
+                     * @return StreamName <p>RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）</p>
                      * 
                      */
                     std::string GetStreamName() const;
 
                     /**
-                     * 设置RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）
-                     * @param _streamName RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）
+                     * 设置<p>RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）</p>
+                     * @param _streamName <p>RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）</p>
                      * 
                      */
                     void SetStreamName(const std::string& _streamName);
@@ -381,97 +381,97 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 设备名称，仅支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过128位；（设备名称无需全局唯一，可以重复）
+                     * <p>设备名称，仅支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过128位；（设备名称无需全局唯一，可以重复）</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 设备接入协议（1:RTMP,2:GB,3:GW,6:ISUP）
+                     * <p>设备接入协议（1:RTMP,2:GB,6:ISUP）</p><p>枚举值：</p><ul><li>1： RTMP</li><li>2： GB</li><li>6： ISUP</li></ul><p>默认值：2</p>
                      */
                     int64_t m_accessProtocol;
                     bool m_accessProtocolHasBeenSet;
 
                     /**
-                     * 设备类型，1:IPC,2:NVR；（若设备接入协议选择RTMP,IVCP，则设备类型只能选择IPC）
+                     * <p>设备类型，1:IPC,2:NVR；（若设备接入协议选择RTMP，则设备类型只能选择IPC）</p><p>枚举值：</p><ul><li>1： IPC</li><li>2： NVR</li></ul>
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 设备所属组织ID，从查询组织接口DescribeOrganization中获取
+                     * <p>设备所属组织ID，从查询组织接口DescribeOrganization中获取</p>
                      */
                     std::string m_organizationId;
                     bool m_organizationIdHasBeenSet;
 
                     /**
-                     * 设备接入服务节点ID（从查询设备可用服务节点接口DescribeDeviceRegion中获取的Value字段）
+                     * <p>设备接入服务节点ID（从查询设备可用服务节点接口DescribeRegionDomain中获取的Value字段）</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 设备流传输协议，1:UDP,2:TCP；(国标设备有效，不填写则默认UDP协议)
+                     * <p>设备流传输协议，1:UDP,2:TCP；(国标设备有效，不填写则默认UDP协议)</p>
                      */
                     int64_t m_transportProtocol;
                     bool m_transportProtocolHasBeenSet;
 
                     /**
-                     * 设备密码（国标，网关设备必填，长度为1-64个字符）
+                     * <p>设备密码（国标设备必填，长度为1-64个字符）</p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 设备描述，长度不超过128个字符
+                     * <p>设备描述，长度不超过128个字符</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 设备接入网关ID，从查询网关列表接口中ListGateways获取（仅网关接入需要）
+                     * <p>设备接入网关ID（已不再使用，保留用于兼容，可忽略）</p>
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 网关接入协议类型（从查询网关接入协议接口DescribeGatewayProtocol中获取）1.海康SDK，2.大华SDK，3.宇视SDK，4.Onvif（仅网关接入需要）
+                     * <p>网关接入协议类型（已不再使用，保留用于兼容，可忽略）</p>
                      */
                     int64_t m_protocolType;
                     bool m_protocolTypeHasBeenSet;
 
                     /**
-                     * 设备接入IP（仅网关接入需要）
+                     * <p>设备接入IP（已不再使用，保留用于兼容，可忽略）</p>
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 设备端口（仅网关接入需要）
+                     * <p>设备端口（已不再使用，保留用于兼容，可忽略）</p><p>取值范围：[1, 65535]</p><p>单位： 端口</p>
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 设备用户名（仅网关接入需要）
+                     * <p>设备用户名（已不再使用，保留用于兼容，可忽略）</p>
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
 
                     /**
-                     * 设备 SN，仅IVCP 协议设备需要
+                     * <p>设备 SN（已不再使用，保留用于兼容，可忽略）</p>
                      */
                     std::string m_sNCode;
                     bool m_sNCodeHasBeenSet;
 
                     /**
-                     * RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）
+                     * <p>RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）</p>
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）
+                     * <p>RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）</p>
                      */
                     std::string m_streamName;
                     bool m_streamNameHasBeenSet;

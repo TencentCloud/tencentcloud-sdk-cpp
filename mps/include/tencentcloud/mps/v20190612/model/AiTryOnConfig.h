@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>换装模型，取值：</p><ul><li>WAND-tryon-1.0-lite</li><li>WAND-tryon-1.0-flash</li><li>WAND-tryon-1.0-pro</li></ul>
-                     * @return Model <p>换装模型，取值：</p><ul><li>WAND-tryon-1.0-lite</li><li>WAND-tryon-1.0-flash</li><li>WAND-tryon-1.0-pro</li></ul>
+                     * 获取<p>换装模型，取值：</p><ul><li>tryon-1.0-lite</li><li>tryon-1.0-flash</li><li>tryon-1.0-pro</li></ul>
+                     * @return Model <p>换装模型，取值：</p><ul><li>tryon-1.0-lite</li><li>tryon-1.0-flash</li><li>tryon-1.0-pro</li></ul>
                      * 
                      */
                     std::string GetModel() const;
 
                     /**
-                     * 设置<p>换装模型，取值：</p><ul><li>WAND-tryon-1.0-lite</li><li>WAND-tryon-1.0-flash</li><li>WAND-tryon-1.0-pro</li></ul>
-                     * @param _model <p>换装模型，取值：</p><ul><li>WAND-tryon-1.0-lite</li><li>WAND-tryon-1.0-flash</li><li>WAND-tryon-1.0-pro</li></ul>
+                     * 设置<p>换装模型，取值：</p><ul><li>tryon-1.0-lite</li><li>tryon-1.0-flash</li><li>tryon-1.0-pro</li></ul>
+                     * @param _model <p>换装模型，取值：</p><ul><li>tryon-1.0-lite</li><li>tryon-1.0-flash</li><li>tryon-1.0-pro</li></ul>
                      * 
                      */
                     void SetModel(const std::string& _model);
@@ -112,7 +112,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>换装模型，取值：</p><ul><li>WAND-tryon-1.0-lite</li><li>WAND-tryon-1.0-flash</li><li>WAND-tryon-1.0-pro</li></ul>
+                     * <p>换装模型，取值：</p><ul><li>tryon-1.0-lite</li><li>tryon-1.0-flash</li><li>tryon-1.0-pro</li></ul>
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;

@@ -240,56 +240,6 @@ AiartClient::ImageOutpaintingOutcomeCallable AiartClient::ImageOutpaintingCallab
     return prom->get_future();
 }
 
-AiartClient::ImageToImageOutcome AiartClient::ImageToImage(const ImageToImageRequest &request)
-{
-    auto outcome = MakeRequest(request, "ImageToImage");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ImageToImageResponse rsp = ImageToImageResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ImageToImageOutcome(rsp);
-        else
-            return ImageToImageOutcome(o.GetError());
-    }
-    else
-    {
-        return ImageToImageOutcome(outcome.GetError());
-    }
-}
-
-void AiartClient::ImageToImageAsync(const ImageToImageRequest& request, const ImageToImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const ImageToImageRequest&;
-    using Resp = ImageToImageResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "ImageToImage", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-AiartClient::ImageToImageOutcomeCallable AiartClient::ImageToImageCallable(const ImageToImageRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<ImageToImageOutcome>>();
-    ImageToImageAsync(
-    request,
-    [prom](
-        const AiartClient*,
-        const ImageToImageRequest&,
-        ImageToImageOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 AiartClient::QueryDrawPortraitJobOutcome AiartClient::QueryDrawPortraitJob(const QueryDrawPortraitJobRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryDrawPortraitJob");
@@ -432,56 +382,6 @@ AiartClient::QueryMemeJobOutcomeCallable AiartClient::QueryMemeJobCallable(const
         const AiartClient*,
         const QueryMemeJobRequest&,
         QueryMemeJobOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-AiartClient::QueryTextToImageJobOutcome AiartClient::QueryTextToImageJob(const QueryTextToImageJobRequest &request)
-{
-    auto outcome = MakeRequest(request, "QueryTextToImageJob");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        QueryTextToImageJobResponse rsp = QueryTextToImageJobResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return QueryTextToImageJobOutcome(rsp);
-        else
-            return QueryTextToImageJobOutcome(o.GetError());
-    }
-    else
-    {
-        return QueryTextToImageJobOutcome(outcome.GetError());
-    }
-}
-
-void AiartClient::QueryTextToImageJobAsync(const QueryTextToImageJobRequest& request, const QueryTextToImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const QueryTextToImageJobRequest&;
-    using Resp = QueryTextToImageJobResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "QueryTextToImageJob", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-AiartClient::QueryTextToImageJobOutcomeCallable AiartClient::QueryTextToImageJobCallable(const QueryTextToImageJobRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<QueryTextToImageJobOutcome>>();
-    QueryTextToImageJobAsync(
-    request,
-    [prom](
-        const AiartClient*,
-        const QueryTextToImageJobRequest&,
-        QueryTextToImageJobOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -890,56 +790,6 @@ AiartClient::SubmitMemeJobOutcomeCallable AiartClient::SubmitMemeJobCallable(con
     return prom->get_future();
 }
 
-AiartClient::SubmitTextToImageJobOutcome AiartClient::SubmitTextToImageJob(const SubmitTextToImageJobRequest &request)
-{
-    auto outcome = MakeRequest(request, "SubmitTextToImageJob");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        SubmitTextToImageJobResponse rsp = SubmitTextToImageJobResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return SubmitTextToImageJobOutcome(rsp);
-        else
-            return SubmitTextToImageJobOutcome(o.GetError());
-    }
-    else
-    {
-        return SubmitTextToImageJobOutcome(outcome.GetError());
-    }
-}
-
-void AiartClient::SubmitTextToImageJobAsync(const SubmitTextToImageJobRequest& request, const SubmitTextToImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const SubmitTextToImageJobRequest&;
-    using Resp = SubmitTextToImageJobResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "SubmitTextToImageJob", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-AiartClient::SubmitTextToImageJobOutcomeCallable AiartClient::SubmitTextToImageJobCallable(const SubmitTextToImageJobRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<SubmitTextToImageJobOutcome>>();
-    SubmitTextToImageJobAsync(
-    request,
-    [prom](
-        const AiartClient*,
-        const SubmitTextToImageJobRequest&,
-        SubmitTextToImageJobOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 AiartClient::SubmitTextToImageProJobOutcome AiartClient::SubmitTextToImageProJob(const SubmitTextToImageProJobRequest &request)
 {
     auto outcome = MakeRequest(request, "SubmitTextToImageProJob");
@@ -1032,106 +882,6 @@ AiartClient::SubmitTrainPortraitModelJobOutcomeCallable AiartClient::SubmitTrain
         const AiartClient*,
         const SubmitTrainPortraitModelJobRequest&,
         SubmitTrainPortraitModelJobOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-AiartClient::TextToImageLiteOutcome AiartClient::TextToImageLite(const TextToImageLiteRequest &request)
-{
-    auto outcome = MakeRequest(request, "TextToImageLite");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        TextToImageLiteResponse rsp = TextToImageLiteResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return TextToImageLiteOutcome(rsp);
-        else
-            return TextToImageLiteOutcome(o.GetError());
-    }
-    else
-    {
-        return TextToImageLiteOutcome(outcome.GetError());
-    }
-}
-
-void AiartClient::TextToImageLiteAsync(const TextToImageLiteRequest& request, const TextToImageLiteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const TextToImageLiteRequest&;
-    using Resp = TextToImageLiteResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "TextToImageLite", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-AiartClient::TextToImageLiteOutcomeCallable AiartClient::TextToImageLiteCallable(const TextToImageLiteRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<TextToImageLiteOutcome>>();
-    TextToImageLiteAsync(
-    request,
-    [prom](
-        const AiartClient*,
-        const TextToImageLiteRequest&,
-        TextToImageLiteOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-AiartClient::TextToImageRapidOutcome AiartClient::TextToImageRapid(const TextToImageRapidRequest &request)
-{
-    auto outcome = MakeRequest(request, "TextToImageRapid");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        TextToImageRapidResponse rsp = TextToImageRapidResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return TextToImageRapidOutcome(rsp);
-        else
-            return TextToImageRapidOutcome(o.GetError());
-    }
-    else
-    {
-        return TextToImageRapidOutcome(outcome.GetError());
-    }
-}
-
-void AiartClient::TextToImageRapidAsync(const TextToImageRapidRequest& request, const TextToImageRapidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const TextToImageRapidRequest&;
-    using Resp = TextToImageRapidResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "TextToImageRapid", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-AiartClient::TextToImageRapidOutcomeCallable AiartClient::TextToImageRapidCallable(const TextToImageRapidRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<TextToImageRapidOutcome>>();
-    TextToImageRapidAsync(
-    request,
-    [prom](
-        const AiartClient*,
-        const TextToImageRapidRequest&,
-        TextToImageRapidOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -25,8 +25,10 @@ using namespace std;
 CreateSubnetRequest::CreateSubnetRequest() :
     m_vpcIdHasBeenSet(false),
     m_subnetNameHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false),
     m_zoneHasBeenSet(false),
+    m_stackTypeHasBeenSet(false),
+    m_cidrBlockHasBeenSet(false),
+    m_ipv6CidrBlockHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_cdcIdHasBeenSet(false)
 {
@@ -55,6 +57,22 @@ string CreateSubnetRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_subnetName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stackTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StackType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_stackType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_cidrBlockHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -63,12 +81,12 @@ string CreateSubnetRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_cidrBlock.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_zoneHasBeenSet)
+    if (m_ipv6CidrBlockHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Zone";
+        string key = "Ipv6CidrBlock";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ipv6CidrBlock.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagsHasBeenSet)
@@ -134,6 +152,38 @@ bool CreateSubnetRequest::SubnetNameHasBeenSet() const
     return m_subnetNameHasBeenSet;
 }
 
+string CreateSubnetRequest::GetZone() const
+{
+    return m_zone;
+}
+
+void CreateSubnetRequest::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool CreateSubnetRequest::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
+}
+
+string CreateSubnetRequest::GetStackType() const
+{
+    return m_stackType;
+}
+
+void CreateSubnetRequest::SetStackType(const string& _stackType)
+{
+    m_stackType = _stackType;
+    m_stackTypeHasBeenSet = true;
+}
+
+bool CreateSubnetRequest::StackTypeHasBeenSet() const
+{
+    return m_stackTypeHasBeenSet;
+}
+
 string CreateSubnetRequest::GetCidrBlock() const
 {
     return m_cidrBlock;
@@ -150,20 +200,20 @@ bool CreateSubnetRequest::CidrBlockHasBeenSet() const
     return m_cidrBlockHasBeenSet;
 }
 
-string CreateSubnetRequest::GetZone() const
+string CreateSubnetRequest::GetIpv6CidrBlock() const
 {
-    return m_zone;
+    return m_ipv6CidrBlock;
 }
 
-void CreateSubnetRequest::SetZone(const string& _zone)
+void CreateSubnetRequest::SetIpv6CidrBlock(const string& _ipv6CidrBlock)
 {
-    m_zone = _zone;
-    m_zoneHasBeenSet = true;
+    m_ipv6CidrBlock = _ipv6CidrBlock;
+    m_ipv6CidrBlockHasBeenSet = true;
 }
 
-bool CreateSubnetRequest::ZoneHasBeenSet() const
+bool CreateSubnetRequest::Ipv6CidrBlockHasBeenSet() const
 {
-    return m_zoneHasBeenSet;
+    return m_ipv6CidrBlockHasBeenSet;
 }
 
 vector<Tag> CreateSubnetRequest::GetTags() const

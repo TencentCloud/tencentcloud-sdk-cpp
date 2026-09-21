@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取美颜效果
-                     * @return BeautyEffectItems 美颜效果
+                     * 获取<p>美颜效果</p>
+                     * @return BeautyEffectItems <p>美颜效果</p>
                      * 
                      */
                     std::vector<BeautyEffectItemConfig> GetBeautyEffectItems() const;
 
                     /**
-                     * 设置美颜效果
-                     * @param _beautyEffectItems 美颜效果
+                     * 设置<p>美颜效果</p>
+                     * @param _beautyEffectItems <p>美颜效果</p>
                      * 
                      */
                     void SetBeautyEffectItems(const std::vector<BeautyEffectItemConfig>& _beautyEffectItems);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool BeautyEffectItemsHasBeenSet() const;
 
                     /**
-                     * 获取美颜滤镜
-                     * @return BeautyFilterItems 美颜滤镜
+                     * 获取<p>美颜滤镜</p>
+                     * @return BeautyFilterItems <p>美颜滤镜</p>
                      * 
                      */
                     std::vector<BeautyFilterItemConfig> GetBeautyFilterItems() const;
 
                     /**
-                     * 设置美颜滤镜
-                     * @param _beautyFilterItems 美颜滤镜
+                     * 设置<p>美颜滤镜</p>
+                     * @param _beautyFilterItems <p>美颜滤镜</p>
                      * 
                      */
                     void SetBeautyFilterItems(const std::vector<BeautyFilterItemConfig>& _beautyFilterItems);
@@ -90,19 +90,46 @@ namespace TencentCloud
                      */
                     bool BeautyFilterItemsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>美颜类型</p><p>枚举值：</p><ul><li>auto： 智能自动美颜</li></ul><p>传入美颜参数时，忽略该参数。</p>
+                     * @return Type <p>美颜类型</p><p>枚举值：</p><ul><li>auto： 智能自动美颜</li></ul><p>传入美颜参数时，忽略该参数。</p>
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置<p>美颜类型</p><p>枚举值：</p><ul><li>auto： 智能自动美颜</li></ul><p>传入美颜参数时，忽略该参数。</p>
+                     * @param _type <p>美颜类型</p><p>枚举值：</p><ul><li>auto： 智能自动美颜</li></ul><p>传入美颜参数时，忽略该参数。</p>
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 美颜效果
+                     * <p>美颜效果</p>
                      */
                     std::vector<BeautyEffectItemConfig> m_beautyEffectItems;
                     bool m_beautyEffectItemsHasBeenSet;
 
                     /**
-                     * 美颜滤镜
+                     * <p>美颜滤镜</p>
                      */
                     std::vector<BeautyFilterItemConfig> m_beautyFilterItems;
                     bool m_beautyFilterItemsHasBeenSet;
+
+                    /**
+                     * <p>美颜类型</p><p>枚举值：</p><ul><li>auto： 智能自动美颜</li></ul><p>传入美颜参数时，忽略该参数。</p>
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

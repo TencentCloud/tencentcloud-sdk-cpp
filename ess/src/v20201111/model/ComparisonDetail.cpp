@@ -26,7 +26,8 @@ ComparisonDetail::ComparisonDetail() :
     m_contentTypeHasBeenSet(false),
     m_originTextHasBeenSet(false),
     m_diffTextHasBeenSet(false),
-    m_formatTypeHasBeenSet(false)
+    m_formatTypeHasBeenSet(false),
+    m_pageNumberHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome ComparisonDetail::Deserialize(const rapidjson::Value &value)
         m_formatTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("PageNumber") && !value["PageNumber"].IsNull())
+    {
+        if (!value["PageNumber"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComparisonDetail.PageNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pageNumber = value["PageNumber"].GetInt64();
+        m_pageNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void ComparisonDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "FormatType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_formatType, allocator);
+    }
+
+    if (m_pageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pageNumber, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void ComparisonDetail::SetFormatType(const int64_t& _formatType)
 bool ComparisonDetail::FormatTypeHasBeenSet() const
 {
     return m_formatTypeHasBeenSet;
+}
+
+int64_t ComparisonDetail::GetPageNumber() const
+{
+    return m_pageNumber;
+}
+
+void ComparisonDetail::SetPageNumber(const int64_t& _pageNumber)
+{
+    m_pageNumber = _pageNumber;
+    m_pageNumberHasBeenSet = true;
+}
+
+bool ComparisonDetail::PageNumberHasBeenSet() const
+{
+    return m_pageNumberHasBeenSet;
 }
 

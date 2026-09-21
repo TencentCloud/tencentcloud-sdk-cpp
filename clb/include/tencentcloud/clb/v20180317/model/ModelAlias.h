@@ -26,6 +26,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/clb/v20180317/model/Coefficient.h>
 #include <tencentcloud/clb/v20180317/model/ServiceProviderCoefficient.h>
+#include <tencentcloud/clb/v20180317/model/CoefficientTier.h>
+#include <tencentcloud/clb/v20180317/model/CoefficientScheduleRule.h>
 
 
 namespace TencentCloud
@@ -154,15 +156,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取<p>模型能力</p>
-                     * @return Capability <p>模型能力</p>
+                     * 获取<p>模型输出模态</p><p>枚举值：</p><ul><li>chat ： 文本</li><li>embedding： 向量</li><li>rerank： 重排序</li><li>video： 视频</li></ul>
+                     * @return Capability <p>模型输出模态</p><p>枚举值：</p><ul><li>chat ： 文本</li><li>embedding： 向量</li><li>rerank： 重排序</li><li>video： 视频</li></ul>
                      * 
                      */
                     std::string GetCapability() const;
 
                     /**
-                     * 设置<p>模型能力</p>
-                     * @param _capability <p>模型能力</p>
+                     * 设置<p>模型输出模态</p><p>枚举值：</p><ul><li>chat ： 文本</li><li>embedding： 向量</li><li>rerank： 重排序</li><li>video： 视频</li></ul>
+                     * @param _capability <p>模型输出模态</p><p>枚举值：</p><ul><li>chat ： 文本</li><li>embedding： 向量</li><li>rerank： 重排序</li><li>video： 视频</li></ul>
                      * 
                      */
                     void SetCapability(const std::string& _capability);
@@ -173,6 +175,48 @@ namespace TencentCloud
                      * 
                      */
                     bool CapabilityHasBeenSet() const;
+
+                    /**
+                     * 获取<p>分级积分系数配置</p>
+                     * @return CoefficientTiers <p>分级积分系数配置</p>
+                     * 
+                     */
+                    std::vector<CoefficientTier> GetCoefficientTiers() const;
+
+                    /**
+                     * 设置<p>分级积分系数配置</p>
+                     * @param _coefficientTiers <p>分级积分系数配置</p>
+                     * 
+                     */
+                    void SetCoefficientTiers(const std::vector<CoefficientTier>& _coefficientTiers);
+
+                    /**
+                     * 判断参数 CoefficientTiers 是否已赋值
+                     * @return CoefficientTiers 是否已赋值
+                     * 
+                     */
+                    bool CoefficientTiersHasBeenSet() const;
+
+                    /**
+                     * 获取<p>峰谷积分系数配置</p>
+                     * @return CoefficientSchedule <p>峰谷积分系数配置</p>
+                     * 
+                     */
+                    std::vector<CoefficientScheduleRule> GetCoefficientSchedule() const;
+
+                    /**
+                     * 设置<p>峰谷积分系数配置</p>
+                     * @param _coefficientSchedule <p>峰谷积分系数配置</p>
+                     * 
+                     */
+                    void SetCoefficientSchedule(const std::vector<CoefficientScheduleRule>& _coefficientSchedule);
+
+                    /**
+                     * 判断参数 CoefficientSchedule 是否已赋值
+                     * @return CoefficientSchedule 是否已赋值
+                     * 
+                     */
+                    bool CoefficientScheduleHasBeenSet() const;
 
                 private:
 
@@ -207,10 +251,22 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * <p>模型能力</p>
+                     * <p>模型输出模态</p><p>枚举值：</p><ul><li>chat ： 文本</li><li>embedding： 向量</li><li>rerank： 重排序</li><li>video： 视频</li></ul>
                      */
                     std::string m_capability;
                     bool m_capabilityHasBeenSet;
+
+                    /**
+                     * <p>分级积分系数配置</p>
+                     */
+                    std::vector<CoefficientTier> m_coefficientTiers;
+                    bool m_coefficientTiersHasBeenSet;
+
+                    /**
+                     * <p>峰谷积分系数配置</p>
+                     */
+                    std::vector<CoefficientScheduleRule> m_coefficientSchedule;
+                    bool m_coefficientScheduleHasBeenSet;
 
                 };
             }

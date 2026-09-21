@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源组节点总数； 注意接口是分页拉取的，total是指资源组节点总数，不是本次返回中InstanceSet数组的大小
+                     * 获取<p>资源组节点总数； 注意接口是分页拉取的，total是指资源组节点总数，不是本次返回中InstanceSet数组的大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount 资源组节点总数； 注意接口是分页拉取的，total是指资源组节点总数，不是本次返回中InstanceSet数组的大小
+                     * @return TotalCount <p>资源组节点总数； 注意接口是分页拉取的，total是指资源组节点总数，不是本次返回中InstanceSet数组的大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取资源组节点信息
+                     * 获取<p>资源组节点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceSet 资源组节点信息
+                     * @return InstanceSet <p>资源组节点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,8 +77,8 @@ namespace TencentCloud
                     bool InstanceSetHasBeenSet() const;
 
                     /**
-                     * 获取资源组纳管类型
-                     * @return ResourceGroupSWType 资源组纳管类型
+                     * 获取<p>资源组纳管类型</p>
+                     * @return ResourceGroupSWType <p>资源组纳管类型</p>
                      * 
                      */
                     std::string GetResourceGroupSWType() const;
@@ -93,21 +93,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源组节点总数； 注意接口是分页拉取的，total是指资源组节点总数，不是本次返回中InstanceSet数组的大小
+                     * <p>资源组节点总数； 注意接口是分页拉取的，total是指资源组节点总数，不是本次返回中InstanceSet数组的大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 资源组节点信息
+                     * <p>资源组节点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Instance> m_instanceSet;
                     bool m_instanceSetHasBeenSet;
 
                     /**
-                     * 资源组纳管类型
+                     * <p>资源组纳管类型</p>
                      */
                     std::string m_resourceGroupSWType;
                     bool m_resourceGroupSWTypeHasBeenSet;

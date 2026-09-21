@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取上游任务ID
+                     * 获取<p>上游任务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpstreamTaskId 上游任务ID
+                     * @return UpstreamTaskId <p>上游任务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpstreamTaskId() const;
 
                     /**
-                     * 设置上游任务ID
+                     * 设置<p>上游任务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _upstreamTaskId 上游任务ID
+                     * @param _upstreamTaskId <p>上游任务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool UpstreamTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取上游任务名称
+                     * 获取<p>上游任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpstreamTaskName 上游任务名称
+                     * @return UpstreamTaskName <p>上游任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpstreamTaskName() const;
 
                     /**
-                     * 设置上游任务名称
+                     * 设置<p>上游任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _upstreamTaskName 上游任务名称
+                     * @param _upstreamTaskName <p>上游任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,22 +97,18 @@ namespace TencentCloud
                     bool UpstreamTaskNameHasBeenSet() const;
 
                     /**
-                     * 获取任务可运行条件
-支持的状态值： - SUCCESS: 成功 - FAILED: 失败 - UPSTREAM_FAILED: 上游失败 - EXCLUDED: 排除运行
+                     * 获取<p>任务可运行条件<br>支持的状态值： - SUCCESS: 成功 - FAILED: 失败 - UPSTREAM_FAILED: 上游失败 - EXCLUDED: 排除运行</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AllowedStates 任务可运行条件
-支持的状态值： - SUCCESS: 成功 - FAILED: 失败 - UPSTREAM_FAILED: 上游失败 - EXCLUDED: 排除运行
+                     * @return AllowedStates <p>任务可运行条件<br>支持的状态值： - SUCCESS: 成功 - FAILED: 失败 - UPSTREAM_FAILED: 上游失败 - EXCLUDED: 排除运行</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAllowedStates() const;
 
                     /**
-                     * 设置任务可运行条件
-支持的状态值： - SUCCESS: 成功 - FAILED: 失败 - UPSTREAM_FAILED: 上游失败 - EXCLUDED: 排除运行
+                     * 设置<p>任务可运行条件<br>支持的状态值： - SUCCESS: 成功 - FAILED: 失败 - UPSTREAM_FAILED: 上游失败 - EXCLUDED: 排除运行</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _allowedStates 任务可运行条件
-支持的状态值： - SUCCESS: 成功 - FAILED: 失败 - UPSTREAM_FAILED: 上游失败 - EXCLUDED: 排除运行
+                     * @param _allowedStates <p>任务可运行条件<br>支持的状态值： - SUCCESS: 成功 - FAILED: 失败 - UPSTREAM_FAILED: 上游失败 - EXCLUDED: 排除运行</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -128,22 +124,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 上游任务ID
+                     * <p>上游任务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_upstreamTaskId;
                     bool m_upstreamTaskIdHasBeenSet;
 
                     /**
-                     * 上游任务名称
+                     * <p>上游任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_upstreamTaskName;
                     bool m_upstreamTaskNameHasBeenSet;
 
                     /**
-                     * 任务可运行条件
-支持的状态值： - SUCCESS: 成功 - FAILED: 失败 - UPSTREAM_FAILED: 上游失败 - EXCLUDED: 排除运行
+                     * <p>任务可运行条件<br>支持的状态值： - SUCCESS: 成功 - FAILED: 失败 - UPSTREAM_FAILED: 上游失败 - EXCLUDED: 排除运行</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_allowedStates;

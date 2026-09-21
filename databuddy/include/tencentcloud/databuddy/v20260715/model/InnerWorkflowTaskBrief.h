@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool TaskNameHasBeenSet() const;
 
                     /**
-                     * 获取任务类型名称
+                     * 获取任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskTypeName 任务类型名称
+                     * @return TaskTypeName 任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskTypeName() const;
 
                     /**
-                     * 设置任务类型名称
+                     * 设置任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskTypeName 任务类型名称
+                     * @param _taskTypeName 任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -138,7 +138,7 @@ namespace TencentCloud
                     bool m_taskNameHasBeenSet;
 
                     /**
-                     * 任务类型名称
+                     * 任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskTypeName;

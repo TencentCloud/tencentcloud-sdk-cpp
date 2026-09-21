@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取<p>检索的起始时间，可不传</p>
-                     * @return StartTime <p>检索的起始时间，可不传</p>
+                     * 获取<p>检索的起始时间，规则创建时间，可不传</p><p>参数格式：2022-07-27 16:00:00</p>
+                     * @return StartTime <p>检索的起始时间，规则创建时间，可不传</p><p>参数格式：2022-07-27 16:00:00</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置<p>检索的起始时间，可不传</p>
-                     * @param _startTime <p>检索的起始时间，可不传</p>
+                     * 设置<p>检索的起始时间，规则创建时间，可不传</p><p>参数格式：2022-07-27 16:00:00</p>
+                     * @param _startTime <p>检索的起始时间，规则创建时间，可不传</p><p>参数格式：2022-07-27 16:00:00</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>检索的截止时间，可不传</p>
-                     * @return EndTime <p>检索的截止时间，可不传</p>
+                     * 获取<p>检索的截止时间，规则创建时间，可不传</p><p>参数格式：2022-07-27 16:00:00</p>
+                     * @return EndTime <p>检索的截止时间，规则创建时间，可不传</p><p>参数格式：2022-07-27 16:00:00</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置<p>检索的截止时间，可不传</p>
-                     * @param _endTime <p>检索的截止时间，可不传</p>
+                     * 设置<p>检索的截止时间，规则创建时间，可不传</p><p>参数格式：2022-07-27 16:00:00</p>
+                     * @param _endTime <p>检索的截止时间，规则创建时间，可不传</p><p>参数格式：2022-07-27 16:00:00</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -238,13 +238,13 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * <p>检索的起始时间，可不传</p>
+                     * <p>检索的起始时间，规则创建时间，可不传</p><p>参数格式：2022-07-27 16:00:00</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * <p>检索的截止时间，可不传</p>
+                     * <p>检索的截止时间，规则创建时间，可不传</p><p>参数格式：2022-07-27 16:00:00</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

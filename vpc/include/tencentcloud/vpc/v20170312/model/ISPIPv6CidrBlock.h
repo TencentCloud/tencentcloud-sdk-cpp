@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取IPv6 CIdr Block
-                     * @return IPv6CidrBlock IPv6 CIdr Block
+                     * 获取<p>IPv6网段</p>
+                     * @return IPv6CidrBlock <p>IPv6网段</p>
                      * 
                      */
                     std::string GetIPv6CidrBlock() const;
 
                     /**
-                     * 设置IPv6 CIdr Block
-                     * @param _iPv6CidrBlock IPv6 CIdr Block
+                     * 设置<p>IPv6网段</p>
+                     * @param _iPv6CidrBlock <p>IPv6网段</p>
                      * 
                      */
                     void SetIPv6CidrBlock(const std::string& _iPv6CidrBlock);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IPv6CidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取网络运营商类型 取值范围:'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调
-                     * @return ISPType 网络运营商类型 取值范围:'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调
+                     * 获取<p>网络运营商类型</p><p>枚举值：</p><ul><li>BGP： 默认</li><li>CMCC： 中国移动</li><li>CTCC： 中国电信</li><li>CUCC： 中国联通</li></ul>
+                     * @return ISPType <p>网络运营商类型</p><p>枚举值：</p><ul><li>BGP： 默认</li><li>CMCC： 中国移动</li><li>CTCC： 中国电信</li><li>CUCC： 中国联通</li></ul>
                      * 
                      */
                     std::string GetISPType() const;
 
                     /**
-                     * 设置网络运营商类型 取值范围:'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调
-                     * @param _iSPType 网络运营商类型 取值范围:'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调
+                     * 设置<p>网络运营商类型</p><p>枚举值：</p><ul><li>BGP： 默认</li><li>CMCC： 中国移动</li><li>CTCC： 中国电信</li><li>CUCC： 中国联通</li></ul>
+                     * @param _iSPType <p>网络运营商类型</p><p>枚举值：</p><ul><li>BGP： 默认</li><li>CMCC： 中国移动</li><li>CTCC： 中国电信</li><li>CUCC： 中国联通</li></ul>
                      * 
                      */
                     void SetISPType(const std::string& _iSPType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ISPTypeHasBeenSet() const;
 
                     /**
-                     * 获取IPv6 Cidr 的类型：`GUA`(全球单播地址), `ULA`(唯一本地地址)
-                     * @return AddressType IPv6 Cidr 的类型：`GUA`(全球单播地址), `ULA`(唯一本地地址)
+                     * 获取<p>IPv6网段类型</p><p>枚举值：</p><ul><li>GUA： 全球单播地址</li><li>ULA： 唯一本地地址</li></ul>
+                     * @return AddressType <p>IPv6网段类型</p><p>枚举值：</p><ul><li>GUA： 全球单播地址</li><li>ULA： 唯一本地地址</li></ul>
                      * 
                      */
                     std::string GetAddressType() const;
 
                     /**
-                     * 设置IPv6 Cidr 的类型：`GUA`(全球单播地址), `ULA`(唯一本地地址)
-                     * @param _addressType IPv6 Cidr 的类型：`GUA`(全球单播地址), `ULA`(唯一本地地址)
+                     * 设置<p>IPv6网段类型</p><p>枚举值：</p><ul><li>GUA： 全球单播地址</li><li>ULA： 唯一本地地址</li></ul>
+                     * @param _addressType <p>IPv6网段类型</p><p>枚举值：</p><ul><li>GUA： 全球单播地址</li><li>ULA： 唯一本地地址</li></ul>
                      * 
                      */
                     void SetAddressType(const std::string& _addressType);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * IPv6 CIdr Block
+                     * <p>IPv6网段</p>
                      */
                     std::string m_iPv6CidrBlock;
                     bool m_iPv6CidrBlockHasBeenSet;
 
                     /**
-                     * 网络运营商类型 取值范围:'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调
+                     * <p>网络运营商类型</p><p>枚举值：</p><ul><li>BGP： 默认</li><li>CMCC： 中国移动</li><li>CTCC： 中国电信</li><li>CUCC： 中国联通</li></ul>
                      */
                     std::string m_iSPType;
                     bool m_iSPTypeHasBeenSet;
 
                     /**
-                     * IPv6 Cidr 的类型：`GUA`(全球单播地址), `ULA`(唯一本地地址)
+                     * <p>IPv6网段类型</p><p>枚举值：</p><ul><li>GUA： 全球单播地址</li><li>ULA： 唯一本地地址</li></ul>
                      */
                     std::string m_addressType;
                     bool m_addressTypeHasBeenSet;

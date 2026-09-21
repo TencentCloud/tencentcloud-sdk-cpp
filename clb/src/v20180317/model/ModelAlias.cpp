@@ -26,7 +26,9 @@ ModelAlias::ModelAlias() :
     m_serviceProviderCoefficientSetHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_capabilityHasBeenSet(false)
+    m_capabilityHasBeenSet(false),
+    m_coefficientTiersHasBeenSet(false),
+    m_coefficientScheduleHasBeenSet(false)
 {
 }
 
@@ -112,6 +114,46 @@ CoreInternalOutcome ModelAlias::Deserialize(const rapidjson::Value &value)
         m_capabilityHasBeenSet = true;
     }
 
+    if (value.HasMember("CoefficientTiers") && !value["CoefficientTiers"].IsNull())
+    {
+        if (!value["CoefficientTiers"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ModelAlias.CoefficientTiers` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CoefficientTiers"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CoefficientTier item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_coefficientTiers.push_back(item);
+        }
+        m_coefficientTiersHasBeenSet = true;
+    }
+
+    if (value.HasMember("CoefficientSchedule") && !value["CoefficientSchedule"].IsNull())
+    {
+        if (!value["CoefficientSchedule"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ModelAlias.CoefficientSchedule` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CoefficientSchedule"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CoefficientScheduleRule item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_coefficientSchedule.push_back(item);
+        }
+        m_coefficientScheduleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -173,6 +215,36 @@ void ModelAlias::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Capability";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_capability.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_coefficientTiersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CoefficientTiers";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_coefficientTiers.begin(); itr != m_coefficientTiers.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_coefficientScheduleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CoefficientSchedule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_coefficientSchedule.begin(); itr != m_coefficientSchedule.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -272,5 +344,37 @@ void ModelAlias::SetCapability(const string& _capability)
 bool ModelAlias::CapabilityHasBeenSet() const
 {
     return m_capabilityHasBeenSet;
+}
+
+vector<CoefficientTier> ModelAlias::GetCoefficientTiers() const
+{
+    return m_coefficientTiers;
+}
+
+void ModelAlias::SetCoefficientTiers(const vector<CoefficientTier>& _coefficientTiers)
+{
+    m_coefficientTiers = _coefficientTiers;
+    m_coefficientTiersHasBeenSet = true;
+}
+
+bool ModelAlias::CoefficientTiersHasBeenSet() const
+{
+    return m_coefficientTiersHasBeenSet;
+}
+
+vector<CoefficientScheduleRule> ModelAlias::GetCoefficientSchedule() const
+{
+    return m_coefficientSchedule;
+}
+
+void ModelAlias::SetCoefficientSchedule(const vector<CoefficientScheduleRule>& _coefficientSchedule)
+{
+    m_coefficientSchedule = _coefficientSchedule;
+    m_coefficientScheduleHasBeenSet = true;
+}
+
+bool ModelAlias::CoefficientScheduleHasBeenSet() const
+{
+    return m_coefficientScheduleHasBeenSet;
 }
 

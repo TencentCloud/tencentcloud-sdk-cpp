@@ -34,7 +34,8 @@ UpdateUserDeviceRequest::UpdateUserDeviceRequest() :
     m_protocolTypeHasBeenSet(false),
     m_audioSwitchHasBeenSet(false),
     m_subscribeSwitchHasBeenSet(false),
-    m_silentFrameSwitchHasBeenSet(false)
+    m_silentFrameSwitchHasBeenSet(false),
+    m_timeSyncSwitchHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,14 @@ string UpdateUserDeviceRequest::ToJsonString() const
         string key = "SilentFrameSwitch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_silentFrameSwitch, allocator);
+    }
+
+    if (m_timeSyncSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeSyncSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_timeSyncSwitch, allocator);
     }
 
 
@@ -339,6 +348,22 @@ void UpdateUserDeviceRequest::SetSilentFrameSwitch(const int64_t& _silentFrameSw
 bool UpdateUserDeviceRequest::SilentFrameSwitchHasBeenSet() const
 {
     return m_silentFrameSwitchHasBeenSet;
+}
+
+int64_t UpdateUserDeviceRequest::GetTimeSyncSwitch() const
+{
+    return m_timeSyncSwitch;
+}
+
+void UpdateUserDeviceRequest::SetTimeSyncSwitch(const int64_t& _timeSyncSwitch)
+{
+    m_timeSyncSwitch = _timeSyncSwitch;
+    m_timeSyncSwitchHasBeenSet = true;
+}
+
+bool UpdateUserDeviceRequest::TimeSyncSwitchHasBeenSet() const
+{
+    return m_timeSyncSwitchHasBeenSet;
 }
 
 

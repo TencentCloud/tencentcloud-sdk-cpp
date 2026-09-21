@@ -52,7 +52,10 @@ DescribeDeviceData::DescribeDeviceData() :
     m_appNameHasBeenSet(false),
     m_streamNameHasBeenSet(false),
     m_silentFrameSwitchHasBeenSet(false),
-    m_pushStreamSecureUrlHasBeenSet(false)
+    m_pushStreamSecureUrlHasBeenSet(false),
+    m_sipFQDNHasBeenSet(false),
+    m_sipCarrierEndpointsHasBeenSet(false),
+    m_timeSyncSwitchHasBeenSet(false)
 {
 }
 
@@ -381,6 +384,43 @@ CoreInternalOutcome DescribeDeviceData::Deserialize(const rapidjson::Value &valu
         m_pushStreamSecureUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("SipFQDN") && !value["SipFQDN"].IsNull())
+    {
+        if (!value["SipFQDN"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDeviceData.SipFQDN` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sipFQDN = string(value["SipFQDN"].GetString());
+        m_sipFQDNHasBeenSet = true;
+    }
+
+    if (value.HasMember("SipCarrierEndpoints") && !value["SipCarrierEndpoints"].IsNull())
+    {
+        if (!value["SipCarrierEndpoints"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDeviceData.SipCarrierEndpoints` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_sipCarrierEndpoints.Deserialize(value["SipCarrierEndpoints"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_sipCarrierEndpointsHasBeenSet = true;
+    }
+
+    if (value.HasMember("TimeSyncSwitch") && !value["TimeSyncSwitch"].IsNull())
+    {
+        if (!value["TimeSyncSwitch"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDeviceData.TimeSyncSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeSyncSwitch = value["TimeSyncSwitch"].GetInt64();
+        m_timeSyncSwitchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -642,6 +682,31 @@ void DescribeDeviceData::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "PushStreamSecureUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_pushStreamSecureUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sipFQDNHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SipFQDN";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sipFQDN.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sipCarrierEndpointsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SipCarrierEndpoints";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sipCarrierEndpoints.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_timeSyncSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeSyncSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_timeSyncSwitch, allocator);
     }
 
 }
@@ -1157,5 +1222,53 @@ void DescribeDeviceData::SetPushStreamSecureUrl(const string& _pushStreamSecureU
 bool DescribeDeviceData::PushStreamSecureUrlHasBeenSet() const
 {
     return m_pushStreamSecureUrlHasBeenSet;
+}
+
+string DescribeDeviceData::GetSipFQDN() const
+{
+    return m_sipFQDN;
+}
+
+void DescribeDeviceData::SetSipFQDN(const string& _sipFQDN)
+{
+    m_sipFQDN = _sipFQDN;
+    m_sipFQDNHasBeenSet = true;
+}
+
+bool DescribeDeviceData::SipFQDNHasBeenSet() const
+{
+    return m_sipFQDNHasBeenSet;
+}
+
+SipCarrierEndpoints DescribeDeviceData::GetSipCarrierEndpoints() const
+{
+    return m_sipCarrierEndpoints;
+}
+
+void DescribeDeviceData::SetSipCarrierEndpoints(const SipCarrierEndpoints& _sipCarrierEndpoints)
+{
+    m_sipCarrierEndpoints = _sipCarrierEndpoints;
+    m_sipCarrierEndpointsHasBeenSet = true;
+}
+
+bool DescribeDeviceData::SipCarrierEndpointsHasBeenSet() const
+{
+    return m_sipCarrierEndpointsHasBeenSet;
+}
+
+int64_t DescribeDeviceData::GetTimeSyncSwitch() const
+{
+    return m_timeSyncSwitch;
+}
+
+void DescribeDeviceData::SetTimeSyncSwitch(const int64_t& _timeSyncSwitch)
+{
+    m_timeSyncSwitch = _timeSyncSwitch;
+    m_timeSyncSwitchHasBeenSet = true;
+}
+
+bool DescribeDeviceData::TimeSyncSwitchHasBeenSet() const
+{
+    return m_timeSyncSwitchHasBeenSet;
 }
 

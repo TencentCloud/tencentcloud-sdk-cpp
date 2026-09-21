@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iss/v20230517/model/SipCarrierEndpoints.h>
 
 
 namespace TencentCloud
@@ -110,15 +111,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取<p>设备接入协议，1:RTMP,2:GB,3:GW</p>
-                     * @return AccessProtocol <p>设备接入协议，1:RTMP,2:GB,3:GW</p>
+                     * 获取<p>设备接入协议，1:RTMP,2:GB</p><p>枚举值：</p><ul><li>1： RTMP</li><li>2： GB</li></ul>
+                     * @return AccessProtocol <p>设备接入协议，1:RTMP,2:GB</p><p>枚举值：</p><ul><li>1： RTMP</li><li>2： GB</li></ul>
                      * 
                      */
                     int64_t GetAccessProtocol() const;
 
                     /**
-                     * 设置<p>设备接入协议，1:RTMP,2:GB,3:GW</p>
-                     * @param _accessProtocol <p>设备接入协议，1:RTMP,2:GB,3:GW</p>
+                     * 设置<p>设备接入协议，1:RTMP,2:GB</p><p>枚举值：</p><ul><li>1： RTMP</li><li>2： GB</li></ul>
+                     * @param _accessProtocol <p>设备接入协议，1:RTMP,2:GB</p><p>枚举值：</p><ul><li>1： RTMP</li><li>2： GB</li></ul>
                      * 
                      */
                     void SetAccessProtocol(const int64_t& _accessProtocol);
@@ -404,15 +405,15 @@ namespace TencentCloud
                     bool OrganizationIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>设备接入网关ID，从查询网关列表接口中获取（仅网关接入需要）</p>
-                     * @return GatewayId <p>设备接入网关ID，从查询网关列表接口中获取（仅网关接入需要）</p>
+                     * 获取<p>设备接入网关ID（已不再使用，保留用于兼容，可忽略）</p>
+                     * @return GatewayId <p>设备接入网关ID（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
-                     * 设置<p>设备接入网关ID，从查询网关列表接口中获取（仅网关接入需要）</p>
-                     * @param _gatewayId <p>设备接入网关ID，从查询网关列表接口中获取（仅网关接入需要）</p>
+                     * 设置<p>设备接入网关ID（已不再使用，保留用于兼容，可忽略）</p>
+                     * @param _gatewayId <p>设备接入网关ID（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -425,15 +426,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>设备所属网关名称</p>
-                     * @return GatewayName <p>设备所属网关名称</p>
+                     * 获取<p>设备所属网关名称（已不再使用，保留用于兼容，可忽略）</p>
+                     * @return GatewayName <p>设备所属网关名称（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     std::string GetGatewayName() const;
 
                     /**
-                     * 设置<p>设备所属网关名称</p>
-                     * @param _gatewayName <p>设备所属网关名称</p>
+                     * 设置<p>设备所属网关名称（已不再使用，保留用于兼容，可忽略）</p>
+                     * @param _gatewayName <p>设备所属网关名称（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     void SetGatewayName(const std::string& _gatewayName);
@@ -446,15 +447,15 @@ namespace TencentCloud
                     bool GatewayNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>设备网关协议名称</p>
-                     * @return ProtocolTypeName <p>设备网关协议名称</p>
+                     * 获取<p>设备网关协议名称（已不再使用，保留用于兼容，可忽略）</p>
+                     * @return ProtocolTypeName <p>设备网关协议名称（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     std::string GetProtocolTypeName() const;
 
                     /**
-                     * 设置<p>设备网关协议名称</p>
-                     * @param _protocolTypeName <p>设备网关协议名称</p>
+                     * 设置<p>设备网关协议名称（已不再使用，保留用于兼容，可忽略）</p>
+                     * @param _protocolTypeName <p>设备网关协议名称（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     void SetProtocolTypeName(const std::string& _protocolTypeName);
@@ -467,15 +468,15 @@ namespace TencentCloud
                     bool ProtocolTypeNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>网关接入协议类型，1.海康SDK，2.大华SDK，3.宇视SDK，4.Onvif（仅网关接入需要）</p>
-                     * @return ProtocolType <p>网关接入协议类型，1.海康SDK，2.大华SDK，3.宇视SDK，4.Onvif（仅网关接入需要）</p>
+                     * 获取<p>网关接入协议类型（已不再使用，保留用于兼容，可忽略）</p>
+                     * @return ProtocolType <p>网关接入协议类型（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     int64_t GetProtocolType() const;
 
                     /**
-                     * 设置<p>网关接入协议类型，1.海康SDK，2.大华SDK，3.宇视SDK，4.Onvif（仅网关接入需要）</p>
-                     * @param _protocolType <p>网关接入协议类型，1.海康SDK，2.大华SDK，3.宇视SDK，4.Onvif（仅网关接入需要）</p>
+                     * 设置<p>网关接入协议类型（已不再使用，保留用于兼容，可忽略）</p>
+                     * @param _protocolType <p>网关接入协议类型（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     void SetProtocolType(const int64_t& _protocolType);
@@ -488,15 +489,15 @@ namespace TencentCloud
                     bool ProtocolTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>设备接入IP</p>
-                     * @return Ip <p>设备接入IP</p>
+                     * 获取<p>设备接入IP（已不再使用，保留用于兼容，可忽略）</p>
+                     * @return Ip <p>设备接入IP（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置<p>设备接入IP</p>
-                     * @param _ip <p>设备接入IP</p>
+                     * 设置<p>设备接入IP（已不再使用，保留用于兼容，可忽略）</p>
+                     * @param _ip <p>设备接入IP（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -509,15 +510,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取<p>设备Port</p>
-                     * @return Port <p>设备Port</p>
+                     * 获取<p>设备Port（已不再使用，保留用于兼容，可忽略）</p>
+                     * @return Port <p>设备Port（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置<p>设备Port</p>
-                     * @param _port <p>设备Port</p>
+                     * 设置<p>设备Port（已不再使用，保留用于兼容，可忽略）</p>
+                     * @param _port <p>设备Port（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -530,15 +531,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取<p>设备用户名</p>
-                     * @return Username <p>设备用户名</p>
+                     * 获取<p>设备用户名（已不再使用，保留用于兼容，可忽略）</p>
+                     * @return Username <p>设备用户名（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     std::string GetUsername() const;
 
                     /**
-                     * 设置<p>设备用户名</p>
-                     * @param _username <p>设备用户名</p>
+                     * 设置<p>设备用户名（已不再使用，保留用于兼容，可忽略）</p>
+                     * @param _username <p>设备用户名（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     void SetUsername(const std::string& _username);
@@ -718,6 +719,69 @@ namespace TencentCloud
                      */
                     bool PushStreamSecureUrlHasBeenSet() const;
 
+                    /**
+                     * 获取<p>国标SIP域名</p>
+                     * @return SipFQDN <p>国标SIP域名</p>
+                     * 
+                     */
+                    std::string GetSipFQDN() const;
+
+                    /**
+                     * 设置<p>国标SIP域名</p>
+                     * @param _sipFQDN <p>国标SIP域名</p>
+                     * 
+                     */
+                    void SetSipFQDN(const std::string& _sipFQDN);
+
+                    /**
+                     * 判断参数 SipFQDN 是否已赋值
+                     * @return SipFQDN 是否已赋值
+                     * 
+                     */
+                    bool SipFQDNHasBeenSet() const;
+
+                    /**
+                     * 获取<p>国标SIP三网IP地址</p>
+                     * @return SipCarrierEndpoints <p>国标SIP三网IP地址</p>
+                     * 
+                     */
+                    SipCarrierEndpoints GetSipCarrierEndpoints() const;
+
+                    /**
+                     * 设置<p>国标SIP三网IP地址</p>
+                     * @param _sipCarrierEndpoints <p>国标SIP三网IP地址</p>
+                     * 
+                     */
+                    void SetSipCarrierEndpoints(const SipCarrierEndpoints& _sipCarrierEndpoints);
+
+                    /**
+                     * 判断参数 SipCarrierEndpoints 是否已赋值
+                     * @return SipCarrierEndpoints 是否已赋值
+                     * 
+                     */
+                    bool SipCarrierEndpointsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>国标校时开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值： 1</p>
+                     * @return TimeSyncSwitch <p>国标校时开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值： 1</p>
+                     * 
+                     */
+                    int64_t GetTimeSyncSwitch() const;
+
+                    /**
+                     * 设置<p>国标校时开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值： 1</p>
+                     * @param _timeSyncSwitch <p>国标校时开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值： 1</p>
+                     * 
+                     */
+                    void SetTimeSyncSwitch(const int64_t& _timeSyncSwitch);
+
+                    /**
+                     * 判断参数 TimeSyncSwitch 是否已赋值
+                     * @return TimeSyncSwitch 是否已赋值
+                     * 
+                     */
+                    bool TimeSyncSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -739,7 +803,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * <p>设备接入协议，1:RTMP,2:GB,3:GW</p>
+                     * <p>设备接入协议，1:RTMP,2:GB</p><p>枚举值：</p><ul><li>1： RTMP</li><li>2： GB</li></ul>
                      */
                     int64_t m_accessProtocol;
                     bool m_accessProtocolHasBeenSet;
@@ -823,43 +887,43 @@ namespace TencentCloud
                     bool m_organizationIdHasBeenSet;
 
                     /**
-                     * <p>设备接入网关ID，从查询网关列表接口中获取（仅网关接入需要）</p>
+                     * <p>设备接入网关ID（已不再使用，保留用于兼容，可忽略）</p>
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * <p>设备所属网关名称</p>
+                     * <p>设备所属网关名称（已不再使用，保留用于兼容，可忽略）</p>
                      */
                     std::string m_gatewayName;
                     bool m_gatewayNameHasBeenSet;
 
                     /**
-                     * <p>设备网关协议名称</p>
+                     * <p>设备网关协议名称（已不再使用，保留用于兼容，可忽略）</p>
                      */
                     std::string m_protocolTypeName;
                     bool m_protocolTypeNameHasBeenSet;
 
                     /**
-                     * <p>网关接入协议类型，1.海康SDK，2.大华SDK，3.宇视SDK，4.Onvif（仅网关接入需要）</p>
+                     * <p>网关接入协议类型（已不再使用，保留用于兼容，可忽略）</p>
                      */
                     int64_t m_protocolType;
                     bool m_protocolTypeHasBeenSet;
 
                     /**
-                     * <p>设备接入IP</p>
+                     * <p>设备接入IP（已不再使用，保留用于兼容，可忽略）</p>
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * <p>设备Port</p>
+                     * <p>设备Port（已不再使用，保留用于兼容，可忽略）</p>
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * <p>设备用户名</p>
+                     * <p>设备用户名（已不再使用，保留用于兼容，可忽略）</p>
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
@@ -911,6 +975,24 @@ namespace TencentCloud
                      */
                     std::string m_pushStreamSecureUrl;
                     bool m_pushStreamSecureUrlHasBeenSet;
+
+                    /**
+                     * <p>国标SIP域名</p>
+                     */
+                    std::string m_sipFQDN;
+                    bool m_sipFQDNHasBeenSet;
+
+                    /**
+                     * <p>国标SIP三网IP地址</p>
+                     */
+                    SipCarrierEndpoints m_sipCarrierEndpoints;
+                    bool m_sipCarrierEndpointsHasBeenSet;
+
+                    /**
+                     * <p>国标校时开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>默认值： 1</p>
+                     */
+                    int64_t m_timeSyncSwitch;
+                    bool m_timeSyncSwitchHasBeenSet;
 
                 };
             }

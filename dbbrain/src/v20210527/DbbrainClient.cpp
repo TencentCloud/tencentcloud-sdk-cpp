@@ -3990,6 +3990,56 @@ DbbrainClient::DescribeTopSpaceTablesOutcomeCallable DbbrainClient::DescribeTopS
     return prom->get_future();
 }
 
+DbbrainClient::DescribeTopSpaceTablesV2Outcome DbbrainClient::DescribeTopSpaceTablesV2(const DescribeTopSpaceTablesV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTopSpaceTablesV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTopSpaceTablesV2Response rsp = DescribeTopSpaceTablesV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTopSpaceTablesV2Outcome(rsp);
+        else
+            return DescribeTopSpaceTablesV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTopSpaceTablesV2Outcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeTopSpaceTablesV2Async(const DescribeTopSpaceTablesV2Request& request, const DescribeTopSpaceTablesV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTopSpaceTablesV2Request&;
+    using Resp = DescribeTopSpaceTablesV2Response;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTopSpaceTablesV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbbrainClient::DescribeTopSpaceTablesV2OutcomeCallable DbbrainClient::DescribeTopSpaceTablesV2Callable(const DescribeTopSpaceTablesV2Request &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTopSpaceTablesV2Outcome>>();
+    DescribeTopSpaceTablesV2Async(
+    request,
+    [prom](
+        const DbbrainClient*,
+        const DescribeTopSpaceTablesV2Request&,
+        DescribeTopSpaceTablesV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbbrainClient::DescribeUserAutonomyProfileOutcome DbbrainClient::DescribeUserAutonomyProfile(const DescribeUserAutonomyProfileRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserAutonomyProfile");

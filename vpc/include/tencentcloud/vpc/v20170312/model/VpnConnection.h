@@ -53,15 +53,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通道实例ID。
-                     * @return VpnConnectionId 通道实例ID。
+                     * 获取<p>通道实例ID。</p>
+                     * @return VpnConnectionId <p>通道实例ID。</p>
                      * 
                      */
                     std::string GetVpnConnectionId() const;
 
                     /**
-                     * 设置通道实例ID。
-                     * @param _vpnConnectionId 通道实例ID。
+                     * 设置<p>通道实例ID。</p>
+                     * @param _vpnConnectionId <p>通道实例ID。</p>
                      * 
                      */
                     void SetVpnConnectionId(const std::string& _vpnConnectionId);
@@ -74,15 +74,15 @@ namespace TencentCloud
                     bool VpnConnectionIdHasBeenSet() const;
 
                     /**
-                     * 获取通道名称。
-                     * @return VpnConnectionName 通道名称。
+                     * 获取<p>通道名称。</p>
+                     * @return VpnConnectionName <p>通道名称。</p>
                      * 
                      */
                     std::string GetVpnConnectionName() const;
 
                     /**
-                     * 设置通道名称。
-                     * @param _vpnConnectionName 通道名称。
+                     * 设置<p>通道名称。</p>
+                     * @param _vpnConnectionName <p>通道名称。</p>
                      * 
                      */
                     void SetVpnConnectionName(const std::string& _vpnConnectionName);
@@ -95,15 +95,15 @@ namespace TencentCloud
                     bool VpnConnectionNameHasBeenSet() const;
 
                     /**
-                     * 获取VPC实例ID。
-                     * @return VpcId VPC实例ID。
+                     * 获取<p>VPC实例ID。</p>
+                     * @return VpcId <p>VPC实例ID。</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC实例ID。
-                     * @param _vpcId VPC实例ID。
+                     * 设置<p>VPC实例ID。</p>
+                     * @param _vpcId <p>VPC实例ID。</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -116,15 +116,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取VPN网关实例ID。
-                     * @return VpnGatewayId VPN网关实例ID。
+                     * 获取<p>VPN网关实例ID。</p>
+                     * @return VpnGatewayId <p>VPN网关实例ID。</p>
                      * 
                      */
                     std::string GetVpnGatewayId() const;
 
                     /**
-                     * 设置VPN网关实例ID。
-                     * @param _vpnGatewayId VPN网关实例ID。
+                     * 设置<p>VPN网关实例ID。</p>
+                     * @param _vpnGatewayId <p>VPN网关实例ID。</p>
                      * 
                      */
                     void SetVpnGatewayId(const std::string& _vpnGatewayId);
@@ -137,15 +137,15 @@ namespace TencentCloud
                     bool VpnGatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取对端网关实例ID。
-                     * @return CustomerGatewayId 对端网关实例ID。
+                     * 获取<p>对端网关实例ID。</p>
+                     * @return CustomerGatewayId <p>对端网关实例ID。</p>
                      * 
                      */
                     std::string GetCustomerGatewayId() const;
 
                     /**
-                     * 设置对端网关实例ID。
-                     * @param _customerGatewayId 对端网关实例ID。
+                     * 设置<p>对端网关实例ID。</p>
+                     * @param _customerGatewayId <p>对端网关实例ID。</p>
                      * 
                      */
                     void SetCustomerGatewayId(const std::string& _customerGatewayId);
@@ -158,15 +158,15 @@ namespace TencentCloud
                     bool CustomerGatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取预共享密钥。
-                     * @return PreShareKey 预共享密钥。
+                     * 获取<p>预共享密钥。</p>
+                     * @return PreShareKey <p>预共享密钥。</p>
                      * 
                      */
                     std::string GetPreShareKey() const;
 
                     /**
-                     * 设置预共享密钥。
-                     * @param _preShareKey 预共享密钥。
+                     * 设置<p>预共享密钥。</p>
+                     * @param _preShareKey <p>预共享密钥。</p>
                      * 
                      */
                     void SetPreShareKey(const std::string& _preShareKey);
@@ -179,15 +179,15 @@ namespace TencentCloud
                     bool PreShareKeyHasBeenSet() const;
 
                     /**
-                     * 获取通道传输协议。
-                     * @return VpnProto 通道传输协议。
+                     * 获取<p>通道传输协议。</p>
+                     * @return VpnProto <p>通道传输协议。</p>
                      * 
                      */
                     std::string GetVpnProto() const;
 
                     /**
-                     * 设置通道传输协议。
-                     * @param _vpnProto 通道传输协议。
+                     * 设置<p>通道传输协议。</p>
+                     * @param _vpnProto <p>通道传输协议。</p>
                      * 
                      */
                     void SetVpnProto(const std::string& _vpnProto);
@@ -200,15 +200,15 @@ namespace TencentCloud
                     bool VpnProtoHasBeenSet() const;
 
                     /**
-                     * 获取通道加密协议。
-                     * @return EncryptProto 通道加密协议。
+                     * 获取<p>通道加密协议。</p>
+                     * @return EncryptProto <p>通道加密协议。</p>
                      * 
                      */
                     std::string GetEncryptProto() const;
 
                     /**
-                     * 设置通道加密协议。
-                     * @param _encryptProto 通道加密协议。
+                     * 设置<p>通道加密协议。</p>
+                     * @param _encryptProto <p>通道加密协议。</p>
                      * 
                      */
                     void SetEncryptProto(const std::string& _encryptProto);
@@ -221,15 +221,15 @@ namespace TencentCloud
                     bool EncryptProtoHasBeenSet() const;
 
                     /**
-                     * 获取路由类型。
-                     * @return RouteType 路由类型。
+                     * 获取<p>路由类型。</p>
+                     * @return RouteType <p>路由类型。</p>
                      * 
                      */
                     std::string GetRouteType() const;
 
                     /**
-                     * 设置路由类型。
-                     * @param _routeType 路由类型。
+                     * 设置<p>路由类型。</p>
+                     * @param _routeType <p>路由类型。</p>
                      * 
                      */
                     void SetRouteType(const std::string& _routeType);
@@ -242,15 +242,15 @@ namespace TencentCloud
                     bool RouteTypeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreatedTime 创建时间。
+                     * 获取<p>创建时间。</p>
+                     * @return CreatedTime <p>创建时间。</p>
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createdTime 创建时间。
+                     * 设置<p>创建时间。</p>
+                     * @param _createdTime <p>创建时间。</p>
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -263,15 +263,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取通道的生产状态，PENDING：生产中，AVAILABLE：运行中，DELETING：删除中。
-                     * @return State 通道的生产状态，PENDING：生产中，AVAILABLE：运行中，DELETING：删除中。
+                     * 获取<p>通道的生产状态，PENDING：生产中，AVAILABLE：运行中，DELETING：删除中。</p>
+                     * @return State <p>通道的生产状态，PENDING：生产中，AVAILABLE：运行中，DELETING：删除中。</p>
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置通道的生产状态，PENDING：生产中，AVAILABLE：运行中，DELETING：删除中。
-                     * @param _state 通道的生产状态，PENDING：生产中，AVAILABLE：运行中，DELETING：删除中。
+                     * 设置<p>通道的生产状态，PENDING：生产中，AVAILABLE：运行中，DELETING：删除中。</p>
+                     * @param _state <p>通道的生产状态，PENDING：生产中，AVAILABLE：运行中，DELETING：删除中。</p>
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -284,15 +284,15 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取通道连接状态，AVAILABLE：已连接。
-                     * @return NetStatus 通道连接状态，AVAILABLE：已连接。
+                     * 获取<p>通道连接状态，AVAILABLE：已连接。</p>
+                     * @return NetStatus <p>通道连接状态，AVAILABLE：已连接。</p>
                      * 
                      */
                     std::string GetNetStatus() const;
 
                     /**
-                     * 设置通道连接状态，AVAILABLE：已连接。
-                     * @param _netStatus 通道连接状态，AVAILABLE：已连接。
+                     * 设置<p>通道连接状态，AVAILABLE：已连接。</p>
+                     * @param _netStatus <p>通道连接状态，AVAILABLE：已连接。</p>
                      * 
                      */
                     void SetNetStatus(const std::string& _netStatus);
@@ -305,15 +305,15 @@ namespace TencentCloud
                     bool NetStatusHasBeenSet() const;
 
                     /**
-                     * 获取SPD。
-                     * @return SecurityPolicyDatabaseSet SPD。
+                     * 获取<p>SPD。</p>
+                     * @return SecurityPolicyDatabaseSet <p>SPD。</p>
                      * 
                      */
                     std::vector<SecurityPolicyDatabase> GetSecurityPolicyDatabaseSet() const;
 
                     /**
-                     * 设置SPD。
-                     * @param _securityPolicyDatabaseSet SPD。
+                     * 设置<p>SPD。</p>
+                     * @param _securityPolicyDatabaseSet <p>SPD。</p>
                      * 
                      */
                     void SetSecurityPolicyDatabaseSet(const std::vector<SecurityPolicyDatabase>& _securityPolicyDatabaseSet);
@@ -326,15 +326,15 @@ namespace TencentCloud
                     bool SecurityPolicyDatabaseSetHasBeenSet() const;
 
                     /**
-                     * 获取IKE选项。
-                     * @return IKEOptionsSpecification IKE选项。
+                     * 获取<p>IKE选项。</p>
+                     * @return IKEOptionsSpecification <p>IKE选项。</p>
                      * 
                      */
                     IKEOptionsSpecification GetIKEOptionsSpecification() const;
 
                     /**
-                     * 设置IKE选项。
-                     * @param _iKEOptionsSpecification IKE选项。
+                     * 设置<p>IKE选项。</p>
+                     * @param _iKEOptionsSpecification <p>IKE选项。</p>
                      * 
                      */
                     void SetIKEOptionsSpecification(const IKEOptionsSpecification& _iKEOptionsSpecification);
@@ -347,15 +347,15 @@ namespace TencentCloud
                     bool IKEOptionsSpecificationHasBeenSet() const;
 
                     /**
-                     * 获取IPSEC选择。
-                     * @return IPSECOptionsSpecification IPSEC选择。
+                     * 获取<p>IPSEC选择。</p>
+                     * @return IPSECOptionsSpecification <p>IPSEC选择。</p>
                      * 
                      */
                     IPSECOptionsSpecification GetIPSECOptionsSpecification() const;
 
                     /**
-                     * 设置IPSEC选择。
-                     * @param _iPSECOptionsSpecification IPSEC选择。
+                     * 设置<p>IPSEC选择。</p>
+                     * @param _iPSECOptionsSpecification <p>IPSEC选择。</p>
                      * 
                      */
                     void SetIPSECOptionsSpecification(const IPSECOptionsSpecification& _iPSECOptionsSpecification);
@@ -368,15 +368,15 @@ namespace TencentCloud
                     bool IPSECOptionsSpecificationHasBeenSet() const;
 
                     /**
-                     * 获取是否支持健康状态探测
-                     * @return EnableHealthCheck 是否支持健康状态探测
+                     * 获取<p>是否支持健康状态探测</p>
+                     * @return EnableHealthCheck <p>是否支持健康状态探测</p>
                      * 
                      */
                     bool GetEnableHealthCheck() const;
 
                     /**
-                     * 设置是否支持健康状态探测
-                     * @param _enableHealthCheck 是否支持健康状态探测
+                     * 设置<p>是否支持健康状态探测</p>
+                     * @param _enableHealthCheck <p>是否支持健康状态探测</p>
                      * 
                      */
                     void SetEnableHealthCheck(const bool& _enableHealthCheck);
@@ -389,15 +389,15 @@ namespace TencentCloud
                     bool EnableHealthCheckHasBeenSet() const;
 
                     /**
-                     * 获取本端探测ip
-                     * @return HealthCheckLocalIp 本端探测ip
+                     * 获取<p>本端探测ip</p>
+                     * @return HealthCheckLocalIp <p>本端探测ip</p>
                      * 
                      */
                     std::string GetHealthCheckLocalIp() const;
 
                     /**
-                     * 设置本端探测ip
-                     * @param _healthCheckLocalIp 本端探测ip
+                     * 设置<p>本端探测ip</p>
+                     * @param _healthCheckLocalIp <p>本端探测ip</p>
                      * 
                      */
                     void SetHealthCheckLocalIp(const std::string& _healthCheckLocalIp);
@@ -410,15 +410,15 @@ namespace TencentCloud
                     bool HealthCheckLocalIpHasBeenSet() const;
 
                     /**
-                     * 获取对端探测ip
-                     * @return HealthCheckRemoteIp 对端探测ip
+                     * 获取<p>对端探测ip</p>
+                     * @return HealthCheckRemoteIp <p>对端探测ip</p>
                      * 
                      */
                     std::string GetHealthCheckRemoteIp() const;
 
                     /**
-                     * 设置对端探测ip
-                     * @param _healthCheckRemoteIp 对端探测ip
+                     * 设置<p>对端探测ip</p>
+                     * @param _healthCheckRemoteIp <p>对端探测ip</p>
                      * 
                      */
                     void SetHealthCheckRemoteIp(const std::string& _healthCheckRemoteIp);
@@ -431,15 +431,15 @@ namespace TencentCloud
                     bool HealthCheckRemoteIpHasBeenSet() const;
 
                     /**
-                     * 获取通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象
-                     * @return HealthCheckStatus 通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象
+                     * 获取<p>通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象</p>
+                     * @return HealthCheckStatus <p>通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象</p>
                      * 
                      */
                     std::string GetHealthCheckStatus() const;
 
                     /**
-                     * 设置通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象
-                     * @param _healthCheckStatus 通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象
+                     * 设置<p>通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象</p>
+                     * @param _healthCheckStatus <p>通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象</p>
                      * 
                      */
                     void SetHealthCheckStatus(const std::string& _healthCheckStatus);
@@ -452,15 +452,15 @@ namespace TencentCloud
                     bool HealthCheckStatusHasBeenSet() const;
 
                     /**
-                     * 获取DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
-                     * @return DpdEnable DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
+                     * 获取<p>DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）</p>
+                     * @return DpdEnable <p>DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）</p>
                      * 
                      */
                     int64_t GetDpdEnable() const;
 
                     /**
-                     * 设置DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
-                     * @param _dpdEnable DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
+                     * 设置<p>DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）</p>
+                     * @param _dpdEnable <p>DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）</p>
                      * 
                      */
                     void SetDpdEnable(const int64_t& _dpdEnable);
@@ -473,15 +473,15 @@ namespace TencentCloud
                     bool DpdEnableHasBeenSet() const;
 
                     /**
-                     * 获取DPD超时时间。即探测确认对端不存在需要的时间。
-                     * @return DpdTimeout DPD超时时间。即探测确认对端不存在需要的时间。
+                     * 获取<p>DPD超时时间。即探测确认对端不存在需要的时间。</p>
+                     * @return DpdTimeout <p>DPD超时时间。即探测确认对端不存在需要的时间。</p>
                      * 
                      */
                     std::string GetDpdTimeout() const;
 
                     /**
-                     * 设置DPD超时时间。即探测确认对端不存在需要的时间。
-                     * @param _dpdTimeout DPD超时时间。即探测确认对端不存在需要的时间。
+                     * 设置<p>DPD超时时间。即探测确认对端不存在需要的时间。</p>
+                     * @param _dpdTimeout <p>DPD超时时间。即探测确认对端不存在需要的时间。</p>
                      * 
                      */
                     void SetDpdTimeout(const std::string& _dpdTimeout);
@@ -494,15 +494,15 @@ namespace TencentCloud
                     bool DpdTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
-                     * @return DpdAction DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
+                     * 获取<p>DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）</p>
+                     * @return DpdAction <p>DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）</p>
                      * 
                      */
                     std::string GetDpdAction() const;
 
                     /**
-                     * 设置DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
-                     * @param _dpdAction DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
+                     * 设置<p>DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）</p>
+                     * @param _dpdAction <p>DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）</p>
                      * 
                      */
                     void SetDpdAction(const std::string& _dpdAction);
@@ -515,15 +515,15 @@ namespace TencentCloud
                     bool DpdActionHasBeenSet() const;
 
                     /**
-                     * 获取标签键值对数组
-                     * @return TagSet 标签键值对数组
+                     * 获取<p>标签键值对数组</p>
+                     * @return TagSet <p>标签键值对数组</p>
                      * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
-                     * 设置标签键值对数组
-                     * @param _tagSet 标签键值对数组
+                     * 设置<p>标签键值对数组</p>
+                     * @param _tagSet <p>标签键值对数组</p>
                      * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
@@ -536,15 +536,15 @@ namespace TencentCloud
                     bool TagSetHasBeenSet() const;
 
                     /**
-                     * 获取协商类型
-                     * @return NegotiationType 协商类型
+                     * 获取<p>协商类型</p><p>枚举值：</p><ul><li>active： 主动协商</li><li>passive： 被动协商</li><li>flowTrigger： 流量协商</li></ul>
+                     * @return NegotiationType <p>协商类型</p><p>枚举值：</p><ul><li>active： 主动协商</li><li>passive： 被动协商</li><li>flowTrigger： 流量协商</li></ul>
                      * 
                      */
                     std::string GetNegotiationType() const;
 
                     /**
-                     * 设置协商类型
-                     * @param _negotiationType 协商类型
+                     * 设置<p>协商类型</p><p>枚举值：</p><ul><li>active： 主动协商</li><li>passive： 被动协商</li><li>flowTrigger： 流量协商</li></ul>
+                     * @param _negotiationType <p>协商类型</p><p>枚举值：</p><ul><li>active： 主动协商</li><li>passive： 被动协商</li><li>flowTrigger： 流量协商</li></ul>
                      * 
                      */
                     void SetNegotiationType(const std::string& _negotiationType);
@@ -557,15 +557,15 @@ namespace TencentCloud
                     bool NegotiationTypeHasBeenSet() const;
 
                     /**
-                     * 获取Bgp配置信息
-                     * @return BgpConfig Bgp配置信息
+                     * 获取<p>Bgp配置信息</p>
+                     * @return BgpConfig <p>Bgp配置信息</p>
                      * 
                      */
                     BgpConfigAndAsn GetBgpConfig() const;
 
                     /**
-                     * 设置Bgp配置信息
-                     * @param _bgpConfig Bgp配置信息
+                     * 设置<p>Bgp配置信息</p>
+                     * @param _bgpConfig <p>Bgp配置信息</p>
                      * 
                      */
                     void SetBgpConfig(const BgpConfigAndAsn& _bgpConfig);
@@ -578,15 +578,15 @@ namespace TencentCloud
                     bool BgpConfigHasBeenSet() const;
 
                     /**
-                     * 获取Nqa配置信息
-                     * @return HealthCheckConfig Nqa配置信息
+                     * 获取<p>Nqa配置信息</p>
+                     * @return HealthCheckConfig <p>Nqa配置信息</p>
                      * 
                      */
                     HealthCheckConfig GetHealthCheckConfig() const;
 
                     /**
-                     * 设置Nqa配置信息
-                     * @param _healthCheckConfig Nqa配置信息
+                     * 设置<p>Nqa配置信息</p>
+                     * @param _healthCheckConfig <p>Nqa配置信息</p>
                      * 
                      */
                     void SetHealthCheckConfig(const HealthCheckConfig& _healthCheckConfig);
@@ -601,157 +601,157 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通道实例ID。
+                     * <p>通道实例ID。</p>
                      */
                     std::string m_vpnConnectionId;
                     bool m_vpnConnectionIdHasBeenSet;
 
                     /**
-                     * 通道名称。
+                     * <p>通道名称。</p>
                      */
                     std::string m_vpnConnectionName;
                     bool m_vpnConnectionNameHasBeenSet;
 
                     /**
-                     * VPC实例ID。
+                     * <p>VPC实例ID。</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * VPN网关实例ID。
+                     * <p>VPN网关实例ID。</p>
                      */
                     std::string m_vpnGatewayId;
                     bool m_vpnGatewayIdHasBeenSet;
 
                     /**
-                     * 对端网关实例ID。
+                     * <p>对端网关实例ID。</p>
                      */
                     std::string m_customerGatewayId;
                     bool m_customerGatewayIdHasBeenSet;
 
                     /**
-                     * 预共享密钥。
+                     * <p>预共享密钥。</p>
                      */
                     std::string m_preShareKey;
                     bool m_preShareKeyHasBeenSet;
 
                     /**
-                     * 通道传输协议。
+                     * <p>通道传输协议。</p>
                      */
                     std::string m_vpnProto;
                     bool m_vpnProtoHasBeenSet;
 
                     /**
-                     * 通道加密协议。
+                     * <p>通道加密协议。</p>
                      */
                     std::string m_encryptProto;
                     bool m_encryptProtoHasBeenSet;
 
                     /**
-                     * 路由类型。
+                     * <p>路由类型。</p>
                      */
                     std::string m_routeType;
                     bool m_routeTypeHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * <p>创建时间。</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 通道的生产状态，PENDING：生产中，AVAILABLE：运行中，DELETING：删除中。
+                     * <p>通道的生产状态，PENDING：生产中，AVAILABLE：运行中，DELETING：删除中。</p>
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 通道连接状态，AVAILABLE：已连接。
+                     * <p>通道连接状态，AVAILABLE：已连接。</p>
                      */
                     std::string m_netStatus;
                     bool m_netStatusHasBeenSet;
 
                     /**
-                     * SPD。
+                     * <p>SPD。</p>
                      */
                     std::vector<SecurityPolicyDatabase> m_securityPolicyDatabaseSet;
                     bool m_securityPolicyDatabaseSetHasBeenSet;
 
                     /**
-                     * IKE选项。
+                     * <p>IKE选项。</p>
                      */
                     IKEOptionsSpecification m_iKEOptionsSpecification;
                     bool m_iKEOptionsSpecificationHasBeenSet;
 
                     /**
-                     * IPSEC选择。
+                     * <p>IPSEC选择。</p>
                      */
                     IPSECOptionsSpecification m_iPSECOptionsSpecification;
                     bool m_iPSECOptionsSpecificationHasBeenSet;
 
                     /**
-                     * 是否支持健康状态探测
+                     * <p>是否支持健康状态探测</p>
                      */
                     bool m_enableHealthCheck;
                     bool m_enableHealthCheckHasBeenSet;
 
                     /**
-                     * 本端探测ip
+                     * <p>本端探测ip</p>
                      */
                     std::string m_healthCheckLocalIp;
                     bool m_healthCheckLocalIpHasBeenSet;
 
                     /**
-                     * 对端探测ip
+                     * <p>对端探测ip</p>
                      */
                     std::string m_healthCheckRemoteIp;
                     bool m_healthCheckRemoteIpHasBeenSet;
 
                     /**
-                     * 通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象
+                     * <p>通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象</p>
                      */
                     std::string m_healthCheckStatus;
                     bool m_healthCheckStatusHasBeenSet;
 
                     /**
-                     * DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
+                     * <p>DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）</p>
                      */
                     int64_t m_dpdEnable;
                     bool m_dpdEnableHasBeenSet;
 
                     /**
-                     * DPD超时时间。即探测确认对端不存在需要的时间。
+                     * <p>DPD超时时间。即探测确认对端不存在需要的时间。</p>
                      */
                     std::string m_dpdTimeout;
                     bool m_dpdTimeoutHasBeenSet;
 
                     /**
-                     * DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
+                     * <p>DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）</p>
                      */
                     std::string m_dpdAction;
                     bool m_dpdActionHasBeenSet;
 
                     /**
-                     * 标签键值对数组
+                     * <p>标签键值对数组</p>
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;
 
                     /**
-                     * 协商类型
+                     * <p>协商类型</p><p>枚举值：</p><ul><li>active： 主动协商</li><li>passive： 被动协商</li><li>flowTrigger： 流量协商</li></ul>
                      */
                     std::string m_negotiationType;
                     bool m_negotiationTypeHasBeenSet;
 
                     /**
-                     * Bgp配置信息
+                     * <p>Bgp配置信息</p>
                      */
                     BgpConfigAndAsn m_bgpConfig;
                     bool m_bgpConfigHasBeenSet;
 
                     /**
-                     * Nqa配置信息
+                     * <p>Nqa配置信息</p>
                      */
                     HealthCheckConfig m_healthCheckConfig;
                     bool m_healthCheckConfigHasBeenSet;

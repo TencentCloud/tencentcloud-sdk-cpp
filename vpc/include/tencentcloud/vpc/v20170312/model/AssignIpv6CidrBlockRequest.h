@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取`VPC`实例`ID`，形如：`vpc-f49l6u0z`。
-                     * @return VpcId `VPC`实例`ID`，形如：`vpc-f49l6u0z`。
+                     * 获取<p><code>VPC</code>实例<code>ID</code>，形如：<code>vpc-f49l6u0z</code>。</p>
+                     * @return VpcId <p><code>VPC</code>实例<code>ID</code>，形如：<code>vpc-f49l6u0z</code>。</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置`VPC`实例`ID`，形如：`vpc-f49l6u0z`。
-                     * @param _vpcId `VPC`实例`ID`，形如：`vpc-f49l6u0z`。
+                     * 设置<p><code>VPC</code>实例<code>ID</code>，形如：<code>vpc-f49l6u0z</code>。</p>
+                     * @param _vpcId <p><code>VPC</code>实例<code>ID</code>，形如：<code>vpc-f49l6u0z</code>。</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取申请IPv6 Cidr 的类型，`GUA`(全球单播地址), `ULA`(唯一本地地址)。
-                     * @return AddressType 申请IPv6 Cidr 的类型，`GUA`(全球单播地址), `ULA`(唯一本地地址)。
+                     * 获取<p>申请IPv6 Cidr 的类型，<code>GUA</code>(全球单播地址), <code>ULA</code>(唯一本地地址)。</p>
+                     * @return AddressType <p>申请IPv6 Cidr 的类型，<code>GUA</code>(全球单播地址), <code>ULA</code>(唯一本地地址)。</p>
                      * 
                      */
                     std::string GetAddressType() const;
 
                     /**
-                     * 设置申请IPv6 Cidr 的类型，`GUA`(全球单播地址), `ULA`(唯一本地地址)。
-                     * @param _addressType 申请IPv6 Cidr 的类型，`GUA`(全球单播地址), `ULA`(唯一本地地址)。
+                     * 设置<p>申请IPv6 Cidr 的类型，<code>GUA</code>(全球单播地址), <code>ULA</code>(唯一本地地址)。</p>
+                     * @param _addressType <p>申请IPv6 Cidr 的类型，<code>GUA</code>(全球单播地址), <code>ULA</code>(唯一本地地址)。</p>
                      * 
                      */
                     void SetAddressType(const std::string& _addressType);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * `VPC`实例`ID`，形如：`vpc-f49l6u0z`。
+                     * <p><code>VPC</code>实例<code>ID</code>，形如：<code>vpc-f49l6u0z</code>。</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 申请IPv6 Cidr 的类型，`GUA`(全球单播地址), `ULA`(唯一本地地址)。
+                     * <p>申请IPv6 Cidr 的类型，<code>GUA</code>(全球单播地址), <code>ULA</code>(唯一本地地址)。</p>
                      */
                     std::string m_addressType;
                     bool m_addressTypeHasBeenSet;

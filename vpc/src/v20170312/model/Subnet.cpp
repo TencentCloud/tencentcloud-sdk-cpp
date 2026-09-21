@@ -37,7 +37,8 @@ Subnet::Subnet() :
     m_totalIpAddressCountHasBeenSet(false),
     m_tagSetHasBeenSet(false),
     m_cdcIdHasBeenSet(false),
-    m_isCdcSubnetHasBeenSet(false)
+    m_isCdcSubnetHasBeenSet(false),
+    m_stackTypeHasBeenSet(false)
 {
 }
 
@@ -226,6 +227,16 @@ CoreInternalOutcome Subnet::Deserialize(const rapidjson::Value &value)
         m_isCdcSubnetHasBeenSet = true;
     }
 
+    if (value.HasMember("StackType") && !value["StackType"].IsNull())
+    {
+        if (!value["StackType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Subnet.StackType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_stackType = string(value["StackType"].GetString());
+        m_stackTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -374,6 +385,14 @@ void Subnet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "IsCdcSubnet";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isCdcSubnet, allocator);
+    }
+
+    if (m_stackTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StackType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stackType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -649,5 +668,21 @@ void Subnet::SetIsCdcSubnet(const int64_t& _isCdcSubnet)
 bool Subnet::IsCdcSubnetHasBeenSet() const
 {
     return m_isCdcSubnetHasBeenSet;
+}
+
+string Subnet::GetStackType() const
+{
+    return m_stackType;
+}
+
+void Subnet::SetStackType(const string& _stackType)
+{
+    m_stackType = _stackType;
+    m_stackTypeHasBeenSet = true;
+}
+
+bool Subnet::StackTypeHasBeenSet() const
+{
+    return m_stackTypeHasBeenSet;
 }
 

@@ -550,6 +550,27 @@ namespace TencentCloud
                      */
                     bool LegalPersonIdCardHasBeenSet() const;
 
+                    /**
+                     * 获取白名单开关是否开启
+                     * @return WhiteListFlag 白名单开关是否开启
+                     * 
+                     */
+                    bool GetWhiteListFlag() const;
+
+                    /**
+                     * 设置白名单开关是否开启
+                     * @param _whiteListFlag 白名单开关是否开启
+                     * 
+                     */
+                    void SetWhiteListFlag(const bool& _whiteListFlag);
+
+                    /**
+                     * 判断参数 WhiteListFlag 是否已赋值
+                     * @return WhiteListFlag 是否已赋值
+                     * 
+                     */
+                    bool WhiteListFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -695,6 +716,12 @@ namespace TencentCloud
                      */
                     std::string m_legalPersonIdCard;
                     bool m_legalPersonIdCardHasBeenSet;
+
+                    /**
+                     * 白名单开关是否开启
+                     */
+                    bool m_whiteListFlag;
+                    bool m_whiteListFlagHasBeenSet;
 
                 };
             }

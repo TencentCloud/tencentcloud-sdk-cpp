@@ -48,30 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取能力配置开关，可选值：
-<li>ON：开启；</li>
-<li>OFF：关闭。</li>
-默认值：ON。
+                     * 获取<p>能力配置开关，可选值：</p><li>ON：开启；</li><li>OFF：关闭。</li>默认值：ON。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch 能力配置开关，可选值：
-<li>ON：开启；</li>
-<li>OFF：关闭。</li>
-默认值：ON。
+                     * @return Switch <p>能力配置开关，可选值：</p><li>ON：开启；</li><li>OFF：关闭。</li>默认值：ON。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置能力配置开关，可选值：
-<li>ON：开启；</li>
-<li>OFF：关闭。</li>
-默认值：ON。
+                     * 设置<p>能力配置开关，可选值：</p><li>ON：开启；</li><li>OFF：关闭。</li>默认值：ON。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _switch 能力配置开关，可选值：
-<li>ON：开启；</li>
-<li>OFF：关闭。</li>
-默认值：ON。
+                     * @param _switch <p>能力配置开关，可选值：</p><li>ON：开启；</li><li>OFF：关闭。</li>默认值：ON。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -85,22 +73,18 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取需要擦除的多个框选区域，最多开启16个区域。
+                     * 获取<p>需要擦除的多个框选区域，最多开启16个区域。<br>注意：此字段可能返回 null，表示取不到有效值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ImageAreaBoxes 需要擦除的多个框选区域，最多开启16个区域。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageAreaBoxes <p>需要擦除的多个框选区域，最多开启16个区域。<br>注意：此字段可能返回 null，表示取不到有效值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ImageAreaBoxInfo> GetImageAreaBoxes() const;
 
                     /**
-                     * 设置需要擦除的多个框选区域，最多开启16个区域。
+                     * 设置<p>需要擦除的多个框选区域，最多开启16个区域。<br>注意：此字段可能返回 null，表示取不到有效值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _imageAreaBoxes 需要擦除的多个框选区域，最多开启16个区域。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _imageAreaBoxes <p>需要擦除的多个框选区域，最多开启16个区域。<br>注意：此字段可能返回 null，表示取不到有效值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -114,30 +98,18 @@ namespace TencentCloud
                     bool ImageAreaBoxesHasBeenSet() const;
 
                     /**
-                     * 获取图片框选区域类型，可选值：
-<li>logo：图标；</li>
-<li>text：文字；</li>
-<li>watermark：水印；</li>
+                     * 获取<p>图片框选区域类型，可选值：</p><li>logo：图标；</li><li>text：文字；</li><li>watermark：水印；</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DetectTypes 图片框选区域类型，可选值：
-<li>logo：图标；</li>
-<li>text：文字；</li>
-<li>watermark：水印；</li>
+                     * @return DetectTypes <p>图片框选区域类型，可选值：</p><li>logo：图标；</li><li>text：文字；</li><li>watermark：水印；</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDetectTypes() const;
 
                     /**
-                     * 设置图片框选区域类型，可选值：
-<li>logo：图标；</li>
-<li>text：文字；</li>
-<li>watermark：水印；</li>
+                     * 设置<p>图片框选区域类型，可选值：</p><li>logo：图标；</li><li>text：文字；</li><li>watermark：水印；</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _detectTypes 图片框选区域类型，可选值：
-<li>logo：图标；</li>
-<li>text：文字；</li>
-<li>watermark：水印；</li>
+                     * @param _detectTypes <p>图片框选区域类型，可选值：</p><li>logo：图标；</li><li>text：文字；</li><li>watermark：水印；</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -150,35 +122,82 @@ namespace TencentCloud
                      */
                     bool DetectTypesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>水印擦除能力档位，可选值：</p><p>枚举值：</p><ul><li>low： 快速擦除档位</li><li>mid： 擦除效果和速度均衡档位</li><li>high： 进阶擦除效果档位</li></ul><p>注意：根据擦除场景复杂度选择对应擦除档位。</p>
+                     * @return EraseStrength <p>水印擦除能力档位，可选值：</p><p>枚举值：</p><ul><li>low： 快速擦除档位</li><li>mid： 擦除效果和速度均衡档位</li><li>high： 进阶擦除效果档位</li></ul><p>注意：根据擦除场景复杂度选择对应擦除档位。</p>
+                     * 
+                     */
+                    std::string GetEraseStrength() const;
+
+                    /**
+                     * 设置<p>水印擦除能力档位，可选值：</p><p>枚举值：</p><ul><li>low： 快速擦除档位</li><li>mid： 擦除效果和速度均衡档位</li><li>high： 进阶擦除效果档位</li></ul><p>注意：根据擦除场景复杂度选择对应擦除档位。</p>
+                     * @param _eraseStrength <p>水印擦除能力档位，可选值：</p><p>枚举值：</p><ul><li>low： 快速擦除档位</li><li>mid： 擦除效果和速度均衡档位</li><li>high： 进阶擦除效果档位</li></ul><p>注意：根据擦除场景复杂度选择对应擦除档位。</p>
+                     * 
+                     */
+                    void SetEraseStrength(const std::string& _eraseStrength);
+
+                    /**
+                     * 判断参数 EraseStrength 是否已赋值
+                     * @return EraseStrength 是否已赋值
+                     * 
+                     */
+                    bool EraseStrengthHasBeenSet() const;
+
+                    /**
+                     * 获取<p>擦除图像水印时，选择特定水印类型，可选值：</p><p>枚举值：</p><ul><li>corner_watermark： 擦除常规定点水印</li><li>tiled_watermark： 擦除全图平铺水印</li><li>auto_detect_type： 自动识别水印类型擦除</li><li>selected_watermark： 跳过自动擦除，按指定位置进行水印擦除</li></ul>
+                     * @return WatermarkType <p>擦除图像水印时，选择特定水印类型，可选值：</p><p>枚举值：</p><ul><li>corner_watermark： 擦除常规定点水印</li><li>tiled_watermark： 擦除全图平铺水印</li><li>auto_detect_type： 自动识别水印类型擦除</li><li>selected_watermark： 跳过自动擦除，按指定位置进行水印擦除</li></ul>
+                     * 
+                     */
+                    std::string GetWatermarkType() const;
+
+                    /**
+                     * 设置<p>擦除图像水印时，选择特定水印类型，可选值：</p><p>枚举值：</p><ul><li>corner_watermark： 擦除常规定点水印</li><li>tiled_watermark： 擦除全图平铺水印</li><li>auto_detect_type： 自动识别水印类型擦除</li><li>selected_watermark： 跳过自动擦除，按指定位置进行水印擦除</li></ul>
+                     * @param _watermarkType <p>擦除图像水印时，选择特定水印类型，可选值：</p><p>枚举值：</p><ul><li>corner_watermark： 擦除常规定点水印</li><li>tiled_watermark： 擦除全图平铺水印</li><li>auto_detect_type： 自动识别水印类型擦除</li><li>selected_watermark： 跳过自动擦除，按指定位置进行水印擦除</li></ul>
+                     * 
+                     */
+                    void SetWatermarkType(const std::string& _watermarkType);
+
+                    /**
+                     * 判断参数 WatermarkType 是否已赋值
+                     * @return WatermarkType 是否已赋值
+                     * 
+                     */
+                    bool WatermarkTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 能力配置开关，可选值：
-<li>ON：开启；</li>
-<li>OFF：关闭。</li>
-默认值：ON。
+                     * <p>能力配置开关，可选值：</p><li>ON：开启；</li><li>OFF：关闭。</li>默认值：ON。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 需要擦除的多个框选区域，最多开启16个区域。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * <p>需要擦除的多个框选区域，最多开启16个区域。<br>注意：此字段可能返回 null，表示取不到有效值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageAreaBoxInfo> m_imageAreaBoxes;
                     bool m_imageAreaBoxesHasBeenSet;
 
                     /**
-                     * 图片框选区域类型，可选值：
-<li>logo：图标；</li>
-<li>text：文字；</li>
-<li>watermark：水印；</li>
+                     * <p>图片框选区域类型，可选值：</p><li>logo：图标；</li><li>text：文字；</li><li>watermark：水印；</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_detectTypes;
                     bool m_detectTypesHasBeenSet;
+
+                    /**
+                     * <p>水印擦除能力档位，可选值：</p><p>枚举值：</p><ul><li>low： 快速擦除档位</li><li>mid： 擦除效果和速度均衡档位</li><li>high： 进阶擦除效果档位</li></ul><p>注意：根据擦除场景复杂度选择对应擦除档位。</p>
+                     */
+                    std::string m_eraseStrength;
+                    bool m_eraseStrengthHasBeenSet;
+
+                    /**
+                     * <p>擦除图像水印时，选择特定水印类型，可选值：</p><p>枚举值：</p><ul><li>corner_watermark： 擦除常规定点水印</li><li>tiled_watermark： 擦除全图平铺水印</li><li>auto_detect_type： 自动识别水印类型擦除</li><li>selected_watermark： 跳过自动擦除，按指定位置进行水印擦除</li></ul>
+                     */
+                    std::string m_watermarkType;
+                    bool m_watermarkTypeHasBeenSet;
 
                 };
             }

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取弹性网卡实例。
-                     * @return NetworkInterface 弹性网卡实例。
+                     * 获取<p>弹性网卡实例。</p>
+                     * @return NetworkInterface <p>弹性网卡实例。</p>
                      * 
                      */
                     NetworkInterface GetNetworkInterface() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 弹性网卡实例。
+                     * <p>弹性网卡实例。</p>
                      */
                     NetworkInterface m_networkInterface;
                     bool m_networkInterfaceHasBeenSet;

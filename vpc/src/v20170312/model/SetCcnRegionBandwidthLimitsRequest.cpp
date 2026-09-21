@@ -25,7 +25,8 @@ using namespace std;
 SetCcnRegionBandwidthLimitsRequest::SetCcnRegionBandwidthLimitsRequest() :
     m_ccnIdHasBeenSet(false),
     m_ccnRegionBandwidthLimitsHasBeenSet(false),
-    m_setDefaultLimitFlagHasBeenSet(false)
+    m_setDefaultLimitFlagHasBeenSet(false),
+    m_setQosDefaultLimitFlagHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string SetCcnRegionBandwidthLimitsRequest::ToJsonString() const
         string key = "SetDefaultLimitFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_setDefaultLimitFlag, allocator);
+    }
+
+    if (m_setQosDefaultLimitFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SetQosDefaultLimitFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_setQosDefaultLimitFlag, allocator);
     }
 
 
@@ -121,6 +130,22 @@ void SetCcnRegionBandwidthLimitsRequest::SetSetDefaultLimitFlag(const bool& _set
 bool SetCcnRegionBandwidthLimitsRequest::SetDefaultLimitFlagHasBeenSet() const
 {
     return m_setDefaultLimitFlagHasBeenSet;
+}
+
+bool SetCcnRegionBandwidthLimitsRequest::GetSetQosDefaultLimitFlag() const
+{
+    return m_setQosDefaultLimitFlag;
+}
+
+void SetCcnRegionBandwidthLimitsRequest::SetSetQosDefaultLimitFlag(const bool& _setQosDefaultLimitFlag)
+{
+    m_setQosDefaultLimitFlag = _setQosDefaultLimitFlag;
+    m_setQosDefaultLimitFlagHasBeenSet = true;
+}
+
+bool SetCcnRegionBandwidthLimitsRequest::SetQosDefaultLimitFlagHasBeenSet() const
+{
+    return m_setQosDefaultLimitFlagHasBeenSet;
 }
 
 

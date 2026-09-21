@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取客户的投递流列表
-                     * @return PostCLSFlows 客户的投递流列表
+                     * 获取<p>客户的投递流列表</p>
+                     * @return PostCLSFlows <p>客户的投递流列表</p>
                      * 
                      */
                     std::vector<PostCLSFlowInfo> GetPostCLSFlows() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 客户的投递流列表
+                     * <p>客户的投递流列表</p>
                      */
                     std::vector<PostCLSFlowInfo> m_postCLSFlows;
                     bool m_postCLSFlowsHasBeenSet;

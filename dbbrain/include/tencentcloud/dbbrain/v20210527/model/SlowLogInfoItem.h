@@ -235,6 +235,27 @@ namespace TencentCloud
                      */
                     bool RowsSentHasBeenSet() const;
 
+                    /**
+                     * 获取
+                     * @return InstanceId 
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置
+                     * @param _instanceId 
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +311,12 @@ namespace TencentCloud
                      */
                     int64_t m_rowsSent;
                     bool m_rowsSentHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }

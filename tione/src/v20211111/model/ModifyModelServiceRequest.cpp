@@ -60,7 +60,8 @@ ModifyModelServiceRequest::ModifyModelServiceRequest() :
     m_volumeMountsHasBeenSet(false),
     m_schedulingStrategyHasBeenSet(false),
     m_targetProjectIdHasBeenSet(false),
-    m_inferTemplateIdHasBeenSet(false)
+    m_inferTemplateIdHasBeenSet(false),
+    m_priorityHasBeenSet(false)
 {
 }
 
@@ -411,6 +412,14 @@ string ModifyModelServiceRequest::ToJsonString() const
         string key = "InferTemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_inferTemplateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_priorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Priority";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_priority, allocator);
     }
 
 
@@ -1027,6 +1036,22 @@ void ModifyModelServiceRequest::SetInferTemplateId(const string& _inferTemplateI
 bool ModifyModelServiceRequest::InferTemplateIdHasBeenSet() const
 {
     return m_inferTemplateIdHasBeenSet;
+}
+
+int64_t ModifyModelServiceRequest::GetPriority() const
+{
+    return m_priority;
+}
+
+void ModifyModelServiceRequest::SetPriority(const int64_t& _priority)
+{
+    m_priority = _priority;
+    m_priorityHasBeenSet = true;
+}
+
+bool ModifyModelServiceRequest::PriorityHasBeenSet() const
+{
+    return m_priorityHasBeenSet;
 }
 
 

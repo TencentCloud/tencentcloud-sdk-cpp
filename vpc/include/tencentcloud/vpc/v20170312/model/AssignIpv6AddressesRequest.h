@@ -44,19 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取弹性网卡实例`ID`，形如：`eni-m6dyj72l`。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
-
-                     * @return NetworkInterfaceId 弹性网卡实例`ID`，形如：`eni-m6dyj72l`。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
-
+                     * 获取<p>弹性网卡实例<code>ID</code>，形如：<code>eni-m6dyj72l</code>。可通过<a href="https://cloud.tencent.com/document/product/215/15817">DescribeNetworkInterfaces</a>接口获取。</p>
+                     * @return NetworkInterfaceId <p>弹性网卡实例<code>ID</code>，形如：<code>eni-m6dyj72l</code>。可通过<a href="https://cloud.tencent.com/document/product/215/15817">DescribeNetworkInterfaces</a>接口获取。</p>
                      * 
                      */
                     std::string GetNetworkInterfaceId() const;
 
                     /**
-                     * 设置弹性网卡实例`ID`，形如：`eni-m6dyj72l`。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
-
-                     * @param _networkInterfaceId 弹性网卡实例`ID`，形如：`eni-m6dyj72l`。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
-
+                     * 设置<p>弹性网卡实例<code>ID</code>，形如：<code>eni-m6dyj72l</code>。可通过<a href="https://cloud.tencent.com/document/product/215/15817">DescribeNetworkInterfaces</a>接口获取。</p>
+                     * @param _networkInterfaceId <p>弹性网卡实例<code>ID</code>，形如：<code>eni-m6dyj72l</code>。可通过<a href="https://cloud.tencent.com/document/product/215/15817">DescribeNetworkInterfaces</a>接口获取。</p>
                      * 
                      */
                     void SetNetworkInterfaceId(const std::string& _networkInterfaceId);
@@ -69,15 +65,15 @@ namespace TencentCloud
                     bool NetworkInterfaceIdHasBeenSet() const;
 
                     /**
-                     * 获取指定的`IPv6`地址列表，单次最多指定10个。与入参`Ipv6AddressCount`合并计算配额。与Ipv6AddressCount必填一个。
-                     * @return Ipv6Addresses 指定的`IPv6`地址列表，单次最多指定10个。与入参`Ipv6AddressCount`合并计算配额。与Ipv6AddressCount必填一个。
+                     * 获取<p>指定的<code>IPv6</code>地址列表，单次最多指定10个。与入参<code>Ipv6AddressCount</code>合并计算配额。与Ipv6AddressCount必填一个。</p>
+                     * @return Ipv6Addresses <p>指定的<code>IPv6</code>地址列表，单次最多指定10个。与入参<code>Ipv6AddressCount</code>合并计算配额。与Ipv6AddressCount必填一个。</p>
                      * 
                      */
                     std::vector<Ipv6Address> GetIpv6Addresses() const;
 
                     /**
-                     * 设置指定的`IPv6`地址列表，单次最多指定10个。与入参`Ipv6AddressCount`合并计算配额。与Ipv6AddressCount必填一个。
-                     * @param _ipv6Addresses 指定的`IPv6`地址列表，单次最多指定10个。与入参`Ipv6AddressCount`合并计算配额。与Ipv6AddressCount必填一个。
+                     * 设置<p>指定的<code>IPv6</code>地址列表，单次最多指定10个。与入参<code>Ipv6AddressCount</code>合并计算配额。与Ipv6AddressCount必填一个。</p>
+                     * @param _ipv6Addresses <p>指定的<code>IPv6</code>地址列表，单次最多指定10个。与入参<code>Ipv6AddressCount</code>合并计算配额。与Ipv6AddressCount必填一个。</p>
                      * 
                      */
                     void SetIpv6Addresses(const std::vector<Ipv6Address>& _ipv6Addresses);
@@ -90,15 +86,15 @@ namespace TencentCloud
                     bool Ipv6AddressesHasBeenSet() const;
 
                     /**
-                     * 获取自动分配`IPv6`地址个数，内网IP地址个数总和不能超过配额数。与入参`Ipv6Addresses`合并计算配额。与Ipv6Addresses必填一个。
-                     * @return Ipv6AddressCount 自动分配`IPv6`地址个数，内网IP地址个数总和不能超过配额数。与入参`Ipv6Addresses`合并计算配额。与Ipv6Addresses必填一个。
+                     * 获取<p>自动分配<code>IPv6</code>地址个数，内网IP地址个数总和不能超过配额数。与入参<code>Ipv6Addresses</code>合并计算配额。与Ipv6Addresses必填一个。</p>
+                     * @return Ipv6AddressCount <p>自动分配<code>IPv6</code>地址个数，内网IP地址个数总和不能超过配额数。与入参<code>Ipv6Addresses</code>合并计算配额。与Ipv6Addresses必填一个。</p>
                      * 
                      */
                     uint64_t GetIpv6AddressCount() const;
 
                     /**
-                     * 设置自动分配`IPv6`地址个数，内网IP地址个数总和不能超过配额数。与入参`Ipv6Addresses`合并计算配额。与Ipv6Addresses必填一个。
-                     * @param _ipv6AddressCount 自动分配`IPv6`地址个数，内网IP地址个数总和不能超过配额数。与入参`Ipv6Addresses`合并计算配额。与Ipv6Addresses必填一个。
+                     * 设置<p>自动分配<code>IPv6</code>地址个数，内网IP地址个数总和不能超过配额数。与入参<code>Ipv6Addresses</code>合并计算配额。与Ipv6Addresses必填一个。</p>
+                     * @param _ipv6AddressCount <p>自动分配<code>IPv6</code>地址个数，内网IP地址个数总和不能超过配额数。与入参<code>Ipv6Addresses</code>合并计算配额。与Ipv6Addresses必填一个。</p>
                      * 
                      */
                     void SetIpv6AddressCount(const uint64_t& _ipv6AddressCount);
@@ -111,15 +107,15 @@ namespace TencentCloud
                     bool Ipv6AddressCountHasBeenSet() const;
 
                     /**
-                     * 获取用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
-                     * @return ClientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     * 获取<p>用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。</p>
+                     * @return ClientToken <p>用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。</p>
                      * 
                      */
                     std::string GetClientToken() const;
 
                     /**
-                     * 设置用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
-                     * @param _clientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     * 设置<p>用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。</p>
+                     * @param _clientToken <p>用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。</p>
                      * 
                      */
                     void SetClientToken(const std::string& _clientToken);
@@ -134,26 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 弹性网卡实例`ID`，形如：`eni-m6dyj72l`。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
-
+                     * <p>弹性网卡实例<code>ID</code>，形如：<code>eni-m6dyj72l</code>。可通过<a href="https://cloud.tencent.com/document/product/215/15817">DescribeNetworkInterfaces</a>接口获取。</p>
                      */
                     std::string m_networkInterfaceId;
                     bool m_networkInterfaceIdHasBeenSet;
 
                     /**
-                     * 指定的`IPv6`地址列表，单次最多指定10个。与入参`Ipv6AddressCount`合并计算配额。与Ipv6AddressCount必填一个。
+                     * <p>指定的<code>IPv6</code>地址列表，单次最多指定10个。与入参<code>Ipv6AddressCount</code>合并计算配额。与Ipv6AddressCount必填一个。</p>
                      */
                     std::vector<Ipv6Address> m_ipv6Addresses;
                     bool m_ipv6AddressesHasBeenSet;
 
                     /**
-                     * 自动分配`IPv6`地址个数，内网IP地址个数总和不能超过配额数。与入参`Ipv6Addresses`合并计算配额。与Ipv6Addresses必填一个。
+                     * <p>自动分配<code>IPv6</code>地址个数，内网IP地址个数总和不能超过配额数。与入参<code>Ipv6Addresses</code>合并计算配额。与Ipv6Addresses必填一个。</p>
                      */
                     uint64_t m_ipv6AddressCount;
                     bool m_ipv6AddressCountHasBeenSet;
 
                     /**
-                     * 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     * <p>用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。</p>
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;

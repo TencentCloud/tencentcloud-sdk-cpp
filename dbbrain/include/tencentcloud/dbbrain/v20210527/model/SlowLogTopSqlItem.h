@@ -571,6 +571,48 @@ namespace TencentCloud
                      */
                     bool Md5HasBeenSet() const;
 
+                    /**
+                     * 获取
+                     * @return SqlType 
+                     * 
+                     */
+                    std::string GetSqlType() const;
+
+                    /**
+                     * 设置
+                     * @param _sqlType 
+                     * 
+                     */
+                    void SetSqlType(const std::string& _sqlType);
+
+                    /**
+                     * 判断参数 SqlType 是否已赋值
+                     * @return SqlType 是否已赋值
+                     * 
+                     */
+                    bool SqlTypeHasBeenSet() const;
+
+                    /**
+                     * 获取
+                     * @return InstanceId 
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置
+                     * @param _instanceId 
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -722,6 +764,18 @@ namespace TencentCloud
                      */
                     std::string m_md5;
                     bool m_md5HasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    std::string m_sqlType;
+                    bool m_sqlTypeHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }

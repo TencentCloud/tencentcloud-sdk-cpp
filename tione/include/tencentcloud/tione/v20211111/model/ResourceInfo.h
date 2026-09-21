@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取处理器资源, 单位为1/1000核
+                     * 获取<p>处理器资源, 单位为1/1000核</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Cpu 处理器资源, 单位为1/1000核
+                     * @return Cpu <p>处理器资源, 单位为1/1000核</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCpu() const;
 
                     /**
-                     * 设置处理器资源, 单位为1/1000核
+                     * 设置<p>处理器资源, 单位为1/1000核</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cpu 处理器资源, 单位为1/1000核
+                     * @param _cpu <p>处理器资源, 单位为1/1000核</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取内存资源, 单位为1M
+                     * 获取<p>内存资源, 单位为1M</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Memory 内存资源, 单位为1M
+                     * @return Memory <p>内存资源, 单位为1M</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
-                     * 设置内存资源, 单位为1M
+                     * 设置<p>内存资源, 单位为1M</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _memory 内存资源, 单位为1M
+                     * @param _memory <p>内存资源, 单位为1M</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,30 +98,18 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取Gpu卡个数资源, 单位为0.01单位的GpuType.
-Gpu=100表示使用了“一张”gpu卡, 但此处的“一张”卡有可能是虚拟化后的1/4卡, 也有可能是整张卡. 取决于实例的机型
-例1 实例的机型带有1张虚拟gpu卡, 每张虚拟gpu卡对应1/4张实际T4卡, 则此时 GpuType=T4, Gpu=100, RealGpu=25.
-例2 实例的机型带有4张gpu整卡, 每张卡对应1张实际T4卡, 则 此时 GpuType=T4, Gpu=400, RealGpu=400.
+                     * 获取<p>Gpu卡个数资源, 单位为0.01单位的GpuType.<br>Gpu=100表示使用了“一张”gpu卡, 但此处的“一张”卡有可能是虚拟化后的1/4卡, 也有可能是整张卡. 取决于实例的机型<br>例1 实例的机型带有1张虚拟gpu卡, 每张虚拟gpu卡对应1/4张实际T4卡, 则此时 GpuType=T4, Gpu=100, RealGpu=25.<br>例2 实例的机型带有4张gpu整卡, 每张卡对应1张实际T4卡, 则 此时 GpuType=T4, Gpu=400, RealGpu=400.</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Gpu Gpu卡个数资源, 单位为0.01单位的GpuType.
-Gpu=100表示使用了“一张”gpu卡, 但此处的“一张”卡有可能是虚拟化后的1/4卡, 也有可能是整张卡. 取决于实例的机型
-例1 实例的机型带有1张虚拟gpu卡, 每张虚拟gpu卡对应1/4张实际T4卡, 则此时 GpuType=T4, Gpu=100, RealGpu=25.
-例2 实例的机型带有4张gpu整卡, 每张卡对应1张实际T4卡, 则 此时 GpuType=T4, Gpu=400, RealGpu=400.
+                     * @return Gpu <p>Gpu卡个数资源, 单位为0.01单位的GpuType.<br>Gpu=100表示使用了“一张”gpu卡, 但此处的“一张”卡有可能是虚拟化后的1/4卡, 也有可能是整张卡. 取决于实例的机型<br>例1 实例的机型带有1张虚拟gpu卡, 每张虚拟gpu卡对应1/4张实际T4卡, 则此时 GpuType=T4, Gpu=100, RealGpu=25.<br>例2 实例的机型带有4张gpu整卡, 每张卡对应1张实际T4卡, 则 此时 GpuType=T4, Gpu=400, RealGpu=400.</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetGpu() const;
 
                     /**
-                     * 设置Gpu卡个数资源, 单位为0.01单位的GpuType.
-Gpu=100表示使用了“一张”gpu卡, 但此处的“一张”卡有可能是虚拟化后的1/4卡, 也有可能是整张卡. 取决于实例的机型
-例1 实例的机型带有1张虚拟gpu卡, 每张虚拟gpu卡对应1/4张实际T4卡, 则此时 GpuType=T4, Gpu=100, RealGpu=25.
-例2 实例的机型带有4张gpu整卡, 每张卡对应1张实际T4卡, 则 此时 GpuType=T4, Gpu=400, RealGpu=400.
+                     * 设置<p>Gpu卡个数资源, 单位为0.01单位的GpuType.<br>Gpu=100表示使用了“一张”gpu卡, 但此处的“一张”卡有可能是虚拟化后的1/4卡, 也有可能是整张卡. 取决于实例的机型<br>例1 实例的机型带有1张虚拟gpu卡, 每张虚拟gpu卡对应1/4张实际T4卡, 则此时 GpuType=T4, Gpu=100, RealGpu=25.<br>例2 实例的机型带有4张gpu整卡, 每张卡对应1张实际T4卡, 则 此时 GpuType=T4, Gpu=400, RealGpu=400.</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _gpu Gpu卡个数资源, 单位为0.01单位的GpuType.
-Gpu=100表示使用了“一张”gpu卡, 但此处的“一张”卡有可能是虚拟化后的1/4卡, 也有可能是整张卡. 取决于实例的机型
-例1 实例的机型带有1张虚拟gpu卡, 每张虚拟gpu卡对应1/4张实际T4卡, 则此时 GpuType=T4, Gpu=100, RealGpu=25.
-例2 实例的机型带有4张gpu整卡, 每张卡对应1张实际T4卡, 则 此时 GpuType=T4, Gpu=400, RealGpu=400.
+                     * @param _gpu <p>Gpu卡个数资源, 单位为0.01单位的GpuType.<br>Gpu=100表示使用了“一张”gpu卡, 但此处的“一张”卡有可能是虚拟化后的1/4卡, 也有可能是整张卡. 取决于实例的机型<br>例1 实例的机型带有1张虚拟gpu卡, 每张虚拟gpu卡对应1/4张实际T4卡, 则此时 GpuType=T4, Gpu=100, RealGpu=25.<br>例2 实例的机型带有4张gpu整卡, 每张卡对应1张实际T4卡, 则 此时 GpuType=T4, Gpu=400, RealGpu=400.</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -135,18 +123,18 @@ Gpu=100表示使用了“一张”gpu卡, 但此处的“一张”卡有可能�
                     bool GpuHasBeenSet() const;
 
                     /**
-                     * 获取Gpu卡型号 T4或者V100。仅展示当前 GPU 卡型号，若存在多类型同时使用，则参考 RealGpuDetailSet 的值。
+                     * 获取<p>Gpu卡型号 T4或者V100。仅展示当前 GPU 卡型号，若存在多类型同时使用，则参考 RealGpuDetailSet 的值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GpuType Gpu卡型号 T4或者V100。仅展示当前 GPU 卡型号，若存在多类型同时使用，则参考 RealGpuDetailSet 的值。
+                     * @return GpuType <p>Gpu卡型号 T4或者V100。仅展示当前 GPU 卡型号，若存在多类型同时使用，则参考 RealGpuDetailSet 的值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGpuType() const;
 
                     /**
-                     * 设置Gpu卡型号 T4或者V100。仅展示当前 GPU 卡型号，若存在多类型同时使用，则参考 RealGpuDetailSet 的值。
+                     * 设置<p>Gpu卡型号 T4或者V100。仅展示当前 GPU 卡型号，若存在多类型同时使用，则参考 RealGpuDetailSet 的值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _gpuType Gpu卡型号 T4或者V100。仅展示当前 GPU 卡型号，若存在多类型同时使用，则参考 RealGpuDetailSet 的值。
+                     * @param _gpuType <p>Gpu卡型号 T4或者V100。仅展示当前 GPU 卡型号，若存在多类型同时使用，则参考 RealGpuDetailSet 的值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -160,23 +148,15 @@ Gpu=100表示使用了“一张”gpu卡, 但此处的“一张”卡有可能�
                     bool GpuTypeHasBeenSet() const;
 
                     /**
-                     * 获取创建或更新时无需填写，仅展示需要关注
-后付费非整卡实例对应的实际的Gpu卡资源, 表示gpu资源对应实际的gpu卡个数.
-RealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有可能代表带有1/4卡的实例4个, 或者带有1/2卡的实例2个, 或者带有1卡的实力1个.
-                     * @return RealGpu 创建或更新时无需填写，仅展示需要关注
-后付费非整卡实例对应的实际的Gpu卡资源, 表示gpu资源对应实际的gpu卡个数.
-RealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有可能代表带有1/4卡的实例4个, 或者带有1/2卡的实例2个, 或者带有1卡的实力1个.
+                     * 获取<p>创建或更新时无需填写，仅展示需要关注<br>后付费非整卡实例对应的实际的Gpu卡资源, 表示gpu资源对应实际的gpu卡个数.<br>RealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有可能代表带有1/4卡的实例4个, 或者带有1/2卡的实例2个, 或者带有1卡的实力1个.</p>
+                     * @return RealGpu <p>创建或更新时无需填写，仅展示需要关注<br>后付费非整卡实例对应的实际的Gpu卡资源, 表示gpu资源对应实际的gpu卡个数.<br>RealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有可能代表带有1/4卡的实例4个, 或者带有1/2卡的实例2个, 或者带有1卡的实力1个.</p>
                      * 
                      */
                     uint64_t GetRealGpu() const;
 
                     /**
-                     * 设置创建或更新时无需填写，仅展示需要关注
-后付费非整卡实例对应的实际的Gpu卡资源, 表示gpu资源对应实际的gpu卡个数.
-RealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有可能代表带有1/4卡的实例4个, 或者带有1/2卡的实例2个, 或者带有1卡的实力1个.
-                     * @param _realGpu 创建或更新时无需填写，仅展示需要关注
-后付费非整卡实例对应的实际的Gpu卡资源, 表示gpu资源对应实际的gpu卡个数.
-RealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有可能代表带有1/4卡的实例4个, 或者带有1/2卡的实例2个, 或者带有1卡的实力1个.
+                     * 设置<p>创建或更新时无需填写，仅展示需要关注<br>后付费非整卡实例对应的实际的Gpu卡资源, 表示gpu资源对应实际的gpu卡个数.<br>RealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有可能代表带有1/4卡的实例4个, 或者带有1/2卡的实例2个, 或者带有1卡的实力1个.</p>
+                     * @param _realGpu <p>创建或更新时无需填写，仅展示需要关注<br>后付费非整卡实例对应的实际的Gpu卡资源, 表示gpu资源对应实际的gpu卡个数.<br>RealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有可能代表带有1/4卡的实例4个, 或者带有1/2卡的实例2个, 或者带有1卡的实力1个.</p>
                      * 
                      */
                     void SetRealGpu(const uint64_t& _realGpu);
@@ -189,15 +169,15 @@ RealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有�
                     bool RealGpuHasBeenSet() const;
 
                     /**
-                     * 获取创建或更新时无需填写，仅展示需要关注。详细的GPU使用信息。
-                     * @return RealGpuDetailSet 创建或更新时无需填写，仅展示需要关注。详细的GPU使用信息。
+                     * 获取<p>创建或更新时无需填写，仅展示需要关注。详细的GPU使用信息。</p>
+                     * @return RealGpuDetailSet <p>创建或更新时无需填写，仅展示需要关注。详细的GPU使用信息。</p>
                      * 
                      */
                     std::vector<GpuDetail> GetRealGpuDetailSet() const;
 
                     /**
-                     * 设置创建或更新时无需填写，仅展示需要关注。详细的GPU使用信息。
-                     * @param _realGpuDetailSet 创建或更新时无需填写，仅展示需要关注。详细的GPU使用信息。
+                     * 设置<p>创建或更新时无需填写，仅展示需要关注。详细的GPU使用信息。</p>
+                     * @param _realGpuDetailSet <p>创建或更新时无需填写，仅展示需要关注。详细的GPU使用信息。</p>
                      * 
                      */
                     void SetRealGpuDetailSet(const std::vector<GpuDetail>& _realGpuDetailSet);
@@ -210,18 +190,18 @@ RealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有�
                     bool RealGpuDetailSetHasBeenSet() const;
 
                     /**
-                     * 获取是否开启rdma
+                     * 获取<p>是否开启rdma</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EnableRDMA 是否开启rdma
+                     * @return EnableRDMA <p>是否开启rdma</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableRDMA() const;
 
                     /**
-                     * 设置是否开启rdma
+                     * 设置<p>是否开启rdma</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _enableRDMA 是否开启rdma
+                     * @param _enableRDMA <p>是否开启rdma</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -235,15 +215,36 @@ RealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有�
                     bool EnableRDMAHasBeenSet() const;
 
                     /**
-                     * 获取root disk size(GB)
-                     * @return RootDisk root disk size(GB)
+                     * 获取<p>rdma number</p>
+                     * @return RdmaNumber <p>rdma number</p>
+                     * 
+                     */
+                    uint64_t GetRdmaNumber() const;
+
+                    /**
+                     * 设置<p>rdma number</p>
+                     * @param _rdmaNumber <p>rdma number</p>
+                     * 
+                     */
+                    void SetRdmaNumber(const uint64_t& _rdmaNumber);
+
+                    /**
+                     * 判断参数 RdmaNumber 是否已赋值
+                     * @return RdmaNumber 是否已赋值
+                     * 
+                     */
+                    bool RdmaNumberHasBeenSet() const;
+
+                    /**
+                     * 获取<p>root disk size(GB)</p>
+                     * @return RootDisk <p>root disk size(GB)</p>
                      * 
                      */
                     uint64_t GetRootDisk() const;
 
                     /**
-                     * 设置root disk size(GB)
-                     * @param _rootDisk root disk size(GB)
+                     * 设置<p>root disk size(GB)</p>
+                     * @param _rootDisk <p>root disk size(GB)</p>
                      * 
                      */
                     void SetRootDisk(const uint64_t& _rootDisk);
@@ -256,15 +257,15 @@ RealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有�
                     bool RootDiskHasBeenSet() const;
 
                     /**
-                     * 获取data disk size(GB)
-                     * @return DataDisk data disk size(GB)
+                     * 获取<p>data disk size(GB)</p>
+                     * @return DataDisk <p>data disk size(GB)</p>
                      * 
                      */
                     uint64_t GetDataDisk() const;
 
                     /**
-                     * 设置data disk size(GB)
-                     * @param _dataDisk data disk size(GB)
+                     * 设置<p>data disk size(GB)</p>
+                     * @param _dataDisk <p>data disk size(GB)</p>
                      * 
                      */
                     void SetDataDisk(const uint64_t& _dataDisk);
@@ -276,71 +277,99 @@ RealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有�
                      */
                     bool DataDiskHasBeenSet() const;
 
+                    /**
+                     * 获取<p>rdma</p><p>取值范围：[0, 99]</p>
+                     * @return Rdma <p>rdma</p><p>取值范围：[0, 99]</p>
+                     * 
+                     */
+                    uint64_t GetRdma() const;
+
+                    /**
+                     * 设置<p>rdma</p><p>取值范围：[0, 99]</p>
+                     * @param _rdma <p>rdma</p><p>取值范围：[0, 99]</p>
+                     * 
+                     */
+                    void SetRdma(const uint64_t& _rdma);
+
+                    /**
+                     * 判断参数 Rdma 是否已赋值
+                     * @return Rdma 是否已赋值
+                     * 
+                     */
+                    bool RdmaHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 处理器资源, 单位为1/1000核
+                     * <p>处理器资源, 单位为1/1000核</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 内存资源, 单位为1M
+                     * <p>内存资源, 单位为1M</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * Gpu卡个数资源, 单位为0.01单位的GpuType.
-Gpu=100表示使用了“一张”gpu卡, 但此处的“一张”卡有可能是虚拟化后的1/4卡, 也有可能是整张卡. 取决于实例的机型
-例1 实例的机型带有1张虚拟gpu卡, 每张虚拟gpu卡对应1/4张实际T4卡, 则此时 GpuType=T4, Gpu=100, RealGpu=25.
-例2 实例的机型带有4张gpu整卡, 每张卡对应1张实际T4卡, 则 此时 GpuType=T4, Gpu=400, RealGpu=400.
+                     * <p>Gpu卡个数资源, 单位为0.01单位的GpuType.<br>Gpu=100表示使用了“一张”gpu卡, 但此处的“一张”卡有可能是虚拟化后的1/4卡, 也有可能是整张卡. 取决于实例的机型<br>例1 实例的机型带有1张虚拟gpu卡, 每张虚拟gpu卡对应1/4张实际T4卡, 则此时 GpuType=T4, Gpu=100, RealGpu=25.<br>例2 实例的机型带有4张gpu整卡, 每张卡对应1张实际T4卡, 则 此时 GpuType=T4, Gpu=400, RealGpu=400.</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_gpu;
                     bool m_gpuHasBeenSet;
 
                     /**
-                     * Gpu卡型号 T4或者V100。仅展示当前 GPU 卡型号，若存在多类型同时使用，则参考 RealGpuDetailSet 的值。
+                     * <p>Gpu卡型号 T4或者V100。仅展示当前 GPU 卡型号，若存在多类型同时使用，则参考 RealGpuDetailSet 的值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gpuType;
                     bool m_gpuTypeHasBeenSet;
 
                     /**
-                     * 创建或更新时无需填写，仅展示需要关注
-后付费非整卡实例对应的实际的Gpu卡资源, 表示gpu资源对应实际的gpu卡个数.
-RealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有可能代表带有1/4卡的实例4个, 或者带有1/2卡的实例2个, 或者带有1卡的实力1个.
+                     * <p>创建或更新时无需填写，仅展示需要关注<br>后付费非整卡实例对应的实际的Gpu卡资源, 表示gpu资源对应实际的gpu卡个数.<br>RealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有可能代表带有1/4卡的实例4个, 或者带有1/2卡的实例2个, 或者带有1卡的实力1个.</p>
                      */
                     uint64_t m_realGpu;
                     bool m_realGpuHasBeenSet;
 
                     /**
-                     * 创建或更新时无需填写，仅展示需要关注。详细的GPU使用信息。
+                     * <p>创建或更新时无需填写，仅展示需要关注。详细的GPU使用信息。</p>
                      */
                     std::vector<GpuDetail> m_realGpuDetailSet;
                     bool m_realGpuDetailSetHasBeenSet;
 
                     /**
-                     * 是否开启rdma
+                     * <p>是否开启rdma</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableRDMA;
                     bool m_enableRDMAHasBeenSet;
 
                     /**
-                     * root disk size(GB)
+                     * <p>rdma number</p>
+                     */
+                    uint64_t m_rdmaNumber;
+                    bool m_rdmaNumberHasBeenSet;
+
+                    /**
+                     * <p>root disk size(GB)</p>
                      */
                     uint64_t m_rootDisk;
                     bool m_rootDiskHasBeenSet;
 
                     /**
-                     * data disk size(GB)
+                     * <p>data disk size(GB)</p>
                      */
                     uint64_t m_dataDisk;
                     bool m_dataDiskHasBeenSet;
+
+                    /**
+                     * <p>rdma</p><p>取值范围：[0, 99]</p>
+                     */
+                    uint64_t m_rdma;
+                    bool m_rdmaHasBeenSet;
 
                 };
             }

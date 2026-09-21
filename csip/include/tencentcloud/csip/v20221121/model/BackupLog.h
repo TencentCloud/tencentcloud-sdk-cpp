@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取索引
-                     * @return Id 索引
+                     * 获取<p>索引</p>
+                     * @return Id <p>索引</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置索引
-                     * @param _id 索引
+                     * 设置<p>索引</p>
+                     * @param _id <p>索引</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取索引开始时间
-                     * @return IndexStartTime 索引开始时间
+                     * 获取<p>索引开始时间</p>
+                     * @return IndexStartTime <p>索引开始时间</p>
                      * 
                      */
                     int64_t GetIndexStartTime() const;
 
                     /**
-                     * 设置索引开始时间
-                     * @param _indexStartTime 索引开始时间
+                     * 设置<p>索引开始时间</p>
+                     * @param _indexStartTime <p>索引开始时间</p>
                      * 
                      */
                     void SetIndexStartTime(const int64_t& _indexStartTime);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool IndexStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取索引结束时间
-                     * @return IndexEndTime 索引结束时间
+                     * 获取<p>索引结束时间</p>
+                     * @return IndexEndTime <p>索引结束时间</p>
                      * 
                      */
                     int64_t GetIndexEndTime() const;
 
                     /**
-                     * 设置索引结束时间
-                     * @param _indexEndTime 索引结束时间
+                     * 设置<p>索引结束时间</p>
+                     * @param _indexEndTime <p>索引结束时间</p>
                      * 
                      */
                     void SetIndexEndTime(const int64_t& _indexEndTime);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool IndexEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取备份后压缩的大小，单位M
-                     * @return BackupSize 备份后压缩的大小，单位M
+                     * 获取<p>备份后压缩的大小，单位M</p>
+                     * @return BackupSize <p>备份后压缩的大小，单位M</p>
                      * 
                      */
                     int64_t GetBackupSize() const;
 
                     /**
-                     * 设置备份后压缩的大小，单位M
-                     * @param _backupSize 备份后压缩的大小，单位M
+                     * 设置<p>备份后压缩的大小，单位M</p>
+                     * @param _backupSize <p>备份后压缩的大小，单位M</p>
                      * 
                      */
                     void SetBackupSize(const int64_t& _backupSize);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool BackupSizeHasBeenSet() const;
 
                     /**
-                     * 获取日志状态 0备份未完成， 1备份文件，2恢复中，3已恢复，4.已删除
-                     * @return Status 日志状态 0备份未完成， 1备份文件，2恢复中，3已恢复，4.已删除
+                     * 获取<p>日志状态 0备份未完成， 1备份文件，2恢复中，3已恢复，4.已删除</p>
+                     * @return Status <p>日志状态 0备份未完成， 1备份文件，2恢复中，3已恢复，4.已删除</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置日志状态 0备份未完成， 1备份文件，2恢复中，3已恢复，4.已删除
-                     * @param _status 日志状态 0备份未完成， 1备份文件，2恢复中，3已恢复，4.已删除
+                     * 设置<p>日志状态 0备份未完成， 1备份文件，2恢复中，3已恢复，4.已删除</p>
+                     * @param _status <p>日志状态 0备份未完成， 1备份文件，2恢复中，3已恢复，4.已删除</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取恢复剩余的分钟数，分钟，需要前端转换
-                     * @return RestoreProcessRemindTime 恢复剩余的分钟数，分钟，需要前端转换
+                     * 获取<p>恢复剩余的分钟数，分钟，需要前端转换</p>
+                     * @return RestoreProcessRemindTime <p>恢复剩余的分钟数，分钟，需要前端转换</p>
                      * 
                      */
                     int64_t GetRestoreProcessRemindTime() const;
 
                     /**
-                     * 设置恢复剩余的分钟数，分钟，需要前端转换
-                     * @param _restoreProcessRemindTime 恢复剩余的分钟数，分钟，需要前端转换
+                     * 设置<p>恢复剩余的分钟数，分钟，需要前端转换</p>
+                     * @param _restoreProcessRemindTime <p>恢复剩余的分钟数，分钟，需要前端转换</p>
                      * 
                      */
                     void SetRestoreProcessRemindTime(const int64_t& _restoreProcessRemindTime);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool RestoreProcessRemindTimeHasBeenSet() const;
 
                     /**
-                     * 获取恢复日志保留的时间
-                     * @return RestoreRemindTime 恢复日志保留的时间
+                     * 获取<p>恢复日志保留的时间</p>
+                     * @return RestoreRemindTime <p>恢复日志保留的时间</p>
                      * 
                      */
                     int64_t GetRestoreRemindTime() const;
 
                     /**
-                     * 设置恢复日志保留的时间
-                     * @param _restoreRemindTime 恢复日志保留的时间
+                     * 设置<p>恢复日志保留的时间</p>
+                     * @param _restoreRemindTime <p>恢复日志保留的时间</p>
                      * 
                      */
                     void SetRestoreRemindTime(const int64_t& _restoreRemindTime);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool RestoreRemindTimeHasBeenSet() const;
 
                     /**
-                     * 获取恢复索引大小
-                     * @return RestoreIndexSize 恢复索引大小
+                     * 获取<p>恢复索引大小</p>
+                     * @return RestoreIndexSize <p>恢复索引大小</p>
                      * 
                      */
                     int64_t GetRestoreIndexSize() const;
 
                     /**
-                     * 设置恢复索引大小
-                     * @param _restoreIndexSize 恢复索引大小
+                     * 设置<p>恢复索引大小</p>
+                     * @param _restoreIndexSize <p>恢复索引大小</p>
                      * 
                      */
                     void SetRestoreIndexSize(const int64_t& _restoreIndexSize);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool RestoreIndexSizeHasBeenSet() const;
 
                     /**
-                     * 获取恢复日志执行结束时间
-                     * @return RestoreEndTime 恢复日志执行结束时间
+                     * 获取<p>恢复日志执行结束时间</p>
+                     * @return RestoreEndTime <p>恢复日志执行结束时间</p>
                      * 
                      */
                     int64_t GetRestoreEndTime() const;
 
                     /**
-                     * 设置恢复日志执行结束时间
-                     * @param _restoreEndTime 恢复日志执行结束时间
+                     * 设置<p>恢复日志执行结束时间</p>
+                     * @param _restoreEndTime <p>恢复日志执行结束时间</p>
                      * 
                      */
                     void SetRestoreEndTime(const int64_t& _restoreEndTime);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool RestoreEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取备份所属的appId
-                     * @return AppId 备份所属的appId
+                     * 获取<p>备份所属的appId</p>
+                     * @return AppId <p>备份所属的appId</p>
                      * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
-                     * 设置备份所属的appId
-                     * @param _appId 备份所属的appId
+                     * 设置<p>备份所属的appId</p>
+                     * @param _appId <p>备份所属的appId</p>
                      * 
                      */
                     void SetAppId(const uint64_t& _appId);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取备份所属的资产ID
-                     * @return AssetId 备份所属的资产ID
+                     * 获取<p>备份所属的资产ID</p>
+                     * @return AssetId <p>备份所属的资产ID</p>
                      * 
                      */
                     uint64_t GetAssetId() const;
 
                     /**
-                     * 设置备份所属的资产ID
-                     * @param _assetId 备份所属的资产ID
+                     * 设置<p>备份所属的资产ID</p>
+                     * @param _assetId <p>备份所属的资产ID</p>
                      * 
                      */
                     void SetAssetId(const uint64_t& _assetId);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool AssetIdHasBeenSet() const;
 
                     /**
-                     * 获取账号昵称
-                     * @return NickName 账号昵称
+                     * 获取<p>账号昵称</p>
+                     * @return NickName <p>账号昵称</p>
                      * 
                      */
                     std::string GetNickName() const;
 
                     /**
-                     * 设置账号昵称
-                     * @param _nickName 账号昵称
+                     * 设置<p>账号昵称</p>
+                     * @param _nickName <p>账号昵称</p>
                      * 
                      */
                     void SetNickName(const std::string& _nickName);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool NickNameHasBeenSet() const;
 
                     /**
-                     * 获取资产所属账号uin
-                     * @return Uin 资产所属账号uin
+                     * 获取<p>资产所属账号uin</p>
+                     * @return Uin <p>资产所属账号uin</p>
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置资产所属账号uin
-                     * @param _uin 资产所属账号uin
+                     * 设置<p>资产所属账号uin</p>
+                     * @param _uin <p>资产所属账号uin</p>
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -319,85 +319,166 @@ namespace TencentCloud
                      */
                     bool UinHasBeenSet() const;
 
+                    /**
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>实例名称</p>
+                     * @return InstanceName <p>实例名称</p>
+                     * 
+                     */
+                    std::string GetInstanceName() const;
+
+                    /**
+                     * 设置<p>实例名称</p>
+                     * @param _instanceName <p>实例名称</p>
+                     * 
+                     */
+                    void SetInstanceName(const std::string& _instanceName);
+
+                    /**
+                     * 判断参数 InstanceName 是否已赋值
+                     * @return InstanceName 是否已赋值
+                     * 
+                     */
+                    bool InstanceNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>实例类型</p><p>枚举值：</p><ul><li>cdb：  cdb</li><li>mariadb： mariadb</li></ul>
+                     * @return AssetType <p>实例类型</p><p>枚举值：</p><ul><li>cdb：  cdb</li><li>mariadb： mariadb</li></ul>
+                     * 
+                     */
+                    std::string GetAssetType() const;
+
+                    /**
+                     * 设置<p>实例类型</p><p>枚举值：</p><ul><li>cdb：  cdb</li><li>mariadb： mariadb</li></ul>
+                     * @param _assetType <p>实例类型</p><p>枚举值：</p><ul><li>cdb：  cdb</li><li>mariadb： mariadb</li></ul>
+                     * 
+                     */
+                    void SetAssetType(const std::string& _assetType);
+
+                    /**
+                     * 判断参数 AssetType 是否已赋值
+                     * @return AssetType 是否已赋值
+                     * 
+                     */
+                    bool AssetTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 索引
+                     * <p>索引</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 索引开始时间
+                     * <p>索引开始时间</p>
                      */
                     int64_t m_indexStartTime;
                     bool m_indexStartTimeHasBeenSet;
 
                     /**
-                     * 索引结束时间
+                     * <p>索引结束时间</p>
                      */
                     int64_t m_indexEndTime;
                     bool m_indexEndTimeHasBeenSet;
 
                     /**
-                     * 备份后压缩的大小，单位M
+                     * <p>备份后压缩的大小，单位M</p>
                      */
                     int64_t m_backupSize;
                     bool m_backupSizeHasBeenSet;
 
                     /**
-                     * 日志状态 0备份未完成， 1备份文件，2恢复中，3已恢复，4.已删除
+                     * <p>日志状态 0备份未完成， 1备份文件，2恢复中，3已恢复，4.已删除</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 恢复剩余的分钟数，分钟，需要前端转换
+                     * <p>恢复剩余的分钟数，分钟，需要前端转换</p>
                      */
                     int64_t m_restoreProcessRemindTime;
                     bool m_restoreProcessRemindTimeHasBeenSet;
 
                     /**
-                     * 恢复日志保留的时间
+                     * <p>恢复日志保留的时间</p>
                      */
                     int64_t m_restoreRemindTime;
                     bool m_restoreRemindTimeHasBeenSet;
 
                     /**
-                     * 恢复索引大小
+                     * <p>恢复索引大小</p>
                      */
                     int64_t m_restoreIndexSize;
                     bool m_restoreIndexSizeHasBeenSet;
 
                     /**
-                     * 恢复日志执行结束时间
+                     * <p>恢复日志执行结束时间</p>
                      */
                     int64_t m_restoreEndTime;
                     bool m_restoreEndTimeHasBeenSet;
 
                     /**
-                     * 备份所属的appId
+                     * <p>备份所属的appId</p>
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 备份所属的资产ID
+                     * <p>备份所属的资产ID</p>
                      */
                     uint64_t m_assetId;
                     bool m_assetIdHasBeenSet;
 
                     /**
-                     * 账号昵称
+                     * <p>账号昵称</p>
                      */
                     std::string m_nickName;
                     bool m_nickNameHasBeenSet;
 
                     /**
-                     * 资产所属账号uin
+                     * <p>资产所属账号uin</p>
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
+
+                    /**
+                     * <p>实例ID</p>
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * <p>实例名称</p>
+                     */
+                    std::string m_instanceName;
+                    bool m_instanceNameHasBeenSet;
+
+                    /**
+                     * <p>实例类型</p><p>枚举值：</p><ul><li>cdb：  cdb</li><li>mariadb： mariadb</li></ul>
+                     */
+                    std::string m_assetType;
+                    bool m_assetTypeHasBeenSet;
 
                 };
             }

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源组id, 取值为创建资源组接口(CreateBillingResourceGroup)响应中的ResourceGroupId
-                     * @return ResourceGroupId 资源组id, 取值为创建资源组接口(CreateBillingResourceGroup)响应中的ResourceGroupId
+                     * 获取<p>资源组id, 取值为创建资源组接口(CreateBillingResourceGroup)响应中的ResourceGroupId</p>
+                     * @return ResourceGroupId <p>资源组id, 取值为创建资源组接口(CreateBillingResourceGroup)响应中的ResourceGroupId</p>
                      * 
                      */
                     std::string GetResourceGroupId() const;
 
                     /**
-                     * 设置资源组id, 取值为创建资源组接口(CreateBillingResourceGroup)响应中的ResourceGroupId
-                     * @param _resourceGroupId 资源组id, 取值为创建资源组接口(CreateBillingResourceGroup)响应中的ResourceGroupId
+                     * 设置<p>资源组id, 取值为创建资源组接口(CreateBillingResourceGroup)响应中的ResourceGroupId</p>
+                     * @param _resourceGroupId <p>资源组id, 取值为创建资源组接口(CreateBillingResourceGroup)响应中的ResourceGroupId</p>
                      * 
                      */
                     void SetResourceGroupId(const std::string& _resourceGroupId);
@@ -86,47 +86,15 @@ namespace TencentCloud
                     bool TiProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件
-注意: 
-1. Filter.Name 只支持以下枚举值:
-    InstanceId (资源组节点id)
-    InstanceStatus (资源组节点状态)
-2. Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询
-3. Filter.Negative: 是否取反，默认为false
-4. Filter.Fuzzy: 是否模糊查询，默认为false
-5. 每次请求的Filters的上限为10，Filter.Values的上限为100
-                     * @return Filters 过滤条件
-注意: 
-1. Filter.Name 只支持以下枚举值:
-    InstanceId (资源组节点id)
-    InstanceStatus (资源组节点状态)
-2. Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询
-3. Filter.Negative: 是否取反，默认为false
-4. Filter.Fuzzy: 是否模糊查询，默认为false
-5. 每次请求的Filters的上限为10，Filter.Values的上限为100
+                     * 获取<p>过滤条件<br>注意: </p><ol><li>Filter.Name 只支持以下枚举值:<br> InstanceId (资源组节点id)<br> InstanceStatus (资源组节点状态)</li><li>Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询</li><li>Filter.Negative: 是否取反，默认为false</li><li>Filter.Fuzzy: 是否模糊查询，默认为false</li><li>每次请求的Filters的上限为10，Filter.Values的上限为100</li></ol>
+                     * @return Filters <p>过滤条件<br>注意: </p><ol><li>Filter.Name 只支持以下枚举值:<br> InstanceId (资源组节点id)<br> InstanceStatus (资源组节点状态)</li><li>Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询</li><li>Filter.Negative: 是否取反，默认为false</li><li>Filter.Fuzzy: 是否模糊查询，默认为false</li><li>每次请求的Filters的上限为10，Filter.Values的上限为100</li></ol>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件
-注意: 
-1. Filter.Name 只支持以下枚举值:
-    InstanceId (资源组节点id)
-    InstanceStatus (资源组节点状态)
-2. Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询
-3. Filter.Negative: 是否取反，默认为false
-4. Filter.Fuzzy: 是否模糊查询，默认为false
-5. 每次请求的Filters的上限为10，Filter.Values的上限为100
-                     * @param _filters 过滤条件
-注意: 
-1. Filter.Name 只支持以下枚举值:
-    InstanceId (资源组节点id)
-    InstanceStatus (资源组节点状态)
-2. Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询
-3. Filter.Negative: 是否取反，默认为false
-4. Filter.Fuzzy: 是否模糊查询，默认为false
-5. 每次请求的Filters的上限为10，Filter.Values的上限为100
+                     * 设置<p>过滤条件<br>注意: </p><ol><li>Filter.Name 只支持以下枚举值:<br> InstanceId (资源组节点id)<br> InstanceStatus (资源组节点状态)</li><li>Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询</li><li>Filter.Negative: 是否取反，默认为false</li><li>Filter.Fuzzy: 是否模糊查询，默认为false</li><li>每次请求的Filters的上限为10，Filter.Values的上限为100</li></ol>
+                     * @param _filters <p>过滤条件<br>注意: </p><ol><li>Filter.Name 只支持以下枚举值:<br> InstanceId (资源组节点id)<br> InstanceStatus (资源组节点状态)</li><li>Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询</li><li>Filter.Negative: 是否取反，默认为false</li><li>Filter.Fuzzy: 是否模糊查询，默认为false</li><li>每次请求的Filters的上限为10，Filter.Values的上限为100</li></ol>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -139,15 +107,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取分页查询起始位置，如：Limit为10，第一页Offset为0，第二页Offset为10...即每页左边为闭区间; 默认0
-                     * @return Offset 分页查询起始位置，如：Limit为10，第一页Offset为0，第二页Offset为10...即每页左边为闭区间; 默认0
+                     * 获取<p>分页查询起始位置，如：Limit为10，第一页Offset为0，第二页Offset为10...即每页左边为闭区间; 默认0</p>
+                     * @return Offset <p>分页查询起始位置，如：Limit为10，第一页Offset为0，第二页Offset为10...即每页左边为闭区间; 默认0</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页查询起始位置，如：Limit为10，第一页Offset为0，第二页Offset为10...即每页左边为闭区间; 默认0
-                     * @param _offset 分页查询起始位置，如：Limit为10，第一页Offset为0，第二页Offset为10...即每页左边为闭区间; 默认0
+                     * 设置<p>分页查询起始位置，如：Limit为10，第一页Offset为0，第二页Offset为10...即每页左边为闭区间; 默认0</p>
+                     * @param _offset <p>分页查询起始位置，如：Limit为10，第一页Offset为0，第二页Offset为10...即每页左边为闭区间; 默认0</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -160,15 +128,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页查询每页大小，默认20
-                     * @return Limit 分页查询每页大小，默认20
+                     * 获取<p>分页查询每页大小，默认20</p>
+                     * @return Limit <p>分页查询每页大小，默认20</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页查询每页大小，默认20
-                     * @param _limit 分页查询每页大小，默认20
+                     * 设置<p>分页查询每页大小，默认20</p>
+                     * @param _limit <p>分页查询每页大小，默认20</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -181,15 +149,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取排序方向; 枚举值: ASC | DESC；默认DESC
-                     * @return Order 排序方向; 枚举值: ASC | DESC；默认DESC
+                     * 获取<p>排序方向; 枚举值: ASC | DESC；默认DESC</p>
+                     * @return Order <p>排序方向; 枚举值: ASC | DESC；默认DESC</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序方向; 枚举值: ASC | DESC；默认DESC
-                     * @param _order 排序方向; 枚举值: ASC | DESC；默认DESC
+                     * 设置<p>排序方向; 枚举值: ASC | DESC；默认DESC</p>
+                     * @param _order <p>排序方向; 枚举值: ASC | DESC；默认DESC</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -202,15 +170,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取排序字段; 枚举值: CreateTime (创建时间) ｜ ExpireTime (到期时间)；默认CreateTime
-                     * @return OrderField 排序字段; 枚举值: CreateTime (创建时间) ｜ ExpireTime (到期时间)；默认CreateTime
+                     * 获取<p>排序字段; 枚举值: CreateTime (创建时间) ｜ ExpireTime (到期时间)；默认CreateTime</p>
+                     * @return OrderField <p>排序字段; 枚举值: CreateTime (创建时间) ｜ ExpireTime (到期时间)；默认CreateTime</p>
                      * 
                      */
                     std::string GetOrderField() const;
 
                     /**
-                     * 设置排序字段; 枚举值: CreateTime (创建时间) ｜ ExpireTime (到期时间)；默认CreateTime
-                     * @param _orderField 排序字段; 枚举值: CreateTime (创建时间) ｜ ExpireTime (到期时间)；默认CreateTime
+                     * 设置<p>排序字段; 枚举值: CreateTime (创建时间) ｜ ExpireTime (到期时间)；默认CreateTime</p>
+                     * @param _orderField <p>排序字段; 枚举值: CreateTime (创建时间) ｜ ExpireTime (到期时间)；默认CreateTime</p>
                      * 
                      */
                     void SetOrderField(const std::string& _orderField);
@@ -225,7 +193,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源组id, 取值为创建资源组接口(CreateBillingResourceGroup)响应中的ResourceGroupId
+                     * <p>资源组id, 取值为创建资源组接口(CreateBillingResourceGroup)响应中的ResourceGroupId</p>
                      */
                     std::string m_resourceGroupId;
                     bool m_resourceGroupIdHasBeenSet;
@@ -237,39 +205,31 @@ namespace TencentCloud
                     bool m_tiProjectIdHasBeenSet;
 
                     /**
-                     * 过滤条件
-注意: 
-1. Filter.Name 只支持以下枚举值:
-    InstanceId (资源组节点id)
-    InstanceStatus (资源组节点状态)
-2. Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询
-3. Filter.Negative: 是否取反，默认为false
-4. Filter.Fuzzy: 是否模糊查询，默认为false
-5. 每次请求的Filters的上限为10，Filter.Values的上限为100
+                     * <p>过滤条件<br>注意: </p><ol><li>Filter.Name 只支持以下枚举值:<br> InstanceId (资源组节点id)<br> InstanceStatus (资源组节点状态)</li><li>Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询</li><li>Filter.Negative: 是否取反，默认为false</li><li>Filter.Fuzzy: 是否模糊查询，默认为false</li><li>每次请求的Filters的上限为10，Filter.Values的上限为100</li></ol>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 分页查询起始位置，如：Limit为10，第一页Offset为0，第二页Offset为10...即每页左边为闭区间; 默认0
+                     * <p>分页查询起始位置，如：Limit为10，第一页Offset为0，第二页Offset为10...即每页左边为闭区间; 默认0</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页查询每页大小，默认20
+                     * <p>分页查询每页大小，默认20</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 排序方向; 枚举值: ASC | DESC；默认DESC
+                     * <p>排序方向; 枚举值: ASC | DESC；默认DESC</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 排序字段; 枚举值: CreateTime (创建时间) ｜ ExpireTime (到期时间)；默认CreateTime
+                     * <p>排序字段; 枚举值: CreateTime (创建时间) ｜ ExpireTime (到期时间)；默认CreateTime</p>
                      */
                     std::string m_orderField;
                     bool m_orderFieldHasBeenSet;

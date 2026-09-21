@@ -90,6 +90,56 @@ DatabuddyClient::AddConsoleUsersOutcomeCallable DatabuddyClient::AddConsoleUsers
     return prom->get_future();
 }
 
+DatabuddyClient::CreateConsoleGroupOutcome DatabuddyClient::CreateConsoleGroup(const CreateConsoleGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateConsoleGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateConsoleGroupResponse rsp = CreateConsoleGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateConsoleGroupOutcome(rsp);
+        else
+            return CreateConsoleGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateConsoleGroupOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::CreateConsoleGroupAsync(const CreateConsoleGroupRequest& request, const CreateConsoleGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateConsoleGroupRequest&;
+    using Resp = CreateConsoleGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateConsoleGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::CreateConsoleGroupOutcomeCallable DatabuddyClient::CreateConsoleGroupCallable(const CreateConsoleGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateConsoleGroupOutcome>>();
+    CreateConsoleGroupAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const CreateConsoleGroupRequest&,
+        CreateConsoleGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DatabuddyClient::CreateFileOutcome DatabuddyClient::CreateFile(const CreateFileRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFile");
@@ -182,6 +232,56 @@ DatabuddyClient::CreateWorkflowOutcomeCallable DatabuddyClient::CreateWorkflowCa
         const DatabuddyClient*,
         const CreateWorkflowRequest&,
         CreateWorkflowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DatabuddyClient::DeleteConsoleGroupsOutcome DatabuddyClient::DeleteConsoleGroups(const DeleteConsoleGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteConsoleGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteConsoleGroupsResponse rsp = DeleteConsoleGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteConsoleGroupsOutcome(rsp);
+        else
+            return DeleteConsoleGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteConsoleGroupsOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::DeleteConsoleGroupsAsync(const DeleteConsoleGroupsRequest& request, const DeleteConsoleGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteConsoleGroupsRequest&;
+    using Resp = DeleteConsoleGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteConsoleGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::DeleteConsoleGroupsOutcomeCallable DatabuddyClient::DeleteConsoleGroupsCallable(const DeleteConsoleGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteConsoleGroupsOutcome>>();
+    DeleteConsoleGroupsAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const DeleteConsoleGroupsRequest&,
+        DeleteConsoleGroupsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -532,6 +632,156 @@ DatabuddyClient::KillWorkflowRunOutcomeCallable DatabuddyClient::KillWorkflowRun
         const DatabuddyClient*,
         const KillWorkflowRunRequest&,
         KillWorkflowRunOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DatabuddyClient::ListConsoleGroupUsersOutcome DatabuddyClient::ListConsoleGroupUsers(const ListConsoleGroupUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListConsoleGroupUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListConsoleGroupUsersResponse rsp = ListConsoleGroupUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListConsoleGroupUsersOutcome(rsp);
+        else
+            return ListConsoleGroupUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return ListConsoleGroupUsersOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::ListConsoleGroupUsersAsync(const ListConsoleGroupUsersRequest& request, const ListConsoleGroupUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListConsoleGroupUsersRequest&;
+    using Resp = ListConsoleGroupUsersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListConsoleGroupUsers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::ListConsoleGroupUsersOutcomeCallable DatabuddyClient::ListConsoleGroupUsersCallable(const ListConsoleGroupUsersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListConsoleGroupUsersOutcome>>();
+    ListConsoleGroupUsersAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const ListConsoleGroupUsersRequest&,
+        ListConsoleGroupUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DatabuddyClient::ListConsoleGroupsOutcome DatabuddyClient::ListConsoleGroups(const ListConsoleGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListConsoleGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListConsoleGroupsResponse rsp = ListConsoleGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListConsoleGroupsOutcome(rsp);
+        else
+            return ListConsoleGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListConsoleGroupsOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::ListConsoleGroupsAsync(const ListConsoleGroupsRequest& request, const ListConsoleGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListConsoleGroupsRequest&;
+    using Resp = ListConsoleGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListConsoleGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::ListConsoleGroupsOutcomeCallable DatabuddyClient::ListConsoleGroupsCallable(const ListConsoleGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListConsoleGroupsOutcome>>();
+    ListConsoleGroupsAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const ListConsoleGroupsRequest&,
+        ListConsoleGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DatabuddyClient::ListConsoleRolesOutcome DatabuddyClient::ListConsoleRoles(const ListConsoleRolesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListConsoleRoles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListConsoleRolesResponse rsp = ListConsoleRolesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListConsoleRolesOutcome(rsp);
+        else
+            return ListConsoleRolesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListConsoleRolesOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::ListConsoleRolesAsync(const ListConsoleRolesRequest& request, const ListConsoleRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListConsoleRolesRequest&;
+    using Resp = ListConsoleRolesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListConsoleRoles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::ListConsoleRolesOutcomeCallable DatabuddyClient::ListConsoleRolesCallable(const ListConsoleRolesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListConsoleRolesOutcome>>();
+    ListConsoleRolesAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const ListConsoleRolesRequest&,
+        ListConsoleRolesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -932,6 +1182,56 @@ DatabuddyClient::UnbindWorkflowBundleOutcomeCallable DatabuddyClient::UnbindWork
         const DatabuddyClient*,
         const UnbindWorkflowBundleRequest&,
         UnbindWorkflowBundleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DatabuddyClient::UpdateConsoleGroupOutcome DatabuddyClient::UpdateConsoleGroup(const UpdateConsoleGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateConsoleGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateConsoleGroupResponse rsp = UpdateConsoleGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateConsoleGroupOutcome(rsp);
+        else
+            return UpdateConsoleGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateConsoleGroupOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::UpdateConsoleGroupAsync(const UpdateConsoleGroupRequest& request, const UpdateConsoleGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateConsoleGroupRequest&;
+    using Resp = UpdateConsoleGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateConsoleGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::UpdateConsoleGroupOutcomeCallable DatabuddyClient::UpdateConsoleGroupCallable(const UpdateConsoleGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateConsoleGroupOutcome>>();
+    UpdateConsoleGroupAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const UpdateConsoleGroupRequest&,
+        UpdateConsoleGroupOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

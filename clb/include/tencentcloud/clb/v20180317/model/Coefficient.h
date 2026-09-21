@@ -130,6 +130,69 @@ namespace TencentCloud
                      */
                     bool OutputCoefficientHasBeenSet() const;
 
+                    /**
+                     * 获取<p>输入图片系数</p>
+                     * @return InputImageCoefficient <p>输入图片系数</p>
+                     * 
+                     */
+                    double GetInputImageCoefficient() const;
+
+                    /**
+                     * 设置<p>输入图片系数</p>
+                     * @param _inputImageCoefficient <p>输入图片系数</p>
+                     * 
+                     */
+                    void SetInputImageCoefficient(const double& _inputImageCoefficient);
+
+                    /**
+                     * 判断参数 InputImageCoefficient 是否已赋值
+                     * @return InputImageCoefficient 是否已赋值
+                     * 
+                     */
+                    bool InputImageCoefficientHasBeenSet() const;
+
+                    /**
+                     * 获取<p>输入视频每秒系数</p>
+                     * @return InputVideoSecondCoefficient <p>输入视频每秒系数</p>
+                     * 
+                     */
+                    double GetInputVideoSecondCoefficient() const;
+
+                    /**
+                     * 设置<p>输入视频每秒系数</p>
+                     * @param _inputVideoSecondCoefficient <p>输入视频每秒系数</p>
+                     * 
+                     */
+                    void SetInputVideoSecondCoefficient(const double& _inputVideoSecondCoefficient);
+
+                    /**
+                     * 判断参数 InputVideoSecondCoefficient 是否已赋值
+                     * @return InputVideoSecondCoefficient 是否已赋值
+                     * 
+                     */
+                    bool InputVideoSecondCoefficientHasBeenSet() const;
+
+                    /**
+                     * 获取<p>输出视频每秒系数</p>
+                     * @return OutputVideoSecondCoefficient <p>输出视频每秒系数</p>
+                     * 
+                     */
+                    double GetOutputVideoSecondCoefficient() const;
+
+                    /**
+                     * 设置<p>输出视频每秒系数</p>
+                     * @param _outputVideoSecondCoefficient <p>输出视频每秒系数</p>
+                     * 
+                     */
+                    void SetOutputVideoSecondCoefficient(const double& _outputVideoSecondCoefficient);
+
+                    /**
+                     * 判断参数 OutputVideoSecondCoefficient 是否已赋值
+                     * @return OutputVideoSecondCoefficient 是否已赋值
+                     * 
+                     */
+                    bool OutputVideoSecondCoefficientHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +218,24 @@ namespace TencentCloud
                      */
                     double m_outputCoefficient;
                     bool m_outputCoefficientHasBeenSet;
+
+                    /**
+                     * <p>输入图片系数</p>
+                     */
+                    double m_inputImageCoefficient;
+                    bool m_inputImageCoefficientHasBeenSet;
+
+                    /**
+                     * <p>输入视频每秒系数</p>
+                     */
+                    double m_inputVideoSecondCoefficient;
+                    bool m_inputVideoSecondCoefficientHasBeenSet;
+
+                    /**
+                     * <p>输出视频每秒系数</p>
+                     */
+                    double m_outputVideoSecondCoefficient;
+                    bool m_outputVideoSecondCoefficientHasBeenSet;
 
                 };
             }

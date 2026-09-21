@@ -25,9 +25,7 @@ PassInvoiceInfo::PassInvoiceInfo() :
     m_typeHasBeenSet(false),
     m_passDateBeginHasBeenSet(false),
     m_passDateEndHasBeenSet(false),
-    m_taxClassifyCodeHasBeenSet(false),
-    m_carTypeHasBeenSet(false),
-    m_plateNumberHasBeenSet(false)
+    m_taxClassifyCodeHasBeenSet(false)
 {
 }
 
@@ -86,26 +84,6 @@ CoreInternalOutcome PassInvoiceInfo::Deserialize(const rapidjson::Value &value)
         m_taxClassifyCodeHasBeenSet = true;
     }
 
-    if (value.HasMember("CarType") && !value["CarType"].IsNull())
-    {
-        if (!value["CarType"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `PassInvoiceInfo.CarType` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_carType = string(value["CarType"].GetString());
-        m_carTypeHasBeenSet = true;
-    }
-
-    if (value.HasMember("PlateNumber") && !value["PlateNumber"].IsNull())
-    {
-        if (!value["PlateNumber"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `PassInvoiceInfo.PlateNumber` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_plateNumber = string(value["PlateNumber"].GetString());
-        m_plateNumberHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -151,22 +129,6 @@ void PassInvoiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "TaxClassifyCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taxClassifyCode.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_carTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CarType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_carType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_plateNumberHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PlateNumber";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_plateNumber.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -250,37 +212,5 @@ void PassInvoiceInfo::SetTaxClassifyCode(const string& _taxClassifyCode)
 bool PassInvoiceInfo::TaxClassifyCodeHasBeenSet() const
 {
     return m_taxClassifyCodeHasBeenSet;
-}
-
-string PassInvoiceInfo::GetCarType() const
-{
-    return m_carType;
-}
-
-void PassInvoiceInfo::SetCarType(const string& _carType)
-{
-    m_carType = _carType;
-    m_carTypeHasBeenSet = true;
-}
-
-bool PassInvoiceInfo::CarTypeHasBeenSet() const
-{
-    return m_carTypeHasBeenSet;
-}
-
-string PassInvoiceInfo::GetPlateNumber() const
-{
-    return m_plateNumber;
-}
-
-void PassInvoiceInfo::SetPlateNumber(const string& _plateNumber)
-{
-    m_plateNumber = _plateNumber;
-    m_plateNumberHasBeenSet = true;
-}
-
-bool PassInvoiceInfo::PlateNumberHasBeenSet() const
-{
-    return m_plateNumberHasBeenSet;
 }
 

@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>过滤条件</p><p>支持的过滤键：</p><ul><li>ModelAliasName：按模型别名过滤。</li></ul>
-                     * @return Filters <p>过滤条件</p><p>支持的过滤键：</p><ul><li>ModelAliasName：按模型别名过滤。</li></ul>
+                     * 获取<p>过滤条件</p><p></p>- ModelAliasName：模型别名<p></p><p></p>- Capability：输出模态<p></p>
+                     * @return Filters <p>过滤条件</p><p></p>- ModelAliasName：模型别名<p></p><p></p>- Capability：输出模态<p></p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置<p>过滤条件</p><p>支持的过滤键：</p><ul><li>ModelAliasName：按模型别名过滤。</li></ul>
-                     * @param _filters <p>过滤条件</p><p>支持的过滤键：</p><ul><li>ModelAliasName：按模型别名过滤。</li></ul>
+                     * 设置<p>过滤条件</p><p></p>- ModelAliasName：模型别名<p></p><p></p>- Capability：输出模态<p></p>
+                     * @param _filters <p>过滤条件</p><p></p>- ModelAliasName：模型别名<p></p><p></p>- Capability：输出模态<p></p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取<p>排序条件。支持按 InputCoefficient、InputCachedCoefficient 或 OutputCoefficient 排序，Order 支持 ASC、DESC。不传或传空数组时，默认按 OutputCoefficient 降序排列。最多支持 3 个排序条件，排序字段不可重复。</p>
-                     * @return Sort <p>排序条件。支持按 InputCoefficient、InputCachedCoefficient 或 OutputCoefficient 排序，Order 支持 ASC、DESC。不传或传空数组时，默认按 OutputCoefficient 降序排列。最多支持 3 个排序条件，排序字段不可重复。</p>
+                     * 获取<p>排序条件。支持按 InputCoefficient 或 OutputCoefficient 排序，Order 支持 ASC、DESC。不传或传空数组时，默认按 OutputCoefficient 降序排列。最多支持 2 个排序条件，排序字段不可重复。</p>
+                     * @return Sort <p>排序条件。支持按 InputCoefficient 或 OutputCoefficient 排序，Order 支持 ASC、DESC。不传或传空数组时，默认按 OutputCoefficient 降序排列。最多支持 2 个排序条件，排序字段不可重复。</p>
                      * 
                      */
                     std::vector<Sort> GetSort() const;
 
                     /**
-                     * 设置<p>排序条件。支持按 InputCoefficient、InputCachedCoefficient 或 OutputCoefficient 排序，Order 支持 ASC、DESC。不传或传空数组时，默认按 OutputCoefficient 降序排列。最多支持 3 个排序条件，排序字段不可重复。</p>
-                     * @param _sort <p>排序条件。支持按 InputCoefficient、InputCachedCoefficient 或 OutputCoefficient 排序，Order 支持 ASC、DESC。不传或传空数组时，默认按 OutputCoefficient 降序排列。最多支持 3 个排序条件，排序字段不可重复。</p>
+                     * 设置<p>排序条件。支持按 InputCoefficient 或 OutputCoefficient 排序，Order 支持 ASC、DESC。不传或传空数组时，默认按 OutputCoefficient 降序排列。最多支持 2 个排序条件，排序字段不可重复。</p>
+                     * @param _sort <p>排序条件。支持按 InputCoefficient 或 OutputCoefficient 排序，Order 支持 ASC、DESC。不传或传空数组时，默认按 OutputCoefficient 降序排列。最多支持 2 个排序条件，排序字段不可重复。</p>
                      * 
                      */
                     void SetSort(const std::vector<Sort>& _sort);
@@ -131,7 +131,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>过滤条件</p><p>支持的过滤键：</p><ul><li>ModelAliasName：按模型别名过滤。</li></ul>
+                     * <p>过滤条件</p><p></p>- ModelAliasName：模型别名<p></p><p></p>- Capability：输出模态<p></p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
@@ -149,7 +149,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * <p>排序条件。支持按 InputCoefficient、InputCachedCoefficient 或 OutputCoefficient 排序，Order 支持 ASC、DESC。不传或传空数组时，默认按 OutputCoefficient 降序排列。最多支持 3 个排序条件，排序字段不可重复。</p>
+                     * <p>排序条件。支持按 InputCoefficient 或 OutputCoefficient 排序，Order 支持 ASC、DESC。不传或传空数组时，默认按 OutputCoefficient 降序排列。最多支持 2 个排序条件，排序字段不可重复。</p>
                      */
                     std::vector<Sort> m_sort;
                     bool m_sortHasBeenSet;

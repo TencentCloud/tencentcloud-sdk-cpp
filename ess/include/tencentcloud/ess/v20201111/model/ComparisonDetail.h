@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同对比差异点唯一ID。
-                     * @return ComparisonPointId 合同对比差异点唯一ID。
+                     * 获取<p>合同对比差异点唯一ID。</p>
+                     * @return ComparisonPointId <p>合同对比差异点唯一ID。</p>
                      * 
                      */
                     std::string GetComparisonPointId() const;
 
                     /**
-                     * 设置合同对比差异点唯一ID。
-                     * @param _comparisonPointId 合同对比差异点唯一ID。
+                     * 设置<p>合同对比差异点唯一ID。</p>
+                     * @param _comparisonPointId <p>合同对比差异点唯一ID。</p>
                      * 
                      */
                     void SetComparisonPointId(const std::string& _comparisonPointId);
@@ -68,31 +68,15 @@ namespace TencentCloud
                     bool ComparisonPointIdHasBeenSet() const;
 
                     /**
-                     * 获取对比前后差异类型，具体如下：
-<ul><li> **add**：新增</li>
-<li> **change**：变更</li>
-<li> **delete**：删除</li>
-</ul>
-                     * @return ComparisonType 对比前后差异类型，具体如下：
-<ul><li> **add**：新增</li>
-<li> **change**：变更</li>
-<li> **delete**：删除</li>
-</ul>
+                     * 获取<p>对比前后差异类型，具体如下：</p><ul><li> **add**：新增</li><li> **change**：变更</li><li> **delete**：删除</li></ul>
+                     * @return ComparisonType <p>对比前后差异类型，具体如下：</p><ul><li> **add**：新增</li><li> **change**：变更</li><li> **delete**：删除</li></ul>
                      * 
                      */
                     std::string GetComparisonType() const;
 
                     /**
-                     * 设置对比前后差异类型，具体如下：
-<ul><li> **add**：新增</li>
-<li> **change**：变更</li>
-<li> **delete**：删除</li>
-</ul>
-                     * @param _comparisonType 对比前后差异类型，具体如下：
-<ul><li> **add**：新增</li>
-<li> **change**：变更</li>
-<li> **delete**：删除</li>
-</ul>
+                     * 设置<p>对比前后差异类型，具体如下：</p><ul><li> **add**：新增</li><li> **change**：变更</li><li> **delete**：删除</li></ul>
+                     * @param _comparisonType <p>对比前后差异类型，具体如下：</p><ul><li> **add**：新增</li><li> **change**：变更</li><li> **delete**：删除</li></ul>
                      * 
                      */
                     void SetComparisonType(const std::string& _comparisonType);
@@ -105,31 +89,15 @@ namespace TencentCloud
                     bool ComparisonTypeHasBeenSet() const;
 
                     /**
-                     * 获取对比内容类型，具体如下：
-<ul><li> **text**：文本</li>
-<li> **table**：表格</li>
-<li> **picture**：图片</li>
-</ul>
-                     * @return ContentType 对比内容类型，具体如下：
-<ul><li> **text**：文本</li>
-<li> **table**：表格</li>
-<li> **picture**：图片</li>
-</ul>
+                     * 获取<p>对比内容类型，具体如下：</p><ul><li> **text**：文本</li><li> **table**：表格</li><li> **picture**：图片</li></ul>
+                     * @return ContentType <p>对比内容类型，具体如下：</p><ul><li> **text**：文本</li><li> **table**：表格</li><li> **picture**：图片</li></ul>
                      * 
                      */
                     std::string GetContentType() const;
 
                     /**
-                     * 设置对比内容类型，具体如下：
-<ul><li> **text**：文本</li>
-<li> **table**：表格</li>
-<li> **picture**：图片</li>
-</ul>
-                     * @param _contentType 对比内容类型，具体如下：
-<ul><li> **text**：文本</li>
-<li> **table**：表格</li>
-<li> **picture**：图片</li>
-</ul>
+                     * 设置<p>对比内容类型，具体如下：</p><ul><li> **text**：文本</li><li> **table**：表格</li><li> **picture**：图片</li></ul>
+                     * @param _contentType <p>对比内容类型，具体如下：</p><ul><li> **text**：文本</li><li> **table**：表格</li><li> **picture**：图片</li></ul>
                      * 
                      */
                     void SetContentType(const std::string& _contentType);
@@ -142,15 +110,15 @@ namespace TencentCloud
                     bool ContentTypeHasBeenSet() const;
 
                     /**
-                     * 获取原文文本。
-                     * @return OriginText 原文文本。
+                     * 获取<p>原文文本。</p>
+                     * @return OriginText <p>原文文本。</p>
                      * 
                      */
                     std::string GetOriginText() const;
 
                     /**
-                     * 设置原文文本。
-                     * @param _originText 原文文本。
+                     * 设置<p>原文文本。</p>
+                     * @param _originText <p>原文文本。</p>
                      * 
                      */
                     void SetOriginText(const std::string& _originText);
@@ -163,15 +131,15 @@ namespace TencentCloud
                     bool OriginTextHasBeenSet() const;
 
                     /**
-                     * 获取对比文本。
-                     * @return DiffText 对比文本。
+                     * 获取<p>对比文本。</p>
+                     * @return DiffText <p>对比文本。</p>
                      * 
                      */
                     std::string GetDiffText() const;
 
                     /**
-                     * 设置对比文本。
-                     * @param _diffText 对比文本。
+                     * 设置<p>对比文本。</p>
+                     * @param _diffText <p>对比文本。</p>
                      * 
                      */
                     void SetDiffText(const std::string& _diffText);
@@ -184,55 +152,15 @@ namespace TencentCloud
                     bool DiffTextHasBeenSet() const;
 
                     /**
-                     * 获取合同文本的格式类型。
-类型如下：
-<ul><li> **0**：段落（正文）</li>
-<li> **1**：标点符号</li>
-<li> **2**：页眉页脚</li>
-<li> **3**：目录</li>
-<li> **4**：印章</li>
-<li> **5**：序号</li>
-<li> **6**：水印</li>
-<li> **7**：下划线内容（填写区）</li>
-</ul>
-                     * @return FormatType 合同文本的格式类型。
-类型如下：
-<ul><li> **0**：段落（正文）</li>
-<li> **1**：标点符号</li>
-<li> **2**：页眉页脚</li>
-<li> **3**：目录</li>
-<li> **4**：印章</li>
-<li> **5**：序号</li>
-<li> **6**：水印</li>
-<li> **7**：下划线内容（填写区）</li>
-</ul>
+                     * 获取<p>合同文本的格式类型。<br>类型如下：</p><ul><li> **0**：段落（正文）</li><li> **1**：标点符号</li><li> **2**：页眉页脚</li><li> **3**：目录</li><li> **4**：印章</li><li> **5**：序号</li><li> **6**：水印</li><li> **7**：下划线内容（填写区）</li></ul>
+                     * @return FormatType <p>合同文本的格式类型。<br>类型如下：</p><ul><li> **0**：段落（正文）</li><li> **1**：标点符号</li><li> **2**：页眉页脚</li><li> **3**：目录</li><li> **4**：印章</li><li> **5**：序号</li><li> **6**：水印</li><li> **7**：下划线内容（填写区）</li></ul>
                      * 
                      */
                     int64_t GetFormatType() const;
 
                     /**
-                     * 设置合同文本的格式类型。
-类型如下：
-<ul><li> **0**：段落（正文）</li>
-<li> **1**：标点符号</li>
-<li> **2**：页眉页脚</li>
-<li> **3**：目录</li>
-<li> **4**：印章</li>
-<li> **5**：序号</li>
-<li> **6**：水印</li>
-<li> **7**：下划线内容（填写区）</li>
-</ul>
-                     * @param _formatType 合同文本的格式类型。
-类型如下：
-<ul><li> **0**：段落（正文）</li>
-<li> **1**：标点符号</li>
-<li> **2**：页眉页脚</li>
-<li> **3**：目录</li>
-<li> **4**：印章</li>
-<li> **5**：序号</li>
-<li> **6**：水印</li>
-<li> **7**：下划线内容（填写区）</li>
-</ul>
+                     * 设置<p>合同文本的格式类型。<br>类型如下：</p><ul><li> **0**：段落（正文）</li><li> **1**：标点符号</li><li> **2**：页眉页脚</li><li> **3**：目录</li><li> **4**：印章</li><li> **5**：序号</li><li> **6**：水印</li><li> **7**：下划线内容（填写区）</li></ul>
+                     * @param _formatType <p>合同文本的格式类型。<br>类型如下：</p><ul><li> **0**：段落（正文）</li><li> **1**：标点符号</li><li> **2**：页眉页脚</li><li> **3**：目录</li><li> **4**：印章</li><li> **5**：序号</li><li> **6**：水印</li><li> **7**：下划线内容（填写区）</li></ul>
                      * 
                      */
                     void SetFormatType(const int64_t& _formatType);
@@ -244,61 +172,70 @@ namespace TencentCloud
                      */
                     bool FormatTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>页码：对比点所在页码。</p>
+                     * @return PageNumber <p>页码：对比点所在页码。</p>
+                     * 
+                     */
+                    int64_t GetPageNumber() const;
+
+                    /**
+                     * 设置<p>页码：对比点所在页码。</p>
+                     * @param _pageNumber <p>页码：对比点所在页码。</p>
+                     * 
+                     */
+                    void SetPageNumber(const int64_t& _pageNumber);
+
+                    /**
+                     * 判断参数 PageNumber 是否已赋值
+                     * @return PageNumber 是否已赋值
+                     * 
+                     */
+                    bool PageNumberHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 合同对比差异点唯一ID。
+                     * <p>合同对比差异点唯一ID。</p>
                      */
                     std::string m_comparisonPointId;
                     bool m_comparisonPointIdHasBeenSet;
 
                     /**
-                     * 对比前后差异类型，具体如下：
-<ul><li> **add**：新增</li>
-<li> **change**：变更</li>
-<li> **delete**：删除</li>
-</ul>
+                     * <p>对比前后差异类型，具体如下：</p><ul><li> **add**：新增</li><li> **change**：变更</li><li> **delete**：删除</li></ul>
                      */
                     std::string m_comparisonType;
                     bool m_comparisonTypeHasBeenSet;
 
                     /**
-                     * 对比内容类型，具体如下：
-<ul><li> **text**：文本</li>
-<li> **table**：表格</li>
-<li> **picture**：图片</li>
-</ul>
+                     * <p>对比内容类型，具体如下：</p><ul><li> **text**：文本</li><li> **table**：表格</li><li> **picture**：图片</li></ul>
                      */
                     std::string m_contentType;
                     bool m_contentTypeHasBeenSet;
 
                     /**
-                     * 原文文本。
+                     * <p>原文文本。</p>
                      */
                     std::string m_originText;
                     bool m_originTextHasBeenSet;
 
                     /**
-                     * 对比文本。
+                     * <p>对比文本。</p>
                      */
                     std::string m_diffText;
                     bool m_diffTextHasBeenSet;
 
                     /**
-                     * 合同文本的格式类型。
-类型如下：
-<ul><li> **0**：段落（正文）</li>
-<li> **1**：标点符号</li>
-<li> **2**：页眉页脚</li>
-<li> **3**：目录</li>
-<li> **4**：印章</li>
-<li> **5**：序号</li>
-<li> **6**：水印</li>
-<li> **7**：下划线内容（填写区）</li>
-</ul>
+                     * <p>合同文本的格式类型。<br>类型如下：</p><ul><li> **0**：段落（正文）</li><li> **1**：标点符号</li><li> **2**：页眉页脚</li><li> **3**：目录</li><li> **4**：印章</li><li> **5**：序号</li><li> **6**：水印</li><li> **7**：下划线内容（填写区）</li></ul>
                      */
                     int64_t m_formatType;
                     bool m_formatTypeHasBeenSet;
+
+                    /**
+                     * <p>页码：对比点所在页码。</p>
+                     */
+                    int64_t m_pageNumber;
+                    bool m_pageNumberHasBeenSet;
 
                 };
             }

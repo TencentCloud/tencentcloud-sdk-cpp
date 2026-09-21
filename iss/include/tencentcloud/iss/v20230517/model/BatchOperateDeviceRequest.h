@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备 ID 数组（从获取设备列表接口ListDevices中获取）
-                     * @return DeviceIds 设备 ID 数组（从获取设备列表接口ListDevices中获取）
+                     * 获取<p>设备 ID 数组（从获取设备列表接口ListDevices中获取）</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1344/95871">ListDevices</a></p>
+                     * @return DeviceIds <p>设备 ID 数组（从获取设备列表接口ListDevices中获取）</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1344/95871">ListDevices</a></p>
                      * 
                      */
                     std::vector<std::string> GetDeviceIds() const;
 
                     /**
-                     * 设置设备 ID 数组（从获取设备列表接口ListDevices中获取）
-                     * @param _deviceIds 设备 ID 数组（从获取设备列表接口ListDevices中获取）
+                     * 设置<p>设备 ID 数组（从获取设备列表接口ListDevices中获取）</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1344/95871">ListDevices</a></p>
+                     * @param _deviceIds <p>设备 ID 数组（从获取设备列表接口ListDevices中获取）</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1344/95871">ListDevices</a></p>
                      * 
                      */
                     void SetDeviceIds(const std::vector<std::string>& _deviceIds);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DeviceIdsHasBeenSet() const;
 
                     /**
-                     * 获取操作命令（enable：启用；disable：禁用；delete：删除；sync：同步设备通道；upgrade：固件升级；reset：恢复出厂设置；reboot：重启）
-                     * @return Cmd 操作命令（enable：启用；disable：禁用；delete：删除；sync：同步设备通道；upgrade：固件升级；reset：恢复出厂设置；reboot：重启）
+                     * 获取<p>操作命令</p><p>枚举值：</p><ul><li>enable： 启用</li><li>disable： 禁用</li><li>delete： 删除</li><li>sync： 同步设备通道</li></ul>
+                     * @return Cmd <p>操作命令</p><p>枚举值：</p><ul><li>enable： 启用</li><li>disable： 禁用</li><li>delete： 删除</li><li>sync： 同步设备通道</li></ul>
                      * 
                      */
                     std::string GetCmd() const;
 
                     /**
-                     * 设置操作命令（enable：启用；disable：禁用；delete：删除；sync：同步设备通道；upgrade：固件升级；reset：恢复出厂设置；reboot：重启）
-                     * @param _cmd 操作命令（enable：启用；disable：禁用；delete：删除；sync：同步设备通道；upgrade：固件升级；reset：恢复出厂设置；reboot：重启）
+                     * 设置<p>操作命令</p><p>枚举值：</p><ul><li>enable： 启用</li><li>disable： 禁用</li><li>delete： 删除</li><li>sync： 同步设备通道</li></ul>
+                     * @param _cmd <p>操作命令</p><p>枚举值：</p><ul><li>enable： 启用</li><li>disable： 禁用</li><li>delete： 删除</li><li>sync： 同步设备通道</li></ul>
                      * 
                      */
                     void SetCmd(const std::string& _cmd);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 设备 ID 数组（从获取设备列表接口ListDevices中获取）
+                     * <p>设备 ID 数组（从获取设备列表接口ListDevices中获取）</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1344/95871">ListDevices</a></p>
                      */
                     std::vector<std::string> m_deviceIds;
                     bool m_deviceIdsHasBeenSet;
 
                     /**
-                     * 操作命令（enable：启用；disable：禁用；delete：删除；sync：同步设备通道；upgrade：固件升级；reset：恢复出厂设置；reboot：重启）
+                     * <p>操作命令</p><p>枚举值：</p><ul><li>enable： 启用</li><li>disable： 禁用</li><li>delete： 删除</li><li>sync： 同步设备通道</li></ul>
                      */
                     std::string m_cmd;
                     bool m_cmdHasBeenSet;

@@ -33,7 +33,10 @@ BackupLog::BackupLog() :
     m_appIdHasBeenSet(false),
     m_assetIdHasBeenSet(false),
     m_nickNameHasBeenSet(false),
-    m_uinHasBeenSet(false)
+    m_uinHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
+    m_assetTypeHasBeenSet(false)
 {
 }
 
@@ -172,6 +175,36 @@ CoreInternalOutcome BackupLog::Deserialize(const rapidjson::Value &value)
         m_uinHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupLog.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceName") && !value["InstanceName"].IsNull())
+    {
+        if (!value["InstanceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupLog.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceName = string(value["InstanceName"].GetString());
+        m_instanceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssetType") && !value["AssetType"].IsNull())
+    {
+        if (!value["AssetType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupLog.AssetType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_assetType = string(value["AssetType"].GetString());
+        m_assetTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +314,30 @@ void BackupLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Uin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assetTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_assetType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +549,53 @@ void BackupLog::SetUin(const string& _uin)
 bool BackupLog::UinHasBeenSet() const
 {
     return m_uinHasBeenSet;
+}
+
+string BackupLog::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void BackupLog::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool BackupLog::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string BackupLog::GetInstanceName() const
+{
+    return m_instanceName;
+}
+
+void BackupLog::SetInstanceName(const string& _instanceName)
+{
+    m_instanceName = _instanceName;
+    m_instanceNameHasBeenSet = true;
+}
+
+bool BackupLog::InstanceNameHasBeenSet() const
+{
+    return m_instanceNameHasBeenSet;
+}
+
+string BackupLog::GetAssetType() const
+{
+    return m_assetType;
+}
+
+void BackupLog::SetAssetType(const string& _assetType)
+{
+    m_assetType = _assetType;
+    m_assetTypeHasBeenSet = true;
+}
+
+bool BackupLog::AssetTypeHasBeenSet() const
+{
+    return m_assetTypeHasBeenSet;
 }
 

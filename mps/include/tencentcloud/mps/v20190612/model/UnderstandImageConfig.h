@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>图片理解模型</p><p>枚举值：</p><ul><li>WAND-understand-1.0-lite： 轻量理解模型</li><li>WAND-understand-1.0-flash： 质量-速度平衡理解模型</li><li>WAND-understand-1.0-pro： 高质量理解模型</li></ul>
-                     * @return Model <p>图片理解模型</p><p>枚举值：</p><ul><li>WAND-understand-1.0-lite： 轻量理解模型</li><li>WAND-understand-1.0-flash： 质量-速度平衡理解模型</li><li>WAND-understand-1.0-pro： 高质量理解模型</li></ul>
+                     * 获取<p>图片理解模型</p><p>枚举值：</p><ul><li>understand-1.0-lite： 轻量理解模型</li><li>understand-1.0-flash： 质量-速度平衡理解模型</li><li>understand-1.0-pro： 高质量理解模型</li></ul>
+                     * @return Model <p>图片理解模型</p><p>枚举值：</p><ul><li>understand-1.0-lite： 轻量理解模型</li><li>understand-1.0-flash： 质量-速度平衡理解模型</li><li>understand-1.0-pro： 高质量理解模型</li></ul>
                      * 
                      */
                     std::string GetModel() const;
 
                     /**
-                     * 设置<p>图片理解模型</p><p>枚举值：</p><ul><li>WAND-understand-1.0-lite： 轻量理解模型</li><li>WAND-understand-1.0-flash： 质量-速度平衡理解模型</li><li>WAND-understand-1.0-pro： 高质量理解模型</li></ul>
-                     * @param _model <p>图片理解模型</p><p>枚举值：</p><ul><li>WAND-understand-1.0-lite： 轻量理解模型</li><li>WAND-understand-1.0-flash： 质量-速度平衡理解模型</li><li>WAND-understand-1.0-pro： 高质量理解模型</li></ul>
+                     * 设置<p>图片理解模型</p><p>枚举值：</p><ul><li>understand-1.0-lite： 轻量理解模型</li><li>understand-1.0-flash： 质量-速度平衡理解模型</li><li>understand-1.0-pro： 高质量理解模型</li></ul>
+                     * @param _model <p>图片理解模型</p><p>枚举值：</p><ul><li>understand-1.0-lite： 轻量理解模型</li><li>understand-1.0-flash： 质量-速度平衡理解模型</li><li>understand-1.0-pro： 高质量理解模型</li></ul>
                      * 
                      */
                     void SetModel(const std::string& _model);
@@ -112,7 +112,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>图片理解模型</p><p>枚举值：</p><ul><li>WAND-understand-1.0-lite： 轻量理解模型</li><li>WAND-understand-1.0-flash： 质量-速度平衡理解模型</li><li>WAND-understand-1.0-pro： 高质量理解模型</li></ul>
+                     * <p>图片理解模型</p><p>枚举值：</p><ul><li>understand-1.0-lite： 轻量理解模型</li><li>understand-1.0-flash： 质量-速度平衡理解模型</li><li>understand-1.0-pro： 高质量理解模型</li></ul>
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;

@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/clb/v20180317/model/Coefficient.h>
+#include <tencentcloud/clb/v20180317/model/CoefficientTier.h>
+#include <tencentcloud/clb/v20180317/model/CoefficientScheduleRule.h>
 
 
 namespace TencentCloud
@@ -114,6 +116,48 @@ namespace TencentCloud
                      */
                     bool ServiceProviderNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>分级积分系数设置</p>
+                     * @return CoefficientTiers <p>分级积分系数设置</p>
+                     * 
+                     */
+                    std::vector<CoefficientTier> GetCoefficientTiers() const;
+
+                    /**
+                     * 设置<p>分级积分系数设置</p>
+                     * @param _coefficientTiers <p>分级积分系数设置</p>
+                     * 
+                     */
+                    void SetCoefficientTiers(const std::vector<CoefficientTier>& _coefficientTiers);
+
+                    /**
+                     * 判断参数 CoefficientTiers 是否已赋值
+                     * @return CoefficientTiers 是否已赋值
+                     * 
+                     */
+                    bool CoefficientTiersHasBeenSet() const;
+
+                    /**
+                     * 获取<p>峰谷积分系数设置</p>
+                     * @return CoefficientSchedule <p>峰谷积分系数设置</p>
+                     * 
+                     */
+                    std::vector<CoefficientScheduleRule> GetCoefficientSchedule() const;
+
+                    /**
+                     * 设置<p>峰谷积分系数设置</p>
+                     * @param _coefficientSchedule <p>峰谷积分系数设置</p>
+                     * 
+                     */
+                    void SetCoefficientSchedule(const std::vector<CoefficientScheduleRule>& _coefficientSchedule);
+
+                    /**
+                     * 判断参数 CoefficientSchedule 是否已赋值
+                     * @return CoefficientSchedule 是否已赋值
+                     * 
+                     */
+                    bool CoefficientScheduleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +178,18 @@ namespace TencentCloud
                      */
                     std::string m_serviceProviderName;
                     bool m_serviceProviderNameHasBeenSet;
+
+                    /**
+                     * <p>分级积分系数设置</p>
+                     */
+                    std::vector<CoefficientTier> m_coefficientTiers;
+                    bool m_coefficientTiersHasBeenSet;
+
+                    /**
+                     * <p>峰谷积分系数设置</p>
+                     */
+                    std::vector<CoefficientScheduleRule> m_coefficientSchedule;
+                    bool m_coefficientScheduleHasBeenSet;
 
                 };
             }

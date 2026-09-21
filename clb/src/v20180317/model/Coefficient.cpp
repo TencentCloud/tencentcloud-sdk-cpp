@@ -24,7 +24,10 @@ Coefficient::Coefficient() :
     m_inputCachedCoefficientHasBeenSet(false),
     m_inputCacheCreationCoefficientHasBeenSet(false),
     m_inputCoefficientHasBeenSet(false),
-    m_outputCoefficientHasBeenSet(false)
+    m_outputCoefficientHasBeenSet(false),
+    m_inputImageCoefficientHasBeenSet(false),
+    m_inputVideoSecondCoefficientHasBeenSet(false),
+    m_outputVideoSecondCoefficientHasBeenSet(false)
 {
 }
 
@@ -73,6 +76,36 @@ CoreInternalOutcome Coefficient::Deserialize(const rapidjson::Value &value)
         m_outputCoefficientHasBeenSet = true;
     }
 
+    if (value.HasMember("InputImageCoefficient") && !value["InputImageCoefficient"].IsNull())
+    {
+        if (!value["InputImageCoefficient"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Coefficient.InputImageCoefficient` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputImageCoefficient = value["InputImageCoefficient"].GetDouble();
+        m_inputImageCoefficientHasBeenSet = true;
+    }
+
+    if (value.HasMember("InputVideoSecondCoefficient") && !value["InputVideoSecondCoefficient"].IsNull())
+    {
+        if (!value["InputVideoSecondCoefficient"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Coefficient.InputVideoSecondCoefficient` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputVideoSecondCoefficient = value["InputVideoSecondCoefficient"].GetDouble();
+        m_inputVideoSecondCoefficientHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutputVideoSecondCoefficient") && !value["OutputVideoSecondCoefficient"].IsNull())
+    {
+        if (!value["OutputVideoSecondCoefficient"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Coefficient.OutputVideoSecondCoefficient` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputVideoSecondCoefficient = value["OutputVideoSecondCoefficient"].GetDouble();
+        m_outputVideoSecondCoefficientHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +143,30 @@ void Coefficient::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "OutputCoefficient";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_outputCoefficient, allocator);
+    }
+
+    if (m_inputImageCoefficientHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputImageCoefficient";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_inputImageCoefficient, allocator);
+    }
+
+    if (m_inputVideoSecondCoefficientHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputVideoSecondCoefficient";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_inputVideoSecondCoefficient, allocator);
+    }
+
+    if (m_outputVideoSecondCoefficientHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputVideoSecondCoefficient";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_outputVideoSecondCoefficient, allocator);
     }
 
 }
@@ -177,5 +234,53 @@ void Coefficient::SetOutputCoefficient(const double& _outputCoefficient)
 bool Coefficient::OutputCoefficientHasBeenSet() const
 {
     return m_outputCoefficientHasBeenSet;
+}
+
+double Coefficient::GetInputImageCoefficient() const
+{
+    return m_inputImageCoefficient;
+}
+
+void Coefficient::SetInputImageCoefficient(const double& _inputImageCoefficient)
+{
+    m_inputImageCoefficient = _inputImageCoefficient;
+    m_inputImageCoefficientHasBeenSet = true;
+}
+
+bool Coefficient::InputImageCoefficientHasBeenSet() const
+{
+    return m_inputImageCoefficientHasBeenSet;
+}
+
+double Coefficient::GetInputVideoSecondCoefficient() const
+{
+    return m_inputVideoSecondCoefficient;
+}
+
+void Coefficient::SetInputVideoSecondCoefficient(const double& _inputVideoSecondCoefficient)
+{
+    m_inputVideoSecondCoefficient = _inputVideoSecondCoefficient;
+    m_inputVideoSecondCoefficientHasBeenSet = true;
+}
+
+bool Coefficient::InputVideoSecondCoefficientHasBeenSet() const
+{
+    return m_inputVideoSecondCoefficientHasBeenSet;
+}
+
+double Coefficient::GetOutputVideoSecondCoefficient() const
+{
+    return m_outputVideoSecondCoefficient;
+}
+
+void Coefficient::SetOutputVideoSecondCoefficient(const double& _outputVideoSecondCoefficient)
+{
+    m_outputVideoSecondCoefficient = _outputVideoSecondCoefficient;
+    m_outputVideoSecondCoefficientHasBeenSet = true;
+}
+
+bool Coefficient::OutputVideoSecondCoefficientHasBeenSet() const
+{
+    return m_outputVideoSecondCoefficientHasBeenSet;
 }
 

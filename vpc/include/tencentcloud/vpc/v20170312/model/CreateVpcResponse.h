@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Vpc对象。
-                     * @return Vpc Vpc对象。
+                     * 获取<p>Vpc对象。</p>
+                     * @return Vpc <p>Vpc对象。</p>
                      * 
                      */
                     Vpc GetVpc() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Vpc对象。
+                     * <p>Vpc对象。</p>
                      */
                     Vpc m_vpc;
                     bool m_vpcHasBeenSet;

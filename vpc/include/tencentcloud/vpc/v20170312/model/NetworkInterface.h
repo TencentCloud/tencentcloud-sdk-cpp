@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取弹性网卡实例ID，例如：eni-f1xjkw1b。
-                     * @return NetworkInterfaceId 弹性网卡实例ID，例如：eni-f1xjkw1b。
+                     * 获取<p>弹性网卡实例ID，例如：eni-f1xjkw1b。</p>
+                     * @return NetworkInterfaceId <p>弹性网卡实例ID，例如：eni-f1xjkw1b。</p>
                      * 
                      */
                     std::string GetNetworkInterfaceId() const;
 
                     /**
-                     * 设置弹性网卡实例ID，例如：eni-f1xjkw1b。
-                     * @param _networkInterfaceId 弹性网卡实例ID，例如：eni-f1xjkw1b。
+                     * 设置<p>弹性网卡实例ID，例如：eni-f1xjkw1b。</p>
+                     * @param _networkInterfaceId <p>弹性网卡实例ID，例如：eni-f1xjkw1b。</p>
                      * 
                      */
                     void SetNetworkInterfaceId(const std::string& _networkInterfaceId);
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool NetworkInterfaceIdHasBeenSet() const;
 
                     /**
-                     * 获取弹性网卡名称。
-                     * @return NetworkInterfaceName 弹性网卡名称。
+                     * 获取<p>弹性网卡名称。</p>
+                     * @return NetworkInterfaceName <p>弹性网卡名称。</p>
                      * 
                      */
                     std::string GetNetworkInterfaceName() const;
 
                     /**
-                     * 设置弹性网卡名称。
-                     * @param _networkInterfaceName 弹性网卡名称。
+                     * 设置<p>弹性网卡名称。</p>
+                     * @param _networkInterfaceName <p>弹性网卡名称。</p>
                      * 
                      */
                     void SetNetworkInterfaceName(const std::string& _networkInterfaceName);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool NetworkInterfaceNameHasBeenSet() const;
 
                     /**
-                     * 获取弹性网卡描述。
-                     * @return NetworkInterfaceDescription 弹性网卡描述。
+                     * 获取<p>弹性网卡描述。</p>
+                     * @return NetworkInterfaceDescription <p>弹性网卡描述。</p>
                      * 
                      */
                     std::string GetNetworkInterfaceDescription() const;
 
                     /**
-                     * 设置弹性网卡描述。
-                     * @param _networkInterfaceDescription 弹性网卡描述。
+                     * 设置<p>弹性网卡描述。</p>
+                     * @param _networkInterfaceDescription <p>弹性网卡描述。</p>
                      * 
                      */
                     void SetNetworkInterfaceDescription(const std::string& _networkInterfaceDescription);
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool NetworkInterfaceDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取子网实例ID。
-                     * @return SubnetId 子网实例ID。
+                     * 获取<p>子网实例ID。</p>
+                     * @return SubnetId <p>子网实例ID。</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网实例ID。
-                     * @param _subnetId 子网实例ID。
+                     * 设置<p>子网实例ID。</p>
+                     * @param _subnetId <p>子网实例ID。</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取VPC实例ID。
-                     * @return VpcId VPC实例ID。
+                     * 获取<p>VPC实例ID。</p>
+                     * @return VpcId <p>VPC实例ID。</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC实例ID。
-                     * @param _vpcId VPC实例ID。
+                     * 设置<p>VPC实例ID。</p>
+                     * @param _vpcId <p>VPC实例ID。</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -156,15 +156,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取绑定的安全组。
-                     * @return GroupSet 绑定的安全组。
+                     * 获取<p>绑定的安全组。</p>
+                     * @return GroupSet <p>绑定的安全组。</p>
                      * 
                      */
                     std::vector<std::string> GetGroupSet() const;
 
                     /**
-                     * 设置绑定的安全组。
-                     * @param _groupSet 绑定的安全组。
+                     * 设置<p>绑定的安全组。</p>
+                     * @param _groupSet <p>绑定的安全组。</p>
                      * 
                      */
                     void SetGroupSet(const std::vector<std::string>& _groupSet);
@@ -177,15 +177,15 @@ namespace TencentCloud
                     bool GroupSetHasBeenSet() const;
 
                     /**
-                     * 获取是否是主网卡。
-                     * @return Primary 是否是主网卡。
+                     * 获取<p>是否是主网卡。</p>
+                     * @return Primary <p>是否是主网卡。</p>
                      * 
                      */
                     bool GetPrimary() const;
 
                     /**
-                     * 设置是否是主网卡。
-                     * @param _primary 是否是主网卡。
+                     * 设置<p>是否是主网卡。</p>
+                     * @param _primary <p>是否是主网卡。</p>
                      * 
                      */
                     void SetPrimary(const bool& _primary);
@@ -198,15 +198,15 @@ namespace TencentCloud
                     bool PrimaryHasBeenSet() const;
 
                     /**
-                     * 获取MAC地址。
-                     * @return MacAddress MAC地址。
+                     * 获取<p>MAC地址。</p>
+                     * @return MacAddress <p>MAC地址。</p>
                      * 
                      */
                     std::string GetMacAddress() const;
 
                     /**
-                     * 设置MAC地址。
-                     * @param _macAddress MAC地址。
+                     * 设置<p>MAC地址。</p>
+                     * @param _macAddress <p>MAC地址。</p>
                      * 
                      */
                     void SetMacAddress(const std::string& _macAddress);
@@ -219,35 +219,15 @@ namespace TencentCloud
                     bool MacAddressHasBeenSet() const;
 
                     /**
-                     * 获取弹性网卡状态：
-<li>`PENDING`：创建中</li>
-<li>`AVAILABLE`：可用的</li>
-<li>`ATTACHING`：绑定中</li>
-<li>`DETACHING`：解绑中</li>
-<li>`DELETING`：删除中</li>
-                     * @return State 弹性网卡状态：
-<li>`PENDING`：创建中</li>
-<li>`AVAILABLE`：可用的</li>
-<li>`ATTACHING`：绑定中</li>
-<li>`DETACHING`：解绑中</li>
-<li>`DELETING`：删除中</li>
+                     * 获取<p>弹性网卡状态：</p><li><code>PENDING</code>：创建中</li><li><code>AVAILABLE</code>：可用的</li><li><code>ATTACHING</code>：绑定中</li><li><code>DETACHING</code>：解绑中</li><li><code>DELETING</code>：删除中</li>
+                     * @return State <p>弹性网卡状态：</p><li><code>PENDING</code>：创建中</li><li><code>AVAILABLE</code>：可用的</li><li><code>ATTACHING</code>：绑定中</li><li><code>DETACHING</code>：解绑中</li><li><code>DELETING</code>：删除中</li>
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置弹性网卡状态：
-<li>`PENDING`：创建中</li>
-<li>`AVAILABLE`：可用的</li>
-<li>`ATTACHING`：绑定中</li>
-<li>`DETACHING`：解绑中</li>
-<li>`DELETING`：删除中</li>
-                     * @param _state 弹性网卡状态：
-<li>`PENDING`：创建中</li>
-<li>`AVAILABLE`：可用的</li>
-<li>`ATTACHING`：绑定中</li>
-<li>`DETACHING`：解绑中</li>
-<li>`DELETING`：删除中</li>
+                     * 设置<p>弹性网卡状态：</p><li><code>PENDING</code>：创建中</li><li><code>AVAILABLE</code>：可用的</li><li><code>ATTACHING</code>：绑定中</li><li><code>DETACHING</code>：解绑中</li><li><code>DELETING</code>：删除中</li>
+                     * @param _state <p>弹性网卡状态：</p><li><code>PENDING</code>：创建中</li><li><code>AVAILABLE</code>：可用的</li><li><code>ATTACHING</code>：绑定中</li><li><code>DETACHING</code>：解绑中</li><li><code>DELETING</code>：删除中</li>
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -260,39 +240,15 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取弹性网卡状态：
-<li>`PENDING`：创建中</li>
-<li>`AVAILABLE`：可用的</li>
-<li>`ATTACHING`：绑定中</li>
-<li>`DETACHING`：解绑中</li>
-<li>`DELETING`：删除中</li>
-<li>`INUSE`：已绑定</li>
-                     * @return NetworkInterfaceState 弹性网卡状态：
-<li>`PENDING`：创建中</li>
-<li>`AVAILABLE`：可用的</li>
-<li>`ATTACHING`：绑定中</li>
-<li>`DETACHING`：解绑中</li>
-<li>`DELETING`：删除中</li>
-<li>`INUSE`：已绑定</li>
+                     * 获取<p>弹性网卡状态：</p><li><code>PENDING</code>：创建中</li><li><code>AVAILABLE</code>：可用的</li><li><code>ATTACHING</code>：绑定中</li><li><code>DETACHING</code>：解绑中</li><li><code>DELETING</code>：删除中</li><li><code>INUSE</code>：已绑定</li>
+                     * @return NetworkInterfaceState <p>弹性网卡状态：</p><li><code>PENDING</code>：创建中</li><li><code>AVAILABLE</code>：可用的</li><li><code>ATTACHING</code>：绑定中</li><li><code>DETACHING</code>：解绑中</li><li><code>DELETING</code>：删除中</li><li><code>INUSE</code>：已绑定</li>
                      * 
                      */
                     std::string GetNetworkInterfaceState() const;
 
                     /**
-                     * 设置弹性网卡状态：
-<li>`PENDING`：创建中</li>
-<li>`AVAILABLE`：可用的</li>
-<li>`ATTACHING`：绑定中</li>
-<li>`DETACHING`：解绑中</li>
-<li>`DELETING`：删除中</li>
-<li>`INUSE`：已绑定</li>
-                     * @param _networkInterfaceState 弹性网卡状态：
-<li>`PENDING`：创建中</li>
-<li>`AVAILABLE`：可用的</li>
-<li>`ATTACHING`：绑定中</li>
-<li>`DETACHING`：解绑中</li>
-<li>`DELETING`：删除中</li>
-<li>`INUSE`：已绑定</li>
+                     * 设置<p>弹性网卡状态：</p><li><code>PENDING</code>：创建中</li><li><code>AVAILABLE</code>：可用的</li><li><code>ATTACHING</code>：绑定中</li><li><code>DETACHING</code>：解绑中</li><li><code>DELETING</code>：删除中</li><li><code>INUSE</code>：已绑定</li>
+                     * @param _networkInterfaceState <p>弹性网卡状态：</p><li><code>PENDING</code>：创建中</li><li><code>AVAILABLE</code>：可用的</li><li><code>ATTACHING</code>：绑定中</li><li><code>DETACHING</code>：解绑中</li><li><code>DELETING</code>：删除中</li><li><code>INUSE</code>：已绑定</li>
                      * 
                      */
                     void SetNetworkInterfaceState(const std::string& _networkInterfaceState);
@@ -305,15 +261,15 @@ namespace TencentCloud
                     bool NetworkInterfaceStateHasBeenSet() const;
 
                     /**
-                     * 获取内网IP信息。
-                     * @return PrivateIpAddressSet 内网IP信息。
+                     * 获取<p>内网IP信息。</p>
+                     * @return PrivateIpAddressSet <p>内网IP信息。</p>
                      * 
                      */
                     std::vector<PrivateIpAddressSpecification> GetPrivateIpAddressSet() const;
 
                     /**
-                     * 设置内网IP信息。
-                     * @param _privateIpAddressSet 内网IP信息。
+                     * 设置<p>内网IP信息。</p>
+                     * @param _privateIpAddressSet <p>内网IP信息。</p>
                      * 
                      */
                     void SetPrivateIpAddressSet(const std::vector<PrivateIpAddressSpecification>& _privateIpAddressSet);
@@ -326,18 +282,18 @@ namespace TencentCloud
                     bool PrivateIpAddressSetHasBeenSet() const;
 
                     /**
-                     * 获取绑定的云服务器对象。
+                     * 获取<p>绑定的云服务器对象。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Attachment 绑定的云服务器对象。
+                     * @return Attachment <p>绑定的云服务器对象。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     NetworkInterfaceAttachment GetAttachment() const;
 
                     /**
-                     * 设置绑定的云服务器对象。
+                     * 设置<p>绑定的云服务器对象。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _attachment 绑定的云服务器对象。
+                     * @param _attachment <p>绑定的云服务器对象。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -351,15 +307,15 @@ namespace TencentCloud
                     bool AttachmentHasBeenSet() const;
 
                     /**
-                     * 获取可用区。
-                     * @return Zone 可用区。
+                     * 获取<p>可用区。</p>
+                     * @return Zone <p>可用区。</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区。
-                     * @param _zone 可用区。
+                     * 设置<p>可用区。</p>
+                     * @param _zone <p>可用区。</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -372,15 +328,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59
-                     * @return CreatedTime 创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59
+                     * 获取<p>创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59</p>
+                     * @return CreatedTime <p>创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59</p>
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59
-                     * @param _createdTime 创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59
+                     * 设置<p>创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59</p>
+                     * @param _createdTime <p>创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59</p>
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -393,15 +349,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取`IPv6`地址列表。
-                     * @return Ipv6AddressSet `IPv6`地址列表。
+                     * 获取<p><code>IPv6</code>地址列表。</p>
+                     * @return Ipv6AddressSet <p><code>IPv6</code>地址列表。</p>
                      * 
                      */
                     std::vector<Ipv6Address> GetIpv6AddressSet() const;
 
                     /**
-                     * 设置`IPv6`地址列表。
-                     * @param _ipv6AddressSet `IPv6`地址列表。
+                     * 设置<p><code>IPv6</code>地址列表。</p>
+                     * @param _ipv6AddressSet <p><code>IPv6</code>地址列表。</p>
                      * 
                      */
                     void SetIpv6AddressSet(const std::vector<Ipv6Address>& _ipv6AddressSet);
@@ -414,15 +370,15 @@ namespace TencentCloud
                     bool Ipv6AddressSetHasBeenSet() const;
 
                     /**
-                     * 获取标签键值对。
-                     * @return TagSet 标签键值对。
+                     * 获取<p>标签键值对。</p>
+                     * @return TagSet <p>标签键值对。</p>
                      * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
-                     * 设置标签键值对。
-                     * @param _tagSet 标签键值对。
+                     * 设置<p>标签键值对。</p>
+                     * @param _tagSet <p>标签键值对。</p>
                      * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
@@ -435,15 +391,15 @@ namespace TencentCloud
                     bool TagSetHasBeenSet() const;
 
                     /**
-                     * 获取网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡
-                     * @return EniType 网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡
+                     * 获取<p>网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡</p>
+                     * @return EniType <p>网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡</p>
                      * 
                      */
                     uint64_t GetEniType() const;
 
                     /**
-                     * 设置网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡
-                     * @param _eniType 网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡
+                     * 设置<p>网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡</p>
+                     * @param _eniType <p>网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡</p>
                      * 
                      */
                     void SetEniType(const uint64_t& _eniType);
@@ -456,15 +412,15 @@ namespace TencentCloud
                     bool EniTypeHasBeenSet() const;
 
                     /**
-                     * 获取网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。
-                     * @return Business 网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。
+                     * 获取<p>网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。</p>
+                     * @return Business <p>网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。</p>
                      * 
                      */
                     std::string GetBusiness() const;
 
                     /**
-                     * 设置网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。
-                     * @param _business 网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。
+                     * 设置<p>网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。</p>
+                     * @param _business <p>网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。</p>
                      * 
                      */
                     void SetBusiness(const std::string& _business);
@@ -477,15 +433,15 @@ namespace TencentCloud
                     bool BusinessHasBeenSet() const;
 
                     /**
-                     * 获取网卡所关联的CDC实例ID。
-                     * @return CdcId 网卡所关联的CDC实例ID。
+                     * 获取<p>网卡所关联的CDC实例ID。</p>
+                     * @return CdcId <p>网卡所关联的CDC实例ID。</p>
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
-                     * 设置网卡所关联的CDC实例ID。
-                     * @param _cdcId 网卡所关联的CDC实例ID。
+                     * 设置<p>网卡所关联的CDC实例ID。</p>
+                     * @param _cdcId <p>网卡所关联的CDC实例ID。</p>
                      * 
                      */
                     void SetCdcId(const std::string& _cdcId);
@@ -498,15 +454,15 @@ namespace TencentCloud
                     bool CdcIdHasBeenSet() const;
 
                     /**
-                     * 获取弹性网卡类型：0:标准型/1:扩展型。默认值为0。
-                     * @return AttachType 弹性网卡类型：0:标准型/1:扩展型。默认值为0。
+                     * 获取<p>弹性网卡类型：0:标准型/1:扩展型。默认值为0。</p>
+                     * @return AttachType <p>弹性网卡类型：0:标准型/1:扩展型。默认值为0。</p>
                      * 
                      */
                     uint64_t GetAttachType() const;
 
                     /**
-                     * 设置弹性网卡类型：0:标准型/1:扩展型。默认值为0。
-                     * @param _attachType 弹性网卡类型：0:标准型/1:扩展型。默认值为0。
+                     * 设置<p>弹性网卡类型：0:标准型/1:扩展型。默认值为0。</p>
+                     * @param _attachType <p>弹性网卡类型：0:标准型/1:扩展型。默认值为0。</p>
                      * 
                      */
                     void SetAttachType(const uint64_t& _attachType);
@@ -519,15 +475,15 @@ namespace TencentCloud
                     bool AttachTypeHasBeenSet() const;
 
                     /**
-                     * 获取用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。
-                     * @return ResourceId 用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。
+                     * 获取<p>用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。</p>
+                     * @return ResourceId <p>用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。
-                     * @param _resourceId 用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。
+                     * 设置<p>用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。</p>
+                     * @param _resourceId <p>用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -540,31 +496,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取服务质量级别：
-PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
-
-可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
-
-                     * @return QosLevel 服务质量级别：
-PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
-
-可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
-
+                     * 获取<p>服务质量级别：<br>PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。</p><p>可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。</p>
+                     * @return QosLevel <p>服务质量级别：<br>PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。</p><p>可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。</p>
                      * 
                      */
                     std::string GetQosLevel() const;
 
                     /**
-                     * 设置服务质量级别：
-PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
-
-可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
-
-                     * @param _qosLevel 服务质量级别：
-PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
-
-可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
-
+                     * 设置<p>服务质量级别：<br>PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。</p><p>可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。</p>
+                     * @param _qosLevel <p>服务质量级别：<br>PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。</p><p>可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。</p>
                      * 
                      */
                     void SetQosLevel(const std::string& _qosLevel);
@@ -576,155 +516,194 @@ PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
                      */
                     bool QosLevelHasBeenSet() const;
 
+                    /**
+                     * 获取<p>指定的<code>IPv6</code>地址列表，单次最多指定10个。与入参<code>Ipv6AddressCount</code>合并计算配额。</p>
+                     * @return Ipv6Addresses <p>指定的<code>IPv6</code>地址列表，单次最多指定10个。与入参<code>Ipv6AddressCount</code>合并计算配额。</p>
+                     * 
+                     */
+                    std::vector<Ipv6Address> GetIpv6Addresses() const;
+
+                    /**
+                     * 设置<p>指定的<code>IPv6</code>地址列表，单次最多指定10个。与入参<code>Ipv6AddressCount</code>合并计算配额。</p>
+                     * @param _ipv6Addresses <p>指定的<code>IPv6</code>地址列表，单次最多指定10个。与入参<code>Ipv6AddressCount</code>合并计算配额。</p>
+                     * 
+                     */
+                    void SetIpv6Addresses(const std::vector<Ipv6Address>& _ipv6Addresses);
+
+                    /**
+                     * 判断参数 Ipv6Addresses 是否已赋值
+                     * @return Ipv6Addresses 是否已赋值
+                     * 
+                     */
+                    bool Ipv6AddressesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自动分配<code>IPv6</code>地址个数，内网IP地址个数总和不能超过配额数。与入参<code>Ipv6Addresses</code>合并计算配额。</p><p>取值范围：[1, 10]</p><p>单位：个</p>
+                     * @return Ipv6AddressCount <p>自动分配<code>IPv6</code>地址个数，内网IP地址个数总和不能超过配额数。与入参<code>Ipv6Addresses</code>合并计算配额。</p><p>取值范围：[1, 10]</p><p>单位：个</p>
+                     * 
+                     */
+                    uint64_t GetIpv6AddressCount() const;
+
+                    /**
+                     * 设置<p>自动分配<code>IPv6</code>地址个数，内网IP地址个数总和不能超过配额数。与入参<code>Ipv6Addresses</code>合并计算配额。</p><p>取值范围：[1, 10]</p><p>单位：个</p>
+                     * @param _ipv6AddressCount <p>自动分配<code>IPv6</code>地址个数，内网IP地址个数总和不能超过配额数。与入参<code>Ipv6Addresses</code>合并计算配额。</p><p>取值范围：[1, 10]</p><p>单位：个</p>
+                     * 
+                     */
+                    void SetIpv6AddressCount(const uint64_t& _ipv6AddressCount);
+
+                    /**
+                     * 判断参数 Ipv6AddressCount 是否已赋值
+                     * @return Ipv6AddressCount 是否已赋值
+                     * 
+                     */
+                    bool Ipv6AddressCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 弹性网卡实例ID，例如：eni-f1xjkw1b。
+                     * <p>弹性网卡实例ID，例如：eni-f1xjkw1b。</p>
                      */
                     std::string m_networkInterfaceId;
                     bool m_networkInterfaceIdHasBeenSet;
 
                     /**
-                     * 弹性网卡名称。
+                     * <p>弹性网卡名称。</p>
                      */
                     std::string m_networkInterfaceName;
                     bool m_networkInterfaceNameHasBeenSet;
 
                     /**
-                     * 弹性网卡描述。
+                     * <p>弹性网卡描述。</p>
                      */
                     std::string m_networkInterfaceDescription;
                     bool m_networkInterfaceDescriptionHasBeenSet;
 
                     /**
-                     * 子网实例ID。
+                     * <p>子网实例ID。</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * VPC实例ID。
+                     * <p>VPC实例ID。</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 绑定的安全组。
+                     * <p>绑定的安全组。</p>
                      */
                     std::vector<std::string> m_groupSet;
                     bool m_groupSetHasBeenSet;
 
                     /**
-                     * 是否是主网卡。
+                     * <p>是否是主网卡。</p>
                      */
                     bool m_primary;
                     bool m_primaryHasBeenSet;
 
                     /**
-                     * MAC地址。
+                     * <p>MAC地址。</p>
                      */
                     std::string m_macAddress;
                     bool m_macAddressHasBeenSet;
 
                     /**
-                     * 弹性网卡状态：
-<li>`PENDING`：创建中</li>
-<li>`AVAILABLE`：可用的</li>
-<li>`ATTACHING`：绑定中</li>
-<li>`DETACHING`：解绑中</li>
-<li>`DELETING`：删除中</li>
+                     * <p>弹性网卡状态：</p><li><code>PENDING</code>：创建中</li><li><code>AVAILABLE</code>：可用的</li><li><code>ATTACHING</code>：绑定中</li><li><code>DETACHING</code>：解绑中</li><li><code>DELETING</code>：删除中</li>
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 弹性网卡状态：
-<li>`PENDING`：创建中</li>
-<li>`AVAILABLE`：可用的</li>
-<li>`ATTACHING`：绑定中</li>
-<li>`DETACHING`：解绑中</li>
-<li>`DELETING`：删除中</li>
-<li>`INUSE`：已绑定</li>
+                     * <p>弹性网卡状态：</p><li><code>PENDING</code>：创建中</li><li><code>AVAILABLE</code>：可用的</li><li><code>ATTACHING</code>：绑定中</li><li><code>DETACHING</code>：解绑中</li><li><code>DELETING</code>：删除中</li><li><code>INUSE</code>：已绑定</li>
                      */
                     std::string m_networkInterfaceState;
                     bool m_networkInterfaceStateHasBeenSet;
 
                     /**
-                     * 内网IP信息。
+                     * <p>内网IP信息。</p>
                      */
                     std::vector<PrivateIpAddressSpecification> m_privateIpAddressSet;
                     bool m_privateIpAddressSetHasBeenSet;
 
                     /**
-                     * 绑定的云服务器对象。
+                     * <p>绑定的云服务器对象。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     NetworkInterfaceAttachment m_attachment;
                     bool m_attachmentHasBeenSet;
 
                     /**
-                     * 可用区。
+                     * <p>可用区。</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59
+                     * <p>创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * `IPv6`地址列表。
+                     * <p><code>IPv6</code>地址列表。</p>
                      */
                     std::vector<Ipv6Address> m_ipv6AddressSet;
                     bool m_ipv6AddressSetHasBeenSet;
 
                     /**
-                     * 标签键值对。
+                     * <p>标签键值对。</p>
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;
 
                     /**
-                     * 网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡
+                     * <p>网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡</p>
                      */
                     uint64_t m_eniType;
                     bool m_eniTypeHasBeenSet;
 
                     /**
-                     * 网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。
+                     * <p>网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。</p>
                      */
                     std::string m_business;
                     bool m_businessHasBeenSet;
 
                     /**
-                     * 网卡所关联的CDC实例ID。
+                     * <p>网卡所关联的CDC实例ID。</p>
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
 
                     /**
-                     * 弹性网卡类型：0:标准型/1:扩展型。默认值为0。
+                     * <p>弹性网卡类型：0:标准型/1:扩展型。默认值为0。</p>
                      */
                     uint64_t m_attachType;
                     bool m_attachTypeHasBeenSet;
 
                     /**
-                     * 用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。
+                     * <p>用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 服务质量级别：
-PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
-
-可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
-
+                     * <p>服务质量级别：<br>PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。</p><p>可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。</p>
                      */
                     std::string m_qosLevel;
                     bool m_qosLevelHasBeenSet;
+
+                    /**
+                     * <p>指定的<code>IPv6</code>地址列表，单次最多指定10个。与入参<code>Ipv6AddressCount</code>合并计算配额。</p>
+                     */
+                    std::vector<Ipv6Address> m_ipv6Addresses;
+                    bool m_ipv6AddressesHasBeenSet;
+
+                    /**
+                     * <p>自动分配<code>IPv6</code>地址个数，内网IP地址个数总和不能超过配额数。与入参<code>Ipv6Addresses</code>合并计算配额。</p><p>取值范围：[1, 10]</p><p>单位：个</p>
+                     */
+                    uint64_t m_ipv6AddressCount;
+                    bool m_ipv6AddressCountHasBeenSet;
 
                 };
             }

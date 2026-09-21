@@ -51,18 +51,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作流ID
+                     * 获取<p>工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkflowId 工作流ID
+                     * @return WorkflowId <p>工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkflowId() const;
 
                     /**
-                     * 设置工作流ID
+                     * 设置<p>工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workflowId 工作流ID
+                     * @param _workflowId <p>工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -76,18 +76,18 @@ namespace TencentCloud
                     bool WorkflowIdHasBeenSet() const;
 
                     /**
-                     * 获取任务ID
+                     * 获取<p>任务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskId 任务ID
+                     * @return TaskId <p>任务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务ID
+                     * 设置<p>任务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskId 任务ID
+                     * @param _taskId <p>任务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -101,18 +101,18 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务名称
+                     * 获取<p>任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskName 任务名称
+                     * @return TaskName <p>任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
-                     * 设置任务名称
+                     * 设置<p>任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskName 任务名称
+                     * @param _taskName <p>任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -126,18 +126,18 @@ namespace TencentCloud
                     bool TaskNameHasBeenSet() const;
 
                     /**
-                     * 获取任务类型名称
+                     * 获取<p>任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskTypeName 任务类型名称
+                     * @return TaskTypeName <p>任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskTypeName() const;
 
                     /**
-                     * 设置任务类型名称
+                     * 设置<p>任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskTypeName 任务类型名称
+                     * @param _taskTypeName <p>任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -151,18 +151,18 @@ namespace TencentCloud
                     bool TaskTypeNameHasBeenSet() const;
 
                     /**
-                     * 获取任务依赖列表
+                     * 获取<p>任务依赖列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DependOnList 任务依赖列表
+                     * @return DependOnList <p>任务依赖列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DependOnBrief> GetDependOnList() const;
 
                     /**
-                     * 设置任务依赖列表
+                     * 设置<p>任务依赖列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dependOnList 任务依赖列表
+                     * @param _dependOnList <p>任务依赖列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -176,18 +176,18 @@ namespace TencentCloud
                     bool DependOnListHasBeenSet() const;
 
                     /**
-                     * 获取任务资源组ID
+                     * 获取<p>任务资源组ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceGroupId 任务资源组ID
+                     * @return ResourceGroupId <p>任务资源组ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceGroupId() const;
 
                     /**
-                     * 设置任务资源组ID
+                     * 设置<p>任务资源组ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourceGroupId 任务资源组ID
+                     * @param _resourceGroupId <p>任务资源组ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -201,18 +201,18 @@ namespace TencentCloud
                     bool ResourceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取任务资源组名称
+                     * 获取<p>任务资源组名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceGroupName 任务资源组名称
+                     * @return ResourceGroupName <p>任务资源组名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceGroupName() const;
 
                     /**
-                     * 设置任务资源组名称
+                     * 设置<p>任务资源组名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourceGroupName 任务资源组名称
+                     * @param _resourceGroupName <p>任务资源组名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -226,18 +226,18 @@ namespace TencentCloud
                     bool ResourceGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取任务X坐标
+                     * 获取<p>任务X坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LeftCoordinate 任务X坐标
+                     * @return LeftCoordinate <p>任务X坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetLeftCoordinate() const;
 
                     /**
-                     * 设置任务X坐标
+                     * 设置<p>任务X坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _leftCoordinate 任务X坐标
+                     * @param _leftCoordinate <p>任务X坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -251,18 +251,18 @@ namespace TencentCloud
                     bool LeftCoordinateHasBeenSet() const;
 
                     /**
-                     * 获取任务Y坐标
+                     * 获取<p>任务Y坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TopCoordinate 任务Y坐标
+                     * @return TopCoordinate <p>任务Y坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetTopCoordinate() const;
 
                     /**
-                     * 设置任务Y坐标
+                     * 设置<p>任务Y坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _topCoordinate 任务Y坐标
+                     * @param _topCoordinate <p>任务Y坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -276,18 +276,18 @@ namespace TencentCloud
                     bool TopCoordinateHasBeenSet() const;
 
                     /**
-                     * 获取任务重试策略
+                     * 获取<p>任务重试策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskRetryStrategy 任务重试策略
+                     * @return TaskRetryStrategy <p>任务重试策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TaskRetryStrategy GetTaskRetryStrategy() const;
 
                     /**
-                     * 设置任务重试策略
+                     * 设置<p>任务重试策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskRetryStrategy 任务重试策略
+                     * @param _taskRetryStrategy <p>任务重试策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -301,18 +301,18 @@ namespace TencentCloud
                     bool TaskRetryStrategyHasBeenSet() const;
 
                     /**
-                     * 获取依赖运行条件
+                     * 获取<p>任依赖运行条件</p><ul><li>ALL_SUCCESS: 全部成功：所有上游依赖任务均已执行并成功</li><li>ONE_SUCCESS: 至少一个成功：至少有一个上游依赖任务成功</li><li>NONE_FAILED: 目前没有失败：没有依赖任务失败，并且至少有一个依赖任务在运行中</li><li>ALL_DONE: 全部完成：所有上游依赖任务均已执行并完成（无论成功或失败</li><li>ONE_FAILED: 至少一个失败：至少有一个上游依赖任务失败</li><li>ALL_FAILED: 全部失败：所有上游依赖任务都失败</li><li>ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行</li><li>ALL_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游</li><li>ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行</li><li>NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行</li><li>ADVANCED:运行条件为高级模式时配置</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DependOnRunCondition 依赖运行条件
+                     * @return DependOnRunCondition <p>任依赖运行条件</p><ul><li>ALL_SUCCESS: 全部成功：所有上游依赖任务均已执行并成功</li><li>ONE_SUCCESS: 至少一个成功：至少有一个上游依赖任务成功</li><li>NONE_FAILED: 目前没有失败：没有依赖任务失败，并且至少有一个依赖任务在运行中</li><li>ALL_DONE: 全部完成：所有上游依赖任务均已执行并完成（无论成功或失败</li><li>ONE_FAILED: 至少一个失败：至少有一个上游依赖任务失败</li><li>ALL_FAILED: 全部失败：所有上游依赖任务都失败</li><li>ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行</li><li>ALL_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游</li><li>ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行</li><li>NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行</li><li>ADVANCED:运行条件为高级模式时配置</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDependOnRunCondition() const;
 
                     /**
-                     * 设置依赖运行条件
+                     * 设置<p>任依赖运行条件</p><ul><li>ALL_SUCCESS: 全部成功：所有上游依赖任务均已执行并成功</li><li>ONE_SUCCESS: 至少一个成功：至少有一个上游依赖任务成功</li><li>NONE_FAILED: 目前没有失败：没有依赖任务失败，并且至少有一个依赖任务在运行中</li><li>ALL_DONE: 全部完成：所有上游依赖任务均已执行并完成（无论成功或失败</li><li>ONE_FAILED: 至少一个失败：至少有一个上游依赖任务失败</li><li>ALL_FAILED: 全部失败：所有上游依赖任务都失败</li><li>ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行</li><li>ALL_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游</li><li>ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行</li><li>NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行</li><li>ADVANCED:运行条件为高级模式时配置</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dependOnRunCondition 依赖运行条件
+                     * @param _dependOnRunCondition <p>任依赖运行条件</p><ul><li>ALL_SUCCESS: 全部成功：所有上游依赖任务均已执行并成功</li><li>ONE_SUCCESS: 至少一个成功：至少有一个上游依赖任务成功</li><li>NONE_FAILED: 目前没有失败：没有依赖任务失败，并且至少有一个依赖任务在运行中</li><li>ALL_DONE: 全部完成：所有上游依赖任务均已执行并完成（无论成功或失败</li><li>ONE_FAILED: 至少一个失败：至少有一个上游依赖任务失败</li><li>ALL_FAILED: 全部失败：所有上游依赖任务都失败</li><li>ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行</li><li>ALL_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游</li><li>ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行</li><li>NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行</li><li>ADVANCED:运行条件为高级模式时配置</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -326,18 +326,18 @@ namespace TencentCloud
                     bool DependOnRunConditionHasBeenSet() const;
 
                     /**
-                     * 获取高级依赖配置
+                     * 获取<p>高级依赖配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AdvancedDependencyConfig 高级依赖配置
+                     * @return AdvancedDependencyConfig <p>高级依赖配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AdvancedDependencyConfig GetAdvancedDependencyConfig() const;
 
                     /**
-                     * 设置高级依赖配置
+                     * 设置<p>高级依赖配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _advancedDependencyConfig 高级依赖配置
+                     * @param _advancedDependencyConfig <p>高级依赖配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -351,18 +351,18 @@ namespace TencentCloud
                     bool AdvancedDependencyConfigHasBeenSet() const;
 
                     /**
-                     * 获取内嵌工作流任务节点
+                     * 获取<p>内嵌工作流任务节点</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InnerTask 内嵌工作流任务节点
+                     * @return InnerTask <p>内嵌工作流任务节点</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     WorkflowTaskNodeBrief GetInnerTask() const;
 
                     /**
-                     * 设置内嵌工作流任务节点
+                     * 设置<p>内嵌工作流任务节点</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _innerTask 内嵌工作流任务节点
+                     * @param _innerTask <p>内嵌工作流任务节点</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -378,91 +378,91 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 工作流ID
+                     * <p>工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workflowId;
                     bool m_workflowIdHasBeenSet;
 
                     /**
-                     * 任务ID
+                     * <p>任务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务名称
+                     * <p>任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
-                     * 任务类型名称
+                     * <p>任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskTypeName;
                     bool m_taskTypeNameHasBeenSet;
 
                     /**
-                     * 任务依赖列表
+                     * <p>任务依赖列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DependOnBrief> m_dependOnList;
                     bool m_dependOnListHasBeenSet;
 
                     /**
-                     * 任务资源组ID
+                     * <p>任务资源组ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceGroupId;
                     bool m_resourceGroupIdHasBeenSet;
 
                     /**
-                     * 任务资源组名称
+                     * <p>任务资源组名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceGroupName;
                     bool m_resourceGroupNameHasBeenSet;
 
                     /**
-                     * 任务X坐标
+                     * <p>任务X坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_leftCoordinate;
                     bool m_leftCoordinateHasBeenSet;
 
                     /**
-                     * 任务Y坐标
+                     * <p>任务Y坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_topCoordinate;
                     bool m_topCoordinateHasBeenSet;
 
                     /**
-                     * 任务重试策略
+                     * <p>任务重试策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskRetryStrategy m_taskRetryStrategy;
                     bool m_taskRetryStrategyHasBeenSet;
 
                     /**
-                     * 依赖运行条件
+                     * <p>任依赖运行条件</p><ul><li>ALL_SUCCESS: 全部成功：所有上游依赖任务均已执行并成功</li><li>ONE_SUCCESS: 至少一个成功：至少有一个上游依赖任务成功</li><li>NONE_FAILED: 目前没有失败：没有依赖任务失败，并且至少有一个依赖任务在运行中</li><li>ALL_DONE: 全部完成：所有上游依赖任务均已执行并完成（无论成功或失败</li><li>ONE_FAILED: 至少一个失败：至少有一个上游依赖任务失败</li><li>ALL_FAILED: 全部失败：所有上游依赖任务都失败</li><li>ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行</li><li>ALL_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游</li><li>ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行</li><li>NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行</li><li>ADVANCED:运行条件为高级模式时配置</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dependOnRunCondition;
                     bool m_dependOnRunConditionHasBeenSet;
 
                     /**
-                     * 高级依赖配置
+                     * <p>高级依赖配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AdvancedDependencyConfig m_advancedDependencyConfig;
                     bool m_advancedDependencyConfigHasBeenSet;
 
                     /**
-                     * 内嵌工作流任务节点
+                     * <p>内嵌工作流任务节点</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WorkflowTaskNodeBrief m_innerTask;

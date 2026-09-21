@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备iD
-                     * @return DeviceId 设备iD
+                     * 获取<p>设备iD</p>
+                     * @return DeviceId <p>设备iD</p>
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置设备iD
-                     * @param _deviceId 设备iD
+                     * 设置<p>设备iD</p>
+                     * @param _deviceId <p>设备iD</p>
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DeviceIdHasBeenSet() const;
 
                     /**
-                     * 获取设备编码（国标设备即我们为设备生成的20位国标编码，rtmp 设备为10 位设备编码）
-                     * @return Code 设备编码（国标设备即我们为设备生成的20位国标编码，rtmp 设备为10 位设备编码）
+                     * 获取<p>设备编码（国标设备即我们为设备生成的20位国标编码，rtmp 设备为10 位设备编码）</p>
+                     * @return Code <p>设备编码（国标设备即我们为设备生成的20位国标编码，rtmp 设备为10 位设备编码）</p>
                      * 
                      */
                     std::string GetCode() const;
 
                     /**
-                     * 设置设备编码（国标设备即我们为设备生成的20位国标编码，rtmp 设备为10 位设备编码）
-                     * @param _code 设备编码（国标设备即我们为设备生成的20位国标编码，rtmp 设备为10 位设备编码）
+                     * 设置<p>设备编码（国标设备即我们为设备生成的20位国标编码，rtmp 设备为10 位设备编码）</p>
+                     * @param _code <p>设备编码（国标设备即我们为设备生成的20位国标编码，rtmp 设备为10 位设备编码）</p>
                      * 
                      */
                     void SetCode(const std::string& _code);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取设备名称
-                     * @return Name 设备名称
+                     * 获取<p>设备名称</p>
+                     * @return Name <p>设备名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置设备名称
-                     * @param _name 设备名称
+                     * 设置<p>设备名称</p>
+                     * @param _name <p>设备名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取设备接入协议，1:RTMP,2:GB,3:GW 
-                     * @return AccessProtocol 设备接入协议，1:RTMP,2:GB,3:GW 
+                     * 获取<p>设备接入协议，1:RTMP,2:GB</p><p>枚举值：</p><ul><li>1： RTMP</li><li>2： GB</li><li>6： ISUP</li></ul>
+                     * @return AccessProtocol <p>设备接入协议，1:RTMP,2:GB</p><p>枚举值：</p><ul><li>1： RTMP</li><li>2： GB</li><li>6： ISUP</li></ul>
                      * 
                      */
                     int64_t GetAccessProtocol() const;
 
                     /**
-                     * 设置设备接入协议，1:RTMP,2:GB,3:GW 
-                     * @param _accessProtocol 设备接入协议，1:RTMP,2:GB,3:GW 
+                     * 设置<p>设备接入协议，1:RTMP,2:GB</p><p>枚举值：</p><ul><li>1： RTMP</li><li>2： GB</li><li>6： ISUP</li></ul>
+                     * @param _accessProtocol <p>设备接入协议，1:RTMP,2:GB</p><p>枚举值：</p><ul><li>1： RTMP</li><li>2： GB</li><li>6： ISUP</li></ul>
                      * 
                      */
                     void SetAccessProtocol(const int64_t& _accessProtocol);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool AccessProtocolHasBeenSet() const;
 
                     /**
-                     * 获取设备类型，1:IPC,2:NVR
-                     * @return Type 设备类型，1:IPC,2:NVR
+                     * 获取<p>设备类型，1:IPC,2:NVR</p>
+                     * @return Type <p>设备类型，1:IPC,2:NVR</p>
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置设备类型，1:IPC,2:NVR
-                     * @param _type 设备类型，1:IPC,2:NVR
+                     * 设置<p>设备类型，1:IPC,2:NVR</p>
+                     * @param _type <p>设备类型，1:IPC,2:NVR</p>
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取设备接入服务节点ID
-                     * @return ClusterId 设备接入服务节点ID
+                     * 获取<p>设备接入服务节点ID</p>
+                     * @return ClusterId <p>设备接入服务节点ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置设备接入服务节点ID
-                     * @param _clusterId 设备接入服务节点ID
+                     * 设置<p>设备接入服务节点ID</p>
+                     * @param _clusterId <p>设备接入服务节点ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -173,19 +173,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取设备接入服务节点名称
-
-                     * @return ClusterName 设备接入服务节点名称
-
+                     * 获取<p>设备接入服务节点名称</p>
+                     * @return ClusterName <p>设备接入服务节点名称</p>
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置设备接入服务节点名称
-
-                     * @param _clusterName 设备接入服务节点名称
-
+                     * 设置<p>设备接入服务节点名称</p>
+                     * @param _clusterName <p>设备接入服务节点名称</p>
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -198,15 +194,15 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取设备流传输协议，1:UDP,2:TCP 
-                     * @return TransportProtocol 设备流传输协议，1:UDP,2:TCP 
+                     * 获取<p>设备流传输协议，1:UDP,2:TCP</p>
+                     * @return TransportProtocol <p>设备流传输协议，1:UDP,2:TCP</p>
                      * 
                      */
                     int64_t GetTransportProtocol() const;
 
                     /**
-                     * 设置设备流传输协议，1:UDP,2:TCP 
-                     * @param _transportProtocol 设备流传输协议，1:UDP,2:TCP 
+                     * 设置<p>设备流传输协议，1:UDP,2:TCP</p>
+                     * @param _transportProtocol <p>设备流传输协议，1:UDP,2:TCP</p>
                      * 
                      */
                     void SetTransportProtocol(const int64_t& _transportProtocol);
@@ -219,15 +215,15 @@ namespace TencentCloud
                     bool TransportProtocolHasBeenSet() const;
 
                     /**
-                     * 获取设备密码
-                     * @return Password 设备密码
+                     * 获取<p>设备密码</p>
+                     * @return Password <p>设备密码</p>
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置设备密码
-                     * @param _password 设备密码
+                     * 设置<p>设备密码</p>
+                     * @param _password <p>设备密码</p>
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -240,15 +236,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取设备描述
-                     * @return Description 设备描述
+                     * 获取<p>设备描述</p>
+                     * @return Description <p>设备描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置设备描述
-                     * @param _description 设备描述
+                     * 设置<p>设备描述</p>
+                     * @param _description <p>设备描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -261,15 +257,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取设备状态，0:未注册,1:在线,2:离线,3:禁用
-                     * @return Status 设备状态，0:未注册,1:在线,2:离线,3:禁用
+                     * 获取<p>设备状态，0:未注册,1:在线,2:离线,3:禁用</p>
+                     * @return Status <p>设备状态，0:未注册,1:在线,2:离线,3:禁用</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置设备状态，0:未注册,1:在线,2:离线,3:禁用
-                     * @param _status 设备状态，0:未注册,1:在线,2:离线,3:禁用
+                     * 设置<p>设备状态，0:未注册,1:在线,2:离线,3:禁用</p>
+                     * @param _status <p>设备状态，0:未注册,1:在线,2:离线,3:禁用</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -282,15 +278,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取设备所属组织ID
-                     * @return OrganizationId 设备所属组织ID
+                     * 获取<p>设备所属组织ID</p>
+                     * @return OrganizationId <p>设备所属组织ID</p>
                      * 
                      */
                     int64_t GetOrganizationId() const;
 
                     /**
-                     * 设置设备所属组织ID
-                     * @param _organizationId 设备所属组织ID
+                     * 设置<p>设备所属组织ID</p>
+                     * @param _organizationId <p>设备所属组织ID</p>
                      * 
                      */
                     void SetOrganizationId(const int64_t& _organizationId);
@@ -303,15 +299,15 @@ namespace TencentCloud
                     bool OrganizationIdHasBeenSet() const;
 
                     /**
-                     * 获取设备接入网关ID，从查询网关列表接口中获取（仅网关接入需要）
-                     * @return GatewayId 设备接入网关ID，从查询网关列表接口中获取（仅网关接入需要）
+                     * 获取<p>设备接入网关ID（已不再使用，保留用于兼容，可忽略）</p>
+                     * @return GatewayId <p>设备接入网关ID（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
-                     * 设置设备接入网关ID，从查询网关列表接口中获取（仅网关接入需要）
-                     * @param _gatewayId 设备接入网关ID，从查询网关列表接口中获取（仅网关接入需要）
+                     * 设置<p>设备接入网关ID（已不再使用，保留用于兼容，可忽略）</p>
+                     * @param _gatewayId <p>设备接入网关ID（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -324,15 +320,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取网关接入协议类型，1.海康SDK，2.大华SDK，3.宇视SDK，4.Onvif（仅网关接入需要）
-                     * @return ProtocolType 网关接入协议类型，1.海康SDK，2.大华SDK，3.宇视SDK，4.Onvif（仅网关接入需要）
+                     * 获取<p>网关接入协议类型（已不再使用，保留用于兼容，可忽略）</p>
+                     * @return ProtocolType <p>网关接入协议类型（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     int64_t GetProtocolType() const;
 
                     /**
-                     * 设置网关接入协议类型，1.海康SDK，2.大华SDK，3.宇视SDK，4.Onvif（仅网关接入需要）
-                     * @param _protocolType 网关接入协议类型，1.海康SDK，2.大华SDK，3.宇视SDK，4.Onvif（仅网关接入需要）
+                     * 设置<p>网关接入协议类型（已不再使用，保留用于兼容，可忽略）</p>
+                     * @param _protocolType <p>网关接入协议类型（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     void SetProtocolType(const int64_t& _protocolType);
@@ -345,15 +341,15 @@ namespace TencentCloud
                     bool ProtocolTypeHasBeenSet() const;
 
                     /**
-                     * 获取设备接入IP（仅网关接入需要）
-                     * @return Ip 设备接入IP（仅网关接入需要）
+                     * 获取<p>设备接入IP（已不再使用，保留用于兼容，可忽略）</p>
+                     * @return Ip <p>设备接入IP（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置设备接入IP（仅网关接入需要）
-                     * @param _ip 设备接入IP（仅网关接入需要）
+                     * 设置<p>设备接入IP（已不再使用，保留用于兼容，可忽略）</p>
+                     * @param _ip <p>设备接入IP（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -366,15 +362,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取设备Port（仅网关接入需要）
-                     * @return Port 设备Port（仅网关接入需要）
+                     * 获取<p>设备Port（已不再使用，保留用于兼容，可忽略）</p>
+                     * @return Port <p>设备Port（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置设备Port（仅网关接入需要）
-                     * @param _port 设备Port（仅网关接入需要）
+                     * 设置<p>设备Port（已不再使用，保留用于兼容，可忽略）</p>
+                     * @param _port <p>设备Port（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -387,15 +383,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取设备用户名（仅网关接入需要）
-                     * @return Username 设备用户名（仅网关接入需要）
+                     * 获取<p>设备用户名（已不再使用，保留用于兼容，可忽略）</p>
+                     * @return Username <p>设备用户名（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     std::string GetUsername() const;
 
                     /**
-                     * 设置设备用户名（仅网关接入需要）
-                     * @param _username 设备用户名（仅网关接入需要）
+                     * 设置<p>设备用户名（已不再使用，保留用于兼容，可忽略）</p>
+                     * @param _username <p>设备用户名（已不再使用，保留用于兼容，可忽略）</p>
                      * 
                      */
                     void SetUsername(const std::string& _username);
@@ -408,15 +404,15 @@ namespace TencentCloud
                     bool UsernameHasBeenSet() const;
 
                     /**
-                     * 获取用户ID
-                     * @return AppId 用户ID
+                     * 获取<p>用户ID</p>
+                     * @return AppId <p>用户ID</p>
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置用户ID
-                     * @param _appId 用户ID
+                     * 设置<p>用户ID</p>
+                     * @param _appId <p>用户ID</p>
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -431,110 +427,109 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 设备iD
+                     * <p>设备iD</p>
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
-                     * 设备编码（国标设备即我们为设备生成的20位国标编码，rtmp 设备为10 位设备编码）
+                     * <p>设备编码（国标设备即我们为设备生成的20位国标编码，rtmp 设备为10 位设备编码）</p>
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
 
                     /**
-                     * 设备名称
+                     * <p>设备名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 设备接入协议，1:RTMP,2:GB,3:GW 
+                     * <p>设备接入协议，1:RTMP,2:GB</p><p>枚举值：</p><ul><li>1： RTMP</li><li>2： GB</li><li>6： ISUP</li></ul>
                      */
                     int64_t m_accessProtocol;
                     bool m_accessProtocolHasBeenSet;
 
                     /**
-                     * 设备类型，1:IPC,2:NVR
+                     * <p>设备类型，1:IPC,2:NVR</p>
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 设备接入服务节点ID
+                     * <p>设备接入服务节点ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 设备接入服务节点名称
-
+                     * <p>设备接入服务节点名称</p>
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 设备流传输协议，1:UDP,2:TCP 
+                     * <p>设备流传输协议，1:UDP,2:TCP</p>
                      */
                     int64_t m_transportProtocol;
                     bool m_transportProtocolHasBeenSet;
 
                     /**
-                     * 设备密码
+                     * <p>设备密码</p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 设备描述
+                     * <p>设备描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 设备状态，0:未注册,1:在线,2:离线,3:禁用
+                     * <p>设备状态，0:未注册,1:在线,2:离线,3:禁用</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 设备所属组织ID
+                     * <p>设备所属组织ID</p>
                      */
                     int64_t m_organizationId;
                     bool m_organizationIdHasBeenSet;
 
                     /**
-                     * 设备接入网关ID，从查询网关列表接口中获取（仅网关接入需要）
+                     * <p>设备接入网关ID（已不再使用，保留用于兼容，可忽略）</p>
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 网关接入协议类型，1.海康SDK，2.大华SDK，3.宇视SDK，4.Onvif（仅网关接入需要）
+                     * <p>网关接入协议类型（已不再使用，保留用于兼容，可忽略）</p>
                      */
                     int64_t m_protocolType;
                     bool m_protocolTypeHasBeenSet;
 
                     /**
-                     * 设备接入IP（仅网关接入需要）
+                     * <p>设备接入IP（已不再使用，保留用于兼容，可忽略）</p>
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 设备Port（仅网关接入需要）
+                     * <p>设备Port（已不再使用，保留用于兼容，可忽略）</p>
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 设备用户名（仅网关接入需要）
+                     * <p>设备用户名（已不再使用，保留用于兼容，可忽略）</p>
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
 
                     /**
-                     * 用户ID
+                     * <p>用户ID</p>
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;

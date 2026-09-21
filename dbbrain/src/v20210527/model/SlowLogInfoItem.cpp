@@ -29,7 +29,8 @@ SlowLogInfoItem::SlowLogInfoItem() :
     m_queryTimeHasBeenSet(false),
     m_lockTimeHasBeenSet(false),
     m_rowsExaminedHasBeenSet(false),
-    m_rowsSentHasBeenSet(false)
+    m_rowsSentHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome SlowLogInfoItem::Deserialize(const rapidjson::Value &value)
         m_rowsSentHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowLogInfoItem.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void SlowLogInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "RowsSent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rowsSent, allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void SlowLogInfoItem::SetRowsSent(const int64_t& _rowsSent)
 bool SlowLogInfoItem::RowsSentHasBeenSet() const
 {
     return m_rowsSentHasBeenSet;
+}
+
+string SlowLogInfoItem::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void SlowLogInfoItem::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool SlowLogInfoItem::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 

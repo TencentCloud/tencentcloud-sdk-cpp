@@ -55,6 +55,8 @@
 #include <tencentcloud/hai/v20230812/model/DescribeServicesResponse.h>
 #include <tencentcloud/hai/v20230812/model/DescribeServicesCallInfoRequest.h>
 #include <tencentcloud/hai/v20230812/model/DescribeServicesCallInfoResponse.h>
+#include <tencentcloud/hai/v20230812/model/GetServicePodLogsRequest.h>
+#include <tencentcloud/hai/v20230812/model/GetServicePodLogsResponse.h>
 #include <tencentcloud/hai/v20230812/model/InquirePriceRunInstancesRequest.h>
 #include <tencentcloud/hai/v20230812/model/InquirePriceRunInstancesResponse.h>
 #include <tencentcloud/hai/v20230812/model/InquirePriceUpdateServiceConfigsRequest.h>
@@ -135,6 +137,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeServicesCallInfoResponse> DescribeServicesCallInfoOutcome;
                 typedef std::future<DescribeServicesCallInfoOutcome> DescribeServicesCallInfoOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::DescribeServicesCallInfoRequest&, DescribeServicesCallInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServicesCallInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetServicePodLogsResponse> GetServicePodLogsOutcome;
+                typedef std::future<GetServicePodLogsOutcome> GetServicePodLogsOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::GetServicePodLogsRequest&, GetServicePodLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetServicePodLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquirePriceRunInstancesResponse> InquirePriceRunInstancesOutcome;
                 typedef std::future<InquirePriceRunInstancesOutcome> InquirePriceRunInstancesOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::InquirePriceRunInstancesRequest&, InquirePriceRunInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRunInstancesAsyncHandler;
@@ -308,6 +313,15 @@ namespace TencentCloud
                 DescribeServicesCallInfoOutcome DescribeServicesCallInfo(const Model::DescribeServicesCallInfoRequest &request);
                 void DescribeServicesCallInfoAsync(const Model::DescribeServicesCallInfoRequest& request, const DescribeServicesCallInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeServicesCallInfoOutcomeCallable DescribeServicesCallInfoCallable(const Model::DescribeServicesCallInfoRequest& request);
+
+                /**
+                 *本接口(GetServicePodLogs)用于查询推理服务Pod日志
+                 * @param req GetServicePodLogsRequest
+                 * @return GetServicePodLogsOutcome
+                 */
+                GetServicePodLogsOutcome GetServicePodLogs(const Model::GetServicePodLogsRequest &request);
+                void GetServicePodLogsAsync(const Model::GetServicePodLogsRequest& request, const GetServicePodLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetServicePodLogsOutcomeCallable GetServicePodLogsCallable(const Model::GetServicePodLogsRequest& request);
 
                 /**
                  *本接口 (InquirePriceRunInstances) 用于实例询价。

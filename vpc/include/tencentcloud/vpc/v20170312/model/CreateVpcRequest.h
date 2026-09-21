@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取vpc名称，最大长度不能超过60个字节。
-                     * @return VpcName vpc名称，最大长度不能超过60个字节。
+                     * 获取<p>vpc名称，最大长度不能超过60个字节。</p>
+                     * @return VpcName <p>vpc名称，最大长度不能超过60个字节。</p>
                      * 
                      */
                     std::string GetVpcName() const;
 
                     /**
-                     * 设置vpc名称，最大长度不能超过60个字节。
-                     * @param _vpcName vpc名称，最大长度不能超过60个字节。
+                     * 设置<p>vpc名称，最大长度不能超过60个字节。</p>
+                     * @param _vpcName <p>vpc名称，最大长度不能超过60个字节。</p>
                      * 
                      */
                     void SetVpcName(const std::string& _vpcName);
@@ -65,15 +65,36 @@ namespace TencentCloud
                     bool VpcNameHasBeenSet() const;
 
                     /**
-                     * 获取vpc的cidr，仅能在10.0.0.0/12，172.16.0.0/12，192.168.0.0/16这三个内网网段内。
-                     * @return CidrBlock vpc的cidr，仅能在10.0.0.0/12，172.16.0.0/12，192.168.0.0/16这三个内网网段内。
+                     * 获取<p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>
+                     * @return StackType <p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>
+                     * 
+                     */
+                    std::string GetStackType() const;
+
+                    /**
+                     * 设置<p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>
+                     * @param _stackType <p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>
+                     * 
+                     */
+                    void SetStackType(const std::string& _stackType);
+
+                    /**
+                     * 判断参数 StackType 是否已赋值
+                     * @return StackType 是否已赋值
+                     * 
+                     */
+                    bool StackTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>vpc的cidr，仅能在10.0.0.0/12，172.16.0.0/12，192.168.0.0/16这三个内网网段内。</p>
+                     * @return CidrBlock <p>vpc的cidr，仅能在10.0.0.0/12，172.16.0.0/12，192.168.0.0/16这三个内网网段内。</p>
                      * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
-                     * 设置vpc的cidr，仅能在10.0.0.0/12，172.16.0.0/12，192.168.0.0/16这三个内网网段内。
-                     * @param _cidrBlock vpc的cidr，仅能在10.0.0.0/12，172.16.0.0/12，192.168.0.0/16这三个内网网段内。
+                     * 设置<p>vpc的cidr，仅能在10.0.0.0/12，172.16.0.0/12，192.168.0.0/16这三个内网网段内。</p>
+                     * @param _cidrBlock <p>vpc的cidr，仅能在10.0.0.0/12，172.16.0.0/12，192.168.0.0/16这三个内网网段内。</p>
                      * 
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
@@ -86,15 +107,57 @@ namespace TencentCloud
                     bool CidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取是否开启组播。true: 开启, false: 不开启。
-                     * @return EnableMulticast 是否开启组播。true: 开启, false: 不开启。
+                     * 获取<p><code>VPC</code>的<code>IPv6</code> <code>CIDR</code>。</p>
+                     * @return Ipv6CidrBlock <p><code>VPC</code>的<code>IPv6</code> <code>CIDR</code>。</p>
+                     * 
+                     */
+                    std::string GetIpv6CidrBlock() const;
+
+                    /**
+                     * 设置<p><code>VPC</code>的<code>IPv6</code> <code>CIDR</code>。</p>
+                     * @param _ipv6CidrBlock <p><code>VPC</code>的<code>IPv6</code> <code>CIDR</code>。</p>
+                     * 
+                     */
+                    void SetIpv6CidrBlock(const std::string& _ipv6CidrBlock);
+
+                    /**
+                     * 判断参数 Ipv6CidrBlock 是否已赋值
+                     * @return Ipv6CidrBlock 是否已赋值
+                     * 
+                     */
+                    bool Ipv6CidrBlockHasBeenSet() const;
+
+                    /**
+                     * 获取<p>IPv6网段类型</p><p>枚举值：</p><ul><li>GUA： 全球单播地址</li><li>ULA： 唯一本地地址</li></ul>
+                     * @return AddressType <p>IPv6网段类型</p><p>枚举值：</p><ul><li>GUA： 全球单播地址</li><li>ULA： 唯一本地地址</li></ul>
+                     * 
+                     */
+                    std::string GetAddressType() const;
+
+                    /**
+                     * 设置<p>IPv6网段类型</p><p>枚举值：</p><ul><li>GUA： 全球单播地址</li><li>ULA： 唯一本地地址</li></ul>
+                     * @param _addressType <p>IPv6网段类型</p><p>枚举值：</p><ul><li>GUA： 全球单播地址</li><li>ULA： 唯一本地地址</li></ul>
+                     * 
+                     */
+                    void SetAddressType(const std::string& _addressType);
+
+                    /**
+                     * 判断参数 AddressType 是否已赋值
+                     * @return AddressType 是否已赋值
+                     * 
+                     */
+                    bool AddressTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启组播。true: 开启, false: 不开启。</p>
+                     * @return EnableMulticast <p>是否开启组播。true: 开启, false: 不开启。</p>
                      * 
                      */
                     std::string GetEnableMulticast() const;
 
                     /**
-                     * 设置是否开启组播。true: 开启, false: 不开启。
-                     * @param _enableMulticast 是否开启组播。true: 开启, false: 不开启。
+                     * 设置<p>是否开启组播。true: 开启, false: 不开启。</p>
+                     * @param _enableMulticast <p>是否开启组播。true: 开启, false: 不开启。</p>
                      * 
                      */
                     void SetEnableMulticast(const std::string& _enableMulticast);
@@ -107,15 +170,15 @@ namespace TencentCloud
                     bool EnableMulticastHasBeenSet() const;
 
                     /**
-                     * 获取DNS地址，最多支持4个。
-                     * @return DnsServers DNS地址，最多支持4个。
+                     * 获取<p>DNS地址，最多支持4个。</p>
+                     * @return DnsServers <p>DNS地址，最多支持4个。</p>
                      * 
                      */
                     std::vector<std::string> GetDnsServers() const;
 
                     /**
-                     * 设置DNS地址，最多支持4个。
-                     * @param _dnsServers DNS地址，最多支持4个。
+                     * 设置<p>DNS地址，最多支持4个。</p>
+                     * @param _dnsServers <p>DNS地址，最多支持4个。</p>
                      * 
                      */
                     void SetDnsServers(const std::vector<std::string>& _dnsServers);
@@ -128,15 +191,15 @@ namespace TencentCloud
                     bool DnsServersHasBeenSet() const;
 
                     /**
-                     * 获取DHCP使用的域名。
-                     * @return DomainName DHCP使用的域名。
+                     * 获取<p>DHCP使用的域名。</p>
+                     * @return DomainName <p>DHCP使用的域名。</p>
                      * 
                      */
                     std::string GetDomainName() const;
 
                     /**
-                     * 设置DHCP使用的域名。
-                     * @param _domainName DHCP使用的域名。
+                     * 设置<p>DHCP使用的域名。</p>
+                     * @param _domainName <p>DHCP使用的域名。</p>
                      * 
                      */
                     void SetDomainName(const std::string& _domainName);
@@ -149,15 +212,15 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
-                     * @return Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * 获取<p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]。</p>
+                     * @return Tags <p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]。</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
-                     * @param _tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * 设置<p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]。</p>
+                     * @param _tags <p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]。</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -170,15 +233,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取vpc关联云联网时路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时,请通过工单加入白名单
-                     * @return EnableRouteVpcPublish vpc关联云联网时路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时,请通过工单加入白名单
+                     * 获取<p>vpc关联云联网时路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时,请通过工单加入白名单</p>
+                     * @return EnableRouteVpcPublish <p>vpc关联云联网时路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时,请通过工单加入白名单</p>
                      * 
                      */
                     bool GetEnableRouteVpcPublish() const;
 
                     /**
-                     * 设置vpc关联云联网时路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时,请通过工单加入白名单
-                     * @param _enableRouteVpcPublish vpc关联云联网时路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时,请通过工单加入白名单
+                     * 设置<p>vpc关联云联网时路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时,请通过工单加入白名单</p>
+                     * @param _enableRouteVpcPublish <p>vpc关联云联网时路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时,请通过工单加入白名单</p>
                      * 
                      */
                     void SetEnableRouteVpcPublish(const bool& _enableRouteVpcPublish);
@@ -191,15 +254,15 @@ namespace TencentCloud
                     bool EnableRouteVpcPublishHasBeenSet() const;
 
                     /**
-                     * 获取vpc关联云联网时IPv6类型路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时，请通过工单加入白名单。
-                     * @return EnableRouteVpcPublishIpv6 vpc关联云联网时IPv6类型路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时，请通过工单加入白名单。
+                     * 获取<p>vpc关联云联网时IPv6类型路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时，请通过工单加入白名单。</p>
+                     * @return EnableRouteVpcPublishIpv6 <p>vpc关联云联网时IPv6类型路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时，请通过工单加入白名单。</p>
                      * 
                      */
                     bool GetEnableRouteVpcPublishIpv6() const;
 
                     /**
-                     * 设置vpc关联云联网时IPv6类型路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时，请通过工单加入白名单。
-                     * @param _enableRouteVpcPublishIpv6 vpc关联云联网时IPv6类型路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时，请通过工单加入白名单。
+                     * 设置<p>vpc关联云联网时IPv6类型路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时，请通过工单加入白名单。</p>
+                     * @param _enableRouteVpcPublishIpv6 <p>vpc关联云联网时IPv6类型路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时，请通过工单加入白名单。</p>
                      * 
                      */
                     void SetEnableRouteVpcPublishIpv6(const bool& _enableRouteVpcPublishIpv6);
@@ -214,49 +277,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * vpc名称，最大长度不能超过60个字节。
+                     * <p>vpc名称，最大长度不能超过60个字节。</p>
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;
 
                     /**
-                     * vpc的cidr，仅能在10.0.0.0/12，172.16.0.0/12，192.168.0.0/16这三个内网网段内。
+                     * <p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>
+                     */
+                    std::string m_stackType;
+                    bool m_stackTypeHasBeenSet;
+
+                    /**
+                     * <p>vpc的cidr，仅能在10.0.0.0/12，172.16.0.0/12，192.168.0.0/16这三个内网网段内。</p>
                      */
                     std::string m_cidrBlock;
                     bool m_cidrBlockHasBeenSet;
 
                     /**
-                     * 是否开启组播。true: 开启, false: 不开启。
+                     * <p><code>VPC</code>的<code>IPv6</code> <code>CIDR</code>。</p>
+                     */
+                    std::string m_ipv6CidrBlock;
+                    bool m_ipv6CidrBlockHasBeenSet;
+
+                    /**
+                     * <p>IPv6网段类型</p><p>枚举值：</p><ul><li>GUA： 全球单播地址</li><li>ULA： 唯一本地地址</li></ul>
+                     */
+                    std::string m_addressType;
+                    bool m_addressTypeHasBeenSet;
+
+                    /**
+                     * <p>是否开启组播。true: 开启, false: 不开启。</p>
                      */
                     std::string m_enableMulticast;
                     bool m_enableMulticastHasBeenSet;
 
                     /**
-                     * DNS地址，最多支持4个。
+                     * <p>DNS地址，最多支持4个。</p>
                      */
                     std::vector<std::string> m_dnsServers;
                     bool m_dnsServersHasBeenSet;
 
                     /**
-                     * DHCP使用的域名。
+                     * <p>DHCP使用的域名。</p>
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * <p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]。</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * vpc关联云联网时路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时,请通过工单加入白名单
+                     * <p>vpc关联云联网时路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时,请通过工单加入白名单</p>
                      */
                     bool m_enableRouteVpcPublish;
                     bool m_enableRouteVpcPublishHasBeenSet;
 
                     /**
-                     * vpc关联云联网时IPv6类型路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时，请通过工单加入白名单。
+                     * <p>vpc关联云联网时IPv6类型路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时，请通过工单加入白名单。</p>
                      */
                     bool m_enableRouteVpcPublishIpv6;
                     bool m_enableRouteVpcPublishIpv6HasBeenSet;

@@ -47,36 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取子网的`CIDR`。
-                     * @return CidrBlock 子网的`CIDR`。
-                     * 
-                     */
-                    std::string GetCidrBlock() const;
-
-                    /**
-                     * 设置子网的`CIDR`。
-                     * @param _cidrBlock 子网的`CIDR`。
-                     * 
-                     */
-                    void SetCidrBlock(const std::string& _cidrBlock);
-
-                    /**
-                     * 判断参数 CidrBlock 是否已赋值
-                     * @return CidrBlock 是否已赋值
-                     * 
-                     */
-                    bool CidrBlockHasBeenSet() const;
-
-                    /**
-                     * 获取子网名称。
-                     * @return SubnetName 子网名称。
+                     * 获取<p>子网名称。</p>
+                     * @return SubnetName <p>子网名称。</p>
                      * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
-                     * 设置子网名称。
-                     * @param _subnetName 子网名称。
+                     * 设置<p>子网名称。</p>
+                     * @param _subnetName <p>子网名称。</p>
                      * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
@@ -89,15 +68,15 @@ namespace TencentCloud
                     bool SubnetNameHasBeenSet() const;
 
                     /**
-                     * 获取可用区。形如：`ap-guangzhou-2`。
-                     * @return Zone 可用区。形如：`ap-guangzhou-2`。
+                     * 获取<p>可用区。形如：<code>ap-guangzhou-2</code>。</p>
+                     * @return Zone <p>可用区。形如：<code>ap-guangzhou-2</code>。</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区。形如：`ap-guangzhou-2`。
-                     * @param _zone 可用区。形如：`ap-guangzhou-2`。
+                     * 设置<p>可用区。形如：<code>ap-guangzhou-2</code>。</p>
+                     * @param _zone <p>可用区。形如：<code>ap-guangzhou-2</code>。</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -110,15 +89,78 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取指定关联路由表，形如：`rtb-3ryrwzuu`。
-                     * @return RouteTableId 指定关联路由表，形如：`rtb-3ryrwzuu`。
+                     * 获取<p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>
+                     * @return StackType <p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>
+                     * 
+                     */
+                    std::string GetStackType() const;
+
+                    /**
+                     * 设置<p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>
+                     * @param _stackType <p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>
+                     * 
+                     */
+                    void SetStackType(const std::string& _stackType);
+
+                    /**
+                     * 判断参数 StackType 是否已赋值
+                     * @return StackType 是否已赋值
+                     * 
+                     */
+                    bool StackTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>子网的<code>CIDR</code>。</p>
+                     * @return CidrBlock <p>子网的<code>CIDR</code>。</p>
+                     * 
+                     */
+                    std::string GetCidrBlock() const;
+
+                    /**
+                     * 设置<p>子网的<code>CIDR</code>。</p>
+                     * @param _cidrBlock <p>子网的<code>CIDR</code>。</p>
+                     * 
+                     */
+                    void SetCidrBlock(const std::string& _cidrBlock);
+
+                    /**
+                     * 判断参数 CidrBlock 是否已赋值
+                     * @return CidrBlock 是否已赋值
+                     * 
+                     */
+                    bool CidrBlockHasBeenSet() const;
+
+                    /**
+                     * 获取<p>子网的 <code>IPv6</code> <code>CIDR</code>。</p>
+                     * @return Ipv6CidrBlock <p>子网的 <code>IPv6</code> <code>CIDR</code>。</p>
+                     * 
+                     */
+                    std::string GetIpv6CidrBlock() const;
+
+                    /**
+                     * 设置<p>子网的 <code>IPv6</code> <code>CIDR</code>。</p>
+                     * @param _ipv6CidrBlock <p>子网的 <code>IPv6</code> <code>CIDR</code>。</p>
+                     * 
+                     */
+                    void SetIpv6CidrBlock(const std::string& _ipv6CidrBlock);
+
+                    /**
+                     * 判断参数 Ipv6CidrBlock 是否已赋值
+                     * @return Ipv6CidrBlock 是否已赋值
+                     * 
+                     */
+                    bool Ipv6CidrBlockHasBeenSet() const;
+
+                    /**
+                     * 获取<p>指定关联路由表，形如：<code>rtb-3ryrwzuu</code>。</p>
+                     * @return RouteTableId <p>指定关联路由表，形如：<code>rtb-3ryrwzuu</code>。</p>
                      * 
                      */
                     std::string GetRouteTableId() const;
 
                     /**
-                     * 设置指定关联路由表，形如：`rtb-3ryrwzuu`。
-                     * @param _routeTableId 指定关联路由表，形如：`rtb-3ryrwzuu`。
+                     * 设置<p>指定关联路由表，形如：<code>rtb-3ryrwzuu</code>。</p>
+                     * @param _routeTableId <p>指定关联路由表，形如：<code>rtb-3ryrwzuu</code>。</p>
                      * 
                      */
                     void SetRouteTableId(const std::string& _routeTableId);
@@ -133,25 +175,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 子网的`CIDR`。
-                     */
-                    std::string m_cidrBlock;
-                    bool m_cidrBlockHasBeenSet;
-
-                    /**
-                     * 子网名称。
+                     * <p>子网名称。</p>
                      */
                     std::string m_subnetName;
                     bool m_subnetNameHasBeenSet;
 
                     /**
-                     * 可用区。形如：`ap-guangzhou-2`。
+                     * <p>可用区。形如：<code>ap-guangzhou-2</code>。</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 指定关联路由表，形如：`rtb-3ryrwzuu`。
+                     * <p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>
+                     */
+                    std::string m_stackType;
+                    bool m_stackTypeHasBeenSet;
+
+                    /**
+                     * <p>子网的<code>CIDR</code>。</p>
+                     */
+                    std::string m_cidrBlock;
+                    bool m_cidrBlockHasBeenSet;
+
+                    /**
+                     * <p>子网的 <code>IPv6</code> <code>CIDR</code>。</p>
+                     */
+                    std::string m_ipv6CidrBlock;
+                    bool m_ipv6CidrBlockHasBeenSet;
+
+                    /**
+                     * <p>指定关联路由表，形如：<code>rtb-3ryrwzuu</code>。</p>
                      */
                     std::string m_routeTableId;
                     bool m_routeTableIdHasBeenSet;

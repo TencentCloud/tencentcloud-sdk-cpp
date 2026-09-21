@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则白名单ID列表
-                     * @return Ids 规则白名单ID列表
+                     * 获取规则白名单ID列表，可通过 [DescribeOwaspWhiteRule](https://cloud.tencent.com/document/product/627/122155) 接口获取
+                     * @return Ids 规则白名单ID列表，可通过 [DescribeOwaspWhiteRule](https://cloud.tencent.com/document/product/627/122155) 接口获取
                      * 
                      */
                     std::vector<uint64_t> GetIds() const;
 
                     /**
-                     * 设置规则白名单ID列表
-                     * @param _ids 规则白名单ID列表
+                     * 设置规则白名单ID列表，可通过 [DescribeOwaspWhiteRule](https://cloud.tencent.com/document/product/627/122155) 接口获取
+                     * @param _ids 规则白名单ID列表，可通过 [DescribeOwaspWhiteRule](https://cloud.tencent.com/document/product/627/122155) 接口获取
                      * 
                      */
                     void SetIds(const std::vector<uint64_t>& _ids);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规则白名单ID列表
+                     * 规则白名单ID列表，可通过 [DescribeOwaspWhiteRule](https://cloud.tencent.com/document/product/627/122155) 接口获取
                      */
                     std::vector<uint64_t> m_ids;
                     bool m_idsHasBeenSet;

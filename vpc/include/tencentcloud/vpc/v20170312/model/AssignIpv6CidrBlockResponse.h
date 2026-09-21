@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分配的 `IPv6` 网段。形如：`3402:4e00:20:1000::/56`。
-                     * @return Ipv6CidrBlock 分配的 `IPv6` 网段。形如：`3402:4e00:20:1000::/56`。
+                     * 获取<p>分配的 <code>IPv6</code> 网段。形如：<code>3402:4e00:20:1000::/56</code>。</p>
+                     * @return Ipv6CidrBlock <p>分配的 <code>IPv6</code> 网段。形如：<code>3402:4e00:20:1000::/56</code>。</p>
                      * 
                      */
                     std::string GetIpv6CidrBlock() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool Ipv6CidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取申请IPv6 Cidr 的类型，`GUA`,  `ULA`
-                     * @return AddressType 申请IPv6 Cidr 的类型，`GUA`,  `ULA`
+                     * 获取<p>申请IPv6 Cidr 的类型，<code>GUA</code>,  <code>ULA</code></p>
+                     * @return AddressType <p>申请IPv6 Cidr 的类型，<code>GUA</code>,  <code>ULA</code></p>
                      * 
                      */
                     std::string GetAddressType() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分配的 `IPv6` 网段。形如：`3402:4e00:20:1000::/56`。
+                     * <p>分配的 <code>IPv6</code> 网段。形如：<code>3402:4e00:20:1000::/56</code>。</p>
                      */
                     std::string m_ipv6CidrBlock;
                     bool m_ipv6CidrBlockHasBeenSet;
 
                     /**
-                     * 申请IPv6 Cidr 的类型，`GUA`,  `ULA`
+                     * <p>申请IPv6 Cidr 的类型，<code>GUA</code>,  <code>ULA</code></p>
                      */
                     std::string m_addressType;
                     bool m_addressTypeHasBeenSet;

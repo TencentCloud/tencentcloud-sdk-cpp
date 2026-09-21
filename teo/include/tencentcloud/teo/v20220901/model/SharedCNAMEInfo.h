@@ -49,23 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取共享CNAME类型：取值范围如下：
-<li>custom：由用户创建的自定义共享CNAME</li>
-<li>ip-ssl：IP SSL类型的共享CNAME</li>
-                     * @return Type 共享CNAME类型：取值范围如下：
-<li>custom：由用户创建的自定义共享CNAME</li>
-<li>ip-ssl：IP SSL类型的共享CNAME</li>
+                     * 获取<p>共享CNAME类型：取值范围如下：</p><li>custom：由用户创建的自定义共享CNAME</li><li>ip-ssl：IP SSL类型的共享CNAME</li><li>zero-rating：免流类型的共享CNAME</li><li>preset：预置资源类型的共享CNAME</li>
+                     * @return Type <p>共享CNAME类型：取值范围如下：</p><li>custom：由用户创建的自定义共享CNAME</li><li>ip-ssl：IP SSL类型的共享CNAME</li><li>zero-rating：免流类型的共享CNAME</li><li>preset：预置资源类型的共享CNAME</li>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置共享CNAME类型：取值范围如下：
-<li>custom：由用户创建的自定义共享CNAME</li>
-<li>ip-ssl：IP SSL类型的共享CNAME</li>
-                     * @param _type 共享CNAME类型：取值范围如下：
-<li>custom：由用户创建的自定义共享CNAME</li>
-<li>ip-ssl：IP SSL类型的共享CNAME</li>
+                     * 设置<p>共享CNAME类型：取值范围如下：</p><li>custom：由用户创建的自定义共享CNAME</li><li>ip-ssl：IP SSL类型的共享CNAME</li><li>zero-rating：免流类型的共享CNAME</li><li>preset：预置资源类型的共享CNAME</li>
+                     * @param _type <p>共享CNAME类型：取值范围如下：</p><li>custom：由用户创建的自定义共享CNAME</li><li>ip-ssl：IP SSL类型的共享CNAME</li><li>zero-rating：免流类型的共享CNAME</li><li>preset：预置资源类型的共享CNAME</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -78,15 +70,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取共享CNAME名称。
-                     * @return SharedCNAME 共享CNAME名称。
+                     * 获取<p>共享CNAME名称。</p>
+                     * @return SharedCNAME <p>共享CNAME名称。</p>
                      * 
                      */
                     std::string GetSharedCNAME() const;
 
                     /**
-                     * 设置共享CNAME名称。
-                     * @param _sharedCNAME 共享CNAME名称。
+                     * 设置<p>共享CNAME名称。</p>
+                     * @param _sharedCNAME <p>共享CNAME名称。</p>
                      * 
                      */
                     void SetSharedCNAME(const std::string& _sharedCNAME);
@@ -99,15 +91,15 @@ namespace TencentCloud
                     bool SharedCNAMEHasBeenSet() const;
 
                     /**
-                     * 获取描述。
-                     * @return Description 描述。
+                     * 获取<p>描述。</p>
+                     * @return Description <p>描述。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述。
-                     * @param _description 描述。
+                     * 设置<p>描述。</p>
+                     * @param _description <p>描述。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -120,15 +112,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取当type为ip-ssl时，展示该共享CNAME关联的 IP SSL 配置信息。
-                     * @return IPSSLConfig 当type为ip-ssl时，展示该共享CNAME关联的 IP SSL 配置信息。
+                     * 获取<p>当type为ip-ssl时，展示该共享CNAME关联的 IP SSL 配置信息。</p>
+                     * @return IPSSLConfig <p>当type为ip-ssl时，展示该共享CNAME关联的 IP SSL 配置信息。</p>
                      * 
                      */
                     IPSSLConfig GetIPSSLConfig() const;
 
                     /**
-                     * 设置当type为ip-ssl时，展示该共享CNAME关联的 IP SSL 配置信息。
-                     * @param _iPSSLConfig 当type为ip-ssl时，展示该共享CNAME关联的 IP SSL 配置信息。
+                     * 设置<p>当type为ip-ssl时，展示该共享CNAME关联的 IP SSL 配置信息。</p>
+                     * @param _iPSSLConfig <p>当type为ip-ssl时，展示该共享CNAME关联的 IP SSL 配置信息。</p>
                      * 
                      */
                     void SetIPSSLConfig(const IPSSLConfig& _iPSSLConfig);
@@ -141,15 +133,15 @@ namespace TencentCloud
                     bool IPSSLConfigHasBeenSet() const;
 
                     /**
-                     * 获取共享CNAME绑定的加速域名数量。
-                     * @return BindDomainCount 共享CNAME绑定的加速域名数量。
+                     * 获取<p>共享CNAME绑定的加速域名数量。</p>
+                     * @return BindDomainCount <p>共享CNAME绑定的加速域名数量。</p>
                      * 
                      */
                     int64_t GetBindDomainCount() const;
 
                     /**
-                     * 设置共享CNAME绑定的加速域名数量。
-                     * @param _bindDomainCount 共享CNAME绑定的加速域名数量。
+                     * 设置<p>共享CNAME绑定的加速域名数量。</p>
+                     * @param _bindDomainCount <p>共享CNAME绑定的加速域名数量。</p>
                      * 
                      */
                     void SetBindDomainCount(const int64_t& _bindDomainCount);
@@ -162,15 +154,15 @@ namespace TencentCloud
                     bool BindDomainCountHasBeenSet() const;
 
                     /**
-                     * 获取加入该共享CNAME的加速域名列表。当加入的域名数量超过100个时，只返回前100个加速域名。
-                     * @return AccelerationDomains 加入该共享CNAME的加速域名列表。当加入的域名数量超过100个时，只返回前100个加速域名。
+                     * 获取<p>加入该共享CNAME的加速域名列表。当加入的域名数量超过100个时，只返回前100个加速域名。</p>
+                     * @return AccelerationDomains <p>加入该共享CNAME的加速域名列表。当加入的域名数量超过100个时，只返回前100个加速域名。</p>
                      * 
                      */
                     std::vector<ReferenceHolder> GetAccelerationDomains() const;
 
                     /**
-                     * 设置加入该共享CNAME的加速域名列表。当加入的域名数量超过100个时，只返回前100个加速域名。
-                     * @param _accelerationDomains 加入该共享CNAME的加速域名列表。当加入的域名数量超过100个时，只返回前100个加速域名。
+                     * 设置<p>加入该共享CNAME的加速域名列表。当加入的域名数量超过100个时，只返回前100个加速域名。</p>
+                     * @param _accelerationDomains <p>加入该共享CNAME的加速域名列表。当加入的域名数量超过100个时，只返回前100个加速域名。</p>
                      * 
                      */
                     void SetAccelerationDomains(const std::vector<ReferenceHolder>& _accelerationDomains);
@@ -185,39 +177,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 共享CNAME类型：取值范围如下：
-<li>custom：由用户创建的自定义共享CNAME</li>
-<li>ip-ssl：IP SSL类型的共享CNAME</li>
+                     * <p>共享CNAME类型：取值范围如下：</p><li>custom：由用户创建的自定义共享CNAME</li><li>ip-ssl：IP SSL类型的共享CNAME</li><li>zero-rating：免流类型的共享CNAME</li><li>preset：预置资源类型的共享CNAME</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 共享CNAME名称。
+                     * <p>共享CNAME名称。</p>
                      */
                     std::string m_sharedCNAME;
                     bool m_sharedCNAMEHasBeenSet;
 
                     /**
-                     * 描述。
+                     * <p>描述。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 当type为ip-ssl时，展示该共享CNAME关联的 IP SSL 配置信息。
+                     * <p>当type为ip-ssl时，展示该共享CNAME关联的 IP SSL 配置信息。</p>
                      */
                     IPSSLConfig m_iPSSLConfig;
                     bool m_iPSSLConfigHasBeenSet;
 
                     /**
-                     * 共享CNAME绑定的加速域名数量。
+                     * <p>共享CNAME绑定的加速域名数量。</p>
                      */
                     int64_t m_bindDomainCount;
                     bool m_bindDomainCountHasBeenSet;
 
                     /**
-                     * 加入该共享CNAME的加速域名列表。当加入的域名数量超过100个时，只返回前100个加速域名。
+                     * <p>加入该共享CNAME的加速域名列表。当加入的域名数量超过100个时，只返回前100个加速域名。</p>
                      */
                     std::vector<ReferenceHolder> m_accelerationDomains;
                     bool m_accelerationDomainsHasBeenSet;

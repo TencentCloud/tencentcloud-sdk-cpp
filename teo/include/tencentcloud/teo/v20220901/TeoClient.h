@@ -341,6 +341,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeWebSecurityTemplatesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeZoneConfigImportResultRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeZoneConfigImportResultResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeZoneCustomVariablesRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeZoneCustomVariablesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeZoneSettingRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeZoneSettingResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeZonesRequest.h>
@@ -471,6 +473,8 @@
 #include <tencentcloud/teo/v20220901/model/ModifyWebSecurityTemplateResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyZoneRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyZoneResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyZoneCustomVariablesRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyZoneCustomVariablesResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyZoneSettingRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyZoneSettingResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyZoneStatusRequest.h>
@@ -978,6 +982,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeZoneConfigImportResultResponse> DescribeZoneConfigImportResultOutcome;
                 typedef std::future<DescribeZoneConfigImportResultOutcome> DescribeZoneConfigImportResultOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeZoneConfigImportResultRequest&, DescribeZoneConfigImportResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZoneConfigImportResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeZoneCustomVariablesResponse> DescribeZoneCustomVariablesOutcome;
+                typedef std::future<DescribeZoneCustomVariablesOutcome> DescribeZoneCustomVariablesOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeZoneCustomVariablesRequest&, DescribeZoneCustomVariablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZoneCustomVariablesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeZoneSettingResponse> DescribeZoneSettingOutcome;
                 typedef std::future<DescribeZoneSettingOutcome> DescribeZoneSettingOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeZoneSettingRequest&, DescribeZoneSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZoneSettingAsyncHandler;
@@ -1173,6 +1180,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyZoneResponse> ModifyZoneOutcome;
                 typedef std::future<ModifyZoneOutcome> ModifyZoneOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyZoneRequest&, ModifyZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyZoneAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyZoneCustomVariablesResponse> ModifyZoneCustomVariablesOutcome;
+                typedef std::future<ModifyZoneCustomVariablesOutcome> ModifyZoneCustomVariablesOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyZoneCustomVariablesRequest&, ModifyZoneCustomVariablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyZoneCustomVariablesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyZoneSettingResponse> ModifyZoneSettingOutcome;
                 typedef std::future<ModifyZoneSettingOutcome> ModifyZoneSettingOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyZoneSettingRequest&, ModifyZoneSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyZoneSettingAsyncHandler;
@@ -2701,6 +2711,17 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeZoneConfigImportResultOutcomeCallable DescribeZoneConfigImportResultCallable(const Model::DescribeZoneConfigImportResultRequest& request);
 
                 /**
+                 *本接口用于查询站点级自定义变量配置，包括变量定义和变量运算。未配置时，变量定义和变量运算均返回空列表。
+
+如需查询规则级自定义变量，请调用 DescribeL7AccRules 接口。
+                 * @param req DescribeZoneCustomVariablesRequest
+                 * @return DescribeZoneCustomVariablesOutcome
+                 */
+                DescribeZoneCustomVariablesOutcome DescribeZoneCustomVariables(const Model::DescribeZoneCustomVariablesRequest &request);
+                void DescribeZoneCustomVariablesAsync(const Model::DescribeZoneCustomVariablesRequest& request, const DescribeZoneCustomVariablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeZoneCustomVariablesOutcomeCallable DescribeZoneCustomVariablesCallable(const Model::DescribeZoneCustomVariablesRequest& request);
+
+                /**
                  *本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [DescribeL7AccSetting](https://cloud.tencent.com/document/product/1552/115819)。
                  * @param req DescribeZoneSettingRequest
                  * @return DescribeZoneSettingOutcome
@@ -3308,6 +3329,17 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 ModifyZoneOutcome ModifyZone(const Model::ModifyZoneRequest &request);
                 void ModifyZoneAsync(const Model::ModifyZoneRequest& request, const ModifyZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyZoneOutcomeCallable ModifyZoneCallable(const Model::ModifyZoneRequest& request);
+
+                /**
+                 *本接口用于管理站点级自定义变量，支持创建、修改和删除变量定义及变量运算。提交的列表将覆盖对应的现有配置；如需清空配置，请传入空列表。未传入的配置项保持不变。变量定义和变量运算的默认值均为空。
+
+规则级自定义变量相关操作，请调用 CreateL7AccRules 或 ModifyL7AccRule 接口。
+                 * @param req ModifyZoneCustomVariablesRequest
+                 * @return ModifyZoneCustomVariablesOutcome
+                 */
+                ModifyZoneCustomVariablesOutcome ModifyZoneCustomVariables(const Model::ModifyZoneCustomVariablesRequest &request);
+                void ModifyZoneCustomVariablesAsync(const Model::ModifyZoneCustomVariablesRequest& request, const ModifyZoneCustomVariablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyZoneCustomVariablesOutcomeCallable ModifyZoneCustomVariablesCallable(const Model::ModifyZoneCustomVariablesRequest& request);
 
                 /**
                  *本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [ModifyL7AccSetting](https://cloud.tencent.com/document/product/1552/115817)。

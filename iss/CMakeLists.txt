@@ -72,6 +72,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/AddRecordPlanResponse.h
   include/tencentcloud/iss/v20230517/model/ListOrganizationChannelNumbersRequest.h
   include/tencentcloud/iss/v20230517/model/ListVideoDownloadTaskResponse.h
+  include/tencentcloud/iss/v20230517/model/SipCarrierEndpoints.h
   include/tencentcloud/iss/v20230517/model/DeleteDomainRequest.h
   include/tencentcloud/iss/v20230517/model/ListRecordRetrieveTasksRequest.h
   include/tencentcloud/iss/v20230517/model/DeleteRecordPlanRequest.h
@@ -297,6 +298,7 @@ set(iss_src
   src/v20230517/model/AddRecordPlanResponse.cpp
   src/v20230517/model/ListOrganizationChannelNumbersRequest.cpp
   src/v20230517/model/ListVideoDownloadTaskResponse.cpp
+  src/v20230517/model/SipCarrierEndpoints.cpp
   src/v20230517/model/DeleteDomainRequest.cpp
   src/v20230517/model/ListRecordRetrieveTasksRequest.cpp
   src/v20230517/model/DeleteRecordPlanRequest.cpp

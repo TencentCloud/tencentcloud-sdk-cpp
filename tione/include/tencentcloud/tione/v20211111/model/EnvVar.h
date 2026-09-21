@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境变量key
+                     * 获取<p>环境变量key</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 环境变量key
+                     * @return Name <p>环境变量key</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置环境变量key
+                     * 设置<p>环境变量key</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 环境变量key
+                     * @param _name <p>环境变量key</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取环境变量value
+                     * 获取<p>环境变量value</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Value 环境变量value
+                     * @return Value <p>环境变量value</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置环境变量value
+                     * 设置<p>环境变量value</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _value 环境变量value
+                     * @param _value <p>环境变量value</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,14 +99,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 环境变量key
+                     * <p>环境变量key</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 环境变量value
+                     * <p>环境变量value</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;

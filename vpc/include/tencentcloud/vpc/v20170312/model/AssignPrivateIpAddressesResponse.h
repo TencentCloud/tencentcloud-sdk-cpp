@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取内网IP详细信息。
-                     * @return PrivateIpAddressSet 内网IP详细信息。
+                     * 获取<p>内网IP详细信息。</p>
+                     * @return PrivateIpAddressSet <p>内网IP详细信息。</p>
                      * 
                      */
                     std::vector<PrivateIpAddressSpecification> GetPrivateIpAddressSet() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 内网IP详细信息。
+                     * <p>内网IP详细信息。</p>
                      */
                     std::vector<PrivateIpAddressSpecification> m_privateIpAddressSet;
                     bool m_privateIpAddressSetHasBeenSet;

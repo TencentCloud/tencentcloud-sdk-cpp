@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取1-访问日志，2-攻击日志，默认为访问日志。
-                     * @return LogType 1-访问日志，2-攻击日志，默认为访问日志。
+                     * 获取<p>1-访问日志，2-攻击日志，默认为访问日志。</p>
+                     * @return LogType <p>1-访问日志，2-攻击日志，默认为访问日志。</p>
                      * 
                      */
                     int64_t GetLogType() const;
 
                     /**
-                     * 设置1-访问日志，2-攻击日志，默认为访问日志。
-                     * @param _logType 1-访问日志，2-攻击日志，默认为访问日志。
+                     * 设置<p>1-访问日志，2-攻击日志，默认为访问日志。</p>
+                     * @param _logType <p>1-访问日志，2-攻击日志，默认为访问日志。</p>
                      * 
                      */
                     void SetLogType(const int64_t& _logType);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 1-访问日志，2-攻击日志，默认为访问日志。
+                     * <p>1-访问日志，2-攻击日志，默认为访问日志。</p>
                      */
                     int64_t m_logType;
                     bool m_logTypeHasBeenSet;

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dlc/v20210125/model/StreamingStatistics.h>
+#include <tencentcloud/dlc/v20210125/model/DependencyPackage.h>
 
 
 namespace TencentCloud
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取spark作业ID
-                     * @return JobId spark作业ID
+                     * 获取<p>spark作业ID</p>
+                     * @return JobId <p>spark作业ID</p>
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置spark作业ID
-                     * @param _jobId spark作业ID
+                     * 设置<p>spark作业ID</p>
+                     * @param _jobId <p>spark作业ID</p>
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -69,15 +70,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取spark作业名
-                     * @return JobName spark作业名
+                     * 获取<p>spark作业名</p>
+                     * @return JobName <p>spark作业名</p>
                      * 
                      */
                     std::string GetJobName() const;
 
                     /**
-                     * 设置spark作业名
-                     * @param _jobName spark作业名
+                     * 设置<p>spark作业名</p>
+                     * @param _jobName <p>spark作业名</p>
                      * 
                      */
                     void SetJobName(const std::string& _jobName);
@@ -90,15 +91,15 @@ namespace TencentCloud
                     bool JobNameHasBeenSet() const;
 
                     /**
-                     * 获取spark作业类型，可去1或者2，1表示batch作业， 2表示streaming作业
-                     * @return JobType spark作业类型，可去1或者2，1表示batch作业， 2表示streaming作业
+                     * 获取<p>spark作业类型，可去1或者2，1表示batch作业， 2表示streaming作业</p>
+                     * @return JobType <p>spark作业类型，可去1或者2，1表示batch作业， 2表示streaming作业</p>
                      * 
                      */
                     int64_t GetJobType() const;
 
                     /**
-                     * 设置spark作业类型，可去1或者2，1表示batch作业， 2表示streaming作业
-                     * @param _jobType spark作业类型，可去1或者2，1表示batch作业， 2表示streaming作业
+                     * 设置<p>spark作业类型，可去1或者2，1表示batch作业， 2表示streaming作业</p>
+                     * @param _jobType <p>spark作业类型，可去1或者2，1表示batch作业， 2表示streaming作业</p>
                      * 
                      */
                     void SetJobType(const int64_t& _jobType);
@@ -111,15 +112,15 @@ namespace TencentCloud
                     bool JobTypeHasBeenSet() const;
 
                     /**
-                     * 获取引擎名
-                     * @return DataEngine 引擎名
+                     * 获取<p>引擎名</p>
+                     * @return DataEngine <p>引擎名</p>
                      * 
                      */
                     std::string GetDataEngine() const;
 
                     /**
-                     * 设置引擎名
-                     * @param _dataEngine 引擎名
+                     * 设置<p>引擎名</p>
+                     * @param _dataEngine <p>引擎名</p>
                      * 
                      */
                     void SetDataEngine(const std::string& _dataEngine);
@@ -132,15 +133,15 @@ namespace TencentCloud
                     bool DataEngineHasBeenSet() const;
 
                     /**
-                     * 获取该字段已下线，请使用字段Datasource
-                     * @return Eni 该字段已下线，请使用字段Datasource
+                     * 获取<p>该字段已下线，请使用字段Datasource</p>
+                     * @return Eni <p>该字段已下线，请使用字段Datasource</p>
                      * 
                      */
                     std::string GetEni() const;
 
                     /**
-                     * 设置该字段已下线，请使用字段Datasource
-                     * @param _eni 该字段已下线，请使用字段Datasource
+                     * 设置<p>该字段已下线，请使用字段Datasource</p>
+                     * @param _eni <p>该字段已下线，请使用字段Datasource</p>
                      * 
                      */
                     void SetEni(const std::string& _eni);
@@ -153,15 +154,15 @@ namespace TencentCloud
                     bool EniHasBeenSet() const;
 
                     /**
-                     * 获取程序包是否本地上传，cos或者lakefs
-                     * @return IsLocal 程序包是否本地上传，cos或者lakefs
+                     * 获取<p>程序包是否本地上传，cos或者lakefs</p>
+                     * @return IsLocal <p>程序包是否本地上传，cos或者lakefs</p>
                      * 
                      */
                     std::string GetIsLocal() const;
 
                     /**
-                     * 设置程序包是否本地上传，cos或者lakefs
-                     * @param _isLocal 程序包是否本地上传，cos或者lakefs
+                     * 设置<p>程序包是否本地上传，cos或者lakefs</p>
+                     * @param _isLocal <p>程序包是否本地上传，cos或者lakefs</p>
                      * 
                      */
                     void SetIsLocal(const std::string& _isLocal);
@@ -174,15 +175,15 @@ namespace TencentCloud
                     bool IsLocalHasBeenSet() const;
 
                     /**
-                     * 获取程序包路径
-                     * @return JobFile 程序包路径
+                     * 获取<p>程序包路径</p>
+                     * @return JobFile <p>程序包路径</p>
                      * 
                      */
                     std::string GetJobFile() const;
 
                     /**
-                     * 设置程序包路径
-                     * @param _jobFile 程序包路径
+                     * 设置<p>程序包路径</p>
+                     * @param _jobFile <p>程序包路径</p>
                      * 
                      */
                     void SetJobFile(const std::string& _jobFile);
@@ -195,15 +196,15 @@ namespace TencentCloud
                     bool JobFileHasBeenSet() const;
 
                     /**
-                     * 获取角色ID
-                     * @return RoleArn 角色ID
+                     * 获取<p>角色ID</p>
+                     * @return RoleArn <p>角色ID</p>
                      * 
                      */
                     int64_t GetRoleArn() const;
 
                     /**
-                     * 设置角色ID
-                     * @param _roleArn 角色ID
+                     * 设置<p>角色ID</p>
+                     * @param _roleArn <p>角色ID</p>
                      * 
                      */
                     void SetRoleArn(const int64_t& _roleArn);
@@ -216,15 +217,15 @@ namespace TencentCloud
                     bool RoleArnHasBeenSet() const;
 
                     /**
-                     * 获取spark作业运行主类
-                     * @return MainClass spark作业运行主类
+                     * 获取<p>spark作业运行主类</p>
+                     * @return MainClass <p>spark作业运行主类</p>
                      * 
                      */
                     std::string GetMainClass() const;
 
                     /**
-                     * 设置spark作业运行主类
-                     * @param _mainClass spark作业运行主类
+                     * 设置<p>spark作业运行主类</p>
+                     * @param _mainClass <p>spark作业运行主类</p>
                      * 
                      */
                     void SetMainClass(const std::string& _mainClass);
@@ -237,15 +238,15 @@ namespace TencentCloud
                     bool MainClassHasBeenSet() const;
 
                     /**
-                     * 获取命令行参数，spark作业命令行参数，空格分隔
-                     * @return CmdArgs 命令行参数，spark作业命令行参数，空格分隔
+                     * 获取<p>命令行参数，spark作业命令行参数，空格分隔</p>
+                     * @return CmdArgs <p>命令行参数，spark作业命令行参数，空格分隔</p>
                      * 
                      */
                     std::string GetCmdArgs() const;
 
                     /**
-                     * 设置命令行参数，spark作业命令行参数，空格分隔
-                     * @param _cmdArgs 命令行参数，spark作业命令行参数，空格分隔
+                     * 设置<p>命令行参数，spark作业命令行参数，空格分隔</p>
+                     * @param _cmdArgs <p>命令行参数，spark作业命令行参数，空格分隔</p>
                      * 
                      */
                     void SetCmdArgs(const std::string& _cmdArgs);
@@ -258,15 +259,15 @@ namespace TencentCloud
                     bool CmdArgsHasBeenSet() const;
 
                     /**
-                     * 获取spark原生配置，换行符分隔
-                     * @return JobConf spark原生配置，换行符分隔
+                     * 获取<p>spark原生配置，换行符分隔</p>
+                     * @return JobConf <p>spark原生配置，换行符分隔</p>
                      * 
                      */
                     std::string GetJobConf() const;
 
                     /**
-                     * 设置spark原生配置，换行符分隔
-                     * @param _jobConf spark原生配置，换行符分隔
+                     * 设置<p>spark原生配置，换行符分隔</p>
+                     * @param _jobConf <p>spark原生配置，换行符分隔</p>
                      * 
                      */
                     void SetJobConf(const std::string& _jobConf);
@@ -279,15 +280,15 @@ namespace TencentCloud
                     bool JobConfHasBeenSet() const;
 
                     /**
-                     * 获取依赖jars是否本地上传，cos或者lakefs
-                     * @return IsLocalJars 依赖jars是否本地上传，cos或者lakefs
+                     * 获取<p>依赖jars是否本地上传，cos或者lakefs</p>
+                     * @return IsLocalJars <p>依赖jars是否本地上传，cos或者lakefs</p>
                      * 
                      */
                     std::string GetIsLocalJars() const;
 
                     /**
-                     * 设置依赖jars是否本地上传，cos或者lakefs
-                     * @param _isLocalJars 依赖jars是否本地上传，cos或者lakefs
+                     * 设置<p>依赖jars是否本地上传，cos或者lakefs</p>
+                     * @param _isLocalJars <p>依赖jars是否本地上传，cos或者lakefs</p>
                      * 
                      */
                     void SetIsLocalJars(const std::string& _isLocalJars);
@@ -300,15 +301,15 @@ namespace TencentCloud
                     bool IsLocalJarsHasBeenSet() const;
 
                     /**
-                     * 获取spark作业依赖jars，逗号分隔
-                     * @return JobJars spark作业依赖jars，逗号分隔
+                     * 获取<p>spark作业依赖jars，逗号分隔</p>
+                     * @return JobJars <p>spark作业依赖jars，逗号分隔</p>
                      * 
                      */
                     std::string GetJobJars() const;
 
                     /**
-                     * 设置spark作业依赖jars，逗号分隔
-                     * @param _jobJars spark作业依赖jars，逗号分隔
+                     * 设置<p>spark作业依赖jars，逗号分隔</p>
+                     * @param _jobJars <p>spark作业依赖jars，逗号分隔</p>
                      * 
                      */
                     void SetJobJars(const std::string& _jobJars);
@@ -321,15 +322,15 @@ namespace TencentCloud
                     bool JobJarsHasBeenSet() const;
 
                     /**
-                     * 获取依赖文件是否本地上传，cos或者lakefs
-                     * @return IsLocalFiles 依赖文件是否本地上传，cos或者lakefs
+                     * 获取<p>依赖文件是否本地上传，cos或者lakefs</p>
+                     * @return IsLocalFiles <p>依赖文件是否本地上传，cos或者lakefs</p>
                      * 
                      */
                     std::string GetIsLocalFiles() const;
 
                     /**
-                     * 设置依赖文件是否本地上传，cos或者lakefs
-                     * @param _isLocalFiles 依赖文件是否本地上传，cos或者lakefs
+                     * 设置<p>依赖文件是否本地上传，cos或者lakefs</p>
+                     * @param _isLocalFiles <p>依赖文件是否本地上传，cos或者lakefs</p>
                      * 
                      */
                     void SetIsLocalFiles(const std::string& _isLocalFiles);
@@ -342,15 +343,15 @@ namespace TencentCloud
                     bool IsLocalFilesHasBeenSet() const;
 
                     /**
-                     * 获取spark作业依赖文件，逗号分隔
-                     * @return JobFiles spark作业依赖文件，逗号分隔
+                     * 获取<p>spark作业依赖文件，逗号分隔</p>
+                     * @return JobFiles <p>spark作业依赖文件，逗号分隔</p>
                      * 
                      */
                     std::string GetJobFiles() const;
 
                     /**
-                     * 设置spark作业依赖文件，逗号分隔
-                     * @param _jobFiles spark作业依赖文件，逗号分隔
+                     * 设置<p>spark作业依赖文件，逗号分隔</p>
+                     * @param _jobFiles <p>spark作业依赖文件，逗号分隔</p>
                      * 
                      */
                     void SetJobFiles(const std::string& _jobFiles);
@@ -363,15 +364,15 @@ namespace TencentCloud
                     bool JobFilesHasBeenSet() const;
 
                     /**
-                     * 获取spark作业driver资源大小
-                     * @return JobDriverSize spark作业driver资源大小
+                     * 获取<p>spark作业driver资源大小</p>
+                     * @return JobDriverSize <p>spark作业driver资源大小</p>
                      * 
                      */
                     std::string GetJobDriverSize() const;
 
                     /**
-                     * 设置spark作业driver资源大小
-                     * @param _jobDriverSize spark作业driver资源大小
+                     * 设置<p>spark作业driver资源大小</p>
+                     * @param _jobDriverSize <p>spark作业driver资源大小</p>
                      * 
                      */
                     void SetJobDriverSize(const std::string& _jobDriverSize);
@@ -384,15 +385,15 @@ namespace TencentCloud
                     bool JobDriverSizeHasBeenSet() const;
 
                     /**
-                     * 获取spark作业executor资源大小
-                     * @return JobExecutorSize spark作业executor资源大小
+                     * 获取<p>spark作业executor资源大小</p>
+                     * @return JobExecutorSize <p>spark作业executor资源大小</p>
                      * 
                      */
                     std::string GetJobExecutorSize() const;
 
                     /**
-                     * 设置spark作业executor资源大小
-                     * @param _jobExecutorSize spark作业executor资源大小
+                     * 设置<p>spark作业executor资源大小</p>
+                     * @param _jobExecutorSize <p>spark作业executor资源大小</p>
                      * 
                      */
                     void SetJobExecutorSize(const std::string& _jobExecutorSize);
@@ -405,15 +406,15 @@ namespace TencentCloud
                     bool JobExecutorSizeHasBeenSet() const;
 
                     /**
-                     * 获取spark作业executor个数
-                     * @return JobExecutorNums spark作业executor个数
+                     * 获取<p>spark作业executor个数</p>
+                     * @return JobExecutorNums <p>spark作业executor个数</p>
                      * 
                      */
                     int64_t GetJobExecutorNums() const;
 
                     /**
-                     * 设置spark作业executor个数
-                     * @param _jobExecutorNums spark作业executor个数
+                     * 设置<p>spark作业executor个数</p>
+                     * @param _jobExecutorNums <p>spark作业executor个数</p>
                      * 
                      */
                     void SetJobExecutorNums(const int64_t& _jobExecutorNums);
@@ -426,15 +427,15 @@ namespace TencentCloud
                     bool JobExecutorNumsHasBeenSet() const;
 
                     /**
-                     * 获取spark流任务最大重试次数
-                     * @return JobMaxAttempts spark流任务最大重试次数
+                     * 获取<p>spark流任务最大重试次数</p>
+                     * @return JobMaxAttempts <p>spark流任务最大重试次数</p>
                      * 
                      */
                     int64_t GetJobMaxAttempts() const;
 
                     /**
-                     * 设置spark流任务最大重试次数
-                     * @param _jobMaxAttempts spark流任务最大重试次数
+                     * 设置<p>spark流任务最大重试次数</p>
+                     * @param _jobMaxAttempts <p>spark流任务最大重试次数</p>
                      * 
                      */
                     void SetJobMaxAttempts(const int64_t& _jobMaxAttempts);
@@ -447,15 +448,15 @@ namespace TencentCloud
                     bool JobMaxAttemptsHasBeenSet() const;
 
                     /**
-                     * 获取spark作业创建者
-                     * @return JobCreator spark作业创建者
+                     * 获取<p>spark作业创建者</p>
+                     * @return JobCreator <p>spark作业创建者</p>
                      * 
                      */
                     std::string GetJobCreator() const;
 
                     /**
-                     * 设置spark作业创建者
-                     * @param _jobCreator spark作业创建者
+                     * 设置<p>spark作业创建者</p>
+                     * @param _jobCreator <p>spark作业创建者</p>
                      * 
                      */
                     void SetJobCreator(const std::string& _jobCreator);
@@ -468,15 +469,15 @@ namespace TencentCloud
                     bool JobCreatorHasBeenSet() const;
 
                     /**
-                     * 获取spark作业创建时间
-                     * @return JobCreateTime spark作业创建时间
+                     * 获取<p>spark作业创建时间</p>
+                     * @return JobCreateTime <p>spark作业创建时间</p>
                      * 
                      */
                     int64_t GetJobCreateTime() const;
 
                     /**
-                     * 设置spark作业创建时间
-                     * @param _jobCreateTime spark作业创建时间
+                     * 设置<p>spark作业创建时间</p>
+                     * @param _jobCreateTime <p>spark作业创建时间</p>
                      * 
                      */
                     void SetJobCreateTime(const int64_t& _jobCreateTime);
@@ -489,15 +490,15 @@ namespace TencentCloud
                     bool JobCreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取spark作业更新时间
-                     * @return JobUpdateTime spark作业更新时间
+                     * 获取<p>spark作业更新时间</p>
+                     * @return JobUpdateTime <p>spark作业更新时间</p>
                      * 
                      */
                     uint64_t GetJobUpdateTime() const;
 
                     /**
-                     * 设置spark作业更新时间
-                     * @param _jobUpdateTime spark作业更新时间
+                     * 设置<p>spark作业更新时间</p>
+                     * @param _jobUpdateTime <p>spark作业更新时间</p>
                      * 
                      */
                     void SetJobUpdateTime(const uint64_t& _jobUpdateTime);
@@ -510,15 +511,15 @@ namespace TencentCloud
                     bool JobUpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取spark作业最近任务ID
-                     * @return CurrentTaskId spark作业最近任务ID
+                     * 获取<p>spark作业最近任务ID</p>
+                     * @return CurrentTaskId <p>spark作业最近任务ID</p>
                      * 
                      */
                     std::string GetCurrentTaskId() const;
 
                     /**
-                     * 设置spark作业最近任务ID
-                     * @param _currentTaskId spark作业最近任务ID
+                     * 设置<p>spark作业最近任务ID</p>
+                     * @param _currentTaskId <p>spark作业最近任务ID</p>
                      * 
                      */
                     void SetCurrentTaskId(const std::string& _currentTaskId);
@@ -531,15 +532,15 @@ namespace TencentCloud
                     bool CurrentTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取spark作业最近运行状态，初始化：0，运行中：1，成功：2，数据写入中： 3， 排队中： 4， 失败： -1， 已删除： -3，已过期： -5
-                     * @return JobStatus spark作业最近运行状态，初始化：0，运行中：1，成功：2，数据写入中： 3， 排队中： 4， 失败： -1， 已删除： -3，已过期： -5
+                     * 获取<p>spark作业最近运行状态，初始化：0，运行中：1，成功：2，数据写入中： 3， 排队中： 4， 失败： -1， 已删除： -3，已过期： -5</p>
+                     * @return JobStatus <p>spark作业最近运行状态，初始化：0，运行中：1，成功：2，数据写入中： 3， 排队中： 4， 失败： -1， 已删除： -3，已过期： -5</p>
                      * 
                      */
                     int64_t GetJobStatus() const;
 
                     /**
-                     * 设置spark作业最近运行状态，初始化：0，运行中：1，成功：2，数据写入中： 3， 排队中： 4， 失败： -1， 已删除： -3，已过期： -5
-                     * @param _jobStatus spark作业最近运行状态，初始化：0，运行中：1，成功：2，数据写入中： 3， 排队中： 4， 失败： -1， 已删除： -3，已过期： -5
+                     * 设置<p>spark作业最近运行状态，初始化：0，运行中：1，成功：2，数据写入中： 3， 排队中： 4， 失败： -1， 已删除： -3，已过期： -5</p>
+                     * @param _jobStatus <p>spark作业最近运行状态，初始化：0，运行中：1，成功：2，数据写入中： 3， 排队中： 4， 失败： -1， 已删除： -3，已过期： -5</p>
                      * 
                      */
                     void SetJobStatus(const int64_t& _jobStatus);
@@ -552,18 +553,18 @@ namespace TencentCloud
                     bool JobStatusHasBeenSet() const;
 
                     /**
-                     * 获取spark流作业统计
+                     * 获取<p>spark流作业统计</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StreamingStat spark流作业统计
+                     * @return StreamingStat <p>spark流作业统计</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     StreamingStatistics GetStreamingStat() const;
 
                     /**
-                     * 设置spark流作业统计
+                     * 设置<p>spark流作业统计</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _streamingStat spark流作业统计
+                     * @param _streamingStat <p>spark流作业统计</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -577,18 +578,18 @@ namespace TencentCloud
                     bool StreamingStatHasBeenSet() const;
 
                     /**
-                     * 获取数据源名
+                     * 获取<p>数据源名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataSource 数据源名
+                     * @return DataSource <p>数据源名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSource() const;
 
                     /**
-                     * 设置数据源名
+                     * 设置<p>数据源名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dataSource 数据源名
+                     * @param _dataSource <p>数据源名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -602,18 +603,18 @@ namespace TencentCloud
                     bool DataSourceHasBeenSet() const;
 
                     /**
-                     * 获取pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * 获取<p>pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsLocalPythonFiles pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * @return IsLocalPythonFiles <p>pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsLocalPythonFiles() const;
 
                     /**
-                     * 设置pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * 设置<p>pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isLocalPythonFiles pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * @param _isLocalPythonFiles <p>pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -627,18 +628,18 @@ namespace TencentCloud
                     bool IsLocalPythonFilesHasBeenSet() const;
 
                     /**
-                     * 获取注：该返回值已废弃
+                     * 获取<p>注：该返回值已废弃</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppPythonFiles 注：该返回值已废弃
+                     * @return AppPythonFiles <p>注：该返回值已废弃</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppPythonFiles() const;
 
                     /**
-                     * 设置注：该返回值已废弃
+                     * 设置<p>注：该返回值已废弃</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _appPythonFiles 注：该返回值已废弃
+                     * @param _appPythonFiles <p>注：该返回值已废弃</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -652,18 +653,18 @@ namespace TencentCloud
                     bool AppPythonFilesHasBeenSet() const;
 
                     /**
-                     * 获取archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * 获取<p>archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsLocalArchives archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * @return IsLocalArchives <p>archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsLocalArchives() const;
 
                     /**
-                     * 设置archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * 设置<p>archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isLocalArchives archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * @param _isLocalArchives <p>archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -677,18 +678,18 @@ namespace TencentCloud
                     bool IsLocalArchivesHasBeenSet() const;
 
                     /**
-                     * 获取archives：依赖资源
+                     * 获取<p>archives：依赖资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return JobArchives archives：依赖资源
+                     * @return JobArchives <p>archives：依赖资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobArchives() const;
 
                     /**
-                     * 设置archives：依赖资源
+                     * 设置<p>archives：依赖资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _jobArchives archives：依赖资源
+                     * @param _jobArchives <p>archives：依赖资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -702,18 +703,18 @@ namespace TencentCloud
                     bool JobArchivesHasBeenSet() const;
 
                     /**
-                     * 获取Spark Image 版本
+                     * 获取<p>Spark Image 版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SparkImage Spark Image 版本
+                     * @return SparkImage <p>Spark Image 版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSparkImage() const;
 
                     /**
-                     * 设置Spark Image 版本
+                     * 设置<p>Spark Image 版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sparkImage Spark Image 版本
+                     * @param _sparkImage <p>Spark Image 版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -727,18 +728,18 @@ namespace TencentCloud
                     bool SparkImageHasBeenSet() const;
 
                     /**
-                     * 获取pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+                     * 获取<p>pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return JobPythonFiles pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+                     * @return JobPythonFiles <p>pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobPythonFiles() const;
 
                     /**
-                     * 设置pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+                     * 设置<p>pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _jobPythonFiles pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+                     * @param _jobPythonFiles <p>pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -752,18 +753,18 @@ namespace TencentCloud
                     bool JobPythonFilesHasBeenSet() const;
 
                     /**
-                     * 获取当前job正在运行或准备运行的任务个数
+                     * 获取<p>当前job正在运行或准备运行的任务个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskNum 当前job正在运行或准备运行的任务个数
+                     * @return TaskNum <p>当前job正在运行或准备运行的任务个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskNum() const;
 
                     /**
-                     * 设置当前job正在运行或准备运行的任务个数
+                     * 设置<p>当前job正在运行或准备运行的任务个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskNum 当前job正在运行或准备运行的任务个数
+                     * @param _taskNum <p>当前job正在运行或准备运行的任务个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -777,18 +778,18 @@ namespace TencentCloud
                     bool TaskNumHasBeenSet() const;
 
                     /**
-                     * 获取引擎状态：-100（默认：未知状态），-2~11：引擎正常状态；
+                     * 获取<p>引擎状态：-100（默认：未知状态），-2~11：引擎正常状态；</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataEngineStatus 引擎状态：-100（默认：未知状态），-2~11：引擎正常状态；
+                     * @return DataEngineStatus <p>引擎状态：-100（默认：未知状态），-2~11：引擎正常状态；</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDataEngineStatus() const;
 
                     /**
-                     * 设置引擎状态：-100（默认：未知状态），-2~11：引擎正常状态；
+                     * 设置<p>引擎状态：-100（默认：未知状态），-2~11：引擎正常状态；</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dataEngineStatus 引擎状态：-100（默认：未知状态），-2~11：引擎正常状态；
+                     * @param _dataEngineStatus <p>引擎状态：-100（默认：未知状态），-2~11：引擎正常状态；</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -802,18 +803,18 @@ namespace TencentCloud
                     bool DataEngineStatusHasBeenSet() const;
 
                     /**
-                     * 获取指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于JobExecutorNums
+                     * 获取<p>指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于JobExecutorNums</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return JobExecutorMaxNumbers 指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于JobExecutorNums
+                     * @return JobExecutorMaxNumbers <p>指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于JobExecutorNums</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetJobExecutorMaxNumbers() const;
 
                     /**
-                     * 设置指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于JobExecutorNums
+                     * 设置<p>指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于JobExecutorNums</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _jobExecutorMaxNumbers 指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于JobExecutorNums
+                     * @param _jobExecutorMaxNumbers <p>指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于JobExecutorNums</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -827,18 +828,18 @@ namespace TencentCloud
                     bool JobExecutorMaxNumbersHasBeenSet() const;
 
                     /**
-                     * 获取镜像版本
+                     * 获取<p>镜像版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SparkImageVersion 镜像版本
+                     * @return SparkImageVersion <p>镜像版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSparkImageVersion() const;
 
                     /**
-                     * 设置镜像版本
+                     * 设置<p>镜像版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sparkImageVersion 镜像版本
+                     * @param _sparkImageVersion <p>镜像版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -852,18 +853,18 @@ namespace TencentCloud
                     bool SparkImageVersionHasBeenSet() const;
 
                     /**
-                     * 获取查询脚本关联id
+                     * 获取<p>查询脚本关联id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SessionId 查询脚本关联id
+                     * @return SessionId <p>查询脚本关联id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置查询脚本关联id
+                     * 设置<p>查询脚本关联id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sessionId 查询脚本关联id
+                     * @param _sessionId <p>查询脚本关联id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -877,18 +878,18 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取spark_emr_livy
+                     * 获取<p>spark_emr_livy</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataEngineClusterType spark_emr_livy
+                     * @return DataEngineClusterType <p>spark_emr_livy</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataEngineClusterType() const;
 
                     /**
-                     * 设置spark_emr_livy
+                     * 设置<p>spark_emr_livy</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dataEngineClusterType spark_emr_livy
+                     * @param _dataEngineClusterType <p>spark_emr_livy</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -902,18 +903,18 @@ namespace TencentCloud
                     bool DataEngineClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取Spark 3.2-EMR
+                     * 获取<p>Spark 3.2-EMR</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataEngineImageVersion Spark 3.2-EMR
+                     * @return DataEngineImageVersion <p>Spark 3.2-EMR</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataEngineImageVersion() const;
 
                     /**
-                     * 设置Spark 3.2-EMR
+                     * 设置<p>Spark 3.2-EMR</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dataEngineImageVersion Spark 3.2-EMR
+                     * @param _dataEngineImageVersion <p>Spark 3.2-EMR</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -927,18 +928,18 @@ namespace TencentCloud
                     bool DataEngineImageVersionHasBeenSet() const;
 
                     /**
-                     * 获取任务资源配置是否继承集群模板，0（默认）不继承，1：继承
+                     * 获取<p>任务资源配置是否继承集群模板，0（默认）不继承，1：继承</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsInherit 任务资源配置是否继承集群模板，0（默认）不继承，1：继承
+                     * @return IsInherit <p>任务资源配置是否继承集群模板，0（默认）不继承，1：继承</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsInherit() const;
 
                     /**
-                     * 设置任务资源配置是否继承集群模板，0（默认）不继承，1：继承
+                     * 设置<p>任务资源配置是否继承集群模板，0（默认）不继承，1：继承</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isInherit 任务资源配置是否继承集群模板，0（默认）不继承，1：继承
+                     * @param _isInherit <p>任务资源配置是否继承集群模板，0（默认）不继承，1：继承</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -952,18 +953,18 @@ namespace TencentCloud
                     bool IsInheritHasBeenSet() const;
 
                     /**
-                     * 获取是否使用session脚本的sql运行任务：false：否，true：是
+                     * 获取<p>是否使用session脚本的sql运行任务：false：否，true：是</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsSessionStarted 是否使用session脚本的sql运行任务：false：否，true：是
+                     * @return IsSessionStarted <p>是否使用session脚本的sql运行任务：false：否，true：是</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsSessionStarted() const;
 
                     /**
-                     * 设置是否使用session脚本的sql运行任务：false：否，true：是
+                     * 设置<p>是否使用session脚本的sql运行任务：false：否，true：是</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isSessionStarted 是否使用session脚本的sql运行任务：false：否，true：是
+                     * @param _isSessionStarted <p>是否使用session脚本的sql运行任务：false：否，true：是</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -977,18 +978,18 @@ namespace TencentCloud
                     bool IsSessionStartedHasBeenSet() const;
 
                     /**
-                     * 获取引擎详细类型：SparkSQL、PrestoSQL、SparkBatch、StandardSpark、StandardPresto
+                     * 获取<p>引擎详细类型：SparkSQL、PrestoSQL、SparkBatch、StandardSpark、StandardPresto</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EngineTypeDetail 引擎详细类型：SparkSQL、PrestoSQL、SparkBatch、StandardSpark、StandardPresto
+                     * @return EngineTypeDetail <p>引擎详细类型：SparkSQL、PrestoSQL、SparkBatch、StandardSpark、StandardPresto</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineTypeDetail() const;
 
                     /**
-                     * 设置引擎详细类型：SparkSQL、PrestoSQL、SparkBatch、StandardSpark、StandardPresto
+                     * 设置<p>引擎详细类型：SparkSQL、PrestoSQL、SparkBatch、StandardSpark、StandardPresto</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _engineTypeDetail 引擎详细类型：SparkSQL、PrestoSQL、SparkBatch、StandardSpark、StandardPresto
+                     * @param _engineTypeDetail <p>引擎详细类型：SparkSQL、PrestoSQL、SparkBatch、StandardSpark、StandardPresto</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1001,277 +1002,331 @@ namespace TencentCloud
                      */
                     bool EngineTypeDetailHasBeenSet() const;
 
+                    /**
+                     * 获取<p>标准引擎依赖包</p>
+                     * @return DependencyPackages <p>标准引擎依赖包</p>
+                     * 
+                     */
+                    std::vector<DependencyPackage> GetDependencyPackages() const;
+
+                    /**
+                     * 设置<p>标准引擎依赖包</p>
+                     * @param _dependencyPackages <p>标准引擎依赖包</p>
+                     * 
+                     */
+                    void SetDependencyPackages(const std::vector<DependencyPackage>& _dependencyPackages);
+
+                    /**
+                     * 判断参数 DependencyPackages 是否已赋值
+                     * @return DependencyPackages 是否已赋值
+                     * 
+                     */
+                    bool DependencyPackagesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>作业运行鉴权身份</p>
+                     * @return RunAsIdentity <p>作业运行鉴权身份</p>
+                     * 
+                     */
+                    std::string GetRunAsIdentity() const;
+
+                    /**
+                     * 设置<p>作业运行鉴权身份</p>
+                     * @param _runAsIdentity <p>作业运行鉴权身份</p>
+                     * 
+                     */
+                    void SetRunAsIdentity(const std::string& _runAsIdentity);
+
+                    /**
+                     * 判断参数 RunAsIdentity 是否已赋值
+                     * @return RunAsIdentity 是否已赋值
+                     * 
+                     */
+                    bool RunAsIdentityHasBeenSet() const;
+
                 private:
 
                     /**
-                     * spark作业ID
+                     * <p>spark作业ID</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * spark作业名
+                     * <p>spark作业名</p>
                      */
                     std::string m_jobName;
                     bool m_jobNameHasBeenSet;
 
                     /**
-                     * spark作业类型，可去1或者2，1表示batch作业， 2表示streaming作业
+                     * <p>spark作业类型，可去1或者2，1表示batch作业， 2表示streaming作业</p>
                      */
                     int64_t m_jobType;
                     bool m_jobTypeHasBeenSet;
 
                     /**
-                     * 引擎名
+                     * <p>引擎名</p>
                      */
                     std::string m_dataEngine;
                     bool m_dataEngineHasBeenSet;
 
                     /**
-                     * 该字段已下线，请使用字段Datasource
+                     * <p>该字段已下线，请使用字段Datasource</p>
                      */
                     std::string m_eni;
                     bool m_eniHasBeenSet;
 
                     /**
-                     * 程序包是否本地上传，cos或者lakefs
+                     * <p>程序包是否本地上传，cos或者lakefs</p>
                      */
                     std::string m_isLocal;
                     bool m_isLocalHasBeenSet;
 
                     /**
-                     * 程序包路径
+                     * <p>程序包路径</p>
                      */
                     std::string m_jobFile;
                     bool m_jobFileHasBeenSet;
 
                     /**
-                     * 角色ID
+                     * <p>角色ID</p>
                      */
                     int64_t m_roleArn;
                     bool m_roleArnHasBeenSet;
 
                     /**
-                     * spark作业运行主类
+                     * <p>spark作业运行主类</p>
                      */
                     std::string m_mainClass;
                     bool m_mainClassHasBeenSet;
 
                     /**
-                     * 命令行参数，spark作业命令行参数，空格分隔
+                     * <p>命令行参数，spark作业命令行参数，空格分隔</p>
                      */
                     std::string m_cmdArgs;
                     bool m_cmdArgsHasBeenSet;
 
                     /**
-                     * spark原生配置，换行符分隔
+                     * <p>spark原生配置，换行符分隔</p>
                      */
                     std::string m_jobConf;
                     bool m_jobConfHasBeenSet;
 
                     /**
-                     * 依赖jars是否本地上传，cos或者lakefs
+                     * <p>依赖jars是否本地上传，cos或者lakefs</p>
                      */
                     std::string m_isLocalJars;
                     bool m_isLocalJarsHasBeenSet;
 
                     /**
-                     * spark作业依赖jars，逗号分隔
+                     * <p>spark作业依赖jars，逗号分隔</p>
                      */
                     std::string m_jobJars;
                     bool m_jobJarsHasBeenSet;
 
                     /**
-                     * 依赖文件是否本地上传，cos或者lakefs
+                     * <p>依赖文件是否本地上传，cos或者lakefs</p>
                      */
                     std::string m_isLocalFiles;
                     bool m_isLocalFilesHasBeenSet;
 
                     /**
-                     * spark作业依赖文件，逗号分隔
+                     * <p>spark作业依赖文件，逗号分隔</p>
                      */
                     std::string m_jobFiles;
                     bool m_jobFilesHasBeenSet;
 
                     /**
-                     * spark作业driver资源大小
+                     * <p>spark作业driver资源大小</p>
                      */
                     std::string m_jobDriverSize;
                     bool m_jobDriverSizeHasBeenSet;
 
                     /**
-                     * spark作业executor资源大小
+                     * <p>spark作业executor资源大小</p>
                      */
                     std::string m_jobExecutorSize;
                     bool m_jobExecutorSizeHasBeenSet;
 
                     /**
-                     * spark作业executor个数
+                     * <p>spark作业executor个数</p>
                      */
                     int64_t m_jobExecutorNums;
                     bool m_jobExecutorNumsHasBeenSet;
 
                     /**
-                     * spark流任务最大重试次数
+                     * <p>spark流任务最大重试次数</p>
                      */
                     int64_t m_jobMaxAttempts;
                     bool m_jobMaxAttemptsHasBeenSet;
 
                     /**
-                     * spark作业创建者
+                     * <p>spark作业创建者</p>
                      */
                     std::string m_jobCreator;
                     bool m_jobCreatorHasBeenSet;
 
                     /**
-                     * spark作业创建时间
+                     * <p>spark作业创建时间</p>
                      */
                     int64_t m_jobCreateTime;
                     bool m_jobCreateTimeHasBeenSet;
 
                     /**
-                     * spark作业更新时间
+                     * <p>spark作业更新时间</p>
                      */
                     uint64_t m_jobUpdateTime;
                     bool m_jobUpdateTimeHasBeenSet;
 
                     /**
-                     * spark作业最近任务ID
+                     * <p>spark作业最近任务ID</p>
                      */
                     std::string m_currentTaskId;
                     bool m_currentTaskIdHasBeenSet;
 
                     /**
-                     * spark作业最近运行状态，初始化：0，运行中：1，成功：2，数据写入中： 3， 排队中： 4， 失败： -1， 已删除： -3，已过期： -5
+                     * <p>spark作业最近运行状态，初始化：0，运行中：1，成功：2，数据写入中： 3， 排队中： 4， 失败： -1， 已删除： -3，已过期： -5</p>
                      */
                     int64_t m_jobStatus;
                     bool m_jobStatusHasBeenSet;
 
                     /**
-                     * spark流作业统计
+                     * <p>spark流作业统计</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     StreamingStatistics m_streamingStat;
                     bool m_streamingStatHasBeenSet;
 
                     /**
-                     * 数据源名
+                     * <p>数据源名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSource;
                     bool m_dataSourceHasBeenSet;
 
                     /**
-                     * pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * <p>pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isLocalPythonFiles;
                     bool m_isLocalPythonFilesHasBeenSet;
 
                     /**
-                     * 注：该返回值已废弃
+                     * <p>注：该返回值已废弃</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appPythonFiles;
                     bool m_appPythonFilesHasBeenSet;
 
                     /**
-                     * archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * <p>archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isLocalArchives;
                     bool m_isLocalArchivesHasBeenSet;
 
                     /**
-                     * archives：依赖资源
+                     * <p>archives：依赖资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobArchives;
                     bool m_jobArchivesHasBeenSet;
 
                     /**
-                     * Spark Image 版本
+                     * <p>Spark Image 版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sparkImage;
                     bool m_sparkImageHasBeenSet;
 
                     /**
-                     * pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+                     * <p>pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobPythonFiles;
                     bool m_jobPythonFilesHasBeenSet;
 
                     /**
-                     * 当前job正在运行或准备运行的任务个数
+                     * <p>当前job正在运行或准备运行的任务个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskNum;
                     bool m_taskNumHasBeenSet;
 
                     /**
-                     * 引擎状态：-100（默认：未知状态），-2~11：引擎正常状态；
+                     * <p>引擎状态：-100（默认：未知状态），-2~11：引擎正常状态；</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dataEngineStatus;
                     bool m_dataEngineStatusHasBeenSet;
 
                     /**
-                     * 指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于JobExecutorNums
+                     * <p>指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于JobExecutorNums</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_jobExecutorMaxNumbers;
                     bool m_jobExecutorMaxNumbersHasBeenSet;
 
                     /**
-                     * 镜像版本
+                     * <p>镜像版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sparkImageVersion;
                     bool m_sparkImageVersionHasBeenSet;
 
                     /**
-                     * 查询脚本关联id
+                     * <p>查询脚本关联id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * spark_emr_livy
+                     * <p>spark_emr_livy</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataEngineClusterType;
                     bool m_dataEngineClusterTypeHasBeenSet;
 
                     /**
-                     * Spark 3.2-EMR
+                     * <p>Spark 3.2-EMR</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataEngineImageVersion;
                     bool m_dataEngineImageVersionHasBeenSet;
 
                     /**
-                     * 任务资源配置是否继承集群模板，0（默认）不继承，1：继承
+                     * <p>任务资源配置是否继承集群模板，0（默认）不继承，1：继承</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isInherit;
                     bool m_isInheritHasBeenSet;
 
                     /**
-                     * 是否使用session脚本的sql运行任务：false：否，true：是
+                     * <p>是否使用session脚本的sql运行任务：false：否，true：是</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isSessionStarted;
                     bool m_isSessionStartedHasBeenSet;
 
                     /**
-                     * 引擎详细类型：SparkSQL、PrestoSQL、SparkBatch、StandardSpark、StandardPresto
+                     * <p>引擎详细类型：SparkSQL、PrestoSQL、SparkBatch、StandardSpark、StandardPresto</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineTypeDetail;
                     bool m_engineTypeDetailHasBeenSet;
+
+                    /**
+                     * <p>标准引擎依赖包</p>
+                     */
+                    std::vector<DependencyPackage> m_dependencyPackages;
+                    bool m_dependencyPackagesHasBeenSet;
+
+                    /**
+                     * <p>作业运行鉴权身份</p>
+                     */
+                    std::string m_runAsIdentity;
+                    bool m_runAsIdentityHasBeenSet;
 
                 };
             }

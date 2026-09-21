@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取子网对象。
-                     * @return Subnet 子网对象。
+                     * 获取<p>子网对象。</p>
+                     * @return Subnet <p>子网对象。</p>
                      * 
                      */
                     Subnet GetSubnet() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 子网对象。
+                     * <p>子网对象。</p>
                      */
                     Subnet m_subnet;
                     bool m_subnetHasBeenSet;

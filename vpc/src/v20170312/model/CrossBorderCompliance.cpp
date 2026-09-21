@@ -44,7 +44,8 @@ CrossBorderCompliance::CrossBorderCompliance() :
     m_stateHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_legalPersonIdHasBeenSet(false),
-    m_legalPersonIdCardHasBeenSet(false)
+    m_legalPersonIdCardHasBeenSet(false),
+    m_whiteListFlagHasBeenSet(false)
 {
 }
 
@@ -293,6 +294,16 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
         m_legalPersonIdCardHasBeenSet = true;
     }
 
+    if (value.HasMember("WhiteListFlag") && !value["WhiteListFlag"].IsNull())
+    {
+        if (!value["WhiteListFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.WhiteListFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_whiteListFlag = value["WhiteListFlag"].GetBool();
+        m_whiteListFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -490,6 +501,14 @@ void CrossBorderCompliance::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "LegalPersonIdCard";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_legalPersonIdCard.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_whiteListFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WhiteListFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_whiteListFlag, allocator);
     }
 
 }
@@ -877,5 +896,21 @@ void CrossBorderCompliance::SetLegalPersonIdCard(const string& _legalPersonIdCar
 bool CrossBorderCompliance::LegalPersonIdCardHasBeenSet() const
 {
     return m_legalPersonIdCardHasBeenSet;
+}
+
+bool CrossBorderCompliance::GetWhiteListFlag() const
+{
+    return m_whiteListFlag;
+}
+
+void CrossBorderCompliance::SetWhiteListFlag(const bool& _whiteListFlag)
+{
+    m_whiteListFlag = _whiteListFlag;
+    m_whiteListFlagHasBeenSet = true;
+}
+
+bool CrossBorderCompliance::WhiteListFlagHasBeenSet() const
+{
+    return m_whiteListFlagHasBeenSet;
 }
 

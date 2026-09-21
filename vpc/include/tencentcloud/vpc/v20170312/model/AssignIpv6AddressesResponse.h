@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分配给弹性网卡的`IPv6`地址列表。
-                     * @return Ipv6AddressSet 分配给弹性网卡的`IPv6`地址列表。
+                     * 获取<p>分配给弹性网卡的<code>IPv6</code>地址列表。</p>
+                     * @return Ipv6AddressSet <p>分配给弹性网卡的<code>IPv6</code>地址列表。</p>
                      * 
                      */
                     std::vector<Ipv6Address> GetIpv6AddressSet() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分配给弹性网卡的`IPv6`地址列表。
+                     * <p>分配给弹性网卡的<code>IPv6</code>地址列表。</p>
                      */
                     std::vector<Ipv6Address> m_ipv6AddressSet;
                     bool m_ipv6AddressSetHasBeenSet;

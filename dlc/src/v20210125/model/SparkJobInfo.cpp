@@ -62,7 +62,9 @@ SparkJobInfo::SparkJobInfo() :
     m_dataEngineImageVersionHasBeenSet(false),
     m_isInheritHasBeenSet(false),
     m_isSessionStartedHasBeenSet(false),
-    m_engineTypeDetailHasBeenSet(false)
+    m_engineTypeDetailHasBeenSet(false),
+    m_dependencyPackagesHasBeenSet(false),
+    m_runAsIdentityHasBeenSet(false)
 {
 }
 
@@ -498,6 +500,36 @@ CoreInternalOutcome SparkJobInfo::Deserialize(const rapidjson::Value &value)
         m_engineTypeDetailHasBeenSet = true;
     }
 
+    if (value.HasMember("DependencyPackages") && !value["DependencyPackages"].IsNull())
+    {
+        if (!value["DependencyPackages"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SparkJobInfo.DependencyPackages` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DependencyPackages"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DependencyPackage item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dependencyPackages.push_back(item);
+        }
+        m_dependencyPackagesHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunAsIdentity") && !value["RunAsIdentity"].IsNull())
+    {
+        if (!value["RunAsIdentity"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SparkJobInfo.RunAsIdentity` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_runAsIdentity = string(value["RunAsIdentity"].GetString());
+        m_runAsIdentityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -840,6 +872,29 @@ void SparkJobInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "EngineTypeDetail";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_engineTypeDetail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dependencyPackagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DependencyPackages";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dependencyPackages.begin(); itr != m_dependencyPackages.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_runAsIdentityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunAsIdentity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runAsIdentity.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1515,5 +1570,37 @@ void SparkJobInfo::SetEngineTypeDetail(const string& _engineTypeDetail)
 bool SparkJobInfo::EngineTypeDetailHasBeenSet() const
 {
     return m_engineTypeDetailHasBeenSet;
+}
+
+vector<DependencyPackage> SparkJobInfo::GetDependencyPackages() const
+{
+    return m_dependencyPackages;
+}
+
+void SparkJobInfo::SetDependencyPackages(const vector<DependencyPackage>& _dependencyPackages)
+{
+    m_dependencyPackages = _dependencyPackages;
+    m_dependencyPackagesHasBeenSet = true;
+}
+
+bool SparkJobInfo::DependencyPackagesHasBeenSet() const
+{
+    return m_dependencyPackagesHasBeenSet;
+}
+
+string SparkJobInfo::GetRunAsIdentity() const
+{
+    return m_runAsIdentity;
+}
+
+void SparkJobInfo::SetRunAsIdentity(const string& _runAsIdentity)
+{
+    m_runAsIdentity = _runAsIdentity;
+    m_runAsIdentityHasBeenSet = true;
+}
+
+bool SparkJobInfo::RunAsIdentityHasBeenSet() const
+{
+    return m_runAsIdentityHasBeenSet;
 }
 

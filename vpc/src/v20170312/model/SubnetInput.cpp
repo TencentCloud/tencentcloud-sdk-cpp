@@ -21,9 +21,11 @@ using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
 SubnetInput::SubnetInput() :
-    m_cidrBlockHasBeenSet(false),
     m_subnetNameHasBeenSet(false),
     m_zoneHasBeenSet(false),
+    m_stackTypeHasBeenSet(false),
+    m_cidrBlockHasBeenSet(false),
+    m_ipv6CidrBlockHasBeenSet(false),
     m_routeTableIdHasBeenSet(false)
 {
 }
@@ -32,16 +34,6 @@ CoreInternalOutcome SubnetInput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("CidrBlock") && !value["CidrBlock"].IsNull())
-    {
-        if (!value["CidrBlock"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `SubnetInput.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_cidrBlock = string(value["CidrBlock"].GetString());
-        m_cidrBlockHasBeenSet = true;
-    }
 
     if (value.HasMember("SubnetName") && !value["SubnetName"].IsNull())
     {
@@ -63,6 +55,36 @@ CoreInternalOutcome SubnetInput::Deserialize(const rapidjson::Value &value)
         m_zoneHasBeenSet = true;
     }
 
+    if (value.HasMember("StackType") && !value["StackType"].IsNull())
+    {
+        if (!value["StackType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubnetInput.StackType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_stackType = string(value["StackType"].GetString());
+        m_stackTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CidrBlock") && !value["CidrBlock"].IsNull())
+    {
+        if (!value["CidrBlock"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubnetInput.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cidrBlock = string(value["CidrBlock"].GetString());
+        m_cidrBlockHasBeenSet = true;
+    }
+
+    if (value.HasMember("Ipv6CidrBlock") && !value["Ipv6CidrBlock"].IsNull())
+    {
+        if (!value["Ipv6CidrBlock"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubnetInput.Ipv6CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipv6CidrBlock = string(value["Ipv6CidrBlock"].GetString());
+        m_ipv6CidrBlockHasBeenSet = true;
+    }
+
     if (value.HasMember("RouteTableId") && !value["RouteTableId"].IsNull())
     {
         if (!value["RouteTableId"].IsString())
@@ -80,14 +102,6 @@ CoreInternalOutcome SubnetInput::Deserialize(const rapidjson::Value &value)
 void SubnetInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_cidrBlockHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CidrBlock";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_cidrBlock.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_subnetNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -104,6 +118,30 @@ void SubnetInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_stackTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StackType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stackType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cidrBlockHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CidrBlock";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cidrBlock.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipv6CidrBlockHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6CidrBlock";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ipv6CidrBlock.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_routeTableIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -114,22 +152,6 @@ void SubnetInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
 
 }
 
-
-string SubnetInput::GetCidrBlock() const
-{
-    return m_cidrBlock;
-}
-
-void SubnetInput::SetCidrBlock(const string& _cidrBlock)
-{
-    m_cidrBlock = _cidrBlock;
-    m_cidrBlockHasBeenSet = true;
-}
-
-bool SubnetInput::CidrBlockHasBeenSet() const
-{
-    return m_cidrBlockHasBeenSet;
-}
 
 string SubnetInput::GetSubnetName() const
 {
@@ -161,6 +183,54 @@ void SubnetInput::SetZone(const string& _zone)
 bool SubnetInput::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+string SubnetInput::GetStackType() const
+{
+    return m_stackType;
+}
+
+void SubnetInput::SetStackType(const string& _stackType)
+{
+    m_stackType = _stackType;
+    m_stackTypeHasBeenSet = true;
+}
+
+bool SubnetInput::StackTypeHasBeenSet() const
+{
+    return m_stackTypeHasBeenSet;
+}
+
+string SubnetInput::GetCidrBlock() const
+{
+    return m_cidrBlock;
+}
+
+void SubnetInput::SetCidrBlock(const string& _cidrBlock)
+{
+    m_cidrBlock = _cidrBlock;
+    m_cidrBlockHasBeenSet = true;
+}
+
+bool SubnetInput::CidrBlockHasBeenSet() const
+{
+    return m_cidrBlockHasBeenSet;
+}
+
+string SubnetInput::GetIpv6CidrBlock() const
+{
+    return m_ipv6CidrBlock;
+}
+
+void SubnetInput::SetIpv6CidrBlock(const string& _ipv6CidrBlock)
+{
+    m_ipv6CidrBlock = _ipv6CidrBlock;
+    m_ipv6CidrBlockHasBeenSet = true;
+}
+
+bool SubnetInput::Ipv6CidrBlockHasBeenSet() const
+{
+    return m_ipv6CidrBlockHasBeenSet;
 }
 
 string SubnetInput::GetRouteTableId() const

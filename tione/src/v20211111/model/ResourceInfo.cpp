@@ -28,8 +28,10 @@ ResourceInfo::ResourceInfo() :
     m_realGpuHasBeenSet(false),
     m_realGpuDetailSetHasBeenSet(false),
     m_enableRDMAHasBeenSet(false),
+    m_rdmaNumberHasBeenSet(false),
     m_rootDiskHasBeenSet(false),
-    m_dataDiskHasBeenSet(false)
+    m_dataDiskHasBeenSet(false),
+    m_rdmaHasBeenSet(false)
 {
 }
 
@@ -118,6 +120,16 @@ CoreInternalOutcome ResourceInfo::Deserialize(const rapidjson::Value &value)
         m_enableRDMAHasBeenSet = true;
     }
 
+    if (value.HasMember("RdmaNumber") && !value["RdmaNumber"].IsNull())
+    {
+        if (!value["RdmaNumber"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceInfo.RdmaNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rdmaNumber = value["RdmaNumber"].GetUint64();
+        m_rdmaNumberHasBeenSet = true;
+    }
+
     if (value.HasMember("RootDisk") && !value["RootDisk"].IsNull())
     {
         if (!value["RootDisk"].IsUint64())
@@ -136,6 +148,16 @@ CoreInternalOutcome ResourceInfo::Deserialize(const rapidjson::Value &value)
         }
         m_dataDisk = value["DataDisk"].GetUint64();
         m_dataDiskHasBeenSet = true;
+    }
+
+    if (value.HasMember("Rdma") && !value["Rdma"].IsNull())
+    {
+        if (!value["Rdma"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceInfo.Rdma` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rdma = value["Rdma"].GetUint64();
+        m_rdmaHasBeenSet = true;
     }
 
 
@@ -208,6 +230,14 @@ void ResourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, m_enableRDMA, allocator);
     }
 
+    if (m_rdmaNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RdmaNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rdmaNumber, allocator);
+    }
+
     if (m_rootDiskHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -222,6 +252,14 @@ void ResourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DataDisk";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dataDisk, allocator);
+    }
+
+    if (m_rdmaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Rdma";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rdma, allocator);
     }
 
 }
@@ -339,6 +377,22 @@ bool ResourceInfo::EnableRDMAHasBeenSet() const
     return m_enableRDMAHasBeenSet;
 }
 
+uint64_t ResourceInfo::GetRdmaNumber() const
+{
+    return m_rdmaNumber;
+}
+
+void ResourceInfo::SetRdmaNumber(const uint64_t& _rdmaNumber)
+{
+    m_rdmaNumber = _rdmaNumber;
+    m_rdmaNumberHasBeenSet = true;
+}
+
+bool ResourceInfo::RdmaNumberHasBeenSet() const
+{
+    return m_rdmaNumberHasBeenSet;
+}
+
 uint64_t ResourceInfo::GetRootDisk() const
 {
     return m_rootDisk;
@@ -369,5 +423,21 @@ void ResourceInfo::SetDataDisk(const uint64_t& _dataDisk)
 bool ResourceInfo::DataDiskHasBeenSet() const
 {
     return m_dataDiskHasBeenSet;
+}
+
+uint64_t ResourceInfo::GetRdma() const
+{
+    return m_rdma;
+}
+
+void ResourceInfo::SetRdma(const uint64_t& _rdma)
+{
+    m_rdma = _rdma;
+    m_rdmaHasBeenSet = true;
+}
+
+bool ResourceInfo::RdmaHasBeenSet() const
+{
+    return m_rdmaHasBeenSet;
 }
 

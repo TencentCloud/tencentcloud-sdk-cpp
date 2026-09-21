@@ -24,7 +24,10 @@ using namespace std;
 
 CreateVpcRequest::CreateVpcRequest() :
     m_vpcNameHasBeenSet(false),
+    m_stackTypeHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
+    m_ipv6CidrBlockHasBeenSet(false),
+    m_addressTypeHasBeenSet(false),
     m_enableMulticastHasBeenSet(false),
     m_dnsServersHasBeenSet(false),
     m_domainNameHasBeenSet(false),
@@ -49,12 +52,36 @@ string CreateVpcRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_vpcName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_stackTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StackType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_stackType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_cidrBlockHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CidrBlock";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cidrBlock.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipv6CidrBlockHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6CidrBlock";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ipv6CidrBlock.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_addressTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddressType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_addressType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_enableMulticastHasBeenSet)
@@ -141,6 +168,22 @@ bool CreateVpcRequest::VpcNameHasBeenSet() const
     return m_vpcNameHasBeenSet;
 }
 
+string CreateVpcRequest::GetStackType() const
+{
+    return m_stackType;
+}
+
+void CreateVpcRequest::SetStackType(const string& _stackType)
+{
+    m_stackType = _stackType;
+    m_stackTypeHasBeenSet = true;
+}
+
+bool CreateVpcRequest::StackTypeHasBeenSet() const
+{
+    return m_stackTypeHasBeenSet;
+}
+
 string CreateVpcRequest::GetCidrBlock() const
 {
     return m_cidrBlock;
@@ -155,6 +198,38 @@ void CreateVpcRequest::SetCidrBlock(const string& _cidrBlock)
 bool CreateVpcRequest::CidrBlockHasBeenSet() const
 {
     return m_cidrBlockHasBeenSet;
+}
+
+string CreateVpcRequest::GetIpv6CidrBlock() const
+{
+    return m_ipv6CidrBlock;
+}
+
+void CreateVpcRequest::SetIpv6CidrBlock(const string& _ipv6CidrBlock)
+{
+    m_ipv6CidrBlock = _ipv6CidrBlock;
+    m_ipv6CidrBlockHasBeenSet = true;
+}
+
+bool CreateVpcRequest::Ipv6CidrBlockHasBeenSet() const
+{
+    return m_ipv6CidrBlockHasBeenSet;
+}
+
+string CreateVpcRequest::GetAddressType() const
+{
+    return m_addressType;
+}
+
+void CreateVpcRequest::SetAddressType(const string& _addressType)
+{
+    m_addressType = _addressType;
+    m_addressTypeHasBeenSet = true;
+}
+
+bool CreateVpcRequest::AddressTypeHasBeenSet() const
+{
+    return m_addressTypeHasBeenSet;
 }
 
 string CreateVpcRequest::GetEnableMulticast() const

@@ -27,14 +27,18 @@ CreateNetworkInterfaceRequest::CreateNetworkInterfaceRequest() :
     m_networkInterfaceNameHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_networkInterfaceDescriptionHasBeenSet(false),
-    m_secondaryPrivateIpAddressCountHasBeenSet(false),
     m_qosLevelHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_privateIpAddressesHasBeenSet(false),
+    m_secondaryPrivateIpAddressCountHasBeenSet(false),
+    m_ipv6AddressesHasBeenSet(false),
+    m_ipv6AddressCountHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_trunkingFlagHasBeenSet(false),
     m_isRdmaHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_terminationProtectionHasBeenSet(false),
+    m_trafficProtectionHasBeenSet(false)
 {
 }
 
@@ -77,14 +81,6 @@ string CreateNetworkInterfaceRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_networkInterfaceDescription.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_secondaryPrivateIpAddressCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SecondaryPrivateIpAddressCount";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_secondaryPrivateIpAddressCount, allocator);
-    }
-
     if (m_qosLevelHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -119,6 +115,37 @@ string CreateNetworkInterfaceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_secondaryPrivateIpAddressCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecondaryPrivateIpAddressCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_secondaryPrivateIpAddressCount, allocator);
+    }
+
+    if (m_ipv6AddressesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6Addresses";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ipv6Addresses.begin(); itr != m_ipv6Addresses.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_ipv6AddressCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6AddressCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ipv6AddressCount, allocator);
     }
 
     if (m_tagsHasBeenSet)
@@ -158,6 +185,22 @@ string CreateNetworkInterfaceRequest::ToJsonString() const
         string key = "ClientToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_terminationProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TerminationProtection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_terminationProtection, allocator);
+    }
+
+    if (m_trafficProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrafficProtection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_trafficProtection, allocator);
     }
 
 
@@ -232,22 +275,6 @@ bool CreateNetworkInterfaceRequest::NetworkInterfaceDescriptionHasBeenSet() cons
     return m_networkInterfaceDescriptionHasBeenSet;
 }
 
-uint64_t CreateNetworkInterfaceRequest::GetSecondaryPrivateIpAddressCount() const
-{
-    return m_secondaryPrivateIpAddressCount;
-}
-
-void CreateNetworkInterfaceRequest::SetSecondaryPrivateIpAddressCount(const uint64_t& _secondaryPrivateIpAddressCount)
-{
-    m_secondaryPrivateIpAddressCount = _secondaryPrivateIpAddressCount;
-    m_secondaryPrivateIpAddressCountHasBeenSet = true;
-}
-
-bool CreateNetworkInterfaceRequest::SecondaryPrivateIpAddressCountHasBeenSet() const
-{
-    return m_secondaryPrivateIpAddressCountHasBeenSet;
-}
-
 string CreateNetworkInterfaceRequest::GetQosLevel() const
 {
     return m_qosLevel;
@@ -294,6 +321,54 @@ void CreateNetworkInterfaceRequest::SetPrivateIpAddresses(const vector<PrivateIp
 bool CreateNetworkInterfaceRequest::PrivateIpAddressesHasBeenSet() const
 {
     return m_privateIpAddressesHasBeenSet;
+}
+
+uint64_t CreateNetworkInterfaceRequest::GetSecondaryPrivateIpAddressCount() const
+{
+    return m_secondaryPrivateIpAddressCount;
+}
+
+void CreateNetworkInterfaceRequest::SetSecondaryPrivateIpAddressCount(const uint64_t& _secondaryPrivateIpAddressCount)
+{
+    m_secondaryPrivateIpAddressCount = _secondaryPrivateIpAddressCount;
+    m_secondaryPrivateIpAddressCountHasBeenSet = true;
+}
+
+bool CreateNetworkInterfaceRequest::SecondaryPrivateIpAddressCountHasBeenSet() const
+{
+    return m_secondaryPrivateIpAddressCountHasBeenSet;
+}
+
+vector<Ipv6Address> CreateNetworkInterfaceRequest::GetIpv6Addresses() const
+{
+    return m_ipv6Addresses;
+}
+
+void CreateNetworkInterfaceRequest::SetIpv6Addresses(const vector<Ipv6Address>& _ipv6Addresses)
+{
+    m_ipv6Addresses = _ipv6Addresses;
+    m_ipv6AddressesHasBeenSet = true;
+}
+
+bool CreateNetworkInterfaceRequest::Ipv6AddressesHasBeenSet() const
+{
+    return m_ipv6AddressesHasBeenSet;
+}
+
+uint64_t CreateNetworkInterfaceRequest::GetIpv6AddressCount() const
+{
+    return m_ipv6AddressCount;
+}
+
+void CreateNetworkInterfaceRequest::SetIpv6AddressCount(const uint64_t& _ipv6AddressCount)
+{
+    m_ipv6AddressCount = _ipv6AddressCount;
+    m_ipv6AddressCountHasBeenSet = true;
+}
+
+bool CreateNetworkInterfaceRequest::Ipv6AddressCountHasBeenSet() const
+{
+    return m_ipv6AddressCountHasBeenSet;
 }
 
 vector<Tag> CreateNetworkInterfaceRequest::GetTags() const
@@ -358,6 +433,38 @@ void CreateNetworkInterfaceRequest::SetClientToken(const string& _clientToken)
 bool CreateNetworkInterfaceRequest::ClientTokenHasBeenSet() const
 {
     return m_clientTokenHasBeenSet;
+}
+
+bool CreateNetworkInterfaceRequest::GetTerminationProtection() const
+{
+    return m_terminationProtection;
+}
+
+void CreateNetworkInterfaceRequest::SetTerminationProtection(const bool& _terminationProtection)
+{
+    m_terminationProtection = _terminationProtection;
+    m_terminationProtectionHasBeenSet = true;
+}
+
+bool CreateNetworkInterfaceRequest::TerminationProtectionHasBeenSet() const
+{
+    return m_terminationProtectionHasBeenSet;
+}
+
+bool CreateNetworkInterfaceRequest::GetTrafficProtection() const
+{
+    return m_trafficProtection;
+}
+
+void CreateNetworkInterfaceRequest::SetTrafficProtection(const bool& _trafficProtection)
+{
+    m_trafficProtection = _trafficProtection;
+    m_trafficProtectionHasBeenSet = true;
+}
+
+bool CreateNetworkInterfaceRequest::TrafficProtectionHasBeenSet() const
+{
+    return m_trafficProtectionHasBeenSet;
 }
 
 

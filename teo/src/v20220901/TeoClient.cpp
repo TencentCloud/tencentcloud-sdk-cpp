@@ -7990,6 +7990,56 @@ TeoClient::DescribeZoneConfigImportResultOutcomeCallable TeoClient::DescribeZone
     return prom->get_future();
 }
 
+TeoClient::DescribeZoneCustomVariablesOutcome TeoClient::DescribeZoneCustomVariables(const DescribeZoneCustomVariablesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeZoneCustomVariables");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeZoneCustomVariablesResponse rsp = DescribeZoneCustomVariablesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeZoneCustomVariablesOutcome(rsp);
+        else
+            return DescribeZoneCustomVariablesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeZoneCustomVariablesOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeZoneCustomVariablesAsync(const DescribeZoneCustomVariablesRequest& request, const DescribeZoneCustomVariablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeZoneCustomVariablesRequest&;
+    using Resp = DescribeZoneCustomVariablesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeZoneCustomVariables", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeZoneCustomVariablesOutcomeCallable TeoClient::DescribeZoneCustomVariablesCallable(const DescribeZoneCustomVariablesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeZoneCustomVariablesOutcome>>();
+    DescribeZoneCustomVariablesAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeZoneCustomVariablesRequest&,
+        DescribeZoneCustomVariablesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TeoClient::DescribeZoneSettingOutcome TeoClient::DescribeZoneSetting(const DescribeZoneSettingRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeZoneSetting");
@@ -11232,6 +11282,56 @@ TeoClient::ModifyZoneOutcomeCallable TeoClient::ModifyZoneCallable(const ModifyZ
         const TeoClient*,
         const ModifyZoneRequest&,
         ModifyZoneOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::ModifyZoneCustomVariablesOutcome TeoClient::ModifyZoneCustomVariables(const ModifyZoneCustomVariablesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyZoneCustomVariables");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyZoneCustomVariablesResponse rsp = ModifyZoneCustomVariablesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyZoneCustomVariablesOutcome(rsp);
+        else
+            return ModifyZoneCustomVariablesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyZoneCustomVariablesOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyZoneCustomVariablesAsync(const ModifyZoneCustomVariablesRequest& request, const ModifyZoneCustomVariablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyZoneCustomVariablesRequest&;
+    using Resp = ModifyZoneCustomVariablesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyZoneCustomVariables", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::ModifyZoneCustomVariablesOutcomeCallable TeoClient::ModifyZoneCustomVariablesCallable(const ModifyZoneCustomVariablesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyZoneCustomVariablesOutcome>>();
+    ModifyZoneCustomVariablesAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const ModifyZoneCustomVariablesRequest&,
+        ModifyZoneCustomVariablesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

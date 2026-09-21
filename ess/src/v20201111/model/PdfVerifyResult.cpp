@@ -33,7 +33,9 @@ PdfVerifyResult::PdfVerifyResult() :
     m_componentPosYHasBeenSet(false),
     m_componentWidthHasBeenSet(false),
     m_componentHeightHasBeenSet(false),
-    m_componentPageHasBeenSet(false)
+    m_componentPageHasBeenSet(false),
+    m_certProviderHasBeenSet(false),
+    m_isTimestampTrustHasBeenSet(false)
 {
 }
 
@@ -172,6 +174,26 @@ CoreInternalOutcome PdfVerifyResult::Deserialize(const rapidjson::Value &value)
         m_componentPageHasBeenSet = true;
     }
 
+    if (value.HasMember("CertProvider") && !value["CertProvider"].IsNull())
+    {
+        if (!value["CertProvider"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PdfVerifyResult.CertProvider` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_certProvider = string(value["CertProvider"].GetString());
+        m_certProviderHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsTimestampTrust") && !value["IsTimestampTrust"].IsNull())
+    {
+        if (!value["IsTimestampTrust"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `PdfVerifyResult.IsTimestampTrust` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isTimestampTrust = value["IsTimestampTrust"].GetBool();
+        m_isTimestampTrustHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +303,22 @@ void PdfVerifyResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ComponentPage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_componentPage, allocator);
+    }
+
+    if (m_certProviderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertProvider";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certProvider.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isTimestampTrustHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsTimestampTrust";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isTimestampTrust, allocator);
     }
 
 }
@@ -492,5 +530,37 @@ void PdfVerifyResult::SetComponentPage(const int64_t& _componentPage)
 bool PdfVerifyResult::ComponentPageHasBeenSet() const
 {
     return m_componentPageHasBeenSet;
+}
+
+string PdfVerifyResult::GetCertProvider() const
+{
+    return m_certProvider;
+}
+
+void PdfVerifyResult::SetCertProvider(const string& _certProvider)
+{
+    m_certProvider = _certProvider;
+    m_certProviderHasBeenSet = true;
+}
+
+bool PdfVerifyResult::CertProviderHasBeenSet() const
+{
+    return m_certProviderHasBeenSet;
+}
+
+bool PdfVerifyResult::GetIsTimestampTrust() const
+{
+    return m_isTimestampTrust;
+}
+
+void PdfVerifyResult::SetIsTimestampTrust(const bool& _isTimestampTrust)
+{
+    m_isTimestampTrust = _isTimestampTrust;
+    m_isTimestampTrustHasBeenSet = true;
+}
+
+bool PdfVerifyResult::IsTimestampTrustHasBeenSet() const
+{
+    return m_isTimestampTrustHasBeenSet;
 }
 
