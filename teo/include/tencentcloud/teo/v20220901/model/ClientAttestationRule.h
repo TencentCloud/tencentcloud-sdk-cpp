@@ -24,8 +24,9 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/teo/v20220901/model/DeviceProfile.h>
 #include <tencentcloud/teo/v20220901/model/SecurityAction.h>
+#include <tencentcloud/teo/v20220901/model/DeviceProfile.h>
+#include <tencentcloud/teo/v20220901/model/AccountProtectionSettings.h>
 
 
 namespace TencentCloud
@@ -49,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取客户端认证规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li> <b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li> <b>删除</b>已有规则：BotManagement 参数中，ClientAttestationRule 列表中未包含的已有规则将被删除。</li>
-                     * @return Id 客户端认证规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li> <b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li> <b>删除</b>已有规则：BotManagement 参数中，ClientAttestationRule 列表中未包含的已有规则将被删除。</li>
+                     * 获取<p>客户端认证规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li> <b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li> <b>删除</b>已有规则：BotManagement 参数中，ClientAttestationRule 列表中未包含的已有规则将被删除。</li></p>
+                     * @return Id <p>客户端认证规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li> <b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li> <b>删除</b>已有规则：BotManagement 参数中，ClientAttestationRule 列表中未包含的已有规则将被删除。</li></p>
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置客户端认证规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li> <b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li> <b>删除</b>已有规则：BotManagement 参数中，ClientAttestationRule 列表中未包含的已有规则将被删除。</li>
-                     * @param _id 客户端认证规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li> <b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li> <b>删除</b>已有规则：BotManagement 参数中，ClientAttestationRule 列表中未包含的已有规则将被删除。</li>
+                     * 设置<p>客户端认证规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li> <b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li> <b>删除</b>已有规则：BotManagement 参数中，ClientAttestationRule 列表中未包含的已有规则将被删除。</li></p>
+                     * @param _id <p>客户端认证规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li> <b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li> <b>删除</b>已有规则：BotManagement 参数中，ClientAttestationRule 列表中未包含的已有规则将被删除。</li></p>
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -70,15 +71,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取客户端认证规则的名称。
-                     * @return Name 客户端认证规则的名称。
+                     * 获取<p>客户端认证规则的名称。</p>
+                     * @return Name <p>客户端认证规则的名称。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置客户端认证规则的名称。
-                     * @param _name 客户端认证规则的名称。
+                     * 设置<p>客户端认证规则的名称。</p>
+                     * @param _name <p>客户端认证规则的名称。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -91,15 +92,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>
-                     * @return Enabled 规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>
+                     * 获取<p>规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li></p>
+                     * @return Enabled <p>规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li></p>
                      * 
                      */
                     std::string GetEnabled() const;
 
                     /**
-                     * 设置规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>
-                     * @param _enabled 规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>
+                     * 设置<p>规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li></p>
+                     * @param _enabled <p>规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li></p>
                      * 
                      */
                     void SetEnabled(const std::string& _enabled);
@@ -112,15 +113,15 @@ namespace TencentCloud
                     bool EnabledHasBeenSet() const;
 
                     /**
-                     * 获取规则的优先级，数值越小越优先执行，范围是 0 ~ 100，默认为 0。
-                     * @return Priority 规则的优先级，数值越小越优先执行，范围是 0 ~ 100，默认为 0。
+                     * 获取<p>规则的优先级，数值越小越优先执行，范围是 0 ~ 100，默认为 0。</p>
+                     * @return Priority <p>规则的优先级，数值越小越优先执行，范围是 0 ~ 100，默认为 0。</p>
                      * 
                      */
                     uint64_t GetPriority() const;
 
                     /**
-                     * 设置规则的优先级，数值越小越优先执行，范围是 0 ~ 100，默认为 0。
-                     * @param _priority 规则的优先级，数值越小越优先执行，范围是 0 ~ 100，默认为 0。
+                     * 设置<p>规则的优先级，数值越小越优先执行，范围是 0 ~ 100，默认为 0。</p>
+                     * @param _priority <p>规则的优先级，数值越小越优先执行，范围是 0 ~ 100，默认为 0。</p>
                      * 
                      */
                     void SetPriority(const uint64_t& _priority);
@@ -133,15 +134,15 @@ namespace TencentCloud
                     bool PriorityHasBeenSet() const;
 
                     /**
-                     * 获取规则的具体内容，需符合表达式语法，详细规范参见产品文档。
-                     * @return Condition 规则的具体内容，需符合表达式语法，详细规范参见产品文档。
+                     * 获取<p>规则的具体内容，需符合表达式语法，详细规范参见产品文档。</p>
+                     * @return Condition <p>规则的具体内容，需符合表达式语法，详细规范参见产品文档。</p>
                      * 
                      */
                     std::string GetCondition() const;
 
                     /**
-                     * 设置规则的具体内容，需符合表达式语法，详细规范参见产品文档。
-                     * @param _condition 规则的具体内容，需符合表达式语法，详细规范参见产品文档。
+                     * 设置<p>规则的具体内容，需符合表达式语法，详细规范参见产品文档。</p>
+                     * @param _condition <p>规则的具体内容，需符合表达式语法，详细规范参见产品文档。</p>
                      * 
                      */
                     void SetCondition(const std::string& _condition);
@@ -154,15 +155,15 @@ namespace TencentCloud
                     bool ConditionHasBeenSet() const;
 
                     /**
-                     * 获取客户端认证选项 ID。
-                     * @return AttesterId 客户端认证选项 ID。
+                     * 获取<p>客户端认证选项 ID。</p>
+                     * @return AttesterId <p>客户端认证选项 ID。</p>
                      * 
                      */
                     std::string GetAttesterId() const;
 
                     /**
-                     * 设置客户端认证选项 ID。
-                     * @param _attesterId 客户端认证选项 ID。
+                     * 设置<p>客户端认证选项 ID。</p>
+                     * @param _attesterId <p>客户端认证选项 ID。</p>
                      * 
                      */
                     void SetAttesterId(const std::string& _attesterId);
@@ -175,15 +176,36 @@ namespace TencentCloud
                     bool AttesterIdHasBeenSet() const;
 
                     /**
-                     * 获取客户端设备配置。若 ClientAttestationRules 参数中，未指定 DeviceProfiles 参数值：保持已有客户端设备配置，不做修改。
-                     * @return DeviceProfiles 客户端设备配置。若 ClientAttestationRules 参数中，未指定 DeviceProfiles 参数值：保持已有客户端设备配置，不做修改。
+                     * 获取<p>客户端认证未通过的处置方式。SecurityAction.Name 取值范围如下：</p><ul><li>Allow：放行，其中 AllowActionParameters 支持 MinDelayTime 和 MaxDelayTime 配置；</li><li>Deny：拦截，其中 DenyActionParameters 中支持 BlockIp、ReturnCustomPage 和 Stall 配置；</li><li>Monitor：观察；</li><li>Challenge：挑战，其中 ChallengeActionParameters.ChallengeOption 支持 JSChallenge、ManagedChallenge、InterstitialChallenge 和 InlineChallenge；</li><li>Redirect：重定向至URL。</li></ul>
+                     * @return InvalidAttestationAction <p>客户端认证未通过的处置方式。SecurityAction.Name 取值范围如下：</p><ul><li>Allow：放行，其中 AllowActionParameters 支持 MinDelayTime 和 MaxDelayTime 配置；</li><li>Deny：拦截，其中 DenyActionParameters 中支持 BlockIp、ReturnCustomPage 和 Stall 配置；</li><li>Monitor：观察；</li><li>Challenge：挑战，其中 ChallengeActionParameters.ChallengeOption 支持 JSChallenge、ManagedChallenge、InterstitialChallenge 和 InlineChallenge；</li><li>Redirect：重定向至URL。</li></ul>
+                     * 
+                     */
+                    SecurityAction GetInvalidAttestationAction() const;
+
+                    /**
+                     * 设置<p>客户端认证未通过的处置方式。SecurityAction.Name 取值范围如下：</p><ul><li>Allow：放行，其中 AllowActionParameters 支持 MinDelayTime 和 MaxDelayTime 配置；</li><li>Deny：拦截，其中 DenyActionParameters 中支持 BlockIp、ReturnCustomPage 和 Stall 配置；</li><li>Monitor：观察；</li><li>Challenge：挑战，其中 ChallengeActionParameters.ChallengeOption 支持 JSChallenge、ManagedChallenge、InterstitialChallenge 和 InlineChallenge；</li><li>Redirect：重定向至URL。</li></ul>
+                     * @param _invalidAttestationAction <p>客户端认证未通过的处置方式。SecurityAction.Name 取值范围如下：</p><ul><li>Allow：放行，其中 AllowActionParameters 支持 MinDelayTime 和 MaxDelayTime 配置；</li><li>Deny：拦截，其中 DenyActionParameters 中支持 BlockIp、ReturnCustomPage 和 Stall 配置；</li><li>Monitor：观察；</li><li>Challenge：挑战，其中 ChallengeActionParameters.ChallengeOption 支持 JSChallenge、ManagedChallenge、InterstitialChallenge 和 InlineChallenge；</li><li>Redirect：重定向至URL。</li></ul>
+                     * 
+                     */
+                    void SetInvalidAttestationAction(const SecurityAction& _invalidAttestationAction);
+
+                    /**
+                     * 判断参数 InvalidAttestationAction 是否已赋值
+                     * @return InvalidAttestationAction 是否已赋值
+                     * 
+                     */
+                    bool InvalidAttestationActionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>客户端设备配置。若 ClientAttestationRules 参数中，未指定 DeviceProfiles 参数值：保持已有客户端设备配置，不做修改。</p>
+                     * @return DeviceProfiles <p>客户端设备配置。若 ClientAttestationRules 参数中，未指定 DeviceProfiles 参数值：保持已有客户端设备配置，不做修改。</p>
                      * 
                      */
                     std::vector<DeviceProfile> GetDeviceProfiles() const;
 
                     /**
-                     * 设置客户端设备配置。若 ClientAttestationRules 参数中，未指定 DeviceProfiles 参数值：保持已有客户端设备配置，不做修改。
-                     * @param _deviceProfiles 客户端设备配置。若 ClientAttestationRules 参数中，未指定 DeviceProfiles 参数值：保持已有客户端设备配置，不做修改。
+                     * 设置<p>客户端设备配置。若 ClientAttestationRules 参数中，未指定 DeviceProfiles 参数值：保持已有客户端设备配置，不做修改。</p>
+                     * @param _deviceProfiles <p>客户端设备配置。若 ClientAttestationRules 参数中，未指定 DeviceProfiles 参数值：保持已有客户端设备配置，不做修改。</p>
                      * 
                      */
                     void SetDeviceProfiles(const std::vector<DeviceProfile>& _deviceProfiles);
@@ -196,75 +218,81 @@ namespace TencentCloud
                     bool DeviceProfilesHasBeenSet() const;
 
                     /**
-                     * 获取客户端认证未通过的处置方式。SecurityAction 的 Name 取值支持：<li>Deny：拦截；</li><li>Monitor：观察；</li><li>Redirect：重定向；</li><li>Challenge：挑战。</li>默认值为 Monitor。
-                     * @return InvalidAttestationAction 客户端认证未通过的处置方式。SecurityAction 的 Name 取值支持：<li>Deny：拦截；</li><li>Monitor：观察；</li><li>Redirect：重定向；</li><li>Challenge：挑战。</li>默认值为 Monitor。
+                     * 获取<p>账号保护配置。</p>
+                     * @return AccountProtectionSettings <p>账号保护配置。</p>
                      * 
                      */
-                    SecurityAction GetInvalidAttestationAction() const;
+                    AccountProtectionSettings GetAccountProtectionSettings() const;
 
                     /**
-                     * 设置客户端认证未通过的处置方式。SecurityAction 的 Name 取值支持：<li>Deny：拦截；</li><li>Monitor：观察；</li><li>Redirect：重定向；</li><li>Challenge：挑战。</li>默认值为 Monitor。
-                     * @param _invalidAttestationAction 客户端认证未通过的处置方式。SecurityAction 的 Name 取值支持：<li>Deny：拦截；</li><li>Monitor：观察；</li><li>Redirect：重定向；</li><li>Challenge：挑战。</li>默认值为 Monitor。
+                     * 设置<p>账号保护配置。</p>
+                     * @param _accountProtectionSettings <p>账号保护配置。</p>
                      * 
                      */
-                    void SetInvalidAttestationAction(const SecurityAction& _invalidAttestationAction);
+                    void SetAccountProtectionSettings(const AccountProtectionSettings& _accountProtectionSettings);
 
                     /**
-                     * 判断参数 InvalidAttestationAction 是否已赋值
-                     * @return InvalidAttestationAction 是否已赋值
+                     * 判断参数 AccountProtectionSettings 是否已赋值
+                     * @return AccountProtectionSettings 是否已赋值
                      * 
                      */
-                    bool InvalidAttestationActionHasBeenSet() const;
+                    bool AccountProtectionSettingsHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 客户端认证规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li> <b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li> <b>删除</b>已有规则：BotManagement 参数中，ClientAttestationRule 列表中未包含的已有规则将被删除。</li>
+                     * <p>客户端认证规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li> <b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li> <b>删除</b>已有规则：BotManagement 参数中，ClientAttestationRule 列表中未包含的已有规则将被删除。</li></p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 客户端认证规则的名称。
+                     * <p>客户端认证规则的名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>
+                     * <p>规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li></p>
                      */
                     std::string m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
-                     * 规则的优先级，数值越小越优先执行，范围是 0 ~ 100，默认为 0。
+                     * <p>规则的优先级，数值越小越优先执行，范围是 0 ~ 100，默认为 0。</p>
                      */
                     uint64_t m_priority;
                     bool m_priorityHasBeenSet;
 
                     /**
-                     * 规则的具体内容，需符合表达式语法，详细规范参见产品文档。
+                     * <p>规则的具体内容，需符合表达式语法，详细规范参见产品文档。</p>
                      */
                     std::string m_condition;
                     bool m_conditionHasBeenSet;
 
                     /**
-                     * 客户端认证选项 ID。
+                     * <p>客户端认证选项 ID。</p>
                      */
                     std::string m_attesterId;
                     bool m_attesterIdHasBeenSet;
 
                     /**
-                     * 客户端设备配置。若 ClientAttestationRules 参数中，未指定 DeviceProfiles 参数值：保持已有客户端设备配置，不做修改。
+                     * <p>客户端认证未通过的处置方式。SecurityAction.Name 取值范围如下：</p><ul><li>Allow：放行，其中 AllowActionParameters 支持 MinDelayTime 和 MaxDelayTime 配置；</li><li>Deny：拦截，其中 DenyActionParameters 中支持 BlockIp、ReturnCustomPage 和 Stall 配置；</li><li>Monitor：观察；</li><li>Challenge：挑战，其中 ChallengeActionParameters.ChallengeOption 支持 JSChallenge、ManagedChallenge、InterstitialChallenge 和 InlineChallenge；</li><li>Redirect：重定向至URL。</li></ul>
+                     */
+                    SecurityAction m_invalidAttestationAction;
+                    bool m_invalidAttestationActionHasBeenSet;
+
+                    /**
+                     * <p>客户端设备配置。若 ClientAttestationRules 参数中，未指定 DeviceProfiles 参数值：保持已有客户端设备配置，不做修改。</p>
                      */
                     std::vector<DeviceProfile> m_deviceProfiles;
                     bool m_deviceProfilesHasBeenSet;
 
                     /**
-                     * 客户端认证未通过的处置方式。SecurityAction 的 Name 取值支持：<li>Deny：拦截；</li><li>Monitor：观察；</li><li>Redirect：重定向；</li><li>Challenge：挑战。</li>默认值为 Monitor。
+                     * <p>账号保护配置。</p>
                      */
-                    SecurityAction m_invalidAttestationAction;
-                    bool m_invalidAttestationActionHasBeenSet;
+                    AccountProtectionSettings m_accountProtectionSettings;
+                    bool m_accountProtectionSettingsHasBeenSet;
 
                 };
             }

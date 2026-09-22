@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Hai::V20230812::Model;
 using namespace std;
 
-GetServicePodLogsResponse::GetServicePodLogsResponse()
+GetServicePodLogsResponse::GetServicePodLogsResponse() :
+    m_logLinesHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,19 @@ CoreInternalOutcome GetServicePodLogsResponse::Deserialize(const string &payload
     }
 
 
+    if (rsp.HasMember("LogLines") && !rsp["LogLines"].IsNull())
+    {
+        if (!rsp["LogLines"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LogLines` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["LogLines"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_logLines.push_back((*itr).GetString());
+        }
+        m_logLinesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +84,19 @@ string GetServicePodLogsResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_logLinesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogLines";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_logLines.begin(); itr != m_logLines.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string GetServicePodLogsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> GetServicePodLogsResponse::GetLogLines() const
+{
+    return m_logLines;
+}
+
+bool GetServicePodLogsResponse::LogLinesHasBeenSet() const
+{
+    return m_logLinesHasBeenSet;
+}
 
 

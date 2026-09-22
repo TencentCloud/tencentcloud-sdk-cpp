@@ -33,7 +33,9 @@ CreateAgentInstanceRequest::CreateAgentInstanceRequest() :
     m_skillsHasBeenSet(false),
     m_soulIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_usePlatformAccountHasBeenSet(false)
+    m_usePlatformAccountHasBeenSet(false),
+    m_deploymentFreeHasBeenSet(false),
+    m_enableMemoryHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,22 @@ string CreateAgentInstanceRequest::ToJsonString() const
         string key = "UsePlatformAccount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_usePlatformAccount, allocator);
+    }
+
+    if (m_deploymentFreeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeploymentFree";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deploymentFree, allocator);
+    }
+
+    if (m_enableMemoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableMemory";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableMemory, allocator);
     }
 
 
@@ -333,6 +351,38 @@ void CreateAgentInstanceRequest::SetUsePlatformAccount(const bool& _usePlatformA
 bool CreateAgentInstanceRequest::UsePlatformAccountHasBeenSet() const
 {
     return m_usePlatformAccountHasBeenSet;
+}
+
+bool CreateAgentInstanceRequest::GetDeploymentFree() const
+{
+    return m_deploymentFree;
+}
+
+void CreateAgentInstanceRequest::SetDeploymentFree(const bool& _deploymentFree)
+{
+    m_deploymentFree = _deploymentFree;
+    m_deploymentFreeHasBeenSet = true;
+}
+
+bool CreateAgentInstanceRequest::DeploymentFreeHasBeenSet() const
+{
+    return m_deploymentFreeHasBeenSet;
+}
+
+bool CreateAgentInstanceRequest::GetEnableMemory() const
+{
+    return m_enableMemory;
+}
+
+void CreateAgentInstanceRequest::SetEnableMemory(const bool& _enableMemory)
+{
+    m_enableMemory = _enableMemory;
+    m_enableMemoryHasBeenSet = true;
+}
+
+bool CreateAgentInstanceRequest::EnableMemoryHasBeenSet() const
+{
+    return m_enableMemoryHasBeenSet;
 }
 
 

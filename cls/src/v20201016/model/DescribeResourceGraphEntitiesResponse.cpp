@@ -24,6 +24,8 @@ using namespace TencentCloud::Cls::V20201016::Model;
 using namespace std;
 
 DescribeResourceGraphEntitiesResponse::DescribeResourceGraphEntitiesResponse() :
+    m_entityInfosHasBeenSet(false),
+    m_hasMoreHasBeenSet(false),
     m_nextCursorHasBeenSet(false)
 {
 }
@@ -62,6 +64,36 @@ CoreInternalOutcome DescribeResourceGraphEntitiesResponse::Deserialize(const str
     }
 
 
+    if (rsp.HasMember("EntityInfos") && !rsp["EntityInfos"].IsNull())
+    {
+        if (!rsp["EntityInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EntityInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["EntityInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            EntityInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_entityInfos.push_back(item);
+        }
+        m_entityInfosHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("HasMore") && !rsp["HasMore"].IsNull())
+    {
+        if (!rsp["HasMore"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HasMore` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasMore = rsp["HasMore"].GetUint64();
+        m_hasMoreHasBeenSet = true;
+    }
+
     if (rsp.HasMember("NextCursor") && !rsp["NextCursor"].IsNull())
     {
         if (!rsp["NextCursor"].IsString())
@@ -82,6 +114,29 @@ string DescribeResourceGraphEntitiesResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
+    if (m_entityInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EntityInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_entityInfos.begin(); itr != m_entityInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_hasMoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasMore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasMore, allocator);
+    }
+
     if (m_nextCursorHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -101,6 +156,26 @@ string DescribeResourceGraphEntitiesResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<EntityInfo> DescribeResourceGraphEntitiesResponse::GetEntityInfos() const
+{
+    return m_entityInfos;
+}
+
+bool DescribeResourceGraphEntitiesResponse::EntityInfosHasBeenSet() const
+{
+    return m_entityInfosHasBeenSet;
+}
+
+uint64_t DescribeResourceGraphEntitiesResponse::GetHasMore() const
+{
+    return m_hasMore;
+}
+
+bool DescribeResourceGraphEntitiesResponse::HasMoreHasBeenSet() const
+{
+    return m_hasMoreHasBeenSet;
+}
 
 string DescribeResourceGraphEntitiesResponse::GetNextCursor() const
 {

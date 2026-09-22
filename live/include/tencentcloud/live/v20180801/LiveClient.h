@@ -55,6 +55,10 @@
 #include <tencentcloud/live/v20180801/model/CreateAuditKeywordLibResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateAuditKeywordsRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateAuditKeywordsResponse.h>
+#include <tencentcloud/live/v20180801/model/CreateAuditRuleRequest.h>
+#include <tencentcloud/live/v20180801/model/CreateAuditRuleResponse.h>
+#include <tencentcloud/live/v20180801/model/CreateAuditTemplateRequest.h>
+#include <tencentcloud/live/v20180801/model/CreateAuditTemplateResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateCasterRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateCasterResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateCasterInputPushUrlRequest.h>
@@ -91,6 +95,8 @@
 #include <tencentcloud/live/v20180801/model/CreateLiveRecordRuleResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateLiveRecordTemplateRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateLiveRecordTemplateResponse.h>
+#include <tencentcloud/live/v20180801/model/CreateLiveSmartEraseTemplateRequest.h>
+#include <tencentcloud/live/v20180801/model/CreateLiveSmartEraseTemplateResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateLiveSnapshotRuleRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateLiveSnapshotRuleResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateLiveSnapshotTemplateRequest.h>
@@ -123,6 +129,10 @@
 #include <tencentcloud/live/v20180801/model/DeleteAuditKeywordLibResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteAuditKeywordsRequest.h>
 #include <tencentcloud/live/v20180801/model/DeleteAuditKeywordsResponse.h>
+#include <tencentcloud/live/v20180801/model/DeleteAuditRuleRequest.h>
+#include <tencentcloud/live/v20180801/model/DeleteAuditRuleResponse.h>
+#include <tencentcloud/live/v20180801/model/DeleteAuditTemplateRequest.h>
+#include <tencentcloud/live/v20180801/model/DeleteAuditTemplateResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteCasterRequest.h>
 #include <tencentcloud/live/v20180801/model/DeleteCasterResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteCasterInputInfoRequest.h>
@@ -197,6 +207,12 @@
 #include <tencentcloud/live/v20180801/model/DescribeAuditKeywordLibsResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeAuditKeywordsRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeAuditKeywordsResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeAuditRulesRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeAuditRulesResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeAuditTemplateRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeAuditTemplateResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeAuditTemplatesRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeAuditTemplatesResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeBackupStreamListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeBackupStreamListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeBillBandwidthAndFluxListRequest.h>
@@ -415,6 +431,8 @@
 #include <tencentcloud/live/v20180801/model/InsertTaskTemporaryFilesResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyAuditKeywordLibRequest.h>
 #include <tencentcloud/live/v20180801/model/ModifyAuditKeywordLibResponse.h>
+#include <tencentcloud/live/v20180801/model/ModifyAuditTemplateRequest.h>
+#include <tencentcloud/live/v20180801/model/ModifyAuditTemplateResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyCasterRequest.h>
 #include <tencentcloud/live/v20180801/model/ModifyCasterResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyCasterInputInfoRequest.h>
@@ -567,6 +585,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAuditKeywordsResponse> CreateAuditKeywordsOutcome;
                 typedef std::future<CreateAuditKeywordsOutcome> CreateAuditKeywordsOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateAuditKeywordsRequest&, CreateAuditKeywordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuditKeywordsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAuditRuleResponse> CreateAuditRuleOutcome;
+                typedef std::future<CreateAuditRuleOutcome> CreateAuditRuleOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::CreateAuditRuleRequest&, CreateAuditRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuditRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAuditTemplateResponse> CreateAuditTemplateOutcome;
+                typedef std::future<CreateAuditTemplateOutcome> CreateAuditTemplateOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::CreateAuditTemplateRequest&, CreateAuditTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuditTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCasterResponse> CreateCasterOutcome;
                 typedef std::future<CreateCasterOutcome> CreateCasterOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateCasterRequest&, CreateCasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCasterAsyncHandler;
@@ -621,6 +645,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateLiveRecordTemplateResponse> CreateLiveRecordTemplateOutcome;
                 typedef std::future<CreateLiveRecordTemplateOutcome> CreateLiveRecordTemplateOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateLiveRecordTemplateRequest&, CreateLiveRecordTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveRecordTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLiveSmartEraseTemplateResponse> CreateLiveSmartEraseTemplateOutcome;
+                typedef std::future<CreateLiveSmartEraseTemplateOutcome> CreateLiveSmartEraseTemplateOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::CreateLiveSmartEraseTemplateRequest&, CreateLiveSmartEraseTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveSmartEraseTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateLiveSnapshotRuleResponse> CreateLiveSnapshotRuleOutcome;
                 typedef std::future<CreateLiveSnapshotRuleOutcome> CreateLiveSnapshotRuleOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateLiveSnapshotRuleRequest&, CreateLiveSnapshotRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveSnapshotRuleAsyncHandler;
@@ -669,6 +696,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAuditKeywordsResponse> DeleteAuditKeywordsOutcome;
                 typedef std::future<DeleteAuditKeywordsOutcome> DeleteAuditKeywordsOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DeleteAuditKeywordsRequest&, DeleteAuditKeywordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuditKeywordsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAuditRuleResponse> DeleteAuditRuleOutcome;
+                typedef std::future<DeleteAuditRuleOutcome> DeleteAuditRuleOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DeleteAuditRuleRequest&, DeleteAuditRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuditRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAuditTemplateResponse> DeleteAuditTemplateOutcome;
+                typedef std::future<DeleteAuditTemplateOutcome> DeleteAuditTemplateOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DeleteAuditTemplateRequest&, DeleteAuditTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuditTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCasterResponse> DeleteCasterOutcome;
                 typedef std::future<DeleteCasterOutcome> DeleteCasterOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DeleteCasterRequest&, DeleteCasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterAsyncHandler;
@@ -780,6 +813,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAuditKeywordsResponse> DescribeAuditKeywordsOutcome;
                 typedef std::future<DescribeAuditKeywordsOutcome> DescribeAuditKeywordsOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeAuditKeywordsRequest&, DescribeAuditKeywordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditKeywordsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditRulesResponse> DescribeAuditRulesOutcome;
+                typedef std::future<DescribeAuditRulesOutcome> DescribeAuditRulesOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeAuditRulesRequest&, DescribeAuditRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditTemplateResponse> DescribeAuditTemplateOutcome;
+                typedef std::future<DescribeAuditTemplateOutcome> DescribeAuditTemplateOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeAuditTemplateRequest&, DescribeAuditTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditTemplatesResponse> DescribeAuditTemplatesOutcome;
+                typedef std::future<DescribeAuditTemplatesOutcome> DescribeAuditTemplatesOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeAuditTemplatesRequest&, DescribeAuditTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBackupStreamListResponse> DescribeBackupStreamListOutcome;
                 typedef std::future<DescribeBackupStreamListOutcome> DescribeBackupStreamListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeBackupStreamListRequest&, DescribeBackupStreamListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupStreamListAsyncHandler;
@@ -1107,6 +1149,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAuditKeywordLibResponse> ModifyAuditKeywordLibOutcome;
                 typedef std::future<ModifyAuditKeywordLibOutcome> ModifyAuditKeywordLibOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ModifyAuditKeywordLibRequest&, ModifyAuditKeywordLibOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAuditKeywordLibAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAuditTemplateResponse> ModifyAuditTemplateOutcome;
+                typedef std::future<ModifyAuditTemplateOutcome> ModifyAuditTemplateOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::ModifyAuditTemplateRequest&, ModifyAuditTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAuditTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCasterResponse> ModifyCasterOutcome;
                 typedef std::future<ModifyCasterOutcome> ModifyCasterOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ModifyCasterRequest&, ModifyCasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCasterAsyncHandler;
@@ -1392,6 +1437,24 @@ namespace TencentCloud
                 CreateAuditKeywordsOutcomeCallable CreateAuditKeywordsCallable(const Model::CreateAuditKeywordsRequest& request);
 
                 /**
+                 *创建审核规则。
+                 * @param req CreateAuditRuleRequest
+                 * @return CreateAuditRuleOutcome
+                 */
+                CreateAuditRuleOutcome CreateAuditRule(const Model::CreateAuditRuleRequest &request);
+                void CreateAuditRuleAsync(const Model::CreateAuditRuleRequest& request, const CreateAuditRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAuditRuleOutcomeCallable CreateAuditRuleCallable(const Model::CreateAuditRuleRequest& request);
+
+                /**
+                 *创建单个审核模板。
+                 * @param req CreateAuditTemplateRequest
+                 * @return CreateAuditTemplateOutcome
+                 */
+                CreateAuditTemplateOutcome CreateAuditTemplate(const Model::CreateAuditTemplateRequest &request);
+                void CreateAuditTemplateAsync(const Model::CreateAuditTemplateRequest& request, const CreateAuditTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAuditTemplateOutcomeCallable CreateAuditTemplateCallable(const Model::CreateAuditTemplateRequest& request);
+
+                /**
                  *该接口用来创建新的导播台
                  * @param req CreateCasterRequest
                  * @return CreateCasterOutcome
@@ -1585,6 +1648,15 @@ namespace TencentCloud
                 CreateLiveRecordTemplateOutcomeCallable CreateLiveRecordTemplateCallable(const Model::CreateLiveRecordTemplateRequest& request);
 
                 /**
+                 *创建直播智能擦除模板。
+                 * @param req CreateLiveSmartEraseTemplateRequest
+                 * @return CreateLiveSmartEraseTemplateOutcome
+                 */
+                CreateLiveSmartEraseTemplateOutcome CreateLiveSmartEraseTemplate(const Model::CreateLiveSmartEraseTemplateRequest &request);
+                void CreateLiveSmartEraseTemplateAsync(const Model::CreateLiveSmartEraseTemplateRequest& request, const CreateLiveSmartEraseTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLiveSmartEraseTemplateOutcomeCallable CreateLiveSmartEraseTemplateCallable(const Model::CreateLiveSmartEraseTemplateRequest& request);
+
+                /**
                  *创建截图规则，需要先调用[CreateLiveSnapshotTemplate](/document/product/267/32624)接口创建截图模板，然后将返回的模板 ID 绑定到流进行使用。
 <br>截图相关文档：[直播截图](/document/product/267/32737)。
 注意：单个域名仅支持关联一个截图模板。
@@ -1754,6 +1826,24 @@ namespace TencentCloud
                 DeleteAuditKeywordsOutcome DeleteAuditKeywords(const Model::DeleteAuditKeywordsRequest &request);
                 void DeleteAuditKeywordsAsync(const Model::DeleteAuditKeywordsRequest& request, const DeleteAuditKeywordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAuditKeywordsOutcomeCallable DeleteAuditKeywordsCallable(const Model::DeleteAuditKeywordsRequest& request);
+
+                /**
+                 *删除审核规则。
+                 * @param req DeleteAuditRuleRequest
+                 * @return DeleteAuditRuleOutcome
+                 */
+                DeleteAuditRuleOutcome DeleteAuditRule(const Model::DeleteAuditRuleRequest &request);
+                void DeleteAuditRuleAsync(const Model::DeleteAuditRuleRequest& request, const DeleteAuditRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAuditRuleOutcomeCallable DeleteAuditRuleCallable(const Model::DeleteAuditRuleRequest& request);
+
+                /**
+                 *删除审核模板。
+                 * @param req DeleteAuditTemplateRequest
+                 * @return DeleteAuditTemplateOutcome
+                 */
+                DeleteAuditTemplateOutcome DeleteAuditTemplate(const Model::DeleteAuditTemplateRequest &request);
+                void DeleteAuditTemplateAsync(const Model::DeleteAuditTemplateRequest& request, const DeleteAuditTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAuditTemplateOutcomeCallable DeleteAuditTemplateCallable(const Model::DeleteAuditTemplateRequest& request);
 
                 /**
                  *该接口用来删除一个导播台的所有信息。
@@ -2094,6 +2184,33 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeAuditKeywordsOutcome DescribeAuditKeywords(const Model::DescribeAuditKeywordsRequest &request);
                 void DescribeAuditKeywordsAsync(const Model::DescribeAuditKeywordsRequest& request, const DescribeAuditKeywordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAuditKeywordsOutcomeCallable DescribeAuditKeywordsCallable(const Model::DescribeAuditKeywordsRequest& request);
+
+                /**
+                 *获取审核规则列表。
+                 * @param req DescribeAuditRulesRequest
+                 * @return DescribeAuditRulesOutcome
+                 */
+                DescribeAuditRulesOutcome DescribeAuditRules(const Model::DescribeAuditRulesRequest &request);
+                void DescribeAuditRulesAsync(const Model::DescribeAuditRulesRequest& request, const DescribeAuditRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditRulesOutcomeCallable DescribeAuditRulesCallable(const Model::DescribeAuditRulesRequest& request);
+
+                /**
+                 *获取单个审核模板。
+                 * @param req DescribeAuditTemplateRequest
+                 * @return DescribeAuditTemplateOutcome
+                 */
+                DescribeAuditTemplateOutcome DescribeAuditTemplate(const Model::DescribeAuditTemplateRequest &request);
+                void DescribeAuditTemplateAsync(const Model::DescribeAuditTemplateRequest& request, const DescribeAuditTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditTemplateOutcomeCallable DescribeAuditTemplateCallable(const Model::DescribeAuditTemplateRequest& request);
+
+                /**
+                 *返回当前用户的审核模板列表。
+                 * @param req DescribeAuditTemplatesRequest
+                 * @return DescribeAuditTemplatesOutcome
+                 */
+                DescribeAuditTemplatesOutcome DescribeAuditTemplates(const Model::DescribeAuditTemplatesRequest &request);
+                void DescribeAuditTemplatesAsync(const Model::DescribeAuditTemplatesRequest& request, const DescribeAuditTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditTemplatesOutcomeCallable DescribeAuditTemplatesCallable(const Model::DescribeAuditTemplatesRequest& request);
 
                 /**
                  *返回正在直播中的流列表。适用于推流成功后查询在线流信息。
@@ -3135,6 +3252,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 ModifyAuditKeywordLibOutcome ModifyAuditKeywordLib(const Model::ModifyAuditKeywordLibRequest &request);
                 void ModifyAuditKeywordLibAsync(const Model::ModifyAuditKeywordLibRequest& request, const ModifyAuditKeywordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAuditKeywordLibOutcomeCallable ModifyAuditKeywordLibCallable(const Model::ModifyAuditKeywordLibRequest& request);
+
+                /**
+                 *修改审核模板。
+                 * @param req ModifyAuditTemplateRequest
+                 * @return ModifyAuditTemplateOutcome
+                 */
+                ModifyAuditTemplateOutcome ModifyAuditTemplate(const Model::ModifyAuditTemplateRequest &request);
+                void ModifyAuditTemplateAsync(const Model::ModifyAuditTemplateRequest& request, const ModifyAuditTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAuditTemplateOutcomeCallable ModifyAuditTemplateCallable(const Model::ModifyAuditTemplateRequest& request);
 
                 /**
                  *该接口用来设置导播台的描述、名称、录制模板id等参数。

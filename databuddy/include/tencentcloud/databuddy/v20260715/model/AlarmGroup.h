@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通知渠道ID，可通过基础平台通知渠道相关接口获取
+                     * 获取<p>通知渠道ID，可通过基础平台通知渠道相关接口获取</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ChannelId 通知渠道ID，可通过基础平台通知渠道相关接口获取
+                     * @return ChannelId <p>通知渠道ID，可通过基础平台通知渠道相关接口获取</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChannelId() const;
 
                     /**
-                     * 设置通知渠道ID，可通过基础平台通知渠道相关接口获取
+                     * 设置<p>通知渠道ID，可通过基础平台通知渠道相关接口获取</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _channelId 通知渠道ID，可通过基础平台通知渠道相关接口获取
+                     * @param _channelId <p>通知渠道ID，可通过基础平台通知渠道相关接口获取</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool ChannelIdHasBeenSet() const;
 
                     /**
-                     * 获取通知渠道名称，可以是用户组名称或邮箱地址
+                     * 获取<p>通知渠道名称，可以是用户组名称或邮箱地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ChannelName 通知渠道名称，可以是用户组名称或邮箱地址
+                     * @return ChannelName <p>通知渠道名称，可以是用户组名称或邮箱地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChannelName() const;
 
                     /**
-                     * 设置通知渠道名称，可以是用户组名称或邮箱地址
+                     * 设置<p>通知渠道名称，可以是用户组名称或邮箱地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _channelName 通知渠道名称，可以是用户组名称或邮箱地址
+                     * @param _channelName <p>通知渠道名称，可以是用户组名称或邮箱地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool ChannelNameHasBeenSet() const;
 
                     /**
-                     * 获取是否启用邮件渠道，默认值：false
+                     * 获取<p>是否启用邮件渠道，默认值：false</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsEmailChannel 是否启用邮件渠道，默认值：false
+                     * @return IsEmailChannel <p>是否启用邮件渠道，默认值：false</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsEmailChannel() const;
 
                     /**
-                     * 设置是否启用邮件渠道，默认值：false
+                     * 设置<p>是否启用邮件渠道，默认值：false</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isEmailChannel 是否启用邮件渠道，默认值：false
+                     * @param _isEmailChannel <p>是否启用邮件渠道，默认值：false</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool IsEmailChannelHasBeenSet() const;
 
                     /**
-                     * 获取一组告警条件，有 启动，成功，失败和任务超时告警
+                     * 获取<p>告警条件列表。取值：<br>START：启动<br>SUCCESS：成功<br>FAILURE：失败<br>MONITOR_INDICATOR_ALARM：监控指标告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlarmConditions 一组告警条件，有 启动，成功，失败和任务超时告警
+                     * @return AlarmConditions <p>告警条件列表。取值：<br>START：启动<br>SUCCESS：成功<br>FAILURE：失败<br>MONITOR_INDICATOR_ALARM：监控指标告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAlarmConditions() const;
 
                     /**
-                     * 设置一组告警条件，有 启动，成功，失败和任务超时告警
+                     * 设置<p>告警条件列表。取值：<br>START：启动<br>SUCCESS：成功<br>FAILURE：失败<br>MONITOR_INDICATOR_ALARM：监控指标告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _alarmConditions 一组告警条件，有 启动，成功，失败和任务超时告警
+                     * @param _alarmConditions <p>告警条件列表。取值：<br>START：启动<br>SUCCESS：成功<br>FAILURE：失败<br>MONITOR_INDICATOR_ALARM：监控指标告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool AlarmConditionsHasBeenSet() const;
 
                     /**
-                     * 获取通知渠道类型。取值：0 未指定，1 Email，2 Webhook，3 Teams，4 Slack
+                     * 获取<p>通知渠道类型。取值：0 未指定，1 Email，2 Webhook，3 Teams，4 Slack</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ChannelType 通知渠道类型。取值：0 未指定，1 Email，2 Webhook，3 Teams，4 Slack
+                     * @return ChannelType <p>通知渠道类型。取值：0 未指定，1 Email，2 Webhook，3 Teams，4 Slack</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetChannelType() const;
 
                     /**
-                     * 设置通知渠道类型。取值：0 未指定，1 Email，2 Webhook，3 Teams，4 Slack
+                     * 设置<p>通知渠道类型。取值：0 未指定，1 Email，2 Webhook，3 Teams，4 Slack</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _channelType 通知渠道类型。取值：0 未指定，1 Email，2 Webhook，3 Teams，4 Slack
+                     * @param _channelType <p>通知渠道类型。取值：0 未指定，1 Email，2 Webhook，3 Teams，4 Slack</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -174,35 +174,35 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通知渠道ID，可通过基础平台通知渠道相关接口获取
+                     * <p>通知渠道ID，可通过基础平台通知渠道相关接口获取</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_channelId;
                     bool m_channelIdHasBeenSet;
 
                     /**
-                     * 通知渠道名称，可以是用户组名称或邮箱地址
+                     * <p>通知渠道名称，可以是用户组名称或邮箱地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_channelName;
                     bool m_channelNameHasBeenSet;
 
                     /**
-                     * 是否启用邮件渠道，默认值：false
+                     * <p>是否启用邮件渠道，默认值：false</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isEmailChannel;
                     bool m_isEmailChannelHasBeenSet;
 
                     /**
-                     * 一组告警条件，有 启动，成功，失败和任务超时告警
+                     * <p>告警条件列表。取值：<br>START：启动<br>SUCCESS：成功<br>FAILURE：失败<br>MONITOR_INDICATOR_ALARM：监控指标告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_alarmConditions;
                     bool m_alarmConditionsHasBeenSet;
 
                     /**
-                     * 通知渠道类型。取值：0 未指定，1 Email，2 Webhook，3 Teams，4 Slack
+                     * <p>通知渠道类型。取值：0 未指定，1 Email，2 Webhook，3 Teams，4 Slack</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_channelType;

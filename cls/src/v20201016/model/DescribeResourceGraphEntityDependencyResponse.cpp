@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cls::V20201016::Model;
 using namespace std;
 
-DescribeResourceGraphEntityDependencyResponse::DescribeResourceGraphEntityDependencyResponse()
+DescribeResourceGraphEntityDependencyResponse::DescribeResourceGraphEntityDependencyResponse() :
+    m_topologyHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,23 @@ CoreInternalOutcome DescribeResourceGraphEntityDependencyResponse::Deserialize(c
     }
 
 
+    if (rsp.HasMember("Topology") && !rsp["Topology"].IsNull())
+    {
+        if (!rsp["Topology"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Topology` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_topology.Deserialize(rsp["Topology"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_topologyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +88,15 @@ string DescribeResourceGraphEntityDependencyResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_topologyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Topology";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_topology.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string DescribeResourceGraphEntityDependencyResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+DependencyTopology DescribeResourceGraphEntityDependencyResponse::GetTopology() const
+{
+    return m_topology;
+}
+
+bool DescribeResourceGraphEntityDependencyResponse::TopologyHasBeenSet() const
+{
+    return m_topologyHasBeenSet;
+}
 
 

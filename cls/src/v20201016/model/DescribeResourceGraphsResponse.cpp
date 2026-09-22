@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cls::V20201016::Model;
 using namespace std;
 
-DescribeResourceGraphsResponse::DescribeResourceGraphsResponse()
+DescribeResourceGraphsResponse::DescribeResourceGraphsResponse() :
+    m_resourceGraphInfosHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome DescribeResourceGraphsResponse::Deserialize(const string &pa
     }
 
 
+    if (rsp.HasMember("ResourceGraphInfos") && !rsp["ResourceGraphInfos"].IsNull())
+    {
+        if (!rsp["ResourceGraphInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ResourceGraphInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ResourceGraphInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ResourceGraphInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_resourceGraphInfos.push_back(item);
+        }
+        m_resourceGraphInfosHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string DescribeResourceGraphsResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_resourceGraphInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGraphInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceGraphInfos.begin(); itr != m_resourceGraphInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string DescribeResourceGraphsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<ResourceGraphInfo> DescribeResourceGraphsResponse::GetResourceGraphInfos() const
+{
+    return m_resourceGraphInfos;
+}
+
+bool DescribeResourceGraphsResponse::ResourceGraphInfosHasBeenSet() const
+{
+    return m_resourceGraphInfosHasBeenSet;
+}
+
+uint64_t DescribeResourceGraphsResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeResourceGraphsResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
 
 

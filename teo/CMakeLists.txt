@@ -191,13 +191,13 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DeleteCustomErrorPageRequest.h
   include/tencentcloud/teo/v20220901/model/CustomField.h
   include/tencentcloud/teo/v20220901/model/WebSecurityTemplates.h
-  include/tencentcloud/teo/v20220901/model/BotManagedRule.h
+  include/tencentcloud/teo/v20220901/model/ApplyFreeCertificateResponse.h
   include/tencentcloud/teo/v20220901/model/FloatTimingTypeValue.h
   include/tencentcloud/teo/v20220901/model/BrowserImpersonationDetectionAction.h
   include/tencentcloud/teo/v20220901/model/CacheKeyHeader.h
   include/tencentcloud/teo/v20220901/model/DeleteZoneRequest.h
   include/tencentcloud/teo/v20220901/model/RangeOriginPullParameters.h
-  include/tencentcloud/teo/v20220901/model/ApplyFreeCertificateResponse.h
+  include/tencentcloud/teo/v20220901/model/BotManagedRule.h
   include/tencentcloud/teo/v20220901/model/CurrentOriginACL.h
   include/tencentcloud/teo/v20220901/model/DescribeIPGroupReferencesResponse.h
   include/tencentcloud/teo/v20220901/model/CreateEdgeKVNamespaceRequest.h
@@ -433,6 +433,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeZoneSettingResponse.h
   include/tencentcloud/teo/v20220901/model/CreateMultiPathGatewayResponse.h
   include/tencentcloud/teo/v20220901/model/DeleteJustInTimeTranscodeTemplatesResponse.h
+  include/tencentcloud/teo/v20220901/model/SecurityHeadersToOrigin.h
   include/tencentcloud/teo/v20220901/model/DeleteRulesResponse.h
   include/tencentcloud/teo/v20220901/model/ModifyDnsRecordsRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeLogAnalysisDetailResponse.h
@@ -476,6 +477,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeWebSecurityTemplateRequest.h
   include/tencentcloud/teo/v20220901/model/ClientAttestationRule.h
   include/tencentcloud/teo/v20220901/model/CustomEndpoint.h
+  include/tencentcloud/teo/v20220901/model/AccountProtectionSettings.h
   include/tencentcloud/teo/v20220901/model/ModifyOriginACLResponse.h
   include/tencentcloud/teo/v20220901/model/VerifyOwnershipRequest.h
   include/tencentcloud/teo/v20220901/model/InferenceContainerConfigForModify.h
@@ -737,6 +739,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ImportZoneConfigRequest.h
   include/tencentcloud/teo/v20220901/model/IpTableRule.h
   include/tencentcloud/teo/v20220901/model/DDosProtectionConfig.h
+  include/tencentcloud/teo/v20220901/model/UserRiskProfile.h
   include/tencentcloud/teo/v20220901/model/ModifyFunctionRuleRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeSecurityIPGroupResponse.h
   include/tencentcloud/teo/v20220901/model/IncreasePlanQuotaRequest.h
@@ -1093,13 +1096,13 @@ set(teo_src
   src/v20220901/model/DeleteCustomErrorPageRequest.cpp
   src/v20220901/model/CustomField.cpp
   src/v20220901/model/WebSecurityTemplates.cpp
-  src/v20220901/model/BotManagedRule.cpp
+  src/v20220901/model/ApplyFreeCertificateResponse.cpp
   src/v20220901/model/FloatTimingTypeValue.cpp
   src/v20220901/model/BrowserImpersonationDetectionAction.cpp
   src/v20220901/model/CacheKeyHeader.cpp
   src/v20220901/model/DeleteZoneRequest.cpp
   src/v20220901/model/RangeOriginPullParameters.cpp
-  src/v20220901/model/ApplyFreeCertificateResponse.cpp
+  src/v20220901/model/BotManagedRule.cpp
   src/v20220901/model/CurrentOriginACL.cpp
   src/v20220901/model/DescribeIPGroupReferencesResponse.cpp
   src/v20220901/model/CreateEdgeKVNamespaceRequest.cpp
@@ -1335,6 +1338,7 @@ set(teo_src
   src/v20220901/model/DescribeZoneSettingResponse.cpp
   src/v20220901/model/CreateMultiPathGatewayResponse.cpp
   src/v20220901/model/DeleteJustInTimeTranscodeTemplatesResponse.cpp
+  src/v20220901/model/SecurityHeadersToOrigin.cpp
   src/v20220901/model/DeleteRulesResponse.cpp
   src/v20220901/model/ModifyDnsRecordsRequest.cpp
   src/v20220901/model/DescribeLogAnalysisDetailResponse.cpp
@@ -1378,6 +1382,7 @@ set(teo_src
   src/v20220901/model/DescribeWebSecurityTemplateRequest.cpp
   src/v20220901/model/ClientAttestationRule.cpp
   src/v20220901/model/CustomEndpoint.cpp
+  src/v20220901/model/AccountProtectionSettings.cpp
   src/v20220901/model/ModifyOriginACLResponse.cpp
   src/v20220901/model/VerifyOwnershipRequest.cpp
   src/v20220901/model/InferenceContainerConfigForModify.cpp
@@ -1639,6 +1644,7 @@ set(teo_src
   src/v20220901/model/ImportZoneConfigRequest.cpp
   src/v20220901/model/IpTableRule.cpp
   src/v20220901/model/DDosProtectionConfig.cpp
+  src/v20220901/model/UserRiskProfile.cpp
   src/v20220901/model/ModifyFunctionRuleRequest.cpp
   src/v20220901/model/DescribeSecurityIPGroupResponse.cpp
   src/v20220901/model/IncreasePlanQuotaRequest.cpp

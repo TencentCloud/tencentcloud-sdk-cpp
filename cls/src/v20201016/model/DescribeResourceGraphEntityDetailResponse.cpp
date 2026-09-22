@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cls::V20201016::Model;
 using namespace std;
 
-DescribeResourceGraphEntityDetailResponse::DescribeResourceGraphEntityDetailResponse()
+DescribeResourceGraphEntityDetailResponse::DescribeResourceGraphEntityDetailResponse() :
+    m_entityInfoHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,23 @@ CoreInternalOutcome DescribeResourceGraphEntityDetailResponse::Deserialize(const
     }
 
 
+    if (rsp.HasMember("EntityInfo") && !rsp["EntityInfo"].IsNull())
+    {
+        if (!rsp["EntityInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EntityInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_entityInfo.Deserialize(rsp["EntityInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_entityInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +88,15 @@ string DescribeResourceGraphEntityDetailResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_entityInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EntityInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_entityInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string DescribeResourceGraphEntityDetailResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+EntityInfo DescribeResourceGraphEntityDetailResponse::GetEntityInfo() const
+{
+    return m_entityInfo;
+}
+
+bool DescribeResourceGraphEntityDetailResponse::EntityInfoHasBeenSet() const
+{
+    return m_entityInfoHasBeenSet;
+}
 
 

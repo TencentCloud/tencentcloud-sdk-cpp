@@ -151,6 +151,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/Tag.h
   include/tencentcloud/tcb/v20180608/model/MigrationInput.h
   include/tencentcloud/tcb/v20180608/model/DescribeResourcePermissionResult.h
+  include/tencentcloud/tcb/v20180608/model/ResetPGAccountPasswordResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateCustomLoginKeyRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCreateMySQLResultRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeBillingInfoRequest.h
@@ -202,6 +203,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DeleteProviderRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCreditsUsageDetailRequest.h
   include/tencentcloud/tcb/v20180608/model/EnvPkgCreditsUsage.h
+  include/tencentcloud/tcb/v20180608/model/ObjectKV.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudAppVersionListRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeResourcePermissionResponse.h
   include/tencentcloud/tcb/v20180608/model/OrderInfo.h
@@ -303,6 +305,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/PrivateConfig.h
   include/tencentcloud/tcb/v20180608/model/AIModelSecret.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvLimitResponse.h
+  include/tencentcloud/tcb/v20180608/model/DescribeTaskResultResponse.h
   include/tencentcloud/tcb/v20180608/model/ReleaseEnvResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyClsTopicResponse.h
@@ -319,6 +322,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/EmailSmtpConfig.h
   include/tencentcloud/tcb/v20180608/model/HTTPServiceHeaderToAdd.h
   include/tencentcloud/tcb/v20180608/model/DescribeAuthDomainsResponse.h
+  include/tencentcloud/tcb/v20180608/model/UpgradePGInstanceToDedicatedRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateHostingDomainRequest.h
   include/tencentcloud/tcb/v20180608/model/HTTPServiceCacheParams.h
   include/tencentcloud/tcb/v20180608/model/SMSTemplateParams.h
@@ -347,6 +351,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DestroyEnvRequest.h
   include/tencentcloud/tcb/v20180608/model/DestroyEnvResponse.h
   include/tencentcloud/tcb/v20180608/model/ListTablesResponse.h
+  include/tencentcloud/tcb/v20180608/model/UpgradePGInstanceToDedicatedResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvPlansRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeBaasPackageListResponse.h
   include/tencentcloud/tcb/v20180608/model/Provider.h
@@ -374,6 +379,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/HTTPServiceDomainParam.h
   include/tencentcloud/tcb/v20180608/model/Pager.h
   include/tencentcloud/tcb/v20180608/model/StaticEnvironment.h
+  include/tencentcloud/tcb/v20180608/model/DescribeTaskResultRequest.h
   include/tencentcloud/tcb/v20180608/model/DeleteHTTPServiceRouteRequest.h
   include/tencentcloud/tcb/v20180608/model/RunCommandsRequest.h
   include/tencentcloud/tcb/v20180608/model/IndexAccesses.h
@@ -381,6 +387,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeAuthDomainsRequest.h
   include/tencentcloud/tcb/v20180608/model/PlatformCreditsUsageDaily.h
   include/tencentcloud/tcb/v20180608/model/WxGatewayCustomConfig.h
+  include/tencentcloud/tcb/v20180608/model/ResetPGAccountPasswordRequest.h
   include/tencentcloud/tcb/v20180608/model/MetricUsage.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunBuildLogResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeCreditsUsageResponse.h
@@ -526,6 +533,7 @@ set(tcb_src
   src/v20180608/model/Tag.cpp
   src/v20180608/model/MigrationInput.cpp
   src/v20180608/model/DescribeResourcePermissionResult.cpp
+  src/v20180608/model/ResetPGAccountPasswordResponse.cpp
   src/v20180608/model/CreateCustomLoginKeyRequest.cpp
   src/v20180608/model/DescribeCreateMySQLResultRequest.cpp
   src/v20180608/model/DescribeBillingInfoRequest.cpp
@@ -577,6 +585,7 @@ set(tcb_src
   src/v20180608/model/DeleteProviderRequest.cpp
   src/v20180608/model/DescribeCreditsUsageDetailRequest.cpp
   src/v20180608/model/EnvPkgCreditsUsage.cpp
+  src/v20180608/model/ObjectKV.cpp
   src/v20180608/model/DescribeCloudAppVersionListRequest.cpp
   src/v20180608/model/DescribeResourcePermissionResponse.cpp
   src/v20180608/model/OrderInfo.cpp
@@ -678,6 +687,7 @@ set(tcb_src
   src/v20180608/model/PrivateConfig.cpp
   src/v20180608/model/AIModelSecret.cpp
   src/v20180608/model/DescribeEnvLimitResponse.cpp
+  src/v20180608/model/DescribeTaskResultResponse.cpp
   src/v20180608/model/ReleaseEnvResponse.cpp
   src/v20180608/model/DescribeCloudBaseRunServerVersionResponse.cpp
   src/v20180608/model/ModifyClsTopicResponse.cpp
@@ -694,6 +704,7 @@ set(tcb_src
   src/v20180608/model/EmailSmtpConfig.cpp
   src/v20180608/model/HTTPServiceHeaderToAdd.cpp
   src/v20180608/model/DescribeAuthDomainsResponse.cpp
+  src/v20180608/model/UpgradePGInstanceToDedicatedRequest.cpp
   src/v20180608/model/CreateHostingDomainRequest.cpp
   src/v20180608/model/HTTPServiceCacheParams.cpp
   src/v20180608/model/SMSTemplateParams.cpp
@@ -722,6 +733,7 @@ set(tcb_src
   src/v20180608/model/DestroyEnvRequest.cpp
   src/v20180608/model/DestroyEnvResponse.cpp
   src/v20180608/model/ListTablesResponse.cpp
+  src/v20180608/model/UpgradePGInstanceToDedicatedResponse.cpp
   src/v20180608/model/DescribeEnvPlansRequest.cpp
   src/v20180608/model/DescribeBaasPackageListResponse.cpp
   src/v20180608/model/Provider.cpp
@@ -749,6 +761,7 @@ set(tcb_src
   src/v20180608/model/HTTPServiceDomainParam.cpp
   src/v20180608/model/Pager.cpp
   src/v20180608/model/StaticEnvironment.cpp
+  src/v20180608/model/DescribeTaskResultRequest.cpp
   src/v20180608/model/DeleteHTTPServiceRouteRequest.cpp
   src/v20180608/model/RunCommandsRequest.cpp
   src/v20180608/model/IndexAccesses.cpp
@@ -756,6 +769,7 @@ set(tcb_src
   src/v20180608/model/DescribeAuthDomainsRequest.cpp
   src/v20180608/model/PlatformCreditsUsageDaily.cpp
   src/v20180608/model/WxGatewayCustomConfig.cpp
+  src/v20180608/model/ResetPGAccountPasswordRequest.cpp
   src/v20180608/model/MetricUsage.cpp
   src/v20180608/model/DescribeCloudBaseRunBuildLogResponse.cpp
   src/v20180608/model/DescribeCreditsUsageResponse.cpp

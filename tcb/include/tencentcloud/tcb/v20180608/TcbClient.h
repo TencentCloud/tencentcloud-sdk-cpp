@@ -173,6 +173,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeTableResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeTablesRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeTablesResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeTaskResultRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeTaskResultResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeUserListRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeUserListResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyEnvRequest.h>
@@ -239,6 +241,8 @@
 #include <tencentcloud/tcb/v20180608/model/RenewEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/RepairPGUserMigrationHistoryRequest.h>
 #include <tencentcloud/tcb/v20180608/model/RepairPGUserMigrationHistoryResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ResetPGAccountPasswordRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ResetPGAccountPasswordResponse.h>
 #include <tencentcloud/tcb/v20180608/model/RunCommandsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/RunCommandsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/RunSqlRequest.h>
@@ -255,6 +259,8 @@
 #include <tencentcloud/tcb/v20180608/model/UpdateFunctionConfigurationResponse.h>
 #include <tencentcloud/tcb/v20180608/model/UpdateTableRequest.h>
 #include <tencentcloud/tcb/v20180608/model/UpdateTableResponse.h>
+#include <tencentcloud/tcb/v20180608/model/UpgradePGInstanceToDedicatedRequest.h>
+#include <tencentcloud/tcb/v20180608/model/UpgradePGInstanceToDedicatedResponse.h>
 #include <tencentcloud/tcb/v20180608/model/VerifyHTTPServiceRouteRequest.h>
 #include <tencentcloud/tcb/v20180608/model/VerifyHTTPServiceRouteResponse.h>
 
@@ -496,6 +502,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTablesResponse> DescribeTablesOutcome;
                 typedef std::future<DescribeTablesOutcome> DescribeTablesOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeTablesRequest&, DescribeTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTablesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTaskResultResponse> DescribeTaskResultOutcome;
+                typedef std::future<DescribeTaskResultOutcome> DescribeTaskResultOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeTaskResultRequest&, DescribeTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserListResponse> DescribeUserListOutcome;
                 typedef std::future<DescribeUserListOutcome> DescribeUserListOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeUserListRequest&, DescribeUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserListAsyncHandler;
@@ -595,6 +604,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RepairPGUserMigrationHistoryResponse> RepairPGUserMigrationHistoryOutcome;
                 typedef std::future<RepairPGUserMigrationHistoryOutcome> RepairPGUserMigrationHistoryOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::RepairPGUserMigrationHistoryRequest&, RepairPGUserMigrationHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RepairPGUserMigrationHistoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetPGAccountPasswordResponse> ResetPGAccountPasswordOutcome;
+                typedef std::future<ResetPGAccountPasswordOutcome> ResetPGAccountPasswordOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ResetPGAccountPasswordRequest&, ResetPGAccountPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetPGAccountPasswordAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunCommandsResponse> RunCommandsOutcome;
                 typedef std::future<RunCommandsOutcome> RunCommandsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::RunCommandsRequest&, RunCommandsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunCommandsAsyncHandler;
@@ -619,6 +631,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateTableResponse> UpdateTableOutcome;
                 typedef std::future<UpdateTableOutcome> UpdateTableOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::UpdateTableRequest&, UpdateTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTableAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpgradePGInstanceToDedicatedResponse> UpgradePGInstanceToDedicatedOutcome;
+                typedef std::future<UpgradePGInstanceToDedicatedOutcome> UpgradePGInstanceToDedicatedOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::UpgradePGInstanceToDedicatedRequest&, UpgradePGInstanceToDedicatedOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradePGInstanceToDedicatedAsyncHandler;
                 typedef Outcome<Core::Error, Model::VerifyHTTPServiceRouteResponse> VerifyHTTPServiceRouteOutcome;
                 typedef std::future<VerifyHTTPServiceRouteOutcome> VerifyHTTPServiceRouteOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::VerifyHTTPServiceRouteRequest&, VerifyHTTPServiceRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyHTTPServiceRouteAsyncHandler;
@@ -1430,6 +1445,15 @@ namespace TencentCloud
                 DescribeTablesOutcomeCallable DescribeTablesCallable(const Model::DescribeTablesRequest& request);
 
                 /**
+                 *本接口（DescribeTaskResult）用于查询任务结果。
+                 * @param req DescribeTaskResultRequest
+                 * @return DescribeTaskResultOutcome
+                 */
+                DescribeTaskResultOutcome DescribeTaskResult(const Model::DescribeTaskResultRequest &request);
+                void DescribeTaskResultAsync(const Model::DescribeTaskResultRequest& request, const DescribeTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskResultOutcomeCallable DescribeTaskResultCallable(const Model::DescribeTaskResultRequest& request);
+
+                /**
                  *查询tcb用户列表
                  * @param req DescribeUserListRequest
                  * @return DescribeUserListOutcome
@@ -1755,6 +1779,15 @@ Id、Secret、CreatedAt、Meta 等字段在该接口中不可修改，当客户�
                 RepairPGUserMigrationHistoryOutcomeCallable RepairPGUserMigrationHistoryCallable(const Model::RepairPGUserMigrationHistoryRequest& request);
 
                 /**
+                 *修改 PG 实例用户角色密码。
+                 * @param req ResetPGAccountPasswordRequest
+                 * @return ResetPGAccountPasswordOutcome
+                 */
+                ResetPGAccountPasswordOutcome ResetPGAccountPassword(const Model::ResetPGAccountPasswordRequest &request);
+                void ResetPGAccountPasswordAsync(const Model::ResetPGAccountPasswordRequest& request, const ResetPGAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetPGAccountPasswordOutcomeCallable ResetPGAccountPasswordCallable(const Model::ResetPGAccountPasswordRequest& request);
+
+                /**
                  *本接口（RunCommands）用于执行文档型数据库命令。
                  * @param req RunCommandsRequest
                  * @return RunCommandsOutcome
@@ -1848,6 +1881,15 @@ Id、Secret、CreatedAt、Meta 等字段在该接口中不可修改，当客户�
                 UpdateTableOutcome UpdateTable(const Model::UpdateTableRequest &request);
                 void UpdateTableAsync(const Model::UpdateTableRequest& request, const UpdateTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateTableOutcomeCallable UpdateTableCallable(const Model::UpdateTableRequest& request);
+
+                /**
+                 *本接口（UpgradePGInstanceToDedicated）用于共享PG升级独享PG。
+                 * @param req UpgradePGInstanceToDedicatedRequest
+                 * @return UpgradePGInstanceToDedicatedOutcome
+                 */
+                UpgradePGInstanceToDedicatedOutcome UpgradePGInstanceToDedicated(const Model::UpgradePGInstanceToDedicatedRequest &request);
+                void UpgradePGInstanceToDedicatedAsync(const Model::UpgradePGInstanceToDedicatedRequest& request, const UpgradePGInstanceToDedicatedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradePGInstanceToDedicatedOutcomeCallable UpgradePGInstanceToDedicatedCallable(const Model::UpgradePGInstanceToDedicatedRequest& request);
 
                 /**
                  *覆盖的校验项包括：

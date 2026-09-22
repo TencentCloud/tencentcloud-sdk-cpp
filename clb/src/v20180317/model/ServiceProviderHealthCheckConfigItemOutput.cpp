@@ -25,7 +25,9 @@ ServiceProviderHealthCheckConfigItemOutput::ServiceProviderHealthCheckConfigItem
     m_healthCheckIntervalHasBeenSet(false),
     m_healthCheckUnhealthyThresholdHasBeenSet(false),
     m_healthCheckMaxTokensHasBeenSet(false),
-    m_healthCheckProtocolHasBeenSet(false)
+    m_healthCheckProtocolHasBeenSet(false),
+    m_healthCheckPathHasBeenSet(false),
+    m_healthCheckMethodHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome ServiceProviderHealthCheckConfigItemOutput::Deserialize(cons
         m_healthCheckProtocolHasBeenSet = true;
     }
 
+    if (value.HasMember("HealthCheckPath") && !value["HealthCheckPath"].IsNull())
+    {
+        if (!value["HealthCheckPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceProviderHealthCheckConfigItemOutput.HealthCheckPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthCheckPath = string(value["HealthCheckPath"].GetString());
+        m_healthCheckPathHasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthCheckMethod") && !value["HealthCheckMethod"].IsNull())
+    {
+        if (!value["HealthCheckMethod"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceProviderHealthCheckConfigItemOutput.HealthCheckMethod` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthCheckMethod = string(value["HealthCheckMethod"].GetString());
+        m_healthCheckMethodHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +151,22 @@ void ServiceProviderHealthCheckConfigItemOutput::ToJsonObject(rapidjson::Value &
         string key = "HealthCheckProtocol";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_healthCheckProtocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthCheckPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheckPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_healthCheckPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthCheckMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheckMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_healthCheckMethod.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +250,37 @@ void ServiceProviderHealthCheckConfigItemOutput::SetHealthCheckProtocol(const st
 bool ServiceProviderHealthCheckConfigItemOutput::HealthCheckProtocolHasBeenSet() const
 {
     return m_healthCheckProtocolHasBeenSet;
+}
+
+string ServiceProviderHealthCheckConfigItemOutput::GetHealthCheckPath() const
+{
+    return m_healthCheckPath;
+}
+
+void ServiceProviderHealthCheckConfigItemOutput::SetHealthCheckPath(const string& _healthCheckPath)
+{
+    m_healthCheckPath = _healthCheckPath;
+    m_healthCheckPathHasBeenSet = true;
+}
+
+bool ServiceProviderHealthCheckConfigItemOutput::HealthCheckPathHasBeenSet() const
+{
+    return m_healthCheckPathHasBeenSet;
+}
+
+string ServiceProviderHealthCheckConfigItemOutput::GetHealthCheckMethod() const
+{
+    return m_healthCheckMethod;
+}
+
+void ServiceProviderHealthCheckConfigItemOutput::SetHealthCheckMethod(const string& _healthCheckMethod)
+{
+    m_healthCheckMethod = _healthCheckMethod;
+    m_healthCheckMethodHasBeenSet = true;
+}
+
+bool ServiceProviderHealthCheckConfigItemOutput::HealthCheckMethodHasBeenSet() const
+{
+    return m_healthCheckMethodHasBeenSet;
 }
 

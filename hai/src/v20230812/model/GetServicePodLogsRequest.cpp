@@ -22,7 +22,10 @@
 using namespace TencentCloud::Hai::V20230812::Model;
 using namespace std;
 
-GetServicePodLogsRequest::GetServicePodLogsRequest()
+GetServicePodLogsRequest::GetServicePodLogsRequest() :
+    m_serviceIdHasBeenSet(false),
+    m_podNameHasBeenSet(false),
+    m_tailLinesHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,30 @@ string GetServicePodLogsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_serviceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_podName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tailLinesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TailLines";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tailLines.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +67,53 @@ string GetServicePodLogsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string GetServicePodLogsRequest::GetServiceId() const
+{
+    return m_serviceId;
+}
+
+void GetServicePodLogsRequest::SetServiceId(const string& _serviceId)
+{
+    m_serviceId = _serviceId;
+    m_serviceIdHasBeenSet = true;
+}
+
+bool GetServicePodLogsRequest::ServiceIdHasBeenSet() const
+{
+    return m_serviceIdHasBeenSet;
+}
+
+string GetServicePodLogsRequest::GetPodName() const
+{
+    return m_podName;
+}
+
+void GetServicePodLogsRequest::SetPodName(const string& _podName)
+{
+    m_podName = _podName;
+    m_podNameHasBeenSet = true;
+}
+
+bool GetServicePodLogsRequest::PodNameHasBeenSet() const
+{
+    return m_podNameHasBeenSet;
+}
+
+string GetServicePodLogsRequest::GetTailLines() const
+{
+    return m_tailLines;
+}
+
+void GetServicePodLogsRequest::SetTailLines(const string& _tailLines)
+{
+    m_tailLines = _tailLines;
+    m_tailLinesHasBeenSet = true;
+}
+
+bool GetServicePodLogsRequest::TailLinesHasBeenSet() const
+{
+    return m_tailLinesHasBeenSet;
+}
 
 

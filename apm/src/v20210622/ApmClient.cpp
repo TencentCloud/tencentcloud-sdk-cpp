@@ -1690,6 +1690,56 @@ ApmClient::ModifyGeneralApmApplicationConfigOutcomeCallable ApmClient::ModifyGen
     return prom->get_future();
 }
 
+ApmClient::OpenApmPaidVersionOutcome ApmClient::OpenApmPaidVersion(const OpenApmPaidVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenApmPaidVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenApmPaidVersionResponse rsp = OpenApmPaidVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenApmPaidVersionOutcome(rsp);
+        else
+            return OpenApmPaidVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenApmPaidVersionOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::OpenApmPaidVersionAsync(const OpenApmPaidVersionRequest& request, const OpenApmPaidVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const OpenApmPaidVersionRequest&;
+    using Resp = OpenApmPaidVersionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "OpenApmPaidVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ApmClient::OpenApmPaidVersionOutcomeCallable ApmClient::OpenApmPaidVersionCallable(const OpenApmPaidVersionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<OpenApmPaidVersionOutcome>>();
+    OpenApmPaidVersionAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const OpenApmPaidVersionRequest&,
+        OpenApmPaidVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ApmClient::TerminateApmInstanceOutcome ApmClient::TerminateApmInstance(const TerminateApmInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "TerminateApmInstance");

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取队列名称。
-                     * @return QueueName 队列名称。
+                     * 获取<p>队列名称。</p>
+                     * @return QueueName <p>队列名称。</p>
                      * 
                      */
                     std::string GetQueueName() const;
 
                     /**
-                     * 设置队列名称。
-                     * @param _queueName 队列名称。
+                     * 设置<p>队列名称。</p>
+                     * @param _queueName <p>队列名称。</p>
                      * 
                      */
                     void SetQueueName(const std::string& _queueName);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 队列名称。
+                     * <p>队列名称。</p>
                      */
                     std::string m_queueName;
                     bool m_queueNameHasBeenSet;

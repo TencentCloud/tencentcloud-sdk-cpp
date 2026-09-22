@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cls::V20201016::Model;
 using namespace std;
 
-CreateResourceGraphResponse::CreateResourceGraphResponse()
+CreateResourceGraphResponse::CreateResourceGraphResponse() :
+    m_resourceGraphIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateResourceGraphResponse::Deserialize(const string &paylo
     }
 
 
+    if (rsp.HasMember("ResourceGraphId") && !rsp["ResourceGraphId"].IsNull())
+    {
+        if (!rsp["ResourceGraphId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceGraphId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceGraphId = string(rsp["ResourceGraphId"].GetString());
+        m_resourceGraphIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateResourceGraphResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_resourceGraphIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGraphId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceGraphId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateResourceGraphResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateResourceGraphResponse::GetResourceGraphId() const
+{
+    return m_resourceGraphId;
+}
+
+bool CreateResourceGraphResponse::ResourceGraphIdHasBeenSet() const
+{
+    return m_resourceGraphIdHasBeenSet;
+}
 
 

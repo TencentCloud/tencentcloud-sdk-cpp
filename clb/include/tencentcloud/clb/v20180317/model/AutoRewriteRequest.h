@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例ID。
-                     * @return LoadBalancerId 负载均衡实例ID。
+                     * 获取<p>负载均衡实例ID。</p>
+                     * @return LoadBalancerId <p>负载均衡实例ID。</p>
                      * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡实例ID。
-                     * @param _loadBalancerId 负载均衡实例ID。
+                     * 设置<p>负载均衡实例ID。</p>
+                     * @param _loadBalancerId <p>负载均衡实例ID。</p>
                      * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取HTTPS:443监听器的ID。
-                     * @return ListenerId HTTPS:443监听器的ID。
+                     * 获取<p>HTTPS:443监听器的ID。</p>
+                     * @return ListenerId <p>HTTPS:443监听器的ID。</p>
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置HTTPS:443监听器的ID。
-                     * @param _listenerId HTTPS:443监听器的ID。
+                     * 设置<p>HTTPS:443监听器的ID。</p>
+                     * @param _listenerId <p>HTTPS:443监听器的ID。</p>
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取HTTPS:443监听器下需要重定向的域名，若不填，则对HTTPS:443监听器下的所有域名都设置重定向。
-                     * @return Domains HTTPS:443监听器下需要重定向的域名，若不填，则对HTTPS:443监听器下的所有域名都设置重定向。
+                     * 获取<p>HTTPS:443监听器下需要重定向的域名，若不填，则对HTTPS:443监听器下的所有域名都设置重定向。</p>
+                     * @return Domains <p>HTTPS:443监听器下需要重定向的域名，若不填，则对HTTPS:443监听器下的所有域名都设置重定向。</p>
                      * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
-                     * 设置HTTPS:443监听器下需要重定向的域名，若不填，则对HTTPS:443监听器下的所有域名都设置重定向。
-                     * @param _domains HTTPS:443监听器下需要重定向的域名，若不填，则对HTTPS:443监听器下的所有域名都设置重定向。
+                     * 设置<p>HTTPS:443监听器下需要重定向的域名，若不填，则对HTTPS:443监听器下的所有域名都设置重定向。</p>
+                     * @param _domains <p>HTTPS:443监听器下需要重定向的域名，若不填，则对HTTPS:443监听器下的所有域名都设置重定向。</p>
                      * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DomainsHasBeenSet() const;
 
                     /**
-                     * 获取重定向状态码，可取值301,302,307。
-                     * @return RewriteCodes 重定向状态码，可取值301,302,307。
+                     * 获取<p>重定向状态码，可取值301,302,307。</p><p>默认值：302</p>
+                     * @return RewriteCodes <p>重定向状态码，可取值301,302,307。</p><p>默认值：302</p>
                      * 
                      */
                     std::vector<int64_t> GetRewriteCodes() const;
 
                     /**
-                     * 设置重定向状态码，可取值301,302,307。
-                     * @param _rewriteCodes 重定向状态码，可取值301,302,307。
+                     * 设置<p>重定向状态码，可取值301,302,307。</p><p>默认值：302</p>
+                     * @param _rewriteCodes <p>重定向状态码，可取值301,302,307。</p><p>默认值：302</p>
                      * 
                      */
                     void SetRewriteCodes(const std::vector<int64_t>& _rewriteCodes);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool RewriteCodesHasBeenSet() const;
 
                     /**
-                     * 获取重定向是否携带匹配的URL。
-                     * @return TakeUrls 重定向是否携带匹配的URL。
+                     * 获取<p>重定向是否携带匹配的URL。</p>
+                     * @return TakeUrls <p>重定向是否携带匹配的URL。</p>
                      * 
                      */
                     std::vector<bool> GetTakeUrls() const;
 
                     /**
-                     * 设置重定向是否携带匹配的URL。
-                     * @param _takeUrls 重定向是否携带匹配的URL。
+                     * 设置<p>重定向是否携带匹配的URL。</p>
+                     * @param _takeUrls <p>重定向是否携带匹配的URL。</p>
                      * 
                      */
                     void SetTakeUrls(const std::vector<bool>& _takeUrls);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡实例ID。
+                     * <p>负载均衡实例ID。</p>
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * HTTPS:443监听器的ID。
+                     * <p>HTTPS:443监听器的ID。</p>
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * HTTPS:443监听器下需要重定向的域名，若不填，则对HTTPS:443监听器下的所有域名都设置重定向。
+                     * <p>HTTPS:443监听器下需要重定向的域名，若不填，则对HTTPS:443监听器下的所有域名都设置重定向。</p>
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;
 
                     /**
-                     * 重定向状态码，可取值301,302,307。
+                     * <p>重定向状态码，可取值301,302,307。</p><p>默认值：302</p>
                      */
                     std::vector<int64_t> m_rewriteCodes;
                     bool m_rewriteCodesHasBeenSet;
 
                     /**
-                     * 重定向是否携带匹配的URL。
+                     * <p>重定向是否携带匹配的URL。</p>
                      */
                     std::vector<bool> m_takeUrls;
                     bool m_takeUrlsHasBeenSet;

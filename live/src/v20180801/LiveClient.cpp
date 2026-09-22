@@ -840,6 +840,106 @@ LiveClient::CreateAuditKeywordsOutcomeCallable LiveClient::CreateAuditKeywordsCa
     return prom->get_future();
 }
 
+LiveClient::CreateAuditRuleOutcome LiveClient::CreateAuditRule(const CreateAuditRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAuditRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAuditRuleResponse rsp = CreateAuditRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAuditRuleOutcome(rsp);
+        else
+            return CreateAuditRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAuditRuleOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateAuditRuleAsync(const CreateAuditRuleRequest& request, const CreateAuditRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAuditRuleRequest&;
+    using Resp = CreateAuditRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAuditRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::CreateAuditRuleOutcomeCallable LiveClient::CreateAuditRuleCallable(const CreateAuditRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAuditRuleOutcome>>();
+    CreateAuditRuleAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const CreateAuditRuleRequest&,
+        CreateAuditRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::CreateAuditTemplateOutcome LiveClient::CreateAuditTemplate(const CreateAuditTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAuditTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAuditTemplateResponse rsp = CreateAuditTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAuditTemplateOutcome(rsp);
+        else
+            return CreateAuditTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAuditTemplateOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateAuditTemplateAsync(const CreateAuditTemplateRequest& request, const CreateAuditTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAuditTemplateRequest&;
+    using Resp = CreateAuditTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAuditTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::CreateAuditTemplateOutcomeCallable LiveClient::CreateAuditTemplateCallable(const CreateAuditTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAuditTemplateOutcome>>();
+    CreateAuditTemplateAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const CreateAuditTemplateRequest&,
+        CreateAuditTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LiveClient::CreateCasterOutcome LiveClient::CreateCaster(const CreateCasterRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCaster");
@@ -1740,6 +1840,56 @@ LiveClient::CreateLiveRecordTemplateOutcomeCallable LiveClient::CreateLiveRecord
     return prom->get_future();
 }
 
+LiveClient::CreateLiveSmartEraseTemplateOutcome LiveClient::CreateLiveSmartEraseTemplate(const CreateLiveSmartEraseTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLiveSmartEraseTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLiveSmartEraseTemplateResponse rsp = CreateLiveSmartEraseTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLiveSmartEraseTemplateOutcome(rsp);
+        else
+            return CreateLiveSmartEraseTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLiveSmartEraseTemplateOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateLiveSmartEraseTemplateAsync(const CreateLiveSmartEraseTemplateRequest& request, const CreateLiveSmartEraseTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateLiveSmartEraseTemplateRequest&;
+    using Resp = CreateLiveSmartEraseTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateLiveSmartEraseTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::CreateLiveSmartEraseTemplateOutcomeCallable LiveClient::CreateLiveSmartEraseTemplateCallable(const CreateLiveSmartEraseTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateLiveSmartEraseTemplateOutcome>>();
+    CreateLiveSmartEraseTemplateAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const CreateLiveSmartEraseTemplateRequest&,
+        CreateLiveSmartEraseTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LiveClient::CreateLiveSnapshotRuleOutcome LiveClient::CreateLiveSnapshotRule(const CreateLiveSnapshotRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateLiveSnapshotRule");
@@ -2532,6 +2682,106 @@ LiveClient::DeleteAuditKeywordsOutcomeCallable LiveClient::DeleteAuditKeywordsCa
         const LiveClient*,
         const DeleteAuditKeywordsRequest&,
         DeleteAuditKeywordsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::DeleteAuditRuleOutcome LiveClient::DeleteAuditRule(const DeleteAuditRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAuditRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAuditRuleResponse rsp = DeleteAuditRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAuditRuleOutcome(rsp);
+        else
+            return DeleteAuditRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAuditRuleOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DeleteAuditRuleAsync(const DeleteAuditRuleRequest& request, const DeleteAuditRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAuditRuleRequest&;
+    using Resp = DeleteAuditRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAuditRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DeleteAuditRuleOutcomeCallable LiveClient::DeleteAuditRuleCallable(const DeleteAuditRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAuditRuleOutcome>>();
+    DeleteAuditRuleAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DeleteAuditRuleRequest&,
+        DeleteAuditRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::DeleteAuditTemplateOutcome LiveClient::DeleteAuditTemplate(const DeleteAuditTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAuditTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAuditTemplateResponse rsp = DeleteAuditTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAuditTemplateOutcome(rsp);
+        else
+            return DeleteAuditTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAuditTemplateOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DeleteAuditTemplateAsync(const DeleteAuditTemplateRequest& request, const DeleteAuditTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAuditTemplateRequest&;
+    using Resp = DeleteAuditTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAuditTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DeleteAuditTemplateOutcomeCallable LiveClient::DeleteAuditTemplateCallable(const DeleteAuditTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAuditTemplateOutcome>>();
+    DeleteAuditTemplateAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DeleteAuditTemplateRequest&,
+        DeleteAuditTemplateOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4382,6 +4632,156 @@ LiveClient::DescribeAuditKeywordsOutcomeCallable LiveClient::DescribeAuditKeywor
         const LiveClient*,
         const DescribeAuditKeywordsRequest&,
         DescribeAuditKeywordsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::DescribeAuditRulesOutcome LiveClient::DescribeAuditRules(const DescribeAuditRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditRulesResponse rsp = DescribeAuditRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditRulesOutcome(rsp);
+        else
+            return DescribeAuditRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditRulesOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeAuditRulesAsync(const DescribeAuditRulesRequest& request, const DescribeAuditRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAuditRulesRequest&;
+    using Resp = DescribeAuditRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuditRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DescribeAuditRulesOutcomeCallable LiveClient::DescribeAuditRulesCallable(const DescribeAuditRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAuditRulesOutcome>>();
+    DescribeAuditRulesAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DescribeAuditRulesRequest&,
+        DescribeAuditRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::DescribeAuditTemplateOutcome LiveClient::DescribeAuditTemplate(const DescribeAuditTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditTemplateResponse rsp = DescribeAuditTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditTemplateOutcome(rsp);
+        else
+            return DescribeAuditTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditTemplateOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeAuditTemplateAsync(const DescribeAuditTemplateRequest& request, const DescribeAuditTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAuditTemplateRequest&;
+    using Resp = DescribeAuditTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuditTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DescribeAuditTemplateOutcomeCallable LiveClient::DescribeAuditTemplateCallable(const DescribeAuditTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAuditTemplateOutcome>>();
+    DescribeAuditTemplateAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DescribeAuditTemplateRequest&,
+        DescribeAuditTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::DescribeAuditTemplatesOutcome LiveClient::DescribeAuditTemplates(const DescribeAuditTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditTemplatesResponse rsp = DescribeAuditTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditTemplatesOutcome(rsp);
+        else
+            return DescribeAuditTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeAuditTemplatesAsync(const DescribeAuditTemplatesRequest& request, const DescribeAuditTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAuditTemplatesRequest&;
+    using Resp = DescribeAuditTemplatesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuditTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DescribeAuditTemplatesOutcomeCallable LiveClient::DescribeAuditTemplatesCallable(const DescribeAuditTemplatesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAuditTemplatesOutcome>>();
+    DescribeAuditTemplatesAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DescribeAuditTemplatesRequest&,
+        DescribeAuditTemplatesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -9832,6 +10232,56 @@ LiveClient::ModifyAuditKeywordLibOutcomeCallable LiveClient::ModifyAuditKeywordL
         const LiveClient*,
         const ModifyAuditKeywordLibRequest&,
         ModifyAuditKeywordLibOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::ModifyAuditTemplateOutcome LiveClient::ModifyAuditTemplate(const ModifyAuditTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAuditTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAuditTemplateResponse rsp = ModifyAuditTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAuditTemplateOutcome(rsp);
+        else
+            return ModifyAuditTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAuditTemplateOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::ModifyAuditTemplateAsync(const ModifyAuditTemplateRequest& request, const ModifyAuditTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyAuditTemplateRequest&;
+    using Resp = ModifyAuditTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyAuditTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::ModifyAuditTemplateOutcomeCallable LiveClient::ModifyAuditTemplateCallable(const ModifyAuditTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyAuditTemplateOutcome>>();
+    ModifyAuditTemplateAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const ModifyAuditTemplateRequest&,
+        ModifyAuditTemplateOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

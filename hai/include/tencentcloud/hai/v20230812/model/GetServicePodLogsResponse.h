@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>日志内容</p>
+                     * @return LogLines <p>日志内容</p>
+                     * 
+                     */
+                    std::vector<std::string> GetLogLines() const;
+
+                    /**
+                     * 判断参数 LogLines 是否已赋值
+                     * @return LogLines 是否已赋值
+                     * 
+                     */
+                    bool LogLinesHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>日志内容</p>
+                     */
+                    std::vector<std::string> m_logLines;
+                    bool m_logLinesHasBeenSet;
 
                 };
             }

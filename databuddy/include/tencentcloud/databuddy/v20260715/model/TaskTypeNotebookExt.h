@@ -47,26 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取脚本来源。取值：SCRIPT_SOURCE_LOCAL（本地）/ SCRIPT_SOURCE_GIT（Git 仓库）/
-SCRIPT_SOURCE_CFS（CFS 文件系统）/ SCRIPT_SOURCE_COS（COS 对象存储）/
-SCRIPT_SOURCE_WORKSPACE（工作空间）
+                     * 获取<p>脚本来源。取值：SCRIPT_SOURCE_LOCAL（本地）/ SCRIPT_SOURCE_GIT（Git 仓库）/<br>SCRIPT_SOURCE_CFS（CFS 文件系统）/ SCRIPT_SOURCE_COS（COS 对象存储）/<br>SCRIPT_SOURCE_WORKSPACE（工作空间）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Source 脚本来源。取值：SCRIPT_SOURCE_LOCAL（本地）/ SCRIPT_SOURCE_GIT（Git 仓库）/
-SCRIPT_SOURCE_CFS（CFS 文件系统）/ SCRIPT_SOURCE_COS（COS 对象存储）/
-SCRIPT_SOURCE_WORKSPACE（工作空间）
+                     * @return Source <p>脚本来源。取值：SCRIPT_SOURCE_LOCAL（本地）/ SCRIPT_SOURCE_GIT（Git 仓库）/<br>SCRIPT_SOURCE_CFS（CFS 文件系统）/ SCRIPT_SOURCE_COS（COS 对象存储）/<br>SCRIPT_SOURCE_WORKSPACE（工作空间）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
-                     * 设置脚本来源。取值：SCRIPT_SOURCE_LOCAL（本地）/ SCRIPT_SOURCE_GIT（Git 仓库）/
-SCRIPT_SOURCE_CFS（CFS 文件系统）/ SCRIPT_SOURCE_COS（COS 对象存储）/
-SCRIPT_SOURCE_WORKSPACE（工作空间）
+                     * 设置<p>脚本来源。取值：SCRIPT_SOURCE_LOCAL（本地）/ SCRIPT_SOURCE_GIT（Git 仓库）/<br>SCRIPT_SOURCE_CFS（CFS 文件系统）/ SCRIPT_SOURCE_COS（COS 对象存储）/<br>SCRIPT_SOURCE_WORKSPACE（工作空间）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _source 脚本来源。取值：SCRIPT_SOURCE_LOCAL（本地）/ SCRIPT_SOURCE_GIT（Git 仓库）/
-SCRIPT_SOURCE_CFS（CFS 文件系统）/ SCRIPT_SOURCE_COS（COS 对象存储）/
-SCRIPT_SOURCE_WORKSPACE（工作空间）
+                     * @param _source <p>脚本来源。取值：SCRIPT_SOURCE_LOCAL（本地）/ SCRIPT_SOURCE_GIT（Git 仓库）/<br>SCRIPT_SOURCE_CFS（CFS 文件系统）/ SCRIPT_SOURCE_COS（COS 对象存储）/<br>SCRIPT_SOURCE_WORKSPACE（工作空间）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -80,18 +72,18 @@ SCRIPT_SOURCE_WORKSPACE（工作空间）
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取前端显示使用，对执行平台无意义
+                     * 获取<p>前端显示使用，对执行平台无意义</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DisplayPath 前端显示使用，对执行平台无意义
+                     * @return DisplayPath <p>前端显示使用，对执行平台无意义</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDisplayPath() const;
 
                     /**
-                     * 设置前端显示使用，对执行平台无意义
+                     * 设置<p>前端显示使用，对执行平台无意义</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _displayPath 前端显示使用，对执行平台无意义
+                     * @param _displayPath <p>前端显示使用，对执行平台无意义</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -105,18 +97,18 @@ SCRIPT_SOURCE_WORKSPACE（工作空间）
                     bool DisplayPathHasBeenSet() const;
 
                     /**
-                     * 获取Notebook 相对路径
+                     * 获取<p>Notebook 相对路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NotebookPath Notebook 相对路径
+                     * @return NotebookPath <p>Notebook 相对路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNotebookPath() const;
 
                     /**
-                     * 设置Notebook 相对路径
+                     * 设置<p>Notebook 相对路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _notebookPath Notebook 相对路径
+                     * @param _notebookPath <p>Notebook 相对路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -130,18 +122,18 @@ SCRIPT_SOURCE_WORKSPACE（工作空间）
                     bool NotebookPathHasBeenSet() const;
 
                     /**
-                     * 获取Notebook 绝对路径
+                     * 获取<p>Notebook 绝对路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NotebookAbsolutePath Notebook 绝对路径
+                     * @return NotebookAbsolutePath <p>Notebook 绝对路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNotebookAbsolutePath() const;
 
                     /**
-                     * 设置Notebook 绝对路径
+                     * 设置<p>Notebook 绝对路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _notebookAbsolutePath Notebook 绝对路径
+                     * @param _notebookAbsolutePath <p>Notebook 绝对路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -157,30 +149,28 @@ SCRIPT_SOURCE_WORKSPACE（工作空间）
                 private:
 
                     /**
-                     * 脚本来源。取值：SCRIPT_SOURCE_LOCAL（本地）/ SCRIPT_SOURCE_GIT（Git 仓库）/
-SCRIPT_SOURCE_CFS（CFS 文件系统）/ SCRIPT_SOURCE_COS（COS 对象存储）/
-SCRIPT_SOURCE_WORKSPACE（工作空间）
+                     * <p>脚本来源。取值：SCRIPT_SOURCE_LOCAL（本地）/ SCRIPT_SOURCE_GIT（Git 仓库）/<br>SCRIPT_SOURCE_CFS（CFS 文件系统）/ SCRIPT_SOURCE_COS（COS 对象存储）/<br>SCRIPT_SOURCE_WORKSPACE（工作空间）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 前端显示使用，对执行平台无意义
+                     * <p>前端显示使用，对执行平台无意义</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_displayPath;
                     bool m_displayPathHasBeenSet;
 
                     /**
-                     * Notebook 相对路径
+                     * <p>Notebook 相对路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_notebookPath;
                     bool m_notebookPathHasBeenSet;
 
                     /**
-                     * Notebook 绝对路径
+                     * <p>Notebook 绝对路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_notebookAbsolutePath;

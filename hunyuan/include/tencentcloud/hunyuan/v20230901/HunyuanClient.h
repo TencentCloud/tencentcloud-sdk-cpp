@@ -190,7 +190,9 @@ namespace TencentCloud
                 ActivateServiceOutcomeCallable ActivateServiceCallable(const Model::ActivateServiceRequest& request);
 
                 /**
-                 *如需使用OpenAI兼容接口， 请参考文档：[OpenAI 兼容接口](https://cloud.tencent.com/document/product/1729/111007)
+                 *混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态
+
+如需使用OpenAI兼容接口， 请参考文档：[OpenAI 兼容接口](https://cloud.tencent.com/document/product/1729/111007)
 
 腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。
 
@@ -206,7 +208,9 @@ namespace TencentCloud
                 ChatCompletionsOutcomeCallable ChatCompletionsCallable(const Model::ChatCompletionsRequest& request);
 
                 /**
-                 *腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。
+                 *混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态
+
+腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。
 
  1. 本接口暂不支持返回图片内容。
  2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。
@@ -220,7 +224,9 @@ namespace TencentCloud
                 ChatTranslationsOutcomeCallable ChatTranslationsCallable(const Model::ChatTranslationsRequest& request);
 
                 /**
-                 *创建自定义术语库，在翻译时自动将源语言术语替换为指定的目标语言译文，确保专业术语翻译的一致性和准确性。
+                 *混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态
+
+创建自定义术语库，在翻译时自动将源语言术语替换为指定的目标语言译文，确保专业术语翻译的一致性和准确性。
                  * @param req CreateGlossaryRequest
                  * @return CreateGlossaryOutcome
                  */
@@ -229,7 +235,9 @@ namespace TencentCloud
                 CreateGlossaryOutcomeCallable CreateGlossaryCallable(const Model::CreateGlossaryRequest& request);
 
                 /**
-                 *添加术语条目。
+                 *混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态
+
+添加术语条目。
                  * @param req CreateGlossaryEntryRequest
                  * @return CreateGlossaryEntryOutcome
                  */
@@ -238,7 +246,9 @@ namespace TencentCloud
                 CreateGlossaryEntryOutcomeCallable CreateGlossaryEntryCallable(const Model::CreateGlossaryEntryRequest& request);
 
                 /**
-                 *腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。
+                 *混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态
+
+腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。
 
  1. 本接口暂不支持返回图片内容。
  2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。
@@ -252,7 +262,9 @@ namespace TencentCloud
                 CreateThreadOutcomeCallable CreateThreadCallable(const Model::CreateThreadRequest& request);
 
                 /**
-                 *删除术语库。
+                 *混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态
+
+删除术语库。
                  * @param req DeleteGlossaryRequest
                  * @return DeleteGlossaryOutcome
                  */
@@ -261,7 +273,9 @@ namespace TencentCloud
                 DeleteGlossaryOutcomeCallable DeleteGlossaryCallable(const Model::DeleteGlossaryRequest& request);
 
                 /**
-                 *删除术语条目。
+                 *混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态
+
+删除术语条目。
                  * @param req DeleteGlossaryEntryRequest
                  * @return DeleteGlossaryEntryOutcome
                  */
@@ -270,7 +284,9 @@ namespace TencentCloud
                 DeleteGlossaryEntryOutcomeCallable DeleteGlossaryEntryCallable(const Model::DeleteGlossaryEntryRequest& request);
 
                 /**
-                 *删除文件。
+                 *混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态
+
+删除文件。
                  * @param req FilesDeletionsRequest
                  * @return FilesDeletionsOutcome
                  */
@@ -279,7 +295,9 @@ namespace TencentCloud
                 FilesDeletionsOutcomeCallable FilesDeletionsCallable(const Model::FilesDeletionsRequest& request);
 
                 /**
-                 *文件列表。
+                 *混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态
+
+文件列表。
                  * @param req FilesListRequest
                  * @return FilesListOutcome
                  */
@@ -288,7 +306,9 @@ namespace TencentCloud
                 FilesListOutcomeCallable FilesListCallable(const Model::FilesListRequest& request);
 
                 /**
-                 *上传用于不同用途的文件。
+                 *混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态
+
+上传用于不同用途的文件。
 当前用途仅支持 hunyuan 等模型的文档理解。
                  * @param req FilesUploadsRequest
                  * @return FilesUploadsOutcome
@@ -298,7 +318,9 @@ namespace TencentCloud
                 FilesUploadsOutcomeCallable FilesUploadsCallable(const Model::FilesUploadsRequest& request);
 
                 /**
-                 *腾讯混元 Embedding 接口，可以将文本转化为高质量的向量数据。向量维度为1024维。
+                 *混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态
+
+腾讯混元 Embedding 接口，可以将文本转化为高质量的向量数据。向量维度为1024维。
                  * @param req GetEmbeddingRequest
                  * @return GetEmbeddingOutcome
                  */
@@ -307,7 +329,9 @@ namespace TencentCloud
                 GetEmbeddingOutcomeCallable GetEmbeddingCallable(const Model::GetEmbeddingRequest& request);
 
                 /**
-                 *腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。
+                 *混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态
+
+腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。
 
  1. 本接口暂不支持返回图片内容。
  2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。
@@ -321,7 +345,9 @@ namespace TencentCloud
                 GetThreadOutcomeCallable GetThreadCallable(const Model::GetThreadRequest& request);
 
                 /**
-                 *腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。
+                 *混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态
+
+腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。
 
  1. 本接口暂不支持返回图片内容。
  2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。
@@ -335,7 +361,9 @@ namespace TencentCloud
                 GetThreadMessageOutcomeCallable GetThreadMessageCallable(const Model::GetThreadMessageRequest& request);
 
                 /**
-                 *腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。
+                 *混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态
+
+腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。
 
  1. 本接口暂不支持返回图片内容。
  2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。
@@ -349,7 +377,9 @@ namespace TencentCloud
                 GetThreadMessageListOutcomeCallable GetThreadMessageListCallable(const Model::GetThreadMessageListRequest& request);
 
                 /**
-                 *该接口用于计算文本对应Token数、字符数。
+                 *混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态
+
+该接口用于计算文本对应Token数、字符数。
                  * @param req GetTokenCountRequest
                  * @return GetTokenCountOutcome
                  */
@@ -358,7 +388,9 @@ namespace TencentCloud
                 GetTokenCountOutcomeCallable GetTokenCountCallable(const Model::GetTokenCountRequest& request);
 
                 /**
-                 *如需使用OpenAI兼容接口， 请参考文档：[OpenAI 兼容接口](https://cloud.tencent.com/document/product/1729/111007)
+                 *混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态
+
+如需使用OpenAI兼容接口， 请参考文档：[OpenAI 兼容接口](https://cloud.tencent.com/document/product/1729/111007)
 
 腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。
 
@@ -374,7 +406,9 @@ namespace TencentCloud
                 GroupChatCompletionsOutcomeCallable GroupChatCompletionsCallable(const Model::GroupChatCompletionsRequest& request);
 
                 /**
-                 *如需使用OpenAI兼容接口， 请参考文档：[OpenAI 兼容接口](https://cloud.tencent.com/document/product/1729/111007)
+                 *混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态
+
+如需使用OpenAI兼容接口， 请参考文档：[OpenAI 兼容接口](https://cloud.tencent.com/document/product/1729/111007)
 
 腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。
 
@@ -390,7 +424,9 @@ namespace TencentCloud
                 ImageQuestionOutcomeCallable ImageQuestionCallable(const Model::ImageQuestionRequest& request);
 
                 /**
-                 *查询术语库。
+                 *混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态
+
+查询术语库。
                  * @param req ListGlossaryRequest
                  * @return ListGlossaryOutcome
                  */
@@ -399,7 +435,9 @@ namespace TencentCloud
                 ListGlossaryOutcomeCallable ListGlossaryCallable(const Model::ListGlossaryRequest& request);
 
                 /**
-                 *查询术语条目。
+                 *混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态
+
+查询术语条目。
                  * @param req ListGlossaryEntryRequest
                  * @return ListGlossaryEntryOutcome
                  */
@@ -432,7 +470,9 @@ namespace TencentCloud
                 QueryHunyuanImageJobOutcomeCallable QueryHunyuanImageJobCallable(const Model::QueryHunyuanImageJobRequest& request);
 
                 /**
-                 *腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。
+                 *混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态
+
+腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。
 
  1. 本接口暂不支持返回图片内容。
  2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。
@@ -489,7 +529,9 @@ namespace TencentCloud
                 TextToImageLiteOutcomeCallable TextToImageLiteCallable(const Model::TextToImageLiteRequest& request);
 
                 /**
-                 *更新术语条目。
+                 *混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态
+
+更新术语条目。
                  * @param req UpdateGlossaryEntryRequest
                  * @return UpdateGlossaryEntryOutcome
                  */

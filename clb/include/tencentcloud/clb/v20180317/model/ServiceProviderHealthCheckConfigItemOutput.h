@@ -111,14 +111,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>健康检查使用的最大Token数量。部分模型如gpt系列可能仅支持大于等于16。</p><p>默认值：1</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthCheckMaxTokens <p>健康检查使用的最大Token数量。部分模型如gpt系列可能仅支持大于等于16。</p><p>默认值：1</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHealthCheckMaxTokens() const;
 
                     /**
                      * 设置<p>健康检查使用的最大Token数量。部分模型如gpt系列可能仅支持大于等于16。</p><p>默认值：1</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _healthCheckMaxTokens <p>健康检查使用的最大Token数量。部分模型如gpt系列可能仅支持大于等于16。</p><p>默认值：1</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHealthCheckMaxTokens(const uint64_t& _healthCheckMaxTokens);
@@ -155,6 +159,48 @@ namespace TencentCloud
                      */
                     bool HealthCheckProtocolHasBeenSet() const;
 
+                    /**
+                     * 获取<p>健康检查路径。仅HealthCheckMethod为Service时生效。</p>
+                     * @return HealthCheckPath <p>健康检查路径。仅HealthCheckMethod为Service时生效。</p>
+                     * 
+                     */
+                    std::string GetHealthCheckPath() const;
+
+                    /**
+                     * 设置<p>健康检查路径。仅HealthCheckMethod为Service时生效。</p>
+                     * @param _healthCheckPath <p>健康检查路径。仅HealthCheckMethod为Service时生效。</p>
+                     * 
+                     */
+                    void SetHealthCheckPath(const std::string& _healthCheckPath);
+
+                    /**
+                     * 判断参数 HealthCheckPath 是否已赋值
+                     * @return HealthCheckPath 是否已赋值
+                     * 
+                     */
+                    bool HealthCheckPathHasBeenSet() const;
+
+                    /**
+                     * 获取<p>健康检查方式。</p>
+                     * @return HealthCheckMethod <p>健康检查方式。</p>
+                     * 
+                     */
+                    std::string GetHealthCheckMethod() const;
+
+                    /**
+                     * 设置<p>健康检查方式。</p>
+                     * @param _healthCheckMethod <p>健康检查方式。</p>
+                     * 
+                     */
+                    void SetHealthCheckMethod(const std::string& _healthCheckMethod);
+
+                    /**
+                     * 判断参数 HealthCheckMethod 是否已赋值
+                     * @return HealthCheckMethod 是否已赋值
+                     * 
+                     */
+                    bool HealthCheckMethodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -177,6 +223,7 @@ namespace TencentCloud
 
                     /**
                      * <p>健康检查使用的最大Token数量。部分模型如gpt系列可能仅支持大于等于16。</p><p>默认值：1</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_healthCheckMaxTokens;
                     bool m_healthCheckMaxTokensHasBeenSet;
@@ -187,6 +234,18 @@ namespace TencentCloud
                      */
                     std::string m_healthCheckProtocol;
                     bool m_healthCheckProtocolHasBeenSet;
+
+                    /**
+                     * <p>健康检查路径。仅HealthCheckMethod为Service时生效。</p>
+                     */
+                    std::string m_healthCheckPath;
+                    bool m_healthCheckPathHasBeenSet;
+
+                    /**
+                     * <p>健康检查方式。</p>
+                     */
+                    std::string m_healthCheckMethod;
+                    bool m_healthCheckMethodHasBeenSet;
 
                 };
             }

@@ -3790,6 +3790,56 @@ TcbClient::DescribeTablesOutcomeCallable TcbClient::DescribeTablesCallable(const
     return prom->get_future();
 }
 
+TcbClient::DescribeTaskResultOutcome TcbClient::DescribeTaskResult(const DescribeTaskResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTaskResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskResultResponse rsp = DescribeTaskResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskResultOutcome(rsp);
+        else
+            return DescribeTaskResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskResultOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeTaskResultAsync(const DescribeTaskResultRequest& request, const DescribeTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTaskResultRequest&;
+    using Resp = DescribeTaskResultResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTaskResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeTaskResultOutcomeCallable TcbClient::DescribeTaskResultCallable(const DescribeTaskResultRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTaskResultOutcome>>();
+    DescribeTaskResultAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeTaskResultRequest&,
+        DescribeTaskResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::DescribeUserListOutcome TcbClient::DescribeUserList(const DescribeUserListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserList");
@@ -5440,6 +5490,56 @@ TcbClient::RepairPGUserMigrationHistoryOutcomeCallable TcbClient::RepairPGUserMi
     return prom->get_future();
 }
 
+TcbClient::ResetPGAccountPasswordOutcome TcbClient::ResetPGAccountPassword(const ResetPGAccountPasswordRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetPGAccountPassword");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetPGAccountPasswordResponse rsp = ResetPGAccountPasswordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetPGAccountPasswordOutcome(rsp);
+        else
+            return ResetPGAccountPasswordOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetPGAccountPasswordOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::ResetPGAccountPasswordAsync(const ResetPGAccountPasswordRequest& request, const ResetPGAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ResetPGAccountPasswordRequest&;
+    using Resp = ResetPGAccountPasswordResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ResetPGAccountPassword", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::ResetPGAccountPasswordOutcomeCallable TcbClient::ResetPGAccountPasswordCallable(const ResetPGAccountPasswordRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ResetPGAccountPasswordOutcome>>();
+    ResetPGAccountPasswordAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ResetPGAccountPasswordRequest&,
+        ResetPGAccountPasswordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::RunCommandsOutcome TcbClient::RunCommands(const RunCommandsRequest &request)
 {
     auto outcome = MakeRequest(request, "RunCommands");
@@ -5832,6 +5932,56 @@ TcbClient::UpdateTableOutcomeCallable TcbClient::UpdateTableCallable(const Updat
         const TcbClient*,
         const UpdateTableRequest&,
         UpdateTableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::UpgradePGInstanceToDedicatedOutcome TcbClient::UpgradePGInstanceToDedicated(const UpgradePGInstanceToDedicatedRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradePGInstanceToDedicated");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradePGInstanceToDedicatedResponse rsp = UpgradePGInstanceToDedicatedResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradePGInstanceToDedicatedOutcome(rsp);
+        else
+            return UpgradePGInstanceToDedicatedOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradePGInstanceToDedicatedOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::UpgradePGInstanceToDedicatedAsync(const UpgradePGInstanceToDedicatedRequest& request, const UpgradePGInstanceToDedicatedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpgradePGInstanceToDedicatedRequest&;
+    using Resp = UpgradePGInstanceToDedicatedResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpgradePGInstanceToDedicated", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::UpgradePGInstanceToDedicatedOutcomeCallable TcbClient::UpgradePGInstanceToDedicatedCallable(const UpgradePGInstanceToDedicatedRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpgradePGInstanceToDedicatedOutcome>>();
+    UpgradePGInstanceToDedicatedAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const UpgradePGInstanceToDedicatedRequest&,
+        UpgradePGInstanceToDedicatedOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -21,7 +21,8 @@ using namespace TencentCloud::Mps::V20190612::Model;
 using namespace std;
 
 AigcAudioExtraParam::AigcAudioExtraParam() :
-    m_resourceIdHasBeenSet(false)
+    m_resourceIdHasBeenSet(false),
+    m_outputAudioFormatHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome AigcAudioExtraParam::Deserialize(const rapidjson::Value &val
         m_resourceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("OutputAudioFormat") && !value["OutputAudioFormat"].IsNull())
+    {
+        if (!value["OutputAudioFormat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcAudioExtraParam.OutputAudioFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputAudioFormat = string(value["OutputAudioFormat"].GetString());
+        m_outputAudioFormatHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void AigcAudioExtraParam::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputAudioFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputAudioFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputAudioFormat.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void AigcAudioExtraParam::SetResourceId(const string& _resourceId)
 bool AigcAudioExtraParam::ResourceIdHasBeenSet() const
 {
     return m_resourceIdHasBeenSet;
+}
+
+string AigcAudioExtraParam::GetOutputAudioFormat() const
+{
+    return m_outputAudioFormat;
+}
+
+void AigcAudioExtraParam::SetOutputAudioFormat(const string& _outputAudioFormat)
+{
+    m_outputAudioFormat = _outputAudioFormat;
+    m_outputAudioFormatHasBeenSet = true;
+}
+
+bool AigcAudioExtraParam::OutputAudioFormatHasBeenSet() const
+{
+    return m_outputAudioFormatHasBeenSet;
 }
 

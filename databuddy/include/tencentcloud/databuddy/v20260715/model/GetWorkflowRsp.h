@@ -130,18 +130,18 @@ namespace TencentCloud
                     bool TriggerHasBeenSet() const;
 
                     /**
-                     * 获取<p>工作流参数列表</p>
+                     * 获取<p>工作流参数列表 参数名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ParamList <p>工作流参数列表</p>
+                     * @return ParamList <p>工作流参数列表 参数名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ParamInfo> GetParamList() const;
 
                     /**
-                     * 设置<p>工作流参数列表</p>
+                     * 设置<p>工作流参数列表 参数名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _paramList <p>工作流参数列表</p>
+                     * @param _paramList <p>工作流参数列表 参数名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -155,18 +155,18 @@ namespace TencentCloud
                     bool ParamListHasBeenSet() const;
 
                     /**
-                     * 获取<p>标签列表</p>
+                     * 获取<p>标签 标签名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LabelList <p>标签列表</p>
+                     * @return LabelList <p>标签 标签名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LabelBrief> GetLabelList() const;
 
                     /**
-                     * 设置<p>标签列表</p>
+                     * 设置<p>标签 标签名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _labelList <p>标签列表</p>
+                     * @param _labelList <p>标签 标签名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -403,14 +403,14 @@ namespace TencentCloud
                     bool m_triggerHasBeenSet;
 
                     /**
-                     * <p>工作流参数列表</p>
+                     * <p>工作流参数列表 参数名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ParamInfo> m_paramList;
                     bool m_paramListHasBeenSet;
 
                     /**
-                     * <p>标签列表</p>
+                     * <p>标签 标签名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LabelBrief> m_labelList;

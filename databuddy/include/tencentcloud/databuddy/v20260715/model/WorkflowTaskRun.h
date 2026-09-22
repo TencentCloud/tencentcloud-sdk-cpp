@@ -100,18 +100,18 @@ namespace TencentCloud
                     bool WorkflowTaskRunIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>运行状态。取值参考工作流任务运行状态枚举，如 Pending / Running / Succeeded / Failed / Killed</p>
+                     * 获取<p>运行状态。如CREATE("初始化"), QUEUED("等待中"), PENDING("准备中"), RUNNING("运行中"), SKIPPED("跳过运行"), SUCCESS("成功"), FAILED("失败"), TERMINATING("终止中"), TERMINATED("终止"), CANCELLED("被手动终止")等</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RunState <p>运行状态。取值参考工作流任务运行状态枚举，如 Pending / Running / Succeeded / Failed / Killed</p>
+                     * @return RunState <p>运行状态。如CREATE("初始化"), QUEUED("等待中"), PENDING("准备中"), RUNNING("运行中"), SKIPPED("跳过运行"), SUCCESS("成功"), FAILED("失败"), TERMINATING("终止中"), TERMINATED("终止"), CANCELLED("被手动终止")等</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRunState() const;
 
                     /**
-                     * 设置<p>运行状态。取值参考工作流任务运行状态枚举，如 Pending / Running / Succeeded / Failed / Killed</p>
+                     * 设置<p>运行状态。如CREATE("初始化"), QUEUED("等待中"), PENDING("准备中"), RUNNING("运行中"), SKIPPED("跳过运行"), SUCCESS("成功"), FAILED("失败"), TERMINATING("终止中"), TERMINATED("终止"), CANCELLED("被手动终止")等</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _runState <p>运行状态。取值参考工作流任务运行状态枚举，如 Pending / Running / Succeeded / Failed / Killed</p>
+                     * @param _runState <p>运行状态。如CREATE("初始化"), QUEUED("等待中"), PENDING("准备中"), RUNNING("运行中"), SKIPPED("跳过运行"), SUCCESS("成功"), FAILED("失败"), TERMINATING("终止中"), TERMINATED("终止"), CANCELLED("被手动终止")等</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -225,18 +225,18 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述
+                     * 获取<p>任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskTypeName 任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述
+                     * @return TaskTypeName <p>任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskTypeName() const;
 
                     /**
-                     * 设置任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述
+                     * 设置<p>任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskTypeName 任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述
+                     * @param _taskTypeName <p>任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -275,18 +275,18 @@ namespace TencentCloud
                     bool TaskVersionIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>触发类型 (参考SchedulerTriggerType枚举)</p>
+                     * 获取<p>触发类型</p><p>枚举值：</p><ul><li>Manual： 手动触发</li><li>Scheduler： 调度触发</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TriggerType <p>触发类型 (参考SchedulerTriggerType枚举)</p>
+                     * @return TriggerType <p>触发类型</p><p>枚举值：</p><ul><li>Manual： 手动触发</li><li>Scheduler： 调度触发</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTriggerType() const;
 
                     /**
-                     * 设置<p>触发类型 (参考SchedulerTriggerType枚举)</p>
+                     * 设置<p>触发类型</p><p>枚举值：</p><ul><li>Manual： 手动触发</li><li>Scheduler： 调度触发</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _triggerType <p>触发类型 (参考SchedulerTriggerType枚举)</p>
+                     * @param _triggerType <p>触发类型</p><p>枚举值：</p><ul><li>Manual： 手动触发</li><li>Scheduler： 调度触发</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1066,7 +1066,7 @@ namespace TencentCloud
                     bool m_workflowTaskRunIdHasBeenSet;
 
                     /**
-                     * <p>运行状态。取值参考工作流任务运行状态枚举，如 Pending / Running / Succeeded / Failed / Killed</p>
+                     * <p>运行状态。如CREATE("初始化"), QUEUED("等待中"), PENDING("准备中"), RUNNING("运行中"), SKIPPED("跳过运行"), SUCCESS("成功"), FAILED("失败"), TERMINATING("终止中"), TERMINATED("终止"), CANCELLED("被手动终止")等</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runState;
@@ -1101,7 +1101,7 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述
+                     * <p>任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskTypeName;
@@ -1115,7 +1115,7 @@ namespace TencentCloud
                     bool m_taskVersionIdHasBeenSet;
 
                     /**
-                     * <p>触发类型 (参考SchedulerTriggerType枚举)</p>
+                     * <p>触发类型</p><p>枚举值：</p><ul><li>Manual： 手动触发</li><li>Scheduler： 调度触发</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_triggerType;

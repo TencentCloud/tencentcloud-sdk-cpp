@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>资源图谱id</p>
+                     * @return ResourceGraphId <p>资源图谱id</p>
+                     * 
+                     */
+                    std::string GetResourceGraphId() const;
+
+                    /**
+                     * 判断参数 ResourceGraphId 是否已赋值
+                     * @return ResourceGraphId 是否已赋值
+                     * 
+                     */
+                    bool ResourceGraphIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>资源图谱id</p>
+                     */
+                    std::string m_resourceGraphId;
+                    bool m_resourceGraphIdHasBeenSet;
 
                 };
             }

@@ -802,6 +802,69 @@ namespace TencentCloud
                      */
                     bool MasterZoneHasBeenSet() const;
 
+                    /**
+                     * 获取<p>实例的真实可用区</p>
+                     * @return RealZone <p>实例的真实可用区</p>
+                     * 
+                     */
+                    std::string GetRealZone() const;
+
+                    /**
+                     * 设置<p>实例的真实可用区</p>
+                     * @param _realZone <p>实例的真实可用区</p>
+                     * 
+                     */
+                    void SetRealZone(const std::string& _realZone);
+
+                    /**
+                     * 判断参数 RealZone 是否已赋值
+                     * @return RealZone 是否已赋值
+                     * 
+                     */
+                    bool RealZoneHasBeenSet() const;
+
+                    /**
+                     * 获取<p>备可用区列表</p>
+                     * @return SlaveZones <p>备可用区列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetSlaveZones() const;
+
+                    /**
+                     * 设置<p>备可用区列表</p>
+                     * @param _slaveZones <p>备可用区列表</p>
+                     * 
+                     */
+                    void SetSlaveZones(const std::vector<std::string>& _slaveZones);
+
+                    /**
+                     * 判断参数 SlaveZones 是否已赋值
+                     * @return SlaveZones 是否已赋值
+                     * 
+                     */
+                    bool SlaveZonesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>存储版本</p><p>枚举值：</p><ul><li>1.0： 1.0版本存储</li><li>2.0： 2.0版本存储</li></ul>
+                     * @return StorageVersion <p>存储版本</p><p>枚举值：</p><ul><li>1.0： 1.0版本存储</li><li>2.0： 2.0版本存储</li></ul>
+                     * 
+                     */
+                    std::string GetStorageVersion() const;
+
+                    /**
+                     * 设置<p>存储版本</p><p>枚举值：</p><ul><li>1.0： 1.0版本存储</li><li>2.0： 2.0版本存储</li></ul>
+                     * @param _storageVersion <p>存储版本</p><p>枚举值：</p><ul><li>1.0： 1.0版本存储</li><li>2.0： 2.0版本存储</li></ul>
+                     * 
+                     */
+                    void SetStorageVersion(const std::string& _storageVersion);
+
+                    /**
+                     * 判断参数 StorageVersion 是否已赋值
+                     * @return StorageVersion 是否已赋值
+                     * 
+                     */
+                    bool StorageVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1019,6 +1082,24 @@ namespace TencentCloud
                      */
                     std::string m_masterZone;
                     bool m_masterZoneHasBeenSet;
+
+                    /**
+                     * <p>实例的真实可用区</p>
+                     */
+                    std::string m_realZone;
+                    bool m_realZoneHasBeenSet;
+
+                    /**
+                     * <p>备可用区列表</p>
+                     */
+                    std::vector<std::string> m_slaveZones;
+                    bool m_slaveZonesHasBeenSet;
+
+                    /**
+                     * <p>存储版本</p><p>枚举值：</p><ul><li>1.0： 1.0版本存储</li><li>2.0： 2.0版本存储</li></ul>
+                     */
+                    std::string m_storageVersion;
+                    bool m_storageVersionHasBeenSet;
 
                 };
             }

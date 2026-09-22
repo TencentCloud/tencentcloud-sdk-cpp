@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cls/v20201016/model/EntityInfo.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>实体信息</p>
+                     * @return EntityInfo <p>实体信息</p>
+                     * 
+                     */
+                    EntityInfo GetEntityInfo() const;
+
+                    /**
+                     * 判断参数 EntityInfo 是否已赋值
+                     * @return EntityInfo 是否已赋值
+                     * 
+                     */
+                    bool EntityInfoHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>实体信息</p>
+                     */
+                    EntityInfo m_entityInfo;
+                    bool m_entityInfoHasBeenSet;
 
                 };
             }

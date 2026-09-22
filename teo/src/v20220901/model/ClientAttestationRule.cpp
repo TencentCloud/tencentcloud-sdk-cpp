@@ -27,8 +27,9 @@ ClientAttestationRule::ClientAttestationRule() :
     m_priorityHasBeenSet(false),
     m_conditionHasBeenSet(false),
     m_attesterIdHasBeenSet(false),
+    m_invalidAttestationActionHasBeenSet(false),
     m_deviceProfilesHasBeenSet(false),
-    m_invalidAttestationActionHasBeenSet(false)
+    m_accountProtectionSettingsHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,23 @@ CoreInternalOutcome ClientAttestationRule::Deserialize(const rapidjson::Value &v
         m_attesterIdHasBeenSet = true;
     }
 
+    if (value.HasMember("InvalidAttestationAction") && !value["InvalidAttestationAction"].IsNull())
+    {
+        if (!value["InvalidAttestationAction"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClientAttestationRule.InvalidAttestationAction` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_invalidAttestationAction.Deserialize(value["InvalidAttestationAction"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_invalidAttestationActionHasBeenSet = true;
+    }
+
     if (value.HasMember("DeviceProfiles") && !value["DeviceProfiles"].IsNull())
     {
         if (!value["DeviceProfiles"].IsArray())
@@ -117,21 +135,21 @@ CoreInternalOutcome ClientAttestationRule::Deserialize(const rapidjson::Value &v
         m_deviceProfilesHasBeenSet = true;
     }
 
-    if (value.HasMember("InvalidAttestationAction") && !value["InvalidAttestationAction"].IsNull())
+    if (value.HasMember("AccountProtectionSettings") && !value["AccountProtectionSettings"].IsNull())
     {
-        if (!value["InvalidAttestationAction"].IsObject())
+        if (!value["AccountProtectionSettings"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `ClientAttestationRule.InvalidAttestationAction` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ClientAttestationRule.AccountProtectionSettings` is not object type").SetRequestId(requestId));
         }
 
-        CoreInternalOutcome outcome = m_invalidAttestationAction.Deserialize(value["InvalidAttestationAction"]);
+        CoreInternalOutcome outcome = m_accountProtectionSettings.Deserialize(value["AccountProtectionSettings"]);
         if (!outcome.IsSuccess())
         {
             outcome.GetError().SetRequestId(requestId);
             return outcome;
         }
 
-        m_invalidAttestationActionHasBeenSet = true;
+        m_accountProtectionSettingsHasBeenSet = true;
     }
 
 
@@ -189,6 +207,15 @@ void ClientAttestationRule::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         value.AddMember(iKey, rapidjson::Value(m_attesterId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_invalidAttestationActionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvalidAttestationAction";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_invalidAttestationAction.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_deviceProfilesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -204,13 +231,13 @@ void ClientAttestationRule::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         }
     }
 
-    if (m_invalidAttestationActionHasBeenSet)
+    if (m_accountProtectionSettingsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InvalidAttestationAction";
+        string key = "AccountProtectionSettings";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_invalidAttestationAction.ToJsonObject(value[key.c_str()], allocator);
+        m_accountProtectionSettings.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -312,6 +339,22 @@ bool ClientAttestationRule::AttesterIdHasBeenSet() const
     return m_attesterIdHasBeenSet;
 }
 
+SecurityAction ClientAttestationRule::GetInvalidAttestationAction() const
+{
+    return m_invalidAttestationAction;
+}
+
+void ClientAttestationRule::SetInvalidAttestationAction(const SecurityAction& _invalidAttestationAction)
+{
+    m_invalidAttestationAction = _invalidAttestationAction;
+    m_invalidAttestationActionHasBeenSet = true;
+}
+
+bool ClientAttestationRule::InvalidAttestationActionHasBeenSet() const
+{
+    return m_invalidAttestationActionHasBeenSet;
+}
+
 vector<DeviceProfile> ClientAttestationRule::GetDeviceProfiles() const
 {
     return m_deviceProfiles;
@@ -328,19 +371,19 @@ bool ClientAttestationRule::DeviceProfilesHasBeenSet() const
     return m_deviceProfilesHasBeenSet;
 }
 
-SecurityAction ClientAttestationRule::GetInvalidAttestationAction() const
+AccountProtectionSettings ClientAttestationRule::GetAccountProtectionSettings() const
 {
-    return m_invalidAttestationAction;
+    return m_accountProtectionSettings;
 }
 
-void ClientAttestationRule::SetInvalidAttestationAction(const SecurityAction& _invalidAttestationAction)
+void ClientAttestationRule::SetAccountProtectionSettings(const AccountProtectionSettings& _accountProtectionSettings)
 {
-    m_invalidAttestationAction = _invalidAttestationAction;
-    m_invalidAttestationActionHasBeenSet = true;
+    m_accountProtectionSettings = _accountProtectionSettings;
+    m_accountProtectionSettingsHasBeenSet = true;
 }
 
-bool ClientAttestationRule::InvalidAttestationActionHasBeenSet() const
+bool ClientAttestationRule::AccountProtectionSettingsHasBeenSet() const
 {
-    return m_invalidAttestationActionHasBeenSet;
+    return m_accountProtectionSettingsHasBeenSet;
 }
 

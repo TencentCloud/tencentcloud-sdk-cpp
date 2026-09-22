@@ -32,6 +32,7 @@
 #include <tencentcloud/teo/v20220901/model/BotManagement.h>
 #include <tencentcloud/teo/v20220901/model/BotManagementLite.h>
 #include <tencentcloud/teo/v20220901/model/DefaultDenySecurityActionParameters.h>
+#include <tencentcloud/teo/v20220901/model/SecurityHeadersToOrigin.h>
 
 
 namespace TencentCloud
@@ -55,15 +56,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自定义规则配置。
-                     * @return CustomRules 自定义规则配置。
+                     * 获取<p>自定义规则配置。</p>
+                     * @return CustomRules <p>自定义规则配置。</p>
                      * 
                      */
                     CustomRules GetCustomRules() const;
 
                     /**
-                     * 设置自定义规则配置。
-                     * @param _customRules 自定义规则配置。
+                     * 设置<p>自定义规则配置。</p>
+                     * @param _customRules <p>自定义规则配置。</p>
                      * 
                      */
                     void SetCustomRules(const CustomRules& _customRules);
@@ -76,15 +77,15 @@ namespace TencentCloud
                     bool CustomRulesHasBeenSet() const;
 
                     /**
-                     * 获取托管规则配置。
-                     * @return ManagedRules 托管规则配置。
+                     * 获取<p>托管规则配置。</p>
+                     * @return ManagedRules <p>托管规则配置。</p>
                      * 
                      */
                     ManagedRules GetManagedRules() const;
 
                     /**
-                     * 设置托管规则配置。
-                     * @param _managedRules 托管规则配置。
+                     * 设置<p>托管规则配置。</p>
+                     * @param _managedRules <p>托管规则配置。</p>
                      * 
                      */
                     void SetManagedRules(const ManagedRules& _managedRules);
@@ -97,15 +98,15 @@ namespace TencentCloud
                     bool ManagedRulesHasBeenSet() const;
 
                     /**
-                     * 获取HTTP DDOS 防护配置。
-                     * @return HttpDDoSProtection HTTP DDOS 防护配置。
+                     * 获取<p>HTTP DDOS 防护配置。</p>
+                     * @return HttpDDoSProtection <p>HTTP DDOS 防护配置。</p>
                      * 
                      */
                     HttpDDoSProtection GetHttpDDoSProtection() const;
 
                     /**
-                     * 设置HTTP DDOS 防护配置。
-                     * @param _httpDDoSProtection HTTP DDOS 防护配置。
+                     * 设置<p>HTTP DDOS 防护配置。</p>
+                     * @param _httpDDoSProtection <p>HTTP DDOS 防护配置。</p>
                      * 
                      */
                     void SetHttpDDoSProtection(const HttpDDoSProtection& _httpDDoSProtection);
@@ -118,15 +119,15 @@ namespace TencentCloud
                     bool HttpDDoSProtectionHasBeenSet() const;
 
                     /**
-                     * 获取速率限制规则配置。
-                     * @return RateLimitingRules 速率限制规则配置。
+                     * 获取<p>速率限制规则配置。</p>
+                     * @return RateLimitingRules <p>速率限制规则配置。</p>
                      * 
                      */
                     RateLimitingRules GetRateLimitingRules() const;
 
                     /**
-                     * 设置速率限制规则配置。
-                     * @param _rateLimitingRules 速率限制规则配置。
+                     * 设置<p>速率限制规则配置。</p>
+                     * @param _rateLimitingRules <p>速率限制规则配置。</p>
                      * 
                      */
                     void SetRateLimitingRules(const RateLimitingRules& _rateLimitingRules);
@@ -139,15 +140,15 @@ namespace TencentCloud
                     bool RateLimitingRulesHasBeenSet() const;
 
                     /**
-                     * 获取例外规则配置。
-                     * @return ExceptionRules 例外规则配置。
+                     * 获取<p>例外规则配置。</p>
+                     * @return ExceptionRules <p>例外规则配置。</p>
                      * 
                      */
                     ExceptionRules GetExceptionRules() const;
 
                     /**
-                     * 设置例外规则配置。
-                     * @param _exceptionRules 例外规则配置。
+                     * 设置<p>例外规则配置。</p>
+                     * @param _exceptionRules <p>例外规则配置。</p>
                      * 
                      */
                     void SetExceptionRules(const ExceptionRules& _exceptionRules);
@@ -160,15 +161,15 @@ namespace TencentCloud
                     bool ExceptionRulesHasBeenSet() const;
 
                     /**
-                     * 获取Bot 管理配置。
-                     * @return BotManagement Bot 管理配置。
+                     * 获取<p>Bot 管理配置。</p>
+                     * @return BotManagement <p>Bot 管理配置。</p>
                      * 
                      */
                     BotManagement GetBotManagement() const;
 
                     /**
-                     * 设置Bot 管理配置。
-                     * @param _botManagement Bot 管理配置。
+                     * 设置<p>Bot 管理配置。</p>
+                     * @param _botManagement <p>Bot 管理配置。</p>
                      * 
                      */
                     void SetBotManagement(const BotManagement& _botManagement);
@@ -181,15 +182,15 @@ namespace TencentCloud
                     bool BotManagementHasBeenSet() const;
 
                     /**
-                     * 获取基础 Bot 管理配置。
-                     * @return BotManagementLite 基础 Bot 管理配置。
+                     * 获取<p>基础 Bot 管理配置。</p>
+                     * @return BotManagementLite <p>基础 Bot 管理配置。</p>
                      * 
                      */
                     BotManagementLite GetBotManagementLite() const;
 
                     /**
-                     * 设置基础 Bot 管理配置。
-                     * @param _botManagementLite 基础 Bot 管理配置。
+                     * 设置<p>基础 Bot 管理配置。</p>
+                     * @param _botManagementLite <p>基础 Bot 管理配置。</p>
                      * 
                      */
                     void SetBotManagementLite(const BotManagementLite& _botManagementLite);
@@ -202,15 +203,15 @@ namespace TencentCloud
                     bool BotManagementLiteHasBeenSet() const;
 
                     /**
-                     * 获取默认拦截动作配置。
-                     * @return DefaultDenySecurityActionParameters 默认拦截动作配置。
+                     * 获取<p>默认拦截动作配置。</p>
+                     * @return DefaultDenySecurityActionParameters <p>默认拦截动作配置。</p>
                      * 
                      */
                     DefaultDenySecurityActionParameters GetDefaultDenySecurityActionParameters() const;
 
                     /**
-                     * 设置默认拦截动作配置。
-                     * @param _defaultDenySecurityActionParameters 默认拦截动作配置。
+                     * 设置<p>默认拦截动作配置。</p>
+                     * @param _defaultDenySecurityActionParameters <p>默认拦截动作配置。</p>
                      * 
                      */
                     void SetDefaultDenySecurityActionParameters(const DefaultDenySecurityActionParameters& _defaultDenySecurityActionParameters);
@@ -222,55 +223,82 @@ namespace TencentCloud
                      */
                     bool DefaultDenySecurityActionParametersHasBeenSet() const;
 
+                    /**
+                     * 获取<p>回源请求携带安全头部配置，配置生效后将携带对应 keyname 的请求头部回源。</p>
+                     * @return SecurityHeadersToOrigin <p>回源请求携带安全头部配置，配置生效后将携带对应 keyname 的请求头部回源。</p>
+                     * 
+                     */
+                    SecurityHeadersToOrigin GetSecurityHeadersToOrigin() const;
+
+                    /**
+                     * 设置<p>回源请求携带安全头部配置，配置生效后将携带对应 keyname 的请求头部回源。</p>
+                     * @param _securityHeadersToOrigin <p>回源请求携带安全头部配置，配置生效后将携带对应 keyname 的请求头部回源。</p>
+                     * 
+                     */
+                    void SetSecurityHeadersToOrigin(const SecurityHeadersToOrigin& _securityHeadersToOrigin);
+
+                    /**
+                     * 判断参数 SecurityHeadersToOrigin 是否已赋值
+                     * @return SecurityHeadersToOrigin 是否已赋值
+                     * 
+                     */
+                    bool SecurityHeadersToOriginHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 自定义规则配置。
+                     * <p>自定义规则配置。</p>
                      */
                     CustomRules m_customRules;
                     bool m_customRulesHasBeenSet;
 
                     /**
-                     * 托管规则配置。
+                     * <p>托管规则配置。</p>
                      */
                     ManagedRules m_managedRules;
                     bool m_managedRulesHasBeenSet;
 
                     /**
-                     * HTTP DDOS 防护配置。
+                     * <p>HTTP DDOS 防护配置。</p>
                      */
                     HttpDDoSProtection m_httpDDoSProtection;
                     bool m_httpDDoSProtectionHasBeenSet;
 
                     /**
-                     * 速率限制规则配置。
+                     * <p>速率限制规则配置。</p>
                      */
                     RateLimitingRules m_rateLimitingRules;
                     bool m_rateLimitingRulesHasBeenSet;
 
                     /**
-                     * 例外规则配置。
+                     * <p>例外规则配置。</p>
                      */
                     ExceptionRules m_exceptionRules;
                     bool m_exceptionRulesHasBeenSet;
 
                     /**
-                     * Bot 管理配置。
+                     * <p>Bot 管理配置。</p>
                      */
                     BotManagement m_botManagement;
                     bool m_botManagementHasBeenSet;
 
                     /**
-                     * 基础 Bot 管理配置。
+                     * <p>基础 Bot 管理配置。</p>
                      */
                     BotManagementLite m_botManagementLite;
                     bool m_botManagementLiteHasBeenSet;
 
                     /**
-                     * 默认拦截动作配置。
+                     * <p>默认拦截动作配置。</p>
                      */
                     DefaultDenySecurityActionParameters m_defaultDenySecurityActionParameters;
                     bool m_defaultDenySecurityActionParametersHasBeenSet;
+
+                    /**
+                     * <p>回源请求携带安全头部配置，配置生效后将携带对应 keyname 的请求头部回源。</p>
+                     */
+                    SecurityHeadersToOrigin m_securityHeadersToOrigin;
+                    bool m_securityHeadersToOriginHasBeenSet;
 
                 };
             }

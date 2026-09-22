@@ -275,6 +275,48 @@ namespace TencentCloud
                      */
                     bool UsePlatformAccountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否是免部署实例</p>
+                     * @return DeploymentFree <p>是否是免部署实例</p>
+                     * 
+                     */
+                    bool GetDeploymentFree() const;
+
+                    /**
+                     * 设置<p>是否是免部署实例</p>
+                     * @param _deploymentFree <p>是否是免部署实例</p>
+                     * 
+                     */
+                    void SetDeploymentFree(const bool& _deploymentFree);
+
+                    /**
+                     * 判断参数 DeploymentFree 是否已赋值
+                     * @return DeploymentFree 是否已赋值
+                     * 
+                     */
+                    bool DeploymentFreeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否支持记忆</p>
+                     * @return EnableMemory <p>是否支持记忆</p>
+                     * 
+                     */
+                    bool GetEnableMemory() const;
+
+                    /**
+                     * 设置<p>是否支持记忆</p>
+                     * @param _enableMemory <p>是否支持记忆</p>
+                     * 
+                     */
+                    void SetEnableMemory(const bool& _enableMemory);
+
+                    /**
+                     * 判断参数 EnableMemory 是否已赋值
+                     * @return EnableMemory 是否已赋值
+                     * 
+                     */
+                    bool EnableMemoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -342,6 +384,18 @@ namespace TencentCloud
                      */
                     bool m_usePlatformAccount;
                     bool m_usePlatformAccountHasBeenSet;
+
+                    /**
+                     * <p>是否是免部署实例</p>
+                     */
+                    bool m_deploymentFree;
+                    bool m_deploymentFreeHasBeenSet;
+
+                    /**
+                     * <p>是否支持记忆</p>
+                     */
+                    bool m_enableMemory;
+                    bool m_enableMemoryHasBeenSet;
 
                 };
             }

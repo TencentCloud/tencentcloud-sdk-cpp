@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cls/v20201016/model/DependencyTopology.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>拓扑图（节点 + 边）</p>
+                     * @return Topology <p>拓扑图（节点 + 边）</p>
+                     * 
+                     */
+                    DependencyTopology GetTopology() const;
+
+                    /**
+                     * 判断参数 Topology 是否已赋值
+                     * @return Topology 是否已赋值
+                     * 
+                     */
+                    bool TopologyHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>拓扑图（节点 + 边）</p>
+                     */
+                    DependencyTopology m_topology;
+                    bool m_topologyHasBeenSet;
 
                 };
             }

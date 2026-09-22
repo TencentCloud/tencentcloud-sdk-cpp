@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool ValuesHasBeenSet() const;
 
                     /**
-                     * 获取操作类型：1-精确匹配 9-模糊匹配
+                     * 获取操作类型：1=精确匹配，7=in，9=模糊匹配
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OperatorType 操作类型：1-精确匹配 9-模糊匹配
+                     * @return OperatorType 操作类型：1=精确匹配，7=in，9=模糊匹配
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOperatorType() const;
 
                     /**
-                     * 设置操作类型：1-精确匹配 9-模糊匹配
+                     * 设置操作类型：1=精确匹配，7=in，9=模糊匹配
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operatorType 操作类型：1-精确匹配 9-模糊匹配
+                     * @param _operatorType 操作类型：1=精确匹配，7=in，9=模糊匹配
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -138,7 +138,7 @@ namespace TencentCloud
                     bool m_valuesHasBeenSet;
 
                     /**
-                     * 操作类型：1-精确匹配 9-模糊匹配
+                     * 操作类型：1=精确匹配，7=in，9=模糊匹配
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_operatorType;

@@ -89,6 +89,8 @@
 #include <tencentcloud/apm/v20210622/model/ModifyApmServiceResponse.h>
 #include <tencentcloud/apm/v20210622/model/ModifyGeneralApmApplicationConfigRequest.h>
 #include <tencentcloud/apm/v20210622/model/ModifyGeneralApmApplicationConfigResponse.h>
+#include <tencentcloud/apm/v20210622/model/OpenApmPaidVersionRequest.h>
+#include <tencentcloud/apm/v20210622/model/OpenApmPaidVersionResponse.h>
 #include <tencentcloud/apm/v20210622/model/TerminateApmInstanceRequest.h>
 #include <tencentcloud/apm/v20210622/model/TerminateApmInstanceResponse.h>
 
@@ -204,6 +206,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyGeneralApmApplicationConfigResponse> ModifyGeneralApmApplicationConfigOutcome;
                 typedef std::future<ModifyGeneralApmApplicationConfigOutcome> ModifyGeneralApmApplicationConfigOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::ModifyGeneralApmApplicationConfigRequest&, ModifyGeneralApmApplicationConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGeneralApmApplicationConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::OpenApmPaidVersionResponse> OpenApmPaidVersionOutcome;
+                typedef std::future<OpenApmPaidVersionOutcome> OpenApmPaidVersionOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::OpenApmPaidVersionRequest&, OpenApmPaidVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenApmPaidVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::TerminateApmInstanceResponse> TerminateApmInstanceOutcome;
                 typedef std::future<TerminateApmInstanceOutcome> TerminateApmInstanceOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::TerminateApmInstanceRequest&, TerminateApmInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateApmInstanceAsyncHandler;
@@ -527,6 +532,15 @@ namespace TencentCloud
                 ModifyGeneralApmApplicationConfigOutcome ModifyGeneralApmApplicationConfig(const Model::ModifyGeneralApmApplicationConfigRequest &request);
                 void ModifyGeneralApmApplicationConfigAsync(const Model::ModifyGeneralApmApplicationConfigRequest& request, const ModifyGeneralApmApplicationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyGeneralApmApplicationConfigOutcomeCallable ModifyGeneralApmApplicationConfigCallable(const Model::ModifyGeneralApmApplicationConfigRequest& request);
+
+                /**
+                 *开通付费版本
+                 * @param req OpenApmPaidVersionRequest
+                 * @return OpenApmPaidVersionOutcome
+                 */
+                OpenApmPaidVersionOutcome OpenApmPaidVersion(const Model::OpenApmPaidVersionRequest &request);
+                void OpenApmPaidVersionAsync(const Model::OpenApmPaidVersionRequest& request, const OpenApmPaidVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenApmPaidVersionOutcomeCallable OpenApmPaidVersionCallable(const Model::OpenApmPaidVersionRequest& request);
 
                 /**
                  *销毁 APM 业务系统

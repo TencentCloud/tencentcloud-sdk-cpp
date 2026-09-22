@@ -67,6 +67,27 @@ namespace TencentCloud
                      */
                     bool ResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>指定的音频输出格式。</p>
+                     * @return OutputAudioFormat <p>指定的音频输出格式。</p>
+                     * 
+                     */
+                    std::string GetOutputAudioFormat() const;
+
+                    /**
+                     * 设置<p>指定的音频输出格式。</p>
+                     * @param _outputAudioFormat <p>指定的音频输出格式。</p>
+                     * 
+                     */
+                    void SetOutputAudioFormat(const std::string& _outputAudioFormat);
+
+                    /**
+                     * 判断参数 OutputAudioFormat 是否已赋值
+                     * @return OutputAudioFormat 是否已赋值
+                     * 
+                     */
+                    bool OutputAudioFormatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -74,6 +95,12 @@ namespace TencentCloud
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
+
+                    /**
+                     * <p>指定的音频输出格式。</p>
+                     */
+                    std::string m_outputAudioFormat;
+                    bool m_outputAudioFormatHasBeenSet;
 
                 };
             }

@@ -224,18 +224,18 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述
+                     * 获取<p>任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskTypeName 任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述
+                     * @return TaskTypeName <p>任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskTypeName() const;
 
                     /**
-                     * 设置任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述
+                     * 设置<p>任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskTypeName 任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述
+                     * @param _taskTypeName <p>任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -274,18 +274,18 @@ namespace TencentCloud
                     bool TaskVersionIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>触发类型 (参考SchedulerTriggerType枚举)</p>
+                     * 获取<p>触发类型</p><p>枚举值：</p><ul><li>Scheduler： 调度触发</li><li>Manual： 手动触发</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TriggerType <p>触发类型 (参考SchedulerTriggerType枚举)</p>
+                     * @return TriggerType <p>触发类型</p><p>枚举值：</p><ul><li>Scheduler： 调度触发</li><li>Manual： 手动触发</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTriggerType() const;
 
                     /**
-                     * 设置<p>触发类型 (参考SchedulerTriggerType枚举)</p>
+                     * 设置<p>触发类型</p><p>枚举值：</p><ul><li>Scheduler： 调度触发</li><li>Manual： 手动触发</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _triggerType <p>触发类型 (参考SchedulerTriggerType枚举)</p>
+                     * @param _triggerType <p>触发类型</p><p>枚举值：</p><ul><li>Scheduler： 调度触发</li><li>Manual： 手动触发</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1075,7 +1075,7 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述
+                     * <p>任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskTypeName;
@@ -1089,7 +1089,7 @@ namespace TencentCloud
                     bool m_taskVersionIdHasBeenSet;
 
                     /**
-                     * <p>触发类型 (参考SchedulerTriggerType枚举)</p>
+                     * <p>触发类型</p><p>枚举值：</p><ul><li>Scheduler： 调度触发</li><li>Manual： 手动触发</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_triggerType;

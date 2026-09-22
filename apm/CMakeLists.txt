@@ -19,6 +19,7 @@ set(apm_public_header
   )
 
 set(apm_public_header_model
+  include/tencentcloud/apm/v20210622/model/OpenApmPaidVersionRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeApmAssociationResponse.h
   include/tencentcloud/apm/v20210622/model/CreateApmInstanceRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeApmVulnerabilityCountResponse.h
@@ -103,6 +104,7 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/ModifyGeneralApmApplicationConfigRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeApmServiceMetricRequest.h
   include/tencentcloud/apm/v20210622/model/CreateApmPrometheusRuleRequest.h
+  include/tencentcloud/apm/v20210622/model/OpenApmPaidVersionResponse.h
   include/tencentcloud/apm/v20210622/model/DescribeApmAllVulCountRequest.h
   include/tencentcloud/apm/v20210622/model/TkeMeta.h
   include/tencentcloud/apm/v20210622/model/Instrument.h
@@ -131,6 +133,7 @@ set(apm_public_header_model
 
 set(apm_src
   src/v20210622/ApmClient.cpp
+  src/v20210622/model/OpenApmPaidVersionRequest.cpp
   src/v20210622/model/DescribeApmAssociationResponse.cpp
   src/v20210622/model/CreateApmInstanceRequest.cpp
   src/v20210622/model/DescribeApmVulnerabilityCountResponse.cpp
@@ -215,6 +218,7 @@ set(apm_src
   src/v20210622/model/ModifyGeneralApmApplicationConfigRequest.cpp
   src/v20210622/model/DescribeApmServiceMetricRequest.cpp
   src/v20210622/model/CreateApmPrometheusRuleRequest.cpp
+  src/v20210622/model/OpenApmPaidVersionResponse.cpp
   src/v20210622/model/DescribeApmAllVulCountRequest.cpp
   src/v20210622/model/TkeMeta.cpp
   src/v20210622/model/Instrument.cpp

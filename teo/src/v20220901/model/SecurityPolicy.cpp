@@ -28,7 +28,8 @@ SecurityPolicy::SecurityPolicy() :
     m_exceptionRulesHasBeenSet(false),
     m_botManagementHasBeenSet(false),
     m_botManagementLiteHasBeenSet(false),
-    m_defaultDenySecurityActionParametersHasBeenSet(false)
+    m_defaultDenySecurityActionParametersHasBeenSet(false),
+    m_securityHeadersToOriginHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,23 @@ CoreInternalOutcome SecurityPolicy::Deserialize(const rapidjson::Value &value)
         m_defaultDenySecurityActionParametersHasBeenSet = true;
     }
 
+    if (value.HasMember("SecurityHeadersToOrigin") && !value["SecurityHeadersToOrigin"].IsNull())
+    {
+        if (!value["SecurityHeadersToOrigin"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicy.SecurityHeadersToOrigin` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_securityHeadersToOrigin.Deserialize(value["SecurityHeadersToOrigin"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_securityHeadersToOriginHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -250,6 +268,15 @@ void SecurityPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_defaultDenySecurityActionParameters.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_securityHeadersToOriginHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityHeadersToOrigin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_securityHeadersToOrigin.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -381,5 +408,21 @@ void SecurityPolicy::SetDefaultDenySecurityActionParameters(const DefaultDenySec
 bool SecurityPolicy::DefaultDenySecurityActionParametersHasBeenSet() const
 {
     return m_defaultDenySecurityActionParametersHasBeenSet;
+}
+
+SecurityHeadersToOrigin SecurityPolicy::GetSecurityHeadersToOrigin() const
+{
+    return m_securityHeadersToOrigin;
+}
+
+void SecurityPolicy::SetSecurityHeadersToOrigin(const SecurityHeadersToOrigin& _securityHeadersToOrigin)
+{
+    m_securityHeadersToOrigin = _securityHeadersToOrigin;
+    m_securityHeadersToOriginHasBeenSet = true;
+}
+
+bool SecurityPolicy::SecurityHeadersToOriginHasBeenSet() const
+{
+    return m_securityHeadersToOriginHasBeenSet;
 }
 

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cls/v20201016/model/ResourceGraphInfo.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>资源图谱信息</p>
+                     * @return ResourceGraphInfos <p>资源图谱信息</p>
+                     * 
+                     */
+                    std::vector<ResourceGraphInfo> GetResourceGraphInfos() const;
+
+                    /**
+                     * 判断参数 ResourceGraphInfos 是否已赋值
+                     * @return ResourceGraphInfos 是否已赋值
+                     * 
+                     */
+                    bool ResourceGraphInfosHasBeenSet() const;
+
+                    /**
+                     * 获取<p>总数</p>
+                     * @return TotalCount <p>总数</p>
+                     * 
+                     */
+                    uint64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>资源图谱信息</p>
+                     */
+                    std::vector<ResourceGraphInfo> m_resourceGraphInfos;
+                    bool m_resourceGraphInfosHasBeenSet;
+
+                    /**
+                     * <p>总数</p>
+                     */
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

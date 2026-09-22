@@ -95,6 +95,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/CreateTopicRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyResourceGraphResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyDataTransformRequest.h
+  include/tencentcloud/cls/v20201016/model/DependencyTopology.h
   include/tencentcloud/cls/v20201016/model/CreateDlcDeliverRequest.h
   include/tencentcloud/cls/v20201016/model/Dimension.h
   include/tencentcloud/cls/v20201016/model/ModifyScheduledSqlRequest.h
@@ -175,6 +176,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DescribeCloudProductLogTasksRequest.h
   include/tencentcloud/cls/v20201016/model/CreateAlarmNoticeRequest.h
   include/tencentcloud/cls/v20201016/model/HistogramInfo.h
+  include/tencentcloud/cls/v20201016/model/EntityAttribute.h
   include/tencentcloud/cls/v20201016/model/DescribeTopicMetricConfigsRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyLogsetRequest.h
   include/tencentcloud/cls/v20201016/model/SearchDashboardSubscribeResponse.h
@@ -245,6 +247,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DescribePartitionsResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyHostMetricConfigResponse.h
   include/tencentcloud/cls/v20201016/model/DescribeMetricCorrectDimensionResponse.h
+  include/tencentcloud/cls/v20201016/model/TopologyNode.h
   include/tencentcloud/cls/v20201016/model/ModifyAlarmNoticeRequest.h
   include/tencentcloud/cls/v20201016/model/ToolCallFunction.h
   include/tencentcloud/cls/v20201016/model/ScheduledSqlResouceInfo.h
@@ -427,6 +430,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/RetryShipperTaskRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteCosRechargeRequest.h
   include/tencentcloud/cls/v20201016/model/CreateHostMetricConfigRequest.h
+  include/tencentcloud/cls/v20201016/model/EntityInfo.h
   include/tencentcloud/cls/v20201016/model/AccessControlRule.h
   include/tencentcloud/cls/v20201016/model/ModifyWebCallbackResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyCloudProductLogCollectionResponse.h
@@ -505,6 +509,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DescribeMachineGroupConfigsResponse.h
   include/tencentcloud/cls/v20201016/model/DescribeConfigExtrasRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeMachineGroupConfigsRequest.h
+  include/tencentcloud/cls/v20201016/model/RelatedTopicItem.h
   include/tencentcloud/cls/v20201016/model/DescribeSearchViewsRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyWebCallbackRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteTopicResponse.h
@@ -548,6 +553,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DescribeIndexRequest.h
   include/tencentcloud/cls/v20201016/model/ProductIngestTaskDetail.h
   include/tencentcloud/cls/v20201016/model/DescribeKafkaConsumerGroupListRequest.h
+  include/tencentcloud/cls/v20201016/model/TopologyEdge.h
   include/tencentcloud/cls/v20201016/model/CreateConsoleRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteMachineGroupInfoRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyNoticeContentResponse.h
@@ -586,6 +592,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/ModifyIndexResponse.h
   include/tencentcloud/cls/v20201016/model/ModifySearchViewResponse.h
   include/tencentcloud/cls/v20201016/model/QueryRangeMetricResponse.h
+  include/tencentcloud/cls/v20201016/model/ResourceGraphInfo.h
   include/tencentcloud/cls/v20201016/model/DescribeDashboardSubscribesResponse.h
   include/tencentcloud/cls/v20201016/model/BaseMetricCollectConfig.h
   include/tencentcloud/cls/v20201016/model/EBPFDNSFilter.h
@@ -763,6 +770,7 @@ set(cls_src
   src/v20201016/model/CreateTopicRequest.cpp
   src/v20201016/model/ModifyResourceGraphResponse.cpp
   src/v20201016/model/ModifyDataTransformRequest.cpp
+  src/v20201016/model/DependencyTopology.cpp
   src/v20201016/model/CreateDlcDeliverRequest.cpp
   src/v20201016/model/Dimension.cpp
   src/v20201016/model/ModifyScheduledSqlRequest.cpp
@@ -843,6 +851,7 @@ set(cls_src
   src/v20201016/model/DescribeCloudProductLogTasksRequest.cpp
   src/v20201016/model/CreateAlarmNoticeRequest.cpp
   src/v20201016/model/HistogramInfo.cpp
+  src/v20201016/model/EntityAttribute.cpp
   src/v20201016/model/DescribeTopicMetricConfigsRequest.cpp
   src/v20201016/model/ModifyLogsetRequest.cpp
   src/v20201016/model/SearchDashboardSubscribeResponse.cpp
@@ -913,6 +922,7 @@ set(cls_src
   src/v20201016/model/DescribePartitionsResponse.cpp
   src/v20201016/model/ModifyHostMetricConfigResponse.cpp
   src/v20201016/model/DescribeMetricCorrectDimensionResponse.cpp
+  src/v20201016/model/TopologyNode.cpp
   src/v20201016/model/ModifyAlarmNoticeRequest.cpp
   src/v20201016/model/ToolCallFunction.cpp
   src/v20201016/model/ScheduledSqlResouceInfo.cpp
@@ -1095,6 +1105,7 @@ set(cls_src
   src/v20201016/model/RetryShipperTaskRequest.cpp
   src/v20201016/model/DeleteCosRechargeRequest.cpp
   src/v20201016/model/CreateHostMetricConfigRequest.cpp
+  src/v20201016/model/EntityInfo.cpp
   src/v20201016/model/AccessControlRule.cpp
   src/v20201016/model/ModifyWebCallbackResponse.cpp
   src/v20201016/model/ModifyCloudProductLogCollectionResponse.cpp
@@ -1173,6 +1184,7 @@ set(cls_src
   src/v20201016/model/DescribeMachineGroupConfigsResponse.cpp
   src/v20201016/model/DescribeConfigExtrasRequest.cpp
   src/v20201016/model/DescribeMachineGroupConfigsRequest.cpp
+  src/v20201016/model/RelatedTopicItem.cpp
   src/v20201016/model/DescribeSearchViewsRequest.cpp
   src/v20201016/model/ModifyWebCallbackRequest.cpp
   src/v20201016/model/DeleteTopicResponse.cpp
@@ -1216,6 +1228,7 @@ set(cls_src
   src/v20201016/model/DescribeIndexRequest.cpp
   src/v20201016/model/ProductIngestTaskDetail.cpp
   src/v20201016/model/DescribeKafkaConsumerGroupListRequest.cpp
+  src/v20201016/model/TopologyEdge.cpp
   src/v20201016/model/CreateConsoleRequest.cpp
   src/v20201016/model/DeleteMachineGroupInfoRequest.cpp
   src/v20201016/model/ModifyNoticeContentResponse.cpp
@@ -1254,6 +1267,7 @@ set(cls_src
   src/v20201016/model/ModifyIndexResponse.cpp
   src/v20201016/model/ModifySearchViewResponse.cpp
   src/v20201016/model/QueryRangeMetricResponse.cpp
+  src/v20201016/model/ResourceGraphInfo.cpp
   src/v20201016/model/DescribeDashboardSubscribesResponse.cpp
   src/v20201016/model/BaseMetricCollectConfig.cpp
   src/v20201016/model/EBPFDNSFilter.cpp
